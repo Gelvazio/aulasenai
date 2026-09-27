@@ -5,6 +5,7 @@
 window.MENU_ATIVIDADES = {
   titulo: 'Análise de Dados Aplicada à Gestão',
   itens: [
+    { rotulo: '📚 Índice', link: '../../ATIVIDADES/index.html' },
     {
       rotulo: '📗 Excel 29/09 — Controle de estoque',
       subitens: [
