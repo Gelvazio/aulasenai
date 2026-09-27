@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 6: Álgebra — Reforço Matemática</title>
+  <link rel="stylesheet" href="_assets/styles.css">
+  <style>
+    .conteudo-detalhado { margin: 30px 0; }
+    .secao-conteudo { background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #004384; }
+    .imagem-exemplo { max-width: 100%; height: auto; border-radius: 8px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .exemplo-box { background: #f0f7ff; padding: 15px; margin: 15px 0; border-radius: 6px; border-left: 3px solid #f7941d; }
+    .dica-importante { background: #fff9f0; padding: 15px; margin: 15px 0; border-radius: 6px; border-left: 3px solid #f7941d; }
+    .grid-imagens { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+    @media (max-width: 768px) { .grid-imagens { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="layout-wrapper">
+    <nav class="menu-lateral">
+      <h3>Módulos</h3>
+      <a href="index.html" class="menu-item">Início</a>
+      <hr style="margin: 15px 0; border: none; border-top: 1px solid #ddd;">
+      <a href="modulo-1-operacoes-basicas.html" class="menu-item">Módulo 1</a>
+      <a href="modulo-2-fracoes-decimais.html" class="menu-item">Módulo 2</a>
+      <a href="modulo-3-proporcionalidade.html" class="menu-item">Módulo 3</a>
+      <a href="modulo-4-medidas-grandezas.html" class="menu-item">Módulo 4</a>
+      <a href="modulo-5-raciocinio-logico.html" class="menu-item">Módulo 5</a>
+      <a href="modulo-6-algebra.html" class="menu-item">Módulo 6</a>
+      <a href="modulo-7-tratamento-informacao.html" class="menu-item">Módulo 7</a>
+    </nav>
+    <div class="conteudo-wrapper">
+      <div class="container">
+        <div class="header-controls">
+          <h1>Módulo 6: Álgebra</h1>
+          <button class="btn btn-secondary" onclick="imprimirPagina()">Imprimir</button>
+        </div>
+        <div class="modulo-progress">
+          <span class="modulo-progress-text">Módulo 6 de 7</span>
+        </div>
+        <section class="modulo-intro conteudo-detalhado">
+          <h2>Módulo 6: Introdução à Álgebra</h2>
+          <p><strong>Carga Horária:</strong> 9 horas | <strong>Objetivo:</strong> Dominar conceitos de variável, resolver equações e aplicar álgebra em problemas reais.</p>
+
+          <div class="secao-conteudo">
+            <h3>🎯 Introdução — Álgebra é Diversão!</h3>
+            <p>Álgebra é como um jogo de detetive matemático: você tem pistas (equações) e precisa encontrar o número desconhecido (solução). Programadores, físicos e engenheiros usam álgebra constantemente!</p>
+          </div>
+
+          <div class="grid-imagens">
+            <div>
+              <h4>⚖️ Balança em Equilíbrio</h4>
+              <img src="https://images.pexels.com/photos/821365/pexels-photo-821365.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Balança em equilibrio" class="imagem-exemplo">
+              <p>Uma equação é como uma balança: ambos os lados devem estar em equilíbrio</p>
+            </div>
+            <div>
+              <h4>🎮 Pensamento Lógico</h4>
+              <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Lógica matemática" class="imagem-exemplo">
+              <p>Resolver equações usa o mesmo pensamento lógico que videogames</p>
+            </div>
+          </div>
+
+          <h3>📚 1. Variáveis — O Número Desconhecido</h3>
+          <div class="secao-conteudo">
+            <p>Uma variável é uma letra (como X, Y, Z) que representa um número que não sabemos ainda.</p>
+
+            <div class="exemplo-box">
+              <strong>Exemplo 1:</strong> X + 5 = 12
+              <br>X é a variável (o número desconhecido)
+              <br>X = 7 (porque 7 + 5 = 12)
+            </div>
+
+            <div class="exemplo-box">
+              <strong>Exemplo 2:</strong> 2Y = 18
+              <br>Y é a variável
+              <br>Y = 9 (porque 2 × 9 = 18)
+            </div>
+
+            <div class="dica-importante">
+              <strong>💡 Dica:</strong> Pense em uma equação como um quebra-cabeça. A variável é a peça que falta, e você precisa encontrá-la!
+            </div>
+          </div>
+
+          <h3>📚 2. Expressões Algébricas</h3>
+          <div class="secao-conteudo">
+            <p>Uma expressão algébrica combina números, variáveis e operações.</p>
+
+            <div class="exemplo-box">
+              <strong>Expressões Simples:</strong>
+              <br>X + 3 (uma variável mais 3)
+              <br>2Y (uma variável multiplicada por 2)
+              <br>Z − 5 (uma variável menos 5)
+            </div>
+
+            <div class="exemplo-box">
+              <strong>Expressões Complexas:</strong>
+              <br>3X + 2Y − 1 (várias variáveis)
+              <br>2(X + 4) (expressão com parênteses)
+              <br>X² (quadrado de uma variável)
+            </div>
+
+            <h4>Simplificando Expressões</h4>
+            <div class="exemplo-box">
+              Combine os termos semelhantes:
+              <br>3X + 2X − X = 4X
+              <br>5Y + 3Y − 2Y = 6Y
+              <br>2A + 3B + A = 3A + 3B
+            </div>
+          </div>
+
+          <h3>📚 3. Resolvendo Equações de 1º Grau</h3>
+          <div class="secao-conteudo">
+            <p>Uma equação de 1º grau tem a forma: aX + b = c</p>
+
+            <h4>Método: Isole a Variável</h4>
+            <p>O objetivo é deixar a variável sozinha de um lado da equação.</p>
+
+            <div class="exemplo-box">
+              <strong>Problema:</strong> 2X + 8 = 20
+              <br>
+              <br><strong>Passo 1:</strong> Subtraia 8 de ambos os lados
+              <br>2X + 8 − 8 = 20 − 8
+              <br>2X = 12
+              <br>
+              <br><strong>Passo 2:</strong> Divida ambos os lados por 2
+              <br>2X ÷ 2 = 12 ÷ 2
+              <br>X = 6
+              <br>
+              <br><strong>Verificação:</strong> 2(6) + 8 = 12 + 8 = 20 ✓
+            </div>
+
+            <div class="exemplo-box">
+              <strong>Problema:</strong> X − 5 = 12
+              <br>
+              <br><strong>Solução:</strong> Some 5 a ambos os lados
+              <br>X − 5 + 5 = 12 + 5
+              <br>X = 17
+              <br>
+              <br><strong>Verificação:</strong> 17 − 5 = 12 ✓
+            </div>
+
+            <div class="dica-importante">
+              <strong>⚖️ Regra de Ouro:</strong> Qualquer coisa que fizer de um lado da equação, deve fazer do outro lado para manter o equilíbrio!
+            </div>
+          </div>
+
+          <h3>📚 4. Problemas do Mundo Real</h3>
+          <div class="secao-conteudo">
+            <p>Álgebra resolve problemas práticos:</p>
+
+            <div class="exemplo-box">
+              <strong>Problema:</strong> Maria tem 3 anos a menos que João. Juntos têm 25 anos. Quantos anos cada um tem?
+              <br>
+              <br>Seja X = idade de João
+              <br>Maria tem X − 3 anos
+              <br>X + (X − 3) = 25
+              <br>2X − 3 = 25
+              <br>2X = 28
+              <br>X = 14
+              <br>
+              <br>João tem 14 anos e Maria tem 11 anos
+            </div>
+
+            <div class="exemplo-box">
+              <strong>Problema:</strong> Um produto com 20% de desconto custa R$ 80. Qual era o preço original?
+              <br>
+              <br>Seja X = preço original
+              <br>Desconto = 20% de X = 0,2X
+              <br>Preço com desconto = X − 0,2X = 0,8X = 80
+              <br>X = 80 ÷ 0,8 = 100
+              <br>
+              <br>O preço original era R$ 100
+            </div>
+          </div>
+
+          <h3>🎯 Metodologia Chalkie AI</h3>
+          <div class="secao-conteudo">
+            <ul>
+              <li><strong>Equações Visuais:</strong> Balança em equilíbrio, máquinas de função</li>
+              <li><strong>Progressão Gradual:</strong> Uma variável → duas variáveis → inequações</li>
+              <li><strong>Problemas Reais:</strong> Idade, dinheiro, velocidade, distância</li>
+              <li><strong>Representação Visual:</strong> Gráficos e modelos concretos</li>
+            </ul>
+          </div>
+
+          <h3>✓ Critérios de Avaliação</h3>
+          <div class="secao-conteudo">
+            <ul>
+              <li>✅ Resolver equações de 1º grau com 85%+ acurácia e verificação</li>
+              <li>✅ Traduzir problemas textuais em equações apropriadas</li>
+              <li>✅ Verificar soluções e validar razoabilidade</li>
+              <li>✅ Aplicar conceitos em contextos novos e desafiadores</li>
+            </ul>
+          </div>
+
+          <h3>✏️ Exercícios Práticos</h3>
+          <div class="exercicios-section" id="exercicios-container"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script src="_assets/scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      carregarExercicios('modulo6');
+    });
+  </script>
+</body>
+</html>

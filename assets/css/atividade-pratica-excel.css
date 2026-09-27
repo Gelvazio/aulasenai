@@ -1,0 +1,244 @@
+/* Atividade prática de Excel — capa e páginas de questão (reutilizável). */
+:root {
+  --cor-senai: #004384;
+  --cor-senai-escura: #002f5e;
+  --cor-excel: #217346;
+  --cor-excel-clara: #e8f3ec;
+  --cor-destaque: #f47b20;
+  --cor-texto: #1f2937;
+  --cor-texto-suave: #4b5563;
+  --cor-fundo: #eef2f7;
+  --cor-cartao: #ffffff;
+  --cor-borda: #d6dde8;
+  --cor-dica: #e8f1fb;
+  --cor-dica-borda: #2f6fb3;
+  --cor-atencao: #fff4e5;
+  --cor-atencao-borda: #e08a00;
+  --cor-verifique: #eaf7ee;
+  --cor-verifique-borda: #2e8b57;
+  --cor-libre: #f3eefb;
+  --cor-libre-borda: #7a4bc2;
+  --raio: 10px;
+  --largura-maxima: 1040px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+}
+
+.pagina {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Cabeçalho */
+.cabecalho {
+  background: linear-gradient(135deg, var(--cor-senai) 0%, var(--cor-senai-escura) 100%);
+  color: #fff;
+  border-radius: var(--raio);
+  padding: 24px;
+  border-bottom: 5px solid var(--cor-excel);
+}
+.cabecalho__marca { font-weight: 800; letter-spacing: 2px; font-size: 14px; opacity: 0.9; }
+.cabecalho__titulo { margin: 6px 0 4px; font-size: 28px; line-height: 1.25; }
+.cabecalho__subtitulo { margin: 0; opacity: 0.92; }
+.cabecalho__selos { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.selo {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: 14px;
+  font-weight: 600;
+}
+.selo--formativa { background: var(--cor-destaque); }
+
+.identificacao {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+  background: var(--cor-cartao);
+  color: var(--cor-texto);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+.identificacao__campo { border-bottom: 1px solid var(--cor-texto-suave); padding-top: 18px; font-size: 14px; }
+
+/* Navegação */
+.navegacao {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+.botao {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 0;
+  background: var(--cor-senai);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover { background: var(--cor-senai-escura); }
+.botao--excel { background: var(--cor-excel); }
+.botao--desativado { visibility: hidden; }
+
+/* Blocos */
+.bloco {
+  background: var(--cor-cartao);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+.bloco h2 { margin-top: 0; color: var(--cor-senai); font-size: 22px; }
+.bloco h3 { color: var(--cor-senai); }
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin: 8px 0;
+}
+.tabela th {
+  background: var(--cor-senai);
+  color: #fff;
+  text-align: left;
+  padding: 8px 10px;
+}
+.tabela td { padding: 7px 10px; border-bottom: 1px solid var(--cor-borda); }
+.tabela tr:nth-child(even) td { background: #f7f9fc; }
+.tabela--dados td, .tabela--dados th { font-family: Consolas, 'Courier New', monospace; font-size: 14px; }
+.tabela__rolagem { overflow-x: auto; }
+
+/* Lista de questões na capa */
+.questoes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.questao-cartao {
+  display: block;
+  border: 2px solid var(--cor-borda);
+  border-left: 8px solid var(--cor-excel);
+  border-radius: var(--raio);
+  padding: 14px 16px;
+  color: var(--cor-texto);
+  text-decoration: none;
+  background: var(--cor-cartao);
+}
+.questao-cartao:hover { border-color: var(--cor-excel); }
+.questao-cartao__numero { font-weight: 800; color: var(--cor-excel); }
+.questao-cartao__titulo { font-weight: 700; font-size: 18px; }
+.questao-cartao__meta { font-size: 14px; color: var(--cor-texto-suave); }
+
+/* Passos */
+.passo {
+  background: var(--cor-cartao);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  margin: 22px 0;
+  overflow: hidden;
+  break-inside: avoid;
+}
+.passo__topo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--cor-excel-clara);
+  border-bottom: 1px solid var(--cor-borda);
+  padding: 12px 18px;
+}
+.passo__numero {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--cor-excel);
+  color: #fff;
+  font-weight: 800;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.passo__titulo { margin: 0; font-size: 20px; }
+.passo__figura { margin: 0; padding: 16px 18px 0; }
+.passo__figura img { width: 100%; height: auto; border: 1px solid var(--cor-borda); border-radius: 6px; }
+.passo__legenda { font-size: 14px; color: var(--cor-texto-suave); margin-top: 6px; }
+.passo__corpo { padding: 8px 18px 16px; }
+.passo__corpo ol { padding-left: 22px; }
+.passo__corpo li { margin: 6px 0; }
+
+.formula {
+  display: block;
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: #0f2a17;
+  color: #b9f6ca;
+  border-radius: 6px;
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 16px;
+  overflow-x: auto;
+  white-space: pre;
+}
+.tecla {
+  display: inline-block;
+  padding: 0 7px;
+  border: 1px solid #9aa4b2;
+  border-bottom-width: 3px;
+  border-radius: 5px;
+  background: #f8fafc;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+}
+.celula { font-family: Consolas, monospace; background: #eef5ff; padding: 0 5px; border-radius: 4px; }
+
+/* Caixas */
+.caixa { border-left: 6px solid; border-radius: 6px; padding: 10px 14px; margin: 12px 0; }
+.caixa__titulo { font-weight: 800; display: block; }
+.caixa--dica { background: var(--cor-dica); border-color: var(--cor-dica-borda); }
+.caixa--atencao { background: var(--cor-atencao); border-color: var(--cor-atencao-borda); }
+.caixa--verifique { background: var(--cor-verifique); border-color: var(--cor-verifique-borda); }
+.caixa--libre { background: var(--cor-libre); border-color: var(--cor-libre-borda); }
+
+.concluido {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-weight: 600;
+  color: var(--cor-excel);
+  cursor: pointer;
+}
+.concluido input { width: 20px; height: 20px; }
+.passo--feito { border-color: var(--cor-excel); }
+.passo--feito .passo__numero { background: var(--cor-destaque); }
+
+.rodape { text-align: center; font-size: 13px; color: var(--cor-texto-suave); margin: 24px 0; }
+
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .cabecalho__titulo { font-size: 22px; }
+  .identificacao { grid-template-columns: 1fr; }
+  .questoes { grid-template-columns: 1fr; }
+  .bloco, .passo__corpo { padding-left: 14px; padding-right: 14px; }
+}
+
+@media print {
+  body { background: #fff; font-size: 12pt; }
+  .navegacao, .concluido, .sem-impressao { display: none; }
+  .cabecalho { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .passo, .bloco { border-color: #999; }
+  .formula { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

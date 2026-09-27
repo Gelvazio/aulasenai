@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2: Frações, Decimais — Reforço Matemática</title>
+  <link rel="stylesheet" href="_assets/styles.css">
+  <style>
+    .conteudo-detalhado { margin: 30px 0; }
+    .secao-conteudo { background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #004384; }
+    .imagem-exemplo { max-width: 100%; height: auto; border-radius: 8px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .exemplo-box { background: #f0f7ff; padding: 15px; margin: 15px 0; border-radius: 6px; border-left: 3px solid #f7941d; }
+    .dica-importante { background: #fff9f0; padding: 15px; margin: 15px 0; border-radius: 6px; border-left: 3px solid #f7941d; }
+    .grid-imagens { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+    @media (max-width: 768px) { .grid-imagens { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="layout-wrapper">
+    <nav class="menu-lateral">
+      <h3>Módulos</h3>
+      <a href="index.html" class="menu-item">Início</a>
+      <hr style="margin: 15px 0; border: none; border-top: 1px solid #ddd;">
+      <a href="modulo-1-operacoes-basicas.html" class="menu-item">Módulo 1</a>
+      <a href="modulo-2-fracoes-decimais.html" class="menu-item">Módulo 2</a>
+      <a href="modulo-3-proporcionalidade.html" class="menu-item">Módulo 3</a>
+      <a href="modulo-4-medidas-grandezas.html" class="menu-item">Módulo 4</a>
+      <a href="modulo-5-raciocinio-logico.html" class="menu-item">Módulo 5</a>
+      <a href="modulo-6-algebra.html" class="menu-item">Módulo 6</a>
+      <a href="modulo-7-tratamento-informacao.html" class="menu-item">Módulo 7</a>
+    </nav>
+    <div class="conteudo-wrapper">
+      <div class="container">
+        <div class="header-controls">
+          <h1>Módulo 2: Frações, Decimais</h1>
+          <button class="btn btn-secondary" onclick="imprimirPagina()">Imprimir</button>
+        </div>
+        <div class="modulo-progress">
+          <span class="modulo-progress-text">Módulo 2 de 7</span>
+        </div>
+        <section class="modulo-intro conteudo-detalhado">
+          <h2>Módulo 2: Frações, Decimais e Porcentagem</h2>
+          <p><strong>Carga Horária:</strong> 9 horas | <strong>Objetivo:</strong> Dominar representações de partes de um todo e converter com fluência entre frações, decimais e porcentagens.</p>
+
+          <div class="secao-conteudo">
+            <h3>🎯 Introdução — Partes de um Todo</h3>
+            <p>Frações, decimais e porcentagens são três formas diferentes de representar a mesma coisa: PARTES DE UM TODO. Quando você divide uma pizza entre amigos, calcula desconto em uma loja, ou vê uma previsão de chuva, você está usando esses conceitos!</p>
+            <p>A habilidade de converter entre essas três formas é essencial para lidar com dinheiro, compras, receitas e muito mais.</p>
+          </div>
+
+          <div class="grid-imagens">
+            <div>
+              <h4>🍕 Pizzas e Frações</h4>
+              <img src="https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Pizza dividida" class="imagem-exemplo">
+              <p>Uma pizza dividida em 8 fatias: comer 3 fatias = 3/8 da pizza</p>
+            </div>
+            <div>
+              <h4>💰 Descontos e Porcentagem</h4>
+              <img src="https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Desconto em loja" class="imagem-exemplo">
+              <p>Uma camiseta com 50% de desconto = metade do preço original</p>
+            </div>
+          </div>
+
+          <h3>📚 1. O que são Frações?</h3>
+          <div class="secao-conteudo">
+            <p>Uma fração representa uma PARTE DE UM TODO. É escrita como: <strong>numerador / denominador</strong></p>
+            <ul>
+              <li><strong>Numerador</strong> (número de cima) = quantas partes você TEM</li>
+              <li><strong>Denominador</strong> (número de baixo) = em quantas partes o todo foi DIVIDIDO</li>
+            </ul>
+
+            <div class="exemplo-box">
+              <strong>Exemplo:</strong> 3/8
+              <br>Numerador: 3 (quantas partes você tem)
+              <br>Denominador: 8 (em quantas partes a pizza foi dividida)
+              <br>Significado: Você tem 3 pedaços de uma pizza dividida em 8 pedaços
+            </div>
+
+            <h4>Tipos de Frações</h4>
+            <p><strong>Fração Própria:</strong> Numerador menor que denominador (menor que 1 inteiro)</p>
+            <div class="exemplo-box">2/5, 3/8, 7/10 — Todas representam MENOS que um inteiro</div>
+
+            <p><strong>Fração Imprópria:</strong> Numerador maior ou igual ao denominador (1 ou mais inteiros)</p>
+            <div class="exemplo-box">7/5, 8/8, 15/8 — Todas representam UM OU MAIS inteiros</div>
+
+            <p><strong>Fração Mista:</strong> Parte inteira + parte fracionária</p>
+            <div class="exemplo-box">1 3/4 significa 1 inteiro + 3/4 = 1,75</div>
+          </div>
+
+          <h3>📚 2. Decimais — Números com Vírgula</h3>
+          <div class="secao-conteudo">
+            <p>Decimais são números com vírgula que representam partes de 10, 100, 1000, etc.</p>
+
+            <div class="exemplo-box">
+              <strong>Exemplo 1:</strong> 0,5 = 5/10 = 5 décimos
+              <br><strong>Exemplo 2:</strong> 0,25 = 25/100 = 25 centésimos
+              <br><strong>Exemplo 3:</strong> 2,75 = 2 inteiros + 75/100
+            </div>
+
+            <h4>Usando Decimais no Dia a Dia</h4>
+            <div class="exemplo-box">
+              <strong>Dinheiro:</strong> R$ 12,50 = 12 reais + 50 centavos
+              <br><strong>Medidas:</strong> 2,5 metros = 2 metros + 50 centímetros
+              <br><strong>Peso:</strong> 3,2 kg = 3 quilos + 200 gramas
+            </div>
+
+            <div class="dica-importante">
+              <strong>💡 Dica:</strong> Na escrita de decimais em português, usamos VÍRGULA (0,5). Em países anglófonos usam PONTO (0.5). Saiba reconhecer os dois!
+            </div>
+          </div>
+
+          <h3>📚 3. Porcentagem — Por Cem</h3>
+          <div class="secao-conteudo">
+            <p>Porcentagem (%) significa "por cada 100". É uma forma especial de fração com denominador 100.</p>
+
+            <div class="exemplo-box">
+              <strong>50% = 50/100 = 0,5</strong> (metade)
+              <br><strong>25% = 25/100 = 0,25</strong> (um quarto)
+              <br><strong>100% = 100/100 = 1</strong> (tudo)
+            </div>
+
+            <h4>Porcentagem no Comércio</h4>
+            <div class="exemplo-box">
+              <strong>Desconto:</strong> Camiseta de R$ 80 com 25% de desconto
+              <br>25% de 80 = 0,25 × 80 = 20
+              <br>Preço final: 80 − 20 = R$ 60
+            </div>
+
+            <div class="exemplo-box">
+              <strong>Aumento:</strong> Salário de R$ 2000 com aumento de 10%
+              <br>10% de 2000 = 0,10 × 2000 = 200
+              <br>Novo salário: 2000 + 200 = R$ 2200
+            </div>
+          </div>
+
+          <h3>📚 4. Convertendo Entre as Três Formas</h3>
+          <div class="secao-conteudo">
+            <p>A grande habilidade é converter rapidamente entre fração, decimal e porcentagem!</p>
+
+            <h4>Fração → Decimal</h4>
+            <div class="exemplo-box">
+              Para converter fração em decimal: DIVIDA o numerador pelo denominador
+              <br>3/4 = 3 ÷ 4 = 0,75
+              <br>1/2 = 1 ÷ 2 = 0,5
+            </div>
+
+            <h4>Decimal → Porcentagem</h4>
+            <div class="exemplo-box">
+              Para converter decimal em porcentagem: MULTIPLIQUE por 100 e adicione %
+              <br>0,75 × 100 = 75%
+              <br>0,5 × 100 = 50%
+              <br>0,125 × 100 = 12,5%
+            </div>
+
+            <h4>Porcentagem → Decimal</h4>
+            <div class="exemplo-box">
+              Para converter porcentagem em decimal: DIVIDA por 100 (tire o %)
+              <br>75% ÷ 100 = 0,75
+              <br>50% ÷ 100 = 0,5
+              <br>12,5% ÷ 100 = 0,125
+            </div>
+
+            <div class="dica-importante">
+              <strong>⭐ Conversões Importantes para Decorar:</strong>
+              <br>50% = 0,5 = 1/2
+              <br>25% = 0,25 = 1/4
+              <br>75% = 0,75 = 3/4
+              <br>10% = 0,1 = 1/10
+              <br>20% = 0,2 = 1/5
+            </div>
+          </div>
+
+          <h3>🎯 Metodologia Chalkie AI</h3>
+          <div class="secao-conteudo">
+            <ul>
+              <li><strong>Exemplos Visuais:</strong> Pizza dividida, barras de chocolate, círculos divididos</li>
+              <li><strong>Conexão com Realidade:</strong> Promoções em lojas, liquidações, descontos progressivos</li>
+              <li><strong>Finanças Pessoais:</strong> Cálculo de mesada, poupança, empréstimos</li>
+              <li><strong>Feedback Instantâneo:</strong> Em conversões entre os três formatos</li>
+              <li><strong>Progressão Clara:</strong> Frações simples → complexas → decimais → porcentagens</li>
+            </ul>
+          </div>
+
+          <h3>✓ Critérios de Avaliação</h3>
+          <div class="secao-conteudo">
+            <ul>
+              <li>✅ Converter entre frações, decimais e porcentagens com 85%+ precisão</li>
+              <li>✅ Resolver problemas de desconto e aumento com cálculos corretos</li>
+              <li>✅ Aplicar porcentagem em situações financeiras realistas</li>
+              <li>✅ Demonstrar compreensão profunda de equivalência numérica</li>
+            </ul>
+          </div>
+
+          <h3>✏️ Exercícios Práticos</h3>
+          <div class="exercicios-section" id="exercicios-container"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script src="_assets/scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      carregarExercicios('modulo2');
+    });
+  </script>
+</body>
+</html>

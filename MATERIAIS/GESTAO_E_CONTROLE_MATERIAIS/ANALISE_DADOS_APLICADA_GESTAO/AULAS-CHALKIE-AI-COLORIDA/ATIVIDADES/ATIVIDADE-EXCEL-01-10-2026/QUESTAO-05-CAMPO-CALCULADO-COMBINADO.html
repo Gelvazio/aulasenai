@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questão 5 — Campo calculado e gráfico combinado</title>
+<link rel="stylesheet" href="../../../../../../assets/css/atividade-pratica-excel.css">
+<script src="../../../../../../assets/js/atividade-pratica-excel.js" defer></script>
+</head>
+<body data-atividade="ATIVIDADE-EXCEL-01-10-2026">
+<div class="pagina">
+<header class="cabecalho">
+<div class="cabecalho__marca">SENAI · Análise de Dados Aplicada à Gestão</div>
+<h1 class="cabecalho__titulo">Questão 5 — Campo calculado e gráfico combinado</h1>
+<p class="cabecalho__subtitulo">Atividade Prática de Excel — Análise de Compras com Tabelas Dinâmicas</p>
+<div class="cabecalho__selos"><span class="selo selo--formativa">Atividade prática avaliativa</span><span class="selo ">⏱ 25 min</span><span class="selo ">1,5 pontos</span><span class="selo ">4 passos</span></div>
+<div class="identificacao"><div class="identificacao__campo">Nome:</div><div class="identificacao__campo">Turma:</div><div class="identificacao__campo">Data: 01/10/2026</div></div>
+</header>
+<nav class="navegacao"><a class="botao" href="QUESTAO-04-GRAFICOS-DINAMICOS.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-01-10-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-06-SEGMENTACAO-ATUALIZACAO-PROTECAO.html">Próxima questão →</a></nav>
+<section class="bloco">
+<h2>🎯 O que você vai fazer</h2>
+<p>Calcular o <strong>custo de armazenagem</strong> (5% do valor comprado) sem mexer na base e comparar, num <strong>gráfico combinado</strong>, o valor comprado com a quantidade de pedidos de cada mês.</p>
+<h3>Você vai usar</h3><ul><li>Campos, Itens e Conjuntos → Campo Calculado</li><li>Soma e Contagem na mesma tabela dinâmica</li><li>Gráfico de Combinação com eixo secundário</li></ul>
+<p><strong>Aba de trabalho:</strong> <span class="celula">TD_Fornecedor</span> e <span class="celula">TD_Mensal</span> (nova) · <strong>Slides de apoio:</strong> Arquivo 6 — slides 19 e 30–32</p>
+</section>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">1</span><h3 class="passo__titulo">Crie o campo calculado Armazenagem</h3></div>
+<figure class="passo__figura"><img src="img/q5-passo-01.svg" alt="Janela Inserir Campo Calculado com o nome Armazenagem e a fórmula Valor Total vezes 0,05" loading="lazy"><figcaption class="passo__legenda">Campos, Itens e Conjuntos (1) → Campo Calculado: nome (2), fórmula (3), Adicionar (4) e OK (5).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Vá à aba <strong>TD_Fornecedor</strong> e clique na tabela dinâmica.</li><li>Guia <strong>Análise da Tabela Dinâmica</strong> → <strong>Campos, Itens e Conjuntos</strong> (1) → <strong>Campo Calculado</strong>.</li><li>Nome: <span class="celula">Armazenagem</span> (2). Fórmula (3): apague o <span class="celula">0</span>, dê duplo clique em <strong>Valor Total</strong> na lista e complete com <span class="celula">*0,05</span>.</li><li>Clique em <strong>Adicionar</strong> (4) e em <strong>OK</strong> (5). A coluna <strong>Soma de Armazenagem</strong> aparece na tabela: formate como <strong>Moeda</strong>.</li></ol>
+<code class="formula">=&#x27;Valor Total&#x27;*0,05</code>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>O campo calculado <strong>não cria coluna na base</strong>: o cálculo existe só dentro da tabela dinâmica e acompanha os filtros.</div>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span>O Calc não tem campo calculado. Crie na base a coluna <span class="celula">Armazenagem</span> com <span class="celula">=H2*0,05</span> e coloque-a em Valores.</div>
+<label class="concluido"><input type="checkbox" data-passo="q5-1"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">2</span><h3 class="passo__titulo">Monte a TD_Mensal com soma e contagem</h3></div>
+<figure class="passo__figura"><img src="img/q5-passo-02.svg" alt="Painel com Data em Linhas e Soma de Valor Total e Contagem de Nº Pedido em Valores" loading="lazy"><figcaption class="passo__legenda">Data em Linhas (1), Soma de Valor Total (2) e Contagem de Nº Pedido (3) em Valores.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Crie mais uma tabela dinâmica a partir da <strong>Base_Compras</strong>, em nova planilha, e renomeie a aba para <span class="celula">TD_Mensal</span>.</li><li><strong>Data</strong> em Linhas (1), agrupada só por <strong>Meses</strong> (se aparecer Trimestres, desmarque no Agrupar).</li><li><strong>Valor Total</strong> em Valores (2), formato Moeda, e <strong>Nº Pedido</strong> em Valores como <strong>Contagem</strong> (3).</li></ol>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>A tabela tem 6 linhas de meses e duas colunas de valores: uma em R$ e outra com números inteiros pequenos.</div>
+<label class="concluido"><input type="checkbox" data-passo="q5-2"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">3</span><h3 class="passo__titulo">Crie o gráfico de combinação</h3></div>
+<figure class="passo__figura"><img src="img/q5-passo-03.svg" alt="Janela Inserir Gráfico na opção Combinação com a contagem em linha no eixo secundário" loading="lazy"><figcaption class="passo__legenda">Tipo Combinação (1): Valor Total em colunas (2), Contagem em linha (3) no eixo secundário (4).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique na TD_Mensal → <strong>Gráfico Dinâmico</strong> → escolha <strong>Combinação</strong> (1).</li><li>Soma de Valor Total: <strong>Colunas Agrupadas</strong> (2).</li><li>Contagem de Nº Pedido: <strong>Linha</strong> (3), marcando <strong>Eixo Secundário</strong> (4) → <strong>OK</strong>.</li><li>Título: <span class="celula">Valor comprado × pedidos por mês</span>.</li></ol>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span>Inserir → Gráfico → Coluna e linha; em Série de dados, escolha <strong>Eixo Y secundário</strong> para a contagem.</div>
+<label class="concluido"><input type="checkbox" data-passo="q5-3"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">4</span><h3 class="passo__titulo">Entenda por que usar dois eixos</h3></div>
+<figure class="passo__figura"><img src="img/q5-passo-04.svg" alt="Gráfico combinado com colunas de valor e linha de pedidos no eixo secundário" loading="lazy"><figcaption class="passo__legenda">Eixo secundário à direita (1) para a linha de pedidos (2).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Observe: o eixo da <strong>esquerda</strong> mede reais e o da <strong>direita</strong> (1) mede pedidos (2).</li><li>Em <span class="celula">E3</span> da TD_Mensal digite <span class="celula">Por que usei dois eixos?</span> e, em <span class="celula">F3</span>, responda em uma frase.</li><li>Salve: <span class="tecla">Ctrl</span>+<span class="tecla">B</span>.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Use eixo secundário quando duas medidas têm <strong>escalas muito diferentes</strong> (milhares de reais × poucos pedidos).</div>
+<label class="concluido"><input type="checkbox" data-passo="q5-4"> Passo concluído</label></div>
+</article>
+<section class="bloco">
+<h2>📋 Como esta questão será avaliada</h2>
+<table class="tabela"><thead><tr><th>Critério</th><th>Pontos</th></tr></thead><tbody><tr><td>Campo calculado Armazenagem na TD_Fornecedor</td><td>0,4</td></tr><tr><td>TD_Mensal com soma de valor e contagem de pedidos</td><td>0,4</td></tr><tr><td>Gráfico combinado com a contagem em linha no eixo secundário</td><td>0,5</td></tr><tr><td>Justificativa em F3</td><td>0,2</td></tr><tr><td><strong>Total da questão</strong></td><td><strong>1,5</strong></td></tr></tbody></table>
+</section>
+<nav class="navegacao"><a class="botao" href="QUESTAO-04-GRAFICOS-DINAMICOS.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-01-10-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-06-SEGMENTACAO-ATUALIZACAO-PROTECAO.html">Próxima questão →</a></nav>
+<footer class="rodape">Aprendizagem Industrial — Assistente em Processos de Gestão e Controle de Materiais · Análise de Dados Aplicada à Gestão · Empresa e dados fictícios, criados para fins didáticos.</footer>
+</div>
+</body>
+</html>

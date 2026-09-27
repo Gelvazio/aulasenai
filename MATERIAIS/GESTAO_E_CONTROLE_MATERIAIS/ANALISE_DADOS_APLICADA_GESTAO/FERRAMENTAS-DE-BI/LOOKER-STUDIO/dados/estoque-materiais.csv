@@ -1,0 +1,121 @@
+data,mes,categoria,produto,fornecedor,quantidade,valor_unitario,valor_total,estoque_minimo,situacao
+2026-01-28,Jan,Matéria-Prima,Aço em barra,Siderúrgica Vale Sul,293,45.13,13223.09,150,OK
+2026-01-28,Jan,Matéria-Prima,Alumínio em chapa,Metais Alto Vale,123,61.31,7541.13,100,OK
+2026-01-28,Jan,Embalagem,Caixa papelão P,Papelão Itajaí,957,2.17,2076.69,400,OK
+2026-01-28,Jan,Embalagem,Fita adesiva,Embala Mais,601,3.34,2007.34,250,OK
+2026-01-28,Jan,Ferramentas,Chave de fenda,Ferramentas Rio do Sul,47,18.35,862.45,30,OK
+2026-01-28,Jan,Ferramentas,Furadeira elétrica,Ferramentas Rio do Sul,16,210.04,3360.64,15,OK
+2026-01-28,Jan,EPI,Luva de proteção (par),Seguro EPI,170,8.79,1494.30,200,Abaixo do mínimo
+2026-01-28,Jan,EPI,Óculos de segurança,Seguro EPI,148,14.53,2150.44,80,OK
+2026-01-28,Jan,Manutenção,Óleo lubrificante 1L,Lubri Norte,72,30.01,2160.72,60,OK
+2026-01-28,Jan,Manutenção,Rolamento 6205,Rolamentos SC,90,23.53,2117.70,40,OK
+2026-02-28,Fev,Matéria-Prima,Aço em barra,Siderúrgica Vale Sul,338,46.64,15764.32,150,OK
+2026-02-28,Fev,Matéria-Prima,Alumínio em chapa,Metais Alto Vale,134,61.51,8242.34,100,OK
+2026-02-28,Fev,Embalagem,Caixa papelão P,Papelão Itajaí,1135,2.15,2440.25,400,OK
+2026-02-28,Fev,Embalagem,Fita adesiva,Embala Mais,242,3.37,815.54,250,Abaixo do mínimo
+2026-02-28,Fev,Ferramentas,Chave de fenda,Ferramentas Rio do Sul,70,18.89,1322.30,30,OK
+2026-02-28,Fev,Ferramentas,Furadeira elétrica,Ferramentas Rio do Sul,30,213.20,6396.00,15,OK
+2026-02-28,Fev,EPI,Luva de proteção (par),Seguro EPI,353,9.12,3219.36,200,OK
+2026-02-28,Fev,EPI,Óculos de segurança,Seguro EPI,111,14.62,1622.82,80,OK
+2026-02-28,Fev,Manutenção,Óleo lubrificante 1L,Lubri Norte,138,30.22,4170.36,60,OK
+2026-02-28,Fev,Manutenção,Rolamento 6205,Rolamentos SC,94,24.22,2276.68,40,OK
+2026-03-28,Mar,Matéria-Prima,Aço em barra,Siderúrgica Vale Sul,310,45.71,14170.10,150,OK
+2026-03-28,Mar,Matéria-Prima,Alumínio em chapa,Metais Alto Vale,115,62.22,7155.30,100,OK
+2026-03-28,Mar,Embalagem,Caixa papelão P,Papelão Itajaí,425,2.15,913.75,400,OK
+2026-03-28,Mar,Embalagem,Fita adesiva,Embala Mais,245,3.41,835.45,250,Abaixo do mínimo
+2026-03-28,Mar,Ferramentas,Chave de fenda,Ferramentas Rio do Sul,58,18.82,1091.56,30,OK
+2026-03-28,Mar,Ferramentas,Furadeira elétrica,Ferramentas Rio do Sul,20,210.05,4201.00,15,OK
+2026-03-28,Mar,EPI,Luva de proteção (par),Seguro EPI,256,9.16,2344.96,200,OK
+2026-03-28,Mar,EPI,Óculos de segurança,Seguro EPI,147,14.74,2166.78,80,OK
+2026-03-28,Mar,Manutenção,Óleo lubrificante 1L,Lubri Norte,66,30.54,2015.64,60,OK
+2026-03-28,Mar,Manutenção,Rolamento 6205,Rolamentos SC,44,24.17,1063.48,40,OK
+2026-04-28,Abr,Matéria-Prima,Aço em barra,Siderúrgica Vale Sul,387,47.09,18223.83,150,OK
+2026-04-28,Abr,Matéria-Prima,Alumínio em chapa,Metais Alto Vale,171,63.58,10872.18,100,OK
+2026-04-28,Abr,Embalagem,Caixa papelão P,Papelão Itajaí,1043,2.21,2305.03,400,OK
+2026-04-28,Abr,Embalagem,Fita adesiva,Embala Mais,303,3.40,1030.20,250,OK
+2026-04-28,Abr,Ferramentas,Chave de fenda,Ferramentas Rio do Sul,41,18.86,773.26,30,OK
+2026-04-28,Abr,Ferramentas,Furadeira elétrica,Ferramentas Rio do Sul,16,217.57,3481.12,15,OK
+2026-04-28,Abr,EPI,Luva de proteção (par),Seguro EPI,475,8.99,4270.25,200,OK
+2026-04-28,Abr,EPI,Óculos de segurança,Seguro EPI,148,14.70,2175.60,80,OK
+2026-04-28,Abr,Manutenção,Óleo lubrificante 1L,Lubri Norte,147,30.39,4467.33,60,OK
+2026-04-28,Abr,Manutenção,Rolamento 6205,Rolamentos SC,51,24.18,1233.18,40,OK
+2026-05-28,Mai,Matéria-Prima,Aço em barra,Siderúrgica Vale Sul,272,46.66,12691.52,150,OK
+2026-05-28,Mai,Matéria-Prima,Alumínio em chapa,Metais Alto Vale,176,64.50,11352.00,100,OK
+2026-05-28,Mai,Embalagem,Caixa papelão P,Papelão Itajaí,684,2.18,1491.12,400,OK
+2026-05-28,Mai,Embalagem,Fita adesiva,Embala Mais,649,3.48,2258.52,250,OK
+2026-05-28,Mai,Ferramentas,Chave de fenda,Ferramentas Rio do Sul,29,18.80,545.20,30,Abaixo do mínimo
+2026-05-28,Mai,Ferramentas,Furadeira elétrica,Ferramentas Rio do Sul,13,216.14,2809.82,15,Abaixo do mínimo
+2026-05-28,Mai,EPI,Luva de proteção (par),Seguro EPI,445,9.09,4045.05,200,OK
+2026-05-28,Mai,EPI,Óculos de segurança,Seguro EPI,69,14.78,1019.82,80,Abaixo do mínimo
+2026-05-28,Mai,Manutenção,Óleo lubrificante 1L,Lubri Norte,156,30.65,4781.40,60,OK
+2026-05-28,Mai,Manutenção,Rolamento 6205,Rolamentos SC,102,24.93,2542.86,40,OK
+2026-06-28,Jun,Matéria-Prima,Aço em barra,Siderúrgica Vale Sul,123,47.80,5879.40,150,Abaixo do mínimo
+2026-06-28,Jun,Matéria-Prima,Alumínio em chapa,Metais Alto Vale,193,63.95,12342.35,100,OK
+2026-06-28,Jun,Embalagem,Caixa papelão P,Papelão Itajaí,576,2.23,1284.48,400,OK
+2026-06-28,Jun,Embalagem,Fita adesiva,Embala Mais,250,3.49,872.50,250,OK
+2026-06-28,Jun,Ferramentas,Chave de fenda,Ferramentas Rio do Sul,49,19.61,960.89,30,OK
+2026-06-28,Jun,Ferramentas,Furadeira elétrica,Ferramentas Rio do Sul,32,214.25,6856.00,15,OK
+2026-06-28,Jun,EPI,Luva de proteção (par),Seguro EPI,340,9.05,3077.00,200,OK
+2026-06-28,Jun,EPI,Óculos de segurança,Seguro EPI,183,15.16,2774.28,80,OK
+2026-06-28,Jun,Manutenção,Óleo lubrificante 1L,Lubri Norte,80,30.97,2477.60,60,OK
+2026-06-28,Jun,Manutenção,Rolamento 6205,Rolamentos SC,76,24.38,1852.88,40,OK
+2026-07-28,Jul,Matéria-Prima,Aço em barra,Siderúrgica Vale Sul,326,47.73,15559.98,150,OK
+2026-07-28,Jul,Matéria-Prima,Alumínio em chapa,Metais Alto Vale,209,64.31,13440.79,100,OK
+2026-07-28,Jul,Embalagem,Caixa papelão P,Papelão Itajaí,360,2.21,795.60,400,Abaixo do mínimo
+2026-07-28,Jul,Embalagem,Fita adesiva,Embala Mais,209,3.58,748.22,250,Abaixo do mínimo
+2026-07-28,Jul,Ferramentas,Chave de fenda,Ferramentas Rio do Sul,71,19.63,1393.73,30,OK
+2026-07-28,Jul,Ferramentas,Furadeira elétrica,Ferramentas Rio do Sul,18,213.71,3846.78,15,OK
+2026-07-28,Jul,EPI,Luva de proteção (par),Seguro EPI,476,9.39,4469.64,200,OK
+2026-07-28,Jul,EPI,Óculos de segurança,Seguro EPI,72,15.01,1080.72,80,Abaixo do mínimo
+2026-07-28,Jul,Manutenção,Óleo lubrificante 1L,Lubri Norte,55,31.30,1721.50,60,Abaixo do mínimo
+2026-07-28,Jul,Manutenção,Rolamento 6205,Rolamentos SC,87,24.49,2130.63,40,OK
+2026-08-28,Ago,Matéria-Prima,Aço em barra,Siderúrgica Vale Sul,248,48.03,11911.44,150,OK
+2026-08-28,Ago,Matéria-Prima,Alumínio em chapa,Metais Alto Vale,121,65.57,7933.97,100,OK
+2026-08-28,Ago,Embalagem,Caixa papelão P,Papelão Itajaí,703,2.21,1553.63,400,OK
+2026-08-28,Ago,Embalagem,Fita adesiva,Embala Mais,443,3.58,1585.94,250,OK
+2026-08-28,Ago,Ferramentas,Chave de fenda,Ferramentas Rio do Sul,35,19.34,676.90,30,OK
+2026-08-28,Ago,Ferramentas,Furadeira elétrica,Ferramentas Rio do Sul,35,220.13,7704.55,15,OK
+2026-08-28,Ago,EPI,Luva de proteção (par),Seguro EPI,318,9.28,2951.04,200,OK
+2026-08-28,Ago,EPI,Óculos de segurança,Seguro EPI,76,14.94,1135.44,80,Abaixo do mínimo
+2026-08-28,Ago,Manutenção,Óleo lubrificante 1L,Lubri Norte,85,31.27,2657.95,60,OK
+2026-08-28,Ago,Manutenção,Rolamento 6205,Rolamentos SC,49,24.73,1211.77,40,OK
+2026-09-28,Set,Matéria-Prima,Aço em barra,Siderúrgica Vale Sul,139,48.46,6735.94,150,Abaixo do mínimo
+2026-09-28,Set,Matéria-Prima,Alumínio em chapa,Metais Alto Vale,115,66.03,7593.45,100,OK
+2026-09-28,Set,Embalagem,Caixa papelão P,Papelão Itajaí,1056,2.21,2333.76,400,OK
+2026-09-28,Set,Embalagem,Fita adesiva,Embala Mais,307,3.59,1102.13,250,OK
+2026-09-28,Set,Ferramentas,Chave de fenda,Ferramentas Rio do Sul,36,19.31,695.16,30,OK
+2026-09-28,Set,Ferramentas,Furadeira elétrica,Ferramentas Rio do Sul,34,220.71,7504.14,15,OK
+2026-09-28,Set,EPI,Luva de proteção (par),Seguro EPI,330,9.43,3111.90,200,OK
+2026-09-28,Set,EPI,Óculos de segurança,Seguro EPI,169,15.01,2536.69,80,OK
+2026-09-28,Set,Manutenção,Óleo lubrificante 1L,Lubri Norte,58,31.25,1812.50,60,Abaixo do mínimo
+2026-09-28,Set,Manutenção,Rolamento 6205,Rolamentos SC,62,25.12,1557.44,40,OK
+2026-10-28,Out,Matéria-Prima,Aço em barra,Siderúrgica Vale Sul,317,48.82,15475.94,150,OK
+2026-10-28,Out,Matéria-Prima,Alumínio em chapa,Metais Alto Vale,244,64.30,15689.20,100,OK
+2026-10-28,Out,Embalagem,Caixa papelão P,Papelão Itajaí,686,2.25,1543.50,400,OK
+2026-10-28,Out,Embalagem,Fita adesiva,Embala Mais,588,3.55,2087.40,250,OK
+2026-10-28,Out,Ferramentas,Chave de fenda,Ferramentas Rio do Sul,34,19.67,668.78,30,OK
+2026-10-28,Out,Ferramentas,Furadeira elétrica,Ferramentas Rio do Sul,21,219.38,4606.98,15,OK
+2026-10-28,Out,EPI,Luva de proteção (par),Seguro EPI,250,9.54,2385.00,200,OK
+2026-10-28,Out,EPI,Óculos de segurança,Seguro EPI,120,15.50,1860.00,80,OK
+2026-10-28,Out,Manutenção,Óleo lubrificante 1L,Lubri Norte,107,30.95,3311.65,60,OK
+2026-10-28,Out,Manutenção,Rolamento 6205,Rolamentos SC,104,25.64,2666.56,40,OK
+2026-11-28,Nov,Matéria-Prima,Aço em barra,Siderúrgica Vale Sul,382,49.59,18943.38,150,OK
+2026-11-28,Nov,Matéria-Prima,Alumínio em chapa,Metais Alto Vale,221,64.84,14329.64,100,OK
+2026-11-28,Nov,Embalagem,Caixa papelão P,Papelão Itajaí,753,2.25,1694.25,400,OK
+2026-11-28,Nov,Embalagem,Fita adesiva,Embala Mais,380,3.54,1345.20,250,OK
+2026-11-28,Nov,Ferramentas,Chave de fenda,Ferramentas Rio do Sul,44,20.21,889.24,30,OK
+2026-11-28,Nov,Ferramentas,Furadeira elétrica,Ferramentas Rio do Sul,17,225.13,3827.21,15,OK
+2026-11-28,Nov,EPI,Luva de proteção (par),Seguro EPI,324,9.40,3045.60,200,OK
+2026-11-28,Nov,EPI,Óculos de segurança,Seguro EPI,189,15.67,2961.63,80,OK
+2026-11-28,Nov,Manutenção,Óleo lubrificante 1L,Lubri Norte,108,31.97,3452.76,60,OK
+2026-11-28,Nov,Manutenção,Rolamento 6205,Rolamentos SC,43,25.23,1084.89,40,OK
+2026-12-28,Dez,Matéria-Prima,Aço em barra,Siderúrgica Vale Sul,382,49.19,18790.58,150,OK
+2026-12-28,Dez,Matéria-Prima,Alumínio em chapa,Metais Alto Vale,169,66.75,11280.75,100,OK
+2026-12-28,Dez,Embalagem,Caixa papelão P,Papelão Itajaí,406,2.30,933.80,400,OK
+2026-12-28,Dez,Embalagem,Fita adesiva,Embala Mais,426,3.68,1567.68,250,OK
+2026-12-28,Dez,Ferramentas,Chave de fenda,Ferramentas Rio do Sul,33,20.30,669.90,30,OK
+2026-12-28,Dez,Ferramentas,Furadeira elétrica,Ferramentas Rio do Sul,13,221.05,2873.65,15,Abaixo do mínimo
+2026-12-28,Dez,EPI,Luva de proteção (par),Seguro EPI,374,9.55,3571.70,200,OK
+2026-12-28,Dez,EPI,Óculos de segurança,Seguro EPI,92,15.22,1400.24,80,OK
+2026-12-28,Dez,Manutenção,Óleo lubrificante 1L,Lubri Norte,144,31.55,4543.20,60,OK
+2026-12-28,Dez,Manutenção,Rolamento 6205,Rolamentos SC,75,25.71,1928.25,40,OK

@@ -1,0 +1,4825 @@
+{
+  "id": "ATIVIDADE-EXCEL-29-09-2026",
+  "titulo": "Atividade Prática de Excel — Controle de Estoque do Almoxarifado",
+  "unidade_curricular": "Análise de Dados Aplicada à Gestão",
+  "curso": "Aprendizagem Industrial — Assistente em Processos de Gestão e Controle de Materiais",
+  "data": "29/09/2026",
+  "duracao": "3h25",
+  "natureza": "Atividade prática avaliativa",
+  "arquivo_excel": "ESTOQUE-NOME-SOBRENOME.xlsx",
+  "planilhas": {
+    "Cadastro": {
+      "linhas": [
+        [
+          "Código",
+          "Descrição",
+          "Categoria",
+          "Unidade",
+          "Custo Unitário",
+          "Estoque Mínimo",
+          "Saldo Inicial",
+          "Movimentado",
+          "Saldo Atual",
+          "Valor em Estoque",
+          "Situação"
+        ],
+        [
+          "MAT-001",
+          "Luva de vaqueta",
+          "EPI",
+          "par",
+          "R$ 18,90",
+          "40",
+          "55",
+          "10",
+          "65",
+          "R$ 1.228,50",
+          "Normal"
+        ],
+        [
+          "MAT-002",
+          "Óculos de proteção",
+          "EPI",
+          "un",
+          "R$ 12,50",
+          "20",
+          "18",
+          "10",
+          "28",
+          "R$ 350,00",
+          "Atenção"
+        ],
+        [
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "par",
+          "R$ 1,80",
+          "100",
+          "250",
+          "-60",
+          "190",
+          "R$ 342,00",
+          "Normal"
+        ],
+        [
+          "MAT-004",
+          "Máscara PFF2",
+          "EPI",
+          "un",
+          "R$ 3,20",
+          "80",
+          "60",
+          "-30",
+          "30",
+          "R$ 96,00",
+          "Crítico"
+        ],
+        [
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "un",
+          "R$ 0,45",
+          "500",
+          "1200",
+          "-400",
+          "800",
+          "R$ 360,00",
+          "Normal"
+        ],
+        [
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "un",
+          "R$ 0,15",
+          "500",
+          "480",
+          "-150",
+          "330",
+          "R$ 49,50",
+          "Crítico"
+        ],
+        [
+          "MAT-007",
+          "Arruela lisa 8 mm",
+          "Fixação",
+          "un",
+          "R$ 0,08",
+          "500",
+          "900",
+          "0",
+          "900",
+          "R$ 72,00",
+          "Normal"
+        ],
+        [
+          "MAT-008",
+          "Rebite de alumínio 4 mm",
+          "Fixação",
+          "un",
+          "R$ 0,12",
+          "300",
+          "350",
+          "0",
+          "350",
+          "R$ 42,00",
+          "Atenção"
+        ],
+        [
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "rolo",
+          "R$ 6,90",
+          "15",
+          "12",
+          "-5",
+          "7",
+          "R$ 48,30",
+          "Crítico"
+        ],
+        [
+          "MAT-010",
+          "Cabo flexível 2,5 mm²",
+          "Elétrico",
+          "m",
+          "R$ 3,40",
+          "100",
+          "180",
+          "50",
+          "230",
+          "R$ 782,00",
+          "Normal"
+        ],
+        [
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "un",
+          "R$ 24,90",
+          "10",
+          "14",
+          "-6",
+          "8",
+          "R$ 199,20",
+          "Crítico"
+        ],
+        [
+          "MAT-012",
+          "Disco de corte 7\"",
+          "Ferramentas",
+          "un",
+          "R$ 9,80",
+          "30",
+          "25",
+          "-10",
+          "15",
+          "R$ 147,00",
+          "Crítico"
+        ],
+        [
+          "MAT-013",
+          "Broca aço rápido 8 mm",
+          "Ferramentas",
+          "un",
+          "R$ 14,50",
+          "12",
+          "20",
+          "-4",
+          "16",
+          "R$ 232,00",
+          "Atenção"
+        ],
+        [
+          "MAT-014",
+          "Lixa grão 120",
+          "Ferramentas",
+          "folha",
+          "R$ 1,90",
+          "50",
+          "90",
+          "0",
+          "90",
+          "R$ 171,00",
+          "Normal"
+        ],
+        [
+          "MAT-015",
+          "Trena 5 m",
+          "Ferramentas",
+          "un",
+          "R$ 22,00",
+          "5",
+          "7",
+          "0",
+          "7",
+          "R$ 154,00",
+          "Atenção"
+        ]
+      ]
+    },
+    "Movimentacao": {
+      "linhas": [
+        [
+          "Data",
+          "Código",
+          "Descrição",
+          "Tipo",
+          "Quantidade",
+          "Custo Unitário",
+          "Valor",
+          "Qtd com Sinal"
+        ],
+        [
+          "01/09/2026",
+          "MAT-001",
+          "Luva de vaqueta",
+          "Saída",
+          "20",
+          "R$ 18,90",
+          "R$ 378,00",
+          "-20"
+        ],
+        [
+          "02/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Saída",
+          "400",
+          "R$ 0,45",
+          "R$ 180,00",
+          "-400"
+        ],
+        [
+          "03/09/2026",
+          "MAT-002",
+          "Óculos de proteção",
+          "Entrada",
+          "10",
+          "R$ 12,50",
+          "R$ 125,00",
+          "10"
+        ],
+        [
+          "04/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Saída",
+          "5",
+          "R$ 6,90",
+          "R$ 34,50",
+          "-5"
+        ],
+        [
+          "08/09/2026",
+          "MAT-004",
+          "Máscara PFF2",
+          "Saída",
+          "30",
+          "R$ 3,20",
+          "R$ 96,00",
+          "-30"
+        ],
+        [
+          "09/09/2026",
+          "MAT-012",
+          "Disco de corte 7\"",
+          "Saída",
+          "10",
+          "R$ 9,80",
+          "R$ 98,00",
+          "-10"
+        ],
+        [
+          "10/09/2026",
+          "MAT-010",
+          "Cabo flexível 2,5 mm²",
+          "Entrada",
+          "50",
+          "R$ 3,40",
+          "R$ 170,00",
+          "50"
+        ],
+        [
+          "11/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Saída",
+          "150",
+          "R$ 0,15",
+          "R$ 22,50",
+          "-150"
+        ],
+        [
+          "14/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "Saída",
+          "60",
+          "R$ 1,80",
+          "R$ 108,00",
+          "-60"
+        ],
+        [
+          "15/09/2026",
+          "MAT-013",
+          "Broca aço rápido 8 mm",
+          "Saída",
+          "4",
+          "R$ 14,50",
+          "R$ 58,00",
+          "-4"
+        ],
+        [
+          "16/09/2026",
+          "MAT-001",
+          "Luva de vaqueta",
+          "Entrada",
+          "30",
+          "R$ 18,90",
+          "R$ 567,00",
+          "30"
+        ],
+        [
+          "17/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Saída",
+          "6",
+          "R$ 24,90",
+          "R$ 149,40",
+          "-6"
+        ]
+      ]
+    },
+    "Consulta": {
+      "celulas": {
+        "A1": "Código",
+        "B1": "MAT-007",
+        "A2": "Descrição",
+        "B2": "Arruela lisa 8 mm",
+        "A4": "Descrição",
+        "B4": "Trena 5 m",
+        "A5": "Código",
+        "B5": "MAT-015"
+      }
+    },
+    "Resumo": {
+      "celulas": {
+        "A1": "RESUMO DO ESTOQUE — SETEMBRO/2026",
+        "A2": "Situação",
+        "B2": "Qtd. de itens",
+        "A3": "Crítico",
+        "B3": "5",
+        "A4": "Atenção",
+        "B4": "4",
+        "A5": "Normal",
+        "B5": "6",
+        "A6": "Total",
+        "B6": "15",
+        "A8": "Categoria",
+        "B8": "Valor em Estoque",
+        "C8": "% do Total",
+        "A9": "EPI",
+        "B9": "R$ 2.016,50",
+        "C9": "47,2%",
+        "A10": "Fixação",
+        "B10": "R$ 523,50",
+        "C10": "12,2%",
+        "A11": "Elétrico",
+        "B11": "R$ 1.029,50",
+        "C11": "24,1%",
+        "A12": "Ferramentas",
+        "B12": "R$ 704,00",
+        "C12": "16,5%",
+        "A13": "Total",
+        "B13": "R$ 4.273,50",
+        "C13": "100,0%",
+        "A16": "Valor das saídas do mês",
+        "B16": "R$ 1.124,40",
+        "A18": "Mês",
+        "B18": "Jul",
+        "C18": "Ago",
+        "D18": "Set",
+        "E18": "Out",
+        "F18": "Nov",
+        "G18": "Dez",
+        "A19": "Limite de saídas",
+        "B19": "R$ 1.300,00",
+        "C19": "R$ 1.250,00",
+        "D19": "R$ 1.200,00",
+        "E19": "R$ 1.250,00",
+        "F19": "R$ 1.300,00",
+        "G19": "R$ 1.000,00",
+        "A21": "Mês consultado",
+        "B21": "Set",
+        "A22": "Limite do mês",
+        "B22": "R$ 1.200,00",
+        "A23": "Conclusão",
+        "B23": "Dentro do limite",
+        "A25": "Item crítico de EPI:",
+        "B25": "Máscara PFF2"
+      }
+    }
+  },
+  "capa": {
+    "subtitulo": "Planilha de controle de estoque do almoxarifado: formatação, validação de dados, PROCV, SE, SOMASE, CONT.SE, PROCH, filtros e proteção",
+    "sobre": [
+      "Esta é uma **atividade prática avaliativa**: ela **compõe a nota final** e vale **10 pontos** na linha **Atividades de Sala de Aula** da tabela de notas. A pontuação de cada questão entra direto na sua nota.",
+      "Você vai montar **um único arquivo** do Excel, questão por questão. Cada questão acrescenta uma parte ao arquivo, por isso faça **na ordem**.",
+      "Cada questão tem uma página com **passo a passo**. Cada passo tem uma **imagem** com números laranja mostrando onde clicar e um texto explicando o que fazer.",
+      "Ao terminar um passo, marque **Passo concluído** para não se perder.",
+      "Você pode usar **Excel** ou **LibreOffice Calc**. Quando o caminho for diferente, há uma caixa roxa com a alternativa.",
+      "Ficou com dúvida? Releia o passo e olhe a imagem com calma. Se continuar, chame o professor."
+    ],
+    "contexto": [
+      "A **Metalúrgica Vale do Itajaí** (empresa fictícia) controla o almoxarifado em um caderno. No mês passado faltaram máscaras e discos de corte e ninguém percebeu a tempo.",
+      "Você entrou como aprendiz no almoxarifado e sua missão é criar a **planilha de controle de estoque**: cadastrar os materiais, lançar as entradas e saídas de setembro, calcular o saldo de cada item, avisar com cores o que está abaixo do mínimo e montar um resumo para o gerente.",
+      "No final, a planilha terá **quatro abas**, ligadas por fórmulas:"
+    ],
+    "legenda_abas": "As quatro abas da planilha final e como elas conversam entre si.",
+    "tempos": [
+      [
+        "Abertura",
+        "Ler esta capa e abrir o Excel",
+        "15 min",
+        "—"
+      ],
+      [
+        "**Questão 1**",
+        "Cadastro e formatação profissional",
+        "25 min",
+        "1,5"
+      ],
+      [
+        "**Questão 2**",
+        "Movimentação com validação de dados",
+        "30 min",
+        "1,5"
+      ],
+      [
+        "**Questão 3**",
+        "PROCV, SEERRO e ÍNDICE + CORRESP",
+        "30 min",
+        "2,0"
+      ],
+      [
+        "Intervalo",
+        "—",
+        "15 min",
+        "—"
+      ],
+      [
+        "**Questão 4**",
+        "Saldo, SE aninhado e formatação condicional",
+        "35 min",
+        "2,0"
+      ],
+      [
+        "**Questão 5**",
+        "Resumo com CONT.SE, SOMASE e PROCH",
+        "25 min",
+        "1,5"
+      ],
+      [
+        "**Questão 6**",
+        "Filtro, proteção e entrega",
+        "20 min",
+        "1,5"
+      ],
+      [
+        "Fechamento",
+        "Revisar e entregar o arquivo",
+        "10 min",
+        "—"
+      ],
+      [
+        "**Total**",
+        "",
+        "**3h25**",
+        "**10,0**"
+      ]
+    ],
+    "nota_pontuacao": "**Valor na nota final: 10 pontos.** O desempenho esperado é de **7,0 ou mais** (70%, a mesma média da tabela de notas).",
+    "tabelas": [
+      {
+        "titulo": "Aba Cadastro (Questão 1): digite nas linhas 2 a 16",
+        "planilha": "Cadastro",
+        "colunas": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G"
+        ]
+      },
+      {
+        "titulo": "Aba Movimentacao (Questão 2): lance nas linhas 2 a 13",
+        "planilha": "Movimentacao",
+        "colunas": [
+          "A",
+          "B",
+          "D",
+          "E"
+        ]
+      }
+    ],
+    "regras": [
+      "Trabalho **individual**. Pode consultar os slides das aulas e as páginas desta atividade.",
+      "Salve com frequência: [[Ctrl]]+[[B]].",
+      "Nome do arquivo: `ESTOQUE-NOME-SOBRENOME.xlsx`, com o seu nome (ex.: `ESTOQUE-ANA-SOUZA.xlsx`).",
+      "Não apague abas nem mude os nomes `Cadastro`, `Movimentacao`, `Consulta` e `Resumo`.",
+      "Senha de proteção da Questão 6: `senai2026`.",
+      "Entregue o arquivo como o professor orientar: pasta da turma, AVA ou e-mail.",
+      "A empresa e os dados são **fictícios**, criados para esta atividade."
+    ],
+    "imagem_abas": {
+      "alt": "Visão geral das quatro abas da planilha e das fórmulas que as ligam",
+      "guia": "Página Inicial",
+      "aba_ativa": "Cadastro",
+      "abas": [
+        "Cadastro",
+        "Movimentacao",
+        "Consulta",
+        "Resumo"
+      ],
+      "somente_esquema": true,
+      "altura_esquema": 330,
+      "esquema": {
+        "caixas": [
+          {
+            "id": "cad",
+            "x": 20,
+            "y": 260,
+            "w": 220,
+            "h": 140,
+            "titulo": "Cadastro",
+            "cor": "#004384",
+            "linhas": [
+              "15 materiais",
+              "Custo, mínimo e saldo",
+              "Saldo atual (SOMASE)",
+              "Situação (SE) e cores",
+              "Questões 1 e 4"
+            ]
+          },
+          {
+            "id": "mov",
+            "x": 370,
+            "y": 176,
+            "w": 220,
+            "h": 140,
+            "titulo": "Movimentacao",
+            "cor": "#217346",
+            "linhas": [
+              "Entradas e saídas",
+              "Listas de validação",
+              "Descrição e custo (PROCV)",
+              "Protegida com senha",
+              "Questões 2, 3, 4 e 6"
+            ]
+          },
+          {
+            "id": "con",
+            "x": 370,
+            "y": 344,
+            "w": 220,
+            "h": 140,
+            "titulo": "Consulta",
+            "cor": "#6a1b9a",
+            "linhas": [
+              "Busca por código",
+              "com SEERRO",
+              "Busca por descrição",
+              "(ÍNDICE + CORRESP)",
+              "Questão 3"
+            ]
+          },
+          {
+            "id": "res",
+            "x": 720,
+            "y": 260,
+            "w": 220,
+            "h": 140,
+            "titulo": "Resumo",
+            "cor": "#b26a00",
+            "linhas": [
+              "Itens por situação",
+              "Valor por categoria",
+              "Limite do mês (PROCH)",
+              "Conclusão (SE)",
+              "Questões 5 e 6"
+            ]
+          }
+        ]
+      },
+      "setas": [
+        {
+          "de": "caixa:mov",
+          "para": "caixa:cad",
+          "texto": "PROCV",
+          "curva": -10
+        },
+        {
+          "de": "caixa:con",
+          "para": "caixa:cad",
+          "texto": "PROCV e ÍNDICE",
+          "curva": 10
+        },
+        {
+          "de": "caixa:cad",
+          "para": "caixa:res",
+          "texto": "CONT.SE e SOMASE",
+          "curva": 0
+        },
+        {
+          "de": "caixa:mov",
+          "para": "caixa:res",
+          "texto": "SOMASE",
+          "curva": -10
+        }
+      ]
+    }
+  },
+  "questoes": [
+    {
+      "id": "q1",
+      "numero": 1,
+      "arquivo": "QUESTAO-01-CADASTRO-E-FORMATACAO.html",
+      "titulo": "Cadastro de materiais e formatação profissional",
+      "tempo": "25 min",
+      "pontos": "1,5",
+      "aba": "`Cadastro` (nova)",
+      "slides_apoio": "Arquivo 4 — slides 10–12, 16, 20–21",
+      "objetivo": "Criar a aba `Cadastro` com os 15 materiais do almoxarifado e deixá-la com aparência profissional: valores em reais, quantidades inteiras, cabeçalho destacado, bordas e títulos sempre visíveis.",
+      "voce_vai_usar": [
+        "Renomear aba",
+        "Formatar Células ([[Ctrl]]+[[1]]): Moeda e Número",
+        "Negrito, Cor de Preenchimento, Cor da Fonte e Bordas",
+        "AutoAjuste da largura das colunas",
+        "Congelar Painéis"
+      ],
+      "passos": [
+        {
+          "titulo": "Abra o Excel, salve o arquivo e renomeie a aba",
+          "legenda": "Clique com o botão direito na aba (1) e escolha Renomear (2).",
+          "imagem": {
+            "alt": "Menu do botão direito sobre a aba Planilha1 com a opção Renomear destacada",
+            "guia": "Página Inicial",
+            "aba_ativa": "Planilha1",
+            "abas": [
+              "Planilha1"
+            ],
+            "colunas": "A:H",
+            "linhas": 8,
+            "celula_ativa": "A1",
+            "menu": {
+              "ancora": "aba:Planilha1",
+              "direcao": "cima",
+              "itens": [
+                "Inserir...",
+                "Excluir",
+                "Renomear",
+                "Mover ou Copiar...",
+                "Cor da Guia",
+                "Ocultar"
+              ],
+              "realce": [
+                "Renomear"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "aba:Planilha1",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "menu:Renomear",
+                "n": 2
+              }
+            ],
+            "nota": {
+              "texto": "Digite Cadastro e tecle Enter para confirmar o novo nome.",
+              "x": 620,
+              "y": 190
+            }
+          },
+          "instrucoes": [
+            "Abra o **Excel** e escolha **Pasta de trabalho em branco**.",
+            "Salve logo no início: [[Ctrl]]+[[B]] (ou Arquivo → Salvar como) com o nome `ESTOQUE-NOME-SOBRENOME`, trocando pelo seu nome.",
+            "Clique com o **botão direito** na aba `Planilha1`, no rodapé da tela (1).",
+            "Escolha **Renomear** (2), digite `Cadastro` e tecle [[Enter]]."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Salve ao terminar cada questão com [[Ctrl]]+[[B]]. Se o computador travar, você não perde o trabalho."
+            },
+            {
+              "tipo": "libre",
+              "texto": "Clique com o botão direito na aba → **Renomear planilha**."
+            }
+          ]
+        },
+        {
+          "titulo": "Digite os títulos das colunas",
+          "legenda": "Comece em A1 (1) e termine em G1 (2), usando Tab entre as colunas.",
+          "imagem": {
+            "alt": "Linha 1 da aba Cadastro com os sete títulos digitados",
+            "guia": "Página Inicial",
+            "aba_ativa": "Cadastro",
+            "abas": [
+              "Cadastro"
+            ],
+            "colunas": "A:G",
+            "larguras": {
+              "A": 78,
+              "B": 178,
+              "C": 92,
+              "D": 64,
+              "E": 112,
+              "F": 114,
+              "G": 106
+            },
+            "linhas": 6,
+            "vazias": [
+              "A2:K16",
+              "H1:K1"
+            ],
+            "celula_ativa": "G1",
+            "formula": "Saldo Inicial",
+            "selecao": "G1",
+            "marcas": [
+              {
+                "alvo": "A1",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "G1",
+                "n": 2,
+                "lado": "baixo"
+              }
+            ],
+            "setas": [
+              {
+                "de": "A1",
+                "para": "G1",
+                "texto": "Tab → Tab → Tab",
+                "curva": 60
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique na célula `A1` (1).",
+            "Digite os títulos, um em cada coluna, usando [[Tab]] para passar à próxima: `Código`, `Descrição`, `Categoria`, `Unidade`, `Custo Unitário`, `Estoque Mínimo`, `Saldo Inicial`.",
+            "Ao terminar em `G1` (2), tecle [[Enter]]."
+          ],
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "Escreva os títulos exatamente como estão, com acentos. O professor confere a estrutura da planilha."
+            }
+          ]
+        },
+        {
+          "titulo": "Digite os 15 materiais",
+          "legenda": "Digite linha por linha: Tab entre as colunas (1) e Enter no fim da linha (2).",
+          "imagem": {
+            "alt": "Aba Cadastro com os 15 materiais digitados, ainda sem formatação",
+            "guia": "Página Inicial",
+            "aba_ativa": "Cadastro",
+            "abas": [
+              "Cadastro"
+            ],
+            "colunas": "A:G",
+            "larguras": {
+              "A": 78,
+              "B": 178,
+              "C": 92,
+              "D": 64,
+              "E": 112,
+              "F": 114,
+              "G": 106
+            },
+            "linhas": 16,
+            "bruto": true,
+            "vazias": [
+              "H1:K16"
+            ],
+            "celula_ativa": "G16",
+            "formula": "7",
+            "selecao": "G16",
+            "marcas": [
+              {
+                "alvo": "A2",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "G2",
+                "n": 2
+              }
+            ],
+            "nota": {
+              "texto": "O custo 18,90 aparece como 18,9. É normal: a formatação em reais vem no passo 5.",
+              "x": 798,
+              "y": 300,
+              "largura": 152
+            }
+          },
+          "instrucoes": [
+            "Copie os 15 itens da tabela **Dados para digitar** (na capa da atividade) nas linhas 2 a 16.",
+            "Digite o custo com **vírgula** (ex.: `18,90`) e as quantidades sem ponto de milhar (ex.: `1200`).",
+            "Use [[Tab]] entre as colunas (1) e [[Enter]] no fim de cada linha (2): o Excel volta sozinho para a coluna A da linha de baixo."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Confira a tabela da capa com calma. Um número errado aqui muda os resultados das próximas questões."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "Os números ficaram alinhados à **direita**. Se algum ficou à esquerda, o Excel entendeu como texto: apague e digite de novo, sem espaços."
+            }
+          ]
+        },
+        {
+          "titulo": "Destaque o cabeçalho",
+          "legenda": "Com A1:G1 selecionado: Negrito (1), Cor de Preenchimento (2), Cor da Fonte (3) e Centralizar (4).",
+          "imagem": {
+            "alt": "Cabeçalho A1 a G1 selecionado com os botões Negrito, Cor de Preenchimento, Cor da Fonte e Centralizar destacados",
+            "guia": "Página Inicial",
+            "aba_ativa": "Cadastro",
+            "abas": [
+              "Cadastro"
+            ],
+            "colunas": "A:G",
+            "larguras": {
+              "A": 78,
+              "B": 178,
+              "C": 92,
+              "D": 64,
+              "E": 112,
+              "F": 114,
+              "G": 106
+            },
+            "linhas": 7,
+            "bruto": true,
+            "vazias": [
+              "H1:K16"
+            ],
+            "celula_ativa": "A1",
+            "formula": "Código",
+            "selecao": "A1:G1",
+            "estilos": [
+              {
+                "intervalo": "A1:G1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "marcas": [
+              {
+                "alvo": "botao:Negrito",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "botao:Cor de Preenchimento",
+                "n": 2,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "botao:Cor da Fonte",
+                "n": 3,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "botao:Centralizar",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Selecione `A1:G1`: clique em A1 e arraste até G1.",
+            "Clique em **Negrito** (1).",
+            "Clique na setinha de **Cor de Preenchimento** (2) e escolha um **azul-escuro**.",
+            "Clique na setinha de **Cor da Fonte** (3) e escolha **Branco**.",
+            "Clique em **Centralizar** (4)."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "No Excel em português, o Negrito é o botão **N**. Atalho: [[Ctrl]]+[[N]]."
+            }
+          ]
+        },
+        {
+          "titulo": "Formate o Custo Unitário como Moeda",
+          "legenda": "Selecione E2:E16 (1), escolha Moeda (2) com símbolo R$ (3) e clique em OK (4).",
+          "imagem": {
+            "alt": "Janela Formatar Células na aba Número com a categoria Moeda e o símbolo R$",
+            "guia": "Página Inicial",
+            "aba_ativa": "Cadastro",
+            "abas": [
+              "Cadastro"
+            ],
+            "colunas": "A:G",
+            "larguras": {
+              "A": 78,
+              "B": 178,
+              "C": 92,
+              "D": 64,
+              "E": 112,
+              "F": 114,
+              "G": 106
+            },
+            "linhas": 11,
+            "bruto": true,
+            "vazias": [
+              "H1:K16"
+            ],
+            "celula_ativa": "E2",
+            "formula": "18,9",
+            "selecao": "E2:E16",
+            "estilos": [
+              {
+                "intervalo": "A1:G1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "dialogo": {
+              "titulo": "Formatar Células",
+              "x": 486,
+              "y": 172,
+              "abas": [
+                "Número",
+                "Alinhamento",
+                "Fonte",
+                "Borda",
+                "Proteção"
+              ],
+              "aba_ativa": "Número",
+              "campos": [
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Categoria:",
+                  "valor": "Moeda"
+                },
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Casas decimais:",
+                  "valor": "2"
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "Símbolo:",
+                  "valor": "R$"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "rotulo": "Exemplo: R$ 18,90"
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "E2:E11",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "campo:Categoria:",
+                "n": 2
+              },
+              {
+                "alvo": "campo:Símbolo:",
+                "n": 3
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Selecione `E2:E16`, a coluna Custo Unitário sem o título (1).",
+            "Tecle [[Ctrl]]+[[1]] para abrir **Formatar Células**.",
+            "Na aba **Número**, escolha a categoria **Moeda** (2), com **2** casas decimais e símbolo **R$** (3).",
+            "Clique em **OK** (4)."
+          ],
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "Nunca digite `R$` dentro da célula. Isso transforma o número em texto e as contas param de funcionar."
+            },
+            {
+              "tipo": "dica",
+              "texto": "A formatação muda só a aparência: o valor guardado continua sendo 18,9."
+            }
+          ]
+        },
+        {
+          "titulo": "Deixe as quantidades como números inteiros",
+          "legenda": "Texto fica à esquerda (1) e número fica à direita (2).",
+          "imagem": {
+            "alt": "Colunas F e G selecionadas, com descrições alinhadas à esquerda e quantidades à direita",
+            "guia": "Página Inicial",
+            "aba_ativa": "Cadastro",
+            "abas": [
+              "Cadastro"
+            ],
+            "colunas": "A:G",
+            "larguras": {
+              "A": 78,
+              "B": 178,
+              "C": 92,
+              "D": 64,
+              "E": 112,
+              "F": 114,
+              "G": 106
+            },
+            "linhas": 11,
+            "vazias": [
+              "H1:K16"
+            ],
+            "celula_ativa": "F2",
+            "formula": "40",
+            "selecao": "F2:G16",
+            "estilos": [
+              {
+                "intervalo": "A1:G1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "marcas": [
+              {
+                "alvo": "B2:B11",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "F2:G11",
+                "n": 2,
+                "lado": "baixo"
+              }
+            ],
+            "nota": {
+              "texto": "Texto à esquerda, número à direita: o Excel entendeu o tipo do dado.",
+              "x": 798,
+              "y": 250,
+              "largura": 152
+            }
+          },
+          "instrucoes": [
+            "Selecione `F2:G16` (Estoque Mínimo e Saldo Inicial).",
+            "[[Ctrl]]+[[1]] → aba **Número** → categoria **Número**, com **0** casas decimais → **OK**.",
+            "Observe: as descrições ficam alinhadas à esquerda (1) e as quantidades à direita (2)."
+          ],
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "Nenhum número das colunas F e G aparece com vírgula ou alinhado à esquerda."
+            }
+          ]
+        },
+        {
+          "titulo": "Coloque bordas e ajuste a largura das colunas",
+          "legenda": "Bordas (1) → Todas as Bordas (2). Depois, duplo clique na divisa entre as letras (3).",
+          "imagem": {
+            "alt": "Menu do botão Bordas aberto com Todas as Bordas destacado e a divisa entre as colunas B e C marcada",
+            "guia": "Página Inicial",
+            "aba_ativa": "Cadastro",
+            "abas": [
+              "Cadastro"
+            ],
+            "colunas": "A:G",
+            "larguras": {
+              "A": 78,
+              "B": 178,
+              "C": 92,
+              "D": 64,
+              "E": 112,
+              "F": 114,
+              "G": 106
+            },
+            "linhas": 12,
+            "vazias": [
+              "H1:K16"
+            ],
+            "celula_ativa": "A1",
+            "formula": "Código",
+            "selecao": "A1:G16",
+            "bordas": [
+              "A1:G16"
+            ],
+            "estilos": [
+              {
+                "intervalo": "A1:G1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "menu": {
+              "ancora": "botao:Bordas",
+              "itens": [
+                "Borda Inferior",
+                "Borda Superior",
+                "Sem Borda",
+                "Todas as Bordas",
+                "Bordas Externas",
+                "Borda Dupla Inferior"
+              ],
+              "realce": [
+                "Todas as Bordas"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "botao:Bordas",
+                "n": 1,
+                "lado": "direita"
+              },
+              {
+                "alvo": "menu:Todas as Bordas",
+                "n": 2
+              },
+              {
+                "alvo": "divisa:B",
+                "n": 3,
+                "lado": "direita"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Selecione a tabela inteira: `A1:G16`.",
+            "Clique na setinha do botão **Bordas** (1) e escolha **Todas as Bordas** (2).",
+            "Para o AutoAjuste, aponte o mouse para a divisa entre as letras das colunas, por exemplo entre **B** e **C** (3), até o cursor virar ↔. Dê **duplo clique**.",
+            "Repita nas colunas em que o texto aparecer cortado."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Para ajustar tudo de uma vez: selecione as colunas **A até G** clicando nas letras e dê duplo clique em qualquer divisa entre elas."
+            }
+          ]
+        },
+        {
+          "titulo": "Congele a linha dos títulos",
+          "legenda": "Exibir (1) → Congelar Painéis (2) → Congelar Linha Superior (3). Veja que, ao rolar, a linha 1 continua no topo.",
+          "imagem": {
+            "alt": "Guia Exibir com o menu Congelar Painéis aberto e a planilha rolada mantendo a linha 1 visível",
+            "guia": "Exibir",
+            "aba_ativa": "Cadastro",
+            "abas": [
+              "Cadastro"
+            ],
+            "colunas": "A:G",
+            "larguras": {
+              "A": 78,
+              "B": 178,
+              "C": 92,
+              "D": 64,
+              "E": 112,
+              "F": 114,
+              "G": 106
+            },
+            "linhas_visiveis": [
+              1,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "vazias": [
+              "H1:K16"
+            ],
+            "celula_ativa": "A2",
+            "formula": "MAT-001",
+            "bordas": [
+              "A1:G16"
+            ],
+            "estilos": [
+              {
+                "intervalo": "A1:G1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "menu": {
+              "ancora": "botao:Congelar Painéis",
+              "itens": [
+                "Congelar Painéis",
+                "Congelar Linha Superior",
+                "Congelar Primeira Coluna"
+              ],
+              "realce": [
+                "Congelar Linha Superior"
+              ],
+              "largura": 260
+            },
+            "marcas": [
+              {
+                "alvo": "guia:Exibir",
+                "n": 1,
+                "lado": "cima"
+              },
+              {
+                "alvo": "botao:Congelar Painéis",
+                "n": 2,
+                "lado": "direita"
+              },
+              {
+                "alvo": "menu:Congelar Linha Superior",
+                "n": 3
+              }
+            ],
+            "nota": {
+              "texto": "Linha 1 parada no topo; linhas 9 a 16 rolando embaixo dela.",
+              "x": 798,
+              "y": 250,
+              "largura": 152
+            }
+          },
+          "instrucoes": [
+            "Clique na guia **Exibir** (1).",
+            "Clique em **Congelar Painéis** (2) e escolha **Congelar Linha Superior** (3).",
+            "Role a planilha para baixo com o mouse: o cabeçalho continua visível.",
+            "Salve: [[Ctrl]]+[[B]]."
+          ],
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "Ao rolar até a linha 40, os títulos da linha 1 continuam na tela."
+            },
+            {
+              "tipo": "libre",
+              "texto": "Exibir → **Congelar células** → **Congelar primeira linha**."
+            }
+          ]
+        }
+      ],
+      "criterios": [
+        [
+          "Os 15 materiais e os títulos digitados corretamente",
+          "0,5"
+        ],
+        [
+          "Custo Unitário em Moeda (R$) e colunas F e G como número inteiro",
+          "0,4"
+        ],
+        [
+          "Cabeçalho azul-escuro com fonte branca em negrito e bordas na tabela",
+          "0,3"
+        ],
+        [
+          "Linha superior congelada",
+          "0,3"
+        ]
+      ]
+    },
+    {
+      "id": "q2",
+      "numero": 2,
+      "arquivo": "QUESTAO-02-MOVIMENTACAO-E-VALIDACAO.html",
+      "titulo": "Movimentação com validação de dados",
+      "tempo": "30 min",
+      "pontos": "1,5",
+      "aba": "`Movimentacao` (nova)",
+      "slides_apoio": "Arquivo 4 — slides 22–27 e 24.1",
+      "objetivo": "Criar a aba `Movimentacao`, onde ficam as entradas e saídas de material, e **impedir erros de digitação** com validação de dados: listas suspensas e limites de quantidade.",
+      "voce_vai_usar": [
+        "Validação de Dados: Lista e Número inteiro",
+        "Mensagem de Entrada e Alerta de Erro (estilo Parar)",
+        "Caixa de Nome para selecionar intervalos",
+        "Formatar Células: Data"
+      ],
+      "passos": [
+        {
+          "titulo": "Crie a aba Movimentacao e os títulos",
+          "legenda": "Botão + (1) cria a aba. Digite os títulos em A1:H1 (2) e copie o visual com o Pincel (3).",
+          "imagem": {
+            "alt": "Nova aba Movimentacao com os oito títulos formatados e o botão Pincel de Formatação destacado",
+            "guia": "Página Inicial",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 7,
+            "vazias": [
+              "A2:H13"
+            ],
+            "celula_ativa": "H1",
+            "formula": "Qtd com Sinal",
+            "selecao": "A1:H1",
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "marcas": [
+              {
+                "alvo": "aba:+",
+                "n": 1,
+                "lado": "direita"
+              },
+              {
+                "alvo": "A1:H1",
+                "n": 2,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "botao:Pincel de Formatação",
+                "n": 3,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique no **+** ao lado da aba Cadastro (1) e renomeie a nova aba para `Movimentacao` (sem ç e sem til).",
+            "Em `A1:H1` digite (2): `Data`, `Código`, `Descrição`, `Tipo`, `Quantidade`, `Custo Unitário`, `Valor`, `Qtd com Sinal`.",
+            "Copie o visual do cabeçalho: na aba Cadastro, clique em `A1`, clique no **Pincel de Formatação** (3), volte à Movimentacao e arraste sobre `A1:H1`.",
+            "Ajuste a largura das colunas com duplo clique nas divisas."
+          ],
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "O nome da aba é **Movimentacao**, sem ç e sem til. As fórmulas das próximas questões usam exatamente esse nome."
+            }
+          ]
+        },
+        {
+          "titulo": "Crie a lista suspensa de códigos",
+          "legenda": "Caixa de Nome (1), guia Dados (2), Validação de Dados (3), Permitir: Lista (4) e Fonte (5).",
+          "imagem": {
+            "alt": "Janela Validação de Dados na aba Configurações com Permitir Lista e Fonte =Cadastro!$A$2:$A$16",
+            "guia": "Dados",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 11,
+            "vazias": [
+              "A2:H13"
+            ],
+            "celula_ativa": "B2",
+            "formula": "",
+            "selecao": "B2:B11",
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "dialogo": {
+              "titulo": "Validação de Dados",
+              "x": 460,
+              "y": 170,
+              "abas": [
+                "Configurações",
+                "Mensagem de Entrada",
+                "Alerta de Erro"
+              ],
+              "aba_ativa": "Configurações",
+              "campos": [
+                {
+                  "tipo": "combo",
+                  "rotulo": "Permitir:",
+                  "valor": "Lista"
+                },
+                {
+                  "tipo": "check",
+                  "rotulo": "Ignorar em branco",
+                  "marcado": true
+                },
+                {
+                  "tipo": "check",
+                  "rotulo": "Menu suspenso na célula",
+                  "marcado": true
+                },
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Fonte:",
+                  "valor": "=Cadastro!$A$2:$A$16"
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "caixa_nome",
+                "n": 1,
+                "lado": "direita"
+              },
+              {
+                "alvo": "guia:Dados",
+                "n": 2,
+                "lado": "cima"
+              },
+              {
+                "alvo": "botao:Validação de Dados",
+                "n": 3,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "campo:Permitir:",
+                "n": 4
+              },
+              {
+                "alvo": "campo:Fonte:",
+                "n": 5
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique na **Caixa de Nome** (à esquerda da barra de fórmulas), digite `B2:B100` e tecle [[Enter]] (1). O intervalo inteiro fica selecionado.",
+            "Guia **Dados** (2) → **Validação de Dados** (3).",
+            "Em **Permitir**, escolha **Lista** (4).",
+            "Em **Fonte**, digite a referência abaixo (5). **Ainda não clique em OK**: o próximo passo continua nesta janela."
+          ],
+          "formula": "=Cadastro!$A$2:$A$16",
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "A fonte é a lista de códigos da aba Cadastro. Os `$` travam o intervalo."
+            },
+            {
+              "tipo": "libre",
+              "texto": "Dados → **Validade** → Permitir: **Intervalo de células** → Origem: `$Cadastro.$A$2:$A$16`."
+            }
+          ]
+        },
+        {
+          "titulo": "Configure o alerta de erro",
+          "legenda": "Aba Alerta de Erro (1), estilo Parar (2), título (3), mensagem (4) e OK (5).",
+          "imagem": {
+            "alt": "Janela Validação de Dados na aba Alerta de Erro com estilo Parar e título Código inexistente",
+            "guia": "Dados",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 11,
+            "vazias": [
+              "A2:H13"
+            ],
+            "celula_ativa": "B2",
+            "formula": "",
+            "selecao": "B2:B11",
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "dialogo": {
+              "titulo": "Validação de Dados",
+              "x": 460,
+              "y": 170,
+              "abas": [
+                "Configurações",
+                "Mensagem de Entrada",
+                "Alerta de Erro"
+              ],
+              "aba_ativa": "Alerta de Erro",
+              "campos": [
+                {
+                  "tipo": "check",
+                  "rotulo": "Mostrar alerta de erro após dados inválidos",
+                  "marcado": true
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "Estilo:",
+                  "valor": "Parar"
+                },
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Título:",
+                  "valor": "Código inexistente"
+                },
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Mensagem de erro:",
+                  "valor": "Escolha um código da lista"
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "dlgaba:Alerta de Erro",
+                "n": 1,
+                "lado": "cima"
+              },
+              {
+                "alvo": "campo:Estilo:",
+                "n": 2
+              },
+              {
+                "alvo": "campo:Título:",
+                "n": 3
+              },
+              {
+                "alvo": "campo:Mensagem de erro:",
+                "n": 4
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 5,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Ainda na janela, clique na aba **Alerta de Erro** (1).",
+            "Estilo: **Parar** (2).",
+            "Título: `Código inexistente` (3).",
+            "Mensagem de erro: `Escolha um código da lista` (4).",
+            "Clique em **OK** (5)."
+          ],
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "Só o estilo **Parar** impede o erro. Os estilos **Aviso** e **Informações** deixam o dado errado entrar."
+            }
+          ]
+        },
+        {
+          "titulo": "Crie a lista Entrada/Saída na coluna Tipo",
+          "legenda": "Caixa de Nome (1), Permitir: Lista (2), Fonte com as duas opções (3) e OK (4).",
+          "imagem": {
+            "alt": "Validação de Dados com a Fonte Entrada;Saída para a coluna Tipo",
+            "guia": "Dados",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 11,
+            "vazias": [
+              "A2:H13"
+            ],
+            "celula_ativa": "D2",
+            "formula": "",
+            "selecao": "D2:D11",
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "dialogo": {
+              "titulo": "Validação de Dados",
+              "x": 460,
+              "y": 170,
+              "abas": [
+                "Configurações",
+                "Mensagem de Entrada",
+                "Alerta de Erro"
+              ],
+              "aba_ativa": "Configurações",
+              "campos": [
+                {
+                  "tipo": "combo",
+                  "rotulo": "Permitir:",
+                  "valor": "Lista"
+                },
+                {
+                  "tipo": "check",
+                  "rotulo": "Ignorar em branco",
+                  "marcado": true
+                },
+                {
+                  "tipo": "check",
+                  "rotulo": "Menu suspenso na célula",
+                  "marcado": true
+                },
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Fonte:",
+                  "valor": "Entrada;Saída"
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "caixa_nome",
+                "n": 1,
+                "lado": "direita"
+              },
+              {
+                "alvo": "campo:Permitir:",
+                "n": 2
+              },
+              {
+                "alvo": "campo:Fonte:",
+                "n": 3
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Na **Caixa de Nome**, digite `D2:D100` e tecle [[Enter]] (1).",
+            "Dados → **Validação de Dados** → Permitir: **Lista** (2).",
+            "Fonte: `Entrada;Saída` (3), com ponto e vírgula entre as opções.",
+            "Na aba Alerta de Erro, deixe o estilo **Parar** e clique em **OK** (4)."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "O ponto e vírgula separa as opções da lista. Escreva **Saída** com acento."
+            },
+            {
+              "tipo": "libre",
+              "texto": "Validade → Permitir: **Lista** → digite uma opção por linha (Entrada, depois Saída)."
+            }
+          ]
+        },
+        {
+          "titulo": "Limite a quantidade de 1 a 500",
+          "legenda": "Caixa de Nome (1), Número inteiro (2), mínimo (3), máximo (4) e aba Mensagem de Entrada (5).",
+          "imagem": {
+            "alt": "Validação de Dados com Permitir Número inteiro entre 1 e 500",
+            "guia": "Dados",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 11,
+            "vazias": [
+              "A2:H13"
+            ],
+            "celula_ativa": "E2",
+            "formula": "",
+            "selecao": "E2:E11",
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "dialogo": {
+              "titulo": "Validação de Dados",
+              "x": 20,
+              "y": 170,
+              "abas": [
+                "Configurações",
+                "Mensagem de Entrada",
+                "Alerta de Erro"
+              ],
+              "aba_ativa": "Configurações",
+              "campos": [
+                {
+                  "tipo": "combo",
+                  "rotulo": "Permitir:",
+                  "valor": "Número inteiro"
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "Dados:",
+                  "valor": "está entre"
+                },
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Mínimo:",
+                  "valor": "1"
+                },
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Máximo:",
+                  "valor": "500"
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "caixa_nome",
+                "n": 1,
+                "lado": "direita"
+              },
+              {
+                "alvo": "campo:Permitir:",
+                "n": 2
+              },
+              {
+                "alvo": "campo:Mínimo:",
+                "n": 3
+              },
+              {
+                "alvo": "campo:Máximo:",
+                "n": 4
+              },
+              {
+                "alvo": "dlgaba:Mensagem de Entrada",
+                "n": 5,
+                "lado": "cima"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Na **Caixa de Nome**, digite `E2:E100` e tecle [[Enter]] (1).",
+            "Dados → **Validação de Dados** → Permitir: **Número inteiro** (2) → Dados: **está entre**.",
+            "Mínimo `1` (3) e Máximo `500` (4).",
+            "Aba **Mensagem de Entrada** (5): Título `Quantidade`, Mensagem `Digite de 1 a 500`.",
+            "Aba **Alerta de Erro**: estilo **Parar**, título `Quantidade inválida`. Clique em **OK**."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "A Mensagem de Entrada aparece como um balão amarelo quando alguém clica na célula: ela orienta quem vai lançar os dados."
+            }
+          ]
+        },
+        {
+          "titulo": "Formate a coluna Data",
+          "legenda": "Caixa de Nome (1), categoria Data (2), tipo dia/mês/ano (3) e OK (4).",
+          "imagem": {
+            "alt": "Formatar Células com a categoria Data e o tipo 14/03/2012",
+            "guia": "Página Inicial",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 11,
+            "vazias": [
+              "A2:H13"
+            ],
+            "celula_ativa": "A2",
+            "formula": "",
+            "selecao": "A2:A11",
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "dialogo": {
+              "titulo": "Formatar Células",
+              "x": 460,
+              "y": 172,
+              "abas": [
+                "Número",
+                "Alinhamento",
+                "Fonte",
+                "Borda",
+                "Proteção"
+              ],
+              "aba_ativa": "Número",
+              "campos": [
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Categoria:",
+                  "valor": "Data"
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "Tipo:",
+                  "valor": "14/03/2012"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "rotulo": "Exemplo: 01/09/2026"
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "caixa_nome",
+                "n": 1,
+                "lado": "direita"
+              },
+              {
+                "alvo": "campo:Categoria:",
+                "n": 2
+              },
+              {
+                "alvo": "campo:Tipo:",
+                "n": 3
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Na **Caixa de Nome**, digite `A2:A100` e tecle [[Enter]] (1).",
+            "[[Ctrl]]+[[1]] → aba **Número** → categoria **Data** (2).",
+            "Tipo: `14/03/2012`, que é dia/mês/ano (3) → **OK** (4)."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Para o Excel, data é um número (dias contados desde 1900). Por isso ela fica alinhada à direita, como os números."
+            }
+          ]
+        },
+        {
+          "titulo": "Lance as 12 movimentações usando as listas",
+          "legenda": "Clique na setinha da célula (1) e escolha o código na lista (2).",
+          "imagem": {
+            "alt": "Lista suspensa aberta na célula B7 com os códigos de materiais",
+            "guia": "Página Inicial",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 13,
+            "vazias": [
+              "C2:C13",
+              "F2:H13",
+              "A8:H13",
+              "B7:H7"
+            ],
+            "celulas": {
+              "A7": "08/09/2026"
+            },
+            "celula_ativa": "B7",
+            "formula": "",
+            "selecao": "B7",
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "lista_celula": {
+              "celula": "B7",
+              "itens": [
+                "MAT-001",
+                "MAT-002",
+                "MAT-003",
+                "MAT-004",
+                "MAT-005",
+                "MAT-006"
+              ],
+              "destaque": "MAT-004"
+            },
+            "marcas": [
+              {
+                "alvo": "seta_lista",
+                "n": 1
+              },
+              {
+                "alvo": "lista:MAT-004",
+                "n": 2
+              }
+            ],
+            "nota": {
+              "texto": "A coluna Tipo também tem lista: Entrada ou Saída.",
+              "x": 640,
+              "y": 330,
+              "largura": 260
+            }
+          },
+          "instrucoes": [
+            "Lance as **12 movimentações** da capa, uma por linha, a partir da linha 2.",
+            "Data: digite no formato `01/09/2026`.",
+            "Código: clique na célula, clique na **setinha** (1) e escolha o código (2).",
+            "Tipo: use a setinha e escolha **Entrada** ou **Saída**. Quantidade: digite o número.",
+            "Deixe as colunas **C, F, G e H vazias**: elas serão preenchidas por fórmulas nas próximas questões."
+          ],
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "Você lançou 12 linhas (da 2 até a 13) e nenhuma mensagem de erro apareceu."
+            }
+          ]
+        },
+        {
+          "titulo": "Teste se a validação bloqueia erros",
+          "legenda": "Digite um código que não existe em B14 (1): o Excel bloqueia. Clique em Cancelar (2).",
+          "imagem": {
+            "alt": "Mensagem de erro Código inexistente ao digitar MAT-099 na célula B14",
+            "guia": "Página Inicial",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 14,
+            "vazias": [
+              "C2:C13",
+              "F2:H13"
+            ],
+            "celulas": {
+              "B14": "MAT-099"
+            },
+            "celula_ativa": "B14",
+            "formula": "MAT-099",
+            "selecao": "B14",
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "alerta": {
+              "tipo": "erro",
+              "titulo": "Código inexistente",
+              "mensagem": "Escolha um código da lista",
+              "botoes": [
+                "Repetir",
+                "Cancelar",
+                "Ajuda"
+              ],
+              "x": 330,
+              "y": 250
+            },
+            "marcas": [
+              {
+                "alvo": "B14",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "botaodlg:Cancelar",
+                "n": 2,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Em `B14`, digite `MAT-099` e tecle [[Enter]] (1): a janela **Código inexistente** deve aparecer.",
+            "Clique em **Cancelar** (2).",
+            "Em `E14`, digite `600` e tecle [[Enter]]: deve aparecer o alerta de quantidade. Clique em **Cancelar**.",
+            "Confirme que `B14` e `E14` ficaram vazias (selecione e aperte [[Delete]] se precisar).",
+            "Salve: [[Ctrl]]+[[B]]."
+          ],
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "As duas tentativas foram **bloqueadas**. Se o Excel aceitou `MAT-099` ou `600`, volte aos passos 3 e 5 e confira o estilo **Parar**."
+            }
+          ]
+        }
+      ],
+      "criterios": [
+        [
+          "Lista de códigos ligada ao Cadastro, com alerta Parar",
+          "0,5"
+        ],
+        [
+          "Lista Entrada/Saída na coluna Tipo",
+          "0,3"
+        ],
+        [
+          "Quantidade limitada a números inteiros de 1 a 500, com mensagem de entrada",
+          "0,4"
+        ],
+        [
+          "12 movimentações lançadas corretamente, com datas formatadas",
+          "0,3"
+        ]
+      ]
+    },
+    {
+      "id": "q3",
+      "numero": 3,
+      "arquivo": "QUESTAO-03-PROCV-SEERRO-INDICE-CORRESP.html",
+      "titulo": "Buscar dados com PROCV, SEERRO e ÍNDICE + CORRESP",
+      "tempo": "30 min",
+      "pontos": "2,0",
+      "aba": "`Movimentacao` e `Consulta` (nova)",
+      "slides_apoio": "Arquivo 5 — slides 9–11.1, 16–20 e 22–23.1",
+      "objetivo": "Fazer o Excel **buscar sozinho** a descrição e o custo de cada material pelo código, tratar códigos que não existem e fazer uma busca \"para a esquerda\", do nome até o código.",
+      "voce_vai_usar": [
+        "PROCV",
+        "SEERRO",
+        "Referência absoluta (`$`)",
+        "Alça de preenchimento",
+        "ÍNDICE e CORRESP"
+      ],
+      "passos": [
+        {
+          "titulo": "Busque a descrição com PROCV",
+          "legenda": "Clique em C2 (1) e digite a fórmula na barra (2). Cada cor é um argumento.",
+          "imagem": {
+            "alt": "Célula C2 com a fórmula PROCV colorida por argumento na barra de fórmulas",
+            "guia": "Fórmulas",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 8,
+            "vazias": [
+              "C3:C13",
+              "F2:H13"
+            ],
+            "celula_ativa": "C2",
+            "selecao": "C2",
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "formula_cores": [
+              [
+                "=SEERRO(PROCV(",
+                "#1f2937"
+              ],
+              [
+                "B2",
+                "#1565c0"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "Cadastro!$A$2:$G$16",
+                "#2e7d32"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "2",
+                "#c62828"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "0",
+                "#6a1b9a"
+              ],
+              [
+                ");\"Código não cadastrado\")",
+                "#1f2937"
+              ]
+            ],
+            "esquema": {
+              "caixas": [
+                {
+                  "id": "legenda",
+                  "x": 470,
+                  "y": 250,
+                  "w": 470,
+                  "h": 118,
+                  "titulo": "O que cada parte faz",
+                  "cor": "#004384",
+                  "linhas": [
+                    [
+                      "B2 (azul) → o código que vou procurar",
+                      "#1565c0"
+                    ],
+                    [
+                      "Cadastro!$A$2:$G$16 (verde) → onde procurar",
+                      "#2e7d32"
+                    ],
+                    [
+                      "2 (vermelho) → devolve a 2ª coluna: Descrição",
+                      "#c62828"
+                    ],
+                    [
+                      "0 (roxo) → busca exata",
+                      "#6a1b9a"
+                    ]
+                  ]
+                }
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "C2",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "barra",
+                "n": 2,
+                "lado": "cima",
+                "sem_contorno": true
+              }
+            ]
+          },
+          "instrucoes": [
+            "Na aba **Movimentacao**, clique em `C2` (1).",
+            "Digite a fórmula abaixo exatamente como está e tecle [[Enter]] (2).",
+            "Leia a fórmula por partes: **B2** é o código procurado; **Cadastro!$A$2:$G$16** é a tabela onde procurar; **2** é a coluna que volta (Descrição); **0** pede busca exata."
+          ],
+          "formula": "=SEERRO(PROCV(B2;Cadastro!$A$2:$G$16;2;0);\"Código não cadastrado\")",
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "Separe os argumentos com **ponto e vírgula** (;). O texto da mensagem precisa ficar entre aspas duplas."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "`C2` mostra o **nome de um material**, e não `#N/D` nem a mensagem de código não cadastrado."
+            }
+          ]
+        },
+        {
+          "titulo": "Busque o custo com PROCV",
+          "legenda": "Em F2 (1), a mesma busca, agora devolvendo a 5ª coluna do Cadastro.",
+          "imagem": {
+            "alt": "Célula F2 com o PROCV que devolve a quinta coluna, Custo Unitário",
+            "guia": "Fórmulas",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 9,
+            "vazias": [
+              "C3:C13",
+              "F3:H13",
+              "G2:H2"
+            ],
+            "celula_ativa": "F2",
+            "selecao": "F2",
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "formula_cores": [
+              [
+                "=SEERRO(PROCV(",
+                "#1f2937"
+              ],
+              [
+                "B2",
+                "#1565c0"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "Cadastro!$A$2:$G$16",
+                "#2e7d32"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "5",
+                "#c62828"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "0",
+                "#6a1b9a"
+              ],
+              [
+                ");0)",
+                "#1f2937"
+              ]
+            ],
+            "esquema": {
+              "caixas": [
+                {
+                  "id": "colunas",
+                  "x": 90,
+                  "y": 290,
+                  "w": 560,
+                  "h": 100,
+                  "titulo": "Contando as colunas da tabela do Cadastro",
+                  "cor": "#c62828",
+                  "linhas": [
+                    "1 Código · 2 Descrição · 3 Categoria · 4 Unidade",
+                    [
+                      "5 Custo Unitário  ← é esta que queremos",
+                      "#c62828"
+                    ],
+                    "6 Estoque Mínimo · 7 Saldo Inicial"
+                  ]
+                }
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "F2",
+                "n": 1,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique em `F2` (1) e digite a fórmula abaixo.",
+            "O **5** traz a 5ª coluna do Cadastro: **Custo Unitário**. Se o código não existir, o SEERRO devolve **0**, para não quebrar as contas.",
+            "Formate `F2` como **Moeda** ([[Ctrl]]+[[1]])."
+          ],
+          "formula": "=SEERRO(PROCV(B2;Cadastro!$A$2:$G$16;5;0);0)",
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Conte as colunas a partir da primeira coluna da tabela (Código = 1). Errar essa contagem é o erro mais comum do PROCV."
+            }
+          ]
+        },
+        {
+          "titulo": "Calcule o Valor da movimentação",
+          "legenda": "Em G2 (1): Quantidade (2) × Custo Unitário (3).",
+          "imagem": {
+            "alt": "Célula G2 com a fórmula =E2*F2",
+            "guia": "Página Inicial",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 8,
+            "vazias": [
+              "C3:C13",
+              "F3:H13",
+              "G2:H2"
+            ],
+            "celula_ativa": "G2",
+            "selecao": "G2",
+            "formula": "=E2*F2",
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "marcas": [
+              {
+                "alvo": "G2",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "E2",
+                "n": 2,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "F2",
+                "n": 3,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique em `G2` (1), digite `=E2*F2` e tecle [[Enter]]: multiplica a Quantidade (2) pelo Custo Unitário (3).",
+            "Formate `G2` como **Moeda**."
+          ],
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "`G2` mostra um valor em reais, maior que zero."
+            }
+          ]
+        },
+        {
+          "titulo": "Copie as fórmulas até a linha 13",
+          "legenda": "Duplo clique no quadradinho verde do canto da célula (1).",
+          "imagem": {
+            "alt": "Alça de preenchimento no canto inferior direito da célula C2 destacada",
+            "guia": "Página Inicial",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 13,
+            "vazias": [
+              "C3:C13",
+              "F3:H13",
+              "G2:H2"
+            ],
+            "celula_ativa": "C2",
+            "selecao": "C2",
+            "formula": "=SEERRO(PROCV(B2;Cadastro!$A$2:$G$16;2;0);\"Código não cadastrado\")",
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "marcas": [
+              {
+                "alvo": "alca:C2",
+                "n": 1
+              }
+            ],
+            "nota": {
+              "texto": "Duplo clique na alça: o Excel copia a fórmula até a última linha preenchida ao lado (linha 13).",
+              "x": 560,
+              "y": 330,
+              "largura": 300
+            }
+          },
+          "instrucoes": [
+            "Clique em `C2`.",
+            "Aponte para o **quadradinho verde** no canto inferior direito da célula (1): o cursor vira uma cruz preta **+**.",
+            "Dê **duplo clique**: a fórmula desce até a linha 13.",
+            "Repita com `F2` e com `G2`."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Outra forma: copie `C2` ([[Ctrl]]+[[C]]), selecione `C3:C13` e cole ([[Ctrl]]+[[V]])."
+            },
+            {
+              "tipo": "atencao",
+              "texto": "Graças aos `$`, a tabela do Cadastro **não anda** quando a fórmula é copiada. Sem eles, as últimas linhas dariam `#N/D`."
+            }
+          ]
+        },
+        {
+          "titulo": "Crie a aba Consulta e teste um código inexistente",
+          "legenda": "Digite o código em B1 (1). Em B2 (2), o PROCV com SEERRO mostra a descrição ou a mensagem.",
+          "imagem": {
+            "alt": "Aba Consulta com MAT-099 em B1 e a mensagem Código não cadastrado em B2",
+            "guia": "Fórmulas",
+            "aba_ativa": "Consulta",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta"
+            ],
+            "colunas": "A:F",
+            "larguras": {
+              "A": 110,
+              "B": 220
+            },
+            "linhas": 6,
+            "vazias": [
+              "A4:B5"
+            ],
+            "celulas": {
+              "B1": "MAT-099",
+              "B2": "Código não cadastrado"
+            },
+            "celula_ativa": "B2",
+            "selecao": "B2",
+            "formula": "=SEERRO(PROCV(B1;Cadastro!$A$2:$G$16;2;0);\"Código não cadastrado\")",
+            "marcas": [
+              {
+                "alvo": "B1",
+                "n": 1
+              },
+              {
+                "alvo": "B2",
+                "n": 2
+              }
+            ]
+          },
+          "instrucoes": [
+            "Crie a aba `Consulta` (botão **+**).",
+            "Digite `Código` em `A1` e `Descrição` em `A2`.",
+            "Em `B1`, digite `MAT-007` (1).",
+            "Em `B2` (2), digite a fórmula abaixo.",
+            "Troque `B1` para `MAT-099`: a mensagem **Código não cadastrado** deve aparecer. Depois volte `B1` para `MAT-007`."
+          ],
+          "formula": "=SEERRO(PROCV(B1;Cadastro!$A$2:$G$16;2;0);\"Código não cadastrado\")",
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "Com `MAT-007`, `B2` mostra o nome do material. Com `MAT-099`, mostra a mensagem, sem `#N/D`."
+            }
+          ]
+        },
+        {
+          "titulo": "Busque o código pela descrição com ÍNDICE + CORRESP",
+          "legenda": "Digite a descrição em B4 (1). Em B5 (2), CORRESP acha a posição e ÍNDICE pega o código.",
+          "imagem": {
+            "alt": "Esquema de ÍNDICE e CORRESP buscando o código a partir da descrição",
+            "guia": "Fórmulas",
+            "aba_ativa": "Consulta",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta"
+            ],
+            "colunas": "A:F",
+            "larguras": {
+              "A": 110,
+              "B": 220
+            },
+            "linhas": 6,
+            "vazias": [
+              "B5"
+            ],
+            "celula_ativa": "B5",
+            "selecao": "B5",
+            "formula_cores": [
+              [
+                "=SEERRO(ÍNDICE(",
+                "#1f2937"
+              ],
+              [
+                "Cadastro!$A$2:$A$16",
+                "#2e7d32"
+              ],
+              [
+                ";CORRESP(",
+                "#1f2937"
+              ],
+              [
+                "B4",
+                "#1565c0"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "Cadastro!$B$2:$B$16",
+                "#c62828"
+              ],
+              [
+                ";0));\"Descrição não encontrada\")",
+                "#1f2937"
+              ]
+            ],
+            "esquema": {
+              "caixas": [
+                {
+                  "id": "corresp",
+                  "x": 420,
+                  "y": 230,
+                  "w": 240,
+                  "h": 104,
+                  "titulo": "1º CORRESP",
+                  "cor": "#c62828",
+                  "linhas": [
+                    "Procura B4 na coluna B",
+                    "(Descrição) e diz em que",
+                    "posição da lista ela está"
+                  ]
+                },
+                {
+                  "id": "indice",
+                  "x": 700,
+                  "y": 230,
+                  "w": 240,
+                  "h": 104,
+                  "titulo": "2º ÍNDICE",
+                  "cor": "#2e7d32",
+                  "linhas": [
+                    "Vai à coluna A (Código)",
+                    "e pega o valor que está",
+                    "naquela mesma posição"
+                  ]
+                }
+              ]
+            },
+            "setas": [
+              {
+                "de": "caixa:corresp",
+                "para": "caixa:indice",
+                "texto": "posição",
+                "curva": 0
+              }
+            ],
+            "marcas": [
+              {
+                "alvo": "B4",
+                "n": 1
+              },
+              {
+                "alvo": "B5",
+                "n": 2
+              }
+            ]
+          },
+          "instrucoes": [
+            "Em `A4` digite `Descrição` e em `A5` digite `Código`.",
+            "Em `B4`, digite `Trena 5 m` (1), igual ao Cadastro.",
+            "Em `B5` (2), digite a fórmula abaixo.",
+            "Por que não PROCV? O PROCV só procura na **primeira** coluna da tabela e devolve colunas **à direita**. Aqui procuramos pela Descrição (coluna B) e queremos o Código (coluna A), que está **à esquerda**."
+          ],
+          "formula": "=SEERRO(ÍNDICE(Cadastro!$A$2:$A$16;CORRESP(B4;Cadastro!$B$2:$B$16;0));\"Descrição não encontrada\")",
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "**CORRESP** acha a posição; **ÍNDICE** pega o valor naquela posição. Juntas, elas buscam em qualquer direção."
+            },
+            {
+              "tipo": "libre",
+              "texto": "No LibreOffice Calc as funções também se chamam **ÍNDICE** e **CORRESP**."
+            }
+          ]
+        },
+        {
+          "titulo": "Descubra por que uma busca falha",
+          "legenda": "Um espaço no fim do código em B1 (1) já faz a busca em B2 (2) falhar.",
+          "imagem": {
+            "alt": "Código com espaço extra em B1 fazendo a busca de B2 mostrar Código não cadastrado",
+            "guia": "Fórmulas",
+            "aba_ativa": "Consulta",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta"
+            ],
+            "colunas": "A:F",
+            "larguras": {
+              "A": 110,
+              "B": 220
+            },
+            "linhas": 6,
+            "vazias": [
+              "B5"
+            ],
+            "celulas": {
+              "B1": "MAT-007␣",
+              "B2": "Código não cadastrado"
+            },
+            "celula_ativa": "B1",
+            "selecao": "B1",
+            "formula": "MAT-007 ",
+            "marcas": [
+              {
+                "alvo": "B1",
+                "n": 1
+              },
+              {
+                "alvo": "B2",
+                "n": 2
+              }
+            ],
+            "nota": {
+              "texto": "O símbolo ␣ representa o espaço digitado no fim. Para o Excel, MAT-007 e MAT-007␣ são códigos diferentes.",
+              "x": 500,
+              "y": 260,
+              "largura": 320
+            }
+          },
+          "instrucoes": [
+            "Em `B1` da Consulta, digite `MAT-007` com um **espaço no final** e tecle [[Enter]] (1).",
+            "Observe `B2` (2): a busca falha, porque o código com espaço é diferente do código do Cadastro.",
+            "Apague o espaço e veja a descrição voltar.",
+            "Salve: [[Ctrl]]+[[B]]."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Em planilhas vindas de outros sistemas, use `=ARRUMAR(A2)` para tirar espaços extras antes de buscar. Número guardado como texto também faz o PROCV falhar."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "As colunas C, F e G da Movimentacao estão preenchidas até a linha 13, sem `#N/D`."
+            }
+          ]
+        }
+      ],
+      "criterios": [
+        [
+          "PROCV com busca exata (0) e tabela travada com $ nas colunas C e F",
+          "0,6"
+        ],
+        [
+          "SEERRO tratando código inexistente",
+          "0,4"
+        ],
+        [
+          "Valor (=E2*F2) e fórmulas copiadas até a linha 13",
+          "0,4"
+        ],
+        [
+          "ÍNDICE + CORRESP devolvendo o código a partir da descrição",
+          "0,6"
+        ]
+      ]
+    },
+    {
+      "id": "q4",
+      "numero": 4,
+      "arquivo": "QUESTAO-04-SALDO-SE-FORMATACAO-CONDICIONAL.html",
+      "titulo": "Saldo, situação do item e formatação condicional",
+      "tempo": "35 min",
+      "pontos": "2,0",
+      "aba": "`Movimentacao` (coluna H) e `Cadastro` (colunas H a K)",
+      "slides_apoio": "Arquivo 4 — slides 13–15.1; Arquivo 5 — slides 26–31",
+      "objetivo": "Calcular o **saldo atual** de cada material a partir das movimentações, classificar a situação do estoque e deixar os alertas coloridos.",
+      "voce_vai_usar": [
+        "SE",
+        "SOMASE",
+        "SE aninhado",
+        "Formatação Condicional: Texto que Contém e Barras de Dados",
+        "Pincel de Formatação"
+      ],
+      "passos": [
+        {
+          "titulo": "Transforme saídas em números negativos",
+          "legenda": "Em H2 (1): Entrada fica positiva e Saída fica negativa.",
+          "imagem": {
+            "alt": "Coluna Qtd com Sinal com a fórmula SE em H2",
+            "guia": "Fórmulas",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 8,
+            "vazias": [
+              "G2:G13",
+              "H5:H13"
+            ],
+            "celula_ativa": "H2",
+            "selecao": "H2",
+            "formula": "=SE(D2=\"Entrada\";E2;-E2)",
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "ocultar_texto": [
+              "G"
+            ],
+            "marcas": [
+              {
+                "alvo": "H2",
+                "n": 1,
+                "lado": "baixo"
+              }
+            ],
+            "nota": {
+              "texto": "Assim, somar a coluna H de um material dá quanto o estoque dele mudou no mês.",
+              "x": 560,
+              "y": 330,
+              "largura": 300
+            }
+          },
+          "instrucoes": [
+            "Na **Movimentacao**, clique em `H2` (1) e digite a fórmula abaixo.",
+            "Copie até `H13` com duplo clique na alça.",
+            "Leia assim: **se** o Tipo for Entrada, repete a quantidade; **senão** (Saída), coloca o sinal de menos."
+          ],
+          "formula": "=SE(D2=\"Entrada\";E2;-E2)",
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "O texto `\"Entrada\"` precisa estar entre aspas e escrito igual à lista da coluna Tipo."
+            }
+          ]
+        },
+        {
+          "titulo": "Crie as novas colunas do Cadastro",
+          "legenda": "Títulos em H1:K1 (1) e o visual copiado com o Pincel (2).",
+          "imagem": {
+            "alt": "Aba Cadastro com os títulos Movimentado, Saldo Atual, Valor em Estoque e Situação",
+            "guia": "Página Inicial",
+            "aba_ativa": "Cadastro",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 74,
+              "B": 150,
+              "C": 86,
+              "D": 58,
+              "E": 108,
+              "F": 110,
+              "G": 100,
+              "H": 104,
+              "I": 92,
+              "J": 124,
+              "K": 78
+            },
+            "linhas": 7,
+            "vazias": [
+              "H2:K16"
+            ],
+            "celula_ativa": "K1",
+            "formula": "Situação",
+            "selecao": "H1:K1",
+            "bordas": [
+              "A1:G16"
+            ],
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "marcas": [
+              {
+                "alvo": "H1:K1",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "botao:Pincel de Formatação",
+                "n": 2,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Volte à aba **Cadastro**.",
+            "Em `H1:K1` digite (1): `Movimentado`, `Saldo Atual`, `Valor em Estoque`, `Situação`.",
+            "Clique em `G1`, clique no **Pincel de Formatação** (2) e arraste sobre `H1:K1`."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Depois ajuste a largura das colunas novas com duplo clique na divisa entre as letras."
+            }
+          ]
+        },
+        {
+          "titulo": "Some a movimentação de cada material com SOMASE",
+          "legenda": "Em H2 (1): o SOMASE procura o código na Movimentacao e soma a coluna Qtd com Sinal.",
+          "imagem": {
+            "alt": "Fórmula SOMASE em H2 com os três argumentos coloridos e esquema de funcionamento",
+            "guia": "Fórmulas",
+            "aba_ativa": "Cadastro",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 74,
+              "B": 150,
+              "C": 86,
+              "D": 58,
+              "E": 108,
+              "F": 110,
+              "G": 100,
+              "H": 104,
+              "I": 92,
+              "J": 124,
+              "K": 78
+            },
+            "linhas": 8,
+            "vazias": [
+              "H2:K16"
+            ],
+            "celula_ativa": "H2",
+            "selecao": "H2",
+            "bordas": [
+              "A1:G16"
+            ],
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "formula_cores": [
+              [
+                "=SOMASE(",
+                "#1f2937"
+              ],
+              [
+                "Movimentacao!$B$2:$B$100",
+                "#1565c0"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "A2",
+                "#2e7d32"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "Movimentacao!$H$2:$H$100",
+                "#c62828"
+              ],
+              [
+                ")",
+                "#1f2937"
+              ]
+            ],
+            "esquema": {
+              "caixas": [
+                {
+                  "id": "somase",
+                  "x": 330,
+                  "y": 262,
+                  "w": 610,
+                  "h": 112,
+                  "titulo": "Como o SOMASE pensa",
+                  "cor": "#004384",
+                  "linhas": [
+                    [
+                      "1. Olha a coluna B da Movimentacao (códigos)",
+                      "#1565c0"
+                    ],
+                    [
+                      "2. Separa só as linhas com o mesmo código de A2",
+                      "#2e7d32"
+                    ],
+                    [
+                      "3. Soma a coluna H (Qtd com Sinal) dessas linhas",
+                      "#c62828"
+                    ]
+                  ]
+                }
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "H2",
+                "n": 1,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Em `H2` (1), digite a fórmula abaixo.",
+            "O SOMASE soma, na Movimentacao, só as quantidades do material daquela linha: entradas somam e saídas diminuem."
+          ],
+          "formula": "=SOMASE(Movimentacao!$B$2:$B$100;A2;Movimentacao!$H$2:$H$100)",
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "Os `$` travam os intervalos da Movimentacao. O `A2` fica **sem** `$` para virar A3, A4... quando a fórmula for copiada."
+            },
+            {
+              "tipo": "dica",
+              "texto": "Material sem movimentação no mês dá **0**. Está certo!"
+            }
+          ]
+        },
+        {
+          "titulo": "Calcule o Saldo Atual e o Valor em Estoque",
+          "legenda": "Saldo Atual em I2 (1) e Valor em Estoque em J2 (2). Depois copie H2:J2 até a linha 16.",
+          "imagem": {
+            "alt": "Fórmulas do Saldo Atual em I2 e do Valor em Estoque em J2",
+            "guia": "Página Inicial",
+            "aba_ativa": "Cadastro",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 74,
+              "B": 150,
+              "C": 86,
+              "D": 58,
+              "E": 108,
+              "F": 110,
+              "G": 100,
+              "H": 104,
+              "I": 92,
+              "J": 124,
+              "K": 78
+            },
+            "linhas": 7,
+            "vazias": [
+              "H2:K16"
+            ],
+            "celula_ativa": "J2",
+            "selecao": "J2",
+            "formula": "=I2*E2",
+            "bordas": [
+              "A1:G16"
+            ],
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "marcas": [
+              {
+                "alvo": "I2",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "J2",
+                "n": 2,
+                "lado": "baixo"
+              }
+            ],
+            "nota": {
+              "texto": "I2 = Saldo Inicial (G2) + Movimentado (H2)\nJ2 = Saldo Atual (I2) × Custo Unitário (E2)",
+              "x": 560,
+              "y": 262,
+              "largura": 360
+            }
+          },
+          "instrucoes": [
+            "Em `I2` (1): Saldo Inicial + Movimentado.",
+            "Em `J2` (2): Saldo Atual × Custo Unitário. Formate como **Moeda**.",
+            "Selecione `H2:J2` e dê duplo clique na alça para copiar até a linha 16."
+          ],
+          "formula": "I2:  =G2+H2\nJ2:  =I2*E2",
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "As colunas H, I e J estão preenchidas nas 15 linhas e o Valor em Estoque aparece em R$."
+            }
+          ]
+        },
+        {
+          "titulo": "Classifique a situação com SE aninhado",
+          "legenda": "O Excel faz duas perguntas, uma de cada vez, e escreve Crítico, Atenção ou Normal.",
+          "imagem": {
+            "alt": "Fluxograma do SE aninhado: abaixo do mínimo é Crítico, até 1,5 vez o mínimo é Atenção, acima é Normal",
+            "guia": "Fórmulas",
+            "aba_ativa": "Cadastro",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta"
+            ],
+            "somente_esquema": true,
+            "altura_esquema": 330,
+            "celula_ativa": "K2",
+            "formula": "=SE(I2<F2;\"Crítico\";SE(I2<=F2*1,5;\"Atenção\";\"Normal\"))",
+            "esquema": {
+              "caixas": [
+                {
+                  "id": "p1",
+                  "x": 40,
+                  "y": 180,
+                  "w": 300,
+                  "h": 84,
+                  "titulo": "Pergunta 1",
+                  "cor": "#004384",
+                  "linhas": [
+                    "O Saldo Atual (I2) é MENOR",
+                    "que o Estoque Mínimo (F2)?"
+                  ]
+                },
+                {
+                  "id": "r1",
+                  "x": 450,
+                  "y": 186,
+                  "w": 220,
+                  "h": 70,
+                  "titulo": "SIM",
+                  "cor": "#c62828",
+                  "linhas": [
+                    "escreve \"Crítico\""
+                  ]
+                },
+                {
+                  "id": "p2",
+                  "x": 40,
+                  "y": 300,
+                  "w": 300,
+                  "h": 84,
+                  "titulo": "Pergunta 2 (se NÃO)",
+                  "cor": "#004384",
+                  "linhas": [
+                    "O saldo é ATÉ 1,5 vez o",
+                    "mínimo? (I2 <= F2*1,5)"
+                  ]
+                },
+                {
+                  "id": "r2",
+                  "x": 450,
+                  "y": 306,
+                  "w": 220,
+                  "h": 70,
+                  "titulo": "SIM",
+                  "cor": "#b26a00",
+                  "linhas": [
+                    "escreve \"Atenção\""
+                  ]
+                },
+                {
+                  "id": "r3",
+                  "x": 450,
+                  "y": 412,
+                  "w": 220,
+                  "h": 70,
+                  "titulo": "NÃO",
+                  "cor": "#2e7d32",
+                  "linhas": [
+                    "escreve \"Normal\""
+                  ]
+                },
+                {
+                  "id": "ex",
+                  "x": 710,
+                  "y": 186,
+                  "w": 230,
+                  "h": 150,
+                  "titulo": "Exemplo",
+                  "cor": "#6a1b9a",
+                  "linhas": [
+                    "Mínimo = 40",
+                    "abaixo de 40 → Crítico",
+                    "de 40 até 60 → Atenção",
+                    "acima de 60 → Normal"
+                  ]
+                }
+              ]
+            },
+            "setas": [
+              {
+                "de": "caixa:p1",
+                "para": "caixa:r1",
+                "texto": "sim",
+                "curva": 0
+              },
+              {
+                "de": "caixa:p1",
+                "para": "caixa:p2",
+                "texto": "não",
+                "curva": 0
+              },
+              {
+                "de": "caixa:p2",
+                "para": "caixa:r2",
+                "texto": "sim",
+                "curva": 0
+              },
+              {
+                "de": "caixa:p2",
+                "para": "caixa:r3",
+                "texto": "não",
+                "curva": 30
+              }
+            ]
+          },
+          "instrucoes": [
+            "Em `K2`, digite a fórmula abaixo e copie até `K16`.",
+            "O Excel faz as perguntas **na ordem**: primeiro testa se o saldo está abaixo do mínimo; só se **não** estiver, testa se está até 1,5 vez o mínimo; se também não, o item está Normal."
+          ],
+          "formula": "=SE(I2<F2;\"Crítico\";SE(I2<=F2*1,5;\"Atenção\";\"Normal\"))",
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "Conte os parênteses: são **dois** SE, então a fórmula termina com `))`."
+            },
+            {
+              "tipo": "dica",
+              "texto": "Escreva as palavras com acento, iguais às do quadro: a formatação do próximo passo procura exatamente esses textos."
+            }
+          ]
+        },
+        {
+          "titulo": "Pinte a situação com formatação condicional",
+          "legenda": "Formatação Condicional (1) → Realçar Regras → Texto que Contém: digite a palavra (2), escolha a cor (3) e OK (4).",
+          "imagem": {
+            "alt": "Janela Texto que Contém com Crítico e preenchimento vermelho, e a coluna Situação colorida",
+            "guia": "Página Inicial",
+            "aba_ativa": "Cadastro",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 74,
+              "B": 150,
+              "C": 86,
+              "D": 58,
+              "E": 108,
+              "F": 110,
+              "G": 100,
+              "H": 104,
+              "I": 92,
+              "J": 124,
+              "K": 78
+            },
+            "linhas": 8,
+            "celula_ativa": "K2",
+            "selecao": "K2:K16",
+            "formula": "=SE(I2<F2;\"Crítico\";SE(I2<=F2*1,5;\"Atenção\";\"Normal\"))",
+            "ocultar_texto": [
+              "H",
+              "I",
+              "J"
+            ],
+            "cores_situacao": "K",
+            "bordas": [
+              "A1:K16"
+            ],
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "dialogo": {
+              "titulo": "Texto que Contém",
+              "x": 20,
+              "y": 170,
+              "campos": [
+                {
+                  "tipo": "paragrafo",
+                  "rotulo": "Formatar células que contêm o texto:"
+                },
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Texto:",
+                  "valor": "Crítico"
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "com:",
+                  "valor": "Preench. Vermelho Claro"
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "botao:Formatação Condicional",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "campo:Texto:",
+                "n": 2
+              },
+              {
+                "alvo": "campo:com:",
+                "n": 3
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Selecione `K2:K16`.",
+            "Página Inicial → **Formatação Condicional** (1) → **Realçar Regras das Células** → **Texto que Contém**.",
+            "Digite `Crítico` (2), escolha **Preenchimento Vermelho Claro e Texto Vermelho Escuro** (3) e clique em **OK** (4).",
+            "Repita com `Atenção` → **Preenchimento Amarelo e Texto Amarelo Escuro**.",
+            "Repita com `Normal` → **Preenchimento Verde e Texto Verde Escuro**."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "A cor muda sozinha: se entrar uma nova saída e o saldo cair, a situação e a cor mudam na hora."
+            },
+            {
+              "tipo": "libre",
+              "texto": "Formatar → **Condicional** → **Condição** → escolha **contém**, digite a palavra e aplique um estilo de cor vermelha, amarela ou verde."
+            }
+          ]
+        },
+        {
+          "titulo": "Mostre o Valor em Estoque com barras de dados",
+          "legenda": "Formatação Condicional (1) → Barras de Dados (2). A barra mais comprida é o maior valor (3).",
+          "imagem": {
+            "alt": "Menu Formatação Condicional com Barras de Dados e a coluna Valor em Estoque com barras verdes",
+            "guia": "Página Inicial",
+            "aba_ativa": "Cadastro",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 74,
+              "B": 150,
+              "C": 86,
+              "D": 58,
+              "E": 108,
+              "F": 110,
+              "G": 100,
+              "H": 104,
+              "I": 92,
+              "J": 124,
+              "K": 78
+            },
+            "linhas": 14,
+            "celula_ativa": "J2",
+            "selecao": "J2:J16",
+            "formula": "=I2*E2",
+            "ocultar_texto": [
+              "H",
+              "I",
+              "J",
+              "K"
+            ],
+            "barras": "J",
+            "bordas": [
+              "A1:K16"
+            ],
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "menu": {
+              "ancora": "botao:Formatação Condicional",
+              "itens": [
+                "Realçar Regras das Células ▸",
+                "Regras de Primeiros/Últimos ▸",
+                "Barras de Dados ▸",
+                "Escalas de Cor ▸",
+                "Nova Regra..."
+              ],
+              "realce": [
+                "Barras de Dados ▸"
+              ],
+              "largura": 250
+            },
+            "marcas": [
+              {
+                "alvo": "botao:Formatação Condicional",
+                "n": 1,
+                "lado": "direita"
+              },
+              {
+                "alvo": "menu:Barras de Dados ▸",
+                "n": 2,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "J8:J14",
+                "n": 3,
+                "lado": "esquerda"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Selecione `J2:J16` (Valor em Estoque).",
+            "**Formatação Condicional** (1) → **Barras de Dados** (2) → escolha a barra **verde** de preenchimento sólido.",
+            "Observe (3): a barra mais comprida é o material que mais \"prende\" dinheiro no estoque."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Barras de dados são um mini-gráfico dentro da célula: mostram o maior e o menor valor sem precisar ler os números."
+            }
+          ]
+        },
+        {
+          "titulo": "Teste a automação da planilha",
+          "legenda": "Troque a quantidade de E2 (1) e veja o Cadastro mudar sozinho.",
+          "imagem": {
+            "alt": "Quantidade da célula E2 da Movimentacao alterada para 50 como teste",
+            "guia": "Página Inicial",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 8,
+            "celulas": {
+              "E2": "50"
+            },
+            "ocultar_texto": [
+              "G",
+              "H"
+            ],
+            "celula_ativa": "E2",
+            "selecao": "E2",
+            "formula": "50",
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "marcas": [
+              {
+                "alvo": "E2",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "aba:Cadastro",
+                "n": 2,
+                "lado": "esquerda"
+              }
+            ],
+            "nota": {
+              "texto": "Troque para 50, olhe o Cadastro (2) e depois volte para 20.",
+              "x": 560,
+              "y": 300,
+              "largura": 300
+            }
+          },
+          "instrucoes": [
+            "Na **Movimentacao**, troque a quantidade de `E2` de `20` para `50` (1).",
+            "Vá ao **Cadastro** (2) e observe o Saldo Atual, o Valor em Estoque e a Situação da Luva de vaqueta: eles mudaram sozinhos.",
+            "Volte `E2` para **20**.",
+            "Salve: [[Ctrl]]+[[B]]."
+          ],
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "Mudar a movimentação altera o Cadastro na hora. Se nada mudou, confira o SOMASE do passo 3."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "Na coluna Situação aparecem as três palavras (Crítico, Atenção e Normal), cada uma com a sua cor."
+            }
+          ]
+        }
+      ],
+      "criterios": [
+        [
+          "Qtd com Sinal com SE (Entrada positiva, Saída negativa)",
+          "0,3"
+        ],
+        [
+          "SOMASE correto, com os intervalos travados",
+          "0,5"
+        ],
+        [
+          "Saldo Atual e Valor em Estoque (Moeda)",
+          "0,3"
+        ],
+        [
+          "SE aninhado classificando Crítico, Atenção e Normal",
+          "0,5"
+        ],
+        [
+          "Formatação condicional nas três situações e barras de dados",
+          "0,4"
+        ]
+      ]
+    },
+    {
+      "id": "q5",
+      "numero": 5,
+      "arquivo": "QUESTAO-05-RESUMO-CONTSE-SOMASE-PROCH.html",
+      "titulo": "Resumo gerencial com CONT.SE, SOMASE e PROCH",
+      "tempo": "25 min",
+      "pontos": "1,5",
+      "aba": "`Resumo` (nova)",
+      "slides_apoio": "Arquivo 5 — slides 14–15 e 28–31",
+      "objetivo": "Montar um **resumo para o gerente** que responde: quantos itens estão em cada situação, quanto dinheiro há em cada categoria e se as saídas do mês ficaram dentro do limite.",
+      "voce_vai_usar": [
+        "CONT.SE",
+        "SOMASE",
+        "SOMA",
+        "Formato Porcentagem",
+        "PROCH",
+        "SE"
+      ],
+      "passos": [
+        {
+          "titulo": "Crie a aba Resumo e monte os quadros",
+          "legenda": "Nova aba (1), quadro de situação (2) e quadro de categorias (3).",
+          "imagem": {
+            "alt": "Aba Resumo com os rótulos dos quadros de situação e de categorias",
+            "guia": "Página Inicial",
+            "aba_ativa": "Resumo",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo"
+            ],
+            "colunas": "A:G",
+            "larguras": {
+              "A": 200,
+              "B": 140,
+              "C": 110
+            },
+            "linhas": 13,
+            "vazias": [
+              "B3:C6",
+              "B9:C13"
+            ],
+            "celula_ativa": "A1",
+            "formula": "RESUMO DO ESTOQUE — SETEMBRO/2026",
+            "estilos": [
+              {
+                "intervalo": "A2:B2",
+                "tipo": "cabecalho"
+              },
+              {
+                "intervalo": "A8:C8",
+                "tipo": "cabecalho"
+              }
+            ],
+            "bordas": [
+              "A2:B6",
+              "A8:C13"
+            ],
+            "marcas": [
+              {
+                "alvo": "aba:+",
+                "n": 1
+              },
+              {
+                "alvo": "A2:B6",
+                "n": 2
+              },
+              {
+                "alvo": "A8:C13",
+                "n": 3
+              }
+            ]
+          },
+          "instrucoes": [
+            "Crie a aba `Resumo` (botão **+**) (1). Em `A1` digite `RESUMO DO ESTOQUE — SETEMBRO/2026`.",
+            "Quadro de situação (2): `A2` Situação, `B2` Qtd. de itens, `A3` Crítico, `A4` Atenção, `A5` Normal, `A6` Total.",
+            "Quadro de categorias (3): `A8` Categoria, `B8` Valor em Estoque, `C8` % do Total, `A9` EPI, `A10` Fixação, `A11` Elétrico, `A12` Ferramentas, `A13` Total.",
+            "Formate os títulos dos quadros com o **Pincel de Formatação** e coloque bordas."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Use a imagem como modelo: com cada rótulo na célula certa, as fórmulas dos próximos passos funcionam do jeito que estão escritas."
+            }
+          ]
+        },
+        {
+          "titulo": "Conte os itens de cada situação com CONT.SE",
+          "legenda": "Em B3 (1), o CONT.SE conta quantas vezes a palavra de A3 aparece na coluna Situação. Em B6 (2), o total.",
+          "imagem": {
+            "alt": "Fórmula CONT.SE em B3 contando a situação da coluna K do Cadastro",
+            "guia": "Fórmulas",
+            "aba_ativa": "Resumo",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo"
+            ],
+            "colunas": "A:G",
+            "larguras": {
+              "A": 200,
+              "B": 140,
+              "C": 110
+            },
+            "linhas": 7,
+            "vazias": [
+              "B3:C6",
+              "B9:C13"
+            ],
+            "celula_ativa": "B3",
+            "selecao": "B3",
+            "formula_cores": [
+              [
+                "=CONT.SE(",
+                "#1f2937"
+              ],
+              [
+                "Cadastro!$K$2:$K$16",
+                "#1565c0"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "A3",
+                "#2e7d32"
+              ],
+              [
+                ")",
+                "#1f2937"
+              ]
+            ],
+            "estilos": [
+              {
+                "intervalo": "A2:B2",
+                "tipo": "cabecalho"
+              }
+            ],
+            "bordas": [
+              "A2:B6"
+            ],
+            "esquema": {
+              "caixas": [
+                {
+                  "id": "contse",
+                  "x": 470,
+                  "y": 230,
+                  "w": 470,
+                  "h": 94,
+                  "titulo": "CONT.SE responde: quantas vezes?",
+                  "cor": "#004384",
+                  "linhas": [
+                    [
+                      "Onde contar: coluna Situação do Cadastro",
+                      "#1565c0"
+                    ],
+                    [
+                      "O que contar: a palavra escrita em A3",
+                      "#2e7d32"
+                    ]
+                  ]
+                }
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "B3",
+                "n": 1
+              },
+              {
+                "alvo": "B6",
+                "n": 2
+              }
+            ]
+          },
+          "instrucoes": [
+            "Em `B3` (1), digite a fórmula abaixo.",
+            "Copie para `B4` e `B5`: o critério `A3` vira A4 (Atenção) e A5 (Normal).",
+            "Em `B6` (2), digite `=SOMA(B3:B5)`."
+          ],
+          "formula": "=CONT.SE(Cadastro!$K$2:$K$16;A3)",
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "O total em `B6` é igual à quantidade de materiais cadastrados na aba Cadastro."
+            }
+          ]
+        },
+        {
+          "titulo": "Some o valor de cada categoria com SOMASE",
+          "legenda": "SOMASE em B9 (1), total em B13 (2) e percentual em C9 (3).",
+          "imagem": {
+            "alt": "Fórmula SOMASE em B9 somando o Valor em Estoque da categoria EPI",
+            "guia": "Fórmulas",
+            "aba_ativa": "Resumo",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo"
+            ],
+            "colunas": "A:G",
+            "larguras": {
+              "A": 200,
+              "B": 140,
+              "C": 110
+            },
+            "linhas": 13,
+            "vazias": [
+              "B3:C6",
+              "B9:C13"
+            ],
+            "celula_ativa": "B9",
+            "selecao": "B9",
+            "formula_cores": [
+              [
+                "=SOMASE(",
+                "#1f2937"
+              ],
+              [
+                "Cadastro!$C$2:$C$16",
+                "#1565c0"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "A9",
+                "#2e7d32"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "Cadastro!$J$2:$J$16",
+                "#c62828"
+              ],
+              [
+                ")",
+                "#1f2937"
+              ]
+            ],
+            "estilos": [
+              {
+                "intervalo": "A2:B2",
+                "tipo": "cabecalho"
+              },
+              {
+                "intervalo": "A8:C8",
+                "tipo": "cabecalho"
+              }
+            ],
+            "bordas": [
+              "A2:B6",
+              "A8:C13"
+            ],
+            "marcas": [
+              {
+                "alvo": "B9",
+                "n": 1
+              },
+              {
+                "alvo": "B13",
+                "n": 2
+              },
+              {
+                "alvo": "C9",
+                "n": 3
+              }
+            ]
+          },
+          "instrucoes": [
+            "Em `B9` (1), digite a fórmula abaixo, copie até `B12` e formate como **Moeda**.",
+            "Em `B13` (2): `=SOMA(B9:B12)`.",
+            "Em `C9` (3): `=B9/$B$13`. Formate como **Porcentagem** com 1 casa decimal e copie até `C13`."
+          ],
+          "formula": "=SOMASE(Cadastro!$C$2:$C$16;A9;Cadastro!$J$2:$J$16)",
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "O `$B$13` fica travado porque todas as categorias são divididas pelo **mesmo** total."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "`C13` mostra 100%."
+            }
+          ]
+        },
+        {
+          "titulo": "Calcule o valor das saídas do mês",
+          "legenda": "Em B16 (1): soma o Valor da Movimentacao só nas linhas de Saída.",
+          "imagem": {
+            "alt": "Fórmula SOMASE em B16 somando o valor das saídas da Movimentacao",
+            "guia": "Fórmulas",
+            "aba_ativa": "Resumo",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo"
+            ],
+            "colunas": "A:G",
+            "larguras": {
+              "A": 200,
+              "B": 140,
+              "C": 110
+            },
+            "linhas_visiveis": [
+              1,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            "vazias": [
+              "B3:C6",
+              "B9:C13",
+              "B16"
+            ],
+            "celula_ativa": "B16",
+            "selecao": "B16",
+            "formula_cores": [
+              [
+                "=SOMASE(",
+                "#1f2937"
+              ],
+              [
+                "Movimentacao!$D$2:$D$100",
+                "#1565c0"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "\"Saída\"",
+                "#2e7d32"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "Movimentacao!$G$2:$G$100",
+                "#c62828"
+              ],
+              [
+                ")",
+                "#1f2937"
+              ]
+            ],
+            "estilos": [
+              {
+                "intervalo": "A8:C8",
+                "tipo": "cabecalho"
+              }
+            ],
+            "bordas": [
+              "A8:C13"
+            ],
+            "marcas": [
+              {
+                "alvo": "B16",
+                "n": 1
+              }
+            ]
+          },
+          "instrucoes": [
+            "Em `A16`, digite `Valor das saídas do mês`.",
+            "Em `B16` (1), digite a fórmula abaixo e formate como **Moeda**.",
+            "Aqui o critério é um texto fixo, por isso vai entre aspas: `\"Saída\"`."
+          ],
+          "formula": "=SOMASE(Movimentacao!$D$2:$D$100;\"Saída\";Movimentacao!$G$2:$G$100)",
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Troque `\"Saída\"` por `\"Entrada\"` para ver quanto entrou no mês. Depois volte para Saída."
+            }
+          ]
+        },
+        {
+          "titulo": "Busque o limite do mês com PROCH",
+          "legenda": "Tabela horizontal de limites (1). Em B22 (2), o PROCH acha \"Set\" na 1ª linha (3) e devolve o valor da 2ª linha.",
+          "imagem": {
+            "alt": "Tabela horizontal de limites por mês e fórmula PROCH em B22",
+            "guia": "Fórmulas",
+            "aba_ativa": "Resumo",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo"
+            ],
+            "colunas": "A:G",
+            "larguras": {
+              "A": 200,
+              "B": 140,
+              "C": 110
+            },
+            "linhas_visiveis": [
+              1,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22
+            ],
+            "vazias": [
+              "B16",
+              "B22:B23"
+            ],
+            "celula_ativa": "B22",
+            "selecao": "B22",
+            "formula_cores": [
+              [
+                "=PROCH(",
+                "#1f2937"
+              ],
+              [
+                "B21",
+                "#1565c0"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "A18:G19",
+                "#2e7d32"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "2",
+                "#c62828"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "0",
+                "#6a1b9a"
+              ],
+              [
+                ")",
+                "#1f2937"
+              ]
+            ],
+            "estilos": [
+              {
+                "intervalo": "A18:G18",
+                "tipo": "cabecalho"
+              }
+            ],
+            "bordas": [
+              "A18:G19"
+            ],
+            "setas": [
+              {
+                "de": "D19",
+                "para": "B22",
+                "texto": "devolve",
+                "curva": 30
+              }
+            ],
+            "marcas": [
+              {
+                "alvo": "A18:G19",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "B22",
+                "n": 2,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "D18",
+                "n": 3,
+                "lado": "cima"
+              }
+            ],
+            "nota": {
+              "texto": "O PROCH acha \"Set\" na 1ª linha da tabela (3) e devolve o valor que está logo abaixo dele.",
+              "x": 600,
+              "y": 318,
+              "largura": 300
+            }
+          },
+          "instrucoes": [
+            "Monte a tabela de limites (1): `A18` Mês e, em `B18:G18`, `Jul`, `Ago`, `Set`, `Out`, `Nov`, `Dez`.",
+            "`A19` Limite de saídas e, em `B19:G19`, `1300`, `1250`, `1200`, `1250`, `1300`, `1000`. Formate como **Moeda**.",
+            "Em `A21` digite `Mês consultado` e em `B21` digite `Set`.",
+            "Em `A22` digite `Limite do mês` e em `B22` (2) digite a fórmula abaixo.",
+            "O PROCH procura `Set` na **primeira linha** da tabela (horizontal) e devolve o valor da **linha 2**, logo abaixo."
+          ],
+          "formula": "=PROCH(B21;A18:G19;2;0)",
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "PROCV procura numa coluna (vertical); PROCH procura numa linha (horizontal). Use PROCH quando os meses estão lado a lado."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "Troque `B21` para `Dez`: o limite muda. Depois volte para `Set`."
+            }
+          ]
+        },
+        {
+          "titulo": "Escreva a conclusão com SE",
+          "legenda": "Em B23 (3), o SE compara as saídas (1) com o limite (2) e escreve a conclusão.",
+          "imagem": {
+            "alt": "Fórmula SE em B23 comparando as saídas do mês com o limite",
+            "guia": "Fórmulas",
+            "aba_ativa": "Resumo",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo"
+            ],
+            "colunas": "A:G",
+            "larguras": {
+              "A": 200,
+              "B": 140,
+              "C": 110
+            },
+            "linhas_visiveis": [
+              1,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23
+            ],
+            "vazias": [
+              "B16",
+              "B22:B23"
+            ],
+            "celula_ativa": "B23",
+            "selecao": "B23",
+            "formula": "=SE(B16<=B22;\"Dentro do limite\";\"Acima do limite\")",
+            "estilos": [
+              {
+                "intervalo": "A18:G18",
+                "tipo": "cabecalho"
+              }
+            ],
+            "bordas": [
+              "A18:G19"
+            ],
+            "marcas": [
+              {
+                "alvo": "B16",
+                "n": 1
+              },
+              {
+                "alvo": "B22",
+                "n": 2
+              },
+              {
+                "alvo": "B23",
+                "n": 3
+              }
+            ]
+          },
+          "instrucoes": [
+            "Em `A23` digite `Conclusão` e em `B23` (3) digite a fórmula abaixo.",
+            "A fórmula compara o valor das saídas (1) com o limite do mês (2) e escreve a conclusão.",
+            "Salve: [[Ctrl]]+[[B]]."
+          ],
+          "formula": "=SE(B16<=B22;\"Dentro do limite\";\"Acima do limite\")",
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "`B23` mostra uma frase (Dentro ou Acima do limite), não um número nem um erro."
+            },
+            {
+              "tipo": "dica",
+              "texto": "Pense como gestor: se o resultado fosse **Acima do limite**, o que o almoxarifado deveria investigar?"
+            }
+          ]
+        }
+      ],
+      "criterios": [
+        [
+          "CONT.SE contando as três situações, com o total",
+          "0,4"
+        ],
+        [
+          "SOMASE por categoria e % do total",
+          "0,5"
+        ],
+        [
+          "PROCH buscando o limite do mês na tabela horizontal",
+          "0,4"
+        ],
+        [
+          "SE com a conclusão sobre o limite",
+          "0,2"
+        ]
+      ]
+    },
+    {
+      "id": "q6",
+      "numero": 6,
+      "arquivo": "QUESTAO-06-FILTRO-PROTECAO-ENTREGA.html",
+      "titulo": "Filtro, proteção e entrega",
+      "tempo": "20 min",
+      "pontos": "1,5",
+      "aba": "`Cadastro`, `Resumo` e `Movimentacao`",
+      "slides_apoio": "Arquivo 4 — slides 28–33",
+      "objetivo": "Usar o **AutoFiltro** para responder a uma pergunta do gerente, **proteger** as fórmulas contra alterações acidentais e entregar o arquivo.",
+      "voce_vai_usar": [
+        "AutoFiltro ([[Ctrl]]+[[Shift]]+[[L]])",
+        "Formatar Células → Proteção",
+        "Proteger Planilha",
+        "Salvar Como .xlsx"
+      ],
+      "passos": [
+        {
+          "titulo": "Ligue o AutoFiltro no Cadastro",
+          "legenda": "Clique em A1 (1) e ligue o Filtro (2): aparecem setinhas nos títulos.",
+          "imagem": {
+            "alt": "Cabeçalho do Cadastro com as setas do AutoFiltro e o botão Filtro destacado",
+            "guia": "Dados",
+            "aba_ativa": "Cadastro",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 74,
+              "B": 150,
+              "C": 86,
+              "D": 58,
+              "E": 108,
+              "F": 110,
+              "G": 100,
+              "H": 104,
+              "I": 92,
+              "J": 124,
+              "K": 78
+            },
+            "linhas": 6,
+            "celula_ativa": "A1",
+            "selecao": "A1",
+            "formula": "Código",
+            "ocultar_texto": [
+              "H",
+              "I",
+              "J",
+              "K"
+            ],
+            "filtro": "A1:K1",
+            "bordas": [
+              "A1:K16"
+            ],
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "marcas": [
+              {
+                "alvo": "A1",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "botao:Filtro",
+                "n": 2,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Na aba **Cadastro**, clique em `A1` (1).",
+            "Ligue o filtro com [[Ctrl]]+[[Shift]]+[[L]] ou pela guia Dados → **Filtro** (2).",
+            "Aparecem setinhas ▼ em todos os títulos da linha 1."
+          ],
+          "caixas": [
+            {
+              "tipo": "libre",
+              "texto": "Dados → **Autofiltro**."
+            }
+          ]
+        },
+        {
+          "titulo": "Filtre os itens críticos de EPI",
+          "legenda": "Setinha de Situação (1) → só Crítico (2). Depois, setinha de Categoria (3) → só EPI.",
+          "imagem": {
+            "alt": "Menu do filtro da coluna Situação com apenas Crítico marcado",
+            "guia": "Dados",
+            "aba_ativa": "Cadastro",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 74,
+              "B": 150,
+              "C": 86,
+              "D": 58,
+              "E": 108,
+              "F": 110,
+              "G": 100,
+              "H": 104,
+              "I": 92,
+              "J": 124,
+              "K": 78
+            },
+            "linhas": 9,
+            "celula_ativa": "K1",
+            "formula": "Situação",
+            "vazias": [
+              "A2:K16"
+            ],
+            "filtro": "A1:K1",
+            "bordas": [
+              "A1:K9"
+            ],
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "menu": {
+              "ancora": "seta_filtro:K1",
+              "caixas": true,
+              "itens": [
+                "(Selecionar Tudo)",
+                "Atenção",
+                "Crítico",
+                "Normal"
+              ],
+              "marcados": [
+                "Crítico"
+              ],
+              "realce": [
+                "Crítico"
+              ],
+              "largura": 210
+            },
+            "marcas": [
+              {
+                "alvo": "seta_filtro:K1",
+                "n": 1,
+                "lado": "cima"
+              },
+              {
+                "alvo": "menu:Crítico",
+                "n": 2,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "seta_filtro:C1",
+                "n": 3,
+                "lado": "cima"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique na setinha de **Situação** (1). Desmarque **(Selecionar Tudo)** e marque só **Crítico** (2). Clique em **OK**.",
+            "Agora clique na setinha de **Categoria** (3), deixe marcado só **EPI** e clique em **OK**.",
+            "Ficou o item crítico de EPI. Vá à aba **Resumo** e digite em `A25` `Item crítico de EPI:` e em `B25` a descrição do item que apareceu no filtro."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Com filtro ligado, os números das linhas ficam azuis e pulam (ex.: 2, 5, 9...). É o sinal de que há linhas escondidas."
+            },
+            {
+              "tipo": "atencao",
+              "texto": "O filtro só **esconde** linhas; ele não apaga nada."
+            }
+          ]
+        },
+        {
+          "titulo": "Limpe os filtros",
+          "legenda": "Guia Dados → Limpar (1): todas as linhas voltam a aparecer.",
+          "imagem": {
+            "alt": "Guia Dados com o botão Limpar destacado",
+            "guia": "Dados",
+            "aba_ativa": "Cadastro",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 74,
+              "B": 150,
+              "C": 86,
+              "D": 58,
+              "E": 108,
+              "F": 110,
+              "G": 100,
+              "H": 104,
+              "I": 92,
+              "J": 124,
+              "K": 78
+            },
+            "linhas": 6,
+            "celula_ativa": "A1",
+            "formula": "Código",
+            "ocultar_texto": [
+              "H",
+              "I",
+              "J",
+              "K"
+            ],
+            "filtro": "A1:K1",
+            "bordas": [
+              "A1:K16"
+            ],
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "marcas": [
+              {
+                "alvo": "botao:Limpar",
+                "n": 1,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Guia **Dados** → **Limpar** (1).",
+            "Deixe as setinhas do filtro ligadas: elas fazem parte da entrega."
+          ],
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "As 15 linhas de materiais aparecem de novo."
+            }
+          ]
+        },
+        {
+          "titulo": "Desbloqueie as células de digitação",
+          "legenda": "Selecione A2:B100 (1) e, com Ctrl, D2:E100 (2). Aba Proteção (3) → desmarque Bloqueadas (4).",
+          "imagem": {
+            "alt": "Formatar Células na aba Proteção com a opção Bloqueadas desmarcada",
+            "guia": "Página Inicial",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 11,
+            "ocultar_texto": [
+              "G",
+              "H"
+            ],
+            "celula_ativa": "D2",
+            "formula": "Saída",
+            "selecao": [
+              "A2:B13",
+              "D2:E13"
+            ],
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "dialogo": {
+              "titulo": "Formatar Células",
+              "x": 470,
+              "y": 176,
+              "abas": [
+                "Número",
+                "Alinhamento",
+                "Fonte",
+                "Borda",
+                "Proteção"
+              ],
+              "aba_ativa": "Proteção",
+              "campos": [
+                {
+                  "tipo": "check",
+                  "rotulo": "Bloqueadas",
+                  "marcado": false
+                },
+                {
+                  "tipo": "check",
+                  "rotulo": "Oculta",
+                  "marcado": false
+                },
+                {
+                  "tipo": "paragrafo",
+                  "rotulo": "O bloqueio só vale depois de Proteger Planilha."
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "A2:B11",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "D2:E11",
+                "n": 2,
+                "lado": "cima"
+              },
+              {
+                "alvo": "dlgaba:Proteção",
+                "n": 3,
+                "lado": "cima"
+              },
+              {
+                "alvo": "campo:Bloqueadas",
+                "n": 4
+              }
+            ]
+          },
+          "instrucoes": [
+            "Na **Movimentacao**, selecione `A2:B100` (1). Segure [[Ctrl]] e selecione também `D2:E100` (2): são as células onde se digita.",
+            "Tecle [[Ctrl]]+[[1]] e abra a aba **Proteção** (3).",
+            "**Desmarque Bloqueadas** (4) e clique em **OK**."
+          ],
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "Se esquecer este passo, a planilha inteira fica travada e ninguém consegue lançar movimentações."
+            },
+            {
+              "tipo": "dica",
+              "texto": "As colunas C, F, G e H (fórmulas) continuam bloqueadas: é exatamente isso que queremos proteger."
+            }
+          ]
+        },
+        {
+          "titulo": "Proteja a planilha com senha",
+          "legenda": "Revisão (1) → Proteger Planilha (2) → senha (3) → OK (4).",
+          "imagem": {
+            "alt": "Janela Proteger Planilha com o campo de senha preenchido",
+            "guia": "Revisão",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 11,
+            "ocultar_texto": [
+              "G",
+              "H"
+            ],
+            "celula_ativa": "A2",
+            "formula": "01/09/2026",
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "dialogo": {
+              "titulo": "Proteger Planilha",
+              "y": 176,
+              "campos": [
+                {
+                  "tipo": "check",
+                  "rotulo": "Proteger a planilha e o conteúdo de células bloqueadas",
+                  "marcado": true
+                },
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Senha:",
+                  "valor": "•••••••••"
+                },
+                {
+                  "tipo": "check",
+                  "rotulo": "Selecionar células bloqueadas",
+                  "marcado": true
+                },
+                {
+                  "tipo": "check",
+                  "rotulo": "Selecionar células desbloqueadas",
+                  "marcado": true
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "guia:Revisão",
+                "n": 1,
+                "lado": "cima"
+              },
+              {
+                "alvo": "botao:Proteger Planilha",
+                "n": 2,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "campo:Senha:",
+                "n": 3
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Guia **Revisão** (1) → **Proteger Planilha** (2).",
+            "Senha: `senai2026` (3) → **OK** (4).",
+            "Digite a senha de novo para confirmar e clique em **OK**."
+          ],
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "Use exatamente a senha `senai2026`: o professor precisa dela para corrigir."
+            },
+            {
+              "tipo": "libre",
+              "texto": "Ferramentas → **Proteger planilha**."
+            }
+          ]
+        },
+        {
+          "titulo": "Teste a proteção",
+          "legenda": "Tentar mudar a fórmula de G2 (1) mostra o aviso. Digitar em A14 (2) continua funcionando.",
+          "imagem": {
+            "alt": "Aviso do Excel de que a célula está em uma planilha protegida",
+            "guia": "Revisão",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 14,
+            "ocultar_texto": [
+              "G",
+              "H"
+            ],
+            "celula_ativa": "G2",
+            "selecao": "G2",
+            "formula": "=E2*F2",
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "alerta": {
+              "tipo": "aviso",
+              "titulo": "Microsoft Excel",
+              "mensagem": "A célula que você está tentando alterar está em uma planilha protegida. Para alterar, desproteja a planilha.",
+              "botoes": [
+                "OK"
+              ],
+              "x": 250,
+              "y": 250
+            },
+            "marcas": [
+              {
+                "alvo": "G2",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "A14",
+                "n": 2,
+                "lado": "esquerda"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique em `G2` e aperte [[Delete]] (1): o Excel avisa que a célula está protegida. Clique em **OK**.",
+            "Clique em `A14` (2), digite uma data e tecle [[Enter]]: funciona, porque essa célula foi desbloqueada.",
+            "Apague a data de `A14`."
+          ],
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "Fórmulas travadas e células de digitação liberadas: a planilha está pronta para outra pessoa usar sem estragar as contas."
+            }
+          ]
+        },
+        {
+          "titulo": "Salve e entregue o arquivo",
+          "legenda": "Nome do arquivo (1), tipo .xlsx (2) e Salvar (3).",
+          "imagem": {
+            "alt": "Janela Salvar Como com o nome ESTOQUE-NOME-SOBRENOME.xlsx",
+            "guia": "Arquivo",
+            "aba_ativa": "Movimentacao",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 92,
+              "B": 78,
+              "C": 170,
+              "D": 72,
+              "E": 88,
+              "F": 108,
+              "G": 100,
+              "H": 104
+            },
+            "linhas": 9,
+            "ocultar_texto": [
+              "G",
+              "H"
+            ],
+            "celula_ativa": "A1",
+            "formula": "Data",
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "dialogo": {
+              "titulo": "Salvar Como",
+              "y": 190,
+              "campos": [
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Nome do arquivo:",
+                  "valor": "ESTOQUE-NOME-SOBRENOME.xlsx"
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "Tipo:",
+                  "valor": "Pasta de Trabalho do Excel (*.xlsx)"
+                }
+              ],
+              "botoes": [
+                "Salvar",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "campo:Nome do arquivo:",
+                "n": 1
+              },
+              {
+                "alvo": "campo:Tipo:",
+                "n": 2
+              },
+              {
+                "alvo": "botaodlg:Salvar",
+                "n": 3,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Arquivo → **Salvar Como** → escolha a pasta indicada pelo professor.",
+            "Nome do arquivo (1): `ESTOQUE-NOME-SOBRENOME` com o **seu** nome (ex.: `ESTOQUE-ANA-SOUZA`).",
+            "Tipo (2): **Pasta de Trabalho do Excel (*.xlsx)** → **Salvar** (3).",
+            "Entregue o arquivo como o professor orientar: pasta da turma, AVA ou e-mail."
+          ],
+          "caixas": [
+            {
+              "tipo": "libre",
+              "texto": "Em **Tipo**, escolha **Excel 2007-365 (.xlsx)** e confirme **Usar o formato Excel 2007-365!**."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "O arquivo tem as 4 abas: Cadastro, Movimentacao, Consulta e Resumo."
+            }
+          ]
+        }
+      ],
+      "criterios": [
+        [
+          "Filtro Crítico + EPI aplicado e item anotado em Resumo!B25",
+          "0,5"
+        ],
+        [
+          "Células de digitação da Movimentacao desbloqueadas",
+          "0,4"
+        ],
+        [
+          "Planilha Movimentacao protegida com a senha senai2026",
+          "0,3"
+        ],
+        [
+          "Arquivo salvo em .xlsx com o nome pedido",
+          "0,3"
+        ]
+      ]
+    }
+  ]
+}

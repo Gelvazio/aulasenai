@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 7: Tratamento de Dados — Reforço Matemática</title>
+  <link rel="stylesheet" href="_assets/styles.css">
+  <style>
+    .conteudo-detalhado { margin: 30px 0; }
+    .secao-conteudo { background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #004384; }
+    .imagem-exemplo { max-width: 100%; height: auto; border-radius: 8px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .exemplo-box { background: #f0f7ff; padding: 15px; margin: 15px 0; border-radius: 6px; border-left: 3px solid #f7941d; }
+    .dica-importante { background: #fff9f0; padding: 15px; margin: 15px 0; border-radius: 6px; border-left: 3px solid #f7941d; }
+    .grid-imagens { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+    .tabela-dados { border-collapse: collapse; width: 100%; margin: 15px 0; }
+    .tabela-dados td, .tabela-dados th { border: 1px solid #ddd; padding: 10px; text-align: center; }
+    .tabela-dados th { background: #004384; color: white; }
+    @media (max-width: 768px) { .grid-imagens { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="layout-wrapper">
+    <nav class="menu-lateral">
+      <h3>Módulos</h3>
+      <a href="index.html" class="menu-item">Início</a>
+      <hr style="margin: 15px 0; border: none; border-top: 1px solid #ddd;">
+      <a href="modulo-1-operacoes-basicas.html" class="menu-item">Módulo 1</a>
+      <a href="modulo-2-fracoes-decimais.html" class="menu-item">Módulo 2</a>
+      <a href="modulo-3-proporcionalidade.html" class="menu-item">Módulo 3</a>
+      <a href="modulo-4-medidas-grandezas.html" class="menu-item">Módulo 4</a>
+      <a href="modulo-5-raciocinio-logico.html" class="menu-item">Módulo 5</a>
+      <a href="modulo-6-algebra.html" class="menu-item">Módulo 6</a>
+      <a href="modulo-7-tratamento-informacao.html" class="menu-item">Módulo 7</a>
+    </nav>
+    <div class="conteudo-wrapper">
+      <div class="container">
+        <div class="header-controls">
+          <h1>Módulo 7: Tratamento de Dados</h1>
+          <button class="btn btn-secondary" onclick="imprimirPagina()">Imprimir</button>
+        </div>
+        <div class="modulo-progress">
+          <span class="modulo-progress-text">Módulo 7 de 7</span>
+        </div>
+        <section class="modulo-intro conteudo-detalhado">
+          <h2>Módulo 7: Tratamento da Informação</h2>
+          <p><strong>Carga Horária:</strong> 9 horas | <strong>Objetivo:</strong> Analisar dados, calcular medidas estatísticas e interpretar representações gráficas com pensamento crítico.</p>
+
+          <div class="secao-conteudo">
+            <h3>🎯 Introdução — Dados em Tudo</h3>
+            <p>Vivemos em um mundo de dados! Notícias apresentam gráficos, redes sociais analisam nosso comportamento, e empresas usam dados para tomar decisões. Aprender a ler, interpretar e questionar dados é essencial!</p>
+          </div>
+
+          <div class="grid-imagens">
+            <div>
+              <h4>📊 Gráficos e Dados</h4>
+              <img src="https://images.pexels.com/photos/3994914/pexels-photo-3994914.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Gráficos de dados" class="imagem-exemplo">
+              <p>Dados visuais nos ajudam a entender tendências e padrões</p>
+            </div>
+            <div>
+              <h4>📈 Análise de Tendências</h4>
+              <img src="https://images.pexels.com/photos/8386370/pexels-photo-8386370.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Análise de dados" class="imagem-exemplo">
+              <p>Interpretar dados ajuda a tomar decisões inteligentes</p>
+            </div>
+          </div>
+
+          <h3>📚 1. Medidas de Tendência Central</h3>
+          <div class="secao-conteudo">
+            <p>Essas medidas resumem um conjunto de dados em um único número:</p>
+
+            <h4>Média Aritmética</h4>
+            <p>É a soma de todos os valores dividida pela quantidade de valores.</p>
+            <div class="exemplo-box">
+              <strong>Dados:</strong> Notas de um aluno: 6, 7, 8, 9
+              <br><strong>Cálculo:</strong> (6 + 7 + 8 + 9) ÷ 4 = 30 ÷ 4 = 7,5
+              <br><strong>Média:</strong> 7,5
+            </div>
+
+            <h4>Mediana</h4>
+            <p>É o valor do meio quando os dados estão em ordem.</p>
+            <div class="exemplo-box">
+              <strong>Dados:</strong> 3, 5, 7, 9, 11
+              <br><strong>Mediana:</strong> 7 (o valor do meio)
+              <br>
+              <br><strong>Dados pares:</strong> 3, 5, 7, 9
+              <br>Mediana = (5 + 7) ÷ 2 = 6
+            </div>
+
+            <h4>Moda</h4>
+            <p>É o valor que aparece com mais frequência.</p>
+            <div class="exemplo-box">
+              <strong>Dados:</strong> 1, 2, 2, 3, 3, 3, 4
+              <br><strong>Moda:</strong> 3 (aparece 3 vezes)
+            </div>
+
+            <div class="dica-importante">
+              <strong>💡 Quando usar cada uma:</strong>
+              <br>Média: melhor para dados sem valores extremos
+              <br>Mediana: melhor quando há valores muito altos ou muito baixos
+              <br>Moda: útil para dados categóricos (cores, marcas, etc)
+            </div>
+          </div>
+
+          <h3>📚 2. Lendo e Interpretando Gráficos</h3>
+          <div class="secao-conteudo">
+            <h4>Gráfico de Barras</h4>
+            <p>Compara valores entre categorias. Altura da barra = valor</p>
+            <div class="exemplo-box">
+              Exemplo: Vendas por mês
+              <br>Janeiro: 100 vendas
+              <br>Fevereiro: 150 vendas
+              <br>Março: 200 vendas
+              <br>Barra de Março é a mais alta
+            </div>
+
+            <h4>Gráfico de Linhas</h4>
+            <p>Mostra mudanças ao longo do tempo. Sobe e desce como uma linha.</p>
+            <div class="exemplo-box">
+              Exemplo: Temperatura ao longo do dia
+              <br>8h: 15°C → 12h: 25°C → 16h: 28°C → 20h: 20°C
+            </div>
+
+            <h4>Gráfico de Pizza (Setor)</h4>
+            <p>Mostra partes de um todo. Fatias somam 100%.</p>
+            <div class="exemplo-box">
+              Exemplo: Uso de redes sociais
+              <br>Facebook: 40%
+              <br>Instagram: 35%
+              <br>TikTok: 20%
+              <br>Outros: 5%
+            </div>
+          </div>
+
+          <h3>📚 3. Interpretação Crítica de Dados</h3>
+          <div class="secao-conteudo">
+            <p>Nem todo gráfico diz a verdade! Você precisa pensar criticamente.</p>
+
+            <h4>Manipulação Visual 1: Eixo Distorcido</h4>
+            <div class="exemplo-box">
+              Se um gráfico de vendas começa no 50 em vez de 0, pequenas mudanças parecem gigantescas!
+              <br>Diferença de 10 unidades parece ser um aumento de 50%
+            </div>
+
+            <h4>Manipulação Visual 2: Cores Enganosas</h4>
+            <div class="exemplo-box">
+              Usar cores vermelhas (alertando) para dados positivos pode criar medo desnecessário.
+            </div>
+
+            <h4>Pergunta Sempre:</h4>
+            <ul>
+              <li>Onde os dados vêm? São confiáveis?</li>
+              <li>Há algo faltando? Quem coletou os dados?</li>
+              <li>As escalas estão corretas?</li>
+              <li>Qual é o interesse de quem apresenta?</li>
+            </ul>
+
+            <div class="dica-importante">
+              <strong>⚠️ Exemplo Real:</strong> Uma empresa pode mostrar um gráfico que parece mostrar um aumento enorme, mas ao olhar o eixo Y, vê que começou em 99% em vez de 0%!
+            </div>
+          </div>
+
+          <h3>📚 4. Distribuição e Frequência</h3>
+          <div class="secao-conteudo">
+            <h4>Tabela de Frequência</h4>
+            <p>Conta quantas vezes cada valor aparece.</p>
+
+            <table class="tabela-dados">
+              <tr>
+                <th>Valor</th><th>Frequência</th><th>Porcentagem</th>
+              </tr>
+              <tr>
+                <td>1</td><td>3</td><td>15%</td>
+              </tr>
+              <tr>
+                <td>2</td><td>5</td><td>25%</td>
+              </tr>
+              <tr>
+                <td>3</td><td>7</td><td>35%</td>
+              </tr>
+              <tr>
+                <td>4</td><td>5</td><td>25%</td>
+              </tr>
+            </table>
+
+            <p>Total: 20 dados | Moda: 3 (aparece 7 vezes)</p>
+          </div>
+
+          <h3>🎯 Metodologia Chalkie AI</h3>
+          <div class="secao-conteudo">
+            <ul>
+              <li><strong>Dados do Mundo Real:</strong> Clima, esportes, redes sociais, economia, saúde</li>
+              <li><strong>Criação de Gráficos:</strong> Alunos criam visualizações com dados reais</li>
+              <li><strong>Pensamento Crítico:</strong> Análise e detecção de manipulação de dados</li>
+              <li><strong>Conexão com Carreiras:</strong> Jornalismo, negócios, tecnologia, saúde</li>
+            </ul>
+          </div>
+
+          <h3>✓ Critérios de Avaliação</h3>
+          <div class="secao-conteudo">
+            <ul>
+              <li>✅ Ler e interpretar gráficos diversos com precisão e pensamento crítico</li>
+              <li>✅ Calcular média, moda, mediana, amplitude corretamente</li>
+              <li>✅ Resolver problemas estatísticos de complexidade crescente</li>
+              <li>✅ Criar representação visual apropriada para dados específicos</li>
+              <li>✅ Analisar criticamente apresentações de dados</li>
+            </ul>
+          </div>
+
+          <h3>✏️ Exercícios Práticos</h3>
+          <div class="exercicios-section" id="exercicios-container"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script src="_assets/scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      carregarExercicios('modulo7');
+    });
+  </script>
+</body>
+</html>

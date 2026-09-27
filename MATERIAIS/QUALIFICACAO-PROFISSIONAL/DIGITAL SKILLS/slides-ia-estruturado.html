@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramentas de IA - Slides para PowerPoint</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Century Gothic', Arial, sans-serif;
+            background: #ffffff;
+            padding: 20px;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 100%;
+            background: linear-gradient(135deg, #0055B3 0%, #003D7A 100%);
+            z-index: -1;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 60%;
+            background: linear-gradient(225deg, #0055B3 0%, #1E90FF 100%);
+            z-index: -1;
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #008AD1;
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+
+        .print-instruction {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: bold;
+            color: #856404;
+        }
+
+        .slide {
+            background: white;
+            border-radius: 5px;
+            padding: 0;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            page-break-inside: avoid;
+            display: flex;
+            flex-direction: column;
+            min-height: 480px;
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .slide-logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #008AD1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sesi-logo {
+            font-size: 14px;
+            color: #004384;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .slide-title {
+            color: #008AD1;
+            font-size: 28px;
+            font-weight: bold;
+            padding: 15px 30px 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 3px solid #008AD1;
+            margin-bottom: 15px;
+        }
+
+        .slide-body {
+            padding: 0 30px 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .slide-subtitle {
+            color: #0053B3;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 8px;
+        }
+
+        .slide-content {
+            color: #333;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        ul {
+            margin-left: 18px;
+            margin-top: 6px;
+            margin-bottom: 10px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        p {
+            margin-bottom: 8px;
+        }
+
+        .copy-hint {
+            text-align: right;
+            color: #999;
+            font-size: 11px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .tools-footer {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .tool-icon {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .tool-icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .chatgpt-icon {
+            background: linear-gradient(135deg, #10a37f 0%, #74aa9c 100%);
+        }
+
+        .gemini-icon {
+            background: linear-gradient(135deg, #4285f4 0%, #ea4335 50%, #fbbc04 100%);
+        }
+
+        .claude-icon {
+            background: linear-gradient(135deg, #000000 0%, #1e1e1e 100%);
+        }
+
+        .deepseek-icon {
+            background: linear-gradient(135deg, #0055B3 0%, #003D7A 100%);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+
+        table th {
+            background: #008AD1;
+            color: white;
+            padding: 8px;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        table td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            font-size: 13px;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Ferramentas Modernas de IA</h1>
+        <div class="print-instruction">💡 Copie cada slide e cole no PowerPoint</div>
+
+        <!-- SLIDE 1: Introdução a IA -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">🤖 Inteligência Artificial</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">🤖 O que é Inteligência Artificial (IA)?</div>
+            <div class="slide-body">
+                <p class="slide-content"><strong>Inteligência Artificial</strong> é a capacidade de máquinas</p>
+                <p class="slide-content">realizarem tarefas que normalmente exigem inteligência humana.</p>
+
+                <p style="margin-top: 15px; margin-bottom: 15px; color: #666; font-size: 13px;">—</p>
+
+                <p class="slide-subtitle">Exemplos de tarefas:</p>
+                <ul>
+                    <li>✅ Compreender linguagem natural</li>
+                    <li>✅ Reconhecer padrões</li>
+                    <li>✅ Tomar decisões</li>
+                    <li>✅ Aprender com dados</li>
+                </ul>
+
+                <p class="slide-subtitle">💡 Como funciona:</p>
+                <ul>
+                    <li>1️⃣ Treinamento: Aprende com muitos dados</li>
+                    <li>2️⃣ Processamento: Analisa padrões encontrados</li>
+                    <li>3️⃣ Previsão: Gera respostas baseadas no aprendizado</li>
+                </ul>
+
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: Claude Code - Introdução -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">🔧 Claude Code</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">🔧 Claude Code - Introdução</div>
+            <div class="slide-body">
+                <p class="slide-content"><strong>Claude Code</strong> é a interface oficial do Claude da Anthropic.</p>
+                <p class="slide-subtitle">Disponível em:</p>
+                <ul>
+                    <li>✅ Web: claude.com/claude-code</li>
+                    <li>✅ CLI: command-line</li>
+                    <li>✅ IDE Extensions: VS Code, JetBrains</li>
+                </ul>
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Claude Code - Análise -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">🔧 Claude Code</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">🔧 Análise de Código</div>
+            <div class="slide-body">
+                <p class="slide-subtitle">📖 Funcionalidades de Análise:</p>
+                <ul>
+                    <li>✅ Leitura e compreensão de arquivos</li>
+                    <li>✅ Identificação de bugs</li>
+                    <li>✅ Sugestões de otimização</li>
+                    <li>✅ Code review automático</li>
+                </ul>
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Claude Code - Geração -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">🔧 Claude Code</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">🔧 Geração de Código</div>
+            <div class="slide-body">
+                <p class="slide-subtitle">✍️ Funcionalidades de Geração:</p>
+                <ul>
+                    <li>✅ Criar scripts completos</li>
+                    <li>✅ Implementar features</li>
+                    <li>✅ Refatoração automática</li>
+                    <li>✅ Testes unitários</li>
+                </ul>
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Claude Code - Avançado -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">🔧 Claude Code</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">🔧 Recursos Avançados</div>
+            <div class="slide-body">
+                <ul>
+                    <li>📊 <strong>Artifacts:</strong> Visualizações interativas</li>
+                    <li>🔧 <strong>Ferramentas:</strong> Git, npm, bash integrados</li>
+                    <li>💾 <strong>Gerenciamento:</strong> Arquivos e projetos</li>
+                    <li>🔍 <strong>Busca:</strong> Grep e exploração de código</li>
+                </ul>
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Artifacts - Parte 1 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">📊 Artifacts</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">📊 Como Criar Artifacts - Parte 1</div>
+            <div class="slide-body">
+                <p class="slide-content"><strong>Artifacts</strong> são visualizações interativas criadas automaticamente.</p>
+                <p class="slide-subtitle">Tipos disponíveis:</p>
+                <ul>
+                    <li>📊 Gráficos e Dashboards</li>
+                    <li>🎨 Designs e Protótipos UI/UX</li>
+                    <li>📄 Documentos HTML/Markdown</li>
+                </ul>
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Artifacts - Parte 2 -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">📊 Artifacts</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">📊 Como Criar Artifacts - Parte 2</div>
+            <div class="slide-body">
+                <p class="slide-subtitle">Mais tipos de Artifacts:</p>
+                <ul>
+                    <li>🎮 Jogos e Aplicações web</li>
+                    <li>💻 Código executável e scripts</li>
+                </ul>
+                <p class="slide-subtitle">Passo 1:</p>
+                <p>Peça ao Claude para criar algo</p>
+                <p class="slide-subtitle">Passo 2:</p>
+                <p>Claude cria automaticamente em novo painel</p>
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: Google Gemini - Modelos -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">✨ Google Gemini</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">✨ Google Gemini - Modelos</div>
+            <div class="slide-body">
+                <p class="slide-content"><strong>Gemini é o modelo multimodal do Google.</strong></p>
+                <p class="slide-subtitle">Versões disponíveis:</p>
+                <ul>
+                    <li>⚡ Gemini 2.0 Flash - Mais rápido</li>
+                    <li>🎯 Gemini 1.5 Pro - Mais preciso</li>
+                    <li>⚖️ Gemini 1.5 Flash - Balanceado</li>
+                </ul>
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: Google Gemini - Multimodal -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">✨ Google Gemini</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">✨ Capacidades Multimodais</div>
+            <div class="slide-body">
+                <ul>
+                    <li>📝 <strong>Texto:</strong> Conteúdo, tradução, análise</li>
+                    <li>🖼️ <strong>Imagem:</strong> Análise, OCR, descrição</li>
+                    <li>🎬 <strong>Vídeo:</strong> Análise de conteúdo, transcrição</li>
+                    <li>🔊 <strong>Áudio:</strong> Transcrição, análise sentimento</li>
+                </ul>
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: Google Gems - O que é -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">💎 Google Gems</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">💎 Google Gems - O que é?</div>
+            <div class="slide-body">
+                <p class="slide-content"><strong>Google Gems</strong> são assistentes personalizados baseados no Gemini.</p>
+                <p class="slide-subtitle">Criados para tarefas específicas sem necessidade de programação.</p>
+                <ul>
+                    <li>✅ No-Code (sem código)</li>
+                    <li>✅ 100% Gratuito</li>
+                    <li>✅ Integração Google Workspace</li>
+                </ul>
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: Google Gems - Como Criar -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">💎 Google Gems</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">💎 Google Gems - Como Criar</div>
+            <div class="slide-body">
+                <p class="slide-subtitle">Passos para criar:</p>
+                <ul>
+                    <li>1️⃣ Acessar gems.google.com</li>
+                    <li>2️⃣ Login com conta Google</li>
+                    <li>3️⃣ Clique em "Create a new gem"</li>
+                    <li>4️⃣ Configure instruções e comportamento</li>
+                    <li>5️⃣ Teste e compartilhe via link</li>
+                </ul>
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: DeepSeek - O que é -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">🚀 DeepSeek</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">🚀 DeepSeek - O que é?</div>
+            <div class="slide-body">
+                <p class="slide-content"><strong>DeepSeek</strong> é um modelo de IA de código aberto desenvolvido pela empresa chinesa DeepSeek.</p>
+                <p class="slide-subtitle">Foco em eficiência e performance.</p>
+                <ul>
+                    <li>📊 Código aberto (Open Source)</li>
+                    <li>⚡ Muito rápido e eficiente</li>
+                    <li>💰 Baixo custo computacional</li>
+                </ul>
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: DeepSeek - Características -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">🚀 DeepSeek</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">🚀 DeepSeek - Características</div>
+            <div class="slide-body">
+                <ul>
+                    <li>🔒 Privacidade: Pode rodar localmente</li>
+                    <li>📚 Suporta múltiplas linguagens</li>
+                    <li>💻 Offline: Executa sem internet</li>
+                    <li>🌐 Online: deepseek.com (Gratuito)</li>
+                </ul>
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 14: Comparativo - Código e Imagens -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">📊 Comparativo</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">📊 Comparativo - Código e Imagens</div>
+            <div class="slide-body">
+                <table>
+                    <tr>
+                        <th>Ferramenta</th>
+                        <th>Código</th>
+                        <th>Imagens</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Claude Code</strong></td>
+                        <td>⭐⭐⭐⭐⭐</td>
+                        <td>⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Gemini</strong></td>
+                        <td>⭐⭐⭐</td>
+                        <td>⭐⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DeepSeek</strong></td>
+                        <td>⭐⭐⭐⭐</td>
+                        <td>⭐⭐⭐</td>
+                    </tr>
+                </table>
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 15: Comparativo - Preço e Privacidade -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">📊 Comparativo</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">📊 Comparativo - Preço e Privacidade</div>
+            <div class="slide-body">
+                <table>
+                    <tr>
+                        <th>Ferramenta</th>
+                        <th>Preço</th>
+                        <th>Privacidade</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Claude Code</strong></td>
+                        <td>🟢 Gratuito</td>
+                        <td>Nuvem</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Gemini</strong></td>
+                        <td>🔴 Pago</td>
+                        <td>Nuvem</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DeepSeek</strong></td>
+                        <td>🟢 Gratuito</td>
+                        <td>Local 🔒</td>
+                    </tr>
+                </table>
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 16: Recomendação - Desenvolvimento -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">💻 Recomendação</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">💻 Para Desenvolvimento</div>
+            <div class="slide-body">
+                <p class="slide-content"><strong>→ Claude Code</strong></p>
+                <ul>
+                    <li>✅ Melhor para análise e geração de código</li>
+                    <li>✅ IDE integrado</li>
+                    <li>✅ Suporte a múltiplas linguagens</li>
+                    <li>✅ Artifacts para visualização</li>
+                </ul>
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 17: Recomendação - Análise Visual -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">🖼️ Recomendação</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">🖼️ Para Análise Visual</div>
+            <div class="slide-body">
+                <p class="slide-content"><strong>→ Google Gemini</strong></p>
+                <ul>
+                    <li>✅ Melhor processamento de imagens</li>
+                    <li>✅ Suporta vídeo e áudio</li>
+                    <li>✅ Acesso via APIs</li>
+                    <li>✅ Análise completa de mídia</li>
+                </ul>
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 18: Recomendação - Privacidade -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">🔒 Recomendação</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">🔒 Para Máxima Privacidade</div>
+            <div class="slide-body">
+                <p class="slide-content"><strong>→ DeepSeek (local)</strong></p>
+                <ul>
+                    <li>✅ Executa offline</li>
+                    <li>✅ Dados permanecem no seu computador</li>
+                    <li>✅ Completamente gratuito</li>
+                    <li>✅ Code aberto e transparente</li>
+                </ul>
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 19: Atividade Prática -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">🧠 Atividade Prática</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">🧠 Pesquisa Comparativa - Atividade</div>
+            <div class="slide-body">
+                <p class="slide-subtitle">🔍 Pesquise sobre você em 4 ferramentas</p>
+                <ul>
+                    <li>💬 <strong>ChatGPT:</strong> chat.openai.com</li>
+                    <li>✨ <strong>Google Gemini:</strong> gemini.google.com</li>
+                    <li>🔧 <strong>Claude Code:</strong> claude.com</li>
+                    <li>🚀 <strong>DeepSeek:</strong> deepseek.com</li>
+                </ul>
+
+                <p class="slide-subtitle">💬 Compare e compartilhe com a turma</p>
+                <ul>
+                    <li>Qual ferramenta conhece mais sobre você?</li>
+                    <li>Quais resultados foram mais precisos?</li>
+                    <li>Diferenças nas respostas de cada IA</li>
+                </ul>
+
+                <p class="slide-subtitle">💡 Qual ferramenta você prefere e por quê?</p>
+
+                <div class="tools-footer">
+                    <div class="tool-icon">
+                        <img src="https://cdn.openai.com/API/assets/external-logos/chatgpt-logo.png" alt="ChatGPT" style="width: 60px; height: 60px; object-fit: contain;">
+                        <span>ChatGPT</span>
+                    </div>
+                    <div class="tool-icon">
+                        <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735593ff6a4d699bda.png" alt="Gemini" style="width: 60px; height: 60px; object-fit: contain;">
+                        <span>Gemini</span>
+                    </div>
+                    <div class="tool-icon">
+                        <img src="https://avatars.githubusercontent.com/u/59282257?s=200&v=4" alt="Claude" style="width: 60px; height: 60px; object-fit: contain; border-radius: 50%;">
+                        <span>Claude</span>
+                    </div>
+                    <div class="tool-icon">
+                        <img src="https://avatars.githubusercontent.com/u/168586409?s=200&v=4" alt="DeepSeek" style="width: 60px; height: 60px; object-fit: contain;">
+                        <span>DeepSeek</span>
+                    </div>
+                </div>
+
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 20: Atividade Prática - Criar Prompt -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">💡 Atividade Prática</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">💡 Crie um Prompt para Gerar Tabela</div>
+            <div class="slide-body">
+                <p class="slide-subtitle">🎯 Desafio:</p>
+                <p class="slide-content"><strong>Use a IA para criar um prompt que gere uma tabela com:</strong></p>
+                <ul>
+                    <li>Atividades/Locais para visitar</li>
+                    <li>Tipo de experiência</li>
+                    <li>Motivo recomendado</li>
+                    <li>Custo médio</li>
+                    <li>Observações de segurança</li>
+                </ul>
+
+                <p class="slide-subtitle">📝 Seu prompt deve incluir:</p>
+                <ul>
+                    <li>Contexto claro (cidade, tipo de atividades)</li>
+                    <li>Estrutura desejada (tabela)</li>
+                    <li>Número de linhas/exemplos</li>
+                    <li>Informações específicas needed</li>
+                </ul>
+
+                <p class="slide-subtitle">⏱️ Tempo: 10 minutos</p>
+
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 21: Atividade Prática - Criar Prompt para Resumo -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">📚 Atividade Prática</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">📚 Crie um Prompt para Gerar Resumo</div>
+            <div class="slide-body">
+                <p class="slide-subtitle">🎯 Desafio:</p>
+                <p class="slide-content"><strong>Use a IA para criar um prompt que gere um resumo sobre:</strong></p>
+                <ul>
+                    <li>IA no aprendizado e responsabilidade</li>
+                    <li>LGPD e proteção de dados no Brasil</li>
+                    <li>PL 2338/2023 (regulação de IA)</li>
+                    <li>Ética e boas práticas na escola</li>
+                </ul>
+
+                <p class="slide-subtitle">📝 Seu prompt deve incluir:</p>
+                <ul>
+                    <li>Tema específico (IA, LGPD, ética escolar)</li>
+                    <li>Comprimento desejado (resumo conciso)</li>
+                    <li>Público alvo (estudantes)</li>
+                    <li>Tom (educativo e acessível)</li>
+                    <li>Estrutura (parágrafos temáticos)</li>
+                </ul>
+
+                <p class="slide-subtitle">⏱️ Tempo: 10 minutos</p>
+
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 22: Atividade Prática - Criar Prompt para Roteiro -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">🎬 Atividade Prática</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">🎬 Crie um Prompt para Gerar Roteiro</div>
+            <div class="slide-body">
+                <p class="slide-subtitle">🎯 Desafio:</p>
+                <p class="slide-content"><strong>Use a IA para criar um prompt que gere um roteiro de vídeo com:</strong></p>
+                <ul>
+                    <li>Cenas descritas (abertura, propósito, oportunidade)</li>
+                    <li>Narrações para cada cena</li>
+                    <li>Duração de cada segmento</li>
+                    <li>Mensagem final e legenda</li>
+                    <li>Hashtags recomendadas</li>
+                </ul>
+
+                <p class="slide-subtitle">📝 Seu prompt deve incluir:</p>
+                <ul>
+                    <li>Contexto (instituição, curso, público)</li>
+                    <li>Objetivo (inspirar, informar, engajar)</li>
+                    <li>Tom (profissional, motivador)</li>
+                    <li>Formato (cenas + narrações + detalhes)</li>
+                    <li>Duração total desejada</li>
+                </ul>
+
+                <p class="slide-subtitle">⏱️ Tempo: 15 minutos</p>
+
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 23: Atividade Prática - Criar Prompt para Imagem -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">🎨 Atividade Prática</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">🎨 Crie um Prompt para Gerar Imagem</div>
+            <div class="slide-body">
+                <p class="slide-subtitle">🎯 Desafio:</p>
+                <p class="slide-content"><strong>Use a IA para criar um prompt que gere uma imagem estilo:</strong></p>
+                <ul>
+                    <li>Tema: Futuro, tecnologia, educação profissional</li>
+                    <li>Estilo: Neon, futurista, moderno</li>
+                    <li>Elementos: Pessoas, dispositivos, símbolos industriais</li>
+                    <li>Atmosfera: Inovadora, motivadora, profissional</li>
+                </ul>
+
+                <p class="slide-subtitle">📝 Seu prompt deve incluir:</p>
+                <ul>
+                    <li>Descrição do estilo visual (neon, cores, iluminação)</li>
+                    <li>Elementos principais (pessoas, objetos, cenário)</li>
+                    <li>Composição (enquadramento, perspectiva)</li>
+                    <li>Tom e atmosfera desejada</li>
+                    <li>Referências de qualidade (4K, HD, estilo artístico)</li>
+                </ul>
+
+                <p class="slide-subtitle">⏱️ Tempo: 15 minutos</p>
+
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 24: Trabalho em Duplas - Criar 3 Artefatos -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">👥 Trabalho em Duplas</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">👥 Criar 3 Artefatos com IA</div>
+            <div class="slide-body">
+                <p class="slide-subtitle">🎯 Desafio:</p>
+                <p class="slide-content"><strong>Em duplas, criem 3 artefatos diferentes usando prompts na IA:</strong></p>
+
+                <p class="slide-subtitle">1️⃣ Loja de Pets</p>
+                <ul>
+                    <li>Site interativo com produtos</li>
+                    <li>Catálogo de animais/serviços</li>
+                    <li>Sistema de carrinho de compras</li>
+                </ul>
+
+                <p class="slide-subtitle">2️⃣ Loja de Joias</p>
+                <ul>
+                    <li>Galeria de joias com descrições</li>
+                    <li>Filtros por tipo/preço</li>
+                    <li>Detalhes de cada peça</li>
+                </ul>
+
+                <p class="slide-subtitle">3️⃣ Loja de Carros</p>
+                <ul>
+                    <li>Catálogo de veículos</li>
+                    <li>Comparativo de modelos</li>
+                    <li>Simulador de financiamento</li>
+                </ul>
+
+                <p class="slide-subtitle">📋 Metodologia:</p>
+                <ul>
+                    <li>1️⃣ <strong>Peça ao Gemini:</strong> "Crie um esboço de prompt para..."</li>
+                    <li>2️⃣ <strong>Aplique aprendizado:</strong> Use técnicas da aula</li>
+                    <li>3️⃣ <strong>Refine o prompt:</strong> Adicione detalhes específicos</li>
+                    <li>4️⃣ <strong>Teste no Claude:</strong> Visualize com Artifacts</li>
+                </ul>
+
+                <p class="slide-subtitle">💡 Dicas:</p>
+                <ul>
+                    <li>✅ Incluir contexto (tipo de loja, público)</li>
+                    <li>✅ Descrever funcionalidades desejadas</li>
+                    <li>✅ Especificar estilo visual/design</li>
+                    <li>✅ Documentar o prompt final utilizado</li>
+                </ul>
+
+                <p class="slide-subtitle">⏱️ Tempo: 30 minutos</p>
+
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 25: Exemplo Prático - Evolução de Prompts -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">📚 Exemplo Prático</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">📚 Evolução de Prompts - Carreira Profissional</div>
+            <div class="slide-body">
+                <p class="slide-subtitle">❌ Prompt 1 (Simples):</p>
+                <p class="slide-content">"Me ajude a escolher uma carreira."</p>
+
+                <p class="slide-subtitle">✅ Prompt 2 (Detalhado):</p>
+                <p class="slide-content">"Quero ajuda para escolher uma carreira. Tenho 16 anos, gosto de tecnologia e matemática, mas não gosto de trabalhar sozinho. Sugira áreas compatíveis e explique brevemente cada uma."</p>
+
+                <p class="slide-subtitle">⭐ Prompt 3 (Aprimorado):</p>
+                <p class="slide-content">"Você é um orientador profissional. Considere que tenho 16 anos, gosto de tecnologia, matemática e trabalho em equipe. Sugira 5 carreiras relacionadas à tecnologia, descrevendo: o que a profissão faz, habilidades necessárias, possíveis cursos técnicos e nível de contato com pessoas. Organize em tabela."</p>
+
+                <p style="margin-top: 15px; color: #e74c3c; font-weight: bold; text-align: center; padding: 10px; background: #ffe8e8; border-radius: 5px;">
+                    ⚠️ IMPORTANTE: Não use IA para criar prompts neste exercício!<br>
+                    Compartilhe resultados com: gelvazio.c@edu.sc.senai.br
+                </p>
+
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 26: Atividade Prática - Criação de Prompts -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="slide-logo">📝 Atividade Prática</div>
+                <div class="sesi-logo">SESI SENAI</div>
+            </div>
+            <div class="slide-title">📝 Criação de Prompts - Evolução</div>
+            <div class="slide-body">
+                <p class="slide-subtitle">📌 Contexto:</p>
+                <p class="slide-content">A IA está sendo usada para estudo, atendimento, criação de conteúdo e suporte digital. A qualidade das respostas depende de como o usuário escreve o prompt. Nesta atividade, você atuará como criador de prompts para resolver uma necessidade real usando IA.</p>
+
+                <p class="slide-subtitle">🎯 Desafio:</p>
+                <ul>
+                    <li>Escolha um tema (escola, carreira, saúde, jogos, turismo, negócios)</li>
+                    <li>Crie 3 versões evolutivas:
+                        <ul>
+                            <li>V1 - Básica (pergunta simples)</li>
+                            <li>V2 - Detalhada (contexto + objetivo)</li>
+                            <li>V3 - Profissional (persona + formato + regras)</li>
+                        </ul>
+                    </li>
+                    <li>Teste cada prompt no ChatGPT e compare</li>
+                </ul>
+
+                <p class="slide-subtitle">📋 Resultados Esperados:</p>
+                <p class="slide-content">Relatório comparando as 3 versões com análise conclusiva sobre qual versão gerou melhor resultado e sugestões de melhoria.</p>
+
+                <p class="slide-subtitle">🎁 Bônus:</p>
+                <p class="slide-content">Faça o mesmo exercício com o Gemini e encontre as diferenças!</p>
+
+                <p style="margin-top: 15px; text-align: center; font-weight: bold; color: #008AD1;">
+                    📧 Compartilhar com: gelvazio.c@edu.sc.senai.br
+                </p>
+
+                <div class="copy-hint">👆 Copie este slide</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

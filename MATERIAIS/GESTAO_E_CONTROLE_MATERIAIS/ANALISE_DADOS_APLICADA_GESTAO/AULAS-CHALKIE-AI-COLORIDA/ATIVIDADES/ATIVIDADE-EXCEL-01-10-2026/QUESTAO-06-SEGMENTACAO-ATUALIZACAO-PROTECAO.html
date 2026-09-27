@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questão 6 — Painel interativo, atualização e proteção</title>
+<link rel="stylesheet" href="../../../../../../assets/css/atividade-pratica-excel.css">
+<script src="../../../../../../assets/js/atividade-pratica-excel.js" defer></script>
+</head>
+<body data-atividade="ATIVIDADE-EXCEL-01-10-2026">
+<div class="pagina">
+<header class="cabecalho">
+<div class="cabecalho__marca">SENAI · Análise de Dados Aplicada à Gestão</div>
+<h1 class="cabecalho__titulo">Questão 6 — Painel interativo, atualização e proteção</h1>
+<p class="cabecalho__subtitulo">Atividade Prática de Excel — Análise de Compras com Tabelas Dinâmicas</p>
+<div class="cabecalho__selos"><span class="selo selo--formativa">Atividade prática avaliativa</span><span class="selo ">⏱ 30 min</span><span class="selo ">1,5 pontos</span><span class="selo ">6 passos</span></div>
+<div class="identificacao"><div class="identificacao__campo">Nome:</div><div class="identificacao__campo">Turma:</div><div class="identificacao__campo">Data: 01/10/2026</div></div>
+</header>
+<nav class="navegacao"><a class="botao" href="QUESTAO-05-CAMPO-CALCULADO-COMBINADO.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-01-10-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><span class="botao botao--desativado">→</span></nav>
+<section class="bloco">
+<h2>🎯 O que você vai fazer</h2>
+<p>Deixar o relatório <strong>interativo</strong> com segmentação e linha do tempo, <strong>atualizar</strong> a análise com uma compra nova e <strong>proteger</strong> a base e o relatório antes de entregar.</p>
+<h3>Você vai usar</h3><ul><li>Inserir Segmentação de Dados</li><li>Conexões de Relatório</li><li>Inserir Linha do Tempo</li><li>Dados → Atualizar Tudo</li><li>Proteger Planilha com &quot;Usar Tabela Dinâmica e Gráfico Dinâmico&quot;</li></ul>
+<p><strong>Aba de trabalho:</strong> <span class="celula">TD_Mes</span>, <span class="celula">Base_Compras</span> e <span class="celula">TD_Fornecedor</span> · <strong>Slides de apoio:</strong> Arquivo 6 — slides 20, 33–34, 36 e 36.1</p>
+</section>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">1</span><h3 class="passo__titulo">Insira a segmentação de Categoria</h3></div>
+<figure class="passo__figura"><img src="img/q6-passo-01.svg" alt="Janela Inserir Segmentação de Dados com Categoria marcada" loading="lazy"><figcaption class="passo__legenda">Inserir Segmentação de Dados (1) → marque Categoria (2) → OK (3).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Na aba <strong>TD_Mes</strong>, clique na tabela dinâmica.</li><li>Guia <strong>Análise da Tabela Dinâmica</strong> → <strong>Inserir Segmentação de Dados</strong> (1).</li><li>Marque <strong>Categoria</strong> (2) → <strong>OK</strong> (3). Aparece uma caixa com um botão para cada categoria.</li></ol>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span>O Calc não tem segmentação. Use o <strong>filtro da tabela dinâmica</strong> (Categoria na área de filtros) para o mesmo resultado.</div>
+<label class="concluido"><input type="checkbox" data-passo="q6-1"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">2</span><h3 class="passo__titulo">Ligue a segmentação às outras tabelas dinâmicas</h3></div>
+<figure class="passo__figura"><img src="img/q6-passo-02.svg" alt="Janela Conexões de Relatório com as tabelas dinâmicas de TD_Fornecedor, TD_Mes e TD_Itens marcadas" loading="lazy"><figcaption class="passo__legenda">Botão direito na segmentação (1) → Conexões de Relatório: marque as tabelas (2) (3) → OK (4).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique com o <strong>botão direito</strong> na caixa da segmentação (1) → <strong>Conexões de Relatório</strong>.</li><li>Marque as tabelas dinâmicas das abas <strong>TD_Fornecedor</strong> (2), <strong>TD_Mes</strong> e <strong>TD_Itens</strong> (3). O nome da aba aparece ao lado do nome da tabela.</li><li>Clique em <strong>OK</strong> (4). Agora um clique na segmentação filtra as três tabelas de uma vez.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Os números das tabelas (Tabela Dinâmica1, 2, 3...) podem ser outros no seu arquivo: guie-se pelo <strong>nome da aba</strong>.</div>
+<label class="concluido"><input type="checkbox" data-passo="q6-2"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">3</span><h3 class="passo__titulo">Filtre o período com a linha do tempo</h3></div>
+<figure class="passo__figura"><img src="img/q6-passo-03.svg" alt="Linha do tempo com os meses de janeiro a março selecionados" loading="lazy"><figcaption class="passo__legenda">Inserir Linha do Tempo (1) → arraste a barra para selecionar jan a mar (2).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Com a TD_Mes selecionada: <strong>Análise da Tabela Dinâmica</strong> → <strong>Inserir Linha do Tempo</strong> (1) → marque <strong>Data</strong> → <strong>OK</strong>.</li><li>Na linha do tempo, clique em <strong>JAN</strong> e arraste até <strong>MAR</strong> (2): a tabela mostra só o 1º trimestre.</li><li>Depois clique no ícone de <strong>limpar filtro</strong> da linha do tempo para voltar ao semestre inteiro.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Troque <strong>MESES</strong> por <strong>TRIMESTRES</strong> no canto da linha do tempo para escolher períodos maiores com um clique.</div>
+<label class="concluido"><input type="checkbox" data-passo="q6-3"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">4</span><h3 class="passo__titulo">Lance uma compra nova e atualize tudo</h3></div>
+<figure class="passo__figura"><img src="img/q6-passo-04.svg" alt="Nova compra P-037 na linha 38 da tabela e botão Atualizar Tudo da guia Dados" loading="lazy"><figcaption class="passo__legenda">Digite a compra na linha 38 (1) → Dados (2) → Atualizar Tudo (3).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Na <strong>Base_Compras</strong>, na primeira linha vazia logo abaixo da última compra (linha 38), digite a compra nova (1): <span class="celula">30/06/2026</span>, <span class="celula">P-037</span>, <span class="celula">Cometa EPI</span>, <span class="celula">EPI</span>, <span class="celula">Máscara PFF2</span>, <span class="celula">100</span>, <span class="celula">3,20</span>. O Valor Total é calculado sozinho.</li><li>Guia <strong>Dados</strong> (2) → <strong>Atualizar Tudo</strong> (3), ou <span class="tecla">Ctrl</span>+<span class="tecla">Alt</span>+<span class="tecla">F5</span>.</li><li>Volte às tabelas dinâmicas e veja os totais de junho e da Cometa EPI mudarem.</li></ol>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>Tabela dinâmica <strong>não atualiza sozinha</strong> quando a base muda: sem o Atualizar, os números ficam velhos.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Na TD_Mes, a contagem de pedidos de junho aumentou em 1.</div>
+<label class="concluido"><input type="checkbox" data-passo="q6-4"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">5</span><h3 class="passo__titulo">Proteja a base e o relatório</h3></div>
+<figure class="passo__figura"><img src="img/q6-passo-05.svg" alt="Janela Proteger Planilha com a opção Usar Tabela Dinâmica e Gráfico Dinâmico marcada" loading="lazy"><figcaption class="passo__legenda">Proteger Planilha (1), senha (2), permitir Usar Tabela Dinâmica e Gráfico Dinâmico (3) e OK (4).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Na <strong>Base_Compras</strong>: Revisão → <strong>Proteger Planilha</strong> → senha <span class="celula">senai2026</span> → <strong>OK</strong> → confirme a senha. Ninguém mais altera as compras por engano.</li><li>Na <strong>TD_Fornecedor</strong>: Revisão → <strong>Proteger Planilha</strong> (1) → senha <span class="celula">senai2026</span> (2).</li><li>Na lista de permissões, marque também <strong>Usar Tabela Dinâmica e Gráfico Dinâmico</strong> (3) → <strong>OK</strong> (4) → confirme a senha.</li></ol>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>Proteção evita erro acidental, mas não é segurança total: dados sigilosos pedem controle de acesso ao arquivo.</div>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span>Ferramentas → <strong>Proteger planilha</strong>.</div>
+<label class="concluido"><input type="checkbox" data-passo="q6-5"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">6</span><h3 class="passo__titulo">Teste o painel e entregue</h3></div>
+<figure class="passo__figura"><img src="img/q6-passo-06.svg" alt="Segmentação de Categoria com EPI selecionado filtrando a tabela dinâmica" loading="lazy"><figcaption class="passo__legenda">Clique em EPI na segmentação (1): as tabelas conectadas mudam juntas.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique em <strong>EPI</strong> na segmentação (1) e confira que <strong>TD_Fornecedor</strong> e <strong>TD_Itens</strong> também mudaram.</li><li>Limpe o filtro no ícone do canto superior da segmentação.</li><li>Salve (<span class="tecla">Ctrl</span>+<span class="tecla">B</span>) e entregue <span class="celula">COMPRAS-NOME-SOBRENOME.xlsx</span> como o professor orientar.</li></ol>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>O arquivo tem as abas Base_Compras, TD_Fornecedor, TD_Mes, TD_Itens e TD_Mensal, com os gráficos das Questões 4 e 5.</div>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Se a segmentação avisar que a planilha está protegida, confira se a opção <strong>Usar Tabela Dinâmica e Gráfico Dinâmico</strong> foi marcada no passo anterior.</div>
+<label class="concluido"><input type="checkbox" data-passo="q6-6"> Passo concluído</label></div>
+</article>
+<section class="bloco">
+<h2>📋 Como esta questão será avaliada</h2>
+<table class="tabela"><thead><tr><th>Critério</th><th>Pontos</th></tr></thead><tbody><tr><td>Segmentação de Categoria conectada às 3 tabelas dinâmicas</td><td>0,5</td></tr><tr><td>Linha do tempo pela Data</td><td>0,2</td></tr><tr><td>Compra P-037 lançada e análise atualizada</td><td>0,4</td></tr><tr><td>Base e TD_Fornecedor protegidas com a senha</td><td>0,2</td></tr><tr><td>Arquivo salvo com o nome pedido e todas as abas</td><td>0,2</td></tr><tr><td><strong>Total da questão</strong></td><td><strong>1,5</strong></td></tr></tbody></table>
+</section>
+<nav class="navegacao"><a class="botao" href="QUESTAO-05-CAMPO-CALCULADO-COMBINADO.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-01-10-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><span class="botao botao--desativado">→</span></nav>
+<footer class="rodape">Aprendizagem Industrial — Assistente em Processos de Gestão e Controle de Materiais · Análise de Dados Aplicada à Gestão · Empresa e dados fictícios, criados para fins didáticos.</footer>
+</div>
+</body>
+</html>

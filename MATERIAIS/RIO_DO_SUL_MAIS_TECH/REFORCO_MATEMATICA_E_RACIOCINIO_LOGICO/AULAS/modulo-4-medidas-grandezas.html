@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4: Medidas — Reforço Matemática</title>
+  <link rel="stylesheet" href="_assets/styles.css">
+  <style>
+    .conteudo-detalhado { margin: 30px 0; }
+    .secao-conteudo { background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #004384; }
+    .imagem-exemplo { max-width: 100%; height: auto; border-radius: 8px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .exemplo-box { background: #f0f7ff; padding: 15px; margin: 15px 0; border-radius: 6px; border-left: 3px solid #f7941d; }
+    .dica-importante { background: #fff9f0; padding: 15px; margin: 15px 0; border-radius: 6px; border-left: 3px solid #f7941d; }
+    .grid-imagens { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+    .tabela-conversao { border-collapse: collapse; width: 100%; margin: 15px 0; }
+    .tabela-conversao td, .tabela-conversao th { border: 1px solid #ddd; padding: 10px; text-align: center; }
+    .tabela-conversao th { background: #004384; color: white; }
+    @media (max-width: 768px) { .grid-imagens { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="layout-wrapper">
+    <nav class="menu-lateral">
+      <h3>Módulos</h3>
+      <a href="index.html" class="menu-item">Início</a>
+      <hr style="margin: 15px 0; border: none; border-top: 1px solid #ddd;">
+      <a href="modulo-1-operacoes-basicas.html" class="menu-item">Módulo 1</a>
+      <a href="modulo-2-fracoes-decimais.html" class="menu-item">Módulo 2</a>
+      <a href="modulo-3-proporcionalidade.html" class="menu-item">Módulo 3</a>
+      <a href="modulo-4-medidas-grandezas.html" class="menu-item">Módulo 4</a>
+      <a href="modulo-5-raciocinio-logico.html" class="menu-item">Módulo 5</a>
+      <a href="modulo-6-algebra.html" class="menu-item">Módulo 6</a>
+      <a href="modulo-7-tratamento-informacao.html" class="menu-item">Módulo 7</a>
+    </nav>
+    <div class="conteudo-wrapper">
+      <div class="container">
+        <div class="header-controls">
+          <h1>Módulo 4: Medidas</h1>
+          <button class="btn btn-secondary" onclick="imprimirPagina()">Imprimir</button>
+        </div>
+        <div class="modulo-progress">
+          <span class="modulo-progress-text">Módulo 4 de 7</span>
+        </div>
+        <section class="modulo-intro conteudo-detalhado">
+          <h2>Módulo 4: Medidas e Grandezas</h2>
+          <p><strong>Carga Horária:</strong> 9 horas | <strong>Objetivo:</strong> Dominar conversão de unidades e calcular áreas, perímetros e volumes com precisão.</p>
+
+          <div class="secao-conteudo">
+            <h3>🎯 Introdução — Medindo o Mundo</h3>
+            <p>Medidas estão em tudo: altura de prédios, peso de alimentos, área de terrenos, volume de água. Profissões como engenheiro, arquiteto, construtor e designer dependem de cálculos de medidas todos os dias!</p>
+          </div>
+
+          <div class="grid-imagens">
+            <div>
+              <h4>🏗️ Construção Civil</h4>
+              <img src="https://images.pexels.com/photos/416978/pexels-photo-416978.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Obra de construção" class="imagem-exemplo">
+              <p>Engenheiros calculam áreas, perímetros e volumes em cada projeto</p>
+            </div>
+            <div>
+              <h4>📏 Régua e Medições</h4>
+              <img src="https://images.pexels.com/photos/97099/pexels-photo-97099.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Régua de medição" class="imagem-exemplo">
+              <p>Medições precisas são essenciais em todas as profissões técnicas</p>
+            </div>
+          </div>
+
+          <h3>📚 1. Sistema Métrico Decimal</h3>
+          <div class="secao-conteudo">
+            <p>O sistema métrico usa potências de 10, facilitando conversões!</p>
+
+            <h4>Comprimento (Metro = m)</h4>
+            <table class="tabela-conversao">
+              <tr>
+                <th>quilômetro</th><th>hectômetro</th><th>decâmetro</th><th>metro</th><th>decímetro</th><th>centímetro</th><th>milímetro</th>
+              </tr>
+              <tr>
+                <td>km</td><td>hm</td><td>dam</td><td><strong>m</strong></td><td>dm</td><td>cm</td><td>mm</td>
+              </tr>
+              <tr>
+                <td>1000m</td><td>100m</td><td>10m</td><td>1m</td><td>0,1m</td><td>0,01m</td><td>0,001m</td>
+              </tr>
+            </table>
+
+            <div class="exemplo-box">
+              <strong>Conversões Práticas:</strong>
+              <br>3500m = 3,5km (dividir por 1000)
+              <br>250cm = 2,5m (dividir por 100)
+              <br>1,75m = 175cm (multiplicar por 100)
+            </div>
+
+            <h4>Massa (Quilograma = kg)</h4>
+            <div class="exemplo-box">
+              1 tonelada = 1000kg
+              <br>1kg = 1000g
+              <br>500g = 0,5kg
+            </div>
+
+            <h4>Capacidade (Litro = L)</h4>
+            <div class="exemplo-box">
+              1L = 1000mL
+              <br>250mL = 0,25L
+              <br>2,5L = 2500mL
+            </div>
+          </div>
+
+          <h3>📚 2. Área e Perímetro</h3>
+          <div class="secao-conteudo">
+            <p><strong>Perímetro:</strong> É a soma de todos os lados de uma figura</p>
+            <p><strong>Área:</strong> É o espaço dentro de uma figura plana</p>
+
+            <h4>Quadrado</h4>
+            <div class="exemplo-box">
+              Perímetro = lado × 4 = L × 4
+              <br>Área = lado × lado = L²
+              <br>
+              <br>Se lado = 5cm:
+              <br>Perímetro = 5 × 4 = 20cm
+              <br>Área = 5 × 5 = 25cm²
+            </div>
+
+            <h4>Retângulo</h4>
+            <div class="exemplo-box">
+              Perímetro = 2 × (comprimento + largura) = 2(C + L)
+              <br>Área = comprimento × largura = C × L
+              <br>
+              <br>Se C = 8m e L = 5m:
+              <br>Perímetro = 2 × (8 + 5) = 26m
+              <br>Área = 8 × 5 = 40m²
+            </div>
+
+            <h4>Triângulo</h4>
+            <div class="exemplo-box">
+              Perímetro = lado1 + lado2 + lado3
+              <br>Área = (base × altura) ÷ 2
+              <br>
+              <br>Se base = 10cm e altura = 6cm:
+              <br>Área = (10 × 6) ÷ 2 = 30cm²
+            </div>
+
+            <h4>Círculo</h4>
+            <div class="exemplo-box">
+              Perímetro (Circunferência) = 2 × π × raio = 2πr
+              <br>Área = π × raio² = πr²
+              <br>
+              <br>Se raio = 5m (π ≈ 3,14):
+              <br>Perímetro = 2 × 3,14 × 5 = 31,4m
+              <br>Área = 3,14 × 5² = 78,5m²
+            </div>
+          </div>
+
+          <h3>📚 3. Volume</h3>
+          <div class="secao-conteudo">
+            <p>Volume é o espaço dentro de uma figura 3D. Medido em m³, cm³, litros, etc.</p>
+
+            <div class="exemplo-box">
+              <strong>Cubo ou Bloco:</strong> Volume = comprimento × largura × altura = C × L × A
+              <br>
+              <br>Se C = 4m, L = 3m, A = 2m:
+              <br>Volume = 4 × 3 × 2 = 24m³
+            </div>
+
+            <div class="exemplo-box">
+              <strong>Cilindro:</strong> Volume = π × raio² × altura = πr²h
+              <br>
+              <br>Se raio = 2m, altura = 5m (π ≈ 3,14):
+              <br>Volume = 3,14 × 2² × 5 = 62,8m³
+            </div>
+          </div>
+
+          <h3>🎯 Metodologia Chalkie AI</h3>
+          <div class="secao-conteudo">
+            <ul>
+              <li><strong>Objetos Reais:</strong> Medições de sala de aula, objetos pessoais, prédios</li>
+              <li><strong>Contextos Profissionais:</strong> Cálculos reais em construção, design, engenharia</li>
+              <li><strong>Estimativas:</strong> Desenvolver intuição matemática sobre tamanhos</li>
+              <li><strong>Ferramentas Visuais:</strong> Interativas para cálculos de área, perímetro e volume</li>
+            </ul>
+          </div>
+
+          <h3>✓ Critérios de Avaliação</h3>
+          <div class="secao-conteudo">
+            <ul>
+              <li>✅ Converter entre unidades com fluência, precisão e segurança</li>
+              <li>✅ Calcular área e perímetro de figuras diversas com 85%+ acurácia</li>
+              <li>✅ Estimar medidas com razoabilidade dentro de margem aceitável</li>
+              <li>✅ Resolver problemas de medida em contextos profissionais e técnicos</li>
+            </ul>
+          </div>
+
+          <h3>✏️ Exercícios Práticos</h3>
+          <div class="exercicios-section" id="exercicios-container"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script src="_assets/scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      carregarExercicios('modulo4');
+    });
+  </script>
+</body>
+</html>

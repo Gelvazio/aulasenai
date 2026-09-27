@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade: Informática Básica — Hardware, Periféricos e SO</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --gold: #FFD700;
+            --text: #2d3748;
+            --light: #f7fafc;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--gold);
+        }
+        header h1 { font-size: 40px; margin-bottom: 10px; }
+        header p { font-size: 16px; opacity: 0.95; }
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+            background: #f9fafb;
+            border-bottom: 2px solid #e2e8f0;
+            justify-content: center;
+        }
+        .nav-tabs button {
+            padding: 10px 20px;
+            border: 2px solid var(--primary);
+            background: white;
+            color: var(--primary);
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .nav-tabs button.active {
+            background: var(--primary);
+            color: white;
+        }
+        .content-section { display: none; padding: 40px; }
+        .content-section.active { display: block; }
+        .aula-card {
+            background: #f9fafb;
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .aula-badge {
+            background: var(--primary);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 12px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .aula-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+        .aula-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .tag {
+            background: #e6f2ff;
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+        .content-box {
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--gold);
+        }
+        .content-label {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+        .content-text { font-size: 14px; line-height: 1.6; }
+        .steps {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        .steps li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 13px;
+        }
+        .steps li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .nav-tabs { gap: 5px; }
+            .nav-tabs button { padding: 8px 12px; font-size: 12px; }
+            header h1 { font-size: 28px; }
+            .content-section { padding: 20px; }
+        }
+            .alternativas { list-style: none; padding: 0; margin: 6px 0 0; }
+        .alternativas li {
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .alternativas .letra { font-weight: 700; color: var(--primary); margin-right: 6px; }
+        .resposta-linha { border-bottom: 1px solid #2d3748; height: 28px; margin: 6px 0; }
+        .gabarito-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .gabarito-table th {
+            background: var(--primary);
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        .gabarito-table td { padding: 10px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+        .gabarito-table tr:nth-child(even) td { background: #f9fafb; }
+        .export-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 20px;
+            background: #fffbea;
+            border-bottom: 2px solid var(--gold);
+        }
+        .btn-export-pdf {
+            background: #f7941d;
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .btn-export-pdf:hover { background: #d97706; transform: translateY(-2px); }
+        .export-bar label { font-size: 13px; font-weight: 600; color: var(--text); cursor: pointer; }
+        .export-bar small { font-size: 12px; color: #718096; }
+        .gabarito-table .resp { font-weight: 700; color: var(--secondary); white-space: nowrap; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💻 Atividade: Informática Básica</h1>
+            <p>Hardware, Periféricos e Sistemas Operacionais — 20 questões</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="orientacoes">Orientações</button>
+            <button class="tab-btn" data-tab="parte1">Parte 1 — Hardware</button>
+            <button class="tab-btn" data-tab="parte2">Parte 2 — Periféricos</button>
+            <button class="tab-btn" data-tab="parte3">Parte 3 — Sistema Operacional</button>
+            <button class="tab-btn" data-tab="parte4">Parte 4 — Arquivos</button>
+            <button class="tab-btn" data-tab="parte5">Parte 5 — Manutenção</button>
+            <button class="tab-btn" data-tab="gabarito">🔑 Gabarito</button>
+        </div>
+
+        <div class="export-bar">
+            <button class="btn-export-pdf" onclick="exportarPDFAtividade()">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 5 partes e as 20 questões.</small>
+        </div>
+
+        <!-- ORIENTAÇÕES -->
+        <div id="orientacoes" class="content-section active">
+            <div class="aula-card">
+                <span class="aula-badge">ATIVIDADE</span>
+                <div class="aula-title">Informática Básica — Hardware, Periféricos e Sistemas Operacionais</div>
+                <div class="aula-meta">
+                    <span class="tag">60 min</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">20 questões</span>
+                    <span class="tag">Domínio 4.7 da ementa</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Reconhecer características e aplicações de hardware e software dos sistemas informatizados utilizados na indústria.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você acaba de ser contratado como assistente de operações logísticas em um centro de distribuição. No primeiro dia, a coordenação quer verificar se você reconhece os equipamentos do setor, entende o sistema operacional e sabe organizar arquivos com segurança antes de liberar seu acesso ao sistema de estoque.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Responda às 20 questões, distribuídas em 5 partes. Leia o contexto de cada questão antes de responder. Nas questões de associação, ordenação e discursiva, registre a resposta completa no campo indicado.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (5 partes)</div>
+                    <ul class="steps">
+                        <li><strong>Parte 1 — Hardware (Q01–Q05):</strong> hardware × software, CPU, RAM, HDD × SSD e o computador como canal</li>
+                        <li><strong>Parte 2 — Periféricos (Q06–Q09):</strong> classificação, associação, conexões e uso correto</li>
+                        <li><strong>Parte 3 — Sistema Operacional (Q10–Q13):</strong> funções, tipos, interface gráfica e atalhos</li>
+                        <li><strong>Parte 4 — Arquivos (Q14–Q17):</strong> nomenclatura, diretórios, pesquisa com curinga e compactação</li>
+                        <li><strong>Parte 5 — Manutenção e Segurança (Q18–Q20):</strong> diagnóstico de falhas, backup e dilema profissional</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Identifica corretamente componentes e periféricos<br>
+                        • Explica o papel do Sistema Operacional<br>
+                        • Aplica padrão profissional de nomes, pastas e compactação<br>
+                        • Reconhece sintomas de falha e medidas de proteção<br>
+                        • Justifica a resposta discursiva com impactos e solução
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📦 ENTREGA</div>
+                    <div class="content-text">Folha de respostas com as 20 questões preenchidas (1 ponto para Q01–Q19 e 1 ponto para a discursiva Q20).</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PARTE 1 — HARDWARE -->
+        <div id="parte1" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 01</span>
+                <div class="aula-title">Hardware ou Software?</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Diferenciar hardware e software e identificar CPU, RAM e armazenamento.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na doca de recebimento, o conferente usa um leitor de código de barras ligado ao computador. Ao ler a etiqueta, o sistema de estoque (WMS) registra a entrada do produto.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Assinale a alternativa que classifica corretamente os elementos citados.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Leitor e sistema de estoque são hardware.</li>
+                        <li><span class="letra">B)</span>Leitor é hardware; sistema de estoque é software.</li>
+                        <li><span class="letra">C)</span>Leitor é software; sistema de estoque é hardware.</li>
+                        <li><span class="letra">D)</span>Leitor e sistema de estoque são software.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 02</span>
+                <div class="aula-title">O Cérebro do Computador</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Diferenciar hardware e software e identificar CPU, RAM e armazenamento.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O relatório de inventário do mês demora para ser gerado porque exige muitos cálculos.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual componente busca, decodifica e executa as instruções e realiza os cálculos?</div>
+                </div>
+
+                <div class=”content-box”>
+                    <div class=”content-label”>📝 ALTERNATIVAS</div>
+                    <ul class=”alternativas”>
+                        <li><span class=”letra”>A)</span>Memória RAM</li>
+                        <li><span class=”letra”>B)</span>Placa-mãe</li>
+                        <li><span class=”letra”>C)</span>Processador (CPU)</li>
+                        <li><span class=”letra”>D)</span>Monitor</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class=”aula-card”>
+                <span class=”aula-badge”>QUESTÃO 03</span>
+                <div class=”aula-title”>A Memória RAM</div>
+                <div class=”aula-meta”>
+                    <span class=”tag”>Múltipla escolha</span>
+                    <span class=”tag”>Individual</span>
+                    <span class=”tag”>Informática Básica</span>
+                </div>
+
+                <div class=”content-box”>
+                    <div class=”content-label”>🎯 CAPACIDADE</div>
+                    <div class=”content-text”>Diferenciar hardware e software e identificar CPU, RAM e armazenamento.</div>
+                </div>
+
+                <div class=”content-box”>
+                    <div class=”content-label”>📋 CONTEXTO</div>
+                    <div class=”content-text”>Houve queda de energia no escritório do centro de distribuição. Um colega afirma: “Não tem problema, a memória RAM guardou a planilha que eu estava editando”.</div>
+                </div>
+
+                <div class=”content-box”>
+                    <div class=”content-label”>🎬 COMANDO</div>
+                    <div class=”content-text”>O que você responde ao seu colega?</div>
+                </div>
+
+                <div class=”content-box”>
+                    <div class=”content-label”>📝 ALTERNATIVAS</div>
+                    <ul class=”alternativas”>
+                        <li><span class=”letra”>A)</span>O colega está correto; a RAM guarda dados permanentemente.</li>
+                        <li><span class=”letra”>B)</span>O colega está errado; a RAM é volátil e perde tudo ao desligar. Os dados só são salvos no disco.</li>
+                        <li><span class=”letra”>C)</span>A RAM só guarda dados de programas abertos, não arquivos.</li>
+                        <li><span class=”letra”>D)</span>A queda de energia não afeta a RAM.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 04</span>
+                <div class="aula-title">HDD ou SSD?</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Diferenciar hardware e software e identificar CPU, RAM e armazenamento.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Os notebooks usados na expedição sofrem quedas e vibração com frequência. A empresa vai trocar o armazenamento desses equipamentos.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual opção é mais indicada e por quê?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>HDD, porque tem pratos magnéticos mais resistentes.</li>
+                        <li><span class="letra">B)</span>SSD, porque não tem peças móveis, é mais rápido e resiste melhor a impactos.</li>
+                        <li><span class="letra">C)</span>HDD, porque é até 10 vezes mais rápido.</li>
+                        <li><span class="letra">D)</span>Memória RAM, porque guarda os arquivos para sempre.</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✏️ RESPOSTA</div>
+                    <div class="resposta-linha"></div>
+                </div>
+            </div>
+
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 05</span>
+                <div class="aula-title">O Computador como Canal</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Diferenciar hardware e software e identificar CPU, RAM e armazenamento.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um cabo de rede com mau contato distorce o envio de um relatório gerencial da expedição para a gerência.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual elemento da comunicação foi afetado?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O feedback, desativado pelo sistema.</li>
+                        <li><span class="letra">B)</span>O emissor, que redigiu errado o relatório.</li>
+                        <li><span class="letra">C)</span>O código linguístico, que perdeu as normas formais.</li>
+                        <li><span class="letra">D)</span>O canal de transmissão, com interferência de ruído.</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✏️ RESPOSTA</div>
+                    <div class="resposta-linha"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PARTE 2 — PERIFÉRICOS -->
+        <div id="parte2" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 06</span>
+                <div class="aula-title">Classificando Periféricos</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Classificar periféricos e reconhecer as conexões e o uso correto.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No setor de expedição existem: teclado, leitor de código de barras, scanner, impressora de etiquetas e pen drive.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual desses equipamentos é um periférico exclusivamente de SAÍDA?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Leitor de código de barras</li>
+                        <li><span class="letra">B)</span>Impressora de etiquetas</li>
+                        <li><span class="letra">C)</span>Scanner</li>
+                        <li><span class="letra">D)</span>Teclado</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✏️ RESPOSTA</div>
+                    <div class="resposta-linha"></div>
+                </div>
+            </div>
+
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 07</span>
+                <div class="aula-title">Classificação de Periféricos</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Classificar periféricos e reconhecer as conexões e o uso correto.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você está montando o inventário de equipamentos do escritório e precisa classificar corretamente cada periférico.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual alternativa classifica CORRETAMENTE um Monitor LED, Scanner de mesa, Pen drive USB e Teclado ABNT2?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Monitor (entrada), Scanner (entrada), Pen drive (saída), Teclado (entrada).</li>
+                        <li><span class="letra">B)</span>Monitor (saída), Scanner (entrada), Pen drive (entrada/saída), Teclado (entrada).</li>
+                        <li><span class="letra">C)</span>Monitor (entrada), Scanner (saída), Pen drive (entrada/saída), Teclado (saída).</li>
+                        <li><span class="letra">D)</span>Monitor (saída), Scanner (saída), Pen drive (entrada), Teclado (entrada).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 08</span>
+                <div class="aula-title">Conexões</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Classificar periféricos e reconhecer as conexões e o uso correto.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O computador novo da portaria precisa ser ligado à rede cabeada da empresa.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual conexão deve ser utilizada?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>HDMI</li>
+                        <li><span class="letra">B)</span>RJ-45 (Ethernet)</li>
+                        <li><span class="letra">C)</span>DisplayPort</li>
+                        <li><span class="letra">D)</span>USB-C</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✏️ RESPOSTA</div>
+                    <div class="resposta-linha"></div>
+                </div>
+            </div>
+
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 09</span>
+                <div class="aula-title">Uso Correto do Pen Drive</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Classificar periféricos e reconhecer as conexões e o uso correto.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você terminou de copiar a planilha de fretes para um pen drive e precisa entregá-lo ao transportador.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o procedimento correto antes de retirar o pen drive?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Puxar o pen drive imediatamente após copiar.</li>
+                        <li><span class="letra">B)</span>Desligar o monitor.</li>
+                        <li><span class="letra">C)</span>Usar a opção “Ejetar / Remover hardware com segurança”.</li>
+                        <li><span class="letra">D)</span>Reiniciar a impressora padrão.</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✏️ RESPOSTA</div>
+                    <div class="resposta-linha"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PARTE 3 — SISTEMA OPERACIONAL -->
+        <div id="parte3" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 10</span>
+                <div class="aula-title">Funções do Sistema Operacional</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Compreender o papel, os tipos e a interface do Sistema Operacional.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O Sistema Operacional é o “gerente do armazém” do computador: decide quem usa cada recurso e quando.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual das atividades abaixo NÃO é uma função do Sistema Operacional?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dividir o tempo da CPU entre os programas.</li>
+                        <li><span class="letra">B)</span>Reservar espaço de memória RAM para cada programa.</li>
+                        <li><span class="letra">C)</span>Organizar e proteger a gravação de arquivos nos discos.</li>
+                        <li><span class="letra">D)</span>Redigir o relatório de expedição do dia.</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✏️ RESPOSTA</div>
+                    <div class="resposta-linha"></div>
+                </div>
+            </div>
+
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 11</span>
+                <div class="aula-title">Tipos de Sistema Operacional</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Compreender o papel, os tipos e a interface do Sistema Operacional.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Os coletores de dados usados pelos operadores de empilhadeira funcionam como smartphones robustos.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Que tipo de Sistema Operacional esses coletores normalmente utilizam?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Sistema operacional de servidor</li>
+                        <li><span class="letra">B)</span>Sistema operacional móvel</li>
+                        <li><span class="letra">C)</span>Nenhum sistema operacional</li>
+                        <li><span class="letra">D)</span>Apenas BIOS</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✏️ RESPOSTA</div>
+                    <div class="resposta-linha"></div>
+                </div>
+            </div>
+
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 12</span>
+                <div class="aula-title">Elementos da Interface Gráfica</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Compreender o papel, os tipos e a interface do Sistema Operacional.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um novo auxiliar administrativo não conhece a tela do computador e pede sua ajuda para entender os elementos principais.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual alternativa descreve CORRETAMENTE a função de cada elemento? (Área de trabalho, Barra de tarefas, Menu Iniciar)</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Área de trabalho = mostra apps abertos; Barra de tarefas = espaço com atalhos; Menu Iniciar = programas instalados.</li>
+                        <li><span class="letra">B)</span>Área de trabalho = espaço visual com atalhos; Barra de tarefas = mostra apps abertos e relógio; Menu Iniciar = programas e configurações.</li>
+                        <li><span class="letra">C)</span>Área de trabalho = programas instalados; Barra de tarefas = relógio; Menu Iniciar = atalhos visuais.</li>
+                        <li><span class="letra">D)</span>Área de trabalho = configurações; Barra de tarefas = atalhos visuais; Menu Iniciar = apps abertos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 13</span>
+                <div class="aula-title">Atalhos de Teclado</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Compreender o papel, os tipos e a interface do Sistema Operacional.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você precisa abrir rapidamente o explorador de arquivos para localizar uma nota fiscal.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual atalho do Windows abre o explorador de arquivos?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Alt + Tab</li>
+                        <li><span class="letra">B)</span>Ctrl + Z</li>
+                        <li><span class="letra">C)</span>Windows + E</li>
+                        <li><span class="letra">D)</span>Ctrl + V</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✏️ RESPOSTA</div>
+                    <div class="resposta-linha"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PARTE 4 — ARQUIVOS -->
+        <div id="parte4" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 14</span>
+                <div class="aula-title">Nomenclatura Profissional</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Organizar, nomear, pesquisar e compactar arquivos com padrão profissional.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A equipe de inventário salva várias versões da planilha de contagem na pasta compartilhada.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual nome de arquivo segue o padrão profissional?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>documento final.docx</li>
+                        <li><span class="letra">B)</span>relatório#2 inventário.xlsx</li>
+                        <li><span class="letra">C)</span>2025-09-23_Inventario_CD01_v02.xlsx</li>
+                        <li><span class="letra">D)</span>novo.xlsx</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✏️ RESPOSTA</div>
+                    <div class="resposta-linha"></div>
+                </div>
+            </div>
+
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 15</span>
+                <div class="aula-title">Estrutura de Diretórios</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Organizar, nomear, pesquisar e compactar arquivos com padrão profissional.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Os arquivos são organizados em uma árvore hierárquica que começa no diretório raiz.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o diretório raiz no Windows e no Linux, respectivamente?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>C:\ e /</li>
+                        <li><span class="letra">B)</span>/ e C:\</li>
+                        <li><span class="letra">C)</span>Documentos e Home</li>
+                        <li><span class="letra">D)</span>Área de Trabalho e Downloads</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✏️ RESPOSTA</div>
+                    <div class="resposta-linha"></div>
+                </div>
+            </div>
+
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 16</span>
+                <div class="aula-title">Pesquisa com Curinga</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Organizar, nomear, pesquisar e compactar arquivos com padrão profissional.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A pasta da expedição tem centenas de arquivos e você precisa listar apenas os comprovantes em PDF.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual pesquisa encontra todos os arquivos PDF?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>pdf</li>
+                        <li><span class="letra">B)</span>#.pdf</li>
+                        <li><span class="letra">C)</span>*.pdf</li>
+                        <li><span class="letra">D)</span>pdf*</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✏️ RESPOSTA</div>
+                    <div class="resposta-linha"></div>
+                </div>
+            </div>
+
+            <div class=”aula-card”>
+                <span class=”aula-badge”>QUESTÃO 17</span>
+                <div class=”aula-title”>Procedimento de Compactação</div>
+                <div class=”aula-meta”>
+                    <span class=”tag”>Múltipla escolha</span>
+                    <span class=”tag”>Individual</span>
+                    <span class=”tag”>Informática Básica</span>
+                </div>
+
+                <div class=”content-box”>
+                    <div class=”content-label”>🎯 CAPACIDADE</div>
+                    <div class=”content-text”>Organizar, nomear, pesquisar e compactar arquivos com padrão profissional.</div>
+                </div>
+
+                <div class=”content-box”>
+                    <div class=”content-label”>📋 CONTEXTO</div>
+                    <div class=”content-text”>Você precisa enviar por e-mail todos os relatórios de 2025 da pasta Relatórios em um único anexo compactado.</div>
+                </div>
+
+                <div class=”content-box”>
+                    <div class=”content-label”>🎬 COMANDO</div>
+                    <div class=”content-text”>Qual é a sequência CORRETA para compactar e enviar os arquivos?</div>
+                </div>
+
+                <div class=”content-box”>
+                    <div class=”content-label”>📝 ALTERNATIVAS</div>
+                    <ul class=”alternativas”>
+                        <li><span class=”letra”>A)</span>Compactar → Anexar → Selecionar → Renomear</li>
+                        <li><span class=”letra”>B)</span>Selecionar → Renomear → Compactar → Anexar</li>
+                        <li><span class=”letra”>C)</span>Selecionar → Compactar → Renomear → Anexar</li>
+                        <li><span class=”letra”>D)</span>Anexar → Compactar → Renomear → Selecionar</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PARTE 5 — MANUTENÇÃO -->
+        <div id="parte5" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 18</span>
+                <div class="aula-title">Diagnóstico de Falhas</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Reconhecer falhas e aplicar manutenção preventiva e backup.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O computador do setor de faturamento apresenta telas azuis e reinicia sozinho várias vezes ao dia.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Esse sintoma indica, em geral, falha em qual componente?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mouse</li>
+                        <li><span class="letra">B)</span>Memória</li>
+                        <li><span class="letra">C)</span>Monitor</li>
+                        <li><span class="letra">D)</span>Impressora</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✏️ RESPOSTA</div>
+                    <div class="resposta-linha"></div>
+                </div>
+            </div>
+
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 19</span>
+                <div class="aula-title">Backup 3-2-1</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Reconhecer falhas e aplicar manutenção preventiva e backup.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A planilha de controle de estoque é vital para a operação e não pode ser perdida.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa a regra de backup 3-2-1?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>3 senhas, 2 usuários e 1 administrador.</li>
+                        <li><span class="letra">B)</span>3 cópias, em 2 mídias diferentes, com 1 cópia fora do local.</li>
+                        <li><span class="letra">C)</span>3 computadores, 2 impressoras e 1 servidor.</li>
+                        <li><span class="letra">D)</span>Fazer backup a cada 3 dias, 2 vezes, por 1 hora.</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✏️ RESPOSTA</div>
+                    <div class="resposta-linha"></div>
+                </div>
+            </div>
+
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 20</span>
+                <div class="aula-title">Boas Práticas de Organização</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Reconhecer falhas e aplicar manutenção preventiva e backup.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um colega salva todos os relatórios diretamente na Área de Trabalho e nunca compacta os arquivos antes de enviá-los por e-mail.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual impacto essa prática NÃO causa para a organização?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Lentidão no computador (desktop poluída), poluição visual e dificuldade para localizar arquivos importantes.</li>
+                        <li><span class="letra">B)</span>Risco de perda de dados sem histórico de versões ou backup adequado; violação de políticas de segurança.</li>
+                        <li><span class="letra">C)</span>Sobrecarga dos servidores de e-mail pela falta de compactação; congestionamento de tráfego de rede.</li>
+                        <li><span class="letra">D)</span>Aumento significativo da velocidade de processamento do computador e melhoria do desempenho geral.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- GABARITO -->
+        <div id="gabarito" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">GABARITO</span>
+                <div class="aula-title">Respostas e Justificativas (uso do professor)</div>
+                <div class="aula-meta">
+                    <span class="tag">20 questões</span>
+                    <span class="tag">Correção</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🔑 RESPOSTAS</div>
+                    <table class="gabarito-table">
+                        <thead>
+                            <tr><th>Nº</th><th>Questão</th><th>Resposta</th><th>Justificativa</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Q01</td><td>Hardware ou Software?</td><td class="resp">B</td><td>Hardware é a parte física (o leitor); software são os programas e instruções (o sistema de estoque). Um depende do outro.</td></tr>
+                            <tr><td>Q02</td><td>O Cérebro do Computador</td><td class="resp">C</td><td>A CPU é o cérebro do computador: a ULA faz cálculos e lógica e a UC coordena as instruções.</td></tr>
+                            <tr><td>Q03</td><td>A Memória RAM</td><td class="resp">Falso</td><td>A RAM é volátil: perde os dados ao desligar. O armazenamento permanente fica no HDD ou SSD — por isso é preciso salvar sempre.</td></tr>
+                            <tr><td>Q04</td><td>HDD ou SSD?</td><td class="resp">B</td><td>O SSD usa memória Flash sem partes móveis: é mais rápido, silencioso e resistente a impactos. O HDD é mais barato por TB, mas sensível a quedas.</td></tr>
+                            <tr><td>Q05</td><td>O Computador como Canal</td><td class="resp">D</td><td>No trabalho digital o computador e a rede são o canal; o mau contato no cabo é um ruído que prejudica a transmissão.</td></tr>
+                            <tr><td>Q06</td><td>Classificando Periféricos</td><td class="resp">B</td><td>Periféricos de saída entregam resultados ao usuário (monitor, caixa de som, impressora). Leitor, scanner e teclado são de entrada.</td></tr>
+                            <tr><td>Q07</td><td>Associação de Periféricos</td><td class="resp">1-D · 2-B · 3-A · 4-C</td><td>Teclado ABNT2 (padrão brasileiro, com Ç) é entrada; scanner digitaliza papéis; monitor é saída; pen drive lê e grava (entrada e saída).</td></tr>
+                            <tr><td>Q08</td><td>Conexões</td><td class="resp">B</td><td>RJ-45 é a porta de rede cabeada. HDMI e DisplayPort transmitem vídeo e áudio; USB leva dados e energia.</td></tr>
+                            <tr><td>Q09</td><td>Uso Correto do Pen Drive</td><td class="resp">C</td><td>Retirar o pen drive durante a gravação pode corromper o arquivo. A opção Ejetar garante que a gravação terminou.</td></tr>
+                            <tr><td>Q10</td><td>Funções do Sistema Operacional</td><td class="resp">D</td><td>O SO gerencia processos, memória, arquivos e dispositivos. Redigir o relatório é tarefa do usuário, com um aplicativo.</td></tr>
+                            <tr><td>Q11</td><td>Tipos de Sistema Operacional</td><td class="resp">B</td><td>Coletores, celulares e tablets usam SO móvel (ex.: Android). Servidores usam SO de servidor; estações de escritório, SO desktop.</td></tr>
+                            <tr><td>Q12</td><td>Interface Gráfica</td><td class="resp">1-B · 2-C · 3-A</td><td>A GUI transforma comandos em janelas, ícones e menus: área de trabalho (atalhos), barra de tarefas (apps abertos) e menu Iniciar (programas).</td></tr>
+                            <tr><td>Q13</td><td>Atalhos de Teclado</td><td class="resp">C</td><td>Windows + E abre o explorador. Alt + Tab alterna janelas; Ctrl + Z desfaz; Ctrl + V cola.</td></tr>
+                            <tr><td>Q14</td><td>Nomenclatura Profissional</td><td class="resp">C</td><td>Data invertida (AAAA-MM-DD), sem acentos, espaços ou símbolos, e com controle de versão (_v02). Nomes genéricos geram perda de tempo e erros.</td></tr>
+                            <tr><td>Q15</td><td>Estrutura de Diretórios</td><td class="resp">A</td><td>No Windows a raiz é C:\ (unidade); no Linux é /. Exemplo de caminho: C:\Empresa\Logistica\Expedicao\2025\.</td></tr>
+                            <tr><td>Q16</td><td>Pesquisa com Curinga</td><td class="resp">C</td><td>O curinga * substitui qualquer sequência de caracteres: *.pdf encontra todos os arquivos com extensão .pdf.</td></tr>
+                            <tr><td>Q17</td><td>Ordem de Compactação</td><td class="resp">Selecionar → Compactar → Renomear → Anexar (ordem das linhas: 2, 1, 4, 3)</td><td>Primeiro seleciona-se os arquivos; só então o menu oferece Compactar. Depois renomeia-se o pacote com padrão e, por fim, anexa-se ao e-mail.</td></tr>
+                            <tr><td>Q18</td><td>Diagnóstico de Falhas</td><td class="resp">B</td><td>Telas azuis e reinicializações forçadas indicam falha de memória. Ventoinha ruidosa indica superaquecimento; lentidão ao salvar, problema no disco.</td></tr>
+                            <tr><td>Q19</td><td>Backup 3-2-1</td><td class="resp">B</td><td>Manter 3 cópias, em 2 mídias diferentes (ex.: disco externo e nuvem), com 1 fora do local protege contra pane, exclusão e ataques.</td></tr>
+                            <tr><td>Q20</td><td>Dilema Técnico e Produtivo</td><td class="resp">Resposta pessoal</td><td>Impactos esperados: lentidão e poluição visual; risco de perder arquivos sem histórico de versões; sobrecarga de e-mail e servidores; falta de profissionalismo e dificuldade para colegas o substituírem. Solução: estrutura de pastas padronizada, nomenclatura, backup e compactação.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p><strong>Introdução à Tecnologia da Informação e Comunicação — Informática Básica</strong></p>
+        <p>Assistente de Operações Logísticas — SENAI</p>
+    </footer>
+
+    <script>
+        // ===== Exportação em PDF — todas as partes em um único arquivo =====
+        function textoPDF(txt) {
+            // A fonte padrão do jsPDF só aceita Latin-1/WinAnsi: troca símbolos e remove emojis
+            return (txt || '')
+                .replace(/→/g, '->').replace(/⇄/g, '<->').replace(/×/g, 'x')
+                .replace(/[^\x00-\xFF—–“”‘’•…]/g, '')
+                .replace(/\s+/g, ' ')
+                .trim();
+        }
+
+        function exportarPDFAtividade() {
+            const jsPDF = window.jspdf?.jsPDF || window.jsPDF;
+            if (!jsPDF) {
+                alert('Erro: jsPDF não carregado (verifique a conexão com a internet).');
+                return;
+            }
+
+            const partes = [];
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                const id = btn.getAttribute('data-tab');
+                if (id === 'orientacoes' || id === 'gabarito') return;
+                const secao = document.getElementById(id);
+                const questoes = [];
+                secao.querySelectorAll('.aula-card').forEach(card => {
+                    const linhas = [];
+                    const tags = Array.from(card.querySelectorAll('.tag')).map(t => t.textContent.trim());
+                    card.querySelectorAll('.content-box').forEach(box => {
+                        const rotulo = textoPDF(box.querySelector('.content-label')?.textContent);
+                        const itens = box.querySelectorAll('.alternativas li');
+                        const respostas = box.querySelectorAll('.resposta-linha');
+                        if (itens.length) {
+                            linhas.push({ texto: rotulo + ':', negrito: true });
+                            itens.forEach(li => linhas.push({ texto: textoPDF(li.textContent), negrito: false }));
+                        } else if (respostas.length) {
+                            linhas.push({ texto: 'RESPOSTA:', negrito: true });
+                            respostas.forEach(() => linhas.push({ texto: ' ', negrito: false, altura: 9 }));
+                        } else {
+                            const txt = textoPDF(box.querySelector('.content-text')?.textContent);
+                            linhas.push({ texto: rotulo + ': ' + txt, negrito: false });
+                        }
+                    });
+                    questoes.push({
+                        cabecalho: textoPDF(card.querySelector('.aula-badge')?.textContent) + ' — ' +
+                                   textoPDF(card.querySelector('.aula-title')?.textContent) +
+                                   (tags.length ? '  (' + textoPDF(tags[0]) + ')' : ''),
+                        linhas: linhas
+                    });
+                });
+                partes.push({ nome: textoPDF(btn.textContent), questoes: questoes });
+            });
+
+            const temas = Array.from(document.querySelectorAll('#orientacoes .steps li')).map(li => textoPDF(li.textContent));
+            const incluirGabarito = document.getElementById('incluirGabarito')?.checked;
+            const doc = new jsPDF('p', 'mm', 'a4');
+            const margin = 15;
+            let yPos = 20;
+
+            const headerData = [
+                [
+                    { content: 'SENAI\nServiço Nacional de Aprendizagem Industrial\nSanta Catarina',
+                      styles: { fontStyle: 'bold', fontSize: 10, halign: 'center', fillColor: [0, 51, 153], textColor: [255, 255, 255] }, colSpan: 2 },
+                    { content: 'ATIVIDADE AVALIATIVA', styles: { fontStyle: 'bold', fontSize: 11, halign: 'center', fillColor: [240, 240, 240] } },
+                    { content: 'Desempenho', styles: { fontStyle: 'bold', fontSize: 10, halign: 'center', fillColor: [240, 240, 240] } }
+                ],
+                [ { content: 'INFORMÁTICA BÁSICA — HARDWARE, PERIFÉRICOS E SISTEMAS OPERACIONAIS (5 PARTES · 20 QUESTÕES)', styles: { fontSize: 10, fontStyle: 'bold' }, colSpan: 4 } ],
+                [ { content: 'Data: ___/___/___', styles: { fontSize: 10 } }, { content: '' }, { content: '' }, { content: '' } ],
+                [ { content: 'Docente: GELVAZIO CAMARGO', styles: { fontSize: 10, fontStyle: 'bold' }, colSpan: 2 }, { content: '' }, { content: '' } ],
+                [ { content: 'Unidade Curricular: Introdução à Tecnologia da Informação e Comunicação', styles: { fontSize: 10 }, colSpan: 2 },
+                  { content: 'Turma: ___________________', styles: { fontSize: 10 }, colSpan: 2 } ],
+                [ { content: 'Estudante: ___________________________________________________', styles: { fontSize: 10 }, colSpan: 4 } ]
+            ];
+
+            doc.autoTable({
+                body: headerData,
+                startY: yPos,
+                margin: margin,
+                columnStyles: { 0: { cellWidth: 30 }, 1: { cellWidth: 60 }, 2: { cellWidth: 60 }, 3: { cellWidth: 30 } },
+                styles: { fontSize: 10, cellPadding: 4, lineColor: [0, 0, 0], lineWidth: 0.1, textColor: [0, 0, 0] }
+            });
+            yPos = doc.lastAutoTable.finalY + 10;
+
+            if (temas.length) {
+                doc.autoTable({
+                    body: [
+                        [{ content: 'CONTEÚDO AVALIADO', styles: { fontStyle: 'bold', fontSize: 10, halign: 'center', fillColor: [247, 148, 29], textColor: [255, 255, 255] } }],
+                        ...temas.map((t, i) => [{ content: (i + 1) + '. ' + t, styles: { fontSize: 9, halign: 'left' } }])
+                    ],
+                    startY: yPos,
+                    margin: margin,
+                    styles: { fontSize: 9, cellPadding: 3, lineColor: [0, 0, 0], lineWidth: 0.1 }
+                });
+                yPos = doc.lastAutoTable.finalY + 10;
+            }
+
+            partes.forEach(parte => {
+                doc.autoTable({
+                    body: [[{ content: parte.nome.toUpperCase(), styles: { fontStyle: 'bold', fontSize: 12, halign: 'center', fillColor: [102, 126, 234], textColor: [255, 255, 255] } }]],
+                    startY: yPos,
+                    margin: margin,
+                    styles: { fontSize: 12, cellPadding: 5 }
+                });
+                yPos = doc.lastAutoTable.finalY + 6;
+
+                parte.questoes.forEach(q => {
+                    const tableData = [[{ content: q.cabecalho, styles: { fontStyle: 'bold', fontSize: 11, halign: 'left', fillColor: [220, 220, 220] } }]];
+                    q.linhas.forEach(l => {
+                        const estilo = { fontSize: 10, halign: 'left', fontStyle: l.negrito ? 'bold' : 'normal' };
+                        if (l.altura) estilo.minCellHeight = l.altura;
+                        tableData.push([{ content: l.texto, styles: estilo }]);
+                    });
+                    doc.autoTable({
+                        body: tableData,
+                        startY: yPos,
+                        margin: margin,
+                        pageBreak: 'auto',
+                        rowPageBreak: 'avoid',
+                        styles: { fontSize: 10, cellPadding: 3, lineColor: [0, 0, 0], lineWidth: 0.1 }
+                    });
+                    yPos = doc.lastAutoTable.finalY + 6;
+                });
+            });
+
+            if (incluirGabarito) {
+                doc.addPage();
+                const linhasGab = Array.from(document.querySelectorAll('#gabarito tbody tr')).map(tr =>
+                    Array.from(tr.querySelectorAll('td')).map(td => textoPDF(td.textContent)));
+                doc.autoTable({
+                    head: [['Nº', 'Questão', 'Resposta', 'Justificativa']],
+                    body: linhasGab,
+                    startY: 20,
+                    margin: { top: 20, left: margin, right: margin },
+                    headStyles: { fillColor: [118, 75, 162], textColor: [255, 255, 255], fontStyle: 'bold' },
+                    columnStyles: { 0: { cellWidth: 12 }, 1: { cellWidth: 38 }, 2: { cellWidth: 32, fontStyle: 'bold' } },
+                    styles: { fontSize: 8.5, cellPadding: 2.5, lineColor: [0, 0, 0], lineWidth: 0.1, valign: 'top' },
+                    didDrawPage: () => {
+                        doc.setFontSize(12);
+                        doc.setFont(undefined, 'bold');
+                        doc.text('GABARITO — USO DO PROFESSOR', margin, 14);
+                    }
+                });
+            }
+
+            const total = doc.getNumberOfPages();
+            for (let i = 1; i <= total; i++) {
+                doc.setPage(i);
+                doc.setFontSize(8);
+                doc.setFont(undefined, 'normal');
+                doc.text('Informática Básica — Introdução à TIC · SENAI · Página ' + i + ' de ' + total, 105, 290, { align: 'center' });
+            }
+
+            doc.save('Atividade-Informatica-Basica-Completa' + (incluirGabarito ? '-COM-GABARITO' : '') + '.pdf');
+        }
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+                document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.getElementById(tabName).classList.add('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

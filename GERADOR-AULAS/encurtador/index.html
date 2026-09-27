@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encurtador de URLs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-shorten {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-shorten:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-shorten:active {
+            transform: translateY(0);
+        }
+
+        .btn-clear {
+            background: #f0f0f0;
+            color: #666;
+        }
+
+        .btn-clear:hover {
+            background: #e0e0e0;
+        }
+
+        .result-section {
+            display: none;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .result-section.active {
+            display: block;
+        }
+
+        .result-label {
+            color: #666;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .result-content {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .result-url {
+            flex: 1;
+            padding: 12px 15px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            word-break: break-all;
+            color: #333;
+            font-family: 'Courier New', monospace;
+            user-select: all;
+        }
+
+        .btn-copy {
+            padding: 12px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .btn-copy:hover {
+            background: #45a049;
+        }
+
+        .btn-copy.copied {
+            background: #2196F3;
+        }
+
+        .message {
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-size: 13px;
+            text-align: center;
+            display: none;
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .message.active {
+            display: block;
+        }
+
+        .stats {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .info {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #1565c0;
+            margin-top: 20px;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            color: #667eea;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔗 Encurtador de URLs</h1>
+            <p>Converta links longos em URLs curtas e compartilháveis</p>
+        </div>
+
+        <div class="form-group">
+            <label for="longUrl">Cole seu link aqui:</label>
+            <input
+                type="text"
+                id="longUrl"
+                placeholder="https://drive.google.com/drive/folders/1ckLL84RaQRRpnCWtzVJMzsh83rwY9_4c?usp=sharing"
+            >
+        </div>
+
+        <div class="button-group">
+            <button class="btn-shorten" onclick="shortenUrl()">📉 Encurtar URL</button>
+            <button class="btn-clear" onclick="clearForm()">🗑️ Limpar</button>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            Gerando URL curta...
+        </div>
+
+        <div class="result-section" id="resultSection">
+            <div class="result-label">Link Curto Gerado:</div>
+            <div class="result-content">
+                <div class="result-url" id="shortUrl"></div>
+                <button class="btn-copy" id="copyBtn" onclick="copyToClipboard()">📋 Copiar</button>
+            </div>
+            <div class="message" id="message"></div>
+            <div class="stats">
+                <span id="originalLength">Original: 0 caracteres</span> •
+                <span id="shortenedLength">Encurtado: 0 caracteres</span>
+            </div>
+        </div>
+
+        <div class="info">
+            <strong>💡 Dica:</strong> Cole um link longo e clique em "Encurtar URL" para gerar uma versão curta e fácil de compartilhar.
+        </div>
+    </div>
+
+    <script>
+        const longUrlInput = document.getElementById('longUrl');
+        const shortUrlDisplay = document.getElementById('shortUrl');
+        const resultSection = document.getElementById('resultSection');
+        const loading = document.getElementById('loading');
+        const message = document.getElementById('message');
+        const copyBtn = document.getElementById('copyBtn');
+        const originalLengthSpan = document.getElementById('originalLength');
+        const shortenedLengthSpan = document.getElementById('shortenedLength');
+
+        function isValidUrl(string) {
+            try {
+                new URL(string);
+                return true;
+            } catch (_) {
+                return false;
+            }
+        }
+
+        async function shortenUrl() {
+            const longUrl = longUrlInput.value.trim();
+
+            if (!longUrl) {
+                showMessage('Por favor, insira uma URL', 'error');
+                return;
+            }
+
+            if (!isValidUrl(longUrl)) {
+                showMessage('A URL não é válida. Verifique e tente novamente.', 'error');
+                return;
+            }
+
+            loading.style.display = 'block';
+            resultSection.classList.remove('active');
+            message.classList.remove('active');
+
+            try {
+                // Usar TinyURL API
+                const response = await fetch(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(longUrl)}`);
+
+                if (!response.ok) {
+                    throw new Error('Erro ao encurtar URL');
+                }
+
+                const shortUrl = await response.text();
+
+                shortUrlDisplay.textContent = shortUrl.trim();
+                resultSection.classList.add('active');
+
+                // Atualizar estatísticas
+                originalLengthSpan.textContent = `Original: ${longUrl.length} caracteres`;
+                shortenedLengthSpan.textContent = `Encurtado: ${shortUrl.trim().length} caracteres`;
+
+                // Calcular redução
+                const reduction = Math.round(((longUrl.length - shortUrl.trim().length) / longUrl.length) * 100);
+
+                showMessage(`✅ URL encurtada com sucesso! (${reduction}% de redução)`, 'success');
+                loading.style.display = 'none';
+
+                copyBtn.textContent = '📋 Copiar';
+                copyBtn.classList.remove('copied');
+
+            } catch (error) {
+                console.error('Erro:', error);
+                showMessage('❌ Erro ao encurtar. Tente novamente mais tarde.', 'error');
+                loading.style.display = 'none';
+            }
+        }
+
+        function copyToClipboard() {
+            const shortUrl = shortUrlDisplay.textContent;
+
+            navigator.clipboard.writeText(shortUrl).then(() => {
+                copyBtn.textContent = '✅ Copiado!';
+                copyBtn.classList.add('copied');
+
+                setTimeout(() => {
+                    copyBtn.textContent = '📋 Copiar';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                showMessage('❌ Erro ao copiar. Tente novamente.', 'error');
+            });
+        }
+
+        function clearForm() {
+            longUrlInput.value = '';
+            resultSection.classList.remove('active');
+            message.classList.remove('active');
+            loading.style.display = 'none';
+            longUrlInput.focus();
+        }
+
+        function showMessage(text, type) {
+            message.textContent = text;
+            message.className = `message ${type} active`;
+        }
+
+        // Permitir Enter para encurtar
+        longUrlInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                shortenUrl();
+            }
+        });
+
+        // Focus no input ao carregar
+        longUrlInput.focus();
+    </script>
+</body>
+</html>

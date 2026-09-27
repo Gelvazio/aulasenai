@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1: Operações Básicas — Reforço Matemática</title>
+  <link rel="stylesheet" href="_assets/styles.css">
+  <style>
+    .conteudo-detalhado { margin: 30px 0; }
+    .secao-conteudo { background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #004384; }
+    .imagem-exemplo { max-width: 100%; height: auto; border-radius: 8px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .exemplo-box { background: #f0f7ff; padding: 15px; margin: 15px 0; border-radius: 6px; border-left: 3px solid #f7941d; }
+    .dica-importante { background: #fff9f0; padding: 15px; margin: 15px 0; border-radius: 6px; border-left: 3px solid #f7941d; }
+    .grid-imagens { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+    @media (max-width: 768px) { .grid-imagens { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="layout-wrapper">
+    <nav class="menu-lateral">
+      <h3>Módulos</h3>
+      <a href="index.html" class="menu-item">Início</a>
+      <hr style="margin: 15px 0; border: none; border-top: 1px solid #ddd;">
+      <a href="modulo-1-operacoes-basicas.html" class="menu-item">Módulo 1</a>
+      <a href="modulo-2-fracoes-decimais.html" class="menu-item">Módulo 2</a>
+      <a href="modulo-3-proporcionalidade.html" class="menu-item">Módulo 3</a>
+      <a href="modulo-4-medidas-grandezas.html" class="menu-item">Módulo 4</a>
+      <a href="modulo-5-raciocinio-logico.html" class="menu-item">Módulo 5</a>
+      <a href="modulo-6-algebra.html" class="menu-item">Módulo 6</a>
+      <a href="modulo-7-tratamento-informacao.html" class="menu-item">Módulo 7</a>
+    </nav>
+    <div class="conteudo-wrapper">
+      <div class="container">
+        <div class="header-controls">
+          <h1>Módulo 1: Operações Básicas</h1>
+          <button class="btn btn-secondary" onclick="imprimirPagina()">Imprimir</button>
+        </div>
+        <div class="modulo-progress">
+          <span class="modulo-progress-text">Módulo 1 de 7</span>
+        </div>
+        <section class="modulo-intro conteudo-detalhado">
+          <h2>Módulo 1: Operações Básicas e Cálculo Numérico</h2>
+          <p><strong>Carga Horária:</strong> 9 horas | <strong>Objetivo:</strong> Desenvolver fluência em operações aritméticas com números inteiros, decimais e negativos, dominando a ordem das operações.</p>
+
+          <div class="secao-conteudo">
+            <h3>🎯 Introdução — Por Que Isso É Importante?</h3>
+            <p>As operações básicas são a fundação de toda a matemática. Você as utiliza diariamente sem perceber: no supermercado calculando o troco, em receitas culinárias medindo ingredientes, em cálculos de salário e até em videogames calculando pontos e danos.</p>
+            <p>Neste módulo, você vai dominar não apenas como fazer essas operações, mas entender por que funcionam e aplicá-las em situações reais com confiança e rapidez.</p>
+          </div>
+
+          <div class="grid-imagens">
+            <div>
+              <h4>💳 Compras e Dinheiro</h4>
+              <img src="https://images.pexels.com/photos/3962285/pexels-photo-3962285.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Compras no supermercado" class="imagem-exemplo">
+              <p>Somar preços, calcular troco e aplicar descontos são operações matemáticas essenciais.</p>
+            </div>
+            <div>
+              <h4>🧮 Cálculo Numérico</h4>
+              <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cálculos matemáticos" class="imagem-exemplo">
+              <p>Operações com números são usadas em todas as profissões e situações da vida.</p>
+            </div>
+          </div>
+
+          <h3>📚 1. Adição e Subtração</h3>
+          <div class="secao-conteudo">
+            <h4>O que é Adição?</h4>
+            <p>Adição é a operação de combinar quantidades. O símbolo é (+). Quando você soma, você está juntando grupos de coisas.</p>
+
+            <div class="exemplo-box">
+              <strong>Exemplo Prático 1:</strong> Você tem R$ 25 e ganha mais R$ 18.
+              <br>Operação: 25 + 18 = 43
+              <br>Resultado: Você tem R$ 43 no total
+            </div>
+
+            <h4>O que é Subtração?</h4>
+            <p>Subtração é a operação de retirar uma quantidade de outra. O símbolo é (−). Quando você subtrai, você está removendo um grupo de um total.</p>
+
+            <div class="exemplo-box">
+              <strong>Exemplo Prático 2:</strong> Você tem 60 figurinhas e dá 15 para um amigo.
+              <br>Operação: 60 − 15 = 45
+              <br>Resultado: Você fica com 45 figurinhas
+            </div>
+
+            <div class="dica-importante">
+              <strong>💡 Dica Importante:</strong> Adição e subtração são operações inversas. Se você somar e depois subtrair o mesmo número, volta ao número original: 10 + 5 − 5 = 10
+            </div>
+          </div>
+
+          <h3>📚 2. Multiplicação e Divisão</h3>
+          <div class="secao-conteudo">
+            <h4>O que é Multiplicação?</h4>
+            <p>Multiplicação é uma forma rápida de fazer adições repetidas. O símbolo é (×) ou (·). Multiplicar 3 × 5 significa somar 5 três vezes: 5 + 5 + 5 = 15.</p>
+
+            <div class="exemplo-box">
+              <strong>Exemplo Prático 3:</strong> Uma caixa tem 12 ovos. Você compra 8 caixas.
+              <br>Operação: 12 × 8 = 96
+              <br>Resultado: Você tem 96 ovos no total
+            </div>
+
+            <h4>O que é Divisão?</h4>
+            <p>Divisão é a operação inversa da multiplicação. Ela distribui uma quantidade em partes iguais. O símbolo é (÷) ou (/).</p>
+
+            <div class="exemplo-box">
+              <strong>Exemplo Prático 4:</strong> Você tem 144 maçãs para distribuir em 12 cestas igualmente.
+              <br>Operação: 144 ÷ 12 = 12
+              <br>Resultado: Cada cesta recebe 12 maçãs
+            </div>
+
+            <div class="dica-importante">
+              <strong>💡 Dica Importante:</strong> Multiplicação e divisão são operações inversas. Se você multiplicar e depois dividir pelo mesmo número, volta ao número original: 10 × 5 ÷ 5 = 10
+            </div>
+          </div>
+
+          <h3>📚 3. Números Negativos</h3>
+          <div class="secao-conteudo">
+            <p>Números negativos representam quantidades "para trás" ou "para baixo" na reta numérica. Eles aparecem em temperatura, débito de dinheiro, altitude abaixo do nível do mar, etc.</p>
+
+            <div class="exemplo-box">
+              <strong>Exemplo 1 - Temperatura:</strong> Manhã: −5°C | Aquecimento: +12°C
+              <br>Operação: −5 + 12 = 7
+              <br>Resultado: Temperatura ao meio-dia é 7°C
+            </div>
+
+            <div class="exemplo-box">
+              <strong>Exemplo 2 - Dinheiro:</strong> Você deve R$ 50 (−50) e paga R$ 20
+              <br>Operação: −50 + 20 = −30
+              <br>Resultado: Ainda deve R$ 30
+            </div>
+
+            <div class="dica-importante">
+              <strong>💡 Dica Importante:</strong> Em uma reta numérica, quanto mais à esquerda, menor é o número. Então −10 é menor que −5.
+            </div>
+          </div>
+
+          <h3>📚 4. Ordem das Operações (PEMDAS/BODMAS)</h3>
+          <div class="secao-conteudo">
+            <p>Quando você tem uma expressão com várias operações, é importante fazer delas na ordem correta. A ordem é:</p>
+            <ol>
+              <li><strong>P</strong>arênteses (ou Parêntesis) - Resolver primeiro o que está dentro dos parênteses</li>
+              <li><strong>E</strong>xpoentes (ou Ordens) - Potências e raízes</li>
+              <li><strong>MD</strong> - Multiplicação e Divisão (da esquerda para direita, conforme aparecem)</li>
+              <li><strong>AS</strong> - Adição e Subtração (da esquerda para direita, conforme aparecem)</li>
+            </ol>
+
+            <div class="exemplo-box">
+              <strong>Exemplo:</strong> 25 + 18 − 7 × 2 = ?
+              <br>Passo 1: Multiplicação primeiro: 7 × 2 = 14
+              <br>Passo 2: Agora soma e subtrai da esquerda para direita: 25 + 18 = 43
+              <br>Passo 3: 43 − 14 = 29
+              <br>Resultado: 29
+            </div>
+
+            <div class="dica-importante">
+              <strong>⚠️ Erro Comum:</strong> Fazer operações na ordem que aparecem sem respeitar PEMDAS é um erro grave que leva a respostas erradas!
+            </div>
+          </div>
+
+          <h3>📚 5. Cálculo Mental e Estimativas</h3>
+          <div class="secao-conteudo">
+            <p>Cálculo mental é quando você resolve operações sem usar calculadora ou papel. Existem truques para fazer isso rapidamente:</p>
+
+            <h4>Truque 1: Arredondar para números fáceis</h4>
+            <div class="exemplo-box">
+              <strong>Problema:</strong> Quanto é 47 + 53?
+              <br>Pensamento: 47 ≈ 50 e 53 ≈ 50, então aproximadamente 50 + 50 = 100
+              <br>Cálculo exato: 47 + 53 = 100 ✓
+            </div>
+
+            <h4>Truque 2: Quebrar em partes</h4>
+            <div class="exemplo-box">
+              <strong>Problema:</strong> Quanto é 23 × 6?
+              <br>Pensamento: 23 = 20 + 3, então (20 × 6) + (3 × 6) = 120 + 18 = 138
+              <br>Resultado: 138
+            </div>
+          </div>
+
+          <h3>🎯 Metodologia Chalkie AI</h3>
+          <div class="secao-conteudo">
+            <ul>
+              <li><strong>Contextos Práticos:</strong> Compras no supermercado, cálculo de salários, receitas culinárias, consumo de energia</li>
+              <li><strong>Aumento Gradual:</strong> Dificuldade aumenta baseada na sua acurácia real</li>
+              <li><strong>Visualizações:</strong> Imagens e animações interativas para compreensão profunda</li>
+              <li><strong>Gamificação:</strong> Desafios cronometrados e recompensas progressivas</li>
+              <li><strong>Múltiplas Estratégias:</strong> Você aprende diferentes formas de resolver o mesmo problema</li>
+            </ul>
+          </div>
+
+          <h3>✓ Critérios de Avaliação</h3>
+          <div class="secao-conteudo">
+            <ul>
+              <li>✅ Resolver 15+ operações de cada tipo com 85%+ acurácia</li>
+              <li>✅ Demonstrar compreensão sólida da ordem das operações em expressões variadas</li>
+              <li>✅ Aplicar conceitos em problemas contextualizados com segurança</li>
+              <li>✅ Explicar raciocínios passo a passo com clareza</li>
+            </ul>
+          </div>
+
+          <h3>✏️ Exercícios Práticos</h3>
+          <div class="exercicios-section" id="exercicios-container"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script src="_assets/scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      carregarExercicios('modulo1');
+    });
+  </script>
+</body>
+</html>

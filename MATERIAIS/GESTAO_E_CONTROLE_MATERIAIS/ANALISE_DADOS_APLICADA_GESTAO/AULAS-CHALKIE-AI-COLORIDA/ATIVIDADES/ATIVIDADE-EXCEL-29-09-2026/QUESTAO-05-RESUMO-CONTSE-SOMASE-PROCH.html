@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questão 5 — Resumo gerencial com CONT.SE, SOMASE e PROCH</title>
+<link rel="stylesheet" href="../../../../../../assets/css/atividade-pratica-excel.css">
+<script src="../../../../../../assets/js/atividade-pratica-excel.js" defer></script>
+</head>
+<body data-atividade="ATIVIDADE-EXCEL-29-09-2026">
+<div class="pagina">
+<header class="cabecalho">
+<div class="cabecalho__marca">SENAI · Análise de Dados Aplicada à Gestão</div>
+<h1 class="cabecalho__titulo">Questão 5 — Resumo gerencial com CONT.SE, SOMASE e PROCH</h1>
+<p class="cabecalho__subtitulo">Atividade Prática de Excel — Controle de Estoque do Almoxarifado</p>
+<div class="cabecalho__selos"><span class="selo selo--formativa">Atividade prática avaliativa</span><span class="selo ">⏱ 25 min</span><span class="selo ">1,5 pontos</span><span class="selo ">6 passos</span></div>
+<div class="identificacao"><div class="identificacao__campo">Nome:</div><div class="identificacao__campo">Turma:</div><div class="identificacao__campo">Data: 29/09/2026</div></div>
+</header>
+<nav class="navegacao"><a class="botao" href="QUESTAO-04-SALDO-SE-FORMATACAO-CONDICIONAL.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-29-09-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-06-FILTRO-PROTECAO-ENTREGA.html">Próxima questão →</a></nav>
+<section class="bloco">
+<h2>🎯 O que você vai fazer</h2>
+<p>Montar um <strong>resumo para o gerente</strong> que responde: quantos itens estão em cada situação, quanto dinheiro há em cada categoria e se as saídas do mês ficaram dentro do limite.</p>
+<h3>Você vai usar</h3><ul><li>CONT.SE</li><li>SOMASE</li><li>SOMA</li><li>Formato Porcentagem</li><li>PROCH</li><li>SE</li></ul>
+<p><strong>Aba de trabalho:</strong> <span class="celula">Resumo</span> (nova) · <strong>Slides de apoio:</strong> Arquivo 5 — slides 14–15 e 28–31</p>
+</section>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">1</span><h3 class="passo__titulo">Crie a aba Resumo e monte os quadros</h3></div>
+<figure class="passo__figura"><img src="img/q5-passo-01.svg" alt="Aba Resumo com os rótulos dos quadros de situação e de categorias" loading="lazy"><figcaption class="passo__legenda">Nova aba (1), quadro de situação (2) e quadro de categorias (3).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Crie a aba <span class="celula">Resumo</span> (botão <strong>+</strong>) (1). Em <span class="celula">A1</span> digite <span class="celula">RESUMO DO ESTOQUE — SETEMBRO/2026</span>.</li><li>Quadro de situação (2): <span class="celula">A2</span> Situação, <span class="celula">B2</span> Qtd. de itens, <span class="celula">A3</span> Crítico, <span class="celula">A4</span> Atenção, <span class="celula">A5</span> Normal, <span class="celula">A6</span> Total.</li><li>Quadro de categorias (3): <span class="celula">A8</span> Categoria, <span class="celula">B8</span> Valor em Estoque, <span class="celula">C8</span> % do Total, <span class="celula">A9</span> EPI, <span class="celula">A10</span> Fixação, <span class="celula">A11</span> Elétrico, <span class="celula">A12</span> Ferramentas, <span class="celula">A13</span> Total.</li><li>Formate os títulos dos quadros com o <strong>Pincel de Formatação</strong> e coloque bordas.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Use a imagem como modelo: com cada rótulo na célula certa, as fórmulas dos próximos passos funcionam do jeito que estão escritas.</div>
+<label class="concluido"><input type="checkbox" data-passo="q5-1"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">2</span><h3 class="passo__titulo">Conte os itens de cada situação com CONT.SE</h3></div>
+<figure class="passo__figura"><img src="img/q5-passo-02.svg" alt="Fórmula CONT.SE em B3 contando a situação da coluna K do Cadastro" loading="lazy"><figcaption class="passo__legenda">Em B3 (1), o CONT.SE conta quantas vezes a palavra de A3 aparece na coluna Situação. Em B6 (2), o total.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Em <span class="celula">B3</span> (1), digite a fórmula abaixo.</li><li>Copie para <span class="celula">B4</span> e <span class="celula">B5</span>: o critério <span class="celula">A3</span> vira A4 (Atenção) e A5 (Normal).</li><li>Em <span class="celula">B6</span> (2), digite <span class="celula">=SOMA(B3:B5)</span>.</li></ol>
+<code class="formula">=CONT.SE(Cadastro!$K$2:$K$16;A3)</code>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>O total em <span class="celula">B6</span> é igual à quantidade de materiais cadastrados na aba Cadastro.</div>
+<label class="concluido"><input type="checkbox" data-passo="q5-2"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">3</span><h3 class="passo__titulo">Some o valor de cada categoria com SOMASE</h3></div>
+<figure class="passo__figura"><img src="img/q5-passo-03.svg" alt="Fórmula SOMASE em B9 somando o Valor em Estoque da categoria EPI" loading="lazy"><figcaption class="passo__legenda">SOMASE em B9 (1), total em B13 (2) e percentual em C9 (3).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Em <span class="celula">B9</span> (1), digite a fórmula abaixo, copie até <span class="celula">B12</span> e formate como <strong>Moeda</strong>.</li><li>Em <span class="celula">B13</span> (2): <span class="celula">=SOMA(B9:B12)</span>.</li><li>Em <span class="celula">C9</span> (3): <span class="celula">=B9/$B$13</span>. Formate como <strong>Porcentagem</strong> com 1 casa decimal e copie até <span class="celula">C13</span>.</li></ol>
+<code class="formula">=SOMASE(Cadastro!$C$2:$C$16;A9;Cadastro!$J$2:$J$16)</code>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>O <span class="celula">$B$13</span> fica travado porque todas as categorias são divididas pelo <strong>mesmo</strong> total.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span><span class="celula">C13</span> mostra 100%.</div>
+<label class="concluido"><input type="checkbox" data-passo="q5-3"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">4</span><h3 class="passo__titulo">Calcule o valor das saídas do mês</h3></div>
+<figure class="passo__figura"><img src="img/q5-passo-04.svg" alt="Fórmula SOMASE em B16 somando o valor das saídas da Movimentacao" loading="lazy"><figcaption class="passo__legenda">Em B16 (1): soma o Valor da Movimentacao só nas linhas de Saída.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Em <span class="celula">A16</span>, digite <span class="celula">Valor das saídas do mês</span>.</li><li>Em <span class="celula">B16</span> (1), digite a fórmula abaixo e formate como <strong>Moeda</strong>.</li><li>Aqui o critério é um texto fixo, por isso vai entre aspas: <span class="celula">&quot;Saída&quot;</span>.</li></ol>
+<code class="formula">=SOMASE(Movimentacao!$D$2:$D$100;&quot;Saída&quot;;Movimentacao!$G$2:$G$100)</code>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Troque <span class="celula">&quot;Saída&quot;</span> por <span class="celula">&quot;Entrada&quot;</span> para ver quanto entrou no mês. Depois volte para Saída.</div>
+<label class="concluido"><input type="checkbox" data-passo="q5-4"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">5</span><h3 class="passo__titulo">Busque o limite do mês com PROCH</h3></div>
+<figure class="passo__figura"><img src="img/q5-passo-05.svg" alt="Tabela horizontal de limites por mês e fórmula PROCH em B22" loading="lazy"><figcaption class="passo__legenda">Tabela horizontal de limites (1). Em B22 (2), o PROCH acha &quot;Set&quot; na 1ª linha (3) e devolve o valor da 2ª linha.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Monte a tabela de limites (1): <span class="celula">A18</span> Mês e, em <span class="celula">B18:G18</span>, <span class="celula">Jul</span>, <span class="celula">Ago</span>, <span class="celula">Set</span>, <span class="celula">Out</span>, <span class="celula">Nov</span>, <span class="celula">Dez</span>.</li><li><span class="celula">A19</span> Limite de saídas e, em <span class="celula">B19:G19</span>, <span class="celula">1300</span>, <span class="celula">1250</span>, <span class="celula">1200</span>, <span class="celula">1250</span>, <span class="celula">1300</span>, <span class="celula">1000</span>. Formate como <strong>Moeda</strong>.</li><li>Em <span class="celula">A21</span> digite <span class="celula">Mês consultado</span> e em <span class="celula">B21</span> digite <span class="celula">Set</span>.</li><li>Em <span class="celula">A22</span> digite <span class="celula">Limite do mês</span> e em <span class="celula">B22</span> (2) digite a fórmula abaixo.</li><li>O PROCH procura <span class="celula">Set</span> na <strong>primeira linha</strong> da tabela (horizontal) e devolve o valor da <strong>linha 2</strong>, logo abaixo.</li></ol>
+<code class="formula">=PROCH(B21;A18:G19;2;0)</code>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>PROCV procura numa coluna (vertical); PROCH procura numa linha (horizontal). Use PROCH quando os meses estão lado a lado.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Troque <span class="celula">B21</span> para <span class="celula">Dez</span>: o limite muda. Depois volte para <span class="celula">Set</span>.</div>
+<label class="concluido"><input type="checkbox" data-passo="q5-5"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">6</span><h3 class="passo__titulo">Escreva a conclusão com SE</h3></div>
+<figure class="passo__figura"><img src="img/q5-passo-06.svg" alt="Fórmula SE em B23 comparando as saídas do mês com o limite" loading="lazy"><figcaption class="passo__legenda">Em B23 (3), o SE compara as saídas (1) com o limite (2) e escreve a conclusão.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Em <span class="celula">A23</span> digite <span class="celula">Conclusão</span> e em <span class="celula">B23</span> (3) digite a fórmula abaixo.</li><li>A fórmula compara o valor das saídas (1) com o limite do mês (2) e escreve a conclusão.</li><li>Salve: <span class="tecla">Ctrl</span>+<span class="tecla">B</span>.</li></ol>
+<code class="formula">=SE(B16&lt;=B22;&quot;Dentro do limite&quot;;&quot;Acima do limite&quot;)</code>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span><span class="celula">B23</span> mostra uma frase (Dentro ou Acima do limite), não um número nem um erro.</div>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Pense como gestor: se o resultado fosse <strong>Acima do limite</strong>, o que o almoxarifado deveria investigar?</div>
+<label class="concluido"><input type="checkbox" data-passo="q5-6"> Passo concluído</label></div>
+</article>
+<section class="bloco">
+<h2>📋 Como esta questão será avaliada</h2>
+<table class="tabela"><thead><tr><th>Critério</th><th>Pontos</th></tr></thead><tbody><tr><td>CONT.SE contando as três situações, com o total</td><td>0,4</td></tr><tr><td>SOMASE por categoria e % do total</td><td>0,5</td></tr><tr><td>PROCH buscando o limite do mês na tabela horizontal</td><td>0,4</td></tr><tr><td>SE com a conclusão sobre o limite</td><td>0,2</td></tr><tr><td><strong>Total da questão</strong></td><td><strong>1,5</strong></td></tr></tbody></table>
+</section>
+<nav class="navegacao"><a class="botao" href="QUESTAO-04-SALDO-SE-FORMATACAO-CONDICIONAL.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-29-09-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-06-FILTRO-PROTECAO-ENTREGA.html">Próxima questão →</a></nav>
+<footer class="rodape">Aprendizagem Industrial — Assistente em Processos de Gestão e Controle de Materiais · Análise de Dados Aplicada à Gestão · Empresa e dados fictícios, criados para fins didáticos.</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+graphify-output/cache/
+graphify-out/
+.tmp.driveupload
+*.pdf
+*.png
+*.py
+*.docx
+*.pptx
+*.md
+*.txt
+*.xlsx
+*.gs
+*.jpg
+*.jpeg
+

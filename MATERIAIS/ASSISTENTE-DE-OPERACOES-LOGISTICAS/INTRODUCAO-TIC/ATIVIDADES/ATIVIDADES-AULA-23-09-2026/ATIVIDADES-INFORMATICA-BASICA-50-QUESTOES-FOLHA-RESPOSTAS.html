@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folha de Respostas — Informática Básica (50 itens)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --gold: #FFD700;
+            --senai: #003399;
+            --text: #2d3748;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .painel {
+            max-width: 210mm;
+            margin: 0 auto 20px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        .painel header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 24px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--gold);
+        }
+        .painel header h1 { font-size: 26px; margin-bottom: 6px; }
+        .export-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 16px 20px;
+            background: #fffbea;
+        }
+        .export-bar label { display: flex; flex-direction: column; font-size: 12px; font-weight: 600; gap: 4px; }
+        .export-bar input { padding: 8px 10px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 14px; min-width: 220px; }
+        .btn-export {
+            background: #f7941d;
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .btn-export:hover { background: #d97706; }
+        .export-bar small { width: 100%; text-align: center; font-size: 12px; color: #718096; }
+
+        /* Pré-visualização da folha A4 com 2 vias */
+        .folha {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            color: #000;
+        }
+        .via {
+            height: 148.5mm;
+            padding: 8mm 12mm 6mm;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5mm;
+        }
+        .via + .via { border-top: 1px dashed #555; position: relative; }
+        .via + .via::before {
+            content: "recorte aqui";
+            position: absolute;
+            top: -2.2mm;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 0 3mm;
+            font-size: 7pt;
+            color: #555;
+        }
+        .cab {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--senai);
+            color: white;
+            padding: 2mm 3mm;
+            font-size: 9pt;
+            font-weight: 700;
+        }
+        .cab span:last-child { font-weight: 400; font-size: 8pt; }
+        .campos { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm 6mm; font-size: 9pt; }
+        .campo { display: flex; align-items: flex-end; gap: 2mm; }
+        .campo.cheio { grid-column: 1 / -1; }
+        .linha { flex: 1; border-bottom: 1px solid #000; min-height: 5mm; padding-left: 1mm; font-size: 9pt; }
+        .instr { font-size: 7.5pt; color: #333; }
+        .grade { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2mm; }
+        .grade table { border-collapse: collapse; width: 100%; font-size: 8pt; }
+        .grade th { background: #e2e2e2; border: 1px solid #000; height: 5.5mm; }
+        .grade td { border: 1px solid #000; height: 7mm; text-align: center; }
+        .grade tr:nth-child(even) td { background: #f4f4f4; }
+        .grade td.num { font-weight: 700; }
+        .bolha {
+            display: inline-block;
+            width: 4.4mm;
+            height: 4.4mm;
+            border: 1px solid #000;
+            border-radius: 50%;
+            font-size: 5.5pt;
+            line-height: 4.2mm;
+            color: #777;
+        }
+        .rodape { margin-top: auto; font-size: 8.5pt; display: flex; justify-content: space-between; }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .painel { display: none; }
+            .folha { box-shadow: none; }
+            @page { size: A4; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="painel">
+        <header>
+            <h1>📝 Folha de Respostas — Informática Básica</h1>
+            <p>2 vias por folha A4 · 50 itens · alternativas A, B, C e D</p>
+        </header>
+        <div class="export-bar">
+            <label>Curso (opcional)
+                <input type="text" id="curso" placeholder="em branco = linha para preencher">
+            </label>
+            <label>Período (opcional)
+                <input type="text" id="periodo" placeholder="em branco = linha para preencher">
+            </label>
+            <button class="btn-export" onclick="exportarPDFFolha()">📥 Exportar PDF</button>
+            <small>Preencha curso e período para sair impresso nas duas vias; o nome do aluno fica sempre em branco.</small>
+        </div>
+    </div>
+
+    <div class="folha" id="folha"></div>
+
+    <script>
+        const TOTAL = 50;
+        const POR_BLOCO = 10;
+        const LETRAS = ['A', 'B', 'C', 'D'];
+        const TITULO = 'SENAI — FOLHA DE RESPOSTAS';
+        const SUBTITULO = 'Introdução à TIC · Informática Básica · 50 itens';
+        const INSTRUCAO = 'Preencha completamente apenas UMA alternativa por item, com caneta azul ou preta. Não rasure.';
+
+        function pad(n) { return String(n).padStart(2, '0'); }
+
+        function criar(tag, classe, texto) {
+            const el = document.createElement(tag);
+            if (classe) el.className = classe;
+            if (texto !== undefined) el.textContent = texto;
+            return el;
+        }
+
+        function montarVia(curso, periodo) {
+            const via = criar('div', 'via');
+
+            const cab = criar('div', 'cab');
+            cab.append(criar('span', '', TITULO), criar('span', '', SUBTITULO));
+            via.append(cab);
+
+            const campos = criar('div', 'campos');
+            [['Nome do aluno:', '', true], ['Curso:', curso, false], ['Período:', periodo, false]].forEach(([rotulo, valor, cheio]) => {
+                const campo = criar('div', 'campo' + (cheio ? ' cheio' : ''));
+                campo.append(criar('b', '', rotulo), criar('span', 'linha', valor));
+                campos.append(campo);
+            });
+            via.append(campos, criar('p', 'instr', INSTRUCAO));
+
+            const grade = criar('div', 'grade');
+            for (let b = 0; b < TOTAL / POR_BLOCO; b++) {
+                const tabela = criar('table');
+                const cabecalho = criar('tr');
+                cabecalho.append(criar('th', '', 'Item'), ...LETRAS.map(l => criar('th', '', l)));
+                tabela.append(cabecalho);
+                for (let r = 1; r <= POR_BLOCO; r++) {
+                    const tr = criar('tr');
+                    tr.append(criar('td', 'num', pad(b * POR_BLOCO + r)));
+                    LETRAS.forEach(l => {
+                        const td = criar('td');
+                        td.append(criar('span', 'bolha', l));
+                        tr.append(td);
+                    });
+                    tabela.append(tr);
+                }
+                grade.append(tabela);
+            }
+            via.append(grade);
+
+            const rodape = criar('div', 'rodape');
+            rodape.append(
+                criar('span', '', 'Acertos: ______ / ' + TOTAL),
+                criar('span', '', 'Nota: ______'),
+                criar('span', '', 'Visto do professor: ____________________')
+            );
+            via.append(rodape);
+            return via;
+        }
+
+        function atualizarPreview() {
+            const curso = document.getElementById('curso').value.trim();
+            const periodo = document.getElementById('periodo').value.trim();
+            const folha = document.getElementById('folha');
+            folha.replaceChildren(montarVia(curso, periodo), montarVia(curso, periodo));
+        }
+
+        function textoPDF(txt) {
+            // A fonte padrão do jsPDF só aceita Latin-1/WinAnsi: remove caracteres fora dela
+            return (txt || '').replace(/[^\x00-\xFF—–“”‘’•…]/g, '').trim();
+        }
+
+        function desenharVia(doc, y0, curso, periodo) {
+            const x0 = 12, largura = 186;
+
+            doc.setFillColor(0, 51, 153);
+            doc.rect(x0, y0 + 8, largura, 8, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(10);
+            doc.text(TITULO, x0 + 3, y0 + 13.5);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(8.5);
+            doc.text(SUBTITULO, x0 + largura - 3, y0 + 13.5, { align: 'right' });
+            doc.setTextColor(0, 0, 0);
+
+            const campo = (rotulo, valor, x, y, fim) => {
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(9.5);
+                doc.text(rotulo, x, y);
+                const inicio = x + doc.getTextWidth(rotulo) + 2;
+                doc.setLineWidth(0.3);
+                doc.line(inicio, y + 0.8, fim, y + 0.8);
+                if (valor) {
+                    doc.setFont('helvetica', 'normal');
+                    doc.text(textoPDF(valor), inicio + 1, y - 0.3);
+                }
+            };
+            campo('Nome do aluno:', '', x0, y0 + 24, x0 + largura);
+            campo('Curso:', curso, x0, y0 + 32, x0 + 118);
+            campo('Período:', periodo, x0 + 124, y0 + 32, x0 + largura);
+
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(7.5);
+            doc.text(INSTRUCAO, x0, y0 + 38.5);
+
+            const blocos = TOTAL / POR_BLOCO;
+            const gap = 2;
+            const larguraBloco = (largura - gap * (blocos - 1)) / blocos;
+            const colItem = larguraBloco - 4 * 6.4;
+            const colLetra = 6.4;
+            const topo = y0 + 42;
+            const altCab = 5.5, altLinha = 7.2;
+
+            for (let b = 0; b < blocos; b++) {
+                const bx = x0 + b * (larguraBloco + gap);
+                doc.setFillColor(226, 226, 226);
+                doc.rect(bx, topo, larguraBloco, altCab, 'FD');
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(8);
+                doc.text('Item', bx + colItem / 2, topo + 3.8, { align: 'center' });
+                LETRAS.forEach((l, i) => doc.text(l, bx + colItem + colLetra * i + colLetra / 2, topo + 3.8, { align: 'center' }));
+
+                for (let r = 0; r < POR_BLOCO; r++) {
+                    const ry = topo + altCab + r * altLinha;
+                    if (r % 2 === 1) {
+                        doc.setFillColor(244, 244, 244);
+                        doc.rect(bx, ry, larguraBloco, altLinha, 'F');
+                    }
+                    doc.setLineWidth(0.2);
+                    doc.rect(bx, ry, larguraBloco, altLinha, 'S');
+                    doc.line(bx + colItem, ry, bx + colItem, ry + altLinha);
+
+                    doc.setFont('helvetica', 'bold');
+                    doc.setFontSize(8.5);
+                    doc.text(pad(b * POR_BLOCO + r + 1), bx + colItem / 2, ry + altLinha / 2 + 1.2, { align: 'center' });
+
+                    LETRAS.forEach((l, i) => {
+                        const cx = bx + colItem + colLetra * i + colLetra / 2;
+                        const cy = ry + altLinha / 2;
+                        doc.setDrawColor(0, 0, 0);
+                        doc.circle(cx, cy, 2.2, 'S');
+                        doc.setFont('helvetica', 'normal');
+                        doc.setFontSize(5.5);
+                        doc.setTextColor(120, 120, 120);
+                        doc.text(l, cx, cy + 0.9, { align: 'center' });
+                        doc.setTextColor(0, 0, 0);
+                    });
+                }
+                doc.setLineWidth(0.4);
+                doc.rect(bx, topo, larguraBloco, altCab + POR_BLOCO * altLinha, 'S');
+            }
+
+            const yRodape = topo + altCab + POR_BLOCO * altLinha + 8;
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(9);
+            doc.text('Acertos: ______ / ' + TOTAL, x0, yRodape);
+            doc.text('Nota: ______', x0 + 70, yRodape);
+            doc.text('Visto do professor: ____________________', x0 + largura, yRodape, { align: 'right' });
+        }
+
+        function exportarPDFFolha() {
+            const jsPDF = window.jspdf?.jsPDF || window.jsPDF;
+            if (!jsPDF) {
+                alert('Erro: jsPDF não carregado (verifique a conexão com a internet).');
+                return;
+            }
+            const curso = document.getElementById('curso').value.trim();
+            const periodo = document.getElementById('periodo').value.trim();
+            const doc = new jsPDF('p', 'mm', 'a4');
+
+            desenharVia(doc, 0, curso, periodo);
+            desenharVia(doc, 148.5, curso, periodo);
+
+            doc.setLineDashPattern([2, 1.5], 0);
+            doc.setLineWidth(0.2);
+            doc.setDrawColor(90, 90, 90);
+            doc.line(5, 148.5, 205, 148.5);
+            doc.setLineDashPattern([], 0);
+            doc.setFontSize(7);
+            doc.setTextColor(90, 90, 90);
+            doc.text('recorte aqui', 105, 147.3, { align: 'center' });
+
+            doc.save('Folha-Respostas-Informatica-Basica-50-Questoes.pdf');
+        }
+
+        document.getElementById('curso').addEventListener('input', atualizarPreview);
+        document.getElementById('periodo').addEventListener('input', atualizarPreview);
+        atualizarPreview();
+    </script>
+</body>
+</html>

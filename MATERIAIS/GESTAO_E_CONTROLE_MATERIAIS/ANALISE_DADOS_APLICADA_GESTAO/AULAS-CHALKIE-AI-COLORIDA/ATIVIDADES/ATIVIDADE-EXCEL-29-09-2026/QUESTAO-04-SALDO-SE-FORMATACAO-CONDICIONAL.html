@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questão 4 — Saldo, situação do item e formatação condicional</title>
+<link rel="stylesheet" href="../../../../../../assets/css/atividade-pratica-excel.css">
+<script src="../../../../../../assets/js/atividade-pratica-excel.js" defer></script>
+</head>
+<body data-atividade="ATIVIDADE-EXCEL-29-09-2026">
+<div class="pagina">
+<header class="cabecalho">
+<div class="cabecalho__marca">SENAI · Análise de Dados Aplicada à Gestão</div>
+<h1 class="cabecalho__titulo">Questão 4 — Saldo, situação do item e formatação condicional</h1>
+<p class="cabecalho__subtitulo">Atividade Prática de Excel — Controle de Estoque do Almoxarifado</p>
+<div class="cabecalho__selos"><span class="selo selo--formativa">Atividade prática avaliativa</span><span class="selo ">⏱ 35 min</span><span class="selo ">2,0 pontos</span><span class="selo ">8 passos</span></div>
+<div class="identificacao"><div class="identificacao__campo">Nome:</div><div class="identificacao__campo">Turma:</div><div class="identificacao__campo">Data: 29/09/2026</div></div>
+</header>
+<nav class="navegacao"><a class="botao" href="QUESTAO-03-PROCV-SEERRO-INDICE-CORRESP.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-29-09-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-05-RESUMO-CONTSE-SOMASE-PROCH.html">Próxima questão →</a></nav>
+<section class="bloco">
+<h2>🎯 O que você vai fazer</h2>
+<p>Calcular o <strong>saldo atual</strong> de cada material a partir das movimentações, classificar a situação do estoque e deixar os alertas coloridos.</p>
+<h3>Você vai usar</h3><ul><li>SE</li><li>SOMASE</li><li>SE aninhado</li><li>Formatação Condicional: Texto que Contém e Barras de Dados</li><li>Pincel de Formatação</li></ul>
+<p><strong>Aba de trabalho:</strong> <span class="celula">Movimentacao</span> (coluna H) e <span class="celula">Cadastro</span> (colunas H a K) · <strong>Slides de apoio:</strong> Arquivo 4 — slides 13–15.1; Arquivo 5 — slides 26–31</p>
+</section>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">1</span><h3 class="passo__titulo">Transforme saídas em números negativos</h3></div>
+<figure class="passo__figura"><img src="img/q4-passo-01.svg" alt="Coluna Qtd com Sinal com a fórmula SE em H2" loading="lazy"><figcaption class="passo__legenda">Em H2 (1): Entrada fica positiva e Saída fica negativa.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Na <strong>Movimentacao</strong>, clique em <span class="celula">H2</span> (1) e digite a fórmula abaixo.</li><li>Copie até <span class="celula">H13</span> com duplo clique na alça.</li><li>Leia assim: <strong>se</strong> o Tipo for Entrada, repete a quantidade; <strong>senão</strong> (Saída), coloca o sinal de menos.</li></ol>
+<code class="formula">=SE(D2=&quot;Entrada&quot;;E2;-E2)</code>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>O texto <span class="celula">&quot;Entrada&quot;</span> precisa estar entre aspas e escrito igual à lista da coluna Tipo.</div>
+<label class="concluido"><input type="checkbox" data-passo="q4-1"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">2</span><h3 class="passo__titulo">Crie as novas colunas do Cadastro</h3></div>
+<figure class="passo__figura"><img src="img/q4-passo-02.svg" alt="Aba Cadastro com os títulos Movimentado, Saldo Atual, Valor em Estoque e Situação" loading="lazy"><figcaption class="passo__legenda">Títulos em H1:K1 (1) e o visual copiado com o Pincel (2).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Volte à aba <strong>Cadastro</strong>.</li><li>Em <span class="celula">H1:K1</span> digite (1): <span class="celula">Movimentado</span>, <span class="celula">Saldo Atual</span>, <span class="celula">Valor em Estoque</span>, <span class="celula">Situação</span>.</li><li>Clique em <span class="celula">G1</span>, clique no <strong>Pincel de Formatação</strong> (2) e arraste sobre <span class="celula">H1:K1</span>.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Depois ajuste a largura das colunas novas com duplo clique na divisa entre as letras.</div>
+<label class="concluido"><input type="checkbox" data-passo="q4-2"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">3</span><h3 class="passo__titulo">Some a movimentação de cada material com SOMASE</h3></div>
+<figure class="passo__figura"><img src="img/q4-passo-03.svg" alt="Fórmula SOMASE em H2 com os três argumentos coloridos e esquema de funcionamento" loading="lazy"><figcaption class="passo__legenda">Em H2 (1): o SOMASE procura o código na Movimentacao e soma a coluna Qtd com Sinal.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Em <span class="celula">H2</span> (1), digite a fórmula abaixo.</li><li>O SOMASE soma, na Movimentacao, só as quantidades do material daquela linha: entradas somam e saídas diminuem.</li></ol>
+<code class="formula">=SOMASE(Movimentacao!$B$2:$B$100;A2;Movimentacao!$H$2:$H$100)</code>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>Os <span class="celula">$</span> travam os intervalos da Movimentacao. O <span class="celula">A2</span> fica <strong>sem</strong> <span class="celula">$</span> para virar A3, A4... quando a fórmula for copiada.</div>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Material sem movimentação no mês dá <strong>0</strong>. Está certo!</div>
+<label class="concluido"><input type="checkbox" data-passo="q4-3"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">4</span><h3 class="passo__titulo">Calcule o Saldo Atual e o Valor em Estoque</h3></div>
+<figure class="passo__figura"><img src="img/q4-passo-04.svg" alt="Fórmulas do Saldo Atual em I2 e do Valor em Estoque em J2" loading="lazy"><figcaption class="passo__legenda">Saldo Atual em I2 (1) e Valor em Estoque em J2 (2). Depois copie H2:J2 até a linha 16.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Em <span class="celula">I2</span> (1): Saldo Inicial + Movimentado.</li><li>Em <span class="celula">J2</span> (2): Saldo Atual × Custo Unitário. Formate como <strong>Moeda</strong>.</li><li>Selecione <span class="celula">H2:J2</span> e dê duplo clique na alça para copiar até a linha 16.</li></ol>
+<code class="formula">I2:  =G2+H2
+J2:  =I2*E2</code>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>As colunas H, I e J estão preenchidas nas 15 linhas e o Valor em Estoque aparece em R$.</div>
+<label class="concluido"><input type="checkbox" data-passo="q4-4"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">5</span><h3 class="passo__titulo">Classifique a situação com SE aninhado</h3></div>
+<figure class="passo__figura"><img src="img/q4-passo-05.svg" alt="Fluxograma do SE aninhado: abaixo do mínimo é Crítico, até 1,5 vez o mínimo é Atenção, acima é Normal" loading="lazy"><figcaption class="passo__legenda">O Excel faz duas perguntas, uma de cada vez, e escreve Crítico, Atenção ou Normal.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Em <span class="celula">K2</span>, digite a fórmula abaixo e copie até <span class="celula">K16</span>.</li><li>O Excel faz as perguntas <strong>na ordem</strong>: primeiro testa se o saldo está abaixo do mínimo; só se <strong>não</strong> estiver, testa se está até 1,5 vez o mínimo; se também não, o item está Normal.</li></ol>
+<code class="formula">=SE(I2&lt;F2;&quot;Crítico&quot;;SE(I2&lt;=F2*1,5;&quot;Atenção&quot;;&quot;Normal&quot;))</code>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>Conte os parênteses: são <strong>dois</strong> SE, então a fórmula termina com <span class="celula">))</span>.</div>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Escreva as palavras com acento, iguais às do quadro: a formatação do próximo passo procura exatamente esses textos.</div>
+<label class="concluido"><input type="checkbox" data-passo="q4-5"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">6</span><h3 class="passo__titulo">Pinte a situação com formatação condicional</h3></div>
+<figure class="passo__figura"><img src="img/q4-passo-06.svg" alt="Janela Texto que Contém com Crítico e preenchimento vermelho, e a coluna Situação colorida" loading="lazy"><figcaption class="passo__legenda">Formatação Condicional (1) → Realçar Regras → Texto que Contém: digite a palavra (2), escolha a cor (3) e OK (4).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Selecione <span class="celula">K2:K16</span>.</li><li>Página Inicial → <strong>Formatação Condicional</strong> (1) → <strong>Realçar Regras das Células</strong> → <strong>Texto que Contém</strong>.</li><li>Digite <span class="celula">Crítico</span> (2), escolha <strong>Preenchimento Vermelho Claro e Texto Vermelho Escuro</strong> (3) e clique em <strong>OK</strong> (4).</li><li>Repita com <span class="celula">Atenção</span> → <strong>Preenchimento Amarelo e Texto Amarelo Escuro</strong>.</li><li>Repita com <span class="celula">Normal</span> → <strong>Preenchimento Verde e Texto Verde Escuro</strong>.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>A cor muda sozinha: se entrar uma nova saída e o saldo cair, a situação e a cor mudam na hora.</div>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span>Formatar → <strong>Condicional</strong> → <strong>Condição</strong> → escolha <strong>contém</strong>, digite a palavra e aplique um estilo de cor vermelha, amarela ou verde.</div>
+<label class="concluido"><input type="checkbox" data-passo="q4-6"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">7</span><h3 class="passo__titulo">Mostre o Valor em Estoque com barras de dados</h3></div>
+<figure class="passo__figura"><img src="img/q4-passo-07.svg" alt="Menu Formatação Condicional com Barras de Dados e a coluna Valor em Estoque com barras verdes" loading="lazy"><figcaption class="passo__legenda">Formatação Condicional (1) → Barras de Dados (2). A barra mais comprida é o maior valor (3).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Selecione <span class="celula">J2:J16</span> (Valor em Estoque).</li><li><strong>Formatação Condicional</strong> (1) → <strong>Barras de Dados</strong> (2) → escolha a barra <strong>verde</strong> de preenchimento sólido.</li><li>Observe (3): a barra mais comprida é o material que mais &quot;prende&quot; dinheiro no estoque.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Barras de dados são um mini-gráfico dentro da célula: mostram o maior e o menor valor sem precisar ler os números.</div>
+<label class="concluido"><input type="checkbox" data-passo="q4-7"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">8</span><h3 class="passo__titulo">Teste a automação da planilha</h3></div>
+<figure class="passo__figura"><img src="img/q4-passo-08.svg" alt="Quantidade da célula E2 da Movimentacao alterada para 50 como teste" loading="lazy"><figcaption class="passo__legenda">Troque a quantidade de E2 (1) e veja o Cadastro mudar sozinho.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Na <strong>Movimentacao</strong>, troque a quantidade de <span class="celula">E2</span> de <span class="celula">20</span> para <span class="celula">50</span> (1).</li><li>Vá ao <strong>Cadastro</strong> (2) e observe o Saldo Atual, o Valor em Estoque e a Situação da Luva de vaqueta: eles mudaram sozinhos.</li><li>Volte <span class="celula">E2</span> para <strong>20</strong>.</li><li>Salve: <span class="tecla">Ctrl</span>+<span class="tecla">B</span>.</li></ol>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Mudar a movimentação altera o Cadastro na hora. Se nada mudou, confira o SOMASE do passo 3.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Na coluna Situação aparecem as três palavras (Crítico, Atenção e Normal), cada uma com a sua cor.</div>
+<label class="concluido"><input type="checkbox" data-passo="q4-8"> Passo concluído</label></div>
+</article>
+<section class="bloco">
+<h2>📋 Como esta questão será avaliada</h2>
+<table class="tabela"><thead><tr><th>Critério</th><th>Pontos</th></tr></thead><tbody><tr><td>Qtd com Sinal com SE (Entrada positiva, Saída negativa)</td><td>0,3</td></tr><tr><td>SOMASE correto, com os intervalos travados</td><td>0,5</td></tr><tr><td>Saldo Atual e Valor em Estoque (Moeda)</td><td>0,3</td></tr><tr><td>SE aninhado classificando Crítico, Atenção e Normal</td><td>0,5</td></tr><tr><td>Formatação condicional nas três situações e barras de dados</td><td>0,4</td></tr><tr><td><strong>Total da questão</strong></td><td><strong>2,0</strong></td></tr></tbody></table>
+</section>
+<nav class="navegacao"><a class="botao" href="QUESTAO-03-PROCV-SEERRO-INDICE-CORRESP.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-29-09-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-05-RESUMO-CONTSE-SOMASE-PROCH.html">Próxima questão →</a></nav>
+<footer class="rodape">Aprendizagem Industrial — Assistente em Processos de Gestão e Controle de Materiais · Análise de Dados Aplicada à Gestão · Empresa e dados fictícios, criados para fins didáticos.</footer>
+</div>
+</body>
+</html>

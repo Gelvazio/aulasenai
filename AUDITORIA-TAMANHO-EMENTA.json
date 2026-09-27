@@ -1,0 +1,210 @@
+﻿{
+    "data":  "2026-09-21 08:52:03",
+    "detalhes":  [
+                     {
+                         "disciplina":  "ASSISTENTE-DE-OPERACOES-LOGISTICAS",
+                         "tamanho":  9377,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\ASSISTENTE-DE-OPERACOES-LOGISTICAS\\INTRODUCAO-TIC\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "MATERIAIS",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "INTRODUCAO-TIC",
+                         "tamanho":  2064,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\ASSISTENTE-DE-OPERACOES-LOGISTICAS\\INTRODUCAO-TIC\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "ASSISTENTE-DE-OPERACOES-LOGISTICAS",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "MATERIAS",
+                         "tamanho":  2046,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\AUTOMACAO-INDUSTRIAL-1200-HORAS\\MATERIAS\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "AUTOMACAO-INDUSTRIAL-1200-HORAS",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "MATERIA-GERAL",
+                         "tamanho":  2061,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\BACKEND-560-HORAS\\MATERIA-GERAL\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "BACKEND-560-HORAS",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "ANALISE_DADOS_APLICADA_GESTAO",
+                         "tamanho":  2109,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\GESTAO_E_CONTROLE_MATERIAIS\\ANALISE_DADOS_APLICADA_GESTAO\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "GESTAO_E_CONTROLE_MATERIAIS",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "MATERIAS-GERAIS",
+                         "tamanho":  9377,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\MATERIAS-GERAIS\\INTRODUCAO-ITIC\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "MATERIAIS",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "INTRODUCAO-ITIC",
+                         "tamanho":  2067,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\MATERIAS-GERAIS\\INTRODUCAO-ITIC\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "MATERIAS-GERAIS",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "FundamentosProcessosProducao",
+                         "tamanho":  2106,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\OPERADOR-PRODUCAO-INDUSTRIAL\\FundamentosProcessosProducao\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "OPERADOR-PRODUCAO-INDUSTRIAL",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "DIGITAL SKILLS",
+                         "tamanho":  2064,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\QUALIFICACAO-PROFISSIONAL\\DIGITAL SKILLS\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "QUALIFICACAO-PROFISSIONAL",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "INTRODUCAO-LEAN-MANUFACTORING",
+                         "tamanho":  2109,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\QUALIFICACAO-PROFISSIONAL\\INTRODUCAO-LEAN-MANUFACTORING\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "QUALIFICACAO-PROFISSIONAL",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "COMPETENCIAS_SOCIOEMOCIONAIS_E_EMPREENDEDORISMO",
+                         "tamanho":  2163,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\COMPETENCIAS_SOCIOEMOCIONAIS_E_EMPREENDEDORISMO\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "RIO_DO_SUL_MAIS_TECH",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS",
+                         "tamanho":  2157,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "RIO_DO_SUL_MAIS_TECH",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO",
+                         "tamanho":  2139,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "RIO_DO_SUL_MAIS_TECH",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "INTRODUCAO_COMUNICACAO_ORAL_ESCRITA",
+                         "tamanho":  19554,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\INTRODUCAO_COMUNICACAO_ORAL_ESCRITA\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "RIO_DO_SUL_MAIS_TECH",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "NOCOES_ELETRICIDADE_CIRCUITOS_BASICOS",
+                         "tamanho":  2133,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\NOCOES_ELETRICIDADE_CIRCUITOS_BASICOS\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "RIO_DO_SUL_MAIS_TECH",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "OFICINAS_IMPRESSAO_3D_ROBOTICA",
+                         "tamanho":  2112,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\OFICINAS_IMPRESSAO_3D_ROBOTICA\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "RIO_DO_SUL_MAIS_TECH",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "RIO_DO_SUL_MAIS_TECH",
+                         "tamanho":  14226,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\REFORCO_LINGUAGENS\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "MATERIAIS",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "REFORCO_LINGUAGENS",
+                         "tamanho":  2076,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\REFORCO_LINGUAGENS\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "RIO_DO_SUL_MAIS_TECH",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "RIO_DO_SUL_MAIS_TECH",
+                         "tamanho":  14943,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "MATERIAIS",
+                         "dentro_padrao":  true,
+                         "status":  "✅ OK"
+                     },
+                     {
+                         "disciplina":  "REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO",
+                         "tamanho":  2136,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "RIO_DO_SUL_MAIS_TECH",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "LOGICA-PROGRAMACAO",
+                         "tamanho":  2076,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\TECNICO-DESENVOLVIMENTO-SISTEMAS\\LOGICA-PROGRAMACAO\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "TECNICO-DESENVOLVIMENTO-SISTEMAS",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "BANCO_DE_DADOS",
+                         "tamanho":  2064,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\TECNICO-INFORMATICA-INTERNET\\BANCO_DE_DADOS\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "TECNICO-INFORMATICA-INTERNET",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "TECNICO-INFORMATICA-INTERNET",
+                         "tamanho":  14541,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\TECNICO-INFORMATICA-INTERNET\\TESTES DE FRONTEND\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "MATERIAIS",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "TESTES DE FRONTEND",
+                         "tamanho":  2076,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\TECNICO-INFORMATICA-INTERNET\\TESTES DE FRONTEND\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "TECNICO-INFORMATICA-INTERNET",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     },
+                     {
+                         "disciplina":  "Testes de Sistemas-EXISTENTES",
+                         "tamanho":  2109,
+                         "caminho":  "C:\\fontes\\aulas-senai\\MATERIAIS\\TECNICO-INFORMATICA-INTERNET\\Testes de Sistemas-EXISTENTES\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+                         "pasta_pai":  "TECNICO-INFORMATICA-INTERNET",
+                         "dentro_padrao":  false,
+                         "status":  "❌ FORA"
+                     }
+                 ],
+    "padrao_maximo":  14950,
+    "total":  25,
+    "padrao_minimo":  14800,
+    "validos":  1,
+    "invalidos":  24
+}

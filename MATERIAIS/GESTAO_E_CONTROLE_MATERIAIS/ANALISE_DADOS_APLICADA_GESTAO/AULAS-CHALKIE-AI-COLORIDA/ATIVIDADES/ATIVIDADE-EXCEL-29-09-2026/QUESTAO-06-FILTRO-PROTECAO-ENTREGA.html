@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questão 6 — Filtro, proteção e entrega</title>
+<link rel="stylesheet" href="../../../../../../assets/css/atividade-pratica-excel.css">
+<script src="../../../../../../assets/js/atividade-pratica-excel.js" defer></script>
+</head>
+<body data-atividade="ATIVIDADE-EXCEL-29-09-2026">
+<div class="pagina">
+<header class="cabecalho">
+<div class="cabecalho__marca">SENAI · Análise de Dados Aplicada à Gestão</div>
+<h1 class="cabecalho__titulo">Questão 6 — Filtro, proteção e entrega</h1>
+<p class="cabecalho__subtitulo">Atividade Prática de Excel — Controle de Estoque do Almoxarifado</p>
+<div class="cabecalho__selos"><span class="selo selo--formativa">Atividade prática avaliativa</span><span class="selo ">⏱ 20 min</span><span class="selo ">1,5 pontos</span><span class="selo ">7 passos</span></div>
+<div class="identificacao"><div class="identificacao__campo">Nome:</div><div class="identificacao__campo">Turma:</div><div class="identificacao__campo">Data: 29/09/2026</div></div>
+</header>
+<nav class="navegacao"><a class="botao" href="QUESTAO-05-RESUMO-CONTSE-SOMASE-PROCH.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-29-09-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><span class="botao botao--desativado">→</span></nav>
+<section class="bloco">
+<h2>🎯 O que você vai fazer</h2>
+<p>Usar o <strong>AutoFiltro</strong> para responder a uma pergunta do gerente, <strong>proteger</strong> as fórmulas contra alterações acidentais e entregar o arquivo.</p>
+<h3>Você vai usar</h3><ul><li>AutoFiltro (<span class="tecla">Ctrl</span>+<span class="tecla">Shift</span>+<span class="tecla">L</span>)</li><li>Formatar Células → Proteção</li><li>Proteger Planilha</li><li>Salvar Como .xlsx</li></ul>
+<p><strong>Aba de trabalho:</strong> <span class="celula">Cadastro</span>, <span class="celula">Resumo</span> e <span class="celula">Movimentacao</span> · <strong>Slides de apoio:</strong> Arquivo 4 — slides 28–33</p>
+</section>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">1</span><h3 class="passo__titulo">Ligue o AutoFiltro no Cadastro</h3></div>
+<figure class="passo__figura"><img src="img/q6-passo-01.svg" alt="Cabeçalho do Cadastro com as setas do AutoFiltro e o botão Filtro destacado" loading="lazy"><figcaption class="passo__legenda">Clique em A1 (1) e ligue o Filtro (2): aparecem setinhas nos títulos.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Na aba <strong>Cadastro</strong>, clique em <span class="celula">A1</span> (1).</li><li>Ligue o filtro com <span class="tecla">Ctrl</span>+<span class="tecla">Shift</span>+<span class="tecla">L</span> ou pela guia Dados → <strong>Filtro</strong> (2).</li><li>Aparecem setinhas ▼ em todos os títulos da linha 1.</li></ol>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span>Dados → <strong>Autofiltro</strong>.</div>
+<label class="concluido"><input type="checkbox" data-passo="q6-1"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">2</span><h3 class="passo__titulo">Filtre os itens críticos de EPI</h3></div>
+<figure class="passo__figura"><img src="img/q6-passo-02.svg" alt="Menu do filtro da coluna Situação com apenas Crítico marcado" loading="lazy"><figcaption class="passo__legenda">Setinha de Situação (1) → só Crítico (2). Depois, setinha de Categoria (3) → só EPI.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique na setinha de <strong>Situação</strong> (1). Desmarque <strong>(Selecionar Tudo)</strong> e marque só <strong>Crítico</strong> (2). Clique em <strong>OK</strong>.</li><li>Agora clique na setinha de <strong>Categoria</strong> (3), deixe marcado só <strong>EPI</strong> e clique em <strong>OK</strong>.</li><li>Ficou o item crítico de EPI. Vá à aba <strong>Resumo</strong> e digite em <span class="celula">A25</span> <span class="celula">Item crítico de EPI:</span> e em <span class="celula">B25</span> a descrição do item que apareceu no filtro.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Com filtro ligado, os números das linhas ficam azuis e pulam (ex.: 2, 5, 9...). É o sinal de que há linhas escondidas.</div>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>O filtro só <strong>esconde</strong> linhas; ele não apaga nada.</div>
+<label class="concluido"><input type="checkbox" data-passo="q6-2"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">3</span><h3 class="passo__titulo">Limpe os filtros</h3></div>
+<figure class="passo__figura"><img src="img/q6-passo-03.svg" alt="Guia Dados com o botão Limpar destacado" loading="lazy"><figcaption class="passo__legenda">Guia Dados → Limpar (1): todas as linhas voltam a aparecer.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Guia <strong>Dados</strong> → <strong>Limpar</strong> (1).</li><li>Deixe as setinhas do filtro ligadas: elas fazem parte da entrega.</li></ol>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>As 15 linhas de materiais aparecem de novo.</div>
+<label class="concluido"><input type="checkbox" data-passo="q6-3"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">4</span><h3 class="passo__titulo">Desbloqueie as células de digitação</h3></div>
+<figure class="passo__figura"><img src="img/q6-passo-04.svg" alt="Formatar Células na aba Proteção com a opção Bloqueadas desmarcada" loading="lazy"><figcaption class="passo__legenda">Selecione A2:B100 (1) e, com Ctrl, D2:E100 (2). Aba Proteção (3) → desmarque Bloqueadas (4).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Na <strong>Movimentacao</strong>, selecione <span class="celula">A2:B100</span> (1). Segure <span class="tecla">Ctrl</span> e selecione também <span class="celula">D2:E100</span> (2): são as células onde se digita.</li><li>Tecle <span class="tecla">Ctrl</span>+<span class="tecla">1</span> e abra a aba <strong>Proteção</strong> (3).</li><li><strong>Desmarque Bloqueadas</strong> (4) e clique em <strong>OK</strong>.</li></ol>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>Se esquecer este passo, a planilha inteira fica travada e ninguém consegue lançar movimentações.</div>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>As colunas C, F, G e H (fórmulas) continuam bloqueadas: é exatamente isso que queremos proteger.</div>
+<label class="concluido"><input type="checkbox" data-passo="q6-4"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">5</span><h3 class="passo__titulo">Proteja a planilha com senha</h3></div>
+<figure class="passo__figura"><img src="img/q6-passo-05.svg" alt="Janela Proteger Planilha com o campo de senha preenchido" loading="lazy"><figcaption class="passo__legenda">Revisão (1) → Proteger Planilha (2) → senha (3) → OK (4).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Guia <strong>Revisão</strong> (1) → <strong>Proteger Planilha</strong> (2).</li><li>Senha: <span class="celula">senai2026</span> (3) → <strong>OK</strong> (4).</li><li>Digite a senha de novo para confirmar e clique em <strong>OK</strong>.</li></ol>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>Use exatamente a senha <span class="celula">senai2026</span>: o professor precisa dela para corrigir.</div>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span>Ferramentas → <strong>Proteger planilha</strong>.</div>
+<label class="concluido"><input type="checkbox" data-passo="q6-5"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">6</span><h3 class="passo__titulo">Teste a proteção</h3></div>
+<figure class="passo__figura"><img src="img/q6-passo-06.svg" alt="Aviso do Excel de que a célula está em uma planilha protegida" loading="lazy"><figcaption class="passo__legenda">Tentar mudar a fórmula de G2 (1) mostra o aviso. Digitar em A14 (2) continua funcionando.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique em <span class="celula">G2</span> e aperte <span class="tecla">Delete</span> (1): o Excel avisa que a célula está protegida. Clique em <strong>OK</strong>.</li><li>Clique em <span class="celula">A14</span> (2), digite uma data e tecle <span class="tecla">Enter</span>: funciona, porque essa célula foi desbloqueada.</li><li>Apague a data de <span class="celula">A14</span>.</li></ol>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Fórmulas travadas e células de digitação liberadas: a planilha está pronta para outra pessoa usar sem estragar as contas.</div>
+<label class="concluido"><input type="checkbox" data-passo="q6-6"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">7</span><h3 class="passo__titulo">Salve e entregue o arquivo</h3></div>
+<figure class="passo__figura"><img src="img/q6-passo-07.svg" alt="Janela Salvar Como com o nome ESTOQUE-NOME-SOBRENOME.xlsx" loading="lazy"><figcaption class="passo__legenda">Nome do arquivo (1), tipo .xlsx (2) e Salvar (3).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Arquivo → <strong>Salvar Como</strong> → escolha a pasta indicada pelo professor.</li><li>Nome do arquivo (1): <span class="celula">ESTOQUE-NOME-SOBRENOME</span> com o <strong>seu</strong> nome (ex.: <span class="celula">ESTOQUE-ANA-SOUZA</span>).</li><li>Tipo (2): <strong>Pasta de Trabalho do Excel (*.xlsx)</strong> → <strong>Salvar</strong> (3).</li><li>Entregue o arquivo como o professor orientar: pasta da turma, AVA ou e-mail.</li></ol>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span>Em <strong>Tipo</strong>, escolha <strong>Excel 2007-365 (.xlsx)</strong> e confirme <strong>Usar o formato Excel 2007-365!</strong>.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>O arquivo tem as 4 abas: Cadastro, Movimentacao, Consulta e Resumo.</div>
+<label class="concluido"><input type="checkbox" data-passo="q6-7"> Passo concluído</label></div>
+</article>
+<section class="bloco">
+<h2>📋 Como esta questão será avaliada</h2>
+<table class="tabela"><thead><tr><th>Critério</th><th>Pontos</th></tr></thead><tbody><tr><td>Filtro Crítico + EPI aplicado e item anotado em Resumo!B25</td><td>0,5</td></tr><tr><td>Células de digitação da Movimentacao desbloqueadas</td><td>0,4</td></tr><tr><td>Planilha Movimentacao protegida com a senha senai2026</td><td>0,3</td></tr><tr><td>Arquivo salvo em .xlsx com o nome pedido</td><td>0,3</td></tr><tr><td><strong>Total da questão</strong></td><td><strong>1,5</strong></td></tr></tbody></table>
+</section>
+<nav class="navegacao"><a class="botao" href="QUESTAO-05-RESUMO-CONTSE-SOMASE-PROCH.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-29-09-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><span class="botao botao--desativado">→</span></nav>
+<footer class="rodape">Aprendizagem Industrial — Assistente em Processos de Gestão e Controle de Materiais · Análise de Dados Aplicada à Gestão · Empresa e dados fictícios, criados para fins didáticos.</footer>
+</div>
+</body>
+</html>

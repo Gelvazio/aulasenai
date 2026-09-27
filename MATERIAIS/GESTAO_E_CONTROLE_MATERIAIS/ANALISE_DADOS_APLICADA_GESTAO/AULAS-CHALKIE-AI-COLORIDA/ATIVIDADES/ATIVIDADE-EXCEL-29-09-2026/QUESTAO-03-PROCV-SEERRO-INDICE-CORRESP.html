@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questão 3 — Buscar dados com PROCV, SEERRO e ÍNDICE + CORRESP</title>
+<link rel="stylesheet" href="../../../../../../assets/css/atividade-pratica-excel.css">
+<script src="../../../../../../assets/js/atividade-pratica-excel.js" defer></script>
+</head>
+<body data-atividade="ATIVIDADE-EXCEL-29-09-2026">
+<div class="pagina">
+<header class="cabecalho">
+<div class="cabecalho__marca">SENAI · Análise de Dados Aplicada à Gestão</div>
+<h1 class="cabecalho__titulo">Questão 3 — Buscar dados com PROCV, SEERRO e ÍNDICE + CORRESP</h1>
+<p class="cabecalho__subtitulo">Atividade Prática de Excel — Controle de Estoque do Almoxarifado</p>
+<div class="cabecalho__selos"><span class="selo selo--formativa">Atividade prática avaliativa</span><span class="selo ">⏱ 30 min</span><span class="selo ">2,0 pontos</span><span class="selo ">7 passos</span></div>
+<div class="identificacao"><div class="identificacao__campo">Nome:</div><div class="identificacao__campo">Turma:</div><div class="identificacao__campo">Data: 29/09/2026</div></div>
+</header>
+<nav class="navegacao"><a class="botao" href="QUESTAO-02-MOVIMENTACAO-E-VALIDACAO.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-29-09-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-04-SALDO-SE-FORMATACAO-CONDICIONAL.html">Próxima questão →</a></nav>
+<section class="bloco">
+<h2>🎯 O que você vai fazer</h2>
+<p>Fazer o Excel <strong>buscar sozinho</strong> a descrição e o custo de cada material pelo código, tratar códigos que não existem e fazer uma busca &quot;para a esquerda&quot;, do nome até o código.</p>
+<h3>Você vai usar</h3><ul><li>PROCV</li><li>SEERRO</li><li>Referência absoluta (<span class="celula">$</span>)</li><li>Alça de preenchimento</li><li>ÍNDICE e CORRESP</li></ul>
+<p><strong>Aba de trabalho:</strong> <span class="celula">Movimentacao</span> e <span class="celula">Consulta</span> (nova) · <strong>Slides de apoio:</strong> Arquivo 5 — slides 9–11.1, 16–20 e 22–23.1</p>
+</section>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">1</span><h3 class="passo__titulo">Busque a descrição com PROCV</h3></div>
+<figure class="passo__figura"><img src="img/q3-passo-01.svg" alt="Célula C2 com a fórmula PROCV colorida por argumento na barra de fórmulas" loading="lazy"><figcaption class="passo__legenda">Clique em C2 (1) e digite a fórmula na barra (2). Cada cor é um argumento.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Na aba <strong>Movimentacao</strong>, clique em <span class="celula">C2</span> (1).</li><li>Digite a fórmula abaixo exatamente como está e tecle <span class="tecla">Enter</span> (2).</li><li>Leia a fórmula por partes: <strong>B2</strong> é o código procurado; <strong>Cadastro!$A$2:$G$16</strong> é a tabela onde procurar; <strong>2</strong> é a coluna que volta (Descrição); <strong>0</strong> pede busca exata.</li></ol>
+<code class="formula">=SEERRO(PROCV(B2;Cadastro!$A$2:$G$16;2;0);&quot;Código não cadastrado&quot;)</code>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>Separe os argumentos com <strong>ponto e vírgula</strong> (;). O texto da mensagem precisa ficar entre aspas duplas.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span><span class="celula">C2</span> mostra o <strong>nome de um material</strong>, e não <span class="celula">#N/D</span> nem a mensagem de código não cadastrado.</div>
+<label class="concluido"><input type="checkbox" data-passo="q3-1"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">2</span><h3 class="passo__titulo">Busque o custo com PROCV</h3></div>
+<figure class="passo__figura"><img src="img/q3-passo-02.svg" alt="Célula F2 com o PROCV que devolve a quinta coluna, Custo Unitário" loading="lazy"><figcaption class="passo__legenda">Em F2 (1), a mesma busca, agora devolvendo a 5ª coluna do Cadastro.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique em <span class="celula">F2</span> (1) e digite a fórmula abaixo.</li><li>O <strong>5</strong> traz a 5ª coluna do Cadastro: <strong>Custo Unitário</strong>. Se o código não existir, o SEERRO devolve <strong>0</strong>, para não quebrar as contas.</li><li>Formate <span class="celula">F2</span> como <strong>Moeda</strong> (<span class="tecla">Ctrl</span>+<span class="tecla">1</span>).</li></ol>
+<code class="formula">=SEERRO(PROCV(B2;Cadastro!$A$2:$G$16;5;0);0)</code>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Conte as colunas a partir da primeira coluna da tabela (Código = 1). Errar essa contagem é o erro mais comum do PROCV.</div>
+<label class="concluido"><input type="checkbox" data-passo="q3-2"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">3</span><h3 class="passo__titulo">Calcule o Valor da movimentação</h3></div>
+<figure class="passo__figura"><img src="img/q3-passo-03.svg" alt="Célula G2 com a fórmula =E2*F2" loading="lazy"><figcaption class="passo__legenda">Em G2 (1): Quantidade (2) × Custo Unitário (3).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique em <span class="celula">G2</span> (1), digite <span class="celula">=E2*F2</span> e tecle <span class="tecla">Enter</span>: multiplica a Quantidade (2) pelo Custo Unitário (3).</li><li>Formate <span class="celula">G2</span> como <strong>Moeda</strong>.</li></ol>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span><span class="celula">G2</span> mostra um valor em reais, maior que zero.</div>
+<label class="concluido"><input type="checkbox" data-passo="q3-3"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">4</span><h3 class="passo__titulo">Copie as fórmulas até a linha 13</h3></div>
+<figure class="passo__figura"><img src="img/q3-passo-04.svg" alt="Alça de preenchimento no canto inferior direito da célula C2 destacada" loading="lazy"><figcaption class="passo__legenda">Duplo clique no quadradinho verde do canto da célula (1).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique em <span class="celula">C2</span>.</li><li>Aponte para o <strong>quadradinho verde</strong> no canto inferior direito da célula (1): o cursor vira uma cruz preta <strong>+</strong>.</li><li>Dê <strong>duplo clique</strong>: a fórmula desce até a linha 13.</li><li>Repita com <span class="celula">F2</span> e com <span class="celula">G2</span>.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Outra forma: copie <span class="celula">C2</span> (<span class="tecla">Ctrl</span>+<span class="tecla">C</span>), selecione <span class="celula">C3:C13</span> e cole (<span class="tecla">Ctrl</span>+<span class="tecla">V</span>).</div>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>Graças aos <span class="celula">$</span>, a tabela do Cadastro <strong>não anda</strong> quando a fórmula é copiada. Sem eles, as últimas linhas dariam <span class="celula">#N/D</span>.</div>
+<label class="concluido"><input type="checkbox" data-passo="q3-4"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">5</span><h3 class="passo__titulo">Crie a aba Consulta e teste um código inexistente</h3></div>
+<figure class="passo__figura"><img src="img/q3-passo-05.svg" alt="Aba Consulta com MAT-099 em B1 e a mensagem Código não cadastrado em B2" loading="lazy"><figcaption class="passo__legenda">Digite o código em B1 (1). Em B2 (2), o PROCV com SEERRO mostra a descrição ou a mensagem.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Crie a aba <span class="celula">Consulta</span> (botão <strong>+</strong>).</li><li>Digite <span class="celula">Código</span> em <span class="celula">A1</span> e <span class="celula">Descrição</span> em <span class="celula">A2</span>.</li><li>Em <span class="celula">B1</span>, digite <span class="celula">MAT-007</span> (1).</li><li>Em <span class="celula">B2</span> (2), digite a fórmula abaixo.</li><li>Troque <span class="celula">B1</span> para <span class="celula">MAT-099</span>: a mensagem <strong>Código não cadastrado</strong> deve aparecer. Depois volte <span class="celula">B1</span> para <span class="celula">MAT-007</span>.</li></ol>
+<code class="formula">=SEERRO(PROCV(B1;Cadastro!$A$2:$G$16;2;0);&quot;Código não cadastrado&quot;)</code>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Com <span class="celula">MAT-007</span>, <span class="celula">B2</span> mostra o nome do material. Com <span class="celula">MAT-099</span>, mostra a mensagem, sem <span class="celula">#N/D</span>.</div>
+<label class="concluido"><input type="checkbox" data-passo="q3-5"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">6</span><h3 class="passo__titulo">Busque o código pela descrição com ÍNDICE + CORRESP</h3></div>
+<figure class="passo__figura"><img src="img/q3-passo-06.svg" alt="Esquema de ÍNDICE e CORRESP buscando o código a partir da descrição" loading="lazy"><figcaption class="passo__legenda">Digite a descrição em B4 (1). Em B5 (2), CORRESP acha a posição e ÍNDICE pega o código.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Em <span class="celula">A4</span> digite <span class="celula">Descrição</span> e em <span class="celula">A5</span> digite <span class="celula">Código</span>.</li><li>Em <span class="celula">B4</span>, digite <span class="celula">Trena 5 m</span> (1), igual ao Cadastro.</li><li>Em <span class="celula">B5</span> (2), digite a fórmula abaixo.</li><li>Por que não PROCV? O PROCV só procura na <strong>primeira</strong> coluna da tabela e devolve colunas <strong>à direita</strong>. Aqui procuramos pela Descrição (coluna B) e queremos o Código (coluna A), que está <strong>à esquerda</strong>.</li></ol>
+<code class="formula">=SEERRO(ÍNDICE(Cadastro!$A$2:$A$16;CORRESP(B4;Cadastro!$B$2:$B$16;0));&quot;Descrição não encontrada&quot;)</code>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span><strong>CORRESP</strong> acha a posição; <strong>ÍNDICE</strong> pega o valor naquela posição. Juntas, elas buscam em qualquer direção.</div>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span>No LibreOffice Calc as funções também se chamam <strong>ÍNDICE</strong> e <strong>CORRESP</strong>.</div>
+<label class="concluido"><input type="checkbox" data-passo="q3-6"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">7</span><h3 class="passo__titulo">Descubra por que uma busca falha</h3></div>
+<figure class="passo__figura"><img src="img/q3-passo-07.svg" alt="Código com espaço extra em B1 fazendo a busca de B2 mostrar Código não cadastrado" loading="lazy"><figcaption class="passo__legenda">Um espaço no fim do código em B1 (1) já faz a busca em B2 (2) falhar.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Em <span class="celula">B1</span> da Consulta, digite <span class="celula">MAT-007</span> com um <strong>espaço no final</strong> e tecle <span class="tecla">Enter</span> (1).</li><li>Observe <span class="celula">B2</span> (2): a busca falha, porque o código com espaço é diferente do código do Cadastro.</li><li>Apague o espaço e veja a descrição voltar.</li><li>Salve: <span class="tecla">Ctrl</span>+<span class="tecla">B</span>.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Em planilhas vindas de outros sistemas, use <span class="celula">=ARRUMAR(A2)</span> para tirar espaços extras antes de buscar. Número guardado como texto também faz o PROCV falhar.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>As colunas C, F e G da Movimentacao estão preenchidas até a linha 13, sem <span class="celula">#N/D</span>.</div>
+<label class="concluido"><input type="checkbox" data-passo="q3-7"> Passo concluído</label></div>
+</article>
+<section class="bloco">
+<h2>📋 Como esta questão será avaliada</h2>
+<table class="tabela"><thead><tr><th>Critério</th><th>Pontos</th></tr></thead><tbody><tr><td>PROCV com busca exata (0) e tabela travada com $ nas colunas C e F</td><td>0,6</td></tr><tr><td>SEERRO tratando código inexistente</td><td>0,4</td></tr><tr><td>Valor (=E2*F2) e fórmulas copiadas até a linha 13</td><td>0,4</td></tr><tr><td>ÍNDICE + CORRESP devolvendo o código a partir da descrição</td><td>0,6</td></tr><tr><td><strong>Total da questão</strong></td><td><strong>2,0</strong></td></tr></tbody></table>
+</section>
+<nav class="navegacao"><a class="botao" href="QUESTAO-02-MOVIMENTACAO-E-VALIDACAO.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-29-09-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-04-SALDO-SE-FORMATACAO-CONDICIONAL.html">Próxima questão →</a></nav>
+<footer class="rodape">Aprendizagem Industrial — Assistente em Processos de Gestão e Controle de Materiais · Análise de Dados Aplicada à Gestão · Empresa e dados fictícios, criados para fins didáticos.</footer>
+</div>
+</body>
+</html>

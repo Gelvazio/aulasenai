@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questão 2 — Quanto foi comprado de cada fornecedor?</title>
+<link rel="stylesheet" href="../../../../../../assets/css/atividade-pratica-excel.css">
+<script src="../../../../../../assets/js/atividade-pratica-excel.js" defer></script>
+</head>
+<body data-atividade="ATIVIDADE-EXCEL-01-10-2026">
+<div class="pagina">
+<header class="cabecalho">
+<div class="cabecalho__marca">SENAI · Análise de Dados Aplicada à Gestão</div>
+<h1 class="cabecalho__titulo">Questão 2 — Quanto foi comprado de cada fornecedor?</h1>
+<p class="cabecalho__subtitulo">Atividade Prática de Excel — Análise de Compras com Tabelas Dinâmicas</p>
+<div class="cabecalho__selos"><span class="selo selo--formativa">Atividade prática avaliativa</span><span class="selo ">⏱ 30 min</span><span class="selo ">2,0 pontos</span><span class="selo ">6 passos</span></div>
+<div class="identificacao"><div class="identificacao__campo">Nome:</div><div class="identificacao__campo">Turma:</div><div class="identificacao__campo">Data: 01/10/2026</div></div>
+</header>
+<nav class="navegacao"><a class="botao" href="QUESTAO-01-PREPARAR-BASE.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-01-10-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-03-TD-MES-TRIMESTRE.html">Próxima questão →</a></nav>
+<section class="bloco">
+<h2>🎯 O que você vai fazer</h2>
+<p>Criar a primeira <strong>tabela dinâmica</strong> para responder ao gerente: quanto foi comprado de cada fornecedor e se a empresa <strong>depende demais</strong> de um só.</p>
+<h3>Você vai usar</h3><ul><li>Inserir → Tabela Dinâmica</li><li>Painel Campos da Tabela Dinâmica (Linhas e Valores)</li><li>Configurações do Campo de Valor</li><li>Classificar</li><li>Mostrar Valores Como → % do Total Geral</li></ul>
+<p><strong>Aba de trabalho:</strong> <span class="celula">TD_Fornecedor</span> (nova) · <strong>Slides de apoio:</strong> Arquivo 6 — slides 8, 10–14, 16 e 21.1</p>
+</section>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">1</span><h3 class="passo__titulo">Insira a tabela dinâmica numa nova planilha</h3></div>
+<figure class="passo__figura"><img src="img/q2-passo-01.svg" alt="Janela Criar Tabela Dinâmica com a tabela Compras e a opção Nova Planilha" loading="lazy"><figcaption class="passo__legenda">Inserir → Tabela Dinâmica (1), tabela Compras (2), Nova Planilha (3) e OK (4).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique em qualquer célula da tabela de compras.</li><li>Guia <strong>Inserir</strong> → <strong>Tabela Dinâmica</strong> (1).</li><li>Confira <strong>Tabela/Intervalo: Compras</strong> (2) e escolha <strong>Nova Planilha</strong> (3) → <strong>OK</strong> (4).</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Como os dados estão numa Tabela oficial, o Excel já sugere o nome <span class="celula">Compras</span>: a tabela dinâmica vai acompanhar as compras novas.</div>
+<label class="concluido"><input type="checkbox" data-passo="q2-1"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">2</span><h3 class="passo__titulo">Arraste Fornecedor para Linhas e Valor Total para Valores</h3></div>
+<figure class="passo__figura"><img src="img/q2-passo-02.svg" alt="Painel Campos da Tabela Dinâmica com Fornecedor em Linhas e Soma de Valor Total em Valores" loading="lazy"><figcaption class="passo__legenda">Fornecedor (1) vai para Linhas e Valor Total (2) vai para Valores.</figcaption></figure>
+<div class="passo__corpo"><ol><li>À direita aparece o painel <strong>Campos da Tabela Dinâmica</strong>.</li><li>Arraste <strong>Fornecedor</strong> (1) para a área <strong>Linhas</strong>.</li><li>Arraste <strong>Valor Total</strong> (2) para a área <strong>Valores</strong>: vira <strong>Soma de Valor Total</strong>.</li><li>Pronto: cada fornecedor aparece numa linha, com o total comprado ao lado.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Sumiu o painel? Clique dentro da tabela dinâmica ou use <strong>Análise da Tabela Dinâmica → Lista de Campos</strong>.</div>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>A tabela dinâmica <strong>não altera</strong> a base: ela só lê e resume os dados.</div>
+<label class="concluido"><input type="checkbox" data-passo="q2-2"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">3</span><h3 class="passo__titulo">Mostre os valores em reais</h3></div>
+<figure class="passo__figura"><img src="img/q2-passo-03.svg" alt="Janela Configurações do Campo de Valor com o botão Formato do Número" loading="lazy"><figcaption class="passo__legenda">Botão direito num valor (1) → Configurações do Campo de Valor → Formato do Número (2).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique com o <strong>botão direito</strong> num valor da coluna Soma de Valor Total (1).</li><li>Escolha <strong>Configurações do Campo de Valor</strong>.</li><li>Clique em <strong>Formato do Número</strong> (2) → <strong>Moeda</strong>, 2 casas → <strong>OK</strong> → <strong>OK</strong>.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Formatar pelo <strong>Formato do Número</strong> vale para a coluna inteira da tabela dinâmica, mesmo quando ela muda de tamanho.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Os valores aparecem com <span class="celula">R$</span> e duas casas decimais.</div>
+<label class="concluido"><input type="checkbox" data-passo="q2-3"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">4</span><h3 class="passo__titulo">Ordene do maior para o menor</h3></div>
+<figure class="passo__figura"><img src="img/q2-passo-04.svg" alt="Menu de classificação com a opção Classificar do Maior para o Menor" loading="lazy"><figcaption class="passo__legenda">Botão direito num valor (1) → Classificar → do Maior para o Menor (2).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique com o <strong>botão direito</strong> num valor da coluna Soma de Valor Total (1).</li><li><strong>Classificar</strong> → <strong>Classificar do Maior para o Menor</strong> (2).</li><li>O fornecedor com mais compras sobe para o topo.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Ranking do maior para o menor é o jeito mais rápido de o gerente ver quem importa mais.</div>
+<label class="concluido"><input type="checkbox" data-passo="q2-4"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">5</span><h3 class="passo__titulo">Mostre a participação de cada fornecedor em %</h3></div>
+<figure class="passo__figura"><img src="img/q2-passo-05.svg" alt="Menu Mostrar Valores Como com a opção % do Total Geral" loading="lazy"><figcaption class="passo__legenda">Botão direito na nova coluna de valores (1) → Mostrar Valores Como → % do Total Geral (2).</figcaption></figure>
+<div class="passo__corpo"><ol><li>No painel de campos, arraste <strong>Valor Total de novo</strong> para Valores: aparece a coluna <strong>Soma de Valor Total2</strong>.</li><li>Clique com o <strong>botão direito</strong> num valor dessa coluna (1) → <strong>Mostrar Valores Como</strong> → <strong>% do Total Geral</strong> (2).</li><li>Troque o título da coluna para <span class="celula">% do Total</span> (clique na célula do título e digite).</li></ol>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>A linha <strong>Total Geral</strong> da coluna % mostra 100%.</div>
+<label class="concluido"><input type="checkbox" data-passo="q2-5"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">6</span><h3 class="passo__titulo">Renomeie a aba e responda ao gerente</h3></div>
+<figure class="passo__figura"><img src="img/q2-passo-06.svg" alt="Aba TD_Fornecedor com as perguntas nas células E3 a E5 e as respostas em F3 a F5" loading="lazy"><figcaption class="passo__legenda">Aba TD_Fornecedor (1) e respostas em F3 (2), F4 (3) e F5 (4).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Renomeie a aba <span class="celula">Planilha1</span> para <span class="celula">TD_Fornecedor</span> (1).</li><li>Em <span class="celula">E3</span> digite <span class="celula">Maior fornecedor:</span> e, em <span class="celula">F3</span>, o nome do fornecedor que está no topo (2).</li><li>Em <span class="celula">E4</span> digite <span class="celula">Depende de um só (acima de 50%)?</span> e, em <span class="celula">F4</span>, responda <strong>Sim</strong> ou <strong>Não</strong> olhando a coluna % (3).</li><li>Em <span class="celula">E5</span> digite <span class="celula">Ação sugerida para compras:</span> e, em <span class="celula">F5</span>, escreva uma ação curta (4).</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Depender de um só fornecedor é um risco: se ele atrasar ou fechar, falta material. Pense nisso na resposta de <span class="celula">F5</span>.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>As três respostas estão preenchidas e combinam com o que a tabela dinâmica mostra.</div>
+<label class="concluido"><input type="checkbox" data-passo="q2-6"> Passo concluído</label></div>
+</article>
+<section class="bloco">
+<h2>📋 Como esta questão será avaliada</h2>
+<table class="tabela"><thead><tr><th>Critério</th><th>Pontos</th></tr></thead><tbody><tr><td>Tabela dinâmica com Fornecedor em Linhas e Soma de Valor Total</td><td>0,6</td></tr><tr><td>Valores em Moeda e ordenados do maior para o menor</td><td>0,4</td></tr><tr><td>Coluna % do Total Geral</td><td>0,5</td></tr><tr><td>Respostas em F3, F4 e F5 coerentes com os dados</td><td>0,5</td></tr><tr><td><strong>Total da questão</strong></td><td><strong>2,0</strong></td></tr></tbody></table>
+</section>
+<nav class="navegacao"><a class="botao" href="QUESTAO-01-PREPARAR-BASE.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-01-10-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-03-TD-MES-TRIMESTRE.html">Próxima questão →</a></nav>
+<footer class="rodape">Aprendizagem Industrial — Assistente em Processos de Gestão e Controle de Materiais · Análise de Dados Aplicada à Gestão · Empresa e dados fictícios, criados para fins didáticos.</footer>
+</div>
+</body>
+</html>

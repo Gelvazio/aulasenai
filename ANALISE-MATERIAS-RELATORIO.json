@@ -1,0 +1,211 @@
+{
+  "data": "2026-09-21T08:47:51.774063",
+  "total": 9,
+  "completas": 1,
+  "incompletas": 8,
+  "disciplinas": [
+    {
+      "nome": "COMPETENCIAS_SOCIOEMOCIONAIS_E_EMPREENDEDORISMO",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\COMPETENCIAS_SOCIOEMOCIONAIS_E_EMPREENDEDORISMO",
+      "completo": false,
+      "status": {
+        "Pasta: DOCUMENTACAO": "✅",
+        "Pasta: CONTEUDO": "✅",
+        "Pasta: SLIDES": "✅",
+        "Pasta: ATIVIDADES": "✅",
+        "Pasta: AVALIACOES": "✅",
+        "Arquivo: DOCUMENTACAO/EMENTA.md": "❌",
+        "Arquivo: DOCUMENTACAO/EMENTA-CHALKIE-AI.md": "✅",
+        "Arquivo: DOCUMENTACAO/INDEX.md": "✅",
+        "Arquivo: DOCUMENTACAO/PLANO-AULAS.md": "❌",
+        "Atividades": "❌ (0 arquivos)"
+      },
+      "pendencias": [
+        "Criar arquivo: DOCUMENTACAO/EMENTA.md",
+        "Criar arquivo: DOCUMENTACAO/PLANO-AULAS.md",
+        "❌ Nenhuma apostila encontrada em CONTEUDO/"
+      ]
+    },
+    {
+      "nome": "docs",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\docs",
+      "completo": false,
+      "status": {
+        "Pasta: DOCUMENTACAO": "❌",
+        "Pasta: CONTEUDO": "❌",
+        "Pasta: SLIDES": "❌",
+        "Pasta: ATIVIDADES": "❌",
+        "Pasta: AVALIACOES": "❌",
+        "Arquivo: DOCUMENTACAO/EMENTA.md": "❌",
+        "Arquivo: DOCUMENTACAO/EMENTA-CHALKIE-AI.md": "❌",
+        "Arquivo: DOCUMENTACAO/INDEX.md": "❌",
+        "Arquivo: DOCUMENTACAO/PLANO-AULAS.md": "❌",
+        "Atividades": "❌ Pasta não existe"
+      },
+      "pendencias": [
+        "🔴 CRÍTICO: Criar DOCUMENTACAO/EMENTA-CHALKIE-AI.md",
+        "Criar pasta: DOCUMENTACAO",
+        "Criar pasta: CONTEUDO",
+        "Criar pasta: SLIDES",
+        "Criar pasta: ATIVIDADES",
+        "Criar pasta: AVALIACOES",
+        "Criar arquivo: DOCUMENTACAO/EMENTA.md",
+        "Criar arquivo: DOCUMENTACAO/INDEX.md",
+        "Criar arquivo: DOCUMENTACAO/PLANO-AULAS.md"
+      ]
+    },
+    {
+      "nome": "EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS",
+      "completo": false,
+      "status": {
+        "Pasta: DOCUMENTACAO": "✅",
+        "Pasta: CONTEUDO": "✅",
+        "Pasta: SLIDES": "✅",
+        "Pasta: ATIVIDADES": "✅",
+        "Pasta: AVALIACOES": "✅",
+        "Arquivo: DOCUMENTACAO/EMENTA.md": "❌",
+        "Arquivo: DOCUMENTACAO/EMENTA-CHALKIE-AI.md": "✅",
+        "Arquivo: DOCUMENTACAO/INDEX.md": "✅",
+        "Arquivo: DOCUMENTACAO/PLANO-AULAS.md": "❌",
+        "Atividades": "✅ (3 arquivos)"
+      },
+      "pendencias": [
+        "Criar arquivo: DOCUMENTACAO/EMENTA.md",
+        "Criar arquivo: DOCUMENTACAO/PLANO-AULAS.md",
+        "❌ Nenhuma apostila encontrada em CONTEUDO/"
+      ]
+    },
+    {
+      "nome": "FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO",
+      "completo": false,
+      "status": {
+        "Pasta: DOCUMENTACAO": "✅",
+        "Pasta: CONTEUDO": "✅",
+        "Pasta: SLIDES": "✅",
+        "Pasta: ATIVIDADES": "✅",
+        "Pasta: AVALIACOES": "✅",
+        "Arquivo: DOCUMENTACAO/EMENTA.md": "❌",
+        "Arquivo: DOCUMENTACAO/EMENTA-CHALKIE-AI.md": "✅",
+        "Arquivo: DOCUMENTACAO/INDEX.md": "✅",
+        "Arquivo: DOCUMENTACAO/PLANO-AULAS.md": "❌",
+        "Atividades": "❌ (0 arquivos)"
+      },
+      "pendencias": [
+        "Criar arquivo: DOCUMENTACAO/EMENTA.md",
+        "Criar arquivo: DOCUMENTACAO/PLANO-AULAS.md",
+        "❌ Nenhuma apostila encontrada em CONTEUDO/"
+      ]
+    },
+    {
+      "nome": "INTRODUCAO_COMUNICACAO_ORAL_ESCRITA",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\INTRODUCAO_COMUNICACAO_ORAL_ESCRITA",
+      "completo": true,
+      "status": {
+        "Pasta: DOCUMENTACAO": "✅",
+        "Pasta: CONTEUDO": "✅",
+        "Pasta: SLIDES": "✅",
+        "Pasta: ATIVIDADES": "✅",
+        "Pasta: AVALIACOES": "✅",
+        "Arquivo: DOCUMENTACAO/EMENTA.md": "✅",
+        "Arquivo: DOCUMENTACAO/EMENTA-CHALKIE-AI.md": "✅",
+        "Arquivo: DOCUMENTACAO/INDEX.md": "✅",
+        "Arquivo: DOCUMENTACAO/PLANO-AULAS.md": "✅",
+        "Apostila: Markdown": "✅",
+        "Apostila: PDF": "✅",
+        "Apostila: Word": "✅",
+        "Atividades": "✅ (3 arquivos)"
+      },
+      "pendencias": []
+    },
+    {
+      "nome": "NOCOES_ELETRICIDADE_CIRCUITOS_BASICOS",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\NOCOES_ELETRICIDADE_CIRCUITOS_BASICOS",
+      "completo": false,
+      "status": {
+        "Pasta: DOCUMENTACAO": "✅",
+        "Pasta: CONTEUDO": "✅",
+        "Pasta: SLIDES": "✅",
+        "Pasta: ATIVIDADES": "✅",
+        "Pasta: AVALIACOES": "✅",
+        "Arquivo: DOCUMENTACAO/EMENTA.md": "❌",
+        "Arquivo: DOCUMENTACAO/EMENTA-CHALKIE-AI.md": "✅",
+        "Arquivo: DOCUMENTACAO/INDEX.md": "✅",
+        "Arquivo: DOCUMENTACAO/PLANO-AULAS.md": "❌",
+        "Atividades": "❌ (0 arquivos)"
+      },
+      "pendencias": [
+        "Criar arquivo: DOCUMENTACAO/EMENTA.md",
+        "Criar arquivo: DOCUMENTACAO/PLANO-AULAS.md",
+        "❌ Nenhuma apostila encontrada em CONTEUDO/"
+      ]
+    },
+    {
+      "nome": "OFICINAS_IMPRESSAO_3D_ROBOTICA",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\OFICINAS_IMPRESSAO_3D_ROBOTICA",
+      "completo": false,
+      "status": {
+        "Pasta: DOCUMENTACAO": "✅",
+        "Pasta: CONTEUDO": "✅",
+        "Pasta: SLIDES": "✅",
+        "Pasta: ATIVIDADES": "✅",
+        "Pasta: AVALIACOES": "✅",
+        "Arquivo: DOCUMENTACAO/EMENTA.md": "❌",
+        "Arquivo: DOCUMENTACAO/EMENTA-CHALKIE-AI.md": "✅",
+        "Arquivo: DOCUMENTACAO/INDEX.md": "✅",
+        "Arquivo: DOCUMENTACAO/PLANO-AULAS.md": "❌",
+        "Atividades": "❌ (0 arquivos)"
+      },
+      "pendencias": [
+        "Criar arquivo: DOCUMENTACAO/EMENTA.md",
+        "Criar arquivo: DOCUMENTACAO/PLANO-AULAS.md",
+        "❌ Nenhuma apostila encontrada em CONTEUDO/"
+      ]
+    },
+    {
+      "nome": "REFORCO_LINGUAGENS",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\REFORCO_LINGUAGENS",
+      "completo": false,
+      "status": {
+        "Pasta: DOCUMENTACAO": "✅",
+        "Pasta: CONTEUDO": "✅",
+        "Pasta: SLIDES": "✅",
+        "Pasta: ATIVIDADES": "✅",
+        "Pasta: AVALIACOES": "✅",
+        "Arquivo: DOCUMENTACAO/EMENTA.md": "❌",
+        "Arquivo: DOCUMENTACAO/EMENTA-CHALKIE-AI.md": "✅",
+        "Arquivo: DOCUMENTACAO/INDEX.md": "✅",
+        "Arquivo: DOCUMENTACAO/PLANO-AULAS.md": "❌",
+        "Atividades": "❌ (0 arquivos)"
+      },
+      "pendencias": [
+        "Criar arquivo: DOCUMENTACAO/EMENTA.md",
+        "Criar arquivo: DOCUMENTACAO/PLANO-AULAS.md",
+        "❌ Nenhuma apostila encontrada em CONTEUDO/"
+      ]
+    },
+    {
+      "nome": "REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO",
+      "completo": false,
+      "status": {
+        "Pasta: DOCUMENTACAO": "✅",
+        "Pasta: CONTEUDO": "✅",
+        "Pasta: SLIDES": "✅",
+        "Pasta: ATIVIDADES": "✅",
+        "Pasta: AVALIACOES": "✅",
+        "Arquivo: DOCUMENTACAO/EMENTA.md": "❌",
+        "Arquivo: DOCUMENTACAO/EMENTA-CHALKIE-AI.md": "✅",
+        "Arquivo: DOCUMENTACAO/INDEX.md": "✅",
+        "Arquivo: DOCUMENTACAO/PLANO-AULAS.md": "❌",
+        "Atividades": "❌ (0 arquivos)"
+      },
+      "pendencias": [
+        "Criar arquivo: DOCUMENTACAO/EMENTA.md",
+        "Criar arquivo: DOCUMENTACAO/PLANO-AULAS.md",
+        "❌ Nenhuma apostila encontrada em CONTEUDO/"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4762 @@
+{
+  "id": "ATIVIDADE-EXCEL-01-10-2026",
+  "titulo": "Atividade Prática de Excel — Análise de Compras com Tabelas Dinâmicas",
+  "unidade_curricular": "Análise de Dados Aplicada à Gestão",
+  "curso": "Aprendizagem Industrial — Assistente em Processos de Gestão e Controle de Materiais",
+  "data": "01/10/2026",
+  "duracao": "3h25",
+  "natureza": "Atividade prática avaliativa",
+  "arquivo_excel": "COMPRAS-NOME-SOBRENOME.xlsx",
+  "arquivo_base": {
+    "nome": "BASE-COMPRAS-1S-2026.xlsx",
+    "aba": "Compras",
+    "planilha": "Base_Compras",
+    "colunas": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "colunas_moeda": [
+      "G"
+    ],
+    "titulo": "COMPRAS DO 1º SEMESTRE DE 2026 — ALMOXARIFADO",
+    "linha_vazia_apos": 18,
+    "explicacao": "Baixe a base com as **36 compras** do 1º semestre, abra no Excel e siga a **Questão 1**. A base tem **dois problemas de propósito**, que você vai corrigir."
+  },
+  "planilhas": {
+    "Compras_Bruta": {
+      "linhas": [
+        [
+          "COMPRAS DO 1º SEMESTRE DE 2026 — ALMOXARIFADO"
+        ],
+        [
+          "Data",
+          "Nº Pedido",
+          "Fornecedor",
+          "Categoria",
+          "Item",
+          "Quantidade",
+          "Valor Unitário"
+        ],
+        [
+          "05/01/2026",
+          "P-001",
+          "Alfa Suprimentos",
+          "EPI",
+          "Luva de vaqueta",
+          "40",
+          "18,90"
+        ],
+        [
+          "09/01/2026",
+          "P-002",
+          "Beta Industrial",
+          "Fixação",
+          "Parafuso sextavado M8",
+          "2000",
+          "0,45"
+        ],
+        [
+          "14/01/2026",
+          "P-003",
+          "Beta Industrial",
+          "Elétrico",
+          "Cabo flexível 2,5 mm²",
+          "200",
+          "3,40"
+        ],
+        [
+          "20/01/2026",
+          "P-004",
+          "Cometa EPI",
+          "EPI",
+          "Máscara PFF2",
+          "150",
+          "3,20"
+        ],
+        [
+          "23/01/2026",
+          "P-005",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Disco de corte 7\"",
+          "40",
+          "9,80"
+        ],
+        [
+          "28/01/2026",
+          "P-006",
+          "Beta Industrial",
+          "Elétrico",
+          "Disjuntor 20 A",
+          "20",
+          "24,90"
+        ],
+        [
+          "03/02/2026",
+          "P-007",
+          "Beta Industrial",
+          "Fixação",
+          "Porca M8",
+          "2000",
+          "0,15"
+        ],
+        [
+          "06/02/2026",
+          "P-008",
+          "Alfa Suprimentos",
+          "EPI",
+          "Óculos de proteção",
+          "30",
+          "12,50"
+        ],
+        [
+          "11/02/2026",
+          "P-009",
+          "Beta Industrial",
+          "Elétrico",
+          "Fita isolante 19 mm",
+          "30",
+          "6,90"
+        ],
+        [
+          "17/02/2026",
+          "P-010",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Broca aço rápido 8 mm",
+          "20",
+          "14,50"
+        ],
+        [
+          "20/02/2026",
+          "P-011",
+          "Cometa EPI",
+          "EPI",
+          "Protetor auricular plug",
+          "300",
+          "1,80"
+        ],
+        [
+          "25/02/2026",
+          "P-012",
+          "Beta Industrial",
+          "Elétrico",
+          "Cabo flexível 2,5 mm²",
+          "150",
+          "3,40"
+        ],
+        [
+          "02/03/2026",
+          "P-013",
+          "Beta Industrial",
+          "Elétrico",
+          "Disjuntor 20 A",
+          "60",
+          "24,90"
+        ],
+        [
+          "05/03/2026",
+          "P-014",
+          "Alfa Suprimentos",
+          "EPI",
+          "Luva de vaqueta",
+          "60",
+          "18,90"
+        ],
+        [
+          "10/03/2026",
+          "P-015",
+          "Beta Industrial",
+          "Elétrico",
+          "Cabo flexível 2,5 mm²",
+          "400",
+          "3,40"
+        ],
+        [
+          "13/03/2026",
+          "P-016",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Trena 5 m",
+          "15",
+          "22,00"
+        ],
+        [
+          "18/03/2026",
+          "P-017",
+          "Beta Industrial",
+          "Fixação",
+          "Parafuso sextavado M8",
+          "3000",
+          "0,45"
+        ],
+        [
+          "24/03/2026",
+          "P-018",
+          "Cometa EPI",
+          "EPI",
+          "Máscara PFF2",
+          "200",
+          "3,20"
+        ],
+        [],
+        [
+          "02/04/2026",
+          "P-019",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Disco de corte 7\"",
+          "30",
+          "9,80"
+        ],
+        [
+          "07/04/2026",
+          "P-020",
+          "Alfa Suprimentos",
+          "EPI",
+          "Luva de vaqueta",
+          "30",
+          "18,90"
+        ],
+        [
+          "10/04/2026",
+          "P-021",
+          "Beta Industrial",
+          "Fixação",
+          "Porca M8",
+          "1500",
+          "0,15"
+        ],
+        [
+          "15/04/2026",
+          "P-022",
+          "Beta Industrial",
+          "Elétrico",
+          "Fita isolante 19 mm",
+          "25",
+          "6,90"
+        ],
+        [
+          "22/04/2026",
+          "P-023",
+          "Alfa Suprimentos",
+          "EPI",
+          "Óculos de proteção",
+          "20",
+          "12,50"
+        ],
+        [
+          "28/04/2026",
+          "P-024",
+          "Beta Industrial",
+          "Elétrico",
+          "Cabo flexível 2,5 mm²",
+          "120",
+          "3,40"
+        ],
+        [
+          "04/05/2026",
+          "P-025",
+          "Beta Industrial",
+          "Elétrico",
+          "Disjuntor 20 A",
+          "25",
+          "24,90"
+        ],
+        [
+          "08/05/2026",
+          "P-026",
+          "Cometa EPI",
+          "EPI",
+          "Protetor auricular plug",
+          "250",
+          "1,80"
+        ],
+        [
+          "12/05/2026",
+          "P-027",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Broca aço rápido 8 mm",
+          "15",
+          "14,50"
+        ],
+        [
+          "19/05/2026",
+          "P-028",
+          "Alfa Suprimentos",
+          "EPI",
+          "Luva de vaqueta",
+          "40",
+          "18,90"
+        ],
+        [
+          "22/05/2026",
+          "P-029",
+          "Beta Industrial",
+          "Fixação",
+          "Parafuso sextavado M8",
+          "1500",
+          "0,45"
+        ],
+        [
+          "27/05/2026",
+          "P-030",
+          "Cometa EPI",
+          "EPI",
+          "Máscara PFF2",
+          "120",
+          "3,20"
+        ],
+        [
+          "02/06/2026",
+          "P-031",
+          "Beta Industrial",
+          "Elétrico",
+          "Cabo flexível 2,5 mm²",
+          "180",
+          "3,40"
+        ],
+        [
+          "05/06/2026",
+          "P-032",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Trena 5 m",
+          "10",
+          "22,00"
+        ],
+        [
+          "10/06/2026",
+          "P-033",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Disco de corte 7\"",
+          "35",
+          "9,80"
+        ],
+        [
+          "16/06/2026",
+          "P-034",
+          "Alfa Suprimentos",
+          "EPI",
+          "Luva de vaqueta",
+          "35",
+          "18,90"
+        ],
+        [
+          "19/06/2026",
+          "P-035",
+          "Beta Industrial",
+          "Elétrico",
+          "Fita isolante 19 mm",
+          "20",
+          "6,90"
+        ],
+        [
+          "25/06/2026",
+          "P-036",
+          "Beta Industrial",
+          "Elétrico",
+          "Disjuntor 20 A",
+          "15",
+          "24,90"
+        ]
+      ]
+    },
+    "Compras_Sem_Titulo": {
+      "linhas": [
+        [
+          "Data",
+          "Nº Pedido",
+          "Fornecedor",
+          "Categoria",
+          "Item",
+          "Quantidade",
+          "Valor Unitário"
+        ],
+        [
+          "05/01/2026",
+          "P-001",
+          "Alfa Suprimentos",
+          "EPI",
+          "Luva de vaqueta",
+          "40",
+          "18,90"
+        ],
+        [
+          "09/01/2026",
+          "P-002",
+          "Beta Industrial",
+          "Fixação",
+          "Parafuso sextavado M8",
+          "2000",
+          "0,45"
+        ],
+        [
+          "14/01/2026",
+          "P-003",
+          "Beta Industrial",
+          "Elétrico",
+          "Cabo flexível 2,5 mm²",
+          "200",
+          "3,40"
+        ],
+        [
+          "20/01/2026",
+          "P-004",
+          "Cometa EPI",
+          "EPI",
+          "Máscara PFF2",
+          "150",
+          "3,20"
+        ],
+        [
+          "23/01/2026",
+          "P-005",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Disco de corte 7\"",
+          "40",
+          "9,80"
+        ],
+        [
+          "28/01/2026",
+          "P-006",
+          "Beta Industrial",
+          "Elétrico",
+          "Disjuntor 20 A",
+          "20",
+          "24,90"
+        ],
+        [
+          "03/02/2026",
+          "P-007",
+          "Beta Industrial",
+          "Fixação",
+          "Porca M8",
+          "2000",
+          "0,15"
+        ],
+        [
+          "06/02/2026",
+          "P-008",
+          "Alfa Suprimentos",
+          "EPI",
+          "Óculos de proteção",
+          "30",
+          "12,50"
+        ],
+        [
+          "11/02/2026",
+          "P-009",
+          "Beta Industrial",
+          "Elétrico",
+          "Fita isolante 19 mm",
+          "30",
+          "6,90"
+        ],
+        [
+          "17/02/2026",
+          "P-010",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Broca aço rápido 8 mm",
+          "20",
+          "14,50"
+        ],
+        [
+          "20/02/2026",
+          "P-011",
+          "Cometa EPI",
+          "EPI",
+          "Protetor auricular plug",
+          "300",
+          "1,80"
+        ],
+        [
+          "25/02/2026",
+          "P-012",
+          "Beta Industrial",
+          "Elétrico",
+          "Cabo flexível 2,5 mm²",
+          "150",
+          "3,40"
+        ],
+        [
+          "02/03/2026",
+          "P-013",
+          "Beta Industrial",
+          "Elétrico",
+          "Disjuntor 20 A",
+          "60",
+          "24,90"
+        ],
+        [
+          "05/03/2026",
+          "P-014",
+          "Alfa Suprimentos",
+          "EPI",
+          "Luva de vaqueta",
+          "60",
+          "18,90"
+        ],
+        [
+          "10/03/2026",
+          "P-015",
+          "Beta Industrial",
+          "Elétrico",
+          "Cabo flexível 2,5 mm²",
+          "400",
+          "3,40"
+        ],
+        [
+          "13/03/2026",
+          "P-016",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Trena 5 m",
+          "15",
+          "22,00"
+        ],
+        [
+          "18/03/2026",
+          "P-017",
+          "Beta Industrial",
+          "Fixação",
+          "Parafuso sextavado M8",
+          "3000",
+          "0,45"
+        ],
+        [
+          "24/03/2026",
+          "P-018",
+          "Cometa EPI",
+          "EPI",
+          "Máscara PFF2",
+          "200",
+          "3,20"
+        ],
+        [],
+        [
+          "02/04/2026",
+          "P-019",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Disco de corte 7\"",
+          "30",
+          "9,80"
+        ],
+        [
+          "07/04/2026",
+          "P-020",
+          "Alfa Suprimentos",
+          "EPI",
+          "Luva de vaqueta",
+          "30",
+          "18,90"
+        ],
+        [
+          "10/04/2026",
+          "P-021",
+          "Beta Industrial",
+          "Fixação",
+          "Porca M8",
+          "1500",
+          "0,15"
+        ],
+        [
+          "15/04/2026",
+          "P-022",
+          "Beta Industrial",
+          "Elétrico",
+          "Fita isolante 19 mm",
+          "25",
+          "6,90"
+        ],
+        [
+          "22/04/2026",
+          "P-023",
+          "Alfa Suprimentos",
+          "EPI",
+          "Óculos de proteção",
+          "20",
+          "12,50"
+        ],
+        [
+          "28/04/2026",
+          "P-024",
+          "Beta Industrial",
+          "Elétrico",
+          "Cabo flexível 2,5 mm²",
+          "120",
+          "3,40"
+        ],
+        [
+          "04/05/2026",
+          "P-025",
+          "Beta Industrial",
+          "Elétrico",
+          "Disjuntor 20 A",
+          "25",
+          "24,90"
+        ],
+        [
+          "08/05/2026",
+          "P-026",
+          "Cometa EPI",
+          "EPI",
+          "Protetor auricular plug",
+          "250",
+          "1,80"
+        ],
+        [
+          "12/05/2026",
+          "P-027",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Broca aço rápido 8 mm",
+          "15",
+          "14,50"
+        ],
+        [
+          "19/05/2026",
+          "P-028",
+          "Alfa Suprimentos",
+          "EPI",
+          "Luva de vaqueta",
+          "40",
+          "18,90"
+        ],
+        [
+          "22/05/2026",
+          "P-029",
+          "Beta Industrial",
+          "Fixação",
+          "Parafuso sextavado M8",
+          "1500",
+          "0,45"
+        ],
+        [
+          "27/05/2026",
+          "P-030",
+          "Cometa EPI",
+          "EPI",
+          "Máscara PFF2",
+          "120",
+          "3,20"
+        ],
+        [
+          "02/06/2026",
+          "P-031",
+          "Beta Industrial",
+          "Elétrico",
+          "Cabo flexível 2,5 mm²",
+          "180",
+          "3,40"
+        ],
+        [
+          "05/06/2026",
+          "P-032",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Trena 5 m",
+          "10",
+          "22,00"
+        ],
+        [
+          "10/06/2026",
+          "P-033",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Disco de corte 7\"",
+          "35",
+          "9,80"
+        ],
+        [
+          "16/06/2026",
+          "P-034",
+          "Alfa Suprimentos",
+          "EPI",
+          "Luva de vaqueta",
+          "35",
+          "18,90"
+        ],
+        [
+          "19/06/2026",
+          "P-035",
+          "Beta Industrial",
+          "Elétrico",
+          "Fita isolante 19 mm",
+          "20",
+          "6,90"
+        ],
+        [
+          "25/06/2026",
+          "P-036",
+          "Beta Industrial",
+          "Elétrico",
+          "Disjuntor 20 A",
+          "15",
+          "24,90"
+        ]
+      ]
+    },
+    "Base_Compras": {
+      "linhas": [
+        [
+          "Data",
+          "Nº Pedido",
+          "Fornecedor",
+          "Categoria",
+          "Item",
+          "Quantidade",
+          "Valor Unitário",
+          "Valor Total"
+        ],
+        [
+          "05/01/2026",
+          "P-001",
+          "Alfa Suprimentos",
+          "EPI",
+          "Luva de vaqueta",
+          "40",
+          "18,90",
+          "R$ 756,00"
+        ],
+        [
+          "09/01/2026",
+          "P-002",
+          "Beta Industrial",
+          "Fixação",
+          "Parafuso sextavado M8",
+          "2000",
+          "0,45",
+          "R$ 900,00"
+        ],
+        [
+          "14/01/2026",
+          "P-003",
+          "Beta Industrial",
+          "Elétrico",
+          "Cabo flexível 2,5 mm²",
+          "200",
+          "3,40",
+          "R$ 680,00"
+        ],
+        [
+          "20/01/2026",
+          "P-004",
+          "Cometa EPI",
+          "EPI",
+          "Máscara PFF2",
+          "150",
+          "3,20",
+          "R$ 480,00"
+        ],
+        [
+          "23/01/2026",
+          "P-005",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Disco de corte 7\"",
+          "40",
+          "9,80",
+          "R$ 392,00"
+        ],
+        [
+          "28/01/2026",
+          "P-006",
+          "Beta Industrial",
+          "Elétrico",
+          "Disjuntor 20 A",
+          "20",
+          "24,90",
+          "R$ 498,00"
+        ],
+        [
+          "03/02/2026",
+          "P-007",
+          "Beta Industrial",
+          "Fixação",
+          "Porca M8",
+          "2000",
+          "0,15",
+          "R$ 300,00"
+        ],
+        [
+          "06/02/2026",
+          "P-008",
+          "Alfa Suprimentos",
+          "EPI",
+          "Óculos de proteção",
+          "30",
+          "12,50",
+          "R$ 375,00"
+        ],
+        [
+          "11/02/2026",
+          "P-009",
+          "Beta Industrial",
+          "Elétrico",
+          "Fita isolante 19 mm",
+          "30",
+          "6,90",
+          "R$ 207,00"
+        ],
+        [
+          "17/02/2026",
+          "P-010",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Broca aço rápido 8 mm",
+          "20",
+          "14,50",
+          "R$ 290,00"
+        ],
+        [
+          "20/02/2026",
+          "P-011",
+          "Cometa EPI",
+          "EPI",
+          "Protetor auricular plug",
+          "300",
+          "1,80",
+          "R$ 540,00"
+        ],
+        [
+          "25/02/2026",
+          "P-012",
+          "Beta Industrial",
+          "Elétrico",
+          "Cabo flexível 2,5 mm²",
+          "150",
+          "3,40",
+          "R$ 510,00"
+        ],
+        [
+          "02/03/2026",
+          "P-013",
+          "Beta Industrial",
+          "Elétrico",
+          "Disjuntor 20 A",
+          "60",
+          "24,90",
+          "R$ 1.494,00"
+        ],
+        [
+          "05/03/2026",
+          "P-014",
+          "Alfa Suprimentos",
+          "EPI",
+          "Luva de vaqueta",
+          "60",
+          "18,90",
+          "R$ 1.134,00"
+        ],
+        [
+          "10/03/2026",
+          "P-015",
+          "Beta Industrial",
+          "Elétrico",
+          "Cabo flexível 2,5 mm²",
+          "400",
+          "3,40",
+          "R$ 1.360,00"
+        ],
+        [
+          "13/03/2026",
+          "P-016",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Trena 5 m",
+          "15",
+          "22,00",
+          "R$ 330,00"
+        ],
+        [
+          "18/03/2026",
+          "P-017",
+          "Beta Industrial",
+          "Fixação",
+          "Parafuso sextavado M8",
+          "3000",
+          "0,45",
+          "R$ 1.350,00"
+        ],
+        [
+          "24/03/2026",
+          "P-018",
+          "Cometa EPI",
+          "EPI",
+          "Máscara PFF2",
+          "200",
+          "3,20",
+          "R$ 640,00"
+        ],
+        [
+          "02/04/2026",
+          "P-019",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Disco de corte 7\"",
+          "30",
+          "9,80",
+          "R$ 294,00"
+        ],
+        [
+          "07/04/2026",
+          "P-020",
+          "Alfa Suprimentos",
+          "EPI",
+          "Luva de vaqueta",
+          "30",
+          "18,90",
+          "R$ 567,00"
+        ],
+        [
+          "10/04/2026",
+          "P-021",
+          "Beta Industrial",
+          "Fixação",
+          "Porca M8",
+          "1500",
+          "0,15",
+          "R$ 225,00"
+        ],
+        [
+          "15/04/2026",
+          "P-022",
+          "Beta Industrial",
+          "Elétrico",
+          "Fita isolante 19 mm",
+          "25",
+          "6,90",
+          "R$ 172,50"
+        ],
+        [
+          "22/04/2026",
+          "P-023",
+          "Alfa Suprimentos",
+          "EPI",
+          "Óculos de proteção",
+          "20",
+          "12,50",
+          "R$ 250,00"
+        ],
+        [
+          "28/04/2026",
+          "P-024",
+          "Beta Industrial",
+          "Elétrico",
+          "Cabo flexível 2,5 mm²",
+          "120",
+          "3,40",
+          "R$ 408,00"
+        ],
+        [
+          "04/05/2026",
+          "P-025",
+          "Beta Industrial",
+          "Elétrico",
+          "Disjuntor 20 A",
+          "25",
+          "24,90",
+          "R$ 622,50"
+        ],
+        [
+          "08/05/2026",
+          "P-026",
+          "Cometa EPI",
+          "EPI",
+          "Protetor auricular plug",
+          "250",
+          "1,80",
+          "R$ 450,00"
+        ],
+        [
+          "12/05/2026",
+          "P-027",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Broca aço rápido 8 mm",
+          "15",
+          "14,50",
+          "R$ 217,50"
+        ],
+        [
+          "19/05/2026",
+          "P-028",
+          "Alfa Suprimentos",
+          "EPI",
+          "Luva de vaqueta",
+          "40",
+          "18,90",
+          "R$ 756,00"
+        ],
+        [
+          "22/05/2026",
+          "P-029",
+          "Beta Industrial",
+          "Fixação",
+          "Parafuso sextavado M8",
+          "1500",
+          "0,45",
+          "R$ 675,00"
+        ],
+        [
+          "27/05/2026",
+          "P-030",
+          "Cometa EPI",
+          "EPI",
+          "Máscara PFF2",
+          "120",
+          "3,20",
+          "R$ 384,00"
+        ],
+        [
+          "02/06/2026",
+          "P-031",
+          "Beta Industrial",
+          "Elétrico",
+          "Cabo flexível 2,5 mm²",
+          "180",
+          "3,40",
+          "R$ 612,00"
+        ],
+        [
+          "05/06/2026",
+          "P-032",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Trena 5 m",
+          "10",
+          "22,00",
+          "R$ 220,00"
+        ],
+        [
+          "10/06/2026",
+          "P-033",
+          "Delta Ferramentas",
+          "Ferramentas",
+          "Disco de corte 7\"",
+          "35",
+          "9,80",
+          "R$ 343,00"
+        ],
+        [
+          "16/06/2026",
+          "P-034",
+          "Alfa Suprimentos",
+          "EPI",
+          "Luva de vaqueta",
+          "35",
+          "18,90",
+          "R$ 661,50"
+        ],
+        [
+          "19/06/2026",
+          "P-035",
+          "Beta Industrial",
+          "Elétrico",
+          "Fita isolante 19 mm",
+          "20",
+          "6,90",
+          "R$ 138,00"
+        ],
+        [
+          "25/06/2026",
+          "P-036",
+          "Beta Industrial",
+          "Elétrico",
+          "Disjuntor 20 A",
+          "15",
+          "24,90",
+          "R$ 373,50"
+        ]
+      ]
+    },
+    "TD_Fornecedor": {
+      "celulas": {
+        "A3": "Rótulos de Linha",
+        "B3": "Soma de Valor Total",
+        "C3": "% do Total",
+        "A4": "Alfa Suprimentos",
+        "A5": "Beta Industrial",
+        "A6": "Cometa EPI",
+        "A7": "Delta Ferramentas",
+        "A8": "Total Geral",
+        "E3": "Maior fornecedor:",
+        "E4": "Depende de um só (acima de 50%)?",
+        "E5": "Ação sugerida para compras:",
+        "B4": "•••",
+        "C4": "•••",
+        "B5": "•••",
+        "C5": "•••",
+        "B6": "•••",
+        "C6": "•••",
+        "B7": "•••",
+        "C7": "•••",
+        "B8": "•••",
+        "C8": "•••"
+      }
+    },
+    "TD_Mes": {
+      "celulas": {
+        "A1": "Categoria",
+        "B1": "(Tudo)",
+        "A3": "Soma de Valor Total",
+        "B3": "Rótulos de Coluna",
+        "A4": "Rótulos de Linha",
+        "B4": "Alfa Suprim.",
+        "C4": "Beta Industrial",
+        "D4": "Cometa EPI",
+        "E4": "Delta Ferram.",
+        "F4": "Total Geral",
+        "A5": "Trim1",
+        "A6": "jan",
+        "A7": "fev",
+        "A8": "mar",
+        "A9": "Trim2",
+        "A10": "abr",
+        "A11": "mai",
+        "A12": "jun",
+        "A13": "Total Geral",
+        "H3": "Mês de pico:",
+        "H4": "Trimestre com mais compras:",
+        "H5": "Por que houve o pico?",
+        "B5": "•••",
+        "C5": "•••",
+        "D5": "•••",
+        "E5": "•••",
+        "F5": "•••",
+        "B6": "•••",
+        "C6": "•••",
+        "D6": "•••",
+        "E6": "•••",
+        "F6": "•••",
+        "B7": "•••",
+        "C7": "•••",
+        "D7": "•••",
+        "E7": "•••",
+        "F7": "•••",
+        "B8": "•••",
+        "C8": "•••",
+        "D8": "•••",
+        "E8": "•••",
+        "F8": "•••",
+        "B9": "•••",
+        "C9": "•••",
+        "D9": "•••",
+        "E9": "•••",
+        "F9": "•••",
+        "B10": "•••",
+        "C10": "•••",
+        "D10": "•••",
+        "E10": "•••",
+        "F10": "•••",
+        "B11": "•••",
+        "C11": "•••",
+        "D11": "•••",
+        "E11": "•••",
+        "F11": "•••",
+        "B12": "•••",
+        "C12": "•••",
+        "D12": "•••",
+        "E12": "•••",
+        "F12": "•••",
+        "B13": "•••",
+        "C13": "•••",
+        "D13": "•••",
+        "E13": "•••",
+        "F13": "•••"
+      }
+    },
+    "TD_Itens": {
+      "celulas": {
+        "A3": "Rótulos de Linha",
+        "B3": "Soma de Valor Total",
+        "A9": "Total Geral",
+        "D3": "Por que não usar pizza?",
+        "A4": "•••",
+        "B4": "•••",
+        "A5": "•••",
+        "B5": "•••",
+        "A6": "•••",
+        "B6": "•••",
+        "A7": "•••",
+        "B7": "•••",
+        "A8": "•••",
+        "B8": "•••",
+        "B9": "•••"
+      }
+    },
+    "TD_Mensal": {
+      "celulas": {
+        "A3": "Rótulos de Linha",
+        "B3": "Soma de Valor Total",
+        "C3": "Contagem de Nº Pedido",
+        "A4": "jan",
+        "A5": "fev",
+        "A6": "mar",
+        "A7": "abr",
+        "A8": "mai",
+        "A9": "jun",
+        "A10": "Total Geral",
+        "E3": "Por que usei dois eixos?",
+        "B4": "•••",
+        "C4": "•••",
+        "B5": "•••",
+        "C5": "•••",
+        "B6": "•••",
+        "C6": "•••",
+        "B7": "•••",
+        "C7": "•••",
+        "B8": "•••",
+        "C8": "•••",
+        "B9": "•••",
+        "C9": "•••",
+        "B10": "•••",
+        "C10": "•••"
+      }
+    }
+  },
+  "capa": {
+    "subtitulo": "Tabelas dinâmicas, gráficos dinâmicos, segmentação de dados e proteção: qual fornecedor e qual mês concentram as compras?",
+    "sobre": [
+      "Esta é uma **atividade prática avaliativa**: ela **compõe a nota final** e vale **10 pontos** na linha **Atividades de Sala de Aula** da tabela de notas. A pontuação de cada questão entra direto na sua nota.",
+      "Você vai trabalhar num **único arquivo**, a partir da base de compras que o professor preparou. Cada questão acrescenta uma aba ao arquivo, por isso faça **na ordem**.",
+      "Cada questão tem uma página com **passo a passo**. Cada passo tem uma **imagem** com números laranja mostrando onde clicar e um texto explicando o que fazer.",
+      "Nas imagens, os valores das tabelas dinâmicas aparecem como **•••** e os gráficos usam **números de ilustração**: os resultados de verdade você descobre no seu arquivo.",
+      "Ao terminar um passo, marque **Passo concluído** para não se perder.",
+      "Você pode usar **Excel** ou **LibreOffice Calc**. Quando o caminho for diferente, há uma caixa roxa com a alternativa."
+    ],
+    "contexto": [
+      "O gerente de compras da **Metalúrgica Vale do Itajaí** (empresa fictícia) recebeu da diretoria duas perguntas sobre o 1º semestre de 2026: **de qual fornecedor a empresa mais comprou?** e **em que mês as compras se concentraram?**",
+      "Você vai responder com a base das **36 compras do semestre**, usando **tabelas dinâmicas** para resumir, **gráficos dinâmicos** para mostrar e **segmentação** para deixar o relatório interativo.",
+      "No final, o arquivo terá estas abas, todas alimentadas pela base:"
+    ],
+    "legenda_abas": "A base alimenta as quatro tabelas dinâmicas; na Questão 6, a segmentação de Categoria filtra três delas ao mesmo tempo.",
+    "tempos": [
+      [
+        "Abertura",
+        "Ler esta capa, baixar a base e abrir o Excel",
+        "15 min",
+        "—"
+      ],
+      [
+        "**Questão 1**",
+        "Preparar a base de compras",
+        "20 min",
+        "1,5"
+      ],
+      [
+        "**Questão 2**",
+        "Tabela dinâmica por fornecedor",
+        "30 min",
+        "2,0"
+      ],
+      [
+        "**Questão 3**",
+        "Agrupar por mês e trimestre, contar pedidos e filtrar",
+        "25 min",
+        "1,5"
+      ],
+      [
+        "Intervalo",
+        "—",
+        "15 min",
+        "—"
+      ],
+      [
+        "**Questão 4**",
+        "Gráficos dinâmicos de colunas e barras",
+        "35 min",
+        "2,0"
+      ],
+      [
+        "**Questão 5**",
+        "Campo calculado e gráfico combinado",
+        "25 min",
+        "1,5"
+      ],
+      [
+        "**Questão 6**",
+        "Segmentação, linha do tempo, atualização e proteção",
+        "30 min",
+        "1,5"
+      ],
+      [
+        "Fechamento",
+        "Revisar e entregar o arquivo",
+        "10 min",
+        "—"
+      ],
+      [
+        "**Total**",
+        "",
+        "**3h25**",
+        "**10,0**"
+      ]
+    ],
+    "nota_pontuacao": "**Valor na nota final: 10 pontos.** O desempenho esperado é de **7,0 ou mais** (70%, a mesma média da tabela de notas).",
+    "titulo_dados": "📊 Base de compras (baixar)",
+    "tabelas": [
+      {
+        "titulo": "Conteúdo da base, para conferir (colunas A a G)",
+        "planilha": "Base_Compras",
+        "colunas": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G"
+        ]
+      }
+    ],
+    "regras": [
+      "Trabalho **individual**. Pode consultar os slides das aulas e as páginas desta atividade.",
+      "Salve com frequência: [[Ctrl]]+[[B]].",
+      "Nome do arquivo: `COMPRAS-NOME-SOBRENOME.xlsx`, com o seu nome (ex.: `COMPRAS-ANA-SOUZA.xlsx`).",
+      "Nomes das abas: `Base_Compras`, `TD_Fornecedor`, `TD_Mes`, `TD_Itens` e `TD_Mensal`.",
+      "Senha de proteção da Questão 6: `senai2026`.",
+      "Entregue o arquivo como o professor orientar: pasta da turma, AVA ou e-mail.",
+      "A empresa e os dados são **fictícios**, criados para esta atividade."
+    ],
+    "imagem_abas": {
+      "alt": "Esquema da base de compras alimentando as quatro tabelas dinâmicas",
+      "guia": "Página Inicial",
+      "aba_ativa": "Base_Compras",
+      "abas": [
+        "Base_Compras",
+        "TD_Fornecedor",
+        "TD_Mes",
+        "TD_Itens",
+        "TD_Mensal"
+      ],
+      "somente_esquema": true,
+      "altura_esquema": 330,
+      "esquema": {
+        "caixas": [
+          {
+            "id": "base",
+            "x": 330,
+            "y": 170,
+            "w": 300,
+            "h": 130,
+            "titulo": "Base_Compras",
+            "cor": "#004384",
+            "linhas": [
+              "36 compras (+1 na Questão 6)",
+              "Tabela oficial Compras",
+              "Protegida com senha",
+              "Questão 1"
+            ]
+          },
+          {
+            "id": "forn",
+            "x": 20,
+            "y": 338,
+            "w": 220,
+            "h": 150,
+            "titulo": "TD_Fornecedor",
+            "cor": "#217346",
+            "linhas": [
+              "Valor e % por fornecedor",
+              "Campo calculado",
+              "Armazenagem (5%)",
+              "Questões 2 e 5"
+            ]
+          },
+          {
+            "id": "mes",
+            "x": 255,
+            "y": 338,
+            "w": 220,
+            "h": 150,
+            "titulo": "TD_Mes",
+            "cor": "#6a1b9a",
+            "linhas": [
+              "Mês × fornecedor",
+              "Gráfico de colunas",
+              "Segmentação e",
+              "linha do tempo",
+              "Questões 3, 4 e 6"
+            ]
+          },
+          {
+            "id": "itens",
+            "x": 490,
+            "y": 338,
+            "w": 220,
+            "h": 150,
+            "titulo": "TD_Itens",
+            "cor": "#b26a00",
+            "linhas": [
+              "5 itens de maior valor",
+              "Gráfico de barras",
+              "Questão 4"
+            ]
+          },
+          {
+            "id": "mensal",
+            "x": 725,
+            "y": 338,
+            "w": 215,
+            "h": 150,
+            "titulo": "TD_Mensal",
+            "cor": "#c62828",
+            "linhas": [
+              "Valor e pedidos por mês",
+              "Gráfico combinado",
+              "Questão 5"
+            ]
+          }
+        ]
+      },
+      "setas": [
+        {
+          "de": "caixa:base",
+          "para": "caixa:forn",
+          "curva": 0
+        },
+        {
+          "de": "caixa:base",
+          "para": "caixa:mes",
+          "curva": 0
+        },
+        {
+          "de": "caixa:base",
+          "para": "caixa:itens",
+          "curva": 0
+        },
+        {
+          "de": "caixa:base",
+          "para": "caixa:mensal",
+          "curva": 0
+        }
+      ]
+    }
+  },
+  "questoes": [
+    {
+      "id": "q1",
+      "numero": 1,
+      "arquivo": "QUESTAO-01-PREPARAR-BASE.html",
+      "titulo": "Preparar a base de compras",
+      "tempo": "20 min",
+      "pontos": "1,5",
+      "aba": "`Compras` (renomeada para `Base_Compras`)",
+      "slides_apoio": "Arquivo 6 — slides 9 e 36",
+      "objetivo": "Deixar a base de compras **pronta para a tabela dinâmica**: tirar o que atrapalha (título mesclado e linha vazia), criar a coluna **Valor Total** e transformar os dados em **Tabela oficial**.",
+      "voce_vai_usar": [
+        "Salvar Como",
+        "Excluir linha",
+        "Fórmula de multiplicação e formato Moeda",
+        "Formatar como Tabela ([[Ctrl]]+[[Alt]]+[[T]])"
+      ],
+      "caixas": [
+        {
+          "tipo": "atencao",
+          "texto": "A base foi entregue com **dois problemas de propósito**. Encontrar e corrigir faz parte da questão: tabela dinâmica só funciona bem com a base limpa."
+        }
+      ],
+      "passos": [
+        {
+          "titulo": "Baixe a base e salve com o seu nome",
+          "legenda": "Nome do arquivo (1), tipo .xlsx (2) e Salvar (3).",
+          "imagem": {
+            "guia": "Arquivo",
+            "alt": "Janela Salvar Como com o nome COMPRAS-NOME-SOBRENOME.xlsx",
+            "aba_ativa": "Compras",
+            "abas": [
+              "Compras"
+            ],
+            "planilha": "Compras_Bruta",
+            "colunas": "A:G",
+            "larguras": {
+              "A": 90,
+              "B": 80,
+              "C": 140,
+              "D": 90,
+              "E": 170,
+              "F": 86,
+              "G": 104,
+              "H": 110
+            },
+            "linhas": 10,
+            "mesclar": [
+              "A1:G1"
+            ],
+            "celula_ativa": "A1",
+            "formula": "COMPRAS DO 1º SEMESTRE DE 2026 — ALMOXARIFADO",
+            "dialogo": {
+              "titulo": "Salvar Como",
+              "y": 196,
+              "campos": [
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Nome do arquivo:",
+                  "valor": "COMPRAS-NOME-SOBRENOME.xlsx"
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "Tipo:",
+                  "valor": "Pasta de Trabalho do Excel (*.xlsx)"
+                }
+              ],
+              "botoes": [
+                "Salvar",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "campo:Nome do arquivo:",
+                "n": 1
+              },
+              {
+                "alvo": "campo:Tipo:",
+                "n": 2
+              },
+              {
+                "alvo": "botaodlg:Salvar",
+                "n": 3,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Na capa da atividade, clique em **Baixar BASE-COMPRAS-1S-2026.xlsx** e abra o arquivo no Excel.",
+            "Se aparecer a faixa amarela **Modo de Exibição Protegido**, clique em **Habilitar Edição**.",
+            "Arquivo → **Salvar Como** → nome `COMPRAS-NOME-SOBRENOME` com o **seu** nome (1), tipo **Pasta de Trabalho do Excel (*.xlsx)** (2) → **Salvar** (3)."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Salve com frequência: [[Ctrl]]+[[B]]."
+            }
+          ]
+        },
+        {
+          "titulo": "Exclua o título mesclado da linha 1",
+          "legenda": "Botão direito no número da linha 1 (1) → Excluir (2).",
+          "imagem": {
+            "guia": "Página Inicial",
+            "alt": "Linha 1 com título mesclado selecionada e menu com a opção Excluir",
+            "aba_ativa": "Compras",
+            "abas": [
+              "Compras"
+            ],
+            "planilha": "Compras_Bruta",
+            "colunas": "A:G",
+            "larguras": {
+              "A": 90,
+              "B": 80,
+              "C": 140,
+              "D": 90,
+              "E": 170,
+              "F": 86,
+              "G": 104,
+              "H": 110
+            },
+            "linhas": 10,
+            "mesclar": [
+              "A1:G1"
+            ],
+            "celula_ativa": "A1",
+            "formula": "COMPRAS DO 1º SEMESTRE DE 2026 — ALMOXARIFADO",
+            "selecao": "A1:H1",
+            "menu": {
+              "ancora": "linha:1",
+              "itens": [
+                "Recortar",
+                "Copiar",
+                "Colar",
+                "Inserir",
+                "Excluir",
+                "Limpar Conteúdo",
+                "Formatar Células..."
+              ],
+              "realce": [
+                "Excluir"
+              ],
+              "largura": 220
+            },
+            "marcas": [
+              {
+                "alvo": "linha:1",
+                "n": 1,
+                "lado": "cima"
+              },
+              {
+                "alvo": "menu:Excluir",
+                "n": 2
+              }
+            ],
+            "nota": {
+              "texto": "Título mesclado em cima dos cabeçalhos confunde a tabela dinâmica: os títulos das colunas precisam estar na linha 1.",
+              "x": 600,
+              "y": 300,
+              "largura": 320
+            }
+          },
+          "instrucoes": [
+            "Observe a linha 1: um título mesclado ocupa as colunas A até G, e os cabeçalhos de verdade estão na linha 2.",
+            "Clique com o **botão direito no número 1**, à esquerda da planilha (1).",
+            "Escolha **Excluir** (2). Agora os cabeçalhos (Data, Nº Pedido...) ficam na linha 1."
+          ],
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "Clique no **número da linha**, e não numa célula: assim a linha inteira é excluída."
+            }
+          ]
+        },
+        {
+          "titulo": "Exclua a linha vazia no meio da base",
+          "legenda": "Botão direito no número da linha vazia (1) → Excluir (2).",
+          "imagem": {
+            "guia": "Página Inicial",
+            "alt": "Linha 20 vazia no meio da base selecionada e menu Excluir",
+            "aba_ativa": "Compras",
+            "abas": [
+              "Compras"
+            ],
+            "planilha": "Compras_Sem_Titulo",
+            "colunas": "A:G",
+            "larguras": {
+              "A": 90,
+              "B": 80,
+              "C": 140,
+              "D": 90,
+              "E": 170,
+              "F": 86,
+              "G": 104,
+              "H": 110
+            },
+            "linhas_visiveis": [
+              1,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23
+            ],
+            "celula_ativa": "A20",
+            "formula": "",
+            "selecao": "A20:H20",
+            "menu": {
+              "ancora": "linha:20",
+              "direcao": "cima",
+              "itens": [
+                "Recortar",
+                "Copiar",
+                "Colar",
+                "Inserir",
+                "Excluir",
+                "Limpar Conteúdo"
+              ],
+              "realce": [
+                "Excluir"
+              ],
+              "largura": 220
+            },
+            "marcas": [
+              {
+                "alvo": "linha:20",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "menu:Excluir",
+                "n": 2
+              }
+            ]
+          },
+          "instrucoes": [
+            "Role a planilha até achar uma **linha totalmente vazia** entre as compras.",
+            "Clique com o **botão direito no número dessa linha** (1) → **Excluir** (2).",
+            "Confira: as compras vão da linha 2 até a linha 37, sem nenhuma linha em branco."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Atalho para andar pelos dados: [[Ctrl]]+[[↓]] para na última célula preenchida antes de um espaço vazio."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "Com [[Ctrl]]+[[↓]] a partir de `A1`, o cursor vai direto até a **última** compra, sem parar no meio."
+            }
+          ]
+        },
+        {
+          "titulo": "Crie a coluna Valor Total",
+          "legenda": "Em H2 (1): Quantidade × Valor Unitário.",
+          "imagem": {
+            "guia": "Página Inicial",
+            "alt": "Coluna H Valor Total com a fórmula =F2*G2 na célula H2",
+            "aba_ativa": "Base_Compras",
+            "abas": [
+              "Base_Compras"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 90,
+              "B": 80,
+              "C": 140,
+              "D": 90,
+              "E": 170,
+              "F": 86,
+              "G": 104,
+              "H": 110
+            },
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "linhas": 9,
+            "vazias": [
+              "H2:H37"
+            ],
+            "celula_ativa": "H2",
+            "selecao": "H2",
+            "formula": "=F2*G2",
+            "marcas": [
+              {
+                "alvo": "H2",
+                "n": 1,
+                "lado": "baixo"
+              }
+            ],
+            "nota": {
+              "texto": "Depois copie até a última compra com duplo clique na alça do canto da célula.",
+              "x": 560,
+              "y": 300,
+              "largura": 330
+            }
+          },
+          "instrucoes": [
+            "Em `H1` digite `Valor Total`.",
+            "Em `H2` (1) digite a fórmula abaixo e tecle [[Enter]].",
+            "Copie até a última compra (duplo clique na alça) e formate a coluna H como **Moeda**."
+          ],
+          "formula": "=F2*G2",
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "A coluna H está preenchida em todas as compras, com valores em R$."
+            }
+          ]
+        },
+        {
+          "titulo": "Transforme os dados em Tabela oficial",
+          "legenda": "Confira o intervalo (1), marque os cabeçalhos (2) e OK (3).",
+          "imagem": {
+            "guia": "Página Inicial",
+            "alt": "Janela Criar Tabela com o intervalo e a opção Minha tabela tem cabeçalhos marcada",
+            "aba_ativa": "Compras",
+            "abas": [
+              "Compras"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 90,
+              "B": 80,
+              "C": 140,
+              "D": 90,
+              "E": 170,
+              "F": 86,
+              "G": 104,
+              "H": 110
+            },
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "planilha": "Base_Compras",
+            "linhas": 10,
+            "celula_ativa": "A1",
+            "formula": "Data",
+            "selecao": "A1:H37",
+            "dialogo": {
+              "titulo": "Criar Tabela",
+              "y": 200,
+              "campos": [
+                {
+                  "tipo": "paragrafo",
+                  "rotulo": "Onde estão os dados da tabela?"
+                },
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Intervalo:",
+                  "valor": "=$A$1:$H$37"
+                },
+                {
+                  "tipo": "check",
+                  "rotulo": "Minha tabela tem cabeçalhos",
+                  "marcado": true
+                }
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "campo:Intervalo:",
+                "n": 1
+              },
+              {
+                "alvo": "campo:Minha tabela tem cabeçalhos",
+                "n": 2
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 3,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique em qualquer célula das compras e tecle [[Ctrl]]+[[Alt]]+[[T]] (ou Página Inicial → **Formatar como Tabela**).",
+            "Confira o intervalo `$A$1:$H$37` (1) e deixe marcado **Minha tabela tem cabeçalhos** (2) → **OK** (3).",
+            "Na guia **Design da Tabela**, no campo **Nome da Tabela** (canto esquerdo), digite `Compras` e tecle [[Enter]].",
+            "Renomeie a aba `Compras` para `Base_Compras` (botão direito na aba → Renomear)."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Na Tabela oficial, uma compra nova digitada logo abaixo da última linha entra **sozinha** na tabela e na análise (Questão 6)."
+            },
+            {
+              "tipo": "libre",
+              "texto": "Selecione os dados e use Dados → **Definir intervalo**, com o nome `Compras`."
+            }
+          ]
+        }
+      ],
+      "criterios": [
+        [
+          "Título mesclado e linha vazia removidos",
+          "0,5"
+        ],
+        [
+          "Coluna Valor Total correta, em Moeda",
+          "0,5"
+        ],
+        [
+          "Tabela oficial `Compras` criada e aba renomeada para `Base_Compras`",
+          "0,5"
+        ]
+      ]
+    },
+    {
+      "id": "q2",
+      "numero": 2,
+      "arquivo": "QUESTAO-02-TD-FORNECEDOR.html",
+      "titulo": "Quanto foi comprado de cada fornecedor?",
+      "tempo": "30 min",
+      "pontos": "2,0",
+      "aba": "`TD_Fornecedor` (nova)",
+      "slides_apoio": "Arquivo 6 — slides 8, 10–14, 16 e 21.1",
+      "objetivo": "Criar a primeira **tabela dinâmica** para responder ao gerente: quanto foi comprado de cada fornecedor e se a empresa **depende demais** de um só.",
+      "voce_vai_usar": [
+        "Inserir → Tabela Dinâmica",
+        "Painel Campos da Tabela Dinâmica (Linhas e Valores)",
+        "Configurações do Campo de Valor",
+        "Classificar",
+        "Mostrar Valores Como → % do Total Geral"
+      ],
+      "passos": [
+        {
+          "titulo": "Insira a tabela dinâmica numa nova planilha",
+          "legenda": "Inserir → Tabela Dinâmica (1), tabela Compras (2), Nova Planilha (3) e OK (4).",
+          "imagem": {
+            "guia": "Inserir",
+            "alt": "Janela Criar Tabela Dinâmica com a tabela Compras e a opção Nova Planilha",
+            "aba_ativa": "Base_Compras",
+            "abas": [
+              "Base_Compras"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 90,
+              "B": 80,
+              "C": 140,
+              "D": 90,
+              "E": 170,
+              "F": 86,
+              "G": 104,
+              "H": 110
+            },
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "linhas": 11,
+            "celula_ativa": "A2",
+            "formula": "05/01/2026",
+            "dialogo": {
+              "titulo": "Criar Tabela Dinâmica",
+              "y": 176,
+              "campos": [
+                {
+                  "tipo": "paragrafo",
+                  "rotulo": "Escolha os dados que deseja analisar"
+                },
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Tabela/Intervalo:",
+                  "valor": "Compras"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "rotulo": "Onde deseja colocar a Tabela Dinâmica?"
+                },
+                {
+                  "tipo": "radio",
+                  "rotulo": "Nova Planilha",
+                  "marcado": true
+                },
+                {
+                  "tipo": "radio",
+                  "rotulo": "Planilha Existente",
+                  "marcado": false
+                }
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "botao:Tabela Dinâmica",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "campo:Tabela/Intervalo:",
+                "n": 2
+              },
+              {
+                "alvo": "campo:Nova Planilha",
+                "n": 3
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique em qualquer célula da tabela de compras.",
+            "Guia **Inserir** → **Tabela Dinâmica** (1).",
+            "Confira **Tabela/Intervalo: Compras** (2) e escolha **Nova Planilha** (3) → **OK** (4)."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Como os dados estão numa Tabela oficial, o Excel já sugere o nome `Compras`: a tabela dinâmica vai acompanhar as compras novas."
+            }
+          ]
+        },
+        {
+          "titulo": "Arraste Fornecedor para Linhas e Valor Total para Valores",
+          "legenda": "Fornecedor (1) vai para Linhas e Valor Total (2) vai para Valores.",
+          "imagem": {
+            "guia": "Análise da Tabela Dinâmica",
+            "alt": "Painel Campos da Tabela Dinâmica com Fornecedor em Linhas e Soma de Valor Total em Valores",
+            "aba_ativa": "Planilha1",
+            "abas": [
+              "Base_Compras",
+              "Planilha1"
+            ],
+            "planilha": "TD_Fornecedor",
+            "colunas": "A:F",
+            "larguras": {
+              "A": 170,
+              "B": 150,
+              "C": 110,
+              "D": 30,
+              "E": 260,
+              "F": 120
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:C3",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A8:C8",
+                "tipo": "td_total"
+              }
+            ],
+            "linhas": 15,
+            "vazias": [
+              "C3:C8",
+              "E3:F5"
+            ],
+            "celula_ativa": "A3",
+            "formula": "Rótulos de Linha",
+            "painel_campos": {
+              "campos": [
+                "Data",
+                "Nº Pedido",
+                "Fornecedor",
+                "Categoria",
+                "Item",
+                "Quantidade",
+                "Valor Unitário",
+                "Valor Total"
+              ],
+              "marcados": [
+                "Fornecedor",
+                "Valor Total"
+              ],
+              "areas": {
+                "Linhas": [
+                  "Fornecedor"
+                ],
+                "Valores": [
+                  "Soma de Valor Total"
+                ]
+              }
+            },
+            "setas": [
+              {
+                "de": "campo_td:Fornecedor",
+                "para": "area:Linhas",
+                "curva": 30
+              },
+              {
+                "de": "campo_td:Valor Total",
+                "para": "area:Valores",
+                "curva": -20
+              }
+            ],
+            "marcas": [
+              {
+                "alvo": "campo_td:Fornecedor",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "campo_td:Valor Total",
+                "n": 2,
+                "lado": "esquerda"
+              }
+            ]
+          },
+          "instrucoes": [
+            "À direita aparece o painel **Campos da Tabela Dinâmica**.",
+            "Arraste **Fornecedor** (1) para a área **Linhas**.",
+            "Arraste **Valor Total** (2) para a área **Valores**: vira **Soma de Valor Total**.",
+            "Pronto: cada fornecedor aparece numa linha, com o total comprado ao lado."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Sumiu o painel? Clique dentro da tabela dinâmica ou use **Análise da Tabela Dinâmica → Lista de Campos**."
+            },
+            {
+              "tipo": "atencao",
+              "texto": "A tabela dinâmica **não altera** a base: ela só lê e resume os dados."
+            }
+          ]
+        },
+        {
+          "titulo": "Mostre os valores em reais",
+          "legenda": "Botão direito num valor (1) → Configurações do Campo de Valor → Formato do Número (2).",
+          "imagem": {
+            "guia": "Análise da Tabela Dinâmica",
+            "alt": "Janela Configurações do Campo de Valor com o botão Formato do Número",
+            "aba_ativa": "Planilha1",
+            "abas": [
+              "Base_Compras",
+              "Planilha1"
+            ],
+            "planilha": "TD_Fornecedor",
+            "colunas": "A:F",
+            "larguras": {
+              "A": 170,
+              "B": 150,
+              "C": 110,
+              "D": 30,
+              "E": 260,
+              "F": 120
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:C3",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A8:C8",
+                "tipo": "td_total"
+              }
+            ],
+            "linhas": 13,
+            "vazias": [
+              "C3:C8",
+              "E3:F5"
+            ],
+            "celula_ativa": "B4",
+            "formula": "•••",
+            "dialogo": {
+              "titulo": "Configurações do Campo de Valor",
+              "x": 440,
+              "y": 176,
+              "abas": [
+                "Resumir Valores Por",
+                "Mostrar Valores Como"
+              ],
+              "aba_ativa": "Resumir Valores Por",
+              "campos": [
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Nome personalizado:",
+                  "valor": "Soma de Valor Total"
+                },
+                {
+                  "tipo": "lista",
+                  "rotulo": "Resumir campo de valor por:",
+                  "itens": [
+                    "Soma",
+                    "Contagem",
+                    "Média",
+                    "Máx",
+                    "Mín"
+                  ],
+                  "selecionados": [
+                    "Soma"
+                  ]
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar",
+                "Formato do Número"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "B4",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "botaodlg:Formato do Número",
+                "n": 2,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique com o **botão direito** num valor da coluna Soma de Valor Total (1).",
+            "Escolha **Configurações do Campo de Valor**.",
+            "Clique em **Formato do Número** (2) → **Moeda**, 2 casas → **OK** → **OK**."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Formatar pelo **Formato do Número** vale para a coluna inteira da tabela dinâmica, mesmo quando ela muda de tamanho."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "Os valores aparecem com `R$` e duas casas decimais."
+            }
+          ]
+        },
+        {
+          "titulo": "Ordene do maior para o menor",
+          "legenda": "Botão direito num valor (1) → Classificar → do Maior para o Menor (2).",
+          "imagem": {
+            "guia": "Análise da Tabela Dinâmica",
+            "alt": "Menu de classificação com a opção Classificar do Maior para o Menor",
+            "aba_ativa": "Planilha1",
+            "abas": [
+              "Base_Compras",
+              "Planilha1"
+            ],
+            "planilha": "TD_Fornecedor",
+            "colunas": "A:F",
+            "larguras": {
+              "A": 170,
+              "B": 150,
+              "C": 110,
+              "D": 30,
+              "E": 260,
+              "F": 120
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:C3",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A8:C8",
+                "tipo": "td_total"
+              }
+            ],
+            "linhas": 14,
+            "vazias": [
+              "C3:C8",
+              "E3:F5"
+            ],
+            "celula_ativa": "B5",
+            "formula": "•••",
+            "menu": {
+              "ancora": "B5",
+              "itens": [
+                "Copiar",
+                "Atualizar",
+                "Classificar do Menor para o Maior",
+                "Classificar do Maior para o Menor",
+                "Mais Opções de Classificação...",
+                "Mostrar Valores Como ▸"
+              ],
+              "realce": [
+                "Classificar do Maior para o Menor"
+              ],
+              "largura": 290
+            },
+            "marcas": [
+              {
+                "alvo": "B5",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "menu:Classificar do Maior para o Menor",
+                "n": 2
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique com o **botão direito** num valor da coluna Soma de Valor Total (1).",
+            "**Classificar** → **Classificar do Maior para o Menor** (2).",
+            "O fornecedor com mais compras sobe para o topo."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Ranking do maior para o menor é o jeito mais rápido de o gerente ver quem importa mais."
+            }
+          ]
+        },
+        {
+          "titulo": "Mostre a participação de cada fornecedor em %",
+          "legenda": "Botão direito na nova coluna de valores (1) → Mostrar Valores Como → % do Total Geral (2).",
+          "imagem": {
+            "guia": "Análise da Tabela Dinâmica",
+            "alt": "Menu Mostrar Valores Como com a opção % do Total Geral",
+            "aba_ativa": "Planilha1",
+            "abas": [
+              "Base_Compras",
+              "Planilha1"
+            ],
+            "planilha": "TD_Fornecedor",
+            "colunas": "A:F",
+            "larguras": {
+              "A": 170,
+              "B": 150,
+              "C": 110,
+              "D": 30,
+              "E": 260,
+              "F": 120
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:C3",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A8:C8",
+                "tipo": "td_total"
+              }
+            ],
+            "linhas": 11,
+            "vazias": [
+              "E3:F5"
+            ],
+            "celulas": {
+              "C3": "Soma de Valor Total2"
+            },
+            "celula_ativa": "C5",
+            "formula": "•••",
+            "menu": {
+              "ancora": "C5",
+              "itens": [
+                "Sem Cálculo",
+                "% do Total Geral",
+                "% do Total da Coluna",
+                "% do Total da Linha",
+                "Diferença de...",
+                "Classificação do Menor para o Maior"
+              ],
+              "realce": [
+                "% do Total Geral"
+              ],
+              "largura": 290
+            },
+            "marcas": [
+              {
+                "alvo": "C5",
+                "n": 1,
+                "lado": "cima"
+              },
+              {
+                "alvo": "menu:% do Total Geral",
+                "n": 2
+              }
+            ],
+            "nota": {
+              "texto": "Antes, arraste Valor Total de novo para Valores: surge a coluna Soma de Valor Total2.",
+              "x": 20,
+              "y": 390,
+              "largura": 330
+            }
+          },
+          "instrucoes": [
+            "No painel de campos, arraste **Valor Total de novo** para Valores: aparece a coluna **Soma de Valor Total2**.",
+            "Clique com o **botão direito** num valor dessa coluna (1) → **Mostrar Valores Como** → **% do Total Geral** (2).",
+            "Troque o título da coluna para `% do Total` (clique na célula do título e digite)."
+          ],
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "A linha **Total Geral** da coluna % mostra 100%."
+            }
+          ]
+        },
+        {
+          "titulo": "Renomeie a aba e responda ao gerente",
+          "legenda": "Aba TD_Fornecedor (1) e respostas em F3 (2), F4 (3) e F5 (4).",
+          "imagem": {
+            "guia": "Página Inicial",
+            "alt": "Aba TD_Fornecedor com as perguntas nas células E3 a E5 e as respostas em F3 a F5",
+            "aba_ativa": "TD_Fornecedor",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor"
+            ],
+            "planilha": "TD_Fornecedor",
+            "colunas": "A:F",
+            "larguras": {
+              "A": 170,
+              "B": 150,
+              "C": 110,
+              "D": 30,
+              "E": 260,
+              "F": 120
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:C3",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A8:C8",
+                "tipo": "td_total"
+              }
+            ],
+            "linhas": 9,
+            "celula_ativa": "F3",
+            "formula": "",
+            "selecao": "F3",
+            "marcas": [
+              {
+                "alvo": "aba:TD_Fornecedor",
+                "n": 1,
+                "lado": "cima"
+              },
+              {
+                "alvo": "F3",
+                "n": 2
+              },
+              {
+                "alvo": "F4",
+                "n": 3
+              },
+              {
+                "alvo": "F5",
+                "n": 4
+              }
+            ]
+          },
+          "instrucoes": [
+            "Renomeie a aba `Planilha1` para `TD_Fornecedor` (1).",
+            "Em `E3` digite `Maior fornecedor:` e, em `F3`, o nome do fornecedor que está no topo (2).",
+            "Em `E4` digite `Depende de um só (acima de 50%)?` e, em `F4`, responda **Sim** ou **Não** olhando a coluna % (3).",
+            "Em `E5` digite `Ação sugerida para compras:` e, em `F5`, escreva uma ação curta (4)."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Depender de um só fornecedor é um risco: se ele atrasar ou fechar, falta material. Pense nisso na resposta de `F5`."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "As três respostas estão preenchidas e combinam com o que a tabela dinâmica mostra."
+            }
+          ]
+        }
+      ],
+      "criterios": [
+        [
+          "Tabela dinâmica com Fornecedor em Linhas e Soma de Valor Total",
+          "0,6"
+        ],
+        [
+          "Valores em Moeda e ordenados do maior para o menor",
+          "0,4"
+        ],
+        [
+          "Coluna % do Total Geral",
+          "0,5"
+        ],
+        [
+          "Respostas em F3, F4 e F5 coerentes com os dados",
+          "0,5"
+        ]
+      ]
+    },
+    {
+      "id": "q3",
+      "numero": 3,
+      "arquivo": "QUESTAO-03-TD-MES-TRIMESTRE.html",
+      "titulo": "Em que mês as compras se concentram?",
+      "tempo": "25 min",
+      "pontos": "1,5",
+      "aba": "`TD_Mes` (nova)",
+      "slides_apoio": "Arquivo 6 — slides 14–16",
+      "objetivo": "Cruzar **mês** e **fornecedor** numa tabela dinâmica, agrupar as datas em meses e trimestres, contar pedidos e usar o filtro para responder: **quando** as compras se concentram?",
+      "voce_vai_usar": [
+        "Data em Linhas e Fornecedor em Colunas",
+        "Agrupar (Meses e Trimestres)",
+        "Resumir Valores Por → Contagem",
+        "Área Filtros da tabela dinâmica"
+      ],
+      "passos": [
+        {
+          "titulo": "Monte a tabela dinâmica de mês × fornecedor",
+          "legenda": "Data em Linhas (1), Fornecedor em Colunas (2) e Soma de Valor Total em Valores (3).",
+          "imagem": {
+            "guia": "Análise da Tabela Dinâmica",
+            "alt": "Painel com Data em Linhas, Fornecedor em Colunas e Soma de Valor Total em Valores",
+            "aba_ativa": "TD_Mes",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes"
+            ],
+            "planilha": "TD_Mes",
+            "colunas": "A:I",
+            "larguras": {
+              "A": 150,
+              "B": 84,
+              "C": 84,
+              "D": 84,
+              "E": 84,
+              "F": 84,
+              "G": 16,
+              "H": 200,
+              "I": 110
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:F4",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A13:F13",
+                "tipo": "td_total"
+              },
+              {
+                "intervalo": "A5:F5",
+                "tipo": "negrito"
+              },
+              {
+                "intervalo": "A9:F9",
+                "tipo": "negrito"
+              }
+            ],
+            "linhas": 15,
+            "vazias": [
+              "A1:B1",
+              "H3:I5"
+            ],
+            "celula_ativa": "A4",
+            "formula": "Rótulos de Linha",
+            "painel_campos": {
+              "campos": [
+                "Data",
+                "Nº Pedido",
+                "Fornecedor",
+                "Categoria",
+                "Item",
+                "Quantidade",
+                "Valor Unitário",
+                "Valor Total"
+              ],
+              "marcados": [
+                "Data",
+                "Fornecedor",
+                "Valor Total"
+              ],
+              "areas": {
+                "Colunas": [
+                  "Fornecedor"
+                ],
+                "Linhas": [
+                  "Data"
+                ],
+                "Valores": [
+                  "Soma de Valor Total"
+                ]
+              }
+            },
+            "marcas": [
+              {
+                "alvo": "chip:Data",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "chip:Fornecedor",
+                "n": 2,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "chip:Soma de Valor Total",
+                "n": 3,
+                "lado": "esquerda"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Volte à **Base_Compras**, clique na tabela e crie outra **Tabela Dinâmica** em **Nova Planilha**. Renomeie a aba para `TD_Mes`.",
+            "Arraste **Data** para **Linhas** (1) e **Fornecedor** para **Colunas** (2).",
+            "Arraste **Valor Total** para **Valores** (3) e formate como **Moeda** (como na Questão 2)."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "O Excel costuma agrupar as datas sozinho em meses. Se aparecerem datas soltas (05/01/2026, 09/01/2026...), o próximo passo resolve."
+            }
+          ]
+        },
+        {
+          "titulo": "Agrupe as datas por meses e trimestres",
+          "legenda": "Botão direito numa data ou mês (1) → Agrupar → marque Meses (2) e Trimestres (3) → OK (4).",
+          "imagem": {
+            "guia": "Análise da Tabela Dinâmica",
+            "alt": "Janela Agrupamento com Meses e Trimestres selecionados",
+            "aba_ativa": "TD_Mes",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes"
+            ],
+            "planilha": "TD_Mes",
+            "colunas": "A:I",
+            "larguras": {
+              "A": 150,
+              "B": 84,
+              "C": 84,
+              "D": 84,
+              "E": 84,
+              "F": 84,
+              "G": 16,
+              "H": 200,
+              "I": 110
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:F4",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A13:F13",
+                "tipo": "td_total"
+              },
+              {
+                "intervalo": "A5:F5",
+                "tipo": "negrito"
+              },
+              {
+                "intervalo": "A9:F9",
+                "tipo": "negrito"
+              }
+            ],
+            "linhas": 16,
+            "vazias": [
+              "A1:B1",
+              "H3:I5"
+            ],
+            "celula_ativa": "A6",
+            "formula": "jan",
+            "dialogo": {
+              "titulo": "Agrupamento",
+              "x": 440,
+              "y": 170,
+              "campos": [
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Começando em:",
+                  "valor": "05/01/2026"
+                },
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Terminando em:",
+                  "valor": "25/06/2026"
+                },
+                {
+                  "tipo": "lista",
+                  "rotulo": "Por:",
+                  "itens": [
+                    "Segundos",
+                    "Minutos",
+                    "Horas",
+                    "Dias",
+                    "Meses",
+                    "Trimestres",
+                    "Anos"
+                  ],
+                  "selecionados": [
+                    "Meses",
+                    "Trimestres"
+                  ]
+                }
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "A6",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "item:Meses",
+                "n": 2
+              },
+              {
+                "alvo": "item:Trimestres",
+                "n": 3
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique com o **botão direito** numa data ou num mês da coluna A (1) → **Agrupar**.",
+            "Na lista **Por**, deixe selecionados **Meses** (2) e **Trimestres** (3). Para marcar mais de um, clique com [[Ctrl]].",
+            "Clique em **OK** (4). Aparecem **Trim1** e **Trim2**, cada um com os seus meses."
+          ],
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "O agrupamento **não muda** as datas da base: só a forma como a tabela dinâmica as mostra."
+            },
+            {
+              "tipo": "libre",
+              "texto": "Botão direito na data → **Agrupar e esquematizar** → **Agrupar**, marque **Meses** e **Trimestres**."
+            }
+          ]
+        },
+        {
+          "titulo": "Conte quantos pedidos foram feitos",
+          "legenda": "Nº Pedido em Valores (1) → Resumir por Contagem (2) → OK (3).",
+          "imagem": {
+            "guia": "Análise da Tabela Dinâmica",
+            "alt": "Configurações do Campo de Valor com Contagem selecionada para Nº Pedido",
+            "aba_ativa": "TD_Mes",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes"
+            ],
+            "planilha": "TD_Mes",
+            "colunas": "A:I",
+            "larguras": {
+              "A": 150,
+              "B": 84,
+              "C": 84,
+              "D": 84,
+              "E": 84,
+              "F": 84,
+              "G": 16,
+              "H": 200,
+              "I": 110
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:F4",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A13:F13",
+                "tipo": "td_total"
+              },
+              {
+                "intervalo": "A5:F5",
+                "tipo": "negrito"
+              },
+              {
+                "intervalo": "A9:F9",
+                "tipo": "negrito"
+              }
+            ],
+            "linhas": 15,
+            "vazias": [
+              "A1:B1",
+              "H3:I5"
+            ],
+            "celula_ativa": "B6",
+            "formula": "•••",
+            "painel_campos": {
+              "campos": [
+                "Data",
+                "Nº Pedido",
+                "Fornecedor",
+                "Categoria",
+                "Item",
+                "Quantidade",
+                "Valor Unitário",
+                "Valor Total"
+              ],
+              "marcados": [
+                "Data",
+                "Nº Pedido",
+                "Fornecedor",
+                "Valor Total"
+              ],
+              "areas": {
+                "Colunas": [
+                  "Fornecedor"
+                ],
+                "Linhas": [
+                  "Data"
+                ],
+                "Valores": [
+                  "Soma de Valor Total",
+                  "Contagem de Nº Pedido"
+                ]
+              }
+            },
+            "dialogo": {
+              "titulo": "Configurações do Campo de Valor",
+              "x": 200,
+              "y": 176,
+              "campos": [
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Nome personalizado:",
+                  "valor": "Contagem de Nº Pedido"
+                },
+                {
+                  "tipo": "lista",
+                  "rotulo": "Resumir campo de valor por:",
+                  "itens": [
+                    "Soma",
+                    "Contagem",
+                    "Média",
+                    "Máx",
+                    "Mín"
+                  ],
+                  "selecionados": [
+                    "Contagem"
+                  ]
+                }
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "campo_td:Nº Pedido",
+                "n": 1,
+                "lado": "cima"
+              },
+              {
+                "alvo": "item:Contagem",
+                "n": 2
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 3,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Arraste **Nº Pedido** (1) para a área **Valores**.",
+            "Como Nº Pedido é texto (P-001...), o Excel já usa **Contagem**. Se aparecer outra operação, clique com o botão direito → **Resumir Valores Por** → **Contagem** (2) → **OK** (3).",
+            "Agora cada mês mostra o **valor comprado** e a **quantidade de pedidos**."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Soma responde \"quanto gastou?\"; Contagem responde \"quantas vezes comprou?\"."
+            }
+          ]
+        },
+        {
+          "titulo": "Use o filtro da tabela dinâmica",
+          "legenda": "Categoria na área Filtros (1), setinha do filtro (2) e escolha Elétrico (3).",
+          "imagem": {
+            "guia": "Análise da Tabela Dinâmica",
+            "alt": "Filtro de Categoria da tabela dinâmica aberto com Elétrico destacado",
+            "aba_ativa": "TD_Mes",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes"
+            ],
+            "planilha": "TD_Mes",
+            "colunas": "A:I",
+            "larguras": {
+              "A": 150,
+              "B": 84,
+              "C": 84,
+              "D": 84,
+              "E": 84,
+              "F": 84,
+              "G": 16,
+              "H": 200,
+              "I": 110
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:F4",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A13:F13",
+                "tipo": "td_total"
+              },
+              {
+                "intervalo": "A5:F5",
+                "tipo": "negrito"
+              },
+              {
+                "intervalo": "A9:F9",
+                "tipo": "negrito"
+              }
+            ],
+            "linhas": 15,
+            "vazias": [
+              "H3:I5"
+            ],
+            "celula_ativa": "B1",
+            "formula": "(Tudo)",
+            "filtro": "B1",
+            "painel_campos": {
+              "campos": [
+                "Data",
+                "Nº Pedido",
+                "Fornecedor",
+                "Categoria",
+                "Item",
+                "Quantidade",
+                "Valor Unitário",
+                "Valor Total"
+              ],
+              "marcados": [
+                "Data",
+                "Nº Pedido",
+                "Fornecedor",
+                "Categoria",
+                "Valor Total"
+              ],
+              "areas": {
+                "Filtros": [
+                  "Categoria"
+                ],
+                "Colunas": [
+                  "Fornecedor"
+                ],
+                "Linhas": [
+                  "Data"
+                ],
+                "Valores": [
+                  "Soma de Valor Total",
+                  "Contagem de Nº Pedido"
+                ]
+              }
+            },
+            "menu": {
+              "ancora": "seta_filtro:B1",
+              "itens": [
+                "(Tudo)",
+                "EPI",
+                "Elétrico",
+                "Ferramentas",
+                "Fixação"
+              ],
+              "realce": [
+                "Elétrico"
+              ],
+              "largura": 200
+            },
+            "marcas": [
+              {
+                "alvo": "chip:Categoria",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "seta_filtro:B1",
+                "n": 2,
+                "lado": "direita"
+              },
+              {
+                "alvo": "menu:Elétrico",
+                "n": 3
+              }
+            ]
+          },
+          "instrucoes": [
+            "Arraste **Categoria** para a área **Filtros** (1): o filtro aparece em cima da tabela, na célula `B1`.",
+            "Clique na setinha do filtro (2), escolha **Elétrico** (3) → **OK** e veja só as compras de material elétrico.",
+            "Volte o filtro para **(Tudo)** antes de seguir."
+          ],
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "Não esqueça de voltar para **(Tudo)**: com o filtro ligado, as respostas do próximo passo sairiam erradas."
+            }
+          ]
+        },
+        {
+          "titulo": "Responda: quando as compras se concentram?",
+          "legenda": "Mês de pico (1), trimestre com mais compras (2) e uma explicação para o pico (3).",
+          "imagem": {
+            "guia": "Página Inicial",
+            "alt": "Aba TD_Mes com as perguntas em H3 a H5 e as respostas em I3 a I5",
+            "aba_ativa": "TD_Mes",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes"
+            ],
+            "planilha": "TD_Mes",
+            "colunas": "A:I",
+            "larguras": {
+              "A": 150,
+              "B": 84,
+              "C": 84,
+              "D": 84,
+              "E": 84,
+              "F": 84,
+              "G": 16,
+              "H": 200,
+              "I": 110
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:F4",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A13:F13",
+                "tipo": "td_total"
+              },
+              {
+                "intervalo": "A5:F5",
+                "tipo": "negrito"
+              },
+              {
+                "intervalo": "A9:F9",
+                "tipo": "negrito"
+              }
+            ],
+            "linhas": 13,
+            "celula_ativa": "I3",
+            "formula": "",
+            "selecao": "I3",
+            "marcas": [
+              {
+                "alvo": "I3",
+                "n": 1,
+                "lado": "cima"
+              },
+              {
+                "alvo": "I4",
+                "n": 2,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "I5",
+                "n": 3,
+                "lado": "esquerda"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Olhe a coluna **Total Geral** (valor comprado) de cada mês e de cada trimestre.",
+            "Em `H3` digite `Mês de pico:` e, em `I3`, o mês com o maior valor comprado (1).",
+            "Em `H4` digite `Trimestre com mais compras:` e, em `I4`, o trimestre (2).",
+            "Em `H5` digite `Por que houve o pico?` e, em `I5`, uma explicação possível olhando a base (fornecedor e itens daquele mês) (3). Salve."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Para achar o motivo do pico, dê **duplo clique** no valor do mês: o Excel abre uma planilha nova só com as compras daquele mês."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "O mês de `I3` pertence ao trimestre de `I4`."
+            }
+          ]
+        }
+      ],
+      "criterios": [
+        [
+          "Datas agrupadas por meses e trimestres, com Fornecedor em Colunas",
+          "0,5"
+        ],
+        [
+          "Contagem de pedidos",
+          "0,4"
+        ],
+        [
+          "Uso do filtro de Categoria (e volta para Tudo)",
+          "0,2"
+        ],
+        [
+          "Respostas em I3, I4 e I5 coerentes com os dados",
+          "0,4"
+        ]
+      ]
+    },
+    {
+      "id": "q4",
+      "numero": 4,
+      "arquivo": "QUESTAO-04-GRAFICOS-DINAMICOS.html",
+      "titulo": "Gráficos dinâmicos",
+      "tempo": "35 min",
+      "pontos": "2,0",
+      "aba": "`TD_Mes` e `TD_Itens` (nova)",
+      "slides_apoio": "Arquivo 6 — slides 25–29 e 35",
+      "objetivo": "Transformar as tabelas dinâmicas em **gráficos dinâmicos** limpos e escolher o **tipo de gráfico certo** para cada pergunta: comparar fornecedores mês a mês e mostrar o ranking dos itens que mais pesam no orçamento.",
+      "voce_vai_usar": [
+        "Gráfico Dinâmico: Colunas Agrupadas e Barras",
+        "Adicionar Elemento de Gráfico (título, rótulos, linhas de grade, legenda)",
+        "Filtro 10 Primeiros",
+        "Regra: comparar → colunas/barras; tendência → linhas"
+      ],
+      "caixas": [
+        {
+          "tipo": "atencao",
+          "texto": "Os gráficos das imagens usam **números de ilustração**, não os da sua base. O seu gráfico vai ter outras alturas de coluna."
+        }
+      ],
+      "passos": [
+        {
+          "titulo": "Crie um gráfico de colunas a partir da TD_Mes",
+          "legenda": "Gráfico Dinâmico (1) → Colunas (2) → Colunas Agrupadas (3) → OK (4).",
+          "imagem": {
+            "guia": "Análise da Tabela Dinâmica",
+            "alt": "Janela Inserir Gráfico com o tipo Colunas e o modelo Colunas Agrupadas",
+            "aba_ativa": "TD_Mes",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes"
+            ],
+            "planilha": "TD_Mes",
+            "colunas": "A:I",
+            "larguras": {
+              "A": 150,
+              "B": 84,
+              "C": 84,
+              "D": 84,
+              "E": 84,
+              "F": 84,
+              "G": 16,
+              "H": 200,
+              "I": 110
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:F4",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A13:F13",
+                "tipo": "td_total"
+              },
+              {
+                "intervalo": "A5:F5",
+                "tipo": "negrito"
+              },
+              {
+                "intervalo": "A9:F9",
+                "tipo": "negrito"
+              }
+            ],
+            "linhas": 16,
+            "celula_ativa": "B6",
+            "formula": "•••",
+            "dialogo": {
+              "titulo": "Inserir Gráfico",
+              "x": 440,
+              "y": 176,
+              "campos": [
+                {
+                  "tipo": "lista",
+                  "rotulo": "Tipos de gráfico:",
+                  "itens": [
+                    "Colunas",
+                    "Linhas",
+                    "Pizza",
+                    "Barras",
+                    "Área",
+                    "Combinação"
+                  ],
+                  "selecionados": [
+                    "Colunas"
+                  ]
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "Modelo:",
+                  "valor": "Colunas Agrupadas"
+                }
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "botao:Gráfico Dinâmico",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "item:Colunas",
+                "n": 2
+              },
+              {
+                "alvo": "campo:Modelo:",
+                "n": 3
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Na aba **TD_Mes**, tire a **Contagem de Nº Pedido** da área Valores (arraste para fora do painel): o gráfico fica só com o valor comprado.",
+            "Clique na tabela dinâmica → guia **Análise da Tabela Dinâmica** → **Gráfico Dinâmico** (1).",
+            "Escolha **Colunas** (2) → **Colunas Agrupadas** (3) → **OK** (4)."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Colunas agrupadas servem para **comparar** categorias (fornecedores) lado a lado em cada mês."
+            }
+          ]
+        },
+        {
+          "titulo": "Deixe o gráfico limpo e com título",
+          "legenda": "Título (1), legenda embaixo (2) e Adicionar Elemento de Gráfico (3).",
+          "imagem": {
+            "guia": "Design do Gráfico",
+            "alt": "Gráfico de colunas agrupadas com título, sem linhas de grade e legenda embaixo",
+            "aba_ativa": "TD_Mes",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes"
+            ],
+            "planilha": "TD_Mes",
+            "colunas": "A:I",
+            "larguras": {
+              "A": 150,
+              "B": 84,
+              "C": 84,
+              "D": 84,
+              "E": 84,
+              "F": 84,
+              "G": 16,
+              "H": 200,
+              "I": 110
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:F4",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A13:F13",
+                "tipo": "td_total"
+              },
+              {
+                "intervalo": "A5:F5",
+                "tipo": "negrito"
+              },
+              {
+                "intervalo": "A9:F9",
+                "tipo": "negrito"
+              }
+            ],
+            "linhas": 15,
+            "celula_ativa": "A3",
+            "formula": "",
+            "graficos": [
+              {
+                "x": 220,
+                "y": 176,
+                "w": 600,
+                "h": 330,
+                "tipo": "colunas",
+                "titulo": "Compras por fornecedor e mês",
+                "categorias": [
+                  "jan",
+                  "fev",
+                  "mar",
+                  "abr",
+                  "mai",
+                  "jun"
+                ],
+                "series": [
+                  {
+                    "nome": "Fornecedor 1",
+                    "valores": [
+                      9,
+                      12,
+                      7,
+                      11,
+                      8,
+                      10
+                    ]
+                  },
+                  {
+                    "nome": "Fornecedor 2",
+                    "valores": [
+                      6,
+                      8,
+                      10,
+                      7,
+                      12,
+                      9
+                    ]
+                  },
+                  {
+                    "nome": "Fornecedor 3",
+                    "valores": [
+                      11,
+                      7,
+                      9,
+                      8,
+                      10,
+                      12
+                    ]
+                  },
+                  {
+                    "nome": "Fornecedor 4",
+                    "valores": [
+                      8,
+                      10,
+                      6,
+                      12,
+                      9,
+                      7
+                    ]
+                  }
+                ],
+                "grade": false,
+                "selo": "Ilustração"
+              }
+            ],
+            "marcas": [
+              {
+                "alvo": "grafico:titulo",
+                "n": 1,
+                "lado": "cima"
+              },
+              {
+                "alvo": "grafico:legenda",
+                "n": 2,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "botao:Adicionar Elemento de Gráfico",
+                "n": 3,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique no título do gráfico e escreva `Compras por fornecedor e mês` (1).",
+            "Guia **Design do Gráfico** → **Adicionar Elemento de Gráfico** (3) → **Legenda** → **Abaixo** (2).",
+            "**Adicionar Elemento de Gráfico** → **Linhas de Grade** → desmarque as linhas principais.",
+            "Não use efeitos 3D nem sombras. Arraste o gráfico para o lado da tabela, sem cobrir os números."
+          ],
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "Gráfico 3D distorce o tamanho das colunas e engana o leitor: use sempre 2D."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "Cada mês tem 4 colunas, uma por fornecedor, e a legenda mostra os 4 nomes."
+            }
+          ]
+        },
+        {
+          "titulo": "Crie a TD_Itens com os 5 itens de maior valor",
+          "legenda": "Setinha de Rótulos de Linha (1) → Filtros de Valores → 10 Primeiros: troque 10 por 5 (2) → OK (3).",
+          "imagem": {
+            "guia": "Análise da Tabela Dinâmica",
+            "alt": "Janela Filtro 10 Primeiros configurada para mostrar os 5 primeiros itens",
+            "aba_ativa": "TD_Itens",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes",
+              "TD_Itens"
+            ],
+            "planilha": "TD_Itens",
+            "colunas": "A:E",
+            "larguras": {
+              "A": 170,
+              "B": 150,
+              "C": 30,
+              "D": 200,
+              "E": 150
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:B3",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A9:B9",
+                "tipo": "td_total"
+              }
+            ],
+            "linhas": 12,
+            "vazias": [
+              "D3"
+            ],
+            "celula_ativa": "A3",
+            "formula": "Rótulos de Linha",
+            "filtro": "A3",
+            "dialogo": {
+              "titulo": "Filtro 10 Primeiros (Item)",
+              "x": 420,
+              "y": 186,
+              "campos": [
+                {
+                  "tipo": "combo",
+                  "rotulo": "Mostrar:",
+                  "valor": "Primeiros"
+                },
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Quantidade:",
+                  "valor": "5"
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "Itens por:",
+                  "valor": "Soma de Valor Total"
+                }
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "seta_filtro:A3",
+                "n": 1,
+                "lado": "cima"
+              },
+              {
+                "alvo": "campo:Quantidade:",
+                "n": 2
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 3,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Na **Base_Compras**, crie outra tabela dinâmica em nova planilha e renomeie a aba para `TD_Itens`.",
+            "**Item** em Linhas e **Valor Total** em Valores (formato Moeda).",
+            "Clique na setinha de **Rótulos de Linha** (1) → **Filtros de Valores** → **10 Primeiros**.",
+            "Troque **10** por **5** (2) → **OK** (3). Depois ordene do maior para o menor (como na Questão 2)."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "O filtro 10 Primeiros escolhe pelos **valores**, não pela ordem alfabética: sobram os 5 itens que mais pesaram nas compras."
+            }
+          ]
+        },
+        {
+          "titulo": "Crie o gráfico de barras com rótulos de dados",
+          "legenda": "Adicionar Elemento de Gráfico (1) → Rótulos de Dados: o valor aparece na ponta de cada barra (2).",
+          "imagem": {
+            "guia": "Design do Gráfico",
+            "alt": "Gráfico de barras horizontais com rótulos de dados na ponta das barras",
+            "aba_ativa": "TD_Itens",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes",
+              "TD_Itens"
+            ],
+            "planilha": "TD_Itens",
+            "colunas": "A:E",
+            "larguras": {
+              "A": 170,
+              "B": 150,
+              "C": 30,
+              "D": 200,
+              "E": 150
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:B3",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A9:B9",
+                "tipo": "td_total"
+              }
+            ],
+            "linhas": 15,
+            "vazias": [
+              "D3"
+            ],
+            "celula_ativa": "A3",
+            "formula": "",
+            "graficos": [
+              {
+                "x": 360,
+                "y": 176,
+                "w": 560,
+                "h": 330,
+                "tipo": "barras",
+                "titulo": "5 itens com maior valor comprado",
+                "categorias": [
+                  "Item A",
+                  "Item B",
+                  "Item C",
+                  "Item D",
+                  "Item E"
+                ],
+                "series": [
+                  {
+                    "nome": "Soma de Valor Total",
+                    "valores": [
+                      42,
+                      38,
+                      31,
+                      27,
+                      16
+                    ]
+                  }
+                ],
+                "rotulos": true,
+                "legenda": false,
+                "selo": "Ilustração"
+              }
+            ],
+            "marcas": [
+              {
+                "alvo": "botao:Adicionar Elemento de Gráfico",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "grafico:rotulo:0",
+                "n": 2,
+                "lado": "direita"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique na TD_Itens → **Gráfico Dinâmico** → **Barras** → **Barras Agrupadas** → **OK**.",
+            "Título: `5 itens com maior valor comprado`.",
+            "**Adicionar Elemento de Gráfico** (1) → **Rótulos de Dados** → **Extremidade Externa** (2).",
+            "Remova a legenda (só há uma série) e as linhas de grade."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Barras horizontais são ótimas para **ranking**: os nomes dos itens cabem inteiros na lateral."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "O item com a barra mais comprida é o primeiro da TD_Itens."
+            }
+          ]
+        },
+        {
+          "titulo": "Justifique a escolha do gráfico",
+          "legenda": "Pizza com muitas fatias (esquerda) × barras (direita): qual se lê mais rápido?",
+          "imagem": {
+            "guia": "Página Inicial",
+            "alt": "Comparação entre um gráfico de pizza lotado e um gráfico de barras",
+            "aba_ativa": "TD_Itens",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes",
+              "TD_Itens"
+            ],
+            "somente_esquema": true,
+            "altura_esquema": 340,
+            "celula_ativa": "E3",
+            "formula": "",
+            "graficos": [
+              {
+                "x": 30,
+                "y": 176,
+                "w": 430,
+                "h": 320,
+                "tipo": "pizza",
+                "titulo": "Pizza com 12 fatias",
+                "categorias": [
+                  "A",
+                  "B",
+                  "C",
+                  "D",
+                  "E",
+                  "F",
+                  "G",
+                  "H",
+                  "I",
+                  "J",
+                  "K",
+                  "L"
+                ],
+                "series": [
+                  {
+                    "nome": "Valor",
+                    "valores": [
+                      14,
+                      12,
+                      11,
+                      10,
+                      9,
+                      9,
+                      8,
+                      8,
+                      7,
+                      6,
+                      4,
+                      2
+                    ]
+                  }
+                ],
+                "selo": "Ilustração"
+              },
+              {
+                "x": 490,
+                "y": 176,
+                "w": 440,
+                "h": 320,
+                "tipo": "barras",
+                "titulo": "Barras: ranking claro",
+                "categorias": [
+                  "Item A",
+                  "Item B",
+                  "Item C",
+                  "Item D",
+                  "Item E"
+                ],
+                "series": [
+                  {
+                    "nome": "Valor",
+                    "valores": [
+                      14,
+                      12,
+                      11,
+                      10,
+                      9
+                    ]
+                  }
+                ],
+                "rotulos": true,
+                "legenda": false,
+                "selo": "Ilustração"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Compare os dois gráficos da imagem: na pizza, as fatias parecidas são difíceis de comparar; nas barras, o ranking fica claro.",
+            "Na aba **TD_Itens**, em `D3` digite `Por que não usar pizza?`.",
+            "Em `E3`, responda em uma frase por que esses dados ficam melhores em barras do que em pizza. Salve."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Regra rápida do slide 26: **comparar → colunas ou barras**; **tendência no tempo → linhas**; pizza só para 2 a 4 partes de um todo."
+            }
+          ]
+        }
+      ],
+      "criterios": [
+        [
+          "Gráfico dinâmico de colunas agrupadas por mês e fornecedor",
+          "0,5"
+        ],
+        [
+          "Gráfico limpo: título, legenda embaixo, sem 3D e sem grade",
+          "0,4"
+        ],
+        [
+          "TD_Itens com os 5 maiores itens em gráfico de barras com rótulos",
+          "0,6"
+        ],
+        [
+          "Justificativa da escolha do gráfico em E3",
+          "0,5"
+        ]
+      ]
+    },
+    {
+      "id": "q5",
+      "numero": 5,
+      "arquivo": "QUESTAO-05-CAMPO-CALCULADO-COMBINADO.html",
+      "titulo": "Campo calculado e gráfico combinado",
+      "tempo": "25 min",
+      "pontos": "1,5",
+      "aba": "`TD_Fornecedor` e `TD_Mensal` (nova)",
+      "slides_apoio": "Arquivo 6 — slides 19 e 30–32",
+      "objetivo": "Calcular o **custo de armazenagem** (5% do valor comprado) sem mexer na base e comparar, num **gráfico combinado**, o valor comprado com a quantidade de pedidos de cada mês.",
+      "voce_vai_usar": [
+        "Campos, Itens e Conjuntos → Campo Calculado",
+        "Soma e Contagem na mesma tabela dinâmica",
+        "Gráfico de Combinação com eixo secundário"
+      ],
+      "passos": [
+        {
+          "titulo": "Crie o campo calculado Armazenagem",
+          "legenda": "Campos, Itens e Conjuntos (1) → Campo Calculado: nome (2), fórmula (3), Adicionar (4) e OK (5).",
+          "imagem": {
+            "guia": "Análise da Tabela Dinâmica",
+            "alt": "Janela Inserir Campo Calculado com o nome Armazenagem e a fórmula Valor Total vezes 0,05",
+            "aba_ativa": "TD_Fornecedor",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes",
+              "TD_Itens",
+              "TD_Mensal"
+            ],
+            "planilha": "TD_Fornecedor",
+            "colunas": "A:F",
+            "larguras": {
+              "A": 170,
+              "B": 150,
+              "C": 110,
+              "D": 30,
+              "E": 260,
+              "F": 120
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:C3",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A8:C8",
+                "tipo": "td_total"
+              }
+            ],
+            "linhas": 15,
+            "celula_ativa": "A3",
+            "formula": "Rótulos de Linha",
+            "dialogo": {
+              "titulo": "Inserir Campo Calculado",
+              "x": 440,
+              "y": 170,
+              "campos": [
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Nome:",
+                  "valor": "Armazenagem"
+                },
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Fórmula:",
+                  "valor": "='Valor Total'*0,05"
+                },
+                {
+                  "tipo": "lista",
+                  "rotulo": "Campos:",
+                  "itens": [
+                    "Data",
+                    "Nº Pedido",
+                    "Quantidade",
+                    "Valor Unitário",
+                    "Valor Total"
+                  ],
+                  "selecionados": [
+                    "Valor Total"
+                  ]
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar",
+                "Adicionar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "botao:Campos, Itens e Conjuntos",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "campo:Nome:",
+                "n": 2
+              },
+              {
+                "alvo": "campo:Fórmula:",
+                "n": 3
+              },
+              {
+                "alvo": "botaodlg:Adicionar",
+                "n": 4,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 5,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Vá à aba **TD_Fornecedor** e clique na tabela dinâmica.",
+            "Guia **Análise da Tabela Dinâmica** → **Campos, Itens e Conjuntos** (1) → **Campo Calculado**.",
+            "Nome: `Armazenagem` (2). Fórmula (3): apague o `0`, dê duplo clique em **Valor Total** na lista e complete com `*0,05`.",
+            "Clique em **Adicionar** (4) e em **OK** (5). A coluna **Soma de Armazenagem** aparece na tabela: formate como **Moeda**."
+          ],
+          "formula": "='Valor Total'*0,05",
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "O campo calculado **não cria coluna na base**: o cálculo existe só dentro da tabela dinâmica e acompanha os filtros."
+            },
+            {
+              "tipo": "libre",
+              "texto": "O Calc não tem campo calculado. Crie na base a coluna `Armazenagem` com `=H2*0,05` e coloque-a em Valores."
+            }
+          ]
+        },
+        {
+          "titulo": "Monte a TD_Mensal com soma e contagem",
+          "legenda": "Data em Linhas (1), Soma de Valor Total (2) e Contagem de Nº Pedido (3) em Valores.",
+          "imagem": {
+            "guia": "Análise da Tabela Dinâmica",
+            "alt": "Painel com Data em Linhas e Soma de Valor Total e Contagem de Nº Pedido em Valores",
+            "aba_ativa": "TD_Mensal",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes",
+              "TD_Itens",
+              "TD_Mensal"
+            ],
+            "planilha": "TD_Mensal",
+            "colunas": "A:F",
+            "larguras": {
+              "A": 130,
+              "B": 150,
+              "C": 170,
+              "D": 30,
+              "E": 200,
+              "F": 150
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:C3",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A10:C10",
+                "tipo": "td_total"
+              }
+            ],
+            "linhas": 15,
+            "vazias": [
+              "E3"
+            ],
+            "celula_ativa": "A3",
+            "formula": "Rótulos de Linha",
+            "painel_campos": {
+              "campos": [
+                "Data",
+                "Nº Pedido",
+                "Fornecedor",
+                "Categoria",
+                "Item",
+                "Quantidade",
+                "Valor Unitário",
+                "Valor Total"
+              ],
+              "marcados": [
+                "Data",
+                "Nº Pedido",
+                "Fornecedor",
+                "Valor Total"
+              ],
+              "areas": {
+                "Linhas": [
+                  "Data"
+                ],
+                "Valores": [
+                  "Soma de Valor Total",
+                  "Contagem de Nº Pedido"
+                ]
+              }
+            },
+            "marcas": [
+              {
+                "alvo": "chip:Data",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "chip:Soma de Valor Total",
+                "n": 2,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "chip:Contagem de Nº Pedido",
+                "n": 3,
+                "lado": "esquerda"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Crie mais uma tabela dinâmica a partir da **Base_Compras**, em nova planilha, e renomeie a aba para `TD_Mensal`.",
+            "**Data** em Linhas (1), agrupada só por **Meses** (se aparecer Trimestres, desmarque no Agrupar).",
+            "**Valor Total** em Valores (2), formato Moeda, e **Nº Pedido** em Valores como **Contagem** (3)."
+          ],
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "A tabela tem 6 linhas de meses e duas colunas de valores: uma em R$ e outra com números inteiros pequenos."
+            }
+          ]
+        },
+        {
+          "titulo": "Crie o gráfico de combinação",
+          "legenda": "Tipo Combinação (1): Valor Total em colunas (2), Contagem em linha (3) no eixo secundário (4).",
+          "imagem": {
+            "guia": "Análise da Tabela Dinâmica",
+            "alt": "Janela Inserir Gráfico na opção Combinação com a contagem em linha no eixo secundário",
+            "aba_ativa": "TD_Mensal",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes",
+              "TD_Itens",
+              "TD_Mensal"
+            ],
+            "planilha": "TD_Mensal",
+            "colunas": "A:F",
+            "larguras": {
+              "A": 130,
+              "B": 150,
+              "C": 170,
+              "D": 30,
+              "E": 200,
+              "F": 150
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:C3",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A10:C10",
+                "tipo": "td_total"
+              }
+            ],
+            "linhas": 16,
+            "vazias": [
+              "E3"
+            ],
+            "celula_ativa": "B4",
+            "formula": "•••",
+            "dialogo": {
+              "titulo": "Inserir Gráfico",
+              "x": 440,
+              "y": 170,
+              "campos": [
+                {
+                  "tipo": "lista",
+                  "rotulo": "Tipos de gráfico:",
+                  "itens": [
+                    "Colunas",
+                    "Linhas",
+                    "Pizza",
+                    "Barras",
+                    "Área",
+                    "Combinação"
+                  ],
+                  "selecionados": [
+                    "Combinação"
+                  ]
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "Valor Total:",
+                  "valor": "Colunas Agrupadas"
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "Contagem:",
+                  "valor": "Linha"
+                },
+                {
+                  "tipo": "check",
+                  "rotulo": "Eixo secundário para a Contagem",
+                  "marcado": true
+                }
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "item:Combinação",
+                "n": 1
+              },
+              {
+                "alvo": "campo:Valor Total:",
+                "n": 2
+              },
+              {
+                "alvo": "campo:Contagem:",
+                "n": 3
+              },
+              {
+                "alvo": "campo:Eixo secundário para a Contagem",
+                "n": 4
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique na TD_Mensal → **Gráfico Dinâmico** → escolha **Combinação** (1).",
+            "Soma de Valor Total: **Colunas Agrupadas** (2).",
+            "Contagem de Nº Pedido: **Linha** (3), marcando **Eixo Secundário** (4) → **OK**.",
+            "Título: `Valor comprado × pedidos por mês`."
+          ],
+          "caixas": [
+            {
+              "tipo": "libre",
+              "texto": "Inserir → Gráfico → Coluna e linha; em Série de dados, escolha **Eixo Y secundário** para a contagem."
+            }
+          ]
+        },
+        {
+          "titulo": "Entenda por que usar dois eixos",
+          "legenda": "Eixo secundário à direita (1) para a linha de pedidos (2).",
+          "imagem": {
+            "guia": "Design do Gráfico",
+            "alt": "Gráfico combinado com colunas de valor e linha de pedidos no eixo secundário",
+            "aba_ativa": "TD_Mensal",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes",
+              "TD_Itens",
+              "TD_Mensal"
+            ],
+            "planilha": "TD_Mensal",
+            "colunas": "A:F",
+            "larguras": {
+              "A": 130,
+              "B": 150,
+              "C": 170,
+              "D": 30,
+              "E": 200,
+              "F": 150
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:C3",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A10:C10",
+                "tipo": "td_total"
+              }
+            ],
+            "linhas": 15,
+            "celula_ativa": "E3",
+            "formula": "Por que usei dois eixos?",
+            "graficos": [
+              {
+                "x": 250,
+                "y": 176,
+                "w": 580,
+                "h": 330,
+                "tipo": "combinado",
+                "titulo": "Valor comprado × pedidos por mês",
+                "categorias": [
+                  "jan",
+                  "fev",
+                  "mar",
+                  "abr",
+                  "mai",
+                  "jun"
+                ],
+                "series": [
+                  {
+                    "nome": "Soma de Valor Total",
+                    "valores": [
+                      30,
+                      45,
+                      24,
+                      60,
+                      36,
+                      42
+                    ]
+                  },
+                  {
+                    "nome": "Contagem de Nº Pedido",
+                    "valores": [
+                      5,
+                      7,
+                      4,
+                      8,
+                      6,
+                      6
+                    ],
+                    "tipo": "linha",
+                    "eixo": "secundario"
+                  }
+                ],
+                "selo": "Ilustração"
+              }
+            ],
+            "marcas": [
+              {
+                "alvo": "grafico:eixo2",
+                "n": 1,
+                "lado": "direita"
+              },
+              {
+                "alvo": "grafico:serie:Contagem de Nº Pedido",
+                "n": 2,
+                "lado": "cima",
+                "sem_contorno": true
+              }
+            ],
+            "nota": {
+              "texto": "Sem o eixo secundário, a linha de 4 a 8 pedidos ficaria colada no zero, perto de colunas de milhares de reais.",
+              "x": 20,
+              "y": 420,
+              "largura": 220
+            }
+          },
+          "instrucoes": [
+            "Observe: o eixo da **esquerda** mede reais e o da **direita** (1) mede pedidos (2).",
+            "Em `E3` da TD_Mensal digite `Por que usei dois eixos?` e, em `F3`, responda em uma frase.",
+            "Salve: [[Ctrl]]+[[B]]."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Use eixo secundário quando duas medidas têm **escalas muito diferentes** (milhares de reais × poucos pedidos)."
+            }
+          ]
+        }
+      ],
+      "criterios": [
+        [
+          "Campo calculado Armazenagem na TD_Fornecedor",
+          "0,4"
+        ],
+        [
+          "TD_Mensal com soma de valor e contagem de pedidos",
+          "0,4"
+        ],
+        [
+          "Gráfico combinado com a contagem em linha no eixo secundário",
+          "0,5"
+        ],
+        [
+          "Justificativa em F3",
+          "0,2"
+        ]
+      ]
+    },
+    {
+      "id": "q6",
+      "numero": 6,
+      "arquivo": "QUESTAO-06-SEGMENTACAO-ATUALIZACAO-PROTECAO.html",
+      "titulo": "Painel interativo, atualização e proteção",
+      "tempo": "30 min",
+      "pontos": "1,5",
+      "aba": "`TD_Mes`, `Base_Compras` e `TD_Fornecedor`",
+      "slides_apoio": "Arquivo 6 — slides 20, 33–34, 36 e 36.1",
+      "objetivo": "Deixar o relatório **interativo** com segmentação e linha do tempo, **atualizar** a análise com uma compra nova e **proteger** a base e o relatório antes de entregar.",
+      "voce_vai_usar": [
+        "Inserir Segmentação de Dados",
+        "Conexões de Relatório",
+        "Inserir Linha do Tempo",
+        "Dados → Atualizar Tudo",
+        "Proteger Planilha com \"Usar Tabela Dinâmica e Gráfico Dinâmico\""
+      ],
+      "passos": [
+        {
+          "titulo": "Insira a segmentação de Categoria",
+          "legenda": "Inserir Segmentação de Dados (1) → marque Categoria (2) → OK (3).",
+          "imagem": {
+            "guia": "Análise da Tabela Dinâmica",
+            "alt": "Janela Inserir Segmentação de Dados com Categoria marcada",
+            "aba_ativa": "TD_Mes",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes",
+              "TD_Itens",
+              "TD_Mensal"
+            ],
+            "planilha": "TD_Mes",
+            "colunas": "A:I",
+            "larguras": {
+              "A": 150,
+              "B": 84,
+              "C": 84,
+              "D": 84,
+              "E": 84,
+              "F": 84,
+              "G": 16,
+              "H": 200,
+              "I": 110
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:F4",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A13:F13",
+                "tipo": "td_total"
+              },
+              {
+                "intervalo": "A5:F5",
+                "tipo": "negrito"
+              },
+              {
+                "intervalo": "A9:F9",
+                "tipo": "negrito"
+              }
+            ],
+            "linhas": 16,
+            "celula_ativa": "B6",
+            "formula": "•••",
+            "dialogo": {
+              "titulo": "Inserir Segmentação de Dados",
+              "x": 440,
+              "y": 170,
+              "campos": [
+                {
+                  "tipo": "lista",
+                  "rotulo": "Escolha os campos:",
+                  "caixas": true,
+                  "itens": [
+                    "Data",
+                    "Nº Pedido",
+                    "Fornecedor",
+                    "Categoria",
+                    "Item",
+                    "Quantidade",
+                    "Valor Unitário",
+                    "Valor Total"
+                  ],
+                  "selecionados": [
+                    "Categoria"
+                  ]
+                }
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "botao:Inserir Segmentação de Dados",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "item:Categoria",
+                "n": 2
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 3,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Na aba **TD_Mes**, clique na tabela dinâmica.",
+            "Guia **Análise da Tabela Dinâmica** → **Inserir Segmentação de Dados** (1).",
+            "Marque **Categoria** (2) → **OK** (3). Aparece uma caixa com um botão para cada categoria."
+          ],
+          "caixas": [
+            {
+              "tipo": "libre",
+              "texto": "O Calc não tem segmentação. Use o **filtro da tabela dinâmica** (Categoria na área de filtros) para o mesmo resultado."
+            }
+          ]
+        },
+        {
+          "titulo": "Ligue a segmentação às outras tabelas dinâmicas",
+          "legenda": "Botão direito na segmentação (1) → Conexões de Relatório: marque as tabelas (2) (3) → OK (4).",
+          "imagem": {
+            "guia": "Análise da Tabela Dinâmica",
+            "alt": "Janela Conexões de Relatório com as tabelas dinâmicas de TD_Fornecedor, TD_Mes e TD_Itens marcadas",
+            "aba_ativa": "TD_Mes",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes",
+              "TD_Itens",
+              "TD_Mensal"
+            ],
+            "planilha": "TD_Mes",
+            "colunas": "A:I",
+            "larguras": {
+              "A": 150,
+              "B": 84,
+              "C": 84,
+              "D": 84,
+              "E": 84,
+              "F": 84,
+              "G": 16,
+              "H": 200,
+              "I": 110
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:F4",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A13:F13",
+                "tipo": "td_total"
+              },
+              {
+                "intervalo": "A5:F5",
+                "tipo": "negrito"
+              },
+              {
+                "intervalo": "A9:F9",
+                "tipo": "negrito"
+              }
+            ],
+            "linhas": 15,
+            "celula_ativa": "B6",
+            "formula": "•••",
+            "segmentacao": {
+              "x": 770,
+              "y": 176,
+              "w": 170,
+              "titulo": "Categoria",
+              "itens": [
+                "EPI",
+                "Elétrico",
+                "Ferramentas",
+                "Fixação"
+              ]
+            },
+            "dialogo": {
+              "titulo": "Conexões de Relatório (Categoria)",
+              "x": 30,
+              "y": 196,
+              "largura": 470,
+              "campos": [
+                {
+                  "tipo": "lista",
+                  "rotulo": "Marque as tabelas dinâmicas que o filtro vai controlar:",
+                  "caixas": true,
+                  "itens": [
+                    "Tabela Dinâmica1 — TD_Fornecedor",
+                    "Tabela Dinâmica2 — TD_Mes",
+                    "Tabela Dinâmica3 — TD_Itens",
+                    "Tabela Dinâmica4 — TD_Mensal"
+                  ],
+                  "selecionados": [
+                    "Tabela Dinâmica1 — TD_Fornecedor",
+                    "Tabela Dinâmica2 — TD_Mes",
+                    "Tabela Dinâmica3 — TD_Itens"
+                  ]
+                }
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "segmentacao",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "item:Tabela Dinâmica1 — TD_Fornecedor",
+                "n": 2
+              },
+              {
+                "alvo": "item:Tabela Dinâmica3 — TD_Itens",
+                "n": 3
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique com o **botão direito** na caixa da segmentação (1) → **Conexões de Relatório**.",
+            "Marque as tabelas dinâmicas das abas **TD_Fornecedor** (2), **TD_Mes** e **TD_Itens** (3). O nome da aba aparece ao lado do nome da tabela.",
+            "Clique em **OK** (4). Agora um clique na segmentação filtra as três tabelas de uma vez."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Os números das tabelas (Tabela Dinâmica1, 2, 3...) podem ser outros no seu arquivo: guie-se pelo **nome da aba**."
+            }
+          ]
+        },
+        {
+          "titulo": "Filtre o período com a linha do tempo",
+          "legenda": "Inserir Linha do Tempo (1) → arraste a barra para selecionar jan a mar (2).",
+          "imagem": {
+            "guia": "Análise da Tabela Dinâmica",
+            "alt": "Linha do tempo com os meses de janeiro a março selecionados",
+            "aba_ativa": "TD_Mes",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes",
+              "TD_Itens",
+              "TD_Mensal"
+            ],
+            "planilha": "TD_Mes",
+            "colunas": "A:I",
+            "larguras": {
+              "A": 150,
+              "B": 84,
+              "C": 84,
+              "D": 84,
+              "E": 84,
+              "F": 84,
+              "G": 16,
+              "H": 200,
+              "I": 110
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:F4",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A13:F13",
+                "tipo": "td_total"
+              },
+              {
+                "intervalo": "A5:F5",
+                "tipo": "negrito"
+              },
+              {
+                "intervalo": "A9:F9",
+                "tipo": "negrito"
+              }
+            ],
+            "linhas": 15,
+            "celula_ativa": "B6",
+            "formula": "•••",
+            "segmentacao": {
+              "x": 770,
+              "y": 176,
+              "w": 170,
+              "titulo": "Categoria",
+              "itens": [
+                "EPI",
+                "Elétrico",
+                "Ferramentas",
+                "Fixação"
+              ]
+            },
+            "linha_tempo": {
+              "x": 120,
+              "y": 340,
+              "w": 600,
+              "titulo": "Data",
+              "rotulo": "JAN - MAR 2026",
+              "meses": [
+                "JAN",
+                "FEV",
+                "MAR",
+                "ABR",
+                "MAI",
+                "JUN"
+              ],
+              "selecionados": [
+                0,
+                2
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "botao:Inserir Linha do Tempo",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "linha_tempo:selecao",
+                "n": 2,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Com a TD_Mes selecionada: **Análise da Tabela Dinâmica** → **Inserir Linha do Tempo** (1) → marque **Data** → **OK**.",
+            "Na linha do tempo, clique em **JAN** e arraste até **MAR** (2): a tabela mostra só o 1º trimestre.",
+            "Depois clique no ícone de **limpar filtro** da linha do tempo para voltar ao semestre inteiro."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Troque **MESES** por **TRIMESTRES** no canto da linha do tempo para escolher períodos maiores com um clique."
+            }
+          ]
+        },
+        {
+          "titulo": "Lance uma compra nova e atualize tudo",
+          "legenda": "Digite a compra na linha 38 (1) → Dados (2) → Atualizar Tudo (3).",
+          "imagem": {
+            "guia": "Dados",
+            "alt": "Nova compra P-037 na linha 38 da tabela e botão Atualizar Tudo da guia Dados",
+            "aba_ativa": "Base_Compras",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes",
+              "TD_Itens",
+              "TD_Mensal"
+            ],
+            "colunas": "A:H",
+            "larguras": {
+              "A": 90,
+              "B": 80,
+              "C": 140,
+              "D": 90,
+              "E": 170,
+              "F": 86,
+              "G": 104,
+              "H": 110
+            },
+            "estilos": [
+              {
+                "intervalo": "A1:H1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "linhas_visiveis": [
+              1,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38
+            ],
+            "celulas": {
+              "A38": "30/06/2026",
+              "B38": "P-037",
+              "C38": "Cometa EPI",
+              "D38": "EPI",
+              "E38": "Máscara PFF2",
+              "F38": "100",
+              "G38": "3,20",
+              "H38": "R$ 320,00"
+            },
+            "celula_ativa": "A38",
+            "formula": "30/06/2026",
+            "selecao": "A38:H38",
+            "marcas": [
+              {
+                "alvo": "A38:H38",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "guia:Dados",
+                "n": 2,
+                "lado": "cima"
+              },
+              {
+                "alvo": "botao:Atualizar Tudo",
+                "n": 3,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Na **Base_Compras**, na primeira linha vazia logo abaixo da última compra (linha 38), digite a compra nova (1): `30/06/2026`, `P-037`, `Cometa EPI`, `EPI`, `Máscara PFF2`, `100`, `3,20`. O Valor Total é calculado sozinho.",
+            "Guia **Dados** (2) → **Atualizar Tudo** (3), ou [[Ctrl]]+[[Alt]]+[[F5]].",
+            "Volte às tabelas dinâmicas e veja os totais de junho e da Cometa EPI mudarem."
+          ],
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "Tabela dinâmica **não atualiza sozinha** quando a base muda: sem o Atualizar, os números ficam velhos."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "Na TD_Mes, a contagem de pedidos de junho aumentou em 1."
+            }
+          ]
+        },
+        {
+          "titulo": "Proteja a base e o relatório",
+          "legenda": "Proteger Planilha (1), senha (2), permitir Usar Tabela Dinâmica e Gráfico Dinâmico (3) e OK (4).",
+          "imagem": {
+            "guia": "Revisão",
+            "alt": "Janela Proteger Planilha com a opção Usar Tabela Dinâmica e Gráfico Dinâmico marcada",
+            "aba_ativa": "TD_Fornecedor",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes",
+              "TD_Itens",
+              "TD_Mensal"
+            ],
+            "planilha": "TD_Fornecedor",
+            "colunas": "A:F",
+            "larguras": {
+              "A": 170,
+              "B": 150,
+              "C": 110,
+              "D": 30,
+              "E": 260,
+              "F": 120
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:C3",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A8:C8",
+                "tipo": "td_total"
+              }
+            ],
+            "linhas": 16,
+            "celula_ativa": "A3",
+            "formula": "Rótulos de Linha",
+            "dialogo": {
+              "titulo": "Proteger Planilha",
+              "x": 440,
+              "y": 170,
+              "campos": [
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Senha:",
+                  "valor": "•••••••••"
+                },
+                {
+                  "tipo": "lista",
+                  "rotulo": "Permitir que todos os usuários possam:",
+                  "caixas": true,
+                  "itens": [
+                    "Selecionar células bloqueadas",
+                    "Selecionar células desbloqueadas",
+                    "Formatar células",
+                    "Classificar",
+                    "Usar AutoFiltro",
+                    "Usar Tabela Dinâmica e Gráfico Dinâmico"
+                  ],
+                  "selecionados": [
+                    "Selecionar células bloqueadas",
+                    "Selecionar células desbloqueadas",
+                    "Usar Tabela Dinâmica e Gráfico Dinâmico"
+                  ]
+                }
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "botao:Proteger Planilha",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "campo:Senha:",
+                "n": 2
+              },
+              {
+                "alvo": "item:Usar Tabela Dinâmica e Gráfico Dinâmico",
+                "n": 3
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Na **Base_Compras**: Revisão → **Proteger Planilha** → senha `senai2026` → **OK** → confirme a senha. Ninguém mais altera as compras por engano.",
+            "Na **TD_Fornecedor**: Revisão → **Proteger Planilha** (1) → senha `senai2026` (2).",
+            "Na lista de permissões, marque também **Usar Tabela Dinâmica e Gráfico Dinâmico** (3) → **OK** (4) → confirme a senha."
+          ],
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "Proteção evita erro acidental, mas não é segurança total: dados sigilosos pedem controle de acesso ao arquivo."
+            },
+            {
+              "tipo": "libre",
+              "texto": "Ferramentas → **Proteger planilha**."
+            }
+          ]
+        },
+        {
+          "titulo": "Teste o painel e entregue",
+          "legenda": "Clique em EPI na segmentação (1): as tabelas conectadas mudam juntas.",
+          "imagem": {
+            "guia": "Análise da Tabela Dinâmica",
+            "alt": "Segmentação de Categoria com EPI selecionado filtrando a tabela dinâmica",
+            "aba_ativa": "TD_Mes",
+            "abas": [
+              "Base_Compras",
+              "TD_Fornecedor",
+              "TD_Mes",
+              "TD_Itens",
+              "TD_Mensal"
+            ],
+            "planilha": "TD_Mes",
+            "colunas": "A:I",
+            "larguras": {
+              "A": 150,
+              "B": 84,
+              "C": 84,
+              "D": 84,
+              "E": 84,
+              "F": 84,
+              "G": 16,
+              "H": 200,
+              "I": 110
+            },
+            "estilos": [
+              {
+                "intervalo": "A3:F4",
+                "tipo": "td_cabecalho"
+              },
+              {
+                "intervalo": "A13:F13",
+                "tipo": "td_total"
+              },
+              {
+                "intervalo": "A5:F5",
+                "tipo": "negrito"
+              },
+              {
+                "intervalo": "A9:F9",
+                "tipo": "negrito"
+              }
+            ],
+            "linhas": 14,
+            "celula_ativa": "B6",
+            "formula": "•••",
+            "segmentacao": {
+              "x": 770,
+              "y": 176,
+              "w": 170,
+              "titulo": "Categoria",
+              "itens": [
+                "EPI",
+                "Elétrico",
+                "Ferramentas",
+                "Fixação"
+              ],
+              "selecionados": [
+                "EPI"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "seg:EPI",
+                "n": 1,
+                "lado": "esquerda"
+              }
+            ],
+            "nota": {
+              "texto": "Clique em EPI e confira as abas TD_Fornecedor e TD_Itens. Depois limpe o filtro no ícone do canto da segmentação.",
+              "x": 460,
+              "y": 400,
+              "largura": 300
+            }
+          },
+          "instrucoes": [
+            "Clique em **EPI** na segmentação (1) e confira que **TD_Fornecedor** e **TD_Itens** também mudaram.",
+            "Limpe o filtro no ícone do canto superior da segmentação.",
+            "Salve ([[Ctrl]]+[[B]]) e entregue `COMPRAS-NOME-SOBRENOME.xlsx` como o professor orientar."
+          ],
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "O arquivo tem as abas Base_Compras, TD_Fornecedor, TD_Mes, TD_Itens e TD_Mensal, com os gráficos das Questões 4 e 5."
+            },
+            {
+              "tipo": "dica",
+              "texto": "Se a segmentação avisar que a planilha está protegida, confira se a opção **Usar Tabela Dinâmica e Gráfico Dinâmico** foi marcada no passo anterior."
+            }
+          ]
+        }
+      ],
+      "criterios": [
+        [
+          "Segmentação de Categoria conectada às 3 tabelas dinâmicas",
+          "0,5"
+        ],
+        [
+          "Linha do tempo pela Data",
+          "0,2"
+        ],
+        [
+          "Compra P-037 lançada e análise atualizada",
+          "0,4"
+        ],
+        [
+          "Base e TD_Fornecedor protegidas com a senha",
+          "0,2"
+        ],
+        [
+          "Arquivo salvo com o nome pedido e todas as abas",
+          "0,2"
+        ]
+      ]
+    }
+  ]
+}

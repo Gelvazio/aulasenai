@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questão 1 — Preparar a base de compras</title>
+<link rel="stylesheet" href="../../../../../../assets/css/atividade-pratica-excel.css">
+<script src="../../../../../../assets/js/atividade-pratica-excel.js" defer></script>
+</head>
+<body data-atividade="ATIVIDADE-EXCEL-01-10-2026">
+<div class="pagina">
+<header class="cabecalho">
+<div class="cabecalho__marca">SENAI · Análise de Dados Aplicada à Gestão</div>
+<h1 class="cabecalho__titulo">Questão 1 — Preparar a base de compras</h1>
+<p class="cabecalho__subtitulo">Atividade Prática de Excel — Análise de Compras com Tabelas Dinâmicas</p>
+<div class="cabecalho__selos"><span class="selo selo--formativa">Atividade prática avaliativa</span><span class="selo ">⏱ 20 min</span><span class="selo ">1,5 pontos</span><span class="selo ">5 passos</span></div>
+<div class="identificacao"><div class="identificacao__campo">Nome:</div><div class="identificacao__campo">Turma:</div><div class="identificacao__campo">Data: 01/10/2026</div></div>
+</header>
+<nav class="navegacao"><span class="botao botao--desativado">←</span><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-01-10-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-02-TD-FORNECEDOR.html">Próxima questão →</a></nav>
+<section class="bloco">
+<h2>🎯 O que você vai fazer</h2>
+<p>Deixar a base de compras <strong>pronta para a tabela dinâmica</strong>: tirar o que atrapalha (título mesclado e linha vazia), criar a coluna <strong>Valor Total</strong> e transformar os dados em <strong>Tabela oficial</strong>.</p>
+<h3>Você vai usar</h3><ul><li>Salvar Como</li><li>Excluir linha</li><li>Fórmula de multiplicação e formato Moeda</li><li>Formatar como Tabela (<span class="tecla">Ctrl</span>+<span class="tecla">Alt</span>+<span class="tecla">T</span>)</li></ul>
+<p><strong>Aba de trabalho:</strong> <span class="celula">Compras</span> (renomeada para <span class="celula">Base_Compras</span>) · <strong>Slides de apoio:</strong> Arquivo 6 — slides 9 e 36</p>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>A base foi entregue com <strong>dois problemas de propósito</strong>. Encontrar e corrigir faz parte da questão: tabela dinâmica só funciona bem com a base limpa.</div>
+</section>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">1</span><h3 class="passo__titulo">Baixe a base e salve com o seu nome</h3></div>
+<figure class="passo__figura"><img src="img/q1-passo-01.svg" alt="Janela Salvar Como com o nome COMPRAS-NOME-SOBRENOME.xlsx" loading="lazy"><figcaption class="passo__legenda">Nome do arquivo (1), tipo .xlsx (2) e Salvar (3).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Na capa da atividade, clique em <strong>Baixar BASE-COMPRAS-1S-2026.xlsx</strong> e abra o arquivo no Excel.</li><li>Se aparecer a faixa amarela <strong>Modo de Exibição Protegido</strong>, clique em <strong>Habilitar Edição</strong>.</li><li>Arquivo → <strong>Salvar Como</strong> → nome <span class="celula">COMPRAS-NOME-SOBRENOME</span> com o <strong>seu</strong> nome (1), tipo <strong>Pasta de Trabalho do Excel (*.xlsx)</strong> (2) → <strong>Salvar</strong> (3).</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Salve com frequência: <span class="tecla">Ctrl</span>+<span class="tecla">B</span>.</div>
+<label class="concluido"><input type="checkbox" data-passo="q1-1"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">2</span><h3 class="passo__titulo">Exclua o título mesclado da linha 1</h3></div>
+<figure class="passo__figura"><img src="img/q1-passo-02.svg" alt="Linha 1 com título mesclado selecionada e menu com a opção Excluir" loading="lazy"><figcaption class="passo__legenda">Botão direito no número da linha 1 (1) → Excluir (2).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Observe a linha 1: um título mesclado ocupa as colunas A até G, e os cabeçalhos de verdade estão na linha 2.</li><li>Clique com o <strong>botão direito no número 1</strong>, à esquerda da planilha (1).</li><li>Escolha <strong>Excluir</strong> (2). Agora os cabeçalhos (Data, Nº Pedido...) ficam na linha 1.</li></ol>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>Clique no <strong>número da linha</strong>, e não numa célula: assim a linha inteira é excluída.</div>
+<label class="concluido"><input type="checkbox" data-passo="q1-2"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">3</span><h3 class="passo__titulo">Exclua a linha vazia no meio da base</h3></div>
+<figure class="passo__figura"><img src="img/q1-passo-03.svg" alt="Linha 20 vazia no meio da base selecionada e menu Excluir" loading="lazy"><figcaption class="passo__legenda">Botão direito no número da linha vazia (1) → Excluir (2).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Role a planilha até achar uma <strong>linha totalmente vazia</strong> entre as compras.</li><li>Clique com o <strong>botão direito no número dessa linha</strong> (1) → <strong>Excluir</strong> (2).</li><li>Confira: as compras vão da linha 2 até a linha 37, sem nenhuma linha em branco.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Atalho para andar pelos dados: <span class="tecla">Ctrl</span>+<span class="tecla">↓</span> para na última célula preenchida antes de um espaço vazio.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Com <span class="tecla">Ctrl</span>+<span class="tecla">↓</span> a partir de <span class="celula">A1</span>, o cursor vai direto até a <strong>última</strong> compra, sem parar no meio.</div>
+<label class="concluido"><input type="checkbox" data-passo="q1-3"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">4</span><h3 class="passo__titulo">Crie a coluna Valor Total</h3></div>
+<figure class="passo__figura"><img src="img/q1-passo-04.svg" alt="Coluna H Valor Total com a fórmula =F2*G2 na célula H2" loading="lazy"><figcaption class="passo__legenda">Em H2 (1): Quantidade × Valor Unitário.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Em <span class="celula">H1</span> digite <span class="celula">Valor Total</span>.</li><li>Em <span class="celula">H2</span> (1) digite a fórmula abaixo e tecle <span class="tecla">Enter</span>.</li><li>Copie até a última compra (duplo clique na alça) e formate a coluna H como <strong>Moeda</strong>.</li></ol>
+<code class="formula">=F2*G2</code>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>A coluna H está preenchida em todas as compras, com valores em R$.</div>
+<label class="concluido"><input type="checkbox" data-passo="q1-4"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">5</span><h3 class="passo__titulo">Transforme os dados em Tabela oficial</h3></div>
+<figure class="passo__figura"><img src="img/q1-passo-05.svg" alt="Janela Criar Tabela com o intervalo e a opção Minha tabela tem cabeçalhos marcada" loading="lazy"><figcaption class="passo__legenda">Confira o intervalo (1), marque os cabeçalhos (2) e OK (3).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique em qualquer célula das compras e tecle <span class="tecla">Ctrl</span>+<span class="tecla">Alt</span>+<span class="tecla">T</span> (ou Página Inicial → <strong>Formatar como Tabela</strong>).</li><li>Confira o intervalo <span class="celula">$A$1:$H$37</span> (1) e deixe marcado <strong>Minha tabela tem cabeçalhos</strong> (2) → <strong>OK</strong> (3).</li><li>Na guia <strong>Design da Tabela</strong>, no campo <strong>Nome da Tabela</strong> (canto esquerdo), digite <span class="celula">Compras</span> e tecle <span class="tecla">Enter</span>.</li><li>Renomeie a aba <span class="celula">Compras</span> para <span class="celula">Base_Compras</span> (botão direito na aba → Renomear).</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Na Tabela oficial, uma compra nova digitada logo abaixo da última linha entra <strong>sozinha</strong> na tabela e na análise (Questão 6).</div>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span>Selecione os dados e use Dados → <strong>Definir intervalo</strong>, com o nome <span class="celula">Compras</span>.</div>
+<label class="concluido"><input type="checkbox" data-passo="q1-5"> Passo concluído</label></div>
+</article>
+<section class="bloco">
+<h2>📋 Como esta questão será avaliada</h2>
+<table class="tabela"><thead><tr><th>Critério</th><th>Pontos</th></tr></thead><tbody><tr><td>Título mesclado e linha vazia removidos</td><td>0,5</td></tr><tr><td>Coluna Valor Total correta, em Moeda</td><td>0,5</td></tr><tr><td>Tabela oficial <span class="celula">Compras</span> criada e aba renomeada para <span class="celula">Base_Compras</span></td><td>0,5</td></tr><tr><td><strong>Total da questão</strong></td><td><strong>1,5</strong></td></tr></tbody></table>
+</section>
+<nav class="navegacao"><span class="botao botao--desativado">←</span><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-01-10-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-02-TD-FORNECEDOR.html">Próxima questão →</a></nav>
+<footer class="rodape">Aprendizagem Industrial — Assistente em Processos de Gestão e Controle de Materiais · Análise de Dados Aplicada à Gestão · Empresa e dados fictícios, criados para fins didáticos.</footer>
+</div>
+</body>
+</html>

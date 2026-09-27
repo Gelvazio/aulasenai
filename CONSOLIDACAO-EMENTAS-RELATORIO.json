@@ -1,0 +1,56 @@
+{
+  "total_ementas": 26,
+  "duplicates_found": 5,
+  "actions": [
+    {
+      "action": "delete",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\ASSISTENTE-DE-OPERACOES-LOGISTICAS\\INTRODUCAO-TIC\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+      "size": 14807
+    },
+    {
+      "action": "keep",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\ASSISTENTE-DE-OPERACOES-LOGISTICAS\\INTRODUCAO-TIC\\EMENTA-CHALKIE-AI.md",
+      "size": 14800
+    },
+    {
+      "action": "delete",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\MATERIAS-GERAIS\\INTRODUCAO-ITIC\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+      "size": 14800
+    },
+    {
+      "action": "keep",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\MATERIAS-GERAIS\\INTRODUCAO-ITIC\\EMENTA-CHALKIE-AI.md",
+      "size": 14800
+    },
+    {
+      "action": "delete",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\REFORCO_LINGUAGENS\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+      "size": 14800
+    },
+    {
+      "action": "keep",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\REFORCO_LINGUAGENS\\EMENTA-CHALKIE-AI.md",
+      "size": 14868
+    },
+    {
+      "action": "delete",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+      "size": 14800
+    },
+    {
+      "action": "keep",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\RIO_DO_SUL_MAIS_TECH\\REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO\\EMENTA-CHALKIE-AI.md",
+      "size": 14943
+    },
+    {
+      "action": "delete",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\TECNICO-INFORMATICA-INTERNET\\TESTES DE FRONTEND\\DOCUMENTACAO\\EMENTA-CHALKIE-AI.md",
+      "size": 14890
+    },
+    {
+      "action": "keep",
+      "path": "C:\\fontes\\aulas-senai\\MATERIAIS\\TECNICO-INFORMATICA-INTERNET\\TESTES DE FRONTEND\\EMENTA-CHALKIE-AI.md",
+      "size": 14712
+    }
+  ]
+}

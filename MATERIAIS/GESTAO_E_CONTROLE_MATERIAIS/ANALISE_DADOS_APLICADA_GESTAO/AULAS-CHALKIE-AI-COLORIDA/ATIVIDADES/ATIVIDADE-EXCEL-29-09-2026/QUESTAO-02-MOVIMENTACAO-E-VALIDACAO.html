@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questão 2 — Movimentação com validação de dados</title>
+<link rel="stylesheet" href="../../../../../../assets/css/atividade-pratica-excel.css">
+<script src="../../../../../../assets/js/atividade-pratica-excel.js" defer></script>
+</head>
+<body data-atividade="ATIVIDADE-EXCEL-29-09-2026">
+<div class="pagina">
+<header class="cabecalho">
+<div class="cabecalho__marca">SENAI · Análise de Dados Aplicada à Gestão</div>
+<h1 class="cabecalho__titulo">Questão 2 — Movimentação com validação de dados</h1>
+<p class="cabecalho__subtitulo">Atividade Prática de Excel — Controle de Estoque do Almoxarifado</p>
+<div class="cabecalho__selos"><span class="selo selo--formativa">Atividade prática avaliativa</span><span class="selo ">⏱ 30 min</span><span class="selo ">1,5 pontos</span><span class="selo ">8 passos</span></div>
+<div class="identificacao"><div class="identificacao__campo">Nome:</div><div class="identificacao__campo">Turma:</div><div class="identificacao__campo">Data: 29/09/2026</div></div>
+</header>
+<nav class="navegacao"><a class="botao" href="QUESTAO-01-CADASTRO-E-FORMATACAO.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-29-09-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-03-PROCV-SEERRO-INDICE-CORRESP.html">Próxima questão →</a></nav>
+<section class="bloco">
+<h2>🎯 O que você vai fazer</h2>
+<p>Criar a aba <span class="celula">Movimentacao</span>, onde ficam as entradas e saídas de material, e <strong>impedir erros de digitação</strong> com validação de dados: listas suspensas e limites de quantidade.</p>
+<h3>Você vai usar</h3><ul><li>Validação de Dados: Lista e Número inteiro</li><li>Mensagem de Entrada e Alerta de Erro (estilo Parar)</li><li>Caixa de Nome para selecionar intervalos</li><li>Formatar Células: Data</li></ul>
+<p><strong>Aba de trabalho:</strong> <span class="celula">Movimentacao</span> (nova) · <strong>Slides de apoio:</strong> Arquivo 4 — slides 22–27 e 24.1</p>
+</section>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">1</span><h3 class="passo__titulo">Crie a aba Movimentacao e os títulos</h3></div>
+<figure class="passo__figura"><img src="img/q2-passo-01.svg" alt="Nova aba Movimentacao com os oito títulos formatados e o botão Pincel de Formatação destacado" loading="lazy"><figcaption class="passo__legenda">Botão + (1) cria a aba. Digite os títulos em A1:H1 (2) e copie o visual com o Pincel (3).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique no <strong>+</strong> ao lado da aba Cadastro (1) e renomeie a nova aba para <span class="celula">Movimentacao</span> (sem ç e sem til).</li><li>Em <span class="celula">A1:H1</span> digite (2): <span class="celula">Data</span>, <span class="celula">Código</span>, <span class="celula">Descrição</span>, <span class="celula">Tipo</span>, <span class="celula">Quantidade</span>, <span class="celula">Custo Unitário</span>, <span class="celula">Valor</span>, <span class="celula">Qtd com Sinal</span>.</li><li>Copie o visual do cabeçalho: na aba Cadastro, clique em <span class="celula">A1</span>, clique no <strong>Pincel de Formatação</strong> (3), volte à Movimentacao e arraste sobre <span class="celula">A1:H1</span>.</li><li>Ajuste a largura das colunas com duplo clique nas divisas.</li></ol>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>O nome da aba é <strong>Movimentacao</strong>, sem ç e sem til. As fórmulas das próximas questões usam exatamente esse nome.</div>
+<label class="concluido"><input type="checkbox" data-passo="q2-1"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">2</span><h3 class="passo__titulo">Crie a lista suspensa de códigos</h3></div>
+<figure class="passo__figura"><img src="img/q2-passo-02.svg" alt="Janela Validação de Dados na aba Configurações com Permitir Lista e Fonte =Cadastro!$A$2:$A$16" loading="lazy"><figcaption class="passo__legenda">Caixa de Nome (1), guia Dados (2), Validação de Dados (3), Permitir: Lista (4) e Fonte (5).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique na <strong>Caixa de Nome</strong> (à esquerda da barra de fórmulas), digite <span class="celula">B2:B100</span> e tecle <span class="tecla">Enter</span> (1). O intervalo inteiro fica selecionado.</li><li>Guia <strong>Dados</strong> (2) → <strong>Validação de Dados</strong> (3).</li><li>Em <strong>Permitir</strong>, escolha <strong>Lista</strong> (4).</li><li>Em <strong>Fonte</strong>, digite a referência abaixo (5). <strong>Ainda não clique em OK</strong>: o próximo passo continua nesta janela.</li></ol>
+<code class="formula">=Cadastro!$A$2:$A$16</code>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>A fonte é a lista de códigos da aba Cadastro. Os <span class="celula">$</span> travam o intervalo.</div>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span>Dados → <strong>Validade</strong> → Permitir: <strong>Intervalo de células</strong> → Origem: <span class="celula">$Cadastro.$A$2:$A$16</span>.</div>
+<label class="concluido"><input type="checkbox" data-passo="q2-2"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">3</span><h3 class="passo__titulo">Configure o alerta de erro</h3></div>
+<figure class="passo__figura"><img src="img/q2-passo-03.svg" alt="Janela Validação de Dados na aba Alerta de Erro com estilo Parar e título Código inexistente" loading="lazy"><figcaption class="passo__legenda">Aba Alerta de Erro (1), estilo Parar (2), título (3), mensagem (4) e OK (5).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Ainda na janela, clique na aba <strong>Alerta de Erro</strong> (1).</li><li>Estilo: <strong>Parar</strong> (2).</li><li>Título: <span class="celula">Código inexistente</span> (3).</li><li>Mensagem de erro: <span class="celula">Escolha um código da lista</span> (4).</li><li>Clique em <strong>OK</strong> (5).</li></ol>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>Só o estilo <strong>Parar</strong> impede o erro. Os estilos <strong>Aviso</strong> e <strong>Informações</strong> deixam o dado errado entrar.</div>
+<label class="concluido"><input type="checkbox" data-passo="q2-3"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">4</span><h3 class="passo__titulo">Crie a lista Entrada/Saída na coluna Tipo</h3></div>
+<figure class="passo__figura"><img src="img/q2-passo-04.svg" alt="Validação de Dados com a Fonte Entrada;Saída para a coluna Tipo" loading="lazy"><figcaption class="passo__legenda">Caixa de Nome (1), Permitir: Lista (2), Fonte com as duas opções (3) e OK (4).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Na <strong>Caixa de Nome</strong>, digite <span class="celula">D2:D100</span> e tecle <span class="tecla">Enter</span> (1).</li><li>Dados → <strong>Validação de Dados</strong> → Permitir: <strong>Lista</strong> (2).</li><li>Fonte: <span class="celula">Entrada;Saída</span> (3), com ponto e vírgula entre as opções.</li><li>Na aba Alerta de Erro, deixe o estilo <strong>Parar</strong> e clique em <strong>OK</strong> (4).</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>O ponto e vírgula separa as opções da lista. Escreva <strong>Saída</strong> com acento.</div>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span>Validade → Permitir: <strong>Lista</strong> → digite uma opção por linha (Entrada, depois Saída).</div>
+<label class="concluido"><input type="checkbox" data-passo="q2-4"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">5</span><h3 class="passo__titulo">Limite a quantidade de 1 a 500</h3></div>
+<figure class="passo__figura"><img src="img/q2-passo-05.svg" alt="Validação de Dados com Permitir Número inteiro entre 1 e 500" loading="lazy"><figcaption class="passo__legenda">Caixa de Nome (1), Número inteiro (2), mínimo (3), máximo (4) e aba Mensagem de Entrada (5).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Na <strong>Caixa de Nome</strong>, digite <span class="celula">E2:E100</span> e tecle <span class="tecla">Enter</span> (1).</li><li>Dados → <strong>Validação de Dados</strong> → Permitir: <strong>Número inteiro</strong> (2) → Dados: <strong>está entre</strong>.</li><li>Mínimo <span class="celula">1</span> (3) e Máximo <span class="celula">500</span> (4).</li><li>Aba <strong>Mensagem de Entrada</strong> (5): Título <span class="celula">Quantidade</span>, Mensagem <span class="celula">Digite de 1 a 500</span>.</li><li>Aba <strong>Alerta de Erro</strong>: estilo <strong>Parar</strong>, título <span class="celula">Quantidade inválida</span>. Clique em <strong>OK</strong>.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>A Mensagem de Entrada aparece como um balão amarelo quando alguém clica na célula: ela orienta quem vai lançar os dados.</div>
+<label class="concluido"><input type="checkbox" data-passo="q2-5"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">6</span><h3 class="passo__titulo">Formate a coluna Data</h3></div>
+<figure class="passo__figura"><img src="img/q2-passo-06.svg" alt="Formatar Células com a categoria Data e o tipo 14/03/2012" loading="lazy"><figcaption class="passo__legenda">Caixa de Nome (1), categoria Data (2), tipo dia/mês/ano (3) e OK (4).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Na <strong>Caixa de Nome</strong>, digite <span class="celula">A2:A100</span> e tecle <span class="tecla">Enter</span> (1).</li><li><span class="tecla">Ctrl</span>+<span class="tecla">1</span> → aba <strong>Número</strong> → categoria <strong>Data</strong> (2).</li><li>Tipo: <span class="celula">14/03/2012</span>, que é dia/mês/ano (3) → <strong>OK</strong> (4).</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Para o Excel, data é um número (dias contados desde 1900). Por isso ela fica alinhada à direita, como os números.</div>
+<label class="concluido"><input type="checkbox" data-passo="q2-6"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">7</span><h3 class="passo__titulo">Lance as 12 movimentações usando as listas</h3></div>
+<figure class="passo__figura"><img src="img/q2-passo-07.svg" alt="Lista suspensa aberta na célula B7 com os códigos de materiais" loading="lazy"><figcaption class="passo__legenda">Clique na setinha da célula (1) e escolha o código na lista (2).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Lance as <strong>12 movimentações</strong> da capa, uma por linha, a partir da linha 2.</li><li>Data: digite no formato <span class="celula">01/09/2026</span>.</li><li>Código: clique na célula, clique na <strong>setinha</strong> (1) e escolha o código (2).</li><li>Tipo: use a setinha e escolha <strong>Entrada</strong> ou <strong>Saída</strong>. Quantidade: digite o número.</li><li>Deixe as colunas <strong>C, F, G e H vazias</strong>: elas serão preenchidas por fórmulas nas próximas questões.</li></ol>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Você lançou 12 linhas (da 2 até a 13) e nenhuma mensagem de erro apareceu.</div>
+<label class="concluido"><input type="checkbox" data-passo="q2-7"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">8</span><h3 class="passo__titulo">Teste se a validação bloqueia erros</h3></div>
+<figure class="passo__figura"><img src="img/q2-passo-08.svg" alt="Mensagem de erro Código inexistente ao digitar MAT-099 na célula B14" loading="lazy"><figcaption class="passo__legenda">Digite um código que não existe em B14 (1): o Excel bloqueia. Clique em Cancelar (2).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Em <span class="celula">B14</span>, digite <span class="celula">MAT-099</span> e tecle <span class="tecla">Enter</span> (1): a janela <strong>Código inexistente</strong> deve aparecer.</li><li>Clique em <strong>Cancelar</strong> (2).</li><li>Em <span class="celula">E14</span>, digite <span class="celula">600</span> e tecle <span class="tecla">Enter</span>: deve aparecer o alerta de quantidade. Clique em <strong>Cancelar</strong>.</li><li>Confirme que <span class="celula">B14</span> e <span class="celula">E14</span> ficaram vazias (selecione e aperte <span class="tecla">Delete</span> se precisar).</li><li>Salve: <span class="tecla">Ctrl</span>+<span class="tecla">B</span>.</li></ol>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>As duas tentativas foram <strong>bloqueadas</strong>. Se o Excel aceitou <span class="celula">MAT-099</span> ou <span class="celula">600</span>, volte aos passos 3 e 5 e confira o estilo <strong>Parar</strong>.</div>
+<label class="concluido"><input type="checkbox" data-passo="q2-8"> Passo concluído</label></div>
+</article>
+<section class="bloco">
+<h2>📋 Como esta questão será avaliada</h2>
+<table class="tabela"><thead><tr><th>Critério</th><th>Pontos</th></tr></thead><tbody><tr><td>Lista de códigos ligada ao Cadastro, com alerta Parar</td><td>0,5</td></tr><tr><td>Lista Entrada/Saída na coluna Tipo</td><td>0,3</td></tr><tr><td>Quantidade limitada a números inteiros de 1 a 500, com mensagem de entrada</td><td>0,4</td></tr><tr><td>12 movimentações lançadas corretamente, com datas formatadas</td><td>0,3</td></tr><tr><td><strong>Total da questão</strong></td><td><strong>1,5</strong></td></tr></tbody></table>
+</section>
+<nav class="navegacao"><a class="botao" href="QUESTAO-01-CADASTRO-E-FORMATACAO.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-29-09-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-03-PROCV-SEERRO-INDICE-CORRESP.html">Próxima questão →</a></nav>
+<footer class="rodape">Aprendizagem Industrial — Assistente em Processos de Gestão e Controle de Materiais · Análise de Dados Aplicada à Gestão · Empresa e dados fictícios, criados para fins didáticos.</footer>
+</div>
+</body>
+</html>

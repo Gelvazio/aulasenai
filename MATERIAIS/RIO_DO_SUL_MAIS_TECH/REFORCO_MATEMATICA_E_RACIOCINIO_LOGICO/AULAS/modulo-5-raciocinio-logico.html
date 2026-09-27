@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 5: Raciocínio Lógico — Reforço Matemática</title>
+  <link rel="stylesheet" href="_assets/styles.css">
+  <style>
+    .conteudo-detalhado { margin: 30px 0; }
+    .secao-conteudo { background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #004384; }
+    .imagem-exemplo { max-width: 100%; height: auto; border-radius: 8px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .exemplo-box { background: #f0f7ff; padding: 15px; margin: 15px 0; border-radius: 6px; border-left: 3px solid #f7941d; }
+    .dica-importante { background: #fff9f0; padding: 15px; margin: 15px 0; border-radius: 6px; border-left: 3px solid #f7941d; }
+    .grid-imagens { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+    @media (max-width: 768px) { .grid-imagens { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="layout-wrapper">
+    <nav class="menu-lateral">
+      <h3>Módulos</h3>
+      <a href="index.html" class="menu-item">Início</a>
+      <hr style="margin: 15px 0; border: none; border-top: 1px solid #ddd;">
+      <a href="modulo-1-operacoes-basicas.html" class="menu-item">Módulo 1</a>
+      <a href="modulo-2-fracoes-decimais.html" class="menu-item">Módulo 2</a>
+      <a href="modulo-3-proporcionalidade.html" class="menu-item">Módulo 3</a>
+      <a href="modulo-4-medidas-grandezas.html" class="menu-item">Módulo 4</a>
+      <a href="modulo-5-raciocinio-logico.html" class="menu-item">Módulo 5</a>
+      <a href="modulo-6-algebra.html" class="menu-item">Módulo 6</a>
+      <a href="modulo-7-tratamento-informacao.html" class="menu-item">Módulo 7</a>
+    </nav>
+    <div class="conteudo-wrapper">
+      <div class="container">
+        <div class="header-controls">
+          <h1>Módulo 5: Raciocínio Lógico</h1>
+          <button class="btn btn-secondary" onclick="imprimirPagina()">Imprimir</button>
+        </div>
+        <div class="modulo-progress">
+          <span class="modulo-progress-text">Módulo 5 de 7</span>
+        </div>
+        <section class="modulo-intro conteudo-detalhado">
+          <h2>Módulo 5: Raciocínio Lógico e Resolução de Problemas</h2>
+          <p><strong>Carga Horária:</strong> 9 horas | <strong>Objetivo:</strong> Desenvolver pensamento crítico, identificar padrões e resolver problemas com lógica rigorosa.</p>
+
+          <div class="secao-conteudo">
+            <h3>🎯 Introdução — O Poder do Raciocínio</h3>
+            <p>Raciocínio lógico é a habilidade de pensar de forma estruturada e resolver problemas novos usando princípios estabelecidos. Programadores, engenheiros, detectives e cientistas usam raciocínio lógico todos os dias!</p>
+          </div>
+
+          <div class="grid-imagens">
+            <div>
+              <h4>🧩 Quebra-Cabeças e Lógica</h4>
+              <img src="https://images.pexels.com/photos/305821/pexels-photo-305821.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Quebra-cabeça" class="imagem-exemplo">
+              <p>Desafios lógicos desenvolvem pensamento estruturado</p>
+            </div>
+            <div>
+              <h4>💻 Programação</h4>
+              <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Programação" class="imagem-exemplo">
+              <p>Programadores precisam pensar logicamente para escrever código</p>
+            </div>
+          </div>
+
+          <h3>📚 1. Reconhecendo Padrões</h3>
+          <div class="secao-conteudo">
+            <p>Um padrão é uma sequência que se repete ou segue uma regra. Identificar padrões é uma habilidade central em raciocínio lógico.</p>
+
+            <h4>Padrões Numéricos</h4>
+            <div class="exemplo-box">
+              <strong>Sequência Aritmética:</strong> 2, 5, 8, 11, 14...
+              <br>Padrão: adiciona 3 a cada número
+              <br>Próximo: 17
+            </div>
+
+            <div class="exemplo-box">
+              <strong>Sequência Geométrica:</strong> 1, 2, 4, 8, 16...
+              <br>Padrão: multiplica por 2 a cada número
+              <br>Próximo: 32
+            </div>
+
+            <div class="exemplo-box">
+              <strong>Fibonacci:</strong> 1, 1, 2, 3, 5, 8, 13...
+              <br>Padrão: cada número é a soma dos dois anteriores
+              <br>Próximo: 21
+            </div>
+          </div>
+
+          <h3>📚 2. Lógica Proposicional</h3>
+          <div class="secao-conteudo">
+            <p>Proposição é uma afirmação que é VERDADEIRA ou FALSA.</p>
+
+            <div class="exemplo-box">
+              <strong>Proposição Simples:</strong> "2 + 2 = 4" (Verdadeira)
+              <br><strong>Proposição Simples:</strong> "Paris é capital da Alemanha" (Falsa)
+            </div>
+
+            <h4>Conectivos Lógicos</h4>
+            <ul>
+              <li><strong>E (AND):</strong> Ambas as proposições devem ser verdadeiras</li>
+              <li><strong>OU (OR):</strong> Pelo menos uma das proposições deve ser verdadeira</li>
+              <li><strong>NÃO (NOT):</strong> Inverte o valor lógico</li>
+            </ul>
+
+            <div class="exemplo-box">
+              <strong>Exemplo E:</strong> "É dia E está chovendo"
+              <br>Só é verdade se AMBAS são verdadeiras
+            </div>
+
+            <div class="exemplo-box">
+              <strong>Exemplo OU:</strong> "Você ganha em futebol OU em videogame"
+              <br>É verdade se ganhar em pelo menos UM dos dois
+            </div>
+          </div>
+
+          <h3>📚 3. Estratégias de Resolução</h3>
+          <div class="secao-conteudo">
+            <h4>1. Tentativa Sistematizada</h4>
+            <p>Testar possibilidades de forma ordenada até encontrar a solução</p>
+            <div class="exemplo-box">
+              Problema: Qual número, multiplicado por 5, mais 3, resulta em 28?
+              <br>Teste: 1×5+3=8 (não), 2×5+3=13 (não), 3×5+3=18 (não), 4×5+3=23 (não), 5×5+3=28 (SIM!)
+            </div>
+
+            <h4>2. Decomposição</h4>
+            <p>Quebrar o problema em partes menores</p>
+            <div class="exemplo-box">
+              Problema Grande: Organizar uma viagem
+              <br>Partes: Escolher destino → Comprar passagem → Reservar hotel → Arrumar mala
+            </div>
+
+            <h4>3. Trabalho Reverso</h4>
+            <p>Começar do resultado e trabalhar para trás</p>
+            <div class="exemplo-box">
+              Problema: Um número depois de somar 10 é 25. Qual era?
+              <br>Reverso: 25 − 10 = 15
+            </div>
+
+            <h4>4. Analogia</h4>
+            <p>Usar problemas semelhores que você já resolveu</p>
+            <div class="exemplo-box">
+              "Se consigo resolver para 2 elementos, posso resolver para 10"
+            </div>
+          </div>
+
+          <h3>📚 4. Puzzles e Desafios Lógicos</h3>
+          <div class="secao-conteudo">
+            <p>Sudoku, jogo da velha, xadrez e outros jogos desenvolvem lógica.</p>
+
+            <div class="exemplo-box">
+              <strong>Desafio Classic:</strong> Três pessoas precisam atravessar um rio. O barco cabe 2 pessoas. Como todos atravessam?
+              <br>Solução: Pessoa A + B vão, A volta, A + C vão, B volta, A + B vão de novo.
+            </div>
+
+            <div class="dica-importante">
+              <strong>💡 Dica:</strong> Quando preso em um problema lógico, pause, respire, e tente uma estratégia diferente.
+            </div>
+          </div>
+
+          <h3>🎯 Metodologia Chalkie AI</h3>
+          <div class="secao-conteudo">
+            <ul>
+              <li><strong>Sequências Progressivas:</strong> Dificuldade crescente em tipo e complexidade</li>
+              <li><strong>Game-Based Learning:</strong> Desafios com recompensas progressivas</li>
+              <li><strong>Múltiplas Estratégias:</strong> Várias formas de resolver o mesmo problema</li>
+              <li><strong>Valorização do Processo:</strong> Não apenas respostas corretas importam</li>
+            </ul>
+          </div>
+
+          <h3>✓ Critérios de Avaliação</h3>
+          <div class="secao-conteudo">
+            <ul>
+              <li>✅ Identificar padrões em sequências diversas com justificativa clara</li>
+              <li>✅ Resolver puzzles lógicos de nível apropriado de forma independente</li>
+              <li>✅ Descrever estratégia de resolução utilizada com detalhes</li>
+              <li>✅ Validar respostas e verificar razoabilidade dos resultados</li>
+            </ul>
+          </div>
+
+          <h3>✏️ Exercícios Práticos</h3>
+          <div class="exercicios-section" id="exercicios-container"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script src="_assets/scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      carregarExercicios('modulo5');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Faculdade Nômade — 799 Cursos EAD</title>
+  <style>
+    :root {
+      --color-primary: #FF6B35;
+      --color-secondary: #004E89;
+      --color-accent: #1AC8ED;
+      --color-success: #06A77D;
+      --color-warning: #FFA630;
+      --color-bg: #FAFAFA;
+      --color-surface: #FFFFFF;
+      --color-border: #E8E8E8;
+      --color-text: #2C3E50;
+      --color-text-secondary: #7F8C8D;
+
+      /* Paleta Categórica (9 cores + sequência) */
+      --cat-1: #FF6B35;
+      --cat-2: #004E89;
+      --cat-3: #1AC8ED;
+      --cat-4: #06A77D;
+      --cat-5: #F24236;
+      --cat-6: #F18F01;
+      --cat-7: #C73E1D;
+      --cat-8: #6A994E;
+      --cat-9: #BC4749;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-bg: #1A1A1A;
+        --color-surface: #2D2D2D;
+        --color-border: #404040;
+        --color-text: #E8E8E8;
+        --color-text-secondary: #A8A8A8;
+      }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      border-bottom: 2px solid var(--color-border);
+      padding-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 5px;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* HERO STATS */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .stat-card {
+      background: var(--color-surface);
+      border: 2px solid var(--color-border);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      border-color: var(--color-primary);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* FILTROS */
+    .filters {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+      background: var(--color-surface);
+      padding: 20px;
+      border-radius: 12px;
+      border: 2px solid var(--color-border);
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    select, input {
+      padding: 8px 12px;
+      border: 2px solid var(--color-border);
+      border-radius: 6px;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+      min-width: 150px;
+    }
+
+    select:hover, input:hover {
+      border-color: var(--color-primary);
+    }
+
+    select:focus, input:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(26, 200, 237, 0.1);
+    }
+
+    .reset-btn {
+      padding: 8px 16px;
+      background: var(--color-primary);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .reset-btn:hover {
+      background: var(--color-secondary);
+      transform: scale(1.05);
+    }
+
+    /* STATS FILTROS */
+    .filter-stats {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .stat-filter {
+      background: var(--color-surface);
+      border: 2px solid var(--color-border);
+      padding: 12px 16px;
+      border-radius: 8px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .stat-filter .label {
+      color: var(--color-text-secondary);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .stat-filter .value {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--color-primary);
+    }
+
+    /* GRÁFICO */
+    .chart-section {
+      background: var(--color-surface);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      border: 2px solid var(--color-border);
+    }
+
+    .chart-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--color-text);
+    }
+
+    .chart-container {
+      position: relative;
+      height: 600px;
+      overflow-x: auto;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .bar {
+      transition: all 0.3s ease;
+    }
+
+    .bar:hover {
+      filter: brightness(1.15);
+    }
+
+    .bar-label {
+      font-size: 12px;
+      font-weight: 600;
+      pointer-events: none;
+    }
+
+    .tooltip {
+      position: absolute;
+      background: var(--color-text);
+      color: var(--color-surface);
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      z-index: 10;
+      white-space: nowrap;
+    }
+
+    .bar:hover + .tooltip {
+      opacity: 1;
+    }
+
+    /* CARDS DE DESTAQUE */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .highlight-card {
+      background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg) 100%);
+      border: 2px solid var(--color-border);
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .highlight-card.premium {
+      border-color: var(--color-primary);
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, var(--color-surface) 100%);
+    }
+
+    .highlight-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .highlight-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+
+    .highlight-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+
+    /* TABELA */
+    .table-section {
+      background: var(--color-surface);
+      border-radius: 12px;
+      padding: 30px;
+      border: 2px solid var(--color-border);
+    }
+
+    .table-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    thead {
+      background: var(--color-bg);
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    th {
+      padding: 12px;
+      text-align: left;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    td {
+      padding: 14px 12px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    tbody tr:hover {
+      background: var(--color-bg);
+    }
+
+    .rank {
+      font-weight: 700;
+      color: var(--color-primary);
+      width: 40px;
+    }
+
+    .area-name {
+      font-weight: 600;
+    }
+
+    .courses {
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .percent {
+      text-align: center;
+      color: var(--color-text-secondary);
+    }
+
+    .bar-visual {
+      background: var(--color-primary);
+      height: 4px;
+      border-radius: 2px;
+      margin-top: 4px;
+    }
+
+    /* RODAPÉ */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--color-text-secondary);
+      font-size: 0.85rem;
+      border-top: 2px solid var(--color-border);
+      margin-top: 40px;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .chart-container {
+        height: 400px;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      table {
+        font-size: 0.85rem;
+      }
+
+      th, td {
+        padding: 8px 10px;
+      }
+    }
+
+    /* MODO ESCURO - AJUSTES */
+    @media (prefers-color-scheme: dark) {
+      .bar-visual {
+        background: var(--color-accent);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎓 Faculdade Nômade</h1>
+      <p class="subtitle">Catálogo Acadêmico — Pós-Graduação EAD</p>
+      <p class="meta">799 cursos distribuídos em 18 áreas de especialização</p>
+    </header>
+
+    <!-- HERO STATS -->
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-number">799</div>
+        <div class="stat-label">Cursos Disponíveis</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">18</div>
+        <div class="stat-label">Áreas de Especialização</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Modalidade EAD</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">∞</div>
+        <div class="stat-label">Flexibilidade</div>
+      </div>
+    </div>
+
+    <!-- FILTROS -->
+    <div class="filters">
+      <div class="filter-group">
+        <label for="sort">Ordenar por:</label>
+        <select id="sort">
+          <option value="desc">Maior para Menor</option>
+          <option value="asc">Menor para Maior</option>
+          <option value="alpha">Alfabético</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="search">Buscar área:</label>
+        <input type="text" id="search" placeholder="Digite uma área...">
+      </div>
+
+      <div class="filter-group">
+        <label for="category">Categoria:</label>
+        <select id="category">
+          <option value="all">Todas</option>
+          <option value="education">Educação (201)</option>
+          <option value="health">Saúde (133)</option>
+          <option value="technology">Tecnologia (15)</option>
+          <option value="business">Negócios (61)</option>
+          <option value="legal">Jurídico (82)</option>
+          <option value="psychology">Psicologia (74)</option>
+          <option value="others">Outras (236)</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="size">Tamanho:</label>
+        <select id="size">
+          <option value="all">Todos</option>
+          <option value="large">Grande (≥100 cursos)</option>
+          <option value="medium">Médio (30-99 cursos)</option>
+          <option value="small">Pequeno (<30 cursos)</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="minCursos">Mínimo de cursos:</label>
+        <input type="number" id="minCursos" min="0" max="201" placeholder="0">
+      </div>
+
+      <div class="filter-group">
+        <label for="comparison">Comparação:</label>
+        <select id="comparison">
+          <option value="all">Todas</option>
+          <option value="above">Acima da média</option>
+          <option value="below">Abaixo da média</option>
+        </select>
+      </div>
+
+      <button id="resetBtn" class="reset-btn">🔄 Limpar Filtros</button>
+    </div>
+
+    <!-- STATS FILTROS -->
+    <div class="filter-stats">
+      <div class="stat-filter">
+        <span class="label">Exibindo:</span>
+        <span class="value" id="countDisplay">18</span>
+      </div>
+      <div class="stat-filter">
+        <span class="label">Total de cursos:</span>
+        <span class="value" id="totalDisplay">799</span>
+      </div>
+      <div class="stat-filter">
+        <span class="label">Percentual:</span>
+        <span class="value" id="percentDisplay">100%</span>
+      </div>
+      <div class="stat-filter">
+        <span class="label">Média:</span>
+        <span class="value" id="averageDisplay">44</span>
+      </div>
+    </div>
+
+    <!-- GRÁFICO DE BARRAS -->
+    <div class="chart-section">
+      <h2 class="chart-title">📊 Distribuição por Área</h2>
+      <div class="chart-container" id="chartContainer"></div>
+    </div>
+
+    <!-- DESTAQUES -->
+    <div class="highlights">
+      <div class="highlight-card premium">
+        <div class="highlight-icon">🎓</div>
+        <div class="highlight-title">Educação é Destaque</div>
+        <div class="highlight-desc">201 cursos (25% do catálogo) — Maior categoria de oferta, incluindo educação especial, metodologias e gestão escolar.</div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">🏥</div>
+        <div class="highlight-title">Saúde em Expansão</div>
+        <div class="highlight-desc">133 cursos — Gestão hospitalar, enfermagem, farmácia clínica e práticas integrativas em alta demanda.</div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">💡</div>
+        <div class="highlight-title">Inovação Digital</div>
+        <div class="highlight-desc">IA, Big Data, Cibersegurança, Blockchain — Tecnologias emergentes com 15+ cursos dedicados.</div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">🌱</div>
+        <div class="highlight-title">Sustentabilidade</div>
+        <div class="highlight-desc">ESG, gestão ambiental, agricultura sustentável — Tendência global em 10+ cursos.</div>
+      </div>
+    </div>
+
+    <!-- TABELA -->
+    <div class="table-section">
+      <h2 class="table-title">📋 Catálogo Completo</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="rank">#</th>
+            <th>Área de Especialização</th>
+            <th class="courses">Cursos</th>
+            <th class="percent">% Total</th>
+            <th>Visualização</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Preenchido por JavaScript -->
+        </tbody>
+      </table>
+    </div>
+
+    <footer>
+      <p>Dashboard interativo — Faculdade Nômade | Dados atualizados em setembro/2026</p>
+      <p>Fonte: Catálogo Acadêmico oficial | www.faculdadenomade.com.br</p>
+    </footer>
+  </div>
+
+  <script>
+    const data = [
+      { area: "Educação", cursos: 201, category: "education" },
+      { area: "Saúde e Bem-Estar", cursos: 133, category: "health" },
+      { area: "Psicologia, Terapias e Psicanálise", cursos: 74, category: "psychology" },
+      { area: "Jurídico, Perícia e Segurança", cursos: 82, category: "legal" },
+      { area: "Gestão, Negócios e MBA", cursos: 61, category: "business" },
+      { area: "Agrárias, Veterinária e Rural", cursos: 36, category: "others" },
+      { area: "Educação Física e Esportes", cursos: 29, category: "others" },
+      { area: "Engenharia, Arquitetura e Construção", cursos: 28, category: "others" },
+      { area: "Arte, Música e Cultura", cursos: 25, category: "others" },
+      { area: "Nutrição e Alimentação", cursos: 24, category: "others" },
+      { area: "Comunicação, Marketing e Vendas", cursos: 20, category: "business" },
+      { area: "Contábeis, Finanças e Economia", cursos: 17, category: "business" },
+      { area: "Tecnologia, Inovação e Digital", cursos: 15, category: "technology" },
+      { area: "Estética e Cosmetologia", cursos: 18, category: "others" },
+      { area: "Teologia e Ciências Religiosas", cursos: 7, category: "others" },
+      { area: "Gastronomia, Turismo e Hospitalidade", cursos: 7, category: "others" },
+      { area: "Meio Ambiente e Sustentabilidade", cursos: 10, category: "others" },
+      { area: "Serviço Social, Sociedade e Humanidades", cursos: 12, category: "others" }
+    ];
+
+    const totalCursos = data.reduce((sum, item) => sum + item.cursos, 0);
+    const mediaCursos = totalCursos / data.length;
+    const colors = [
+      "#FF6B35", "#004E89", "#1AC8ED", "#06A77D", "#F24236",
+      "#F18F01", "#C73E1D", "#6A994E", "#BC4749", "#2F5496",
+      "#70AD47", "#FFC000", "#5B9BD5", "#ED7D31", "#A5A5A5",
+      "#FFC7CE", "#92D050", "#D9E1F2"
+    ];
+
+    let currentData = [...data];
+    let currentSort = "desc";
+    let filterState = {
+      search: "",
+      category: "all",
+      size: "all",
+      minCursos: 0,
+      comparison: "all"
+    };
+
+    function applyAllFilters() {
+      let filtered = data.filter(item => {
+        // Filtro de busca
+        if (filterState.search && !item.area.toLowerCase().includes(filterState.search.toLowerCase())) {
+          return false;
+        }
+
+        // Filtro de categoria
+        if (filterState.category !== "all" && item.category !== filterState.category) {
+          return false;
+        }
+
+        // Filtro de tamanho
+        if (filterState.size === "large" && item.cursos < 100) return false;
+        if (filterState.size === "medium" && (item.cursos < 30 || item.cursos >= 100)) return false;
+        if (filterState.size === "small" && item.cursos >= 30) return false;
+
+        // Filtro de mínimo de cursos
+        if (item.cursos < parseInt(filterState.minCursos) || filterState.minCursos === "") {
+          if (filterState.minCursos !== "") return false;
+        }
+
+        // Filtro de comparação
+        if (filterState.comparison === "above" && item.cursos <= mediaCursos) return false;
+        if (filterState.comparison === "below" && item.cursos >= mediaCursos) return false;
+
+        return true;
+      });
+
+      currentData = filtered;
+      sortData();
+    }
+
+    function sortData() {
+      switch(currentSort) {
+        case "asc":
+          currentData.sort((a, b) => a.cursos - b.cursos);
+          break;
+        case "alpha":
+          currentData.sort((a, b) => a.area.localeCompare(b.area, "pt-BR"));
+          break;
+        default:
+          currentData.sort((a, b) => b.cursos - a.cursos);
+      }
+      render();
+      updateStats();
+    }
+
+    function renderChart() {
+      const container = document.getElementById("chartContainer");
+      container.innerHTML = "";
+
+      if (currentData.length === 0) {
+        container.innerHTML = "<p style='text-align: center; padding: 40px; color: var(--color-text-secondary);'>Nenhum resultado encontrado com os filtros aplicados.</p>";
+        return;
+      }
+
+      const maxCursos = Math.max(...currentData.map(d => d.cursos));
+      const width = 900;
+      const height = 40 * currentData.length + 50;
+      const marginLeft = 250;
+      const marginRight = 50;
+      const marginTop = 30;
+
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+      svg.setAttribute("width", "100%");
+      svg.setAttribute("height", "100%");
+
+      currentData.forEach((item, index) => {
+        const y = marginTop + index * 40;
+        const barWidth = ((item.cursos / maxCursos) * (width - marginLeft - marginRight));
+
+        // Label da área
+        const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        text.setAttribute("x", marginLeft - 10);
+        text.setAttribute("y", y + 20);
+        text.setAttribute("text-anchor", "end");
+        text.setAttribute("class", "bar-label");
+        text.setAttribute("fill", "currentColor");
+        text.textContent = item.area;
+        svg.appendChild(text);
+
+        // Barra
+        const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        rect.setAttribute("x", marginLeft);
+        rect.setAttribute("y", y + 5);
+        rect.setAttribute("width", barWidth);
+        rect.setAttribute("height", 30);
+        rect.setAttribute("rx", 4);
+        rect.setAttribute("fill", colors[data.indexOf(item) % colors.length]);
+        rect.setAttribute("class", "bar");
+        rect.style.cursor = "pointer";
+        svg.appendChild(rect);
+
+        // Número na barra
+        const numText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        numText.setAttribute("x", marginLeft + barWidth - 8);
+        numText.setAttribute("y", y + 22);
+        numText.setAttribute("text-anchor", "end");
+        numText.setAttribute("fill", "white");
+        numText.setAttribute("font-weight", "700");
+        numText.setAttribute("font-size", "13");
+        numText.textContent = item.cursos;
+        svg.appendChild(numText);
+      });
+
+      container.appendChild(svg);
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById("tableBody");
+      tbody.innerHTML = "";
+
+      if (currentData.length === 0) {
+        tbody.innerHTML = "<tr><td colspan='5' style='text-align: center; padding: 20px; color: var(--color-text-secondary);'>Nenhum resultado encontrado</td></tr>";
+        return;
+      }
+
+      currentData.forEach((item, index) => {
+        const pct = ((item.cursos / totalCursos) * 100).toFixed(1);
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td class="rank">${index + 1}</td>
+          <td class="area-name">${item.area}</td>
+          <td class="courses">${item.cursos}</td>
+          <td class="percent">${pct}%</td>
+          <td>
+            <div class="bar-visual" style="width: ${pct * 2}px;"></div>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    function updateStats() {
+      const filteredTotal = currentData.reduce((sum, item) => sum + item.cursos, 0);
+      const filteredAverage = currentData.length > 0 ? (filteredTotal / currentData.length).toFixed(0) : 0;
+      const filteredPercent = ((filteredTotal / totalCursos) * 100).toFixed(1);
+
+      document.getElementById("countDisplay").textContent = currentData.length;
+      document.getElementById("totalDisplay").textContent = filteredTotal;
+      document.getElementById("percentDisplay").textContent = filteredPercent + "%";
+      document.getElementById("averageDisplay").textContent = filteredAverage;
+    }
+
+    function render() {
+      renderChart();
+      renderTable();
+    }
+
+    function resetFilters() {
+      document.getElementById("sort").value = "desc";
+      document.getElementById("search").value = "";
+      document.getElementById("category").value = "all";
+      document.getElementById("size").value = "all";
+      document.getElementById("minCursos").value = "";
+      document.getElementById("comparison").value = "all";
+
+      filterState = {
+        search: "",
+        category: "all",
+        size: "all",
+        minCursos: 0,
+        comparison: "all"
+      };
+
+      currentSort = "desc";
+      applyAllFilters();
+    }
+
+    // Event Listeners
+    document.getElementById("sort").addEventListener("change", (e) => {
+      currentSort = e.target.value;
+      sortData();
+    });
+
+    document.getElementById("search").addEventListener("input", (e) => {
+      filterState.search = e.target.value;
+      applyAllFilters();
+    });
+
+    document.getElementById("category").addEventListener("change", (e) => {
+      filterState.category = e.target.value;
+      applyAllFilters();
+    });
+
+    document.getElementById("size").addEventListener("change", (e) => {
+      filterState.size = e.target.value;
+      applyAllFilters();
+    });
+
+    document.getElementById("minCursos").addEventListener("input", (e) => {
+      filterState.minCursos = e.target.value;
+      applyAllFilters();
+    });
+
+    document.getElementById("comparison").addEventListener("change", (e) => {
+      filterState.comparison = e.target.value;
+      applyAllFilters();
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", resetFilters);
+
+    // Renderizar inicial
+    applyAllFilters();
+  </script>
+</body>
+</html>

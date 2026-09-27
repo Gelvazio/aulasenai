@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Looker Studio — Exemplos de Dashboards</title>
+<link rel="icon" href="data:,">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+
+<style>
+  :root {
+    --azul: #004384;
+    --azul-claro: #0055b3;
+    --laranja: #f7941d;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #eef2f7;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0 0 60px 0;
+  }
+
+  header.topo {
+    background: linear-gradient(135deg, var(--azul), var(--azul-claro));
+    color: #fff;
+    padding: 28px 20px;
+    text-align: center;
+  }
+
+  header.topo h1 { margin: 0 0 6px 0; font-size: 1.7rem; }
+  header.topo p { margin: 0; opacity: .9; }
+
+  main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+
+  section.bloco {
+    background: #fff;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  }
+
+  section.bloco h2 {
+    color: var(--azul);
+    border-bottom: 3px solid var(--laranja);
+    padding-bottom: 10px;
+    margin-top: 0;
+  }
+
+  .intro-lista {
+    line-height: 1.7;
+  }
+
+  .toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .toolbar label {
+    font-weight: 600;
+    color: var(--azul);
+  }
+
+  .toolbar select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: .95rem;
+  }
+
+  /* KPIs */
+  .kpis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .kpi-card {
+    background: #f4f7fb;
+    border: 1px solid #dbe4f0;
+    border-radius: 10px;
+    padding: 18px;
+    text-align: center;
+  }
+
+  .kpi-valor {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--azul);
+  }
+
+  .kpi-label {
+    margin-top: 6px;
+    font-size: .85rem;
+    color: #555;
+  }
+
+  /* Gráficos */
+  .graficos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .grafico-card {
+    background: #fbfbfd;
+    border: 1px solid #e2e6ee;
+    border-radius: 10px;
+    padding: 16px;
+  }
+
+  .grafico-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 1rem;
+    color: var(--azul);
+  }
+
+  .embed-placeholder {
+    background: #f4f7fb;
+    border: 2px dashed var(--laranja);
+    border-radius: 10px;
+    padding: 20px;
+    font-size: .9rem;
+    color: #555;
+  }
+
+  code {
+    background: #eef2f7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: .85rem;
+  }
+
+  /* Abas */
+  .abas {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #d5deea;
+    flex-wrap: wrap;
+  }
+
+  .aba-btn {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    padding: 10px 16px;
+    font-size: .95rem;
+    font-weight: 600;
+    color: #556;
+    cursor: pointer;
+  }
+
+  .aba-btn:hover { color: var(--azul); }
+
+  .aba-btn.ativa {
+    color: var(--azul);
+    border-bottom-color: var(--laranja);
+  }
+
+  .aba-painel[hidden] { display: none; }
+
+  /* Cards de ferramentas de análise */
+  .analises-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .analise-card {
+    background: #fff;
+    border-radius: 10px;
+    border-top: 6px solid var(--cor);
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .analise-topo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 18px 8px;
+  }
+
+  .analise-num {
+    flex: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--cor);
+    color: #fff;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+  }
+
+  .analise-topo h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--cor);
+  }
+
+  .analise-topo small {
+    display: block;
+    color: #666;
+    font-weight: 400;
+    font-size: .8rem;
+  }
+
+  .analise-figura {
+    margin: 6px 18px;
+    background: #f7f9fc;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .analise-figura svg { display: block; width: 100%; height: 130px; }
+
+  .analise-corpo {
+    padding: 8px 18px 18px;
+    font-size: .9rem;
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .analise-corpo h4 {
+    margin: 12px 0 4px;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: #555;
+  }
+
+  .analise-corpo p { margin: 0; }
+
+  .analise-looker {
+    background: #fff7ec;
+    border-left: 4px solid var(--laranja);
+    padding: 8px 10px;
+    border-radius: 4px;
+    margin-top: 12px;
+  }
+
+  .regra-ouro {
+    margin-top: 24px;
+    background: var(--azul);
+    color: #fff;
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: .95rem;
+  }
+
+  .regra-ouro strong { color: #ffd27a; }
+
+  footer {
+    text-align: center;
+    color: #666;
+    font-size: .85rem;
+    margin-top: 30px;
+  }
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <h1>📊 Looker Studio — Exemplos de Uso</h1>
+  <p>Análise de Dados Aplicada à Gestão · SENAI</p>
+</header>
+
+<main>
+
+  <nav class="abas" role="tablist">
+    <button class="aba-btn ativa" role="tab" data-aba="aba-dashboard" aria-selected="true">📊 Dashboard de exemplo</button>
+    <button class="aba-btn" role="tab" data-aba="aba-analises" aria-selected="false">🧭 Ferramentas de análise</button>
+  </nav>
+
+  <div class="aba-painel" id="aba-dashboard" role="tabpanel">
+
+  <section class="bloco">
+    <h2>O que este material mostra</h2>
+    <div class="intro-lista">
+      <p>Esta página simula, em HTML/JS, os principais elementos que você vai construir dentro do
+      <strong>Looker Studio</strong>: indicadores (KPIs), gráfico de barras, gráfico de linha,
+      gráfico de pizza e um filtro interativo por categoria.</p>
+      <p>O passo a passo de como criar cada um desses elementos <em>dentro do Looker Studio de verdade</em>
+      está documentado em <a href="CLAUDE.md">CLAUDE.md</a>. Use esta página como referência visual do
+      resultado esperado.</p>
+    </div>
+  </section>
+
+  <section class="bloco">
+    <h2>Dashboard interativo de exemplo</h2>
+
+    <div class="toolbar">
+      <label for="filtro-categoria">Filtrar por categoria:</label>
+      <select id="filtro-categoria"></select>
+    </div>
+
+    <div class="kpis-grid" id="kpis-container">
+      <!-- Preenchido por js/kpis.js -->
+    </div>
+
+    <div class="graficos-grid">
+      <div class="grafico-card">
+        <h3>Valor em estoque por categoria (Barras)</h3>
+        <canvas id="grafico-barras"></canvas>
+      </div>
+      <div class="grafico-card">
+        <h3>Evolução do valor em estoque (Linha)</h3>
+        <canvas id="grafico-linha"></canvas>
+      </div>
+      <div class="grafico-card">
+        <h3>Proporção por categoria (Pizza)</h3>
+        <canvas id="grafico-pizza"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco">
+    <h2>Como isso ficaria no Looker Studio real</h2>
+    <p>No Looker Studio, em vez de um array JavaScript fixo (veja <code>js/dados-exemplo.js</code>),
+    os mesmos gráficos e KPIs seriam alimentados por uma fonte de dados conectada — normalmente uma
+    planilha Google Sheets. Depois de publicado, o relatório pode ser incorporado (embed) em qualquer
+    página com um <code>&lt;iframe&gt;</code>, assim:</p>
+
+    <div class="embed-placeholder">
+      <strong>Exemplo de incorporação (substitua pela URL do seu relatório publicado):</strong>
+      <pre><code>&lt;iframe
+  width="100%" height="500"
+  src="https://lookerstudio.google.com/embed/reporting/SEU_ID_DE_RELATORIO/page/1"
+  frameborder="0" allowfullscreen&gt;
+&lt;/iframe&gt;</code></pre>
+      <p>Gere esse código em: <strong>Arquivo → Incorporar relatório → Ativar incorporação</strong>
+      dentro do próprio Looker Studio (ver Passo 7 do <a href="CLAUDE.md">CLAUDE.md</a>).</p>
+    </div>
+  </section>
+
+  </div>
+
+  <div class="aba-painel" id="aba-analises" role="tabpanel" hidden>
+    <section class="bloco">
+      <h2>Ferramentas de análise trabalhadas em sala</h2>
+      <p>Cartazes produzidos pela turma de <strong>Auxiliar de Logística</strong> em 22/09/2026 (fotos na pasta
+      <code>metricas/</code>). Cada card mostra a ferramenta, como ler e o equivalente no Looker Studio.</p>
+
+      <div class="analises-grid">
+
+        <!-- 1. SWOT -->
+        <article class="analise-card" style="--cor:#0b6bcb">
+          <div class="analise-topo">
+            <span class="analise-num">1</span>
+            <h3>Análise SWOT <small>Forças · Fraquezas · Oportunidades · Ameaças</small></h3>
+          </div>
+          <div class="analise-figura">
+            <svg viewBox="0 0 240 130" role="img" aria-label="Matriz SWOT 2 por 2">
+              <rect x="20" y="5" width="100" height="58" fill="#d8f0de" stroke="#333"/>
+              <rect x="120" y="5" width="100" height="58" fill="#fde2e2" stroke="#333"/>
+              <rect x="20" y="63" width="100" height="58" fill="#dde9fb" stroke="#333"/>
+              <rect x="120" y="63" width="100" height="58" fill="#fff1d6" stroke="#333"/>
+              <g font-size="11" font-family="Segoe UI, Arial" text-anchor="middle" fill="#222">
+                <text x="70" y="38">Pontos fortes</text>
+                <text x="170" y="38">Pontos fracos</text>
+                <text x="70" y="96">Oportunidades</text>
+                <text x="170" y="96">Ameaças</text>
+              </g>
+            </svg>
+          </div>
+          <div class="analise-corpo">
+            <h4>O que é</h4>
+            <p>Matriz 2×2 que separa fatores <strong>internos</strong> (forças e fraquezas) dos <strong>externos</strong> (oportunidades e ameaças).</p>
+            <h4>Exemplo na logística</h4>
+            <p>Força: estoque bem controlado. Fraqueza: um só fornecedor. Oportunidade: novo centro de distribuição. Ameaça: alta no frete.</p>
+            <div class="analise-looker"><strong>No Looker Studio:</strong> tabela ou 4 indicadores (scorecards) agrupados em quadrantes.</div>
+          </div>
+        </article>
+
+        <!-- 2. Regressão -->
+        <article class="analise-card" style="--cor:#c62828">
+          <div class="analise-topo">
+            <span class="analise-num">2</span>
+            <h3>Regressão Linear <small>Simples e multivariada</small></h3>
+          </div>
+          <div class="analise-figura">
+            <svg viewBox="0 0 240 130" role="img" aria-label="Gráfico de dispersão com reta de tendência">
+              <line x1="25" y1="120" x2="230" y2="120" stroke="#333" stroke-width="2"/>
+              <line x1="25" y1="120" x2="25" y2="5" stroke="#333" stroke-width="2"/>
+              <line x1="30" y1="115" x2="220" y2="12" stroke="#222" stroke-width="2"/>
+              <g fill="#e53935" stroke="#222">
+                <circle cx="50" cy="104" r="4"/><circle cx="70" cy="92" r="4"/><circle cx="90" cy="84" r="4"/>
+                <circle cx="110" cy="70" r="4"/><circle cx="130" cy="62" r="4"/><circle cx="150" cy="50" r="4"/>
+                <circle cx="170" cy="42" r="4"/><circle cx="190" cy="28" r="4"/>
+                <circle cx="60" cy="30" r="6"/><circle cx="200" cy="95" r="6"/>
+              </g>
+            </svg>
+          </div>
+          <div class="analise-corpo">
+            <h4>O que é</h4>
+            <p>Mostra a <strong>relação</strong> entre variáveis com uma reta de tendência. Pontos longe da reta são <em>outliers</em>. Na versão multivariada, várias variáveis explicam o resultado.</p>
+            <h4>Exemplo na logística</h4>
+            <p>Quanto maior a quantidade movimentada, maior o valor total em estoque.</p>
+            <div class="analise-looker"><strong>No Looker Studio:</strong> gráfico de dispersão com a opção <em>Linha de tendência → Linear</em>.</div>
+          </div>
+        </article>
+
+        <!-- 3. Pareto -->
+        <article class="analise-card" style="--cor:#2e7d32">
+          <div class="analise-topo">
+            <span class="analise-num">3</span>
+            <h3>Diagrama de Pareto <small>Regra 80/20</small></h3>
+          </div>
+          <div class="analise-figura">
+            <svg viewBox="0 0 240 130" role="img" aria-label="Barras decrescentes com curva acumulada">
+              <line x1="20" y1="120" x2="230" y2="120" stroke="#333" stroke-width="2"/>
+              <g fill="#81c784" stroke="#1b5e20">
+                <rect x="30" y="20" width="32" height="100"/><rect x="66" y="50" width="32" height="70"/>
+                <rect x="102" y="74" width="32" height="46"/><rect x="138" y="92" width="32" height="28"/>
+                <rect x="174" y="104" width="32" height="16"/>
+              </g>
+              <polyline points="46,70 82,42 118,26 154,16 190,10" fill="none" stroke="#f7941d" stroke-width="3"/>
+              <text x="200" y="22" font-size="11" font-family="Segoe UI, Arial" fill="#e65100">80%</text>
+            </svg>
+          </div>
+          <div class="analise-corpo">
+            <h4>O que é</h4>
+            <p>Barras em ordem <strong>decrescente</strong> e uma curva acumulada. Cerca de <strong>20% das causas</strong> geram <strong>80% dos efeitos</strong>.</p>
+            <h4>Exemplo na logística</h4>
+            <p>Poucos produtos concentram a maior parte do valor do estoque (curva ABC).</p>
+            <div class="analise-looker"><strong>No Looker Studio:</strong> gráfico combinado (barras + linha), ordenado pela métrica, com a linha como soma acumulada.</div>
+          </div>
+        </article>
+
+        <!-- 4. Ishikawa -->
+        <article class="analise-card" style="--cor:#6a1b9a">
+          <div class="analise-topo">
+            <span class="analise-num">4</span>
+            <h3>Diagrama de Ishikawa <small>Espinha de peixe · Causa e efeito</small></h3>
+          </div>
+          <div class="analise-figura">
+            <svg viewBox="0 0 240 130" role="img" aria-label="Espinha de peixe com causas levando ao efeito">
+              <line x1="20" y1="65" x2="190" y2="65" stroke="#333" stroke-width="3"/>
+              <polygon points="190,50 225,65 190,80" fill="#ce93d8" stroke="#333"/>
+              <g stroke="#6a1b9a" stroke-width="2">
+                <line x1="50" y1="20" x2="75" y2="65"/><line x1="100" y1="20" x2="125" y2="65"/><line x1="150" y1="20" x2="175" y2="65"/>
+                <line x1="50" y1="110" x2="75" y2="65"/><line x1="100" y1="110" x2="125" y2="65"/><line x1="150" y1="110" x2="175" y2="65"/>
+              </g>
+              <g font-size="10" font-family="Segoe UI, Arial" fill="#333" text-anchor="middle">
+                <text x="50" y="14">Método</text><text x="100" y="14">Máquina</text><text x="150" y="14">Material</text>
+                <text x="50" y="124">Mão de obra</text><text x="100" y="124">Meio amb.</text><text x="150" y="124">Medida</text>
+              </g>
+            </svg>
+          </div>
+          <div class="analise-corpo">
+            <h4>O que é</h4>
+            <p>Organiza as <strong>causas</strong> de um problema em categorias (os 6M) que levam a um <strong>efeito</strong>, na "cabeça do peixe".</p>
+            <h4>Exemplo na logística</h4>
+            <p>Efeito: atraso na entrega. Causas: rota mal planejada (método), empilhadeira quebrada (máquina), falta de conferente (mão de obra).</p>
+            <div class="analise-looker"><strong>No Looker Studio:</strong> as causas viram <em>dimensões</em>; um gráfico de barras por causa mostra qual pesa mais.</div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="regra-ouro">
+        ⭐ <strong>Regra de ouro:</strong> use o <strong>Ishikawa</strong> para levantar causas, o <strong>Pareto</strong> para priorizar,
+        a <strong>Regressão</strong> para medir a relação entre as variáveis e a <strong>SWOT</strong> para decidir a estratégia.
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer>
+  Professor Gelvazio · SENAI · Análise de Dados Aplicada à Gestão
+</footer>
+
+<script src="js/dados-exemplo.js"></script>
+<script src="js/kpis.js"></script>
+<script src="js/graficos.js"></script>
+<script src="js/filtros.js"></script>
+<script src="js/main.js"></script>
+<script src="js/abas.js"></script>
+
+</body>
+</html>
