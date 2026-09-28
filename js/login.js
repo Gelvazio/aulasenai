@@ -69,16 +69,20 @@ function obterDestinoSeguro() {
 
 /**
  * Guarda os dados do usuário logado no sessionStorage (dados de exibição, não de segurança).
- * @param {{id: string, email: string, user_metadata: Object}} usuario - Usuário do Supabase Auth.
+ * Perfil e turma vêm do app_metadata (só a service_role altera); nome e nome da turma, do
+ * user_metadata, que o script de contas usa apenas para exibição.
+ * @param {{id: string, email: string, app_metadata: Object, user_metadata: Object}} usuario -
+ *   Usuário do Supabase Auth.
  */
 function salvarSessaoLocal(usuario) {
-  const dados = usuario.user_metadata || {};
+  const dadosApp = usuario.app_metadata || {};
+  const dadosExibicao = usuario.user_metadata || {};
   sessionStorage.setItem(CHAVES_SESSAO.id, usuario.id);
   sessionStorage.setItem(CHAVES_SESSAO.email, usuario.email);
-  sessionStorage.setItem(CHAVES_SESSAO.nome, dados.nome || usuario.email);
-  sessionStorage.setItem(CHAVES_SESSAO.perfil, dados.perfil || "ALUNO");
-  sessionStorage.setItem(CHAVES_SESSAO.turmaCodigo, dados.turma_codigo || "");
-  sessionStorage.setItem(CHAVES_SESSAO.turmaNome, dados.turma_nome || "");
+  sessionStorage.setItem(CHAVES_SESSAO.nome, dadosExibicao.nome || usuario.email);
+  sessionStorage.setItem(CHAVES_SESSAO.perfil, dadosApp.perfil || "ALUNO");
+  sessionStorage.setItem(CHAVES_SESSAO.turmaCodigo, dadosApp.turma_codigo || "");
+  sessionStorage.setItem(CHAVES_SESSAO.turmaNome, dadosExibicao.turma_nome || "");
   sessionStorage.setItem(CHAVES_SESSAO.timestamp, String(Date.now()));
 }
 
