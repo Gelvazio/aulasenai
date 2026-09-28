@@ -1,56 +1,27 @@
 // Respostas do aluno nas páginas de atividade (genérico para todas as aulas).
-// Guarda o nome do estudante e a alternativa marcada em cada item no localStorage e
-// monta, no fim da página, a folha de respostas preenchida.
-// Dados da página: atributos data-uc, data-uc-curta, data-docente, data-total e,
-// opcionalmente, data-turma no <body>.
+// Marca alternativas, monta a folha de respostas no fim da página e registra a entrega.
+// REGRA: as alternativas são salvas SOMENTE no banco (Supabase) — nada de localStorage.
+// Quem grava é o provedor do banco (assets/js/respostas-atividade-banco.js): ler é livre e o
+// login só é pedido ao marcar. Sem banco disponível, a marcação fica bloqueada com aviso.
+// Dados da página: data-uc, data-uc-curta, data-docente, data-total, data-turma (opcional).
 
-const PREFIXO_CHAVE_RESPOSTAS = 'senai_respostas:';
 const LETRAS_ALTERNATIVAS = ['A', 'B', 'C', 'D'];
 const CLASSE_MARCADA = 'alternativa--marcada';
 const CLASSE_IMPRIMIR = 'imprimir-folha';
-const MARCA_VAZIA = '(  )';
-const MARCA_PREENCHIDA = '( X )';
-const MSG_PEDIR_NOME = 'Digite o seu nome antes de responder.';
-const MSG_CONFIRMAR_LIMPEZA = 'Apagar o nome e todas as respostas desta atividade?';
-const MSG_FALTA_NOME = 'Digite o seu nome no início da atividade.';
-const MSG_TUDO_RESPONDIDO = 'Parabéns! Todas as questões foram assinaladas. ' +
-    'Confira a folha de respostas e entregue ao professor.';
+const CLASSE_ENTREGUE = 'atividade--entregue';
 const CLASSE_QUESTAO_PENDENTE = 'questao--pendente';
 const CLASSE_LINHA_PENDENTE = 'folha-respostas__linha--pendente';
-
-/**
- * Monta a chave do localStorage, única para cada página de atividade.
- * @returns {string} Chave usada para salvar os dados desta página.
- */
-function obterChaveRespostas() {
-    return PREFIXO_CHAVE_RESPOSTAS + location.pathname;
-}
-
-/**
- * Lê o nome e as respostas salvas desta atividade.
- * @returns {{nome: string, respostas: Object<string, string>}} Dados salvos ou vazios.
- */
-function lerDadosSalvos() {
-    try {
-        const salvo = JSON.parse(localStorage.getItem(obterChaveRespostas()));
-        if (!salvo) return { nome: '', respostas: {} };
-        return { nome: salvo.nome || '', respostas: salvo.respostas || {} };
-    } catch (erro) {
-        return { nome: '', respostas: {} };
-    }
-}
-
-/**
- * Salva o nome e as respostas desta atividade no localStorage.
- * @param {{nome: string, respostas: Object<string, string>}} dados - Dados a salvar.
- */
-function salvarDados(dados) {
-    try {
-        localStorage.setItem(obterChaveRespostas(), JSON.stringify(dados));
-    } catch (erro) {
-        // Sem localStorage (modo privado, bloqueio): a página segue funcionando só na memória.
-    }
-}
+const MARCA_VAZIA = '(  )';
+const MARCA_PREENCHIDA = '( X )';
+const TURMA_EM_BRANCO = '______________';
+const MSG_ENTREGUE = 'Atividade entregue! Suas respostas foram registradas.';
+const MSG_JA_ENTREGUE = 'Esta atividade já foi entregue. As respostas não podem ser alteradas.';
+const MSG_CONFIRMAR_ENTREGA = 'Depois de entregar, as respostas não poderão ser alteradas. ' +
+    'Deseja entregar agora?';
+const MSG_BANCO_INDISPONIVEL = 'As respostas desta atividade são salvas no banco de dados, ' +
+    'que está indisponível agora. Avise o professor e tente novamente mais tarde.';
+const MSG_ERRO_SALVAR = 'Não foi possível salvar a resposta. ' +
+    'Verifique a conexão e tente de novo.';
 
 /**
  * Cria um elemento HTML com classe e texto.
@@ -64,6 +35,20 @@ function criarElemento(tag, classe, texto) {
     if (classe) elemento.className = classe;
     if (texto) elemento.textContent = texto;
     return elemento;
+}
+
+/**
+ * Cria um botão.
+ * @param {string} classe - Classes CSS do botão.
+ * @param {string} texto - Texto do botão.
+ * @param {Function} aoClicar - Função chamada no clique.
+ * @returns {HTMLButtonElement} Botão criado.
+ */
+function criarBotao(classe, texto, aoClicar) {
+    const botao = criarElemento('button', classe, texto);
+    botao.type = 'button';
+    botao.addEventListener('click', aoClicar);
+    return botao;
 }
 
 /**
@@ -102,72 +87,29 @@ function destacarAlternativa(item, letraMarcada) {
 }
 
 /**
- * Monta o bloco de identificação do início, onde o estudante digita o nome.
- * @returns {HTMLElement} Bloco de identificação.
- */
-function montarIdentificacao() {
-    const bloco = criarElemento('div', 'aula-card identificacao-estudante');
-    bloco.appendChild(criarElemento('span', 'aula-badge', 'IDENTIFICAÇÃO'));
-    bloco.appendChild(criarElemento('div', 'aula-title', 'Antes de começar, digite o seu nome'));
-
-    const rotulo = criarElemento('label', 'identificacao-estudante__rotulo', 'Nome do estudante');
-    const campo = criarElemento('input', 'identificacao-estudante__campo campo-nome-estudante');
-    campo.type = 'text';
-    campo.autocomplete = 'name';
-    campo.placeholder = 'Nome completo';
-    rotulo.appendChild(campo);
-    bloco.appendChild(rotulo);
-    bloco.appendChild(criarElemento('p', 'identificacao-estudante__aviso'));
-    return bloco;
-}
-
-/**
- * Liga os campos de nome (início e folha) ao estado, mantendo os dois iguais.
+ * Registra a alternativa escolhida: marca na tela na hora e grava pelo provedor.
+ * Se a gravação falhar, volta a marcação anterior e avisa o aluno.
  * @param {Object} estado - Estado da página.
- */
-function ligarCamposNome(estado) {
-    document.querySelectorAll('.campo-nome-estudante').forEach((campo) => {
-        campo.value = estado.dados.nome;
-        campo.addEventListener('input', () => {
-            estado.dados.nome = campo.value;
-            salvarDados(estado.dados);
-            sincronizarNome(estado, campo);
-            estado.atualizarFolha();
-        });
-    });
-}
-
-/**
- * Copia o nome digitado para os outros campos de nome da página.
- * @param {Object} estado - Estado da página.
- * @param {HTMLInputElement} origem - Campo em que o nome foi digitado.
- */
-function sincronizarNome(estado, origem) {
-    document.querySelectorAll('.campo-nome-estudante').forEach((campo) => {
-        if (campo !== origem) campo.value = estado.dados.nome;
-    });
-    const aviso = document.querySelector('.identificacao-estudante__aviso');
-    if (aviso && estado.dados.nome.trim()) aviso.textContent = '';
-}
-
-/**
- * Registra a alternativa escolhida, exigindo antes o nome do estudante.
- * @param {Object} estado - Estado da página.
- * @param {{numero: string}} item - Item respondido.
+ * @param {{numero: string, card: HTMLElement}} item - Item respondido.
  * @param {string} letra - Letra escolhida.
  */
-function registrarResposta(estado, item, letra) {
-    if (!estado.dados.nome.trim()) {
-        const aviso = document.querySelector('.identificacao-estudante__aviso');
-        if (aviso) aviso.textContent = MSG_PEDIR_NOME;
-        document.querySelector('.identificacao-estudante__campo')?.focus();
-        return;
-    }
+async function registrarResposta(estado, item, letra) {
+    if (estado.entregue) return window.alert(MSG_JA_ENTREGUE);
+    if (!estado.provedor.podeResponder()) return;
+    const letraAnterior = estado.dados.respostas[item.numero] || '';
     estado.dados.respostas[item.numero] = letra;
-    salvarDados(estado.dados);
     destacarAlternativa(item, letra);
     item.card.classList.remove(CLASSE_QUESTAO_PENDENTE);
     estado.atualizarFolha();
+    try {
+        await estado.provedor.salvarResposta(item.numero, letra);
+    } catch (erro) {
+        if (letraAnterior) estado.dados.respostas[item.numero] = letraAnterior;
+        else delete estado.dados.respostas[item.numero];
+        destacarAlternativa(item, letraAnterior);
+        estado.atualizarFolha();
+        window.alert(erro.message || MSG_ERRO_SALVAR);
+    }
 }
 
 /**
@@ -211,7 +153,9 @@ function obterDataHoje() {
 function montarCampoFolha(rotulo, valor, classe) {
     const celula = criarElemento('div', 'folha-respostas__campo ' + (classe || ''));
     celula.appendChild(criarElemento('strong', '', rotulo + ': '));
-    celula.appendChild(document.createTextNode(valor));
+    const valorCampo = criarElemento('span', 'folha-respostas__valor');
+    valorCampo.textContent = valor;
+    celula.appendChild(valorCampo);
     return celula;
 }
 
@@ -238,14 +182,14 @@ function montarCabecalhoFolha(estado) {
     cabecalho.appendChild(montarCampoFolha('Data', obterDataHoje(),
         'folha-respostas__campo--direita'));
     cabecalho.appendChild(montarCampoFolha('Unidade Curricular', dadosPagina.uc || ''));
-    cabecalho.appendChild(montarCampoFolha('Turma', dadosPagina.turma || '______________',
-        'folha-respostas__campo--direita'));
+    const turma = estado.turma || dadosPagina.turma || TURMA_EM_BRANCO;
+    cabecalho.appendChild(montarCampoFolha('Turma', turma, 'folha-respostas__campo--direita'));
     cabecalho.appendChild(montarCampoEstudante());
     return cabecalho;
 }
 
 /**
- * Monta o campo "Estudante" da folha, com o nome editável.
+ * Monta o campo "Estudante" da folha (só leitura: o nome vem do login).
  * @returns {HTMLElement} Célula com o campo de nome.
  */
 function montarCampoEstudante() {
@@ -253,9 +197,20 @@ function montarCampoEstudante() {
     celula.appendChild(criarElemento('strong', '', 'Estudante: '));
     const campo = criarElemento('input', 'folha-respostas__nome campo-nome-estudante');
     campo.type = 'text';
-    campo.placeholder = 'Digite o seu nome';
+    campo.readOnly = true;
+    campo.placeholder = 'Entre com o seu usuário para identificar a folha';
     celula.appendChild(campo);
     return celula;
+}
+
+/**
+ * Coloca na folha o nome do aluno conectado.
+ * @param {Object} estado - Estado da página.
+ */
+function preencherNomeFolha(estado) {
+    document.querySelectorAll('.campo-nome-estudante').forEach((campo) => {
+        campo.value = estado.dados.nome;
+    });
 }
 
 /**
@@ -284,32 +239,16 @@ function montarTabelaRespostas(itens) {
 }
 
 /**
- * Cria um botão de ação da folha.
- * @param {string} classe - Classes CSS do botão.
- * @param {string} texto - Texto do botão.
- * @param {Function} aoClicar - Função chamada no clique.
- * @returns {HTMLButtonElement} Botão criado.
- */
-function criarBotao(classe, texto, aoClicar) {
-    const botao = criarElemento('button', classe, texto);
-    botao.type = 'button';
-    botao.addEventListener('click', aoClicar);
-    return botao;
-}
-
-/**
- * Monta os botões da folha: finalizar, imprimir e limpar respostas.
+ * Monta os botões da folha: finalizar e imprimir.
  * @param {Object} estado - Estado da página.
  * @returns {HTMLElement} Barra de ações.
  */
 function montarAcoesFolha(estado) {
     const acoes = criarElemento('div', 'folha-respostas__acoes');
-    acoes.appendChild(criarBotao('btn-export btn-export--finalizar', '✅ Finalizar atividade',
-        () => finalizarAtividade(estado)));
+    acoes.appendChild(criarBotao('btn-export btn-export--finalizar botao-finalizar',
+        '✅ Finalizar atividade', () => finalizarAtividade(estado)));
     acoes.appendChild(criarBotao('btn-export', '🖨️ Imprimir folha de respostas',
         () => imprimirFolha(estado)));
-    acoes.appendChild(criarBotao('btn-export btn-export--secundario', '🗑️ Limpar respostas',
-        () => limparRespostas(estado)));
     return acoes;
 }
 
@@ -338,51 +277,66 @@ function destacarPendentes(estado, pendentes) {
 }
 
 /**
- * Monta a mensagem de alerta com o que falta preencher.
- * @param {boolean} faltaNome - Se o nome do estudante está vazio.
+ * Monta a mensagem de alerta com as questões que faltam.
  * @param {{numero: string}[]} pendentes - Itens sem resposta.
  * @returns {string} Mensagem para o aluno.
  */
-function montarMensagemPendencias(faltaNome, pendentes) {
-    const linhas = ['Atenção! A atividade ainda não está completa.', ''];
-    if (faltaNome) linhas.push('• ' + MSG_FALTA_NOME);
-    if (pendentes.length) {
-        const numeros = pendentes.map((item) => item.numero).join(', ');
-        linhas.push('• ' + pendentes.length + ' questão(ões) sem resposta: ' + numeros + '.');
-        linhas.push('', 'As questões pendentes foram destacadas em vermelho.');
-    }
-    return linhas.join('\n');
+function montarMensagemPendencias(pendentes) {
+    const numeros = pendentes.map((item) => item.numero).join(', ');
+    return ['Atenção! A atividade ainda não está completa.', '',
+        '• ' + pendentes.length + ' questão(ões) sem resposta: ' + numeros + '.', '',
+        'As questões pendentes foram destacadas em vermelho.'].join('\n');
 }
 
 /**
- * Verifica se o nome foi digitado e se todas as questões foram assinaladas.
+ * Verifica se o aluno está conectado e se todas as questões foram assinaladas.
  * Se faltar algo, alerta o aluno, destaca as pendências e leva até a primeira delas.
  * @param {Object} estado - Estado da página.
  * @returns {boolean} true se a atividade está completa.
  */
 function validarAtividade(estado) {
+    if (!estado.provedor.podeResponder()) return false;
     const pendentes = listarPendentes(estado);
-    const faltaNome = !estado.dados.nome.trim();
     destacarPendentes(estado, pendentes);
-    const estaCompleta = !faltaNome && pendentes.length === 0;
-    if (estaCompleta) return true;
+    if (pendentes.length === 0) return true;
 
-    window.alert(montarMensagemPendencias(faltaNome, pendentes));
-    if (faltaNome) {
-        document.querySelector('.identificacao-estudante__campo')?.focus();
-        return false;
-    }
+    window.alert(montarMensagemPendencias(pendentes));
     pendentes[0].card.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return false;
 }
 
 /**
- * Finaliza a atividade: valida as respostas e confirma ao aluno quando está tudo certo.
+ * Trava a atividade depois da entrega (sem novas marcações) e mostra a data da entrega.
+ * @param {Object} estado - Estado da página.
+ * @param {string} [entregueEm] - Data/hora da entrega (ISO).
+ */
+function marcarEntregue(estado, entregueEm) {
+    estado.entregue = true;
+    document.body.classList.add(CLASSE_ENTREGUE);
+    const botao = document.querySelector('.botao-finalizar');
+    if (botao) botao.disabled = true;
+    const contagem = document.querySelector('.folha-respostas__contagem');
+    if (contagem && entregueEm) {
+        contagem.textContent += ' · Entregue em ' + new Date(entregueEm).toLocaleString('pt-BR');
+    }
+}
+
+/**
+ * Finaliza a atividade: valida e registra a entrega no banco (depois disso, trava).
  * @param {Object} estado - Estado da página.
  */
-function finalizarAtividade(estado) {
+async function finalizarAtividade(estado) {
+    if (estado.entregue) return window.alert(MSG_JA_ENTREGUE);
     if (!validarAtividade(estado)) return;
-    window.alert(MSG_TUDO_RESPONDIDO);
+    if (!window.confirm(MSG_CONFIRMAR_ENTREGA)) return;
+    try {
+        const resultado = await estado.provedor.entregar();
+        estado.atualizarFolha();
+        marcarEntregue(estado, resultado.entregueEm);
+        window.alert(MSG_ENTREGUE);
+    } catch (erro) {
+        window.alert(erro.message || MSG_ERRO_SALVAR);
+    }
 }
 
 /**
@@ -409,7 +363,7 @@ function montarFolha(estado) {
 }
 
 /**
- * Preenche a folha com as respostas salvas e a contagem de itens respondidos.
+ * Preenche a folha com as respostas e a contagem de itens respondidos.
  * @param {Object} estado - Estado da página.
  */
 function atualizarFolha(estado) {
@@ -439,37 +393,68 @@ function imprimirFolha(estado) {
 }
 
 /**
- * Apaga o nome e as respostas salvas desta atividade, após confirmação.
- * @param {Object} estado - Estado da página.
+ * Cria o provedor usado quando a página exige banco mas ele não está disponível
+ * (atividade sem cadastro, projeto fora do ar, biblioteca não carregada). Regra do projeto:
+ * as alternativas SEMPRE são salvas no banco — então a marcação fica bloqueada, com aviso.
+ * @returns {Object} Provedor que não permite responder.
  */
-function limparRespostas(estado) {
-    if (!window.confirm(MSG_CONFIRMAR_LIMPEZA)) return;
-    estado.dados = { nome: '', respostas: {} };
-    salvarDados(estado.dados);
-    estado.itens.forEach((item) => destacarAlternativa(item, ''));
-    destacarPendentes(estado, []);
-    document.querySelectorAll('.campo-nome-estudante').forEach((campo) => {
-        campo.value = '';
-    });
-    estado.atualizarFolha();
-    document.querySelector('.identificacao-estudante__campo')?.focus();
+function criarProvedorIndisponivel() {
+    return {
+        montarIdentificacao() {
+            const bloco = criarElemento('div', 'aula-card identificacao-estudante');
+            bloco.appendChild(criarElemento('span', 'aula-badge', 'AVISO'));
+            bloco.appendChild(criarElemento('div', 'aula-title', 'Respostas indisponíveis'));
+            bloco.appendChild(criarElemento('p', 'identificacao-estudante__aviso',
+                MSG_BANCO_INDISPONIVEL));
+            return bloco;
+        },
+        podeResponder() {
+            window.alert(MSG_BANCO_INDISPONIVEL);
+            return false;
+        },
+        async salvarResposta() { throw new Error(MSG_BANCO_INDISPONIVEL); },
+        async entregar() { throw new Error(MSG_BANCO_INDISPONIVEL); },
+    };
 }
 
 /**
- * Inicia o registro de respostas: identificação no início e folha no fim da página.
+ * Escolhe o provedor: sempre o banco; se ele não estiver disponível, a marcação é bloqueada.
+ * @returns {Promise<{provedor: Object, carregado: Object}>} Provedor e dados iniciais.
  */
-function iniciarRespostasAtividade() {
+async function escolherProvedor() {
+    const bancoCarregado = typeof window.criarProvedorRespostasBanco === 'function';
+    if (bancoCarregado) {
+        const provedorBanco = window.criarProvedorRespostasBanco();
+        const carregado = await provedorBanco.carregar();
+        if (carregado.disponivel) return { provedor: provedorBanco, carregado };
+    }
+    console.warn('Banco indisponível para esta atividade: marcação bloqueada.');
+    return { provedor: criarProvedorIndisponivel(), carregado: { respostas: {} } };
+}
+
+/**
+ * Inicia a página: identificação no início, folha no fim e alternativas clicáveis.
+ */
+async function iniciarRespostasAtividade() {
     const secao = document.querySelector('.content-section');
     if (!secao) return;
 
-    const estado = { dados: lerDadosSalvos(), itens: listarItens() };
+    const { provedor, carregado } = await escolherProvedor();
+    const estado = {
+        provedor,
+        itens: listarItens(),
+        dados: { nome: carregado.nome || '', respostas: carregado.respostas || {} },
+        turma: carregado.turma || '',
+        entregue: Boolean(carregado.entregueEm),
+    };
     estado.atualizarFolha = () => atualizarFolha(estado);
 
-    secao.insertBefore(montarIdentificacao(), secao.firstChild);
+    secao.insertBefore(provedor.montarIdentificacao(), secao.firstChild);
     secao.appendChild(montarFolha(estado));
-    ligarCamposNome(estado);
+    preencherNomeFolha(estado);
     ligarAlternativas(estado);
     estado.atualizarFolha();
+    if (estado.entregue) marcarEntregue(estado, carregado.entregueEm);
 }
 
 iniciarRespostasAtividade();

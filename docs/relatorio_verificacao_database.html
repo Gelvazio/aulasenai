@@ -442,6 +442,68 @@
       <p>Documentação perfeita. Todos os campos, tipos e relacionamentos estão corretos.</p>
     </div>
 
+    <h2>🆕 Atualização 2026-09-28 — Atividades, Gabarito e Respostas</h2>
+    <div class="section">
+      <div class="alert alert-warning">
+        <p><strong>Consulta ao banco real (API pública, 2026-09-28):</strong> a tabela <code>atividade</code>
+        já existia (<code>id, nome_atividade, status, quiz, created_at, updated_at</code> — 1 quiz "QUALIDADE");
+        <code>usuario</code> responde à chave anônima <strong>inclusive <code>senha_hash</code></strong> (RLS desligado).</p>
+      </div>
+      <p>Script: <code>database/2026-09-28-atividades-gabarito.sql</code> · Seed: <code>database/2026-09-28-seed-atividades.sql</code></p>
+      <table>
+        <tr>
+          <th>Tabela</th>
+          <th>Situação</th>
+          <th>Colunas principais</th>
+          <th>RLS</th>
+        </tr>
+        <tr>
+          <td>materia</td>
+          <td>Alterada</td>
+          <td><code>curso_id</code> → curso (nova; preenchida pela cursomateria)</td>
+          <td>+ leitura do professor</td>
+        </tr>
+        <tr>
+          <td>atividade</td>
+          <td>Ampliada (sem apagar dados)</td>
+          <td><code>aula_id</code> → aulas, <code>data_atividade</code>, <code>descricao</code>, <code>pagina</code> (única), <code>total_itens</code>, <code>ativo</code></td>
+          <td>Leitura pública das ativas</td>
+        </tr>
+        <tr>
+          <td>gabarito</td>
+          <td>Nova</td>
+          <td><code>atividade_id</code>, <code>item</code>, <code>titulo</code>, <code>letra</code> (PK atividade+item)</td>
+          <td>Só professor lê</td>
+        </tr>
+        <tr>
+          <td>resposta_atividade</td>
+          <td>Nova</td>
+          <td><code>aluno_id</code> → auth.users, <code>atividade_id</code>, <code>item</code>, <code>letra</code>, <code>atualizado_em</code></td>
+          <td>Aluno: as próprias, até entregar · Professor: todas</td>
+        </tr>
+        <tr>
+          <td>entrega_atividade</td>
+          <td>Nova</td>
+          <td><code>aluno_id</code>, <code>atividade_id</code>, <code>entregue_em</code></td>
+          <td>Aluno entrega 1 vez, só completa · Professor: todas</td>
+        </tr>
+        <tr>
+          <td>turma</td>
+          <td>Nova</td>
+          <td><code>codigo</code> (PK), <code>nome</code>, <code>turno</code>, <code>horario</code></td>
+          <td>Leitura para logados</td>
+        </tr>
+        <tr>
+          <td>aluno</td>
+          <td>Nova</td>
+          <td><code>id</code> = auth.users.id, <code>nome</code>, <code>email</code>, <code>turma_codigo</code>, <code>numero_chamada</code></td>
+          <td>Aluno: o próprio · Professor: todos</td>
+        </tr>
+      </table>
+      <p>Hierarquia: <code>curso ← materia.curso_id ← aulas.materia_id ← atividade.aula_id</code>.
+      Perfil de professor lido de <code>auth.jwt() → app_metadata.perfil</code> (função <code>eh_professor()</code>).</p>
+    </div>
+
     <h2>📈 Comparação Banco vs Documentação</h2>
     <div class="section">
       <table>

@@ -138,3 +138,12 @@
     body.imprimir-folha .folha-respostas { border: none; margin: 0 auto; }
     body.imprimir-folha .folha-respostas__nome { border-bottom: none; }
 }
+
+/* Identificação pelo login (modo banco) */
+.identificacao-estudante__texto { font-size: 14px; margin: 6px 0 10px; }
+.identificacao-estudante .btn-export { margin-top: 4px; }
+
+/* Atividade entregue: alternativas travadas */
+.atividade--entregue .questao .alternativas li { cursor: not-allowed; opacity: 0.85; }
+.atividade--entregue .questao .alternativas li:hover { background: #f7fafc; }
+.botao-finalizar:disabled { opacity: 0.6; cursor: not-allowed; }

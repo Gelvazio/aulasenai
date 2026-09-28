@@ -118,11 +118,12 @@
             .content-section { padding: 20px; }
         }
     </style>
+    <link rel="stylesheet" href="../../../../../assets/css/respostas-atividade.css">
     <link rel="stylesheet" href="../../../../../assets/css/menu.css">
     <script src="../MENU-ATIVIDADES.js" defer></script>
     <script src="../../../../../js/menu.js" defer></script>
 </head>
-<body>
+<body data-uc="Introdução à Tecnologia da Informação e Comunicação" data-uc-curta="Introdução à TIC" data-docente="Gelvazio Camargo" data-total="50" data-turma="AI AOPL 2026/2 M1 (135080)" data-login="sim">
     <div class="container">
         <header>
             <h1>💻 Atividade: Informática Básica</h1>
@@ -1249,76 +1250,6 @@
                 yPos = doc.lastAutoTable.finalY + 6;
             });
 
-            if (incluirGabarito) {
-                doc.addPage();
-                const gabaritoData = [
-                    ['ITEM 01', 'Hardware ou Software?', 'B'],
-                    ['ITEM 02', 'O Processador (CPU)', 'C'],
-                    ['ITEM 03', 'Memória RAM', 'B'],
-                    ['ITEM 04', 'HDD ou SSD?', 'B'],
-                    ['ITEM 05', 'Computador como Canal', 'D'],
-                    ['ITEM 06', 'Classificação de Periféricos', 'B'],
-                    ['ITEM 07', 'Periféricos: Entrada, Saída ou Ambos', 'B'],
-                    ['ITEM 08', 'Conexões de Rede', 'B'],
-                    ['ITEM 09', 'Uso Correto de Periféricos', 'C'],
-                    ['ITEM 10', 'Funções do Sistema Operacional', 'D'],
-                    ['ITEM 11', 'Tipos de Sistema Operacional', 'B'],
-                    ['ITEM 12', 'Elementos da Interface Gráfica', 'B'],
-                    ['ITEM 13', 'Atalhos de Teclado', 'C'],
-                    ['ITEM 14', 'Nomenclatura Profissional de Arquivos', 'C'],
-                    ['ITEM 15', 'Estrutura de Diretórios', 'A'],
-                    ['ITEM 16', 'Pesquisa com Curinga', 'C'],
-                    ['ITEM 17', 'Procedimento de Compactação', 'C'],
-                    ['ITEM 18', 'Diagnóstico de Falhas de Hardware', 'B'],
-                    ['ITEM 19', 'Backup 3-2-1', 'B'],
-                    ['ITEM 20', 'Boas Práticas de Organização', 'D'],
-                    ['ITEM 21', 'Componentes da Placa-Mãe', 'B'],
-                    ['ITEM 22', 'Extensões de Arquivo', 'C'],
-                    ['ITEM 23', 'Periférico de Entrada/Saída', 'C'],
-                    ['ITEM 24', 'Vantagem do SSD', 'C'],
-                    ['ITEM 25', 'Manutenção Preventiva', 'D'],
-                    ['ITEM 26', 'Superaquecimento', 'D'],
-                    ['ITEM 27', 'Armazenamento em Nuvem', 'C'],
-                    ['ITEM 28', 'Conexão USB', 'B'],
-                    ['ITEM 29', 'Lentidão ao Salvar', 'C'],
-                    ['ITEM 30', 'Profissionalismo com Arquivos', 'B'],
-                    ['ITEM 31', 'A Máquina de Von Neumann', 'B'],
-                    ['ITEM 32', 'Partes da CPU', 'D'],
-                    ['ITEM 33', 'Registradores', 'A'],
-                    ['ITEM 34', 'Pouca Memória RAM', 'C'],
-                    ['ITEM 35', 'Encaixes da Placa-Mãe', 'B'],
-                    ['ITEM 36', 'Chipset', 'D'],
-                    ['ITEM 37', 'Conexão de Vídeo', 'A'],
-                    ['ITEM 38', 'Drivers Atualizados', 'C'],
-                    ['ITEM 39', 'Impressora Padrão', 'D'],
-                    ['ITEM 40', 'O SO e os Dispositivos', 'B'],
-                    ['ITEM 41', 'Camadas do Sistema', 'D'],
-                    ['ITEM 42', 'Linux no Mercado', 'A'],
-                    ['ITEM 43', 'Proprietário × Código Aberto', 'C'],
-                    ['ITEM 44', 'Mover com o Teclado', 'B'],
-                    ['ITEM 45', 'Desfazer uma Ação', 'A'],
-                    ['ITEM 46', 'Dados Exportados do WMS', 'C'],
-                    ['ITEM 47', 'Documento Formal', 'B'],
-                    ['ITEM 48', 'Pesquisa por Tamanho', 'D'],
-                    ['ITEM 49', 'Extrair Arquivos', 'C'],
-                    ['ITEM 50', 'Contas com Privilégio Limitado', 'B']
-                ];
-                doc.autoTable({
-                    head: [['Item', 'Questão', 'Resposta']],
-                    body: gabaritoData,
-                    startY: 20,
-                    margin: { top: 20, left: margin, right: margin },
-                    headStyles: { fillColor: [118, 75, 162], textColor: [255, 255, 255], fontStyle: 'bold' },
-                    columnStyles: { 0: { cellWidth: 22 }, 1: { cellWidth: 128 }, 2: { cellWidth: 30, fontStyle: 'bold', halign: 'center' } },
-                    styles: { fontSize: 9, cellPadding: 2.5, lineColor: [0, 0, 0], lineWidth: 0.1, valign: 'top' },
-                    didDrawPage: () => {
-                        doc.setFontSize(12);
-                        doc.setFont(undefined, 'bold');
-                        doc.text('GABARITO — USO DO PROFESSOR', margin, 14);
-                    }
-                });
-            }
-
             const total = doc.getNumberOfPages();
             for (let i = 1; i <= total; i++) {
                 doc.setPage(i);
@@ -1330,5 +1261,10 @@
             doc.save('Atividade-Informatica-Basica-50-Questoes' + (incluirGabarito ? '-COM-GABARITO' : '') + '.pdf');
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../../js/supabase.js"></script>
+    <script src="../../../../../js/login.js"></script>
+    <script src="../../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../../assets/js/respostas-atividade.js"></script>
 </body>
 </html>

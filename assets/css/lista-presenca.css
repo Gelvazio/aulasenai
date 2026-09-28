@@ -1,0 +1,106 @@
+/* Página da lista de presença (usada com assets/js/lista-presenca.js). */
+:root {
+    --lista-azul: #0b3d91;
+    --lista-azul-claro: #e8eefc;
+    --lista-texto: #1a202c;
+    --lista-texto-suave: #4a5568;
+    --lista-borda: #cbd5e0;
+    --lista-fundo: #f4f6fb;
+    --lista-fora-chamada: #fff7e6;
+    --lista-destaque: #b7791f;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--lista-fundo);
+    color: var(--lista-texto);
+    padding: 20px;
+    line-height: 1.5;
+}
+
+.pagina-lista { max-width: 1100px; margin: 0 auto; }
+
+.cabecalho {
+    background: var(--lista-azul);
+    color: #fff;
+    padding: 24px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+.cabecalho h1 { font-size: 26px; }
+.cabecalho__uc { opacity: 0.9; }
+
+.acoes-lista { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+.botao-lista {
+    background: var(--lista-azul);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 9px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.botao-lista:hover { opacity: 0.9; }
+.botao-lista--secundario { background: var(--lista-texto-suave); }
+.aviso-lgpd { font-size: 13px; color: var(--lista-texto-suave); align-self: center; }
+
+.turma {
+    background: #fff;
+    border: 1px solid var(--lista-borda);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+.turma__titulo { color: var(--lista-azul); font-size: 20px; margin-bottom: 8px; }
+.turma__detalhes {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    font-size: 14px;
+    color: var(--lista-texto-suave);
+    margin-bottom: 14px;
+}
+
+.tabela-alunos { width: 100%; border-collapse: collapse; font-size: 14px; }
+.tabela-alunos th {
+    background: var(--lista-azul-claro);
+    color: var(--lista-azul);
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 2px solid var(--lista-azul);
+}
+.tabela-alunos td { padding: 7px 10px; border-bottom: 1px solid var(--lista-borda); }
+.coluna-numero { width: 48px; text-align: center; font-weight: 700; }
+.coluna-email, .coluna-senha { font-family: Consolas, 'Courier New', monospace; }
+.aluno--fora-chamada td { background: var(--lista-fora-chamada); }
+.aluno--fora-chamada .coluna-situacao { color: var(--lista-destaque); font-weight: 600; }
+
+/* Senhas ocultas até clicar em "Mostrar senhas" */
+.senha-real { display: none; }
+.senhas-visiveis .senha-real { display: inline; }
+.senhas-visiveis .senha-oculta { display: none; }
+
+.aviso-sem-dados {
+    background: #fff;
+    border: 1px dashed var(--lista-borda);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    body { padding: 10px; }
+    .tabela-alunos { font-size: 12px; }
+    .tabela-alunos th, .tabela-alunos td { padding: 6px; }
+}
+
+@media print {
+    body { background: #fff; padding: 0; }
+    .acoes-lista { display: none; }
+    .cabecalho { border-radius: 0; }
+    .turma { border: none; padding: 0; page-break-after: always; }
+    .turma:last-child { page-break-after: auto; }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Painel do Professor — Atividades SENAI</title>
+    <link rel="stylesheet" href="assets/css/painel-professor.css">
+</head>
+<body>
+    <main class="painel">
+        <header class="painel-cabecalho">
+            <div>
+                <h1>📊 Painel do Professor</h1>
+                <p>Respostas, acertos e entregas das atividades</p>
+            </div>
+            <div class="painel-cabecalho__usuario">
+                <span id="painelUsuario"></span>
+                <button class="painel-botao painel-botao--claro" id="btnSairPainel" type="button">Sair</button>
+            </div>
+        </header>
+
+        <section class="painel-aviso" id="painelAviso">
+            <p>Carregando...</p>
+        </section>
+
+        <section id="painelConteudo" hidden>
+            <div class="painel-filtros">
+                <label>Atividade
+                    <select id="filtroAtividade"></select>
+                </label>
+                <label>Turma
+                    <select id="filtroTurma"></select>
+                </label>
+                <button class="painel-botao" id="btnExportarCsv" type="button">⬇️ Exportar CSV</button>
+            </div>
+
+            <p class="painel-resumo" id="painelResumo"></p>
+
+            <table class="painel-tabela" id="tabelaAlunos">
+                <thead>
+                    <tr><th>Nº</th><th>Aluno</th><th>Respondidas</th><th>Acertos</th><th>Nota</th><th>Entregue em</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <p class="painel-dica">Clique num aluno para ver as respostas item a item.</p>
+
+            <section class="painel-detalhe" id="painelDetalhe" hidden></section>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/login.js"></script>
+    <script src="assets/js/painel-professor.js"></script>
+</body>
+</html>

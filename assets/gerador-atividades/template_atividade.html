@@ -10,7 +10,7 @@
 </head>
 <body data-aula="{{AULA}}" data-tema="{{TEMA}}" data-total="{{TOTAL}}"
       data-uc="{{UC}}" data-uc-curta="{{UC_CURTA}}"
-      data-docente="{{DOCENTE}}"{{TURMA}}>
+      data-docente="{{DOCENTE}}"{{TURMA}}{{LOGIN}}>
     <div class="container">
         <header>
             <a class="voltar" href="index.html">← Índice</a>
@@ -54,7 +54,6 @@
         <p>{{TOTAL}} Questões • Múltipla Escolha</p>
     </footer>
 
-    <script type="application/json" id="gabarito-dados">{{GABARITO_JSON}}</script>
-    <script src="{{ASSETS}}/js/atividade.js"></script>{{FOLHA_JS}}
+{{GABARITO}}    <script src="{{ASSETS}}/js/atividade.js"></script>{{FOLHA_JS}}
 </body>
 </html>

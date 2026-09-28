@@ -17,3 +17,16 @@ graphify-out/
 # Slides em PDF das pastas de atividades (linkados pelos índices publicados na Vercel)
 !MATERIAIS/**/ATIVIDADES/**/*.pdf
 !MATERIAIS/**/ATIVIDADES/*.pdf
+!MATERIAIS/**/ATIVIDADES/*.pptx
+
+# Dados pessoais de alunos (LGPD) — nunca publicar
+LISTA-PRESENCA.js
+
+.env
+
+
+# Seed com o gabarito das atividades (respostas certas) — nunca publicar
+database/*-seed-atividades.sql
+
+# Arquivos gerados pelo Python
+__pycache__/
