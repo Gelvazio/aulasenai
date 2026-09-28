@@ -7,10 +7,13 @@
     --folha-marca-preenchida: #0b3d91;
     --alternativa-marcada-fundo: #e8edff;
     --alternativa-marcada-borda: #667eea;
+<<<<<<< HEAD
     --pendente-borda: #e53e3e;
     --pendente-fundo: #fff5f5;
     --finalizar-fundo: #2f855a;
     --finalizar-fundo-hover: #276749;
+=======
+>>>>>>> 83f67023d29a458dc2c304e9aae0cd7b21ac7c11
 }
 
 /* Alternativas clicáveis */
@@ -24,6 +27,7 @@
 }
 .alternativa--marcada::after { content: "  ✔"; color: var(--alternativa-marcada-borda); }
 
+<<<<<<< HEAD
 /* Questões sem resposta, destacadas ao finalizar */
 .aula-card.questao--pendente {
     border-left-color: var(--pendente-borda);
@@ -34,6 +38,8 @@
 .folha-respostas__linha--pendente td { background: var(--pendente-fundo); }
 .folha-respostas__linha--pendente .folha-respostas__numero { color: var(--pendente-borda); }
 
+=======
+>>>>>>> 83f67023d29a458dc2c304e9aae0cd7b21ac7c11
 /* Identificação do estudante (início da página) */
 .identificacao-estudante__rotulo {
     display: flex;
@@ -116,8 +122,11 @@
 .folha-respostas__marca--preenchida { color: var(--folha-marca-preenchida); font-weight: 700; }
 .folha-respostas__contagem { font-size: 12px; font-weight: 700; margin-top: 8px; }
 .folha-respostas__acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+<<<<<<< HEAD
 .btn-export--finalizar { background: var(--finalizar-fundo); }
 .btn-export--finalizar:hover { background: var(--finalizar-fundo-hover); }
+=======
+>>>>>>> 83f67023d29a458dc2c304e9aae0cd7b21ac7c11
 .btn-export--secundario { background: #718096; }
 .btn-export--secundario:hover { background: #4a5568; }
 

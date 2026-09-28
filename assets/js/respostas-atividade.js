@@ -12,11 +12,14 @@ const MARCA_VAZIA = '(  )';
 const MARCA_PREENCHIDA = '( X )';
 const MSG_PEDIR_NOME = 'Digite o seu nome antes de responder.';
 const MSG_CONFIRMAR_LIMPEZA = 'Apagar o nome e todas as respostas desta atividade?';
+<<<<<<< HEAD
 const MSG_FALTA_NOME = 'Digite o seu nome no início da atividade.';
 const MSG_TUDO_RESPONDIDO = 'Parabéns! Todas as questões foram assinaladas. ' +
     'Confira a folha de respostas e entregue ao professor.';
 const CLASSE_QUESTAO_PENDENTE = 'questao--pendente';
 const CLASSE_LINHA_PENDENTE = 'folha-respostas__linha--pendente';
+=======
+>>>>>>> 83f67023d29a458dc2c304e9aae0cd7b21ac7c11
 
 /**
  * Monta a chave do localStorage, única para cada página de atividade.
@@ -68,14 +71,22 @@ function criarElemento(tag, classe, texto) {
 
 /**
  * Lista os itens da página com o número e os elementos de cada alternativa.
+<<<<<<< HEAD
  * @returns {{numero: string, card: HTMLElement, alternativas: HTMLElement[]}[]} Itens.
+=======
+ * @returns {{numero: string, alternativas: HTMLElement[]}[]} Itens na ordem da página.
+>>>>>>> 83f67023d29a458dc2c304e9aae0cd7b21ac7c11
  */
 function listarItens() {
     return Array.from(document.querySelectorAll('.aula-card.questao')).map((card) => {
         const badge = card.querySelector('.aula-badge');
         const numero = (badge?.textContent.match(/\d+/) || [''])[0];
+<<<<<<< HEAD
         const alternativas = Array.from(card.querySelectorAll('.alternativas li'));
         return { numero, card, alternativas };
+=======
+        return { numero, alternativas: Array.from(card.querySelectorAll('.alternativas li')) };
+>>>>>>> 83f67023d29a458dc2c304e9aae0cd7b21ac7c11
     });
 }
 
@@ -166,7 +177,10 @@ function registrarResposta(estado, item, letra) {
     estado.dados.respostas[item.numero] = letra;
     salvarDados(estado.dados);
     destacarAlternativa(item, letra);
+<<<<<<< HEAD
     item.card.classList.remove(CLASSE_QUESTAO_PENDENTE);
+=======
+>>>>>>> 83f67023d29a458dc2c304e9aae0cd7b21ac7c11
     estado.atualizarFolha();
 }
 
@@ -284,6 +298,7 @@ function montarTabelaRespostas(itens) {
 }
 
 /**
+<<<<<<< HEAD
  * Cria um botão de ação da folha.
  * @param {string} classe - Classes CSS do botão.
  * @param {string} texto - Texto do botão.
@@ -299,21 +314,37 @@ function criarBotao(classe, texto, aoClicar) {
 
 /**
  * Monta os botões da folha: finalizar, imprimir e limpar respostas.
+=======
+ * Monta os botões da folha: imprimir e limpar respostas.
+>>>>>>> 83f67023d29a458dc2c304e9aae0cd7b21ac7c11
  * @param {Object} estado - Estado da página.
  * @returns {HTMLElement} Barra de ações.
  */
 function montarAcoesFolha(estado) {
     const acoes = criarElemento('div', 'folha-respostas__acoes');
+<<<<<<< HEAD
     acoes.appendChild(criarBotao('btn-export btn-export--finalizar', '✅ Finalizar atividade',
         () => finalizarAtividade(estado)));
     acoes.appendChild(criarBotao('btn-export', '🖨️ Imprimir folha de respostas',
         () => imprimirFolha(estado)));
     acoes.appendChild(criarBotao('btn-export btn-export--secundario', '🗑️ Limpar respostas',
         () => limparRespostas(estado)));
+=======
+    const botaoImprimir = criarElemento('button', 'btn-export', '🖨️ Imprimir folha de respostas');
+    const botaoLimpar = criarElemento('button', 'btn-export btn-export--secundario',
+        '🗑️ Limpar respostas');
+    botaoImprimir.type = 'button';
+    botaoLimpar.type = 'button';
+    botaoImprimir.addEventListener('click', imprimirFolha);
+    botaoLimpar.addEventListener('click', () => limparRespostas(estado));
+    acoes.appendChild(botaoImprimir);
+    acoes.appendChild(botaoLimpar);
+>>>>>>> 83f67023d29a458dc2c304e9aae0cd7b21ac7c11
     return acoes;
 }
 
 /**
+<<<<<<< HEAD
  * Lista os itens que ainda não têm alternativa assinalada.
  * @param {Object} estado - Estado da página.
  * @returns {{numero: string, card: HTMLElement}[]} Itens sem resposta.
@@ -386,6 +417,8 @@ function finalizarAtividade(estado) {
 }
 
 /**
+=======
+>>>>>>> 83f67023d29a458dc2c304e9aae0cd7b21ac7c11
  * Monta a folha de respostas completa, com duas colunas de itens.
  * @param {Object} estado - Estado da página.
  * @returns {HTMLElement} Seção da folha de respostas.
@@ -427,11 +460,17 @@ function atualizarFolha(estado) {
 }
 
 /**
+<<<<<<< HEAD
  * Imprime só a folha de respostas, depois de validar a atividade.
  * @param {Object} estado - Estado da página.
  */
 function imprimirFolha(estado) {
     if (!validarAtividade(estado)) return;
+=======
+ * Imprime só a folha de respostas.
+ */
+function imprimirFolha() {
+>>>>>>> 83f67023d29a458dc2c304e9aae0cd7b21ac7c11
     document.body.classList.add(CLASSE_IMPRIMIR);
     window.addEventListener('afterprint', () => document.body.classList.remove(CLASSE_IMPRIMIR),
         { once: true });
@@ -447,7 +486,10 @@ function limparRespostas(estado) {
     estado.dados = { nome: '', respostas: {} };
     salvarDados(estado.dados);
     estado.itens.forEach((item) => destacarAlternativa(item, ''));
+<<<<<<< HEAD
     destacarPendentes(estado, []);
+=======
+>>>>>>> 83f67023d29a458dc2c304e9aae0cd7b21ac7c11
     document.querySelectorAll('.campo-nome-estudante').forEach((campo) => {
         campo.value = '';
     });
