@@ -12,6 +12,11 @@ const MARCA_VAZIA = '(  )';
 const MARCA_PREENCHIDA = '( X )';
 const MSG_PEDIR_NOME = 'Digite o seu nome antes de responder.';
 const MSG_CONFIRMAR_LIMPEZA = 'Apagar o nome e todas as respostas desta atividade?';
+const MSG_FALTA_NOME = 'Digite o seu nome no início da atividade.';
+const MSG_TUDO_RESPONDIDO = 'Parabéns! Todas as questões foram assinaladas. ' +
+    'Confira a folha de respostas e entregue ao professor.';
+const CLASSE_QUESTAO_PENDENTE = 'questao--pendente';
+const CLASSE_LINHA_PENDENTE = 'folha-respostas__linha--pendente';
 
 /**
  * Monta a chave do localStorage, única para cada página de atividade.
@@ -63,13 +68,14 @@ function criarElemento(tag, classe, texto) {
 
 /**
  * Lista os itens da página com o número e os elementos de cada alternativa.
- * @returns {{numero: string, alternativas: HTMLElement[]}[]} Itens na ordem da página.
+ * @returns {{numero: string, card: HTMLElement, alternativas: HTMLElement[]}[]} Itens.
  */
 function listarItens() {
     return Array.from(document.querySelectorAll('.aula-card.questao')).map((card) => {
         const badge = card.querySelector('.aula-badge');
         const numero = (badge?.textContent.match(/\d+/) || [''])[0];
-        return { numero, alternativas: Array.from(card.querySelectorAll('.alternativas li')) };
+        const alternativas = Array.from(card.querySelectorAll('.alternativas li'));
+        return { numero, card, alternativas };
     });
 }
 
@@ -160,6 +166,7 @@ function registrarResposta(estado, item, letra) {
     estado.dados.respostas[item.numero] = letra;
     salvarDados(estado.dados);
     destacarAlternativa(item, letra);
+    item.card.classList.remove(CLASSE_QUESTAO_PENDENTE);
     estado.atualizarFolha();
 }
 
@@ -277,22 +284,105 @@ function montarTabelaRespostas(itens) {
 }
 
 /**
- * Monta os botões da folha: imprimir e limpar respostas.
+ * Cria um botão de ação da folha.
+ * @param {string} classe - Classes CSS do botão.
+ * @param {string} texto - Texto do botão.
+ * @param {Function} aoClicar - Função chamada no clique.
+ * @returns {HTMLButtonElement} Botão criado.
+ */
+function criarBotao(classe, texto, aoClicar) {
+    const botao = criarElemento('button', classe, texto);
+    botao.type = 'button';
+    botao.addEventListener('click', aoClicar);
+    return botao;
+}
+
+/**
+ * Monta os botões da folha: finalizar, imprimir e limpar respostas.
  * @param {Object} estado - Estado da página.
  * @returns {HTMLElement} Barra de ações.
  */
 function montarAcoesFolha(estado) {
     const acoes = criarElemento('div', 'folha-respostas__acoes');
-    const botaoImprimir = criarElemento('button', 'btn-export', '🖨️ Imprimir folha de respostas');
-    const botaoLimpar = criarElemento('button', 'btn-export btn-export--secundario',
-        '🗑️ Limpar respostas');
-    botaoImprimir.type = 'button';
-    botaoLimpar.type = 'button';
-    botaoImprimir.addEventListener('click', imprimirFolha);
-    botaoLimpar.addEventListener('click', () => limparRespostas(estado));
-    acoes.appendChild(botaoImprimir);
-    acoes.appendChild(botaoLimpar);
+    acoes.appendChild(criarBotao('btn-export btn-export--finalizar', '✅ Finalizar atividade',
+        () => finalizarAtividade(estado)));
+    acoes.appendChild(criarBotao('btn-export', '🖨️ Imprimir folha de respostas',
+        () => imprimirFolha(estado)));
+    acoes.appendChild(criarBotao('btn-export btn-export--secundario', '🗑️ Limpar respostas',
+        () => limparRespostas(estado)));
     return acoes;
+}
+
+/**
+ * Lista os itens que ainda não têm alternativa assinalada.
+ * @param {Object} estado - Estado da página.
+ * @returns {{numero: string, card: HTMLElement}[]} Itens sem resposta.
+ */
+function listarPendentes(estado) {
+    return estado.itens.filter((item) => !estado.dados.respostas[item.numero]);
+}
+
+/**
+ * Destaca as questões e as linhas da folha que ainda estão sem resposta.
+ * @param {Object} estado - Estado da página.
+ * @param {{numero: string}[]} pendentes - Itens sem resposta.
+ */
+function destacarPendentes(estado, pendentes) {
+    const numerosPendentes = pendentes.map((item) => item.numero);
+    estado.itens.forEach((item) => {
+        const estaPendente = numerosPendentes.includes(item.numero);
+        item.card.classList.toggle(CLASSE_QUESTAO_PENDENTE, estaPendente);
+        document.querySelector('.folha-respostas tr[data-item="' + item.numero + '"]')
+            ?.classList.toggle(CLASSE_LINHA_PENDENTE, estaPendente);
+    });
+}
+
+/**
+ * Monta a mensagem de alerta com o que falta preencher.
+ * @param {boolean} faltaNome - Se o nome do estudante está vazio.
+ * @param {{numero: string}[]} pendentes - Itens sem resposta.
+ * @returns {string} Mensagem para o aluno.
+ */
+function montarMensagemPendencias(faltaNome, pendentes) {
+    const linhas = ['Atenção! A atividade ainda não está completa.', ''];
+    if (faltaNome) linhas.push('• ' + MSG_FALTA_NOME);
+    if (pendentes.length) {
+        const numeros = pendentes.map((item) => item.numero).join(', ');
+        linhas.push('• ' + pendentes.length + ' questão(ões) sem resposta: ' + numeros + '.');
+        linhas.push('', 'As questões pendentes foram destacadas em vermelho.');
+    }
+    return linhas.join('\n');
+}
+
+/**
+ * Verifica se o nome foi digitado e se todas as questões foram assinaladas.
+ * Se faltar algo, alerta o aluno, destaca as pendências e leva até a primeira delas.
+ * @param {Object} estado - Estado da página.
+ * @returns {boolean} true se a atividade está completa.
+ */
+function validarAtividade(estado) {
+    const pendentes = listarPendentes(estado);
+    const faltaNome = !estado.dados.nome.trim();
+    destacarPendentes(estado, pendentes);
+    const estaCompleta = !faltaNome && pendentes.length === 0;
+    if (estaCompleta) return true;
+
+    window.alert(montarMensagemPendencias(faltaNome, pendentes));
+    if (faltaNome) {
+        document.querySelector('.identificacao-estudante__campo')?.focus();
+        return false;
+    }
+    pendentes[0].card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return false;
+}
+
+/**
+ * Finaliza a atividade: valida as respostas e confirma ao aluno quando está tudo certo.
+ * @param {Object} estado - Estado da página.
+ */
+function finalizarAtividade(estado) {
+    if (!validarAtividade(estado)) return;
+    window.alert(MSG_TUDO_RESPONDIDO);
 }
 
 /**
@@ -337,9 +427,11 @@ function atualizarFolha(estado) {
 }
 
 /**
- * Imprime só a folha de respostas.
+ * Imprime só a folha de respostas, depois de validar a atividade.
+ * @param {Object} estado - Estado da página.
  */
-function imprimirFolha() {
+function imprimirFolha(estado) {
+    if (!validarAtividade(estado)) return;
     document.body.classList.add(CLASSE_IMPRIMIR);
     window.addEventListener('afterprint', () => document.body.classList.remove(CLASSE_IMPRIMIR),
         { once: true });
@@ -355,6 +447,7 @@ function limparRespostas(estado) {
     estado.dados = { nome: '', respostas: {} };
     salvarDados(estado.dados);
     estado.itens.forEach((item) => destacarAlternativa(item, ''));
+    destacarPendentes(estado, []);
     document.querySelectorAll('.campo-nome-estudante').forEach((campo) => {
         campo.value = '';
     });

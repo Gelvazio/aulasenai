@@ -6,11 +6,11 @@
     <title>Aula {{AULA}} — {{TEMA}} ({{TOTAL}} Questões)</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
-    <link rel="stylesheet" href="{{ASSETS}}/css/atividade.css">{{MENU}}
+    <link rel="stylesheet" href="{{ASSETS}}/css/atividade.css">{{FOLHA_CSS}}{{MENU}}
 </head>
 <body data-aula="{{AULA}}" data-tema="{{TEMA}}" data-total="{{TOTAL}}"
       data-uc="{{UC}}" data-uc-curta="{{UC_CURTA}}"
-      data-docente="{{DOCENTE}}">
+      data-docente="{{DOCENTE}}"{{TURMA}}>
     <div class="container">
         <header>
             <a class="voltar" href="index.html">← Índice</a>
@@ -55,6 +55,6 @@
     </footer>
 
     <script type="application/json" id="gabarito-dados">{{GABARITO_JSON}}</script>
-    <script src="{{ASSETS}}/js/atividade.js"></script>
+    <script src="{{ASSETS}}/js/atividade.js"></script>{{FOLHA_JS}}
 </body>
 </html>
