@@ -70,5 +70,14 @@ window.MENU_ATIVIDADES = {
         },
       ],
     },
+    {
+      rotulo: '🔄 Ciclo do feedback (28/09)',
+      subitens: [
+        {
+          rotulo: 'Atividade — 25 questões',
+          link: 'ATIVIDADES-AULA-28-09-2026/ATIVIDADES-AULA-28-09-2026-50-QUESTOES.html',
+        },
+      ],
+    },
   ],
 };
