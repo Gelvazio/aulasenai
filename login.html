@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar — SENAI Atividades</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+</head>
+<body>
+    <main class="login-cartao">
+        <header class="login-cabecalho">
+            <div class="login-logo">SENAI</div>
+            <h1>Atividades SENAI</h1>
+            <p>Entre com o seu usuário para responder às atividades.</p>
+        </header>
+
+        <section class="login-corpo" id="telaLogin">
+            <form id="formLogin" novalidate>
+                <label class="login-campo" for="loginUsuario">
+                    <span>Usuário</span>
+                    <input id="loginUsuario" name="usuario" type="text" autocomplete="username"
+                           placeholder="nome.sobrenome" autocapitalize="none" spellcheck="false" required>
+                </label>
+                <label class="login-campo" for="loginSenha">
+                    <span>Senha</span>
+                    <input id="loginSenha" name="senha" type="password" autocomplete="current-password"
+                           placeholder="Sua senha" required>
+                </label>
+                <button class="login-botao" id="btnEntrar" type="submit">Entrar</button>
+                <p class="login-mensagem" id="loginMsg" role="status" aria-live="polite"></p>
+            </form>
+            <p class="login-ajuda">Esqueceu a senha? Fale com o professor.</p>
+        </section>
+
+        <section class="login-corpo" id="painelConectado" hidden>
+            <p class="login-conectado" id="textoConectado"></p>
+            <button class="login-botao" id="btnContinuar" type="button">Continuar</button>
+            <button class="login-botao login-botao--secundario" id="btnSair" type="button">Sair</button>
+        </section>
+
+        <footer class="login-rodape">SENAI Santa Catarina</footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,198 +1,238 @@
-// ── Gerenciamento de Login e Cadastro ──────────────
+// ── Login com Supabase Auth ───────────────────────────
+// Depende de: @supabase/supabase-js v2 (CDN) e js/supabase.js (obterClienteSupabase).
+// Contas dos alunos: criadas pelo professor (scripts/criar-usuarios-supabase-auth.js), sem cadastro
+// na página. Login: "nome.sobrenome" ou o e-mail completo nome.sobrenome@senai.local.
 
-async function fazerLogin() {
-  const usuario = document.getElementById("loginUsuario").value.trim();
-  const senha = document.getElementById("loginSenha").value.trim();
+const DOMINIO_ALUNO = "senai.local";
+const PAGINA_LOGIN = "/login.html";
+const PAGINA_PADRAO = "index.html";
+const PARAMETRO_VOLTAR = "voltar";
+const TEMPO_REDIRECIONAMENTO_MS = 800;
 
-  if (!usuario || !senha) {
-    mostrarMsgLogin("Usuário e senha são obrigatórios", true);
-    return;
-  }
+const MSG_CAMPOS_OBRIGATORIOS = "Informe o usuário e a senha.";
+const MSG_AUTENTICANDO = "Autenticando...";
+const MSG_CREDENCIAIS_INVALIDAS = "Usuário ou senha incorretos.";
+const MSG_SEM_CONEXAO = "Não foi possível conectar ao servidor. Tente novamente.";
+const MSG_SUCESSO = "✅ Login realizado! Redirecionando...";
+const MSG_BIBLIOTECA_AUSENTE = "Erro ao carregar o login. Recarregue a página.";
 
-  mostrarMsgLogin("Autenticando...", false);
+const CHAVES_SESSAO = {
+  id: "usuarioId",
+  email: "usuarioEmail",
+  nome: "usuarioNome",
+  perfil: "usuarioPerfil",
+  turmaCodigo: "usuarioTurmaCodigo",
+  turmaNome: "usuarioTurmaNome",
+  timestamp: "usuarioTimestamp",
+};
 
+const IDS_LOGIN = {
+  formulario: "formLogin",
+  usuario: "loginUsuario",
+  senha: "loginSenha",
+  mensagem: "loginMsg",
+  botaoEntrar: "btnEntrar",
+  telaLogin: "telaLogin",
+  painelConectado: "painelConectado",
+  textoConectado: "textoConectado",
+  botaoContinuar: "btnContinuar",
+  botaoSair: "btnSair",
+};
+
+/**
+ * Completa o login digitado com o domínio dos alunos quando não houver "@".
+ * @param {string} usuario - "nome.sobrenome" ou e-mail completo.
+ * @returns {string} E-mail em minúsculas.
+ */
+function montarEmail(usuario) {
+  const texto = usuario.trim().toLowerCase();
+  if (texto.includes("@")) return texto;
+  return texto + "@" + DOMINIO_ALUNO;
+}
+
+/**
+ * Lê o destino do parâmetro ?voltar=, aceitando só páginas do próprio site.
+ * @returns {string} URL de destino segura (padrão: index.html).
+ */
+function obterDestinoSeguro() {
+  const voltar = new URLSearchParams(location.search).get(PARAMETRO_VOLTAR);
+  if (!voltar) return PAGINA_PADRAO;
   try {
-    // Calcular SHA-256 da senha
-    const hashSenha = await calcularSHA256(senha);
-
-    // Buscar usuário no banco
-    const usuarios = await sbGet("usuario", `login_usuario=eq.${encodeURIComponent(usuario)}&select=*`);
-
-    if (!usuarios || usuarios.length === 0) {
-      mostrarMsgLogin("Usuário ou senha incorretos", true);
-      return;
-    }
-
-    const usuarioBD = usuarios[0];
-
-    // Validar senha
-    if (usuarioBD.senha_hash !== hashSenha) {
-      mostrarMsgLogin("Usuário ou senha incorretos", true);
-      return;
-    }
-
-    // Salvar dados de sessão em sessionStorage (linha 34 do arquivo original)
-    sessionStorage.setItem("usuarioId", usuarioBD.id);
-    sessionStorage.setItem("usuarioLogin", usuarioBD.login_usuario);
-    sessionStorage.setItem("usuarioEmail", usuarioBD.email);
-    sessionStorage.setItem("usuarioPerfil", usuarioBD.perfil);
-    sessionStorage.setItem("usuarioNome", usuarioBD.nome || usuarioBD.login_usuario);
-    sessionStorage.setItem("usuarioTimestamp", Date.now());
-
-    mostrarMsgLogin("✅ Login realizado com sucesso!", false);
-
-    // Redirecionar para dashboard
-    setTimeout(() => {
-      window.location.href = "dashboard.html";
-    }, 1000);
+    const destino = new URL(voltar, location.href);
+    const ehMesmoSite = destino.origin === location.origin;
+    if (!ehMesmoSite) return PAGINA_PADRAO;
+    return destino.pathname + destino.search + destino.hash;
   } catch (erro) {
-    console.error("❌ Erro ao fazer login:", erro);
-    mostrarMsgLogin("❌ Erro ao conectar: " + erro.message, true);
+    return PAGINA_PADRAO;
   }
 }
 
-async function fazerCadastro() {
-  const nome = document.getElementById("cadastroNome").value.trim();
-  const usuario = document.getElementById("cadastroUsuario").value.trim();
-  const senha = document.getElementById("cadastroSenha").value.trim();
-  const confirmaSenha = document.getElementById("cadastroConfirmaSenha").value.trim();
-
-  if (!nome || !usuario || !senha || !confirmaSenha) {
-    mostrarMsgCadastro("Todos os campos são obrigatórios", true);
-    return;
-  }
-
-  if (senha.length < 6) {
-    mostrarMsgCadastro("Senha deve ter no mínimo 6 caracteres", true);
-    return;
-  }
-
-  if (senha !== confirmaSenha) {
-    mostrarMsgCadastro("As senhas não correspondem", true);
-    return;
-  }
-
-  if (usuario.length < 3) {
-    mostrarMsgCadastro("Usuário deve ter no mínimo 3 caracteres", true);
-    return;
-  }
-
-  mostrarMsgCadastro("Criando conta...", false);
-
-  try {
-    // Verificar se usuário já existe
-    const usuarios = await sbGet("usuario", `login_usuario=eq.${encodeURIComponent(usuario)}`);
-    if (usuarios && usuarios.length > 0) {
-      mostrarMsgCadastro("Este usuário já existe", true);
-      return;
-    }
-
-    // Calcular SHA-256 da senha
-    const hashSenha = await calcularSHA256(senha);
-
-    // Inserir novo usuário
-    const novoUsuario = {
-      login_usuario: usuario,
-      nome: nome,
-      senha: hashSenha,
-      perfil: "ALUNO"
-    };
-
-    const resultado = await sbPost("usuario", novoUsuario);
-
-    if (resultado && resultado.id) {
-      mostrarMsgCadastro("✅ Conta criada com sucesso! Redirecionando...", false);
-
-      // Salvar dados de sessão em sessionStorage
-      sessionStorage.setItem("usuarioId", resultado.id);
-      sessionStorage.setItem("usuarioLogin", resultado.login_usuario);
-      sessionStorage.setItem("usuarioPerfil", resultado.perfil);
-      sessionStorage.setItem("usuarioNome", resultado.nome);
-      sessionStorage.setItem("usuarioTimestamp", Date.now());
-
-      // Redirecionar para login após 2 segundos
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 2000);
-    } else {
-      mostrarMsgCadastro("Erro ao criar conta", true);
-    }
-  } catch (erro) {
-    console.error("❌ Erro ao fazer cadastro:", erro);
-    mostrarMsgCadastro("❌ Erro: " + erro.message, true);
-  }
+/**
+ * Guarda os dados do usuário logado no sessionStorage (dados de exibição, não de segurança).
+ * @param {{id: string, email: string, user_metadata: Object}} usuario - Usuário do Supabase Auth.
+ */
+function salvarSessaoLocal(usuario) {
+  const dados = usuario.user_metadata || {};
+  sessionStorage.setItem(CHAVES_SESSAO.id, usuario.id);
+  sessionStorage.setItem(CHAVES_SESSAO.email, usuario.email);
+  sessionStorage.setItem(CHAVES_SESSAO.nome, dados.nome || usuario.email);
+  sessionStorage.setItem(CHAVES_SESSAO.perfil, dados.perfil || "ALUNO");
+  sessionStorage.setItem(CHAVES_SESSAO.turmaCodigo, dados.turma_codigo || "");
+  sessionStorage.setItem(CHAVES_SESSAO.turmaNome, dados.turma_nome || "");
+  sessionStorage.setItem(CHAVES_SESSAO.timestamp, String(Date.now()));
 }
 
-async function calcularSHA256(texto) {
-  const encoder = new TextEncoder();
-  const dados = encoder.encode(texto);
-  const hashBuffer = await crypto.subtle.digest("SHA-256", dados);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  const hashHex = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
-  return hashHex;
+/**
+ * Remove do sessionStorage os dados do usuário logado.
+ */
+function limparSessaoLocal() {
+  Object.values(CHAVES_SESSAO).forEach((chave) => sessionStorage.removeItem(chave));
 }
 
-function mostrarMsgLogin(msg, erro) {
-  const el = document.getElementById("loginMsg");
-  if (el) {
-    el.textContent = msg;
-    el.style.color = erro ? "#c62828" : "#2e7d32";
-  }
-}
-
-function mostrarMsgCadastro(msg, erro) {
-  const el = document.getElementById("cadastroMsg");
-  if (el) {
-    el.textContent = msg;
-    el.style.color = erro ? "#c62828" : "#2e7d32";
-  }
-}
-
-function verificarAutenticacao() {
-  const usuarioId = sessionStorage.getItem("usuarioId");
-  if (!usuarioId) {
-    window.location.href = "index.html";
-  }
-}
-
-function fazerLogout() {
-  // Limpar sessionStorage
-  sessionStorage.removeItem("usuarioId");
-  sessionStorage.removeItem("usuarioLogin");
-  sessionStorage.removeItem("usuarioEmail");
-  sessionStorage.removeItem("usuarioPerfil");
-  sessionStorage.removeItem("usuarioNome");
-  sessionStorage.removeItem("usuarioTimestamp");
-
-  window.location.href = "index.html";
-}
-
+/**
+ * Devolve os dados do usuário logado guardados no sessionStorage.
+ * @returns {{id: string|null, email: string|null, nome: string|null, perfil: string|null,
+ *   turmaCodigo: string|null, turmaNome: string|null}} Dados do usuário (null se ausentes).
+ */
 function obterUsuarioAtual() {
   return {
-    id: sessionStorage.getItem("usuarioId"),
-    login: sessionStorage.getItem("usuarioLogin"),
-    perfil: sessionStorage.getItem("usuarioPerfil"),
-    nome: sessionStorage.getItem("usuarioNome"),
+    id: sessionStorage.getItem(CHAVES_SESSAO.id),
+    email: sessionStorage.getItem(CHAVES_SESSAO.email),
+    nome: sessionStorage.getItem(CHAVES_SESSAO.nome),
+    perfil: sessionStorage.getItem(CHAVES_SESSAO.perfil),
+    turmaCodigo: sessionStorage.getItem(CHAVES_SESSAO.turmaCodigo),
+    turmaNome: sessionStorage.getItem(CHAVES_SESSAO.turmaNome),
   };
 }
 
-function alternarTelaLogin() {
-  const telaLogin = document.getElementById("telaLogin");
-  const telaCadastro = document.getElementById("telaCadastro");
+/**
+ * Exibe uma mensagem de status no formulário de login.
+ * @param {string} mensagem - Texto a exibir.
+ * @param {"erro"|"sucesso"|"info"} tipo - Tipo da mensagem (define a cor via CSS).
+ */
+function mostrarMsgLogin(mensagem, tipo) {
+  const elemento = document.getElementById(IDS_LOGIN.mensagem);
+  if (!elemento) return;
+  elemento.textContent = mensagem;
+  elemento.className = "login-mensagem login-mensagem--" + tipo;
+}
 
-  if (telaLogin.style.display === "none") {
-    telaLogin.style.display = "block";
-    telaCadastro.style.display = "none";
-    document.getElementById("loginUsuario").focus();
-  } else {
-    telaLogin.style.display = "none";
-    telaCadastro.style.display = "block";
-    document.getElementById("cadastroNome").focus();
+/**
+ * Habilita ou desabilita o botão Entrar enquanto a autenticação acontece.
+ * @param {boolean} estaAguardando - true durante a chamada ao Supabase.
+ */
+function definirAguardando(estaAguardando) {
+  const botao = document.getElementById(IDS_LOGIN.botaoEntrar);
+  if (botao) botao.disabled = estaAguardando;
+}
+
+/**
+ * Autentica no Supabase Auth com e-mail e senha.
+ * @param {string} email - E-mail do aluno.
+ * @param {string} senha - Senha do aluno.
+ * @returns {Promise<Object>} Usuário autenticado.
+ * @throws {Error} Com a mensagem a exibir ao aluno.
+ */
+async function autenticar(email, senha) {
+  const cliente = obterClienteSupabase();
+  if (!cliente) throw new Error(MSG_BIBLIOTECA_AUSENTE);
+
+  const { data, error } = await cliente.auth.signInWithPassword({ email, password: senha });
+  if (!error) return data.user;
+  const ehCredencialInvalida = error.status === 400 || /invalid/i.test(error.message || "");
+  throw new Error(ehCredencialInvalida ? MSG_CREDENCIAIS_INVALIDAS : MSG_SEM_CONEXAO);
+}
+
+/**
+ * Trata o envio do formulário de login.
+ * @param {SubmitEvent} evento - Evento de envio do formulário.
+ */
+async function fazerLogin(evento) {
+  evento.preventDefault();
+  const usuario = document.getElementById(IDS_LOGIN.usuario).value;
+  const senha = document.getElementById(IDS_LOGIN.senha).value;
+  const camposPreenchidos = usuario.trim() && senha;
+  if (!camposPreenchidos) {
+    mostrarMsgLogin(MSG_CAMPOS_OBRIGATORIOS, "erro");
+    return;
   }
 
-  // Limpar mensagens
-  const msgLogin = document.getElementById("loginMsg");
-  const msgCadastro = document.getElementById("cadastroMsg");
-  if (msgLogin) msgLogin.textContent = "";
-  if (msgCadastro) msgCadastro.textContent = "";
+  mostrarMsgLogin(MSG_AUTENTICANDO, "info");
+  definirAguardando(true);
+  try {
+    salvarSessaoLocal(await autenticar(montarEmail(usuario), senha));
+    mostrarMsgLogin(MSG_SUCESSO, "sucesso");
+    setTimeout(() => location.assign(obterDestinoSeguro()), TEMPO_REDIRECIONAMENTO_MS);
+  } catch (erro) {
+    mostrarMsgLogin(erro.message, "erro");
+    definirAguardando(false);
+  }
 }
+
+/**
+ * Encerra a sessão no Supabase Auth, limpa os dados locais e volta para a página de login.
+ */
+async function fazerLogout() {
+  const cliente = obterClienteSupabase();
+  try {
+    if (cliente) await cliente.auth.signOut();
+  } finally {
+    limparSessaoLocal();
+    location.assign(PAGINA_LOGIN);
+  }
+}
+
+/**
+ * Garante que há sessão ativa; sem sessão, manda para o login com retorno à página atual.
+ * Para usar nas páginas protegidas (ex.: atividades).
+ * @returns {Promise<Object|null>} Usuário logado, ou null (redirecionando para o login).
+ */
+async function verificarAutenticacao() {
+  const cliente = obterClienteSupabase();
+  const { data } = cliente ? await cliente.auth.getSession() : { data: null };
+  const usuario = data?.session?.user;
+  if (usuario) {
+    salvarSessaoLocal(usuario);
+    return usuario;
+  }
+  const retorno = location.pathname + location.search + location.hash;
+  location.assign(PAGINA_LOGIN + "?" + PARAMETRO_VOLTAR + "=" + encodeURIComponent(retorno));
+  return null;
+}
+
+/**
+ * Mostra o painel "já conectado" no lugar do formulário.
+ * @param {Object} usuario - Usuário do Supabase Auth.
+ */
+function mostrarConectado(usuario) {
+  salvarSessaoLocal(usuario);
+  const nome = obterUsuarioAtual().nome;
+  document.getElementById(IDS_LOGIN.telaLogin).hidden = true;
+  document.getElementById(IDS_LOGIN.painelConectado).hidden = false;
+  document.getElementById(IDS_LOGIN.textoConectado).textContent =
+    "Você já está conectado como " + nome + ".";
+}
+
+/**
+ * Inicia a página de login: liga o formulário e os botões e verifica se já há sessão.
+ */
+async function iniciarPaginaLogin() {
+  const formulario = document.getElementById(IDS_LOGIN.formulario);
+  if (!formulario) return;
+
+  formulario.addEventListener("submit", fazerLogin);
+  document.getElementById(IDS_LOGIN.botaoSair)?.addEventListener("click", fazerLogout);
+  document.getElementById(IDS_LOGIN.botaoContinuar)?.addEventListener("click", () => {
+    location.assign(obterDestinoSeguro());
+  });
+
+  const cliente = obterClienteSupabase();
+  if (!cliente) {
+    mostrarMsgLogin(MSG_BIBLIOTECA_AUSENTE, "erro");
+    return;
+  }
+  const { data } = await cliente.auth.getSession();
+  if (data?.session?.user) mostrarConectado(data.session.user);
+}
+
+iniciarPaginaLogin();
