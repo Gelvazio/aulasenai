@@ -13,3 +13,7 @@ graphify-out/
 *.jpg
 *.jpeg
 
+
+# Slides em PDF das pastas de atividades (linkados pelos índices publicados na Vercel)
+!MATERIAIS/**/ATIVIDADES/**/*.pdf
+!MATERIAIS/**/ATIVIDADES/*.pdf
