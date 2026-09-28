@@ -1,0 +1,124 @@
+/* Respostas do aluno nas páginas de atividade (usado com assets/js/respostas-atividade.js). */
+:root {
+    --folha-azul-senai: #0b3d91;
+    --folha-borda: #000;
+    --folha-fundo-cabecalho: #f0f0f0;
+    --folha-marca-vazia: #9aa0a6;
+    --folha-marca-preenchida: #0b3d91;
+    --alternativa-marcada-fundo: #e8edff;
+    --alternativa-marcada-borda: #667eea;
+}
+
+/* Alternativas clicáveis */
+.questao .alternativas li { cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+.questao .alternativas li:hover { background: #eef2ff; }
+.questao .alternativas li:focus-visible { outline: 3px solid var(--alternativa-marcada-borda); }
+.alternativa--marcada {
+    background: var(--alternativa-marcada-fundo) !important;
+    border: 2px solid var(--alternativa-marcada-borda) !important;
+    font-weight: 600;
+}
+.alternativa--marcada::after { content: "  ✔"; color: var(--alternativa-marcada-borda); }
+
+/* Identificação do estudante (início da página) */
+.identificacao-estudante__rotulo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+}
+.identificacao-estudante__campo {
+    padding: 10px 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 15px;
+    max-width: 480px;
+}
+.identificacao-estudante__aviso { color: #c53030; font-size: 13px; font-weight: 600; margin-top: 8px; }
+
+/* Folha de respostas (fim da página) */
+.folha-respostas {
+    max-width: 210mm;
+    margin: 30px auto 0;
+    padding: 10mm;
+    background: #fff;
+    color: #000;
+    font-family: Arial, sans-serif;
+    border: 1px solid #cbd5e0;
+}
+.folha-respostas__cabecalho {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 0.5fr;
+    border: 1px solid var(--folha-borda);
+    font-size: 11px;
+}
+.folha-respostas__cabecalho > * { border: 1px solid var(--folha-borda); padding: 6px 8px; }
+.folha-respostas__senai {
+    background: var(--folha-azul-senai);
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+}
+.folha-respostas__titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 13px;
+}
+.folha-respostas__desempenho {
+    font-weight: 700;
+    text-align: center;
+    background: var(--folha-fundo-cabecalho);
+    min-height: 16mm;
+}
+.folha-respostas__campo--direita { grid-column: 2 / -1; }
+.folha-respostas__uc,
+.folha-respostas__campo--inteiro { grid-column: 1 / -1; }
+.folha-respostas__uc { font-weight: 700; }
+.folha-respostas__campo--forte { font-weight: 700; }
+.folha-respostas__campo--inteiro { display: flex; align-items: center; gap: 4px; font-size: 12px; }
+.folha-respostas__nome {
+    flex: 1;
+    border: none;
+    border-bottom: 1px dotted #555;
+    font: inherit;
+    font-weight: 700;
+    padding: 2px 4px;
+    text-transform: uppercase;
+}
+.folha-respostas__instrucoes { font-size: 10px; margin: 8px 0; }
+.folha-respostas__colunas { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; align-items: start; }
+.folha-respostas__tabela { width: 100%; border-collapse: collapse; font-size: 11px; }
+.folha-respostas__tabela th {
+    background: var(--folha-fundo-cabecalho);
+    border: 1px solid var(--folha-borda);
+    padding: 3px;
+}
+.folha-respostas__tabela td { border: 1px solid var(--folha-borda); padding: 3px; text-align: center; }
+.folha-respostas__numero { font-weight: 700; }
+.folha-respostas__marca { color: var(--folha-marca-vazia); white-space: pre; }
+.folha-respostas__marca--preenchida { color: var(--folha-marca-preenchida); font-weight: 700; }
+.folha-respostas__contagem { font-size: 12px; font-weight: 700; margin-top: 8px; }
+.folha-respostas__acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+.btn-export--secundario { background: #718096; }
+.btn-export--secundario:hover { background: #4a5568; }
+
+@media (max-width: 640px) {
+    .folha-respostas { padding: 12px; }
+    .folha-respostas__colunas { grid-template-columns: 1fr; }
+}
+
+/* Impressão só da folha (botão "Imprimir folha de respostas") */
+@media print {
+    body.imprimir-folha { background: #fff; padding: 0; }
+    body.imprimir-folha > *:not(.container),
+    body.imprimir-folha .container > *:not(.content-section),
+    body.imprimir-folha .content-section > *:not(.folha-respostas),
+    body.imprimir-folha .folha-respostas__acoes { display: none !important; }
+    body.imprimir-folha .container { box-shadow: none; border-radius: 0; }
+    body.imprimir-folha .content-section { padding: 0; }
+    body.imprimir-folha .folha-respostas { border: none; margin: 0 auto; }
+    body.imprimir-folha .folha-respostas__nome { border-bottom: none; }
+}
