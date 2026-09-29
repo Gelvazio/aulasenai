@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar usuários no Supabase Auth — guia</title>
+    <title>Criar usuários no Supabase Auth</title>
     <link rel="stylesheet" href="../assets/css/criar-usuarios-comando.css">
     <script src="LISTA-PRESENCA-CEPLAS-MANHA.js"></script>
-    <script src="../assets/js/criar-usuarios-comando.js" defer></script>
+    <script src="variaveis.js"></script>
+    <script src="../assets/js/criar-usuarios-api.js" defer></script>
+    <script src="../assets/js/criar-usuarios-pagina.js" defer></script>
 </head>
 <body>
     <main class="guia">
         <header class="guia-cabecalho">
             <h1>🧭 Criar usuários no Supabase Auth</h1>
-            <p>Guia que monta o comando de criar-usuarios-supabase-auth.js</p>
+            <p>Grava os alunos da lista de presença direto pela API do Supabase</p>
         </header>
 
         <section class="guia-cartao guia-aviso">
             <h2>⚠️ Segurança</h2>
-            <p>Esta página não grava nada no banco e não pede chave nem senha. A chave
-                <strong>service_role</strong> fica só em <code>scripts/variaveis.js</code> (fora do Git),
-                na sua máquina, e nunca deve ir para páginas, repositório ou chat.</p>
+            <p>Esta página usa a chave <strong>service_role</strong> de
+                <code>scripts/variaveis.js</code> (fora do Git) e só grava em
+                <code>127.0.0.1</code> ou <code>localhost</code>. Use só na sua máquina: com o
+                Live Server aberto na rede, outras pessoas conseguiriam ler o
+                <code>variaveis.js</code>. Nunca publique esta página nem a chave.</p>
         </section>
 
         <section class="guia-cartao">
@@ -32,20 +36,13 @@
         </section>
 
         <section class="guia-cartao">
-            <h2>2. Opções</h2>
+            <h2>2. Gravar</h2>
             <div class="guia-opcoes">
-                <label><input type="checkbox" id="guiaExecutar"> Gravar de verdade
-                    (--executar). Desmarcado = só simula.</label>
                 <label><input type="checkbox" id="guiaRedefinir"> Regravar a senha de quem já
-                    existe (--redefinir-senhas)</label>
+                    existe</label>
             </div>
-        </section>
-
-        <section class="guia-cartao">
-            <h2>3. Comando (rode no PowerShell, na raiz do projeto)</h2>
-            <pre class="guia-comando" id="guiaComando"></pre>
-            <button type="button" class="guia-botao" id="guiaCopiar">📋 Copiar comando</button>
-            <span class="guia-mensagem" id="guiaMensagem"></span>
+            <button type="button" class="guia-botao" id="guiaGravar">🚀 GRAVAR NO BANCO DE DADOS</button>
+            <pre class="guia-comando" id="guiaResultado"></pre>
         </section>
     </main>
 </body>
