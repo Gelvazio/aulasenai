@@ -261,3 +261,13 @@ body {
 }
 .impressao-questao__topo { border-bottom: 3px solid #f7941d; padding-bottom: 8px; margin-bottom: 14px; }
 .impressao-questao__topo h2 { color: #004384; font-size: 20pt; margin: 0 0 6px; }
+
+/* Impressão: grade e rolagem fragmentam mal nas páginas do PDF (blocos ficavam em branco). */
+@media print {
+  .questoes { display: block; }
+  .questao-cartao { display: block; margin: 0 0 10px; break-inside: avoid; page-break-inside: avoid; }
+  .tabela__rolagem { overflow: visible; }
+  .tabela-dados-linha { display: block; }
+  .passo__corpo, .passo__figura { overflow: visible; }
+  #impressao-completa, .impressao-questao { overflow: visible; height: auto; }
+}
