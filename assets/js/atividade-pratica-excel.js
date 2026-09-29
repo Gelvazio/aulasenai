@@ -75,6 +75,26 @@ function ligarPassosConcluidos(atividade) {
 }
 
 /**
+ * No PDF só a capa mantém o cabeçalho completo: nas questões ele vira apenas o título da
+ * questão e os selos (tempo, pontos, passos), sem marca, subtítulo nem campos de identificação.
+ * @param {HTMLElement} pagina - Conteúdo da questão baixada.
+ * @returns {void}
+ */
+function trocarCabecalhoPorTitulo(pagina) {
+  const cabecalho = pagina.querySelector('.cabecalho');
+  if (!cabecalho) return;
+
+  const topo = document.createElement('div');
+  topo.className = 'impressao-questao__topo';
+  const titulo = document.createElement('h2');
+  titulo.textContent = cabecalho.querySelector('.cabecalho__titulo')?.textContent.trim() || '';
+  topo.append(titulo);
+  const selos = cabecalho.querySelector('.cabecalho__selos');
+  if (selos) topo.append(selos);
+  cabecalho.replaceWith(topo);
+}
+
+/**
  * Baixa uma página de questão e devolve só o conteúdo que deve sair no PDF.
  * @param {string} url - Endereço da página da questão.
  * @returns {Promise<HTMLElement|null>} Seção pronta para impressão, ou null se falhar.
@@ -89,6 +109,7 @@ async function baixarQuestaoParaImpressao(url) {
     if (!pagina) return null;
 
     pagina.querySelectorAll(SELETOR_SO_TELA).forEach((elemento) => elemento.remove());
+    trocarCabecalhoPorTitulo(pagina);
     pagina.querySelectorAll('img').forEach((imagem) => {
       imagem.src = new URL(imagem.getAttribute('src'), url).href;
       imagem.loading = 'eager';

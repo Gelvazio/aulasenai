@@ -259,3 +259,5 @@ body {
   #impressao-completa { display: block; }
   .impressao-questao { break-before: page; page-break-before: always; }
 }
+.impressao-questao__topo { border-bottom: 3px solid #f7941d; padding-bottom: 8px; margin-bottom: 14px; }
+.impressao-questao__topo h2 { color: #004384; font-size: 20pt; margin: 0 0 6px; }
