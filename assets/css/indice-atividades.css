@@ -42,3 +42,10 @@ footer { background: #2d3748; color: white; padding: 24px 20px; text-align: cent
 .menu-principal a { color: white; font-size: 13px; font-weight: 700; text-decoration: none; padding: 7px 18px; border: 2px solid var(--gold); border-radius: 16px; }
 .menu-principal a:hover { background: var(--gold); color: var(--primary); }
 .menu-principal[hidden] { display: none; }
+
+.faixa-materias { background: white; border-radius: 12px; padding: 12px 16px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); }
+.faixa-materias__titulo { display: block; font-size: 12px; font-weight: 800; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
+.faixa-materias__lista { display: flex; flex-wrap: wrap; gap: 8px; }
+.faixa-materias__card { font-size: 13px; font-weight: 600; text-decoration: none; color: var(--text); background: #f7fafc; border: 2px solid #e2e8f0; border-radius: 10px; padding: 8px 12px; }
+.faixa-materias__card:hover { border-color: var(--primary); background: #eef0fd; }
+.faixa-materias__card--atual { background: var(--primary); border-color: var(--primary); color: white; }

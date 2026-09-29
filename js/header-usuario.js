@@ -1,6 +1,7 @@
 // ── Header do usuário logado ──────────────────────────
 // Genérico: preenche o elemento <div id="header-usuario"></div> de qualquer página com o
 // usuário logado (Supabase Auth) e o botão SAIR; sem sessão, mostra o botão ENTRAR.
+// Sempre mostra o botão HOME (index.html da raiz) junto do usuário logado.
 // Uso na página: <script src=".../js/header-usuario.js" defer></script> + o div acima.
 // Qualquer elemento com data-somente-perfil="PROFESSOR" (e hidden) só aparece para esse perfil.
 // Os caminhos (CSS, supabase.js, login.html) são calculados a partir do próprio script,
@@ -11,7 +12,9 @@ const URL_SUPABASE_CDN = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2";
 const ROTA_CSS_HEADER = "../assets/css/header-usuario.css";
 const ROTA_SUPABASE_JS = "supabase.js";
 const ROTA_LOGIN = "../login.html";
+const ROTA_HOME = "../index.html";
 const PARAMETRO_VOLTAR_HEADER = "voltar";
+const TEXTO_HOME = "HOME";
 const TEXTO_ENTRAR = "ENTRAR";
 const TEXTO_SAIR = "SAIR";
 const TEXTO_SEM_LOGIN = "Você não está logado";
@@ -83,6 +86,16 @@ function criarElementoHeader(tag, classe, texto) {
 }
 
 /**
+ * Monta o botão HOME, que leva à página inicial do site (index.html da raiz).
+ * @returns {HTMLAnchorElement} Link com aparência de botão.
+ */
+function criarBotaoHome() {
+  const botao = criarElementoHeader("a", "header-usuario__botao header-usuario__home", TEXTO_HOME);
+  botao.href = resolverRotaHeader(ROTA_HOME);
+  return botao;
+}
+
+/**
  * Monta o botão ENTRAR, que volta para a página atual depois do login.
  * @returns {HTMLAnchorElement} Link com aparência de botão.
  */
@@ -95,7 +108,7 @@ function criarBotaoEntrar() {
 }
 
 /**
- * Monta o botão SAIR, que encerra a sessão e recarrega a página.
+ * Monta o botão SAIR, que encerra a sessão e sempre vai para a página de login.
  * @param {Object} cliente - Cliente do Supabase.
  * @returns {HTMLButtonElement} Botão de sair.
  */
@@ -104,7 +117,7 @@ function criarBotaoSair(cliente) {
   botao.type = "button";
   botao.addEventListener("click", async () => {
     await cliente.auth.signOut();
-    location.reload();
+    location.assign(resolverRotaHeader(ROTA_LOGIN));
   });
   return botao;
 }
@@ -140,6 +153,7 @@ function aplicarVisibilidadePorPerfil(usuario) {
 function desenharHeaderUsuario(destino, cliente, usuario) {
   const barra = criarElementoHeader("div", "header-usuario__barra", "");
   const texto = usuario ? descreverUsuarioHeader(usuario) : TEXTO_SEM_LOGIN;
+  barra.append(criarBotaoHome());
   barra.append(criarElementoHeader("span", "header-usuario__nome", texto));
   barra.append(usuario ? criarBotaoSair(cliente) : criarBotaoEntrar());
   destino.replaceChildren(barra);
@@ -152,6 +166,8 @@ async function iniciarHeaderUsuario() {
   const destino = document.getElementById(ID_HEADER_USUARIO);
   if (!destino) return;
 
+  // Sai do <body> para não herdar o padding/margem da página: a barra fica colada no topo.
+  document.documentElement.insertBefore(destino, document.body);
   incluirCssHeader();
   try {
     const cliente = await obterClienteHeader();

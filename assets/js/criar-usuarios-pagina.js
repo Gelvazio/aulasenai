@@ -34,11 +34,17 @@ function obterElementoGuia(chave) {
 
 /**
  * Junta as turmas de todas as listas carregadas (window.LISTA_PRESENCA e window.LISTAS_PRESENCA).
- * @returns {Object[]} Turmas de todas as listas; vazio se nenhuma lista foi carregada.
+ * @returns {Object[]} Turmas de todas as listas, cada uma com a UC e o local da lista;
+ *     vazio se nenhuma lista foi carregada.
  */
 function reunirTurmasPresenca() {
     const listas = [window.LISTA_PRESENCA, ...(window.LISTAS_PRESENCA || [])].filter(Boolean);
-    return listas.flatMap((lista) => lista.turmas || []);
+    return listas.flatMap((lista) => (
+        (lista.turmas || []).map((turma) => ({
+            ...turma,
+            uc: turma.uc || lista.uc || '',
+            local: turma.local || lista.local || '',
+        }))));
 }
 
 /**
@@ -186,6 +192,26 @@ async function gravarSelecionadosGuia(contexto) {
 }
 
 /**
+ * Monta o local e o turno em maiúsculas (ex.: "AI CEPLAS MANHÃ").
+ * @param {Object} turma - Turma com local e turno.
+ * @returns {string} Texto pronto; vazio se a turma não tem local nem turno.
+ */
+function montarLocalTurnoGuia(turma) {
+    return [turma.local, turma.turno].filter(Boolean).join(' ').toUpperCase();
+}
+
+/**
+ * Monta o título do cartão: "NOME (código: X) - LOCAL TURNO" (local e turno em maiúsculas).
+ * @param {Object} turma - Turma com nome, codigo, local e turno.
+ * @returns {string} Título pronto.
+ */
+function montarTituloTurmaGuia(turma) {
+    const localTurno = montarLocalTurnoGuia(turma);
+    const base = turma.nome + ' (código: ' + turma.codigo + ')';
+    return localTurno ? base + ' - ' + localTurno : base;
+}
+
+/**
  * Cria o cartão de uma turma: título, controles, botão, resultado e tabela de alunos.
  * @param {Object} turma - Turma da lista de presença.
  * @param {{cadastrados: Map<string, string>|null, mostrarSenha: boolean}} contexto - Cadastrados
@@ -217,8 +243,7 @@ function criarCartaoTurmaGuia(turma, contexto) {
     };
 
     const titulo = document.createElement('h2');
-    titulo.textContent = turma.nome + ' (código: ' + turma.codigo + ') — '
-        + turma.alunos.length + ' alunos';
+    titulo.textContent = montarTituloTurmaGuia(turma);
     cartao.append(titulo, barra, botao, resultado, tabela);
     aoMudar();
     return cartao;
@@ -238,6 +263,19 @@ function alternarAbaGuia(indice) {
 }
 
 /**
+ * Cria um trecho de texto dentro da aba.
+ * @param {string} classe - Classe CSS do trecho.
+ * @param {string} texto - Texto exibido.
+ * @returns {HTMLSpanElement} Trecho pronto.
+ */
+function criarElementoAbaGuia(classe, texto) {
+    const trecho = document.createElement('span');
+    trecho.className = classe;
+    trecho.textContent = texto;
+    return trecho;
+}
+
+/**
  * Cria o botão de aba de uma turma.
  * @param {Object} turma - Turma da aba.
  * @param {number} indice - Posição da turma.
@@ -247,7 +285,11 @@ function criarAbaTurmaGuia(turma, indice) {
     const aba = document.createElement('button');
     aba.type = 'button';
     aba.className = 'guia-aba';
-    aba.textContent = turma.nome + ' (' + turma.alunos.length + ')';
+    const localTurno = montarLocalTurnoGuia(turma);
+    if (localTurno) aba.append(criarElementoAbaGuia('guia-aba__local', localTurno));
+    if (turma.uc) aba.append(criarElementoAbaGuia('guia-aba__uc', turma.uc));
+    aba.append(criarElementoAbaGuia('guia-aba__turma',
+        turma.nome + ' (' + turma.alunos.length + ')'));
     aba.addEventListener('click', () => alternarAbaGuia(indice));
     return aba;
 }

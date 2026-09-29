@@ -242,3 +242,14 @@ body {
   .passo, .bloco { border-color: #999; }
   .formula { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+
+.tabela--dados, .tabela--dados td, .tabela--dados th { user-select: text; -webkit-user-select: text; }
+.botao--copiar { display: inline-block; margin: 8px 0; border: none; cursor: pointer; font: inherit; font-weight: 700; padding: 8px 16px; border-radius: 8px; background: #1e7e34; color: #fff; }
+.botao--copiar:hover { background: #166028; }
+@media print { .botao--copiar { display: none; } }
+.tabela-dados-linha { display: flex; gap: 12px; align-items: flex-start; }
+.tabela-dados-linha .tabela__rolagem { flex: 1; min-width: 0; }
+.tabela-dados-linha .botao--copiar { margin: 0; flex: 0 0 auto; }
+@media (max-width: 600px) { .tabela-dados-linha { flex-direction: column-reverse; } }
+.passo__copiar { display: flex; align-items: center; gap: 10px; margin: 8px 0; flex-wrap: wrap; }
+.passo__copiar .botao--copiar { margin: 0; }

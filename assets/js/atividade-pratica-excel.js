@@ -5,6 +5,10 @@
 
 const PREFIXO_CHAVE = 'atividade-excel:';
 const CLASSE_PASSO_FEITO = 'passo--feito';
+const TEXTO_COPIAR = '📋 Copiar';
+const TEXTO_COPIADO = '✅ Copiado!';
+const TEXTO_FALHA_COPIA = '⚠️ Não foi possível copiar';
+const TEMPO_AVISO_COPIA_MS = 2500;
 
 /**
  * Lê um valor salvo no navegador sem quebrar a página se o armazenamento estiver bloqueado.
@@ -76,6 +80,101 @@ function ligarImpressao() {
 }
 
 /**
+ * Garante que só dados sejam copiados: qualquer texto que comece com "=" (fórmula) vira vazio,
+ * porque as fórmulas devem ser feitas pelos alunos.
+ * @param {string} texto - Conteúdo da célula.
+ * @returns {string} O texto, ou vazio se for uma fórmula.
+ */
+function textoSemFormula(texto) {
+  return texto.startsWith('=') ? '' : texto;
+}
+
+/**
+ * Converte a tabela em texto separado por tabulação (cola direto nas células do Excel/Calc).
+ * @param {HTMLTableElement} tabela - Tabela "Dados para digitar".
+ * @returns {string} Linhas separadas por quebra de linha e colunas por tabulação.
+ */
+function tabelaParaTexto(tabela) {
+  const tabulacao = String.fromCharCode(9);
+  const quebraLinha = String.fromCharCode(10);
+  return Array.from(tabela.rows)
+    .map((linha) => Array.from(linha.cells).map((celula) => textoSemFormula(celula.textContent.trim()))
+      .join(tabulacao))
+    .join(quebraLinha);
+}
+
+/**
+ * Copia um texto para a área de transferência, com alternativa para navegadores sem a API.
+ * @param {string} texto - Texto a copiar.
+ * @returns {Promise<boolean>} true se copiou.
+ */
+async function copiarTexto(texto) {
+  try {
+    await navigator.clipboard.writeText(texto);
+    return true;
+  } catch (erro) {
+    const campo = document.createElement('textarea');
+    campo.value = texto;
+    document.body.appendChild(campo);
+    campo.select();
+    const copiou = document.execCommand('copy');
+    campo.remove();
+    return copiou;
+  }
+}
+
+/**
+ * Cria o botão "Copiar" de uma tabela de dados; mostra a confirmação por instantes.
+ * @param {HTMLTableElement} tabela - Tabela "Dados para digitar".
+ * @returns {HTMLButtonElement} Botão pronto.
+ */
+function criarBotaoCopiar(tabela) {
+  const botao = document.createElement('button');
+  botao.type = 'button';
+  botao.className = 'botao botao--copiar';
+  botao.textContent = TEXTO_COPIAR;
+  botao.addEventListener('click', () => copiarComAviso(botao, tabelaParaTexto(tabela)));
+  return botao;
+}
+
+/**
+ * Copia o texto e mostra no botão se deu certo, voltando ao rótulo original depois.
+ * @param {HTMLButtonElement} botao - Botão clicado.
+ * @param {string} texto - Texto a copiar.
+ * @returns {Promise<void>} Resolve depois de copiar.
+ */
+async function copiarComAviso(botao, texto) {
+  const copiou = await copiarTexto(texto);
+  botao.textContent = copiou ? TEXTO_COPIADO : TEXTO_FALHA_COPIA;
+  setTimeout(() => { botao.textContent = TEXTO_COPIAR; }, TEMPO_AVISO_COPIA_MS);
+}
+
+/**
+ * Liga os botões "Copiar" das imagens de planilha: o texto (só dados) vem em data-copiar.
+ * @returns {void}
+ */
+function ligarCopiaDasImagens() {
+  document.querySelectorAll('button[data-copiar]').forEach((botao) => {
+    botao.addEventListener('click', () => copiarComAviso(botao, botao.dataset.copiar));
+  });
+}
+
+/**
+ * Coloca um botão "Copiar" ao lado de cada tabela "Dados para digitar". Copia só os dados
+ * digitáveis; formatação e fórmulas são feitas pelo aluno na planilha.
+ * @returns {void}
+ */
+function ligarCopiaDosDados() {
+  document.querySelectorAll('.tabela--dados').forEach((tabela) => {
+    const rolagem = tabela.closest('.tabela__rolagem') || tabela;
+    const linha = document.createElement('div');
+    linha.className = 'tabela-dados-linha';
+    rolagem.parentNode.insertBefore(linha, rolagem);
+    linha.append(rolagem, criarBotaoCopiar(tabela));
+  });
+}
+
+/**
  * Inicializa a página da atividade.
  * @returns {void}
  */
@@ -83,6 +182,8 @@ function iniciarAtividade() {
   const atividade = document.body.dataset.atividade || 'atividade';
   ligarPassosConcluidos(atividade);
   ligarImpressao();
+  ligarCopiaDosDados();
+  ligarCopiaDasImagens();
 }
 
 document.addEventListener('DOMContentLoaded', iniciarAtividade);

@@ -789,6 +789,7 @@
         },
         {
           "titulo": "Digite os 15 materiais",
+          "tabela_dados": 0,
           "legenda": "Digite linha por linha: Tab entre as colunas (1) e Enter no fim da linha (2).",
           "imagem": {
             "alt": "Aba Cadastro com os 15 materiais digitados, ainda sem formatação",
@@ -834,7 +835,7 @@
             }
           },
           "instrucoes": [
-            "Copie os 15 itens da tabela **Dados para digitar** (na capa da atividade) nas linhas 2 a 16.",
+            "Na tabela **Dados para digitar** logo abaixo, clique em **Copiar** e cole na célula **A1** da aba Cadastro (ou digite à mão): os 15 itens ocupam as linhas 2 a 16. Só os dados são copiados; a formatação e as fórmulas você faz nos próximos passos.",
             "Digite o custo com **vírgula** (ex.: `18,90`) e as quantidades sem ponto de milhar (ex.: `1200`).",
             "Use [[Tab]] entre as colunas (1) e [[Enter]] no fim de cada linha (2): o Excel volta sozinho para a coluna A da linha de baixo."
           ],
@@ -1925,6 +1926,7 @@
         },
         {
           "titulo": "Lance as 12 movimentações usando as listas",
+          "tabela_dados": 1,
           "legenda": "Clique na setinha da célula (1) e escolha o código na lista (2).",
           "imagem": {
             "alt": "Lista suspensa aberta na célula B7 com os códigos de materiais",
@@ -1994,7 +1996,7 @@
             }
           },
           "instrucoes": [
-            "Lance as **12 movimentações** da capa, uma por linha, a partir da linha 2.",
+            "Lance as **12 movimentações** da tabela **Dados para digitar** logo abaixo (botão **Copiar** para consultar ou colar), uma por linha, a partir da linha 2.",
             "Data: digite no formato `01/09/2026`.",
             "Código: clique na célula, clique na **setinha** (1) e escolha o código (2).",
             "Tipo: use a setinha e escolha **Entrada** ou **Saída**. Quantidade: digite o número.",

@@ -1,5 +1,5 @@
 /* Header do usuário logado (js/header-usuario.js). Classes com prefixo header-usuario__. */
-#header-usuario { font-family: "Segoe UI", Arial, sans-serif; }
+#header-usuario { display: block; width: 100%; font-family: "Segoe UI", Arial, sans-serif; }
 .header-usuario__barra {
     display: flex;
     align-items: center;
@@ -25,3 +25,4 @@
 }
 .header-usuario__botao:hover { background: #d97706; }
 @media print { #header-usuario { display: none; } }
+.header-usuario__home { margin-right: auto; }
