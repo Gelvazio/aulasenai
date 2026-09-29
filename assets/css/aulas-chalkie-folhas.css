@@ -169,10 +169,21 @@ body { background: #05080f; }
 .folha__titulo-grande { margin: 12px 0 0; font-size: 3rem; line-height: 1.1; font-weight: 800; }
 
 /* Cartão de tema com detalhamento (título + lista de tópicos) */
-.tema { flex-direction: column; align-items: stretch; justify-content: center; gap: 8px; padding: 12px 22px; }
-.tema__cabecalho { display: flex; align-items: center; gap: 14px; }
-.tema__numero { width: 46px; height: 46px; border-radius: 14px; font-size: 1.45rem; }
-.tema__titulo { font-size: 1.12rem; line-height: 1.25; }
-.tema__lista { margin: 0; padding-left: 20px; color: var(--cor-texto-suave); font-size: 0.9rem; line-height: 1.4; }
+.tema { flex-direction: column; align-items: stretch; justify-content: center; gap: 12px; padding: 18px 28px; }
+.tema__cabecalho { display: flex; align-items: center; gap: 18px; }
+.tema__numero { width: 58px; height: 58px; border-radius: 16px; font-size: 1.8rem; }
+.tema__titulo { font-size: 1.55rem; line-height: 1.25; }
+.tema__lista { margin: 0; padding-left: 20px; color: var(--cor-texto); font-size: 1.2rem; line-height: 1.45; }
 .tema__lista strong { color: var(--cor-aula); }
-.tema .etiqueta { align-self: flex-start; margin-top: 0; }
+.tema .etiqueta { align-self: flex-start; margin-top: 0; font-size: 0.95rem; }
+
+/* 2 cartões por linha: folha de 5 temas (3 linhas, o último ocupa a linha inteira) e de 4 temas (2 linhas) */
+.temas--5 { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); }
+.temas--5 .tema:last-child { grid-column: span 2; }
+.temas--4 { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); }
+.temas--5 .tema__lista { font-size: 1.1rem; line-height: 1.4; }
+.temas--5 .tema { gap: 8px; padding: 14px 28px; }
+.temas--4 .tema__titulo { font-size: 1.9rem; }
+.temas--4 .tema__lista { font-size: 1.4rem; line-height: 1.5; }
+.temas--4 .tema__numero { width: 70px; height: 70px; font-size: 2.2rem; }
+.temas--4 .tema .etiqueta { font-size: 1.05rem; }
