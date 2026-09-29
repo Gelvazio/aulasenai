@@ -85,15 +85,15 @@ Itens da ementa do curso **sem tema correspondente** em "já passado":
 
 | Item da ementa | Situação |
 |----------------|----------|
-| O que é tecnologia? Dispositivos digitais no cotidiano | Não consta (pode ter sido tratado em História da Informática: confirmar) |
-| Fake news, cyberbullying e pegadas digitais | Confirmar se entrou em Segurança da Informação |
-| Digitação e atalhos de teclado | Não consta (confirmar em Hardware e SO) |
-| Editor de texto (Docs, WordPad ou Writer) | Não consta |
-| Apresentações básicas (Slides ou PowerPoint) | Não consta |
-| Navegadores e boas práticas de pesquisa | Não consta |
+| O que é tecnologia? Dispositivos digitais no cotidiano |
+| Fake news, cyberbullying e pegadas digitais | 
+| Digitação e atalhos de teclado | 
+| Editor de texto (Docs, WordPad ou Writer) | 
+| Apresentações básicas (Slides ou PowerPoint) | 
+| Navegadores e boas práticas de pesquisa | 
 | Algoritmos: sequência, decisão e repetição; fluxogramas | Só introdução (Fundamentos da Programação) |
 | Programação em blocos (Scratch) | Não consta |
-| Implicações éticas e sociais das tecnologias | Não consta |
+| Implicações éticas e sociais das tecnologias |
 
 ## 6. Aulas ainda sem tema (10h)
 
