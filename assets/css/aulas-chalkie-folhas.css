@@ -1,0 +1,120 @@
+/* Folhas de 1600x900 (16:9) para virar imagem. Usar depois de aulas-chalkie.css.
+   Cada .folha é uma "página": fundo escuro, cabeçalho, conteúdo e rodapé com numeração. */
+
+body { background: #05080f; }
+
+.folhas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 32px 16px;
+}
+
+.folha {
+  position: relative;
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 20px;
+  width: 1600px;
+  height: 900px;
+  padding: 36px 48px 26px;
+  overflow: hidden;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(47, 123, 255, 0.30), transparent 40%),
+    radial-gradient(circle at 95% 10%, rgba(138, 92, 255, 0.28), transparent 40%),
+    radial-gradient(circle at 60% 110%, rgba(240, 68, 127, 0.25), transparent 45%),
+    var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  box-shadow: var(--sombra-cartao);
+}
+
+.folha__cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.folha__titulo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+  font-size: 2.1rem;
+}
+
+.folha__titulo::before {
+  content: "";
+  width: 9px;
+  height: 38px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, var(--cor-azul), var(--cor-roxo));
+}
+
+.folha__selo {
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.folha__rodape {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  color: var(--cor-texto-suave);
+  font-size: 0.85rem;
+}
+
+/* ---------- Folha 1: capa ---------- */
+.capa {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+  gap: 32px;
+}
+
+.capa__titulo { margin: 14px 0 10px; font-size: 3.4rem; line-height: 1.08; font-weight: 800; }
+.capa__texto { margin: 0; max-width: 620px; color: #cdd7f5; font-size: 1.15rem; }
+
+.capa__numeros { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.folha .passos { grid-template-columns: repeat(4, 1fr); }
+.folha .passo { padding: 16px 18px; }
+
+.trilha { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+
+.trilha .encontro { margin: 0; padding: 14px 16px; }
+.trilha .encontro::before { display: none; }
+.trilha .encontro__aulas { font-size: 0.9rem; }
+
+/* ---------- Folhas 2 e 3: cartões ---------- */
+.grade { display: grid; flex: 1; gap: 16px; min-height: 0; }
+.grade--5 { grid-template-columns: repeat(5, 1fr); }
+.grade--4 { grid-template-columns: repeat(4, 1fr); }
+
+.folha .aula:hover { transform: none; }
+.folha .aula__topo { padding: 14px 16px; }
+.folha .aula__numero { width: 42px; height: 42px; font-size: 1.25rem; }
+.folha .aula__titulo { font-size: 0.98rem; }
+.folha .aula__corpo { gap: 10px; padding: 14px 16px 16px; }
+.folha .aula__campo { font-size: 0.88rem; }
+.folha .aula__observacao { font-size: 0.8rem; }
+
+.aviso { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; }
+.aviso .alerta, .aviso .regra-ouro { margin: 0; padding: 16px 20px; }
+.aviso .regra-ouro { display: grid; place-items: center; font-size: 0.98rem; }
+
+@page { size: 1600px 900px; margin: 0; }
+
+@media print {
+  body { background: none; }
+  .folhas { display: block; padding: 0; }
+  .folha { break-after: page; border-radius: 0; box-shadow: none; }
+}
