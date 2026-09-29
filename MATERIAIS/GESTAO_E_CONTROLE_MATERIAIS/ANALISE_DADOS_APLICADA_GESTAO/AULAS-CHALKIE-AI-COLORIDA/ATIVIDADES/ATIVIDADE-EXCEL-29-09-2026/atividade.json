@@ -1996,7 +1996,7 @@
             }
           },
           "instrucoes": [
-            "Lance as **12 movimentações** da tabela **Dados para digitar** logo abaixo (botão **Copiar** para consultar ou colar), uma por linha, a partir da linha 2.",
+            "Na tabela **Dados para digitar** logo abaixo, clique em **Copiar** e cole na célula **A1** da aba Movimentacao: os 12 lançamentos entram nas linhas 2 a 13, cada dado na sua coluna (as colunas C, F, G e H ficam em branco).",
             "Data: digite no formato `01/09/2026`.",
             "Código: clique na célula, clique na **setinha** (1) e escolha o código (2).",
             "Tipo: use a setinha e escolha **Entrada** ou **Saída**. Quantidade: digite o número.",

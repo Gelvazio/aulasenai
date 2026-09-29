@@ -133,7 +133,8 @@ function criarBotaoCopiar(tabela) {
   botao.type = 'button';
   botao.className = 'botao botao--copiar';
   botao.textContent = TEXTO_COPIAR;
-  botao.addEventListener('click', () => copiarComAviso(botao, tabelaParaTexto(tabela)));
+  botao.addEventListener('click', () => copiarComAviso(
+    botao, tabela.dataset.copiar || tabelaParaTexto(tabela)));
   return botao;
 }
 
