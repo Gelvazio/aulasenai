@@ -5,9 +5,18 @@
 
 const MSG_SEM_LISTA = 'Nenhuma lista encontrada. Coloque os arquivos LISTA-PRESENCA*.js nesta pasta.';
 const MSG_GRAVANDO = 'Gravando...';
+const MSG_CONSULTANDO = 'Consultando auth.users...';
+const MSG_SOMENTE_LEITURA = 'Modo somente leitura: senhas ocultas e gravação desabilitada.';
 const MSG_CONSULTA_FALHOU = 'Não foi possível consultar auth.users (coluna Cadastrado = "?"): ';
 const MSG_CONSULTA_OK = 'Cadastrado: consulta feita em auth.users ao abrir a página.';
+const PERFIL_EXIGIDO_GUIA = 'PROFESSOR';
+const MSG_SEM_LOGIN = 'Você não está logado. Só o professor logado pode ver as senhas e gravar.';
+const MSG_SEM_PERFIL = 'Só o perfil PROFESSOR vê as senhas e grava. Seu perfil: ';
+const PERFIL_DESCONHECIDO = '(sem perfil)';
+const ROTA_LOGIN_GUIA = '../login.html';
 const IDS_GUIA = {
+    bloqueio: 'guiaBloqueio',
+    opcoes: 'guiaOpcoes',
     turmas: 'guiaTurmas',
     abas: 'guiaAbas',
     redefinir: 'guiaRedefinir',
@@ -33,6 +42,39 @@ function reunirTurmasPresenca() {
 }
 
 /**
+ * Lê o usuário logado (sessão do Supabase Auth).
+ * @returns {Promise<Object|null>} Usuário logado ou null sem sessão ou sem o cliente Supabase.
+ */
+async function obterUsuarioLogadoGuia() {
+    try {
+        const { data } = await obterClienteSupabase().auth.getSession();
+        return data?.session?.user || null;
+    } catch (erro) {
+        return null;
+    }
+}
+
+/**
+ * Explica por que a página está só para leitura (sem login ou sem perfil de professor).
+ * @param {Object|null} usuario - Usuário logado ou null.
+ */
+function avisarSemPermissaoGuia(usuario) {
+    const bloqueio = obterElementoGuia('bloqueio');
+    const perfil = usuario?.app_metadata?.perfil || PERFIL_DESCONHECIDO;
+    const mensagem = document.createElement('p');
+    mensagem.textContent = usuario ? MSG_SEM_PERFIL + perfil : MSG_SEM_LOGIN;
+    bloqueio.replaceChildren(mensagem);
+    if (!usuario) {
+        const entrar = document.createElement('a');
+        entrar.className = 'guia-botao';
+        entrar.textContent = 'ENTRAR';
+        entrar.href = ROTA_LOGIN_GUIA + '?voltar=' + encodeURIComponent(location.pathname);
+        bloqueio.append(entrar);
+    }
+    bloqueio.hidden = false;
+}
+
+/**
  * Consulta os cadastrados em auth.users e avisa o resultado na página.
  * @returns {Promise<Map<string, string>|null>} E-mails cadastrados; null se a consulta falhou.
  */
@@ -54,11 +96,12 @@ async function consultarCadastradosGuia() {
  * Atualiza o texto e a disponibilidade do botão conforme a quantidade de alunos marcados.
  * @param {HTMLButtonElement} botao - Botão de gravar da turma.
  * @param {HTMLTableElement} tabela - Tabela de alunos da turma.
+ * @param {boolean} podeGravar - false para quem não é professor logado (botão sempre desabilitado).
  */
-function atualizarBotaoGuia(botao, tabela) {
+function atualizarBotaoGuia(botao, tabela, podeGravar) {
     const total = obterEmailsMarcadosGuia(tabela).length;
     botao.textContent = '🚀 GRAVAR SELECIONADOS (' + total + ')';
-    botao.disabled = total === 0;
+    botao.disabled = !podeGravar || total === 0;
 }
 
 /**
@@ -114,11 +157,13 @@ async function atualizarTodasAsTabelasGuia() {
 
 /**
  * Grava só os alunos selecionados da turma, depois de confirmar, e atualiza a coluna Cadastrado.
- * @param {{turma: Object, botao: HTMLElement, tabela: HTMLElement, resultado: HTMLElement}}
- *     contexto - Turma e elementos da aba.
+ * @param {{turma: Object, botao: HTMLElement, tabela: HTMLElement, resultado: HTMLElement,
+ *     podeGravar: boolean}} contexto - Turma, elementos da aba e permissão de gravar.
  */
 async function gravarSelecionadosGuia(contexto) {
-    const { turma, botao, tabela, resultado } = contexto;
+    const { turma, botao, tabela, resultado, podeGravar } = contexto;
+    if (!podeGravar) return;
+
     const emails = new Set(obterEmailsMarcadosGuia(tabela));
     const turmaSelecionada = { ...turma, alunos: turma.alunos.filter((a) => emails.has(a.email)) };
     const pergunta = 'Gravar ' + emails.size + ' usuário(s) da turma ' + turma.nome + '?';
@@ -143,10 +188,11 @@ async function gravarSelecionadosGuia(contexto) {
 /**
  * Cria o cartão de uma turma: título, controles, botão, resultado e tabela de alunos.
  * @param {Object} turma - Turma da lista de presença.
- * @param {Map<string, string>|null} cadastrados - E-mails cadastrados.
+ * @param {{cadastrados: Map<string, string>|null, mostrarSenha: boolean}} contexto - Cadastrados
+ *   e permissão de ver a senha (só professor logado).
  * @returns {HTMLElement} Cartão pronto.
  */
-function criarCartaoTurmaGuia(turma, cadastrados) {
+function criarCartaoTurmaGuia(turma, contexto) {
     const cartao = document.createElement('section');
     cartao.className = 'guia-cartao';
     cartao.dataset.turma = turma.codigo;
@@ -157,13 +203,14 @@ function criarCartaoTurmaGuia(turma, cadastrados) {
     const resultado = document.createElement('pre');
     resultado.className = 'guia-comando';
     const aoMudar = () => {
-        atualizarBotaoGuia(botao, tabela);
+        atualizarBotaoGuia(botao, tabela, contexto.podeGravar);
+        atualizarSenhasGuia(tabela);
         barra.marcarTodos.checked = todosVisiveisMarcadosGuia(tabela);
     };
-    const tabela = criarTabelaAlunosGuia(turma, cadastrados, aoMudar);
+    const tabela = criarTabelaAlunosGuia(turma, contexto, aoMudar);
     const barra = criarBarraControlesGuia(tabela, aoMudar);
     botao.addEventListener('click', () => gravarSelecionadosGuia(
-        { turma, botao, tabela, resultado }));
+        { turma, botao, tabela, resultado, podeGravar: contexto.podeGravar }));
     cartao.reaplicarFiltro = () => {
         aplicarFiltroGuia(tabela, barra.filtro.value);
         aoMudar();
@@ -206,9 +253,14 @@ function criarAbaTurmaGuia(turma, indice) {
 }
 
 /**
- * Inicia a página: consulta auth.users e monta as abas com um cartão por turma.
+ * Inicia a página: só o professor logado vê senhas, consulta auth.users e grava; monta as abas com um cartão por turma.
  */
 async function iniciarGuiaUsuarios() {
+    const usuario = await obterUsuarioLogadoGuia();
+    const ehProfessor = usuario?.app_metadata?.perfil === PERFIL_EXIGIDO_GUIA;
+    if (!ehProfessor) avisarSemPermissaoGuia(usuario);
+    obterElementoGuia('aviso').textContent = ehProfessor ? MSG_CONSULTANDO : MSG_SOMENTE_LEITURA;
+
     const turmas = reunirTurmasPresenca();
     if (!turmas.length) {
         const aviso = obterElementoGuia('aviso');
@@ -216,10 +268,11 @@ async function iniciarGuiaUsuarios() {
         aviso.classList.add('guia-erro');
         return;
     }
-    const cadastrados = await consultarCadastradosGuia();
+    const cadastrados = ehProfessor ? await consultarCadastradosGuia() : null;
+    const contexto = { cadastrados, mostrarSenha: ehProfessor, podeGravar: ehProfessor };
     obterElementoGuia('abas').replaceChildren(...turmas.map(criarAbaTurmaGuia));
     obterElementoGuia('turmas').replaceChildren(
-        ...turmas.map((turma) => criarCartaoTurmaGuia(turma, cadastrados)));
+        ...turmas.map((turma) => criarCartaoTurmaGuia(turma, contexto)));
     alternarAbaGuia(0);
 }
 

@@ -9,11 +9,15 @@
     <script src="LISTA-PRESENCA-ITIC-CEPLAS-MANHA.js"></script>
     <script src="LISTA-PRESENCA-ITIC-CEPLAS-TARDE.js"></script>
     <script src="variaveis.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js" defer></script>
+    <script src="../js/header-usuario.js" defer></script>
     <script src="../assets/js/criar-usuarios-api.js" defer></script>
     <script src="../assets/js/criar-usuarios-tabela.js" defer></script>
     <script src="../assets/js/criar-usuarios-pagina.js" defer></script>
 </head>
 <body>
+    <div id="header-usuario"></div>
     <main class="guia">
         <header class="guia-cabecalho">
             <h1>🧭 Criar usuários no Supabase Auth</h1>
@@ -29,9 +33,11 @@
                 <code>variaveis.js</code>. Nunca publique esta página nem a chave.</p>
         </section>
 
-        <section class="guia-cartao">
+        <section class="guia-cartao guia-erro" id="guiaBloqueio" hidden></section>
+
+        <section class="guia-cartao" id="guiaOpcoes">
             <h2>Opção de gravação</h2>
-            <p id="guiaAviso">Consultando auth.users...  As senhas não são exibidas.</p>
+            <p id="guiaAviso">Verificando o usuário logado...</p>
             <div class="guia-opcoes">
                 <label><input type="checkbox" id="guiaRedefinir"> Regravar a senha de quem já
                     existe</label>

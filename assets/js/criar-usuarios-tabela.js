@@ -1,6 +1,9 @@
 // Tabela de alunos da página scripts/criarUsuariosBancoDados.html: seleção por aluno, marcar
-// todos, filtro por situação e coluna "Cadastrado" (Sim/Não, conforme auth.users).
+// todos, filtro por situação, coluna "Senha" (senha inicial, para o professor repassar) e coluna
+// "Cadastrado" (Sim/Não, conforme auth.users).
 
+const SENHA_OCULTA = '—';
+const PERFIL_PROFESSOR_LISTA = 'PROFESSOR';
 const SITUACAO_SIM = 'Sim';
 const SITUACAO_NAO = 'Não';
 const SITUACAO_DESCONHECIDA = '?';
@@ -50,13 +53,16 @@ function pintarSituacaoGuia(linha, situacao) {
 }
 
 /**
- * Cria uma linha da tabela: caixa de seleção, número, nome, e-mail e "Cadastrado" (sem senha).
+ * Cria uma linha da tabela: caixa de seleção, número, nome, e-mail, senha inicial e "Cadastrado".
+ * A senha só aparece para o aluno selecionado e quando contexto.mostrarSenha for verdadeiro
+ * (professor logado). A senha do professor nunca é mostrada.
  * @param {Object} aluno - Aluno da lista de presença.
- * @param {Map<string, string>|null} cadastrados - E-mails cadastrados.
+ * @param {{cadastrados: Map<string, string>|null, mostrarSenha: boolean}} contexto - Cadastrados
+ *   e permissão de ver a senha.
  * @param {Function} aoMudarSelecao - Chamada quando a caixa da linha muda.
  * @returns {HTMLTableRowElement} Linha da tabela.
  */
-function criarLinhaAlunoGuia(aluno, cadastrados, aoMudarSelecao) {
+function criarLinhaAlunoGuia(aluno, contexto, aoMudarSelecao) {
     const linha = document.createElement('tr');
     linha.dataset.email = aluno.email;
 
@@ -67,31 +73,46 @@ function criarLinhaAlunoGuia(aluno, cadastrados, aoMudarSelecao) {
     const celulaCaixa = document.createElement('td');
     celulaCaixa.append(caixa);
 
+    const celulaSenha = criarCelulaGuia(SENHA_OCULTA);
+    const podeVerSenha = contexto.mostrarSenha && aluno.perfil !== PERFIL_PROFESSOR_LISTA;
+    linha.atualizarSenha = () => {
+        celulaSenha.textContent = podeVerSenha && caixa.checked ? aluno.senha || '' : SENHA_OCULTA;
+    };
     const celulaSituacao = criarCelulaGuia('');
     celulaSituacao.className = 'guia-situacao';
     linha.append(celulaCaixa, criarCelulaGuia(aluno.numero), criarCelulaGuia(aluno.nome),
-        criarCelulaGuia(aluno.email), celulaSituacao);
-    pintarSituacaoGuia(linha, obterSituacaoCadastro(aluno.email, cadastrados));
+        criarCelulaGuia(aluno.email), celulaSenha, celulaSituacao);
+    pintarSituacaoGuia(linha, obterSituacaoCadastro(aluno.email, contexto.cadastrados));
     return linha;
 }
 
 /**
  * Cria a tabela de alunos de uma turma.
+ * A coluna Senha sempre existe; o conteúdo só aparece se contexto.mostrarSenha.
  * @param {Object} turma - Turma com a lista de alunos.
- * @param {Map<string, string>|null} cadastrados - E-mails cadastrados.
+ * @param {{cadastrados: Map<string, string>|null, mostrarSenha: boolean}} contexto - Cadastrados
+ *   e permissão de ver a senha.
  * @param {Function} aoMudarSelecao - Chamada quando uma caixa de linha muda.
  * @returns {HTMLTableElement} Tabela pronta.
  */
-function criarTabelaAlunosGuia(turma, cadastrados, aoMudarSelecao) {
+function criarTabelaAlunosGuia(turma, contexto, aoMudarSelecao) {
     const tabela = document.createElement('table');
     tabela.className = 'guia-tabela';
     tabela.innerHTML = '<thead><tr><th></th><th>Nº</th><th>Aluno</th><th>E-mail de login</th>'
-        + '<th>Cadastrado</th></tr></thead>';
+        + '<th>Senha</th><th>Cadastrado</th></tr></thead>';
     const corpo = document.createElement('tbody');
     corpo.append(...turma.alunos.map((aluno) => (
-        criarLinhaAlunoGuia(aluno, cadastrados, aoMudarSelecao))));
+        criarLinhaAlunoGuia(aluno, contexto, aoMudarSelecao))));
     tabela.append(corpo);
     return tabela;
+}
+
+/**
+ * Mostra a senha só nas linhas marcadas (a do professor continua sempre oculta).
+ * @param {HTMLTableElement} tabela - Tabela de alunos.
+ */
+function atualizarSenhasGuia(tabela) {
+    obterLinhasGuia(tabela).forEach((linha) => linha.atualizarSenha());
 }
 
 /**
