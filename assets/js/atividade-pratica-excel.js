@@ -9,6 +9,7 @@ const TEXTO_COPIAR = '📋 Copiar';
 const TEXTO_COPIADO = '✅ Copiado!';
 const TEXTO_FALHA_COPIA = '⚠️ Não foi possível copiar';
 const TEMPO_AVISO_COPIA_MS = 2500;
+const MINIMO_LINHAS_PARA_COPIAR = 2;
 
 /**
  * Lê um valor salvo no navegador sem quebrar a página se o armazenamento estiver bloqueado.
@@ -167,6 +168,9 @@ function ligarCopiaDasImagens() {
  */
 function ligarCopiaDosDados() {
   document.querySelectorAll('.tabela--dados').forEach((tabela) => {
+    const linhasDeDados = tabela.tBodies[0]?.rows.length || 0;
+    if (linhasDeDados < MINIMO_LINHAS_PARA_COPIAR) return;
+
     const rolagem = tabela.closest('.tabela__rolagem') || tabela;
     const linha = document.createElement('div');
     linha.className = 'tabela-dados-linha';
