@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questão 9 — Filtros, classificação e resumo com CONT.SE e SOMASE</title>
+<link rel="stylesheet" href="../../../../../../assets/css/atividade-pratica-excel.css">
+<script src="../../../../../../assets/js/atividade-pratica-excel.js" defer></script>
+<link rel="stylesheet" href="../../../../../../assets/css/menu.css">
+<script src="../MENU-ATIVIDADES.js" defer></script>
+<script src="../../../../../../js/menu.js" defer></script>
+<script src="../../../../../../js/header-usuario.js" defer></script>
+</head>
+<body data-atividade="ATIVIDADE-EXCEL-29-09-2026">
+<div id="header-usuario"></div>
+<div class="pagina">
+<header class="cabecalho">
+<div class="cabecalho__marca">SENAI · Análise de Dados Aplicada à Gestão</div>
+<h1 class="cabecalho__titulo">Questão 9 — Filtros, classificação e resumo com CONT.SE e SOMASE</h1>
+<p class="cabecalho__subtitulo">Atividade Prática de Excel — Controle de Estoque do Almoxarifado</p>
+<div class="cabecalho__selos"><span class="selo selo--formativa">Atividade prática avaliativa</span><span class="selo ">⏱ 22 min</span><span class="selo ">0,75 pontos</span><span class="selo ">5 passos</span></div>
+<div class="identificacao"><div class="identificacao__campo">Nome:</div><div class="identificacao__campo">Turma:</div><div class="identificacao__campo">Data: 29/09/2026</div></div>
+</header>
+<nav class="navegacao"><a class="botao" href="QUESTAO-08-FORMATACAO-CONDICIONAL.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-29-09-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-10-CONGELAR-IMPRESSAO-ENTREGA.html">Próxima questão →</a></nav>
+<section class="bloco">
+<h2>🎯 O que você vai fazer</h2>
+<p>Usar <strong>filtros</strong> e <strong>classificação</strong> para responder rápido a perguntas sobre a base e montar um <strong>resumo por status</strong> e uma <strong>consulta de código</strong> com CONT.SE, SOMASE, PROCV e SEERRO.</p>
+<h3>Você vai usar</h3><ul><li>AutoFiltro (<span class="tecla">Ctrl</span>+<span class="tecla">Shift</span>+<span class="tecla">L</span>)</li><li>Classificar em dois níveis</li><li>Filtrar por Cor</li><li>CONT.SE e SOMASE</li><li>PROCV com SEERRO</li><li>Referência absoluta ($)</li></ul>
+<p><strong>Aba de trabalho:</strong> <span class="celula">Requisicoes</span> e <span class="celula">Analise</span> · <strong>Slides de apoio:</strong> Arquivo 4 — slides 31–33; Arquivo 5 — slides 9–11.1, 22–23, 28–31</p>
+</section>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">1</span><h3 class="passo__titulo">Ative o AutoFiltro e filtre Ferramentas pendentes</h3></div>
+<figure class="passo__figura"><img src="img/q9-passo-01.svg" alt="Ative o AutoFiltro e filtre Ferramentas pendentes" loading="lazy"><figcaption class="passo__legenda">Seta de Categoria (1) → só Ferramentas (2); seta de Status (3) → só Pendente.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique em <span class="celula">A1</span> e ligue o filtro: guia <strong>Dados</strong> → <strong>Filtro</strong>, ou <span class="tecla">Ctrl</span>+<span class="tecla">Shift</span>+<span class="tecla">L</span>. Cada título ganha uma seta ▼.</li><li>Clique na seta de <strong>Categoria</strong> (1), desmarque <strong>(Selecionar Tudo)</strong> e marque só <strong>Ferramentas</strong> (2) → <strong>OK</strong>.</li><li>Clique na seta de <strong>Status</strong> (3), deixe marcado só <strong>Pendente</strong> → <strong>OK</strong>.</li><li>Olhe a barra de status: aparece &quot;X de 120 registros encontrados&quot;.</li></ol>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Sobram apenas linhas de Categoria Ferramentas com Status Pendente e os números das linhas ficam azuis.</div>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span><strong>Dados</strong> → <strong>AutoFiltro</strong> e use a seta de cada coluna.</div>
+<label class="concluido"><input type="checkbox" data-passo="q9-1"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">2</span><h3 class="passo__titulo">Limpe os filtros e classifique em dois níveis</h3></div>
+<figure class="passo__figura"><img src="img/q9-passo-02.svg" alt="Limpe os filtros e classifique em dois níveis" loading="lazy"><figcaption class="passo__legenda">Dados → Limpar. Depois Classificar (1): Categoria A a Z (2), depois Valor Total do maior para o menor (3).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Guia <strong>Dados</strong> → <strong>Limpar</strong> para mostrar as 120 linhas de novo.</li><li>Clique em <span class="celula">A1</span> → <strong>Classificar</strong> (1).</li><li>Classificar por <strong>Categoria</strong>, ordem <strong>A a Z</strong> (2). Clique em <strong>Adicionar Nível</strong>: <strong>Depois por</strong> <strong>Valor Total</strong> (3), ordem <strong>Do Maior para o Menor</strong>.</li><li>Clique em <strong>OK</strong> (4).</li></ol>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>Clique em uma célula <strong>da tabela</strong> antes de classificar. Assim o Excel leva a linha inteira junto, e os dados não se misturam.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Dentro de cada Categoria, o Valor Total vai do maior para o menor.</div>
+<label class="concluido"><input type="checkbox" data-passo="q9-2"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">3</span><h3 class="passo__titulo">Filtre pela cor das linhas canceladas</h3></div>
+<figure class="passo__figura"><img src="img/q9-passo-03.svg" alt="Filtre pela cor das linhas canceladas" loading="lazy"><figcaption class="passo__legenda">Seta de Status (1) → Filtrar por Cor (2): só as linhas vermelhas aparecem.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique na seta de <strong>Status</strong> (1) → <strong>Filtrar por Cor</strong> (2).</li><li>Escolha o <strong>vermelho claro</strong> da formatação condicional feita na Questão 8.</li><li>Depois use <strong>Dados → Limpar</strong> para voltar a ver todas as linhas.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Só dá para filtrar por cor porque a Questão 8 pintou as linhas: formatação e filtro trabalham juntos.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Só aparecem linhas vermelhas (Cancelada). Depois de <strong>Limpar</strong>, as 120 linhas voltam.</div>
+<label class="concluido"><input type="checkbox" data-passo="q9-3"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">4</span><h3 class="passo__titulo">Monte o resumo por Status na aba Analise</h3></div>
+<figure class="passo__figura"><img src="img/q9-passo-04.svg" alt="Monte o resumo por Status na aba Analise" loading="lazy"><figcaption class="passo__legenda">Em Analise, A11:D15 (1): CONT.SE (2), SOMASE (3) e % do total com referência absoluta (4).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Em <span class="celula">A10</span> digite <span class="celula">RESUMO POR STATUS</span>. Em <span class="celula">A11:D11</span> (1): <span class="celula">Status</span>, <span class="celula">Requisições</span>, <span class="celula">Valor Total</span>, <span class="celula">% do Total</span>. Em <span class="celula">A12:A15</span>: <span class="celula">Entregue</span>, <span class="celula">Pendente</span>, <span class="celula">Cancelada</span>, <span class="celula">Total</span>.</li><li><span class="celula">B12</span> (2) conta as requisições de cada status; <span class="celula">C12</span> (3) soma o valor de cada status; <span class="celula">D12</span> (4) calcula a participação. Copie <strong>B12:D12</strong> até a linha 14.</li><li>Na linha <strong>Total</strong>: <span class="celula">B15</span>, <span class="celula">C15</span> e <span class="celula">D15</span> com <strong>SOMA</strong> das três linhas de cima.</li><li>Formatos: <span class="celula">C12:C15</span> <strong>Moeda</strong>; <span class="celula">D12:D15</span> <strong>Porcentagem</strong> com 1 casa; <span class="celula">B12:B15</span> <strong>Número</strong>. Linha <strong>Total</strong> em <strong>negrito</strong>, com borda dupla embaixo.</li></ol>
+<code class="formula">B12:  =CONT.SE(Requisicoes!$J$2:$J$121;A12)
+C12:  =SOMASE(Requisicoes!$J$2:$J$121;A12;Requisicoes!$I$2:$I$121)
+D12:  =C12/$C$15
+B15:  =SOMA(B12:B14)     C15:  =SOMA(C12:C14)     D15:  =SOMA(D12:D14)</code>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>Em <span class="celula">D12</span> o total tem <span class="celula">$C$15</span> <strong>travado</strong>. Sem os cifrões, ao copiar a fórmula o divisor &quot;anda&quot; e o resultado dá erro.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>O Total das requisições é 120 e os três percentuais somam 100,0%.</div>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Se <span class="celula">CONT.SE</span> devolver 0, confira se digitou o status exatamente como na base (com a inicial maiúscula e sem espaço sobrando).</div>
+<label class="concluido"><input type="checkbox" data-passo="q9-4"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">5</span><h3 class="passo__titulo">Crie a consulta de código com PROCV, SEERRO e SOMASE</h3></div>
+<figure class="passo__figura"><img src="img/q9-passo-05.svg" alt="Crie a consulta de código com PROCV, SEERRO e SOMASE" loading="lazy"><figcaption class="passo__legenda">Em Analise, código em B18 (1); descrição com PROCV + SEERRO (2); quantidade com SOMASE (3); acima da média com CONT.SE (4).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Em <span class="celula">A17</span> digite <span class="celula">CONSULTA DE CÓDIGO</span>. Em <span class="celula">A18:A21</span>: <span class="celula">Código</span>, <span class="celula">Descrição</span>, <span class="celula">Quantidade requisitada</span> e <span class="celula">Requisições acima do valor médio</span>.</li><li>Em <span class="celula">B18</span> (1) digite um código da lista, por exemplo <span class="celula">MAT-010</span>.</li><li>Em <span class="celula">B19</span> (2), <span class="celula">B20</span> (3) e <span class="celula">B21</span> (4) digite as fórmulas abaixo.</li><li>Formate <span class="celula">B20:B21</span> como <strong>Número</strong> sem casas decimais e <span class="celula">A17:B17</span> com o visual do cabeçalho. Troque <span class="celula">B18</span> por <span class="celula">MAT-099</span> e veja a mensagem do SEERRO.</li></ol>
+<code class="formula">B19:  =SEERRO(PROCV(B18;Cadastro!$A$2:$G$16;2;0);&quot;Código não cadastrado&quot;)
+B20:  =SOMASE(Requisicoes!$B$2:$B$121;B18;Requisicoes!$F$2:$F$121)
+B21:  =CONT.SE(Requisicoes!$I$2:$I$121;&quot;&gt;&quot;&amp;B4)</code>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span><span class="celula">&quot;&gt;&quot;&amp;B4</span> junta o sinal &quot;&gt;&quot; com o valor médio da aba Analise (B4): a contagem sempre usa a média atual.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Com um código válido aparece o nome do material; com <span class="celula">MAT-099</span> aparece <strong>Código não cadastrado</strong>, sem <span class="celula">#N/D</span>.</div>
+<label class="concluido"><input type="checkbox" data-passo="q9-5"> Passo concluído</label></div>
+</article>
+<section class="bloco">
+<h2>📋 Como esta questão será avaliada</h2>
+<table class="tabela"><thead><tr><th>Critério</th><th>Pontos</th></tr></thead><tbody><tr><td>Filtro Ferramentas + Pendente aplicado e depois limpo</td><td>0,1</td></tr><tr><td>Classificação em dois níveis e filtro por cor</td><td>0,15</td></tr><tr><td>Resumo por status formatado (Moeda, %, número; Total em negrito)</td><td>0,3</td></tr><tr><td>Consulta de código com formatos corretos</td><td>0,2</td></tr><tr><td><strong>Total da questão</strong></td><td><strong>0,75</strong></td></tr></tbody></table>
+</section>
+<nav class="navegacao"><a class="botao" href="QUESTAO-08-FORMATACAO-CONDICIONAL.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-29-09-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-10-CONGELAR-IMPRESSAO-ENTREGA.html">Próxima questão →</a></nav>
+<footer class="rodape">Aprendizagem Industrial — Assistente em Processos de Gestão e Controle de Materiais · Análise de Dados Aplicada à Gestão · Empresa e dados fictícios, criados para fins didáticos.</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questão 8 — Formatação condicional na base de requisições</title>
+<link rel="stylesheet" href="../../../../../../assets/css/atividade-pratica-excel.css">
+<script src="../../../../../../assets/js/atividade-pratica-excel.js" defer></script>
+<link rel="stylesheet" href="../../../../../../assets/css/menu.css">
+<script src="../MENU-ATIVIDADES.js" defer></script>
+<script src="../../../../../../js/menu.js" defer></script>
+<script src="../../../../../../js/header-usuario.js" defer></script>
+</head>
+<body data-atividade="ATIVIDADE-EXCEL-29-09-2026">
+<div id="header-usuario"></div>
+<div class="pagina">
+<header class="cabecalho">
+<div class="cabecalho__marca">SENAI · Análise de Dados Aplicada à Gestão</div>
+<h1 class="cabecalho__titulo">Questão 8 — Formatação condicional na base de requisições</h1>
+<p class="cabecalho__subtitulo">Atividade Prática de Excel — Controle de Estoque do Almoxarifado</p>
+<div class="cabecalho__selos"><span class="selo selo--formativa">Atividade prática avaliativa</span><span class="selo ">⏱ 23 min</span><span class="selo ">0,75 pontos</span><span class="selo ">6 passos</span></div>
+<div class="identificacao"><div class="identificacao__campo">Nome:</div><div class="identificacao__campo">Turma:</div><div class="identificacao__campo">Data: 29/09/2026</div></div>
+</header>
+<nav class="navegacao"><a class="botao" href="QUESTAO-07-BASE-REQUISICOES-FORMATACAO.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-29-09-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-09-FILTROS-E-CLASSIFICACAO.html">Próxima questão →</a></nav>
+<section class="bloco">
+<h2>🎯 O que você vai fazer</h2>
+<p>Classificar cada requisição com o <strong>SE aninhado</strong> e fazer os <strong>destaques automáticos</strong> aparecerem numa base de 120 linhas: descontos altos, maiores valores, escala de cores e linhas canceladas.</p>
+<h3>Você vai usar</h3><ul><li>SE aninhado</li><li>Realçar Regras das Células</li><li>Regras de Primeiros/Últimos</li><li>Escalas de Cor</li><li>Nova Regra com fórmula</li><li>Gerenciar Regras</li></ul>
+<p><strong>Aba de trabalho:</strong> <span class="celula">Requisicoes</span> · <strong>Slides de apoio:</strong> Arquivo 3 — slides 23–25; Arquivo 5 — slides 26–27; Arquivo 4 — slides 13–15.1</p>
+</section>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">1</span><h3 class="passo__titulo">Crie a coluna Faixa com o SE aninhado</h3></div>
+<figure class="passo__figura"><img src="img/q8-passo-01.svg" alt="Crie a coluna Faixa com o SE aninhado" loading="lazy"><figcaption class="passo__legenda">Em K1 o título; em K2 (1) o SE aninhado; duplo clique na alça (2) copia até a linha 121.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Em <span class="celula">K1</span> digite <span class="celula">Faixa</span> e copie o visual do cabeçalho com o <strong>Pincel de Formatação</strong>.</li><li>Em <span class="celula">K2</span> (1), digite a fórmula abaixo: valores a partir de R$ 300 são <strong>Alto</strong>, a partir de R$ 100 são <strong>Médio</strong> e o resto é <strong>Baixo</strong>.</li><li>Dê <strong>duplo clique</strong> na alça de preenchimento de <span class="celula">K2</span> (2) para copiar até a linha 121.</li></ol>
+<code class="formula">=SE(I2&gt;=300;&quot;Alto&quot;;SE(I2&gt;=100;&quot;Médio&quot;;&quot;Baixo&quot;))</code>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Sempre teste do <strong>maior</strong> para o menor: se você começar por <span class="celula">I2&gt;=100</span>, o valor de R$ 500 já cai em &quot;Médio&quot; e nunca chega a &quot;Alto&quot;.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>A coluna Faixa mostra só Alto, Médio ou Baixo nas 120 linhas, sem erros.</div>
+<label class="concluido"><input type="checkbox" data-passo="q8-1"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">2</span><h3 class="passo__titulo">Destaque os descontos acima de 10%</h3></div>
+<figure class="passo__figura"><img src="img/q8-passo-02.svg" alt="Destaque os descontos acima de 10%" loading="lazy"><figcaption class="passo__legenda">Selecione H2:H121, Formatação Condicional (1), É Maior Que: valor (2), cor (3), OK (4).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Selecione <span class="celula">H2:H121</span> (Desconto).</li><li>Página Inicial → <strong>Formatação Condicional</strong> (1) → <strong>Realçar Regras das Células</strong> → <strong>É Maior Que…</strong></li><li>Digite <span class="celula">10%</span> (2) e escolha <strong>Preenchimento Amarelo e Texto Amarelo Escuro</strong> (3).</li><li>Clique em <strong>OK</strong> (4).</li></ol>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Só os descontos de <strong>15%</strong> ficam amarelos; 0%, 5% e 10% continuam sem cor.</div>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span>Formatar → <strong>Formatação Condicional</strong> → <strong>Condição</strong> → <strong>Valor da célula é</strong> <strong>maior que</strong> <span class="celula">0,1</span> → estilo amarelo.</div>
+<label class="concluido"><input type="checkbox" data-passo="q8-2"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">3</span><h3 class="passo__titulo">Marque os 10 maiores valores em verde</h3></div>
+<figure class="passo__figura"><img src="img/q8-passo-03.svg" alt="Marque os 10 maiores valores em verde" loading="lazy"><figcaption class="passo__legenda">Selecione I2:I121, Formatação Condicional (1) → Regras de Primeiros/Últimos (2).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Selecione <span class="celula">I2:I121</span> (Valor Total).</li><li><strong>Formatação Condicional</strong> (1) → <strong>Regras de Primeiros/Últimos</strong> (2) → <strong>10 Primeiros Itens…</strong></li><li>Confirme <span class="celula">10</span> e escolha <strong>Preenchimento Verde e Texto Verde Escuro</strong> → <strong>OK</strong>.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Troque para <strong>10 Últimos Itens</strong> para ver os menores valores e depois volte para <strong>10 Primeiros</strong>.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Exatamente <strong>10</strong> células de Valor Total ficaram verdes em toda a coluna (role a planilha para conferir).</div>
+<label class="concluido"><input type="checkbox" data-passo="q8-3"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">4</span><h3 class="passo__titulo">Aplique a escala de cores na Quantidade</h3></div>
+<figure class="passo__figura"><img src="img/q8-passo-04.svg" alt="Aplique a escala de cores na Quantidade" loading="lazy"><figcaption class="passo__legenda">Selecione F2:F121: Formatação Condicional (1) → Escalas de Cor → Verde-Amarelo-Vermelho.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Selecione <span class="celula">F2:F121</span> (Quantidade) (2).</li><li><strong>Formatação Condicional</strong> (1) → <strong>Escalas de Cor</strong> → escolha <strong>Escala de Cor Verde, Amarelo e Vermelho</strong>.</li><li>Observe: quanto maior a quantidade requisitada, mais verde a célula.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Escalas de cor mostram o &quot;calor&quot; dos números sem precisar ler um por um.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>A coluna Quantidade tem cores diferentes do vermelho ao verde.</div>
+<label class="concluido"><input type="checkbox" data-passo="q8-4"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">5</span><h3 class="passo__titulo">Pinte a linha inteira das requisições canceladas</h3></div>
+<figure class="passo__figura"><img src="img/q8-passo-05.svg" alt="Pinte a linha inteira das requisições canceladas" loading="lazy"><figcaption class="passo__legenda">Selecione A2:K121 → Nova Regra → Usar uma fórmula (1) (2) → Formato (3) → OK (4).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Selecione <span class="celula">A2:K121</span>.</li><li><strong>Formatação Condicional</strong> (1) → <strong>Nova Regra…</strong> → <strong>Usar uma fórmula para determinar quais células devem ser formatadas</strong>.</li><li>No campo da fórmula (2), digite exatamente a fórmula abaixo.</li><li>Clique em <strong>Formatar…</strong>, aba <strong>Preenchimento</strong>, escolha vermelho claro (3) → <strong>OK</strong> (4).</li></ol>
+<code class="formula">=$J2=&quot;Cancelada&quot;</code>
+<div class="caixa caixa--atencao"><span class="caixa__titulo">⚠️ Atenção</span>O <span class="celula">$</span> antes do J trava a <strong>coluna</strong> e deixa a linha &quot;andar&quot;: assim a linha inteira é pintada conforme o Status da própria linha.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Cada linha com Status Cancelada fica toda vermelha, de A até K.</div>
+<label class="concluido"><input type="checkbox" data-passo="q8-5"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">6</span><h3 class="passo__titulo">Confira todas as regras</h3></div>
+<figure class="passo__figura"><img src="img/q8-passo-06.svg" alt="Confira todas as regras" loading="lazy"><figcaption class="passo__legenda">Formatação Condicional (1) → Gerenciar Regras: devem existir 4 regras (2).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique em qualquer célula de <span class="celula">A2:K121</span>.</li><li><strong>Formatação Condicional</strong> (1) → <strong>Gerenciar Regras…</strong> e escolha <strong>Esta Planilha</strong>.</li><li>Confira se as <strong>4 regras</strong> estão na lista (2) com os intervalos corretos e clique em <strong>OK</strong> (3).</li></ol>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Lista com 4 regras: fórmula dos cancelados, escala de cores, 10 primeiros e desconto maior que 10%.</div>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Uma regra errada pode ser editada com <strong>Editar Regra</strong> ou apagada com <strong>Excluir Regra</strong>, sem refazer as outras.</div>
+<label class="concluido"><input type="checkbox" data-passo="q8-6"> Passo concluído</label></div>
+</article>
+<section class="bloco">
+<h2>📋 Como esta questão será avaliada</h2>
+<table class="tabela"><thead><tr><th>Critério</th><th>Pontos</th></tr></thead><tbody><tr><td>Coluna Faixa com SE aninhado copiada até a linha 121</td><td>0,15</td></tr><tr><td>Desconto acima de 10% realçado em amarelo (H2:H121)</td><td>0,1</td></tr><tr><td>10 maiores valores em verde (I2:I121)</td><td>0,1</td></tr><tr><td>Escala de cores em Quantidade (F2:F121)</td><td>0,1</td></tr><tr><td>Regra por fórmula pintando a linha inteira das canceladas</td><td>0,3</td></tr><tr><td><strong>Total da questão</strong></td><td><strong>0,75</strong></td></tr></tbody></table>
+</section>
+<nav class="navegacao"><a class="botao" href="QUESTAO-07-BASE-REQUISICOES-FORMATACAO.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-29-09-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><a class="botao" href="QUESTAO-09-FILTROS-E-CLASSIFICACAO.html">Próxima questão →</a></nav>
+<footer class="rodape">Aprendizagem Industrial — Assistente em Processos de Gestão e Controle de Materiais · Análise de Dados Aplicada à Gestão · Empresa e dados fictícios, criados para fins didáticos.</footer>
+</div>
+</body>
+</html>

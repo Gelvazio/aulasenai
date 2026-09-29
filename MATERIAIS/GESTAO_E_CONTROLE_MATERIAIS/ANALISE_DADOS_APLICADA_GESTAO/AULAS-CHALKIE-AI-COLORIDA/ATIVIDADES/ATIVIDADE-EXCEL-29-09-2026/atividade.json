@@ -4,7 +4,7 @@
   "unidade_curricular": "Análise de Dados Aplicada à Gestão",
   "curso": "Aprendizagem Industrial — Assistente em Processos de Gestão e Controle de Materiais",
   "data": "29/09/2026",
-  "duracao": "3h25",
+  "duracao": "4h50",
   "natureza": "Atividade prática avaliativa",
   "arquivo_excel": "ESTOQUE-NOME-SOBRENOME.xlsx",
   "planilhas": {
@@ -422,10 +422,3092 @@
         "A25": "Item crítico de EPI:",
         "B25": "Máscara PFF2"
       }
+    },
+    "Requisicoes": {
+      "linhas": [
+        [
+          "Data",
+          "Código",
+          "Descrição",
+          "Categoria",
+          "Setor",
+          "Quantidade",
+          "Custo Unitário",
+          "Desconto",
+          "Valor Total",
+          "Status"
+        ],
+        [
+          "01/09/2026",
+          "MAT-013",
+          "Broca aço rápido 8 mm",
+          "Ferramentas",
+          "Expedição",
+          "9",
+          "14,5",
+          "0,1",
+          "117,45",
+          "Entregue"
+        ],
+        [
+          "01/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Montagem",
+          "8",
+          "24,9",
+          "0",
+          "199,2",
+          "Pendente"
+        ],
+        [
+          "01/09/2026",
+          "MAT-015",
+          "Trena 5 m",
+          "Ferramentas",
+          "Qualidade",
+          "3",
+          "22",
+          "0,15",
+          "56,1",
+          "Entregue"
+        ],
+        [
+          "01/09/2026",
+          "MAT-008",
+          "Rebite de alumínio 4 mm",
+          "Fixação",
+          "Expedição",
+          "72",
+          "0,12",
+          "0",
+          "8,64",
+          "Entregue"
+        ],
+        [
+          "01/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Montagem",
+          "2",
+          "24,9",
+          "0",
+          "49,8",
+          "Cancelada"
+        ],
+        [
+          "02/09/2026",
+          "MAT-004",
+          "Máscara PFF2",
+          "EPI",
+          "Manutenção",
+          "67",
+          "3,2",
+          "0,1",
+          "192,96",
+          "Pendente"
+        ],
+        [
+          "02/09/2026",
+          "MAT-015",
+          "Trena 5 m",
+          "Ferramentas",
+          "Expedição",
+          "5",
+          "22",
+          "0",
+          "110",
+          "Entregue"
+        ],
+        [
+          "03/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Manutenção",
+          "9",
+          "6,9",
+          "0,15",
+          "52,78",
+          "Entregue"
+        ],
+        [
+          "03/09/2026",
+          "MAT-002",
+          "Óculos de proteção",
+          "EPI",
+          "Qualidade",
+          "11",
+          "12,5",
+          "0,05",
+          "130,62",
+          "Entregue"
+        ],
+        [
+          "03/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Manutenção",
+          "1",
+          "24,9",
+          "0,15",
+          "21,16",
+          "Cancelada"
+        ],
+        [
+          "03/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Expedição",
+          "119",
+          "0,15",
+          "0,1",
+          "16,06",
+          "Entregue"
+        ],
+        [
+          "04/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Manutenção",
+          "18",
+          "6,9",
+          "0",
+          "124,2",
+          "Entregue"
+        ],
+        [
+          "04/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Manutenção",
+          "119",
+          "0,45",
+          "0",
+          "53,55",
+          "Entregue"
+        ],
+        [
+          "04/09/2026",
+          "MAT-013",
+          "Broca aço rápido 8 mm",
+          "Ferramentas",
+          "Montagem",
+          "9",
+          "14,5",
+          "0,15",
+          "110,92",
+          "Cancelada"
+        ],
+        [
+          "04/09/2026",
+          "MAT-007",
+          "Arruela lisa 8 mm",
+          "Fixação",
+          "Qualidade",
+          "150",
+          "0,08",
+          "0,05",
+          "11,4",
+          "Pendente"
+        ],
+        [
+          "04/09/2026",
+          "MAT-007",
+          "Arruela lisa 8 mm",
+          "Fixação",
+          "Expedição",
+          "87",
+          "0,08",
+          "0",
+          "6,96",
+          "Cancelada"
+        ],
+        [
+          "04/09/2026",
+          "MAT-001",
+          "Luva de vaqueta",
+          "EPI",
+          "Montagem",
+          "6",
+          "18,9",
+          "0,15",
+          "96,39",
+          "Entregue"
+        ],
+        [
+          "04/09/2026",
+          "MAT-001",
+          "Luva de vaqueta",
+          "EPI",
+          "Montagem",
+          "33",
+          "18,9",
+          "0,05",
+          "592,51",
+          "Entregue"
+        ],
+        [
+          "05/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Expedição",
+          "342",
+          "0,15",
+          "0",
+          "51,3",
+          "Entregue"
+        ],
+        [
+          "05/09/2026",
+          "MAT-010",
+          "Cabo flexível 2,5 mm²",
+          "Elétrico",
+          "Qualidade",
+          "38",
+          "3,4",
+          "0,15",
+          "109,82",
+          "Entregue"
+        ],
+        [
+          "05/09/2026",
+          "MAT-004",
+          "Máscara PFF2",
+          "EPI",
+          "Expedição",
+          "39",
+          "3,2",
+          "0,05",
+          "118,56",
+          "Entregue"
+        ],
+        [
+          "05/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Expedição",
+          "1",
+          "24,9",
+          "0,1",
+          "22,41",
+          "Entregue"
+        ],
+        [
+          "09/09/2026",
+          "MAT-004",
+          "Máscara PFF2",
+          "EPI",
+          "Produção",
+          "79",
+          "3,2",
+          "0,1",
+          "227,52",
+          "Cancelada"
+        ],
+        [
+          "09/09/2026",
+          "MAT-015",
+          "Trena 5 m",
+          "Ferramentas",
+          "Manutenção",
+          "4",
+          "22",
+          "0,15",
+          "74,8",
+          "Entregue"
+        ],
+        [
+          "09/09/2026",
+          "MAT-012",
+          "Disco de corte 7\"",
+          "Ferramentas",
+          "Manutenção",
+          "23",
+          "9,8",
+          "0,1",
+          "202,86",
+          "Pendente"
+        ],
+        [
+          "10/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Qualidade",
+          "6",
+          "6,9",
+          "0",
+          "41,4",
+          "Pendente"
+        ],
+        [
+          "10/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Expedição",
+          "54",
+          "1,8",
+          "0,1",
+          "87,48",
+          "Pendente"
+        ],
+        [
+          "10/09/2026",
+          "MAT-007",
+          "Arruela lisa 8 mm",
+          "Fixação",
+          "Produção",
+          "246",
+          "0,08",
+          "0,05",
+          "18,7",
+          "Entregue"
+        ],
+        [
+          "10/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Montagem",
+          "287",
+          "0,45",
+          "0",
+          "129,15",
+          "Entregue"
+        ],
+        [
+          "11/09/2026",
+          "MAT-008",
+          "Rebite de alumínio 4 mm",
+          "Fixação",
+          "Montagem",
+          "279",
+          "0,12",
+          "0,15",
+          "28,46",
+          "Pendente"
+        ],
+        [
+          "11/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Expedição",
+          "35",
+          "1,8",
+          "0",
+          "63",
+          "Entregue"
+        ],
+        [
+          "11/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Montagem",
+          "5",
+          "6,9",
+          "0,15",
+          "29,32",
+          "Entregue"
+        ],
+        [
+          "11/09/2026",
+          "MAT-014",
+          "Lixa grão 120",
+          "Ferramentas",
+          "Produção",
+          "39",
+          "1,9",
+          "0",
+          "74,1",
+          "Entregue"
+        ],
+        [
+          "11/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Manutenção",
+          "1",
+          "24,9",
+          "0",
+          "24,9",
+          "Entregue"
+        ],
+        [
+          "12/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Qualidade",
+          "343",
+          "0,15",
+          "0,15",
+          "43,73",
+          "Entregue"
+        ],
+        [
+          "12/09/2026",
+          "MAT-013",
+          "Broca aço rápido 8 mm",
+          "Ferramentas",
+          "Qualidade",
+          "12",
+          "14,5",
+          "0,05",
+          "165,3",
+          "Entregue"
+        ],
+        [
+          "12/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Manutenção",
+          "341",
+          "0,45",
+          "0,05",
+          "145,78",
+          "Pendente"
+        ],
+        [
+          "12/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Qualidade",
+          "117",
+          "0,45",
+          "0,05",
+          "50,02",
+          "Entregue"
+        ],
+        [
+          "12/09/2026",
+          "MAT-002",
+          "Óculos de proteção",
+          "EPI",
+          "Expedição",
+          "8",
+          "12,5",
+          "0,15",
+          "85",
+          "Entregue"
+        ],
+        [
+          "12/09/2026",
+          "MAT-002",
+          "Óculos de proteção",
+          "EPI",
+          "Montagem",
+          "8",
+          "12,5",
+          "0,1",
+          "90",
+          "Entregue"
+        ],
+        [
+          "15/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Montagem",
+          "5",
+          "24,9",
+          "0,1",
+          "112,05",
+          "Entregue"
+        ],
+        [
+          "15/09/2026",
+          "MAT-010",
+          "Cabo flexível 2,5 mm²",
+          "Elétrico",
+          "Montagem",
+          "15",
+          "3,4",
+          "0,15",
+          "43,35",
+          "Entregue"
+        ],
+        [
+          "15/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Expedição",
+          "181",
+          "0,45",
+          "0",
+          "81,45",
+          "Entregue"
+        ],
+        [
+          "16/09/2026",
+          "MAT-007",
+          "Arruela lisa 8 mm",
+          "Fixação",
+          "Manutenção",
+          "61",
+          "0,08",
+          "0",
+          "4,88",
+          "Entregue"
+        ],
+        [
+          "16/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Qualidade",
+          "345",
+          "0,45",
+          "0",
+          "155,25",
+          "Entregue"
+        ],
+        [
+          "16/09/2026",
+          "MAT-015",
+          "Trena 5 m",
+          "Ferramentas",
+          "Expedição",
+          "5",
+          "22",
+          "0,15",
+          "93,5",
+          "Entregue"
+        ],
+        [
+          "16/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Produção",
+          "7",
+          "24,9",
+          "0,1",
+          "156,87",
+          "Pendente"
+        ],
+        [
+          "16/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Expedição",
+          "268",
+          "0,15",
+          "0,05",
+          "38,19",
+          "Entregue"
+        ],
+        [
+          "17/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Qualidade",
+          "5",
+          "24,9",
+          "0",
+          "124,5",
+          "Entregue"
+        ],
+        [
+          "17/09/2026",
+          "MAT-007",
+          "Arruela lisa 8 mm",
+          "Fixação",
+          "Montagem",
+          "79",
+          "0,08",
+          "0",
+          "6,32",
+          "Cancelada"
+        ],
+        [
+          "17/09/2026",
+          "MAT-012",
+          "Disco de corte 7\"",
+          "Ferramentas",
+          "Produção",
+          "12",
+          "9,8",
+          "0,1",
+          "105,84",
+          "Entregue"
+        ],
+        [
+          "17/09/2026",
+          "MAT-012",
+          "Disco de corte 7\"",
+          "Ferramentas",
+          "Produção",
+          "12",
+          "9,8",
+          "0",
+          "117,6",
+          "Entregue"
+        ],
+        [
+          "17/09/2026",
+          "MAT-013",
+          "Broca aço rápido 8 mm",
+          "Ferramentas",
+          "Produção",
+          "9",
+          "14,5",
+          "0,05",
+          "123,97",
+          "Entregue"
+        ],
+        [
+          "17/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Produção",
+          "133",
+          "0,15",
+          "0",
+          "19,95",
+          "Entregue"
+        ],
+        [
+          "18/09/2026",
+          "MAT-010",
+          "Cabo flexível 2,5 mm²",
+          "Elétrico",
+          "Manutenção",
+          "38",
+          "3,4",
+          "0",
+          "129,2",
+          "Entregue"
+        ],
+        [
+          "18/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Montagem",
+          "64",
+          "0,15",
+          "0,05",
+          "9,12",
+          "Entregue"
+        ],
+        [
+          "18/09/2026",
+          "MAT-007",
+          "Arruela lisa 8 mm",
+          "Fixação",
+          "Expedição",
+          "246",
+          "0,08",
+          "0,05",
+          "18,7",
+          "Entregue"
+        ],
+        [
+          "18/09/2026",
+          "MAT-007",
+          "Arruela lisa 8 mm",
+          "Fixação",
+          "Manutenção",
+          "114",
+          "0,08",
+          "0",
+          "9,12",
+          "Pendente"
+        ],
+        [
+          "18/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Qualidade",
+          "107",
+          "1,8",
+          "0,05",
+          "182,97",
+          "Entregue"
+        ],
+        [
+          "18/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Manutenção",
+          "9",
+          "6,9",
+          "0,05",
+          "58,99",
+          "Pendente"
+        ],
+        [
+          "19/09/2026",
+          "MAT-001",
+          "Luva de vaqueta",
+          "EPI",
+          "Expedição",
+          "31",
+          "18,9",
+          "0",
+          "585,9",
+          "Entregue"
+        ],
+        [
+          "19/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Qualidade",
+          "95",
+          "0,45",
+          "0",
+          "42,75",
+          "Entregue"
+        ],
+        [
+          "19/09/2026",
+          "MAT-014",
+          "Lixa grão 120",
+          "Ferramentas",
+          "Qualidade",
+          "26",
+          "1,9",
+          "0",
+          "49,4",
+          "Entregue"
+        ],
+        [
+          "19/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Montagem",
+          "78",
+          "0,15",
+          "0,1",
+          "10,53",
+          "Entregue"
+        ],
+        [
+          "19/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Manutenção",
+          "8",
+          "24,9",
+          "0,15",
+          "169,32",
+          "Entregue"
+        ],
+        [
+          "19/09/2026",
+          "MAT-001",
+          "Luva de vaqueta",
+          "EPI",
+          "Manutenção",
+          "30",
+          "18,9",
+          "0",
+          "567",
+          "Entregue"
+        ],
+        [
+          "19/09/2026",
+          "MAT-012",
+          "Disco de corte 7\"",
+          "Ferramentas",
+          "Manutenção",
+          "20",
+          "9,8",
+          "0",
+          "196",
+          "Cancelada"
+        ],
+        [
+          "22/09/2026",
+          "MAT-014",
+          "Lixa grão 120",
+          "Ferramentas",
+          "Manutenção",
+          "33",
+          "1,9",
+          "0",
+          "62,7",
+          "Entregue"
+        ],
+        [
+          "22/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Qualidade",
+          "292",
+          "0,15",
+          "0,05",
+          "41,61",
+          "Entregue"
+        ],
+        [
+          "22/09/2026",
+          "MAT-015",
+          "Trena 5 m",
+          "Ferramentas",
+          "Montagem",
+          "2",
+          "22",
+          "0,15",
+          "37,4",
+          "Entregue"
+        ],
+        [
+          "22/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Expedição",
+          "20",
+          "1,8",
+          "0,1",
+          "32,4",
+          "Entregue"
+        ],
+        [
+          "22/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Qualidade",
+          "259",
+          "0,15",
+          "0,15",
+          "33,02",
+          "Cancelada"
+        ],
+        [
+          "22/09/2026",
+          "MAT-013",
+          "Broca aço rápido 8 mm",
+          "Ferramentas",
+          "Produção",
+          "5",
+          "14,5",
+          "0",
+          "72,5",
+          "Entregue"
+        ],
+        [
+          "22/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Manutenção",
+          "101",
+          "0,15",
+          "0,05",
+          "14,39",
+          "Pendente"
+        ],
+        [
+          "22/09/2026",
+          "MAT-015",
+          "Trena 5 m",
+          "Ferramentas",
+          "Qualidade",
+          "3",
+          "22",
+          "0",
+          "66",
+          "Entregue"
+        ],
+        [
+          "22/09/2026",
+          "MAT-010",
+          "Cabo flexível 2,5 mm²",
+          "Elétrico",
+          "Expedição",
+          "39",
+          "3,4",
+          "0",
+          "132,6",
+          "Cancelada"
+        ],
+        [
+          "22/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Manutenção",
+          "18",
+          "6,9",
+          "0,15",
+          "105,57",
+          "Entregue"
+        ],
+        [
+          "22/09/2026",
+          "MAT-002",
+          "Óculos de proteção",
+          "EPI",
+          "Expedição",
+          "13",
+          "12,5",
+          "0",
+          "162,5",
+          "Entregue"
+        ],
+        [
+          "23/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Qualidade",
+          "8",
+          "6,9",
+          "0",
+          "55,2",
+          "Entregue"
+        ],
+        [
+          "23/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Montagem",
+          "65",
+          "1,8",
+          "0",
+          "117",
+          "Entregue"
+        ],
+        [
+          "23/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Produção",
+          "97",
+          "1,8",
+          "0,05",
+          "165,87",
+          "Entregue"
+        ],
+        [
+          "23/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Montagem",
+          "9",
+          "24,9",
+          "0,05",
+          "212,89",
+          "Cancelada"
+        ],
+        [
+          "23/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Manutenção",
+          "60",
+          "1,8",
+          "0,1",
+          "97,2",
+          "Entregue"
+        ],
+        [
+          "23/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Produção",
+          "18",
+          "6,9",
+          "0",
+          "124,2",
+          "Entregue"
+        ],
+        [
+          "23/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Produção",
+          "6",
+          "24,9",
+          "0,1",
+          "134,46",
+          "Entregue"
+        ],
+        [
+          "23/09/2026",
+          "MAT-002",
+          "Óculos de proteção",
+          "EPI",
+          "Qualidade",
+          "7",
+          "12,5",
+          "0",
+          "87,5",
+          "Entregue"
+        ],
+        [
+          "23/09/2026",
+          "MAT-010",
+          "Cabo flexível 2,5 mm²",
+          "Elétrico",
+          "Produção",
+          "25",
+          "3,4",
+          "0,05",
+          "80,75",
+          "Entregue"
+        ],
+        [
+          "23/09/2026",
+          "MAT-008",
+          "Rebite de alumínio 4 mm",
+          "Fixação",
+          "Produção",
+          "235",
+          "0,12",
+          "0",
+          "28,2",
+          "Pendente"
+        ],
+        [
+          "23/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Produção",
+          "228",
+          "0,45",
+          "0,05",
+          "97,47",
+          "Entregue"
+        ],
+        [
+          "24/09/2026",
+          "MAT-008",
+          "Rebite de alumínio 4 mm",
+          "Fixação",
+          "Qualidade",
+          "166",
+          "0,12",
+          "0,05",
+          "18,92",
+          "Entregue"
+        ],
+        [
+          "24/09/2026",
+          "MAT-014",
+          "Lixa grão 120",
+          "Ferramentas",
+          "Expedição",
+          "47",
+          "1,9",
+          "0",
+          "89,3",
+          "Entregue"
+        ],
+        [
+          "24/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Produção",
+          "303",
+          "0,15",
+          "0",
+          "45,45",
+          "Entregue"
+        ],
+        [
+          "24/09/2026",
+          "MAT-013",
+          "Broca aço rápido 8 mm",
+          "Ferramentas",
+          "Manutenção",
+          "3",
+          "14,5",
+          "0",
+          "43,5",
+          "Entregue"
+        ],
+        [
+          "24/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Montagem",
+          "215",
+          "0,15",
+          "0,05",
+          "30,64",
+          "Entregue"
+        ],
+        [
+          "24/09/2026",
+          "MAT-015",
+          "Trena 5 m",
+          "Ferramentas",
+          "Expedição",
+          "4",
+          "22",
+          "0,1",
+          "79,2",
+          "Entregue"
+        ],
+        [
+          "24/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Expedição",
+          "162",
+          "0,15",
+          "0",
+          "24,3",
+          "Entregue"
+        ],
+        [
+          "24/09/2026",
+          "MAT-014",
+          "Lixa grão 120",
+          "Ferramentas",
+          "Montagem",
+          "36",
+          "1,9",
+          "0,1",
+          "61,56",
+          "Cancelada"
+        ],
+        [
+          "25/09/2026",
+          "MAT-014",
+          "Lixa grão 120",
+          "Ferramentas",
+          "Manutenção",
+          "19",
+          "1,9",
+          "0,15",
+          "30,68",
+          "Entregue"
+        ],
+        [
+          "25/09/2026",
+          "MAT-008",
+          "Rebite de alumínio 4 mm",
+          "Fixação",
+          "Manutenção",
+          "260",
+          "0,12",
+          "0,1",
+          "28,08",
+          "Entregue"
+        ],
+        [
+          "25/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Montagem",
+          "186",
+          "0,45",
+          "0",
+          "83,7",
+          "Pendente"
+        ],
+        [
+          "25/09/2026",
+          "MAT-014",
+          "Lixa grão 120",
+          "Ferramentas",
+          "Manutenção",
+          "44",
+          "1,9",
+          "0,15",
+          "71,06",
+          "Entregue"
+        ],
+        [
+          "25/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Manutenção",
+          "9",
+          "24,9",
+          "0",
+          "224,1",
+          "Entregue"
+        ],
+        [
+          "25/09/2026",
+          "MAT-013",
+          "Broca aço rápido 8 mm",
+          "Ferramentas",
+          "Qualidade",
+          "8",
+          "14,5",
+          "0",
+          "116",
+          "Entregue"
+        ],
+        [
+          "26/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Qualidade",
+          "6",
+          "24,9",
+          "0,05",
+          "141,93",
+          "Entregue"
+        ],
+        [
+          "26/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Expedição",
+          "9",
+          "24,9",
+          "0,05",
+          "212,89",
+          "Entregue"
+        ],
+        [
+          "26/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Montagem",
+          "3",
+          "6,9",
+          "0",
+          "20,7",
+          "Entregue"
+        ],
+        [
+          "26/09/2026",
+          "MAT-015",
+          "Trena 5 m",
+          "Ferramentas",
+          "Produção",
+          "3",
+          "22",
+          "0,05",
+          "62,7",
+          "Pendente"
+        ],
+        [
+          "26/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Montagem",
+          "20",
+          "6,9",
+          "0,1",
+          "124,2",
+          "Entregue"
+        ],
+        [
+          "26/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Expedição",
+          "8",
+          "24,9",
+          "0,05",
+          "189,24",
+          "Entregue"
+        ],
+        [
+          "29/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Manutenção",
+          "375",
+          "0,15",
+          "0",
+          "56,25",
+          "Entregue"
+        ],
+        [
+          "29/09/2026",
+          "MAT-002",
+          "Óculos de proteção",
+          "EPI",
+          "Montagem",
+          "13",
+          "12,5",
+          "0,1",
+          "146,25",
+          "Pendente"
+        ],
+        [
+          "29/09/2026",
+          "MAT-001",
+          "Luva de vaqueta",
+          "EPI",
+          "Expedição",
+          "37",
+          "18,9",
+          "0,15",
+          "594,4",
+          "Entregue"
+        ],
+        [
+          "29/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Produção",
+          "334",
+          "0,45",
+          "0,05",
+          "142,78",
+          "Entregue"
+        ],
+        [
+          "29/09/2026",
+          "MAT-012",
+          "Disco de corte 7\"",
+          "Ferramentas",
+          "Produção",
+          "6",
+          "9,8",
+          "0",
+          "58,8",
+          "Entregue"
+        ],
+        [
+          "29/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Expedição",
+          "46",
+          "1,8",
+          "0",
+          "82,8",
+          "Cancelada"
+        ],
+        [
+          "30/09/2026",
+          "MAT-010",
+          "Cabo flexível 2,5 mm²",
+          "Elétrico",
+          "Montagem",
+          "10",
+          "3,4",
+          "0,1",
+          "30,6",
+          "Entregue"
+        ],
+        [
+          "30/09/2026",
+          "MAT-010",
+          "Cabo flexível 2,5 mm²",
+          "Elétrico",
+          "Qualidade",
+          "40",
+          "3,4",
+          "0,05",
+          "129,2",
+          "Pendente"
+        ],
+        [
+          "30/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Expedição",
+          "25",
+          "1,8",
+          "0",
+          "45",
+          "Entregue"
+        ],
+        [
+          "30/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Manutenção",
+          "80",
+          "1,8",
+          "0,05",
+          "136,8",
+          "Pendente"
+        ],
+        [
+          "30/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Montagem",
+          "6",
+          "24,9",
+          "0,1",
+          "134,46",
+          "Entregue"
+        ]
+      ]
+    },
+    "RequisicoesFmt": {
+      "linhas": [
+        [
+          "Data",
+          "Código",
+          "Descrição",
+          "Categoria",
+          "Setor",
+          "Quantidade",
+          "Custo Unitário",
+          "Desconto",
+          "Valor Total",
+          "Status",
+          "Faixa"
+        ],
+        [
+          "01/09/2026",
+          "MAT-013",
+          "Broca aço rápido 8 mm",
+          "Ferramentas",
+          "Expedição",
+          "9",
+          "R$ 14,50",
+          "10%",
+          "R$ 117,45",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "01/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Montagem",
+          "8",
+          "R$ 24,90",
+          "0%",
+          "R$ 199,20",
+          "Pendente",
+          "Médio"
+        ],
+        [
+          "01/09/2026",
+          "MAT-015",
+          "Trena 5 m",
+          "Ferramentas",
+          "Qualidade",
+          "3",
+          "R$ 22,00",
+          "15%",
+          "R$ 56,10",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "01/09/2026",
+          "MAT-008",
+          "Rebite de alumínio 4 mm",
+          "Fixação",
+          "Expedição",
+          "72",
+          "R$ 0,12",
+          "0%",
+          "R$ 8,64",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "01/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Montagem",
+          "2",
+          "R$ 24,90",
+          "0%",
+          "R$ 49,80",
+          "Cancelada",
+          "Baixo"
+        ],
+        [
+          "02/09/2026",
+          "MAT-004",
+          "Máscara PFF2",
+          "EPI",
+          "Manutenção",
+          "67",
+          "R$ 3,20",
+          "10%",
+          "R$ 192,96",
+          "Pendente",
+          "Médio"
+        ],
+        [
+          "02/09/2026",
+          "MAT-015",
+          "Trena 5 m",
+          "Ferramentas",
+          "Expedição",
+          "5",
+          "R$ 22,00",
+          "0%",
+          "R$ 110,00",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "03/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Manutenção",
+          "9",
+          "R$ 6,90",
+          "15%",
+          "R$ 52,78",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "03/09/2026",
+          "MAT-002",
+          "Óculos de proteção",
+          "EPI",
+          "Qualidade",
+          "11",
+          "R$ 12,50",
+          "5%",
+          "R$ 130,62",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "03/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Manutenção",
+          "1",
+          "R$ 24,90",
+          "15%",
+          "R$ 21,16",
+          "Cancelada",
+          "Baixo"
+        ],
+        [
+          "03/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Expedição",
+          "119",
+          "R$ 0,15",
+          "10%",
+          "R$ 16,06",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "04/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Manutenção",
+          "18",
+          "R$ 6,90",
+          "0%",
+          "R$ 124,20",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "04/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Manutenção",
+          "119",
+          "R$ 0,45",
+          "0%",
+          "R$ 53,55",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "04/09/2026",
+          "MAT-013",
+          "Broca aço rápido 8 mm",
+          "Ferramentas",
+          "Montagem",
+          "9",
+          "R$ 14,50",
+          "15%",
+          "R$ 110,92",
+          "Cancelada",
+          "Médio"
+        ],
+        [
+          "04/09/2026",
+          "MAT-007",
+          "Arruela lisa 8 mm",
+          "Fixação",
+          "Qualidade",
+          "150",
+          "R$ 0,08",
+          "5%",
+          "R$ 11,40",
+          "Pendente",
+          "Baixo"
+        ],
+        [
+          "04/09/2026",
+          "MAT-007",
+          "Arruela lisa 8 mm",
+          "Fixação",
+          "Expedição",
+          "87",
+          "R$ 0,08",
+          "0%",
+          "R$ 6,96",
+          "Cancelada",
+          "Baixo"
+        ],
+        [
+          "04/09/2026",
+          "MAT-001",
+          "Luva de vaqueta",
+          "EPI",
+          "Montagem",
+          "6",
+          "R$ 18,90",
+          "15%",
+          "R$ 96,39",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "04/09/2026",
+          "MAT-001",
+          "Luva de vaqueta",
+          "EPI",
+          "Montagem",
+          "33",
+          "R$ 18,90",
+          "5%",
+          "R$ 592,51",
+          "Entregue",
+          "Alto"
+        ],
+        [
+          "05/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Expedição",
+          "342",
+          "R$ 0,15",
+          "0%",
+          "R$ 51,30",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "05/09/2026",
+          "MAT-010",
+          "Cabo flexível 2,5 mm²",
+          "Elétrico",
+          "Qualidade",
+          "38",
+          "R$ 3,40",
+          "15%",
+          "R$ 109,82",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "05/09/2026",
+          "MAT-004",
+          "Máscara PFF2",
+          "EPI",
+          "Expedição",
+          "39",
+          "R$ 3,20",
+          "5%",
+          "R$ 118,56",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "05/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Expedição",
+          "1",
+          "R$ 24,90",
+          "10%",
+          "R$ 22,41",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "09/09/2026",
+          "MAT-004",
+          "Máscara PFF2",
+          "EPI",
+          "Produção",
+          "79",
+          "R$ 3,20",
+          "10%",
+          "R$ 227,52",
+          "Cancelada",
+          "Médio"
+        ],
+        [
+          "09/09/2026",
+          "MAT-015",
+          "Trena 5 m",
+          "Ferramentas",
+          "Manutenção",
+          "4",
+          "R$ 22,00",
+          "15%",
+          "R$ 74,80",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "09/09/2026",
+          "MAT-012",
+          "Disco de corte 7\"",
+          "Ferramentas",
+          "Manutenção",
+          "23",
+          "R$ 9,80",
+          "10%",
+          "R$ 202,86",
+          "Pendente",
+          "Médio"
+        ],
+        [
+          "10/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Qualidade",
+          "6",
+          "R$ 6,90",
+          "0%",
+          "R$ 41,40",
+          "Pendente",
+          "Baixo"
+        ],
+        [
+          "10/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Expedição",
+          "54",
+          "R$ 1,80",
+          "10%",
+          "R$ 87,48",
+          "Pendente",
+          "Baixo"
+        ],
+        [
+          "10/09/2026",
+          "MAT-007",
+          "Arruela lisa 8 mm",
+          "Fixação",
+          "Produção",
+          "246",
+          "R$ 0,08",
+          "5%",
+          "R$ 18,70",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "10/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Montagem",
+          "287",
+          "R$ 0,45",
+          "0%",
+          "R$ 129,15",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "11/09/2026",
+          "MAT-008",
+          "Rebite de alumínio 4 mm",
+          "Fixação",
+          "Montagem",
+          "279",
+          "R$ 0,12",
+          "15%",
+          "R$ 28,46",
+          "Pendente",
+          "Baixo"
+        ],
+        [
+          "11/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Expedição",
+          "35",
+          "R$ 1,80",
+          "0%",
+          "R$ 63,00",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "11/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Montagem",
+          "5",
+          "R$ 6,90",
+          "15%",
+          "R$ 29,32",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "11/09/2026",
+          "MAT-014",
+          "Lixa grão 120",
+          "Ferramentas",
+          "Produção",
+          "39",
+          "R$ 1,90",
+          "0%",
+          "R$ 74,10",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "11/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Manutenção",
+          "1",
+          "R$ 24,90",
+          "0%",
+          "R$ 24,90",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "12/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Qualidade",
+          "343",
+          "R$ 0,15",
+          "15%",
+          "R$ 43,73",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "12/09/2026",
+          "MAT-013",
+          "Broca aço rápido 8 mm",
+          "Ferramentas",
+          "Qualidade",
+          "12",
+          "R$ 14,50",
+          "5%",
+          "R$ 165,30",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "12/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Manutenção",
+          "341",
+          "R$ 0,45",
+          "5%",
+          "R$ 145,78",
+          "Pendente",
+          "Médio"
+        ],
+        [
+          "12/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Qualidade",
+          "117",
+          "R$ 0,45",
+          "5%",
+          "R$ 50,02",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "12/09/2026",
+          "MAT-002",
+          "Óculos de proteção",
+          "EPI",
+          "Expedição",
+          "8",
+          "R$ 12,50",
+          "15%",
+          "R$ 85,00",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "12/09/2026",
+          "MAT-002",
+          "Óculos de proteção",
+          "EPI",
+          "Montagem",
+          "8",
+          "R$ 12,50",
+          "10%",
+          "R$ 90,00",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "15/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Montagem",
+          "5",
+          "R$ 24,90",
+          "10%",
+          "R$ 112,05",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "15/09/2026",
+          "MAT-010",
+          "Cabo flexível 2,5 mm²",
+          "Elétrico",
+          "Montagem",
+          "15",
+          "R$ 3,40",
+          "15%",
+          "R$ 43,35",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "15/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Expedição",
+          "181",
+          "R$ 0,45",
+          "0%",
+          "R$ 81,45",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "16/09/2026",
+          "MAT-007",
+          "Arruela lisa 8 mm",
+          "Fixação",
+          "Manutenção",
+          "61",
+          "R$ 0,08",
+          "0%",
+          "R$ 4,88",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "16/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Qualidade",
+          "345",
+          "R$ 0,45",
+          "0%",
+          "R$ 155,25",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "16/09/2026",
+          "MAT-015",
+          "Trena 5 m",
+          "Ferramentas",
+          "Expedição",
+          "5",
+          "R$ 22,00",
+          "15%",
+          "R$ 93,50",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "16/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Produção",
+          "7",
+          "R$ 24,90",
+          "10%",
+          "R$ 156,87",
+          "Pendente",
+          "Médio"
+        ],
+        [
+          "16/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Expedição",
+          "268",
+          "R$ 0,15",
+          "5%",
+          "R$ 38,19",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "17/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Qualidade",
+          "5",
+          "R$ 24,90",
+          "0%",
+          "R$ 124,50",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "17/09/2026",
+          "MAT-007",
+          "Arruela lisa 8 mm",
+          "Fixação",
+          "Montagem",
+          "79",
+          "R$ 0,08",
+          "0%",
+          "R$ 6,32",
+          "Cancelada",
+          "Baixo"
+        ],
+        [
+          "17/09/2026",
+          "MAT-012",
+          "Disco de corte 7\"",
+          "Ferramentas",
+          "Produção",
+          "12",
+          "R$ 9,80",
+          "10%",
+          "R$ 105,84",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "17/09/2026",
+          "MAT-012",
+          "Disco de corte 7\"",
+          "Ferramentas",
+          "Produção",
+          "12",
+          "R$ 9,80",
+          "0%",
+          "R$ 117,60",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "17/09/2026",
+          "MAT-013",
+          "Broca aço rápido 8 mm",
+          "Ferramentas",
+          "Produção",
+          "9",
+          "R$ 14,50",
+          "5%",
+          "R$ 123,97",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "17/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Produção",
+          "133",
+          "R$ 0,15",
+          "0%",
+          "R$ 19,95",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "18/09/2026",
+          "MAT-010",
+          "Cabo flexível 2,5 mm²",
+          "Elétrico",
+          "Manutenção",
+          "38",
+          "R$ 3,40",
+          "0%",
+          "R$ 129,20",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "18/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Montagem",
+          "64",
+          "R$ 0,15",
+          "5%",
+          "R$ 9,12",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "18/09/2026",
+          "MAT-007",
+          "Arruela lisa 8 mm",
+          "Fixação",
+          "Expedição",
+          "246",
+          "R$ 0,08",
+          "5%",
+          "R$ 18,70",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "18/09/2026",
+          "MAT-007",
+          "Arruela lisa 8 mm",
+          "Fixação",
+          "Manutenção",
+          "114",
+          "R$ 0,08",
+          "0%",
+          "R$ 9,12",
+          "Pendente",
+          "Baixo"
+        ],
+        [
+          "18/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Qualidade",
+          "107",
+          "R$ 1,80",
+          "5%",
+          "R$ 182,97",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "18/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Manutenção",
+          "9",
+          "R$ 6,90",
+          "5%",
+          "R$ 58,99",
+          "Pendente",
+          "Baixo"
+        ],
+        [
+          "19/09/2026",
+          "MAT-001",
+          "Luva de vaqueta",
+          "EPI",
+          "Expedição",
+          "31",
+          "R$ 18,90",
+          "0%",
+          "R$ 585,90",
+          "Entregue",
+          "Alto"
+        ],
+        [
+          "19/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Qualidade",
+          "95",
+          "R$ 0,45",
+          "0%",
+          "R$ 42,75",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "19/09/2026",
+          "MAT-014",
+          "Lixa grão 120",
+          "Ferramentas",
+          "Qualidade",
+          "26",
+          "R$ 1,90",
+          "0%",
+          "R$ 49,40",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "19/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Montagem",
+          "78",
+          "R$ 0,15",
+          "10%",
+          "R$ 10,53",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "19/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Manutenção",
+          "8",
+          "R$ 24,90",
+          "15%",
+          "R$ 169,32",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "19/09/2026",
+          "MAT-001",
+          "Luva de vaqueta",
+          "EPI",
+          "Manutenção",
+          "30",
+          "R$ 18,90",
+          "0%",
+          "R$ 567,00",
+          "Entregue",
+          "Alto"
+        ],
+        [
+          "19/09/2026",
+          "MAT-012",
+          "Disco de corte 7\"",
+          "Ferramentas",
+          "Manutenção",
+          "20",
+          "R$ 9,80",
+          "0%",
+          "R$ 196,00",
+          "Cancelada",
+          "Médio"
+        ],
+        [
+          "22/09/2026",
+          "MAT-014",
+          "Lixa grão 120",
+          "Ferramentas",
+          "Manutenção",
+          "33",
+          "R$ 1,90",
+          "0%",
+          "R$ 62,70",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "22/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Qualidade",
+          "292",
+          "R$ 0,15",
+          "5%",
+          "R$ 41,61",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "22/09/2026",
+          "MAT-015",
+          "Trena 5 m",
+          "Ferramentas",
+          "Montagem",
+          "2",
+          "R$ 22,00",
+          "15%",
+          "R$ 37,40",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "22/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Expedição",
+          "20",
+          "R$ 1,80",
+          "10%",
+          "R$ 32,40",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "22/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Qualidade",
+          "259",
+          "R$ 0,15",
+          "15%",
+          "R$ 33,02",
+          "Cancelada",
+          "Baixo"
+        ],
+        [
+          "22/09/2026",
+          "MAT-013",
+          "Broca aço rápido 8 mm",
+          "Ferramentas",
+          "Produção",
+          "5",
+          "R$ 14,50",
+          "0%",
+          "R$ 72,50",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "22/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Manutenção",
+          "101",
+          "R$ 0,15",
+          "5%",
+          "R$ 14,39",
+          "Pendente",
+          "Baixo"
+        ],
+        [
+          "22/09/2026",
+          "MAT-015",
+          "Trena 5 m",
+          "Ferramentas",
+          "Qualidade",
+          "3",
+          "R$ 22,00",
+          "0%",
+          "R$ 66,00",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "22/09/2026",
+          "MAT-010",
+          "Cabo flexível 2,5 mm²",
+          "Elétrico",
+          "Expedição",
+          "39",
+          "R$ 3,40",
+          "0%",
+          "R$ 132,60",
+          "Cancelada",
+          "Médio"
+        ],
+        [
+          "22/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Manutenção",
+          "18",
+          "R$ 6,90",
+          "15%",
+          "R$ 105,57",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "22/09/2026",
+          "MAT-002",
+          "Óculos de proteção",
+          "EPI",
+          "Expedição",
+          "13",
+          "R$ 12,50",
+          "0%",
+          "R$ 162,50",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "23/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Qualidade",
+          "8",
+          "R$ 6,90",
+          "0%",
+          "R$ 55,20",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "23/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Montagem",
+          "65",
+          "R$ 1,80",
+          "0%",
+          "R$ 117,00",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "23/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Produção",
+          "97",
+          "R$ 1,80",
+          "5%",
+          "R$ 165,87",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "23/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Montagem",
+          "9",
+          "R$ 24,90",
+          "5%",
+          "R$ 212,89",
+          "Cancelada",
+          "Médio"
+        ],
+        [
+          "23/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Manutenção",
+          "60",
+          "R$ 1,80",
+          "10%",
+          "R$ 97,20",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "23/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Produção",
+          "18",
+          "R$ 6,90",
+          "0%",
+          "R$ 124,20",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "23/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Produção",
+          "6",
+          "R$ 24,90",
+          "10%",
+          "R$ 134,46",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "23/09/2026",
+          "MAT-002",
+          "Óculos de proteção",
+          "EPI",
+          "Qualidade",
+          "7",
+          "R$ 12,50",
+          "0%",
+          "R$ 87,50",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "23/09/2026",
+          "MAT-010",
+          "Cabo flexível 2,5 mm²",
+          "Elétrico",
+          "Produção",
+          "25",
+          "R$ 3,40",
+          "5%",
+          "R$ 80,75",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "23/09/2026",
+          "MAT-008",
+          "Rebite de alumínio 4 mm",
+          "Fixação",
+          "Produção",
+          "235",
+          "R$ 0,12",
+          "0%",
+          "R$ 28,20",
+          "Pendente",
+          "Baixo"
+        ],
+        [
+          "23/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Produção",
+          "228",
+          "R$ 0,45",
+          "5%",
+          "R$ 97,47",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "24/09/2026",
+          "MAT-008",
+          "Rebite de alumínio 4 mm",
+          "Fixação",
+          "Qualidade",
+          "166",
+          "R$ 0,12",
+          "5%",
+          "R$ 18,92",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "24/09/2026",
+          "MAT-014",
+          "Lixa grão 120",
+          "Ferramentas",
+          "Expedição",
+          "47",
+          "R$ 1,90",
+          "0%",
+          "R$ 89,30",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "24/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Produção",
+          "303",
+          "R$ 0,15",
+          "0%",
+          "R$ 45,45",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "24/09/2026",
+          "MAT-013",
+          "Broca aço rápido 8 mm",
+          "Ferramentas",
+          "Manutenção",
+          "3",
+          "R$ 14,50",
+          "0%",
+          "R$ 43,50",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "24/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Montagem",
+          "215",
+          "R$ 0,15",
+          "5%",
+          "R$ 30,64",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "24/09/2026",
+          "MAT-015",
+          "Trena 5 m",
+          "Ferramentas",
+          "Expedição",
+          "4",
+          "R$ 22,00",
+          "10%",
+          "R$ 79,20",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "24/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Expedição",
+          "162",
+          "R$ 0,15",
+          "0%",
+          "R$ 24,30",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "24/09/2026",
+          "MAT-014",
+          "Lixa grão 120",
+          "Ferramentas",
+          "Montagem",
+          "36",
+          "R$ 1,90",
+          "10%",
+          "R$ 61,56",
+          "Cancelada",
+          "Baixo"
+        ],
+        [
+          "25/09/2026",
+          "MAT-014",
+          "Lixa grão 120",
+          "Ferramentas",
+          "Manutenção",
+          "19",
+          "R$ 1,90",
+          "15%",
+          "R$ 30,68",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "25/09/2026",
+          "MAT-008",
+          "Rebite de alumínio 4 mm",
+          "Fixação",
+          "Manutenção",
+          "260",
+          "R$ 0,12",
+          "10%",
+          "R$ 28,08",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "25/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Montagem",
+          "186",
+          "R$ 0,45",
+          "0%",
+          "R$ 83,70",
+          "Pendente",
+          "Baixo"
+        ],
+        [
+          "25/09/2026",
+          "MAT-014",
+          "Lixa grão 120",
+          "Ferramentas",
+          "Manutenção",
+          "44",
+          "R$ 1,90",
+          "15%",
+          "R$ 71,06",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "25/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Manutenção",
+          "9",
+          "R$ 24,90",
+          "0%",
+          "R$ 224,10",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "25/09/2026",
+          "MAT-013",
+          "Broca aço rápido 8 mm",
+          "Ferramentas",
+          "Qualidade",
+          "8",
+          "R$ 14,50",
+          "0%",
+          "R$ 116,00",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "26/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Qualidade",
+          "6",
+          "R$ 24,90",
+          "5%",
+          "R$ 141,93",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "26/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Expedição",
+          "9",
+          "R$ 24,90",
+          "5%",
+          "R$ 212,89",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "26/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Montagem",
+          "3",
+          "R$ 6,90",
+          "0%",
+          "R$ 20,70",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "26/09/2026",
+          "MAT-015",
+          "Trena 5 m",
+          "Ferramentas",
+          "Produção",
+          "3",
+          "R$ 22,00",
+          "5%",
+          "R$ 62,70",
+          "Pendente",
+          "Baixo"
+        ],
+        [
+          "26/09/2026",
+          "MAT-009",
+          "Fita isolante 19 mm",
+          "Elétrico",
+          "Montagem",
+          "20",
+          "R$ 6,90",
+          "10%",
+          "R$ 124,20",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "26/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Expedição",
+          "8",
+          "R$ 24,90",
+          "5%",
+          "R$ 189,24",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "29/09/2026",
+          "MAT-006",
+          "Porca M8",
+          "Fixação",
+          "Manutenção",
+          "375",
+          "R$ 0,15",
+          "0%",
+          "R$ 56,25",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "29/09/2026",
+          "MAT-002",
+          "Óculos de proteção",
+          "EPI",
+          "Montagem",
+          "13",
+          "R$ 12,50",
+          "10%",
+          "R$ 146,25",
+          "Pendente",
+          "Médio"
+        ],
+        [
+          "29/09/2026",
+          "MAT-001",
+          "Luva de vaqueta",
+          "EPI",
+          "Expedição",
+          "37",
+          "R$ 18,90",
+          "15%",
+          "R$ 594,40",
+          "Entregue",
+          "Alto"
+        ],
+        [
+          "29/09/2026",
+          "MAT-005",
+          "Parafuso sextavado M8",
+          "Fixação",
+          "Produção",
+          "334",
+          "R$ 0,45",
+          "5%",
+          "R$ 142,78",
+          "Entregue",
+          "Médio"
+        ],
+        [
+          "29/09/2026",
+          "MAT-012",
+          "Disco de corte 7\"",
+          "Ferramentas",
+          "Produção",
+          "6",
+          "R$ 9,80",
+          "0%",
+          "R$ 58,80",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "29/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Expedição",
+          "46",
+          "R$ 1,80",
+          "0%",
+          "R$ 82,80",
+          "Cancelada",
+          "Baixo"
+        ],
+        [
+          "30/09/2026",
+          "MAT-010",
+          "Cabo flexível 2,5 mm²",
+          "Elétrico",
+          "Montagem",
+          "10",
+          "R$ 3,40",
+          "10%",
+          "R$ 30,60",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "30/09/2026",
+          "MAT-010",
+          "Cabo flexível 2,5 mm²",
+          "Elétrico",
+          "Qualidade",
+          "40",
+          "R$ 3,40",
+          "5%",
+          "R$ 129,20",
+          "Pendente",
+          "Médio"
+        ],
+        [
+          "30/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Expedição",
+          "25",
+          "R$ 1,80",
+          "0%",
+          "R$ 45,00",
+          "Entregue",
+          "Baixo"
+        ],
+        [
+          "30/09/2026",
+          "MAT-003",
+          "Protetor auricular plug",
+          "EPI",
+          "Manutenção",
+          "80",
+          "R$ 1,80",
+          "5%",
+          "R$ 136,80",
+          "Pendente",
+          "Médio"
+        ],
+        [
+          "30/09/2026",
+          "MAT-011",
+          "Disjuntor 20 A",
+          "Elétrico",
+          "Montagem",
+          "6",
+          "R$ 24,90",
+          "10%",
+          "R$ 134,46",
+          "Entregue",
+          "Médio"
+        ]
+      ]
+    },
+    "Analise": {
+      "celulas": {
+        "A1": "INDICADORES DA BASE DE REQUISIÇÕES",
+        "A2": "Indicador",
+        "B2": "Valor",
+        "A3": "Valor total requisitado",
+        "B3": "R$ 12.263,95",
+        "A4": "Valor médio por requisição",
+        "B4": "R$ 102,20",
+        "A5": "Maior requisição",
+        "B5": "R$ 594,40",
+        "A6": "Menor requisição",
+        "B6": "R$ 4,88",
+        "A7": "Requisições registradas",
+        "B7": "120",
+        "A8": "Requisições com quantidade",
+        "B8": "120",
+        "A10": "RESUMO POR STATUS",
+        "A11": "Status",
+        "B11": "Requisições",
+        "C11": "Valor Total",
+        "D11": "% do Total",
+        "A15": "Total",
+        "B15": "120",
+        "C15": "R$ 12.263,95",
+        "D15": "100,0%",
+        "A12": "Entregue",
+        "B12": "90",
+        "C12": "R$ 9.386,64",
+        "D12": "76,5%",
+        "A13": "Pendente",
+        "B13": "18",
+        "C13": "R$ 1.735,76",
+        "D13": "14,2%",
+        "A14": "Cancelada",
+        "B14": "12",
+        "C14": "R$ 1.141,55",
+        "D14": "9,3%",
+        "A17": "CONSULTA DE CÓDIGO",
+        "A18": "Código",
+        "B18": "MAT-010",
+        "A19": "Descrição",
+        "B19": "Cabo flexível 2,5 mm²",
+        "A20": "Quantidade requisitada",
+        "B20": "205",
+        "A21": "Requisições acima do valor médio",
+        "B21": "48"
+      }
     }
   },
   "capa": {
-    "subtitulo": "Planilha de controle de estoque do almoxarifado: formatação, validação de dados, PROCV, SE, SOMASE, CONT.SE, PROCH, filtros e proteção",
+    "subtitulo": "Planilha de controle de estoque do almoxarifado: formatação, validação de dados, PROCV, SE, SOMASE, CONT.SE, PROCH, filtros e proteção, além de formatação condicional, filtros e impressão numa base de 120 registros",
     "sobre": [
       "Esta é uma **atividade prática avaliativa**: ela **compõe a nota final** e vale **10 pontos** na linha **Atividades de Sala de Aula** da tabela de notas. A pontuação de cada questão entra direto na sua nota.",
       "Você vai montar **um único arquivo** do Excel, questão por questão. Cada questão acrescenta uma parte ao arquivo, por isso faça **na ordem**.",
@@ -437,9 +3519,9 @@
     "contexto": [
       "A **Metalúrgica Vale do Itajaí** (empresa fictícia) controla o almoxarifado em um caderno. No mês passado faltaram máscaras e discos de corte e ninguém percebeu a tempo.",
       "Você entrou como aprendiz no almoxarifado e sua missão é criar a **planilha de controle de estoque**: cadastrar os materiais, lançar as entradas e saídas de setembro, calcular o saldo de cada item, avisar com cores o que está abaixo do mínimo e montar um resumo para o gerente.",
-      "No final, a planilha terá **quatro abas**, ligadas por fórmulas:"
+      "No final, a planilha terá **seis abas**, ligadas por fórmulas. A aba `Requisicoes` é uma base de 120 registros (dados prontos: o que vale nota é a formatação) e a `Analise` resume essa base:"
     ],
-    "legenda_abas": "As quatro abas da planilha final e como elas conversam entre si.",
+    "legenda_abas": "As seis abas da planilha final e como elas conversam entre si.",
     "tempos": [
       [
         "Abertura",
@@ -451,19 +3533,19 @@
         "**Questão 1**",
         "Cadastro e formatação profissional",
         "25 min",
-        "1,5"
+        "1,0"
       ],
       [
         "**Questão 2**",
         "Movimentação com validação de dados",
         "30 min",
-        "1,5"
+        "1,0"
       ],
       [
         "**Questão 3**",
         "PROCV, SEERRO e ÍNDICE + CORRESP",
         "30 min",
-        "2,0"
+        "1,5"
       ],
       [
         "Intervalo",
@@ -475,19 +3557,43 @@
         "**Questão 4**",
         "Saldo, SE aninhado e formatação condicional",
         "35 min",
-        "2,0"
+        "1,5"
       ],
       [
         "**Questão 5**",
         "Resumo com CONT.SE, SOMASE e PROCH",
         "25 min",
-        "1,5"
+        "1,0"
       ],
       [
         "**Questão 6**",
-        "Filtro, proteção e entrega",
-        "20 min",
-        "1,5"
+        "Filtro e proteção da planilha",
+        "15 min",
+        "1,0"
+      ],
+      [
+        "**Questão 7**",
+        "Base de requisições: números, datas e cabeçalho",
+        "22 min",
+        "0,75"
+      ],
+      [
+        "**Questão 8**",
+        "Formatação condicional na base",
+        "22 min",
+        "0,75"
+      ],
+      [
+        "**Questão 9**",
+        "Filtros e classificação",
+        "23 min",
+        "0,75"
+      ],
+      [
+        "**Questão 10**",
+        "Congelar painéis, impressão e entrega",
+        "23 min",
+        "0,75"
       ],
       [
         "Fechamento",
@@ -498,7 +3604,7 @@
       [
         "**Total**",
         "",
-        "**3h25**",
+        "**4h50**",
         "**10,0**"
       ]
     ],
@@ -526,26 +3632,45 @@
           "D",
           "E"
         ]
+      },
+      {
+        "titulo": "Aba Requisicoes (Questão 7): copie e cole em A1 (120 registros)",
+        "planilha": "Requisicoes",
+        "colunas": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
+        ]
       }
     ],
     "regras": [
       "Trabalho **individual**. Pode consultar os slides das aulas e as páginas desta atividade.",
+      "Nas Questões 7 a 10 os dados **já vêm prontos** (botão Copiar): o que vale nota é a **formatação** do que você monta, não a digitação.",
       "Salve com frequência: [[Ctrl]]+[[B]].",
       "Nome do arquivo: `ESTOQUE-NOME-SOBRENOME.xlsx`, com o seu nome (ex.: `ESTOQUE-ANA-SOUZA.xlsx`).",
-      "Não apague abas nem mude os nomes `Cadastro`, `Movimentacao`, `Consulta` e `Resumo`.",
+      "Não apague abas nem mude os nomes `Cadastro`, `Movimentacao`, `Consulta`, `Resumo`, `Requisicoes` e `Analise`.",
       "Senha de proteção da Questão 6: `senai2026`.",
       "Entregue o arquivo como o professor orientar: pasta da turma, AVA ou e-mail.",
       "A empresa e os dados são **fictícios**, criados para esta atividade."
     ],
     "imagem_abas": {
-      "alt": "Visão geral das quatro abas da planilha e das fórmulas que as ligam",
+      "alt": "Visão geral das seis abas da planilha e das fórmulas que as ligam",
       "guia": "Página Inicial",
       "aba_ativa": "Cadastro",
       "abas": [
         "Cadastro",
         "Movimentacao",
         "Consulta",
-        "Resumo"
+        "Resumo",
+        "Requisicoes",
+        "Analise"
       ],
       "somente_esquema": true,
       "altura_esquema": 330,
@@ -614,6 +3739,32 @@
               "Conclusão (SE)",
               "Questões 5 e 6"
             ]
+          },
+          {
+            "id": "ana",
+            "x": 20,
+            "y": 170,
+            "w": 220,
+            "h": 78,
+            "titulo": "Analise",
+            "cor": "#00838f",
+            "linhas": [
+              "Indicadores e resumo",
+              "Questões 7 e 9"
+            ]
+          },
+          {
+            "id": "req",
+            "x": 720,
+            "y": 170,
+            "w": 220,
+            "h": 78,
+            "titulo": "Requisicoes",
+            "cor": "#8e24aa",
+            "linhas": [
+              "120 registros (só formatar)",
+              "Questões 7 a 10"
+            ]
           }
         ]
       },
@@ -652,7 +3803,7 @@
       "arquivo": "QUESTAO-01-CADASTRO-E-FORMATACAO.html",
       "titulo": "Cadastro de materiais e formatação profissional",
       "tempo": "25 min",
-      "pontos": "1,5",
+      "pontos": "1,0",
       "aba": "`Cadastro` (nova)",
       "slides_apoio": "Arquivo 4 — slides 10–12, 16, 20–21",
       "objetivo": "Criar a aba `Cadastro` com os 15 materiais do almoxarifado e deixá-la com aparência profissional: valores em reais, quantidades inteiras, cabeçalho destacado, bordas e títulos sempre visíveis.",
@@ -1276,19 +4427,19 @@
       "criterios": [
         [
           "Os 15 materiais e os títulos digitados corretamente",
-          "0,5"
+          "0,3"
         ],
         [
           "Custo Unitário em Moeda (R$) e colunas F e G como número inteiro",
-          "0,4"
+          "0,3"
         ],
         [
           "Cabeçalho azul-escuro com fonte branca em negrito e bordas na tabela",
-          "0,3"
+          "0,2"
         ],
         [
           "Linha superior congelada",
-          "0,3"
+          "0,2"
         ]
       ]
     },
@@ -1298,7 +4449,7 @@
       "arquivo": "QUESTAO-02-MOVIMENTACAO-E-VALIDACAO.html",
       "titulo": "Movimentação com validação de dados",
       "tempo": "30 min",
-      "pontos": "1,5",
+      "pontos": "1,0",
       "aba": "`Movimentacao` (nova)",
       "slides_apoio": "Arquivo 4 — slides 22–27 e 24.1",
       "objetivo": "Criar a aba `Movimentacao`, onde ficam as entradas e saídas de material, e **impedir erros de digitação** com validação de dados: listas suspensas e limites de quantidade.",
@@ -2091,19 +5242,19 @@
       "criterios": [
         [
           "Lista de códigos ligada ao Cadastro, com alerta Parar",
-          "0,5"
+          "0,3"
         ],
         [
           "Lista Entrada/Saída na coluna Tipo",
-          "0,3"
+          "0,2"
         ],
         [
           "Quantidade limitada a números inteiros de 1 a 500, com mensagem de entrada",
-          "0,4"
+          "0,3"
         ],
         [
           "12 movimentações lançadas corretamente, com datas formatadas",
-          "0,3"
+          "0,2"
         ]
       ]
     },
@@ -2113,7 +5264,7 @@
       "arquivo": "QUESTAO-03-PROCV-SEERRO-INDICE-CORRESP.html",
       "titulo": "Buscar dados com PROCV, SEERRO e ÍNDICE + CORRESP",
       "tempo": "30 min",
-      "pontos": "2,0",
+      "pontos": "1,5",
       "aba": "`Movimentacao` e `Consulta` (nova)",
       "slides_apoio": "Arquivo 5 — slides 9–11.1, 16–20 e 22–23.1",
       "objetivo": "Fazer o Excel **buscar sozinho** a descrição e o custo de cada material pelo código, tratar códigos que não existem e fazer uma busca \"para a esquerda\", do nome até o código.",
@@ -2751,19 +5902,19 @@
       "criterios": [
         [
           "PROCV com busca exata (0) e tabela travada com $ nas colunas C e F",
-          "0,6"
+          "0,4"
         ],
         [
           "SEERRO tratando código inexistente",
-          "0,4"
+          "0,3"
         ],
         [
           "Valor (=E2*F2) e fórmulas copiadas até a linha 13",
-          "0,4"
+          "0,3"
         ],
         [
           "ÍNDICE + CORRESP devolvendo o código a partir da descrição",
-          "0,6"
+          "0,5"
         ]
       ]
     },
@@ -2773,7 +5924,7 @@
       "arquivo": "QUESTAO-04-SALDO-SE-FORMATACAO-CONDICIONAL.html",
       "titulo": "Saldo, situação do item e formatação condicional",
       "tempo": "35 min",
-      "pontos": "2,0",
+      "pontos": "1,5",
       "aba": "`Movimentacao` (coluna H) e `Cadastro` (colunas H a K)",
       "slides_apoio": "Arquivo 4 — slides 13–15.1; Arquivo 5 — slides 26–31",
       "objetivo": "Calcular o **saldo atual** de cada material a partir das movimentações, classificar a situação do estoque e deixar os alertas coloridos.",
@@ -3534,23 +6685,23 @@
       "criterios": [
         [
           "Qtd com Sinal com SE (Entrada positiva, Saída negativa)",
-          "0,3"
+          "0,2"
         ],
         [
           "SOMASE correto, com os intervalos travados",
-          "0,5"
+          "0,4"
         ],
         [
           "Saldo Atual e Valor em Estoque (Moeda)",
-          "0,3"
+          "0,2"
         ],
         [
           "SE aninhado classificando Crítico, Atenção e Normal",
-          "0,5"
+          "0,4"
         ],
         [
           "Formatação condicional nas três situações e barras de dados",
-          "0,4"
+          "0,3"
         ]
       ]
     },
@@ -3560,7 +6711,7 @@
       "arquivo": "QUESTAO-05-RESUMO-CONTSE-SOMASE-PROCH.html",
       "titulo": "Resumo gerencial com CONT.SE, SOMASE e PROCH",
       "tempo": "25 min",
-      "pontos": "1,5",
+      "pontos": "1,0",
       "aba": "`Resumo` (nova)",
       "slides_apoio": "Arquivo 5 — slides 14–15 e 28–31",
       "objetivo": "Montar um **resumo para o gerente** que responde: quantos itens estão em cada situação, quanto dinheiro há em cada categoria e se as saídas do mês ficaram dentro do limite.",
@@ -4159,37 +7310,36 @@
       "criterios": [
         [
           "CONT.SE contando as três situações, com o total",
-          "0,4"
+          "0,3"
         ],
         [
           "SOMASE por categoria e % do total",
-          "0,5"
+          "0,3"
         ],
         [
           "PROCH buscando o limite do mês na tabela horizontal",
-          "0,4"
+          "0,3"
         ],
         [
           "SE com a conclusão sobre o limite",
-          "0,2"
+          "0,1"
         ]
       ]
     },
     {
       "id": "q6",
       "numero": 6,
-      "arquivo": "QUESTAO-06-FILTRO-PROTECAO-ENTREGA.html",
-      "titulo": "Filtro, proteção e entrega",
-      "tempo": "20 min",
-      "pontos": "1,5",
+      "arquivo": "QUESTAO-06-FILTRO-PROTECAO.html",
+      "titulo": "Filtro e proteção da planilha",
+      "tempo": "15 min",
+      "pontos": "1,0",
       "aba": "`Cadastro`, `Resumo` e `Movimentacao`",
       "slides_apoio": "Arquivo 4 — slides 28–33",
-      "objetivo": "Usar o **AutoFiltro** para responder a uma pergunta do gerente, **proteger** as fórmulas contra alterações acidentais e entregar o arquivo.",
+      "objetivo": "Usar o **AutoFiltro** para responder a uma pergunta do gerente, **proteger** as fórmulas contra alterações acidentais.",
       "voce_vai_usar": [
         "AutoFiltro ([[Ctrl]]+[[Shift]]+[[L]])",
         "Formatar Células → Proteção",
-        "Proteger Planilha",
-        "Salvar Como .xlsx"
+        "Proteger Planilha"
       ],
       "passos": [
         {
@@ -4712,41 +7862,2487 @@
               "texto": "Fórmulas travadas e células de digitação liberadas: a planilha está pronta para outra pessoa usar sem estragar as contas."
             }
           ]
-        },
+        }
+      ],
+      "criterios": [
+        [
+          "Filtro Crítico + EPI aplicado e item anotado em Resumo!B25",
+          "0,4"
+        ],
+        [
+          "Células de digitação da Movimentacao desbloqueadas",
+          "0,3"
+        ],
+        [
+          "Planilha Movimentacao protegida com a senha senai2026",
+          "0,3"
+        ]
+      ]
+    },
+    {
+      "id": "q7",
+      "numero": 7,
+      "arquivo": "QUESTAO-07-BASE-REQUISICOES-FORMATACAO.html",
+      "titulo": "Base de requisições: formatação de números, datas e cabeçalho",
+      "tempo": "22 min",
+      "pontos": "0,75",
+      "aba": "`Requisicoes` (nova)",
+      "slides_apoio": "Arquivo 3 — slides 10–11, 18–20.2; Arquivo 4 — slides 10–12 e 16–17",
+      "objetivo": "Receber uma **base grande** (120 requisições de material do almoxarifado), deixá-la **profissional** (cabeçalho, data, moeda, porcentagem, alinhamento e bordas) e resumir os números com **SOMA, MÉDIA, MÁXIMO, MÍNIMO, CONT.VALORES e CONT.NÚM**.",
+      "voce_vai_usar": [
+        "Copiar e colar dados",
+        "Formatar Células ([[Ctrl]]+[[1]])",
+        "Data, Moeda e Porcentagem",
+        "Alinhamento e Bordas",
+        "AutoAjuste de colunas",
+        "SOMA, MÉDIA, MÁXIMO, MÍNIMO, CONT.VALORES e CONT.NÚM"
+      ],
+      "caixas": [
         {
-          "titulo": "Salve e entregue o arquivo",
-          "legenda": "Nome do arquivo (1), tipo .xlsx (2) e Salvar (3).",
+          "tipo": "dica",
+          "texto": "Nesta e nas próximas questões os dados **já vêm prontos** (botão Copiar). O que vale nota é a **formatação**."
+        }
+      ],
+      "passos": [
+        {
+          "titulo": "Crie a aba Requisicoes e cole os 120 registros",
+          "legenda": "Botão + (1) cria a aba. Clique em A1 (2), cole com Ctrl+V e confira as 121 linhas.",
           "imagem": {
-            "alt": "Janela Salvar Como com o nome ESTOQUE-NOME-SOBRENOME.xlsx",
-            "guia": "Arquivo",
-            "aba_ativa": "Movimentacao",
+            "guia": "Página Inicial",
+            "planilha": "Requisicoes",
+            "aba_ativa": "Requisicoes",
             "abas": [
               "Cadastro",
               "Movimentacao",
               "Consulta",
-              "Resumo"
+              "Resumo",
+              "Requisicoes"
             ],
-            "colunas": "A:H",
+            "colunas": "A:J",
             "larguras": {
-              "A": 92,
-              "B": 78,
-              "C": 170,
-              "D": 72,
-              "E": 88,
-              "F": 108,
-              "G": 100,
-              "H": 104
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
             },
-            "linhas": 9,
-            "ocultar_texto": [
-              "G",
-              "H"
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
             ],
             "celula_ativa": "A1",
             "formula": "Data",
             "estilos": [
               {
-                "intervalo": "A1:H1",
+                "intervalo": "A1:J1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "vazias": [
+              "K1:K11"
+            ],
+            "selecao": "A1",
+            "marcas": [
+              {
+                "alvo": "aba:+",
+                "n": 1,
+                "lado": "direita"
+              },
+              {
+                "alvo": "A1",
+                "n": 2,
+                "lado": "esquerda"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique no **+** ao lado das abas (1) e renomeie a nova aba para `Requisicoes` (sem acento).",
+            "Abaixo, clique em **📋 Copiar** para copiar a tabela de 120 registros.",
+            "Volte ao Excel, clique em `A1` (2) e cole com [[Ctrl]]+[[V]].",
+            "Os dados chegam **sem formatação**: números com vírgula, sem R$ e sem %. Formatar é o seu trabalho nesta questão."
+          ],
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "Os dados são fornecidos: **você não será avaliado pela digitação**, só pela formatação feita nas Questões 7 a 10."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "A tabela vai da linha 1 (títulos) até a linha 121, e as colunas A a J estão preenchidas. Confira com [[Ctrl]]+[[Fim]]."
+            },
+            {
+              "tipo": "libre",
+              "texto": "Ao colar, o Calc abre a **Importação de Texto**: marque **Tabulação** como separador e confirme."
+            }
+          ],
+          "tabela_dados": 2
+        },
+        {
+          "titulo": "Formate o cabeçalho",
+          "legenda": "Selecione A1:J1. Use Negrito (1), Cor de Preenchimento (2), Cor da Fonte (3) e Centralizar (4).",
+          "imagem": {
+            "guia": "Página Inicial",
+            "planilha": "Requisicoes",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "A:J",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "A1",
+            "formula": "Data",
+            "estilos": [
+              {
+                "intervalo": "A1:J1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "vazias": [
+              "K1:K11"
+            ],
+            "selecao": "A1:J1",
+            "marcas": [
+              {
+                "alvo": "botao:Negrito",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "botao:Cor de Preenchimento",
+                "n": 2,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "botao:Cor da Fonte",
+                "n": 3,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "botao:Centralizar",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Selecione `A1:J1` (clique em A1 e arraste até J1).",
+            "Aplique **Negrito** (1) e **Cor de Preenchimento** azul-escuro (2).",
+            "Mude a **Cor da Fonte** para branco (3) e clique em **Centralizar** (4)."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Para repetir o visual do Cadastro, clique em `A1` do Cadastro, use o **Pincel de Formatação** e arraste sobre `A1:J1` da Requisicoes."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "O cabeçalho ficou azul-escuro, com letras brancas, em negrito e centralizado."
+            }
+          ]
+        },
+        {
+          "titulo": "Formate datas, moeda e porcentagem",
+          "legenda": "Selecione a coluna (1), abra Formatar Células (Ctrl+1), escolha a categoria (2), as casas decimais (3) e OK (4).",
+          "imagem": {
+            "guia": "Página Inicial",
+            "planilha": "Requisicoes",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "A:J",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "H2",
+            "formula": "0,05",
+            "estilos": [
+              {
+                "intervalo": "A1:J1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "vazias": [
+              "K1:K11"
+            ],
+            "selecao": "H2:H11",
+            "dialogo": {
+              "titulo": "Formatar Células",
+              "x": 20,
+              "y": 172,
+              "abas": [
+                "Número",
+                "Alinhamento",
+                "Fonte",
+                "Borda",
+                "Proteção"
+              ],
+              "aba_ativa": "Número",
+              "campos": [
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Categoria:",
+                  "valor": "Porcentagem"
+                },
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Casas decimais:",
+                  "valor": "0"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "rotulo": "Exemplo: 5%"
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "H2:H11",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "campo:Categoria:",
+                "n": 2
+              },
+              {
+                "alvo": "campo:Casas decimais:",
+                "n": 3
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Para cada coluna, selecione da linha 2 até a 121 (clique na primeira célula e use [[Ctrl]]+[[Shift]]+[[↓]]) (1) e abra [[Ctrl]]+[[1]].",
+            "`A2:A121` → categoria **Data**, tipo **14/03/2012** (Data Abreviada).",
+            "`G2:G121` e `I2:I121` (segure [[Ctrl]] para escolher as duas) → **Moeda**, 2 casas, símbolo **R$** (2) (3).",
+            "`H2:H121` → **Porcentagem**, 0 casas decimais. `F2:F121` → **Número**, 0 casas.",
+            "Clique em **OK** (4) depois de cada categoria."
+          ],
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "Não digite `R$` nem `%` nas células. Se o Desconto for `0,05`, o formato Porcentagem mostra `5%`. Se você digitar `5` e depois clicar em %, aparece 500%."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "Data aparece como dd/mm/aaaa, Custo e Valor Total em R$ com 2 decimais e Desconto em porcentagem sem decimais."
+            },
+            {
+              "tipo": "libre",
+              "texto": "Formatar → **Células** ([[Ctrl]]+[[1]]) → aba **Números** → categoria **Data**, **Moeda** ou **Porcentagem**."
+            }
+          ]
+        },
+        {
+          "titulo": "Alinhe, coloque bordas e ajuste as colunas",
+          "legenda": "Todas as Bordas (1) e duplo clique na divisa da coluna (2) para o AutoAjuste.",
+          "imagem": {
+            "guia": "Página Inicial",
+            "planilha": "RequisicoesFmt",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "A:J",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "A1",
+            "formula": "Data",
+            "estilos": [
+              {
+                "intervalo": "A1:J1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "vazias": [
+              "K1:K11"
+            ],
+            "selecao": "A1:J11",
+            "menu": {
+              "ancora": "botao:Bordas",
+              "itens": [
+                "Borda Inferior",
+                "Borda Superior",
+                "Todas as Bordas",
+                "Bordas Externas",
+                "Sem Borda"
+              ],
+              "realce": [
+                "Todas as Bordas"
+              ],
+              "largura": 220
+            },
+            "marcas": [
+              {
+                "alvo": "menu:Todas as Bordas",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "divisa:C",
+                "n": 2,
+                "lado": "cima"
+              }
+            ]
+          },
+          "instrucoes": [
+            "**Alinhamento:** textos (Descrição, Categoria, Setor) à **esquerda**; datas, quantidades e valores à **direita**; a coluna Status **centralizada**.",
+            "Selecione `A1:J121` e escolha **Bordas → Todas as Bordas** (1).",
+            "Clique no canto superior esquerdo da planilha (seleciona tudo) e dê **duplo clique** na divisa entre duas colunas (2): todas ajustam a largura."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Números sempre à direita: assim as casas decimais ficam alinhadas e a leitura é mais rápida."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "Nenhuma coluna mostra `####` e todas as linhas da tabela têm borda."
+            }
+          ]
+        },
+        {
+          "titulo": "Crie a aba Analise com os indicadores da base",
+          "legenda": "Nova aba Analise (1). Fórmulas de resumo em B3 a B8 (2), formatadas em Moeda e número inteiro.",
+          "imagem": {
+            "guia": "Página Inicial",
+            "planilha": "Analise",
+            "aba_ativa": "Analise",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes",
+              "Analise"
+            ],
+            "colunas": "A:D",
+            "larguras": {
+              "A": 270,
+              "B": 150,
+              "C": 150,
+              "D": 120
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "celula_ativa": "B3",
+            "formula": "Indicador",
+            "estilos": [
+              {
+                "intervalo": "A2:B2",
+                "tipo": "cabecalho"
+              }
+            ],
+            "bordas": [
+              "A2:B8"
+            ],
+            "vazias": [
+              "A10:D21"
+            ],
+            "selecao": "B3:B8",
+            "formula_cores": [
+              [
+                "=SOMA(",
+                "#1f2937"
+              ],
+              [
+                "Requisicoes!$I$2:$I$121",
+                "#1565c0"
+              ],
+              [
+                ")",
+                "#1f2937"
+              ]
+            ],
+            "marcas": [
+              {
+                "alvo": "aba:+",
+                "n": 1,
+                "lado": "direita"
+              },
+              {
+                "alvo": "B3:B8",
+                "n": 2,
+                "lado": "direita"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Crie a aba `Analise` (botão **+**) (1). Em `A1` digite `INDICADORES DA BASE DE REQUISIÇÕES`; em `A2:B2` os títulos `Indicador` e `Valor`.",
+            "Em `A3:A8` digite os rótulos: `Valor total requisitado`, `Valor médio por requisição`, `Maior requisição`, `Menor requisição`, `Requisições registradas` e `Requisições com quantidade`.",
+            "Nas células `B3:B8` (2) digite as fórmulas abaixo, uma por linha.",
+            "Formate `B3:B6` como **Moeda** e `B7:B8` como **Número** sem casas decimais. Use o **Pincel** para copiar o cabeçalho."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "`CONT.VALORES` conta qualquer célula preenchida (códigos, textos); `CONT.NÚM` conta só números. Aqui os dois dão o mesmo total porque não há células vazias."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "B3 a B6 aparecem em R$ e B7 e B8 como números inteiros, sem `#N/D` nem `####`."
+            }
+          ],
+          "formula": "B3:  =SOMA(Requisicoes!$I$2:$I$121)\nB4:  =MÉDIA(Requisicoes!$I$2:$I$121)\nB5:  =MÁXIMO(Requisicoes!$I$2:$I$121)\nB6:  =MÍNIMO(Requisicoes!$I$2:$I$121)\nB7:  =CONT.VALORES(Requisicoes!$B$2:$B$121)\nB8:  =CONT.NÚM(Requisicoes!$F$2:$F$121)"
+        }
+      ],
+      "criterios": [
+        [
+          "Cabeçalho azul-escuro, letras brancas, negrito e centralizado",
+          "0,15"
+        ],
+        [
+          "Data abreviada e Moeda (R$) nas colunas certas",
+          "0,20"
+        ],
+        [
+          "Desconto em porcentagem e Quantidade como número inteiro",
+          "0,10"
+        ],
+        [
+          "Alinhamentos, bordas em A1:J121 e largura das colunas ajustada",
+          "0,15"
+        ],
+        [
+          "Aba Analise: resultados em Moeda e número inteiro (indicadores prontos)",
+          "0,15"
+        ]
+      ]
+    },
+    {
+      "id": "q8",
+      "numero": 8,
+      "arquivo": "QUESTAO-08-FORMATACAO-CONDICIONAL.html",
+      "titulo": "Formatação condicional na base de requisições",
+      "tempo": "23 min",
+      "pontos": "0,75",
+      "aba": "`Requisicoes`",
+      "slides_apoio": "Arquivo 3 — slides 23–25; Arquivo 5 — slides 26–27; Arquivo 4 — slides 13–15.1",
+      "objetivo": "Classificar cada requisição com o **SE aninhado** e fazer os **destaques automáticos** aparecerem numa base de 120 linhas: descontos altos, maiores valores, escala de cores e linhas canceladas.",
+      "voce_vai_usar": [
+        "SE aninhado",
+        "Realçar Regras das Células",
+        "Regras de Primeiros/Últimos",
+        "Escalas de Cor",
+        "Nova Regra com fórmula",
+        "Gerenciar Regras"
+      ],
+      "passos": [
+        {
+          "titulo": "Crie a coluna Faixa com o SE aninhado",
+          "legenda": "Em K1 o título; em K2 (1) o SE aninhado; duplo clique na alça (2) copia até a linha 121.",
+          "imagem": {
+            "guia": "Página Inicial",
+            "planilha": "RequisicoesFmt",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "K2",
+            "formula": "Data",
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "selecao": "K2",
+            "vazias": [
+              "K3:K11"
+            ],
+            "formula_cores": [
+              [
+                "=SE(",
+                "#1f2937"
+              ],
+              [
+                "I2>=300",
+                "#1565c0"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "\"Alto\"",
+                "#2e7d32"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "SE(I2>=100;\"Médio\";\"Baixo\")",
+                "#c62828"
+              ],
+              [
+                ")",
+                "#1f2937"
+              ]
+            ],
+            "marcas": [
+              {
+                "alvo": "K2",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "alca:K2",
+                "n": 2,
+                "lado": "direita"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Em `K1` digite `Faixa` e copie o visual do cabeçalho com o **Pincel de Formatação**.",
+            "Em `K2` (1), digite a fórmula abaixo: valores a partir de R$ 300 são **Alto**, a partir de R$ 100 são **Médio** e o resto é **Baixo**.",
+            "Dê **duplo clique** na alça de preenchimento de `K2` (2) para copiar até a linha 121."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Sempre teste do **maior** para o menor: se você começar por `I2>=100`, o valor de R$ 500 já cai em \"Médio\" e nunca chega a \"Alto\"."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "A coluna Faixa mostra só Alto, Médio ou Baixo nas 120 linhas, sem erros."
+            }
+          ],
+          "formula": "=SE(I2>=300;\"Alto\";SE(I2>=100;\"Médio\";\"Baixo\"))"
+        },
+        {
+          "titulo": "Destaque os descontos acima de 10%",
+          "legenda": "Selecione H2:H121, Formatação Condicional (1), É Maior Que: valor (2), cor (3), OK (4).",
+          "imagem": {
+            "guia": "Página Inicial",
+            "planilha": "RequisicoesFmt",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "H2",
+            "formula": "5%",
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "selecao": "H2:H11",
+            "realces": [
+              {
+                "intervalo": "H4",
+                "fundo": "#ffeb9c",
+                "texto": "#9c5700"
+              },
+              {
+                "intervalo": "H9",
+                "fundo": "#ffeb9c",
+                "texto": "#9c5700"
+              },
+              {
+                "intervalo": "H11",
+                "fundo": "#ffeb9c",
+                "texto": "#9c5700"
+              }
+            ],
+            "dialogo": {
+              "titulo": "É Maior Que",
+              "x": 20,
+              "y": 172,
+              "campos": [
+                {
+                  "tipo": "paragrafo",
+                  "rotulo": "Formatar células que são MAIORES DO QUE:"
+                },
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Valor:",
+                  "valor": "10%"
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "com:",
+                  "valor": "Preenchimento Amarelo"
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "botao:Formatação Condicional",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "campo:Valor:",
+                "n": 2
+              },
+              {
+                "alvo": "campo:com:",
+                "n": 3
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Selecione `H2:H121` (Desconto).",
+            "Página Inicial → **Formatação Condicional** (1) → **Realçar Regras das Células** → **É Maior Que…**",
+            "Digite `10%` (2) e escolha **Preenchimento Amarelo e Texto Amarelo Escuro** (3).",
+            "Clique em **OK** (4)."
+          ],
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "Só os descontos de **15%** ficam amarelos; 0%, 5% e 10% continuam sem cor."
+            },
+            {
+              "tipo": "libre",
+              "texto": "Formatar → **Formatação Condicional** → **Condição** → **Valor da célula é** **maior que** `0,1` → estilo amarelo."
+            }
+          ]
+        },
+        {
+          "titulo": "Marque os 10 maiores valores em verde",
+          "legenda": "Selecione I2:I121, Formatação Condicional (1) → Regras de Primeiros/Últimos (2).",
+          "imagem": {
+            "guia": "Página Inicial",
+            "planilha": "RequisicoesFmt",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "I2",
+            "formula": "R$ 378,00",
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "selecao": "I2:I11",
+            "menu": {
+              "ancora": "botao:Formatação Condicional",
+              "itens": [
+                "Realçar Regras das Células ▸",
+                "Regras de Primeiros/Últimos ▸",
+                "Barras de Dados ▸",
+                "Escalas de Cor ▸",
+                "Nova Regra..."
+              ],
+              "largura": 250,
+              "realce": [
+                "Regras de Primeiros/Últimos ▸"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "botao:Formatação Condicional",
+                "n": 1,
+                "lado": "direita"
+              },
+              {
+                "alvo": "menu:Regras de Primeiros/Últimos ▸",
+                "n": 2,
+                "lado": "esquerda"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Selecione `I2:I121` (Valor Total).",
+            "**Formatação Condicional** (1) → **Regras de Primeiros/Últimos** (2) → **10 Primeiros Itens…**",
+            "Confirme `10` e escolha **Preenchimento Verde e Texto Verde Escuro** → **OK**."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Troque para **10 Últimos Itens** para ver os menores valores e depois volte para **10 Primeiros**."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "Exatamente **10** células de Valor Total ficaram verdes em toda a coluna (role a planilha para conferir)."
+            }
+          ]
+        },
+        {
+          "titulo": "Aplique a escala de cores na Quantidade",
+          "legenda": "Selecione F2:F121: Formatação Condicional (1) → Escalas de Cor → Verde-Amarelo-Vermelho.",
+          "imagem": {
+            "guia": "Página Inicial",
+            "planilha": "RequisicoesFmt",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "F2",
+            "formula": "35",
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "selecao": "F2:F11",
+            "escala_cores": "F",
+            "marcas": [
+              {
+                "alvo": "botao:Formatação Condicional",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "F2:F11",
+                "n": 2,
+                "lado": "esquerda"
+              }
+            ],
+            "nota": {
+              "texto": "Verde = maior quantidade · Vermelho = menor quantidade",
+              "x": 640,
+              "y": 380,
+              "largura": 300
+            }
+          },
+          "instrucoes": [
+            "Selecione `F2:F121` (Quantidade) (2).",
+            "**Formatação Condicional** (1) → **Escalas de Cor** → escolha **Escala de Cor Verde, Amarelo e Vermelho**.",
+            "Observe: quanto maior a quantidade requisitada, mais verde a célula."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Escalas de cor mostram o \"calor\" dos números sem precisar ler um por um."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "A coluna Quantidade tem cores diferentes do vermelho ao verde."
+            }
+          ]
+        },
+        {
+          "titulo": "Pinte a linha inteira das requisições canceladas",
+          "legenda": "Selecione A2:K121 → Nova Regra → Usar uma fórmula (1) (2) → Formato (3) → OK (4).",
+          "imagem": {
+            "guia": "Página Inicial",
+            "planilha": "RequisicoesFmt",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "A2",
+            "formula": "Data",
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "selecao": "A2:K11",
+            "realces": [
+              {
+                "intervalo": "A6:K6",
+                "fundo": "#ffc7ce",
+                "texto": "#9c0006"
+              },
+              {
+                "intervalo": "A11:K11",
+                "fundo": "#ffc7ce",
+                "texto": "#9c0006"
+              }
+            ],
+            "dialogo": {
+              "titulo": "Nova Regra de Formatação",
+              "x": 20,
+              "y": 172,
+              "campos": [
+                {
+                  "tipo": "paragrafo",
+                  "rotulo": "Usar uma fórmula para determinar as células:"
+                },
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Fórmula:",
+                  "valor": "=$J2=\"Cancelada\""
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "Formato:",
+                  "valor": "Preench. Vermelho Claro"
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "botao:Formatação Condicional",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "campo:Fórmula:",
+                "n": 2
+              },
+              {
+                "alvo": "campo:Formato:",
+                "n": 3
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Selecione `A2:K121`.",
+            "**Formatação Condicional** (1) → **Nova Regra…** → **Usar uma fórmula para determinar quais células devem ser formatadas**.",
+            "No campo da fórmula (2), digite exatamente a fórmula abaixo.",
+            "Clique em **Formatar…**, aba **Preenchimento**, escolha vermelho claro (3) → **OK** (4)."
+          ],
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "O `$` antes do J trava a **coluna** e deixa a linha \"andar\": assim a linha inteira é pintada conforme o Status da própria linha."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "Cada linha com Status Cancelada fica toda vermelha, de A até K."
+            }
+          ],
+          "formula": "=$J2=\"Cancelada\""
+        },
+        {
+          "titulo": "Confira todas as regras",
+          "legenda": "Formatação Condicional (1) → Gerenciar Regras: devem existir 4 regras (2).",
+          "imagem": {
+            "guia": "Página Inicial",
+            "planilha": "RequisicoesFmt",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "A1",
+            "formula": "Data",
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "realces": [
+              {
+                "intervalo": "H4",
+                "fundo": "#ffeb9c",
+                "texto": "#9c5700"
+              },
+              {
+                "intervalo": "H9",
+                "fundo": "#ffeb9c",
+                "texto": "#9c5700"
+              },
+              {
+                "intervalo": "H11",
+                "fundo": "#ffeb9c",
+                "texto": "#9c5700"
+              },
+              {
+                "intervalo": "A6:K6",
+                "fundo": "#ffc7ce",
+                "texto": "#9c0006"
+              },
+              {
+                "intervalo": "A11:K11",
+                "fundo": "#ffc7ce",
+                "texto": "#9c0006"
+              }
+            ],
+            "escala_cores": "F",
+            "dialogo": {
+              "titulo": "Gerenciador de Regras de Formatação Condicional",
+              "x": 90,
+              "y": 172,
+              "largura": 780,
+              "campos": [
+                {
+                  "tipo": "paragrafo",
+                  "rotulo": "1) Fórmula =$J2=\"Cancelada\"       Aplica-se a: =$A$2:$K$121"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "rotulo": "2) Escala de Cores                   Aplica-se a: =$F$2:$F$121"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "rotulo": "3) 10 Primeiros Itens               Aplica-se a: =$I$2:$I$121"
+                },
+                {
+                  "tipo": "paragrafo",
+                  "rotulo": "4) Valor da célula > 0,1              Aplica-se a: =$H$2:$H$121"
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "botao:Formatação Condicional",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "dialogo",
+                "n": 2,
+                "lado": "esquerda",
+                "sem_contorno": true
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 3,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique em qualquer célula de `A2:K121`.",
+            "**Formatação Condicional** (1) → **Gerenciar Regras…** e escolha **Esta Planilha**.",
+            "Confira se as **4 regras** estão na lista (2) com os intervalos corretos e clique em **OK** (3)."
+          ],
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "Lista com 4 regras: fórmula dos cancelados, escala de cores, 10 primeiros e desconto maior que 10%."
+            },
+            {
+              "tipo": "dica",
+              "texto": "Uma regra errada pode ser editada com **Editar Regra** ou apagada com **Excluir Regra**, sem refazer as outras."
+            }
+          ]
+        }
+      ],
+      "criterios": [
+        [
+          "Coluna Faixa com SE aninhado copiada até a linha 121",
+          "0,15"
+        ],
+        [
+          "Desconto acima de 10% realçado em amarelo (H2:H121)",
+          "0,1"
+        ],
+        [
+          "10 maiores valores em verde (I2:I121)",
+          "0,1"
+        ],
+        [
+          "Escala de cores em Quantidade (F2:F121)",
+          "0,1"
+        ],
+        [
+          "Regra por fórmula pintando a linha inteira das canceladas",
+          "0,3"
+        ]
+      ]
+    },
+    {
+      "id": "q9",
+      "numero": 9,
+      "arquivo": "QUESTAO-09-FILTROS-E-CLASSIFICACAO.html",
+      "titulo": "Filtros, classificação e resumo com CONT.SE e SOMASE",
+      "tempo": "22 min",
+      "pontos": "0,75",
+      "aba": "`Requisicoes` e `Analise`",
+      "slides_apoio": "Arquivo 4 — slides 31–33; Arquivo 5 — slides 9–11.1, 22–23, 28–31",
+      "objetivo": "Usar **filtros** e **classificação** para responder rápido a perguntas sobre a base e montar um **resumo por status** e uma **consulta de código** com CONT.SE, SOMASE, PROCV e SEERRO.",
+      "voce_vai_usar": [
+        "AutoFiltro ([[Ctrl]]+[[Shift]]+[[L]])",
+        "Classificar em dois níveis",
+        "Filtrar por Cor",
+        "CONT.SE e SOMASE",
+        "PROCV com SEERRO",
+        "Referência absoluta ($)"
+      ],
+      "passos": [
+        {
+          "titulo": "Ative o AutoFiltro e filtre Ferramentas pendentes",
+          "legenda": "Seta de Categoria (1) → só Ferramentas (2); seta de Status (3) → só Pendente.",
+          "imagem": {
+            "guia": "Dados",
+            "planilha": "RequisicoesFmt",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "D1",
+            "formula": "Categoria",
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "selecao": "D1",
+            "filtro": "A1:K1",
+            "vazias": [
+              "A2:K11"
+            ],
+            "bordas": [
+              "A1:K11"
+            ],
+            "menu": {
+              "ancora": "seta_filtro:D1",
+              "caixas": true,
+              "itens": [
+                "(Selecionar Tudo)",
+                "EPI",
+                "Elétrico",
+                "Ferramentas",
+                "Fixação"
+              ],
+              "marcados": [
+                "Ferramentas"
+              ],
+              "realce": [
+                "Ferramentas"
+              ],
+              "largura": 210
+            },
+            "marcas": [
+              {
+                "alvo": "seta_filtro:D1",
+                "n": 1,
+                "lado": "cima"
+              },
+              {
+                "alvo": "menu:Ferramentas",
+                "n": 2,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "seta_filtro:J1",
+                "n": 3,
+                "lado": "cima"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique em `A1` e ligue o filtro: guia **Dados** → **Filtro**, ou [[Ctrl]]+[[Shift]]+[[L]]. Cada título ganha uma seta ▼.",
+            "Clique na seta de **Categoria** (1), desmarque **(Selecionar Tudo)** e marque só **Ferramentas** (2) → **OK**.",
+            "Clique na seta de **Status** (3), deixe marcado só **Pendente** → **OK**.",
+            "Olhe a barra de status: aparece \"X de 120 registros encontrados\"."
+          ],
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "Sobram apenas linhas de Categoria Ferramentas com Status Pendente e os números das linhas ficam azuis."
+            },
+            {
+              "tipo": "libre",
+              "texto": "**Dados** → **AutoFiltro** e use a seta de cada coluna."
+            }
+          ]
+        },
+        {
+          "titulo": "Limpe os filtros e classifique em dois níveis",
+          "legenda": "Dados → Limpar. Depois Classificar (1): Categoria A a Z (2), depois Valor Total do maior para o menor (3).",
+          "imagem": {
+            "guia": "Dados",
+            "planilha": "RequisicoesFmt",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "A1",
+            "formula": "Data",
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "selecao": "A1:K11",
+            "filtro": "A1:K1",
+            "bordas": [
+              "A1:K11"
+            ],
+            "dialogo": {
+              "titulo": "Classificar",
+              "x": 20,
+              "y": 172,
+              "campos": [
+                {
+                  "tipo": "check",
+                  "rotulo": "Meus dados têm cabeçalhos",
+                  "marcado": true
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "Classificar por:",
+                  "valor": "Categoria"
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "Ordem:",
+                  "valor": "A a Z"
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "Depois por:",
+                  "valor": "Valor Total"
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "Ordem 2:",
+                  "valor": "Do Maior para o Menor"
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "botao:Classificar",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "campo:Classificar por:",
+                "n": 2
+              },
+              {
+                "alvo": "campo:Depois por:",
+                "n": 3
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Guia **Dados** → **Limpar** para mostrar as 120 linhas de novo.",
+            "Clique em `A1` → **Classificar** (1).",
+            "Classificar por **Categoria**, ordem **A a Z** (2). Clique em **Adicionar Nível**: **Depois por** **Valor Total** (3), ordem **Do Maior para o Menor**.",
+            "Clique em **OK** (4)."
+          ],
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "Clique em uma célula **da tabela** antes de classificar. Assim o Excel leva a linha inteira junto, e os dados não se misturam."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "Dentro de cada Categoria, o Valor Total vai do maior para o menor."
+            }
+          ]
+        },
+        {
+          "titulo": "Filtre pela cor das linhas canceladas",
+          "legenda": "Seta de Status (1) → Filtrar por Cor (2): só as linhas vermelhas aparecem.",
+          "imagem": {
+            "guia": "Dados",
+            "planilha": "RequisicoesFmt",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "J1",
+            "formula": "Status",
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "selecao": "J1",
+            "filtro": "A1:K1",
+            "vazias": [
+              "A2:K11"
+            ],
+            "bordas": [
+              "A1:K11"
+            ],
+            "menu": {
+              "ancora": "seta_filtro:J1",
+              "itens": [
+                "Classificar por Cor ▸",
+                "Filtrar por Cor ▸",
+                "Filtros de Texto ▸",
+                "Limpar Filtro de \"Status\""
+              ],
+              "realce": [
+                "Filtrar por Cor ▸"
+              ],
+              "largura": 250
+            },
+            "marcas": [
+              {
+                "alvo": "seta_filtro:J1",
+                "n": 1,
+                "lado": "cima"
+              },
+              {
+                "alvo": "menu:Filtrar por Cor ▸",
+                "n": 2,
+                "lado": "esquerda"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique na seta de **Status** (1) → **Filtrar por Cor** (2).",
+            "Escolha o **vermelho claro** da formatação condicional feita na Questão 8.",
+            "Depois use **Dados → Limpar** para voltar a ver todas as linhas."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Só dá para filtrar por cor porque a Questão 8 pintou as linhas: formatação e filtro trabalham juntos."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "Só aparecem linhas vermelhas (Cancelada). Depois de **Limpar**, as 120 linhas voltam."
+            }
+          ]
+        },
+        {
+          "titulo": "Monte o resumo por Status na aba Analise",
+          "legenda": "Em Analise, A11:D15 (1): CONT.SE (2), SOMASE (3) e % do total com referência absoluta (4).",
+          "imagem": {
+            "guia": "Página Inicial",
+            "planilha": "Analise",
+            "aba_ativa": "Analise",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes",
+              "Analise"
+            ],
+            "colunas": "A:D",
+            "larguras": {
+              "A": 270,
+              "B": 150,
+              "C": 150,
+              "D": 120
+            },
+            "linhas_visiveis": [
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "celula_ativa": "C12",
+            "formula": "Indicador",
+            "estilos": [
+              {
+                "intervalo": "A11:D11",
+                "tipo": "cabecalho"
+              },
+              {
+                "intervalo": "A15:D15",
+                "tipo": "td_total"
+              }
+            ],
+            "bordas": [
+              "A11:D15"
+            ],
+            "selecao": "B12:D15",
+            "formula_cores": [
+              [
+                "=SOMASE(",
+                "#1f2937"
+              ],
+              [
+                "Requisicoes!$J$2:$J$121",
+                "#1565c0"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "A12",
+                "#2e7d32"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "Requisicoes!$I$2:$I$121",
+                "#c62828"
+              ],
+              [
+                ")",
+                "#1f2937"
+              ]
+            ],
+            "marcas": [
+              {
+                "alvo": "A11:D11",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "B12",
+                "n": 2,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "C12",
+                "n": 3,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "D12",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Em `A10` digite `RESUMO POR STATUS`. Em `A11:D11` (1): `Status`, `Requisições`, `Valor Total`, `% do Total`. Em `A12:A15`: `Entregue`, `Pendente`, `Cancelada`, `Total`.",
+            "`B12` (2) conta as requisições de cada status; `C12` (3) soma o valor de cada status; `D12` (4) calcula a participação. Copie **B12:D12** até a linha 14.",
+            "Na linha **Total**: `B15`, `C15` e `D15` com **SOMA** das três linhas de cima.",
+            "Formatos: `C12:C15` **Moeda**; `D12:D15` **Porcentagem** com 1 casa; `B12:B15` **Número**. Linha **Total** em **negrito**, com borda dupla embaixo."
+          ],
+          "caixas": [
+            {
+              "tipo": "atencao",
+              "texto": "Em `D12` o total tem `$C$15` **travado**. Sem os cifrões, ao copiar a fórmula o divisor \"anda\" e o resultado dá erro."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "O Total das requisições é 120 e os três percentuais somam 100,0%."
+            },
+            {
+              "tipo": "dica",
+              "texto": "Se `CONT.SE` devolver 0, confira se digitou o status exatamente como na base (com a inicial maiúscula e sem espaço sobrando)."
+            }
+          ],
+          "formula": "B12:  =CONT.SE(Requisicoes!$J$2:$J$121;A12)\nC12:  =SOMASE(Requisicoes!$J$2:$J$121;A12;Requisicoes!$I$2:$I$121)\nD12:  =C12/$C$15\nB15:  =SOMA(B12:B14)     C15:  =SOMA(C12:C14)     D15:  =SOMA(D12:D14)"
+        },
+        {
+          "titulo": "Crie a consulta de código com PROCV, SEERRO e SOMASE",
+          "legenda": "Em Analise, código em B18 (1); descrição com PROCV + SEERRO (2); quantidade com SOMASE (3); acima da média com CONT.SE (4).",
+          "imagem": {
+            "guia": "Página Inicial",
+            "planilha": "Analise",
+            "aba_ativa": "Analise",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes",
+              "Analise"
+            ],
+            "colunas": "A:D",
+            "larguras": {
+              "A": 270,
+              "B": 150,
+              "C": 150,
+              "D": 120
+            },
+            "linhas_visiveis": [
+              17,
+              18,
+              19,
+              20,
+              21
+            ],
+            "celula_ativa": "B19",
+            "formula": "Indicador",
+            "estilos": [
+              {
+                "intervalo": "A17:B17",
+                "tipo": "cabecalho"
+              }
+            ],
+            "bordas": [
+              "A17:B21"
+            ],
+            "selecao": "B18:B21",
+            "formula_cores": [
+              [
+                "=SEERRO(PROCV(",
+                "#1f2937"
+              ],
+              [
+                "B18",
+                "#2e7d32"
+              ],
+              [
+                ";",
+                "#1f2937"
+              ],
+              [
+                "Cadastro!$A$2:$G$16",
+                "#1565c0"
+              ],
+              [
+                ";2;0);",
+                "#1f2937"
+              ],
+              [
+                "\"Código não cadastrado\"",
+                "#c62828"
+              ],
+              [
+                ")",
+                "#1f2937"
+              ]
+            ],
+            "marcas": [
+              {
+                "alvo": "B18",
+                "n": 1,
+                "lado": "direita"
+              },
+              {
+                "alvo": "B19",
+                "n": 2,
+                "lado": "direita"
+              },
+              {
+                "alvo": "B20",
+                "n": 3,
+                "lado": "direita"
+              },
+              {
+                "alvo": "B21",
+                "n": 4,
+                "lado": "direita"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Em `A17` digite `CONSULTA DE CÓDIGO`. Em `A18:A21`: `Código`, `Descrição`, `Quantidade requisitada` e `Requisições acima do valor médio`.",
+            "Em `B18` (1) digite um código da lista, por exemplo `MAT-010`.",
+            "Em `B19` (2), `B20` (3) e `B21` (4) digite as fórmulas abaixo.",
+            "Formate `B20:B21` como **Número** sem casas decimais e `A17:B17` com o visual do cabeçalho. Troque `B18` por `MAT-099` e veja a mensagem do SEERRO."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "`\">\"&B4` junta o sinal \">\" com o valor médio da aba Analise (B4): a contagem sempre usa a média atual."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "Com um código válido aparece o nome do material; com `MAT-099` aparece **Código não cadastrado**, sem `#N/D`."
+            }
+          ],
+          "formula": "B19:  =SEERRO(PROCV(B18;Cadastro!$A$2:$G$16;2;0);\"Código não cadastrado\")\nB20:  =SOMASE(Requisicoes!$B$2:$B$121;B18;Requisicoes!$F$2:$F$121)\nB21:  =CONT.SE(Requisicoes!$I$2:$I$121;\">\"&B4)"
+        }
+      ],
+      "criterios": [
+        [
+          "Filtro Ferramentas + Pendente aplicado e depois limpo",
+          "0,1"
+        ],
+        [
+          "Classificação em dois níveis e filtro por cor",
+          "0,15"
+        ],
+        [
+          "Resumo por status formatado (Moeda, %, número; Total em negrito)",
+          "0,3"
+        ],
+        [
+          "Consulta de código com formatos corretos",
+          "0,2"
+        ]
+      ]
+    },
+    {
+      "id": "q10",
+      "numero": 10,
+      "arquivo": "QUESTAO-10-CONGELAR-IMPRESSAO-ENTREGA.html",
+      "titulo": "Congelar painéis, impressão e entrega",
+      "tempo": "23 min",
+      "pontos": "0,75",
+      "aba": "`Requisicoes`",
+      "slides_apoio": "Arquivo 3 — slides 31–32; Arquivo 4 — slides 20–21 e 37",
+      "objetivo": "Deixar a base **fácil de ler na tela e no papel**: congelar painéis, cabeçalho com quebra de texto, página em paisagem, títulos repetidos e entrega do arquivo final.",
+      "voce_vai_usar": [
+        "Congelar Painéis",
+        "Preenchimento Relâmpago ([[Ctrl]]+[[E]])",
+        "Alinhamento e quebra de texto",
+        "Orientação e Margens",
+        "Configurar Página",
+        "Salvar Como .xlsx"
+      ],
+      "passos": [
+        {
+          "titulo": "Congele a linha dos títulos e as duas primeiras colunas",
+          "legenda": "Clique em C2 (1), Exibir → Congelar Painéis (2) → Congelar Painéis (3).",
+          "imagem": {
+            "guia": "Exibir",
+            "planilha": "RequisicoesFmt",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "C2",
+            "formula": "Descrição",
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "selecao": "C2",
+            "menu": {
+              "ancora": "botao:Congelar Painéis",
+              "itens": [
+                "Congelar Painéis",
+                "Congelar Linha Superior",
+                "Congelar Primeira Coluna"
+              ],
+              "realce": [
+                "Congelar Painéis"
+              ],
+              "largura": 260
+            },
+            "marcas": [
+              {
+                "alvo": "C2",
+                "n": 1,
+                "lado": "baixo"
+              },
+              {
+                "alvo": "botao:Congelar Painéis",
+                "n": 2,
+                "lado": "direita"
+              },
+              {
+                "alvo": "menu:Congelar Painéis",
+                "n": 3,
+                "lado": "esquerda"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique em `C2` (1): a célula **abaixo** da linha 1 e à **direita** da coluna B.",
+            "Guia **Exibir** → **Congelar Painéis** (2) → **Congelar Painéis** (3).",
+            "Role para baixo e para a direita: o cabeçalho e as colunas Data e Código ficam parados."
+          ],
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "Ao rolar até a linha 100, os títulos continuam no topo e as colunas Data e Código continuam à esquerda."
+            },
+            {
+              "tipo": "libre",
+              "texto": "Selecione `C2` → **Exibir** → **Congelar células** → **Congelar linhas e colunas**."
+            }
+          ]
+        },
+        {
+          "titulo": "Extraia o nome curto do item com o Preenchimento Relâmpago",
+          "legenda": "Em L2 (1) digite a primeira palavra da Descrição; selecione L2:L121 (2) e pressione Ctrl+E.",
+          "imagem": {
+            "guia": "Página Inicial",
+            "planilha": "RequisicoesFmt",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "C:L",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "L2",
+            "formula": "Luva",
+            "estilos": [
+              {
+                "intervalo": "C1:L1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "selecao": "L2:L11",
+            "celulas": {
+              "L1": "Item",
+              "L2": "Broca",
+              "L3": "Disjuntor",
+              "L4": "Trena",
+              "L5": "Rebite",
+              "L6": "Disjuntor",
+              "L7": "Máscara",
+              "L8": "Trena",
+              "L9": "Fita",
+              "L10": "Óculos",
+              "L11": "Disjuntor"
+            },
+            "marcas": [
+              {
+                "alvo": "L2",
+                "n": 1,
+                "lado": "esquerda"
+              },
+              {
+                "alvo": "L2:L11",
+                "n": 2,
+                "lado": "direita"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Em `L1` digite `Item` e copie o visual do cabeçalho com o **Pincel**.",
+            "Em `L2` (1) digite só a primeira palavra da descrição da linha 2, por exemplo `Luva`.",
+            "Selecione `L2:L121` (2) e pressione [[Ctrl]]+[[E]]: o Excel reconhece o padrão e preenche a coluna inteira."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Funciona porque o Excel percebe o padrão \"primeira palavra\". Se algum item tiver o nome fora do padrão, corrija a linha e pressione [[Ctrl]]+[[E]] de novo."
+            },
+            {
+              "tipo": "libre",
+              "texto": "No Calc, use **Dados → Preenchimento Relâmpago** (ou a fórmula `=ESQUERDA(C2;LOCALIZAR(\" \";C2)-1)`)."
+            }
+          ]
+        },
+        {
+          "titulo": "Deixe o cabeçalho com quebra de texto e altura maior",
+          "legenda": "Formatar Células (Ctrl+1) → Alinhamento: centralizado (1), centro (2), quebrar texto (3).",
+          "imagem": {
+            "guia": "Página Inicial",
+            "planilha": "RequisicoesFmt",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "A1",
+            "formula": "Data",
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "selecao": "A1:J1",
+            "dialogo": {
+              "titulo": "Formatar Células",
+              "x": 20,
+              "y": 172,
+              "abas": [
+                "Número",
+                "Alinhamento",
+                "Fonte",
+                "Borda",
+                "Proteção"
+              ],
+              "aba_ativa": "Alinhamento",
+              "campos": [
+                {
+                  "tipo": "combo",
+                  "rotulo": "Horizontal:",
+                  "valor": "Centralizado"
+                },
+                {
+                  "tipo": "combo",
+                  "rotulo": "Vertical:",
+                  "valor": "Centro"
+                },
+                {
+                  "tipo": "check",
+                  "rotulo": "Quebrar texto automaticamente",
+                  "marcado": true
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "campo:Horizontal:",
+                "n": 1
+              },
+              {
+                "alvo": "campo:Vertical:",
+                "n": 2
+              },
+              {
+                "alvo": "campo:Quebrar texto automaticamente",
+                "n": 3
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 4,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Selecione `A1:J1` e abra [[Ctrl]]+[[1]] → aba **Alinhamento**.",
+            "**Horizontal**: Centralizado (1). **Vertical**: Centro (2).",
+            "Marque **Quebrar texto automaticamente** (3) e clique em **OK** (4).",
+            "Clique com o botão direito no número **1** da linha → **Altura da Linha…** → `30`."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Com a quebra de texto, títulos longos como \"Custo Unitário\" ficam em duas linhas em vez de cortar a coluna."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "A linha 1 ficou mais alta e os títulos aparecem no meio da célula."
+            }
+          ]
+        },
+        {
+          "titulo": "Coloque a página em paisagem com margens estreitas",
+          "legenda": "Layout da Página (1) → Orientação (2) → Paisagem (3). Depois Margens → Estreita.",
+          "imagem": {
+            "guia": "Layout da Página",
+            "planilha": "RequisicoesFmt",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "A1",
+            "formula": "Data",
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "menu": {
+              "ancora": "botao:Orientação",
+              "itens": [
+                "Retrato",
+                "Paisagem"
+              ],
+              "realce": [
+                "Paisagem"
+              ],
+              "largura": 180
+            },
+            "marcas": [
+              {
+                "alvo": "guia:Layout da Página",
+                "n": 1,
+                "lado": "cima"
+              },
+              {
+                "alvo": "botao:Orientação",
+                "n": 2,
+                "lado": "direita"
+              },
+              {
+                "alvo": "menu:Paisagem",
+                "n": 3,
+                "lado": "esquerda"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Clique na guia **Layout da Página** (1).",
+            "**Orientação** (2) → **Paisagem** (3): a tabela é larga e não cabe em pé.",
+            "**Margens** → **Estreita**."
+          ],
+          "caixas": [
+            {
+              "tipo": "verifique",
+              "texto": "Em **Arquivo → Imprimir**, a visualização mostra a página deitada."
+            },
+            {
+              "tipo": "libre",
+              "texto": "**Formatar** → **Página** → aba **Página** → **Orientação: Paisagem**."
+            }
+          ]
+        },
+        {
+          "titulo": "Repita os títulos e ajuste à largura da página",
+          "legenda": "Configurar Página → aba Planilha: linhas a repetir (1) e linhas de grade (2) → OK (3).",
+          "imagem": {
+            "guia": "Layout da Página",
+            "planilha": "RequisicoesFmt",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "A1",
+            "formula": "Data",
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
+                "tipo": "cabecalho"
+              }
+            ],
+            "dialogo": {
+              "titulo": "Configurar Página",
+              "x": 20,
+              "y": 172,
+              "abas": [
+                "Página",
+                "Margens",
+                "Cabeçalho/Rodapé",
+                "Planilha"
+              ],
+              "aba_ativa": "Planilha",
+              "campos": [
+                {
+                  "tipo": "texto_caixa",
+                  "rotulo": "Repetir linhas:",
+                  "valor": "$1:$1"
+                },
+                {
+                  "tipo": "check",
+                  "rotulo": "Imprimir linhas de grade",
+                  "marcado": false
+                }
+              ],
+              "botoes": [
+                "OK",
+                "Cancelar"
+              ]
+            },
+            "marcas": [
+              {
+                "alvo": "campo:Repetir linhas:",
+                "n": 1
+              },
+              {
+                "alvo": "campo:Imprimir linhas de grade",
+                "n": 2
+              },
+              {
+                "alvo": "botaodlg:OK",
+                "n": 3,
+                "lado": "baixo"
+              }
+            ]
+          },
+          "instrucoes": [
+            "Layout da Página → botão de ampliar do grupo **Configurar Página** (canto inferior direito).",
+            "Aba **Página**: em **Dimensionar**, escolha **Ajustar para** `1` página de largura por (em branco) de altura.",
+            "Aba **Planilha**: em **Linhas a repetir na parte superior** digite `$1:$1` (1). Deixe **Linhas de grade** desmarcado (2).",
+            "Clique em **OK** (3)."
+          ],
+          "caixas": [
+            {
+              "tipo": "dica",
+              "texto": "Com os títulos repetidos, todas as folhas impressas da tabela de 120 linhas mostram o cabeçalho."
+            },
+            {
+              "tipo": "verifique",
+              "texto": "Na visualização de impressão, a tabela cabe na largura de uma folha e a 2ª página começa com os títulos."
+            }
+          ]
+        },
+        {
+          "titulo": "Salve e entregue o arquivo",
+          "legenda": "Nome do arquivo (1), tipo .xlsx (2) e Salvar (3).",
+          "imagem": {
+            "guia": "Arquivo",
+            "planilha": "RequisicoesFmt",
+            "aba_ativa": "Requisicoes",
+            "abas": [
+              "Cadastro",
+              "Movimentacao",
+              "Consulta",
+              "Resumo",
+              "Requisicoes"
+            ],
+            "colunas": "A:K",
+            "larguras": {
+              "A": 84,
+              "B": 74,
+              "C": 168,
+              "D": 90,
+              "E": 92,
+              "F": 78,
+              "G": 96,
+              "H": 76,
+              "I": 96,
+              "J": 82,
+              "K": 70
+            },
+            "linhas_visiveis": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "celula_ativa": "A1",
+            "formula": "Data",
+            "estilos": [
+              {
+                "intervalo": "A1:K1",
                 "tipo": "cabecalho"
               }
             ],
@@ -4799,27 +10395,35 @@
             },
             {
               "tipo": "verifique",
-              "texto": "O arquivo tem as 4 abas: Cadastro, Movimentacao, Consulta e Resumo."
+              "texto": "O arquivo tem as 6 abas: Cadastro, Movimentacao, Consulta, Resumo, Requisicoes e Analise."
             }
           ]
         }
       ],
       "criterios": [
         [
-          "Filtro Crítico + EPI aplicado e item anotado em Resumo!B25",
-          "0,5"
+          "Congelar Painéis a partir de C2 (título e 2 colunas)",
+          "0,15"
         ],
         [
-          "Células de digitação da Movimentacao desbloqueadas",
-          "0,4"
+          "Coluna Item preenchida com o Preenchimento Relâmpago",
+          "0,1"
         ],
         [
-          "Planilha Movimentacao protegida com a senha senai2026",
-          "0,3"
+          "Cabeçalho centralizado com quebra de texto e altura maior",
+          "0,1"
         ],
         [
-          "Arquivo salvo em .xlsx com o nome pedido",
-          "0,3"
+          "Paisagem, margens estreitas e ajuste de 1 página de largura",
+          "0,15"
+        ],
+        [
+          "Títulos repetidos ($1:$1) e linhas de grade desmarcadas",
+          "0,1"
+        ],
+        [
+          "Arquivo salvo em .xlsx com o nome pedido e 6 abas",
+          "0,15"
         ]
       ]
     }

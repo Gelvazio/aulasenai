@@ -39,8 +39,24 @@ window.MENU_ATIVIDADES = {
           link: `${PASTA_EXCEL_29_MENU}QUESTAO-05-RESUMO-CONTSE-SOMASE-PROCH.html`,
         },
         {
-          rotulo: 'Questão 6 — Filtro, proteção e entrega',
-          link: `${PASTA_EXCEL_29_MENU}QUESTAO-06-FILTRO-PROTECAO-ENTREGA.html`,
+          rotulo: 'Questão 6 — Filtro e proteção',
+          link: `${PASTA_EXCEL_29_MENU}QUESTAO-06-FILTRO-PROTECAO.html`,
+        },
+        {
+          rotulo: 'Questão 7 — Base de requisições e formatação',
+          link: `${PASTA_EXCEL_29_MENU}QUESTAO-07-BASE-REQUISICOES-FORMATACAO.html`,
+        },
+        {
+          rotulo: 'Questão 8 — SE e formatação condicional',
+          link: `${PASTA_EXCEL_29_MENU}QUESTAO-08-FORMATACAO-CONDICIONAL.html`,
+        },
+        {
+          rotulo: 'Questão 9 — Filtros, CONT.SE e SOMASE',
+          link: `${PASTA_EXCEL_29_MENU}QUESTAO-09-FILTROS-E-CLASSIFICACAO.html`,
+        },
+        {
+          rotulo: 'Questão 10 — Congelar, impressão e entrega',
+          link: `${PASTA_EXCEL_29_MENU}QUESTAO-10-CONGELAR-IMPRESSAO-ENTREGA.html`,
         },
       ],
     },

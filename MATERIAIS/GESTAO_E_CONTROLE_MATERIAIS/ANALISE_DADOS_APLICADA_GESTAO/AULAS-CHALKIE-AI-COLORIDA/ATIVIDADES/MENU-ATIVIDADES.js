@@ -31,8 +31,24 @@ window.MENU_ATIVIDADES = {
           link: 'ATIVIDADE-EXCEL-29-09-2026/QUESTAO-05-RESUMO-CONTSE-SOMASE-PROCH.html',
         },
         {
-          rotulo: 'Questão 6 — Filtro, proteção e entrega',
-          link: 'ATIVIDADE-EXCEL-29-09-2026/QUESTAO-06-FILTRO-PROTECAO-ENTREGA.html',
+          rotulo: 'Questão 6 — Filtro e proteção',
+          link: 'ATIVIDADE-EXCEL-29-09-2026/QUESTAO-06-FILTRO-PROTECAO.html',
+        },
+        {
+          rotulo: 'Questão 7 — Base de requisições e formatação',
+          link: 'ATIVIDADE-EXCEL-29-09-2026/QUESTAO-07-BASE-REQUISICOES-FORMATACAO.html',
+        },
+        {
+          rotulo: 'Questão 8 — SE e formatação condicional',
+          link: 'ATIVIDADE-EXCEL-29-09-2026/QUESTAO-08-FORMATACAO-CONDICIONAL.html',
+        },
+        {
+          rotulo: 'Questão 9 — Filtros, CONT.SE e SOMASE',
+          link: 'ATIVIDADE-EXCEL-29-09-2026/QUESTAO-09-FILTROS-E-CLASSIFICACAO.html',
+        },
+        {
+          rotulo: 'Questão 10 — Congelar, impressão e entrega',
+          link: 'ATIVIDADE-EXCEL-29-09-2026/QUESTAO-10-CONGELAR-IMPRESSAO-ENTREGA.html',
         },
       ],
     },

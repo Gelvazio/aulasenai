@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questão 10 — Congelar painéis, impressão e entrega</title>
+<link rel="stylesheet" href="../../../../../../assets/css/atividade-pratica-excel.css">
+<script src="../../../../../../assets/js/atividade-pratica-excel.js" defer></script>
+<link rel="stylesheet" href="../../../../../../assets/css/menu.css">
+<script src="../MENU-ATIVIDADES.js" defer></script>
+<script src="../../../../../../js/menu.js" defer></script>
+<script src="../../../../../../js/header-usuario.js" defer></script>
+</head>
+<body data-atividade="ATIVIDADE-EXCEL-29-09-2026">
+<div id="header-usuario"></div>
+<div class="pagina">
+<header class="cabecalho">
+<div class="cabecalho__marca">SENAI · Análise de Dados Aplicada à Gestão</div>
+<h1 class="cabecalho__titulo">Questão 10 — Congelar painéis, impressão e entrega</h1>
+<p class="cabecalho__subtitulo">Atividade Prática de Excel — Controle de Estoque do Almoxarifado</p>
+<div class="cabecalho__selos"><span class="selo selo--formativa">Atividade prática avaliativa</span><span class="selo ">⏱ 23 min</span><span class="selo ">0,75 pontos</span><span class="selo ">6 passos</span></div>
+<div class="identificacao"><div class="identificacao__campo">Nome:</div><div class="identificacao__campo">Turma:</div><div class="identificacao__campo">Data: 29/09/2026</div></div>
+</header>
+<nav class="navegacao"><a class="botao" href="QUESTAO-09-FILTROS-E-CLASSIFICACAO.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-29-09-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><span class="botao botao--desativado">→</span></nav>
+<section class="bloco">
+<h2>🎯 O que você vai fazer</h2>
+<p>Deixar a base <strong>fácil de ler na tela e no papel</strong>: congelar painéis, cabeçalho com quebra de texto, página em paisagem, títulos repetidos e entrega do arquivo final.</p>
+<h3>Você vai usar</h3><ul><li>Congelar Painéis</li><li>Preenchimento Relâmpago (<span class="tecla">Ctrl</span>+<span class="tecla">E</span>)</li><li>Alinhamento e quebra de texto</li><li>Orientação e Margens</li><li>Configurar Página</li><li>Salvar Como .xlsx</li></ul>
+<p><strong>Aba de trabalho:</strong> <span class="celula">Requisicoes</span> · <strong>Slides de apoio:</strong> Arquivo 3 — slides 31–32; Arquivo 4 — slides 20–21 e 37</p>
+</section>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">1</span><h3 class="passo__titulo">Congele a linha dos títulos e as duas primeiras colunas</h3></div>
+<figure class="passo__figura"><img src="img/q10-passo-01.svg" alt="Congele a linha dos títulos e as duas primeiras colunas" loading="lazy"><figcaption class="passo__legenda">Clique em C2 (1), Exibir → Congelar Painéis (2) → Congelar Painéis (3).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique em <span class="celula">C2</span> (1): a célula <strong>abaixo</strong> da linha 1 e à <strong>direita</strong> da coluna B.</li><li>Guia <strong>Exibir</strong> → <strong>Congelar Painéis</strong> (2) → <strong>Congelar Painéis</strong> (3).</li><li>Role para baixo e para a direita: o cabeçalho e as colunas Data e Código ficam parados.</li></ol>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Ao rolar até a linha 100, os títulos continuam no topo e as colunas Data e Código continuam à esquerda.</div>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span>Selecione <span class="celula">C2</span> → <strong>Exibir</strong> → <strong>Congelar células</strong> → <strong>Congelar linhas e colunas</strong>.</div>
+<label class="concluido"><input type="checkbox" data-passo="q10-1"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">2</span><h3 class="passo__titulo">Extraia o nome curto do item com o Preenchimento Relâmpago</h3></div>
+<figure class="passo__figura"><img src="img/q10-passo-02.svg" alt="Extraia o nome curto do item com o Preenchimento Relâmpago" loading="lazy"><figcaption class="passo__legenda">Em L2 (1) digite a primeira palavra da Descrição; selecione L2:L121 (2) e pressione Ctrl+E.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Em <span class="celula">L1</span> digite <span class="celula">Item</span> e copie o visual do cabeçalho com o <strong>Pincel</strong>.</li><li>Em <span class="celula">L2</span> (1) digite só a primeira palavra da descrição da linha 2, por exemplo <span class="celula">Luva</span>.</li><li>Selecione <span class="celula">L2:L121</span> (2) e pressione <span class="tecla">Ctrl</span>+<span class="tecla">E</span>: o Excel reconhece o padrão e preenche a coluna inteira.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Funciona porque o Excel percebe o padrão &quot;primeira palavra&quot;. Se algum item tiver o nome fora do padrão, corrija a linha e pressione <span class="tecla">Ctrl</span>+<span class="tecla">E</span> de novo.</div>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span>No Calc, use <strong>Dados → Preenchimento Relâmpago</strong> (ou a fórmula <span class="celula">=ESQUERDA(C2;LOCALIZAR(&quot; &quot;;C2)-1)</span>).</div>
+<label class="concluido"><input type="checkbox" data-passo="q10-2"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">3</span><h3 class="passo__titulo">Deixe o cabeçalho com quebra de texto e altura maior</h3></div>
+<figure class="passo__figura"><img src="img/q10-passo-03.svg" alt="Deixe o cabeçalho com quebra de texto e altura maior" loading="lazy"><figcaption class="passo__legenda">Formatar Células (Ctrl+1) → Alinhamento: centralizado (1), centro (2), quebrar texto (3).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Selecione <span class="celula">A1:J1</span> e abra <span class="tecla">Ctrl</span>+<span class="tecla">1</span> → aba <strong>Alinhamento</strong>.</li><li><strong>Horizontal</strong>: Centralizado (1). <strong>Vertical</strong>: Centro (2).</li><li>Marque <strong>Quebrar texto automaticamente</strong> (3) e clique em <strong>OK</strong> (4).</li><li>Clique com o botão direito no número <strong>1</strong> da linha → <strong>Altura da Linha…</strong> → <span class="celula">30</span>.</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Com a quebra de texto, títulos longos como &quot;Custo Unitário&quot; ficam em duas linhas em vez de cortar a coluna.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>A linha 1 ficou mais alta e os títulos aparecem no meio da célula.</div>
+<label class="concluido"><input type="checkbox" data-passo="q10-3"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">4</span><h3 class="passo__titulo">Coloque a página em paisagem com margens estreitas</h3></div>
+<figure class="passo__figura"><img src="img/q10-passo-04.svg" alt="Coloque a página em paisagem com margens estreitas" loading="lazy"><figcaption class="passo__legenda">Layout da Página (1) → Orientação (2) → Paisagem (3). Depois Margens → Estreita.</figcaption></figure>
+<div class="passo__corpo"><ol><li>Clique na guia <strong>Layout da Página</strong> (1).</li><li><strong>Orientação</strong> (2) → <strong>Paisagem</strong> (3): a tabela é larga e não cabe em pé.</li><li><strong>Margens</strong> → <strong>Estreita</strong>.</li></ol>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Em <strong>Arquivo → Imprimir</strong>, a visualização mostra a página deitada.</div>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span><strong>Formatar</strong> → <strong>Página</strong> → aba <strong>Página</strong> → <strong>Orientação: Paisagem</strong>.</div>
+<label class="concluido"><input type="checkbox" data-passo="q10-4"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">5</span><h3 class="passo__titulo">Repita os títulos e ajuste à largura da página</h3></div>
+<figure class="passo__figura"><img src="img/q10-passo-05.svg" alt="Repita os títulos e ajuste à largura da página" loading="lazy"><figcaption class="passo__legenda">Configurar Página → aba Planilha: linhas a repetir (1) e linhas de grade (2) → OK (3).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Layout da Página → botão de ampliar do grupo <strong>Configurar Página</strong> (canto inferior direito).</li><li>Aba <strong>Página</strong>: em <strong>Dimensionar</strong>, escolha <strong>Ajustar para</strong> <span class="celula">1</span> página de largura por (em branco) de altura.</li><li>Aba <strong>Planilha</strong>: em <strong>Linhas a repetir na parte superior</strong> digite <span class="celula">$1:$1</span> (1). Deixe <strong>Linhas de grade</strong> desmarcado (2).</li><li>Clique em <strong>OK</strong> (3).</li></ol>
+<div class="caixa caixa--dica"><span class="caixa__titulo">💡 Dica</span>Com os títulos repetidos, todas as folhas impressas da tabela de 120 linhas mostram o cabeçalho.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>Na visualização de impressão, a tabela cabe na largura de uma folha e a 2ª página começa com os títulos.</div>
+<label class="concluido"><input type="checkbox" data-passo="q10-5"> Passo concluído</label></div>
+</article>
+<article class="passo">
+<div class="passo__topo"><span class="passo__numero">6</span><h3 class="passo__titulo">Salve e entregue o arquivo</h3></div>
+<figure class="passo__figura"><img src="img/q10-passo-06.svg" alt="Salve e entregue o arquivo" loading="lazy"><figcaption class="passo__legenda">Nome do arquivo (1), tipo .xlsx (2) e Salvar (3).</figcaption></figure>
+<div class="passo__corpo"><ol><li>Arquivo → <strong>Salvar Como</strong> → escolha a pasta indicada pelo professor.</li><li>Nome do arquivo (1): <span class="celula">ESTOQUE-NOME-SOBRENOME</span> com o <strong>seu</strong> nome (ex.: <span class="celula">ESTOQUE-ANA-SOUZA</span>).</li><li>Tipo (2): <strong>Pasta de Trabalho do Excel (*.xlsx)</strong> → <strong>Salvar</strong> (3).</li><li>Entregue o arquivo como o professor orientar: pasta da turma, AVA ou e-mail.</li></ol>
+<div class="caixa caixa--libre"><span class="caixa__titulo">🐧 No LibreOffice Calc</span>Em <strong>Tipo</strong>, escolha <strong>Excel 2007-365 (.xlsx)</strong> e confirme <strong>Usar o formato Excel 2007-365!</strong>.</div>
+<div class="caixa caixa--verifique"><span class="caixa__titulo">✅ Verifique</span>O arquivo tem as 6 abas: Cadastro, Movimentacao, Consulta, Resumo, Requisicoes e Analise.</div>
+<label class="concluido"><input type="checkbox" data-passo="q10-6"> Passo concluído</label></div>
+</article>
+<section class="bloco">
+<h2>📋 Como esta questão será avaliada</h2>
+<table class="tabela"><thead><tr><th>Critério</th><th>Pontos</th></tr></thead><tbody><tr><td>Congelar Painéis a partir de C2 (título e 2 colunas)</td><td>0,15</td></tr><tr><td>Coluna Item preenchida com o Preenchimento Relâmpago</td><td>0,1</td></tr><tr><td>Cabeçalho centralizado com quebra de texto e altura maior</td><td>0,1</td></tr><tr><td>Paisagem, margens estreitas e ajuste de 1 página de largura</td><td>0,15</td></tr><tr><td>Títulos repetidos ($1:$1) e linhas de grade desmarcadas</td><td>0,1</td></tr><tr><td>Arquivo salvo em .xlsx com o nome pedido e 6 abas</td><td>0,15</td></tr><tr><td><strong>Total da questão</strong></td><td><strong>0,75</strong></td></tr></tbody></table>
+</section>
+<nav class="navegacao"><a class="botao" href="QUESTAO-09-FILTROS-E-CLASSIFICACAO.html">← Questão anterior</a><a class="botao botao--excel" href="../ATIVIDADE-EXCEL-29-09-2026.html">🏠 Capa da atividade</a><button class="botao" type="button" data-acao="imprimir">🖨️ Imprimir / PDF</button><span class="botao botao--desativado">→</span></nav>
+<footer class="rodape">Aprendizagem Industrial — Assistente em Processos de Gestão e Controle de Materiais · Análise de Dados Aplicada à Gestão · Empresa e dados fictícios, criados para fins didáticos.</footer>
+</div>
+</body>
+</html>
