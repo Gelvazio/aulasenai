@@ -20,7 +20,7 @@ graphify-out/
 !MATERIAIS/**/ATIVIDADES/*.pptx
 
 # Dados pessoais de alunos (LGPD) — nunca publicar
-LISTA-PRESENCA.js
+LISTA-PRESENCA*.js
 
 .env
 
