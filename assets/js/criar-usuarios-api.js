@@ -51,24 +51,37 @@ async function chamarApiUsuarios(rota, opcoes, chave) {
 }
 
 /**
- * Transforma a lista de presença em usuários do Auth mais a linha da tabela aluno.
- * @param {{turmas: Object[]}} lista - window.LISTA_PRESENCA.
- * @returns {Object[]} Usuários: email, senha, appMetadata, userMetadata, linhaAluno.
+ * Monta o usuário do Auth de um item da lista; perfil PROFESSOR não vira linha da tabela aluno.
+ * @param {Object} aluno - Item da lista (perfil opcional; o padrão é ALUNO).
+ * @param {Object} turma - Turma do item.
+ * @returns {Object} Usuário: email, senha, appMetadata, userMetadata, linhaAluno.
  */
-function montarUsuariosDaLista(lista) {
-    return lista.turmas.flatMap((turma) => turma.alunos.map((aluno) => ({
+function montarUsuarioDaLista(aluno, turma) {
+    const perfil = aluno.perfil || 'ALUNO';
+    const ehAluno = perfil === 'ALUNO';
+    return {
         email: aluno.email,
         senha: aluno.senha,
-        appMetadata: { perfil: 'ALUNO', turma_codigo: turma.codigo },
+        appMetadata: ehAluno ? { perfil, turma_codigo: turma.codigo } : { perfil },
         userMetadata: { nome: aluno.nome, turma_codigo: turma.codigo, turma_nome: turma.nome },
-        linhaAluno: {
+        linhaAluno: ehAluno ? {
             nome: aluno.nome,
             email: aluno.email,
             turma_codigo: turma.codigo,
             numero_chamada: aluno.numero,
             na_chamada: aluno.naChamada,
-        },
-    })));
+        } : null,
+    };
+}
+
+/**
+ * Transforma a lista de presença em usuários do Auth mais a linha da tabela aluno.
+ * @param {{turmas: Object[]}} lista - window.LISTA_PRESENCA.
+ * @returns {Object[]} Usuários: email, senha, appMetadata, userMetadata, linhaAluno.
+ */
+function montarUsuariosDaLista(lista) {
+    return lista.turmas.flatMap((turma) => (
+        turma.alunos.map((aluno) => montarUsuarioDaLista(aluno, turma))));
 }
 
 /**
@@ -162,7 +175,7 @@ async function gravarUsuariosNoAuth(usuarios, contexto, aoResultado) {
         try {
             const { id, resultado } = await gravarUsuarioAuthPagina(usuario, existentes, contexto);
             resumo[resultado] += 1;
-            alunos.push({ id, ...usuario.linhaAluno });
+            if (usuario.linhaAluno) alunos.push({ id, ...usuario.linhaAluno });
             aoResultado(resultado, usuario.email);
         } catch (erro) {
             resumo.erro += 1;

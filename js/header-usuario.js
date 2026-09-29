@@ -2,6 +2,7 @@
 // Genérico: preenche o elemento <div id="header-usuario"></div> de qualquer página com o
 // usuário logado (Supabase Auth) e o botão SAIR; sem sessão, mostra o botão ENTRAR.
 // Uso na página: <script src=".../js/header-usuario.js" defer></script> + o div acima.
+// Qualquer elemento com data-somente-perfil="PROFESSOR" (e hidden) só aparece para esse perfil.
 // Os caminhos (CSS, supabase.js, login.html) são calculados a partir do próprio script,
 // então a mesma chamada serve para qualquer pasta do projeto.
 
@@ -120,6 +121,17 @@ function descreverUsuarioHeader(usuario) {
 }
 
 /**
+ * Mostra os elementos marcados com data-somente-perfil="X" só quando o perfil logado for X.
+ * @param {Object|null} usuario - Usuário logado ou null.
+ */
+function aplicarVisibilidadePorPerfil(usuario) {
+  const perfil = usuario?.app_metadata?.perfil;
+  document.querySelectorAll("[data-somente-perfil]").forEach((elemento) => {
+    elemento.hidden = elemento.dataset.somentePerfil !== perfil;
+  });
+}
+
+/**
  * Desenha o header no elemento da página.
  * @param {HTMLElement} destino - Elemento #header-usuario.
  * @param {Object|null} cliente - Cliente do Supabase (null se indisponível).
@@ -144,9 +156,12 @@ async function iniciarHeaderUsuario() {
   try {
     const cliente = await obterClienteHeader();
     const { data } = await cliente.auth.getSession();
-    desenharHeaderUsuario(destino, cliente, data?.session?.user || null);
+    const usuario = data?.session?.user || null;
+    desenharHeaderUsuario(destino, cliente, usuario);
+    aplicarVisibilidadePorPerfil(usuario);
   } catch (erro) {
     desenharHeaderUsuario(destino, null, null);
+    aplicarVisibilidadePorPerfil(null);
   }
 }
 

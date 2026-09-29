@@ -92,19 +92,23 @@ function carregarListaPresenca(arquivo) {
  */
 function montarUsuarios(lista, prefixoSenha) {
   return lista.turmas.flatMap((turma) =>
-    turma.alunos.map((aluno) => ({
-      email: aluno.email,
-      senha: prefixoSenha + aluno.senha,
-      appMetadata: { perfil: PERFIL_ALUNO, turma_codigo: turma.codigo },
-      userMetadata: { nome: aluno.nome, turma_codigo: turma.codigo, turma_nome: turma.nome },
-      linhaAluno: {
-        nome: aluno.nome,
+    turma.alunos.map((aluno) => {
+      const perfil = aluno.perfil || PERFIL_ALUNO;
+      const ehAluno = perfil === PERFIL_ALUNO;
+      return {
         email: aluno.email,
-        turma_codigo: turma.codigo,
-        numero_chamada: aluno.numero,
-        na_chamada: aluno.naChamada,
-      },
-    }))
+        senha: prefixoSenha + aluno.senha,
+        appMetadata: ehAluno ? { perfil, turma_codigo: turma.codigo } : { perfil },
+        userMetadata: { nome: aluno.nome, turma_codigo: turma.codigo, turma_nome: turma.nome },
+        linhaAluno: ehAluno ? {
+          nome: aluno.nome,
+          email: aluno.email,
+          turma_codigo: turma.codigo,
+          numero_chamada: aluno.numero,
+          na_chamada: aluno.naChamada,
+        } : null,
+      };
+    })
   );
 }
 
