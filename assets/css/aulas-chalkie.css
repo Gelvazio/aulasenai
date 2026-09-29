@@ -1,15 +1,15 @@
-/* Página "Aulas a criar" — visual em cards com tema escuro/claro automático.
+/* Página "Aulas a criar" — visual em cards sempre com fundo escuro (dark).
    Tokens em :root; componentes dependem dos tokens, cores por modificador (BEM). */
 
 :root {
-  --cor-fundo: #f4f6fb;
-  --cor-superficie: #ffffff;
-  --cor-texto: #16213a;
-  --cor-texto-suave: #55627f;
-  --cor-borda: #dfe4f0;
+  --cor-fundo: #0b1226;
+  --cor-superficie: #131c38;
+  --cor-texto: #eef2ff;
+  --cor-texto-suave: #a5b1d3;
+  --cor-borda: #24305a;
   --cor-primaria: #004384;
   --cor-destaque: #ffb400;
-  --sombra-cartao: 0 10px 30px rgba(10, 30, 80, 0.10);
+  --sombra-cartao: 0 12px 34px rgba(0, 0, 0, 0.45);
   --raio: 18px;
   --cor-azul: #2f7bff;
   --cor-verde: #14b87a;
@@ -19,17 +19,7 @@
   --cor-ciano: #12b5d6;
   --cor-vermelho: #ee4b4b;
   --cor-amarelo: #e6a700;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --cor-fundo: #0b1226;
-    --cor-superficie: #131c38;
-    --cor-texto: #eef2ff;
-    --cor-texto-suave: #a5b1d3;
-    --cor-borda: #24305a;
-    --sombra-cartao: 0 12px 34px rgba(0, 0, 0, 0.45);
-  }
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -258,13 +248,10 @@ body {
   border: 3px solid var(--cor-fundo);
 }
 
-.encontro__data { font-weight: 800; color: var(--cor-primaria); }
+.encontro__data { font-weight: 800; color: var(--cor-destaque); }
 .encontro__docente { color: var(--cor-texto-suave); font-size: 0.9rem; }
 .encontro__aulas { margin: 4px 0 0; }
 
-@media (prefers-color-scheme: dark) {
-  .encontro__data { color: var(--cor-destaque); }
-}
 
 /* ---------- Alertas e rodapé ---------- */
 .alerta {
