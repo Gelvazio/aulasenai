@@ -10,6 +10,10 @@ const TEXTO_COPIADO = '✅ Copiado!';
 const TEXTO_FALHA_COPIA = '⚠️ Não foi possível copiar';
 const TEMPO_AVISO_COPIA_MS = 2500;
 const MINIMO_LINHAS_PARA_COPIAR = 2;
+const SELETOR_QUESTOES = 'a.questao-cartao';
+const SELETOR_SO_TELA = '.navegacao, .concluido, .sem-impressao, .botao--copiar, .passo__copiar, script';
+const ID_IMPRESSAO_COMPLETA = 'impressao-completa';
+const TEXTO_PREPARANDO_PDF = '⏳ Preparando o PDF com todas as questões...';
 
 /**
  * Lê um valor salvo no navegador sem quebrar a página se o armazenamento estiver bloqueado.
@@ -71,12 +75,83 @@ function ligarPassosConcluidos(atividade) {
 }
 
 /**
+ * Baixa uma página de questão e devolve só o conteúdo que deve sair no PDF.
+ * @param {string} url - Endereço da página da questão.
+ * @returns {Promise<HTMLElement|null>} Seção pronta para impressão, ou null se falhar.
+ */
+async function baixarQuestaoParaImpressao(url) {
+  try {
+    const resposta = await fetch(url);
+    if (!resposta.ok) return null;
+
+    const documento = new DOMParser().parseFromString(await resposta.text(), 'text/html');
+    const pagina = documento.querySelector('.pagina');
+    if (!pagina) return null;
+
+    pagina.querySelectorAll(SELETOR_SO_TELA).forEach((elemento) => elemento.remove());
+    pagina.querySelectorAll('img').forEach((imagem) => {
+      imagem.src = new URL(imagem.getAttribute('src'), url).href;
+      imagem.loading = 'eager';
+    });
+    const secao = document.createElement('section');
+    secao.className = 'impressao-questao';
+    secao.append(...Array.from(pagina.childNodes).map((no) => document.importNode(no, true)));
+    return secao;
+  } catch (erro) {
+    return null;
+  }
+}
+
+/**
+ * Espera todas as imagens do trecho carregarem, para não saírem em branco no PDF.
+ * @param {HTMLElement} trecho - Elemento com as imagens.
+ * @returns {Promise<void>} Resolve quando todas terminarem de carregar (ou falharem).
+ */
+function aguardarImagens(trecho) {
+  const pendentes = Array.from(trecho.querySelectorAll('img')).filter((imagem) => !imagem.complete);
+  return Promise.all(pendentes.map((imagem) => new Promise((resolver) => {
+    imagem.addEventListener('load', resolver, { once: true });
+    imagem.addEventListener('error', resolver, { once: true });
+  }))).then(() => undefined);
+}
+
+/**
+ * Imprime a capa e, em seguida, todas as questões da atividade (cada uma em nova página).
+ * Nas páginas sem lista de questões, imprime só a própria página.
+ * @param {HTMLButtonElement} botao - Botão clicado (mostra o andamento).
+ * @returns {Promise<void>} Resolve depois de abrir a impressão.
+ */
+async function imprimirTudo(botao) {
+  const enderecos = [...new Set(Array.from(document.querySelectorAll(SELETOR_QUESTOES))
+    .map((link) => link.href))];
+  if (!enderecos.length) {
+    window.print();
+    return;
+  }
+  const rotuloOriginal = botao.textContent;
+  botao.disabled = true;
+  botao.textContent = TEXTO_PREPARANDO_PDF;
+
+  const secoes = (await Promise.all(enderecos.map(baixarQuestaoParaImpressao))).filter(Boolean);
+  const conteiner = document.createElement('div');
+  conteiner.id = ID_IMPRESSAO_COMPLETA;
+  conteiner.append(...secoes);
+  document.body.appendChild(conteiner);
+  await aguardarImagens(conteiner);
+
+  window.addEventListener('afterprint', () => conteiner.remove(), { once: true });
+  botao.textContent = rotuloOriginal;
+  botao.disabled = false;
+  window.print();
+}
+
+/**
  * Liga os botões de impressão (salvar em PDF pelo navegador).
  * @returns {void}
  */
 function ligarImpressao() {
   document.querySelectorAll('[data-acao="imprimir"]').forEach((botao) => {
-    botao.addEventListener('click', () => window.print());
+    botao.addEventListener('click', () => imprimirTudo(botao));
   });
 }
 

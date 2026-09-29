@@ -253,3 +253,9 @@ body {
 @media (max-width: 600px) { .tabela-dados-linha { flex-direction: column-reverse; } }
 .passo__copiar { display: flex; align-items: center; gap: 10px; margin: 8px 0; flex-wrap: wrap; }
 .passo__copiar .botao--copiar { margin: 0; }
+
+#impressao-completa { display: none; }
+@media print {
+  #impressao-completa { display: block; }
+  .impressao-questao { break-before: page; page-break-before: always; }
+}
