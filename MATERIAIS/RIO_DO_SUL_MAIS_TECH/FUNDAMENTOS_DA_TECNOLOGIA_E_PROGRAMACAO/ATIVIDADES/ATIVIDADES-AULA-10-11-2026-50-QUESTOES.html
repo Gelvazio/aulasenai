@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 05 — Introdução aos Algoritmos (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="05" data-tema="Introdução aos Algoritmos" data-total="50"
+      data-uc="Fundamentos da Tecnologia e Programação" data-uc-curta="Fundamentos da Tecnologia"
+      data-docente="Gelvazio Camargo" data-login="sim">
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🧩 Aula 05: Introdução aos Algoritmos</h1>
+            <p>Fundamentos da Tecnologia · Rio do Sul Mais Tech — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-10-11-2026-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE AVALIADA</div>
+                    <div class="content-text">Desenvolver o pensamento lógico, sequencial e estruturado para resolver problemas: compreender algoritmos, os pilares do pensamento computacional e fluxogramas.</div>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Revisão: Boa Apresentação</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual prática é mais adequada para sintetizar dados e exibi-los a um público?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Usar slides com tópicos objetivos, imagens informativas e bom contraste.</li>
+                        <li><span class="letra">B)</span>Preencher a tela com animações sem roteiro.</li>
+                        <li><span class="letra">C)</span>Criar um bloco único de texto longo.</li>
+                        <li><span class="letra">D)</span>Copiar links de fóruns sem conferir a autoria.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Vocabulário: Algoritmo</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um algoritmo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um tipo de vírus de computador.</li>
+                        <li><span class="letra">B)</span>Sequência finita e ordenada de instruções para resolver um problema.</li>
+                        <li><span class="letra">C)</span>Uma peça física do processador.</li>
+                        <li><span class="letra">D)</span>Um site de pesquisa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Vocabulário: Fluxograma</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um fluxograma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Diagrama visual esquemático que representa etapas de um processo.</li>
+                        <li><span class="letra">B)</span>Um texto longo com todas as regras do sistema.</li>
+                        <li><span class="letra">C)</span>Um tipo de senha de acesso.</li>
+                        <li><span class="letra">D)</span>Uma tabela de preços.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Vocabulário: Lógica</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é lógica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Conjunto de teclas de atalho.</li>
+                        <li><span class="letra">B)</span>Tipo de arquivo de imagem.</li>
+                        <li><span class="letra">C)</span>Raciocínio estruturado que organiza fatos e regras de forma consistente.</li>
+                        <li><span class="letra">D)</span>Operação de copiar e colar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Vocabulário: Sequência</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é sequência?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Execução de todos os passos ao mesmo tempo.</li>
+                        <li><span class="letra">B)</span>Repetição infinita de um comando.</li>
+                        <li><span class="letra">C)</span>Execução linear de instruções, em que uma só começa após a anterior terminar.</li>
+                        <li><span class="letra">D)</span>Escolha entre dois caminhos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Como as Máquinas Pensam</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece se faltar um comando sobre quando parar em um programa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A máquina adivinha o que o usuário queria.</li>
+                        <li><span class="letra">B)</span>A máquina para sozinha, sem falhas.</li>
+                        <li><span class="letra">C)</span>A máquina repetirá o erro infinitamente.</li>
+                        <li><span class="letra">D)</span>O programa é corrigido automaticamente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Organizar o Raciocínio</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o programador faz antes de escrever qualquer código?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Compra um computador novo.</li>
+                        <li><span class="letra">B)</span>Escreve o código sem planejamento.</li>
+                        <li><span class="letra">C)</span>Copia um programa pronto sem ler.</li>
+                        <li><span class="letra">D)</span>Organiza o raciocínio: define a ordem dos passos, os testes e os resultados esperados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Algoritmo: Receita Lógica</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o algoritmo é chamado de “receita lógica”?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque só serve para cozinhar.</li>
+                        <li><span class="letra">B)</span>Porque nunca recebe dados.</li>
+                        <li><span class="letra">C)</span>Porque tem passos que podem ser ignorados.</li>
+                        <li><span class="letra">D)</span>Porque é um conjunto claro de ordens que recebe dados, executa ações e devolve uma resposta final.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Propriedade: Finitude</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa finitude em um algoritmo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ele nunca pode terminar.</li>
+                        <li><span class="letra">B)</span>Ele tem apenas um passo.</li>
+                        <li><span class="letra">C)</span>Ele só funciona uma vez na vida.</li>
+                        <li><span class="letra">D)</span>Ele deve terminar após um número contável de passos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Propriedade: Clareza</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa clareza em um algoritmo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As instruções podem ter vários sentidos.</li>
+                        <li><span class="letra">B)</span>O algoritmo deve ser escrito em código.</li>
+                        <li><span class="letra">C)</span>Só o autor precisa entender.</li>
+                        <li><span class="letra">D)</span>Cada instrução não pode gerar ambiguidade.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Propriedade: Eficácia</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa eficácia em um algoritmo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O algoritmo deve ser o mais longo possível.</li>
+                        <li><span class="letra">B)</span>Cada ação precisa ser executável no mundo real.</li>
+                        <li><span class="letra">C)</span>As ações podem ser impossíveis de realizar.</li>
+                        <li><span class="letra">D)</span>O algoritmo deve ser sempre secreto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Algoritmo: Escovar os Dentes</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual sequência descreve o algoritmo de escovar os dentes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Enxaguar, guardar a escova, pegar o creme e aplicar.</li>
+                        <li><span class="letra">B)</span>Guardar o material, escovar e só depois pegar a escova.</li>
+                        <li><span class="letra">C)</span>Aplicar o creme, guardar a escova e pegar a água.</li>
+                        <li><span class="letra">D)</span>Pegar a escova, aplicar o creme, fazer movimentos circulares, enxaguar e guardar o material.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Algoritmo: Fazer um Bolo</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Segundo a aula, qual é a ordem para fazer um bolo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Assar, misturar os secos e esperar esfriar.</li>
+                        <li><span class="letra">B)</span>Esperar esfriar, assar e misturar.</li>
+                        <li><span class="letra">C)</span>Bater os ovos depois de servir.</li>
+                        <li><span class="letra">D)</span>Misturar os secos, bater com ovos e leite, assar por 40 minutos e esperar esfriar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Algoritmo: Sacar Dinheiro</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem ao sacar dinheiro em um caixa eletrônico?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Recolher as cédulas, inserir o cartão e digitar a senha.</li>
+                        <li><span class="letra">B)</span>Digitar a senha antes de inserir o cartão.</li>
+                        <li><span class="letra">C)</span>Inserir o cartão, digitar a senha, conferir o saldo, escolher a quantia e recolher as cédulas.</li>
+                        <li><span class="letra">D)</span>Escolher a quantia e conferir o saldo por último.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Pilar: Decomposição</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é decomposição?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ignorar detalhes irrelevantes.</li>
+                        <li><span class="letra">B)</span>Identificar repetições entre problemas.</li>
+                        <li><span class="letra">C)</span>Dividir um problema complexo em partes menores e mais fáceis de gerenciar.</li>
+                        <li><span class="letra">D)</span>Criar o passo a passo final.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Pilar: Padrões</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é o reconhecimento de padrões?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dividir o problema em partes.</li>
+                        <li><span class="letra">B)</span>Ignorar o que é secundário.</li>
+                        <li><span class="letra">C)</span>Identificar semelhanças e repetições entre problemas anteriores e atuais.</li>
+                        <li><span class="letra">D)</span>Desenhar símbolos geométricos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Pilar: Abstração</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é abstração?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dividir o problema em módulos.</li>
+                        <li><span class="letra">B)</span>Ignorar detalhes irrelevantes e focar apenas nas informações cruciais.</li>
+                        <li><span class="letra">C)</span>Repetir uma solução já usada.</li>
+                        <li><span class="letra">D)</span>Escrever a lista final de instruções.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Pilar: Algoritmos</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No pensamento computacional, o pilar “algoritmos” consiste em:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dividir o problema em partes.</li>
+                        <li><span class="letra">B)</span>Criar o passo a passo ordenado para automatizar e replicar a solução encontrada.</li>
+                        <li><span class="letra">C)</span>Focar só no que decide o resultado.</li>
+                        <li><span class="letra">D)</span>Reconhecer o que se repete.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Os Quatro Pilares</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais são os quatro pilares do pensamento computacional?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Hardware, software, rede e internet.</li>
+                        <li><span class="letra">B)</span>Decomposição, reconhecimento de padrões, abstração e algoritmos.</li>
+                        <li><span class="letra">C)</span>Sequência, decisão, repetição e teste.</li>
+                        <li><span class="letra">D)</span>Entrada, saída, memória e processamento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Decomposição: Jogo Digital</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Uma equipe precisa construir um jogo digital do zero.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como a decomposição ajuda?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Elimina a necessidade de testar.</li>
+                        <li><span class="letra">B)</span>Desmonta o projeto em módulos, como movimento do personagem, pontuação e colisões.</li>
+                        <li><span class="letra">C)</span>Junta tudo em um único bloco gigante.</li>
+                        <li><span class="letra">D)</span>Impede a divisão de tarefas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Padrões: Gravidade</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um programador já criou a gravidade para um herói e precisa criá-la para outro personagem.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual pilar ele usa ao reaproveitar a mesma fórmula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Reconhecimento de padrões, aproveitando soluções já validadas.</li>
+                        <li><span class="letra">B)</span>Decomposição.</li>
+                        <li><span class="letra">C)</span>Abstração.</li>
+                        <li><span class="letra">D)</span>Teste de fluxograma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Abstração: Mapa do Metrô</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que, em um mapa de metrô, as curvas geográficas exatas da cidade não importam?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque só importam as estações e as conexões entre linhas (abstração).</li>
+                        <li><span class="letra">B)</span>Porque o mapa deve ser sempre desenhado à mão.</li>
+                        <li><span class="letra">C)</span>Porque as curvas são segredo militar.</li>
+                        <li><span class="letra">D)</span>Porque o metrô só tem linhas retas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Abstrair não é Esquecer</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a aula diz sobre abstrair?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Abstrair é apagar todos os dados.</li>
+                        <li><span class="letra">B)</span>Abstrair é copiar sem entender.</li>
+                        <li><span class="letra">C)</span>Abstrair é focar no que decide o resultado, não esquecer.</li>
+                        <li><span class="letra">D)</span>Abstrair é repetir o mesmo passo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Importância da Sequência</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a ordem dos passos importa em computação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque a ordem não muda o resultado.</li>
+                        <li><span class="letra">B)</span>Porque, se invertermos duas ações simples, todo o sistema pode falhar.</li>
+                        <li><span class="letra">C)</span>Porque as máquinas entendem a ordem natural sozinhas.</li>
+                        <li><span class="letra">D)</span>Porque só o primeiro passo é executado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Erro Comum</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o erro comum apontado na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Escrever passos detalhados demais.</li>
+                        <li><span class="letra">B)</span>Testar o algoritmo antes de usar.</li>
+                        <li><span class="letra">C)</span>Usar fluxogramas para planejar.</li>
+                        <li><span class="letra">D)</span>Assumir que a máquina entende a ordem natural das coisas sem que você declare.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Atravessar a Rua</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem correta dos passos para atravessar a rua?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Parar na guia, olhar os lados, avaliar o risco e atravessar.</li>
+                        <li><span class="letra">B)</span>Atravessar, olhar os lados, parar na guia e avaliar o risco.</li>
+                        <li><span class="letra">C)</span>Avaliar o risco, atravessar e só então parar.</li>
+                        <li><span class="letra">D)</span>Olhar os lados depois de atravessar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Ordem: Preparar um Chá</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem correta para preparar um chá?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ferver a água, colocar o sachê na xícara, despejar a água e aguardar três minutos.</li>
+                        <li><span class="letra">B)</span>Despejar a água, ferver e colocar o sachê.</li>
+                        <li><span class="letra">C)</span>Aguardar três minutos, ferver e despejar.</li>
+                        <li><span class="letra">D)</span>Colocar o sachê, aguardar e ferver a água.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Condicional SE/ENTÃO/SENÃO</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve a estrutura condicional SE / ENTÃO / SENÃO?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Repetir comandos indefinidamente.</li>
+                        <li><span class="letra">B)</span>Avaliar um teste lógico, verdadeiro ou falso, e escolher o caminho a seguir.</li>
+                        <li><span class="letra">C)</span>Guardar dados na memória.</li>
+                        <li><span class="letra">D)</span>Desenhar símbolos de fluxograma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Teste Lógico</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Que valores um teste lógico pode ter?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Qualquer número inteiro.</li>
+                        <li><span class="letra">B)</span>Somente números negativos.</li>
+                        <li><span class="letra">C)</span>Somente verdadeiro ou falso.</li>
+                        <li><span class="letra">D)</span>Talvez ou não sei.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Condicional: Média do Aluno</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">SE a média for maior ou igual a 7,0, ENTÃO exibe “Aprovado!”; SENÃO exibe “Recuperação necessária.”</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que será exibido para um aluno com média 6,5?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>“Aprovado!”.</li>
+                        <li><span class="letra">B)</span>Nenhuma mensagem.</li>
+                        <li><span class="letra">C)</span>“Recuperação necessária.”</li>
+                        <li><span class="letra">D)</span>As duas mensagens ao mesmo tempo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Decisões no Trânsito: Verde</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Pela lógica do semáforo, o que acontece se o sinal estiver verde?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O veículo acelera e segue seu trajeto normalmente.</li>
+                        <li><span class="letra">B)</span>O veículo para antes da faixa.</li>
+                        <li><span class="letra">C)</span>O veículo dá ré.</li>
+                        <li><span class="letra">D)</span>O veículo desliga o motor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Decisões no Trânsito: Vermelho</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual ação corresponde ao SENÃO (sinal vermelho)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Acelerar para passar rápido.</li>
+                        <li><span class="letra">B)</span>Ignorar o sinal.</li>
+                        <li><span class="letra">C)</span>Imobilizar o veículo antes da faixa de retenção.</li>
+                        <li><span class="letra">D)</span>Buzinar e atravessar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Estruturas de Repetição</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que servem os laços de repetição (loops)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Executar um bloco de comandos repetidamente, sem reescrever as linhas.</li>
+                        <li><span class="letra">B)</span>Escolher entre verdadeiro e falso uma única vez.</li>
+                        <li><span class="letra">C)</span>Desenhar um fluxograma.</li>
+                        <li><span class="letra">D)</span>Apagar o programa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Laço ENQUANTO</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O laço ENQUANTO (While) repete a instrução:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um número fixo e conhecido de vezes, sempre.</li>
+                        <li><span class="letra">B)</span>Enquanto uma condição for verdadeira.</li>
+                        <li><span class="letra">C)</span>Somente uma vez.</li>
+                        <li><span class="letra">D)</span>Depois que o computador for desligado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Laço PARA</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O laço PARA (For) repete a instrução:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Enquanto a bateria for menor que 100%, sem contagem.</li>
+                        <li><span class="letra">B)</span>Indefinidamente, sem controle.</li>
+                        <li><span class="letra">C)</span>Apenas quando o usuário desistir.</li>
+                        <li><span class="letra">D)</span>Por um número fixo e conhecido de vezes, como repetir 5 vezes o sinal sonoro.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Laço Infinito</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando ocorre um laço infinito?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quando o laço termina no primeiro passo.</li>
+                        <li><span class="letra">B)</span>Quando o programa não tem nenhum comando.</li>
+                        <li><span class="letra">C)</span>Quando a condição de parada nunca se torna falsa.</li>
+                        <li><span class="letra">D)</span>Quando o computador está desligado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Variável de Controle</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que evita o laço infinito?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um comando que nunca muda.</li>
+                        <li><span class="letra">B)</span>Uma variável de controle que se altere a cada volta, como um contador que soma 1.</li>
+                        <li><span class="letra">C)</span>Um fluxograma sem símbolos.</li>
+                        <li><span class="letra">D)</span>Aumentar a velocidade do processador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">SE/ENTÃO não é Repetição</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Uma colega afirma que “SE / ENTÃO serve para repetir comandos até o computador ser desligado”.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Essa afirmação está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não: condicionais testam se algo é verdadeiro ou falso; quem repete são os laços.</li>
+                        <li><span class="letra">B)</span>Sim: SE / ENTÃO sempre repete comandos.</li>
+                        <li><span class="letra">C)</span>Sim: SE / ENTÃO e laços são a mesma coisa.</li>
+                        <li><span class="letra">D)</span>Sim: SE / ENTÃO desliga o computador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">O que é Fluxograma</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um fluxograma é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A representação gráfica de um algoritmo, com símbolos geométricos padronizados.</li>
+                        <li><span class="letra">B)</span>Um texto corrido sem símbolos.</li>
+                        <li><span class="letra">C)</span>Um programa executável.</li>
+                        <li><span class="letra">D)</span>Uma tabela de dados numéricos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Benefícios do Fluxograma</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual benefício o fluxograma oferece?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Identificar caminhos alternativos e etapas redundantes num único relance.</li>
+                        <li><span class="letra">B)</span>Apagar automaticamente erros do código.</li>
+                        <li><span class="letra">C)</span>Executar o programa sozinho.</li>
+                        <li><span class="letra">D)</span>Aumentar a memória RAM.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Símbolo: Terminal</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o terminal (oval) indica no fluxograma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma instrução de cálculo.</li>
+                        <li><span class="letra">B)</span>Onde o fluxo começa e onde termina.</li>
+                        <li><span class="letra">C)</span>Uma decisão de sim ou não.</li>
+                        <li><span class="letra">D)</span>Uma entrada manual de dados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Símbolo: Processo</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o retângulo representa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O início do fluxo.</li>
+                        <li><span class="letra">B)</span>Uma decisão com caminhos Sim/Não.</li>
+                        <li><span class="letra">C)</span>Uma instrução direta, cálculo ou tarefa em execução.</li>
+                        <li><span class="letra">D)</span>A exibição de resultados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Símbolo: Decisão</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Ao desenhar um fluxograma, você precisa fazer uma pergunta de sim ou não.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual forma geométrica usar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Losango.</li>
+                        <li><span class="letra">B)</span>Círculo perfeito.</li>
+                        <li><span class="letra">C)</span>Paralelogramo.</li>
+                        <li><span class="letra">D)</span>Retângulo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Símbolo: Dados</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o paralelogramo representa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O fim do fluxo.</li>
+                        <li><span class="letra">B)</span>Uma decisão condicional.</li>
+                        <li><span class="letra">C)</span>Entrada manual de dados ou exibição de resultado.</li>
+                        <li><span class="letra">D)</span>Um cálculo interno.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Roteiro do Fluxograma</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o primeiro passo do roteiro para construir um fluxograma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Desenhar as decisões antes de saber o problema.</li>
+                        <li><span class="letra">B)</span>Apagar o fluxograma anterior.</li>
+                        <li><span class="letra">C)</span>Escrever o código-fonte completo.</li>
+                        <li><span class="letra">D)</span>Delimitar entrada e saída: definir onde a tarefa começa e qual resposta entregar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Algoritmos de Busca na Web</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz o algoritmo de busca do Google ao receber um termo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Escolhe páginas ao acaso.</li>
+                        <li><span class="letra">B)</span>Apaga as páginas que não conhece.</li>
+                        <li><span class="letra">C)</span>Envia sempre o mesmo resultado.</li>
+                        <li><span class="letra">D)</span>Analisa a intenção, compara a relevância e ordena os resultados por qualidade e velocidade.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Semáforo Inteligente</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Sensores sob o asfalto detectam fila na via secundária, e a via principal já teve verde por 40 segundos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o algoritmo do semáforo inteligente faz?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mantém o verde na via principal para sempre.</li>
+                        <li><span class="letra">B)</span>Aciona o amarelo e o vermelho na via principal e libera o verde para a fila secundária.</li>
+                        <li><span class="letra">C)</span>Desliga todos os sinais.</li>
+                        <li><span class="letra">D)</span>Pisca o vermelho nas duas vias.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Evolução do Algoritmo de Tráfego</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem da evolução do algoritmo de tráfego citada na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cidades inteligentes, sensores e tempo fixo.</li>
+                        <li><span class="letra">B)</span>Sensores, cidades inteligentes e tempo fixo.</li>
+                        <li><span class="letra">C)</span>Tempo fixo, cidades inteligentes e sensores.</li>
+                        <li><span class="letra">D)</span>Tempo fixo, sensores e cidades inteligentes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Raciocínio Lógico</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Que benefício o raciocínio lógico traz, segundo a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Evitar qualquer planejamento.</li>
+                        <li><span class="letra">B)</span>Encontrar a causa raiz de falhas em vez de aplicar correções temporárias.</li>
+                        <li><span class="letra">C)</span>Depender de suposições vagas.</li>
+                        <li><span class="letra">D)</span>Aplicar remendos sem investigar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Desafio: Atravessar o Rio</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um barqueiro leva um lobo, uma cabra e um maço de couves; o barco leva só um passageiro por vez. O lobo come a cabra e a cabra come a couve se ficarem sozinhos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quem ele deve levar na primeira viagem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O lobo, deixando a cabra com a couve.</li>
+                        <li><span class="letra">B)</span>Ninguém, cruzando sozinho primeiro.</li>
+                        <li><span class="letra">C)</span>A couve, deixando o lobo com a cabra.</li>
+                        <li><span class="letra">D)</span>A cabra, deixando o lobo com a couve.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Fundamentos da Tecnologia e Programação — Aula 05: Introdução aos Algoritmos</strong></p>
+        <p>Rio do Sul Mais Tech — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>
