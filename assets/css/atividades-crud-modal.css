@@ -1,0 +1,78 @@
+/* Modal "CADASTRAR ATIVIDADES" do ATIVIDADES/index.html (assets/js/atividades-crud-modal.js). */
+:root {
+    --crud-azul: #004384;
+    --crud-fundo: #ffffff;
+    --crud-borda: #cbd5e0;
+    --crud-texto: #1a202c;
+    --crud-suave: #4a5568;
+    --crud-perigo: #b42318;
+    --crud-ok: #1b7f3b;
+}
+
+.crud-botao-card { background: #fff7e6; border: 1px solid #f0c36d; cursor: pointer; }
+
+.crud-fundo {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 16px;
+}
+.crud-fundo[hidden] { display: none; }
+
+.crud-caixa {
+    background: var(--crud-fundo);
+    color: var(--crud-texto);
+    width: min(760px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    padding: 20px;
+}
+.crud-cabecalho { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.crud-caixa h2 { color: var(--crud-azul); font-size: 20px; }
+.crud-caixa h3 { margin: 18px 0 8px; font-size: 16px; }
+
+.crud-lista { margin-top: 12px; display: grid; gap: 8px; }
+.crud-linha {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--crud-borda);
+    border-radius: 8px;
+    padding: 8px 10px;
+}
+.crud-linha__texto { flex: 1; display: grid; }
+.crud-linha__texto small, .crud-vazio { color: var(--crud-suave); }
+
+.crud-form { display: grid; gap: 10px; }
+.crud-campo { display: grid; gap: 4px; font-size: 14px; }
+.crud-campo__rotulo { font-weight: 600; }
+.crud-campo input[type="text"], .crud-campo input[type="date"],
+.crud-campo input[type="number"], .crud-campo select {
+    padding: 8px;
+    border: 1px solid var(--crud-borda);
+    border-radius: 6px;
+    font: inherit;
+}
+.crud-campo input[type="checkbox"] { width: 20px; height: 20px; }
+.crud-form__acoes { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.crud-btn {
+    border: 1px solid var(--crud-borda);
+    background: #f4f6fb;
+    color: var(--crud-texto);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+.crud-btn--principal { background: var(--crud-azul); color: #fff; border-color: var(--crud-azul); }
+.crud-btn--perigo { color: var(--crud-perigo); border-color: var(--crud-perigo); }
+
+.crud-mensagem { margin-top: 10px; min-height: 20px; color: var(--crud-ok); font-weight: 600; }
+.crud-mensagem--erro { color: var(--crud-perigo); }
