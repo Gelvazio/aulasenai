@@ -30,3 +30,7 @@ database/*-seed-atividades.sql
 
 # Arquivos gerados pelo Python
 __pycache__/
+
+# Conteúdo já passado (estruturado para IA) e seu plano
+!MATERIAIS/**/CONTEUDO/CONTEUDO-JA-PASSADO-*.md
+!docs/estruturar-conteudo-ja-passado-ceplas-manha.md
