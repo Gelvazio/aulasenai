@@ -68,3 +68,88 @@ body {
     cursor: pointer;
 }
 .guia-mensagem { margin-left: 10px; color: var(--guia-ok); font-weight: 600; }
+
+.guia-abas { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 0; }
+.guia-aba {
+    background: #fff;
+    color: var(--guia-azul);
+    border: 1px solid var(--guia-borda);
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    padding: 10px 16px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+.guia-aba--ativa { background: var(--guia-azul); color: #fff; border-color: var(--guia-azul); }
+.guia-cartao[hidden] { display: none; }
+
+.guia-comando:empty { display: none; }
+
+.guia-cartao > .guia-botao { display: block; margin: 16px auto; }
+
+.guia-controles { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin: 8px 0; }
+.guia-filtro { font: inherit; padding: 4px 8px; border: 1px solid var(--guia-borda); border-radius: 6px; }
+.guia-situacao { font-weight: 600; }
+.guia-situacao--sim { color: var(--guia-ok); }
+.guia-situacao--nao { color: var(--guia-erro); }
+.guia-botao:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.guia-marcar {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    vertical-align: middle;
+    border: 2px solid var(--guia-azul);
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+    display: inline-grid;
+    place-content: center;
+    transition: background 0.15s, box-shadow 0.15s;
+}
+.guia-marcar::after {
+    content: "";
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.15s;
+}
+.guia-marcar:checked { background: var(--guia-azul); }
+.guia-marcar:checked::after { transform: rotate(45deg) scale(1); }
+.guia-marcar:hover { box-shadow: 0 0 0 3px rgba(0, 67, 132, 0.2); }
+.guia-marcar:focus-visible { outline: 2px solid var(--guia-azul); outline-offset: 2px; }
+.guia-controles label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+.guia-tabela tr:has(.guia-marcar:checked) { background: #e8f0fb; }
+
+.guia-interruptor {
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    width: 44px;
+    height: 24px;
+    margin: 0;
+    border-radius: 12px;
+    background: var(--guia-borda);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.guia-interruptor::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+.guia-interruptor:checked { background: var(--guia-azul); }
+.guia-interruptor:checked::after { transform: translateX(20px); }
+.guia-interruptor:focus-visible { outline: 2px solid var(--guia-azul); outline-offset: 2px; }

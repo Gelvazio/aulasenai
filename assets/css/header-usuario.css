@@ -1,0 +1,27 @@
+/* Header do usuário logado (js/header-usuario.js). Classes com prefixo header-usuario__. */
+#header-usuario { font-family: "Segoe UI", Arial, sans-serif; }
+.header-usuario__barra {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+    padding: 8px 20px;
+    background: #004384;
+    color: #fff;
+    font-size: 14px;
+    border-bottom: 3px solid #f7941d;
+}
+.header-usuario__nome { font-weight: 600; }
+.header-usuario__botao {
+    background: #f7941d;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 6px 16px;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+.header-usuario__botao:hover { background: #d97706; }
+@media print { #header-usuario { display: none; } }

@@ -1,14 +1,17 @@
-// Página scripts/criarUsuariosBancoDados.html: lista os alunos (sem senhas) e grava no Supabase
-// pelo botão. Depende de assets/js/criar-usuarios-api.js e de window.LISTA_PRESENCA.
+// Página scripts/criarUsuariosBancoDados.html: uma aba por turma; cada aba lista os alunos com
+// "Cadastrado" (Sim/Não, de auth.users), seleção, marcar todos, filtro e um botão que grava só os
+// selecionados. Depende de criar-usuarios-api.js, criar-usuarios-tabela.js e das listas
+// window.LISTA_PRESENCA e window.LISTAS_PRESENCA (arquivos LISTA-PRESENCA*.js da pasta).
 
-const MSG_SEM_LISTA = 'Lista não encontrada. Coloque LISTA-PRESENCA-CEPLAS-MANHA.js nesta pasta.';
+const MSG_SEM_LISTA = 'Nenhuma lista encontrada. Coloque os arquivos LISTA-PRESENCA*.js nesta pasta.';
 const MSG_GRAVANDO = 'Gravando...';
+const MSG_CONSULTA_FALHOU = 'Não foi possível consultar auth.users (coluna Cadastrado = "?"): ';
+const MSG_CONSULTA_OK = 'Cadastrado: consulta feita em auth.users ao abrir a página.';
 const IDS_GUIA = {
-    turma: 'guiaTurma',
-    alunos: 'guiaAlunos',
+    turmas: 'guiaTurmas',
+    abas: 'guiaAbas',
     redefinir: 'guiaRedefinir',
-    gravar: 'guiaGravar',
-    resultado: 'guiaResultado',
+    aviso: 'guiaAviso',
 };
 
 /**
@@ -21,77 +24,203 @@ function obterElementoGuia(chave) {
 }
 
 /**
- * Cria uma linha da tabela de alunos (número, nome e e-mail; sem senha).
- * @param {Object} aluno - Aluno da lista de presença.
- * @returns {HTMLTableRowElement} Linha da tabela.
+ * Junta as turmas de todas as listas carregadas (window.LISTA_PRESENCA e window.LISTAS_PRESENCA).
+ * @returns {Object[]} Turmas de todas as listas; vazio se nenhuma lista foi carregada.
  */
-function criarLinhaAlunoGuia(aluno) {
-    const linha = document.createElement('tr');
-    [aluno.numero, aluno.nome, aluno.email].forEach((valor) => {
-        const celula = document.createElement('td');
-        celula.textContent = String(valor);
-        linha.append(celula);
+function reunirTurmasPresenca() {
+    const listas = [window.LISTA_PRESENCA, ...(window.LISTAS_PRESENCA || [])].filter(Boolean);
+    return listas.flatMap((lista) => lista.turmas || []);
+}
+
+/**
+ * Consulta os cadastrados em auth.users e avisa o resultado na página.
+ * @returns {Promise<Map<string, string>|null>} E-mails cadastrados; null se a consulta falhou.
+ */
+async function consultarCadastradosGuia() {
+    const aviso = obterElementoGuia('aviso');
+    try {
+        const cadastrados = await consultarCadastradosUsuarios();
+        aviso.textContent = MSG_CONSULTA_OK;
+        aviso.classList.remove('guia-erro');
+        return cadastrados;
+    } catch (erro) {
+        aviso.textContent = MSG_CONSULTA_FALHOU + erro.message;
+        aviso.classList.add('guia-erro');
+        return null;
+    }
+}
+
+/**
+ * Atualiza o texto e a disponibilidade do botão conforme a quantidade de alunos marcados.
+ * @param {HTMLButtonElement} botao - Botão de gravar da turma.
+ * @param {HTMLTableElement} tabela - Tabela de alunos da turma.
+ */
+function atualizarBotaoGuia(botao, tabela) {
+    const total = obterEmailsMarcadosGuia(tabela).length;
+    botao.textContent = '🚀 GRAVAR SELECIONADOS (' + total + ')';
+    botao.disabled = total === 0;
+}
+
+/**
+ * Cria a barra de controles da turma: marcar todos e filtro por situação de cadastro.
+ * @param {HTMLTableElement} tabela - Tabela de alunos da turma.
+ * @param {Function} aoMudar - Chamada quando a seleção ou o filtro mudam.
+ * @returns {HTMLDivElement} Barra pronta (com a propriedade filtro).
+ */
+function criarBarraControlesGuia(tabela, aoMudar) {
+    const barra = document.createElement('div');
+    barra.className = 'guia-controles';
+
+    const marcarTodos = document.createElement('input');
+    marcarTodos.type = 'checkbox';
+    marcarTodos.className = 'guia-interruptor';
+    marcarTodos.setAttribute('role', 'switch');
+    marcarTodos.addEventListener('change', () => {
+        marcarTodosGuia(tabela, marcarTodos.checked);
+        aoMudar();
     });
-    return linha;
+    const rotuloTodos = document.createElement('label');
+    rotuloTodos.append(marcarTodos, ' Marcar todos');
+
+    const filtro = document.createElement('select');
+    filtro.className = 'guia-filtro';
+    filtro.innerHTML = '<option value="' + FILTRO_TODOS + '">Todos</option>'
+        + '<option value="' + FILTRO_SIM + '">Gravados (Sim)</option>'
+        + '<option value="' + FILTRO_NAO + '">Não gravados (Não)</option>';
+    filtro.addEventListener('change', () => {
+        marcarTodos.checked = false;
+        aplicarFiltroGuia(tabela, filtro.value);
+        aoMudar();
+    });
+    const rotuloFiltro = document.createElement('label');
+    rotuloFiltro.append('Filtrar: ', filtro);
+
+    barra.append(rotuloTodos, rotuloFiltro);
+    barra.filtro = filtro;
+    barra.marcarTodos = marcarTodos;
+    return barra;
 }
 
 /**
- * Mostra a turma e os alunos da lista.
- * @param {Object} lista - Conteúdo de window.LISTA_PRESENCA.
+ * Consulta auth.users de novo e atualiza a coluna Cadastrado, o filtro e o botão de cada aba.
  */
-function mostrarAlunosGuia(lista) {
-    const turmas = lista.turmas || [];
-    const nomes = turmas.map((turma) => turma.nome + ' (código: ' + turma.codigo + ')');
-    obterElementoGuia('turma').textContent = nomes.join(' · ');
-    const alunos = turmas.flatMap((turma) => turma.alunos || []);
-    obterElementoGuia('alunos').replaceChildren(...alunos.map(criarLinhaAlunoGuia));
+async function atualizarTodasAsTabelasGuia() {
+    const cadastrados = await consultarCadastradosGuia();
+    document.querySelectorAll('.guia-cartao[data-turma]').forEach((cartao) => {
+        atualizarSituacoesGuia(cartao.querySelector('.guia-tabela'), cadastrados);
+        cartao.reaplicarFiltro();
+    });
 }
 
 /**
- * Acrescenta uma linha ao resultado exibido (nunca mostra senha nem chave).
- * @param {string} situacao - Situação (criado, atualizado, erro...).
- * @param {string} email - E-mail do aluno.
+ * Grava só os alunos selecionados da turma, depois de confirmar, e atualiza a coluna Cadastrado.
+ * @param {{turma: Object, botao: HTMLElement, tabela: HTMLElement, resultado: HTMLElement}}
+ *     contexto - Turma e elementos da aba.
  */
-function registrarResultadoGuia(situacao, email) {
-    obterElementoGuia('resultado').textContent += situacao.padEnd(12) + email + '\n';
-}
+async function gravarSelecionadosGuia(contexto) {
+    const { turma, botao, tabela, resultado } = contexto;
+    const emails = new Set(obterEmailsMarcadosGuia(tabela));
+    const turmaSelecionada = { ...turma, alunos: turma.alunos.filter((a) => emails.has(a.email)) };
+    const pergunta = 'Gravar ' + emails.size + ' usuário(s) da turma ' + turma.nome + '?';
+    if (!emails.size || !window.confirm(pergunta)) return;
 
-/**
- * Pede confirmação e grava a lista no Supabase, mostrando o resultado.
- */
-async function aoClicarGravar() {
-    const total = window.LISTA_PRESENCA.turmas.flatMap((turma) => turma.alunos).length;
-    const confirmou = window.confirm('Gravar ' + total + ' usuários no Supabase Auth agora?');
-    if (!confirmou) return;
-
-    const botao = obterElementoGuia('gravar');
-    const resultado = obterElementoGuia('resultado');
     botao.disabled = true;
     resultado.textContent = MSG_GRAVANDO + '\n';
     try {
-        const resumo = await gravarListaNoSupabase(window.LISTA_PRESENCA, {
+        const resumo = await gravarListaNoSupabase({ turmas: [turmaSelecionada] }, {
             redefinirSenhas: obterElementoGuia('redefinir').checked,
-            aoResultado: registrarResultadoGuia,
+            aoResultado: (situacao, email) => {
+                resultado.textContent += situacao.padEnd(12) + email + '\n';
+            },
         });
         resultado.textContent += '\nResumo: ' + JSON.stringify(resumo) + '\n';
     } catch (erro) {
         resultado.textContent += '\n' + erro.message + '\n';
     }
-    botao.disabled = false;
+    await atualizarTodasAsTabelasGuia();
 }
 
 /**
- * Inicia a página: lista os alunos e liga o botão de gravar.
+ * Cria o cartão de uma turma: título, controles, botão, resultado e tabela de alunos.
+ * @param {Object} turma - Turma da lista de presença.
+ * @param {Map<string, string>|null} cadastrados - E-mails cadastrados.
+ * @returns {HTMLElement} Cartão pronto.
  */
-function iniciarGuiaUsuarios() {
-    if (!window.LISTA_PRESENCA) {
-        obterElementoGuia('turma').textContent = MSG_SEM_LISTA;
-        obterElementoGuia('turma').classList.add('guia-erro');
-        obterElementoGuia('gravar').disabled = true;
+function criarCartaoTurmaGuia(turma, cadastrados) {
+    const cartao = document.createElement('section');
+    cartao.className = 'guia-cartao';
+    cartao.dataset.turma = turma.codigo;
+
+    const botao = document.createElement('button');
+    botao.type = 'button';
+    botao.className = 'guia-botao';
+    const resultado = document.createElement('pre');
+    resultado.className = 'guia-comando';
+    const aoMudar = () => {
+        atualizarBotaoGuia(botao, tabela);
+        barra.marcarTodos.checked = todosVisiveisMarcadosGuia(tabela);
+    };
+    const tabela = criarTabelaAlunosGuia(turma, cadastrados, aoMudar);
+    const barra = criarBarraControlesGuia(tabela, aoMudar);
+    botao.addEventListener('click', () => gravarSelecionadosGuia(
+        { turma, botao, tabela, resultado }));
+    cartao.reaplicarFiltro = () => {
+        aplicarFiltroGuia(tabela, barra.filtro.value);
+        aoMudar();
+    };
+
+    const titulo = document.createElement('h2');
+    titulo.textContent = turma.nome + ' (código: ' + turma.codigo + ') — '
+        + turma.alunos.length + ' alunos';
+    cartao.append(titulo, barra, botao, resultado, tabela);
+    aoMudar();
+    return cartao;
+}
+
+/**
+ * Mostra só o cartão da aba escolhida e marca a aba como ativa.
+ * @param {number} indice - Posição da turma escolhida.
+ */
+function alternarAbaGuia(indice) {
+    const cartoes = obterElementoGuia('turmas').children;
+    const abas = obterElementoGuia('abas').children;
+    Array.from(cartoes).forEach((cartao, posicao) => {
+        cartao.hidden = posicao !== indice;
+        abas[posicao].classList.toggle('guia-aba--ativa', posicao === indice);
+    });
+}
+
+/**
+ * Cria o botão de aba de uma turma.
+ * @param {Object} turma - Turma da aba.
+ * @param {number} indice - Posição da turma.
+ * @returns {HTMLButtonElement} Botão da aba.
+ */
+function criarAbaTurmaGuia(turma, indice) {
+    const aba = document.createElement('button');
+    aba.type = 'button';
+    aba.className = 'guia-aba';
+    aba.textContent = turma.nome + ' (' + turma.alunos.length + ')';
+    aba.addEventListener('click', () => alternarAbaGuia(indice));
+    return aba;
+}
+
+/**
+ * Inicia a página: consulta auth.users e monta as abas com um cartão por turma.
+ */
+async function iniciarGuiaUsuarios() {
+    const turmas = reunirTurmasPresenca();
+    if (!turmas.length) {
+        const aviso = obterElementoGuia('aviso');
+        aviso.textContent = MSG_SEM_LISTA;
+        aviso.classList.add('guia-erro');
         return;
     }
-    mostrarAlunosGuia(window.LISTA_PRESENCA);
-    obterElementoGuia('gravar').addEventListener('click', aoClicarGravar);
+    const cadastrados = await consultarCadastradosGuia();
+    obterElementoGuia('abas').replaceChildren(...turmas.map(criarAbaTurmaGuia));
+    obterElementoGuia('turmas').replaceChildren(
+        ...turmas.map((turma) => criarCartaoTurmaGuia(turma, cadastrados)));
+    alternarAbaGuia(0);
 }
 
 iniciarGuiaUsuarios();

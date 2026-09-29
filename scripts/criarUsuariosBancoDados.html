@@ -6,8 +6,11 @@
     <title>Criar usuários no Supabase Auth</title>
     <link rel="stylesheet" href="../assets/css/criar-usuarios-comando.css">
     <script src="LISTA-PRESENCA-CEPLAS-MANHA.js"></script>
+    <script src="LISTA-PRESENCA-ITIC-CEPLAS-MANHA.js"></script>
+    <script src="LISTA-PRESENCA-ITIC-CEPLAS-TARDE.js"></script>
     <script src="variaveis.js"></script>
     <script src="../assets/js/criar-usuarios-api.js" defer></script>
+    <script src="../assets/js/criar-usuarios-tabela.js" defer></script>
     <script src="../assets/js/criar-usuarios-pagina.js" defer></script>
 </head>
 <body>
@@ -27,23 +30,16 @@
         </section>
 
         <section class="guia-cartao">
-            <h2>1. Turma e alunos (senhas não são exibidas)</h2>
-            <p id="guiaTurma"></p>
-            <table class="guia-tabela">
-                <thead><tr><th>Nº</th><th>Aluno</th><th>E-mail de login</th></tr></thead>
-                <tbody id="guiaAlunos"></tbody>
-            </table>
-        </section>
-
-        <section class="guia-cartao">
-            <h2>2. Gravar</h2>
+            <h2>Opção de gravação</h2>
+            <p id="guiaAviso">Consultando auth.users...  As senhas não são exibidas.</p>
             <div class="guia-opcoes">
                 <label><input type="checkbox" id="guiaRedefinir"> Regravar a senha de quem já
                     existe</label>
             </div>
-            <button type="button" class="guia-botao" id="guiaGravar">🚀 GRAVAR NO BANCO DE DADOS</button>
-            <pre class="guia-comando" id="guiaResultado"></pre>
         </section>
+
+        <nav class="guia-abas" id="guiaAbas" aria-label="Turmas"></nav>
+        <div id="guiaTurmas"></div>
     </main>
 </body>
 </html>

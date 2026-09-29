@@ -193,3 +193,12 @@ async function gravarListaNoSupabase(lista, opcoes) {
     await gravarTabelaUsuarios('aluno', alunos, chave);
     return resumo;
 }
+
+/**
+ * Consulta em auth.users (pela API admin) quais e-mails já estão cadastrados.
+ * @returns {Promise<Map<string, string>>} Mapa e-mail (minúsculo) → id do usuário.
+ * @throws {Error} Se o host não for local, a chave faltar ou a API recusar.
+ */
+async function consultarCadastradosUsuarios() {
+    return listarExistentesUsuarios(obterChaveServico());
+}
