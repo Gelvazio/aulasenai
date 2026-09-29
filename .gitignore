@@ -43,3 +43,6 @@ __pycache__/
 
 # Aulas a criar (estruturado para IA)
 !MATERIAIS/RIO_DO_SUL_MAIS_TECH/FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO/CONTEUDO/AULAS-CHALKIE-AI.md
+
+# Segredos locais (chave service_role) — nunca publicar
+variaveis.js

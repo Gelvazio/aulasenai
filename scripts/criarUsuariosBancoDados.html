@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar usuários no Supabase Auth — guia</title>
+    <link rel="stylesheet" href="../assets/css/criar-usuarios-comando.css">
+    <script src="LISTA-PRESENCA-CEPLAS-MANHA.js"></script>
+    <script src="../assets/js/criar-usuarios-comando.js" defer></script>
+</head>
+<body>
+    <main class="guia">
+        <header class="guia-cabecalho">
+            <h1>🧭 Criar usuários no Supabase Auth</h1>
+            <p>Guia que monta o comando de criar-usuarios-supabase-auth.js</p>
+        </header>
+
+        <section class="guia-cartao guia-aviso">
+            <h2>⚠️ Segurança</h2>
+            <p>Esta página não grava nada no banco e não pede chave nem senha. A chave
+                <strong>service_role</strong> fica só em <code>scripts/variaveis.js</code> (fora do Git),
+                na sua máquina, e nunca deve ir para páginas, repositório ou chat.</p>
+        </section>
+
+        <section class="guia-cartao">
+            <h2>1. Turma e alunos (senhas não são exibidas)</h2>
+            <p id="guiaTurma"></p>
+            <table class="guia-tabela">
+                <thead><tr><th>Nº</th><th>Aluno</th><th>E-mail de login</th></tr></thead>
+                <tbody id="guiaAlunos"></tbody>
+            </table>
+        </section>
+
+        <section class="guia-cartao">
+            <h2>2. Opções</h2>
+            <div class="guia-opcoes">
+                <label><input type="checkbox" id="guiaExecutar"> Gravar de verdade
+                    (--executar). Desmarcado = só simula.</label>
+                <label><input type="checkbox" id="guiaRedefinir"> Regravar a senha de quem já
+                    existe (--redefinir-senhas)</label>
+            </div>
+        </section>
+
+        <section class="guia-cartao">
+            <h2>3. Comando (rode no PowerShell, na raiz do projeto)</h2>
+            <pre class="guia-comando" id="guiaComando"></pre>
+            <button type="button" class="guia-botao" id="guiaCopiar">📋 Copiar comando</button>
+            <span class="guia-mensagem" id="guiaMensagem"></span>
+        </section>
+    </main>
+</body>
+</html>

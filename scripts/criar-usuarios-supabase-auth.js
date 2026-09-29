@@ -3,7 +3,7 @@
  * Opcionalmente cria/atualiza a conta do professor.
  *
  * Uso (PowerShell, na raiz do projeto):
- *   $env:SUPABASE_SERVICE_ROLE_KEY = "<chave service_role>"
+ *   Chave em scripts/variaveis.js (fora do Git) ou $env:SUPABASE_SERVICE_ROLE_KEY (tem prioridade)
  *   node scripts/criar-usuarios-supabase-auth.js <LISTA-PRESENCA.js>              (simulação)
  *   node scripts/criar-usuarios-supabase-auth.js <LISTA-PRESENCA.js> --executar   (grava)
  *
@@ -30,6 +30,7 @@ const SUPABASE_URL = 'https://hxlvonriearllcmfqeri.supabase.co';
 const ROTA_ADMIN_USUARIOS = '/auth/v1/admin/users';
 const ROTA_REST = '/rest/v1/';
 const VARIAVEL_CHAVE = 'SUPABASE_SERVICE_ROLE_KEY';
+const ARQUIVO_VARIAVEIS = path.join(__dirname, 'variaveis.js');
 const VARIAVEL_SENHA_PROFESSOR = 'PROFESSOR_SENHA';
 const TAMANHO_MINIMO_SENHA = 6;
 const USUARIOS_POR_PAGINA = 1000;
@@ -39,6 +40,17 @@ const OPCAO_EXECUTAR = '--executar';
 const OPCAO_REDEFINIR = '--redefinir-senhas';
 const OPCAO_PREFIXO = '--prefixo-senha=';
 const OPCAO_PROFESSOR = '--professor=';
+
+/**
+ * Lê a chave service_role de scripts/variaveis.js (arquivo local, fora do Git).
+ * @returns {string} Chave informada ou texto vazio se o arquivo não existir ou estiver vazio.
+ */
+function lerChaveDoArquivo() {
+  if (!fs.existsSync(ARQUIVO_VARIAVEIS)) return '';
+
+  const variaveis = require(ARQUIVO_VARIAVEIS);
+  return String(variaveis[VARIAVEL_CHAVE] || '').trim();
+}
 
 /**
  * Lê o valor de uma opção no formato --nome=valor.
@@ -287,8 +299,10 @@ async function principal() {
   }
   if (!opcoes.executar) return simular(usuarios);
 
-  const chaveServico = process.env[VARIAVEL_CHAVE];
-  if (!chaveServico) throw new Error('Defina a variável de ambiente ' + VARIAVEL_CHAVE + '.');
+  const chaveServico = process.env[VARIAVEL_CHAVE] || lerChaveDoArquivo();
+  if (!chaveServico) {
+    throw new Error('Defina ' + VARIAVEL_CHAVE + ' em scripts/variaveis.js ou como variável de ambiente.');
+  }
   const turmas = lista.turmas.map((turma) => ({
     codigo: turma.codigo, nome: turma.nome, turno: turma.turno, horario: turma.horario,
   }));

@@ -1,0 +1,70 @@
+/* Página guia scripts/criarUsuariosBancoDados.html (assets/js/criar-usuarios-comando.js). */
+:root {
+    --guia-azul: #004384;
+    --guia-fundo: #f4f6fb;
+    --guia-texto: #1a202c;
+    --guia-borda: #cbd5e0;
+    --guia-aviso: #fff7e6;
+    --guia-erro: #b42318;
+    --guia-ok: #1b7f3b;
+    --guia-codigo: #111827;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    background: var(--guia-fundo);
+    color: var(--guia-texto);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.5;
+}
+.guia { max-width: 900px; margin: 0 auto; display: grid; gap: 16px; }
+.guia-cabecalho {
+    background: var(--guia-azul);
+    color: #fff;
+    padding: 20px 24px;
+    border-radius: 10px;
+}
+.guia-cartao {
+    background: #fff;
+    border: 1px solid var(--guia-borda);
+    border-radius: 10px;
+    padding: 16px 20px;
+}
+.guia-cartao h2 { color: var(--guia-azul); font-size: 18px; margin-bottom: 8px; }
+.guia-aviso { background: var(--guia-aviso); border-color: #f0c36d; }
+.guia-erro { color: var(--guia-erro); font-weight: 600; }
+
+.guia-tabela { width: 100%; border-collapse: collapse; font-size: 14px; }
+.guia-tabela th, .guia-tabela td {
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--guia-borda);
+}
+
+.guia-opcoes { display: grid; gap: 8px; }
+.guia-opcoes label { display: flex; align-items: center; gap: 8px; }
+
+.guia-comando {
+    background: var(--guia-codigo);
+    color: #e5e7eb;
+    padding: 12px;
+    border-radius: 8px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-family: Consolas, monospace;
+    font-size: 13px;
+    margin: 8px 0;
+}
+.guia-botao {
+    background: var(--guia-azul);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+.guia-mensagem { margin-left: 10px; color: var(--guia-ok); font-weight: 600; }
