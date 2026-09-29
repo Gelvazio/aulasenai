@@ -34,3 +34,9 @@ __pycache__/
 # Conteúdo já passado (estruturado para IA) e seu plano
 !MATERIAIS/**/CONTEUDO/CONTEUDO-JA-PASSADO-*.md
 !docs/estruturar-conteudo-ja-passado-ceplas-manha.md
+
+# Ementa da matéria Fundamentos da Tecnologia e Programação e seus status
+!MATERIAIS/RIO_DO_SUL_MAIS_TECH/FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO/EMENTA-CHALKIE-AI.md
+!MATERIAIS/RIO_DO_SUL_MAIS_TECH/FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO/STATUS-EMENTAS.md
+!MATERIAIS/STATUS-EMENTAS-CURSOS.md
+!docs/ajustar-ementa-fundamentos-tecnologia-programacao.md
