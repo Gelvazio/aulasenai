@@ -1259,6 +1259,11 @@ Registrada em 2026-09-28.
   se a mudança apagar ou reorganizar dados, **copiar antes** para uma tabela de backup
   (ex.: `usuario_legado_20260930`, com RLS ligado e sem políticas). Depois de aplicar, **conferir o
   resultado** com consultas de leitura. Sem pedido do usuário, não alterar o banco.
+- ✅ **Estrutura dos cursos só o professor escreve** (2026-09-30,
+  `database/2026-09-30-estrutura-curso-so-professor-escreve.sql`): `aulas`, `materia`, `curso`,
+  `cursomateria` e `unidade` aceitam insert/update/delete só de usuário logado com perfil PROFESSOR;
+  o `anon` só lê. Os antigos `js/curso.js`, `materia.js`, `aulas.js` e `unidade.js` não são
+  carregados por nenhuma página (órfãos).
 - ✅ **Tabela nova ou alterada = RLS ligado** e políticas explícitas; nunca deixar `anon` com
   acesso de escrita. Dados sensíveis (`senha_hash`, gabarito) não ficam legíveis pela API pública.
 
