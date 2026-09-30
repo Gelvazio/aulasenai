@@ -7,15 +7,9 @@
 
 const RAIZ_SCRIPTS = document.currentScript
     ? document.currentScript.src.replace(/[^/]*$/, '') : '';
-const LETRAS_ALTERNATIVAS = ['A', 'B', 'C', 'D'];
 const CLASSE_MARCADA = 'alternativa--marcada';
-const CLASSE_IMPRIMIR = 'imprimir-folha';
 const CLASSE_ENTREGUE = 'atividade--entregue';
 const CLASSE_QUESTAO_PENDENTE = 'questao--pendente';
-const CLASSE_LINHA_PENDENTE = 'folha-respostas__linha--pendente';
-const MARCA_VAZIA = '(  )';
-const MARCA_PREENCHIDA = '( X )';
-const TURMA_EM_BRANCO = '______________';
 // REGRA: o limite de tentativas vem do banco (atividade.max_tentativas); a nova tentativa só o
 // professor libera.
 const DURACAO_AVISO_MS = 3000;
@@ -289,110 +283,7 @@ function ligarAlternativas(estado) {
 }
 
 /**
- * Formata a data de hoje como DD/MM/AAAA.
- * @returns {string} Data formatada.
- */
-function obterDataHoje() {
-    return new Date().toLocaleDateString('pt-BR');
-}
-
-/**
- * Monta uma linha de informação da folha (rótulo em negrito + valor).
- * @param {string} rotulo - Rótulo do campo.
- * @param {string} valor - Valor exibido.
- * @param {string} [classe] - Classe extra da célula.
- * @returns {HTMLElement} Célula da folha.
- */
-function montarCampoFolha(rotulo, valor, classe) {
-    const celula = criarElemento('div', 'folha-respostas__campo ' + (classe || ''));
-    celula.appendChild(criarElemento('strong', '', rotulo + ': '));
-    const valorCampo = criarElemento('span', 'folha-respostas__valor');
-    valorCampo.textContent = valor;
-    celula.appendChild(valorCampo);
-    return celula;
-}
-
-/**
- * Monta o cabeçalho da folha de respostas (SENAI, título, dados da UC e do estudante).
- * @param {Object} estado - Estado da página.
- * @returns {HTMLElement} Cabeçalho da folha.
- */
-function montarCabecalhoFolha(estado) {
-    const dadosPagina = document.body.dataset;
-    const cabecalho = criarElemento('div', 'folha-respostas__cabecalho');
-    const senai = criarElemento('div', 'folha-respostas__senai');
-    ['SENAI', 'Serviço Nacional de Aprendizagem Industrial', 'Santa Catarina']
-        .forEach((linha) => senai.appendChild(criarElemento('div', '', linha)));
-    cabecalho.appendChild(senai);
-    cabecalho.appendChild(criarElemento('div', 'folha-respostas__titulo',
-        'ATIVIDADE AVALIATIVA FOLHA DE RESPOSTAS'));
-    cabecalho.appendChild(criarElemento('div', 'folha-respostas__desempenho', 'Desempenho'));
-
-    const tituloUc = (dadosPagina.uc || '').toUpperCase() + ' (' + estado.itens.length + ' ITENS)';
-    cabecalho.appendChild(criarElemento('div', 'folha-respostas__uc', tituloUc));
-    cabecalho.appendChild(montarCampoFolha('Docente', (dadosPagina.docente || '').toUpperCase(),
-        'folha-respostas__campo--forte'));
-    cabecalho.appendChild(montarCampoFolha('Data', obterDataHoje(),
-        'folha-respostas__campo--direita'));
-    cabecalho.appendChild(montarCampoFolha('Unidade Curricular', dadosPagina.uc || ''));
-    const turma = estado.turma || dadosPagina.turma || TURMA_EM_BRANCO;
-    cabecalho.appendChild(montarCampoFolha('Turma', turma, 'folha-respostas__campo--direita'));
-    cabecalho.appendChild(montarCampoEstudante());
-    return cabecalho;
-}
-
-/**
- * Monta o campo "Estudante" da folha (só leitura: o nome vem do login).
- * @returns {HTMLElement} Célula com o campo de nome.
- */
-function montarCampoEstudante() {
-    const celula = criarElemento('label', 'folha-respostas__campo folha-respostas__campo--inteiro');
-    celula.appendChild(criarElemento('strong', '', 'Estudante: '));
-    const campo = criarElemento('input', 'folha-respostas__nome campo-nome-estudante');
-    campo.type = 'text';
-    campo.readOnly = true;
-    campo.placeholder = 'Entre com o seu usuário para identificar a folha';
-    celula.appendChild(campo);
-    return celula;
-}
-
-/**
- * Coloca na folha o nome do aluno conectado.
- * @param {Object} estado - Estado da página.
- */
-function preencherNomeFolha(estado) {
-    document.querySelectorAll('.campo-nome-estudante').forEach((campo) => {
-        campo.value = estado.dados.nome;
-    });
-}
-
-/**
- * Monta uma tabela de respostas (Nº, A, B, C, D) para uma parte dos itens.
- * @param {{numero: string}[]} itens - Itens desta tabela.
- * @returns {HTMLTableElement} Tabela montada.
- */
-function montarTabelaRespostas(itens) {
-    const tabela = criarElemento('table', 'folha-respostas__tabela');
-    const cabecalho = tabela.createTHead().insertRow();
-    ['Nº', ...LETRAS_ALTERNATIVAS].forEach((texto) => {
-        cabecalho.appendChild(criarElemento('th', '', texto));
-    });
-    const corpo = tabela.createTBody();
-    itens.forEach((item) => {
-        const linha = corpo.insertRow();
-        linha.dataset.item = item.numero;
-        linha.appendChild(criarElemento('td', 'folha-respostas__numero', item.numero));
-        LETRAS_ALTERNATIVAS.forEach((letra) => {
-            const celula = criarElemento('td', 'folha-respostas__marca', MARCA_VAZIA);
-            celula.dataset.letra = letra;
-            linha.appendChild(celula);
-        });
-    });
-    return tabela;
-}
-
-/**
- * Monta os botões da folha: finalizar e imprimir.
+ * Monta o botão de finalizar da folha.
  * @param {Object} estado - Estado da página.
  * @returns {HTMLElement} Barra de ações.
  */
@@ -400,8 +291,6 @@ function montarAcoesFolha(estado) {
     const acoes = criarElemento('div', 'folha-respostas__acoes');
     acoes.appendChild(criarBotao('btn-export btn-export--finalizar botao-finalizar',
         '✅ Finalizar atividade', () => finalizarAtividade(estado)));
-    acoes.appendChild(criarBotao('btn-export', '🖨️ Imprimir folha de respostas',
-        () => imprimirFolha(estado)));
     return acoes;
 }
 
@@ -424,8 +313,6 @@ function destacarPendentes(estado, pendentes) {
     estado.itens.forEach((item) => {
         const estaPendente = numerosPendentes.includes(item.numero);
         item.card.classList.toggle(CLASSE_QUESTAO_PENDENTE, estaPendente);
-        document.querySelector('.folha-respostas tr[data-item="' + item.numero + '"]')
-            ?.classList.toggle(CLASSE_LINHA_PENDENTE, estaPendente);
     });
 }
 
@@ -559,57 +446,29 @@ async function finalizarAtividade(estado) {
 }
 
 /**
- * Monta a folha de respostas completa, com duas colunas de itens.
+ * Monta o bloco final da atividade: contagem de respondidas e botão de finalizar.
  * @param {Object} estado - Estado da página.
  * @returns {HTMLElement} Seção da folha de respostas.
  */
 function montarFolha(estado) {
     const folha = criarElemento('section', 'folha-respostas');
-    folha.setAttribute('aria-label', 'Folha de respostas');
-    folha.appendChild(montarCabecalhoFolha(estado));
-    folha.appendChild(criarElemento('p', 'folha-respostas__instrucoes',
-        'INSTRUÇÕES: as alternativas marcadas nas questões aparecem abaixo com um X. ' +
-        'Apenas uma alternativa por questão.'));
-
-    const metade = Math.ceil(estado.itens.length / 2);
-    const colunas = criarElemento('div', 'folha-respostas__colunas');
-    colunas.appendChild(montarTabelaRespostas(estado.itens.slice(0, metade)));
-    colunas.appendChild(montarTabelaRespostas(estado.itens.slice(metade)));
-    folha.appendChild(colunas);
+    folha.setAttribute('aria-label', 'Finalização da atividade');
     folha.appendChild(criarElemento('p', 'folha-respostas__contagem'));
     folha.appendChild(montarAcoesFolha(estado));
     return folha;
 }
 
 /**
- * Preenche a folha com as respostas e a contagem de itens respondidos.
+ * Atualiza a contagem de itens respondidos.
  * @param {Object} estado - Estado da página.
  */
 function atualizarFolha(estado) {
-    document.querySelectorAll('.folha-respostas__marca').forEach((celula) => {
-        const numero = celula.parentElement.dataset.item;
-        const estaMarcada = estado.dados.respostas[numero] === celula.dataset.letra;
-        celula.textContent = estaMarcada ? MARCA_PREENCHIDA : MARCA_VAZIA;
-        celula.classList.toggle('folha-respostas__marca--preenchida', estaMarcada);
-    });
     const respondidas = estado.itens.filter((item) => estado.dados.respostas[item.numero]).length;
     const contagem = document.querySelector('.folha-respostas__contagem');
-    if (contagem) {
-        contagem.textContent = 'Respondidas: ' + respondidas + ' de ' + estado.itens.length +
-            ' · Tentativa ' + estado.tentativa + ' de ' + estado.maximoTentativas;
-    }
-}
+    if (!contagem) return;
 
-/**
- * Imprime só a folha de respostas, depois de validar a atividade.
- * @param {Object} estado - Estado da página.
- */
-async function imprimirFolha(estado) {
-    if (!(await validarAtividade(estado))) return;
-    document.body.classList.add(CLASSE_IMPRIMIR);
-    window.addEventListener('afterprint', () => document.body.classList.remove(CLASSE_IMPRIMIR),
-        { once: true });
-    window.print();
+    contagem.textContent = 'Respondidas: ' + respondidas + ' de ' + estado.itens.length +
+        ' · Tentativa ' + estado.tentativa + ' de ' + estado.maximoTentativas;
 }
 
 /**
@@ -693,7 +552,6 @@ async function iniciarRespostasAtividade() {
 
     secao.insertBefore(provedor.montarIdentificacao(), secao.firstChild);
     secao.appendChild(montarFolha(estado));
-    preencherNomeFolha(estado);
     ligarAlternativas(estado);
     estado.atualizarFolha();
     if (estado.entregue) marcarEntregue(estado, carregado.entregueEm);
