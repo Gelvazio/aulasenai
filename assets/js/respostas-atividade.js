@@ -703,3 +703,9 @@ async function iniciarRespostasAtividade() {
 }
 
 iniciarRespostasAtividade();
+
+// Voltar/avançar pode restaurar a página do cache do navegador com as marcações antigas:
+// recarrega para que as alternativas venham sempre do banco de dados.
+window.addEventListener('pageshow', (evento) => {
+    if (evento.persisted) window.location.reload();
+});

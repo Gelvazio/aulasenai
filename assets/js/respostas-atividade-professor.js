@@ -16,8 +16,8 @@ const TURMA_SEM_CODIGO = '';
 const MAXIMO_TENTATIVAS_APROVADO = 2;
 const CLASSE_ABA_ATIVA = CLASSE_RELATORIO + '__aba--ativa';
 let turmaEscolhidaRelatorio = null;
-let filtroSoNaoAtingiuRelatorio = false;
-const filtroFezRelatorio = new Set();
+let filtroSoNaoAtingiuRelatorio = true;
+const filtroFezRelatorio = new Set(['sim']);
 const filtroTentativasRelatorio = new Set();
 const CLASSE_PERGUNTAS_OCULTAS = 'atividade--perguntas-ocultas';
 const QUANTIDADES_TENTATIVAS = ['1', '2', '3'];
@@ -457,12 +457,14 @@ function montarAbasTurmaRelatorio(turmas, aoEscolher) {
  * Cria um interruptor ON/OFF (checkbox estilizado) para os filtros do relatório.
  * @param {string} texto - Rótulo do interruptor.
  * @param {Function} aoMudar - Chamada com true (ON) ou false (OFF).
+ * @param {boolean} [ligadoInicial] - Estado inicial do interruptor.
  * @returns {HTMLLabelElement} Interruptor pronto.
  */
-function criarInterruptorRelatorio(texto, aoMudar) {
+function criarInterruptorRelatorio(texto, aoMudar, ligadoInicial = false) {
     const etiqueta = criarElemento('label', CLASSE_RELATORIO + '__interruptor');
     const caixa = document.createElement('input');
     caixa.type = 'checkbox';
+    caixa.checked = ligadoInicial;
     caixa.addEventListener('change', () => aoMudar(caixa.checked));
     etiqueta.append(caixa, criarElemento('span', CLASSE_RELATORIO + '__chave'),
         criarElemento('span', CLASSE_RELATORIO + '__interruptor-texto', texto));
@@ -482,7 +484,7 @@ function montarFiltrosRelatorio(aoMudar) {
         criarInterruptorRelatorio('Não atingiram a nota mínima', (ligado) => {
             filtroSoNaoAtingiuRelatorio = ligado;
             aoMudar();
-        }));
+        }, filtroSoNaoAtingiuRelatorio));
     const grupoTentativas = criarElemento('div', CLASSE_RELATORIO + '__grupo-filtro');
     grupoTentativas.appendChild(criarElemento('strong', '', 'Tentativas'));
     QUANTIDADES_TENTATIVAS.forEach((quantidade) => {
@@ -490,7 +492,7 @@ function montarFiltrosRelatorio(aoMudar) {
             if (ligado) filtroTentativasRelatorio.add(quantidade);
             else filtroTentativasRelatorio.delete(quantidade);
             aoMudar();
-        }));
+        }, filtroTentativasRelatorio.has(quantidade)));
     });
     const grupoFez = criarElemento('div', CLASSE_RELATORIO + '__grupo-filtro');
     grupoFez.appendChild(criarElemento('strong', '', 'Fez a atividade?'));
@@ -499,7 +501,7 @@ function montarFiltrosRelatorio(aoMudar) {
             if (ligado) filtroFezRelatorio.add(valor);
             else filtroFezRelatorio.delete(valor);
             aoMudar();
-        }));
+        }, filtroFezRelatorio.has(valor)));
     });
     barra.append(grupoFez, grupoSituacao, grupoTentativas);
     return barra;

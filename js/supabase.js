@@ -59,6 +59,7 @@ async function sbH() {
 async function sbGet(table, qs = "") {
   const r = await fetch(`${SUPABASE.URL}/rest/v1/${table}?${qs}`, {
     headers: await sbH(),
+    cache: "no-store", // sempre do banco, nunca de cache do navegador
   });
   if (!r.ok) throw new Error(await r.text());
   return r.json();
