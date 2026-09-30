@@ -127,6 +127,15 @@ function passaNosFiltrosRel(resumo) {
 }
 
 /**
+ * Formata o número da aula ("Aula 01") ou "—" se a atividade não estiver ligada a uma aula.
+ * @param {number|undefined} numero - Número da aula.
+ * @returns {string} Texto da aula.
+ */
+function formatarAulaRel(numero) {
+    return numero ? 'Aula ' + String(numero).padStart(2, '0') : '—';
+}
+
+/**
  * Monta a linha de detalhe com as notas de cada atividade do aluno.
  * @param {Object} resumo - Resumo do aluno.
  * @returns {HTMLTableRowElement} Linha de detalhe.
@@ -134,12 +143,13 @@ function passaNosFiltrosRel(resumo) {
 function montarDetalheRel(resumo) {
     const tabela = criarElementoRel('table', 'rel-tabela-detalhe');
     const cabecalho = tabela.createTHead().insertRow();
-    ['Atividade', 'Tentativas', 'Situação', 'Melhor nota'].forEach((texto) =>
+    ['Aula', 'Atividade', 'Tentativas', 'Situação', 'Melhor nota'].forEach((texto) =>
         cabecalho.appendChild(criarElementoRel('th', '', texto)));
     const corpo = tabela.createTBody();
     resumo.detalhes.forEach((detalhe) => {
         const linha = corpo.insertRow();
-        [detalhe.atividade.descricao, detalhe.tentativas, TEXTO_STATUS_REL[detalhe.status],
+        [formatarAulaRel(detalhe.atividade.aulas?.numero), detalhe.atividade.descricao,
+            detalhe.tentativas, TEXTO_STATUS_REL[detalhe.status],
             estadoRel.notasVisiveis ? formatarNotaRel(detalhe.melhorNota) : '••••'].forEach((valor) =>
             linha.appendChild(criarElementoRel('td', '', String(valor))));
     });

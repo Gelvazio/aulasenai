@@ -176,7 +176,8 @@ function resumirAtividadeDoAluno(linhas) {
  * @returns {Object} Resumo: detalhes, feitas, fez, status, tentativas, media e naoAtingiu.
  */
 function calcularResumoAlunoRel(aluno, atividades, resumos) {
-    const ativas = atividades.filter((atividade) => atividade.ativo);
+    const ativas = atividades.filter((atividade) => atividade.ativo).sort((a, b) =>
+        (a.aulas?.numero ?? 0) - (b.aulas?.numero ?? 0) || a.id - b.id);
     const detalhes = ativas.map((atividade) => {
         const linhas = aluno.id
             ? (resumos.get(atividade.id) || []).filter((linha) => linha.aluno_id === aluno.id) : [];

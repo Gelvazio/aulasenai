@@ -98,3 +98,5 @@
 }
 .rel-linha-acordeao--aberta > td { background: #e8f0fb; }
 .rel-aluno--abaixo > .rel-linha-acordeao--aberta > td { background: #fbd5d5; }
+
+.rel-tabela-detalhe th:first-child, .rel-tabela-detalhe td:first-child { width: 80px; white-space: nowrap; font-weight: 700; }
