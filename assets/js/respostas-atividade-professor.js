@@ -346,7 +346,7 @@ function montarListaAlunosRelatorio(linhas, base) {
  */
 async function buscarDadosTurmas() {
     try {
-        const turmas = await sbGet('turma', 'select=codigo,nome,turno,local,uc,favorito');
+        const turmas = await sbGet('turma', 'select=codigo,nome,turno,local,uc,favorito,hora_inicio,hora_fim');
         return new Map(turmas.map((turma) => [turma.codigo, turma]));
     } catch (erro) {
         return new Map();
@@ -418,6 +418,7 @@ function listarTurmasRelatorio(linhas, dadosTurmas) {
             codigo, nome: linha.turma_nome || dados.nome || codigo || 'Sem turma', uc: dados.uc || '',
             local: [dados.local, dados.turno].filter(Boolean).join(' ').toUpperCase(),
             favorita: Boolean(dados.favorito),
+            inicio: formatarHoraTurma(dados.hora_inicio), fim: formatarHoraTurma(dados.hora_fim),
             alunos: new Set(),
         };
         turma.alunos.add(linha.aluno_id);
@@ -456,6 +457,7 @@ function aplicarFiltroTurmaRelatorio(bloco, linhas, turma) {
         if (!cartao.hidden) idsVisiveis.add(cartao.dataset.aluno);
     });
     bloco.querySelector('.' + CLASSE_RELATORIO + '__favorita')?.atualizar();
+    bloco.querySelector('.' + CLASSE_RELATORIO + '__horario')?.atualizar();
     bloco.querySelectorAll('.' + CLASSE_RELATORIO + '__aba').forEach((aba) => {
         const ativa = aba.dataset.turma === turma;
         aba.classList.toggle(CLASSE_ABA_ATIVA, ativa);
@@ -579,6 +581,53 @@ function montarInterruptorPerguntas() {
 }
 
 /**
+ * Cria um campo de horário (HH:MM) com rótulo.
+ * @param {string} rotulo - Texto do rótulo.
+ * @returns {{etiqueta: HTMLLabelElement, campo: HTMLInputElement}} Rótulo e campo.
+ */
+function criarCampoHorarioRelatorio(rotulo) {
+    const etiqueta = criarElemento('label', CLASSE_RELATORIO + '__campo-horario', rotulo + ' ');
+    const campo = document.createElement('input');
+    campo.type = 'time';
+    etiqueta.appendChild(campo);
+    return { etiqueta, campo };
+}
+
+/**
+ * Cria o bloco onde o professor define o horário (início e fim) da turma escolhida nas abas.
+ * Fora desse horário o aluno da turma não grava alternativas nem entrega. Vazio = sem limite.
+ * @param {{codigo: string, inicio: string, fim: string}[]} turmas - Turmas do relatório.
+ * @returns {HTMLElement} Bloco com os campos e o botão de salvar.
+ */
+function criarHorarioTurmaRelatorio(turmas) {
+    const bloco = criarElemento('div', CLASSE_RELATORIO + '__horario');
+    const inicio = criarCampoHorarioRelatorio('Horário da turma — início:');
+    const fim = criarCampoHorarioRelatorio('fim:');
+    const botao = criarBotao('btn-export', '💾 Salvar horário', async () => {
+        const turma = turmas.find((item) => item.codigo === turmaEscolhidaRelatorio);
+        try {
+            await definirHorarioTurma({ codigo: turma.codigo,
+                inicio: inicio.campo.value, fim: fim.campo.value });
+            turma.inicio = inicio.campo.value;
+            turma.fim = fim.campo.value;
+            await mostrarPopup(turma.inicio ? 'Horário salvo: alunos da turma só gravam e ' +
+                'entregam das ' + turma.inicio + ' às ' + turma.fim + '.'
+                : 'Horário removido: a turma não tem limite de horário.',
+            { tipo: 'sucesso', titulo: 'Horário da turma' });
+        } catch (erro) {
+            await mostrarPopup(erro.message, { tipo: 'erro' });
+        }
+    });
+    bloco.append(inicio.etiqueta, fim.etiqueta, botao);
+    bloco.atualizar = () => {
+        const turma = turmas.find((item) => item.codigo === turmaEscolhidaRelatorio);
+        inicio.campo.value = turma?.inicio || '';
+        fim.campo.value = turma?.fim || '';
+    };
+    return bloco;
+}
+
+/**
  * Cria o botão que marca/desmarca como favorita a turma escolhida nas abas.
  * @param {{codigo: string, favorita: boolean}[]} turmas - Turmas do relatório.
  * @param {Function} aoAlterar - Recarrega o relatório depois de gravar.
@@ -632,6 +681,7 @@ async function montarRelatorioProfessor(secao, atividadeId, maximo) {
         if (!existe) turmaEscolhidaRelatorio = (favorita || turmas[0]).codigo;
         bloco.appendChild(montarAbasTurmaRelatorio(turmas,
             (turma) => aplicarFiltroTurmaRelatorio(bloco, linhas, turma)));
+        bloco.appendChild(criarHorarioTurmaRelatorio(turmas));
         bloco.appendChild(criarBotaoFavoritaRelatorio(turmas, () =>
             montarRelatorioProfessor(secao, atividadeId, maximo)));
         bloco.appendChild(montarFiltrosRelatorio(

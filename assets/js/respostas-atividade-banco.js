@@ -118,6 +118,27 @@ async function enviarAoBanco(rota, corpo, preferencia) {
 }
 
 /**
+ * Se a turma do aluno tem horário e agora está fora dele, devolve a mensagem explicando.
+ * @returns {Promise<string>} Mensagem de horário ou vazio (dentro do horário ou sem restrição).
+ */
+async function explicarForaDoHorario() {
+    try {
+        const resposta = await enviarAoBanco('/rest/v1/rpc/horario_da_turma_do_aluno', {},
+            'return=representation');
+        if (!resposta.ok) return '';
+
+        const [horario] = await resposta.json();
+        if (!horario || horario.dentro) return '';
+
+        return 'Fora do horário da turma! Só é possível responder e entregar das ' +
+            horario.hora_inicio.slice(0, 5) + ' às ' + horario.hora_fim.slice(0, 5) +
+            ' (horário de Brasília).';
+    } catch (erro) {
+        return '';
+    }
+}
+
+/**
  * Registra a hora em que o aluno abriu a tentativa em andamento (só a primeira abertura vale).
  * Falha silenciosa: nunca impede o aluno de responder.
  * @param {number} atividadeId - Id da atividade.
@@ -241,7 +262,7 @@ function criarProvedorRespostasBanco() {
                 letra,
             };
             const resposta = await enviarAoBanco(ROTA_RESPOSTAS, corpo, PREFERENCIA_UPSERT);
-            if (!resposta.ok) throw new Error(MSG_ERRO_SALVAR);
+            if (!resposta.ok) throw new Error(await explicarForaDoHorario() || MSG_ERRO_SALVAR);
         },
         async lerGravadas() {
             const filtro = 'atividade_id=eq.' + sessao.atividade.id +
@@ -265,7 +286,7 @@ function criarProvedorRespostasBanco() {
                 return { entregueEm: new Date().toISOString(), tentativa: sessao.tentativa,
                     resultado };
             }
-            if (!resposta.ok) throw new Error(MSG_ERRO_ENTREGA);
+            if (!resposta.ok) throw new Error(await explicarForaDoHorario() || MSG_ERRO_ENTREGA);
             const [entrega] = await resposta.json();
             const resultado = await lerResultadoDaTentativa(sessao.atividade.id, sessao.tentativa);
             return { entregueEm: entrega?.entregue_em, tentativa: sessao.tentativa, resultado };
