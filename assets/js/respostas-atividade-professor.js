@@ -279,7 +279,8 @@ function montarListaAlunosRelatorio(linhas, base) {
     const porAluno = new Map();
     const ordenadas = [...linhas].sort((a, b) =>
         String(a.turma_codigo).localeCompare(String(b.turma_codigo)) ||
-        (a.numero_chamada ?? 0) - (b.numero_chamada ?? 0));
+        String(a.nome || '').localeCompare(String(b.nome || ''), 'pt-BR', { sensitivity: 'base' }) ||
+        (a.tentativa ?? 0) - (b.tentativa ?? 0));
     ordenadas.forEach((linha) => {
         const grupo = porAluno.get(linha.aluno_id) || [];
         grupo.push(linha);
