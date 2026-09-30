@@ -459,6 +459,17 @@ async function validarAtividade(estado) {
 }
 
 /**
+ * Desmarca todas as alternativas na tela depois da entrega. As respostas continuam
+ * gravadas no banco; só a exibição é limpa, para o aluno não ver nem refazer a marcação.
+ * @param {Object} estado - Estado da página.
+ */
+function limparMarcacoesNaTela(estado) {
+    estado.dados.respostas = {};
+    estado.itens.forEach((item) => destacarAlternativa(item, ''));
+    estado.atualizarFolha();
+}
+
+/**
  * Trava a atividade depois da entrega (sem novas marcações) e mostra a data da entrega.
  * @param {Object} estado - Estado da página.
  * @param {string} [entregueEm] - Data/hora da entrega (ISO).
@@ -466,6 +477,7 @@ async function validarAtividade(estado) {
 function marcarEntregue(estado, entregueEm) {
     estado.entregue = true;
     document.body.classList.add(CLASSE_ENTREGUE);
+    limparMarcacoesNaTela(estado);
     const botao = document.querySelector('.botao-finalizar');
     if (botao) botao.disabled = true;
     const contagem = document.querySelector('.folha-respostas__contagem');
