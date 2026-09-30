@@ -12,10 +12,11 @@ const MSG_SEM_UC_REL = 'Nenhuma turma tem esta matéria como UC: mostrando todas
 const MSG_ERRO_REL = 'Não foi possível carregar o relatório: ';
 const TEXTO_STATUS_REL = { entregue: '📨 Entregue', andamento: '✏️ Andamento', '': '—' };
 const QUANTIDADES_REL = ['1', '2', '3'];
+const MATERIA_PADRAO_REL = 'Introdução à Tecnologia da Informação e Comunicação';
 
 const estadoRel = {
     materias: [], materia: null, turmas: [], turmaAtual: '', resumos: new Map(),
-    notasVisiveis: false, soNaoAtingiu: false, fez: new Set(), status: new Set(),
+    notasVisiveis: false, soNaoAtingiu: true, fez: new Set(), status: new Set(),
     tentativas: new Set(),
 };
 
@@ -46,12 +47,14 @@ function formatarNotaRel(nota) {
  * Cria um interruptor ON/OFF (checkbox estilizado).
  * @param {string} texto - Rótulo.
  * @param {Function} aoMudar - Chamada com true (ON) ou false (OFF).
- * @returns {HTMLLabelElement} Interruptor pronto (desligado).
+ * @param {boolean} [ligado] - Estado inicial (padrão desligado).
+ * @returns {HTMLLabelElement} Interruptor pronto.
  */
-function criarInterruptorRel(texto, aoMudar) {
+function criarInterruptorRel(texto, aoMudar, ligado = false) {
     const etiqueta = criarElementoRel('label', 'rel-interruptor');
     const caixa = document.createElement('input');
     caixa.type = 'checkbox';
+    caixa.checked = ligado;
     caixa.addEventListener('change', () => aoMudar(caixa.checked));
     etiqueta.append(caixa, criarElementoRel('span', 'rel-chave'),
         criarElementoRel('span', 'rel-interruptor-texto', texto));
@@ -103,7 +106,8 @@ function montarFiltrosRel() {
             criarInterruptorRel('Andamento',
                 alternarNoConjuntoRel(estadoRel.status, 'andamento'))]),
         criarGrupoFiltroRel('Situação', [criarInterruptorRel('Não atingiram a nota mínima',
-            (ligado) => { estadoRel.soNaoAtingiu = ligado; renderizarTabelaRel(); })]),
+            (ligado) => { estadoRel.soNaoAtingiu = ligado; renderizarTabelaRel(); },
+            estadoRel.soNaoAtingiu)]),
         criarGrupoFiltroRel('Tentativas', QUANTIDADES_REL.map((quantidade) =>
             criarInterruptorRel(quantidade + 'x',
                 alternarNoConjuntoRel(estadoRel.tentativas, quantidade)))),
@@ -296,12 +300,14 @@ async function carregarMateriaRel(materiaId) {
 
 /**
  * Monta o seletor de matéria (as que têm atividades cadastradas).
+ * @param {number} idSelecionado - Id da matéria que abre selecionada.
  */
-function montarSeletorMateriaRel() {
+function montarSeletorMateriaRel(idSelecionado) {
     const lista = document.getElementById('relMateria');
     estadoRel.materias.forEach((materia) =>
         lista.add(new Option(materia.nome + ' (' + materia.atividades.length + ' atividades)',
             materia.id)));
+    lista.value = String(idSelecionado);
     lista.addEventListener('change', () => carregarMateriaRel(Number(lista.value)));
 }
 
@@ -338,8 +344,11 @@ async function iniciarRelatorioAtividades() {
             return;
         }
         document.getElementById('relFiltrosArea').replaceChildren(montarFiltrosRel());
-        montarSeletorMateriaRel();
-        await carregarMateriaRel(estadoRel.materias[0].id);
+        const padrao = estadoRel.materias.find((materia) =>
+            normalizarTextoRel(materia.nome) === normalizarTextoRel(MATERIA_PADRAO_REL))
+            || estadoRel.materias[0];
+        montarSeletorMateriaRel(padrao.id);
+        await carregarMateriaRel(padrao.id);
     } catch (erro) {
         document.getElementById('relAviso').textContent = MSG_ERRO_REL + erro.message;
     }
