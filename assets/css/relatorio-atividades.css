@@ -73,3 +73,12 @@
 }
 .menu-principal a:hover { background: #f0c36d; color: var(--guia-azul); }
 .menu-principal[hidden] { display: none; }
+
+/* Acordeão: a linha do aluno expande e mostra as atividades dele */
+.rel-linha-acordeao { cursor: pointer; }
+.rel-linha-acordeao:hover > td { background: #eef2ff; }
+.rel-aluno--abaixo > .rel-linha-acordeao:hover > td { background: #fbd5d5; }
+.rel-linha-acordeao > td:nth-child(2)::before { content: '▸ '; display: inline-block; transition: transform 0.15s; }
+.rel-linha-acordeao--aberta > td:nth-child(2)::before { content: '▾ '; }
+.rel-linha-acordeao:focus-visible { outline: 2px solid #1a56db; outline-offset: -2px; }
+.rel-detalhe[hidden] { display: none; }

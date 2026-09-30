@@ -140,15 +140,40 @@ function montarDetalheRel(resumo) {
     resumo.detalhes.forEach((detalhe) => {
         const linha = corpo.insertRow();
         [detalhe.atividade.descricao, detalhe.tentativas, TEXTO_STATUS_REL[detalhe.status],
-            formatarNotaRel(detalhe.melhorNota)].forEach((valor) =>
+            estadoRel.notasVisiveis ? formatarNotaRel(detalhe.melhorNota) : '••••'].forEach((valor) =>
             linha.appendChild(criarElementoRel('td', '', String(valor))));
     });
     const linhaDetalhe = criarElementoRel('tr', 'rel-detalhe');
+    linhaDetalhe.hidden = true;
     const celula = criarElementoRel('td');
     celula.colSpan = 7;
     celula.appendChild(tabela);
     linhaDetalhe.appendChild(celula);
     return linhaDetalhe;
+}
+
+/**
+ * Faz a linha do aluno funcionar como acordeão: clicar (ou Enter/Espaço) expande e recolhe as
+ * atividades do aluno logo abaixo.
+ * @param {HTMLTableRowElement} linha - Linha do aluno.
+ * @param {HTMLTableRowElement} detalhe - Linha com as atividades do aluno.
+ */
+function tornarLinhaAcordeaoRel(linha, detalhe) {
+    linha.classList.add('rel-linha-acordeao');
+    linha.tabIndex = 0;
+    linha.setAttribute('role', 'button');
+    linha.setAttribute('aria-expanded', 'false');
+    const alternar = () => {
+        detalhe.hidden = !detalhe.hidden;
+        linha.setAttribute('aria-expanded', String(!detalhe.hidden));
+        linha.classList.toggle('rel-linha-acordeao--aberta', !detalhe.hidden);
+    };
+    linha.addEventListener('click', alternar);
+    linha.addEventListener('keydown', (evento) => {
+        if (evento.key !== 'Enter' && evento.key !== ' ') return;
+        evento.preventDefault();
+        alternar();
+    });
 }
 
 /**
@@ -170,7 +195,9 @@ function montarBlocoAlunoRel(aluno, resumo) {
         resumo.tentativas + ' de 3', aberto ? formatarNotaRel(resumo.media) : '••••'];
     celulas.forEach((valor) => linha.appendChild(criarElementoRel('td', '', String(valor))));
     linha.cells[2].classList.add(resumo.fez ? 'rel-sim' : 'rel-nao');
-    if (aberto) bloco.appendChild(montarDetalheRel(resumo));
+    const detalhe = montarDetalheRel(resumo);
+    bloco.appendChild(detalhe);
+    tornarLinhaAcordeaoRel(linha, detalhe);
     return bloco;
 }
 
