@@ -9,8 +9,7 @@
 const ROTA_RESUMO_TENTATIVAS = '/rest/v1/rpc/resumo_tentativas_atividade';
 const ROTA_LIBERAR_TENTATIVA = '/rest/v1/rpc/liberar_nova_tentativa';
 const CLASSE_RELATORIO = 'relatorio-professor';
-const COLUNAS_RELATORIO = ['Tentativa', 'Situação', 'Acertos', 'Nota', 'Data e hora',
-    'Nova tentativa'];
+const COLUNAS_RELATORIO = ['Tentativa', 'Situação', 'Acertos', 'Nota', 'Data e hora'];
 const TURMA_SEM_CODIGO = '';
 const MAXIMO_TENTATIVAS_APROVADO = 2;
 const CLASSE_ABA_ATIVA = CLASSE_RELATORIO + '__aba--ativa';
@@ -106,15 +105,14 @@ function calcularLimiteTentativas(notaFinal, maximo) {
 }
 
 /**
- * Cria a célula "Nova tentativa" de uma linha: botão de liberar (só na última tentativa entregue
+ * Cria o controle "Nova tentativa" do aluno (ao lado da nota final): botão de liberar (só na última tentativa entregue
  * do aluno e abaixo do limite) ou o motivo de não poder liberar.
  * @param {Object} contexto - {secao, atividadeId, linha, ehUltima}.
- * @returns {HTMLTableCellElement} Célula da ação.
+ * @returns {HTMLElement} Elemento da ação.
  */
-function criarCelulaLiberar(contexto) {
-    const { linha, ehUltima, maximo, notaFinal } = contexto;
-    const celula = criarElemento('td', CLASSE_RELATORIO + '__acao');
-    if (!ehUltima) return celula;
+function criarControleLiberar(contexto) {
+    const { linha, maximo, notaFinal } = contexto;
+    const celula = criarElemento('span', CLASSE_RELATORIO + '__acao');
     if (!linha.entregue_em) {
         celula.textContent = 'Aguardando a entrega';
         return celula;
@@ -146,7 +144,6 @@ function montarLinhaRelatorio(contexto) {
         criarCelulaRelatorio(linha.entregue_em ? formatarNota(nota) : '—',
             abaixoDoMinimo ? CLASSE_RELATORIO + '__nota--baixa' : ''),
         criarCelulaRelatorio(dataHora),
-        criarCelulaLiberar(contexto),
     );
     return tr;
 }
@@ -180,14 +177,13 @@ function montarBlocoAluno(tentativas, base) {
         parte !== '').join(' - ')));
     titulo.append(criarElemento('span', CLASSE_RELATORIO + '__nota-final',
         'Nota final da Atividade: ' + (notaFinal === null ? '—' : formatarNota(notaFinal))));
+    titulo.append(criarControleLiberar({ ...base, linha: tentativas[tentativas.length - 1],
+        notaFinal }));
     const tabela = criarElemento('table', CLASSE_RELATORIO + '__tabela');
     const cabecalho = tabela.createTHead().insertRow();
     COLUNAS_RELATORIO.forEach((texto) => cabecalho.appendChild(criarElemento('th', '', texto)));
     const corpo = tabela.createTBody();
-    tentativas.forEach((linha, indice) => {
-        const ehUltima = indice === tentativas.length - 1;
-        corpo.appendChild(montarLinhaRelatorio({ ...base, linha, ehUltima, notaFinal }));
-    });
+    tentativas.forEach((linha) => corpo.appendChild(montarLinhaRelatorio({ ...base, linha })));
     const rolagem = criarElemento('div', CLASSE_RELATORIO + '__rolagem');
     rolagem.appendChild(tabela);
     bloco.append(titulo, rolagem);
