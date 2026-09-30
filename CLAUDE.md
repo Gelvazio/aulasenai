@@ -1226,6 +1226,17 @@ Registrada em 2026-09-28.
   colunas não sensíveis (nunca `senha_hash` nem os campos de código legado); ninguém grava pela API
   pública (a página local do professor grava com a `service_role`).
 
+## 🔑 REGRA CRÍTICA — GABARITO COM AS RESPOSTAS CERTAS: SÓ O PROFESSOR
+
+Registrada em 2026-09-30. Vale para **todos os alunos**, sem exceção.
+
+- ✅ O gabarito real (alternativas certas) só o **professor** lê: tabela `gabarito` com RLS de professor;
+  nunca embutido nas páginas.
+- ✅ Nas avaliações (`AVALIACAO-OBJETIVA-NN`), no fim da página: **Exportar PDF com gabarito** (só
+  professor) e **Exportar Gabarito** (professor = gabarito real; **aluno = as próprias respostas da
+  tentativa de maior nota, lidas do banco**, sem indicar quais estão certas).
+- ❌ Nenhuma tela, PDF ou consulta entrega ao aluno a alternativa certa. Código: `assets/js/avaliacao-pdf-professor.js`.
+
 ## 🙈 REGRA CRÍTICA — O QUE NUNCA É PUBLICADO (GIT / VERCEL)
 
 Registrada em 2026-09-28. O repositório vai para o GitHub e a Vercel publica **todo** o conteúdo
