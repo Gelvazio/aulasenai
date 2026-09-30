@@ -18,6 +18,7 @@ const MAXIMO_TENTATIVAS_APROVADO = 2;
 const CLASSE_ABA_ATIVA = CLASSE_RELATORIO + '__aba--ativa';
 let turmaEscolhidaRelatorio = null;
 let filtroAlunoRelatorio = '';
+let atividadeAtualRelatorio = null;
 let mostrarNotasGlobalRelatorio = false;
 let filtroSoNaoAtingiuRelatorio = true;
 const filtroFezRelatorio = new Set(['sim']);
@@ -26,6 +27,9 @@ const filtroTentativasRelatorio = new Set();
 const CLASSE_PERGUNTAS_OCULTAS = 'atividade--perguntas-ocultas';
 const TEXTO_STATUS = { entregue: '📨 Entregue', andamento: '✏️ Andamento' };
 const TEXTO_SELECIONE_ALUNO = 'Seleciona o aluno';
+const CLASSE_CONFERENCIA_CERTA = 'conferencia--certa';
+const CLASSE_CONFERENCIA_ERRADA = 'conferencia--errada';
+const CLASSE_NOTA_CONFERENCIA = 'conferencia-resposta';
 const QUANTIDADES_TENTATIVAS = ['1', '2', '3'];
 const CLASSE_NOTAS_OCULTAS = CLASSE_RELATORIO + '__aluno--notas-ocultas';
 const CLASSE_ABAIXO_MINIMO = CLASSE_RELATORIO + '__aluno--abaixo-minimo';
@@ -544,6 +548,109 @@ function criarInterruptorRelatorio(texto, aoMudar, ligadoInicial = false) {
 }
 
 /**
+ * Lê o número da questão de um card pelo selo "ITEM NN".
+ * @param {HTMLElement} card - Card da questão.
+ * @returns {number} Número da questão.
+ */
+function lerNumeroDaQuestao(card) {
+    return Number((card.querySelector('.aula-badge')?.textContent.match(/\d+/) || [0])[0]);
+}
+
+/**
+ * Remove das questões as marcações de conferência de um aluno carregado antes.
+ */
+function limparConferenciaDasQuestoes() {
+    document.querySelectorAll('.' + CLASSE_NOTA_CONFERENCIA).forEach((nota) => nota.remove());
+    document.querySelectorAll('.' + CLASSE_CONFERENCIA_CERTA + ', .' + CLASSE_CONFERENCIA_ERRADA)
+        .forEach((alternativa) => alternativa.classList.remove(CLASSE_CONFERENCIA_CERTA,
+            CLASSE_CONFERENCIA_ERRADA, 'alternativa--marcada'));
+}
+
+/**
+ * Marca no card a alternativa do aluno (verde se certa, vermelha se errada) e escreve a conferência.
+ * @param {HTMLElement} card - Card da questão.
+ * @param {string} marcada - Letra marcada pelo aluno ou vazio.
+ * @param {string} certa - Letra certa (gabarito, só professor lê).
+ */
+function marcarConferenciaNaQuestao(card, marcada, certa) {
+    const acertou = marcada && marcada === certa;
+    card.querySelectorAll('.alternativas li').forEach((alternativa) => {
+        const letra = (alternativa.querySelector('.letra')?.textContent || '').replace(/\W/g, '');
+        if (letra !== marcada) return;
+
+        alternativa.classList.add('alternativa--marcada',
+            acertou ? CLASSE_CONFERENCIA_CERTA : CLASSE_CONFERENCIA_ERRADA);
+    });
+    const texto = !marcada ? '— Sem resposta (certa: ' + certa + ')'
+        : (acertou ? '✅ Aluno marcou ' + marcada + ': certa'
+            : '❌ Aluno marcou ' + marcada + ': errada (certa: ' + certa + ')');
+    card.appendChild(criarElemento('div', CLASSE_NOTA_CONFERENCIA, texto));
+}
+
+/**
+ * Liga o filtro "Mostrar Atividades" para as perguntas ficarem visíveis na conferência.
+ */
+function mostrarPerguntasParaConferencia() {
+    document.body.classList.remove(CLASSE_PERGUNTAS_OCULTAS);
+    const caixa = document.querySelector('input[data-perguntas="sim"]');
+    if (caixa) caixa.checked = true;
+}
+
+/**
+ * Busca as respostas do aluno (tentativa mais recente) e o gabarito da atividade (só professor).
+ * @param {string} alunoId - Id do aluno (auth.users.id).
+ * @returns {Promise<{tentativa: number, respostas: Map<number, string>, gabarito: Map<number, string>}>}
+ *     Dados para conferência.
+ * @throws {Error} Se o aluno não tiver respostas nesta atividade.
+ */
+async function buscarRespostasParaConferencia(alunoId) {
+    const filtro = 'atividade_id=eq.' + atividadeAtualRelatorio;
+    const [respostas, gabarito] = await Promise.all([
+        sbGet('resposta_atividade', 'select=item,letra,tentativa&' + filtro + '&aluno_id=eq.' +
+            encodeURIComponent(alunoId) + '&order=tentativa,item'),
+        sbGet('gabarito', 'select=item,letra&' + filtro + '&order=item')]);
+    if (!respostas.length) throw new Error('Este aluno ainda não respondeu esta atividade.');
+
+    const tentativa = Math.max(...respostas.map((linha) => linha.tentativa));
+    return {
+        tentativa,
+        respostas: new Map(respostas.filter((linha) => linha.tentativa === tentativa)
+            .map((linha) => [Number(linha.item), linha.letra])),
+        gabarito: new Map(gabarito.map((linha) => [Number(linha.item), linha.letra])),
+    };
+}
+
+/**
+ * Botão "Carregar Respostas": pega o id do aluno selecionado e mostra as respostas dele nas
+ * questões (verde = certa, vermelha = errada) para o professor conferir.
+ */
+async function carregarRespostasDoAlunoSelecionado() {
+    if (!filtroAlunoRelatorio) {
+        await mostrarPopup('Selecione um aluno em "Aluno Selecionado" antes de carregar as respostas.',
+            { tipo: 'aviso' });
+        return;
+    }
+    try {
+        const { tentativa, respostas, gabarito } =
+            await buscarRespostasParaConferencia(filtroAlunoRelatorio);
+        limparConferenciaDasQuestoes();
+        mostrarPerguntasParaConferencia();
+        const cards = [...document.querySelectorAll('.aula-card.questao')];
+        cards.forEach((card) => {
+            const numero = lerNumeroDaQuestao(card);
+            marcarConferenciaNaQuestao(card, respostas.get(numero) || '', gabarito.get(numero) || '?');
+        });
+        const nome = document.querySelector('.' + CLASSE_RELATORIO + '__aluno-selecionado')
+            ?.selectedOptions[0]?.textContent || '';
+        cards[0]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        await mostrarPopup('Respostas de ' + nome + ' (tentativa ' + tentativa + ') carregadas nas ' +
+            'questões abaixo.', { tipo: 'sucesso', titulo: 'Respostas carregadas' });
+    } catch (erro) {
+        await mostrarPopup(erro.message, { tipo: 'erro' });
+    }
+}
+
+/**
  * Cria, em uma nova linha, a lista "Aluno Selecionado" (começa em "Seleciona o aluno" = todos).
  * As opções são preenchidas por atualizarAlunosSelecionaveisRelatorio, conforme a turma.
  * @param {Function} aoMudar - Chamada quando o aluno escolhido muda.
@@ -557,10 +664,12 @@ function criarLinhaAlunoSelecionadoRelatorio(aoMudar) {
     lista.add(new Option(TEXTO_SELECIONE_ALUNO, ''));
     lista.addEventListener('change', () => {
         filtroAlunoRelatorio = lista.value;
+        limparConferenciaDasQuestoes();
         aoMudar();
     });
     etiqueta.appendChild(lista);
-    linha.appendChild(etiqueta);
+    linha.append(etiqueta, criarBotao('btn-export ' + CLASSE_RELATORIO + '__carregar-respostas',
+        'Carregar Respostas', carregarRespostasDoAlunoSelecionado));
     return linha;
 }
 
@@ -644,8 +753,9 @@ function montarFiltrosRelatorio(aoMudar) {
 function montarInterruptorPerguntas() {
     const interruptor = criarInterruptorRelatorio('Mostrar Atividades', (ligado) =>
         document.body.classList.toggle(CLASSE_PERGUNTAS_OCULTAS, !ligado));
-    interruptor.querySelector('input').checked =
-        !document.body.classList.contains(CLASSE_PERGUNTAS_OCULTAS);
+    const caixa = interruptor.querySelector('input');
+    caixa.dataset.perguntas = 'sim';
+    caixa.checked = !document.body.classList.contains(CLASSE_PERGUNTAS_OCULTAS);
     const grupo = criarElemento('div', CLASSE_RELATORIO + '__grupo-filtro');
     grupo.appendChild(interruptor);
     return grupo;
@@ -727,6 +837,7 @@ function criarBotaoFavoritaRelatorio(turmas, aoAlterar) {
  * @param {number} maximo - Limite de tentativas da atividade (vem do banco).
  */
 async function montarRelatorioProfessor(secao, atividadeId, maximo) {
+    atividadeAtualRelatorio = atividadeId;
     if (!document.body.dataset.perguntasIniciadas) {
         document.body.dataset.perguntasIniciadas = 'sim';
         document.body.classList.add(CLASSE_PERGUNTAS_OCULTAS);

@@ -332,3 +332,10 @@
 /* Linha do filtro "Aluno Selecionado" (nova linha abaixo dos interruptores) */
 .relatorio-professor__linha-aluno { flex: 0 0 100%; }
 .relatorio-professor__aluno-selecionado { margin-left: 6px; padding: 4px 8px; min-width: 260px; font: inherit; }
+
+/* Conferência do professor: respostas do aluno carregadas nas questões */
+.aula-card.questao .alternativas li.conferencia--certa { background: #e6f6ec; border-color: #38a169; }
+.aula-card.questao .alternativas li.conferencia--errada { background: #fde8e8; border-color: #e53e3e; }
+.conferencia-resposta { margin-top: 10px; font-size: 14px; font-weight: 700; }
+.relatorio-professor__carregar-respostas { margin-left: 10px; }
+.relatorio-professor__linha-aluno { display: flex; align-items: center; flex-wrap: wrap; }
