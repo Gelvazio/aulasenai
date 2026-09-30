@@ -4,6 +4,7 @@
 // Depende de: atividade.js, respostas-atividade-banco.js (buscarAtividadeDaPagina) e js/supabase.js.
 
 const ID_BOTAO_PDF_GABARITO = 'btnExportarPDFGabarito';
+const ID_BOTAO_SO_GABARITO = 'btnExportarGabarito';
 const MSG_ERRO_PDF_GABARITO = 'Não foi possível gerar o PDF com gabarito: ';
 const MSG_SO_PROFESSOR_PDF = 'Somente o perfil PROFESSOR pode exportar o PDF com gabarito.';
 const PERFIL_PROFESSOR_PDF = 'PROFESSOR';
@@ -50,17 +51,21 @@ async function lerGabaritoDoBanco() {
 }
 
 /**
- * Gera o PDF da avaliação com o gabarito no final.
+ * Exporta pelo botão: confere o perfil, lê o gabarito do banco e chama o exportador.
+ * @param {Function} exportador - Recebe as linhas do gabarito e gera o PDF.
  */
-async function exportarPdfComGabarito() {
+async function exportarComPerfilProfessor(exportador) {
     try {
         if (!(await usuarioEhProfessorPdf())) throw new Error(MSG_SO_PROFESSOR_PDF);
 
-        exportarPDFAtividade(await lerGabaritoDoBanco());
+        exportador(await lerGabaritoDoBanco());
     } catch (erro) {
         await avisarErroPdfGabarito(erro.message === MSG_SO_PROFESSOR_PDF
             ? erro.message : MSG_ERRO_PDF_GABARITO + erro.message);
     }
 }
 
-document.getElementById(ID_BOTAO_PDF_GABARITO)?.addEventListener('click', exportarPdfComGabarito);
+document.getElementById(ID_BOTAO_PDF_GABARITO)?.addEventListener('click',
+    () => exportarComPerfilProfessor(exportarPDFAtividade));
+document.getElementById(ID_BOTAO_SO_GABARITO)?.addEventListener('click',
+    () => exportarComPerfilProfessor(exportarSomenteGabaritoPDF));

@@ -169,7 +169,8 @@ def card(it):
 BLOCO_PDF_GABARITO = '''
             <div class="export-bar export-bar--gabarito" data-somente-perfil="PROFESSOR" hidden>
                 <button class="btn-export" id="btnExportarPDFGabarito" type="button">📥 Exportar PDF com gabarito</button>
-                <small>Só o professor vê este botão: o gabarito é lido do banco e não fica nesta página.</small>
+                <button class="btn-export" id="btnExportarGabarito" type="button">🔑 Exportar Gabarito</button>
+                <small>Só o professor vê estes botões: o gabarito é lido do banco e não fica nesta página.</small>
             </div>'''
 
 
