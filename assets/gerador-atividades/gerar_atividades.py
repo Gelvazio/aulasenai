@@ -1,6 +1,6 @@
 """Gera as páginas de atividade e o index.html a partir dos .md de questões.
 
-Uso: C:\\Python314\\python.exe assets\\gerador-atividades\\gerar_atividades.py <pasta ATIVIDADES>
+Uso: C:\\Python314\\python.exe assets\\gerador-atividades\\gerar_atividades.py <pasta ATIVIDADES> [--so=ARQ.md]
 Fonte única do conteúdo: ATIVIDADES-AULA-NN-50-QUESTOES.md (pasta ATIVIDADES).
 Dados da matéria: <pasta ATIVIDADES>/atividades.json com uc, uc_curta, curso e docente.
 """
@@ -23,6 +23,8 @@ ARQUIVO_DADOS = "atividades.json"
 CAMPOS_DADOS = ("uc", "uc_curta", "curso", "docente")
 CAMPO_FOLHA_RESPOSTAS = "Folha de respostas"
 CAMPO_TURMA = "Turma"
+CAMPO_ROTULO = "Rótulo da aula"
+PREFIXO_AVALIACAO = "AVALIACAO-"
 VALOR_ATIVADO = "sim"
 URL_SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
 
@@ -101,6 +103,7 @@ def ler_questoes(md_path):
         "folha": campo_opcional(texto, CAMPO_FOLHA_RESPOSTAS).lower() == VALOR_ATIVADO,
         "turma": campo_opcional(texto, CAMPO_TURMA),
     }
+    meta["rotulo"] = campo_opcional(texto, CAMPO_ROTULO) or f"Aula {meta['aula']}"
     itens = []
     for bloco in re.split(r"^## ", texto, flags=re.M)[1:]:
         linhas = bloco.strip().splitlines()
@@ -161,6 +164,13 @@ def card(it):
     return "\n".join(partes)
 
 
+def caminho_saida(md_path):
+    """HTML da atividade: avaliações (AVALIACAO-*) perdem o sufixo -QUESTOES; aulas o mantêm."""
+    if md_path.stem.startswith(PREFIXO_AVALIACAO):
+        return md_path.with_name(md_path.stem.removesuffix("-QUESTOES") + ".html")
+    return md_path.with_suffix(".html")
+
+
 def gerar_atividade(md_path, dados):
     meta, itens = ler_questoes(md_path)
     gabarito_json = json.dumps(
@@ -176,6 +186,7 @@ def gerar_atividade(md_path, dados):
         "{{LOGIN}}": ' data-login="sim"' if meta["folha"] else "",
         "{{TOTAL}}": str(meta["total"]),
         "{{AULA}}": e(meta["aula"]),
+        "{{ROTULO_AULA}}": e(meta["rotulo"]),
         "{{TEMA}}": e(meta["tema"]),
         "{{ICONE}}": meta["icone"],
         "{{DURACAO}}": e(meta["duracao"]),
@@ -194,7 +205,7 @@ def gerar_atividade(md_path, dados):
     for chave, valor in trocas.items():
         pagina = pagina.replace(chave, valor)
     assert "{{" not in pagina, f"{md_path.name}: placeholder não substituído"
-    saida = md_path.with_suffix(".html")
+    saida = caminho_saida(md_path)
     saida.write_text(inserir_header_em_html(pagina, md_path.parent), encoding="utf-8")
     meta["html"] = saida.name
     meta["md"] = md_path.name
@@ -266,12 +277,17 @@ def gerar_index(pasta, aulas, dados):
 
 
 def main():
-    if len(sys.argv) != 2:
-        raise SystemExit("Uso: gerar_atividades.py <pasta ATIVIDADES da matéria>")
+    if len(sys.argv) not in (2, 3):
+        raise SystemExit("Uso: gerar_atividades.py <pasta ATIVIDADES> [--so=<arquivo .md>]")
     pasta = Path(sys.argv[1]).resolve()
     if not pasta.is_dir():
         raise SystemExit(f"Pasta não encontrada: {pasta}")
     dados = ler_dados_materia(pasta)
+    if len(sys.argv) == 3 and sys.argv[2].startswith("--so="):
+        md = pasta / sys.argv[2].split("=", 1)[1]
+        meta = gerar_atividade(md, dados)
+        print(f"{meta['rotulo']}: {meta['total']} itens -> {meta['html']} (index.html não alterado)")
+        return
     arquivos = sorted(pasta.glob("ATIVIDADES-AULA-*-50-QUESTOES.md"))
     aulas = [gerar_atividade(md, dados) for md in arquivos]
     gerar_index(pasta, aulas, dados)

@@ -12,7 +12,7 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ / "assets" / "gerador-atividades"))
-from gerar_atividades import ler_questoes  # noqa: E402
+from gerar_atividades import caminho_saida, ler_questoes  # noqa: E402
 
 ARQUIVO_SAIDA = RAIZ / "database" / "2026-09-28-seed-atividades.sql"
 PASTA_TIC = "MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES"
@@ -41,6 +41,8 @@ ATIVIDADES = [
      f"{PASTA_TIC}/ATIVIDADES-AULA-04-50-QUESTOES.md"),
     (5, "Segurança da Informação e Proteção de Dados", DATA_PROVISORIA,
      f"{PASTA_TIC}/ATIVIDADES-AULA-05-50-QUESTOES.md"),
+    (5, "Segurança da Informação e Proteção de Dados", "2026-09-30",
+     f"{PASTA_TIC}/AVALIACAO-OBJETIVA-01-QUESTOES.md"),
     (6, "Editor de Textos: Formatação e Estruturação", DATA_PROVISORIA,
      f"{PASTA_TIC}/ATIVIDADES-AULA-06-50-QUESTOES.md"),
     (7, "Textos Técnicos e Redação Empresarial", DATA_PROVISORIA,
@@ -197,8 +199,10 @@ def sql_atividade(numero, titulo_aula, data, caminho_md):
         Trecho PL/pgSQL (dentro do bloco DO).
     """
     meta, itens = ler_atividade(RAIZ / caminho_md)
-    pagina = "/" + caminho_md[:-3] + ".html"
-    descricao = f"Atividade — {meta['tema']} ({meta['total']} questões)"
+    pagina = "/" + caminho_saida(RAIZ / caminho_md).relative_to(RAIZ).as_posix()
+    rotulo = meta.get("rotulo", "")
+    nome = rotulo if rotulo.startswith("Avalia") else meta["tema"]
+    descricao = f"Atividade — {nome} ({meta['total']} questões)"
     valores = ",\n      ".join(
         f"(v_atividade, {int(it['num'])}, {texto_sql(it['titulo'])}, {texto_sql(it['gab'])})"
         for it in itens
@@ -215,7 +219,7 @@ def sql_atividade(numero, titulo_aula, data, caminho_md):
 
   insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
       pagina, total_itens)
-    values ({texto_sql(meta['tema'])}, 'PENDENTE', v_aula, {texto_sql(data)},
+    values ({texto_sql(nome)}, 'PENDENTE', v_aula, {texto_sql(data)},
       {texto_sql(descricao)}, {texto_sql(pagina)}, {meta['total']})
     on conflict (pagina) do update set aula_id = excluded.aula_id,
       data_atividade = excluded.data_atividade, descricao = excluded.descricao,

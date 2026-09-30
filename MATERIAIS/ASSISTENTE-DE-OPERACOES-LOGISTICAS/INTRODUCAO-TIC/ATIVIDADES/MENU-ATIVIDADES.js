@@ -30,6 +30,10 @@ window.MENU_ATIVIDADES = {
           link: 'ATIVIDADES-AULA-05-50-QUESTOES.html',
         },
         {
+          rotulo: '📝 Avaliação Objetiva 01 (aulas 01–05)',
+          link: 'AVALIACAO-OBJETIVA-01.html',
+        },
+        {
           rotulo: 'Aula 06 — Editor de textos',
           link: 'ATIVIDADES-AULA-06-50-QUESTOES.html',
         },
