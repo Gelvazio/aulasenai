@@ -82,3 +82,19 @@
 .rel-linha-acordeao--aberta > td:nth-child(2)::before { content: '▾ '; }
 .rel-linha-acordeao:focus-visible { outline: 2px solid #1a56db; outline-offset: -2px; }
 .rel-detalhe[hidden] { display: none; }
+
+/* Hover da linha-acordeão: fundo + borda azul ao redor da linha inteira (sem deslocar o layout) */
+.rel-linha-acordeao > td { transition: background 0.15s, box-shadow 0.15s; }
+.rel-linha-acordeao:hover > td, .rel-linha-acordeao--aberta > td {
+  box-shadow: inset 0 2px 0 var(--guia-azul), inset 0 -2px 0 var(--guia-azul);
+}
+.rel-linha-acordeao:hover > td:first-child, .rel-linha-acordeao--aberta > td:first-child {
+  box-shadow: inset 0 2px 0 var(--guia-azul), inset 0 -2px 0 var(--guia-azul),
+    inset 2px 0 0 var(--guia-azul);
+}
+.rel-linha-acordeao:hover > td:last-child, .rel-linha-acordeao--aberta > td:last-child {
+  box-shadow: inset 0 2px 0 var(--guia-azul), inset 0 -2px 0 var(--guia-azul),
+    inset -2px 0 0 var(--guia-azul);
+}
+.rel-linha-acordeao--aberta > td { background: #e8f0fb; }
+.rel-aluno--abaixo > .rel-linha-acordeao--aberta > td { background: #fbd5d5; }
