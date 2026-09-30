@@ -15,6 +15,7 @@ const MAXIMO_TENTATIVAS_APROVADO = 2;
 const CLASSE_ABA_ATIVA = CLASSE_RELATORIO + '__aba--ativa';
 let turmaEscolhidaRelatorio = null;
 let filtroSoNaoAtingiuRelatorio = false;
+const filtroFezRelatorio = new Set();
 const filtroTentativasRelatorio = new Set();
 const QUANTIDADES_TENTATIVAS = ['1', '2', '3'];
 const CLASSE_NOTAS_OCULTAS = CLASSE_RELATORIO + '__aluno--notas-ocultas';
@@ -183,6 +184,8 @@ function alternarNotasAluno(bloco) {
 function passaNosFiltros(bloco, turma) {
     if (bloco.dataset.turma !== turma) return false;
     if (filtroSoNaoAtingiuRelatorio && bloco.dataset.naoAtingiu !== 'true') return false;
+    const escolheuSoUmaOpcaoFez = filtroFezRelatorio.size === 1;
+    if (escolheuSoUmaOpcaoFez && !filtroFezRelatorio.has(bloco.dataset.fez)) return false;
     const semFiltroTentativas = filtroTentativasRelatorio.size === 0;
     return semFiltroTentativas || filtroTentativasRelatorio.has(bloco.dataset.tentativas);
 }
@@ -201,14 +204,22 @@ function montarBlocoAluno(tentativas, base) {
     const notaFinal = calcularNotaFinalAluno(tentativas);
     const naoAtingiu = notaFinal === null || notaFinal < NOTA_MINIMA_APROVACAO;
     bloco.dataset.aluno = primeira.aluno_id;
-    bloco.dataset.tentativas = String(tentativas.length);
+    bloco.dataset.tentativas = String(primeira.sem_resposta ? 0 : tentativas.length);
     bloco.dataset.naoAtingiu = String(naoAtingiu);
+    bloco.dataset.fez = primeira.sem_resposta ? 'nao' : 'sim';
     bloco.classList.add(CLASSE_NOTAS_OCULTAS);
     bloco.classList.toggle(CLASSE_ABAIXO_MINIMO, naoAtingiu);
     const titulo = criarElemento('h4', CLASSE_RELATORIO + '__aluno-titulo');
     titulo.append(criarElemento('span', '', [primeira.numero_chamada, primeira.nome ||
         '(sem cadastro)'].filter((parte) => parte !== null && parte !== undefined &&
         parte !== '').join(' - ')));
+    titulo.append(criarElemento('span', CLASSE_RELATORIO + '__fez ' + CLASSE_RELATORIO +
+        (primeira.sem_resposta ? '__fez--nao' : '__fez--sim'),
+    'Fez Atividade? ' + (primeira.sem_resposta ? '❌ Não' : '✅ Sim')));
+    if (primeira.sem_resposta) {
+        bloco.append(titulo);
+        return bloco;
+    }
     titulo.append(criarBotao('btn-export ' + CLASSE_RELATORIO + '__ver-notas', 'Visualizar Notas',
         () => alternarNotasAluno(bloco)));
     titulo.append(criarElemento('span', CLASSE_RELATORIO + '__nota-final',
@@ -235,7 +246,10 @@ function montarBlocoAluno(tentativas, base) {
  */
 function montarListaAlunosRelatorio(linhas, base) {
     const porAluno = new Map();
-    linhas.forEach((linha) => {
+    const ordenadas = [...linhas].sort((a, b) =>
+        String(a.turma_codigo).localeCompare(String(b.turma_codigo)) ||
+        (a.numero_chamada ?? 0) - (b.numero_chamada ?? 0));
+    ordenadas.forEach((linha) => {
         const grupo = porAluno.get(linha.aluno_id) || [];
         grupo.push(linha);
         porAluno.set(linha.aluno_id, grupo);
@@ -259,6 +273,28 @@ async function buscarDadosTurmas() {
 }
 
 /**
+ * Acrescenta ao resumo os alunos que ainda não responderam nada (linhas marcadas sem_resposta).
+ * Se a consulta falhar, devolve só as linhas originais.
+ * @param {Object[]} linhas - Linhas do resumo.
+ * @returns {Promise<Object[]>} Linhas do resumo mais uma linha por aluno sem resposta.
+ */
+async function acrescentarAlunosSemResposta(linhas) {
+    try {
+        const alunos = await sbGet('aluno',
+            'select=id,nome,numero_chamada,turma_codigo,na_chamada&order=turma_codigo,numero_chamada');
+        const jaResponderam = new Set(linhas.map((linha) => linha.aluno_id));
+        const faltantes = alunos
+            .filter((aluno) => aluno.na_chamada !== false && !jaResponderam.has(aluno.id))
+            .map((aluno) => ({ aluno_id: aluno.id, nome: aluno.nome,
+                numero_chamada: aluno.numero_chamada, turma_codigo: aluno.turma_codigo,
+                turma_nome: null, sem_resposta: true }));
+        return [...linhas, ...faltantes];
+    } catch (erro) {
+        return linhas;
+    }
+}
+
+/**
  * Lista as turmas que aparecem no relatório, com dados do cartão e a quantidade de alunos.
  * @param {Object[]} linhas - Linhas do resumo.
  * @param {Map<string, Object>} dadosTurmas - Local, turno e UC por código de turma.
@@ -271,7 +307,7 @@ function listarTurmasRelatorio(linhas, dadosTurmas) {
         const codigo = linha.turma_codigo || TURMA_SEM_CODIGO;
         const dados = dadosTurmas.get(codigo) || {};
         const turma = turmas.get(codigo) || {
-            codigo, nome: linha.turma_nome || codigo || 'Sem turma', uc: dados.uc || '',
+            codigo, nome: linha.turma_nome || dados.nome || codigo || 'Sem turma', uc: dados.uc || '',
             local: [dados.local, dados.turno].filter(Boolean).join(' ').toUpperCase(),
             alunos: new Set(),
         };
@@ -289,9 +325,10 @@ function listarTurmasRelatorio(linhas, dadosTurmas) {
  * @param {Object[]} linhas - Linhas do resumo (já filtradas pela turma).
  */
 function atualizarResumoRelatorio(resumo, linhas) {
-    const alunos = new Set(linhas.map((linha) => linha.aluno_id)).size;
+    const respondidas = linhas.filter((linha) => !linha.sem_resposta);
+    const alunos = new Set(respondidas.map((linha) => linha.aluno_id)).size;
     const entregas = linhas.filter((linha) => linha.entregue_em).length;
-    resumo.textContent = linhas.length
+    resumo.textContent = respondidas.length
         ? alunos + ' aluno(s) responderam · ' + entregas + ' tentativa(s) entregue(s).'
         : MSG_SEM_RESPOSTAS;
 }
@@ -391,7 +428,16 @@ function montarFiltrosRelatorio(aoMudar) {
             aoMudar();
         }));
     });
-    barra.append(grupoSituacao, grupoTentativas);
+    const grupoFez = criarElemento('div', CLASSE_RELATORIO + '__grupo-filtro');
+    grupoFez.appendChild(criarElemento('strong', '', 'Fez a atividade?'));
+    [['sim', 'Sim'], ['nao', 'Não']].forEach(([valor, texto]) => {
+        grupoFez.appendChild(criarInterruptorRelatorio(texto, (ligado) => {
+            if (ligado) filtroFezRelatorio.add(valor);
+            else filtroFezRelatorio.delete(valor);
+            aoMudar();
+        }));
+    });
+    barra.append(grupoFez, grupoSituacao, grupoTentativas);
     return barra;
 }
 
@@ -408,7 +454,8 @@ async function montarRelatorioProfessor(secao, atividadeId, maximo) {
     bloco.appendChild(criarElemento('div', 'aula-title', 'Respostas dos alunos nesta atividade'));
     secao.insertBefore(bloco, secao.firstChild.nextSibling);
     try {
-        const linhas = await buscarResumoTentativas(atividadeId);
+        const linhas = await acrescentarAlunosSemResposta(
+            await buscarResumoTentativas(atividadeId));
         const resumo = criarElemento('p', CLASSE_RELATORIO + '__resumo');
         bloco.appendChild(resumo);
         atualizarResumoRelatorio(resumo, linhas);

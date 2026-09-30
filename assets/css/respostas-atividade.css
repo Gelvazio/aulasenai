@@ -285,3 +285,7 @@
   outline: 2px solid #1a56db; outline-offset: 2px;
 }
 .relatorio-professor__interruptor-texto { font-weight: 600; }
+
+.relatorio-professor__fez { font-size: 13px; font-weight: 700; }
+.relatorio-professor__fez--sim { color: #1b7f3b; }
+.relatorio-professor__fez--nao { color: #b42318; }
