@@ -194,3 +194,36 @@ function calcularResumoAlunoRel(aluno, atividades, resumos) {
         naoAtingiu: media < NOTA_MINIMA_REL,
     };
 }
+
+/**
+ * Carrega, para a conferência do professor, as respostas de um aluno em cada atividade ativa da
+ * matéria (tentativa mais recente) junto do gabarito real (só professor lê).
+ * @param {string} alunoId - Id do aluno (auth.users.id).
+ * @param {Object[]} atividades - Atividades da matéria.
+ * @returns {Promise<{atividade: Object, tentativa: number, itens: {item: number, marcada: string,
+ *     certa: string}[]}[]>} Uma entrada por atividade em que o aluno respondeu algo.
+ */
+async function carregarRespostasAlunoRel(alunoId, atividades) {
+    const ativas = atividades.filter((atividade) => atividade.ativo)
+        .sort((a, b) => (a.aulas?.numero ?? 0) - (b.aulas?.numero ?? 0) || a.id - b.id);
+    const ids = ativas.map((atividade) => atividade.id).join(',');
+    if (!ids) return [];
+
+    const [respostas, gabarito] = await Promise.all([
+        sbGet('resposta_atividade', 'select=atividade_id,tentativa,item,letra&aluno_id=eq.' +
+            encodeURIComponent(alunoId) + '&atividade_id=in.(' + ids + ')&order=item&limit=5000'),
+        sbGet('gabarito', 'select=atividade_id,item,letra&atividade_id=in.(' + ids +
+            ')&order=item&limit=5000')]);
+    return ativas.map((atividade) => {
+        const doAluno = respostas.filter((linha) => linha.atividade_id === atividade.id);
+        if (!doAluno.length) return null;
+
+        const tentativa = Math.max(...doAluno.map((linha) => linha.tentativa));
+        const marcadas = new Map(doAluno.filter((linha) => linha.tentativa === tentativa)
+            .map((linha) => [Number(linha.item), linha.letra]));
+        const itens = gabarito.filter((linha) => linha.atividade_id === atividade.id)
+            .map((linha) => ({ item: Number(linha.item), certa: linha.letra,
+                marcada: marcadas.get(Number(linha.item)) || '' }));
+        return { atividade, tentativa, itens };
+    }).filter(Boolean);
+}

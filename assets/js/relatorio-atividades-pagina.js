@@ -12,11 +12,12 @@ const MSG_SEM_UC_REL = 'Nenhuma turma tem esta matéria como UC: mostrando todas
 const MSG_ERRO_REL = 'Não foi possível carregar o relatório: ';
 const TEXTO_STATUS_REL = { entregue: '📨 Entregue', andamento: '✏️ Andamento', '': '—' };
 const QUANTIDADES_REL = ['1', '2', '3'];
+const TEXTO_SELECIONE_ALUNO_REL = 'Seleciona o aluno';
 const MATERIA_PADRAO_REL = 'Introdução à Tecnologia da Informação e Comunicação';
 
 const estadoRel = {
     materias: [], materia: null, turmas: [], turmaAtual: '', resumos: new Map(),
-    notasVisiveis: false, soNaoAtingiu: true, fez: new Set(), status: new Set(),
+    alunoSelecionado: '', notasVisiveis: false, soNaoAtingiu: true, fez: new Set(), status: new Set(),
     tentativas: new Set(),
 };
 
@@ -88,6 +89,95 @@ function criarGrupoFiltroRel(titulo, interruptores) {
 }
 
 /**
+ * Cria, em uma nova linha, a lista "Aluno Selecionado" e o botão "Carregar Respostas".
+ * @returns {HTMLElement} Linha pronta (a lista é preenchida por atualizarAlunosSelecionaveisRel).
+ */
+function criarLinhaAlunoSelecionadoRel() {
+    const linha = criarElementoRel('div', 'rel-linha-aluno');
+    const etiqueta = criarElementoRel('label', 'rel-filtro-aluno', 'Aluno Selecionado ');
+    const lista = document.createElement('select');
+    lista.id = 'relAlunoSelecionado';
+    lista.add(new Option(TEXTO_SELECIONE_ALUNO_REL, ''));
+    lista.addEventListener('change', () => {
+        estadoRel.alunoSelecionado = lista.value;
+        document.getElementById('relConferencia').replaceChildren();
+        renderizarTabelaRel();
+    });
+    etiqueta.appendChild(lista);
+    const botao = criarElementoRel('button', 'rel-botao', 'Carregar Respostas');
+    botao.type = 'button';
+    botao.addEventListener('click', carregarRespostasDoAlunoRel);
+    linha.append(etiqueta, botao);
+    return linha;
+}
+
+/**
+ * Preenche a lista "Aluno Selecionado" com TODOS os alunos da turma (ordem alfabética).
+ * @param {Object} turma - Turma escolhida.
+ */
+function atualizarAlunosSelecionaveisRel(turma) {
+    const lista = document.getElementById('relAlunoSelecionado');
+    if (!lista) return;
+
+    lista.replaceChildren(new Option(TEXTO_SELECIONE_ALUNO_REL, ''));
+    (turma?.alunos || []).forEach((aluno) => lista.add(new Option(
+        aluno.nome + (aluno.cadastrado ? '' : ' (sem cadastro)'), aluno.email)));
+    const aindaExiste = (turma?.alunos || []).some((aluno) => aluno.email === estadoRel.alunoSelecionado);
+    if (!aindaExiste) estadoRel.alunoSelecionado = '';
+    lista.value = estadoRel.alunoSelecionado;
+}
+
+/**
+ * Monta a tabela de conferência de uma atividade (item, resposta do aluno e a certa).
+ * @param {{atividade: Object, tentativa: number, itens: Object[]}} dados - Respostas da atividade.
+ * @returns {HTMLDetailsElement} Bloco recolhível da atividade.
+ */
+function montarConferenciaAtividadeRel(dados) {
+    const acertos = dados.itens.filter((linha) => linha.marcada === linha.certa).length;
+    const bloco = criarElementoRel('details', 'rel-conferencia-atividade');
+    bloco.appendChild(criarElementoRel('summary', '', formatarAulaRel(dados.atividade.aulas?.numero) +
+        ' — ' + dados.atividade.descricao + ' · tentativa ' + dados.tentativa + ' · ' + acertos +
+        ' de ' + dados.itens.length + ' certas'));
+    const grade = criarElementoRel('div', 'rel-conferencia-grade');
+    dados.itens.forEach((linha) => {
+        const ok = linha.marcada && linha.marcada === linha.certa;
+        const celula = criarElementoRel('span', 'rel-item ' + (ok ? 'rel-item--certa' : 'rel-item--errada'),
+            String(linha.item).padStart(2, '0') + ': ' + (linha.marcada || '—') +
+            (ok ? ' ✅' : ' ❌ (certa ' + linha.certa + ')'));
+        grade.appendChild(celula);
+    });
+    bloco.appendChild(grade);
+    return bloco;
+}
+
+/**
+ * Botão "Carregar Respostas": pega o aluno selecionado e mostra as respostas dele em cada
+ * atividade ativa da matéria, marcadas como certas ou erradas, para o professor conferir.
+ */
+async function carregarRespostasDoAlunoRel() {
+    const area = document.getElementById('relConferencia');
+    const turma = estadoRel.turmas.find((item) => item.codigo === estadoRel.turmaAtual);
+    const aluno = turma?.alunos.find((item) => item.email === estadoRel.alunoSelecionado);
+    if (!aluno) {
+        area.textContent = 'Selecione um aluno em "Aluno Selecionado" antes de carregar as respostas.';
+        return;
+    }
+    if (!aluno.id) {
+        area.textContent = aluno.nome + ' ainda não tem cadastro no banco: não há respostas.';
+        return;
+    }
+    area.textContent = 'Carregando respostas de ' + aluno.nome + '...';
+    try {
+        const dados = await carregarRespostasAlunoRel(aluno.id, estadoRel.materia.atividades);
+        area.replaceChildren(criarElementoRel('h3', '', 'Respostas de ' + aluno.nome));
+        if (!dados.length) area.append('Este aluno ainda não respondeu nenhuma atividade desta matéria.');
+        dados.forEach((item) => area.appendChild(montarConferenciaAtividadeRel(item)));
+    } catch (erro) {
+        area.textContent = MSG_ERRO_REL + erro.message;
+    }
+}
+
+/**
  * Monta a barra de filtros globais (interruptores ON/OFF), todos desligados por padrão.
  * @returns {HTMLElement} Barra de filtros.
  */
@@ -111,6 +201,7 @@ function montarFiltrosRel() {
         criarGrupoFiltroRel('Tentativas', QUANTIDADES_REL.map((quantidade) =>
             criarInterruptorRel(quantidade + 'x',
                 alternarNoConjuntoRel(estadoRel.tentativas, quantidade)))),
+        criarLinhaAlunoSelecionadoRel(),
     );
     return barra;
 }
@@ -118,10 +209,12 @@ function montarFiltrosRel() {
 /**
  * Diz se um aluno passa pelos filtros globais.
  * @param {Object} resumo - Resumo do aluno.
+ * @param {Object} aluno - Aluno da turma.
  * @returns {boolean} true se deve aparecer.
  */
-function passaNosFiltrosRel(resumo) {
+function passaNosFiltrosRel(resumo, aluno) {
     const { fez, status, tentativas } = estadoRel;
+    if (estadoRel.alunoSelecionado && aluno.email !== estadoRel.alunoSelecionado) return false;
     if (estadoRel.soNaoAtingiu && !resumo.naoAtingiu) return false;
     if (fez.size === 1 && !fez.has(resumo.fez ? 'sim' : 'nao')) return false;
     const passaStatus = (status.has('entregue') && resumo.entregue) ||
@@ -233,7 +326,7 @@ function renderizarTabelaRel() {
     turma.alunos.forEach((aluno) => {
         const resumo = calcularResumoAlunoRel(aluno, estadoRel.materia.atividades,
             estadoRel.resumos);
-        if (!passaNosFiltrosRel(resumo)) return;
+        if (!passaNosFiltrosRel(resumo, aluno)) return;
 
         tabela.appendChild(montarBlocoAlunoRel(aluno, resumo));
         visiveis += 1;
@@ -271,6 +364,8 @@ function criarAbaTurmaRel(turma) {
  */
 function escolherTurmaRel(codigo) {
     estadoRel.turmaAtual = codigo;
+    atualizarAlunosSelecionaveisRel(estadoRel.turmas.find((turma) => turma.codigo === codigo));
+    document.getElementById('relConferencia')?.replaceChildren();
     document.querySelectorAll('.rel-aba').forEach((aba) =>
         aba.classList.toggle('rel-aba--ativa', aba.dataset.turma === codigo));
     renderizarTabelaRel();

@@ -100,3 +100,20 @@
 .rel-aluno--abaixo > .rel-linha-acordeao--aberta > td { background: #fbd5d5; }
 
 .rel-tabela-detalhe th:first-child, .rel-tabela-detalhe td:first-child { width: 80px; white-space: nowrap; font-weight: 700; }
+
+/* Aluno Selecionado + Carregar Respostas (conferência do professor) */
+.rel-linha-aluno { flex: 0 0 100%; display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; }
+.rel-filtro-aluno { font-size: 13px; font-weight: 600; }
+.rel-filtro-aluno select { margin-left: 6px; padding: 4px 8px; min-width: 260px; font: inherit; }
+.rel-botao {
+  background: var(--guia-azul); color: #fff; border: none; border-radius: 16px; padding: 7px 16px;
+  font: inherit; font-weight: 700; cursor: pointer;
+}
+#relConferencia:empty { display: none; }
+#relConferencia h3 { color: var(--guia-azul); margin-bottom: 8px; }
+.rel-conferencia-atividade { margin: 6px 0; border: 1px solid var(--guia-borda); border-radius: 8px; padding: 6px 10px; }
+.rel-conferencia-atividade summary { cursor: pointer; font-weight: 700; }
+.rel-conferencia-grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; margin-top: 8px; }
+.rel-item { padding: 4px 8px; border-radius: 6px; font-size: 13px; font-weight: 600; }
+.rel-item--certa { background: #e6f6ec; border: 1px solid #38a169; }
+.rel-item--errada { background: #fde8e8; border: 1px solid #e53e3e; }
