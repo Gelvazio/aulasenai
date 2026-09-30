@@ -292,7 +292,9 @@ function criarCelulaAcoesAluno(bloco, tentativas, base) {
     const grupo = criarElemento('div', CLASSE_RELATORIO + '__acoes');
     grupo.append(criarBotao('btn-export ' + CLASSE_RELATORIO + '__ver-notas',
         'Visualizar Notas', () => alternarNotasAluno(bloco)),
-    criarControleLiberar({ ...base, linha: tentativas[tentativas.length - 1] }));
+    criarControleLiberar({ ...base, linha: tentativas[tentativas.length - 1] }),
+    criarBotao('btn-export ' + CLASSE_RELATORIO + '__carregar-respostas', 'Carregar Respostas',
+        () => carregarRespostasDoAluno(tentativas[0].aluno_id, tentativas[0].nome || '')));
     celula.appendChild(grupo);
     return celula;
 }
@@ -621,18 +623,14 @@ async function buscarRespostasParaConferencia(alunoId) {
 }
 
 /**
- * Botão "Carregar Respostas": pega o id do aluno selecionado e mostra as respostas dele nas
- * questões (verde = certa, vermelha = errada) para o professor conferir.
+ * Mostra as respostas de um aluno (tentativa mais recente) nas questões da página, em verde
+ * (certa) ou vermelho (errada), para o professor conferir.
+ * @param {string} alunoId - Id do aluno (auth.users.id).
+ * @param {string} nome - Nome do aluno (para a mensagem).
  */
-async function carregarRespostasDoAlunoSelecionado() {
-    if (!filtroAlunoRelatorio) {
-        await mostrarPopup('Selecione um aluno em "Aluno Selecionado" antes de carregar as respostas.',
-            { tipo: 'aviso' });
-        return;
-    }
+async function carregarRespostasDoAluno(alunoId, nome) {
     try {
-        const { tentativa, respostas, gabarito } =
-            await buscarRespostasParaConferencia(filtroAlunoRelatorio);
+        const { tentativa, respostas, gabarito } = await buscarRespostasParaConferencia(alunoId);
         limparConferenciaDasQuestoes();
         mostrarPerguntasParaConferencia();
         const cards = [...document.querySelectorAll('.aula-card.questao')];
@@ -640,14 +638,26 @@ async function carregarRespostasDoAlunoSelecionado() {
             const numero = lerNumeroDaQuestao(card);
             marcarConferenciaNaQuestao(card, respostas.get(numero) || '', gabarito.get(numero) || '?');
         });
-        const nome = document.querySelector('.' + CLASSE_RELATORIO + '__aluno-selecionado')
-            ?.selectedOptions[0]?.textContent || '';
         cards[0]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         await mostrarPopup('Respostas de ' + nome + ' (tentativa ' + tentativa + ') carregadas nas ' +
             'questões abaixo.', { tipo: 'sucesso', titulo: 'Respostas carregadas' });
     } catch (erro) {
         await mostrarPopup(erro.message, { tipo: 'erro' });
     }
+}
+
+/**
+ * Botão "Carregar Respostas" ao lado da lista "Aluno Selecionado": usa o aluno escolhido.
+ */
+async function carregarRespostasDoAlunoSelecionado() {
+    if (!filtroAlunoRelatorio) {
+        await mostrarPopup('Selecione um aluno em "Aluno Selecionado" antes de carregar as respostas.',
+            { tipo: 'aviso' });
+        return;
+    }
+    const nome = document.querySelector('.' + CLASSE_RELATORIO + '__aluno-selecionado')
+        ?.selectedOptions[0]?.textContent || '';
+    await carregarRespostasDoAluno(filtroAlunoRelatorio, nome);
 }
 
 /**
