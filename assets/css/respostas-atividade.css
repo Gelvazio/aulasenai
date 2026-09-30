@@ -172,3 +172,12 @@
 .identificacao-estudante__tentativa { font-size: 13px; font-weight: 700; margin-top: 6px; }
 
 @media print { .aviso-gravacao { display: none; } }
+
+/* Resultado da tentativa no início da atividade */
+.resultado-atividade { border-left-width: 6px; border-left-style: solid; }
+.resultado-atividade--aprovado { border-left-color: var(--finalizar-fundo); background: #f0fff4; }
+.resultado-atividade--reprovado { border-left-color: var(--pendente-borda); background: var(--pendente-fundo); }
+.resultado-atividade__detalhe { margin-top: 4px; font-size: 14px; }
+.resultado-atividade__mensagem { margin-top: 8px; font-size: 15px; font-weight: 700; }
+.resultado-atividade--aprovado .resultado-atividade__mensagem { color: var(--finalizar-fundo-hover); }
+.resultado-atividade--reprovado .resultado-atividade__mensagem { color: var(--pendente-borda); }

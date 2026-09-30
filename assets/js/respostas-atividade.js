@@ -17,6 +17,17 @@ const TURMA_EM_BRANCO = '______________';
 // REGRA: até MAXIMO_TENTATIVAS por atividade; a nova tentativa só o professor libera.
 const MAXIMO_TENTATIVAS = 3;
 const DURACAO_AVISO_MS = 3000;
+const NOTA_MAXIMA = 10;
+const NOTA_MINIMA_APROVACAO = 7;
+const CASAS_NOTA = 1;
+const CLASSE_RESULTADO = 'resultado-atividade';
+const CLASSE_RESULTADO_APROVADO = 'resultado-atividade--aprovado';
+const CLASSE_RESULTADO_REPROVADO = 'resultado-atividade--reprovado';
+const MSG_NOTA_APROVADO =
+    'Você atingiu a pontuação mínima que é ' + NOTA_MINIMA_APROVACAO + '!';
+const MSG_NOTA_REPROVADO =
+    'Você não atingiu a pontuação mínima que é ' + NOTA_MINIMA_APROVACAO + ', solicite ao ' +
+    'professor liberação da atividade para uma nova tentativa!';
 const CLASSE_AVISO = 'aviso-gravacao';
 const CLASSE_AVISO_ERRO = 'aviso-gravacao--erro';
 const MSG_REGRA_TENTATIVAS = 'Depois de entregar, só o professor pode liberar uma nova tentativa.';
@@ -31,16 +42,19 @@ const MSG_ERRO_SALVAR = 'Não foi possível salvar a resposta. ' +
     'Verifique a conexão e tente de novo.';
 
 /**
- * Monta a mensagem de confirmação da entrega, com o número da tentativa.
+ * Monta a mensagem de confirmação da entrega, com o número da tentativa e a nota.
  * @param {number} tentativa - Tentativa entregue.
+ * @param {{acertos: number, total: number}|null} resultado - Resultado da tentativa.
  * @returns {string} Mensagem para o aluno.
  */
-function montarMensagemEntrega(tentativa) {
+function montarMensagemEntrega(tentativa, resultado) {
     const orientacao = tentativa >= MAXIMO_TENTATIVAS
         ? MSG_ULTIMA_TENTATIVA : MSG_PEDIR_NOVA_TENTATIVA;
+    const linhaNota = resultado
+        ? ['Sua nota: ' + formatarNota(calcularNota(resultado)) + '.', ''] : [];
     return ['✅ Atividade entregue!',
         'Suas respostas foram gravadas (tentativa ' + tentativa + ' de ' + MAXIMO_TENTATIVAS + ').',
-        '', orientacao].join('\n');
+        '', ...linhaNota, orientacao].join('\n');
 }
 
 /**
@@ -53,6 +67,48 @@ function montarMensagemConfirmarEntrega(tentativa) {
         'Depois de entregar, as respostas não poderão ser alteradas.',
         tentativa >= MAXIMO_TENTATIVAS ? MSG_ULTIMA_TENTATIVA : MSG_PEDIR_NOVA_TENTATIVA,
     ].join('\n');
+}
+
+/**
+ * Calcula a nota (0 a 10) de acertos e total; a comparação com o mínimo usa o valor exato.
+ * @param {{acertos: number, total: number}} resultado - Acertos e total de itens.
+ * @returns {number} Nota exata (sem arredondar).
+ */
+function calcularNota(resultado) {
+    return (resultado.acertos / resultado.total) * NOTA_MAXIMA;
+}
+
+/**
+ * Formata a nota com uma casa decimal e vírgula (ex.: 7,5).
+ * @param {number} nota - Nota exata.
+ * @returns {string} Nota formatada.
+ */
+function formatarNota(nota) {
+    return nota.toFixed(CASAS_NOTA).replace('.', ',');
+}
+
+/**
+ * Mostra, no início da atividade, a nota da tentativa entregue e se atingiu o mínimo.
+ * @param {Object} estado - Estado da página.
+ * @param {{acertos: number, total: number}|null} resultado - Resultado ou null.
+ */
+function mostrarResultadoNoInicio(estado, resultado) {
+    if (!resultado) return;
+    const secao = document.querySelector('.content-section');
+    secao.querySelector('.' + CLASSE_RESULTADO)?.remove();
+    const nota = calcularNota(resultado);
+    const atingiu = nota >= NOTA_MINIMA_APROVACAO;
+    const bloco = criarElemento('div', 'aula-card ' + CLASSE_RESULTADO + ' ' + (atingiu
+        ? CLASSE_RESULTADO_APROVADO : CLASSE_RESULTADO_REPROVADO));
+    bloco.setAttribute('role', 'status');
+    bloco.appendChild(criarElemento('span', 'aula-badge', 'RESULTADO'));
+    bloco.appendChild(criarElemento('div', 'aula-title', 'Sua nota: ' + formatarNota(nota) +
+        ' (tentativa ' + estado.tentativa + ' de ' + MAXIMO_TENTATIVAS + ')'));
+    bloco.appendChild(criarElemento('p', 'resultado-atividade__detalhe',
+        resultado.acertos + ' acertos em ' + resultado.total + ' questões.'));
+    bloco.appendChild(criarElemento('p', 'resultado-atividade__mensagem',
+        atingiu ? MSG_NOTA_APROVADO : MSG_NOTA_REPROVADO));
+    secao.insertBefore(bloco, secao.firstChild.nextSibling);
 }
 
 /**
@@ -390,7 +446,9 @@ async function finalizarAtividade(estado) {
         estado.atualizarFolha();
         marcarEntregue(estado, resultado.entregueEm);
         mostrarAvisoGravacao('✅ Entrega gravada: tentativa ' + estado.tentativa);
-        window.alert(montarMensagemEntrega(estado.tentativa));
+        mostrarResultadoNoInicio(estado, resultado.resultado);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.alert(montarMensagemEntrega(estado.tentativa, resultado.resultado));
     } catch (erro) {
         window.alert(erro.message || MSG_ERRO_SALVAR);
     }
@@ -514,6 +572,7 @@ async function iniciarRespostasAtividade() {
     ligarAlternativas(estado);
     estado.atualizarFolha();
     if (estado.entregue) marcarEntregue(estado, carregado.entregueEm);
+    if (estado.entregue) mostrarResultadoNoInicio(estado, carregado.resultado);
 }
 
 iniciarRespostasAtividade();

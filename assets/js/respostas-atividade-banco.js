@@ -11,6 +11,7 @@
 const ROTA_RESPOSTAS =
     '/rest/v1/resposta_atividade?on_conflict=aluno_id,atividade_id,tentativa,item';
 const ROTA_ENTREGAS = '/rest/v1/entrega_atividade';
+const ROTA_NOTA = '/rest/v1/rpc/nota_da_tentativa';
 const PREFERENCIA_UPSERT = 'resolution=merge-duplicates,return=minimal';
 const CODIGO_JA_EXISTE = 409;
 const DIGITOS_ITEM = 2;
@@ -63,6 +64,20 @@ async function lerTentativaAtual(atividadeId) {
     const liberacoes = await sbGet('liberacao_atividade',
         'select=tentativa&atividade_id=eq.' + atividadeId);
     return Math.max(1, ...liberacoes.map((liberacao) => liberacao.tentativa));
+}
+
+/**
+ * Lê acertos e total da tentativa entregue (a conta é feita no banco: o gabarito não sai).
+ * @param {number} atividadeId - Id da atividade.
+ * @param {number} tentativa - Tentativa entregue.
+ * @returns {Promise<{acertos: number, total: number}|null>} Resultado ou null se indisponível.
+ */
+async function lerResultadoDaTentativa(atividadeId, tentativa) {
+    const corpo = { p_atividade: atividadeId, p_tentativa: tentativa };
+    const resposta = await enviarAoBanco(ROTA_NOTA, corpo, 'return=representation');
+    if (!resposta.ok) return null;
+    const [linha] = await resposta.json();
+    return linha && linha.total > 0 ? linha : null;
 }
 
 /**
@@ -151,7 +166,9 @@ async function carregarDoBanco(sessao) {
         const doAluno = await lerRespostasDoAluno(sessao.atividade.id);
         sessao.tentativa = doAluno.tentativa;
         const identificacao = { nome: sessao.nome, turma: sessao.turma };
-        return { disponivel: true, logado: true, ...identificacao, ...doAluno };
+        const resultado = doAluno.entregueEm
+            ? await lerResultadoDaTentativa(sessao.atividade.id, doAluno.tentativa) : null;
+        return { disponivel: true, logado: true, ...identificacao, ...doAluno, resultado };
     } catch (erro) {
         console.warn('Banco indisponível:', erro.message);
         return { disponivel: false };
@@ -192,11 +209,15 @@ function criarProvedorRespostasBanco() {
             const resposta = await enviarAoBanco(ROTA_ENTREGAS, corpo, 'return=representation');
             const jaEntregue = resposta.status === CODIGO_JA_EXISTE;
             if (jaEntregue) {
-                return { entregueEm: new Date().toISOString(), tentativa: sessao.tentativa };
+                const resultado = await lerResultadoDaTentativa(sessao.atividade.id,
+                    sessao.tentativa);
+                return { entregueEm: new Date().toISOString(), tentativa: sessao.tentativa,
+                    resultado };
             }
             if (!resposta.ok) throw new Error(MSG_ERRO_ENTREGA);
             const [entrega] = await resposta.json();
-            return { entregueEm: entrega?.entregue_em, tentativa: sessao.tentativa };
+            const resultado = await lerResultadoDaTentativa(sessao.atividade.id, sessao.tentativa);
+            return { entregueEm: entrega?.entregue_em, tentativa: sessao.tentativa, resultado };
         },
     };
 }
