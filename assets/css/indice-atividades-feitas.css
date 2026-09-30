@@ -1,0 +1,9 @@
+/* Coluna "Fez Atividade?" e filtro do índice de atividades (assets/js/indice-atividades-feitas.js) */
+.marca-feita { margin: 6px 0; font-size: 13px; font-weight: 700; }
+.marca-feita--sim { color: #1b7f3b; }
+.marca-feita--nao { color: #b42318; }
+.filtro-feitas {
+  display: flex; justify-content: center; padding: 12px 20px 0; font-size: 14px; font-weight: 600;
+}
+.filtro-feitas select { margin-left: 6px; padding: 4px 8px; border-radius: 6px; }
+article.aula[hidden] { display: none; }

@@ -15,6 +15,8 @@ const MSG_LINK_EM_USO = 'Já existe uma atividade cadastrada para este link.';
 const MSG_CONFIRMAR_EXCLUSAO = 'Excluir esta atividade? O gabarito, as respostas e as entregas ' +
     'dos alunos dela também serão apagados.';
 
+const BASE_ASSETS_CRUD = document.currentScript?.src.replace(/js\/[^/]*$/, '') || '';
+
 const estadoCrud = { paginas: [], atividades: [], aulas: [], editandoId: null };
 let elementosCrud = null;
 
@@ -377,4 +379,19 @@ async function iniciarCrudAtividades() {
     document.querySelectorAll(SELETOR_CARD).forEach(adicionarBotaoCrudAoCard);
 }
 
+/**
+ * Carrega a coluna "Fez Atividade?" (CSS e JS próprios) para o aluno logado.
+ */
+function carregarMarcacaoFeitas() {
+    if (!BASE_ASSETS_CRUD) return;
+
+    const estilo = criarElementoCrud('link');
+    estilo.rel = 'stylesheet';
+    estilo.href = BASE_ASSETS_CRUD + 'css/indice-atividades-feitas.css';
+    const script = criarElementoCrud('script');
+    script.src = BASE_ASSETS_CRUD + 'js/indice-atividades-feitas.js';
+    document.head.append(estilo, script);
+}
+
+carregarMarcacaoFeitas();
 iniciarCrudAtividades();
