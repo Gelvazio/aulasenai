@@ -220,10 +220,12 @@ function montarDetalheAluno(tentativas, base) {
  * @returns {HTMLTableCellElement} Célula de ações.
  */
 function criarCelulaAcoesAluno(bloco, tentativas, base) {
-    const celula = criarElemento('td', CLASSE_RELATORIO + '__acoes');
-    celula.append(criarBotao('btn-export ' + CLASSE_RELATORIO + '__ver-notas',
+    const celula = criarElemento('td');
+    const grupo = criarElemento('div', CLASSE_RELATORIO + '__acoes');
+    grupo.append(criarBotao('btn-export ' + CLASSE_RELATORIO + '__ver-notas',
         'Visualizar Notas', () => alternarNotasAluno(bloco)),
     criarControleLiberar({ ...base, linha: tentativas[tentativas.length - 1] }));
+    celula.appendChild(grupo);
     return celula;
 }
 
