@@ -9,7 +9,7 @@
 const ROTA_RESUMO_TENTATIVAS = '/rest/v1/rpc/resumo_tentativas_atividade';
 const ROTA_LIBERAR_TENTATIVA = '/rest/v1/rpc/liberar_nova_tentativa';
 const CLASSE_RELATORIO = 'relatorio-professor';
-const COLUNAS_ALUNOS_RELATORIO = ['Nº', 'Aluno', 'Fez Atividade?', 'Tentativas',
+const COLUNAS_ALUNOS_RELATORIO = ['Nº', 'Aluno', 'Fez Atividade?', 'Status', 'Tentativas',
     'Nota final da Atividade', 'Ações'];
 const COLUNAS_RELATORIO = ['Tentativa', 'Situação', 'Acertos', 'Nota', 'Data e hora'];
 const TURMA_SEM_CODIGO = '';
@@ -18,8 +18,10 @@ const CLASSE_ABA_ATIVA = CLASSE_RELATORIO + '__aba--ativa';
 let turmaEscolhidaRelatorio = null;
 let filtroSoNaoAtingiuRelatorio = true;
 const filtroFezRelatorio = new Set(['sim']);
+const filtroStatusRelatorio = new Set();
 const filtroTentativasRelatorio = new Set();
 const CLASSE_PERGUNTAS_OCULTAS = 'atividade--perguntas-ocultas';
+const TEXTO_STATUS = { entregue: '📨 Entregue', andamento: '✏️ Andamento' };
 const QUANTIDADES_TENTATIVAS = ['1', '2', '3'];
 const CLASSE_NOTAS_OCULTAS = CLASSE_RELATORIO + '__aluno--notas-ocultas';
 const CLASSE_ABAIXO_MINIMO = CLASSE_RELATORIO + '__aluno--abaixo-minimo';
@@ -187,6 +189,8 @@ function alternarNotasAluno(bloco) {
 function passaNosFiltros(bloco, turma) {
     if (bloco.dataset.turma !== turma) return false;
     if (filtroSoNaoAtingiuRelatorio && bloco.dataset.naoAtingiu !== 'true') return false;
+    const filtraStatus = filtroStatusRelatorio.size > 0;
+    if (filtraStatus && !filtroStatusRelatorio.has(bloco.dataset.status)) return false;
     const escolheuSoUmaOpcaoFez = filtroFezRelatorio.size === 1;
     if (escolheuSoUmaOpcaoFez && !filtroFezRelatorio.has(bloco.dataset.fez)) return false;
     const semFiltroTentativas = filtroTentativasRelatorio.size === 0;
@@ -246,7 +250,9 @@ function montarBlocoAluno(tentativas, base) {
     const naoAtingiu = notaFinal === null || notaFinal < NOTA_MINIMA_APROVACAO;
     Object.assign(bloco.dataset, { turma: primeira.turma_codigo || TURMA_SEM_CODIGO,
         aluno: primeira.aluno_id, tentativas: String(semResposta ? 0 : tentativas.length),
-        naoAtingiu: String(naoAtingiu), fez: semResposta ? 'nao' : 'sim' });
+        naoAtingiu: String(naoAtingiu), fez: semResposta ? 'nao' : 'sim',
+        status: semResposta ? '' : (tentativas[tentativas.length - 1].entregue_em ?
+            'entregue' : 'andamento') });
     bloco.classList.add(CLASSE_NOTAS_OCULTAS);
     bloco.classList.toggle(CLASSE_ABAIXO_MINIMO, naoAtingiu);
     const textoNota = notaFinal === null ? '—' : formatarNota(notaFinal);
@@ -259,6 +265,7 @@ function montarBlocoAluno(tentativas, base) {
             (primeira.fora_da_chamada ? ' (fora da chamada)' : '')),
         criarCelulaRelatorio(semResposta ? '❌ Não' : '✅ Sim',
             CLASSE_RELATORIO + (semResposta ? '__fez--nao' : '__fez--sim')),
+        criarCelulaRelatorio(TEXTO_STATUS[bloco.dataset.status] || '—'),
         criarCelulaRelatorio((semResposta ? 0 : tentativas.length) + ' de ' + base.maximo),
         celulaNota);
     linha.appendChild(semResposta ? criarElemento('td') :
@@ -503,7 +510,16 @@ function montarFiltrosRelatorio(aoMudar) {
             aoMudar();
         }, filtroFezRelatorio.has(valor)));
     });
-    barra.append(grupoFez, grupoSituacao, grupoTentativas);
+    const grupoStatus = criarElemento('div', CLASSE_RELATORIO + '__grupo-filtro');
+    grupoStatus.appendChild(criarElemento('strong', '', 'Status'));
+    [['entregue', 'Entregue'], ['andamento', 'Andamento']].forEach(([valor, texto]) => {
+        grupoStatus.appendChild(criarInterruptorRelatorio(texto, (ligado) => {
+            if (ligado) filtroStatusRelatorio.add(valor);
+            else filtroStatusRelatorio.delete(valor);
+            aoMudar();
+        }, filtroStatusRelatorio.has(valor)));
+    });
+    barra.append(grupoFez, grupoStatus, grupoSituacao, grupoTentativas);
     return barra;
 }
 

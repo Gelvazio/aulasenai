@@ -293,12 +293,13 @@
 .relatorio-professor__fez--nao { color: #b42318; }
 
 /* Tabela de alunos: colunas retas, uma linha por aluno */
-.relatorio-professor__tabela { table-layout: fixed; min-width: 760px; }
-.relatorio-professor__tabela th:nth-child(1) { width: 48px; }
-.relatorio-professor__tabela th:nth-child(3) { width: 130px; }
-.relatorio-professor__tabela th:nth-child(4) { width: 100px; }
-.relatorio-professor__tabela th:nth-child(5) { width: 190px; }
-.relatorio-professor__tabela th:nth-child(6) { width: 330px; }
+.relatorio-professor__tabela { table-layout: fixed; min-width: 880px; }
+.relatorio-professor__tabela > thead > tr > th:nth-child(1) { width: 48px; }
+.relatorio-professor__tabela > thead > tr > th:nth-child(3) { width: 130px; }
+.relatorio-professor__tabela > thead > tr > th:nth-child(4) { width: 120px; }
+.relatorio-professor__tabela > thead > tr > th:nth-child(5) { width: 100px; }
+.relatorio-professor__tabela > thead > tr > th:nth-child(6) { width: 190px; }
+.relatorio-professor__tabela > thead > tr > th:nth-child(7) { width: 330px; }
 .relatorio-professor__tabela th, .relatorio-professor__tabela > tbody > tr > td {
   text-align: left; vertical-align: middle;
 }
