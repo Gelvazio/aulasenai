@@ -40,6 +40,8 @@ const MSG_BANCO_INDISPONIVEL = 'As respostas desta atividade são salvas no banc
     'que está indisponível agora. Avise o professor e tente novamente mais tarde.';
 const MSG_ERRO_SALVAR = 'Não foi possível salvar a resposta. ' +
     'Verifique a conexão e tente de novo.';
+const MSG_ERRO_CONFERIR = 'Não foi possível conferir as respostas gravadas no banco. ' +
+    'Verifique a conexão e tente finalizar de novo.';
 
 /**
  * Monta a mensagem de confirmação da entrega, com o número da tentativa e a nota.
@@ -212,7 +214,9 @@ async function registrarResposta(estado, item, letra) {
     item.card.classList.remove(CLASSE_QUESTAO_PENDENTE);
     estado.atualizarFolha();
     try {
-        await estado.provedor.salvarResposta(item.numero, letra);
+        const gravacao = estado.provedor.salvarResposta(item.numero, letra);
+        estado.gravacoes.push(gravacao);
+        await gravacao;
         mostrarAvisoGravacao('✅ Resposta gravada: questão ' + item.numero + ' = ' + letra);
     } catch (erro) {
         if (letraAnterior) estado.dados.respostas[item.numero] = letraAnterior;
@@ -434,14 +438,58 @@ function marcarEntregue(estado, entregueEm) {
 }
 
 /**
+ * Monta a mensagem com as questões que NÃO estão gravadas no banco.
+ * @param {{numero: string}[]} faltando - Itens sem resposta gravada.
+ * @returns {string} Mensagem para o aluno.
+ */
+function montarMensagemNaoGravadas(faltando) {
+    const numeros = faltando.map((item) => item.numero).join(', ');
+    return ['Atenção! Nem todas as respostas estão gravadas no banco.', '',
+        '• ' + faltando.length + ' questão(ões) sem resposta gravada: ' + numeros + '.', '',
+        'Marque essas questões de novo, espere o aviso "Resposta gravada" e tente finalizar.',
+    ].join('\n');
+}
+
+/**
+ * Confere no banco se TODAS as alternativas estão gravadas; o banco é a fonte da verdade.
+ * Espera as gravações em andamento, relê as respostas gravadas e sincroniza a tela com elas.
+ * @param {Object} estado - Estado da página.
+ * @returns {Promise<boolean>} true se todas as questões estão gravadas.
+ */
+async function conferirGravacao(estado) {
+    await Promise.allSettled(estado.gravacoes);
+    let gravadas;
+    try {
+        gravadas = await estado.provedor.lerGravadas();
+    } catch (erro) {
+        window.alert(MSG_ERRO_CONFERIR);
+        return false;
+    }
+    estado.dados.respostas = gravadas;
+    estado.itens.forEach((item) => destacarAlternativa(item, gravadas[item.numero] || ''));
+    estado.atualizarFolha();
+    const faltando = listarPendentes(estado);
+    destacarPendentes(estado, faltando);
+    if (faltando.length === 0) return true;
+
+    window.alert(montarMensagemNaoGravadas(faltando));
+    faltando[0].card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return false;
+}
+
+/**
  * Finaliza a atividade: valida e registra a entrega no banco (depois disso, trava).
  * @param {Object} estado - Estado da página.
  */
 async function finalizarAtividade(estado) {
     if (estado.entregue) return window.alert(MSG_JA_ENTREGUE);
     if (!validarAtividade(estado)) return;
-    if (!window.confirm(montarMensagemConfirmarEntrega(estado.tentativa))) return;
+    const botao = document.querySelector('.botao-finalizar');
+    botao.disabled = true;
     try {
+        const todasGravadas = await conferirGravacao(estado);
+        if (!todasGravadas) return;
+        if (!window.confirm(montarMensagemConfirmarEntrega(estado.tentativa))) return;
         const resultado = await estado.provedor.entregar();
         estado.atualizarFolha();
         marcarEntregue(estado, resultado.entregueEm);
@@ -451,6 +499,8 @@ async function finalizarAtividade(estado) {
         window.alert(montarMensagemEntrega(estado.tentativa, resultado.resultado));
     } catch (erro) {
         window.alert(erro.message || MSG_ERRO_SALVAR);
+    } finally {
+        botao.disabled = estado.entregue;
     }
 }
 
@@ -529,6 +579,7 @@ function criarProvedorIndisponivel() {
             return false;
         },
         async salvarResposta() { throw new Error(MSG_BANCO_INDISPONIVEL); },
+        async lerGravadas() { throw new Error(MSG_BANCO_INDISPONIVEL); },
         async entregar() { throw new Error(MSG_BANCO_INDISPONIVEL); },
     };
 }
@@ -562,6 +613,7 @@ async function iniciarRespostasAtividade() {
         dados: { nome: carregado.nome || '', respostas: carregado.respostas || {} },
         turma: carregado.turma || '',
         tentativa: carregado.tentativa || 1,
+        gravacoes: [],
         entregue: Boolean(carregado.entregueEm),
     };
     estado.atualizarFolha = () => atualizarFolha(estado);

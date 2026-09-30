@@ -200,6 +200,14 @@ function criarProvedorRespostasBanco() {
             const resposta = await enviarAoBanco(ROTA_RESPOSTAS, corpo, PREFERENCIA_UPSERT);
             if (!resposta.ok) throw new Error(MSG_ERRO_SALVAR);
         },
+        async lerGravadas() {
+            const filtro = 'atividade_id=eq.' + sessao.atividade.id +
+                '&tentativa=eq.' + sessao.tentativa;
+            const linhas = await sbGet('resposta_atividade', 'select=item,letra&' + filtro);
+            const gravadas = {};
+            linhas.forEach((linha) => { gravadas[formatarNumeroItem(linha.item)] = linha.letra; });
+            return gravadas;
+        },
         async entregar() {
             const corpo = {
                 aluno_id: sessao.usuario.id,
