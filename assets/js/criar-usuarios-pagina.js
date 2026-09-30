@@ -81,6 +81,19 @@ function avisarSemPermissaoGuia(usuario) {
 }
 
 /**
+ * Consulta no banco quais alunos já tiveram a senha informada ("Aluno anotou?").
+ * @returns {Promise<Set<string>|null>} E-mails; null se a consulta falhou (a escolha fica travada).
+ */
+async function consultarSenhasInformadasGuia() {
+    try {
+        return await consultarSenhasInformadas();
+    } catch (erro) {
+        console.warn('Não foi possível ler "Aluno anotou?" no banco:', erro.message);
+        return null;
+    }
+}
+
+/**
  * Consulta os cadastrados em auth.users e avisa o resultado na página.
  * @returns {Promise<Map<string, string>|null>} E-mails cadastrados; null se a consulta falhou.
  */
@@ -311,7 +324,10 @@ async function iniciarGuiaUsuarios() {
         return;
     }
     const cadastrados = ehProfessor ? await consultarCadastradosGuia() : null;
-    const contexto = { cadastrados, mostrarSenha: ehProfessor, podeGravar: ehProfessor };
+    const senhasInformadas = ehProfessor ? await consultarSenhasInformadasGuia() : null;
+    const contexto = {
+        cadastrados, senhasInformadas, mostrarSenha: ehProfessor, podeGravar: ehProfessor,
+    };
     obterElementoGuia('abas').replaceChildren(...turmas.map(criarAbaTurmaGuia));
     obterElementoGuia('turmas').replaceChildren(
         ...turmas.map((turma) => criarCartaoTurmaGuia(turma, contexto)));

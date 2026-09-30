@@ -54,7 +54,7 @@ async function chamarApiUsuarios(rota, opcoes, chave) {
  * Monta o usuário do Auth de um item da lista; perfil PROFESSOR não vira linha da tabela aluno.
  * @param {Object} aluno - Item da lista (perfil opcional; o padrão é ALUNO).
  * @param {Object} turma - Turma do item.
- * @returns {Object} Usuário: email, senha, appMetadata, userMetadata, linhaAluno.
+ * @returns {Object} Usuário: email, senha, appMetadata, userMetadata, linhaAluno, linhaUsuario.
  */
 function montarUsuarioDaLista(aluno, turma) {
     const perfil = aluno.perfil || 'ALUNO';
@@ -64,6 +64,12 @@ function montarUsuarioDaLista(aluno, turma) {
         senha: aluno.senha,
         appMetadata: ehAluno ? { perfil, turma_codigo: turma.codigo } : { perfil },
         userMetadata: { nome: aluno.nome, turma_codigo: turma.codigo, turma_nome: turma.nome },
+        linhaUsuario: {
+            nome_completo: aluno.nome,
+            email: aluno.email,
+            login_usuario: aluno.email.split('@')[0],
+            perfil,
+        },
         linhaAluno: ehAluno ? {
             nome: aluno.nome,
             email: aluno.email,
@@ -165,16 +171,19 @@ async function gravarTabelaUsuarios(tabela, linhas, chave) {
  * @param {Object[]} usuarios - Usuários montados.
  * @param {{chave: string, redefinirSenhas: boolean}} contexto - Chave e opção.
  * @param {Function} aoResultado - Chamada com (situação, e-mail) a cada usuário.
- * @returns {Promise<{resumo: Object, alunos: Object[]}>} Resumo e linhas da tabela aluno.
+ * @returns {Promise<{resumo: Object, alunos: Object[], linhasUsuario: Object[]}>} Resumo e as
+ *   linhas das tabelas aluno e usuario (as duas usam o id do auth.users como chave).
  */
 async function gravarUsuariosNoAuth(usuarios, contexto, aoResultado) {
     const existentes = await listarExistentesUsuarios(contexto.chave);
     const resumo = { criado: 0, atualizado: 0, erro: 0 };
     const alunos = [];
+    const linhasUsuario = [];
     for (const usuario of usuarios) {
         try {
             const { id, resultado } = await gravarUsuarioAuthPagina(usuario, existentes, contexto);
             resumo[resultado] += 1;
+            linhasUsuario.push({ id, ...usuario.linhaUsuario });
             if (usuario.linhaAluno) alunos.push({ id, ...usuario.linhaAluno });
             aoResultado(resultado, usuario.email);
         } catch (erro) {
@@ -182,7 +191,7 @@ async function gravarUsuariosNoAuth(usuarios, contexto, aoResultado) {
             aoResultado('erro (' + erro.message + ')', usuario.email);
         }
     }
-    return { resumo, alunos };
+    return { resumo, alunos, linhasUsuario };
 }
 
 /**
@@ -202,7 +211,9 @@ async function gravarListaNoSupabase(lista, opcoes) {
         { codigo: t.codigo, nome: t.nome, turno: t.turno, horario: t.horario }));
     await gravarTabelaUsuarios('turma', turmas, chave);
     const contexto = { chave, redefinirSenhas: opcoes.redefinirSenhas };
-    const { resumo, alunos } = await gravarUsuariosNoAuth(usuarios, contexto, opcoes.aoResultado);
+    const { resumo, alunos, linhasUsuario } = await gravarUsuariosNoAuth(
+        usuarios, contexto, opcoes.aoResultado);
+    await gravarTabelaUsuarios('usuario', linhasUsuario, chave);
     await gravarTabelaUsuarios('aluno', alunos, chave);
     return resumo;
 }
@@ -214,4 +225,36 @@ async function gravarListaNoSupabase(lista, opcoes) {
  */
 async function consultarCadastradosUsuarios() {
     return listarExistentesUsuarios(obterChaveServico());
+}
+
+/**
+ * Consulta na tabela usuario quais usuários já tiveram a senha informada ("Aluno anotou?").
+ * A chave é a mesma do auth.users (usuario.id = auth.users.id).
+ * @returns {Promise<Set<string>>} Ids (auth.users.id) com senha_informada = true.
+ * @throws {Error} Se o host não for local, a chave faltar ou a API recusar.
+ */
+async function consultarSenhasInformadas() {
+    const linhas = await chamarApiUsuarios(
+        ROTA_REST_USUARIOS + 'usuario?select=id&senha_informada=eq.true', {}, obterChaveServico());
+    return new Set(linhas.map((linha) => linha.id));
+}
+
+/**
+ * Grava na tabela usuario se a senha inicial foi informada ao usuário (e quando).
+ * @param {string} usuarioId - Id do usuário (mesmo id do auth.users).
+ * @param {boolean} informada - true = senha informada; false = desfaz o registro.
+ * @returns {Promise<boolean>} true se a linha do usuário foi encontrada e atualizada.
+ * @throws {Error} Se o host não for local, a chave faltar ou a API recusar.
+ */
+async function gravarSenhaInformada(usuarioId, informada) {
+    const filtro = 'usuario?id=eq.' + encodeURIComponent(usuarioId);
+    const atualizadas = await chamarApiUsuarios(ROTA_REST_USUARIOS + filtro, {
+        metodo: 'PATCH',
+        corpo: {
+            senha_informada: informada,
+            senha_informada_em: informada ? new Date().toISOString() : null,
+        },
+        headers: { Prefer: 'return=representation' },
+    }, obterChaveServico());
+    return atualizadas.length > 0;
 }

@@ -1,14 +1,16 @@
 // Tabela de alunos da página scripts/criarUsuariosBancoDados.html: seleção por aluno, marcar
 // todos, filtro por situação, coluna "Senha" (senha inicial, para o professor repassar) e coluna
-// "Cadastrado" (Sim/Não, conforme auth.users) e coluna "Aluno anotou?" (Sim/Não, marcada pelo
-// professor ao lado do nome; fica guardada neste navegador, por e-mail).
+// "Cadastrado" (Sim/Não, conforme auth.users) e coluna "Aluno anotou?" (Sim/Não, ao lado do nome).
+// Ao trocar "Aluno anotou?", o professor grava no banco (tabela usuario, ligada ao auth.users pela
+// chave primária: senha_informada e senha_informada_em) que a senha foi informada ao aluno e
+// recebe um popup de confirmação. Ao abrir a página, o valor vem dessa tabela.
 
 const SENHA_OCULTA = '—';
 const PERFIL_PROFESSOR_LISTA = 'PROFESSOR';
 const SITUACAO_SIM = 'Sim';
 const SITUACAO_NAO = 'Não';
 const SITUACAO_DESCONHECIDA = '?';
-const CHAVE_ANOTOU = 'senai_aluno_anotou';
+const MSG_SEM_USUARIO = 'este usuário ainda não está cadastrado no Auth (grave-o antes).';
 const CLASSE_ANOTOU_SIM = 'guia-anotou--sim';
 const CLASSE_ANOTOU_NAO = 'guia-anotou--nao';
 const FILTRO_TODOS = 'todos';
@@ -33,54 +35,71 @@ function obterSituacaoCadastro(email, cadastrados) {
 }
 
 /**
- * Lê no navegador quais alunos o professor marcou como "anotou".
- * @returns {Object<string, string>} E-mail (minúsculo) → "Sim" ou "Não".
+ * Monta o popup de confirmação da gravação de "Aluno anotou?".
+ * @param {string} nome - Nome do aluno.
+ * @param {boolean} informada - Novo valor gravado.
+ * @returns {string} Mensagem do popup.
  */
-function lerAnotouGuia() {
+function montarMensagemAnotou(nome, informada) {
+    return informada
+        ? '✅ Gravado no banco de dados: a senha de ' + nome + ' foi informada ao aluno.'
+        : 'ℹ️ Registro removido do banco de dados: a senha de ' + nome
+            + ' NÃO consta como informada.';
+}
+
+/**
+ * Grava no banco a escolha de "Aluno anotou?"; se falhar, volta a escolha anterior e avisa.
+ * @param {HTMLSelectElement} escolha - Lista Sim/Não da linha.
+ * @param {{aluno: Object, usuarioId: string|undefined}} alvo - Aluno da lista e o id dele no
+ *   auth.users (chave da tabela usuario).
+ * @param {Function} pintar - Atualiza a cor da escolha.
+ */
+async function gravarEscolhaAnotouGuia(escolha, alvo, pintar) {
+    const informada = escolha.value === SITUACAO_SIM;
+    const aluno = alvo.aluno;
+    escolha.disabled = true;
     try {
-        return JSON.parse(window.localStorage.getItem(CHAVE_ANOTOU)) || {};
+        if (!alvo.usuarioId) throw new Error(MSG_SEM_USUARIO);
+        const encontrado = await gravarSenhaInformada(alvo.usuarioId, informada);
+        if (!encontrado) throw new Error(MSG_SEM_USUARIO);
+        pintar();
+        window.alert(montarMensagemAnotou(aluno.nome, informada));
     } catch (erro) {
-        return {};
+        escolha.value = informada ? SITUACAO_NAO : SITUACAO_SIM;
+        pintar();
+        window.alert('❌ Não foi possível gravar no banco de dados: ' + erro.message);
+    } finally {
+        escolha.disabled = false;
     }
 }
 
 /**
- * Guarda no navegador se o aluno anotou (sem falhar se o armazenamento estiver bloqueado).
- * @param {string} email - E-mail do aluno.
- * @param {string} resposta - "Sim" ou "Não".
- */
-function gravarAnotouGuia(email, resposta) {
-    try {
-        const anotou = lerAnotouGuia();
-        anotou[email.toLowerCase()] = resposta;
-        window.localStorage.setItem(CHAVE_ANOTOU, JSON.stringify(anotou));
-    } catch (erro) {
-        console.warn('Não foi possível guardar "Aluno anotou?":', erro.message);
-    }
-}
-
-/**
- * Cria a célula "Aluno anotou?" com a escolha Sim/Não (padrão Não) e a cor da resposta.
- * @param {string} email - E-mail do aluno.
+ * Cria a célula "Aluno anotou?" com a escolha Sim/Não (padrão Não; o valor vem do banco).
+ * Só o professor logado, em host local, consegue alterar.
+ * @param {Object} aluno - Aluno da lista de presença.
+ * @param {{cadastrados: Map<string, string>|null, senhasInformadas: Set<string>|null,
+ *   podeGravar: boolean}} contexto - Ids do auth.users por e-mail, ids com senha já informada
+ *   (tabela usuario) e permissão de gravar.
  * @returns {HTMLTableCellElement} Célula com a lista de escolha.
  */
-function criarCelulaAnotouGuia(email) {
+function criarCelulaAnotouGuia(aluno, contexto) {
     const escolha = document.createElement('select');
     escolha.className = 'guia-anotou';
-    escolha.setAttribute('aria-label', 'Aluno anotou? ' + email);
+    escolha.setAttribute('aria-label', 'Aluno anotou? ' + aluno.email);
     [SITUACAO_NAO, SITUACAO_SIM].forEach((texto) => {
         escolha.append(new Option(texto, texto));
     });
-    escolha.value = lerAnotouGuia()[email.toLowerCase()] || SITUACAO_NAO;
+    const usuarioId = contexto.cadastrados?.get(aluno.email.toLowerCase());
+    const jaInformada = usuarioId && contexto.senhasInformadas?.has(usuarioId);
+    escolha.value = jaInformada ? SITUACAO_SIM : SITUACAO_NAO;
+    escolha.disabled = !contexto.podeGravar || !contexto.senhasInformadas;
     const pintar = () => {
         escolha.classList.toggle(CLASSE_ANOTOU_SIM, escolha.value === SITUACAO_SIM);
         escolha.classList.toggle(CLASSE_ANOTOU_NAO, escolha.value === SITUACAO_NAO);
     };
     pintar();
-    escolha.addEventListener('change', () => {
-        pintar();
-        gravarAnotouGuia(email, escolha.value);
-    });
+    escolha.addEventListener('change', () => (
+        gravarEscolhaAnotouGuia(escolha, { aluno, usuarioId }, pintar)));
     const celula = document.createElement('td');
     celula.append(escolha);
     return celula;
@@ -140,7 +159,7 @@ function criarLinhaAlunoGuia(aluno, contexto, aoMudarSelecao) {
     const celulaSituacao = criarCelulaGuia('');
     celulaSituacao.className = 'guia-situacao';
     linha.append(celulaCaixa, criarCelulaGuia(aluno.numero), criarCelulaGuia(aluno.nome),
-        criarCelulaAnotouGuia(aluno.email), criarCelulaGuia(aluno.email), celulaSenha,
+        criarCelulaAnotouGuia(aluno, contexto), criarCelulaGuia(aluno.email), celulaSenha,
         celulaSituacao);
     pintarSituacaoGuia(linha, obterSituacaoCadastro(aluno.email, contexto.cadastrados));
     return linha;
