@@ -296,6 +296,19 @@ function montarListaAlunosRelatorio(linhas, base) {
 }
 
 /**
+ * Busca no banco local, turno e unidade curricular das turmas (para os cartões das abas).
+ * @returns {Promise<Map<string, Object>>} Turmas por código (vazio se a consulta falhar).
+ */
+async function buscarDadosTurmas() {
+    try {
+        const turmas = await sbGet('turma', 'select=codigo,nome,turno,local,uc');
+        return new Map(turmas.map((turma) => [turma.codigo, turma]));
+    } catch (erro) {
+        return new Map();
+    }
+}
+
+/**
  * Normaliza um texto para comparar nomes (sem acentos, minúsculo, sem espaços sobrando).
  * @param {string} texto - Texto original.
  * @returns {string} Texto normalizado.
