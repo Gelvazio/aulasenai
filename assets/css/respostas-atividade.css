@@ -147,3 +147,28 @@
 .atividade--entregue .questao .alternativas li { cursor: not-allowed; opacity: 0.85; }
 .atividade--entregue .questao .alternativas li:hover { background: #f7fafc; }
 .botao-finalizar:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Aviso rápido de gravação da resposta / entrega */
+.aviso-gravacao {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 1000;
+    max-width: min(90vw, 360px);
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: var(--finalizar-fundo);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+}
+.aviso-gravacao--visivel { opacity: 1; transform: translateY(0); }
+.aviso-gravacao--erro { background: var(--pendente-borda); }
+.identificacao-estudante__tentativa { font-size: 13px; font-weight: 700; margin-top: 6px; }
+
+@media print { .aviso-gravacao { display: none; } }

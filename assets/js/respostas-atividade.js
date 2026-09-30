@@ -14,14 +14,68 @@ const CLASSE_LINHA_PENDENTE = 'folha-respostas__linha--pendente';
 const MARCA_VAZIA = '(  )';
 const MARCA_PREENCHIDA = '( X )';
 const TURMA_EM_BRANCO = '______________';
-const MSG_ENTREGUE = 'Atividade entregue! Suas respostas foram registradas.';
-const MSG_JA_ENTREGUE = 'Esta atividade já foi entregue. As respostas não podem ser alteradas.';
-const MSG_CONFIRMAR_ENTREGA = 'Depois de entregar, as respostas não poderão ser alteradas. ' +
-    'Deseja entregar agora?';
+// REGRA: até MAXIMO_TENTATIVAS por atividade; a nova tentativa só o professor libera.
+const MAXIMO_TENTATIVAS = 3;
+const DURACAO_AVISO_MS = 3000;
+const CLASSE_AVISO = 'aviso-gravacao';
+const CLASSE_AVISO_ERRO = 'aviso-gravacao--erro';
+const MSG_REGRA_TENTATIVAS = 'Depois de entregar, só o professor pode liberar uma nova tentativa.';
+const MSG_ULTIMA_TENTATIVA = 'Você usou as ' + MAXIMO_TENTATIVAS + ' tentativas desta atividade.';
+const MSG_PEDIR_NOVA_TENTATIVA = 'Se precisar refazer, peça ao professor para liberar uma nova ' +
+    'tentativa.';
+const MSG_JA_ENTREGUE = 'Esta tentativa já foi entregue e as respostas não podem ser ' +
+    'alteradas. ' + MSG_PEDIR_NOVA_TENTATIVA;
 const MSG_BANCO_INDISPONIVEL = 'As respostas desta atividade são salvas no banco de dados, ' +
     'que está indisponível agora. Avise o professor e tente novamente mais tarde.';
 const MSG_ERRO_SALVAR = 'Não foi possível salvar a resposta. ' +
     'Verifique a conexão e tente de novo.';
+
+/**
+ * Monta a mensagem de confirmação da entrega, com o número da tentativa.
+ * @param {number} tentativa - Tentativa entregue.
+ * @returns {string} Mensagem para o aluno.
+ */
+function montarMensagemEntrega(tentativa) {
+    const orientacao = tentativa >= MAXIMO_TENTATIVAS
+        ? MSG_ULTIMA_TENTATIVA : MSG_PEDIR_NOVA_TENTATIVA;
+    return ['✅ Atividade entregue!',
+        'Suas respostas foram gravadas (tentativa ' + tentativa + ' de ' + MAXIMO_TENTATIVAS + ').',
+        '', orientacao].join('\n');
+}
+
+/**
+ * Monta a pergunta de confirmação antes de entregar a tentativa.
+ * @param {number} tentativa - Tentativa em andamento.
+ * @returns {string} Mensagem para o aluno.
+ */
+function montarMensagemConfirmarEntrega(tentativa) {
+    return ['Entregar a tentativa ' + tentativa + ' de ' + MAXIMO_TENTATIVAS + '?', '',
+        'Depois de entregar, as respostas não poderão ser alteradas.',
+        tentativa >= MAXIMO_TENTATIVAS ? MSG_ULTIMA_TENTATIVA : MSG_PEDIR_NOVA_TENTATIVA,
+    ].join('\n');
+}
+
+/**
+ * Mostra um aviso rápido (canto da tela) confirmando a gravação da resposta.
+ * @param {string} texto - Texto do aviso.
+ * @param {boolean} [ehErro] - Se é um aviso de falha.
+ */
+function mostrarAvisoGravacao(texto, ehErro) {
+    let aviso = document.querySelector('.' + CLASSE_AVISO);
+    if (!aviso) {
+        aviso = criarElemento('div', CLASSE_AVISO);
+        aviso.setAttribute('role', 'status');
+        aviso.setAttribute('aria-live', 'polite');
+        document.body.appendChild(aviso);
+    }
+    aviso.textContent = texto;
+    aviso.classList.toggle(CLASSE_AVISO_ERRO, Boolean(ehErro));
+    aviso.classList.add(CLASSE_AVISO + '--visivel');
+    clearTimeout(aviso.temporizador);
+    aviso.temporizador = setTimeout(() => {
+        aviso.classList.remove(CLASSE_AVISO + '--visivel');
+    }, DURACAO_AVISO_MS);
+}
 
 /**
  * Cria um elemento HTML com classe e texto.
@@ -103,11 +157,13 @@ async function registrarResposta(estado, item, letra) {
     estado.atualizarFolha();
     try {
         await estado.provedor.salvarResposta(item.numero, letra);
+        mostrarAvisoGravacao('✅ Resposta gravada: questão ' + item.numero + ' = ' + letra);
     } catch (erro) {
         if (letraAnterior) estado.dados.respostas[item.numero] = letraAnterior;
         else delete estado.dados.respostas[item.numero];
         destacarAlternativa(item, letraAnterior);
         estado.atualizarFolha();
+        mostrarAvisoGravacao('❌ Resposta NÃO gravada: questão ' + item.numero, true);
         window.alert(erro.message || MSG_ERRO_SALVAR);
     }
 }
@@ -328,12 +384,13 @@ function marcarEntregue(estado, entregueEm) {
 async function finalizarAtividade(estado) {
     if (estado.entregue) return window.alert(MSG_JA_ENTREGUE);
     if (!validarAtividade(estado)) return;
-    if (!window.confirm(MSG_CONFIRMAR_ENTREGA)) return;
+    if (!window.confirm(montarMensagemConfirmarEntrega(estado.tentativa))) return;
     try {
         const resultado = await estado.provedor.entregar();
         estado.atualizarFolha();
         marcarEntregue(estado, resultado.entregueEm);
-        window.alert(MSG_ENTREGUE);
+        mostrarAvisoGravacao('✅ Entrega gravada: tentativa ' + estado.tentativa);
+        window.alert(montarMensagemEntrega(estado.tentativa));
     } catch (erro) {
         window.alert(erro.message || MSG_ERRO_SALVAR);
     }
@@ -376,7 +433,8 @@ function atualizarFolha(estado) {
     const respondidas = estado.itens.filter((item) => estado.dados.respostas[item.numero]).length;
     const contagem = document.querySelector('.folha-respostas__contagem');
     if (contagem) {
-        contagem.textContent = 'Respondidas: ' + respondidas + ' de ' + estado.itens.length;
+        contagem.textContent = 'Respondidas: ' + respondidas + ' de ' + estado.itens.length +
+            ' · Tentativa ' + estado.tentativa + ' de ' + MAXIMO_TENTATIVAS;
     }
 }
 
@@ -445,6 +503,7 @@ async function iniciarRespostasAtividade() {
         itens: listarItens(),
         dados: { nome: carregado.nome || '', respostas: carregado.respostas || {} },
         turma: carregado.turma || '',
+        tentativa: carregado.tentativa || 1,
         entregue: Boolean(carregado.entregueEm),
     };
     estado.atualizarFolha = () => atualizarFolha(estado);

@@ -114,3 +114,18 @@ body {
     .painel-tabela { font-size: 12px; }
     .painel-filtros select { min-width: 100%; }
 }
+
+/* Abas de tentativa e botão de liberar */
+.painel-detalhe .painel-botao { margin: 6px 0 10px; }
+.painel-abas { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.painel-aba {
+    padding: 6px 12px;
+    border: 1px solid var(--painel-borda);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--painel-azul);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.painel-aba--ativa { background: var(--painel-azul); color: #fff; }

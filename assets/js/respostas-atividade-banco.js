@@ -1,12 +1,15 @@
 // Provedor "banco" das respostas das atividades (usado por assets/js/respostas-atividade.js).
 // Ler a atividade é livre; o login (Supabase Auth) só é pedido ao marcar uma alternativa.
-// Respostas: tabela resposta_atividade (upsert por aluno/atividade/item).
-// Entrega: tabela entrega_atividade.
+// Respostas: tabela resposta_atividade (upsert por aluno/atividade/tentativa/item).
+// Entrega: tabela entrega_atividade (uma por tentativa).
+// Tentativas: até MAXIMO_TENTATIVAS por atividade; a nova tentativa só o professor libera
+// (tabela liberacao_atividade). Plano: docs/regra-3-tentativas-atividade.md.
 // O gabarito NUNCA vem para a página do aluno (tabela gabarito só é lida pelo professor).
 // Depende de: supabase-js v2 (CDN), js/supabase.js (SUPABASE, sbH, sbGet) e js/login.js
 // (PAGINA_LOGIN, PARAMETRO_VOLTAR, fazerLogout).
 
-const ROTA_RESPOSTAS = '/rest/v1/resposta_atividade?on_conflict=aluno_id,atividade_id,item';
+const ROTA_RESPOSTAS =
+    '/rest/v1/resposta_atividade?on_conflict=aluno_id,atividade_id,tentativa,item';
 const ROTA_ENTREGAS = '/rest/v1/entrega_atividade';
 const PREFERENCIA_UPSERT = 'resolution=merge-duplicates,return=minimal';
 const CODIGO_JA_EXISTE = 409;
@@ -52,18 +55,32 @@ async function lerIdentificacao(usuario) {
 }
 
 /**
- * Lê as respostas e a entrega do aluno logado nesta atividade.
+ * Lê a tentativa em andamento do aluno logado: a maior liberada pelo professor (mínimo 1).
  * @param {number} atividadeId - Id da atividade.
- * @returns {Promise<{respostas: Object<string, string>, entregueEm: string}>} Dados do aluno.
+ * @returns {Promise<number>} Número da tentativa em andamento.
+ */
+async function lerTentativaAtual(atividadeId) {
+    const liberacoes = await sbGet('liberacao_atividade',
+        'select=tentativa&atividade_id=eq.' + atividadeId);
+    return Math.max(1, ...liberacoes.map((liberacao) => liberacao.tentativa));
+}
+
+/**
+ * Lê as respostas e a entrega do aluno logado na tentativa em andamento desta atividade.
+ * @param {number} atividadeId - Id da atividade.
+ * @returns {Promise<{respostas: Object<string, string>, entregueEm: string, tentativa: number}>}
+ *     Dados do aluno.
  */
 async function lerRespostasDoAluno(atividadeId) {
+    const tentativa = await lerTentativaAtual(atividadeId);
+    const filtro = 'atividade_id=eq.' + atividadeId + '&tentativa=eq.' + tentativa;
     const [linhas, entregas] = await Promise.all([
-        sbGet('resposta_atividade', 'select=item,letra&atividade_id=eq.' + atividadeId),
-        sbGet('entrega_atividade', 'select=entregue_em&atividade_id=eq.' + atividadeId),
+        sbGet('resposta_atividade', 'select=item,letra&' + filtro),
+        sbGet('entrega_atividade', 'select=entregue_em&' + filtro),
     ]);
     const respostas = {};
     linhas.forEach((linha) => { respostas[formatarNumeroItem(linha.item)] = linha.letra; });
-    return { respostas, entregueEm: entregas[0]?.entregue_em || '' };
+    return { respostas, entregueEm: entregas[0]?.entregue_em || '', tentativa };
 }
 
 /**
@@ -108,6 +125,9 @@ function montarIdentificacaoBanco(sessao) {
     bloco.appendChild(criarElemento('div', 'aula-title', 'Conectado como ' + sessao.nome));
     bloco.appendChild(criarElemento('p', 'identificacao-estudante__texto',
         'Suas respostas são salvas automaticamente' + complemento + '.'));
+    const textoTentativa = 'Tentativa ' + sessao.tentativa + ' de ' + MAXIMO_TENTATIVAS + '. ' +
+        MSG_REGRA_TENTATIVAS;
+    bloco.appendChild(criarElemento('p', 'identificacao-estudante__tentativa', textoTentativa));
     bloco.appendChild(criarBotao('btn-export btn-export--secundario', '🚪 Sair', fazerLogout));
     return bloco;
 }
@@ -129,6 +149,7 @@ async function carregarDoBanco(sessao) {
 
         Object.assign(sessao, await lerIdentificacao(sessao.usuario));
         const doAluno = await lerRespostasDoAluno(sessao.atividade.id);
+        sessao.tentativa = doAluno.tentativa;
         const identificacao = { nome: sessao.nome, turma: sessao.turma };
         return { disponivel: true, logado: true, ...identificacao, ...doAluno };
     } catch (erro) {
@@ -142,7 +163,7 @@ async function carregarDoBanco(sessao) {
  * @returns {Object} Provedor usado por respostas-atividade.js.
  */
 function criarProvedorRespostasBanco() {
-    const sessao = { usuario: null, atividade: null, nome: '', turma: '' };
+    const sessao = { usuario: null, atividade: null, nome: '', turma: '', tentativa: 1 };
     return {
         carregar: () => carregarDoBanco(sessao),
         montarIdentificacao: () => montarIdentificacaoBanco(sessao),
@@ -155,6 +176,7 @@ function criarProvedorRespostasBanco() {
             const corpo = {
                 aluno_id: sessao.usuario.id,
                 atividade_id: sessao.atividade.id,
+                tentativa: sessao.tentativa,
                 item: Number(numero),
                 letra,
             };
@@ -162,13 +184,19 @@ function criarProvedorRespostasBanco() {
             if (!resposta.ok) throw new Error(MSG_ERRO_SALVAR);
         },
         async entregar() {
-            const corpo = { aluno_id: sessao.usuario.id, atividade_id: sessao.atividade.id };
+            const corpo = {
+                aluno_id: sessao.usuario.id,
+                atividade_id: sessao.atividade.id,
+                tentativa: sessao.tentativa,
+            };
             const resposta = await enviarAoBanco(ROTA_ENTREGAS, corpo, 'return=representation');
             const jaEntregue = resposta.status === CODIGO_JA_EXISTE;
-            if (jaEntregue) return { entregueEm: new Date().toISOString() };
+            if (jaEntregue) {
+                return { entregueEm: new Date().toISOString(), tentativa: sessao.tentativa };
+            }
             if (!resposta.ok) throw new Error(MSG_ERRO_ENTREGA);
             const [entrega] = await resposta.json();
-            return { entregueEm: entrega?.entregue_em };
+            return { entregueEm: entrega?.entregue_em, tentativa: sessao.tentativa };
         },
     };
 }

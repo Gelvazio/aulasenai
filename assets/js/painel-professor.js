@@ -1,4 +1,7 @@
 // Painel do professor: respostas, acertos, notas e entregas das atividades, por turma.
+// Tentativas: até MAXIMO_TENTATIVAS por atividade; a nota do aluno é a MELHOR tentativa entregue.
+// O professor libera uma nova tentativa clicando no aluno (RPC liberar_nova_tentativa).
+// Plano: docs/regra-3-tentativas-atividade.md.
 // Acesso: login pelo Supabase Auth com app_metadata.perfil = "PROFESSOR" (o RLS também exige).
 // Depende de: supabase-js v2 (CDN), js/supabase.js (obterClienteSupabase, sbGet) e js/login.js.
 
@@ -6,6 +9,8 @@ const PERFIL_PROFESSOR = 'PROFESSOR';
 const NOTA_MAXIMA = 10;
 const CASAS_NOTA = 1;
 const SEPARADOR_CSV = ';';
+const MAXIMO_TENTATIVAS = 3;
+const ROTA_LIBERAR = '/rest/v1/rpc/liberar_nova_tentativa';
 const IDS_PAINEL = {
     aviso: 'painelAviso',
     conteudo: 'painelConteudo',
@@ -23,6 +28,7 @@ const SELECT_ATIVIDADES = 'select=id,descricao,data_atividade,total_itens,' +
 const MSG_ENTRAR = 'Entre com a sua conta de professor para ver o painel.';
 const MSG_RESTRITO = 'Acesso restrito ao professor.';
 const MSG_SEM_ATIVIDADES = 'Nenhuma atividade cadastrada no banco ainda.';
+const MSG_ERRO_LIBERAR = 'Não foi possível liberar a nova tentativa: ';
 const MSG_ERRO = 'Não foi possível carregar os dados. ' +
     'Verifique se o projeto Supabase está ativo.';
 
@@ -109,27 +115,59 @@ function preencherSelect(select, opcoes) {
 }
 
 /**
- * Carrega os dados de uma atividade e turma: alunos, gabarito, respostas e entregas.
+ * Devolve (criando se preciso) a tentativa de um aluno no mapa de tentativas.
+ * @param {Object} mapa - Mapa aluno → tentativa → dados.
+ * @param {string} alunoId - Id do aluno.
+ * @param {number} numero - Número da tentativa.
+ * @returns {{numero: number, respostas: Object, entregueEm: string}} Tentativa.
+ */
+function obterTentativa(mapa, alunoId, numero) {
+    mapa[alunoId] = mapa[alunoId] || {};
+    mapa[alunoId][numero] = mapa[alunoId][numero] ||
+        { numero, respostas: {}, entregueEm: '' };
+    return mapa[alunoId][numero];
+}
+
+/**
+ * Agrupa respostas, entregas e liberações por aluno e por tentativa.
+ * @param {Object[]} respostas - Linhas de resposta_atividade.
+ * @param {Object[]} entregas - Linhas de entrega_atividade.
+ * @param {Object[]} liberacoes - Linhas de liberacao_atividade.
+ * @returns {Object} Mapa aluno → tentativa → {numero, respostas, entregueEm}.
+ */
+function agruparTentativas(respostas, entregas, liberacoes) {
+    const mapa = {};
+    respostas.forEach((resposta) => {
+        obterTentativa(mapa, resposta.aluno_id, resposta.tentativa)
+            .respostas[resposta.item] = resposta.letra;
+    });
+    entregas.forEach((entrega) => {
+        obterTentativa(mapa, entrega.aluno_id, entrega.tentativa).entregueEm = entrega.entregue_em;
+    });
+    liberacoes.forEach((liberacao) => {
+        obterTentativa(mapa, liberacao.aluno_id, liberacao.tentativa);
+    });
+    return mapa;
+}
+
+/**
+ * Carrega os dados de uma atividade e turma: alunos, gabarito, respostas, entregas e liberações.
  * @param {number} atividadeId - Id da atividade.
  * @param {string} turmaCodigo - Código da turma.
- * @returns {Promise<Object>} alunos, gabarito (item→letra), respostas e entregas por aluno.
+ * @returns {Promise<Object>} alunos, gabarito (item→letra) e tentativas por aluno.
  */
 async function carregarDadosAtividade(atividadeId, turmaCodigo) {
     const filtro = 'atividade_id=eq.' + atividadeId;
-    const [alunos, gabarito, respostas, entregas] = await Promise.all([
+    const [alunos, gabarito, respostas, entregas, liberacoes] = await Promise.all([
         sbGet('aluno', 'select=id,nome,email,numero_chamada&turma_codigo=eq.' +
             encodeURIComponent(turmaCodigo) + '&order=numero_chamada'),
         sbGet('gabarito', 'select=item,titulo,letra&' + filtro + '&order=item'),
-        sbGet('resposta_atividade', 'select=aluno_id,item,letra&' + filtro),
-        sbGet('entrega_atividade', 'select=aluno_id,entregue_em&' + filtro),
+        sbGet('resposta_atividade', 'select=aluno_id,tentativa,item,letra&' + filtro),
+        sbGet('entrega_atividade', 'select=aluno_id,tentativa,entregue_em&' + filtro),
+        sbGet('liberacao_atividade', 'select=aluno_id,tentativa&' + filtro),
     ]);
-    const respostasPorAluno = {};
-    respostas.forEach((resposta) => {
-        respostasPorAluno[resposta.aluno_id] = respostasPorAluno[resposta.aluno_id] || {};
-        respostasPorAluno[resposta.aluno_id][resposta.item] = resposta.letra;
-    });
-    const entregasPorAluno = Object.fromEntries(entregas.map((e) => [e.aluno_id, e.entregue_em]));
-    return { alunos, gabarito, respostasPorAluno, entregasPorAluno };
+    const tentativasPorAluno = agruparTentativas(respostas, entregas, liberacoes);
+    return { alunos, gabarito, tentativasPorAluno };
 }
 
 /**
@@ -146,16 +184,45 @@ function calcularResultado(respostas, gabarito) {
 }
 
 /**
+ * Escolhe a melhor tentativa entregue (mais acertos; em empate, a mais recente).
+ * @param {Object[]} tentativas - Tentativas já com o resultado calculado.
+ * @returns {Object|null} Melhor tentativa entregue ou null se nenhuma foi entregue.
+ */
+function escolherMelhorTentativa(tentativas) {
+    const entregues = tentativas.filter((tentativa) => tentativa.entregueEm);
+    return entregues.reduce((melhor, tentativa) => (
+        !melhor || tentativa.acertos >= melhor.acertos ? tentativa : melhor), null);
+}
+
+/**
+ * Monta a linha do relatório de um aluno com todas as suas tentativas.
+ * @param {Object} aluno - Linha da tabela aluno.
+ * @param {Object} dados - Retorno de carregarDadosAtividade.
+ * @returns {Object} Linha com tentativas, melhor resultado e se pode liberar nova tentativa.
+ */
+function montarLinhaRelatorio(aluno, dados) {
+    const brutas = Object.values(dados.tentativasPorAluno[aluno.id] || {});
+    const lista = brutas.length ? brutas : [{ numero: 1, respostas: {}, entregueEm: '' }];
+    const tentativas = lista.sort((a, b) => a.numero - b.numero).map((tentativa) => (
+        { ...tentativa, ...calcularResultado(tentativa.respostas, dados.gabarito) }));
+    const atual = tentativas[tentativas.length - 1];
+    const destaque = escolherMelhorTentativa(tentativas) || atual;
+    const entregas = tentativas.filter((tentativa) => tentativa.entregueEm);
+    const ultimaEntrega = entregas.length ? entregas[entregas.length - 1].entregueEm : '';
+    return {
+        aluno, tentativas, atual, destaque, entregueEm: ultimaEntrega,
+        podeLiberar: Boolean(atual.entregueEm) && atual.numero < MAXIMO_TENTATIVAS,
+        respondidas: destaque.respondidas, acertos: destaque.acertos, nota: destaque.nota,
+    };
+}
+
+/**
  * Monta as linhas do relatório (uma por aluno da turma).
  * @param {Object} dados - Retorno de carregarDadosAtividade.
- * @returns {Object[]} Linhas com aluno, resultado e entrega.
+ * @returns {Object[]} Linhas com aluno, tentativas e resultado da melhor tentativa.
  */
 function montarLinhasRelatorio(dados) {
-    return dados.alunos.map((aluno) => {
-        const respostas = dados.respostasPorAluno[aluno.id] || {};
-        const entregueEm = dados.entregasPorAluno[aluno.id] || '';
-        return { aluno, respostas, entregueEm, ...calcularResultado(respostas, dados.gabarito) };
-    });
+    return dados.alunos.map((aluno) => montarLinhaRelatorio(aluno, dados));
 }
 
 /**
@@ -191,7 +258,8 @@ function mostrarResumo(linhas, totalItens) {
 function montarLinhaAluno(linha, totalItens, aoClicar) {
     const tr = document.createElement('tr');
     tr.className = linha.entregueEm ? 'aluno--entregue' : 'aluno--pendente';
-    [linha.aluno.numero_chamada, linha.aluno.nome, linha.respondidas + '/' + totalItens,
+    [linha.aluno.numero_chamada, linha.aluno.nome,
+        linha.atual.numero + '/' + MAXIMO_TENTATIVAS, linha.respondidas + '/' + totalItens,
         linha.acertos, linha.nota, formatarEntrega(linha.entregueEm)]
         .forEach((valor) => tr.appendChild(criarElementoPainel('td', '', valor ?? '')));
     tr.tabIndex = 0;
@@ -201,13 +269,12 @@ function montarLinhaAluno(linha, totalItens, aoClicar) {
 }
 
 /**
- * Mostra, item a item, a resposta do aluno comparada ao gabarito.
- * @param {Object} linha - Linha do relatório.
+ * Monta a tabela item a item de uma tentativa, comparada ao gabarito.
+ * @param {Object} tentativa - Tentativa com as respostas marcadas.
  * @param {{item: number, titulo: string, letra: string}[]} gabarito - Gabarito.
+ * @returns {HTMLTableElement} Tabela de respostas.
  */
-function mostrarDetalhe(linha, gabarito) {
-    const detalhe = document.getElementById(IDS_PAINEL.detalhe);
-    detalhe.replaceChildren(criarElementoPainel('h3', '', 'Respostas de ' + linha.aluno.nome));
+function montarTabelaTentativa(tentativa, gabarito) {
     const tabela = criarElementoPainel('table', 'painel-tabela');
     const cabecalho = tabela.createTHead().insertRow();
     ['Item', 'Questão', 'Marcada', 'Gabarito', ''].forEach((texto) => {
@@ -215,16 +282,109 @@ function mostrarDetalhe(linha, gabarito) {
     });
     const corpo = tabela.createTBody();
     gabarito.forEach((item) => {
-        const marcada = linha.respostas[item.item] || '—';
+        const marcada = tentativa.respostas[item.item] || '—';
         const acertou = marcada === item.letra;
         const tr = corpo.insertRow();
         tr.className = acertou ? 'item--acerto' : 'item--erro';
         [item.item, item.titulo, marcada, item.letra, acertou ? '✔' : '✘']
             .forEach((valor) => tr.appendChild(criarElementoPainel('td', '', valor)));
     });
-    detalhe.appendChild(tabela);
+    return tabela;
+}
+
+/**
+ * Descreve uma tentativa para o título da aba (número, situação e nota).
+ * @param {Object} tentativa - Tentativa com resultado.
+ * @returns {string} Texto da aba.
+ */
+function rotuloTentativa(tentativa) {
+    const situacao = tentativa.entregueEm ? 'nota ' + tentativa.nota : 'em andamento';
+    return 'Tentativa ' + tentativa.numero + ' (' + situacao + ')';
+}
+
+/**
+ * Pede confirmação e libera a próxima tentativa do aluno (só o professor consegue).
+ * @param {Object} painel - Estado do painel.
+ * @param {Object} linha - Linha do relatório do aluno.
+ */
+async function liberarNovaTentativa(painel, linha) {
+    const proxima = linha.atual.numero + 1;
+    const pergunta = 'Liberar a tentativa ' + proxima + ' de ' + MAXIMO_TENTATIVAS + ' para ' +
+        linha.aluno.nome + '?\n\nA atividade abre com as respostas da tentativa anterior.';
+    if (!window.confirm(pergunta)) return;
+    const resposta = await fetch(SUPABASE.URL + ROTA_LIBERAR, {
+        method: 'POST',
+        headers: await sbH(),
+        body: JSON.stringify({ p_aluno: linha.aluno.id, p_atividade: painel.atividadeId }),
+    });
+    if (!resposta.ok) {
+        const erro = await resposta.json().catch(() => ({}));
+        return window.alert(MSG_ERRO_LIBERAR + (erro.message || resposta.status));
+    }
+    window.alert('✅ Tentativa ' + proxima + ' de ' + MAXIMO_TENTATIVAS + ' liberada para ' +
+        linha.aluno.nome + '.');
+    await atualizarRelatorio(painel, linha.aluno.id);
+}
+
+/**
+ * Monta as abas Tentativa 1/2/3 e mostra a tabela da tentativa escolhida.
+ * @param {HTMLElement} detalhe - Área do detalhe.
+ * @param {Object} linha - Linha do relatório.
+ * @param {{item: number, titulo: string, letra: string}[]} gabarito - Gabarito.
+ */
+function montarAbasTentativas(detalhe, linha, gabarito) {
+    const abas = criarElementoPainel('div', 'painel-abas');
+    const area = criarElementoPainel('div');
+    linha.tentativas.forEach((tentativa) => {
+        const aba = criarElementoPainel('button', 'painel-aba', rotuloTentativa(tentativa));
+        aba.type = 'button';
+        aba.addEventListener('click', () => {
+            abas.querySelectorAll('.painel-aba').forEach((outra) => {
+                outra.classList.toggle('painel-aba--ativa', outra === aba);
+            });
+            area.replaceChildren(montarTabelaTentativa(tentativa, gabarito));
+        });
+        abas.appendChild(aba);
+    });
+    detalhe.append(abas, area);
+    abas.querySelectorAll('.painel-aba')[linha.tentativas.indexOf(linha.destaque)].click();
+}
+
+/**
+ * Mostra o detalhe do aluno: abas por tentativa e o botão de liberar nova tentativa.
+ * @param {Object} painel - Estado do painel (atividade e gabarito atuais).
+ * @param {Object} linha - Linha do relatório.
+ */
+function mostrarDetalhe(painel, linha) {
+    const detalhe = document.getElementById(IDS_PAINEL.detalhe);
+    detalhe.replaceChildren(criarElementoPainel('h3', '', 'Respostas de ' + linha.aluno.nome));
+    const usadas = linha.tentativas.length + ' de ' + MAXIMO_TENTATIVAS;
+    detalhe.appendChild(criarElementoPainel('p', 'painel-dica',
+        'Tentativas usadas: ' + usadas + ' · a nota vale a melhor tentativa.'));
+    if (linha.podeLiberar) {
+        detalhe.appendChild(criarBotaoLiberar(painel, linha));
+    } else if (linha.atual.numero >= MAXIMO_TENTATIVAS && linha.atual.entregueEm) {
+        detalhe.appendChild(criarElementoPainel('p', 'painel-dica', 'O aluno usou as ' +
+            MAXIMO_TENTATIVAS + ' tentativas.'));
+    }
+    montarAbasTentativas(detalhe, linha, painel.gabarito);
     detalhe.hidden = false;
     detalhe.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/**
+ * Cria o botão "Liberar nova tentativa" do aluno.
+ * @param {Object} painel - Estado do painel.
+ * @param {Object} linha - Linha do relatório.
+ * @returns {HTMLButtonElement} Botão.
+ */
+function criarBotaoLiberar(painel, linha) {
+    const proxima = linha.atual.numero + 1;
+    const botao = criarElementoPainel('button', 'painel-botao',
+        '🔓 Liberar nova tentativa (' + proxima + ' de ' + MAXIMO_TENTATIVAS + ')');
+    botao.type = 'button';
+    botao.addEventListener('click', () => liberarNovaTentativa(painel, linha));
+    return botao;
 }
 
 /**
@@ -233,9 +393,10 @@ function mostrarDetalhe(linha, gabarito) {
  * @param {string} nomeArquivo - Nome do arquivo .csv.
  */
 function exportarCsv(linhas, nomeArquivo) {
-    const cabecalho = ['Nº', 'Nome', 'E-mail', 'Respondidas', 'Acertos', 'Nota', 'Entregue em'];
+    const cabecalho = ['Nº', 'Nome', 'E-mail', 'Tentativas', 'Respondidas', 'Acertos',
+        'Nota (melhor tentativa)', 'Entregue em'];
     const corpo = linhas.map((linha) => [linha.aluno.numero_chamada, linha.aluno.nome,
-        linha.aluno.email, linha.respondidas, linha.acertos, linha.nota,
+        linha.aluno.email, linha.atual.numero, linha.respondidas, linha.acertos, linha.nota,
         formatarEntrega(linha.entregueEm)]);
     const celulaCsv = (valor) => '"' + String(valor ?? '').replace(/"/g, '""') + '"';
     const texto = [cabecalho, ...corpo]
@@ -252,8 +413,9 @@ function exportarCsv(linhas, nomeArquivo) {
 /**
  * Carrega e mostra o relatório da atividade e turma escolhidas nos filtros.
  * @param {Object} painel - Estado do painel (atividades carregadas e relatório atual).
+ * @param {string} [alunoAbertoId] - Aluno cujo detalhe deve reabrir depois de atualizar.
  */
-async function atualizarRelatorio(painel) {
+async function atualizarRelatorio(painel, alunoAbertoId) {
     const atividadeId = Number(document.getElementById(IDS_PAINEL.atividade).value);
     const turmaCodigo = document.getElementById(IDS_PAINEL.turma).value;
     const atividade = painel.atividades.find((item) => item.id === atividadeId);
@@ -261,13 +423,17 @@ async function atualizarRelatorio(painel) {
 
     const dados = await carregarDadosAtividade(atividadeId, turmaCodigo);
     painel.linhas = montarLinhasRelatorio(dados);
+    painel.atividadeId = atividadeId;
+    painel.gabarito = dados.gabarito;
     painel.nomeCsv = 'atividade-' + atividadeId + '-turma-' + turmaCodigo + '.csv';
     mostrarResumo(painel.linhas, atividade.total_itens);
 
     const corpo = document.querySelector('#' + IDS_PAINEL.tabela + ' tbody');
     corpo.replaceChildren(...painel.linhas.map((linha) => montarLinhaAluno(linha,
-        atividade.total_itens, () => mostrarDetalhe(linha, dados.gabarito))));
+        atividade.total_itens, () => mostrarDetalhe(painel, linha))));
     document.getElementById(IDS_PAINEL.detalhe).hidden = true;
+    const aberta = painel.linhas.find((linha) => linha.aluno.id === alunoAbertoId);
+    if (aberta) mostrarDetalhe(painel, aberta);
 }
 
 /**
@@ -310,7 +476,7 @@ async function iniciarPainelProfessor() {
             professor.user_metadata?.nome || professor.email;
         document.getElementById(IDS_PAINEL.sair).addEventListener('click', fazerLogout);
 
-        const painel = { atividades: [], linhas: [], nomeCsv: '' };
+        const painel = { atividades: [], linhas: [], nomeCsv: '', atividadeId: 0, gabarito: [] };
         if (!(await prepararFiltros(painel))) return mostrarAvisoPainel(MSG_SEM_ATIVIDADES);
         document.getElementById(IDS_PAINEL.aviso).hidden = true;
         document.getElementById(IDS_PAINEL.conteudo).hidden = false;
