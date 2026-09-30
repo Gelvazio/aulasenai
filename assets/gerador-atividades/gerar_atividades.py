@@ -24,6 +24,7 @@ CAMPOS_DADOS = ("uc", "uc_curta", "curso", "docente")
 CAMPO_FOLHA_RESPOSTAS = "Folha de respostas"
 CAMPO_TURMA = "Turma"
 CAMPO_ROTULO = "Rótulo da aula"
+CAMPO_PDF_GABARITO = "Exportar PDF com gabarito"
 PREFIXO_AVALIACAO = "AVALIACAO-"
 VALOR_ATIVADO = "sim"
 URL_SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
@@ -103,6 +104,7 @@ def ler_questoes(md_path):
         "folha": campo_opcional(texto, CAMPO_FOLHA_RESPOSTAS).lower() == VALOR_ATIVADO,
         "turma": campo_opcional(texto, CAMPO_TURMA),
     }
+    meta["pdf_gabarito"] = campo_opcional(texto, CAMPO_PDF_GABARITO).lower() == VALOR_ATIVADO
     meta["rotulo"] = campo_opcional(texto, CAMPO_ROTULO) or f"Aula {meta['aula']}"
     itens = []
     for bloco in re.split(r"^## ", texto, flags=re.M)[1:]:
@@ -164,6 +166,13 @@ def card(it):
     return "\n".join(partes)
 
 
+BLOCO_PDF_GABARITO = '''
+            <div class="export-bar export-bar--gabarito" data-somente-perfil="PROFESSOR" hidden>
+                <button class="btn-export" id="btnExportarPDFGabarito" type="button">📥 Exportar PDF com gabarito</button>
+                <small>Só o professor vê este botão: o gabarito é lido do banco e não fica nesta página.</small>
+            </div>'''
+
+
 def caminho_saida(md_path):
     """HTML da atividade: avaliações (AVALIACAO-*) perdem o sufixo -QUESTOES; aulas o mantêm."""
     if md_path.stem.startswith(PREFIXO_AVALIACAO):
@@ -187,6 +196,9 @@ def gerar_atividade(md_path, dados):
         "{{TOTAL}}": str(meta["total"]),
         "{{AULA}}": e(meta["aula"]),
         "{{ROTULO_AULA}}": e(meta["rotulo"]),
+        "{{PDF_GABARITO}}": BLOCO_PDF_GABARITO if meta["pdf_gabarito"] else "",
+        "{{PDF_GABARITO_JS}}": (f'\n    <script src="{assets}/js/avaliacao-pdf-professor.js"></script>'
+                                if meta["pdf_gabarito"] else ""),
         "{{TEMA}}": e(meta["tema"]),
         "{{ICONE}}": meta["icone"],
         "{{DURACAO}}": e(meta["duracao"]),

@@ -49,7 +49,21 @@ function coletarQuestoes() {
     return questoes;
 }
 
-function exportarPDFAtividade() {
+/**
+ * Rótulo da aula ou avaliação para o PDF ("AULA 05" ou "AVALIAÇÃO 01").
+ * @param {string} aula - Valor de data-aula ("05" ou "AV-01").
+ * @returns {string} Rótulo em maiúsculas.
+ */
+function rotuloDaAula(aula) {
+    return /^AV-/.test(aula) ? 'AVALIAÇÃO ' + aula.slice(3) : 'AULA ' + aula;
+}
+
+/**
+ * Exporta a atividade em PDF.
+ * @param {string[][]} [gabaritoExterno] - Linhas [item, título, letra] vindas do banco (só
+ *     professor); quando informado, o PDF inclui o gabarito.
+ */
+function exportarPDFAtividade(gabaritoExterno) {
     const jsPDF = window.jspdf?.jsPDF || window.jsPDF;
     if (!jsPDF) {
         alert('Erro: jsPDF não carregado (verifique a conexão com a internet).');
@@ -58,7 +72,8 @@ function exportarPDFAtividade() {
 
     const pagina = dadosDaPagina();
     const questoes = coletarQuestoes();
-    const incluirGabarito = document.getElementById('incluirGabarito')?.checked;
+    if (gabaritoExterno) pagina.gabarito = gabaritoExterno;
+    const incluirGabarito = Boolean(gabaritoExterno) || document.getElementById('incluirGabarito')?.checked;
     const doc = new jsPDF('p', 'mm', 'a4');
     const margin = 15;
     let yPos = 20;
@@ -70,7 +85,7 @@ function exportarPDFAtividade() {
             { content: 'ATIVIDADE AVALIATIVA', styles: { fontStyle: 'bold', fontSize: 11, halign: 'center', fillColor: [240, 240, 240] } },
             { content: 'Desempenho', styles: { fontStyle: 'bold', fontSize: 10, halign: 'center', fillColor: [240, 240, 240] } }
         ],
-        [ { content: textoPDF('AULA ' + pagina.aula + ' — ' + pagina.tema.toUpperCase() + ' (' + pagina.total + ' ITENS)'), styles: { fontSize: 10, fontStyle: 'bold' }, colSpan: 4 } ],
+        [ { content: textoPDF(rotuloDaAula(pagina.aula) + ' — ' + pagina.tema.toUpperCase() + ' (' + pagina.total + ' ITENS)'), styles: { fontSize: 10, fontStyle: 'bold' }, colSpan: 4 } ],
         [ { content: 'Data: ___/___/___', styles: { fontSize: 10 } }, { content: '' }, { content: '' }, { content: '' } ],
         [ { content: 'Docente: ' + pagina.docente.toUpperCase(), styles: { fontSize: 10, fontStyle: 'bold' }, colSpan: 2 }, { content: '' }, { content: '' } ],
         [ { content: 'Unidade Curricular: ' + pagina.uc, styles: { fontSize: 10 }, colSpan: 2 },
@@ -126,10 +141,10 @@ function exportarPDFAtividade() {
         doc.setPage(i);
         doc.setFontSize(8);
         doc.setFont(undefined, 'normal');
-        doc.text(textoPDF('Aula ' + pagina.aula + ' — ' + pagina.tema + ' · ' + pagina.ucCurta + ' · SENAI · Página ' + i + ' de ' + total), 105, 290, { align: 'center' });
+        doc.text(textoPDF(rotuloDaAula(pagina.aula) + ' — ' + pagina.tema + ' · ' + pagina.ucCurta + ' · SENAI · Página ' + i + ' de ' + total), 105, 290, { align: 'center' });
     }
 
-    doc.save('Atividade-Aula-' + pagina.aula + '-' + pagina.total + '-Questoes' + (incluirGabarito ? '-COM-GABARITO' : '') + '.pdf');
+    doc.save('Atividade-' + rotuloDaAula(pagina.aula).replace(/\s+/g, '-') + '-' + pagina.total + '-Questoes' + (incluirGabarito ? '-COM-GABARITO' : '') + '.pdf');
 }
 
-document.getElementById('btnExportarPDF')?.addEventListener('click', exportarPDFAtividade);
+document.getElementById('btnExportarPDF')?.addEventListener('click', () => exportarPDFAtividade());
