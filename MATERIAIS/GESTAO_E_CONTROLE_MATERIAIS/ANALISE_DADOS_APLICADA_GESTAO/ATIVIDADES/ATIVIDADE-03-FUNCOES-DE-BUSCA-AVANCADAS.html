@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 03 — Funções de Busca Avançadas (13 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/menu.css">
+    <script src="MENU-ATIVIDADES.js" defer></script>
+    <script src="../../../../js/menu.js" defer></script>
+    <script src="../../../../js/header-usuario.js" defer></script>
+</head>
+<body data-aula="03" data-tema="Funções de Busca Avançadas" data-total="13"
+      data-uc="Análise de Dados Aplicada à Gestão" data-uc-curta="Análise de Dados Aplicada à Gestão"
+      data-docente="Gelvazio Camargo" data-turma="&gt; Fonte única extraída de ATIVIDADE-03-*.docx por scripts/extrair-atividades-docx.py. A linha" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🔍 Atividade 03: Funções de Busca Avançadas</h1>
+            <p>Análise de Dados Aplicada à Gestão · Técnico em Assistente em Processos de Gestão e Controle de Materiais — 13 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <button class="btn-export" id="btnExportarPDFGabarito" type="button" data-somente-perfil="PROFESSOR" hidden title="Só o professor: atividade completa com o gabarito real (lido do banco)">📥 Exportar PDF com gabarito</button>
+            <button class="btn-export" id="btnExportarGabarito" type="button" hidden title="Professor: gabarito real. Aluno: suas respostas da tentativa de maior nota.">🔑 Exportar Gabarito</button>
+            <small>Gera um único arquivo com as 13 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADE-03-FUNCOES-DE-BUSCA-AVANCADAS-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D, E)<br>
+                        <strong>Total de questões:</strong> 13<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 13 pontos)
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE AVALIADA</div>
+                    <div class="content-text">Estruturar tabela para PROCV; Identificar número de coluna em PROCV; Aplicar PROCV correto; Reconhecer erro #N/D em PROCV; Usar SEERRO para tratamento de erro; Aplicar ÍNDICE e CORRESPONDÊNCIA; Entender CORRESPONDÊNCIA com 0 ou 1; Aplicar SE simples para condição; SE aninhado para múltiplas faixas; Calcular comissão com fórmula integrada; Integrar PROCV + SE para busca condicional; Validar dados com comparação lógica; Criar resumo gerencial com múltiplas funções</div>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Estruturar tabela para PROCV</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">ID deve estar na PRIMEIRA coluna. Estrutura: ID | Nome | Salário | Departamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que ID precisa ser a 1ª coluna?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Esteticamente melhor</li>
+                        <li><span class="letra">B)</span>PROCV busca a partir da 1ª coluna</li>
+                        <li><span class="letra">C)</span>Por tradição</li>
+                        <li><span class="letra">D)</span>Não importa a posição</li>
+                        <li><span class="letra">E)</span>Excel exige assim</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Identificar número de coluna em PROCV</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Tabela: Col 1=ID, Col 2=Nome, Col 3=Salário, Col 4=Depto. Buscar Nome</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual número de coluna em PROCV?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1</li>
+                        <li><span class="letra">B)</span>2</li>
+                        <li><span class="letra">C)</span>3</li>
+                        <li><span class="letra">D)</span>4</li>
+                        <li><span class="letra">E)</span>0</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Aplicar PROCV correto</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Procurar ID 102 e retornar Nome (coluna 2)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">=PROCV(A2;Vendedores!A:D;X;FALSO). X é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1</li>
+                        <li><span class="letra">B)</span>2</li>
+                        <li><span class="letra">C)</span>3</li>
+                        <li><span class="letra">D)</span>4</li>
+                        <li><span class="letra">E)</span>0</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Reconhecer erro #N/D em PROCV</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">ID 999 não existe na tabela de vendedores</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">PROCV retorna qual erro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>#DIV/0!</li>
+                        <li><span class="letra">B)</span>#N/D</li>
+                        <li><span class="letra">C)</span>#VALUE!</li>
+                        <li><span class="letra">D)</span>#REF!</li>
+                        <li><span class="letra">E)</span>Nenhum</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Usar SEERRO para tratamento de erro</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Para evitar #N/D e mostrar &quot;Não encontrado&quot;</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">=SEERRO(PROCV(...), X). X é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>&quot;Erro&quot;</li>
+                        <li><span class="letra">B)</span>&quot;Não encontrado&quot;</li>
+                        <li><span class="letra">C)</span>0</li>
+                        <li><span class="letra">D)</span>&quot;&quot;</li>
+                        <li><span class="letra">E)</span>FALSE</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Aplicar ÍNDICE e CORRESPONDÊNCIA</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">CORRESPONDÊNCIA encontra linha. ÍNDICE extrai valor. Buscar departamento de ID 102</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">=ÍNDICE(Col_Depto; CORRESPONDÊNCIA(102; Col_ID; 0))</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Retorna ID</li>
+                        <li><span class="letra">B)</span>Retorna Departamento</li>
+                        <li><span class="letra">C)</span>Retorna Erro</li>
+                        <li><span class="letra">D)</span>Retorna Nome</li>
+                        <li><span class="letra">E)</span>Retorna Salário</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Entender CORRESPONDÊNCIA com 0 ou 1</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">CORRESPONDÊNCIA(..., ..., 0) = busca EXATA. CORRESPONDÊNCIA(..., ..., 1) = busca maior/igual</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para faturamento em tabela de comissões, usar:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>0 (exato)</li>
+                        <li><span class="letra">B)</span>1 (maior/igual)</li>
+                        <li><span class="letra">C)</span>-1</li>
+                        <li><span class="letra">D)</span>Não importa</li>
+                        <li><span class="letra">E)</span>2</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Aplicar SE simples para condição</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Se faturamento &lt; 15000, comissão = 3%</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">=SE(D2&lt;15000; X; Y). X e Y são:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>&quot;Sim&quot; e &quot;Não&quot;</li>
+                        <li><span class="letra">B)</span>0.03 e 0.05</li>
+                        <li><span class="letra">C)</span>TRUE e FALSE</li>
+                        <li><span class="letra">D)</span>D2*0.03 e D2*0.05</li>
+                        <li><span class="letra">E)</span>&quot;Baixo&quot; e &quot;Alto&quot;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">SE aninhado para múltiplas faixas</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">&lt;15k=3%, 15-18k=5%, &gt;18k=8%</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">=SE(D2&lt;15000; 0.03; SE(D2&lt;18000; X; Y)). X e Y são:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>0.03 e 0.08</li>
+                        <li><span class="letra">B)</span>0.05 e 0.08</li>
+                        <li><span class="letra">C)</span>0.08 e 0.05</li>
+                        <li><span class="letra">D)</span>0.03 e 0.05</li>
+                        <li><span class="letra">E)</span>0.08 e 0.03</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Calcular comissão com fórmula integrada</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">ID 102, faturamento R$ 18.500, taxa aplicável 5%</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Comissão = R$ 18.500 × 0,05 = ?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>R$ 925</li>
+                        <li><span class="letra">B)</span>R$ 950</li>
+                        <li><span class="letra">C)</span>R$ 850</li>
+                        <li><span class="letra">D)</span>R$ 1.000</li>
+                        <li><span class="letra">E)</span>R$ 1.100</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Integrar PROCV + SE para busca condicional</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Buscar salário (PROCV) e depois aplicar aumento com SE</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SE primeiro, depois PROCV</li>
+                        <li><span class="letra">B)</span>PROCV primeiro, depois SE</li>
+                        <li><span class="letra">C)</span>PROCV dentro de SE</li>
+                        <li><span class="letra">D)</span>Não importa</li>
+                        <li><span class="letra">E)</span>Não se pode combinar</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Validar dados com comparação lógica</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Após PROCV, verificar se valor &gt; 0 (válido)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">=SE(PROCV(...)&gt;0; &quot;OK&quot;; &quot;ERRO&quot;)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Retorna &quot;OK&quot; se valor &gt; 0</li>
+                        <li><span class="letra">B)</span>Retorna &quot;ERRO&quot; sempre</li>
+                        <li><span class="letra">C)</span>Retorna número</li>
+                        <li><span class="letra">D)</span>Retorna #N/D</li>
+                        <li><span class="letra">E)</span>Não funciona</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Criar resumo gerencial com múltiplas funções</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Total faturado, maior venda, menor, média, total comissão</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual sequência resume melhor?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SOMA, MÁXIMO, MÍNIMO, MÉDIA, SOMA</li>
+                        <li><span class="letra">B)</span>MÁXIMO primeiro</li>
+                        <li><span class="letra">C)</span>MÉDIA primeiro</li>
+                        <li><span class="letra">D)</span>SOMA, SOMA, SOMA</li>
+                        <li><span class="letra">E)</span>Não precisa resumir</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Análise de Dados Aplicada à Gestão — Atividade 03: Funções de Busca Avançadas</strong></p>
+        <p>Técnico em Assistente em Processos de Gestão e Controle de Materiais — SENAI</p>
+        <p>13 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+    <script src="../../../../assets/js/avaliacao-pdf-professor.js"></script>
+</body>
+</html>

@@ -25,7 +25,7 @@ CAMPO_FOLHA_RESPOSTAS = "Folha de respostas"
 CAMPO_TURMA = "Turma"
 CAMPO_ROTULO = "Rótulo da aula"
 CAMPO_PDF_GABARITO = "Exportar PDF com gabarito"
-PREFIXO_AVALIACAO = "AVALIACAO-"
+PREFIXOS_SEM_SUFIXO = ("AVALIACAO-", "ATIVIDADE-")
 VALOR_ATIVADO = "sim"
 URL_SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
 
@@ -104,6 +104,7 @@ def ler_questoes(md_path):
         "folha": campo_opcional(texto, CAMPO_FOLHA_RESPOSTAS).lower() == VALOR_ATIVADO,
         "turma": campo_opcional(texto, CAMPO_TURMA),
     }
+    meta["letras"] = ""
     meta["pdf_gabarito"] = campo_opcional(texto, CAMPO_PDF_GABARITO).lower() == VALOR_ATIVADO
     meta["rotulo"] = campo_opcional(texto, CAMPO_ROTULO) or f"Aula {meta['aula']}"
     itens = []
@@ -127,17 +128,18 @@ def ler_questoes(md_path):
                 atual = None
             elif s.startswith("---"):
                 break
-            elif s and atual == "alts" and re.match(r"- [A-D]\)", s):
+            elif s and atual == "alts" and re.match(r"- [A-E]\)", s):
                 item["alts"].append((s[2], s[5:].strip()))
             elif s and atual in ("contexto", "comando"):
                 item[atual] = (item[atual] + " " + s).strip()
         itens.append(item)
 
+    meta["letras"] = ", ".join(sorted({letra for it in itens for letra, _ in it["alts"]}))
     nome = md_path.name
     assert len(itens) == meta["total"], f"{nome}: esperava {meta['total']} itens, achei {len(itens)}"
     for it in itens:
-        assert len(it["alts"]) == 4, f"{nome} ITEM {it['num']}: precisa de 4 alternativas"
-        assert it["gab"] in ("A", "B", "C", "D"), f"{nome} ITEM {it['num']}: gabarito inválido"
+        assert len(it["alts"]) in (4, 5), f"{nome} ITEM {it['num']}: precisa de 4 ou 5 alternativas"
+        assert it["gab"] in ("A", "B", "C", "D", "E"), f"{nome} ITEM {it['num']}: gabarito inválido"
         assert it["comando"], f"{nome} ITEM {it['num']}: sem comando"
     return meta, itens
 
@@ -172,8 +174,8 @@ BLOCO_PDF_GABARITO = '''
 
 
 def caminho_saida(md_path):
-    """HTML da atividade: avaliações (AVALIACAO-*) perdem o sufixo -QUESTOES; aulas o mantêm."""
-    if md_path.stem.startswith(PREFIXO_AVALIACAO):
+    """HTML da atividade: avaliações e atividades extraídas do Word (AVALIACAO-*, ATIVIDADE-*) perdem o sufixo -QUESTOES; aulas o mantêm."""
+    if md_path.stem.startswith(PREFIXOS_SEM_SUFIXO):
         return md_path.with_name(md_path.stem.removesuffix("-QUESTOES") + ".html")
     return md_path.with_suffix(".html")
 
@@ -194,6 +196,7 @@ def gerar_atividade(md_path, dados):
         "{{TOTAL}}": str(meta["total"]),
         "{{AULA}}": e(meta["aula"]),
         "{{ROTULO_AULA}}": e(meta["rotulo"]),
+        "{{LETRAS}}": e(meta["letras"]),
         "{{PDF_GABARITO}}": BLOCO_PDF_GABARITO if meta["pdf_gabarito"] else "",
         "{{PDF_GABARITO_JS}}": (f'\n    <script src="{assets}/js/avaliacao-pdf-professor.js"></script>'
                                 if meta["pdf_gabarito"] else ""),
