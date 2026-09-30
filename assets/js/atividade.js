@@ -150,8 +150,10 @@ function exportarPDFAtividade(gabaritoExterno) {
 /**
  * Exporta um PDF só com o gabarito da atividade atual (uso do professor).
  * @param {string[][]} gabarito - Linhas [item, título, letra] vindas do banco.
+ * @param {{titulo?: string, subtitulo?: string, coluna?: string, arquivo?: string}} [opcoes] -
+ *     Textos do PDF: padrão é o gabarito real (professor); o aluno recebe as próprias respostas.
  */
-function exportarSomenteGabaritoPDF(gabarito) {
+function exportarSomenteGabaritoPDF(gabarito, opcoes = {}) {
     const jsPDF = window.jspdf?.jsPDF || window.jsPDF;
     if (!jsPDF) {
         console.warn('jsPDF não carregado (verifique a conexão com a internet).');
@@ -163,12 +165,12 @@ function exportarSomenteGabaritoPDF(gabarito) {
     const doc = new jsPDF('p', 'mm', 'a4');
     doc.setFontSize(13);
     doc.setFont(undefined, 'bold');
-    doc.text(textoPDF('GABARITO — ' + rotulo + ': ' + pagina.tema + ' (' + pagina.total + ' itens)'), 15, 16);
+    doc.text(textoPDF((opcoes.titulo || 'GABARITO') + ' — ' + rotulo + ': ' + pagina.tema + ' (' + pagina.total + ' itens)'), 15, 16);
     doc.setFontSize(9);
     doc.setFont(undefined, 'normal');
-    doc.text(textoPDF(pagina.uc + ' · Docente: ' + pagina.docente + ' · USO DO PROFESSOR'), 15, 22);
+    doc.text(textoPDF(pagina.uc + ' · Docente: ' + pagina.docente + ' · ' + (opcoes.subtitulo || 'USO DO PROFESSOR')), 15, 22);
     doc.autoTable({
-        head: [['Item', 'Questão', 'Resposta']],
+        head: [['Item', 'Questão', opcoes.coluna || 'Resposta']],
         body: gabarito.map(l => l.map(textoPDF)),
         startY: 27,
         margin: { top: 20, left: 15, right: 15 },
@@ -176,7 +178,7 @@ function exportarSomenteGabaritoPDF(gabarito) {
         columnStyles: { 0: { cellWidth: 22 }, 1: { cellWidth: 128 }, 2: { cellWidth: 30, fontStyle: 'bold', halign: 'center' } },
         styles: { fontSize: 9, cellPadding: 2.5, lineColor: [0, 0, 0], lineWidth: 0.1, valign: 'top' }
     });
-    doc.save('Gabarito-' + rotulo.replace(/\s+/g, '-') + '-' + pagina.total + '-Questoes.pdf');
+    doc.save((opcoes.arquivo || 'Gabarito') + '-' + rotulo.replace(/\s+/g, '-') + '-' + pagina.total + '-Questoes.pdf');
 }
 
 document.getElementById('btnExportarPDF')?.addEventListener('click', () => exportarPDFAtividade());
