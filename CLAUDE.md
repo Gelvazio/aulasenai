@@ -1173,7 +1173,10 @@ SQL: `database/2026-09-30-tentativas-atividade.sql` (o professor roda no SQL Edi
 - ✅ Nova tentativa **só o professor libera**: no `painel-professor.html`, escolhe a atividade,
   clica no **nome do aluno** e usa **🔓 Liberar nova tentativa** (RPC `liberar_nova_tentativa`,
   que exige perfil PROFESSOR, tentativa anterior entregue e limite de 3).
-- ✅ A nova tentativa **abre com as respostas da anterior já marcadas** (cópia feita pelo banco);
+- ✅ A nova tentativa **abre em branco só nas questões que o aluno errou**: o banco copia apenas as
+  respostas CERTAS (`resposta_atividade.herdada = true`); a página esconde as alternativas dessas
+  questões e mostra "✅ Você já acertou esta questão na tentativa anterior" (resposta mantida e
+  gravada, vale na nova entrega; `database/2026-09-30-nova-tentativa-so-erradas.sql`);
   as tentativas antigas ficam guardadas e o painel mostra uma aba por tentativa.
 - ✅ **A nota vale a melhor tentativa entregue** (painel e CSV).
 - ✅ Tabelas: `tentativa` em `resposta_atividade` e `entrega_atividade` (chaves incluem a

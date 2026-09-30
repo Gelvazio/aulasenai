@@ -87,19 +87,22 @@ async function lerResultadoDaTentativa(atividadeId, tentativa) {
 /**
  * Lê as respostas e a entrega do aluno logado na tentativa em andamento desta atividade.
  * @param {number} atividadeId - Id da atividade.
- * @returns {Promise<{respostas: Object<string, string>, entregueEm: string, tentativa: number}>}
+ * @returns {Promise<{respostas: Object<string, string>, herdadas: string[], entregueEm: string,
+ *     tentativa: number}>}
  *     Dados do aluno.
  */
 async function lerRespostasDoAluno(atividadeId) {
     const tentativa = await lerTentativaAtual(atividadeId);
     const filtro = 'atividade_id=eq.' + atividadeId + '&tentativa=eq.' + tentativa;
     const [linhas, entregas] = await Promise.all([
-        sbGet('resposta_atividade', 'select=item,letra&' + filtro),
+        sbGet('resposta_atividade', 'select=item,letra,herdada&' + filtro),
         sbGet('entrega_atividade', 'select=entregue_em&' + filtro),
     ]);
     const respostas = {};
     linhas.forEach((linha) => { respostas[formatarNumeroItem(linha.item)] = linha.letra; });
-    return { respostas, entregueEm: entregas[0]?.entregue_em || '', tentativa };
+    const herdadas = linhas.filter((linha) => linha.herdada)
+        .map((linha) => formatarNumeroItem(linha.item));
+    return { respostas, herdadas, entregueEm: entregas[0]?.entregue_em || '', tentativa };
 }
 
 /**

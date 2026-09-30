@@ -123,8 +123,8 @@ async function liberarTentativaDoAluno(contexto) {
     const { linha, atividadeId, maximo } = contexto;
     const proxima = linha.tentativa + 1;
     const querLiberar = await confirmarPopup('Liberar a tentativa ' + proxima + ' de ' +
-        maximo + ' para ' + linha.nome + '?\n\nA atividade abre com as respostas da ' +
-        'tentativa anterior já marcadas.',
+        maximo + ' para ' + linha.nome + '?\n\nSó as questões erradas ou em branco ' +
+        'voltam para o aluno; as acertadas ficam mantidas.',
     { titulo: 'Liberar nova tentativa', textoConfirmar: 'Liberar', textoCancelar: 'Cancelar' });
     if (!querLiberar) return;
 

@@ -217,6 +217,24 @@ function obterLetra(alternativa) {
 }
 
 /**
+ * Nas novas tentativas, esconde as alternativas das questões já acertadas na tentativa anterior
+ * e mostra um aviso. A resposta continua marcada no código e gravada no banco (herdada), então
+ * vale de novo na entrega.
+ * @param {Object} estado - Estado da página.
+ * @param {string[]} herdadas - Números das questões herdadas da tentativa anterior.
+ */
+function esconderQuestoesHerdadas(estado, herdadas) {
+    const numeros = new Set(herdadas);
+    estado.itens.filter((item) => numeros.has(item.numero)).forEach((item) => {
+        const lista = item.card.querySelector('.alternativas');
+        if (lista) lista.hidden = true;
+        const aviso = criarElemento('div', 'questao-acertada',
+            '✅ Você já acertou esta questão na tentativa anterior — a resposta foi mantida.');
+        item.card.appendChild(aviso);
+    });
+}
+
+/**
  * Destaca a alternativa marcada de um item e desmarca as demais.
  * @param {{alternativas: HTMLElement[]}} item - Item da atividade.
  * @param {string} letraMarcada - Letra escolhida ou vazio.
@@ -554,6 +572,7 @@ async function iniciarRespostasAtividade() {
     secao.insertBefore(provedor.montarIdentificacao(), secao.firstChild);
     secao.appendChild(montarFolha(estado));
     ligarAlternativas(estado);
+    if (!estado.entregue) esconderQuestoesHerdadas(estado, carregado.herdadas || []);
     estado.atualizarFolha();
     if (estado.entregue) marcarEntregue(estado, carregado.entregueEm);
     if (estado.entregue) mostrarResultadoNoInicio(estado, carregado.resultado);
