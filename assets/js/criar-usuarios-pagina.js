@@ -151,14 +151,28 @@ function criarBarraControlesGuia(tabela, aoMudar) {
         + '<option value="' + FILTRO_NAO + '">Não gravados (Não)</option>';
     filtro.addEventListener('change', () => {
         marcarTodos.checked = false;
-        aplicarFiltroGuia(tabela, filtro.value);
+        aplicarFiltroGuia(tabela, filtro.value, barra.filtroAnotou.value);
         aoMudar();
     });
     const rotuloFiltro = document.createElement('label');
     rotuloFiltro.append('Filtrar: ', filtro);
 
-    barra.append(rotuloTodos, rotuloFiltro);
+    const filtroAnotou = document.createElement('select');
+    filtroAnotou.className = 'guia-filtro';
+    filtroAnotou.innerHTML = '<option value="' + FILTRO_TODOS + '">Todos</option>'
+        + '<option value="' + FILTRO_SIM + '">Anotou (Sim)</option>'
+        + '<option value="' + FILTRO_NAO + '">Não anotou (Não)</option>';
+    filtroAnotou.addEventListener('change', () => {
+        marcarTodos.checked = false;
+        aplicarFiltroGuia(tabela, filtro.value, filtroAnotou.value);
+        aoMudar();
+    });
+    const rotuloAnotou = document.createElement('label');
+    rotuloAnotou.append('Aluno anotou?: ', filtroAnotou);
+
+    barra.append(rotuloTodos, rotuloFiltro, rotuloAnotou);
     barra.filtro = filtro;
+    barra.filtroAnotou = filtroAnotou;
     barra.marcarTodos = marcarTodos;
     return barra;
 }
@@ -254,9 +268,10 @@ function criarCartaoTurmaGuia(turma, contexto) {
     botao.addEventListener('click', () => gravarSelecionadosGuia(
         { turma, botao, tabela, resultado, podeGravar: contexto.podeGravar }));
     cartao.reaplicarFiltro = () => {
-        aplicarFiltroGuia(tabela, barra.filtro.value);
+        aplicarFiltroGuia(tabela, barra.filtro.value, barra.filtroAnotou.value);
         aoMudar();
     };
+    tabela.addEventListener(EVENTO_ANOTOU_ALTERADO, cartao.reaplicarFiltro);
 
     const titulo = document.createElement('h2');
     titulo.textContent = montarTituloTurmaGuia(turma);

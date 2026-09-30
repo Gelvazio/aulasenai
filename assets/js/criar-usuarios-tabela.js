@@ -11,6 +11,7 @@ const SITUACAO_SIM = 'Sim';
 const SITUACAO_NAO = 'Não';
 const SITUACAO_DESCONHECIDA = '?';
 const MSG_SEM_USUARIO = 'este usuário ainda não está cadastrado no Auth (grave-o antes).';
+const EVENTO_ANOTOU_ALTERADO = 'anotou-alterado';
 const CLASSE_ANOTOU_SIM = 'guia-anotou--sim';
 const CLASSE_ANOTOU_NAO = 'guia-anotou--nao';
 const FILTRO_TODOS = 'todos';
@@ -63,6 +64,7 @@ async function gravarEscolhaAnotouGuia(escolha, alvo, pintar) {
         const encontrado = await gravarSenhaInformada(alvo.usuarioId, informada);
         if (!encontrado) throw new Error(MSG_SEM_USUARIO);
         pintar();
+        escolha.dispatchEvent(new CustomEvent(EVENTO_ANOTOU_ALTERADO, { bubbles: true }));
         await mostrarPopup(montarMensagemAnotou(aluno.nome, informada),
             { tipo: informada ? 'sucesso' : 'info', titulo: 'Gravado no banco de dados' });
     } catch (erro) {
@@ -240,14 +242,20 @@ function todosVisiveisMarcadosGuia(tabela) {
 }
 
 /**
- * Mostra só as linhas da situação escolhida; as ocultas perdem a marcação.
+ * Mostra só as linhas que combinam com os dois filtros (Cadastrado e "Aluno anotou?");
+ * as ocultas perdem a marcação.
  * @param {HTMLTableElement} tabela - Tabela de alunos.
- * @param {string} filtro - Chave de FILTROS_SITUACAO.
+ * @param {string} filtro - Chave de FILTROS_SITUACAO (coluna Cadastrado).
+ * @param {string} [filtroAnotou] - Chave de FILTROS_SITUACAO (coluna "Aluno anotou?").
  */
-function aplicarFiltroGuia(tabela, filtro) {
+function aplicarFiltroGuia(tabela, filtro, filtroAnotou = FILTRO_TODOS) {
     const situacaoDesejada = FILTROS_SITUACAO[filtro];
+    const anotouDesejado = FILTROS_SITUACAO[filtroAnotou];
     obterLinhasGuia(tabela).forEach((linha) => {
-        const combina = !situacaoDesejada || linha.dataset.situacao === situacaoDesejada;
+        const anotou = linha.querySelector('.guia-anotou')?.value;
+        const combinaCadastro = !situacaoDesejada || linha.dataset.situacao === situacaoDesejada;
+        const combinaAnotou = !anotouDesejado || anotou === anotouDesejado;
+        const combina = combinaCadastro && combinaAnotou;
         linha.hidden = !combina;
         if (!combina) linha.querySelector('.guia-marcar').checked = false;
     });
