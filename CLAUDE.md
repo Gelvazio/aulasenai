@@ -1371,9 +1371,9 @@ assets/
                          (sem data vão para o fim). Preserva índices sem o marcador, salvo
                          `--forcar <pasta ATIVIDADES>`.
                          Rodar de novo sempre que surgir curso, matéria ou atividade.
-                         Se a pasta ATIVIDADES tiver `ATIVIDADES-LIBERADAS.js`
-                         (window.ATIVIDADES_LIBERADAS = ['arquivo', ...]), o índice carrega
-                         js/indice-atividades-liberadas.js e bloqueia o que não está na lista.
+                         Liberar/bloquear atividade = BANCO DE DADOS (atividade.ativo): o professor usa o
+                         interruptor "Bloquear" de cada card (assets/js/indice-atividades-bloqueio.js).
+                         Não existe mais lista em arquivo (ATIVIDADES-LIBERADAS.js foi removida).
 ├─ css/menu.css        → estilos do menu de atividades (montado por js/menu.js)
 └─ gerador-menu/       → tags_menu.py: monta as tags do menu para o <head>; usado pelos três
                          geradores acima e, direto, para aplicar o menu em páginas existentes:

@@ -23,13 +23,11 @@ from tags_header import inserir_header_em_html  # noqa: E402
 RAIZ_PROJETO = Path(__file__).resolve().parents[2]
 PASTA_MATERIAIS = RAIZ_PROJETO / "MATERIAIS"
 CSS_INDICE = RAIZ_PROJETO / "assets" / "css" / "indice-atividades.css"
-JS_LIBERADAS = RAIZ_PROJETO / "assets" / "js" / "indice-atividades-liberadas.js"
 JS_SUPABASE = RAIZ_PROJETO / "js" / "supabase.js"
 CSS_CRUD = RAIZ_PROJETO / "assets" / "css" / "atividades-crud-modal.css"
 JS_CRUD_REPOSITORIO = RAIZ_PROJETO / "assets" / "js" / "atividades-crud-repositorio.js"
 JS_CRUD_MODAL = RAIZ_PROJETO / "assets" / "js" / "atividades-crud-modal.js"
 URL_SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
-NOME_LISTA_LIBERADAS = "ATIVIDADES-LIBERADAS.js"
 NOME_INDICE = "index.html"
 NOME_PASTA_ATIVIDADES = "ATIVIDADES"
 MARCADOR = '<meta name="gerador" content="gerador-indices">'
@@ -163,15 +161,9 @@ def montar_tags_crud(pasta_indice, recuo):
 def montar_pagina(dados):
     """Monta a página completa de índice (cabeçalho, resumo, grade de cards e rodapé).
 
-    Com "liberadas" (lista em .js) e "script", a página passa a bloquear as atividades que
-    não estão na lista de liberadas.
+    O bloqueio das atividades vem do banco de dados (atividade.ativo): o professor liga ou
+    desliga o interruptor "Bloquear" de cada card (assets/js/indice-atividades-bloqueio.js).
     """
-    tag_script = ""
-    if dados.get("liberadas"):
-        tag_script = (
-            f'\n    <script src="{dados["liberadas"]}" defer></script>'
-            f'\n    <script src="{dados["script"]}" defer></script>'
-        )
     return f"""<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -179,7 +171,7 @@ def montar_pagina(dados):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {MARCADOR}
     <title>{escapar(dados["titulo"])}</title>
-    <link rel="stylesheet" href="{dados["css"]}">{tag_script}{dados.get("menu", "")}{dados.get("crud", "")}
+    <link rel="stylesheet" href="{dados["css"]}">{dados.get("menu", "")}{dados.get("crud", "")}
 </head>
 <body>
     <div class="container">{dados.get("faixa", "")}
@@ -251,9 +243,6 @@ def gerar_indice_materia(materia, curso, forcar):
         "cards": cards,
         "rodape": f'<a class="btn" href="{voltar}">← Matérias do curso</a>',
     }
-    if (pasta_indice / NOME_LISTA_LIBERADAS).exists():
-        dados_pagina["liberadas"] = quote(NOME_LISTA_LIBERADAS)
-        dados_pagina["script"] = link_relativo(JS_LIBERADAS, pasta_indice)
     dados_pagina["menu"] = montar_tags_menu(pasta_indice, "    ")
     dados_pagina["crud"] = montar_tags_crud(pasta_indice, "    ")
     pagina = montar_pagina(dados_pagina)

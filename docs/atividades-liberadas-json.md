@@ -1,3 +1,5 @@
+> ⚠️ **Substituído em 2026-09-30:** liberar/bloquear atividades agora vem do banco de dados (`atividade.ativo`, interruptor "Bloquear" nos cards). O arquivo `ATIVIDADES-LIBERADAS` e o script `indice-atividades-liberadas.js` foram removidos.
+
 # ATIVIDADES-LIBERADAS.json — liberar/bloquear atividades no índice da matéria
 
 **Objetivo:** No índice
