@@ -124,3 +124,6 @@ footer {
 }
 
 .export-bar[hidden] { display: none; }
+
+.export-bar .btn-export[hidden] { display: none; }
+.export-bar { flex-wrap: wrap; }

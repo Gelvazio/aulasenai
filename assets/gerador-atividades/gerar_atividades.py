@@ -167,14 +167,8 @@ def card(it):
 
 
 BLOCO_PDF_GABARITO = '''
-            <div class="export-bar export-bar--gabarito" data-somente-perfil="PROFESSOR" hidden>
-                <button class="btn-export" id="btnExportarPDFGabarito" type="button">📥 Exportar PDF com gabarito</button>
-                <small>Só o professor vê este botão: o gabarito é lido do banco e não fica nesta página.</small>
-            </div>
-            <div class="export-bar export-bar--gabarito" id="barraExportarGabarito" hidden>
-                <button class="btn-export" id="btnExportarGabarito" type="button">🔑 Exportar Gabarito</button>
-                <small>Professor: gabarito real (só as alternativas certas). Aluno: suas respostas da tentativa de maior nota.</small>
-            </div>'''
+            <button class="btn-export" id="btnExportarPDFGabarito" type="button" data-somente-perfil="PROFESSOR" hidden title="Só o professor: atividade completa com o gabarito real (lido do banco)">📥 Exportar PDF com gabarito</button>
+            <button class="btn-export" id="btnExportarGabarito" type="button" hidden title="Professor: gabarito real. Aluno: suas respostas da tentativa de maior nota.">🔑 Exportar Gabarito</button>'''
 
 
 def caminho_saida(md_path):

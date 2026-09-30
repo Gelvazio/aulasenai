@@ -8,7 +8,6 @@
 
 const ID_BOTAO_PDF_GABARITO = 'btnExportarPDFGabarito';
 const ID_BOTAO_SO_GABARITO = 'btnExportarGabarito';
-const ID_BARRA_SO_GABARITO = 'barraExportarGabarito';
 const MSG_ERRO_PDF_GABARITO = 'Não foi possível gerar o PDF: ';
 const MSG_SO_PROFESSOR_PDF = 'Somente o perfil PROFESSOR pode exportar o PDF com gabarito.';
 const MSG_SEM_LOGIN_PDF = 'Entre com o seu usuário para exportar.';
@@ -141,20 +140,16 @@ async function exportarGabaritoPorPerfil() {
 }
 
 /**
- * Mostra a barra "Exportar Gabarito" para qualquer usuário logado (aluno ou professor).
+ * Mostra o botão "Exportar Gabarito" para qualquer usuário logado (aluno ou professor).
  */
-async function mostrarBarraGabaritoSeLogado() {
-    const barra = document.getElementById(ID_BARRA_SO_GABARITO);
-    if (!barra) return;
+async function mostrarBotaoGabaritoSeLogado() {
+    const botao = document.getElementById(ID_BOTAO_SO_GABARITO);
+    if (!botao) return;
 
     const perfil = await lerPerfilPdf();
-    if (perfil.logado) barra.hidden = false;
-    const texto = barra.querySelector('small');
-    if (texto && !perfil.ehProfessor) {
-        texto.textContent = 'Gera um PDF com as alternativas que você marcou na tentativa de maior nota.';
-    }
+    if (perfil.logado) botao.hidden = false;
 }
 
 document.getElementById(ID_BOTAO_PDF_GABARITO)?.addEventListener('click', exportarPdfCompletoProfessor);
 document.getElementById(ID_BOTAO_SO_GABARITO)?.addEventListener('click', exportarGabaritoPorPerfil);
-mostrarBarraGabaritoSeLogado();
+mostrarBotaoGabaritoSeLogado();
