@@ -8,9 +8,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
     <link rel="stylesheet" href="../../../../assets/css/atividade.css">
     <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
-    <link rel="stylesheet" href="../../../../assets/css/menu.css">
-    <script src="MENU-ATIVIDADES.js" defer></script>
-    <script src="../../../../js/menu.js" defer></script>
     <script src="../../../../js/header-usuario.js" defer></script>
 </head>
 <body data-aula="03" data-tema="Funções de Busca Avançadas" data-total="13"
@@ -217,11 +214,11 @@
                 <div class="aula-title">Aplicar SE simples para condição</div>
                 <div class="content-box">
                     <div class="content-label">📋 CONTEXTO</div>
-                    <div class="content-text">Se faturamento &lt; 15000, comissão = 3%</div>
+                    <div class="content-text">Se faturamento &lt; 15000, a taxa de comissão é 3%; caso contrário, 5%</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 COMANDO</div>
-                    <div class="content-text">=SE(D2&lt;15000; X; Y). X e Y são:</div>
+                    <div class="content-text">=SE(D2&lt;15000; X; Y) devolve a TAXA de comissão. X e Y são:</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">📝 ALTERNATIVAS</div>
@@ -296,8 +293,8 @@
                     <div class="content-label">📝 ALTERNATIVAS</div>
                     <ul class="alternativas">
                         <li><span class="letra">A)</span>SE primeiro, depois PROCV</li>
-                        <li><span class="letra">B)</span>PROCV primeiro, depois SE</li>
-                        <li><span class="letra">C)</span>PROCV dentro de SE</li>
+                        <li><span class="letra">B)</span>PROCV primeiro (busca o salário), depois SE (aplica a regra do aumento)</li>
+                        <li><span class="letra">C)</span>SE no lugar do PROCV</li>
                         <li><span class="letra">D)</span>Não importa</li>
                         <li><span class="letra">E)</span>Não se pode combinar</li>
                     </ul>
