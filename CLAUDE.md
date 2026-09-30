@@ -1437,6 +1437,13 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   matérias): no card do professor, o interruptor se chama **"Desbloquear"** quando a atividade
   está bloqueada e **"Bloquear"** quando está liberada; o nome muda na hora ao clicar. Fica no
   script genérico `assets/js/indice-atividades-bloqueio.js` (não repetir por matéria).
+- ✅ **Visual da atividade bloqueada — REGRA GLOBAL** (2026-09-30, todas as atividades de todas as
+  matérias, para aluno e professor): o card bloqueado fica **bem escurecido** e com um **cadeado
+  grande (🔒) na frente do card**. Estilo único em `assets/css/indice-atividades.css`
+  (`.aula.bloqueada` e `.aula.bloqueada-professor`, tokens `--bloqueio-*`); o véu não bloqueia os
+  cliques e o interruptor do professor fica por cima, claro e clicável
+  (`assets/css/indice-atividades-bloquear.css`). Todo índice de atividades carrega esses arquivos
+  (via `atividades-crud-modal.js`); índice novo, feito à mão ou gerado, também deve carregá-los.
 
 ## 📗 REGRA CRÍTICA — PADRÃO DE ATIVIDADE PRÁTICA DE EXCEL
 

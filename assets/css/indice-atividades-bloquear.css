@@ -29,9 +29,5 @@
   outline: 2px solid #1a56db; outline-offset: 2px;
 }
 
-/* Professor: card bloqueado em cinza claro, mas com todos os botões e o interruptor utilizáveis */
-.aula.bloqueada-professor {
-  background: #edf2f7; border-left-color: #a0aec0; color: #4a5568;
-}
-.aula.bloqueada-professor h2::after { content: " 🔒"; }
-.aula.bloqueada-professor .btn.principal { background: #a0aec0; border-color: #a0aec0; color: #fff; }
+/* Professor: o interruptor fica acima do véu do card bloqueado, claro e clicável */
+.aula.bloqueada-professor .interruptor-bloquear { position: relative; z-index: 2; }

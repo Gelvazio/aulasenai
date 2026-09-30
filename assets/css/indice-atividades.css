@@ -1,5 +1,9 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
-:root { --primary: #667eea; --secondary: #764ba2; --gold: #FFD700; --text: #2d3748; }
+:root {
+    --primary: #667eea; --secondary: #764ba2; --gold: #FFD700; --text: #2d3748;
+    --bloqueio-fundo: #2d3748; --bloqueio-borda: #1a202c; --bloqueio-texto: #a0aec0;
+    --bloqueio-veu: rgba(10, 14, 22, 0.62);
+}
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
@@ -35,8 +39,18 @@ footer { background: #2d3748; color: white; padding: 24px 20px; text-align: cent
     .grade { padding: 16px; grid-template-columns: 1fr; }
     details ol { columns: 1; }
 }
-.aula.bloqueada { opacity: 0.55; border-left-color: #a0aec0; background: #edf2f7; }
-.aula.bloqueada h2::after { content: " 🔒"; }
+/* Atividade bloqueada (aluno e professor, todas as matérias): card escurecido + cadeado grande */
+.aula.bloqueada,
+.aula.bloqueada-professor {
+    position: relative; background: var(--bloqueio-fundo); border-left-color: var(--bloqueio-borda);
+    color: var(--bloqueio-texto);
+}
+.aula.bloqueada::before,
+.aula.bloqueada-professor::before {
+    content: "🔒"; position: absolute; inset: 0; z-index: 1; display: flex;
+    align-items: center; justify-content: center; font-size: 96px; border-radius: 8px;
+    background: var(--bloqueio-veu); pointer-events: none;
+}
 
 .menu-principal { margin-top: 14px; display: flex; justify-content: center; gap: 10px; }
 .menu-principal a { color: white; font-size: 13px; font-weight: 700; text-decoration: none; padding: 7px 18px; border: 2px solid var(--gold); border-radius: 16px; }
