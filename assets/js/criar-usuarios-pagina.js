@@ -186,7 +186,10 @@ async function gravarSelecionadosGuia(contexto) {
     const emails = new Set(obterEmailsMarcadosGuia(tabela));
     const turmaSelecionada = { ...turma, alunos: turma.alunos.filter((a) => emails.has(a.email)) };
     const pergunta = 'Gravar ' + emails.size + ' usuário(s) da turma ' + turma.nome + '?';
-    if (!emails.size || !window.confirm(pergunta)) return;
+    if (!emails.size) return;
+    const querGravar = await confirmarPopup(pergunta,
+        { titulo: 'Gravar usuários', textoConfirmar: 'Gravar', textoCancelar: 'Cancelar' });
+    if (!querGravar) return;
 
     botao.disabled = true;
     resultado.textContent = MSG_GRAVANDO + '\n';

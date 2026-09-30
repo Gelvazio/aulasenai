@@ -12,6 +12,7 @@ const ROTA_RESPOSTAS =
     '/rest/v1/resposta_atividade?on_conflict=aluno_id,atividade_id,tentativa,item';
 const ROTA_ENTREGAS = '/rest/v1/entrega_atividade';
 const ROTA_NOTA = '/rest/v1/rpc/nota_da_tentativa';
+const PERFIL_PROFESSOR_PAGINA = 'PROFESSOR';
 const PREFERENCIA_UPSERT = 'resolution=merge-duplicates,return=minimal';
 const CODIGO_JA_EXISTE = 409;
 const DIGITOS_ITEM = 2;
@@ -116,8 +117,12 @@ async function enviarAoBanco(rota, corpo, preferencia) {
 /**
  * Pergunta se o aluno quer entrar e o leva ao login, voltando depois para esta atividade.
  */
-function irParaLogin() {
-    if (!window.confirm(MSG_ENTRAR_PARA_RESPONDER)) return;
+async function irParaLogin() {
+    const querEntrar = await confirmarPopup(MSG_ENTRAR_PARA_RESPONDER, {
+        titulo: 'Entrar para responder', textoConfirmar: 'Ir para o login',
+        textoCancelar: 'Agora não',
+    });
+    if (!querEntrar) return;
     const retorno = location.pathname + location.search + location.hash;
     location.assign(PAGINA_LOGIN + '?' + PARAMETRO_VOLTAR + '=' + encodeURIComponent(retorno));
 }
@@ -168,7 +173,11 @@ async function carregarDoBanco(sessao) {
         const identificacao = { nome: sessao.nome, turma: sessao.turma };
         const resultado = doAluno.entregueEm
             ? await lerResultadoDaTentativa(sessao.atividade.id, doAluno.tentativa) : null;
-        return { disponivel: true, logado: true, ...identificacao, ...doAluno, resultado };
+        const ehProfessor = sessao.usuario.app_metadata?.perfil === PERFIL_PROFESSOR_PAGINA;
+        return {
+            disponivel: true, logado: true, ...identificacao, ...doAluno, resultado,
+            ehProfessor, atividadeId: sessao.atividade.id,
+        };
     } catch (erro) {
         console.warn('Banco indisponível:', erro.message);
         return { disponivel: false };

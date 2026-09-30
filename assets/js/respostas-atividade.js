@@ -5,6 +5,8 @@
 // login só é pedido ao marcar. Sem banco disponível, a marcação fica bloqueada com aviso.
 // Dados da página: data-uc, data-uc-curta, data-docente, data-total, data-turma (opcional).
 
+const RAIZ_SCRIPTS = document.currentScript
+    ? document.currentScript.src.replace(/[^/]*$/, '') : '';
 const LETRAS_ALTERNATIVAS = ['A', 'B', 'C', 'D'];
 const CLASSE_MARCADA = 'alternativa--marcada';
 const CLASSE_IMPRIMIR = 'imprimir-folha';
@@ -54,7 +56,7 @@ function montarMensagemEntrega(tentativa, resultado) {
         ? MSG_ULTIMA_TENTATIVA : MSG_PEDIR_NOVA_TENTATIVA;
     const linhaNota = resultado
         ? ['Sua nota: ' + formatarNota(calcularNota(resultado)) + '.', ''] : [];
-    return ['✅ Atividade entregue!',
+    return ['Atividade entregue!',
         'Suas respostas foram gravadas (tentativa ' + tentativa + ' de ' + MAXIMO_TENTATIVAS + ').',
         '', ...linhaNota, orientacao].join('\n');
 }
@@ -136,6 +138,30 @@ function mostrarAvisoGravacao(texto, ehErro) {
 }
 
 /**
+ * Carrega um script da pasta assets/js e espera terminar.
+ * @param {string} nome - Nome do arquivo (ex.: "popup.js").
+ * @returns {Promise<void>} Resolve quando o script carregou.
+ */
+function carregarScript(nome) {
+    return new Promise((resolver, rejeitar) => {
+        const script = document.createElement('script');
+        script.src = RAIZ_SCRIPTS + nome;
+        script.onload = resolver;
+        script.onerror = () => rejeitar(new Error('Não foi possível carregar ' + nome));
+        document.head.appendChild(script);
+    });
+}
+
+/**
+ * Garante que o popup (assets/js/popup.js) esteja carregado: os avisos da página usam popup,
+ * nunca alert() do navegador.
+ */
+async function garantirPopup() {
+    if (typeof window.mostrarPopup === 'function') return;
+    await carregarScript('popup.js');
+}
+
+/**
  * Cria um elemento HTML com classe e texto.
  * @param {string} tag - Nome da tag.
  * @param {string} [classe] - Classe CSS.
@@ -206,7 +232,7 @@ function destacarAlternativa(item, letraMarcada) {
  * @param {string} letra - Letra escolhida.
  */
 async function registrarResposta(estado, item, letra) {
-    if (estado.entregue) return window.alert(MSG_JA_ENTREGUE);
+    if (estado.entregue) return mostrarPopup(MSG_JA_ENTREGUE, { tipo: 'aviso' });
     if (!estado.provedor.podeResponder()) return;
     const letraAnterior = estado.dados.respostas[item.numero] || '';
     estado.dados.respostas[item.numero] = letra;
@@ -224,7 +250,7 @@ async function registrarResposta(estado, item, letra) {
         destacarAlternativa(item, letraAnterior);
         estado.atualizarFolha();
         mostrarAvisoGravacao('❌ Resposta NÃO gravada: questão ' + item.numero, true);
-        window.alert(erro.message || MSG_ERRO_SALVAR);
+        mostrarPopup(erro.message || MSG_ERRO_SALVAR, { tipo: 'erro' });
     }
 }
 
@@ -408,15 +434,15 @@ function montarMensagemPendencias(pendentes) {
  * Verifica se o aluno está conectado e se todas as questões foram assinaladas.
  * Se faltar algo, alerta o aluno, destaca as pendências e leva até a primeira delas.
  * @param {Object} estado - Estado da página.
- * @returns {boolean} true se a atividade está completa.
+ * @returns {Promise<boolean>} true se a atividade está completa.
  */
-function validarAtividade(estado) {
+async function validarAtividade(estado) {
     if (!estado.provedor.podeResponder()) return false;
     const pendentes = listarPendentes(estado);
     destacarPendentes(estado, pendentes);
     if (pendentes.length === 0) return true;
 
-    window.alert(montarMensagemPendencias(pendentes));
+    await mostrarPopup(montarMensagemPendencias(pendentes), { tipo: 'aviso' });
     pendentes[0].card.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return false;
 }
@@ -462,7 +488,7 @@ async function conferirGravacao(estado) {
     try {
         gravadas = await estado.provedor.lerGravadas();
     } catch (erro) {
-        window.alert(MSG_ERRO_CONFERIR);
+        await mostrarPopup(MSG_ERRO_CONFERIR, { tipo: 'erro' });
         return false;
     }
     estado.dados.respostas = gravadas;
@@ -472,7 +498,7 @@ async function conferirGravacao(estado) {
     destacarPendentes(estado, faltando);
     if (faltando.length === 0) return true;
 
-    window.alert(montarMensagemNaoGravadas(faltando));
+    await mostrarPopup(montarMensagemNaoGravadas(faltando), { tipo: 'aviso' });
     faltando[0].card.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return false;
 }
@@ -482,23 +508,27 @@ async function conferirGravacao(estado) {
  * @param {Object} estado - Estado da página.
  */
 async function finalizarAtividade(estado) {
-    if (estado.entregue) return window.alert(MSG_JA_ENTREGUE);
-    if (!validarAtividade(estado)) return;
+    if (estado.entregue) return mostrarPopup(MSG_JA_ENTREGUE, { tipo: 'aviso' });
+    if (!(await validarAtividade(estado))) return;
     const botao = document.querySelector('.botao-finalizar');
     botao.disabled = true;
     try {
         const todasGravadas = await conferirGravacao(estado);
         if (!todasGravadas) return;
-        if (!window.confirm(montarMensagemConfirmarEntrega(estado.tentativa))) return;
+        const querEntregar = await confirmarPopup(
+            montarMensagemConfirmarEntrega(estado.tentativa),
+            { titulo: 'Entregar atividade', textoConfirmar: 'Entregar', textoCancelar: 'Voltar' });
+        if (!querEntregar) return;
         const resultado = await estado.provedor.entregar();
         estado.atualizarFolha();
         marcarEntregue(estado, resultado.entregueEm);
         mostrarAvisoGravacao('✅ Entrega gravada: tentativa ' + estado.tentativa);
         mostrarResultadoNoInicio(estado, resultado.resultado);
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        window.alert(montarMensagemEntrega(estado.tentativa, resultado.resultado));
+        await mostrarPopup(montarMensagemEntrega(estado.tentativa, resultado.resultado),
+            { tipo: 'sucesso', titulo: 'Atividade entregue' });
     } catch (erro) {
-        window.alert(erro.message || MSG_ERRO_SALVAR);
+        await mostrarPopup(erro.message || MSG_ERRO_SALVAR, { tipo: 'erro' });
     } finally {
         botao.disabled = estado.entregue;
     }
@@ -550,8 +580,8 @@ function atualizarFolha(estado) {
  * Imprime só a folha de respostas, depois de validar a atividade.
  * @param {Object} estado - Estado da página.
  */
-function imprimirFolha(estado) {
-    if (!validarAtividade(estado)) return;
+async function imprimirFolha(estado) {
+    if (!(await validarAtividade(estado))) return;
     document.body.classList.add(CLASSE_IMPRIMIR);
     window.addEventListener('afterprint', () => document.body.classList.remove(CLASSE_IMPRIMIR),
         { once: true });
@@ -575,7 +605,7 @@ function criarProvedorIndisponivel() {
             return bloco;
         },
         podeResponder() {
-            window.alert(MSG_BANCO_INDISPONIVEL);
+            mostrarPopup(MSG_BANCO_INDISPONIVEL, { tipo: 'erro' });
             return false;
         },
         async salvarResposta() { throw new Error(MSG_BANCO_INDISPONIVEL); },
@@ -600,12 +630,28 @@ async function escolherProvedor() {
 }
 
 /**
+ * Perfil professor: carrega e mostra a lista de alunos com tentativas, notas e liberação.
+ * Uma falha aqui não pode impedir o resto da página.
+ * @param {HTMLElement} secao - Seção de conteúdo da página.
+ * @param {number} atividadeId - Id da atividade no banco.
+ */
+async function abrirRelatorioProfessor(secao, atividadeId) {
+    try {
+        await carregarScript('respostas-atividade-professor.js');
+        await montarRelatorioProfessor(secao, atividadeId);
+    } catch (erro) {
+        console.warn('Relatório do professor indisponível:', erro.message);
+    }
+}
+
+/**
  * Inicia a página: identificação no início, folha no fim e alternativas clicáveis.
  */
 async function iniciarRespostasAtividade() {
     const secao = document.querySelector('.content-section');
     if (!secao) return;
 
+    await garantirPopup();
     const { provedor, carregado } = await escolherProvedor();
     const estado = {
         provedor,
@@ -625,6 +671,7 @@ async function iniciarRespostasAtividade() {
     estado.atualizarFolha();
     if (estado.entregue) marcarEntregue(estado, carregado.entregueEm);
     if (estado.entregue) mostrarResultadoNoInicio(estado, carregado.resultado);
+    if (carregado.ehProfessor) await abrirRelatorioProfessor(secao, carregado.atividadeId);
 }
 
 iniciarRespostasAtividade();

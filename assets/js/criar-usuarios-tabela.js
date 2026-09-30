@@ -42,8 +42,8 @@ function obterSituacaoCadastro(email, cadastrados) {
  */
 function montarMensagemAnotou(nome, informada) {
     return informada
-        ? '✅ Gravado no banco de dados: a senha de ' + nome + ' foi informada ao aluno.'
-        : 'ℹ️ Registro removido do banco de dados: a senha de ' + nome
+        ? 'A senha de ' + nome + ' foi informada ao aluno e isso foi gravado no banco de dados.'
+        : 'Registro removido do banco de dados: a senha de ' + nome
             + ' NÃO consta como informada.';
 }
 
@@ -63,11 +63,13 @@ async function gravarEscolhaAnotouGuia(escolha, alvo, pintar) {
         const encontrado = await gravarSenhaInformada(alvo.usuarioId, informada);
         if (!encontrado) throw new Error(MSG_SEM_USUARIO);
         pintar();
-        window.alert(montarMensagemAnotou(aluno.nome, informada));
+        await mostrarPopup(montarMensagemAnotou(aluno.nome, informada),
+            { tipo: informada ? 'sucesso' : 'info', titulo: 'Gravado no banco de dados' });
     } catch (erro) {
         escolha.value = informada ? SITUACAO_NAO : SITUACAO_SIM;
         pintar();
-        window.alert('❌ Não foi possível gravar no banco de dados: ' + erro.message);
+        await mostrarPopup('Não foi possível gravar no banco de dados: ' + erro.message,
+            { tipo: 'erro' });
     } finally {
         escolha.disabled = false;
     }

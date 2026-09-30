@@ -311,7 +311,9 @@ async function liberarNovaTentativa(painel, linha) {
     const proxima = linha.atual.numero + 1;
     const pergunta = 'Liberar a tentativa ' + proxima + ' de ' + MAXIMO_TENTATIVAS + ' para ' +
         linha.aluno.nome + '?\n\nA atividade abre com as respostas da tentativa anterior.';
-    if (!window.confirm(pergunta)) return;
+    const querLiberar = await confirmarPopup(pergunta,
+        { titulo: 'Liberar nova tentativa', textoConfirmar: 'Liberar', textoCancelar: 'Cancelar' });
+    if (!querLiberar) return;
     const resposta = await fetch(SUPABASE.URL + ROTA_LIBERAR, {
         method: 'POST',
         headers: await sbH(),
@@ -319,10 +321,11 @@ async function liberarNovaTentativa(painel, linha) {
     });
     if (!resposta.ok) {
         const erro = await resposta.json().catch(() => ({}));
-        return window.alert(MSG_ERRO_LIBERAR + (erro.message || resposta.status));
+        return mostrarPopup(MSG_ERRO_LIBERAR + (erro.message || resposta.status),
+            { tipo: 'erro' });
     }
-    window.alert('✅ Tentativa ' + proxima + ' de ' + MAXIMO_TENTATIVAS + ' liberada para ' +
-        linha.aluno.nome + '.');
+    await mostrarPopup('Tentativa ' + proxima + ' de ' + MAXIMO_TENTATIVAS + ' liberada para ' +
+        linha.aluno.nome + '.', { tipo: 'sucesso', titulo: 'Tentativa liberada' });
     await atualizarRelatorio(painel, linha.aluno.id);
 }
 
