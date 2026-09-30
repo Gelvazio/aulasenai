@@ -380,7 +380,7 @@ async function iniciarCrudAtividades() {
 }
 
 /**
- * Carrega a coluna "Fez Atividade?" (CSS e JS próprios) para o aluno logado.
+ * Carrega a coluna "Fez Atividade?" e o bloqueio de atividades (CSS e JS próprios).
  */
 function carregarMarcacaoFeitas() {
     if (!BASE_ASSETS_CRUD) return;
@@ -390,7 +390,9 @@ function carregarMarcacaoFeitas() {
     estilo.href = BASE_ASSETS_CRUD + 'css/indice-atividades-feitas.css';
     const script = criarElementoCrud('script');
     script.src = BASE_ASSETS_CRUD + 'js/indice-atividades-feitas.js';
-    document.head.append(estilo, script);
+    const scriptBloqueio = criarElementoCrud('script');
+    scriptBloqueio.src = BASE_ASSETS_CRUD + 'js/indice-atividades-bloqueio.js';
+    document.head.append(estilo, script, scriptBloqueio);
 }
 
 carregarMarcacaoFeitas();
