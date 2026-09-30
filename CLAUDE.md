@@ -1238,6 +1238,11 @@ versionado (inclusive `database/`).
   `MATERIAIS/**/ATIVIDADES/` (os índices apontam para eles). `*.pdf`/`*.pptx` são binários no
   `.gitattributes`.
 - ✅ Antes de cada commit, conferir `git diff --cached --name-only` contra esta lista.
+- ✅ **`*.md` e `*.py` são versionados** (liberados em 2026-09-30), **exceto**: `*gabarito*` (qualquer
+  arquivo), `*QUESTOES.md` (as fontes das atividades têm a linha `**Gabarito:**` com a resposta
+  certa) e `docs/atividade-raciocinio-logico.md`. Novo `.md` com resposta certa, senha, e-mail real
+  de aluno ou chave secreta **não entra**: acrescentar o padrão ao `.gitignore` **antes** do
+  commit. Conferir `git diff --cached --name-only` sempre.
 
 ## 🗄️ REGRA — BANCO REAL ANTES DE ALTERAR O SCHEMA
 
@@ -1299,8 +1304,9 @@ regra global de mesmo nome.
 - ✅ O commit é **local**; o **push só quando o usuário pedir** (ver "PUSH PERMITIDO QUANDO O USUÁRIO
   PEDIR").
 - ✅ Usuário pediu commit explícito → fazer na hora.
-- ✅ Arquivos ignorados pelo Git (ex.: `*.md`, como o `CLAUDE.md` e os planos) não entram no commit;
-  não usar `-f` para forçá-los.
+- ✅ Arquivos ignorados pelo Git (gabaritos, fontes de questões, listas de alunos) não entram no
+  commit; não usar `-f` para forçá-los. Desde 2026-09-30 os `*.md` e `*.py` **são versionados**
+  (inclusive este `CLAUDE.md`, os planos em `docs/` e os geradores em `assets/`).
 
 ---
 
