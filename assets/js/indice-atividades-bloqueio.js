@@ -9,6 +9,7 @@
 const SELETOR_CARD_BLOQUEIO = 'article.aula';
 const SELETOR_LINK_BLOQUEIO = 'a.btn.principal';
 const CLASSE_CARD_BLOQUEADO = 'bloqueada';
+const CLASSE_TEMA_BLOQUEADO_PROFESSOR = 'bloqueada-professor';
 const TEXTO_BOTAO_BLOQUEADO = '🔒 Bloqueada';
 const MSG_ATIVIDADE_BLOQUEADA = 'Atividade Bloqueada!';
 const PERFIL_PROFESSOR_BLOQUEIO = 'PROFESSOR';
@@ -166,9 +167,11 @@ async function montarInterruptoresBloquear() {
         if (!atividades.length || !acoes) return;
 
         const bloqueado = atividades.every((atividade) => !atividade.ativo);
+        card.classList.toggle(CLASSE_TEMA_BLOQUEADO_PROFESSOR, bloqueado);
         acoes.append(criarInterruptorBloquear(bloqueado, async (bloquear) => {
             await gravarBloqueioCard(atividades, bloquear);
             atividades.forEach((atividade) => { atividade.ativo = !bloquear; });
+            card.classList.toggle(CLASSE_TEMA_BLOQUEADO_PROFESSOR, bloquear);
         }));
     });
 }
