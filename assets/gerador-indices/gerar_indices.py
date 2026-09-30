@@ -314,6 +314,7 @@ def card_curso(curso, total_materias, com_atividade):
 MENU_PRINCIPAL = (
     '\n            <nav class="menu-principal" data-somente-perfil="PROFESSOR" hidden>'
     '<a href="scripts/criarUsuariosBancoDados.html" target="_blank" rel="noopener">USUARIOS</a>'
+    '<a href="relatorioAtividades.html" target="_blank" rel="noopener">RELATORIOS</a>'
     '</nav>'
 )
 
