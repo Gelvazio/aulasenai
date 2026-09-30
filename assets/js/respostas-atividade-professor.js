@@ -19,6 +19,7 @@ let turmaEscolhidaRelatorio = null;
 let filtroSoNaoAtingiuRelatorio = false;
 const filtroFezRelatorio = new Set();
 const filtroTentativasRelatorio = new Set();
+const CLASSE_PERGUNTAS_OCULTAS = 'atividade--perguntas-ocultas';
 const QUANTIDADES_TENTATIVAS = ['1', '2', '3'];
 const CLASSE_NOTAS_OCULTAS = CLASSE_RELATORIO + '__aluno--notas-ocultas';
 const CLASSE_ABAIXO_MINIMO = CLASSE_RELATORIO + '__aluno--abaixo-minimo';
@@ -463,16 +464,36 @@ function montarFiltrosRelatorio(aoMudar) {
 }
 
 /**
+ * Cria o interruptor "Mostrar Atividades": liga/desliga a exibição das perguntas para o
+ * professor (por padrão desligado, as perguntas ficam escondidas).
+ * @returns {HTMLElement} Interruptor pronto.
+ */
+function montarInterruptorPerguntas() {
+    const interruptor = criarInterruptorRelatorio('Mostrar Atividades', (ligado) =>
+        document.body.classList.toggle(CLASSE_PERGUNTAS_OCULTAS, !ligado));
+    interruptor.querySelector('input').checked =
+        !document.body.classList.contains(CLASSE_PERGUNTAS_OCULTAS);
+    const grupo = criarElemento('div', CLASSE_RELATORIO + '__grupo-filtro');
+    grupo.appendChild(interruptor);
+    return grupo;
+}
+
+/**
  * Mostra, no início da atividade, o relatório do professor (cria ou substitui o cartão).
  * @param {HTMLElement} secao - Seção de conteúdo da página.
  * @param {number} atividadeId - Id da atividade no banco.
  * @param {number} maximo - Limite de tentativas da atividade (vem do banco).
  */
 async function montarRelatorioProfessor(secao, atividadeId, maximo) {
+    if (!document.body.dataset.perguntasIniciadas) {
+        document.body.dataset.perguntasIniciadas = 'sim';
+        document.body.classList.add(CLASSE_PERGUNTAS_OCULTAS);
+    }
     secao.querySelector('.' + CLASSE_RELATORIO)?.remove();
     const bloco = criarElemento('div', 'aula-card ' + CLASSE_RELATORIO);
     bloco.appendChild(criarElemento('span', 'aula-badge', 'PROFESSOR'));
     bloco.appendChild(criarElemento('div', 'aula-title', 'Respostas dos alunos nesta atividade'));
+    bloco.appendChild(montarInterruptorPerguntas());
     secao.insertBefore(bloco, secao.firstChild.nextSibling);
     try {
         const linhas = await acrescentarAlunosSemResposta(

@@ -309,3 +309,6 @@
 .relatorio-professor__tabela-tentativas th, .relatorio-professor__tabela-tentativas td {
   padding: 4px 8px; text-align: left; border-top: 1px solid #cbd5e0;
 }
+
+/* Professor: perguntas escondidas até ligar "Mostrar Atividades" */
+.atividade--perguntas-ocultas .aula-card.questao { display: none; }
