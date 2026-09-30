@@ -255,7 +255,8 @@ function montarBlocoAluno(tentativas, base) {
     celulaNota.append(criarElemento('span', CLASSE_RELATORIO + '__nota-final', textoNota),
         criarElemento('span', CLASSE_RELATORIO + '__nota-oculta', '••••'));
     linha.append(criarCelulaRelatorio(primeira.numero_chamada ?? ''),
-        criarCelulaRelatorio(primeira.nome || '(sem cadastro)'),
+        criarCelulaRelatorio((primeira.nome || '(sem cadastro)') +
+            (primeira.fora_da_chamada ? ' (fora da chamada)' : '')),
         criarCelulaRelatorio(semResposta ? '❌ Não' : '✅ Sim',
             CLASSE_RELATORIO + (semResposta ? '__fez--nao' : '__fez--sim')),
         criarCelulaRelatorio((semResposta ? 0 : tentativas.length) + ' de ' + base.maximo),
@@ -295,21 +296,48 @@ function montarListaAlunosRelatorio(linhas, base) {
 }
 
 /**
- * Acrescenta ao resumo os alunos que ainda não responderam nada (linhas marcadas sem_resposta).
- * Se a consulta falhar, devolve só as linhas originais.
+ * Normaliza um texto para comparar nomes (sem acentos, minúsculo, sem espaços sobrando).
+ * @param {string} texto - Texto original.
+ * @returns {string} Texto normalizado.
+ */
+function normalizarTexto(texto) {
+    return String(texto || '').normalize('NFD').replace(/[̀-ͯ]/g, '')
+        .toLowerCase().replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Descobre a unidade curricular (matéria) da atividade.
+ * @param {number} atividadeId - Id da atividade.
+ * @returns {Promise<string>} Nome normalizado da UC ou vazio se não for possível descobrir.
+ */
+async function buscarUcDaAtividade(atividadeId) {
+    const linhas = await sbGet('atividade',
+        'select=aulas(materia(descricao))&id=eq.' + encodeURIComponent(atividadeId));
+    return normalizarTexto(linhas[0]?.aulas?.materia?.descricao);
+}
+
+/**
+ * Acrescenta ao resumo TODOS os alunos das turmas da UC da atividade que ainda não responderam
+ * nada (linhas marcadas sem_resposta), inclusive os fora da chamada oficial. Se não for possível
+ * descobrir a UC, usa todas as turmas. Se a consulta falhar, devolve só as linhas originais.
  * @param {Object[]} linhas - Linhas do resumo.
+ * @param {number} atividadeId - Id da atividade.
+ * @param {Map<string, Object>} dadosTurmas - Dados das turmas por código (inclui uc).
  * @returns {Promise<Object[]>} Linhas do resumo mais uma linha por aluno sem resposta.
  */
-async function acrescentarAlunosSemResposta(linhas) {
+async function acrescentarAlunosSemResposta(linhas, atividadeId, dadosTurmas) {
     try {
+        const uc = await buscarUcDaAtividade(atividadeId).catch(() => '');
         const alunos = await sbGet('aluno',
             'select=id,nome,numero_chamada,turma_codigo,na_chamada&order=turma_codigo,numero_chamada');
         const jaResponderam = new Set(linhas.map((linha) => linha.aluno_id));
+        const turmaDaUc = (codigo) => !uc || !dadosTurmas.has(codigo) ||
+            normalizarTexto(dadosTurmas.get(codigo).uc) === uc;
         const faltantes = alunos
-            .filter((aluno) => aluno.na_chamada !== false && !jaResponderam.has(aluno.id))
+            .filter((aluno) => !jaResponderam.has(aluno.id) && turmaDaUc(aluno.turma_codigo))
             .map((aluno) => ({ aluno_id: aluno.id, nome: aluno.nome,
                 numero_chamada: aluno.numero_chamada, turma_codigo: aluno.turma_codigo,
-                turma_nome: null, sem_resposta: true }));
+                turma_nome: null, sem_resposta: true, fora_da_chamada: aluno.na_chamada === false }));
         return [...linhas, ...faltantes];
     } catch (erro) {
         return linhas;
@@ -496,13 +524,14 @@ async function montarRelatorioProfessor(secao, atividadeId, maximo) {
     bloco.appendChild(montarInterruptorPerguntas());
     secao.insertBefore(bloco, secao.firstChild.nextSibling);
     try {
+        const dadosTurmas = await buscarDadosTurmas();
         const linhas = await acrescentarAlunosSemResposta(
-            await buscarResumoTentativas(atividadeId));
+            await buscarResumoTentativas(atividadeId), atividadeId, dadosTurmas);
         const resumo = criarElemento('p', CLASSE_RELATORIO + '__resumo');
         bloco.appendChild(resumo);
         atualizarResumoRelatorio(resumo, linhas);
         if (!linhas.length) return;
-        const turmas = listarTurmasRelatorio(linhas, await buscarDadosTurmas());
+        const turmas = listarTurmasRelatorio(linhas, dadosTurmas);
         const existe = turmas.some((turma) => turma.codigo === turmaEscolhidaRelatorio);
         if (!existe) turmaEscolhidaRelatorio = turmas[0].codigo;
         bloco.appendChild(montarAbasTurmaRelatorio(turmas,
