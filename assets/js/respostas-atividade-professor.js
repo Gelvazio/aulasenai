@@ -17,6 +17,7 @@ const TURMA_SEM_CODIGO = '';
 const MAXIMO_TENTATIVAS_APROVADO = 2;
 const CLASSE_ABA_ATIVA = CLASSE_RELATORIO + '__aba--ativa';
 let turmaEscolhidaRelatorio = null;
+let mostrarNotasGlobalRelatorio = false;
 let filtroSoNaoAtingiuRelatorio = true;
 const filtroFezRelatorio = new Set(['sim']);
 const filtroStatusRelatorio = new Set();
@@ -212,9 +213,27 @@ function calcularNotaFinalAluno(tentativas) {
  * @param {HTMLElement} bloco - Bloco do aluno.
  */
 function alternarNotasAluno(bloco) {
-    const ocultas = bloco.classList.toggle(CLASSE_NOTAS_OCULTAS);
+    definirNotasAluno(bloco, bloco.classList.contains(CLASSE_NOTAS_OCULTAS));
+}
+
+/**
+ * Mostra ou esconde as notas de um aluno e ajusta o texto do botão.
+ * @param {HTMLElement} bloco - Bloco do aluno.
+ * @param {boolean} visiveis - true para mostrar as notas.
+ */
+function definirNotasAluno(bloco, visiveis) {
+    bloco.classList.toggle(CLASSE_NOTAS_OCULTAS, !visiveis);
     const botao = bloco.querySelector('.' + CLASSE_RELATORIO + '__ver-notas');
-    botao.textContent = ocultas ? 'Visualizar Notas' : 'Ocultar Notas';
+    if (botao) botao.textContent = visiveis ? 'Ocultar Notas' : 'Visualizar Notas';
+}
+
+/**
+ * Aplica o filtro global "Visualizar Notas" a todos os alunos do relatório.
+ * @param {HTMLElement} raiz - Cartão do relatório.
+ */
+function aplicarNotasGlobais(raiz) {
+    raiz.querySelectorAll('.' + CLASSE_RELATORIO + '__aluno')
+        .forEach((bloco) => definirNotasAluno(bloco, mostrarNotasGlobalRelatorio));
 }
 
 /**
@@ -561,7 +580,12 @@ function montarFiltrosRelatorio(aoMudar) {
             aoMudar();
         }, filtroStatusRelatorio.has(valor)));
     });
-    barra.append(grupoFez, grupoStatus, grupoSituacao, grupoTentativas);
+    const grupoNotas = criarElemento('div', CLASSE_RELATORIO + '__grupo-filtro');
+    grupoNotas.appendChild(criarInterruptorRelatorio('Visualizar Notas', (ligado) => {
+        mostrarNotasGlobalRelatorio = ligado;
+        aplicarNotasGlobais(barra.closest('.' + CLASSE_RELATORIO));
+    }, mostrarNotasGlobalRelatorio));
+    barra.append(grupoNotas, grupoFez, grupoStatus, grupoSituacao, grupoTentativas);
     return barra;
 }
 
@@ -687,6 +711,7 @@ async function montarRelatorioProfessor(secao, atividadeId, maximo) {
         bloco.appendChild(montarFiltrosRelatorio(
             () => aplicarFiltroTurmaRelatorio(bloco, linhas, turmaEscolhidaRelatorio)));
         bloco.appendChild(montarListaAlunosRelatorio(linhas, { secao, atividadeId, maximo }));
+        aplicarNotasGlobais(bloco);
         aplicarFiltroTurmaRelatorio(bloco, linhas, turmaEscolhidaRelatorio);
     } catch (erro) {
         bloco.appendChild(criarElemento('p', CLASSE_RELATORIO + '__erro',
