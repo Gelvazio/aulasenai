@@ -53,6 +53,8 @@ ATIVIDADES = [
      f"{PASTA_TIC}/ATIVIDADES-AULA-09-50-QUESTOES.md"),
     (10, "Editor de Apresentações e TIC", DATA_PROVISORIA,
      f"{PASTA_TIC}/ATIVIDADES-AULA-10-50-QUESTOES.md"),
+    (10, "Editor de Apresentações e TIC", "2026-09-30",
+     f"{PASTA_TIC}/AVALIACAO-OBJETIVA-02-QUESTOES.md"),
     (11, "O Ciclo do Feedback na Comunicação", "2026-09-28",
      f"{PASTA_TIC}/ATIVIDADES-AULA-28-09-2026/ATIVIDADES-AULA-28-09-2026-50-QUESTOES.md"),
 ]
