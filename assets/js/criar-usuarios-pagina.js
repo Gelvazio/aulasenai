@@ -242,6 +242,41 @@ function montarTituloTurmaGuia(turma) {
 }
 
 /**
+ * Marca a turma favorita nas abas (⭐) e ajusta o botão de favorita de cada cartão.
+ * @param {{favorita: string}} contexto - Contexto da página com o código da favorita.
+ */
+function atualizarFavoritaGuia(contexto) {
+    document.querySelectorAll('.guia-aba[data-turma]').forEach((aba) => {
+        const ehFavorita = aba.dataset.turma === contexto.favorita;
+        aba.querySelector('.guia-aba__favorita')?.remove();
+        if (ehFavorita) aba.prepend(criarElementoAbaGuia('guia-aba__favorita', '⭐ Favorita'));
+    });
+    document.querySelectorAll('.guia-cartao[data-turma]').forEach((cartao) => {
+        const botao = cartao.querySelector('.guia-favorita');
+        if (botao) atualizarBotaoFavorita(botao, cartao.dataset.turma === contexto.favorita);
+    });
+}
+
+/**
+ * Cria o botão de marcar/desmarcar a turma como favorita (só professor).
+ * @param {Object} turma - Turma do cartão.
+ * @param {{favorita: string}} contexto - Contexto da página (guarda a favorita atual).
+ * @returns {HTMLButtonElement} Botão pronto.
+ */
+function criarBotaoFavoritaGuia(turma, contexto) {
+    return criarBotaoFavorita('guia-botao guia-favorita', async () => {
+        const novaFavorita = contexto.favorita === turma.codigo ? '' : turma.codigo;
+        try {
+            await definirTurmaFavorita(novaFavorita);
+            contexto.favorita = novaFavorita;
+            atualizarFavoritaGuia(contexto);
+        } catch (erro) {
+            await mostrarPopup(erro.message, { tipo: 'erro' });
+        }
+    });
+}
+
+/**
  * Cria o cartão de uma turma: título, controles, botão, resultado e tabela de alunos.
  * @param {Object} turma - Turma da lista de presença.
  * @param {{cadastrados: Map<string, string>|null, mostrarSenha: boolean}} contexto - Cadastrados
@@ -275,7 +310,9 @@ function criarCartaoTurmaGuia(turma, contexto) {
 
     const titulo = document.createElement('h2');
     titulo.textContent = montarTituloTurmaGuia(turma);
-    cartao.append(titulo, barra, botao, resultado, tabela);
+    cartao.append(titulo);
+    if (contexto.podeGravar) cartao.append(criarBotaoFavoritaGuia(turma, contexto));
+    cartao.append(barra, botao, resultado, tabela);
     aoMudar();
     return cartao;
 }
@@ -321,6 +358,7 @@ function criarAbaTurmaGuia(turma, indice) {
     if (turma.uc) aba.append(criarElementoAbaGuia('guia-aba__uc', turma.uc));
     aba.append(criarElementoAbaGuia('guia-aba__turma',
         turma.nome + ' (' + turma.alunos.length + ')'));
+    aba.dataset.turma = turma.codigo;
     aba.addEventListener('click', () => alternarAbaGuia(indice));
     return aba;
 }
@@ -346,10 +384,13 @@ async function iniciarGuiaUsuarios() {
     const contexto = {
         cadastrados, senhasInformadas, mostrarSenha: ehProfessor, podeGravar: ehProfessor,
     };
+    contexto.favorita = await buscarTurmaFavorita();
     obterElementoGuia('abas').replaceChildren(...turmas.map(criarAbaTurmaGuia));
     obterElementoGuia('turmas').replaceChildren(
         ...turmas.map((turma) => criarCartaoTurmaGuia(turma, contexto)));
-    alternarAbaGuia(0);
+    atualizarFavoritaGuia(contexto);
+    const indiceFavorita = turmas.findIndex((turma) => turma.codigo === contexto.favorita);
+    alternarAbaGuia(Math.max(indiceFavorita, 0));
 }
 
 iniciarGuiaUsuarios();

@@ -309,7 +309,7 @@ function montarListaAlunosRelatorio(linhas, base) {
  */
 async function buscarDadosTurmas() {
     try {
-        const turmas = await sbGet('turma', 'select=codigo,nome,turno,local,uc');
+        const turmas = await sbGet('turma', 'select=codigo,nome,turno,local,uc,favorito');
         return new Map(turmas.map((turma) => [turma.codigo, turma]));
     } catch (erro) {
         return new Map();
@@ -380,6 +380,7 @@ function listarTurmasRelatorio(linhas, dadosTurmas) {
         const turma = turmas.get(codigo) || {
             codigo, nome: linha.turma_nome || dados.nome || codigo || 'Sem turma', uc: dados.uc || '',
             local: [dados.local, dados.turno].filter(Boolean).join(' ').toUpperCase(),
+            favorita: Boolean(dados.favorito),
             alunos: new Set(),
         };
         turma.alunos.add(linha.aluno_id);
@@ -417,6 +418,7 @@ function aplicarFiltroTurmaRelatorio(bloco, linhas, turma) {
         cartao.hidden = !passaNosFiltros(cartao, turma);
         if (!cartao.hidden) idsVisiveis.add(cartao.dataset.aluno);
     });
+    bloco.querySelector('.' + CLASSE_RELATORIO + '__favorita')?.atualizar();
     bloco.querySelectorAll('.' + CLASSE_RELATORIO + '__aba').forEach((aba) => {
         const ativa = aba.dataset.turma === turma;
         aba.classList.toggle(CLASSE_ABA_ATIVA, ativa);
@@ -450,6 +452,7 @@ function montarAbasTurmaRelatorio(turmas, aoEscolher) {
     barra.setAttribute('aria-label', 'Filtrar por turma');
     turmas.forEach((turma) => {
         const aba = criarBotao(CLASSE_RELATORIO + '__aba', '', () => aoEscolher(turma.codigo));
+        if (turma.favorita) aba.append(criarTrechoAbaRelatorio('uc', '⭐ Turma favorita'));
         if (turma.local) aba.append(criarTrechoAbaRelatorio('local', turma.local));
         if (turma.uc) aba.append(criarTrechoAbaRelatorio('uc', turma.uc));
         aba.append(criarTrechoAbaRelatorio('turma', turma.nome + ' (' + turma.alunos + ')'));
@@ -539,6 +542,28 @@ function montarInterruptorPerguntas() {
 }
 
 /**
+ * Cria o botão que marca/desmarca como favorita a turma escolhida nas abas.
+ * @param {{codigo: string, favorita: boolean}[]} turmas - Turmas do relatório.
+ * @param {Function} aoAlterar - Recarrega o relatório depois de gravar.
+ * @returns {HTMLButtonElement} Botão pronto.
+ */
+function criarBotaoFavoritaRelatorio(turmas, aoAlterar) {
+    const botao = criarBotaoFavorita('btn-export ' + CLASSE_RELATORIO + '__favorita', async () => {
+        const atual = turmas.find((turma) => turma.codigo === turmaEscolhidaRelatorio);
+        try {
+            await definirTurmaFavorita(atual?.favorita ? '' : turmaEscolhidaRelatorio);
+            await aoAlterar();
+        } catch (erro) {
+            await mostrarPopup(erro.message, { tipo: 'erro' });
+        }
+    });
+    botao.atualizar = () => atualizarBotaoFavorita(botao, turmas.some((turma) =>
+        turma.favorita && turma.codigo === turmaEscolhidaRelatorio));
+    botao.atualizar();
+    return botao;
+}
+
+/**
  * Mostra, no início da atividade, o relatório do professor (cria ou substitui o cartão).
  * @param {HTMLElement} secao - Seção de conteúdo da página.
  * @param {number} atividadeId - Id da atividade no banco.
@@ -565,9 +590,12 @@ async function montarRelatorioProfessor(secao, atividadeId, maximo) {
         if (!linhas.length) return;
         const turmas = listarTurmasRelatorio(linhas, dadosTurmas);
         const existe = turmas.some((turma) => turma.codigo === turmaEscolhidaRelatorio);
-        if (!existe) turmaEscolhidaRelatorio = turmas[0].codigo;
+        const favorita = turmas.find((turma) => turma.favorita);
+        if (!existe) turmaEscolhidaRelatorio = (favorita || turmas[0]).codigo;
         bloco.appendChild(montarAbasTurmaRelatorio(turmas,
             (turma) => aplicarFiltroTurmaRelatorio(bloco, linhas, turma)));
+        bloco.appendChild(criarBotaoFavoritaRelatorio(turmas, () =>
+            montarRelatorioProfessor(secao, atividadeId, maximo)));
         bloco.appendChild(montarFiltrosRelatorio(
             () => aplicarFiltroTurmaRelatorio(bloco, linhas, turmaEscolhidaRelatorio)));
         bloco.appendChild(montarListaAlunosRelatorio(linhas, { secao, atividadeId, maximo }));

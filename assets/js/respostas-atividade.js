@@ -662,6 +662,7 @@ async function escolherProvedor() {
  */
 async function abrirRelatorioProfessor(secao, atividadeId, maximo) {
     try {
+        await carregarScript('turma-favorita.js');
         await carregarScript('respostas-atividade-professor.js');
         await montarRelatorioProfessor(secao, atividadeId, maximo);
     } catch (erro) {
