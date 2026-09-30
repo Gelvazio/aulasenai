@@ -3,10 +3,8 @@ graphify-out/
 .tmp.driveupload
 *.pdf
 *.png
-*.py
 *.docx
 *.pptx
-*.md
 *.txt
 *.xlsx
 *.gs
@@ -46,3 +44,9 @@ __pycache__/
 
 # Segredos locais (chave service_role) — nunca publicar
 variaveis.js
+
+# Fontes de atividades e gabaritos (contêm as respostas certas) — nunca publicar
+*[Gg][Aa][Bb][Aa][Rr][Ii][Tt][Oo]*
+*QUESTOES.md
+docs/atividade-raciocinio-logico.md
+GERADOR-AULAS/ESTRUTURA-PROVAS/Prova Pr*tica.md

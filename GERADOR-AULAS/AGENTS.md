@@ -1,0 +1,1 @@
+TODA A REGRA DE NEGOCIOS DEVE SEMPRE SER LIDA DE CLAUDE.md, e sempre atualizar ela em CLAUDE.md
