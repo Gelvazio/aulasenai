@@ -3,6 +3,7 @@
 // o card cuja atividade o aluno não consegue ler fica bloqueado e, ao clicar na atividade,
 // aparece a mensagem "Atividade Bloqueada!". O professor não tem bloqueio.
 // Só age em pastas gerenciadas pelo banco (pelo menos uma atividade da pasta cadastrada e ativa).
+// Para o professor, cada card ganha o interruptor ON/OFF "Bloquear" (grava atividade.ativo).
 // Carregado por assets/js/atividades-crud-modal.js. Depende de supabase-js e js/supabase.js.
 
 const SELETOR_CARD_BLOQUEIO = 'article.aula';
@@ -93,11 +94,91 @@ function bloquearCardAtividade(card) {
 }
 
 /**
+ * Lista os caminhos das páginas de atividade (links .html) de um card.
+ * @param {HTMLElement} card - Card do índice.
+ * @returns {string[]} Caminhos sem repetição.
+ */
+function listarPaginasDoCard(card) {
+    const caminhos = [...card.querySelectorAll('a.btn')]
+        .map((link) => obterCaminhoBloqueio(link.getAttribute('href')));
+    return [...new Set(caminhos.filter(Boolean))];
+}
+
+/**
+ * Cria o interruptor ON/OFF "Bloquear" de um card (ON = bloqueada para os alunos).
+ * @param {boolean} bloqueado - Estado inicial.
+ * @param {Function} aoMudar - Chamada async com o novo estado; se falhar, o interruptor volta.
+ * @returns {HTMLLabelElement} Interruptor pronto.
+ */
+function criarInterruptorBloquear(bloqueado, aoMudar) {
+    const etiqueta = document.createElement('label');
+    etiqueta.className = 'interruptor-bloquear';
+    const caixa = document.createElement('input');
+    caixa.type = 'checkbox';
+    caixa.checked = bloqueado;
+    caixa.addEventListener('change', async () => {
+        caixa.disabled = true;
+        try {
+            await aoMudar(caixa.checked);
+        } catch (erro) {
+            caixa.checked = !caixa.checked;
+            await garantirPopupBloqueio();
+            await mostrarPopup('Não foi possível alterar o bloqueio: ' + erro.message,
+                { tipo: 'erro' });
+        }
+        caixa.disabled = false;
+    });
+    const chave = document.createElement('span');
+    chave.className = 'interruptor-bloquear__chave';
+    const texto = document.createElement('span');
+    texto.className = 'interruptor-bloquear__texto';
+    texto.textContent = 'Bloquear';
+    etiqueta.append(caixa, chave, texto);
+    return etiqueta;
+}
+
+/**
+ * Grava no banco o bloqueio (ativo = não bloqueado) de todas as atividades do card.
+ * @param {{id: number}[]} atividades - Atividades cadastradas do card.
+ * @param {boolean} bloquear - true para bloquear.
+ */
+async function gravarBloqueioCard(atividades, bloquear) {
+    for (const atividade of atividades) {
+        await sbPatch('atividade', 'id', atividade.id, { ativo: !bloquear });
+    }
+}
+
+/**
+ * Acrescenta o interruptor "Bloquear" aos cards do índice (perfil professor).
+ */
+async function montarInterruptoresBloquear() {
+    const cards = [...document.querySelectorAll(SELETOR_CARD_BLOQUEIO)];
+    const todas = [...new Set(cards.flatMap(listarPaginasDoCard))];
+    if (!todas.length) return;
+
+    const valores = todas.map((pagina) => '"' + pagina.replace(/"/g, '') + '"').join(',');
+    const linhas = await sbGet('atividade',
+        'select=id,pagina,ativo&pagina=in.(' + encodeURIComponent(valores) + ')');
+    cards.forEach((card) => {
+        const paginas = listarPaginasDoCard(card);
+        const atividades = linhas.filter((linha) => paginas.includes(linha.pagina));
+        const acoes = card.querySelector('.acoes');
+        if (!atividades.length || !acoes) return;
+
+        const bloqueado = atividades.every((atividade) => !atividade.ativo);
+        acoes.append(criarInterruptorBloquear(bloqueado, async (bloquear) => {
+            await gravarBloqueioCard(atividades, bloquear);
+            atividades.forEach((atividade) => { atividade.ativo = !bloquear; });
+        }));
+    });
+}
+
+/**
  * Inicia o bloqueio. Falhas de rede não quebram o índice.
  */
 async function iniciarBloqueioAtividades() {
     try {
-        if (await usuarioEhProfessorBloqueio()) return;
+        if (await usuarioEhProfessorBloqueio()) return montarInterruptoresBloquear();
 
         const cards = [...document.querySelectorAll(SELETOR_CARD_BLOQUEIO)];
         const caminhos = cards.map((card) =>

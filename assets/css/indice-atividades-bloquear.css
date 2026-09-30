@@ -1,0 +1,30 @@
+/* Interruptor ON/OFF "Bloquear" dos cards do índice de atividades (perfil professor) */
+.interruptor-bloquear {
+  display: inline-flex; align-items: center; gap: 6px; cursor: pointer; padding: 4px 8px;
+  font-size: 13px; font-weight: 700; border: 1px solid #cbd5e0; border-radius: 8px;
+  background: #f7fafc;
+}
+.interruptor-bloquear input { position: absolute; opacity: 0; pointer-events: none; }
+.interruptor-bloquear__chave {
+  position: relative; width: 48px; height: 22px; border-radius: 22px; background: #a0aec0;
+  transition: background 0.2s;
+}
+.interruptor-bloquear__chave::after {
+  content: 'OFF'; position: absolute; right: 6px; top: 5px; font-size: 9px; font-weight: 700;
+  color: #fff;
+}
+.interruptor-bloquear__chave::before {
+  content: ''; position: absolute; left: 3px; top: 3px; width: 16px; height: 16px;
+  border-radius: 50%; background: #fff; transition: transform 0.2s; z-index: 1;
+}
+.interruptor-bloquear input:checked + .interruptor-bloquear__chave { background: #c53030; }
+.interruptor-bloquear input:checked + .interruptor-bloquear__chave::after {
+  content: 'ON'; left: 8px; right: auto;
+}
+.interruptor-bloquear input:checked + .interruptor-bloquear__chave::before {
+  transform: translateX(26px);
+}
+.interruptor-bloquear input:disabled + .interruptor-bloquear__chave { opacity: 0.6; }
+.interruptor-bloquear input:focus-visible + .interruptor-bloquear__chave {
+  outline: 2px solid #1a56db; outline-offset: 2px;
+}

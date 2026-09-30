@@ -388,11 +388,14 @@ function carregarMarcacaoFeitas() {
     const estilo = criarElementoCrud('link');
     estilo.rel = 'stylesheet';
     estilo.href = BASE_ASSETS_CRUD + 'css/indice-atividades-feitas.css';
+    const estiloBloquear = criarElementoCrud('link');
+    estiloBloquear.rel = 'stylesheet';
+    estiloBloquear.href = BASE_ASSETS_CRUD + 'css/indice-atividades-bloquear.css';
     const script = criarElementoCrud('script');
     script.src = BASE_ASSETS_CRUD + 'js/indice-atividades-feitas.js';
     const scriptBloqueio = criarElementoCrud('script');
     scriptBloqueio.src = BASE_ASSETS_CRUD + 'js/indice-atividades-bloqueio.js';
-    document.head.append(estilo, script, scriptBloqueio);
+    document.head.append(estilo, estiloBloquear, script, scriptBloqueio);
 }
 
 carregarMarcacaoFeitas();
