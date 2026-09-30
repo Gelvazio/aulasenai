@@ -199,16 +199,27 @@
 .relatorio-professor__liberar { padding: 4px 10px; font-size: 12px; }
 .relatorio-professor__erro { color: var(--pendente-borda); font-weight: 600; }
 
-/* Filtro por turma (abas) do relatório do professor */
-.relatorio-professor__abas { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+/* Filtro por turma (abas em cartões) do relatório do professor, como em criarUsuariosBancoDados */
+.relatorio-professor__abas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    margin: 10px 0;
+}
 .relatorio-professor__aba {
-    padding: 6px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    width: 100%;
+    padding: 10px 16px;
     border: 1px solid #cbd5e0;
-    border-radius: 6px;
+    border-radius: 8px;
     background: #fff;
     color: var(--folha-azul-senai);
-    font-size: 13px;
+    font: inherit;
     font-weight: 600;
+    text-align: center;
     cursor: pointer;
 }
 .relatorio-professor__aba:hover { background: #eef2ff; }
@@ -218,4 +229,13 @@
     border-color: var(--folha-azul-senai);
     color: #fff;
 }
+.relatorio-professor__aba-local {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+.relatorio-professor__aba-uc { font-size: 11px; font-weight: 600; opacity: 0.8; }
+.relatorio-professor__aba-turma { font-size: 15px; }
 .relatorio-professor__tabela tr[hidden] { display: none; }
+@media (max-width: 480px) { .relatorio-professor__abas { grid-template-columns: 1fr; } }

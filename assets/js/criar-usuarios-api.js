@@ -207,8 +207,10 @@ async function gravarListaNoSupabase(lista, opcoes) {
     const problemas = validarUsuariosDaLista(usuarios);
     if (problemas.length) throw new Error('Nada foi gravado. ' + problemas.join('; '));
 
-    const turmas = lista.turmas.map((t) => (
-        { codigo: t.codigo, nome: t.nome, turno: t.turno, horario: t.horario }));
+    const turmas = lista.turmas.map((t) => ({
+        codigo: t.codigo, nome: t.nome, turno: t.turno, horario: t.horario,
+        ...(t.local ? { local: t.local } : {}), ...(t.uc ? { uc: t.uc } : {}),
+    }));
     await gravarTabelaUsuarios('turma', turmas, chave);
     const contexto = { chave, redefinirSenhas: opcoes.redefinirSenhas };
     const { resumo, alunos, linhasUsuario } = await gravarUsuariosNoAuth(
