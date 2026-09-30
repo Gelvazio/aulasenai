@@ -32,3 +32,5 @@ $$;
 
 revoke all on function public.definir_turma_favorita(text) from public;
 grant execute on function public.definir_turma_favorita(text) to authenticated;
+
+revoke execute on function public.definir_turma_favorita(text) from anon;
