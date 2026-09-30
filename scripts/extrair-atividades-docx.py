@@ -15,6 +15,7 @@ Saída (na pasta):
     ATIVIDADE-NN-<TEMA>-QUESTOES.md      — fonte das questões (termina em QUESTOES.md: fica FORA do
                                             Git, pois traz o gabarito)
     ATIVIDADE-NN-<TEMA>.html             — página gerada (a menos que use --so-md)
+    CONTEUDO/GABARITO-ATIVIDADE-NN-<TEMA>.md — cada gabarito do Word em Markdown (fora do Git)
     atividades.json                      — dados da matéria (criado se não existir)
 Dependência: python-docx.
 """
@@ -31,6 +32,7 @@ GERADOR = RAIZ / "assets" / "gerador-atividades" / "gerar_atividades.py"
 PYTHON = sys.executable
 PADRAO_ATIVIDADE = re.compile(r"^ATIVIDADE-(\d+)-(.+)\.docx$", re.I)
 PREFIXO_GABARITO = "GABARITO-"
+PASTA_CONTEUDO = "CONTEUDO"
 ICONES = {"1": "📊", "2": "🖥️", "3": "🔍", "4": "📈"}
 DURACOES = {"1": "60 minutos", "2": "90 minutos", "3": "120 minutos", "4": "150 minutos"}
 TEMAS = {"1": "Estatística e Progressões", "2": "Conceitos e Fundamentos do Excel",
@@ -227,6 +229,83 @@ def montar_item(item):
     return "\n".join(linhas)
 
 
+def ler_resumo_gabarito(documento):
+    """Lê a tabela-resumo do fim do .docx de gabarito (Q1..Qn e a letra de cada uma).
+
+    Args:
+        documento: Documento python-docx do gabarito.
+
+    Returns:
+        Lista de (questão, letra) ou lista vazia se não houver tabela-resumo.
+    """
+    tabela = documento.tables[-1]
+    if len(tabela.rows) < 2 or not tabela.rows[0].cells[0].text.strip().startswith("Q"):
+        return []
+
+    rotulos = [c.text.strip() for c in tabela.rows[0].cells]
+    letras = [c.text.replace("✅", "").strip() for c in tabela.rows[1].cells]
+    return list(zip(rotulos, letras))
+
+
+def montar_markdown_gabarito(numero, tema, cabecalho, itens, resumo):
+    """Monta o Markdown de um gabarito em Word (itens com ✅ e tabela-resumo).
+
+    Args:
+        numero: Número da atividade.
+        tema: Tema da atividade.
+        cabecalho: Dados do cabeçalho do .docx.
+        itens: Itens lidos do gabarito (com a letra certa).
+        resumo: Pares (questão, letra) da tabela-resumo.
+
+    Returns:
+        Conteúdo Markdown.
+    """
+    linhas = [f"# Gabarito — Atividade {numero}: {tema}", "",
+              f"- **Docente:** {cabecalho['docente']}", f"- **Curso:** {cabecalho['curso']}",
+              f"- **Unidade Curricular:** {cabecalho['uc']}", f"- **Turma:** {cabecalho['turma']}",
+              "", "> ⚠️ Gabarito com as respostas certas: só o professor. Fora do Git (.gitignore).",
+              "", "## Resumo do gabarito", ""]
+    if resumo:
+        linhas += ["| " + " | ".join(q for q, _ in resumo) + " |",
+                   "|" + "---|" * len(resumo), "| " + " | ".join(l for _, l in resumo) + " |"]
+    linhas += ["", "## Itens", ""]
+    for item in itens:
+        linhas += [f"### ITEM {item['num']:02d}", "", f"**Capacidade:** {item['capacidade']}", ""]
+        if item["contexto"]:
+            linhas += [f"**Contexto:** {item['contexto']}", ""]
+        linhas += [f"**Comando:** {item['comando']}", ""]
+        linhas += [f"- {letra}) {texto}" + ("  ✅" if letra == item["gabarito"] else "")
+                   for letra, texto in item["alternativas"]]
+        linhas += ["", f"**Resposta certa:** {item['gabarito']}", "", "---", ""]
+    return "\n".join(linhas)
+
+
+def exportar_gabarito(pasta, caminho):
+    """Converte um GABARITO-ATIVIDADE-NN-*.docx em Markdown na pasta CONTEUDO.
+
+    Args:
+        pasta: Pasta ATIVIDADES.
+        caminho: Caminho do .docx de gabarito.
+
+    Returns:
+        Lista de avisos (resumo diferente das alternativas marcadas).
+    """
+    achado = re.match(r"^GABARITO-ATIVIDADE-(\d+)-(.+)\.docx$", caminho.name, re.I)
+    numero, resto = achado.group(1), achado.group(2)
+    documento = docx.Document(caminho)
+    itens = ler_itens(caminho, com_marca=True)
+    resumo = ler_resumo_gabarito(documento)
+    tema = TEMAS.get(str(int(numero))) or resto.replace("-", " ").capitalize()
+    destino = pasta / PASTA_CONTEUDO / f"GABARITO-ATIVIDADE-{numero}-{resto}.md"
+    destino.parent.mkdir(exist_ok=True)
+    conteudo = montar_markdown_gabarito(numero, tema, ler_cabecalho(documento), itens, resumo)
+    destino.write_text(conteudo, encoding="utf-8")
+    print(f"{caminho.name}: {len(itens)} itens -> {PASTA_CONTEUDO}/{destino.name}")
+    marcadas = {f"Q{i['num']}": i["gabarito"] for i in itens}
+    return [f"{caminho.name}: resumo diz {letra} para {q}, mas o item marca {marcadas.get(q)}"
+            for q, letra in resumo if marcadas.get(q) != letra]
+
+
 def garantir_dados_materia(pasta, cabecalho):
     """Cria o atividades.json da pasta (uc, uc_curta, curso, docente) se ainda não existir.
 
@@ -287,6 +366,8 @@ def main():
     for caminho in sorted(pasta.glob("ATIVIDADE-*.docx")):
         if PADRAO_ATIVIDADE.match(caminho.name):
             avisos += processar_atividade(pasta, caminho, so_md)
+    for caminho in sorted(pasta.glob(PREFIXO_GABARITO + "ATIVIDADE-*.docx")):
+        avisos += exportar_gabarito(pasta, caminho)
     for aviso in avisos:
         print("AVISO:", aviso)
 
