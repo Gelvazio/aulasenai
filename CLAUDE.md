@@ -1157,7 +1157,8 @@ Consulte docs/database.md
 Registrada em 2026-09-30. Ao abrir uma atividade logado como PROFESSOR, o topo da página mostra
 **"Respostas dos alunos nesta atividade"** (`assets/js/respostas-atividade-professor.js`): uma linha
 por aluno e tentativa, com turma, situação, acertos, nota, **data e hora** e, na última tentativa
-entregue do aluno, o botão **🔓 Liberar nova tentativa** (popup de confirmação). Dados: função
+entregue do aluno, o botão **🔓 Liberar nova tentativa** (popup de confirmação). Acima da tabela há **abas por turma** (Todas as turmas + uma por turma, com a
+quantidade de alunos) que filtram as linhas e o resumo; a turma escolhida é lembrada ao recarregar. Dados: função
 `resumo_tentativas_atividade` (`database/2026-09-30-resumo-tentativas-professor.sql`); só o
 professor consegue chamá-la.
 

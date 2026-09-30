@@ -198,3 +198,24 @@
 .relatorio-professor__acao { white-space: nowrap; }
 .relatorio-professor__liberar { padding: 4px 10px; font-size: 12px; }
 .relatorio-professor__erro { color: var(--pendente-borda); font-weight: 600; }
+
+/* Filtro por turma (abas) do relatório do professor */
+.relatorio-professor__abas { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+.relatorio-professor__aba {
+    padding: 6px 14px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    background: #fff;
+    color: var(--folha-azul-senai);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.relatorio-professor__aba:hover { background: #eef2ff; }
+.relatorio-professor__aba--ativa,
+.relatorio-professor__aba--ativa:hover {
+    background: var(--folha-azul-senai);
+    border-color: var(--folha-azul-senai);
+    color: #fff;
+}
+.relatorio-professor__tabela tr[hidden] { display: none; }

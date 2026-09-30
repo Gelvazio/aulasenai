@@ -11,6 +11,10 @@ const ROTA_LIBERAR_TENTATIVA = '/rest/v1/rpc/liberar_nova_tentativa';
 const CLASSE_RELATORIO = 'relatorio-professor';
 const COLUNAS_RELATORIO = ['Nº', 'Aluno', 'Turma', 'Tentativa', 'Situação', 'Acertos', 'Nota',
     'Data e hora', 'Nova tentativa'];
+const TURMA_TODAS = '*';
+const TURMA_SEM_CODIGO = '';
+const CLASSE_ABA_ATIVA = CLASSE_RELATORIO + '__aba--ativa';
+let turmaEscolhidaRelatorio = TURMA_TODAS;
 const MSG_SEM_RESPOSTAS = 'Nenhum aluno respondeu esta atividade ainda.';
 const MSG_ERRO_RELATORIO = 'Não foi possível carregar as respostas dos alunos: ';
 const MSG_ERRO_LIBERAR = 'Não foi possível liberar a nova tentativa: ';
@@ -121,6 +125,7 @@ function montarLinhaRelatorio(contexto) {
     const nota = calcularNota({ acertos: linha.acertos, total: linha.total });
     const abaixoDoMinimo = linha.entregue_em && nota < NOTA_MINIMA_APROVACAO;
     const tr = document.createElement('tr');
+    tr.dataset.turma = linha.turma_codigo || TURMA_SEM_CODIGO;
     tr.append(
         criarCelulaRelatorio(linha.numero_chamada ?? ''),
         criarCelulaRelatorio(linha.nome || '(sem cadastro)'),
@@ -157,6 +162,83 @@ function montarTabelaRelatorio(linhas, base) {
 }
 
 /**
+ * Lista as turmas que aparecem no relatório, com a quantidade de alunos de cada uma.
+ * @param {Object[]} linhas - Linhas do resumo.
+ * @returns {{codigo: string, nome: string, alunos: number}[]} Turmas em ordem de nome.
+ */
+function listarTurmasRelatorio(linhas) {
+    const turmas = new Map();
+    linhas.forEach((linha) => {
+        const codigo = linha.turma_codigo || TURMA_SEM_CODIGO;
+        const turma = turmas.get(codigo)
+            || { codigo, nome: linha.turma_nome || codigo || 'Sem turma', alunos: new Set() };
+        turma.alunos.add(linha.aluno_id);
+        turmas.set(codigo, turma);
+    });
+    return Array.from(turmas.values())
+        .map((turma) => ({ ...turma, alunos: turma.alunos.size }))
+        .sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+}
+
+/**
+ * Atualiza o resumo (alunos e entregas) conforme a turma escolhida.
+ * @param {HTMLElement} resumo - Parágrafo do resumo.
+ * @param {Object[]} linhas - Linhas do resumo (já filtradas pela turma).
+ */
+function atualizarResumoRelatorio(resumo, linhas) {
+    const alunos = new Set(linhas.map((linha) => linha.aluno_id)).size;
+    const entregas = linhas.filter((linha) => linha.entregue_em).length;
+    resumo.textContent = linhas.length
+        ? alunos + ' aluno(s) responderam · ' + entregas + ' tentativa(s) entregue(s).'
+        : MSG_SEM_RESPOSTAS;
+}
+
+/**
+ * Aplica o filtro por turma: mostra só as linhas da turma, marca a aba e atualiza o resumo.
+ * @param {HTMLElement} bloco - Cartão do relatório.
+ * @param {Object[]} linhas - Todas as linhas do resumo.
+ * @param {string} turma - Código da turma ou TURMA_TODAS.
+ */
+function aplicarFiltroTurmaRelatorio(bloco, linhas, turma) {
+    turmaEscolhidaRelatorio = turma;
+    const todas = turma === TURMA_TODAS;
+    bloco.querySelectorAll('tbody tr').forEach((tr) => {
+        tr.hidden = !todas && tr.dataset.turma !== turma;
+    });
+    bloco.querySelectorAll('.' + CLASSE_RELATORIO + '__aba').forEach((aba) => {
+        const ativa = aba.dataset.turma === turma;
+        aba.classList.toggle(CLASSE_ABA_ATIVA, ativa);
+        aba.setAttribute('aria-selected', String(ativa));
+    });
+    const visiveis = todas ? linhas
+        : linhas.filter((linha) => (linha.turma_codigo || TURMA_SEM_CODIGO) === turma);
+    atualizarResumoRelatorio(bloco.querySelector('.' + CLASSE_RELATORIO + '__resumo'), visiveis);
+}
+
+/**
+ * Monta as abas de turma (Todas + uma por turma), como na página de criar usuários.
+ * @param {Object[]} linhas - Linhas do resumo.
+ * @param {Function} aoEscolher - Chamada com o código da turma escolhida.
+ * @returns {HTMLElement} Barra de abas.
+ */
+function montarAbasTurmaRelatorio(linhas, aoEscolher) {
+    const barra = criarElemento('div', CLASSE_RELATORIO + '__abas');
+    barra.setAttribute('role', 'tablist');
+    barra.setAttribute('aria-label', 'Filtrar por turma');
+    const todosAlunos = new Set(linhas.map((linha) => linha.aluno_id)).size;
+    const opcoes = [{ codigo: TURMA_TODAS, nome: 'Todas as turmas', alunos: todosAlunos },
+        ...listarTurmasRelatorio(linhas)];
+    opcoes.forEach((turma) => {
+        const aba = criarBotao(CLASSE_RELATORIO + '__aba', turma.nome + ' (' + turma.alunos + ')',
+            () => aoEscolher(turma.codigo));
+        aba.dataset.turma = turma.codigo;
+        aba.setAttribute('role', 'tab');
+        barra.appendChild(aba);
+    });
+    return barra;
+}
+
+/**
  * Mostra, no início da atividade, o relatório do professor (cria ou substitui o cartão).
  * @param {HTMLElement} secao - Seção de conteúdo da página.
  * @param {number} atividadeId - Id da atividade no banco.
@@ -170,15 +252,19 @@ async function montarRelatorioProfessor(secao, atividadeId, maximo) {
     secao.insertBefore(bloco, secao.firstChild.nextSibling);
     try {
         const linhas = await buscarResumoTentativas(atividadeId);
-        const alunos = new Set(linhas.map((linha) => linha.aluno_id)).size;
-        const entregas = linhas.filter((linha) => linha.entregue_em).length;
-        bloco.appendChild(criarElemento('p', CLASSE_RELATORIO + '__resumo', linhas.length
-            ? alunos + ' aluno(s) responderam · ' + entregas + ' tentativa(s) entregue(s).'
-            : MSG_SEM_RESPOSTAS));
+        const resumo = criarElemento('p', CLASSE_RELATORIO + '__resumo');
+        bloco.appendChild(resumo);
+        atualizarResumoRelatorio(resumo, linhas);
         if (!linhas.length) return;
+        const existe = turmaEscolhidaRelatorio === TURMA_TODAS || linhas.some(
+            (linha) => (linha.turma_codigo || TURMA_SEM_CODIGO) === turmaEscolhidaRelatorio);
+        if (!existe) turmaEscolhidaRelatorio = TURMA_TODAS;
+        bloco.appendChild(montarAbasTurmaRelatorio(linhas,
+            (turma) => aplicarFiltroTurmaRelatorio(bloco, linhas, turma)));
         const rolagem = criarElemento('div', CLASSE_RELATORIO + '__rolagem');
         rolagem.appendChild(montarTabelaRelatorio(linhas, { secao, atividadeId, maximo }));
         bloco.appendChild(rolagem);
+        aplicarFiltroTurmaRelatorio(bloco, linhas, turmaEscolhidaRelatorio);
     } catch (erro) {
         bloco.appendChild(criarElemento('p', CLASSE_RELATORIO + '__erro',
             MSG_ERRO_RELATORIO + erro.message));
