@@ -3,7 +3,8 @@
 // o card cuja atividade o aluno não consegue ler fica bloqueado e, ao clicar na atividade,
 // aparece a mensagem "Atividade Bloqueada!". O professor não tem bloqueio.
 // Só age em pastas gerenciadas pelo banco (pelo menos uma atividade da pasta cadastrada e ativa).
-// Para o professor, cada card ganha o interruptor ON/OFF "Bloquear" (grava atividade.ativo).
+// Para o professor, cada card ganha o interruptor ON/OFF (grava atividade.ativo), com o nome
+// "Bloquear" quando a atividade está liberada e "Desbloquear" quando está bloqueada.
 // Carregado por assets/js/atividades-crud-modal.js. Depende de supabase-js e js/supabase.js.
 
 const SELETOR_CARD_BLOQUEIO = 'article.aula';
@@ -11,6 +12,8 @@ const SELETOR_LINK_BLOQUEIO = 'a.btn.principal';
 const CLASSE_CARD_BLOQUEADO = 'bloqueada';
 const CLASSE_TEMA_BLOQUEADO_PROFESSOR = 'bloqueada-professor';
 const TEXTO_BOTAO_BLOQUEADO = '🔒 Bloqueada';
+const TEXTO_INTERRUPTOR_BLOQUEAR = 'Bloquear';
+const TEXTO_INTERRUPTOR_DESBLOQUEAR = 'Desbloquear';
 const MSG_ATIVIDADE_BLOQUEADA = 'Atividade Bloqueada!';
 const PERFIL_PROFESSOR_BLOQUEIO = 'PROFESSOR';
 const URL_POPUP_BLOQUEIO = document.currentScript?.src.replace(/[^/]*$/, 'popup.js') || '';
@@ -106,7 +109,16 @@ function listarPaginasDoCard(card) {
 }
 
 /**
- * Cria o interruptor ON/OFF "Bloquear" de um card (ON = bloqueada para os alunos).
+ * Define o nome do interruptor conforme o estado: bloqueada = "Desbloquear"; liberada = "Bloquear".
+ * @param {HTMLSpanElement} texto - Elemento com o nome do interruptor.
+ * @param {boolean} bloqueado - true se a atividade está bloqueada.
+ */
+function atualizarTextoInterruptor(texto, bloqueado) {
+    texto.textContent = bloqueado ? TEXTO_INTERRUPTOR_DESBLOQUEAR : TEXTO_INTERRUPTOR_BLOQUEAR;
+}
+
+/**
+ * Cria o interruptor ON/OFF "Bloquear"/"Desbloquear" de um card (ON = bloqueada para os alunos).
  * @param {boolean} bloqueado - Estado inicial.
  * @param {Function} aoMudar - Chamada async com o novo estado; se falhar, o interruptor volta.
  * @returns {HTMLLabelElement} Interruptor pronto.
@@ -117,6 +129,11 @@ function criarInterruptorBloquear(bloqueado, aoMudar) {
     const caixa = document.createElement('input');
     caixa.type = 'checkbox';
     caixa.checked = bloqueado;
+    const chave = document.createElement('span');
+    chave.className = 'interruptor-bloquear__chave';
+    const texto = document.createElement('span');
+    texto.className = 'interruptor-bloquear__texto';
+    atualizarTextoInterruptor(texto, bloqueado);
     caixa.addEventListener('change', async () => {
         caixa.disabled = true;
         try {
@@ -127,13 +144,9 @@ function criarInterruptorBloquear(bloqueado, aoMudar) {
             await mostrarPopup('Não foi possível alterar o bloqueio: ' + erro.message,
                 { tipo: 'erro' });
         }
+        atualizarTextoInterruptor(texto, caixa.checked);
         caixa.disabled = false;
     });
-    const chave = document.createElement('span');
-    chave.className = 'interruptor-bloquear__chave';
-    const texto = document.createElement('span');
-    texto.className = 'interruptor-bloquear__texto';
-    texto.textContent = 'Bloquear';
     etiqueta.append(caixa, chave, texto);
     return etiqueta;
 }

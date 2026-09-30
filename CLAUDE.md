@@ -1372,7 +1372,8 @@ assets/
                          `--forcar <pasta ATIVIDADES>`.
                          Rodar de novo sempre que surgir curso, matéria ou atividade.
                          Liberar/bloquear atividade = BANCO DE DADOS (atividade.ativo): o professor usa o
-                         interruptor "Bloquear" de cada card (assets/js/indice-atividades-bloqueio.js).
+                         interruptor de cada card (assets/js/indice-atividades-bloqueio.js), que se
+                         chama "Bloquear" (liberada) ou "Desbloquear" (bloqueada).
                          Não existe mais lista em arquivo (ATIVIDADES-LIBERADAS.js foi removida).
 ├─ css/menu.css        → estilos do menu de atividades (montado por js/menu.js)
 └─ gerador-menu/       → tags_menu.py: monta as tags do menu para o <head>; usado pelos três
@@ -1432,6 +1433,10 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   (ex.: Exploração de Carreiras, que está como "Nenhuma atividade").
 - ⚠️ Índices sem o marcador `gerador-indices` (feitos à mão, como o de Introdução à TIC) são
   preservados; seguir a mesma regra ao editá-los.
+- ✅ **Nome do interruptor de bloqueio** (2026-09-30, vale para os índices de **todas** as
+  matérias): no card do professor, o interruptor se chama **"Desbloquear"** quando a atividade
+  está bloqueada e **"Bloquear"** quando está liberada; o nome muda na hora ao clicar. Fica no
+  script genérico `assets/js/indice-atividades-bloqueio.js` (não repetir por matéria).
 
 ## 📗 REGRA CRÍTICA — PADRÃO DE ATIVIDADE PRÁTICA DE EXCEL
 
