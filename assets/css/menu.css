@@ -22,7 +22,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 8px 16px;
-  margin: -8px 0 18px;
+  margin: 0 0 8px;
   padding: 8px 12px;
   border: 1px solid var(--menu-borda);
   border-radius: var(--menu-raio);
@@ -156,4 +156,4 @@ header:has(.menu-atividades) { display: flex; flex-direction: column; align-item
 header:has(.menu-atividades) .voltar {
   order: -1; position: static; align-self: flex-start; margin: 0 0 12px;
 }
-header:has(.menu-atividades) .menu-atividades { margin: 0 0 18px; }
+header:has(.menu-atividades) .menu-atividades { margin: 0 0 8px; }
