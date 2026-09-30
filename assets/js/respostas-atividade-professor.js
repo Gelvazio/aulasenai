@@ -14,6 +14,11 @@ const TURMA_SEM_CODIGO = '';
 const MAXIMO_TENTATIVAS_APROVADO = 2;
 const CLASSE_ABA_ATIVA = CLASSE_RELATORIO + '__aba--ativa';
 let turmaEscolhidaRelatorio = null;
+let filtroSituacaoRelatorio = '';
+let filtroTentativasRelatorio = '';
+const SITUACAO_NAO_ATINGIU = 'nao-atingiu';
+const CLASSE_NOTAS_OCULTAS = CLASSE_RELATORIO + '__aluno--notas-ocultas';
+const CLASSE_ABAIXO_MINIMO = CLASSE_RELATORIO + '__aluno--abaixo-minimo';
 const MSG_SEM_RESPOSTAS = 'Nenhum aluno respondeu esta atividade ainda.';
 const MSG_ERRO_RELATORIO = 'Não foi possível carregar as respostas dos alunos: ';
 const MSG_ERRO_LIBERAR = 'Não foi possível liberar a nova tentativa: ';
@@ -160,6 +165,30 @@ function calcularNotaFinalAluno(tentativas) {
 }
 
 /**
+ * Mostra ou esconde as notas de um aluno (padrão: escondidas).
+ * @param {HTMLElement} bloco - Bloco do aluno.
+ */
+function alternarNotasAluno(bloco) {
+    const ocultas = bloco.classList.toggle(CLASSE_NOTAS_OCULTAS);
+    const botao = bloco.querySelector('.' + CLASSE_RELATORIO + '__ver-notas');
+    botao.textContent = ocultas ? 'Visualizar Notas' : 'Ocultar Notas';
+}
+
+/**
+ * Diz se o bloco do aluno passa pelos filtros de turma, situação e tentativas.
+ * @param {HTMLElement} bloco - Bloco do aluno.
+ * @param {string} turma - Código da turma escolhida.
+ * @returns {boolean} true se deve aparecer.
+ */
+function passaNosFiltros(bloco, turma) {
+    if (bloco.dataset.turma !== turma) return false;
+    const soNaoAtingiu = filtroSituacaoRelatorio === SITUACAO_NAO_ATINGIU;
+    if (soNaoAtingiu && bloco.dataset.naoAtingiu !== 'true') return false;
+    const temFiltroTentativas = filtroTentativasRelatorio !== '';
+    return !temFiltroTentativas || bloco.dataset.tentativas === filtroTentativasRelatorio;
+}
+
+/**
  * Monta o bloco de um aluno: nome com a nota final ao lado e, abaixo, a tabela das tentativas.
  * @param {Object[]} tentativas - Linhas do resumo do aluno, em ordem de tentativa.
  * @param {{secao: HTMLElement, atividadeId: number, maximo: number}} base - Seção, atividade
@@ -171,10 +200,18 @@ function montarBlocoAluno(tentativas, base) {
     const bloco = criarElemento('section', CLASSE_RELATORIO + '__aluno');
     bloco.dataset.turma = primeira.turma_codigo || TURMA_SEM_CODIGO;
     const notaFinal = calcularNotaFinalAluno(tentativas);
+    const naoAtingiu = notaFinal === null || notaFinal < NOTA_MINIMA_APROVACAO;
+    bloco.dataset.aluno = primeira.aluno_id;
+    bloco.dataset.tentativas = String(tentativas.length);
+    bloco.dataset.naoAtingiu = String(naoAtingiu);
+    bloco.classList.add(CLASSE_NOTAS_OCULTAS);
+    bloco.classList.toggle(CLASSE_ABAIXO_MINIMO, naoAtingiu);
     const titulo = criarElemento('h4', CLASSE_RELATORIO + '__aluno-titulo');
     titulo.append(criarElemento('span', '', [primeira.numero_chamada, primeira.nome ||
         '(sem cadastro)'].filter((parte) => parte !== null && parte !== undefined &&
         parte !== '').join(' - ')));
+    titulo.append(criarBotao('btn-export ' + CLASSE_RELATORIO + '__ver-notas', 'Visualizar Notas',
+        () => alternarNotasAluno(bloco)));
     titulo.append(criarElemento('span', CLASSE_RELATORIO + '__nota-final',
         'Nota final da Atividade: ' + (notaFinal === null ? '—' : formatarNota(notaFinal))));
     titulo.append(criarControleLiberar({ ...base, linha: tentativas[tentativas.length - 1],
@@ -268,15 +305,17 @@ function atualizarResumoRelatorio(resumo, linhas) {
  */
 function aplicarFiltroTurmaRelatorio(bloco, linhas, turma) {
     turmaEscolhidaRelatorio = turma;
-    bloco.querySelectorAll('.' + CLASSE_RELATORIO + '__aluno').forEach((tr) => {
-        tr.hidden = tr.dataset.turma !== turma;
+    const idsVisiveis = new Set();
+    bloco.querySelectorAll('.' + CLASSE_RELATORIO + '__aluno').forEach((cartao) => {
+        cartao.hidden = !passaNosFiltros(cartao, turma);
+        if (!cartao.hidden) idsVisiveis.add(cartao.dataset.aluno);
     });
     bloco.querySelectorAll('.' + CLASSE_RELATORIO + '__aba').forEach((aba) => {
         const ativa = aba.dataset.turma === turma;
         aba.classList.toggle(CLASSE_ABA_ATIVA, ativa);
         aba.setAttribute('aria-selected', String(ativa));
     });
-    const visiveis = linhas.filter((linha) => (linha.turma_codigo || TURMA_SEM_CODIGO) === turma);
+    const visiveis = linhas.filter((linha) => idsVisiveis.has(String(linha.aluno_id)));
     atualizarResumoRelatorio(bloco.querySelector('.' + CLASSE_RELATORIO + '__resumo'), visiveis);
 }
 
@@ -315,6 +354,40 @@ function montarAbasTurmaRelatorio(turmas, aoEscolher) {
 }
 
 /**
+ * Cria uma lista de escolha rotulada para os filtros do relatório.
+ * @param {string} rotulo - Texto do rótulo.
+ * @param {string[][]} opcoes - Pares [valor, texto].
+ * @param {Function} aoMudar - Chamada com o valor escolhido.
+ * @returns {HTMLLabelElement} Rótulo com a lista.
+ */
+function criarFiltroRelatorio(rotulo, opcoes, aoMudar) {
+    const etiqueta = criarElemento('label', CLASSE_RELATORIO + '__filtro', rotulo + ' ');
+    const lista = document.createElement('select');
+    opcoes.forEach(([valor, texto]) => lista.add(new Option(texto, valor)));
+    lista.addEventListener('change', () => aoMudar(lista.value));
+    etiqueta.appendChild(lista);
+    return etiqueta;
+}
+
+/**
+ * Monta os filtros de situação (não atingiu a nota) e de quantidade de tentativas.
+ * @param {Function} aoMudar - Chamada quando qualquer filtro muda.
+ * @returns {HTMLElement} Barra de filtros.
+ */
+function montarFiltrosRelatorio(aoMudar) {
+    const barra = criarElemento('div', CLASSE_RELATORIO + '__filtros');
+    barra.append(
+        criarFiltroRelatorio('Situação:', [['', 'Todos'],
+            [SITUACAO_NAO_ATINGIU, 'Não atingiram a nota mínima']],
+        (valor) => { filtroSituacaoRelatorio = valor; aoMudar(); }),
+        criarFiltroRelatorio('Tentativas:', [['', 'Todas'], ['1', '1 tentativa'],
+            ['2', '2 tentativas'], ['3', '3 tentativas']],
+        (valor) => { filtroTentativasRelatorio = valor; aoMudar(); }),
+    );
+    return barra;
+}
+
+/**
  * Mostra, no início da atividade, o relatório do professor (cria ou substitui o cartão).
  * @param {HTMLElement} secao - Seção de conteúdo da página.
  * @param {number} atividadeId - Id da atividade no banco.
@@ -337,6 +410,8 @@ async function montarRelatorioProfessor(secao, atividadeId, maximo) {
         if (!existe) turmaEscolhidaRelatorio = turmas[0].codigo;
         bloco.appendChild(montarAbasTurmaRelatorio(turmas,
             (turma) => aplicarFiltroTurmaRelatorio(bloco, linhas, turma)));
+        bloco.appendChild(montarFiltrosRelatorio(
+            () => aplicarFiltroTurmaRelatorio(bloco, linhas, turmaEscolhidaRelatorio)));
         bloco.appendChild(montarListaAlunosRelatorio(linhas, { secao, atividadeId, maximo }));
         aplicarFiltroTurmaRelatorio(bloco, linhas, turmaEscolhidaRelatorio);
     } catch (erro) {

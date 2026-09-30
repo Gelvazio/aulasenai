@@ -245,3 +245,13 @@
 }
 .relatorio-professor__nota-final { color: #1a56db; font-weight: 700; }
 @media (max-width: 480px) { .relatorio-professor__abas { grid-template-columns: 1fr; } }
+
+/* Relatório do professor: notas escondidas por padrão, fundo vermelho claro abaixo do mínimo e filtros */
+.relatorio-professor__aluno { padding: 8px 10px; border-radius: 8px; }
+.relatorio-professor__aluno--abaixo-minimo { background: #fde8e8; }
+.relatorio-professor__aluno--notas-ocultas .relatorio-professor__rolagem,
+.relatorio-professor__aluno--notas-ocultas .relatorio-professor__nota-final { display: none; }
+.relatorio-professor__ver-notas { padding: 4px 10px; font-size: 12px; }
+.relatorio-professor__filtros { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 8px 0; }
+.relatorio-professor__filtro { font-size: 13px; font-weight: 600; }
+.relatorio-professor__filtro select { margin-left: 4px; padding: 3px 6px; }
