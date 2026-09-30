@@ -11,7 +11,8 @@ const ROTA_LIBERAR_TENTATIVA = '/rest/v1/rpc/liberar_nova_tentativa';
 const CLASSE_RELATORIO = 'relatorio-professor';
 const COLUNAS_ALUNOS_RELATORIO = ['Nº', 'Aluno', 'Fez Atividade?', 'Status', 'Tentativas',
     'Nota final da Atividade', 'Ações'];
-const COLUNAS_RELATORIO = ['Tentativa', 'Situação', 'Acertos', 'Nota', 'Data e hora'];
+const COLUNAS_RELATORIO = ['Tentativa', 'Situação', 'Acertos', 'Nota', 'Abriu em',
+    'Última alteração', 'Entregue em', 'Tempo gasto'];
 const TURMA_SEM_CODIGO = '';
 const MAXIMO_TENTATIVAS_APROVADO = 2;
 const CLASSE_ABA_ATIVA = CLASSE_RELATORIO + '__aba--ativa';
@@ -46,6 +47,26 @@ async function buscarResumoTentativas(atividadeId) {
 }
 
 /**
+ * Acrescenta a cada linha do resumo a hora em que o aluno abriu aquela tentativa.
+ * Sem a tabela de aberturas (ou sem registro), a linha fica sem aberta_em.
+ * @param {Object[]} linhas - Linhas do resumo.
+ * @param {number} atividadeId - Id da atividade.
+ * @returns {Promise<Object[]>} Linhas com aberta_em.
+ */
+async function acrescentarAberturas(linhas, atividadeId) {
+    try {
+        const aberturas = await sbGet('abertura_atividade',
+            'select=aluno_id,tentativa,aberta_em&atividade_id=eq.' + atividadeId);
+        const porChave = new Map(aberturas.map((abertura) =>
+            [abertura.aluno_id + '|' + abertura.tentativa, abertura.aberta_em]));
+        return linhas.map((linha) =>
+            ({ ...linha, aberta_em: porChave.get(linha.aluno_id + '|' + linha.tentativa) }));
+    } catch (erro) {
+        return linhas;
+    }
+}
+
+/**
  * Formata data e hora para exibição (dd/mm/aaaa hh:mm:ss).
  * @param {string|null} dataIso - Data ISO ou vazio.
  * @returns {string} Data e hora formatadas ou "—".
@@ -55,18 +76,32 @@ function formatarDataHora(dataIso) {
 }
 
 /**
- * Monta a descrição da situação e da data de uma tentativa.
+ * Descreve a situação de uma tentativa.
  * @param {Object} linha - Linha do resumo.
- * @returns {{situacao: string, dataHora: string}} Texto da situação e da data/hora.
+ * @returns {string} Texto da situação.
  */
-function descreverTentativa(linha) {
-    if (linha.entregue_em) {
-        return { situacao: 'Entregue', dataHora: formatarDataHora(linha.entregue_em) };
-    }
-    return {
-        situacao: 'Em andamento (' + linha.respondidas + '/' + linha.total + ')',
-        dataHora: formatarDataHora(linha.ultima_gravacao) + ' (última gravação)',
-    };
+function descreverSituacao(linha) {
+    if (linha.entregue_em) return 'Entregue';
+
+    return 'Em andamento (' + linha.respondidas + '/' + linha.total + ')';
+}
+
+/**
+ * Calcula o tempo entre a abertura e a entrega da tentativa.
+ * @param {Object} linha - Linha do resumo (com aberta_em e entregue_em).
+ * @returns {string} Tempo no formato "1h 05min 09s" ou "—" se faltar alguma das horas.
+ */
+function calcularTempoGasto(linha) {
+    if (!linha.aberta_em || !linha.entregue_em) return '—';
+
+    const segundos = Math.max(0, Math.round(
+        (new Date(linha.entregue_em) - new Date(linha.aberta_em)) / 1000));
+    const horas = Math.floor(segundos / 3600);
+    const minutos = Math.floor((segundos % 3600) / 60);
+    const resto = segundos % 60;
+    const partes = [horas ? horas + 'h' : '', (horas || minutos) ? minutos + 'min' : '',
+        resto + 's'];
+    return partes.filter(Boolean).join(' ');
 }
 
 /**
@@ -144,17 +179,19 @@ function criarControleLiberar(contexto) {
  */
 function montarLinhaRelatorio(contexto) {
     const { linha, maximo } = contexto;
-    const { situacao, dataHora } = descreverTentativa(linha);
     const nota = calcularNota({ acertos: linha.acertos, total: linha.total });
     const abaixoDoMinimo = linha.entregue_em && nota < NOTA_MINIMA_APROVACAO;
     const tr = document.createElement('tr');
     tr.append(
         criarCelulaRelatorio(linha.tentativa + ' de ' + maximo),
-        criarCelulaRelatorio(situacao),
+        criarCelulaRelatorio(descreverSituacao(linha)),
         criarCelulaRelatorio(linha.entregue_em ? linha.acertos + ' de ' + linha.total : '—'),
         criarCelulaRelatorio(linha.entregue_em ? formatarNota(nota) : '—',
             abaixoDoMinimo ? CLASSE_RELATORIO + '__nota--baixa' : ''),
-        criarCelulaRelatorio(dataHora),
+        criarCelulaRelatorio(formatarDataHora(linha.aberta_em)),
+        criarCelulaRelatorio(formatarDataHora(linha.ultima_gravacao)),
+        criarCelulaRelatorio(formatarDataHora(linha.entregue_em)),
+        criarCelulaRelatorio(calcularTempoGasto(linha)),
     );
     return tr;
 }
@@ -583,7 +620,8 @@ async function montarRelatorioProfessor(secao, atividadeId, maximo) {
     try {
         const dadosTurmas = await buscarDadosTurmas();
         const linhas = await acrescentarAlunosSemResposta(
-            await buscarResumoTentativas(atividadeId), atividadeId, dadosTurmas);
+            await acrescentarAberturas(await buscarResumoTentativas(atividadeId), atividadeId),
+            atividadeId, dadosTurmas);
         const resumo = criarElemento('p', CLASSE_RELATORIO + '__resumo');
         bloco.appendChild(resumo);
         atualizarResumoRelatorio(resumo, linhas);

@@ -118,6 +118,23 @@ async function enviarAoBanco(rota, corpo, preferencia) {
 }
 
 /**
+ * Registra a hora em que o aluno abriu a tentativa em andamento (só a primeira abertura vale).
+ * Falha silenciosa: nunca impede o aluno de responder.
+ * @param {number} atividadeId - Id da atividade.
+ * @param {number} tentativa - Tentativa em andamento.
+ * @param {string} alunoId - Id do aluno logado.
+ */
+async function registrarAbertura(atividadeId, tentativa, alunoId) {
+    try {
+        await enviarAoBanco('/rest/v1/abertura_atividade',
+            { aluno_id: alunoId, atividade_id: atividadeId, tentativa },
+            'resolution=ignore-duplicates,return=minimal');
+    } catch (erro) {
+        console.warn('Abertura não registrada:', erro.message);
+    }
+}
+
+/**
  * Pergunta se o aluno quer entrar e o leva ao login, voltando depois para esta atividade.
  */
 async function irParaLogin() {
@@ -174,6 +191,10 @@ async function carregarDoBanco(sessao) {
         Object.assign(sessao, await lerIdentificacao(sessao.usuario));
         const doAluno = await lerRespostasDoAluno(sessao.atividade.id);
         sessao.tentativa = doAluno.tentativa;
+        const ehAluno = sessao.usuario.app_metadata?.perfil !== PERFIL_PROFESSOR_PAGINA;
+        if (ehAluno && !doAluno.entregueEm) {
+            await registrarAbertura(sessao.atividade.id, doAluno.tentativa, sessao.usuario.id);
+        }
         const identificacao = { nome: sessao.nome, turma: sessao.turma };
         const resultado = doAluno.entregueEm
             ? await lerResultadoDaTentativa(sessao.atividade.id, doAluno.tentativa) : null;
