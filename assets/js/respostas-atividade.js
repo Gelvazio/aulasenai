@@ -550,6 +550,7 @@ async function finalizarAtividade(estado) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         await mostrarPopup(montarMensagemEntrega(estado, resultado.resultado),
             { tipo: 'sucesso', titulo: 'Atividade entregue' });
+        window.location.reload();
     } catch (erro) {
         await mostrarPopup(erro.message || MSG_ERRO_SALVAR, { tipo: 'erro' });
     } finally {
