@@ -12,6 +12,7 @@ const CLASSE_RELATORIO = 'relatorio-professor';
 const COLUNAS_RELATORIO = ['Tentativa', 'Situação', 'Acertos', 'Nota', 'Data e hora',
     'Nova tentativa'];
 const TURMA_SEM_CODIGO = '';
+const MAXIMO_TENTATIVAS_APROVADO = 2;
 const CLASSE_ABA_ATIVA = CLASSE_RELATORIO + '__aba--ativa';
 let turmaEscolhidaRelatorio = null;
 const MSG_SEM_RESPOSTAS = 'Nenhum aluno respondeu esta atividade ainda.';
@@ -93,23 +94,37 @@ async function liberarTentativaDoAluno(contexto) {
 }
 
 /**
+ * Define quantas tentativas o aluno pode ter: quem atingiu a nota mínima pode refazer uma vez
+ * para melhorar (2 no total); quem ficou abaixo tem até o máximo da atividade (3).
+ * @param {number|null} notaFinal - Maior nota entregue do aluno.
+ * @param {number} maximo - Limite geral de tentativas.
+ * @returns {number} Total de tentativas permitido.
+ */
+function calcularLimiteTentativas(notaFinal, maximo) {
+    const aprovado = notaFinal !== null && notaFinal >= NOTA_MINIMA_APROVACAO;
+    return aprovado ? Math.min(MAXIMO_TENTATIVAS_APROVADO, maximo) : maximo;
+}
+
+/**
  * Cria a célula "Nova tentativa" de uma linha: botão de liberar (só na última tentativa entregue
  * do aluno e abaixo do limite) ou o motivo de não poder liberar.
  * @param {Object} contexto - {secao, atividadeId, linha, ehUltima}.
  * @returns {HTMLTableCellElement} Célula da ação.
  */
 function criarCelulaLiberar(contexto) {
-    const { linha, ehUltima, maximo } = contexto;
+    const { linha, ehUltima, maximo, notaFinal } = contexto;
     const celula = criarElemento('td', CLASSE_RELATORIO + '__acao');
     if (!ehUltima) return celula;
     if (!linha.entregue_em) {
         celula.textContent = 'Aguardando a entrega';
-    } else if (linha.tentativa >= maximo) {
-        celula.textContent = 'Usou as ' + maximo + ' tentativas';
-    } else {
-        celula.appendChild(criarBotao('btn-export ' + CLASSE_RELATORIO + '__liberar',
-            '🔓 Liberar nova tentativa', () => liberarTentativaDoAluno(contexto)));
+        return celula;
     }
+    const limite = calcularLimiteTentativas(notaFinal, maximo);
+    const botao = criarBotao('btn-export ' + CLASSE_RELATORIO + '__liberar',
+        '🔓 Liberar nova tentativa', () => liberarTentativaDoAluno(contexto));
+    botao.disabled = linha.tentativa >= limite;
+    if (botao.disabled) botao.title = 'Limite de ' + limite + ' tentativa(s) para este aluno.';
+    celula.appendChild(botao);
     return celula;
 }
 
@@ -171,7 +186,7 @@ function montarBlocoAluno(tentativas, base) {
     const corpo = tabela.createTBody();
     tentativas.forEach((linha, indice) => {
         const ehUltima = indice === tentativas.length - 1;
-        corpo.appendChild(montarLinhaRelatorio({ ...base, linha, ehUltima }));
+        corpo.appendChild(montarLinhaRelatorio({ ...base, linha, ehUltima, notaFinal }));
     });
     const rolagem = criarElemento('div', CLASSE_RELATORIO + '__rolagem');
     rolagem.appendChild(tabela);
