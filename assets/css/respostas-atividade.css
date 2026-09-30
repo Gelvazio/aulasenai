@@ -328,3 +328,7 @@
   margin-top: 10px; padding: 8px 12px; border-radius: 8px; background: #e6f6ec;
   border: 1px solid #38a169; color: #1b7f3b; font-size: 14px; font-weight: 700;
 }
+
+/* Linha do filtro "Aluno Selecionado" (nova linha abaixo dos interruptores) */
+.relatorio-professor__linha-aluno { flex: 0 0 100%; }
+.relatorio-professor__aluno-selecionado { margin-left: 6px; padding: 4px 8px; min-width: 260px; font: inherit; }

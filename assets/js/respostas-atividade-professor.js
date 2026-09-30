@@ -17,6 +17,7 @@ const TURMA_SEM_CODIGO = '';
 const MAXIMO_TENTATIVAS_APROVADO = 2;
 const CLASSE_ABA_ATIVA = CLASSE_RELATORIO + '__aba--ativa';
 let turmaEscolhidaRelatorio = null;
+let filtroAlunoRelatorio = '';
 let mostrarNotasGlobalRelatorio = false;
 let filtroSoNaoAtingiuRelatorio = true;
 const filtroFezRelatorio = new Set(['sim']);
@@ -24,6 +25,7 @@ const filtroStatusRelatorio = new Set();
 const filtroTentativasRelatorio = new Set();
 const CLASSE_PERGUNTAS_OCULTAS = 'atividade--perguntas-ocultas';
 const TEXTO_STATUS = { entregue: '📨 Entregue', andamento: '✏️ Andamento' };
+const TEXTO_SELECIONE_ALUNO = 'Seleciona o aluno';
 const QUANTIDADES_TENTATIVAS = ['1', '2', '3'];
 const CLASSE_NOTAS_OCULTAS = CLASSE_RELATORIO + '__aluno--notas-ocultas';
 const CLASSE_ABAIXO_MINIMO = CLASSE_RELATORIO + '__aluno--abaixo-minimo';
@@ -244,6 +246,7 @@ function aplicarNotasGlobais(raiz) {
  */
 function passaNosFiltros(bloco, turma) {
     if (bloco.dataset.turma !== turma) return false;
+    if (filtroAlunoRelatorio && bloco.dataset.aluno !== filtroAlunoRelatorio) return false;
     if (filtroSoNaoAtingiuRelatorio && bloco.dataset.naoAtingiu !== 'true') return false;
     const filtraStatus = filtroStatusRelatorio.size > 0;
     if (filtraStatus && !filtroStatusRelatorio.has(bloco.dataset.status)) return false;
@@ -470,6 +473,7 @@ function atualizarResumoRelatorio(resumo, linhas) {
  */
 function aplicarFiltroTurmaRelatorio(bloco, linhas, turma) {
     turmaEscolhidaRelatorio = turma;
+    atualizarAlunosSelecionaveisRelatorio(bloco, linhas, turma);
     const idsVisiveis = new Set();
     bloco.querySelectorAll('.' + CLASSE_RELATORIO + '__aluno').forEach((cartao) => {
         cartao.hidden = !passaNosFiltros(cartao, turma);
@@ -540,6 +544,48 @@ function criarInterruptorRelatorio(texto, aoMudar, ligadoInicial = false) {
 }
 
 /**
+ * Cria, em uma nova linha, a lista "Aluno Selecionado" (começa em "Seleciona o aluno" = todos).
+ * As opções são preenchidas por atualizarAlunosSelecionaveisRelatorio, conforme a turma.
+ * @param {Function} aoMudar - Chamada quando o aluno escolhido muda.
+ * @returns {HTMLElement} Linha com rótulo e lista.
+ */
+function criarLinhaAlunoSelecionadoRelatorio(aoMudar) {
+    const linha = criarElemento('div', CLASSE_RELATORIO + '__linha-aluno');
+    const etiqueta = criarElemento('label', CLASSE_RELATORIO + '__filtro', 'Aluno Selecionado ');
+    const lista = document.createElement('select');
+    lista.className = CLASSE_RELATORIO + '__aluno-selecionado';
+    lista.add(new Option(TEXTO_SELECIONE_ALUNO, ''));
+    lista.addEventListener('change', () => {
+        filtroAlunoRelatorio = lista.value;
+        aoMudar();
+    });
+    etiqueta.appendChild(lista);
+    linha.appendChild(etiqueta);
+    return linha;
+}
+
+/**
+ * Preenche a lista "Aluno Selecionado" com os alunos da turma (ordem alfabética). Se o aluno
+ * escolhido não for da turma, volta para "Seleciona o aluno".
+ * @param {HTMLElement} bloco - Cartão do relatório.
+ * @param {Object[]} linhas - Todas as linhas do resumo.
+ * @param {string} turma - Código da turma escolhida.
+ */
+function atualizarAlunosSelecionaveisRelatorio(bloco, linhas, turma) {
+    const lista = bloco.querySelector('.' + CLASSE_RELATORIO + '__aluno-selecionado');
+    if (!lista) return;
+
+    const alunos = new Map();
+    linhas.filter((linha) => (linha.turma_codigo || TURMA_SEM_CODIGO) === turma)
+        .forEach((linha) => alunos.set(String(linha.aluno_id), linha.nome || '(sem cadastro)'));
+    lista.replaceChildren(new Option(TEXTO_SELECIONE_ALUNO, ''));
+    [...alunos.entries()].sort((a, b) => a[1].localeCompare(b[1], 'pt-BR', { sensitivity: 'base' }))
+        .forEach(([id, nome]) => lista.add(new Option(nome, id)));
+    if (!alunos.has(filtroAlunoRelatorio)) filtroAlunoRelatorio = '';
+    lista.value = filtroAlunoRelatorio;
+}
+
+/**
  * Monta os filtros (interruptores ON/OFF): só quem não atingiu a nota mínima e quantidade de
  * tentativas (1, 2 ou 3; nenhum ligado mostra todos).
  * @param {Function} aoMudar - Chamada quando qualquer filtro muda.
@@ -585,7 +631,8 @@ function montarFiltrosRelatorio(aoMudar) {
         mostrarNotasGlobalRelatorio = ligado;
         aplicarNotasGlobais(barra.closest('.' + CLASSE_RELATORIO));
     }, mostrarNotasGlobalRelatorio));
-    barra.append(grupoNotas, grupoFez, grupoStatus, grupoSituacao, grupoTentativas);
+    barra.append(grupoNotas, grupoFez, grupoStatus, grupoSituacao, grupoTentativas,
+        criarLinhaAlunoSelecionadoRelatorio(aoMudar));
     return barra;
 }
 
