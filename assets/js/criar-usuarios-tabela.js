@@ -1,12 +1,16 @@
 // Tabela de alunos da página scripts/criarUsuariosBancoDados.html: seleção por aluno, marcar
 // todos, filtro por situação, coluna "Senha" (senha inicial, para o professor repassar) e coluna
-// "Cadastrado" (Sim/Não, conforme auth.users).
+// "Cadastrado" (Sim/Não, conforme auth.users) e coluna "Aluno anotou?" (Sim/Não, marcada pelo
+// professor ao lado do nome; fica guardada neste navegador, por e-mail).
 
 const SENHA_OCULTA = '—';
 const PERFIL_PROFESSOR_LISTA = 'PROFESSOR';
 const SITUACAO_SIM = 'Sim';
 const SITUACAO_NAO = 'Não';
 const SITUACAO_DESCONHECIDA = '?';
+const CHAVE_ANOTOU = 'senai_aluno_anotou';
+const CLASSE_ANOTOU_SIM = 'guia-anotou--sim';
+const CLASSE_ANOTOU_NAO = 'guia-anotou--nao';
 const FILTRO_TODOS = 'todos';
 const FILTRO_SIM = 'sim';
 const FILTRO_NAO = 'nao';
@@ -26,6 +30,60 @@ function obterSituacaoCadastro(email, cadastrados) {
     if (!cadastrados) return SITUACAO_DESCONHECIDA;
 
     return cadastrados.has(email.toLowerCase()) ? SITUACAO_SIM : SITUACAO_NAO;
+}
+
+/**
+ * Lê no navegador quais alunos o professor marcou como "anotou".
+ * @returns {Object<string, string>} E-mail (minúsculo) → "Sim" ou "Não".
+ */
+function lerAnotouGuia() {
+    try {
+        return JSON.parse(window.localStorage.getItem(CHAVE_ANOTOU)) || {};
+    } catch (erro) {
+        return {};
+    }
+}
+
+/**
+ * Guarda no navegador se o aluno anotou (sem falhar se o armazenamento estiver bloqueado).
+ * @param {string} email - E-mail do aluno.
+ * @param {string} resposta - "Sim" ou "Não".
+ */
+function gravarAnotouGuia(email, resposta) {
+    try {
+        const anotou = lerAnotouGuia();
+        anotou[email.toLowerCase()] = resposta;
+        window.localStorage.setItem(CHAVE_ANOTOU, JSON.stringify(anotou));
+    } catch (erro) {
+        console.warn('Não foi possível guardar "Aluno anotou?":', erro.message);
+    }
+}
+
+/**
+ * Cria a célula "Aluno anotou?" com a escolha Sim/Não (padrão Não) e a cor da resposta.
+ * @param {string} email - E-mail do aluno.
+ * @returns {HTMLTableCellElement} Célula com a lista de escolha.
+ */
+function criarCelulaAnotouGuia(email) {
+    const escolha = document.createElement('select');
+    escolha.className = 'guia-anotou';
+    escolha.setAttribute('aria-label', 'Aluno anotou? ' + email);
+    [SITUACAO_NAO, SITUACAO_SIM].forEach((texto) => {
+        escolha.append(new Option(texto, texto));
+    });
+    escolha.value = lerAnotouGuia()[email.toLowerCase()] || SITUACAO_NAO;
+    const pintar = () => {
+        escolha.classList.toggle(CLASSE_ANOTOU_SIM, escolha.value === SITUACAO_SIM);
+        escolha.classList.toggle(CLASSE_ANOTOU_NAO, escolha.value === SITUACAO_NAO);
+    };
+    pintar();
+    escolha.addEventListener('change', () => {
+        pintar();
+        gravarAnotouGuia(email, escolha.value);
+    });
+    const celula = document.createElement('td');
+    celula.append(escolha);
+    return celula;
 }
 
 /**
@@ -53,7 +111,8 @@ function pintarSituacaoGuia(linha, situacao) {
 }
 
 /**
- * Cria uma linha da tabela: caixa de seleção, número, nome, e-mail, senha inicial e "Cadastrado".
+ * Cria uma linha da tabela: caixa de seleção, número, nome, "Aluno anotou?", e-mail, senha
+ * inicial e "Cadastrado".
  * A senha só aparece para o aluno selecionado e quando contexto.mostrarSenha for verdadeiro
  * (professor logado). A senha do professor nunca é mostrada.
  * @param {Object} aluno - Aluno da lista de presença.
@@ -81,7 +140,8 @@ function criarLinhaAlunoGuia(aluno, contexto, aoMudarSelecao) {
     const celulaSituacao = criarCelulaGuia('');
     celulaSituacao.className = 'guia-situacao';
     linha.append(celulaCaixa, criarCelulaGuia(aluno.numero), criarCelulaGuia(aluno.nome),
-        criarCelulaGuia(aluno.email), celulaSenha, celulaSituacao);
+        criarCelulaAnotouGuia(aluno.email), criarCelulaGuia(aluno.email), celulaSenha,
+        celulaSituacao);
     pintarSituacaoGuia(linha, obterSituacaoCadastro(aluno.email, contexto.cadastrados));
     return linha;
 }
@@ -98,7 +158,8 @@ function criarLinhaAlunoGuia(aluno, contexto, aoMudarSelecao) {
 function criarTabelaAlunosGuia(turma, contexto, aoMudarSelecao) {
     const tabela = document.createElement('table');
     tabela.className = 'guia-tabela';
-    tabela.innerHTML = '<thead><tr><th></th><th>Nº</th><th>Aluno</th><th>E-mail de login</th>'
+    tabela.innerHTML = '<thead><tr><th></th><th>Nº</th><th>Aluno</th>'
+        + '<th>Aluno anotou? (Sim/Não)</th><th>E-mail de login</th>'
         + '<th>Senha</th><th>Cadastrado</th></tr></thead>';
     const corpo = document.createElement('tbody');
     corpo.append(...turma.alunos.map((aluno) => (
