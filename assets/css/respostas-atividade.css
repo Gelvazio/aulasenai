@@ -252,6 +252,36 @@
 .relatorio-professor__aluno--notas-ocultas .relatorio-professor__rolagem,
 .relatorio-professor__aluno--notas-ocultas .relatorio-professor__nota-final { display: none; }
 .relatorio-professor__ver-notas { padding: 4px 10px; font-size: 12px; }
-.relatorio-professor__filtros { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 8px 0; }
-.relatorio-professor__filtro { font-size: 13px; font-weight: 600; }
-.relatorio-professor__filtro select { margin-left: 4px; padding: 3px 6px; }
+.relatorio-professor__filtros {
+  display: flex; flex-wrap: wrap; gap: 10px 14px; margin: 10px 0;
+}
+.relatorio-professor__grupo-filtro {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px;
+  padding: 8px 12px; border: 1px solid #cbd5e0; border-radius: 10px; background: #f7fafc;
+  font-size: 13px;
+}
+.relatorio-professor__interruptor { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.relatorio-professor__interruptor input { position: absolute; opacity: 0; pointer-events: none; }
+.relatorio-professor__chave {
+  position: relative; width: 38px; height: 20px; border-radius: 20px; background: #a0aec0;
+  transition: background 0.2s;
+}
+.relatorio-professor__chave::after {
+  content: 'OFF'; position: absolute; right: 5px; top: 3px; font-size: 8px; font-weight: 700;
+  color: #fff;
+}
+.relatorio-professor__chave::before {
+  content: ''; position: absolute; left: 2px; top: 2px; width: 16px; height: 16px;
+  border-radius: 50%; background: #fff; transition: transform 0.2s; z-index: 1;
+}
+.relatorio-professor__interruptor input:checked + .relatorio-professor__chave { background: #38a169; }
+.relatorio-professor__interruptor input:checked + .relatorio-professor__chave::after {
+  content: 'ON'; left: 6px; right: auto;
+}
+.relatorio-professor__interruptor input:checked + .relatorio-professor__chave::before {
+  transform: translateX(18px);
+}
+.relatorio-professor__interruptor input:focus-visible + .relatorio-professor__chave {
+  outline: 2px solid #1a56db; outline-offset: 2px;
+}
+.relatorio-professor__interruptor-texto { font-weight: 600; }

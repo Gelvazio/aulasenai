@@ -14,9 +14,9 @@ const TURMA_SEM_CODIGO = '';
 const MAXIMO_TENTATIVAS_APROVADO = 2;
 const CLASSE_ABA_ATIVA = CLASSE_RELATORIO + '__aba--ativa';
 let turmaEscolhidaRelatorio = null;
-let filtroSituacaoRelatorio = '';
-let filtroTentativasRelatorio = '';
-const SITUACAO_NAO_ATINGIU = 'nao-atingiu';
+let filtroSoNaoAtingiuRelatorio = false;
+const filtroTentativasRelatorio = new Set();
+const QUANTIDADES_TENTATIVAS = ['1', '2', '3'];
 const CLASSE_NOTAS_OCULTAS = CLASSE_RELATORIO + '__aluno--notas-ocultas';
 const CLASSE_ABAIXO_MINIMO = CLASSE_RELATORIO + '__aluno--abaixo-minimo';
 const MSG_SEM_RESPOSTAS = 'Nenhum aluno respondeu esta atividade ainda.';
@@ -182,10 +182,9 @@ function alternarNotasAluno(bloco) {
  */
 function passaNosFiltros(bloco, turma) {
     if (bloco.dataset.turma !== turma) return false;
-    const soNaoAtingiu = filtroSituacaoRelatorio === SITUACAO_NAO_ATINGIU;
-    if (soNaoAtingiu && bloco.dataset.naoAtingiu !== 'true') return false;
-    const temFiltroTentativas = filtroTentativasRelatorio !== '';
-    return !temFiltroTentativas || bloco.dataset.tentativas === filtroTentativasRelatorio;
+    if (filtroSoNaoAtingiuRelatorio && bloco.dataset.naoAtingiu !== 'true') return false;
+    const semFiltroTentativas = filtroTentativasRelatorio.size === 0;
+    return semFiltroTentativas || filtroTentativasRelatorio.has(bloco.dataset.tentativas);
 }
 
 /**
@@ -354,36 +353,45 @@ function montarAbasTurmaRelatorio(turmas, aoEscolher) {
 }
 
 /**
- * Cria uma lista de escolha rotulada para os filtros do relatório.
- * @param {string} rotulo - Texto do rótulo.
- * @param {string[][]} opcoes - Pares [valor, texto].
- * @param {Function} aoMudar - Chamada com o valor escolhido.
- * @returns {HTMLLabelElement} Rótulo com a lista.
+ * Cria um interruptor ON/OFF (checkbox estilizado) para os filtros do relatório.
+ * @param {string} texto - Rótulo do interruptor.
+ * @param {Function} aoMudar - Chamada com true (ON) ou false (OFF).
+ * @returns {HTMLLabelElement} Interruptor pronto.
  */
-function criarFiltroRelatorio(rotulo, opcoes, aoMudar) {
-    const etiqueta = criarElemento('label', CLASSE_RELATORIO + '__filtro', rotulo + ' ');
-    const lista = document.createElement('select');
-    opcoes.forEach(([valor, texto]) => lista.add(new Option(texto, valor)));
-    lista.addEventListener('change', () => aoMudar(lista.value));
-    etiqueta.appendChild(lista);
+function criarInterruptorRelatorio(texto, aoMudar) {
+    const etiqueta = criarElemento('label', CLASSE_RELATORIO + '__interruptor');
+    const caixa = document.createElement('input');
+    caixa.type = 'checkbox';
+    caixa.addEventListener('change', () => aoMudar(caixa.checked));
+    etiqueta.append(caixa, criarElemento('span', CLASSE_RELATORIO + '__chave'),
+        criarElemento('span', CLASSE_RELATORIO + '__interruptor-texto', texto));
     return etiqueta;
 }
 
 /**
- * Monta os filtros de situação (não atingiu a nota) e de quantidade de tentativas.
+ * Monta os filtros (interruptores ON/OFF): só quem não atingiu a nota mínima e quantidade de
+ * tentativas (1, 2 ou 3; nenhum ligado mostra todos).
  * @param {Function} aoMudar - Chamada quando qualquer filtro muda.
  * @returns {HTMLElement} Barra de filtros.
  */
 function montarFiltrosRelatorio(aoMudar) {
     const barra = criarElemento('div', CLASSE_RELATORIO + '__filtros');
-    barra.append(
-        criarFiltroRelatorio('Situação:', [['', 'Todos'],
-            [SITUACAO_NAO_ATINGIU, 'Não atingiram a nota mínima']],
-        (valor) => { filtroSituacaoRelatorio = valor; aoMudar(); }),
-        criarFiltroRelatorio('Tentativas:', [['', 'Todas'], ['1', '1 tentativa'],
-            ['2', '2 tentativas'], ['3', '3 tentativas']],
-        (valor) => { filtroTentativasRelatorio = valor; aoMudar(); }),
-    );
+    const grupoSituacao = criarElemento('div', CLASSE_RELATORIO + '__grupo-filtro');
+    grupoSituacao.append(criarElemento('strong', '', 'Situação'),
+        criarInterruptorRelatorio('Não atingiram a nota mínima', (ligado) => {
+            filtroSoNaoAtingiuRelatorio = ligado;
+            aoMudar();
+        }));
+    const grupoTentativas = criarElemento('div', CLASSE_RELATORIO + '__grupo-filtro');
+    grupoTentativas.appendChild(criarElemento('strong', '', 'Tentativas'));
+    QUANTIDADES_TENTATIVAS.forEach((quantidade) => {
+        grupoTentativas.appendChild(criarInterruptorRelatorio(quantidade + 'x', (ligado) => {
+            if (ligado) filtroTentativasRelatorio.add(quantidade);
+            else filtroTentativasRelatorio.delete(quantidade);
+            aoMudar();
+        }));
+    });
+    barra.append(grupoSituacao, grupoTentativas);
     return barra;
 }
 
