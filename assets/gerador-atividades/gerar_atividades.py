@@ -247,7 +247,6 @@ def gerar_index(pasta, aulas, dados):
             <p class="meta">{a["total"]} questões · múltipla escolha · {e(a["duracao"])}</p>
             <div class="acoes">
                 {link(pasta, a["html"], "📝 Atividade", "principal")}
-                {link(pasta, a["md"], "📄 Questões (.md)", "")}
                 {link(pasta, a["conteudo"], "📚 Conteúdo (.md)", "")}
                 {link(pasta, a["pdf"], "📕 Slides (PDF)", "")}
             </div>
