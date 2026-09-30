@@ -1,0 +1,22 @@
+/* Barra da turma favorita no índice de atividades (perfil professor, todas as matérias) */
+:root {
+    --favorita-fundo: #fffbea;
+    --favorita-borda: #FFD700;
+    --favorita-botao: #b7791f;
+    --favorita-botao-texto: #fff;
+}
+.barra-turma-favorita {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px;
+    padding: 10px 20px; background: var(--favorita-fundo);
+    border-bottom: 2px solid var(--favorita-borda); font-size: 14px; font-weight: 600;
+}
+.barra-turma-favorita__rotulo { display: inline-flex; align-items: center; gap: 6px; }
+.barra-turma-favorita__lista {
+    max-width: 100%; padding: 6px 8px; border: 1px solid #cbd5e0; border-radius: 6px;
+    font: inherit; font-weight: 500;
+}
+.barra-turma-favorita__botao {
+    padding: 7px 14px; border: none; border-radius: 6px; cursor: pointer; font: inherit;
+    background: var(--favorita-botao); color: var(--favorita-botao-texto);
+}
+.barra-turma-favorita__botao:disabled { opacity: 0.6; cursor: wait; }

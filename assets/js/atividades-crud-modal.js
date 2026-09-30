@@ -380,7 +380,7 @@ async function iniciarCrudAtividades() {
 }
 
 /**
- * Carrega a coluna "Fez Atividade?" e o bloqueio de atividades (CSS e JS próprios).
+ * Carrega a coluna "Fez Atividade?", o bloqueio de atividades e a turma favorita.
  */
 function carregarMarcacaoFeitas() {
     if (!BASE_ASSETS_CRUD) return;
@@ -396,6 +396,23 @@ function carregarMarcacaoFeitas() {
     const scriptBloqueio = criarElementoCrud('script');
     scriptBloqueio.src = BASE_ASSETS_CRUD + 'js/indice-atividades-bloqueio.js';
     document.head.append(estilo, estiloBloquear, script, scriptBloqueio);
+    carregarTurmaFavoritaIndice();
+}
+
+/**
+ * Carrega a barra da turma favorita (professor): turma-favorita.js antes do script da barra.
+ */
+function carregarTurmaFavoritaIndice() {
+    const estilo = criarElementoCrud('link');
+    estilo.rel = 'stylesheet';
+    estilo.href = BASE_ASSETS_CRUD + 'css/indice-turma-favorita.css';
+    const scripts = ['js/turma-favorita.js', 'js/indice-turma-favorita.js'].map((caminho) => {
+        const script = criarElementoCrud('script');
+        script.src = BASE_ASSETS_CRUD + caminho;
+        script.async = false;
+        return script;
+    });
+    document.head.append(estilo, ...scripts);
 }
 
 carregarMarcacaoFeitas();

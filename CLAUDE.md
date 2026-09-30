@@ -1444,6 +1444,12 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   cliques e o interruptor do professor fica por cima, claro e clicável
   (`assets/css/indice-atividades-bloquear.css`). Todo índice de atividades carrega esses arquivos
   (via `atividades-crud-modal.js`); índice novo, feito à mão ou gerado, também deve carregá-los.
+- ✅ **Turma favorita no índice — REGRA GLOBAL** (2026-09-30, índice de atividades de **todas**
+  as matérias): para o professor logado, abaixo do resumo do `ATIVIDADES/index.html` aparece a
+  barra **"Turma: [lista] ☆ Marcar como turma favorita"** (a favorita tem ⭐ na lista). Grava
+  `turma.favorito` pela função `definir_turma_favorita` (só uma favorita). Código:
+  `assets/js/indice-turma-favorita.js` + `assets/css/indice-turma-favorita.css`, carregados por
+  `atividades-crud-modal.js` junto com `assets/js/turma-favorita.js` (não repetir por matéria).
 
 ## 📗 REGRA CRÍTICA — PADRÃO DE ATIVIDADE PRÁTICA DE EXCEL
 
