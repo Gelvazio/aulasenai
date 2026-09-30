@@ -233,14 +233,56 @@ function formatarAulaRel(numero) {
 }
 
 /**
+ * Cria a célula com o botão "Carregar Respostas" de uma atividade do aluno (só se ele respondeu).
+ * @param {Object} aluno - Aluno da linha.
+ * @param {{atividade: Object, tentativas: number}} detalhe - Atividade e tentativas do aluno.
+ * @returns {HTMLTableCellElement} Célula com o botão ou vazia.
+ */
+function criarCelulaCarregarRespostasRel(aluno, detalhe) {
+    const celula = criarElementoRel('td');
+    if (!aluno.id || detalhe.tentativas === 0) return celula;
+
+    const botao = criarElementoRel('button', 'rel-botao rel-botao--pequeno', 'Carregar Respostas');
+    botao.type = 'button';
+    botao.addEventListener('click', () => carregarRespostasDaAtividadeRel(aluno, detalhe.atividade));
+    celula.appendChild(botao);
+    return celula;
+}
+
+/**
+ * Carrega, no cartão de conferência, as respostas do aluno em UMA atividade (tentativa mais
+ * recente), marcadas como certas ou erradas.
+ * @param {Object} aluno - Aluno da linha.
+ * @param {Object} atividade - Atividade escolhida.
+ */
+async function carregarRespostasDaAtividadeRel(aluno, atividade) {
+    const area = document.getElementById('relConferencia');
+    area.textContent = 'Carregando respostas de ' + aluno.nome + '...';
+    try {
+        const dados = await carregarRespostasAlunoRel(aluno.id, [{ ...atividade, ativo: true }]);
+        area.replaceChildren(criarElementoRel('h3', '', 'Respostas de ' + aluno.nome));
+        if (!dados.length) area.append('Este aluno ainda não respondeu esta atividade.');
+        dados.forEach((item) => {
+            const bloco = montarConferenciaAtividadeRel(item);
+            bloco.open = true;
+            area.appendChild(bloco);
+        });
+        area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (erro) {
+        area.textContent = MSG_ERRO_REL + erro.message;
+    }
+}
+
+/**
  * Monta a linha de detalhe com as notas de cada atividade do aluno.
  * @param {Object} resumo - Resumo do aluno.
+ * @param {Object} aluno - Aluno da linha (id usado para carregar as respostas).
  * @returns {HTMLTableRowElement} Linha de detalhe.
  */
-function montarDetalheRel(resumo) {
+function montarDetalheRel(resumo, aluno) {
     const tabela = criarElementoRel('table', 'rel-tabela-detalhe');
     const cabecalho = tabela.createTHead().insertRow();
-    ['Aula', 'Atividade', 'Tentativas', 'Situação', 'Melhor nota'].forEach((texto) =>
+    ['Aula', 'Atividade', 'Tentativas', 'Situação', 'Melhor nota', 'Respostas'].forEach((texto) =>
         cabecalho.appendChild(criarElementoRel('th', '', texto)));
     const corpo = tabela.createTBody();
     resumo.detalhes.forEach((detalhe) => {
@@ -249,6 +291,7 @@ function montarDetalheRel(resumo) {
             detalhe.tentativas, TEXTO_STATUS_REL[detalhe.status],
             estadoRel.notasVisiveis ? formatarNotaRel(detalhe.melhorNota) : '••••'].forEach((valor) =>
             linha.appendChild(criarElementoRel('td', '', String(valor))));
+        linha.appendChild(criarCelulaCarregarRespostasRel(aluno, detalhe));
     });
     const linhaDetalhe = criarElementoRel('tr', 'rel-detalhe');
     linhaDetalhe.hidden = true;
@@ -302,7 +345,7 @@ function montarBlocoAlunoRel(aluno, resumo) {
         resumo.tentativas + ' de 3', aberto ? formatarNotaRel(resumo.media) : '••••'];
     celulas.forEach((valor) => linha.appendChild(criarElementoRel('td', '', String(valor))));
     linha.cells[2].classList.add(resumo.fez ? 'rel-sim' : 'rel-nao');
-    const detalhe = montarDetalheRel(resumo);
+    const detalhe = montarDetalheRel(resumo, aluno);
     bloco.appendChild(detalhe);
     tornarLinhaAcordeaoRel(linha, detalhe);
     return bloco;

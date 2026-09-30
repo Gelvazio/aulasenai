@@ -117,3 +117,5 @@
 .rel-item { padding: 4px 8px; border-radius: 6px; font-size: 13px; font-weight: 600; }
 .rel-item--certa { background: #e6f6ec; border: 1px solid #38a169; }
 .rel-item--errada { background: #fde8e8; border: 1px solid #e53e3e; }
+
+.rel-botao--pequeno { padding: 3px 10px; font-size: 12px; }
