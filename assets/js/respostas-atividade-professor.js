@@ -9,6 +9,8 @@
 const ROTA_RESUMO_TENTATIVAS = '/rest/v1/rpc/resumo_tentativas_atividade';
 const ROTA_LIBERAR_TENTATIVA = '/rest/v1/rpc/liberar_nova_tentativa';
 const CLASSE_RELATORIO = 'relatorio-professor';
+const COLUNAS_ALUNOS_RELATORIO = ['Nº', 'Aluno', 'Fez Atividade?', 'Tentativas',
+    'Nota final da Atividade', 'Ações'];
 const COLUNAS_RELATORIO = ['Tentativa', 'Situação', 'Acertos', 'Nota', 'Data e hora'];
 const TURMA_SEM_CODIGO = '';
 const MAXIMO_TENTATIVAS_APROVADO = 2;
@@ -191,7 +193,43 @@ function passaNosFiltros(bloco, turma) {
 }
 
 /**
- * Monta o bloco de um aluno: nome com a nota final ao lado e, abaixo, a tabela das tentativas.
+ * Cria a tabela de tentativas de um aluno (mostrada só ao clicar em Visualizar Notas).
+ * @param {Object[]} tentativas - Linhas do resumo do aluno.
+ * @param {Object} base - {secao, atividadeId, maximo}.
+ * @returns {HTMLElement} Linha de detalhe com a tabela aninhada.
+ */
+function montarDetalheAluno(tentativas, base) {
+    const tabela = criarElemento('table', CLASSE_RELATORIO + '__tabela-tentativas');
+    const cabecalho = tabela.createTHead().insertRow();
+    COLUNAS_RELATORIO.forEach((texto) => cabecalho.appendChild(criarElemento('th', '', texto)));
+    const corpo = tabela.createTBody();
+    tentativas.forEach((linha) => corpo.appendChild(montarLinhaRelatorio({ ...base, linha })));
+    const detalhe = criarElemento('tr', CLASSE_RELATORIO + '__detalhe');
+    const celula = criarElemento('td');
+    celula.colSpan = COLUNAS_ALUNOS_RELATORIO.length;
+    celula.appendChild(tabela);
+    detalhe.appendChild(celula);
+    return detalhe;
+}
+
+/**
+ * Cria a célula de ações do aluno: Visualizar Notas e Liberar nova tentativa.
+ * @param {HTMLElement} bloco - Bloco (tbody) do aluno.
+ * @param {Object[]} tentativas - Linhas do resumo do aluno.
+ * @param {Object} base - {secao, atividadeId, maximo, notaFinal}.
+ * @returns {HTMLTableCellElement} Célula de ações.
+ */
+function criarCelulaAcoesAluno(bloco, tentativas, base) {
+    const celula = criarElemento('td', CLASSE_RELATORIO + '__acoes');
+    celula.append(criarBotao('btn-export ' + CLASSE_RELATORIO + '__ver-notas',
+        'Visualizar Notas', () => alternarNotasAluno(bloco)),
+    criarControleLiberar({ ...base, linha: tentativas[tentativas.length - 1] }));
+    return celula;
+}
+
+/**
+ * Monta o bloco (tbody) de um aluno: uma linha com colunas retas e, escondida, a linha de
+ * detalhe com as tentativas e suas notas.
  * @param {Object[]} tentativas - Linhas do resumo do aluno, em ordem de tentativa.
  * @param {{secao: HTMLElement, atividadeId: number, maximo: number}} base - Seção, atividade
  *     e limite de tentativas.
@@ -199,50 +237,39 @@ function passaNosFiltros(bloco, turma) {
  */
 function montarBlocoAluno(tentativas, base) {
     const primeira = tentativas[0];
-    const bloco = criarElemento('section', CLASSE_RELATORIO + '__aluno');
-    bloco.dataset.turma = primeira.turma_codigo || TURMA_SEM_CODIGO;
-    const notaFinal = calcularNotaFinalAluno(tentativas);
+    const semResposta = Boolean(primeira.sem_resposta);
+    const bloco = criarElemento('tbody', CLASSE_RELATORIO + '__aluno');
+    const notaFinal = semResposta ? null : calcularNotaFinalAluno(tentativas);
     const naoAtingiu = notaFinal === null || notaFinal < NOTA_MINIMA_APROVACAO;
-    bloco.dataset.aluno = primeira.aluno_id;
-    bloco.dataset.tentativas = String(primeira.sem_resposta ? 0 : tentativas.length);
-    bloco.dataset.naoAtingiu = String(naoAtingiu);
-    bloco.dataset.fez = primeira.sem_resposta ? 'nao' : 'sim';
+    Object.assign(bloco.dataset, { turma: primeira.turma_codigo || TURMA_SEM_CODIGO,
+        aluno: primeira.aluno_id, tentativas: String(semResposta ? 0 : tentativas.length),
+        naoAtingiu: String(naoAtingiu), fez: semResposta ? 'nao' : 'sim' });
     bloco.classList.add(CLASSE_NOTAS_OCULTAS);
     bloco.classList.toggle(CLASSE_ABAIXO_MINIMO, naoAtingiu);
-    const titulo = criarElemento('h4', CLASSE_RELATORIO + '__aluno-titulo');
-    titulo.append(criarElemento('span', '', [primeira.numero_chamada, primeira.nome ||
-        '(sem cadastro)'].filter((parte) => parte !== null && parte !== undefined &&
-        parte !== '').join(' - ')));
-    titulo.append(criarElemento('span', CLASSE_RELATORIO + '__fez ' + CLASSE_RELATORIO +
-        (primeira.sem_resposta ? '__fez--nao' : '__fez--sim'),
-    'Fez Atividade? ' + (primeira.sem_resposta ? '❌ Não' : '✅ Sim')));
-    if (primeira.sem_resposta) {
-        bloco.append(titulo);
-        return bloco;
-    }
-    titulo.append(criarBotao('btn-export ' + CLASSE_RELATORIO + '__ver-notas', 'Visualizar Notas',
-        () => alternarNotasAluno(bloco)));
-    titulo.append(criarElemento('span', CLASSE_RELATORIO + '__nota-final',
-        'Nota final da Atividade: ' + (notaFinal === null ? '—' : formatarNota(notaFinal))));
-    titulo.append(criarControleLiberar({ ...base, linha: tentativas[tentativas.length - 1],
-        notaFinal }));
-    const tabela = criarElemento('table', CLASSE_RELATORIO + '__tabela');
-    const cabecalho = tabela.createTHead().insertRow();
-    COLUNAS_RELATORIO.forEach((texto) => cabecalho.appendChild(criarElemento('th', '', texto)));
-    const corpo = tabela.createTBody();
-    tentativas.forEach((linha) => corpo.appendChild(montarLinhaRelatorio({ ...base, linha })));
-    const rolagem = criarElemento('div', CLASSE_RELATORIO + '__rolagem');
-    rolagem.appendChild(tabela);
-    bloco.append(titulo, rolagem);
+    const textoNota = notaFinal === null ? '—' : formatarNota(notaFinal);
+    const linha = document.createElement('tr');
+    const celulaNota = criarElemento('td', CLASSE_RELATORIO + '__col-nota');
+    celulaNota.append(criarElemento('span', CLASSE_RELATORIO + '__nota-final', textoNota),
+        criarElemento('span', CLASSE_RELATORIO + '__nota-oculta', '••••'));
+    linha.append(criarCelulaRelatorio(primeira.numero_chamada ?? ''),
+        criarCelulaRelatorio(primeira.nome || '(sem cadastro)'),
+        criarCelulaRelatorio(semResposta ? '❌ Não' : '✅ Sim',
+            CLASSE_RELATORIO + (semResposta ? '__fez--nao' : '__fez--sim')),
+        criarCelulaRelatorio((semResposta ? 0 : tentativas.length) + ' de ' + base.maximo),
+        celulaNota);
+    linha.appendChild(semResposta ? criarElemento('td') :
+        criarCelulaAcoesAluno(bloco, tentativas, { ...base, notaFinal }));
+    bloco.appendChild(linha);
+    if (!semResposta) bloco.appendChild(montarDetalheAluno(tentativas, base));
     return bloco;
 }
 
 /**
- * Monta a lista do relatório: um bloco por aluno com as respectivas tentativas agrupadas.
+ * Monta a tabela do relatório: um bloco por aluno, com colunas alinhadas.
  * @param {Object[]} linhas - Linhas do resumo (ordenadas por aluno e tentativa).
  * @param {{secao: HTMLElement, atividadeId: number, maximo: number}} base - Seção da página,
  *     id da atividade e limite de tentativas.
- * @returns {HTMLElement} Lista pronta.
+ * @returns {HTMLElement} Área de rolagem com a tabela pronta.
  */
 function montarListaAlunosRelatorio(linhas, base) {
     const porAluno = new Map();
@@ -254,22 +281,14 @@ function montarListaAlunosRelatorio(linhas, base) {
         grupo.push(linha);
         porAluno.set(linha.aluno_id, grupo);
     });
-    const lista = criarElemento('div', CLASSE_RELATORIO + '__alunos');
-    porAluno.forEach((tentativas) => lista.appendChild(montarBlocoAluno(tentativas, base)));
-    return lista;
-}
-
-/**
- * Busca no banco local, turno e unidade curricular das turmas (para os cartões das abas).
- * @returns {Promise<Map<string, Object>>} Turmas por código (vazio se a consulta falhar).
- */
-async function buscarDadosTurmas() {
-    try {
-        const turmas = await sbGet('turma', 'select=codigo,nome,turno,local,uc');
-        return new Map(turmas.map((turma) => [turma.codigo, turma]));
-    } catch (erro) {
-        return new Map();
-    }
+    const tabela = criarElemento('table', CLASSE_RELATORIO + '__tabela');
+    const cabecalho = tabela.createTHead().insertRow();
+    COLUNAS_ALUNOS_RELATORIO.forEach((texto) =>
+        cabecalho.appendChild(criarElemento('th', '', texto)));
+    porAluno.forEach((tentativas) => tabela.appendChild(montarBlocoAluno(tentativas, base)));
+    const rolagem = criarElemento('div', CLASSE_RELATORIO + '__rolagem');
+    rolagem.appendChild(tabela);
+    return rolagem;
 }
 
 /**

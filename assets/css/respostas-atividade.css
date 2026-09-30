@@ -238,7 +238,6 @@
 .relatorio-professor__aba-uc { font-size: 11px; font-weight: 600; opacity: 0.8; }
 .relatorio-professor__aba-turma { font-size: 15px; }
 .relatorio-professor__aluno[hidden] { display: none; }
-.relatorio-professor__aluno { margin-top: 14px; }
 .relatorio-professor__aluno-titulo {
   display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline;
   margin: 0 0 4px; font-size: 15px;
@@ -247,10 +246,13 @@
 @media (max-width: 480px) { .relatorio-professor__abas { grid-template-columns: 1fr; } }
 
 /* Relatório do professor: notas escondidas por padrão, fundo vermelho claro abaixo do mínimo e filtros */
-.relatorio-professor__aluno { padding: 8px 10px; border-radius: 8px; }
-.relatorio-professor__aluno--abaixo-minimo { background: #fde8e8; }
-.relatorio-professor__aluno--notas-ocultas .relatorio-professor__rolagem,
+.relatorio-professor__aluno--abaixo-minimo > tr > td,
+.relatorio-professor__aluno--abaixo-minimo > tr > td > .relatorio-professor__tabela-tentativas { background: #fde8e8; }
+.relatorio-professor__aluno--notas-ocultas .relatorio-professor__detalhe,
 .relatorio-professor__aluno--notas-ocultas .relatorio-professor__nota-final { display: none; }
+.relatorio-professor__nota-oculta { letter-spacing: 2px; color: #718096; }
+.relatorio-professor__aluno:not(.relatorio-professor__aluno--notas-ocultas)
+  .relatorio-professor__nota-oculta { display: none; }
 .relatorio-professor__ver-notas { padding: 4px 10px; font-size: 12px; }
 .relatorio-professor__filtros {
   display: flex; flex-wrap: wrap; gap: 10px 14px; margin: 10px 0;
@@ -289,3 +291,21 @@
 .relatorio-professor__fez { font-size: 13px; font-weight: 700; }
 .relatorio-professor__fez--sim { color: #1b7f3b; }
 .relatorio-professor__fez--nao { color: #b42318; }
+
+/* Tabela de alunos: colunas retas, uma linha por aluno */
+.relatorio-professor__tabela { table-layout: fixed; min-width: 760px; }
+.relatorio-professor__tabela th:nth-child(1) { width: 48px; }
+.relatorio-professor__tabela th:nth-child(3) { width: 130px; }
+.relatorio-professor__tabela th:nth-child(4) { width: 100px; }
+.relatorio-professor__tabela th:nth-child(5) { width: 190px; }
+.relatorio-professor__tabela th:nth-child(6) { width: 330px; }
+.relatorio-professor__tabela th, .relatorio-professor__tabela > tbody > tr > td {
+  text-align: left; vertical-align: middle;
+}
+.relatorio-professor__fez--sim, .relatorio-professor__fez--nao { font-weight: 700; }
+.relatorio-professor__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.relatorio-professor__detalhe > td { padding: 4px 8px 10px; }
+.relatorio-professor__tabela-tentativas { width: 100%; border-collapse: collapse; font-size: 12px; }
+.relatorio-professor__tabela-tentativas th, .relatorio-professor__tabela-tentativas td {
+  padding: 4px 8px; text-align: left; border-top: 1px solid #cbd5e0;
+}
