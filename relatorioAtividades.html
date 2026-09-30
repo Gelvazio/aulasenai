@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de atividades</title>
+    <link rel="stylesheet" href="assets/css/criar-usuarios-comando.css">
+    <link rel="stylesheet" href="assets/css/header-usuario.css">
+    <link rel="stylesheet" href="assets/css/relatorio-atividades.css">
+    <script src="scripts/LISTA-PRESENCA-CEPLAS-MANHA.js"></script>
+    <script src="scripts/LISTA-PRESENCA-ITIC-CEPLAS-MANHA.js"></script>
+    <script src="scripts/LISTA-PRESENCA-ITIC-CEPLAS-TARDE.js"></script>
+    <script src="scripts/LISTA-PRESENCA-ADAG-SALETE-TARDE-2026-02.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js" defer></script>
+    <script src="js/header-usuario.js" defer></script>
+    <script src="assets/js/relatorio-atividades-dados.js" defer></script>
+    <script src="assets/js/relatorio-atividades-pagina.js" defer></script>
+</head>
+<body>
+    <div id="header-usuario"></div>
+    <main class="guia">
+        <header class="guia-cabecalho">
+            <h1>📊 Relatório de atividades</h1>
+            <p>Alunos de cada turma (banco de dados e listas de presença) em todas as atividades da matéria</p>
+        </header>
+
+        <section class="guia-cartao guia-erro" id="relBloqueio" hidden></section>
+
+        <div id="relConteudo">
+            <section class="guia-cartao">
+                <label class="rel-campo-materia">Matéria:
+                    <select id="relMateria"></select>
+                </label>
+                <p id="relAviso" class="rel-aviso">Verificando o usuário logado...</p>
+                <div id="relFiltrosArea"></div>
+            </section>
+
+            <nav class="rel-abas" id="relAbas" aria-label="Turmas"></nav>
+            <section class="guia-cartao">
+                <p id="relResumo" class="rel-resumo"></p>
+                <div id="relTabela"></div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

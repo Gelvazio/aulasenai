@@ -1,0 +1,66 @@
+/* Página relatorioAtividades.html (assets/js/relatorio-atividades-pagina.js). Reaproveita as
+   variáveis e os cartões de criar-usuarios-comando.css. */
+.guia { max-width: 1200px; }
+.rel-campo-materia { display: flex; align-items: center; gap: 8px; font-weight: 700; }
+.rel-campo-materia select { padding: 6px 10px; border: 1px solid var(--guia-borda); border-radius: 6px; font: inherit; }
+.rel-aviso { margin: 8px 0; font-weight: 600; }
+.rel-aviso:empty { display: none; }
+.rel-resumo { margin-bottom: 8px; font-weight: 600; }
+
+/* Abas de turma em cartões (como criarUsuariosBancoDados.html) */
+.rel-abas { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+.rel-aba {
+  display: flex; flex-direction: column; gap: 2px; text-align: left; cursor: pointer;
+  padding: 10px 14px; background: #fff; color: var(--guia-azul); font: inherit;
+  border: 1px solid var(--guia-borda); border-radius: 10px;
+}
+.rel-aba:hover { background: #eef2ff; }
+.rel-aba--ativa, .rel-aba--ativa:hover { background: var(--guia-azul); color: #fff; }
+.rel-aba-local { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; }
+.rel-aba-uc { font-size: 11px; font-weight: 600; opacity: 0.8; }
+.rel-aba-turma { font-size: 15px; font-weight: 700; }
+
+/* Filtros em interruptores ON/OFF */
+.rel-filtros { display: flex; flex-wrap: wrap; gap: 10px 14px; margin-top: 10px; }
+.rel-grupo-filtro {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 8px 12px;
+  border: 1px solid var(--guia-borda); border-radius: 10px; background: #f7fafc; font-size: 13px;
+}
+.rel-interruptor { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.rel-interruptor input { position: absolute; opacity: 0; pointer-events: none; }
+.rel-chave {
+  position: relative; width: 48px; height: 22px; border-radius: 22px; background: #a0aec0;
+  transition: background 0.2s;
+}
+.rel-chave::after {
+  content: 'OFF'; position: absolute; right: 6px; top: 5px; font-size: 9px; font-weight: 700; color: #fff;
+}
+.rel-chave::before {
+  content: ''; position: absolute; left: 3px; top: 3px; width: 16px; height: 16px;
+  border-radius: 50%; background: #fff; transition: transform 0.2s; z-index: 1;
+}
+.rel-interruptor input:checked + .rel-chave { background: #38a169; }
+.rel-interruptor input:checked + .rel-chave::after { content: 'ON'; left: 8px; right: auto; }
+.rel-interruptor input:checked + .rel-chave::before { transform: translateX(26px); }
+.rel-interruptor input:focus-visible + .rel-chave { outline: 2px solid #1a56db; outline-offset: 2px; }
+.rel-interruptor-texto { font-weight: 600; }
+
+/* Tabela de alunos: colunas retas, uma linha por aluno */
+.rel-rolagem { overflow-x: auto; }
+.rel-tabela { width: 100%; min-width: 880px; table-layout: fixed; border-collapse: collapse; font-size: 14px; }
+.rel-tabela th:nth-child(1) { width: 48px; }
+.rel-tabela th:nth-child(3) { width: 130px; }
+.rel-tabela th:nth-child(4) { width: 130px; }
+.rel-tabela th:nth-child(5) { width: 130px; }
+.rel-tabela th:nth-child(6) { width: 100px; }
+.rel-tabela th:nth-child(7) { width: 170px; }
+.rel-tabela th, .rel-tabela > tbody > tr > td {
+  text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--guia-borda);
+}
+.rel-tabela th { background: #f0f4f8; }
+.rel-sim { color: var(--guia-ok); font-weight: 700; }
+.rel-nao { color: var(--guia-erro); font-weight: 700; }
+.rel-aluno--abaixo > tr > td { background: #fde8e8; }
+.rel-detalhe > td { padding: 4px 8px 10px; background: #fff; }
+.rel-tabela-detalhe { width: 100%; border-collapse: collapse; font-size: 12px; }
+.rel-tabela-detalhe th, .rel-tabela-detalhe td { padding: 4px 8px; text-align: left; border-top: 1px solid var(--guia-borda); }
