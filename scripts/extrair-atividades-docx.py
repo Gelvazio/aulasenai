@@ -12,10 +12,10 @@ Entrada (na pasta):
                                             Alternativas a) a e))
     GABARITO-ATIVIDADE-NN-<TEMA>.docx    — mesma estrutura, com ✅ na alternativa certa
 Saída (na pasta):
-    ATIVIDADE-NN-<TEMA>-QUESTOES.md      — fonte das questões (termina em QUESTOES.md: fica FORA do
+    CONTEUDO/ATIVIDADES-AULA-NN-<TOTAL>-QUESTOES.md — fonte das questões, padrão ITIC (termina em QUESTOES.md: FORA do
                                             Git, pois traz o gabarito)
-    ATIVIDADE-NN-<TEMA>.html             — página gerada (a menos que use --so-md)
-    CONTEUDO/GABARITO-ATIVIDADE-NN-<TEMA>.md — cada gabarito do Word em Markdown (fora do Git)
+    ATIVIDADES-AULA-NN-<TOTAL>-QUESTOES.html — página gerada (a menos que use --so-md)
+    CONTEUDO/GABARITO-ATIVIDADES-AULA-NN-<TOTAL>-QUESTOES.md — gabarito em Markdown (fora do Git)
     atividades.json                      — dados da matéria (criado se não existir)
 Dependência: python-docx.
 """
@@ -186,7 +186,6 @@ def montar_markdown(numero, tema, cabecalho, itens):
     partes = [f"""# Atividade: {tema} — {len(itens)} Questões
 
 - **Aula:** {numero}
-- **Rótulo da aula:** Atividade {numero}
 - **Tema:** {tema}
 - **Ícone:** {ICONES.get(chave, ICONE_PADRAO)}
 - **Duração:** {DURACOES.get(chave, DURACAO_PADRAO)}
@@ -296,7 +295,7 @@ def exportar_gabarito(pasta, caminho):
     itens = ler_itens(caminho, com_marca=True)
     resumo = ler_resumo_gabarito(documento)
     tema = TEMAS.get(str(int(numero))) or resto.replace("-", " ").capitalize()
-    destino = pasta / PASTA_CONTEUDO / f"GABARITO-ATIVIDADE-{numero}-{resto}.md"
+    destino = pasta / PASTA_CONTEUDO / f"GABARITO-ATIVIDADES-AULA-{numero}-{len(itens)}-QUESTOES.md"
     destino.parent.mkdir(exist_ok=True)
     conteudo = montar_markdown_gabarito(numero, tema, ler_cabecalho(documento), itens, resumo)
     destino.write_text(conteudo, encoding="utf-8")
@@ -345,12 +344,31 @@ def processar_atividade(pasta, caminho, so_md):
     cabecalho = ler_cabecalho(docx.Document(caminho))
     garantir_dados_materia(pasta, cabecalho)
     tema = TEMAS.get(str(int(numero))) or resto.replace("-", " ").capitalize()
-    destino = pasta / f"ATIVIDADE-{numero}-{resto}-QUESTOES.md"
+    destino = pasta / PASTA_CONTEUDO / f"ATIVIDADES-AULA-{numero}-{len(itens)}-QUESTOES.md"
+    destino.parent.mkdir(exist_ok=True)
     destino.write_text(montar_markdown(numero, tema, cabecalho, itens), encoding="utf-8")
-    print(f"{caminho.name}: {len(itens)} itens -> {destino.name}")
+    print(f"{caminho.name}: {len(itens)} itens -> {PASTA_CONTEUDO}/{destino.name}")
     if not so_md:
-        subprocess.run([PYTHON, str(GERADOR), str(pasta), f"--so={destino.name}"], check=True)
+        gerar_html_da_atividade(pasta, destino)
     return avisos
+
+
+def gerar_html_da_atividade(pasta, origem):
+    """Gera o HTML ao lado da pasta ATIVIDADES usando uma cópia temporária do .md.
+
+    O gerador lê o .md da própria pasta ATIVIDADES; a cópia é apagada no fim (a fonte fica em
+    CONTEUDO/).
+
+    Args:
+        pasta: Pasta ATIVIDADES.
+        origem: .md da atividade (em CONTEUDO/).
+    """
+    copia = pasta / origem.name
+    copia.write_text(origem.read_text(encoding="utf-8"), encoding="utf-8")
+    try:
+        subprocess.run([PYTHON, str(GERADOR), str(pasta), f"--so={copia.name}"], check=True)
+    finally:
+        copia.unlink()
 
 
 def main():

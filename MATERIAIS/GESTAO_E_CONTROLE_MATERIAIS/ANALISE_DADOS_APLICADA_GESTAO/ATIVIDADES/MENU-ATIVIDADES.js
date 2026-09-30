@@ -12,6 +12,27 @@ window.MENU_ATIVIDADES = {
   itens: [
     { rotulo: '📚 Índice', link: 'index.html' },
     {
+      rotulo: '📝 Atividades por aula',
+      subitens: [
+        {
+          rotulo: 'Aula 01 — Estatística e progressões',
+          link: 'ATIVIDADES-AULA-01-12-QUESTOES.html',
+        },
+        {
+          rotulo: 'Aula 02 — Conceitos e fundamentos do Excel',
+          link: 'ATIVIDADES-AULA-02-12-QUESTOES.html',
+        },
+        {
+          rotulo: 'Aula 03 — Funções de busca avançadas',
+          link: 'ATIVIDADES-AULA-03-13-QUESTOES.html',
+        },
+        {
+          rotulo: 'Aula 04 — Design de dashboard e KPIs',
+          link: 'ATIVIDADES-AULA-04-14-QUESTOES.html',
+        },
+      ],
+    },
+    {
       rotulo: '📗 Excel 29/09 — Controle de estoque',
       subitens: [
         {
