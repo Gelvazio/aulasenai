@@ -185,7 +185,9 @@ function criarTabelaAlunosGuia(turma, contexto, aoMudarSelecao) {
         + '<th>Aluno anotou? (Sim/Não)</th><th>E-mail de login</th>'
         + '<th>Senha</th><th>Cadastrado</th></tr></thead>';
     const corpo = document.createElement('tbody');
-    corpo.append(...turma.alunos.map((aluno) => (
+    corpo.append(...[...turma.alunos]
+        .sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR', { sensitivity: 'base' }))
+        .map((aluno) => (
         criarLinhaAlunoGuia(aluno, contexto, aoMudarSelecao))));
     tabela.append(corpo);
     return tabela;

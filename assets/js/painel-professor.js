@@ -167,6 +167,7 @@ async function carregarDadosAtividade(atividadeId, turmaCodigo, maximoTentativas
         sbGet('liberacao_atividade', 'select=aluno_id,tentativa&' + filtro),
     ]);
     const tentativasPorAluno = agruparTentativas(respostas, entregas, liberacoes);
+    alunos.sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR', { sensitivity: 'base' }));
     return { alunos, gabarito, tentativasPorAluno, maximoTentativas };
 }
 
