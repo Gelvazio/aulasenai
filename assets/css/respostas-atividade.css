@@ -237,5 +237,11 @@
 }
 .relatorio-professor__aba-uc { font-size: 11px; font-weight: 600; opacity: 0.8; }
 .relatorio-professor__aba-turma { font-size: 15px; }
-.relatorio-professor__tabela tr[hidden] { display: none; }
+.relatorio-professor__aluno[hidden] { display: none; }
+.relatorio-professor__aluno { margin-top: 14px; }
+.relatorio-professor__aluno-titulo {
+  display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline;
+  margin: 0 0 4px; font-size: 15px;
+}
+.relatorio-professor__nota-final { color: #1a56db; font-weight: 700; }
 @media (max-width: 480px) { .relatorio-professor__abas { grid-template-columns: 1fr; } }

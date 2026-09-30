@@ -9,8 +9,8 @@
 const ROTA_RESUMO_TENTATIVAS = '/rest/v1/rpc/resumo_tentativas_atividade';
 const ROTA_LIBERAR_TENTATIVA = '/rest/v1/rpc/liberar_nova_tentativa';
 const CLASSE_RELATORIO = 'relatorio-professor';
-const COLUNAS_RELATORIO = ['Nº', 'Aluno', 'Turma', 'Tentativa', 'Situação', 'Acertos', 'Nota',
-    'Data e hora', 'Nova tentativa'];
+const COLUNAS_RELATORIO = ['Tentativa', 'Situação', 'Acertos', 'Nota', 'Data e hora',
+    'Nova tentativa'];
 const TURMA_SEM_CODIGO = '';
 const CLASSE_ABA_ATIVA = CLASSE_RELATORIO + '__aba--ativa';
 let turmaEscolhidaRelatorio = null;
@@ -124,11 +124,7 @@ function montarLinhaRelatorio(contexto) {
     const nota = calcularNota({ acertos: linha.acertos, total: linha.total });
     const abaixoDoMinimo = linha.entregue_em && nota < NOTA_MINIMA_APROVACAO;
     const tr = document.createElement('tr');
-    tr.dataset.turma = linha.turma_codigo || TURMA_SEM_CODIGO;
     tr.append(
-        criarCelulaRelatorio(linha.numero_chamada ?? ''),
-        criarCelulaRelatorio(linha.nome || '(sem cadastro)'),
-        criarCelulaRelatorio(linha.turma_nome || linha.turma_codigo || ''),
         criarCelulaRelatorio(linha.tentativa + ' de ' + maximo),
         criarCelulaRelatorio(situacao),
         criarCelulaRelatorio(linha.entregue_em ? linha.acertos + ' de ' + linha.total : '—'),
@@ -141,23 +137,65 @@ function montarLinhaRelatorio(contexto) {
 }
 
 /**
- * Monta a tabela do relatório (uma linha por aluno e tentativa).
- * @param {Object[]} linhas - Linhas do resumo.
- * @param {{secao: HTMLElement, atividadeId: number, maximo: number}} base - Seção da página,
- *     id da atividade e limite de tentativas.
- * @returns {HTMLTableElement} Tabela pronta.
+ * Calcula a maior nota entre as tentativas entregues de um aluno.
+ * @param {Object[]} tentativas - Linhas do resumo do aluno.
+ * @returns {number|null} Maior nota ou null se nenhuma tentativa foi entregue.
  */
-function montarTabelaRelatorio(linhas, base) {
+function calcularNotaFinalAluno(tentativas) {
+    const notas = tentativas.filter((linha) => linha.entregue_em)
+        .map((linha) => calcularNota({ acertos: linha.acertos, total: linha.total }));
+    return notas.length ? Math.max(...notas) : null;
+}
+
+/**
+ * Monta o bloco de um aluno: nome com a nota final ao lado e, abaixo, a tabela das tentativas.
+ * @param {Object[]} tentativas - Linhas do resumo do aluno, em ordem de tentativa.
+ * @param {{secao: HTMLElement, atividadeId: number, maximo: number}} base - Seção, atividade
+ *     e limite de tentativas.
+ * @returns {HTMLElement} Bloco do aluno.
+ */
+function montarBlocoAluno(tentativas, base) {
+    const primeira = tentativas[0];
+    const bloco = criarElemento('section', CLASSE_RELATORIO + '__aluno');
+    bloco.dataset.turma = primeira.turma_codigo || TURMA_SEM_CODIGO;
+    const notaFinal = calcularNotaFinalAluno(tentativas);
+    const titulo = criarElemento('h4', CLASSE_RELATORIO + '__aluno-titulo');
+    titulo.append(criarElemento('span', '', [primeira.numero_chamada, primeira.nome ||
+        '(sem cadastro)'].filter((parte) => parte !== null && parte !== undefined &&
+        parte !== '').join(' - ')));
+    titulo.append(criarElemento('span', CLASSE_RELATORIO + '__nota-final',
+        'Nota final da Atividade: ' + (notaFinal === null ? '—' : formatarNota(notaFinal))));
     const tabela = criarElemento('table', CLASSE_RELATORIO + '__tabela');
     const cabecalho = tabela.createTHead().insertRow();
     COLUNAS_RELATORIO.forEach((texto) => cabecalho.appendChild(criarElemento('th', '', texto)));
     const corpo = tabela.createTBody();
-    linhas.forEach((linha, indice) => {
-        const proxima = linhas[indice + 1];
-        const ehUltima = !proxima || proxima.aluno_id !== linha.aluno_id;
+    tentativas.forEach((linha, indice) => {
+        const ehUltima = indice === tentativas.length - 1;
         corpo.appendChild(montarLinhaRelatorio({ ...base, linha, ehUltima }));
     });
-    return tabela;
+    const rolagem = criarElemento('div', CLASSE_RELATORIO + '__rolagem');
+    rolagem.appendChild(tabela);
+    bloco.append(titulo, rolagem);
+    return bloco;
+}
+
+/**
+ * Monta a lista do relatório: um bloco por aluno com as respectivas tentativas agrupadas.
+ * @param {Object[]} linhas - Linhas do resumo (ordenadas por aluno e tentativa).
+ * @param {{secao: HTMLElement, atividadeId: number, maximo: number}} base - Seção da página,
+ *     id da atividade e limite de tentativas.
+ * @returns {HTMLElement} Lista pronta.
+ */
+function montarListaAlunosRelatorio(linhas, base) {
+    const porAluno = new Map();
+    linhas.forEach((linha) => {
+        const grupo = porAluno.get(linha.aluno_id) || [];
+        grupo.push(linha);
+        porAluno.set(linha.aluno_id, grupo);
+    });
+    const lista = criarElemento('div', CLASSE_RELATORIO + '__alunos');
+    porAluno.forEach((tentativas) => lista.appendChild(montarBlocoAluno(tentativas, base)));
+    return lista;
 }
 
 /**
@@ -219,7 +257,7 @@ function atualizarResumoRelatorio(resumo, linhas) {
  */
 function aplicarFiltroTurmaRelatorio(bloco, linhas, turma) {
     turmaEscolhidaRelatorio = turma;
-    bloco.querySelectorAll('tbody tr').forEach((tr) => {
+    bloco.querySelectorAll('.' + CLASSE_RELATORIO + '__aluno').forEach((tr) => {
         tr.hidden = tr.dataset.turma !== turma;
     });
     bloco.querySelectorAll('.' + CLASSE_RELATORIO + '__aba').forEach((aba) => {
@@ -288,9 +326,7 @@ async function montarRelatorioProfessor(secao, atividadeId, maximo) {
         if (!existe) turmaEscolhidaRelatorio = turmas[0].codigo;
         bloco.appendChild(montarAbasTurmaRelatorio(turmas,
             (turma) => aplicarFiltroTurmaRelatorio(bloco, linhas, turma)));
-        const rolagem = criarElemento('div', CLASSE_RELATORIO + '__rolagem');
-        rolagem.appendChild(montarTabelaRelatorio(linhas, { secao, atividadeId, maximo }));
-        bloco.appendChild(rolagem);
+        bloco.appendChild(montarListaAlunosRelatorio(linhas, { secao, atividadeId, maximo }));
         aplicarFiltroTurmaRelatorio(bloco, linhas, turmaEscolhidaRelatorio);
     } catch (erro) {
         bloco.appendChild(criarElemento('p', CLASSE_RELATORIO + '__erro',
