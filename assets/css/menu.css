@@ -150,3 +150,10 @@
     display: none;
   }
 }
+
+/* O botão "← Índice" fica ACIMA do menu (antes ele ficava por cima, por ser position:absolute). */
+header:has(.menu-atividades) { display: flex; flex-direction: column; align-items: stretch; }
+header:has(.menu-atividades) .voltar {
+  order: -1; position: static; align-self: flex-start; margin: 0 0 12px;
+}
+header:has(.menu-atividades) .menu-atividades { margin: 0 0 18px; }
