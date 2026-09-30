@@ -2,7 +2,7 @@
 // Ler a atividade é livre; o login (Supabase Auth) só é pedido ao marcar uma alternativa.
 // Respostas: tabela resposta_atividade (upsert por aluno/atividade/tentativa/item).
 // Entrega: tabela entrega_atividade (uma por tentativa).
-// Tentativas: até MAXIMO_TENTATIVAS por atividade; a nova tentativa só o professor libera
+// Tentativas: o limite vem do banco (atividade.max_tentativas); nova tentativa só o professor libera
 // (tabela liberacao_atividade). Plano: docs/regra-3-tentativas-atividade.md.
 // O gabarito NUNCA vem para a página do aluno (tabela gabarito só é lida pelo professor).
 // Depende de: supabase-js v2 (CDN), js/supabase.js (SUPABASE, sbH, sbGet) e js/login.js
@@ -13,6 +13,8 @@ const ROTA_RESPOSTAS =
 const ROTA_ENTREGAS = '/rest/v1/entrega_atividade';
 const ROTA_NOTA = '/rest/v1/rpc/nota_da_tentativa';
 const PERFIL_PROFESSOR_PAGINA = 'PROFESSOR';
+const MSG_PROFESSOR_NAO_ASSINA = 'O professor não assina atividades: só os alunos respondem. ' +
+    'Aqui você acompanha as respostas e libera novas tentativas.';
 const PREFERENCIA_UPSERT = 'resolution=merge-duplicates,return=minimal';
 const CODIGO_JA_EXISTE = 409;
 const DIGITOS_ITEM = 2;
@@ -38,7 +40,8 @@ function formatarNumeroItem(item) {
  */
 async function buscarAtividadeDaPagina() {
     const caminho = encodeURIComponent(location.pathname);
-    const linhas = await sbGet('atividade', 'select=id,total_itens&pagina=eq.' + caminho);
+    const linhas = await sbGet('atividade',
+        'select=id,total_itens,max_tentativas&pagina=eq.' + caminho);
     return linhas[0] || null;
 }
 
@@ -145,8 +148,9 @@ function montarIdentificacaoBanco(sessao) {
     bloco.appendChild(criarElemento('div', 'aula-title', 'Conectado como ' + sessao.nome));
     bloco.appendChild(criarElemento('p', 'identificacao-estudante__texto',
         'Suas respostas são salvas automaticamente' + complemento + '.'));
-    const textoTentativa = 'Tentativa ' + sessao.tentativa + ' de ' + MAXIMO_TENTATIVAS + '. ' +
-        MSG_REGRA_TENTATIVAS;
+    const textoTentativa = sessao.ehProfessor ? MSG_PROFESSOR_NAO_ASSINA
+        : 'Tentativa ' + sessao.tentativa + ' de ' + sessao.maximoTentativas + '. ' +
+            MSG_REGRA_TENTATIVAS;
     bloco.appendChild(criarElemento('p', 'identificacao-estudante__tentativa', textoTentativa));
     bloco.appendChild(criarBotao('btn-export btn-export--secundario', '🚪 Sair', fazerLogout));
     return bloco;
@@ -173,10 +177,12 @@ async function carregarDoBanco(sessao) {
         const identificacao = { nome: sessao.nome, turma: sessao.turma };
         const resultado = doAluno.entregueEm
             ? await lerResultadoDaTentativa(sessao.atividade.id, doAluno.tentativa) : null;
-        const ehProfessor = sessao.usuario.app_metadata?.perfil === PERFIL_PROFESSOR_PAGINA;
+        sessao.ehProfessor = sessao.usuario.app_metadata?.perfil === PERFIL_PROFESSOR_PAGINA;
+        sessao.maximoTentativas = sessao.atividade.max_tentativas;
         return {
             disponivel: true, logado: true, ...identificacao, ...doAluno, resultado,
-            ehProfessor, atividadeId: sessao.atividade.id,
+            ehProfessor: sessao.ehProfessor, atividadeId: sessao.atividade.id,
+            maximoTentativas: sessao.maximoTentativas,
         };
     } catch (erro) {
         console.warn('Banco indisponível:', erro.message);
@@ -189,11 +195,18 @@ async function carregarDoBanco(sessao) {
  * @returns {Object} Provedor usado por respostas-atividade.js.
  */
 function criarProvedorRespostasBanco() {
-    const sessao = { usuario: null, atividade: null, nome: '', turma: '', tentativa: 1 };
+    const sessao = {
+        usuario: null, atividade: null, nome: '', turma: '', tentativa: 1, maximoTentativas: 1,
+        ehProfessor: false,
+    };
     return {
         carregar: () => carregarDoBanco(sessao),
         montarIdentificacao: () => montarIdentificacaoBanco(sessao),
         podeResponder() {
+            if (sessao.ehProfessor) {
+                mostrarPopup(MSG_PROFESSOR_NAO_ASSINA, { tipo: 'aviso' });
+                return false;
+            }
             if (sessao.usuario) return true;
             irParaLogin();
             return false;

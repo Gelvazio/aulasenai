@@ -16,8 +16,8 @@ const CLASSE_LINHA_PENDENTE = 'folha-respostas__linha--pendente';
 const MARCA_VAZIA = '(  )';
 const MARCA_PREENCHIDA = '( X )';
 const TURMA_EM_BRANCO = '______________';
-// REGRA: até MAXIMO_TENTATIVAS por atividade; a nova tentativa só o professor libera.
-const MAXIMO_TENTATIVAS = 3;
+// REGRA: o limite de tentativas vem do banco (atividade.max_tentativas); a nova tentativa só o
+// professor libera.
 const DURACAO_AVISO_MS = 3000;
 const NOTA_MAXIMA = 10;
 const NOTA_MINIMA_APROVACAO = 7;
@@ -33,7 +33,6 @@ const MSG_NOTA_REPROVADO =
 const CLASSE_AVISO = 'aviso-gravacao';
 const CLASSE_AVISO_ERRO = 'aviso-gravacao--erro';
 const MSG_REGRA_TENTATIVAS = 'Depois de entregar, só o professor pode liberar uma nova tentativa.';
-const MSG_ULTIMA_TENTATIVA = 'Você usou as ' + MAXIMO_TENTATIVAS + ' tentativas desta atividade.';
 const MSG_PEDIR_NOVA_TENTATIVA = 'Se precisar refazer, peça ao professor para liberar uma nova ' +
     'tentativa.';
 const MSG_JA_ENTREGUE = 'Esta tentativa já foi entregue e as respostas não podem ser ' +
@@ -46,30 +45,42 @@ const MSG_ERRO_CONFERIR = 'Não foi possível conferir as respostas gravadas no 
     'Verifique a conexão e tente finalizar de novo.';
 
 /**
+ * Monta o aviso de que as tentativas acabaram.
+ * @param {number} maximo - Limite de tentativas da atividade (vem do banco).
+ * @returns {string} Mensagem para o aluno.
+ */
+function montarMsgUltimaTentativa(maximo) {
+    return 'Você usou as ' + maximo + ' tentativas desta atividade.';
+}
+
+/**
  * Monta a mensagem de confirmação da entrega, com o número da tentativa e a nota.
- * @param {number} tentativa - Tentativa entregue.
+ * @param {{tentativa: number, maximoTentativas: number}} estado - Tentativa entregue e limite.
  * @param {{acertos: number, total: number}|null} resultado - Resultado da tentativa.
  * @returns {string} Mensagem para o aluno.
  */
-function montarMensagemEntrega(tentativa, resultado) {
-    const orientacao = tentativa >= MAXIMO_TENTATIVAS
-        ? MSG_ULTIMA_TENTATIVA : MSG_PEDIR_NOVA_TENTATIVA;
+function montarMensagemEntrega(estado, resultado) {
+    const { tentativa, maximoTentativas } = estado;
+    const orientacao = tentativa >= maximoTentativas
+        ? montarMsgUltimaTentativa(maximoTentativas) : MSG_PEDIR_NOVA_TENTATIVA;
     const linhaNota = resultado
         ? ['Sua nota: ' + formatarNota(calcularNota(resultado)) + '.', ''] : [];
     return ['Atividade entregue!',
-        'Suas respostas foram gravadas (tentativa ' + tentativa + ' de ' + MAXIMO_TENTATIVAS + ').',
+        'Suas respostas foram gravadas (tentativa ' + tentativa + ' de ' + maximoTentativas + ').',
         '', ...linhaNota, orientacao].join('\n');
 }
 
 /**
  * Monta a pergunta de confirmação antes de entregar a tentativa.
- * @param {number} tentativa - Tentativa em andamento.
+ * @param {{tentativa: number, maximoTentativas: number}} estado - Tentativa em andamento e limite.
  * @returns {string} Mensagem para o aluno.
  */
-function montarMensagemConfirmarEntrega(tentativa) {
-    return ['Entregar a tentativa ' + tentativa + ' de ' + MAXIMO_TENTATIVAS + '?', '',
+function montarMensagemConfirmarEntrega(estado) {
+    const { tentativa, maximoTentativas } = estado;
+    return ['Entregar a tentativa ' + tentativa + ' de ' + maximoTentativas + '?', '',
         'Depois de entregar, as respostas não poderão ser alteradas.',
-        tentativa >= MAXIMO_TENTATIVAS ? MSG_ULTIMA_TENTATIVA : MSG_PEDIR_NOVA_TENTATIVA,
+        tentativa >= maximoTentativas
+            ? montarMsgUltimaTentativa(maximoTentativas) : MSG_PEDIR_NOVA_TENTATIVA,
     ].join('\n');
 }
 
@@ -107,7 +118,7 @@ function mostrarResultadoNoInicio(estado, resultado) {
     bloco.setAttribute('role', 'status');
     bloco.appendChild(criarElemento('span', 'aula-badge', 'RESULTADO'));
     bloco.appendChild(criarElemento('div', 'aula-title', 'Sua nota: ' + formatarNota(nota) +
-        ' (tentativa ' + estado.tentativa + ' de ' + MAXIMO_TENTATIVAS + ')'));
+        ' (tentativa ' + estado.tentativa + ' de ' + estado.maximoTentativas + ')'));
     bloco.appendChild(criarElemento('p', 'resultado-atividade__detalhe',
         resultado.acertos + ' acertos em ' + resultado.total + ' questões.'));
     bloco.appendChild(criarElemento('p', 'resultado-atividade__mensagem',
@@ -516,7 +527,7 @@ async function finalizarAtividade(estado) {
         const todasGravadas = await conferirGravacao(estado);
         if (!todasGravadas) return;
         const querEntregar = await confirmarPopup(
-            montarMensagemConfirmarEntrega(estado.tentativa),
+            montarMensagemConfirmarEntrega(estado),
             { titulo: 'Entregar atividade', textoConfirmar: 'Entregar', textoCancelar: 'Voltar' });
         if (!querEntregar) return;
         const resultado = await estado.provedor.entregar();
@@ -525,7 +536,7 @@ async function finalizarAtividade(estado) {
         mostrarAvisoGravacao('✅ Entrega gravada: tentativa ' + estado.tentativa);
         mostrarResultadoNoInicio(estado, resultado.resultado);
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        await mostrarPopup(montarMensagemEntrega(estado.tentativa, resultado.resultado),
+        await mostrarPopup(montarMensagemEntrega(estado, resultado.resultado),
             { tipo: 'sucesso', titulo: 'Atividade entregue' });
     } catch (erro) {
         await mostrarPopup(erro.message || MSG_ERRO_SALVAR, { tipo: 'erro' });
@@ -572,7 +583,7 @@ function atualizarFolha(estado) {
     const contagem = document.querySelector('.folha-respostas__contagem');
     if (contagem) {
         contagem.textContent = 'Respondidas: ' + respondidas + ' de ' + estado.itens.length +
-            ' · Tentativa ' + estado.tentativa + ' de ' + MAXIMO_TENTATIVAS;
+            ' · Tentativa ' + estado.tentativa + ' de ' + estado.maximoTentativas;
     }
 }
 
@@ -634,11 +645,12 @@ async function escolherProvedor() {
  * Uma falha aqui não pode impedir o resto da página.
  * @param {HTMLElement} secao - Seção de conteúdo da página.
  * @param {number} atividadeId - Id da atividade no banco.
+ * @param {number} maximo - Limite de tentativas da atividade (vem do banco).
  */
-async function abrirRelatorioProfessor(secao, atividadeId) {
+async function abrirRelatorioProfessor(secao, atividadeId, maximo) {
     try {
         await carregarScript('respostas-atividade-professor.js');
-        await montarRelatorioProfessor(secao, atividadeId);
+        await montarRelatorioProfessor(secao, atividadeId, maximo);
     } catch (erro) {
         console.warn('Relatório do professor indisponível:', erro.message);
     }
@@ -659,6 +671,7 @@ async function iniciarRespostasAtividade() {
         dados: { nome: carregado.nome || '', respostas: carregado.respostas || {} },
         turma: carregado.turma || '',
         tentativa: carregado.tentativa || 1,
+        maximoTentativas: carregado.maximoTentativas || 1,
         gravacoes: [],
         entregue: Boolean(carregado.entregueEm),
     };
@@ -671,7 +684,9 @@ async function iniciarRespostasAtividade() {
     estado.atualizarFolha();
     if (estado.entregue) marcarEntregue(estado, carregado.entregueEm);
     if (estado.entregue) mostrarResultadoNoInicio(estado, carregado.resultado);
-    if (carregado.ehProfessor) await abrirRelatorioProfessor(secao, carregado.atividadeId);
+    if (carregado.ehProfessor) {
+        await abrirRelatorioProfessor(secao, carregado.atividadeId, carregado.maximoTentativas);
+    }
 }
 
 iniciarRespostasAtividade();

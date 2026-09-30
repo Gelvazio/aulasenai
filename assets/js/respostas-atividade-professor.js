@@ -1,7 +1,8 @@
 // Relatório do professor dentro da página da atividade (carregado só para perfil PROFESSOR):
 // lista os alunos que responderam, com tentativa, nota e data/hora, e o botão de liberar nova
 // tentativa ao lado de cada aluno. Depende de respostas-atividade.js (criarElemento, popup,
-// MAXIMO_TENTATIVAS, calcularNota, formatarNota...) e do provedor do banco (enviarAoBanco).
+// calcularNota, formatarNota...) e do provedor do banco (enviarAoBanco). O limite de tentativas
+// vem do banco (atividade.max_tentativas) e chega por parâmetro.
 // Os dados vêm da função resumo_tentativas_atividade (só o professor chama; o gabarito não sai do
 // banco). Plano: docs/regra-3-tentativas-atividade.md.
 
@@ -69,10 +70,10 @@ function criarCelulaRelatorio(texto, classe) {
  * @param {Object} contexto - {secao, atividadeId, linha} com a linha da última tentativa.
  */
 async function liberarTentativaDoAluno(contexto) {
-    const { linha, atividadeId } = contexto;
+    const { linha, atividadeId, maximo } = contexto;
     const proxima = linha.tentativa + 1;
     const querLiberar = await confirmarPopup('Liberar a tentativa ' + proxima + ' de ' +
-        MAXIMO_TENTATIVAS + ' para ' + linha.nome + '?\n\nA atividade abre com as respostas da ' +
+        maximo + ' para ' + linha.nome + '?\n\nA atividade abre com as respostas da ' +
         'tentativa anterior já marcadas.',
     { titulo: 'Liberar nova tentativa', textoConfirmar: 'Liberar', textoCancelar: 'Cancelar' });
     if (!querLiberar) return;
@@ -83,9 +84,9 @@ async function liberarTentativaDoAluno(contexto) {
         const erro = await resposta.json().catch(() => ({}));
         return mostrarPopup(MSG_ERRO_LIBERAR + (erro.message || resposta.status), { tipo: 'erro' });
     }
-    await mostrarPopup('Tentativa ' + proxima + ' de ' + MAXIMO_TENTATIVAS + ' liberada para ' +
+    await mostrarPopup('Tentativa ' + proxima + ' de ' + maximo + ' liberada para ' +
         linha.nome + '.', { tipo: 'sucesso', titulo: 'Tentativa liberada' });
-    await montarRelatorioProfessor(contexto.secao, atividadeId);
+    await montarRelatorioProfessor(contexto.secao, atividadeId, maximo);
 }
 
 /**
@@ -95,13 +96,13 @@ async function liberarTentativaDoAluno(contexto) {
  * @returns {HTMLTableCellElement} Célula da ação.
  */
 function criarCelulaLiberar(contexto) {
-    const { linha, ehUltima } = contexto;
+    const { linha, ehUltima, maximo } = contexto;
     const celula = criarElemento('td', CLASSE_RELATORIO + '__acao');
     if (!ehUltima) return celula;
     if (!linha.entregue_em) {
         celula.textContent = 'Aguardando a entrega';
-    } else if (linha.tentativa >= MAXIMO_TENTATIVAS) {
-        celula.textContent = 'Usou as ' + MAXIMO_TENTATIVAS + ' tentativas';
+    } else if (linha.tentativa >= maximo) {
+        celula.textContent = 'Usou as ' + maximo + ' tentativas';
     } else {
         celula.appendChild(criarBotao('btn-export ' + CLASSE_RELATORIO + '__liberar',
             '🔓 Liberar nova tentativa', () => liberarTentativaDoAluno(contexto)));
@@ -115,7 +116,7 @@ function criarCelulaLiberar(contexto) {
  * @returns {HTMLTableRowElement} Linha da tabela.
  */
 function montarLinhaRelatorio(contexto) {
-    const { linha } = contexto;
+    const { linha, maximo } = contexto;
     const { situacao, dataHora } = descreverTentativa(linha);
     const nota = calcularNota({ acertos: linha.acertos, total: linha.total });
     const abaixoDoMinimo = linha.entregue_em && nota < NOTA_MINIMA_APROVACAO;
@@ -124,7 +125,7 @@ function montarLinhaRelatorio(contexto) {
         criarCelulaRelatorio(linha.numero_chamada ?? ''),
         criarCelulaRelatorio(linha.nome || '(sem cadastro)'),
         criarCelulaRelatorio(linha.turma_nome || linha.turma_codigo || ''),
-        criarCelulaRelatorio(linha.tentativa + ' de ' + MAXIMO_TENTATIVAS),
+        criarCelulaRelatorio(linha.tentativa + ' de ' + maximo),
         criarCelulaRelatorio(situacao),
         criarCelulaRelatorio(linha.entregue_em ? linha.acertos + ' de ' + linha.total : '—'),
         criarCelulaRelatorio(linha.entregue_em ? formatarNota(nota) : '—',
@@ -138,7 +139,8 @@ function montarLinhaRelatorio(contexto) {
 /**
  * Monta a tabela do relatório (uma linha por aluno e tentativa).
  * @param {Object[]} linhas - Linhas do resumo.
- * @param {{secao: HTMLElement, atividadeId: number}} base - Seção da página e id da atividade.
+ * @param {{secao: HTMLElement, atividadeId: number, maximo: number}} base - Seção da página,
+ *     id da atividade e limite de tentativas.
  * @returns {HTMLTableElement} Tabela pronta.
  */
 function montarTabelaRelatorio(linhas, base) {
@@ -158,8 +160,9 @@ function montarTabelaRelatorio(linhas, base) {
  * Mostra, no início da atividade, o relatório do professor (cria ou substitui o cartão).
  * @param {HTMLElement} secao - Seção de conteúdo da página.
  * @param {number} atividadeId - Id da atividade no banco.
+ * @param {number} maximo - Limite de tentativas da atividade (vem do banco).
  */
-async function montarRelatorioProfessor(secao, atividadeId) {
+async function montarRelatorioProfessor(secao, atividadeId, maximo) {
     secao.querySelector('.' + CLASSE_RELATORIO)?.remove();
     const bloco = criarElemento('div', 'aula-card ' + CLASSE_RELATORIO);
     bloco.appendChild(criarElemento('span', 'aula-badge', 'PROFESSOR'));
@@ -174,7 +177,7 @@ async function montarRelatorioProfessor(secao, atividadeId) {
             : MSG_SEM_RESPOSTAS));
         if (!linhas.length) return;
         const rolagem = criarElemento('div', CLASSE_RELATORIO + '__rolagem');
-        rolagem.appendChild(montarTabelaRelatorio(linhas, { secao, atividadeId }));
+        rolagem.appendChild(montarTabelaRelatorio(linhas, { secao, atividadeId, maximo }));
         bloco.appendChild(rolagem);
     } catch (erro) {
         bloco.appendChild(criarElemento('p', CLASSE_RELATORIO + '__erro',
