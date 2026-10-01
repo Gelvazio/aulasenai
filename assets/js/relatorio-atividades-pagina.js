@@ -15,6 +15,7 @@ const QUANTIDADES_REL = ['1', '2', '3'];
 const TEXTO_SELECIONE_ALUNO_REL = 'Seleciona o aluno';
 const MATERIA_PADRAO_REL = 'Introdução à Tecnologia da Informação e Comunicação';
 const TEXTO_LIGAR_TODAS_REL = 'Ligar todas';
+const TEXTO_DESLIGAR_TODAS_REL = 'Desligar todas';
 const TITULO_FILTRO_ATIVIDADES_REL = 'Atividades da matéria (nenhuma ligada = todas)';
 
 const estadoRel = {
@@ -247,23 +248,28 @@ function montarFiltroAtividadesRel() {
         return interruptor;
     });
     const grupo = criarGrupoFiltroRel(TITULO_FILTRO_ATIVIDADES_REL, interruptores);
-    grupo.querySelector('strong').after(criarBotaoLigarTodasRel(grupo));
+    const botoes = criarElementoRel('div', 'rel-botoes-todas');
+    botoes.append(criarBotaoTodasRel(grupo, TEXTO_LIGAR_TODAS_REL, true),
+        criarBotaoTodasRel(grupo, TEXTO_DESLIGAR_TODAS_REL, false));
+    grupo.querySelector('strong').after(botoes);
     document.getElementById('relFiltroAtividades').replaceChildren(grupo);
 }
 
 /**
- * Cria o botão "Ligar todas", que liga todos os interruptores do quadro de atividades.
+ * Cria o botão "Ligar todas" ou "Desligar todas" do quadro de atividades.
  * @param {HTMLElement} grupo - Grupo com os interruptores das atividades.
+ * @param {string} texto - Texto do botão.
+ * @param {boolean} ligar - true liga todos os interruptores; false desliga todos.
  * @returns {HTMLButtonElement} Botão pronto.
  */
-function criarBotaoLigarTodasRel(grupo) {
-    const botao = criarElementoRel('button', 'rel-botao rel-botao--pequeno rel-botao-ligar-todas',
-        TEXTO_LIGAR_TODAS_REL);
+function criarBotaoTodasRel(grupo, texto, ligar) {
+    const botao = criarElementoRel('button', 'rel-botao rel-botao--pequeno', texto);
     botao.type = 'button';
     botao.addEventListener('click', () => {
         grupo.querySelectorAll('[data-atividade]').forEach((interruptor) => {
-            interruptor.querySelector('input').checked = true;
-            estadoRel.atividadesFiltro.add(interruptor.dataset.atividade);
+            interruptor.querySelector('input').checked = ligar;
+            if (ligar) estadoRel.atividadesFiltro.add(interruptor.dataset.atividade);
+            else estadoRel.atividadesFiltro.delete(interruptor.dataset.atividade);
         });
         renderizarTabelaRel();
     });

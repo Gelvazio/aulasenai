@@ -126,4 +126,4 @@
   display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); align-items: start;
 }
 .rel-filtro-atividades .rel-grupo-filtro > strong { grid-column: 1 / -1; }
-.rel-filtro-atividades .rel-botao-ligar-todas { grid-column: 1 / -1; justify-self: start; }
+.rel-filtro-atividades .rel-botoes-todas { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px; }
