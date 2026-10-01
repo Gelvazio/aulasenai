@@ -33,8 +33,6 @@ ATIVIDADES = [
      f"{PASTA_TIC}/ATIVIDADES-AULA-01-50-QUESTOES.md"),
     (2, "Hardware, Periféricos e Sistemas Operacionais", DATA_PROVISORIA,
      f"{PASTA_TIC}/ATIVIDADES-AULA-02-50-QUESTOES.md"),
-    (2, "Hardware, Periféricos e Sistemas Operacionais", "2026-09-23",
-     f"{PASTA_TIC}/ATIVIDADES-AULA-23-09-2026/ATIVIDADES-INFORMATICA-BASICA-50-QUESTOES.md"),
     (3, "Navegação na Web e Pesquisa Acadêmica", "2026-09-28",
      f"{PASTA_TIC}/ATIVIDADES-AULA-03-50-QUESTOES.md"),
     (4, "Comunicação Digital e Colaboração em Nuvem", DATA_PROVISORIA,
