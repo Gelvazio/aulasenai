@@ -12,8 +12,8 @@ e **Aluno** e a tabela mostra as notas e pontos do aluno escolhido. O aluno que 
 
 | Turma | Líder (padrão) |
 |-------|----------------|
-| 135080 — AI AOPL 2026/2 M1 (CEPLAS manhã, aprendizagem) | aluna nº 20 da chamada (informada como "Nicole") |
-| 135081 — AI AOPL 2026/2 V1 (CEPLAS tarde, aprendizagem) | aluno nº 27 (Jorge) — ⚠️ está **fora da chamada** |
+| 135080 — AI AOPL 2026/2 M1 (CEPLAS manhã, aprendizagem) | aluna nº 20 da chamada |
+| 135081 — AI AOPL 2026/2 V1 (CEPLAS tarde, aprendizagem) | aluno nº 27 — ⚠️ está **fora da chamada** |
 | 133933 — AI AIAC 2026/2 V1 (SALETE) | a verificar → por enquanto, o **1º aluno da chamada** |
 
 Turma que já vem selecionada: a **favorita** do professor (`turma.favorito`). Só aparecem as turmas
@@ -23,8 +23,8 @@ aparece nesta página.
 ## Situação no banco (conferida em 2026-10-01)
 
 - Não há onde guardar o líder → nova coluna `turma.lider_aluno_id`.
-- No banco não existe "Nicole" na turma 135080; existe **Nicoly da Silva Westphal (nº 20)**,
-  confirmada pelo professor como a líder.
+- Na turma 135080 a líder informada pelo professor é a **aluna nº 20 da chamada** (o nome no
+  banco tem grafia diferente da informada; confirmado pelo professor).
 - O professor já lê as notas de todos pela função `resumo_tentativas_atividade` (a mesma do
   relatório); a `nota_da_tentativa` só serve para o próprio aluno.
 
