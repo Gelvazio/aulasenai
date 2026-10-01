@@ -75,7 +75,7 @@
       "id": "objetiva",
       "itens": [
         {
-          "nome": "Avaliação Objetiva 01",
+          "nome": "Avaliação Objetiva",
           "conteudo": "Aulas 01 a 04",
           "pagina": "AVALIACAO-OBJETIVA-01.html",
           "pontos": 30,
@@ -101,12 +101,12 @@
     }
   ],
   "regras": [
-    "Cada instrumento tem nota de 0 a 10, convertida para os pontos dele. Exemplo: nota 8 na Avaliação Objetiva 01 (30 pontos) = 24 pontos.",
+    "Cada instrumento tem nota de 0 a 10, convertida para os pontos dele. Exemplo: nota 8 na Avaliação Objetiva (30 pontos) = 24 pontos.",
     "Na prova objetiva vale a melhor nota entre a avaliação e as recuperações.",
     "As atividades das Aulas 01, 02, 03, 06 e 07 valem nota 10 para todos os alunos da turma AI SALETE (133933).",
     "A prova prática é a avaliação discursiva das aulas 01 a 06 (10 questões, corrigida pelo professor).",
     "Atividade ou prova não feita vale 0 ponto.",
-    "**Peso no sistema:** soma das 7 atividades em sala 40% (lançar a média delas, de 0 a 10, mostrada no subtotal), Avaliação Objetiva 01 30% e Prova Prática 30%. Nota final = soma de cada nota × peso.",
+    "**Peso no sistema:** soma das 7 atividades em sala 40% (lançar a média delas, de 0 a 10, mostrada no subtotal), Avaliação Objetiva 30% e Prova Prática 30%. Nota final = soma de cada nota × peso.",
     "**Aprovação: 70 pontos ou mais** (equivale à nota mínima 7)."
   ]
 }
