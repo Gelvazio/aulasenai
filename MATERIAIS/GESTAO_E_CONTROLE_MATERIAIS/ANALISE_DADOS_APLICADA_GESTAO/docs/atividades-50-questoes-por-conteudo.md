@@ -175,5 +175,5 @@ gabaritos; atualizar o gabarito das atividades 21 a 24. Aplicar pelo Supabase **
   do índice) e 401 linhas de gabarito (350 novas + 51 das atividades 21 a 24), conferidas letra a letra.
 - ✅ Índice com 7 cards novos; menu com os grupos "por conteúdo" e "por aula"; links das atividades de
   Excel ajustados para a pasta `ATIVIDADES/`.
-- ⚠️ Pendência fora do escopo: no banco, as atividades 25 e 26 (Excel 29/09 e 01/10) ainda têm
-  `pagina` na pasta antiga `AULAS-CHALKIE-AI-COLORIDA/ATIVIDADES/`.
+- ✅ Atividades 25 e 26 (Excel 29/09 e 01/10): `pagina` corrigida no banco para a pasta
+  `ATIVIDADES/` (30/09/2026, a pedido do usuário).
