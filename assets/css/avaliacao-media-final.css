@@ -40,3 +40,14 @@
 }
 
 .media-regras { margin: 0; padding-left: 20px; line-height: 1.7; }
+
+/* Situação do aluno logado (preenchida por assets/js/avaliacao-media-final.js) */
+.media-situacao {
+  margin: 0 0 12px;
+  padding: 10px 14px;
+  border-left: 4px solid var(--primary);
+  border-radius: 6px;
+  background: var(--light);
+  font-weight: 700;
+}
+.media-situacao--abaixo { border-left-color: var(--gold); }
