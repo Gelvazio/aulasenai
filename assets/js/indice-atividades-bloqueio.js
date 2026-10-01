@@ -7,7 +7,8 @@
 // "Bloquear" quando a atividade está liberada e "Desbloquear" quando está bloqueada.
 // Carregado por assets/js/atividades-crud-modal.js. Depende de supabase-js e js/supabase.js.
 
-const SELETOR_CARD_BLOQUEIO = 'article.aula';
+// Cards informativos (sem atividade no banco) usam data-sem-bloqueio e nunca são bloqueados.
+const SELETOR_CARD_BLOQUEIO = 'article.aula:not([data-sem-bloqueio])';
 const SELETOR_LINK_BLOQUEIO = 'a.btn.principal';
 const CLASSE_CARD_BLOQUEADO = 'bloqueada';
 const CLASSE_TEMA_BLOQUEADO_PROFESSOR = 'bloqueada-professor';
