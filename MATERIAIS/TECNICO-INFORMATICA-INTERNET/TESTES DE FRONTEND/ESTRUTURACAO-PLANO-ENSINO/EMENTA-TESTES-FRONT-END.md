@@ -957,7 +957,7 @@ Ao final desta disciplina, o aluno será capaz de:
 ```
 Nota Final = (Avaliação Contínua × 0,60) + (Avaliação Prática × 0,25) + (Avaliação Teórica × 0,15)
 
-Aprovação: Nota Final ≥ 6,0
+Aprovação: Nota Final ≥ 7,0
 Recuperação: Oportunidade de refazer Avaliação Prática e/ou Teórica
 ```
 

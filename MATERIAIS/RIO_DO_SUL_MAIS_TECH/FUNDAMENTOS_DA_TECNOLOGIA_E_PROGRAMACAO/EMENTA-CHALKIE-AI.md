@@ -104,7 +104,7 @@
 - **Aceitável (5–6):** compreensão básica, precisa de orientação frequente
 - **Insuficiente (0–4):** dificuldade em aplicar; exige reforço
 
-Aprovação: nota final ≥ 6,0. Cada produto dos módulos vale como evidência de projeto.
+Aprovação: nota final ≥ 7,0. Cada produto dos módulos vale como evidência de projeto.
 
 ---
 
@@ -199,7 +199,7 @@ Use como base e adapte o nível ao grupo (15 a 17 anos).
 
 ### Indicadores de sucesso
 
-- 80% dos alunos com nota ≥ 6,0 e engajamento ≥ 80%
+- 80% dos alunos com nota ≥ 7,0 e engajamento ≥ 80%
 - Abandono menor que 10%
 - 70% aplicam o aprendizado em contexto novo
 - 100% das capacidades trabalhadas em pelo menos um produto
@@ -237,7 +237,7 @@ R: Um módulo a cada uma ou duas semanas; Chalkie adapta ao ritmo do aluno.
 R: Chalkie dá 3 dicas progressivas, recomenda reforço e avisa o professor.
 
 **P: Como é a aprovação?**
-R: Nota final ≥ 6,0, somando provas, projetos, participação e autoavaliação.
+R: Nota final ≥ 7,0, somando provas, projetos, participação e autoavaliação.
 
 **P: Há suporte a quem tem dificuldade com tecnologia?**
 R: Sim. O professor acompanha no laboratório e Chalkie oferece explicações com mais exemplos.

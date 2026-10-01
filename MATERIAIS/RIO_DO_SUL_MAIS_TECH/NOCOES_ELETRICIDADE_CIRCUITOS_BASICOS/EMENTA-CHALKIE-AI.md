@@ -245,7 +245,7 @@ Projetos que alunos trabalham em equipe: plano de negócios, pesquisa de mercado
 
 ### Indicadores de Aprendizagem
 
-- **Nota final:** 80% dos alunos com nota ≥ 6,0
+- **Nota final:** 80% dos alunos com nota ≥ 7,0
 - **Participação:** 85% dos alunos com taxa de engajamento ≥ 80%
 - **Retenção:** Menos de 10% de abandono
 - **Satisfação:** Média ≥ 8/10 em pesquisa de satisfação

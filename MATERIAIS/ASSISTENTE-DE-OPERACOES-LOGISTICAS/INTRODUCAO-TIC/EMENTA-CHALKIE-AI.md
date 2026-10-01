@@ -131,7 +131,7 @@ Estratégias: **ED** exposição dialogada · **DG** dinâmica de grupo · **TG*
 
 **Formativa (aulas 1–9):** atividade de 50 questões de cada aula, quizzes e registro qualitativo em `CRITERIOS-CORRECAO-PRATICA.md`.
 
-**Recuperação (didático):** contínua — quem não concluir a atividade refaz com roteiro guiado na aula seguinte ou como tarefa; final — nota < 6,0 refaz a(s) tarefa(s) práticas de maior perda e/ou nova objetiva equivalente, conforme regimento SENAI, retomando só as capacidades não atingidas.
+**Recuperação (didático):** contínua — quem não concluir a atividade refaz com roteiro guiado na aula seguinte ou como tarefa; final — nota < 7,0 refaz a(s) tarefa(s) práticas de maior perda e/ou nova objetiva equivalente, conforme regimento SENAI, retomando só as capacidades não atingidas.
 
 ### Rubrica de desempenho (4 níveis)
 
@@ -215,7 +215,7 @@ C1 Comunicação → domínios 1, 2, 3, 7, 8, 10 · C2 Segurança → 6 · C3 In
 - [ ] Revisar atividades com contexto logístico
 - [ ] Registrar resultado das turmas CEPLAS manhã/tarde
 
-**Métricas:** 80%+ dos estudantes com nota final ≥ 6,0 · 100% entregam a pasta compactada da prova prática.
+**Métricas:** 80%+ dos estudantes com nota final ≥ 7,0 · 100% entregam a pasta compactada da prova prática.
 
 ---
 
