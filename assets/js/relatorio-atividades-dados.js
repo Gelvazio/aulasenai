@@ -4,8 +4,7 @@
 // Só o professor logado enxerga tudo (RLS). Depende de js/supabase.js (sbGet, sbH, SUPABASE).
 // Regra da média: soma das melhores notas das atividades ATIVAS da matéria dividida pelo total
 // de atividades ativas (atividade não entregue conta 0). Nota mínima = 7.
-// Notas fixas (NOTAS_FIXAS_REL): atividades que valem nota direto para todos os alunos de uma
-// turma, sem depender da entrega (mesma regra do media-final.json da matéria).
+// Notas fixas por turma: assets/js/notas-fixas-turma.js (obterNotaFixaTurma).
 
 const ROTA_RESUMO_REL = '/rest/v1/rpc/resumo_tentativas_atividade';
 const NOTA_MINIMA_REL = 7;
@@ -16,19 +15,6 @@ const CONSULTA_ATIVIDADES_REL =
 const CONSULTA_TURMAS_REL = 'select=codigo,nome,turno,local,uc,favorito';
 const CONSULTA_ALUNOS_REL = 'select=id,nome,email,turma_codigo,numero_chamada,na_chamada';
 const STATUS_NOTA_FIXA_REL = 'fixa';
-const NOTAS_FIXAS_REL = [
-    {
-        // Análise de Dados Aplicada à Gestão, turma da Salete: Aulas 01, 02, 03, 06 e 07 = nota 10.
-        turmas: ['133933'], nota: 10,
-        paginas: [
-            'ATIVIDADES-1-MATEMATICA-APLICADA-A-GESTAO-PARTE-1-50-QUESTOES.html',
-            'ATIVIDADES-2-FUNDAMENTOS-MATEMATICOS-PARA-GESTAO-50-QUESTOES.html',
-            'ATIVIDADES-3-EXCEL-BASICO-INTERFACE-E-FORMULAS-50-QUESTOES.html',
-            'ATIVIDADES-6-EXCEL-AVANCADO-TABELAS-DINAMICAS-E-GRAFICOS-50-QUESTOES.html',
-            'ATIVIDADES-7-DASHBOARDS-INTERATIVOS-E-INTEGRACAO-DE-DADOS-50-QUESTOES.html',
-        ],
-    },
-];
 
 /**
  * Normaliza um texto para comparar nomes (sem acentos, minúsculo, espaços únicos).
@@ -185,19 +171,6 @@ function resumirAtividadeDoAluno(linhas) {
 }
 
 /**
- * Nota fixa de uma atividade para a turma (NOTAS_FIXAS_REL), comparando o nome do arquivo.
- * @param {{pagina: string}} atividade - Atividade (pagina = caminho gravado no banco).
- * @param {string} turmaCodigo - Código da turma.
- * @returns {number|null} Nota fixa ou null se a atividade usa a nota do banco.
- */
-function notaFixaRel(atividade, turmaCodigo) {
-    const arquivo = decodeURIComponent(String(atividade.pagina || '')).split('/').pop();
-    const regra = NOTAS_FIXAS_REL.find((item) =>
-        item.turmas.includes(String(turmaCodigo)) && item.paginas.includes(arquivo));
-    return regra ? regra.nota : null;
-}
-
-/**
  * Resume um aluno em uma atividade, aplicando a nota fixa da turma quando houver.
  * @param {Object} aluno - Aluno (com id ou null se sem cadastro).
  * @param {Object} atividade - Atividade da matéria.
@@ -208,7 +181,7 @@ function detalharAtividadeRel(aluno, atividade, { resumos, turmaCodigo }) {
     const linhas = aluno.id
         ? (resumos.get(atividade.id) || []).filter((linha) => linha.aluno_id === aluno.id) : [];
     const detalhe = { atividade, ...resumirAtividadeDoAluno(linhas) };
-    const notaFixa = notaFixaRel(atividade, turmaCodigo);
+    const notaFixa = obterNotaFixaTurma(atividade.pagina, turmaCodigo);
     if (notaFixa === null) return detalhe;
 
     return { ...detalhe, status: STATUS_NOTA_FIXA_REL, melhorNota: notaFixa };

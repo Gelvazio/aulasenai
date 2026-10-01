@@ -3,6 +3,7 @@
 // O professor libera uma nova tentativa clicando no aluno (RPC liberar_nova_tentativa).
 // Plano: docs/regra-3-tentativas-atividade.md.
 // Acesso: login pelo Supabase Auth com app_metadata.perfil = "PROFESSOR" (o RLS também exige).
+// Nota fixa da turma (assets/js/notas-fixas-turma.js): substitui a nota de todos os alunos.
 // Depende de: supabase-js v2 (CDN), js/supabase.js (obterClienteSupabase, sbGet) e js/login.js.
 
 const PERFIL_PROFESSOR = 'PROFESSOR';
@@ -29,6 +30,8 @@ const MSG_RESTRITO = 'Acesso restrito ao professor.';
 const MSG_SEM_ATIVIDADES = 'Nenhuma atividade cadastrada no banco ainda.';
 const MSG_ERRO_LIBERAR = 'Não foi possível liberar a ';
 const NOTA_MINIMA_APROVACAO = 7;
+const SUFIXO_NOTA_FIXA = ' ⭐ fixa';
+const MSG_NOTA_FIXA = ' · ⭐ nota fixa {nota} para todos os alunos desta turma';
 const MSG_ERRO = 'Não foi possível carregar os dados. ' +
     'Verifique se o projeto Supabase está ativo.';
 
@@ -232,6 +235,19 @@ function montarLinhaRelatorio(aluno, dados) {
  */
 function montarLinhasRelatorio(dados) {
     return dados.alunos.map((aluno) => montarLinhaRelatorio(aluno, dados));
+}
+
+/**
+ * Troca a nota de todas as linhas pela nota fixa da turma (quando houver).
+ * @param {Object[]} linhas - Linhas do relatório.
+ * @param {number|null} notaFixa - Nota fixa da turma ou null.
+ * @returns {Object[]} Linhas com a nota fixa aplicada.
+ */
+function aplicarNotaFixaPainel(linhas, notaFixa) {
+    if (notaFixa === null) return linhas;
+
+    const nota = notaFixa.toFixed(CASAS_NOTA).replace('.', ',') + SUFIXO_NOTA_FIXA;
+    return linhas.map((linha) => ({ ...linha, nota, notaFixa }));
 }
 
 /**
@@ -443,11 +459,14 @@ async function atualizarRelatorio(painel, alunoAbertoId) {
     const dados = await carregarDadosAtividade(atividadeId, turmaCodigo,
         atividade.max_tentativas);
     dados.termos = termosTentativaDaPagina(atividade.pagina);
-    painel.linhas = montarLinhasRelatorio(dados);
+    const notaFixa = obterNotaFixaTurma(atividade.pagina, turmaCodigo);
+    painel.linhas = aplicarNotaFixaPainel(montarLinhasRelatorio(dados), notaFixa);
     painel.atividadeId = atividadeId;
     painel.gabarito = dados.gabarito;
     painel.nomeCsv = 'atividade-' + atividadeId + '-turma-' + turmaCodigo + '.csv';
     mostrarResumo(painel.linhas, atividade.total_itens);
+    if (notaFixa !== null) document.getElementById(IDS_PAINEL.resumo).textContent +=
+        MSG_NOTA_FIXA.replace('{nota}', notaFixa.toFixed(CASAS_NOTA).replace('.', ','));
 
     const corpo = document.querySelector('#' + IDS_PAINEL.tabela + ' tbody');
     corpo.replaceChildren(...painel.linhas.map((linha) => montarLinhaAluno(linha,

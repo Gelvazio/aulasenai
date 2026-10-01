@@ -1370,6 +1370,9 @@ assets/
 ├─ js/                 → scripts reutilizáveis (ex.: atividade.js — exportação de atividades em PDF;
 │                        atividade-pratica-excel.js — imprimir e marcar passo concluído;
 │                        termos-tentativa.js — textos de tentativa/recuperação (avaliações);
+│                        notas-fixas-turma.js — nota fixa por turma (ex.: 10 nas Aulas 01-03,
+│                        06 e 07 de Análise de Dados p/ turma 133933), usada pelo
+│                        relatorioAtividades.html e pelo painel-professor.html;
 │                        respostas-atividade.js + css/respostas-atividade.css — marcação das
 │                        alternativas, folha de respostas no fim da página e entrega; grava
 │                        SOMENTE no banco (sem localStorage); ativado com
