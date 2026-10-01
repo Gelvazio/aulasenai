@@ -2,13 +2,13 @@
 
 - **Aula:** AV-PR
 - **Rótulo da aula:** Prova Prática
-- **Tema:** Aulas 01 a 06
+- **Tema:** Aulas 01 a 05
 - **Ícone:** ✍️
 - **Duração:** 120–150 minutos
 - **Formato:** Discursiva estruturada (o aluno digita a resposta de cada tópico no sistema)
 - **Total de questões:** 10
 - **Pontuação:** 1 ponto por questão, dividido em 3 tópicos (0,3 + 0,3 + 0,4) — total: 10 pontos
-- **Capacidade avaliada:** Aplicar, por escrito e em situações reais de um almoxarifado, os conteúdos das aulas 01 a 06: regra de três, conversão de unidades, área, volume e peso, porcentagem, estatística básica (média, mediana, moda e desvio padrão), fórmulas e referências no Excel, função SE, formatação condicional, validação de dados, proteção de células, PROCV, SEERRO, ÍNDICE + CORRESP, CONT.SE, SOMASE, tabela dinâmica e gráficos dinâmicos.
+- **Capacidade avaliada:** Aplicar, por escrito e em situações reais de um almoxarifado, os conteúdos das aulas 01 a 05: regra de três, conversão de unidades, área, volume e peso, porcentagem, estatística básica (média, mediana, moda e desvio padrão), fórmulas e referências no Excel, função SE, formatação condicional, validação de dados, proteção de células, PROCV, SEERRO, ÍNDICE + CORRESP, CONT.SE e SOMASE, formatos de número e data, congelar painéis e filtros.
 - **Correção:** as respostas ficam gravadas no banco e são corrigidas depois (com apoio de IA e revisão do professor), pelas palavras e pontos-chave de cada tópico.
 - **Folha de respostas:** sim
 - **Turma:** AI AIAC 2026/2 V1 (133933)
@@ -176,17 +176,17 @@ Monte as fórmulas do relatório gerencial.
 
 ---
 
-## ITEM 10 — Tabela Dinâmica e Gráfico Dinâmico
+## ITEM 10 — Formatos, Datas, Congelar Painéis e Filtros
 
-- **Aula:** 06 · Excel Avançado: Tabelas Dinâmicas e Gráficos
+- **Aula:** 04 · Excel Intermediário: Formatação e Validação
 
 **Contexto:**
-A base de compras do ano tem as colunas Data | Fornecedor | Item | Quantidade | Valor, com 2.000 linhas. A gerência quer saber qual fornecedor e qual mês concentram as compras e vai receber o relatório por e-mail para apresentar na reunião.
+O relatório de estoque tem 600 linhas. Um colega digitou os custos como texto ("R$ 1.500") e a soma da coluna deu zero. Na coluna da taxa de perda, ele digitou 15 e depois clicou no botão %, e a célula mostrou 1500%. A data de recebimento de cada nota está na coluna B e o vencimento do pagamento é 30 dias depois. Ao rolar a tela, os títulos das colunas somem, e o gerente quer ver só os itens com custo em estoque acima de R$ 1.000.
 
 **Comando:**
-Monte e apresente a análise com tabela dinâmica.
+Corrija os problemas e organize o relatório.
 
 **Tópicos:**
-- a) Cite dois cuidados com a base antes de criar a tabela dinâmica e diga em quais áreas (Linhas, Colunas, Valores) você coloca Fornecedor, Data e Valor, e como transformar as datas em meses. (0,3)
-- b) Explique como mostrar a participação de cada fornecedor no total e como atualizar a tabela quando novas compras forem lançadas na base. (0,3)
-- c) Indique o tipo de gráfico dinâmico adequado para comparar os fornecedores mês a mês, um recurso para filtrar o relatório com botões e um cuidado antes de enviar o arquivo. (0,4)
+- a) Explique por que a soma dos custos deu zero e por que a taxa virou 1500%, e diga como corrigir cada problema. (0,3)
+- b) Escreva a fórmula do vencimento para a linha 2 e explique por que somar números a uma data funciona; diga também como manter a linha de títulos sempre visível. (0,3)
+- c) Descreva como usar o AutoFiltro para mostrar só os itens com custo em estoque maior que R$ 1.000, do maior para o menor, e diga o que acontece com as linhas que não aparecem. (0,4)
