@@ -38,7 +38,8 @@ function caminhoDaPaginaMedia(relativo) {
 
 /**
  * Lê o usuário logado e se ele é professor.
- * @returns {Promise<{logado: boolean, ehProfessor: boolean}>} Situação do login.
+ * @returns {Promise<{logado: boolean, ehProfessor: boolean, usuarioId: string}>} Situação do
+ *     login.
  */
 async function lerLoginMedia() {
     const cliente = obterClienteSupabase();
@@ -46,8 +47,19 @@ async function lerLoginMedia() {
 
     const { data } = await cliente.auth.getSession();
     const usuario = data?.session?.user;
-    return { logado: Boolean(usuario),
+    return { logado: Boolean(usuario), usuarioId: usuario?.id,
         ehProfessor: usuario?.app_metadata?.perfil === PERFIL_PROFESSOR_MEDIA };
+}
+
+/**
+ * Busca o código da turma do aluno logado (tabela aluno).
+ * @param {string} usuarioId - Id do aluno.
+ * @returns {Promise<string>} Código da turma ou "" se não houver.
+ */
+async function lerTurmaDoAlunoMedia(usuarioId) {
+    const linhas = await sbGet('aluno',
+        'select=turma_codigo&id=eq.' + encodeURIComponent(usuarioId));
+    return linhas[0]?.turma_codigo || '';
 }
 
 /**
@@ -114,13 +126,27 @@ async function buscarNotasDoAlunoLogadoMedia(atividades) {
 }
 
 /**
- * Nota de uma linha: a nota fixa (data-nota-fixa, igual para todos os alunos) ou a do banco.
+ * Diz se a nota fixa da linha vale para a turma em exibição (tabela data-turma-atual). Sem
+ * data-nota-fixa-turmas, a nota fixa vale para todas as turmas.
+ * @param {HTMLTableRowElement} linha - Linha da tabela.
+ * @returns {boolean} true se a linha usa a nota fixa.
+ */
+function usaNotaFixaMedia(linha) {
+    if (linha.dataset.notaFixa === undefined) return false;
+    if (linha.dataset.notaFixaTurmas === undefined) return true;
+
+    const turmaAtual = linha.closest('table').dataset.turmaAtual || '';
+    return linha.dataset.notaFixaTurmas.split(',').includes(turmaAtual);
+}
+
+/**
+ * Nota de uma linha: a nota fixa (data-nota-fixa, para a turma) ou a do banco.
  * @param {HTMLTableRowElement} linha - Linha com data-pagina.
  * @param {Map<string, number>} notas - Melhor nota por caminho.
  * @returns {number|undefined} Nota de 0 a 10 ou undefined se não houver.
  */
 function notaDaLinhaMedia(linha, notas) {
-    if (linha.dataset.notaFixa !== undefined) return Number(linha.dataset.notaFixa);
+    if (usaNotaFixaMedia(linha)) return Number(linha.dataset.notaFixa);
     return notas.get(caminhoDaPaginaMedia(linha.dataset.pagina));
 }
 
@@ -130,6 +156,7 @@ function notaDaLinhaMedia(linha, notas) {
  */
 function preencherNotasFixasMedia(tabela) {
     tabela.querySelectorAll('tr[data-nota-fixa]').forEach((linha) => {
+        if (!usaNotaFixaMedia(linha)) return;
         const nota = Number(linha.dataset.notaFixa);
         const pontos = (nota / NOTA_MAXIMA_MEDIA) * Number(linha.dataset.pontos);
         linha.querySelector('[data-campo="nota"]').textContent = formatarNumeroMedia(nota);
@@ -226,6 +253,7 @@ async function iniciarMediaFinal() {
             await iniciarProfessorMedia(pagina, atividades);
             return;
         }
+        pagina.tabela.dataset.turmaAtual = await lerTurmaDoAlunoMedia(login.usuarioId);
         exibirNotasMedia(pagina, await buscarNotasDoAlunoLogadoMedia(atividades),
             SUJEITO_ALUNO_MEDIA);
     } catch (erro) {

@@ -123,3 +123,6 @@ C:\Python314\python.exe assets\gerador-avaliacao-media-final\gerar_avaliacao_med
 
 - Item com `"nota_fixa": 10` (2026-10-01): a linha mostra essa nota para todos os alunos (atributo
   `data-nota-fixa`, lido em `assets/js/avaliacao-media-final.js`). Gestão: Aulas 01–03 com nota 10.
+- `"nota_fixa_turmas": ["<código>"]` no item: a nota fixa vale só para essas turmas (atributo
+  `data-nota-fixa-turmas`; o JS usa a turma do aluno logado ou a escolhida pelo professor).
+  Gestão: Aulas 01, 02, 03, 06 e 07 com nota 10 só na turma 133933 (AI AIAC 2026/2 V1).

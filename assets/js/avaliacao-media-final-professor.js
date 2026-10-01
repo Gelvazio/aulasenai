@@ -119,6 +119,7 @@ function mostrarAlunoMedia(pagina, aluno) {
  * @param {Object} turma - Turma escolhida.
  */
 function trocarTurmaMedia({ pagina, lista }, turma) {
+    pagina.tabela.dataset.turmaAtual = turma.codigo;
     const alunos = estadoProfessorMedia.alunos
         .filter((aluno) => aluno.turma_codigo === turma.codigo);
     lista.replaceChildren(new Option(OPCAO_SELECIONE_ALUNO_MEDIA, ''), ...alunos.map((aluno) =>

@@ -256,10 +256,15 @@ def html_item(identificador, item):
                       f' data-pontos="{numero_atributo(item["pontos"])}"'
                       f' data-pagina="{escapar(item["pagina"])}"')
     nota_fixa = item.get("nota_fixa") if tem_pagina else None
+    turmas = item.get("nota_fixa_turmas", [])
     pontos_fixos = None
     if nota_fixa is not None:
         atributos += f' data-nota-fixa="{numero_atributo(nota_fixa)}"'
         pontos_fixos = float(nota_fixa) / NOTA_MAXIMA * float(item["pontos"])
+    if nota_fixa is not None and turmas:
+        # Nota fixa só de algumas turmas: o JS preenche depois de saber a turma.
+        atributos += f' data-nota-fixa-turmas="{escapar(",".join(turmas))}"'
+        nota_fixa = pontos_fixos = None
     return (f'{RECUO_LINHA}<tr {atributos}><td>{escapar(item["nome"])}</td>'
             f'<td>{escapar(item.get("conteudo", ""))}</td>'
             f'<td class="media-numero">{numero_exibido(item["pontos"])}</td>'
