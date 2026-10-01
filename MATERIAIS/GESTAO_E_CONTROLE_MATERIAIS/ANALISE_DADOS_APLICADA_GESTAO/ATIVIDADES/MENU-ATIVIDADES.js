@@ -7,48 +7,51 @@ window.MENU_ATIVIDADES = {
   itens: [
     { rotulo: '📚 Índice', link: 'index.html' },
     {
-      rotulo: '🧮 Atividades por conteúdo (50 questões)',
+      rotulo: '📝 Aula 01 — Matemática aplicada à gestão',
       subitens: [
         {
-          rotulo: '1 — Matemática aplicada à gestão (parte 1)',
+          rotulo: '1 — Matemática aplicada à gestão (parte 1) (50 questões)',
           link: 'ATIVIDADES-1-MATEMATICA-APLICADA-A-GESTAO-PARTE-1-50-QUESTOES.html',
         },
         {
-          rotulo: '2 — Fundamentos matemáticos para gestão',
+          rotulo: '2 — Fundamentos matemáticos para gestão (50 questões)',
           link: 'ATIVIDADES-2-FUNDAMENTOS-MATEMATICOS-PARA-GESTAO-50-QUESTOES.html',
-        },
-        {
-          rotulo: '3 — Excel básico: interface e fórmulas',
-          link: 'ATIVIDADES-3-EXCEL-BASICO-INTERFACE-E-FORMULAS-50-QUESTOES.html',
-        },
-        {
-          rotulo: '4 — Excel intermediário: formatação e validação',
-          link: 'ATIVIDADES-4-EXCEL-INTERMEDIARIO-FORMATACAO-E-VALIDACAO-50-QUESTOES.html',
-        },
-        {
-          rotulo: '5 — Excel avançado: funções e busca',
-          link: 'ATIVIDADES-5-EXCEL-AVANCADO-FUNCOES-COMPLEXAS-E-BUSCA-50-QUESTOES.html',
-        },
-        {
-          rotulo: '6 — Excel avançado: tabelas dinâmicas e gráficos',
-          link: 'ATIVIDADES-6-EXCEL-AVANCADO-TABELAS-DINAMICAS-E-GRAFICOS-50-QUESTOES.html',
-        },
-        {
-          rotulo: '7 — Dashboards interativos',
-          link: 'ATIVIDADES-7-DASHBOARDS-INTERATIVOS-E-INTEGRACAO-DE-DADOS-50-QUESTOES.html',
         },
       ],
     },
     {
-      rotulo: '📝 Atividades por aula',
+      rotulo: '📝 Aula 02 — Excel básico e intermediário',
       subitens: [
-        { rotulo: 'Aula 01 — Estatística e progressões', link: 'ATIVIDADES-AULA-01-12-QUESTOES.html' },
         {
-          rotulo: 'Aula 02 — Conceitos e fundamentos do Excel',
-          link: 'ATIVIDADES-AULA-02-12-QUESTOES.html',
+          rotulo: '3 — Excel básico: interface e fórmulas (50 questões)',
+          link: 'ATIVIDADES-3-EXCEL-BASICO-INTERFACE-E-FORMULAS-50-QUESTOES.html',
         },
-        { rotulo: 'Aula 03 — Funções de busca avançadas', link: 'ATIVIDADES-AULA-03-13-QUESTOES.html' },
-        { rotulo: 'Aula 04 — Design de dashboard e KPIs', link: 'ATIVIDADES-AULA-04-14-QUESTOES.html' },
+        {
+          rotulo: '4 — Excel intermediário: formatação e validação (50 questões)',
+          link: 'ATIVIDADES-4-EXCEL-INTERMEDIARIO-FORMATACAO-E-VALIDACAO-50-QUESTOES.html',
+        },
+      ],
+    },
+    {
+      rotulo: '📝 Aula 03 — Excel avançado e visualização',
+      subitens: [
+        {
+          rotulo: '5 — Excel avançado: funções e busca (50 questões)',
+          link: 'ATIVIDADES-5-EXCEL-AVANCADO-FUNCOES-COMPLEXAS-E-BUSCA-50-QUESTOES.html',
+        },
+        {
+          rotulo: '6 — Excel avançado: tabelas dinâmicas e gráficos (50 questões)',
+          link: 'ATIVIDADES-6-EXCEL-AVANCADO-TABELAS-DINAMICAS-E-GRAFICOS-50-QUESTOES.html',
+        },
+      ],
+    },
+    {
+      rotulo: '📝 Aula 04 — Dashboards executivos',
+      subitens: [
+        {
+          rotulo: '7 — Dashboards interativos (50 questões)',
+          link: 'ATIVIDADES-7-DASHBOARDS-INTERATIVOS-E-INTEGRACAO-DE-DADOS-50-QUESTOES.html',
+        },
       ],
     },
     {
