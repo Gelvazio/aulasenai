@@ -115,7 +115,7 @@ Desenvolver competências integradas de **aplicação** em Tecnologia Digital qu
 | 5 | Reconhece erros, propõe correções e alternativas |
 | 6 | Conecta múltiplos conceitos, justifica soluções |
 | 7 | Apresenta soluções com clareza, reflete sobre aprendizado |
-| 8 | Realiza avaliação somativa (nota ≥6), aplica em novo contexto |
+| 8 | Realiza avaliação somativa (nota ≥7), aplica em novo contexto |
 
 ---
 
@@ -199,7 +199,7 @@ Desenvolver competências integradas de **aplicação** em Tecnologia Digital qu
 
 ## ✅ IX. MÉTRICAS DE SUCESSO
 
-- **80%+** dos alunos atingem nota ≥6
+- **80%+** dos alunos atingem nota ≥7
 - **Satisfação:** ≥8/10 em avaliação de curso
 - **Retenção:** ≥85% completam disciplina
 - **Aplicação:** ≥70% conseguem aplicar em caso novo

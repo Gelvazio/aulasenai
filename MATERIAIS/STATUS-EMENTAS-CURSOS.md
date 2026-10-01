@@ -18,7 +18,7 @@
 
 # STATUS-EMENTAS-CURSOS — Consolidado
 
-**Última atualização:** 2026-10-01 15:14:12
+**Última atualização:** 2026-10-01 15:23:44
 **Escopo:** todos os cursos em `MATERIAIS/` (exceto `MATERIAS-GERAIS/`)
 **Fonte:** tamanho medido direto em cada `EMENTA-CHALKIE-AI.md`
 **Padrão de tamanho:** 14.800–14.950 caracteres
