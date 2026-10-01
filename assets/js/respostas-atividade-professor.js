@@ -35,7 +35,7 @@ const CLASSE_NOTAS_OCULTAS = CLASSE_RELATORIO + '__aluno--notas-ocultas';
 const CLASSE_ABAIXO_MINIMO = CLASSE_RELATORIO + '__aluno--abaixo-minimo';
 const MSG_SEM_RESPOSTAS = 'Nenhum aluno respondeu esta atividade ainda.';
 const MSG_ERRO_RELATORIO = 'Não foi possível carregar as respostas dos alunos: ';
-const MSG_ERRO_LIBERAR = 'Não foi possível liberar a nova tentativa: ';
+const MSG_ERRO_LIBERAR = 'Não foi possível liberar a ';
 
 /**
  * Busca no banco uma linha por aluno e tentativa (acertos e total já calculados lá).
@@ -128,33 +128,39 @@ function criarCelulaRelatorio(texto, classe) {
 async function liberarTentativaDoAluno(contexto) {
     const { linha, atividadeId, maximo } = contexto;
     const proxima = linha.tentativa + 1;
-    const querLiberar = await confirmarPopup('Liberar a tentativa ' + proxima + ' de ' +
-        maximo + ' para ' + linha.nome + '?\n\nSó as questões erradas ou em branco ' +
+    const termos = termosTentativa();
+    const rotuloProxima = termos.rotulo(proxima, maximo);
+    const querLiberar = await confirmarPopup('Liberar a ' + rotuloProxima + ' para ' +
+        linha.nome + '?\n\nSó as questões erradas ou em branco ' +
         'voltam para o aluno; as acertadas ficam mantidas.',
-    { titulo: 'Liberar nova tentativa', textoConfirmar: 'Liberar', textoCancelar: 'Cancelar' });
+    { titulo: 'Liberar ' + termos.nova, textoConfirmar: 'Liberar', textoCancelar: 'Cancelar' });
     if (!querLiberar) return;
 
     const resposta = await enviarAoBanco(ROTA_LIBERAR_TENTATIVA,
         { p_aluno: linha.aluno_id, p_atividade: atividadeId }, 'return=representation');
     if (!resposta.ok) {
         const erro = await resposta.json().catch(() => ({}));
-        return mostrarPopup(MSG_ERRO_LIBERAR + (erro.message || resposta.status), { tipo: 'erro' });
+        return mostrarPopup(MSG_ERRO_LIBERAR + termos.nova + ': ' +
+            (erro.message || resposta.status), { tipo: 'erro' });
     }
-    await mostrarPopup('Tentativa ' + proxima + ' de ' + maximo + ' liberada para ' +
-        linha.nome + '.', { tipo: 'sucesso', titulo: 'Tentativa liberada' });
+    await mostrarPopup(maiusculaInicial(rotuloProxima) + ' liberada para ' + linha.nome + '.',
+        { tipo: 'sucesso', titulo: maiusculaInicial(termos.nova) + ' liberada' });
     await montarRelatorioProfessor(contexto.secao, atividadeId, maximo);
 }
 
 /**
  * Define quantas tentativas o aluno pode ter: quem atingiu a nota mínima pode refazer uma vez
- * para melhorar (2 no total); quem ficou abaixo tem até o máximo da atividade (3).
+ * para melhorar (2 no total); quem ficou abaixo tem até o máximo da atividade (3). Nas
+ * avaliações, quem atingiu a nota mínima não tem recuperação (1 no total).
  * @param {number|null} notaFinal - Maior nota entregue do aluno.
  * @param {number} maximo - Limite geral de tentativas.
  * @returns {number} Total de tentativas permitido.
  */
 function calcularLimiteTentativas(notaFinal, maximo) {
     const aprovado = notaFinal !== null && notaFinal >= NOTA_MINIMA_APROVACAO;
-    return aprovado ? Math.min(MAXIMO_TENTATIVAS_APROVADO, maximo) : maximo;
+    if (!aprovado) return maximo;
+    if (!termosTentativa().aprovadoPodeRefazer) return 1;
+    return Math.min(MAXIMO_TENTATIVAS_APROVADO, maximo);
 }
 
 /**
@@ -171,10 +177,11 @@ function criarControleLiberar(contexto) {
         return celula;
     }
     const limite = calcularLimiteTentativas(notaFinal, maximo);
+    const termos = termosTentativa();
     const botao = criarBotao('btn-export ' + CLASSE_RELATORIO + '__liberar',
-        '🔓 Liberar nova tentativa', () => liberarTentativaDoAluno(contexto));
+        '🔓 Liberar ' + termos.nova, () => liberarTentativaDoAluno(contexto));
     botao.disabled = linha.tentativa >= limite;
-    if (botao.disabled) botao.title = 'Limite de ' + limite + ' tentativa(s) para este aluno.';
+    if (botao.disabled) botao.title = 'Sem ' + termos.nova + ' disponível para este aluno.';
     celula.appendChild(botao);
     return celula;
 }
@@ -190,7 +197,7 @@ function montarLinhaRelatorio(contexto) {
     const abaixoDoMinimo = linha.entregue_em && nota < NOTA_MINIMA_APROVACAO;
     const tr = document.createElement('tr');
     tr.append(
-        criarCelulaRelatorio(linha.tentativa + ' de ' + maximo),
+        criarCelulaRelatorio(maiusculaInicial(termosTentativa().rotulo(linha.tentativa, maximo))),
         criarCelulaRelatorio(descreverSituacao(linha)),
         criarCelulaRelatorio(linha.entregue_em ? linha.acertos + ' de ' + linha.total : '—'),
         criarCelulaRelatorio(linha.entregue_em ? formatarNota(nota) : '—',
@@ -269,7 +276,8 @@ function passaNosFiltros(bloco, turma) {
 function montarDetalheAluno(tentativas, base) {
     const tabela = criarElemento('table', CLASSE_RELATORIO + '__tabela-tentativas');
     const cabecalho = tabela.createTHead().insertRow();
-    COLUNAS_RELATORIO.forEach((texto) => cabecalho.appendChild(criarElemento('th', '', texto)));
+    [termosTentativa().colunaEtapa, ...COLUNAS_RELATORIO.slice(1)]
+        .forEach((texto) => cabecalho.appendChild(criarElemento('th', '', texto)));
     const corpo = tabela.createTBody();
     tentativas.forEach((linha) => corpo.appendChild(montarLinhaRelatorio({ ...base, linha })));
     const detalhe = criarElemento('tr', CLASSE_RELATORIO + '__detalhe');
@@ -360,8 +368,9 @@ function montarListaAlunosRelatorio(linhas, base) {
     });
     const tabela = criarElemento('table', CLASSE_RELATORIO + '__tabela');
     const cabecalho = tabela.createTHead().insertRow();
-    COLUNAS_ALUNOS_RELATORIO.forEach((texto) =>
-        cabecalho.appendChild(criarElemento('th', '', texto)));
+    COLUNAS_ALUNOS_RELATORIO.map((texto) => (texto === 'Tentativas'
+        ? termosTentativa().colunaQuantidade : texto))
+        .forEach((texto) => cabecalho.appendChild(criarElemento('th', '', texto)));
     porAluno.forEach((tentativas) => tabela.appendChild(montarBlocoAluno(tentativas, base)));
     const rolagem = criarElemento('div', CLASSE_RELATORIO + '__rolagem');
     rolagem.appendChild(tabela);
@@ -467,7 +476,7 @@ function atualizarResumoRelatorio(resumo, linhas) {
     const alunos = new Set(respondidas.map((linha) => linha.aluno_id)).size;
     const entregas = linhas.filter((linha) => linha.entregue_em).length;
     resumo.textContent = respondidas.length
-        ? alunos + ' aluno(s) responderam · ' + entregas + ' tentativa(s) entregue(s).'
+        ? alunos + ' aluno(s) responderam · ' + entregas + ' ' + termosTentativa().entregues + '.'
         : MSG_SEM_RESPOSTAS;
 }
 
@@ -639,8 +648,9 @@ async function carregarRespostasDoAluno(alunoId, nome) {
             marcarConferenciaNaQuestao(card, respostas.get(numero) || '', gabarito.get(numero) || '?');
         });
         cards[0]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        await mostrarPopup('Respostas de ' + nome + ' (tentativa ' + tentativa + ') carregadas nas ' +
-            'questões abaixo.', { tipo: 'sucesso', titulo: 'Respostas carregadas' });
+        await mostrarPopup('Respostas de ' + nome + ' (' + termosTentativa().simples(tentativa) +
+            ') carregadas nas questões abaixo.',
+        { tipo: 'sucesso', titulo: 'Respostas carregadas' });
     } catch (erro) {
         await mostrarPopup(erro.message, { tipo: 'erro' });
     }
@@ -719,7 +729,7 @@ function montarFiltrosRelatorio(aoMudar) {
             aoMudar();
         }, filtroSoNaoAtingiuRelatorio));
     const grupoTentativas = criarElemento('div', CLASSE_RELATORIO + '__grupo-filtro');
-    grupoTentativas.appendChild(criarElemento('strong', '', 'Tentativas'));
+    grupoTentativas.appendChild(criarElemento('strong', '', termosTentativa().colunaQuantidade));
     QUANTIDADES_TENTATIVAS.forEach((quantidade) => {
         grupoTentativas.appendChild(criarInterruptorRelatorio(quantidade + 'x', (ligado) => {
             if (ligado) filtroTentativasRelatorio.add(quantidade);

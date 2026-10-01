@@ -1179,6 +1179,10 @@ SQL: `database/2026-09-30-tentativas-atividade.sql` (o professor roda no SQL Edi
   gravada, vale na nova entrega; `database/2026-09-30-nova-tentativa-so-erradas.sql`);
   as tentativas antigas ficam guardadas e o painel mostra uma aba por tentativa.
 - ✅ **A nota vale a melhor tentativa entregue** (painel e CSV).
+- ✅ **Nas avaliações (`AVALIACAO-*.html`) a tentativa se chama RECUPERAÇÃO** (2026-09-30): a 1ª
+  vez é a "avaliação" e as seguintes são "recuperação 1" e "recuperação 2", com a mesma lógica
+  (só reabrem as questões erradas). Quem atinge 7 na avaliação **não** tem recuperação. Textos
+  em `assets/js/termos-tentativa.js` (vocabulário único, escolhido pelo nome da página).
 - ✅ Tabelas: `tentativa` em `resposta_atividade` e `entrega_atividade` (chaves incluem a
   tentativa) e `liberacao_atividade` (só a função grava). O RLS só deixa gravar na tentativa em
   andamento e antes de entregar.
@@ -1340,6 +1344,7 @@ assets/
 │                        atividade-pratica-excel.css)
 ├─ js/                 → scripts reutilizáveis (ex.: atividade.js — exportação de atividades em PDF;
 │                        atividade-pratica-excel.js — imprimir e marcar passo concluído;
+│                        termos-tentativa.js — textos de tentativa/recuperação (avaliações);
 │                        respostas-atividade.js + css/respostas-atividade.css — marcação das
 │                        alternativas, folha de respostas no fim da página e entrega; grava
 │                        SOMENTE no banco (sem localStorage); ativado com

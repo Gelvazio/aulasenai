@@ -14,7 +14,7 @@ const ROTA_ENTREGAS = '/rest/v1/entrega_atividade';
 const ROTA_NOTA = '/rest/v1/rpc/nota_da_tentativa';
 const PERFIL_PROFESSOR_PAGINA = 'PROFESSOR';
 const MSG_PROFESSOR_NAO_ASSINA = 'O professor não assina atividades: só os alunos respondem. ' +
-    'Aqui você acompanha as respostas e libera novas tentativas.';
+    'Aqui você acompanha as respostas e ';
 const PREFERENCIA_UPSERT = 'resolution=merge-duplicates,return=minimal';
 const CODIGO_JA_EXISTE = 409;
 const DIGITOS_ITEM = 2;
@@ -189,9 +189,11 @@ function montarIdentificacaoBanco(sessao) {
     bloco.appendChild(criarElemento('div', 'aula-title', 'Conectado como ' + sessao.nome));
     bloco.appendChild(criarElemento('p', 'identificacao-estudante__texto',
         'Suas respostas são salvas automaticamente' + complemento + '.'));
-    const textoTentativa = sessao.ehProfessor ? MSG_PROFESSOR_NAO_ASSINA
-        : 'Tentativa ' + sessao.tentativa + ' de ' + sessao.maximoTentativas + '. ' +
-            MSG_REGRA_TENTATIVAS;
+    const termos = termosTentativa();
+    const textoTentativa = sessao.ehProfessor
+        ? MSG_PROFESSOR_NAO_ASSINA + termos.professorLibera + '.'
+        : maiusculaInicial(termos.rotulo(sessao.tentativa, sessao.maximoTentativas)) + '. ' +
+            montarMsgRegraTentativas();
     bloco.appendChild(criarElemento('p', 'identificacao-estudante__tentativa', textoTentativa));
     bloco.appendChild(criarBotao('btn-export btn-export--secundario', '🚪 Sair', fazerLogout));
     return bloco;

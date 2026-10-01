@@ -21,16 +21,10 @@ const CLASSE_RESULTADO_APROVADO = 'resultado-atividade--aprovado';
 const CLASSE_RESULTADO_REPROVADO = 'resultado-atividade--reprovado';
 const MSG_NOTA_APROVADO =
     'Você atingiu a pontuação mínima que é ' + NOTA_MINIMA_APROVACAO + '!';
-const MSG_NOTA_REPROVADO =
-    'Você não atingiu a pontuação mínima que é ' + NOTA_MINIMA_APROVACAO + ', solicite ao ' +
-    'professor liberação da atividade para uma nova tentativa!';
+const MSG_NOTA_REPROVADO_INICIO =
+    'Você não atingiu a pontuação mínima que é ' + NOTA_MINIMA_APROVACAO + ', ';
 const CLASSE_AVISO = 'aviso-gravacao';
 const CLASSE_AVISO_ERRO = 'aviso-gravacao--erro';
-const MSG_REGRA_TENTATIVAS = 'Depois de entregar, só o professor pode liberar uma nova tentativa.';
-const MSG_PEDIR_NOVA_TENTATIVA = 'Se precisar refazer, peça ao professor para liberar uma nova ' +
-    'tentativa.';
-const MSG_JA_ENTREGUE = 'Esta tentativa já foi entregue e as respostas não podem ser ' +
-    'alteradas. ' + MSG_PEDIR_NOVA_TENTATIVA;
 const MSG_BANCO_INDISPONIVEL = 'As respostas desta atividade são salvas no banco de dados, ' +
     'que está indisponível agora. Avise o professor e tente novamente mais tarde.';
 const MSG_ERRO_SALVAR = 'Não foi possível salvar a resposta. ' +
@@ -39,12 +33,48 @@ const MSG_ERRO_CONFERIR = 'Não foi possível conferir as respostas gravadas no 
     'Verifique a conexão e tente finalizar de novo.';
 
 /**
- * Monta o aviso de que as tentativas acabaram.
+ * Vocabulário das tentativas da página (assets/js/termos-tentativa.js): "tentativa" nas
+ * atividades; "avaliação" e "recuperação" nas avaliações.
+ * @returns {Object} Termos da página.
+ */
+function termosTentativa() {
+    return window.TERMOS_TENTATIVA;
+}
+
+/**
+ * Garante que o vocabulário das tentativas esteja carregado antes de montar a página.
+ */
+async function garantirTermosTentativa() {
+    if (window.TERMOS_TENTATIVA) return;
+    await carregarScript('termos-tentativa.js');
+}
+
+/**
+ * Monta o aviso de que as tentativas (ou recuperações) acabaram.
  * @param {number} maximo - Limite de tentativas da atividade (vem do banco).
  * @returns {string} Mensagem para o aluno.
  */
 function montarMsgUltimaTentativa(maximo) {
-    return 'Você usou as ' + maximo + ' tentativas desta atividade.';
+    return termosTentativa().usouTodas(maximo);
+}
+
+/**
+ * Monta a regra exibida ao aluno: depois de entregar, só o professor libera a próxima vez.
+ * @returns {string} Mensagem para o aluno.
+ */
+function montarMsgRegraTentativas() {
+    return termosTentativa().regra;
+}
+
+/**
+ * Monta o aviso de que a tentativa (ou avaliação/recuperação) atual já foi entregue.
+ * @param {{tentativa: number, maximoTentativas: number}} estado - Tentativa atual e limite.
+ * @returns {string} Mensagem para o aluno.
+ */
+function montarMsgJaEntregue(estado) {
+    const rotulo = termosTentativa().rotulo(estado.tentativa, estado.maximoTentativas);
+    return 'A ' + rotulo + ' já foi entregue e as respostas não podem ser alteradas. ' +
+        termosTentativa().pedirNova;
 }
 
 /**
@@ -56,11 +86,12 @@ function montarMsgUltimaTentativa(maximo) {
 function montarMensagemEntrega(estado, resultado) {
     const { tentativa, maximoTentativas } = estado;
     const orientacao = tentativa >= maximoTentativas
-        ? montarMsgUltimaTentativa(maximoTentativas) : MSG_PEDIR_NOVA_TENTATIVA;
+        ? montarMsgUltimaTentativa(maximoTentativas) : termosTentativa().pedirNova;
     const linhaNota = resultado
         ? ['Sua nota: ' + formatarNota(calcularNota(resultado)) + '.', ''] : [];
     return ['Atividade entregue!',
-        'Suas respostas foram gravadas (tentativa ' + tentativa + ' de ' + maximoTentativas + ').',
+        'Suas respostas foram gravadas (' +
+            termosTentativa().rotulo(tentativa, maximoTentativas) + ').',
         '', ...linhaNota, orientacao].join('\n');
 }
 
@@ -71,10 +102,10 @@ function montarMensagemEntrega(estado, resultado) {
  */
 function montarMensagemConfirmarEntrega(estado) {
     const { tentativa, maximoTentativas } = estado;
-    return ['Entregar a tentativa ' + tentativa + ' de ' + maximoTentativas + '?', '',
+    return ['Entregar a ' + termosTentativa().rotulo(tentativa, maximoTentativas) + '?', '',
         'Depois de entregar, as respostas não poderão ser alteradas.',
         tentativa >= maximoTentativas
-            ? montarMsgUltimaTentativa(maximoTentativas) : MSG_PEDIR_NOVA_TENTATIVA,
+            ? montarMsgUltimaTentativa(maximoTentativas) : termosTentativa().pedirNova,
     ].join('\n');
 }
 
@@ -112,11 +143,11 @@ function mostrarResultadoNoInicio(estado, resultado) {
     bloco.setAttribute('role', 'status');
     bloco.appendChild(criarElemento('span', 'aula-badge', 'RESULTADO'));
     bloco.appendChild(criarElemento('div', 'aula-title', 'Sua nota: ' + formatarNota(nota) +
-        ' (tentativa ' + estado.tentativa + ' de ' + estado.maximoTentativas + ')'));
+        ' (' + termosTentativa().rotulo(estado.tentativa, estado.maximoTentativas) + ')'));
     bloco.appendChild(criarElemento('p', 'resultado-atividade__detalhe',
         resultado.acertos + ' acertos em ' + resultado.total + ' questões.'));
     bloco.appendChild(criarElemento('p', 'resultado-atividade__mensagem',
-        atingiu ? MSG_NOTA_APROVADO : MSG_NOTA_REPROVADO));
+        atingiu ? MSG_NOTA_APROVADO : MSG_NOTA_REPROVADO_INICIO + termosTentativa().reprovado));
     secao.insertBefore(bloco, secao.firstChild.nextSibling);
 }
 
@@ -225,11 +256,12 @@ function obterLetra(alternativa) {
  */
 function esconderQuestoesHerdadas(estado, herdadas) {
     const numeros = new Set(herdadas);
+    const anterior = termosTentativa().simples(estado.tentativa - 1);
     estado.itens.filter((item) => numeros.has(item.numero)).forEach((item) => {
         const lista = item.card.querySelector('.alternativas');
         if (lista) lista.hidden = true;
         const aviso = criarElemento('div', 'questao-acertada',
-            '✅ Você já acertou esta questão na tentativa anterior — a resposta foi mantida.');
+            '✅ Você já acertou esta questão na ' + anterior + ' — a resposta foi mantida.');
         item.card.appendChild(aviso);
     });
 }
@@ -255,7 +287,7 @@ function destacarAlternativa(item, letraMarcada) {
  * @param {string} letra - Letra escolhida.
  */
 async function registrarResposta(estado, item, letra) {
-    if (estado.entregue) return mostrarPopup(MSG_JA_ENTREGUE, { tipo: 'aviso' });
+    if (estado.entregue) return mostrarPopup(montarMsgJaEntregue(estado), { tipo: 'aviso' });
     if (!estado.provedor.podeResponder()) return;
     const letraAnterior = estado.dados.respostas[item.numero] || '';
     estado.dados.respostas[item.numero] = letra;
@@ -436,7 +468,7 @@ async function conferirGravacao(estado) {
  * @param {Object} estado - Estado da página.
  */
 async function finalizarAtividade(estado) {
-    if (estado.entregue) return mostrarPopup(MSG_JA_ENTREGUE, { tipo: 'aviso' });
+    if (estado.entregue) return mostrarPopup(montarMsgJaEntregue(estado), { tipo: 'aviso' });
     if (!(await validarAtividade(estado))) return;
     const botao = document.querySelector('.botao-finalizar');
     botao.disabled = true;
@@ -450,7 +482,8 @@ async function finalizarAtividade(estado) {
         const resultado = await estado.provedor.entregar();
         estado.atualizarFolha();
         marcarEntregue(estado, resultado.entregueEm);
-        mostrarAvisoGravacao('✅ Entrega gravada: tentativa ' + estado.tentativa);
+        mostrarAvisoGravacao('✅ Entrega gravada: ' +
+            termosTentativa().rotulo(estado.tentativa, estado.maximoTentativas));
         mostrarResultadoNoInicio(estado, resultado.resultado);
         window.scrollTo({ top: 0, behavior: 'smooth' });
         await mostrarPopup(montarMensagemEntrega(estado, resultado.resultado),
@@ -486,7 +519,8 @@ function atualizarFolha(estado) {
     if (!contagem) return;
 
     contagem.textContent = 'Respondidas: ' + respondidas + ' de ' + estado.itens.length +
-        ' · Tentativa ' + estado.tentativa + ' de ' + estado.maximoTentativas;
+        ' · ' + maiusculaInicial(termosTentativa().rotulo(estado.tentativa,
+            estado.maximoTentativas));
 }
 
 /**
@@ -556,6 +590,7 @@ async function iniciarRespostasAtividade() {
     if (!secao) return;
 
     await garantirPopup();
+    await garantirTermosTentativa();
     const { provedor, carregado } = await escolherProvedor();
     const estado = {
         provedor,
