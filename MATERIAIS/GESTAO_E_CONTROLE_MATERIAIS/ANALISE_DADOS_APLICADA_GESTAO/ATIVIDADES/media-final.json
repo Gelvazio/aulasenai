@@ -5,49 +5,19 @@
       "id": "atividades",
       "peso": "35%",
       "nota_subtotal": true,
-      "subtotal": "Subtotal — 7 atividades em sala (5 pontos cada)",
+      "subtotal": "Subtotal — 2 atividades em sala (17,5 pontos cada)",
       "itens": [
-        {
-          "nome": "Atividade Aula 01",
-          "conteudo": "Matemática Aplicada à Gestão Parte 1",
-          "pagina": "ATIVIDADES-1-MATEMATICA-APLICADA-A-GESTAO-PARTE-1-50-QUESTOES.html",
-          "pontos": 5
-        },
-        {
-          "nome": "Atividade Aula 02",
-          "conteudo": "Fundamentos Matemáticos para Gestão",
-          "pagina": "ATIVIDADES-2-FUNDAMENTOS-MATEMATICOS-PARA-GESTAO-50-QUESTOES.html",
-          "pontos": 5
-        },
-        {
-          "nome": "Atividade Aula 03",
-          "conteudo": "Excel Básico Interface e Fórmulas",
-          "pagina": "ATIVIDADES-3-EXCEL-BASICO-INTERFACE-E-FORMULAS-50-QUESTOES.html",
-          "pontos": 5
-        },
         {
           "nome": "Atividade Aula 04",
           "conteudo": "Excel Intermediário Formatação e Validação",
           "pagina": "ATIVIDADES-4-EXCEL-INTERMEDIARIO-FORMATACAO-E-VALIDACAO-50-QUESTOES.html",
-          "pontos": 5
+          "pontos": 17.5
         },
         {
           "nome": "Atividade Aula 05",
           "conteudo": "Excel Avançado Funções Complexas e Busca",
           "pagina": "ATIVIDADES-5-EXCEL-AVANCADO-FUNCOES-COMPLEXAS-E-BUSCA-50-QUESTOES.html",
-          "pontos": 5
-        },
-        {
-          "nome": "Atividade Aula 06",
-          "conteudo": "Excel Avançado Tabelas Dinâmicas e Gráficos",
-          "pagina": "ATIVIDADES-6-EXCEL-AVANCADO-TABELAS-DINAMICAS-E-GRAFICOS-50-QUESTOES.html",
-          "pontos": 5
-        },
-        {
-          "nome": "Atividade Aula 07",
-          "conteudo": "Dashboards Interativos e Integração de Dados",
-          "pagina": "ATIVIDADES-7-DASHBOARDS-INTERATIVOS-E-INTEGRACAO-DE-DADOS-50-QUESTOES.html",
-          "pontos": 5
+          "pontos": 17.5
         }
       ]
     },
@@ -93,11 +63,11 @@
     }
   ],
   "regras": [
-    "Cada instrumento tem nota de 0 a 10, convertida para os pontos dele. Exemplo: nota 8 numa atividade de 5 pontos = 4 pontos.",
+    "Cada instrumento tem nota de 0 a 10, convertida para os pontos dele. Exemplo: nota 8 numa atividade de 17,5 pontos = 14 pontos.",
     "Nas provas objetivas vale a melhor nota entre a avaliação e as recuperações.",
     "A prova prática são as 2 atividades práticas de Excel (12,5 pontos cada).",
     "Atividade ou prova não feita vale 0 ponto.",
-    "**Peso no sistema:** soma das 7 atividades em sala 35% (lançar a média delas, de 0 a 10, mostrada no subtotal), Avaliação Objetiva 01 20%, Avaliação Objetiva 02 20%, Prova Prática — Excel 29/09 12,5% e Prova Prática — Excel 01/10 12,5%. Nota final = soma de cada nota × peso.",
+    "**Peso no sistema:** soma das 2 atividades em sala (Aulas 04 e 05) 35% (lançar a média delas, de 0 a 10, mostrada no subtotal), Avaliação Objetiva 01 20%, Avaliação Objetiva 02 20%, Prova Prática — Excel 29/09 12,5% e Prova Prática — Excel 01/10 12,5%. Nota final = soma de cada nota × peso.",
     "**Aprovação: 70 pontos ou mais** (equivale à nota mínima 7)."
   ]
 }
