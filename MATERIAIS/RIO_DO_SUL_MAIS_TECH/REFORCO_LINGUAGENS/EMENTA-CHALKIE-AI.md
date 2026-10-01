@@ -128,64 +128,55 @@ Esta unidade curricular integra-se ao programa Rio do Sul Mais Tech, desenvolven
 
 ## 🗓️ VI. SEQUÊNCIA DE AULAS DETALHADA
 
-### Estrutura Pedagógica Recomendada
+Sequência oficial da UC: 16 aulas presenciais de 4h = 64h (UC de 63h contada como 64h), na ordem dos arquivos `AULAS/AULA-01.md` a `AULA-16.md`. A última aula é a avaliação final (nota mínima 7 e 75% de frequência).
 
-A progressão das aulas deve seguir modelo de aprendizado em espiral: retomada de conceitos anteriores com maior profundidade e aplicações mais complexas. Cada aula tem duração média de 1,5h com intervalo.
+**Aula 1 — Leitura e Compreensão Textual (4h)**
+- Foco: compreensão global e detalhada · Prática: resumo de um texto
 
-**Aula 1: Apresentação e Diagnóstico (1.0h)**
-- Apresentação da UC e objetivos
-- Avaliação diagnóstica das pré-aprendizagens
-- Mapeamento de dúvidas e interesses dos alunos
-- Definição de expectativas e metodologia
-- Esclarecimentos sobre plataforma Chalkie AI
+**Aula 2 — Tema e Ideia Principal (4h)**
+- Foco: tema, assunto e ideia principal · Prática: tema × ideia em notícias
 
-**Aula 2: Conceitos Fundamentais (1.5h)**
-- Introdução aos conteúdos principais
-- Exemplos práticos iniciais
-- Discussão dirigida com alunos
-- Primeiras atividades interativas
-- Feedback coletivo
+**Aula 3 — Intenção Comunicativa e Análise Crítica (4h)**
+- Foco: intenção comunicativa · Prática: leitura crítica de anúncios
 
-**Aula 3: Aprofundamento Temático (1.5h)**
-- Estudo de caso real da região
-- Análise crítica de situações profissionais
-- Discussão de dilemas e desafios
-- Atividade em pequenos grupos
-- Compartilhamento de insights
+**Aula 4 — Coesão e Coerência (4h)**
+- Foco: coesão; coerência; conectivos · Prática: reescrita com conectivos
 
-**Aula 4: Técnicas e Ferramentas (1.5h)**
-- Demonstração prática de procedimentos
-- Experimentação guiada com ferramentas
-- Simulações em ambiente Chalkie
-- Prática estruturada com feedback imediato
-- Resolução de problemas juntos
+**Aula 5 — Textos Narrativos (4h)**
+- Foco: paragrafação; organização de ideias · Prática: conto curto
 
-**Aula 5: Consolidação e Análise Crítica (1.5h)**
-- Revisão dos conceitos aprendidos
-- Resolução colaborativa de problemas complexos
-- Análise de erros e conceitualizações alternativas
-- Discussão sobre aplicações futuras
-- Preparação para avaliação formativa
+**Aula 6 — Textos Descritivos (4h)**
+- Foco: paragrafação; organização de ideias · Prática: descrição de um lugar
 
-**Aula 6: Aplicação Integrada (1.5h)**
-- Projeto multidisciplinar envolvendo outras UCs
-- Trabalho em equipes heterogêneas
-- Apoio diferenciado conforme dificuldades
-- Apresentação de resultados parciais
-- Reflexão sobre estratégias usadas
+**Aula 7 — Textos Argumentativos (4h)**
+- Foco: organização de ideias; pensamento crítico · Prática: parágrafo argumentativo
 
-**Aula 7: Síntese e Demonstração (1.0h)**
-- Apresentação formal de trabalhos finais
-- Discussão coletiva de aprendizados
-- Conexão com futuro profissional
-- Feedback estruturado entre colegas
-- Consolidação de pontos-chave
+**Aula 8 — Pontuação e Concordância (4h)**
+- Foco: pontuação; concordância verbal e nominal · Prática: revisão de frases
 
-**Aula 8: Avaliação Somativa (0.5h)**
-- Prova ou projeto final
-- Apresentação individual
-- Reflexão pessoal sobre aprendizado
-- Planejamento de aprofundamentos
+**Aula 9 — Classes de Palavras (4h)**
+- Foco: classes gramaticais no texto · Prática: classificar palavras de um texto
+
+**Aula 10 — Figuras de Linguagem (4h)**
+- Foco: sentido figurado e efeitos · Prática: figuras em letras e anúncios
+
+**Aula 11 — Oralidade: Apresentação (4h)**
+- Foco: comunicação oral assertiva · Prática: apresentação de 2 minutos
+
+**Aula 12 — Debate e Argumentação Oral (4h)**
+- Foco: argumentar respeitando opiniões · Prática: debate regrado
+
+**Aula 13 — Gêneros Variados (Crônica, Poesia) (4h)**
+- Foco: compreensão de gêneros literários · Prática: leitura e comentário
+
+**Aula 14 — Textos Técnicos e Informativos (4h)**
+- Foco: textos do mundo do trabalho · Prática: síntese de um manual
+
+**Aula 15 — Revisão Colaborativa e Feedback (4h)**
+- Foco: revisão; trabalho em grupo · Prática: revisão em pares
+
+**Aula 16 — Avaliação e Projetos Finais (4h)**
+- Foco: síntese da UC · Prática: projeto final (avaliação)
 
 ---
 

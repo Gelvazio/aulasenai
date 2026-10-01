@@ -126,64 +126,52 @@ Esta unidade curricular integra-se ao programa Rio do Sul Mais Tech, desenvolven
 
 ## 🗓️ VI. SEQUÊNCIA DE AULAS DETALHADA
 
-### Estrutura Pedagógica Recomendada
+Sequência oficial da UC: 9 aulas presenciais de 4h = 36h, na ordem dos arquivos `AULAS/AULA-01.md` a `AULA-09.md`. A última aula é a avaliação final (nota mínima 7 e 75% de frequência).
 
-A progressão das aulas deve seguir modelo de aprendizado em espiral: retomada de conceitos anteriores com maior profundidade e aplicações mais complexas. Cada aula tem duração média de 1,5h com intervalo.
+**Aula 1 — Segurança e Grandezas Elétricas (4h)**
+- Normas, riscos e grandezas
+- Conhecimentos da UC: acidente do trabalho; fatores de risco; EPI e EPC; NR 10; tensão, corrente, resistência, potência
+- Prática: riscos e EPIs da bancada
 
-**Aula 1: Apresentação e Diagnóstico (1.0h)**
-- Apresentação da UC e objetivos
-- Avaliação diagnóstica das pré-aprendizagens
-- Mapeamento de dúvidas e interesses dos alunos
-- Definição de expectativas e metodologia
-- Esclarecimentos sobre plataforma Chalkie AI
+**Aula 2 — Instrumentos de Medição Elétrica (4h)**
+- Usar e interpretar instrumentos de medida
+- Conhecimentos da UC: voltímetro; amperímetro; ohmímetro; wattímetro
+- Prática: medir pilhas e resistores
 
-**Aula 2: Conceitos Fundamentais (1.5h)**
-- Introdução aos conteúdos principais
-- Exemplos práticos iniciais
-- Discussão dirigida com alunos
-- Primeiras atividades interativas
-- Feedback coletivo
+**Aula 3 — Componentes de Circuitos Elétricos (4h)**
+- Identificar componentes e interpretar diagramas
+- Conhecimentos da UC: componentes e equipamentos; diagramas elétricos
+- Prática: desenhar e ler um diagrama simples
 
-**Aula 3: Aprofundamento Temático (1.5h)**
-- Estudo de caso real da região
-- Análise crítica de situações profissionais
-- Discussão de dilemas e desafios
-- Atividade em pequenos grupos
-- Compartilhamento de insights
+**Aula 4 — Instalações Elétricas Residenciais (4h)**
+- Instalação predial e proteção
+- Conhecimentos da UC: emendas; interruptores; tomadas; lâmpadas; disjuntores; DR
+- Prática: emenda e interruptor simples
 
-**Aula 4: Técnicas e Ferramentas (1.5h)**
-- Demonstração prática de procedimentos
-- Experimentação guiada com ferramentas
-- Simulações em ambiente Chalkie
-- Prática estruturada com feedback imediato
-- Resolução de problemas juntos
+**Aula 5 — Circuitos em Série (4h)**
+- Calcular e medir valores em série
+- Conhecimentos da UC: grandezas e medidas elétricas
+- Prática: montar e medir um circuito série
 
-**Aula 5: Consolidação e Análise Crítica (1.5h)**
-- Revisão dos conceitos aprendidos
-- Resolução colaborativa de problemas complexos
-- Análise de erros e conceitualizações alternativas
-- Discussão sobre aplicações futuras
-- Preparação para avaliação formativa
+**Aula 6 — Circuitos em Paralelo (4h)**
+- Calcular em paralelo e comparar
+- Conhecimentos da UC: grandezas elétricas; interruptor paralelo
+- Prática: montar paralelo e comparar
 
-**Aula 6: Aplicação Integrada (1.5h)**
-- Projeto multidisciplinar envolvendo outras UCs
-- Trabalho em equipes heterogêneas
-- Apoio diferenciado conforme dificuldades
-- Apresentação de resultados parciais
-- Reflexão sobre estratégias usadas
+**Aula 7 — Montagem Prática de Circuitos (4h)**
+- Circuitos mistos e acionamentos automáticos
+- Conhecimentos da UC: fotocélula; sensor de presença; programador horário; pequenos motores
+- Prática: circuito com acionamento automático
 
-**Aula 7: Síntese e Demonstração (1.0h)**
-- Apresentação formal de trabalhos finais
-- Discussão coletiva de aprendizados
-- Conexão com futuro profissional
-- Feedback estruturado entre colegas
-- Consolidação de pontos-chave
+**Aula 8 — Diagnóstico e Manutenção (4h)**
+- Localizar defeitos com segurança
+- Conhecimentos da UC: diagnóstico por comparação, teste e funcionamento; inspeção visual
+- Prática: achar o defeito de um circuito
 
-**Aula 8: Avaliação Somativa (0.5h)**
-- Prova ou projeto final
-- Apresentação individual
-- Reflexão pessoal sobre aprendizado
-- Planejamento de aprofundamentos
+**Aula 9 — Avaliação Prática (4h)**
+- Montagem e revisão de segurança
+- Conhecimentos da UC: CIPA; incêndios; primeiros socorros; ergonomia
+- Prática: montagem com checklist (avaliação final)
 
 ---
 

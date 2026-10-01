@@ -126,64 +126,52 @@ Esta unidade curricular integra-se ao programa Rio do Sul Mais Tech, desenvolven
 
 ## 🗓️ VI. SEQUÊNCIA DE AULAS DETALHADA
 
-### Estrutura Pedagógica Recomendada
+Sequência oficial da UC: 9 aulas presenciais de 4h = 36h, na ordem dos arquivos `AULAS/AULA-01.md` a `AULA-09.md`. A última aula é a avaliação final (nota mínima 7 e 75% de frequência).
 
-A progressão das aulas deve seguir modelo de aprendizado em espiral: retomada de conceitos anteriores com maior profundidade e aplicações mais complexas. Cada aula tem duração média de 1,5h com intervalo.
+**Aula 1 — Panorama do Mercado Industrial e Tecnológico (4h)**
+- Indústria 4.0, automação e tendências de TI
+- Conhecimentos da UC: panorama do mercado (Indústria 4.0, automação, TI)
+- Prática: mapa de empresas e oportunidades do Alto Vale
 
-**Aula 1: Apresentação e Diagnóstico (1.0h)**
-- Apresentação da UC e objetivos
-- Avaliação diagnóstica das pré-aprendizagens
-- Mapeamento de dúvidas e interesses dos alunos
-- Definição de expectativas e metodologia
-- Esclarecimentos sobre plataforma Chalkie AI
+**Aula 2 — Profissões do Futuro (4h)**
+- Conhecer técnicos, engenheiros, programadores e especialistas em IA
+- Conhecimentos da UC: funções e cargos industriais e tecnológicos
+- Prática: ficha de três profissões com rotina e formação
 
-**Aula 2: Conceitos Fundamentais (1.5h)**
-- Introdução aos conteúdos principais
-- Exemplos práticos iniciais
-- Discussão dirigida com alunos
-- Primeiras atividades interativas
-- Feedback coletivo
+**Aula 3 — Autoavaliação de Habilidades e Aptidões (4h)**
+- Reconhecer habilidades e aptidões pessoais
+- Conhecimentos da UC: autoavaliação de habilidades
+- Prática: teste de interesses comentado em dupla
 
-**Aula 3: Aprofundamento Temático (1.5h)**
-- Estudo de caso real da região
-- Análise crítica de situações profissionais
-- Discussão de dilemas e desafios
-- Atividade em pequenos grupos
-- Compartilhamento de insights
+**Aula 4 — Metas Profissionais (4h)**
+- Definir objetivos de curto, médio e longo prazo
+- Conhecimentos da UC: planejamento de carreira
+- Prática: plano de desenvolvimento pessoal
 
-**Aula 4: Técnicas e Ferramentas (1.5h)**
-- Demonstração prática de procedimentos
-- Experimentação guiada com ferramentas
-- Simulações em ambiente Chalkie
-- Prática estruturada com feedback imediato
-- Resolução de problemas juntos
+**Aula 5 — Plataformas de Emprego e Networking (4h)**
+- Pesquisar vagas, cursos e estágios e criar contatos profissionais
+- Conhecimentos da UC: networking; estratégias de pesquisa
+- Prática: busca guiada de vagas e cursos
 
-**Aula 5: Consolidação e Análise Crítica (1.5h)**
-- Revisão dos conceitos aprendidos
-- Resolução colaborativa de problemas complexos
-- Análise de erros e conceitualizações alternativas
-- Discussão sobre aplicações futuras
-- Preparação para avaliação formativa
+**Aula 6 — Construção de Currículo (4h)**
+- Montar um currículo claro para a primeira vaga ou estágio
+- Conhecimentos da UC: currículos
+- Prática: primeiro currículo revisado pelo colega
 
-**Aula 6: Aplicação Integrada (1.5h)**
-- Projeto multidisciplinar envolvendo outras UCs
-- Trabalho em equipes heterogêneas
-- Apoio diferenciado conforme dificuldades
-- Apresentação de resultados parciais
-- Reflexão sobre estratégias usadas
+**Aula 7 — LinkedIn e Presença Digital (4h)**
+- Perfil profissional e cuidados com a imagem nas redes
+- Conhecimentos da UC: marketing pessoal
+- Prática: rascunho de perfil profissional
 
-**Aula 7: Síntese e Demonstração (1.0h)**
-- Apresentação formal de trabalhos finais
-- Discussão coletiva de aprendizados
-- Conexão com futuro profissional
-- Feedback estruturado entre colegas
-- Consolidação de pontos-chave
+**Aula 8 — Portfólio Profissional (4h)**
+- Registrar projetos e competências do curso
+- Conhecimentos da UC: marketing pessoal
+- Prática: portfólio com dois trabalhos do programa
 
-**Aula 8: Avaliação Somativa (0.5h)**
-- Prova ou projeto final
-- Apresentação individual
-- Reflexão pessoal sobre aprendizado
-- Planejamento de aprofundamentos
+**Aula 9 — Entrevistas e Apresentação de Carreira (4h)**
+- Simular entrevista e apresentar o plano de carreira
+- Conhecimentos da UC: síntese da UC
+- Prática: plano de carreira (avaliação final)
 
 ---
 

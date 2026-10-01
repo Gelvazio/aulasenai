@@ -78,64 +78,52 @@ Esta unidade curricular integra-se ao programa Rio do Sul Mais Tech, desenvolven
 
 ## 🗓️ VI. SEQUÊNCIA DE AULAS DETALHADA
 
-### Estrutura Pedagógica Recomendada
+Sequência oficial da UC: 9 aulas presenciais de 4h = 36h, na ordem dos arquivos `AULAS/AULA-01.md` a `AULA-09.md`. A última aula é a avaliação final (nota mínima 7 e 75% de frequência).
 
-A progressão das aulas deve seguir modelo de aprendizado em espiral: retomada de conceitos anteriores com maior profundidade e aplicações mais complexas. Cada aula tem duração média de 1,5h com intervalo.
+**Aula 1 — Introdução à Impressão 3D e Tecnologias (4h)**
+- Diferenças entre FDM, SLA e SLS e como a impressora cria camadas por extrusão
+- Conhecimentos da UC: funcionamento da impressora 3D
+- Prática: comparar peças impressas em cada tecnologia
 
-**Aula 1: Apresentação e Diagnóstico (1.0h)**
-- Apresentação da UC e objetivos
-- Avaliação diagnóstica das pré-aprendizagens
-- Mapeamento de dúvidas e interesses dos alunos
-- Definição de expectativas e metodologia
-- Esclarecimentos sobre plataforma Chalkie AI
+**Aula 2 — Modelagem 3D com Tinkercad (4h)**
+- Criar e editar modelos a partir de sólidos básicos no Tinkercad
+- Conhecimentos da UC: interface do ambiente 3D; criação e edição de sólidos
+- Prática: chaveiro personalizado com o nome do aluno
 
-**Aula 2: Conceitos Fundamentais (1.5h)**
-- Introdução aos conteúdos principais
-- Exemplos práticos iniciais
-- Discussão dirigida com alunos
-- Primeiras atividades interativas
-- Feedback coletivo
+**Aula 3 — Arquivos STL e Fatiamento (4h)**
+- Exportar STL e configurar o fatiador
+- Conhecimentos da UC: arquivo STL; fatiamento; paredes, suportes e orientação
+- Prática: fatiar o chaveiro e estimar tempo e material
 
-**Aula 3: Aprofundamento Temático (1.5h)**
-- Estudo de caso real da região
-- Análise crítica de situações profissionais
-- Discussão de dilemas e desafios
-- Atividade em pequenos grupos
-- Compartilhamento de insights
+**Aula 4 — Operação de Impressoras 3D (4h)**
+- Calibrar, nivelar a mesa e imprimir com segurança, acompanhando as primeiras camadas
+- Conhecimentos da UC: configurações de fatiamento na prática
+- Prática: imprimir a peça modelada
 
-**Aula 4: Técnicas e Ferramentas (1.5h)**
-- Demonstração prática de procedimentos
-- Experimentação guiada com ferramentas
-- Simulações em ambiente Chalkie
-- Prática estruturada com feedback imediato
-- Resolução de problemas juntos
+**Aula 5 — Introdução à Robótica (4h)**
+- Origem dos robôs e seus tipos
+- Conhecimentos da UC: histórico da robótica; classificação (industriais, serviço, móveis)
+- Prática: classificar robôs vistos em vídeos da indústria
 
-**Aula 5: Consolidação e Análise Crítica (1.5h)**
-- Revisão dos conceitos aprendidos
-- Resolução colaborativa de problemas complexos
-- Análise de erros e conceitualizações alternativas
-- Discussão sobre aplicações futuras
-- Preparação para avaliação formativa
+**Aula 6 — Componentes de Robôs (4h)**
+- Sensores, atuadores, motores e controladores
+- Conhecimentos da UC: atuadores robóticos; componentes
+- Prática: ligar um sensor a um motor e testar a resposta
 
-**Aula 6: Aplicação Integrada (1.5h)**
-- Projeto multidisciplinar envolvendo outras UCs
-- Trabalho em equipes heterogêneas
-- Apoio diferenciado conforme dificuldades
-- Apresentação de resultados parciais
-- Reflexão sobre estratégias usadas
+**Aula 7 — Programação de Robôs Simples (4h)**
+- Lógica de controle em blocos (Blockly)
+- Conhecimentos da UC: programação de pontos e trajetórias
+- Prática: robô percorre um trajeto
 
-**Aula 7: Síntese e Demonstração (1.0h)**
-- Apresentação formal de trabalhos finais
-- Discussão coletiva de aprendizados
-- Conexão com futuro profissional
-- Feedback estruturado entre colegas
-- Consolidação de pontos-chave
+**Aula 8 — Projeto Integrado: 3D + Robótica (4h)**
+- Peça impressa aplicada ao robô
+- Conhecimentos da UC: integração entre robôs
+- Prática: protótipo com peça impressa funcionando
 
-**Aula 8: Avaliação Somativa (0.5h)**
-- Prova ou projeto final
-- Apresentação individual
-- Reflexão pessoal sobre aprendizado
-- Planejamento de aprofundamentos
+**Aula 9 — Apresentação de Projetos (4h)**
+- Demonstrar o protótipo e o processo
+- Conhecimentos da UC: síntese da UC
+- Prática: apresentação (avaliação final)
 
 ---
 
