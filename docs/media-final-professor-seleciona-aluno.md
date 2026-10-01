@@ -1,8 +1,8 @@
 # Média final: professor escolhe o aluno (líder da turma por padrão)
 
 - **Criado em:** 2026-10-01
-- **Concluído em:** —
-- **Tempo decorrido:** —
+- **Concluído em:** 2026-10-01
+- **Tempo decorrido:** < 1 hora
 
 ## Objetivo
 
@@ -24,7 +24,7 @@ aparece nesta página.
 
 - Não há onde guardar o líder → nova coluna `turma.lider_aluno_id`.
 - No banco não existe "Nicole" na turma 135080; existe **Nicoly da Silva Westphal (nº 20)**,
-  considerada a líder (confirmar).
+  confirmada pelo professor como a líder.
 - O professor já lê as notas de todos pela função `resumo_tentativas_atividade` (a mesma do
   relatório); a `nota_da_tentativa` só serve para o próprio aluno.
 
@@ -51,11 +51,14 @@ aparece nesta página.
 |---|------|-------------|--------|
 | 1 | Conferir banco real (turmas, alunos, políticas) | consultas de leitura | ✅ Concluído |
 | 2 | Escrever o SQL idempotente | revisão | ✅ Concluído |
-| 3 | Aplicar o SQL e gravar os líderes (135080, 135081) | `apply_migration` + consulta | ⬜ Pendente |
-| 4 | Combos Turma/Aluno no professor e notas do aluno escolhido | `node --check` | ⬜ Pendente |
-| 5 | Atualizar documentação do banco | leitura | ⬜ Pendente |
-| 6 | Commit | `git diff --cached --name-only` | ⬜ Pendente |
+| 3 | Aplicar o SQL e gravar os líderes (135080, 135081) | `apply_migration` + consulta | ✅ Concluído |
+| 4 | Combos Turma/Aluno no professor e notas do aluno escolhido | `node --check` | ✅ Concluído |
+| 5 | Atualizar documentação do banco | leitura | ✅ Concluído |
+| 6 | Commit | `git diff --cached --name-only` | ✅ Concluído |
 
 ## Resultado
 
-—
+- SQL aplicado (migração `turma_lider`); líderes gravados: 135080 → nº 20, 135081 → nº 27.
+- Novo `assets/js/avaliacao-media-final-professor.js` (combos Turma/Aluno, notas pelo
+  `resumo_tentativas_atividade`); `avaliacao-media-final.js` separado em busca × exibição.
+- Pendência: líder da turma da SALETE (a verificar); por enquanto vale o 1º da chamada.

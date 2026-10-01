@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="../../../../assets/css/menu.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
     <script src="../../../../js/supabase.js" defer></script>
+    <script src="../../../../assets/js/avaliacao-media-final-professor.js" defer></script>
     <script src="../../../../assets/js/avaliacao-media-final.js" defer></script>
     <script src="MENU-ATIVIDADES.js" defer></script>
     <script src="../../../../js/menu.js" defer></script>
     <script src="../../../../js/header-usuario.js" defer></script>
 </head>
-<body>
+<body data-uc="Introdução à Tecnologia da Informação e Comunicação">
 <div id="header-usuario"></div>
     <div class="container">
         <header>
@@ -27,6 +28,7 @@
             <section class="aula-card">
                 <span class="aula-badge">COMPOSIÇÃO</span>
                 <h2 class="aula-title">Como os 100 pontos são distribuídos</h2>
+                <div id="mediaSelecao" class="media-selecao" hidden></div>
                 <p id="mediaSituacao" class="media-situacao">Carregando suas notas...</p>
                 <div class="media-rolagem">
                     <table class="media-tabela" data-nota-minima="70">
@@ -35,34 +37,35 @@
                                 <th>Instrumento</th>
                                 <th>Conteúdo</th>
                                 <th class="media-numero">Pontos</th>
+                                <th class="media-numero">Peso no sistema</th>
                                 <th class="media-numero">Sua nota (0–10)</th>
                                 <th class="media-numero">Seus pontos</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-01-50-QUESTOES.html"><td>Atividade Aula 01</td><td>Comunicação profissional</td><td class="media-numero">3</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
-                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-02-50-QUESTOES.html"><td>Atividade Aula 02</td><td>Hardware, periféricos e sistemas operacionais</td><td class="media-numero">3</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
-                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-03-50-QUESTOES.html"><td>Atividade Aula 03</td><td>Navegação na web e pesquisa</td><td class="media-numero">3</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
-                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-04-50-QUESTOES.html"><td>Atividade Aula 04</td><td>Comunicação digital e nuvem</td><td class="media-numero">3</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
-                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-05-50-QUESTOES.html"><td>Atividade Aula 05</td><td>Segurança da informação</td><td class="media-numero">3</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
-                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-06-50-QUESTOES.html"><td>Atividade Aula 06</td><td>Editor de textos</td><td class="media-numero">3</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
-                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-07-50-QUESTOES.html"><td>Atividade Aula 07</td><td>Textos técnicos e redação empresarial</td><td class="media-numero">3</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
-                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-08-50-QUESTOES.html"><td>Atividade Aula 08</td><td>Planilhas: organização e fórmulas</td><td class="media-numero">3</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
-                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-09-50-QUESTOES.html"><td>Atividade Aula 09</td><td>Planilhas: análise visual e gráficos</td><td class="media-numero">3</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
-                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-10-50-QUESTOES.html"><td>Atividade Aula 10</td><td>Editor de apresentações</td><td class="media-numero">3</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
-                            <tr class="media-grupo--atividades media-subtotal" data-subtotal="atividades"><td colspan="2">Subtotal — 10 atividades (3 pontos cada)</td><td class="media-numero">30</td><td class="media-numero"></td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-01-50-QUESTOES.html"><td>Atividade Aula 01</td><td>Comunicação profissional</td><td class="media-numero">3</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-02-50-QUESTOES.html"><td>Atividade Aula 02</td><td>Hardware, periféricos e sistemas operacionais</td><td class="media-numero">3</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-03-50-QUESTOES.html"><td>Atividade Aula 03</td><td>Navegação na web e pesquisa</td><td class="media-numero">3</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-04-50-QUESTOES.html"><td>Atividade Aula 04</td><td>Comunicação digital e nuvem</td><td class="media-numero">3</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-05-50-QUESTOES.html"><td>Atividade Aula 05</td><td>Segurança da informação</td><td class="media-numero">3</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-06-50-QUESTOES.html"><td>Atividade Aula 06</td><td>Editor de textos</td><td class="media-numero">3</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-07-50-QUESTOES.html"><td>Atividade Aula 07</td><td>Textos técnicos e redação empresarial</td><td class="media-numero">3</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-08-50-QUESTOES.html"><td>Atividade Aula 08</td><td>Planilhas: organização e fórmulas</td><td class="media-numero">3</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-09-50-QUESTOES.html"><td>Atividade Aula 09</td><td>Planilhas: análise visual e gráficos</td><td class="media-numero">3</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="3" data-pagina="ATIVIDADES-AULA-10-50-QUESTOES.html"><td>Atividade Aula 10</td><td>Editor de apresentações</td><td class="media-numero">3</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades media-subtotal" data-subtotal="atividades" data-pontos="30"><td colspan="2">Subtotal — 10 atividades (3 pontos cada)</td><td class="media-numero">30</td><td class="media-numero media-peso">30%</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
 
-                            <tr class="media-grupo--objetiva" data-grupo="objetiva" data-pontos="20" data-pagina="AVALIACAO-OBJETIVA-01.html"><td>Avaliação Objetiva 01</td><td>Aulas 01 a 05</td><td class="media-numero">20</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
-                            <tr class="media-grupo--objetiva" data-grupo="objetiva" data-pontos="20" data-pagina="AVALIACAO-OBJETIVA-02.html"><td>Avaliação Objetiva 02</td><td>Aulas 06 a 10</td><td class="media-numero">20</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
-                            <tr class="media-grupo--objetiva media-subtotal" data-subtotal="objetiva"><td colspan="2">Subtotal — 2 provas objetivas (20 pontos cada)</td><td class="media-numero">40</td><td class="media-numero"></td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--objetiva" data-grupo="objetiva" data-pontos="20" data-pagina="AVALIACAO-OBJETIVA-01.html"><td>Avaliação Objetiva 01</td><td>Aulas 01 a 05</td><td class="media-numero">20</td><td class="media-numero media-peso">20%</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--objetiva" data-grupo="objetiva" data-pontos="20" data-pagina="AVALIACAO-OBJETIVA-02.html"><td>Avaliação Objetiva 02</td><td>Aulas 06 a 10</td><td class="media-numero">20</td><td class="media-numero media-peso">20%</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--objetiva media-subtotal" data-subtotal="objetiva"><td colspan="2">Subtotal — 2 provas objetivas (20 pontos cada)</td><td class="media-numero">40</td><td class="media-numero"></td><td class="media-numero"></td><td class="media-numero" data-campo="pontos">—</td></tr>
 
-                            <tr class="media-grupo--pratica"><td>Prova Prática — execução</td><td>Tarefa feita corretamente</td><td class="media-numero">15</td><td class="media-numero"></td><td class="media-numero"></td></tr>
-                            <tr class="media-grupo--pratica"><td>Prova Prática — organização</td><td>Organização e formatação</td><td class="media-numero">10</td><td class="media-numero"></td><td class="media-numero"></td></tr>
-                            <tr class="media-grupo--pratica"><td>Prova Prática — entrega</td><td>Entrega no prazo</td><td class="media-numero">5</td><td class="media-numero"></td><td class="media-numero"></td></tr>
-                            <tr class="media-grupo--pratica media-subtotal" data-grupo="pratica" data-pontos="30" data-pagina="AVALIACAO-PRATICA.html"><td colspan="2">Subtotal — 1 prova prática</td><td class="media-numero">30</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--pratica"><td>Prova Prática — execução</td><td>Tarefa feita corretamente</td><td class="media-numero">15</td><td class="media-numero"></td><td class="media-numero"></td><td class="media-numero"></td></tr>
+                            <tr class="media-grupo--pratica"><td>Prova Prática — organização</td><td>Organização e formatação</td><td class="media-numero">10</td><td class="media-numero"></td><td class="media-numero"></td><td class="media-numero"></td></tr>
+                            <tr class="media-grupo--pratica"><td>Prova Prática — entrega</td><td>Entrega no prazo</td><td class="media-numero">5</td><td class="media-numero"></td><td class="media-numero"></td><td class="media-numero"></td></tr>
+                            <tr class="media-grupo--pratica media-subtotal" data-grupo="pratica" data-pontos="30" data-pagina="AVALIACAO-PRATICA.html"><td colspan="2">Subtotal — 1 prova prática</td><td class="media-numero">30</td><td class="media-numero media-peso">30%</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
                         </tbody>
                         <tfoot>
-                            <tr data-total><td colspan="2">TOTAL</td><td class="media-numero">100</td><td class="media-numero"></td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr data-total><td colspan="2">TOTAL</td><td class="media-numero">100</td><td class="media-numero media-peso">100%</td><td class="media-numero"></td><td class="media-numero" data-campo="pontos">—</td></tr>
                         </tfoot>
                     </table>
                 </div>
@@ -76,6 +79,9 @@
                         Exemplo: nota 8 numa atividade de 3 pontos = 2,4 pontos.</li>
                     <li>Nas provas objetivas vale a melhor nota entre a avaliação e as recuperações.</li>
                     <li>Atividade ou prova não feita vale 0 ponto.</li>
+                    <li><strong>Peso no sistema:</strong> soma das 10 atividades 30% (lançar a média delas,
+                        de 0 a 10, mostrada no subtotal), Avaliação Objetiva 01 20%, Avaliação Objetiva 02
+                        20% e Prova Prática 30%. Nota final = soma de cada nota × peso.</li>
                     <li><strong>Aprovação: 70 pontos ou mais</strong> (equivale à nota mínima 7).</li>
                 </ul>
             </section>

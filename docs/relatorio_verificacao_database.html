@@ -442,6 +442,28 @@
       <p>Documentação perfeita. Todos os campos, tipos e relacionamentos estão corretos.</p>
     </div>
 
+    <h2>👑 Atualização 2026-10-01 — Líder da turma</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-01-turma-lider.sql</code> (aplicado em 2026-10-01)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>turma.lider_aluno_id</td>
+          <td><code>uuid</code> → aluno.id</td>
+          <td>Aluno líder da sala; padrão nas telas do professor (vazio = 1º da chamada)</td>
+        </tr>
+        <tr>
+          <td>definir_lider_turma(codigo, aluno)</td>
+          <td>Função (só professor)</td>
+          <td>Define ou limpa o líder; o aluno precisa ser da turma</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🕒 Atualização 2026-10-01 — Atividade liberada fora do horário</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-01-atividade-liberada-fora-horario.sql</code> (aplicado em 2026-10-01)</p>

@@ -51,3 +51,16 @@
   font-weight: 700;
 }
 .media-situacao--abaixo { border-left-color: var(--gold); }
+
+/* Combos Turma e Aluno do professor (assets/js/avaliacao-media-final-professor.js) */
+.media-selecao[hidden] { display: none; }
+.media-selecao { display: flex; flex-wrap: wrap; gap: 10px 18px; margin: 0 0 12px; }
+.media-combo { display: flex; align-items: center; gap: 8px; font-weight: 700; }
+.media-combo select {
+  min-width: 240px;
+  max-width: 100%;
+  padding: 6px 10px;
+  border: 1px solid var(--media-borda);
+  border-radius: 6px;
+  font: inherit;
+}

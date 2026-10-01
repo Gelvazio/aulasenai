@@ -395,6 +395,18 @@ As políticas `resposta_insert`, `resposta_update` e `entrega_insert` passaram a
 `pode_responder_no_horario(atividade_id)` no lugar de `dentro_do_horario_da_turma()`.
 **Avaliações seguem sempre o horário da turma**, mesmo com o aluno na lista.
 
+### 👑 Atualização 2026-10-01 — Líder da turma
+
+**Script:** `database/2026-10-01-turma-lider.sql` (aplicado em 2026-10-01). **Plano:**
+`docs/media-final-professor-seleciona-aluno.md`.
+
+| Objeto | Tipo | Descrição |
+|--------|------|-----------|
+| `turma.lider_aluno_id` | `uuid` → `aluno.id` (on delete set null) | aluno líder da sala; aluno padrão nas telas do professor (vazio = 1º da chamada) |
+| `definir_lider_turma(codigo, aluno)` | função (só professor) | define ou limpa o líder; o aluno precisa ser da turma |
+
+Os líderes foram gravados direto no banco (nomes de alunos não vão para arquivos publicados).
+
 ---
 
 ## 🔐 Segurança: RLS (Row Level Security)
