@@ -86,11 +86,16 @@
     },
     {
       "id": "pratica",
-      "peso": "30%",
-      "pontos": 30,
-      "pagina": "PROVA-PRATICA.html",
-      "subtotal": "Subtotal — prova prática (discursiva, aulas 01 a 06)",
-      "itens": []
+      "subtotal": "Subtotal — 1 prova prática",
+      "itens": [
+        {
+          "nome": "Prova Prática",
+          "conteudo": "Discursiva — Aulas 01 a 06 (10 questões)",
+          "pontos": 30,
+          "peso": "30%",
+          "pagina": "PROVA-PRATICA.html"
+        }
+      ]
     }
   ],
   "regras": [
