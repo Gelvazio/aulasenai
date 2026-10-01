@@ -241,39 +241,51 @@ function montarFiltroAtividadesRel() {
     const ativas = ordenarAtividadesAtivasRel(estadoRel.materia?.atividades || []);
     quadro.hidden = ativas.length === 0;
     const interruptores = ativas.map((atividade) => {
+        const alternar = alternarNoConjuntoRel(estadoRel.atividadesFiltro, String(atividade.id));
         const interruptor = criarInterruptorRel(
             formatarAulaRel(atividade.aulas?.numero) + ' — ' + atividade.descricao,
-            alternarNoConjuntoRel(estadoRel.atividadesFiltro, String(atividade.id)));
+            (ligado) => { alternar(ligado); sincronizarInterruptorTodasRel(grupo); });
         interruptor.dataset.atividade = String(atividade.id);
         return interruptor;
     });
     const grupo = criarGrupoFiltroRel(TITULO_FILTRO_ATIVIDADES_REL, interruptores);
-    const botoes = criarElementoRel('div', 'rel-botoes-todas');
-    botoes.append(criarBotaoTodasRel(grupo, TEXTO_LIGAR_TODAS_REL, true),
-        criarBotaoTodasRel(grupo, TEXTO_DESLIGAR_TODAS_REL, false));
-    grupo.querySelector('strong').after(botoes);
+    grupo.querySelector('strong').after(criarInterruptorTodasRel(grupo));
     document.getElementById('relFiltroAtividades').replaceChildren(grupo);
 }
 
 /**
- * Cria o botão "Ligar todas" ou "Desligar todas" do quadro de atividades.
+ * Cria o interruptor ON/OFF que liga ou desliga todas as atividades do quadro. Desligado ele se
+ * chama "Ligar todas"; ligado, "Desligar todas".
  * @param {HTMLElement} grupo - Grupo com os interruptores das atividades.
- * @param {string} texto - Texto do botão.
- * @param {boolean} ligar - true liga todos os interruptores; false desliga todos.
- * @returns {HTMLButtonElement} Botão pronto.
+ * @returns {HTMLLabelElement} Interruptor pronto.
  */
-function criarBotaoTodasRel(grupo, texto, ligar) {
-    const botao = criarElementoRel('button', 'rel-botao rel-botao--pequeno', texto);
-    botao.type = 'button';
-    botao.addEventListener('click', () => {
-        grupo.querySelectorAll('[data-atividade]').forEach((interruptor) => {
-            interruptor.querySelector('input').checked = ligar;
-            if (ligar) estadoRel.atividadesFiltro.add(interruptor.dataset.atividade);
-            else estadoRel.atividadesFiltro.delete(interruptor.dataset.atividade);
+function criarInterruptorTodasRel(grupo) {
+    const interruptor = criarInterruptorRel(TEXTO_LIGAR_TODAS_REL, (ligado) => {
+        grupo.querySelectorAll('[data-atividade]').forEach((item) => {
+            item.querySelector('input').checked = ligado;
+            if (ligado) estadoRel.atividadesFiltro.add(item.dataset.atividade);
+            else estadoRel.atividadesFiltro.delete(item.dataset.atividade);
         });
+        sincronizarInterruptorTodasRel(grupo);
         renderizarTabelaRel();
     });
-    return botao;
+    interruptor.classList.add('rel-interruptor-todas');
+    return interruptor;
+}
+
+/**
+ * Deixa o interruptor "todas" ligado só quando todas as atividades estão ligadas e ajusta o nome.
+ * @param {HTMLElement} grupo - Grupo com os interruptores das atividades.
+ */
+function sincronizarInterruptorTodasRel(grupo) {
+    const todas = grupo.querySelector('.rel-interruptor-todas');
+    if (!todas) return;
+
+    const itens = [...grupo.querySelectorAll('[data-atividade] input')];
+    const todasLigadas = itens.length > 0 && itens.every((caixa) => caixa.checked);
+    todas.querySelector('input').checked = todasLigadas;
+    todas.querySelector('.rel-interruptor-texto').textContent =
+        todasLigadas ? TEXTO_DESLIGAR_TODAS_REL : TEXTO_LIGAR_TODAS_REL;
 }
 
 /**
