@@ -16,7 +16,7 @@ const TEXTO_SELECIONE_ALUNO_REL = 'Seleciona o aluno';
 const MATERIA_PADRAO_REL = 'Introdução à Tecnologia da Informação e Comunicação';
 const TEXTO_LIGAR_TODAS_REL = 'Ligar todas';
 const TEXTO_DESLIGAR_TODAS_REL = 'Desligar todas';
-const TITULO_FILTRO_ATIVIDADES_REL = 'Atividades da matéria (nenhuma ligada = todas)';
+const TITULO_FILTRO_ATIVIDADES_REL = 'Atividades da matéria';
 
 const estadoRel = {
     materias: [], materia: null, turmas: [], turmaAtual: '', resumos: new Map(),
@@ -220,36 +220,35 @@ function ordenarAtividadesAtivasRel(atividades) {
 }
 
 /**
- * Atividades da matéria que entram no relatório: as ligadas no quadro de atividades ou, se
- * nenhuma estiver ligada, todas.
+ * Atividades da matéria que entram no relatório: só as ligadas no quadro de atividades
+ * (nenhuma ligada = nenhuma atividade no relatório).
  * @returns {Object[]} Atividades consideradas.
  */
 function obterAtividadesFiltradasRel() {
     const atividades = estadoRel.materia?.atividades || [];
-    if (!estadoRel.atividadesFiltro.size) return atividades;
-
     return atividades.filter((atividade) => estadoRel.atividadesFiltro.has(String(atividade.id)));
 }
 
 /**
  * Monta o quadro de filtros por atividade da matéria escolhida (um interruptor ON/OFF por
- * atividade ativa, todos desligados = todas as atividades).
+ * atividade ativa, todos começam ligados; desligado = atividade fora do relatório).
  */
 function montarFiltroAtividadesRel() {
-    estadoRel.atividadesFiltro.clear();
     const quadro = document.getElementById('relQuadroAtividades');
     const ativas = ordenarAtividadesAtivasRel(estadoRel.materia?.atividades || []);
     quadro.hidden = ativas.length === 0;
+    estadoRel.atividadesFiltro = new Set(ativas.map((atividade) => String(atividade.id)));
     const interruptores = ativas.map((atividade) => {
         const alternar = alternarNoConjuntoRel(estadoRel.atividadesFiltro, String(atividade.id));
         const interruptor = criarInterruptorRel(
             formatarAulaRel(atividade.aulas?.numero) + ' — ' + atividade.descricao,
-            (ligado) => { alternar(ligado); sincronizarInterruptorTodasRel(grupo); });
+            (ligado) => { alternar(ligado); sincronizarInterruptorTodasRel(grupo); }, true);
         interruptor.dataset.atividade = String(atividade.id);
         return interruptor;
     });
     const grupo = criarGrupoFiltroRel(TITULO_FILTRO_ATIVIDADES_REL, interruptores);
     grupo.querySelector('strong').after(criarInterruptorTodasRel(grupo));
+    sincronizarInterruptorTodasRel(grupo);
     document.getElementById('relFiltroAtividades').replaceChildren(grupo);
 }
 
