@@ -321,7 +321,8 @@ def html_linhas(grupos):
     blocos = []
     for grupo in grupos:
         linhas = [html_item(grupo["id"], item) for item in grupo.get("itens", [])]
-        linhas.append(html_subtotal(grupo))
+        if not grupo.get("sem_subtotal"):
+            linhas.append(html_subtotal(grupo))
         blocos.append("\n".join(linhas))
     return "\n\n".join(blocos)
 

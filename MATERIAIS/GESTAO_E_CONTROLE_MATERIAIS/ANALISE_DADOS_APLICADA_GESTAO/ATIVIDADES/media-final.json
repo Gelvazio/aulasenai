@@ -82,7 +82,8 @@
           "peso": "30%"
         }
       ],
-      "subtotal": "Subtotal — 1 prova objetiva"
+      "subtotal": "Subtotal — 1 prova objetiva",
+      "sem_subtotal": true
     },
     {
       "id": "pratica",
@@ -95,7 +96,8 @@
           "peso": "30%",
           "pagina": "PROVA-PRATICA.html"
         }
-      ]
+      ],
+      "sem_subtotal": true
     }
   ],
   "regras": [
