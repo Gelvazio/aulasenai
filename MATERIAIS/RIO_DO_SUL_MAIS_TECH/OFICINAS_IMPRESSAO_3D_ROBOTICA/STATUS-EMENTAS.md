@@ -1,6 +1,6 @@
 # STATUS-EMENTAS — OFICINAS_IMPRESSAO_3D_ROBOTICA
 
-**Última atualização:** 2026-10-01 15:00:49
+**Última atualização:** 2026-10-01 15:09:05
 
 ---
 
@@ -8,7 +8,7 @@
 
 | Arquivo | Status | Tamanho | Observações |
 |---------|--------|---------|-------------|
-| **EMENTA-CHALKIE-AI.md** | ✅ PRESENTE | 14903 chars | ✅ CONFORME (14.800–14.950 chars) |
+| **EMENTA-CHALKIE-AI.md** | ✅ PRESENTE | 14885 chars | ✅ CONFORME (14.800–14.950 chars) |
 
 ## ⏱️ Carga Horária
 

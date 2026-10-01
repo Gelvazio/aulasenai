@@ -34,6 +34,39 @@ Esta unidade curricular integra-se ao programa Rio do Sul Mais Tech, desenvolven
 
 ## 📖 III. CONTEÚDOS PROGRAMÁTICOS
 
+Conhecimentos da UC 1 na ementa do curso, em 5 módulos ligados às 9 aulas da seção VI.
+
+### Módulo 1 — Empreendedorismo e oportunidades (Aulas 1 e 2)
+- Empreendedor: características, comportamentos e perfil
+- Empreendimentos: tipos de negócios existentes na economia
+- Identificando oportunidades no mercado local
+- Empreender por oportunidade e por necessidade: diferenças
+- Micro e pequenas empresas da região
+- Atividade: listar três oportunidades de negócio no bairro e o público de cada uma
+
+### Módulo 2 — Planejamento e plano de negócios (Aula 3)
+- Planejamento e empreendedorismo: objetivos, recursos e prazos
+- Plano de negócios: produto, cliente, custos, preço e viabilidade
+- Atividade: esboço do plano da equipe em uma página (canvas simples)
+
+### Módulo 3 — Sustentabilidade e meio ambiente (Aulas 1 e 4)
+- 5R's (recusar, reduzir, reutilizar, reciclar, recuperar) e economia circular
+- Coleta seletiva e ciclo da água
+- Agenda ambiental da administração pública e legislação ambiental brasileira
+- Primavera Silenciosa (Rachel Carson) e a origem da consciência ambiental
+- Atividade: mapa dos 5R's na escola e uma ação sustentável para o negócio da equipe
+
+### Módulo 4 — Ética, virtudes e negociação (Aulas 5 e 6)
+- Comportamento ético frente ao mercado e responsabilidade social
+- Virtudes úteis ao empreendedor de sucesso
+- Pontos críticos de uma negociação; comunicação e resolução de conflitos
+- Atividade: simulação de negociação em duplas, com análise dos pontos críticos
+
+### Módulo 5 — Intraempreendedorismo e casos reais (Aulas 7 a 9)
+- Intraempreendedor: inovar dentro da empresa
+- Casos de sucesso e visitas a empreendimentos da região
+- Apresentação e defesa do plano de negócios (avaliação final)
+- Atividade: entrevista com um empreendedor local e pitch de 3 minutos com banca
 
 ---
 
@@ -127,41 +160,11 @@ Sequência oficial da UC: 9 aulas presenciais de 4h = 36h, na ordem dos arquivos
 
 ## 📚 VII. ESTRATÉGIAS AVANÇADAS PARA IA E PERSONALIZAÇÃO
 
-### Diagnóstico Adaptativo Inicial
-
-A plataforma Chalkie deve iniciar com bateria de questões para mapeamento do conhecimento prévio: conceitos-chave, estilos de aprendizagem, preferências de formato (visual, textual, vídeo), ritmo de aprendizado, necessidades especiais. Base para trilha personalizada.
-
-### Personalização em Tempo Real
-
-Conforme o aluno interage com Chalkie, o sistema ajusta:
-- **Nível de dificuldade:** Começa fácil, aumenta conforme acertos sucessivos
-- **Tipo de conteúdo:** Mais exemplos visuais se aluno é visual, mais casos textuais se prefere leitura
-- **Velocidade:** Mais tempo em tópicos problemáticos, revisão rápida de dominados
-- **Contexto:** Exemplos e problemas relacionados aos interesses específicos do aluno
-
-### Engajamento Gamificado
-
-- Sistema de pontos para atividades completadas
-- Badges/conquistas por marcos (primeira atividade, 10 acertos seguidos, participação consistente)
-- Quadro de progresso visual com barra de avanço por módulo
-- Desafios semanais com recompensas incrementais
-- Celebração de progressos (feedback positivo em cada marco)
-
-### Suporte Diferenciado
-
-- Dicas progressivas se aluno erra: 1ª dica geral, 2ª mais específica, 3ª quase a resposta
-- Recursos de reforço automático se identificar lacuna conceitual
-- Oportunidade de revisitar conceitos antes de avançar
-- Possibilidade de perguntar à IA sem limite, com múltiplas explicações disponíveis
-
-### Acompanhamento do Professor
-
-Dashboard com informações em tempo real:
-- Alunos com dificuldade em tópicos específicos
-- Taxa de progressão de cada aluno
-- Conceitos mais problemáticos para a turma
-- Sugestões automáticas de foco para aulas presenciais
-- Relatórios exportáveis para pais/responsáveis
+- **Diagnóstico inicial:** questões curtas para mapear o que o aluno já sabe e o seu ritmo.
+- **Personalização:** a dificuldade sobe com os acertos; mais exemplos visuais ou textuais conforme o aluno; revisão rápida do que ele já domina.
+- **Engajamento:** pontos, conquistas e barra de progresso por módulo.
+- **Suporte:** dicas progressivas (da geral à específica) e reforço automático quando houver lacuna.
+- **Professor:** painel com alunos em dificuldade e conceitos mais errados, para orientar a aula presencial.
 
 ---
 
@@ -214,7 +217,7 @@ Projetos que alunos trabalham em equipe: plano de negócios, pesquisa de mercado
 
 ### Indicadores de Aprendizagem
 
-- **Nota final:** 80% dos alunos com nota ≥ 6,0
+- **Nota final:** 80% dos alunos com nota ≥ 7,0
 - **Participação:** 85% dos alunos com taxa de engajamento ≥ 80%
 - **Retenção:** Menos de 10% de abandono
 - **Satisfação:** Média ≥ 8/10 em pesquisa de satisfação
@@ -332,25 +335,23 @@ Projetos que alunos trabalham em equipe: plano de negócios, pesquisa de mercado
 
 ## 🔍 XIII. PERGUNTAS FREQUENTES (FAQ) DETALHADO
 
-**P: Qual é o ritmo esperado de progresso na UC?**
-R: 1 módulo por semana (1,5h por semana no Chalkie + 1,5-2h em aulas presenciais). Alunos mais rápidos podem fazer 2 módulos/semana; os que precisam de reforço podem levar 2 semanas por módulo. Chalkie adapta automaticamente.
+**P: A UC é presencial?**
+R: Sim. As 36h são presenciais, em 9 aulas de 4h (seção VI). O Chalkie apoia a revisão entre as aulas e não substitui o encontro.
 
-**P: O que fazer se aluno ficar preso em um tópico?**
-R: Chalkie oferece 3 dicas progressivas. Se ainda não conseguir após 3 erros, conteúdo de reforço é automaticamente recomendado. Professor recebe notificação para acompanhamento individualizado na aula presencial.
+**P: Como é a aprovação?**
+R: Nota final mínima 7,0 e frequência mínima de 75%, conforme a ementa do curso. A nota combina provas (35%), projeto (40%), participação (15%) e autoavaliação (10%).
 
-**P: Como os pais acompanham o progresso do filho?**
-R: Relatório semanal por email mostrando: tópicos completados, pontuação, áreas de dificuldade, recomendações de reforço. Pais podem acessar painel simplificado em Chalkie (apenas visualização, sem alterar dados).
+**P: E se o aluno travar em um tópico?**
+R: O Chalkie oferece dicas progressivas e reforço; o professor retoma o tópico na aula seguinte e acompanha o aluno de perto.
 
-**P: A UC é totalmente online ou tem aula presencial?**
-R: Modelo híbrido. Chalkie é 50% (aprendizado autodirigido + atividades). Aulas presenciais 50% (aprofundamento, discussão, projeto prático). Professora planeja aulas com base no que Chalkie identificou como dificuldades.
+**P: Como os responsáveis acompanham?**
+R: Pelo relatório de progresso do Chalkie e pelo retorno do professor nas reuniões da escola.
 
-**P: Como é feita a avaliação final?**
-R: Combinação: Prova (35%), Projeto prático (40%), Participação em aula + Chalkie (15%), Autoavaliação (10%). Nota ≥ 6,0 para aprovação.
+**P: O aluno precisa abrir uma empresa?**
+R: Não. O plano de negócios é um exercício de aprendizagem e pode ser um projeto social, da escola ou da comunidade.
 
-**P: O Chalkie fornece certificado?**
-R: Sim, certificado automático ao completar 100% da UC e atingir nota final ≥ 6,0. Documento pode ser compartilhado com redes profissionais ou portfólio de competências.
+**P: Como trabalhar sustentabilidade junto com empreendedorismo?**
+R: Todo plano de negócios da turma inclui uma ação sustentável (5R's, coleta seletiva ou economia de água), ligando os módulos 2 e 3.
 
-**P: Posso usar a UC em formato totalmente online se necessário?**
-R: Sim, com aprovação da instituição. Aulas síncronas substituem presenciais. Mantém-se a qualidade de interação via Chalkie + videoconferências + trabalhos colaborativos online.
-
-**P: Há suporte se aluno tiver dificuldade com tecnologia?**
+**P: E as visitas técnicas?**
+R: Quando não for possível visitar, o professor convida um empreendedor da região para conversar com a turma ou usa entrevista gravada.

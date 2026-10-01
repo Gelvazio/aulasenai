@@ -35,6 +35,40 @@ Esta unidade curricular integra-se ao programa Rio do Sul Mais Tech, desenvolven
 
 ## 📖 III. CONTEÚDOS PROGRAMÁTICOS
 
+Conhecimentos da UC 4 na ementa do curso, em 5 módulos ligados às 9 aulas da seção VI.
+
+### Módulo 1 — Tecnologias de impressão 3D (Aula 1)
+- Histórico e aplicações da manufatura aditiva
+- FDM, SLA e SLS: diferenças, materiais e usos
+- Funcionamento da impressora: fatiamento, extrusão e camadas
+- Atividade: comparar peças feitas em cada tecnologia e apontar diferenças de acabamento
+
+### Módulo 2 — Modelagem 3D (Aula 2)
+- Interface do ambiente 3D (Tinkercad; noções de Fusion 360, Blender e SketchUp)
+- Criação e edição de sólidos básicos: agrupar, alinhar, furos e medidas
+- Uso de medidas reais (milímetros) e cuidado com peças pequenas demais para imprimir
+- Atividade: chaveiro personalizado com o nome do aluno
+
+### Módulo 3 — Do modelo à peça (Aulas 3 e 4)
+- Geração de arquivo STL
+- Configurações de fatiamento: altura de camada, preenchimento e temperatura
+- Design para impressão: espessura de paredes, suportes e orientação
+- Operação da impressora: nivelamento, calibração e segurança
+- Atividade: fatiar e imprimir o chaveiro, estimando tempo e material gasto
+
+### Módulo 4 — Fundamentos da robótica (Aulas 5 e 6)
+- Histórico da robótica
+- Classificação dos robôs: industriais, de serviço e móveis
+- Robôs na indústria de Santa Catarina: montagem, solda e logística
+- Componentes: sensores, atuadores robóticos, motores e controladores
+- Atividade: classificar robôs vistos em vídeos e ligar um sensor a um motor
+
+### Módulo 5 — Programação e integração (Aulas 7 a 9)
+- Programação de pontos e trajetórias (em blocos)
+- Integração entre robôs e com peças impressas
+- Testes e ajustes: depurar o programa passo a passo
+- Projeto integrado e apresentação (avaliação final)
+- Atividade: robô que percorre um trajeto usando uma peça projetada e impressa pela equipe
 
 ---
 
@@ -129,41 +163,11 @@ Sequência oficial da UC: 9 aulas presenciais de 4h = 36h, na ordem dos arquivos
 
 ## 📚 VII. ESTRATÉGIAS AVANÇADAS PARA IA E PERSONALIZAÇÃO
 
-### Diagnóstico Adaptativo Inicial
-
-A plataforma Chalkie deve iniciar com bateria de questões para mapeamento do conhecimento prévio: conceitos-chave, estilos de aprendizagem, preferências de formato (visual, textual, vídeo), ritmo de aprendizado, necessidades especiais. Base para trilha personalizada.
-
-### Personalização em Tempo Real
-
-Conforme o aluno interage com Chalkie, o sistema ajusta:
-- **Nível de dificuldade:** Começa fácil, aumenta conforme acertos sucessivos
-- **Tipo de conteúdo:** Mais exemplos visuais se aluno é visual, mais casos textuais se prefere leitura
-- **Velocidade:** Mais tempo em tópicos problemáticos, revisão rápida de dominados
-- **Contexto:** Exemplos e problemas relacionados aos interesses específicos do aluno
-
-### Engajamento Gamificado
-
-- Sistema de pontos para atividades completadas
-- Badges/conquistas por marcos (primeira atividade, 10 acertos seguidos, participação consistente)
-- Quadro de progresso visual com barra de avanço por módulo
-- Desafios semanais com recompensas incrementais
-- Celebração de progressos (feedback positivo em cada marco)
-
-### Suporte Diferenciado
-
-- Dicas progressivas se aluno erra: 1ª dica geral, 2ª mais específica, 3ª quase a resposta
-- Recursos de reforço automático se identificar lacuna conceitual
-- Oportunidade de revisitar conceitos antes de avançar
-- Possibilidade de perguntar à IA sem limite, com múltiplas explicações disponíveis
-
-### Acompanhamento do Professor
-
-Dashboard com informações em tempo real:
-- Alunos com dificuldade em tópicos específicos
-- Taxa de progressão de cada aluno
-- Conceitos mais problemáticos para a turma
-- Sugestões automáticas de foco para aulas presenciais
-- Relatórios exportáveis para pais/responsáveis
+- **Diagnóstico inicial:** questões curtas para mapear o que o aluno já sabe e o seu ritmo.
+- **Personalização:** a dificuldade sobe com os acertos; mais exemplos visuais ou textuais conforme o aluno; revisão rápida do que ele já domina.
+- **Engajamento:** pontos, conquistas e barra de progresso por módulo.
+- **Suporte:** dicas progressivas (da geral à específica) e reforço automático quando houver lacuna.
+- **Professor:** painel com alunos em dificuldade e conceitos mais errados, para orientar a aula presencial.
 
 ---
 
@@ -216,7 +220,7 @@ Projetos que alunos trabalham em equipe: plano de negócios, pesquisa de mercado
 
 ### Indicadores de Aprendizagem
 
-- **Nota final:** 80% dos alunos com nota ≥ 6,0
+- **Nota final:** 80% dos alunos com nota ≥ 7,0
 - **Participação:** 85% dos alunos com taxa de engajamento ≥ 80%
 - **Retenção:** Menos de 10% de abandono
 - **Satisfação:** Média ≥ 8/10 em pesquisa de satisfação
@@ -334,27 +338,26 @@ Projetos que alunos trabalham em equipe: plano de negócios, pesquisa de mercado
 
 ## 🔍 XIII. PERGUNTAS FREQUENTES (FAQ) DETALHADO
 
-**P: Qual é o ritmo esperado de progresso na UC?**
-R: 1 módulo por semana (1,5h por semana no Chalkie + 1,5-2h em aulas presenciais). Alunos mais rápidos podem fazer 2 módulos/semana; os que precisam de reforço podem levar 2 semanas por módulo. Chalkie adapta automaticamente.
+**P: A UC é presencial?**
+R: Sim. As 36h são presenciais, em 9 aulas de 4h (seção VI). O Chalkie apoia a revisão entre as aulas e não substitui o encontro.
 
-**P: O que fazer se aluno ficar preso em um tópico?**
-R: Chalkie oferece 3 dicas progressivas. Se ainda não conseguir após 3 erros, conteúdo de reforço é automaticamente recomendado. Professor recebe notificação para acompanhamento individualizado na aula presencial.
+**P: Como é a aprovação?**
+R: Nota final mínima 7,0 e frequência mínima de 75%, conforme a ementa do curso. A nota combina provas (35%), projeto (40%), participação (15%) e autoavaliação (10%).
 
-**P: Como os pais acompanham o progresso do filho?**
-R: Relatório semanal por email mostrando: tópicos completados, pontuação, áreas de dificuldade, recomendações de reforço. Pais podem acessar painel simplificado em Chalkie (apenas visualização, sem alterar dados).
+**P: E se o aluno travar em um tópico?**
+R: O Chalkie oferece dicas progressivas e reforço; o professor retoma o tópico na aula seguinte e acompanha o aluno de perto.
 
-**P: A UC é totalmente online ou tem aula presencial?**
-R: Modelo híbrido. Chalkie é 50% (aprendizado autodirigido + atividades). Aulas presenciais 50% (aprofundamento, discussão, projeto prático). Professora planeja aulas com base no que Chalkie identificou como dificuldades.
+**P: Como os responsáveis acompanham?**
+R: Pelo relatório de progresso do Chalkie e pelo retorno do professor nas reuniões da escola.
 
-**P: Como é feita a avaliação final?**
-R: Combinação: Prova (35%), Projeto prático (40%), Participação em aula + Chalkie (15%), Autoavaliação (10%). Nota ≥ 6,0 para aprovação.
+**P: As oficinas têm riscos?**
+R: Sim: o bico da impressora fica muito quente e os robôs têm peças móveis. Usar só com o professor, cabelo preso e sem tocar na impressora em funcionamento.
 
-**P: O Chalkie fornece certificado?**
-R: Sim, certificado automático ao completar 100% da UC e atingir nota final ≥ 6,0. Documento pode ser compartilhado com redes profissionais ou portfólio de competências.
+**P: Cada aluno imprime a sua peça?**
+R: Sim, mas a fila de impressão é organizada pelo professor: peças pequenas e rápidas (até 30 minutos) primeiro; as peças do projeto final são impressas por equipe.
 
-**P: Posso usar a UC em formato totalmente online se necessário?**
-R: Sim, com aprovação da instituição. Aulas síncronas substituem presenciais. Mantém-se a qualidade de interação via Chalkie + videoconferências + trabalhos colaborativos online.
+**P: Precisa saber programar antes?**
+R: Não. A programação é em blocos (Blockly), com desafios curtos de movimento, sensores e trajetórias, do simples ao mais difícil.
 
-**P: Há suporte se aluno tiver dificuldade com tecnologia?**
-R: Chalkie tem interface simples e intuitiva. Primeira aula presencial inclui tutorial. Suporte técnico disponível via chat dentro de Chalkie e email. Nenhum pré-requisito de informática é exigido.
-
+**P: E se a impressão falhar?**
+R: Faz parte do aprendizado: a turma analisa a causa (nivelamento, suporte, orientação ou temperatura), corrige no fatiador e imprime de novo.

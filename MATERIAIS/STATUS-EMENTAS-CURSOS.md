@@ -18,7 +18,7 @@
 
 # STATUS-EMENTAS-CURSOS — Consolidado
 
-**Última atualização:** 2026-10-01 15:00:49
+**Última atualização:** 2026-10-01 15:09:05
 **Escopo:** todos os cursos em `MATERIAIS/` (exceto `MATERIAS-GERAIS/`)
 **Fonte:** tamanho medido direto em cada `EMENTA-CHALKIE-AI.md`
 **Padrão de tamanho:** 14.800–14.950 caracteres
@@ -85,11 +85,11 @@
 
 | Matéria | Caracteres | Situação |
 |---|---|---|
-| COMPETENCIAS_SOCIOEMOCIONAIS_E_EMPREENDEDORISMO | 14.888 | ✅ Conforme |
+| COMPETENCIAS_SOCIOEMOCIONAIS_E_EMPREENDEDORISMO | 14.886 | ✅ Conforme |
 | EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS | 14.850 | ✅ Conforme |
 | FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO | 14.807 | ✅ Conforme |
 | NOCOES_ELETRICIDADE_CIRCUITOS_BASICOS | 14.863 | ✅ Conforme |
-| OFICINAS_IMPRESSAO_3D_ROBOTICA | 14.903 | ✅ Conforme |
+| OFICINAS_IMPRESSAO_3D_ROBOTICA | 14.885 | ✅ Conforme |
 | REFORCO_LINGUAGENS | 14.928 | ✅ Conforme |
 | REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO | 14.887 | ✅ Conforme |
 
