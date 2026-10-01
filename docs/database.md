@@ -379,6 +379,22 @@ const aulasMateria = await sbGet("aulas", "select=*&materia_id=eq.5&order=numero
 **Perfil:** vem do `app_metadata` (só a `service_role` altera — `scripts/criar-usuarios-supabase-auth.js`);
 `user_metadata` não é usado para permissão.
 
+### 🕒 Atualização 2026-10-01 — Atividade liberada fora do horário (por aluno)
+
+**Script:** `database/2026-10-01-atividade-liberada-fora-horario.sql` (aplicado no Supabase em
+2026-10-01). **Plano:** `docs/atividade-liberada-fora-horario.md`.
+
+| Objeto | Tipo | Descrição |
+|--------|------|-----------|
+| `atividade.atividade_liberada_fora_horario` | `jsonb not null default '[]'` (check: lista) | ids (`auth.users.id`) dos alunos que podem gravar/entregar a atividade fora do horário da turma |
+| `atividade_eh_avaliacao(id)` | função | `true` se a página começa com `AVALIACAO-` (objetivas 01/02, prática...) |
+| `pode_responder_no_horario(id)` | função | dentro do horário da turma **ou** (não é avaliação **e** aluno logado na lista) |
+| `liberar_fora_horario(atividade, aluno, liberar)` | função (só professor) | inclui/retira o aluno da lista; recusa avaliação |
+
+As políticas `resposta_insert`, `resposta_update` e `entrega_insert` passaram a usar
+`pode_responder_no_horario(atividade_id)` no lugar de `dentro_do_horario_da_turma()`.
+**Avaliações seguem sempre o horário da turma**, mesmo com o aluno na lista.
+
 ---
 
 ## 🔐 Segurança: RLS (Row Level Security)

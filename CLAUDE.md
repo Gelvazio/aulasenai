@@ -1162,6 +1162,15 @@ quantidade de alunos) que filtram as linhas e o resumo; a turma escolhida é lem
 `resumo_tentativas_atividade` (`database/2026-09-30-resumo-tentativas-professor.sql`); só o
 professor consegue chamá-la.
 
+### 🕒 Horário da turma e liberação fora do horário
+
+Registrada em 2026-10-01. O aluno só grava alternativas e entrega **dentro do horário da turma**
+(`turma.hora_inicio`/`hora_fim`, imposto pelo RLS). A coluna **`atividade.atividade_liberada_fora_horario`**
+(lista JSON de ids de alunos, padrão `[]`) libera a atividade fora do horário para os alunos da
+lista (função `liberar_fora_horario`, só professor). ⛔ **Avaliações (página `AVALIACAO-*`:
+objetivas 01/02, prática) nunca são liberadas** — seguem sempre o horário. SQL:
+`database/2026-10-01-atividade-liberada-fora-horario.sql`; plano: `docs/atividade-liberada-fora-horario.md`.
+
 ### 🔁 Tentativas: até 3 por atividade, liberadas pelo professor
 
 Registrada em 2026-09-30. Plano: `docs/regra-3-tentativas-atividade.md`;

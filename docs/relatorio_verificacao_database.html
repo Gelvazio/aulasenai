@@ -442,6 +442,40 @@
       <p>Documentação perfeita. Todos os campos, tipos e relacionamentos estão corretos.</p>
     </div>
 
+    <h2>🕒 Atualização 2026-10-01 — Atividade liberada fora do horário</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-01-atividade-liberada-fora-horario.sql</code> (aplicado em 2026-10-01)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>atividade.atividade_liberada_fora_horario</td>
+          <td><code>jsonb</code>, padrão <code>[]</code> (só lista)</td>
+          <td>Ids dos alunos que gravam/entregam a atividade fora do horário da turma</td>
+        </tr>
+        <tr>
+          <td>atividade_eh_avaliacao(id)</td>
+          <td>Função</td>
+          <td>Página começa com <code>AVALIACAO-</code> (objetivas 01/02, prática)</td>
+        </tr>
+        <tr>
+          <td>pode_responder_no_horario(id)</td>
+          <td>Função</td>
+          <td>Dentro do horário da turma ou (não é avaliação e aluno na lista)</td>
+        </tr>
+        <tr>
+          <td>liberar_fora_horario(atividade, aluno, liberar)</td>
+          <td>Função (só professor)</td>
+          <td>Inclui ou retira o aluno da lista; recusa avaliação</td>
+        </tr>
+      </table>
+      <p>Políticas <code>resposta_insert</code>, <code>resposta_update</code> e <code>entrega_insert</code> usam
+      <code>pode_responder_no_horario(atividade_id)</code>. Avaliações seguem sempre o horário da turma.</p>
+    </div>
+
     <h2>🆕 Atualização 2026-09-28 — Atividades, Gabarito e Respostas</h2>
     <div class="section">
       <div class="alert alert-warning">
