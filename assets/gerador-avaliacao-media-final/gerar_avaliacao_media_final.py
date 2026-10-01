@@ -252,6 +252,8 @@ def html_item(identificador, item):
         atributos += (f' data-grupo="{escapar(identificador)}"'
                       f' data-pontos="{numero_atributo(item["pontos"])}"'
                       f' data-pagina="{escapar(item["pagina"])}"')
+    if tem_pagina and "nota_fixa" in item:
+        atributos += f' data-nota-fixa="{numero_atributo(item["nota_fixa"])}"'
     return (f'{RECUO_LINHA}<tr {atributos}><td>{escapar(item["nome"])}</td>'
             f'<td>{escapar(item.get("conteudo", ""))}</td>'
             f'<td class="media-numero">{numero_exibido(item["pontos"])}</td>'

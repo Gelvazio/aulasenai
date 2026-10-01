@@ -114,6 +114,17 @@ async function buscarNotasDoAlunoLogadoMedia(atividades) {
 }
 
 /**
+ * Nota de uma linha: a nota fixa (data-nota-fixa, igual para todos os alunos) ou a do banco.
+ * @param {HTMLTableRowElement} linha - Linha com data-pagina.
+ * @param {Map<string, number>} notas - Melhor nota por caminho.
+ * @returns {number|undefined} Nota de 0 a 10 ou undefined se não houver.
+ */
+function notaDaLinhaMedia(linha, notas) {
+    if (linha.dataset.notaFixa !== undefined) return Number(linha.dataset.notaFixa);
+    return notas.get(caminhoDaPaginaMedia(linha.dataset.pagina));
+}
+
+/**
  * Escreve nota e pontos em cada linha com data-pagina (sem nota = "—").
  * @param {HTMLTableElement} tabela - Tabela da média final.
  * @param {Map<string, number>} notas - Melhor nota por caminho.
@@ -122,7 +133,7 @@ async function buscarNotasDoAlunoLogadoMedia(atividades) {
 function preencherLinhasMedia(tabela, notas) {
     let total = 0;
     tabela.querySelectorAll('tr[data-pagina]').forEach((linha) => {
-        const nota = notas.get(caminhoDaPaginaMedia(linha.dataset.pagina));
+        const nota = notaDaLinhaMedia(linha, notas);
         const temNota = nota !== undefined;
         const pontos = temNota ? (nota / NOTA_MAXIMA_MEDIA) * Number(linha.dataset.pontos) : 0;
         linha.dataset.obtidos = String(pontos);

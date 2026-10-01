@@ -120,3 +120,6 @@ C:\Python314\python.exe assets\gerador-avaliacao-media-final\gerar_avaliacao_med
 - Demais matérias: sem páginas de atividade, o gerador pula.
 - Pendência: as notas só aparecem para páginas cadastradas na tabela `atividade` (as Atividades
   Práticas de Excel e a prova prática ainda não têm nota no banco).
+
+- Item com `"nota_fixa": 10` (2026-10-01): a linha mostra essa nota para todos os alunos (atributo
+  `data-nota-fixa`, lido em `assets/js/avaliacao-media-final.js`). Gestão: Aulas 01–03 com nota 10.
