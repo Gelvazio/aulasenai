@@ -305,11 +305,11 @@
   text-align: left; vertical-align: middle;
 }
 .relatorio-professor__fez--sim, .relatorio-professor__fez--nao { font-weight: 700; }
-.relatorio-professor__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.relatorio-professor__acoes { display: flex; flex-wrap: nowrap; align-items: center; gap: 6px 10px; }
 /* Notas, Recuperação e Respostas do aluno: mesma altura */
 .relatorio-professor__acoes .btn-export {
   box-sizing: border-box; height: var(--acao-aluno-altura); margin: 0;
-  padding: 0 10px; font-size: 12px; line-height: 1;
+  padding: 0 10px; font-size: 12px; line-height: 1; white-space: nowrap;
   display: inline-flex; align-items: center; justify-content: center;
 }
 .relatorio-professor__detalhe > td { padding: 4px 8px 10px; }
