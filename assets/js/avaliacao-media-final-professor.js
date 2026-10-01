@@ -73,13 +73,15 @@ function notasDoAlunoProfessorMedia(alunoId) {
 }
 
 /**
- * Esvazia notas, pontos, subtotais e total da tabela (nenhum aluno escolhido).
+ * Esvazia notas, pontos, subtotais e total da tabela (nenhum aluno escolhido). As linhas com
+ * nota fixa (data-nota-fixa, igual para todos) continuam preenchidas.
  * @param {{tabela: HTMLTableElement, aviso: HTMLElement}} pagina - Elementos da página.
  * @param {string} mensagem - Texto do aviso abaixo da tabela.
  */
 function limparNotasMedia({ tabela, aviso }, mensagem) {
     tabela.querySelectorAll('[data-campo="nota"], [data-campo="pontos"]')
         .forEach((campo) => { campo.textContent = TEXTO_SEM_NOTA_MEDIA; });
+    preencherNotasFixasMedia(tabela);
     aviso.textContent = mensagem;
     aviso.classList.remove('media-situacao--abaixo');
 }

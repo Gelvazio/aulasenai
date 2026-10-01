@@ -125,6 +125,19 @@ function notaDaLinhaMedia(linha, notas) {
 }
 
 /**
+ * Escreve a nota e os pontos das linhas com nota fixa (valem para todos os alunos).
+ * @param {HTMLTableElement} tabela - Tabela da média final.
+ */
+function preencherNotasFixasMedia(tabela) {
+    tabela.querySelectorAll('tr[data-nota-fixa]').forEach((linha) => {
+        const nota = Number(linha.dataset.notaFixa);
+        const pontos = (nota / NOTA_MAXIMA_MEDIA) * Number(linha.dataset.pontos);
+        linha.querySelector('[data-campo="nota"]').textContent = formatarNumeroMedia(nota);
+        linha.querySelector('[data-campo="pontos"]').textContent = formatarNumeroMedia(pontos);
+    });
+}
+
+/**
  * Escreve nota e pontos em cada linha com data-pagina (sem nota = "—").
  * @param {HTMLTableElement} tabela - Tabela da média final.
  * @param {Map<string, number>} notas - Melhor nota por caminho.
