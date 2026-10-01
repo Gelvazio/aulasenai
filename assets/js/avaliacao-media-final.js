@@ -136,6 +136,20 @@ function preencherLinhasMedia(tabela, notas) {
 }
 
 /**
+ * Escreve a nota (0 a 10) de um subtotal que tem campo de nota, para lançar no sistema com o
+ * peso do grupo (ex.: média das 10 atividades = pontos obtidos ÷ 30 × 10).
+ * @param {HTMLTableRowElement} linha - Linha do subtotal (com data-pontos).
+ * @param {number} soma - Pontos obtidos no grupo.
+ */
+function preencherNotaSubtotalMedia(linha, soma) {
+    const campoNota = linha.querySelector('[data-campo="nota"]');
+    const pontosDoGrupo = Number(linha.dataset.pontos);
+    if (!campoNota || !pontosDoGrupo) return;
+
+    campoNota.textContent = formatarNumeroMedia((soma / pontosDoGrupo) * NOTA_MAXIMA_MEDIA);
+}
+
+/**
  * Escreve os pontos de cada subtotal (soma das linhas do mesmo grupo) e o total geral.
  * @param {HTMLTableElement} tabela - Tabela da média final.
  * @param {number} total - Total de pontos.
@@ -146,6 +160,7 @@ function preencherSomasMedia(tabela, total) {
             'tr[data-pagina][data-grupo="' + linha.dataset.subtotal + '"]')]
             .reduce((acumulado, item) => acumulado + Number(item.dataset.obtidos || 0), 0);
         linha.querySelector('[data-campo="pontos"]').textContent = formatarNumeroMedia(soma);
+        preencherNotaSubtotalMedia(linha, soma);
     });
     tabela.querySelector('tr[data-total] [data-campo="pontos"]').textContent =
         formatarNumeroMedia(total);

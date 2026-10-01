@@ -62,8 +62,9 @@ async function buscarAtividadeDiscursiva() {
  * @returns {Promise<{nome: string, turma: string}>} Identificação para exibir.
  */
 async function lerIdentificacaoDiscursiva(usuario) {
-    const linhas = await sbGet('aluno',
-        'select=nome,turma_codigo,turma(nome)&id=eq.' + encodeURIComponent(usuario.id));
+    // Duas FKs ligam aluno e turma (turma_codigo e turma.lider_aluno_id): o embed diz qual usar.
+    const linhas = await sbGet('aluno', 'select=nome,turma_codigo,' +
+        'turma!aluno_turma_codigo_fkey(nome)&id=eq.' + encodeURIComponent(usuario.id));
     const aluno = linhas[0];
     if (!aluno) return { nome: usuario.user_metadata?.nome || usuario.email, turma: '' };
     const nomeTurma = aluno.turma?.nome ? aluno.turma.nome + ' (' + aluno.turma_codigo + ')' : '';
