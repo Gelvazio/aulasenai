@@ -38,6 +38,10 @@ window.MENU_ATIVIDADES = {
           link: 'AVALIACAO-OBJETIVA-02.html',
         },
         {
+          rotulo: '✍️ Avaliação Prática (aulas 01–10, discursiva)',
+          link: 'AVALIACAO-PRATICA.html',
+        },
+        {
           rotulo: '🏁 Avaliação — Média Final (100 pontos)',
           link: 'AVALIACAO-MEDIA-FINAL.html',
         },

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ROTULO}} — {{TEMA}} ({{TOTAL}} Questões Discursivas)</title>
+    <link rel="stylesheet" href="{{ASSETS}}/css/atividade.css">
+    <link rel="stylesheet" href="{{ASSETS}}/css/avaliacao-discursiva.css">
+{{MENU}}
+</head>
+<body data-aula="{{AULA}}" data-tema="{{TEMA}}" data-total="{{TOTAL}}" data-topicos="{{TOPICOS}}"
+      data-uc="{{UC}}" data-uc-curta="{{UC_CURTA}}" data-docente="{{DOCENTE}}"{{TURMA}}
+      data-maximo-caracteres="{{MAXIMO_CARACTERES}}" data-login="sim">
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>{{ICONE}} {{ROTULO}}: {{TEMA}}</h1>
+            <p>{{UC_CURTA}} · {{CURSO}} — {{TOTAL}} Questões Discursivas</p>
+        </header>
+
+        <main class="content-section">
+            <!-- Conteúdo gerado a partir de {{ARQUIVO_MD}} por gerar_avaliacao_discursiva.py -->
+            <section class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <h2 class="aula-title">Como Responder</h2>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> {{DURACAO}}<br>
+                        <strong>Formato:</strong> {{FORMATO}}<br>
+                        <strong>Total de questões:</strong> {{TOTAL}} ({{TOPICOS}} tópicos)<br>
+                        <strong>Pontuação:</strong> {{PONTUACAO}}
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE AVALIADA</div>
+                    <div class="content-text">{{CAPACIDADE}}</div>
+                </div>
+{{ORIENTACOES}}
+            </section>
+
+            <section id="painel-discursivo" class="aula-card painel-discursivo" aria-live="polite">
+                <span class="aula-badge">IDENTIFICAÇÃO</span>
+                <p class="painel-discursivo__texto">Carregando...</p>
+            </section>
+
+{{QUESTOES}}
+            <section class="aula-card entrega-discursiva">
+                <span class="aula-badge">ENTREGA</span>
+                <h2 class="aula-title">Finalizar a avaliação</h2>
+                <p class="entrega-discursiva__texto">Confira se todos os tópicos estão com
+                    ✅ Resposta gravada. Depois de finalizar, as respostas não podem mais ser
+                    alteradas.</p>
+                <button class="btn-export entrega-discursiva__botao" id="btnFinalizarDiscursiva"
+                        type="button" hidden>✅ Finalizar e entregar</button>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p><strong>{{UC}} — {{ROTULO}}: {{TEMA}}</strong></p>
+        <p>{{CURSO}} — SENAI</p>
+        <p>{{TOTAL}} Questões • Discursiva</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="{{RAIZ}}/js/supabase.js"></script>
+    <script src="{{RAIZ}}/js/login.js"></script>
+    <script src="{{ASSETS}}/js/popup.js"></script>
+    <script src="{{ASSETS}}/js/termos-tentativa.js"></script>
+    <script src="{{ASSETS}}/js/respostas-discursivas-banco.js"></script>
+    <script src="{{ASSETS}}/js/avaliacao-discursiva.js"></script>
+</body>
+</html>

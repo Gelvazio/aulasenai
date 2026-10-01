@@ -12,10 +12,11 @@
 - **Correção:** as respostas ficam gravadas no banco e são corrigidas depois (com apoio de IA e revisão do professor).
 - **Folha de respostas:** sim
 - **Turma:** AI AOPL 2026/2 M1 (135080)
+- **Aula no banco:** 10
 
 **Empresa fictícia de todas as questões:** Distribuidora Vale Sul Logística — centro de distribuição com recebimento, armazenagem, expedição e escritório administrativo.
 
-**Como responder:** cada questão tem um ou mais **tópicos**. Escreva a resposta de **cada tópico no seu campo**, com frases completas e com as suas palavras. Respostas copiadas da internet ou de colegas recebem nota zero no tópico.
+**Como responder:** Cada questão tem um ou mais **tópicos**. Escreva a resposta de **cada tópico no seu campo**, com frases completas e com as suas palavras. Respostas copiadas da internet ou de colegas recebem nota zero no tópico.
 
 ---
 

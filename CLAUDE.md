@@ -1200,6 +1200,25 @@ SQL: `database/2026-09-30-tentativas-atividade.sql` (o professor roda no SQL Edi
   questão NN = X" (falha: "❌ Resposta NÃO gravada"); "Finalizar" pede confirmação e, ao gravar,
   avisa a tentativa entregue e o que fazer em seguida.
 
+### ✍️ Avaliações discursivas (resposta escrita, corrigida depois com IA)
+
+Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
+
+- ✅ Fonte: `ATIVIDADES/CONTEUDO/<NOME>.md` com `## ITEM NN — Título`, `- **Aula:**`, `**Contexto:**`,
+  `**Comando:**` e `**Tópicos:**` (`- a) enunciado (0,5)`); os tópicos de cada questão somam 1 ponto.
+  Padrão de resposta e critérios para a IA em `<NOME>-GABARITO.md` (fora do Git).
+- ✅ Gerador: `C:\Python314\python.exe assets\gerador-avaliacao-discursiva\gerar_avaliacao_discursiva.py
+  <pasta ATIVIDADES> [<NOME>.md]` → página `<NOME>.html` (um campo por tópico) e seed
+  `database/<data>-<nome>-seed-atividades.sql` (fora do Git; a avaliação nasce bloqueada).
+- ✅ Banco: `resposta_discursiva` (texto por aluno, tentativa, item e tópico) e `topico_discursivo`
+  (enunciado, pontos, padrão de resposta; só o professor lê). `atividade_completa()` exige todos
+  os tópicos gravados para entregar. SQL: `database/2026-10-01-respostas-discursivas.sql`.
+- ✅ Página: `assets/js/respostas-discursivas-banco.js` (dados) + `assets/js/avaliacao-discursiva.js`
+  (tela) + `assets/css/avaliacao-discursiva.css`. Gravação automática 1,5 s após parar de digitar,
+  sem localStorage; "Finalizar" relê o banco e lista os tópicos faltando. Valem login, horário da
+  turma, bloqueio pelo professor e recuperação (a nova tentativa abre em branco).
+- ⏳ Correção com IA e nota da prática na média final: tarefa seguinte.
+
 ## 🪟 REGRA CRÍTICA — AVISOS AO USUÁRIO: sempre POPUP, nunca `alert()`/`confirm()`
 
 Registrada em 2026-09-30. Componente reutilizável: `assets/js/popup.js` + `assets/css/popup.css`
