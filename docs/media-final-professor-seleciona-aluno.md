@@ -62,3 +62,11 @@ aparece nesta página.
 - Novo `assets/js/avaliacao-media-final-professor.js` (combos Turma/Aluno, notas pelo
   `resumo_tentativas_atividade`); `avaliacao-media-final.js` separado em busca × exibição.
 - Pendência: líder da turma da SALETE (a verificar); por enquanto vale o 1º da chamada.
+
+## Atualização 2026-10-01 — combo começa em "Selecione o Aluno"
+
+- A pedido do professor, o combo **Aluno** deixa de abrir no líder: sempre começa na opção
+  **"Selecione o Aluno"**, com a tabela vazia ("—") e o aviso "Selecione o aluno para ver as notas."
+  O líder continua marcado com "⭐ líder" na lista.
+- Perfil ALUNO não muda: a página carrega as notas do próprio aluno logado.
+- Arquivo: `assets/js/avaliacao-media-final-professor.js`.

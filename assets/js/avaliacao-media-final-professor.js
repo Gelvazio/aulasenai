@@ -1,6 +1,7 @@
 // AVALIACAO-MEDIA-FINAL.html, perfil PROFESSOR: combos Turma e Aluno acima da tabela. A turma que
-// já vem escolhida é a favorita (turma.favorito); o aluno, o líder da sala (turma.lider_aluno_id)
-// ou, sem líder, o primeiro da chamada. Só aparecem as turmas da UC da página (body data-uc).
+// já vem escolhida é a favorita (turma.favorito); o combo Aluno sempre começa em "Selecione o
+// Aluno", com a tabela vazia, até o professor escolher. Só aparecem as turmas da UC da página
+// (body data-uc).
 // As notas vêm de resumo_tentativas_atividade (função só do professor), melhor tentativa entregue.
 // Depende de avaliacao-media-final.js (NOTA_MAXIMA_MEDIA, agruparMelhoresNotasMedia,
 // exibirNotasMedia) e de js/supabase.js (SUPABASE, sbGet, sbH).
@@ -14,6 +15,8 @@ const ROTULO_ALUNO_MEDIA = 'Aluno';
 const SUFIXO_LIDER_MEDIA = ' ⭐ líder';
 const SUFIXO_FORA_CHAMADA_MEDIA = ' (fora da chamada)';
 const MSG_SEM_ALUNOS_MEDIA = 'Nenhum aluno cadastrado nesta turma.';
+const OPCAO_SELECIONE_ALUNO_MEDIA = 'Selecione o Aluno';
+const MSG_SELECIONE_ALUNO_MEDIA = 'Selecione o aluno para ver as notas.';
 
 const estadoProfessorMedia = { turmas: [], alunos: [], atividades: [], resumos: [] };
 
@@ -70,16 +73,15 @@ function notasDoAlunoProfessorMedia(alunoId) {
 }
 
 /**
- * Escolhe o aluno padrão da turma: o líder ou, sem líder, o primeiro da chamada.
- * @param {Object} turma - Turma escolhida.
- * @param {Object[]} alunos - Alunos da turma, em ordem de chamada.
- * @returns {Object|undefined} Aluno padrão.
+ * Esvazia notas, pontos, subtotais e total da tabela (nenhum aluno escolhido).
+ * @param {{tabela: HTMLTableElement, aviso: HTMLElement}} pagina - Elementos da página.
+ * @param {string} mensagem - Texto do aviso abaixo da tabela.
  */
-function escolherAlunoPadraoMedia(turma, alunos) {
-    const lider = alunos.find((aluno) => aluno.id === turma.lider_aluno_id);
-    if (lider) return lider;
-
-    return alunos.find((aluno) => aluno.na_chamada !== false) || alunos[0];
+function limparNotasMedia({ tabela, aviso }, mensagem) {
+    tabela.querySelectorAll('[data-campo="nota"], [data-campo="pontos"]')
+        .forEach((campo) => { campo.textContent = TEXTO_SEM_NOTA_MEDIA; });
+    aviso.textContent = mensagem;
+    aviso.classList.remove('media-situacao--abaixo');
 }
 
 /**
@@ -103,32 +105,30 @@ function criarComboMedia(rotulo) {
  */
 function mostrarAlunoMedia(pagina, aluno) {
     if (!aluno) {
-        exibirNotasMedia(pagina, new Map(), '');
-        pagina.aviso.textContent = MSG_SEM_ALUNOS_MEDIA;
+        limparNotasMedia(pagina, MSG_SELECIONE_ALUNO_MEDIA);
         return;
     }
     exibirNotasMedia(pagina, notasDoAlunoProfessorMedia(aluno.id), aluno.nome);
 }
 
 /**
- * Preenche o combo de alunos da turma e mostra o aluno padrão (líder ou 1º da chamada).
+ * Preenche o combo de alunos da turma, já em "Selecione o Aluno", com a tabela vazia.
  * @param {{pagina: Object, lista: HTMLSelectElement}} combo - Página e combo de alunos.
  * @param {Object} turma - Turma escolhida.
  */
 function trocarTurmaMedia({ pagina, lista }, turma) {
     const alunos = estadoProfessorMedia.alunos
         .filter((aluno) => aluno.turma_codigo === turma.codigo);
-    lista.replaceChildren(...alunos.map((aluno) => new Option(
-        (aluno.numero_chamada ?? '-') + ' — ' + aluno.nome +
+    lista.replaceChildren(new Option(OPCAO_SELECIONE_ALUNO_MEDIA, ''), ...alunos.map((aluno) =>
+        new Option((aluno.numero_chamada ?? '-') + ' — ' + aluno.nome +
         (aluno.id === turma.lider_aluno_id ? SUFIXO_LIDER_MEDIA : '') +
         (aluno.na_chamada === false ? SUFIXO_FORA_CHAMADA_MEDIA : ''), aluno.id)));
-    const padrao = escolherAlunoPadraoMedia(turma, alunos);
-    if (padrao) lista.value = padrao.id;
-    mostrarAlunoMedia(pagina, padrao);
+    lista.value = '';
+    limparNotasMedia(pagina, alunos.length ? MSG_SELECIONE_ALUNO_MEDIA : MSG_SEM_ALUNOS_MEDIA);
 }
 
 /**
- * Monta os combos Turma e Aluno e mostra o líder da turma favorita.
+ * Monta os combos Turma e Aluno, com a turma favorita e o aluno em "Selecione o Aluno".
  * @param {{tabela: HTMLTableElement, aviso: HTMLElement}} pagina - Elementos da página.
  * @param {{id: number, pagina: string}[]} atividades - Atividades da tabela.
  */
