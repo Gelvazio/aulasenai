@@ -238,7 +238,7 @@ function alternarNotasAluno(bloco) {
 function definirNotasAluno(bloco, visiveis) {
     bloco.classList.toggle(CLASSE_NOTAS_OCULTAS, !visiveis);
     const botao = bloco.querySelector('.' + CLASSE_RELATORIO + '__ver-notas');
-    if (botao) botao.textContent = visiveis ? 'Ocultar Notas' : 'Visualizar Notas';
+    if (botao) botao.textContent = visiveis ? 'Ocultar Notas' : 'Notas';
 }
 
 /**
@@ -269,7 +269,7 @@ function passaNosFiltros(bloco, turma) {
 }
 
 /**
- * Cria a tabela de tentativas de um aluno (mostrada só ao clicar em Visualizar Notas).
+ * Cria a tabela de tentativas de um aluno (mostrada só ao clicar em Notas).
  * @param {Object[]} tentativas - Linhas do resumo do aluno.
  * @param {Object} base - {secao, atividadeId, maximo}.
  * @returns {HTMLElement} Linha de detalhe com a tabela aninhada.
@@ -290,7 +290,7 @@ function montarDetalheAluno(tentativas, base) {
 }
 
 /**
- * Cria a célula de ações do aluno: Visualizar Notas e Liberar nova tentativa.
+ * Cria a célula de ações do aluno: Notas e Recuperação (ou Nova tentativa).
  * @param {HTMLElement} bloco - Bloco (tbody) do aluno.
  * @param {Object[]} tentativas - Linhas do resumo do aluno.
  * @param {Object} base - {secao, atividadeId, maximo, notaFinal}.
@@ -300,7 +300,7 @@ function criarCelulaAcoesAluno(bloco, tentativas, base) {
     const celula = criarElemento('td');
     const grupo = criarElemento('div', CLASSE_RELATORIO + '__acoes');
     grupo.append(criarBotao('btn-export ' + CLASSE_RELATORIO + '__ver-notas',
-        'Visualizar Notas', () => alternarNotasAluno(bloco)),
+        'Notas', () => alternarNotasAluno(bloco)),
     criarControleLiberar({ ...base, linha: tentativas[tentativas.length - 1] }),
     criarBotao('btn-export ' + CLASSE_RELATORIO + '__carregar-respostas', 'Respostas',
         () => carregarRespostasDoAluno(tentativas[0].aluno_id, tentativas[0].nome || '')));
