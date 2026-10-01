@@ -28,6 +28,9 @@ CAMPO_PDF_GABARITO = "Exportar PDF com gabarito"
 PREFIXOS_SEM_SUFIXO = ("AVALIACAO-", "ATIVIDADE-")
 VALOR_ATIVADO = "sim"
 URL_SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+PADRAO_DATA_NOME = re.compile(r"(\d{2})-(\d{2})-(\d{4})")
+ROTULOS_SLIDES = {".pdf": "📕 Slides (PDF)", ".pptx": "📕 Slides (PowerPoint)"}
+ROTULO_SLIDES_PADRAO = "📕 Slides"
 
 e = html.escape
 
@@ -232,6 +235,20 @@ def link(pasta, nome, rotulo, classe):
     return f'<a class="btn {classe}" href="{quote(nome)}">{rotulo}</a>'
 
 
+def rotulo_slides(nome):
+    """Rótulo do botão de slides conforme a extensão real do arquivo (PDF ou PowerPoint)."""
+    return ROTULOS_SLIDES.get(Path(nome or "").suffix.lower(), ROTULO_SLIDES_PADRAO)
+
+
+def chave_ordem_data(md_path):
+    """Ordena pela data DD-MM-AAAA do nome (cronológica); arquivos sem data vão para o fim."""
+    achado = PADRAO_DATA_NOME.search(md_path.name)
+    if not achado:
+        return (1, "", md_path.name)
+    dia, mes, ano = achado.groups()
+    return (0, f"{ano}{mes}{dia}", md_path.name)
+
+
 def gerar_index(pasta, aulas, dados):
     cards = []
     for a in aulas:
@@ -248,7 +265,7 @@ def gerar_index(pasta, aulas, dados):
             <div class="acoes">
                 {link(pasta, a["html"], "📝 Atividade", "principal")}
                 {link(pasta, a["conteudo"], "📚 Conteúdo (.md)", "")}
-                {link(pasta, a["pdf"], "📕 Slides (PDF)", "")}
+                {link(pasta, a["pdf"], rotulo_slides(a["pdf"]), "")}
             </div>
             <details>
                 <summary>Ver os {a["total"]} itens</summary>
@@ -273,7 +290,7 @@ def gerar_index(pasta, aulas, dados):
             <p>{e(dados["curso"])} — SENAI</p>
         </header>
         <div class="resumo">
-            <span>{len(aulas)} aulas</span><span>·</span><span>{total_q} questões</span><span>·</span><span>50 questões por aula, múltipla escolha (A–D), com exportação em PDF e gabarito</span>
+            <span>{len(aulas)} aulas</span><span>·</span><span>{total_q} questões</span><span>·</span><span>50 questões por aula, múltipla escolha (A–D), com exportação em PDF</span>
         </div>
         <section class="grade">
 {chr(10).join(cards)}
@@ -300,7 +317,7 @@ def main():
         meta = gerar_atividade(md, dados)
         print(f"{meta['rotulo']}: {meta['total']} itens -> {meta['html']} (index.html não alterado)")
         return
-    arquivos = sorted(pasta.glob("ATIVIDADES-AULA-*-50-QUESTOES.md"))
+    arquivos = sorted(pasta.glob("ATIVIDADES-AULA-*-50-QUESTOES.md"), key=chave_ordem_data)
     aulas = [gerar_atividade(md, dados) for md in arquivos]
     gerar_index(pasta, aulas, dados)
     for a in aulas:
