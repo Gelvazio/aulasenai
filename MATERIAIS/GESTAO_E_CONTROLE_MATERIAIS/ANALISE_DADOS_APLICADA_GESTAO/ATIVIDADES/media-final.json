@@ -58,18 +58,18 @@
           "nome": "Avaliação Objetiva 01",
           "conteudo": "Aulas 01 a 04",
           "pagina": "AVALIACAO-OBJETIVA-01.html",
-          "pontos": 15,
-          "peso": "15%"
+          "pontos": 20,
+          "peso": "20%"
         },
         {
           "nome": "Avaliação Objetiva 02",
           "conteudo": "Aulas 05 a 07",
           "pagina": "AVALIACAO-OBJETIVA-02.html",
-          "pontos": 15,
-          "peso": "15%"
+          "pontos": 20,
+          "peso": "20%"
         }
       ],
-      "subtotal": "Subtotal — 2 provas objetivas (15 pontos cada)"
+      "subtotal": "Subtotal — 2 provas objetivas (20 pontos cada)"
     },
     {
       "id": "pratica",
@@ -78,26 +78,26 @@
           "nome": "Prova Prática — Excel 29/09",
           "conteudo": "Controle de Estoque do Almoxarifado",
           "pagina": "ATIVIDADE-EXCEL-29-09-2026.html",
-          "pontos": 15,
-          "peso": "15%"
+          "pontos": 10,
+          "peso": "10%"
         },
         {
           "nome": "Prova Prática — Excel 01/10",
           "conteudo": "Análise de Compras com Tabelas Dinâmicas",
           "pagina": "ATIVIDADE-EXCEL-01-10-2026.html",
-          "pontos": 15,
-          "peso": "15%"
+          "pontos": 10,
+          "peso": "10%"
         }
       ],
-      "subtotal": "Subtotal — prova prática (2 atividades de Excel, 15 pontos cada)"
+      "subtotal": "Subtotal — prova prática (2 atividades de Excel, 10 pontos cada)"
     }
   ],
   "regras": [
     "Cada instrumento tem nota de 0 a 10, convertida para os pontos dele. Exemplo: nota 8 numa atividade de 5,71 pontos = 4,57 pontos.",
     "Nas provas objetivas vale a melhor nota entre a avaliação e as recuperações.",
-    "A prova prática são as 2 atividades práticas de Excel (15 pontos cada).",
+    "A prova prática são as 2 atividades práticas de Excel (10 pontos cada).",
     "Atividade ou prova não feita vale 0 ponto.",
-    "**Peso no sistema:** soma das 7 atividades em sala 40% (lançar a média delas, de 0 a 10, mostrada no subtotal), Avaliação Objetiva 01 15%, Avaliação Objetiva 02 15%, Prova Prática — Excel 29/09 15% e Prova Prática — Excel 01/10 15%. Nota final = soma de cada nota × peso.",
+    "**Peso no sistema:** soma das 7 atividades em sala 40% (lançar a média delas, de 0 a 10, mostrada no subtotal), Avaliação Objetiva 01 20%, Avaliação Objetiva 02 20%, Prova Prática — Excel 29/09 10% e Prova Prática — Excel 01/10 10%. Nota final = soma de cada nota × peso.",
     "**Aprovação: 70 pontos ou mais** (equivale à nota mínima 7)."
   ]
 }
