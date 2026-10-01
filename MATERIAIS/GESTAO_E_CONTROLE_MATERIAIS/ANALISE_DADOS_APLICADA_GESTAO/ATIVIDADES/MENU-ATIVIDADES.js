@@ -19,6 +19,7 @@ window.MENU_ATIVIDADES = {
         { rotulo: 'Aula 06 — Excel avançado: tabelas dinâmicas e gráficos', link: 'ATIVIDADES-6-EXCEL-AVANCADO-TABELAS-DINAMICAS-E-GRAFICOS-50-QUESTOES.html' },
         { rotulo: 'Aula 07 — Dashboards interativos', link: 'ATIVIDADES-7-DASHBOARDS-INTERATIVOS-E-INTEGRACAO-DE-DADOS-50-QUESTOES.html' },
         { rotulo: '📝 Avaliação Objetiva 02 — Aulas 05 a 07', link: 'AVALIACAO-OBJETIVA-02.html' },
+        { rotulo: '✍️ Prova Prática — Aulas 01 a 06 (discursiva)', link: 'PROVA-PRATICA.html' },
       ],
     },
     {
