@@ -1,0 +1,50 @@
+{
+  "nota_minima": 70,
+  "grupos": [
+    {
+      "id": "atividades",
+      "peso": "30%",
+      "nota_subtotal": true,
+      "subtotal": "Subtotal — 10 atividades (3 pontos cada)",
+      "itens": [
+        { "nome": "Atividade Aula 01", "conteudo": "Comunicação profissional", "pontos": 3, "pagina": "ATIVIDADES-AULA-01-50-QUESTOES.html" },
+        { "nome": "Atividade Aula 02", "conteudo": "Hardware, periféricos e sistemas operacionais", "pontos": 3, "pagina": "ATIVIDADES-AULA-02-50-QUESTOES.html" },
+        { "nome": "Atividade Aula 03", "conteudo": "Navegação na web e pesquisa", "pontos": 3, "pagina": "ATIVIDADES-AULA-03-50-QUESTOES.html" },
+        { "nome": "Atividade Aula 04", "conteudo": "Comunicação digital e nuvem", "pontos": 3, "pagina": "ATIVIDADES-AULA-04-50-QUESTOES.html" },
+        { "nome": "Atividade Aula 05", "conteudo": "Segurança da informação", "pontos": 3, "pagina": "ATIVIDADES-AULA-05-50-QUESTOES.html" },
+        { "nome": "Atividade Aula 06", "conteudo": "Editor de textos", "pontos": 3, "pagina": "ATIVIDADES-AULA-06-50-QUESTOES.html" },
+        { "nome": "Atividade Aula 07", "conteudo": "Textos técnicos e redação empresarial", "pontos": 3, "pagina": "ATIVIDADES-AULA-07-50-QUESTOES.html" },
+        { "nome": "Atividade Aula 08", "conteudo": "Planilhas: organização e fórmulas", "pontos": 3, "pagina": "ATIVIDADES-AULA-08-50-QUESTOES.html" },
+        { "nome": "Atividade Aula 09", "conteudo": "Planilhas: análise visual e gráficos", "pontos": 3, "pagina": "ATIVIDADES-AULA-09-50-QUESTOES.html" },
+        { "nome": "Atividade Aula 10", "conteudo": "Editor de apresentações", "pontos": 3, "pagina": "ATIVIDADES-AULA-10-50-QUESTOES.html" }
+      ]
+    },
+    {
+      "id": "objetiva",
+      "subtotal": "Subtotal — 2 provas objetivas (20 pontos cada)",
+      "itens": [
+        { "nome": "Avaliação Objetiva 01", "conteudo": "Aulas 01 a 05", "pontos": 20, "peso": "20%", "pagina": "AVALIACAO-OBJETIVA-01.html" },
+        { "nome": "Avaliação Objetiva 02", "conteudo": "Aulas 06 a 10", "pontos": 20, "peso": "20%", "pagina": "AVALIACAO-OBJETIVA-02.html" }
+      ]
+    },
+    {
+      "id": "pratica",
+      "peso": "30%",
+      "pontos": 30,
+      "pagina": "AVALIACAO-PRATICA.html",
+      "subtotal": "Subtotal — 1 prova prática",
+      "itens": [
+        { "nome": "Prova Prática — execução", "conteudo": "Tarefa feita corretamente", "pontos": 15 },
+        { "nome": "Prova Prática — organização", "conteudo": "Organização e formatação", "pontos": 10 },
+        { "nome": "Prova Prática — entrega", "conteudo": "Entrega no prazo", "pontos": 5 }
+      ]
+    }
+  ],
+  "regras": [
+    "Cada atividade e cada prova objetiva tem nota de 0 a 10, convertida para os pontos dela. Exemplo: nota 8 numa atividade de 3 pontos = 2,4 pontos.",
+    "Nas provas objetivas vale a melhor nota entre a avaliação e as recuperações.",
+    "Atividade ou prova não feita vale 0 ponto.",
+    "**Peso no sistema:** soma das 10 atividades 30% (lançar a média delas, de 0 a 10, mostrada no subtotal), Avaliação Objetiva 01 20%, Avaliação Objetiva 02 20% e Prova Prática 30%. Nota final = soma de cada nota × peso.",
+    "**Aprovação: 70 pontos ou mais** (equivale à nota mínima 7)."
+  ]
+}

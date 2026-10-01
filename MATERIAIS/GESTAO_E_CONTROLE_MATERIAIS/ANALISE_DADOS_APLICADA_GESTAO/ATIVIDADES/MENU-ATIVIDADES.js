@@ -6,6 +6,7 @@ window.MENU_ATIVIDADES = {
   titulo: 'Análise de Dados Aplicada à Gestão',
   itens: [
     { rotulo: '📚 Índice', link: 'index.html' },
+    { rotulo: '🏁 Avaliação — Média Final (100 pontos)', link: 'AVALIACAO-MEDIA-FINAL.html' },
     {
       rotulo: '📝 Atividades por aula (50 questões)',
       subitens: [

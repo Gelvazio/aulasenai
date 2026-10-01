@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação — Média Final (100 pontos)</title>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/avaliacao-media-final.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="../../../../js/supabase.js" defer></script>
+    <script src="../../../../assets/js/avaliacao-media-final-professor.js" defer></script>
+    <script src="../../../../assets/js/avaliacao-media-final.js" defer></script>
+    <link rel="stylesheet" href="../../../../assets/css/menu.css">
+    <script src="MENU-ATIVIDADES.js" defer></script>
+    <script src="../../../../js/menu.js" defer></script>
+    <script src="../../../../js/header-usuario.js" defer></script>
+</head>
+<body data-uc="Análise de Dados Aplicada à Gestão">
+<div id="header-usuario"></div>
+    <!-- gerador-avaliacao-media-final: página gerada a partir de media-final.json -->
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🏁 Avaliação — Média Final</h1>
+            <p>Análise de Dados Aplicada à Gestão · Técnico em Assistente em Processos de Gestão e Controle de Materiais — 100 pontos somados</p>
+        </header>
+
+        <main class="content-section">
+            <section class="aula-card">
+                <span class="aula-badge">COMPOSIÇÃO</span>
+                <h2 class="aula-title">Como os 100 pontos são distribuídos</h2>
+                <div id="mediaSelecao" class="media-selecao" hidden></div>
+                <p id="mediaSituacao" class="media-situacao">Carregando suas notas...</p>
+                <div class="media-rolagem">
+                    <table class="media-tabela" data-nota-minima="70">
+                        <thead>
+                            <tr>
+                                <th>Instrumento</th>
+                                <th>Conteúdo</th>
+                                <th class="media-numero">Pontos</th>
+                                <th class="media-numero">Peso no sistema</th>
+                                <th class="media-numero">Sua nota (0–10)</th>
+                                <th class="media-numero">Seus pontos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="4.29" data-pagina="ATIVIDADES-1-MATEMATICA-APLICADA-A-GESTAO-PARTE-1-50-QUESTOES.html"><td>Atividade Aula 01</td><td>Matemática Aplicada à Gestão Parte 1</td><td class="media-numero">4,29</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="4.29" data-pagina="ATIVIDADES-2-FUNDAMENTOS-MATEMATICOS-PARA-GESTAO-50-QUESTOES.html"><td>Atividade Aula 02</td><td>Fundamentos Matemáticos para Gestão</td><td class="media-numero">4,29</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="4.29" data-pagina="ATIVIDADES-3-EXCEL-BASICO-INTERFACE-E-FORMULAS-50-QUESTOES.html"><td>Atividade Aula 03</td><td>Excel Básico Interface e Fórmulas</td><td class="media-numero">4,29</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="4.29" data-pagina="ATIVIDADES-4-EXCEL-INTERMEDIARIO-FORMATACAO-E-VALIDACAO-50-QUESTOES.html"><td>Atividade Aula 04</td><td>Excel Intermediário Formatação e Validação</td><td class="media-numero">4,29</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="4.29" data-pagina="ATIVIDADES-5-EXCEL-AVANCADO-FUNCOES-COMPLEXAS-E-BUSCA-50-QUESTOES.html"><td>Atividade Aula 05</td><td>Excel Avançado Funções Complexas e Busca</td><td class="media-numero">4,29</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="4.29" data-pagina="ATIVIDADES-6-EXCEL-AVANCADO-TABELAS-DINAMICAS-E-GRAFICOS-50-QUESTOES.html"><td>Atividade Aula 06</td><td>Excel Avançado Tabelas Dinâmicas e Gráficos</td><td class="media-numero">4,29</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades" data-grupo="atividades" data-pontos="4.26" data-pagina="ATIVIDADES-7-DASHBOARDS-INTERATIVOS-E-INTEGRACAO-DE-DADOS-50-QUESTOES.html"><td>Atividade Aula 07</td><td>Dashboards Interativos e Integração de Dados</td><td class="media-numero">4,26</td><td class="media-numero"></td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--atividades media-subtotal" data-subtotal="atividades" data-pontos="30"><td colspan="2">Subtotal — 7 atividades (4,29 pontos cada)</td><td class="media-numero">30</td><td class="media-numero media-peso">30%</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+
+                            <tr class="media-grupo--objetiva" data-grupo="objetiva" data-pontos="20" data-pagina="AVALIACAO-OBJETIVA-01.html"><td>Avaliação Objetiva 01</td><td>Aulas 01 a 04</td><td class="media-numero">20</td><td class="media-numero media-peso">20%</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--objetiva" data-grupo="objetiva" data-pontos="20" data-pagina="AVALIACAO-OBJETIVA-02.html"><td>Avaliação Objetiva 02</td><td>Aulas 05 a 07</td><td class="media-numero">20</td><td class="media-numero media-peso">20%</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--objetiva media-subtotal" data-subtotal="objetiva"><td colspan="2">Subtotal — 2 provas objetivas (20 pontos cada)</td><td class="media-numero">40</td><td class="media-numero"></td><td class="media-numero"></td><td class="media-numero" data-campo="pontos">—</td></tr>
+
+                            <tr class="media-grupo--pratica" data-grupo="pratica" data-pontos="15" data-pagina="ATIVIDADE-EXCEL-29-09-2026.html"><td>Atividade Prática de Excel 29/09</td><td>Controle de Estoque do Almoxarifado</td><td class="media-numero">15</td><td class="media-numero media-peso">15%</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--pratica" data-grupo="pratica" data-pontos="15" data-pagina="ATIVIDADE-EXCEL-01-10-2026.html"><td>Atividade Prática de Excel 01/10</td><td>Análise de Compras com Tabelas Dinâmicas</td><td class="media-numero">15</td><td class="media-numero media-peso">15%</td><td class="media-numero" data-campo="nota">—</td><td class="media-numero" data-campo="pontos">—</td></tr>
+                            <tr class="media-grupo--pratica media-subtotal" data-subtotal="pratica"><td colspan="2">Subtotal — 2 atividades práticas (15 pontos cada)</td><td class="media-numero">30</td><td class="media-numero"></td><td class="media-numero"></td><td class="media-numero" data-campo="pontos">—</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr data-total><td colspan="2">TOTAL</td><td class="media-numero">100</td><td class="media-numero media-peso">100%</td><td class="media-numero"></td><td class="media-numero" data-campo="pontos">—</td></tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <section class="aula-card">
+                <span class="aula-badge">REGRAS</span>
+                <h2 class="aula-title">Como a nota é calculada</h2>
+                <ul class="media-regras">
+                    <li>Cada instrumento tem nota de 0 a 10, convertida para os pontos dele. Exemplo: nota 8 em &quot;Atividade Aula 01&quot; (4,29 pontos) = 3,43 pontos.</li>
+                    <li>Nas provas objetivas vale a melhor nota entre a avaliação e as recuperações.</li>
+                    <li>Atividade ou prova não feita vale 0 ponto.</li>
+                    <li><strong>Peso no sistema:</strong> soma das 7 atividades 30% (lançar a média delas, de 0 a 10, mostrada no subtotal), Avaliação Objetiva 01 20%, Avaliação Objetiva 02 20%, Atividade Prática de Excel 29/09 15%, Atividade Prática de Excel 01/10 15%. Nota final = soma de cada nota × peso.</li>
+                    <li><strong>Aprovação: 70 pontos ou mais</strong> (equivale à nota mínima 7).</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

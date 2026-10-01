@@ -1405,6 +1405,12 @@ assets/
                          interruptor de cada card (assets/js/indice-atividades-bloqueio.js), que se
                          chama "Bloquear" (liberada) ou "Desbloquear" (bloqueada).
                          Não existe mais lista em arquivo (ATIVIDADES-LIBERADAS.js foi removida).
+├─ gerador-avaliacao-media-final/ → gerar_avaliacao_media_final.py + template: gera a
+│                        AVALIACAO-MEDIA-FINAL.html (composição da nota, 100 pontos) de cada matéria a
+│                        partir de ATIVIDADES/media-final.json (+ atividades.json). `--propor` cria o
+│                        json de proposta (30 atividades / 40 objetivas / 30 prática ou Excel) sem
+│                        sobrescrever; `--todas` gera em todas as matérias com json; página sem o
+│                        marcador só com `--forcar`. Mudou a composição = editar o json e rodar de novo.
 ├─ css/menu.css        → estilos do menu de atividades (montado por js/menu.js)
 └─ gerador-menu/       → tags_menu.py: monta as tags do menu para o <head>; usado pelos três
                          geradores acima e, direto, para aplicar o menu em páginas existentes:

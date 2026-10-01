@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação — Média Final ({{TOTAL}} pontos)</title>
+    <link rel="stylesheet" href="{{ASSETS}}/css/atividade.css">
+    <link rel="stylesheet" href="{{ASSETS}}/css/avaliacao-media-final.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="{{RAIZ}}/js/supabase.js" defer></script>
+    <script src="{{ASSETS}}/js/avaliacao-media-final-professor.js" defer></script>
+    <script src="{{ASSETS}}/js/avaliacao-media-final.js" defer></script>{{MENU}}
+</head>
+<body data-uc="{{UC}}">
+    <!-- gerador-avaliacao-media-final: página gerada a partir de media-final.json -->
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🏁 Avaliação — Média Final</h1>
+            <p>{{UC_CURTA}} · {{CURSO}} — {{TOTAL}} pontos somados</p>
+        </header>
+
+        <main class="content-section">
+            <section class="aula-card">
+                <span class="aula-badge">COMPOSIÇÃO</span>
+                <h2 class="aula-title">Como os {{TOTAL}} pontos são distribuídos</h2>
+                <div id="mediaSelecao" class="media-selecao" hidden></div>
+                <p id="mediaSituacao" class="media-situacao">Carregando suas notas...</p>
+                <div class="media-rolagem">
+                    <table class="media-tabela" data-nota-minima="{{NOTA_MINIMA}}">
+                        <thead>
+                            <tr>
+                                <th>Instrumento</th>
+                                <th>Conteúdo</th>
+                                <th class="media-numero">Pontos</th>
+                                <th class="media-numero">Peso no sistema</th>
+                                <th class="media-numero">Sua nota (0–10)</th>
+                                <th class="media-numero">Seus pontos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+{{LINHAS}}
+                        </tbody>
+                        <tfoot>
+                            <tr data-total><td colspan="2">TOTAL</td><td class="media-numero">{{TOTAL}}</td><td class="media-numero media-peso">100%</td><td class="media-numero"></td><td class="media-numero" data-campo="pontos">—</td></tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <section class="aula-card">
+                <span class="aula-badge">REGRAS</span>
+                <h2 class="aula-title">Como a nota é calculada</h2>
+                <ul class="media-regras">
+{{REGRAS}}
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
