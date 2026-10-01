@@ -14,8 +14,10 @@ window.MENU_ATIVIDADES = {
         { rotulo: 'Aula 03 — Excel básico: interface e fórmulas', link: 'ATIVIDADES-3-EXCEL-BASICO-INTERFACE-E-FORMULAS-50-QUESTOES.html' },
         { rotulo: 'Aula 04 — Excel intermediário: formatação e validação', link: 'ATIVIDADES-4-EXCEL-INTERMEDIARIO-FORMATACAO-E-VALIDACAO-50-QUESTOES.html' },
         { rotulo: 'Aula 05 — Excel avançado: funções e busca', link: 'ATIVIDADES-5-EXCEL-AVANCADO-FUNCOES-COMPLEXAS-E-BUSCA-50-QUESTOES.html' },
+        { rotulo: '📝 Avaliação Objetiva 01 — Aulas 01 a 04', link: 'AVALIACAO-OBJETIVA-01.html' },
         { rotulo: 'Aula 06 — Excel avançado: tabelas dinâmicas e gráficos', link: 'ATIVIDADES-6-EXCEL-AVANCADO-TABELAS-DINAMICAS-E-GRAFICOS-50-QUESTOES.html' },
         { rotulo: 'Aula 07 — Dashboards interativos', link: 'ATIVIDADES-7-DASHBOARDS-INTERATIVOS-E-INTEGRACAO-DE-DADOS-50-QUESTOES.html' },
+        { rotulo: '📝 Avaliação Objetiva 02 — Aulas 05 a 07', link: 'AVALIACAO-OBJETIVA-02.html' },
       ],
     },
     {
