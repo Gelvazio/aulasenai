@@ -1,5 +1,6 @@
 /* Respostas do aluno nas páginas de atividade (usado com assets/js/respostas-atividade.js). */
 :root {
+    --acao-aluno-altura: 28px;
     --folha-azul-senai: #0b3d91;
     --folha-borda: #000;
     --folha-fundo-cabecalho: #f0f0f0;
@@ -305,6 +306,12 @@
 }
 .relatorio-professor__fez--sim, .relatorio-professor__fez--nao { font-weight: 700; }
 .relatorio-professor__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+/* Notas, Recuperação e Respostas do aluno: mesma altura */
+.relatorio-professor__acoes .btn-export {
+  box-sizing: border-box; height: var(--acao-aluno-altura); margin: 0;
+  padding: 0 10px; font-size: 12px; line-height: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+}
 .relatorio-professor__detalhe > td { padding: 4px 8px 10px; }
 .relatorio-professor__tabela-tentativas { width: 100%; border-collapse: collapse; font-size: 12px; }
 .relatorio-professor__tabela-tentativas th, .relatorio-professor__tabela-tentativas td {
