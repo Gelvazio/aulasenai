@@ -1,6 +1,6 @@
 # STATUS-EMENTAS — COMPETENCIAS_SOCIOEMOCIONAIS_E_EMPREENDEDORISMO
 
-**Última atualização:** 2026-10-01 14:53:25
+**Última atualização:** 2026-10-01 14:56:49
 
 ---
 
@@ -9,6 +9,12 @@
 | Arquivo | Status | Tamanho | Observações |
 |---------|--------|---------|-------------|
 | **EMENTA-CHALKIE-AI.md** | ✅ PRESENTE | 14852 chars | ✅ CONFORME (14.800–14.950 chars) |
+
+## ⏱️ Carga Horária
+
+| Ementa da matéria | Ementa do curso | Conferência |
+|-------------------|-----------------|-------------|
+| 36h | 36h | ✅ Igual à ementa do curso |
 
 ---
 
