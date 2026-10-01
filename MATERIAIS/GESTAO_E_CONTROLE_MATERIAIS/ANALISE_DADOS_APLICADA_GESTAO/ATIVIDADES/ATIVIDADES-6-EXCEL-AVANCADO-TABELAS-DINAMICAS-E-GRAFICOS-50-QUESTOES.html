@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteúdo 6 — 6 Excel Avançado Tabelas Dinâmicas e Gráficos (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/menu.css">
+    <script src="MENU-ATIVIDADES.js" defer></script>
+    <script src="../../../../js/menu.js" defer></script>
+    <script src="../../../../js/header-usuario.js" defer></script>
+</head>
+<body data-aula="03" data-tema="6 Excel Avançado Tabelas Dinâmicas e Gráficos" data-total="50"
+      data-uc="Análise de Dados Aplicada à Gestão" data-uc-curta="Análise de Dados Aplicada à Gestão"
+      data-docente="Gelvazio Camargo" data-turma="AI AIAC 2026/2 V1 (133933)" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>📊 Conteúdo 6: 6 Excel Avançado Tabelas Dinâmicas e Gráficos</h1>
+            <p>Análise de Dados Aplicada à Gestão · Técnico em Assistente em Processos de Gestão e Controle de Materiais — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <button class="btn-export" id="btnExportarPDFGabarito" type="button" data-somente-perfil="PROFESSOR" hidden title="Só o professor: atividade completa com o gabarito real (lido do banco)">📥 Exportar PDF com gabarito</button>
+            <button class="btn-export" id="btnExportarGabarito" type="button" hidden title="Professor: gabarito real. Aluno: suas respostas da tentativa de maior nota.">🔑 Exportar Gabarito</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-6-EXCEL-AVANCADO-TABELAS-DINAMICAS-E-GRAFICOS-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 100 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D, E)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE AVALIADA</div>
+                    <div class="content-text">Preparar a base para tabela dinâmica; Montar tabelas dinâmicas nos quatro quadrantes; Configurar o campo de valor; Agrupar datas; Ordenar e filtrar; Criar campo calculado; Usar segmentação de dados e linha do tempo; Escolher o gráfico adequado; Criar gráficos dinâmicos e combinados; Atualizar e proteger o relatório</div>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Reconhecer o que é uma tabela dinâmica</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O setor de compras da Metalúrgica Vale Norte (empresa fictícia) tem uma base com 10.000 compras do ano. O diretor quer o total comprado por fornecedor, mês a mês.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é uma tabela dinâmica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma tabela que apaga as linhas repetidas da base</li>
+                        <li><span class="letra">B)</span>Um tipo de gráfico de pizza</li>
+                        <li><span class="letra">C)</span>Uma ferramenta que resume, calcula e agrupa os dados da base sem exigir fórmulas manuais</li>
+                        <li><span class="letra">D)</span>Uma planilha protegida por senha</li>
+                        <li><span class="letra">E)</span>Uma lista suspensa de fornecedores</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Entender o efeito sobre a base original</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O auxiliar tem medo de &quot;estragar&quot; a base de compras ao criar a tabela dinâmica.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece com os dados originais?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Permanecem intactos; a tabela dinâmica apenas lê a base</li>
+                        <li><span class="letra">B)</span>São apagados após o resumo</li>
+                        <li><span class="letra">C)</span>São reorganizados em ordem alfabética</li>
+                        <li><span class="letra">D)</span>São movidos para outra aba</li>
+                        <li><span class="letra">E)</span>São convertidos em texto</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Preparar os cabeçalhos da base</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Antes de criar a tabela dinâmica, o analista revisa a base de compras.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual regra vale para os cabeçalhos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Podem ficar em branco</li>
+                        <li><span class="letra">B)</span>Podem se repetir em várias colunas</li>
+                        <li><span class="letra">C)</span>Devem ficar mesclados em duas linhas</li>
+                        <li><span class="letra">D)</span>Só a primeira coluna precisa de nome</li>
+                        <li><span class="letra">E)</span>Cada coluna deve ter um nome único</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Evitar linhas vazias na base</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A base tem uma linha em branco entre cada mês &quot;para ficar mais organizada&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o problema dessas linhas vazias?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Partem a seleção da base e parte dos dados pode ficar fora do resumo</li>
+                        <li><span class="letra">B)</span>Nenhum, a tabela dinâmica ignora</li>
+                        <li><span class="letra">C)</span>Deixam os valores em negrito</li>
+                        <li><span class="letra">D)</span>Mudam a data das compras</li>
+                        <li><span class="letra">E)</span>Duplicam os valores</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Evitar células mescladas</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O nome de cada fornecedor foi mesclado em várias linhas da base para &quot;economizar digitação&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a consequência?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A tabela dinâmica fica mais rápida</li>
+                        <li><span class="letra">B)</span>Os totais ficam em dobro, mas funcionam</li>
+                        <li><span class="letra">C)</span>Não há consequência</li>
+                        <li><span class="letra">D)</span>Os gráficos ficam coloridos</li>
+                        <li><span class="letra">E)</span>Células mescladas quebram a tabela dinâmica; cada linha deve ter o dado completo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Manter uma informação por coluna</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na base, a coluna &quot;Compra&quot; traz textos como &quot;12/03 - Aço Sul - R$ 500&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a forma correta de organizar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Manter tudo junto numa coluna só</li>
+                        <li><span class="letra">B)</span>Transformar tudo em número</li>
+                        <li><span class="letra">C)</span>Separar em colunas próprias: Data, Fornecedor e Valor</li>
+                        <li><span class="letra">D)</span>Mesclar as células</li>
+                        <li><span class="letra">E)</span>Apagar a coluna</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Posicionar campos para total por categoria</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gerente quer ver o valor comprado por categoria de material.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde colocar os campos Categoria e Valor?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Valor em Linhas e Categoria em Colunas</li>
+                        <li><span class="letra">B)</span>Os dois em Filtros</li>
+                        <li><span class="letra">C)</span>Categoria em Valores e Valor em Linhas</li>
+                        <li><span class="letra">D)</span>Os dois em Colunas</li>
+                        <li><span class="letra">E)</span>Categoria em Linhas e Valor em Valores</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Usar a área de Colunas</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Com o fornecedor em Linhas e o valor em Valores, o gerente quer os meses espalhados lado a lado.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em qual área o campo de data (agrupado por mês) deve entrar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Colunas</li>
+                        <li><span class="letra">B)</span>Filtros</li>
+                        <li><span class="letra">C)</span>Valores</li>
+                        <li><span class="letra">D)</span>Linhas, acima do fornecedor</li>
+                        <li><span class="letra">E)</span>Fora da tabela dinâmica</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Usar a área de Filtros</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A empresa tem três filiais e o gerente quer escolher, no topo do relatório, qual filial analisar.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em qual área o campo Filial deve ficar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Valores</li>
+                        <li><span class="letra">B)</span>Linhas</li>
+                        <li><span class="letra">C)</span>Colunas</li>
+                        <li><span class="letra">D)</span>Nenhuma</li>
+                        <li><span class="letra">E)</span>Filtros</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Ordenar os passos de criação</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Os passos para criar a tabela dinâmica são: arrastar os campos; confirmar o intervalo e escolher Nova Planilha; selecionar uma célula da base; ir em Inserir &gt; Tabela Dinâmica.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Arrastar os campos; selecionar a base; Inserir; confirmar</li>
+                        <li><span class="letra">B)</span>Selecionar uma célula da base; Inserir &gt; Tabela Dinâmica; confirmar o intervalo e Nova Planilha; arrastar os campos</li>
+                        <li><span class="letra">C)</span>Inserir &gt; Tabela Dinâmica; arrastar os campos; selecionar a base; confirmar</li>
+                        <li><span class="letra">D)</span>Confirmar o intervalo; arrastar os campos; Inserir; selecionar a base</li>
+                        <li><span class="letra">E)</span>Selecionar a base; arrastar os campos; confirmar; Inserir</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Reconhecer o cálculo padrão do campo de valor</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O analista arrastou o campo Valor (números) para a área Valores.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual cálculo o Excel faz por padrão?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Média</li>
+                        <li><span class="letra">B)</span>Contagem</li>
+                        <li><span class="letra">C)</span>Soma</li>
+                        <li><span class="letra">D)</span>Máximo</li>
+                        <li><span class="letra">E)</span>Nenhum</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Contar pedidos na tabela dinâmica</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gerente quer saber QUANTOS pedidos cada fornecedor recebeu, e não o valor.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como o campo de valor deve ser resumido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Soma</li>
+                        <li><span class="letra">B)</span>Média</li>
+                        <li><span class="letra">C)</span>Mínimo</li>
+                        <li><span class="letra">D)</span>Contagem</li>
+                        <li><span class="letra">E)</span>Produto</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Calcular o valor médio por pedido</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O comprador quer o valor médio dos pedidos de cada fornecedor.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual caminho altera o cálculo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apagar a tabela e fazer de novo</li>
+                        <li><span class="letra">B)</span>Formatar como moeda</li>
+                        <li><span class="letra">C)</span>Mover o campo para Filtros</li>
+                        <li><span class="letra">D)</span>Inserir um gráfico de linhas</li>
+                        <li><span class="letra">E)</span>Botão direito sobre um número → Resumir Valores Por → Média</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Descobrir o maior pedido</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gerente quer ver o maior valor de pedido de cada fornecedor.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual resumo deve ser escolhido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Máximo</li>
+                        <li><span class="letra">B)</span>Soma</li>
+                        <li><span class="letra">C)</span>Contagem</li>
+                        <li><span class="letra">D)</span>Média</li>
+                        <li><span class="letra">E)</span>Mínimo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Agrupar datas</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A tabela dinâmica mostra 365 datas soltas nas linhas, difícil de ler.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como organizar as datas em meses e trimestres?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Digitar os meses à mão</li>
+                        <li><span class="letra">B)</span>Apagar as datas da base</li>
+                        <li><span class="letra">C)</span>Botão direito numa data da tabela → Agrupar → marcar Meses e Trimestres</li>
+                        <li><span class="letra">D)</span>Formatar a coluna como texto</li>
+                        <li><span class="letra">E)</span>Usar o PROCV</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Avaliar uma afirmação sobre o agrupamento</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Afirmação: &quot;Se você agrupar datas por mês na tabela dinâmica, a base original terá suas datas apagadas para sempre.&quot;</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A afirmação é verdadeira ou falsa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Verdadeira, o agrupamento substitui as datas</li>
+                        <li><span class="letra">B)</span>Verdadeira, mas só no Excel antigo</li>
+                        <li><span class="letra">C)</span>Falsa, pois o agrupamento só funciona com textos</li>
+                        <li><span class="letra">D)</span>Verdadeira, as datas viram números</li>
+                        <li><span class="letra">E)</span>Falsa, a tabela dinâmica só exibe a visão consolidada e as datas originais continuam intactas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Ordenar do maior para o menor</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O diretor quer os fornecedores com maior valor comprado no topo da tabela.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual ação atende ao pedido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ordenar o campo de valores de forma crescente</li>
+                        <li><span class="letra">B)</span>Ordenar o campo de valores de forma decrescente (do maior para o menor)</li>
+                        <li><span class="letra">C)</span>Filtrar por rótulo</li>
+                        <li><span class="letra">D)</span>Mover o fornecedor para Colunas</li>
+                        <li><span class="letra">E)</span>Mudar o resumo para Contagem</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Isolar os principais fornecedores</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A empresa tem 60 fornecedores e o diretor quer ver só os 10 com maior valor comprado.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual filtro atende ao pedido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Filtro por rótulo &quot;contém&quot;</li>
+                        <li><span class="letra">B)</span>Filtro de data</li>
+                        <li><span class="letra">C)</span>Segmentação por mês</li>
+                        <li><span class="letra">D)</span>Filtro dos 10 Primeiros</li>
+                        <li><span class="letra">E)</span>Linha do tempo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Criar um campo calculado</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gerente quer o custo de armazenagem de 5% sobre o Valor da Compra na própria tabela dinâmica, sem mexer na base.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual recurso e fórmula devem ser usados?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma coluna nova na base com =E2*5</li>
+                        <li><span class="letra">B)</span>Campo Calculado com a fórmula =&#x27;Valor da Compra&#x27;*0,05</li>
+                        <li><span class="letra">C)</span>Validação de dados com 5%</li>
+                        <li><span class="letra">D)</span>Um filtro de valor maior que 5%</li>
+                        <li><span class="letra">E)</span>Formatação condicional de 5%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Reconhecer a segmentação de dados</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gerente acha difícil usar os filtros suspensos da tabela dinâmica e quer botões grandes para clicar.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual recurso atende ao pedido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Validação de Dados</li>
+                        <li><span class="letra">B)</span>Congelar Painéis</li>
+                        <li><span class="letra">C)</span>Campo Calculado</li>
+                        <li><span class="letra">D)</span>Formatação Condicional</li>
+                        <li><span class="letra">E)</span>Segmentação de Dados</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Selecionar vários botões na segmentação</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na segmentação &quot;Fornecedor&quot;, o comprador quer ver ao mesmo tempo Aço Sul e Metal Forte.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como selecionar os dois botões?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Clicar duas vezes no primeiro</li>
+                        <li><span class="letra">B)</span>Segurar Ctrl e clicar nos botões desejados</li>
+                        <li><span class="letra">C)</span>Apertar F4</li>
+                        <li><span class="letra">D)</span>Criar outra tabela dinâmica</li>
+                        <li><span class="letra">E)</span>Não é possível</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Interpretar botões sem realce</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Depois de filtrar um mês, alguns botões da segmentação &quot;Fornecedor&quot; ficaram cinzas, sem realce.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que isso indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que esses fornecedores foram excluídos da base</li>
+                        <li><span class="letra">B)</span>Que a segmentação está com erro</li>
+                        <li><span class="letra">C)</span>Que a planilha está protegida</li>
+                        <li><span class="letra">D)</span>Que esses fornecedores não têm movimentação no filtro atual</li>
+                        <li><span class="letra">E)</span>Que o botão está selecionado</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Montar o relatório de compras por fornecedor e mês</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A base Compras tem Data | Fornecedor | Item | Quantidade | Valor. A pergunta é: qual fornecedor e qual mês concentram as compras?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual montagem responde à pergunta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Fornecedor em Linhas, Data agrupada por Mês em Colunas e Soma de Valor em Valores</li>
+                        <li><span class="letra">B)</span>Item em Valores e Quantidade em Linhas</li>
+                        <li><span class="letra">C)</span>Tudo em Filtros</li>
+                        <li><span class="letra">D)</span>Valor em Linhas e Fornecedor em Valores</li>
+                        <li><span class="letra">E)</span>Data em Linhas sem agrupamento e Item em Colunas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Mostrar a concentração em percentual</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No relatório do Item 23, o gerente quer ver a fatia de cada fornecedor no total comprado.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual opção do campo de valor mostra isso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Resumir Valores Por → Contagem</li>
+                        <li><span class="letra">B)</span>Mostrar Valores Como → % do Total Geral</li>
+                        <li><span class="letra">C)</span>Formatar como Moeda</li>
+                        <li><span class="letra">D)</span>Classificar de A a Z</li>
+                        <li><span class="letra">E)</span>Agrupar por trimestre</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Interpretar a dependência de fornecedor</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No relatório de concentração, o fornecedor Aço Sul aparece com 62% do total comprado no ano.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual análise está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não há risco, pois é o fornecedor mais barato</li>
+                        <li><span class="letra">B)</span>O percentual indica que houve erro na tabela</li>
+                        <li><span class="letra">C)</span>É preciso comprar mais do Aço Sul</li>
+                        <li><span class="letra">D)</span>Há dependência de um só fornecedor (acima de 50%), e compras deve propor alternativas</li>
+                        <li><span class="letra">E)</span>O percentual não tem significado para compras</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Ordenar a montagem da análise dinâmica</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Os passos são: inserir a segmentação; garantir cabeçalhos e ausência de células mescladas; arrastar dimensões para Linhas e métricas para Valores; Inserir Tabela Dinâmica em nova planilha.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o PRIMEIRO passo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Inserir a segmentação</li>
+                        <li><span class="letra">B)</span>Arrastar os campos</li>
+                        <li><span class="letra">C)</span>Inserir a tabela dinâmica</li>
+                        <li><span class="letra">D)</span>Criar o gráfico</li>
+                        <li><span class="letra">E)</span>Garantir cabeçalhos e ausência de células mescladas na base</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Entender por que usar gráficos</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O diretor tem poucos minutos na reunião para ver se as metas de compras foram cumpridas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que um gráfico bem escolhido ajuda?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o cérebro processa formas e cores mais rápido do que tabelas cheias de números</li>
+                        <li><span class="letra">B)</span>Porque substitui a base de dados</li>
+                        <li><span class="letra">C)</span>Porque dispensa a tabela dinâmica</li>
+                        <li><span class="letra">D)</span>Porque sempre aumenta os valores</li>
+                        <li><span class="letra">E)</span>Porque esconde os problemas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Escolher o gráfico para tendência</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gerente quer ver a evolução do valor comprado mês a mês durante o ano.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual gráfico é o mais indicado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Pizza</li>
+                        <li><span class="letra">B)</span>Rosca</li>
+                        <li><span class="letra">C)</span>Linhas</li>
+                        <li><span class="letra">D)</span>Dispersão sem linhas</li>
+                        <li><span class="letra">E)</span>Radar</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Escolher o gráfico para comparar categorias</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O comprador quer comparar o valor comprado de 8 fornecedores no semestre.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual gráfico é o mais indicado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Pizza com 8 fatias</li>
+                        <li><span class="letra">B)</span>Colunas ou barras</li>
+                        <li><span class="letra">C)</span>Linhas</li>
+                        <li><span class="letra">D)</span>Área</li>
+                        <li><span class="letra">E)</span>Rosca</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Usar o gráfico de dispersão</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O analista quer verificar se existe relação entre o prazo de entrega e o valor do pedido.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual gráfico identifica correlação entre duas variáveis numéricas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Pizza</li>
+                        <li><span class="letra">B)</span>Colunas empilhadas</li>
+                        <li><span class="letra">C)</span>Dispersão (XY)</li>
+                        <li><span class="letra">D)</span>Rosca</li>
+                        <li><span class="letra">E)</span>Barras</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Limitar o uso da pizza</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um auxiliar montou uma pizza com 15 categorias de material.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a regra para gráficos de pizza?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Servem para tendências ao longo do tempo</li>
+                        <li><span class="letra">B)</span>Servem para partes de um todo com poucas fatias (até cerca de 4)</li>
+                        <li><span class="letra">C)</span>Quanto mais fatias, melhor</li>
+                        <li><span class="letra">D)</span>Servem para comparar 15 categorias</li>
+                        <li><span class="letra">E)</span>Devem sempre ser em 3D</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Entender o gráfico dinâmico</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gráfico foi criado a partir da tabela dinâmica de compras por fornecedor.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece quando um filtro é aplicado na tabela dinâmica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nada, o gráfico é estático</li>
+                        <li><span class="letra">B)</span>O gráfico é apagado</li>
+                        <li><span class="letra">C)</span>O gráfico vira uma tabela</li>
+                        <li><span class="letra">D)</span>O gráfico dinâmico se altera sozinho</li>
+                        <li><span class="letra">E)</span>A base original é filtrada e perde dados</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Aplicar boas práticas de estilo no gráfico</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um gráfico de colunas tem linhas de grade grossas, sombras, efeito 3D e cinco cores fortes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual ajuste segue as boas práticas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Acrescentar mais efeitos para chamar atenção</li>
+                        <li><span class="letra">B)</span>Tirar poluição (grades pesadas, 3D e sombras) e usar cor marcante só no destaque</li>
+                        <li><span class="letra">C)</span>Manter o 3D, pois deixa mais bonito</li>
+                        <li><span class="letra">D)</span>Trocar as colunas por pizza</li>
+                        <li><span class="letra">E)</span>Tirar o título</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Entender o risco do efeito 3D</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gerente gosta de gráficos em 3D com sombra.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o problema desses efeitos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Deixam o arquivo pesado demais para abrir</li>
+                        <li><span class="letra">B)</span>Impedem a atualização</li>
+                        <li><span class="letra">C)</span>Mudam os valores da base</li>
+                        <li><span class="letra">D)</span>Distorcem as proporções e induzem leitura errada dos dados</li>
+                        <li><span class="letra">E)</span>Não há problema</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Usar rótulos de dados</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um gráfico de barras de 5 fornecedores mostra o valor exato em cima de cada barra.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual ajuste pode ser feito para despoluir o gráfico?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Remover o eixo numérico vertical, já que os rótulos mostram os valores</li>
+                        <li><span class="letra">B)</span>Acrescentar linhas de grade</li>
+                        <li><span class="letra">C)</span>Duplicar a legenda</li>
+                        <li><span class="letra">D)</span>Colocar o eixo em 3D</li>
+                        <li><span class="letra">E)</span>Tirar os rótulos e manter o eixo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Entender o problema das escalas diferentes</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gerente quer comparar, no mesmo gráfico, o Valor Comprado (R$ 500.000) com o % do Orçamento usado (85%).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece se as duas séries usarem o mesmo eixo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Os dois valores ficam do mesmo tamanho</li>
+                        <li><span class="letra">B)</span>O Excel converte tudo para reais</li>
+                        <li><span class="letra">C)</span>O gráfico passa a ser de pizza</li>
+                        <li><span class="letra">D)</span>A série de percentual vira uma linha quase invisível no &quot;chão&quot; do gráfico</li>
+                        <li><span class="letra">E)</span>Nada muda</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Usar o gráfico combinado com eixo secundário</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Continuando o Item 36, o analista quer que as duas séries fiquem legíveis.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual solução é a correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dois gráficos de pizza</li>
+                        <li><span class="letra">B)</span>Gráfico de área empilhada</li>
+                        <li><span class="letra">C)</span>Tabela sem gráfico</li>
+                        <li><span class="letra">D)</span>Gráfico 3D</li>
+                        <li><span class="letra">E)</span>Gráfico combinado: colunas para o valor no eixo principal e linha para o percentual no eixo secundário</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Saber quando o eixo secundário é indispensável</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O analista está revisando os gráficos do relatório de compras.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando é indispensável usar gráfico combinado com eixo secundário?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ao comparar duas métricas com grandezas ou escalas muito diferentes</li>
+                        <li><span class="letra">B)</span>Quando a base tem células em branco</li>
+                        <li><span class="letra">C)</span>Quando o gráfico tem mais de 20 colunas</li>
+                        <li><span class="letra">D)</span>Para transformar colunas em pizza</li>
+                        <li><span class="letra">E)</span>Sempre que houver título</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Conectar uma segmentação a vários gráficos</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O painel tem três tabelas dinâmicas com gráficos. Ao clicar em &quot;Região Sul&quot; na segmentação, só um gráfico mudou.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que deve ser feito para todos os gráficos se sincronizarem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Criar uma segmentação para cada gráfico</li>
+                        <li><span class="letra">B)</span>Atualizar a base com Alt+F5</li>
+                        <li><span class="letra">C)</span>Proteger a planilha</li>
+                        <li><span class="letra">D)</span>Botão direito na segmentação → Conexões de Relatório → marcar todas as tabelas dinâmicas</li>
+                        <li><span class="letra">E)</span>Agrupar as datas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Usar a linha do tempo</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gerente quer um filtro de datas com uma barra deslizante para escolher meses ou trimestres.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual recurso atende ao pedido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Linha do Tempo</li>
+                        <li><span class="letra">B)</span>Segmentação de dados de texto</li>
+                        <li><span class="letra">C)</span>Validação de dados</li>
+                        <li><span class="letra">D)</span>Campo calculado</li>
+                        <li><span class="letra">E)</span>Filtro por rótulo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Mudar a escala da linha do tempo</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A linha do tempo está mostrando os dados por dia e o gerente quer ver por trimestre.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que ele deve fazer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apagar a linha do tempo</li>
+                        <li><span class="letra">B)</span>Reagrupar a base original</li>
+                        <li><span class="letra">C)</span>Alternar a escala da linha do tempo para Trimestres</li>
+                        <li><span class="letra">D)</span>Criar outra tabela dinâmica</li>
+                        <li><span class="letra">E)</span>Não é possível mudar a escala</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Evitar o eixo truncado</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O eixo vertical de um gráfico de colunas começa em R$ 90.000 e não em zero. Uma diferença de 3% parece enorme.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o problema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nenhum, fica mais bonito</li>
+                        <li><span class="letra">B)</span>O gráfico deixa de atualizar</li>
+                        <li><span class="letra">C)</span>Os valores da base mudam</li>
+                        <li><span class="letra">D)</span>O eixo truncado distorce a proporção e dá falsa impressão de grande variação</li>
+                        <li><span class="letra">E)</span>O gráfico vira pizza</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Atualizar a tabela dinâmica</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O comprador lançou 20 compras novas na base, mas a tabela dinâmica continuou com os totais antigos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que isso aconteceu e como resolver?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A tabela está com erro; é preciso recriar</li>
+                        <li><span class="letra">B)</span>A tabela usa um cache e não atualiza sozinha; clicar em Atualizar ou usar Alt+F5</li>
+                        <li><span class="letra">C)</span>A base foi apagada; é preciso digitar de novo</li>
+                        <li><span class="letra">D)</span>O Excel só atualiza no dia seguinte</li>
+                        <li><span class="letra">E)</span>É preciso reiniciar o computador</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Incluir novas linhas automaticamente na fonte</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Toda semana entram linhas novas na base e o analista quer que elas façam parte da fonte da tabela dinâmica sem ajustar o intervalo.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que ele deve fazer com a base?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mesclar as células</li>
+                        <li><span class="letra">B)</span>Deixar linhas em branco no fim</li>
+                        <li><span class="letra">C)</span>Protegê-la com senha</li>
+                        <li><span class="letra">D)</span>Transformá-la em Tabela oficial (Inserir → Tabela)</li>
+                        <li><span class="letra">E)</span>Copiá-la para outra aba toda semana</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Proteger o relatório sem travar os filtros</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Antes de distribuir o relatório, o analista vai proteger a planilha, mas quer que os filtros e segmentações continuem funcionando.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual opção deve ser marcada em Revisão → Proteger Planilha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Excluir colunas</li>
+                        <li><span class="letra">B)</span>Formatar células</li>
+                        <li><span class="letra">C)</span>Usar Tabela Dinâmica e Gráfico Dinâmico</li>
+                        <li><span class="letra">D)</span>Inserir linhas</li>
+                        <li><span class="letra">E)</span>Nenhuma, a proteção não afeta tabelas dinâmicas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Entender o limite da proteção</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O relatório de compras tem valores negociados sigilosos e foi protegido com senha.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual afirmação está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A proteção torna o arquivo impossível de copiar</li>
+                        <li><span class="letra">B)</span>A proteção evita erro acidental, mas não é segurança total; dados sigilosos pedem controle de acesso ao arquivo</li>
+                        <li><span class="letra">C)</span>A proteção criptografa todos os dados</li>
+                        <li><span class="letra">D)</span>Com proteção, ninguém consegue ver os valores</li>
+                        <li><span class="letra">E)</span>A proteção dispensa o cuidado com o envio do arquivo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Montar a análise temporal por trimestre</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na atividade, o valor comprado por categoria já está nas Linhas. Agora o gerente quer comparar os trimestres lado a lado.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que deve ser feito com o campo de data?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Colocá-lo em Valores como Soma</li>
+                        <li><span class="letra">B)</span>Apagá-lo da base</li>
+                        <li><span class="letra">C)</span>Agrupá-lo por Trimestre e movê-lo para Colunas</li>
+                        <li><span class="letra">D)</span>Formatá-lo como texto</li>
+                        <li><span class="letra">E)</span>Colocá-lo em Filtros sem agrupar</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Mostrar os 5 itens de maior custo</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A atividade pede um gráfico com os 5 itens de maior custo em estoque.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual combinação atende ao pedido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Pizza com todos os itens</li>
+                        <li><span class="letra">B)</span>Linhas com todas as datas</li>
+                        <li><span class="letra">C)</span>Dispersão com todos os itens</li>
+                        <li><span class="letra">D)</span>Gráfico combinado com eixo secundário</li>
+                        <li><span class="letra">E)</span>Filtro dos 10 Primeiros configurado para 5 itens e gráfico de barras</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Relacionar o conceito à definição</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na revisão, o professor apresentou a definição: &quot;recurso que reúne datas individuais em blocos de meses, trimestres ou anos&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A qual conceito ela corresponde?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Agrupamento</li>
+                        <li><span class="letra">B)</span>Gráfico combinado</li>
+                        <li><span class="letra">C)</span>Segmentação de dados</li>
+                        <li><span class="letra">D)</span>Campo calculado</li>
+                        <li><span class="letra">E)</span>Tabela dinâmica</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Relacionar o gráfico combinado à definição</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Outra definição da revisão: &quot;visualização que sobrepõe colunas e linhas utilizando dois eixos com escalas distintas&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A qual conceito ela corresponde?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Segmentação de dados</li>
+                        <li><span class="letra">B)</span>Tabela dinâmica</li>
+                        <li><span class="letra">C)</span>Gráfico combinado</li>
+                        <li><span class="letra">D)</span>Linha do tempo</li>
+                        <li><span class="letra">E)</span>Agrupamento</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Análise de Dados Aplicada à Gestão — Conteúdo 6: 6 Excel Avançado Tabelas Dinâmicas e Gráficos</strong></p>
+        <p>Técnico em Assistente em Processos de Gestão e Controle de Materiais — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+    <script src="../../../../assets/js/avaliacao-pdf-professor.js"></script>
+</body>
+</html>

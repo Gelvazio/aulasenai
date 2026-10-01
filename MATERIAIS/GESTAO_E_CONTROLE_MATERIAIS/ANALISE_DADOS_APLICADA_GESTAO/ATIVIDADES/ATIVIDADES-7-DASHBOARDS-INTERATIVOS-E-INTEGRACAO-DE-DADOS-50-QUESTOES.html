@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteúdo 7 — 7 Dashboards Interativos e Integração de Dados (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/menu.css">
+    <script src="MENU-ATIVIDADES.js" defer></script>
+    <script src="../../../../js/menu.js" defer></script>
+    <script src="../../../../js/header-usuario.js" defer></script>
+</head>
+<body data-aula="04" data-tema="7 Dashboards Interativos e Integração de Dados" data-total="50"
+      data-uc="Análise de Dados Aplicada à Gestão" data-uc-curta="Análise de Dados Aplicada à Gestão"
+      data-docente="Gelvazio Camargo" data-turma="AI AIAC 2026/2 V1 (133933)" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>📈 Conteúdo 7: 7 Dashboards Interativos e Integração de Dados</h1>
+            <p>Análise de Dados Aplicada à Gestão · Técnico em Assistente em Processos de Gestão e Controle de Materiais — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <button class="btn-export" id="btnExportarPDFGabarito" type="button" data-somente-perfil="PROFESSOR" hidden title="Só o professor: atividade completa com o gabarito real (lido do banco)">📥 Exportar PDF com gabarito</button>
+            <button class="btn-export" id="btnExportarGabarito" type="button" hidden title="Professor: gabarito real. Aluno: suas respostas da tentativa de maior nota.">🔑 Exportar Gabarito</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-7-DASHBOARDS-INTERATIVOS-E-INTEGRACAO-DE-DADOS-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 100 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D, E)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE AVALIADA</div>
+                    <div class="content-text">Reconhecer o papel do dashboard na decisão; Definir e calcular KPIs de estoque; Projetar cartões de métricas; Aplicar princípios de design, leitura em Z e cores; Conectar segmentadores e linha do tempo; Organizar as abas do dashboard; Ordenar a construção do painel; Preparar a interface para entrega; Apresentar resultados com storytelling com dados</div>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Reconhecer o que é um dashboard</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A diretora da Distribuidora Rio Itajaí (empresa fictícia) tem só 30 segundos para avaliar a situação do estoque antes de cada reunião.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um dashboard?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma planilha com todas as transações em milhares de linhas</li>
+                        <li><span class="letra">B)</span>Um relatório impresso só com textos</li>
+                        <li><span class="letra">C)</span>Um formulário de cadastro de itens</li>
+                        <li><span class="letra">D)</span>Um painel visual que sintetiza as métricas centrais do negócio numa única tela</li>
+                        <li><span class="letra">E)</span>Uma cópia de segurança da base</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Usar a analogia do painel do carro</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O professor comparou o dashboard ao painel de um carro, com velocímetro e marcador de combustível.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que essa comparação quer mostrar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que o dashboard serve para dirigir</li>
+                        <li><span class="letra">B)</span>Que o dashboard precisa de muitos números detalhados</li>
+                        <li><span class="letra">C)</span>Que o dashboard mostra o essencial sem que seja preciso &quot;abrir o capô&quot; (a base de dados)</li>
+                        <li><span class="letra">D)</span>Que o dashboard substitui a base de dados</li>
+                        <li><span class="letra">E)</span>Que o dashboard só mostra velocidade</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Diferenciar planilha de registro e dashboard</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A aba Movimentação tem 12.000 linhas de entradas e saídas. A aba Dashboard tem 4 cartões e 2 gráficos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual afirmação está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As duas têm a mesma função</li>
+                        <li><span class="letra">B)</span>A planilha de registro armazena as transações; o dashboard agrupa só os totais e indicadores críticos</li>
+                        <li><span class="letra">C)</span>O dashboard guarda as transações brutas</li>
+                        <li><span class="letra">D)</span>A planilha de registro é feita para leitura rápida da diretoria</li>
+                        <li><span class="letra">E)</span>O dashboard dispensa a base de registro</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Relacionar dashboard e decisão</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No painel de estoque, a diretora viu em segundos quais itens estão prestes a faltar.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o papel do dashboard nesse caso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apenas registrar o passado</li>
+                        <li><span class="letra">B)</span>Substituir o comprador</li>
+                        <li><span class="letra">C)</span>Esconder os problemas da diretoria</li>
+                        <li><span class="letra">D)</span>Guardar as notas fiscais</li>
+                        <li><span class="letra">E)</span>Orientar a ação: indicar o que precisa ser reposto</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Aplicar a regra de ouro do design</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um analista encheu o painel de ícones, sombras, bordas grossas e fundos coloridos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual princípio de design ele deixou de seguir?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Usar muitas cores para diferenciar tudo</li>
+                        <li><span class="letra">B)</span>Simplicidade funcional: menos é mais, sem ornamentos desnecessários</li>
+                        <li><span class="letra">C)</span>Colocar o máximo de informação na tela</li>
+                        <li><span class="letra">D)</span>Usar gráficos em 3D</li>
+                        <li><span class="letra">E)</span>Mostrar as fórmulas na tela</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Identificar o conteúdo do cabeçalho</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na anatomia de um dashboard, o topo da tela é o cabeçalho.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que deve ficar no cabeçalho?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A base de dados completa</li>
+                        <li><span class="letra">B)</span>As fórmulas de cálculo</li>
+                        <li><span class="letra">C)</span>Título do painel, data de atualização e logo discreto</li>
+                        <li><span class="letra">D)</span>Todos os gráficos</li>
+                        <li><span class="letra">E)</span>A lista de fornecedores</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Ordenar a anatomia do dashboard</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um dashboard tem quatro partes: cabeçalho, cartões KPI, gráficos centrais e barra de filtros.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a função da barra de filtros?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mostrar a data de atualização</li>
+                        <li><span class="letra">B)</span>Guardar os dados brutos</li>
+                        <li><span class="letra">C)</span>Exibir o logo da empresa</li>
+                        <li><span class="letra">D)</span>Oferecer segmentadores para navegar interativamente</li>
+                        <li><span class="letra">E)</span>Calcular os KPIs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Reconhecer o que é um KPI</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A diretoria pediu &quot;os KPIs do estoque&quot; no painel.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um KPI?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Qualquer número da base</li>
+                        <li><span class="letra">B)</span>Um indicador-chave de desempenho que mede o sucesso de uma meta</li>
+                        <li><span class="letra">C)</span>Um tipo de gráfico</li>
+                        <li><span class="letra">D)</span>Uma fórmula de busca</li>
+                        <li><span class="letra">E)</span>O nome da aba do dashboard</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Interpretar um KPI com meta</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A meta de faturamento do mês era R$ 50.000 e o realizado foi R$ 52.300.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a leitura correta do KPI?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Meta não atingida</li>
+                        <li><span class="letra">B)</span>Meta superada, com variação de +23%</li>
+                        <li><span class="letra">C)</span>Meta superada, com variação de +4,6%</li>
+                        <li><span class="letra">D)</span>Resultado igual à meta</li>
+                        <li><span class="letra">E)</span>Meta superada, com variação de +2,3%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Calcular o giro do estoque</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Giro = custo das saídas ÷ estoque médio. No trimestre, o custo das saídas foi R$ 150.000 e o estoque médio foi R$ 30.000.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o giro no trimestre?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>4 vezes</li>
+                        <li><span class="letra">B)</span>0,2 vez</li>
+                        <li><span class="letra">C)</span>120 vezes</li>
+                        <li><span class="letra">D)</span>5 vezes</li>
+                        <li><span class="letra">E)</span>180 vezes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Calcular a ruptura</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Ruptura = requisições não atendidas ÷ total de requisições. No mês, 18 das 600 requisições não foram atendidas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ruptura?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>18%</li>
+                        <li><span class="letra">B)</span>33%</li>
+                        <li><span class="letra">C)</span>0,3%</li>
+                        <li><span class="letra">D)</span>6%</li>
+                        <li><span class="letra">E)</span>3%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Aplicar a meta com semáforo</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Pela regra do painel, a ruptura acima de 5% fica vermelha. Em abril, a ruptura foi de 16 requisições não atendidas em 250.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ruptura de abril e a cor do KPI?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>4,0%, verde</li>
+                        <li><span class="letra">B)</span>16%, vermelho</li>
+                        <li><span class="letra">C)</span>6,4%, verde</li>
+                        <li><span class="letra">D)</span>6,4%, vermelho</li>
+                        <li><span class="letra">E)</span>1,6%, verde</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Calcular a cobertura do estoque</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Cobertura = saldo ÷ consumo médio diário. O saldo de luvas é 840 pares e o consumo médio é 120 pares por dia.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a cobertura?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>100.800 dias</li>
+                        <li><span class="letra">B)</span>720 dias</li>
+                        <li><span class="letra">C)</span>7 dias</li>
+                        <li><span class="letra">D)</span>14 dias</li>
+                        <li><span class="letra">E)</span>0,14 dia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Calcular o custo do estoque</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O custo do estoque é a soma de saldo × custo unitário de todos os itens. Na planilha, o custo de cada item já está em H2:H300.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula calcula o KPI &quot;Custo do estoque&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=MÉDIA(H2:H300)</li>
+                        <li><span class="letra">B)</span>=CONT.VALORES(H2:H300)</li>
+                        <li><span class="letra">C)</span>=MÁXIMO(H2:H300)</li>
+                        <li><span class="letra">D)</span>=H2*H300</li>
+                        <li><span class="letra">E)</span>=SOMA(H2:H300)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Projetar o cartão de métricas</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Cada cartão de KPI deve ser lido em um segundo.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais três informações o cartão deve conter?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Tabela completa, gráfico e fórmula</li>
+                        <li><span class="letra">B)</span>Rótulo em caixa alta, número grande e seta de tendência</li>
+                        <li><span class="letra">C)</span>Logo, texto explicativo longo e rodapé</li>
+                        <li><span class="letra">D)</span>Número pequeno, várias casas decimais e comentário</li>
+                        <li><span class="letra">E)</span>Somente a cor de fundo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Padronizar o tamanho dos cartões</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No rascunho, cada cartão de KPI tem uma largura e altura diferentes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a recomendação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Deixar tamanhos diferentes para chamar atenção</li>
+                        <li><span class="letra">B)</span>Fazer o cartão mais importante bem pequeno</li>
+                        <li><span class="letra">C)</span>Colocar os cartões em diagonal</li>
+                        <li><span class="letra">D)</span>Não usar cartões</li>
+                        <li><span class="letra">E)</span>Usar dimensões idênticas para dar harmonia e equilíbrio visual</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Aplicar o padrão de leitura em Z</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Os olhos percorrem a tela em Z: topo da esquerda para a direita, diagonal descendo e base da esquerda para a direita.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde devem ficar os KPIs de maior impacto?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No topo da tela</li>
+                        <li><span class="letra">B)</span>No rodapé, à direita</li>
+                        <li><span class="letra">C)</span>No meio da diagonal</li>
+                        <li><span class="letra">D)</span>Numa aba separada</li>
+                        <li><span class="letra">E)</span>Escondidos atrás dos gráficos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Posicionar detalhes e rankings</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Seguindo a leitura em Z, o analista distribuiu os elementos do painel.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde devem ficar os detalhes e os rankings?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No topo</li>
+                        <li><span class="letra">B)</span>Na base da tela</li>
+                        <li><span class="letra">C)</span>No cabeçalho, junto com o título</li>
+                        <li><span class="letra">D)</span>Fora do dashboard</li>
+                        <li><span class="letra">E)</span>Sobre os cartões de KPI</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Usar as cores com significado</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O painel usa cores para indicar situações.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual associação segue a convenção vista em aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Vermelho = meta atingida; verde = alerta</li>
+                        <li><span class="letra">B)</span>Amarelo = dado neutro; rosa = meta atingida</li>
+                        <li><span class="letra">C)</span>Todas as cores com o mesmo significado</li>
+                        <li><span class="letra">D)</span>Roxo = queda; laranja = neutro</li>
+                        <li><span class="letra">E)</span>Verde = meta atingida; vermelho = alerta ou queda; azul/cinza = dados neutros</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Evitar o vermelho em resultado positivo</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O painel mostrou em vermelho o crescimento de 12% nas vendas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o problema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Vermelho indica alerta e pode causar pânico desnecessário diante de um resultado bom</li>
+                        <li><span class="letra">B)</span>Nenhum, vermelho chama atenção para boas notícias</li>
+                        <li><span class="letra">C)</span>O vermelho aumenta o valor mostrado</li>
+                        <li><span class="letra">D)</span>O vermelho deixa o painel mais rápido</li>
+                        <li><span class="letra">E)</span>O vermelho protege a célula</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Avaliar uma afirmação sobre cores</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Afirmação: &quot;Para um painel executivo ficar dinâmico, cada gráfico deve ter uma cor chamativa diferente, como amarelo, rosa e roxo.&quot;</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A afirmação é verdadeira ou falsa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Verdadeira; quanto mais cores, melhor</li>
+                        <li><span class="letra">B)</span>Verdadeira; cada gráfico precisa ser diferente</li>
+                        <li><span class="letra">C)</span>Falsa; o excesso de cores gera sobrecarga e as cores de alerta devem ficar reservadas para os desvios</li>
+                        <li><span class="letra">D)</span>Falsa; o painel deve ser todo em vermelho</li>
+                        <li><span class="letra">E)</span>Falsa; painéis não podem ter cor</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Evitar o efeito arco-íris</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um dashboard usa dez cores diferentes na mesma tela.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a consequência?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Confunde o leitor e esconde os verdadeiros alertas de gestão</li>
+                        <li><span class="letra">B)</span>O painel fica mais fácil de ler</li>
+                        <li><span class="letra">C)</span>Os gráficos passam a atualizar sozinhos</li>
+                        <li><span class="letra">D)</span>Os KPIs ficam mais precisos</li>
+                        <li><span class="letra">E)</span>Não há consequência</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Reconhecer a função dos segmentadores</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gerente quer filtrar o painel por setor com cliques em botões.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual recurso faz isso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Validação de dados</li>
+                        <li><span class="letra">B)</span>Segmentadores de dados (slicers)</li>
+                        <li><span class="letra">C)</span>Campo calculado</li>
+                        <li><span class="letra">D)</span>Proteção de planilha</li>
+                        <li><span class="letra">E)</span>Formatação condicional</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Selecionar várias categorias no segmentador</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No segmentador &quot;Setor&quot;, o gerente quer ver Manutenção e Produção ao mesmo tempo.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como fazer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Criar dois dashboards</li>
+                        <li><span class="letra">B)</span>Apertar F4</li>
+                        <li><span class="letra">C)</span>Clicar duas vezes em cada botão</li>
+                        <li><span class="letra">D)</span>Não é possível</li>
+                        <li><span class="letra">E)</span>Segurar Ctrl e clicar nos dois botões</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Filtrar períodos no painel</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gerente quer escolher o período arrastando uma barra de datas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual recurso deve ser usado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Validação de dados</li>
+                        <li><span class="letra">B)</span>Congelar painéis</li>
+                        <li><span class="letra">C)</span>Campo calculado</li>
+                        <li><span class="letra">D)</span>Linha do Tempo</li>
+                        <li><span class="letra">E)</span>Filtro por rótulo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Conectar o segmentador ao painel inteiro</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O segmentador &quot;Região&quot; controla só uma das três tabelas dinâmicas do painel.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando faz um único segmentador filtrar todos os gráficos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Conexões de Relatório, marcando todas as tabelas dinâmicas</li>
+                        <li><span class="letra">B)</span>Proteger Planilha</li>
+                        <li><span class="letra">C)</span>Agrupar</li>
+                        <li><span class="letra">D)</span>Atualizar Tudo</li>
+                        <li><span class="letra">E)</span>Congelar Painéis</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Prever o efeito das conexões</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">As três tabelas dinâmicas foram marcadas nas Conexões de Relatório do segmentador &quot;Região&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece ao clicar em &quot;Região Sul&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Só o primeiro gráfico muda</li>
+                        <li><span class="letra">B)</span>Os dados das outras regiões são apagados</li>
+                        <li><span class="letra">C)</span>Uma nova aba é criada</li>
+                        <li><span class="letra">D)</span>Todos os gráficos do painel passam a mostrar só o Sul</li>
+                        <li><span class="letra">E)</span>O painel fica bloqueado</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Separar dados e apresentação</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um analista montou a base, as tabelas dinâmicas e os gráficos na mesma aba. Na reunião, alguém apagou uma fórmula sem querer.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual prática evita esse problema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Separar o arquivo em abas: dados, cálculos de apoio e tela final</li>
+                        <li><span class="letra">B)</span>Usar mais cores</li>
+                        <li><span class="letra">C)</span>Colocar tudo numa aba só, mas em negrito</li>
+                        <li><span class="letra">D)</span>Imprimir o painel</li>
+                        <li><span class="letra">E)</span>Apagar a base depois de montar o painel</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Identificar a aba Base_Dados</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O arquivo do painel tem três abas: Base_Dados, Calculos_Apoio e Dashboard.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que fica na aba Base_Dados?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Os gráficos finais</li>
+                        <li><span class="letra">B)</span>As tabelas brutas de importação, sem gráficos nem enfeites</li>
+                        <li><span class="letra">C)</span>Os cartões de KPI</li>
+                        <li><span class="letra">D)</span>Os segmentadores</li>
+                        <li><span class="letra">E)</span>O texto da apresentação</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Identificar a aba Calculos_Apoio</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Continuando o Item 29.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que fica na aba Calculos_Apoio?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As tabelas brutas</li>
+                        <li><span class="letra">B)</span>A tela que o diretor vê</li>
+                        <li><span class="letra">C)</span>O logo da empresa</li>
+                        <li><span class="letra">D)</span>Os comentários da reunião</li>
+                        <li><span class="letra">E)</span>As tabelas dinâmicas que alimentam os gráficos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Identificar a aba Dashboard</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Continuando o Item 29.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como deve ser a aba Dashboard?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cheia de fórmulas visíveis</li>
+                        <li><span class="letra">B)</span>Com a base de dados completa</li>
+                        <li><span class="letra">C)</span>Sem gráficos</li>
+                        <li><span class="letra">D)</span>Limpa, proporcional, sem linhas de grade e interativa; a única que o diretor vê</li>
+                        <li><span class="letra">E)</span>Com as tabelas dinâmicas expostas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Ordenar a construção do dashboard</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Os passos são: criar os gráficos e levá-los ao Dashboard; gerar as tabelas dinâmicas de apoio; organizar e validar a base; inserir segmentadores e conectar as tabelas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o PRIMEIRO passo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Inserir segmentadores</li>
+                        <li><span class="letra">B)</span>Criar os gráficos</li>
+                        <li><span class="letra">C)</span>Organizar e validar a base de dados em tabela estruturada</li>
+                        <li><span class="letra">D)</span>Gerar as tabelas dinâmicas</li>
+                        <li><span class="letra">E)</span>Ocultar as linhas de grade</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Identificar o último passo da construção</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Continuando o Item 32, a base foi organizada, as tabelas dinâmicas foram geradas e os gráficos já estão no Dashboard.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o próximo passo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Inserir os segmentadores e conectar todas as tabelas via Conexões de Relatório</li>
+                        <li><span class="letra">B)</span>Apagar a base</li>
+                        <li><span class="letra">C)</span>Refazer as tabelas dinâmicas</li>
+                        <li><span class="letra">D)</span>Transformar os gráficos em imagens</li>
+                        <li><span class="letra">E)</span>Mesclar as células do painel</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Alinhar os elementos do painel</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Os gráficos do painel estão desalinhados e com espaços diferentes entre eles.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais ferramentas resolvem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Proteger e ocultar</li>
+                        <li><span class="letra">B)</span>Alinhar à Esquerda, Distribuir Verticalmente e Ajustar à Grade</li>
+                        <li><span class="letra">C)</span>Congelar e filtrar</li>
+                        <li><span class="letra">D)</span>Agrupar e desagrupar datas</li>
+                        <li><span class="letra">E)</span>Classificar de A a Z</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Fixar gráficos nas linhas da planilha</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O analista quer redimensionar um gráfico para que as bordas encostem exatamente nas linhas das células.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual tecla ele deve segurar enquanto redimensiona?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ctrl</li>
+                        <li><span class="letra">B)</span>Shift</li>
+                        <li><span class="letra">C)</span>Alt</li>
+                        <li><span class="letra">D)</span>F4</li>
+                        <li><span class="letra">E)</span>Esc</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Limpar a interface para entrega</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O painel está pronto e vai ser apresentado à diretoria.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais ajustes deixam a interface profissional?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Desmarcar linhas de grade, ocultar barra de fórmulas e cabeçalhos e esconder os botões de campo dos gráficos</li>
+                        <li><span class="letra">B)</span>Mostrar todas as fórmulas</li>
+                        <li><span class="letra">C)</span>Aumentar as linhas de grade</li>
+                        <li><span class="letra">D)</span>Deixar as abas de cálculo visíveis</li>
+                        <li><span class="letra">E)</span>Colocar a base ao lado dos gráficos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Explicar a remoção das linhas de grade</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um colega perguntou por que as linhas de grade da aba Dashboard foram desmarcadas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a resposta correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para diminuir o arquivo</li>
+                        <li><span class="letra">B)</span>Para proteger as fórmulas</li>
+                        <li><span class="letra">C)</span>Para imprimir mais rápido</li>
+                        <li><span class="letra">D)</span>Porque o Excel exige</li>
+                        <li><span class="letra">E)</span>Para eliminar poluição visual e dar aparência de painel profissional</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Começar a apresentação pela conclusão</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O analista vai apresentar o painel de estoque à alta liderança.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como ele deve começar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Explicando as fórmulas usadas</li>
+                        <li><span class="letra">B)</span>Contando as dificuldades técnicas da planilha</li>
+                        <li><span class="letra">C)</span>Lendo todas as linhas da base</li>
+                        <li><span class="letra">D)</span>Pela conclusão e pelo impacto, por exemplo: &quot;Nossas perdas de estoque caíram 14%&quot;, e depois mostrar o gráfico</li>
+                        <li><span class="letra">E)</span>Mostrando a aba Calculos_Apoio</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Aplicar os 4 passos do storytelling</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O storytelling com dados segue quatro passos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dado → Pergunta → Ação → Conclusão</li>
+                        <li><span class="letra">B)</span>Ação → Dado → Pergunta → Conclusão</li>
+                        <li><span class="letra">C)</span>Conclusão → Ação → Dado → Pergunta</li>
+                        <li><span class="letra">D)</span>Pergunta → Ação → Dado → Conclusão</li>
+                        <li><span class="letra">E)</span>Pergunta → Dado → Conclusão → Ação</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Identificar a ação no storytelling</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Pergunta: por que faltaram luvas em março? Dado: ruptura de 8% e cobertura de apenas 3 dias. Conclusão: o estoque mínimo está abaixo do consumo real.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ação coerente com essa história?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Reduzir o estoque mínimo</li>
+                        <li><span class="letra">B)</span>Subir o estoque mínimo para cobrir cerca de 10 dias de consumo</li>
+                        <li><span class="letra">C)</span>Parar de comprar luvas</li>
+                        <li><span class="letra">D)</span>Esconder o KPI de ruptura</li>
+                        <li><span class="letra">E)</span>Trocar a cor do gráfico</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Distribuir o tempo da apresentação</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O roteiro de 5 minutos tem 1 minuto para a pergunta, 1 para a conclusão e 1 para a ação proposta.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quantos minutos ficam para os dados?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1 minuto</li>
+                        <li><span class="letra">B)</span>3 minutos</li>
+                        <li><span class="letra">C)</span>2 minutos</li>
+                        <li><span class="letra">D)</span>5 minutos</li>
+                        <li><span class="letra">E)</span>Nenhum</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Evitar gráficos 3D no painel</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O dashboard usa pizzas e barras tridimensionais com sombra.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que evitar esses gráficos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque não podem ser filtrados</li>
+                        <li><span class="letra">B)</span>Porque não atualizam</li>
+                        <li><span class="letra">C)</span>Porque ocupam muita memória</li>
+                        <li><span class="letra">D)</span>Porque distorcem as proporções e induzem a leitura errada dos valores</li>
+                        <li><span class="letra">E)</span>Não há motivo para evitar</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Evitar o excesso de informação</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gerente de uma loja quer 15 gráficos numa única tela &quot;para não perder nenhum detalhe&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual argumento justifica reduzir para cerca de 4 gráficos principais?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quando tudo é destacado, nada se destaca; decisões rápidas dependem de foco nos indicadores prioritários</li>
+                        <li><span class="letra">B)</span>O Excel não permite mais de 4 gráficos</li>
+                        <li><span class="letra">C)</span>Menos gráficos deixam o arquivo mais leve, e isso é o mais importante</li>
+                        <li><span class="letra">D)</span>Gráficos atrapalham qualquer decisão</li>
+                        <li><span class="letra">E)</span>Os detalhes nunca são necessários</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Tratar as consultas de detalhe</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Mesmo com o painel enxuto, o gerente ainda quer consultar detalhes de vez em quando.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a solução sugerida?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Voltar aos 15 gráficos</li>
+                        <li><span class="letra">B)</span>Criar um segundo painel para consultas táticas pontuais</li>
+                        <li><span class="letra">C)</span>Imprimir a base inteira</li>
+                        <li><span class="letra">D)</span>Colocar os detalhes em letra pequena no painel principal</li>
+                        <li><span class="letra">E)</span>Apagar os detalhes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Limitar a quantidade de métricas</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Uma regra prática diz para não colocar mais de 7 métricas na mesma tela.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual critério decide se um indicador fica no painel?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Se o indicador altera as decisões imediatas do gestor</li>
+                        <li><span class="letra">B)</span>Se o número for grande</li>
+                        <li><span class="letra">C)</span>Se o gráfico for colorido</li>
+                        <li><span class="letra">D)</span>Se o dado for fácil de calcular</li>
+                        <li><span class="letra">E)</span>Se o indicador for antigo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Planejar o rascunho no papel</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No caso da TecLog (empresa fictícia com 1.200 entregas no semestre), a equipe vai montar um painel de fretes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que desenhar o rascunho (wireframe) no papel antes de abrir o software?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o Excel não permite mudar o layout depois</li>
+                        <li><span class="letra">B)</span>Para dispensar a base de dados</li>
+                        <li><span class="letra">C)</span>Para evitar retrabalho, definindo antes onde ficam cartões, gráficos e filtros</li>
+                        <li><span class="letra">D)</span>Para não usar tabelas dinâmicas</li>
+                        <li><span class="letra">E)</span>Para imprimir o painel</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Escolher os cartões do painel da TecLog</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O problema da TecLog são os custos de frete altos na Região Norte. A base tem data, estado, veículo, custo e prazo.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual conjunto de cartões KPI combina com o problema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Total de frete (R$), % de entregas no prazo e tempo médio de entrega</li>
+                        <li><span class="letra">B)</span>Número de funcionários, aniversariantes e cor do caminhão</li>
+                        <li><span class="letra">C)</span>Nome do motorista, placa e modelo</li>
+                        <li><span class="letra">D)</span>Só a data de hoje</li>
+                        <li><span class="letra">E)</span>Quantidade de linhas da base</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Escolher os gráficos do painel da TecLog</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No rascunho da TecLog, o Gráfico 1 mostra a evolução dos custos mês a mês e o Gráfico 2 compara o custo por tipo de veículo.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais tipos de gráfico combinam com esses objetivos, nessa ordem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Pizza e pizza</li>
+                        <li><span class="letra">B)</span>Dispersão e radar</li>
+                        <li><span class="letra">C)</span>Linhas e barras (ou colunas)</li>
+                        <li><span class="letra">D)</span>Rosca e área</li>
+                        <li><span class="letra">E)</span>Barras e pizza com 10 fatias</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Montar o projeto final de estoque</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O projeto final pede um dashboard de estoque com 4 KPIs, 2 gráficos dinâmicos e segmentação por setor.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais são os 4 KPIs pedidos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Faturamento, ticket médio, clientes e lucro</li>
+                        <li><span class="letra">B)</span>Média, mediana, moda e desvio</li>
+                        <li><span class="letra">C)</span>PROCV, SE, SOMASE e CONT.SE</li>
+                        <li><span class="letra">D)</span>Entradas, saídas, datas e fornecedores sem meta</li>
+                        <li><span class="letra">E)</span>Giro, ruptura, custo do estoque e cobertura, com meta e semáforo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Adaptar o painel no LibreOffice Calc</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Uma dupla fez o projeto final no LibreOffice Calc, que não tem segmentação de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual adaptação foi indicada em aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Desistir do painel</li>
+                        <li><span class="letra">B)</span>Digitar os dados filtrados à mão</li>
+                        <li><span class="letra">C)</span>Criar uma aba para cada setor copiando os dados</li>
+                        <li><span class="letra">D)</span>Usar os filtros da própria tabela dinâmica no lugar da segmentação</li>
+                        <li><span class="letra">E)</span>Usar só gráficos de pizza</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Análise de Dados Aplicada à Gestão — Conteúdo 7: 7 Dashboards Interativos e Integração de Dados</strong></p>
+        <p>Técnico em Assistente em Processos de Gestão e Controle de Materiais — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+    <script src="../../../../assets/js/avaliacao-pdf-professor.js"></script>
+</body>
+</html>

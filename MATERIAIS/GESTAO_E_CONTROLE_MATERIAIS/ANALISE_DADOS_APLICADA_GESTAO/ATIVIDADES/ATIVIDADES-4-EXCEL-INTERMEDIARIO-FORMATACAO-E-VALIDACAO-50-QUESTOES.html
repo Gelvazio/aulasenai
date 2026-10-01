@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteúdo 4 — 4 Excel Intermediário Formatação e Validação (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/menu.css">
+    <script src="MENU-ATIVIDADES.js" defer></script>
+    <script src="../../../../js/menu.js" defer></script>
+    <script src="../../../../js/header-usuario.js" defer></script>
+</head>
+<body data-aula="02" data-tema="4 Excel Intermediário Formatação e Validação" data-total="50"
+      data-uc="Análise de Dados Aplicada à Gestão" data-uc-curta="Análise de Dados Aplicada à Gestão"
+      data-docente="Gelvazio Camargo" data-turma="AI AIAC 2026/2 V1 (133933)" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🎨 Conteúdo 4: 4 Excel Intermediário Formatação e Validação</h1>
+            <p>Análise de Dados Aplicada à Gestão · Técnico em Assistente em Processos de Gestão e Controle de Materiais — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <button class="btn-export" id="btnExportarPDFGabarito" type="button" data-somente-perfil="PROFESSOR" hidden title="Só o professor: atividade completa com o gabarito real (lido do banco)">📥 Exportar PDF com gabarito</button>
+            <button class="btn-export" id="btnExportarGabarito" type="button" hidden title="Professor: gabarito real. Aluno: suas respostas da tentativa de maior nota.">🔑 Exportar Gabarito</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-4-EXCEL-INTERMEDIARIO-FORMATACAO-E-VALIDACAO-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 100 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D, E)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE AVALIADA</div>
+                    <div class="content-text">Formatar números, moedas, percentuais e datas; Aplicar formatação condicional com regras e fórmulas; Estilizar tabelas com clareza; Congelar painéis; Criar validação de dados e listas suspensas; Configurar mensagens e alertas de erro; Proteger células, planilhas e a estrutura da pasta; Usar filtros e ordenação</div>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Reconhecer o conceito de validação de dados</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No almoxarifado da Indústria Serra Azul (empresa fictícia), vários auxiliares lançam requisições na mesma planilha e os erros de digitação são frequentes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é a validação de dados?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um recurso que muda a cor das células conforme o valor</li>
+                        <li><span class="letra">B)</span>Um recurso que esconde as fórmulas</li>
+                        <li><span class="letra">C)</span>Regras que controlam e padronizam o que pode ser digitado nas células</li>
+                        <li><span class="letra">D)</span>Um tipo de gráfico</li>
+                        <li><span class="letra">E)</span>Um backup automático da planilha</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Reconhecer o que a formatação faz</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A célula H2 guarda o número 1500,5. Depois de formatada como Moeda, ela mostra R$ 1.500,50.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que aconteceu com o valor armazenado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Virou texto</li>
+                        <li><span class="letra">B)</span>Foi arredondado para 1.501</li>
+                        <li><span class="letra">C)</span>Foi multiplicado por 100</li>
+                        <li><span class="letra">D)</span>Continua exatamente 1500,5; mudou só a forma de exibir</li>
+                        <li><span class="letra">E)</span>Perdeu as casas decimais</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Revisar a referência absoluta</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na planilha de custos, a fórmula =B2*$B$4 foi copiada para várias linhas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a finalidade do cifrão em $B$4?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Travar a célula para que ela não mude ao copiar a fórmula</li>
+                        <li><span class="letra">B)</span>Proteger a planilha contra visualização</li>
+                        <li><span class="letra">C)</span>Converter o valor para Real</li>
+                        <li><span class="letra">D)</span>Indicar que a célula tem um desconto</li>
+                        <li><span class="letra">E)</span>Esconder a célula</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Evitar digitar o símbolo da moeda</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um auxiliar digitou R$ 45,90 diretamente na célula do custo unitário. A fórmula de custo em estoque dessa linha passou a mostrar #VALOR!.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a causa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O Excel não aceita centavos</li>
+                        <li><span class="letra">B)</span>Digitar &quot;R$&quot; dentro da célula transforma o número em texto, e as fórmulas não fazem contas com texto</li>
+                        <li><span class="letra">C)</span>Faltou o cifrão na referência</li>
+                        <li><span class="letra">D)</span>A célula estava protegida</li>
+                        <li><span class="letra">E)</span>A coluna estava congelada</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Reconhecer datas como números</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Para o Excel, toda data é um número sequencial de dias. O número 46000 corresponde a 09/12/2025.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual data o Excel mostra para o número 46030 no formato Data Abreviada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>09/12/2055</li>
+                        <li><span class="letra">B)</span>10/12/2025</li>
+                        <li><span class="letra">C)</span>09/01/2025</li>
+                        <li><span class="letra">D)</span>30/12/2025</li>
+                        <li><span class="letra">E)</span>08/01/2026</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Calcular vencimentos com datas</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A nota fiscal de compra foi recebida na data que está em B2, com pagamento em 30 dias.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula calcula a data de vencimento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=B2+30</li>
+                        <li><span class="letra">B)</span>=B2*30</li>
+                        <li><span class="letra">C)</span>=B2&amp;&quot;30&quot;</li>
+                        <li><span class="letra">D)</span>=30/B2</li>
+                        <li><span class="letra">E)</span>=DATA(30)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Diferenciar data abreviada e data completa</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O relatório de recebimento mostra a data 09/12/2025. O gerente quer ver também o dia da semana e o mês por extenso.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual formato atende ao pedido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Data Abreviada</li>
+                        <li><span class="letra">B)</span>Porcentagem</li>
+                        <li><span class="letra">C)</span>Data Completa</li>
+                        <li><span class="letra">D)</span>Moeda</li>
+                        <li><span class="letra">E)</span>Texto</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Reconhecer a formatação condicional</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O comprador quer que os itens com saldo crítico fiquem vermelhos sozinhos, mudando de cor assim que um novo lançamento for feito.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual recurso faz isso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Validação de dados</li>
+                        <li><span class="letra">B)</span>Congelar painéis</li>
+                        <li><span class="letra">C)</span>Proteger planilha</li>
+                        <li><span class="letra">D)</span>Preenchimento relâmpago</li>
+                        <li><span class="letra">E)</span>Formatação condicional</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Usar barras de dados</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gerente quer ver, dentro de cada célula da coluna Custo em Estoque, uma barrinha horizontal proporcional ao valor.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual opção da formatação condicional ele deve usar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Escalas de cor</li>
+                        <li><span class="letra">B)</span>Barras de dados</li>
+                        <li><span class="letra">C)</span>Conjunto de ícones de setas</li>
+                        <li><span class="letra">D)</span>Realçar valores duplicados</li>
+                        <li><span class="letra">E)</span>Validação de dados</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Usar escalas de cor</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na tabela de consumo por setor, o gerente quer um gradiente de cores do verde (menor consumo) ao vermelho (maior consumo).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual recurso atende ao pedido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Escalas de cor</li>
+                        <li><span class="letra">B)</span>Barras de dados</li>
+                        <li><span class="letra">C)</span>Bordas duplas</li>
+                        <li><span class="letra">D)</span>Estilo de célula Título</li>
+                        <li><span class="letra">E)</span>Lista suspensa</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Montar a regra com fórmula do estoque mínimo</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O Saldo está na coluna E e o Estoque Mínimo na coluna F. O analista selecionou E2:E200 e vai criar a regra &quot;Usar uma fórmula para determinar quais células devem ser formatadas&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula deixa vermelho cada saldo abaixo do próprio mínimo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=$E$2&lt;$F$2</li>
+                        <li><span class="letra">B)</span>=E2&gt;F2</li>
+                        <li><span class="letra">C)</span>=SE(E2&lt;F2)</li>
+                        <li><span class="letra">D)</span>=$E2&lt;$F2</li>
+                        <li><span class="letra">E)</span>=E:E&lt;F:F</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Entender o cifrão só na coluna</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na regra =$E2&lt;$F2, o cifrão aparece antes das letras das colunas, mas não antes do número da linha.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a linha fica sem cifrão?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para a regra valer só para a linha 2</li>
+                        <li><span class="letra">B)</span>Para a linha &quot;andar&quot; e cada item ser comparado com o próprio mínimo</li>
+                        <li><span class="letra">C)</span>Porque o Excel não aceita cifrão em linhas</li>
+                        <li><span class="letra">D)</span>Para a regra comparar sempre com F2</li>
+                        <li><span class="letra">E)</span>Para proteger as células</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Destacar o texto &quot;Repor&quot;</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A coluna Situação usa =SE(E2&lt;F2;&quot;Repor&quot;;&quot;OK&quot;). O comprador quer que as células com Repor fiquem vermelhas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual regra de formatação condicional é a mais direta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Barras de dados</li>
+                        <li><span class="letra">B)</span>Escala de cor de 3 cores</li>
+                        <li><span class="letra">C)</span>Realçar regras das células → Texto que contém → Repor</li>
+                        <li><span class="letra">D)</span>Validação de dados → Lista</li>
+                        <li><span class="letra">E)</span>Proteger planilha</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Escolher a fonte de uma tabela profissional</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um relatório de estoque usa cinco fontes diferentes, uma em cada coluna.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual prática de estilização é recomendada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Usar uma fonte diferente por coluna para separar os dados</li>
+                        <li><span class="letra">B)</span>Usar fontes decorativas nos números</li>
+                        <li><span class="letra">C)</span>Escrever tudo em negrito e itálico</li>
+                        <li><span class="letra">D)</span>Adotar uma única família de fontes limpa, como Aptos, Segoe UI ou Calibri</li>
+                        <li><span class="letra">E)</span>Usar tamanho 6 para caber mais dados</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Alinhar números corretamente</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Afirmação: &quot;Em tabelas corporativas, os números devem ser alinhados à esquerda para facilitar a leitura.&quot;</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A afirmação é verdadeira ou falsa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Verdadeira, pois lemos da esquerda para a direita</li>
+                        <li><span class="letra">B)</span>Verdadeira, pois assim os textos e números ficam iguais</li>
+                        <li><span class="letra">C)</span>Falsa, pois números devem ser centralizados</li>
+                        <li><span class="letra">D)</span>Falsa, pois o alinhamento não importa</li>
+                        <li><span class="letra">E)</span>Falsa, pois números ficam à direita para que casas decimais e milhares fiquem emparelhados</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Destacar a linha de totais</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A última linha do relatório traz os totais gerais de custo em estoque.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual destaque é recomendado para a linha de totais?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Negrito e borda dupla inferior</li>
+                        <li><span class="letra">B)</span>Fundo com várias cores fortes</li>
+                        <li><span class="letra">C)</span>Fonte menor que o restante</li>
+                        <li><span class="letra">D)</span>Texto em itálico e piscando</li>
+                        <li><span class="letra">E)</span>Nenhum destaque</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Formatar o cabeçalho da tabela</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gerente pediu um cabeçalho com contraste, fácil de distinguir dos dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual formatação segue as boas práticas vistas em aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Fundo amarelo-limão com texto branco</li>
+                        <li><span class="letra">B)</span>Fundo escuro (ex.: azul-marinho) com texto branco e negrito</li>
+                        <li><span class="letra">C)</span>Fundo branco com texto branco</li>
+                        <li><span class="letra">D)</span>Cada coluna com uma cor primária diferente</li>
+                        <li><span class="letra">E)</span>Sem cabeçalho</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Evitar a poluição visual</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um relatório usa vermelho, amarelo, verde, rosa e laranja fortes em todas as colunas. O gerente disse que parece um &quot;carnaval&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a correção recomendada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Acrescentar mais cores para diferenciar tudo</li>
+                        <li><span class="letra">B)</span>Tirar todas as bordas e cores, inclusive dos alertas</li>
+                        <li><span class="letra">C)</span>Usar tons neutros (cinza, azul-marinho, grafite) e reservar cores fortes só para exceções e metas</li>
+                        <li><span class="letra">D)</span>Usar só vermelho</li>
+                        <li><span class="letra">E)</span>Trocar a fonte</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Entender o congelamento de painéis</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A planilha de movimentação tem 800 linhas. Ao rolar para baixo, os títulos das colunas somem e o auxiliar se perde.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual recurso resolve o problema e onde ele fica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Proteger Planilha, na guia Revisão</li>
+                        <li><span class="letra">B)</span>Validação de Dados, na guia Dados</li>
+                        <li><span class="letra">C)</span>Formatação Condicional, na guia Página Inicial</li>
+                        <li><span class="letra">D)</span>Congelar Painéis, na guia Exibir</li>
+                        <li><span class="letra">E)</span>Filtro, na guia Inserir</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Posicionar o cursor para congelar</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O analista quer manter congeladas a linha 1 (cabeçalhos) e a coluna A (código do item) ao mesmo tempo.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em qual célula ele deve clicar antes de usar Congelar Painéis?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A1</li>
+                        <li><span class="letra">B)</span>A2</li>
+                        <li><span class="letra">C)</span>B1</li>
+                        <li><span class="letra">D)</span>C3</li>
+                        <li><span class="letra">E)</span>B2</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Escolher a opção de congelamento</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Uma lista de compras tem o cabeçalho só na linha 1 e poucas colunas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a opção mais rápida?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Congelar Linha Superior</li>
+                        <li><span class="letra">B)</span>Congelar Primeira Coluna</li>
+                        <li><span class="letra">C)</span>Proteger Estrutura</li>
+                        <li><span class="letra">D)</span>Dividir a janela em quatro</li>
+                        <li><span class="letra">E)</span>Ocultar as linhas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Congelar a primeira coluna</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um orçamento de compras de doze meses tem o nome do material na coluna A e os meses nas colunas B a M. Ao rolar para a direita, o nome do material some.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual opção mantém o nome do material visível?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Congelar Linha Superior</li>
+                        <li><span class="letra">B)</span>Congelar Primeira Coluna</li>
+                        <li><span class="letra">C)</span>Classificar de A a Z</li>
+                        <li><span class="letra">D)</span>Mesclar e centralizar</li>
+                        <li><span class="letra">E)</span>Quebrar texto automaticamente</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Reconhecer o perigo dos dados inconsistentes</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na coluna Fornecedor, um auxiliar digitou &quot;Aço Sul&quot;, outro &quot;Aco Sul&quot; e um terceiro &quot;AÇO SUL LTDA&quot;. O SOMASE por fornecedor passou a dar valores menores que o real.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a causa do problema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A função SOMASE não funciona com textos</li>
+                        <li><span class="letra">B)</span>A planilha está protegida</li>
+                        <li><span class="letra">C)</span>Faltou congelar os painéis</li>
+                        <li><span class="letra">D)</span>Digitações diferentes do mesmo fornecedor são tratadas como fornecedores diferentes</li>
+                        <li><span class="letra">E)</span>O formato da coluna está como Moeda</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Validar números em uma faixa</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A quantidade requisitada deve ser um número inteiro de 1 a 500.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual configuração de validação atende à regra?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Permitir: Lista; Fonte: 1;500</li>
+                        <li><span class="letra">B)</span>Permitir: Número inteiro; Dados: está entre; Mínimo 1 e Máximo 500</li>
+                        <li><span class="letra">C)</span>Permitir: Data; entre 1 e 500</li>
+                        <li><span class="letra">D)</span>Permitir: Comprimento do texto igual a 500</li>
+                        <li><span class="letra">E)</span>Permitir: Qualquer valor</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Validar o tamanho de um texto</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O CNPJ dos fornecedores deve ter exatamente 14 dígitos, digitados sem pontos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual opção de validação limita o tamanho do que é digitado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Permitir: Lista</li>
+                        <li><span class="letra">B)</span>Permitir: Data</li>
+                        <li><span class="letra">C)</span>Permitir: Decimal maior que 14</li>
+                        <li><span class="letra">D)</span>Permitir: Número inteiro entre 1 e 14</li>
+                        <li><span class="letra">E)</span>Permitir: Comprimento do texto igual a 14</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Diferenciar mensagem de entrada e alerta de erro</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O analista quer que, ao clicar na célula, apareça a orientação &quot;Digite de 1 a 500&quot; e que, se o valor estiver fora da faixa, a gravação seja impedida.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais abas da janela de validação ele deve usar, nessa ordem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mensagem de Entrada e Alerta de Erro</li>
+                        <li><span class="letra">B)</span>Alerta de Erro e Mensagem de Entrada</li>
+                        <li><span class="letra">C)</span>Configurações e Proteção</li>
+                        <li><span class="letra">D)</span>Fonte e Borda</li>
+                        <li><span class="letra">E)</span>Número e Alinhamento</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Escolher o estilo do alerta de erro</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O supervisor quer que um código inexistente NUNCA seja aceito, sem opção de continuar mesmo assim.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual estilo de alerta de erro deve ser usado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Informações</li>
+                        <li><span class="letra">B)</span>Aviso</li>
+                        <li><span class="letra">C)</span>Parar</li>
+                        <li><span class="letra">D)</span>Nenhum</li>
+                        <li><span class="letra">E)</span>Mensagem de entrada</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Criar a lista suspensa com opções digitadas</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A coluna Código deve aceitar só MAT-001, MAT-002 e MAT-003, escolhidos com um clique.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como preencher a fonte da lista?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>MAT-001 MAT-002 MAT-003</li>
+                        <li><span class="letra">B)</span>MAT-001:MAT-003</li>
+                        <li><span class="letra">C)</span>&quot;MAT-001&quot;+&quot;MAT-002&quot;+&quot;MAT-003&quot;</li>
+                        <li><span class="letra">D)</span>MAT-001;MAT-002;MAT-003</li>
+                        <li><span class="letra">E)</span>=MAT-001</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Vincular a lista suspensa ao cadastro</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Os códigos válidos estão na aba Cadastro, em A2:A300. A coluna Código da aba Movimentação deve usar esses códigos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fonte deve ser informada na validação (Permitir: Lista)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cadastro A2 até A300</li>
+                        <li><span class="letra">B)</span>=Cadastro!$A$2:$A$300</li>
+                        <li><span class="letra">C)</span>=Movimentação!A2:A300</li>
+                        <li><span class="letra">D)</span>=SOMA(Cadastro!A2:A300)</li>
+                        <li><span class="letra">E)</span>=Cadastro!A:A300</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Reconhecer o benefício da lista suspensa</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Depois da lista suspensa, os auxiliares passaram a escolher o código com o mouse.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o principal benefício?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A planilha fica mais colorida</li>
+                        <li><span class="letra">B)</span>As fórmulas ficam protegidas</li>
+                        <li><span class="letra">C)</span>As datas são convertidas</li>
+                        <li><span class="letra">D)</span>O arquivo fica menor</li>
+                        <li><span class="letra">E)</span>Acabam os erros de digitação no campo, pois só códigos válidos são aceitos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Ligar a validação ao PROCV da próxima aula</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na Aula 3, o PROCV vai buscar a descrição de cada item pelo código digitado na Movimentação.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que validar o código na entrada ajuda o PROCV?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Evita o erro #N/D causado por código digitado errado ou inexistente</li>
+                        <li><span class="letra">B)</span>Faz o PROCV procurar para a esquerda</li>
+                        <li><span class="letra">C)</span>Dispensa o último argumento do PROCV</li>
+                        <li><span class="letra">D)</span>Transforma o código em número</li>
+                        <li><span class="letra">E)</span>Não tem relação com o PROCV</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Ordenar a criação da lista suspensa</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Os passos para criar a lista são: acessar Dados → Validação de Dados; digitar os itens na Fonte; selecionar as células; mudar Permitir para Lista.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Digitar a Fonte; selecionar as células; Permitir: Lista; Validação de Dados</li>
+                        <li><span class="letra">B)</span>Permitir: Lista; selecionar as células; digitar a Fonte; Validação de Dados</li>
+                        <li><span class="letra">C)</span>Selecionar as células; Dados → Validação de Dados; Permitir: Lista; digitar a Fonte</li>
+                        <li><span class="letra">D)</span>Validação de Dados; digitar a Fonte; Permitir: Lista; selecionar as células</li>
+                        <li><span class="letra">E)</span>Selecionar as células; digitar a Fonte; Permitir: Lista; Validação de Dados</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Entender o objetivo da proteção</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um usuário apagou sem querer a fórmula de custo em estoque e ninguém percebeu por uma semana.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o objetivo da proteção de planilha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Impedir que alguém abra o arquivo</li>
+                        <li><span class="letra">B)</span>Preservar as fórmulas sem impedir o lançamento de novos dados nas células liberadas</li>
+                        <li><span class="letra">C)</span>Deixar todas as células editáveis</li>
+                        <li><span class="letra">D)</span>Colorir as fórmulas</li>
+                        <li><span class="letra">E)</span>Apagar os dados antigos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Reconhecer o estado padrão das células</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O analista vai proteger a planilha pela primeira vez.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como estão as células por padrão, antes de qualquer ajuste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Todas desbloqueadas</li>
+                        <li><span class="letra">B)</span>Só as fórmulas bloqueadas</li>
+                        <li><span class="letra">C)</span>Só os cabeçalhos bloqueados</li>
+                        <li><span class="letra">D)</span>Todas marcadas como Bloqueadas</li>
+                        <li><span class="letra">E)</span>Todas ocultas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Destravar as células de entrada</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">As quantidades e os preços devem continuar editáveis depois da proteção.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o analista deve fazer com essas células ANTES de proteger?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apagar o conteúdo</li>
+                        <li><span class="letra">B)</span>Aplicar formatação condicional</li>
+                        <li><span class="letra">C)</span>Ocultar as colunas</li>
+                        <li><span class="letra">D)</span>Congelar os painéis</li>
+                        <li><span class="letra">E)</span>Em Formatar Células (Ctrl+1), aba Proteção, desmarcar Bloqueadas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Ativar a proteção da planilha</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">As células de entrada já foram destravadas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde o analista ativa a proteção da aba?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Guia Revisão → Proteger Planilha</li>
+                        <li><span class="letra">B)</span>Guia Exibir → Congelar Painéis</li>
+                        <li><span class="letra">C)</span>Guia Dados → Filtro</li>
+                        <li><span class="letra">D)</span>Guia Inserir → Tabela</li>
+                        <li><span class="letra">E)</span>Guia Fórmulas → Mostrar Fórmulas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Prever o efeito de proteger sem destravar</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um analista protegeu a planilha de requisições sem destravar nenhuma célula.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece com os colegas que lançam requisições?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Continuam lançando normalmente</li>
+                        <li><span class="letra">B)</span>Só conseguem editar as fórmulas</li>
+                        <li><span class="letra">C)</span>Não conseguem digitar em nenhuma célula até alguém desproteger a planilha</li>
+                        <li><span class="letra">D)</span>O Excel destrava as células sozinho</li>
+                        <li><span class="letra">E)</span>Os dados antigos são apagados</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Proteger a estrutura da pasta</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gerente quer impedir que alguém exclua, renomeie ou adicione abas no arquivo de estoque.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual recurso atende ao pedido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Proteger Planilha</li>
+                        <li><span class="letra">B)</span>Congelar Painéis</li>
+                        <li><span class="letra">C)</span>Validação de Dados</li>
+                        <li><span class="letra">D)</span>Proteger Estrutura da Pasta de Trabalho</li>
+                        <li><span class="letra">E)</span>Formatação Condicional</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Entender o uso da senha na proteção</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na prática da aula, a planilha foi protegida com a senha gestao2026.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve a senha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para abrir o arquivo</li>
+                        <li><span class="letra">B)</span>Para impedir que a proteção seja desativada por quem não está autorizado</li>
+                        <li><span class="letra">C)</span>Para criptografar os dados na internet</li>
+                        <li><span class="letra">D)</span>Para liberar a validação de dados</li>
+                        <li><span class="letra">E)</span>Para congelar os painéis</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Ordenar a proteção das fórmulas</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O supervisor quer que os usuários editem só as células de entrada e que as fórmulas fiquem protegidas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Proteger a planilha e depois apagar as fórmulas editáveis</li>
+                        <li><span class="letra">B)</span>Pintar de vermelho as células que não podem ser alteradas</li>
+                        <li><span class="letra">C)</span>Colocar senha no arquivo e ocultar as colunas com cálculos</li>
+                        <li><span class="letra">D)</span>Congelar a linha 1 e ativar o filtro</li>
+                        <li><span class="letra">E)</span>Destravar as células de entrada em Formatar Células e depois ativar Proteger Planilha</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Ativar o filtro automático</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O comprador quer ver apenas os itens de um fornecedor na planilha de 800 linhas, sem apagar os outros.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual atalho ativa ou desativa o AutoFiltro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ctrl+Shift+L</li>
+                        <li><span class="letra">B)</span>Ctrl+E</li>
+                        <li><span class="letra">C)</span>F4</li>
+                        <li><span class="letra">D)</span>Ctrl+1</li>
+                        <li><span class="letra">E)</span>Alt+F5</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Usar filtros de número</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gerente quer ver somente os itens com custo em estoque maior que R$ 1.000.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual recurso do AutoFiltro atende ao pedido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Filtros de Texto → Começa com</li>
+                        <li><span class="letra">B)</span>Classificar de A a Z</li>
+                        <li><span class="letra">C)</span>Filtros de Número → É Maior do que → 1000</li>
+                        <li><span class="letra">D)</span>Validação de Dados</li>
+                        <li><span class="letra">E)</span>Congelar Painéis</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Entender o que o filtro faz com os dados</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Depois de filtrar pelo fornecedor &quot;Aço Sul&quot;, só 40 das 800 linhas aparecem.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que aconteceu com as outras linhas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Foram excluídas</li>
+                        <li><span class="letra">B)</span>Foram movidas para outra aba</li>
+                        <li><span class="letra">C)</span>Foram protegidas</li>
+                        <li><span class="letra">D)</span>Estão apenas ocultas pelo filtro e voltam ao limpar o filtro</li>
+                        <li><span class="letra">E)</span>Foram convertidas em texto</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Ordenar dados pelo filtro</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O comprador quer ver os itens do maior para o menor custo em estoque.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual opção ele deve usar na seta do cabeçalho da coluna de custo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Classificar do Menor para o Maior</li>
+                        <li><span class="letra">B)</span>Classificar do Maior para o Menor</li>
+                        <li><span class="letra">C)</span>Filtros de Texto</li>
+                        <li><span class="letra">D)</span>Limpar Filtro</li>
+                        <li><span class="letra">E)</span>Congelar Painéis</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Aplicar o formato de data na prática</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na prática do relatório de estoque, as datas de entrada aparecem como 46000, 46012 e 46025.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que fazer para que apareçam como datas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Redigitar todas as datas como texto</li>
+                        <li><span class="letra">B)</span>Multiplicar por 30</li>
+                        <li><span class="letra">C)</span>Aplicar o formato Data Abreviada</li>
+                        <li><span class="letra">D)</span>Aplicar o formato Porcentagem</li>
+                        <li><span class="letra">E)</span>Apagar a coluna</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Montar a formatação condicional com dois alertas</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na prática 1, o saldo deve ficar vermelho quando estiver abaixo do mínimo e verde quando estiver acima dele.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como isso é feito?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com uma única regra que usa duas cores ao mesmo tempo</li>
+                        <li><span class="letra">B)</span>Com validação de dados</li>
+                        <li><span class="letra">C)</span>Pintando as células à mão</li>
+                        <li><span class="letra">D)</span>Com Congelar Painéis</li>
+                        <li><span class="letra">E)</span>Com duas regras: =$E2&lt;$F2 em vermelho e =$E2&gt;$F2 em verde</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Configurar o formulário com validação</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na prática 2, a quantidade deve ser inteira de 1 a 500, com alerta &quot;Parar&quot;, título Quantidade Inválida e mensagem &quot;Use 1 a 500&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece se o auxiliar digitar 650?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O Excel aceita e pinta de vermelho</li>
+                        <li><span class="letra">B)</span>O Excel arredonda para 500</li>
+                        <li><span class="letra">C)</span>O Excel mostra o alerta e não aceita o valor</li>
+                        <li><span class="letra">D)</span>O Excel aceita, mas mostra uma mensagem de entrada</li>
+                        <li><span class="letra">E)</span>O Excel apaga a planilha</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Testar o bloqueio estratégico</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na prática 3, quantidades e preços foram destravados e a planilha foi protegida. O auxiliar tenta editar a fórmula de custo em estoque.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O Excel mostra um aviso de que a célula está protegida</li>
+                        <li><span class="letra">B)</span>A fórmula é alterada normalmente</li>
+                        <li><span class="letra">C)</span>A planilha é desprotegida sozinha</li>
+                        <li><span class="letra">D)</span>A fórmula é apagada</li>
+                        <li><span class="letra">E)</span>As quantidades ficam bloqueadas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Relacionar os recursos à confiabilidade</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na síntese da aula, os recursos foram divididos em &quot;comunicação visual&quot; e &quot;confiabilidade operacional&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual grupo de recursos pertence à CONFIABILIDADE OPERACIONAL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Formatação de moeda, datas e cores</li>
+                        <li><span class="letra">B)</span>Barras de dados e escalas de cor</li>
+                        <li><span class="letra">C)</span>Fontes, bordas e alinhamento</li>
+                        <li><span class="letra">D)</span>Validação de dados, proteção de fórmulas e filtros</li>
+                        <li><span class="letra">E)</span>Congelar painéis e cores de cabeçalho</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Equilibrar segurança e facilidade</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um analista quer &quot;travar tudo com senha&quot; para ninguém mexer na planilha de requisições usada por toda a equipe.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o risco desse plano?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nenhum, pois proteção total é sempre melhor</li>
+                        <li><span class="letra">B)</span>As fórmulas deixam de calcular</li>
+                        <li><span class="letra">C)</span>A equipe não consegue lançar as requisições do dia se as células de entrada não forem destravadas</li>
+                        <li><span class="letra">D)</span>O arquivo não pode mais ser salvo</li>
+                        <li><span class="letra">E)</span>As datas viram números</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Análise de Dados Aplicada à Gestão — Conteúdo 4: 4 Excel Intermediário Formatação e Validação</strong></p>
+        <p>Técnico em Assistente em Processos de Gestão e Controle de Materiais — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+    <script src="../../../../assets/js/avaliacao-pdf-professor.js"></script>
+</body>
+</html>

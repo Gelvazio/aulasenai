@@ -56,7 +56,7 @@
                 <div class="aula-title">Reconhecer endereçamento de células em estrutura tabular</div>
                 <div class="content-box">
                     <div class="content-label">📋 CONTEXTO</div>
-                    <div class="content-text">Uma loja de eletrônicos em Itajaí (Multitech Store) precisa criar um relatório mensal de vendas de janeiro de 2026. A gerente solicitou uma planilha para rastrear 5 produtos: Notebooks, Mice, Teclados, Monitores e Webcams. A estrutura deve ter: Linha 1 (cabeçalhos) = A1:Produto, B1:Quantidade, C1:Preço Unitário, D1:Total da Venda, E1:% do Total. Linha 2 em diante = dados de cada produto.</div>
+                    <div class="content-text">Uma loja de eletrônicos em Itajaí (Multitech Store) precisa criar um relatório mensal de vendas de janeiro de 2026. A gerente solicitou uma planilha para rastrear 5 produtos: Notebooks, Mouses, Teclados, Monitores e Webcams. A estrutura deve ter: Linha 1 (cabeçalhos) = A1:Produto, B1:Quantidade, C1:Preço Unitário, D1:Total da Venda, E1:% do Total. Linha 2 em diante = dados de cada produto.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 COMANDO</div>
@@ -125,7 +125,7 @@
                 <div class="aula-title">Diferenciar referência relativa de absoluta em cálculos compartilhados</div>
                 <div class="content-box">
                     <div class="content-label">📋 CONTEXTO</div>
-                    <div class="content-text">Para calcular % do total: =D2/$D$7*100. O $D$7 é ABSOLUTO (não muda ao copiar) porque a célula D7 tem o TOTAL geral que serve de divisor para TODOS os produtos. Se não usar $D$7, ao copiar a fórmula para D3, D4, D5, D6, a referência mudaria incorretamente (D8, D9, D10, D11).</div>
+                    <div class="content-text">Para calcular o % do total, a fórmula em E2 divide o total do produto (D2) pelo total geral, que está em D7. Ao copiar a fórmula de E2 até E6, a célula D7 precisa continuar fixa; sem a trava, ela mudaria para D8, D9, D10 e D11 (células vazias).</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 COMANDO</div>
@@ -148,7 +148,7 @@
                 <div class="aula-title">Aplicar função SOMA para total de vendas</div>
                 <div class="content-box">
                     <div class="content-label">📋 CONTEXTO</div>
-                    <div class="content-text">Totais de venda de cada produto: D2=17.500 (Notebook), D3=1.700 (Mouse), D4=2.250 (Teclado), D5=6.400 (Monitor), D6=3.000 (Webcam). O total geral (D7) deve somar todos estes valores: 17.500+1.700+2.250+6.400+3.000 = 30.850 reais. Isso é feito com SOMA().</div>
+                    <div class="content-text">Totais de venda de cada produto: D2=17.500 (Notebook), D3=1.700 (Mouse), D4=2.250 (Teclado), D5=6.400 (Monitor), D6=3.000 (Webcam). O total geral (D7) deve somar todos esses valores com a função SOMA.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 COMANDO</div>
@@ -171,7 +171,7 @@
                 <div class="aula-title">Utilizar função MÁXIMO para identificar maior venda</div>
                 <div class="content-box">
                     <div class="content-label">📋 CONTEXTO</div>
-                    <div class="content-text">Qual produto teve a maior receita? Olhando os totais: Notebook R$ 17.500 &gt; Monitor R$ 6.400 &gt; Mouse R$ 1.700 &gt; Teclado R$ 2.250 &gt; Webcam R$ 3.000. A função MÁXIMO retorna automaticamente o valor mais alto: 17.500.</div>
+                    <div class="content-text">Totais de venda na coluna D: Notebook R$ 17.500 (D2), Mouse R$ 1.700 (D3), Teclado R$ 2.250 (D4), Monitor R$ 6.400 (D5) e Webcam R$ 3.000 (D6). A gerente quer destacar a maior receita do mês usando uma função.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 COMANDO</div>
@@ -194,7 +194,7 @@
                 <div class="aula-title">Utilizar funções MÍNIMO e MÉDIA para análise</div>
                 <div class="content-box">
                     <div class="content-label">📋 CONTEXTO</div>
-                    <div class="content-text">MÍNIMO = qual foi a menor receita individual? Mouse com R$ 1.700. MÉDIA = receita média por produto = R$ 30.850 ÷ 5 = R$ 6.170. Estas métricas ajudam o gerente a entender quais produtos vendem bem e quais precisam de ação de marketing.</div>
+                    <div class="content-text">Com os mesmos totais do Item 06 (D2:D6), a gerente quer saber a menor receita individual (MÍNIMO) e a receita média por produto (MÉDIA). Essas métricas ajudam a decidir quais produtos precisam de ação de venda.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 COMANDO</div>
@@ -217,7 +217,7 @@
                 <div class="aula-title">Calcular percentual de participação no faturamento total</div>
                 <div class="content-box">
                     <div class="content-label">📋 CONTEXTO</div>
-                    <div class="content-text">Notebook faturou R$ 17.500 de um total de R$ 30.850. Percentual = (17.500 ÷ 30.850) × 100 = 56,72%. Isso significa que Notebook representa 56,72% de TODA a receita do mês. Fórmula: =D2/$D$7*100</div>
+                    <div class="content-text">O Notebook faturou R$ 17.500 de um total de R$ 30.850. O percentual é calculado com =D2/$D$7 e a célula é formatada como Porcentagem com 2 casas decimais.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 COMANDO</div>
@@ -226,11 +226,11 @@
                 <div class="content-box">
                     <div class="content-label">📝 ALTERNATIVAS</div>
                     <ul class="alternativas">
-                        <li><span class="letra">A)</span>5,50% (mouse percentage)</li>
-                        <li><span class="letra">B)</span>20,74% (monitor percentage)</li>
-                        <li><span class="letra">C)</span>56,72% (notebook)</li>
-                        <li><span class="letra">D)</span>9,72% (webcam percentage)</li>
-                        <li><span class="letra">E)</span>100% (total)</li>
+                        <li><span class="letra">A)</span>5,51%</li>
+                        <li><span class="letra">B)</span>20,75%</li>
+                        <li><span class="letra">C)</span>56,73%</li>
+                        <li><span class="letra">D)</span>9,72%</li>
+                        <li><span class="letra">E)</span>100,00%</li>
                     </ul>
                 </div>
             </div>
@@ -263,7 +263,7 @@
                 <div class="aula-title">Entender cópia de fórmula com referências relativas</div>
                 <div class="content-box">
                     <div class="content-label">📋 CONTEXTO</div>
-                    <div class="content-text">Fórmula em D2: =B2*C2. Ao copiar para D3, Excel AUTOMATICAMENTE ajusta para =B3*C3 (relativa). Ao copiar para D4, vira =B4*C4. Isto é CORRETO porque cada linha tem seus dados. Referências relativas são o padrão quando dados mudam por linha.</div>
+                    <div class="content-text">A fórmula de D2 é =B2*C2, com referências relativas (sem $). A gerente vai arrastar a alça de preenchimento de D2 até D6 para calcular o total de cada produto.</div>
                 </div>
                 <div class="content-box">
                     <div class="content-label">🎬 COMANDO</div>

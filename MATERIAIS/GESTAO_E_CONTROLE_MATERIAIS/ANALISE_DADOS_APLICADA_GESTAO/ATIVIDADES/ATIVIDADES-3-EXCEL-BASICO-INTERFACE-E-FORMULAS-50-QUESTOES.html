@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteúdo 3 — 3 Excel Básico Interface e Fórmulas (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/menu.css">
+    <script src="MENU-ATIVIDADES.js" defer></script>
+    <script src="../../../../js/menu.js" defer></script>
+    <script src="../../../../js/header-usuario.js" defer></script>
+</head>
+<body data-aula="02" data-tema="3 Excel Básico Interface e Fórmulas" data-total="50"
+      data-uc="Análise de Dados Aplicada à Gestão" data-uc-curta="Análise de Dados Aplicada à Gestão"
+      data-docente="Gelvazio Camargo" data-turma="AI AIAC 2026/2 V1 (133933)" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🖥️ Conteúdo 3: 3 Excel Básico Interface e Fórmulas</h1>
+            <p>Análise de Dados Aplicada à Gestão · Técnico em Assistente em Processos de Gestão e Controle de Materiais — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <button class="btn-export" id="btnExportarPDFGabarito" type="button" data-somente-perfil="PROFESSOR" hidden title="Só o professor: atividade completa com o gabarito real (lido do banco)">📥 Exportar PDF com gabarito</button>
+            <button class="btn-export" id="btnExportarGabarito" type="button" hidden title="Professor: gabarito real. Aluno: suas respostas da tentativa de maior nota.">🔑 Exportar Gabarito</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-3-EXCEL-BASICO-INTERFACE-E-FORMULAS-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 100 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D, E)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE AVALIADA</div>
+                    <div class="content-text">Reconhecer a interface do Excel; Identificar células, linhas, colunas e abas; Reconhecer tipos de dados e formatos; Montar fórmulas com operadores e precedência; Usar SOMA, MÉDIA, CONT.NÚM, CONT.VALORES, MÁXIMO e MÍNIMO; Aplicar a função SE com operadores de comparação; Diferenciar referências relativas e absolutas; Usar alça de preenchimento e preenchimento relâmpago; Montar uma planilha de controle de estoque</div>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Reconhecer a barra de fórmulas</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O auxiliar de almoxarifado clicou na célula E2 da planilha de estoque, que mostra o número 35. Ele quer ver se ali existe um número digitado ou uma fórmula.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde ele confere o conteúdo exato da célula ativa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Na barra de status</li>
+                        <li><span class="letra">B)</span>Na guia Inserir</li>
+                        <li><span class="letra">C)</span>No nome da aba</li>
+                        <li><span class="letra">D)</span>Na barra de fórmulas, logo abaixo da faixa de opções</li>
+                        <li><span class="letra">E)</span>No cabeçalho da coluna</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Reconhecer a faixa de opções</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No topo da tela do Excel ficam guias como Página Inicial, Inserir e Fórmulas, cada uma com vários botões de comando.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como se chama a área que reúne esses comandos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Barra de fórmulas</li>
+                        <li><span class="letra">B)</span>Faixa de opções</li>
+                        <li><span class="letra">C)</span>Caixa de nome</li>
+                        <li><span class="letra">D)</span>Alça de preenchimento</li>
+                        <li><span class="letra">E)</span>Barra de rolagem</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Identificar o endereço de uma célula</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O saldo do item &quot;Luva de raspa&quot; está no cruzamento da coluna D com a linha 7.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o endereço dessa célula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>D7</li>
+                        <li><span class="letra">B)</span>7D</li>
+                        <li><span class="letra">C)</span>D:7</li>
+                        <li><span class="letra">D)</span>4-7</li>
+                        <li><span class="letra">E)</span>L7C4</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Diferenciar pasta de trabalho e aba</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O arquivo Estoque2026.xlsx tem as abas Cadastro, Entradas, Saídas e Resumo.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual afirmação está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cada aba é um arquivo diferente</li>
+                        <li><span class="letra">B)</span>A pasta de trabalho é uma única célula</li>
+                        <li><span class="letra">C)</span>As abas só podem guardar gráficos</li>
+                        <li><span class="letra">D)</span>Um arquivo só pode ter uma aba</li>
+                        <li><span class="letra">E)</span>O arquivo é a pasta de trabalho, e ela abriga várias abas (planilhas)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Identificar número salvo como texto</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Ao digitar as quantidades recebidas, uma célula com o número 120 ficou alinhada à esquerda e a SOMA da coluna não a contou.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que isso indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que o número é negativo</li>
+                        <li><span class="letra">B)</span>Que a célula está protegida</li>
+                        <li><span class="letra">C)</span>Que o Excel interpretou o conteúdo como texto e não faz contas com ele</li>
+                        <li><span class="letra">D)</span>Que o número tem casas decimais</li>
+                        <li><span class="letra">E)</span>Que a coluna está congelada</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Reconhecer o alinhamento padrão dos tipos de dados</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Em células sem formatação, o auxiliar digitou o texto Luva em A2 e o número 25 em B2.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como o Excel alinha esses conteúdos automaticamente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Os dois à esquerda</li>
+                        <li><span class="letra">B)</span>Texto à esquerda e número à direita</li>
+                        <li><span class="letra">C)</span>Texto à direita e número à esquerda</li>
+                        <li><span class="letra">D)</span>Os dois centralizados</li>
+                        <li><span class="letra">E)</span>Os dois à direita</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Reconhecer valores lógicos</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A fórmula =E2&lt;F2 compara o saldo com o estoque mínimo e mostra um valor lógico.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais são os valores lógicos que o Excel pode mostrar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SIM ou NÃO</li>
+                        <li><span class="letra">B)</span>1 ou 2</li>
+                        <li><span class="letra">C)</span>OK ou ERRO</li>
+                        <li><span class="letra">D)</span>VERDADEIRO ou FALSO</li>
+                        <li><span class="letra">E)</span>TRUE ou FALSE, sempre em inglês</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Aplicar o formato de porcentagem</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A célula L1 contém 0,15 (a taxa de reajuste). O analista aplicou o formato Porcentagem.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como a célula passa a ser exibida?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>15%</li>
+                        <li><span class="letra">B)</span>0,15%</li>
+                        <li><span class="letra">C)</span>1,5%</li>
+                        <li><span class="letra">D)</span>150%</li>
+                        <li><span class="letra">E)</span>R$ 0,15</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Evitar o erro de percentual</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um auxiliar digitou 15 na célula e depois clicou no botão de Porcentagem (%).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o Excel passa a mostrar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>15%</li>
+                        <li><span class="letra">B)</span>0,15%</li>
+                        <li><span class="letra">C)</span>1,5%</li>
+                        <li><span class="letra">D)</span>R$ 15,00</li>
+                        <li><span class="letra">E)</span>1500%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Aplicar o formato de moeda</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A coluna Custo Unitário tem valores como 12,5 e 1500. O gerente quer ver R$ 12,50 e R$ 1.500,00.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual formato atende ao pedido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Texto</li>
+                        <li><span class="letra">B)</span>Porcentagem</li>
+                        <li><span class="letra">C)</span>Moeda (ou Contábil), com símbolo R$ e 2 casas decimais</li>
+                        <li><span class="letra">D)</span>Data abreviada</li>
+                        <li><span class="letra">E)</span>Geral</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Iniciar uma fórmula corretamente</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um auxiliar digitou SOMA(B2:B6) na célula B7 e o Excel mostrou exatamente esse texto, sem calcular.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faltou?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O sinal de igual (=) no início</li>
+                        <li><span class="letra">B)</span>O ponto e vírgula no final</li>
+                        <li><span class="letra">C)</span>As aspas em volta da função</li>
+                        <li><span class="letra">D)</span>O cifrão ($) antes de B2</li>
+                        <li><span class="letra">E)</span>Apertar F4</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Preferir referências a números fixos</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Para somar as entradas de A1 e B1, um colega escreveu =10+20. Quando os valores de A1 e B1 mudaram, o resultado continuou 30.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula atualiza sozinha quando os valores mudam?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=30</li>
+                        <li><span class="letra">B)</span>=&quot;A1+B1&quot;</li>
+                        <li><span class="letra">C)</span>=10+B1</li>
+                        <li><span class="letra">D)</span>=A1+B1</li>
+                        <li><span class="letra">E)</span>A1+B1</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Usar o operador de multiplicação</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Em D2, o analista quer o total da compra: quantidade (B2) vezes preço unitário (C2).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=B2xC2</li>
+                        <li><span class="letra">B)</span>=B2*C2</li>
+                        <li><span class="letra">C)</span>=B2+C2</li>
+                        <li><span class="letra">D)</span>=B2/C2</li>
+                        <li><span class="letra">E)</span>=B2^C2</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Usar o operador de divisão</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O custo total do lote está em B2 e a quantidade produzida em C2. O analista quer o custo unitário.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula calcula o custo unitário?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=B2*C2</li>
+                        <li><span class="letra">B)</span>=C2-B2</li>
+                        <li><span class="letra">C)</span>=B2:C2</li>
+                        <li><span class="letra">D)</span>=B2+C2</li>
+                        <li><span class="letra">E)</span>=B2/C2</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Aplicar a precedência dos operadores</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No Excel, multiplicação e divisão são calculadas antes de adição e subtração, salvo quando há parênteses.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o resultado de =10+5*2?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>30</li>
+                        <li><span class="letra">B)</span>17</li>
+                        <li><span class="letra">C)</span>20</li>
+                        <li><span class="letra">D)</span>25</li>
+                        <li><span class="letra">E)</span>12</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Usar parênteses para mudar a ordem do cálculo</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O analista quer somar 10 e 5 PRIMEIRO e só depois multiplicar o resultado por 2, obtendo 30.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula ele deve escrever?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=(10+5)*2</li>
+                        <li><span class="letra">B)</span>=10+5*2</li>
+                        <li><span class="letra">C)</span>=10+(5*2)</li>
+                        <li><span class="letra">D)</span>=10*5+2</li>
+                        <li><span class="letra">E)</span>=(10*5)+2</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Conferir a lógica de uma fórmula</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Afirmação: &quot;No Excel, a expressão =5+2*10 resulta em 70.&quot;</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A afirmação é verdadeira ou falsa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Verdadeira, pois o Excel calcula da esquerda para a direita</li>
+                        <li><span class="letra">B)</span>Verdadeira, pois a soma vem antes</li>
+                        <li><span class="letra">C)</span>Falsa, o resultado é 17</li>
+                        <li><span class="letra">D)</span>Falsa, o resultado é 25, pois 2*10 é calculado antes da soma</li>
+                        <li><span class="letra">E)</span>Falsa, a fórmula dá erro</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Entender o intervalo na função SOMA</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na fórmula =SOMA(B2:B6), aparece o sinal de dois pontos entre B2 e B6.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que os dois pontos indicam?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que só B2 e B6 serão somados</li>
+                        <li><span class="letra">B)</span>Um intervalo contínuo, de B2 até B6</li>
+                        <li><span class="letra">C)</span>Uma divisão de B2 por B6</li>
+                        <li><span class="letra">D)</span>Que a fórmula é absoluta</li>
+                        <li><span class="letra">E)</span>Um separador de argumentos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Calcular com a função MÉDIA</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">As saídas de um item em C2, C3 e C4 foram 8, 7 e 9 caixas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o resultado de =MÉDIA(C2:C4)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>24</li>
+                        <li><span class="letra">B)</span>7</li>
+                        <li><span class="letra">C)</span>9</li>
+                        <li><span class="letra">D)</span>3</li>
+                        <li><span class="letra">E)</span>8</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Entender a MÉDIA com células vazias</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No intervalo C2:C5 estão os valores 6, (célula vazia), 9 e 12. A função MÉDIA desconsidera células vazias no divisor.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o resultado de =MÉDIA(C2:C5)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>6,75</li>
+                        <li><span class="letra">B)</span>27</li>
+                        <li><span class="letra">C)</span>9</li>
+                        <li><span class="letra">D)</span>12</li>
+                        <li><span class="letra">E)</span>4</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Contar itens cadastrados</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A coluna A (A2:A50) tem a descrição dos itens cadastrados no estoque, em texto. O gerente quer saber quantos itens estão cadastrados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula atende ao pedido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=CONT.NÚM(A2:A50)</li>
+                        <li><span class="letra">B)</span>=CONT.VALORES(A2:A50)</li>
+                        <li><span class="letra">C)</span>=SOMA(A2:A50)</li>
+                        <li><span class="letra">D)</span>=MÁXIMO(A2:A50)</li>
+                        <li><span class="letra">E)</span>=MÉDIA(A2:A50)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Calcular com CONT.NÚM</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O intervalo A2:A6 contém: &quot;Luva&quot;, 25, (vazio), &quot;Óculos&quot;, 10.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o resultado de =CONT.NÚM(A2:A6)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>5</li>
+                        <li><span class="letra">B)</span>4</li>
+                        <li><span class="letra">C)</span>35</li>
+                        <li><span class="letra">D)</span>3</li>
+                        <li><span class="letra">E)</span>2</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Calcular com CONT.VALORES</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O mesmo intervalo A2:A6 contém: &quot;Luva&quot;, 25, (vazio), &quot;Óculos&quot;, 10.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o resultado de =CONT.VALORES(A2:A6)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>4</li>
+                        <li><span class="letra">B)</span>5</li>
+                        <li><span class="letra">C)</span>2</li>
+                        <li><span class="letra">D)</span>3</li>
+                        <li><span class="letra">E)</span>35</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Usar a função MÁXIMO</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">As saídas diárias de um item foram 8, 15, 4 e 12 caixas, nas células C2:C5.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o resultado de =MÁXIMO(C2:C5)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>4</li>
+                        <li><span class="letra">B)</span>39</li>
+                        <li><span class="letra">C)</span>12</li>
+                        <li><span class="letra">D)</span>15</li>
+                        <li><span class="letra">E)</span>9,75</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Calcular a amplitude com MÁXIMO e MÍNIMO</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">As saídas de uma semana foram 9, 21, 6 e 14 caixas, em C2:C5. A amplitude é calculada por =MÁXIMO(C2:C5)-MÍNIMO(C2:C5).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a amplitude?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>21</li>
+                        <li><span class="letra">B)</span>6</li>
+                        <li><span class="letra">C)</span>15</li>
+                        <li><span class="letra">D)</span>12,5</li>
+                        <li><span class="letra">E)</span>27</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Ordenar os passos para inserir uma função</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Para calcular a média de uma coluna de saídas, o auxiliar já clicou na célula onde o resultado deve aparecer.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o próximo passo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apertar Enter</li>
+                        <li><span class="letra">B)</span>Fechar os parênteses</li>
+                        <li><span class="letra">C)</span>Selecionar a aba Resumo</li>
+                        <li><span class="letra">D)</span>Apertar F4</li>
+                        <li><span class="letra">E)</span>Digitar o sinal de igual seguido do nome da função: =MÉDIA(</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Reconhecer a estrutura da função SE</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A função SE avalia uma condição e segue um caminho se ela for verdadeira e outro se for falsa.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a sintaxe correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=SE(valor_se_verdadeiro; teste_lógico; valor_se_falso)</li>
+                        <li><span class="letra">B)</span>=SE(teste_lógico; valor_se_verdadeiro; valor_se_falso)</li>
+                        <li><span class="letra">C)</span>=SE(teste_lógico, valor_se_falso, valor_se_verdadeiro)</li>
+                        <li><span class="letra">D)</span>=SE(valor_se_falso; valor_se_verdadeiro)</li>
+                        <li><span class="letra">E)</span>=SE(teste_lógico)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Calcular o resultado de uma função SE</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A célula J2 tem =SE(D2&lt;E2;&quot;Repor&quot;;&quot;OK&quot;). O saldo em D2 é 40 e o estoque mínimo em E2 é 50.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que aparece em J2?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Repor</li>
+                        <li><span class="letra">B)</span>OK</li>
+                        <li><span class="letra">C)</span>VERDADEIRO</li>
+                        <li><span class="letra">D)</span>40</li>
+                        <li><span class="letra">E)</span>#VALOR!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Usar o operador &quot;diferente&quot;</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O analista quer testar se a categoria em C2 é diferente de &quot;EPI&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual teste lógico está correto?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>C2=&quot;EPI&quot;</li>
+                        <li><span class="letra">B)</span>C2&gt;&lt;&quot;EPI&quot;</li>
+                        <li><span class="letra">C)</span>C2!=&quot;EPI&quot;</li>
+                        <li><span class="letra">D)</span>C2&lt;&gt;&quot;EPI&quot;</li>
+                        <li><span class="letra">E)</span>C2=/&quot;EPI&quot;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Usar o operador &quot;maior ou igual&quot;</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O bônus do setor é pago se o índice de acuracidade do inventário em B2 for de 95% ou mais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual teste lógico está correto?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>B2&gt;95%</li>
+                        <li><span class="letra">B)</span>B2=&gt;95%</li>
+                        <li><span class="letra">C)</span>B2&gt;=95%</li>
+                        <li><span class="letra">D)</span>B2&lt;=95%</li>
+                        <li><span class="letra">E)</span>B2=95%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Escrever textos dentro da função SE</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um auxiliar escreveu =SE(D2&lt;E2;Repor;OK) e o Excel mostrou o erro #NOME?.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a correção?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Trocar ; por ,</li>
+                        <li><span class="letra">B)</span>Tirar o sinal de igual</li>
+                        <li><span class="letra">C)</span>Usar cifrão nas referências</li>
+                        <li><span class="letra">D)</span>Trocar SE por SOMA</li>
+                        <li><span class="letra">E)</span>Escrever os textos entre aspas duplas: &quot;Repor&quot; e &quot;OK&quot;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Analisar a fórmula SE com cálculo (valor acima do limite)</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A fórmula =SE(C2&gt;5000;C2*0,1;0) calcula um bônus de 10% para compras acima de R$ 5.000. Em C2 está 6.000.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o resultado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>0</li>
+                        <li><span class="letra">B)</span>600</li>
+                        <li><span class="letra">C)</span>6.000</li>
+                        <li><span class="letra">D)</span>60</li>
+                        <li><span class="letra">E)</span>500</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Analisar a fórmula SE com cálculo (valor no limite)</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na mesma fórmula =SE(C2&gt;5000;C2*0,1;0), agora C2 vale exatamente 5.000.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o resultado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>0, pois 5.000 não é maior que 5.000</li>
+                        <li><span class="letra">B)</span>500</li>
+                        <li><span class="letra">C)</span>5.000</li>
+                        <li><span class="letra">D)</span>50</li>
+                        <li><span class="letra">E)</span>Erro de sintaxe</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Prever uma referência relativa ao arrastar</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A célula D2 tem =B2*C2. O auxiliar arrasta a fórmula até D5.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula fica em D5?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=B2*C2</li>
+                        <li><span class="letra">B)</span>=$B$2*$C$2</li>
+                        <li><span class="letra">C)</span>=B2*C5</li>
+                        <li><span class="letra">D)</span>=B4*C4</li>
+                        <li><span class="letra">E)</span>=B5*C5</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Identificar o problema da taxa fixa</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A taxa de 10% está sozinha na célula F1. Em C2, o analista escreveu =B2*F1 e arrastou para baixo. Na linha 3, a fórmula virou =B3*F2 e o resultado deu zero.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o resultado deu zero?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque B3 está vazia</li>
+                        <li><span class="letra">B)</span>Porque a taxa deveria estar em porcentagem</li>
+                        <li><span class="letra">C)</span>Porque a referência F1 &quot;andou&quot; para F2, que está vazia</li>
+                        <li><span class="letra">D)</span>Porque o Excel não multiplica percentuais</li>
+                        <li><span class="letra">E)</span>Porque faltou o sinal de igual</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Travar a referência com cifrão</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Continuando o Item 35, o analista precisa que todas as linhas usem a taxa de F1.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula ele deve escrever em C2 antes de arrastar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=B2*F1</li>
+                        <li><span class="letra">B)</span>=$B$2*F1</li>
+                        <li><span class="letra">C)</span>=B2*F$2</li>
+                        <li><span class="letra">D)</span>=B2*$F$1</li>
+                        <li><span class="letra">E)</span>=B2*&quot;F1&quot;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Usar o atalho F4</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Enquanto digita a fórmula, o analista seleciona a referência F1 e aperta a tecla F4.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A fórmula é apagada</li>
+                        <li><span class="letra">B)</span>O Excel abre a ajuda</li>
+                        <li><span class="letra">C)</span>O Excel insere os cifrões e a referência vira $F$1</li>
+                        <li><span class="letra">D)</span>A célula é formatada como moeda</li>
+                        <li><span class="letra">E)</span>O preenchimento relâmpago é ativado</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Prever uma fórmula com referência absoluta ao copiar</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">C2 tem =B2*$F$1. O auxiliar copia a fórmula para C4.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula fica em C4?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=B2*$F$1</li>
+                        <li><span class="letra">B)</span>=B4*$F$3</li>
+                        <li><span class="letra">C)</span>=B4*F3</li>
+                        <li><span class="letra">D)</span>=B4*$F$1</li>
+                        <li><span class="letra">E)</span>=$B$4*$F$1</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Localizar a alça de preenchimento</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Para copiar uma fórmula para as linhas de baixo, o auxiliar precisa arrastar a alça de preenchimento.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde fica a alça de preenchimento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No quadradinho do canto inferior direito da célula ativa</li>
+                        <li><span class="letra">B)</span>No canto superior esquerdo da planilha</li>
+                        <li><span class="letra">C)</span>Na guia Fórmulas</li>
+                        <li><span class="letra">D)</span>Na barra de fórmulas</li>
+                        <li><span class="letra">E)</span>No nome da aba</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Usar o duplo clique na alça</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A tabela de estoque tem 300 linhas preenchidas na coluna ao lado. O auxiliar escreveu a fórmula em E2 e deu duplo clique na alça de preenchimento.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A fórmula é apagada</li>
+                        <li><span class="letra">B)</span>A fórmula é copiada até a última linha preenchida da tabela vizinha</li>
+                        <li><span class="letra">C)</span>Só a célula E3 recebe a fórmula</li>
+                        <li><span class="letra">D)</span>A coluna inteira é formatada como moeda</li>
+                        <li><span class="letra">E)</span>A planilha é protegida</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Gerar sequências com a alça de preenchimento</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O auxiliar digitou jan em A2 e arrastou a alça de preenchimento até A7.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que aparece de A3 a A7?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>jan repetido em todas as células</li>
+                        <li><span class="letra">B)</span>Os números 1 a 5</li>
+                        <li><span class="letra">C)</span>Células vazias</li>
+                        <li><span class="letra">D)</span>Um erro</li>
+                        <li><span class="letra">E)</span>fev, mar, abr, mai e jun</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Usar o preenchimento relâmpago</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A coluna A tem o nome completo dos fornecedores responsáveis (ex.: Lucas Silva). O auxiliar digitou Lucas em B2 e quer que o Excel extraia os primeiros nomes das outras linhas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual atalho ativa o preenchimento relâmpago?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ctrl+Z</li>
+                        <li><span class="letra">B)</span>F4</li>
+                        <li><span class="letra">C)</span>Ctrl+Shift+L</li>
+                        <li><span class="letra">D)</span>Ctrl+E</li>
+                        <li><span class="letra">E)</span>Alt+F5</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Reconhecer o separador de argumentos</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na fórmula =SE(D2&lt;E2;&quot;Repor&quot;;&quot;OK&quot;), aparece o sinal de ponto e vírgula.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve o ponto e vírgula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Indicar um intervalo contínuo</li>
+                        <li><span class="letra">B)</span>Fixar a referência</li>
+                        <li><span class="letra">C)</span>Multiplicar valores</li>
+                        <li><span class="letra">D)</span>Encerrar a fórmula</li>
+                        <li><span class="letra">E)</span>Separar os argumentos da função</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Calcular o saldo na oficina de estoque</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na planilha da oficina, as Entradas estão em C2, as Saídas em D2 e o Saldo vai em E2.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula calcula o saldo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=C2-D2</li>
+                        <li><span class="letra">B)</span>=C2+D2</li>
+                        <li><span class="letra">C)</span>=D2-C2</li>
+                        <li><span class="letra">D)</span>=C2*D2</li>
+                        <li><span class="letra">E)</span>=SOMA(C2;D2)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Calcular o custo em estoque</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O Saldo está em E2 e o Custo Unitário em G2. O Custo em Estoque vai em H2.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=E2+G2</li>
+                        <li><span class="letra">B)</span>=E2*G2</li>
+                        <li><span class="letra">C)</span>=E2/G2</li>
+                        <li><span class="letra">D)</span>=G2-E2</li>
+                        <li><span class="letra">E)</span>=SOMA(E2:G2)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Calcular a armazenagem com referência absoluta</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A taxa mensal de armazenagem de 2% está em L1. Em I2 está a fórmula =H2*$L$1 e o custo em estoque (H2) é R$ 1.500,00.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o custo de armazenagem calculado em I2?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>R$ 3.000,00</li>
+                        <li><span class="letra">B)</span>R$ 300,00</li>
+                        <li><span class="letra">C)</span>R$ 30,00</li>
+                        <li><span class="letra">D)</span>R$ 1.530,00</li>
+                        <li><span class="letra">E)</span>R$ 2,00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Montar a situação de reposição</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O Saldo está em E2 e o Estoque Mínimo em F2. A coluna Situação (J2) deve mostrar Repor quando o saldo estiver abaixo do mínimo e OK nos demais casos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=SE(E2&gt;F2;&quot;Repor&quot;;&quot;OK&quot;)</li>
+                        <li><span class="letra">B)</span>=SE(F2&lt;E2;&quot;Repor&quot;;&quot;OK&quot;)</li>
+                        <li><span class="letra">C)</span>=SE(E2&lt;F2;Repor;OK)</li>
+                        <li><span class="letra">D)</span>=SE(&quot;Repor&quot;;E2&lt;F2;&quot;OK&quot;)</li>
+                        <li><span class="letra">E)</span>=SE(E2&lt;F2;&quot;Repor&quot;;&quot;OK&quot;)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Contar os itens cadastrados no resumo</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No resumo do mês, o gerente quer o número de itens cadastrados, contando as descrições em B2:B11 (textos).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula deve ser usada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=CONT.NÚM(B2:B11)</li>
+                        <li><span class="letra">B)</span>=SOMA(B2:B11)</li>
+                        <li><span class="letra">C)</span>=CONT.VALORES(B2:B11)</li>
+                        <li><span class="letra">D)</span>=MÁXIMO(B2:B11)</li>
+                        <li><span class="letra">E)</span>=MÉDIA(B2:B11)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Calcular o custo total em estoque no resumo</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Os custos em estoque dos 10 itens estão em H2:H11.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula calcula o custo total em estoque?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=SOMA(H2:H11)</li>
+                        <li><span class="letra">B)</span>=MÉDIA(H2:H11)</li>
+                        <li><span class="letra">C)</span>=CONT.VALORES(H2:H11)</li>
+                        <li><span class="letra">D)</span>=MÁXIMO(H2:H11)</li>
+                        <li><span class="letra">E)</span>=H2+H11</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Avaliar o risco de fórmulas erradas</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Uma fórmula de custo com referência errada foi arrastada para as 3.000 linhas da planilha de estoque e ninguém percebeu.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a consequência mais provável?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nenhuma, pois o Excel corrige sozinho</li>
+                        <li><span class="letra">B)</span>O erro se propaga, causando compras em excesso ou em falta e relatórios errados para a gerência</li>
+                        <li><span class="letra">C)</span>Só a primeira linha fica errada</li>
+                        <li><span class="letra">D)</span>A planilha deixa de abrir</li>
+                        <li><span class="letra">E)</span>O custo fica sempre zero, o que é fácil de notar</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Análise de Dados Aplicada à Gestão — Conteúdo 3: 3 Excel Básico Interface e Fórmulas</strong></p>
+        <p>Técnico em Assistente em Processos de Gestão e Controle de Materiais — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+    <script src="../../../../assets/js/avaliacao-pdf-professor.js"></script>
+</body>
+</html>
