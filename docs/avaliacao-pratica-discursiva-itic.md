@@ -8,7 +8,7 @@ ela fica gravada no banco (Supabase) para correção posterior com IA.
 (PostgreSQL + RLS + REST com JWT do aluno).
 
 **Criado em:** 2026-10-01 10:26
-**Concluído em:** 2026-10-01 10:50 (passo 9 aguardando pedido)
+**Concluído em:** 2026-10-01 10:50 
 **Tempo decorrido:** ~60:00
 
 ---
@@ -65,7 +65,7 @@ você confirmar**. A ementa não será alterada sem pedido. A duração estimada
 | 6 | Tela JS e CSS (`assets/js/avaliacao-discursiva.js` + `assets/css/avaliacao-discursiva.css`) | ✅ Concluído | 2026-10-01 10:26 | 2026-10-01 10:50 | — |
 | 7 | Gerar `AVALIACAO-PRATICA.html` e o seed | ✅ Concluído | 2026-10-01 10:26 | 2026-10-01 10:50 | — |
 | 8 | Card no `index.html` e item no `MENU-ATIVIDADES.js` | ✅ Concluído | 2026-10-01 10:26 | 2026-10-01 10:50 | — |
-| 9 | Aplicar o SQL no Supabase (só com o seu pedido) | ⬜ Pendente | 2026-10-01 10:26 | — | — |
+| 9 | Aplicar o SQL no Supabase (só com o seu pedido) | ✅ Concluído | 2026-10-01 10:26 | 2026-10-01 10:59 | — |
 | 10 | Registrar a regra no `CLAUDE.md` e commit | ✅ Concluído | 2026-10-01 10:26 | 2026-10-01 10:50 | — |
 
 ---
@@ -318,7 +318,9 @@ Esperado: `61`.
 
 ### Passo 9: Aplicar no Supabase
 
-**Status:** ⬜ Pendente — **só quando você pedir** ("aplique o SQL pelo Supabase")
+**Status:** ✅ Concluído em 2026-10-01 10:59 (a pedido do usuário)
+
+**Resultado conferido:** atividade id 36 (aula 10, `ativo = false`, 30 itens, 3 tentativas); 61 tópicos em 30 itens somando 30 pontos, todos com padrão de resposta; RLS ligado nas duas tabelas; 5 políticas; `anon` sem permissão; `atividade_completa()` ampliada.
 
 **Ação:** conferir o banco real, aplicar `2026-10-01-respostas-discursivas.sql` e o seed, e
 conferir com consultas de leitura (30 itens, 61 tópicos, RLS ligado, `anon` sem acesso).
