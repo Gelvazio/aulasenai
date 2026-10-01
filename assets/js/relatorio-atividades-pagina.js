@@ -14,11 +14,12 @@ const TEXTO_STATUS_REL = { entregue: '📨 Entregue', andamento: '✏️ Andamen
 const QUANTIDADES_REL = ['1', '2', '3'];
 const TEXTO_SELECIONE_ALUNO_REL = 'Seleciona o aluno';
 const MATERIA_PADRAO_REL = 'Introdução à Tecnologia da Informação e Comunicação';
+const TITULO_FILTRO_ATIVIDADES_REL = 'Atividades da matéria (nenhuma ligada = todas)';
 
 const estadoRel = {
     materias: [], materia: null, turmas: [], turmaAtual: '', resumos: new Map(),
     alunoSelecionado: '', notasVisiveis: false, soNaoAtingiu: true, fez: new Set(), status: new Set(),
-    tentativas: new Set(),
+    tentativas: new Set(), atividadesFiltro: new Set(),
 };
 
 /**
@@ -168,7 +169,7 @@ async function carregarRespostasDoAlunoRel() {
     }
     area.textContent = 'Carregando respostas de ' + aluno.nome + '...';
     try {
-        const dados = await carregarRespostasAlunoRel(aluno.id, estadoRel.materia.atividades);
+        const dados = await carregarRespostasAlunoRel(aluno.id, obterAtividadesFiltradasRel());
         area.replaceChildren(criarElementoRel('h3', '', 'Respostas de ' + aluno.nome));
         if (!dados.length) area.append('Este aluno ainda não respondeu nenhuma atividade desta matéria.');
         dados.forEach((item) => area.appendChild(montarConferenciaAtividadeRel(item)));
@@ -204,6 +205,44 @@ function montarFiltrosRel() {
         criarLinhaAlunoSelecionadoRel(),
     );
     return barra;
+}
+
+/**
+ * Devolve as atividades ativas da matéria em ordem de aula (e de id).
+ * @param {Object[]} atividades - Atividades da matéria.
+ * @returns {Object[]} Atividades ativas ordenadas.
+ */
+function ordenarAtividadesAtivasRel(atividades) {
+    return atividades.filter((atividade) => atividade.ativo).sort((a, b) =>
+        (a.aulas?.numero ?? 0) - (b.aulas?.numero ?? 0) || a.id - b.id);
+}
+
+/**
+ * Atividades da matéria que entram no relatório: as ligadas no quadro de atividades ou, se
+ * nenhuma estiver ligada, todas.
+ * @returns {Object[]} Atividades consideradas.
+ */
+function obterAtividadesFiltradasRel() {
+    const atividades = estadoRel.materia?.atividades || [];
+    if (!estadoRel.atividadesFiltro.size) return atividades;
+
+    return atividades.filter((atividade) => estadoRel.atividadesFiltro.has(String(atividade.id)));
+}
+
+/**
+ * Monta o quadro de filtros por atividade da matéria escolhida (um interruptor ON/OFF por
+ * atividade ativa, todos desligados = todas as atividades).
+ */
+function montarFiltroAtividadesRel() {
+    estadoRel.atividadesFiltro.clear();
+    const quadro = document.getElementById('relQuadroAtividades');
+    const ativas = ordenarAtividadesAtivasRel(estadoRel.materia?.atividades || []);
+    quadro.hidden = ativas.length === 0;
+    const interruptores = ativas.map((atividade) => criarInterruptorRel(
+        formatarAulaRel(atividade.aulas?.numero) + ' — ' + atividade.descricao,
+        alternarNoConjuntoRel(estadoRel.atividadesFiltro, String(atividade.id))));
+    document.getElementById('relFiltroAtividades').replaceChildren(
+        criarGrupoFiltroRel(TITULO_FILTRO_ATIVIDADES_REL, interruptores));
 }
 
 /**
@@ -366,17 +405,17 @@ function renderizarTabelaRel() {
         'Média (atividades ativas)'].forEach((texto) =>
         cabecalho.appendChild(criarElementoRel('th', '', texto)));
     let visiveis = 0;
+    const atividades = obterAtividadesFiltradasRel();
     turma.alunos.forEach((aluno) => {
-        const resumo = calcularResumoAlunoRel(aluno, estadoRel.materia.atividades,
-            estadoRel.resumos);
+        const resumo = calcularResumoAlunoRel(aluno, atividades, estadoRel.resumos);
         if (!passaNosFiltrosRel(resumo, aluno)) return;
 
         tabela.appendChild(montarBlocoAlunoRel(aluno, resumo));
         visiveis += 1;
     });
     document.getElementById('relResumo').textContent = visiveis + ' de ' + turma.alunos.length +
-        ' aluno(s) · ' + estadoRel.materia.atividades.filter((a) => a.ativo).length +
-        ' atividade(s) ativa(s) na matéria.';
+        ' aluno(s) · ' + ordenarAtividadesAtivasRel(atividades).length +
+        ' atividade(s) ativa(s) no relatório.';
     const rolagem = criarElementoRel('div', 'rel-rolagem');
     rolagem.appendChild(tabela);
     area.appendChild(rolagem);
@@ -425,6 +464,7 @@ async function carregarMateriaRel(materiaId) {
         estadoRel.materia = estadoRel.materias.find((materia) => materia.id === materiaId);
         const { turmas, filtradaPorUc } = await carregarTurmasRel(estadoRel.materia);
         estadoRel.turmas = turmas;
+        montarFiltroAtividadesRel();
         estadoRel.resumos = await carregarResumosRel(
             estadoRel.materia.atividades.filter((atividade) => atividade.ativo));
         document.getElementById('relAbas').replaceChildren(...turmas.map(criarAbaTurmaRel));

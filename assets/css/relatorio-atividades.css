@@ -119,3 +119,10 @@
 .rel-item--errada { background: #fde8e8; border: 1px solid #e53e3e; }
 
 .rel-botao--pequeno { padding: 3px 10px; font-size: 12px; }
+
+/* Quadro de filtros por atividade da matéria (um interruptor por atividade ativa) */
+.rel-filtro-atividades[hidden] { display: none; }
+.rel-filtro-atividades .rel-grupo-filtro {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); align-items: start;
+}
+.rel-filtro-atividades .rel-grupo-filtro > strong { grid-column: 1 / -1; }
