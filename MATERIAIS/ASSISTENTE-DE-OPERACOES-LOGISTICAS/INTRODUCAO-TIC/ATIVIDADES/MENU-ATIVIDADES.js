@@ -38,6 +38,10 @@ window.MENU_ATIVIDADES = {
           link: 'AVALIACAO-OBJETIVA-02.html',
         },
         {
+          rotulo: '🏁 Avaliação — Média Final (100 pontos)',
+          link: 'AVALIACAO-MEDIA-FINAL.html',
+        },
+        {
           rotulo: 'Aula 06 — Editor de textos',
           link: 'ATIVIDADES-AULA-06-50-QUESTOES.html',
         },

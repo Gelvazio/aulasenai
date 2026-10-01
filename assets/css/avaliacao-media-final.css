@@ -1,0 +1,42 @@
+/* Tabela de composição da média final (AVALIACAO-MEDIA-FINAL.html). Usa os tokens de
+   atividade.css (--primary, --gold, --text, --light). */
+:root {
+  --media-borda: #cbd5e0;
+  --media-cabecalho: #edf2f7;
+  --media-grupo-atividades: #ebf4ff;
+  --media-grupo-objetiva: #fefcbf;
+  --media-grupo-pratica: #e6fffa;
+  --media-total: #2d3748;
+}
+
+.media-rolagem { overflow-x: auto; }
+
+.media-tabela {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 15px;
+  color: var(--text);
+}
+.media-tabela th,
+.media-tabela td {
+  padding: 8px 12px;
+  border: 1px solid var(--media-borda);
+  text-align: left;
+}
+.media-tabela thead th { background: var(--media-cabecalho); }
+.media-tabela .media-numero { text-align: center; width: 110px; }
+
+.media-grupo--atividades > td { background: var(--media-grupo-atividades); }
+.media-grupo--objetiva > td { background: var(--media-grupo-objetiva); }
+.media-grupo--pratica > td { background: var(--media-grupo-pratica); }
+.media-subtotal > td { font-weight: 700; }
+
+.media-tabela tfoot td {
+  background: var(--media-total);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.media-regras { margin: 0; padding-left: 20px; line-height: 1.7; }
