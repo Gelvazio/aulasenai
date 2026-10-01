@@ -301,7 +301,7 @@ function criarCelulaAcoesAluno(bloco, tentativas, base) {
     grupo.append(criarBotao('btn-export ' + CLASSE_RELATORIO + '__ver-notas',
         'Visualizar Notas', () => alternarNotasAluno(bloco)),
     criarControleLiberar({ ...base, linha: tentativas[tentativas.length - 1] }),
-    criarBotao('btn-export ' + CLASSE_RELATORIO + '__carregar-respostas', 'Carregar Respostas',
+    criarBotao('btn-export ' + CLASSE_RELATORIO + '__carregar-respostas', 'Respostas',
         () => carregarRespostasDoAluno(tentativas[0].aluno_id, tentativas[0].nome || '')));
     celula.appendChild(grupo);
     return celula;
@@ -657,7 +657,7 @@ async function carregarRespostasDoAluno(alunoId, nome) {
 }
 
 /**
- * Botão "Carregar Respostas" ao lado da lista "Aluno Selecionado": usa o aluno escolhido.
+ * Botão "Respostas" ao lado da lista "Aluno Selecionado": usa o aluno escolhido.
  */
 async function carregarRespostasDoAlunoSelecionado() {
     if (!filtroAlunoRelatorio) {
@@ -689,7 +689,7 @@ function criarLinhaAlunoSelecionadoRelatorio(aoMudar) {
     });
     etiqueta.appendChild(lista);
     linha.append(etiqueta, criarBotao('btn-export ' + CLASSE_RELATORIO + '__carregar-respostas',
-        'Carregar Respostas', carregarRespostasDoAlunoSelecionado));
+        'Respostas', carregarRespostasDoAlunoSelecionado));
     return linha;
 }
 
