@@ -22,25 +22,11 @@ LISTA-PRESENCA*.js
 
 .env
 
-
 # Seed com o gabarito das atividades (respostas certas) — nunca publicar
 database/*-seed-atividades.sql
 
 # Arquivos gerados pelo Python
 __pycache__/
-
-# Conteúdo já passado (estruturado para IA) e seu plano
-!MATERIAIS/**/CONTEUDO/CONTEUDO-JA-PASSADO-*.md
-!docs/estruturar-conteudo-ja-passado-ceplas-manha.md
-
-# Ementa da matéria Fundamentos da Tecnologia e Programação e seus status
-!MATERIAIS/RIO_DO_SUL_MAIS_TECH/FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO/EMENTA-CHALKIE-AI.md
-!MATERIAIS/RIO_DO_SUL_MAIS_TECH/FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO/STATUS-EMENTAS.md
-!MATERIAIS/STATUS-EMENTAS-CURSOS.md
-!docs/ajustar-ementa-fundamentos-tecnologia-programacao.md
-
-# Aulas a criar (estruturado para IA)
-!MATERIAIS/RIO_DO_SUL_MAIS_TECH/FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO/CONTEUDO/AULAS-CHALKIE-AI.md
 
 # Segredos locais (chave service_role) — nunca publicar
 variaveis.js
