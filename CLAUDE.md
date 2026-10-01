@@ -1182,7 +1182,8 @@ SQL: `database/2026-09-30-tentativas-atividade.sql` (o professor roda no SQL Edi
 - ✅ **Nas avaliações (`AVALIACAO-*.html`) a tentativa se chama RECUPERAÇÃO** (2026-09-30): a 1ª
   vez é a "avaliação" e as seguintes são "recuperação 1" e "recuperação 2", com a mesma lógica
   (só reabrem as questões erradas). Quem atinge 7 na avaliação **não** tem recuperação. Textos
-  em `assets/js/termos-tentativa.js` (vocabulário único, escolhido pelo nome da página).
+  em `assets/js/termos-tentativa.js` (vocabulário único, escolhido pelo nome da página; o
+  `painel-professor.html` escolhe pela página de cada atividade).
 - ✅ Tabelas: `tentativa` em `resposta_atividade` e `entrega_atividade` (chaves incluem a
   tentativa) e `liberacao_atividade` (só a função grava). O RLS só deixa gravar na tentativa em
   andamento e antes de entregar.

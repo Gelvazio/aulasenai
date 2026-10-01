@@ -2,16 +2,18 @@
 // Nas avaliações (páginas AVALIACAO-*.html), a 1ª vez é a "avaliação" e as seguintes são a
 // "recuperação" — que reabre só as questões erradas, com a mesma lógica das tentativas. Nas
 // atividades, tudo continua se chamando "tentativa". Carregado por respostas-atividade.js antes
-// de montar a página; usado também pelo provedor do banco e pelo relatório do professor.
+// de montar a página; usado também pelo provedor do banco, pelo relatório do professor e pelo
+// painel-professor.html (que escolhe os termos pela página de cada atividade).
 
 const PADRAO_PAGINA_AVALIACAO = /\/AVALIACAO-[^/]*\.html$/i;
 
 /**
- * Indica se a página atual é uma avaliação (pelo nome do arquivo).
+ * Indica se um caminho de página é de uma avaliação (pelo nome do arquivo).
+ * @param {string} caminho - Caminho da página (ex.: atividade.pagina ou location.pathname).
  * @returns {boolean} true se for uma página AVALIACAO-*.html.
  */
-function ehPaginaAvaliacao() {
-    return PADRAO_PAGINA_AVALIACAO.test(decodeURIComponent(location.pathname));
+function ehPaginaAvaliacao(caminho) {
+    return PADRAO_PAGINA_AVALIACAO.test(decodeURIComponent(caminho || ''));
 }
 
 /**
@@ -59,6 +61,16 @@ const TERMOS_TENTATIVA_AVALIACAO = {
     aprovadoPodeRefazer: false,
 };
 
-window.TERMOS_TENTATIVA = ehPaginaAvaliacao()
-    ? TERMOS_TENTATIVA_AVALIACAO : TERMOS_TENTATIVA_ATIVIDADE;
+/**
+ * Escolhe o vocabulário de uma página: avaliação/recuperação ou tentativa. O painel do
+ * professor usa esta função com a página de cada atividade (atividade.pagina).
+ * @param {string} caminho - Caminho da página da atividade.
+ * @returns {Object} Termos da página.
+ */
+function termosTentativaDaPagina(caminho) {
+    return ehPaginaAvaliacao(caminho) ? TERMOS_TENTATIVA_AVALIACAO : TERMOS_TENTATIVA_ATIVIDADE;
+}
+
+window.TERMOS_TENTATIVA = termosTentativaDaPagina(location.pathname);
+window.termosTentativaDaPagina = termosTentativaDaPagina;
 window.maiusculaInicial = maiusculaInicial;
