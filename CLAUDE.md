@@ -11,7 +11,9 @@
   nem resumo).
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
-- ✅ **Um commit por tarefa**; push só quando o usuário pedir.
+- ✅ **Um commit por tarefa** (local).
+- ⛔ **NUNCA fazer push** (2026-10-01): o push é feito **só pelo usuário, localmente**. Mesmo que
+  ele peça "faça push", não executar `git push`; avisar que o commit está pronto para ele enviar.
 
 ---
 
@@ -1330,16 +1332,16 @@ Registrada em 2026-09-28.
 - ✅ Lista das turmas com os e-mails: `ATIVIDADES/LISTA-PRESENCA.js` de cada matéria.
   ⚠️ Dados pessoais de menores (LGPD): arquivo no `.gitignore`, nunca publicar.
 
-## 🚀 REGRA — PUSH PERMITIDO QUANDO O USUÁRIO PEDIR
+## ⛔ REGRA — NUNCA FAZER PUSH (O USUÁRIO FAZ LOCALMENTE)
 
-✅ **O push pode ser feito pelo Claude, direto no chat, quando o usuário pedir** ("faça push",
-"commit e push"). Registrada em 2026-09-28; substitui a antiga regra "nunca fazer push".
+⛔ **O Claude NUNCA faz `git push`.** O push é feito **somente pelo usuário, na máquina dele**.
+Registrada em 2026-10-01 a pedido do usuário; **substitui** a regra "PUSH PERMITIDO QUANDO O USUÁRIO
+PEDIR" (2026-09-28).
 
-- ✅ Enviar para `origin main` com `git push origin main` depois do commit pedido.
-- ✅ Se o push for recusado (remoto à frente), integrar o remoto antes (`git pull` / merge),
-  conferindo se nada do remoto se perde, e então repetir o push.
-- ❌ Push automático sem pedido do usuário continua proibido (regra global).
-- ❌ Sem push forçado (`--force`), push de tags ou mudança de remotos sem pedido explícito.
+- ✅ O Claude faz só o **commit local** de cada tarefa.
+- ❌ Não executar `git push` em nenhuma situação, nem quando o usuário pedir "faça push" ou
+  "commit e push": responder que o commit está pronto e que o push fica com ele.
+- ❌ Sem `git pull`/merge com o remoto, push forçado, push de tags ou mudança de remotos.
 
 ## 💾 REGRA — COMMIT POR TAREFA (SEMPRE)
 
@@ -1354,8 +1356,7 @@ regra global de mesmo nome.
   gabaritos, listas de alunos ou outros itens da regra "O QUE NUNCA É PUBLICADO").
 - ✅ Antes do commit, conferir `git diff --cached --name-only` contra a regra "O QUE NUNCA É
   PUBLICADO".
-- ✅ O commit é **local**; o **push só quando o usuário pedir** (ver "PUSH PERMITIDO QUANDO O USUÁRIO
-  PEDIR").
+- ✅ O commit é **local**; o **push nunca é feito pelo Claude** (ver "NUNCA FAZER PUSH").
 - ✅ Usuário pediu commit explícito → fazer na hora.
 - ✅ Arquivos ignorados pelo Git (gabaritos, fontes de questões, listas de alunos) não entram no
   commit; não usar `-f` para forçá-los. Desde 2026-09-30 os `*.md` e `*.py` **são versionados**

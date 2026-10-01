@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avaliação Objetiva 02 — Aulas 05 a 07 (24 Questões)</title>
+    <title>Avaliação Objetiva 02 — Aulas 05 a 07 (60 Questões)</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
     <link rel="stylesheet" href="../../../../assets/css/atividade.css">
@@ -13,7 +13,7 @@
     <script src="../../../../js/menu.js" defer></script>
     <script src="../../../../js/header-usuario.js" defer></script>
 </head>
-<body data-aula="AV-02" data-tema="Aulas 05 a 07" data-total="24"
+<body data-aula="AV-02" data-tema="Aulas 05 a 07" data-total="60"
       data-uc="Análise de Dados Aplicada à Gestão" data-uc-curta="Análise de Dados Aplicada à Gestão"
       data-docente="Gelvazio Camargo" data-turma="AI AIAC 2026/2 V1 (133933)" data-login="sim">
 <div id="header-usuario"></div>
@@ -21,14 +21,14 @@
         <header>
             <a class="voltar" href="index.html">← Índice</a>
             <h1>📝 Avaliação Objetiva 02: Aulas 05 a 07</h1>
-            <p>Análise de Dados Aplicada à Gestão · Técnico em Assistente em Processos de Gestão e Controle de Materiais — 24 Questões</p>
+            <p>Análise de Dados Aplicada à Gestão · Técnico em Assistente em Processos de Gestão e Controle de Materiais — 60 Questões</p>
         </header>
 
         <div class="export-bar">
             <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
             <button class="btn-export" id="btnExportarPDFGabarito" type="button" data-somente-perfil="PROFESSOR" hidden title="Só o professor: atividade completa com o gabarito real (lido do banco)">📥 Exportar PDF com gabarito</button>
             <button class="btn-export" id="btnExportarGabarito" type="button" hidden title="Professor: gabarito real. Aluno: suas respostas da tentativa de maior nota.">🔑 Exportar Gabarito</button>
-            <small>Gera um único arquivo com as 24 questões.</small>
+            <small>Gera um único arquivo com as 60 questões.</small>
         </div>
 
         <div class="content-section">
@@ -39,10 +39,10 @@
                 <div class="content-box">
                     <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
                     <div class="content-text">
-                        <strong>Duração:</strong> 60 minutos<br>
+                        <strong>Duração:</strong> 150 minutos<br>
                         <strong>Formato:</strong> Múltipla escolha (A, B, C, D, E)<br>
-                        <strong>Total de questões:</strong> 24<br>
-                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 24 pontos)
+                        <strong>Total de questões:</strong> 60<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 60 pontos)
                     </div>
                 </div>
                 <div class="content-box">
@@ -603,13 +603,841 @@
                 </div>
             </div>
 
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Aula 05: Correspondência exata no PROCV</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um auxiliar escreveu =PROCV(A2; Cadastro!$A$2:$C$301; 3) para buscar o preço pelo código, sem o último argumento. Alguns itens vieram com o preço de outro produto.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a causa e como corrigir?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A matriz não tem cifrão; basta tirar os cifrões</li>
+                        <li><span class="letra">B)</span>Sem o último argumento a busca é aproximada; é preciso acrescentar 0 (ou FALSO) para a correspondência exata</li>
+                        <li><span class="letra">C)</span>O número 3 deveria ser 1</li>
+                        <li><span class="letra">D)</span>O PROCV só funciona em planilhas com menos de 300 linhas</li>
+                        <li><span class="letra">E)</span>Falta envolver a fórmula com SOMASE</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Aula 05: Matriz do PROCV sem cifrão</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A fórmula =PROCV(A2; Cadastro!A2:C301; 2; 0) foi arrastada da linha 2 até a linha 301 da aba Pedido. Os primeiros itens vieram certos, mas os últimos passaram a mostrar #N/D, mesmo com os códigos cadastrados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a explicação mais provável?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O número da coluna (2) está errado</li>
+                        <li><span class="letra">B)</span>Os códigos dos últimos itens são texto</li>
+                        <li><span class="letra">C)</span>O PROCV só procura para a esquerda</li>
+                        <li><span class="letra">D)</span>A matriz sem $ &quot;anda&quot; ao arrastar e deixa de incluir as primeiras linhas do cadastro; deveria ser Cadastro!$A$2:$C$301</li>
+                        <li><span class="letra">E)</span>A busca exata (0) impede encontrar os últimos itens</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Aula 05: Código com espaço extra</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O código &quot;MAT-015 &quot; foi digitado com um espaço no final na aba Pedido. No cadastro ele aparece como &quot;MAT-015&quot;, e o PROCV retorna #N/D.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual função limpa o espaço extra do código antes da busca?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ARRUMAR</li>
+                        <li><span class="letra">B)</span>SOMASE</li>
+                        <li><span class="letra">C)</span>CONT.VALORES</li>
+                        <li><span class="letra">D)</span>MÁXIMO</li>
+                        <li><span class="letra">E)</span>PROCH</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Aula 05: Número salvo como texto</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No cadastro, os códigos são números (1001, 1002...). Na aba de pedidos, os códigos vieram de um sistema como texto (com triângulo verde na célula), e o PROCV retorna #N/D.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a forma de conferir e resolver o problema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Aplicar formatação condicional vermelha nos códigos</li>
+                        <li><span class="letra">B)</span>Proteger a planilha e repetir a busca</li>
+                        <li><span class="letra">C)</span>Trocar o PROCV por CONT.SE</li>
+                        <li><span class="letra">D)</span>Congelar a linha superior</li>
+                        <li><span class="letra">E)</span>Conferir com =ÉTEXTO(A2) e converter o código para número (por exemplo, com =VALOR(A2))</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Aula 05: SEERRO com mensagem amigável</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na célula B2 está a fórmula =SEERRO(PROCV(A2; Cadastro!$A$2:$C$301; 2; 0); &quot;Código não cadastrado&quot;). O código digitado em A2 não existe no cadastro.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a célula B2 vai mostrar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>#N/D</li>
+                        <li><span class="letra">B)</span>0</li>
+                        <li><span class="letra">C)</span>Código não cadastrado</li>
+                        <li><span class="letra">D)</span>A descrição do primeiro item do cadastro</li>
+                        <li><span class="letra">E)</span>Uma célula vazia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Aula 05: Como o SEERRO funciona</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um colega acha que, ao colocar SEERRO em volta do PROCV, o Excel deixa de procurar o código e passa a mostrar sempre a mensagem de erro.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual afirmação está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ele está certo: o SEERRO cancela a busca</li>
+                        <li><span class="letra">B)</span>O SEERRO executa o PROCV normalmente e só substitui o resultado quando a fórmula dá erro</li>
+                        <li><span class="letra">C)</span>O SEERRO só funciona com PROCH</li>
+                        <li><span class="letra">D)</span>O SEERRO apaga os códigos que não foram encontrados</li>
+                        <li><span class="letra">E)</span>O SEERRO transforma todos os resultados em zero</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Aula 05: Resultado do ÍNDICE</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O intervalo C2:C6 contém, em ordem: &quot;Luva&quot;, &quot;Fita&quot;, &quot;Óculos&quot;, &quot;Parafuso&quot; e &quot;Capacete&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o resultado de =ÍNDICE(C2:C6; 4)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>4</li>
+                        <li><span class="letra">B)</span>Óculos</li>
+                        <li><span class="letra">C)</span>Capacete</li>
+                        <li><span class="letra">D)</span>#N/D</li>
+                        <li><span class="letra">E)</span>Parafuso</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Aula 05: Montar o ÍNDICE + CORRESP</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No cadastro, a descrição do item está na coluna B (B2:B50) e o código está na coluna D (D2:D50), à direita. O código procurado está na célula F2.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula retorna a descrição do item?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=ÍNDICE(B2:B50; CORRESP(F2; D2:D50; 0))</li>
+                        <li><span class="letra">B)</span>=PROCV(F2; B2:D50; 1; 0)</li>
+                        <li><span class="letra">C)</span>=CORRESP(B2:B50; ÍNDICE(F2; D2:D50; 0))</li>
+                        <li><span class="letra">D)</span>=ÍNDICE(D2:D50; CORRESP(F2; B2:B50; 0))</li>
+                        <li><span class="letra">E)</span>=SOMASE(D2:D50; F2; B2:B50)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Aula 05: Resultado do SE aninhado</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A coluna Status usa =SE(D2&lt;10; &quot;Crítico&quot;; SE(D2&lt;=30; &quot;Atenção&quot;; &quot;Normal&quot;)). O saldo do item em D2 é exatamente 30 unidades.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual status será exibido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Crítico</li>
+                        <li><span class="letra">B)</span>Normal</li>
+                        <li><span class="letra">C)</span>#VALOR!</li>
+                        <li><span class="letra">D)</span>Atenção</li>
+                        <li><span class="letra">E)</span>FALSO</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Aula 05: CONT.SE com operador</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Os saldos em D2:D9 são: 0, 15, 8, 0, 22, 3, 0 e 40.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o resultado de =CONT.SE(D2:D9; &quot;&gt;0&quot;)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>3</li>
+                        <li><span class="letra">B)</span>8</li>
+                        <li><span class="letra">C)</span>5</li>
+                        <li><span class="letra">D)</span>88</li>
+                        <li><span class="letra">E)</span>0</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Aula 05: Critério acima da média</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O analista quer contar quantos pedidos, em E2:E100, têm valor acima da média de todos os pedidos, sem calcular a média à mão.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual fórmula faz isso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=CONT.SE(E2:E100; &quot;MÉDIA&quot;)</li>
+                        <li><span class="letra">B)</span>=CONT.SE(E2:E100; &gt;MÉDIA(E2:E100))</li>
+                        <li><span class="letra">C)</span>=MÉDIA(CONT.SE(E2:E100))</li>
+                        <li><span class="letra">D)</span>=SOMASE(E2:E100; &quot;acima&quot;)</li>
+                        <li><span class="letra">E)</span>=CONT.SE(E2:E100; &quot;&gt;&quot;&amp;MÉDIA(E2:E100))</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Aula 05: Resultado do SOMASE</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na planilha de requisições, C2:C6 tem as categorias EPI, Ferramentas, EPI, Limpeza e EPI, e E2:E6 tem os valores R$ 300, R$ 1.200, R$ 450, R$ 180 e R$ 250.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o resultado de =SOMASE(C2:C6; &quot;EPI&quot;; E2:E6)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>3</li>
+                        <li><span class="letra">B)</span>R$ 1.000</li>
+                        <li><span class="letra">C)</span>R$ 2.380</li>
+                        <li><span class="letra">D)</span>R$ 750</li>
+                        <li><span class="letra">E)</span>R$ 1.200</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Aula 06: A tabela dinâmica e a base original</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um auxiliar tem medo de criar uma tabela dinâmica sobre a base de compras do ano porque acha que ela vai alterar ou apagar os dados lançados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual afirmação está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A tabela dinâmica só lê e resume a base; os dados originais não são alterados</li>
+                        <li><span class="letra">B)</span>A tabela dinâmica apaga as linhas repetidas da base</li>
+                        <li><span class="letra">C)</span>A tabela dinâmica converte a base em texto</li>
+                        <li><span class="letra">D)</span>A tabela dinâmica soma os valores dentro das próprias células da base</li>
+                        <li><span class="letra">E)</span>A tabela dinâmica só funciona depois de proteger a base com senha</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Aula 06: Base com problemas</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A base de requisições tem um título mesclado ocupando as colunas A a F na primeira linha, algumas linhas em branco no meio e duas colunas com o mesmo nome &quot;Valor&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que deve ser feito antes de criar a tabela dinâmica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Aplicar formatação de moeda em todas as colunas</li>
+                        <li><span class="letra">B)</span>Congelar a primeira linha</li>
+                        <li><span class="letra">C)</span>Deixar uma linha de cabeçalho com nomes únicos, sem células mescladas e sem linhas em branco</li>
+                        <li><span class="letra">D)</span>Proteger a planilha com senha</li>
+                        <li><span class="letra">E)</span>Converter todas as datas em texto</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Aula 06: Área de Filtros</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A tabela dinâmica mostra o valor comprado por categoria. O gerente quer poder escolher, no topo do relatório, qual filial analisar, sem mudar as linhas e os valores.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em qual área o campo Filial deve ser colocado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Valores</li>
+                        <li><span class="letra">B)</span>Linhas</li>
+                        <li><span class="letra">C)</span>Colunas</li>
+                        <li><span class="letra">D)</span>Filtros</li>
+                        <li><span class="letra">E)</span>Em nenhuma área: é preciso criar uma fórmula SOMASE</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Aula 06: Resumir valores por média</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A tabela dinâmica mostra a soma do valor das requisições por setor, mas o gestor quer o valor médio de cada requisição.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que deve ser alterado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mover o campo Valor para Filtros</li>
+                        <li><span class="letra">B)</span>Agrupar o campo Valor por trimestre</li>
+                        <li><span class="letra">C)</span>Criar uma segmentação de dados</li>
+                        <li><span class="letra">D)</span>Atualizar a tabela com Alt+F5</li>
+                        <li><span class="letra">E)</span>Em Resumir Valores Por, trocar Soma por Média</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Aula 06: Percentual do total geral</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A tabela dinâmica mostra o valor comprado de cada fornecedor no ano. A área de compras quer saber se existe dependência de um só fornecedor (acima de 50% das compras).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual recurso responde isso diretamente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Agrupar as datas por mês</li>
+                        <li><span class="letra">B)</span>Mostrar valores como % do Total Geral</li>
+                        <li><span class="letra">C)</span>Ordenar os fornecedores de A a Z</li>
+                        <li><span class="letra">D)</span>Mesclar as células dos fornecedores</li>
+                        <li><span class="letra">E)</span>Ocultar a coluna de valores</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Aula 06: Campo calculado</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gestor quer ver, dentro da tabela dinâmica, o custo de armazenagem de 5% sobre o valor de cada compra, sem acrescentar colunas na base.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual recurso deve ser usado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Campo Calculado com a fórmula =&#x27;Valor da Compra&#x27; * 0,05</li>
+                        <li><span class="letra">B)</span>Segmentação de Dados</li>
+                        <li><span class="letra">C)</span>Linha do Tempo</li>
+                        <li><span class="letra">D)</span>Validação de Dados</li>
+                        <li><span class="letra">E)</span>Congelar Painéis</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Aula 06: Os maiores no topo</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A tabela dinâmica lista 80 itens com o valor comprado no ano. A diretoria quer ver só os 10 itens de maior valor, do maior para o menor.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que deve ser feito?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Agrupar os itens por trimestre</li>
+                        <li><span class="letra">B)</span>Mover o campo Item para Filtros</li>
+                        <li><span class="letra">C)</span>Ordenar o valor em ordem decrescente e aplicar o filtro dos 10 Primeiros</li>
+                        <li><span class="letra">D)</span>Excluir as linhas da base com valores pequenos</li>
+                        <li><span class="letra">E)</span>Criar um gráfico de pizza com os 80 itens</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Aula 06: Linha do Tempo</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O painel de compras precisa de um filtro de datas em forma de barra horizontal, em que o usuário arrasta as bordas para escolher o período e alterna entre anos, trimestres, meses e dias.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual recurso faz isso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Validação de Dados</li>
+                        <li><span class="letra">B)</span>Formatação Condicional</li>
+                        <li><span class="letra">C)</span>Filtro Automático</li>
+                        <li><span class="letra">D)</span>Campo Calculado</li>
+                        <li><span class="letra">E)</span>Linha do Tempo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Aula 06: Ranking de fornecedores</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O analista quer comparar o valor comprado de 12 fornecedores, em forma de ranking, num gráfico fácil de ler.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual tipo de gráfico é o mais adequado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Pizza com 12 fatias</li>
+                        <li><span class="letra">B)</span>Linhas, uma para cada fornecedor</li>
+                        <li><span class="letra">C)</span>Dispersão (XY)</li>
+                        <li><span class="letra">D)</span>Barras (ou colunas), ordenadas do maior para o menor</li>
+                        <li><span class="letra">E)</span>Rosca em 3D</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Aula 06: Gráfico de dispersão</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gestor quer saber se existe relação entre a distância de cada entrega (km) e o custo do frete (R$), usando 200 entregas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual tipo de gráfico mostra melhor essa correlação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Pizza</li>
+                        <li><span class="letra">B)</span>Dispersão (XY)</li>
+                        <li><span class="letra">C)</span>Rosca</li>
+                        <li><span class="letra">D)</span>Colunas empilhadas por mês</li>
+                        <li><span class="letra">E)</span>Linha do tempo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Aula 06: Base como tabela oficial</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Toda semana entram novas linhas na base de compras, e o analista esquece de ampliar o intervalo da tabela dinâmica, que fica sem os lançamentos novos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual prática faz as novas linhas entrarem automaticamente na fonte da tabela dinâmica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Transformar a base em tabela oficial (Inserir → Tabela) e atualizar a tabela dinâmica</li>
+                        <li><span class="letra">B)</span>Mesclar as células do cabeçalho</li>
+                        <li><span class="letra">C)</span>Agrupar as datas por ano</li>
+                        <li><span class="letra">D)</span>Proteger a estrutura da pasta</li>
+                        <li><span class="letra">E)</span>Ocultar as linhas de grade</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Aula 06: Proteger o relatório dinâmico</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O relatório de compras será distribuído aos supervisores. Eles não podem alterar nada, mas precisam continuar usando os filtros e a segmentação da tabela dinâmica.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como proteger a planilha sem travar os filtros?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apagar a tabela dinâmica e enviar só o gráfico</li>
+                        <li><span class="letra">B)</span>Proteger a estrutura da pasta, sem proteger a planilha</li>
+                        <li><span class="letra">C)</span>Proteger Planilha marcando a opção &quot;Usar Tabela Dinâmica e Gráfico Dinâmico&quot;</li>
+                        <li><span class="letra">D)</span>Converter a tabela dinâmica em imagem</li>
+                        <li><span class="letra">E)</span>Desmarcar Bloqueadas em todas as células</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Aula 07: Planilha comum × dashboard</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O diretor tem 30 segundos para avaliar o estoque do mês e recebeu uma planilha com 2.000 linhas de movimentações.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que um dashboard oferece que essa planilha não oferece?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Guarda mais linhas de dados brutos</li>
+                        <li><span class="letra">B)</span>Dispensa qualquer tabela dinâmica</li>
+                        <li><span class="letra">C)</span>Substitui a base de dados original</li>
+                        <li><span class="letra">D)</span>Reúne só os totais e indicadores críticos numa tela, com filtros visuais para decidir em segundos</li>
+                        <li><span class="letra">E)</span>Mostra todas as transações com mais cores</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Aula 07: Cartões de KPI</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O analista vai desenhar os cartões de KPI do topo do dashboard de estoque.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais informações cada cartão deve ter?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Todas as movimentações do mês em letras pequenas</li>
+                        <li><span class="letra">B)</span>Um gráfico de pizza e uma tabela dinâmica completa</li>
+                        <li><span class="letra">C)</span>Apenas a fórmula usada no cálculo</li>
+                        <li><span class="letra">D)</span>O nome do analista e a data de nascimento</li>
+                        <li><span class="letra">E)</span>Rótulo do indicador, o número em tamanho grande e a seta de tendência</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 51</span>
+                <div class="aula-title">Aula 07: Segmentador para o painel inteiro</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O dashboard tem três gráficos, cada um ligado a uma tabela dinâmica diferente. Ao clicar em &quot;Região Sul&quot; no segmentador, só um gráfico muda.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que fazer para que o segmentador filtre os três gráficos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Criar três segmentadores iguais e clicar em todos</li>
+                        <li><span class="letra">B)</span>Clicar com o botão direito no segmentador, abrir Conexões de Relatório e marcar as três tabelas dinâmicas</li>
+                        <li><span class="letra">C)</span>Mesclar as três tabelas dinâmicas</li>
+                        <li><span class="letra">D)</span>Proteger a planilha do dashboard</li>
+                        <li><span class="letra">E)</span>Converter os gráficos em imagem</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 52</span>
+                <div class="aula-title">Aula 07: Cores no painel</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No dashboard de estoque, o KPI de ruptura passou da meta e precisa chamar a atenção, enquanto os demais dados são neutros.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual uso de cores segue as boas práticas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Vermelho só no KPI em alerta, verde para meta atingida e tons neutros (azul ou cinza) no restante</li>
+                        <li><span class="letra">B)</span>Uma cor chamativa diferente em cada gráfico (amarelo, rosa, roxo)</li>
+                        <li><span class="letra">C)</span>Vermelho em todos os indicadores para manter o padrão</li>
+                        <li><span class="letra">D)</span>Dez cores diferentes para deixar o painel alegre</li>
+                        <li><span class="letra">E)</span>Verde no KPI de ruptura acima da meta</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 53</span>
+                <div class="aula-title">Aula 07: Interface limpa</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O dashboard está pronto, mas ainda parece uma planilha comum, com as linhas de grade aparecendo atrás dos gráficos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que deve ser feito antes da apresentação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Aplicar bordas pretas em todas as células</li>
+                        <li><span class="letra">B)</span>Proteger a estrutura da pasta</li>
+                        <li><span class="letra">C)</span>Desmarcar Linhas de Grade na guia Exibir</li>
+                        <li><span class="letra">D)</span>Inserir mais gráficos para preencher os espaços</li>
+                        <li><span class="letra">E)</span>Mesclar todas as células da aba</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 54</span>
+                <div class="aula-title">Aula 07: Excesso de informação</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O gerente quer colocar 15 gráficos e 12 indicadores na mesma tela do dashboard &quot;para não perder nenhum detalhe&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual orientação está de acordo com as boas práticas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Aceitar, porque mais gráficos sempre ajudam a decidir</li>
+                        <li><span class="letra">B)</span>Colocar os 15 gráficos em 3D para economizar espaço</li>
+                        <li><span class="letra">C)</span>Usar uma cor diferente em cada um dos 15 gráficos</li>
+                        <li><span class="letra">D)</span>Trocar os gráficos por tabelas com todas as linhas</li>
+                        <li><span class="letra">E)</span>Manter poucos indicadores prioritários (até cerca de 7) e retirar os que não mudam decisões, deixando os detalhes para outro painel</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 55</span>
+                <div class="aula-title">Aula 07: Gráficos 3D</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Para deixar o painel &quot;mais moderno&quot;, um analista transformou as colunas e a pizza do dashboard em gráficos 3D.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o problema dessa escolha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Gráficos 3D não podem ser filtrados pela segmentação</li>
+                        <li><span class="letra">B)</span>O 3D impede a atualização da tabela dinâmica</li>
+                        <li><span class="letra">C)</span>O 3D só funciona no LibreOffice</li>
+                        <li><span class="letra">D)</span>O 3D distorce as proporções e leva o leitor a interpretar valores errados</li>
+                        <li><span class="letra">E)</span>Nenhum: o 3D sempre melhora a leitura</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 56</span>
+                <div class="aula-title">Aula 07: Apresentar para a diretoria</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O analista vai apresentar o dashboard de estoque para a diretoria em 5 minutos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como deve começar a apresentação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Explicando as fórmulas usadas em cada célula</li>
+                        <li><span class="letra">B)</span>Pela conclusão e seu impacto (ex.: &quot;as perdas de estoque caíram 14%&quot;) e depois o gráfico que comprova</li>
+                        <li><span class="letra">C)</span>Contando as dificuldades técnicas que encontrou</li>
+                        <li><span class="letra">D)</span>Mostrando a base de dados bruta linha por linha</li>
+                        <li><span class="letra">E)</span>Lendo todos os números de todas as tabelas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 57</span>
+                <div class="aula-title">Aula 07: Ticket médio</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Em outubro, a loja de materiais faturou R$ 36.000,00 com 240 clientes atendidos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o ticket médio (gasto médio por cliente)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>R$ 240,00</li>
+                        <li><span class="letra">B)</span>R$ 1.500,00</li>
+                        <li><span class="letra">C)</span>R$ 36,00</li>
+                        <li><span class="letra">D)</span>R$ 8.640,00</li>
+                        <li><span class="letra">E)</span>R$ 150,00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 58</span>
+                <div class="aula-title">Aula 07: Meta × realizado</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A meta de faturamento do mês era R$ 50.000,00 e o realizado foi R$ 52.300,00.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual percentual da meta foi atingido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>95,6%</li>
+                        <li><span class="letra">B)</span>2,3%</li>
+                        <li><span class="letra">C)</span>104,6%</li>
+                        <li><span class="letra">D)</span>152,3%</li>
+                        <li><span class="letra">E)</span>100%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 59</span>
+                <div class="aula-title">Aula 07: KPI de atraso</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A TecLog (empresa fictícia) fez 1.200 entregas no semestre, das quais 84 chegaram fora do prazo.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o KPI de atraso (% de entregas fora do prazo)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>7%</li>
+                        <li><span class="letra">B)</span>84%</li>
+                        <li><span class="letra">C)</span>14,3%</li>
+                        <li><span class="letra">D)</span>0,7%</li>
+                        <li><span class="letra">E)</span>93%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 60</span>
+                <div class="aula-title">Aula 07: Rascunho antes do software</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A equipe vai construir o dashboard da TecLog e quer evitar retrabalho no Excel.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual deve ser o primeiro passo do projeto visual?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Escolher as cores mais chamativas para cada gráfico</li>
+                        <li><span class="letra">B)</span>Inserir todos os gráficos possíveis e decidir depois</li>
+                        <li><span class="letra">C)</span>Proteger a planilha com senha</li>
+                        <li><span class="letra">D)</span>Desenhar um rascunho (wireframe) no papel com a posição dos KPIs, gráficos e filtros</li>
+                        <li><span class="letra">E)</span>Ocultar as linhas de grade da base de dados</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </div>
 
     <footer>
         <p><strong>Análise de Dados Aplicada à Gestão — Avaliação Objetiva 02: Aulas 05 a 07</strong></p>
         <p>Técnico em Assistente em Processos de Gestão e Controle de Materiais — SENAI</p>
-        <p>24 Questões • Múltipla Escolha</p>
+        <p>60 Questões • Múltipla Escolha</p>
     </footer>
 
     <script src="../../../../assets/js/atividade.js"></script>
