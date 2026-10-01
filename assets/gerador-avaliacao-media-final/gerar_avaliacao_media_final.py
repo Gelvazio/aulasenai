@@ -41,6 +41,7 @@ TOLERANCIA_PONTOS = 0.001
 CASAS_PONTOS = 2
 NOTA_MINIMA_PADRAO = 70
 TEXTO_SEM_NOTA = "—"
+NOTA_MAXIMA = 10
 RECUO_LINHA = " " * 28
 RECUO_REGRA = " " * 20
 PONTOS_PADRAO = {"atividades": 30, "objetiva": 40, "pratica": 30}
@@ -221,19 +222,21 @@ def celula_peso(peso):
     return f'<td class="media-numero media-peso">{escapar(peso)}</td>'
 
 
-def celula_resultado(campo, ativo):
+def celula_resultado(campo, ativo, valor=None):
     """Monta uma célula de resultado (nota ou pontos) preenchida pelo JS.
 
     Args:
         campo: "nota" ou "pontos".
         ativo: True se a célula recebe valor do banco.
+        valor: Valor já conhecido (nota fixa); None mostra "—" até o JS preencher.
 
     Returns:
         HTML da célula.
     """
     if not ativo:
         return '<td class="media-numero"></td>'
-    return f'<td class="media-numero" data-campo="{campo}">{TEXTO_SEM_NOTA}</td>'
+    texto = TEXTO_SEM_NOTA if valor is None else f"{float(valor):.1f}".replace(".", ",")
+    return f'<td class="media-numero" data-campo="{campo}">{texto}</td>'
 
 
 def html_item(identificador, item):
@@ -252,13 +255,17 @@ def html_item(identificador, item):
         atributos += (f' data-grupo="{escapar(identificador)}"'
                       f' data-pontos="{numero_atributo(item["pontos"])}"'
                       f' data-pagina="{escapar(item["pagina"])}"')
-    if tem_pagina and "nota_fixa" in item:
-        atributos += f' data-nota-fixa="{numero_atributo(item["nota_fixa"])}"'
+    nota_fixa = item.get("nota_fixa") if tem_pagina else None
+    pontos_fixos = None
+    if nota_fixa is not None:
+        atributos += f' data-nota-fixa="{numero_atributo(nota_fixa)}"'
+        pontos_fixos = float(nota_fixa) / NOTA_MAXIMA * float(item["pontos"])
     return (f'{RECUO_LINHA}<tr {atributos}><td>{escapar(item["nome"])}</td>'
             f'<td>{escapar(item.get("conteudo", ""))}</td>'
             f'<td class="media-numero">{numero_exibido(item["pontos"])}</td>'
-            f'{celula_peso(item.get("peso"))}{celula_resultado("nota", tem_pagina)}'
-            f'{celula_resultado("pontos", tem_pagina)}</tr>')
+            f'{celula_peso(item.get("peso"))}'
+            f'{celula_resultado("nota", tem_pagina, nota_fixa)}'
+            f'{celula_resultado("pontos", tem_pagina, pontos_fixos)}</tr>')
 
 
 def atributos_subtotal(grupo):
