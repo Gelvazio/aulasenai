@@ -1,7 +1,9 @@
 """Gera as páginas de atividade e o index.html a partir dos .md de questões.
 
 Uso: C:\\Python314\\python.exe assets\\gerador-atividades\\gerar_atividades.py <pasta ATIVIDADES> [--so=ARQ.md]
-Fonte única do conteúdo: ATIVIDADES-AULA-NN-50-QUESTOES.md (pasta ATIVIDADES).
+Fonte única do conteúdo: ATIVIDADES-AULA-NN-50-QUESTOES.md em <pasta ATIVIDADES>/CONTEUDO/
+(fora do Git, com gabarito); .md antigos na raiz de ATIVIDADES/ continuam aceitos.
+As páginas HTML são sempre gravadas na pasta ATIVIDADES (nunca dentro de CONTEUDO/).
 Dados da matéria: <pasta ATIVIDADES>/atividades.json com uc, uc_curta, curso e docente.
 """
 import html
@@ -16,10 +18,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "gerador-menu"))
 from tags_menu import montar_tags_menu  # noqa: E402
 from tags_header import inserir_header_em_html  # noqa: E402
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "gerador-indices"))
+from gerar_indices import montar_tags_crud  # noqa: E402
+
 GERADOR = Path(__file__).resolve().parent
 ASSETS = GERADOR.parent
 TEMPLATE = (GERADOR / "template_atividade.html").read_text(encoding="utf-8")
 ARQUIVO_DADOS = "atividades.json"
+PASTA_FONTES = "CONTEUDO"
+PADRAO_FONTES = "ATIVIDADES-AULA-*-50-QUESTOES.md"
 CAMPOS_DADOS = ("uc", "uc_curta", "curso", "docente")
 CAMPO_FOLHA_RESPOSTAS = "Folha de respostas"
 CAMPO_TURMA = "Turma"
@@ -176,11 +183,33 @@ BLOCO_PDF_GABARITO = '''
             <button class="btn-export" id="btnExportarGabarito" type="button" hidden title="Professor: gabarito real. Aluno: suas respostas da tentativa de maior nota.">🔑 Exportar Gabarito</button>'''
 
 
+def pasta_da_pagina(md_path):
+    """Pasta onde fica a página: a fonte em CONTEUDO/ gera o HTML na pasta ATIVIDADES acima dela."""
+    if md_path.parent.name == PASTA_FONTES:
+        return md_path.parent.parent
+    return md_path.parent
+
+
 def caminho_saida(md_path):
     """HTML da atividade: avaliações e atividades extraídas do Word (AVALIACAO-*, ATIVIDADE-*) perdem o sufixo -QUESTOES; aulas o mantêm."""
+    nome = md_path.stem + ".html"
     if md_path.stem.startswith(PREFIXOS_SEM_SUFIXO):
-        return md_path.with_name(md_path.stem.removesuffix("-QUESTOES") + ".html")
-    return md_path.with_suffix(".html")
+        nome = md_path.stem.removesuffix("-QUESTOES") + ".html"
+    return pasta_da_pagina(md_path) / nome
+
+
+def localizar_fontes(pasta):
+    """Fontes .md da pasta ATIVIDADES: em CONTEUDO/ e, por compatibilidade, na raiz da pasta."""
+    encontradas = list((pasta / PASTA_FONTES).glob(PADRAO_FONTES)) + list(pasta.glob(PADRAO_FONTES))
+    return sorted(encontradas, key=chave_ordem_data)
+
+
+def localizar_fonte(pasta, nome):
+    """Acha um .md pelo nome em CONTEUDO/ ou na raiz da pasta ATIVIDADES."""
+    for candidato in (pasta / PASTA_FONTES / nome, pasta / nome):
+        if candidato.exists():
+            return candidato
+    raise SystemExit(f"{nome} não encontrado em {pasta / PASTA_FONTES} nem em {pasta}")
 
 
 def gerar_atividade(md_path, dados):
@@ -188,8 +217,9 @@ def gerar_atividade(md_path, dados):
     gabarito_json = json.dumps(
         [["ITEM " + it["num"], it["titulo"], it["gab"]] for it in itens], ensure_ascii=False
     ).replace("</", "<\\/")
-    assets = caminho_assets(md_path.parent)
-    raiz = os.path.relpath(ASSETS.parent, md_path.parent).replace(os.sep, "/")
+    pasta_pagina = pasta_da_pagina(md_path)
+    assets = caminho_assets(pasta_pagina)
+    raiz = os.path.relpath(ASSETS.parent, pasta_pagina).replace(os.sep, "/")
     folha_css, folha_js = tags_folha_respostas(meta["folha"], assets, raiz)
     pagina = TEMPLATE
     trocas = {
@@ -216,13 +246,13 @@ def gerar_atividade(md_path, dados):
         "{{FOLHA_JS}}": folha_js,
         "{{TURMA}}": f' data-turma="{e(meta["turma"])}"' if meta["turma"] else "",
         "{{ASSETS}}": assets,
-        "{{MENU}}": montar_tags_menu(md_path.parent, "    "),
+        "{{MENU}}": montar_tags_menu(pasta_pagina, "    "),
     }
     for chave, valor in trocas.items():
         pagina = pagina.replace(chave, valor)
     assert "{{" not in pagina, f"{md_path.name}: placeholder não substituído"
     saida = caminho_saida(md_path)
-    saida.write_text(inserir_header_em_html(pagina, md_path.parent), encoding="utf-8")
+    saida.write_text(inserir_header_em_html(pagina, pasta_pagina), encoding="utf-8")
     meta["html"] = saida.name
     meta["md"] = md_path.name
     meta["titulos"] = [it["titulo"] for it in itens]
@@ -281,7 +311,7 @@ def gerar_index(pasta, aulas, dados):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Índice de Atividades — {uc_curta}</title>
-    <link rel="stylesheet" href="{caminho_assets(pasta)}/css/indice-atividades.css">{montar_tags_menu(pasta, "    ")}
+    <link rel="stylesheet" href="{caminho_assets(pasta)}/css/indice-atividades.css">{montar_tags_crud(pasta, "    ")}{montar_tags_menu(pasta, "    ")}
 </head>
 <body>
     <div class="container">
@@ -297,7 +327,7 @@ def gerar_index(pasta, aulas, dados):
         </section>
     </div>
     <footer>
-        <p>Páginas geradas a partir dos arquivos ATIVIDADES-AULA-NN-50-QUESTOES.md — edite o .md e rode assets/gerador-atividades/gerar_atividades.py.</p>
+        <p>Páginas geradas a partir dos arquivos CONTEUDO/ATIVIDADES-AULA-NN-50-QUESTOES.md — edite o .md e rode assets/gerador-atividades/gerar_atividades.py.</p>
     </footer>
 </body>
 </html>
@@ -313,11 +343,14 @@ def main():
         raise SystemExit(f"Pasta não encontrada: {pasta}")
     dados = ler_dados_materia(pasta)
     if len(sys.argv) == 3 and sys.argv[2].startswith("--so="):
-        md = pasta / sys.argv[2].split("=", 1)[1]
+        md = localizar_fonte(pasta, sys.argv[2].split("=", 1)[1])
         meta = gerar_atividade(md, dados)
         print(f"{meta['rotulo']}: {meta['total']} itens -> {meta['html']} (index.html não alterado)")
         return
-    arquivos = sorted(pasta.glob("ATIVIDADES-AULA-*-50-QUESTOES.md"), key=chave_ordem_data)
+    arquivos = localizar_fontes(pasta)
+    if not arquivos:
+        raise SystemExit(f"Nenhum {PADRAO_FONTES} em {pasta / PASTA_FONTES} nem em {pasta}; "
+                         "index.html não alterado")
     aulas = [gerar_atividade(md, dados) for md in arquivos]
     gerar_index(pasta, aulas, dados)
     for a in aulas:
