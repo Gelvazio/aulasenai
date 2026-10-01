@@ -16,6 +16,7 @@ from gerar_atividades import caminho_saida, ler_questoes  # noqa: E402
 
 ARQUIVO_SAIDA = RAIZ / "database" / "2026-09-28-seed-atividades.sql"
 PASTA_TIC = "MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES"
+PASTA_FONTES = "CONTEUDO"  # subpasta das fontes .md (com gabarito) dentro de ATIVIDADES/
 
 CURSO = "Assistente de Operações Logísticas"
 MATERIA = "Introdução à Tecnologia da Informação e Comunicação"
@@ -114,19 +115,43 @@ def ler_itens_sem_metadados(caminho):
     return {"tema": tema, "total": len(itens)}, itens
 
 
+def localizar_fonte(caminho):
+    """Acha o .md da atividade: ao lado da página ou na subpasta CONTEUDO/ dela.
+
+    As fontes podem ter sido movidas para ATIVIDADES/CONTEUDO/ (fora do Git, com gabarito);
+    a página continua em ATIVIDADES/, então só a leitura muda de lugar.
+
+    Args:
+        caminho: Caminho lógico do .md (ao lado da página HTML).
+
+    Returns:
+        Caminho do .md que existe.
+
+    Raises:
+        FileNotFoundError: Se o .md não estiver em nenhum dos dois lugares.
+    """
+    if caminho.exists():
+        return caminho
+    alternativo = caminho.parent / PASTA_FONTES / caminho.name
+    if alternativo.exists():
+        return alternativo
+    raise FileNotFoundError(f"Fonte não encontrada: {caminho} nem {alternativo}")
+
+
 def ler_atividade(caminho):
     """Lê a atividade pelo leitor do gerador; sem metadados, usa o leitor simples.
 
     Args:
-        caminho: Caminho do .md.
+        caminho: Caminho lógico do .md (a fonte pode estar em CONTEUDO/).
 
     Returns:
         Tupla (meta, itens).
     """
+    fonte = localizar_fonte(caminho)
     try:
-        return ler_questoes(caminho)
+        return ler_questoes(fonte)
     except ValueError:
-        return ler_itens_sem_metadados(caminho)
+        return ler_itens_sem_metadados(fonte)
 
 
 def texto_sql(valor):
