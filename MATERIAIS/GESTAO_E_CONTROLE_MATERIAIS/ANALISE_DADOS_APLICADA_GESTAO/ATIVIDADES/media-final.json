@@ -32,8 +32,7 @@
           "nome": "Atividade Aula 04",
           "conteudo": "Excel Intermediário Formatação e Validação",
           "pagina": "ATIVIDADES-4-EXCEL-INTERMEDIARIO-FORMATACAO-E-VALIDACAO-50-QUESTOES.html",
-          "pontos": 7,
-          "nota_fixa": 10
+          "pontos": 7
         },
         {
           "nome": "Atividade Aula 05",
@@ -87,7 +86,7 @@
   "regras": [
     "Cada instrumento tem nota de 0 a 10, convertida para os pontos dele. Exemplo: nota 8 numa atividade de 7 pontos = 5,6 pontos.",
     "Nas provas objetivas vale a melhor nota entre a avaliação e as recuperações.",
-    "As atividades das Aulas 01, 02, 03 e 04 valem nota 10 para todos os alunos.",
+    "As atividades das Aulas 01, 02 e 03 valem nota 10 para todos os alunos.",
     "A prova prática são as 2 atividades práticas de Excel (12,5 pontos cada).",
     "Atividade ou prova não feita vale 0 ponto.",
     "**Peso no sistema:** soma das 5 atividades em sala (Aulas 01 a 05) 35% (lançar a média delas, de 0 a 10, mostrada no subtotal), Avaliação Objetiva 01 20%, Avaliação Objetiva 02 20%, Prova Prática — Excel 29/09 12,5% e Prova Prática — Excel 01/10 12,5%. Nota final = soma de cada nota × peso.",
