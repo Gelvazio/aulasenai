@@ -122,7 +122,7 @@ Criar tabela comparando 3 profissões (técnico, engenheiro, programador):
 ## 📖 Referências
 
 - `PLANO-AULAS.md` — Estrutura completa
-- `EMENTA.md` — Competências esperadas
+- `EMENTA-CHALKIE-AI.md` — Competências esperadas
 - Pesquisar: Sebrae, ABDI (Agência Brasileira de Desenvolvimento Industrial)
 
 ---

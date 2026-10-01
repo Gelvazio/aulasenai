@@ -26,7 +26,6 @@ REQUIRED_FOLDERS = {
 }
 
 REQUIRED_FILES = {
-    "DOCUMENTACAO/EMENTA.md": "Ementa",
     "DOCUMENTACAO/EMENTA-CHALKIE-AI.md": "Ementa IA ⭐",
     "DOCUMENTACAO/INDEX.md": "Índice",
     "DOCUMENTACAO/PLANO-AULAS.md": "Plano",

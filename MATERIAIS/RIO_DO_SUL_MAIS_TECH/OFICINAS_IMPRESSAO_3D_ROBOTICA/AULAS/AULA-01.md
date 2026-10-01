@@ -133,7 +133,7 @@ Cada aluno propõe um objeto que poderia:
 ## 📖 Referências
 
 - `PLANO-AULAS.md`
-- `EMENTA.md`
+- `EMENTA-CHALKIE-AI.md`
 - Tinkercad: www.tinkercad.com
 - Fusion 360: www.autodesk.com
 

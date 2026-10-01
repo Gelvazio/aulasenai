@@ -3,7 +3,7 @@
 """
 Script para consolidar ementas das matérias que já estão conformes (14.800–14.950)
 Remove arquivos redundantes (Apostila_*, ementa_*, EMENTA_DA_MATERIA.md)
-Mantém APENAS: EMENTA.md, EMENTA-CHALKIE-AI.md, STATUS-EMENTAS.md
+Mantém APENAS: EMENTA-CHALKIE-AI.md, STATUS-EMENTAS.md
 """
 
 import os

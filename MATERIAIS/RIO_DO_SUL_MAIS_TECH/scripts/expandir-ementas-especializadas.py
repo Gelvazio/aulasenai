@@ -147,7 +147,7 @@ R: Avaliação somativa é pré-requisito; quem não atingir consegue recuperaç
 ---
 
 **Documento especializado para:** Chalkie AI v2026-09
-**Conteúdo extraído de:** EMENTA.md (versão simplificada) + padrão Rio do Sul Mais Tech
+**Conteúdo extraído de:** ementa do curso (EMENTA-PRINCIPAL) + padrão Rio do Sul Mais Tech
 **Próxima revisão:** 2026-12-31
 """
 

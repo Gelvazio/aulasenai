@@ -151,7 +151,7 @@ Justifique sua classificação.
 
 **Documentos Complementares:**
 - `PLANO-AULAS.md` — Estrutura completa do curso
-- `EMENTA.md` — Detalhes das competências esperadas
+- `EMENTA-CHALKIE-AI.md` — Detalhes das competências esperadas
 - Apostila: `Apostila_Competencias_Socioemocionais_Empreendedorismo.md`
 
 **Recursos Externos:**

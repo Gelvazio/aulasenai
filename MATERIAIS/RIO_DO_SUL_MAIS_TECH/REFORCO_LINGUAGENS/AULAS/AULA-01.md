@@ -114,7 +114,7 @@ Classificar 4 textos em: narrativo, descritivo, informativo, argumentativo
 ## 📖 Referências
 
 - `PLANO-AULAS.md`
-- `EMENTA.md`
+- `EMENTA-CHALKIE-AI.md`
 - Livros didáticos do 8º/9º ano
 
 ---

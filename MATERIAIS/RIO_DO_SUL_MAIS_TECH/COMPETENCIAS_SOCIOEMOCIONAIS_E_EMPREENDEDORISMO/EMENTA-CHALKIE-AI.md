@@ -302,7 +302,7 @@ Projetos que alunos trabalham em equipe: plano de negócios, pesquisa de mercado
 ### Estrutura no Painel de Controle
 
 1. **Configuração Base:**
-   - Nome da UC exatamente como está em EMENTA.md
+   - Nome da UC exatamente como está na ementa do curso
    - Descrição extraída de "Objetivo Geral"
    - Carga horária: 36h (ou a especificada)
    - Público: 8º-9º ano ou conforme especificado

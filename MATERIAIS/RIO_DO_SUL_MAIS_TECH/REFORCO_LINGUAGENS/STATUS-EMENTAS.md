@@ -1,6 +1,6 @@
 # STATUS-EMENTAS — REFORCO_LINGUAGENS
 
-**Última atualização:** 2026-09-29 07:36:50
+**Última atualização:** 2026-10-01 14:53:25
 
 ---
 
@@ -8,20 +8,18 @@
 
 | Arquivo | Status | Tamanho | Observações |
 |---------|--------|---------|-------------|
-| **EMENTA.md** | ❌ AUSENTE | — chars | Versão simplificada (1–2 pág) |
-| **EMENTA-CHALKIE-AI.md** | ✅ PRESENTE | 14866 chars | ✅ CONFORME (14.800–14.950 chars) |
+| **EMENTA-CHALKIE-AI.md** | ✅ PRESENTE | 14872 chars | ✅ CONFORME (14.800–14.950 chars) |
 
 ---
 
 ## 🎯 Fase Atual
 
-❌ BLOQUEADO: Sem EMENTA.md
+✅ FASE 3: Ementa pronta e conforme
 
 ---
 
 ## 📋 Checklist de Completude
 
-- [ ] EMENTA.md existe e contém conteúdo básico
 - [x] EMENTA-CHALKIE-AI.md foi criada
 - [x] EMENTA-CHALKIE-AI.md está dentro do padrão 14.800–14.950 chars
 - [ ] Conteúdo foi revisado por professor
@@ -34,13 +32,13 @@
 
 | Data | Ação | Detalhes |
 |------|------|----------|
-| 2026-09-29 | Inicialização | Status criado automaticamente |
+| 2026-10-01 | Inicialização | Status criado automaticamente |
 
 ---
 
 ## ⚙️ Próximos Passos
 
-1. Se fase 1: Executar especializar-ementas-chalkie.py para gerar EMENTA-CHALKIE-AI.md
+1. Se fase 1: Criar EMENTA-CHALKIE-AI.md a partir da UC na EMENTA-PRINCIPAL do curso
 2. Se fase 2: Executar expandir-ementas-especializadas.py para atingir 14.800–14.950 chars
 3. Se fase 3: Validar conteúdo e fazer commit
 

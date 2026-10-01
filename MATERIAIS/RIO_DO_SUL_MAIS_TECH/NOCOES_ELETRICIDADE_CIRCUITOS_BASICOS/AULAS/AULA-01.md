@@ -118,7 +118,7 @@ Calcular potência de eletrodomésticos da escola:
 
 - NR 10 — Norma Regulamentadora
 - `PLANO-AULAS.md`
-- `EMENTA.md`
+- `EMENTA-CHALKIE-AI.md`
 
 ---
 

@@ -34,12 +34,10 @@ def verificar_arquivo(pasta, arquivo):
 def gerar_status(materia, pasta):
     """Gera conteúdo do STATUS-EMENTAS.md."""
 
-    # Verificar arquivos
-    ementa_existe, ementa_size = verificar_arquivo(pasta, "EMENTA.md")
+    # Verificar arquivo (a versão simplificada EMENTA.md deixou de existir em 2026-10-01)
     chalkie_existe, chalkie_size = verificar_arquivo(pasta, "EMENTA-CHALKIE-AI.md")
 
     # Determinar status
-    ementa_status = "✅ PRESENTE" if ementa_existe else "❌ AUSENTE"
     chalkie_status = "✅ PRESENTE" if chalkie_existe else "❌ AUSENTE"
 
     # Verificar conformidade de tamanho
@@ -50,14 +48,12 @@ def gerar_status(materia, pasta):
     chalkie_tamanho_status = "✅ CONFORME (14.800–14.950 chars)" if chalkie_conforme else f"⚠️ FORA DO PADRÃO ({chalkie_size} chars)"
 
     # Determinar fase
-    if not ementa_existe:
-        fase = "❌ BLOQUEADO: Sem EMENTA.md"
-    elif not chalkie_existe:
-        fase = "⚠️ FASE 1: EMENTA.md criada, EMENTA-CHALKIE-AI.md pendente"
+    if not chalkie_existe:
+        fase = "⚠️ FASE 1: EMENTA-CHALKIE-AI.md pendente"
     elif not chalkie_conforme:
         fase = "🔄 FASE 2: EMENTA-CHALKIE-AI.md criada mas fora do padrão de tamanho"
     else:
-        fase = "✅ FASE 3: Ambas as ementas prontas e conformes"
+        fase = "✅ FASE 3: Ementa pronta e conforme"
 
     # Gerar markdown
     conteudo = f"""# STATUS-EMENTAS — {materia}
@@ -70,7 +66,6 @@ def gerar_status(materia, pasta):
 
 | Arquivo | Status | Tamanho | Observações |
 |---------|--------|---------|-------------|
-| **EMENTA.md** | {ementa_status} | {ementa_size if ementa_existe else "—"} chars | Versão simplificada (1–2 pág) |
 | **EMENTA-CHALKIE-AI.md** | {chalkie_status} | {chalkie_size if chalkie_existe else "—"} chars | {chalkie_tamanho_status} |
 
 ---
@@ -83,7 +78,6 @@ def gerar_status(materia, pasta):
 
 ## 📋 Checklist de Completude
 
-- [{'x' if ementa_existe else ' '}] EMENTA.md existe e contém conteúdo básico
 - [{'x' if chalkie_existe else ' '}] EMENTA-CHALKIE-AI.md foi criada
 - [{'x' if chalkie_conforme else ' '}] EMENTA-CHALKIE-AI.md está dentro do padrão 14.800–14.950 chars
 - [ ] Conteúdo foi revisado por professor
@@ -102,7 +96,7 @@ def gerar_status(materia, pasta):
 
 ## ⚙️ Próximos Passos
 
-1. Se fase 1: Executar especializar-ementas-chalkie.py para gerar EMENTA-CHALKIE-AI.md
+1. Se fase 1: Criar EMENTA-CHALKIE-AI.md a partir da UC na EMENTA-PRINCIPAL do curso
 2. Se fase 2: Executar expandir-ementas-especializadas.py para atingir 14.800–14.950 chars
 3. Se fase 3: Validar conteúdo e fazer commit
 

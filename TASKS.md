@@ -68,10 +68,11 @@ Garantir que todas as apostilas estão em formato **Markdown (.md) apenas** — 
 
 ### #3: Preencher EMENTA.md Simples em 8 Disciplinas
 
-**Status:** ⏳ PLANEJADO  
-**Prioridade:** 🟠 Alta
+**Status:** ⛔ CANCELADA (2026-10-01)  
+**Prioridade:** —
 
-Criar versão resumida (1-2 páginas) de cada ementa para alunos/pais.
+Cancelada a pedido do usuário: a versão simplificada `EMENTA.md` deixou de existir; a ementa de
+cada matéria é só o `EMENTA-CHALKIE-AI.md`.
 
 ---
 
@@ -187,7 +188,8 @@ do documento, divergências e campos pendentes registrados). Os arquivos atuais 
 | Total de tarefas planejadas | 10 |
 | Concluídas | 5 |
 | Em progresso | 0 |
-| Planejadas | 5 |
+| Planejadas | 4 |
+| Canceladas | 1 |
 | Taxa de conclusão | 50% |
 
 ---

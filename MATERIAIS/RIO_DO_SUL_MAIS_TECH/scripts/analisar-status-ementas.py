@@ -3,7 +3,6 @@
 """
 Script para analisar status de ementas em cada matéria de cada curso
 Verifica:
-- EMENTA.md (simples)
 - EMENTA-CHALKIE-AI.md (detalhada)
 - STATUS-EMENTAS.md (rastreamento)
 - Redundâncias e versões antigas
@@ -39,9 +38,9 @@ def descobrir_cursos():
         for subitem in os.listdir(pasta):
             subpasta = os.path.join(pasta, subitem)
             if os.path.isdir(subpasta) and not subitem.startswith(('scripts', 'docs', 'DOCUMENTACAO')):
-                # Verificar se tem estrutura de matéria (EMENTA.md ou EMENTA-CHALKIE-AI.md)
+                # Verificar se tem estrutura de matéria (EMENTA-CHALKIE-AI.md)
                 for arquivo in os.listdir(subpasta):
-                    if arquivo in ['EMENTA.md', 'EMENTA-CHALKIE-AI.md', 'STATUS-EMENTAS.md']:
+                    if arquivo in ['EMENTA-CHALKIE-AI.md', 'STATUS-EMENTAS.md']:
                         tem_materias = True
                         materias.append(subitem)
                         break
@@ -71,7 +70,6 @@ def analisar_ementas_curso(nome_curso, dados_curso):
         pasta_materia = os.path.join(pasta_curso, materia)
 
         # Procurar arquivos de ementa
-        ementa_md = None
         ementa_chalkie = None
         status_ementas = None
         arquivos_antigos = []
@@ -79,9 +77,7 @@ def analisar_ementas_curso(nome_curso, dados_curso):
         for arquivo in os.listdir(pasta_materia):
             caminho = os.path.join(pasta_materia, arquivo)
 
-            if arquivo == "EMENTA.md":
-                ementa_md = caminho
-            elif arquivo == "EMENTA-CHALKIE-AI.md":
+            if arquivo == "EMENTA-CHALKIE-AI.md":
                 ementa_chalkie = caminho
             elif arquivo == "STATUS-EMENTAS.md":
                 status_ementas = caminho
@@ -114,7 +110,6 @@ def analisar_ementas_curso(nome_curso, dados_curso):
 
         resultados.append({
             'materia': materia,
-            'ementa_md': bool(ementa_md),
             'ementa_chalkie': bool(ementa_chalkie),
             'tamanho_chalkie': tamanho_chalkie,
             'conforme': conforme,

@@ -17,7 +17,7 @@
 
 ### Arquivos a Gerar por Matéria
 - ⬜ Pasta `AULAS/`
-- ⬜ `PLANO-AULAS.md` (baseado em EMENTA.md existente)
+- ⬜ `PLANO-AULAS.md` (baseado no EMENTA-CHALKIE-AI.md existente)
 - ⬜ `AULAS/AULA-01.md` (primeiro encontro)
 - ⬜ `AULAS/AULA-01.html` (versão HTML da aula)
 
@@ -37,7 +37,7 @@
 
 ## ⚠️ Riscos e Dependências
 
-- ✅ Todas as matérias possuem EMENTA.md (pré-requisito atendido)
+- ✅ Todas as matérias possuem EMENTA-CHALKIE-AI.md (pré-requisito atendido)
 - ⚠️ Títulos e estrutura extraídos das ementas existentes
 - ⚠️ Conteúdo inicial será template genérico (professores devem customizar)
 

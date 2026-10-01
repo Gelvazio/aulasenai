@@ -273,19 +273,14 @@ USING (id = auth.uid());
 
 ```
 DOCUMENTACAO/
-├─ EMENTA.md                    (versão simples, 1–2 páginas)
 ├─ EMENTA-CHALKIE-AI.md         (versão IA, 10+ páginas, detalhada) ⭐
 ├─ PLANO-AULAS.md              (cronograma por semana)
 ├─ INDEX.md                     (mapa de navegação)
 └─ VERIFICACAO_COBERTURA_EMENTA.md (checklist)
 ```
 
-**Diferença entre EMENTA.md e EMENTA-CHALKIE-AI.md:**
-
-| Arquivo | Tipo | Detalhe | Público |
-|---------|------|---------|---------|
-| **EMENTA.md** | Resumido | Objetivo, capacidades, conteúdos (1–2 pág) | Alunos/Pais |
-| **EMENTA-CHALKIE-AI.md** | Extensivo | Tudo acima + estratégias, rúbricas, prompts IA (10+ pág) | Professores/IA |
+**Versão simplificada `EMENTA.md`: não existe mais** (removida em 2026-10-01 a pedido do usuário).
+A ementa de cada matéria é só o `EMENTA-CHALKIE-AI.md`; não criar nem verificar `EMENTA.md`.
 
 **Checklist ao criar EMENTA-CHALKIE-AI.md:**
 - [ ] Estrutura em 10 seções (contexto, objetivos, conteúdos, cronograma, etc)
@@ -350,12 +345,12 @@ wc -c DOCUMENTACAO/EMENTA-CHALKIE-AI.md
 
 ## 🎓 REGRA CRÍTICA — ATUALIZAR STATUS-EMENTAS AO MODIFICAR EMENTAS
 
-⚠️ **SEMPRE que modificar EMENTA.md ou EMENTA-CHALKIE-AI.md de qualquer matéria, DEVE atualizar:**
+⚠️ **SEMPRE que modificar o EMENTA-CHALKIE-AI.md de qualquer matéria, DEVE atualizar:**
 - 📄 `MATERIAIS/RIO_DO_SUL_MAIS_TECH/<materia>/STATUS-EMENTAS.md` (status da matéria)
 - 📄 `MATERIAIS/STATUS-EMENTAS-CURSOS.md` (status consolidado do curso)
 
 **Ordem de atualização (OBRIGATÓRIA):**
-1. ✅ Modificar `EMENTA.md` ou `EMENTA-CHALKIE-AI.md` (fonte primária)
+1. ✅ Modificar `EMENTA-CHALKIE-AI.md` (fonte primária)
 2. ✅ Atualizar `STATUS-EMENTAS.md` da matéria com novo tamanho e status
 3. ✅ Atualizar `STATUS-EMENTAS-CURSOS.md` com novo status consolidado
 4. ✅ Commitar todos os arquivos juntos
@@ -363,7 +358,7 @@ wc -c DOCUMENTACAO/EMENTA-CHALKIE-AI.md
 **Por quê?** STATUS-EMENTAS.md e STATUS-EMENTAS-CURSOS.md são derivados das ementas. Sem sincronização, o rastreamento de progresso fica inútil.
 
 **Checklist ao modificar ementas:**
-- [ ] Editei `EMENTA.md` ou `EMENTA-CHALKIE-AI.md`
+- [ ] Editei `EMENTA-CHALKIE-AI.md`
 - [ ] Verifiquei o novo tamanho em caracteres
 - [ ] Atualizei `STATUS-EMENTAS.md` da matéria (tamanho, fase, checklist)
 - [ ] Atualizei `STATUS-EMENTAS-CURSOS.md` (status geral do curso)
