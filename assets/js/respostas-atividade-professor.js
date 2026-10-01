@@ -179,7 +179,8 @@ function criarControleLiberar(contexto) {
     const limite = calcularLimiteTentativas(notaFinal, maximo);
     const termos = termosTentativa();
     const botao = criarBotao('btn-export ' + CLASSE_RELATORIO + '__liberar',
-        '🔓 Liberar ' + termos.nova, () => liberarTentativaDoAluno(contexto));
+        '🔓 ' + termos.nova.charAt(0).toUpperCase() + termos.nova.slice(1),
+        () => liberarTentativaDoAluno(contexto));
     botao.disabled = linha.tentativa >= limite;
     if (botao.disabled) botao.title = 'Sem ' + termos.nova + ' disponível para este aluno.';
     celula.appendChild(botao);
