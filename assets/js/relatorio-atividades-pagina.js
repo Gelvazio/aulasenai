@@ -10,7 +10,8 @@ const MSG_SEM_PERFIL_REL = 'Só o perfil PROFESSOR vê este relatório.';
 const MSG_SEM_ATIVIDADES_REL = 'Nenhuma atividade cadastrada para esta matéria.';
 const MSG_SEM_UC_REL = 'Nenhuma turma tem esta matéria como UC: mostrando todas as turmas.';
 const MSG_ERRO_REL = 'Não foi possível carregar o relatório: ';
-const TEXTO_STATUS_REL = { entregue: '📨 Entregue', andamento: '✏️ Andamento', '': '—' };
+const TEXTO_STATUS_REL = { entregue: '📨 Entregue', andamento: '✏️ Andamento',
+    fixa: '⭐ Nota fixa da turma', '': '—' };
 const QUANTIDADES_REL = ['1', '2', '3'];
 const TEXTO_SELECIONE_ALUNO_REL = 'Seleciona o aluno';
 const MATERIA_PADRAO_REL = 'Introdução à Tecnologia da Informação e Comunicação';
@@ -449,7 +450,8 @@ function renderizarTabelaRel() {
     let visiveis = 0;
     const atividades = obterAtividadesFiltradasRel();
     turma.alunos.forEach((aluno) => {
-        const resumo = calcularResumoAlunoRel(aluno, atividades, estadoRel.resumos);
+        const resumo = calcularResumoAlunoRel(aluno, atividades,
+            { resumos: estadoRel.resumos, turmaCodigo: turma.codigo });
         if (!passaNosFiltrosRel(resumo, aluno)) return;
 
         tabela.appendChild(montarBlocoAlunoRel(aluno, resumo));
