@@ -14,6 +14,7 @@ const TEXTO_STATUS_REL = { entregue: '📨 Entregue', andamento: '✏️ Andamen
 const QUANTIDADES_REL = ['1', '2', '3'];
 const TEXTO_SELECIONE_ALUNO_REL = 'Seleciona o aluno';
 const MATERIA_PADRAO_REL = 'Introdução à Tecnologia da Informação e Comunicação';
+const TEXTO_LIGAR_TODAS_REL = 'Ligar todas';
 const TITULO_FILTRO_ATIVIDADES_REL = 'Atividades da matéria (nenhuma ligada = todas)';
 
 const estadoRel = {
@@ -238,11 +239,35 @@ function montarFiltroAtividadesRel() {
     const quadro = document.getElementById('relQuadroAtividades');
     const ativas = ordenarAtividadesAtivasRel(estadoRel.materia?.atividades || []);
     quadro.hidden = ativas.length === 0;
-    const interruptores = ativas.map((atividade) => criarInterruptorRel(
-        formatarAulaRel(atividade.aulas?.numero) + ' — ' + atividade.descricao,
-        alternarNoConjuntoRel(estadoRel.atividadesFiltro, String(atividade.id))));
-    document.getElementById('relFiltroAtividades').replaceChildren(
-        criarGrupoFiltroRel(TITULO_FILTRO_ATIVIDADES_REL, interruptores));
+    const interruptores = ativas.map((atividade) => {
+        const interruptor = criarInterruptorRel(
+            formatarAulaRel(atividade.aulas?.numero) + ' — ' + atividade.descricao,
+            alternarNoConjuntoRel(estadoRel.atividadesFiltro, String(atividade.id)));
+        interruptor.dataset.atividade = String(atividade.id);
+        return interruptor;
+    });
+    const grupo = criarGrupoFiltroRel(TITULO_FILTRO_ATIVIDADES_REL, interruptores);
+    grupo.querySelector('strong').after(criarBotaoLigarTodasRel(grupo));
+    document.getElementById('relFiltroAtividades').replaceChildren(grupo);
+}
+
+/**
+ * Cria o botão "Ligar todas", que liga todos os interruptores do quadro de atividades.
+ * @param {HTMLElement} grupo - Grupo com os interruptores das atividades.
+ * @returns {HTMLButtonElement} Botão pronto.
+ */
+function criarBotaoLigarTodasRel(grupo) {
+    const botao = criarElementoRel('button', 'rel-botao rel-botao--pequeno rel-botao-ligar-todas',
+        TEXTO_LIGAR_TODAS_REL);
+    botao.type = 'button';
+    botao.addEventListener('click', () => {
+        grupo.querySelectorAll('[data-atividade]').forEach((interruptor) => {
+            interruptor.querySelector('input').checked = true;
+            estadoRel.atividadesFiltro.add(interruptor.dataset.atividade);
+        });
+        renderizarTabelaRel();
+    });
+    return botao;
 }
 
 /**
