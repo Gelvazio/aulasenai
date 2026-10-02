@@ -26,6 +26,10 @@ window.MENU_ATIVIDADES = {
           link: 'ATIVIDADES-AULA-04-50-QUESTOES.html',
         },
         {
+          rotulo: 'Aula 04 — Atividade prática (e-mail e nuvem)',
+          link: 'ATIVIDADE-PRATICA-AULA-04.html',
+        },
+        {
           rotulo: 'Aula 05 — Segurança da informação',
           link: 'ATIVIDADES-AULA-05-50-QUESTOES.html',
         },
