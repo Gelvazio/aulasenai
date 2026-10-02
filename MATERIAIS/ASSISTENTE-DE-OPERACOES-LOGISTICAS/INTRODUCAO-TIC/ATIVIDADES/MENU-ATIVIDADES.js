@@ -14,12 +14,24 @@ window.MENU_ATIVIDADES = {
           link: 'ATIVIDADES-AULA-01-50-QUESTOES.html',
         },
         {
+          rotulo: 'Aula 01 — Atividade prática (comunicação profissional)',
+          link: 'ATIVIDADE-PRATICA-AULA-01.html',
+        },
+        {
           rotulo: 'Aula 02 — Hardware, periféricos e SO',
           link: 'ATIVIDADES-AULA-02-50-QUESTOES.html',
         },
         {
+          rotulo: 'Aula 02 — Atividade prática (hardware e SO)',
+          link: 'ATIVIDADE-PRATICA-AULA-02.html',
+        },
+        {
           rotulo: 'Aula 03 — Navegação na web e pesquisa',
           link: 'ATIVIDADES-AULA-03-50-QUESTOES.html',
+        },
+        {
+          rotulo: 'Aula 03 — Atividade prática (web e pesquisa)',
+          link: 'ATIVIDADE-PRATICA-AULA-03.html',
         },
         {
           rotulo: 'Aula 04 — Comunicação digital e nuvem',
