@@ -14,6 +14,7 @@ const MSG_SEM_LOGIN = 'Você não está logado. Só o professor logado pode ver 
 const MSG_SEM_PERFIL = 'Só o perfil PROFESSOR vê as senhas e grava. Seu perfil: ';
 const PERFIL_DESCONHECIDO = '(sem perfil)';
 const ROTA_LOGIN_GUIA = '../login.html';
+const RPC_ADMINISTRADOR_GUIA = 'eh_professor_administrador';
 const IDS_GUIA = {
     bloqueio: 'guiaBloqueio',
     opcoes: 'guiaOpcoes',
@@ -57,6 +58,20 @@ async function obterUsuarioLogadoGuia() {
         return data?.session?.user || null;
     } catch (erro) {
         return null;
+    }
+}
+
+/**
+ * Confere no banco se o usuário logado é o Professor Administrador.
+ * O e-mail e o user_metadata não decidem nada: quem decide é eh_professor_administrador().
+ * @returns {Promise<boolean>} true só se o banco confirmar; false em qualquer falha.
+ */
+async function ehProfessorAdministradorGuia() {
+    try {
+        const { data, error } = await obterClienteSupabase().rpc(RPC_ADMINISTRADOR_GUIA);
+        return !error && data === true;
+    } catch (erro) {
+        return false;
     }
 }
 
@@ -381,8 +396,13 @@ async function iniciarGuiaUsuarios() {
     }
     const cadastrados = ehProfessor ? await consultarCadastradosGuia() : null;
     const senhasInformadas = ehProfessor ? await consultarSenhasInformadasGuia() : null;
+    const mostrarSenhaProfessor = ehProfessor ? await ehProfessorAdministradorGuia() : false;
     const contexto = {
-        cadastrados, senhasInformadas, mostrarSenha: ehProfessor, podeGravar: ehProfessor,
+        cadastrados,
+        senhasInformadas,
+        mostrarSenha: ehProfessor,
+        mostrarSenhaProfessor,
+        podeGravar: ehProfessor,
     };
     contexto.favorita = await buscarTurmaFavorita();
     obterElementoGuia('abas').replaceChildren(...turmas.map(criarAbaTurmaGuia));

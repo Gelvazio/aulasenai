@@ -137,7 +137,8 @@ function pintarSituacaoGuia(linha, situacao) {
  * Cria uma linha da tabela: caixa de seleção, número, nome, "Aluno anotou?", e-mail, senha
  * inicial e "Cadastrado".
  * A senha só aparece para o aluno selecionado e quando contexto.mostrarSenha for verdadeiro
- * (professor logado). A senha do professor nunca é mostrada.
+ * (professor logado). A senha das linhas de perfil PROFESSOR só aparece para o Professor
+ * Administrador (contexto.mostrarSenhaProfessor, confirmado pelo banco).
  * @param {Object} aluno - Aluno da lista de presença.
  * @param {{cadastrados: Map<string, string>|null, mostrarSenha: boolean}} contexto - Cadastrados
  *   e permissão de ver a senha.
@@ -156,7 +157,9 @@ function criarLinhaAlunoGuia(aluno, contexto, aoMudarSelecao) {
     celulaCaixa.append(caixa);
 
     const celulaSenha = criarCelulaGuia(SENHA_OCULTA);
-    const podeVerSenha = contexto.mostrarSenha && aluno.perfil !== PERFIL_PROFESSOR_LISTA;
+    const ehLinhaProfessor = aluno.perfil === PERFIL_PROFESSOR_LISTA;
+    const podeVerSenha = contexto.mostrarSenha
+        && (!ehLinhaProfessor || contexto.mostrarSenhaProfessor === true);
     linha.atualizarSenha = () => {
         celulaSenha.textContent = podeVerSenha && caixa.checked ? aluno.senha || '' : SENHA_OCULTA;
     };
@@ -194,7 +197,7 @@ function criarTabelaAlunosGuia(turma, contexto, aoMudarSelecao) {
 }
 
 /**
- * Mostra a senha só nas linhas marcadas (a do professor continua sempre oculta).
+ * Mostra a senha só nas linhas marcadas (a de professor, só para o Professor Administrador).
  * @param {HTMLTableElement} tabela - Tabela de alunos.
  */
 function atualizarSenhasGuia(tabela) {
