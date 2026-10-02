@@ -6,18 +6,49 @@
 const SELETORES_ANTES_BARRA_FAVORITA = ['.container .resumo', '.container header'];
 const CLASSE_BARRA_FAVORITA = 'barra-turma-favorita';
 const PERFIL_PROFESSOR_FAVORITA = 'PROFESSOR';
+const RPC_ADMINISTRADOR_FAVORITA = 'eh_professor_administrador';
 const PREFIXO_OPCAO_FAVORITA = '⭐ ';
 
 /**
- * Indica se há professor logado.
- * @returns {Promise<boolean>} true se o usuário logado é professor.
+ * Devolve a sessão do professor logado.
+ * @returns {Promise<{cliente: Object, usuario: Object}|null>} Sessão do professor ou null.
  */
-async function usuarioEhProfessorFavorita() {
+async function obterSessaoProfessorFavorita() {
     const cliente = obterClienteSupabase();
-    if (!cliente) return false;
+    if (!cliente) return null;
 
     const { data } = await cliente.auth.getSession();
-    return data?.session?.user?.app_metadata?.perfil === PERFIL_PROFESSOR_FAVORITA;
+    const usuario = data?.session?.user;
+    if (usuario?.app_metadata?.perfil !== PERFIL_PROFESSOR_FAVORITA) return null;
+    return { cliente, usuario };
+}
+
+/**
+ * Lista as turmas permitidas ao professor. O administrador, confirmado pelo banco, vê todas;
+ * os demais professores veem somente os vínculos próprios em turmaprofessor.
+ * @param {Object} cliente - Cliente autenticado do Supabase.
+ * @param {Object} usuario - Usuário da sessão atual.
+ * @returns {Promise<Object[]>} Turmas visíveis ao professor.
+ */
+async function listarTurmasVisiveisFavorita(cliente, usuario) {
+    const { data: ehAdministrador, error: erroAdministrador } =
+        await cliente.rpc(RPC_ADMINISTRADOR_FAVORITA);
+    if (erroAdministrador) throw erroAdministrador;
+
+    let consulta = cliente.from('turma').select('codigo,nome,turno').order('nome');
+    if (ehAdministrador !== true) {
+        const { data: vinculos, error: erroVinculos } = await cliente
+            .from('turmaprofessor').select('turma_codigo').eq('professor_id', usuario.id);
+        if (erroVinculos) throw erroVinculos;
+
+        const codigos = [...new Set((vinculos || []).map((vinculo) => vinculo.turma_codigo))];
+        if (!codigos.length) return [];
+        consulta = consulta.in('codigo', codigos);
+    }
+
+    const { data: turmas, error: erroTurmas } = await consulta;
+    if (erroTurmas) throw erroTurmas;
+    return turmas || [];
 }
 
 /**
@@ -97,9 +128,10 @@ function criarBarraFavorita(turmas, favorita) {
  */
 async function iniciarTurmaFavoritaIndice() {
     try {
-        if (!await usuarioEhProfessorFavorita()) return;
+        const sessao = await obterSessaoProfessorFavorita();
+        if (!sessao) return;
 
-        const turmas = await sbGet('turma', 'select=codigo,nome,turno&order=nome');
+        const turmas = await listarTurmasVisiveisFavorita(sessao.cliente, sessao.usuario);
         const referencia = SELETORES_ANTES_BARRA_FAVORITA
             .map((seletor) => document.querySelector(seletor)).find(Boolean);
         if (!turmas.length || !referencia) return;
