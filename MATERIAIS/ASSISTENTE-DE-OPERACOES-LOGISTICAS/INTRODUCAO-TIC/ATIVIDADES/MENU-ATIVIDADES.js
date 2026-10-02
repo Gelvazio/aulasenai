@@ -46,6 +46,10 @@ window.MENU_ATIVIDADES = {
           link: 'ATIVIDADES-AULA-05-50-QUESTOES.html',
         },
         {
+          rotulo: 'Aula 05 — Atividade prática (segurança da informação)',
+          link: 'ATIVIDADE-PRATICA-AULA-05.html',
+        },
+        {
           rotulo: '📝 Avaliação Objetiva 01 (aulas 01–05)',
           link: 'AVALIACAO-OBJETIVA-01.html',
         },
