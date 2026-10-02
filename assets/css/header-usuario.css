@@ -26,3 +26,14 @@
 .header-usuario__botao:hover { background: #d97706; }
 @media print { #header-usuario { display: none; } }
 .header-usuario__home { margin-right: auto; }
+.header-usuario__menu { display: flex; flex-wrap: wrap; gap: 10px; }
+.header-usuario__menu-link {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 5px 16px;
+    border: 2px solid #f7941d;
+    border-radius: 16px;
+}
+.header-usuario__menu-link:hover { background: #f7941d; }

@@ -2,6 +2,7 @@
 // Genérico: preenche o elemento <div id="header-usuario"></div> de qualquer página com o
 // usuário logado (Supabase Auth) e o botão SAIR; sem sessão, mostra o botão ENTRAR.
 // Sempre mostra o botão HOME (index.html da raiz) junto do usuário logado.
+// Para o PROFESSOR, mostra também o menu USUARIOS / RELATORIOS (abre em nova aba).
 // Uso na página: <script src=".../js/header-usuario.js" defer></script> + o div acima.
 // Qualquer elemento com data-somente-perfil="PROFESSOR" (e hidden) só aparece para esse perfil.
 // Os caminhos (CSS, supabase.js, login.html) são calculados a partir do próprio script,
@@ -13,6 +14,11 @@ const ROTA_CSS_HEADER = "../assets/css/header-usuario.css";
 const ROTA_SUPABASE_JS = "supabase.js";
 const ROTA_LOGIN = "../login.html";
 const ROTA_HOME = "../index.html";
+const PERFIL_PROFESSOR_HEADER = "PROFESSOR";
+const MENU_PROFESSOR_HEADER = [
+  { rotulo: "USUARIOS", rota: "../scripts/criarUsuariosBancoDados.html" },
+  { rotulo: "RELATORIOS", rota: "../relatorioAtividades.html" },
+];
 const PARAMETRO_VOLTAR_HEADER = "voltar";
 const TEXTO_HOME = "HOME";
 const TEXTO_ENTRAR = "ENTRAR";
@@ -96,6 +102,22 @@ function criarBotaoHome() {
 }
 
 /**
+ * Monta o menu do professor (USUARIOS, RELATORIOS), aberto em nova aba.
+ * @returns {HTMLElement} Elemento <nav> com os links.
+ */
+function criarMenuProfessor() {
+  const menu = criarElementoHeader("nav", "header-usuario__menu", "");
+  MENU_PROFESSOR_HEADER.forEach((item) => {
+    const link = criarElementoHeader("a", "header-usuario__menu-link", item.rotulo);
+    link.href = resolverRotaHeader(item.rota);
+    link.target = "_blank";
+    link.rel = "noopener";
+    menu.append(link);
+  });
+  return menu;
+}
+
+/**
  * Monta o botão ENTRAR, que volta para a página atual depois do login.
  * @returns {HTMLAnchorElement} Link com aparência de botão.
  */
@@ -154,6 +176,8 @@ function desenharHeaderUsuario(destino, cliente, usuario) {
   const barra = criarElementoHeader("div", "header-usuario__barra", "");
   const texto = usuario ? descreverUsuarioHeader(usuario) : TEXTO_SEM_LOGIN;
   barra.append(criarBotaoHome());
+  const ehProfessor = usuario?.app_metadata?.perfil === PERFIL_PROFESSOR_HEADER;
+  if (ehProfessor) barra.append(criarMenuProfessor());
   barra.append(criarElementoHeader("span", "header-usuario__nome", texto));
   barra.append(usuario ? criarBotaoSair(cliente) : criarBotaoEntrar());
   destino.replaceChildren(barra);

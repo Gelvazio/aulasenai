@@ -299,15 +299,6 @@ def card_curso(curso, total_materias, com_atividade):
     })
 
 
-# Menu só do professor: nasce oculto e o js/header-usuario.js o mostra para perfil PROFESSOR.
-MENU_PRINCIPAL = (
-    '\n            <nav class="menu-principal" data-somente-perfil="PROFESSOR" hidden>'
-    '<a href="scripts/criarUsuariosBancoDados.html" target="_blank" rel="noopener">USUARIOS</a>'
-    '<a href="relatorioAtividades.html" target="_blank" rel="noopener">RELATORIOS</a>'
-    '</nav>'
-)
-
-
 def gerar_indice_raiz(pastas_forcadas):
     """Gera todos os índices a partir da raiz. Returns: lista de (situação, caminho)."""
     situacoes = []
@@ -317,7 +308,6 @@ def gerar_indice_raiz(pastas_forcadas):
         "titulo": "📚 Índice de Atividades",
         "subtitulo": "Escolha o curso para ver as matérias e suas atividades",
         "css": link_relativo(CSS_INDICE, RAIZ_PROJETO),
-        "navegacao": MENU_PRINCIPAL,
         "resumo": f"<span>{len(cursos)} cursos</span>",
         "cards": cards,
         "rodape": TITULO_SITE,
