@@ -1,0 +1,12 @@
+{
+  "uc": "Fundamentos de Automação/Instrumentação",
+  "uc_curta": "Automação/Instrumentação",
+  "curso": "Operador de Produção Industrial",
+  "docente": "Gelvazio Camargo",
+  "capacidades": {
+    "C1": "Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.",
+    "C2": "Compreender a operação do sistema supervisório e IHM.",
+    "C3": "Reconhecer as diferentes técnicas de instrumentação aplicadas aos sistemas de produção.",
+    "C4": "Observar as variáveis de controle (pressão, vazão, temperatura, nível etc)."
+  }
+}

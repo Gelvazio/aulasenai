@@ -20,7 +20,7 @@
 
 # STATUS-EMENTAS-CURSOS — Consolidado
 
-**Última atualização:** 2026-10-02 08:35:27
+**Última atualização:** 2026-10-02 11:06:04
 **Escopo:** todos os cursos em `MATERIAIS/` (exceto `MATERIAS-GERAIS/`)
 **Fonte:** tamanho medido direto em cada `EMENTA-CHALKIE-AI.md`
 **Padrão de tamanho:** 14.800–14.950 caracteres
@@ -36,10 +36,11 @@
 | ASSISTENTE-DE-OPERACOES-LOGISTICAS | 1 | 1 | 0 | 0 | 0 |
 | CURSO_ATIVIDADES_PADLET | 0 | 0 | 0 | 0 | 0 |
 | GESTAO_E_CONTROLE_MATERIAIS | 1 | 1 | 0 | 0 | 0 |
+| OPERADOR_PRODUCAO_INDUSTRIAL | 1 | 1 | 0 | 0 | 0 |
 | QUALIFICACAO-PROFISSIONAL | 3 | 1 | 0 | 2 | 0 |
 | RIO_DO_SUL_MAIS_TECH | 7 | 7 | 0 | 0 | 0 |
 | TECNICO-INFORMATICA-INTERNET | 1 | 1 | 0 | 0 | 0 |
-| **TOTAL** | **13** | **11** | **0** | **2** | **0** |
+| **TOTAL** | **14** | **12** | **0** | **2** | **0** |
 
 ---
 
@@ -79,6 +80,12 @@
 | Matéria | Caracteres | Situação |
 |---|---|---|
 | ANALISE_DADOS_APLICADA_GESTAO | 14.892 | ✅ Conforme |
+
+## 🎓 OPERADOR_PRODUCAO_INDUSTRIAL
+
+| Matéria | Caracteres | Situação |
+|---|---|---|
+| FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO | 14.834 | ✅ Conforme |
 
 ## 🎓 QUALIFICACAO-PROFISSIONAL
 
