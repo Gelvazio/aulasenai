@@ -2,5 +2,9 @@
   "uc": "Análise de Dados Aplicada à Gestão",
   "uc_curta": "Análise de Dados Aplicada à Gestão",
   "curso": "Técnico em Assistente em Processos de Gestão e Controle de Materiais",
-  "docente": "Gelvazio Camargo"
+  "docente": "Gelvazio Camargo",
+  "capacidades": {
+    "C1": "Utilizar os recursos da tecnologia da informação e comunicação relativos a planilhas eletrônicas e dashboard nas operações administrativas.",
+    "C2": "Aplicar conceitos matemáticos na realização de cálculos básicos e de estatística básica pertinentes aos processos."
+  }
 }

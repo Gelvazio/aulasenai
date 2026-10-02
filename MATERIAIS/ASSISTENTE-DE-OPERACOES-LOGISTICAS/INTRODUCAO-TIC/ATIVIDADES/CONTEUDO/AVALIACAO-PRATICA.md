@@ -23,6 +23,7 @@
 ## ITEM 01 — Elementos da Comunicação e Feedback
 
 - **Aula:** 01 · Comunicação Profissional
+- **Capacidade:** C1
 
 **Contexto:**
 O supervisor de expedição enviou, pelo grupo de mensagens da equipe, a nova rota de coleta das transportadoras. Um motorista leu a mensagem, não respondeu nada e, no dia seguinte, foi até o endereço antigo. A carga atrasou duas horas.
@@ -39,6 +40,7 @@ Analise a situação usando o processo de comunicação.
 ## ITEM 02 — Ruídos na Comunicação
 
 - **Aula:** 01 · Comunicação Profissional
+- **Capacidade:** C1
 
 **Contexto:**
 Na doca de recebimento, com empilhadeiras ligadas, a líder explicou a um conferente novo que a carga era de "cross-docking". O conferente não conhecia o termo e, além disso, estava nervoso porque tinha acabado de discutir com um colega.
@@ -55,6 +57,7 @@ Identifique os ruídos presentes e proponha soluções.
 ## ITEM 03 — Assertividade
 
 - **Aula:** 01 · Comunicação Profissional
+- **Capacidade:** C1
 
 **Contexto:**
 Faltando dez minutos para o fim do seu turno, um colega pede que você fique mais duas horas no lugar dele. Você já tem um compromisso marcado e não pode ficar.
@@ -71,6 +74,7 @@ Mostre como responder de forma profissional.
 ## ITEM 04 — Hardware e Desempenho
 
 - **Aula:** 02 · Hardware, Periféricos e Sistemas Operacionais
+- **Capacidade:** C4
 
 **Contexto:**
 O computador do setor de expedição demora muito para abrir o WMS e as planilhas de conferência. Ele tem 4 GB de memória RAM e um disco rígido (HDD).
@@ -87,6 +91,7 @@ Explique a lentidão e recomende uma melhoria.
 ## ITEM 05 — Organização de Arquivos
 
 - **Aula:** 02 · Hardware, Periféricos e Sistemas Operacionais
+- **Capacidade:** C4
 
 **Contexto:**
 A pasta "Documentos" do escritório tem arquivos como "relatorio final(2).xlsx", "novo.docx", "inventario certo AGORA.xlsx" e "foto1.jpg", todos misturados.
@@ -103,6 +108,7 @@ Reorganize os arquivos de forma profissional.
 ## ITEM 06 — Sistema Operacional, Drivers e Periféricos
 
 - **Aula:** 02 · Hardware, Periféricos e Sistemas Operacionais
+- **Capacidade:** C4
 
 **Contexto:**
 O setor recebeu uma impressora de etiquetas nova. Ela foi ligada ao computador pela porta USB, mas nenhuma etiqueta sai quando o conferente manda imprimir.
@@ -119,6 +125,7 @@ Explique o problema e descreva como resolvê-lo.
 ## ITEM 07 — Pesquisa Avançada na Web
 
 - **Aula:** 03 · Navegação na Web e Pesquisa Acadêmica
+- **Capacidade:** C5
 
 **Contexto:**
 O gerente pediu que você encontre normas sobre armazenagem de produtos químicos, somente em arquivos PDF publicados em sites do governo (gov.br), sem resultados sobre "alimentos".
@@ -135,6 +142,7 @@ Monte a pesquisa usando operadores avançados.
 ## ITEM 08 — Confiabilidade das Fontes
 
 - **Aula:** 03 · Navegação na Web e Pesquisa Acadêmica
+- **Capacidade:** C5
 
 **Contexto:**
 Pesquisando sobre o peso máximo que uma empilhadeira pode levantar, você encontrou um blog sem autor, sem data, cheio de anúncios, que diz que "qualquer empilhadeira levanta 5 toneladas".
@@ -151,6 +159,7 @@ Avalie a fonte e indique alternativas.
 ## ITEM 09 — Direitos Autorais
 
 - **Aula:** 03 · Navegação na Web e Pesquisa Acadêmica
+- **Capacidade:** C5
 
 **Contexto:**
 Você está montando o manual interno de recebimento e quer usar uma foto de uma doca e um parágrafo de um artigo que encontrou na internet.
@@ -167,6 +176,7 @@ Explique como usar esses materiais dentro da lei.
 ## ITEM 10 — E-mail Corporativo
 
 - **Aula:** 04 · Comunicação Digital e Colaboração em Nuvem
+- **Capacidade:** C1, C5
 
 **Contexto:**
 A coleta da carga do cliente Mercado Bom Preço, marcada para hoje às 14h, vai atrasar porque o caminhão da transportadora quebrou. A nova previsão é amanhã às 9h.
@@ -183,6 +193,7 @@ Redija o e-mail que você enviaria ao cliente.
 ## ITEM 11 — Campos CC e CCO e a LGPD
 
 - **Aula:** 04 · Comunicação Digital e Colaboração em Nuvem
+- **Capacidade:** C2, C5
 
 **Contexto:**
 Você precisa enviar um comunicado sobre o novo horário de recebimento para 40 clientes diferentes, de empresas diferentes, de uma só vez.
@@ -199,6 +210,7 @@ Explique como endereçar esse e-mail.
 ## ITEM 12 — Permissões na Nuvem
 
 - **Aula:** 04 · Comunicação Digital e Colaboração em Nuvem
+- **Capacidade:** C5
 
 **Contexto:**
 A planilha de inventário está no drive da empresa. Ela precisa ser compartilhada com o supervisor (que corrige os dados), com um auditor externo (que só confere) e com um estagiário (que só deixa observações).
@@ -215,6 +227,7 @@ Defina o compartilhamento correto.
 ## ITEM 13 — Phishing
 
 - **Aula:** 05 · Segurança da Informação e Proteção de Dados
+- **Capacidade:** C2
 
 **Contexto:**
 Você recebeu no e-mail da empresa a mensagem: "URGENTE! Sua conta será bloqueada em 2 horas. Clique aqui e confirme sua senha." O remetente é "suporte@banc0-seguro.com".
@@ -231,6 +244,7 @@ Analise a mensagem e descreva a conduta correta.
 ## ITEM 14 — Tríade CIA
 
 - **Aula:** 05 · Segurança da Informação e Proteção de Dados
+- **Capacidade:** C2
 
 **Contexto:**
 Na mesma semana, três incidentes aconteceram: (1) alguém alterou sem autorização as quantidades da planilha de estoque; (2) o servidor do WMS ficou fora do ar por um dia inteiro; (3) a lista de salários dos funcionários foi parar em um grupo de mensagens.
@@ -247,6 +261,7 @@ Relacione os incidentes aos pilares da segurança da informação.
 ## ITEM 15 — LGPD e Dados Pessoais
 
 - **Aula:** 05 · Segurança da Informação e Proteção de Dados
+- **Capacidade:** C2
 
 **Contexto:**
 Para cadastrar os motoristas terceirizados, a portaria coleta nome, CPF, telefone, endereço e a impressão digital (biometria) de cada um.
@@ -263,6 +278,7 @@ Analise o cadastro conforme a LGPD.
 ## ITEM 16 — Estilos e Sumário Automático
 
 - **Aula:** 06 · Editor de Textos: Formatação e Estruturação
+- **Capacidade:** C1
 
 **Contexto:**
 Um colega formatou os títulos do relatório mensal apenas aumentando a fonte e colocando negrito. Agora o sumário automático não aparece e cada mudança precisa ser feita título por título.
@@ -279,6 +295,7 @@ Explique o problema e a solução.
 ## ITEM 17 — Configuração ABNT
 
 - **Aula:** 06 · Editor de Textos: Formatação e Estruturação
+- **Capacidade:** C1
 
 **Contexto:**
 O relatório de desempenho do armazém será entregue à diretoria e precisa seguir as normas da ABNT.
@@ -295,6 +312,7 @@ Descreva a configuração do documento.
 ## ITEM 18 — Revisão Colaborativa e PDF
 
 - **Aula:** 06 · Editor de Textos: Formatação e Estruturação
+- **Capacidade:** C1
 
 **Contexto:**
 Você escreveu uma proposta de melhoria do layout do armazém. O supervisor vai revisá-la antes de ela ser enviada ao cliente.
@@ -311,6 +329,7 @@ Explique como revisar e entregar o documento.
 ## ITEM 19 — Reescrita Técnica
 
 - **Aula:** 07 · Textos Técnicos e Redação Empresarial
+- **Capacidade:** C1, C3
 
 **Contexto:**
 Trecho de um relatório de incidente: "Achamos que a empilhadeira quebrou de novo por causa do pessoal que não cuida direito dela, foi um desastre total e demorou uma eternidade pra voltar."
@@ -327,6 +346,7 @@ Corrija o trecho segundo as qualidades do texto técnico.
 ## ITEM 20 — Ata de Reunião
 
 - **Aula:** 07 · Textos Técnicos e Redação Empresarial
+- **Capacidade:** C1, C3
 
 **Contexto:**
 Hoje, às 8h, na sala de treinamento, aconteceu a reunião de segurança do armazém, com o gerente, a técnica de segurança e cinco operadores. Foi decidido que o uso de colete refletivo passa a ser obrigatório na doca.
@@ -343,6 +363,7 @@ Registre a reunião em ata.
 ## ITEM 21 — Procedimento Operacional Padrão (POP)
 
 - **Aula:** 07 · Textos Técnicos e Redação Empresarial
+- **Capacidade:** C1, C3
 
 **Contexto:**
 Os novos conferentes erram com frequência no recebimento de mercadorias. O gerente pediu um POP para padronizar a tarefa.
@@ -359,6 +380,7 @@ Escreva o POP de recebimento de mercadorias.
 ## ITEM 22 — Fórmulas e Referências
 
 - **Aula:** 08 · Editor de Planilhas: Organização e Fórmulas
+- **Capacidade:** C3
 
 **Contexto:**
 Na planilha de estoque, a coluna A tem o produto, a coluna B a quantidade e a coluna C o preço unitário, da linha 2 até a linha 51. A coluna D deve mostrar o valor total de cada produto.
@@ -375,6 +397,7 @@ Escreva as fórmulas da planilha.
 ## ITEM 23 — Funções SE, CONT.SE e CONT.VALORES
 
 - **Aula:** 08 · Editor de Planilhas: Organização e Fórmulas
+- **Capacidade:** C3
 
 **Contexto:**
 Na mesma planilha de estoque (quantidades em B2:B51), a coluna E deve mostrar "Repor" quando a quantidade for menor que 20 e "OK" nos demais casos.
@@ -392,6 +415,7 @@ Escreva as fórmulas e explique cada uma.
 ## ITEM 24 — Importação de CSV
 
 - **Aula:** 08 · Editor de Planilhas: Organização e Fórmulas
+- **Capacidade:** C3
 
 **Contexto:**
 Você exportou do WMS o arquivo pedidos.csv. Ao abrir na planilha, todos os dados ficaram na coluna A e o nome "Conceição" apareceu como "ConceiÃ§Ã£o".
@@ -408,6 +432,7 @@ Explique os problemas e como importar corretamente.
 ## ITEM 25 — Escolha do Gráfico
 
 - **Aula:** 09 · Planilhas Eletrônicas: Análise Visual e Gráficos
+- **Capacidade:** C3
 
 **Contexto:**
 O gerente quer três gráficos: (1) a evolução das entregas mês a mês no ano; (2) a participação de cada uma das quatro transportadoras no total de fretes; (3) a comparação do número de avarias entre oito setores.
@@ -424,6 +449,7 @@ Escolha e justifique os gráficos.
 ## ITEM 26 — Validação de Dados
 
 - **Aula:** 09 · Planilhas Eletrônicas: Análise Visual e Gráficos
+- **Capacidade:** C3
 
 **Contexto:**
 Na planilha de entregas, a cidade de destino aparece escrita de vários jeitos ("Rio do Sul", "rio do sul", "Rio d Sul") e há quantidades negativas digitadas por engano.
@@ -440,6 +466,7 @@ Proponha regras de validação de dados.
 ## ITEM 27 — Ética na Visualização de Dados
 
 - **Aula:** 09 · Planilhas Eletrônicas: Análise Visual e Gráficos
+- **Capacidade:** C3
 
 **Contexto:**
 Para impressionar a diretoria, um analista fez um gráfico de colunas em 3D com o eixo vertical começando em 950. Assim, um aumento de 960 para 980 entregas parece ter dobrado.
@@ -456,6 +483,7 @@ Analise o gráfico do ponto de vista ético.
 ## ITEM 28 — Narrativa e Slide Mestre
 
 - **Aula:** 10 · Editor de Apresentações e TIC
+- **Capacidade:** C1
 
 **Contexto:**
 Você vai apresentar à diretoria, em 10 minutos, o resultado de um projeto que reduziu os atrasos na expedição.
@@ -472,6 +500,7 @@ Planeje a apresentação.
 ## ITEM 29 — Integração Planilha e Apresentação
 
 - **Aula:** 10 · Editor de Apresentações e TIC
+- **Capacidade:** C1, C3
 
 **Contexto:**
 O gráfico de entregas da planilha muda toda semana, e o gerente quer que o slide da reunião semanal mostre sempre os números atualizados.
@@ -488,6 +517,7 @@ Explique como integrar a planilha à apresentação.
 ## ITEM 30 — Apresentação Oral, Ética e LGPD
 
 - **Aula:** 10 · Editor de Apresentações e TIC
+- **Capacidade:** C1, C2
 
 **Contexto:**
 Na apresentação dos resultados, você pretende mostrar a lista de motoristas com mais atrasos (nome e CPF) e usar uma foto encontrada na internet. Você também está nervoso para falar em público.

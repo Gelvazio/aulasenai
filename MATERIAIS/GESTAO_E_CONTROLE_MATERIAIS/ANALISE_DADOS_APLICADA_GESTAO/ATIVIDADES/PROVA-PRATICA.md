@@ -23,6 +23,7 @@
 ## ITEM 01 — Regra de Três na Compra de Material
 
 - **Aula:** 01 · Matemática Aplicada à Gestão
+- **Capacidade:** C2
 
 **Contexto:**
 O almoxarifado entregou 900 rolos de fita adesiva para a expedição em 6 dias. O comprador precisa fazer o pedido para os próximos 30 dias. O fornecedor só vende em caixas fechadas com 40 rolos cada.
@@ -40,6 +41,7 @@ Calcule a compra usando regra de três e explique cada etapa.
 ## ITEM 02 — Área, Arranjo e Peso na Armazenagem
 
 - **Aula:** 01 · Matemática Aplicada à Gestão
+- **Capacidade:** C2
 
 **Contexto:**
 Um galpão novo mede 20 m de comprimento por 12 m de largura. No meio, ao longo do comprimento, haverá um corredor de 2 m para a empilhadeira. Os paletes medem 1,2 m × 1,0 m e serão colocados com o lado de 1,2 m no sentido do comprimento do galpão. Cada palete recebe 50 caixas de 15 kg, e o limite do palete é 1.000 kg.
@@ -57,6 +59,7 @@ Dimensione a armazenagem do galpão.
 ## ITEM 03 — Porcentagem sobre Porcentagem
 
 - **Aula:** 02 · Fundamentos Matemáticos para Gestão
+- **Capacidade:** C2
 
 **Contexto:**
 O par de luvas de vaqueta custava R$ 80,00. O fornecedor avisou que o preço vai subir 15%, mas que dá 4% de desconto para pagamento à vista. Um colega disse que "o aumento real é de 11%, porque 15% − 4% = 11%".
@@ -74,6 +77,7 @@ Calcule o preço final e analise a afirmação do colega.
 ## ITEM 04 — Média, Mediana e Moda das Saídas
 
 - **Aula:** 02 · Fundamentos Matemáticos para Gestão
+- **Capacidade:** C2
 
 **Contexto:**
 As saídas diárias de máscaras descartáveis (em caixas) nos últimos 6 dias foram: 20, 22, 22, 25, 26 e 105. O dia com 105 caixas foi uma parada geral de manutenção, que não se repete todo mês. O comprador vai usar o "consumo típico" para planejar a próxima compra.
@@ -91,6 +95,7 @@ Calcule as medidas de tendência central e escolha a mais adequada.
 ## ITEM 05 — Dispersão e Escolha do Fornecedor
 
 - **Aula:** 02 · Fundamentos Matemáticos para Gestão
+- **Capacidade:** C2
 
 **Contexto:**
 Dois fornecedores de parafusos têm o mesmo prazo médio de entrega: 6 dias. Nas últimas 5 compras, os prazos foram:
@@ -111,6 +116,7 @@ Compare a previsibilidade dos fornecedores e tome uma decisão.
 ## ITEM 06 — Fórmulas, Referência Absoluta e Função SE
 
 - **Aula:** 03 · Excel Básico: Interface e Fórmulas
+- **Capacidade:** C1
 
 **Contexto:**
 A planilha de estoque tem, na linha 2: Entradas (C2), Saídas (D2), Saldo (E2), Estoque Mínimo (F2), Custo Unitário (G2), Custo em Estoque (H2), Armazenagem (I2) e Situação (J2). A taxa mensal de armazenagem de 2% está sozinha na célula L1. As fórmulas da linha 2 serão arrastadas até a linha 11.
@@ -128,6 +134,7 @@ Escreva as fórmulas da linha 2 e explique o funcionamento.
 ## ITEM 07 — Formatação Condicional, Validação e Proteção
 
 - **Aula:** 04 · Excel Intermediário: Formatação e Validação
+- **Capacidade:** C1
 
 **Contexto:**
 Na planilha de estoque, o saldo fica na coluna E e o estoque mínimo na coluna F (linhas 2 a 200). Os operadores digitam códigos de item errados na aba Movimentação, e os códigos válidos estão na aba Cadastro, em A2:A300. Na semana passada, alguém apagou sem querer as fórmulas da coluna de custo.
@@ -145,6 +152,7 @@ Explique como deixar a planilha confiável.
 ## ITEM 08 — Busca de Dados com PROCV, SEERRO e ÍNDICE + CORRESP
 
 - **Aula:** 05 · Excel Avançado: Funções Complexas e Busca
+- **Capacidade:** C1
 
 **Contexto:**
 A aba Cadastro tem 300 itens em A2:C301 (Código | Descrição | Preço). Na aba Pedido, o código do item é digitado em A2 e a descrição deve aparecer sozinha em B2. Alguns códigos estão retornando #N/D. Em outra tabela, o código está na coluna C e a descrição na coluna B, à esquerda do código.
@@ -162,6 +170,7 @@ Resolva as buscas e o tratamento de erros.
 ## ITEM 09 — SE Aninhado, CONT.SE e SOMASE
 
 - **Aula:** 05 · Excel Avançado: Funções Complexas e Busca
+- **Capacidade:** C1
 
 **Contexto:**
 No fechamento do mês, a base do almoxarifado tem o Saldo na coluna D e, na planilha de requisições, a Categoria na coluna C e o Valor Total na coluna E (linhas 2 a 200). A gerência pediu a situação de cada item e um resumo por categoria.
@@ -179,6 +188,7 @@ Monte as fórmulas do relatório gerencial.
 ## ITEM 10 — Formatos, Datas, Congelar Painéis e Filtros
 
 - **Aula:** 04 · Excel Intermediário: Formatação e Validação
+- **Capacidade:** C1
 
 **Contexto:**
 O relatório de estoque tem 600 linhas. Um colega digitou os custos como texto ("R$ 1.500") e a soma da coluna deu zero. Na coluna da taxa de perda, ele digitou 15 e depois clicou no botão %, e a célula mostrou 1500%. A data de recebimento de cada nota está na coluna B e o vencimento do pagamento é 30 dias depois. Ao rolar a tela, os títulos das colunas somem, e o gerente quer ver só os itens com custo em estoque acima de R$ 1.000.

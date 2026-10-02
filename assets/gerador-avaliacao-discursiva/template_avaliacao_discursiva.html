@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ROTULO}} — {{TEMA}} ({{TOTAL}} Questões Discursivas)</title>
     <link rel="stylesheet" href="{{ASSETS}}/css/atividade.css">
-    <link rel="stylesheet" href="{{ASSETS}}/css/avaliacao-discursiva.css">
+    <link rel="stylesheet" href="{{ASSETS}}/css/avaliacao-discursiva.css">{{CAPACIDADES_CSS}}
 {{MENU}}
 </head>
 <body data-aula="{{AULA}}" data-tema="{{TEMA}}" data-total="{{TOTAL}}" data-topicos="{{TOPICOS}}"
@@ -32,10 +32,7 @@
                         <strong>Pontuação:</strong> {{PONTUACAO}}
                     </div>
                 </div>
-                <div class="content-box">
-                    <div class="content-label">🎯 CAPACIDADE AVALIADA</div>
-                    <div class="content-text">{{CAPACIDADE}}</div>
-                </div>
+{{CAPACIDADES}}
 {{ORIENTACOES}}
             </section>
 

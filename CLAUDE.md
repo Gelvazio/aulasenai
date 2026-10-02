@@ -1415,6 +1415,11 @@ assets/
 │                        sobrescrever; `--todas` gera em todas as matérias com json; página sem o
 │                        marcador só com `--forcar`. Mudou a composição = editar o json e rodar de novo.
 ├─ css/menu.css        → estilos do menu de atividades (montado por js/menu.js)
+├─ gerador-capacidades/ → capacidades.py + css/capacidades.css: quadro "CAPACIDADES" no início e
+│                        quadro "CAPACIDADE" em cada questão das avaliações (gerador-atividades e
+│                        gerador-avaliacao-discursiva). Questão: `- **Capacidade:** C1` ou
+│                        `C1, C3` no .md; textos oficiais no campo `capacidades` do
+│                        atividades.json da matéria (código inexistente = erro).
 └─ gerador-menu/       → tags_menu.py: monta as tags do menu para o <head>; usado pelos três
                          geradores acima e, direto, para aplicar o menu em páginas existentes:
                          `python assets\gerador-menu\tags_menu.py <arquivo.html> [...]`

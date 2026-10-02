@@ -23,6 +23,9 @@ sys.path.insert(0, str(ASSETS / "gerador-menu"))
 from tags_menu import montar_tags_menu  # noqa: E402
 from tags_header import inserir_header_em_html  # noqa: E402
 
+sys.path.insert(0, str(ASSETS / "gerador-capacidades"))
+import capacidades as cap  # noqa: E402
+
 TEMPLATE = GERADOR / "template_avaliacao_discursiva.html"
 PASTA_FONTES = "CONTEUDO"
 FONTE_PADRAO = "AVALIACAO-PRATICA.md"
@@ -40,6 +43,11 @@ PADRAO_ORIENTACAO = re.compile(r"^\*\*(.+?):\*\*\s*(.+)$", re.MULTILINE)
 PADRAO_NEGRITO = re.compile(r"\*\*(.+?)\*\*")
 PADRAO_GABARITO = re.compile(r"^### ITEM\s+(\d+)-([a-z])\s*$", re.MULTILINE)
 ROTULOS_SECAO = ("Contexto", "Comando", "Tópicos")
+CAIXA_CAPACIDADE_TEXTO = '''                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE AVALIADA</div>
+                    <div class="content-text">{texto}</div>
+                </div>'''
+RECUO_QUADRO = " " * 16
 
 
 def escapar(texto):
@@ -150,6 +158,7 @@ def ler_item(bloco):
         "contexto": extrair_secao(bloco, "Contexto"),
         "comando": extrair_secao(bloco, "Comando"),
         "topicos": ler_topicos(extrair_secao(bloco, "Tópicos")),
+        "capacidades": cap.ler_codigos_questao(bloco),
     }
 
 
@@ -297,11 +306,12 @@ def html_item(item):
     """
     numero = f"{item['numero']:02d}"
     topicos = "".join(html_topico(item, topico) for topico in item["topicos"])
+    quadro = item["quadro"] + "\n" if item.get("quadro") else ""
     return f'''            <section class="aula-card questao-discursiva" id="item-{numero}" data-item="{item["numero"]}">
                 <span class="aula-badge">ITEM {numero}</span>
                 <span class="questao-discursiva__aula">📚 Aula {escapar(item["aula"])}</span>
                 <h2 class="aula-title">{escapar(item["titulo"])}</h2>
-                <div class="content-box">
+{quadro}                <div class="content-box">
                     <div class="content-label">🎬 CONTEXTO</div>
                     <div class="content-text">{paragrafos_html(item["contexto"])}</div>
                 </div>
@@ -332,6 +342,31 @@ def html_orientacoes(orientacoes):
     return "\n".join(caixas)
 
 
+def aplicar_capacidades(meta, itens, dados, assets):
+    """Monta o quadro de capacidades do início e o de cada questão (campo "- **Capacidade:**").
+
+    Sem capacidade nas questões, mantém a caixa de texto "Capacidade avaliada" do cabeçalho.
+
+    Args:
+        meta: Metadados da fonte.
+        itens: Itens validados (recebem a chave "quadro").
+        dados: Dados da matéria (atividades.json).
+        assets: Caminho relativo até assets/.
+
+    Returns:
+        Tupla (HTML do início, tag do CSS de capacidades).
+    """
+    usados = [item["capacidades"] for item in itens if item["capacidades"]]
+    if not usados:
+        return CAIXA_CAPACIDADE_TEXTO.format(texto=escapar(meta["Capacidade avaliada"])), ""
+    tabela = dados.get(cap.CAMPO_DADOS, {})
+    for item in itens:
+        cap.validar_codigos(tabela, item["capacidades"], f"ITEM {item['numero']:02d}")
+        item["quadro"] = cap.html_quadro(tabela, item["capacidades"], RECUO_QUADRO)
+    inicio = cap.html_quadro(tabela, cap.codigos_usados(usados, tabela), RECUO_QUADRO)
+    return inicio, f'\n    <link rel="stylesheet" href="{assets}/css/capacidades.css">'
+
+
 def montar_trocas(meta, itens, contexto):
     """Monta o dicionário de placeholders do template.
 
@@ -345,6 +380,8 @@ def montar_trocas(meta, itens, contexto):
     """
     dados = contexto["dados"]
     turma = meta.get("Turma", "")
+    capacidades_inicio, capacidades_css = aplicar_capacidades(
+        meta, itens, dados, contexto["assets"])
     return {
         "{{ROTULO}}": escapar(meta.get("Rótulo da aula", meta["Aula"])),
         "{{TEMA}}": escapar(meta["Tema"]), "{{ICONE}}": meta.get("Ícone", "✍️"),
@@ -352,7 +389,7 @@ def montar_trocas(meta, itens, contexto):
         "{{TOPICOS}}": str(sum(len(item["topicos"]) for item in itens)),
         "{{AULA}}": escapar(meta["Aula"]), "{{DURACAO}}": escapar(meta["Duração"]),
         "{{FORMATO}}": escapar(meta["Formato"]), "{{PONTUACAO}}": escapar(meta["Pontuação"]),
-        "{{CAPACIDADE}}": escapar(meta["Capacidade avaliada"]),
+        "{{CAPACIDADES}}": capacidades_inicio, "{{CAPACIDADES_CSS}}": capacidades_css,
         "{{ORIENTACOES}}": html_orientacoes(contexto["orientacoes"]),
         "{{QUESTOES}}": "".join(html_item(item) for item in itens),
         "{{ARQUIVO_MD}}": escapar(contexto["arquivo_md"]),
@@ -491,6 +528,8 @@ def main():
     pasta = Path(sys.argv[1]).resolve()
     nome_fonte = sys.argv[2] if len(sys.argv) > 2 else FONTE_PADRAO
     caminho_md = pasta / PASTA_FONTES / nome_fonte
+    if not caminho_md.exists():
+        caminho_md = pasta / nome_fonte
     meta, orientacoes, itens = ler_fonte(caminho_md)
     gabarito = ler_gabarito(caminho_md.with_name(caminho_md.stem + SUFIXO_GABARITO))
     html_gerado = gerar_pagina(pasta, caminho_md, meta, orientacoes, itens)

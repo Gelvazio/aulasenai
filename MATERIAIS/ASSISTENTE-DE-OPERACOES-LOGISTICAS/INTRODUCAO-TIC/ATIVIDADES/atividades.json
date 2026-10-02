@@ -2,5 +2,12 @@
   "uc": "Introdução à Tecnologia da Informação e Comunicação",
   "uc_curta": "Introdução à TIC",
   "curso": "Assistente de Operações Logísticas",
-  "docente": "Gelvazio Camargo"
+  "docente": "Gelvazio Camargo",
+  "capacidades": {
+    "C1": "Empregar os princípios, padrões e normas técnicas de comunicação oral e escrita clara, assertiva e eficaz, condizente com o ambiente de trabalho.",
+    "C2": "Aplicar os recursos e procedimentos de segurança da informação.",
+    "C3": "Interpretar dados, informações técnicas e terminologias de textos técnicos relacionados aos processos industriais.",
+    "C4": "Reconhecer características e aplicabilidade de hardware e software de sistemas informatizados utilizados na indústria.",
+    "C5": "Utilizar recursos e funcionalidades da WEB nos processos de comunicação no trabalho, de busca, armazenamento e compartilhamento de informação."
+  }
 }

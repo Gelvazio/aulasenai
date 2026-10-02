@@ -21,6 +21,9 @@ from tags_header import inserir_header_em_html  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "gerador-indices"))
 from gerar_indices import montar_tags_crud  # noqa: E402
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "gerador-capacidades"))
+import capacidades as cap  # noqa: E402
+
 GERADOR = Path(__file__).resolve().parent
 ASSETS = GERADOR.parent
 TEMPLATE = (GERADOR / "template_atividade.html").read_text(encoding="utf-8")
@@ -123,7 +126,8 @@ def ler_questoes(md_path):
         m = re.match(r"ITEM (\d+) — (.+)", linhas[0])
         if not m:
             continue
-        item = {"num": m.group(1), "titulo": m.group(2).strip(), "contexto": "", "comando": "", "alts": [], "gab": ""}
+        item = {"num": m.group(1), "titulo": m.group(2).strip(), "contexto": "", "comando": "", "alts": [], "gab": "",
+                "capacidades": cap.ler_codigos_questao(bloco.split("\n---", 1)[0])}
         atual = None
         for ln in linhas[1:]:
             s = ln.strip()
@@ -158,6 +162,8 @@ def card(it):
     partes = [f'''            <div class="aula-card questao">
                 <span class="aula-badge">ITEM {it["num"]}</span>
                 <div class="aula-title">{e(it["titulo"])}</div>''']
+    if it.get("quadro"):
+        partes.append(it["quadro"])
     if it["contexto"]:
         partes.append(f'''                <div class="content-box">
                     <div class="content-label">📋 CONTEXTO</div>
@@ -181,6 +187,32 @@ def card(it):
 BLOCO_PDF_GABARITO = '''
             <button class="btn-export" id="btnExportarPDFGabarito" type="button" data-somente-perfil="PROFESSOR" hidden title="Só o professor: atividade completa com o gabarito real (lido do banco)">📥 Exportar PDF com gabarito</button>
             <button class="btn-export" id="btnExportarGabarito" type="button" hidden title="Professor: gabarito real. Aluno: suas respostas da tentativa de maior nota.">🔑 Exportar Gabarito</button>'''
+
+
+CAIXA_CAPACIDADE_TEXTO = '''                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE AVALIADA</div>
+                    <div class="content-text">{texto}</div>
+                </div>'''
+RECUO_QUADRO = " " * 16
+
+
+def aplicar_capacidades(meta, itens, dados, assets):
+    """Monta o quadro de capacidades do início e o de cada questão (campo "- **Capacidade:**").
+
+    Sem capacidade nas questões, mantém a caixa de texto "Capacidade avaliada" do cabeçalho.
+
+    Returns:
+        Tupla (HTML do início, tag do CSS de capacidades).
+    """
+    usados = [it["capacidades"] for it in itens if it["capacidades"]]
+    if not usados:
+        return CAIXA_CAPACIDADE_TEXTO.format(texto=e(meta["capacidade"])), ""
+    tabela = dados.get(cap.CAMPO_DADOS, {})
+    for it in itens:
+        cap.validar_codigos(tabela, it["capacidades"], f"ITEM {it['num']}")
+        it["quadro"] = cap.html_quadro(tabela, it["capacidades"], RECUO_QUADRO)
+    inicio = cap.html_quadro(tabela, cap.codigos_usados(usados, tabela), RECUO_QUADRO)
+    return inicio, f'\n    <link rel="stylesheet" href="{assets}/css/capacidades.css">'
 
 
 def pasta_da_pagina(md_path):
@@ -221,6 +253,7 @@ def gerar_atividade(md_path, dados):
     assets = caminho_assets(pasta_pagina)
     raiz = os.path.relpath(ASSETS.parent, pasta_pagina).replace(os.sep, "/")
     folha_css, folha_js = tags_folha_respostas(meta["folha"], assets, raiz)
+    capacidades_inicio, capacidades_css = aplicar_capacidades(meta, itens, dados, assets)
     pagina = TEMPLATE
     trocas = {
         "{{CARDS}}": "\n\n".join(card(it) for it in itens),
@@ -236,7 +269,8 @@ def gerar_atividade(md_path, dados):
         "{{TEMA}}": e(meta["tema"]),
         "{{ICONE}}": meta["icone"],
         "{{DURACAO}}": e(meta["duracao"]),
-        "{{CAPACIDADE}}": e(meta["capacidade"]),
+        "{{CAPACIDADES}}": capacidades_inicio,
+        "{{CAPACIDADES_CSS}}": capacidades_css,
         "{{ARQUIVO_MD}}": e(md_path.name),
         "{{UC}}": e(dados["uc"]),
         "{{UC_CURTA}}": e(dados["uc_curta"]),
