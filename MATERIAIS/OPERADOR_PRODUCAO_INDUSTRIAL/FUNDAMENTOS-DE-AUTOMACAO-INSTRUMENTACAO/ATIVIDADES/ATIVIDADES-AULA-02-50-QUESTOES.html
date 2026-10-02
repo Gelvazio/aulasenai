@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02 — Funções Lógicas (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+    <script src="../../../../js/header-usuario.js" defer></script>
+</head>
+<body data-aula="02" data-tema="Funções Lógicas" data-total="50"
+      data-uc="Fundamentos de Automação/Instrumentação" data-uc-curta="Automação/Instrumentação"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🔀 Aula 02: Funções Lógicas</h1>
+            <p>Automação/Instrumentação · Operador de Produção Industrial — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-02-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C1 —</strong> Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Estados de uma variável lógica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quantos estados uma variável lógica pode assumir?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dez, como no sistema decimal.</li>
+                        <li><span class="letra">B)</span>Infinitos, como uma medição de temperatura.</li>
+                        <li><span class="letra">C)</span>Três: ligado, desligado e em espera.</li>
+                        <li><span class="letra">D)</span>Dois: 0 (falso/desligado) e 1 (verdadeiro/ligado).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Regra da função AND</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando a saída de uma função AND (E) vale 1?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quando as entradas são diferentes.</li>
+                        <li><span class="letra">B)</span>Quando todas as entradas valem 0.</li>
+                        <li><span class="letra">C)</span>Quando todas as entradas valem 1.</li>
+                        <li><span class="letra">D)</span>Quando pelo menos uma entrada vale 1.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Regra da função OR</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando a saída de uma função OR (OU) vale 1?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente quando as entradas são iguais.</li>
+                        <li><span class="letra">B)</span>Somente quando todas as entradas valem 0.</li>
+                        <li><span class="letra">C)</span>Quando pelo menos uma das entradas vale 1.</li>
+                        <li><span class="letra">D)</span>Somente quando todas as entradas valem 1.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Regra da função NAND</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A função NAND (NÃO E) tem saída 1 quando:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Pelo menos uma das entradas vale 0.</li>
+                        <li><span class="letra">B)</span>Nenhuma entrada está ligada e o CLP está em STOP.</li>
+                        <li><span class="letra">C)</span>As entradas são iguais.</li>
+                        <li><span class="letra">D)</span>Todas as entradas valem 1.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Regra da função NOR</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A função NOR (NÃO OU) tem saída 1 quando:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Todas as entradas valem 1.</li>
+                        <li><span class="letra">B)</span>Todas as entradas valem 0.</li>
+                        <li><span class="letra">C)</span>Pelo menos uma entrada vale 1.</li>
+                        <li><span class="letra">D)</span>As entradas são diferentes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Regra da função EX-OR</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A função EX-OR (OU exclusivo) tem saída 1 quando:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Todas as entradas valem 1.</li>
+                        <li><span class="letra">B)</span>As entradas são diferentes entre si.</li>
+                        <li><span class="letra">C)</span>Todas as entradas valem 0.</li>
+                        <li><span class="letra">D)</span>As entradas são iguais.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Regra da função NÃO EX-OR</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A função NÃO EX-OR (coincidência) tem saída 1 quando:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apenas a entrada A vale 1.</li>
+                        <li><span class="letra">B)</span>Apenas a entrada B vale 1.</li>
+                        <li><span class="letra">C)</span>As entradas são diferentes.</li>
+                        <li><span class="letra">D)</span>As entradas são iguais entre si.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">AND com 1 e 0</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em uma porta AND com A = 1 e B = 0, qual é a saída?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>0.</li>
+                        <li><span class="letra">B)</span>1.</li>
+                        <li><span class="letra">C)</span>Indefinida.</li>
+                        <li><span class="letra">D)</span>10.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">OR com 0 e 1</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em uma porta OR com A = 0 e B = 1, qual é a saída?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>01.</li>
+                        <li><span class="letra">B)</span>1.</li>
+                        <li><span class="letra">C)</span>Depende do tempo de varredura.</li>
+                        <li><span class="letra">D)</span>0.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">NAND com 1 e 1</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em uma porta NAND com A = 1 e B = 1, qual é a saída?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>2.</li>
+                        <li><span class="letra">B)</span>0.</li>
+                        <li><span class="letra">C)</span>1.</li>
+                        <li><span class="letra">D)</span>11.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">NOR com 0 e 0</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em uma porta NOR com A = 0 e B = 0, qual é a saída?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>00.</li>
+                        <li><span class="letra">B)</span>1.</li>
+                        <li><span class="letra">C)</span>Sempre igual à entrada A.</li>
+                        <li><span class="letra">D)</span>0.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">EX-OR com 1 e 1</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em uma porta EX-OR com A = 1 e B = 1, qual é a saída?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>2.</li>
+                        <li><span class="letra">B)</span>1.</li>
+                        <li><span class="letra">C)</span>11.</li>
+                        <li><span class="letra">D)</span>0.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">NÃO EX-OR com 0 e 0</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em uma porta NÃO EX-OR com A = 0 e B = 0, qual é a saída?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1.</li>
+                        <li><span class="letra">B)</span>00.</li>
+                        <li><span class="letra">C)</span>Indefinida.</li>
+                        <li><span class="letra">D)</span>0.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Tabela-verdade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é uma tabela-verdade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A lista de alarmes verdadeiros da IHM.</li>
+                        <li><span class="letra">B)</span>O manual de instalação do CLP.</li>
+                        <li><span class="letra">C)</span>Uma tabela com as medidas de temperatura do processo.</li>
+                        <li><span class="letra">D)</span>Uma tabela com todas as combinações das entradas e a saída correspondente de cada uma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Linhas da tabela com 2 entradas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quantas combinações (linhas) tem a tabela-verdade de uma função com 2 entradas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>3.</li>
+                        <li><span class="letra">B)</span>8.</li>
+                        <li><span class="letra">C)</span>4.</li>
+                        <li><span class="letra">D)</span>2.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Linhas da tabela com 3 entradas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quantas combinações tem a tabela-verdade de uma função com 3 entradas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>9.</li>
+                        <li><span class="letra">B)</span>3.</li>
+                        <li><span class="letra">C)</span>8.</li>
+                        <li><span class="letra">D)</span>6.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Expressão da função AND</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual expressão representa a função AND entre A e B?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>S = A − B.</li>
+                        <li><span class="letra">B)</span>S = A · B.</li>
+                        <li><span class="letra">C)</span>S = A ⊕ B.</li>
+                        <li><span class="letra">D)</span>S = A + B.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Expressão da função OR</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual expressão representa a função OR entre A e B?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>S = A + B.</li>
+                        <li><span class="letra">B)</span>S = A ⊕ B.</li>
+                        <li><span class="letra">C)</span>S = A · B.</li>
+                        <li><span class="letra">D)</span>S = A ÷ B.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Símbolo do EX-OR</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual símbolo é usado na expressão da função EX-OR?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=.</li>
+                        <li><span class="letra">B)</span>⊕.</li>
+                        <li><span class="letra">C)</span>·.</li>
+                        <li><span class="letra">D)</span>+.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Círculo de negação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No símbolo gráfico das portas NAND, NOR e NÃO EX-OR, o que indica o pequeno círculo na saída?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que a porta está desligada.</li>
+                        <li><span class="letra">B)</span>A inversão (negação) do resultado.</li>
+                        <li><span class="letra">C)</span>Que a porta tem três entradas.</li>
+                        <li><span class="letra">D)</span>Que a saída é analógica.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">NAND como AND invertido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual relação existe entre NAND e AND?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A NAND só funciona com três entradas.</li>
+                        <li><span class="letra">B)</span>A saída da NAND é sempre o inverso da saída da AND.</li>
+                        <li><span class="letra">C)</span>São iguais.</li>
+                        <li><span class="letra">D)</span>A NAND é a soma de duas AND.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">NOR como OR invertido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual relação existe entre NOR e OR?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A saída da NOR é sempre o inverso da saída da OR.</li>
+                        <li><span class="letra">B)</span>A NOR é igual à AND.</li>
+                        <li><span class="letra">C)</span>A NOR é igual à OR.</li>
+                        <li><span class="letra">D)</span>Não há relação entre elas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Comando bimanual</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na Metalúrgica Alfa, a prensa só pode descer se o operador pressionar os dois botões (B1 e B2) ao mesmo tempo, mantendo as mãos fora da área de risco.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual função lógica descreve esse comando?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>NOR.</li>
+                        <li><span class="letra">B)</span>EX-OR.</li>
+                        <li><span class="letra">C)</span>OR.</li>
+                        <li><span class="letra">D)</span>AND.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Erro na prensa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A prensa da Metalúrgica Alfa desceu quando o operador pressionou apenas o botão B1.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual função lógica estava aplicada por engano?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>AND.</li>
+                        <li><span class="letra">B)</span>OR.</li>
+                        <li><span class="letra">C)</span>NÃO EX-OR.</li>
+                        <li><span class="letra">D)</span>NAND.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Expressão com porta de proteção</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A descida da prensa exige B1, B2 e a porta de proteção fechada (P = 1).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual expressão representa a condição correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>S = B1 ⊕ B2 ⊕ P.</li>
+                        <li><span class="letra">B)</span>S = B1 + B2 + P.</li>
+                        <li><span class="letra">C)</span>S = B1 · B2 · P.</li>
+                        <li><span class="letra">D)</span>S = B1 · B2 + P.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Parada por emergência</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Uma esteira tem três botões de emergência ao longo da linha. Basta acionar qualquer um deles para gerar o sinal de parada.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual função lógica gera o sinal de parada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>AND.</li>
+                        <li><span class="letra">B)</span>OR.</li>
+                        <li><span class="letra">C)</span>NAND.</li>
+                        <li><span class="letra">D)</span>NÃO EX-OR.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Lâmpada de linha liberada</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A lâmpada verde &quot;linha liberada&quot; deve acender somente quando nenhum dos alarmes A1 e A2 estiver ativo.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual função lógica atende a essa condição?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>EX-OR.</li>
+                        <li><span class="letra">B)</span>OR.</li>
+                        <li><span class="letra">C)</span>NOR.</li>
+                        <li><span class="letra">D)</span>AND.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Interruptores de corredor</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A iluminação do corredor do almoxarifado é comandada por dois interruptores, um em cada ponta. A lâmpada acende quando os interruptores estão em posições diferentes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual função lógica representa esse comando?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>NOR.</li>
+                        <li><span class="letra">B)</span>NAND.</li>
+                        <li><span class="letra">C)</span>AND.</li>
+                        <li><span class="letra">D)</span>EX-OR.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Sensores redundantes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Dois sensores medem a mesma condição. O sinal &quot;sensores OK&quot; deve valer 1 quando os dois concordam (ambos 0 ou ambos 1).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual função lógica é usada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>EX-OR.</li>
+                        <li><span class="letra">B)</span>NÃO EX-OR.</li>
+                        <li><span class="letra">C)</span>OR.</li>
+                        <li><span class="letra">D)</span>NAND.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Falta de condição de partida</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O sinal &quot;falta condição&quot; deve valer 1 sempre que pelo menos uma das condições de partida (C1 ou C2) não estiver pronta.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual função lógica descreve esse sinal?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>NAND.</li>
+                        <li><span class="letra">B)</span>OR.</li>
+                        <li><span class="letra">C)</span>AND.</li>
+                        <li><span class="letra">D)</span>NÃO EX-OR.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Linha da tabela AND</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na tabela-verdade da AND de duas entradas, quantas linhas têm saída 1?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apenas uma (A = 1 e B = 1).</li>
+                        <li><span class="letra">B)</span>Três.</li>
+                        <li><span class="letra">C)</span>Nenhuma.</li>
+                        <li><span class="letra">D)</span>Duas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Linha da tabela OR</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na tabela-verdade da OR de duas entradas, quantas linhas têm saída 1?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quatro.</li>
+                        <li><span class="letra">B)</span>Duas.</li>
+                        <li><span class="letra">C)</span>Três.</li>
+                        <li><span class="letra">D)</span>Uma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Linha da tabela EX-OR</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na tabela-verdade da EX-OR de duas entradas, quais combinações dão saída 1?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apenas A = 1 e B = 1.</li>
+                        <li><span class="letra">B)</span>A = 0 e B = 0; A = 1 e B = 1.</li>
+                        <li><span class="letra">C)</span>Apenas A = 0 e B = 0.</li>
+                        <li><span class="letra">D)</span>A = 0 e B = 1; A = 1 e B = 0.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">AND de três entradas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Uma AND de três entradas com A = 1, B = 1 e C = 0 tem saída:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Igual a C invertido.</li>
+                        <li><span class="letra">B)</span>2.</li>
+                        <li><span class="letra">C)</span>1.</li>
+                        <li><span class="letra">D)</span>0.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">OR de três entradas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Uma OR de três entradas com A = 0, B = 0 e C = 1 tem saída:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>0.</li>
+                        <li><span class="letra">B)</span>1.</li>
+                        <li><span class="letra">C)</span>Indefinida.</li>
+                        <li><span class="letra">D)</span>3.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Segurança na lógica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a lógica do comando bimanual é considerada um intertravamento de segurança?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque economiza energia elétrica.</li>
+                        <li><span class="letra">B)</span>Porque deixa a prensa mais rápida.</li>
+                        <li><span class="letra">C)</span>Porque impede a descida da prensa enquanto uma das mãos pode estar na área de risco.</li>
+                        <li><span class="letra">D)</span>Porque permite que o operador use apenas uma mão.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Alteração da lógica de segurança</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um colega sugere ligar os botões B1 e B2 em paralelo (lógica OR) para &quot;ganhar tempo&quot; na produção.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a atitude correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Fazer a mudança e avisar depois.</li>
+                        <li><span class="letra">B)</span>Recusar e comunicar ao líder: a lógica de segurança não pode ser alterada pelo operador.</li>
+                        <li><span class="letra">C)</span>Usar fita para manter um botão pressionado.</li>
+                        <li><span class="letra">D)</span>Fazer a mudança só no turno da noite.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Simulador de portas lógicas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No simulador, as chaves representam as entradas A e B e uma lâmpada representa a saída. Com A = 0 e B = 0 a lâmpada fica apagada; com A = 1 e B = 0 ela acende; com A = 1 e B = 1 ela apaga.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual porta está montada no simulador?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>OR.</li>
+                        <li><span class="letra">B)</span>NÃO EX-OR.</li>
+                        <li><span class="letra">C)</span>EX-OR.</li>
+                        <li><span class="letra">D)</span>AND.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Identificar a porta pela tabela</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Uma porta tem a tabela: 00 → 1; 01 → 1; 10 → 1; 11 → 0.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a porta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>EX-OR.</li>
+                        <li><span class="letra">B)</span>NOR.</li>
+                        <li><span class="letra">C)</span>NAND.</li>
+                        <li><span class="letra">D)</span>AND.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Identificar outra porta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Uma porta tem a tabela: 00 → 1; 01 → 0; 10 → 0; 11 → 0.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a porta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>NÃO EX-OR.</li>
+                        <li><span class="letra">B)</span>NOR.</li>
+                        <li><span class="letra">C)</span>OR.</li>
+                        <li><span class="letra">D)</span>NAND.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Identificar a coincidência</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Uma porta tem a tabela: 00 → 1; 01 → 0; 10 → 0; 11 → 1.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a porta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>NOR.</li>
+                        <li><span class="letra">B)</span>AND.</li>
+                        <li><span class="letra">C)</span>EX-OR.</li>
+                        <li><span class="letra">D)</span>NÃO EX-OR.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Lógica booleana</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A álgebra usada para descrever as funções lógicas recebe o nome de:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Geometria analítica.</li>
+                        <li><span class="letra">B)</span>Estatística descritiva.</li>
+                        <li><span class="letra">C)</span>Álgebra decimal.</li>
+                        <li><span class="letra">D)</span>Álgebra booleana.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Bomba com duas condições</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A bomba de abastecimento só pode ligar se houver nível mínimo no tanque (N = 1) e a válvula de saída estiver aberta (V = 1).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual expressão comanda a bomba?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>S = N + V.</li>
+                        <li><span class="letra">B)</span>S = N · V.</li>
+                        <li><span class="letra">C)</span>S = N ⊕ V.</li>
+                        <li><span class="letra">D)</span>S = (N + V) invertido.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Sirene de alarme</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A sirene deve tocar se a temperatura estiver alta (T = 1) ou se a pressão estiver alta (P = 1).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual expressão comanda a sirene?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>S = (T · P) invertido.</li>
+                        <li><span class="letra">B)</span>S = T · P.</li>
+                        <li><span class="letra">C)</span>S = T + P.</li>
+                        <li><span class="letra">D)</span>S = T ⊕ P.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Resultado de uma expressão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na expressão S = A · B + C, qual é a saída para A = 0, B = 1 e C = 1?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1.</li>
+                        <li><span class="letra">B)</span>0.</li>
+                        <li><span class="letra">C)</span>2.</li>
+                        <li><span class="letra">D)</span>Indefinida.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Outra expressão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na expressão S = A · B + C, qual é a saída para A = 1, B = 0 e C = 0?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1.</li>
+                        <li><span class="letra">B)</span>Igual a B.</li>
+                        <li><span class="letra">C)</span>0.</li>
+                        <li><span class="letra">D)</span>10.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Inversão de um sinal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Se o sinal A vale 1, quanto vale o sinal A invertido (Ā)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>2.</li>
+                        <li><span class="letra">B)</span>1.</li>
+                        <li><span class="letra">C)</span>−1.</li>
+                        <li><span class="letra">D)</span>0.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Funções lógicas no CLP</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a relação entre as funções lógicas e o CLP?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As funções lógicas servem apenas para converter unidades.</li>
+                        <li><span class="letra">B)</span>O CLP não usa funções lógicas, só medidas de temperatura.</li>
+                        <li><span class="letra">C)</span>As funções lógicas só existem em calculadoras.</li>
+                        <li><span class="letra">D)</span>O CLP executa, a cada ciclo, as funções lógicas que formam o programa da máquina.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Escolha da função adequada</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Uma estufa só pode ser aberta quando a temperatura estiver baixa (T = 1) e o ventilador estiver desligado (V = 1 quando desligado).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual função lógica deve liberar a trava da porta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>AND.</li>
+                        <li><span class="letra">B)</span>OR.</li>
+                        <li><span class="letra">C)</span>EX-OR.</li>
+                        <li><span class="letra">D)</span>NOR.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Erro na tabela-verdade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um aprendiz montou a tabela da OR assim: 00 → 0; 01 → 1; 10 → 1; 11 → 0.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que está errado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As linhas do meio: na OR, 0 e 1 resultam em 0.</li>
+                        <li><span class="letra">B)</span>A primeira linha: na OR, 0 e 0 resultam em 1.</li>
+                        <li><span class="letra">C)</span>Nada: a tabela está correta.</li>
+                        <li><span class="letra">D)</span>A última linha: na OR, 1 e 1 resultam em 1 (a tabela montada é de EX-OR).</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Fundamentos de Automação/Instrumentação — Aula 02: Funções Lógicas</strong></p>
+        <p>Operador de Produção Industrial — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

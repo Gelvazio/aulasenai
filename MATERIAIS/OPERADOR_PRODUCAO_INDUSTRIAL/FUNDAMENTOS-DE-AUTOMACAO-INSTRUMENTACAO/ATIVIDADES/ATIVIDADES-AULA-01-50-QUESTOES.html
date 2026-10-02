@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 01 — Sistemas de Numeração e Conversão de Bases (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+    <script src="../../../../js/header-usuario.js" defer></script>
+</head>
+<body data-aula="01" data-tema="Sistemas de Numeração e Conversão de Bases" data-total="50"
+      data-uc="Fundamentos de Automação/Instrumentação" data-uc-curta="Automação/Instrumentação"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🔢 Aula 01: Sistemas de Numeração e Conversão de Bases</h1>
+            <p>Automação/Instrumentação · Operador de Produção Industrial — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-01-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C1 —</strong> Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">O que é a base de um sistema</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa a &quot;base&quot; de um sistema de numeração?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O primeiro dígito à esquerda de um número.</li>
+                        <li><span class="letra">B)</span>A quantidade de símbolos diferentes usados para escrever os números.</li>
+                        <li><span class="letra">C)</span>O maior número que o sistema consegue representar.</li>
+                        <li><span class="letra">D)</span>A quantidade de casas decimais depois da vírgula.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Por que o CLP usa o binário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o CLP trabalha internamente com o sistema binário?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o binário usa dez símbolos, como o decimal.</li>
+                        <li><span class="letra">B)</span>Porque o binário só serve para números negativos.</li>
+                        <li><span class="letra">C)</span>Porque seus circuitos só reconhecem dois estados: ligado (1) e desligado (0).</li>
+                        <li><span class="letra">D)</span>Porque o binário é mais fácil de ler para o operador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Símbolos do binário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais são os símbolos usados no sistema binário?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>0 a 9.</li>
+                        <li><span class="letra">B)</span>0 e 1.</li>
+                        <li><span class="letra">C)</span>1 e 2.</li>
+                        <li><span class="letra">D)</span>0 a 9 e A a F.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Símbolos do hexadecimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais símbolos o sistema hexadecimal usa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Os algarismos de 0 a 9 e as letras de A a Z.</li>
+                        <li><span class="letra">B)</span>Apenas 0 e 1.</li>
+                        <li><span class="letra">C)</span>Apenas as letras de A a F.</li>
+                        <li><span class="letra">D)</span>Os algarismos de 0 a 9 e as letras de A a F.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Valor posicional no decimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No número decimal 352, qual é o valor do algarismo 5?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>5.</li>
+                        <li><span class="letra">B)</span>500.</li>
+                        <li><span class="letra">C)</span>35.</li>
+                        <li><span class="letra">D)</span>50.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Binário 1011 para decimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o valor decimal do número binário 1011?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>9.</li>
+                        <li><span class="letra">B)</span>1011.</li>
+                        <li><span class="letra">C)</span>11.</li>
+                        <li><span class="letra">D)</span>13.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Binário 1101 para decimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Converta o binário 1101 para decimal.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>13.</li>
+                        <li><span class="letra">B)</span>11.</li>
+                        <li><span class="letra">C)</span>7.</li>
+                        <li><span class="letra">D)</span>14.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Binário 10000 para decimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o valor decimal do binário 10000?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>32.</li>
+                        <li><span class="letra">B)</span>8.</li>
+                        <li><span class="letra">C)</span>10.</li>
+                        <li><span class="letra">D)</span>16.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Decimal 13 para binário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a representação binária do número decimal 13?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1110.</li>
+                        <li><span class="letra">B)</span>1011.</li>
+                        <li><span class="letra">C)</span>1001.</li>
+                        <li><span class="letra">D)</span>1101.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Decimal 6 para binário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Converta o decimal 6 para binário.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>011.</li>
+                        <li><span class="letra">B)</span>101.</li>
+                        <li><span class="letra">C)</span>110.</li>
+                        <li><span class="letra">D)</span>111.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Decimal 25 para binário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o binário correspondente ao decimal 25?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>10011.</li>
+                        <li><span class="letra">B)</span>11001.</li>
+                        <li><span class="letra">C)</span>11010.</li>
+                        <li><span class="letra">D)</span>10101.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">O que é um bit</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um bit?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um dígito hexadecimal.</li>
+                        <li><span class="letra">B)</span>Um conjunto de 8 dígitos binários.</li>
+                        <li><span class="letra">C)</span>A memória total do CLP.</li>
+                        <li><span class="letra">D)</span>Um único dígito binário, que pode valer 0 ou 1.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">O que é um byte</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quantos bits formam um byte?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>8 bits.</li>
+                        <li><span class="letra">B)</span>16 bits.</li>
+                        <li><span class="letra">C)</span>4 bits.</li>
+                        <li><span class="letra">D)</span>10 bits.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">O que é um nibble</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um grupo de 4 bits recebe o nome de:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Byte.</li>
+                        <li><span class="letra">B)</span>Dígito decimal.</li>
+                        <li><span class="letra">C)</span>Nibble.</li>
+                        <li><span class="letra">D)</span>Palavra dupla.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Combinações com 4 bits</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quantos valores diferentes podem ser representados com 4 bits?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>4 valores.</li>
+                        <li><span class="letra">B)</span>8 valores.</li>
+                        <li><span class="letra">C)</span>16 valores (de 0 a 15).</li>
+                        <li><span class="letra">D)</span>10 valores.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Maior valor com 8 bits</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o maior número decimal que cabe em 8 bits?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>256.</li>
+                        <li><span class="letra">B)</span>255.</li>
+                        <li><span class="letra">C)</span>128.</li>
+                        <li><span class="letra">D)</span>99.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Letra A no hexadecimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quanto vale, em decimal, o dígito hexadecimal A?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>16.</li>
+                        <li><span class="letra">B)</span>10.</li>
+                        <li><span class="letra">C)</span>11.</li>
+                        <li><span class="letra">D)</span>1.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Letra F no hexadecimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quanto vale, em decimal, o dígito hexadecimal F?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>16.</li>
+                        <li><span class="letra">B)</span>15.</li>
+                        <li><span class="letra">C)</span>6.</li>
+                        <li><span class="letra">D)</span>14.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Binário para hexadecimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Converta o binário 1010 1111 para hexadecimal.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>FA.</li>
+                        <li><span class="letra">B)</span>A5.</li>
+                        <li><span class="letra">C)</span>AF.</li>
+                        <li><span class="letra">D)</span>BF.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Hexadecimal para binário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o binário correspondente ao hexadecimal 3C?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>0010 1100.</li>
+                        <li><span class="letra">B)</span>0011 1100.</li>
+                        <li><span class="letra">C)</span>1100 0011.</li>
+                        <li><span class="letra">D)</span>0011 1010.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Hexadecimal 2A para decimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Converta o hexadecimal 2A para decimal.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>26.</li>
+                        <li><span class="letra">B)</span>210.</li>
+                        <li><span class="letra">C)</span>42.</li>
+                        <li><span class="letra">D)</span>32.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Hexadecimal FF para decimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quanto vale o hexadecimal FF em decimal?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>150.</li>
+                        <li><span class="letra">B)</span>255.</li>
+                        <li><span class="letra">C)</span>1515.</li>
+                        <li><span class="letra">D)</span>256.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Hexadecimal 1C para decimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Converta o hexadecimal 1C para decimal.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>28.</li>
+                        <li><span class="letra">B)</span>18.</li>
+                        <li><span class="letra">C)</span>26.</li>
+                        <li><span class="letra">D)</span>112.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Decimal 31 para hexadecimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a representação hexadecimal do decimal 31?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1F.</li>
+                        <li><span class="letra">B)</span>F1.</li>
+                        <li><span class="letra">C)</span>31.</li>
+                        <li><span class="letra">D)</span>1E.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Leitura de um cartão de entradas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um cartão de 8 entradas digitais do CLP mostra o estado 0000 0101 (a entrada 0 é o bit mais à direita).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais entradas estão ligadas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As entradas 0 e 2.</li>
+                        <li><span class="letra">B)</span>Apenas a entrada 5.</li>
+                        <li><span class="letra">C)</span>As entradas 5 e 7.</li>
+                        <li><span class="letra">D)</span>As entradas 1 e 3.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Bit mais significativo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O estado de um cartão de 8 entradas é 1000 0000 (a entrada 0 é o bit mais à direita).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual entrada está acionada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A entrada 1.</li>
+                        <li><span class="letra">B)</span>A entrada 8.</li>
+                        <li><span class="letra">C)</span>A entrada 0.</li>
+                        <li><span class="letra">D)</span>A entrada 7.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Uso do hexadecimal na indústria</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o hexadecimal aparece em manuais, códigos de falha e endereços de equipamentos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque substitui as unidades de medida.</li>
+                        <li><span class="letra">B)</span>Porque é o sistema que o CLP usa para ligar as saídas.</li>
+                        <li><span class="letra">C)</span>Porque é uma forma curta de escrever números binários longos.</li>
+                        <li><span class="letra">D)</span>Porque só aceita números pares.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Pesos das posições binárias</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Da direita para a esquerda, quais são os pesos das quatro primeiras posições de um número binário?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1, 2, 4 e 8.</li>
+                        <li><span class="letra">B)</span>1, 2, 3 e 4.</li>
+                        <li><span class="letra">C)</span>2, 4, 6 e 8.</li>
+                        <li><span class="letra">D)</span>1, 10, 100 e 1000.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Método decimal para binário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o método das divisões sucessivas para converter um decimal em binário?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dividir por 2 até chegar a zero e ler os restos de baixo para cima.</li>
+                        <li><span class="letra">B)</span>Multiplicar por 2 e ler os resultados de cima para baixo.</li>
+                        <li><span class="letra">C)</span>Dividir por 10 e escrever os quocientes.</li>
+                        <li><span class="letra">D)</span>Somar 2 até chegar ao número e contar as somas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Método binário para hexadecimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como se converte um binário para hexadecimal de forma rápida?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Agrupando os bits de 3 em 3 a partir da esquerda.</li>
+                        <li><span class="letra">B)</span>Somando todos os bits e dividindo por 16.</li>
+                        <li><span class="letra">C)</span>Trocando cada 1 pela letra F.</li>
+                        <li><span class="letra">D)</span>Agrupando os bits de 4 em 4 a partir da direita e convertendo cada grupo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Erro na conversão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um aprendiz converteu o decimal 6 para binário: fez 6 ÷ 2 = 3 (resto 0), 3 ÷ 2 = 1 (resto 1), 1 ÷ 2 = 0 (resto 1) e escreveu 011.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual foi o erro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Leu os restos de cima para baixo; o correto é 110.</li>
+                        <li><span class="letra">B)</span>Esqueceu de somar 1 no final; o correto é 111.</li>
+                        <li><span class="letra">C)</span>Dividiu por 2 em vez de dividir por 10.</li>
+                        <li><span class="letra">D)</span>Não houve erro: 011 é igual a 6.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Contador de caixas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A IHM da expedição mostra que o contador do CLP registrou 37 caixas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como esse valor fica guardado em binário no CLP?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>110111.</li>
+                        <li><span class="letra">B)</span>100111.</li>
+                        <li><span class="letra">C)</span>101001.</li>
+                        <li><span class="letra">D)</span>100101.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Código de falha 0A</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A IHM da envasadora da Sucos Vale Verde mostra a falha 0A (hexadecimal). No manual, 10 = porta aberta, 31 = nível baixo de garrafas e 44 = sobretemperatura do motor.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a falha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Sobretemperatura do motor.</li>
+                        <li><span class="letra">B)</span>Porta aberta.</li>
+                        <li><span class="letra">C)</span>Nenhuma das falhas do manual.</li>
+                        <li><span class="letra">D)</span>Nível baixo de garrafas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Código de falha 1F</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na mesma envasadora, aparece o código 1F (hexadecimal). Manual: 10 = porta aberta, 31 = nível baixo de garrafas, 44 = sobretemperatura do motor.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a falha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Falha de comunicação.</li>
+                        <li><span class="letra">B)</span>Sobretemperatura do motor.</li>
+                        <li><span class="letra">C)</span>Porta aberta.</li>
+                        <li><span class="letra">D)</span>Nível baixo de garrafas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Código de falha 2C</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A IHM mostra o código 2C (hexadecimal). Manual: 10 = porta aberta, 31 = nível baixo de garrafas, 44 = sobretemperatura do motor.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a falha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nível baixo de garrafas.</li>
+                        <li><span class="letra">B)</span>Código inexistente.</li>
+                        <li><span class="letra">C)</span>Sobretemperatura do motor.</li>
+                        <li><span class="letra">D)</span>Porta aberta.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Bits necessários</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quantos bits são necessários para escrever o decimal 44 em binário (101100)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>44 bits.</li>
+                        <li><span class="letra">B)</span>8 bits.</li>
+                        <li><span class="letra">C)</span>6 bits.</li>
+                        <li><span class="letra">D)</span>4 bits.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Significado do 1 no CLP</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para o CLP, o valor 1 em uma entrada digital indica que:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O valor medido é igual a uma unidade de pressão.</li>
+                        <li><span class="letra">B)</span>A entrada está com defeito.</li>
+                        <li><span class="letra">C)</span>O sinal está ligado (condição verdadeira).</li>
+                        <li><span class="letra">D)</span>O sinal está desligado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Decimal 100 para binário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o binário do decimal 100?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1100010.</li>
+                        <li><span class="letra">B)</span>1010100.</li>
+                        <li><span class="letra">C)</span>1000100.</li>
+                        <li><span class="letra">D)</span>1100100.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Hexadecimal 64 para decimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O hexadecimal 64 corresponde a qual decimal?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>64.</li>
+                        <li><span class="letra">B)</span>46.</li>
+                        <li><span class="letra">C)</span>160.</li>
+                        <li><span class="letra">D)</span>100.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Somar 1 em binário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o resultado de 0111 + 1 em binário?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>0110.</li>
+                        <li><span class="letra">B)</span>0112.</li>
+                        <li><span class="letra">C)</span>1000.</li>
+                        <li><span class="letra">D)</span>1111.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Endereço do manual</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O manual de um inversor indica que o parâmetro de velocidade fica no registro 10 (hexadecimal).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é esse registro em decimal?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>100.</li>
+                        <li><span class="letra">B)</span>10.</li>
+                        <li><span class="letra">C)</span>16.</li>
+                        <li><span class="letra">D)</span>2.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Sistema mostrado ao operador</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em que sistema a IHM normalmente mostra ao operador valores como produção, temperatura e contagem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Decimal.</li>
+                        <li><span class="letra">B)</span>Hexadecimal.</li>
+                        <li><span class="letra">C)</span>Binário.</li>
+                        <li><span class="letra">D)</span>Octal.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Equivalência entre sistemas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual afirmação está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1111 1111 em binário = F em hexadecimal = 15 em decimal.</li>
+                        <li><span class="letra">B)</span>1111 1111 em binário = 88 em hexadecimal = 255 em decimal.</li>
+                        <li><span class="letra">C)</span>1111 1111 em binário = FF em hexadecimal = 255 em decimal.</li>
+                        <li><span class="letra">D)</span>1111 1111 em binário = FF em hexadecimal = 256 em decimal.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Peso do bit mais à esquerda</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No binário 1000, quanto vale o dígito 1?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>8.</li>
+                        <li><span class="letra">B)</span>1.</li>
+                        <li><span class="letra">C)</span>4.</li>
+                        <li><span class="letra">D)</span>1000.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Todas as entradas em zero</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um cartão de 8 entradas digitais mostra o estado 0000 0000.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que isso indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que nenhuma das 8 entradas está acionada.</li>
+                        <li><span class="letra">B)</span>Que todas as entradas estão acionadas.</li>
+                        <li><span class="letra">C)</span>Que o CLP está sem programa.</li>
+                        <li><span class="letra">D)</span>Que o cartão mede 8 °C.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Mesmo valor em bases diferentes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Os números 101 (binário) e 5 (decimal) representam:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O mesmo valor.</li>
+                        <li><span class="letra">B)</span>Nada, porque 101 não é um binário válido.</li>
+                        <li><span class="letra">C)</span>Valores diferentes: 101 vale 3.</li>
+                        <li><span class="letra">D)</span>Valores diferentes: 101 vale cento e um.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Decimal 12 para hexadecimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o hexadecimal do decimal 12?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>B.</li>
+                        <li><span class="letra">B)</span>1C.</li>
+                        <li><span class="letra">C)</span>C.</li>
+                        <li><span class="letra">D)</span>12.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Hexadecimal B para binário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o binário do dígito hexadecimal B?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1100.</li>
+                        <li><span class="letra">B)</span>0110.</li>
+                        <li><span class="letra">C)</span>1101.</li>
+                        <li><span class="letra">D)</span>1011.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Conferir antes de agir</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O operador converteu um código de falha de cabeça e foi verificar o motor, mas a falha real era porta aberta.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual boa prática teria evitado o erro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Conferir a conversão (ou usar a tabela de apoio) antes de consultar o manual e agir.</li>
+                        <li><span class="letra">B)</span>Ignorar códigos em hexadecimal.</li>
+                        <li><span class="letra">C)</span>Desligar o CLP sempre que aparecer um código.</li>
+                        <li><span class="letra">D)</span>Pedir para outro operador apagar o alarme.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Símbolos do decimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quantos símbolos o sistema decimal usa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>10 (de 0 a 9).</li>
+                        <li><span class="letra">B)</span>16 (de 0 a F).</li>
+                        <li><span class="letra">C)</span>2 (0 e 1).</li>
+                        <li><span class="letra">D)</span>9 (de 1 a 9).</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Fundamentos de Automação/Instrumentação — Aula 01: Sistemas de Numeração e Conversão de Bases</strong></p>
+        <p>Operador de Produção Industrial — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>
