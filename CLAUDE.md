@@ -1539,6 +1539,27 @@ Gerador reutilizável: `assets/gerador-atividade-excel/gerar_atividade_excel.py 
   capa, gabarito, menus e critérios (a soma dos critérios de cada questão = pontos da questão).
 - ✅ A **entrega do arquivo** (Salvar Como `.xlsx`) fica na **última questão**.
 
+## 📚 REGRA CRÍTICA — PASTA `AULAS/` SEMPRE GERADA CONFORME A DOCUMENTAÇÃO DA MATÉRIA
+
+⚠️ **Sempre que gerar dados/materiais de uma matéria (estrutura nova, ementa, plano, atividades,
+avaliações), a pasta `<MATERIA>/AULAS/` também deve ser gerada com as aulas, conforme a
+documentação da própria matéria.** Registrada em 2026-10-02.
+
+- ✅ **Fonte:** `<MATERIA>/DOCUMENTACAO/PLANO-AULAS.md` (sequência, temas, conhecimentos,
+  capacidades, estratégia e recursos de cada aula), que segue o `EMENTA-CHALKIE-AI.md` (a ementa
+  vence; a ementa do curso vence as duas).
+- ✅ **Uma aula por arquivo:** `AULAS/AULA-01.md`, `AULA-02.md`... — **todas** as aulas do plano,
+  sem pular nenhuma. Cada aula traz: módulo, tema, carga horária, conhecimentos (numeração da
+  ementa do curso), capacidade(s) `Cn`, objetivos, roteiro com tempos (retomada, exposição,
+  prática guiada, prática autônoma, registro), exemplos do contexto profissional do curso,
+  atividade, avaliação/verificação e recursos (só os previstos na UC).
+- ✅ A soma das horas das aulas = carga horária da UC.
+- ✅ Atividades e avaliações geradas depois usam essas aulas como fonte (`- **Aula:**` no `.md`).
+- ✅ Se a matéria ainda não tem `DOCUMENTACAO/PLANO-AULAS.md`, criar primeiro o plano a partir da
+  ementa e só então gerar as aulas.
+- ⚠️ Vale para cursos em `VERIFICAR` (regra STATUS-PERMISSAO-EMENTA) e respeita a regra de matérias
+  semelhantes (só a pasta pedida). Exceção: `QUALIFICACAO-PROFISSIONAL/` (ementa só do professor).
+
 ## 📊 REGRA — `dashboard.html` EM CADA PASTA DE MATÉRIA
 
 > **STATUS = AGUARDANDO ACERTO DE EMENTA** (registrado em 2026-09-23). A regra ainda **não deve
