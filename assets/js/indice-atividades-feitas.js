@@ -2,10 +2,12 @@
 // Para o aluno logado: "Sim" se ele já respondeu pelo menos 1 vez (qualquer alternativa gravada
 // no banco); "Não" caso contrário. Só JavaScript: lê as tabelas atividade e resposta_atividade
 // (o RLS devolve ao aluno apenas as próprias respostas). Professor e visitante não veem a coluna.
-// Carregado por assets/js/atividades-crud-modal.js, que já está em todo índice de atividades.
+// Cards informativos (data-sem-bloqueio, ex.: composição da nota) não recebem a marca nem
+// somem no filtro. Carregado por assets/js/atividades-crud-modal.js, que já está em todo
+// índice de atividades.
 // Depende de: supabase-js e js/supabase.js (obterClienteSupabase, sbGet).
 
-const SELETOR_CARD_FEITAS = 'article.aula';
+const SELETOR_CARD_FEITAS = 'article.aula:not([data-sem-bloqueio])';
 const SELETOR_LINK_FEITAS = 'a.btn.principal';
 const CLASSE_MARCA_FEITAS = 'marca-feita';
 const FILTRO_TODAS_FEITAS = 'todas';
