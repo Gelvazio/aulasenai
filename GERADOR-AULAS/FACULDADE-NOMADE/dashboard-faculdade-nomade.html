@@ -383,6 +383,66 @@
       margin-top: 4px;
     }
 
+    /* CURSOS DA ÁREA */
+    .cursos-section {
+      background: var(--color-surface);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      border: 2px solid var(--color-border);
+    }
+
+    .cursos-topo {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .cursos-topo .chart-title {
+      margin-bottom: 0;
+    }
+
+    .cursos-lista {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 10px;
+    }
+
+    .cursos-lista li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 10px 12px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-bg);
+    }
+
+    .curso-codigo {
+      font-weight: 700;
+      color: var(--color-primary);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .cursos-vazio {
+      color: var(--color-text-secondary);
+      text-align: center;
+      padding: 20px;
+    }
+
+    tbody tr {
+      cursor: pointer;
+    }
+
+    tbody tr.selecionada {
+      background: var(--color-bg);
+      box-shadow: inset 4px 0 0 var(--color-primary);
+    }
+
     /* RODAPÉ */
     footer {
       text-align: center;
@@ -475,10 +535,10 @@
           <option value="education">Educação (201)</option>
           <option value="health">Saúde (133)</option>
           <option value="technology">Tecnologia (15)</option>
-          <option value="business">Negócios (61)</option>
+          <option value="business">Negócios (98)</option>
           <option value="legal">Jurídico (82)</option>
           <option value="psychology">Psicologia (74)</option>
-          <option value="others">Outras (236)</option>
+          <option value="others">Outras (196)</option>
         </select>
       </div>
 
@@ -535,6 +595,22 @@
       <div class="chart-container" id="chartContainer"></div>
     </div>
 
+    <!-- CURSOS DA ÁREA -->
+    <section class="cursos-section">
+      <div class="cursos-topo">
+        <h2 class="chart-title" id="cursosTitulo">🎓 Cursos da área</h2>
+        <div class="filter-group">
+          <label for="areaCursos">Área:</label>
+          <select id="areaCursos"></select>
+        </div>
+        <div class="filter-group">
+          <label for="buscaCurso">Buscar curso:</label>
+          <input type="text" id="buscaCurso" placeholder="Nome ou código...">
+        </div>
+      </div>
+      <ul class="cursos-lista" id="cursosLista"></ul>
+    </section>
+
     <!-- DESTAQUES -->
     <div class="highlights">
       <div class="highlight-card premium">
@@ -584,6 +660,7 @@
     </footer>
   </div>
 
+  <script src="cursos-faculdade-nomade.js"></script>
   <script>
     const data = [
       { area: "Educação", cursos: 201, category: "education" },
@@ -615,6 +692,8 @@
       "#FFC7CE", "#92D050", "#D9E1F2"
     ];
 
+    const CURSOS_POR_AREA = window.CURSOS_FACULDADE_NOMADE || {};
+    let areaSelecionada = "Tecnologia, Inovação e Digital";
     let currentData = [...data];
     let currentSort = "desc";
     let filterState = {
@@ -718,6 +797,7 @@
         rect.setAttribute("fill", colors[data.indexOf(item) % colors.length]);
         rect.setAttribute("class", "bar");
         rect.style.cursor = "pointer";
+        rect.addEventListener("click", () => selecionarArea(item.area));
         svg.appendChild(rect);
 
         // Número na barra
@@ -756,6 +836,8 @@
             <div class="bar-visual" style="width: ${pct * 2}px;"></div>
           </td>
         `;
+        if (item.area === areaSelecionada) row.classList.add("selecionada");
+        row.addEventListener("click", () => selecionarArea(item.area));
         tbody.appendChild(row);
       });
     }
@@ -771,9 +853,82 @@
       document.getElementById("averageDisplay").textContent = filteredAverage;
     }
 
+    /**
+     * Mantém a área do painel de cursos dentro do resultado filtrado:
+     * se ela sumiu dos filtros, passa para a primeira área exibida.
+     */
+    function ajustarAreaSelecionada() {
+      if (currentData.length === 0) return;
+      const continuaVisivel = currentData.some(item => item.area === areaSelecionada);
+      if (continuaVisivel) return;
+      areaSelecionada = currentData[0].area;
+    }
+
+    /**
+     * Preenche a lista de áreas do painel de cursos (ordem alfabética).
+     */
+    function preencherSelectAreas() {
+      const select = document.getElementById("areaCursos");
+      const areasOrdenadas = [...data].sort((a, b) => a.area.localeCompare(b.area, "pt-BR"));
+      areasOrdenadas.forEach(item => {
+        const opcao = document.createElement("option");
+        opcao.value = item.area;
+        opcao.textContent = `${item.area} (${item.cursos})`;
+        select.appendChild(opcao);
+      });
+    }
+
+    /**
+     * Mostra os cursos da área selecionada, aplicando a busca por nome ou código.
+     */
+    function renderizarCursos() {
+      const lista = document.getElementById("cursosLista");
+      const busca = document.getElementById("buscaCurso").value.trim().toLowerCase();
+      const cursosDaArea = CURSOS_POR_AREA[areaSelecionada] || [];
+      const cursosFiltrados = cursosDaArea.filter(curso =>
+        curso.nome.toLowerCase().includes(busca) || curso.codigo.includes(busca)
+      );
+
+      document.getElementById("areaCursos").value = areaSelecionada;
+      document.getElementById("cursosTitulo").textContent =
+        `🎓 Cursos de ${areaSelecionada} (${cursosFiltrados.length})`;
+      lista.innerHTML = "";
+
+      if (cursosFiltrados.length === 0) {
+        const vazio = document.createElement("li");
+        vazio.className = "cursos-vazio";
+        vazio.textContent = "Nenhum curso encontrado.";
+        lista.appendChild(vazio);
+        return;
+      }
+
+      cursosFiltrados.forEach(curso => {
+        const itemLista = document.createElement("li");
+        const codigo = document.createElement("span");
+        codigo.className = "curso-codigo";
+        codigo.textContent = curso.codigo;
+        const nome = document.createElement("span");
+        nome.textContent = curso.nome;
+        itemLista.append(codigo, nome);
+        lista.appendChild(itemLista);
+      });
+    }
+
+    /**
+     * Seleciona uma área (clique na barra, na tabela ou na lista) e mostra seus cursos.
+     * @param {string} area - Nome da área.
+     */
+    function selecionarArea(area) {
+      areaSelecionada = area;
+      renderTable();
+      renderizarCursos();
+    }
+
     function render() {
+      ajustarAreaSelecionada();
       renderChart();
       renderTable();
+      renderizarCursos();
     }
 
     function resetFilters() {
@@ -829,7 +984,14 @@
 
     document.getElementById("resetBtn").addEventListener("click", resetFilters);
 
+    document.getElementById("areaCursos").addEventListener("change", (e) => {
+      selecionarArea(e.target.value);
+    });
+
+    document.getElementById("buscaCurso").addEventListener("input", renderizarCursos);
+
     // Renderizar inicial
+    preencherSelectAreas();
     applyAllFilters();
   </script>
 </body>
