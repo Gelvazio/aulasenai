@@ -124,3 +124,7 @@ matéria (C1, C2...). Os textos não são inventados nem alterados.
   que não existem na ementa do curso. Questões de segurança/cidadania foram ligadas à C7 (ética e
   implicações sociais) e as de editor/atalhos/navegador à C1 (computadores e dispositivos).
 - Regeneração sem capacidades = páginas idênticas; depois, o diff só mostra as capacidades.
+- 2026-10-02: a pedido do professor, a seção II do `EMENTA-CHALKIE-AI.md` de Fundamentos foi
+  alinhada à ementa do curso: tabela C1–C7 com o texto oficial, indicador e módulos (os itens
+  extras foram distribuídos nos indicadores de C1 e C7). Tamanho 14.928 caracteres (cortes: FAQ
+  de aprovação, que repetia a seção V, e a métrica de abandono). STATUS-EMENTAS atualizados.

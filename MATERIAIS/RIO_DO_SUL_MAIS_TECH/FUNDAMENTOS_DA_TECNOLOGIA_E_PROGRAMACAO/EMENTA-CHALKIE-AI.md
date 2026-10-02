@@ -18,18 +18,17 @@
 
 ## 🎯 II. CAPACIDADES E INDICADORES
 
-| # | Capacidade | Indicador mensurável |
-|---|-----------|----------------------|
-| 1 | Explicar como funcionam computadores, sistemas operacionais e redes | Descreve as partes de um computador e o papel do SO |
-| 2 | Relacionar dispositivos, do computador ao celular | Monta um esquema de como dois dispositivos se comunicam |
-| 3 | Agir com cidadania digital e segurança | Cria senha forte e identifica 3 golpes ou fake news |
-| 4 | Organizar arquivos e pastas | Cria, copia, renomeia, move e exclui arquivos sem erro |
-| 5 | Produzir textos, apresentações e planilhas simples | Entrega um documento, um slide e uma planilha |
-| 6 | Pesquisar com critério na internet | Compara 3 fontes e cita a mais confiável |
-| 7 | Decompor problemas e reconhecer padrões | Divide um problema em partes e aponta o padrão |
-| 8 | Escrever algoritmos (sequência, decisão, repetição) | Cria algoritmo e fluxograma de uma tarefa do dia a dia |
-| 9 | Programar entrada e saída de dados em blocos | Faz um programa no Scratch que pergunta e responde |
-| 10 | Refletir sobre ética e impacto social da tecnologia | Debate um dilema com argumentos e exemplos |
+Capacidades **[oficial]** da UC 2 na ementa do curso (C1–C7, mesma ordem).
+
+| Cód. | Capacidade | Indicador mensurável | Módulos |
+|---|---|---|---|
+| **C1** | Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais | Explica as partes do PC e o SO; organiza arquivos e pastas; usa editor, slides, planilha e navegador | 1, 3, 4, 5, 6 |
+| **C2** | Compreender como os diferentes dispositivos interagem, desde computadores até dispositivos móveis | Monta um esquema de como dois dispositivos se comunicam | 1, 3, 6 |
+| **C3** | Desenvolver a habilidade de pensar de forma lógica, sequencial e estruturada para resolver problemas através de código | Divide um problema em partes e aponta o padrão | 7, 8 |
+| **C4** | Aprender a desenvolver e entender algoritmos simples para resolver problemas | Cria algoritmo e fluxograma com decisão e repetição | 7, 8 |
+| **C5** | Aprender a interagir com o usuário ou com outros sistemas através de entrada e saída de dados | Faz um programa no Scratch que pergunta e responde | 8 |
+| **C6** | Desenvolver a capacidade de pensar criativamente sobre como solucionar problemas de forma inovadora utilizando tecnologia | Cria animação ou jogo com solução original | 5, 8 |
+| **C7** | Refletir sobre as implicações éticas e sociais das tecnologias | Cria senha forte, identifica golpes e fake news e debate um dilema | 2, 6 |
 
 ---
 
@@ -200,7 +199,6 @@ Use como base e adapte o nível ao grupo (15 a 17 anos).
 ### Indicadores de sucesso
 
 - 80% dos alunos com nota ≥ 7,0 e engajamento ≥ 80%
-- Abandono menor que 10%
 - 70% aplicam o aprendizado em contexto novo
 - 100% das capacidades trabalhadas em pelo menos um produto
 
@@ -235,9 +233,6 @@ R: Um módulo a cada uma ou duas semanas; Chalkie adapta ao ritmo do aluno.
 
 **P: E se o aluno travar em um tópico?**
 R: Chalkie dá 3 dicas progressivas, recomenda reforço e avisa o professor.
-
-**P: Como é a aprovação?**
-R: Nota final ≥ 7,0, somando provas, projetos, participação e autoavaliação.
 
 **P: Há suporte a quem tem dificuldade com tecnologia?**
 R: Sim. O professor acompanha no laboratório e Chalkie oferece explicações com mais exemplos.

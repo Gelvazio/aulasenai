@@ -3,12 +3,13 @@
 | STATUS-PERMISSAO-EMENTA | Curso |
 |---|---|
 | VERIFICAR | ASSISTENTE-DE-OPERACOES-LOGISTICAS |
+| IGNORAR | CURSO_ATIVIDADES_PADLET |
 | VERIFICAR | GESTAO_E_CONTROLE_MATERIAIS |
 | VERIFICAR | QUALIFICACAO-PROFISSIONAL |
 | VERIFICAR | RIO_DO_SUL_MAIS_TECH |
 | VERIFICAR | TECNICO-INFORMATICA-INTERNET |
 
-**VERIFICAR:** 5 · **IGNORAR:** 0 (de 5 cursos)
+**VERIFICAR:** 5 · **IGNORAR:** 1 (de 6 cursos)
 
 > Vale para o curso inteiro. Curso em `IGNORAR` tem todas as ementas ignoradas (fora de
 > pendências, ajustes e geração). Padrão: `IGNORAR`. Troque à mão para
@@ -18,7 +19,7 @@
 
 # STATUS-EMENTAS-CURSOS — Consolidado
 
-**Última atualização:** 2026-10-01 15:23:44
+**Última atualização:** 2026-10-02 08:35:27
 **Escopo:** todos os cursos em `MATERIAIS/` (exceto `MATERIAS-GERAIS/`)
 **Fonte:** tamanho medido direto em cada `EMENTA-CHALKIE-AI.md`
 **Padrão de tamanho:** 14.800–14.950 caracteres
@@ -32,6 +33,7 @@
 | Curso | Matérias | ✅ Conformes | ❌ Fora do tamanho | ⚠️ Genéricas | ⛔ Sem ementa |
 |---|---|---|---|---|---|
 | ASSISTENTE-DE-OPERACOES-LOGISTICAS | 1 | 1 | 0 | 0 | 0 |
+| CURSO_ATIVIDADES_PADLET | 0 | 0 | 0 | 0 | 0 |
 | GESTAO_E_CONTROLE_MATERIAIS | 1 | 1 | 0 | 0 | 0 |
 | QUALIFICACAO-PROFISSIONAL | 3 | 1 | 0 | 2 | 0 |
 | RIO_DO_SUL_MAIS_TECH | 7 | 7 | 0 | 0 | 0 |
@@ -67,6 +69,10 @@
 |---|---|---|
 | INTRODUCAO-TIC | 14.917 | ✅ Conforme |
 
+## 🎓 CURSO_ATIVIDADES_PADLET
+
+⛔ Nenhuma pasta de matéria criada.
+
 ## 🎓 GESTAO_E_CONTROLE_MATERIAIS
 
 | Matéria | Caracteres | Situação |
@@ -87,7 +93,7 @@
 |---|---|---|
 | COMPETENCIAS_SOCIOEMOCIONAIS_E_EMPREENDEDORISMO | 14.886 | ✅ Conforme |
 | EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS | 14.850 | ✅ Conforme |
-| FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO | 14.807 | ✅ Conforme |
+| FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO | 14.928 | ✅ Conforme |
 | NOCOES_ELETRICIDADE_CIRCUITOS_BASICOS | 14.863 | ✅ Conforme |
 | OFICINAS_IMPRESSAO_3D_ROBOTICA | 14.885 | ✅ Conforme |
 | REFORCO_LINGUAGENS | 14.928 | ✅ Conforme |
