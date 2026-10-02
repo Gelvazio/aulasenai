@@ -41,3 +41,5 @@ GERADOR-AULAS/ESTRUTURA-PROVAS/Prova Pr*tica.md
 CONTEUDO-PROF-*/
 # Fontes de provas objetivas (com a linha Gabarito): nunca publicar
 PROVA-OBJETIVA-*.md
+# Listas de alunos (nomes, CPF): dados pessoais (LGPD), só local
+LISTA-ALUNOS/
