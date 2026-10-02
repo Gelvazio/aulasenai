@@ -152,7 +152,7 @@ anos as atividades e ambientes insalubres previstos na lista TIP, conforme Decre
 | | Desenvolvimento Socioprofissional: Mercado de Trabalho | 8h | | `DESENVOLVIMENTO-SOCIOPROFISSIONAL-MERCADO-DE-TRABALHO` |
 | **Inovação (Básico)** | Iniciação em Projetos de Inovação | 24h | 24h | `INICIACAO-EM-PROJETOS-DE-INOVACAO` |
 | **Introdutório da Ocupação** | Leitura e Interpretação de Desenho Técnico | 40h | 260h | `LEITURA-E-INTERPRETACAO-DE-DESENHO-TECNICO` |
-| | Fundamentos de Automação/Instrumentação | 60h | | `FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO` ⚠️ hoje: `FUNDAMENTOS_AUTOMACAO_INSTRUMENTACAO` |
+| | Fundamentos de Automação/Instrumentação | 60h | | `FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO` ✅ criada |
 | | Fundamentos de Eletromecânica | 80h | | `FUNDAMENTOS-DE-ELETROMECANICA` |
 | | Fundamentos dos Processos de Produção | 80h | | `FUNDAMENTOS-DOS-PROCESSOS-DE-PRODUCAO` |
 | **Específico da Ocupação** | Abastecimento e Organização da Linha de Produção | 120h | 420h | `ABASTECIMENTO-E-ORGANIZACAO-DA-LINHA-DE-PRODUCAO` |
@@ -161,8 +161,11 @@ anos as atividades e ambientes insalubres previstos na lista TIP, conforme Decre
 | | Aprimoramento Profissional | 60h | | `APRIMORAMENTO-PROFISSIONAL` |
 | **Total** | **18 UCs** | | **860h** | |
 
-- **Distribuição da CH teórica (texto literal):** CH Inicial: 88h · CH Básica: 180h · CH da
-  Ocupação: 680h (ver divergência na seção 12).
+- **Carga horária oficial (decisão do professor, 2026-10-02):** a **soma das horas das UCs** =
+  156h + 24h + 260h + 420h = **860h**. É ela que vale para planos, cronogramas e ementas de
+  matéria.
+- **Distribuição da CH teórica (texto literal, desconsiderada):** CH Inicial: 88h · CH Básica:
+  180h · CH da Ocupação: 680h. Soma 948h e não bate com a matriz; não usar (ver seção 12).
 - **Pasta da matéria:** coluna sugerida pela regra do projeto (nome da UC em maiúsculas, sem
   acentos, separado por hífen). Pastas existentes fora do padrão **só são renomeadas a pedido do
   usuário**.
@@ -772,7 +775,7 @@ referentes à leitura e interpretação de desenhos técnicos inerentes à produ
 
 ### 10.12 Introdutório da Ocupação — Fundamentos de Automação/Instrumentação (60h)
 
-> Pasta da matéria hoje: `FUNDAMENTOS_AUTOMACAO_INSTRUMENTACAO/` (ainda sem `EMENTA-CHALKIE-AI.md`).
+> Pasta da matéria: `FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO/` (ainda sem `EMENTA-CHALKIE-AI.md`).
 
 **Função:** Executar as atividades operacionais na produção industrial, seguindo Procedimentos e
 Normas Técnicas, de Qualidade, de Segurança, Saúde e Sustentabilidade.
@@ -1162,13 +1165,13 @@ imprevistas de forma integrada.
 
 | Divergência | Detalhe | Orientação |
 |---|---|---|
-| Distribuição da CH teórica | 88h + 180h + 680h = **948h**, mas a matriz soma **860h** (156 + 24 + 260 + 420) | Usar a **matriz (860h)** e a CH de cada UC até a correção oficial |
+| Distribuição da CH teórica | 88h + 180h + 680h = **948h**, mas a matriz soma **860h** (156 + 24 + 260 + 420) | ✅ **Resolvida pelo professor (2026-10-02):** a carga horária oficial é a **soma das horas das UCs (860h)**; a distribuição de 948h é desconsiderada |
 | Capacidade repetida | Introdução a Qualidade e Produtividade: C4 repete C1 ("Reconhecer os fundamentos da qualidade nos processos industriais") | Tratar como **3 capacidades distintas**; não inventar uma 4ª |
 | Numeração dos conhecimentos | Desenho Técnico (dois itens "2.4"; "Capacidades" solto dentro de Cotagem); Eletromecânica (dois itens "3.4"); Processos de Produção (itens "4.x" repetidos e "Folha de verificação" duas vezes); Inovação (resquícios "1.1.2", "3.5", "6.3") | Nesta ementa a numeração foi limpa sem remover conteúdo; o texto dos tópicos é literal |
 | Grafia do contexto de trabalho | "Controladores de proceso", "Transmisores", "Transductores", "condições ergométricas" | Mantido literal na seção 5; em materiais para alunos usar "processo", "transmissores", "transdutores", "ergonômicas" |
 | Nome da UC de TIC | Matriz: "Introdução **à** Tecnologia da Informação e Comunicação"; Anexo II: "Introdução **a** Tecnologia..." | Mesma UC (40h) |
 | Público | Idade **18 a 24 anos** (diferente dos cursos de 14/15 a 24 anos) | Ver seção 14 — linguagem e exemplos para jovens adultos |
-| Pasta da matéria | `FUNDAMENTOS_AUTOMACAO_INSTRUMENTACAO` usa `_` e omite "DE" (padrão: `FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO`) | **Não renomear** sem pedido do usuário |
+| Pasta da matéria | A antiga `FUNDAMENTOS_AUTOMACAO_INSTRUMENTACAO` usava `_` e omitia "DE" | ✅ **Renomeada a pedido do professor (2026-10-02)** para `FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO` |
 
 ---
 
@@ -1178,8 +1181,9 @@ imprevistas de forma integrada.
 |---|---|
 | **Arquivo original** | `Operador de Produção Industrial_ 860h.docx` (conversão: `Operador de Produção Industrial_ 860h.md`) |
 | **Data do projeto de curso** | Outubro de 2024 |
-| **Permissão do curso** | Ainda **não listado** no `STATUS-PERMISSAO-EMENTA` de `MATERIAIS/STATUS-EMENTAS-CURSOS.md` |
-| **Matérias com pasta criada** | Fundamentos de Automação/Instrumentação (`FUNDAMENTOS_AUTOMACAO_INSTRUMENTACAO/`, vazia) |
+| **Permissão do curso** | **VERIFICAR** (incluído no `STATUS-PERMISSAO-EMENTA` em 2026-10-02) |
+| **Matérias com pasta criada** | Fundamentos de Automação/Instrumentação (`FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO/`, vazia) |
+| **Carga horária oficial** | 860h = soma das horas das UCs (decisão do professor, 2026-10-02) |
 | **Criado em** | 2026-10-02 |
 
 ---

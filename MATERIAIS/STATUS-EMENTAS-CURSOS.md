@@ -5,11 +5,12 @@
 | VERIFICAR | ASSISTENTE-DE-OPERACOES-LOGISTICAS |
 | IGNORAR | CURSO_ATIVIDADES_PADLET |
 | VERIFICAR | GESTAO_E_CONTROLE_MATERIAIS |
+| VERIFICAR | OPERADOR_PRODUCAO_INDUSTRIAL |
 | VERIFICAR | QUALIFICACAO-PROFISSIONAL |
 | VERIFICAR | RIO_DO_SUL_MAIS_TECH |
 | VERIFICAR | TECNICO-INFORMATICA-INTERNET |
 
-**VERIFICAR:** 5 · **IGNORAR:** 1 (de 6 cursos)
+**VERIFICAR:** 6 · **IGNORAR:** 1 (de 7 cursos)
 
 > Vale para o curso inteiro. Curso em `IGNORAR` tem todas as ementas ignoradas (fora de
 > pendências, ajustes e geração). Padrão: `IGNORAR`. Troque à mão para
