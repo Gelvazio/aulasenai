@@ -66,6 +66,81 @@ function desenharCapacidadesPDF(doc, yPos, margin) {
     return doc.lastAutoTable.finalY + 10;
 }
 
+const TAMANHO_FONTE_QUESTAO_PDF = 10;
+const ALTURA_LINHA_PDF = 1.15;
+const ESPACO_INTERNO_QUESTAO_PDF = 3;
+
+/**
+ * Quebra o texto em linhas: a primeira divide espaço com o rótulo em negrito.
+ * @param {Object} doc - Documento jsPDF.
+ * @param {{rotulo: string, texto: string}} celula - Rótulo e texto da célula.
+ * @param {number} largura - Largura útil da célula (mm).
+ * @returns {string[]} Linhas do texto (sem o rótulo).
+ */
+function quebrarTextoComRotuloPDF(doc, { rotulo, texto }, largura) {
+    doc.setFontSize(TAMANHO_FONTE_QUESTAO_PDF);
+    doc.setFont(undefined, 'bold');
+    let usado = doc.getTextWidth(rotulo + ' ');
+    doc.setFont(undefined, 'normal');
+    const linhas = [];
+    let atual = '';
+    texto.split(' ').forEach((palavra) => {
+        const tentativa = atual ? atual + ' ' + palavra : palavra;
+        const passou = usado + doc.getTextWidth(tentativa) > largura;
+        if (!passou || !atual) {
+            atual = tentativa;
+            return;
+        }
+        linhas.push(atual);
+        atual = palavra;
+        usado = 0;
+    });
+    linhas.push(atual);
+    return linhas;
+}
+
+/**
+ * Escreve na célula o rótulo em negrito e, na mesma linha, o texto normal (com quebras).
+ * @param {Object} doc - Documento jsPDF.
+ * @param {Object} celula - Célula do jspdf-autotable (raw com rotulo e linhasPDF).
+ */
+function escreverRotuloNegritoPDF(doc, celula) {
+    const { rotulo, linhasPDF } = celula.raw;
+    const x = celula.x + celula.padding('left');
+    let y = celula.y + celula.padding('top');
+    const passo = (TAMANHO_FONTE_QUESTAO_PDF * ALTURA_LINHA_PDF) / doc.internal.scaleFactor;
+    doc.setFontSize(TAMANHO_FONTE_QUESTAO_PDF);
+    doc.setTextColor(0, 0, 0);
+    doc.setFont(undefined, 'bold');
+    doc.text(rotulo, x, y, { baseline: 'top' });
+    const recuo = doc.getTextWidth(rotulo + ' ');
+    doc.setFont(undefined, 'normal');
+    linhasPDF.forEach((linha, indice) => {
+        doc.text(linha, indice === 0 ? x + recuo : x, y, { baseline: 'top' });
+        y += passo;
+    });
+}
+
+/**
+ * Ganchos do jspdf-autotable para as células "RÓTULO: texto" (rótulo em negrito na mesma linha).
+ * @param {Object} doc - Documento jsPDF.
+ * @param {number} margin - Margem da página (mm).
+ * @returns {Object} didParseCell, willDrawCell e didDrawCell.
+ */
+function ganchosRotuloNegritoPDF(doc, margin) {
+    const largura = doc.internal.pageSize.getWidth() - 2 * margin - 2 * ESPACO_INTERNO_QUESTAO_PDF;
+    return {
+        didParseCell: (dados) => {
+            const raw = dados.cell.raw;
+            if (!raw?.rotulo) return;
+            raw.linhasPDF = quebrarTextoComRotuloPDF(doc, raw, largura);
+            dados.cell.text = raw.linhasPDF.map((linha, i) => (i === 0 ? raw.rotulo + ' ' + linha : linha));
+        },
+        willDrawCell: (dados) => { if (dados.cell.raw?.rotulo) dados.cell.text = []; },
+        didDrawCell: (dados) => { if (dados.cell.raw?.rotulo) escreverRotuloNegritoPDF(doc, dados.cell); }
+    };
+}
+
 function coletarQuestoes() {
     const questoes = [];
     document.querySelectorAll('.aula-card.questao').forEach(card => {
@@ -77,9 +152,8 @@ function coletarQuestoes() {
                 linhas.push({ texto: rotulo + ':', negrito: true });
                 itens.forEach(li => linhas.push({ texto: textoPDF(li.textContent), negrito: false }));
             } else {
-                // Subtítulo (CAPACIDADE, CONTEXTO, COMANDO) em negrito e o texto normal, em linhas separadas
-                linhas.push({ texto: rotulo + ':', negrito: true });
-                linhas.push({ texto: textoPDF(box.querySelector('.content-text')?.textContent), negrito: false });
+                // Subtítulo (CAPACIDADE, CONTEXTO, COMANDO) em negrito na mesma linha do texto
+                linhas.push({ rotulo: rotulo + ':', texto: textoPDF(box.querySelector('.content-text')?.textContent) });
             }
         });
         questoes.push({
@@ -147,7 +221,8 @@ function exportarPDFAtividade(gabaritoExterno) {
     questoes.forEach(q => {
         const tableData = [[{ content: q.cabecalho, styles: { fontStyle: 'bold', fontSize: 11, halign: 'left', fillColor: [220, 220, 220] } }]];
         q.linhas.forEach(l => {
-            tableData.push([{ content: l.texto, styles: { fontSize: 10, halign: 'left', fontStyle: l.negrito ? 'bold' : 'normal' } }]);
+            tableData.push([{ content: l.rotulo ? l.rotulo + ' ' + l.texto : l.texto, rotulo: l.rotulo, texto: l.texto,
+                              styles: { fontSize: 10, halign: 'left', fontStyle: l.negrito ? 'bold' : 'normal' } }]);
         });
         doc.autoTable({
             body: tableData,
@@ -155,7 +230,8 @@ function exportarPDFAtividade(gabaritoExterno) {
             margin: margin,
             pageBreak: 'auto',
             rowPageBreak: 'avoid',
-            styles: { fontSize: 10, cellPadding: 3, lineColor: [0, 0, 0], lineWidth: 0.1 }
+            styles: { fontSize: 10, cellPadding: 3, lineColor: [0, 0, 0], lineWidth: 0.1 },
+            ...ganchosRotuloNegritoPDF(doc, margin)
         });
         yPos = doc.lastAutoTable.finalY + 6;
     });
