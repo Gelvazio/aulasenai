@@ -77,7 +77,9 @@ function coletarQuestoes() {
                 linhas.push({ texto: rotulo + ':', negrito: true });
                 itens.forEach(li => linhas.push({ texto: textoPDF(li.textContent), negrito: false }));
             } else {
-                linhas.push({ texto: rotulo + ': ' + textoPDF(box.querySelector('.content-text')?.textContent), negrito: false });
+                // Subtítulo (CAPACIDADE, CONTEXTO, COMANDO) em negrito e o texto normal, em linhas separadas
+                linhas.push({ texto: rotulo + ':', negrito: true });
+                linhas.push({ texto: textoPDF(box.querySelector('.content-text')?.textContent), negrito: false });
             }
         });
         questoes.push({
