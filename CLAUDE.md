@@ -1274,6 +1274,12 @@ SQL: `database/2026-10-02-turmaprofessor-professor-administrador.sql` (aplicado 
 - ✅ Só usuário com perfil PROFESSOR pode ser vinculado (trigger
   `turmaprofessor_exige_professor`). `professor_tem_turma(codigo)` fica pronta para restringir,
   no futuro, cada professor às suas turmas (hoje todo professor ainda vê tudo).
+- ✅ **Tela do administrador (2026-10-02):** menu **TURMAS** no header (`js/header-usuario.js`),
+  exibido só quando o RPC `eh_professor_administrador()` devolve verdadeiro, abre `turmas.html`
+  (raiz): CRUD da `turmaprofessor` — vincular, editar (trocar turma/professor) e excluir (popup),
+  com filtro por turma; professores = `usuario.perfil = 'PROFESSOR'`. Código:
+  `assets/js/turmas-professor-repositorio.js` (dados) + `assets/js/turmas-professor-pagina.js`
+  (tela) + `assets/css/turmas-professor.css`. Plano: `docs/menu-turmas-crud-turmaprofessor.md`.
 - ❌ Nunca usar `user_metadata` nem e-mail digitado na página para decidir quem é administrador;
   nunca afrouxar as políticas da `turmaprofessor` (gravação só com `eh_professor_administrador()`)
   nem devolver TRUNCATE aos papéis da API.
@@ -1411,7 +1417,10 @@ assets/
 │                        ATIVIDADES/index.html (só professor logado): modal com CRUD da tabela
 │                        `atividade`; link = páginas HTML da própria pasta; SQL em
 │                        database/2026-09-29-atividade-crud-professor.sql; o gerador-indices
-│                        inclui as tags, índices feitos à mão recebem as tags manualmente)
+│                        inclui as tags, índices feitos à mão recebem as tags manualmente;
+│                        turmas-professor-repositorio.js + turmas-professor-pagina.js + css/
+│                        turmas-professor.css — turmas.html da raiz (menu TURMAS, só Professor
+│                        Administrador): CRUD da tabela `turmaprofessor`)
 ├─ gerador-atividades/ → gerar_atividades.py + template_atividade.html: gera as páginas de
 │                        atividade de 50 questões e o index.html de qualquer pasta ATIVIDADES/
 ├─ gerador-atividade-excel/ → gerar_atividade_excel.py (+ desenho_excel.py, tela_excel.py,

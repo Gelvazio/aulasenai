@@ -1,0 +1,57 @@
+/* Página turmas.html — CRUD de turmaprofessor (complementa criar-usuarios-comando.css) */
+:root {
+    --tp-espaco: 12px;
+    --tp-cinza: #4a5568;
+    --tp-perigo: #b42318;
+    --tp-fundo-edicao: #eef4fb;
+}
+
+.tp-formulario {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--tp-espaco);
+    align-items: end;
+}
+
+.tp-campo {
+    display: grid;
+    gap: 4px;
+    font-weight: 600;
+    color: var(--guia-texto);
+}
+
+.tp-campo--filtro { min-width: 240px; }
+
+.tp-acoes { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.tp-botao-secundario {
+    background: #fff;
+    color: var(--guia-azul);
+    border: 1px solid var(--guia-azul);
+}
+
+.tp-botao-perigo { background: var(--tp-perigo); }
+
+.tp-botao-pequeno { padding: 4px 10px; font-size: 13px; }
+
+.tp-cabecalho-lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: end;
+    gap: var(--tp-espaco);
+}
+
+.tp-resumo { color: var(--tp-cinza); margin: 8px 0; }
+
+.tp-tabela-rolagem { overflow-x: auto; }
+
+.tp-detalhe { display: block; color: var(--tp-cinza); font-size: 12px; }
+
+.tp-linha--editando { background: var(--tp-fundo-edicao); }
+
+.tp-celula-acoes { white-space: nowrap; }
+
+.tp-celula-acoes .guia-botao + .guia-botao { margin-left: 6px; }
+
+.tp-vazio { text-align: center; color: var(--tp-cinza); }

@@ -2,7 +2,8 @@
 // Genérico: preenche o elemento <div id="header-usuario"></div> de qualquer página com o
 // usuário logado (Supabase Auth) e o botão SAIR; sem sessão, mostra o botão ENTRAR.
 // Sempre mostra o botão HOME (index.html da raiz) junto do usuário logado.
-// Para o PROFESSOR, mostra também o menu USUARIOS / RELATORIOS (abre em nova aba).
+// Para o PROFESSOR, mostra também o menu USUARIOS / RELATORIOS (abre em nova aba) e, só para o
+// Professor Administrador (confirmado pelo banco), o item TURMAS (turmas.html).
 // Uso na página: <script src=".../js/header-usuario.js" defer></script> + o div acima.
 // Qualquer elemento com data-somente-perfil="PROFESSOR" (e hidden) só aparece para esse perfil.
 // Os caminhos (CSS, supabase.js, login.html) são calculados a partir do próprio script,
@@ -19,6 +20,9 @@ const MENU_PROFESSOR_HEADER = [
   { rotulo: "USUARIOS", rota: "../scripts/criarUsuariosBancoDados.html" },
   { rotulo: "RELATORIOS", rota: "../relatorioAtividades.html" },
 ];
+// Só para o Professor Administrador (confirmado pelo banco: RPC eh_professor_administrador).
+const MENU_ADMINISTRADOR_HEADER = [{ rotulo: "TURMAS", rota: "../turmas.html" }];
+const RPC_ADMINISTRADOR_HEADER = "eh_professor_administrador";
 const PARAMETRO_VOLTAR_HEADER = "voltar";
 const TEXTO_HOME = "HOME";
 const TEXTO_ENTRAR = "ENTRAR";
@@ -107,14 +111,37 @@ function criarBotaoHome() {
  */
 function criarMenuProfessor() {
   const menu = criarElementoHeader("nav", "header-usuario__menu", "");
-  MENU_PROFESSOR_HEADER.forEach((item) => {
-    const link = criarElementoHeader("a", "header-usuario__menu-link", item.rotulo);
-    link.href = resolverRotaHeader(item.rota);
-    link.target = "_blank";
-    link.rel = "noopener";
-    menu.append(link);
-  });
+  MENU_PROFESSOR_HEADER.forEach((item) => menu.append(criarLinkMenuHeader(item)));
   return menu;
+}
+
+/**
+ * Cria um link do menu do header, aberto em nova aba.
+ * @param {{rotulo: string, rota: string}} item - Rótulo e rota relativa a js/.
+ * @returns {HTMLAnchorElement} Link do menu.
+ */
+function criarLinkMenuHeader(item) {
+  const link = criarElementoHeader("a", "header-usuario__menu-link", item.rotulo);
+  link.href = resolverRotaHeader(item.rota);
+  link.target = "_blank";
+  link.rel = "noopener";
+  return link;
+}
+
+/**
+ * Acrescenta ao menu os itens do Professor Administrador, só se o banco confirmar o papel.
+ * O e-mail e o user_metadata não decidem nada: quem decide é eh_professor_administrador().
+ * @param {Object} cliente - Cliente do Supabase.
+ * @param {HTMLElement} menu - Elemento <nav> do menu do professor.
+ */
+async function incluirMenuAdministrador(cliente, menu) {
+  try {
+    const { data, error } = await cliente.rpc(RPC_ADMINISTRADOR_HEADER);
+    if (error || data !== true) return;
+    MENU_ADMINISTRADOR_HEADER.forEach((item) => menu.append(criarLinkMenuHeader(item)));
+  } catch (erro) {
+    console.warn("Não foi possível conferir o Professor Administrador:", erro);
+  }
 }
 
 /**
@@ -177,7 +204,11 @@ function desenharHeaderUsuario(destino, cliente, usuario) {
   const texto = usuario ? descreverUsuarioHeader(usuario) : TEXTO_SEM_LOGIN;
   barra.append(criarBotaoHome());
   const ehProfessor = usuario?.app_metadata?.perfil === PERFIL_PROFESSOR_HEADER;
-  if (ehProfessor) barra.append(criarMenuProfessor());
+  if (ehProfessor) {
+    const menu = criarMenuProfessor();
+    barra.append(menu);
+    if (cliente) incluirMenuAdministrador(cliente, menu);
+  }
   barra.append(criarElementoHeader("span", "header-usuario__nome", texto));
   barra.append(usuario ? criarBotaoSair(cliente) : criarBotaoEntrar());
   destino.replaceChildren(barra);

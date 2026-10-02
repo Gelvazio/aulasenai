@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turmas × Professores</title>
+    <link rel="stylesheet" href="assets/css/criar-usuarios-comando.css">
+    <link rel="stylesheet" href="assets/css/header-usuario.css">
+    <link rel="stylesheet" href="assets/css/turmas-professor.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js" defer></script>
+    <script src="js/header-usuario.js" defer></script>
+    <script src="assets/js/popup.js" defer></script>
+    <script src="assets/js/turmas-professor-repositorio.js" defer></script>
+    <script src="assets/js/turmas-professor-pagina.js" defer></script>
+</head>
+<body>
+    <div id="header-usuario"></div>
+    <main class="guia">
+        <header class="guia-cabecalho">
+            <h1>🏫 Turmas × Professores</h1>
+            <p>Vincule professores (perfil PROFESSOR) às turmas — uso exclusivo do Professor Administrador</p>
+        </header>
+
+        <section class="guia-cartao guia-erro" id="tpBloqueio" hidden></section>
+
+        <div id="tpConteudo" hidden>
+            <section class="guia-cartao">
+                <h2 id="tpTituloFormulario">Novo vínculo</h2>
+                <form id="tpFormulario" class="tp-formulario">
+                    <label class="tp-campo">Turma
+                        <select id="tpTurma" class="guia-filtro" required></select>
+                    </label>
+                    <label class="tp-campo">Professor
+                        <select id="tpProfessor" class="guia-filtro" required></select>
+                    </label>
+                    <div class="tp-acoes">
+                        <button type="submit" class="guia-botao" id="tpSalvar">Vincular</button>
+                        <button type="button" class="guia-botao tp-botao-secundario" id="tpCancelar" hidden>Cancelar edição</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="guia-cartao">
+                <div class="tp-cabecalho-lista">
+                    <h2>Vínculos cadastrados</h2>
+                    <label class="tp-campo tp-campo--filtro">Filtrar por turma
+                        <select id="tpFiltroTurma" class="guia-filtro"></select>
+                    </label>
+                </div>
+                <p id="tpResumo" class="tp-resumo"></p>
+                <div class="tp-tabela-rolagem">
+                    <table class="guia-tabela">
+                        <thead>
+                            <tr>
+                                <th>Turma</th>
+                                <th>Turno / horário</th>
+                                <th>Professor</th>
+                                <th>Vinculado em</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tpLinhas"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
