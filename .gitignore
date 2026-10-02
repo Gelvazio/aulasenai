@@ -39,3 +39,5 @@ GERADOR-AULAS/ESTRUTURA-PROVAS/Prova Pr*tica.md
 
 # Material de outros professores (slides, figuras e transcrições): só local, não publicar
 CONTEUDO-PROF-*/
+# Fontes de provas objetivas (com a linha Gabarito): nunca publicar
+PROVA-OBJETIVA-*.md

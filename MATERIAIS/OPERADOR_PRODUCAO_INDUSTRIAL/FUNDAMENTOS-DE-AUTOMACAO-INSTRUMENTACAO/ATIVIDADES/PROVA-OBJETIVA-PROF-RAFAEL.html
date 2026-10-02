@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova Objetiva — Prof. Rafael — Conversão de bases, sistemas supervisórios (SCADA/IHM) e variáveis de controle (30 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+    <script src="../../../../js/header-usuario.js" defer></script>
+</head>
+<body data-aula="PR-01" data-tema="Conversão de bases, sistemas supervisórios (SCADA/IHM) e variáveis de controle" data-total="30"
+      data-uc="Fundamentos de Automação/Instrumentação" data-uc-curta="Automação/Instrumentação"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>📝 Prova Objetiva — Prof. Rafael: Conversão de bases, sistemas supervisórios (SCADA/IHM) e variáveis de controle</h1>
+            <p>Automação/Instrumentação · Operador de Produção Industrial — 30 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <button class="btn-export" id="btnExportarPDFGabarito" type="button" data-somente-perfil="PROFESSOR" hidden title="Só o professor: atividade completa com o gabarito real (lido do banco)">📥 Exportar PDF com gabarito</button>
+            <button class="btn-export" id="btnExportarGabarito" type="button" hidden title="Professor: gabarito real. Aluno: suas respostas da tentativa de maior nota.">🔑 Exportar Gabarito</button>
+            <small>Gera um único arquivo com as 30 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de PROVA-OBJETIVA-PROF-RAFAEL.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 30<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 30 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C1 —</strong> Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</p>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Compreender a operação do sistema supervisório e IHM.</p>
+                    <p class="quadro-capacidades__linha"><strong>C3 —</strong> Reconhecer as diferentes técnicas de instrumentação aplicadas aos sistemas de produção.</p>
+                    <p class="quadro-capacidades__linha"><strong>C4 —</strong> Observar as variáveis de controle (pressão, vazão, temperatura, nível etc).</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">O que é uma base numérica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na abertura da aula de lógica digital, o professor escreve no quadro: &quot;Decimal (10), Binário (2), Octal (8) e Hexadecimal (16)&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa a &quot;base&quot; de cada sistema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O primeiro algarismo à esquerda do número.</li>
+                        <li><span class="letra">B)</span>A quantidade de casas depois da vírgula.</li>
+                        <li><span class="letra">C)</span>A quantidade de símbolos (algarismos) que o sistema usa para representar os números.</li>
+                        <li><span class="letra">D)</span>O maior número que o sistema consegue escrever.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Símbolos do octal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A tabela dos quatro sistemas mostra os símbolos usados por cada base.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais símbolos o sistema octal utiliza?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>0 e 1.</li>
+                        <li><span class="letra">B)</span>0 a 7.</li>
+                        <li><span class="letra">C)</span>0 a 9.</li>
+                        <li><span class="letra">D)</span>0 a 9 e A a F.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Decimal para binário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O contador de um CLP registrou 25 peças e o técnico pede para conferir o valor em binário pelo método das divisões sucessivas por 2.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o valor de 25 em binário?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>10011.</li>
+                        <li><span class="letra">B)</span>10101.</li>
+                        <li><span class="letra">C)</span>11001.</li>
+                        <li><span class="letra">D)</span>11010.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Leitura dos restos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um aprendiz fez as divisões sucessivas de 13 por 2 e obteve os restos 1, 0, 1, 1 (do primeiro para o último).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como ele deve escrever o resultado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somando os restos: 3.</li>
+                        <li><span class="letra">B)</span>Lendo os restos de baixo para cima: 1101.</li>
+                        <li><span class="letra">C)</span>Lendo os restos de cima para baixo: 1011.</li>
+                        <li><span class="letra">D)</span>Escrevendo apenas o último resto: 1.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Decimal para octal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O professor resolve no quadro: 83 ÷ 8 = 10 resto 3; 10 ÷ 8 = 1 resto 2; 1 ÷ 8 = 0 resto 1.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o valor de 83 em octal?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>321.</li>
+                        <li><span class="letra">B)</span>123.</li>
+                        <li><span class="letra">C)</span>1023.</li>
+                        <li><span class="letra">D)</span>83.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Decimal para hexadecimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O maior valor de um byte do CLP é 255. Fazendo 255 ÷ 16 = 15 resto 15 e 15 ÷ 16 = 0 resto 15.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como 255 fica em hexadecimal?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>FF.</li>
+                        <li><span class="letra">B)</span>F5.</li>
+                        <li><span class="letra">C)</span>EE.</li>
+                        <li><span class="letra">D)</span>1515.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Binário para decimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um cartão de entradas mostra o valor 1101 e a tabela de pesos 8, 4, 2 e 1.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o valor decimal de 1101?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>13.</li>
+                        <li><span class="letra">B)</span>11.</li>
+                        <li><span class="letra">C)</span>1101.</li>
+                        <li><span class="letra">D)</span>7.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Octal para decimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Para converter 237 (octal) para decimal, usam-se os pesos 64, 8 e 1.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o resultado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>159.</li>
+                        <li><span class="letra">B)</span>237.</li>
+                        <li><span class="letra">C)</span>192.</li>
+                        <li><span class="letra">D)</span>12.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Hexadecimal para decimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um código de falha da IHM aparece como 2A (hexadecimal). Lembre que A vale 10.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o valor decimal do código?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>210.</li>
+                        <li><span class="letra">B)</span>42.</li>
+                        <li><span class="letra">C)</span>32.</li>
+                        <li><span class="letra">D)</span>12.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Binário para octal e hexadecimal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Identificar a aplicabilidade dos conceitos básicos relativos à programação de CLP´s.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O técnico quer escrever números binários longos de forma curta, agrupando os bits.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual regra está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para os dois, agrupam-se 2 bits.</li>
+                        <li><span class="letra">B)</span>Não é possível converter binário direto para octal ou hexadecimal.</li>
+                        <li><span class="letra">C)</span>Para octal, agrupam-se 4 bits; para hexadecimal, 3 bits.</li>
+                        <li><span class="letra">D)</span>Para octal, agrupam-se 3 bits; para hexadecimal, 4 bits, a partir da direita.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">O que é um sistema supervisório</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender a operação do sistema supervisório e IHM.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na sala de controle, a tela mostra pressão de 4,2 bar, vazão de 38 m³/h e nível de 72%, com botões de alarmes, tendências e comandos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual definição descreve melhor esse sistema supervisório?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma camada que transforma dados do processo em informação operacional para o operador.</li>
+                        <li><span class="letra">B)</span>O motor que movimenta a bomba.</li>
+                        <li><span class="letra">C)</span>O sensor que mede a pressão da linha.</li>
+                        <li><span class="letra">D)</span>O cabo que alimenta o CLP.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Significado de SCADA</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender a operação do sistema supervisório e IHM.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Em uma visita técnica, o guia diz que a fábrica usa um &quot;sistema SCADA&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa SCADA?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Sistema de Cálculo de Água e Dosagem.</li>
+                        <li><span class="letra">B)</span>Sistema Central de Automação de Dispositivos Analógicos.</li>
+                        <li><span class="letra">C)</span>Controle de Supervisão e Aquisição de Dados.</li>
+                        <li><span class="letra">D)</span>Sensor de Controle Automático de Alarmes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Unidade Terminal Remota</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender a operação do sistema supervisório e IHM.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Em uma estação de bombeamento distante da fábrica, um equipamento se conecta aos sensores e envia os dados convertidos ao sistema de supervisão.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Esse equipamento é chamado de:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Termopar.</li>
+                        <li><span class="letra">B)</span>Unidade Terminal Remota (UTR/RTU).</li>
+                        <li><span class="letra">C)</span>Manômetro.</li>
+                        <li><span class="letra">D)</span>Inversor de frequência.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">IHM e CLP</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender a operação do sistema supervisório e IHM.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um colega diz que &quot;a IHM da máquina é que faz a lógica de controle&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual afirmação corrige o colega?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O CLP só mostra telas, e a IHM controla a máquina.</li>
+                        <li><span class="letra">B)</span>A IHM apresenta e permite interagir; quem executa a lógica de controle é o CLP.</li>
+                        <li><span class="letra">C)</span>A IHM substitui os sensores.</li>
+                        <li><span class="letra">D)</span>A IHM e o CLP são o mesmo equipamento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">IHM × SCADA</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender a operação do sistema supervisório e IHM.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A envasadora tem uma tela touch no painel; a sala de controle acompanha todas as linhas da fábrica com várias telas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como classificar essas duas soluções?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A tela do painel é SCADA e a sala de controle é IHM.</li>
+                        <li><span class="letra">B)</span>As duas são IHM, porque têm tela.</li>
+                        <li><span class="letra">C)</span>As duas são SCADA, porque mostram valores.</li>
+                        <li><span class="letra">D)</span>A tela do painel é IHM (visão local); a sala de controle usa SCADA (visão centralizada).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Supervisão remota</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender a operação do sistema supervisório e IHM.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Uma empresa acompanha três usinas a partir de um centro de operação, usando rede segura e dashboards.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Esse é um exemplo de:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Medição por boia.</li>
+                        <li><span class="letra">B)</span>Comando manual sem rede.</li>
+                        <li><span class="letra">C)</span>Supervisão remota com arquitetura distribuída.</li>
+                        <li><span class="letra">D)</span>Supervisão local junto ao equipamento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Arquitetura de supervisão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender a operação do sistema supervisório e IHM.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O professor desenha o fluxo da informação em um sistema de supervisão.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a sequência correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>IHM → sensores → rede → atuadores → CLP.</li>
+                        <li><span class="letra">B)</span>Sensores/atuadores → CLP/RTU → rede industrial → servidor SCADA → IHM/cliente.</li>
+                        <li><span class="letra">C)</span>Operador → termopar → servidor → bomba.</li>
+                        <li><span class="letra">D)</span>Servidor SCADA → sensores → operador → CLP.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Funções do supervisório</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender a operação do sistema supervisório e IHM.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O supervisório da fábrica lê variáveis, mostra o processo, avisa desvios, guarda dados e envia ações autorizadas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Essas são, respectivamente, as funções de:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Aquisição de dados, visualização, alarmes, histórico e comandos.</li>
+                        <li><span class="letra">B)</span>Pressão, vazão, nível, temperatura e umidade.</li>
+                        <li><span class="letra">C)</span>Programação, soldagem, pintura, embalagem e expedição.</li>
+                        <li><span class="letra">D)</span>Medição, calibração, manutenção, compra e venda.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Boas práticas de alarme</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender a operação do sistema supervisório e IHM.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A lista de alarmes da sala de controle mostra dezenas de mensagens repetidas que ninguém reconhece.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual boa prática ajuda a resolver o problema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apagar o histórico a cada turno.</li>
+                        <li><span class="letra">B)</span>Aumentar o volume da sirene.</li>
+                        <li><span class="letra">C)</span>Desligar todos os alarmes.</li>
+                        <li><span class="letra">D)</span>Priorizar a criticidade, usar mensagens claras e evitar alarmes repetitivos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Falha de comunicação com o SCADA</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender a operação do sistema supervisório e IHM.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Durante o turno, a comunicação entre o CLP do tanque e o SCADA cai.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Segundo a arquitetura estudada, o que deve acontecer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O controle local continua no CLP; a supervisão perde a visibilidade até a comunicação voltar.</li>
+                        <li><span class="letra">B)</span>O SCADA passa a controlar a válvula sozinho.</li>
+                        <li><span class="letra">C)</span>Os sensores deixam de medir.</li>
+                        <li><span class="letra">D)</span>O tanque para imediatamente, porque o CLP depende do SCADA para controlar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Variável de processo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Observar as variáveis de controle (pressão, vazão, temperatura, nível etc).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Em um forno, o sensor indica 180 °C e o CLP usa esse valor para decidir se liga a resistência.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é uma variável de processo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma grandeza do processo que podemos medir e acompanhar, como temperatura, pressão, vazão e nível.</li>
+                        <li><span class="letra">B)</span>A marca do sensor instalado.</li>
+                        <li><span class="letra">C)</span>O endereço de uma entrada digital.</li>
+                        <li><span class="letra">D)</span>O nome do programa do CLP.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Instrumentos de pressão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as diferentes técnicas de instrumentação aplicadas aos sistemas de produção.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na linha de ar comprimido há três instrumentos: um faz leitura local, outro abre/fecha um contato num limite e outro envia 4–20 mA ao CLP.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais são esses instrumentos, nessa ordem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Manômetro, pressostato e transmissor.</li>
+                        <li><span class="letra">B)</span>Pressostato, manômetro e termopar.</li>
+                        <li><span class="letra">C)</span>Termopar, PT100 e radar.</li>
+                        <li><span class="letra">D)</span>Transmissor, rotâmetro e boia.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Unidades de pressão e vazão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Observar as variáveis de controle (pressão, vazão, temperatura, nível etc).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O relatório do turno registra &quot;4,2&quot; na pressão da linha e &quot;38&quot; na vazão de água.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais unidades são adequadas, respectivamente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>bar e m³/h.</li>
+                        <li><span class="letra">B)</span>°C e kg.</li>
+                        <li><span class="letra">C)</span>m³/h e bar.</li>
+                        <li><span class="letra">D)</span>% e mA.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Medidores de vazão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as diferentes técnicas de instrumentação aplicadas aos sistemas de produção.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A fábrica precisa medir a vazão mássica de xarope na dosagem e a vazão de água em uma tubulação de fluido condutivo.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais medidores são indicados, respectivamente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Boia e termopar.</li>
+                        <li><span class="letra">B)</span>Coriolis e eletromagnético.</li>
+                        <li><span class="letra">C)</span>Eletromagnético e Coriolis.</li>
+                        <li><span class="letra">D)</span>Manômetro e PT100.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Sensores de temperatura</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as diferentes técnicas de instrumentação aplicadas aos sistemas de produção.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O forno de tratamento térmico trabalha em altas temperaturas; o tanque de processo exige medição resistiva precisa.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais sensores são mais indicados, respectivamente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Rotâmetro e boia.</li>
+                        <li><span class="letra">B)</span>PT100 e termopar.</li>
+                        <li><span class="letra">C)</span>Termopar e PT100.</li>
+                        <li><span class="letra">D)</span>Pressostato e radar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Medição de nível por radar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as diferentes técnicas de instrumentação aplicadas aos sistemas de produção.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um tanque fechado de produto tem um instrumento no topo que mede a distância até a superfície do líquido.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual instrumento funciona dessa forma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Rotâmetro.</li>
+                        <li><span class="letra">B)</span>Termopar.</li>
+                        <li><span class="letra">C)</span>Pressostato.</li>
+                        <li><span class="letra">D)</span>Radar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Sensor × transmissor</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as diferentes técnicas de instrumentação aplicadas aos sistemas de produção.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um técnico explica que a célula de pressão percebe a grandeza e que outro dispositivo converte 0–10 bar em 4–20 mA para o CLP.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual afirmação está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O CLP é o sensor da malha.</li>
+                        <li><span class="letra">B)</span>Sensor e transmissor são sempre a mesma coisa.</li>
+                        <li><span class="letra">C)</span>A célula de pressão é o sensor; o dispositivo que gera o sinal padronizado é o transmissor.</li>
+                        <li><span class="letra">D)</span>O transmissor percebe a grandeza e o sensor gera o sinal de 4–20 mA.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Setpoint e variável de processo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as diferentes técnicas de instrumentação aplicadas aos sistemas de produção.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A estufa deve trabalhar a 80 °C, mas a medição atual é 75 °C.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o SP, a PV e o erro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SP = 155 °C, PV = 75 °C e erro = 80 °C.</li>
+                        <li><span class="letra">B)</span>SP = 80 °C, PV = 75 °C e erro = 5 °C.</li>
+                        <li><span class="letra">C)</span>SP = 80 °C, PV = 80 °C e erro = 0 °C.</li>
+                        <li><span class="letra">D)</span>SP = 75 °C, PV = 80 °C e erro = −5 °C.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Interpretação do 4–20 mA</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as diferentes técnicas de instrumentação aplicadas aos sistemas de produção.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um transmissor de pressão de 0–10 bar envia 14 mA ao CLP.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a pressão medida? (Use: (mA − 4) ÷ 16 × faixa.)</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>8,75 bar.</li>
+                        <li><span class="letra">B)</span>5 bar.</li>
+                        <li><span class="letra">C)</span>7 bar.</li>
+                        <li><span class="letra">D)</span>6,25 bar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Controle de nível do tanque</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Observar as variáveis de controle (pressão, vazão, temperatura, nível etc).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um tanque tem transmissor de nível 0–100% (4–20 mA). O CLP recebe 16,8 mA e o setpoint é 80%. A válvula de entrada é o atuador.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual alternativa está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O nível é 16,8%; a variável controlada é a válvula.</li>
+                        <li><span class="letra">B)</span>O nível é 68%; o tanque está acima do setpoint.</li>
+                        <li><span class="letra">C)</span>O nível é 100%; o tanque vai transbordar.</li>
+                        <li><span class="letra">D)</span>O nível é 80% (PV = SP); a variável controlada é o nível e a manipulada é a abertura da válvula.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Fundamentos de Automação/Instrumentação — Prova Objetiva — Prof. Rafael: Conversão de bases, sistemas supervisórios (SCADA/IHM) e variáveis de controle</strong></p>
+        <p>Operador de Produção Industrial — SENAI</p>
+        <p>30 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+    <script src="../../../../assets/js/avaliacao-pdf-professor.js"></script>
+</body>
+</html>
