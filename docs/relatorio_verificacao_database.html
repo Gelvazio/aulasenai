@@ -442,6 +442,48 @@
       <p>Documentação perfeita. Todos os campos, tipos e relacionamentos estão corretos.</p>
     </div>
 
+    <h2>🧑‍🏫 Atualização 2026-10-02 — turmaprofessor e Professor Administrador</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-02-turmaprofessor-professor-administrador.sql</code> (aplicado em 2026-10-02)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>turmaprofessor.turma_codigo</td>
+          <td><code>text</code> → turma.codigo</td>
+          <td>Turma do vínculo (on delete cascade)</td>
+        </tr>
+        <tr>
+          <td>turmaprofessor.professor_id</td>
+          <td><code>uuid</code> → auth.users.id</td>
+          <td>Professor; perfil PROFESSOR obrigatório (trigger)</td>
+        </tr>
+        <tr>
+          <td>turmaprofessor.criado_em / criado_por</td>
+          <td><code>timestamptz</code> / <code>uuid</code></td>
+          <td>Quando e quem cadastrou; único por (turma, professor)</td>
+        </tr>
+        <tr>
+          <td>eh_professor_administrador()</td>
+          <td>Função (security definer)</td>
+          <td>Verdadeiro só para gelvazio.camargo@senai.local (perfil PROFESSOR + administrador = true)</td>
+        </tr>
+        <tr>
+          <td>professor_tem_turma(codigo)</td>
+          <td>Função</td>
+          <td>Professor vinculado à turma (ou administrador)</td>
+        </tr>
+        <tr>
+          <td>RLS turmaprofessor</td>
+          <td>Políticas</td>
+          <td>Leitura: administrador tudo, professor os próprios; gravação: só o Professor Administrador; TRUNCATE revogado</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>👑 Atualização 2026-10-01 — Líder da turma</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-01-turma-lider.sql</code> (aplicado em 2026-10-01)</p>

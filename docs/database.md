@@ -407,6 +407,26 @@ As políticas `resposta_insert`, `resposta_update` e `entrega_insert` passaram a
 
 Os líderes foram gravados direto no banco (nomes de alunos não vão para arquivos publicados).
 
+### 🧑‍🏫 Atualização 2026-10-02 — `turmaprofessor` e Professor Administrador
+
+**Script:** `database/2026-10-02-turmaprofessor-professor-administrador.sql` (aplicado em 2026-10-02
+pelo conector do Supabase). **Plano:** `docs/tabela-turmaprofessor-professor-administrador.md`.
+
+| Objeto | Tipo | Descrição |
+|--------|------|-----------|
+| `turmaprofessor.id` | `bigint` identity (PK) | identificador do vínculo |
+| `turmaprofessor.turma_codigo` | `text` → `turma.codigo` (on delete cascade) | turma |
+| `turmaprofessor.professor_id` | `uuid` → `auth.users.id` (on delete cascade) | professor (perfil PROFESSOR obrigatório, conferido por trigger) |
+| `turmaprofessor.criado_em` / `criado_por` | `timestamptz` / `uuid` | quando e quem cadastrou |
+| `unique (turma_codigo, professor_id)` | restrição | sem vínculo repetido |
+| `eh_professor_administrador()` | função (security definer) | verdadeiro **só** para `gelvazio.camargo@senai.local` com `app_metadata.perfil = PROFESSOR` e `app_metadata.administrador = true` |
+| `professor_tem_turma(codigo)` | função | professor logado vinculado à turma (ou administrador); para políticas futuras |
+| `turmaprofessor_exige_professor()` | trigger | recusa vincular usuário sem perfil PROFESSOR |
+
+**RLS:** ligado; `anon` sem acesso; SELECT = administrador vê tudo, professor vê os próprios
+vínculos; INSERT/UPDATE/DELETE = **somente** o Professor Administrador. TRUNCATE revogado
+(`authenticated`/`anon`).
+
 ---
 
 ## 🔐 Segurança: RLS (Row Level Security)

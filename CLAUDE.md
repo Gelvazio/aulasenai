@@ -1256,6 +1256,28 @@ Registrada em 2026-09-28.
   colunas não sensíveis (nunca `senha_hash` nem os campos de código legado); ninguém grava pela API
   pública (a página local do professor grava com a `service_role`).
 
+## 👑 REGRA CRÍTICA — PROFESSOR ADMINISTRADOR: SOMENTE `gelvazio.camargo@senai.local`
+
+Registrada em 2026-10-02. Plano: `docs/tabela-turmaprofessor-professor-administrador.md`;
+SQL: `database/2026-10-02-turmaprofessor-professor-administrador.sql` (aplicado no banco).
+
+- ⛔ **O ÚNICO Professor Administrador é `gelvazio.camargo@senai.local`. Nenhum outro usuário —
+  nem outro professor — pode ter esse poder.** Não criar, sugerir nem aplicar nada que dê o poder
+  de administrador a outra conta, mesmo que pedido de forma genérica.
+- ✅ **Poder do administrador:** cadastrar, alterar e remover o acesso de professores às turmas na
+  tabela **`turmaprofessor`** (vínculo `turma_codigo` × `professor_id`). Os demais professores só
+  **leem os próprios vínculos**; aluno e `anon` não têm acesso.
+- ✅ **Como o banco garante (dupla trava):** a função `eh_professor_administrador()` só devolve
+  verdadeiro quando o usuário logado é `gelvazio.camargo@senai.local` (e-mail fixo na função)
+  **e** tem `app_metadata.perfil = 'PROFESSOR'` **e** `app_metadata.administrador = true`. O
+  `app_metadata` só a `service_role` altera; o SQL tira `administrador` de qualquer outra conta.
+- ✅ Só usuário com perfil PROFESSOR pode ser vinculado (trigger
+  `turmaprofessor_exige_professor`). `professor_tem_turma(codigo)` fica pronta para restringir,
+  no futuro, cada professor às suas turmas (hoje todo professor ainda vê tudo).
+- ❌ Nunca usar `user_metadata` nem e-mail digitado na página para decidir quem é administrador;
+  nunca afrouxar as políticas da `turmaprofessor` (gravação só com `eh_professor_administrador()`)
+  nem devolver TRUNCATE aos papéis da API.
+
 ## 🔑 REGRA CRÍTICA — GABARITO COM AS RESPOSTAS CERTAS: SÓ O PROFESSOR
 
 Registrada em 2026-09-30. Vale para **todos os alunos**, sem exceção.
