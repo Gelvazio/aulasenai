@@ -4,11 +4,13 @@
     --bloqueio-fundo: #2d3748; --bloqueio-borda: #1a202c; --bloqueio-texto: #a0aec0;
     --bloqueio-veu: rgba(10, 14, 22, 0.62);
 }
+/* A altura mínima fica no html: a barra #header-usuario é movida para fora do body e,
+   com min-height no body, a página passaria de 100vh e criaria rolagem sem necessidade. */
+html { min-height: 100%; }
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     color: var(--text);
-    min-height: 100vh;
     padding: 10px 20px 20px;
 }
 .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
