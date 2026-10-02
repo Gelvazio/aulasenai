@@ -77,10 +77,33 @@ ATIVIDADES_FUNDAMENTOS = [
      f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-10-11-2026-50-QUESTOES.md"),
 ]
 
+PASTA_AUTOMACAO = (
+    "MATERIAIS/OPERADOR_PRODUCAO_INDUSTRIAL/FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO/ATIVIDADES"
+)
+DATA_PROVISORIA_AUTOMACAO = "2026-10-02"  # datas das aulas ainda a definir (PLANO-AULAS)
+
+# Operador de Produção Industrial: aulas conforme DOCUMENTACAO/PLANO-AULAS.md da matéria.
+ATIVIDADES_AUTOMACAO = [
+    (1, "Sistemas de Numeração e Conversão de Bases", DATA_PROVISORIA_AUTOMACAO,
+     f"{PASTA_AUTOMACAO}/ATIVIDADES-AULA-01-50-QUESTOES.md"),
+    (2, "Funções Lógicas", DATA_PROVISORIA_AUTOMACAO,
+     f"{PASTA_AUTOMACAO}/ATIVIDADES-AULA-02-50-QUESTOES.md"),
+    (3, "CLP: Características Técnicas e Princípio de Funcionamento", DATA_PROVISORIA_AUTOMACAO,
+     f"{PASTA_AUTOMACAO}/ATIVIDADES-AULA-03-50-QUESTOES.md"),
+    (4, "CLP: Arquitetura e Especificação de Hardware", DATA_PROVISORIA_AUTOMACAO,
+     f"{PASTA_AUTOMACAO}/ATIVIDADES-AULA-04-50-QUESTOES.md"),
+    (5, "CLP: Linguagens de Programação", DATA_PROVISORIA_AUTOMACAO,
+     f"{PASTA_AUTOMACAO}/ATIVIDADES-AULA-05-50-QUESTOES.md"),
+    (6, "CLP: Estruturas de Programação", DATA_PROVISORIA_AUTOMACAO,
+     f"{PASTA_AUTOMACAO}/ATIVIDADES-AULA-06-50-QUESTOES.md"),
+]
+
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.
 GRUPOS = [
     (CURSO, MATERIA, ATIVIDADES),
     ("Rio do Sul Mais Tech", "Fundamentos da Tecnologia e Programação", ATIVIDADES_FUNDAMENTOS),
+    ("Operador de Produção Industrial", "Fundamentos de Automação/Instrumentação",
+     ATIVIDADES_AUTOMACAO),
 ]
 
 PADRAO_ITEM = re.compile(r"^## ITEM (\d+) — (.+)$", re.M)

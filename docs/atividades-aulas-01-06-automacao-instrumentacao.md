@@ -30,7 +30,7 @@ Todas as aulas 01–06 são da capacidade **C1** (lógica digital e CLP).
 | 2 | Escrever `CONTEUDO/ATIVIDADE-PRATICA-AULA-01..06.md` + gabaritos (10 questões discursivas cada) | ⛔ Suspenso (fontes 01–03 prontas em CONTEUDO/, sem página publicada) |
 | 3 | Gerar as páginas HTML (6 de 50 questões; folha de respostas e login, sem gabarito embutido) | ✅ Concluído |
 | 4 | Links: índice da matéria e botão 📚 Atividades no card da matéria (curso e raiz) | ✅ Concluído |
-| 5 | Gerar o seed SQL (atividades + gabarito) para o professor rodar no Supabase (não aplicar sem pedido) | ⬜ Pendente |
+| 5 | Seed `database/2026-10-02-automacao-instrumentacao-seed-atividades.sql` (fora do Git) aplicado no Supabase a pedido: matéria 28 (curso 2), atividades 43–48, 50 itens de gabarito cada | ✅ Concluído |
 | 6 | Conferir: 50 itens por página, gabarito ausente do HTML, `.gitignore` cobrindo fontes e seed | ✅ Concluído |
 | 7 | Commit local (HTML, índices, docs) + graphify | ✅ Concluído |
 
