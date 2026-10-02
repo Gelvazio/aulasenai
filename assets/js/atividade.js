@@ -2,6 +2,7 @@
 // Dados de cada página: atributos data-aula, data-tema, data-total, data-uc,
 // data-uc-curta e data-docente no <body>
 // e o gabarito em <script type="application/json" id="gabarito-dados">.
+// O docente do PDF é o professor logado; o data-docente só vale quando não há professor logado.
 
 function textoPDF(txt) {
     // A fonte padrão do jsPDF só aceita Latin-1/WinAnsi: troca símbolos e remove emojis
@@ -24,6 +25,37 @@ function dadosDaPagina() {
         docente: d.docente || '',
         gabarito: gabaritoEl ? JSON.parse(gabaritoEl.textContent) : []
     };
+}
+
+const PERFIL_PROFESSOR_PDF = 'PROFESSOR';
+
+/**
+ * Nome do docente logado (perfil PROFESSOR no app_metadata) para o cabeçalho do PDF.
+ * Usa o cliente de js/supabase.js (carregado pela página ou pelo js/header-usuario.js).
+ * @returns {Promise<string|null>} Nome (ou e-mail) do professor logado; null se não houver.
+ */
+async function obterDocenteLogadoPDF() {
+    if (typeof obterClienteSupabase !== 'function') return null;
+    try {
+        const cliente = await obterClienteSupabase();
+        const { data } = await cliente.auth.getSession();
+        const usuario = data?.session?.user;
+        if (usuario?.app_metadata?.perfil !== PERFIL_PROFESSOR_PDF) return null;
+        return usuario.user_metadata?.nome || usuario.email || null;
+    } catch (erro) {
+        console.warn('Não foi possível ler o docente logado:', erro);
+        return null;
+    }
+}
+
+/**
+ * Dados da página com o docente do PDF: o professor logado ou, sem ele, o data-docente da página.
+ * @returns {Promise<Object>} Mesmo formato de dadosDaPagina().
+ */
+async function dadosDaPaginaParaPDF() {
+    const pagina = dadosDaPagina();
+    pagina.docente = (await obterDocenteLogadoPDF()) || pagina.docente;
+    return pagina;
 }
 
 const COR_FAIXA_CAPACIDADES_PDF = [31, 56, 100];
@@ -179,14 +211,14 @@ function rotuloDaAula(aula) {
  * @param {string[][]} [gabaritoExterno] - Linhas [item, título, letra] vindas do banco (só
  *     professor); quando informado, o PDF inclui o gabarito.
  */
-function exportarPDFAtividade(gabaritoExterno) {
+async function exportarPDFAtividade(gabaritoExterno) {
     const jsPDF = window.jspdf?.jsPDF || window.jsPDF;
     if (!jsPDF) {
         alert('Erro: jsPDF não carregado (verifique a conexão com a internet).');
         return;
     }
 
-    const pagina = dadosDaPagina();
+    const pagina = await dadosDaPaginaParaPDF();
     const questoes = coletarQuestoes();
     if (gabaritoExterno) pagina.gabarito = gabaritoExterno;
     const incluirGabarito = Boolean(gabaritoExterno) || document.getElementById('incluirGabarito')?.checked;
@@ -271,14 +303,14 @@ function exportarPDFAtividade(gabaritoExterno) {
  * @param {{titulo?: string, subtitulo?: string, coluna?: string, arquivo?: string}} [opcoes] -
  *     Textos do PDF: padrão é o gabarito real (professor); o aluno recebe as próprias respostas.
  */
-function exportarSomenteGabaritoPDF(gabarito, opcoes = {}) {
+async function exportarSomenteGabaritoPDF(gabarito, opcoes = {}) {
     const jsPDF = window.jspdf?.jsPDF || window.jsPDF;
     if (!jsPDF) {
         console.warn('jsPDF não carregado (verifique a conexão com a internet).');
         return;
     }
 
-    const pagina = dadosDaPagina();
+    const pagina = await dadosDaPaginaParaPDF();
     const rotulo = rotuloDaAula(pagina.aula);
     const doc = new jsPDF('p', 'mm', 'a4');
     doc.setFontSize(13);
