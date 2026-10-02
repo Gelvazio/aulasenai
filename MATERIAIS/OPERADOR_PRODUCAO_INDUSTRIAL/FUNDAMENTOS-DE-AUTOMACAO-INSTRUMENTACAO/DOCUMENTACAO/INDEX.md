@@ -17,7 +17,7 @@
 | `DOCUMENTACAO/INDEX.md` | Este mapa |
 | `DOCUMENTACAO/PLANO-AULAS.md` | Plano das 15 aulas de 4h |
 | `DOCUMENTACAO/VERIFICACAO_COBERTURA_EMENTA.md` | Conferência conhecimento × aula |
-| `AULAS/` | Aulas `AULA-NN.md` / slides (a criar) |
+| `AULAS/` | 15 aulas `AULA-01.md` a `AULA-15.md` (4h cada, conforme o PLANO-AULAS) |
 | `ATIVIDADES/` | `atividades.json` (capacidades C1–C4) e `index.html` gerado |
 | `AVALIACOES/` | Avaliação integradora (a criar) |
 

@@ -46,7 +46,7 @@
 ## ⚙️ Próximos Passos
 
 1. Revisão do professor
-2. Criar aulas (`AULAS/`) e atividades de 50 questões (`ATIVIDADES/`)
+2. ✅ Aulas criadas (`AULAS/AULA-01.md` a `AULA-15.md`); criar atividades de 50 questões (`ATIVIDADES/`)
 3. Criar a avaliação integradora
 
 ---
