@@ -26,10 +26,51 @@ function dadosDaPagina() {
     };
 }
 
+const COR_FAIXA_CAPACIDADES_PDF = [31, 56, 100];
+const COR_TEXTO_FAIXA_CAPACIDADES_PDF = [255, 255, 255];
+
+/**
+ * Lê as linhas "C1 — texto" de um quadro de capacidades (assets/css/capacidades.css).
+ * @param {Element|null} quadro - Elemento .quadro-capacidades ou null.
+ * @returns {string[]} Linhas prontas para o PDF (vazia se não houver quadro).
+ */
+function lerLinhasCapacidadesPDF(quadro) {
+    if (!quadro) return [];
+    return [...quadro.querySelectorAll('.quadro-capacidades__linha')]
+        .map((linha) => textoPDF(linha.textContent));
+}
+
+/**
+ * Desenha no PDF o quadro "CAPACIDADES" do início da avaliação (faixa azul e uma linha por
+ * capacidade), como na página. Sem quadro na página, não desenha nada.
+ * @param {Object} doc - Documento jsPDF.
+ * @param {number} yPos - Posição vertical atual.
+ * @param {number} margin - Margem da página.
+ * @returns {number} Nova posição vertical.
+ */
+function desenharCapacidadesPDF(doc, yPos, margin) {
+    const quadro = [...document.querySelectorAll('.quadro-capacidades')]
+        .find((elemento) => !elemento.closest('.questao'));
+    const linhas = lerLinhasCapacidadesPDF(quadro);
+    if (!linhas.length) return yPos;
+
+    doc.autoTable({
+        head: [['CAPACIDADES']],
+        body: linhas.map((linha) => [linha]),
+        startY: yPos,
+        margin: margin,
+        headStyles: { fillColor: COR_FAIXA_CAPACIDADES_PDF, textColor: COR_TEXTO_FAIXA_CAPACIDADES_PDF,
+            fontStyle: 'bold', fontSize: 12 },
+        styles: { fontSize: 10, cellPadding: 2.5, textColor: [0, 0, 0] }
+    });
+    return doc.lastAutoTable.finalY + 10;
+}
+
 function coletarQuestoes() {
     const questoes = [];
     document.querySelectorAll('.aula-card.questao').forEach(card => {
-        const linhas = [];
+        const linhas = lerLinhasCapacidadesPDF(card.querySelector('.quadro-capacidades'))
+            .map((linha) => ({ texto: 'CAPACIDADE: ' + linha, negrito: true }));
         card.querySelectorAll('.content-box').forEach(box => {
             const rotulo = textoPDF(box.querySelector('.content-label')?.textContent);
             const itens = box.querySelectorAll('.alternativas li');
@@ -100,7 +141,7 @@ function exportarPDFAtividade(gabaritoExterno) {
         columnStyles: { 0: { cellWidth: 30 }, 1: { cellWidth: 60 }, 2: { cellWidth: 60 }, 3: { cellWidth: 30 } },
         styles: { fontSize: 10, cellPadding: 4, lineColor: [0, 0, 0], lineWidth: 0.1, textColor: [0, 0, 0] }
     });
-    yPos = doc.lastAutoTable.finalY + 10;
+    yPos = desenharCapacidadesPDF(doc, doc.lastAutoTable.finalY + 10, margin);
 
     questoes.forEach(q => {
         const tableData = [[{ content: q.cabecalho, styles: { fontStyle: 'bold', fontSize: 11, halign: 'left', fillColor: [220, 220, 220] } }]];
