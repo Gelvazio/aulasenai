@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turmas × Alunos</title>
+    <link rel="stylesheet" href="assets/css/criar-usuarios-comando.css">
+    <link rel="stylesheet" href="assets/css/header-usuario.css">
+    <link rel="stylesheet" href="assets/css/turmas-professor.css">
+    <link rel="stylesheet" href="assets/css/turmas-aluno.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js" defer></script>
+    <script src="js/header-usuario.js" defer></script>
+    <script src="assets/js/popup.js" defer></script>
+    <script src="assets/js/turmas-aluno-repositorio.js" defer></script>
+    <script src="assets/js/turmas-aluno-pagina.js" defer></script>
+</head>
+<body>
+    <div id="header-usuario"></div>
+    <main class="guia">
+        <header class="guia-cabecalho">
+            <h1>🎒 Turmas × Alunos</h1>
+            <p>Vincule alunos (perfil ALUNO) às suas turmas — uso dos professores</p>
+        </header>
+
+        <section class="guia-cartao guia-erro" id="taBloqueio" hidden></section>
+
+        <div id="taConteudo" hidden>
+            <section class="guia-cartao">
+                <h2 id="taTituloFormulario">Novo vínculo</h2>
+                <form id="taFormulario" class="tp-formulario">
+                    <label class="tp-campo">Turma
+                        <select id="taTurma" class="guia-filtro" required></select>
+                    </label>
+                    <label class="tp-campo">Aluno
+                        <select id="taAluno" class="guia-filtro" required></select>
+                    </label>
+                    <div class="tp-acoes">
+                        <button type="submit" class="guia-botao" id="taSalvar">Vincular</button>
+                        <button type="button" class="guia-botao tp-botao-secundario" id="taCancelar" hidden>Cancelar edição</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="guia-cartao">
+                <div class="tp-cabecalho-lista">
+                    <h2>Alunos por turma</h2>
+                    <div class="ta-filtros">
+                        <label class="tp-campo tp-campo--filtro">Filtrar por turma
+                            <select id="taFiltroTurma" class="guia-filtro"></select>
+                        </label>
+                        <label class="tp-campo tp-campo--filtro">Buscar aluno
+                            <input type="search" id="taBusca" class="guia-filtro" placeholder="Nome ou e-mail">
+                        </label>
+                    </div>
+                </div>
+                <p id="taResumo" class="tp-resumo"></p>
+                <div class="tp-tabela-rolagem">
+                    <table class="guia-tabela">
+                        <thead>
+                            <tr>
+                                <th>Turma</th>
+                                <th>Turno / horário</th>
+                                <th>Aluno</th>
+                                <th>Vinculado em</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="taLinhas"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

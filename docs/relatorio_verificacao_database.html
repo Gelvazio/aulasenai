@@ -442,6 +442,43 @@
       <p>Documentação perfeita. Todos os campos, tipos e relacionamentos estão corretos.</p>
     </div>
 
+    <h2>🎒 Atualização 2026-10-02 — turmaaluno (aluno × turma)</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-02-turmaaluno.sql</code> (aplicado em 2026-10-02) · Tela: <code>alunos.html</code> (menu ALUNOS)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>turmaaluno.turma_codigo</td>
+          <td><code>text</code> → turma.codigo</td>
+          <td>Turma do vínculo (on delete cascade)</td>
+        </tr>
+        <tr>
+          <td>turmaaluno.aluno_id</td>
+          <td><code>uuid</code> → auth.users.id</td>
+          <td>Aluno; perfil ALUNO obrigatório (trigger turmaaluno_exige_aluno)</td>
+        </tr>
+        <tr>
+          <td>turmaaluno.criado_em / criado_por</td>
+          <td><code>timestamptz</code> / <code>uuid</code></td>
+          <td>Quando e quem cadastrou; único por (turma, aluno)</td>
+        </tr>
+        <tr>
+          <td>RLS turmaaluno</td>
+          <td>Políticas</td>
+          <td>Leitura: professor tudo, aluno os próprios; gravação: todo professor (eh_professor); TRUNCATE revogado</td>
+        </tr>
+        <tr>
+          <td>Carga inicial</td>
+          <td>Dados</td>
+          <td>106 vínculos copiados de aluno.turma_codigo (133933 = 25, 135080 = 33, 135081 = 35, QA LBTSN = 13)</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🧑‍🏫 Atualização 2026-10-02 — turmaprofessor e Professor Administrador</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-02-turmaprofessor-professor-administrador.sql</code> (aplicado em 2026-10-02)</p>

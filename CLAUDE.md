@@ -1284,6 +1284,24 @@ SQL: `database/2026-10-02-turmaprofessor-professor-administrador.sql` (aplicado 
   nunca afrouxar as políticas da `turmaprofessor` (gravação só com `eh_professor_administrador()`)
   nem devolver TRUNCATE aos papéis da API.
 
+## 🎒 REGRA — `turmaaluno` (aluno × turma) E MENU ALUNOS
+
+Registrada em 2026-10-02. Plano: `docs/tabela-turmaaluno-menu-alunos.md`;
+SQL: `database/2026-10-02-turmaaluno.sql` (aplicado no banco).
+
+- ✅ Tabela **`turmaaluno`** (`turma_codigo` → `turma`, `aluno_id` → `auth.users`, único por turma +
+  aluno), no mesmo modelo da `turmaprofessor`. Trigger `turmaaluno_exige_aluno` recusa quem não tem
+  perfil ALUNO.
+- ✅ **RLS:** **todo professor** (`eh_professor()`) grava (vincular, editar, excluir) e lê tudo; o aluno
+  lê só os próprios vínculos; `anon` sem acesso; TRUNCATE revogado.
+- ✅ **Tela:** menu **ALUNOS** no header (todo PROFESSOR) abre `alunos.html` (raiz): CRUD com filtro
+  por turma e busca por nome; alunos = `usuario.perfil = 'ALUNO'`. Código:
+  `assets/js/turmas-aluno-repositorio.js` + `assets/js/turmas-aluno-pagina.js` +
+  `assets/css/turmas-aluno.css` (reaproveita `turmas-professor.css`).
+- ⚠️ Carga inicial: 106 vínculos copiados de `aluno.turma_codigo`. Horário e tentativas continuam
+  lendo a turma do `app_metadata`/`aluno`: mudar a turma em `alunos.html` **não** muda o horário do
+  aluno (unificar as fontes é tarefa futura).
+
 ## 🔑 REGRA CRÍTICA — GABARITO COM AS RESPOSTAS CERTAS: SÓ O PROFESSOR
 
 Registrada em 2026-09-30. Vale para **todos os alunos**, sem exceção.
@@ -1420,7 +1438,10 @@ assets/
 │                        inclui as tags, índices feitos à mão recebem as tags manualmente;
 │                        turmas-professor-repositorio.js + turmas-professor-pagina.js + css/
 │                        turmas-professor.css — turmas.html da raiz (menu TURMAS, só Professor
-│                        Administrador): CRUD da tabela `turmaprofessor`)
+│                        Administrador): CRUD da tabela `turmaprofessor`;
+│                        turmas-aluno-repositorio.js + turmas-aluno-pagina.js + css/
+│                        turmas-aluno.css — alunos.html da raiz (menu ALUNOS, todo professor):
+│                        CRUD da tabela `turmaaluno`)
 ├─ gerador-atividades/ → gerar_atividades.py + template_atividade.html: gera as páginas de
 │                        atividade de 50 questões e o index.html de qualquer pasta ATIVIDADES/
 ├─ gerador-atividade-excel/ → gerar_atividade_excel.py (+ desenho_excel.py, tela_excel.py,

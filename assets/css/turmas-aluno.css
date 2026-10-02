@@ -1,0 +1,6 @@
+/* Página alunos.html — CRUD de turmaaluno (reaproveita turmas-professor.css e criar-usuarios-comando.css) */
+.ta-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--tp-espaco);
+}

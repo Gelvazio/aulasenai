@@ -427,6 +427,25 @@ pelo conector do Supabase). **Plano:** `docs/tabela-turmaprofessor-professor-adm
 vínculos; INSERT/UPDATE/DELETE = **somente** o Professor Administrador. TRUNCATE revogado
 (`authenticated`/`anon`).
 
+### 🎒 Atualização 2026-10-02 — `turmaaluno` (aluno × turma)
+
+**Script:** `database/2026-10-02-turmaaluno.sql` (aplicado em 2026-10-02 pelo conector do
+Supabase). **Plano:** `docs/tabela-turmaaluno-menu-alunos.md`. Tela: `alunos.html` (menu ALUNOS).
+
+| Objeto | Tipo | Descrição |
+|--------|------|-----------|
+| `turmaaluno.id` | `bigint` identity (PK) | identificador do vínculo |
+| `turmaaluno.turma_codigo` | `text` → `turma.codigo` (on delete cascade) | turma |
+| `turmaaluno.aluno_id` | `uuid` → `auth.users.id` (on delete cascade) | aluno (perfil ALUNO obrigatório, conferido por trigger) |
+| `turmaaluno.criado_em` / `criado_por` | `timestamptz` / `uuid` | quando e quem cadastrou (`null` na carga inicial) |
+| `unique (turma_codigo, aluno_id)` | restrição | sem vínculo repetido |
+| `turmaaluno_exige_aluno()` | trigger | recusa vincular usuário sem perfil ALUNO |
+
+**RLS:** ligado; `anon` sem acesso; SELECT = professor vê tudo, aluno vê os próprios vínculos;
+INSERT/UPDATE/DELETE = **todo professor** (`eh_professor()`). TRUNCATE revogado. **Carga inicial:**
+106 vínculos copiados de `aluno.turma_codigo`. As funções de horário/tentativas continuam lendo a
+turma do `app_metadata`/`aluno` (unificar é tarefa futura).
+
 ---
 
 ## 🔐 Segurança: RLS (Row Level Security)
