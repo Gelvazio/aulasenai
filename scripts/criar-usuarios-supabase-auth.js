@@ -100,13 +100,14 @@ function montarUsuarios(lista, prefixoSenha) {
         senha: prefixoSenha + aluno.senha,
         appMetadata: ehAluno ? { perfil, turma_codigo: turma.codigo } : { perfil },
         userMetadata: { nome: aluno.nome, turma_codigo: turma.codigo, turma_nome: turma.nome },
+        // aluno.turma_codigo é cópia automática da turmaaluno (trigger): não vai aqui.
         linhaAluno: ehAluno ? {
           nome: aluno.nome,
           email: aluno.email,
-          turma_codigo: turma.codigo,
           numero_chamada: aluno.numero,
           na_chamada: aluno.naChamada,
         } : null,
+        turmaCodigo: ehAluno ? turma.codigo : null,
       };
     })
   );
@@ -237,27 +238,46 @@ async function gravarTabela(tabela, linhas, chaveServico) {
 }
 
 /**
+ * Grava os vínculos aluno × turma na turmaaluno (fonte única da turma do aluno); vínculo que já
+ * existe é ignorado. O banco copia a turma principal para aluno.turma_codigo e o app_metadata.
+ * @param {Object[]} vinculos - Linhas {turma_codigo, aluno_id}.
+ * @param {string} chaveServico - Chave service_role.
+ * @returns {Promise<void>}
+ */
+async function gravarVinculosTurmaAluno(vinculos, chaveServico) {
+  if (!vinculos.length) return;
+  await chamarApi(ROTA_REST + 'turmaaluno?on_conflict=turma_codigo,aluno_id', {
+    metodo: 'POST',
+    corpo: vinculos,
+    headers: { Prefer: 'resolution=ignore-duplicates,return=minimal' },
+  }, chaveServico);
+}
+
+/**
  * Grava todos os usuários no Auth, sem parar no primeiro erro.
  * @param {Object[]} usuarios - Usuários a gravar.
  * @param {{chaveServico: string, redefinirSenhas: boolean}} contexto - Chave e opções.
- * @returns {Promise<{resumo: Object, alunos: Object[]}>} Resumo e linhas da tabela aluno.
+ * @returns {Promise<{resumo: Object, alunos: Object[], vinculos: Object[]}>} Resumo, linhas da
+ *   tabela aluno e vínculos da turmaaluno.
  */
 async function gravarUsuarios(usuarios, contexto) {
   const existentes = await listarUsuariosExistentes(contexto.chaveServico);
   const resumo = { criado: 0, atualizado: 0, erro: 0 };
   const alunos = [];
+  const vinculos = [];
   for (const usuario of usuarios) {
     try {
       const { id, resultado } = await gravarUsuarioAuth(usuario, existentes, contexto);
       resumo[resultado] += 1;
       if (usuario.linhaAluno) alunos.push({ id, ...usuario.linhaAluno });
+      if (usuario.turmaCodigo) vinculos.push({ turma_codigo: usuario.turmaCodigo, aluno_id: id });
       console.log(resultado.padEnd(11) + usuario.email);
     } catch (erro) {
       resumo.erro += 1;
       console.error('erro       ' + usuario.email + ' → ' + erro.message);
     }
   }
-  return { resumo, alunos };
+  return { resumo, alunos, vinculos };
 }
 
 /**
@@ -298,8 +318,9 @@ async function principal() {
   }));
   await gravarTabela('turma', turmas, chaveServico);
   const contexto = { chaveServico, redefinirSenhas: opcoes.redefinirSenhas };
-  const { resumo, alunos } = await gravarUsuarios(usuarios, contexto);
+  const { resumo, alunos, vinculos } = await gravarUsuarios(usuarios, contexto);
   await gravarTabela('aluno', alunos, chaveServico);
+  await gravarVinculosTurmaAluno(vinculos, chaveServico);
   console.log('\nResumo:', resumo, '| alunos gravados na tabela aluno:', alunos.length);
   if (resumo.erro) process.exitCode = 1;
 }

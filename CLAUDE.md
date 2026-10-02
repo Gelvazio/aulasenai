@@ -1298,9 +1298,18 @@ SQL: `database/2026-10-02-turmaaluno.sql` (aplicado no banco).
   por turma e busca por nome; alunos = `usuario.perfil = 'ALUNO'`. Código:
   `assets/js/turmas-aluno-repositorio.js` + `assets/js/turmas-aluno-pagina.js` +
   `assets/css/turmas-aluno.css` (reaproveita `turmas-professor.css`).
-- ⚠️ Carga inicial: 106 vínculos copiados de `aluno.turma_codigo`. Horário e tentativas continuam
-  lendo a turma do `app_metadata`/`aluno`: mudar a turma em `alunos.html` **não** muda o horário do
-  aluno (unificar as fontes é tarefa futura).
+- ✅ **FONTE ÚNICA DA TURMA DO ALUNO = `turmaaluno`** (unificada em 2026-10-02; plano
+  `docs/unificar-turma-do-aluno-turmaaluno.md`, SQL `database/2026-10-02-turma-do-aluno-turmaaluno.sql`):
+  - horário de resposta (`horario_da_turma_do_aluno` / `dentro_do_horario_da_turma`, usados no RLS)
+    e líder (`definir_lider_turma`) leem a `turmaaluno`; aluno em várias turmas responde no horário
+    de **qualquer** uma;
+  - `aluno.turma_codigo` e `app_metadata.turma_codigo` são **cópias automáticas** da turma
+    principal (vínculo mais recente), mantidas pelo trigger `turmaaluno_sincronizar_principal_trg`.
+    ❌ **Nunca gravar nelas à mão**: para mudar a turma, gravar na `turmaaluno` (`alunos.html`);
+  - a criação de contas (`criar-usuarios-api.js`, `criar-usuarios-supabase-auth.js`) grava o
+    vínculo na `turmaaluno` e não envia `turma_codigo` para a tabela `aluno`;
+  - código novo que precise da turma do aluno lê a `turmaaluno` (ou a cópia `aluno.turma_codigo`,
+    só para leitura).
 
 ## 🔑 REGRA CRÍTICA — GABARITO COM AS RESPOSTAS CERTAS: SÓ O PROFESSOR
 

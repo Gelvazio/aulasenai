@@ -442,6 +442,43 @@
       <p>Documentação perfeita. Todos os campos, tipos e relacionamentos estão corretos.</p>
     </div>
 
+    <h2>🔗 Atualização 2026-10-02 — turma do aluno unificada na turmaaluno</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-02-turma-do-aluno-turmaaluno.sql</code> (aplicado em 2026-10-02)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Mudança</th>
+        </tr>
+        <tr>
+          <td>horario_da_turma_do_aluno()</td>
+          <td>Função</td>
+          <td>Lê a turmaaluno; uma linha por turma, primeiro as que estão no horário</td>
+        </tr>
+        <tr>
+          <td>dentro_do_horario_da_turma()</td>
+          <td>Função</td>
+          <td>Alguma turma do aluno no horário (sem turma = liberado)</td>
+        </tr>
+        <tr>
+          <td>definir_lider_turma(codigo, aluno)</td>
+          <td>Função</td>
+          <td>Confere o vínculo na turmaaluno</td>
+        </tr>
+        <tr>
+          <td>turmaaluno_sincronizar_principal_trg</td>
+          <td>Trigger</td>
+          <td>Copia a turma principal (vínculo mais recente) para aluno.turma_codigo e app_metadata.turma_codigo</td>
+        </tr>
+        <tr>
+          <td>Vínculos faltantes</td>
+          <td>Dados</td>
+          <td>19 alunos da turma 122552 copiados; total 125, sem divergências</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🎒 Atualização 2026-10-02 — turmaaluno (aluno × turma)</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-02-turmaaluno.sql</code> (aplicado em 2026-10-02) · Tela: <code>alunos.html</code> (menu ALUNOS)</p>

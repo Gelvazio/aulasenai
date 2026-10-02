@@ -70,13 +70,14 @@ function montarUsuarioDaLista(aluno, turma) {
             login_usuario: aluno.email.split('@')[0],
             perfil,
         },
+        // aluno.turma_codigo é cópia automática da turmaaluno (trigger): não vai aqui.
         linhaAluno: ehAluno ? {
             nome: aluno.nome,
             email: aluno.email,
-            turma_codigo: turma.codigo,
             numero_chamada: aluno.numero,
             na_chamada: aluno.naChamada,
         } : null,
+        turmaCodigo: ehAluno ? turma.codigo : null,
     };
 }
 
@@ -167,6 +168,22 @@ async function gravarTabelaUsuarios(tabela, linhas, chave) {
 }
 
 /**
+ * Grava os vínculos aluno × turma na turmaaluno (fonte única da turma do aluno); vínculo que já
+ * existe é ignorado. O banco copia a turma principal para aluno.turma_codigo e o app_metadata.
+ * @param {Object[]} vinculos - Linhas {turma_codigo, aluno_id}.
+ * @param {string} chave - Chave service_role.
+ */
+async function gravarVinculosTurmaAluno(vinculos, chave) {
+    if (!vinculos.length) return;
+
+    await chamarApiUsuarios(ROTA_REST_USUARIOS + 'turmaaluno?on_conflict=turma_codigo,aluno_id', {
+        metodo: 'POST',
+        corpo: vinculos,
+        headers: { Prefer: 'resolution=ignore-duplicates,return=minimal' },
+    }, chave);
+}
+
+/**
  * Grava cada usuário no Auth sem parar no primeiro erro.
  * @param {Object[]} usuarios - Usuários montados.
  * @param {{chave: string, redefinirSenhas: boolean}} contexto - Chave e opção.
@@ -179,19 +196,21 @@ async function gravarUsuariosNoAuth(usuarios, contexto, aoResultado) {
     const resumo = { criado: 0, atualizado: 0, erro: 0 };
     const alunos = [];
     const linhasUsuario = [];
+    const vinculos = [];
     for (const usuario of usuarios) {
         try {
             const { id, resultado } = await gravarUsuarioAuthPagina(usuario, existentes, contexto);
             resumo[resultado] += 1;
             linhasUsuario.push({ id, ...usuario.linhaUsuario });
             if (usuario.linhaAluno) alunos.push({ id, ...usuario.linhaAluno });
+            if (usuario.turmaCodigo) vinculos.push({ turma_codigo: usuario.turmaCodigo, aluno_id: id });
             aoResultado(resultado, usuario.email);
         } catch (erro) {
             resumo.erro += 1;
             aoResultado('erro (' + erro.message + ')', usuario.email);
         }
     }
-    return { resumo, alunos, linhasUsuario };
+    return { resumo, alunos, linhasUsuario, vinculos };
 }
 
 /**
@@ -213,10 +232,11 @@ async function gravarListaNoSupabase(lista, opcoes) {
     }));
     await gravarTabelaUsuarios('turma', turmas, chave);
     const contexto = { chave, redefinirSenhas: opcoes.redefinirSenhas };
-    const { resumo, alunos, linhasUsuario } = await gravarUsuariosNoAuth(
+    const { resumo, alunos, linhasUsuario, vinculos } = await gravarUsuariosNoAuth(
         usuarios, contexto, opcoes.aoResultado);
     await gravarTabelaUsuarios('usuario', linhasUsuario, chave);
     await gravarTabelaUsuarios('aluno', alunos, chave);
+    await gravarVinculosTurmaAluno(vinculos, chave);
     return resumo;
 }
 

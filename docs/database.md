@@ -443,8 +443,24 @@ Supabase). **Plano:** `docs/tabela-turmaaluno-menu-alunos.md`. Tela: `alunos.htm
 
 **RLS:** ligado; `anon` sem acesso; SELECT = professor vê tudo, aluno vê os próprios vínculos;
 INSERT/UPDATE/DELETE = **todo professor** (`eh_professor()`). TRUNCATE revogado. **Carga inicial:**
-106 vínculos copiados de `aluno.turma_codigo`. As funções de horário/tentativas continuam lendo a
-turma do `app_metadata`/`aluno` (unificar é tarefa futura).
+106 vínculos copiados de `aluno.turma_codigo`.
+
+### 🔗 Atualização 2026-10-02 — turma do aluno unificada na `turmaaluno`
+
+**Script:** `database/2026-10-02-turma-do-aluno-turmaaluno.sql` (aplicado em 2026-10-02).
+**Plano:** `docs/unificar-turma-do-aluno-turmaaluno.md`.
+
+| Objeto | Mudança |
+|--------|---------|
+| `horario_da_turma_do_aluno()` | lê a **`turmaaluno`**; uma linha por turma, primeiro as que estão no horário |
+| `dentro_do_horario_da_turma()` | verdadeiro se **alguma** turma do aluno está no horário (sem turma = liberado) |
+| `definir_lider_turma(codigo, aluno)` | confere o vínculo na `turmaaluno` |
+| `sincronizar_turma_principal_aluno(aluno)` + trigger `turmaaluno_sincronizar_principal_trg` | após insert/update/delete na `turmaaluno`, copia a **turma principal** (vínculo mais recente; sem vínculo = `null`) para `aluno.turma_codigo` e `app_metadata.turma_codigo` |
+| `aluno.turma_codigo` | agora é **cópia automática** — não gravar à mão |
+
+Vínculos que faltavam (19 alunos da turma 122552, contas criadas antes) foram copiados: total
+125. A criação de contas (`assets/js/criar-usuarios-api.js`, `scripts/criar-usuarios-supabase-auth.js`)
+grava o vínculo na `turmaaluno` (upsert) e não manda mais `turma_codigo` para a tabela `aluno`.
 
 ---
 
