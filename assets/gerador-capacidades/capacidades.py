@@ -1,4 +1,4 @@
-"""Capacidades da ementa nas avaliações: quadro no início e quadro em cada questão.
+"""Capacidades da ementa nas avaliações: quadro no início e caixa CAPACIDADE em cada questão.
 
 Usado por assets/gerador-atividades e assets/gerador-avaliacao-discursiva.
 Dados: campo "capacidades" do atividades.json da matéria ({"C1": "texto oficial", ...}).
@@ -12,7 +12,7 @@ CAMPO_DADOS = "capacidades"
 PADRAO_CAMPO_QUESTAO = re.compile(r"^-?\s*\*\*Capacidade:\*\*\s*(.+?)\s*$", re.MULTILINE)
 SEPARADOR_CODIGOS = re.compile(r"\s*[,;/]\s*")
 TITULO_INICIO = "CAPACIDADES"
-TITULO_QUESTAO = "CAPACIDADE"
+ROTULO_CAIXA_QUESTAO = "🎯 CAPACIDADE"
 CLASSE = "quadro-capacidades"
 
 
@@ -63,11 +63,11 @@ def codigos_usados(listas_de_codigos, capacidades):
 
 
 def html_quadro(capacidades, codigos, recuo):
-    """Monta o quadro com faixa de título e uma linha "C1 — texto" por capacidade.
+    """Monta o quadro "CAPACIDADES" do início: faixa de título e uma linha "C1 — texto" cada.
 
     Args:
         capacidades: Dicionário código → texto oficial.
-        codigos: Códigos a mostrar (o título fica no plural quando houver mais de um).
+        codigos: Códigos a mostrar.
         recuo: Espaços antes de cada linha do HTML.
 
     Returns:
@@ -75,11 +75,31 @@ def html_quadro(capacidades, codigos, recuo):
     """
     if not codigos:
         return ""
-    titulo = TITULO_INICIO if len(codigos) > 1 else TITULO_QUESTAO
     linhas = [f'{recuo}<div class="{CLASSE}">',
-              f'{recuo}    <div class="{CLASSE}__titulo">{titulo}</div>']
+              f'{recuo}    <div class="{CLASSE}__titulo">{TITULO_INICIO}</div>']
     for codigo in codigos:
         linhas.append(f'{recuo}    <p class="{CLASSE}__linha"><strong>{html.escape(codigo)} —'
                       f'</strong> {html.escape(capacidades[codigo])}</p>')
     linhas.append(f"{recuo}</div>")
     return "\n".join(linhas)
+
+
+def html_caixa_questao(capacidades, codigos, recuo):
+    """Monta a caixa "CAPACIDADE" da questão no mesmo formato da caixa CONTEXTO (content-box).
+
+    Args:
+        capacidades: Dicionário código → texto oficial.
+        codigos: Códigos da questão.
+        recuo: Espaços antes de cada linha do HTML.
+
+    Returns:
+        HTML da caixa ('' se a questão não tiver capacidade).
+    """
+    if not codigos:
+        return ""
+    texto = "<br>".join(f"{html.escape(codigo)} — {html.escape(capacidades[codigo])}"
+                        for codigo in codigos)
+    return "\n".join([f'{recuo}<div class="content-box">',
+                      f'{recuo}    <div class="content-label">{ROTULO_CAIXA_QUESTAO}</div>',
+                      f'{recuo}    <div class="content-text">{texto}</div>',
+                      f"{recuo}</div>"])

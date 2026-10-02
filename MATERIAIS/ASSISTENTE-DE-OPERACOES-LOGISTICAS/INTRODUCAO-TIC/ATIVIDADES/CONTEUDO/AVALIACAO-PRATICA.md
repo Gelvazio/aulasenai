@@ -278,7 +278,7 @@ Analise o cadastro conforme a LGPD.
 ## ITEM 16 — Estilos e Sumário Automático
 
 - **Aula:** 06 · Editor de Textos: Formatação e Estruturação
-- **Capacidade:** C1
+- **Capacidade:** C1, C4
 
 **Contexto:**
 Um colega formatou os títulos do relatório mensal apenas aumentando a fonte e colocando negrito. Agora o sumário automático não aparece e cada mudança precisa ser feita título por título.
@@ -312,7 +312,7 @@ Descreva a configuração do documento.
 ## ITEM 18 — Revisão Colaborativa e PDF
 
 - **Aula:** 06 · Editor de Textos: Formatação e Estruturação
-- **Capacidade:** C1
+- **Capacidade:** C1, C4
 
 **Contexto:**
 Você escreveu uma proposta de melhoria do layout do armazém. O supervisor vai revisá-la antes de ela ser enviada ao cliente.
@@ -329,7 +329,7 @@ Explique como revisar e entregar o documento.
 ## ITEM 19 — Reescrita Técnica
 
 - **Aula:** 07 · Textos Técnicos e Redação Empresarial
-- **Capacidade:** C1, C3
+- **Capacidade:** C1
 
 **Contexto:**
 Trecho de um relatório de incidente: "Achamos que a empilhadeira quebrou de novo por causa do pessoal que não cuida direito dela, foi um desastre total e demorou uma eternidade pra voltar."
@@ -415,7 +415,7 @@ Escreva as fórmulas e explique cada uma.
 ## ITEM 24 — Importação de CSV
 
 - **Aula:** 08 · Editor de Planilhas: Organização e Fórmulas
-- **Capacidade:** C3
+- **Capacidade:** C3, C4
 
 **Contexto:**
 Você exportou do WMS o arquivo pedidos.csv. Ao abrir na planilha, todos os dados ficaram na coluna A e o nome "Conceição" apareceu como "ConceiÃ§Ã£o".
@@ -483,7 +483,7 @@ Analise o gráfico do ponto de vista ético.
 ## ITEM 28 — Narrativa e Slide Mestre
 
 - **Aula:** 10 · Editor de Apresentações e TIC
-- **Capacidade:** C1
+- **Capacidade:** C1, C4
 
 **Contexto:**
 Você vai apresentar à diretoria, em 10 minutos, o resultado de um projeto que reduziu os atrasos na expedição.
@@ -500,7 +500,7 @@ Planeje a apresentação.
 ## ITEM 29 — Integração Planilha e Apresentação
 
 - **Aula:** 10 · Editor de Apresentações e TIC
-- **Capacidade:** C1, C3
+- **Capacidade:** C3, C4
 
 **Contexto:**
 O gráfico de entregas da planilha muda toda semana, e o gerente quer que o slide da reunião semanal mostre sempre os números atualizados.

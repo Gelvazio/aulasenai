@@ -1416,8 +1416,9 @@ assets/
 │                        marcador só com `--forcar`. Mudou a composição = editar o json e rodar de novo.
 ├─ css/menu.css        → estilos do menu de atividades (montado por js/menu.js)
 ├─ gerador-capacidades/ → capacidades.py + css/capacidades.css: quadro "CAPACIDADES" no início e
-│                        quadro "CAPACIDADE" em cada questão das avaliações (gerador-atividades e
-│                        gerador-avaliacao-discursiva). Questão: `- **Capacidade:** C1` ou
+│                        caixa "🎯 CAPACIDADE" (igual à de CONTEXTO) em cada questão das atividades
+│                        e avaliações (gerador-atividades e gerador-avaliacao-discursiva); o PDF
+│                        (assets/js/atividade.js) leva os dois. Questão: `- **Capacidade:** C1` ou
 │                        `C1, C3` no .md; textos oficiais no campo `capacidades` do
 │                        atividades.json da matéria (código inexistente = erro).
 └─ gerador-menu/       → tags_menu.py: monta as tags do menu para o <head>; usado pelos três

@@ -210,7 +210,7 @@ def aplicar_capacidades(meta, itens, dados, assets):
     tabela = dados.get(cap.CAMPO_DADOS, {})
     for it in itens:
         cap.validar_codigos(tabela, it["capacidades"], f"ITEM {it['num']}")
-        it["quadro"] = cap.html_quadro(tabela, it["capacidades"], RECUO_QUADRO)
+        it["quadro"] = cap.html_caixa_questao(tabela, it["capacidades"], RECUO_QUADRO)
     inicio = cap.html_quadro(tabela, cap.codigos_usados(usados, tabela), RECUO_QUADRO)
     return inicio, f'\n    <link rel="stylesheet" href="{assets}/css/capacidades.css">'
 

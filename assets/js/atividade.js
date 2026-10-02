@@ -69,8 +69,7 @@ function desenharCapacidadesPDF(doc, yPos, margin) {
 function coletarQuestoes() {
     const questoes = [];
     document.querySelectorAll('.aula-card.questao').forEach(card => {
-        const linhas = lerLinhasCapacidadesPDF(card.querySelector('.quadro-capacidades'))
-            .map((linha) => ({ texto: 'CAPACIDADE: ' + linha, negrito: true }));
+        const linhas = [];
         card.querySelectorAll('.content-box').forEach(box => {
             const rotulo = textoPDF(box.querySelector('.content-label')?.textContent);
             const itens = box.querySelectorAll('.alternativas li');

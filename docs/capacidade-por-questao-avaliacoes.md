@@ -99,3 +99,17 @@ matéria (C1, C2...). Os textos não são inventados nem alterados.
   regeneração não mudou nenhuma página (conferido no `git diff`).
 - O gerador discursivo também aceita a fonte na raiz de `ATIVIDADES/` (caso do `PROVA-PRATICA.md`).
 - Seeds regenerados em `database/` (fora do Git) sem mudança nos tópicos: não é preciso rodar.
+
+## Atualização 2026-10-02 — atividades, caixa na questão e classificação item a item
+
+- A pedido do professor, a capacidade da questão virou uma **caixa "🎯 CAPACIDADE" no mesmo
+  formato da caixa CONTEXTO** (o quadro azul "CAPACIDADES" fica só no início).
+- Estendido às **atividades de 50 questões** das duas matérias (16 páginas pelo gerador; a Aula 03
+  de Introdução à TIC não tem fonte `.md`, então as caixas foram inseridas direto no HTML).
+- **Classificação revista questão a questão** pelo conteúdo, conforme a seção "Capacidades ×
+  Conhecimentos" da ementa (ex.: backup e senhas → C2; e-mail → C1 e C5; normas técnicas → C3;
+  recursos do editor/planilha/apresentação → C4; cálculos no Excel → C1 e C2).
+- Antes de incluir as capacidades, todas as páginas foram regeneradas e ficaram idênticas; depois,
+  o `git diff` só mostra as caixas/quadros de capacidade (questões e alternativas intactas).
+- PDF: o quadro "CAPACIDADES" sai depois do cabeçalho, e a caixa de cada questão entra como
+  "CAPACIDADE: C1 — ..." (lida como as demais caixas).
