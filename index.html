@@ -3,84 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="gerador" content="gerador-indices">
-    <title>📚 Índice de Atividades</title>
+    <title>📚 Cursos — SENAI</title>
     <link rel="stylesheet" href="assets/css/indice-atividades.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="js/supabase.js" defer></script>
     <script src="js/header-usuario.js" defer></script>
+    <script src="assets/js/indice-cursos.js" defer></script>
 </head>
 <body>
-<div id="header-usuario"></div>
-    <div class="container">        
-        <div class="resumo"><span>6 cursos</span></div>
-        <section class="grade">
-        <article class="aula">
-            <div class="topo">
-                <span class="icone">🎓</span>
-                <div>
-                    <div class="num">CURSO</div>
-                    <h2>ASSISTENTE DE OPERACOES LOGISTICAS</h2>
-                </div>
-            </div>
-            <p class="meta">1 matérias · 1 com atividades</p>
-            <div class="acoes"><a class="btn principal" href="MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/index.html">📂 Matérias</a></div>
-        </article>
-        <article class="aula">
-            <div class="topo">
-                <span class="icone">🎓</span>
-                <div>
-                    <div class="num">CURSO</div>
-                    <h2>GESTAO E CONTROLE MATERIAIS</h2>
-                </div>
-            </div>
-            <p class="meta">1 matérias · 1 com atividades</p>
-            <div class="acoes"><a class="btn principal" href="MATERIAIS/GESTAO_E_CONTROLE_MATERIAIS/index.html">📂 Matérias</a></div>
-        </article>
-        <article class="aula">
-            <div class="topo">
-                <span class="icone">🎓</span>
-                <div>
-                    <div class="num">CURSO</div>
-                    <h2>OPERADOR PRODUCAO INDUSTRIAL</h2>
-                </div>
-            </div>
-            <p class="meta">1 matérias · 1 com atividades</p>
-            <div class="acoes"><a class="btn principal" href="MATERIAIS/OPERADOR_PRODUCAO_INDUSTRIAL/index.html">📂 Matérias</a></div>
-        </article>
-        <article class="aula">
-            <div class="topo">
-                <span class="icone">🎓</span>
-                <div>
-                    <div class="num">CURSO</div>
-                    <h2>QUALIFICACAO PROFISSIONAL</h2>
-                </div>
-            </div>
-            <p class="meta">3 matérias · 0 com atividades</p>
-            <div class="acoes"><a class="btn principal" href="MATERIAIS/QUALIFICACAO-PROFISSIONAL/index.html">📂 Matérias</a></div>
-        </article>
-        <article class="aula">
-            <div class="topo">
-                <span class="icone">🎓</span>
-                <div>
-                    <div class="num">CURSO</div>
-                    <h2>RIO DO SUL MAIS TECH</h2>
-                </div>
-            </div>
-            <p class="meta">7 matérias · 1 com atividades</p>
-            <div class="acoes"><a class="btn principal" href="MATERIAIS/RIO_DO_SUL_MAIS_TECH/index.html">📂 Matérias</a></div>
-        </article>
-        <article class="aula">
-            <div class="topo">
-                <span class="icone">🎓</span>
-                <div>
-                    <div class="num">CURSO</div>
-                    <h2>TECNICO INFORMATICA INTERNET</h2>
-                </div>
-            </div>
-            <p class="meta">1 matérias · 0 com atividades</p>
-            <div class="acoes"><a class="btn principal" href="MATERIAIS/TECNICO-INFORMATICA-INTERNET/index.html">📂 Matérias</a></div>
-        </article>
-        </section>
-        <footer>SENAI — Índice de Atividades</footer>
-    </div>
+    <div id="header-usuario"></div>
+    <main class="container">
+        <header>
+            <h1>📚 Cursos</h1>
+            <p>Selecione um curso para acessar suas matérias e atividades.</p>
+        </header>
+        <div class="resumo" id="resumo-cursos" aria-live="polite">Carregando cursos…</div>
+        <section class="grade" id="lista-cursos" aria-label="Lista de cursos" aria-busy="true"></section>
+        <footer>SENAI — Cursos</footer>
+    </main>
+    <script type="application/json" id="rotas-cursos">
+        {
+            "assistente de operacoes logisticas": "MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/index.html",
+            "gestao e controle materiais": "MATERIAIS/GESTAO_E_CONTROLE_MATERIAIS/index.html",
+            "operador producao industrial": "MATERIAIS/OPERADOR_PRODUCAO_INDUSTRIAL/index.html",
+            "operador de producao industrial": "MATERIAIS/OPERADOR_PRODUCAO_INDUSTRIAL/index.html",
+            "qualificacao profissional": "MATERIAIS/QUALIFICACAO-PROFISSIONAL/index.html",
+            "rio do sul mais tech": "MATERIAIS/RIO_DO_SUL_MAIS_TECH/index.html",
+            "rio do sul mais tech senai": "MATERIAIS/RIO_DO_SUL_MAIS_TECH/index.html",
+            "tecnico informatica internet": "MATERIAIS/TECNICO-INFORMATICA-INTERNET/index.html",
+            "tecnico em informatica para internet": "MATERIAIS/TECNICO-INFORMATICA-INTERNET/index.html",
+            "tecnico desenvolvimento de sistemas": "MATERIAIS/TECNICO-DESENVOLVIMENTO-SISTEMAS/index.html",
+            "tecnico em desenvolvimento de sistemas": "MATERIAIS/TECNICO-DESENVOLVIMENTO-SISTEMAS/index.html"
+        }
+    </script>
 </body>
 </html>
