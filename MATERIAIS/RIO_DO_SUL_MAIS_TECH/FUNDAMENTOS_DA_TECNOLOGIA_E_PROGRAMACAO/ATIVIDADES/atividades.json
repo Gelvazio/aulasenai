@@ -2,5 +2,14 @@
   "uc": "Fundamentos da Tecnologia e Programação",
   "uc_curta": "Fundamentos da Tecnologia",
   "curso": "Rio do Sul Mais Tech",
-  "docente": "Gelvazio Camargo"
+  "docente": "Gelvazio Camargo",
+  "capacidades": {
+    "C1": "Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.",
+    "C2": "Compreender como os diferentes dispositivos interagem, desde computadores até dispositivos móveis.",
+    "C3": "Desenvolver a habilidade de pensar de forma lógica, sequencial e estruturada para resolver problemas através de código.",
+    "C4": "Aprender a desenvolver e entender algoritmos simples para resolver problemas.",
+    "C5": "Aprender a interagir com o usuário ou com outros sistemas através de entrada e saída de dados.",
+    "C6": "Desenvolver a capacidade de pensar criativamente sobre como solucionar problemas de forma inovadora utilizando tecnologia.",
+    "C7": "Refletir sobre as implicações éticas e sociais das tecnologias."
+  }
 }

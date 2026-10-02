@@ -113,3 +113,14 @@ matéria (C1, C2...). Os textos não são inventados nem alterados.
   o `git diff` só mostra as caixas/quadros de capacidade (questões e alternativas intactas).
 - PDF: o quadro "CAPACIDADES" sai depois do cabeçalho, e a caixa de cada questão entra como
   "CAPACIDADE: C1 — ..." (lida como as demais caixas).
+
+## Atualização 2026-10-02 — Fundamentos da Tecnologia e Programação
+
+- 5 atividades de 50 questões com o quadro "CAPACIDADES" e a caixa "🎯 CAPACIDADE" em cada questão.
+- Capacidades C1 a C7 = as 7 capacidades básicas/técnicas da UC 2 no
+  `EMENTA-PRINCIPAL-RIO_DO_SUL_MAIS_TECH.md` (fonte da verdade), na ordem da ementa.
+- ⚠️ Divergência avisada ao professor: o `EMENTA-CHALKIE-AI.md` da matéria lista 10 capacidades
+  (ex.: "Agir com cidadania digital e segurança", "Produzir textos, apresentações e planilhas"),
+  que não existem na ementa do curso. Questões de segurança/cidadania foram ligadas à C7 (ética e
+  implicações sociais) e as de editor/atalhos/navegador à C1 (computadores e dispositivos).
+- Regeneração sem capacidades = páginas idênticas; depois, o diff só mostra as capacidades.
