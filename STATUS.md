@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 2, item 2.9 — escrever o capítulo 10 da apostila da ITIC.
+**Próximo passo:** Etapa 2, item 2.10 — Testes de Frontend: ler as ementas e montar o materia.json.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -39,8 +39,8 @@ Cada capítulo: fonte `CAPITULO-NN.md` → `--markdown` (conferência 100%) → 
 | 2.6 | ITIC — capítulo 07 (Textos Técnicos) | ✅ Concluído | 2026-10-03 | Conferência 201/201 · commit `ffcd0f7` |
 | 2.7 | ITIC — capítulo 08 (Planilhas: Organização e Fórmulas) | ✅ Concluído | 2026-10-03 | Conferência 201/201 · commit `0b55ea4` |
 | 2.8 | ITIC — capítulo 09 (Planilhas: Análise Visual e Gráficos) | ✅ Concluído | 2026-10-03 18:54 | Conferência 201/201 · sem avisos · HTML gerado |
-| 2.9 | ITIC — capítulo 10 (Editor de Apresentações e TIC + Avaliação) | 🔄 Em progresso | — | — |
-| 2.10 | Testes de Frontend — ler a ementa da matéria e a UC na ementa do curso; `materia.json` completo e literal | ⬜ Pendente | — | — |
+| 2.9 | ITIC — capítulo 10 (Editor de Apresentações e TIC + Avaliação) | ✅ Concluído | 2026-10-03 18:56 | Conferência 201/201 · sem avisos · 10/10 capítulos no plano |
+| 2.10 | Testes de Frontend — ler a ementa da matéria e a UC na ementa do curso; `materia.json` completo e literal | 🔄 Em progresso | — | — |
 | 2.11 | Testes de Frontend — `INTRODUCAO.md`, Markdown completo e conferência 100% | ⬜ Pendente | — | — |
 | 2.12 | Testes de Frontend — capítulos 01 a 10 (um por vez, com commit e status a cada um) | ⬜ Pendente | — | — |
 | 2.13 | Testes de Frontend — item "Apostila" no menu, status final | ⬜ Pendente | — | — |
