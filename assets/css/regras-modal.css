@@ -41,6 +41,8 @@
     border-bottom: 3px solid var(--regras-laranja);
 }
 .regras-modal__titulo { margin: 0; font-size: 18px; }
+.regras-modal__cabecalho { display: flex; flex-direction: column; gap: 2px; }
+.regras-modal__versao { font-size: 13px; font-weight: 600; color: var(--regras-laranja); }
 .regras-modal__fechar {
     border: none;
     border-radius: 50%;

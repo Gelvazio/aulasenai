@@ -1,5 +1,35 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
+**Versão das regras:** 2026-10-03 17:22
+
+## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
+
+| Versão (data e hora) | O que mudou |
+|---|---|
+| 2026-10-03 17:22 | Regra "VISUALIZADOR DE REGRAS ATUALIZADO JUNTO COM O CLAUDE.md" e controle de versão com data e hora (linha acima + este histórico); o visualizador passa a mostrar a versão e a recarregar as regras a cada abertura |
+| 2026-10-03 | Regras de aulas uma por vez (`STATUS-AULAS.md`), 1 atividade objetiva de 50 questões por aula (`STATUS-ATIVIDADES.md`) e decisões da fila de geração |
+| 2026-09-30 | Versão 1.1 (registro anterior ao controle por data e hora) |
+
+---
+
+## 🔄 REGRA CRÍTICA — VISUALIZADOR DE REGRAS ATUALIZADO JUNTO COM O CLAUDE.md
+
+⚠️ **Sempre que este `CLAUDE.md` for atualizado, o visualizador de regras (menu Regras do header)
+também deve ser verificado e atualizado junto, para o usuário ver sempre as regras mais atuais.**
+Registrada em 2026-10-03 a pedido do usuário.
+
+- ✅ **Cada versão tem data e hora:** a cada alteração deste arquivo, atualizar a linha
+  `**Versão das regras:** AAAA-MM-DD HH:MM` (topo) e acrescentar **no início** do
+  "HISTÓRICO DE VERSÕES DAS REGRAS" uma linha com a mesma data e hora e o que mudou.
+- ✅ **Verificar o visualizador a cada atualização:** `assets/js/regras-modal.js` (+
+  `assets/css/regras-modal.css`, acionado por `js/header-usuario.js`) deve continuar lendo este
+  arquivo, mostrar a versão (data e hora) no topo do modal e montar o índice com todas as seções
+  `##`. Se a mudança no `CLAUDE.md` quebrar algo do visualizador (formato da linha de versão,
+  títulos, tabelas), corrigir o visualizador **na mesma tarefa**.
+- ✅ O visualizador busca o `CLAUDE.md` sem cache **toda vez que o modal é aberto** (nada de
+  cópia antiga em memória).
+- ✅ O commit da tarefa inclui o `CLAUDE.md` e, quando alterados, os arquivos do visualizador.
+
 ---
 
 ## 🚫 REGRAS DO USUÁRIO QUE VALEM SEMPRE (2026-09-30)
@@ -2110,8 +2140,7 @@ faltava. Vale para **todas as matérias**.
 
 ---
 
-**Versão:** 1.1  
-**Data:** 2026-09-30  
+**Versão:** ver "Versão das regras" e o histórico no topo deste arquivo  
 **Status:** ✅ Ativo
 
 

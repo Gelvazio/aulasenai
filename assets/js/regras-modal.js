@@ -13,6 +13,9 @@ const TEXTO_CARREGANDO_REGRAS = "Carregando regras…";
 const TEXTO_ERRO_REGRAS = "Não foi possível carregar o CLAUDE.md.";
 const TEXTO_INDICE_REGRAS = "Seções";
 const TEXTO_FILTRO_REGRAS = "Filtrar seções…";
+const TEXTO_VERSAO_REGRAS = "Versão das regras: ";
+const TEXTO_SEM_VERSAO_REGRAS = "Versão das regras: não informada no CLAUDE.md";
+const PADRAO_VERSAO_REGRAS = /\*\*Versão das regras:\*\*\s*([^\n]+)/;
 
 const urlScriptRegras = document.currentScript?.src || "";
 
@@ -73,7 +76,12 @@ function criarEstruturaModalRegras() {
   fechar.type = "button";
   fechar.setAttribute("aria-label", "Fechar");
   fechar.addEventListener("click", () => modal.close());
-  topo.append(criarElementoRegras("h2", "regras-modal__titulo", TITULO_MODAL_REGRAS), fechar);
+  const cabecalho = criarElementoRegras("div", "regras-modal__cabecalho");
+  cabecalho.append(
+    criarElementoRegras("h2", "regras-modal__titulo", TITULO_MODAL_REGRAS),
+    criarElementoRegras("span", "regras-modal__versao", TEXTO_CARREGANDO_REGRAS)
+  );
+  topo.append(cabecalho, fechar);
 
   const corpo = criarElementoRegras("div", "regras-modal__corpo");
   const indice = criarElementoRegras("nav", "regras-modal__indice");
@@ -90,18 +98,32 @@ function criarEstruturaModalRegras() {
 }
 
 /**
- * Busca o CLAUDE.md e devolve o HTML seguro (Markdown → HTML → DOMPurify).
+ * Lê a versão (data e hora) declarada no CLAUDE.md pela linha "**Versão das regras:**".
+ * @param {string} markdown - Texto do CLAUDE.md.
+ * @returns {string} Texto da versão para o topo do modal.
+ */
+function extrairVersaoRegras(markdown) {
+  const achou = markdown.match(PADRAO_VERSAO_REGRAS);
+  if (!achou) return TEXTO_SEM_VERSAO_REGRAS;
+  return TEXTO_VERSAO_REGRAS + achou[1].trim();
+}
+
+/**
+ * Busca o CLAUDE.md (sempre sem cache) e devolve o HTML seguro e a versão das regras.
  * @param {string} urlClaudeMd - Endereço do CLAUDE.md.
- * @returns {Promise<string>} HTML sanitizado.
+ * @returns {Promise<{html: string, versao: string}>} HTML sanitizado e texto da versão.
  * @throws {Error} Se o arquivo não puder ser lido.
  */
-async function obterHtmlRegras(urlClaudeMd) {
+async function obterRegras(urlClaudeMd) {
   await carregarScriptRegras(URL_MARKED_REGRAS);
   await carregarScriptRegras(URL_DOMPURIFY_REGRAS);
   const resposta = await fetch(urlClaudeMd, { cache: "no-store" });
   if (!resposta.ok) throw new Error(TEXTO_ERRO_REGRAS);
   const markdown = await resposta.text();
-  return window.DOMPurify.sanitize(window.marked.parse(markdown));
+  return {
+    html: window.DOMPurify.sanitize(window.marked.parse(markdown)),
+    versao: extrairVersaoRegras(markdown),
+  };
 }
 
 /**
@@ -161,8 +183,12 @@ function montarIndiceRegras(indice, conteudo) {
 async function preencherModalRegras(modal, urlClaudeMd) {
   const indice = modal.querySelector(".regras-modal__indice");
   const conteudo = modal.querySelector(".regras-modal__conteudo");
+  const versao = modal.querySelector(".regras-modal__versao");
+  conteudo.textContent = TEXTO_CARREGANDO_REGRAS;
   try {
-    conteudo.innerHTML = await obterHtmlRegras(urlClaudeMd);
+    const regras = await obterRegras(urlClaudeMd);
+    versao.textContent = regras.versao;
+    conteudo.innerHTML = regras.html;
     conteudo.querySelectorAll("a[href^='http']").forEach((link) => {
       link.target = "_blank";
       link.rel = "noopener";
@@ -170,23 +196,19 @@ async function preencherModalRegras(modal, urlClaudeMd) {
     montarIndiceRegras(indice, conteudo);
   } catch (erro) {
     console.error("Erro ao carregar as regras:", erro);
+    versao.textContent = "";
     conteudo.textContent = TEXTO_ERRO_REGRAS;
   }
 }
 
 /**
- * Abre o modal das regras; na primeira vez, cria a estrutura e carrega o CLAUDE.md.
+ * Abre o modal das regras e recarrega o CLAUDE.md a cada abertura (sempre a versão mais atual);
+ * a estrutura do modal é criada só na primeira vez.
  * @param {string} urlClaudeMd - Endereço do CLAUDE.md da raiz do projeto.
  */
 async function abrirModalRegras(urlClaudeMd) {
   incluirCssRegras();
-  const existente = document.getElementById(ID_MODAL_REGRAS);
-  if (existente) {
-    existente.showModal();
-    return;
-  }
-
-  const modal = criarEstruturaModalRegras();
+  const modal = document.getElementById(ID_MODAL_REGRAS) || criarEstruturaModalRegras();
   modal.showModal();
   await preencherModalRegras(modal, urlClaudeMd);
 }
