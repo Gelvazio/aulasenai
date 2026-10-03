@@ -55,7 +55,7 @@ function dadosDaPagina() {
     };
 }
 
-const PERFIL_PROFESSOR_PDF = 'PROFESSOR';
+const PERFIL_DOCENTE_LOGADO_PDF = 'PROFESSOR';
 
 /**
  * Nome do docente logado (perfil PROFESSOR no app_metadata) para o cabeçalho do PDF.
@@ -68,7 +68,7 @@ async function obterDocenteLogadoPDF() {
         const cliente = await obterClienteSupabase();
         const { data } = await cliente.auth.getSession();
         const usuario = data?.session?.user;
-        if (usuario?.app_metadata?.perfil !== PERFIL_PROFESSOR_PDF) return null;
+        if (usuario?.app_metadata?.perfil !== PERFIL_DOCENTE_LOGADO_PDF) return null;
         return usuario.user_metadata?.nome || usuario.email || null;
     } catch (erro) {
         console.warn('Não foi possível ler o docente logado:', erro);
