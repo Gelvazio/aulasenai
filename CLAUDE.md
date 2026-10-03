@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-03 19:04
+**Versão das regras:** 2026-10-03 20:47
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-03 20:47 | Regra "CONTEÚDO SÓ PELOS MARKDOWNS": para conferir ou gerar conteúdo, ler sempre os arquivos Markdown da matéria (em primeiro lugar o `EMENTA-CHALKIE-AI.md`) e **nunca extrair dados de PDF**; fonte da atividade prática de Excel ajustada |
 | 2026-10-03 19:04 | Apostilas: conferência com a ementa aceita os formatos de ementa das diferentes matérias (ex.: Testes de Frontend) e **reprova** seção da ementa não reconhecida; Markdown completo pode ser montado antes do 1º capítulo; introdução com "Competência integradora" ou "Situações de aprendizagem", conforme a ementa |
 | 2026-10-03 18:14 | Permissão por matéria: seção `STATUS-PERMISSAO-MATERIA` no `STATUS-EMENTAS-CURSOS.md` (matéria só vale com curso e matéria em `VERIFICAR`); no Técnico em Informática para Internet só `TESTES-DE-FRONTEND` fica em `VERIFICAR` |
 | 2026-10-03 17:22 | Regra "VISUALIZADOR DE REGRAS ATUALIZADO JUNTO COM O CLAUDE.md" e controle de versão com data e hora (linha acima + este histórico); o visualizador passa a mostrar a versão e a recarregar as regras a cada abertura |
@@ -51,6 +52,30 @@ Registrada em 2026-10-03 a pedido do usuário.
   `<MATERIA>/ATIVIDADES/STATUS-ATIVIDADES.md` (ver a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES").
 - ⛔ **NUNCA fazer push** (2026-10-01): o push é feito **só pelo usuário, localmente**. Mesmo que
   ele peça "faça push", não executar `git push`; avisar que o commit está pronto para ele enviar.
+- ⛔ **Conteúdo só pelos Markdowns, nunca de PDF** (2026-10-03): para conferir ou gerar conteúdo,
+  ler os `.md` da matéria — em primeiro lugar o `EMENTA-CHALKIE-AI.md` (ver a regra "CONTEÚDO SÓ
+  PELOS MARKDOWNS").
+
+---
+
+## 📄 REGRA CRÍTICA — CONTEÚDO SÓ PELOS MARKDOWNS (NUNCA EXTRAIR DADOS DE PDF)
+
+⚠️ **Para conferir o conteúdo de uma matéria, ler SEMPRE os arquivos Markdown — em primeiro lugar
+o `EMENTA-CHALKIE-AI.md` da matéria. Nunca extrair dados de PDF.** Registrada em 2026-10-03 a
+pedido do usuário. Vale para todas as matérias e para todo material (aulas, atividades,
+avaliações, apostilas, planos, slides e conferências).
+
+- ✅ **Fonte para conferir e para gerar:** o `EMENTA-CHALKIE-AI.md` da matéria (que segue a UC da
+  `EMENTA-PRINCIPAL-<CURSO>.md`, também em Markdown — a ementa do curso vence) e o `materia.json`
+  copiado dela.
+- ✅ **Apoio (sempre abaixo da ementa, que vence):** os demais `.md` da matéria — `AULAS/AULA-NN.md`,
+  `DOCUMENTACAO/*.md`, `APOSTILA/CONTEUDO/*.md`, `ATIVIDADES/ATIVIDADE-PRATICA-AULA-NN.md` etc.
+- ⛔ **Nunca extrair dados de PDF** (`AULA-NN-SLIDES.pdf`, `PLANO-ENSINO.pdf`, ementas ou apostilas
+  em PDF): não abrir, não ler e não usar PDF como fonte de conteúdo nem de conferência.
+- ✅ O PDF continua só como **material de apresentação** (links nas aulas e nos índices).
+- ✅ Se alguma informação necessária só existir em PDF, **avisar o usuário** em vez de extrair.
+- ✅ Converter um documento de origem em Markdown continua acontecendo **só quando o usuário pede**
+  (ex.: criar ou refazer a `EMENTA-PRINCIPAL-<CURSO>.md`).
 
 ---
 
@@ -1687,8 +1712,9 @@ Gerador reutilizável: `assets/gerador-atividade-excel/gerar_atividade_excel.py 
 
 - ✅ **Plano primeiro:** antes do HTML, criar `ATIVIDADE-EXCEL-<DD-MM-AAAA>.md` com tudo o que será
   feito (questões, passos, imagens, tempos, pontuação, gabarito) e **aguardar aprovação**.
-- ✅ **Fonte:** os slides/Markdown das aulas indicadas e o `EMENTA-CHALKIE-AI.md` da matéria (a
-  ementa vence). Contexto profissional do curso (ex.: almoxarifado), empresa **fictícia**.
+- ✅ **Fonte:** o Markdown das aulas indicadas e o `EMENTA-CHALKIE-AI.md` da matéria (a ementa
+  vence; nunca extrair de PDF — regra "CONTEÚDO SÓ PELOS MARKDOWNS"). Contexto profissional do
+  curso (ex.: almoxarifado), empresa **fictícia**.
 - ✅ **Tempo realista:** somar o tempo de cada questão + abertura + entrega e caber na duração
   pedida (ex.: 3h a 3h30). Tabela de tempos no plano e na capa.
 - ✅ **Arquivos:** uma capa `ATIVIDADE-EXCEL-<data>.html` (contexto, tempos, pontuação, links) e
