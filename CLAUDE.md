@@ -15,6 +15,8 @@
 - ✅ **Aulas: uma por vez, completa** (2026-10-03): gerar e gravar uma aula (e todo o seu material)
   antes de passar à próxima, controlando em `<MATERIA>/AULAS/STATUS-AULAS.md` (ver a regra
   "GERAR E GRAVAR UMA AULA POR VEZ").
+- ✅ **1 atividade objetiva de 50 questões por aula** (2026-10-03), controlada em
+  `<MATERIA>/ATIVIDADES/STATUS-ATIVIDADES.md` (ver a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES").
 - ⛔ **NUNCA fazer push** (2026-10-01): o push é feito **só pelo usuário, localmente**. Mesmo que
   ele peça "faça push", não executar `git push`; avisar que o commit está pronto para ele enviar.
 
@@ -1696,6 +1698,32 @@ Vale para **todas as aulas de todas as matérias**. Registrada em 2026-10-03 a p
 - ✅ Aplicar o seed no Supabase continua dependendo de pedido do usuário (registrar no status).
 - ⚠️ Respeita `STATUS-PERMISSAO-EMENTA`, matérias semelhantes e a exceção de
   `QUALIFICACAO-PROFISSIONAL/`.
+
+## 📝 REGRA CRÍTICA — 1 ATIVIDADE OBJETIVA DE 50 QUESTÕES POR AULA + `ATIVIDADES/STATUS-ATIVIDADES.md`
+
+⚠️ **Toda aula de toda matéria deve ter 1 atividade objetiva de 50 questões** (múltipla escolha
+A–D), e **cada pasta `ATIVIDADES/` de matéria tem o arquivo `STATUS-ATIVIDADES.md`** com o controle
+dessas atividades. Registrada em 2026-10-03 a pedido do usuário.
+
+- ✅ **Atividade objetiva da aula** = `ATIVIDADES/ATIVIDADES-AULA-NN-50-QUESTOES.html` (nomes antigos
+  já publicados, como `ATIVIDADES-N-TEMA-50-QUESTOES.html` ou com data, continuam valendo), com
+  **exatamente 50 questões**, fonte em `ATIVIDADES/CONTEUDO/*-50-QUESTOES.md` (fora do Git, tem
+  gabarito), gerada por `assets/gerador-atividades/gerar_atividades.py`, com folha de respostas no
+  banco (`- **Folha de respostas:** sim`) e cadastro em `atividade` + `gabarito` (seed).
+- ❌ Página com menos de 50 questões **não conta** como a atividade objetiva da aula (fica ⚠️ no
+  status até ser completada); práticas, avaliações e atividades de Excel são **adicionais**.
+- ✅ **`STATUS-ATIVIDADES.md`**: uma linha por aula (aula, tema, página, nº de questões, fonte,
+  banco, status) e a lista das demais atividades da pasta. Atualizar **sempre** que uma atividade
+  for criada, alterada, cadastrada no banco ou liberada/bloqueada; criar o arquivo se não existir.
+- ✅ Gerar as que faltam seguindo a regra "UMA AULA POR VEZ, COMPLETA" (fonte → HTML → conferência
+  de 50 itens e gabarito ausente → índice → seed), atualizando o `STATUS-ATIVIDADES.md` e o
+  `AULAS/STATUS-AULAS.md` a cada aula. Gerar em massa continua exigindo plano em `docs/` e aprovação;
+  aplicar o seed no Supabase só com pedido do usuário.
+- ✅ As questões seguem a aula (`AULAS/`) e o `EMENTA-CHALKIE-AI.md` (a ementa vence); gabarito com
+  letras equilibradas (12–13 de cada) e posição sorteada.
+- ⚠️ Respeita `STATUS-PERMISSAO-EMENTA` e matérias semelhantes. Em `QUALIFICACAO-PROFISSIONAL/` a
+  ementa é só do professor: as atividades usam as aulas/ementa como **leitura**, e matéria sem aulas
+  definidas fica aguardando o professor.
 
 ## 📊 REGRA — `dashboard.html` EM CADA PASTA DE MATÉRIA
 
