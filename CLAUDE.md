@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-03 20:47
+**Versão das regras:** 2026-10-03 20:55
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-03 20:55 | Regras "MATÉRIA MODELO: INTRODUÇÃO À TIC" (tudo segue a estrutura que funciona na ITIC) e "AULAS EXTRAÍDAS DA EMENTA EM `CONTEUDO/`" (1 aula a cada 4 h, arredondando para cima; arquivo `AULA-NN-DESCRICAO-CURTA.md`; atividades e, no final, apostila feitas a partir dessas aulas); fontes das 50 questões e da apostila apontam para `CONTEUDO/` |
 | 2026-10-03 20:47 | Regra "CONTEÚDO SÓ PELOS MARKDOWNS": para conferir ou gerar conteúdo, ler sempre os arquivos Markdown da matéria (em primeiro lugar o `EMENTA-CHALKIE-AI.md`) e **nunca extrair dados de PDF**; fonte da atividade prática de Excel ajustada |
 | 2026-10-03 19:04 | Apostilas: conferência com a ementa aceita os formatos de ementa das diferentes matérias (ex.: Testes de Frontend) e **reprova** seção da ementa não reconhecida; Markdown completo pode ser montado antes do 1º capítulo; introdução com "Competência integradora" ou "Situações de aprendizagem", conforme a ementa |
 | 2026-10-03 18:14 | Permissão por matéria: seção `STATUS-PERMISSAO-MATERIA` no `STATUS-EMENTAS-CURSOS.md` (matéria só vale com curso e matéria em `VERIFICAR`); no Técnico em Informática para Internet só `TESTES-DE-FRONTEND` fica em `VERIFICAR` |
@@ -55,6 +56,12 @@ Registrada em 2026-10-03 a pedido do usuário.
 - ⛔ **Conteúdo só pelos Markdowns, nunca de PDF** (2026-10-03): para conferir ou gerar conteúdo,
   ler os `.md` da matéria — em primeiro lugar o `EMENTA-CHALKIE-AI.md` (ver a regra "CONTEÚDO SÓ
   PELOS MARKDOWNS").
+- ✅ **Matéria modelo = Introdução à TIC** (2026-10-03): toda peça de outra matéria segue a
+  estrutura que funciona em `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/` (ver a
+  regra "MATÉRIA MODELO").
+- ✅ **Aulas extraídas da ementa em `CONTEUDO/`** (2026-10-03): 1 aula a cada 4 h da ementa
+  (arredondando para cima), arquivo `AULA-NN-DESCRICAO-CURTA.md`; atividades e, no final, a
+  apostila são feitas a partir dessas aulas (ver a regra "AULAS EXTRAÍDAS DA EMENTA").
 
 ---
 
@@ -76,6 +83,68 @@ avaliações, apostilas, planos, slides e conferências).
 - ✅ Se alguma informação necessária só existir em PDF, **avisar o usuário** em vez de extrair.
 - ✅ Converter um documento de origem em Markdown continua acontecendo **só quando o usuário pede**
   (ex.: criar ou refazer a `EMENTA-PRINCIPAL-<CURSO>.md`).
+
+---
+
+## 🏅 REGRA CRÍTICA — MATÉRIA MODELO: INTRODUÇÃO À TIC
+
+⚠️ **Usar SEMPRE como exemplo padrão a matéria
+`MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/` — nela tudo está funcionando.**
+Registrada em 2026-10-03 a pedido do usuário.
+
+- ✅ Antes de criar ou completar qualquer peça de outra matéria, **abrir a peça equivalente da
+  ITIC** e seguir a mesma estrutura de pastas, nomes de arquivo, campos, geradores e fluxo:
+
+| Peça | Onde fica na ITIC (modelo) |
+|---|---|
+| Dados e ementa da matéria | `materia.json`, `EMENTA-CHALKIE-AI.md` |
+| Aulas em Markdown | `CONTEUDO/` (regra "AULAS EXTRAÍDAS DA EMENTA EM `CONTEUDO/`") |
+| Slides (só apresentação, nunca fonte) | `AULAS/` |
+| Atividade objetiva de cada aula | `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-50-QUESTOES.md` → `ATIVIDADES/ATIVIDADES-AULA-NN-50-QUESTOES.html` |
+| Atividade prática de cada aula | `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-NN.md` (+ `-GABARITO.md`, fora do Git) → `ATIVIDADES/ATIVIDADE-PRATICA-AULA-NN.html` |
+| Avaliações e média final | `ATIVIDADES/AVALIACAO-OBJETIVA-NN.html`, `AVALIACAO-PRATICA.html`, `AVALIACAO-MEDIA-FINAL.html` (+ `media-final.json`) |
+| Menu e índice das atividades | `ATIVIDADES/MENU-ATIVIDADES.js`, `ATIVIDADES/index.html` |
+| Controles | `AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` |
+| Apostila | `APOSTILA/` (`CONTEUDO/INTRODUCAO.md`, `CONTEUDO/CAPITULO-NN.md`, Markdown completo e HTML) |
+| Banco de questões do AVA | `ATIVIDADES/BANCO-AVA/` (fora do Git) |
+
+- ✅ A ITIC é modelo de **estrutura e funcionamento**; o conteúdo de cada matéria vem da ementa
+  **dela** (nunca copiar conteúdo da ITIC para outra UC).
+- ✅ Se uma regra deste arquivo e a ITIC divergirem, **avisar o usuário**; a ITIC só é alterada a
+  pedido dele (ela é a referência).
+
+---
+
+## 🧩 REGRA CRÍTICA — AULAS EXTRAÍDAS DA EMENTA EM `CONTEUDO/` (1 AULA A CADA 4 HORAS)
+
+⚠️ **As aulas de cada matéria são extraídas do `EMENTA-CHALKIE-AI.md` e gravadas em Markdown na
+pasta `<MATERIA>/CONTEUDO/`; depois, as atividades e, por último, a apostila são SEMPRE feitas
+lendo essas aulas.** Registrada em 2026-10-03 a pedido do usuário.
+
+- ✅ **Fonte:** o `EMENTA-CHALKIE-AI.md` da matéria (regra "CONTEÚDO SÓ PELOS MARKDOWNS"; se divergir
+  da UC na ementa do curso, a do curso vence e o usuário é avisado).
+- ✅ **Quantidade de aulas = carga horária da ementa ÷ 4** (1 aula a cada 4 h). Se a conta não der
+  exata, **arredondar para cima** (ex.: 40 h → 10 aulas; 30 h → 7,5 → 8 aulas; 42 h → 11 aulas).
+- ✅ **Nome do arquivo:** `AULA-NN-DESCRICAO-CURTA-DO-CONTEUDO.md` — `NN` = número da aula com 2
+  dígitos; descrição curta do conteúdo em MAIÚSCULAS, sem acentos, palavras separadas por hífen
+  (ex.: `AULA-01-FUNDAMENTOS-DE-TESTES.md`).
+- ✅ **Local:** `<MATERIA>/CONTEUDO/`, na raiz da pasta da matéria (como na ITIC) — não confundir
+  com `ATIVIDADES/CONTEUDO/` (fontes das atividades) nem com `APOSTILA/CONTEUDO/` (capítulos).
+- ✅ **Ordem obrigatória:** (1) aulas em `CONTEUDO/` → (2) atividades lidas dessas aulas
+  (`- **Conteúdo-base:** ../CONTEUDO/AULA-NN-....md` na fonte) → (3) **no final**, a apostila,
+  também lida dessas aulas (1 capítulo = 1 aula).
+- ✅ **Cada aula traz** (tudo da ementa; aprofundamento só como detalhamento didático): tema, carga
+  horária, conhecimentos (numeração da ementa), capacidades, indicadores, objetivos, roteiro com
+  tempos, conteúdo em seções, exemplos no contexto profissional do curso (empresa fictícia),
+  situação-problema/atividade prevista na ementa, verificação da aprendizagem e recursos da UC.
+- ✅ Uma aula por vez (regra "GERAR E GRAVAR UMA AULA POR VEZ"), registrando no
+  `AULAS/STATUS-AULAS.md`.
+- ⚠️ Matérias que já têm aulas em `CONTEUDO/` com outro nome (ex.: ITIC, `1-Tema.md`) só são
+  renomeadas a pedido do usuário.
+- ⚠️ Respeita `STATUS-PERMISSAO-EMENTA`/`STATUS-PERMISSAO-MATERIA`, matérias semelhantes e a
+  exceção de `QUALIFICACAO-PROFISSIONAL/` (lá a ementa é só do professor e só é lida).
+- ⏳ **Em definição com o usuário (2026-10-03):** carga da última aula quando a conta não fecha e
+  a convivência com a regra "PASTA `AULAS/`" (`AULAS/AULA-NN.md`).
 
 ---
 
@@ -1752,6 +1821,10 @@ Gerador reutilizável: `assets/gerador-atividade-excel/gerar_atividade_excel.py 
 avaliações), a pasta `<MATERIA>/AULAS/` também deve ser gerada com as aulas, conforme a
 documentação da própria matéria.** Registrada em 2026-10-02.
 
+> ⚠️ **2026-10-03:** as aulas em Markdown passaram a ser extraídas da ementa para
+> `<MATERIA>/CONTEUDO/AULA-NN-DESCRICAO-CURTA.md` (regra "AULAS EXTRAÍDAS DA EMENTA EM
+> `CONTEUDO/`"). A convivência com esta regra está em definição com o usuário.
+
 - ✅ **Fonte:** `<MATERIA>/DOCUMENTACAO/PLANO-AULAS.md` (sequência, temas, conhecimentos,
   capacidades, estratégia e recursos de cada aula), que segue o `EMENTA-CHALKIE-AI.md` (a ementa
   vence; a ementa do curso vence as duas).
@@ -1809,8 +1882,9 @@ dessas atividades. Registrada em 2026-10-03 a pedido do usuário.
   de 50 itens e gabarito ausente → índice → seed), atualizando o `STATUS-ATIVIDADES.md` e o
   `AULAS/STATUS-AULAS.md` a cada aula. Gerar em massa continua exigindo plano em `docs/` e aprovação;
   aplicar o seed no Supabase só com pedido do usuário.
-- ✅ As questões seguem a aula (`AULAS/`) e o `EMENTA-CHALKIE-AI.md` (a ementa vence); gabarito com
-  letras equilibradas (12–13 de cada) e posição sorteada.
+- ✅ As questões seguem a aula em `<MATERIA>/CONTEUDO/AULA-NN-*.md` (regra "AULAS EXTRAÍDAS DA
+  EMENTA EM `CONTEUDO/`") e o `EMENTA-CHALKIE-AI.md` (a ementa vence); gabarito com letras
+  equilibradas (12–13 de cada) e posição sorteada.
 - ⚠️ Respeita `STATUS-PERMISSAO-EMENTA` e matérias semelhantes. Em `QUALIFICACAO-PROFISSIONAL/` a
   ementa é só do professor: as atividades usam as aulas/ementa como **leitura**, e matéria sem aulas
   definidas fica aguardando o professor.
@@ -1941,7 +2015,8 @@ matéria.**
 - ✅ **Fontes em `<MATERIA>/APOSTILA/`:** `CONTEUDO/INTRODUCAO.md` (obrigatória),
   `CONTEUDO/CAPITULO-NN.md` (um por aula). Todos os dados da matéria (UC, curso, docente,
   capacidades, conhecimentos e plano de aulas) vêm do `<MATERIA>/materia.json` (ver abaixo).
-- ✅ **Fonte do conteúdo = as aulas da matéria** (`CONTEUDO/`/`AULAS/`) e o
+- ✅ **Fonte do conteúdo = as aulas da matéria** em `<MATERIA>/CONTEUDO/AULA-NN-*.md` (a apostila
+  é feita **no final**, lendo essas aulas — regra "AULAS EXTRAÍDAS DA EMENTA EM `CONTEUDO/`") e o
   `EMENTA-CHALKIE-AI.md` (a ementa vence; a ementa do curso vence as duas). Exemplos no contexto
   profissional do curso, com empresa **fictícia**.
 
