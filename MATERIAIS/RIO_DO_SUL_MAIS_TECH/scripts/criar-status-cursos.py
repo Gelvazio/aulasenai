@@ -31,6 +31,7 @@ PERMISSAO_PADRAO = PERMISSAO_IGNORAR
 PERMISSOES_VALIDAS = {PERMISSAO_VERIFICAR, PERMISSAO_IGNORAR}
 PREFIXO_SECAO_CURSO = "## 🎓 "
 TITULO_SECAO_PERMISSAO = "## 🔐 STATUS-PERMISSAO-EMENTA"
+TITULO_SECAO_PERMISSAO_MATERIA = "## 🔐 STATUS-PERMISSAO-MATERIA"
 
 
 @dataclass
@@ -42,6 +43,7 @@ class Materia:
     tem_ementa: bool
     generica: bool
     permissao: str = PERMISSAO_PADRAO
+    permissao_materia: str = PERMISSAO_PADRAO
 
     @property
     def tamanho_conforme(self):
@@ -106,28 +108,61 @@ def ler_permissoes_existentes():
     return permissoes
 
 
-def ler_materia(pasta, permissao):
-    """Mede a ementa de uma pasta de matéria."""
+def ler_permissoes_materias_existentes():
+    """Lê do consolidado a STATUS-PERMISSAO-MATERIA marcada à mão (permissão | curso | matéria).
+
+    Retorna ({(curso, materia): permissao}, secao_existe). Sem a seção (primeira geração), as
+    matérias herdam a permissão do curso; com a seção, matéria nova entra como IGNORAR.
+    """
+    if not ARQUIVO_SAIDA.exists():
+        return {}, False
+    permissoes = {}
+    secao_existe = False
+    dentro_da_secao = False
+    for linha in ARQUIVO_SAIDA.read_text(encoding="utf-8").splitlines():
+        if linha.startswith("## "):
+            dentro_da_secao = linha.startswith(TITULO_SECAO_PERMISSAO_MATERIA)
+            secao_existe = secao_existe or dentro_da_secao
+            continue
+        celulas = [c.strip().strip("*` ") for c in linha.strip().strip("|").split("|")]
+        eh_linha_de_materia = dentro_da_secao and len(celulas) == 3
+        if eh_linha_de_materia and celulas[0].upper() in PERMISSOES_VALIDAS:
+            permissoes[(celulas[1], celulas[2])] = celulas[0].upper()
+    return permissoes, secao_existe
+
+
+def ler_materia(pasta, permissao_curso, permissao_materia):
+    """Mede a ementa de uma pasta de matéria.
+
+    A matéria só fica em VERIFICAR quando o curso E a própria matéria estão em VERIFICAR.
+    """
+    liberada = permissao_curso == PERMISSAO_VERIFICAR and permissao_materia == PERMISSAO_VERIFICAR
+    permissao = PERMISSAO_VERIFICAR if liberada else PERMISSAO_IGNORAR
     ementa = pasta / ARQUIVO_EMENTA
     if not ementa.exists():
-        return Materia(pasta.name, 0, False, False, permissao)
+        return Materia(pasta.name, 0, False, False, permissao, permissao_materia)
     texto = ementa.read_text(encoding="utf-8")
-    return Materia(pasta.name, len(texto), True, MARCA_EMENTA_GENERICA in texto, permissao)
+    generica = MARCA_EMENTA_GENERICA in texto
+    return Materia(pasta.name, len(texto), True, generica, permissao, permissao_materia)
 
 
 def ler_cursos():
     """Retorna ({curso: [Materia, ...]}, {curso: permissao}) para os cursos de MATERIAIS/.
 
-    A permissão é do curso inteiro: todas as ementas do curso herdam o mesmo valor.
+    A permissão do curso vale para todas as matérias; dentro de um curso em VERIFICAR, cada
+    matéria ainda pode ser marcada como IGNORAR (seção STATUS-PERMISSAO-MATERIA).
     """
     existentes = ler_permissoes_existentes()
+    existentes_materias, secao_materias_existe = ler_permissoes_materias_existentes()
     cursos = {}
     permissoes = {}
     for pasta_curso in listar_subpastas(PASTA_MATERIAIS, PASTAS_IGNORADAS):
         curso = pasta_curso.name
         permissoes[curso] = existentes.get(curso, PERMISSAO_PADRAO)
+        padrao_materia = PERMISSAO_PADRAO if secao_materias_existe else permissoes[curso]
         cursos[curso] = [
-            ler_materia(p, permissoes[curso])
+            ler_materia(p, permissoes[curso],
+                        existentes_materias.get((curso, p.name), padrao_materia))
             for p in listar_subpastas(pasta_curso, SUBPASTAS_IGNORADAS)
         ]
     return cursos, permissoes
@@ -161,12 +196,12 @@ def montar_secao_curso(curso, materias):
         return f"{PREFIXO_SECAO_CURSO}{curso}\n\n⛔ Nenhuma pasta de matéria criada.\n"
     linhas = [
         f"{PREFIXO_SECAO_CURSO}{curso}\n",
-        "| Matéria | Caracteres | Situação |",
-        "|---|---|---|",
+        "| Matéria | Caracteres | Situação | Permissão |",
+        "|---|---|---|---|",
     ]
     for m in materias:
         caracteres = formatar_numero(m.caracteres) if m.tem_ementa else "—"
-        linhas.append(f"| {m.nome} | {caracteres} | {m.situacao} |")
+        linhas.append(f"| {m.nome} | {caracteres} | {m.situacao} | {m.permissao} |")
     return "\n".join(linhas) + "\n"
 
 
@@ -177,6 +212,18 @@ def montar_tabela_permissoes(permissoes):
     liberados = sum(p == PERMISSAO_VERIFICAR for p in permissoes.values())
     total = (f"**{PERMISSAO_VERIFICAR}:** {liberados} · "
              f"**{PERMISSAO_IGNORAR}:** {len(permissoes) - liberados} (de {len(permissoes)} cursos)")
+    return "\n".join(linhas) + "\n\n" + total
+
+
+def montar_tabela_permissoes_materias(cursos):
+    """Tabela com todas as matérias (permissão | curso | matéria), marcada à mão pelo usuário."""
+    linhas = ["| STATUS-PERMISSAO-MATERIA | Curso | Matéria |", "|---|---|---|"]
+    for curso, materias in cursos.items():
+        linhas.extend(f"| {m.permissao_materia} | {curso} | {m.nome} |" for m in materias)
+    todas = [m for materias in cursos.values() for m in materias]
+    liberadas = sum(m.verificar for m in todas)
+    total = (f"**Matérias valendo (curso e matéria em {PERMISSAO_VERIFICAR}):** {liberadas} "
+             f"de {len(todas)}")
     return "\n".join(linhas) + "\n\n" + total
 
 
@@ -210,6 +257,15 @@ def gerar_conteudo(cursos, permissoes):
 > Vale para o curso inteiro. Curso em `{PERMISSAO_IGNORAR}` tem todas as ementas ignoradas (fora de
 > pendências, ajustes e geração). Padrão: `{PERMISSAO_PADRAO}`. Troque à mão para
 > `{PERMISSAO_VERIFICAR}` nesta tabela: o script preserva o valor ao regenerar.
+
+{TITULO_SECAO_PERMISSAO_MATERIA}
+
+{montar_tabela_permissoes_materias(cursos)}
+
+> Vale por matéria, dentro do curso. A matéria só é processada quando o **curso** e a **matéria**
+> estão em `{PERMISSAO_VERIFICAR}`; matéria em `{PERMISSAO_IGNORAR}` fica fora de pendências, ajustes
+> e geração mesmo com o curso em `{PERMISSAO_VERIFICAR}`. Matéria nova entra como `{PERMISSAO_PADRAO}`.
+> Troque à mão nesta tabela: o script preserva o valor ao regenerar.
 
 ---
 

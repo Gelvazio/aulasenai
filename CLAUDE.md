@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-03 17:22
+**Versão das regras:** 2026-10-03 18:14
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-03 18:14 | Permissão por matéria: seção `STATUS-PERMISSAO-MATERIA` no `STATUS-EMENTAS-CURSOS.md` (matéria só vale com curso e matéria em `VERIFICAR`); no Técnico em Informática para Internet só `TESTES-DE-FRONTEND` fica em `VERIFICAR` |
 | 2026-10-03 17:22 | Regra "VISUALIZADOR DE REGRAS ATUALIZADO JUNTO COM O CLAUDE.md" e controle de versão com data e hora (linha acima + este histórico); o visualizador passa a mostrar a versão e a recarregar as regras a cada abertura |
 | 2026-10-03 | Regras de aulas uma por vez (`STATUS-AULAS.md`), 1 atividade objetiva de 50 questões por aula (`STATUS-ATIVIDADES.md`) e decisões da fila de geração |
 | 2026-09-30 | Versão 1.1 (registro anterior ao controle por data e hora) |
@@ -426,6 +427,25 @@ dele). Registrada em 2026-09-23.
 - ✅ **Escopo:** o `STATUS-EMENTAS-CURSOS.md` é relativo **apenas ao que existe hoje em
   `MATERIAIS/`**. Cursos movidos para fora (ex.: `DEMAIS-CURSOS-COMPLETOS/`) não entram. Se o
   relatório listar pasta que não existe mais, regenerar com o script. Registrada em 2026-09-27.
+
+### 🔐 STATUS-PERMISSAO-MATERIA (permissão por matéria)
+
+Registrada em 2026-10-03 a pedido do usuário.
+
+- ✅ Logo abaixo da tabela dos cursos, o `STATUS-EMENTAS-CURSOS.md` tem a seção
+  `## 🔐 STATUS-PERMISSAO-MATERIA`: uma linha por matéria, no formato
+  `| VERIFICAR | CURSO | MATERIA |` ou `| IGNORAR | CURSO | MATERIA |`.
+- ✅ **Uma matéria só é processada quando o curso E a matéria estão em `VERIFICAR`.** Matéria em
+  `IGNORAR` fica fora de pendências, ajustes, expansão e geração (aulas, atividades, apostilas,
+  dashboards), mesmo que o curso esteja em `VERIFICAR`. Curso em `IGNORAR` continua ignorando
+  todas as matérias dele, qualquer que seja a marcação da matéria.
+- ✅ O usuário troca a marcação **à mão**; o script `criar-status-cursos.py` preserva as escolhas ao
+  regenerar e **matéria nova entra como `IGNORAR`**. A tabela de cada curso mostra a coluna
+  "Permissão" com o valor que vale (curso + matéria).
+- ✅ **A cada leitura do `STATUS-EMENTAS-CURSOS.md`, mostrar também a tabela por matéria** dos
+  cursos envolvidos no pedido.
+- 📌 Situação em 2026-10-03: em `TECNICO-INFORMATICA-INTERNET`, só **`TESTES-DE-FRONTEND`** está em
+  `VERIFICAR`; todas as outras matérias do curso estão em `IGNORAR`.
 
 ---
 
