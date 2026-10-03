@@ -6,7 +6,7 @@ Uso (na raiz do projeto):
     C:\\Python314\\python.exe assets\\gerador-avaliacao-media-final\\gerar_avaliacao_media_final.py
         --todas [--forcar]
 
-Dados: <pasta>/atividades.json (uc, uc_curta, curso) e <pasta>/media-final.json (composição da
+Dados: <MATERIA>/materia.json (uc, uc_curta, curso) e <pasta>/media-final.json (composição da
 nota: grupos, itens, pontos, pesos, páginas e regras). --propor cria um media-final.json de
 proposta (30 atividades / 40 objetivas / 30 prática) a partir das páginas da pasta, sem
 sobrescrever. --todas gera a página de todas as matérias de MATERIAIS/ com media-final.json.
@@ -29,10 +29,12 @@ sys.path.insert(0, str(ASSETS / "gerador-menu"))
 from tags_menu import montar_tags_menu  # noqa: E402
 from tags_header import inserir_header_em_html  # noqa: E402
 
+sys.path.insert(0, str(ASSETS / "gerador-materia"))
+import materia as dados_materia  # noqa: E402
+
 TEMPLATE = GERADOR / "template_avaliacao_media_final.html"
 PASTA_MATERIAIS = RAIZ / "MATERIAIS"
 PASTA_IGNORADA = "MATERIAS-GERAIS"
-ARQUIVO_MATERIA = "atividades.json"
 ARQUIVO_COMPOSICAO = "media-final.json"
 ARQUIVO_PAGINA = "AVALIACAO-MEDIA-FINAL.html"
 MARCADOR = "gerador-avaliacao-media-final"
@@ -344,7 +346,7 @@ def montar_pagina(pasta, materia, composicao):
 
     Args:
         pasta: Pasta ATIVIDADES da matéria.
-        materia: Conteúdo do atividades.json.
+        materia: Conteúdo do materia.json.
         composicao: Conteúdo do media-final.json.
 
     Returns:
@@ -407,7 +409,7 @@ def gerar_pagina(pasta, forcar=False):
     if not pode_sobrescrever(destino, forcar):
         print(f"⚠️  {destino}: feita à mão (sem o marcador); use --forcar para sobrescrever")
         return False
-    conteudo = montar_pagina(pasta, ler_json(pasta / ARQUIVO_MATERIA), composicao)
+    conteudo = montar_pagina(pasta, dados_materia.ler_materia(pasta), composicao)
     destino.write_text(conteudo, encoding="utf-8", newline="\n")
     print(f"✅ {destino}")
     return True

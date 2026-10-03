@@ -16,7 +16,7 @@ Saída (na pasta):
                                             Git, pois traz o gabarito)
     ATIVIDADES-AULA-NN-<TOTAL>-QUESTOES.html — página gerada (a menos que use --so-md)
     CONTEUDO/GABARITO-ATIVIDADES-AULA-NN-<TOTAL>-QUESTOES.md — gabarito em Markdown (fora do Git)
-    atividades.json                      — dados da matéria (criado se não existir)
+    ../materia.json                      — dados da matéria (criado se não existir)
 Dependência: python-docx.
 """
 import json
@@ -306,13 +306,15 @@ def exportar_gabarito(pasta, caminho):
 
 
 def garantir_dados_materia(pasta, cabecalho):
-    """Cria o atividades.json da pasta (uc, uc_curta, curso, docente) se ainda não existir.
+    """Cria o materia.json da matéria (uc, uc_curta, curso, docente) se ainda não existir.
+
+    O materia.json fica na raiz da pasta da matéria (pasta acima de ATIVIDADES).
 
     Args:
         pasta: Pasta ATIVIDADES.
         cabecalho: Dados do cabeçalho de um .docx.
     """
-    caminho = pasta / "atividades.json"
+    caminho = pasta.parent / "materia.json"
     if caminho.exists():
         return
     dados = {"uc": cabecalho["uc"], "uc_curta": cabecalho["uc"], "curso": cabecalho["curso"],

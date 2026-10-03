@@ -10,7 +10,6 @@ Saídas: <pasta>/AVALIACAO-PRATICA.html e database/<data>-<nome>-seed-atividades
 Plano: docs/avaliacao-pratica-discursiva-itic.md
 """
 import html
-import json
 import re
 import sys
 from datetime import date
@@ -26,11 +25,13 @@ from tags_header import inserir_header_em_html  # noqa: E402
 sys.path.insert(0, str(ASSETS / "gerador-capacidades"))
 import capacidades as cap  # noqa: E402
 
+sys.path.insert(0, str(ASSETS / "gerador-materia"))
+import materia as dados_materia  # noqa: E402
+
 TEMPLATE = GERADOR / "template_avaliacao_discursiva.html"
 PASTA_FONTES = "CONTEUDO"
 FONTE_PADRAO = "AVALIACAO-PRATICA.md"
 SUFIXO_GABARITO = "-GABARITO.md"
-ARQUIVO_DADOS = "atividades.json"
 PASTA_SQL = RAIZ / "database"
 MAXIMO_CARACTERES = 3000
 PONTOS_POR_QUESTAO = 1.0
@@ -350,7 +351,7 @@ def aplicar_capacidades(meta, itens, dados, assets):
     Args:
         meta: Metadados da fonte.
         itens: Itens validados (recebem a chave "quadro").
-        dados: Dados da matéria (atividades.json).
+        dados: Dados da matéria (materia.json).
         assets: Caminho relativo até assets/.
 
     Returns:
@@ -418,7 +419,7 @@ def gerar_pagina(pasta, caminho_md, meta, orientacoes, itens):
     profundidade = len(pasta.resolve().relative_to(RAIZ).parts)
     raiz_relativa = "/".join([".."] * profundidade)
     contexto = {
-        "dados": json.loads((pasta / ARQUIVO_DADOS).read_text(encoding="utf-8")),
+        "dados": dados_materia.ler_materia(pasta),
         "orientacoes": orientacoes, "arquivo_md": caminho_md.name, "pasta": pasta,
         "assets": raiz_relativa + "/assets", "raiz": raiz_relativa,
     }
@@ -511,7 +512,7 @@ def gerar_seed(pasta, html_gerado, meta, itens, gabarito):
     Returns:
         Caminho do SQL gerado.
     """
-    dados = json.loads((pasta / ARQUIVO_DADOS).read_text(encoding="utf-8"))
+    dados = dados_materia.ler_materia(pasta)
     pagina = "/" + html_gerado.resolve().relative_to(RAIZ).as_posix()
     contexto = {"materia": dados["uc"], "gabarito": gabarito}
     nome = f"{date.today().isoformat()}-{html_gerado.stem.lower()}-seed-atividades.sql"

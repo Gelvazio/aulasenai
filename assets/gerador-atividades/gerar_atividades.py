@@ -4,7 +4,8 @@ Uso: C:\\Python314\\python.exe assets\\gerador-atividades\\gerar_atividades.py <
 Fonte única do conteúdo: ATIVIDADES-AULA-NN-50-QUESTOES.md em <pasta ATIVIDADES>/CONTEUDO/
 (fora do Git, com gabarito); .md antigos na raiz de ATIVIDADES/ continuam aceitos.
 As páginas HTML são sempre gravadas na pasta ATIVIDADES (nunca dentro de CONTEUDO/).
-Dados da matéria: <pasta ATIVIDADES>/atividades.json com uc, uc_curta, curso e docente.
+Dados da matéria: <MATERIA>/materia.json (arquivo único) com uc, uc_curta, curso, docente
+e capacidades.
 """
 import html
 import json
@@ -24,10 +25,12 @@ from gerar_indices import montar_tags_crud  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "gerador-capacidades"))
 import capacidades as cap  # noqa: E402
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "gerador-materia"))
+import materia as dados_materia  # noqa: E402
+
 GERADOR = Path(__file__).resolve().parent
 ASSETS = GERADOR.parent
 TEMPLATE = (GERADOR / "template_atividade.html").read_text(encoding="utf-8")
-ARQUIVO_DADOS = "atividades.json"
 PASTA_FONTES = "CONTEUDO"
 PADRAO_FONTES = "ATIVIDADES-AULA-*-50-QUESTOES.md"
 CAMPOS_DADOS = ("uc", "uc_curta", "curso", "docente")
@@ -47,15 +50,15 @@ e = html.escape
 
 
 def ler_dados_materia(pasta):
-    """Lê atividades.json da pasta; os nomes da matéria nunca ficam fixos no gerador."""
-    caminho = pasta / ARQUIVO_DADOS
-    if not caminho.exists():
-        raise SystemExit(f"{caminho} não encontrado (campos: {', '.join(CAMPOS_DADOS)})")
-    dados = json.loads(caminho.read_text(encoding="utf-8"))
-    faltando = [c for c in CAMPOS_DADOS if not dados.get(c)]
-    if faltando:
-        raise SystemExit(f"{caminho}: campos ausentes: {', '.join(faltando)}")
-    return dados
+    """Lê o materia.json da matéria; os nomes da matéria nunca ficam fixos no gerador.
+
+    Args:
+        pasta: Pasta ATIVIDADES da matéria (o materia.json fica na pasta acima).
+
+    Returns:
+        Dicionário com os dados da matéria.
+    """
+    return dados_materia.ler_materia(pasta, CAMPOS_DADOS)
 
 
 def caminho_assets(pasta):

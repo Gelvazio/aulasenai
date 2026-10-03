@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila — Introdução à TIC</title>
+    <link rel="stylesheet" href="../../../../assets/css/apostila.css">
+    <script src="../../../../assets/js/apostila.js" defer></script>
+    <link rel="stylesheet" href="../../../../assets/css/menu.css">
+    <script src="../ATIVIDADES/MENU-ATIVIDADES.js" defer></script>
+    <script src="../../../../js/menu.js" defer></script>
+    <script src="../../../../js/header-usuario.js" defer></script>
+</head>
+<body class="apostila" data-logo="../../../../assets/img/logo-sesi-senai.png" data-rodape="Apostila — Introdução à TIC · SESI SENAI">
+<div id="header-usuario"></div>
+    <!-- Gerado por assets/gerador-apostilas/gerar_apostila.py — não editar à mão -->
+    <div class="apostila__container">
+        <header class="apostila__topo">
+            <div class="apostila__barra">
+                <button class="apostila__botao" id="botao-exportar-pdf" type="button">📥 Exportar PDF (apostila completa)</button>
+                <small class="apostila__dica">Na janela de impressão, escolha "Salvar como PDF".</small>
+            </div>
+        </header>
+
+        <section class="pagina-senai pagina-a4 capa-apostila">
+            <img class="pagina-senai__logo" src="../../../../assets/img/logo-sesi-senai.png" alt="SESI SENAI">
+            <div class="pagina-senai__conteudo">
+                <a class="capa-apostila__voltar" href="../ATIVIDADES/index.html">← Atividades da matéria</a>
+                <h1 class="capa-apostila__titulo">Apostila<br>Introdução à Tecnologia da Informação e Comunicação</h1>
+                <p class="capa-apostila__subtitulo">Assistente de Operações Logísticas</p>
+                <div class="capa-apostila__faixa"></div>
+                <p class="capa-apostila__dados">Docente: Gelvazio Camargo · 1 capítulo(s)</p>
+            </div>
+            <footer class="pagina-senai__rodape"></footer>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="sumario">
+            <h2 id="sumario">Sumário</h2>
+            <a class="sumario__link sumario__link--nivel-1" href="#introducao"><span class="sumario__texto">Introdução</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t1"><span class="sumario__texto">Apresentação</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t2"><span class="sumario__texto">Objetivo geral da unidade curricular</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t3"><span class="sumario__texto">Como a apostila está organizada</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t4"><span class="sumario__texto">Como estudar com esta apostila</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t5"><span class="sumario__texto">Como você será avaliado</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t6"><span class="sumario__texto">Ambientes, recursos e acessibilidade</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t7"><span class="sumario__texto">Competência integradora</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t7"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capacidades"><span class="sumario__texto">Capacidades da matéria</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capacidades"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#glossario"><span class="sumario__texto">Glossário</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="glossario"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-01"><span class="sumario__texto">Capítulo 01 — Comunicação Profissional e Seus Fundamentos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-01-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t1"><span class="sumario__texto">Por que estudar comunicação num curso de logística?</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t2"><span class="sumario__texto">Os sete elementos da comunicação</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t3"><span class="sumario__texto">Ruídos: o que atrapalha a mensagem</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t4"><span class="sumario__texto">Comunicação assertiva e escuta ativa</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t5"><span class="sumario__texto">Níveis de linguagem: falar certo para cada público</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t6"><span class="sumario__texto">Trabalho em equipe, consenso e ética</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t7"><span class="sumario__texto">Na prática: aviso com ruído × aviso eficaz</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t7"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-01-videos"><span class="sumario__texto">Vídeos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-videos"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-01-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-01-exercicios"><span class="sumario__texto">Exercícios</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-exercicios"></span></a>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="introducao">
+            <h2 id="introducao">Introdução</h2>
+            <h3 id="introducao-t1">Apresentação</h3>
+            <p>Na logística, quase toda operação passa por um recurso digital: o e-mail para a transportadora, a
+            planilha de estoque, o relatório de avaria, a ata do turno, o rastreio da carga na nuvem. Esta
+            apostila acompanha a unidade curricular <strong>Introdução à Tecnologia da Informação e Comunicação
+            (ITIC)</strong> e prepara você para usar esses recursos com <strong>clareza, segurança e postura profissional</strong>.</p>
+            <p>Os exemplos acontecem na <strong>Distribuidora Vale Norte</strong>, uma empresa fictícia com armazém,
+            recebimento, expedição e escritório administrativo — situações parecidas com as que você vai
+            encontrar no trabalho de Assistente de Operações Logísticas.</p>
+            <h3 id="introducao-t2">Objetivo geral da unidade curricular</h3>
+            <p>Desenvolver capacidades básicas e socioemocionais em três dimensões:</p>
+            <ol>
+            <li><strong>Comunicação profissional</strong> — comunicar-se oralmente e por escrito de forma clara, assertiva e eficaz.</li>
+            <li><strong>Interpretação técnica</strong> — compreender normas, textos, dados e termos técnicos do trabalho.</li>
+            <li><strong>Uso seguro de TIC</strong> — pesquisar, produzir, armazenar e compartilhar informações com segurança.</li>
+            </ol>
+            <h3 id="introducao-t3">Como a apostila está organizada</h3>
+            <p>Cada capítulo corresponde a uma aula e tem sempre as mesmas partes:</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Parte</th>
+            <th>O que você encontra</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>🎯 Capacidades</td>
+            <td>O que você vai desenvolver no capítulo</td>
+            </tr>
+            <tr>
+            <td>📖 Teoria e exemplos</td>
+            <td>Explicação do conteúdo com situações da Vale Norte</td>
+            </tr>
+            <tr>
+            <td>🎬 Vídeos</td>
+            <td>Vídeos curtos do YouTube (no máximo 15 minutos) para revisar o tema</td>
+            </tr>
+            <tr>
+            <td>📌 Resumo</td>
+            <td>Os pontos principais para estudar antes da avaliação</td>
+            </tr>
+            <tr>
+            <td>✍️ Exercícios</td>
+            <td>Questões no padrão ITEM (Capacidade, Contexto, Comando e Resposta)</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>O <strong>glossário</strong>, no início da apostila, reúne os termos técnicos de todos os capítulos, em ordem
+            alfabética.</p>
+            <h3 id="introducao-t4">Como estudar com esta apostila</h3>
+            <ul>
+            <li>Leia a teoria <strong>antes ou logo depois</strong> da aula correspondente.</li>
+            <li>Assista aos vídeos e anote dúvidas para levar ao professor.</li>
+            <li>Revise o resumo e consulte o glossário sempre que encontrar um termo novo.</li>
+            <li>Responda os exercícios com suas palavras, sempre ligando a resposta ao contexto do trabalho.</li>
+            <li>Os exercícios podem ser impressos separadamente pelo botão <strong>Exportar PDF</strong> ao lado do título
+              de cada seção de exercícios.</li>
+            </ul>
+            <h3 id="introducao-t5">Como você será avaliado</h3>
+            <p>Durante as aulas 1 a 9, a avaliação é <strong>formativa</strong>: a atividade de 50 questões de cada aula, os
+            quizzes e o acompanhamento do professor mostram o que você já domina e o que precisa revisar. Na
+            <strong>aula 10</strong> acontecem as avaliações que formam a nota final:</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Instrumento</th>
+            <th>Valor</th>
+            <th>Capacidades</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Avaliação objetiva — 40 questões, 60 minutos</td>
+            <td>4,0</td>
+            <td>C1 a C5</td>
+            </tr>
+            <tr>
+            <td>Avaliação prática — 4 tarefas, 100 minutos</td>
+            <td>6,0</td>
+            <td>C1 a C5</td>
+            </tr>
+            <tr>
+            <td>↳ T1 Organização, backup e comunicação</td>
+            <td>1,5</td>
+            <td>C1, C2, C4, C5</td>
+            </tr>
+            <tr>
+            <td>↳ T2 Relatório técnico</td>
+            <td>2,0</td>
+            <td>C1, C3</td>
+            </tr>
+            <tr>
+            <td>↳ T3 Planilha de análise</td>
+            <td>1,5</td>
+            <td>C3, C4</td>
+            </tr>
+            <tr>
+            <td>↳ T4 Apresentação</td>
+            <td>1,0</td>
+            <td>C1</td>
+            </tr>
+            <tr>
+            <td><strong>Nota final</strong></td>
+            <td><strong>10,0</strong></td>
+            <td><strong>mínimo 7,0</strong></td>
+            </tr>
+            </tbody>
+            </table>
+            <table>
+            <thead>
+            <tr>
+            <th>Nível</th>
+            <th>Nota</th>
+            <th>O que significa</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Excelente</td>
+            <td>9 a 10</td>
+            <td>Usa a ferramenta com autonomia, produz documento correto e comunica com clareza e segurança</td>
+            </tr>
+            <tr>
+            <td>Bom</td>
+            <td>7 a 8</td>
+            <td>Cumpre a tarefa com pequenos ajustes; poucas falhas de formatação ou linguagem</td>
+            </tr>
+            <tr>
+            <td>Aceitável</td>
+            <td>5 a 6</td>
+            <td>Cumpre o essencial com orientação; erros que não comprometem a mensagem</td>
+            </tr>
+            <tr>
+            <td>Insuficiente</td>
+            <td>0 a 4</td>
+            <td>Não conclui ou compromete a compreensão ou a segurança</td>
+            </tr>
+            </tbody>
+            </table>
+            <p><strong>Recuperação:</strong> é contínua — quem não concluir uma atividade refaz com roteiro guiado na aula
+            seguinte ou como tarefa. Com nota final abaixo de 7,0, você refaz as tarefas práticas de maior
+            perda e/ou uma nova avaliação objetiva equivalente, conforme o regimento do SENAI, retomando só as
+            capacidades não atingidas.</p>
+            <h3 id="introducao-t6">Ambientes, recursos e acessibilidade</h3>
+            <p>As aulas acontecem na sala de aula, no <strong>laboratório de informática</strong>, no auditório e, quando
+            disponível, com recursos de realidade virtual. Usaremos projetor, computadores, quadro branco e
+            lousa digital, além da <strong>Estante Virtual SENAI</strong>.</p>
+            <p>Os exemplos citam categorias de programas (editor de textos, planilha, apresentação), e você pode
+            usar a suíte disponível na escola ou em casa: Microsoft 365, Google Workspace ou LibreOffice.</p>
+            <p><strong>Acessibilidade:</strong> se precisar, peça ao professor zoom, alto contraste, leitor de tela, fonte
+            ampliada, legendas, instruções escritas, atalhos de teclado, digitação por voz, tempo estendido ou
+            passo a passo em etapas curtas. O formato e o tempo podem ser adaptados sem mudar as capacidades
+            avaliadas.</p>
+            <h3 id="introducao-t7">Competência integradora</h3>
+            <p><strong>Eixo:</strong> Mediação e Intervenção Sociocultural. Ao longo da unidade, você vai reconhecer conflitos
+            e propor soluções para problemas do ambiente de trabalho, demonstrando <strong>empatia, escuta ativa e
+            diálogo</strong> nas relações profissionais.</p>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="capacidades">
+            <h2 id="capacidades">Capacidades da matéria</h2>
+            <h3>Capacidades básicas</h3>
+            <p class="capacidade-item"><strong>C1</strong> — Empregar princípios, padrões e normas técnicas para comunicação oral e escrita clara, assertiva e eficaz no trabalho.</p>
+            <p class="capacidade-item"><strong>C2</strong> — Aplicar recursos e procedimentos de segurança da informação.</p>
+            <p class="capacidade-item"><strong>C3</strong> — Interpretar dados, informações técnicas e terminologias em textos dos processos industriais.</p>
+            <p class="capacidade-item"><strong>C4</strong> — Reconhecer características e aplicações de hardware e software dos sistemas informatizados da indústria.</p>
+            <p class="capacidade-item"><strong>C5</strong> — Utilizar recursos da Web na comunicação, busca, armazenamento e compartilhamento de informação.</p>
+            <h3>Capacidades socioemocionais</h3>
+            <p class="capacidade-item"><strong>S1</strong> — Amabilidade e cooperação nas relações profissionais.</p>
+            <p class="capacidade-item"><strong>S2</strong> — Hierarquias e autonomia — perceber instâncias de decisão e níveis de autonomia.</p>
+            <p class="capacidade-item"><strong>S3</strong> — Abertura à mudança — acolher fatos, ideias e opiniões diferentes.</p>
+            <p class="capacidade-item"><strong>S4</strong> — Análise de problemas — analisar complexidades e oportunidades de melhoria.</p>
+            <h3>Capacidades por capítulo</h3>
+            <table><thead><tr><th>Capítulo</th><th>Capacidades</th></tr></thead><tbody><tr><td>Capítulo 01 — Comunicação Profissional e Seus Fundamentos</td><td>C1, S1</td></tr></tbody></table>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="glossario">
+            <h2 id="glossario">Glossário</h2>
+            <p class="glossario__termo"><strong>Assertividade:</strong> comunicar com clareza, firmeza e respeito, sem agressividade nem omissão. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Canal:</strong> meio usado para transmitir a mensagem (rádio, e-mail, sistema, reunião). <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Código:</strong> conjunto de sinais e palavras comum ao emissor e ao receptor. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Emissor:</strong> quem cria e envia a mensagem. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Escuta ativa:</strong> ouvir com atenção total, sem interromper, confirmando o que foi entendido. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Feedback:</strong> retorno do receptor que confirma ou corrige o entendimento. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Jargão:</strong> gíria ou termo interno de um grupo profissional (ex.: &quot;picking&quot;, &quot;cross-docking&quot;). <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Receptor:</strong> quem recebe e interpreta a mensagem. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Ruído:</strong> qualquer interferência que altera ou impede o entendimento da mensagem. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-01">
+            <div class="capitulo__abertura" id="capitulo-01" data-titulo="sim"><span class="capitulo__rotulo">AULA 01</span><h2>Capítulo 01 — Comunicação Profissional e Seus Fundamentos</h2><p class="capitulo__capacidades">🎯 <strong>C1</strong> — Empregar princípios, padrões e normas técnicas para comunicação oral e escrita clara, assertiva e eficaz no trabalho.<br><strong>S1</strong> — Amabilidade e cooperação nas relações profissionais.</p></div>
+            <h3 id="capitulo-01-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-01-t1">Por que estudar comunicação num curso de logística?</h4>
+            <p>Imagine a expedição da <strong>Distribuidora Vale Norte</strong> (empresa fictícia usada nos exemplos desta
+            apostila) às 6h da manhã: o supervisor avisa pelo rádio que o pedido 4512 deve sair no caminhão da
+            doca 3. Com o barulho das empilhadeiras, o conferente entende "doca 2". Resultado: carga no
+            caminhão errado, cliente sem mercadoria, frete extra e retrabalho. Nenhum computador falhou — falhou
+            a <strong>comunicação</strong>.</p>
+            <p>No trabalho com Tecnologia da Informação e Comunicação (TIC), a tecnologia é só o meio. Quem decide
+            se a mensagem gera alinhamento ou retrabalho é a pessoa que a escreve, fala, lê ou ouve.</p>
+            <blockquote>
+            <p>🎯 <strong>Objetivos do capítulo:</strong> identificar os <strong>sete elementos</strong> da comunicação, reconhecer
+            <strong>ruídos</strong> e saber como reduzi-los, e adequar a <strong>linguagem</strong> e a postura ao ambiente de trabalho.</p>
+            </blockquote>
+            <h4 id="capitulo-01-t2">Os sete elementos da comunicação</h4>
+            <p>Toda comunicação depende de sete elementos que trabalham juntos. Se um deles falha, a mensagem
+            perde qualidade.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Elemento</th>
+            <th>O que é</th>
+            <th>Exemplo na Vale Norte</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Emissor</strong></td>
+            <td>Quem cria e envia a mensagem</td>
+            <td>Supervisor da expedição</td>
+            </tr>
+            <tr>
+            <td><strong>Receptor</strong></td>
+            <td>Quem recebe e interpreta</td>
+            <td>Conferente da doca</td>
+            </tr>
+            <tr>
+            <td><strong>Mensagem</strong></td>
+            <td>O conteúdo transmitido</td>
+            <td>"Pedido 4512 na doca 3 até 7h"</td>
+            </tr>
+            <tr>
+            <td><strong>Canal</strong></td>
+            <td>O meio usado</td>
+            <td>Rádio, e-mail, sistema, quadro de avisos</td>
+            </tr>
+            <tr>
+            <td><strong>Código</strong></td>
+            <td>A linguagem comum aos dois</td>
+            <td>Língua portuguesa, códigos de pedido</td>
+            </tr>
+            <tr>
+            <td><strong>Ruído</strong></td>
+            <td>Qualquer interferência</td>
+            <td>Barulho das empilhadeiras</td>
+            </tr>
+            <tr>
+            <td><strong>Feedback</strong></td>
+            <td>O retorno que confirma o entendimento</td>
+            <td>"Entendido: 4512, doca 3, até 7h"</td>
+            </tr>
+            </tbody>
+            </table>
+            <p><strong>Emissor.</strong> É o responsável pela clareza inicial: precisa organizar a ideia antes de falar ou
+            escrever e escolher palavras que o outro entenda.</p>
+            <p><strong>Receptor.</strong> Receber não é só ouvir ou ler: é <strong>interpretar</strong>. Exige atenção e escuta ativa. Quem
+            ouve "mais ou menos" e completa o resto por suposição causa erros operacionais.</p>
+            <p><strong>Mensagem e canal.</strong> A mensagem deve ser precisa e objetiva (o quê, onde, quando, quem). O canal
+            deve combinar com a mensagem: uma instrução com muitos números funciona melhor por escrito (e-mail
+            ou sistema) do que pelo rádio.</p>
+            <p><strong>Código.</strong> Só há comunicação quando os dois dominam o mesmo código. Usar siglas internas ("manda
+            o ASN do PO") com um cliente que não conhece esses termos quebra o código.</p>
+            <p><strong>Feedback.</strong> Transforma a comunicação numa via de mão dupla — um <strong>circuito fechado</strong>:</p>
+            <ol>
+            <li>O emissor envia a instrução.</li>
+            <li>O receptor interpreta.</li>
+            <li>O receptor repete com as próprias palavras e confirma.</li>
+            <li>O emissor valida ou corrige.</li>
+            </ol>
+            <p>🔑 <strong>Ponto-chave:</strong> sem feedback, o emissor <em>acha</em> que foi entendido. Com feedback, ele <em>sabe</em>.</p>
+            <h4 id="capitulo-01-t3">Ruídos: o que atrapalha a mensagem</h4>
+            <p>Ruído é toda interferência que altera ou impede o entendimento. Não é só barulho:</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Tipo de ruído</th>
+            <th>Exemplos no armazém e no escritório</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Físico</strong></td>
+            <td>Empilhadeiras, sirenes, conversas paralelas</td>
+            </tr>
+            <tr>
+            <td><strong>Técnico</strong></td>
+            <td>Rádio falhando, internet instável, áudio cortando</td>
+            </tr>
+            <tr>
+            <td><strong>Semântico</strong></td>
+            <td>Palavras ambíguas ("dá uma geral"), siglas desconhecidas, texto confuso</td>
+            </tr>
+            <tr>
+            <td><strong>Psicológico</strong></td>
+            <td>Pressa, estresse, cansaço no fim do turno, desatenção</td>
+            </tr>
+            </tbody>
+            </table>
+            <p><strong>Como reduzir ruídos:</strong></p>
+            <ul>
+            <li>Escolha o canal certo para cada tipo de mensagem.</li>
+            <li>Organize a mensagem em tópicos, com números, horários e prazos exatos.</li>
+            <li>Peça que o colega <strong>repita</strong> o que entendeu (paráfrase).</li>
+            <li>Mensagens importantes combinadas de forma oral devem ser <strong>registradas por escrito</strong>.</li>
+            </ul>
+            <h4 id="capitulo-01-t4">Comunicação assertiva e escuta ativa</h4>
+            <p><strong>Assertividade</strong> é falar com clareza, firmeza e respeito, sem agredir e sem se omitir.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Estilo</th>
+            <th>Como age</th>
+            <th>Efeito na equipe</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Passivo</strong></td>
+            <td>Não aponta o erro por medo</td>
+            <td>Problemas se acumulam</td>
+            </tr>
+            <tr>
+            <td><strong>Agressivo</strong></td>
+            <td>Grita, interrompe, culpa</td>
+            <td>Conflito e desmotivação</td>
+            </tr>
+            <tr>
+            <td><strong>Assertivo</strong> ✅</td>
+            <td>Apresenta fatos e propõe solução</td>
+            <td>Resolve sem desgastar</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>🔍 <strong>Exemplo:</strong> em vez de "você sempre erra a contagem!", diga: "a contagem do corredor B deu 12
+            caixas a menos que o sistema. Podemos recontar juntos antes de fechar o inventário?"</p>
+            <p><strong>Escuta ativa</strong> é prestar atenção de verdade: não interromper, anotar e confirmar ("Se entendi bem,
+            a prioridade hoje é o pedido da transportadora X?").</p>
+            <h4 id="capitulo-01-t5">Níveis de linguagem: falar certo para cada público</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Nível</th>
+            <th>Quando usar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Culta (formal)</strong></td>
+            <td>Relatórios, e-mails a clientes, atas, ofícios</td>
+            </tr>
+            <tr>
+            <td><strong>Técnica</strong></td>
+            <td>Entre profissionais da área (romaneio, nota fiscal, inventário)</td>
+            </tr>
+            <tr>
+            <td><strong>Jargão</strong></td>
+            <td>Gírias internas da equipe — evitar com clientes e visitantes</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>O bom profissional <strong>adapta</strong> o discurso ao interlocutor. Para o cliente, "o pedido saiu no
+            romaneio 2210 com o NF-e pendente de SEFAZ" vira: "seu pedido já foi carregado; a nota fiscal será
+            enviada por e-mail em até 1 hora".</p>
+            <h4 id="capitulo-01-t6">Trabalho em equipe, consenso e ética</h4>
+            <ul>
+            <li><strong>Consenso</strong> não é todos pensarem igual: é todos serem ouvidos e concordarem em <strong>apoiar</strong> a
+              decisão final.</li>
+            <li><strong>Conflitos</strong> devem ser tratados com critérios objetivos (segurança, custo, prazo), nunca com
+              ataques pessoais.</li>
+            <li><strong>Capacidades socioemocionais</strong> valorizadas: amabilidade, cooperação, respeito à hierarquia e
+              abertura à mudança.</li>
+            <li><strong>Ética:</strong> quem trabalha com sistemas tem acesso a dados de clientes, preços e senhas. Não se
+              repassam essas informações nem se escondem falhas: incidente comunicado cedo custa menos.</li>
+            </ul>
+            <h4 id="capitulo-01-t7">Na prática: aviso com ruído × aviso eficaz</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Com ruído ❌</th>
+            <th>Eficaz ✅</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>"Pessoal, sábado o sistema vai cair, salvem as coisas aí."</td>
+            <td>"Manutenção programada: o sistema de estoque ficará fora do ar no sábado (18/10), das 22h às 23h. Finalize os lançamentos até 21h30. Dúvidas: ramal 4020."</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Sequência para uma instrução sem ruídos: <strong>organizar em tópicos → enviar pelo canal adequado →
+            pedir confirmação → registrar por escrito</strong>.</p>
+            <h3 id="capitulo-01-videos">🎬 Vídeos para assistir (até 15 min)</h3>
+            <div class="caixa-video"><a href="https://www.youtube.com/watch?v=oQ10Zbf2GBU" target="_blank" rel="noopener"><img class="caixa-video__miniatura" src="https://i.ytimg.com/vi/oQ10Zbf2GBU/hqdefault.jpg" alt="Miniatura do vídeo Elementos da comunicação: aprenda o que são em poucos minutos"></a><div><p class="caixa-video__titulo">▶️ Elementos da comunicação: aprenda o que são em poucos minutos</p><p class="caixa-video__detalhe">⏱️ 07:48 · Português com Carla Holz</p><p class="caixa-video__detalhe">🔗 <a href="https://www.youtube.com/watch?v=oQ10Zbf2GBU" target="_blank" rel="noopener">https://www.youtube.com/watch?v=oQ10Zbf2GBU</a></p></div></div>
+            <div class="caixa-video"><a href="https://www.youtube.com/watch?v=5uXBzsW4mTM" target="_blank" rel="noopener"><img class="caixa-video__miniatura" src="https://i.ytimg.com/vi/5uXBzsW4mTM/hqdefault.jpg" alt="Miniatura do vídeo Três dicas para ser mais assertivo no trabalho"></a><div><p class="caixa-video__titulo">▶️ Três dicas para ser mais assertivo no trabalho</p><p class="caixa-video__detalhe">⏱️ 04:02 · IOB</p><p class="caixa-video__detalhe">🔗 <a href="https://www.youtube.com/watch?v=5uXBzsW4mTM" target="_blank" rel="noopener">https://www.youtube.com/watch?v=5uXBzsW4mTM</a></p></div></div>
+            <div class="caixa-video"><a href="https://www.youtube.com/watch?v=PuOMxWMaaMI" target="_blank" rel="noopener"><img class="caixa-video__miniatura" src="https://i.ytimg.com/vi/PuOMxWMaaMI/hqdefault.jpg" alt="Miniatura do vídeo Comunicação assertiva no trabalho: evite estas frases"></a><div><p class="caixa-video__titulo">▶️ Comunicação assertiva no trabalho: evite estas frases</p><p class="caixa-video__detalhe">⏱️ 10:41 · Vânia Marques</p><p class="caixa-video__detalhe">🔗 <a href="https://www.youtube.com/watch?v=PuOMxWMaaMI" target="_blank" rel="noopener">https://www.youtube.com/watch?v=PuOMxWMaaMI</a></p></div></div>
+            <h3 id="capitulo-01-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li>A comunicação tem <strong>sete elementos</strong>: emissor, receptor, mensagem, canal, código, ruído e feedback.</li><li>O <strong>feedback</strong> fecha o circuito e confirma o entendimento; sem ele, o erro aparece só no resultado.</li><li><strong>Ruídos</strong> podem ser físicos, técnicos, semânticos ou psicológicos — e sempre podem ser reduzidos.</li><li>A comunicação <strong>assertiva</strong> apresenta fatos e soluções com respeito; a <strong>escuta ativa</strong> confirma o que foi dito.</li><li>A linguagem deve se <strong>adequar ao público</strong>: técnica entre colegas, clara e formal com clientes.</li><li>Instrução importante: <strong>tópicos → canal certo → confirmação → registro escrito</strong>.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="exercicios" data-capitulo="capitulo-01">
+            <h3 id="capitulo-01-exercicios">✍️ Exercícios<button class="apostila__botao apostila__botao--pequeno" type="button" data-exportar-exercicios="capitulo-01">📥 Exportar PDF</button></h3>
+            <p class="exercicios__capitulo">Capítulo 01 — Comunicação Profissional e Seus Fundamentos</p>
+            <div class="exercicios__identificacao"><span class="exercicios__campo">Aluno(a):</span><span class="exercicios__campo">Turma:</span><span class="exercicios__campo">Data:</span></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 1</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Empregar princípios, padrões e normas técnicas para comunicação oral e escrita clara, assertiva e eficaz no trabalho.<br><strong>S1</strong> — Amabilidade e cooperação nas relações profissionais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> O supervisor da Vale Norte avisou pelo rádio: &quot;Pedido 4512 na doca 3 até as 7h&quot;. O conferente respondeu &quot;ok&quot; e carregou o pedido na doca 2.</p><p><span class="exercicio-label">Comando:</span> Identifique, nessa situação, quem é o emissor, o receptor, a mensagem, o canal, o código, o ruído e explique por que o feedback dado (&quot;ok&quot;) não foi suficiente.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 2</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Empregar princípios, padrões e normas técnicas para comunicação oral e escrita clara, assertiva e eficaz no trabalho.<br><strong>S1</strong> — Amabilidade e cooperação nas relações profissionais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> No recebimento de mercadorias há quatro problemas: barulho das empilhadeiras, rádio com chiado, um colega que usa siglas que ninguém conhece e um conferente muito cansado no fim do turno.</p><p><span class="exercicio-label">Comando:</span> Classifique cada problema como ruído físico, técnico, semântico ou psicológico e proponha uma ação para reduzir cada um.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 3</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Empregar princípios, padrões e normas técnicas para comunicação oral e escrita clara, assertiva e eficaz no trabalho.<br><strong>S1</strong> — Amabilidade e cooperação nas relações profissionais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Durante o inventário, um colega diz em voz alta para toda a equipe: &quot;Você é um desastre, errou a contagem de novo!&quot;.</p><p><span class="exercicio-label">Comando:</span> Reescreva a fala de forma assertiva, apresentando o fato e propondo uma solução, sem ataque pessoal.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 4</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Empregar princípios, padrões e normas técnicas para comunicação oral e escrita clara, assertiva e eficaz no trabalho.<br><strong>S1</strong> — Amabilidade e cooperação nas relações profissionais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Um cliente ligou perguntando pelo pedido dele. O atendente respondeu: &quot;o romaneio já fechou, mas a NF-e está travada no SEFAZ por rejeição de CFOP&quot;.</p><p><span class="exercicio-label">Comando:</span> Explique qual nível de linguagem foi usado, por que ele é inadequado para esse público e reescreva a resposta de forma clara para o cliente.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 5</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Empregar princípios, padrões e normas técnicas para comunicação oral e escrita clara, assertiva e eficaz no trabalho.<br><strong>S1</strong> — Amabilidade e cooperação nas relações profissionais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> O sistema de estoque da Vale Norte ficará fora do ar na sexta-feira, das 18h às 19h30, para atualização. Todos precisam terminar os lançamentos antes.</p><p><span class="exercicio-label">Comando:</span> Redija um aviso eficaz para a equipe (canal escolhido, data, horário, impacto, o que fazer e contato para dúvidas).</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 6</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Empregar princípios, padrões e normas técnicas para comunicação oral e escrita clara, assertiva e eficaz no trabalho.<br><strong>S1</strong> — Amabilidade e cooperação nas relações profissionais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Na doca 3 da Vale Norte, o conferente diz ao motorista que a carga só será liberada às 14h. O motorista, irritado, responde que tinha agendado para as 11h e começa a falar alto. Os dois param de se ouvir e a fila de caminhões aumenta.</p><p><span class="exercicio-label">Comando:</span> Descreva como o conferente pode conduzir a conversa usando escuta ativa e comunicação assertiva, e proponha uma solução de consenso que respeite o agendamento, o procedimento da empresa e o motorista.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1507,6 +1507,11 @@ assets/
 │                        turmas-aluno-repositorio.js + turmas-aluno-pagina.js + css/
 │                        turmas-aluno.css — alunos.html da raiz (menu ALUNOS, todo professor):
 │                        CRUD da tabela `turmaaluno`)
+├─ gerador-materia/    → materia.py: lê o <MATERIA>/materia.json (arquivo ÚNICO de dados da
+│                        matéria), usado por todos os geradores (ver "REGRAS APOSTILAS")
+├─ gerador-apostilas/  → gerar_apostila.py + markdown_apostila.py + template_apostila.html:
+│                        capítulos (APOSTILA/CONTEUDO/) → Markdown completo (--markdown) → HTML
+│                        da apostila (css/apostila.css, js/apostila.js, img/logo-sesi-senai.png)
 ├─ gerador-atividades/ → gerar_atividades.py + template_atividade.html: gera as páginas de
 │                        atividade de 50 questões e o index.html de qualquer pasta ATIVIDADES/
 ├─ gerador-atividade-excel/ → gerar_atividade_excel.py (+ desenho_excel.py, tela_excel.py,
@@ -1527,7 +1532,7 @@ assets/
                          Não existe mais lista em arquivo (ATIVIDADES-LIBERADAS.js foi removida).
 ├─ gerador-avaliacao-media-final/ → gerar_avaliacao_media_final.py + template: gera a
 │                        AVALIACAO-MEDIA-FINAL.html (composição da nota, 100 pontos) de cada matéria a
-│                        partir de ATIVIDADES/media-final.json (+ atividades.json). `--propor` cria o
+│                        partir de ATIVIDADES/media-final.json (+ materia.json). `--propor` cria o
 │                        json de proposta (30 atividades / 40 objetivas / 30 prática ou Excel) sem
 │                        sobrescrever; `--todas` gera em todas as matérias com json; página sem o
 │                        marcador só com `--forcar`. Mudou a composição = editar o json e rodar de novo.
@@ -1537,7 +1542,7 @@ assets/
 │                        e avaliações (gerador-atividades e gerador-avaliacao-discursiva); o PDF
 │                        (assets/js/atividade.js) leva os dois. Questão: `- **Capacidade:** C1` ou
 │                        `C1, C3` no .md; textos oficiais no campo `capacidades` do
-│                        atividades.json da matéria (código inexistente = erro).
+│                        materia.json da matéria (código inexistente = erro).
 └─ gerador-menu/       → tags_menu.py: monta as tags do menu para o <head>; usado pelos três
                          geradores acima e, direto, para aplicar o menu em páginas existentes:
                          `python assets\gerador-menu\tags_menu.py <arquivo.html> [...]`
@@ -1567,7 +1572,8 @@ assets/
 ```powershell
 C:\Python314\python.exe assets\gerador-atividades\gerar_atividades.py <pasta ATIVIDADES da matéria>
 ```
-A pasta precisa de um `atividades.json` com `disciplina` e `curso` (títulos do índice).
+A matéria precisa do `<MATERIA>/materia.json` (arquivo único: `uc`, `uc_curta`, `curso`, `docente`,
+`capacidades`...), lido por `assets/gerador-materia/materia.py`.
 
 - ✅ **Antes** de criar CSS ou JS, verificar se já existe algo em `assets/css/` ou `assets/js/` que resolva — e reutilizar.
 - ✅ HTML referencia os arquivos por **caminho relativo** até `assets/` (ex.: `../../../../assets/css/atividade.css`).
@@ -1732,6 +1738,181 @@ dessas atividades. Registrada em 2026-10-03 a pedido do usuário.
   2026-10-03): o usuário autorizou **aplicar o seed no Supabase ao finalizar cada matéria**.
 - ⏳ **Fila:** gerar **somente uma matéria por vez, na ordem que o usuário liberar**; as demais
   aguardam. Primeira liberada (2026-10-03): **Testes de Frontend**.
+
+## 📘 REGRAS APOSTILAS
+
+Registrada em 2026-10-03 a pedido do usuário (padrões definidos na validação do piloto). Plano:
+`docs/gerador-apostilas.md`. **Status:** 🔄 piloto **Introdução à TIC (ITIC)** — só o capítulo 01
+gerado, aguardando validação do usuário; os demais capítulos só depois que ele liberar, **um por
+vez, perguntando a cada capítulo** (rascunhos em `APOSTILA/RASCUNHOS/`, fora da apostila).
+
+### Gerador e arquivos
+
+- ✅ **Gerador único:** `C:\Python314\python.exe assets\gerador-apostilas\gerar_apostila.py
+  <pasta da matéria>` → `<MATERIA>/APOSTILA/APOSTILA-<MATERIA>.html` (inclui todos os
+  `CAPITULO-*.md` de `APOSTILA/CONTEUDO/`). Não montar apostila à mão.
+- ✅ **CSS e JS globais e reutilizáveis em qualquer matéria:** `assets/css/apostila.css`,
+  `assets/js/apostila.js` e `assets/img/logo-sesi-senai.png`, sem matéria, curso ou docente fixo no
+  código e sem `<style>`/`<script>` embutidos. O que muda vem dos dados.
+- ✅ **Fontes em `<MATERIA>/APOSTILA/`:** `CONTEUDO/INTRODUCAO.md` (obrigatória),
+  `CONTEUDO/CAPITULO-NN.md` (um por aula). Todos os dados da matéria (UC, curso, docente,
+  capacidades, conhecimentos e plano de aulas) vêm do `<MATERIA>/materia.json` (ver abaixo).
+- ✅ **Fonte do conteúdo = as aulas da matéria** (`CONTEUDO/`/`AULAS/`) e o
+  `EMENTA-CHALKIE-AI.md` (a ementa vence; a ementa do curso vence as duas). Exemplos no contexto
+  profissional do curso, com empresa **fictícia**.
+
+### Markdown completo da apostila (fonte final do HTML)
+
+Registrada em 2026-10-03 a pedido do usuário.
+
+- ✅ **1 capítulo = 1 aula de 4 horas.** Cada aula da matéria vira um `CAPITULO-NN.md` em
+  `APOSTILA/CONTEUDO/` (lógica mantida).
+- ✅ **Fluxo em 3 etapas:**
+  1. escrever e validar os capítulos (`CAPITULO-NN.md`), um por vez;
+  2. gerar o **Markdown completo da apostila** dentro da pasta `APOSTILA` da própria matéria:
+     `<MATERIA>/APOSTILA/APOSTILA-<MATERIA>.md` (introdução,
+     capacidades, glossário e todos os capítulos, na ordem da apostila), para o usuário **comparar
+     e acrescentar dados**;
+  3. **só no final** gerar a apostila HTML (`APOSTILA-<MATERIA>.html`) **a partir desse Markdown
+     completo**.
+- ✅ O que o usuário acrescentar no Markdown completo **vale para o HTML**; o gerador **não
+  sobrescreve** o Markdown completo existente sem pedido (`--forcar`) e, ao entrar um capítulo
+  novo, apenas o acrescenta.
+- ✅ **Comando do Markdown completo:** `C:\Python314\python.exe assets\gerador-apostilas\gerar_apostila.py
+  <pasta da matéria> --markdown` (`--forcar` refaz do zero). Módulo:
+  `assets/gerador-apostilas/markdown_apostila.py`. O plano de capítulos vem do `materia.json`
+  (`carga_horaria_uc`, `horas_por_aula` = 4, `aulas` = uma por aula); o gerador confere
+  se capítulos × 4 h = carga da UC. Glossário em ordem alfabética sem considerar acentos.
+- ⏳ Gerar o HTML a partir do Markdown completo: pendente (hoje o HTML ainda lê os capítulos).
+
+### `materia.json`: ARQUIVO ÚNICO de dados de cada matéria (opção B)
+
+Registrada em 2026-10-03 a pedido do usuário (escolheu a opção B: um arquivo só, sem dados
+repetidos). Vale para **todas as matérias**. Plano: `docs/arquivo-unico-materia-json.md`.
+**Status:** ✅ migração concluída em 2026-10-03 nas 4 matérias que tinham dados (ITIC, Análise de
+Dados, Automação, Fundamentos da Tecnologia). As outras 3 ainda têm só UC, curso, docente e
+capacidades básicas: completar socioemocionais e conhecimentos quando cada uma for trabalhada.
+
+- ✅ **Cada matéria tem UM arquivo de dados: `<MATERIA>/materia.json`** (na raiz da pasta da
+  matéria). Ele substitui `ATIVIDADES/atividades.json` e `APOSTILA/apostila.json`, que **deixam de
+  existir**. Nenhum dado da matéria fica repetido em outro JSON.
+- ✅ **Todos os geradores leem o `materia.json`** (atividades de 50 questões, avaliação
+  discursiva, média final, apostila e o `scripts/extrair-atividades-docx.py`), por um módulo
+  único em `assets/gerador-materia/materia.py`, que procura o arquivo subindo a partir da pasta
+  informada (ex.: `ATIVIDADES/` → raiz da matéria). Sem `materia.json`, o gerador para com erro
+  claro.
+- ✅ **Antes de gerar apostila ou atividades, ler a ementa** da matéria (`EMENTA-CHALKIE-AI.md`)
+  **e a UC na ementa do curso** (`EMENTA-PRINCIPAL-<CURSO>.md`, que vence) e manter o
+  `materia.json` atualizado com o que a ementa diz.
+- ✅ **O `materia.json` sempre contém:**
+  - **identificação:** `uc`, `uc_curta`, `curso`, `docente`, `modulo`, `modalidade`,
+    `carga_horaria_uc`, `fontes`, `versao_ementa`, `proveniencia`;
+  - **capacidades e conhecimentos da ementa:** `capacidades` (básicas `C1`..., texto da ementa do
+    curso), `capacidades_socioemocionais` (`S1`...), `conhecimentos` (`dominio`, `titulo`,
+    `conteudos`) e `capacidades_x_conhecimentos`;
+  - **plano de aulas — 1 aula = 4 h = 1 capítulo da apostila:** `horas_por_aula` (4) e `aulas`, cada
+    uma com `numero`, `aula`, `tema`, `carga_horaria`, `dominios`, `capacidades`,
+    `conteudos_oficiais`, `detalhamento_didatico`, `indicadores`, `indicadores_numeros`,
+    `situacao_problema`, `atividade`, `estrategias`, `bncc`, `marco` (quando houver),
+    `termos_glossario_ementa` e `ideias_ementa`;
+  - **demais seções da ementa:** `justificativa`, `objetivo_geral`, `competencia_integradora`,
+    `indicadores_desempenho`, `detalhamento_didatico_conhecimentos`, `estrategias_siglas`,
+    `aula_padrao_4h`, `marcos`, `avaliacao`, `mapeamento_bncc`, `recursos`, `acessibilidade`,
+    `glossario_ementa`, `regras_ia`, `metricas` e `referencias`.
+- ✅ **Conteúdo oficial separado do didático:** `conteudos_oficiais` = literal da ementa;
+  `detalhamento_didatico` = exemplos e aprofundamentos (regra da ementa de não misturar).
+- ✅ Divergência com a ementa do curso: a ementa do curso vence e o usuário é avisado.
+- ✅ Outros JSON de pasta continuam com a **própria** responsabilidade e **sem repetir** dados da
+  matéria: `ATIVIDADES/media-final.json` (composição da média final) e `atividade.json` das
+  atividades práticas de Excel.
+- ❌ Não colocar no `materia.json` bibliografia, conteúdo ou capacidade de **outra UC**.
+- ❌ Não criar de novo `atividades.json` nem `apostila.json`.
+
+### Cobertura completa da ementa na apostila (nada pode faltar)
+
+Registrada em 2026-10-03 a pedido do usuário, depois de reler a ementa da ITIC e completar o que
+faltava. Vale para **todas as matérias**.
+
+- ✅ **Antes de gerar a apostila, reler a ementa inteira e conferir cada seção** contra o
+  `materia.json`, a `INTRODUCAO.md` e os capítulos. Tudo o que a ementa traz entra na apostila:
+
+| Seção da ementa | Campo no `materia.json` | Onde aparece na apostila |
+|---|---|---|
+| Identificação (módulo, carga, modalidade, versão) | `modulo`, `carga_horaria_uc`, `modalidade`, `versao_ementa`, `proveniencia` | Capa e cabeçalho do Markdown |
+| Justificativa | `justificativa` | Introdução (Apresentação) |
+| Objetivo geral e competência integradora/BNCC | `objetivo_geral`, `competencia_integradora` | Introdução |
+| Capacidades básicas e socioemocionais | `capacidades`, `capacidades_socioemocionais` | Página de capacidades + abertura de cada capítulo |
+| Indicadores de desempenho | `indicadores_desempenho` + `indicadores`/`indicadores_numeros` do capítulo | Exercícios do capítulo (cada indicador vira ao menos 1 exercício) |
+| Conhecimentos (domínios) e detalhamento didático | `conhecimentos`, `detalhamento_didatico_conhecimentos`, `capacidades_x_conhecimentos` | Teoria dos capítulos (todo conteúdo oficial do capítulo é tratado) |
+| Sequência de aulas, estratégias, aula padrão, marcos | `aulas`, `horas_por_aula`, `estrategias_siglas`, `aula_padrao_4h`, `marcos` | Plano de capítulos (1 capítulo = 1 aula de 4 h) |
+| Situações-problema | `situacao_problema` do capítulo | Teoria/exercícios do capítulo |
+| Avaliação (instrumentos, tarefas, formativa, recuperação, rubrica) | `avaliacao` | Introdução ("Como você será avaliado") |
+| Mapeamento BNCC | `mapeamento_bncc` + `bncc` do capítulo | Plano de capítulos |
+| Recursos, ambientes e acessibilidade | `recursos`, `acessibilidade` | Introdução ("Ambientes, recursos e acessibilidade") |
+| Ideias de conteúdo (prompts da ementa) | `ideias_ementa` do capítulo | Exemplos e exercícios do capítulo |
+| Regras para IA | `regras_ia` | Seguidas na escrita (sem marca imposta, norma declarada, oficial ≠ didático) |
+| Glossário da ementa | `glossario_ementa` + `termos_glossario_ementa` do capítulo | Glossário do capítulo (termo oficial obrigatório) |
+| Métricas e referências | `metricas`, `referencias` | Uso do professor / referências |
+
+- ✅ **Conferência automática do gerador** (aviso ⚠️, não bloqueia): para cada capítulo, o tema e
+  as capacidades têm de bater com o plano (`aulas` do `materia.json`) e o glossário do
+  capítulo tem de conter os termos de `termos_glossario_ementa`. Avisos devem ser resolvidos antes
+  de pedir a validação do capítulo ao usuário.
+- ✅ **Conferência manual por capítulo** (antes de pedir validação): todos os
+  `conteudos_oficiais` tratados na teoria; cada indicador coberto por ao menos 1 exercício; a
+  situação-problema da aula usada na teoria ou nos exercícios; as `ideias_ementa` aproveitadas.
+- ✅ Encontrou algo na ementa que não está em nenhum campo: **acrescentar ao `materia.json`**,
+  registrar nesta tabela e avisar o
+  usuário.
+
+### Ordem da apostila
+
+1. **Capa** (tema SESI SENAI);
+2. **Sumário detalhado** com número de página: introdução, capacidades, glossário, cada capítulo
+   e, dentro dele, teoria (com os subtítulos), vídeos, resumo e exercícios;
+3. **Introdução** ao conteúdo (apresentação, objetivo geral, organização, como estudar);
+4. **Capacidades da matéria:** **todas** as capacidades básicas (C1...) e socioemocionais (S1...)
+   da ementa, mais a tabela "capacidades por capítulo";
+5. **Glossário** (no início): termos de todos os capítulos, em ordem alfabética;
+6. **Capítulos.**
+
+### Cada capítulo (partes obrigatórias, nesta ordem)
+
+1. **Abertura** com as capacidades do capítulo (`- **Capacidade:** C1, S1`);
+2. **Teoria + exemplos**;
+3. **Vídeos do YouTube de no máximo 15 minutos** (`- [título](url) — mm:ss — canal`): miniatura +
+   título + duração + canal + link (funciona na tela e no papel). O gerador **recusa** vídeo sem
+   duração ou com mais de 15:00. A duração é conferida nos metadados do YouTube (`curl`, sem
+   navegador) e o professor confere o conteúdo;
+4. **Resumo**;
+5. **No mínimo 5 exercícios (questões) por capítulo** (mais é permitido), no padrão ITEM (CAPACIDADE → linha divisória → Contexto → Comando → Resposta com
+   linhas), em **páginas próprias**, com campos Aluno(a)/Turma/Data e o botão **📥 Exportar PDF
+   ao lado do título "Exercícios"**, que exporta só os exercícios daquele capítulo.
+
+### Páginas A4 e PDF
+
+- ✅ **Cada página é um card do tamanho de uma folha A4** (210 × 297 mm), no tema
+  `GERADOR-AULAS/TEMA-SENAI.png`: fundo branco, faixa vertical à esquerda (azul-escuro `#164193`,
+  topo azul-claro `#008ad1` com corte diagonal), logo SESI SENAI no canto superior direito,
+  acentos verde `#56b735` e laranja `#e84910`; rodapé com o nome da apostila e o número da página.
+- ✅ O `apostila.js` **divide o conteúdo em quantas páginas forem precisas** (tabelas e listas são
+  quebradas entre páginas; título não fica sozinho no fim da página). Nada pode passar de uma
+  folha.
+- ✅ **No PDF, cada card sai como uma página A4**, igual ao tema (`@page { size: A4; margin: 0 }`).
+  A margem zero **remove o endereço e a paginação que o navegador imprime**; se algum navegador
+  ainda mostrar, desmarcar "Cabeçalhos e rodapés" na impressão.
+- ✅ Botões: **Exportar PDF (apostila completa)** no topo e **Exportar PDF** dos exercícios de cada
+  capítulo. Os botões não aparecem no PDF.
+
+### Controle e limites
+
+- ❌ **Sem gabarito na apostila** (material do aluno).
+- ✅ **Um capítulo por vez, completo** (regra "UMA AULA POR VEZ"), com validação do usuário antes
+  do próximo; controle em `<MATERIA>/APOSTILA/STATUS-APOSTILA.md`.
+- ✅ A apostila entra no `MENU-ATIVIDADES.js` da matéria (item "📘 Apostila") e recebe o header do
+  usuário (`tags_header.py`).
+- ⚠️ Respeita `STATUS-PERMISSAO-EMENTA`, matérias semelhantes (só a pasta pedida) e a exceção de
+  `QUALIFICACAO-PROFISSIONAL/` (ementa só lida).
 
 ## 📊 REGRA — `dashboard.html` EM CADA PASTA DE MATÉRIA
 

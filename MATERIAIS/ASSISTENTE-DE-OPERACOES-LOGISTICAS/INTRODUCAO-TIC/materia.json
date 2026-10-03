@@ -1,0 +1,1072 @@
+{
+  "uc": "Introdução à Tecnologia da Informação e Comunicação",
+  "uc_curta": "Introdução à TIC",
+  "curso": "Assistente de Operações Logísticas",
+  "docente": "Gelvazio Camargo",
+  "modulo": "Educação para o Trabalho (Básico)",
+  "modalidade": "Presencial",
+  "carga_horaria_uc": 40,
+  "fontes": [
+    "MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/EMENTA-PRINCIPAL-ASSISTENTE-DE-OPERACOES-LOGISTICAS.md (fonte da verdade: capacidades básicas e conhecimentos)",
+    "INTRODUCAO-TIC/EMENTA-CHALKIE-AI.md v3.1 (socioemocionais, indicadores, sequência de aulas, situações-problema e detalhamento didático)"
+  ],
+  "versao_ementa": "EMENTA-CHALKIE-AI.md v3.1 — conciliada e compactada (2026-09-23)",
+  "proveniencia": "Ementa oficial + plano de ensino + materiais de aula; o detalhamento não cria capacidades nem conteúdos obrigatórios.",
+  "justificativa": "Na logística, quase toda operação passa por recurso digital: e-mail à transportadora, planilha de estoque, relatório de avaria, ata de turno, rastreio em nuvem. A UC prepara o estudante para usá-los com clareza, segurança e postura profissional.",
+  "objetivo_geral": {
+    "texto": "Desenvolver capacidades básicas e socioemocionais em comunicação profissional, interpretação técnica e uso seguro de TIC.",
+    "dimensoes": [
+      "Comunicação profissional — comunicar-se oralmente e por escrito de forma clara, assertiva e eficaz.",
+      "Interpretação técnica — compreender normas, textos, dados e terminologias de contextos técnicos e industriais.",
+      "Uso seguro de TIC — pesquisar, produzir, armazenar e compartilhar informações com segurança."
+    ]
+  },
+  "competencia_integradora": {
+    "eixo_bncc": "Mediação e Intervenção Sociocultural",
+    "competencia": "Reconhecer conflitos e sugerir soluções para problemas identificados na comunidade.",
+    "resultados": [
+      "Identificar ações para um ambiente de trabalho saudável, considerando diversidades.",
+      "Demonstrar empatia, escuta ativa e diálogo nas relações profissionais."
+    ]
+  },
+  "capacidades": {
+    "C1": "Empregar princípios, padrões e normas técnicas para comunicação oral e escrita clara, assertiva e eficaz no trabalho.",
+    "C2": "Aplicar recursos e procedimentos de segurança da informação.",
+    "C3": "Interpretar dados, informações técnicas e terminologias em textos dos processos industriais.",
+    "C4": "Reconhecer características e aplicações de hardware e software dos sistemas informatizados da indústria.",
+    "C5": "Utilizar recursos da Web na comunicação, busca, armazenamento e compartilhamento de informação."
+  },
+  "capacidades_socioemocionais": {
+    "S1": "Amabilidade e cooperação nas relações profissionais.",
+    "S2": "Hierarquias e autonomia — perceber instâncias de decisão e níveis de autonomia.",
+    "S3": "Abertura à mudança — acolher fatos, ideias e opiniões diferentes.",
+    "S4": "Análise de problemas — analisar complexidades e oportunidades de melhoria."
+  },
+  "conhecimentos": [
+    {
+      "dominio": 1,
+      "titulo": "Elementos da comunicação",
+      "conteudos": [
+        "Emissor",
+        "Receptor",
+        "Mensagem",
+        "Canal",
+        "Ruído",
+        "Código",
+        "Feedback"
+      ]
+    },
+    {
+      "dominio": 2,
+      "titulo": "Níveis de fala",
+      "conteudos": [
+        "Linguagem culta",
+        "Linguagem técnica",
+        "Jargão",
+        "Características de cada nível"
+      ]
+    },
+    {
+      "dominio": 3,
+      "titulo": "Comunicação em equipes",
+      "conteudos": [
+        "Dinâmica do trabalho em equipe",
+        "Busca de consenso",
+        "Gestão de conflitos"
+      ]
+    },
+    {
+      "dominio": 4,
+      "titulo": "Hardware e sistema operacional",
+      "conteudos": [
+        "Fundamentos de hardware",
+        "Identificação de componentes, processadores e periféricos",
+        "Utilização de periféricos",
+        "Tipos, fundamentos e funções do sistema operacional",
+        "Barra de ferramentas",
+        "Área de trabalho",
+        "Organização de arquivos em pastas",
+        "Pesquisa de arquivos e diretórios",
+        "Compactação de arquivos"
+      ]
+    },
+    {
+      "dominio": 5,
+      "titulo": "Internet e WWW",
+      "conteudos": [
+        "Políticas de uso",
+        "Navegadores",
+        "Sites e buscadores",
+        "Download e gravação",
+        "Correio eletrônico",
+        "Direitos autorais e citação de fontes",
+        "Armazenamento e compartilhamento em nuvem"
+      ]
+    },
+    {
+      "dominio": 6,
+      "titulo": "Segurança da informação",
+      "conteudos": [
+        "Pilares da segurança da informação",
+        "Leis vigentes",
+        "Golpes na internet",
+        "Contas e senhas",
+        "Navegação segura",
+        "Backup",
+        "Códigos maliciosos (malware)"
+      ]
+    },
+    {
+      "dominio": 7,
+      "titulo": "Editor de textos",
+      "conteudos": [
+        "Tipos e funções",
+        "Formatação",
+        "Configuração de página",
+        "Figuras e objetos",
+        "Tabelas e gráficos",
+        "Arquivamento",
+        "Exibição",
+        "Ortografia e dicionário",
+        "Recuos, tabulação, parágrafos, espaçamentos e margens",
+        "Marcadores e numeração",
+        "Bordas e sombreamento",
+        "Colunas",
+        "Controle de alterações",
+        "Impressão"
+      ]
+    },
+    {
+      "dominio": 8,
+      "titulo": "Textos técnicos",
+      "conteudos": [
+        "Definição, tipos e exemplos",
+        "Normas de redação (ex.: ABNT, ISO, IEEE, ANSI)",
+        "Interpretação",
+        "Comunicação",
+        "Identificação de textos técnicos",
+        "Relatórios, atas, memorandos e resumos"
+      ]
+    },
+    {
+      "dominio": 9,
+      "titulo": "Editor de planilhas",
+      "conteudos": [
+        "Funções básicas",
+        "Linhas, colunas e endereços",
+        "Formatação de células",
+        "Configuração de página",
+        "Fórmulas básicas",
+        "Classificação e filtro",
+        "Gráficos, quadros e tabelas",
+        "Impressão"
+      ]
+    },
+    {
+      "dominio": 10,
+      "titulo": "Editor de apresentações",
+      "conteudos": [
+        "Funções e tipos",
+        "Formatação",
+        "Página",
+        "Figuras, tabelas e gráficos",
+        "Arquivamento",
+        "Exibição",
+        "Slides e vídeos",
+        "Recursos multimídia"
+      ]
+    }
+  ],
+  "capacidades_x_conhecimentos": {
+    "C1": [
+      1,
+      2,
+      3,
+      7,
+      8,
+      10
+    ],
+    "C2": [
+      6
+    ],
+    "C3": [
+      8,
+      9
+    ],
+    "C4": [
+      4,
+      7,
+      9,
+      10
+    ],
+    "C5": [
+      5
+    ]
+  },
+  "horas_por_aula": 4,
+  "aulas": [
+    {
+      "numero": "01",
+      "aula": 1,
+      "tema": "Comunicação Profissional e Seus Fundamentos",
+      "carga_horaria": 4,
+      "dominios": [
+        1,
+        2,
+        3
+      ],
+      "capacidades": [
+        "C1",
+        "S1"
+      ],
+      "conteudos_oficiais": [
+        "Elementos da comunicação: emissor, receptor, mensagem, canal, ruído, código e feedback",
+        "Níveis de fala: linguagem culta, técnica e jargão; características de cada nível",
+        "Comunicação em equipes: dinâmica do trabalho em equipe, busca de consenso e gestão de conflitos"
+      ],
+      "detalhamento_didatico": [
+        "Tipos de ruído: físico, técnico, semântico e psicológico",
+        "Comunicação assertiva, empatia e escuta ativa",
+        "Adequação da linguagem ao público (cliente, colega, gestor)",
+        "Ética na transmissão de informações"
+      ],
+      "indicadores": [
+        "Identifica os 7 elementos da comunicação numa situação de expedição",
+        "Reescreve mensagem com jargão em linguagem técnica clara"
+      ],
+      "situacao_problema": "Motorista carregou o pedido errado: aviso por rádio com ruído e sem confirmação.",
+      "atividade": "Diagnóstica + falhas de comunicação num turno de expedição",
+      "estrategias": [
+        "Exposição dialogada",
+        "Dinâmica de grupo",
+        "Trabalho em grupo"
+      ],
+      "bncc": [
+        "CG4 Comunicação",
+        "CG9 Empatia e cooperação"
+      ],
+      "termos_glossario_ementa": [
+        "Ruído",
+        "Feedback",
+        "Jargão"
+      ],
+      "ideias_ementa": [
+        "Caso de erro na expedição por ruído, 5 perguntas de checagem e dinâmica em grupo.",
+        "Dinâmica de conflito entre conferente e motorista sobre horário de doca: papéis, escuta ativa e reflexão."
+      ],
+      "indicadores_numeros": [
+        1,
+        2
+      ]
+    },
+    {
+      "numero": "02",
+      "aula": 2,
+      "tema": "Hardware, Periféricos e Sistemas Operacionais",
+      "carga_horaria": 4,
+      "dominios": [
+        4
+      ],
+      "capacidades": [
+        "C4"
+      ],
+      "conteudos_oficiais": [
+        "Fundamentos de hardware; identificação de componentes, processadores e periféricos",
+        "Utilização de periféricos",
+        "Tipos, fundamentos e funções do sistema operacional; barra de ferramentas; área de trabalho",
+        "Organização de arquivos em pastas; pesquisa de arquivos e diretórios; compactação de arquivos"
+      ],
+      "detalhamento_didatico": [
+        "Sistemas operacionais: Windows, Linux, macOS ou ChromeOS (categorias, sem impor marca)",
+        "Periféricos do armazém: leitor de código de barras, impressora de etiquetas, coletor de dados",
+        "Boas práticas de nomes de arquivos e controle de versões"
+      ],
+      "indicadores": [
+        "Classifica hardware/software e periféricos de entrada/saída",
+        "Cria estrutura de pastas, localiza e compacta arquivos"
+      ],
+      "situacao_problema": "Leitor de código de barras parou: hardware, driver ou configuração do SO?",
+      "atividade": "Classificar componentes + checklist de pastas do setor",
+      "estrategias": [
+        "Exposição dialogada",
+        "Demonstração",
+        "Atividade prática"
+      ],
+      "bncc": [
+        "CG5 Cultura digital"
+      ],
+      "termos_glossario_ementa": [
+        "Periférico"
+      ],
+      "ideias_ementa": [
+        "Questões sobre hardware, periféricos e SO no contexto de almoxarifado.",
+        "Atividade de pastas e compactação ZIP para notas fiscais, com checklist."
+      ],
+      "indicadores_numeros": [
+        3,
+        4
+      ]
+    },
+    {
+      "numero": "03",
+      "aula": 3,
+      "tema": "Navegação na Web e Pesquisa Acadêmica",
+      "carga_horaria": 4,
+      "dominios": [
+        5
+      ],
+      "capacidades": [
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "Políticas de uso",
+        "Navegadores; sites e buscadores",
+        "Download e gravação",
+        "Direitos autorais e citação de fontes"
+      ],
+      "detalhamento_didatico": [
+        "Diferença entre internet e World Wide Web",
+        "Operadores de busca (aspas, site:, filetype:, OR, -)",
+        "Critérios de confiabilidade de fontes (teste CRAAP)",
+        "Lei 9.610/1998 (Direitos Autorais) e citação conforme ABNT NBR 10520"
+      ],
+      "indicadores": [
+        "Pesquisa com operadores de busca e registra a fonte"
+      ],
+      "situacao_problema": "Supervisor pede a norma de armazenagem de inflamáveis: onde buscar e como citar?",
+      "atividade": "Pesquisa orientada com fontes citadas",
+      "estrategias": [
+        "Exposição dialogada",
+        "Atividade prática"
+      ],
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG7 Argumentação"
+      ],
+      "marco": "Opera o computador, organiza arquivos e pesquisa com critério",
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "indicadores_numeros": [
+        5
+      ]
+    },
+    {
+      "numero": "04",
+      "aula": 4,
+      "tema": "Comunicação Digital e Colaboração em Nuvem",
+      "carga_horaria": 4,
+      "dominios": [
+        5,
+        3
+      ],
+      "capacidades": [
+        "C1",
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "Correio eletrônico",
+        "Armazenamento e compartilhamento em nuvem",
+        "Comunicação em equipes: dinâmica do trabalho em equipe, busca de consenso e gestão de conflitos"
+      ],
+      "detalhamento_didatico": [
+        "E-mail profissional: assunto, saudação, corpo, anexo, assinatura e cópia (CC/CCO)",
+        "Permissões de compartilhamento (visualizar, comentar, editar) e links",
+        "Trabalho colaborativo em documentos na nuvem e controle de versões"
+      ],
+      "indicadores": [
+        "Redige e-mail profissional com assunto, anexo e saudação",
+        "Compartilha arquivo em nuvem com permissão correta"
+      ],
+      "situacao_problema": "Transportadora não recebeu o romaneio: e-mail sem anexo, assunto vago, pasta sem permissão.",
+      "atividade": "E-mail à transportadora + pasta compartilhada",
+      "estrategias": [
+        "Atividade prática",
+        "Trabalho em grupo"
+      ],
+      "bncc": [
+        "CG4 Comunicação",
+        "CG9 Empatia e cooperação"
+      ],
+      "termos_glossario_ementa": [
+        "Nuvem"
+      ],
+      "ideias_ementa": [
+        "Dinâmica de conflito entre conferente e motorista sobre horário de doca: papéis, escuta ativa e reflexão."
+      ],
+      "indicadores_numeros": [
+        6,
+        7
+      ]
+    },
+    {
+      "numero": "05",
+      "aula": 5,
+      "tema": "Segurança da Informação e Proteção de Dados",
+      "carga_horaria": 4,
+      "dominios": [
+        6
+      ],
+      "capacidades": [
+        "C2"
+      ],
+      "conteudos_oficiais": [
+        "Pilares da segurança da informação",
+        "Leis vigentes",
+        "Golpes na internet",
+        "Contas e senhas; navegação segura",
+        "Backup",
+        "Códigos maliciosos (malware)"
+      ],
+      "detalhamento_didatico": [
+        "Pilares: confidencialidade, integridade e disponibilidade",
+        "LGPD — Lei 13.709/2018",
+        "Phishing, engenharia social e golpes comuns",
+        "Senha forte, autenticação em dois fatores e gerenciador de senhas",
+        "Vírus, ransomware e spyware; CERT.br, Cartilha de Segurança"
+      ],
+      "indicadores": [
+        "Reconhece phishing, cria senha forte e explica o backup"
+      ],
+      "situacao_problema": "E-mail \"urgente\" do banco pede a senha do sistema de estoque.",
+      "atividade": "Questionário + casos de phishing, senha e perda de arquivo",
+      "estrategias": [
+        "Exposição dialogada",
+        "Estudo de caso",
+        "Gamificação"
+      ],
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "marco": "Comunica-se digitalmente e protege dados",
+      "termos_glossario_ementa": [
+        "Phishing",
+        "Malware",
+        "Backup"
+      ],
+      "ideias_ementa": [
+        "Estudo de caso de phishing recebido por conferente de carga: sinais de alerta, conduta correta e LGPD."
+      ],
+      "indicadores_numeros": [
+        8
+      ]
+    },
+    {
+      "numero": "06",
+      "aula": 6,
+      "tema": "Editor de Textos: Formatação e Estruturação",
+      "carga_horaria": 4,
+      "dominios": [
+        7
+      ],
+      "capacidades": [
+        "C1"
+      ],
+      "conteudos_oficiais": [
+        "Tipos e funções do editor de textos; arquivamento; exibição",
+        "Formatação; recuos, tabulação, parágrafos, espaçamentos e margens",
+        "Configuração de página; colunas; bordas e sombreamento",
+        "Marcadores e numeração",
+        "Figuras e objetos; tabelas e gráficos",
+        "Ortografia e dicionário; controle de alterações",
+        "Impressão"
+      ],
+      "detalhamento_didatico": [
+        "Estilos de título e sumário automático",
+        "Suítes de escritório: Microsoft 365, Google Workspace ou LibreOffice (categorias, sem impor marca)"
+      ],
+      "indicadores": [
+        "Formata documento com estilos, tabela, marcadores e revisão"
+      ],
+      "situacao_problema": "Procedimento de recebimento em texto corrido, sem títulos nem numeração.",
+      "atividade": "Formatar procedimento de recebimento de carga",
+      "estrategias": [
+        "Demonstração",
+        "Atividade prática"
+      ],
+      "bncc": [],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "indicadores_numeros": [
+        9
+      ]
+    },
+    {
+      "numero": "07",
+      "aula": 7,
+      "tema": "Textos Técnicos e Redação Empresarial",
+      "carga_horaria": 4,
+      "dominios": [
+        8,
+        2
+      ],
+      "capacidades": [
+        "C1",
+        "C3"
+      ],
+      "conteudos_oficiais": [
+        "Textos técnicos: definição, tipos e exemplos; identificação de textos técnicos",
+        "Normas de redação (ex.: ABNT, ISO, IEEE, ANSI)",
+        "Interpretação e comunicação de textos técnicos",
+        "Relatórios, atas, memorandos e resumos",
+        "Níveis de fala: linguagem culta, técnica e jargão"
+      ],
+      "detalhamento_didatico": [
+        "Norma adotada declarada: ABNT NBR 10719 (relatório técnico)",
+        "Estrutura de relatório de avaria, ata de reunião e memorando"
+      ],
+      "indicadores": [
+        "Produz relatório, ata ou memorando com estrutura correta"
+      ],
+      "situacao_problema": "Carga avariada: registrar em relatório e decidir em reunião.",
+      "atividade": "Relatório de avaria e ata de reunião",
+      "estrategias": [
+        "Exposição dialogada",
+        "Trabalho em grupo",
+        "Atividade prática"
+      ],
+      "bncc": [
+        "CG4 Comunicação",
+        "CG10 Responsabilidade"
+      ],
+      "marco": "Produz documento formatado e texto técnico",
+      "termos_glossario_ementa": [
+        "Ata"
+      ],
+      "ideias_ementa": [
+        "Modelos comentados de relatório de avaria e ata de reunião de turno, com erros comuns."
+      ],
+      "indicadores_numeros": [
+        10
+      ]
+    },
+    {
+      "numero": "08",
+      "aula": 8,
+      "tema": "Editor de Planilhas: Organização e Fórmulas",
+      "carga_horaria": 4,
+      "dominios": [
+        9
+      ],
+      "capacidades": [
+        "C3"
+      ],
+      "conteudos_oficiais": [
+        "Funções básicas; linhas, colunas e endereços",
+        "Formatação de células",
+        "Fórmulas básicas",
+        "Classificação e filtro",
+        "Configuração de página e impressão"
+      ],
+      "detalhamento_didatico": [
+        "Funções SOMA, MÉDIA, CONT.VALORES e SE",
+        "Planilha de estoque com alerta de estoque mínimo"
+      ],
+      "indicadores": [
+        "Usa SOMA, MÉDIA, CONT.VALORES e SE; classifica e filtra"
+      ],
+      "situacao_problema": "Contagem de estoque em papel: virar planilha com alerta de mínimo.",
+      "atividade": "Planilha de estoque com fórmulas + checklist",
+      "estrategias": [
+        "Demonstração",
+        "Atividade prática"
+      ],
+      "bncc": [
+        "CG5 Cultura digital"
+      ],
+      "termos_glossario_ementa": [
+        "Célula"
+      ],
+      "ideias_ementa": [
+        "Planilha de estoque com 15 itens usando SOMA, MÉDIA, CONT.VALORES e SE para estoque mínimo, com gráfico."
+      ],
+      "indicadores_numeros": [
+        11
+      ]
+    },
+    {
+      "numero": "09",
+      "aula": 9,
+      "tema": "Planilhas: Análise Visual e Gráficos",
+      "carga_horaria": 4,
+      "dominios": [
+        9
+      ],
+      "capacidades": [
+        "C3",
+        "S4"
+      ],
+      "conteudos_oficiais": [
+        "Classificação e filtro",
+        "Gráficos, quadros e tabelas",
+        "Impressão"
+      ],
+      "detalhamento_didatico": [
+        "Escolha do tipo de gráfico (colunas, linhas, pizza) conforme o dado",
+        "Interpretação de indicadores de entrega no prazo"
+      ],
+      "indicadores": [
+        "Gera gráfico adequado e interpreta o resultado"
+      ],
+      "situacao_problema": "Gerência quer saber qual rota mais atrasa entregas no mês.",
+      "atividade": "Filtros e gráfico de entregas no prazo, interpretado",
+      "estrategias": [
+        "Demonstração",
+        "Estudo de caso",
+        "Atividade prática"
+      ],
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG7 Argumentação"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "indicadores_numeros": [
+        12
+      ]
+    },
+    {
+      "numero": "10",
+      "aula": 10,
+      "tema": "Editor de Apresentações e TIC",
+      "carga_horaria": 4,
+      "dominios": [
+        10,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "capacidades": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "Editor de apresentações: funções e tipos; formatação; página",
+        "Figuras, tabelas e gráficos; slides e vídeos; recursos multimídia",
+        "Arquivamento e exibição",
+        "Integração dos domínios da UC (revisão para as avaliações)"
+      ],
+      "detalhamento_didatico": [
+        "Legibilidade dos slides, sequência lógica e tempo de fala",
+        "Avaliação objetiva (40 questões) e avaliação prática (4 tarefas) nesta aula"
+      ],
+      "indicadores": [
+        "Apresenta slides legíveis em sequência lógica"
+      ],
+      "situacao_problema": "Apresentar em 5 minutos os resultados do setor ao próximo turno.",
+      "atividade": "Apresentação curta + avaliações objetiva e prática",
+      "estrategias": [
+        "Atividade prática",
+        "Apresentação para público"
+      ],
+      "bncc": [
+        "CG4 Comunicação",
+        "CG9 Empatia e cooperação"
+      ],
+      "marco": "Integra texto, planilha e apresentação",
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [
+        "Roteiro de 5 slides sobre indicadores de entrega, com legibilidade e tempo de fala."
+      ],
+      "indicadores_numeros": [
+        13
+      ]
+    }
+  ],
+  "aula_padrao_4h": [
+    "Pergunta disparadora (15 min)",
+    "Exposição com slide (60 min)",
+    "Quiz Kahoot/Wayground (15 min)",
+    "Intervalo (15 min)",
+    "Prática no laboratório (105 min)",
+    "Socialização e feedback (30 min)"
+  ],
+  "indicadores_desempenho": [
+    {
+      "numero": 1,
+      "indicador": "Identifica os 7 elementos da comunicação numa situação de expedição",
+      "capacidades": [
+        "C1"
+      ],
+      "aula": 1
+    },
+    {
+      "numero": 2,
+      "indicador": "Reescreve mensagem com jargão em linguagem técnica clara",
+      "capacidades": [
+        "C1"
+      ],
+      "aula": 1
+    },
+    {
+      "numero": 3,
+      "indicador": "Classifica hardware/software e periféricos de entrada/saída",
+      "capacidades": [
+        "C4"
+      ],
+      "aula": 2
+    },
+    {
+      "numero": 4,
+      "indicador": "Cria estrutura de pastas, localiza e compacta arquivos",
+      "capacidades": [
+        "C4"
+      ],
+      "aula": 2
+    },
+    {
+      "numero": 5,
+      "indicador": "Pesquisa com operadores de busca e registra a fonte",
+      "capacidades": [
+        "C5"
+      ],
+      "aula": 3
+    },
+    {
+      "numero": 6,
+      "indicador": "Redige e-mail profissional com assunto, anexo e saudação",
+      "capacidades": [
+        "C1",
+        "C5"
+      ],
+      "aula": 4
+    },
+    {
+      "numero": 7,
+      "indicador": "Compartilha arquivo em nuvem com permissão correta",
+      "capacidades": [
+        "C5"
+      ],
+      "aula": 4
+    },
+    {
+      "numero": 8,
+      "indicador": "Reconhece phishing, cria senha forte e explica o backup",
+      "capacidades": [
+        "C2"
+      ],
+      "aula": 5
+    },
+    {
+      "numero": 9,
+      "indicador": "Formata documento com estilos, tabela, marcadores e revisão",
+      "capacidades": [
+        "C1"
+      ],
+      "aula": 6
+    },
+    {
+      "numero": 10,
+      "indicador": "Produz relatório, ata ou memorando com estrutura correta",
+      "capacidades": [
+        "C1",
+        "C3"
+      ],
+      "aula": 7
+    },
+    {
+      "numero": 11,
+      "indicador": "Usa SOMA, MÉDIA, CONT.VALORES e SE; classifica e filtra",
+      "capacidades": [
+        "C3"
+      ],
+      "aula": 8
+    },
+    {
+      "numero": 12,
+      "indicador": "Gera gráfico adequado e interpreta o resultado",
+      "capacidades": [
+        "C3"
+      ],
+      "aula": 9
+    },
+    {
+      "numero": 13,
+      "indicador": "Apresenta slides legíveis em sequência lógica",
+      "capacidades": [
+        "C1"
+      ],
+      "aula": 10
+    }
+  ],
+  "detalhamento_didatico_conhecimentos": {
+    "pilares_seguranca": "Confidencialidade, integridade e disponibilidade.",
+    "lei": "LGPD — Lei 13.709/2018.",
+    "sistemas_operacionais": "Windows, Linux, macOS ou ChromeOS.",
+    "suites_escritorio": "Microsoft 365, Google Workspace, LibreOffice."
+  },
+  "estrategias_siglas": {
+    "ED": "Exposição dialogada",
+    "DG": "Dinâmica de grupo",
+    "TG": "Trabalho em grupo",
+    "DM": "Demonstração",
+    "AP": "Atividade prática",
+    "EC": "Estudo de caso",
+    "GM": "Gamificação",
+    "PP": "Apresentação para público"
+  },
+  "marcos": [
+    {
+      "aula": 3,
+      "marco": "Opera o computador, organiza arquivos e pesquisa com critério"
+    },
+    {
+      "aula": 5,
+      "marco": "Comunica-se digitalmente e protege dados"
+    },
+    {
+      "aula": 7,
+      "marco": "Produz documento formatado e texto técnico"
+    },
+    {
+      "aula": 10,
+      "marco": "Integra texto, planilha e apresentação"
+    }
+  ],
+  "avaliacao": {
+    "instrumentos": [
+      {
+        "instrumento": "Avaliação Objetiva — 40 questões, 7 eixos, 60 min",
+        "valor": 4.0,
+        "momento": "Aula 10",
+        "capacidades": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5"
+        ]
+      },
+      {
+        "instrumento": "Avaliação Prática — 4 tarefas, 100 min",
+        "valor": 6.0,
+        "momento": "Aula 10",
+        "capacidades": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5"
+        ],
+        "tarefas": [
+          {
+            "tarefa": "T1 Organização, backup e comunicação",
+            "valor": 1.5,
+            "capacidades": [
+              "C1",
+              "C2",
+              "C4",
+              "C5"
+            ]
+          },
+          {
+            "tarefa": "T2 Relatório técnico",
+            "valor": 2.0,
+            "capacidades": [
+              "C1",
+              "C3"
+            ]
+          },
+          {
+            "tarefa": "T3 Planilha de análise",
+            "valor": 1.5,
+            "capacidades": [
+              "C3",
+              "C4"
+            ]
+          },
+          {
+            "tarefa": "T4 Apresentação",
+            "valor": 1.0,
+            "capacidades": [
+              "C1"
+            ]
+          }
+        ]
+      }
+    ],
+    "nota_final": 10.0,
+    "nota_minima": 7.0,
+    "formativa": "Aulas 1–9: atividade de 50 questões de cada aula, quizzes e registro qualitativo.",
+    "recuperacao": "Contínua — quem não concluir a atividade refaz com roteiro guiado na aula seguinte ou como tarefa; final — nota < 7,0 refaz a(s) tarefa(s) práticas de maior perda e/ou nova objetiva equivalente, conforme regimento SENAI, retomando só as capacidades não atingidas.",
+    "rubrica": [
+      {
+        "nivel": "Excelente",
+        "nota": "9–10",
+        "descricao": "Usa a ferramenta com autonomia, produz documento correto e comunica com clareza e segurança"
+      },
+      {
+        "nivel": "Bom",
+        "nota": "7–8",
+        "descricao": "Cumpre a tarefa com pequenos ajustes; poucas falhas de formatação ou linguagem"
+      },
+      {
+        "nivel": "Aceitável",
+        "nota": "5–6",
+        "descricao": "Cumpre o essencial com orientação; erros que não comprometem a mensagem"
+      },
+      {
+        "nivel": "Insuficiente",
+        "nota": "0–4",
+        "descricao": "Não conclui ou compromete a compreensão ou a segurança"
+      }
+    ]
+  },
+  "mapeamento_bncc": [
+    {
+      "competencia": "CG4 Comunicação",
+      "aulas": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "foco": "E-mail, relatório, apresentação"
+    },
+    {
+      "competencia": "CG5 Cultura digital",
+      "aulas": [
+        2,
+        3,
+        5,
+        8,
+        9
+      ],
+      "foco": "Uso ético e seguro de TIC"
+    },
+    {
+      "competencia": "CG7 Argumentação",
+      "aulas": [
+        3,
+        9
+      ],
+      "foco": "Fontes confiáveis, leitura de gráficos"
+    },
+    {
+      "competencia": "CG9 Empatia e cooperação",
+      "aulas": [
+        1,
+        4,
+        10
+      ],
+      "foco": "Consenso, conflitos, grupo"
+    },
+    {
+      "competencia": "CG10 Responsabilidade",
+      "aulas": [
+        5,
+        7
+      ],
+      "foco": "LGPD, direitos autorais"
+    }
+  ],
+  "recursos": {
+    "ambientes": [
+      "Sala de aula",
+      "Laboratório de informática",
+      "Auditório",
+      "RV"
+    ],
+    "equipamentos": [
+      "Projetor",
+      "Computadores",
+      "Quadro branco",
+      "Lousa digital",
+      "RA/RV"
+    ],
+    "recurso_didatico": "Estante Virtual SENAI DN"
+  },
+  "acessibilidade": {
+    "visual": "Zoom, alto contraste, leitor de tela (NVDA, TalkBack, ChromeVox), fonte ampliada.",
+    "auditiva": "Legendas, instruções escritas, intérprete de Libras quando houver.",
+    "motora": "Atalhos, digitação por voz, tempo estendido.",
+    "leitura_tdah": "Passo a passo numerado, etapas curtas, checklist.",
+    "pouca_familiaridade": "Duplas e demonstração lenta.",
+    "regra": "Adaptar tempo e formato sem alterar as capacidades avaliadas."
+  },
+  "glossario_ementa": [
+    {
+      "termo": "Ruído",
+      "definicao": "Interferência que distorce a mensagem (barulho, termo ambíguo, e-mail sem assunto).",
+      "capitulo": "01"
+    },
+    {
+      "termo": "Feedback",
+      "definicao": "Retorno que confirma a compreensão.",
+      "capitulo": "01"
+    },
+    {
+      "termo": "Jargão",
+      "definicao": "Termo de grupo profissional (\"picking\", \"cross-docking\").",
+      "capitulo": "01"
+    },
+    {
+      "termo": "Periférico",
+      "definicao": "Dispositivo de entrada/saída (leitor de código de barras, impressora de etiquetas).",
+      "capitulo": "02"
+    },
+    {
+      "termo": "Nuvem",
+      "definicao": "Arquivos em servidores na internet.",
+      "capitulo": "04"
+    },
+    {
+      "termo": "Phishing",
+      "definicao": "Golpe que imita mensagem legítima.",
+      "capitulo": "05"
+    },
+    {
+      "termo": "Malware",
+      "definicao": "Programa malicioso (vírus, ransomware, spyware).",
+      "capitulo": "05"
+    },
+    {
+      "termo": "Backup",
+      "definicao": "Cópia de segurança em outro local.",
+      "capitulo": "05"
+    },
+    {
+      "termo": "Célula",
+      "definicao": "Interseção de linha e coluna (B4).",
+      "capitulo": "08"
+    },
+    {
+      "termo": "Ata",
+      "definicao": "Registro formal do que foi discutido e decidido.",
+      "capitulo": "07"
+    }
+  ],
+  "regras_ia": [
+    "Capacidades = resultados amplos; conhecimentos = meios para desenvolvê-las.",
+    "Integrar competências técnicas e socioemocionais em atividades de comunicação e grupo.",
+    "Não inventar critérios, pesos ou quantidade de aulas além dos definidos na sequência de aulas e na avaliação.",
+    "Não impor marcas de software: a ementa cita categorias, não produtos.",
+    "Verificar atualidade de leis, normas e práticas de segurança.",
+    "Diferenciar conteúdo [oficial] de exemplos e aprofundamentos.",
+    "Manter contexto profissional, logístico e industrial nos exemplos.",
+    "Promover uso ético, seguro, responsável e inclusivo das tecnologias.",
+    "Ao citar ABNT, ISO, IEEE ou ANSI, declarar qual norma está sendo adotada."
+  ],
+  "metricas": [
+    "80%+ dos estudantes com nota final ≥ 7,0.",
+    "100% entregam a pasta compactada da prova prática."
+  ],
+  "referencias": [
+    "SENAI. Metodologia SENAI de Educação Profissional. 2019.",
+    "Estante Virtual SENAI DN (recurso didático oficial da UC).",
+    "BRASIL. Lei nº 13.709, de 14 de agosto de 2018 (LGPD).",
+    "BRASIL. Lei nº 9.610, de 19 de fevereiro de 1998 (Direitos Autorais).",
+    "CERT.br. Cartilha de Segurança para Internet.",
+    "ABNT NBR 10719 — Informação e documentação — Relatório técnico e/ou científico.",
+    "Ajuda oficial: Microsoft 365, Google Workspace, LibreOffice."
+  ]
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila — {{UC_CURTA}}</title>
+    <link rel="stylesheet" href="{{ASSETS}}/css/apostila.css">
+    <script src="{{ASSETS}}/js/apostila.js" defer></script>{{MENU}}
+</head>
+<body class="apostila" data-logo="{{LOGO}}" data-rodape="Apostila — {{UC_CURTA}} · SESI SENAI">
+    <!-- Gerado por assets/gerador-apostilas/gerar_apostila.py — não editar à mão -->
+    <div class="apostila__container">
+        <header class="apostila__topo">
+            <div class="apostila__barra">
+                <button class="apostila__botao" id="botao-exportar-pdf" type="button">📥 Exportar PDF (apostila completa)</button>
+                <small class="apostila__dica">Na janela de impressão, escolha "Salvar como PDF".</small>
+            </div>
+        </header>
+
+        <section class="pagina-senai pagina-a4 capa-apostila">
+            <img class="pagina-senai__logo" src="{{LOGO}}" alt="SESI SENAI">
+            <div class="pagina-senai__conteudo">
+                <a class="capa-apostila__voltar" href="../ATIVIDADES/index.html">← Atividades da matéria</a>
+                <h1 class="capa-apostila__titulo">Apostila<br>{{UC}}</h1>
+                <p class="capa-apostila__subtitulo">{{CURSO}}</p>
+                <div class="capa-apostila__faixa"></div>
+                <p class="capa-apostila__dados">Docente: {{DOCENTE}} · {{TOTAL_CAPITULOS}} capítulo(s)</p>
+            </div>
+            <footer class="pagina-senai__rodape"></footer>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="sumario">
+            <h2 id="sumario">Sumário</h2>
+{{SUMARIO}}
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="introducao">
+{{INTRODUCAO}}
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="capacidades">
+{{CAPACIDADES}}
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="glossario">
+            <h2 id="glossario">Glossário</h2>
+{{GLOSSARIO}}
+        </section>
+
+{{CAPITULOS}}
+    </div>
+</body>
+</html>

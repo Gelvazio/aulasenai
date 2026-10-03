@@ -6,6 +6,7 @@ window.MENU_ATIVIDADES = {
   titulo: 'Introdução à TIC',
   itens: [
     { rotulo: '📚 Índice', link: 'index.html' },
+    { rotulo: '📘 Apostila', link: '../APOSTILA/APOSTILA-INTRODUCAO-TIC.html' },
     {
       rotulo: '📝 Atividades por aula',
       subitens: [

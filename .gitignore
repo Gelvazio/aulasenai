@@ -16,6 +16,8 @@ graphify-out/
 !MATERIAIS/**/ATIVIDADES/**/*.pdf
 !MATERIAIS/**/ATIVIDADES/*.pdf
 !MATERIAIS/**/ATIVIDADES/*.pptx
+# Logo SESI SENAI usado pelas apostilas (assets/css/apostila.css, regra "REGRAS APOSTILAS")
+!assets/img/logo-sesi-senai.png
 
 # Dados pessoais de alunos (LGPD) — nunca publicar
 LISTA-PRESENCA*.js
@@ -36,6 +38,8 @@ variaveis.js
 *QUESTOES.md
 docs/atividade-raciocinio-logico.md
 GERADOR-AULAS/ESTRUTURA-PROVAS/Prova Pr*tica.md
+# Banco de questões do AVA SENAI (Moodle XML com as respostas certas) — nunca publicar
+BANCO-AVA/
 
 # Material de outros professores (slides, figuras e transcrições): só local, não publicar
 CONTEUDO-PROF-*/

@@ -1,7 +1,7 @@
 """Capacidades da ementa nas avaliações: quadro no início e caixa CAPACIDADE em cada questão.
 
 Usado por assets/gerador-atividades e assets/gerador-avaliacao-discursiva.
-Dados: campo "capacidades" do atividades.json da matéria ({"C1": "texto oficial", ...}).
+Dados: campo "capacidades" do materia.json da matéria ({"C1": "texto oficial", ...}).
 Questão: linha "- **Capacidade:** C1" ou "- **Capacidade:** C1, C3" no .md.
 Plano: docs/capacidade-por-questao-avaliacoes.md
 """
@@ -32,7 +32,7 @@ def ler_codigos_questao(texto_questao):
 
 
 def validar_codigos(capacidades, codigos, rotulo):
-    """Confere se todos os códigos da questão existem no atividades.json.
+    """Confere se todos os códigos da questão existem no materia.json.
 
     Args:
         capacidades: Dicionário código → texto oficial.
@@ -45,11 +45,11 @@ def validar_codigos(capacidades, codigos, rotulo):
     desconhecidos = [codigo for codigo in codigos if codigo not in capacidades]
     if desconhecidos:
         raise SystemExit(f"{rotulo}: capacidade {', '.join(desconhecidos)} não existe no "
-                         f'campo "{CAMPO_DADOS}" do atividades.json')
+                         f'campo "{CAMPO_DADOS}" do materia.json')
 
 
 def codigos_usados(listas_de_codigos, capacidades):
-    """Junta os códigos usados nas questões, na ordem do atividades.json.
+    """Junta os códigos usados nas questões, na ordem do materia.json.
 
     Args:
         listas_de_codigos: Lista com os códigos de cada questão.
