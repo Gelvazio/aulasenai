@@ -166,6 +166,19 @@
   - [Vídeos](#vídeos-7)
   - [Resumo](#resumo-8)
   - [Exercícios](#exercícios-7)
+- [Capítulo 09 — Planilhas: Análise Visual e Gráficos](#capítulo-09--planilhas-análise-visual-e-gráficos)
+  - [Teoria](#teoria-8)
+    - [Qual rota mais atrasa?](#qual-rota-mais-atrasa)
+    - [Da planilha de entregas ao quadro-resumo](#da-planilha-de-entregas-ao-quadro-resumo)
+    - [Classificar e filtrar para analisar](#classificar-e-filtrar-para-analisar)
+    - [Que gráfico usar? A pergunta decide](#que-gráfico-usar-a-pergunta-decide)
+    - [Montando o gráfico](#montando-o-gráfico)
+    - [Interpretar: o gráfico precisa virar decisão](#interpretar-o-gráfico-precisa-virar-decisão)
+    - [Gráficos que enganam](#gráficos-que-enganam)
+    - [Levar para o relatório e para a impressão](#levar-para-o-relatório-e-para-a-impressão)
+  - [Vídeos](#vídeos-8)
+  - [Resumo](#resumo-9)
+  - [Exercícios](#exercícios-8)
 <!-- sumario:fim -->
 
 ---
@@ -292,7 +305,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 | 06 | 06 | Editor de Textos: Formatação e Estruturação | 4 h | ✅ Incluído |
 | 07 | 07 | Textos Técnicos e Redação Empresarial | 4 h | ✅ Incluído |
 | 08 | 08 | Editor de Planilhas: Organização e Fórmulas | 4 h | ✅ Incluído |
-| 09 | 09 | Planilhas: Análise Visual e Gráficos | 4 h | ⬜ Pendente |
+| 09 | 09 | Planilhas: Análise Visual e Gráficos | 4 h | ✅ Incluído |
 | 10 | 10 | Editor de Apresentações e TIC + Avaliação | 4 h | ⬜ Pendente |
 
 ## Aula 01 — Comunicação Profissional e Seus Fundamentos
@@ -750,6 +763,7 @@ O tempo e o formato podem ser adaptados sem alterar as capacidades avaliadas.
 | Capítulo 06 — Editor de Textos: Formatação e Estruturação | C1 |
 | Capítulo 07 — Textos Técnicos e Redação Empresarial | C1, C3 |
 | Capítulo 08 — Editor de Planilhas: Organização e Fórmulas | C3 |
+| Capítulo 09 — Planilhas: Análise Visual e Gráficos | C3, S4 |
 
 ---
 
@@ -781,6 +795,8 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **DNS:** sistema que traduz nomes de sites em endereços IP. _(cap. 03)_
 - **Driver:** programa que permite ao sistema operacional controlar um periférico. _(cap. 02)_
 - **E-mail corporativo:** mensagem eletrônica da empresa que serve como registro formal. _(cap. 04)_
+- **Eixo:** linha de referência do gráfico (horizontal = categorias ou tempo; vertical = valores). _(cap. 09)_
+- **Eixo truncado:** eixo de valores que não começa no zero e pode exagerar diferenças. _(cap. 09)_
 - **Emissor:** quem cria e envia a mensagem. _(cap. 01)_
 - **Engenharia social:** manipulação das pessoas para que revelem dados ou cometam erros. _(cap. 05)_
 - **Escuta ativa:** ouvir com atenção total, sem interromper, confirmando o que foi entendido. _(cap. 01)_
@@ -790,13 +806,18 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Formatação:** ajuste da aparência do texto (fonte, parágrafo, página). _(cap. 06)_
 - **Fórmula:** cálculo que começa com o sinal de igual (=). _(cap. 08)_
 - **Função:** fórmula pronta com nome, como SOMA, MÉDIA, CONT.VALORES e SE. _(cap. 08)_
+- **Gráfico:** representação visual de dados numéricos de uma tabela. _(cap. 09)_
+- **Gráfico de linhas:** gráfico indicado para mostrar a evolução de valores ao longo do tempo. _(cap. 09)_
+- **Gráfico de setores (pizza):** gráfico que mostra as partes de um todo que soma 100%. _(cap. 09)_
 - **Hardware:** parte física do computador (peças, cabos e circuitos). _(cap. 02)_
 - **Histórico de versões:** registro das versões anteriores de um arquivo, que permite restaurá-lo. _(cap. 04)_
 - **Impessoalidade:** escrita na terceira pessoa, com foco no fato e não em quem o realizou. _(cap. 07)_
+- **Indicador (KPI):** medida usada para acompanhar o desempenho em relação a uma meta. _(cap. 09)_
 - **Integridade:** garantia de que a informação não foi alterada indevidamente. _(cap. 05)_
 - **Internet:** rede mundial que conecta computadores e outras redes. _(cap. 03)_
 - **Intervalo:** conjunto de células, como C2:C16. _(cap. 08)_
 - **Jargão:** termo de grupo profissional ("picking", "cross-docking"). _(cap. 01)_
+- **Legenda:** guia que identifica as cores ou séries de um gráfico. _(cap. 09)_
 - **LGPD:** Lei Geral de Proteção de Dados (Lei 13.709/2018). _(cap. 05)_
 - **Malware:** programa malicioso (vírus, ransomware, spyware). _(cap. 05)_
 - **Margem:** espaço entre o texto e a borda da folha. _(cap. 06)_
@@ -819,6 +840,7 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Política de Uso Aceitável (PUA):** regras da empresa para uso da internet e dos computadores. _(cap. 03)_
 - **POP:** procedimento operacional padrão, passo a passo de uma tarefa. _(cap. 07)_
 - **Processador (CPU):** componente que executa os cálculos e as instruções. _(cap. 02)_
+- **Quadro-resumo:** tabela que condensa os dados brutos em totais e indicadores. _(cap. 09)_
 - **Quebra de seção:** divisão que permite formatação diferente em partes do mesmo documento. _(cap. 06)_
 - **Ransomware:** malware que bloqueia os arquivos e exige resgate. _(cap. 05)_
 - **Receptor:** quem recebe e interpreta a mensagem. _(cap. 01)_
@@ -826,7 +848,9 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Referência absoluta:** endereço fixado com $ (ex.: $H$1), que não muda ao copiar a fórmula. _(cap. 08)_
 - **Relatório técnico:** documento que apresenta fatos, dados, análise e recomendações. _(cap. 07)_
 - **Resumo:** texto que condensa as ideias principais de um documento, sem opinião. _(cap. 07)_
+- **Rótulo de dados:** número exibido junto de cada coluna, barra ou ponto. _(cap. 09)_
 - **Ruído:** interferência que distorce a mensagem (barulho, termo ambíguo, e-mail sem assunto). _(cap. 01)_
+- **Série de dados:** conjunto de valores representado com uma mesma cor no gráfico. _(cap. 09)_
 - **Sincronização:** atualização automática que mantém iguais as cópias da nuvem e do computador. _(cap. 04)_
 - **Sistema operacional:** software que gerencia o hardware e serve de base para os outros programas. _(cap. 02)_
 - **Software:** programas e instruções executados pelo computador. _(cap. 02)_
@@ -2310,4 +2334,165 @@ mostra rapidamente o que precisa ser reposto (gráficos são o tema do capítulo
 - **Capacidade:** C3
 - **Contexto:** Na reunião semanal, a gerência quer ver, num relance, quais dos 15 itens estão abaixo do mínimo.
 - **Comando:** Explique que gráfico você faria com a tabela (quais colunas selecionar e por quê) e como ele ajuda a decidir a reposição.
+- **Linhas:** 4
+
+---
+
+# Capítulo 09 — Planilhas: Análise Visual e Gráficos
+
+- **Aula:** 09
+- **Carga horária:** 4 horas (1 aula)
+- **Capacidade:** C3, S4
+- **Fonte:** `APOSTILA/CONTEUDO/CAPITULO-09.md`
+
+## Teoria
+
+### Qual rota mais atrasa?
+
+A gerência da **Distribuidora Vale Norte** fez uma pergunta simples: "qual rota mais atrasou as
+entregas em outubro?". A planilha tem 300 linhas, uma por entrega. Olhando linha por linha,
+ninguém responde em menos de uma hora. Com **filtro**, um **quadro-resumo** e um **gráfico** bem
+escolhido, a resposta aparece em segundos — e abre espaço para a pergunta mais importante: **por
+que** essa rota atrasa e o que dá para melhorar.
+
+> 🎯 **Objetivos do capítulo:** **classificar e filtrar** dados para análise, montar **quadros e
+> tabelas-resumo**, escolher e construir o **gráfico** adequado, **interpretar** o resultado (como
+> o indicador de entregas no prazo), **analisar o problema** e **imprimir** o resultado.
+
+### Da planilha de entregas ao quadro-resumo
+
+A planilha de entregas tem, em cada linha: data, rota, cliente, prazo combinado, data da entrega
+e uma coluna **Situação** com `=SE(entrega<=prazo;"No prazo";"Atrasada")` (função SE, capítulo 8).
+
+O **quadro-resumo** (tabela-resumo) condensa as 300 linhas no que interessa para decidir:
+
+| Rota | Entregas | No prazo | Atrasadas | % no prazo |
+|---|---|---|---|---|
+| Norte | 80 | 76 | 4 | 95% |
+| Sul | 70 | 63 | 7 | 90% |
+| Leste | 90 | 72 | 18 | 80% |
+| Oeste | 60 | 57 | 3 | 95% |
+| **Total** | **300** | **268** | **32** | **89%** |
+
+**Boa apresentação do quadro:** cabeçalho em negrito com fundo suave, textos à esquerda,
+números à direita, porcentagens com o mesmo número de casas e uma linha de total.
+
+### Classificar e filtrar para analisar
+
+- **Filtrar** a coluna Rota por "Leste" e a coluna Situação por "Atrasada" mostra só as 18
+  entregas problemáticas — e a barra de status conta quantas linhas ficaram visíveis.
+- **Classificar** o quadro-resumo pela coluna "% no prazo", do menor para o maior, coloca a rota
+  pior no topo.
+- Antes de classificar, selecione **toda a tabela** (ou use o filtro do cabeçalho) para não
+  separar a rota dos seus números.
+- **Validação de dados** ajuda a manter a análise confiável: uma **lista suspensa** com as rotas
+  impede que alguém digite "Leste", "leste" e "LESTE" como se fossem rotas diferentes.
+
+### Que gráfico usar? A pergunta decide
+
+| Pergunta | Gráfico | Exemplo na Vale Norte |
+|---|---|---|
+| Comparar valores entre categorias | **Colunas** | Entregas atrasadas por rota |
+| Comparar muitas categorias ou nomes longos | **Barras** (horizontais) | Atrasos por cliente |
+| Mostrar evolução no tempo | **Linhas** | % no prazo de janeiro a outubro |
+| Mostrar partes de um todo (até 5 fatias, somando 100%) | **Setores (pizza)** | Motivos dos atrasos: trânsito, carga, endereço |
+
+### Montando o gráfico
+
+1. Selecione o **quadro-resumo** com os cabeçalhos (ex.: colunas Rota e Atrasadas).
+2. **Inserir → Gráfico** e escolha o tipo.
+3. Confira se as **categorias** (rotas) estão no eixo certo.
+4. Complete os elementos:
+   - **título** que diga o que é medido e o período: "Entregas atrasadas por rota — outubro/2026";
+   - **eixos** com rótulos e unidade (entregas, %);
+   - **rótulos de dados** (o número em cima de cada coluna);
+   - **legenda** só quando houver **duas ou mais séries** (ex.: Meta × Realizado); com uma série
+     só, a legenda é desnecessária.
+
+### Interpretar: o gráfico precisa virar decisão
+
+O **indicador** (KPI) de entregas no prazo = entregas no prazo ÷ total. Com meta de 95%:
+
+- **Aderência à meta:** Norte e Oeste atingem 95%; Sul fica perto (90%); **Leste, com 80%, está
+  bem abaixo** e concentra 18 dos 32 atrasos (mais da metade).
+- **Tendência:** num gráfico de linhas mês a mês, o indicador está subindo ou caindo?
+- **Variabilidade:** há meses com quedas bruscas? Elas coincidem com algo (chuva, obras, novo
+  motorista)?
+
+**Análise do problema (S4):** o gráfico mostra **onde** está o problema; a análise busca o
+**porquê**. Para a rota Leste, levante hipóteses (trânsito em horário de pico, excesso de
+entregas por viagem, endereços incompletos, saída tardia da doca), confira com os dados
+(filtre as entregas atrasadas e veja horários, clientes e motivos) e proponha melhorias que
+possam ser medidas no mês seguinte.
+
+### Gráficos que enganam
+
+- **Eixo truncado:** se o eixo das colunas começa em 85% e não em 0%, uma diferença de 90% para
+  95% parece enorme. Em colunas e barras, comece o eixo no **zero** (ou avise claramente).
+- **Efeito 3D:** distorce o tamanho das colunas e fatias; em documentos técnicos, use **2D**.
+- **Pizza com muitas fatias:** acima de 5, ninguém compara; use barras.
+- **Cores:** use bom contraste e rótulos diretos; evite depender só de vermelho × verde, que
+  pessoas com daltonismo não diferenciam.
+
+### Levar para o relatório e para a impressão
+
+- **Colar como imagem:** o gráfico fica "congelado" com os dados daquele dia.
+- **Colar como objeto vinculado:** o gráfico no relatório ou no slide se atualiza quando a
+  planilha muda (útil para relatórios mensais).
+- **Impressão:** selecione o quadro e o gráfico e defina a **área de impressão**; use **paisagem**
+  e **ajustar a uma página**; confira se as cores continuam legíveis em preto e branco; veja a
+  **visualização de impressão** antes.
+
+## Vídeos
+
+- [Quando usar cada gráfico (linhas, setores e colunas/barras)?](https://www.youtube.com/watch?v=ECH16Pb4q6M) — 07:15 — Calcula rápido - Renan Marcel
+- [Como criar gráficos no Excel para iniciantes](https://www.youtube.com/watch?v=FrypMTi2HiY) — 11:48 — Curso de Excel Online
+- [Como criar gráfico no Google Planilhas](https://www.youtube.com/watch?v=GH-JHN_qxkQ) — 14:43 — Flávio Moita
+- [Gráficos de linha enganosos](https://www.youtube.com/watch?v=oQXjKi5w-WA) — 04:57 — Khan Academy Brasil
+
+## Resumo
+
+- **Filtrar** mostra só o que interessa; **classificar** ordena; **validação** (lista suspensa) mantém os dados padronizados.
+- O **quadro-resumo** condensa centenas de linhas nos números que importam para decidir.
+- A **pergunta** define o gráfico: colunas (comparar), barras (muitas categorias), linhas (tempo), pizza (partes de um todo, até 5 fatias).
+- Gráfico profissional tem **título com período, eixos com unidade, rótulos** e legenda só com duas ou mais séries.
+- **Interpretar** é comparar com a meta, ver tendência e variabilidade e **analisar o problema** até chegar a causas e melhorias.
+- Cuidado com **eixo truncado**, 3D e cores sem contraste; leve o gráfico ao relatório (imagem ou vínculo) e confira a impressão.
+
+## Exercícios
+
+### ITEM 1
+- **Capacidade:** C3, S4
+- **Contexto:** Use o quadro-resumo de outubro do capítulo (rotas Norte, Sul, Leste e Oeste, com entregas, atrasos e % no prazo). A meta da empresa é 95% de entregas no prazo.
+- **Comando:** Indique qual rota mais atrasa e qual gráfico mostraria isso melhor, interprete o resultado em relação à meta e proponha duas hipóteses de causa e uma melhoria para a rota com pior resultado.
+- **Linhas:** 7
+
+### ITEM 2
+- **Capacidade:** C3
+- **Contexto:** A gerência quer quatro gráficos: (a) % de entregas no prazo de janeiro a outubro; (b) atrasos por rota em outubro; (c) motivos dos atrasos (trânsito, carga mal arrumada, endereço incorreto); (d) atrasos de 15 clientes com nomes longos.
+- **Comando:** Escolha o tipo de gráfico mais adequado para cada pedido e justifique cada escolha.
+- **Linhas:** 5
+
+### ITEM 3
+- **Capacidade:** C3
+- **Contexto:** Você vai criar um gráfico comparando, por rota, a meta (95%) e o resultado realizado de outubro.
+- **Comando:** Descreva os passos para criar o gráfico e os elementos que ele precisa ter (título, eixos, rótulos e legenda), explicando por que, nesse caso, a legenda é necessária.
+- **Linhas:** 5
+
+### ITEM 4
+- **Capacidade:** C3
+- **Contexto:** Na planilha com as 300 entregas de outubro, o supervisor quer ver só as entregas atrasadas da rota Leste, da mais antiga para a mais recente.
+- **Comando:** Explique como usar filtro e classificação para obter essa lista sem perder nem apagar dados, e como a validação de dados por lista suspensa evitaria erros na coluna Rota.
+- **Linhas:** 5
+
+### ITEM 5
+- **Capacidade:** C3, S4
+- **Contexto:** Num relatório da transportadora, o gráfico de colunas de "% no prazo" tem o eixo começando em 85%, e a coluna da rota Sul (90%) parece ter metade do tamanho da rota Norte (95%).
+- **Comando:** Explique por que o gráfico engana, como corrigi-lo e por que é importante analisar criticamente gráficos antes de tomar decisões.
+- **Linhas:** 5
+
+### ITEM 6
+- **Capacidade:** C3
+- **Contexto:** O quadro-resumo e o gráfico de outubro precisam entrar no relatório mensal da expedição, que é atualizado todo mês, e também ser impressos para a reunião em uma única folha.
+- **Comando:** Indique como inserir o gráfico no relatório para que ele se atualize sozinho e quais configurações de impressão usar para caber em uma folha legível.
 - **Linhas:** 4
