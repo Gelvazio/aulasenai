@@ -119,6 +119,25 @@
   - [Vídeos](#vídeos-4)
   - [Resumo](#resumo-4)
   - [Exercícios](#exercícios-4)
+- [Capítulo 06 — Editor de Textos: Formatação e Estruturação](#capítulo-06--editor-de-textos-formatação-e-estruturação)
+  - [Teoria](#teoria-5)
+    - [Um procedimento que ninguém consegue seguir](#um-procedimento-que-ninguém-consegue-seguir)
+    - [Tipos e funções do editor de textos](#tipos-e-funções-do-editor-de-textos)
+    - [Formatação de fonte](#formatação-de-fonte)
+    - [Parágrafos: alinhamento, recuos, tabulação, espaçamentos e margens](#parágrafos-alinhamento-recuos-tabulação-espaçamentos-e-margens)
+    - [Configuração de página](#configuração-de-página)
+    - [Marcadores e numeração](#marcadores-e-numeração)
+    - [Tabelas e gráficos](#tabelas-e-gráficos)
+    - [Figuras e objetos](#figuras-e-objetos)
+    - [Bordas e sombreamento](#bordas-e-sombreamento)
+    - [Colunas](#colunas)
+    - [Estilos e sumário automático](#estilos-e-sumário-automático)
+    - [Ortografia, dicionário e exibição](#ortografia-dicionário-e-exibição)
+    - [Controle de alterações e comentários](#controle-de-alterações-e-comentários)
+    - [Arquivamento e impressão](#arquivamento-e-impressão)
+  - [Vídeos](#vídeos-5)
+  - [Resumo](#resumo-5)
+  - [Exercícios](#exercícios-5)
 <!-- sumario:fim -->
 
 ---
@@ -242,7 +261,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 | 03 | 03 | Navegação na Web e Pesquisa Acadêmica | 4 h | ✅ Incluído |
 | 04 | 04 | Comunicação Digital e Colaboração em Nuvem | 4 h | ✅ Incluído |
 | 05 | 05 | Segurança da Informação e Proteção de Dados | 4 h | ✅ Incluído |
-| 06 | 06 | Editor de Textos: Formatação e Estruturação | 4 h | ⬜ Pendente |
+| 06 | 06 | Editor de Textos: Formatação e Estruturação | 4 h | ✅ Incluído |
 | 07 | 07 | Textos Técnicos e Redação Empresarial | 4 h | ⬜ Pendente |
 | 08 | 08 | Editor de Planilhas: Organização e Fórmulas | 4 h | ⬜ Pendente |
 | 09 | 09 | Planilhas: Análise Visual e Gráficos | 4 h | ⬜ Pendente |
@@ -700,6 +719,7 @@ O tempo e o formato podem ser adaptados sem alterar as capacidades avaliadas.
 | Capítulo 03 — Navegação na Web e Pesquisa Acadêmica | C5 |
 | Capítulo 04 — Comunicação Digital e Colaboração em Nuvem | C1, C5 |
 | Capítulo 05 — Segurança da Informação e Proteção de Dados | C2 |
+| Capítulo 06 — Editor de Textos: Formatação e Estruturação | C1 |
 
 ---
 
@@ -712,6 +732,7 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Autenticação em dois fatores (2FA):** acesso que exige, além da senha, uma segunda prova de identidade. _(cap. 05)_
 - **Backup:** cópia de segurança dos arquivos. _(cap. 02)_
 - **Backup:** cópia de segurança em outro local. _(cap. 05)_
+- **Bordas e sombreamento:** contorno e fundo colorido aplicados a parágrafos, tabelas ou páginas. _(cap. 06)_
 - **Canal:** meio usado para transmitir a mensagem (rádio, e-mail, sistema, reunião). _(cap. 01)_
 - **CC:** campo de cópia, para quem precisa acompanhar a mensagem. _(cap. 04)_
 - **CCO:** cópia oculta; os destinatários não veem os endereços uns dos outros. _(cap. 04)_
@@ -719,6 +740,7 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Compactação:** redução do tamanho de arquivos, reunindo-os em um único pacote (ZIP). _(cap. 02)_
 - **Comunicação assíncrona:** troca de mensagens em que a resposta não é imediata. _(cap. 04)_
 - **Confidencialidade:** garantia de que só pessoas autorizadas acessam a informação. _(cap. 05)_
+- **Controle de alterações:** recurso que registra as mudanças feitas por cada revisor. _(cap. 06)_
 - **Cookie:** pequeno arquivo que o site grava no navegador para lembrar preferências e logins. _(cap. 03)_
 - **Creative Commons:** licenças em que o autor indica como a obra pode ser usada. _(cap. 03)_
 - **Disponibilidade:** garantia de que a informação está acessível quando necessária. _(cap. 05)_
@@ -728,7 +750,9 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Emissor:** quem cria e envia a mensagem. _(cap. 01)_
 - **Engenharia social:** manipulação das pessoas para que revelem dados ou cometam erros. _(cap. 05)_
 - **Escuta ativa:** ouvir com atenção total, sem interromper, confirmando o que foi entendido. _(cap. 01)_
+- **Estilo:** conjunto de formatações salvo com um nome (ex.: Título 1), aplicado de uma vez. _(cap. 06)_
 - **Feedback:** retorno que confirma a compreensão. _(cap. 01)_
+- **Formatação:** ajuste da aparência do texto (fonte, parágrafo, página). _(cap. 06)_
 - **Hardware:** parte física do computador (peças, cabos e circuitos). _(cap. 02)_
 - **Histórico de versões:** registro das versões anteriores de um arquivo, que permite restaurá-lo. _(cap. 04)_
 - **Integridade:** garantia de que a informação não foi alterada indevidamente. _(cap. 05)_
@@ -736,7 +760,9 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Jargão:** termo de grupo profissional ("picking", "cross-docking"). _(cap. 01)_
 - **LGPD:** Lei Geral de Proteção de Dados (Lei 13.709/2018). _(cap. 05)_
 - **Malware:** programa malicioso (vírus, ransomware, spyware). _(cap. 05)_
+- **Margem:** espaço entre o texto e a borda da folha. _(cap. 06)_
 - **Memória RAM:** memória rápida e volátil que guarda os dados em uso. _(cap. 02)_
+- **Modelo de documento:** arquivo-base padronizado para documentos que se repetem. _(cap. 06)_
 - **Navegador:** programa que acessa e exibe as páginas da web. _(cap. 03)_
 - **Netiqueta:** regras de boa educação na comunicação digital. _(cap. 04)_
 - **Nuvem:** arquivos em servidores na internet. _(cap. 04)_
@@ -747,13 +773,17 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Plágio:** apresentar como seu o trabalho de outra pessoa, sem dar crédito. _(cap. 03)_
 - **Política de Uso Aceitável (PUA):** regras da empresa para uso da internet e dos computadores. _(cap. 03)_
 - **Processador (CPU):** componente que executa os cálculos e as instruções. _(cap. 02)_
+- **Quebra de seção:** divisão que permite formatação diferente em partes do mesmo documento. _(cap. 06)_
 - **Ransomware:** malware que bloqueia os arquivos e exige resgate. _(cap. 05)_
 - **Receptor:** quem recebe e interpreta a mensagem. _(cap. 01)_
+- **Recuo:** distância entre o parágrafo e a margem. _(cap. 06)_
 - **Ruído:** interferência que distorce a mensagem (barulho, termo ambíguo, e-mail sem assunto). _(cap. 01)_
 - **Sincronização:** atualização automática que mantém iguais as cópias da nuvem e do computador. _(cap. 04)_
 - **Sistema operacional:** software que gerencia o hardware e serve de base para os outros programas. _(cap. 02)_
 - **Software:** programas e instruções executados pelo computador. _(cap. 02)_
 - **SSD:** unidade de armazenamento eletrônica, sem peças móveis, mais rápida que o HDD. _(cap. 02)_
+- **Sumário automático:** índice gerado a partir dos estilos de título e atualizado com um clique. _(cap. 06)_
+- **Tabulação:** parada da tecla Tab que alinha textos em colunas. _(cap. 06)_
 - **Teste CRAAP:** critérios para avaliar fontes: atualidade, relevância, autoridade, precisão e propósito. _(cap. 03)_
 - **World Wide Web (WWW):** serviço de páginas ligadas por links que funciona sobre a internet. _(cap. 03)_
 
@@ -1676,4 +1706,190 @@ restauração de vez em quando: backup que não abre não é backup.
 - **Capacidade:** C2
 - **Contexto:** Ao chegar ao escritório, você encontra uma estação de trabalho com a senha num post-it no monitor, a tela desbloqueada e um pen drive pessoal desconhecido conectado.
 - **Comando:** Identifique as três vulnerabilidades, explique o risco de cada uma (inclusive de malware) e proponha a correção.
+- **Linhas:** 5
+
+---
+
+# Capítulo 06 — Editor de Textos: Formatação e Estruturação
+
+- **Aula:** 06
+- **Carga horária:** 4 horas (1 aula)
+- **Capacidade:** C1
+- **Fonte:** `APOSTILA/CONTEUDO/CAPITULO-06.md`
+
+## Teoria
+
+### Um procedimento que ninguém consegue seguir
+
+O procedimento de recebimento de carga da **Distribuidora Vale Norte** existe, mas é um bloco de
+texto corrido de duas páginas, sem títulos, sem numeração e sem destaque para os cuidados de
+segurança. Resultado: cada conferente faz de um jeito, e os erros se repetem. O conteúdo está
+certo; o que falta é **formatação e estrutura**.
+
+> 🎯 **Objetivos do capítulo:** usar o editor de textos para **formatar** e **estruturar**
+> documentos profissionais — página, parágrafos, listas, tabelas, figuras, estilos e sumário —,
+> **revisar** com controle de alterações e **arquivar e imprimir** corretamente.
+
+### Tipos e funções do editor de textos
+
+O editor de textos serve para criar, formatar, revisar, salvar e imprimir documentos: procedimentos,
+relatórios, comunicados, atas e memorandos. Há editores instalados no computador e editores que
+funcionam no navegador, nas suítes **Microsoft 365, Google Workspace ou LibreOffice**. Os nomes dos
+menus mudam um pouco entre elas, mas os recursos são os mesmos: faixa de opções ou menus, **régua**
+(margens e recuos) e **barra de status** (páginas, palavras e idioma).
+
+### Formatação de fonte
+
+- **Fonte sem serifa** (ex.: Arial, Calibri) para leitura em tela; **serifada** (ex.: Times) para
+  impressos longos. Tamanho 11 ou 12 para o corpo do texto.
+- **Negrito** para termos-chave; **itálico** para palavras estrangeiras ("picking").
+- Evite sublinhar (parece link) e evite muitas cores.
+
+### Parágrafos: alinhamento, recuos, tabulação, espaçamentos e margens
+
+| Recurso | Para que serve | Dica profissional |
+|---|---|---|
+| **Alinhamento** | À esquerda, centralizado, à direita ou justificado | Justificado em relatórios; centralizado só em títulos e capas |
+| **Recuo** | Afasta o parágrafo da margem; recuo de primeira linha marca nova ideia | Use a régua ou "Parágrafo", nunca espaços |
+| **Tabulação** | Alinha textos em colunas com a tecla Tab | Útil em listas de conferência simples |
+| **Espaçamento entre linhas** | 1,0 a 1,5 | 1,5 em relatórios longos |
+| **Espaçamento antes/depois** | Separa um parágrafo do outro | Use "6 pt depois" em vez de vários Enter |
+| **Margens** | Espaço entre o texto e a borda | Padrão ABNT: 3 cm em cima e à esquerda; 2 cm embaixo e à direita |
+
+⚠️ **Atenção:** apertar Enter várias vezes para "pular" de página ou usar a barra de espaço para
+alinhar texto quebra o documento assim que alguém edita uma linha.
+
+### Configuração de página
+
+- **Tamanho** A4 (210 × 297 mm); **orientação** retrato para texto e **paisagem** para tabelas largas.
+- **Quebra de página:** começa uma nova página sem apertar vários Enter.
+- **Quebra de seção:** permite margens, orientação ou numeração diferentes no mesmo arquivo (ex.:
+  só a página da tabela de produtos em paisagem).
+- **Cabeçalho e rodapé:** nome da empresa e do documento; número da página no rodapé.
+
+### Marcadores e numeração
+
+- **Numeração** para passos que têm ordem (1, 2, 3...) — o ideal para procedimentos.
+- **Marcadores** para itens sem ordem (lista de EPIs).
+- **Lista multinível** para subpassos (1, 1.1, 1.2).
+
+### Tabelas e gráficos
+
+- Primeira linha como **cabeçalho**, repetida em cada página quando a tabela continua.
+- Texto alinhado à esquerda; números à direita.
+- **Gráficos** podem ser criados no próprio editor ou trazidos da planilha (ver capítulo 9).
+
+### Figuras e objetos
+
+Fotos, formas, caixas de texto e diagramas ilustram o procedimento (ex.: fluxo do recebimento).
+Use o layout "alinhado com o texto" para que a figura não "pule" ao editar, e coloque **número,
+título e fonte** em toda figura (ex.: "Figura 1 – Etiqueta de identificação do palete").
+
+### Bordas e sombreamento
+
+Servem para destacar o que não pode passar despercebido, como uma caixa de **ATENÇÃO: usar luvas
+ao manusear embalagens danificadas**, ou para sombrear de leve o cabeçalho de uma tabela. Use com
+moderação e cores suaves, que fiquem legíveis na impressão em preto e branco.
+
+### Colunas
+
+Duas ou três colunas funcionam em comunicados e boletins (ex.: aviso de segurança no mural da
+doca). Procedimentos e relatórios usam **coluna única**. Para usar colunas só num trecho, coloque
+**quebras de seção** antes e depois dele.
+
+### Estilos e sumário automático
+
+O erro mais comum é formatar cada título "na mão". Com **estilos** (Título 1, Título 2, Normal):
+
+1. aplique **Título 1** às seções e **Título 2** às subseções;
+2. para mudar a aparência de todos os títulos, altere o **estilo** uma única vez;
+3. insira o **sumário automático** (menu Referências ou Inserir) e **atualize** depois de editar.
+
+### Ortografia, dicionário e exibição
+
+- Defina o idioma **português do Brasil** para a verificação ortográfica funcionar.
+- Adicione ao **dicionário** termos corretos da área ("WMS", "romaneio", "picking").
+- Confira a **autocorreção**: ela pode trocar siglas e códigos de produto.
+- **Localizar e substituir** troca um termo em todo o documento de uma vez.
+
+| Modo de exibição | Para que serve |
+|---|---|
+| Layout de impressão | Ver como sairá no papel |
+| Modo de leitura | Ler e revisar sem as ferramentas |
+| Estrutura de tópicos / painel de navegação | Navegar e reorganizar pelos títulos |
+
+O **zoom** muda só a visualização, não o tamanho real da fonte.
+
+### Controle de alterações e comentários
+
+- Com o **controle de alterações** ligado, tudo o que cada pessoa acrescenta ou apaga fica marcado;
+  o responsável **aceita ou rejeita** cada mudança.
+- **Comentários** sugerem ajustes sem mexer no texto; seja específico e cordial e marque como
+  **resolvido** depois de ajustar.
+- Antes de enviar a um cliente, **aceite/rejeite tudo e apague os comentários internos**.
+
+### Arquivamento e impressão
+
+| Formato | Uso |
+|---|---|
+| `.docx` / `.odt` | Documento editável |
+| `.pdf` | Versão final para distribuir, sem edição |
+| Modelo (`.dotx` / `.ott`) | Base padrão para documentos repetidos (ex.: relatório de avaria) |
+
+- Salve logo no início e com frequência; nome padronizado: `2026-10-13_Procedimento_Recebimento_v02.docx`.
+- Antes de imprimir: **visualizar impressão**, conferir escala de 100%, evitar linha sozinha no
+  topo ou no fim da página e decidir frente e verso.
+
+## Vídeos
+
+- [Inserir estilos aos títulos e criar sumário](https://www.youtube.com/watch?v=HTiZJll9-vY) — 07:15 — Biblioteca Universitária Unisul
+- [Margens, parágrafos, espaçamento, fonte e recuo (normas ABNT)](https://www.youtube.com/watch?v=FuNEWGVNwsQ) — 05:53 — Maycon Júlio Faria Fontes
+- [Como usar o controle de alterações do Word](https://www.youtube.com/watch?v=4YVeteowhoY) — 05:12 — Você Mais Tech
+- [Como controlar as alterações no Google Documentos](https://www.youtube.com/watch?v=IadMj-sgmy4) — 07:16 — Tu quer saber mais?
+
+## Resumo
+
+- O editor de textos cria, formata, revisa, salva e imprime documentos; os recursos são parecidos nas diferentes suítes.
+- Parágrafos bem formatados usam **alinhamento, recuo, tabulação, espaçamento e margens** — nunca vários Enter ou espaços.
+- **Configuração de página**, quebras de página e de seção, cabeçalho e rodapé organizam o documento.
+- **Numeração** para passos, **marcadores** para itens, **tabelas** com cabeçalho, **figuras** com legenda, **bordas e sombreamento** para avisos e **colunas** para comunicados.
+- **Estilos** de título geram o **sumário automático** e padronizam o documento.
+- Revise com **ortografia, dicionário e controle de alterações**; salve com nome padronizado, envie a versão final em **PDF** e confira a visualização antes de imprimir.
+
+## Exercícios
+
+### ITEM 1
+- **Capacidade:** C1
+- **Contexto:** O procedimento de recebimento de carga da Vale Norte está em texto corrido, sem títulos, sem numeração dos passos e sem destaque para os cuidados de segurança.
+- **Comando:** Descreva como você formataria o documento: quais estilos usaria nos títulos, onde aplicaria lista numerada, que tabela criaria para a conferência e como destacaria o aviso de segurança com borda e sombreamento.
+- **Linhas:** 7
+
+### ITEM 2
+- **Capacidade:** C1
+- **Contexto:** O relatório de estoque tem 10 páginas em retrato e, no meio, uma tabela de produtos com 12 colunas que não cabe na largura da folha.
+- **Comando:** Explique como deixar só a página da tabela em paisagem sem mudar o resto do documento e informe as margens que você configuraria no padrão ABNT.
+- **Linhas:** 4
+
+### ITEM 3
+- **Capacidade:** C1
+- **Contexto:** Um colega aperta Enter três vezes para separar os parágrafos, usa a barra de espaço para fazer o recuo da primeira linha e, para mudar de página, aperta Enter até o texto descer.
+- **Comando:** Explique por que essas práticas causam problemas e indique o recurso correto para cada uma (espaçamento, recuo e quebra de página).
+- **Linhas:** 4
+
+### ITEM 4
+- **Capacidade:** C1
+- **Contexto:** O supervisor vai revisar o procedimento antes de publicá-lo e quer ver exatamente o que cada pessoa mudou, além de deixar sugestões sem alterar o texto.
+- **Comando:** Descreva como usar o controle de alterações e os comentários nessa revisão e o que deve ser feito com eles antes de enviar a versão final.
+- **Linhas:** 4
+
+### ITEM 5
+- **Capacidade:** C1
+- **Contexto:** O relatório de avaria será enviado à transportadora. O arquivo está como "relatorio final(3).docx", ainda com comentários internos sobre negociação de valores.
+- **Comando:** Indique como renomear, em que formato enviar e o que conferir antes (comentários, visualização de impressão), justificando cada escolha.
+- **Linhas:** 4
+
+### ITEM 6
+- **Capacidade:** C1
+- **Contexto:** Será afixado no mural da doca um comunicado de segurança com foto de uma empilhadeira, texto em duas colunas e termos como "WMS" e "picking", que o corretor marca como erro.
+- **Comando:** Explique como organizar o comunicado em colunas, como inserir a foto com legenda numerada e como resolver as marcações do corretor ortográfico sem trocar os termos técnicos.
 - **Linhas:** 5
