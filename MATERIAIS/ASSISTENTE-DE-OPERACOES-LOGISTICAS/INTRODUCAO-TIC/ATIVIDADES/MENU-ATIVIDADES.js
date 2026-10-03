@@ -88,25 +88,6 @@ window.MENU_ATIVIDADES = {
       ],
     },
     {
-      rotulo: '💻 Informática básica (23/09)',
-      subitens: [
-        {
-          rotulo: 'Atividade — Hardware, periféricos e SO',
-          link: 'ATIVIDADES-AULA-23-09-2026/ATIVIDADES-INFORMATICA-BASICA.html',
-        },
-        {
-          rotulo: 'Atividade — 50 questões',
-          link: 'ATIVIDADES-AULA-23-09-2026/ATIVIDADES-INFORMATICA-BASICA-50-QUESTOES.html',
-        },
-        {
-          rotulo: 'Folha de respostas',
-          link:
-            'ATIVIDADES-AULA-23-09-2026/' +
-            'ATIVIDADES-INFORMATICA-BASICA-50-QUESTOES-FOLHA-RESPOSTAS.html',
-        },
-      ],
-    },
-    {
       rotulo: '🔄 Ciclo do feedback (28/09)',
       subitens: [
         {

@@ -1237,8 +1237,7 @@ Registrada em 2026-10-03. Vale para **todas** as atividades e avaliações de **
   nova de atividade ou avaliação com exportação **deve usar o `atividade.js`** (não repetir a
   lógica por página).
 - ✅ Página com PDF próprio (fora do `atividade.js`) carrega o `turma-exportacao.js` direto e usa
-  `await obterTurmaParaExportacao()` (retorno `null` = cancelar a exportação). Exemplo:
-  `INTRODUCAO-TIC/ATIVIDADES/ATIVIDADES-AULA-23-09-2026/ATIVIDADES-INFORMATICA-BASICA.html`.
+  `await obterTurmaParaExportacao()` (retorno `null` = cancelar a exportação).
 
 ## 🪟 REGRA CRÍTICA — AVISOS AO USUÁRIO: sempre POPUP, nunca `alert()`/`confirm()`
 
@@ -1510,9 +1509,6 @@ assets/
 │                        sobrescrever; `--todas` gera em todas as matérias com json; página sem o
 │                        marcador só com `--forcar`. Mudou a composição = editar o json e rodar de novo.
 ├─ css/menu.css        → estilos do menu de atividades (montado por js/menu.js)
-├─ css/atividade-abas.css → complemento do atividade.css (carregar depois dele) para páginas de
-│                        atividade com abas, etiquetas, etapas, linhas de resposta e tabela de
-│                        gabarito (ex.: ATIVIDADES-INFORMATICA-BASICA.html); não duplica o atividade.css
 ├─ gerador-capacidades/ → capacidades.py + css/capacidades.css: quadro "CAPACIDADES" no início e
 │                        caixa "🎯 CAPACIDADE" (igual à de CONTEXTO) em cada questão das atividades
 │                        e avaliações (gerador-atividades e gerador-avaliacao-discursiva); o PDF
