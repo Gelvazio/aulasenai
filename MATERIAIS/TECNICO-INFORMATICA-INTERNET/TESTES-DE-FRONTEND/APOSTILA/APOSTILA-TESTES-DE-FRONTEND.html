@@ -26,7 +26,7 @@
                 <h1 class="capa-apostila__titulo">Apostila<br>Testes de Front-End</h1>
                 <p class="capa-apostila__subtitulo">Técnico em Informática para Internet</p>
                 <div class="capa-apostila__faixa"></div>
-                <p class="capa-apostila__dados">Docente: Gelvazio Camargo · 4 capítulo(s)</p>
+                <p class="capa-apostila__dados">Docente: Gelvazio Camargo · 5 capítulo(s)</p>
             </div>
             <footer class="pagina-senai__rodape"></footer>
         </section>
@@ -101,6 +101,21 @@
             <a class="sumario__link sumario__link--nivel-2" href="#capitulo-04-videos"><span class="sumario__texto">Vídeos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04-videos"></span></a>
             <a class="sumario__link sumario__link--nivel-2" href="#capitulo-04-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04-resumo"></span></a>
             <a class="sumario__link sumario__link--nivel-2" href="#capitulo-04-exercicios"><span class="sumario__texto">Exercícios</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04-exercicios"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-05"><span class="sumario__texto">Capítulo 05 — Integração Avançada e Mock de APIs</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-05-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t1"><span class="sumario__texto">E quando o servidor cai no meio dos testes?</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t2"><span class="sumario__texto">Mock, stub e spy: os &quot;dublês&quot; de teste</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t3"><span class="sumario__texto">Por que não &quot;mockar o fetch&quot; direto?</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t4"><span class="sumario__texto">Configurando o MSW (Node + Vitest)</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t5"><span class="sumario__texto">O componente que busca dados</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t6"><span class="sumario__texto">Testando sucesso, erro 500 e rede lenta</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t7"><span class="sumario__texto">Confiabilidade: a tela que não quebra</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t7"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t8"><span class="sumario__texto">Spies: conferindo as chamadas</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t8"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t9"><span class="sumario__texto">Estado compartilhado e localStorage</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t9"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t10"><span class="sumario__texto">Execução dos testes: rápida e determinística</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t10"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-05-videos"><span class="sumario__texto">Vídeos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-videos"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-05-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-05-exercicios"><span class="sumario__texto">Exercícios</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-exercicios"></span></a>
         </section>
 
         <section class="pagina-senai fonte-paginas" data-parte="introducao">
@@ -268,7 +283,7 @@
             <p class="capacidade-item"><strong>S1</strong> — Valorizar novos fatos, ideias e opiniões diferentes para resolução de problemas pertinentes as atividades sob a sua responsabilidade</p>
             <p class="capacidade-item"><strong>S2</strong> — Fundamentar escolhas e decisões no exame de fatos, contextos, possibilidades, desafios e problemáticas de diferentes naturezas à luz de referenciais técnicos, legais, normativos e institucionais</p>
             <h3>Capacidades por capítulo</h3>
-            <table><thead><tr><th>Capítulo</th><th>Capacidades</th></tr></thead><tbody><tr><td>Capítulo 01 — Fundamentos de Testes de Software</td><td>C1, C2, C3</td></tr><tr><td>Capítulo 02 — Planejamento, Verificação, Validação e Casos de Teste</td><td>C1, C2, C3, S2</td></tr><tr><td>Capítulo 03 — Testes Unitários no Front-End com Vitest</td><td>C5</td></tr><tr><td>Capítulo 04 — Testes de Integração com DOM (Testing Library)</td><td>C4, C5</td></tr></tbody></table>
+            <table><thead><tr><th>Capítulo</th><th>Capacidades</th></tr></thead><tbody><tr><td>Capítulo 01 — Fundamentos de Testes de Software</td><td>C1, C2, C3</td></tr><tr><td>Capítulo 02 — Planejamento, Verificação, Validação e Casos de Teste</td><td>C1, C2, C3, S2</td></tr><tr><td>Capítulo 03 — Testes Unitários no Front-End com Vitest</td><td>C5</td></tr><tr><td>Capítulo 04 — Testes de Integração com DOM (Testing Library)</td><td>C4, C5</td></tr><tr><td>Capítulo 05 — Integração Avançada e Mock de APIs</td><td>C5</td></tr></tbody></table>
         </section>
 
         <section class="pagina-senai fonte-paginas" data-parte="glossario">
@@ -289,22 +304,32 @@
             <p class="glossario__termo"><strong>findBy:</strong> consulta assíncrona que espera o elemento aparecer na tela. <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
             <p class="glossario__termo"><strong>Framework de testes:</strong> ferramenta que roda os testes e oferece funções de asserção (ex.: Vitest). <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
             <p class="glossario__termo"><strong>getByRole:</strong> consulta que encontra um elemento pelo papel e pelo nome acessível. <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>Handler:</strong> regra do MSW que define a resposta para um endereço da API. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
+            <p class="glossario__termo"><strong>Interceptação:</strong> captura de uma requisição HTTP antes que ela chegue ao servidor real. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
             <p class="glossario__termo"><strong>jsdom:</strong> simulação do navegador dentro do Node, usada nos testes. <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>Latência:</strong> tempo de espera entre a requisição e a resposta da rede. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
             <p class="glossario__termo"><strong>Matcher:</strong> método que define como comparar na asserção (ex.: `toBe`, `toEqual`). <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
             <p class="glossario__termo"><strong>Matriz de rastreabilidade:</strong> liga cada requisito aos casos de teste que o verificam. <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
+            <p class="glossario__termo"><strong>Mock:</strong> substituto controlado de uma dependência. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
             <p class="glossario__termo"><strong>Modo watch:</strong> execução automática dos testes a cada alteração salva. <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
+            <p class="glossario__termo"><strong>MSW (Mock Service Worker):</strong> ferramenta que intercepta requisições na camada de rede e devolve respostas simuladas. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
             <p class="glossario__termo"><strong>Nome acessível:</strong> texto que identifica um elemento para leitores de tela (ex.: o rótulo do botão). <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
             <p class="glossario__termo"><strong>Padrão AAA:</strong> estrutura de teste em três etapas: preparar (Arrange), executar (Act) e conferir (Assert). <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
             <p class="glossario__termo"><strong>Partição de equivalência:</strong> técnica que agrupa entradas de mesmo comportamento e testa um representante de cada grupo. <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
+            <p class="glossario__termo"><strong>Persistência:</strong> manutenção dos dados depois de recarregar a página (ex.: `localStorage`). <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
             <p class="glossario__termo"><strong>Pirâmide de testes:</strong> modelo que equilibra muitos testes unitários, alguns de integração e poucos E2E. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
             <p class="glossario__termo"><strong>Plano de testes:</strong> documento com escopo, estratégia, ambientes, cronograma, riscos e critérios de saída dos testes. <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
             <p class="glossario__termo"><strong>Qualidade:</strong> conformidade do sistema com os requisitos e as expectativas dos usuários. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
             <p class="glossario__termo"><strong>queryBy:</strong> consulta que devolve nulo quando o elemento não existe, usada para provar ausência. <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>Race condition:</strong> defeito em que respostas chegam fora de ordem e a resposta antiga sobrescreve a recente. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
             <p class="glossario__termo"><strong>Regra de 10:</strong> o custo de corrigir um defeito cresce cerca de 10 vezes a cada etapa em que ele avança. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
             <p class="glossario__termo"><strong>Requisito testável:</strong> requisito claro, com um comportamento e um critério objetivo de aceitação. <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
             <p class="glossario__termo"><strong>Role (papel):</strong> função acessível de um elemento na tela (botão, link, caixa de texto, item de lista). <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>Spy:</strong> espião que registra como uma função foi chamada, sem mudar o que ela faz. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
+            <p class="glossario__termo"><strong>Stub:</strong> dublê de teste que devolve uma resposta fixa, sem lógica. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
             <p class="glossario__termo"><strong>Suíte:</strong> conjunto organizado de testes. <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
             <p class="glossario__termo"><strong>Teste de integração:</strong> teste de várias partes funcionando juntas (componente, DOM, eventos). <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>Teste determinístico:</strong> teste que dá sempre o mesmo resultado nas mesmas condições. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
             <p class="glossario__termo"><strong>Teste unitário:</strong> teste rápido e isolado de uma função ou regra. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
             <p class="glossario__termo"><strong>Testing Library:</strong> biblioteca que testa componentes pelo que o usuário vê e faz. <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
             <p class="glossario__termo"><strong>user-event:</strong> biblioteca que simula as interações reais do usuário (clicar, digitar). <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
@@ -1127,6 +1152,212 @@
             <div class="exercicio-box"><div class="exercicio-header">ITEM 4</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C4</strong> — Aplicar testes definidos no Plano de Testes.<br><strong>C5</strong> — Desenvolver conjunto de testes automatizados</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> No formulário de cadastro, a senha com menos de 6 caracteres mostra &quot;A senha deve ter no mínimo 6 dígitos&quot; e o botão &quot;Cadastrar&quot; fica desabilitado; com a senha válida, a mensagem some e o botão habilita.</p><p><span class="exercicio-label">Comando:</span> Escreva o roteiro do teste de integração (consultas, digitação e asserções com os matchers de jest-dom) cobrindo a senha inválida e a correção.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
             <div class="exercicio-box"><div class="exercicio-header">ITEM 5</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C4</strong> — Aplicar testes definidos no Plano de Testes.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Um teste da lista de produtos faz `container.querySelector(&#x27;.item-lista&#x27;)` e confere o estado interno `filtroAtivo === true`. Depois de trocar o tema visual, ele quebrou, embora a lista funcione igual para o usuário.</p><p><span class="exercicio-label">Comando:</span> Explique por que esse teste é frágil (falso negativo) e reescreva a ideia do teste buscando os elementos por papel e texto.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
             <div class="exercicio-box"><div class="exercicio-header">ITEM 6</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C5</strong> — Desenvolver conjunto de testes automatizados</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Use o componente `ListaProdutos` do capítulo (campo &quot;Buscar produto&quot;, lista de itens e a mensagem &quot;Nenhum produto encontrado&quot;).</p><p><span class="exercicio-label">Comando:</span> Escreva um teste que digite um termo sem resultados e confira que nenhum item aparece e que a mensagem &quot;Nenhum produto encontrado&quot; é exibida.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-05">
+            <div class="capitulo__abertura" id="capitulo-05" data-titulo="sim"><span class="capitulo__rotulo">AULA 05</span><h2>Capítulo 05 — Integração Avançada e Mock de APIs</h2><p class="capitulo__capacidades">🎯 <strong>C5</strong> — Desenvolver conjunto de testes automatizados</p></div>
+            <h3 id="capitulo-05-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-05-t1">E quando o servidor cai no meio dos testes?</h4>
+            <p>A suíte da <strong>Loja Nuvem Azul</strong> chamava a API de homologação de verdade. Numa manhã, o servidor
+            ficou fora do ar por uma hora e <strong>todos</strong> os testes do catálogo falharam — sem nenhum defeito no
+            front-end. Em outro dia, a API respondeu devagar e os testes passaram ou falharam "do nada". Testes
+            que dependem de rede real são <strong>lentos, instáveis e caros</strong>. A solução é <strong>isolar a dependência</strong>:
+            o teste controla exatamente o que a API responde.</p>
+            <blockquote>
+            <p>🎯 <strong>Objetivos do capítulo:</strong> aplicar a <strong>automação de testes</strong> a telas que buscam dados,
+            substituindo a API por um <strong>mock</strong> com o <strong>MSW</strong>; testar sucesso, <strong>erros 404 e 500</strong> e <strong>rede
+            lenta</strong> (confiabilidade); usar <strong>spies</strong> para conferir chamadas; testar estado compartilhado e
+            <code>localStorage</code>; e <strong>executar</strong> a suíte de forma rápida e determinística.</p>
+            </blockquote>
+            <h4 id="capitulo-05-t2">Mock, stub e spy: os "dublês" de teste</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Dublê</th>
+            <th>O que faz</th>
+            <th>Exemplo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Mock</strong></td>
+            <td>Substituto controlado de uma dependência, que responde o que o teste definir</td>
+            <td>A API de produtos simulada devolve 2 produtos</td>
+            </tr>
+            <tr>
+            <td><strong>Stub</strong></td>
+            <td>Resposta fixa, sem lógica</td>
+            <td><code>buscarFrete</code> sempre devolve 15</td>
+            </tr>
+            <tr>
+            <td><strong>Spy (espião)</strong></td>
+            <td>Observa uma função real (ou falsa) e registra como foi chamada</td>
+            <td><code>vi.spyOn(window, 'fetch')</code> conta quantas requisições saíram</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>O objetivo é sempre o mesmo: o teste deve depender <strong>só do código que está sendo testado</strong>, nunca
+            do humor da rede ou de um servidor externo.</p>
+            <h4 id="capitulo-05-t3">Por que não "mockar o fetch" direto?</h4>
+            <p>Substituir <code>fetch</code> (ou o <code>axios</code>) por <code>vi.fn()</code> funciona em testes unitários, mas <strong>acopla o teste
+            à biblioteca</strong>: se o time trocar <code>fetch</code> por <code>axios</code>, todos os testes quebram — e erros de URL,
+            cabeçalho ou leitura do JSON passam despercebidos. O <strong>MSW (Mock Service Worker)</strong> intercepta a
+            requisição <strong>na camada de rede</strong>: o componente usa o cliente HTTP de produção, sem nenhuma
+            alteração, e quem responde é o servidor simulado.</p>
+            <h4 id="capitulo-05-t4">Configurando o MSW (Node + Vitest)</h4>
+            <pre><code class="language-bash">npm install -D msw
+            </code></pre>
+            <pre><code class="language-js">// src/mocks/handlers.js — respostas padrão (o &quot;caminho feliz&quot;)
+            import { http, HttpResponse } from 'msw';
+            export const handlers = [
+              http.get('/api/produtos', () =&gt;
+                HttpResponse.json([
+                  { id: 1, nome: 'Camiseta azul', preco: 59.9 },
+                  { id: 2, nome: 'Boné preto', preco: 39.9 },
+                ]),
+              ),
+            ];
+            // src/mocks/servidor.js — o servidor simulado (importado pelo setup e pelos testes)
+            import { setupServer } from 'msw/node';
+            import { handlers } from './handlers';
+            export const servidor = setupServer(...handlers);
+            // vitest.setup.js — ciclo de vida do servidor simulado
+            import '@testing-library/jest-dom/vitest';
+            import { servidor } from './src/mocks/servidor';
+            beforeAll(() =&gt; servidor.listen());
+            afterEach(() =&gt; {
+              servidor.resetHandlers();
+              localStorage.clear();
+            });
+            afterAll(() =&gt; servidor.close());
+            </code></pre>
+            <ul>
+            <li><code>listen()</code> liga a interceptação antes de todos os testes;</li>
+            <li><code>resetHandlers()</code> desfaz as mudanças feitas em um teste (o próximo começa limpo);</li>
+            <li><code>close()</code> desliga o servidor no fim da suíte.</li>
+            </ul>
+            <h4 id="capitulo-05-t5">O componente que busca dados</h4>
+            <pre><code class="language-jsx">// Catalogo.jsx
+            import { useEffect, useState } from 'react';
+            export function Catalogo() {
+              const [produtos, setProdutos] = useState([]);
+              const [carregando, setCarregando] = useState(true);
+              const [erro, setErro] = useState('');
+              useEffect(() =&gt; {
+                async function carregar() {
+                  try {
+                    const resposta = await fetch('/api/produtos');
+                    if (!resposta.ok) throw new Error(String(resposta.status));
+                    setProdutos(await resposta.json());
+                  } catch {
+                    setErro('Serviço indisponível, tente novamente');
+                  } finally {
+                    setCarregando(false);
+                  }
+                }
+                carregar();
+              }, []);
+              if (carregando) return &lt;p&gt;Carregando...&lt;/p&gt;;
+              if (erro) return &lt;p role=&quot;alert&quot;&gt;{erro}&lt;/p&gt;;
+              return &lt;ul&gt;{produtos.map((p) =&gt; &lt;li key={p.id}&gt;{p.nome}&lt;/li&gt;)}&lt;/ul&gt;;
+            }
+            </code></pre>
+            <h4 id="capitulo-05-t6">Testando sucesso, erro 500 e rede lenta</h4>
+            <pre><code class="language-jsx">// Catalogo.test.jsx
+            import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
+            import { http, HttpResponse, delay } from 'msw';
+            import { it, expect } from 'vitest';
+            import { servidor } from './mocks/servidor';
+            import { Catalogo } from './Catalogo';
+            it('mostra os produtos que a API devolve', async () =&gt; {
+              render(&lt;Catalogo /&gt;);
+              expect(await screen.findAllByRole('listitem')).toHaveLength(2);
+            });
+            it('mostra mensagem amigável quando a API devolve erro 500', async () =&gt; {
+              servidor.use(http.get('/api/produtos', () =&gt; new HttpResponse(null, { status: 500 })));
+              render(&lt;Catalogo /&gt;);
+              expect(await screen.findByRole('alert')).toHaveTextContent('Serviço indisponível');
+            });
+            it('mostra &quot;Carregando...&quot; enquanto a rede está lenta', async () =&gt; {
+              servidor.use(
+                http.get('/api/produtos', async () =&gt; {
+                  await delay(800);
+                  return HttpResponse.json([]);
+                }),
+              );
+              render(&lt;Catalogo /&gt;);
+              await waitForElementToBeRemoved(() =&gt; screen.queryByText('Carregando...'));
+            });
+            </code></pre>
+            <ul>
+            <li><code>servidor.use(...)</code> <strong>sobrescreve</strong> o handler <strong>só naquele teste</strong> (o <code>resetHandlers</code> restaura).</li>
+            <li>Para o <strong>404</strong>, a mesma ideia: <code>new HttpResponse(null, { status: 404 })</code> e a tela deve mostrar
+              uma mensagem de "não encontrado", sem quebrar.</li>
+            <li>⚠️ <strong>Nunca</strong> use <code>setTimeout</code> com tempo fixo no teste: <code>findBy</code>, <code>waitFor</code> e
+              <code>waitForElementToBeRemoved</code> esperam <strong>só o necessário</strong>.</li>
+            </ul>
+            <h4 id="capitulo-05-t7">Confiabilidade: a tela que não quebra</h4>
+            <p>Testar erros de rede é testar a <strong>confiabilidade</strong> (tipo de teste 4.3): o sistema continua
+            utilizável quando algo dá errado. Perguntas que a suíte precisa responder:</p>
+            <ul>
+            <li>A API caiu (500)? Aparece aviso e um botão <strong>Tentar novamente</strong>?</li>
+            <li>O recurso não existe (404)? A mensagem é amigável?</li>
+            <li>A rede está lenta? O botão fica desabilitado (evita <strong>clique duplo</strong>) e há indicação de carregamento?</li>
+            <li>Duas buscas seguidas voltaram <strong>fora de ordem</strong> (race condition)? A tela mostra a resposta mais recente?</li>
+            </ul>
+            <h4 id="capitulo-05-t8">Spies: conferindo as chamadas</h4>
+            <pre><code class="language-js">it('busca os produtos uma única vez ao abrir a tela', async () =&gt; {
+              const espiaoFetch = vi.spyOn(globalThis, 'fetch');
+              render(&lt;Catalogo /&gt;);
+              await screen.findAllByRole('listitem');
+              expect(espiaoFetch).toHaveBeenCalledTimes(1);
+              expect(espiaoFetch).toHaveBeenCalledWith('/api/produtos');
+            });
+            </code></pre>
+            <p>O spy <strong>observa</strong> sem substituir: a requisição continua indo para o MSW. Restaure com
+            <code>vi.restoreAllMocks()</code> no <code>afterEach</code>.</p>
+            <h4 id="capitulo-05-t9">Estado compartilhado e localStorage</h4>
+            <p>Componentes reais dependem de <strong>provedores</strong> (carrinho, usuário logado, tema). Em vez de repetir os
+            provedores em cada teste, crie um <strong>render personalizado</strong>:</p>
+            <pre><code class="language-jsx">// tests/renderComProvedores.jsx
+            import { render } from '@testing-library/react';
+            import { CarrinhoProvider } from '../src/CarrinhoContext';
+            export function renderComProvedores(componente, { itensIniciais = [] } = {}) {
+              return render(&lt;CarrinhoProvider itensIniciais={itensIniciais}&gt;{componente}&lt;/CarrinhoProvider&gt;);
+            }
+            </code></pre>
+            <p>Para a <strong>persistência</strong>: grave os dados com <code>localStorage.setItem</code> <strong>antes</strong> de montar a tela,
+            renderize, confira com <code>findByText</code> que os itens aparecem e <strong>limpe</strong> o storage no <code>afterEach</code>
+            (senão um teste contamina o outro).</p>
+            <h4 id="capitulo-05-t10">Execução dos testes: rápida e determinística</h4>
+            <ul>
+            <li>Rode só o arquivo em foco: <code>npx vitest run Catalogo</code>; a suíte inteira antes de enviar o código.</li>
+            <li>Teste <strong>determinístico</strong> dá sempre o mesmo resultado: sem rede real, sem horários fixos e com
+              dados limpos a cada teste.</li>
+            <li>O aviso <strong>"not wrapped in act(...)"</strong> indica promessa terminando depois do teste: espere o
+              resultado final com <code>findBy</code>/<code>waitFor</code> antes de encerrar.</li>
+            <li>Mock com MSW no desenvolvimento e na integração contínua (rápido e gratuito); servidor real fica
+              para os testes de ponta a ponta antes da publicação (capítulo 6).</li>
+            </ul>
+            <h3 id="capitulo-05-videos">🎬 Vídeos para assistir (até 15 min)</h3>
+            <div class="caixa-video"><a href="https://www.youtube.com/watch?v=ARSCjYPh2bI" target="_blank" rel="noopener"><img class="caixa-video__miniatura" src="https://i.ytimg.com/vi/ARSCjYPh2bI/hqdefault.jpg" alt="Miniatura do vídeo O que é Mock e Stub? Entenda a importância deles nos testes"></a><div><p class="caixa-video__titulo">▶️ O que é Mock e Stub? Entenda a importância deles nos testes</p><p class="caixa-video__detalhe">⏱️ 03:13 · AlgaWorks</p><p class="caixa-video__detalhe">🔗 <a href="https://www.youtube.com/watch?v=ARSCjYPh2bI" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ARSCjYPh2bI</a></p></div></div>
+            <div class="caixa-video"><a href="https://www.youtube.com/watch?v=9w4GpaOeX7M" target="_blank" rel="noopener"><img class="caixa-video__miniatura" src="https://i.ytimg.com/vi/9w4GpaOeX7M/hqdefault.jpg" alt="Miniatura do vídeo Mocks, stubs, dummies, fakes, spies: dublês de teste"></a><div><p class="caixa-video__titulo">▶️ Mocks, stubs, dummies, fakes, spies: dublês de teste</p><p class="caixa-video__detalhe">⏱️ 10:40 · Otavio Lemos</p><p class="caixa-video__detalhe">🔗 <a href="https://www.youtube.com/watch?v=9w4GpaOeX7M" target="_blank" rel="noopener">https://www.youtube.com/watch?v=9w4GpaOeX7M</a></p></div></div>
+            <div class="caixa-video"><a href="https://www.youtube.com/watch?v=6MhPKSGzDFk" target="_blank" rel="noopener"><img class="caixa-video__miniatura" src="https://i.ytimg.com/vi/6MhPKSGzDFk/hqdefault.jpg" alt="Miniatura do vídeo How to mock API calls with Mock Service Worker in React (em inglês)"></a><div><p class="caixa-video__titulo">▶️ How to mock API calls with Mock Service Worker in React (em inglês)</p><p class="caixa-video__detalhe">⏱️ 11:51 · Codeching</p><p class="caixa-video__detalhe">🔗 <a href="https://www.youtube.com/watch?v=6MhPKSGzDFk" target="_blank" rel="noopener">https://www.youtube.com/watch?v=6MhPKSGzDFk</a></p></div></div>
+            <div class="caixa-video"><a href="https://www.youtube.com/watch?v=dReoPIwDccY" target="_blank" rel="noopener"><img class="caixa-video__miniatura" src="https://i.ytimg.com/vi/dReoPIwDccY/hqdefault.jpg" alt="Miniatura do vídeo How to test fetch or axios in a React component with MSW (em inglês)"></a><div><p class="caixa-video__titulo">▶️ How to test fetch or axios in a React component with MSW (em inglês)</p><p class="caixa-video__detalhe">⏱️ 12:30 · Coding With Adam</p><p class="caixa-video__detalhe">🔗 <a href="https://www.youtube.com/watch?v=dReoPIwDccY" target="_blank" rel="noopener">https://www.youtube.com/watch?v=dReoPIwDccY</a></p></div></div>
+            <h3 id="capitulo-05-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li>Testes com <strong>rede real</strong> são lentos e instáveis; o teste deve controlar o que a API responde.</li><li><strong>Mock</strong> é o substituto controlado de uma dependência; <strong>stub</strong> dá resposta fixa; <strong>spy</strong> observa as chamadas.</li><li>O <strong>MSW</strong> intercepta na camada de rede: o componente usa o <code>fetch</code> de produção e o teste define a resposta (handlers + <code>listen</code>/<code>resetHandlers</code>/<code>close</code>).</li><li><code>servidor.use</code> sobrescreve o handler em um teste para simular <strong>404, 500 e rede lenta</strong> (<code>delay</code>) — testes de <strong>confiabilidade</strong>.</li><li>Espere com <code>findBy</code>, <code>waitFor</code> e <code>waitForElementToBeRemoved</code>, nunca com <code>setTimeout</code> fixo.</li><li><strong>Render personalizado</strong> com provedores e <code>localStorage.clear()</code> no <code>afterEach</code> mantêm a suíte <strong>determinística</strong>.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="exercicios" data-capitulo="capitulo-05">
+            <h3 id="capitulo-05-exercicios">✍️ Exercícios<button class="apostila__botao apostila__botao--pequeno" type="button" data-exportar-exercicios="capitulo-05">📥 Exportar PDF</button></h3>
+            <p class="exercicios__capitulo">Capítulo 05 — Integração Avançada e Mock de APIs</p>
+            <div class="exercicios__identificacao"><span class="exercicios__campo">Aluno(a):</span><span class="exercicios__campo">Turma:</span><span class="exercicios__campo">Data:</span></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 1</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C5</strong> — Desenvolver conjunto de testes automatizados</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> A suíte do catálogo da Loja Nuvem Azul chama a API de homologação real: quando o servidor cai, todos os testes falham, e quando a rede está lenta, alguns passam e outros não.</p><p><span class="exercicio-label">Comando:</span> Explique por que esses testes são instáveis, o que é um mock e por que interceptar a rede com MSW é melhor do que substituir o `fetch` por `vi.fn()`.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 2</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C5</strong> — Desenvolver conjunto de testes automatizados</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> A tela de pedidos busca `GET /api/pedidos` e mostra cada pedido em um item de lista. O projeto ainda não tem o MSW configurado.</p><p><span class="exercicio-label">Comando:</span> Escreva o handler que devolve dois pedidos, o arquivo de setup com o ciclo de vida do servidor (`listen`, `resetHandlers`, `close`) e o teste que confere os dois itens na tela.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 3</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C5</strong> — Desenvolver conjunto de testes automatizados</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Na mesma tela, quando a API devolve erro 500 deve aparecer &quot;Serviço indisponível, tente novamente&quot; e o botão **Tentar novamente**; quando a rede está lenta, aparece &quot;Carregando...&quot; até os dados chegarem.</p><p><span class="exercicio-label">Comando:</span> Escreva os dois testes sobrescrevendo o handler com `servidor.use`: um para o erro 500 (conferindo a mensagem exibida) e outro com `delay` (conferindo que &quot;Carregando...&quot; aparece e depois some), sem usar `setTimeout`.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 4</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C5</strong> — Desenvolver conjunto de testes automatizados</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Um bug foi relatado: ao clicar duas vezes rápido em **Finalizar compra**, saem duas requisições `POST /api/pedidos` e o cliente é cobrado duas vezes.</p><p><span class="exercicio-label">Comando:</span> Descreva um teste que use um spy (`vi.spyOn(globalThis, &#x27;fetch&#x27;)`) e rede lenta para provar que só uma requisição é enviada e que o botão fica desabilitado enquanto espera.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 5</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C5</strong> — Desenvolver conjunto de testes automatizados</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> O carrinho salva os itens em `localStorage` com a chave `@carrinho` e, ao abrir a página, recupera os itens salvos. Um teste passa sozinho, mas falha quando roda depois de outro.</p><p><span class="exercicio-label">Comando:</span> Coloque em ordem as etapas do teste de recuperação do carrinho (gravar, renderizar, conferir, limpar), explique a causa da falha intermitente e como o `afterEach` resolve.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 6</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C5</strong> — Desenvolver conjunto de testes automatizados</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> A busca de produtos dispara uma requisição a cada letra digitada. Às vezes a resposta de &quot;cam&quot; chega depois da de &quot;camiseta&quot; e a tela mostra o resultado antigo.</p><p><span class="exercicio-label">Comando:</span> Explique o que é essa race condition e descreva como simular o problema no teste com MSW (latências diferentes por termo) e qual resultado o teste deve exigir na tela.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
         </section>
     </div>
 </body>

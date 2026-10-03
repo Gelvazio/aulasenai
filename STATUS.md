@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 2, item 2.12 — Testes de Frontend: capítulo 05 (Integração Avançada e Mock de APIs).
+**Próximo passo:** Etapa 2, item 2.12 — Testes de Frontend: capítulo 06 (Testes End-to-End com Cypress e Playwright).
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -42,7 +42,7 @@ Cada capítulo: fonte `CAPITULO-NN.md` → `--markdown` (conferência 100%) → 
 | 2.9 | ITIC — capítulo 10 (Editor de Apresentações e TIC + Avaliação) | ✅ Concluído | 2026-10-03 18:56 | Conferência 201/201 · sem avisos · 10/10 capítulos no plano |
 | 2.10 | Testes de Frontend — ler a ementa da matéria e a UC na ementa do curso; `materia.json` completo e literal | ✅ Concluído | 2026-10-03 19:05 | UC na ementa do curso = ementa da matéria; acessibilidade (resumo) e recuperação ajustadas |
 | 2.11 | Testes de Frontend — `INTRODUCAO.md`, Markdown completo e conferência 100% | ✅ Concluído | 2026-10-03 19:05 | Conferência 185/185 (100%) · conferidor generalizado; ITIC continua 278/278 |
-| 2.12 | Testes de Frontend — capítulos 01 a 10 (um por vez, com commit e status a cada um) | 🔄 Em progresso | — | Capítulos gravados: 01, 02, 03, 04 |
+| 2.12 | Testes de Frontend — capítulos 01 a 10 (um por vez, com commit e status a cada um) | 🔄 Em progresso | — | Capítulos gravados: 01, 02, 03, 04, 05 |
 | 2.13 | Testes de Frontend — item "Apostila" no menu, status final | ⬜ Pendente | — | — |
 | 2.14 | Aceite do usuário (as duas apostilas) | ⬜ Pendente | — | — |
 
