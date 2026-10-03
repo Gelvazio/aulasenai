@@ -90,7 +90,7 @@ body {
 .configuracao__campos {
   display: grid;
   gap: 12px;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr));
 }
 
 .configuracao {
@@ -102,6 +102,7 @@ body {
 .configuracao__campos label {
   display: grid;
   gap: 6px;
+  min-width: 0;
   padding: 10px 12px;
   border: 1px solid var(--cor-borda);
   border-radius: 10px;
@@ -121,6 +122,7 @@ body {
 
 .configuracao__campos input {
   width: 100%;
+  min-width: 0;
   padding: 9px 10px;
   border-radius: 8px;
   border: 1px solid var(--cor-borda-forte);
