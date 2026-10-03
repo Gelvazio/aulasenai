@@ -182,6 +182,21 @@
   - [Vídeos](#vídeos-8)
   - [Resumo](#resumo-8)
   - [Exercícios](#exercícios-8)
+- [Capítulo 10 — Projeto Integrador: Suíte de Testes + avaliação](#capítulo-10--projeto-integrador-suíte-de-testes--avaliação)
+  - [Teoria](#teoria-9)
+    - [A loja aguenta a Black Friday?](#a-loja-aguenta-a-black-friday)
+    - [O processo fundamental de teste no projeto](#o-processo-fundamental-de-teste-no-projeto)
+    - [Planejamento e desenho (retomando a situação de aprendizagem 1)](#planejamento-e-desenho-retomando-a-situação-de-aprendizagem-1)
+    - [A suíte de testes (6.3): organização](#a-suíte-de-testes-63-organização)
+    - [Execução: a base unitária com casos de borda](#execução-a-base-unitária-com-casos-de-borda)
+    - [Monitoração, controle e avaliação dos resultados](#monitoração-controle-e-avaliação-dos-resultados)
+    - [Equipe: code review respeitoso (S1)](#equipe-code-review-respeitoso-s1)
+    - [Justificar as decisões (S2)](#justificar-as-decisões-s2-1)
+    - [Como você será avaliado](#como-você-será-avaliado-1)
+    - [Checklist final da entrega](#checklist-final-da-entrega)
+  - [Vídeos](#vídeos-9)
+  - [Resumo](#resumo-9)
+  - [Exercícios](#exercícios-9)
 <!-- sumario:fim -->
 
 ---
@@ -307,7 +322,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 | 07 | 07 | Métricas e Cobertura de Testes | 4 h | ✅ Incluído |
 | 08 | 08 | TDD e Debugging Moderno no Front-End | 4 h | ✅ Incluído |
 | 09 | 09 | Qualidade, Performance, Acessibilidade e CI/CD | 4 h | ✅ Incluído |
-| 10 | 10 | Projeto Integrador: Suíte de Testes + avaliação | 4 h | ⬜ Pendente |
+| 10 | 10 | Projeto Integrador: Suíte de Testes + avaliação | 4 h | ✅ Incluído |
 
 **Datas previstas:** 08/10, 14/10, 15/10, 22/10, 29/10, 30/10, 05/11, 06/11, 12/11 e 13/11.
 
@@ -722,6 +737,7 @@ IDE, leitor de tela, projeto-base pronto, tempo estendido ou trabalho em duplas.
 | Capítulo 07 — Métricas e Cobertura de Testes | C3, C4 |
 | Capítulo 08 — TDD e Debugging Moderno no Front-End | C5, S1 |
 | Capítulo 09 — Qualidade, Performance, Acessibilidade e CI/CD | C5 |
+| Capítulo 10 — Projeto Integrador: Suíte de Testes + avaliação | C1, C2, C3, C4, C5, S1, S2 |
 
 ---
 
@@ -729,6 +745,8 @@ IDE, leitor de tela, projeto-base pronto, tempo estendido ou trabalho em duplas.
 
 Termos técnicos de todos os capítulos, em ordem alfabética (o número indica o capítulo).
 
+- **Análise de riscos:** identificação do que pode falhar, com impacto e probabilidade, para priorizar os testes. _(cap. 10)_
+- **Arquitetura da suíte:** organização das pastas, ferramentas e camadas de testes do projeto. _(cap. 10)_
 - **Artefato:** arquivo gerado pela pipeline e guardado para download (ex.: relatório de cobertura). _(cap. 09)_
 - **Asserção:** verificação que compara o resultado obtido com o esperado (`expect`). _(cap. 03)_
 - **Auto-waiting:** espera automática até o elemento estar pronto para a ação (visível, habilitado e parado). _(cap. 06)_
@@ -741,6 +759,8 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Breakpoint:** ponto de parada que pausa a execução para inspecionar o estado do programa. _(cap. 08)_
 - **Caixa branca:** testa caminhos internos do código. _(cap. 02)_
 - **Caixa preta:** testa entradas e saídas sem ver o código. _(cap. 02)_
+- **Caminho feliz:** cenário em que tudo dá certo, com dados válidos. _(cap. 10)_
+- **Caso de borda:** cenário nos limites ou fora do comum (carrinho vazio, cupom expirado, arredondamento). _(cap. 10)_
 - **Caso de teste:** condição, passos e resultado esperado. _(cap. 02)_
 - **CD:** entrega ou implantação contínua do código aprovado, sem passos manuais. _(cap. 09)_
 - **CI:** integração contínua que roda a suíte a cada alteração. _(cap. 09)_
@@ -749,6 +769,7 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Code review:** revisão do código (e dos testes) por um colega antes da junção ao projeto. _(cap. 08)_
 - **Código morto:** trecho que nunca é executado nem usado pelo sistema. _(cap. 07)_
 - **Core Web Vitals:** métricas de experiência do usuário: LCP, INP e CLS. _(cap. 09)_
+- **Critério de aceitação:** condição objetiva que define quando um requisito está atendido. _(cap. 10)_
 - **Critério de saída:** condição definida no plano para considerar os testes concluídos e liberar a versão. _(cap. 07)_
 - **Cypress:** framework de testes E2E que roda dentro do navegador, com painel visual de depuração. _(cap. 06)_
 - **data-testid:** atributo HTML dedicado a localizar elementos nos testes. _(cap. 06)_
@@ -760,6 +781,7 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **E2E:** teste do fluxo completo, como o usuário. _(cap. 06)_
 - **Erro:** ação humana equivocada que introduz um defeito. _(cap. 01)_
 - **Escopo:** o que será testado (e o que fica de fora) em uma versão. _(cap. 02)_
+- **Estimativa de esforço:** previsão do tempo necessário para planejar, escrever e executar os testes. _(cap. 10)_
 - **Falha:** comportamento incorreto do sistema percebido durante o uso. _(cap. 01)_
 - **findBy:** consulta assíncrona que espera o elemento aparecer na tela. _(cap. 04)_
 - **Framework de testes:** ferramenta que roda os testes e oferece funções de asserção (ex.: Vitest). _(cap. 03)_
@@ -783,6 +805,7 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Nome acessível:** texto que identifica um elemento para leitores de tela (ex.: o rótulo do botão). _(cap. 04)_
 - **Padrão AAA:** estrutura de teste em três etapas: preparar (Arrange), executar (Act) e conferir (Assert). _(cap. 01)_
 - **Page Object Model:** padrão que concentra os seletores e as ações de cada página em um só módulo. _(cap. 06)_
+- **Parecer por capacidade:** avaliação de cada capacidade como Desenvolvida, Em desenvolvimento ou Não desenvolvida. _(cap. 10)_
 - **Partição de equivalência:** técnica que agrupa entradas de mesmo comportamento e testa um representante de cada grupo. _(cap. 02)_
 - **Persistência:** manutenção dos dados depois de recarregar a página (ex.: `localStorage`). _(cap. 05)_
 - **Pilha de chamadas:** lista das funções em execução, mostrando o caminho até o ponto atual. _(cap. 08)_
@@ -790,13 +813,16 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Pirâmide de testes:** modelo que equilibra muitos testes unitários, alguns de integração e poucos E2E. _(cap. 01)_
 - **Plano de testes:** documento com escopo, estratégia, ambientes, cronograma, riscos e critérios de saída dos testes. _(cap. 02)_
 - **Playwright:** framework de testes E2E que comanda Chromium, Firefox e WebKit a partir do Node. _(cap. 06)_
+- **Projeto integrador:** atividade final que reúne todo o conteúdo da unidade em um único projeto. _(cap. 10)_
 - **Proteção da branch:** regra que só permite juntar código quando os checks obrigatórios passam. _(cap. 09)_
 - **Qualidade:** conformidade do sistema com os requisitos e as expectativas dos usuários. _(cap. 01)_
 - **queryBy:** consulta que devolve nulo quando o elemento não existe, usada para provar ausência. _(cap. 04)_
 - **Race condition:** defeito em que respostas chegam fora de ordem e a resposta antiga sobrescreve a recente. _(cap. 05)_
+- **Recuperação:** nova oportunidade de avaliação, retomando apenas as capacidades pendentes. _(cap. 10)_
 - **Refatoração:** melhoria da estrutura interna do código sem mudar o seu comportamento. _(cap. 08)_
 - **Regra de 10:** o custo de corrigir um defeito cresce cerca de 10 vezes a cada etapa em que ele avança. _(cap. 01)_
 - **Relatório de cobertura:** documento (no terminal ou em HTML) com os percentuais e as linhas sem teste. _(cap. 07)_
+- **Relatório final de testes:** documento com resultados, cobertura, defeitos, riscos e recomendação de publicação. _(cap. 10)_
 - **Requisito testável:** requisito claro, com um comportamento e um critério objetivo de aceitação. _(cap. 02)_
 - **Role (papel):** função acessível de um elemento na tela (botão, link, caixa de texto, item de lista). _(cap. 04)_
 - **Spy:** espião que registra como uma função foi chamada, sem mudar o que ela faz. _(cap. 05)_
@@ -2832,3 +2858,244 @@ divisão dos testes E2E entre máquinas mantêm o retorno em poucos minutos.
 - **Contexto:** Novos estagiários vão entrar na equipe e precisam saber rodar e escrever testes no projeto sem depender de alguém.
 - **Comando:** Escreva o roteiro do `TESTING.md` (comandos, organização dos arquivos, convenções, meta de cobertura, como contribuir) e a linha do badge da pipeline para o `README.md`.
 - **Linhas:** 8
+
+---
+
+# Capítulo 10 — Projeto Integrador: Suíte de Testes + avaliação
+
+- **Aula:** 10
+- **Carga horária:** 4 horas (1 aula)
+- **Capacidade:** C1, C2, C3, C4, C5, S1, S2
+- **Fonte:** `APOSTILA/CONTEUDO/CAPITULO-10.md`
+
+## Teoria
+
+### A loja aguenta a Black Friday?
+
+Faltam três semanas para a Black Friday e a diretoria da **Loja Nuvem Azul** fez uma única
+pergunta: "podemos confiar no site?". Para responder com fatos, a equipe precisa juntar tudo o que
+foi estudado em um só repositório: **plano**, **casos de teste**, **suíte automatizada** (unitários,
+integração e E2E), **cobertura**, **pipeline** e **relatório final**. Este capítulo é o roteiro do
+projeto integrador — e da avaliação final da unidade.
+
+> 🎯 **Objetivos do capítulo:** aplicar o **processo fundamental de teste completo** (planejamento,
+> desenho, execução, monitoração e controle, avaliação dos resultados), organizar a **suíte de
+> testes**, trabalhar em equipe com **code review respeitoso** e **justificar as decisões** com base
+> em requisitos e riscos.
+
+### O processo fundamental de teste no projeto
+
+| Etapa | O que entregar no projeto | Capítulos de apoio |
+|---|---|---|
+| **7.1 Planejamento** | Plano formal: escopo, estratégia, riscos, estimativa de esforço, critérios de saída | 2 |
+| **7.2 Desenho dos testes** | No mínimo 5 casos por feature (caminho feliz e bordas, tipo U/I/E2E) e matriz de rastreabilidade | 2 |
+| **7.3 Execução dos testes** | Suíte automatizada: unitários, integração (com MSW) e E2E | 3 a 6 e 8 |
+| **7.4 Monitoração e controle** | Pipeline de CI, cobertura ≥ 70%, testes intermitentes tratados | 7 e 9 |
+| **7.5 Avaliação dos resultados** | Relatório final com recomendação de publicar ou não | 7 |
+
+### Planejamento e desenho (retomando a situação de aprendizagem 1)
+
+Para **autenticação**, **carrinho** e **checkout**, o plano formal traz o escopo, a análise de riscos
+e a **estimativa de esforço**:
+
+| Feature | Casos (U/I/E2E) | Risco (impacto × probabilidade) | Esforço estimado |
+|---|---|---|---|
+| Autenticação | 3 U · 2 I · 1 E2E | Alto × médio | 4 h |
+| Carrinho e cupom | 4 U · 2 I · 1 E2E | Alto × alto | 5 h |
+| Checkout | 2 U · 2 I · 1 E2E | Altíssimo × alto | 6 h |
+
+**Exemplo — casos da feature "cupom":**
+
+| ID | Caso | Tipo | Requisito |
+|---|---|---|---|
+| CT-CUP-01 | Cupom válido de 10% reduz o subtotal (caminho feliz) | U | RF-11 |
+| CT-CUP-02 | Cupom expirado não dá desconto | U | RF-12 |
+| CT-CUP-03 | Carrinho vazio com cupom não quebra e não fica negativo | U | RF-11 |
+| CT-CUP-04 | Ao aplicar o cupom na tela, o total é recalculado e exibido | I | RF-11 |
+| CT-CUP-05 | Compra completa com cupom até a confirmação do pedido | E2E | RF-11, RF-13 |
+
+### A suíte de testes (6.3): organização
+
+```text
+loja-nuvem-azul/
+├─ .github/workflows/testes.yml   pipeline de CI
+├─ src/                           componentes, regras de negócio, mocks/handlers.js
+├─ tests/                         unitários e integração (Vitest, Testing Library, MSW)
+├─ e2e/                           fluxos E2E e Page Objects
+├─ TESTING.md                     como rodar e contribuir
+└─ README.md                      badges da pipeline e da cobertura
+```
+
+```json
+{
+  "scripts": {
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "e2e": "cypress run"
+  }
+}
+```
+
+Se a equipe preferir os testes **ao lado do código** (`precos.test.js` junto de `precos.js`), tudo
+bem — o importante é que a regra esteja escrita no `TESTING.md` e seja seguida por todos.
+
+### Execução: a base unitária com casos de borda
+
+```js
+// src/precos.js
+export function calcularTotal({ itens, cupom, frete }) {
+  const subtotal = itens.reduce((soma, item) => soma + item.preco * item.quantidade, 0);
+  const desconto = cupom?.ativo ? subtotal * cupom.percentual : 0;
+  return Math.round((subtotal - desconto + frete) * 100) / 100;
+}
+
+// tests/precos.test.js
+import { describe, it, expect } from 'vitest';
+import { calcularTotal } from '../src/precos';
+
+const cupom10 = { ativo: true, percentual: 0.1 };
+
+describe('calcularTotal', () => {
+  it('soma itens e frete sem cupom', () => {
+    expect(calcularTotal({ itens: [{ preco: 59.9, quantidade: 2 }], cupom: null, frete: 15 })).toBe(134.8);
+  });
+
+  it('não aplica o desconto sobre o frete', () => {
+    expect(calcularTotal({ itens: [{ preco: 100, quantidade: 1 }], cupom: cupom10, frete: 15 })).toBe(105);
+  });
+
+  it('carrinho vazio com cupom cobra só o frete', () => {
+    expect(calcularTotal({ itens: [], cupom: cupom10, frete: 15 })).toBe(15);
+  });
+
+  it('cupom expirado não dá desconto', () => {
+    const expirado = { ativo: false, percentual: 0.1 };
+    expect(calcularTotal({ itens: [{ preco: 100, quantidade: 1 }], cupom: expirado, frete: 0 })).toBe(100);
+  });
+
+  it('arredonda para duas casas decimais', () => {
+    expect(calcularTotal({ itens: [{ preco: 33.33, quantidade: 3 }], cupom: cupom10, frete: 0 })).toBe(89.99);
+  });
+});
+```
+
+Acima da base: **integração** do carrinho com a API simulada (capítulos 4 e 5) e **no mínimo três
+fluxos E2E** — por exemplo, login, compra com cupom e checkout com erro de pagamento (capítulo 6).
+
+### Monitoração, controle e avaliação dos resultados
+
+- A pipeline (capítulo 9) roda tudo a cada `push` e `pull request` e bloqueia o merge com teste
+  vermelho ou cobertura abaixo de **70%**.
+- O painel acompanha cobertura, testes intermitentes e tempo da suíte (capítulo 7).
+- O **relatório final** resume resultados, cobertura, defeitos abertos e riscos e termina com a
+  recomendação: a versão atende aos critérios de saída do plano? Pode ir para a Black Friday?
+
+### Equipe: code review respeitoso (S1)
+
+**Roteiro de code review de testes — seis perguntas que o colega responde com respeito:**
+
+1. O nome de cada teste descreve claramente o comportamento verificado?
+2. Os casos de borda do requisito (vazio, limite, inválido) estão cobertos?
+3. Cada teste confere algo importante com asserções, e não só "executa sem erro"?
+4. Os testes são independentes e usam dados isolados (sem depender da ordem)?
+5. Os seletores seguem o que o usuário vê (`getByRole`, rótulo, texto) e não classes de estilo?
+6. Sobrou algo que não deve ir para o repositório (`only`, `skip`, `console.log`, teste desativado)?
+
+Comentários começam pelo que está bom, apontam o problema (não a pessoa) e sugerem um caminho:
+"Ótima cobertura do cupom! Que tal incluir o caso de cupom expirado?". Quem recebe agradece,
+considera a ideia diferente e responde com fatos.
+
+### Justificar as decisões (S2)
+
+O tempo nunca dá para testar tudo. Cada escolha do projeto deve ser **justificada por requisitos e
+riscos**: "Automatizamos primeiro o checkout com cupom porque é o requisito de maior impacto
+financeiro (RF-13) e o módulo mais alterado nesta versão; deixamos o rodapé para o teste manual
+porque o impacto de uma falha ali é baixo."
+
+### Como você será avaliado
+
+| Instrumento | Momento | Peso | Critérios |
+|---|---|---|---|
+| Avaliação contínua: entregas das aulas 1–9 e SAs 1 e 2 | Aulas 1–9 | 60% | Correção, completude, organização do repositório, prazo |
+| Avaliação prática: suíte de testes para aplicação fornecida | Aula 10 | 25% | Unitários (≥ 5 casos) · integração · E2E (≥ 3 fluxos) · cobertura ≥ 70% · execução no CI |
+| Avaliação objetiva: conceitos, técnicas, tipos e processo de teste | Aula 10 | 15% | Acertos; questões no formato capacidade → contexto → comando |
+
+- **Nota final** = 60% contínua + 25% prática + 15% objetiva. Aprovação: nota final ≥ 7,0 e presença
+  mínima de 75%. Cada capacidade também recebe o parecer **Desenvolvida / Em desenvolvimento / Não
+  desenvolvida**.
+- **Rubrica:** Excelente (9–10) — plano rastreável, testes legíveis pelo comportamento, suíte estável
+  no CI, decisões justificadas; Bom (7–8) — testes corretos e passando, com pequenas falhas de
+  nomenclatura, cobertura ou documentação; Aceitável (5–6) — cumpre o essencial com orientação,
+  lacunas de casos de borda ou testes frágeis; Insuficiente (0–4) — testes que não rodam, não
+  validam requisito ou plano ausente.
+- **Recuperação:** refazer a avaliação não atingida (prática com outra aplicação, objetiva com novo
+  banco de questões), retomando só as capacidades pendentes.
+
+### Checklist final da entrega
+
+- [ ] Plano formal com escopo, riscos, esforço e critérios de saída
+- [ ] No mínimo 5 casos por feature e matriz de rastreabilidade sem lacunas
+- [ ] Unitários (≥ 5 casos), integração e E2E (≥ 3 fluxos) passando
+- [ ] Cobertura ≥ 70% e pipeline verde com proteção da branch
+- [ ] `TESTING.md`, badges e relatório final com recomendação
+- [ ] Code review feito e sugestões respondidas
+
+## Vídeos
+
+- [A pirâmide de testes](https://www.youtube.com/watch?v=RX1bvaNOc-M) — 10:37 — Otavio Lemos
+- [Como fazer um bom code review](https://www.youtube.com/watch?v=jq4AxdaCID0) — 10:45 — Eder TV
+- [5 dicas de como receber feedback](https://www.youtube.com/watch?v=mwrfJW5mvUA) — 05:29 — Caput Consultoria
+
+## Resumo
+
+- O projeto integrador aplica o **processo fundamental de teste** completo: planejamento, desenho, execução, monitoração e controle e avaliação dos resultados.
+- **Planejamento e desenho:** plano formal com riscos e esforço, no mínimo 5 casos por feature (U/I/E2E) e matriz de rastreabilidade.
+- **Suíte organizada:** pastas, scripts e `TESTING.md`; base unitária com casos de borda, integração com MSW e no mínimo três fluxos E2E.
+- **Controle e avaliação:** pipeline com cobertura ≥ 70%, painel de métricas e relatório final com recomendação.
+- **Equipe:** code review respeitoso (S1) e decisões justificadas por requisitos e riscos (S2).
+- **Avaliação:** 60% contínua + 25% prática + 15% objetiva; nota ≥ 7,0, presença ≥ 75% e parecer por capacidade.
+
+## Exercícios
+
+### ITEM 1
+- **Capacidade:** C1, C2
+- **Contexto:** Especificação da tela de checkout da Loja Nuvem Azul: campo CEP com 8 dígitos e preenchimento automático do endereço; botão **Pagar** desabilitado até o cliente aceitar os termos; mensagem "Pagamento recusado, tente outro cartão" quando o cartão é negado; resumo do pedido sempre visível.
+- **Comando:** Identifique as especificações técnicas da interface (elementos, estados e mensagens) e transforme-as em pelo menos quatro requisitos testáveis, com critério objetivo de aceitação.
+- **Linhas:** 6
+
+### ITEM 2
+- **Capacidade:** C2, C3
+- **Contexto:** A feature de autenticação (login, cadastro e recuperação de senha) precisa entrar no plano formal do projeto integrador.
+- **Comando:** Monte o trecho do plano da autenticação com escopo (dentro e fora), três riscos com impacto e probabilidade, estimativa de esforço e critérios de saída.
+- **Linhas:** 8
+
+### ITEM 3
+- **Capacidade:** C2, C4
+- **Contexto:** Requisitos do carrinho: RF-20 adicionar item; RF-21 alterar quantidade (mínimo 1, máximo 10); RF-22 remover item; RF-23 mostrar o subtotal atualizado.
+- **Comando:** Escreva cinco casos de teste do carrinho (caminho feliz e bordas), indicando o tipo de cada um (U, I ou E2E), e monte a matriz de rastreabilidade requisito × caso.
+- **Linhas:** 8
+
+### ITEM 4
+- **Capacidade:** C5
+- **Contexto:** A avaliação prática exige pelo menos cinco casos unitários para a regra `calcularParcelas(total)`: até R$ 100 em 1 vez; de R$ 100,01 a R$ 500 em até 3 vezes; acima de R$ 500 em até 6 vezes; total negativo lança erro.
+- **Comando:** Escreva a suíte Vitest com no mínimo cinco testes no padrão AAA, incluindo os valores de borda e o caso de erro, com nomes descritivos.
+- **Linhas:** 12
+
+### ITEM 5
+- **Capacidade:** C3, C5
+- **Contexto:** Faltam dois dias para a entrega e a suíte tem: 18 unitários, nenhum teste de integração, 1 fluxo E2E, cobertura de 63% e nenhuma pipeline.
+- **Comando:** Compare a situação com os critérios da avaliação prática, liste o que falta em ordem de prioridade e descreva como organizar a suíte (pastas, scripts e pipeline) para atender a todos os critérios.
+- **Linhas:** 7
+
+### ITEM 6
+- **Capacidade:** S1
+- **Contexto:** Você vai revisar os testes do checkout de um colega e também receberá a revisão dele sobre os seus testes do carrinho.
+- **Comando:** Crie um roteiro de code review de testes com seis perguntas que o colega deve responder de forma respeitosa e escreva um exemplo de comentário construtivo e um exemplo de resposta que acolhe a sugestão.
+- **Linhas:** 8
+
+### ITEM 7
+- **Capacidade:** S2, C3
+- **Contexto:** Só há tempo para automatizar dois destes quatro fluxos E2E: (a) login; (b) compra com cupom até a confirmação; (c) troca de idioma do site; (d) checkout com pagamento recusado. O checkout foi todo alterado nesta versão.
+- **Comando:** Escolha os dois fluxos e justifique a decisão com base em requisitos e riscos (impacto × probabilidade), dizendo também como os outros dois serão cobertos ou acompanhados.
+- **Linhas:** 6

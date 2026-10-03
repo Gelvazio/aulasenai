@@ -25,4 +25,4 @@
 | 07 | Métricas e Cobertura de Testes | ✅ | ✅ 3 | ✅ | ✅ 7 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 08 | TDD e Debugging Moderno no Front-End | ✅ | ✅ 4 | ✅ | ✅ 7 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 09 | Qualidade, Performance, Acessibilidade e CI/CD | ✅ | ✅ 4 | ✅ | ✅ 7 | ✅ 10 | ⬜ | 👀 Aguardando validação |
-| 10 | Projeto Integrador: Suíte de Testes + avaliação | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 10 | Projeto Integrador: Suíte de Testes + avaliação | ✅ | ✅ 3 | ✅ | ✅ 7 | ✅ 10 | ⬜ | 👀 Aguardando validação |
