@@ -1,0 +1,27 @@
+/* Lista "Turma" antes dos botões de exportar (assets/js/turma-exportacao.js, só professor).
+   Carregado pelo próprio turma-exportacao.js em todas as páginas de atividade e avaliação. */
+:root {
+    --turma-exportacao-borda: #FFD700;
+    --turma-exportacao-texto: #2d3748;
+    --turma-exportacao-fundo: #fff;
+}
+
+.export-bar .turma-exportacao {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--turma-exportacao-texto);
+    cursor: default;
+}
+
+.export-bar .turma-exportacao select {
+    padding: 8px 10px;
+    border: 2px solid var(--turma-exportacao-borda);
+    border-radius: 6px;
+    font-size: 13px;
+    background: var(--turma-exportacao-fundo);
+    color: var(--turma-exportacao-texto);
+    max-width: 320px;
+}

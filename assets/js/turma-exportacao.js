@@ -4,7 +4,8 @@
 // precisa escolher antes de exportar. A turma escolhida preenche o campo "Turma" do PDF.
 // Turmas visíveis: o administrador (confirmado pelo banco) vê todas; os demais professores, só
 // os vínculos próprios em turmaprofessor. Aluno ou sem login: sem lista, campo em branco.
-// Carregado por assets/js/atividade.js. Depende de js/supabase.js (carregado pela página ou
+// Carregado por assets/js/atividade.js (ou direto pela página). Inclui sozinho o
+// assets/css/turma-exportacao.css. Depende de js/supabase.js (carregado pela página ou
 // pelo js/header-usuario.js); usa popup.js quando estiver na página.
 
 const ID_LISTA_TURMA_EXPORTACAO = 'turmaExportacao';
@@ -17,6 +18,20 @@ const MSG_ESCOLHER_TURMA_EXPORTACAO = 'Selecione a turma antes de exportar.';
 const TURMA_EM_BRANCO_PDF = '___________________';
 const TENTATIVAS_CLIENTE_EXPORTACAO = 20;
 const INTERVALO_CLIENTE_EXPORTACAO_MS = 250;
+const ORIGEM_TURMA_EXPORTACAO = document.currentScript?.src || '';
+const CSS_TURMA_EXPORTACAO = 'css/turma-exportacao.css';
+
+/**
+ * Inclui o assets/css/turma-exportacao.css (caminho calculado a partir deste script).
+ */
+function incluirCssTurmaExportacao() {
+    if (!ORIGEM_TURMA_EXPORTACAO) return;
+
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = ORIGEM_TURMA_EXPORTACAO.replace(/js\/[^/]*$/, CSS_TURMA_EXPORTACAO);
+    document.head.append(link);
+}
 
 /**
  * Espera um intervalo sem bloquear a página.
@@ -143,6 +158,7 @@ async function iniciarTurmaExportacao() {
         if (!usuario) return;
 
         const turmas = await listarTurmasDoProfessorExportacao(cliente, usuario);
+        incluirCssTurmaExportacao();
         barra.prepend(criarCampoTurmaExportacao(turmas));
     } catch (erro) {
         console.warn('Não foi possível carregar as turmas para a exportação:', erro);

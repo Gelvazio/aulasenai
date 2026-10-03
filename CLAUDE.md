@@ -1233,11 +1233,12 @@ Registrada em 2026-10-03. Vale para **todas** as atividades e avaliações de **
 - ✅ Aluno, usuário sem login ou professor sem turma: sem lista; o campo Turma do PDF fica em
   branco para preencher à mão.
 - ✅ Código único: `assets/js/turma-exportacao.js` (carregado sozinho pelo `assets/js/atividade.js`,
-  que gera todos os PDFs) + estilo em `assets/css/atividade.css`. Página nova de atividade ou
-  avaliação com exportação **deve usar o `atividade.js`** (não repetir a lógica por página).
-- ⏳ Pendente (página antiga com código embutido, fora do `atividade.js`):
-  `INTRODUCAO-TIC/ATIVIDADES/ATIVIDADES-AULA-23-09-2026/ATIVIDADES-INFORMATICA-BASICA.html` —
-  converter quando for mexida.
+  que gera os PDFs) + `assets/css/turma-exportacao.css` (incluído pelo próprio módulo). Página
+  nova de atividade ou avaliação com exportação **deve usar o `atividade.js`** (não repetir a
+  lógica por página).
+- ✅ Página com PDF próprio (fora do `atividade.js`) carrega o `turma-exportacao.js` direto e usa
+  `await obterTurmaParaExportacao()` (retorno `null` = cancelar a exportação). Exemplo:
+  `INTRODUCAO-TIC/ATIVIDADES/ATIVIDADES-AULA-23-09-2026/ATIVIDADES-INFORMATICA-BASICA.html`.
 
 ## 🪟 REGRA CRÍTICA — AVISOS AO USUÁRIO: sempre POPUP, nunca `alert()`/`confirm()`
 

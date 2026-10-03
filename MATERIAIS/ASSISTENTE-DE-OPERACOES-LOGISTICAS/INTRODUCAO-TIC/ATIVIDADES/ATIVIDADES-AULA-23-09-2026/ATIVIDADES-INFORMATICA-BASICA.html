@@ -190,6 +190,7 @@
     <script src="../MENU-ATIVIDADES.js" defer></script>
     <script src="../../../../../js/menu.js" defer></script>
     <script src="../../../../../js/header-usuario.js" defer></script>
+    <script src="../../../../../assets/js/turma-exportacao.js" defer></script>
 </head>
 <body>
 <div id="header-usuario"></div>
@@ -1116,12 +1117,17 @@
                 .trim();
         }
 
-        function exportarPDFAtividade() {
+        async function exportarPDFAtividade() {
             const jsPDF = window.jspdf?.jsPDF || window.jsPDF;
             if (!jsPDF) {
                 alert('Erro: jsPDF não carregado (verifique a conexão com a internet).');
                 return;
             }
+
+            // Regra global: turma da lista "Turma" (assets/js/turma-exportacao.js)
+            const turma = typeof obterTurmaParaExportacao === 'function'
+                ? await obterTurmaParaExportacao() : '___________________';
+            if (turma === null) return;
 
             const partes = [];
             document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -1174,7 +1180,7 @@
                 [ { content: 'Data: ___/___/___', styles: { fontSize: 10 } }, { content: '' }, { content: '' }, { content: '' } ],
                 [ { content: 'Docente: GELVAZIO CAMARGO', styles: { fontSize: 10, fontStyle: 'bold' }, colSpan: 2 }, { content: '' }, { content: '' } ],
                 [ { content: 'Unidade Curricular: Introdução à Tecnologia da Informação e Comunicação', styles: { fontSize: 10 }, colSpan: 2 },
-                  { content: 'Turma: ___________________', styles: { fontSize: 10 }, colSpan: 2 } ],
+                  { content: textoPDF('Turma: ' + turma), styles: { fontSize: 10 }, colSpan: 2 } ],
                 [ { content: 'Estudante: ___________________________________________________', styles: { fontSize: 10 }, colSpan: 4 } ]
             ];
 
