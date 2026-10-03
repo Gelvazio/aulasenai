@@ -1724,6 +1724,14 @@ dessas atividades. Registrada em 2026-10-03 a pedido do usuário.
 - ⚠️ Respeita `STATUS-PERMISSAO-EMENTA` e matérias semelhantes. Em `QUALIFICACAO-PROFISSIONAL/` a
   ementa é só do professor: as atividades usam as aulas/ementa como **leitura**, e matéria sem aulas
   definidas fica aguardando o professor.
+- ✅ **Aulas de avaliação** (decisão do usuário, 2026-10-03): a **Aula 15 de Fundamentos de
+  Automação/Instrumentação** (avaliação integradora) tem atividade objetiva de **20 questões**;
+  as demais aulas de avaliação (ex.: Eletricidade aula 09, Reforço de Linguagens aula 16) seguem
+  com **50 questões**.
+- ✅ **Banco na geração das pendentes** (plano `docs/gerar-atividades-50-questoes-todas-materias.md`,
+  2026-10-03): o usuário autorizou **aplicar o seed no Supabase ao finalizar cada matéria**.
+- ⏳ **Fila:** gerar **somente uma matéria por vez, na ordem que o usuário liberar**; as demais
+  aguardam. Primeira liberada (2026-10-03): **Testes de Frontend**.
 
 ## 📊 REGRA — `dashboard.html` EM CADA PASTA DE MATÉRIA
 

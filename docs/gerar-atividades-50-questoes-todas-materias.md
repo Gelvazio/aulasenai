@@ -2,7 +2,7 @@
 
 **Objetivo:** cumprir a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES POR AULA" (`CLAUDE.md` da raiz)
 nas matérias onde falta, a partir do levantamento dos `ATIVIDADES/STATUS-ATIVIDADES.md` (2026-10-03).
-**Criado em:** 2026-10-03 · **Status:** ⏳ aguardando aprovação
+**Criado em:** 2026-10-03 · **Status:** 🔄 aprovado só para Testes de Frontend (demais aguardam); Automação aula 15 = 20 questões; seed aplicado ao finalizar cada matéria
 
 **Método (por aula, uma por vez, completa):** ler a aula (`AULAS/`) e o `EMENTA-CHALKIE-AI.md` →
 escrever `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-50-QUESTOES.md` (50 questões A–D, contexto do curso,
