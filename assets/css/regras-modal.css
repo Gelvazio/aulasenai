@@ -10,9 +10,15 @@
     --regras-veu: rgba(0, 20, 50, 0.6);
 }
 
+/* Posição fixa explícita: o reset "* { margin: 0 }" das páginas anula a centralização nativa do <dialog>. */
 .regras-modal {
+    position: fixed;
+    inset: 0;
+    margin: auto;
     width: min(1200px, 96vw);
     height: 90vh;
+    max-width: 96vw;
+    max-height: 90vh;
     padding: 0;
     border: none;
     border-radius: 12px;
