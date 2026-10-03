@@ -1656,3 +1656,14 @@ documentação da própria matéria.** Registrada em 2026-10-02.
 **Data:** 2026-09-30  
 **Status:** ✅ Ativo
 
+
+## 📚 REGISTRO — VÍNCULOS DE CURSOS POR PROFESSOR (2026-10-03)
+
+- ✅ `33a3ca9`: o índice raiz passou a carregar os cursos do banco (`index.html` e `assets/js/indice-cursos.js`).
+- ✅ `abcee07`: especificação aprovada para relacionar cursos e professores por `cursoprofessor`, com menu administrativo `CURSOS` e tela proposta `cursos-professor.html`.
+- ✅ `ccb9d3b`: plano detalhado da implementação registrado em `docs/superpowers/plans/2026-10-02-cursoprofessor.md`.
+- ✅ O plano recebeu revisão independente; os pontos levantados incluem conferir tabela/permissões existentes, políticas e acesso de leitura a `usuario`, proteger a consulta de funções ausentes e identificar perfil pela sessão Auth (`app_metadata.perfil`).
+- ⏳ A implementação da migração, CRUD administrativo, item de menu e filtro do índice por vínculo ainda está pendente. A inspeção do schema remoto é pré-requisito conforme a regra do banco.
+- ⛔ Não há conector Supabase/SQL disponível nesta sessão. O usuário recebeu consultas somente de leitura para executar no SQL Editor e fornecer os resultados. Não afirmar que `cursoprofessor` existe no banco remoto antes da aplicação confirmada da migração.
+- ✅ Não foram executados testes, navegador ou servidor; essa restrição continua valendo.
+- 📄 Registro desta atualização: `docs/registro-vinculos-cursos-professor-2026-10-03.md`.
