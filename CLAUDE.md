@@ -1216,6 +1216,29 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   turma, bloqueio pelo professor e recuperação (a nova tentativa abre em branco).
 - ⏳ Correção com IA e nota da prática na média final: tarefa seguinte.
 
+## 🏫 REGRA CRÍTICA — TURMA NA EXPORTAÇÃO DE ATIVIDADES E AVALIAÇÕES (PROJETO TODO)
+
+Registrada em 2026-10-03. Vale para **todas** as atividades e avaliações de **todas** as matérias.
+
+- ✅ Ao exportar (PDF da atividade/prova completa, PDF com gabarito, **Gabarito**), o campo
+  **Turma** do PDF é preenchido com a **turma selecionada** — não fica a linha em branco quando o
+  professor tem turma.
+- ✅ **Lista (combo) "Turma" antes dos botões de exportar**, no início da `.export-bar`, só para o
+  PROFESSOR logado:
+  - professor com **1 turma** → ela já vem selecionada;
+  - professor com **mais de uma turma** → a lista começa em "Selecione a turma…" e ele **tem de
+    escolher**; sem escolha, a exportação para com o popup "Selecione a turma antes de exportar.";
+  - turmas visíveis: as dos vínculos dele na `turmaprofessor`; o Professor Administrador
+    (`eh_professor_administrador()`) vê todas.
+- ✅ Aluno, usuário sem login ou professor sem turma: sem lista; o campo Turma do PDF fica em
+  branco para preencher à mão.
+- ✅ Código único: `assets/js/turma-exportacao.js` (carregado sozinho pelo `assets/js/atividade.js`,
+  que gera todos os PDFs) + estilo em `assets/css/atividade.css`. Página nova de atividade ou
+  avaliação com exportação **deve usar o `atividade.js`** (não repetir a lógica por página).
+- ⏳ Pendente (página antiga com código embutido, fora do `atividade.js`):
+  `INTRODUCAO-TIC/ATIVIDADES/ATIVIDADES-AULA-23-09-2026/ATIVIDADES-INFORMATICA-BASICA.html` —
+  converter quando for mexida.
+
 ## 🪟 REGRA CRÍTICA — AVISOS AO USUÁRIO: sempre POPUP, nunca `alert()`/`confirm()`
 
 Registrada em 2026-09-30. Componente reutilizável: `assets/js/popup.js` + `assets/css/popup.css`
