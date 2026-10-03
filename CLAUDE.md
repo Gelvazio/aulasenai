@@ -1796,16 +1796,30 @@ Registrada em 2026-10-03 a pedido do usuário.
 - ✅ **Fluxo em 3 etapas:**
   1. escrever e validar os capítulos (`CAPITULO-NN.md`), um por vez;
   2. gerar o **Markdown completo da apostila** dentro da pasta `APOSTILA` da própria matéria:
-     `<MATERIA>/APOSTILA/APOSTILA-<MATERIA>.md` (introdução,
-     capacidades, glossário e todos os capítulos, na ordem da apostila), para o usuário **comparar
-     e acrescentar dados**;
+     `<MATERIA>/APOSTILA/APOSTILA-<MATERIA>.md`, para o usuário **comparar e acrescentar dados**;
   3. **só no final** gerar a apostila HTML (`APOSTILA-<MATERIA>.html`) **a partir desse Markdown
      completo**.
+- ✅ **Conteúdo do Markdown completo, nesta ordem (detalhado):**
+  1. **cabeçalho:** UC, curso, docente, carga horária da UC, capítulos previstos (1 capítulo =
+     1 aula de 4 h), data de geração e o aviso de que o arquivo é a fonte final;
+  2. **sumário com links** (refeito a cada geração, entre os marcadores `sumario:inicio/fim`);
+  3. **plano de capítulos:** tabela das aulas (capítulo, aula, tema, 4 h, situação ✅ incluído /
+     ⬜ pendente) e, para **cada aula**, a seção "Aula NN — tema" com domínios, capacidades,
+     situação-problema, atividade, estratégias, BNCC, marco, termos oficiais do glossário,
+     conteúdos oficiais, detalhamento didático, indicadores e ideias da ementa — o roteiro do que
+     o capítulo tem de cobrir;
+  4. **introdução** (subtítulos viram `##`);
+  5. **capacidades da matéria:** básicas, socioemocionais, **conhecimentos da UC** (domínios e
+     conteúdos), tabela **capacidades × conhecimentos** e tabela **capacidades por capítulo**;
+  6. **glossário** de todos os capítulos, em ordem alfabética, com `_(cap. NN)_`;
+  7. **capítulos** (identificação com aula, carga horária e capacidades + teoria, vídeos, resumo
+     e exercícios).
 - ✅ O que o usuário acrescentar no Markdown completo **vale para o HTML**; o gerador **não
   sobrescreve** o Markdown completo existente sem pedido (`--forcar`) e, ao entrar um capítulo
   novo, apenas o acrescenta.
-- ✅ **Comando do Markdown completo:** `C:\Python314\python.exe assets\gerador-apostilas\gerar_apostila.py
-  <pasta da matéria> --markdown` (`--forcar` refaz do zero). Módulo:
+- ✅ **Comando do Markdown completo:**
+  `C:\Python314\python.exe assets\gerador-apostilas\gerar_apostila.py <pasta da matéria> --markdown`
+  (`--forcar` refaz do zero). Módulo:
   `assets/gerador-apostilas/markdown_apostila.py`. O plano de capítulos vem do `materia.json`
   (`carga_horaria_uc`, `horas_por_aula` = 4, `aulas` = uma por aula); o gerador confere
   se capítulos × 4 h = carga da UC. Glossário em ordem alfabética sem considerar acentos.
@@ -1888,17 +1902,59 @@ faltava. Vale para **todas as matérias**.
   `conteudos_oficiais` tratados na teoria; cada indicador coberto por ao menos 1 exercício; a
   situação-problema da aula usada na teoria ou nos exercícios; as `ideias_ementa` aproveitadas.
 - ✅ Encontrou algo na ementa que não está em nenhum campo: **acrescentar ao `materia.json`**,
-  registrar nesta tabela e avisar o
-  usuário.
+  registrar nesta tabela e avisar o usuário.
+
+### Formato das fontes (o gerador recusa fora do padrão)
+
+- ✅ **`CONTEUDO/CAPITULO-NN.md`** (NN = número da aula, com 2 dígitos):
+
+```markdown
+# Capítulo NN — <tema igual ao da aula no materia.json>
+
+- **Aula:** NN
+- **Capacidade:** C1, S1            ← iguais às da aula no materia.json
+
+## Teoria
+### <subtítulo>                     ← cada "###" vira subtítulo da teoria e entra no sumário
+<texto, listas e tabelas em Markdown; exemplos com a empresa fictícia do curso>
+
+## Vídeos
+- [<título exato>](https://www.youtube.com/watch?v=<id>) — mm:ss — <canal>
+
+## Exercícios
+### ITEM 1
+- **Capacidade:** C1
+- **Contexto:** <situação profissional>
+- **Comando:** <o que o aluno deve fazer>
+- **Linhas:** 4                     ← linhas de resposta (opcional; padrão 3)
+
+## Resumo
+- <ponto principal>
+
+## Glossário
+- **<Termo>:** <definição>
+```
+
+- ✅ Nenhum "## " extra dentro da teoria (quebraria as seções); subtítulos da teoria sempre "###".
+- ✅ **`CONTEUDO/INTRODUCAO.md`:** título `# Introdução` e subtítulos `###`: Apresentação,
+  Objetivo geral da unidade curricular, Como a apostila está organizada, Como estudar com esta
+  apostila, **Como você será avaliado** (instrumentos, valores, rubrica e recuperação da ementa),
+  **Ambientes, recursos e acessibilidade** e Competência integradora.
+- ✅ **Busca dos vídeos (sem abrir navegador):** pesquisa na web restrita ao `youtube.com`, em
+  português, preferindo canais educacionais; a duração, o título e o canal são lidos dos
+  metadados da página do vídeo por `curl` (`lengthSeconds`, `ownerChannelName`); descartar os de
+  mais de 15:00. De 1 a 4 vídeos por capítulo, cobrindo os conteúdos principais.
 
 ### Ordem da apostila
 
 1. **Capa** (tema SESI SENAI);
 2. **Sumário detalhado** com número de página: introdução, capacidades, glossário, cada capítulo
    e, dentro dele, teoria (com os subtítulos), vídeos, resumo e exercícios;
-3. **Introdução** ao conteúdo (apresentação, objetivo geral, organização, como estudar);
+3. **Introdução** ao conteúdo (apresentação/justificativa, objetivo geral, organização, como
+   estudar, como você será avaliado, ambientes/recursos/acessibilidade, competência integradora);
 4. **Capacidades da matéria:** **todas** as capacidades básicas (C1...) e socioemocionais (S1...)
-   da ementa, mais a tabela "capacidades por capítulo";
+   da ementa, mais a tabela "capacidades por capítulo" (no Markdown completo, também os
+   conhecimentos e a tabela capacidades × conhecimentos);
 5. **Glossário** (no início): termos de todos os capítulos, em ordem alfabética;
 6. **Capítulos.**
 
@@ -1911,8 +1967,10 @@ faltava. Vale para **todas as matérias**.
    duração ou com mais de 15:00. A duração é conferida nos metadados do YouTube (`curl`, sem
    navegador) e o professor confere o conteúdo;
 4. **Resumo**;
-5. **No mínimo 5 exercícios (questões) por capítulo** (mais é permitido), no padrão ITEM (CAPACIDADE → linha divisória → Contexto → Comando → Resposta com
-   linhas), em **páginas próprias**, com campos Aluno(a)/Turma/Data e o botão **📥 Exportar PDF
+5. **No mínimo 5 exercícios (questões) por capítulo** (mais é permitido), no padrão ITEM
+   (CAPACIDADE → linha divisória → Contexto → Comando → Resposta com linhas), cobrindo todos os
+   indicadores da aula, em **páginas próprias**, com campos Aluno(a)/Turma/Data e o botão
+   **📥 Exportar PDF
    ao lado do título "Exercícios"**, que exporta só os exercícios daquele capítulo.
 
 ### Páginas A4 e PDF
