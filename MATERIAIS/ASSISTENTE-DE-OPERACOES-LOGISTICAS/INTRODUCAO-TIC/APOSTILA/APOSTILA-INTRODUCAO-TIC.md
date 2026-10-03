@@ -138,6 +138,20 @@
   - [Vídeos](#vídeos-5)
   - [Resumo](#resumo-5)
   - [Exercícios](#exercícios-5)
+- [Capítulo 07 — Textos Técnicos e Redação Empresarial](#capítulo-07--textos-técnicos-e-redação-empresarial)
+  - [Teoria](#teoria-6)
+    - [Uma avaria, dois documentos](#uma-avaria-dois-documentos)
+    - [O que é um texto técnico](#o-que-é-um-texto-técnico)
+    - [Normas de redação](#normas-de-redação)
+    - [Identificação e interpretação de textos técnicos](#identificação-e-interpretação-de-textos-técnicos)
+    - [Relatório técnico (ABNT NBR 10719)](#relatório-técnico-abnt-nbr-10719)
+    - [Ata de reunião](#ata-de-reunião)
+    - [Memorando e ofício](#memorando-e-ofício)
+    - [Resumo](#resumo-6)
+    - [Comunicação e níveis de fala](#comunicação-e-níveis-de-fala)
+  - [Vídeos](#vídeos-6)
+  - [Resumo](#resumo-7)
+  - [Exercícios](#exercícios-6)
 <!-- sumario:fim -->
 
 ---
@@ -262,7 +276,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 | 04 | 04 | Comunicação Digital e Colaboração em Nuvem | 4 h | ✅ Incluído |
 | 05 | 05 | Segurança da Informação e Proteção de Dados | 4 h | ✅ Incluído |
 | 06 | 06 | Editor de Textos: Formatação e Estruturação | 4 h | ✅ Incluído |
-| 07 | 07 | Textos Técnicos e Redação Empresarial | 4 h | ⬜ Pendente |
+| 07 | 07 | Textos Técnicos e Redação Empresarial | 4 h | ✅ Incluído |
 | 08 | 08 | Editor de Planilhas: Organização e Fórmulas | 4 h | ⬜ Pendente |
 | 09 | 09 | Planilhas: Análise Visual e Gráficos | 4 h | ⬜ Pendente |
 | 10 | 10 | Editor de Apresentações e TIC + Avaliação | 4 h | ⬜ Pendente |
@@ -720,6 +734,7 @@ O tempo e o formato podem ser adaptados sem alterar as capacidades avaliadas.
 | Capítulo 04 — Comunicação Digital e Colaboração em Nuvem | C1, C5 |
 | Capítulo 05 — Segurança da Informação e Proteção de Dados | C2 |
 | Capítulo 06 — Editor de Textos: Formatação e Estruturação | C1 |
+| Capítulo 07 — Textos Técnicos e Redação Empresarial | C1, C3 |
 
 ---
 
@@ -729,6 +744,7 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 
 - **Anexo:** arquivo enviado junto com o e-mail. _(cap. 04)_
 - **Assertividade:** comunicar com clareza, firmeza e respeito, sem agressividade nem omissão. _(cap. 01)_
+- **Ata:** registro formal do que foi discutido e decidido. _(cap. 07)_
 - **Autenticação em dois fatores (2FA):** acesso que exige, além da senha, uma segunda prova de identidade. _(cap. 05)_
 - **Backup:** cópia de segurança dos arquivos. _(cap. 02)_
 - **Backup:** cópia de segurança em outro local. _(cap. 05)_
@@ -755,28 +771,36 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Formatação:** ajuste da aparência do texto (fonte, parágrafo, página). _(cap. 06)_
 - **Hardware:** parte física do computador (peças, cabos e circuitos). _(cap. 02)_
 - **Histórico de versões:** registro das versões anteriores de um arquivo, que permite restaurá-lo. _(cap. 04)_
+- **Impessoalidade:** escrita na terceira pessoa, com foco no fato e não em quem o realizou. _(cap. 07)_
 - **Integridade:** garantia de que a informação não foi alterada indevidamente. _(cap. 05)_
 - **Internet:** rede mundial que conecta computadores e outras redes. _(cap. 03)_
 - **Jargão:** termo de grupo profissional ("picking", "cross-docking"). _(cap. 01)_
 - **LGPD:** Lei Geral de Proteção de Dados (Lei 13.709/2018). _(cap. 05)_
 - **Malware:** programa malicioso (vírus, ransomware, spyware). _(cap. 05)_
 - **Margem:** espaço entre o texto e a borda da folha. _(cap. 06)_
+- **Memorando:** comunicação escrita interna entre setores da mesma empresa. _(cap. 07)_
 - **Memória RAM:** memória rápida e volátil que guarda os dados em uso. _(cap. 02)_
 - **Modelo de documento:** arquivo-base padronizado para documentos que se repetem. _(cap. 06)_
 - **Navegador:** programa que acessa e exibe as páginas da web. _(cap. 03)_
 - **Netiqueta:** regras de boa educação na comunicação digital. _(cap. 04)_
+- **Norma técnica:** regra publicada por um órgão (ABNT, ISO, IEEE, ANSI) que padroniza produtos, processos ou documentos. _(cap. 07)_
 - **Nuvem:** arquivos em servidores na internet. _(cap. 04)_
+- **Ofício:** comunicação escrita formal enviada para fora da empresa. _(cap. 07)_
 - **Operador de busca:** símbolo ou palavra que refina a pesquisa no buscador. _(cap. 03)_
+- **Ordem de serviço (OS):** documento que autoriza e registra a execução de um trabalho técnico. _(cap. 07)_
 - **Periférico:** dispositivo de entrada/saída (leitor de código de barras, impressora de etiquetas). _(cap. 02)_
 - **Permissão:** nível de acesso a um arquivo ou pasta (leitor, comentador ou editor). _(cap. 04)_
 - **Phishing:** golpe que imita mensagem legítima. _(cap. 05)_
 - **Plágio:** apresentar como seu o trabalho de outra pessoa, sem dar crédito. _(cap. 03)_
 - **Política de Uso Aceitável (PUA):** regras da empresa para uso da internet e dos computadores. _(cap. 03)_
+- **POP:** procedimento operacional padrão, passo a passo de uma tarefa. _(cap. 07)_
 - **Processador (CPU):** componente que executa os cálculos e as instruções. _(cap. 02)_
 - **Quebra de seção:** divisão que permite formatação diferente em partes do mesmo documento. _(cap. 06)_
 - **Ransomware:** malware que bloqueia os arquivos e exige resgate. _(cap. 05)_
 - **Receptor:** quem recebe e interpreta a mensagem. _(cap. 01)_
 - **Recuo:** distância entre o parágrafo e a margem. _(cap. 06)_
+- **Relatório técnico:** documento que apresenta fatos, dados, análise e recomendações. _(cap. 07)_
+- **Resumo:** texto que condensa as ideias principais de um documento, sem opinião. _(cap. 07)_
 - **Ruído:** interferência que distorce a mensagem (barulho, termo ambíguo, e-mail sem assunto). _(cap. 01)_
 - **Sincronização:** atualização automática que mantém iguais as cópias da nuvem e do computador. _(cap. 04)_
 - **Sistema operacional:** software que gerencia o hardware e serve de base para os outros programas. _(cap. 02)_
@@ -785,6 +809,7 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Sumário automático:** índice gerado a partir dos estilos de título e atualizado com um clique. _(cap. 06)_
 - **Tabulação:** parada da tecla Tab que alinha textos em colunas. _(cap. 06)_
 - **Teste CRAAP:** critérios para avaliar fontes: atualidade, relevância, autoridade, precisão e propósito. _(cap. 03)_
+- **Texto técnico:** documento de trabalho que informa ou instrui sem ambiguidade. _(cap. 07)_
 - **World Wide Web (WWW):** serviço de páginas ligadas por links que funciona sobre a internet. _(cap. 03)_
 
 ---
@@ -1892,4 +1917,197 @@ O **zoom** muda só a visualização, não o tamanho real da fonte.
 - **Capacidade:** C1
 - **Contexto:** Será afixado no mural da doca um comunicado de segurança com foto de uma empilhadeira, texto em duas colunas e termos como "WMS" e "picking", que o corretor marca como erro.
 - **Comando:** Explique como organizar o comunicado em colunas, como inserir a foto com legenda numerada e como resolver as marcações do corretor ortográfico sem trocar os termos técnicos.
+- **Linhas:** 5
+
+---
+
+# Capítulo 07 — Textos Técnicos e Redação Empresarial
+
+- **Aula:** 07
+- **Carga horária:** 4 horas (1 aula)
+- **Capacidade:** C1, C3
+- **Fonte:** `APOSTILA/CONTEUDO/CAPITULO-07.md`
+
+## Teoria
+
+### Uma avaria, dois documentos
+
+Na descarga de terça-feira, a **Distribuidora Vale Norte** recebeu 4 caixas de um lote de 40
+amassadas e com produto vazando. O supervisor pediu duas coisas: um **relatório de avaria** para
+a transportadora e o fornecedor e uma **reunião** com a equipe do turno para decidir o que fazer —
+com **ata**. Se esses textos saírem confusos, a empresa pode perder o direito à indenização e a
+decisão da reunião pode ser contestada depois.
+
+> 🎯 **Objetivos do capítulo:** identificar e interpretar **textos técnicos**, aplicar **normas de
+> redação**, produzir **relatório, ata, memorando e resumo** com a estrutura correta e escolher o
+> **nível de linguagem** adequado.
+
+### O que é um texto técnico
+
+Texto técnico é o documento **utilitário** que transmite informações de trabalho **sem
+ambiguidade**: relatórios, atas, memorandos, ofícios, procedimentos (POP), ordens de serviço (OS),
+fichas técnicas e manuais. Ele é **registro e evidência**: vale como prova em auditorias,
+reclamações e processos.
+
+**Pilares da redação técnica:**
+
+- **Clareza** — uma só interpretação possível;
+- **Concisão** — sem palavras inúteis;
+- **Objetividade** — fatos e números, não impressões;
+- **Impessoalidade** — terceira pessoa e foco no fato, não em quem fez.
+
+| Pessoal e vago ❌ | Técnico e impessoal ✅ |
+|---|---|
+| "A gente achou que o motorista bateu o palete e fez um estrago horrível." | "Constatou-se avaria em 4 das 40 caixas do lote 3381, com vazamento de produto, às 9h15, durante a descarga na doca 2." |
+
+### Normas de redação
+
+Normas dão padrão e credibilidade aos documentos. **Ao citar uma norma, declare qual é:**
+
+| Organização | Exemplo de norma | Para quê |
+|---|---|---|
+| **ABNT** (Brasil) | **ABNT NBR 10719** — relatório técnico e/ou científico | Estrutura do relatório técnico (norma adotada neste capítulo) |
+| **ABNT** (Brasil) | ABNT NBR 6028 — resumo | Regras para escrever resumos |
+| **ISO** (internacional) | ISO 9001 — gestão da qualidade | Registros de não conformidade e rastreabilidade |
+| **IEEE** (internacional) | IEEE 802.3 — redes Ethernet | Normas de eletricidade, eletrônica e redes (ex.: rede do armazém) |
+| **ANSI** (EUA) | ANSI Z535 — sinalização de segurança | Alertas em manuais de equipamentos importados (ex.: empilhadeira) |
+
+### Identificação e interpretação de textos técnicos
+
+Para interpretar sem distorcer:
+
+1. **Identifique o tipo e a finalidade** (relatório, ata, memorando, POP, OS, ficha técnica).
+2. **Localize os dados essenciais:** o quê, quem, quando, onde, quanto, qual prazo.
+3. **Separe fato de recomendação:** o que aconteceu × o que deve ser feito.
+4. **Confira unidades, códigos e siglas:** kg × t, número do lote, código do produto.
+5. **Confirme o entendimento** antes de executar (feedback, capítulo 1).
+
+🔍 **Exemplo:** antes de armazenar um produto químico, leia a **ficha com dados de segurança**
+(FDS/FISPQ): ela diz como guardar, quais EPIs usar e o que fazer em caso de vazamento.
+
+### Relatório técnico (ABNT NBR 10719)
+
+- **Elementos pré-textuais:** capa ou identificação, sumário (em relatórios longos).
+- **Texto:** **introdução** (contexto e objetivo), **desenvolvimento** (fatos, dados, evidências,
+  análise) e **conclusão** (causa provável e recomendações).
+- **Pós-textuais:** anexos (fotos, notas fiscais, canhoto assinado).
+
+**Modelo comentado — relatório de avaria (resumido):**
+
+> **Relatório de Avaria nº 027/2026 — Recebimento — 14/10/2026**
+> **1. Introdução:** registro da avaria constatada na descarga da NF 4587 (Fornecedor Alfa;
+> Transportadora Sul; veículo placa ABC1D23).
+> **2. Fatos:** às 9h15, na doca 2, constatou-se que 4 das 40 caixas do lote 3381 estavam
+> amassadas, com vazamento de produto. As caixas foram separadas na área de quarentena. Fotos no
+> anexo A.
+> **3. Análise:** as avarias concentram-se nas caixas da base do palete; o filme stretch estava
+> rompido na lateral.
+> **4. Conclusão e recomendações:** avaria provavelmente ocorrida no transporte. Recomenda-se
+> registrar a ressalva no canhoto, solicitar reposição ao fornecedor e indenização à
+> transportadora.
+
+⚠️ **Erros comuns:** escrever opiniões ("o motorista é descuidado"), esquecer números (lote, NF,
+quantidade, horário), não anexar evidências e misturar fatos com recomendações.
+
+### Ata de reunião
+
+A **ata** é o registro formal do que foi discutido e decidido numa reunião. Regras:
+
+- **ordem:** cabeçalho (data, hora, local, participantes) → pauta → discussão e decisões
+  (responsável e prazo) → encerramento e assinaturas;
+- **verbos no passado** ("reuniram-se", "decidiu-se", "ficou definido");
+- **texto corrido** e números importantes **por extenso** (datas, valores), para evitar rasuras;
+- registra **decisões**, não conversas paralelas.
+
+**Modelo comentado — ata de reunião de turno (resumido):**
+
+> Aos quatorze dias do mês de outubro de dois mil e vinte e seis, às dez horas, na sala da
+> expedição da Vale Norte, reuniram-se Ana Souza (supervisora), Bruno Lima e Carla Reis
+> (conferentes) para tratar da avaria do lote 3381. Após a apresentação do relatório nº 027/2026,
+> decidiu-se: (1) devolver as quatro caixas avariadas ao fornecedor, responsável Bruno, até
+> 16/10; (2) conferir o filme stretch de todos os paletes na descarga, a partir de 15/10. Nada
+> mais havendo a tratar, encerrou-se a reunião, e eu, Carla Reis, lavrei a presente ata.
+
+⚠️ **Erros comuns:** ata em tópicos soltos com espaços em branco, decisões sem responsável e sem
+prazo, verbos no presente ou no futuro e falta de assinaturas.
+
+### Memorando e ofício
+
+- **Memorando:** comunicação **interna**, rápida, entre setores da mesma empresa.
+  Estrutura: `Mem. nº 12/2026 – Expedição` · Para (setor/cargo) · Assunto · texto com a
+  solicitação, a justificativa e o prazo · "Atenciosamente" e assinatura.
+- **Ofício:** comunicação **externa** e formal (outras empresas, órgãos públicos).
+  Observação: na administração pública federal, o memorando foi incorporado ao ofício; nas
+  empresas, o memorando interno continua comum.
+
+### Resumo
+
+O **resumo** condensa as ideias principais sem opinião (ABNT NBR 6028): o **indicativo** só aponta
+os tópicos; o **informativo** traz objetivo, método, resultados e conclusão, e permite decidir se
+vale ler o documento inteiro.
+
+### Comunicação e níveis de fala
+
+- **Linguagem culta** em relatórios, atas, ofícios e e-mails a clientes.
+- **Linguagem técnica** entre profissionais (romaneio, lote, avaria, cross-docking), sempre com
+  precisão.
+- **Jargão** ("deu ruim na doca", "faz o picking aí") só na conversa informal da equipe — nunca
+  em documento.
+
+| Jargão ❌ | Redação empresarial ✅ |
+|---|---|
+| "Deu ruim na doca 2, a carga chegou toda zoada." | "Na doca 2, constatou-se avaria em parte da carga recebida (4 de 40 caixas)." |
+
+## Vídeos
+
+- [Como redigir uma ata de reunião](https://www.youtube.com/watch?v=Zwmh0o5Aym4) — 08:03 — Edutin_br
+- [Saiba como elaborar um relatório técnico](https://www.youtube.com/watch?v=0Yb4n-Pt3ZE) — 06:32 — SPDA e Aterramento - Eng. Pablo Guimarães
+- [Relatório, como escrever?](https://www.youtube.com/watch?v=sjflNG4gS_8) — 08:05 — Professor Noslen
+- [Memorando — Redação oficial](https://www.youtube.com/watch?v=-chOfg3xI4E) — 07:22 — Brasil Escola Oficial
+
+## Resumo
+
+- **Texto técnico** transmite informação de trabalho sem ambiguidade e vale como registro: clareza, concisão, objetividade e impessoalidade.
+- Normas dão padrão: **ABNT NBR 10719** (relatório), ABNT NBR 6028 (resumo), ISO, IEEE e ANSI — sempre declarando a norma usada.
+- Interpretar = identificar tipo e finalidade, localizar dados, separar fato de recomendação e conferir unidades.
+- **Relatório:** introdução, desenvolvimento e conclusão, com números e evidências; **ata:** registro formal das decisões, no passado, com responsáveis e prazos.
+- **Memorando** é interno; **ofício** é externo; **resumo** condensa sem opinião.
+- Linguagem **culta** nos documentos, **técnica** com precisão e **jargão** só na conversa informal.
+
+## Exercícios
+
+### ITEM 1
+- **Capacidade:** C1, C3
+- **Contexto:** Na descarga da NF 7710, a conferente encontrou 6 de 60 fardos rasgados, com produto espalhado no baú do caminhão. Ela tirou fotos e separou os fardos.
+- **Comando:** Redija um relatório de avaria curto com introdução, fatos (com números), análise e conclusão com recomendações, seguindo a estrutura da ABNT NBR 10719 e a linguagem impessoal.
+- **Linhas:** 10
+
+### ITEM 2
+- **Capacidade:** C1
+- **Contexto:** A equipe do turno se reuniu para decidir o que fazer com os fardos rasgados e definiu responsáveis e prazos para a devolução e para uma nova conferência na descarga.
+- **Comando:** Escreva a ata dessa reunião (cabeçalho, pauta, decisões com responsável e prazo, encerramento), usando verbos no passado e texto corrido.
+- **Linhas:** 8
+
+### ITEM 3
+- **Capacidade:** C1
+- **Contexto:** A expedição precisa pedir ao setor de compras mais filme stretch e cantoneiras, porque o estoque desses materiais acaba em 5 dias.
+- **Comando:** Redija um memorando interno completo (número, destinatário, assunto, solicitação, justificativa, prazo e fecho).
+- **Linhas:** 7
+
+### ITEM 4
+- **Capacidade:** C3
+- **Contexto:** Trecho de instrução de armazenagem: "Manter o produto em local ventilado, entre 15 °C e 25 °C, afastado de fontes de calor. Empilhamento máximo: 4 caixas. Em caso de vazamento, isolar a área e usar luvas nitrílicas."
+- **Comando:** Interprete o texto: liste o que deve ser feito no armazenamento, os limites numéricos (com unidades) e a conduta em emergência, separando instrução de recomendação.
+- **Linhas:** 5
+
+### ITEM 5
+- **Capacidade:** C1
+- **Contexto:** Mensagem escrita por um colega para entrar no relatório: "A gente acha que o pessoal da transportadora largou as caixas de qualquer jeito, foi um estrago horrível, deu ruim geral."
+- **Comando:** Identifique os problemas de linguagem (pessoalidade, opinião, jargão) e reescreva o trecho em linguagem técnica, impessoal e objetiva.
+- **Linhas:** 4
+
+### ITEM 6
+- **Capacidade:** C3
+- **Contexto:** Na pasta do setor estão: um registro do que foi decidido na reunião de segunda, um aviso interno do almoxarifado para a expedição, um texto que condensa o relatório mensal em 10 linhas, um passo a passo de recebimento e uma mensagem pessoal de aniversário.
+- **Comando:** Identifique o tipo de cada texto (ata, memorando, resumo, POP ou texto não técnico) e diga qual norma ABNT se aplica ao relatório e ao resumo.
 - **Linhas:** 5
