@@ -18,7 +18,7 @@
 |---|---|---|---|---|---|---|---|---|
 | 01 | Fundamentos de Testes de Software | ✅ | ✅ 3 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 02 | Planejamento, Verificação, Validação e Casos de Teste | ✅ | ✅ 4 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
-| 03 | Testes Unitários no Front-End com Vitest | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 03 | Testes Unitários no Front-End com Vitest | ✅ | ✅ 3 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 04 | Testes de Integração com DOM (Testing Library) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 05 | Integração Avançada e Mock de APIs | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 06 | Testes End-to-End com Cypress e Playwright | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
