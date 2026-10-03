@@ -63,6 +63,22 @@ function calcularResumoLista(produtos, config) {
 }
 
 /**
+ * Simula a e-DBV: imposto declarando e custo se não declarar e for fiscalizado.
+ * @param {object} resumo - Resultado de calcularResumoLista.
+ * @param {object} config - Configuração do usuário.
+ * @returns {{excedenteReal: number, impostoDeclarado: number, custoSemDeclarar: number}} Simulação.
+ */
+function simularEdbv(resumo, config) {
+  const excedenteReal = converterDolarParaReal(resumo.excedenteDolar, config);
+  const multa = excedenteReal * ALIQUOTA_MULTA_SEM_DECLARAR;
+  return {
+    excedenteReal,
+    impostoDeclarado: resumo.imposto,
+    custoSemDeclarar: resumo.imposto + multa,
+  };
+}
+
+/**
  * Indica se o produto ainda cabe no orçamento e na cota de isenção.
  * @param {object} produto - Produto avaliado.
  * @param {{gastoReal: number, gastoDolar: number}} acumulado - Já reservado.

@@ -100,6 +100,7 @@ function desenharIndicadores(resumo) {
   desenharBarra('barra-orcamento', usoOrcamento);
   desenharBarra('barra-cota', usoCota);
   desenharAlertas(resumo);
+  desenharSimuladorEdbv(resumo);
 }
 
 /**
@@ -281,4 +282,42 @@ function desenharFaixas() {
   const area = elemento('faixas');
   if (!area) return;
   area.replaceChildren(...FAIXAS_GASTO.map(criarCardFaixa));
+}
+
+/**
+ * Escreve o veredito da e-DBV conforme o excedente da lista.
+ * @param {object} resumo - Resumo calculado da lista.
+ * @returns {void}
+ */
+function escreverVereditoEdbv(resumo) {
+  if (resumo.quantidade === 0) {
+    escreverTexto('edbv-veredito', 'Monte sua lista no catálogo para simular a declaração.');
+    return;
+  }
+  if (resumo.excedenteDolar <= 0) {
+    escreverTexto('edbv-veredito',
+      '✅ Dentro da cota: não precisa de e-DBV (confira os limites de quantidade).');
+    return;
+  }
+  escreverTexto('edbv-veredito',
+    '📝 Passou da cota: preencha a e-DBV e pague o DARF antes de cruzar a ponte.');
+}
+
+/**
+ * Preenche os cartões de simulação da e-DBV com os números da lista.
+ * @param {object} resumo - Resumo calculado da lista.
+ * @returns {void}
+ */
+function desenharSimuladorEdbv(resumo) {
+  const simulacao = simularEdbv(resumo, estado.config);
+  const viajantes = Math.max(estado.config.quantidadeViajantes, 1);
+  const cotaPessoa = formatoDolar.format(COTA_ISENCAO_DOLAR_POR_PESSOA);
+  escreverTexto('edbv-total', formatoDolar.format(resumo.totalDolar));
+  escreverTexto('edbv-cota', formatoDolar.format(resumo.orcamento.cotaDolar));
+  escreverTexto('edbv-cota-detalhe', `${viajantes} viajante(s) × ${cotaPessoa}`);
+  escreverTexto('edbv-excedente', formatoDolar.format(resumo.excedenteDolar));
+  escreverTexto('edbv-excedente-real', `≈ ${formatoReal.format(simulacao.excedenteReal)}`);
+  escreverTexto('edbv-imposto', formatoReal.format(simulacao.impostoDeclarado));
+  escreverTexto('edbv-sem-declarar', formatoReal.format(simulacao.custoSemDeclarar));
+  escreverVereditoEdbv(resumo);
 }

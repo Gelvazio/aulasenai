@@ -117,8 +117,122 @@
         <li>🧾 Peça <strong>nota fiscal</strong> (factura) e guarde para a Receita e para a garantia.</li>
         <li>🌎 Celular: confira se é versão <strong>global</strong>, com as bandas 4G/5G do Brasil e garantia internacional.</li>
         <li>🔌 Notebook e console: verifique tomada/voltagem e teclado ABNT2 se fizer diferença.</li>
-        <li>🛃 Passou da cota de US$ 500? Declare na e-DBV e pague 50% do excedente — sem declarar há multa.</li>
+        <li>🛃 Passou da cota de US$ 500? Declare na e-DBV e pague 50% do excedente — veja tudo na seção 7.</li>
       </ul>
+    </section>
+    <section class="cartao edbv" aria-labelledby="titulo-edbv">
+      <h2 id="titulo-edbv" class="secao__titulo"><span class="numero-secao">7</span>
+        🛃 e-DBV — Declaração Eletrônica de Bens do Viajante</h2>
+      <p class="edbv__intro">A <strong>e-DBV</strong> é o formulário on-line da Receita Federal em que
+        você informa os bens comprados no exterior. Ela é obrigatória sempre que as compras de uma
+        pessoa passam da cota de isenção (ou dos limites de quantidade). O sistema calcula o imposto e
+        gera o <strong>DARF</strong>; com ele pago, você passa pela aduana com tudo em ordem.</p>
+      <a class="botao botao--principal edbv__link" href="https://www.edbv.receita.fazenda.gov.br/"
+        target="_blank" rel="noopener">🔗 Abrir a e-DBV no site da Receita</a>
+
+      <h3 class="edbv__subtitulo">🧮 Simulação com a sua lista</h3>
+      <div class="edbv__simulador">
+        <article class="kpi kpi--azul"><span class="kpi__rotulo">Total da lista</span>
+          <strong id="edbv-total" class="kpi__valor">—</strong>
+          <span class="kpi__detalhe">em dólar, valor das notas</span></article>
+        <article class="kpi kpi--verde"><span class="kpi__rotulo">Cota de isenção</span>
+          <strong id="edbv-cota" class="kpi__valor">—</strong>
+          <span id="edbv-cota-detalhe" class="kpi__detalhe">—</span></article>
+        <article class="kpi kpi--laranja"><span class="kpi__rotulo">Excedente a declarar</span>
+          <strong id="edbv-excedente" class="kpi__valor">—</strong>
+          <span id="edbv-excedente-real" class="kpi__detalhe">—</span></article>
+        <article class="kpi kpi--roxo"><span class="kpi__rotulo">Declarando (DARF 50%)</span>
+          <strong id="edbv-imposto" class="kpi__valor">—</strong>
+          <span class="kpi__detalhe">imposto sobre o excedente</span></article>
+        <article class="kpi kpi--rosa"><span class="kpi__rotulo">Sem declarar e pego</span>
+          <strong id="edbv-sem-declarar" class="kpi__valor">—</strong>
+          <span class="kpi__detalhe">imposto 50% + multa 50%</span></article>
+      </div>
+      <p id="edbv-veredito" class="alertas" role="status"></p>
+
+      <div class="edbv__grade">
+        <article class="edbv__bloco categoria--azul">
+          <h3>① Quem precisa declarar</h3>
+          <ul>
+            <li>Quem trouxer bens que, <strong>somados por pessoa</strong>, passem de
+              <strong>US$ 500</strong> (via terrestre, fluvial ou lacustre — caso de Foz/Ciudad del Este).</li>
+            <li>Quem passar dos <strong>limites de quantidade</strong>, mesmo dentro dos US$ 500.</li>
+            <li>Quem traz bens que não são de uso pessoal ou que têm cara de revenda.</li>
+            <li>Se tudo cabe na cota e nos limites: <strong>não precisa</strong> de e-DBV; passe pelo
+              canal “Nada a declarar”, com as notas à mão.</li>
+          </ul>
+        </article>
+
+        <article class="edbv__bloco categoria--verde">
+          <h3>② A cota de isenção</h3>
+          <ul>
+            <li><strong>US$ 500 por pessoa</strong> por via terrestre (US$ 1.000 por via aérea ou marítima).</li>
+            <li>Vale <strong>uma vez a cada 30 dias</strong>.</li>
+            <li>É <strong>individual e intransferível</strong>: não dá para “juntar” cotas num item só.
+              Um celular de US$ 760 estoura a cota de quem o traz, mesmo viajando em dois.</li>
+            <li>Criança também tem cota, mas não pode trazer bebida alcoólica nem cigarro.</li>
+            <li>O valor considerado é o da <strong>nota fiscal</strong> (factura), em dólar.</li>
+          </ul>
+        </article>
+
+        <article class="edbv__bloco categoria--laranja">
+          <h3>③ Limites de quantidade (terrestre)</h3>
+          <table class="tabela tabela--compacta">
+            <tbody>
+              <tr><td>🍷 Bebidas alcoólicas</td><td class="numero">12 litros</td></tr>
+              <tr><td>🚬 Cigarros</td><td class="numero">10 maços (200 un.)</td></tr>
+              <tr><td>🚬 Charutos ou cigarrilhas</td><td class="numero">25 unidades</td></tr>
+              <tr><td>🎁 Itens de até US$ 5</td><td class="numero">20 un. (máx. 10 iguais)</td></tr>
+              <tr><td>📦 Itens acima de US$ 5</td><td class="numero">10 un. (máx. 3 iguais)</td></tr>
+            </tbody>
+          </table>
+          <p class="dica">Eletrônicos: na prática, <strong>um de cada tipo por pessoa</strong> para não
+            parecer revenda.</p>
+        </article>
+
+        <article class="edbv__bloco categoria--roxo">
+          <h3>④ O que não entra na cota</h3>
+          <ul>
+            <li>Roupas e objetos de higiene <strong>de uso pessoal</strong>, compatíveis com a viagem.</li>
+            <li><strong>Um celular, um relógio e uma câmera já usados</strong>, que você levou ou usa.</li>
+            <li>Livros, revistas e jornais.</li>
+            <li>⚠️ Celular <strong>novo, na caixa</strong>, é compra: entra na cota.</li>
+          </ul>
+        </article>
+
+        <article class="edbv__bloco categoria--amarelo">
+          <h3>⑤ Passo a passo na e-DBV</h3>
+          <ol>
+            <li>Junte as <strong>notas fiscais</strong> de todas as lojas (valor em dólar ou guarani).</li>
+            <li>Acesse o site da e-DBV ou o app <strong>Viajantes</strong> da Receita (login gov.br).</li>
+            <li>Escolha “Nova declaração”, informe seus dados, a <strong>via terrestre</strong>, o
+              ponto de entrada (ex.: Ponte da Amizade — Foz do Iguaçu) e a data de chegada.</li>
+            <li>Cadastre <strong>cada bem</strong>: descrição, quantidade e valor da nota, na moeda da
+              compra.</li>
+            <li>Confira o resumo: o sistema converte para dólar, desconta os US$ 500 e calcula
+              <strong>50% do excedente</strong>.</li>
+            <li>Envie e <strong>gere o DARF</strong>; pague no app ou internet banking.</li>
+            <li>Guarde o <strong>comprovante</strong> da e-DBV e do pagamento (impresso ou no celular).</li>
+          </ol>
+        </article>
+
+        <article class="edbv__bloco categoria--rosa">
+          <h3>⑥ Na aduana e multas</h3>
+          <ul>
+            <li>Declarou e pagou: canal <strong>“Bens a declarar”</strong>, mostre comprovantes e notas.</li>
+            <li>Tudo dentro da cota: canal <strong>“Nada a declarar”</strong> (pode haver vistoria).</li>
+            <li>Passou da cota sem declarar e foi fiscalizado: <strong>imposto de 50% + multa de
+              50%</strong> = paga 100% do excedente.</li>
+            <li>Quantidade de revenda ou bem proibido: os bens podem ser <strong>retidos ou
+              apreendidos</strong>.</li>
+            <li>A Receita cruza a e-DBV com pagamentos e frequência de viagens: declare certo.</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="dica">ℹ️ Regras resumidas de guias públicos em out/2026; o site da e-DBV não pôde ser
+        lido automaticamente. Antes de viajar, <strong>confirme valores e limites</strong> no site da
+        Receita Federal.</p>
     </section>
   </main>
 
