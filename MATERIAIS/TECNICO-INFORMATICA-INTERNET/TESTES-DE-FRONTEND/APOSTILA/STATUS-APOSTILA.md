@@ -21,7 +21,7 @@
 | 03 | Testes Unitários no Front-End com Vitest | ✅ | ✅ 3 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 04 | Testes de Integração com DOM (Testing Library) | ✅ | ✅ 3 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 05 | Integração Avançada e Mock de APIs | ✅ | ✅ 4 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
-| 06 | Testes End-to-End com Cypress e Playwright | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 06 | Testes End-to-End com Cypress e Playwright | ✅ | ✅ 3 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 07 | Métricas e Cobertura de Testes | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 08 | TDD e Debugging Moderno no Front-End | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 09 | Qualidade, Performance, Acessibilidade e CI/CD | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
