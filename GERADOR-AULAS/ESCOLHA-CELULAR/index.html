@@ -3,120 +3,170 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Compras no Paraguai</title>
-  <link rel="stylesheet" href="css/dashboard.css">
-  <script src="js/constantes.js" defer></script>
-  <script src="js/calculo.js" defer></script>
-  <script src="js/armazenamento.js" defer></script>
-  <script src="js/tela.js" defer></script>
-  <script src="js/eventos.js" defer></script>
+  <title>Escolha de Celular</title>
+  <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-  <header class="cabecalho">
-    <div>
-      <h1 class="cabecalho__titulo">🛍️ O que comprar no Paraguai</h1>
-      <p class="cabecalho__subtitulo">Seu dinheiro guardado • Cota de US$ 500 • Economia real</p>
-    </div>
-    <span class="cabecalho__estrela" aria-hidden="true">⭐</span>
-  </header>
+  <main class="pagina">
+    <header class="cabecalho">
+      <h1>📱 Escolha do novo celular</h1>
+      <p class="cabecalho__subtitulo">Android • R$ 1.500 a R$ 3.000 • outubro de 2026</p>
+      <p class="cabecalho__criterios">
+        Prioridades: <strong>bateria longa</strong>, <strong>desempenho</strong> e
+        <strong>atualizações por muitos anos</strong>.
+      </p>
+    </header>
 
-  <main class="conteudo">
-    <section class="faixas-bloco" aria-labelledby="titulo-faixas">
-      <h2 id="titulo-faixas" class="secao__titulo">💸 Quanto você quer gastar?</h2>
-      <div id="faixas" class="faixas"></div>
-      <p class="dica">Clique num card para montar a lista daquela faixa. O kit já soma o imposto de
-        50% sobre o que passar da cota de isenção.</p>
-    </section>
-
-    <section class="cartao configuracao" aria-labelledby="titulo-config">
-      <h2 id="titulo-config" class="secao__titulo"><span class="numero-secao">1</span> 💰 Seu dinheiro</h2>
-      <div class="configuracao__campos">
-        <label>Dinheiro guardado (R$)
-          <input type="number" min="0" step="100" data-campo="dinheiroGuardado"></label>
-        <label>Cotação do dólar (R$)
-          <input type="number" min="0" step="0.01" data-campo="cotacaoDolar"></label>
-        <label>Taxa câmbio/cartão (%)
-          <input type="number" min="0" step="0.5" data-campo="taxaCambioPercentual"></label>
-        <label>Reserva da viagem (R$)
-          <input type="number" min="0" step="50" data-campo="reservaViagem"></label>
-        <label>Margem de segurança (%)
-          <input type="number" min="0" max="100" step="1" data-campo="margemSegurancaPercentual"></label>
-        <label>Viajantes (cota por pessoa)
-          <input type="number" min="1" step="1" data-campo="quantidadeViajantes"></label>
+    <section class="secao">
+      <h2>⭐ Recomendação</h2>
+      <div class="grade-destaques">
+        <article class="destaque">
+          <h3>Xiaomi POCO X8 Pro</h3>
+          <p class="preco">≈ R$ 2.350 a R$ 2.600 (12 GB / 512 GB)</p>
+          <p>
+            O mais equilibrado para as três prioridades: o processador mais rápido da faixa
+            (Dimensity 8500-Ultra, mais que o dobro do Galaxy A57 no AnTuTu), bateria de
+            6.500 mAh com carga de 100 W e 4 anos de Android + 6 anos de segurança.
+          </p>
+        </article>
+        <article class="destaque destaque--alternativa">
+          <h3>Alternativa: Samsung Galaxy A57</h3>
+          <p class="preco">≈ R$ 1.600 a R$ 1.800</p>
+          <p>
+            Escolha se atualizações e economia pesarem mais que desempenho: 6 anos de
+            atualizações de sistema, corpo premium e câmera com estabilização óptica.
+            Perde em velocidade e na bateria (5.000 mAh).
+          </p>
+        </article>
       </div>
     </section>
 
-    <section class="indicadores" aria-label="Indicadores">
-      <article class="kpi kpi--azul"><span class="kpi__rotulo">Guardado</span>
-        <strong id="kpi-guardado" class="kpi__valor">—</strong>
-        <span class="kpi__detalhe">antes da viagem</span></article>
-      <article class="kpi kpi--verde"><span class="kpi__rotulo">Disponível p/ compras</span>
-        <strong id="kpi-disponivel" class="kpi__valor">—</strong>
-        <span id="kpi-margem" class="kpi__detalhe">—</span></article>
-      <article class="kpi kpi--laranja"><span class="kpi__rotulo">Total da lista</span>
-        <strong id="kpi-total" class="kpi__valor">—</strong>
-        <span id="kpi-total-dolar" class="kpi__detalhe">—</span></article>
-      <article id="kpi-saldo-cartao" class="kpi kpi--roxo"><span class="kpi__rotulo">Sobra</span>
-        <strong id="kpi-saldo" class="kpi__valor">—</strong>
-        <span class="kpi__detalhe">depois das compras</span></article>
-      <article class="kpi kpi--rosa"><span class="kpi__rotulo">Economia x Brasil</span>
-        <strong id="kpi-economia" class="kpi__valor">—</strong>
-        <span class="kpi__detalhe">estimada</span></article>
-    </section>
-
-    <section class="cartao" aria-labelledby="titulo-limites">
-      <h2 id="titulo-limites" class="secao__titulo"><span class="numero-secao">2</span> 📊 Limites</h2>
-      <p class="barra__rotulo">Dinheiro usado — <span id="texto-orcamento">—</span></p>
-      <div class="barra"><span id="barra-orcamento" class="barra__preenchimento"></span></div>
-      <p class="barra__rotulo">Cota de isenção da Receita — <span id="texto-cota">—</span></p>
-      <div class="barra"><span id="barra-cota" class="barra__preenchimento barra__preenchimento--cota"></span></div>
-      <p id="alertas" class="alertas" role="status"></p>
-    </section>
-
-    <section class="cartao" aria-labelledby="titulo-interesse">
-      <h2 id="titulo-interesse" class="secao__titulo"><span class="numero-secao">3</span> 🎯 O que te interessa</h2>
-      <div id="filtros-categoria" class="filtros"></div>
-      <div class="acoes">
-        <button id="botao-sugerir" type="button" class="botao botao--principal">✨ Sugerir compras</button>
-        <button id="botao-limpar" type="button" class="botao">🧹 Limpar lista</button>
+    <section class="secao">
+      <h2>📊 Comparativo</h2>
+      <div class="tabela-rolagem">
+        <table class="tabela">
+          <thead>
+            <tr>
+              <th>Modelo</th>
+              <th>Preço aprox.</th>
+              <th>Processador</th>
+              <th>Bateria</th>
+              <th>Atualizações</th>
+              <th>Bateria</th>
+              <th>Desempenho</th>
+              <th>Atualiz.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="tabela__linha-escolhida">
+              <td><strong>POCO X8 Pro</strong><br>12 GB / 512 GB</td>
+              <td>R$ 2.350–2.600</td>
+              <td>Dimensity 8500-Ultra</td>
+              <td>6.500 mAh · 100 W</td>
+              <td>4 anos Android + 6 segurança</td>
+              <td><span class="nota nota--alta">5</span></td>
+              <td><span class="nota nota--alta">5</span></td>
+              <td><span class="nota nota--media">4</span></td>
+            </tr>
+            <tr>
+              <td><strong>Redmi Note 15 Pro</strong><br>8 GB / 512 GB</td>
+              <td>≈ R$ 2.580</td>
+              <td>Dimensity 7400-Ultra</td>
+              <td>6.580 mAh · 45 W</td>
+              <td>Política Xiaomi (confirmar)</td>
+              <td><span class="nota nota--alta">5</span></td>
+              <td><span class="nota nota--media">3</span></td>
+              <td><span class="nota nota--media">3</span></td>
+            </tr>
+            <tr>
+              <td><strong>Motorola Edge 60 Pro</strong><br>12 GB / 256 GB</td>
+              <td>≈ R$ 2.430</td>
+              <td>Dimensity 8350</td>
+              <td>6.000 mAh · 90 W</td>
+              <td>Política Motorola (confirmar)</td>
+              <td><span class="nota nota--alta">5</span></td>
+              <td><span class="nota nota--alta">4</span></td>
+              <td><span class="nota nota--baixa">2</span></td>
+            </tr>
+            <tr>
+              <td><strong>Galaxy A57</strong><br>8 GB / 128 GB</td>
+              <td>R$ 1.600–1.800</td>
+              <td>Exynos 1680</td>
+              <td>5.000 mAh · 45 W</td>
+              <td>6 anos de sistema</td>
+              <td><span class="nota nota--media">3</span></td>
+              <td><span class="nota nota--media">3</span></td>
+              <td><span class="nota nota--alta">5</span></td>
+            </tr>
+            <tr>
+              <td><strong>Galaxy A37</strong><br>8 GB / 128 GB</td>
+              <td>≈ R$ 1.480</td>
+              <td>Exynos 1480</td>
+              <td>5.000 mAh · 15 W*</td>
+              <td>6 anos</td>
+              <td><span class="nota nota--media">3</span></td>
+              <td><span class="nota nota--baixa">2</span></td>
+              <td><span class="nota nota--alta">5</span></td>
+            </tr>
+            <tr>
+              <td><strong>Moto G86</strong><br>8 GB / 256 GB</td>
+              <td>≈ R$ 1.560</td>
+              <td>Dimensity 7300</td>
+              <td>5.200 mAh · 30 W</td>
+              <td>Política Motorola (confirmar)</td>
+              <td><span class="nota nota--media">4</span></td>
+              <td><span class="nota nota--baixa">2</span></td>
+              <td><span class="nota nota--baixa">2</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <p class="dica">A sugestão prioriza a maior economia em %, um item de cada, sem passar do
-        dinheiro disponível nem da cota.</p>
+      <p class="aviso">
+        Notas de 1 a 5 só para as três prioridades. * Carga informada pela fonte; confirmar
+        na loja. Modelos com "confirmar" não tiveram o prazo de atualização divulgado nas
+        fontes consultadas.
+      </p>
     </section>
 
-    <div class="grade">
-      <section class="cartao" aria-labelledby="titulo-catalogo">
-        <h2 id="titulo-catalogo" class="secao__titulo"><span class="numero-secao">4</span> 📱 Catálogo</h2>
-        <div class="tabela-rolagem">
-          <table class="tabela">
-            <thead><tr><th></th><th>Produto</th><th>US$</th><th>R$ no PY</th>
-              <th>R$ no Brasil</th><th>Economia</th></tr></thead>
-            <tbody id="corpo-catalogo"></tbody>
-          </table>
-        </div>
-      </section>
+    <section class="secao">
+      <h2>🧭 Como decidir</h2>
+      <div class="grade-cartoes">
+        <article class="cartao">
+          <h3>🔋 Bateria acima de tudo</h3>
+          <p>POCO X8 Pro ou Redmi Note 15 Pro (6.500 mAh ou mais; até 2 dias de uso leve).</p>
+        </article>
+        <article class="cartao">
+          <h3>⚡ Desempenho</h3>
+          <p>POCO X8 Pro é o mais rápido da faixa; Edge 60 Pro vem logo atrás.</p>
+        </article>
+        <article class="cartao">
+          <h3>🔄 Usar por 5–6 anos</h3>
+          <p>Galaxy A57 ou A37: 6 anos de atualizações garantidos pela Samsung.</p>
+        </article>
+        <article class="cartao">
+          <h3>💰 Gastar menos</h3>
+          <p>Galaxy A57 em promoção (perto de R$ 1.600) é o melhor equilíbrio barato.</p>
+        </article>
+      </div>
+    </section>
 
-      <section class="cartao" aria-labelledby="titulo-distribuicao">
-        <h2 id="titulo-distribuicao" class="secao__titulo"><span class="numero-secao">5</span> 🧾 Para onde vai o dinheiro</h2>
-        <ul id="distribuicao" class="distribuicao"></ul>
-      </section>
-    </div>
-
-    <section class="cartao" aria-labelledby="titulo-dicas">
-      <h2 id="titulo-dicas" class="secao__titulo"><span class="numero-secao">6</span> 🧭 Antes de ir</h2>
-      <ul class="dicas">
-        <li>📋 Preços são <strong>estimativas</strong>: confira no site da loja (Cellshop, Nissei, Shopping China) antes.</li>
-        <li>🧾 Peça <strong>nota fiscal</strong> (factura) e guarde para a Receita e para a garantia.</li>
-        <li>🌎 Celular: confira se é versão <strong>global</strong>, com as bandas 4G/5G do Brasil e garantia internacional.</li>
-        <li>🔌 Notebook e console: verifique tomada/voltagem e teclado ABNT2 se fizer diferença.</li>
-        <li>🛃 Passou da cota de US$ 500? Declare na e-DBV e pague 50% do excedente — sem declarar há multa.</li>
+    <section class="secao">
+      <h2>✅ Antes de comprar</h2>
+      <ul class="lista-verificar">
+        <li>Comprar em loja oficial ou parceira com nota fiscal e garantia no Brasil.</li>
+        <li>Conferir a versão (RAM / armazenamento) — o preço muda bastante entre elas.</li>
+        <li>Verificar se o carregador vem na caixa (muitos não trazem).</li>
+        <li>Comparar o preço em 2 ou 3 lojas; promoções mudam toda semana.</li>
       </ul>
     </section>
-  </main>
 
-  <footer class="regra-ouro">
-    <strong>⭐ Regra de ouro:</strong> só compre o que já planejou, nunca use a reserva da viagem
-    e deixe sobrar a margem de segurança — economia boa é a que não vira dívida.
-  </footer>
+    <footer class="secao aviso">
+      Preços e dados de outubro de 2026, sujeitos a variação. Fontes:
+      <a href="https://www.techtudo.com.br/listas/2026/10/celular-custo-beneficio-2026-os-melhores-para-comprar-em-outubro-edqualcomprarmb.ghtml">TechTudo</a>,
+      <a href="https://www.oficinadanet.com.br/smartphones/comparacao-samsung-galaxy-a57,xiaomi-poco-x8-pro">Oficina da Net</a>,
+      <a href="https://canaltech.com.br/smartphone/qual-e-o-melhor-celular-de-ate-r-3000-para-comprar-em-2026/">Canaltech</a>,
+      <a href="https://www.mundoconectado.com.br/smartphones/poco-x8-pro-brasil-preco-especificacoes-onde-comprar/">Mundo Conectado</a>.
+    </footer>
+  </main>
 </body>
 </html>
