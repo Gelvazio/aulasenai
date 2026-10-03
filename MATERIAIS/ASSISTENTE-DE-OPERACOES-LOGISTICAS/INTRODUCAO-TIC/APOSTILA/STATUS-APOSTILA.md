@@ -16,7 +16,7 @@
 | Cap. | Tema | Teoria | Vídeos (≤ 15 min) | Resumo | Exercícios ITEM | Glossário | Vídeos conferidos pelo professor | Status |
 |---|---|---|---|---|---|---|---|---|
 | 01 | Comunicação Profissional e Seus Fundamentos | ✅ | ✅ 3 | ✅ | ✅ 6 | ✅ 9 | ⬜ | 👀 Aguardando validação |
-| 02 | Hardware, Periféricos e Sistemas Operacionais | rascunho | rascunho | rascunho | rascunho | rascunho | ⬜ | ⬜ (rascunho em `RASCUNHOS/`) |
+| 02 | Hardware, Periféricos e Sistemas Operacionais | ✅ | ✅ 3 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 03 | Navegação na Web e Pesquisa Acadêmica | rascunho | rascunho | rascunho | rascunho | rascunho | ⬜ | ⬜ (rascunho em `RASCUNHOS/`) |
 | 04 | Comunicação Digital e Colaboração em Nuvem | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 05 | Segurança da Informação e Proteção de Dados | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |

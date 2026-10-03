@@ -20,7 +20,7 @@ etiquetas, inventário e e-mails para transportadoras. Se o equipamento falha, s
 | | Hardware (o corpo) | Software (a mente) |
 |---|---|---|
 | O que é | Partes físicas: peças, cabos, circuitos | Programas e instruções |
-| Exemplos | Processador, memória, disco, monitor | Windows, navegador, planilha, sistema de estoque |
+| Exemplos | Processador, memória, disco, monitor | Sistema operacional, navegador, planilha, sistema de estoque |
 | Sem o outro | Fica parado, sem utilidade | Não tem onde ser executado |
 
 Desde 1945, os computadores seguem a ideia de **John von Neumann**: os programas e os dados ficam
@@ -92,7 +92,7 @@ usuário, os programas e o hardware:
 A **interface gráfica** (janelas, ícones, menus) facilita o uso: área de trabalho, barra de tarefas
 e menu Iniciar.
 
-| Atalho (Windows) | Função |
+| Atalho (exemplo no Windows) | Função |
 |---|---|
 | Ctrl + C / Ctrl + X / Ctrl + V | Copiar / Recortar / Colar |
 | Ctrl + Z | Desfazer |
@@ -100,6 +100,9 @@ e menu Iniciar.
 | Windows + E | Abrir o Explorador de Arquivos |
 | Alt + Tab | Alternar entre janelas |
 | Windows + L | Bloquear a tela (ao sair da mesa) |
+
+No Linux, no macOS e no ChromeOS existem atalhos equivalentes: confira na ajuda do sistema
+que a empresa usa. O importante é o hábito (copiar, desfazer, renomear e bloquear a tela).
 
 ### Pastas, arquivos e boas práticas
 
@@ -147,7 +150,7 @@ e por tamanho.
 
 ### ITEM 1
 - **Capacidade:** C4
-- **Contexto:** No setor de expedição da Vale Norte há: computador, sistema de estoque, leitor de código de barras, impressora de etiquetas, Windows, planilha de controle e pen drive.
+- **Contexto:** No almoxarifado e na expedição da Vale Norte há: computador, sistema de estoque, leitor de código de barras, impressora de etiquetas, sistema operacional, planilha de controle e pen drive.
 - **Comando:** Separe os itens em hardware e software e, entre os hardwares, classifique os periféricos como entrada, saída ou entrada e saída.
 - **Linhas:** 5
 
@@ -175,6 +178,12 @@ e por tamanho.
 - **Comando:** Descreva o passo a passo para compactar os arquivos, nomear o pacote corretamente e explicar à transportadora como abri-lo.
 - **Linhas:** 4
 
+### ITEM 6
+- **Capacidade:** C4
+- **Contexto:** O setor fiscal pediu as notas fiscais de recebimento de setembro em um único arquivo. Hoje elas estão soltas na Área de Trabalho, com nomes como "nota1.pdf" e "scan 2.pdf".
+- **Comando:** Monte um checklist de 5 passos para organizar as notas em pastas (por mês e por fornecedor), renomear os arquivos no padrão `AAAA-MM-DD_Fornecedor_NF`, compactar tudo em ZIP com nome padronizado e conferir o pacote antes de enviar.
+- **Linhas:** 6
+
 ## Resumo
 
 - **Hardware** é a parte física; **software** são os programas. Um não funciona sem o outro.
@@ -191,7 +200,7 @@ e por tamanho.
 - **Processador (CPU):** componente que executa os cálculos e as instruções.
 - **Memória RAM:** memória rápida e volátil que guarda os dados em uso.
 - **SSD:** unidade de armazenamento eletrônica, sem peças móveis, mais rápida que o HDD.
-- **Periférico:** equipamento externo de entrada e/ou saída de dados.
+- **Periférico:** dispositivo de entrada/saída (leitor de código de barras, impressora de etiquetas).
 - **Driver:** programa que permite ao sistema operacional controlar um periférico.
 - **Sistema operacional:** software que gerencia o hardware e serve de base para os outros programas.
 - **Compactação:** redução do tamanho de arquivos, reunindo-os em um único pacote (ZIP).
