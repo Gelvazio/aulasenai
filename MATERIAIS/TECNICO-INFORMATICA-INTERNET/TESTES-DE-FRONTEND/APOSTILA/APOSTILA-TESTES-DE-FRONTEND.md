@@ -141,6 +141,20 @@
   - [Vídeos](#vídeos-5)
   - [Resumo](#resumo-5)
   - [Exercícios](#exercícios-5)
+- [Capítulo 07 — Métricas e Cobertura de Testes](#capítulo-07--métricas-e-cobertura-de-testes)
+  - [Teoria](#teoria-6)
+    - [95% de cobertura e o cupom quebrado](#95-de-cobertura-e-o-cupom-quebrado)
+    - [O processo de teste: monitoração, controle e avaliação](#o-processo-de-teste-monitoração-controle-e-avaliação)
+    - [O que é cobertura](#o-que-é-cobertura)
+    - [O ramo escondido](#o-ramo-escondido)
+    - [Gerando o relatório com Vitest](#gerando-o-relatório-com-vitest)
+    - [Lendo o relatório](#lendo-o-relatório)
+    - [A falsa sensação dos 100%](#a-falsa-sensação-dos-100)
+    - [Avaliação dos resultados: o relatório comentado](#avaliação-dos-resultados-o-relatório-comentado)
+    - [Cobertura e manutenibilidade](#cobertura-e-manutenibilidade)
+  - [Vídeos](#vídeos-6)
+  - [Resumo](#resumo-6)
+  - [Exercícios](#exercícios-6)
 <!-- sumario:fim -->
 
 ---
@@ -263,7 +277,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 | 04 | 04 | Testes de Integração com DOM (Testing Library) | 4 h | ✅ Incluído |
 | 05 | 05 | Integração Avançada e Mock de APIs | 4 h | ✅ Incluído |
 | 06 | 06 | Testes End-to-End com Cypress e Playwright | 4 h | ✅ Incluído |
-| 07 | 07 | Métricas e Cobertura de Testes | 4 h | ⬜ Pendente |
+| 07 | 07 | Métricas e Cobertura de Testes | 4 h | ✅ Incluído |
 | 08 | 08 | TDD e Debugging Moderno no Front-End | 4 h | ⬜ Pendente |
 | 09 | 09 | Qualidade, Performance, Acessibilidade e CI/CD | 4 h | ⬜ Pendente |
 | 10 | 10 | Projeto Integrador: Suíte de Testes + avaliação | 4 h | ⬜ Pendente |
@@ -678,6 +692,7 @@ IDE, leitor de tela, projeto-base pronto, tempo estendido ou trabalho em duplas.
 | Capítulo 04 — Testes de Integração com DOM (Testing Library) | C4, C5 |
 | Capítulo 05 — Integração Avançada e Mock de APIs | C5 |
 | Capítulo 06 — Testes End-to-End com Cypress e Playwright | C4, C5 |
+| Capítulo 07 — Métricas e Cobertura de Testes | C3, C4 |
 
 ---
 
@@ -688,11 +703,16 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Asserção:** verificação que compara o resultado obtido com o esperado (`expect`). _(cap. 03)_
 - **Auto-waiting:** espera automática até o elemento estar pronto para a ação (visível, habilitado e parado). _(cap. 06)_
 - **Automação de testes:** execução de testes por meio de scripts, sem intervenção humana. _(cap. 03)_
+- **Avaliação dos resultados:** etapa que compara os resultados com os critérios de saída e recomenda publicar ou não. _(cap. 07)_
 - **BDD:** desenvolvimento guiado por comportamento, com cenários no formato Dado / Quando / Então. _(cap. 02)_
 - **beforeEach:** função executada antes de cada teste para preparar o estado. _(cap. 03)_
+- **Branch (ramo):** cada caminho possível de uma decisão no código (`if`, `else`, ternário, `switch`). _(cap. 07)_
 - **Caixa branca:** testa caminhos internos do código. _(cap. 02)_
 - **Caixa preta:** testa entradas e saídas sem ver o código. _(cap. 02)_
 - **Caso de teste:** condição, passos e resultado esperado. _(cap. 02)_
+- **Cobertura:** percentual de código executado pelos testes. _(cap. 07)_
+- **Código morto:** trecho que nunca é executado nem usado pelo sistema. _(cap. 07)_
+- **Critério de saída:** condição definida no plano para considerar os testes concluídos e liberar a versão. _(cap. 07)_
 - **Cypress:** framework de testes E2E que roda dentro do navegador, com painel visual de depuração. _(cap. 06)_
 - **data-testid:** atributo HTML dedicado a localizar elementos nos testes. _(cap. 06)_
 - **Defeito:** imperfeição no código ou na especificação (bug). _(cap. 01)_
@@ -706,14 +726,17 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Framework de testes:** ferramenta que roda os testes e oferece funções de asserção (ex.: Vitest). _(cap. 03)_
 - **getByRole:** consulta que encontra um elemento pelo papel e pelo nome acessível. _(cap. 04)_
 - **Handler:** regra do MSW que define a resposta para um endereço da API. _(cap. 05)_
+- **Instrumentação:** inserção de contadores no código para registrar o que os testes executam. _(cap. 07)_
 - **Interceptação:** captura de uma requisição HTTP antes que ela chegue ao servidor real. _(cap. 05)_
 - **Jornada:** sequência de passos que o usuário percorre para cumprir uma meta (ex.: comprar um produto). _(cap. 06)_
 - **jsdom:** simulação do navegador dentro do Node, usada nos testes. _(cap. 04)_
 - **Latência:** tempo de espera entre a requisição e a resposta da rede. _(cap. 05)_
 - **Matcher:** método que define como comparar na asserção (ex.: `toBe`, `toEqual`). _(cap. 03)_
 - **Matriz de rastreabilidade:** liga cada requisito aos casos de teste que o verificam. _(cap. 02)_
+- **Métrica:** medida numérica usada para acompanhar a suíte e a qualidade (ex.: taxa de aprovação, cobertura). _(cap. 07)_
 - **Mock:** substituto controlado de uma dependência. _(cap. 05)_
 - **Modo watch:** execução automática dos testes a cada alteração salva. _(cap. 03)_
+- **Monitoração e controle:** etapa que acompanha as métricas durante os testes e corrige o rumo quando necessário. _(cap. 07)_
 - **MSW (Mock Service Worker):** ferramenta que intercepta requisições na camada de rede e devolve respostas simuladas. _(cap. 05)_
 - **Nome acessível:** texto que identifica um elemento para leitores de tela (ex.: o rótulo do botão). _(cap. 04)_
 - **Padrão AAA:** estrutura de teste em três etapas: preparar (Arrange), executar (Act) e conferir (Assert). _(cap. 01)_
@@ -727,6 +750,7 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **queryBy:** consulta que devolve nulo quando o elemento não existe, usada para provar ausência. _(cap. 04)_
 - **Race condition:** defeito em que respostas chegam fora de ordem e a resposta antiga sobrescreve a recente. _(cap. 05)_
 - **Regra de 10:** o custo de corrigir um defeito cresce cerca de 10 vezes a cada etapa em que ele avança. _(cap. 01)_
+- **Relatório de cobertura:** documento (no terminal ou em HTML) com os percentuais e as linhas sem teste. _(cap. 07)_
 - **Requisito testável:** requisito claro, com um comportamento e um critério objetivo de aceitação. _(cap. 02)_
 - **Role (papel):** função acessível de um elemento na tela (botão, link, caixa de texto, item de lista). _(cap. 04)_
 - **Spy:** espião que registra como uma função foi chamada, sem mudar o que ela faz. _(cap. 05)_
@@ -737,6 +761,7 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Teste intermitente (flaky):** passa ou falha sem mudança no código. _(cap. 06)_
 - **Teste unitário:** teste rápido e isolado de uma função ou regra. _(cap. 01)_
 - **Testing Library:** biblioteca que testa componentes pelo que o usuário vê e faz. _(cap. 04)_
+- **Threshold:** meta mínima de cobertura; abaixo dela, a execução dos testes falha. _(cap. 07)_
 - **Time-travel:** recurso do Cypress que mostra a tela exatamente como estava em cada passo do teste. _(cap. 06)_
 - **Trace:** registro passo a passo da execução de um teste do Playwright, usado para investigar falhas. _(cap. 06)_
 - **user-event:** biblioteca que simula as interações reais do usuário (clicar, digitar). _(cap. 04)_
@@ -2068,4 +2093,223 @@ No teste: `await new PaginaLogin(page).entrar('cliente.teste@nuvemazul.test', 'T
 - **Capacidade:** C4
 - **Contexto:** O plano de testes do checkout exige verificar a usabilidade: concluir a compra no celular, concluir só com o teclado e garantir que nenhum elemento cubra o botão de pagamento.
 - **Comando:** Descreva como cada exigência seria verificada em E2E (projeto de celular, navegação com Tab/Enter e a espera automática do clique) e que resultado indicaria falha de usabilidade.
+- **Linhas:** 6
+
+---
+
+# Capítulo 07 — Métricas e Cobertura de Testes
+
+- **Aula:** 07
+- **Carga horária:** 4 horas (1 aula)
+- **Capacidade:** C3, C4
+- **Fonte:** `APOSTILA/CONTEUDO/CAPITULO-07.md`
+
+## Teoria
+
+### 95% de cobertura e o cupom quebrado
+
+A equipe da **Loja Nuvem Azul** comemorava: **95% de cobertura**. Uma semana depois, o cupom
+**NUVEM10** passou a dar desconto em dobro e ninguém percebeu antes dos clientes. O relatório
+mostrava a função do cupom "verde", mas o teste só **chamava** a função — não conferia o resultado.
+Além disso, a equipe rodava os testes à mão antes de publicar e ninguém acompanhava os números ao
+longo do tempo (situação de aprendizagem 2). Métricas ajudam muito, **desde que** sejam bem lidas.
+
+> 🎯 **Objetivos do capítulo:** **monitorar e controlar** a execução dos testes com métricas,
+> gerar e **ler o relatório de cobertura** apontando trechos sem teste, **avaliar os resultados**
+> para decidir se a versão pode ser publicada e usar a cobertura a favor da **manutenibilidade**.
+
+### O processo de teste: monitoração, controle e avaliação
+
+Nos capítulos anteriores vimos planejamento, desenho e execução. Faltam as duas etapas finais:
+
+| Etapa | Pergunta | Exemplo na Loja Nuvem Azul |
+|---|---|---|
+| **7.4 Monitoração e controle** | O andamento está de acordo com o plano? O que fazer se não estiver? | A cobertura caiu de 78% para 66% em duas semanas → bloquear o envio de código abaixo de 70% |
+| **7.5 Avaliação dos resultados** | Os critérios de saída foram atingidos? Podemos publicar? | 100% dos testes críticos passando, nenhum defeito grave aberto, cobertura ≥ 70% → versão aprovada |
+
+**Métricas para monitorar:** testes executados, aprovados e reprovados; testes intermitentes;
+tempo de execução da suíte; defeitos encontrados × corrigidos; e a **cobertura** e sua tendência.
+**Controlar** é agir com base nelas: repriorizar testes, corrigir testes instáveis, travar o envio de
+código sem teste.
+
+### O que é cobertura
+
+**Cobertura** é o percentual de código executado pelos testes. A ferramenta **instrumenta** o
+código (coloca contadores invisíveis em cada trecho), roda a suíte e, no fim, conta o que foi e o
+que não foi executado.
+
+| Métrica | O que mede |
+|---|---|
+| **Statements** (instruções) | Percentual de instruções executadas |
+| **Branches** (ramos) | Percentual de caminhos de decisão testados (`if/else`, `switch`, ternário, `&&`, `??`) |
+| **Functions** (funções) | Percentual de funções chamadas ao menos uma vez |
+| **Lines** (linhas) | Percentual de linhas executadas |
+
+### O ramo escondido
+
+```js
+// desconto.js
+export function aplicarDesconto(total, cupom) {
+  const desconto = cupom === 'NUVEM10' ? total * 0.1 : 0;
+  return total - desconto;
+}
+
+// desconto.test.js — só testa o cupom válido
+it('aplica 10% com o cupom NUVEM10', () => {
+  expect(aplicarDesconto(200, 'NUVEM10')).toBe(180);
+});
+```
+
+Esse teste executa **100% das linhas**, mas só **50% dos ramos**: o caminho "cupom inválido → sem
+desconto" nunca foi testado. Por isso, em regras de negócio, a métrica de **branches** é a mais
+reveladora.
+
+### Gerando o relatório com Vitest
+
+```bash
+npm install -D @vitest/coverage-v8
+npx vitest run --coverage
+```
+
+```js
+// vitest.config.js (trecho)
+test: {
+  coverage: {
+    provider: 'v8',
+    reporter: ['text', 'html', 'lcov'],
+    include: ['src/**/*.{js,jsx}'],
+    exclude: ['src/**/*.test.{js,jsx}', 'src/mocks/**', 'src/main.jsx'],
+    thresholds: { lines: 70, branches: 70, functions: 70, statements: 70 },
+  },
+},
+```
+
+- **provider:** `v8` (nativo e rápido) ou `istanbul` (instrumentação própria);
+- **reporter:** `text` (tabela no terminal), `html` (pasta `coverage/` navegável), `lcov` (para
+  serviços de integração contínua);
+- **exclude:** testes, mocks e arquivos de inicialização não entram na conta;
+- **thresholds:** metas mínimas — abaixo delas, o comando **falha** (e a integração contínua barra
+  o envio).
+
+### Lendo o relatório
+
+```text
+File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+--------------|---------|----------|---------|---------|------------------
+All files     |   78.4  |   61.5   |   85.7  |   78.4  |
+ carrinho.js  |  100    |  100     |  100    |  100    |
+ cupom.js     |   62.5  |   40     |   66.6  |   62.5  | 14-18, 25
+ frete.js     |   90    |   75     |  100    |   90    | 9
+```
+
+- **Uncovered Line #s** mostra as linhas que nenhum teste executou: em `cupom.js`, as linhas 14 a 18
+  e 25.
+- No **HTML** (`coverage/index.html`), as cores indicam a situação de cada arquivo (verde: boa;
+  amarelo: média; vermelho: crítica); dentro do arquivo, a **margem** mostra quantas vezes cada
+  linha rodou, o **fundo vermelho** marca linhas nunca executadas e as letras **I** (if) e **E**
+  (else) marcam ramos não percorridos.
+- Prioridade: arquivos com **regra de negócio** e branch baixo (aqui, `cupom.js`) vêm antes de
+  componentes puramente visuais.
+
+### A falsa sensação dos 100%
+
+```js
+it('cupom', () => {
+  aplicarDesconto(200, 'NUVEM10'); // executa, mas não confere nada
+});
+```
+
+Esse teste conta como cobertura, mas não protege nada: **cobertura mostra o que foi executado, não
+o que foi verificado**. O que protege o software são **asserções** sobre regras de negócio, bordas e
+erros.
+
+| Faixa de cobertura | Retorno do esforço |
+|---|---|
+| 0% a 70% | Alto: cada teste novo pega defeitos importantes |
+| 70% a 85% | Equilíbrio entre esforço e segurança |
+| 90% a 100% | Custo alto, muitas vezes testando código trivial; exigir 100% gera testes "só para bater meta" |
+
+Metas podem variar por módulo: **checkout e pagamento** com 90%; componentes puramente visuais com
+meta menor.
+
+### Avaliação dos resultados: o relatório comentado
+
+Números sozinhos não decidem nada; o **relatório de cobertura comentado** transforma a métrica em
+decisão:
+
+1. **Resumo:** testes executados, aprovados e reprovados; cobertura geral e por métrica.
+2. **Achados:** arquivos e linhas sem teste, com o risco de cada um (ex.: "cupom inválido não
+   testado — risco de desconto indevido").
+3. **Plano de ação:** testes a criar, em ordem de prioridade.
+4. **Recomendação:** a versão atende aos critérios de saída do plano de testes? Publicar ou não.
+
+### Cobertura e manutenibilidade
+
+- O relatório revela **código morto**: funções que nenhum teste (e nenhuma tela) chama e condições
+  que nunca podem ser verdadeiras — candidatas a remoção.
+- Uma boa suíte deixa **refatorar com segurança**: se o comportamento mudar sem querer, um teste
+  falha.
+- Testes também precisam ser **fáceis de manter**: nomes claros, sem duplicação, auxiliares
+  reaproveitados (como o render com provedores do capítulo 5).
+- Na situação de aprendizagem 2, o próximo passo (capítulo 9) é levar tudo isso para a
+  **integração contínua**: rodar a suíte a cada envio, barrar a junção do código com teste falhando
+  ou cobertura abaixo de 70% e publicar o relatório.
+
+## Vídeos
+
+- [Entendendo e aplicando cobertura de código (exemplo em Java)](https://www.youtube.com/watch?v=amDFHIg-D_U) — 12:29 — Manoel Campos Dev
+- [Getting started with Vitest code coverage (em inglês)](https://www.youtube.com/watch?v=UOdgx2Mm3X8) — 11:24 — ViteConf
+- [Run code coverage tool with Vitest (em inglês)](https://www.youtube.com/watch?v=Bo7gZUqgRQ0) — 02:51 — Nathan Krasney
+
+## Resumo
+
+- **Monitoração e controle:** acompanhar métricas (aprovados, reprovados, intermitentes, tempo, defeitos, cobertura) e agir quando saem do plano.
+- **Avaliação dos resultados:** comparar com os critérios de saída e decidir se a versão pode ser publicada, por meio do relatório comentado.
+- **Cobertura** = percentual de código executado pelos testes, nas métricas statements, branches, functions e lines; **branches** revela caminhos esquecidos.
+- No Vitest: `@vitest/coverage-v8`, `vitest run --coverage`, `reporter`, `exclude` e **thresholds** que travam a suíte abaixo da meta.
+- Cobertura alta não garante qualidade: sem **asserções**, o teste só executa; 70% a 85% costuma ser o melhor equilíbrio.
+- O relatório revela **código morto** e uma boa suíte torna a refatoração segura — **manutenibilidade**.
+
+## Exercícios
+
+### ITEM 1
+- **Capacidade:** C4
+- **Contexto:** O relatório do terminal mostra: `carrinho.js` 100/100/100/100; `cupom.js` 62,5% statements, 40% branches, 66,6% funções, linhas não cobertas 14-18 e 25; `frete.js` 90% statements, 75% branches, linha não coberta 9.
+- **Comando:** Leia o relatório: diga qual arquivo tem a situação mais crítica, qual métrica é a pior, quais trechos estão sem teste e em que ordem você criaria os testes que faltam, justificando pelo risco.
+- **Linhas:** 6
+
+### ITEM 2
+- **Capacidade:** C4
+- **Contexto:** A função `calcularParcelas(total)` devolve `total <= 100 ? 1 : 3`. A suíte tem um único teste: `calcularParcelas(300)` deve ser 3. O relatório mostra 100% de linhas e 50% de branches.
+- **Comando:** Explique por que as linhas estão em 100% e os ramos em 50% e escreva os testes que faltam, incluindo o valor de borda.
+- **Linhas:** 6
+
+### ITEM 3
+- **Capacidade:** C4
+- **Contexto:** Um colega elevou a cobertura de 60% para 98% em uma tarde escrevendo testes como `it('frete', () => { calcularFrete(100, 12); });`.
+- **Comando:** Explique por que essa cobertura é enganosa (cobertura mostra o que foi executado, não o que foi verificado) e reescreva o teste para que ele realmente proteja a regra.
+- **Linhas:** 5
+
+### ITEM 4
+- **Capacidade:** C3, C4
+- **Contexto:** A coordenação definiu: cobertura mínima de 70% em todas as métricas, sem contar arquivos de teste, a pasta `src/mocks` e o `src/main.jsx`, com relatório no terminal e em HTML.
+- **Comando:** Escreva o trecho `coverage` do `vitest.config.js` que atende a essas exigências e explique o que acontece com o comando de testes (e com a integração contínua) quando a cobertura fica abaixo da meta.
+- **Linhas:** 8
+
+### ITEM 5
+- **Capacidade:** C3
+- **Contexto:** Resultado da versão 2.4: 182 testes, 179 aprovados, 3 reprovados (dois no checkout); cobertura geral de 74%, mas `pagamento.js` com 48% de branches; um defeito grave aberto no cálculo de parcelas. Critério de saída do plano: testes críticos 100% aprovados, nenhum defeito grave aberto e cobertura ≥ 70%.
+- **Comando:** Escreva o relatório de cobertura comentado (resumo, achados com risco, plano de ação e recomendação de publicar ou não a versão), justificando com os critérios de saída.
+- **Linhas:** 9
+
+### ITEM 6
+- **Capacidade:** C3
+- **Contexto:** Painel das últimas quatro semanas: cobertura 79% → 76% → 71% → 66%; testes intermitentes 2 → 5 → 9 → 12; tempo da suíte 3 min → 4 min → 6 min → 9 min.
+- **Comando:** Interprete as tendências (monitoração) e proponha três ações de controle, explicando que problema cada ação resolve.
+- **Linhas:** 6
+
+### ITEM 7
+- **Capacidade:** C3
+- **Contexto:** O relatório HTML mostra a função `formatarCupomAntigo` com 0 execuções, e nenhuma tela do sistema a importa. O gerente quer exigir 100% de cobertura em todo o projeto.
+- **Comando:** Explique o que a função em vermelho indica e o que fazer com ela, e argumente sobre a meta de 100% usando o retorno do esforço e a manutenibilidade dos testes.
 - **Linhas:** 6
