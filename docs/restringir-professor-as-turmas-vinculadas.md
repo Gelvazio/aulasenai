@@ -12,7 +12,13 @@
   horário, `liberar_fora_horario` e `turmaaluno` de 133933; o administrador é aceito.
 - Conferido depois: 125 vínculos aluno × turma, 5 professor × turma, 0 turmas sem professor.
 - ⚠️ Existem 13 linhas em `usuario` com perfil ALUNO e contas antigas/teste (e-mails fora de
-  `@senai.local`, sem perfil no Auth, sem turma). Não foram alteradas.
+  `@senai.local`, sem perfil no Auth, sem turma). Não foram alteradas nesta etapa.
+- **Contas de teste (2026-10-03, pedido do usuário; migração
+  `contas_teste_20261003_professor_e_remocao`):** a conta `admin@email.com` passou a ter perfil
+  PROFESSOR (Auth `app_metadata` e `usuario`; não é administrador). As outras 12 (sem respostas,
+  entregas nem turma) foram **apagadas** do Auth, com a linha de `usuario` removida em cascata.
+  Backup em `contas_teste_legado_20261003` (RLS ligado, sem políticas, sem acesso da API).
+  Conferido: 12 no backup, 0 restantes no Auth/`usuario`, 0 alunos sem turma.
 
 ## Levantamento (banco real, 2026-10-03)
 

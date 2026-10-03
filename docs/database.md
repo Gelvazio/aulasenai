@@ -479,6 +479,10 @@ conector do Supabase). **Plano:** `docs/restringir-professor-as-turmas-vinculada
 
 `turma` continua legível por todo usuário logado (nome, turno, horário).
 
+**Contas de teste (2026-10-03):** `admin@email.com` virou PROFESSOR; 12 contas antigas de teste
+(fora de `@senai.local`, sem respostas nem turma) foram apagadas do Auth e da `usuario`. Backup:
+tabela `contas_teste_legado_20261003` (RLS ligado, sem políticas).
+
 ---
 
 ## 🔐 Segurança: RLS (Row Level Security)
