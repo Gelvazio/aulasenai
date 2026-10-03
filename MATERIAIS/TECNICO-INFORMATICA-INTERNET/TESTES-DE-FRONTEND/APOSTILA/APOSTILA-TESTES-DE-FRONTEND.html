@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila — Testes de Front-End</title>
+    <link rel="stylesheet" href="../../../../assets/css/apostila.css">
+    <script src="../../../../assets/js/apostila.js" defer></script>
+    <script src="../../../../js/header-usuario.js" defer></script>
+</head>
+<body class="apostila" data-logo="../../../../assets/img/logo-sesi-senai.png" data-rodape="Apostila — Testes de Front-End · SESI SENAI">
+<div id="header-usuario"></div>
+    <!-- Gerado por assets/gerador-apostilas/gerar_apostila.py — não editar à mão -->
+    <div class="apostila__container">
+        <header class="apostila__topo">
+            <div class="apostila__barra">
+                <button class="apostila__botao" id="botao-exportar-pdf" type="button">📥 Exportar PDF (apostila completa)</button>
+                <small class="apostila__dica">Na janela de impressão, escolha "Salvar como PDF".</small>
+            </div>
+        </header>
+
+        <section class="pagina-senai pagina-a4 capa-apostila">
+            <img class="pagina-senai__logo" src="../../../../assets/img/logo-sesi-senai.png" alt="SESI SENAI">
+            <div class="pagina-senai__conteudo">
+                <a class="capa-apostila__voltar" href="../ATIVIDADES/index.html">← Atividades da matéria</a>
+                <h1 class="capa-apostila__titulo">Apostila<br>Testes de Front-End</h1>
+                <p class="capa-apostila__subtitulo">Técnico em Informática para Internet</p>
+                <div class="capa-apostila__faixa"></div>
+                <p class="capa-apostila__dados">Docente: Gelvazio Camargo · 1 capítulo(s)</p>
+            </div>
+            <footer class="pagina-senai__rodape"></footer>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="sumario">
+            <h2 id="sumario">Sumário</h2>
+            <a class="sumario__link sumario__link--nivel-1" href="#introducao"><span class="sumario__texto">Introdução</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t1"><span class="sumario__texto">Apresentação</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t2"><span class="sumario__texto">Objetivo geral da unidade curricular</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t3"><span class="sumario__texto">Como a apostila está organizada</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t4"><span class="sumario__texto">Como estudar com esta apostila</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t5"><span class="sumario__texto">Ferramentas que você vai usar</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t6"><span class="sumario__texto">Como você será avaliado</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t7"><span class="sumario__texto">Ambientes, recursos e acessibilidade</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t7"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t8"><span class="sumario__texto">Situações de aprendizagem</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t8"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capacidades"><span class="sumario__texto">Capacidades da matéria</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capacidades"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#glossario"><span class="sumario__texto">Glossário</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="glossario"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-01"><span class="sumario__texto">Capítulo 01 — Fundamentos de Testes de Software</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-01-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t1"><span class="sumario__texto">O custo de um clique quebrado</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t2"><span class="sumario__texto">Qualidade e o papel do QA</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t3"><span class="sumario__texto">Erro, defeito e falha</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t4"><span class="sumario__texto">Verificação × validação</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t5"><span class="sumario__texto">Tipos de testes (características de qualidade)</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t6"><span class="sumario__texto">Caixa preta e caixa branca (técnicas)</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t7"><span class="sumario__texto">O processo de teste (STLC) em resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t7"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t8"><span class="sumario__texto">A pirâmide de testes</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t8"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t9"><span class="sumario__texto">Pilares de um bom teste automatizado</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t9"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t10"><span class="sumario__texto">Responsabilidade (autogestão)</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t10"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-01-videos"><span class="sumario__texto">Vídeos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-videos"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-01-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-01-exercicios"><span class="sumario__texto">Exercícios</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-exercicios"></span></a>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="introducao">
+            <h2 id="introducao">Introdução</h2>
+            <h3 id="introducao-t1">Apresentação</h3>
+            <p>Toda interface web chega ao usuário depois de alguém confirmar que ela faz o que foi pedido. Esta
+            apostila acompanha a unidade curricular <strong>Testes de Front-End</strong> e ensina a planejar, escrever,
+            automatizar e acompanhar testes do lado do cliente: do caso de teste escrito à suíte automatizada
+            com Vitest, Testing Library e Cypress/Playwright, rodando sozinha num pipeline de integração
+            contínua. Ela prepara você para a UC Projeto de Front-End, que cobra planos de teste completos.</p>
+            <p>Os exemplos acontecem na <strong>Loja Nuvem Azul</strong>, uma startup <strong>fictícia</strong> de comércio eletrônico
+            feita em React, com cadastro, login, catálogo, carrinho e checkout — o tipo de aplicação que você
+            vai testar no trabalho de técnico em informática para internet.</p>
+            <h3 id="introducao-t2">Objetivo geral da unidade curricular</h3>
+            <p><strong>Função:</strong> produzir interfaces para internet, de acordo com metodologia e padrões de qualidade,
+            usabilidade, interatividade, robustez, acessibilidade e segurança da informação.</p>
+            <p><strong>Objetivo geral:</strong> Propiciar desenvolvimento de capacidades básicas e socioemocionais para
+            codificação de interfaces baseadas em UX e UI em aplicações web, considerando as necessidades do
+            usuário.</p>
+            <h3 id="introducao-t3">Como a apostila está organizada</h3>
+            <p>Cada capítulo corresponde a uma aula de 4 horas e tem sempre as mesmas partes:</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Parte</th>
+            <th>O que você encontra</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>🎯 Capacidades</td>
+            <td>O que você vai desenvolver no capítulo</td>
+            </tr>
+            <tr>
+            <td>📖 Teoria e exemplos</td>
+            <td>Conceitos e código de exemplo na Loja Nuvem Azul</td>
+            </tr>
+            <tr>
+            <td>🎬 Vídeos</td>
+            <td>Vídeos curtos do YouTube (no máximo 15 minutos) para revisar o tema</td>
+            </tr>
+            <tr>
+            <td>📌 Resumo</td>
+            <td>Os pontos principais para estudar antes da avaliação</td>
+            </tr>
+            <tr>
+            <td>✍️ Exercícios</td>
+            <td>Questões no padrão ITEM (Capacidade, Contexto, Comando e Resposta)</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>A suíte de testes cresce como uma <strong>pirâmide</strong>: muitos testes unitários na base (capítulos 3 e 8),
+            testes de integração no meio (capítulos 4 e 5), poucos testes de ponta a ponta no topo
+            (capítulo 6) e, atravessando tudo, métricas e integração contínua (capítulos 7 e 9). O
+            <strong>glossário</strong>, no início da apostila, reúne os termos técnicos de todos os capítulos.</p>
+            <h3 id="introducao-t4">Como estudar com esta apostila</h3>
+            <ul>
+            <li>Leia a teoria antes ou logo depois da aula e <strong>rode os exemplos de código</strong> no seu computador.</li>
+            <li>Assista aos vídeos e anote dúvidas para levar ao professor.</li>
+            <li>Revise o resumo e consulte o glossário sempre que encontrar um termo novo.</li>
+            <li>Responda os exercícios explicando <strong>o porquê</strong> das suas decisões de teste.</li>
+            <li>Os exercícios podem ser impressos separadamente pelo botão <strong>Exportar PDF</strong> ao lado do título
+              de cada seção de exercícios.</li>
+            </ul>
+            <h3 id="introducao-t5">Ferramentas que você vai usar</h3>
+            <p>Node.js e npm, VS Code, Vitest, Testing Library, Cypress e Playwright, Lighthouse e axe-core,
+            Git/GitHub e GitHub Actions. Todas são gratuitas; o professor fornece um projeto-base pronto.</p>
+            <h3 id="introducao-t6">Como você será avaliado</h3>
+            <table>
+            <thead>
+            <tr>
+            <th>Instrumento</th>
+            <th>Momento</th>
+            <th>Peso</th>
+            <th>Critérios</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Avaliação contínua: entregas das aulas 1–9 e SAs 1 e 2</td>
+            <td>Aulas 1–9</td>
+            <td>60%</td>
+            <td>Correção, completude, organização do repositório, prazo</td>
+            </tr>
+            <tr>
+            <td>Avaliação prática: suíte de testes para aplicação fornecida</td>
+            <td>Aula 10</td>
+            <td>25%</td>
+            <td>Unitários (≥ 5 casos) · integração · E2E (≥ 3 fluxos) · cobertura ≥ 70% · execução no CI</td>
+            </tr>
+            <tr>
+            <td>Avaliação objetiva: conceitos, técnicas, tipos e processo de teste</td>
+            <td>Aula 10</td>
+            <td>15%</td>
+            <td>Acertos; questões no formato capacidade → contexto → comando</td>
+            </tr>
+            </tbody>
+            </table>
+            <p><strong>Nota final</strong> = 60% contínua + 25% prática + 15% objetiva. <strong>Aprovação:</strong> nota final <strong>≥ 7,0</strong> e
+            presença mínima de 75%. Além da nota, cada capacidade recebe o parecer Desenvolvida / Em
+            desenvolvimento / Não desenvolvida.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Nível</th>
+            <th>Nota</th>
+            <th>O que significa</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Excelente</td>
+            <td>9 a 10</td>
+            <td>Plano rastreável, testes legíveis pelo comportamento, suíte estável no CI, decisões justificadas</td>
+            </tr>
+            <tr>
+            <td>Bom</td>
+            <td>7 a 8</td>
+            <td>Testes corretos e passando, com pequenas falhas de nomenclatura, cobertura ou documentação</td>
+            </tr>
+            <tr>
+            <td>Aceitável</td>
+            <td>5 a 6</td>
+            <td>Cumpre o essencial com orientação; lacunas de casos de borda ou testes frágeis</td>
+            </tr>
+            <tr>
+            <td>Insuficiente</td>
+            <td>0 a 4</td>
+            <td>Testes que não rodam, não validam requisito ou plano ausente</td>
+            </tr>
+            </tbody>
+            </table>
+            <p><strong>Recuperação:</strong> refazer a avaliação não atingida (prática com outra aplicação, objetiva com novo
+            banco de questões), retomando só as capacidades pendentes, conforme o regimento da unidade SENAI.</p>
+            <h3 id="introducao-t7">Ambientes, recursos e acessibilidade</h3>
+            <p>As aulas acontecem no <strong>laboratório de informática</strong>, na biblioteca, na sala de aula e no AVA com
+            recursos de interatividade. Usaremos kit multimídia, computador com acesso à internet, sistemas
+            operacionais, pacote de aplicativos de escritório e <strong>IDE para desenvolvimento de testes</strong>, além de
+            livros, apostilas, revistas especializadas, manuais, normas e catálogos técnicos.</p>
+            <p><strong>Acessibilidade:</strong> asseguradas as condições de acessibilidade ao aluno com impedimentos de longo
+            prazo (Lei nº 13.146/2015, LDB nº 9394/96). Se precisar, peça ao professor zoom e alto contraste na
+            IDE, leitor de tela, projeto-base pronto, tempo estendido ou trabalho em duplas.</p>
+            <h3 id="introducao-t8">Situações de aprendizagem</h3>
+            <ul>
+            <li><strong>SA 1 — Estruturação e documentação de testes (aulas 1, 2 e 10):</strong> a Loja Nuvem Azul não tem
+              estratégia de testes. Para autenticação, carrinho e checkout, você entrega um plano formal,
+              casos de teste (caminho feliz e casos de borda), matriz de rastreabilidade, estimativa de esforço
+              e análise de riscos.</li>
+            <li><strong>SA 2 — Pipeline de integração contínua e cobertura (aulas 7 a 9):</strong> a equipe roda os testes à
+              mão antes de publicar e não sabe quanto do código está coberto. Você cria um fluxo automático que
+              roda a suíte a cada envio de código, bloqueia a junção com teste falhando ou cobertura abaixo de
+              70% e documenta como rodar e contribuir.</li>
+            </ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="capacidades">
+            <h2 id="capacidades">Capacidades da matéria</h2>
+            <h3>Capacidades básicas</h3>
+            <p class="capacidade-item"><strong>C1</strong> — Reconhecer as especificações técnicas da interface</p>
+            <p class="capacidade-item"><strong>C2</strong> — Reconhecer os requisitos da documentação de testes</p>
+            <p class="capacidade-item"><strong>C3</strong> — Reconhecer as etapas de planejamento de testes</p>
+            <p class="capacidade-item"><strong>C4</strong> — Aplicar testes definidos no Plano de Testes.</p>
+            <p class="capacidade-item"><strong>C5</strong> — Desenvolver conjunto de testes automatizados</p>
+            <h3>Capacidades socioemocionais</h3>
+            <p class="capacidade-item"><strong>S1</strong> — Valorizar novos fatos, ideias e opiniões diferentes para resolução de problemas pertinentes as atividades sob a sua responsabilidade</p>
+            <p class="capacidade-item"><strong>S2</strong> — Fundamentar escolhas e decisões no exame de fatos, contextos, possibilidades, desafios e problemáticas de diferentes naturezas à luz de referenciais técnicos, legais, normativos e institucionais</p>
+            <h3>Capacidades por capítulo</h3>
+            <table><thead><tr><th>Capítulo</th><th>Capacidades</th></tr></thead><tbody><tr><td>Capítulo 01 — Fundamentos de Testes de Software</td><td>C1, C2, C3</td></tr></tbody></table>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="glossario">
+            <h2 id="glossario">Glossário</h2>
+            <p class="glossario__termo"><strong>Defeito:</strong> imperfeição no código ou na especificação (bug). <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Erro:</strong> ação humana equivocada que introduz um defeito. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Falha:</strong> comportamento incorreto do sistema percebido durante o uso. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Padrão AAA:</strong> estrutura de teste em três etapas: preparar (Arrange), executar (Act) e conferir (Assert). <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Pirâmide de testes:</strong> modelo que equilibra muitos testes unitários, alguns de integração e poucos E2E. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Qualidade:</strong> conformidade do sistema com os requisitos e as expectativas dos usuários. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Regra de 10:</strong> o custo de corrigir um defeito cresce cerca de 10 vezes a cada etapa em que ele avança. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Teste unitário:</strong> teste rápido e isolado de uma função ou regra. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Validação:</strong> é o produto que o usuário precisa? <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Verificação:</strong> construímos o produto certo conforme a especificação? <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-01">
+            <div class="capitulo__abertura" id="capitulo-01" data-titulo="sim"><span class="capitulo__rotulo">AULA 01</span><h2>Capítulo 01 — Fundamentos de Testes de Software</h2><p class="capitulo__capacidades">🎯 <strong>C1</strong> — Reconhecer as especificações técnicas da interface<br><strong>C2</strong> — Reconhecer os requisitos da documentação de testes<br><strong>C3</strong> — Reconhecer as etapas de planejamento de testes</p></div>
+            <h3 id="capitulo-01-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-01-t1">O custo de um clique quebrado</h4>
+            <p>Sexta-feira à noite, promoção no ar: o botão <strong>Finalizar compra</strong> da <strong>Loja Nuvem Azul</strong> (startup
+            fictícia de e-commerce em React) para de funcionar no celular. Em uma hora, centenas de clientes
+            desistem. A causa? Uma mudança "pequena" no componente do botão que ninguém testou. Em 1996, o
+            foguete Ariane 5 explodiu 40 segundos após o lançamento por uma conversão numérica não testada; no
+            front-end, um erro num botão impede milhares de compras em minutos.</p>
+            <blockquote>
+            <p>🎯 <strong>Objetivos do capítulo:</strong> entender o papel dos testes e da qualidade (QA), diferenciar
+            <strong>verificação</strong> de <strong>validação</strong>, conhecer os <strong>tipos de testes</strong> e a <strong>pirâmide de testes</strong> e
+            assumir a <strong>responsabilidade</strong> de não entregar código sem teste.</p>
+            </blockquote>
+            <h4 id="capitulo-01-t2">Qualidade e o papel do QA</h4>
+            <p><strong>Qualidade</strong> é a conformidade do sistema com os requisitos e com as expectativas dos usuários.
+            Hoje, QA (garantia de qualidade) não é só "clicar em tudo antes de publicar": os testes são
+            <strong>automatizados</strong>, rodam a cada alteração de código e fazem parte do trabalho de <strong>toda a
+            equipe</strong>, desde o primeiro commit.</p>
+            <h4 id="capitulo-01-t3">Erro, defeito e falha</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Termo</th>
+            <th>O que é</th>
+            <th>Exemplo na Loja Nuvem Azul</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Erro (engano)</strong></td>
+            <td>Ação humana equivocada</td>
+            <td>O dev digita <code>&gt;</code> no lugar de <code>&gt;=</code> na regra de frete grátis</td>
+            </tr>
+            <tr>
+            <td><strong>Defeito (bug)</strong></td>
+            <td>A imperfeição que fica no código</td>
+            <td>A função de frete não dá frete grátis em compras de exatamente R$ 200</td>
+            </tr>
+            <tr>
+            <td><strong>Falha</strong></td>
+            <td>O comportamento errado percebido ao usar o sistema</td>
+            <td>O cliente com R$ 200 no carrinho paga frete</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Testar é procurar <strong>falhas</strong> para encontrar os <strong>defeitos</strong> antes que cheguem ao usuário.</p>
+            <h4 id="capitulo-01-t4">Verificação × validação</h4>
+            <table>
+            <thead>
+            <tr>
+            <th></th>
+            <th>Verificação</th>
+            <th>Validação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Pergunta</td>
+            <td>Construímos o produto certo conforme a especificação?</td>
+            <td>É o produto que o usuário precisa?</td>
+            </tr>
+            <tr>
+            <td>Base</td>
+            <td>Requisitos e especificação técnica</td>
+            <td>Uso real e necessidade do usuário</td>
+            </tr>
+            <tr>
+            <td>Exemplo na tela de cadastro</td>
+            <td>O campo CPF aceita só 11 dígitos, como diz a especificação</td>
+            <td>O cliente consegue se cadastrar no celular sem se confundir</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Um sistema pode passar na verificação (fazer tudo o que estava escrito) e falhar na validação
+            (o usuário não consegue usar). Os dois são necessários.</p>
+            <h4 id="capitulo-01-t5">Tipos de testes (características de qualidade)</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Tipo</th>
+            <th>O que avalia</th>
+            <th>Exemplo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Funcionalidade</strong></td>
+            <td>Se o sistema faz o que as regras de negócio pedem</td>
+            <td>E-mail sem "@" mostra mensagem de erro; frete calculado certo</td>
+            </tr>
+            <tr>
+            <td><strong>Usabilidade</strong></td>
+            <td>Se é fácil e acessível de usar</td>
+            <td>Formulário navegável pelo teclado e por leitor de tela</td>
+            </tr>
+            <tr>
+            <td><strong>Confiabilidade</strong></td>
+            <td>Se funciona de forma estável, inclusive com falhas</td>
+            <td>A API do frete cai e a tela mostra aviso, sem travar</td>
+            </tr>
+            <tr>
+            <td><strong>Desempenho</strong></td>
+            <td>Velocidade e resposta sob carga</td>
+            <td>Página principal carrega em menos de 2,5 s</td>
+            </tr>
+            <tr>
+            <td><strong>Manutenibilidade</strong></td>
+            <td>Facilidade de alterar e testar o código</td>
+            <td>Componentes pequenos e testes legíveis que não quebram à toa</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Testes <strong>funcionais</strong> verificam o comportamento; testes <strong>não funcionais</strong> (usabilidade,
+            desempenho, confiabilidade...) verificam como o sistema se comporta.</p>
+            <h4 id="capitulo-01-t6">Caixa preta e caixa branca (técnicas)</h4>
+            <ul>
+            <li><strong>Caixa preta (teste funcional):</strong> olha só entradas e saídas, sem ver o código — "digitei
+              um CEP válido, apareceu o frete?".</li>
+            <li><strong>Caixa branca (teste estrutural):</strong> olha os caminhos internos do código — "o <code>if</code> do frete
+              grátis foi testado com valores abaixo, igual e acima de R$ 200?".</li>
+            </ul>
+            <h4 id="capitulo-01-t7">O processo de teste (STLC) em resumo</h4>
+            <ol>
+            <li><strong>Planejamento</strong> — escopo, riscos e metas;</li>
+            <li><strong>Desenho</strong> — casos de teste, cenários e dados;</li>
+            <li><strong>Execução</strong> — rodar os testes (automatizados e exploratórios);</li>
+            <li><strong>Monitoração e controle</strong> — acompanhar falhas, métricas e retestes;</li>
+            <li><strong>Avaliação dos resultados</strong> — decidir se o produto pode ser publicado.</li>
+            </ol>
+            <h4 id="capitulo-01-t8">A pirâmide de testes</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Nível</th>
+            <th>Proporção sugerida</th>
+            <th>Velocidade</th>
+            <th>O que testa</th>
+            <th>Exemplo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Unitário</strong> (base)</td>
+            <td>~60%</td>
+            <td>&lt; 100 ms cada</td>
+            <td>Funções e regras isoladas</td>
+            <td><code>calcularDesconto()</code></td>
+            </tr>
+            <tr>
+            <td><strong>Integração</strong> (meio)</td>
+            <td>~30%</td>
+            <td>100 ms a 1 s</td>
+            <td>Componentes juntos, DOM, API simulada</td>
+            <td>Formulário + validação</td>
+            </tr>
+            <tr>
+            <td><strong>E2E</strong> (topo)</td>
+            <td>~10%</td>
+            <td>5 a 60 s</td>
+            <td>O fluxo completo no navegador</td>
+            <td>Login → carrinho → pagamento</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>⚠️ <strong>Cone de sorvete:</strong> muitos testes de ponta a ponta e poucos unitários deixam a suíte lenta e
+            cheia de <strong>testes intermitentes</strong> (passam ou falham sem mudança no código). Mantenha a base forte.</p>
+            <p><strong>Regra de 10 (custo do defeito):</strong> quanto mais tarde o defeito é encontrado, mais caro fica —
+            1x no design, 10x no desenvolvimento, 100x nos testes, 1.000x em produção.</p>
+            <h4 id="capitulo-01-t9">Pilares de um bom teste automatizado</h4>
+            <ul>
+            <li><strong>Assertividade:</strong> compara o resultado obtido com o esperado e, se falhar, diz por quê.</li>
+            <li><strong>Repetibilidade:</strong> rodar 1 ou 1.000 vezes dá o mesmo resultado.</li>
+            <li><strong>Independência:</strong> nenhum teste depende de outro; cada um prepara e limpa seus dados.</li>
+            </ul>
+            <p><strong>Padrão AAA (Arrange, Act, Assert):</strong></p>
+            <pre><code class="language-js">// formatarMoeda.js
+            export function formatarMoeda(valor) {
+              return valor
+                .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+                .replace(/\s/g, ' ');
+            }
+            // formatarMoeda.test.js
+            import { describe, it, expect } from 'vitest';
+            import { formatarMoeda } from './formatarMoeda';
+            describe('formatarMoeda', () =&gt; {
+              it('formata 1500 como R$ 1.500,00', () =&gt; {
+                const valor = 1500;                      // Arrange: prepara os dados
+                const resultado = formatarMoeda(valor);  // Act: executa a função
+                expect(resultado).toBe('R$ 1.500,00');   // Assert: confere o resultado
+              });
+            });
+            </code></pre>
+            <h4 id="capitulo-01-t10">Responsabilidade (autogestão)</h4>
+            <p>Testar faz parte do <strong>compromisso profissional</strong>: não entregar código sem teste, rodar a suíte
+            antes de enviar alterações e <strong>relatar defeitos com honestidade</strong> — inclusive os que você mesmo
+            causou. Esconder uma falha para "não atrasar a entrega" só transfere o custo (e multiplica por 10)
+            para depois.</p>
+            <h3 id="capitulo-01-videos">🎬 Vídeos para assistir (até 15 min)</h3>
+            <div class="caixa-video"><a href="https://www.youtube.com/watch?v=5HBS5M97wXo" target="_blank" rel="noopener"><img class="caixa-video__miniatura" src="https://i.ytimg.com/vi/5HBS5M97wXo/hqdefault.jpg" alt="Miniatura do vídeo Testes unitários, integração e E2E: você realmente sabe a diferença?"></a><div><p class="caixa-video__titulo">▶️ Testes unitários, integração e E2E: você realmente sabe a diferença?</p><p class="caixa-video__detalhe">⏱️ 14:01 · Full Cycle</p><p class="caixa-video__detalhe">🔗 <a href="https://www.youtube.com/watch?v=5HBS5M97wXo" target="_blank" rel="noopener">https://www.youtube.com/watch?v=5HBS5M97wXo</a></p></div></div>
+            <div class="caixa-video"><a href="https://www.youtube.com/watch?v=ETyeakDeMl8" target="_blank" rel="noopener"><img class="caixa-video__miniatura" src="https://i.ytimg.com/vi/ETyeakDeMl8/hqdefault.jpg" alt="Miniatura do vídeo Tipos de testes de software"></a><div><p class="caixa-video__titulo">▶️ Tipos de testes de software</p><p class="caixa-video__detalhe">⏱️ 10:19 · 4ALL Tests</p><p class="caixa-video__detalhe">🔗 <a href="https://www.youtube.com/watch?v=ETyeakDeMl8" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ETyeakDeMl8</a></p></div></div>
+            <div class="caixa-video"><a href="https://www.youtube.com/watch?v=DximzBibKm4" target="_blank" rel="noopener"><img class="caixa-video__miniatura" src="https://i.ytimg.com/vi/DximzBibKm4/hqdefault.jpg" alt="Miniatura do vídeo Erro × defeito × falha: entenda a diferença"></a><div><p class="caixa-video__titulo">▶️ Erro × defeito × falha: entenda a diferença</p><p class="caixa-video__detalhe">⏱️ 05:39 · Leo in Tech</p><p class="caixa-video__detalhe">🔗 <a href="https://www.youtube.com/watch?v=DximzBibKm4" target="_blank" rel="noopener">https://www.youtube.com/watch?v=DximzBibKm4</a></p></div></div>
+            <h3 id="capitulo-01-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li><strong>Qualidade</strong> = atender aos requisitos e às expectativas do usuário; testar é responsabilidade de toda a equipe.</li><li><strong>Erro</strong> (ação humana) gera <strong>defeito</strong> (no código), que aparece como <strong>falha</strong> (no uso).</li><li><strong>Verificação:</strong> construímos o produto certo conforme a especificação? <strong>Validação:</strong> é o produto que o usuário precisa?</li><li><strong>Tipos de teste:</strong> funcionalidade, usabilidade, confiabilidade, desempenho e manutenibilidade; técnicas de <strong>caixa preta</strong> e <strong>caixa branca</strong>.</li><li><strong>Pirâmide:</strong> muitos unitários, alguns de integração, poucos E2E; evite o cone de sorvete e os testes intermitentes.</li><li>Bons testes são assertivos, repetíveis e independentes (padrão <strong>AAA</strong>); relatar defeitos com honestidade é parte do trabalho.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="exercicios" data-capitulo="capitulo-01">
+            <h3 id="capitulo-01-exercicios">✍️ Exercícios<button class="apostila__botao apostila__botao--pequeno" type="button" data-exportar-exercicios="capitulo-01">📥 Exportar PDF</button></h3>
+            <p class="exercicios__capitulo">Capítulo 01 — Fundamentos de Testes de Software</p>
+            <div class="exercicios__identificacao"><span class="exercicios__campo">Aluno(a):</span><span class="exercicios__campo">Turma:</span><span class="exercicios__campo">Data:</span></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 1</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Reconhecer as especificações técnicas da interface<br><strong>C3</strong> — Reconhecer as etapas de planejamento de testes</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Na especificação da tela de cadastro da Loja Nuvem Azul: &quot;o campo CPF aceita 11 dígitos e mostra máscara 000.000.000-00&quot;. Nos testes com clientes, muitos idosos não entenderam a máscara e desistiram do cadastro no celular.</p><p><span class="exercicio-label">Comando:</span> Explique a diferença entre verificação e validação usando essa tela: dê um exemplo de verificação e um de validação e diga qual dos dois falhou nesse caso.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 2</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C2</strong> — Reconhecer os requisitos da documentação de testes</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> A equipe listou cinco testes: (a) a página do catálogo carrega em menos de 2,5 s; (b) o cupom &quot;NUVEM10&quot; dá 10% de desconto; (c) o checkout pode ser feito só com o teclado; (d) se a API de frete cair, aparece um aviso e a compra continua; (e) trocar o nome de uma classe CSS não quebra os testes.</p><p><span class="exercicio-label">Comando:</span> Classifique cada teste pelo tipo (funcionalidade, usabilidade, confiabilidade, desempenho ou manutenibilidade) e justifique em uma linha.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 3</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C2</strong> — Reconhecer os requisitos da documentação de testes<br><strong>C3</strong> — Reconhecer as etapas de planejamento de testes</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Um desenvolvedor escreveu `if (total &gt; 200)` na regra de frete grátis, mas a especificação diz &quot;a partir de R$ 200&quot;. Uma cliente com exatamente R$ 200 no carrinho pagou frete e reclamou.</p><p><span class="exercicio-label">Comando:</span> Monte o mapa erro → defeito → falha dessa situação e diga qual técnica (caixa branca ou caixa preta) e qual nível da pirâmide teriam encontrado o problema mais cedo.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 4</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C3</strong> — Reconhecer as etapas de planejamento de testes</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> A suíte da Loja Nuvem Azul tem 80% de testes de ponta a ponta, demora 2 horas e falha &quot;do nada&quot; em 1 de cada 5 execuções.</p><p><span class="exercicio-label">Comando:</span> Explique o problema (cone de sorvete), proponha uma nova distribuição pela pirâmide de testes e classifique onde ficariam os testes de: `calcularDesconto()`, formulário de login com API simulada e fluxo login → carrinho → pagamento.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 5</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C2</strong> — Reconhecer os requisitos da documentação de testes</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Com o prazo apertado, o gerente sugere pular os testes automatizados e fazer só testes manuais rápidos na véspera do lançamento. Ao rodar a suíte, você percebe que uma alteração sua quebrou o cálculo de parcelas.</p><p><span class="exercicio-label">Comando:</span> Argumente sobre os riscos técnicos e financeiros de pular os testes (use a regra de 10) e descreva a atitude responsável diante do defeito que você mesmo causou.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 6</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Reconhecer as especificações técnicas da interface<br><strong>C2</strong> — Reconhecer os requisitos da documentação de testes</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Para revisar a aula, a turma vai trocar questões de múltipla escolha sobre verificação, validação e tipos de teste.</p><p><span class="exercicio-label">Comando:</span> Elabore duas questões de múltipla escolha (A a D) — uma sobre verificação × validação e outra sobre tipos de teste —, indicando a alternativa correta e explicando por que as outras estão erradas.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+        </section>
+    </div>
+</body>
+</html>

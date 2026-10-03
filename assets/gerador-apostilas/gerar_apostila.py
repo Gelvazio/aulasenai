@@ -58,7 +58,7 @@ SECOES_OBRIGATORIAS = ("Teoria", "Vídeos", "Exercícios", "Resumo", "Glossário
 DURACAO_MAXIMA_SEGUNDOS = 15 * 60
 LINHAS_RESPOSTA_PADRAO = 3
 QUANTIDADE_MINIMA_EXERCICIOS = 5
-EXTENSOES_MARKDOWN = ["tables", "sane_lists"]
+EXTENSOES_MARKDOWN = ["tables", "sane_lists", "fenced_code"]
 RECUO = " " * 12
 
 PADRAO_TITULO = re.compile(r"^#\s+(.+?)\s*$", re.MULTILINE)
