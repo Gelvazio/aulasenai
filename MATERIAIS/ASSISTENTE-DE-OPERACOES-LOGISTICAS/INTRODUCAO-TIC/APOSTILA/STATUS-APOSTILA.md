@@ -22,6 +22,6 @@
 | 05 | Segurança da Informação e Proteção de Dados | ✅ | ✅ 4 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 06 | Editor de Textos: Formatação e Estruturação | ✅ | ✅ 4 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 07 | Textos Técnicos e Redação Empresarial | ✅ | ✅ 4 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
-| 08 | Editor de Planilhas: Organização e Fórmulas | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 08 | Editor de Planilhas: Organização e Fórmulas | ✅ | ✅ 4 | ✅ | ✅ 7 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 09 | Planilhas: Análise Visual e Gráficos | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 10 | Editor de Apresentações e TIC | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |

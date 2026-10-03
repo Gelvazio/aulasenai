@@ -152,6 +152,20 @@
   - [Vídeos](#vídeos-6)
   - [Resumo](#resumo-7)
   - [Exercícios](#exercícios-6)
+- [Capítulo 08 — Editor de Planilhas: Organização e Fórmulas](#capítulo-08--editor-de-planilhas-organização-e-fórmulas)
+  - [Teoria](#teoria-7)
+    - [Do caderno de contagem para a planilha](#do-caderno-de-contagem-para-a-planilha)
+    - [Anatomia da planilha](#anatomia-da-planilha)
+    - [Tipos de dados](#tipos-de-dados)
+    - [Formatação de células](#formatação-de-células)
+    - [Fórmulas: o coração da planilha](#fórmulas-o-coração-da-planilha)
+    - [Funções básicas](#funções-básicas)
+    - [Exemplo: estoque de 15 itens com alerta de mínimo](#exemplo-estoque-de-15-itens-com-alerta-de-mínimo)
+    - [Classificação e filtro](#classificação-e-filtro)
+    - [Configuração de página e impressão](#configuração-de-página-e-impressão)
+  - [Vídeos](#vídeos-7)
+  - [Resumo](#resumo-8)
+  - [Exercícios](#exercícios-7)
 <!-- sumario:fim -->
 
 ---
@@ -277,7 +291,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 | 05 | 05 | Segurança da Informação e Proteção de Dados | 4 h | ✅ Incluído |
 | 06 | 06 | Editor de Textos: Formatação e Estruturação | 4 h | ✅ Incluído |
 | 07 | 07 | Textos Técnicos e Redação Empresarial | 4 h | ✅ Incluído |
-| 08 | 08 | Editor de Planilhas: Organização e Fórmulas | 4 h | ⬜ Pendente |
+| 08 | 08 | Editor de Planilhas: Organização e Fórmulas | 4 h | ✅ Incluído |
 | 09 | 09 | Planilhas: Análise Visual e Gráficos | 4 h | ⬜ Pendente |
 | 10 | 10 | Editor de Apresentações e TIC + Avaliação | 4 h | ⬜ Pendente |
 
@@ -735,6 +749,7 @@ O tempo e o formato podem ser adaptados sem alterar as capacidades avaliadas.
 | Capítulo 05 — Segurança da Informação e Proteção de Dados | C2 |
 | Capítulo 06 — Editor de Textos: Formatação e Estruturação | C1 |
 | Capítulo 07 — Textos Técnicos e Redação Empresarial | C1, C3 |
+| Capítulo 08 — Editor de Planilhas: Organização e Fórmulas | C3 |
 
 ---
 
@@ -743,6 +758,7 @@ O tempo e o formato podem ser adaptados sem alterar as capacidades avaliadas.
 Termos técnicos de todos os capítulos, em ordem alfabética (o número indica o capítulo).
 
 - **Anexo:** arquivo enviado junto com o e-mail. _(cap. 04)_
+- **Área de impressão:** intervalo definido para ser impresso. _(cap. 08)_
 - **Assertividade:** comunicar com clareza, firmeza e respeito, sem agressividade nem omissão. _(cap. 01)_
 - **Ata:** registro formal do que foi discutido e decidido. _(cap. 07)_
 - **Autenticação em dois fatores (2FA):** acesso que exige, além da senha, uma segunda prova de identidade. _(cap. 05)_
@@ -752,6 +768,8 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Canal:** meio usado para transmitir a mensagem (rádio, e-mail, sistema, reunião). _(cap. 01)_
 - **CC:** campo de cópia, para quem precisa acompanhar a mensagem. _(cap. 04)_
 - **CCO:** cópia oculta; os destinatários não veem os endereços uns dos outros. _(cap. 04)_
+- **Célula:** interseção de linha e coluna (B4). _(cap. 08)_
+- **Classificação:** ordenação dos dados por uma coluna. _(cap. 08)_
 - **Código:** conjunto de sinais e palavras comum ao emissor e ao receptor. _(cap. 01)_
 - **Compactação:** redução do tamanho de arquivos, reunindo-os em um único pacote (ZIP). _(cap. 02)_
 - **Comunicação assíncrona:** troca de mensagens em que a resposta não é imediata. _(cap. 04)_
@@ -768,12 +786,16 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Escuta ativa:** ouvir com atenção total, sem interromper, confirmando o que foi entendido. _(cap. 01)_
 - **Estilo:** conjunto de formatações salvo com um nome (ex.: Título 1), aplicado de uma vez. _(cap. 06)_
 - **Feedback:** retorno que confirma a compreensão. _(cap. 01)_
+- **Filtro:** recurso que mostra só as linhas que atendem a um critério. _(cap. 08)_
 - **Formatação:** ajuste da aparência do texto (fonte, parágrafo, página). _(cap. 06)_
+- **Fórmula:** cálculo que começa com o sinal de igual (=). _(cap. 08)_
+- **Função:** fórmula pronta com nome, como SOMA, MÉDIA, CONT.VALORES e SE. _(cap. 08)_
 - **Hardware:** parte física do computador (peças, cabos e circuitos). _(cap. 02)_
 - **Histórico de versões:** registro das versões anteriores de um arquivo, que permite restaurá-lo. _(cap. 04)_
 - **Impessoalidade:** escrita na terceira pessoa, com foco no fato e não em quem o realizou. _(cap. 07)_
 - **Integridade:** garantia de que a informação não foi alterada indevidamente. _(cap. 05)_
 - **Internet:** rede mundial que conecta computadores e outras redes. _(cap. 03)_
+- **Intervalo:** conjunto de células, como C2:C16. _(cap. 08)_
 - **Jargão:** termo de grupo profissional ("picking", "cross-docking"). _(cap. 01)_
 - **LGPD:** Lei Geral de Proteção de Dados (Lei 13.709/2018). _(cap. 05)_
 - **Malware:** programa malicioso (vírus, ransomware, spyware). _(cap. 05)_
@@ -788,10 +810,12 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Ofício:** comunicação escrita formal enviada para fora da empresa. _(cap. 07)_
 - **Operador de busca:** símbolo ou palavra que refina a pesquisa no buscador. _(cap. 03)_
 - **Ordem de serviço (OS):** documento que autoriza e registra a execução de um trabalho técnico. _(cap. 07)_
+- **Pasta de trabalho:** arquivo de planilha, que pode ter várias abas. _(cap. 08)_
 - **Periférico:** dispositivo de entrada/saída (leitor de código de barras, impressora de etiquetas). _(cap. 02)_
 - **Permissão:** nível de acesso a um arquivo ou pasta (leitor, comentador ou editor). _(cap. 04)_
 - **Phishing:** golpe que imita mensagem legítima. _(cap. 05)_
 - **Plágio:** apresentar como seu o trabalho de outra pessoa, sem dar crédito. _(cap. 03)_
+- **Planilha:** grade de linhas e colunas para organizar dados e fazer cálculos. _(cap. 08)_
 - **Política de Uso Aceitável (PUA):** regras da empresa para uso da internet e dos computadores. _(cap. 03)_
 - **POP:** procedimento operacional padrão, passo a passo de uma tarefa. _(cap. 07)_
 - **Processador (CPU):** componente que executa os cálculos e as instruções. _(cap. 02)_
@@ -799,6 +823,7 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Ransomware:** malware que bloqueia os arquivos e exige resgate. _(cap. 05)_
 - **Receptor:** quem recebe e interpreta a mensagem. _(cap. 01)_
 - **Recuo:** distância entre o parágrafo e a margem. _(cap. 06)_
+- **Referência absoluta:** endereço fixado com $ (ex.: $H$1), que não muda ao copiar a fórmula. _(cap. 08)_
 - **Relatório técnico:** documento que apresenta fatos, dados, análise e recomendações. _(cap. 07)_
 - **Resumo:** texto que condensa as ideias principais de um documento, sem opinião. _(cap. 07)_
 - **Ruído:** interferência que distorce a mensagem (barulho, termo ambíguo, e-mail sem assunto). _(cap. 01)_
@@ -2111,3 +2136,178 @@ vale ler o documento inteiro.
 - **Contexto:** Na pasta do setor estão: um registro do que foi decidido na reunião de segunda, um aviso interno do almoxarifado para a expedição, um texto que condensa o relatório mensal em 10 linhas, um passo a passo de recebimento e uma mensagem pessoal de aniversário.
 - **Comando:** Identifique o tipo de cada texto (ata, memorando, resumo, POP ou texto não técnico) e diga qual norma ABNT se aplica ao relatório e ao resumo.
 - **Linhas:** 5
+
+---
+
+# Capítulo 08 — Editor de Planilhas: Organização e Fórmulas
+
+- **Aula:** 08
+- **Carga horária:** 4 horas (1 aula)
+- **Capacidade:** C3
+- **Fonte:** `APOSTILA/CONTEUDO/CAPITULO-08.md`
+
+## Teoria
+
+### Do caderno de contagem para a planilha
+
+No almoxarifado da **Distribuidora Vale Norte**, a contagem de estoque ainda é feita num caderno.
+Para saber se um item precisa ser reposto, alguém compara, de cabeça, a quantidade contada com o
+estoque mínimo. Erros de soma, itens esquecidos e pedidos de compra atrasados são comuns. Uma
+**planilha** bem organizada faz as contas sozinha e **avisa** quando um item chega ao mínimo.
+
+> 🎯 **Objetivos do capítulo:** organizar dados em **linhas, colunas e células**, **formatar** a
+> planilha, usar **fórmulas e funções básicas** (SOMA, MÉDIA, CONT.VALORES e SE), **classificar e
+> filtrar** e **configurar a página para impressão**.
+
+### Anatomia da planilha
+
+- **Pasta de trabalho:** o arquivo; pode ter várias **abas** (planilhas), como "Estoque" e "Pedidos".
+- **Colunas** são identificadas por letras (A, B, C...) e **linhas** por números (1, 2, 3...).
+- **Célula** é a interseção de linha e coluna (B4). O **endereço** da célula é a letra da coluna
+  seguida do número da linha.
+- **Intervalo** é um conjunto de células: `C2:C16` (da C2 até a C16).
+
+Os recursos são os mesmos nas principais planilhas (Excel, Planilhas Google, LibreOffice Calc);
+as funções em português têm os mesmos nomes.
+
+### Tipos de dados
+
+| Tipo | Exemplo | Cuidado |
+|---|---|---|
+| Texto | Luva nitrílica M | Não misture número com texto: "15 un" não entra em cálculo |
+| Número | 15 | Use uma coluna para a unidade, se precisar |
+| Data | 14/10/2026 | Formate como data para poder ordenar |
+| Moeda | R$ 3,50 | Formate como moeda; não digite "R$" à mão |
+
+### Formatação de células
+
+- **Formato de número:** número, moeda, porcentagem, data.
+- **Alinhamento:** textos à esquerda, números à direita; títulos centralizados sobre a tabela.
+- **Bordas e preenchimento** no cabeçalho; **negrito** nos títulos.
+- **Largura da coluna:** se aparecer `#####`, a coluna está estreita demais para o número.
+- **Formatação condicional:** pinta a célula automaticamente (ex.: vermelho quando o estoque
+  está abaixo do mínimo).
+
+### Fórmulas: o coração da planilha
+
+Toda fórmula começa com **=**. Operadores: `+` soma, `-` subtração, `*` multiplicação, `/`
+divisão. Use **endereços**, não números fixos: `=C2-D2` é recalculado sozinho quando C2 muda.
+
+- **Referência relativa** (`C2`): muda quando a fórmula é copiada para baixo (C3, C4...).
+- **Referência absoluta** (`$H$1`): fica fixa ao copiar — útil para um valor único, como o custo
+  de armazenagem por caixa guardado na célula H1.
+
+### Funções básicas
+
+| Função | O que faz | Exemplo na planilha de estoque |
+|---|---|---|
+| **SOMA** | Soma um intervalo | `=SOMA(C2:C16)` → total de unidades em estoque |
+| **MÉDIA** | Calcula a média | `=MÉDIA(C2:C16)` → estoque médio por item |
+| **CONT.VALORES** | Conta células preenchidas | `=CONT.VALORES(B2:B16)` → quantos itens estão cadastrados |
+| **SE** | Testa uma condição e devolve um de dois resultados | `=SE(C2<=D2;"REPOR";"OK")` → alerta de estoque mínimo |
+
+A função **SE** segue a lógica: `=SE(teste; valor_se_verdadeiro; valor_se_falso)`. No exemplo,
+se o estoque atual (C2) for menor ou igual ao mínimo (D2), aparece **REPOR**; senão, **OK**.
+
+### Exemplo: estoque de 15 itens com alerta de mínimo
+
+| Código | Produto | Estoque atual (C) | Estoque mínimo (D) | Situação (E) |
+|---|---|---|---|---|
+| A01 | Luva nitrílica M (par) | 120 | 100 | OK |
+| A02 | Fita adesiva 48 mm | 35 | 50 | REPOR |
+| A03 | Filme stretch (rolo) | 18 | 20 | REPOR |
+| A04 | Etiqueta térmica (rolo) | 64 | 40 | OK |
+| A05 | Palete PBR | 42 | 30 | OK |
+| A06 | Cantoneira de papelão | 300 | 250 | OK |
+| A07 | Caixa de papelão G | 90 | 120 | REPOR |
+| A08 | Caixa de papelão M | 210 | 150 | OK |
+| A09 | Saco plástico 60 L | 500 | 400 | OK |
+| A10 | Lacre numerado | 950 | 1000 | REPOR |
+| A11 | Bateria do coletor | 6 | 4 | OK |
+| A12 | Óculos de proteção | 25 | 20 | OK |
+| A13 | Capacete | 12 | 10 | OK |
+| A14 | Ribbon para impressora | 9 | 10 | REPOR |
+| A15 | Marcador permanente | 40 | 30 | OK |
+
+Os dados começam na linha 2 (a linha 1 é o cabeçalho). Na célula E2 vai `=SE(C2<=D2;"REPOR";"OK")`
+e a fórmula é **copiada** até a E16. Embaixo da tabela: total (SOMA), média (MÉDIA) e quantidade de
+itens (CONT.VALORES). Com esses dados, um **gráfico de colunas** comparando estoque atual e mínimo
+mostra rapidamente o que precisa ser reposto (gráficos são o tema do capítulo 9).
+
+### Classificação e filtro
+
+- **Classificar:** ordena os dados (de A a Z, do menor para o maior) — ex.: produtos do menor para
+  o maior estoque. Selecione **a tabela inteira** antes, para não separar o produto da sua
+  quantidade.
+- **Filtrar:** mostra só as linhas que interessam — ex.: só os itens com situação **REPOR**. As
+  outras linhas ficam escondidas, não apagadas.
+- **Congelar painéis:** mantém o cabeçalho visível ao rolar uma lista longa.
+
+### Configuração de página e impressão
+
+- **Orientação** paisagem para tabelas largas; **margens** estreitas quando necessário.
+- **Área de impressão:** imprime só o intervalo escolhido.
+- **Ajustar a uma página de largura:** evita a tabela cortada em várias folhas.
+- **Repetir a linha de títulos** em todas as páginas e colocar **cabeçalho/rodapé** com o nome do
+  relatório, a data e o número da página.
+- Sempre confira a **visualização de impressão** antes de imprimir.
+
+## Vídeos
+
+- [Como usar SOMA, MÉDIA, MÍNIMO e MÁXIMO passo a passo](https://www.youtube.com/watch?v=xokwgKhcGOo) — 09:09 — Érika Melo
+- [Como usar a função SE no Google Planilha](https://www.youtube.com/watch?v=1FX0whI33u8) — 04:52 — As dicas de informatica
+- [Como usar Classificar e Filtrar no Excel](https://www.youtube.com/watch?v=PBqXGDfzZPE) — 08:45 — Curso de Excel Online
+- [Planilha de controle de estoque](https://www.youtube.com/watch?v=Ohvui4-ili8) — 03:50 — Smart Planilhas
+
+## Resumo
+
+- A planilha é organizada em **linhas** (números), **colunas** (letras) e **células** (endereço como B4); intervalos como `C2:C16`.
+- Use o **tipo de dado** certo e **formate** células (moeda, data, bordas, formatação condicional).
+- Fórmulas começam com **=** e usam endereços; **$** fixa uma referência ao copiar.
+- **SOMA**, **MÉDIA**, **CONT.VALORES** e **SE** resolvem o controle de estoque, inclusive o alerta de mínimo.
+- **Classificar** ordena; **filtrar** mostra só o que interessa, sem apagar dados.
+- Configure orientação, área de impressão, ajuste à página e títulos repetidos e confira a visualização antes de imprimir.
+
+## Exercícios
+
+### ITEM 1
+- **Capacidade:** C3
+- **Contexto:** A contagem de estoque do almoxarifado é feita em papel, e ninguém percebe a tempo quando um item chega ao estoque mínimo.
+- **Comando:** Descreva como montar a planilha de controle: quais colunas criar, em que linha começam os dados, que fórmula usar para o alerta de estoque mínimo e como formatar a coluna do alerta para destacar os itens a repor.
+- **Linhas:** 6
+
+### ITEM 2
+- **Capacidade:** C3
+- **Contexto:** Use a tabela de 15 itens do capítulo (estoque atual na coluna C, das linhas 2 a 16; mínimo na coluna D; produtos na coluna B).
+- **Comando:** Escreva as fórmulas para: (a) total de unidades em estoque; (b) estoque médio por item; (c) quantidade de itens cadastrados; (d) situação do item da linha 2. Explique o que cada uma faz.
+- **Linhas:** 6
+
+### ITEM 3
+- **Capacidade:** C3
+- **Contexto:** O custo de armazenagem por unidade (R$ 0,40) está na célula H1. Na coluna F, você quer calcular o custo de cada item multiplicando o estoque (coluna C) por esse valor e copiar a fórmula para os 15 itens.
+- **Comando:** Escreva a fórmula da célula F2 e explique por que ela precisa de referência absoluta ($) em H1. O que aconteceria sem o $ ao copiar a fórmula para baixo?
+- **Linhas:** 4
+
+### ITEM 4
+- **Capacidade:** C3
+- **Contexto:** O supervisor pediu uma lista só com os itens que precisam ser repostos, do menor para o maior estoque, para montar o pedido de compra.
+- **Comando:** Explique, passo a passo, como usar filtro e classificação para obter essa lista sem apagar nenhum dado da planilha.
+- **Linhas:** 4
+
+### ITEM 5
+- **Capacidade:** C3
+- **Contexto:** Ao imprimir a planilha de estoque, ela saiu em três folhas, com a última coluna sozinha numa página e sem o cabeçalho nas folhas seguintes.
+- **Comando:** Indique as configurações de página e de impressão que resolvem o problema e o que conferir antes de imprimir de novo.
+- **Linhas:** 4
+
+### ITEM 6
+- **Capacidade:** C3
+- **Contexto:** Na planilha de um colega aparecem três problemas: a quantidade foi digitada como "15 un", uma coluna mostra "#####" e a soma não inclui os itens novos colocados no fim da lista.
+- **Comando:** Explique a causa de cada problema e como corrigi-lo.
+- **Linhas:** 4
+
+### ITEM 7
+- **Capacidade:** C3
+- **Contexto:** Na reunião semanal, a gerência quer ver, num relance, quais dos 15 itens estão abaixo do mínimo.
+- **Comando:** Explique que gráfico você faria com a tabela (quais colunas selecionar e por quê) e como ele ajuda a decidir a reposição.
+- **Linhas:** 4
