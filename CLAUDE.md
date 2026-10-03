@@ -1509,7 +1509,8 @@ assets/
 │                        CRUD da tabela `turmaaluno`)
 ├─ gerador-materia/    → materia.py: lê o <MATERIA>/materia.json (arquivo ÚNICO de dados da
 │                        matéria), usado por todos os geradores (ver "REGRAS APOSTILAS")
-├─ gerador-apostilas/  → gerar_apostila.py + markdown_apostila.py + template_apostila.html:
+├─ gerador-apostilas/  → gerar_apostila.py + markdown_apostila.py + conferir_ementa.py +
+│                        template_apostila.html:
 │                        capítulos (APOSTILA/CONTEUDO/) → Markdown completo (--markdown) → HTML
 │                        da apostila (css/apostila.css, js/apostila.js, img/logo-sesi-senai.png)
 ├─ gerador-atividades/ → gerar_atividades.py + template_atividade.html: gera as páginas de
@@ -1791,10 +1792,42 @@ antes de gerar o HTML**, em todas as matérias.
     rubrica, recuperação), recursos/acessibilidade e o glossário oficial;
   - nada de fora da ementa apresentado como oficial (aprofundamentos só como detalhamento
     didático) e nenhuma marca de software imposta (regra da ementa).
-- ✅ **Como conferir antes de seguir:** (1) reler a ementa da matéria inteira; (2) comparar seção
-  por seção com o Markdown completo (tabela "Cobertura completa da ementa", abaixo); (3) rodar o
-  gerador e zerar os avisos ⚠️; (4) informar ao usuário o resultado da conferência
-  (✅ bate 100% ou a lista do que foi corrigido) **antes** de gerar o próximo capítulo.
+- ✅ **Como conferir antes de seguir:** (1) reler a ementa da matéria inteira; (2) rodar a
+  **conferência obrigatória** (abaixo) até dar 100%; (3) zerar os avisos ⚠️ dos capítulos;
+  (4) informar ao usuário o resultado (✅ bate 100% ou a lista do que foi corrigido) **antes** de
+  gerar o próximo capítulo.
+
+### ⛔ CONFERÊNCIA OBRIGATÓRIA ANTES DE GERAR QUALQUER APOSTILA
+
+Registrada em 2026-10-03 a pedido do usuário. **Sempre, antes de gerar uma apostila (HTML) ou um
+capítulo novo de qualquer matéria, fazer a conferência do Markdown completo com a ementa da
+matéria.**
+
+- ✅ **Comando:** `C:\Python314\python.exe assets\gerador-apostilas\gerar_apostila.py
+  <pasta da matéria> --conferir` (módulo `assets/gerador-apostilas/conferir_ementa.py`). Ela
+  também roda **sozinha** depois do `--markdown` e **antes do HTML**.
+- ⛔ **O HTML fica bloqueado** (o gerador para com erro) se a conferência não der **100%**. Não
+  existe opção para pular a conferência; corrigir o que falta e rodar de novo.
+- ✅ **O que ela compara, item por item e literalmente** (sem diferenciar maiúsculas e ignorando
+  `**`, `_`, `` ` `` e o tipo de travessão): identificação da UC (nome, módulo, carga horária,
+  modalidade), justificativa, objetivo geral e dimensões, competência integradora (eixo,
+  competência, resultados), capacidades básicas e socioemocionais, indicadores, conhecimentos
+  (linha inteira de cada domínio) e detalhamento didático, sequência de aulas (tema, domínios,
+  capacidades, atividade e estratégias de cada aula), aula padrão, marcos, situações-problema,
+  avaliação (instrumentos, tarefas, formativa, recuperação, rubrica), BNCC, recursos,
+  acessibilidade, referências, métricas, ideias (prompts), regras para IA, capacidades ×
+  conhecimentos e o glossário oficial (termo + definição).
+- ✅ Ela lê a ementa **pela estrutura** (tabelas, listas numeradas e campos em negrito do padrão
+  `EMENTA-CHALKIE-AI.md`), sem textos fixos de matéria; vale para qualquer matéria. Seção da
+  ementa fora desse padrão: conferir à mão e avisar o usuário.
+- ✅ **Fora da conferência** (não são conteúdo da apostila): materiais da pasta, plataforma,
+  checklist, status e notas de proveniência da ementa.
+- ✅ **Nos capítulos**, o gerador também avisa (⚠️) quando tema, capacidades ou termos oficiais do
+  glossário diferem do plano, ou quando a **definição** de um termo oficial no capítulo é
+  diferente da ementa (tem de ser a da ementa, literal).
+- ✅ Para bater 100%, o texto oficial entra **literal** no `materia.json` (copiado da ementa, não
+  reescrito) e o Markdown completo o reproduz na seção **"Ementa da matéria (texto oficial)"**, no
+  plano de aulas, nas capacidades/conhecimentos, no glossário e nas referências.
 - ✅ Se a ementa da matéria divergir da **ementa do curso**, a do curso vence: avisar o usuário,
   corrigir a ementa da matéria/`materia.json` conforme ele decidir e só então conferir o Markdown.
 
@@ -1829,6 +1862,10 @@ Registrada em 2026-10-03 a pedido do usuário.
   1. **cabeçalho:** UC, curso, docente, carga horária da UC, capítulos previstos (1 capítulo =
      1 aula de 4 h), data de geração e o aviso de que o arquivo é a fonte final;
   2. **sumário com links** (refeito a cada geração, entre os marcadores `sumario:inicio/fim`);
+  2a. **"Ementa da matéria (texto oficial)"**: justificativa, objetivo geral, competência
+     integradora, avaliação (instrumentos, tarefas, nota final da UC, formativa, recuperação,
+     rubrica), recursos e ambientes, acessibilidade, aula padrão (4 h), marcos, capacidades ×
+     conhecimentos, regras para IA, métricas e mapeamento BNCC — tudo literal da ementa;
   3. **plano de capítulos:** tabela das aulas (capítulo, aula, tema, 4 h, situação ✅ incluído /
      ⬜ pendente) e, para **cada aula**, a seção "Aula NN — tema" com domínios, capacidades,
      situação-problema, atividade, estratégias, BNCC, marco, termos oficiais do glossário,
@@ -1838,6 +1875,7 @@ Registrada em 2026-10-03 a pedido do usuário.
   5. **capacidades da matéria:** básicas, socioemocionais, **conhecimentos da UC** (domínios e
      conteúdos), tabela **capacidades × conhecimentos** e tabela **capacidades por capítulo**;
   6. **glossário** de todos os capítulos, em ordem alfabética, com `_(cap. NN)_`;
+  6a. **referências** da ementa;
   7. **capítulos** (identificação com aula, carga horária e capacidades + teoria, vídeos, resumo
      e exercícios).
 - ✅ O que o usuário acrescentar no Markdown completo **vale para o HTML**; o gerador **não
@@ -1880,11 +1918,17 @@ capacidades básicas: completar socioemocionais e conhecimentos quando cada uma 
     uma com `numero`, `aula`, `tema`, `carga_horaria`, `dominios`, `capacidades`,
     `conteudos_oficiais`, `detalhamento_didatico`, `indicadores`, `indicadores_numeros`,
     `situacao_problema`, `atividade`, `estrategias`, `bncc`, `marco` (quando houver),
-    `termos_glossario_ementa` e `ideias_ementa`;
+    `termos_glossario_ementa`, `ideias_ementa` (prompts literais da ementa), `dominios_texto`
+    (quando a ementa escreve os domínios por extenso, ex.: "10, todos") e `observacao` (ex.:
+    como um domínio indicado em duas aulas foi distribuído entre elas);
   - **demais seções da ementa:** `justificativa`, `objetivo_geral`, `competencia_integradora`,
     `indicadores_desempenho`, `detalhamento_didatico_conhecimentos`, `estrategias_siglas`,
     `aula_padrao_4h`, `marcos`, `avaliacao`, `mapeamento_bncc`, `recursos`, `acessibilidade`,
-    `glossario_ementa`, `regras_ia`, `metricas` e `referencias`.
+    `glossario_ementa`, `regras_ia`, `metricas`, `referencias` e
+    `capacidades_x_conhecimentos_ementa` (linha literal da ementa).
+  - **Texto literal:** conteúdos, temas, glossário, objetivos, competência, avaliação, recursos,
+    acessibilidade, aula padrão, prompts, regras e referências são **copiados** da ementa, não
+    reescritos (é o que permite a conferência dar 100%).
 - ✅ **Conteúdo oficial separado do didático:** `conteudos_oficiais` = literal da ementa;
   `detalhamento_didatico` = exemplos e aprofundamentos (regra da ementa de não misturar).
 - ✅ Divergência com a ementa do curso: a ementa do curso vence e o usuário é avisado.

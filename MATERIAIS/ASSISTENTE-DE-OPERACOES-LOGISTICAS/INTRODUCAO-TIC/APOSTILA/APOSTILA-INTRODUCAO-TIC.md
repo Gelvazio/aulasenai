@@ -1,6 +1,8 @@
 # Apostila — Introdução à Tecnologia da Informação e Comunicação
 
 > **Curso:** Assistente de Operações Logísticas · **Docente:** Gelvazio Camargo  
+> **Módulo:** Educação para o Trabalho (Básico) · **Modalidade:** Presencial  
+> **Ementa:** EMENTA-CHALKIE-AI.md v3.1 — conciliada e compactada (2026-09-23)  
 > **Carga horária da UC:** 40 horas · **Capítulos previstos:** 10 (1 capítulo = 1 aula de 4 horas)  
 > **Gerado em:** 03/10/2026, a partir de `APOSTILA/CONTEUDO/`.
 
@@ -11,6 +13,19 @@
 ## Sumário
 
 <!-- sumario:inicio (gerado; atualizado a cada geração) -->
+- [Ementa da matéria (texto oficial)](#ementa-da-matéria-texto-oficial)
+  - [Justificativa](#justificativa)
+  - [Objetivo geral](#objetivo-geral)
+  - [Competência integradora](#competência-integradora)
+  - [Avaliação](#avaliação)
+  - [Recursos e ambientes](#recursos-e-ambientes)
+  - [Acessibilidade](#acessibilidade)
+  - [Aula padrão (4 h)](#aula-padrão-4-h)
+  - [Marcos](#marcos)
+  - [Capacidades × conhecimentos (ementa)](#capacidades--conhecimentos-ementa)
+  - [Regras para IA (seguidas na escrita da apostila)](#regras-para-ia-seguidas-na-escrita-da-apostila)
+  - [Métricas](#métricas)
+  - [Mapeamento BNCC](#mapeamento-bncc)
 - [Plano de capítulos](#plano-de-capítulos)
   - [Aula 01 — Comunicação Profissional e Seus Fundamentos](#aula-01--comunicação-profissional-e-seus-fundamentos)
   - [Aula 02 — Hardware, Periféricos e Sistemas Operacionais](#aula-02--hardware-periféricos-e-sistemas-operacionais)
@@ -21,7 +36,7 @@
   - [Aula 07 — Textos Técnicos e Redação Empresarial](#aula-07--textos-técnicos-e-redação-empresarial)
   - [Aula 08 — Editor de Planilhas: Organização e Fórmulas](#aula-08--editor-de-planilhas-organização-e-fórmulas)
   - [Aula 09 — Planilhas: Análise Visual e Gráficos](#aula-09--planilhas-análise-visual-e-gráficos)
-  - [Aula 10 — Editor de Apresentações e TIC](#aula-10--editor-de-apresentações-e-tic)
+  - [Aula 10 — Editor de Apresentações e TIC + Avaliação](#aula-10--editor-de-apresentações-e-tic--avaliação)
 - [Introdução](#introdução)
   - [Apresentação](#apresentação)
   - [Objetivo geral da unidade curricular](#objetivo-geral-da-unidade-curricular)
@@ -29,7 +44,7 @@
   - [Como estudar com esta apostila](#como-estudar-com-esta-apostila)
   - [Como você será avaliado](#como-você-será-avaliado)
   - [Ambientes, recursos e acessibilidade](#ambientes-recursos-e-acessibilidade)
-  - [Competência integradora](#competência-integradora)
+  - [Competência integradora](#competência-integradora-1)
 - [Capacidades da matéria](#capacidades-da-matéria)
   - [Capacidades básicas](#capacidades-básicas)
   - [Capacidades socioemocionais](#capacidades-socioemocionais)
@@ -37,6 +52,7 @@
   - [Capacidades × conhecimentos](#capacidades--conhecimentos)
   - [Capacidades por capítulo](#capacidades-por-capítulo)
 - [Glossário](#glossário)
+- [Referências](#referências)
 - [Capítulo 01 — Comunicação Profissional e Seus Fundamentos](#capítulo-01--comunicação-profissional-e-seus-fundamentos)
   - [Teoria](#teoria)
     - [Por que estudar comunicação num curso de logística?](#por-que-estudar-comunicação-num-curso-de-logística)
@@ -50,6 +66,114 @@
   - [Resumo](#resumo)
   - [Exercícios](#exercícios)
 <!-- sumario:fim -->
+
+---
+
+# Ementa da matéria (texto oficial)
+
+Referência literal da ementa da matéria, para comparar com a apostila. Não editar aqui: quem muda é a ementa (e o `materia.json`).
+
+## Justificativa
+
+Na logística, quase toda operação passa por recurso digital: e-mail à transportadora, planilha de estoque, relatório de avaria, ata de turno, rastreio em nuvem. A UC prepara o estudante para usá-los com clareza, segurança e postura profissional.
+
+## Objetivo geral
+
+Desenvolver capacidades básicas e socioemocionais em comunicação profissional, interpretação técnica e uso seguro de TIC.
+
+1. Comunicação profissional — comunicar-se oralmente e por escrito de forma clara, assertiva e eficaz.
+2. Interpretação técnica — compreender normas, textos, dados e terminologias de contextos técnicos e industriais.
+3. Uso seguro de TIC — pesquisar, produzir, armazenar e compartilhar informações com segurança.
+
+## Competência integradora
+
+- **Eixo:** Mediação e Intervenção Sociocultural
+- **Competência:** reconhecer conflitos e sugerir soluções para problemas identificados na comunidade.
+- **Resultados:** identificar ações para um ambiente de trabalho saudável, considerando diversidades; demonstrar empatia, escuta ativa e diálogo nas relações profissionais.
+
+## Avaliação
+
+| Instrumento | Valor | Momento | Capacidades |
+|---|---|---|---|
+| Avaliação Objetiva — 40 questões, 7 eixos, 60 min | 4,0 | Aula 10 | C1, C2, C3, C4, C5 |
+| Avaliação Prática — 4 tarefas, 100 min | 6,0 | Aula 10 | C1, C2, C3, C4, C5 |
+| ↳ T1 Organização, backup e comunicação | 1,5 | | C1, C2, C4, C5 |
+| ↳ T2 Relatório técnico | 2,0 | | C1, C3 |
+| ↳ T3 Planilha de análise | 1,5 | | C3, C4 |
+| ↳ T4 Apresentação | 1,0 | | C1 |
+| **Nota final da UC** | **10,0** | | |
+
+- **Formativa:** atividade de 50 questões de cada aula, quizzes e registro qualitativo em CRITERIOS-CORRECAO-PRATICA.md.
+- **Recuperação:** contínua — quem não concluir a atividade refaz com roteiro guiado na aula seguinte ou como tarefa; final — nota < 7,0 refaz a(s) tarefa(s) práticas de maior perda e/ou nova objetiva equivalente, conforme regimento SENAI, retomando só as capacidades não atingidas.
+
+| Nível | Nota | Descrição |
+|---|---|---|
+| Excelente | 9–10 | Usa a ferramenta com autonomia, produz documento correto e comunica com clareza e segurança |
+| Bom | 7–8 | Cumpre a tarefa com pequenos ajustes; poucas falhas de formatação ou linguagem |
+| Aceitável | 5–6 | Cumpre o essencial com orientação; erros que não comprometem a mensagem |
+| Insuficiente | 0–4 | Não conclui ou compromete a compreensão ou a segurança |
+
+## Recursos e ambientes
+
+- **Ambientes:** sala de aula, laboratório de informática, auditório, RV.
+- **Equipamentos:** projetor, computadores, quadro branco, lousa digital, RA/RV.
+- **Recurso didático:** Estante Virtual SENAI DN.
+
+## Acessibilidade
+
+- **visual:** zoom, alto contraste, leitor de tela (NVDA, TalkBack, ChromeVox), fonte ampliada
+- **auditiva:** legendas, instruções escritas, intérprete de Libras quando houver
+- **motora:** atalhos, digitação por voz, tempo estendido
+- **leitura/TDAH:** passo a passo numerado, etapas curtas, checklist
+- **pouca familiaridade:** duplas e demonstração lenta
+
+Adaptar tempo e formato sem alterar as capacidades avaliadas.
+
+## Aula padrão (4 h)
+
+pergunta disparadora (15 min) → exposição com slide (60) → quiz Kahoot/Wayground (15) → intervalo (15) → prática no laboratório (105) → socialização e feedback (30).
+
+## Marcos
+
+- Aula 3 — Opera o computador, organiza arquivos e pesquisa com critério
+- Aula 5 — Comunica-se digitalmente e protege dados
+- Aula 7 — Produz documento formatado e texto técnico
+- Aula 10 — Integra texto, planilha e apresentação
+
+## Capacidades × conhecimentos (ementa)
+
+- C1 Comunicação → domínios 1, 2, 3, 7, 8, 10
+- C2 Segurança → 6
+- C3 Interpretação técnica → 8, 9
+- C4 Hardware/software → 4, 7, 9, 10
+- C5 Web → 5
+
+## Regras para IA (seguidas na escrita da apostila)
+
+1. Capacidades = resultados amplos; conhecimentos = meios para desenvolvê-las.
+2. Integrar competências técnicas e socioemocionais em atividades de comunicação e grupo.
+3. Não inventar critérios, pesos ou quantidade de aulas além dos definidos nas Seções IV e V.
+4. Não impor marcas de software: a ementa cita categorias, não produtos.
+5. Verificar atualidade de leis, normas e práticas de segurança.
+6. Diferenciar conteúdo **[oficial]** de exemplos e aprofundamentos.
+7. Manter contexto profissional, logístico e industrial nos exemplos.
+8. Promover uso ético, seguro, responsável e inclusivo das tecnologias.
+9. Ao citar ABNT, ISO, IEEE ou ANSI, declarar qual norma está sendo adotada.
+
+## Métricas
+
+- 80%+ dos estudantes com nota final ≥ 7,0
+- 100% entregam a pasta compactada da prova prática
+
+## Mapeamento BNCC
+
+| Competência | Aulas | Foco |
+|---|---|---|
+| CG4 Comunicação | 1, 4, 7, 10 | E-mail, relatório, apresentação |
+| CG5 Cultura digital | 2, 3, 5, 8, 9 | Uso ético e seguro de TIC |
+| CG7 Argumentação | 3, 9 | Fontes confiáveis, leitura de gráficos |
+| CG9 Empatia e cooperação | 1, 4, 10 | Consenso, conflitos, grupo |
+| CG10 Responsabilidade | 5, 7 | LGPD, direitos autorais |
 
 ---
 
@@ -68,7 +192,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 | 07 | 07 | Textos Técnicos e Redação Empresarial | 4 h | ⬜ Pendente |
 | 08 | 08 | Editor de Planilhas: Organização e Fórmulas | 4 h | ⬜ Pendente |
 | 09 | 09 | Planilhas: Análise Visual e Gráficos | 4 h | ⬜ Pendente |
-| 10 | 10 | Editor de Apresentações e TIC | 4 h | ⬜ Pendente |
+| 10 | 10 | Editor de Apresentações e TIC + Avaliação | 4 h | ⬜ Pendente |
 
 ## Aula 01 — Comunicação Profissional e Seus Fundamentos
 
@@ -77,13 +201,12 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 - **Atividade / instrumento formativo:** Diagnóstica + falhas de comunicação num turno de expedição
 - **Estratégias:** Exposição dialogada, Dinâmica de grupo, Trabalho em grupo
 - **BNCC:** CG4 Comunicação, CG9 Empatia e cooperação
-- **Termos oficiais do glossário:** Ruído, Feedback, Jargão
 
 **Conteúdos oficiais (ementa):**
 
-- Elementos da comunicação: emissor, receptor, mensagem, canal, ruído, código e feedback
-- Níveis de fala: linguagem culta, técnica e jargão; características de cada nível
-- Comunicação em equipes: dinâmica do trabalho em equipe, busca de consenso e gestão de conflitos
+- Elementos da comunicação: emissor, receptor, mensagem, canal, ruído, código, feedback
+- Níveis de fala: linguagem culta, técnica, jargão; características de cada nível
+- Comunicação em equipes: dinâmica do trabalho em equipe, busca de consenso, gestão de conflitos
 
 **Detalhamento didático:**
 
@@ -99,8 +222,14 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 **Ideias da ementa para exemplos e exercícios:**
 
-- Caso de erro na expedição por ruído, 5 perguntas de checagem e dinâmica em grupo.
-- Dinâmica de conflito entre conferente e motorista sobre horário de doca: papéis, escuta ativa e reflexão.
+- Aula de 4h sobre elementos da comunicação para assistentes de logística: caso de erro na expedição por ruído, 5 perguntas de checagem e dinâmica em grupo.
+- Dinâmica de conflito entre conferente e motorista sobre horário de doca: papéis, escuta ativa, reflexão.
+
+**Termos oficiais do glossário (ementa):**
+
+- **Ruído:** interferência que distorce a mensagem (barulho, termo ambíguo, e-mail sem assunto)
+- **Feedback:** retorno que confirma a compreensão
+- **Jargão:** termo de grupo profissional ("picking", "cross-docking")
 
 ## Aula 02 — Hardware, Periféricos e Sistemas Operacionais
 
@@ -109,14 +238,10 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 - **Atividade / instrumento formativo:** Classificar componentes + checklist de pastas do setor
 - **Estratégias:** Exposição dialogada, Demonstração, Atividade prática
 - **BNCC:** CG5 Cultura digital
-- **Termos oficiais do glossário:** Periférico
 
 **Conteúdos oficiais (ementa):**
 
-- Fundamentos de hardware; identificação de componentes, processadores e periféricos
-- Utilização de periféricos
-- Tipos, fundamentos e funções do sistema operacional; barra de ferramentas; área de trabalho
-- Organização de arquivos em pastas; pesquisa de arquivos e diretórios; compactação de arquivos
+- Hardware e sistema operacional: fundamentos de hardware; identificação de componentes, processadores e periféricos; utilização de periféricos; tipos, fundamentos e funções do SO; barra de ferramentas; área de trabalho; organização de arquivos em pastas; pesquisa de arquivos e diretórios; compactação de arquivos
 
 **Detalhamento didático:**
 
@@ -131,8 +256,12 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 **Ideias da ementa para exemplos e exercícios:**
 
-- Questões sobre hardware, periféricos e SO no contexto de almoxarifado.
+- 10 questões A–D sobre hardware, periféricos e SO, com gabarito comentado, contexto de almoxarifado.
 - Atividade de pastas e compactação ZIP para notas fiscais, com checklist.
+
+**Termos oficiais do glossário (ementa):**
+
+- **Periférico:** dispositivo de entrada/saída (leitor de código de barras, impressora de etiquetas)
 
 ## Aula 03 — Navegação na Web e Pesquisa Acadêmica
 
@@ -142,13 +271,11 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 - **Estratégias:** Exposição dialogada, Atividade prática
 - **BNCC:** CG5 Cultura digital, CG7 Argumentação
 - **Marco:** Opera o computador, organiza arquivos e pesquisa com critério
+- **Observação:** A ementa indica o domínio 5 nas aulas 3 e 4; nesta aula ficam os conteúdos de navegação, pesquisa, download e direitos autorais.
 
 **Conteúdos oficiais (ementa):**
 
-- Políticas de uso
-- Navegadores; sites e buscadores
-- Download e gravação
-- Direitos autorais e citação de fontes
+- Internet e WWW: políticas de uso; navegadores; sites e buscadores; download e gravação; direitos autorais e citação de fontes
 
 **Detalhamento didático:**
 
@@ -168,13 +295,12 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 - **Atividade / instrumento formativo:** E-mail à transportadora + pasta compartilhada
 - **Estratégias:** Atividade prática, Trabalho em grupo
 - **BNCC:** CG4 Comunicação, CG9 Empatia e cooperação
-- **Termos oficiais do glossário:** Nuvem
+- **Observação:** A ementa indica o domínio 5 nas aulas 3 e 4; nesta aula ficam correio eletrônico e armazenamento/compartilhamento em nuvem, com o domínio 3.
 
 **Conteúdos oficiais (ementa):**
 
-- Correio eletrônico
-- Armazenamento e compartilhamento em nuvem
-- Comunicação em equipes: dinâmica do trabalho em equipe, busca de consenso e gestão de conflitos
+- Internet e WWW: correio eletrônico; armazenamento e compartilhamento em nuvem
+- Comunicação em equipes: dinâmica do trabalho em equipe, busca de consenso, gestão de conflitos
 
 **Detalhamento didático:**
 
@@ -189,7 +315,11 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 **Ideias da ementa para exemplos e exercícios:**
 
-- Dinâmica de conflito entre conferente e motorista sobre horário de doca: papéis, escuta ativa e reflexão.
+- Dinâmica de conflito entre conferente e motorista sobre horário de doca: papéis, escuta ativa, reflexão.
+
+**Termos oficiais do glossário (ementa):**
+
+- **Nuvem:** arquivos em servidores na internet
 
 ## Aula 05 — Segurança da Informação e Proteção de Dados
 
@@ -199,16 +329,10 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 - **Estratégias:** Exposição dialogada, Estudo de caso, Gamificação
 - **BNCC:** CG5 Cultura digital, CG10 Responsabilidade
 - **Marco:** Comunica-se digitalmente e protege dados
-- **Termos oficiais do glossário:** Phishing, Malware, Backup
 
 **Conteúdos oficiais (ementa):**
 
-- Pilares da segurança da informação
-- Leis vigentes
-- Golpes na internet
-- Contas e senhas; navegação segura
-- Backup
-- Códigos maliciosos (malware)
+- Segurança da informação: pilares; leis vigentes; golpes na internet; contas e senhas; navegação segura; backup; códigos maliciosos (malware)
 
 **Detalhamento didático:**
 
@@ -224,7 +348,13 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 **Ideias da ementa para exemplos e exercícios:**
 
-- Estudo de caso de phishing recebido por conferente de carga: sinais de alerta, conduta correta e LGPD.
+- Estudo de caso de phishing recebido por conferente de carga: sinais de alerta, conduta correta, LGPD.
+
+**Termos oficiais do glossário (ementa):**
+
+- **Phishing:** golpe que imita mensagem legítima
+- **Malware:** programa malicioso (vírus, ransomware, spyware)
+- **Backup:** cópia de segurança em outro local
 
 ## Aula 06 — Editor de Textos: Formatação e Estruturação
 
@@ -235,13 +365,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 **Conteúdos oficiais (ementa):**
 
-- Tipos e funções do editor de textos; arquivamento; exibição
-- Formatação; recuos, tabulação, parágrafos, espaçamentos e margens
-- Configuração de página; colunas; bordas e sombreamento
-- Marcadores e numeração
-- Figuras e objetos; tabelas e gráficos
-- Ortografia e dicionário; controle de alterações
-- Impressão
+- Editor de textos: tipos e funções; formatação; configuração de página; figuras e objetos; tabelas e gráficos; arquivamento; exibição; ortografia e dicionário; recuos, tabulação, parágrafos, espaçamentos, margens; marcadores e numeração; bordas e sombreamento; colunas; controle de alterações; impressão
 
 **Detalhamento didático:**
 
@@ -260,15 +384,11 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 - **Estratégias:** Exposição dialogada, Trabalho em grupo, Atividade prática
 - **BNCC:** CG4 Comunicação, CG10 Responsabilidade
 - **Marco:** Produz documento formatado e texto técnico
-- **Termos oficiais do glossário:** Ata
 
 **Conteúdos oficiais (ementa):**
 
-- Textos técnicos: definição, tipos e exemplos; identificação de textos técnicos
-- Normas de redação (ex.: ABNT, ISO, IEEE, ANSI)
-- Interpretação e comunicação de textos técnicos
-- Relatórios, atas, memorandos e resumos
-- Níveis de fala: linguagem culta, técnica e jargão
+- Textos técnicos: definição, tipos e exemplos; normas de redação (ex.: ABNT, ISO, IEEE, ANSI); interpretação; comunicação; identificação de textos técnicos; relatórios, atas, memorandos, resumos
+- Níveis de fala: linguagem culta, técnica, jargão; características de cada nível
 
 **Detalhamento didático:**
 
@@ -283,6 +403,10 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 - Modelos comentados de relatório de avaria e ata de reunião de turno, com erros comuns.
 
+**Termos oficiais do glossário (ementa):**
+
+- **Ata:** registro formal do que foi discutido e decidido.
+
 ## Aula 08 — Editor de Planilhas: Organização e Fórmulas
 
 - **Carga horária:** 4 h · **Domínios:** 9 · **Capacidades:** C3
@@ -290,15 +414,11 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 - **Atividade / instrumento formativo:** Planilha de estoque com fórmulas + checklist
 - **Estratégias:** Demonstração, Atividade prática
 - **BNCC:** CG5 Cultura digital
-- **Termos oficiais do glossário:** Célula
+- **Observação:** A ementa indica o domínio 9 nas aulas 8 e 9; nesta aula ficam organização, formatação e fórmulas.
 
 **Conteúdos oficiais (ementa):**
 
-- Funções básicas; linhas, colunas e endereços
-- Formatação de células
-- Fórmulas básicas
-- Classificação e filtro
-- Configuração de página e impressão
+- Editor de planilhas: funções básicas; linhas, colunas e endereços; formatação de células; configuração de página; fórmulas básicas; classificação e filtro; impressão
 
 **Detalhamento didático:**
 
@@ -313,6 +433,10 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 - Planilha de estoque com 15 itens usando SOMA, MÉDIA, CONT.VALORES e SE para estoque mínimo, com gráfico.
 
+**Termos oficiais do glossário (ementa):**
+
+- **Célula:** interseção de linha e coluna (B4)
+
 ## Aula 09 — Planilhas: Análise Visual e Gráficos
 
 - **Carga horária:** 4 h · **Domínios:** 9 · **Capacidades:** C3, S4
@@ -320,12 +444,11 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 - **Atividade / instrumento formativo:** Filtros e gráfico de entregas no prazo, interpretado
 - **Estratégias:** Demonstração, Estudo de caso, Atividade prática
 - **BNCC:** CG5 Cultura digital, CG7 Argumentação
+- **Observação:** A ementa indica o domínio 9 nas aulas 8 e 9; nesta aula ficam classificação/filtro, gráficos, quadros e tabelas.
 
 **Conteúdos oficiais (ementa):**
 
-- Classificação e filtro
-- Gráficos, quadros e tabelas
-- Impressão
+- Editor de planilhas: classificação e filtro; gráficos, quadros e tabelas; impressão
 
 **Detalhamento didático:**
 
@@ -336,9 +459,9 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 - Gera gráfico adequado e interpreta o resultado
 
-## Aula 10 — Editor de Apresentações e TIC
+## Aula 10 — Editor de Apresentações e TIC + Avaliação
 
-- **Carga horária:** 4 h · **Domínios:** 10, 1, 2, 3, 4, 5, 6, 7, 8, 9 · **Capacidades:** C1, C2, C3, C4, C5
+- **Carga horária:** 4 h · **Domínios:** 10, todos · **Capacidades:** C1, C2, C3, C4, C5
 - **Situação-problema:** Apresentar em 5 minutos os resultados do setor ao próximo turno.
 - **Atividade / instrumento formativo:** Apresentação curta + avaliações objetiva e prática
 - **Estratégias:** Atividade prática, Apresentação para público
@@ -347,10 +470,8 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 **Conteúdos oficiais (ementa):**
 
-- Editor de apresentações: funções e tipos; formatação; página
-- Figuras, tabelas e gráficos; slides e vídeos; recursos multimídia
-- Arquivamento e exibição
-- Integração dos domínios da UC (revisão para as avaliações)
+- Editor de apresentações: funções e tipos; formatação; página; figuras, tabelas e gráficos; arquivamento; exibição; slides e vídeos; recursos multimídia
+- Integração de todos os domínios da UC (revisão para as avaliações)
 
 **Detalhamento didático:**
 
@@ -384,8 +505,10 @@ encontrar no trabalho de Assistente de Operações Logísticas.
 
 Desenvolver capacidades básicas e socioemocionais em três dimensões:
 
-1. **Comunicação profissional** — comunicar-se oralmente e por escrito de forma clara, assertiva e eficaz.
-2. **Interpretação técnica** — compreender normas, textos, dados e termos técnicos do trabalho.
+1. **Comunicação profissional** — comunicar-se oralmente e por escrito de forma clara,
+   assertiva e eficaz.
+2. **Interpretação técnica** — compreender normas, textos, dados e terminologias de contextos
+   técnicos e industriais.
 3. **Uso seguro de TIC** — pesquisar, produzir, armazenar e compartilhar informações com segurança.
 
 ## Como a apostila está organizada
@@ -415,13 +538,13 @@ alfabética.
 ## Como você será avaliado
 
 Durante as aulas 1 a 9, a avaliação é **formativa**: a atividade de 50 questões de cada aula, os
-quizzes e o acompanhamento do professor mostram o que você já domina e o que precisa revisar. Na
-**aula 10** acontecem as avaliações que formam a nota final:
+quizzes e o registro qualitativo do professor mostram o que você já domina e o que precisa revisar.
+Na **aula 10** acontecem as avaliações que formam a nota final:
 
 | Instrumento | Valor | Capacidades |
 |---|---|---|
-| Avaliação objetiva — 40 questões, 60 minutos | 4,0 | C1 a C5 |
-| Avaliação prática — 4 tarefas, 100 minutos | 6,0 | C1 a C5 |
+| Avaliação objetiva — 40 questões, 7 eixos, 60 min | 4,0 | C1 a C5 |
+| Avaliação prática — 4 tarefas, 100 min | 6,0 | C1 a C5 |
 | ↳ T1 Organização, backup e comunicação | 1,5 | C1, C2, C4, C5 |
 | ↳ T2 Relatório técnico | 2,0 | C1, C3 |
 | ↳ T3 Planilha de análise | 1,5 | C3, C4 |
@@ -442,23 +565,33 @@ capacidades não atingidas.
 
 ## Ambientes, recursos e acessibilidade
 
-As aulas acontecem na sala de aula, no **laboratório de informática**, no auditório e, quando
-disponível, com recursos de realidade virtual. Usaremos projetor, computadores, quadro branco e
-lousa digital, além da **Estante Virtual SENAI**.
+As aulas acontecem na sala de aula, no **laboratório de informática**, no auditório e em
+ambiente de realidade virtual (RV), quando disponível. Usaremos projetor, computadores, quadro
+branco, lousa digital e recursos de RA/RV, além da **Estante Virtual SENAI**.
 
 Os exemplos citam categorias de programas (editor de textos, planilha, apresentação), e você pode
 usar a suíte disponível na escola ou em casa: Microsoft 365, Google Workspace ou LibreOffice.
 
-**Acessibilidade:** se precisar, peça ao professor zoom, alto contraste, leitor de tela, fonte
-ampliada, legendas, instruções escritas, atalhos de teclado, digitação por voz, tempo estendido ou
-passo a passo em etapas curtas. O formato e o tempo podem ser adaptados sem mudar as capacidades
-avaliadas.
+**Acessibilidade:** se precisar, peça ao professor:
+
+- **visual:** zoom, alto contraste, leitor de tela (NVDA, TalkBack, ChromeVox), fonte ampliada;
+- **auditiva:** legendas, instruções escritas, intérprete de Libras quando houver;
+- **motora:** atalhos, digitação por voz, tempo estendido;
+- **leitura/TDAH:** passo a passo numerado, etapas curtas, checklist;
+- **pouca familiaridade com o computador:** duplas e demonstração lenta.
+
+O tempo e o formato podem ser adaptados sem alterar as capacidades avaliadas.
 
 ## Competência integradora
 
-**Eixo:** Mediação e Intervenção Sociocultural. Ao longo da unidade, você vai reconhecer conflitos
-e propor soluções para problemas do ambiente de trabalho, demonstrando **empatia, escuta ativa e
-diálogo** nas relações profissionais.
+**Eixo:** Mediação e Intervenção Sociocultural.
+
+**Competência:** reconhecer conflitos e sugerir soluções para problemas identificados na comunidade.
+
+**Resultados esperados:**
+
+- identificar ações para um ambiente de trabalho saudável, considerando diversidades;
+- demonstrar empatia, escuta ativa e diálogo nas relações profissionais.
 
 ---
 
@@ -481,16 +614,18 @@ diálogo** nas relações profissionais.
 
 ## Conhecimentos da unidade curricular
 
-1. **Elementos da comunicação:** Emissor; Receptor; Mensagem; Canal; Ruído; Código; Feedback.
-2. **Níveis de fala:** Linguagem culta; Linguagem técnica; Jargão; Características de cada nível.
-3. **Comunicação em equipes:** Dinâmica do trabalho em equipe; Busca de consenso; Gestão de conflitos.
-4. **Hardware e sistema operacional:** Fundamentos de hardware; Identificação de componentes, processadores e periféricos; Utilização de periféricos; Tipos, fundamentos e funções do sistema operacional; Barra de ferramentas; Área de trabalho; Organização de arquivos em pastas; Pesquisa de arquivos e diretórios; Compactação de arquivos.
-5. **Internet e WWW:** Políticas de uso; Navegadores; Sites e buscadores; Download e gravação; Correio eletrônico; Direitos autorais e citação de fontes; Armazenamento e compartilhamento em nuvem.
-6. **Segurança da informação:** Pilares da segurança da informação; Leis vigentes; Golpes na internet; Contas e senhas; Navegação segura; Backup; Códigos maliciosos (malware).
-7. **Editor de textos:** Tipos e funções; Formatação; Configuração de página; Figuras e objetos; Tabelas e gráficos; Arquivamento; Exibição; Ortografia e dicionário; Recuos, tabulação, parágrafos, espaçamentos e margens; Marcadores e numeração; Bordas e sombreamento; Colunas; Controle de alterações; Impressão.
-8. **Textos técnicos:** Definição, tipos e exemplos; Normas de redação (ex.: ABNT, ISO, IEEE, ANSI); Interpretação; Comunicação; Identificação de textos técnicos; Relatórios, atas, memorandos e resumos.
-9. **Editor de planilhas:** Funções básicas; Linhas, colunas e endereços; Formatação de células; Configuração de página; Fórmulas básicas; Classificação e filtro; Gráficos, quadros e tabelas; Impressão.
-10. **Editor de apresentações:** Funções e tipos; Formatação; Página; Figuras, tabelas e gráficos; Arquivamento; Exibição; Slides e vídeos; Recursos multimídia.
+1. **Elementos da comunicação:** emissor, receptor, mensagem, canal, ruído, código, feedback.
+2. **Níveis de fala:** linguagem culta, técnica, jargão; características de cada nível.
+3. **Comunicação em equipes:** dinâmica do trabalho em equipe, busca de consenso, gestão de conflitos.
+4. **Hardware e sistema operacional:** fundamentos de hardware; identificação de componentes, processadores e periféricos; utilização de periféricos; tipos, fundamentos e funções do SO; barra de ferramentas; área de trabalho; organização de arquivos em pastas; pesquisa de arquivos e diretórios; compactação de arquivos.
+5. **Internet e WWW:** políticas de uso; navegadores; sites e buscadores; download e gravação; correio eletrônico; direitos autorais e citação de fontes; armazenamento e compartilhamento em nuvem.
+6. **Segurança da informação:** pilares; leis vigentes; golpes na internet; contas e senhas; navegação segura; backup; códigos maliciosos (malware).
+7. **Editor de textos:** tipos e funções; formatação; configuração de página; figuras e objetos; tabelas e gráficos; arquivamento; exibição; ortografia e dicionário; recuos, tabulação, parágrafos, espaçamentos, margens; marcadores e numeração; bordas e sombreamento; colunas; controle de alterações; impressão.
+8. **Textos técnicos:** definição, tipos e exemplos; normas de redação (ex.: ABNT, ISO, IEEE, ANSI); interpretação; comunicação; identificação de textos técnicos; relatórios, atas, memorandos, resumos.
+9. **Editor de planilhas:** funções básicas; linhas, colunas e endereços; formatação de células; configuração de página; fórmulas básicas; classificação e filtro; gráficos, quadros e tabelas; impressão.
+10. **Editor de apresentações:** funções e tipos; formatação; página; figuras, tabelas e gráficos; arquivamento; exibição; slides e vídeos; recursos multimídia.
+
+**Detalhamento didático (ementa):** pilares = confidencialidade, integridade, disponibilidade; lei = LGPD (13.709/2018); SO = Windows, Linux, macOS ou ChromeOS; suítes = Microsoft 365, Google Workspace, LibreOffice.
 
 ## Capacidades × conhecimentos
 
@@ -519,10 +654,21 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Código:** conjunto de sinais e palavras comum ao emissor e ao receptor. _(cap. 01)_
 - **Emissor:** quem cria e envia a mensagem. _(cap. 01)_
 - **Escuta ativa:** ouvir com atenção total, sem interromper, confirmando o que foi entendido. _(cap. 01)_
-- **Feedback:** retorno do receptor que confirma ou corrige o entendimento. _(cap. 01)_
-- **Jargão:** gíria ou termo interno de um grupo profissional (ex.: "picking", "cross-docking"). _(cap. 01)_
+- **Feedback:** retorno que confirma a compreensão. _(cap. 01)_
+- **Jargão:** termo de grupo profissional ("picking", "cross-docking"). _(cap. 01)_
 - **Receptor:** quem recebe e interpreta a mensagem. _(cap. 01)_
-- **Ruído:** qualquer interferência que altera ou impede o entendimento da mensagem. _(cap. 01)_
+- **Ruído:** interferência que distorce a mensagem (barulho, termo ambíguo, e-mail sem assunto). _(cap. 01)_
+
+---
+
+# Referências
+
+- SENAI, Metodologia SENAI de Educação Profissional (2019)
+- Lei 13.709/2018 (LGPD)
+- Lei 9.610/1998 (Direitos Autorais)
+- CERT.br, Cartilha de Segurança
+- ABNT NBR 10719
+- ajuda Microsoft 365, Google Workspace, LibreOffice
 
 ---
 

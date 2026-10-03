@@ -23,10 +23,10 @@
   },
   "competencia_integradora": {
     "eixo_bncc": "Mediação e Intervenção Sociocultural",
-    "competencia": "Reconhecer conflitos e sugerir soluções para problemas identificados na comunidade.",
+    "competencia": "reconhecer conflitos e sugerir soluções para problemas identificados na comunidade.",
     "resultados": [
-      "Identificar ações para um ambiente de trabalho saudável, considerando diversidades.",
-      "Demonstrar empatia, escuta ativa e diálogo nas relações profissionais."
+      "identificar ações para um ambiente de trabalho saudável, considerando diversidades",
+      "demonstrar empatia, escuta ativa e diálogo nas relações profissionais"
     ]
   },
   "capacidades": {
@@ -47,133 +47,123 @@
       "dominio": 1,
       "titulo": "Elementos da comunicação",
       "conteudos": [
-        "Emissor",
-        "Receptor",
-        "Mensagem",
-        "Canal",
-        "Ruído",
-        "Código",
-        "Feedback"
+        "emissor, receptor, mensagem, canal, ruído, código, feedback"
       ]
     },
     {
       "dominio": 2,
       "titulo": "Níveis de fala",
       "conteudos": [
-        "Linguagem culta",
-        "Linguagem técnica",
-        "Jargão",
-        "Características de cada nível"
+        "linguagem culta, técnica, jargão",
+        "características de cada nível"
       ]
     },
     {
       "dominio": 3,
       "titulo": "Comunicação em equipes",
       "conteudos": [
-        "Dinâmica do trabalho em equipe",
-        "Busca de consenso",
-        "Gestão de conflitos"
+        "dinâmica do trabalho em equipe, busca de consenso, gestão de conflitos"
       ]
     },
     {
       "dominio": 4,
       "titulo": "Hardware e sistema operacional",
       "conteudos": [
-        "Fundamentos de hardware",
-        "Identificação de componentes, processadores e periféricos",
-        "Utilização de periféricos",
-        "Tipos, fundamentos e funções do sistema operacional",
-        "Barra de ferramentas",
-        "Área de trabalho",
-        "Organização de arquivos em pastas",
-        "Pesquisa de arquivos e diretórios",
-        "Compactação de arquivos"
+        "fundamentos de hardware",
+        "identificação de componentes, processadores e periféricos",
+        "utilização de periféricos",
+        "tipos, fundamentos e funções do SO",
+        "barra de ferramentas",
+        "área de trabalho",
+        "organização de arquivos em pastas",
+        "pesquisa de arquivos e diretórios",
+        "compactação de arquivos"
       ]
     },
     {
       "dominio": 5,
       "titulo": "Internet e WWW",
       "conteudos": [
-        "Políticas de uso",
-        "Navegadores",
-        "Sites e buscadores",
-        "Download e gravação",
-        "Correio eletrônico",
-        "Direitos autorais e citação de fontes",
-        "Armazenamento e compartilhamento em nuvem"
+        "políticas de uso",
+        "navegadores",
+        "sites e buscadores",
+        "download e gravação",
+        "correio eletrônico",
+        "direitos autorais e citação de fontes",
+        "armazenamento e compartilhamento em nuvem"
       ]
     },
     {
       "dominio": 6,
       "titulo": "Segurança da informação",
       "conteudos": [
-        "Pilares da segurança da informação",
-        "Leis vigentes",
-        "Golpes na internet",
-        "Contas e senhas",
-        "Navegação segura",
-        "Backup",
-        "Códigos maliciosos (malware)"
+        "pilares",
+        "leis vigentes",
+        "golpes na internet",
+        "contas e senhas",
+        "navegação segura",
+        "backup",
+        "códigos maliciosos (malware)"
       ]
     },
     {
       "dominio": 7,
       "titulo": "Editor de textos",
       "conteudos": [
-        "Tipos e funções",
-        "Formatação",
-        "Configuração de página",
-        "Figuras e objetos",
-        "Tabelas e gráficos",
-        "Arquivamento",
-        "Exibição",
-        "Ortografia e dicionário",
-        "Recuos, tabulação, parágrafos, espaçamentos e margens",
-        "Marcadores e numeração",
-        "Bordas e sombreamento",
-        "Colunas",
-        "Controle de alterações",
-        "Impressão"
+        "tipos e funções",
+        "formatação",
+        "configuração de página",
+        "figuras e objetos",
+        "tabelas e gráficos",
+        "arquivamento",
+        "exibição",
+        "ortografia e dicionário",
+        "recuos, tabulação, parágrafos, espaçamentos, margens",
+        "marcadores e numeração",
+        "bordas e sombreamento",
+        "colunas",
+        "controle de alterações",
+        "impressão"
       ]
     },
     {
       "dominio": 8,
       "titulo": "Textos técnicos",
       "conteudos": [
-        "Definição, tipos e exemplos",
-        "Normas de redação (ex.: ABNT, ISO, IEEE, ANSI)",
-        "Interpretação",
-        "Comunicação",
-        "Identificação de textos técnicos",
-        "Relatórios, atas, memorandos e resumos"
+        "definição, tipos e exemplos",
+        "normas de redação (ex.: ABNT, ISO, IEEE, ANSI)",
+        "interpretação",
+        "comunicação",
+        "identificação de textos técnicos",
+        "relatórios, atas, memorandos, resumos"
       ]
     },
     {
       "dominio": 9,
       "titulo": "Editor de planilhas",
       "conteudos": [
-        "Funções básicas",
-        "Linhas, colunas e endereços",
-        "Formatação de células",
-        "Configuração de página",
-        "Fórmulas básicas",
-        "Classificação e filtro",
-        "Gráficos, quadros e tabelas",
-        "Impressão"
+        "funções básicas",
+        "linhas, colunas e endereços",
+        "formatação de células",
+        "configuração de página",
+        "fórmulas básicas",
+        "classificação e filtro",
+        "gráficos, quadros e tabelas",
+        "impressão"
       ]
     },
     {
       "dominio": 10,
       "titulo": "Editor de apresentações",
       "conteudos": [
-        "Funções e tipos",
-        "Formatação",
-        "Página",
-        "Figuras, tabelas e gráficos",
-        "Arquivamento",
-        "Exibição",
-        "Slides e vídeos",
-        "Recursos multimídia"
+        "funções e tipos",
+        "formatação",
+        "página",
+        "figuras, tabelas e gráficos",
+        "arquivamento",
+        "exibição",
+        "slides e vídeos",
+        "recursos multimídia"
       ]
     }
   ],
@@ -220,9 +210,9 @@
         "S1"
       ],
       "conteudos_oficiais": [
-        "Elementos da comunicação: emissor, receptor, mensagem, canal, ruído, código e feedback",
-        "Níveis de fala: linguagem culta, técnica e jargão; características de cada nível",
-        "Comunicação em equipes: dinâmica do trabalho em equipe, busca de consenso e gestão de conflitos"
+        "Elementos da comunicação: emissor, receptor, mensagem, canal, ruído, código, feedback",
+        "Níveis de fala: linguagem culta, técnica, jargão; características de cada nível",
+        "Comunicação em equipes: dinâmica do trabalho em equipe, busca de consenso, gestão de conflitos"
       ],
       "detalhamento_didatico": [
         "Tipos de ruído: físico, técnico, semântico e psicológico",
@@ -251,8 +241,8 @@
         "Jargão"
       ],
       "ideias_ementa": [
-        "Caso de erro na expedição por ruído, 5 perguntas de checagem e dinâmica em grupo.",
-        "Dinâmica de conflito entre conferente e motorista sobre horário de doca: papéis, escuta ativa e reflexão."
+        "Aula de 4h sobre elementos da comunicação para assistentes de logística: caso de erro na expedição por ruído, 5 perguntas de checagem e dinâmica em grupo.",
+        "Dinâmica de conflito entre conferente e motorista sobre horário de doca: papéis, escuta ativa, reflexão."
       ],
       "indicadores_numeros": [
         1,
@@ -271,10 +261,7 @@
         "C4"
       ],
       "conteudos_oficiais": [
-        "Fundamentos de hardware; identificação de componentes, processadores e periféricos",
-        "Utilização de periféricos",
-        "Tipos, fundamentos e funções do sistema operacional; barra de ferramentas; área de trabalho",
-        "Organização de arquivos em pastas; pesquisa de arquivos e diretórios; compactação de arquivos"
+        "Hardware e sistema operacional: fundamentos de hardware; identificação de componentes, processadores e periféricos; utilização de periféricos; tipos, fundamentos e funções do SO; barra de ferramentas; área de trabalho; organização de arquivos em pastas; pesquisa de arquivos e diretórios; compactação de arquivos"
       ],
       "detalhamento_didatico": [
         "Sistemas operacionais: Windows, Linux, macOS ou ChromeOS (categorias, sem impor marca)",
@@ -299,7 +286,7 @@
         "Periférico"
       ],
       "ideias_ementa": [
-        "Questões sobre hardware, periféricos e SO no contexto de almoxarifado.",
+        "10 questões A–D sobre hardware, periféricos e SO, com gabarito comentado, contexto de almoxarifado.",
         "Atividade de pastas e compactação ZIP para notas fiscais, com checklist."
       ],
       "indicadores_numeros": [
@@ -319,10 +306,7 @@
         "C5"
       ],
       "conteudos_oficiais": [
-        "Políticas de uso",
-        "Navegadores; sites e buscadores",
-        "Download e gravação",
-        "Direitos autorais e citação de fontes"
+        "Internet e WWW: políticas de uso; navegadores; sites e buscadores; download e gravação; direitos autorais e citação de fontes"
       ],
       "detalhamento_didatico": [
         "Diferença entre internet e World Wide Web",
@@ -348,7 +332,8 @@
       "ideias_ementa": [],
       "indicadores_numeros": [
         5
-      ]
+      ],
+      "observacao": "A ementa indica o domínio 5 nas aulas 3 e 4; nesta aula ficam os conteúdos de navegação, pesquisa, download e direitos autorais."
     },
     {
       "numero": "04",
@@ -364,9 +349,8 @@
         "C5"
       ],
       "conteudos_oficiais": [
-        "Correio eletrônico",
-        "Armazenamento e compartilhamento em nuvem",
-        "Comunicação em equipes: dinâmica do trabalho em equipe, busca de consenso e gestão de conflitos"
+        "Internet e WWW: correio eletrônico; armazenamento e compartilhamento em nuvem",
+        "Comunicação em equipes: dinâmica do trabalho em equipe, busca de consenso, gestão de conflitos"
       ],
       "detalhamento_didatico": [
         "E-mail profissional: assunto, saudação, corpo, anexo, assinatura e cópia (CC/CCO)",
@@ -391,12 +375,13 @@
         "Nuvem"
       ],
       "ideias_ementa": [
-        "Dinâmica de conflito entre conferente e motorista sobre horário de doca: papéis, escuta ativa e reflexão."
+        "Dinâmica de conflito entre conferente e motorista sobre horário de doca: papéis, escuta ativa, reflexão."
       ],
       "indicadores_numeros": [
         6,
         7
-      ]
+      ],
+      "observacao": "A ementa indica o domínio 5 nas aulas 3 e 4; nesta aula ficam correio eletrônico e armazenamento/compartilhamento em nuvem, com o domínio 3."
     },
     {
       "numero": "05",
@@ -410,12 +395,7 @@
         "C2"
       ],
       "conteudos_oficiais": [
-        "Pilares da segurança da informação",
-        "Leis vigentes",
-        "Golpes na internet",
-        "Contas e senhas; navegação segura",
-        "Backup",
-        "Códigos maliciosos (malware)"
+        "Segurança da informação: pilares; leis vigentes; golpes na internet; contas e senhas; navegação segura; backup; códigos maliciosos (malware)"
       ],
       "detalhamento_didatico": [
         "Pilares: confidencialidade, integridade e disponibilidade",
@@ -445,7 +425,7 @@
         "Backup"
       ],
       "ideias_ementa": [
-        "Estudo de caso de phishing recebido por conferente de carga: sinais de alerta, conduta correta e LGPD."
+        "Estudo de caso de phishing recebido por conferente de carga: sinais de alerta, conduta correta, LGPD."
       ],
       "indicadores_numeros": [
         8
@@ -463,13 +443,7 @@
         "C1"
       ],
       "conteudos_oficiais": [
-        "Tipos e funções do editor de textos; arquivamento; exibição",
-        "Formatação; recuos, tabulação, parágrafos, espaçamentos e margens",
-        "Configuração de página; colunas; bordas e sombreamento",
-        "Marcadores e numeração",
-        "Figuras e objetos; tabelas e gráficos",
-        "Ortografia e dicionário; controle de alterações",
-        "Impressão"
+        "Editor de textos: tipos e funções; formatação; configuração de página; figuras e objetos; tabelas e gráficos; arquivamento; exibição; ortografia e dicionário; recuos, tabulação, parágrafos, espaçamentos, margens; marcadores e numeração; bordas e sombreamento; colunas; controle de alterações; impressão"
       ],
       "detalhamento_didatico": [
         "Estilos de título e sumário automático",
@@ -505,11 +479,8 @@
         "C3"
       ],
       "conteudos_oficiais": [
-        "Textos técnicos: definição, tipos e exemplos; identificação de textos técnicos",
-        "Normas de redação (ex.: ABNT, ISO, IEEE, ANSI)",
-        "Interpretação e comunicação de textos técnicos",
-        "Relatórios, atas, memorandos e resumos",
-        "Níveis de fala: linguagem culta, técnica e jargão"
+        "Textos técnicos: definição, tipos e exemplos; normas de redação (ex.: ABNT, ISO, IEEE, ANSI); interpretação; comunicação; identificação de textos técnicos; relatórios, atas, memorandos, resumos",
+        "Níveis de fala: linguagem culta, técnica, jargão; características de cada nível"
       ],
       "detalhamento_didatico": [
         "Norma adotada declarada: ABNT NBR 10719 (relatório técnico)",
@@ -552,11 +523,7 @@
         "C3"
       ],
       "conteudos_oficiais": [
-        "Funções básicas; linhas, colunas e endereços",
-        "Formatação de células",
-        "Fórmulas básicas",
-        "Classificação e filtro",
-        "Configuração de página e impressão"
+        "Editor de planilhas: funções básicas; linhas, colunas e endereços; formatação de células; configuração de página; fórmulas básicas; classificação e filtro; impressão"
       ],
       "detalhamento_didatico": [
         "Funções SOMA, MÉDIA, CONT.VALORES e SE",
@@ -582,7 +549,8 @@
       ],
       "indicadores_numeros": [
         11
-      ]
+      ],
+      "observacao": "A ementa indica o domínio 9 nas aulas 8 e 9; nesta aula ficam organização, formatação e fórmulas."
     },
     {
       "numero": "09",
@@ -597,9 +565,7 @@
         "S4"
       ],
       "conteudos_oficiais": [
-        "Classificação e filtro",
-        "Gráficos, quadros e tabelas",
-        "Impressão"
+        "Editor de planilhas: classificação e filtro; gráficos, quadros e tabelas; impressão"
       ],
       "detalhamento_didatico": [
         "Escolha do tipo de gráfico (colunas, linhas, pizza) conforme o dado",
@@ -623,12 +589,13 @@
       "ideias_ementa": [],
       "indicadores_numeros": [
         12
-      ]
+      ],
+      "observacao": "A ementa indica o domínio 9 nas aulas 8 e 9; nesta aula ficam classificação/filtro, gráficos, quadros e tabelas."
     },
     {
       "numero": "10",
       "aula": 10,
-      "tema": "Editor de Apresentações e TIC",
+      "tema": "Editor de Apresentações e TIC + Avaliação",
       "carga_horaria": 4,
       "dominios": [
         10,
@@ -650,10 +617,8 @@
         "C5"
       ],
       "conteudos_oficiais": [
-        "Editor de apresentações: funções e tipos; formatação; página",
-        "Figuras, tabelas e gráficos; slides e vídeos; recursos multimídia",
-        "Arquivamento e exibição",
-        "Integração dos domínios da UC (revisão para as avaliações)"
+        "Editor de apresentações: funções e tipos; formatação; página; figuras, tabelas e gráficos; arquivamento; exibição; slides e vídeos; recursos multimídia",
+        "Integração de todos os domínios da UC (revisão para as avaliações)"
       ],
       "detalhamento_didatico": [
         "Legibilidade dos slides, sequência lógica e tempo de fala",
@@ -679,16 +644,17 @@
       ],
       "indicadores_numeros": [
         13
-      ]
+      ],
+      "dominios_texto": "10, todos"
     }
   ],
   "aula_padrao_4h": [
-    "Pergunta disparadora (15 min)",
-    "Exposição com slide (60 min)",
-    "Quiz Kahoot/Wayground (15 min)",
-    "Intervalo (15 min)",
-    "Prática no laboratório (105 min)",
-    "Socialização e feedback (30 min)"
+    "pergunta disparadora (15 min)",
+    "exposição com slide (60)",
+    "quiz Kahoot/Wayground (15)",
+    "intervalo (15)",
+    "prática no laboratório (105)",
+    "socialização e feedback (30)"
   ],
   "indicadores_desempenho": [
     {
@@ -799,10 +765,10 @@
     }
   ],
   "detalhamento_didatico_conhecimentos": {
-    "pilares_seguranca": "Confidencialidade, integridade e disponibilidade.",
-    "lei": "LGPD — Lei 13.709/2018.",
-    "sistemas_operacionais": "Windows, Linux, macOS ou ChromeOS.",
-    "suites_escritorio": "Microsoft 365, Google Workspace, LibreOffice."
+    "pilares": "confidencialidade, integridade, disponibilidade",
+    "lei": "LGPD (13.709/2018)",
+    "SO": "Windows, Linux, macOS ou ChromeOS",
+    "suítes": "Microsoft 365, Google Workspace, LibreOffice"
   },
   "estrategias_siglas": {
     "ED": "Exposição dialogada",
@@ -896,8 +862,8 @@
     ],
     "nota_final": 10.0,
     "nota_minima": 7.0,
-    "formativa": "Aulas 1–9: atividade de 50 questões de cada aula, quizzes e registro qualitativo.",
-    "recuperacao": "Contínua — quem não concluir a atividade refaz com roteiro guiado na aula seguinte ou como tarefa; final — nota < 7,0 refaz a(s) tarefa(s) práticas de maior perda e/ou nova objetiva equivalente, conforme regimento SENAI, retomando só as capacidades não atingidas.",
+    "formativa": "atividade de 50 questões de cada aula, quizzes e registro qualitativo em CRITERIOS-CORRECAO-PRATICA.md.",
+    "recuperacao": "contínua — quem não concluir a atividade refaz com roteiro guiado na aula seguinte ou como tarefa; final — nota < 7,0 refaz a(s) tarefa(s) práticas de maior perda e/ou nova objetiva equivalente, conforme regimento SENAI, retomando só as capacidades não atingidas.",
     "rubrica": [
       {
         "nivel": "Excelente",
@@ -971,102 +937,108 @@
   ],
   "recursos": {
     "ambientes": [
-      "Sala de aula",
-      "Laboratório de informática",
-      "Auditório",
+      "sala de aula",
+      "laboratório de informática",
+      "auditório",
       "RV"
     ],
     "equipamentos": [
-      "Projetor",
-      "Computadores",
-      "Quadro branco",
-      "Lousa digital",
+      "projetor",
+      "computadores",
+      "quadro branco",
+      "lousa digital",
       "RA/RV"
     ],
     "recurso_didatico": "Estante Virtual SENAI DN"
   },
   "acessibilidade": {
-    "visual": "Zoom, alto contraste, leitor de tela (NVDA, TalkBack, ChromeVox), fonte ampliada.",
-    "auditiva": "Legendas, instruções escritas, intérprete de Libras quando houver.",
-    "motora": "Atalhos, digitação por voz, tempo estendido.",
-    "leitura_tdah": "Passo a passo numerado, etapas curtas, checklist.",
-    "pouca_familiaridade": "Duplas e demonstração lenta.",
-    "regra": "Adaptar tempo e formato sem alterar as capacidades avaliadas."
+    "visual": "zoom, alto contraste, leitor de tela (NVDA, TalkBack, ChromeVox), fonte ampliada",
+    "auditiva": "legendas, instruções escritas, intérprete de Libras quando houver",
+    "motora": "atalhos, digitação por voz, tempo estendido",
+    "leitura/TDAH": "passo a passo numerado, etapas curtas, checklist",
+    "pouca familiaridade": "duplas e demonstração lenta",
+    "regra": "Adaptar tempo e formato sem alterar as capacidades avaliadas"
   },
   "glossario_ementa": [
     {
       "termo": "Ruído",
-      "definicao": "Interferência que distorce a mensagem (barulho, termo ambíguo, e-mail sem assunto).",
+      "definicao": "interferência que distorce a mensagem (barulho, termo ambíguo, e-mail sem assunto)",
       "capitulo": "01"
     },
     {
       "termo": "Feedback",
-      "definicao": "Retorno que confirma a compreensão.",
+      "definicao": "retorno que confirma a compreensão",
       "capitulo": "01"
     },
     {
       "termo": "Jargão",
-      "definicao": "Termo de grupo profissional (\"picking\", \"cross-docking\").",
+      "definicao": "termo de grupo profissional (\"picking\", \"cross-docking\")",
       "capitulo": "01"
     },
     {
       "termo": "Periférico",
-      "definicao": "Dispositivo de entrada/saída (leitor de código de barras, impressora de etiquetas).",
+      "definicao": "dispositivo de entrada/saída (leitor de código de barras, impressora de etiquetas)",
       "capitulo": "02"
     },
     {
       "termo": "Nuvem",
-      "definicao": "Arquivos em servidores na internet.",
+      "definicao": "arquivos em servidores na internet",
       "capitulo": "04"
     },
     {
       "termo": "Phishing",
-      "definicao": "Golpe que imita mensagem legítima.",
+      "definicao": "golpe que imita mensagem legítima",
       "capitulo": "05"
     },
     {
       "termo": "Malware",
-      "definicao": "Programa malicioso (vírus, ransomware, spyware).",
+      "definicao": "programa malicioso (vírus, ransomware, spyware)",
       "capitulo": "05"
     },
     {
       "termo": "Backup",
-      "definicao": "Cópia de segurança em outro local.",
+      "definicao": "cópia de segurança em outro local",
       "capitulo": "05"
     },
     {
       "termo": "Célula",
-      "definicao": "Interseção de linha e coluna (B4).",
+      "definicao": "interseção de linha e coluna (B4)",
       "capitulo": "08"
     },
     {
       "termo": "Ata",
-      "definicao": "Registro formal do que foi discutido e decidido.",
+      "definicao": "registro formal do que foi discutido e decidido.",
       "capitulo": "07"
     }
   ],
   "regras_ia": [
     "Capacidades = resultados amplos; conhecimentos = meios para desenvolvê-las.",
     "Integrar competências técnicas e socioemocionais em atividades de comunicação e grupo.",
-    "Não inventar critérios, pesos ou quantidade de aulas além dos definidos na sequência de aulas e na avaliação.",
+    "Não inventar critérios, pesos ou quantidade de aulas além dos definidos nas Seções IV e V.",
     "Não impor marcas de software: a ementa cita categorias, não produtos.",
     "Verificar atualidade de leis, normas e práticas de segurança.",
-    "Diferenciar conteúdo [oficial] de exemplos e aprofundamentos.",
+    "Diferenciar conteúdo **[oficial]** de exemplos e aprofundamentos.",
     "Manter contexto profissional, logístico e industrial nos exemplos.",
     "Promover uso ético, seguro, responsável e inclusivo das tecnologias.",
     "Ao citar ABNT, ISO, IEEE ou ANSI, declarar qual norma está sendo adotada."
   ],
   "metricas": [
-    "80%+ dos estudantes com nota final ≥ 7,0.",
-    "100% entregam a pasta compactada da prova prática."
+    "80%+ dos estudantes com nota final ≥ 7,0",
+    "100% entregam a pasta compactada da prova prática"
   ],
   "referencias": [
-    "SENAI. Metodologia SENAI de Educação Profissional. 2019.",
-    "Estante Virtual SENAI DN (recurso didático oficial da UC).",
-    "BRASIL. Lei nº 13.709, de 14 de agosto de 2018 (LGPD).",
-    "BRASIL. Lei nº 9.610, de 19 de fevereiro de 1998 (Direitos Autorais).",
-    "CERT.br. Cartilha de Segurança para Internet.",
-    "ABNT NBR 10719 — Informação e documentação — Relatório técnico e/ou científico.",
-    "Ajuda oficial: Microsoft 365, Google Workspace, LibreOffice."
+    "SENAI, Metodologia SENAI de Educação Profissional (2019)",
+    "Lei 13.709/2018 (LGPD)",
+    "Lei 9.610/1998 (Direitos Autorais)",
+    "CERT.br, Cartilha de Segurança",
+    "ABNT NBR 10719",
+    "ajuda Microsoft 365, Google Workspace, LibreOffice"
+  ],
+  "capacidades_x_conhecimentos_ementa": [
+    "C1 Comunicação → domínios 1, 2, 3, 7, 8, 10",
+    "C2 Segurança → 6",
+    "C3 Interpretação técnica → 8, 9",
+    "C4 Hardware/software → 4, 7, 9, 10",
+    "C5 Web → 5"
   ]
 }

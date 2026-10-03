@@ -181,8 +181,8 @@ pedir confirmação → registrar por escrito**.
 - **Receptor:** quem recebe e interpreta a mensagem.
 - **Canal:** meio usado para transmitir a mensagem (rádio, e-mail, sistema, reunião).
 - **Código:** conjunto de sinais e palavras comum ao emissor e ao receptor.
-- **Ruído:** qualquer interferência que altera ou impede o entendimento da mensagem.
-- **Feedback:** retorno do receptor que confirma ou corrige o entendimento.
+- **Ruído:** interferência que distorce a mensagem (barulho, termo ambíguo, e-mail sem assunto).
+- **Feedback:** retorno que confirma a compreensão.
 - **Assertividade:** comunicar com clareza, firmeza e respeito, sem agressividade nem omissão.
 - **Escuta ativa:** ouvir com atenção total, sem interromper, confirmando o que foi entendido.
-- **Jargão:** gíria ou termo interno de um grupo profissional (ex.: "picking", "cross-docking").
+- **Jargão:** termo de grupo profissional ("picking", "cross-docking").

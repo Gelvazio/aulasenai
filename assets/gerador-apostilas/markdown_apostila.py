@@ -113,10 +113,14 @@ def md_cabecalho(dados, total_previstos):
     """
     carga = dados.get("carga_horaria_uc")
     texto_carga = f"{carga} horas" if carga else "não informada"
+    materia = dados.get("materia", {})
     return "\n".join([
         f"# Apostila — {dados['uc']}",
         "",
         f"> **Curso:** {dados['curso']} · **Docente:** {dados['docente']}  ",
+        f"> **Módulo:** {materia.get('modulo', '—')} · **Modalidade:** "
+        f"{materia.get('modalidade', '—')}  ",
+        f"> **Ementa:** {materia.get('versao_ementa', '—')}  ",
         f"> **Carga horária da UC:** {texto_carga} · **Capítulos previstos:** {total_previstos} "
         f"(1 capítulo = 1 aula de {dados['horas_por_capitulo']} horas)  ",
         f"> **Gerado em:** {date.today():%d/%m/%Y}, a partir de `APOSTILA/CONTEUDO/`.",
@@ -146,9 +150,45 @@ def md_plano(dados, numeros_incluidos):
         numero = f"{indice:02d}"
         situacao = SITUACAO_INCLUIDO if numero in numeros_incluidos else SITUACAO_PENDENTE
         linhas.append(f"| {numero} | {numero} | {tema} | {horas} h | {situacao} |")
+    materia = dados.get("materia", {})
+    glossario = {termo["termo"]: termo["definicao"]
+                 for termo in materia.get("glossario_ementa", [])}
     for item in dados.get("plano_capitulos", []):
-        linhas += ["", *md_detalhe_aula(item, horas)]
+        linhas += ["", *md_detalhe_aula(item, horas, glossario)]
     return "\n".join(linhas)
+
+
+def md_aula_padrao(materia):
+    """Monta o roteiro da aula padrão de 4 horas da ementa.
+
+    Args:
+        materia: Conteúdo do materia.json.
+
+    Returns:
+        Lista de linhas Markdown (vazia se não houver roteiro).
+    """
+    etapas = materia.get("aula_padrao_4h", [])
+    if not etapas:
+        return []
+    return ["", "## Aula padrão (4 h)", "", " → ".join(etapas) + "."]
+
+
+def md_bncc(materia):
+    """Monta a tabela do mapeamento BNCC da ementa (competência, aulas e foco).
+
+    Args:
+        materia: Conteúdo do materia.json.
+
+    Returns:
+        Lista de linhas Markdown (vazia se não houver mapeamento).
+    """
+    mapeamento = materia.get("mapeamento_bncc", [])
+    if not mapeamento:
+        return []
+    linhas = ["", "## Mapeamento BNCC", "", "| Competência | Aulas | Foco |", "|---|---|---|"]
+    linhas += [f"| {item['competencia']} | {', '.join(str(aula) for aula in item['aulas'])} | "
+               f"{item['foco']} |" for item in mapeamento]
+    return linhas
 
 
 def lista_md(rotulo, itens):
@@ -166,17 +206,19 @@ def lista_md(rotulo, itens):
     return [f"**{rotulo}:**", "", *[f"- {item}" for item in itens], ""]
 
 
-def md_detalhe_aula(item, horas):
+def md_detalhe_aula(item, horas, glossario):
     """Monta o detalhe de uma aula do plano da ementa (o que o capítulo precisa cobrir).
 
     Args:
         item: Entrada de "aulas" do materia.json.
         horas: Carga horária padrão do capítulo.
+        glossario: Glossário oficial da ementa (termo → definição).
 
     Returns:
         Lista de linhas Markdown.
     """
-    dominios = ", ".join(str(dominio) for dominio in item.get("dominios", []))
+    dominios = item.get("dominios_texto") or ", ".join(
+        str(dominio) for dominio in item.get("dominios", []))
     linhas = [f"## Aula {item['numero']} — {item['tema']}", "",
               f"- **Carga horária:** {item.get('carga_horaria', horas)} h · **Domínios:** "
               f"{dominios} · **Capacidades:** {', '.join(item.get('capacidades', []))}",
@@ -187,15 +229,17 @@ def md_detalhe_aula(item, horas):
         linhas.append(f"- **BNCC:** {', '.join(item['bncc'])}")
     if item.get("marco"):
         linhas.append(f"- **Marco:** {item['marco']}")
-    if item.get("termos_glossario_ementa"):
-        linhas.append(f"- **Termos oficiais do glossário:** "
-                      f"{', '.join(item['termos_glossario_ementa'])}")
+    if item.get("observacao"):
+        linhas.append(f"- **Observação:** {item['observacao']}")
     linhas.append("")
     linhas += lista_md("Conteúdos oficiais (ementa)", item.get("conteudos_oficiais", []))
     linhas += lista_md("Detalhamento didático", item.get("detalhamento_didatico", []))
     linhas += lista_md("Indicadores de desempenho", item.get("indicadores", []))
     linhas += lista_md("Ideias da ementa para exemplos e exercícios",
                        item.get("ideias_ementa", []))
+    termos = [f"**{termo}:** {glossario.get(termo, '')}"
+              for termo in item.get("termos_glossario_ementa", [])]
+    linhas += lista_md("Termos oficiais do glossário (ementa)", termos)
     while linhas and linhas[-1] == "":
         linhas.pop()
     return linhas
@@ -261,6 +305,10 @@ def md_conhecimentos(dados):
     linhas = ["", "## Conhecimentos da unidade curricular", ""]
     linhas += [f"{item['dominio']}. **{item['titulo']}:** {'; '.join(item['conteudos'])}."
                for item in dados["conhecimentos"]]
+    detalhamento = dados.get("materia", {}).get("detalhamento_didatico_conhecimentos", {})
+    if detalhamento:
+        linhas += ["", "**Detalhamento didático (ementa):** " + "; ".join(
+            f"{chave} = {valor}" for chave, valor in detalhamento.items()) + "."]
     relacao = dados.get("capacidades_x_conhecimentos", {})
     if relacao:
         linhas += ["", "## Capacidades × conhecimentos", "",
@@ -342,6 +390,147 @@ def md_capitulo(capitulo, horas):
     return "\n".join(linhas)
 
 
+def valor_br(numero):
+    """Formata um número com vírgula decimal (4.0 → "4,0").
+
+    Args:
+        numero: Valor numérico.
+
+    Returns:
+        Texto formatado.
+    """
+    return f"{numero:.1f}".replace(".", ",")
+
+
+def md_objetivos_ementa(materia):
+    """Monta justificativa, objetivo geral e competência integradora, literais da ementa.
+
+    Args:
+        materia: Conteúdo do materia.json.
+
+    Returns:
+        Lista de linhas Markdown.
+    """
+    objetivo = materia.get("objetivo_geral", {})
+    competencia = materia.get("competencia_integradora", {})
+    linhas = ["## Justificativa", "", materia.get("justificativa", ""), "",
+              "## Objetivo geral", "", objetivo.get("texto", ""), ""]
+    linhas += [f"{i}. {dimensao}" for i, dimensao in enumerate(objetivo.get("dimensoes", []), 1)]
+    linhas += ["", "## Competência integradora", "",
+               f"- **Eixo:** {competencia.get('eixo_bncc', '')}",
+               f"- **Competência:** {competencia.get('competencia', '')}",
+               f"- **Resultados:** {'; '.join(competencia.get('resultados', []))}."]
+    return linhas
+
+
+def md_avaliacao_ementa(materia):
+    """Monta instrumentos, formativa, recuperação e rubrica da avaliação, literais da ementa.
+
+    Args:
+        materia: Conteúdo do materia.json.
+
+    Returns:
+        Lista de linhas Markdown (vazia se não houver avaliação).
+    """
+    avaliacao = materia.get("avaliacao")
+    if not avaliacao:
+        return []
+    linhas = ["", "## Avaliação", "", "| Instrumento | Valor | Momento | Capacidades |",
+              "|---|---|---|---|"]
+    for item in avaliacao.get("instrumentos", []):
+        linhas.append(f"| {item['instrumento']} | {valor_br(item['valor'])} | "
+                      f"{item.get('momento', '')} | {', '.join(item.get('capacidades', []))} |")
+        linhas += [f"| ↳ {tarefa['tarefa']} | {valor_br(tarefa['valor'])} | | "
+                   f"{', '.join(tarefa['capacidades'])} |" for tarefa in item.get("tarefas", [])]
+    linhas += [f"| **Nota final da UC** | **{valor_br(avaliacao.get('nota_final', 10))}** | | |",
+               "",
+               f"- **Formativa:** {avaliacao.get('formativa', '')}",
+               f"- **Recuperação:** {avaliacao.get('recuperacao', '')}", "",
+               "| Nível | Nota | Descrição |", "|---|---|---|"]
+    linhas += [f"| {nivel['nivel']} | {nivel['nota']} | {nivel['descricao']} |"
+               for nivel in avaliacao.get("rubrica", [])]
+    return linhas
+
+
+def md_recursos_ementa(materia):
+    """Monta recursos, ambientes e acessibilidade, literais da ementa.
+
+    Args:
+        materia: Conteúdo do materia.json.
+
+    Returns:
+        Lista de linhas Markdown.
+    """
+    recursos = materia.get("recursos", {})
+    acessibilidade = dict(materia.get("acessibilidade", {}))
+    regra = acessibilidade.pop("regra", "")
+    linhas = ["", "## Recursos e ambientes", "",
+              f"- **Ambientes:** {', '.join(recursos.get('ambientes', []))}.",
+              f"- **Equipamentos:** {', '.join(recursos.get('equipamentos', []))}.",
+              f"- **Recurso didático:** {recursos.get('recurso_didatico', '')}.",
+              "", "## Acessibilidade", ""]
+    linhas += [f"- **{nome}:** {texto}" for nome, texto in acessibilidade.items()]
+    if regra:
+        linhas += ["", f"{regra}."]
+    return linhas
+
+
+def md_listas_ementa(materia):
+    """Monta marcos, capacidades × conhecimentos, regras para IA e métricas da ementa.
+
+    Args:
+        materia: Conteúdo do materia.json.
+
+    Returns:
+        Lista de linhas Markdown.
+    """
+    linhas = []
+    if materia.get("marcos"):
+        linhas += ["", "## Marcos", ""]
+        linhas += [f"- Aula {marco['aula']} — {marco['marco']}" for marco in materia["marcos"]]
+    if materia.get("capacidades_x_conhecimentos_ementa"):
+        linhas += ["", "## Capacidades × conhecimentos (ementa)", ""]
+        linhas += [f"- {item}" for item in materia["capacidades_x_conhecimentos_ementa"]]
+    if materia.get("regras_ia"):
+        linhas += ["", "## Regras para IA (seguidas na escrita da apostila)", ""]
+        linhas += [f"{i}. {regra}" for i, regra in enumerate(materia["regras_ia"], 1)]
+    if materia.get("metricas"):
+        linhas += ["", "## Métricas", ""] + [f"- {metrica}" for metrica in materia["metricas"]]
+    return linhas
+
+
+def md_ementa_oficial(dados):
+    """Monta a seção com o texto oficial da ementa que não é por aula (referência literal).
+
+    Args:
+        dados: Dados da matéria (com "materia").
+
+    Returns:
+        Markdown da seção.
+    """
+    materia = dados.get("materia", {})
+    linhas = ["# Ementa da matéria (texto oficial)", "",
+              "Referência literal da ementa da matéria, para comparar com a apostila. Não editar "
+              "aqui: quem muda é a ementa (e o `materia.json`).", ""]
+    linhas += md_objetivos_ementa(materia) + md_avaliacao_ementa(materia)
+    linhas += md_recursos_ementa(materia) + md_aula_padrao(materia)
+    linhas += md_listas_ementa(materia) + md_bncc(materia)
+    return "\n".join(linhas)
+
+
+def md_referencias(dados):
+    """Monta a seção de referências da ementa.
+
+    Args:
+        dados: Dados da matéria (com "materia").
+
+    Returns:
+        Markdown da seção.
+    """
+    referencias = dados.get("materia", {}).get("referencias", [])
+    return "\n".join(["# Referências", "", *[f"- {referencia}" for referencia in referencias]])
+
+
 def montar_markdown_completo(dados, texto_introducao, capitulos):
     """Monta o Markdown completo da apostila, do zero.
 
@@ -357,8 +546,8 @@ def montar_markdown_completo(dados, texto_introducao, capitulos):
     partes = [
         md_cabecalho(dados, len(dados["capitulos_previstos"])),
         f"## Sumário\n\n{MARCADOR_SUMARIO_INICIO}\n{MARCADOR_SUMARIO_FIM}",
-        md_plano(dados, numeros), md_introducao(texto_introducao),
-        md_capacidades(dados, capitulos), md_glossario(capitulos),
+        md_ementa_oficial(dados), md_plano(dados, numeros), md_introducao(texto_introducao),
+        md_capacidades(dados, capitulos), md_glossario(capitulos), md_referencias(dados),
         *[md_capitulo(capitulo, dados["horas_por_capitulo"]) for capitulo in capitulos],
     ]
     return atualizar_sumario("\n\n---\n\n".join(partes) + "\n")

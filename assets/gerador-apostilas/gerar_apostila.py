@@ -34,6 +34,7 @@ import materia as dados_materia  # noqa: E402
 
 sys.path.insert(0, str(GERADOR))
 import markdown_apostila as md_apostila  # noqa: E402
+import conferir_ementa  # noqa: E402
 
 TEMPLATE = (GERADOR / "template_apostila.html").read_text(encoding="utf-8")
 PASTA_APOSTILA = "APOSTILA"
@@ -49,6 +50,7 @@ CAMPO_TERMOS_EMENTA = "termos_glossario_ementa"
 HORAS_POR_CAPITULO_PADRAO = 4
 OPCAO_MARKDOWN = "--markdown"
 OPCAO_FORCAR = "--forcar"
+OPCAO_CONFERIR = "--conferir"
 CAMINHO_LOGO = "img/logo-sesi-senai.png"
 URL_MINIATURA = "https://i.ytimg.com/vi/{}/hqdefault.jpg"
 CAMPOS_DADOS = ("uc", "uc_curta", "curso", "docente")
@@ -118,7 +120,8 @@ def ler_dados_materia(pasta_materia):
             "horas_por_capitulo": dados.get(CAMPO_HORAS_AULA, HORAS_POR_CAPITULO_PADRAO),
             "capitulos_previstos": [aula["tema"] for aula in plano], "plano_capitulos": plano,
             "conhecimentos": dados.get("conhecimentos", []),
-            "capacidades_x_conhecimentos": dados.get("capacidades_x_conhecimentos", {})}
+            "capacidades_x_conhecimentos": dados.get("capacidades_x_conhecimentos", {}),
+            "materia": dados}
 
 
 def validar_plano_capitulos(dados):
@@ -617,15 +620,45 @@ def montar_pagina(pasta_materia, dados, capitulos):
     return inserir_header_em_html(pagina, str(pasta_saida))
 
 
+def caminho_markdown_completo(pasta_materia):
+    """Caminho do Markdown completo da apostila da matéria.
+
+    Args:
+        pasta_materia: Pasta da matéria.
+
+    Returns:
+        Caminho de <MATERIA>/APOSTILA/APOSTILA-<MATERIA>.md.
+    """
+    return pasta_materia / PASTA_APOSTILA / f"APOSTILA-{pasta_materia.name}.md"
+
+
+def conferir_com_ementa(pasta_materia):
+    """Roda a conferência obrigatória do Markdown completo com a ementa da matéria.
+
+    Args:
+        pasta_materia: Pasta da matéria.
+
+    Returns:
+        True se o Markdown completo bate 100% com a ementa.
+    """
+    return conferir_ementa.conferir_materia(pasta_materia, caminho_markdown_completo(pasta_materia))
+
+
 def gerar_apostila(pasta_materia):
-    """Gera a apostila da matéria a partir de todos os CAPITULO-NN.md existentes.
+    """Gera a apostila HTML, só depois de a conferência com a ementa bater 100%.
 
     Args:
         pasta_materia: Pasta da matéria.
 
     Returns:
         Caminho do HTML gerado.
+
+    Raises:
+        SystemExit: Se o Markdown completo não bater 100% com a ementa da matéria.
     """
+    if not conferir_com_ementa(pasta_materia):
+        erro("o Markdown completo não bate 100% com a ementa da matéria: corrija o que falta "
+             "antes de gerar a apostila (regra CONFERÊNCIA OBRIGATÓRIA)")
     dados = ler_dados_materia(pasta_materia)
     capitulos = ler_fontes_capitulos(pasta_materia, dados)
     saida = pasta_materia / PASTA_APOSTILA / f"APOSTILA-{pasta_materia.name}.html"
@@ -636,12 +669,13 @@ def gerar_apostila(pasta_materia):
     return saida
 
 
-def divergencias_capitulo(capitulo, plano):
+def divergencias_capitulo(capitulo, plano, glossario):
     """Compara um capítulo com o plano da ementa (tema, capacidades e glossário oficial).
 
     Args:
         capitulo: Capítulo lido do CAPITULO-NN.md.
         plano: Entrada da aula em "aulas" do materia.json.
+        glossario: Glossário oficial da ementa (termo → definição).
 
     Returns:
         Lista de avisos (vazia se o capítulo cobre o que a ementa pede).
@@ -652,11 +686,17 @@ def divergencias_capitulo(capitulo, plano):
     if set(plano.get("capacidades", [])) != set(capitulo["codigos"]):
         avisos.append(f"capacidades {', '.join(capitulo['codigos'])} ≠ plano "
                       f"{', '.join(plano.get('capacidades', []))}")
-    termos = {termo["termo"].casefold() for termo in capitulo["termos"]}
+    termos = {termo["termo"].casefold(): termo["definicao"] for termo in capitulo["termos"]}
     faltando = [termo for termo in plano.get(CAMPO_TERMOS_EMENTA, [])
                 if termo.casefold() not in termos]
     if faltando:
         avisos.append(f"glossário sem os termos da ementa: {', '.join(faltando)}")
+    diferentes = [termo for termo in plano.get(CAMPO_TERMOS_EMENTA, [])
+                  if termo.casefold() in termos and conferir_ementa.normalizar(
+                      termos[termo.casefold()]) != conferir_ementa.normalizar(
+                      glossario.get(termo, ""))]
+    if diferentes:
+        avisos.append(f"definição diferente da ementa: {', '.join(diferentes)}")
     return avisos
 
 
@@ -671,11 +711,13 @@ def conferir_cobertura_ementa(dados, capitulos):
         Quantidade de avisos emitidos.
     """
     plano_por_numero = {item["numero"]: item for item in dados["plano_capitulos"]}
+    glossario = {termo["termo"]: termo["definicao"]
+                 for termo in dados["materia"].get("glossario_ementa", [])}
     total = 0
     for capitulo in capitulos:
         plano = plano_por_numero.get(capitulo["numero"])
         avisos = ["não existe no plano de capítulos"] if plano is None else \
-            divergencias_capitulo(capitulo, plano)
+            divergencias_capitulo(capitulo, plano, glossario)
         for aviso in avisos:
             print(f"⚠️ Capítulo {capitulo['numero']}: {aviso}")
         total += len(avisos)
@@ -718,7 +760,7 @@ def gerar_markdown_completo(pasta_materia, forcar):
     dados = ler_dados_materia(pasta_materia)
     validar_plano_capitulos(dados)
     capitulos = ler_fontes_capitulos(pasta_materia, dados)
-    saida = pasta_materia / PASTA_APOSTILA / f"APOSTILA-{pasta_materia.name}.md"
+    saida = caminho_markdown_completo(pasta_materia)
     if forcar or not saida.is_file():
         texto = md_apostila.montar_markdown_completo(
             dados, ler_texto_introducao(pasta_materia), capitulos)
@@ -736,19 +778,22 @@ def gerar_markdown_completo(pasta_materia, forcar):
 def main():
     """Lê a pasta da matéria e as opções da linha de comando e gera o Markdown ou o HTML.
 
-    Uso: gerar_apostila.py <pasta da matéria> [--markdown [--forcar]]
+    Uso: gerar_apostila.py <pasta da matéria> [--markdown [--forcar] | --conferir]
     """
     sys.stdout.reconfigure(encoding="utf-8")
     argumentos = [argumento for argumento in sys.argv[1:] if not argumento.startswith("--")]
     opcoes = {argumento for argumento in sys.argv[1:] if argumento.startswith("--")}
     if len(argumentos) != 1:
-        erro("uso: gerar_apostila.py <pasta da matéria> [--markdown [--forcar]]")
+        erro("uso: gerar_apostila.py <pasta da matéria> [--markdown [--forcar] | --conferir]")
     pasta_materia = Path(argumentos[0]).resolve()
     if not pasta_materia.is_dir():
         erro(f"pasta não encontrada: {pasta_materia}")
+    if OPCAO_CONFERIR in opcoes:
+        sys.exit(0 if conferir_com_ementa(pasta_materia) else 1)
     if OPCAO_MARKDOWN in opcoes:
         caminho = gerar_markdown_completo(pasta_materia, OPCAO_FORCAR in opcoes)
         print(f"📘 Markdown completo: {caminho}")
+        conferir_com_ementa(pasta_materia)
         return
     print(f"📘 Apostila gerada: {gerar_apostila(pasta_materia)}")
 

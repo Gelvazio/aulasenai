@@ -15,8 +15,10 @@ encontrar no trabalho de Assistente de Operações Logísticas.
 
 Desenvolver capacidades básicas e socioemocionais em três dimensões:
 
-1. **Comunicação profissional** — comunicar-se oralmente e por escrito de forma clara, assertiva e eficaz.
-2. **Interpretação técnica** — compreender normas, textos, dados e termos técnicos do trabalho.
+1. **Comunicação profissional** — comunicar-se oralmente e por escrito de forma clara,
+   assertiva e eficaz.
+2. **Interpretação técnica** — compreender normas, textos, dados e terminologias de contextos
+   técnicos e industriais.
 3. **Uso seguro de TIC** — pesquisar, produzir, armazenar e compartilhar informações com segurança.
 
 ### Como a apostila está organizada
@@ -46,13 +48,13 @@ alfabética.
 ### Como você será avaliado
 
 Durante as aulas 1 a 9, a avaliação é **formativa**: a atividade de 50 questões de cada aula, os
-quizzes e o acompanhamento do professor mostram o que você já domina e o que precisa revisar. Na
-**aula 10** acontecem as avaliações que formam a nota final:
+quizzes e o registro qualitativo do professor mostram o que você já domina e o que precisa revisar.
+Na **aula 10** acontecem as avaliações que formam a nota final:
 
 | Instrumento | Valor | Capacidades |
 |---|---|---|
-| Avaliação objetiva — 40 questões, 60 minutos | 4,0 | C1 a C5 |
-| Avaliação prática — 4 tarefas, 100 minutos | 6,0 | C1 a C5 |
+| Avaliação objetiva — 40 questões, 7 eixos, 60 min | 4,0 | C1 a C5 |
+| Avaliação prática — 4 tarefas, 100 min | 6,0 | C1 a C5 |
 | ↳ T1 Organização, backup e comunicação | 1,5 | C1, C2, C4, C5 |
 | ↳ T2 Relatório técnico | 2,0 | C1, C3 |
 | ↳ T3 Planilha de análise | 1,5 | C3, C4 |
@@ -73,20 +75,30 @@ capacidades não atingidas.
 
 ### Ambientes, recursos e acessibilidade
 
-As aulas acontecem na sala de aula, no **laboratório de informática**, no auditório e, quando
-disponível, com recursos de realidade virtual. Usaremos projetor, computadores, quadro branco e
-lousa digital, além da **Estante Virtual SENAI**.
+As aulas acontecem na sala de aula, no **laboratório de informática**, no auditório e em
+ambiente de realidade virtual (RV), quando disponível. Usaremos projetor, computadores, quadro
+branco, lousa digital e recursos de RA/RV, além da **Estante Virtual SENAI**.
 
 Os exemplos citam categorias de programas (editor de textos, planilha, apresentação), e você pode
 usar a suíte disponível na escola ou em casa: Microsoft 365, Google Workspace ou LibreOffice.
 
-**Acessibilidade:** se precisar, peça ao professor zoom, alto contraste, leitor de tela, fonte
-ampliada, legendas, instruções escritas, atalhos de teclado, digitação por voz, tempo estendido ou
-passo a passo em etapas curtas. O formato e o tempo podem ser adaptados sem mudar as capacidades
-avaliadas.
+**Acessibilidade:** se precisar, peça ao professor:
+
+- **visual:** zoom, alto contraste, leitor de tela (NVDA, TalkBack, ChromeVox), fonte ampliada;
+- **auditiva:** legendas, instruções escritas, intérprete de Libras quando houver;
+- **motora:** atalhos, digitação por voz, tempo estendido;
+- **leitura/TDAH:** passo a passo numerado, etapas curtas, checklist;
+- **pouca familiaridade com o computador:** duplas e demonstração lenta.
+
+O tempo e o formato podem ser adaptados sem alterar as capacidades avaliadas.
 
 ### Competência integradora
 
-**Eixo:** Mediação e Intervenção Sociocultural. Ao longo da unidade, você vai reconhecer conflitos
-e propor soluções para problemas do ambiente de trabalho, demonstrando **empatia, escuta ativa e
-diálogo** nas relações profissionais.
+**Eixo:** Mediação e Intervenção Sociocultural.
+
+**Competência:** reconhecer conflitos e sugerir soluções para problemas identificados na comunidade.
+
+**Resultados esperados:**
+
+- identificar ações para um ambiente de trabalho saudável, considerando diversidades;
+- demonstrar empatia, escuta ativa e diálogo nas relações profissionais.
