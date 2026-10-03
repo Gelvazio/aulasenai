@@ -37,6 +37,7 @@ CAMPO_ROTULO = "Rótulo da aula"
 CAMPO_PDF_GABARITO = "Exportar PDF com gabarito"
 PREFIXOS_SEM_SUFIXO = ("AVALIACAO-", "ATIVIDADE-")
 VALOR_ATIVADO = "sim"
+VALOR_SO_GABARITO = "gabarito"  # "Exportar PDF com gabarito: gabarito" -> botão "Gabarito"
 URL_SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
 PADRAO_DATA_NOME = re.compile(r"(\d{2})-(\d{2})-(\d{4})")
 ROTULOS_SLIDES = {".pdf": "📕 Slides (PDF)", ".pptx": "📕 Slides (PowerPoint)"}
@@ -118,7 +119,9 @@ def ler_questoes(md_path):
         "turma": campo_opcional(texto, CAMPO_TURMA),
     }
     meta["letras"] = ""
-    meta["pdf_gabarito"] = campo_opcional(texto, CAMPO_PDF_GABARITO).lower() == VALOR_ATIVADO
+    valor_pdf_gabarito = campo_opcional(texto, CAMPO_PDF_GABARITO).lower()
+    meta["pdf_gabarito"] = valor_pdf_gabarito in (VALOR_ATIVADO, VALOR_SO_GABARITO)
+    meta["pdf_so_gabarito"] = valor_pdf_gabarito == VALOR_SO_GABARITO
     meta["rotulo"] = campo_opcional(texto, CAMPO_ROTULO) or f"Aula {meta['aula']}"
     itens = []
     for bloco in re.split(r"^## ", texto, flags=re.M)[1:]:
@@ -187,6 +190,30 @@ def card(it):
 BLOCO_PDF_GABARITO = '''
             <button class="btn-export" id="btnExportarPDFGabarito" type="button" data-somente-perfil="PROFESSOR" hidden title="Só o professor: atividade completa com o gabarito real (lido do banco)">📥 Exportar PDF com gabarito</button>
             <button class="btn-export" id="btnExportarGabarito" type="button" hidden title="Professor: gabarito real. Aluno: suas respostas da tentativa de maior nota.">🔑 Exportar Gabarito</button>'''
+
+BOTAO_PDF_SO_GABARITO = (
+    '<button class="btn-export" id="btnExportarPDFGabarito" type="button" '
+    'data-somente-perfil="PROFESSOR" data-modo="gabarito" hidden '
+    'title="Só o professor: somente o gabarito real (lido do banco)">📥 Gabarito</button>')
+
+
+def bloco_pdf_gabarito(meta):
+    """Botões de exportação do professor; com "gabarito" no .md o PDF traz só o gabarito.
+
+    Args:
+        meta: Metadados da atividade (chaves pdf_gabarito e pdf_so_gabarito).
+
+    Returns:
+        HTML dos botões, ou "" se a exportação com gabarito estiver desligada.
+    """
+    if not meta["pdf_gabarito"]:
+        return ""
+    if not meta["pdf_so_gabarito"]:
+        return BLOCO_PDF_GABARITO
+
+    linhas = BLOCO_PDF_GABARITO.split("\n")
+    linhas[1] = " " * 12 + BOTAO_PDF_SO_GABARITO
+    return "\n".join(linhas)
 
 
 CAIXA_CAPACIDADE_TEXTO = '''                <div class="content-box">
@@ -263,7 +290,7 @@ def gerar_atividade(md_path, dados):
         "{{AULA}}": e(meta["aula"]),
         "{{ROTULO_AULA}}": e(meta["rotulo"]),
         "{{LETRAS}}": e(meta["letras"]),
-        "{{PDF_GABARITO}}": BLOCO_PDF_GABARITO if meta["pdf_gabarito"] else "",
+        "{{PDF_GABARITO}}": bloco_pdf_gabarito(meta),
         "{{PDF_GABARITO_JS}}": (f'\n    <script src="{assets}/js/avaliacao-pdf-professor.js"></script>'
                                 if meta["pdf_gabarito"] else ""),
         "{{TEMA}}": e(meta["tema"]),

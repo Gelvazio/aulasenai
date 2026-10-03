@@ -1,5 +1,6 @@
 // Botões de exportação no final das avaliações (assets/js/atividade.js faz o PDF).
 //  • "Exportar PDF com gabarito": só PROFESSOR; o gabarito real é lido do banco (RLS) no clique.
+//    Com data-modo="gabarito" no botão (rótulo "Gabarito"), o PDF traz SOMENTE o gabarito.
 //  • "Exportar Gabarito": PROFESSOR recebe o gabarito real (só as alternativas certas); ALUNO
 //    recebe as alternativas que ele marcou na tentativa de MAIOR NOTA (lidas do banco), sem
 //    indicar quais estão certas. O gabarito real nunca fica na página.
@@ -14,6 +15,7 @@ const MSG_SEM_LOGIN_PDF = 'Entre com o seu usuário para exportar.';
 const MSG_SEM_ENTREGA_PDF = 'Você ainda não entregou esta atividade: não há tentativa com nota.';
 const PERFIL_PROFESSOR_PDF = 'PROFESSOR';
 const NOTA_MAXIMA_PDF = 10;
+const MODO_SO_GABARITO_PDF = 'gabarito';
 
 /**
  * Avisa o usuário de um erro (popup quando disponível).
@@ -102,13 +104,20 @@ async function lerRespostasDaMelhorTentativa() {
 }
 
 /**
- * Botão "Exportar PDF com gabarito" (só professor): atividade completa + gabarito real.
+ * Botão "Exportar PDF com gabarito" (só professor): atividade completa + gabarito real; no modo
+ * "gabarito" (data-modo do botão), só o gabarito.
  */
 async function exportarPdfCompletoProfessor() {
     try {
         if (!(await lerPerfilPdf()).ehProfessor) throw new Error(MSG_SO_PROFESSOR_PDF);
 
-        exportarPDFAtividade(await lerGabaritoDoBanco());
+        const gabarito = await lerGabaritoDoBanco();
+        const botao = document.getElementById(ID_BOTAO_PDF_GABARITO);
+        if (botao?.dataset.modo === MODO_SO_GABARITO_PDF) {
+            exportarSomenteGabaritoPDF(gabarito);
+            return;
+        }
+        exportarPDFAtividade(gabarito);
     } catch (erro) {
         await avisarErroPdfGabarito(erro.message === MSG_SO_PROFESSOR_PDF
             ? erro.message : MSG_ERRO_PDF_GABARITO + erro.message);
