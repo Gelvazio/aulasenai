@@ -96,6 +96,22 @@ ATIVIDADES_AUTOMACAO = [
      f"{PASTA_AUTOMACAO}/ATIVIDADES-AULA-05-50-QUESTOES.md"),
     (6, "CLP: Estruturas de Programação", DATA_PROVISORIA_AUTOMACAO,
      f"{PASTA_AUTOMACAO}/ATIVIDADES-AULA-06-50-QUESTOES.md"),
+    (7, "Sistemas de Supervisão: Local e Remoto e seus Componentes", DATA_PROVISORIA_AUTOMACAO,
+     f"{PASTA_AUTOMACAO}/ATIVIDADES-AULA-07-50-QUESTOES.md"),
+    (8, "Softwares SCADA, IHM e Funções Básicas da Supervisão", DATA_PROVISORIA_AUTOMACAO,
+     f"{PASTA_AUTOMACAO}/ATIVIDADES-AULA-08-50-QUESTOES.md"),
+    (9, "Instrumentação: Simbologia, Fluxogramas, Malhas e Sinais", DATA_PROVISORIA_AUTOMACAO,
+     f"{PASTA_AUTOMACAO}/ATIVIDADES-AULA-09-50-QUESTOES.md"),
+    (10, "Pressão: Unidades, Conversões e Dispositivos de Medição", DATA_PROVISORIA_AUTOMACAO,
+     f"{PASTA_AUTOMACAO}/ATIVIDADES-AULA-10-50-QUESTOES.md"),
+    (11, "Medição de Nível: Direta, Indireta, Descontínua e de Sólidos", DATA_PROVISORIA_AUTOMACAO,
+     f"{PASTA_AUTOMACAO}/ATIVIDADES-AULA-11-50-QUESTOES.md"),
+    (12, "Vazão: Unidades e Principais Medidores", DATA_PROVISORIA_AUTOMACAO,
+     f"{PASTA_AUTOMACAO}/ATIVIDADES-AULA-12-50-QUESTOES.md"),
+    (13, "Temperatura: Medidores por Dilatação e Termopar", DATA_PROVISORIA_AUTOMACAO,
+     f"{PASTA_AUTOMACAO}/ATIVIDADES-AULA-13-50-QUESTOES.md"),
+    (14, "Temperatura: Termorresistência (PT100) e Laudo Comparativo", DATA_PROVISORIA_AUTOMACAO,
+     f"{PASTA_AUTOMACAO}/ATIVIDADES-AULA-14-50-QUESTOES.md"),
 ]
 
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.

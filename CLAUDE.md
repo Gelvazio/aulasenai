@@ -12,6 +12,9 @@
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
 - ✅ **Um commit por tarefa** (local).
+- ✅ **Aulas: uma por vez, completa** (2026-10-03): gerar e gravar uma aula (e todo o seu material)
+  antes de passar à próxima, controlando em `<MATERIA>/AULAS/STATUS-AULAS.md` (ver a regra
+  "GERAR E GRAVAR UMA AULA POR VEZ").
 - ⛔ **NUNCA fazer push** (2026-10-01): o push é feito **só pelo usuário, localmente**. Mesmo que
   ele peça "faça push", não executar `git push`; avisar que o commit está pronto para ele enviar.
 
@@ -1666,6 +1669,28 @@ documentação da própria matéria.** Registrada em 2026-10-02.
   ementa e só então gerar as aulas.
 - ⚠️ Vale para cursos em `VERIFICAR` (regra STATUS-PERMISSAO-EMENTA) e respeita a regra de matérias
   semelhantes (só a pasta pedida). Exceção: `QUALIFICACAO-PROFISSIONAL/` (ementa só do professor).
+
+## 🔂 REGRA CRÍTICA — GERAR E GRAVAR UMA AULA POR VEZ, COMPLETA, COM `AULAS/STATUS-AULAS.md`
+
+⚠️ **Sempre que for gerar aulas (ou o material de uma aula: atividade de 50 questões, prática,
+avaliação, slides), gerar e gravar UMA aula por vez, COMPLETA, e só então passar para a próxima.**
+Vale para **todas as aulas de todas as matérias**. Registrada em 2026-10-03 a pedido do usuário.
+
+- ✅ **Aula completa** = todas as peças pedidas daquela aula prontas e gravadas no disco antes de
+  começar a seguinte: fonte `.md`, página `.html` gerada pelo gerador, conferência (quantidade de
+  itens, gabarito ausente do HTML), índice da matéria atualizado e entrada no seed do banco quando
+  houver folha de respostas.
+- ❌ Não escrever as fontes de várias aulas para gerar tudo no fim; não deixar aula pela metade
+  ao passar para a próxima.
+- ✅ **Controle de status:** cada matéria tem `<MATERIA>/AULAS/STATUS-AULAS.md`, com uma linha por
+  aula e uma coluna por peça (`⬜ Pendente`, `🔄 Em progresso`, `✅ Concluído`,
+  `⛔ Não se aplica`). Atualizar o arquivo **ao concluir cada aula** (e marcar 🔄 ao começar).
+  Se o arquivo não existir, criá-lo antes de gerar a primeira aula.
+- ✅ Ao retomar um trabalho interrompido, ler o `STATUS-AULAS.md` e continuar da primeira aula que
+  não está ✅.
+- ✅ Aplicar o seed no Supabase continua dependendo de pedido do usuário (registrar no status).
+- ⚠️ Respeita `STATUS-PERMISSAO-EMENTA`, matérias semelhantes e a exceção de
+  `QUALIFICACAO-PROFISSIONAL/`.
 
 ## 📊 REGRA — `dashboard.html` EM CADA PASTA DE MATÉRIA
 
