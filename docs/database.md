@@ -420,7 +420,7 @@ pelo conector do Supabase). **Plano:** `docs/tabela-turmaprofessor-professor-adm
 | `turmaprofessor.criado_em` / `criado_por` | `timestamptz` / `uuid` | quando e quem cadastrou |
 | `unique (turma_codigo, professor_id)` | restrição | sem vínculo repetido |
 | `eh_professor_administrador()` | função (security definer) | verdadeiro **só** para `gelvazio.camargo@senai.local` com `app_metadata.perfil = PROFESSOR` e `app_metadata.administrador = true` |
-| `professor_tem_turma(codigo)` | função | professor logado vinculado à turma (ou administrador); para políticas futuras |
+| `professor_tem_turma(codigo)` | função | professor logado vinculado à turma (ou administrador); usada nas políticas da `turmaaluno` e nas funções de turma (2026-10-03) |
 | `turmaprofessor_exige_professor()` | trigger | recusa vincular usuário sem perfil PROFESSOR |
 
 **RLS:** ligado; `anon` sem acesso; SELECT = administrador vê tudo, professor vê os próprios
@@ -441,8 +441,8 @@ Supabase). **Plano:** `docs/tabela-turmaaluno-menu-alunos.md`. Tela: `alunos.htm
 | `unique (turma_codigo, aluno_id)` | restrição | sem vínculo repetido |
 | `turmaaluno_exige_aluno()` | trigger | recusa vincular usuário sem perfil ALUNO |
 
-**RLS:** ligado; `anon` sem acesso; SELECT = professor vê tudo, aluno vê os próprios vínculos;
-INSERT/UPDATE/DELETE = **todo professor** (`eh_professor()`). TRUNCATE revogado. **Carga inicial:**
+**RLS:** ligado; `anon` sem acesso; SELECT = professor vê os vínculos das turmas dele, aluno vê os
+próprios; INSERT/UPDATE/DELETE = professor **só nas turmas dele** (desde 2026-10-03). TRUNCATE revogado. **Carga inicial:**
 106 vínculos copiados de `aluno.turma_codigo`.
 
 ### 🔗 Atualização 2026-10-02 — turma do aluno unificada na `turmaaluno`
@@ -461,6 +461,23 @@ INSERT/UPDATE/DELETE = **todo professor** (`eh_professor()`). TRUNCATE revogado.
 Vínculos que faltavam (19 alunos da turma 122552, contas criadas antes) foram copiados: total
 125. A criação de contas (`assets/js/criar-usuarios-api.js`, `scripts/criar-usuarios-supabase-auth.js`)
 grava o vínculo na `turmaaluno` (upsert) e não manda mais `turma_codigo` para a tabela `aluno`.
+
+### 🔒 Atualização 2026-10-03 — professor só vê as turmas vinculadas
+
+**Script:** `database/2026-10-03-professor-so-turmas-vinculadas.sql` (aplicado em 2026-10-03 pelo
+conector do Supabase). **Plano:** `docs/restringir-professor-as-turmas-vinculadas.md`.
+
+| Objeto | Mudança |
+|--------|---------|
+| `professor_pode_ver_aluno(aluno)` | nova função: administrador = sempre; demais professores = aluno de turma vinculada a ele (`turmaaluno` × `turmaprofessor`) ou aluno (perfil ALUNO no Auth) ainda sem turma |
+| SELECT de `aluno`, `usuario`, `resposta_atividade`, `entrega_atividade`, `liberacao_atividade`, `resposta_discursiva` | professor lê só o que `professor_pode_ver_aluno` permite (antes: todo professor lia tudo) |
+| `turmaaluno` (SELECT/INSERT/UPDATE/DELETE) | professor só nas turmas dele (`professor_tem_turma`) |
+| `definir_horario_turma`, `definir_lider_turma` | recusam turma não vinculada |
+| `liberar_nova_tentativa`, `liberar_fora_horario` | recusam aluno de turma não vinculada |
+| `resumo_tentativas_atividade` | lista só os alunos que o professor pode ver |
+| `turmaprofessor` (dados) | `gelvazio.camargo` vinculado a 135080, 135081 e QA LBTSN 2026/1 M2; nenhuma turma sem professor |
+
+`turma` continua legível por todo usuário logado (nome, turno, horário).
 
 ---
 

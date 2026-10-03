@@ -1272,8 +1272,17 @@ SQL: `database/2026-10-02-turmaprofessor-professor-administrador.sql` (aplicado 
   **e** tem `app_metadata.perfil = 'PROFESSOR'` **e** `app_metadata.administrador = true`. O
   `app_metadata` só a `service_role` altera; o SQL tira `administrador` de qualquer outra conta.
 - ✅ Só usuário com perfil PROFESSOR pode ser vinculado (trigger
-  `turmaprofessor_exige_professor`). `professor_tem_turma(codigo)` fica pronta para restringir,
-  no futuro, cada professor às suas turmas (hoje todo professor ainda vê tudo).
+  `turmaprofessor_exige_professor`).
+- ✅ **Cada professor só vê e altera as turmas vinculadas a ele** (2026-10-03, aplicado no banco;
+  SQL `database/2026-10-03-professor-so-turmas-vinculadas.sql`, plano
+  `docs/restringir-professor-as-turmas-vinculadas.md`): função `professor_pode_ver_aluno(aluno)`
+  no SELECT de `aluno`, `usuario`, `resposta_atividade`, `entrega_atividade`,
+  `liberacao_atividade` e `resposta_discursiva`; `professor_tem_turma(codigo)` na `turmaaluno` e em
+  `definir_horario_turma`/`definir_lider_turma`; `liberar_nova_tentativa`, `liberar_fora_horario` e
+  `resumo_tentativas_atividade` recusam/filtram aluno de outra turma. O administrador vê tudo.
+  Aluno (perfil ALUNO) ainda sem turma fica visível a todo professor, para poder ser vinculado.
+  ⚠️ Professor sem vínculo em `turmaprofessor` não vê nenhum aluno: vincular em `turmas.html`.
+  ❌ Nunca voltar a usar só `eh_professor()` para ler dados de alunos.
 - ✅ **Tela do administrador (2026-10-02):** menu **TURMAS** no header (`js/header-usuario.js`),
   exibido só quando o RPC `eh_professor_administrador()` devolve verdadeiro, abre `turmas.html`
   (raiz): CRUD da `turmaprofessor` — vincular, editar (trocar turma/professor) e excluir (popup),
@@ -1292,8 +1301,9 @@ SQL: `database/2026-10-02-turmaaluno.sql` (aplicado no banco).
 - ✅ Tabela **`turmaaluno`** (`turma_codigo` → `turma`, `aluno_id` → `auth.users`, único por turma +
   aluno), no mesmo modelo da `turmaprofessor`. Trigger `turmaaluno_exige_aluno` recusa quem não tem
   perfil ALUNO.
-- ✅ **RLS:** **todo professor** (`eh_professor()`) grava (vincular, editar, excluir) e lê tudo; o aluno
-  lê só os próprios vínculos; `anon` sem acesso; TRUNCATE revogado.
+- ✅ **RLS:** o professor grava (vincular, editar, excluir) e lê **só nas turmas vinculadas a ele**
+  (`professor_tem_turma`, desde 2026-10-03; o administrador em todas); o aluno lê só os próprios
+  vínculos; `anon` sem acesso; TRUNCATE revogado.
 - ✅ **Tela:** menu **ALUNOS** no header (todo PROFESSOR) abre `alunos.html` (raiz): CRUD com filtro
   por turma e busca por nome; alunos = `usuario.perfil = 'ALUNO'`. Código:
   `assets/js/turmas-aluno-repositorio.js` + `assets/js/turmas-aluno-pagina.js` +

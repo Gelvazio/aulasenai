@@ -442,6 +442,43 @@
       <p>Documentação perfeita. Todos os campos, tipos e relacionamentos estão corretos.</p>
     </div>
 
+    <h2>🔒 Atualização 2026-10-03 — professor só vê as turmas vinculadas</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-03-professor-so-turmas-vinculadas.sql</code> (aplicado em 2026-10-03)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Mudança</th>
+        </tr>
+        <tr>
+          <td>professor_pode_ver_aluno(aluno)</td>
+          <td>Função</td>
+          <td>Administrador = sempre; demais = aluno de turma vinculada ou aluno (perfil ALUNO) sem turma</td>
+        </tr>
+        <tr>
+          <td>aluno, usuario, resposta_atividade, entrega_atividade, liberacao_atividade, resposta_discursiva</td>
+          <td>RLS (SELECT)</td>
+          <td>Professor lê só os alunos das turmas dele</td>
+        </tr>
+        <tr>
+          <td>turmaaluno</td>
+          <td>RLS</td>
+          <td>Professor lê e grava só nas turmas dele (professor_tem_turma)</td>
+        </tr>
+        <tr>
+          <td>definir_horario_turma, definir_lider_turma, liberar_nova_tentativa, liberar_fora_horario, resumo_tentativas_atividade</td>
+          <td>Funções</td>
+          <td>Recusam ou filtram turma/aluno não vinculado</td>
+        </tr>
+        <tr>
+          <td>turmaprofessor</td>
+          <td>Dados</td>
+          <td>gelvazio vinculado a 135080, 135081 e QA LBTSN 2026/1 M2; nenhuma turma sem professor</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🔗 Atualização 2026-10-02 — turma do aluno unificada na turmaaluno</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-02-turma-do-aluno-turmaaluno.sql</code> (aplicado em 2026-10-02)</p>
@@ -546,7 +583,7 @@
           <td>Verdadeiro só para gelvazio.camargo@senai.local (perfil PROFESSOR + administrador = true)</td>
         </tr>
         <tr>
-          <td>professor_tem_turma(codigo)</td>
+          <td>professor_tem_turma(codigo) — em uso desde 2026-10-03</td>
           <td>Função</td>
           <td>Professor vinculado à turma (ou administrador)</td>
         </tr>
