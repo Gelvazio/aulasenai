@@ -98,6 +98,20 @@
   - [Vídeos](#vídeos-2)
   - [Resumo](#resumo-2)
   - [Exercícios](#exercícios-2)
+- [Capítulo 04 — Testes de Integração com DOM (Testing Library)](#capítulo-04--testes-de-integração-com-dom-testing-library)
+  - [Teoria](#teoria-3)
+    - [O teste passou, mas o botão sumiu](#o-teste-passou-mas-o-botão-sumiu)
+    - [A filosofia: testar o comportamento visível](#a-filosofia-testar-o-comportamento-visível)
+    - [Preparando o ambiente (React + Vitest)](#preparando-o-ambiente-react--vitest)
+    - [Hierarquia de consultas (queries)](#hierarquia-de-consultas-queries)
+    - [getBy, queryBy e findBy](#getby-queryby-e-findby)
+    - [Simulando o usuário com user-event](#simulando-o-usuário-com-user-event)
+    - [Exemplo: lista filtrável buscada por papel e texto](#exemplo-lista-filtrável-buscada-por-papel-e-texto)
+    - [Testando formulários](#testando-formulários)
+    - [Armadilhas comuns](#armadilhas-comuns)
+  - [Vídeos](#vídeos-3)
+  - [Resumo](#resumo-3)
+  - [Exercícios](#exercícios-3)
 <!-- sumario:fim -->
 
 ---
@@ -217,7 +231,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 | 01 | 01 | Fundamentos de Testes de Software | 4 h | ✅ Incluído |
 | 02 | 02 | Planejamento, Verificação, Validação e Casos de Teste | 4 h | ✅ Incluído |
 | 03 | 03 | Testes Unitários no Front-End com Vitest | 4 h | ✅ Incluído |
-| 04 | 04 | Testes de Integração com DOM (Testing Library) | 4 h | ⬜ Pendente |
+| 04 | 04 | Testes de Integração com DOM (Testing Library) | 4 h | ✅ Incluído |
 | 05 | 05 | Integração Avançada e Mock de APIs | 4 h | ⬜ Pendente |
 | 06 | 06 | Testes End-to-End com Cypress e Playwright | 4 h | ⬜ Pendente |
 | 07 | 07 | Métricas e Cobertura de Testes | 4 h | ⬜ Pendente |
@@ -632,6 +646,7 @@ IDE, leitor de tela, projeto-base pronto, tempo estendido ou trabalho em duplas.
 | Capítulo 01 — Fundamentos de Testes de Software | C1, C2, C3 |
 | Capítulo 02 — Planejamento, Verificação, Validação e Casos de Teste | C1, C2, C3, S2 |
 | Capítulo 03 — Testes Unitários no Front-End com Vitest | C5 |
+| Capítulo 04 — Testes de Integração com DOM (Testing Library) | C4, C5 |
 
 ---
 
@@ -648,22 +663,32 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Caso de teste:** condição, passos e resultado esperado. _(cap. 02)_
 - **Defeito:** imperfeição no código ou na especificação (bug). _(cap. 01)_
 - **describe:** função que agrupa testes relacionados em uma suíte. _(cap. 03)_
+- **DOM:** estrutura da página que o navegador monta a partir do HTML. _(cap. 04)_
 - **Erro:** ação humana equivocada que introduz um defeito. _(cap. 01)_
 - **Escopo:** o que será testado (e o que fica de fora) em uma versão. _(cap. 02)_
 - **Falha:** comportamento incorreto do sistema percebido durante o uso. _(cap. 01)_
+- **findBy:** consulta assíncrona que espera o elemento aparecer na tela. _(cap. 04)_
 - **Framework de testes:** ferramenta que roda os testes e oferece funções de asserção (ex.: Vitest). _(cap. 03)_
+- **getByRole:** consulta que encontra um elemento pelo papel e pelo nome acessível. _(cap. 04)_
+- **jsdom:** simulação do navegador dentro do Node, usada nos testes. _(cap. 04)_
 - **Matcher:** método que define como comparar na asserção (ex.: `toBe`, `toEqual`). _(cap. 03)_
 - **Matriz de rastreabilidade:** liga cada requisito aos casos de teste que o verificam. _(cap. 02)_
 - **Modo watch:** execução automática dos testes a cada alteração salva. _(cap. 03)_
+- **Nome acessível:** texto que identifica um elemento para leitores de tela (ex.: o rótulo do botão). _(cap. 04)_
 - **Padrão AAA:** estrutura de teste em três etapas: preparar (Arrange), executar (Act) e conferir (Assert). _(cap. 01)_
 - **Partição de equivalência:** técnica que agrupa entradas de mesmo comportamento e testa um representante de cada grupo. _(cap. 02)_
 - **Pirâmide de testes:** modelo que equilibra muitos testes unitários, alguns de integração e poucos E2E. _(cap. 01)_
 - **Plano de testes:** documento com escopo, estratégia, ambientes, cronograma, riscos e critérios de saída dos testes. _(cap. 02)_
 - **Qualidade:** conformidade do sistema com os requisitos e as expectativas dos usuários. _(cap. 01)_
+- **queryBy:** consulta que devolve nulo quando o elemento não existe, usada para provar ausência. _(cap. 04)_
 - **Regra de 10:** o custo de corrigir um defeito cresce cerca de 10 vezes a cada etapa em que ele avança. _(cap. 01)_
 - **Requisito testável:** requisito claro, com um comportamento e um critério objetivo de aceitação. _(cap. 02)_
+- **Role (papel):** função acessível de um elemento na tela (botão, link, caixa de texto, item de lista). _(cap. 04)_
 - **Suíte:** conjunto organizado de testes. _(cap. 03)_
+- **Teste de integração:** teste de várias partes funcionando juntas (componente, DOM, eventos). _(cap. 04)_
 - **Teste unitário:** teste rápido e isolado de uma função ou regra. _(cap. 01)_
+- **Testing Library:** biblioteca que testa componentes pelo que o usuário vê e faz. _(cap. 04)_
+- **user-event:** biblioteca que simula as interações reais do usuário (clicar, digitar). _(cap. 04)_
 - **Validação:** é o produto que o usuário precisa? _(cap. 01)_
 - **Valor-limite:** técnica que testa as entradas exatamente nas bordas de uma regra. _(cap. 02)_
 - **Verificação:** construímos o produto certo conforme a especificação? _(cap. 01)_
@@ -1248,3 +1273,229 @@ escondem.
 - **Contexto:** A função `classificarCliente(totalComprado)` devolve "novo" se o total for 0, "bronze" até R$ 500, "prata" até R$ 2.000 e "ouro" acima disso.
 - **Comando:** Usando a visão de caixa branca, liste todos os caminhos do código e os valores de borda que a suíte precisa testar, e organize os testes em um `describe`.
 - **Linhas:** 6
+
+---
+
+# Capítulo 04 — Testes de Integração com DOM (Testing Library)
+
+- **Aula:** 04
+- **Carga horária:** 4 horas (1 aula)
+- **Capacidade:** C4, C5
+- **Fonte:** `APOSTILA/CONTEUDO/CAPITULO-04.md`
+
+## Teoria
+
+### O teste passou, mas o botão sumiu
+
+Na **Loja Nuvem Azul**, os testes unitários do carrinho passavam todos. Mesmo assim, depois de
+uma mudança no CSS, o botão **Adicionar ao carrinho** ficou escondido atrás da imagem do produto e
+ninguém conseguia clicar. Os testes conferiam variáveis internas, não a tela. Testes de
+**integração com o DOM** verificam se as partes funcionam **juntas**, do jeito que o usuário usa:
+lendo textos, clicando em botões e preenchendo campos.
+
+> 🎯 **Objetivos do capítulo:** aplicar a filosofia da **Testing Library**, encontrar elementos
+> pelo **papel (role) e pelo texto**, simular o usuário com **user-event** e escrever testes de
+> **botões e formulários** como testes funcionais de **caixa preta**.
+
+### A filosofia: testar o comportamento visível
+
+> "Quanto mais os seus testes se parecerem com a forma como o software é usado, mais confiança
+> eles podem dar." — princípio da Testing Library (Kent C. Dodds)
+
+| Testar a implementação ❌ | Testar o comportamento ✅ |
+|---|---|
+| Conferir o estado interno `contador = 1` | Conferir o texto "Total: 1" na tela |
+| Buscar pelo seletor `.btn-primary` | Buscar o botão com o nome "Adicionar ao carrinho" |
+| Quebra quando alguém renomeia uma classe CSS | Só quebra quando o usuário seria afetado |
+
+Esse é um teste **funcional de caixa preta**: entra a ação do usuário, sai o que ele vê — sem olhar
+o código do componente. Ele verifica a **funcionalidade** (a regra de negócio funcionando na tela).
+
+### Preparando o ambiente (React + Vitest)
+
+```bash
+npm install -D @testing-library/react @testing-library/user-event @testing-library/jest-dom jsdom @vitejs/plugin-react
+```
+
+```js
+// vitest.config.js
+import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  test: { environment: 'jsdom', globals: true, setupFiles: './vitest.setup.js' },
+});
+
+// vitest.setup.js
+import '@testing-library/jest-dom/vitest';
+```
+
+- **jsdom** simula o navegador dentro do Node (document, eventos).
+- **jest-dom** acrescenta matchers como `toBeInTheDocument`, `toBeVisible`, `toBeDisabled`.
+
+### Hierarquia de consultas (queries)
+
+| Prioridade | Consulta | Quando usar |
+|---|---|---|
+| 1 | `getByRole('button', { name: 'Entrar' })` | Quase sempre: botões, links, títulos, caixas de texto |
+| 2 | `getByLabelText('E-mail')` | Campos de formulário com rótulo |
+| 3 | `getByPlaceholderText('Buscar...')` | Campos sem rótulo (ex.: busca) |
+| 4 | `getByText('Frete grátis')` | Textos sem papel específico |
+| Último recurso | `getByTestId('grafico')` | Elementos sem significado para o usuário |
+
+**Bônus de acessibilidade:** se o teste não encontra o botão por `getByRole`, um leitor de tela
+também não vai encontrar — a `<div>` clicável precisa virar `<button>`.
+
+### getBy, queryBy e findBy
+
+- `getBy...` — o elemento **tem de estar** na tela (senão o teste falha).
+- `queryBy...` — devolve `null` se não achar: use para provar que algo **sumiu**
+  (`expect(screen.queryByText('E-mail inválido')).not.toBeInTheDocument()`).
+- `findBy...` — **espera** o elemento aparecer (devolve uma promessa; use `await`), ideal para
+  conteúdo que chega depois.
+
+### Simulando o usuário com user-event
+
+`user-event` reproduz a sequência real de eventos (foco, teclas, clique). Prefira-o ao
+`fireEvent`. Sempre com `await`:
+
+```jsx
+// BotaoSeguir.jsx
+import { useState } from 'react';
+
+export function BotaoSeguir({ aoSeguir }) {
+  const [seguindo, setSeguindo] = useState(false);
+  function alternar() {
+    setSeguindo(!seguindo);
+    aoSeguir(!seguindo);
+  }
+  return <button onClick={alternar}>{seguindo ? 'Seguindo' : 'Seguir'}</button>;
+}
+
+// BotaoSeguir.test.jsx
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { it, expect, vi } from 'vitest';
+import { BotaoSeguir } from './BotaoSeguir';
+
+it('muda para "Seguindo" e avisa quem usa o componente', async () => {
+  const user = userEvent.setup();
+  const aoSeguir = vi.fn();
+  render(<BotaoSeguir aoSeguir={aoSeguir} />);
+
+  await user.click(screen.getByRole('button', { name: 'Seguir' }));
+
+  expect(screen.getByRole('button', { name: 'Seguindo' })).toBeInTheDocument();
+  expect(aoSeguir).toHaveBeenCalledWith(true);
+});
+```
+
+### Exemplo: lista filtrável buscada por papel e texto
+
+```jsx
+// ListaProdutos.jsx
+import { useState } from 'react';
+
+export function ListaProdutos({ produtos }) {
+  const [busca, setBusca] = useState('');
+  const visiveis = produtos.filter((p) => p.toLowerCase().includes(busca.toLowerCase()));
+  return (
+    <div>
+      <label htmlFor="busca">Buscar produto</label>
+      <input id="busca" value={busca} onChange={(e) => setBusca(e.target.value)} />
+      <ul>
+        {visiveis.map((p) => <li key={p}>{p}</li>)}
+      </ul>
+      {visiveis.length === 0 && <p>Nenhum produto encontrado</p>}
+    </div>
+  );
+}
+
+// ListaProdutos.test.jsx
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { it, expect } from 'vitest';
+import { ListaProdutos } from './ListaProdutos';
+
+it('filtra a lista pelo texto digitado', async () => {
+  const user = userEvent.setup();
+  render(<ListaProdutos produtos={['Camiseta azul', 'Boné preto', 'Camiseta branca']} />);
+
+  await user.type(screen.getByLabelText('Buscar produto'), 'camiseta');
+
+  expect(screen.getAllByRole('listitem')).toHaveLength(2);
+  expect(screen.queryByText('Boné preto')).not.toBeInTheDocument();
+});
+```
+
+**Por que não buscar pela classe CSS?** Classes mudam por motivos visuais (novo tema, nova
+biblioteca de estilos) sem que o comportamento mude. O teste preso a `.item-lista` quebraria à toa;
+o teste que busca `listitem` e o texto continua válido enquanto o usuário vê a mesma coisa.
+
+### Testando formulários
+
+Roteiro típico: renderizar → achar o campo pelo **rótulo** → digitar um valor inválido → conferir a
+mensagem de erro **visível** → corrigir → conferir que a mensagem sumiu (`queryBy`) e que o botão
+**Cadastrar** ficou habilitado (`toBeEnabled`).
+
+### Armadilhas comuns
+
+- Esquecer o `await` antes de `user.click`, `user.type` ou `findBy`.
+- Usar `getBy` para verificar ausência (use `queryBy`).
+- Usar `data-testid` quando existe papel ou rótulo.
+- Quando um teste falha, `screen.debug()` mostra o HTML atual e a mensagem de erro lista os papéis
+  disponíveis — use isso para corrigir a consulta.
+
+## Vídeos
+
+- [Writing integration tests — React testing for beginners (em inglês)](https://www.youtube.com/watch?v=52-QICDljww) — 08:01 — Syntax
+- [Finding elements by role — getByRole (em inglês)](https://www.youtube.com/watch?v=YIVz3j9s1z4) — 03:38 — Technical Rajni
+- [Using getByRole in React (em inglês)](https://www.youtube.com/watch?v=Px-H5Eplg90) — 07:45 — Timothy Amo
+
+## Resumo
+
+- Testes de **integração com DOM** verificam as partes funcionando juntas, como o usuário vê — **caixa preta** e **funcionalidade**.
+- **Testing Library:** teste o comportamento visível, não a implementação; classes CSS e estado interno deixam o teste frágil.
+- Prioridade das consultas: **getByRole** → getByLabelText → getByPlaceholderText → getByText → getByTestId (último recurso).
+- **getBy** (tem de estar), **queryBy** (para ausência) e **findBy** (espera, com `await`).
+- **user-event** simula o usuário de verdade; **jest-dom** traz matchers como `toBeInTheDocument`, `toBeVisible` e `toBeDisabled`.
+- Formulários: rótulo → digitação inválida → mensagem visível → correção → mensagem some e botão habilita.
+
+## Exercícios
+
+### ITEM 1
+- **Capacidade:** C5
+- **Contexto:** O projeto da Loja Nuvem Azul já tem Vitest para funções, mas ainda não consegue testar componentes React com o DOM.
+- **Comando:** Liste os pacotes a instalar e explique o papel de cada um (Testing Library, user-event, jest-dom, jsdom) e o que deve ir no `vitest.config.js` e no arquivo de setup.
+- **Linhas:** 6
+
+### ITEM 2
+- **Capacidade:** C4, C5
+- **Contexto:** O componente `BotaoCarrinho` mostra "Adicionar ao carrinho"; ao ser clicado, troca o texto para "Adicionado ✓" e chama a função `aoAdicionar` recebida por propriedade.
+- **Comando:** Escreva o teste com Testing Library e user-event no padrão AAA, buscando o botão pelo papel e pelo nome e conferindo o novo texto e a chamada da função.
+- **Linhas:** 9
+
+### ITEM 3
+- **Capacidade:** C4
+- **Contexto:** Você precisa localizar: (a) o botão "Finalizar compra"; (b) o campo com rótulo "E-mail"; (c) a busca com placeholder "Buscar produtos..."; (d) a confirmação de que o modal de cupom NÃO está aberto; (e) a mensagem "Pedido realizado" que aparece depois de alguns instantes.
+- **Comando:** Indique a consulta adequada para cada caso (getBy, queryBy ou findBy e o tipo: Role, LabelText, PlaceholderText ou Text) e justifique.
+- **Linhas:** 6
+
+### ITEM 4
+- **Capacidade:** C4, C5
+- **Contexto:** No formulário de cadastro, a senha com menos de 6 caracteres mostra "A senha deve ter no mínimo 6 dígitos" e o botão "Cadastrar" fica desabilitado; com a senha válida, a mensagem some e o botão habilita.
+- **Comando:** Escreva o roteiro do teste de integração (consultas, digitação e asserções com os matchers de jest-dom) cobrindo a senha inválida e a correção.
+- **Linhas:** 8
+
+### ITEM 5
+- **Capacidade:** C4
+- **Contexto:** Um teste da lista de produtos faz `container.querySelector('.item-lista')` e confere o estado interno `filtroAtivo === true`. Depois de trocar o tema visual, ele quebrou, embora a lista funcione igual para o usuário.
+- **Comando:** Explique por que esse teste é frágil (falso negativo) e reescreva a ideia do teste buscando os elementos por papel e texto.
+- **Linhas:** 5
+
+### ITEM 6
+- **Capacidade:** C5
+- **Contexto:** Use o componente `ListaProdutos` do capítulo (campo "Buscar produto", lista de itens e a mensagem "Nenhum produto encontrado").
+- **Comando:** Escreva um teste que digite um termo sem resultados e confira que nenhum item aparece e que a mensagem "Nenhum produto encontrado" é exibida.
+- **Linhas:** 7
