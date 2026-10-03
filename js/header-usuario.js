@@ -3,7 +3,8 @@
 // usuário logado (Supabase Auth) e o botão SAIR; sem sessão, mostra o botão ENTRAR.
 // Sempre mostra o botão HOME (index.html da raiz) junto do usuário logado.
 // Para o PROFESSOR, mostra também o menu USUARIOS / RELATORIOS / ALUNOS (nova aba) e, só para o
-// Professor Administrador (confirmado pelo banco), o item TURMAS (turmas.html).
+// Professor Administrador (confirmado pelo banco), o item TURMAS (turmas.html) e o botão REGRAS
+// (modal com o CLAUDE.md, assets/js/regras-modal.js).
 // Uso na página: <script src=".../js/header-usuario.js" defer></script> + o div acima.
 // Qualquer elemento com data-somente-perfil="PROFESSOR" (e hidden) só aparece para esse perfil.
 // Os caminhos (CSS, supabase.js, login.html) são calculados a partir do próprio script,
@@ -24,6 +25,9 @@ const MENU_PROFESSOR_HEADER = [
 // Só para o Professor Administrador (confirmado pelo banco: RPC eh_professor_administrador).
 const MENU_ADMINISTRADOR_HEADER = [{ rotulo: "TURMAS", rota: "../turmas.html" }];
 const RPC_ADMINISTRADOR_HEADER = "eh_professor_administrador";
+const TEXTO_REGRAS_HEADER = "Regras";
+const ROTA_REGRAS_JS = "../assets/js/regras-modal.js";
+const ROTA_CLAUDE_MD = "../CLAUDE.md";
 const PARAMETRO_VOLTAR_HEADER = "voltar";
 const TEXTO_HOME = "HOME";
 const TEXTO_ENTRAR = "ENTRAR";
@@ -130,6 +134,26 @@ function criarLinkMenuHeader(item) {
 }
 
 /**
+ * Cria o botão REGRAS: carrega o modal sob demanda e abre o CLAUDE.md renderizado.
+ * @returns {HTMLButtonElement} Botão do menu.
+ */
+function criarBotaoRegrasHeader() {
+  const botao = criarElementoHeader("button", "header-usuario__menu-link", TEXTO_REGRAS_HEADER);
+  botao.type = "button";
+  botao.addEventListener("click", async () => {
+    try {
+      if (typeof window.abrirModalRegras !== "function") {
+        await carregarScriptHeader(resolverRotaHeader(ROTA_REGRAS_JS));
+      }
+      await window.abrirModalRegras(resolverRotaHeader(ROTA_CLAUDE_MD));
+    } catch (erro) {
+      console.error("Não foi possível abrir as regras:", erro);
+    }
+  });
+  return botao;
+}
+
+/**
  * Acrescenta ao menu os itens do Professor Administrador, só se o banco confirmar o papel.
  * O e-mail e o user_metadata não decidem nada: quem decide é eh_professor_administrador().
  * @param {Object} cliente - Cliente do Supabase.
@@ -140,6 +164,7 @@ async function incluirMenuAdministrador(cliente, menu) {
     const { data, error } = await cliente.rpc(RPC_ADMINISTRADOR_HEADER);
     if (error || data !== true) return;
     MENU_ADMINISTRADOR_HEADER.forEach((item) => menu.append(criarLinkMenuHeader(item)));
+    menu.append(criarBotaoRegrasHeader());
   } catch (erro) {
     console.warn("Não foi possível conferir o Professor Administrador:", erro);
   }

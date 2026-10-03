@@ -1315,6 +1315,11 @@ SQL: `database/2026-10-02-turmaprofessor-professor-administrador.sql` (aplicado 
   com filtro por turma; professores = `usuario.perfil = 'PROFESSOR'`. Código:
   `assets/js/turmas-professor-repositorio.js` (dados) + `assets/js/turmas-professor-pagina.js`
   (tela) + `assets/css/turmas-professor.css`. Plano: `docs/menu-turmas-crud-turmaprofessor.md`.
+- ✅ **Menu Regras (2026-10-03):** botão **Regras** no header, só para o Professor Administrador
+  (mesmo RPC `eh_professor_administrador()`), abre um modal com este `CLAUDE.md` renderizado
+  (Markdown → HTML com marked + DOMPurify), índice das seções e filtro. Código:
+  `assets/js/regras-modal.js` (carregado sob demanda) + `assets/css/regras-modal.css`.
+  ⚠️ Esconder o botão é só visual: o `CLAUDE.md` é versionado e publicado; nunca colocar segredo nele.
 - ❌ Nunca usar `user_metadata` nem e-mail digitado na página para decidir quem é administrador;
   nunca afrouxar as políticas da `turmaprofessor` (gravação só com `eh_professor_administrador()`)
   nem devolver TRUNCATE aos papéis da API.
