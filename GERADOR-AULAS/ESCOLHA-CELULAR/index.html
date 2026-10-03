@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compras no Paraguai</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="js/constantes.js" defer></script>
+  <script src="js/calculo.js" defer></script>
+  <script src="js/armazenamento.js" defer></script>
+  <script src="js/tela.js" defer></script>
+  <script src="js/eventos.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho">
+    <div>
+      <h1 class="cabecalho__titulo">🛍️ O que comprar no Paraguai</h1>
+      <p class="cabecalho__subtitulo">Seu dinheiro guardado • Cota de US$ 500 • Economia real</p>
+    </div>
+    <span class="cabecalho__estrela" aria-hidden="true">⭐</span>
+  </header>
+
+  <main class="conteudo">
+    <section class="faixas-bloco" aria-labelledby="titulo-faixas">
+      <h2 id="titulo-faixas" class="secao__titulo">💸 Quanto você quer gastar?</h2>
+      <div id="faixas" class="faixas"></div>
+      <p class="dica">Clique num card para montar a lista daquela faixa. O kit já soma o imposto de
+        50% sobre o que passar da cota de isenção.</p>
+    </section>
+
+    <section class="cartao configuracao" aria-labelledby="titulo-config">
+      <h2 id="titulo-config" class="secao__titulo"><span class="numero-secao">1</span> 💰 Seu dinheiro</h2>
+      <div class="configuracao__campos">
+        <label>Dinheiro guardado (R$)
+          <input type="number" min="0" step="100" data-campo="dinheiroGuardado"></label>
+        <label>Cotação do dólar (R$)
+          <input type="number" min="0" step="0.01" data-campo="cotacaoDolar"></label>
+        <label>Taxa câmbio/cartão (%)
+          <input type="number" min="0" step="0.5" data-campo="taxaCambioPercentual"></label>
+        <label>Reserva da viagem (R$)
+          <input type="number" min="0" step="50" data-campo="reservaViagem"></label>
+        <label>Margem de segurança (%)
+          <input type="number" min="0" max="100" step="1" data-campo="margemSegurancaPercentual"></label>
+        <label>Viajantes (cota por pessoa)
+          <input type="number" min="1" step="1" data-campo="quantidadeViajantes"></label>
+      </div>
+    </section>
+
+    <section class="indicadores" aria-label="Indicadores">
+      <article class="kpi kpi--azul"><span class="kpi__rotulo">Guardado</span>
+        <strong id="kpi-guardado" class="kpi__valor">—</strong>
+        <span class="kpi__detalhe">antes da viagem</span></article>
+      <article class="kpi kpi--verde"><span class="kpi__rotulo">Disponível p/ compras</span>
+        <strong id="kpi-disponivel" class="kpi__valor">—</strong>
+        <span id="kpi-margem" class="kpi__detalhe">—</span></article>
+      <article class="kpi kpi--laranja"><span class="kpi__rotulo">Total da lista</span>
+        <strong id="kpi-total" class="kpi__valor">—</strong>
+        <span id="kpi-total-dolar" class="kpi__detalhe">—</span></article>
+      <article id="kpi-saldo-cartao" class="kpi kpi--roxo"><span class="kpi__rotulo">Sobra</span>
+        <strong id="kpi-saldo" class="kpi__valor">—</strong>
+        <span class="kpi__detalhe">depois das compras</span></article>
+      <article class="kpi kpi--rosa"><span class="kpi__rotulo">Economia x Brasil</span>
+        <strong id="kpi-economia" class="kpi__valor">—</strong>
+        <span class="kpi__detalhe">estimada</span></article>
+    </section>
+
+    <section class="cartao" aria-labelledby="titulo-limites">
+      <h2 id="titulo-limites" class="secao__titulo"><span class="numero-secao">2</span> 📊 Limites</h2>
+      <p class="barra__rotulo">Dinheiro usado — <span id="texto-orcamento">—</span></p>
+      <div class="barra"><span id="barra-orcamento" class="barra__preenchimento"></span></div>
+      <p class="barra__rotulo">Cota de isenção da Receita — <span id="texto-cota">—</span></p>
+      <div class="barra"><span id="barra-cota" class="barra__preenchimento barra__preenchimento--cota"></span></div>
+      <p id="alertas" class="alertas" role="status"></p>
+    </section>
+
+    <section class="cartao" aria-labelledby="titulo-interesse">
+      <h2 id="titulo-interesse" class="secao__titulo"><span class="numero-secao">3</span> 🎯 O que te interessa</h2>
+      <div id="filtros-categoria" class="filtros"></div>
+      <div class="acoes">
+        <button id="botao-sugerir" type="button" class="botao botao--principal">✨ Sugerir compras</button>
+        <button id="botao-limpar" type="button" class="botao">🧹 Limpar lista</button>
+      </div>
+      <p class="dica">A sugestão prioriza a maior economia em %, um item de cada, sem passar do
+        dinheiro disponível nem da cota.</p>
+    </section>
+
+    <div class="grade">
+      <section class="cartao" aria-labelledby="titulo-catalogo">
+        <h2 id="titulo-catalogo" class="secao__titulo"><span class="numero-secao">4</span> 📱 Catálogo</h2>
+        <div class="tabela-rolagem">
+          <table class="tabela">
+            <thead><tr><th></th><th>Produto</th><th>US$</th><th>R$ no PY</th>
+              <th>R$ no Brasil</th><th>Economia</th></tr></thead>
+            <tbody id="corpo-catalogo"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="cartao" aria-labelledby="titulo-distribuicao">
+        <h2 id="titulo-distribuicao" class="secao__titulo"><span class="numero-secao">5</span> 🧾 Para onde vai o dinheiro</h2>
+        <ul id="distribuicao" class="distribuicao"></ul>
+      </section>
+    </div>
+
+    <section class="cartao" aria-labelledby="titulo-dicas">
+      <h2 id="titulo-dicas" class="secao__titulo"><span class="numero-secao">6</span> 🧭 Antes de ir</h2>
+      <ul class="dicas">
+        <li>📋 Preços são <strong>estimativas</strong>: confira no site da loja (Cellshop, Nissei, Shopping China) antes.</li>
+        <li>🧾 Peça <strong>nota fiscal</strong> (factura) e guarde para a Receita e para a garantia.</li>
+        <li>🌎 Celular: confira se é versão <strong>global</strong>, com as bandas 4G/5G do Brasil e garantia internacional.</li>
+        <li>🔌 Notebook e console: verifique tomada/voltagem e teclado ABNT2 se fizer diferença.</li>
+        <li>🛃 Passou da cota de US$ 500? Declare na e-DBV e pague 50% do excedente — sem declarar há multa.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="regra-ouro">
+    <strong>⭐ Regra de ouro:</strong> só compre o que já planejou, nunca use a reserva da viagem
+    e deixe sobrar a margem de segurança — economia boa é a que não vira dívida.
+  </footer>
+</body>
+</html>
