@@ -192,20 +192,9 @@ CLASSIFICAR CADA TESTE:
     → Tipo: _____ (Dica: Teste de integração com API)
 ```
 
-### Gabarito (Para Professor Apenas)
+### Gabarito
 
-```
-1. INTEGRAÇÃO (envolve DOM + evento)
-2. UNITÁRIO (função isolada)
-3. E2E (fluxo completo do usuário)
-4. INTEGRAÇÃO (validação + DOM)
-5. UNITÁRIO (função pura)
-6. INTEGRAÇÃO (interação DOM)
-7. E2E (fluxo completo)
-8. UNITÁRIO (função assíncrona isolada)
-9. INTEGRAÇÃO (interação de componente)
-10. INTEGRAÇÃO (teste de API)
-```
+No arquivo `AULA-01-GABARITO-EXERCICIOS.md` (só professor, fora do Git).
 
 ### Discussão (10 min)
 

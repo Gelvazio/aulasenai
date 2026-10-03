@@ -1,8 +1,8 @@
 # ATIVIDADE AULA 02 — Planejamento, Verificação, Validação e Casos de Teste
 
-**Slides:** `AULAS-CHALKIE-AI/2-Planejamento,-Verificação,-Validação-e-Casos-de-Teste.pdf`  
+**Slides:** `../AULAS/AULA-02-SLIDES.pdf`  
 **Duração:** 4 horas | **Modalidade:** Oficina em trios  
-**Capacidades:** C1, C2, C3 · S2 | **Conhecimentos:** 3 · 5 · 6 · 7.1 · 7.2  
+**Capacidades:** C1, C2, C3 · S2 | **Conhecimentos:** 6 · 7.1–7.2 · 3  
 **Entrega da aula:** plano de testes + 10 casos de teste — **início da SA 1**
 
 ---

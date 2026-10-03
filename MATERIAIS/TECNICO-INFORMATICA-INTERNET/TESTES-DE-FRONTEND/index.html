@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testes de Front-End — UC do Técnico em Informática para Internet</title>
+    <link rel="stylesheet" href="../../../assets/css/pagina-materia.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js" defer></script>
+    <script src="../../../assets/js/pagina-materia.js" defer></script>
+    <script src="../../../js/header-usuario.js" defer></script>
+</head>
+<body data-plano="DOCUMENTACAO/PLANO-AULAS.md" data-ementa="EMENTA-CHALKIE-AI.md">
+<div id="header-usuario"></div>
+    <header>
+        <div>
+            <h1>📚 Testes de Front-End</h1>
+            <p>Unidade Curricular — Técnico em Informática para Internet | 40 horas | SENAI</p>
+        </div>
+        <div class="header-buttons">
+            <a class="botao-link btn-plano" href="ATIVIDADES/index.html">📝 Atividades</a>
+            <button type="button" class="btn-plano" id="botaoPlano">📋 Plano de Aulas</button>
+            <button type="button" class="btn-ementa" id="botaoEmenta">📖 Ementa</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="content" id="content">
+            <div class="loading">Carregando plano de aulas...</div>
+        </div>
+    </main>
+
+    <div id="ementaModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📖 EMENTA — Testes de Front-End</h2>
+                <button type="button" class="close" id="botaoFecharEmenta" aria-label="Fechar">&times;</button>
+            </div>
+            <div class="modal-body" id="ementaConteudo">
+                <div class="loading">Carregando ementa...</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

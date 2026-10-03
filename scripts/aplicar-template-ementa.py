@@ -180,7 +180,7 @@ CONTEXTOS = {
         "verbo": "aplicação",
         "exemplos": "redes, protocolos, segurança web"
     },
-    "TESTES DE FRONTEND": {
+    "TESTES-DE-FRONTEND": {
         "nome": "Testes de Frontend",
         "area": "Teste de Software",
         "carga": "30h",

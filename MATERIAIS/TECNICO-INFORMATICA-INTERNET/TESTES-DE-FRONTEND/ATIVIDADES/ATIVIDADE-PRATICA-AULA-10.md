@@ -1,8 +1,8 @@
 # ATIVIDADE AULA 10 — Projeto Prático Integrador: Suíte de Testes
 
-**Slides:** `AULAS-CHALKIE-AI/10-Projeto-Prático-Integrador-Suíte-de-Testes.pdf`  
+**Slides:** `../AULAS/AULA-10-SLIDES.pdf`  
 **Duração:** 4 horas | **Modalidade:** Em dupla (projeto) e individual (prova objetiva)  
-**Capacidades:** C1 a C5 · S1, S2 | **Conhecimentos:** 1 a 7 (processo completo)  
+**Capacidades:** C1 a C5 · S1, S2 | **Conhecimentos:** 7 · 6.3 · 2.4  
 **Entrega da aula:** suíte completa no CI + avaliações finais (ementa: prática 25% · objetiva 15%)
 
 ---

@@ -1,8 +1,8 @@
 # ATIVIDADE AULA 03 — Testes Unitários no Front-End com Vitest
 
-**Slides:** `AULAS-CHALKIE-AI/3-Testes-Unitários-no-Frontend-com-Vitest.pdf`  
+**Slides:** `../AULAS/AULA-03-SLIDES.pdf`  
 **Duração:** 4 horas | **Modalidade:** Laboratório, individual  
-**Capacidades:** C4, C5 · S1 | **Conhecimentos:** 2.1 · 2.2 · 2.3 · 3.2  
+**Capacidades:** C4, C5 · S1 | **Conhecimentos:** 2.1–2.3 · 3.2  
 **Entrega da aula:** suíte unitária de funções utilitárias + teste com mock de API
 
 ---

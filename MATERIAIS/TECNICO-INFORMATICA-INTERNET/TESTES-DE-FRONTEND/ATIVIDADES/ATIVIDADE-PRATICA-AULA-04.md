@@ -1,8 +1,8 @@
 # ATIVIDADE AULA 04 — Testes de Integração com DOM usando Testing Library
 
-**Slides:** `AULAS-CHALKIE-AI/4-Testes-de-Integração-com-DOM-usando-Testing-Library.pdf`  
+**Slides:** `../AULAS/AULA-04-SLIDES.pdf`  
 **Duração:** 4 horas | **Modalidade:** Laboratório, individual  
-**Capacidades:** C1, C4, C5 | **Conhecimentos:** 2.3 · 3.1 · 4.1 · 4.2  
+**Capacidades:** C1, C4, C5 | **Conhecimentos:** 2.3 · 3.1 · 4.1  
 **Entrega da aula:** testes de um botão com estados e de um formulário
 
 ---

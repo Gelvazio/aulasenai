@@ -1,8 +1,8 @@
 # ATIVIDADE AULA 07 — Métricas e Cobertura de Testes
 
-**Slides:** `AULAS-CHALKIE-AI/7-Métricas-e-Cobertura-de-Testes.pdf`  
+**Slides:** `../AULAS/AULA-07-SLIDES.pdf`  
 **Duração:** 4 horas | **Modalidade:** Laboratório, individual  
-**Capacidades:** C3, C4 · S2 | **Conhecimentos:** 4.5 · 7.4 · 7.5  
+**Capacidades:** C3, C4 · S2 | **Conhecimentos:** 7.4–7.5 · 4.5  
 **Entrega da aula:** relatório de cobertura comentado (60% → 85%) — **início da SA 2**
 
 ---

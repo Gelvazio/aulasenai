@@ -1,8 +1,8 @@
 # ATIVIDADE AULA 01 — Fundamentos de Testes de Software
 
-**Slides:** `AULAS-CHALKIE-AI/1-Fundamentos-de-Testes-de-Software.pdf`  
+**Slides:** `../AULAS/AULA-01-SLIDES.pdf`  
 **Duração:** 4 horas | **Modalidade:** Laboratório, individual e em grupo  
-**Capacidades:** C1, C2, C3 · S1 | **Conhecimentos:** 1.1 · 3 · 4 · 5  
+**Capacidades:** C1, C2, C3 · S1 | **Conhecimentos:** 5 · 4 · 1.1  
 **Entrega da aula:** mapa de conceitos (erro, defeito, falha e tipos de teste) + estratégia de testes
 
 ---

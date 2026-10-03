@@ -29,7 +29,7 @@ unidade curricular (UC)** do `EMENTA-PRINCIPAL-<CURSO>.md`, com nome derivado do
 | GESTAO_E_CONTROLE_MATERIAIS | `ANALISE_DADOS_APLICADA_GESTAO` (sublinhado) |
 | OPERADOR-PRODUCAO-INDUSTRIAL | `FundamentosProcessosProducao` (caixa mista, sem separador) |
 | RIO_DO_SUL_MAIS_TECH | 7 pastas com sublinhado |
-| TECNICO-INFORMATICA-INTERNET | `BANCO_DE_DADOS`, `TESTES DE FRONTEND` (espaços), `Testes de Sistemas-EXISTENTES` (não é UC do curso) |
+| TECNICO-INFORMATICA-INTERNET | `BANCO_DE_DADOS`, ~~`TESTES DE FRONTEND` (espaços)~~ → renomeada para `TESTES-DE-FRONTEND` em 2026-10-03, `Testes de Sistemas-EXISTENTES` (não é UC do curso) |
 | ASSISTENTE-DE-OPERACOES-LOGISTICAS | `INTRODUCAO-TIC` (abreviação de ITIC) |
 
 Nenhuma pasta será renomeada nesta tarefa.

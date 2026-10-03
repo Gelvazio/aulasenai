@@ -1,0 +1,887 @@
+{
+  "uc": "Testes de Front-End",
+  "uc_curta": "Testes de Front-End",
+  "curso": "Técnico em Informática para Internet",
+  "docente": "Gelvazio Camargo",
+  "modulo": "ESPECÍFICO I",
+  "modalidade": "Presencial",
+  "carga_horaria_uc": 40,
+  "fontes": [
+    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/EMENTA-PRINCIPAL-TECNICO-INFORMATICA-INTERNET.md (fonte da verdade: função, objetivo, capacidades, conhecimentos e recursos)",
+    "EMENTA-CHALKIE-AI.md v2.0 (sequência de aulas, indicadores, avaliação e parte didática)"
+  ],
+  "versao_ementa": "EMENTA-CHALKIE-AI.md v2.0 — reescrita a partir da ementa oficial (2026-09-27)",
+  "proveniencia": "Capacidades, conhecimentos, função, objetivo e recursos copiados literalmente da ementa do curso; o resto vem da ementa da matéria e é didático.",
+  "funcao": "● 1 - Produzir Interfaces para internet, de acordo com metodologia e padrões de qualidade, usabilidade, interatividade, robustez, acessibilidade e segurança da informação.",
+  "justificativa": "Toda interface web chega ao usuário depois de alguém confirmar que ela faz o que foi pedido. A UC ensina a planejar, escrever, automatizar e acompanhar testes do lado do cliente: do caso de teste escrito à suíte automatizada com Vitest, Testing Library e Cypress/Playwright, rodando sozinha num pipeline de integração contínua. Prepara para a UC Projeto de Front-End, que cobra planos de teste completos.",
+  "objetivo_geral": {
+    "texto": "Propiciar desenvolvimento de capacidades básicas e socioemocionais para codificação de interfaces baseadas em UX e UI em aplicações web, considerando as necessidades do usuário."
+  },
+  "capacidades": {
+    "C1": "Reconhecer as especificações técnicas da interface",
+    "C2": "Reconhecer os requisitos da documentação de testes",
+    "C3": "Reconhecer as etapas de planejamento de testes",
+    "C4": "Aplicar testes definidos no Plano de Testes.",
+    "C5": "Desenvolver conjunto de testes automatizados"
+  },
+  "capacidades_socioemocionais": {
+    "S1": "Valorizar novos fatos, ideias e opiniões diferentes para resolução de problemas pertinentes as atividades sob a sua responsabilidade",
+    "S2": "Fundamentar escolhas e decisões no exame de fatos, contextos, possibilidades, desafios e problemáticas de diferentes naturezas à luz de referenciais técnicos, legais, normativos e institucionais"
+  },
+  "observacao_capacidades": "A ementa do curso tem o título 'Capacidades Técnicas' sem itens: esta UC não tem capacidades técnicas (regra IX.3 da ementa).",
+  "conhecimentos": [
+    {
+      "dominio": 1,
+      "titulo": "Autogestão",
+      "conteudos": [
+        "1.1 Responsabilidade"
+      ]
+    },
+    {
+      "dominio": 2,
+      "titulo": "Automação de Testes",
+      "conteudos": [
+        "2.1 Definição",
+        "2.2 Frameworks",
+        "2.3 Aplicação",
+        "2.4 Interação com equipe de testes"
+      ]
+    },
+    {
+      "dominio": 3,
+      "titulo": "Técnicas de testes",
+      "conteudos": [
+        "3.1 Teste funcional (caixa preta)",
+        "3.2 Teste estrutural (caixa branca)"
+      ]
+    },
+    {
+      "dominio": 4,
+      "titulo": "Tipos de testes",
+      "conteudos": [
+        "4.1 Funcionalidade",
+        "4.2 Usabilidade",
+        "4.3 Confiabilidade",
+        "4.4 Desempenho",
+        "4.5 Manutenibilidade"
+      ]
+    },
+    {
+      "dominio": 5,
+      "titulo": "Conceitos fundamentais",
+      "conteudos": [
+        "5.1 Verificação",
+        "5.2 Validação"
+      ]
+    },
+    {
+      "dominio": 6,
+      "titulo": "Planejamento de testes client-side",
+      "conteudos": [
+        "6.1 Análise do documento de requisitos",
+        "6.2 Plano de testes",
+        "6.3 Suíte de testes",
+        "6.4 Casos de testes"
+      ]
+    },
+    {
+      "dominio": 7,
+      "titulo": "Processo fundamental de teste",
+      "conteudos": [
+        "7.1 Planejamento",
+        "7.2 Desenho dos Testes",
+        "7.3 Execução dos Testes",
+        "7.4 Monitoração e Controle",
+        "7.5 Avaliação dos Resultados"
+      ]
+    }
+  ],
+  "capacidades_x_conhecimentos": {
+    "C1": [
+      5,
+      6
+    ],
+    "C2": [
+      4,
+      6
+    ],
+    "C3": [
+      6,
+      7
+    ],
+    "C4": [
+      3,
+      7
+    ],
+    "C5": [
+      2,
+      3
+    ],
+    "S1": [
+      1,
+      2
+    ],
+    "S2": [
+      1,
+      2
+    ]
+  },
+  "capacidades_x_conhecimentos_ementa": "C1 Especificações da interface → 5, 6.1 · C2 Requisitos da documentação → 4, 6.2–6.4 · C3 Etapas de planejamento → 6, 7 · C4 Aplicar testes do plano → 3, 7.3–7.5 · C5 Testes automatizados → 2, 3.2 · S1/S2 → 1.1, 2.4.",
+  "horas_por_aula": 4,
+  "aulas": [
+    {
+      "numero": "01",
+      "aula": 1,
+      "tema": "Fundamentos de Testes de Software",
+      "carga_horaria": 4,
+      "data_prevista": "08/10",
+      "dominios": [
+        1,
+        4,
+        5
+      ],
+      "dominios_texto": "5 · 4 · 1.1",
+      "capacidades": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "conteudos_oficiais": [
+        "5 Conceitos fundamentais: 5.1 Verificação · 5.2 Validação",
+        "4 Tipos de testes: 4.1 Funcionalidade · 4.2 Usabilidade · 4.3 Confiabilidade · 4.4 Desempenho · 4.5 Manutenibilidade",
+        "1.1 Responsabilidade"
+      ],
+      "indicadores": [
+        "Diferencia verificação de validação com exemplo de uma tela real",
+        "Classifica testes por tipo (funcionalidade, usabilidade, confiabilidade, desempenho, manutenibilidade)"
+      ],
+      "indicadores_numeros": [
+        1,
+        2
+      ],
+      "atividade": "Mapa: erro, defeito, falha e tipos de teste",
+      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-01.md",
+      "slides": "AULAS/AULA-01-SLIDES.pdf",
+      "bncc": [
+        "CG2 Pensamento científico e crítico",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [
+        "Verificação",
+        "Validação"
+      ],
+      "ideias_ementa": [
+        "Gere 10 questões de múltipla escolha (A–D) sobre verificação × validação e tipos de teste, com gabarito comentado."
+      ],
+      "situacao_problema": "SA 1 — Estruturação e documentação de testes (aulas 1–2, retomada na 10). Startup de e-commerce em React sem estratégia de testes. Para autenticação, carrinho e checkout, o estudante entrega plano formal, no mínimo 5 casos de teste por feature (caminho feliz e casos de borda, tipo U/I/E2E), matriz de rastreabilidade requisito × caso, estimativa de esforço e análise de riscos."
+    },
+    {
+      "numero": "02",
+      "aula": 2,
+      "tema": "Planejamento, Verificação, Validação e Casos de Teste",
+      "carga_horaria": 4,
+      "data_prevista": "14/10",
+      "dominios": [
+        3,
+        6,
+        7
+      ],
+      "dominios_texto": "6 · 7.1–7.2 · 3",
+      "capacidades": [
+        "C1",
+        "C2",
+        "C3",
+        "S2"
+      ],
+      "conteudos_oficiais": [
+        "6 Planejamento de testes client-side: 6.1 Análise do documento de requisitos · 6.2 Plano de testes · 6.3 Suíte de testes · 6.4 Casos de testes",
+        "7.1 Planejamento",
+        "7.2 Desenho dos Testes",
+        "3 Técnicas de testes: 3.1 Teste funcional (caixa preta) · 3.2 Teste estrutural (caixa branca)"
+      ],
+      "indicadores": [
+        "Extrai requisitos testáveis de uma especificação de interface",
+        "Escreve casos de teste com ID, pré-condição, passos e resultado esperado",
+        "Monta plano de testes com escopo, estratégia, cronograma e riscos",
+        "Justifica decisões de teste com base em requisitos e riscos"
+      ],
+      "indicadores_numeros": [
+        3,
+        4,
+        5,
+        13
+      ],
+      "atividade": "Plano de testes + 10 casos (SA 1)",
+      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-02.md",
+      "slides": "AULAS/AULA-02-SLIDES.pdf",
+      "bncc": [
+        "CG2 Pensamento científico e crítico",
+        "CG4 Comunicação",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [
+        "Caso de teste",
+        "Caixa preta",
+        "Caixa branca",
+        "Matriz de rastreabilidade"
+      ],
+      "ideias_ementa": [
+        "Dada a especificação de um formulário de login, liste os requisitos testáveis e escreva 8 casos de teste (ID, pré-condição, passos, resultado esperado), marcando caixa preta ou branca.",
+        "Crie um plano de testes de 1 página para o carrinho de um e-commerce React: escopo, fora do escopo, estratégia U/I/E2E, cronograma e 3 riscos."
+      ],
+      "situacao_problema": "SA 1 — Estruturação e documentação de testes (aulas 1–2, retomada na 10). Startup de e-commerce em React sem estratégia de testes. Para autenticação, carrinho e checkout, o estudante entrega plano formal, no mínimo 5 casos de teste por feature (caminho feliz e casos de borda, tipo U/I/E2E), matriz de rastreabilidade requisito × caso, estimativa de esforço e análise de riscos."
+    },
+    {
+      "numero": "03",
+      "aula": 3,
+      "tema": "Testes Unitários no Front-End com Vitest",
+      "carga_horaria": 4,
+      "data_prevista": "15/10",
+      "dominios": [
+        2,
+        3
+      ],
+      "dominios_texto": "2.1–2.3 · 3.2",
+      "capacidades": [
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "2.1 Definição",
+        "2.2 Frameworks",
+        "2.3 Aplicação",
+        "3.2 Teste estrutural (caixa branca)"
+      ],
+      "indicadores": [
+        "Escreve testes unitários com padrão AAA e matchers adequados"
+      ],
+      "indicadores_numeros": [
+        6
+      ],
+      "atividade": "Suíte unitária de funções utilitárias",
+      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-03.md",
+      "slides": "AULAS/AULA-03-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [
+        "Suíte"
+      ],
+      "ideias_ementa": [
+        "Escreva 6 testes Vitest com padrão AAA para uma função que calcula frete, cobrindo casos de borda."
+      ]
+    },
+    {
+      "numero": "04",
+      "aula": 4,
+      "tema": "Testes de Integração com DOM (Testing Library)",
+      "carga_horaria": 4,
+      "data_prevista": "22/10",
+      "dominios": [
+        2,
+        3,
+        4
+      ],
+      "dominios_texto": "2.3 · 3.1 · 4.1",
+      "capacidades": [
+        "C4",
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "2.3 Aplicação",
+        "3.1 Teste funcional (caixa preta)",
+        "4.1 Funcionalidade"
+      ],
+      "indicadores": [
+        "Testa componente pelo comportamento visível (queries por papel e texto)"
+      ],
+      "indicadores_numeros": [
+        7
+      ],
+      "atividade": "Testes de botão e formulário",
+      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-04.md",
+      "slides": "AULAS/AULA-04-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [
+        "Mostre um teste com Testing Library para uma lista filtrável, buscando elementos por papel e texto, e explique por que não usar classes CSS."
+      ]
+    },
+    {
+      "numero": "05",
+      "aula": 5,
+      "tema": "Integração Avançada e Mock de APIs",
+      "carga_horaria": 4,
+      "data_prevista": "29/10",
+      "dominios": [
+        2,
+        4,
+        7
+      ],
+      "dominios_texto": "2.3 · 4.3 · 7.3",
+      "capacidades": [
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "2.3 Aplicação",
+        "4.3 Confiabilidade",
+        "7.3 Execução dos Testes"
+      ],
+      "indicadores": [
+        "Isola dependências com mocks de API e spies"
+      ],
+      "indicadores_numeros": [
+        8
+      ],
+      "atividade": "Testes com API simulada e erros de rede",
+      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-05.md",
+      "slides": "AULAS/AULA-05-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [
+        "Mock"
+      ],
+      "ideias_ementa": [
+        "Monte um exercício de mock de API com erro 500 e rede lenta, pedindo ao aluno que teste a mensagem exibida."
+      ]
+    },
+    {
+      "numero": "06",
+      "aula": 6,
+      "tema": "Testes End-to-End com Cypress e Playwright",
+      "carga_horaria": 4,
+      "data_prevista": "30/10",
+      "dominios": [
+        2,
+        3,
+        4
+      ],
+      "dominios_texto": "2.2–2.3 · 3.1 · 4.2",
+      "capacidades": [
+        "C4",
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "2.2 Frameworks",
+        "2.3 Aplicação",
+        "3.1 Teste funcional (caixa preta)",
+        "4.2 Usabilidade"
+      ],
+      "indicadores": [
+        "Automatiza fluxo completo de usuário em teste E2E"
+      ],
+      "indicadores_numeros": [
+        9
+      ],
+      "atividade": "Fluxos de login e checkout",
+      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-06.md",
+      "slides": "AULAS/AULA-06-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [
+        "E2E",
+        "Teste intermitente (flaky)"
+      ],
+      "ideias_ementa": [
+        "Crie um teste E2E em Playwright para o fluxo login → adicionar ao carrinho → finalizar, com dados isolados."
+      ]
+    },
+    {
+      "numero": "07",
+      "aula": 7,
+      "tema": "Métricas e Cobertura de Testes",
+      "carga_horaria": 4,
+      "data_prevista": "05/11",
+      "dominios": [
+        4,
+        7
+      ],
+      "dominios_texto": "7.4–7.5 · 4.5",
+      "capacidades": [
+        "C3",
+        "C4"
+      ],
+      "conteudos_oficiais": [
+        "7.4 Monitoração e Controle",
+        "7.5 Avaliação dos Resultados",
+        "4.5 Manutenibilidade"
+      ],
+      "indicadores": [
+        "Lê relatório de cobertura e aponta trechos sem teste"
+      ],
+      "indicadores_numeros": [
+        10
+      ],
+      "atividade": "Relatório de cobertura comentado",
+      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-07.md",
+      "slides": "AULAS/AULA-07-SLIDES.pdf",
+      "bncc": [
+        "CG2 Pensamento científico e crítico",
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [
+        "Cobertura"
+      ],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 2 — Pipeline CI/CD e dashboard de cobertura (aulas 7–9). A equipe roda testes à mão antes do deploy e não sabe quanto do código está coberto. O estudante cria workflow que executa Vitest e Cypress em cada push e PR, bloqueia merge com teste falhando ou cobertura abaixo de 70%, publica relatório e badges no README e documenta como rodar e contribuir (`TESTING.md`)."
+    },
+    {
+      "numero": "08",
+      "aula": 8,
+      "tema": "TDD e Debugging Moderno no Front-End",
+      "carga_horaria": 4,
+      "data_prevista": "06/11",
+      "dominios": [
+        1,
+        2,
+        3
+      ],
+      "dominios_texto": "2.3 · 3.2 · 1.1",
+      "capacidades": [
+        "C5",
+        "S1"
+      ],
+      "conteudos_oficiais": [
+        "2.3 Aplicação",
+        "3.2 Teste estrutural (caixa branca)",
+        "1.1 Responsabilidade"
+      ],
+      "indicadores": [
+        "Aplica ciclo TDD (vermelho → verde → refatorar) e depura teste que falha",
+        "Acolhe sugestões no code review de testes do colega"
+      ],
+      "indicadores_numeros": [
+        11,
+        14
+      ],
+      "atividade": "Funcionalidade feita com TDD",
+      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-08.md",
+      "slides": "AULAS/AULA-08-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG9 Empatia e cooperação",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [
+        "TDD"
+      ],
+      "ideias_ementa": [
+        "Mostre o ciclo TDD em 3 passos (vermelho, verde, refatorar) para um validador de CPF no front-end."
+      ],
+      "situacao_problema": "SA 2 — Pipeline CI/CD e dashboard de cobertura (aulas 7–9). A equipe roda testes à mão antes do deploy e não sabe quanto do código está coberto. O estudante cria workflow que executa Vitest e Cypress em cada push e PR, bloqueia merge com teste falhando ou cobertura abaixo de 70%, publica relatório e badges no README e documenta como rodar e contribuir (`TESTING.md`)."
+    },
+    {
+      "numero": "09",
+      "aula": 9,
+      "tema": "Qualidade, Performance, Acessibilidade e CI/CD",
+      "carga_horaria": 4,
+      "data_prevista": "12/11",
+      "dominios": [
+        2,
+        4
+      ],
+      "dominios_texto": "4.2 · 4.4 · 2.4",
+      "capacidades": [
+        "C5"
+      ],
+      "conteudos_oficiais": [
+        "4.2 Usabilidade",
+        "4.4 Desempenho",
+        "2.4 Interação com equipe de testes"
+      ],
+      "indicadores": [
+        "Configura pipeline que executa a suíte a cada push"
+      ],
+      "indicadores_numeros": [
+        12
+      ],
+      "atividade": "Pipeline GitHub Actions (SA 2)",
+      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-09.md",
+      "slides": "AULAS/AULA-09-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG9 Empatia e cooperação",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [
+        "CI"
+      ],
+      "ideias_ementa": [
+        "Escreva um workflow GitHub Actions que rode Vitest com cobertura e Cypress, bloqueando o merge abaixo de 70%."
+      ],
+      "situacao_problema": "SA 2 — Pipeline CI/CD e dashboard de cobertura (aulas 7–9). A equipe roda testes à mão antes do deploy e não sabe quanto do código está coberto. O estudante cria workflow que executa Vitest e Cypress em cada push e PR, bloqueia merge com teste falhando ou cobertura abaixo de 70%, publica relatório e badges no README e documenta como rodar e contribuir (`TESTING.md`)."
+    },
+    {
+      "numero": "10",
+      "aula": 10,
+      "tema": "Projeto Integrador: Suíte de Testes + avaliação",
+      "carga_horaria": 4,
+      "data_prevista": "13/11",
+      "dominios": [
+        2,
+        6,
+        7
+      ],
+      "dominios_texto": "7 · 6.3 · 2.4",
+      "capacidades": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "S1",
+        "S2"
+      ],
+      "conteudos_oficiais": [
+        "7 Processo fundamental de teste: 7.1 Planejamento · 7.2 Desenho dos Testes · 7.3 Execução dos Testes · 7.4 Monitoração e Controle · 7.5 Avaliação dos Resultados",
+        "6.3 Suíte de testes",
+        "2.4 Interação com equipe de testes"
+      ],
+      "indicadores": [
+        "Justifica decisões de teste com base em requisitos e riscos",
+        "Acolhe sugestões no code review de testes do colega"
+      ],
+      "indicadores_numeros": [
+        13,
+        14
+      ],
+      "atividade": "Suíte completa + avaliações finais",
+      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-10.md",
+      "slides": "AULAS/AULA-10-SLIDES.pdf",
+      "bncc": [
+        "CG4 Comunicação",
+        "CG9 Empatia e cooperação",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [
+        "Crie um roteiro de code review de testes com 6 perguntas que o colega deve responder de forma respeitosa."
+      ],
+      "situacao_problema": "SA 1 — Estruturação e documentação de testes (aulas 1–2, retomada na 10). Startup de e-commerce em React sem estratégia de testes. Para autenticação, carrinho e checkout, o estudante entrega plano formal, no mínimo 5 casos de teste por feature (caminho feliz e casos de borda, tipo U/I/E2E), matriz de rastreabilidade requisito × caso, estimativa de esforço e análise de riscos."
+    }
+  ],
+  "indicadores_desempenho": [
+    {
+      "numero": 1,
+      "indicador": "Diferencia verificação de validação com exemplo de uma tela real",
+      "capacidades": [
+        "C1",
+        "C3"
+      ],
+      "aulas": [
+        1
+      ]
+    },
+    {
+      "numero": 2,
+      "indicador": "Classifica testes por tipo (funcionalidade, usabilidade, confiabilidade, desempenho, manutenibilidade)",
+      "capacidades": [
+        "C2"
+      ],
+      "aulas": [
+        1
+      ]
+    },
+    {
+      "numero": 3,
+      "indicador": "Extrai requisitos testáveis de uma especificação de interface",
+      "capacidades": [
+        "C1"
+      ],
+      "aulas": [
+        2
+      ]
+    },
+    {
+      "numero": 4,
+      "indicador": "Escreve casos de teste com ID, pré-condição, passos e resultado esperado",
+      "capacidades": [
+        "C2",
+        "C3"
+      ],
+      "aulas": [
+        2
+      ]
+    },
+    {
+      "numero": 5,
+      "indicador": "Monta plano de testes com escopo, estratégia, cronograma e riscos",
+      "capacidades": [
+        "C3"
+      ],
+      "aulas": [
+        2
+      ]
+    },
+    {
+      "numero": 6,
+      "indicador": "Escreve testes unitários com padrão AAA e matchers adequados",
+      "capacidades": [
+        "C5"
+      ],
+      "aulas": [
+        3
+      ]
+    },
+    {
+      "numero": 7,
+      "indicador": "Testa componente pelo comportamento visível (queries por papel e texto)",
+      "capacidades": [
+        "C4",
+        "C5"
+      ],
+      "aulas": [
+        4
+      ]
+    },
+    {
+      "numero": 8,
+      "indicador": "Isola dependências com mocks de API e spies",
+      "capacidades": [
+        "C5"
+      ],
+      "aulas": [
+        5
+      ]
+    },
+    {
+      "numero": 9,
+      "indicador": "Automatiza fluxo completo de usuário em teste E2E",
+      "capacidades": [
+        "C4",
+        "C5"
+      ],
+      "aulas": [
+        6
+      ]
+    },
+    {
+      "numero": 10,
+      "indicador": "Lê relatório de cobertura e aponta trechos sem teste",
+      "capacidades": [
+        "C3",
+        "C4"
+      ],
+      "aulas": [
+        7
+      ]
+    },
+    {
+      "numero": 11,
+      "indicador": "Aplica ciclo TDD (vermelho → verde → refatorar) e depura teste que falha",
+      "capacidades": [
+        "C5"
+      ],
+      "aulas": [
+        8
+      ]
+    },
+    {
+      "numero": 12,
+      "indicador": "Configura pipeline que executa a suíte a cada push",
+      "capacidades": [
+        "C5"
+      ],
+      "aulas": [
+        9
+      ]
+    },
+    {
+      "numero": 13,
+      "indicador": "Justifica decisões de teste com base em requisitos e riscos",
+      "capacidades": [
+        "S2"
+      ],
+      "aulas": [
+        2,
+        10
+      ]
+    },
+    {
+      "numero": 14,
+      "indicador": "Acolhe sugestões no code review de testes do colega",
+      "capacidades": [
+        "S1"
+      ],
+      "aulas": [
+        8,
+        10
+      ]
+    }
+  ],
+  "situacoes_aprendizagem": [
+    "SA 1 — Estruturação e documentação de testes (aulas 1–2, retomada na 10). Startup de e-commerce em React sem estratégia de testes. Para autenticação, carrinho e checkout, o estudante entrega plano formal, no mínimo 5 casos de teste por feature (caminho feliz e casos de borda, tipo U/I/E2E), matriz de rastreabilidade requisito × caso, estimativa de esforço e análise de riscos.",
+    "SA 2 — Pipeline CI/CD e dashboard de cobertura (aulas 7–9). A equipe roda testes à mão antes do deploy e não sabe quanto do código está coberto. O estudante cria workflow que executa Vitest e Cypress em cada push e PR, bloqueia merge com teste falhando ou cobertura abaixo de 70%, publica relatório e badges no README e documenta como rodar e contribuir (`TESTING.md`)."
+  ],
+  "dificuldades_comuns": [
+    "**Testar implementação em vez de comportamento** → consultar pelo que o usuário vê (papel, rótulo, texto).",
+    "**Teste intermitente (flaky)** → esperas assíncronas corretas, nunca tempo fixo; dados isolados por teste.",
+    "**Cobertura como meta única** → 100% de linhas não garante requisito atendido; cruzar com a matriz de rastreabilidade.",
+    "**Ambiente Node/npm quebrado** → projeto-base pronto e roteiro de instalação da aula 3.",
+    "**Caso de teste vago (\"testar o login\")** → exigir dado de entrada e resultado esperado verificável.",
+    "**Mock que esconde defeito real** → manter ao menos um fluxo E2E contra a API de teste."
+  ],
+  "estrategia_testes": "A suíte cresce da base para o topo, e cada camada responde a uma pergunta diferente:\n- **Base — unitários (aulas 3 e 8):** muitos testes rápidos de funções e regras isoladas; revelam defeitos de lógica (caixa branca, 3.2).\n- **Meio — integração (aulas 4 e 5):** componentes com DOM, eventos e API simulada; revelam falhas de comunicação entre partes (3.1, 4.1, 4.3).\n- **Topo — E2E (aula 6):** poucos fluxos críticos no navegador real; confirmam que o usuário completa a tarefa (validação, 5.2, e usabilidade, 4.2).\n- **Transversal — métricas e CI (aulas 7 e 9):** cobertura, taxa de testes intermitentes e tempo de execução alimentam a monitoração e o controle (7.4) e a avaliação dos resultados (7.5).\n\nRegra de bolso para o estudante: se o teste quebra quando só o nome de uma classe CSS muda, ele testa a implementação e deve ser reescrito.",
+  "avaliacao": {
+    "instrumentos": [
+      {
+        "instrumento": "Avaliação contínua: entregas das aulas 1–9 e SAs 1 e 2",
+        "momento": "Aulas 1–9",
+        "peso": "60%",
+        "criterios": "Correção, completude, organização do repositório, prazo"
+      },
+      {
+        "instrumento": "Avaliação prática: suíte de testes para aplicação fornecida",
+        "momento": "Aula 10",
+        "peso": "25%",
+        "criterios": "Unitários (≥ 5 casos) · integração · E2E (≥ 3 fluxos) · cobertura ≥ 70% · execução no CI"
+      },
+      {
+        "instrumento": "Avaliação objetiva: conceitos, técnicas, tipos e processo de teste",
+        "momento": "Aula 10",
+        "peso": "15%",
+        "criterios": "Acertos; questões no formato capacidade → contexto → comando"
+      }
+    ],
+    "nota_final": "Nota final = 60% contínua + 25% prática + 15% objetiva. Aprovação: nota final ≥ 7,0 e presença mínima de 75%. Além da nota, cada capacidade recebe o parecer Desenvolvida / Em desenvolvimento / Não desenvolvida.",
+    "recuperacao": "Recuperação (didático): refazer a avaliação não atingida (prática com outra aplicação, objetiva com novo banco de questões), retomando só as capacidades pendentes, conforme o regimento da unidade SENAI.",
+    "rubrica": [
+      {
+        "nivel": "Excelente",
+        "nota": "9–10",
+        "descricao": "Plano rastreável, testes legíveis pelo comportamento, suíte estável no CI, decisões justificadas"
+      },
+      {
+        "nivel": "Bom",
+        "nota": "7–8",
+        "descricao": "Testes corretos e passando, com pequenas falhas de nomenclatura, cobertura ou documentação"
+      },
+      {
+        "nivel": "Aceitável",
+        "nota": "5–6",
+        "descricao": "Cumpre o essencial com orientação; lacunas de casos de borda ou testes frágeis"
+      },
+      {
+        "nivel": "Insuficiente",
+        "nota": "0–4",
+        "descricao": "Testes que não rodam, não validam requisito ou plano ausente"
+      }
+    ]
+  },
+  "mapeamento_bncc": [
+    "**CG2 Pensamento científico e crítico** — aulas 1, 2 e 7: hipótese de falha, evidência e análise de resultado",
+    "**CG5 Cultura digital** — aulas 3 a 9: frameworks de teste, Git e integração contínua",
+    "**CG4 Comunicação** — aulas 2 e 10: plano de testes, relatório e apresentação da suíte",
+    "**CG9 Empatia e cooperação** — aulas 8 a 10: code review e interação com a equipe de testes (2.4)",
+    "**CG10 Responsabilidade** — todas: não entregar código sem teste; relatar defeitos com honestidade (1.1)"
+  ],
+  "recursos": {
+    "ambientes": [
+      "Laboratório de informática",
+      "Biblioteca",
+      "Sala de aula",
+      "AVA com recursos de interatividade"
+    ],
+    "equipamentos": [
+      "Kit multimídia",
+      "Computador com a configuração adequada para a execução das atividades e acesso à internet",
+      "Sistemas operacionais",
+      "Pacote de aplicativos de escritório",
+      "IDE para desenvolvimento de testes"
+    ],
+    "recursos_didaticos": [
+      "Livros, apostilas e revistas especializadas",
+      "Manuais, normas e catálogos técnicos"
+    ],
+    "ferramentas_didaticas": "Node.js e npm, VS Code, Vitest, Testing Library, Cypress e Playwright, Lighthouse e axe-core, Git/GitHub e GitHub Actions."
+  },
+  "acessibilidade": {
+    "oficial": "Serão asseguradas as condições de acessibilidade, reconhecendo a especificidade e a peculiaridade do aluno com impedimentos de longo prazo, de natureza física, mental, intelectual e sensorial, levando-se em conta a(s) Norma(s) Regulamentadora(s) da ocupação, a Lei nº 13.146/2015, os Decretos nº 3298/2009 e 6949/2009, a LDB nº 9394/96 e a legislação específica em vigência da deficiência em questão. Portanto, no planejamento e na prática docente, serão indicados as condições e os pré-requisitos para o desenvolvimento das capacidades que envolvam risco, assegurada a acessibilidade curricular",
+    "didatico": "zoom e alto contraste na IDE, leitor de tela, projeto-base pronto, tempo estendido e duplas."
+  },
+  "glossario_ementa": [
+    {
+      "termo": "Verificação",
+      "definicao": "construímos o produto certo conforme a especificação?",
+      "capitulo": "01"
+    },
+    {
+      "termo": "Validação",
+      "definicao": "é o produto que o usuário precisa?",
+      "capitulo": "01"
+    },
+    {
+      "termo": "Caixa preta",
+      "definicao": "testa entradas e saídas sem ver o código",
+      "capitulo": "02"
+    },
+    {
+      "termo": "Caixa branca",
+      "definicao": "testa caminhos internos do código",
+      "capitulo": "02"
+    },
+    {
+      "termo": "Caso de teste",
+      "definicao": "condição, passos e resultado esperado",
+      "capitulo": "02"
+    },
+    {
+      "termo": "Suíte",
+      "definicao": "conjunto organizado de testes",
+      "capitulo": "03"
+    },
+    {
+      "termo": "Mock",
+      "definicao": "substituto controlado de uma dependência",
+      "capitulo": "05"
+    },
+    {
+      "termo": "Cobertura",
+      "definicao": "percentual de código executado pelos testes",
+      "capitulo": "07"
+    },
+    {
+      "termo": "E2E",
+      "definicao": "teste do fluxo completo, como o usuário",
+      "capitulo": "06"
+    },
+    {
+      "termo": "TDD",
+      "definicao": "escrever o teste antes do código",
+      "capitulo": "08"
+    },
+    {
+      "termo": "CI",
+      "definicao": "integração contínua que roda a suíte a cada alteração",
+      "capitulo": "09"
+    },
+    {
+      "termo": "Teste intermitente (flaky)",
+      "definicao": "passa ou falha sem mudança no código",
+      "capitulo": "06"
+    },
+    {
+      "termo": "Matriz de rastreabilidade",
+      "definicao": "liga cada requisito aos casos de teste que o verificam.",
+      "capitulo": "02"
+    }
+  ],
+  "regras_ia": [
+    "Capacidades e conhecimentos **[oficial]** não podem ser alterados, ampliados nem reduzidos.",
+    "Carga horária é 40h em 10 aulas de 4h; não criar aulas nem pesos além das Seções IV e V.",
+    "Capacidades técnicas de plano de testes de interface são da UC Projeto de Front-End; aqui só aparecem como ligação.",
+    "Contextualizar em aplicações web reais (e-commerce, cadastro, painel); empresas sempre fictícias.",
+    "Código de exemplo deve rodar: versões atuais, sintaxe válida, resultado esperado informado.",
+    "Integrar S1 e S2 em code review, trabalho em equipe e justificativa de decisões."
+  ],
+  "metricas": "80%+ dos estudantes com nota ≥ 7,0 · 100% entregam a suíte do projeto integrador rodando no CI.",
+  "referencias": []
+}

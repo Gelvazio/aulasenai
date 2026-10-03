@@ -1,8 +1,8 @@
 # ATIVIDADE AULA 08 — TDD e Debugging Moderno no Front-End
 
-**Slides:** `AULAS-CHALKIE-AI/8-TDD-e-Debugging-Moderno-no-Frontend.pdf`  
+**Slides:** `../AULAS/AULA-08-SLIDES.pdf`  
 **Duração:** 4 horas | **Modalidade:** Laboratório, em dupla (piloto e copiloto)  
-**Capacidades:** C5 · S1 | **Conhecimentos:** 1.1 · 2.3 · 3.2  
+**Capacidades:** C5 · S1 | **Conhecimentos:** 2.3 · 3.2 · 1.1  
 **Entrega da aula:** validador de CPF e filtro de produtos construídos com TDD
 
 ---

@@ -1,8 +1,8 @@
 # ATIVIDADE AULA 09 — Qualidade, Performance, Acessibilidade e CI/CD
 
-**Slides:** `AULAS-CHALKIE-AI/9-Qualidade,-Performance,-Acessibilidade-e-CI-CD.pdf`  
+**Slides:** `../AULAS/AULA-09-SLIDES.pdf`  
 **Duração:** 4 horas | **Modalidade:** Laboratório, em dupla  
-**Capacidades:** C4, C5 · S1, S2 | **Conhecimentos:** 2.4 · 4.2 · 4.4 · 7.4  
+**Capacidades:** C4, C5 · S1, S2 | **Conhecimentos:** 4.2 · 4.4 · 2.4  
 **Entrega da aula:** pipeline no GitHub Actions + auditoria de acessibilidade e performance — **SA 2**
 
 ---

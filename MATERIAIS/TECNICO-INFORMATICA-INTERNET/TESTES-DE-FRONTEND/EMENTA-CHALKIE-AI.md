@@ -5,7 +5,7 @@
 **Carga horária:** 40h (10 aulas × 4h) | **Modalidade:** Presencial  
 **Plataforma:** Chalkie AI | **Versão:** 2.0 — reescrita a partir da ementa oficial (2026-09-27)
 
-> Segue a ementa do curso (`../EMENTA-PRINCIPAL-TECNICO-INFORMATICA-INTERNET.md`, fonte da verdade), o `planoEnsino.pdf` (2 SAs), os slides de `AULAS-CHALKIE-AI/` e o `HORARIO.txt`. **[oficial]** = literal da ementa do curso; o resto é didático.
+> Segue a ementa do curso (`../EMENTA-PRINCIPAL-TECNICO-INFORMATICA-INTERNET.md`, fonte da verdade), o `DOCUMENTACAO/PLANO-ENSINO.pdf` (2 SAs), os slides de `AULAS/` e o `DOCUMENTACAO/HORARIO.txt`. **[oficial]** = literal da ementa do curso; o resto é didático.
 
 ---
 
@@ -86,9 +86,9 @@ Propiciar desenvolvimento de capacidades básicas e socioemocionais para codific
 | 09 | Qualidade, Performance, Acessibilidade e CI/CD | 4.2 · 4.4 · 2.4 | Pipeline GitHub Actions (SA 2) |
 | 10 | Projeto Integrador: Suíte de Testes + avaliação | 7 · 6.3 · 2.4 | Suíte completa + avaliações finais |
 
-**Datas previstas (`HORARIO.txt`):** 08/10, 14/10, 15/10, 22/10, 29/10, 30/10, 05/11, 06/11, 12/11 e 13/11.
+**Datas previstas (`DOCUMENTACAO/HORARIO.txt`):** 08/10, 14/10, 15/10, 22/10, 29/10, 30/10, 05/11, 06/11, 12/11 e 13/11.
 
-### Situações de aprendizagem (`planoEnsino.pdf`)
+### Situações de aprendizagem (`PLANO-ENSINO.pdf`)
 - **SA 1 — Estruturação e documentação de testes (aulas 1–2, retomada na 10).** Startup de e-commerce em React sem estratégia de testes. Para autenticação, carrinho e checkout, o estudante entrega plano formal, no mínimo 5 casos de teste por feature (caminho feliz e casos de borda, tipo U/I/E2E), matriz de rastreabilidade requisito × caso, estimativa de esforço e análise de riscos.
 - **SA 2 — Pipeline CI/CD e dashboard de cobertura (aulas 7–9).** A equipe roda testes à mão antes do deploy e não sabe quanto do código está coberto. O estudante cria workflow que executa Vitest e Cypress em cada push e PR, bloqueia merge com teste falhando ou cobertura abaixo de 70%, publica relatório e badges no README e documenta como rodar e contribuir (`TESTING.md`).
 
@@ -152,7 +152,7 @@ Regra de bolso para o estudante: se o teste quebra quando só o nome de uma clas
 
 **Ferramentas (didático):** Node.js e npm, VS Code, Vitest, Testing Library, Cypress e Playwright, Lighthouse e axe-core, Git/GitHub e GitHub Actions.
 
-**Materiais da pasta:** `AULAS-CHALKIE-AI/` (slides das 10 aulas) · `ATIVIDADES/` (atividades por aula) · `ESTRUTURACAO-PLANO-ENSINO/` (blocos e SAs) · `EXERCICIOS/` e `GUIAS-LABORATORIO/` · `planoEnsino.pdf` · `REFERENCIA-TESTES-DE-SISTEMAS/` (plano, avaliações e atividades da UC Testes de Sistemas, só como apoio).
+**Materiais da pasta:** `AULAS/` (slides das 10 aulas, guia e exercícios da aula 1) · `ATIVIDADES/` (práticas por aula) · `DOCUMENTACAO/` (plano de ensino, horário, blocos e SAs) · `REFERENCIA-TESTES-DE-SISTEMAS/` (plano, avaliações e atividades da UC Testes de Sistemas, só como apoio).
 
 **Acessibilidade [oficial, resumo]:** asseguradas as condições de acessibilidade ao aluno com impedimentos de longo prazo (Lei nº 13.146/2015, LDB nº 9394/96). **Didático:** zoom e alto contraste na IDE, leitor de tela, projeto-base pronto, tempo estendido e duplas.
 
@@ -200,7 +200,7 @@ C1 Especificações da interface → 5, 6.1 · C2 Requisitos da documentação �
 
 - [x] Ementa oficial conciliada; 10 aulas × 4h alinhadas aos slides e ao horário
 - [x] Situações de aprendizagem 1 e 2 do plano de ensino
-- [x] `ATIVIDADES/ATIVIDADE-AULA-01..10.md` alinhadas aos slides das 10 aulas, com rubricas (2026-09-27)
+- [x] `ATIVIDADES/ATIVIDADE-PRATICA-AULA-01..10.md` alinhadas aos slides das 10 aulas, com rubricas (2026-09-27)
 - [ ] Atividades de 50 questões por aula (padrão `assets/gerador-atividades/`)
 
 **Métricas:** 80%+ dos estudantes com nota ≥ 7,0 · 100% entregam a suíte do projeto integrador rodando no CI.
