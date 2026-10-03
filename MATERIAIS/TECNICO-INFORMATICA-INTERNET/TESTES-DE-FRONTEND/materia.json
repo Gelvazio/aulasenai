@@ -752,7 +752,7 @@
       }
     ],
     "nota_final": "Nota final = 60% contínua + 25% prática + 15% objetiva. Aprovação: nota final ≥ 7,0 e presença mínima de 75%. Além da nota, cada capacidade recebe o parecer Desenvolvida / Em desenvolvimento / Não desenvolvida.",
-    "recuperacao": "Recuperação (didático): refazer a avaliação não atingida (prática com outra aplicação, objetiva com novo banco de questões), retomando só as capacidades pendentes, conforme o regimento da unidade SENAI.",
+    "recuperacao": "refazer a avaliação não atingida (prática com outra aplicação, objetiva com novo banco de questões), retomando só as capacidades pendentes, conforme o regimento da unidade SENAI.",
     "rubrica": [
       {
         "nivel": "Excelente",
@@ -805,6 +805,7 @@
   },
   "acessibilidade": {
     "oficial": "Serão asseguradas as condições de acessibilidade, reconhecendo a especificidade e a peculiaridade do aluno com impedimentos de longo prazo, de natureza física, mental, intelectual e sensorial, levando-se em conta a(s) Norma(s) Regulamentadora(s) da ocupação, a Lei nº 13.146/2015, os Decretos nº 3298/2009 e 6949/2009, a LDB nº 9394/96 e a legislação específica em vigência da deficiência em questão. Portanto, no planejamento e na prática docente, serão indicados as condições e os pré-requisitos para o desenvolvimento das capacidades que envolvam risco, assegurada a acessibilidade curricular",
+    "resumo_ementa": "asseguradas as condições de acessibilidade ao aluno com impedimentos de longo prazo (Lei nº 13.146/2015, LDB nº 9394/96).",
     "didatico": "zoom e alto contraste na IDE, leitor de tela, projeto-base pronto, tempo estendido e duplas."
   },
   "glossario_ementa": [

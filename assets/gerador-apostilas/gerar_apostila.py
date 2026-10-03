@@ -724,20 +724,25 @@ def conferir_cobertura_ementa(dados, capitulos):
     return total
 
 
-def ler_fontes_capitulos(pasta_materia, dados):
+def ler_fontes_capitulos(pasta_materia, dados, obrigatorio=True):
     """Lê e valida todos os CAPITULO-NN.md da matéria.
 
     Args:
         pasta_materia: Pasta da matéria.
         dados: Dados da matéria.
+        obrigatorio: Se True (HTML), exige ao menos um capítulo; o Markdown completo pode ser
+            montado antes do primeiro capítulo, para a conferência com a ementa.
 
     Returns:
         Lista de capítulos em ordem.
     """
     pasta_fontes = pasta_materia / PASTA_APOSTILA / PASTA_FONTES
     fontes = sorted(pasta_fontes.glob(PADRAO_FONTES))
-    if not fontes:
+    if not fontes and obrigatorio:
         erro(f"nenhum {PADRAO_FONTES} em {pasta_fontes}")
+    if not fontes:
+        print(f"ℹ️ Nenhum capítulo ainda em {pasta_fontes}: Markdown só com as partes iniciais")
+        return []
     capitulos = [ler_capitulo(fonte, dados["todas"]) for fonte in fontes]
     if dados["plano_capitulos"]:
         conferir_cobertura_ementa(dados, capitulos)
@@ -759,7 +764,7 @@ def gerar_markdown_completo(pasta_materia, forcar):
     """
     dados = ler_dados_materia(pasta_materia)
     validar_plano_capitulos(dados)
-    capitulos = ler_fontes_capitulos(pasta_materia, dados)
+    capitulos = ler_fontes_capitulos(pasta_materia, dados, obrigatorio=False)
     saida = caminho_markdown_completo(pasta_materia)
     if forcar or not saida.is_file():
         texto = md_apostila.montar_markdown_completo(

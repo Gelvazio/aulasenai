@@ -151,6 +151,11 @@ def md_plano(dados, numeros_incluidos):
         situacao = SITUACAO_INCLUIDO if numero in numeros_incluidos else SITUACAO_PENDENTE
         linhas.append(f"| {numero} | {numero} | {tema} | {horas} h | {situacao} |")
     materia = dados.get("materia", {})
+    datas = [item["data_prevista"] for item in dados.get("plano_capitulos", [])
+             if item.get("data_prevista")]
+    if datas:
+        texto_datas = ", ".join(datas[:-1]) + (" e " if len(datas) > 1 else "") + datas[-1]
+        linhas += ["", f"**Datas previstas:** {texto_datas}."]
     glossario = {termo["termo"]: termo["definicao"]
                  for termo in materia.get("glossario_ementa", [])}
     for item in dados.get("plano_capitulos", []):
@@ -174,7 +179,7 @@ def md_aula_padrao(materia):
 
 
 def md_bncc(materia):
-    """Monta a tabela do mapeamento BNCC da ementa (competência, aulas e foco).
+    """Monta o mapeamento BNCC da ementa (tabela quando estruturado, lista quando literal).
 
     Args:
         materia: Conteúdo do materia.json.
@@ -185,6 +190,8 @@ def md_bncc(materia):
     mapeamento = materia.get("mapeamento_bncc", [])
     if not mapeamento:
         return []
+    if all(isinstance(item, str) for item in mapeamento):
+        return ["", "## Mapeamento BNCC", ""] + [f"- {item}" for item in mapeamento]
     linhas = ["", "## Mapeamento BNCC", "", "| Competência | Aulas | Foco |", "|---|---|---|"]
     linhas += [f"| {item['competencia']} | {', '.join(str(aula) for aula in item['aulas'])} | "
                f"{item['foco']} |" for item in mapeamento]
@@ -221,16 +228,14 @@ def md_detalhe_aula(item, horas, glossario):
         str(dominio) for dominio in item.get("dominios", []))
     linhas = [f"## Aula {item['numero']} — {item['tema']}", "",
               f"- **Carga horária:** {item.get('carga_horaria', horas)} h · **Domínios:** "
-              f"{dominios} · **Capacidades:** {', '.join(item.get('capacidades', []))}",
-              f"- **Situação-problema:** {item.get('situacao_problema', '')}",
-              f"- **Atividade / instrumento formativo:** {item.get('atividade', '')}",
-              f"- **Estratégias:** {', '.join(item.get('estrategias', []))}"]
-    if item.get("bncc"):
-        linhas.append(f"- **BNCC:** {', '.join(item['bncc'])}")
-    if item.get("marco"):
-        linhas.append(f"- **Marco:** {item['marco']}")
-    if item.get("observacao"):
-        linhas.append(f"- **Observação:** {item['observacao']}")
+              f"{dominios} · **Capacidades:** {', '.join(item.get('capacidades', []))}"]
+    opcionais = (("Data prevista", item.get("data_prevista")),
+                 ("Situação-problema", item.get("situacao_problema")),
+                 ("Atividade / entrega", item.get("atividade")),
+                 ("Estratégias", ", ".join(item.get("estrategias", []))),
+                 ("BNCC", ", ".join(item.get("bncc", []))), ("Marco", item.get("marco")),
+                 ("Observação", item.get("observacao")))
+    linhas += [f"- **{rotulo}:** {valor}" for rotulo, valor in opcionais if valor]
     linhas.append("")
     linhas += lista_md("Conteúdos oficiais (ementa)", item.get("conteudos_oficiais", []))
     linhas += lista_md("Detalhamento didático", item.get("detalhamento_didatico", []))
@@ -402,8 +407,23 @@ def valor_br(numero):
     return f"{numero:.1f}".replace(".", ",")
 
 
+def como_lista(valor, separador=" · "):
+    """Devolve o valor como lista (texto corrido é separado pelo separador indicado).
+
+    Args:
+        valor: Lista ou texto.
+        separador: Separador usado no texto corrido.
+
+    Returns:
+        Lista de itens.
+    """
+    if isinstance(valor, list):
+        return valor
+    return [parte.strip() for parte in str(valor or "").split(separador) if parte.strip()]
+
+
 def md_objetivos_ementa(materia):
-    """Monta justificativa, objetivo geral e competência integradora, literais da ementa.
+    """Monta justificativa, função, objetivo geral e competência integradora (literais).
 
     Args:
         materia: Conteúdo do materia.json.
@@ -412,19 +432,49 @@ def md_objetivos_ementa(materia):
         Lista de linhas Markdown.
     """
     objetivo = materia.get("objetivo_geral", {})
-    competencia = materia.get("competencia_integradora", {})
-    linhas = ["## Justificativa", "", materia.get("justificativa", ""), "",
-              "## Objetivo geral", "", objetivo.get("texto", ""), ""]
+    linhas = ["## Justificativa", "", materia.get("justificativa", ""), ""]
+    if materia.get("funcao"):
+        linhas += ["## Função", "", materia["funcao"], ""]
+    linhas += ["## Objetivo geral", "", objetivo.get("texto", ""), ""]
     linhas += [f"{i}. {dimensao}" for i, dimensao in enumerate(objetivo.get("dimensoes", []), 1)]
-    linhas += ["", "## Competência integradora", "",
-               f"- **Eixo:** {competencia.get('eixo_bncc', '')}",
-               f"- **Competência:** {competencia.get('competencia', '')}",
-               f"- **Resultados:** {'; '.join(competencia.get('resultados', []))}."]
+    competencia = materia.get("competencia_integradora")
+    if competencia:
+        linhas += ["", "## Competência integradora", "",
+                   f"- **Eixo:** {competencia.get('eixo_bncc', '')}",
+                   f"- **Competência:** {competencia.get('competencia', '')}",
+                   f"- **Resultados:** {'; '.join(competencia.get('resultados', []))}."]
+    return linhas
+
+
+def linhas_instrumentos(avaliacao):
+    """Monta a tabela de instrumentos (valor e capacidades, ou peso e critérios).
+
+    Args:
+        avaliacao: Campo "avaliacao" do materia.json.
+
+    Returns:
+        Lista de linhas Markdown da tabela.
+    """
+    instrumentos = avaliacao.get("instrumentos", [])
+    if any("peso" in item for item in instrumentos):
+        linhas = ["| Instrumento | Momento | Peso | Critérios |", "|---|---|---|---|"]
+        return linhas + [f"| {item['instrumento']} | {item.get('momento', '')} | "
+                         f"{item.get('peso', '')} | {item.get('criterios', '')} |"
+                         for item in instrumentos]
+    linhas = ["| Instrumento | Valor | Momento | Capacidades |", "|---|---|---|---|"]
+    for item in instrumentos:
+        linhas.append(f"| {item['instrumento']} | {valor_br(item['valor'])} | "
+                      f"{item.get('momento', '')} | {', '.join(item.get('capacidades', []))} |")
+        linhas += [f"| ↳ {tarefa['tarefa']} | {valor_br(tarefa['valor'])} | | "
+                   f"{', '.join(tarefa['capacidades'])} |" for tarefa in item.get("tarefas", [])]
+    nota = avaliacao.get("nota_final", 10)
+    if not isinstance(nota, str):
+        linhas.append(f"| **Nota final da UC** | **{valor_br(nota)}** | | |")
     return linhas
 
 
 def md_avaliacao_ementa(materia):
-    """Monta instrumentos, formativa, recuperação e rubrica da avaliação, literais da ementa.
+    """Monta instrumentos, nota final, formativa, recuperação e rubrica (literais da ementa).
 
     Args:
         materia: Conteúdo do materia.json.
@@ -435,25 +485,28 @@ def md_avaliacao_ementa(materia):
     avaliacao = materia.get("avaliacao")
     if not avaliacao:
         return []
-    linhas = ["", "## Avaliação", "", "| Instrumento | Valor | Momento | Capacidades |",
-              "|---|---|---|---|"]
-    for item in avaliacao.get("instrumentos", []):
-        linhas.append(f"| {item['instrumento']} | {valor_br(item['valor'])} | "
-                      f"{item.get('momento', '')} | {', '.join(item.get('capacidades', []))} |")
-        linhas += [f"| ↳ {tarefa['tarefa']} | {valor_br(tarefa['valor'])} | | "
-                   f"{', '.join(tarefa['capacidades'])} |" for tarefa in item.get("tarefas", [])]
-    linhas += [f"| **Nota final da UC** | **{valor_br(avaliacao.get('nota_final', 10))}** | | |",
-               "",
-               f"- **Formativa:** {avaliacao.get('formativa', '')}",
-               f"- **Recuperação:** {avaliacao.get('recuperacao', '')}", "",
-               "| Nível | Nota | Descrição |", "|---|---|---|"]
-    linhas += [f"| {nivel['nivel']} | {nivel['nota']} | {nivel['descricao']} |"
-               for nivel in avaliacao.get("rubrica", [])]
+    linhas = ["", "## Avaliação", "", *linhas_instrumentos(avaliacao), ""]
+    if isinstance(avaliacao.get("nota_final"), str):
+        linhas += [avaliacao["nota_final"], ""]
+    linhas += [f"- **{rotulo}:** {avaliacao[campo]}" for rotulo, campo in
+               (("Formativa", "formativa"), ("Recuperação", "recuperacao")) if avaliacao.get(campo)]
+    if avaliacao.get("rubrica"):
+        linhas += ["", "| Nível | Nota | Descrição |", "|---|---|---|"]
+        linhas += [f"| {nivel['nivel']} | {nivel['nota']} | {nivel['descricao']} |"
+                   for nivel in avaliacao["rubrica"]]
     return linhas
 
 
+ROTULOS_RECURSOS = (("ambientes", "Ambientes"), ("equipamentos", "Equipamentos"),
+                    ("recurso_didatico", "Recurso didático"),
+                    ("recursos_didaticos", "Recursos didáticos"),
+                    ("ferramentas_didaticas", "Ferramentas (didático)"))
+ROTULOS_ACESSIBILIDADE = {"oficial": "Oficial (ementa do curso)", "didatico": "Didático",
+                          "resumo_ementa": "Resumo (ementa da matéria)"}
+
+
 def md_recursos_ementa(materia):
-    """Monta recursos, ambientes e acessibilidade, literais da ementa.
+    """Monta recursos, ambientes e acessibilidade (literais da ementa).
 
     Args:
         materia: Conteúdo do materia.json.
@@ -462,16 +515,40 @@ def md_recursos_ementa(materia):
         Lista de linhas Markdown.
     """
     recursos = materia.get("recursos", {})
+    linhas = ["", "## Recursos e ambientes", ""]
+    for campo, rotulo in ROTULOS_RECURSOS:
+        valor = recursos.get(campo)
+        if valor:
+            tem_virgula = isinstance(valor, list) and any("," in item for item in valor)
+            separador = "; " if tem_virgula else ", "
+            texto = separador.join(valor) if isinstance(valor, list) else valor
+            linhas.append(f"- **{rotulo}:** {texto.rstrip('.')}.")
     acessibilidade = dict(materia.get("acessibilidade", {}))
     regra = acessibilidade.pop("regra", "")
-    linhas = ["", "## Recursos e ambientes", "",
-              f"- **Ambientes:** {', '.join(recursos.get('ambientes', []))}.",
-              f"- **Equipamentos:** {', '.join(recursos.get('equipamentos', []))}.",
-              f"- **Recurso didático:** {recursos.get('recurso_didatico', '')}.",
-              "", "## Acessibilidade", ""]
-    linhas += [f"- **{nome}:** {texto}" for nome, texto in acessibilidade.items()]
+    linhas += ["", "## Acessibilidade", ""]
+    linhas += [f"- **{ROTULOS_ACESSIBILIDADE.get(nome, nome)}:** {texto}"
+               for nome, texto in acessibilidade.items()]
     if regra:
         linhas += ["", f"{regra}."]
+    return linhas
+
+
+def md_textos_didaticos_ementa(materia):
+    """Monta situações de aprendizagem, dificuldades comuns e estratégia de testes, se houver.
+
+    Args:
+        materia: Conteúdo do materia.json.
+
+    Returns:
+        Lista de linhas Markdown.
+    """
+    linhas = []
+    for campo, titulo in (("situacoes_aprendizagem", "Situações de aprendizagem"),
+                          ("dificuldades_comuns", "Dificuldades comuns (e como tratar)")):
+        if materia.get(campo):
+            linhas += ["", f"## {titulo}", ""] + [f"- {item}" for item in materia[campo]]
+    if materia.get("estrategia_testes"):
+        linhas += ["", "## Estratégia de testes da UC (pirâmide)", "", materia["estrategia_testes"]]
     return linhas
 
 
@@ -488,14 +565,16 @@ def md_listas_ementa(materia):
     if materia.get("marcos"):
         linhas += ["", "## Marcos", ""]
         linhas += [f"- Aula {marco['aula']} — {marco['marco']}" for marco in materia["marcos"]]
-    if materia.get("capacidades_x_conhecimentos_ementa"):
+    relacao = como_lista(materia.get("capacidades_x_conhecimentos_ementa"))
+    if relacao:
         linhas += ["", "## Capacidades × conhecimentos (ementa)", ""]
-        linhas += [f"- {item}" for item in materia["capacidades_x_conhecimentos_ementa"]]
+        linhas += [f"- {item.rstrip('.')}" for item in relacao]
     if materia.get("regras_ia"):
         linhas += ["", "## Regras para IA (seguidas na escrita da apostila)", ""]
         linhas += [f"{i}. {regra}" for i, regra in enumerate(materia["regras_ia"], 1)]
-    if materia.get("metricas"):
-        linhas += ["", "## Métricas", ""] + [f"- {metrica}" for metrica in materia["metricas"]]
+    metricas = como_lista(materia.get("metricas"))
+    if metricas:
+        linhas += ["", "## Métricas", ""] + [f"- {metrica}" for metrica in metricas]
     return linhas
 
 
@@ -514,6 +593,7 @@ def md_ementa_oficial(dados):
               "aqui: quem muda é a ementa (e o `materia.json`).", ""]
     linhas += md_objetivos_ementa(materia) + md_avaliacao_ementa(materia)
     linhas += md_recursos_ementa(materia) + md_aula_padrao(materia)
+    linhas += md_textos_didaticos_ementa(materia)
     linhas += md_listas_ementa(materia) + md_bncc(materia)
     return "\n".join(linhas)
 

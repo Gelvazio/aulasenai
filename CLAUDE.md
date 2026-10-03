@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-03 18:14
+**Versão das regras:** 2026-10-03 19:04
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-03 19:04 | Apostilas: conferência com a ementa aceita os formatos de ementa das diferentes matérias (ex.: Testes de Frontend) e **reprova** seção da ementa não reconhecida; Markdown completo pode ser montado antes do 1º capítulo; introdução com "Competência integradora" ou "Situações de aprendizagem", conforme a ementa |
 | 2026-10-03 18:14 | Permissão por matéria: seção `STATUS-PERMISSAO-MATERIA` no `STATUS-EMENTAS-CURSOS.md` (matéria só vale com curso e matéria em `VERIFICAR`); no Técnico em Informática para Internet só `TESTES-DE-FRONTEND` fica em `VERIFICAR` |
 | 2026-10-03 17:22 | Regra "VISUALIZADOR DE REGRAS ATUALIZADO JUNTO COM O CLAUDE.md" e controle de versão com data e hora (linha acima + este histórico); o visualizador passa a mostrar a versão e a recarregar as regras a cada abertura |
 | 2026-10-03 | Regras de aulas uma por vez (`STATUS-AULAS.md`), 1 atividade objetiva de 50 questões por aula (`STATUS-ATIVIDADES.md`) e decisões da fila de geração |
@@ -1878,9 +1879,20 @@ matéria.**
   avaliação (instrumentos, tarefas, formativa, recuperação, rubrica), BNCC, recursos,
   acessibilidade, referências, métricas, ideias (prompts), regras para IA, capacidades ×
   conhecimentos e o glossário oficial (termo + definição).
-- ✅ Ela lê a ementa **pela estrutura** (tabelas, listas numeradas e campos em negrito do padrão
-  `EMENTA-CHALKIE-AI.md`), sem textos fixos de matéria; vale para qualquer matéria. Seção da
-  ementa fora desse padrão: conferir à mão e avisar o usuário.
+- ✅ Ela lê a ementa **pela estrutura** (tabelas, listas e campos em negrito do padrão
+  `EMENTA-CHALKIE-AI.md`), sem textos fixos de matéria, e aceita as variações de formato entre
+  matérias: socioemocionais "**S1 Nome** texto" ou "**S1** — texto"; conhecimentos
+  "**Título:** a; b" ou "**Título** — 1.1 a · 1.2 b" (título e cada conteúdo conferidos);
+  sequência de aulas lida pelos **títulos das colunas** (tema, domínios/conhecimentos,
+  capacidades, estratégias, atividade/entrega); listas e textos da seção de sequência
+  (situações de aprendizagem, dificuldades, pirâmide, datas previstas); recursos item a item;
+  BNCC com "aulas 1, 2 e 7" ou "todas".
+- ⛔ **Seção que existe na ementa mas não foi reconhecida reprova a conferência** (capacidades,
+  socioemocionais, indicadores, conhecimentos, sequência, avaliação, BNCC, recursos, prompts,
+  regras para IA, glossário): nada pode ficar de fora em silêncio. Formato novo de ementa =
+  ampliar o `conferir_ementa.py` (sem textos fixos de matéria) e avisar o usuário.
+- ✅ O **Markdown completo pode ser montado antes do primeiro capítulo** (`--markdown` sem
+  `CAPITULO-*.md`), justamente para a conferência acontecer antes de escrever os capítulos.
 - ✅ **Fora da conferência** (não são conteúdo da apostila): materiais da pasta, plataforma,
   checklist, status e notas de proveniência da ementa.
 - ✅ **Nos capítulos**, o gerador também avisa (⚠️) quando tema, capacidades ou termos oficiais do
@@ -2070,7 +2082,9 @@ faltava. Vale para **todas as matérias**.
 - ✅ **`CONTEUDO/INTRODUCAO.md`:** título `# Introdução` e subtítulos `###`: Apresentação,
   Objetivo geral da unidade curricular, Como a apostila está organizada, Como estudar com esta
   apostila, **Como você será avaliado** (instrumentos, valores, rubrica e recuperação da ementa),
-  **Ambientes, recursos e acessibilidade** e Competência integradora.
+  **Ambientes, recursos e acessibilidade** e **Competência integradora** — ou, quando a ementa
+  não tiver competência integradora, **Situações de aprendizagem** (e, se houver, "Ferramentas
+  que você vai usar").
 - ✅ **Busca dos vídeos (sem abrir navegador):** pesquisa na web restrita ao `youtube.com`, em
   português, preferindo canais educacionais; a duração, o título e o canal são lidos dos
   metadados da página do vídeo por `curl` (`lengthSeconds`, `ownerChannelName`); descartar os de

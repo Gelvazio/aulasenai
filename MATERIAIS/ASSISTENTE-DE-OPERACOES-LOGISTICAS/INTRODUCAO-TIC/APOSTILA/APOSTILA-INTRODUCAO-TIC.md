@@ -327,7 +327,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 - **Carga horária:** 4 h · **Domínios:** 1, 2, 3 · **Capacidades:** C1, S1
 - **Situação-problema:** Motorista carregou o pedido errado: aviso por rádio com ruído e sem confirmação.
-- **Atividade / instrumento formativo:** Diagnóstica + falhas de comunicação num turno de expedição
+- **Atividade / entrega:** Diagnóstica + falhas de comunicação num turno de expedição
 - **Estratégias:** Exposição dialogada, Dinâmica de grupo, Trabalho em grupo
 - **BNCC:** CG4 Comunicação, CG9 Empatia e cooperação
 
@@ -364,7 +364,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 - **Carga horária:** 4 h · **Domínios:** 4 · **Capacidades:** C4
 - **Situação-problema:** Leitor de código de barras parou: hardware, driver ou configuração do SO?
-- **Atividade / instrumento formativo:** Classificar componentes + checklist de pastas do setor
+- **Atividade / entrega:** Classificar componentes + checklist de pastas do setor
 - **Estratégias:** Exposição dialogada, Demonstração, Atividade prática
 - **BNCC:** CG5 Cultura digital
 
@@ -396,7 +396,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 - **Carga horária:** 4 h · **Domínios:** 5 · **Capacidades:** C5
 - **Situação-problema:** Supervisor pede a norma de armazenagem de inflamáveis: onde buscar e como citar?
-- **Atividade / instrumento formativo:** Pesquisa orientada com fontes citadas
+- **Atividade / entrega:** Pesquisa orientada com fontes citadas
 - **Estratégias:** Exposição dialogada, Atividade prática
 - **BNCC:** CG5 Cultura digital, CG7 Argumentação
 - **Marco:** Opera o computador, organiza arquivos e pesquisa com critério
@@ -421,7 +421,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 - **Carga horária:** 4 h · **Domínios:** 5, 3 · **Capacidades:** C1, C5
 - **Situação-problema:** Transportadora não recebeu o romaneio: e-mail sem anexo, assunto vago, pasta sem permissão.
-- **Atividade / instrumento formativo:** E-mail à transportadora + pasta compartilhada
+- **Atividade / entrega:** E-mail à transportadora + pasta compartilhada
 - **Estratégias:** Atividade prática, Trabalho em grupo
 - **BNCC:** CG4 Comunicação, CG9 Empatia e cooperação
 - **Observação:** A ementa indica o domínio 5 nas aulas 3 e 4; nesta aula ficam correio eletrônico e armazenamento/compartilhamento em nuvem, com o domínio 3.
@@ -454,7 +454,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 - **Carga horária:** 4 h · **Domínios:** 6 · **Capacidades:** C2
 - **Situação-problema:** E-mail "urgente" do banco pede a senha do sistema de estoque.
-- **Atividade / instrumento formativo:** Questionário + casos de phishing, senha e perda de arquivo
+- **Atividade / entrega:** Questionário + casos de phishing, senha e perda de arquivo
 - **Estratégias:** Exposição dialogada, Estudo de caso, Gamificação
 - **BNCC:** CG5 Cultura digital, CG10 Responsabilidade
 - **Marco:** Comunica-se digitalmente e protege dados
@@ -489,7 +489,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 - **Carga horária:** 4 h · **Domínios:** 7 · **Capacidades:** C1
 - **Situação-problema:** Procedimento de recebimento em texto corrido, sem títulos nem numeração.
-- **Atividade / instrumento formativo:** Formatar procedimento de recebimento de carga
+- **Atividade / entrega:** Formatar procedimento de recebimento de carga
 - **Estratégias:** Demonstração, Atividade prática
 
 **Conteúdos oficiais (ementa):**
@@ -509,7 +509,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 - **Carga horária:** 4 h · **Domínios:** 8, 2 · **Capacidades:** C1, C3
 - **Situação-problema:** Carga avariada: registrar em relatório e decidir em reunião.
-- **Atividade / instrumento formativo:** Relatório de avaria e ata de reunião
+- **Atividade / entrega:** Relatório de avaria e ata de reunião
 - **Estratégias:** Exposição dialogada, Trabalho em grupo, Atividade prática
 - **BNCC:** CG4 Comunicação, CG10 Responsabilidade
 - **Marco:** Produz documento formatado e texto técnico
@@ -540,7 +540,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 - **Carga horária:** 4 h · **Domínios:** 9 · **Capacidades:** C3
 - **Situação-problema:** Contagem de estoque em papel: virar planilha com alerta de mínimo.
-- **Atividade / instrumento formativo:** Planilha de estoque com fórmulas + checklist
+- **Atividade / entrega:** Planilha de estoque com fórmulas + checklist
 - **Estratégias:** Demonstração, Atividade prática
 - **BNCC:** CG5 Cultura digital
 - **Observação:** A ementa indica o domínio 9 nas aulas 8 e 9; nesta aula ficam organização, formatação e fórmulas.
@@ -570,7 +570,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 - **Carga horária:** 4 h · **Domínios:** 9 · **Capacidades:** C3, S4
 - **Situação-problema:** Gerência quer saber qual rota mais atrasa entregas no mês.
-- **Atividade / instrumento formativo:** Filtros e gráfico de entregas no prazo, interpretado
+- **Atividade / entrega:** Filtros e gráfico de entregas no prazo, interpretado
 - **Estratégias:** Demonstração, Estudo de caso, Atividade prática
 - **BNCC:** CG5 Cultura digital, CG7 Argumentação
 - **Observação:** A ementa indica o domínio 9 nas aulas 8 e 9; nesta aula ficam classificação/filtro, gráficos, quadros e tabelas.
@@ -592,7 +592,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 
 - **Carga horária:** 4 h · **Domínios:** 10, todos · **Capacidades:** C1, C2, C3, C4, C5
 - **Situação-problema:** Apresentar em 5 minutos os resultados do setor ao próximo turno.
-- **Atividade / instrumento formativo:** Apresentação curta + avaliações objetiva e prática
+- **Atividade / entrega:** Apresentação curta + avaliações objetiva e prática
 - **Estratégias:** Atividade prática, Apresentação para público
 - **BNCC:** CG4 Comunicação, CG9 Empatia e cooperação
 - **Marco:** Integra texto, planilha e apresentação
