@@ -5,23 +5,42 @@
 // O docente do PDF é o professor logado; o data-docente só vale quando não há professor logado.
 // A turma do PDF vem da lista "Turma" da .export-bar (assets/js/turma-exportacao.js, carregado
 // aqui): professor com 1 turma já vem escolhida; com várias, ele escolhe antes de exportar.
+// Também carrega o assets/js/exportar-banco-moodle.js: botão "Banco Moodle (AVA SENAI)", só do
+// professor, que baixa as questões da página com o gabarito do banco em Moodle XML.
 
 const ARQUIVO_TURMA_EXPORTACAO = 'turma-exportacao.js';
+const ARQUIVO_BANCO_MOODLE = 'exportar-banco-moodle.js';
+const ORIGEM_ATIVIDADE_JS = document.currentScript?.src || '';
 const TURMA_EM_BRANCO_ATIVIDADE_PDF = '___________________';
+const MSG_JSPDF_NAO_CARREGADO = 'Erro: jsPDF não carregado (verifique a conexão com a internet).';
 
 /**
- * Carrega o assets/js/turma-exportacao.js (lista de turmas da exportação), ao lado deste script.
+ * Carrega um script da barra de exportação que fica em assets/js/, ao lado deste.
+ * @param {string} arquivo - Nome do script.
+ * @param {boolean} jaCarregado - true quando o script já está na página (não carrega de novo).
  */
-function carregarTurmaExportacao() {
-    const origem = document.currentScript?.src;
-    if (!origem || typeof obterTurmaParaExportacao === 'function') return;
+function carregarModuloExportacao(arquivo, jaCarregado) {
+    if (!ORIGEM_ATIVIDADE_JS || jaCarregado) return;
 
     const script = document.createElement('script');
-    script.src = origem.replace(/[^/]*$/, ARQUIVO_TURMA_EXPORTACAO);
+    script.src = ORIGEM_ATIVIDADE_JS.replace(/[^/]*$/, arquivo);
     document.head.append(script);
 }
 
-carregarTurmaExportacao();
+carregarModuloExportacao(ARQUIVO_TURMA_EXPORTACAO, typeof obterTurmaParaExportacao === 'function');
+carregarModuloExportacao(ARQUIVO_BANCO_MOODLE, typeof exportarBancoMoodle === 'function');
+
+/**
+ * Avisa um erro da exportação em popup (popup.js); sem ele, registra no console.
+ * @param {string} texto - Mensagem.
+ */
+async function avisarErroExportacaoAtividade(texto) {
+    if (typeof window.mostrarPopup === 'function') {
+        await window.mostrarPopup(texto, { tipo: 'erro' });
+        return;
+    }
+    console.warn(texto);
+}
 
 /**
  * Turma do PDF; sem o módulo de turmas carregado, o campo fica em branco.
@@ -242,7 +261,7 @@ function rotuloDaAula(aula) {
 async function exportarPDFAtividade(gabaritoExterno) {
     const jsPDF = window.jspdf?.jsPDF || window.jsPDF;
     if (!jsPDF) {
-        alert('Erro: jsPDF não carregado (verifique a conexão com a internet).');
+        await avisarErroExportacaoAtividade(MSG_JSPDF_NAO_CARREGADO);
         return;
     }
 

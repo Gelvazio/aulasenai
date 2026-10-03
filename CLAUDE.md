@@ -1506,7 +1506,10 @@ assets/
 │                        Administrador): CRUD da tabela `turmaprofessor`;
 │                        turmas-aluno-repositorio.js + turmas-aluno-pagina.js + css/
 │                        turmas-aluno.css — alunos.html da raiz (menu ALUNOS, todo professor):
-│                        CRUD da tabela `turmaaluno`)
+│                        CRUD da tabela `turmaaluno`;
+│                        exportar-banco-moodle.js + banco-moodle-xml.js — botão "📥 Banco Moodle
+│                        (AVA SENAI)" nas atividades objetivas, só professor (carregado pelo
+│                        atividade.js); o XML segue o mesmo formato do gerador-banco-ava)
 ├─ gerador-materia/    → materia.py: lê o <MATERIA>/materia.json (arquivo ÚNICO de dados da
 │                        matéria), usado por todos os geradores (ver "REGRAS APOSTILAS")
 ├─ gerador-apostilas/  → gerar_apostila.py + markdown_apostila.py + conferir_ementa.py +
@@ -1765,6 +1768,14 @@ importação no AVA pelo professor; as demais matérias só quando o usuário li
   juntos duplicam as questões).
 - ✅ Depois de alterar uma fonte de questões, gerar o banco de novo e registrar no
   `STATUS-ATIVIDADES.md` da matéria.
+- ✅ **Botão em cada atividade** (2026-10-03, plano `docs/botao-exportar-banco-moodle-atividade.md`):
+  **📥 Banco Moodle (AVA SENAI)** na `.export-bar` de toda página que carrega o `atividade.js`,
+  **só para o professor logado** (`app_metadata.perfil`). Lê as questões da própria página e o
+  gabarito da tabela `gabarito` (RLS do professor), confere quantidade e letras e baixa
+  `<nome-da-pagina>.xml`. Nada é gravado no banco nem no navegador; o gabarito nunca fica na
+  página. Código: `assets/js/exportar-banco-moodle.js` (tela, dados) +
+  `assets/js/banco-moodle-xml.js` (só monta o XML). ⚠️ O `banco-moodle-xml.js` e o
+  `moodle_xml.py` geram **o mesmo XML**: mudou um, mudar o outro e comparar os dois.
 
 ## 📘 REGRAS APOSTILAS
 

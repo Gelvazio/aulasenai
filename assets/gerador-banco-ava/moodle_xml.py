@@ -2,6 +2,8 @@
 
 Responsabilidade única: transformar categorias e questões já lidas em Moodle XML. Não lê nem
 grava arquivos (isso fica em gerar_banco_ava.py).
+⚠️ O botão das páginas (assets/js/banco-moodle-xml.js) gera o MESMO XML: mudou aqui, mudar lá
+(constantes, ordem dos elementos e recuo) e comparar os dois.
 Plano: docs/banco-questoes-ava-senai-moodle-xml.md
 """
 import html
