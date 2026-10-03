@@ -1,7 +1,7 @@
 # Capítulo 03 — Navegação na Web e Pesquisa Acadêmica
 
 - **Aula:** 03
-- **Capacidade:** C5, C3
+- **Capacidade:** C5
 
 ## Teoria
 
@@ -40,7 +40,8 @@ da empresa e o provedor continuam vendo o acesso. Ela não protege contra vírus
 
 ### Como os buscadores funcionam
 
-Google e Bing não varrem a web na hora da busca. Eles consultam um catálogo montado antes:
+Os buscadores (como Google, Bing ou DuckDuckGo) não varrem a web na hora da busca. Eles
+consultam um catálogo montado antes:
 
 1. **Rastreamento:** robôs percorrem os links e coletam as páginas.
 2. **Indexação:** o conteúdo é organizado por palavras-chave.
@@ -82,8 +83,10 @@ Use o **teste CRAAP** — perguntas simples antes de usar qualquer informação:
 
 🔑 **Regra prática:** confirme a informação em **pelo menos 3 fontes independentes**.
 
-**Downloads com segurança:** baixe só de sites oficiais, passe o antivírus e desconfie de arquivos
-`.exe`, `.bat`, `.scr` ou com **extensão dupla** (`relatorio.pdf.exe`).
+**Download e gravação com segurança:** baixe só de sites oficiais, passe o antivírus e desconfie
+de arquivos `.exe`, `.bat`, `.scr` ou com **extensão dupla** (`relatorio.pdf.exe`). Depois de
+baixar, **grave o arquivo na pasta certa** (não deixe na pasta Downloads), renomeie no padrão do
+setor (`2026-10-03_Norma_Inflamaveis.pdf`) e anote de onde ele veio, para poder citar a fonte.
 
 ### Direitos autorais e plágio
 
@@ -134,11 +137,11 @@ pode ser monitorado, e descumprir as regras pode gerar advertência ou demissão
 ### ITEM 2
 - **Capacidade:** C5
 - **Contexto:** O supervisor pediu documentos oficiais em PDF sobre armazenamento de líquidos inflamáveis, publicados em sites do governo brasileiro.
-- **Comando:** Escreva a busca completa que você digitaria no Google usando aspas, site: e filetype:, e explique a função de cada operador usado.
+- **Comando:** Escreva a busca completa que você digitaria no buscador usando aspas, site: e filetype:, e explique a função de cada operador usado.
 - **Linhas:** 4
 
 ### ITEM 3
-- **Capacidade:** C3, C5
+- **Capacidade:** C5
 - **Contexto:** Você encontrou duas fontes sobre empilhamento máximo de caixas: um blog sem autor, cheio de anúncios, de 2014; e uma cartilha de um órgão oficial, com autor e data de 2025.
 - **Comando:** Aplique o teste CRAAP às duas fontes e indique qual delas deve ser usada no relatório, justificando com pelo menos três critérios.
 - **Linhas:** 5
