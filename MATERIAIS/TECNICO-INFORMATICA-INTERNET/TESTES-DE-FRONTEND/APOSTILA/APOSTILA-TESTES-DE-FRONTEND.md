@@ -168,6 +168,20 @@
   - [Vídeos](#vídeos-7)
   - [Resumo](#resumo-7)
   - [Exercícios](#exercícios-7)
+- [Capítulo 09 — Qualidade, Performance, Acessibilidade e CI/CD](#capítulo-09--qualidade-performance-acessibilidade-e-cicd)
+  - [Teoria](#teoria-8)
+    - [Publicar na sexta-feira com um clique?](#publicar-na-sexta-feira-com-um-clique)
+    - [CI e CD](#ci-e-cd)
+    - [Anatomia de um workflow (GitHub Actions)](#anatomia-de-um-workflow-github-actions)
+    - [A pipeline da situação de aprendizagem 2](#a-pipeline-da-situação-de-aprendizagem-2)
+    - [Bloqueando a junção (proteção da branch)](#bloqueando-a-junção-proteção-da-branch)
+    - [Badges e TESTING.md](#badges-e-testingmd)
+    - [Usabilidade: testes de acessibilidade](#usabilidade-testes-de-acessibilidade)
+    - [Desempenho: Core Web Vitals e Lighthouse](#desempenho-core-web-vitals-e-lighthouse)
+    - [Interação com a equipe de testes](#interação-com-a-equipe-de-testes)
+  - [Vídeos](#vídeos-8)
+  - [Resumo](#resumo-8)
+  - [Exercícios](#exercícios-8)
 <!-- sumario:fim -->
 
 ---
@@ -292,7 +306,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 | 06 | 06 | Testes End-to-End com Cypress e Playwright | 4 h | ✅ Incluído |
 | 07 | 07 | Métricas e Cobertura de Testes | 4 h | ✅ Incluído |
 | 08 | 08 | TDD e Debugging Moderno no Front-End | 4 h | ✅ Incluído |
-| 09 | 09 | Qualidade, Performance, Acessibilidade e CI/CD | 4 h | ⬜ Pendente |
+| 09 | 09 | Qualidade, Performance, Acessibilidade e CI/CD | 4 h | ✅ Incluído |
 | 10 | 10 | Projeto Integrador: Suíte de Testes + avaliação | 4 h | ⬜ Pendente |
 
 **Datas previstas:** 08/10, 14/10, 15/10, 22/10, 29/10, 30/10, 05/11, 06/11, 12/11 e 13/11.
@@ -707,6 +721,7 @@ IDE, leitor de tela, projeto-base pronto, tempo estendido ou trabalho em duplas.
 | Capítulo 06 — Testes End-to-End com Cypress e Playwright | C4, C5 |
 | Capítulo 07 — Métricas e Cobertura de Testes | C3, C4 |
 | Capítulo 08 — TDD e Debugging Moderno no Front-End | C5, S1 |
+| Capítulo 09 — Qualidade, Performance, Acessibilidade e CI/CD | C5 |
 
 ---
 
@@ -714,10 +729,12 @@ IDE, leitor de tela, projeto-base pronto, tempo estendido ou trabalho em duplas.
 
 Termos técnicos de todos os capítulos, em ordem alfabética (o número indica o capítulo).
 
+- **Artefato:** arquivo gerado pela pipeline e guardado para download (ex.: relatório de cobertura). _(cap. 09)_
 - **Asserção:** verificação que compara o resultado obtido com o esperado (`expect`). _(cap. 03)_
 - **Auto-waiting:** espera automática até o elemento estar pronto para a ação (visível, habilitado e parado). _(cap. 06)_
 - **Automação de testes:** execução de testes por meio de scripts, sem intervenção humana. _(cap. 03)_
 - **Avaliação dos resultados:** etapa que compara os resultados com os critérios de saída e recomenda publicar ou não. _(cap. 07)_
+- **Badge:** selo no README que mostra a situação da pipeline ou da cobertura. _(cap. 09)_
 - **BDD:** desenvolvimento guiado por comportamento, com cenários no formato Dado / Quando / Então. _(cap. 02)_
 - **beforeEach:** função executada antes de cada teste para preparar o estado. _(cap. 03)_
 - **Branch (ramo):** cada caminho possível de uma decisão no código (`if`, `else`, ternário, `switch`). _(cap. 07)_
@@ -725,10 +742,13 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Caixa branca:** testa caminhos internos do código. _(cap. 02)_
 - **Caixa preta:** testa entradas e saídas sem ver o código. _(cap. 02)_
 - **Caso de teste:** condição, passos e resultado esperado. _(cap. 02)_
+- **CD:** entrega ou implantação contínua do código aprovado, sem passos manuais. _(cap. 09)_
+- **CI:** integração contínua que roda a suíte a cada alteração. _(cap. 09)_
 - **Ciclo vermelho-verde-refatorar:** sequência do TDD: teste que falha, código mínimo que passa e melhoria do código. _(cap. 08)_
 - **Cobertura:** percentual de código executado pelos testes. _(cap. 07)_
 - **Code review:** revisão do código (e dos testes) por um colega antes da junção ao projeto. _(cap. 08)_
 - **Código morto:** trecho que nunca é executado nem usado pelo sistema. _(cap. 07)_
+- **Core Web Vitals:** métricas de experiência do usuário: LCP, INP e CLS. _(cap. 09)_
 - **Critério de saída:** condição definida no plano para considerar os testes concluídos e liberar a versão. _(cap. 07)_
 - **Cypress:** framework de testes E2E que roda dentro do navegador, com painel visual de depuração. _(cap. 06)_
 - **data-testid:** atributo HTML dedicado a localizar elementos nos testes. _(cap. 06)_
@@ -752,6 +772,7 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Jornada:** sequência de passos que o usuário percorre para cumprir uma meta (ex.: comprar um produto). _(cap. 06)_
 - **jsdom:** simulação do navegador dentro do Node, usada nos testes. _(cap. 04)_
 - **Latência:** tempo de espera entre a requisição e a resposta da rede. _(cap. 05)_
+- **Lighthouse:** ferramenta que audita desempenho, acessibilidade, boas práticas e SEO de uma página. _(cap. 09)_
 - **Matcher:** método que define como comparar na asserção (ex.: `toBe`, `toEqual`). _(cap. 03)_
 - **Matriz de rastreabilidade:** liga cada requisito aos casos de teste que o verificam. _(cap. 02)_
 - **Métrica:** medida numérica usada para acompanhar a suíte e a qualidade (ex.: taxa de aprovação, cobertura). _(cap. 07)_
@@ -765,9 +786,11 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Partição de equivalência:** técnica que agrupa entradas de mesmo comportamento e testa um representante de cada grupo. _(cap. 02)_
 - **Persistência:** manutenção dos dados depois de recarregar a página (ex.: `localStorage`). _(cap. 05)_
 - **Pilha de chamadas:** lista das funções em execução, mostrando o caminho até o ponto atual. _(cap. 08)_
+- **Pipeline:** sequência automatizada de etapas que instala, testa e entrega o software. _(cap. 09)_
 - **Pirâmide de testes:** modelo que equilibra muitos testes unitários, alguns de integração e poucos E2E. _(cap. 01)_
 - **Plano de testes:** documento com escopo, estratégia, ambientes, cronograma, riscos e critérios de saída dos testes. _(cap. 02)_
 - **Playwright:** framework de testes E2E que comanda Chromium, Firefox e WebKit a partir do Node. _(cap. 06)_
+- **Proteção da branch:** regra que só permite juntar código quando os checks obrigatórios passam. _(cap. 09)_
 - **Qualidade:** conformidade do sistema com os requisitos e as expectativas dos usuários. _(cap. 01)_
 - **queryBy:** consulta que devolve nulo quando o elemento não existe, usada para provar ausência. _(cap. 04)_
 - **Race condition:** defeito em que respostas chegam fora de ordem e a resposta antiga sobrescreve a recente. _(cap. 05)_
@@ -794,6 +817,8 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Verificação:** construímos o produto certo conforme a especificação? _(cap. 01)_
 - **vi.fn:** função simulada que registra como foi chamada. _(cap. 03)_
 - **vi.spyOn:** espião que observa (e pode substituir) um método existente. _(cap. 03)_
+- **WCAG:** diretrizes internacionais de acessibilidade para conteúdo web. _(cap. 09)_
+- **Workflow:** arquivo de configuração que define eventos, jobs e passos da automação. _(cap. 09)_
 
 ---
 
@@ -2560,3 +2585,250 @@ ideia diferente da sua** — muitas vezes ela revela um caso que você não viu.
 - **Contexto:** Observe o código final de `validarCPF` do capítulo, com seus três `return`.
 - **Comando:** Usando a visão de caixa branca, liste cada caminho do código, o teste que o percorre e o valor de entrada usado, e indique se algum caminho ficou sem teste.
 - **Linhas:** 6
+
+---
+
+# Capítulo 09 — Qualidade, Performance, Acessibilidade e CI/CD
+
+- **Aula:** 09
+- **Carga horária:** 4 horas (1 aula)
+- **Capacidade:** C5
+- **Fonte:** `APOSTILA/CONTEUDO/CAPITULO-09.md`
+
+## Teoria
+
+### Publicar na sexta-feira com um clique?
+
+Na **Loja Nuvem Azul**, publicar era um ritual de medo: alguém rodava os testes à mão (quando
+lembrava), ninguém sabia a cobertura e, às vezes, código com teste vermelho chegava à produção
+(situação de aprendizagem 2). Além disso, a loja funcionava, mas era **lenta** no celular e
+**difícil de usar** com leitor de tela. Neste capítulo, a qualidade deixa de ser um evento no fim e
+vira um **processo automático e contínuo**.
+
+> 🎯 **Objetivos do capítulo:** configurar uma **pipeline de CI** que executa a suíte a cada envio
+> e bloqueia a junção com teste falhando ou cobertura abaixo de 70%; testar **usabilidade**
+> (acessibilidade) e **desempenho** (Core Web Vitals); e organizar a **interação com a equipe**
+> por meio de relatórios, badges e do `TESTING.md`.
+
+### CI e CD
+
+- **CI** é a integração contínua que roda a suíte a cada alteração: cada envio (`push`) e cada
+  pedido de junção (`pull request`) dispara, automaticamente, a instalação do projeto e os testes.
+- **CD** (entrega/implantação contínua) leva o código aprovado até a publicação de forma previsível,
+  sem passos manuais.
+- A pipeline vira um **guardião permanente**: ninguém precisa lembrar de testar.
+
+### Anatomia de um workflow (GitHub Actions)
+
+| Parte | O que é | No exemplo |
+|---|---|---|
+| **Workflow** | Arquivo YAML em `.github/workflows/` | `testes.yml` |
+| **Eventos (on)** | O que dispara a execução | `push` e `pull_request` na `main` |
+| **Jobs** | Conjuntos de passos, cada um numa máquina virtual | `unitarios` e `e2e` |
+| **Steps** | Comandos ou ações prontas | `npm ci`, `npx vitest run --coverage` |
+
+### A pipeline da situação de aprendizagem 2
+
+```yaml
+# .github/workflows/testes.yml
+name: Testes
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  unitarios:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx vitest run --coverage
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: relatorio-cobertura
+          path: coverage/
+
+  e2e:
+    runs-on: ubuntu-latest
+    needs: unitarios
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: cypress-io/github-action@v6
+        with:
+          build: npm run build
+          start: npm run preview
+          wait-on: 'http://localhost:4173'
+          config: baseUrl=http://localhost:4173
+```
+
+- `npm ci` faz a instalação **limpa e reprodutível**, exatamente como está no `package-lock.json`.
+- A meta de **70%** fica nos `thresholds` do `vitest.config.js` (capítulo 7): abaixo dela,
+  `vitest run --coverage` termina com erro e o job fica **vermelho**.
+- `upload-artifact` guarda o relatório HTML de cobertura para a equipe baixar, mesmo quando o job
+  falha (`if: always()`).
+- `needs: unitarios` só roda o E2E (mais lento) se os testes rápidos passarem.
+- A YAML exige **indentação exata** (dois espaços por nível): um espaço a mais quebra o arquivo.
+
+### Bloqueando a junção (proteção da branch)
+
+A pipeline mostra o resultado; quem **impede** a junção é a regra de proteção da branch, configurada
+nas definições do repositório: exigir que os checks `unitarios` e `e2e` passem (e que a branch esteja
+atualizada com a `main`) antes de permitir o merge. Sem essa regra, o vermelho vira só um aviso.
+
+### Badges e TESTING.md
+
+```markdown
+<!-- README.md -->
+![Testes](https://github.com/<usuario>/<repositorio>/actions/workflows/testes.yml/badge.svg)
+```
+
+O **badge** mostra a saúde do projeto a quem abre o repositório. O **`TESTING.md`** documenta como
+rodar os testes (`npm test`, `npm run test:run`, `npx vitest run --coverage`, `npx cypress run`),
+onde ficam os arquivos, as convenções de nome, a meta de cobertura e como contribuir com novos testes.
+
+### Usabilidade: testes de acessibilidade
+
+Acessibilidade é requisito (e direito do usuário). As diretrizes **WCAG** organizam a web acessível
+em quatro princípios: **perceptível** (texto alternativo, contraste), **operável** (teclado, foco
+visível), **compreensível** (linguagem clara) e **robusto** (funciona com tecnologias assistivas).
+
+```jsx
+// vitest.setup.js (acrescente; instale antes com npm install -D vitest-axe)
+import { expect } from 'vitest';
+import * as matchers from 'vitest-axe/matchers';
+expect.extend(matchers);
+
+// BotaoRemover.test.jsx
+import { render } from '@testing-library/react';
+import { axe } from 'vitest-axe';
+import { it, expect } from 'vitest';
+
+it('o botão de remover item não tem violações de acessibilidade', async () => {
+  const { container } = render(
+    <button aria-label="Remover item">
+      <img src="/lixeira.svg" alt="" />
+    </button>,
+  );
+  expect(await axe(container)).toHaveNoViolations();
+});
+```
+
+Sem o `aria-label`, o teste falha com a regra **button-name** (botão sem nome acessível); uma imagem
+informativa sem `alt` falha na regra **image-alt**. Atenção: no jsdom a regra de **contraste** não é
+verificada (não há tela desenhada) — o contraste se audita no navegador, com o Lighthouse ou com o
+axe dentro do teste E2E (`@axe-core/playwright`). E as ferramentas automáticas encontram só uma
+parte dos problemas: testes manuais com **teclado e leitor de tela** continuam indispensáveis.
+
+### Desempenho: Core Web Vitals e Lighthouse
+
+| Métrica | O que mede | Bom |
+|---|---|---|
+| **LCP** (Largest Contentful Paint) | Tempo até o maior elemento visível aparecer | ≤ 2,5 s |
+| **INP** (Interaction to Next Paint) | Tempo de resposta da tela a uma interação (substituiu o FID em 2024) | ≤ 200 ms |
+| **CLS** (Cumulative Layout Shift) | Quanto o layout "pula" durante o carregamento | < 0,1 |
+
+O **Lighthouse** (no DevTools do navegador) dá notas de 0 a 100 para desempenho, acessibilidade,
+boas práticas e SEO e aponta o que otimizar. Na pipeline, o **Lighthouse CI** evita regressões:
+
+```json
+{
+  "ci": {
+    "collect": { "staticDistDir": "./dist" },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["error", { "minScore": 0.9 }],
+        "categories:accessibility": ["error", { "minScore": 0.9 }]
+      }
+    }
+  }
+}
+```
+
+Esse é o `lighthouserc.json`; depois do `npm run build`, o passo `npx @lhci/cli autorun` audita a
+pasta `dist` e reprova a pipeline se as notas ficarem abaixo de 90.
+
+**Pipeline rápida também é desempenho:** cache das dependências (`cache: npm`), jobs em paralelo e
+divisão dos testes E2E entre máquinas mantêm o retorno em poucos minutos.
+
+### Interação com a equipe de testes
+
+- O resultado da pipeline é **visível para todos** no pull request: desenvolvedores, QA e revisores
+  falam a partir dos mesmos fatos.
+- **Pipeline da `main` vermelha é prioridade da equipe**: quem quebrou avisa e corrige (ou reverte)
+  logo; ninguém junta código "por cima" do vermelho.
+- Ao relatar um defeito, envie **evidências**: log do job, captura de tela, vídeo ou relatório
+  baixado como artefato.
+- Teste intermitente é **comunicado e tratado**, nunca simplesmente desativado.
+- O `TESTING.md` e o code review (capítulo 8) alinham o jeito de testar de toda a equipe.
+
+## Vídeos
+
+- [O que é CI ou integração contínua?](https://www.youtube.com/watch?v=hv-M8jLY_tI) — 05:23 — Full Cycle
+- [CI/CD com GitHub Actions: automação de build e testes (exemplo em Java)](https://www.youtube.com/watch?v=wA1RbmK-QRA) — 12:11 — Manoel Campos Dev
+- [Accessibility testing with axe-core (em inglês)](https://www.youtube.com/watch?v=PGaF8lE3qm8) — 09:37 — Test Automation 101
+- [Core Web Vitals explained: INP, LCP, CLS (em inglês)](https://www.youtube.com/watch?v=m_yWVuf8ZkE) — 05:31 — FullStackDev
+
+## Resumo
+
+- **CI** é a integração contínua que roda a suíte a cada alteração; **CD** leva o código aprovado à publicação sem passos manuais.
+- O workflow (YAML em `.github/workflows/`) tem eventos, jobs e steps: checkout, Node, `npm ci`, Vitest com cobertura e Cypress.
+- A meta de cobertura fica nos `thresholds`; a **proteção da branch** exige os checks verdes para permitir o merge.
+- **Usabilidade:** WCAG e testes com axe (`toHaveNoViolations`), complementados por teclado e leitor de tela.
+- **Desempenho:** Core Web Vitals (LCP ≤ 2,5 s, INP ≤ 200 ms, CLS < 0,1), Lighthouse e Lighthouse CI na pipeline.
+- **Interação com a equipe:** resultados visíveis, evidências nos defeitos, `main` vermelha como prioridade, badges e `TESTING.md`.
+
+## Exercícios
+
+### ITEM 1
+- **Capacidade:** C5
+- **Contexto:** Na Loja Nuvem Azul, os testes são rodados à mão antes de publicar. A ordem dos passos que a nova pipeline deve seguir foi embaralhada: (a) gerar o relatório de cobertura e atualizar o status da branch; (b) baixar o código e configurar o Node.js; (c) executar os testes unitários, de integração e de acessibilidade; (d) instalar as dependências com `npm ci`.
+- **Comando:** Explique o que é CI e por que rodar a suíte a cada `push` e `pull request`, coloque os passos na ordem correta e justifique o uso de `npm ci` em vez de `npm install`.
+- **Linhas:** 6
+
+### ITEM 2
+- **Capacidade:** C5
+- **Contexto:** A situação de aprendizagem 2 pede um workflow que rode o Vitest com cobertura e o Cypress em cada `push` e `pull request` para a `main` e que impeça a junção abaixo de 70% de cobertura.
+- **Comando:** Escreva o arquivo `.github/workflows/testes.yml` com os dois jobs e explique onde fica a meta de 70% e o que mais precisa ser configurado no repositório para o merge ser realmente bloqueado.
+- **Linhas:** 14
+
+### ITEM 3
+- **Capacidade:** C5
+- **Contexto:** Um pull request ficou vermelho. O log do job `unitarios` termina com: `ERROR: Coverage for branches (64.2%) does not meet global threshold (70%)`. Todos os testes passaram.
+- **Comando:** Interprete o log, explique por que a pipeline falhou mesmo sem teste vermelho e descreva como encontrar e resolver o problema usando o relatório guardado como artefato.
+- **Linhas:** 5
+
+### ITEM 4
+- **Capacidade:** C5
+- **Contexto:** O carrinho tem um botão só com o ícone de lixeira (sem texto), uma imagem de produto sem `alt` e um campo de cupom sem rótulo. O teste com `axe` falhou.
+- **Comando:** Indique as violações que o teste deve apontar, corrija o código de cada elemento e explique por que um resultado sem violações no axe não garante que a página seja acessível.
+- **Linhas:** 7
+
+### ITEM 5
+- **Capacidade:** C5
+- **Contexto:** O Lighthouse da página do produto, no celular, mostrou: LCP de 4,1 s, INP de 350 ms e CLS de 0,27 (a imagem principal carrega sem tamanho definido e empurra o botão Comprar).
+- **Comando:** Compare cada métrica com o valor considerado bom, explique o impacto de cada uma para o cliente e diga como impedir, na pipeline, que uma nova versão piore o desempenho.
+- **Linhas:** 6
+
+### ITEM 6
+- **Capacidade:** C5
+- **Contexto:** Depois do merge de um colega, a pipeline da `main` ficou vermelha no E2E do checkout. Outro colega sugere desativar o teste "porque às vezes falha" e o QA pede evidências do problema.
+- **Comando:** Descreva a conduta da equipe: quem age primeiro, que evidências enviar ao QA, como decidir se é defeito ou teste intermitente e por que não juntar código novo enquanto a `main` estiver vermelha.
+- **Linhas:** 6
+
+### ITEM 7
+- **Capacidade:** C5
+- **Contexto:** Novos estagiários vão entrar na equipe e precisam saber rodar e escrever testes no projeto sem depender de alguém.
+- **Comando:** Escreva o roteiro do `TESTING.md` (comandos, organização dos arquivos, convenções, meta de cobertura, como contribuir) e a linha do badge da pipeline para o `README.md`.
+- **Linhas:** 8
