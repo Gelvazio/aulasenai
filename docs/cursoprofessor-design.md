@@ -1,5 +1,8 @@
 # Atribuição de cursos a professores
 
+> ⛔ **SUBSTITUÍDO em 2026-10-03** por `docs/indice-cursos-do-usuario-logado.md`: o curso passou a
+> vir da turma (`turma.curso_id`) e a tabela `cursoprofessor` não será criada.
+
 **Objetivo:** cadastrar os cursos de cada professor na tabela `cursoprofessor`, oferecer a manutenção dos vínculos em uma tela administrativa e filtrar o índice inicial para mostrar a cada professor somente os cursos atribuídos.
 
 **Aprovação do desenho:** aprovada pelo usuário em 2026-10-02.

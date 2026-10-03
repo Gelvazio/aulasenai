@@ -442,6 +442,33 @@
       <p>Documentação perfeita. Todos os campos, tipos e relacionamentos estão corretos.</p>
     </div>
 
+    <h2>🎓 Atualização 2026-10-03 — curso da turma e cursos do usuário logado</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-03-turma-curso-e-cursos-do-usuario.sql</code> (aplicado em 2026-10-03)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Mudança</th>
+        </tr>
+        <tr>
+          <td>turma.curso_id</td>
+          <td>Coluna</td>
+          <td>bigint → curso.id (on delete set null), índice turma_curso_id_idx</td>
+        </tr>
+        <tr>
+          <td>turma</td>
+          <td>Dados</td>
+          <td>122552 → 2; 133933 → 7; 135080 e 135081 → 5; QA LBTSN 2026/1 M2 → 6</td>
+        </tr>
+        <tr>
+          <td>cursos_do_usuario()</td>
+          <td>Função</td>
+          <td>Só authenticated: administrador = todos; professor = cursos das turmas dele; aluno = cursos das turmas dele; sem login = nada (index.html da raiz)</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🔒 Atualização 2026-10-03 — professor só vê as turmas vinculadas</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-03-professor-so-turmas-vinculadas.sql</code> (aplicado em 2026-10-03)</p>

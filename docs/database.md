@@ -483,6 +483,21 @@ conector do Supabase). **Plano:** `docs/restringir-professor-as-turmas-vinculada
 (fora de `@senai.local`, sem respostas nem turma) foram apagadas do Auth e da `usuario`. Backup:
 tabela `contas_teste_legado_20261003` (RLS ligado, sem políticas).
 
+### 🎓 Atualização 2026-10-03 — curso da turma e cursos do usuário logado
+
+**Script:** `database/2026-10-03-turma-curso-e-cursos-do-usuario.sql` (aplicado em 2026-10-03 pelo
+conector do Supabase). **Plano:** `docs/indice-cursos-do-usuario-logado.md`.
+
+| Objeto | Mudança |
+|--------|---------|
+| `turma.curso_id` | nova coluna `bigint` → `curso.id` (on delete set null), índice `turma_curso_id_idx` |
+| `turma` (dados) | 122552 → 2 (Operador de Produção Industrial); 133933 → 7 (Gestão e Controle de Materiais); 135080 e 135081 → 5 (Assistente de Operações Logísticas); QA LBTSN 2026/1 M2 → 6 (Rio do Sul Mais Tech) |
+| `cursos_do_usuario()` | nova função (`security definer`, só `authenticated`): administrador = todos os cursos; professor = cursos das turmas dele (`turmaprofessor`); aluno = cursos das turmas dele (`turmaaluno`); sem login = nada. Usada pelo `index.html` da raiz |
+
+⚠️ Turma nova precisa de `curso_id`; sem ele, o curso não aparece no índice para ninguém da turma.
+A tabela `cursoprofessor` (plano `docs/cursoprofessor-design.md`) **não foi criada**: substituída por
+este vínculo.
+
 ---
 
 ## 🔐 Segurança: RLS (Row Level Security)

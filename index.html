@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>📚 Cursos — SENAI</title>
     <link rel="stylesheet" href="assets/css/indice-atividades.css">
+    <link rel="stylesheet" href="assets/css/indice-cursos.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
     <script src="js/supabase.js" defer></script>
     <script src="js/header-usuario.js" defer></script>
@@ -18,6 +19,7 @@
             <p>Selecione um curso para acessar suas matérias e atividades.</p>
         </header>
         <div class="resumo" id="resumo-cursos" aria-live="polite">Carregando cursos…</div>
+        <p class="mensagem-entrar" id="mensagem-entrar" hidden>Entre no sistema para acessar seus cursos!</p>
         <section class="grade" id="lista-cursos" aria-label="Lista de cursos" aria-busy="true"></section>
         <footer>SENAI — Cursos</footer>
     </main>
