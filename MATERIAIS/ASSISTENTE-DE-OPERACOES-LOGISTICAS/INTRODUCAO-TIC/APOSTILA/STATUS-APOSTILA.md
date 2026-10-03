@@ -19,7 +19,7 @@
 | 02 | Hardware, Periféricos e Sistemas Operacionais | ✅ | ✅ 3 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 03 | Navegação na Web e Pesquisa Acadêmica | ✅ | ✅ 4 | ✅ | ✅ 5 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 04 | Comunicação Digital e Colaboração em Nuvem | ✅ | ✅ 4 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
-| 05 | Segurança da Informação e Proteção de Dados | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 05 | Segurança da Informação e Proteção de Dados | ✅ | ✅ 4 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 06 | Editor de Textos: Formatação e Estruturação | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 07 | Textos Técnicos e Redação Empresarial | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 08 | Editor de Planilhas: Organização e Fórmulas | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
