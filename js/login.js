@@ -8,6 +8,9 @@ const PAGINA_LOGIN = "/login.html";
 const PAGINA_PADRAO = "index.html";
 const PARAMETRO_VOLTAR = "voltar";
 const TEMPO_REDIRECIONAMENTO_MS = 800;
+// Base local (máquina do professor): login já preenchido e foco direto na senha.
+const HOSTS_BASE_LOCAL = ["127.0.0.1", "localhost"];
+const LOGIN_FIXO_BASE_LOCAL = "gelvazio.camargo@senai.local";
 
 const MSG_CAMPOS_OBRIGATORIOS = "Informe o usuário e a senha.";
 const MSG_AUTENTICANDO = "Autenticando...";
@@ -218,6 +221,21 @@ function mostrarConectado(usuario) {
 }
 
 /**
+ * Na base local, preenche o login fixo do professor e põe o foco no campo senha.
+ */
+function prepararLoginBaseLocal() {
+  const ehBaseLocal = HOSTS_BASE_LOCAL.includes(location.hostname);
+  if (!ehBaseLocal) return;
+
+  const campoUsuario = document.getElementById(IDS_LOGIN.usuario);
+  const campoSenha = document.getElementById(IDS_LOGIN.senha);
+  if (!campoUsuario || !campoSenha) return;
+
+  campoUsuario.value = LOGIN_FIXO_BASE_LOCAL;
+  campoSenha.focus();
+}
+
+/**
  * Inicia a página de login: liga o formulário e os botões e verifica se já há sessão.
  */
 async function iniciarPaginaLogin() {
@@ -225,6 +243,7 @@ async function iniciarPaginaLogin() {
   if (!formulario) return;
 
   formulario.addEventListener("submit", fazerLogin);
+  prepararLoginBaseLocal();
   document.getElementById(IDS_LOGIN.botaoSair)?.addEventListener("click", fazerLogout);
   document.getElementById(IDS_LOGIN.botaoContinuar)?.addEventListener("click", () => {
     location.assign(obterDestinoSeguro());

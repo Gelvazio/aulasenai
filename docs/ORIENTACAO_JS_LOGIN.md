@@ -51,6 +51,7 @@ Ordem obrigatória dos scripts na página:
 | `verificarAutenticacao()` | Para páginas protegidas: devolve o usuário ou manda para `/login.html?voltar=...` |
 | `fazerLogout()` | `signOut()` + limpa sessionStorage + volta ao login |
 | `obterUsuarioAtual()` | Dados de exibição do sessionStorage |
+| `prepararLoginBaseLocal()` | Em `127.0.0.1`/`localhost`: preenche `gelvazio.camargo@senai.local` e põe o foco na senha (2026-10-03) |
 
 ## sessionStorage (apenas exibição — a segurança vem do JWT + RLS)
 `usuarioId`, `usuarioEmail`, `usuarioNome`, `usuarioPerfil`, `usuarioTurmaCodigo`,
