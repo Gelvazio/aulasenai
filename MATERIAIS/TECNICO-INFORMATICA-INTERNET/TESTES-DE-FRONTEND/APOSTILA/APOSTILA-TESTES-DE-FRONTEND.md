@@ -155,6 +155,19 @@
   - [Vídeos](#vídeos-6)
   - [Resumo](#resumo-6)
   - [Exercícios](#exercícios-6)
+- [Capítulo 08 — TDD e Debugging Moderno no Front-End](#capítulo-08--tdd-e-debugging-moderno-no-front-end)
+  - [Teoria](#teoria-7)
+    - [E se o teste nascesse antes do código?](#e-se-o-teste-nascesse-antes-do-código)
+    - [O que é TDD](#o-que-é-tdd)
+    - [TDD na prática: validador de CPF em 3 passos](#tdd-na-prática-validador-de-cpf-em-3-passos)
+    - [Caixa branca: conferindo os caminhos](#caixa-branca-conferindo-os-caminhos)
+    - [Quando usar TDD (e quando não)](#quando-usar-tdd-e-quando-não)
+    - [Debugging moderno: depurar com método](#debugging-moderno-depurar-com-método)
+    - [Responsabilidade com a suíte](#responsabilidade-com-a-suíte)
+    - [Code review dos testes: acolher sugestões (S1)](#code-review-dos-testes-acolher-sugestões-s1)
+  - [Vídeos](#vídeos-7)
+  - [Resumo](#resumo-7)
+  - [Exercícios](#exercícios-7)
 <!-- sumario:fim -->
 
 ---
@@ -278,7 +291,7 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 | 05 | 05 | Integração Avançada e Mock de APIs | 4 h | ✅ Incluído |
 | 06 | 06 | Testes End-to-End com Cypress e Playwright | 4 h | ✅ Incluído |
 | 07 | 07 | Métricas e Cobertura de Testes | 4 h | ✅ Incluído |
-| 08 | 08 | TDD e Debugging Moderno no Front-End | 4 h | ⬜ Pendente |
+| 08 | 08 | TDD e Debugging Moderno no Front-End | 4 h | ✅ Incluído |
 | 09 | 09 | Qualidade, Performance, Acessibilidade e CI/CD | 4 h | ⬜ Pendente |
 | 10 | 10 | Projeto Integrador: Suíte de Testes + avaliação | 4 h | ⬜ Pendente |
 
@@ -693,6 +706,7 @@ IDE, leitor de tela, projeto-base pronto, tempo estendido ou trabalho em duplas.
 | Capítulo 05 — Integração Avançada e Mock de APIs | C5 |
 | Capítulo 06 — Testes End-to-End com Cypress e Playwright | C4, C5 |
 | Capítulo 07 — Métricas e Cobertura de Testes | C3, C4 |
+| Capítulo 08 — TDD e Debugging Moderno no Front-End | C5, S1 |
 
 ---
 
@@ -707,16 +721,21 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **BDD:** desenvolvimento guiado por comportamento, com cenários no formato Dado / Quando / Então. _(cap. 02)_
 - **beforeEach:** função executada antes de cada teste para preparar o estado. _(cap. 03)_
 - **Branch (ramo):** cada caminho possível de uma decisão no código (`if`, `else`, ternário, `switch`). _(cap. 07)_
+- **Breakpoint:** ponto de parada que pausa a execução para inspecionar o estado do programa. _(cap. 08)_
 - **Caixa branca:** testa caminhos internos do código. _(cap. 02)_
 - **Caixa preta:** testa entradas e saídas sem ver o código. _(cap. 02)_
 - **Caso de teste:** condição, passos e resultado esperado. _(cap. 02)_
+- **Ciclo vermelho-verde-refatorar:** sequência do TDD: teste que falha, código mínimo que passa e melhoria do código. _(cap. 08)_
 - **Cobertura:** percentual de código executado pelos testes. _(cap. 07)_
+- **Code review:** revisão do código (e dos testes) por um colega antes da junção ao projeto. _(cap. 08)_
 - **Código morto:** trecho que nunca é executado nem usado pelo sistema. _(cap. 07)_
 - **Critério de saída:** condição definida no plano para considerar os testes concluídos e liberar a versão. _(cap. 07)_
 - **Cypress:** framework de testes E2E que roda dentro do navegador, com painel visual de depuração. _(cap. 06)_
 - **data-testid:** atributo HTML dedicado a localizar elementos nos testes. _(cap. 06)_
 - **Defeito:** imperfeição no código ou na especificação (bug). _(cap. 01)_
+- **Depuração (debugging):** processo de localizar, isolar e corrigir a causa de uma falha. _(cap. 08)_
 - **describe:** função que agrupa testes relacionados em uma suíte. _(cap. 03)_
+- **Dígito verificador:** dígito calculado a partir dos demais para detectar erros de digitação (ex.: no CPF). _(cap. 08)_
 - **DOM:** estrutura da página que o navegador monta a partir do HTML. _(cap. 04)_
 - **E2E:** teste do fluxo completo, como o usuário. _(cap. 06)_
 - **Erro:** ação humana equivocada que introduz um defeito. _(cap. 01)_
@@ -728,6 +747,8 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Handler:** regra do MSW que define a resposta para um endereço da API. _(cap. 05)_
 - **Instrumentação:** inserção de contadores no código para registrar o que os testes executam. _(cap. 07)_
 - **Interceptação:** captura de uma requisição HTTP antes que ela chegue ao servidor real. _(cap. 05)_
+- **it.only:** marca que faz o framework rodar somente aquele teste (uso temporário na depuração). _(cap. 08)_
+- **it.skip:** marca que faz o framework pular um teste temporariamente. _(cap. 08)_
 - **Jornada:** sequência de passos que o usuário percorre para cumprir uma meta (ex.: comprar um produto). _(cap. 06)_
 - **jsdom:** simulação do navegador dentro do Node, usada nos testes. _(cap. 04)_
 - **Latência:** tempo de espera entre a requisição e a resposta da rede. _(cap. 05)_
@@ -743,12 +764,14 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Page Object Model:** padrão que concentra os seletores e as ações de cada página em um só módulo. _(cap. 06)_
 - **Partição de equivalência:** técnica que agrupa entradas de mesmo comportamento e testa um representante de cada grupo. _(cap. 02)_
 - **Persistência:** manutenção dos dados depois de recarregar a página (ex.: `localStorage`). _(cap. 05)_
+- **Pilha de chamadas:** lista das funções em execução, mostrando o caminho até o ponto atual. _(cap. 08)_
 - **Pirâmide de testes:** modelo que equilibra muitos testes unitários, alguns de integração e poucos E2E. _(cap. 01)_
 - **Plano de testes:** documento com escopo, estratégia, ambientes, cronograma, riscos e critérios de saída dos testes. _(cap. 02)_
 - **Playwright:** framework de testes E2E que comanda Chromium, Firefox e WebKit a partir do Node. _(cap. 06)_
 - **Qualidade:** conformidade do sistema com os requisitos e as expectativas dos usuários. _(cap. 01)_
 - **queryBy:** consulta que devolve nulo quando o elemento não existe, usada para provar ausência. _(cap. 04)_
 - **Race condition:** defeito em que respostas chegam fora de ordem e a resposta antiga sobrescreve a recente. _(cap. 05)_
+- **Refatoração:** melhoria da estrutura interna do código sem mudar o seu comportamento. _(cap. 08)_
 - **Regra de 10:** o custo de corrigir um defeito cresce cerca de 10 vezes a cada etapa em que ele avança. _(cap. 01)_
 - **Relatório de cobertura:** documento (no terminal ou em HTML) com os percentuais e as linhas sem teste. _(cap. 07)_
 - **Requisito testável:** requisito claro, com um comportamento e um critério objetivo de aceitação. _(cap. 02)_
@@ -756,6 +779,7 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - **Spy:** espião que registra como uma função foi chamada, sem mudar o que ela faz. _(cap. 05)_
 - **Stub:** dublê de teste que devolve uma resposta fixa, sem lógica. _(cap. 05)_
 - **Suíte:** conjunto organizado de testes. _(cap. 03)_
+- **TDD:** escrever o teste antes do código. _(cap. 08)_
 - **Teste de integração:** teste de várias partes funcionando juntas (componente, DOM, eventos). _(cap. 04)_
 - **Teste determinístico:** teste que dá sempre o mesmo resultado nas mesmas condições. _(cap. 05)_
 - **Teste intermitente (flaky):** passa ou falha sem mudança no código. _(cap. 06)_
@@ -2312,4 +2336,227 @@ decisão:
 - **Capacidade:** C3
 - **Contexto:** O relatório HTML mostra a função `formatarCupomAntigo` com 0 execuções, e nenhuma tela do sistema a importa. O gerente quer exigir 100% de cobertura em todo o projeto.
 - **Comando:** Explique o que a função em vermelho indica e o que fazer com ela, e argumente sobre a meta de 100% usando o retorno do esforço e a manutenibilidade dos testes.
+- **Linhas:** 6
+
+---
+
+# Capítulo 08 — TDD e Debugging Moderno no Front-End
+
+- **Aula:** 08
+- **Carga horária:** 4 horas (1 aula)
+- **Capacidade:** C5, S1
+- **Fonte:** `APOSTILA/CONTEUDO/CAPITULO-08.md`
+
+## Teoria
+
+### E se o teste nascesse antes do código?
+
+Na **Loja Nuvem Azul**, o cadastro aceitava CPFs como `111.111.111-11`, e corrigir o validador
+virou motivo de medo: cada ajuste quebrava outra coisa. A equipe decidiu reescrever o validador de
+outro jeito — **escrevendo o teste antes do código**. Cada regra nova começou com um teste falhando,
+e o código só cresceu o suficiente para passar. No fim, havia uma suíte que documentava todas as
+regras e permitia mexer no código sem medo.
+
+> 🎯 **Objetivos do capítulo:** aplicar o ciclo **TDD (vermelho → verde → refatorar)**, depurar
+> um teste que falha com método (mensagem, isolamento, breakpoints), usar a visão de **caixa
+> branca** para conferir os caminhos, agir com **responsabilidade** com a suíte e **acolher
+> sugestões** no code review dos testes.
+
+### O que é TDD
+
+**TDD** (Test-Driven Development) é escrever o teste antes do código. Mais do que testar, é uma
+forma de **projetar**: o teste é o primeiro "cliente" da função e obriga a decidir nome,
+parâmetros e retorno antes de programar.
+
+| Fase | O que fazer | Regra de ouro |
+|---|---|---|
+| 🔴 **Vermelho** | Escrever **um** teste pequeno para a próxima regra e vê-lo falhar | Falhar **pelo motivo esperado** (prova que o teste funciona) |
+| 🟢 **Verde** | Escrever o código **mais simples** que faz o teste passar | Não programar o futuro; resolver só a falha atual |
+| 🔵 **Refatorar** | Melhorar nomes, remover duplicação, extrair funções | Comportamento igual: a barra continua verde |
+
+O ciclo se repete em **micro-passos**: um teste por vez, nunca "todos os testes do sistema antes".
+
+### TDD na prática: validador de CPF em 3 passos
+
+**Passo 1 — Vermelho → verde: o caso mais simples.**
+
+```js
+// cpf.test.js
+import { describe, it, expect } from 'vitest';
+import { validarCPF } from './cpf';
+
+describe('validarCPF', () => {
+  it('recusa texto vazio', () => {
+    expect(validarCPF('')).toBe(false);
+  });
+});
+
+// 🔴 Falha: validarCPF ainda não existe.
+// 🟢 cpf.js — o mínimo para passar:
+export function validarCPF() {
+  return false;
+}
+```
+
+**Passo 2 — Vermelho → verde: um CPF válido e um CPF com dígitos repetidos.**
+
+```js
+it('aceita um CPF válido, com ou sem máscara', () => {
+  expect(validarCPF('529.982.247-25')).toBe(true);
+  expect(validarCPF('52998224725')).toBe(true);
+});
+
+it('recusa dígito verificador errado', () => {
+  expect(validarCPF('529.982.247-26')).toBe(false);
+});
+
+it('recusa CPF com todos os dígitos iguais', () => {
+  expect(validarCPF('111.111.111-11')).toBe(false);
+});
+```
+
+O CPF `111.111.111-11` **passa** no cálculo dos dígitos verificadores; por isso o último teste
+fica vermelho até a regra dos dígitos repetidos ser escrita — um vermelho legítimo, que revelou uma
+regra escondida.
+
+**Passo 3 — Refatorar: o código final, com a barra verde o tempo todo.**
+
+```js
+// cpf.js
+function calcularDigito(numeros, pesoInicial) {
+  const soma = numeros.reduce((total, numero, i) => total + numero * (pesoInicial - i), 0);
+  const resto = (soma * 10) % 11;
+  return resto === 10 ? 0 : resto;
+}
+
+export function validarCPF(cpf) {
+  const digitos = String(cpf ?? '').replace(/\D/g, '');
+  if (digitos.length !== 11) return false;
+  if (/^(\d)\1{10}$/.test(digitos)) return false;
+
+  const numeros = [...digitos].map(Number);
+  const primeiro = calcularDigito(numeros.slice(0, 9), 10);
+  const segundo = calcularDigito(numeros.slice(0, 10), 11);
+  return primeiro === numeros[9] && segundo === numeros[10];
+}
+```
+
+O cálculo repetido virou a função `calcularDigito` — a refatoração foi segura porque os testes
+confirmavam, a cada mudança, que o comportamento continuava o mesmo.
+
+### Caixa branca: conferindo os caminhos
+
+Depois do ciclo, olhe o código (visão de **caixa branca**) e confira se cada caminho tem teste:
+tamanho diferente de 11 (`''`), dígitos repetidos (`111...`), dígito verificador errado (`...-26`)
+e CPF válido (`...-25`). Faltou algum? Escreva o teste — e o relatório de cobertura (capítulo 7)
+confirma os ramos.
+
+### Quando usar TDD (e quando não)
+
+| Use TDD ✅ | Prefira testar depois ⚠️ |
+|---|---|
+| Regras de negócio, cálculos e validações (CPF, cupom, frete) | Ajustes visuais de CSS e layout |
+| Correção de defeitos: primeiro um teste que **reproduz** o bug | Protótipos descartáveis para explorar uma ideia |
+| Componentes com comportamento (filtro, formulário) | Código de terceiros que você não controla |
+
+Mito comum: "TDD dobra o tempo". Na prática, ele reduz retrabalho e tempo de depuração.
+
+### Debugging moderno: depurar com método
+
+Quando um teste falha, siga a ordem:
+
+1. **Leia a mensagem inteira:** `expected 19 to be 21` diz o valor esperado, o obtido, o arquivo e a
+   linha.
+2. **Isole o caso:** `it.only(...)` roda só aquele teste; `it.skip(...)` pula um teste em construção
+   (e **nenhum dos dois pode ser enviado** ao repositório).
+3. **Use o modo watch:** `npx vitest` roda de novo ao salvar; no terminal, `p` filtra por arquivo, `t`
+   pelo nome do teste e `f` roda só os que falharam.
+4. **Pause no ponto certo:** em vez de espalhar `console.log`, use **breakpoints**. No editor
+   (ex.: VS Code), abra um **terminal de depuração JavaScript**, rode `npx vitest run cpf` e a
+   execução para na linha marcada (ou numa instrução `debugger;`). Inspecione as **variáveis**, a
+   **pilha de chamadas** e teste expressões no console de depuração.
+5. **Testes E2E:** use o time-travel do Cypress ou o trace do Playwright (capítulo 6) para ver a
+   tela no exato momento da falha.
+
+### Responsabilidade com a suíte
+
+- Nunca **apague** ou "pule" um teste vermelho só para a suíte passar: ele está avisando algo.
+- Não envie código com `it.only`, `it.skip` ou `debugger;` esquecidos.
+- Rode a suíte inteira antes de enviar; se o seu código quebrou um teste, **assuma e corrija**.
+- Defeito encontrado = teste que o reproduz + correção (o defeito não volta sem ser notado).
+
+### Code review dos testes: acolher sugestões (S1)
+
+No code review, um colega lê o seu código **e os seus testes** antes da junção. O que observar:
+
+- o nome do teste descreve o comportamento? Há uma regra por teste?
+- as asserções conferem algo importante (e não só "não deu erro")?
+- os testes são independentes e cobrem as bordas?
+- sobrou `only`, `skip` ou `console.log`?
+
+**Ao receber sugestões:** leia com calma, agradeça, pergunte quando não entender e **considere a
+ideia diferente da sua** — muitas vezes ela revela um caso que você não viu. Discorde com fatos
+("o caso de CPF com letras já está no teste da linha 30"), nunca com o ego.
+
+> 💬 **Exemplo:** "Sugiro testar também `529.982.247-2` (10 dígitos)." → "Boa! Esse caminho
+> estava sem teste; incluí no mesmo describe."
+
+## Vídeos
+
+- [O que é TDD — Test-Driven Development](https://www.youtube.com/watch?v=o_C_qxhPws4) — 09:36 — Dias de Dev
+- [TDD — Test Driven Development](https://www.youtube.com/watch?v=bhT7_gZE55c) — 14:59 — Programinhas
+- [How to debug a unit test in VS Code (em inglês)](https://www.youtube.com/watch?v=zzYks4GGrFs) — 03:01 — Nathan Krasney
+- [Recebi um code review no GitHub, e agora?](https://www.youtube.com/watch?v=YKncSsTDR_4) — 14:40 — Mayk Brito
+
+## Resumo
+
+- **TDD** é escrever o teste antes do código, em micro-ciclos **vermelho → verde → refatorar**.
+- No vermelho, o teste falha pelo motivo esperado; no verde, o código mínimo; na refatoração, melhora-se o código com a barra verde.
+- TDD é ideal para regras de negócio, validações e correção de defeitos; menos útil para ajustes visuais.
+- Depure com método: mensagem, `only`, modo watch, **breakpoints** (variáveis e pilha de chamadas) e time-travel/trace no E2E.
+- A visão de **caixa branca** confere se cada caminho tem teste; **responsabilidade** é nunca apagar teste vermelho nem enviar `only`/`skip`.
+- No **code review**, acolha sugestões e ideias diferentes e discorde com fatos.
+
+## Exercícios
+
+### ITEM 1
+- **Capacidade:** C5
+- **Contexto:** Um colega diz que "TDD é escrever todos os testes do sistema primeiro e depois programar tudo" e que, na fase verde, já deixa o código pronto para regras futuras.
+- **Comando:** Corrija o entendimento do colega explicando as três fases do ciclo TDD, por que o teste precisa falhar antes e o que é permitido em cada fase.
+- **Linhas:** 6
+
+### ITEM 2
+- **Capacidade:** C5
+- **Contexto:** O cadastro da Loja Nuvem Azul precisa da função `validarSenhaForte(senha)`: mínimo de 8 caracteres, pelo menos uma letra maiúscula e pelo menos um número.
+- **Comando:** Desenvolva a função com TDD em três ciclos (uma regra por ciclo), mostrando em cada ciclo o teste vermelho, o código verde mínimo e, no fim, a refatoração.
+- **Linhas:** 12
+
+### ITEM 3
+- **Capacidade:** C5
+- **Contexto:** O validador de CPF do capítulo já aceita `529.982.247-25` e recusa `529.982.247-26`. Ao escrever o teste `expect(validarCPF('111.111.111-11')).toBe(false)`, ele ficou vermelho.
+- **Comando:** Explique por que esse vermelho é legítimo, escreva o código verde mínimo para a regra e diga qual refatoração deixaria o cálculo dos dígitos mais legível sem mudar o comportamento.
+- **Linhas:** 7
+
+### ITEM 4
+- **Capacidade:** C5
+- **Contexto:** O teste `cobra R$ 2 por km acima de 10 km` falha com a mensagem `expected 19 to be 21` em `frete.test.js:14`. A suíte tem 240 testes e leva 2 minutos.
+- **Comando:** Descreva, em ordem, como você depuraria essa falha (leitura da mensagem, isolamento com `only`, modo watch, breakpoint e inspeção de variáveis) e o que deve ser removido antes de enviar a correção.
+- **Linhas:** 7
+
+### ITEM 5
+- **Capacidade:** S1
+- **Contexto:** No code review dos seus testes do validador de CPF, a colega comentou: "o teste 'teste 1' não diz o que verifica", "faltou o caso com 10 dígitos" e "um teste confere três regras de uma vez".
+- **Comando:** Escreva a resposta ao code review acolhendo as sugestões (ou discordando com fatos, se for o caso) e descreva as mudanças que você faria nos testes.
+- **Linhas:** 6
+
+### ITEM 6
+- **Capacidade:** C5
+- **Contexto:** Para a integração contínua passar antes do fim do expediente, um desenvolvedor apagou um teste vermelho do checkout e enviou outro arquivo com `it.only` esquecido.
+- **Comando:** Explique os riscos de cada atitude para a equipe e para o cliente e descreva a conduta responsável diante de um teste vermelho.
+- **Linhas:** 5
+
+### ITEM 7
+- **Capacidade:** C5
+- **Contexto:** Observe o código final de `validarCPF` do capítulo, com seus três `return`.
+- **Comando:** Usando a visão de caixa branca, liste cada caminho do código, o teste que o percorre e o valor de entrada usado, e indique se algum caminho ficou sem teste.
 - **Linhas:** 6

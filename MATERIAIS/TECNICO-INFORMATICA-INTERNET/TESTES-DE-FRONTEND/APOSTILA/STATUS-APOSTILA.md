@@ -23,6 +23,6 @@
 | 05 | Integração Avançada e Mock de APIs | ✅ | ✅ 4 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 06 | Testes End-to-End com Cypress e Playwright | ✅ | ✅ 3 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 07 | Métricas e Cobertura de Testes | ✅ | ✅ 3 | ✅ | ✅ 7 | ✅ 10 | ⬜ | 👀 Aguardando validação |
-| 08 | TDD e Debugging Moderno no Front-End | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 08 | TDD e Debugging Moderno no Front-End | ✅ | ✅ 4 | ✅ | ✅ 7 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 09 | Qualidade, Performance, Acessibilidade e CI/CD | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 10 | Projeto Integrador: Suíte de Testes + avaliação | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
