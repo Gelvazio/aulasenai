@@ -12,8 +12,8 @@
 | Etapa | Descrição | Status |
 |---|---|---|
 | 1 | Registrar o desenho técnico e as regras de acesso | ✅ Concluída |
-| 2 | Revisar e aprovar esta especificação | ⬜ Pendente |
-| 3 | Preparar plano detalhado de implementação | ⬜ Pendente |
+| 2 | Revisar e aprovar esta especificação | ✅ Aprovada pelo usuário |
+| 3 | Preparar plano detalhado de implementação | ✅ Preparado; aguardando revisão |
 | 4 | Implementar migração SQL, CRUD administrativo e item `CURSOS` | ⬜ Pendente |
 | 5 | Filtrar os cursos do índice conforme os vínculos | ⬜ Pendente |
 | 6 | Atualizar documentação do banco e instruções do projeto | ⬜ Pendente |
