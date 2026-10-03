@@ -1514,6 +1514,9 @@ assets/
 │                        da apostila (css/apostila.css, js/apostila.js, img/logo-sesi-senai.png)
 ├─ gerador-atividades/ → gerar_atividades.py + template_atividade.html: gera as páginas de
 │                        atividade de 50 questões e o index.html de qualquer pasta ATIVIDADES/
+├─ gerador-banco-ava/  → gerar_banco_ava.py + moodle_xml.py: banco de questões do AVA SENAI
+│                        (Moodle XML) a partir de ATIVIDADES/CONTEUDO/*QUESTOES.md → pasta
+│                        ATIVIDADES/BANCO-AVA/ (fora do Git; ver "BANCO DE QUESTÕES DO AVA SENAI")
 ├─ gerador-atividade-excel/ → gerar_atividade_excel.py (+ desenho_excel.py, tela_excel.py,
 │                        sobreposicoes_excel.py, graficos_excel.py, base_excel.py): gera capa,
 │                        questões e telas do Excel em SVG (inclui tabela dinâmica, gráficos,
@@ -1738,6 +1741,29 @@ dessas atividades. Registrada em 2026-10-03 a pedido do usuário.
   2026-10-03): o usuário autorizou **aplicar o seed no Supabase ao finalizar cada matéria**.
 - ⏳ **Fila:** gerar **somente uma matéria por vez, na ordem que o usuário liberar**; as demais
   aguardam. Primeira liberada (2026-10-03): **Testes de Frontend**.
+
+## 🏦 REGRA — BANCO DE QUESTÕES DO AVA SENAI (MOODLE XML)
+
+Registrada em 2026-10-03 a pedido do usuário. Plano: `docs/banco-questoes-ava-senai-moodle-xml.md`.
+**Status:** ✅ piloto **Introdução à TIC** gerado (13 atividades, 600 questões), aguardando a
+importação no AVA pelo professor; as demais matérias só quando o usuário liberar, **uma por vez**.
+
+- ✅ **Gerador único:** `C:\Python314\python.exe assets\gerador-banco-ava\gerar_banco_ava.py
+  <pasta ATIVIDADES>` (`--so=ARQ.md` gera uma fonte só). Fonte = as mesmas
+  `ATIVIDADES/CONTEUDO/*QUESTOES.md` das páginas (lidas por `ler_questoes()` do gerador de
+  atividades); nada é digitado à mão no XML.
+- ✅ **Saída em `ATIVIDADES/BANCO-AVA/`:** um `.xml` por atividade (mesmo nome da fonte) e o
+  arquivo único `BANCO-AVA-<PASTA-DA-MATERIA>.xml`. Categorias `top/<uc_curta>/<rótulo> — <tema>`
+  (iguais nos dois); questão de resposta única, 1 ponto, sem penalidade, ID
+  `<PASTA>-<RÓTULO>-QNN`, tags = capacidades + rótulo; alternativas embaralhadas, exceto quando
+  alguma cita as outras ("Todas as anteriores").
+- ❌ **O XML contém as respostas certas:** `BANCO-AVA/` fica no `.gitignore`; nunca publicar,
+  nunca versionar, nunca colocar link em página de aluno.
+- ✅ **Importar no AVA:** Banco de questões → Importar → **Moodle XML**, com **"Obter categoria do
+  arquivo"** marcado. Importar **ou** os arquivos por atividade **ou** o arquivo único (os dois
+  juntos duplicam as questões).
+- ✅ Depois de alterar uma fonte de questões, gerar o banco de novo e registrar no
+  `STATUS-ATIVIDADES.md` da matéria.
 
 ## 📘 REGRAS APOSTILAS
 
