@@ -6,186 +6,8 @@
     <title>Atividade: Informática Básica — Hardware, Periféricos e SO</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --gold: #FFD700;
-            --text: #2d3748;
-            --light: #f7fafc;
-        }
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: var(--text);
-            line-height: 1.6;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-        }
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 4px solid var(--gold);
-        }
-        header h1 { font-size: 40px; margin-bottom: 10px; }
-        header p { font-size: 16px; opacity: 0.95; }
-        .nav-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 20px;
-            background: #f9fafb;
-            border-bottom: 2px solid #e2e8f0;
-            justify-content: center;
-        }
-        .nav-tabs button {
-            padding: 10px 20px;
-            border: 2px solid var(--primary);
-            background: white;
-            color: var(--primary);
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        .nav-tabs button.active {
-            background: var(--primary);
-            color: white;
-        }
-        .content-section { display: none; padding: 40px; }
-        .content-section.active { display: block; }
-        .aula-card {
-            background: #f9fafb;
-            border-left: 5px solid var(--primary);
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
-        .aula-badge {
-            background: var(--primary);
-            color: white;
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 12px;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        .aula-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
-        .aula-meta {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        .tag {
-            background: #e6f2ff;
-            color: var(--primary);
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 12px;
-        }
-        .content-box {
-            padding: 15px;
-            background: white;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            border-left: 3px solid var(--gold);
-        }
-        .content-label {
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 13px;
-            margin-bottom: 8px;
-        }
-        .content-text { font-size: 14px; line-height: 1.6; }
-        .steps {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0;
-        }
-        .steps li {
-            padding: 8px 0;
-            padding-left: 24px;
-            position: relative;
-            font-size: 13px;
-        }
-        .steps li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        footer {
-            background: #2d3748;
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-        }
-        @media (max-width: 768px) {
-            .nav-tabs { gap: 5px; }
-            .nav-tabs button { padding: 8px 12px; font-size: 12px; }
-            header h1 { font-size: 28px; }
-            .content-section { padding: 20px; }
-        }
-            .alternativas { list-style: none; padding: 0; margin: 6px 0 0; }
-        .alternativas li {
-            padding: 8px 12px;
-            margin-bottom: 6px;
-            background: #f7fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            font-size: 14px;
-        }
-        .alternativas .letra { font-weight: 700; color: var(--primary); margin-right: 6px; }
-        .resposta-linha { border-bottom: 1px solid #2d3748; height: 28px; margin: 6px 0; }
-        .gabarito-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-        .gabarito-table th {
-            background: var(--primary);
-            color: white;
-            padding: 10px;
-            text-align: left;
-        }
-        .gabarito-table td { padding: 10px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
-        .gabarito-table tr:nth-child(even) td { background: #f9fafb; }
-        .export-bar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 20px;
-            background: #fffbea;
-            border-bottom: 2px solid var(--gold);
-        }
-        .btn-export-pdf {
-            background: #f7941d;
-            color: white;
-            border: none;
-            padding: 10px 22px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 14px;
-            transition: all 0.3s;
-        }
-        .btn-export-pdf:hover { background: #d97706; transform: translateY(-2px); }
-        .export-bar label { font-size: 13px; font-weight: 600; color: var(--text); cursor: pointer; }
-        .export-bar small { font-size: 12px; color: #718096; }
-        .gabarito-table .resp { font-weight: 700; color: var(--secondary); white-space: nowrap; }
-    </style>
+    <link rel="stylesheet" href="../../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../../assets/css/atividade-abas.css">
     <link rel="stylesheet" href="../../../../../assets/css/menu.css">
     <script src="../MENU-ATIVIDADES.js" defer></script>
     <script src="../../../../../js/menu.js" defer></script>
@@ -211,7 +33,7 @@
         </div>
 
         <div class="export-bar">
-            <button class="btn-export-pdf" onclick="exportarPDFAtividade()">📥 Exportar PDF (atividade completa)</button>
+            <button class="btn-export" onclick="exportarPDFAtividade()">📥 Exportar PDF (atividade completa)</button>
             <small>Gera um único arquivo com as 5 partes e as 20 questões.</small>
         </div>
 
@@ -332,48 +154,48 @@
                     <div class="content-text">Qual componente busca, decodifica e executa as instruções e realiza os cálculos?</div>
                 </div>
 
-                <div class=”content-box”>
-                    <div class=”content-label”>📝 ALTERNATIVAS</div>
-                    <ul class=”alternativas”>
-                        <li><span class=”letra”>A)</span>Memória RAM</li>
-                        <li><span class=”letra”>B)</span>Placa-mãe</li>
-                        <li><span class=”letra”>C)</span>Processador (CPU)</li>
-                        <li><span class=”letra”>D)</span>Monitor</li>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Memória RAM</li>
+                        <li><span class="letra">B)</span>Placa-mãe</li>
+                        <li><span class="letra">C)</span>Processador (CPU)</li>
+                        <li><span class="letra">D)</span>Monitor</li>
                     </ul>
                 </div>
             </div>
 
-            <div class=”aula-card”>
-                <span class=”aula-badge”>QUESTÃO 03</span>
-                <div class=”aula-title”>A Memória RAM</div>
-                <div class=”aula-meta”>
-                    <span class=”tag”>Múltipla escolha</span>
-                    <span class=”tag”>Individual</span>
-                    <span class=”tag”>Informática Básica</span>
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 03</span>
+                <div class="aula-title">A Memória RAM</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
                 </div>
 
-                <div class=”content-box”>
-                    <div class=”content-label”>🎯 CAPACIDADE</div>
-                    <div class=”content-text”>Diferenciar hardware e software e identificar CPU, RAM e armazenamento.</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Diferenciar hardware e software e identificar CPU, RAM e armazenamento.</div>
                 </div>
 
-                <div class=”content-box”>
-                    <div class=”content-label”>📋 CONTEXTO</div>
-                    <div class=”content-text”>Houve queda de energia no escritório do centro de distribuição. Um colega afirma: “Não tem problema, a memória RAM guardou a planilha que eu estava editando”.</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Houve queda de energia no escritório do centro de distribuição. Um colega afirma: “Não tem problema, a memória RAM guardou a planilha que eu estava editando”.</div>
                 </div>
 
-                <div class=”content-box”>
-                    <div class=”content-label”>🎬 COMANDO</div>
-                    <div class=”content-text”>O que você responde ao seu colega?</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que você responde ao seu colega?</div>
                 </div>
 
-                <div class=”content-box”>
-                    <div class=”content-label”>📝 ALTERNATIVAS</div>
-                    <ul class=”alternativas”>
-                        <li><span class=”letra”>A)</span>O colega está correto; a RAM guarda dados permanentemente.</li>
-                        <li><span class=”letra”>B)</span>O colega está errado; a RAM é volátil e perde tudo ao desligar. Os dados só são salvos no disco.</li>
-                        <li><span class=”letra”>C)</span>A RAM só guarda dados de programas abertos, não arquivos.</li>
-                        <li><span class=”letra”>D)</span>A queda de energia não afeta a RAM.</li>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O colega está correto; a RAM guarda dados permanentemente.</li>
+                        <li><span class="letra">B)</span>O colega está errado; a RAM é volátil e perde tudo ao desligar. Os dados só são salvos no disco.</li>
+                        <li><span class="letra">C)</span>A RAM só guarda dados de programas abertos, não arquivos.</li>
+                        <li><span class="letra">D)</span>A queda de energia não afeta a RAM.</li>
                     </ul>
                 </div>
             </div>
@@ -900,37 +722,37 @@
                 </div>
             </div>
 
-            <div class=”aula-card”>
-                <span class=”aula-badge”>QUESTÃO 17</span>
-                <div class=”aula-title”>Procedimento de Compactação</div>
-                <div class=”aula-meta”>
-                    <span class=”tag”>Múltipla escolha</span>
-                    <span class=”tag”>Individual</span>
-                    <span class=”tag”>Informática Básica</span>
+            <div class="aula-card">
+                <span class="aula-badge">QUESTÃO 17</span>
+                <div class="aula-title">Procedimento de Compactação</div>
+                <div class="aula-meta">
+                    <span class="tag">Múltipla escolha</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Informática Básica</span>
                 </div>
 
-                <div class=”content-box”>
-                    <div class=”content-label”>🎯 CAPACIDADE</div>
-                    <div class=”content-text”>Organizar, nomear, pesquisar e compactar arquivos com padrão profissional.</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Organizar, nomear, pesquisar e compactar arquivos com padrão profissional.</div>
                 </div>
 
-                <div class=”content-box”>
-                    <div class=”content-label”>📋 CONTEXTO</div>
-                    <div class=”content-text”>Você precisa enviar por e-mail todos os relatórios de 2025 da pasta Relatórios em um único anexo compactado.</div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você precisa enviar por e-mail todos os relatórios de 2025 da pasta Relatórios em um único anexo compactado.</div>
                 </div>
 
-                <div class=”content-box”>
-                    <div class=”content-label”>🎬 COMANDO</div>
-                    <div class=”content-text”>Qual é a sequência CORRETA para compactar e enviar os arquivos?</div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a sequência CORRETA para compactar e enviar os arquivos?</div>
                 </div>
 
-                <div class=”content-box”>
-                    <div class=”content-label”>📝 ALTERNATIVAS</div>
-                    <ul class=”alternativas”>
-                        <li><span class=”letra”>A)</span>Compactar → Anexar → Selecionar → Renomear</li>
-                        <li><span class=”letra”>B)</span>Selecionar → Renomear → Compactar → Anexar</li>
-                        <li><span class=”letra”>C)</span>Selecionar → Compactar → Renomear → Anexar</li>
-                        <li><span class=”letra”>D)</span>Anexar → Compactar → Renomear → Selecionar</li>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Compactar → Anexar → Selecionar → Renomear</li>
+                        <li><span class="letra">B)</span>Selecionar → Renomear → Compactar → Anexar</li>
+                        <li><span class="letra">C)</span>Selecionar → Compactar → Renomear → Anexar</li>
+                        <li><span class="letra">D)</span>Anexar → Compactar → Renomear → Selecionar</li>
                     </ul>
                 </div>
             </div>

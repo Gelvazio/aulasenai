@@ -1510,6 +1510,9 @@ assets/
 │                        sobrescrever; `--todas` gera em todas as matérias com json; página sem o
 │                        marcador só com `--forcar`. Mudou a composição = editar o json e rodar de novo.
 ├─ css/menu.css        → estilos do menu de atividades (montado por js/menu.js)
+├─ css/atividade-abas.css → complemento do atividade.css (carregar depois dele) para páginas de
+│                        atividade com abas, etiquetas, etapas, linhas de resposta e tabela de
+│                        gabarito (ex.: ATIVIDADES-INFORMATICA-BASICA.html); não duplica o atividade.css
 ├─ gerador-capacidades/ → capacidades.py + css/capacidades.css: quadro "CAPACIDADES" no início e
 │                        caixa "🎯 CAPACIDADE" (igual à de CONTEXTO) em cada questão das atividades
 │                        e avaliações (gerador-atividades e gerador-avaliacao-discursiva); o PDF
