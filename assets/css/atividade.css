@@ -127,3 +127,15 @@ footer {
 
 .export-bar .btn-export[hidden] { display: none; }
 .export-bar { flex-wrap: wrap; }
+
+/* Lista "Turma" antes dos botões de exportar (assets/js/turma-exportacao.js, só professor) */
+.export-bar .turma-exportacao { display: flex; align-items: center; gap: 8px; cursor: default; }
+.export-bar .turma-exportacao select {
+    padding: 8px 10px;
+    border: 2px solid var(--gold);
+    border-radius: 6px;
+    font-size: 13px;
+    background: #fff;
+    color: var(--text);
+    max-width: 320px;
+}

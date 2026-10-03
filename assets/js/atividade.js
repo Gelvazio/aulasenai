@@ -3,6 +3,34 @@
 // data-uc-curta e data-docente no <body>
 // e o gabarito em <script type="application/json" id="gabarito-dados">.
 // O docente do PDF é o professor logado; o data-docente só vale quando não há professor logado.
+// A turma do PDF vem da lista "Turma" da .export-bar (assets/js/turma-exportacao.js, carregado
+// aqui): professor com 1 turma já vem escolhida; com várias, ele escolhe antes de exportar.
+
+const ARQUIVO_TURMA_EXPORTACAO = 'turma-exportacao.js';
+const TURMA_EM_BRANCO_ATIVIDADE_PDF = '___________________';
+
+/**
+ * Carrega o assets/js/turma-exportacao.js (lista de turmas da exportação), ao lado deste script.
+ */
+function carregarTurmaExportacao() {
+    const origem = document.currentScript?.src;
+    if (!origem || typeof obterTurmaParaExportacao === 'function') return;
+
+    const script = document.createElement('script');
+    script.src = origem.replace(/[^/]*$/, ARQUIVO_TURMA_EXPORTACAO);
+    document.head.append(script);
+}
+
+carregarTurmaExportacao();
+
+/**
+ * Turma do PDF; sem o módulo de turmas carregado, o campo fica em branco.
+ * @returns {Promise<string|null>} Texto da turma, linha em branco ou null (exportação cancelada).
+ */
+async function turmaDoPDF() {
+    if (typeof obterTurmaParaExportacao !== 'function') return TURMA_EM_BRANCO_ATIVIDADE_PDF;
+    return obterTurmaParaExportacao();
+}
 
 function textoPDF(txt) {
     // A fonte padrão do jsPDF só aceita Latin-1/WinAnsi: troca símbolos e remove emojis
@@ -218,6 +246,9 @@ async function exportarPDFAtividade(gabaritoExterno) {
         return;
     }
 
+    const turma = await turmaDoPDF();
+    if (turma === null) return;
+
     const pagina = await dadosDaPaginaParaPDF();
     const questoes = coletarQuestoes();
     if (gabaritoExterno) pagina.gabarito = gabaritoExterno;
@@ -237,7 +268,7 @@ async function exportarPDFAtividade(gabaritoExterno) {
         [ { content: 'Data: ___/___/___', styles: { fontSize: 10 } }, { content: '' }, { content: '' }, { content: '' } ],
         [ { content: 'Docente: ' + pagina.docente.toUpperCase(), styles: { fontSize: 10, fontStyle: 'bold' }, colSpan: 2 }, { content: '' }, { content: '' } ],
         [ { content: 'Unidade Curricular: ' + pagina.uc, styles: { fontSize: 10 }, colSpan: 2 },
-          { content: 'Turma: ___________________', styles: { fontSize: 10 }, colSpan: 2 } ],
+          { content: textoPDF('Turma: ' + turma), styles: { fontSize: 10 }, colSpan: 2 } ],
         [ { content: 'Estudante: ___________________________________________________', styles: { fontSize: 10 }, colSpan: 4 } ]
     ];
 
@@ -310,15 +341,19 @@ async function exportarSomenteGabaritoPDF(gabarito, opcoes = {}) {
         return;
     }
 
+    const turma = await turmaDoPDF();
+    if (turma === null) return;
+
     const pagina = await dadosDaPaginaParaPDF();
     const rotulo = rotuloDaAula(pagina.aula);
+    const textoTurma = turma === TURMA_EM_BRANCO_ATIVIDADE_PDF ? '' : ' · Turma: ' + turma;
     const doc = new jsPDF('p', 'mm', 'a4');
     doc.setFontSize(13);
     doc.setFont(undefined, 'bold');
     doc.text(textoPDF((opcoes.titulo || 'GABARITO') + ' — ' + rotulo + ': ' + pagina.tema + ' (' + pagina.total + ' itens)'), 15, 16);
     doc.setFontSize(9);
     doc.setFont(undefined, 'normal');
-    doc.text(textoPDF(pagina.uc + ' · Docente: ' + pagina.docente + ' · ' + (opcoes.subtitulo || 'USO DO PROFESSOR')), 15, 22);
+    doc.text(textoPDF(pagina.uc + ' · Docente: ' + pagina.docente + textoTurma + ' · ' + (opcoes.subtitulo || 'USO DO PROFESSOR')), 15, 22);
     doc.autoTable({
         head: [['Item', 'Questão', opcoes.coluna || 'Resposta']],
         body: gabarito.map(l => l.map(textoPDF)),
