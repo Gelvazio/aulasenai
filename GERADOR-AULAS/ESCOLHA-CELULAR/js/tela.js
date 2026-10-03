@@ -152,10 +152,26 @@ function criarLinhaProduto(produto) {
 function desenharCatalogo() {
   const corpo = elemento('corpo-catalogo');
   if (!corpo) return;
-  corpo.replaceChildren();
-  CATALOGO_PRODUTOS
-    .filter((produto) => estado.categorias.includes(produto.categoria))
-    .forEach((produto) => corpo.appendChild(criarLinhaProduto(produto)));
+  const visiveis = CATALOGO_PRODUTOS.filter((produto) => estado.categorias.includes(produto.categoria));
+  const contexto = { config: estado.config, selecionados: estado.selecionados };
+  const ordenados = ordenarProdutos(visiveis, estado.ordenacao, contexto);
+  corpo.replaceChildren(...ordenados.map(criarLinhaProduto));
+  marcarColunaOrdenada();
+}
+
+/**
+ * Marca no cabeçalho a coluna ordenada (aria-sort e seta ▲/▼).
+ * @returns {void}
+ */
+function marcarColunaOrdenada() {
+  document.querySelectorAll('[data-ordenar]').forEach((botao) => {
+    const celula = botao.closest('th');
+    const estaOrdenada = estado.ordenacao?.coluna === botao.dataset.ordenar;
+    const ehCrescente = estado.ordenacao?.direcao === DIRECAO_CRESCENTE;
+    const marcacao = estaOrdenada ? MARCACAO_ORDENACAO[ehCrescente] : MARCACAO_SEM_ORDENACAO;
+    celula.setAttribute('aria-sort', marcacao.aria);
+    botao.dataset.seta = marcacao.seta;
+  });
 }
 
 /**

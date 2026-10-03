@@ -40,6 +40,18 @@ function aoMarcarCategoria(evento) {
 }
 
 /**
+ * Ordena o catálogo pela coluna clicada no cabeçalho.
+ * @param {Event} evento - Evento de clique.
+ * @returns {void}
+ */
+function aoOrdenarColuna(evento) {
+  const botao = evento.target.closest('[data-ordenar]');
+  if (!botao) return;
+  estado.ordenacao = alternarOrdenacao(estado.ordenacao, botao.dataset.ordenar);
+  atualizarTudo();
+}
+
+/**
  * Aplica o kit da faixa de gasto clicada.
  * @param {Event} evento - Evento de clique.
  * @returns {void}
@@ -92,6 +104,7 @@ function iniciarDashboard() {
   });
   elemento('corpo-catalogo').addEventListener('change', aoMarcarProduto);
   elemento('filtros-categoria').addEventListener('change', aoMarcarCategoria);
+  elemento('cabecalho-catalogo').addEventListener('click', aoOrdenarColuna);
   elemento('faixas').addEventListener('click', aoEscolherFaixa);
   elemento('botao-sugerir').addEventListener('click', aoSugerir);
   elemento('botao-limpar').addEventListener('click', aoLimpar);

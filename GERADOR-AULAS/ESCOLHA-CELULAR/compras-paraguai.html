@@ -8,6 +8,7 @@
   <script src="js/constantes.js" defer></script>
   <script src="js/calculo.js" defer></script>
   <script src="js/armazenamento.js" defer></script>
+  <script src="js/ordenacao.js" defer></script>
   <script src="js/tela.js" defer></script>
   <script src="js/eventos.js" defer></script>
 </head>
@@ -89,8 +90,15 @@
         <h2 id="titulo-catalogo" class="secao__titulo"><span class="numero-secao">4</span> 📱 Catálogo</h2>
         <div class="tabela-rolagem">
           <table class="tabela">
-            <thead><tr><th></th><th>Produto</th><th>US$</th><th>R$ no PY</th>
-              <th>R$ no Brasil</th><th>Economia</th></tr></thead>
+            <thead id="cabecalho-catalogo"><tr>
+              <th aria-sort="none"><button type="button" class="ordenar" data-ordenar="selecionado"
+                title="Ordenar pelos itens marcados">✔</button></th>
+              <th aria-sort="none"><button type="button" class="ordenar" data-ordenar="produto">Produto</button></th>
+              <th aria-sort="none"><button type="button" class="ordenar" data-ordenar="dolar">US$</button></th>
+              <th aria-sort="none"><button type="button" class="ordenar" data-ordenar="realParaguai">R$ no PY</button></th>
+              <th aria-sort="none"><button type="button" class="ordenar" data-ordenar="realBrasil">R$ no Brasil</button></th>
+              <th aria-sort="none"><button type="button" class="ordenar" data-ordenar="economia">Economia</button></th>
+            </tr></thead>
             <tbody id="corpo-catalogo"></tbody>
           </table>
         </div>

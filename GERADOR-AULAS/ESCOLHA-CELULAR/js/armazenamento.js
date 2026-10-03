@@ -4,7 +4,7 @@
 
 /**
  * Lê o estado salvo ou devolve o estado inicial.
- * @returns {object} Estado (config, selecionados, categorias, faixaAtiva).
+ * @returns {object} Estado (config, selecionados, categorias, faixaAtiva, ordenacao).
  */
 function lerEstadoSalvo() {
   const estadoInicial = {
@@ -12,6 +12,7 @@ function lerEstadoSalvo() {
     selecionados: [],
     categorias: Object.keys(CATEGORIAS),
     faixaAtiva: null,
+    ordenacao: null,
   };
   try {
     const texto = localStorage.getItem(CHAVE_ARMAZENAMENTO);
@@ -22,6 +23,7 @@ function lerEstadoSalvo() {
       selecionados: Array.isArray(salvo.selecionados) ? salvo.selecionados : [],
       categorias: Array.isArray(salvo.categorias) ? salvo.categorias : estadoInicial.categorias,
       faixaAtiva: salvo.faixaAtiva || null,
+      ordenacao: salvo.ordenacao || null,
     };
   } catch (erro) {
     return estadoInicial;

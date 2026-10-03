@@ -253,6 +253,27 @@ body {
 .tabela td { padding: 8px; border-bottom: 1px solid var(--cor-borda); text-align: left; }
 
 .tabela th { color: var(--cor-texto-suave); font-weight: 600; white-space: nowrap; }
+
+.ordenar {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 4px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.ordenar::after { content: attr(data-seta); font-size: 0.75rem; opacity: 0.5; }
+.ordenar:hover,
+.ordenar:focus-visible { color: var(--cor-texto); background: rgb(255 255 255 / 6%); }
+[aria-sort="ascending"] .ordenar,
+[aria-sort="descending"] .ordenar { color: var(--cor-ouro); }
+[aria-sort="ascending"] .ordenar::after,
+[aria-sort="descending"] .ordenar::after { opacity: 1; }
 .linha--selecionada { background: rgb(245 194 66 / 10%); }
 .numero { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .positivo { color: var(--cor-verde); font-weight: 700; }
