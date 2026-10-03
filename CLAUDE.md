@@ -1772,6 +1772,32 @@ Registrada em 2026-10-03 a pedido do usuário (padrões definidos na validação
 gerado, aguardando validação do usuário; os demais capítulos só depois que ele liberar, **um por
 vez, perguntando a cada capítulo** (rascunhos em `APOSTILA/RASCUNHOS/`, fora da apostila).
 
+### ⛔ PRÉ-REQUISITO: o Markdown completo bate 100% com a ementa da matéria
+
+Registrada em 2026-10-03 a pedido do usuário. **Vale antes de gerar qualquer capítulo novo e
+antes de gerar o HTML**, em todas as matérias.
+
+- ⛔ **Não gerar o resto da apostila** (próximo capítulo, Markdown completo atualizado ou HTML)
+  enquanto o `<MATERIA>/APOSTILA/APOSTILA-<MATERIA>.md` **não bater 100%** com o
+  `EMENTA-CHALKIE-AI.md` da matéria. Qualquer divergência é corrigida **primeiro**.
+- ✅ **"Bater 100%" significa que o Markdown completo tem, igual à ementa da matéria:**
+  - carga horária da UC e quantidade de aulas (1 capítulo = 1 aula de 4 h);
+  - **todas** as capacidades básicas e socioemocionais, com o mesmo texto;
+  - **todos** os conhecimentos (domínios e conteúdos), sem faltar nem sobrar;
+  - para cada aula: tema, domínios, capacidades, conteúdos, indicadores, situação-problema,
+    atividade, estratégias, BNCC e marco — e cada capítulo escrito usa **exatamente** as
+    capacidades da sua aula e trata todos os conteúdos oficiais dela;
+  - objetivo geral, justificativa, competência integradora, avaliação (instrumentos, valores,
+    rubrica, recuperação), recursos/acessibilidade e o glossário oficial;
+  - nada de fora da ementa apresentado como oficial (aprofundamentos só como detalhamento
+    didático) e nenhuma marca de software imposta (regra da ementa).
+- ✅ **Como conferir antes de seguir:** (1) reler a ementa da matéria inteira; (2) comparar seção
+  por seção com o Markdown completo (tabela "Cobertura completa da ementa", abaixo); (3) rodar o
+  gerador e zerar os avisos ⚠️; (4) informar ao usuário o resultado da conferência
+  (✅ bate 100% ou a lista do que foi corrigido) **antes** de gerar o próximo capítulo.
+- ✅ Se a ementa da matéria divergir da **ementa do curso**, a do curso vence: avisar o usuário,
+  corrigir a ementa da matéria/`materia.json` conforme ele decidir e só então conferir o Markdown.
+
 ### Gerador e arquivos
 
 - ✅ **Gerador único:** `C:\Python314\python.exe assets\gerador-apostilas\gerar_apostila.py
