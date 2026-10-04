@@ -75,7 +75,7 @@ avaliações, apostilas, planos, slides e conferências).
 - ✅ **Fonte para conferir e para gerar:** o `EMENTA-CHALKIE-AI.md` da matéria (que segue a UC da
   `EMENTA-PRINCIPAL-<CURSO>.md`, também em Markdown — a ementa do curso vence) e o `materia.json`
   copiado dela.
-- ✅ **Apoio (sempre abaixo da ementa, que vence):** os demais `.md` da matéria — `AULAS/AULA-NN.md`,
+- ✅ **Apoio (sempre abaixo da ementa, que vence):** os demais `.md` da matéria — `CONTEUDO/AULA-NN-*.md`,
   `DOCUMENTACAO/*.md`, `APOSTILA/CONTEUDO/*.md`, `ATIVIDADES/ATIVIDADE-PRATICA-AULA-NN.md` etc.
 - ⛔ **Nunca extrair dados de PDF** (`AULA-NN-SLIDES.pdf`, `PLANO-ENSINO.pdf`, ementas ou apostilas
   em PDF): não abrir, não ler e não usar PDF como fonte de conteúdo nem de conferência.
@@ -115,36 +115,53 @@ Registrada em 2026-10-03 a pedido do usuário.
 
 ---
 
-## 🧩 REGRA CRÍTICA — AULAS EXTRAÍDAS DA EMENTA EM `CONTEUDO/` (1 AULA A CADA 4 HORAS)
+## 🧩 REGRA CRÍTICA — AULAS DA MATÉRIA: EXTRAÍDAS DA EMENTA EM `CONTEUDO/` (1 AULA A CADA 4 HORAS)
 
 ⚠️ **As aulas de cada matéria são extraídas do `EMENTA-CHALKIE-AI.md` e gravadas em Markdown na
 pasta `<MATERIA>/CONTEUDO/`; depois, as atividades e, por último, a apostila são SEMPRE feitas
-lendo essas aulas.** Registrada em 2026-10-03 a pedido do usuário.
+lendo essas aulas.** Registrada em 2026-10-03 a pedido do usuário. **Junta e substitui** a antiga
+regra "PASTA `AULAS/` SEMPRE GERADA CONFORME A DOCUMENTAÇÃO DA MATÉRIA" (2026-10-02), sem conflitos.
 
-- ✅ **Fonte:** o `EMENTA-CHALKIE-AI.md` da matéria (regra "CONTEÚDO SÓ PELOS MARKDOWNS"; se divergir
-  da UC na ementa do curso, a do curso vence e o usuário é avisado).
+- ✅ **Quando:** sempre que gerar dados ou materiais de uma matéria (estrutura nova, ementa,
+  atividades, avaliações, apostila), as aulas em `CONTEUDO/` também são geradas — **todas**, sem
+  pular nenhuma — e vêm **antes** de qualquer outra peça.
+- ✅ **Fonte:** o `EMENTA-CHALKIE-AI.md` da matéria — sequência de aulas, temas, conhecimentos,
+  capacidades, indicadores, situações de aprendizagem, estratégias e recursos (regra "CONTEÚDO SÓ
+  PELOS MARKDOWNS"; se divergir da UC na ementa do curso, a do curso vence e o usuário é avisado).
 - ✅ **Quantidade de aulas = carga horária da ementa ÷ 4** (1 aula a cada 4 h). Se a conta não der
-  exata, **arredondar para cima** (ex.: 40 h → 10 aulas; 30 h → 7,5 → 8 aulas; 42 h → 11 aulas).
+  exata, **arredondar para cima**, e a **última aula fica só com as horas que sobram** (ex.: 40 h →
+  10 aulas de 4 h; 30 h → 7 aulas de 4 h + 1 aula de 2 h; 42 h → 10 aulas de 4 h + 1 aula de 2 h).
+  A soma das horas das aulas é sempre igual à carga horária da UC.
 - ✅ **Nome do arquivo:** `AULA-NN-DESCRICAO-CURTA-DO-CONTEUDO.md` — `NN` = número da aula com 2
   dígitos; descrição curta do conteúdo em MAIÚSCULAS, sem acentos, palavras separadas por hífen
   (ex.: `AULA-01-FUNDAMENTOS-DE-TESTES.md`).
 - ✅ **Local:** `<MATERIA>/CONTEUDO/`, na raiz da pasta da matéria (como na ITIC) — não confundir
   com `ATIVIDADES/CONTEUDO/` (fontes das atividades) nem com `APOSTILA/CONTEUDO/` (capítulos).
-- ✅ **Ordem obrigatória:** (1) aulas em `CONTEUDO/` → (2) atividades lidas dessas aulas
-  (`- **Conteúdo-base:** ../CONTEUDO/AULA-NN-....md` na fonte) → (3) **no final**, a apostila,
-  também lida dessas aulas (1 capítulo = 1 aula).
-- ✅ **Cada aula traz** (tudo da ementa; aprofundamento só como detalhamento didático): tema, carga
-  horária, conhecimentos (numeração da ementa), capacidades, indicadores, objetivos, roteiro com
-  tempos, conteúdo em seções, exemplos no contexto profissional do curso (empresa fictícia),
-  situação-problema/atividade prevista na ementa, verificação da aprendizagem e recursos da UC.
+  A pasta `AULAS/` guarda só os slides (apresentação) e o `STATUS-AULAS.md`; **não se criam mais
+  aulas em `AULAS/AULA-NN.md`**.
+- ✅ **Cada aula traz** (tudo da ementa; aprofundamento só como detalhamento didático): módulo,
+  tema, carga horária, conhecimentos (numeração da ementa do curso), capacidades (`Cn`/`Sn`),
+  indicadores, objetivos, roteiro com tempos (retomada, exposição, prática guiada, prática
+  autônoma, registro), conteúdo em seções, exemplos no contexto profissional do curso (empresa
+  fictícia), situação-problema/atividade prevista na ementa, **pelo menos 1 dinâmica**,
+  verificação da aprendizagem e recursos (só os previstos na UC).
+- ✅ **Dinâmica obrigatória — pelo menos 1 em cada aula** (2026-10-03, pedido do usuário):
+  atividade interativa em dupla ou grupo (ex.: jogo de classificação, debate, caça ao defeito,
+  simulação de papéis), com nome, objetivo, tempo, materiais, passo a passo e fechamento ligado à
+  capacidade da aula; o tempo dela entra no roteiro da aula.
+- ✅ **Ordem obrigatória:** (1) aulas em `CONTEUDO/` → (2) atividades e avaliações lidas dessas
+  aulas (`- **Aula:**` e `- **Conteúdo-base:** ../CONTEUDO/AULA-NN-....md` na fonte) → (3) **no
+  final**, a apostila, também lida dessas aulas (1 capítulo = 1 aula).
+- ✅ **`DOCUMENTACAO/PLANO-AULAS.md` não é fonte:** quando existir (ex.: a página da matéria o
+  exibe), é só o **resumo** das aulas de `CONTEUDO/` (aula × tema × horas × conhecimentos ×
+  capacidades) e é atualizado junto com elas.
 - ✅ Uma aula por vez (regra "GERAR E GRAVAR UMA AULA POR VEZ"), registrando no
   `AULAS/STATUS-AULAS.md`.
-- ⚠️ Matérias que já têm aulas em `CONTEUDO/` com outro nome (ex.: ITIC, `1-Tema.md`) só são
-  renomeadas a pedido do usuário.
-- ⚠️ Respeita `STATUS-PERMISSAO-EMENTA`/`STATUS-PERMISSAO-MATERIA`, matérias semelhantes e a
-  exceção de `QUALIFICACAO-PROFISSIONAL/` (lá a ementa é só do professor e só é lida).
-- ⏳ **Em definição com o usuário (2026-10-03):** carga da última aula quando a conta não fecha e
-  a convivência com a regra "PASTA `AULAS/`" (`AULAS/AULA-NN.md`).
+- ⚠️ Matérias que já têm aulas com outro nome ou em outro lugar (ex.: ITIC, `CONTEUDO/1-Tema.md`;
+  Automação, `AULAS/AULA-NN.md`) só são renomeadas ou movidas a pedido do usuário.
+- ⚠️ Vale para cursos e matérias em `VERIFICAR` (`STATUS-PERMISSAO-EMENTA`/`STATUS-PERMISSAO-MATERIA`),
+  respeita matérias semelhantes (só a pasta pedida) e a exceção de `QUALIFICACAO-PROFISSIONAL/`
+  (lá a ementa é só do professor e só é lida).
 
 ---
 
@@ -405,7 +422,7 @@ USING (id = auth.uid());
 ```
 DOCUMENTACAO/
 ├─ EMENTA-CHALKIE-AI.md         (versão IA, 10+ páginas, detalhada) ⭐
-├─ PLANO-AULAS.md              (cronograma por semana)
+├─ PLANO-AULAS.md              (resumo das aulas de CONTEUDO/ — não é fonte)
 ├─ INDEX.md                     (mapa de navegação)
 └─ VERIFICACAO_COBERTURA_EMENTA.md (checklist)
 ```
@@ -1814,31 +1831,6 @@ Gerador reutilizável: `assets/gerador-atividade-excel/gerar_atividade_excel.py 
   em 1h30). Ao acrescentar, **redistribuir tempo e pontos** (o total continua 10) e ajustar
   capa, gabarito, menus e critérios (a soma dos critérios de cada questão = pontos da questão).
 - ✅ A **entrega do arquivo** (Salvar Como `.xlsx`) fica na **última questão**.
-
-## 📚 REGRA CRÍTICA — PASTA `AULAS/` SEMPRE GERADA CONFORME A DOCUMENTAÇÃO DA MATÉRIA
-
-⚠️ **Sempre que gerar dados/materiais de uma matéria (estrutura nova, ementa, plano, atividades,
-avaliações), a pasta `<MATERIA>/AULAS/` também deve ser gerada com as aulas, conforme a
-documentação da própria matéria.** Registrada em 2026-10-02.
-
-> ⚠️ **2026-10-03:** as aulas em Markdown passaram a ser extraídas da ementa para
-> `<MATERIA>/CONTEUDO/AULA-NN-DESCRICAO-CURTA.md` (regra "AULAS EXTRAÍDAS DA EMENTA EM
-> `CONTEUDO/`"). A convivência com esta regra está em definição com o usuário.
-
-- ✅ **Fonte:** `<MATERIA>/DOCUMENTACAO/PLANO-AULAS.md` (sequência, temas, conhecimentos,
-  capacidades, estratégia e recursos de cada aula), que segue o `EMENTA-CHALKIE-AI.md` (a ementa
-  vence; a ementa do curso vence as duas).
-- ✅ **Uma aula por arquivo:** `AULAS/AULA-01.md`, `AULA-02.md`... — **todas** as aulas do plano,
-  sem pular nenhuma. Cada aula traz: módulo, tema, carga horária, conhecimentos (numeração da
-  ementa do curso), capacidade(s) `Cn`, objetivos, roteiro com tempos (retomada, exposição,
-  prática guiada, prática autônoma, registro), exemplos do contexto profissional do curso,
-  atividade, avaliação/verificação e recursos (só os previstos na UC).
-- ✅ A soma das horas das aulas = carga horária da UC.
-- ✅ Atividades e avaliações geradas depois usam essas aulas como fonte (`- **Aula:**` no `.md`).
-- ✅ Se a matéria ainda não tem `DOCUMENTACAO/PLANO-AULAS.md`, criar primeiro o plano a partir da
-  ementa e só então gerar as aulas.
-- ⚠️ Vale para cursos em `VERIFICAR` (regra STATUS-PERMISSAO-EMENTA) e respeita a regra de matérias
-  semelhantes (só a pasta pedida). Exceção: `QUALIFICACAO-PROFISSIONAL/` (ementa só do professor).
 
 ## 🔂 REGRA CRÍTICA — GERAR E GRAVAR UMA AULA POR VEZ, COMPLETA, COM `AULAS/STATUS-AULAS.md`
 
