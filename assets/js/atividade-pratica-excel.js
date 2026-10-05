@@ -1,6 +1,8 @@
 /**
  * Atividade prática de Excel: botão de impressão e marcação de passos concluídos.
  * A página informa o identificador da atividade em <body data-atividade="...">.
+ * Também carrega o documento-word.js + exportar-word-pratica.js: ao lado de cada botão
+ * "Imprimir / PDF", o botão "Exportar em Word" com o mesmo conteúdo.
  */
 
 const PREFIXO_CHAVE = 'atividade-excel:';
@@ -14,6 +16,23 @@ const SELETOR_QUESTOES = 'a.questao-cartao';
 const SELETOR_SO_TELA = '.navegacao, .concluido, .sem-impressao, .botao--copiar, .passo__copiar, script';
 const ID_IMPRESSAO_COMPLETA = 'impressao-completa';
 const TEXTO_PREPARANDO_PDF = '⏳ Preparando o PDF com todas as questões...';
+const ORIGEM_ATIVIDADE_PRATICA_JS = document.currentScript?.src || '';
+const MODULOS_WORD_PRATICA = ['documento-word.js', 'exportar-word-pratica.js'];
+
+/**
+ * Carrega, em ordem, os scripts da exportação em Word (ficam ao lado deste em assets/js/).
+ * @returns {void}
+ */
+function carregarModulosWordPratica() {
+  if (!ORIGEM_ATIVIDADE_PRATICA_JS) return;
+
+  MODULOS_WORD_PRATICA.forEach((arquivo) => {
+    const script = document.createElement('script');
+    script.src = ORIGEM_ATIVIDADE_PRATICA_JS.replace(/[^/]*$/, arquivo);
+    script.async = false;
+    document.head.append(script);
+  });
+}
 
 /**
  * Lê um valor salvo no navegador sem quebrar a página se o armazenamento estiver bloqueado.
@@ -137,21 +156,15 @@ function aguardarImagens(trecho) {
 }
 
 /**
- * Imprime a capa e, em seguida, todas as questões da atividade (cada uma em nova página).
- * Nas páginas sem lista de questões, imprime só a própria página.
- * @param {HTMLButtonElement} botao - Botão clicado (mostra o andamento).
- * @returns {Promise<void>} Resolve depois de abrir a impressão.
+ * Baixa todas as questões listadas na capa e as junta num contêiner no fim da página (o mesmo
+ * conteúdo usado na impressão/PDF e na exportação em Word).
+ * @returns {Promise<HTMLElement|null>} Contêiner com as questões, ou null se a página não
+ *     tiver lista de questões.
  */
-async function imprimirTudo(botao) {
+async function montarImpressaoCompleta() {
   const enderecos = [...new Set(Array.from(document.querySelectorAll(SELETOR_QUESTOES))
     .map((link) => link.href))];
-  if (!enderecos.length) {
-    window.print();
-    return;
-  }
-  const rotuloOriginal = botao.textContent;
-  botao.disabled = true;
-  botao.textContent = TEXTO_PREPARANDO_PDF;
+  if (!enderecos.length) return null;
 
   const secoes = (await Promise.all(enderecos.map(baixarQuestaoParaImpressao))).filter(Boolean);
   const conteiner = document.createElement('div');
@@ -159,6 +172,26 @@ async function imprimirTudo(botao) {
   conteiner.append(...secoes);
   document.body.appendChild(conteiner);
   await aguardarImagens(conteiner);
+  return conteiner;
+}
+
+/**
+ * Imprime a capa e, em seguida, todas as questões da atividade (cada uma em nova página).
+ * Nas páginas sem lista de questões, imprime só a própria página.
+ * @param {HTMLButtonElement} botao - Botão clicado (mostra o andamento).
+ * @returns {Promise<void>} Resolve depois de abrir a impressão.
+ */
+async function imprimirTudo(botao) {
+  const temQuestoes = document.querySelector(SELETOR_QUESTOES) !== null;
+  if (!temQuestoes) {
+    window.print();
+    return;
+  }
+  const rotuloOriginal = botao.textContent;
+  botao.disabled = true;
+  botao.textContent = TEXTO_PREPARANDO_PDF;
+
+  const conteiner = await montarImpressaoCompleta();
 
   window.addEventListener('afterprint', () => conteiner.remove(), { once: true });
   botao.textContent = rotuloOriginal;
@@ -287,4 +320,5 @@ function iniciarAtividade() {
   ligarCopiaDasImagens();
 }
 
+carregarModulosWordPratica();
 document.addEventListener('DOMContentLoaded', iniciarAtividade);

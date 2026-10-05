@@ -7,9 +7,13 @@
 // aqui): professor com 1 turma já vem escolhida; com várias, ele escolhe antes de exportar.
 // Também carrega o assets/js/exportar-banco-moodle.js: botão "Banco Moodle (AVA SENAI)", só do
 // professor, que baixa as questões da página com o gabarito do banco em Moodle XML.
+// E o assets/js/documento-word.js + assets/js/exportar-word.js: ao lado de cada botão de PDF, um
+// botão "Exportar em Word" com o mesmo layout deste PDF.
 
 const ARQUIVO_TURMA_EXPORTACAO = 'turma-exportacao.js';
 const ARQUIVO_BANCO_MOODLE = 'exportar-banco-moodle.js';
+const ARQUIVO_DOCUMENTO_WORD = 'documento-word.js';
+const ARQUIVO_EXPORTAR_WORD = 'exportar-word.js';
 const ORIGEM_ATIVIDADE_JS = document.currentScript?.src || '';
 const TURMA_EM_BRANCO_ATIVIDADE_PDF = '___________________';
 const MSG_JSPDF_NAO_CARREGADO = 'Erro: jsPDF não carregado (verifique a conexão com a internet).';
@@ -24,11 +28,15 @@ function carregarModuloExportacao(arquivo, jaCarregado) {
 
     const script = document.createElement('script');
     script.src = ORIGEM_ATIVIDADE_JS.replace(/[^/]*$/, arquivo);
+    // Mantém a ordem de carregamento (o exportar-word.js depende do documento-word.js)
+    script.async = false;
     document.head.append(script);
 }
 
 carregarModuloExportacao(ARQUIVO_TURMA_EXPORTACAO, typeof obterTurmaParaExportacao === 'function');
 carregarModuloExportacao(ARQUIVO_BANCO_MOODLE, typeof exportarBancoMoodle === 'function');
+carregarModuloExportacao(ARQUIVO_DOCUMENTO_WORD, typeof baixarDocumentoWord === 'function');
+carregarModuloExportacao(ARQUIVO_EXPORTAR_WORD, typeof exportarWordAtividade === 'function');
 
 /**
  * Avisa um erro da exportação em popup (popup.js); sem ele, registra no console.

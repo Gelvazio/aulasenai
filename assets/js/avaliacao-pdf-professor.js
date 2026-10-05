@@ -4,6 +4,8 @@
 //  • "Exportar Gabarito": PROFESSOR recebe o gabarito real (só as alternativas certas); ALUNO
 //    recebe as alternativas que ele marcou na tentativa de MAIOR NOTA (lidas do banco), sem
 //    indicar quais estão certas. O gabarito real nunca fica na página.
+// Os mesmos botões têm a versão Word (assets/js/exportar-word.js): as funções recebem o formato
+// (PDF por padrão ou FORMATO_WORD_EXPORTACAO), com o mesmo controle de perfil.
 // Depende de: atividade.js, respostas-atividade-banco.js (buscarAtividadeDaPagina,
 // lerResultadoDaTentativa) e js/supabase.js.
 
@@ -16,6 +18,12 @@ const MSG_SEM_ENTREGA_PDF = 'Você ainda não entregou esta atividade: não há 
 const PERFIL_PROFESSOR_PDF = 'PROFESSOR';
 const NOTA_MAXIMA_PDF = 10;
 const MODO_SO_GABARITO_PDF = 'gabarito';
+
+/** Geradores do PDF (assets/js/atividade.js); o Word usa FORMATO_WORD_EXPORTACAO. */
+const FORMATO_PDF_EXPORTACAO = {
+    atividade: (gabarito) => exportarPDFAtividade(gabarito),
+    soGabarito: (gabarito, opcoes) => exportarSomenteGabaritoPDF(gabarito, opcoes)
+};
 
 /**
  * Avisa o usuário de um erro (popup quando disponível).
@@ -106,18 +114,19 @@ async function lerRespostasDaMelhorTentativa() {
 /**
  * Botão "Exportar PDF com gabarito" (só professor): atividade completa + gabarito real; no modo
  * "gabarito" (data-modo do botão), só o gabarito.
+ * @param {Object} [formato] - FORMATO_PDF_EXPORTACAO (padrão) ou FORMATO_WORD_EXPORTACAO.
  */
-async function exportarPdfCompletoProfessor() {
+async function exportarPdfCompletoProfessor(formato = FORMATO_PDF_EXPORTACAO) {
     try {
         if (!(await lerPerfilPdf()).ehProfessor) throw new Error(MSG_SO_PROFESSOR_PDF);
 
         const gabarito = await lerGabaritoDoBanco();
         const botao = document.getElementById(ID_BOTAO_PDF_GABARITO);
         if (botao?.dataset.modo === MODO_SO_GABARITO_PDF) {
-            exportarSomenteGabaritoPDF(gabarito);
+            formato.soGabarito(gabarito);
             return;
         }
-        exportarPDFAtividade(gabarito);
+        formato.atividade(gabarito);
     } catch (erro) {
         await avisarErroPdfGabarito(erro.message === MSG_SO_PROFESSOR_PDF
             ? erro.message : MSG_ERRO_PDF_GABARITO + erro.message);
@@ -127,18 +136,19 @@ async function exportarPdfCompletoProfessor() {
 /**
  * Botão "Exportar Gabarito": professor recebe o gabarito real; aluno, as próprias respostas da
  * tentativa de maior nota.
+ * @param {Object} [formato] - FORMATO_PDF_EXPORTACAO (padrão) ou FORMATO_WORD_EXPORTACAO.
  */
-async function exportarGabaritoPorPerfil() {
+async function exportarGabaritoPorPerfil(formato = FORMATO_PDF_EXPORTACAO) {
     try {
         const perfil = await lerPerfilPdf();
         if (!perfil.logado) throw new Error(MSG_SEM_LOGIN_PDF);
 
         if (perfil.ehProfessor) {
-            exportarSomenteGabaritoPDF(await lerGabaritoDoBanco());
+            formato.soGabarito(await lerGabaritoDoBanco());
             return;
         }
         const { linhas, melhor } = await lerRespostasDaMelhorTentativa();
-        exportarSomenteGabaritoPDF(linhas, { titulo: 'MINHAS RESPOSTAS', coluna: 'Sua resposta',
+        formato.soGabarito(linhas, { titulo: 'MINHAS RESPOSTAS', coluna: 'Sua resposta',
             arquivo: 'Minhas-Respostas',
             subtitulo: 'Tentativa ' + melhor.tentativa + ' (maior nota: ' +
                 melhor.nota.toFixed(1).replace('.', ',') + ')' });
@@ -159,6 +169,8 @@ async function mostrarBotaoGabaritoSeLogado() {
     if (perfil.logado) botao.hidden = false;
 }
 
-document.getElementById(ID_BOTAO_PDF_GABARITO)?.addEventListener('click', exportarPdfCompletoProfessor);
-document.getElementById(ID_BOTAO_SO_GABARITO)?.addEventListener('click', exportarGabaritoPorPerfil);
+document.getElementById(ID_BOTAO_PDF_GABARITO)
+    ?.addEventListener('click', () => exportarPdfCompletoProfessor());
+document.getElementById(ID_BOTAO_SO_GABARITO)
+    ?.addEventListener('click', () => exportarGabaritoPorPerfil());
 mostrarBotaoGabaritoSeLogado();

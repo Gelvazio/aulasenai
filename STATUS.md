@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 6, item 6.8 — aplicar `database/2026-10-05-equipes-turma-materia.sql` no Supabase (só com pedido do usuário) e o professor testar o menu 👥 Equipes da ITIC. Pendente anterior: Etapa 4, item 4.5.
+**Próximo passo:** Etapa 14, item 14.6 — usuário testar o botão 📝 Exportar em Word. Antes: Etapa 6, item 6.8 — aplicar `database/2026-10-05-equipes-turma-materia.sql` no Supabase (só com pedido do usuário) e o professor testar o menu 👥 Equipes da ITIC. Pendente anterior: Etapa 4, item 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -134,6 +134,16 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 13.2 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
 | 13.3 | Aceite do usuário (confere se cabe em 2 páginas na impressão) | ⬜ Pendente | — | — |
 
+## Etapa 14 — Botão "Exportar em Word" ao lado de cada exportar PDF (regra global) (pedida em 2026-10-05)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 14.1 | `assets/js/documento-word.js` (documento .doc MHTML, A4, rodapé com páginas, imagens embutidas) | ✅ Concluído | 2026-10-05 12:19 | `node --check` |
+| 14.2 | `assets/js/exportar-word.js`: Word com o layout do PDF ao lado de `btnExportarPDF`, `btnExportarPDFGabarito` e `btnExportarGabarito` (42 páginas que usam o `atividade.js`); `avaliacao-pdf-professor.js` aceita o formato PDF/Word | ✅ Concluído | 2026-10-05 12:19 | `node --check`; sem nomes globais repetidos |
+| 14.3 | `assets/js/exportar-word-pratica.js`: Word ao lado de cada "Imprimir / PDF" das práticas de Excel (capa + todas as questões, telas em PNG); `atividade-pratica-excel.js` reaproveita `montarImpressaoCompleta()` | ✅ Concluído | 2026-10-05 12:19 | `node --check` |
+| 14.4 | Regra global "EXPORTAR EM WORD" no `CLAUDE.md` (versão 2026-10-05 12:19) + lista de `assets/` | ✅ Concluído | 2026-10-05 12:19 | Visualizador de regras lê a mesma linha de versão |
+| 14.5 | Commit local | ✅ Concluído | 2026-10-05 12:19 | `git commit` |
+| 14.6 | Aceite do usuário (testar no navegador: botão ao lado do PDF e abrir o .doc no Word) | ⬜ Pendente | — | Sem navegador nesta sessão (regra do usuário) |
+
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
 |-------|--------|---------|---------|----------|
@@ -159,6 +169,7 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 ## Pendências (ficou para depois)
 | Item | Motivo | Quando retomar |
 |------|--------|----------------|
+| Botão "Exportar em Word" na apostila (`assets/js/apostila.js`) e nas páginas antigas com PDF próprio (`REFORCO_MATEMATICA.../AULAS/`) | Fora das atividades com `atividade.js`/`atividade-pratica-excel.js` | Quando forem mexidas ou a pedido do usuário |
 | Destino da pasta `Testes de Sistemas-EXISTENTES` (não é UC do curso) | Decisão do usuário | Quando o usuário decidir |
 | Renomear `BANCO_DE_DADOS` e `TESTES-DE-FRONTEND` para o padrão | Só a pedido do usuário | Quando o usuário pedir |
 | Professor conferir o conteúdo dos vídeos das duas apostilas (coluna "Vídeos conferidos pelo professor") | Só o professor valida o conteúdo | Na validação das apostilas |

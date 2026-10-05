@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-05 07:39
+**Versão das regras:** 2026-10-05 12:19
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-05 12:19 | Regra "EXPORTAR EM WORD AO LADO DE CADA EXPORTAR PDF" (global): toda exportação em PDF de atividade/avaliação tem o botão **📝 Exportar em Word** ao lado, com o mesmo layout do PDF (`assets/js/documento-word.js`, `exportar-word.js`, `exportar-word-pratica.js`) |
 | 2026-10-05 07:39 | Regra "EQUIPES POR TURMA + MATÉRIA": menu **👥 Equipes** nas páginas de atividades abre o modal com o CRUD das equipes (tabelas `equipe` e `equipe_membro`); `js/menu.js` aceita itens de ação (`acao`) |
 | 2026-10-03 20:55 | Regras "MATÉRIA MODELO: INTRODUÇÃO À TIC" (tudo segue a estrutura que funciona na ITIC) e "AULAS EXTRAÍDAS DA EMENTA EM `CONTEUDO/`" (1 aula a cada 4 h, arredondando para cima; arquivo `AULA-NN-DESCRICAO-CURTA.md`; atividades e, no final, apostila feitas a partir dessas aulas); fontes das 50 questões e da apostila apontam para `CONTEUDO/` |
 | 2026-10-03 20:47 | Regra "CONTEÚDO SÓ PELOS MARKDOWNS": para conferir ou gerar conteúdo, ler sempre os arquivos Markdown da matéria (em primeiro lugar o `EMENTA-CHALKIE-AI.md`) e **nunca extrair dados de PDF**; fonte da atividade prática de Excel ajustada |
@@ -1407,6 +1408,38 @@ Registrada em 2026-10-03. Vale para **todas** as atividades e avaliações de **
 - ✅ Página com PDF próprio (fora do `atividade.js`) carrega o `turma-exportacao.js` direto e usa
   `await obterTurmaParaExportacao()` (retorno `null` = cancelar a exportação).
 
+## 📝 REGRA CRÍTICA — EXPORTAR EM WORD AO LADO DE CADA EXPORTAR PDF (PROJETO TODO)
+
+Registrada em 2026-10-05 a pedido do usuário. Vale para **todas** as atividades e avaliações de
+**todas** as matérias (regra global do projeto).
+
+- ✅ **Ao lado de cada botão de exportar em PDF** existe o botão **📝 Exportar em Word**, com o
+  **mesmo layout e o mesmo conteúdo do PDF** (cabeçalho SENAI, capacidades, questões, gabarito
+  quando o PDF tem, rodapé "Página X de Y", folha A4 com margem de 15 mm).
+- ✅ **Mesma visibilidade e mesmas regras do PDF:** o botão de Word acompanha o `hidden` e o
+  `data-somente-perfil` do botão de PDF; o Word com gabarito só sai para o PROFESSOR (gabarito
+  lido do banco, como no PDF) e o aluno recebe só as próprias respostas; a turma vem da mesma
+  lista "Turma" da exportação.
+- ✅ **Arquivo:** `.doc` no formato MHTML (HTML + imagens embutidas), abre no Word e no
+  LibreOffice Writer. Nada é gravado no banco nem no navegador.
+- ✅ **Código único (não repetir por página):**
+  - `assets/js/documento-word.js` — monta e baixa o documento (A4, rodapé, imagens embutidas);
+  - `assets/js/exportar-word.js` — atividades e avaliações objetivas: espelha `btnExportarPDF`,
+    `btnExportarPDFGabarito` e `btnExportarGabarito` (carregado pelo `assets/js/atividade.js`;
+    os botões de gabarito usam `avaliacao-pdf-professor.js` com `FORMATO_WORD_EXPORTACAO`);
+  - `assets/js/exportar-word-pratica.js` — atividades práticas (Excel): ao lado de cada
+    `[data-acao="imprimir"]`, exporta a capa + todas as questões (o mesmo conteúdo do
+    "Imprimir / PDF"), com o estilo da página e as telas em PNG (carregado pelo
+    `assets/js/atividade-pratica-excel.js`).
+- ✅ **Página ou exportação nova em PDF** deve ganhar o botão de Word junto: usar o
+  `atividade.js` (ou o `atividade-pratica-excel.js`) e, se o PDF for feito por outro script,
+  acrescentar o espelho em `ESPELHOS_WORD` (`exportar-word.js`) ou criar o equivalente com o
+  `documento-word.js`. Mudou o layout do PDF → mudar o Word junto.
+- ⏳ **Ainda sem o botão de Word** (fazer quando forem mexidas ou a pedido): exportação dos
+  exercícios e da apostila completa (`assets/js/apostila.js`) e páginas antigas com PDF próprio
+  fora dos scripts acima (ex.: `REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO/AULAS/`, botões
+  `onclick`).
+
 ## 🪟 REGRA CRÍTICA — AVISOS AO USUÁRIO: sempre POPUP, nunca `alert()`/`confirm()`
 
 Registrada em 2026-09-30. Componente reutilizável: `assets/js/popup.js` + `assets/css/popup.css`
@@ -1693,6 +1726,9 @@ assets/
 │                        turmas-aluno-repositorio.js + turmas-aluno-pagina.js + css/
 │                        turmas-aluno.css — alunos.html da raiz (menu ALUNOS, todo professor):
 │                        CRUD da tabela `turmaaluno`;
+│                        documento-word.js + exportar-word.js + exportar-word-pratica.js —
+│                        botão "📝 Exportar em Word" ao lado de cada exportar PDF (regra
+│                        "EXPORTAR EM WORD");
 │                        exportar-banco-moodle.js + banco-moodle-xml.js — botão "📥 Banco Moodle
 │                        (AVA SENAI)" nas atividades objetivas, só professor (carregado pelo
 │                        atividade.js); o XML segue o mesmo formato do gerador-banco-ava)
