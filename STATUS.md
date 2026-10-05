@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 8, item 8.4 — aceite do trabalho em equipe da ITIC (com Brainstorming). Antes: Etapa 6, item 6.2 — aprovação do plano de equipes (`docs/equipes-sala-de-aula.md`). Pendente anterior: Etapa 4, item 4.5.
+**Próximo passo:** Etapa 9, item 9.3 — aceite do card; Etapa 8, item 8.4 — aceite do trabalho em equipe da ITIC (com Brainstorming). Antes: Etapa 6, item 6.2 — aprovação do plano de equipes (`docs/equipes-sala-de-aula.md`). Pendente anterior: Etapa 4, item 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -104,6 +104,14 @@ Tarefa pequena (1 arquivo). Entregável: `ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUA
 | 8.2 | Ajustar roteiro, estrutura, checklist e rubrica à ficha | ✅ Concluído | 2026-10-05 | Leitura |
 | 8.3 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
 | 8.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 9 — Card do trabalho em equipe no índice da ITIC (pedida em 2026-10-05)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 9.1 | Card "Trabalho em Equipe" depois da Aula 07 em `INTRODUCAO-TIC/ATIVIDADES/index.html` | ✅ Concluído | 2026-10-05 | Leitura; card com `data-sem-bloqueio` (não está na tabela `atividade`) |
+| 9.2 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
+| 9.3 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
