@@ -108,7 +108,9 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 |------|-----------|--------|--------------|-------------|
 | 12.1 | Link para `Brainstorming-Em-Equipe.pdf` (nova aba) na seção Brainstorming + estilo `.link-slide` | ✅ Concluído | 2026-10-05 | Arquivo PDF existe na pasta; leitura |
 | 12.2 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
-| 12.3 | Aceite do usuário | ⬜ Pendente | — | — |
+| 12.3 | Correção do usuário: o link vai no **card** do índice (depois de "Trabalho em Equipe"), não na página — link movido e estilo `.link-slide` removido | ✅ Concluído | 2026-10-05 | Leitura |
+| 12.4 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
+| 12.5 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
