@@ -1,87 +1,68 @@
-# Equipes de sala de aula (CRUD global, por turma)
+# Equipes de sala de aula por turma + matéria (CRUD global no menu das atividades)
 
-**Objetivo:** permitir ao professor montar, salvar e reaproveitar **equipes de alunos em qualquer
-turma** (banco de dados + tela única), começando pela turma **135080 — CEPLAS ITIC Manhã**
-(Introdução à TIC, Assistente de Operações Logísticas, 34 alunos).
+**Objetivo:** em toda página de atividade de matéria, o menu **👥 Equipes** abre um modal com as
+equipes da **matéria** da página e da **turma selecionada**, com CRUD completo (equipes e
+integrantes), começando pela Introdução à TIC (turma 135080 — CEPLAS ITIC Manhã).
 
-**Tech Stack:** Supabase (PostgreSQL + RLS + Auth), HTML5, CSS3, JavaScript vanilla
-(padrão das telas `turmas.html` / `alunos.html`).
+**Tech Stack:** Supabase (PostgreSQL + RLS + Auth), JavaScript vanilla, CSS com tokens.
 
 **Criado em:** 2026-10-05
-**Concluído em:** —
+**Concluído em:** 2026-10-05 (código); SQL aguardando aplicação no Supabase
 **Tempo decorrido:** —
 
 ---
 
-## Decisões de desenho (para aprovação)
+## Decisões (pedido do usuário em 2026-10-05)
 
-1. **Global:** uma única estrutura no banco e uma única página (`equipes.html`, na raiz), que
-   funciona para **qualquer turma** — nada fixo de matéria/curso no código. A turma é escolhida
-   numa lista (as turmas do professor; o administrador vê todas).
-2. **Equipe pertence a uma turma.** Cada turma pode ter várias equipes.
-3. **Agrupamentos (conjuntos de equipes):** a mesma turma pode ter divisões diferentes ao longo
-   do curso (ex.: "Dinâmica Aula 03", "Projeto final"). Cada agrupamento tem nome e suas equipes.
-   Dentro de um agrupamento, **o aluno fica em no máximo 1 equipe** (o banco garante).
-   *(Se preferir uma divisão só por turma, o agrupamento vira fixo "Padrão" — avisar.)*
-4. **Membros = alunos da própria turma** (`turmaaluno`); o banco recusa aluno de outra turma.
-5. **Quem pode:** professor só nas turmas vinculadas a ele (`professor_tem_turma`), administrador
-   em todas; **aluno só lê** o agrupamento/equipe dele e os colegas da mesma equipe; `anon` sem
-   acesso. Nada em localStorage.
-6. **Ajuda para montar:** botão **🎲 Sortear equipes** (informa quantidade de equipes *ou* alunos
-   por equipe; distribui equilibrado) — o resultado aparece na tela e **só grava após
-   confirmação** (popup). Depois o professor ajusta à mão (mover aluno, renomear, líder).
-7. **Líder da equipe** opcional (um membro marcado como líder).
-8. **Exportar/Imprimir** a lista de equipes do agrupamento (para levar à aula), com o campo Turma.
-
-## Modelo de dados (SQL `database/2026-10-05-equipes-sala-de-aula.sql`)
-
-| Tabela | Colunas principais | Regras |
-|---|---|---|
-| `agrupamento_equipe` | `id`, `turma_codigo` → `turma`, `nome`, `descricao`, `ativo`, `criado_em`, `criado_por` | único (`turma_codigo`, `nome`) |
-| `equipe` | `id`, `agrupamento_id` → `agrupamento_equipe` (cascade), `nome`, `cor`, `ordem`, `criado_em` | único (`agrupamento_id`, `nome`) |
-| `equipe_membro` | `id`, `equipe_id` → `equipe` (cascade), `agrupamento_id`, `aluno_id` → `auth.users`, `lider` bool, `criado_em` | único (`agrupamento_id`, `aluno_id`) = 1 equipe por aluno no agrupamento; trigger confere que o aluno está na `turmaaluno` da turma e que `agrupamento_id` = o da equipe |
-
-- RLS ligado nas 3; `anon` revogado; TRUNCATE revogado; políticas com `professor_tem_turma()`
-  (que já cobre o administrador) e, para o aluno, leitura só dos agrupamentos/equipes onde ele é
-  membro.
-- SQL idempotente, sem apagar dados. **Aplicar no Supabase só com pedido seu** (você roda no
-  SQL Editor ou pede "aplique o SQL pelo Supabase"). Antes, conferir o banco real.
+1. **Global:** o mesmo código serve a qualquer matéria e turma. A matéria vem da própria pasta
+   (as atividades cadastradas em `atividade.pagina` → `aulas` → `materia`); a turma é escolhida
+   no modal (turmas do professor; 1 turma = já selecionada; administrador vê todas).
+2. **Equipe = turma + matéria + nome** (nome único dentro da turma/matéria) e descrição.
+3. **Integrante** = aluno da turma (`turmaaluno`) com papel, tarefas combinadas e marca de
+   **líder** (no máximo 1 por equipe). Cada aluno fica em **uma** equipe por turma + matéria.
+4. **Nomes das equipes:** o professor cadastra (nada gerado automaticamente).
+5. **Professor:** CRUD só nas turmas vinculadas a ele (`professor_tem_turma`). **Aluno:** vê só
+   a própria equipe e os colegas (função `minhas_equipes`). `anon` sem acesso. Nada em
+   localStorage.
+6. **Menu:** item `{ rotulo: '👥 Equipes', acao: 'equipes', papeis: [...] }` no
+   `MENU-ATIVIDADES.js` da matéria. O `js/menu.js` passou a aceitar itens de **ação**: carrega
+   `assets/js/menu-acao-<acao>.js` no primeiro clique. Os `papeis` são só sugestões do campo Papel.
 
 ## Status Geral
 
-| Passo | Descrição | Status | Criado em | Concluído em | Tempo decorrido |
-|-------|-----------|--------|-----------|--------------|-----------------|
-| 1 | Conferir no banco real `turma`, `turmaaluno`, `professor_tem_turma()` e se não há tabelas `equipe*` | ⬜ Pendente | 2026-10-05 | — | — |
-| 2 | Escrever `database/2026-10-05-equipes-sala-de-aula.sql` (tabelas, triggers, RLS, função `sortear_equipes` opcional) | ⬜ Pendente | 2026-10-05 | — | — |
-| 3 | Atualizar `docs/database.md` + `docs/relatorio_verificacao_database.html` | ⬜ Pendente | 2026-10-05 | — | — |
-| 4 | `assets/js/equipes-repositorio.js` (só acesso a dados, cliente Supabase injetado) | ⬜ Pendente | 2026-10-05 | — | — |
-| 5 | `assets/js/equipes-sorteio.js` (função pura de distribuição equilibrada) | ⬜ Pendente | 2026-10-05 | — | — |
-| 6 | `equipes.html` (raiz) + `assets/js/equipes-pagina.js` + `assets/css/equipes.css` (popup, sem inline) | ⬜ Pendente | 2026-10-05 | — | — |
-| 7 | Menu **EQUIPES** no header para todo PROFESSOR (`js/header-usuario.js`) | ⬜ Pendente | 2026-10-05 | — | — |
-| 8 | Visão do aluno: "Minha equipe" na mesma página (só leitura) | ⬜ Pendente | 2026-10-05 | — | — |
-| 9 | Conferência por leitura + `node --check` dos JS (sem navegador) | ⬜ Pendente | 2026-10-05 | — | — |
-| 10 | Registrar regra no `CLAUDE.md` (+ versão/histórico e visualizador de regras) | ⬜ Pendente | 2026-10-05 | — | — |
-| 11 | Aplicar SQL no Supabase (**só com seu pedido**) e criar o 1º agrupamento da turma 135080 | ⬜ Pendente | 2026-10-05 | — | — |
-| 12 | Commit local (sem push) + graphify | ⬜ Pendente | 2026-10-05 | — | — |
+| Passo | Descrição | Status | Concluído em |
+|-------|-----------|--------|--------------|
+| 1 | SQL `database/2026-10-05-equipes-turma-materia.sql` (tabelas `equipe`, `equipe_membro`, triggers, RLS, `minhas_equipes`) | ✅ Concluído | 2026-10-05 |
+| 2 | `assets/js/equipes-repositorio.js` (dados, cliente injetado) | ✅ Concluído | 2026-10-05 |
+| 3 | `assets/js/equipes-modal.js` + `assets/css/equipes-modal.css` (tela) | ✅ Concluído | 2026-10-05 |
+| 4 | `assets/js/menu-acao-equipes.js` (carrega dependências e abre o modal) | ✅ Concluído | 2026-10-05 |
+| 5 | `js/menu.js`: itens de ação | ✅ Concluído | 2026-10-05 |
+| 6 | ITIC: item 👥 Equipes no `MENU-ATIVIDADES.js`; menu aplicado na página do trabalho em equipe | ✅ Concluído | 2026-10-05 |
+| 7 | `docs/database.md` + `docs/relatorio_verificacao_database.html` | ✅ Concluído | 2026-10-05 |
+| 8 | Regra no `CLAUDE.md` (versão + histórico) | ✅ Concluído | 2026-10-05 |
+| 9 | Conferência: `node --check` e leitura (sem navegador) | ✅ Concluído | 2026-10-05 |
+| 10 | Aplicar o SQL no Supabase (**só com pedido do usuário**) | ⬜ Pendente | — |
+| 11 | Teste na tela pelo professor (montar as equipes da 135080) | ⬜ Pendente | — |
+| 12 | Outras matérias: acrescentar o item no `MENU-ATIVIDADES.js` de cada uma | ⬜ Quando o usuário pedir | — |
 
-## Arquivos previstos
+## Arquivos
 
-- Novo: `database/2026-10-05-equipes-sala-de-aula.sql`, `equipes.html`,
-  `assets/js/equipes-repositorio.js`, `assets/js/equipes-sorteio.js`,
-  `assets/js/equipes-pagina.js`, `assets/css/equipes.css`.
-- Alterado: `js/header-usuario.js`, `docs/database.md`,
-  `docs/relatorio_verificacao_database.html`, `CLAUDE.md`, `assets/js/regras-modal.js` (se preciso),
-  `STATUS.md`.
+- Novos: `database/2026-10-05-equipes-turma-materia.sql`, `assets/js/equipes-repositorio.js`,
+  `assets/js/equipes-modal.js`, `assets/js/menu-acao-equipes.js`, `assets/css/equipes-modal.css`.
+- Alterados: `js/menu.js`, `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/MENU-ATIVIDADES.js`,
+  `.../ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html` (tags do menu),
+  `docs/database.md`, `docs/relatorio_verificacao_database.html`, `CLAUDE.md`, `STATUS.md`.
 
 ## Riscos
 
 | Risco | Plano B |
 |---|---|
-| Alunos da 135080 ainda não estão todos na `turmaaluno` | Passo 1 confere; vincular em `alunos.html` antes de montar equipes |
-| Professor sem vínculo na `turmaprofessor` não vê a turma | Administrador vincula em `turmas.html` |
-| Dados pessoais (LGPD) | Nomes só vêm do banco com RLS; nada de lista em arquivo versionado |
+| SQL ainda não aplicado: o modal mostra erro de tabela inexistente | Aplicar o SQL (SQL Editor ou pedido "aplique o SQL pelo Supabase") |
+| Matéria sem atividade cadastrada no banco não é identificada | Cadastrar as atividades (seed) da matéria |
+| Alunos da turma fora da `turmaaluno` não aparecem | Vincular em `alunos.html` |
+| Professor sem vínculo em `turmaprofessor` não vê a turma | Administrador vincula em `turmas.html` |
 
-## Verificação (sem navegador)
+## Verificação
 
-- `node --check` em cada `.js` novo; leitura do SQL; após aplicar (se pedido), consultas de
-  leitura confirmando tabelas, políticas e RLS ligado. Teste de tela fica com você.
+- `node --check` nos JS novos/alterados: OK. Linhas ≤ 100 caracteres.
+- Sem navegador (regra do usuário): o teste da tela fica com o professor após aplicar o SQL.

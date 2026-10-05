@@ -14,6 +14,11 @@ const CLASSE_SUBMENU_ABERTO = 'menu-atividades__grupo--aberto';
 const CLASSE_LINK_ATUAL = 'menu-atividades__link--atual';
 const ROTULO_ALTERNAR = '☰ Menu';
 const TECLA_FECHAR = 'Escape';
+// Itens { rotulo, acao } abrem um modal: o script assets/js/menu-acao-<acao>.js registra a
+// função em window.ACOES_MENU_ATIVIDADES[acao], que recebe { item, urlBase }.
+const URL_SCRIPT_MENU = document.currentScript ? document.currentScript.src : location.href;
+const PREFIXO_SCRIPT_ACAO = '../assets/js/menu-acao-';
+const NOME_REGISTRO_ACOES = 'ACOES_MENU_ATIVIDADES';
 
 /**
  * Lê os dados do menu definidos pela página.
@@ -110,13 +115,66 @@ function criarGrupo(item, urlBase) {
 }
 
 /**
- * Cria um item da barra: grupo (com subitens) ou link direto.
+ * Carrega o script da ação (uma vez) e devolve a função registrada por ele.
+ * @param {string} acao - Nome da ação (ex.: 'equipes').
+ * @returns {Promise<Function>} Função da ação.
+ * @throws {Error} Se o script não carregar ou não registrar a ação.
+ */
+async function obterFuncaoAcao(acao) {
+  const registradas = window[NOME_REGISTRO_ACOES] || {};
+  if (registradas[acao]) return registradas[acao];
+
+  const endereco = new URL(PREFIXO_SCRIPT_ACAO + acao + '.js', URL_SCRIPT_MENU).href;
+  await new Promise((resolver, rejeitar) => {
+    const script = document.createElement('script');
+    script.src = endereco;
+    script.onload = resolver;
+    script.onerror = () => rejeitar(new Error('Ação do menu indisponível: ' + acao));
+    document.head.appendChild(script);
+  });
+  const funcao = (window[NOME_REGISTRO_ACOES] || {})[acao];
+  if (!funcao) throw new Error('Ação do menu indisponível: ' + acao);
+  return funcao;
+}
+
+/**
+ * Cria o botão de um item de ação (abre um modal em vez de navegar).
+ * O script da ação é assets/js/menu-acao-<acao>.js, carregado no primeiro clique.
+ * @param {{rotulo: string, acao: string}} item - Item do menu.
+ * @param {string} urlBase - URL do arquivo de dados.
+ * @returns {HTMLButtonElement} Botão.
+ */
+function criarBotaoAcao(item, urlBase) {
+  const botao = document.createElement('button');
+  botao.type = 'button';
+  botao.className = 'menu-atividades__grupo-botao';
+  botao.textContent = item.rotulo;
+  botao.addEventListener('click', async () => {
+    fecharSubmenus(null);
+    try {
+      const executar = await obterFuncaoAcao(item.acao);
+      await executar({ item, urlBase });
+    } catch (erro) {
+      console.error(erro);
+    }
+  });
+  return botao;
+}
+
+/**
+ * Cria um item da barra: grupo (com subitens), ação (modal) ou link direto.
  * @param {Object} item - Item do menu.
  * @param {string} urlBase - URL do arquivo de dados.
  * @returns {HTMLLIElement} Item de lista.
  */
 function criarItem(item, urlBase) {
   if (Array.isArray(item.subitens)) return criarGrupo(item, urlBase);
+  if (item.acao) {
+    const linhaAcao = document.createElement('li');
+    linhaAcao.className = 'menu-atividades__item';
+    linhaAcao.appendChild(criarBotaoAcao(item, urlBase));
+    return linhaAcao;
+  }
 
   const linha = document.createElement('li');
   linha.className = 'menu-atividades__item';

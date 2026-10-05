@@ -500,6 +500,22 @@ este vínculo.
 
 ---
 
+## 👥 Atualização 2026-10-05 — Equipes por turma + matéria
+
+SQL: `database/2026-10-05-equipes-turma-materia.sql` (⏳ aguardando aplicação no Supabase).
+Plano: `docs/equipes-sala-de-aula.md`. Tela: modal **👥 Equipes** do menu das atividades.
+
+| Tabela / objeto | Campos / regra |
+|--------|---------|
+| `equipe` | `id` (identity), `turma_codigo` → `turma.codigo`, `materia_id` → `materia.id`, `nome` (único em turma + matéria), `descricao`, `criado_em`, `criado_por` |
+| `equipe_membro` | `id`, `equipe_id` → `equipe.id` (cascade), `aluno_id` → `auth.users.id`, `turma_codigo` e `materia_id` (cópias da equipe, pelo trigger), `papel`, `tarefas`, `lider`; único (`turma_codigo`, `materia_id`, `aluno_id`); índice único parcial = 1 líder por equipe |
+| `equipe_membro_preparar_trg` | copia turma/matéria da equipe e exige o aluno na `turmaaluno` da turma |
+| `equipe_bloquear_troca_turma_trg` | recusa trocar turma/matéria de equipe que tem integrantes |
+| RLS | ligado nas duas; select/insert/update/delete só com `professor_tem_turma(turma_codigo)` (administrador em todas); `anon` sem acesso; TRUNCATE revogado |
+| `minhas_equipes(p_materia_id)` | `security definer`, só `authenticated`: o aluno lê a(s) própria(s) equipe(s) da matéria com os nomes dos colegas |
+
+---
+
 ## 🔐 Segurança: RLS (Row Level Security)
 
 | Tabela | RLS | Status | Ação Recomendada |

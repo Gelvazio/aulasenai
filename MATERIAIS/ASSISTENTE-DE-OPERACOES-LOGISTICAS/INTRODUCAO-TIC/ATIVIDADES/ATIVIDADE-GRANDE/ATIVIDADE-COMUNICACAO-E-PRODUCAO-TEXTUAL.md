@@ -6,7 +6,7 @@
 - **Turma inicial:** 135080 — CEPLAS ITIC Manhã (34 alunos)
 - **Docente:** Gelvazio Camargo
 - **Página do aluno:** [TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html](TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html)
-- **Equipes (banco de dados):** plano [docs/equipes-sala-de-aula.md](../../../../../docs/equipes-sala-de-aula.md)
+- **Equipes:** nomes e composição definidos pelo professor
 - **Fontes do conteúdo:** `EMENTA-CHALKIE-AI.md` da matéria (vence) e as aulas em `../../CONTEUDO/1-*.md` a `7-*.md`
 - **Criado em:** 2026-10-05
 
@@ -18,10 +18,90 @@
 |------|-----------|--------|
 | 1 | Plano completo da atividade (este arquivo) | ✅ Concluído |
 | 2 | Página do aluno (`TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html`) | ✅ Concluído |
-| 3 | Equipes da turma 135080 gravadas no banco (CRUD de equipes) | ⬜ Pendente — depende da aprovação de `docs/equipes-sala-de-aula.md` |
+| 3 | Seção Brainstorming (papéis e tarefas de cada integrante, entregue ao professor) | ✅ Concluído |
+| 3a | Nomes e composição das equipes da turma 135080 | ⬜ Pendente — o professor providencia |
 | 4 | Item no `MENU-ATIVIDADES.js` e no `index.html` da pasta ATIVIDADES | ⬜ Pendente |
 | 5 | Gabarito/checklist de correção do professor (fora do Git) | ⬜ Pendente |
 | 6 | Aplicação em sala e correção pela rubrica | ⬜ Pendente |
+
+---
+
+## 🧠 Brainstorming — montagem da equipe e divisão dos papéis (início da atividade)
+
+> **Primeira coisa da aula, antes de abrir o editor de textos.** Duração: **25 minutos**
+> (etapa 1 do roteiro). Nada é redigido no manual antes de a Folha de Papéis ser entregue ao
+> professor.
+
+### Objetivo
+
+Reunir a equipe, conversar sobre a missão (seção 1), **dar um papel a cada aluno** e combinar,
+juntos, **o que cada um vai fazer** no manual. É a primeira prática de trabalho em equipe e
+consenso da Aula 01 — e esta reunião é a que será registrada na **Ata do Modelo 1**.
+
+### Quem conduz
+
+- O **líder** de cada equipe (indicado pelo professor junto com os nomes das equipes) conduz o
+  brainstorming.
+- O líder **atribui os papéis**, mas **ouve a equipe**: cada integrante diz em que se sente mais
+  forte (escrever, pesquisar, formatar, revisar) e a decisão final é **por consenso**.
+- Se houver discordância, o líder propõe uma solução, a equipe vota e a decisão vale para todos.
+
+### Papéis da equipe (cada aluno tem 1 papel)
+
+| Papel | Responsabilidade principal | Também faz |
+|---|---|---|
+| 🧭 **Líder (coordenador)** | Conduz o brainstorming, atribui os papéis, controla o tempo do roteiro e busca o consenso nas decisões. Entrega a Folha de Papéis ao professor. | Redige o **Modelo 1 (Ata)**; numa equipe de 4, acumula a revisão. |
+| ✍️ **Redator(a) técnico(a)** | Garante clareza, concisão, objetividade e impessoalidade em todos os modelos. | Redige os modelos que a equipe definir (ex.: Modelos 3 e 4). |
+| 🔎 **Pesquisador(a)** | Faz a pesquisa do Modelo 2, avalia as fontes (CRAAP) e monta citações e referências. | Redige o Modelo 2 e o glossário. |
+| 🎨 **Formatador(a)** | Monta o arquivo-base: página, estilos, sumário, seções, cabeçalho, rodapé, paisagem e colunas (seção 5). | Redige o modelo de formatação mais exigente (ex.: Modelo 7 em 2 colunas). |
+| 🛡️ **Revisor(a) e segurança** | Revisa com Controle de Alterações e comentários, confere ortografia, remove metadados e gera o PDF. | Redige o Modelo 5 (POP de segurança). |
+
+**Regras dos papéis:**
+- **Todo aluno tem exatamente 1 papel** e **escreve pelo menos 1 modelo** — ninguém fica só
+  "olhando".
+- **Equipe de 4:** o líder acumula o papel de revisor(a).
+- Os 7 modelos + resumo, introdução, conclusão, referências e glossário são **todos
+  distribuídos** entre os integrantes; nenhuma parte fica sem dono.
+- Críticas nos comentários são específicas, construtivas e cordiais (comunicação assertiva, sem
+  ataques pessoais).
+
+### Passo a passo do brainstorming (25 min)
+
+| Tempo | O que a equipe faz |
+|---|---|
+| 5 min | O líder lê a **missão** (seção 1) em voz alta e confere se todos entenderam o que será entregue. |
+| 5 min | **Rodada de ideias:** cada integrante diz em que papel se sente mais forte e que modelo prefere escrever. |
+| 5 min | O líder **atribui os papéis** e, por consenso, **divide os modelos e as partes** do manual. |
+| 5 min | A equipe decide, por consenso: o **tema do diagrama** (fluxo de recebimento ou linha do tempo do incidente) e o **termo a padronizar** com Localizar e Substituir. |
+| 5 min | Preencher a **Folha de Papéis** (abaixo), conferir e o líder **entregar ao professor**. |
+
+### 📋 Folha de Papéis da Equipe (preencher e entregar ao professor)
+
+**Equipe:** ______________________ **Líder:** ______________________ **Data:** ____/____/______
+
+| Integrante | Papel | Partes do manual que vai redigir | Outras tarefas combinadas | Visto |
+|---|---|---|---|---|
+| | 🧭 Líder | Modelo 1 (Ata) + | | |
+| | ✍️ Redator(a) | | | |
+| | 🔎 Pesquisador(a) | Modelo 2 + | | |
+| | 🎨 Formatador(a) | | | |
+| | 🛡️ Revisor(a) e segurança | Modelo 5 + | | |
+
+**Decisões por consenso:**
+- Tema do diagrama (figura): ______________________________________________
+- Termo padronizado com Localizar e Substituir: ______________________________
+- Quem revisa o modelo de quem (revisão cruzada, etapa 5): _______________________
+
+**Conferência antes de entregar:**
+- [ ] Todo integrante tem 1 papel.
+- [ ] Todo integrante tem ao menos 1 modelo para redigir.
+- [ ] Os 7 modelos, o resumo, a introdução, a conclusão, as referências e o glossário têm dono.
+- [ ] Revisão cruzada definida (ninguém revisa o próprio modelo).
+
+> ✅ **Entrega ao professor:** o líder entrega a Folha de Papéis (em papel ou como foto/arquivo,
+> pelo canal indicado) **antes de iniciar a etapa 2**. O professor usa essa folha para conferir a
+> participação de cada aluno na nota individual (seção 9) e a equipe a usa para escrever a Ata
+> (Modelo 1).
 
 ---
 
@@ -30,7 +110,7 @@
 | Campo | Definição |
 |---|---|
 | **Tipo** | Trabalho prático avaliativo em equipe (documento no editor de textos) |
-| **Equipes** | 4 ou 5 integrantes, cada um com um papel (seção 3) |
+| **Equipes** | 4 ou 5 integrantes (nomes definidos pelo professor), cada um com um papel definido no **Brainstorming** |
 | **Duração** | 1 aula de 4 horas (240 minutos — roteiro na seção 4) |
 | **Pontuação** | 10 pontos (rubrica na seção 9) · nota mínima: **7** |
 | **Entrega** | 2 arquivos — o editável `.docx` (ou `.odt`) e o `.pdf` final |

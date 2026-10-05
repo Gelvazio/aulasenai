@@ -442,6 +442,48 @@
       <p>Documentação perfeita. Todos os campos, tipos e relacionamentos estão corretos.</p>
     </div>
 
+    <h2>👥 Atualização 2026-10-05 — equipes por turma + matéria</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-05-equipes-turma-materia.sql</code> (⏳ aguardando aplicação no Supabase) · Tela: modal 👥 Equipes do menu das atividades</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>equipe</td>
+          <td>Tabela</td>
+          <td>id, turma_codigo → turma, materia_id → materia, nome (único na turma + matéria), descricao, criado_em, criado_por</td>
+        </tr>
+        <tr>
+          <td>equipe_membro</td>
+          <td>Tabela</td>
+          <td>id, equipe_id → equipe (cascade), aluno_id → auth.users, turma_codigo/materia_id (cópias), papel, tarefas, lider; 1 equipe por aluno na turma + matéria; 1 líder por equipe</td>
+        </tr>
+        <tr>
+          <td>equipe_membro_preparar_trg</td>
+          <td>Trigger</td>
+          <td>Copia turma/matéria da equipe e recusa aluno fora da turmaaluno</td>
+        </tr>
+        <tr>
+          <td>equipe_bloquear_troca_turma_trg</td>
+          <td>Trigger</td>
+          <td>Recusa trocar turma/matéria de equipe com integrantes</td>
+        </tr>
+        <tr>
+          <td>RLS</td>
+          <td>Políticas</td>
+          <td>Leitura e gravação só com professor_tem_turma(turma_codigo); anon sem acesso; TRUNCATE revogado</td>
+        </tr>
+        <tr>
+          <td>minhas_equipes(materia)</td>
+          <td>Função</td>
+          <td>security definer: o aluno lê a própria equipe da matéria com os nomes dos colegas</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🎓 Atualização 2026-10-03 — curso da turma e cursos do usuário logado</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-03-turma-curso-e-cursos-do-usuario.sql</code> (aplicado em 2026-10-03)</p>

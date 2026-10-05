@@ -8,6 +8,17 @@ window.MENU_ATIVIDADES = {
     { rotulo: '📚 Índice', link: 'index.html' },
     { rotulo: '📘 Apostila', link: '../APOSTILA/APOSTILA-INTRODUCAO-TIC.html' },
     {
+      rotulo: '👥 Equipes',
+      acao: 'equipes',
+      papeis: [
+        'Líder (coordenador)',
+        'Redator(a) técnico(a)',
+        'Pesquisador(a)',
+        'Formatador(a)',
+        'Revisor(a) e segurança',
+      ],
+    },
+    {
       rotulo: '👥 Trabalho em equipe (Aulas 01 a 07)',
       link: 'ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html',
     },

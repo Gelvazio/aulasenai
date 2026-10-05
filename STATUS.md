@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 9, item 9.3 — aceite do card; Etapa 8, item 8.4 — aceite do trabalho em equipe da ITIC (com Brainstorming). Antes: Etapa 6, item 6.2 — aprovação do plano de equipes (`docs/equipes-sala-de-aula.md`). Pendente anterior: Etapa 4, item 4.5.
+**Próximo passo:** Etapa 6, item 6.8 — aplicar `database/2026-10-05-equipes-turma-materia.sql` no Supabase (só com pedido do usuário) e o professor testar o menu 👥 Equipes da ITIC. Pendente anterior: Etapa 4, item 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -66,52 +66,22 @@ Cada capítulo: fonte `CAPITULO-NN.md` → `--markdown` (conferência 100%) → 
 | 4.5 | Tirar as dúvidas da regra com o usuário e ajustar o texto conforme as respostas | 🔄 Em progresso | — | — |
 | 4.6 | Aceite do usuário | ⬜ Pendente | — | — |
 
-## Etapa 6 — Equipes de sala de aula: CRUD global por turma, começando pela 135080 (CEPLAS ITIC Manhã) (pedida em 2026-10-05)
+## Etapa 6 — Equipes por turma + matéria: menu 👥 Equipes com CRUD nas atividades (pedida em 2026-10-05)
 
-Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 6.1 | Plano em `docs/equipes-sala-de-aula.md` | ✅ Concluído | 2026-10-05 | Arquivo criado |
-| 6.1a | Plano completo da atividade em equipe em `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-GRANDE/ATIVIDADE-COMUNICACAO-E-PRODUCAO-TEXTUAL.md` | ✅ Concluído | 2026-10-05 | Conteúdo conferido com a página `TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html` |
-| 6.2 | Aprovação do plano pelo usuário | 🔄 Em progresso | — | Resposta do usuário |
-| 6.3 | Executar passos 1 a 10 do plano | ⬜ Pendente | — | `node --check` + leitura |
-| 6.4 | Aplicar SQL no Supabase (só com pedido) e 1º agrupamento da 135080 | ⬜ Pendente | — | Consultas de leitura |
-| 6.5 | Commit local | ⬜ Pendente | — | `git commit` |
-| 6.6 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 7 — Trabalho em equipe ITIC (agrupador das aulas 1 a 7) (pedida em 2026-10-05)
-
-Tarefa pequena (1 página HTML + 1 CSS). Fonte: os `.md` de `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-GRANDE/`
-(nunca os PDF). Entregável: `ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html`.
+Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade da ITIC:
+`MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-GRANDE/ATIVIDADE-COMUNICACAO-E-PRODUCAO-TEXTUAL.md`
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 7.1 | Ler os 7 Markdowns das aulas (1 a 7) | ✅ Concluído | 2026-10-05 | Leitura dos `.md` |
-| 7.2 | CSS reaproveitável `assets/css/atividade-equipe.css` | ✅ Concluído | 2026-10-05 | Leitura |
-| 7.3 | Página HTML do trabalho (formatação da aula 6 + modelos da aula 7 + cobertura das aulas 1–5) | ✅ Concluído | 2026-10-05 | 384 linhas, sem `<style>`/`<script>` embutidos |
-| 7.4 | Item no `MENU-ATIVIDADES.js` | ✅ Concluído | 2026-10-05 | `node --check` OK |
-| 7.5 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
-| 7.6 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 8 — Seção "Brainstorming" no trabalho em equipe da ITIC (pedida em 2026-10-05)
-
-Tarefa pequena (1 arquivo). Entregável: `ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html`.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 8.1 | Seção Brainstorming no início: líder atribui papéis, equipe define tarefas por consenso, Ficha de papéis entregue ao professor e anotada no Apêndice A | ✅ Concluído | 2026-10-05 | Leitura; seções renumeradas (1 a 8) |
-| 8.2 | Ajustar roteiro, estrutura, checklist e rubrica à ficha | ✅ Concluído | 2026-10-05 | Leitura |
-| 8.3 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
-| 8.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 9 — Card do trabalho em equipe no índice da ITIC (pedida em 2026-10-05)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 9.1 | Card "Trabalho em Equipe" depois da Aula 07 em `INTRODUCAO-TIC/ATIVIDADES/index.html` | ✅ Concluído | 2026-10-05 | Leitura; card com `data-sem-bloqueio` (não está na tabela `atividade`) |
-| 9.2 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
-| 9.3 | Aceite do usuário | ⬜ Pendente | — | — |
+| 6.1 | Plano em `docs/equipes-sala-de-aula.md` (escopo revisto: turma + matéria, menu nas atividades) | ✅ Concluído | 2026-10-05 07:40 | Arquivo |
+| 6.2 | Plano completo da atividade em equipe com a seção Brainstorming (papéis definidos pelo líder e entregues ao professor) | ✅ Concluído | 2026-10-05 07:30 | Leitura do `.md` |
+| 6.3 | SQL `database/2026-10-05-equipes-turma-materia.sql` | ✅ Concluído | 2026-10-05 07:35 | Leitura (idempotente, RLS) |
+| 6.4 | Repositório, modal, CSS, ação do menu e `js/menu.js` com itens de ação | ✅ Concluído | 2026-10-05 07:38 | `node --check` + linhas ≤ 100 |
+| 6.5 | ITIC: item 👥 Equipes no menu; menu aplicado na página do trabalho em equipe | ✅ Concluído | 2026-10-05 07:38 | `tags_menu.py` + `node --check` |
+| 6.6 | `database.md`, relatório HTML e regra no `CLAUDE.md` (versão 2026-10-05 07:39) | ✅ Concluído | 2026-10-05 07:40 | Leitura; visualizador lê a mesma linha de versão |
+| 6.7 | Commit local | ✅ Concluído | 2026-10-05 07:41 | `git commit` |
+| 6.8 | Aplicar o SQL no Supabase (só com pedido do usuário) | ⬜ Pendente | — | Consultas de leitura |
+| 6.9 | Teste na tela pelo professor e aceite (equipes da turma 135080) | ⬜ Pendente | — | — |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
@@ -125,6 +95,7 @@ Tarefa pequena (1 arquivo). Entregável: `ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUA
 ## Registro de decisões
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-05 | Equipes por turma + matéria, CRUD no modal do menu 👥 Equipes das atividades; nomes das equipes cadastrados pelo professor | Usuário | Pedido em 2026-10-05 (escopo revisto do plano inicial) |
 | 2026-10-03 | Criar este `STATUS.md` na raiz | Claude (regra global) | Regra "STATUS.md em toda tarefa" |
 | 2026-10-03 | Apostila de Testes de Frontend: cobertura mínima de **70%** (e não 80%, como dizem os slides das aulas 9 e 10) | Claude (regra "a ementa vence") | A ementa da matéria (SA 2 e avaliação prática) fixa 70%; slides divergentes seguem a ementa |
 | 2026-10-03 | Testes de Frontend não tem `MENU-ATIVIDADES.js`: o link "📘 Apostila" foi posto nos botões da página da matéria (`index.html`) | Claude | Equivalente ao item de menu da ITIC, sem criar estrutura nova |

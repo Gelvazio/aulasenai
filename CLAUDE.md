@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-03 20:55
+**Versão das regras:** 2026-10-05 07:39
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-05 07:39 | Regra "EQUIPES POR TURMA + MATÉRIA": menu **👥 Equipes** nas páginas de atividades abre o modal com o CRUD das equipes (tabelas `equipe` e `equipe_membro`); `js/menu.js` aceita itens de ação (`acao`) |
 | 2026-10-03 20:55 | Regras "MATÉRIA MODELO: INTRODUÇÃO À TIC" (tudo segue a estrutura que funciona na ITIC) e "AULAS EXTRAÍDAS DA EMENTA EM `CONTEUDO/`" (1 aula a cada 4 h, arredondando para cima; arquivo `AULA-NN-DESCRICAO-CURTA.md`; atividades e, no final, apostila feitas a partir dessas aulas); fontes das 50 questões e da apostila apontam para `CONTEUDO/` |
 | 2026-10-03 20:47 | Regra "CONTEÚDO SÓ PELOS MARKDOWNS": para conferir ou gerar conteúdo, ler sempre os arquivos Markdown da matéria (em primeiro lugar o `EMENTA-CHALKIE-AI.md`) e **nunca extrair dados de PDF**; fonte da atividade prática de Excel ajustada |
 | 2026-10-03 19:04 | Apostilas: conferência com a ementa aceita os formatos de ementa das diferentes matérias (ex.: Testes de Frontend) e **reprova** seção da ementa não reconhecida; Markdown completo pode ser montado antes do 1º capítulo; introdução com "Competência integradora" ou "Situações de aprendizagem", conforme a ementa |
@@ -1529,6 +1530,29 @@ SQL: `database/2026-10-02-turmaaluno.sql` (aplicado no banco).
   - código novo que precise da turma do aluno lê a `turmaaluno` (ou a cópia `aluno.turma_codigo`,
     só para leitura).
 
+## 👥 REGRA — EQUIPES POR TURMA + MATÉRIA (MENU 👥 EQUIPES NAS ATIVIDADES)
+
+Registrada em 2026-10-05 a pedido do usuário. Plano: `docs/equipes-sala-de-aula.md`;
+SQL: `database/2026-10-05-equipes-turma-materia.sql` (⏳ aplicar no Supabase só com pedido).
+
+- ✅ **Global:** as equipes valem para qualquer matéria e turma. Equipe = **turma + matéria +
+  nome** (tabela `equipe`); integrante = aluno da turma (`turmaaluno`) com papel, tarefas e
+  líder (tabela `equipe_membro`). **1 equipe por aluno** em cada turma + matéria; **1 líder** por
+  equipe. Os nomes das equipes são cadastrados pelo professor.
+- ✅ **Tela:** item `{ rotulo: '👥 Equipes', acao: 'equipes', papeis: [...] }` no
+  `MENU-ATIVIDADES.js` da matéria → modal com a turma selecionada (1 turma = já vem
+  selecionada) e CRUD completo de equipes e integrantes; `papeis` são só sugestões do campo.
+  A matéria vem da própria pasta (`atividade.pagina` → `aulas` → `materia`).
+- ✅ **Quem pode:** professor só nas turmas vinculadas a ele (`professor_tem_turma`; o
+  administrador em todas). O aluno só **vê** a própria equipe (função `minhas_equipes`). Nada em
+  localStorage; avisos pelo popup.
+- ✅ **Código:** `assets/js/menu-acao-equipes.js` (carrega as dependências e abre),
+  `assets/js/equipes-modal.js` (tela), `assets/js/equipes-repositorio.js` (dados) +
+  `assets/css/equipes-modal.css`. O `js/menu.js` aceita itens de **ação**: `{ rotulo, acao }`
+  carrega `assets/js/menu-acao-<acao>.js`, que registra `window.ACOES_MENU_ATIVIDADES[acao]`.
+- ✅ **Matérias com o menu:** Introdução à TIC (2026-10-05). Outras matérias recebem o item no
+  `MENU-ATIVIDADES.js` quando o usuário pedir (regra das matérias semelhantes).
+
 ## 🔑 REGRA CRÍTICA — GABARITO COM AS RESPOSTAS CERTAS: SÓ O PROFESSOR
 
 Registrada em 2026-09-30. Vale para **todos os alunos**, sem exceção.
@@ -2281,3 +2305,6 @@ faltava. Vale para **todas as matérias**.
 - ⛔ Não há conector Supabase/SQL disponível nesta sessão. O usuário recebeu consultas somente de leitura para executar no SQL Editor e fornecer os resultados. Não afirmar que `cursoprofessor` existe no banco remoto antes da aplicação confirmada da migração.
 - ✅ Não foram executados testes, navegador ou servidor; essa restrição continua valendo.
 - 📄 Registro desta atualização: `docs/registro-vinculos-cursos-professor-2026-10-03.md`.
+
+## PASTAS A SEREM IGNORADAS DENTRO DA PASTA **MATERIAIS**
+- ✅ LISTA DE PASTAS A SEREM IGNORADAS, OU SEJA, QUE NAO SAO CURSOS:*AGENDA_COLABORADOR* - Esta pasta tem suas proprias regras e não segue as regras das demais pastas.
