@@ -124,6 +124,7 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 13.6 | Commit local (só o `STATUS.md`) | ✅ Concluído | 2026-10-05 10:21 | `git commit` |
 | 13.7 | Documento vira pedido de liberação e entrega do celular à instituição de acolhimento; turma 135080 (AI AOPL 2026/2 M1) preenchida; campo do celular (marca, modelo, cor); recolhimento pelo responsável da instituição; assinaturas da instituição, professor e aluno | ✅ Concluído | 2026-10-05 10:40 | Aberto no Word: 4 páginas, 1 por aluno |
 | 13.8 | Acrescentar Adriel Toresani Steffens, Josiel de Nascimento e Ederson de Souza Fausto (turma 135081 — AI AOPL 2026/2 V1, tarde) | ✅ Concluído | 2026-10-05 10:50 | Aberto no Word: 7 páginas, 1 por aluno |
+| 13.9 | Documento único: lista dos 7 alunos no início (nº, nome, turma, celular, liberado Sim/Não) e depois o pedido uma vez só; gravado como `PEDIDO-CELULAR-INSTITUICAO-ACOLHIMENTO.docx` (o arquivo antigo estava aberto no Word) | ✅ Concluído | 2026-10-05 11:05 | Aberto no Word: 1 página A4 |
 
 ## Etapa 13 — Versão resumida do trabalho em equipe da ITIC (pedida em 2026-10-05)
 
