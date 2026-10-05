@@ -51,9 +51,25 @@
 
   body.exportar-pagina .cabecalho-exportacao__linha { margin: 0; }
 
+  /* Cartões grandes podem continuar na página seguinte (se não, o navegador empurra o cartão
+     inteiro e deixa uma página quase em branco); só blocos pequenos ficam inteiros. */
   body.exportar-pagina .aula-card,
-  body.exportar-pagina .content-box,
-  body.exportar-pagina tr {
+  body.exportar-pagina .content-box {
+    break-inside: auto;
+  }
+
+  body.exportar-pagina tr,
+  body.exportar-pagina li,
+  body.exportar-pagina .modelo-texto,
+  body.exportar-pagina .alerta-equipe,
+  body.exportar-pagina .quadro-capacidades {
     break-inside: avoid;
+  }
+
+  /* Título não fica sozinho no fim da página. */
+  body.exportar-pagina .aula-badge,
+  body.exportar-pagina .aula-title,
+  body.exportar-pagina .content-label {
+    break-after: avoid;
   }
 }
