@@ -86,6 +86,14 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 6.8 | Aplicar o SQL no Supabase (só com pedido do usuário) | ⬜ Pendente | — | Consultas de leitura |
 | 6.9 | Teste na tela pelo professor e aceite (equipes da turma 135080) | ⬜ Pendente | — | — |
 
+## Etapa 10 — Detalhar a "Missão da equipe" do trabalho em equipe da ITIC (pedida em 2026-10-05)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 10.1 | "Como a equipe executa a missão" (7 passos) e tabela com tudo o que o relatório técnico deve ter, em ordem (15 partes) | ✅ Concluído | 2026-10-05 | Leitura |
+| 10.2 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
+| 10.3 | Aceite do usuário | ⬜ Pendente | — | — |
+
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
 |-------|--------|---------|---------|----------|
