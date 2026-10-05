@@ -120,6 +120,14 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 13.2 | Commit local (só o `STATUS.md`; o `.docx` é ignorado pelo Git) | ✅ Concluído | 2026-10-05 10:06 | `git commit` |
 | 13.3 | Aceite do usuário | ⬜ Pendente | — | — |
 
+## Etapa 13 — Versão resumida do trabalho em equipe da ITIC (pedida em 2026-10-05)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 13.1 | `ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-SIMPLES.html` (resumo em até 2 páginas A4) + estilos `.pagina-simples` | ✅ Concluído | 2026-10-05 | Leitura; sem link no card nem no menu, a pedido do usuário |
+| 13.2 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
+| 13.3 | Aceite do usuário (confere se cabe em 2 páginas na impressão) | ⬜ Pendente | — | — |
+
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
 |-------|--------|---------|---------|----------|

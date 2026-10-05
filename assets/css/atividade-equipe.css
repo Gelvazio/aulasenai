@@ -80,3 +80,24 @@
     .container { box-shadow: none; }
     .aula-card { break-inside: avoid; }
 }
+
+/* Versão resumida (cabe em até 2 folhas A4 na impressão). */
+.pagina-simples .content-section { padding: 24px; }
+.pagina-simples .aula-card { padding: 14px 16px; margin-bottom: 12px; }
+.pagina-simples .lista-equipe { font-size: 13px; }
+.pagina-simples .lista-equipe li { margin-bottom: 2px; }
+.pagina-simples .tabela-equipe { font-size: 12px; }
+.pagina-simples .tabela-equipe th,
+.pagina-simples .tabela-equipe td { padding: 4px 7px; }
+.colunas-simples { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 700px) { .colunas-simples { grid-template-columns: 1fr; } }
+
+@media print {
+    @page { size: A4; margin: 12mm; }
+    .pagina-simples header { padding: 12px; }
+    .pagina-simples header h1 { font-size: 20px; }
+    .pagina-simples .content-section { padding: 0; }
+    .pagina-simples .aula-card { padding: 8px 10px; margin-bottom: 8px; }
+    .pagina-simples .voltar,
+    .pagina-simples #header-usuario { display: none; }
+}
