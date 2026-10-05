@@ -16,8 +16,9 @@ const TEXTO_BOTAO_WORD_PAGINA = '📝 Exportar em Word';
 const TEXTO_PREPARANDO_WORD_PAGINA = '⏳ Preparando o Word...';
 const MSG_ERRO_WORD_PAGINA = 'Não foi possível gerar o Word: ';
 const ROTA_DOCUMENTO_WORD = 'documento-word.js';
-// Cabeçalho do PDF (só na impressão): dados lidos do <body> (data-uc, data-curso, data-docente,
-// data-turma). Sem data-turma, a linha da turma fica em branco para preencher à mão.
+// Cabeçalho do PDF (só na impressão): matéria, curso e professor vêm do <body> (data-uc,
+// data-curso, data-docente); a TURMA é a turma favorita do banco (turma.favorito), lida na hora
+// de exportar. Sem favorita (ou sem acesso ao banco), usa data-turma; sem ele, linha em branco.
 const CLASSE_CABECALHO_EXPORTACAO = 'cabecalho-exportacao';
 const TITULO_CABECALHO_EXPORTACAO = 'SENAI — Serviço Nacional de Aprendizagem Industrial';
 const CAMPOS_CABECALHO_EXPORTACAO = [
@@ -27,6 +28,8 @@ const CAMPOS_CABECALHO_EXPORTACAO = [
   { rotulo: 'Turma', dado: 'turma' },
 ];
 const LINHA_EM_BRANCO_EXPORTACAO = '______________________________';
+const URL_SUPABASE_EXPORTACAO = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+const ROTA_SUPABASE_EXPORTACAO = '../../js/supabase.js';
 const SELETOR_RAIZ_EXPORTACAO = '.container';
 const SELETOR_FORA_EXPORTACAO = 'button, input, select, textarea, nav, script, style, noscript, '
   + '.export-bar, .voltar, .restricao-turma-aviso, #header-usuario';
@@ -176,7 +179,7 @@ async function exportarWordPagina(botao) {
  * @returns {void}
  */
 function prepararBotaoExportarPagina(botaoPdf) {
-  botaoPdf.addEventListener('click', () => window.print());
+  botaoPdf.addEventListener('click', () => exportarPdfPagina(botaoPdf));
   const semWord = botaoPdf.dataset.word === 'nao';
   const proximo = botaoPdf.nextElementSibling;
   if (semWord || proximo?.dataset.acao === ACAO_WORD_PAGINA) return;
@@ -201,7 +204,10 @@ function criarLinhaCabecalhoExportacao(rotulo, valor) {
   linha.className = CLASSE_CABECALHO_EXPORTACAO + '__linha';
   const nome = document.createElement('strong');
   nome.textContent = rotulo + ': ';
-  linha.append(nome, valor || LINHA_EM_BRANCO_EXPORTACAO);
+  const campo = document.createElement('span');
+  campo.dataset.campo = rotulo;
+  campo.textContent = valor || LINHA_EM_BRANCO_EXPORTACAO;
+  linha.append(nome, campo);
   return linha;
 }
 
@@ -226,6 +232,68 @@ function montarCabecalhoExportacao() {
   const data = new Date().toLocaleDateString('pt-BR');
   cabecalho.append(titulo, ...linhas, criarLinhaCabecalhoExportacao('Data', data));
   raiz.prepend(cabecalho);
+}
+
+/**
+ * Carrega um script (uma vez) e espera ele terminar.
+ * @param {string} endereco - URL do script.
+ * @returns {Promise<void>}
+ */
+function carregarScriptExportacao(endereco) {
+  return new Promise((resolver, rejeitar) => {
+    const script = document.createElement('script');
+    script.src = endereco;
+    script.onload = () => resolver();
+    script.onerror = () => rejeitar(new Error('Falha ao carregar ' + endereco));
+    document.head.appendChild(script);
+  });
+}
+
+/**
+ * Garante o cliente do Supabase (supabase-js + js/supabase.js), carregando o que faltar.
+ * @returns {Promise<Object|null>} Cliente do Supabase ou null.
+ */
+async function obterClienteExportacao() {
+  if (!window.supabase?.createClient) await carregarScriptExportacao(URL_SUPABASE_EXPORTACAO);
+  if (typeof obterClienteSupabase !== 'function') {
+    const rota = new URL(ROTA_SUPABASE_EXPORTACAO, RAIZ_EXPORTAR_PAGINA).href;
+    await carregarScriptExportacao(rota);
+  }
+  return obterClienteSupabase();
+}
+
+/**
+ * Busca a turma favorita no banco e monta o texto "nome · turno (código)".
+ * @returns {Promise<string>} Texto da turma ou vazio (sem favorita ou sem acesso).
+ */
+async function buscarTextoTurmaFavorita() {
+  try {
+    const cliente = await obterClienteExportacao();
+    const { data, error } = await cliente.from('turma').select('codigo,nome,turno')
+      .eq('favorito', true).limit(1);
+    if (error || !data?.length) return '';
+
+    const turma = data[0];
+    const partes = [turma.nome || turma.codigo, turma.turno].filter(Boolean).join(' · ');
+    return partes + ' (' + turma.codigo + ')';
+  } catch (erro) {
+    return '';
+  }
+}
+
+/**
+ * Preenche a turma do cabeçalho com a turma favorita e abre a impressão (PDF).
+ * @param {HTMLButtonElement} botao - Botão "Exportar Para PDF".
+ * @returns {Promise<void>}
+ */
+async function exportarPdfPagina(botao) {
+  botao.disabled = true;
+  const campoTurma = document.querySelector('.' + CLASSE_CABECALHO_EXPORTACAO
+    + ' [data-campo="Turma"]');
+  const turmaFavorita = await buscarTextoTurmaFavorita();
+  if (campoTurma && turmaFavorita) campoTurma.textContent = turmaFavorita;
+  botao.disabled = false;
+  window.print();
 }
 
 /**
