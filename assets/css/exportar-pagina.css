@@ -10,7 +10,16 @@
 .cabecalho-exportacao { display: none; }
 
 @media print {
-  @page { size: A4; margin: 10mm; }
+  /* Margem de cima e de baixo = 0: o navegador deixa de imprimir o endereço da página, a data
+     e "1/16" (o cabeçalho e o rodapé dele ficam nessa margem). O espaço de cima e de baixo
+     vem do padding do .container, repetido em cada folha (box-decoration-break: clone). */
+  @page { size: A4; margin: 0 10mm; }
+
+  body.exportar-pagina .container {
+    padding: 10mm 0;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
 
   /* Cores e fundos iguais aos da tela. */
   body.exportar-pagina,
