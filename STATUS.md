@@ -73,6 +73,7 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md)
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 6.1 | Plano em `docs/equipes-sala-de-aula.md` | ✅ Concluído | 2026-10-05 | Arquivo criado |
+| 6.1a | Plano completo da atividade em equipe em `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-GRANDE/ATIVIDADE-COMUNICACAO-E-PRODUCAO-TEXTUAL.md` | ✅ Concluído | 2026-10-05 | Conteúdo conferido com a página `TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html` |
 | 6.2 | Aprovação do plano pelo usuário | 🔄 Em progresso | — | Resposta do usuário |
 | 6.3 | Executar passos 1 a 10 do plano | ⬜ Pendente | — | `node --check` + leitura |
 | 6.4 | Aplicar SQL no Supabase (só com pedido) e 1º agrupamento da 135080 | ⬜ Pendente | — | Consultas de leitura |
