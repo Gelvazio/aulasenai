@@ -38,3 +38,13 @@
 }
 .header-usuario__menu-link:hover { background: #f7941d; }
 button.header-usuario__menu-link { background: transparent; font-family: inherit; cursor: pointer; }
+
+/* Celular: a barra quebra em linhas em vez de passar da largura da tela. */
+@media (max-width: 600px) {
+    .header-usuario__barra { flex-wrap: wrap; gap: 8px; padding: 8px 10px; font-size: 14px; }
+    .header-usuario__nome { flex: 1 1 100%; order: -1; overflow-wrap: anywhere; }
+    .header-usuario__home { margin-right: 0; }
+    .header-usuario__menu { flex: 1 1 100%; gap: 6px; }
+    .header-usuario__menu-link { padding: 6px 12px; font-size: 13px; }
+    .header-usuario__botao { padding: 8px 16px; }
+}

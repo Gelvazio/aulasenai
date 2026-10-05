@@ -179,4 +179,6 @@
 @media (max-width: 600px) {
     .topico-resposta { padding: 10px; }
     .topico-resposta__rodape { flex-direction: column; }
+    /* 16 px evita o zoom automático do celular ao tocar no campo. */
+    .topico-resposta__campo { font-size: 16px; }
 }

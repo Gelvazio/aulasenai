@@ -29,6 +29,10 @@ body.restrito-turma:not(.restrito-turma--liberado) footer {
   font-weight: 500;
 }
 
+@media (max-width: 600px) {
+  .restricao-turma-aviso { margin: 12px 10px; font-size: 15px; }
+}
+
 @media print {
   .restricao-turma-aviso--professor { display: none; }
 }

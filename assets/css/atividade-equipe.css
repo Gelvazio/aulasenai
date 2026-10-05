@@ -92,6 +92,21 @@
 .colunas-simples { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 @media (max-width: 700px) { .colunas-simples { grid-template-columns: 1fr; } }
 
+/* Celular: tabelas roláveis na horizontal (mesmo fora de .tabela-equipe-rolagem),
+   listas com menos recuo e textos-modelo sem estourar a largura. */
+@media (max-width: 600px) {
+    .tabela-equipe { display: block; overflow-x: auto; font-size: 14px; }
+    .tabela-equipe th,
+    .tabela-equipe td { padding: 8px 7px; min-width: 90px; }
+    .lista-equipe { margin-left: 18px; font-size: 16px; line-height: 1.5; }
+    .lista-equipe .lista-equipe { margin-left: 14px; font-size: 15px; }
+    .lista-equipe li { margin-bottom: 6px; overflow-wrap: anywhere; }
+    .modelo-texto { font-size: 14px; padding: 10px; overflow-wrap: anywhere; }
+    .alerta-equipe { font-size: 15px; padding: 10px 12px; }
+    .regra-ouro { font-size: 15px; padding: 14px 12px; }
+    code { overflow-wrap: anywhere; }
+}
+
 @media print {
     @page { size: A4; margin: 12mm; }
     .pagina-simples header { padding: 12px; }

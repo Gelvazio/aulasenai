@@ -139,6 +139,16 @@
 .equipes-sem-equipe { margin-top: 14px; }
 .equipes-sem-equipe__nomes { margin: 0; color: var(--equipes-suave); }
 
+/* Celular: modal em tela cheia, uma coluna e campos de 16 px (sem zoom automático). */
+@media (max-width: 600px) {
+  .equipes-fundo { padding: 0; align-items: stretch; }
+  .equipes-caixa { max-height: 100vh; border-radius: 0; padding: 14px 12px; }
+  .equipes-formularios,
+  .equipes-lista { grid-template-columns: 1fr; }
+  .equipes-controle { font-size: 16px; }
+  .equipes-btn { padding: 9px 14px; }
+}
+
 @media print {
   .equipes-fundo { display: none; }
 }

@@ -125,6 +125,14 @@
 @media (max-width: 640px) {
     .folha-respostas { padding: 12px; }
     .folha-respostas__colunas { grid-template-columns: 1fr; }
+    .folha-respostas__cabecalho { grid-template-columns: 1fr; }
+    .folha-respostas__campo--direita { grid-column: auto; }
+    .folha-respostas__tabela { font-size: 14px; }
+    .folha-respostas__tabela th,
+    .folha-respostas__tabela td { padding: 6px 4px; }
+    .folha-respostas__acoes { flex-direction: column; }
+    /* 16 px evita o zoom automático do celular ao tocar no campo. */
+    .identificacao-estudante__campo { font-size: 16px; max-width: 100%; width: 100%; }
 }
 
 /* Impressão só da folha (botão "Imprimir folha de respostas") */
