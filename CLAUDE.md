@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-05 13:17
+**Versão das regras:** 2026-10-05 13:37
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-05 13:37 | Regra "BLOQUEIO DE ATIVIDADE POR TURMA": o interruptor do índice vale só para a **turma favorita** (coluna `atividade.bloqueio` com os códigos das turmas bloqueadas; sem vínculo = liberado; função `definir_bloqueio_turma`); relatório de atividades considera a turma |
 | 2026-10-05 13:17 | Regra "PÁGINA VISÍVEL SÓ PARA ALGUMAS TURMAS": `assets/js/restricao-turma.js` + `data-turmas-permitidas` (turma descoberta pelo aluno logado na `turmaaluno`) |
 | 2026-10-05 12:19 | Regra "EXPORTAR EM WORD AO LADO DE CADA EXPORTAR PDF" (global): toda exportação em PDF de atividade/avaliação tem o botão **📝 Exportar em Word** ao lado, com o mesmo layout do PDF (`assets/js/documento-word.js`, `exportar-word.js`, `exportar-word-pratica.js`) |
 | 2026-10-05 07:39 | Regra "EQUIPES POR TURMA + MATÉRIA": menu **👥 Equipes** nas páginas de atividades abre o modal com o CRUD das equipes (tabelas `equipe` e `equipe_membro`); `js/menu.js` aceita itens de ação (`acao`) |
@@ -1770,9 +1771,10 @@ assets/
                          (sem data vão para o fim). Preserva índices sem o marcador, salvo
                          `--forcar <pasta ATIVIDADES>`.
                          Rodar de novo sempre que surgir curso, matéria ou atividade.
-                         Liberar/bloquear atividade = BANCO DE DADOS (atividade.ativo): o professor usa o
-                         interruptor de cada card (assets/js/indice-atividades-bloqueio.js), que se
-                         chama "Bloquear" (liberada) ou "Desbloquear" (bloqueada).
+                         Liberar/bloquear atividade = BANCO DE DADOS, POR TURMA (atividade.bloqueio;
+                         atividade.ativo = false bloqueia todas): o professor usa o interruptor de
+                         cada card (assets/js/indice-atividades-bloqueio.js), que vale só para a
+                         turma favorita: "Bloquear (turma X)" / "Desbloquear (turma X)".
                          Não existe mais lista em arquivo (ATIVIDADES-LIBERADAS.js foi removida).
 ├─ gerador-avaliacao-media-final/ → gerar_avaliacao_media_final.py + template: gera a
 │                        AVALIACAO-MEDIA-FINAL.html (composição da nota, 100 pontos) de cada matéria a
@@ -1849,6 +1851,27 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   matérias): no card do professor, o interruptor se chama **"Desbloquear"** quando a atividade
   está bloqueada e **"Bloquear"** quando está liberada; o nome muda na hora ao clicar. Fica no
   script genérico `assets/js/indice-atividades-bloqueio.js` (não repetir por matéria).
+- ✅ **BLOQUEIO DE ATIVIDADE POR TURMA — REGRA GLOBAL** (2026-10-05, índices de **todas** as
+  matérias; plano `docs/bloqueio-atividade-por-turma-favorita.md`; SQL
+  `database/2026-10-05-bloqueio-atividade-por-turma.sql`, aplicado no banco):
+  - o interruptor **Bloquear/Desbloquear** do card vale **só para a turma favorita**
+    (`turma.favorito`) e mostra a turma: "Bloquear (turma X)" / "Desbloquear (turma X)". **As
+    outras turmas não são afetadas.** Sem turma favorita marcada, avisa (popup) e não grava;
+    trocar a favorita na barra do índice remonta os interruptores;
+  - coluna **`atividade.bloqueio`** (JSON com os **códigos das turmas** bloqueadas, padrão `[]`):
+    turma fora da lista = **liberada** (sem vínculo = liberado sempre);
+  - gravação **só** pela função `definir_bloqueio_turma(atividade, turma, bloquear)` (professor
+    da turma, via `professor_tem_turma`; administrador em todas). ❌ Não gravar `bloqueio` à mão
+    nem voltar a usar o interruptor para mudar `atividade.ativo`;
+  - `atividade.ativo = false` (CRUD "CADASTRAR ATIVIDADES") continua bloqueando **todas** as
+    turmas; liberar para a favorita uma atividade inativa faz `ativo = true` e põe as outras
+    turmas em `bloqueio` (elas continuam bloqueadas);
+  - aluno: vê a atividade se **alguma** turma dele (`turmaaluno`) estiver liberada; aluno sem
+    turma e visitante, liberado. Garantido no banco pela política `atividade_select` e por
+    `item_valido`/`topico_valido` (função `atividade_liberada_para_usuario`);
+  - relatórios (`relatorioAtividades.html`) contam média e totais só com as atividades
+    **liberadas para a turma** da aba. Código novo que liste atividades "ativas" de uma turma
+    deve considerar `ativo` **e** `bloqueio`.
 - ✅ **Visual da atividade bloqueada — REGRA GLOBAL** (2026-09-30, todas as atividades de todas as
   matérias, para aluno e professor): o card bloqueado fica **bem escurecido** e com um **cadeado
   grande (🔒) na frente do card**. Estilo único em `assets/css/indice-atividades.css`
