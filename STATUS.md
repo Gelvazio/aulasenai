@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 7, item 7.6 — aceite do trabalho em equipe da ITIC. Antes: Etapa 6, item 6.2 — aprovação do plano de equipes (`docs/equipes-sala-de-aula.md`). Pendente anterior: Etapa 4, item 4.5.
+**Próximo passo:** Etapa 8, item 8.4 — aceite do trabalho em equipe da ITIC (com Brainstorming). Antes: Etapa 6, item 6.2 — aprovação do plano de equipes (`docs/equipes-sala-de-aula.md`). Pendente anterior: Etapa 4, item 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -93,6 +93,17 @@ Tarefa pequena (1 página HTML + 1 CSS). Fonte: os `.md` de `MATERIAIS/ASSISTENT
 | 7.4 | Item no `MENU-ATIVIDADES.js` | ✅ Concluído | 2026-10-05 | `node --check` OK |
 | 7.5 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
 | 7.6 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 8 — Seção "Brainstorming" no trabalho em equipe da ITIC (pedida em 2026-10-05)
+
+Tarefa pequena (1 arquivo). Entregável: `ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html`.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 8.1 | Seção Brainstorming no início: líder atribui papéis, equipe define tarefas por consenso, Ficha de papéis entregue ao professor e anotada no Apêndice A | ✅ Concluído | 2026-10-05 | Leitura; seções renumeradas (1 a 8) |
+| 8.2 | Ajustar roteiro, estrutura, checklist e rubrica à ficha | ✅ Concluído | 2026-10-05 | Leitura |
+| 8.3 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
+| 8.4 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
