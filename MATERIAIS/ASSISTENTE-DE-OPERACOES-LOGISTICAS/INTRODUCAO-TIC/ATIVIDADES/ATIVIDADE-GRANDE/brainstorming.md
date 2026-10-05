@@ -5,6 +5,30 @@
 - **Usado em:** [Trabalho em equipe — Manual de Comunicação Técnica do CD](TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html#brainstorming)
 - **Página:** [brainstorming.html](brainstorming.html)
 - **Docente:** Gelvazio Camargo
+- **Carga horária:** 15 a 25 minutos (início da aula de 4 horas do trabalho em equipe)
+- **Formato:** equipes de 4 ou 5 alunos, presencial, com registro em papel ou na nuvem
+
+---
+
+## 0. Objetivos e capacidades
+
+### 🎯 Objetivos de aprendizagem
+
+Ao final do brainstorming, o aluno deverá ser capaz de:
+
+1. **Explicar** o que é brainstorming e as suas 4 regras.
+2. **Participar** de uma rodada de ideias com escuta ativa e comunicação assertiva.
+3. **Diferenciar** a fase de gerar ideias (divergir) da fase de escolher (convergir).
+4. **Assumir um papel** na equipe e descrever as próprias tarefas na atividade.
+5. **Registrar** a decisão do grupo (o quê, quem e até quando) e entregá-la ao professor.
+
+### 🧩 Capacidades da ementa trabalhadas
+
+| Código | Capacidade | Como aparece no brainstorming |
+|---|---|---|
+| C1 | Empregar princípios, padrões e normas técnicas para comunicação oral e escrita clara, assertiva e eficaz no trabalho. | Falar com clareza na rodada, registrar a decisão e escrever a ata. |
+| S1 | Amabilidade e cooperação nas relações profissionais. | Respeitar as ideias dos colegas e construir a decisão em conjunto. |
+| S4 | Análise de problemas — analisar complexidades e oportunidades de melhoria. | Organizar as ideias, avaliar o que é possível e escolher a melhor divisão do trabalho. |
 
 ---
 
@@ -162,6 +186,74 @@ participem e o trabalho fique pronto em 4 horas?”*
 - [ ] As ideias foram organizadas e a escolha foi por consenso.
 - [ ] Cada aluno tem um papel e sabe o que vai fazer.
 - [ ] A Ficha de papéis foi entregue ao professor.
+
+---
+
+## 9. Avaliação da participação no brainstorming
+
+Critérios usados pelo professor para observar cada equipe (entra no critério **Colaboração e
+entrega** da rubrica do trabalho em equipe).
+
+| Critério | Excelente | Bom | Aceitável | Insuficiente |
+|---|---|---|---|---|
+| Participação | Todos falaram em todas as rodadas | Todos falaram ao menos uma vez | Um aluno não participou | Só 1 ou 2 alunos falaram |
+| Respeito às regras | Nenhuma crítica na geração de ideias | 1 crítica, corrigida pelo líder | Críticas frequentes | Discussão sem regras |
+| Decisão por consenso | Todos concordaram e apoiam a decisão | Decisão por votação, aceita por todos | Líder decidiu, equipe aceitou | Sem decisão |
+| Registro (Ficha de papéis) | Completa: papel, modelos, formatação e revisão de cada aluno | Falta 1 informação | Faltam várias informações | Não entregue |
+
+---
+
+## 10. Glossário
+
+- **Brainstorming:** técnica de grupo para gerar muitas ideias sem julgamento e escolher depois.
+- **Brainwriting:** variação em que as ideias são escritas, em silêncio, antes de serem discutidas.
+- **Consenso:** decisão que todos aceitam e se comprometem a apoiar, mesmo sem ser a preferida de cada um.
+- **Convergir:** fase de avaliar, comparar e escolher as melhores ideias.
+- **Divergir:** fase de abrir o pensamento e gerar o maior número de ideias.
+- **Escuta ativa:** ouvir com atenção, sem interromper, e confirmar o que foi entendido.
+- **Facilitador(a):** quem conduz a reunião e garante que as regras sejam seguidas.
+- **Feedback:** retorno que confirma ou corrige a mensagem recebida.
+- **Plano de ação:** registro do que será feito, por quem e até quando.
+- **Relator(a):** quem anota as ideias e as decisões do grupo.
+- **Ruído:** tudo o que atrapalha a mensagem de chegar corretamente (barulho, termo mal entendido, distração).
+
+---
+
+## 11. Verificação da aprendizagem (perguntas rápidas)
+
+1. Por que é proibido criticar as ideias durante a fase de geração?
+2. Qual é a diferença entre divergir e convergir? Dê um exemplo de cada fase.
+3. Quais são os papéis de um brainstorming e o que faz o relator?
+4. Em que situação a técnica de brainwriting é melhor do que a rodada falada?
+5. O que precisa estar escrito no plano de ação para a decisão sair do papel?
+6. Na sua equipe, qual foi o seu papel e quais partes do manual você vai produzir?
+
+---
+
+## 12. Instruções para IA (Chalkie AI)
+
+### 🤖 Regras para gerar conteúdo a partir deste arquivo
+
+- Usar **linguagem simples**, para alunos de 15 a 17 anos de curso técnico.
+- Manter os exemplos no **contexto logístico** da empresa fictícia Distribuidora Vale Sul
+  Logística (recebimento, armazenagem, expedição, ERP); nunca usar empresas ou pessoas reais.
+- Respeitar as **4 regras** e as **6 etapas** exatamente como estão neste arquivo.
+- Ligar sempre o conteúdo às capacidades **C1, S1 e S4** e à comunicação da Aula 01 (ruído,
+  feedback, escuta ativa, assertividade, consenso).
+- Não inventar notas, prazos ou regras de avaliação diferentes das que estão na seção 9.
+
+### 💬 Prompts prontos
+
+1. *“Crie 5 slides sobre brainstorming para alunos do curso de Assistente de Operações
+   Logísticas, usando as 4 regras e as 6 etapas deste arquivo e o exemplo do ERP parado.”*
+2. *“Gere 10 questões de múltipla escolha (A–D) sobre brainstorming, papéis dos participantes e
+   divergir × convergir, com uma única resposta correta cada.”*
+3. *“Crie uma dinâmica de aquecimento de 5 minutos para uma equipe de 5 alunos antes do
+   brainstorming, no contexto de um centro de distribuição.”*
+4. *“Escreva um estudo de caso curto em que uma equipe quebra as regras do brainstorming e peça
+   aos alunos que identifiquem os erros e proponham correções.”*
+5. *“Monte um modelo de Ficha de papéis para equipes de 4 e de 5 alunos, com as colunas papel,
+   modelos que redige, itens de formatação e modelo que revisa.”*
 
 ---
 
