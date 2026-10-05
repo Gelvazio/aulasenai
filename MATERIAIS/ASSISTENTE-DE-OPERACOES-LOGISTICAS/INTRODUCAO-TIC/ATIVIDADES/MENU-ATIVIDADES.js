@@ -22,6 +22,7 @@ window.MENU_ATIVIDADES = {
       rotulo: '👥 Trabalho em equipe (Aulas 01 a 07)',
       link: 'ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html',
     },
+    { rotulo: '🧠 Brainstorming', link: 'ATIVIDADE-GRANDE/brainstorming.html' },
     {
       rotulo: '📝 Atividades por aula',
       subitens: [
