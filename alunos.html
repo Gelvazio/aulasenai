@@ -13,6 +13,7 @@
     <script src="js/header-usuario.js" defer></script>
     <script src="assets/js/popup.js" defer></script>
     <script src="assets/js/turmas-aluno-repositorio.js" defer></script>
+    <script src="assets/js/turmas-aluno-sugestoes.js" defer></script>
     <script src="assets/js/turmas-aluno-pagina.js" defer></script>
 </head>
 <body>
@@ -20,7 +21,9 @@
     <main class="guia">
         <header class="guia-cabecalho">
             <h1>🎒 Turmas × Alunos</h1>
-            <p>Vincule alunos (perfil ALUNO) às suas turmas — uso dos professores</p>
+            <p>Vincule alunos (perfil ALUNO) às suas turmas — uso dos professores. Alunos sem
+                turma aparecem com <strong>Turma OK = Não</strong> e a turma sugerida: confira e clique
+                em <strong>✅ Confirmar</strong>.</p>
         </header>
 
         <section class="guia-cartao guia-erro" id="taBloqueio" hidden></section>
@@ -49,6 +52,13 @@
                         <label class="tp-campo tp-campo--filtro">Filtrar por turma
                             <select id="taFiltroTurma" class="guia-filtro"></select>
                         </label>
+                        <label class="tp-campo tp-campo--filtro">Turma OK
+                            <select id="taFiltroTurmaOk" class="guia-filtro">
+                                <option value="">Todos</option>
+                                <option value="sim">Sim — vinculado no banco</option>
+                                <option value="nao">Não — falta confirmar</option>
+                            </select>
+                        </label>
                         <label class="tp-campo tp-campo--filtro">Buscar aluno
                             <input type="search" id="taBusca" class="guia-filtro" placeholder="Nome ou e-mail">
                         </label>
@@ -62,6 +72,7 @@
                                 <th>Turma</th>
                                 <th>Turno / horário</th>
                                 <th>Aluno</th>
+                                <th>Turma OK</th>
                                 <th>Vinculado em</th>
                                 <th>Ações</th>
                             </tr>

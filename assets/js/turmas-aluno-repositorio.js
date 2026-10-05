@@ -11,6 +11,7 @@ const PERFIL_PROFESSOR_ALUNOS = "PROFESSOR";
 const COLUNAS_TURMA_ALUNOS = "codigo, nome, turno, horario, local, uc";
 const COLUNAS_ALUNO_REPOSITORIO = "id, nome_completo, email";
 const COLUNAS_VINCULO_ALUNO = "id, turma_codigo, aluno_id, criado_em";
+const FUNCAO_SUGESTOES_ALUNOS = "sugestoes_turmaaluno";
 
 /**
  * Lança o erro do Supabase, se houver, e devolve os dados.
@@ -62,6 +63,15 @@ function criarRepositorioTurmasAluno(cliente) {
     async listarVinculos() {
       return dadosOuErroAlunos(await cliente.from(TABELA_TURMAALUNO)
         .select(COLUNAS_VINCULO_ALUNO).order("turma_codigo"));
+    },
+
+    /**
+     * Alunos ainda sem vínculo, com a turma sugerida (função sugestoes_turmaaluno do banco).
+     * @returns {Promise<Object[]>} Linhas {aluno_id, nome_completo, email, turma_sugerida,
+     *   turma_nome}.
+     */
+    async listarSugestoes() {
+      return dadosOuErroAlunos(await cliente.rpc(FUNCAO_SUGESTOES_ALUNOS));
     },
 
     /**

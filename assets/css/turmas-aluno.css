@@ -4,3 +4,20 @@
     flex-wrap: wrap;
     gap: var(--tp-espaco);
 }
+
+/* Alunos sem turma (Turma OK = Não): destaque leve e lista de turma da linha */
+:root {
+    --ta-fundo-sugestao: #fdf1ec;
+}
+
+.ta-linha-sugestao {
+    background: var(--ta-fundo-sugestao);
+}
+
+.ta-sugestao-turma {
+    min-width: 14rem;
+}
+
+.ta-botao-confirmar {
+    white-space: nowrap;
+}

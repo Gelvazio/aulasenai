@@ -445,6 +445,19 @@ Supabase). **Plano:** `docs/tabela-turmaaluno-menu-alunos.md`. Tela: `alunos.htm
 próprios; INSERT/UPDATE/DELETE = professor **só nas turmas dele** (desde 2026-10-03). TRUNCATE revogado. **Carga inicial:**
 106 vínculos copiados de `aluno.turma_codigo`.
 
+### 💡 Atualização 2026-10-05 — `sugestoes_turmaaluno()` (alunos sem turma)
+
+**Script:** `database/2026-10-05-sugestoes-turmaaluno.sql` (⏳ aplicar no Supabase só com pedido).
+**Plano:** `docs/sugestao-alunos-por-turma-confirmar.md`. Tela: `alunos.html` (filtro **Turma OK**).
+
+| Objeto | Tipo | Descrição |
+|--------|------|-----------|
+| `sugestoes_turmaaluno()` | função (`security definer`, só `authenticated`) | alunos (perfil ALUNO) **sem** vínculo na `turmaaluno`, com a turma sugerida do `user_metadata.turma_codigo` (gravado ao criar a conta). Devolve `aluno_id`, `nome_completo`, `email`, `turma_sugerida`, `turma_nome`. Só professor recebe linhas; professor comum vê as sugestões das turmas dele e as sem turma; o administrador vê todas |
+
+⚠️ O `user_metadata` é só **sugestão** (o aluno pode alterá-lo): o professor confirma em
+`alunos.html` (botão ✅ Confirmar) e a gravação passa pelo RLS da `turmaaluno` e pelo trigger
+`turmaaluno_exige_aluno`.
+
 ### 🔗 Atualização 2026-10-02 — turma do aluno unificada na `turmaaluno`
 
 **Script:** `database/2026-10-02-turma-do-aluno-turmaaluno.sql` (aplicado em 2026-10-02).

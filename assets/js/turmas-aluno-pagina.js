@@ -12,9 +12,15 @@ const TITULO_NOVO_TA = "Novo vínculo";
 const TITULO_EDITAR_TA = "Editar vínculo";
 const VALOR_TODAS_TURMAS_TA = "";
 const ROTA_LOGIN_TA = "login.html";
-const COLUNAS_TABELA_TA = 5;
+const COLUNAS_TABELA_TA = 6;
+const FILTRO_TURMA_OK_SIM_TA = "sim";
+const FILTRO_TURMA_OK_NAO_TA = "nao";
+const TEXTO_TURMA_OK_SIM_TA = "✅ Sim";
 
-const estadoTa = { repositorio: null, turmas: [], alunos: [], vinculos: [], editandoId: null };
+const estadoTa = {
+  repositorio: null, turmas: [], alunos: [], vinculos: [], editandoId: null,
+  sugestoes: [], avisoSugestoes: "",
+};
 
 /**
  * Atalho para document.getElementById.
@@ -161,6 +167,7 @@ function criarLinhaVinculoTa(vinculo) {
     criarCelulaTa(vinculo.turma_codigo + " — " + (turma.nome || ""), turma.local || ""),
     criarCelulaTa(turma.turno || "", turma.horario || ""),
     criarCelulaTa(aluno.nome_completo || "(usuário sem cadastro)", aluno.email || vinculo.aluno_id),
+    criarCelulaTa(TEXTO_TURMA_OK_SIM_TA),
     criarCelulaTa(formatarDataTa(vinculo.criado_em)),
     criarCelulaAcoesTa(vinculo),
   );
@@ -182,22 +189,62 @@ function vinculoVisivelTa(vinculo, filtro, busca) {
   return ((aluno.nome_completo || "") + " " + (aluno.email || "")).toLowerCase().includes(busca);
 }
 
-/** Desenha a tabela de vínculos aplicando o filtro de turma e a busca. */
-function desenharVinculosTa() {
+/**
+ * Diz se o aluno sem turma passa no filtro de turma (turma sugerida) e na busca.
+ * @param {Object} sugestao - Linha da função sugestoes_turmaaluno.
+ * @param {string} filtro - Código da turma ("" = todas).
+ * @param {string} busca - Texto buscado, em minúsculas.
+ * @returns {boolean} Verdadeiro se deve aparecer.
+ */
+function sugestaoVisivelTa(sugestao, filtro, busca) {
+  const turmaConfere = filtro === VALOR_TODAS_TURMAS_TA || sugestao.turma_sugerida === filtro;
+  if (!turmaConfere) return false;
+  if (!busca) return true;
+  const texto = (sugestao.nome_completo || "") + " " + (sugestao.email || "");
+  return texto.toLowerCase().includes(busca);
+}
+
+/**
+ * Monta as linhas visíveis: vínculos (Turma OK = Sim) e alunos sem turma (Turma OK = Não),
+ * conforme os filtros de turma, Turma OK e busca, ordenadas pela turma.
+ * @returns {{linhas: {turma: string, criar: Function}[], sim: number, nao: number}} Linhas
+ *   e as quantidades visíveis de cada situação.
+ */
+function montarLinhasVisiveisTa() {
   const filtro = elementoTa("taFiltroTurma").value;
+  const turmaOk = elementoTa("taFiltroTurmaOk").value;
   const busca = elementoTa("taBusca").value.trim().toLowerCase();
-  const visiveis = estadoTa.vinculos.filter((v) => vinculoVisivelTa(v, filtro, busca));
+  const vinculos = turmaOk === FILTRO_TURMA_OK_NAO_TA ? []
+    : estadoTa.vinculos.filter((v) => vinculoVisivelTa(v, filtro, busca));
+  const sugestoes = turmaOk === FILTRO_TURMA_OK_SIM_TA ? []
+    : estadoTa.sugestoes.filter((s) => sugestaoVisivelTa(s, filtro, busca));
+  const linhasSim = vinculos.map((vinculo) => ({
+    turma: vinculo.turma_codigo, criar: () => criarLinhaVinculoTa(vinculo) }));
+  const linhasNao = sugestoes.map((sugestao) => ({
+    turma: sugestao.turma_sugerida || "~", criar: () => criarLinhaSugestaoTa(sugestao) }));
+  const linhas = linhasSim.concat(linhasNao);
+  linhas.sort((a, b) => a.turma.localeCompare(b.turma));
+  return { linhas, sim: vinculos.length, nao: sugestoes.length };
+}
+
+/** Desenha a tabela "Alunos por turma" aplicando os filtros de turma, Turma OK e a busca. */
+function desenharVinculosTa() {
+  const { linhas, sim, nao } = montarLinhasVisiveisTa();
   const corpo = elementoTa("taLinhas");
-  if (!visiveis.length) {
-    const vazio = criarElementoTa("td", "tp-vazio", "Nenhum vínculo encontrado.");
+  if (!linhas.length) {
+    const vazio = criarElementoTa("td", "tp-vazio", "Nenhum aluno encontrado.");
     vazio.colSpan = COLUNAS_TABELA_TA;
     const linha = criarElementoTa("tr");
     linha.append(vazio);
     corpo.replaceChildren(linha);
   } else {
-    corpo.replaceChildren(...visiveis.map(criarLinhaVinculoTa));
+    corpo.replaceChildren(...linhas.map((item) => item.criar()));
   }
-  elementoTa("taResumo").textContent = visiveis.length + " de " + estadoTa.vinculos.length + " vínculo(s)";
+  const total = estadoTa.vinculos.length + estadoTa.sugestoes.length;
+  const resumo = linhas.length + " de " + total + " linha(s) · Turma OK: " + sim + " sim, " +
+    nao + " não";
+  elementoTa("taResumo").textContent = estadoTa.avisoSugestoes
+    ? resumo + " · ⚠️ " + estadoTa.avisoSugestoes : resumo;
 }
 
 /** Volta o formulário para "Novo vínculo". */
@@ -236,9 +283,20 @@ function mensagemErroTa(erro) {
   return "Não foi possível gravar: " + (erro?.message || erro);
 }
 
-/** Recarrega os vínculos do banco e redesenha a tabela. */
+/**
+ * Busca os alunos sem turma (sugestões) e guarda no estado, com o aviso se houver.
+ * @returns {Promise<void>}
+ */
+async function carregarSugestoesPaginaTa() {
+  const { sugestoes, aviso } = await carregarSugestoesTa(estadoTa.repositorio);
+  estadoTa.sugestoes = sugestoes;
+  estadoTa.avisoSugestoes = aviso;
+}
+
+/** Recarrega os vínculos e os alunos sem turma do banco e redesenha a tabela. */
 async function recarregarVinculosTa() {
   estadoTa.vinculos = await estadoTa.repositorio.listarVinculos();
+  await carregarSugestoesPaginaTa();
   desenharVinculosTa();
 }
 
@@ -289,11 +347,19 @@ async function excluirVinculoTa(vinculo) {
   await mostrarPopup("Vínculo excluído.", { tipo: "sucesso" });
 }
 
-/** Carrega turmas, alunos e vínculos e mostra a tela. */
+/** Carrega turmas, alunos, vínculos e alunos sem turma e mostra a tela. */
 async function carregarDadosTa() {
   const repositorio = estadoTa.repositorio;
   [estadoTa.turmas, estadoTa.alunos, estadoTa.vinculos] = await Promise.all([
     repositorio.listarTurmas(), repositorio.listarAlunos(), repositorio.listarVinculos()]);
+  configurarSugestoesTa({
+    repositorio,
+    obterTurmas: () => estadoTa.turmas,
+    descreverTurma: descreverTurmaTa,
+    mensagemErro: mensagemErroTa,
+    aoConfirmar: recarregarVinculosTa,
+  });
+  await carregarSugestoesPaginaTa();
   preencherListasTa();
   desenharVinculosTa();
   elementoTa("taConteudo").hidden = false;
@@ -304,6 +370,7 @@ function ligarEventosTa() {
   elementoTa("taFormulario").addEventListener("submit", salvarVinculoTa);
   elementoTa("taCancelar").addEventListener("click", limparFormularioTa);
   elementoTa("taFiltroTurma").addEventListener("change", desenharVinculosTa);
+  elementoTa("taFiltroTurmaOk").addEventListener("change", desenharVinculosTa);
   elementoTa("taBusca").addEventListener("input", desenharVinculosTa);
 }
 
