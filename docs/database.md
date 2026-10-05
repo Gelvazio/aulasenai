@@ -445,9 +445,26 @@ Supabase). **Plano:** `docs/tabela-turmaaluno-menu-alunos.md`. Tela: `alunos.htm
 próprios; INSERT/UPDATE/DELETE = professor **só nas turmas dele** (desde 2026-10-03). TRUNCATE revogado. **Carga inicial:**
 106 vínculos copiados de `aluno.turma_codigo`.
 
+### 🔒 Atualização 2026-10-05 — bloqueio de atividade por turma
+
+**Script:** `database/2026-10-05-bloqueio-atividade-por-turma.sql` (aplicado em 2026-10-05 pelo
+conector do Supabase). **Plano:** `docs/bloqueio-atividade-por-turma-favorita.md`.
+
+| Objeto | Tipo | Descrição |
+|--------|------|-----------|
+| `atividade.bloqueio` | `jsonb not null default '[]'` (check: array) | códigos das turmas em que a atividade está bloqueada; fora da lista = liberada |
+| `atividade_liberada_para_usuario(jsonb)` | função (`security definer`, anon + authenticated) | verdadeiro para professor, visitante, aluno sem turma ou aluno com alguma turma (`turmaaluno`) fora da lista |
+| `atividade_select` | política | `(ativo and atividade_liberada_para_usuario(bloqueio)) or eh_professor()` |
+| `item_valido` / `topico_valido` | funções | passam a conferir também `atividade_liberada_para_usuario(bloqueio)` |
+| `definir_bloqueio_turma(bigint, text, boolean)` | função (só authenticated) | bloqueia/libera para UMA turma (professor da turma; administrador em todas). Liberar atividade com `ativo = false`: `ativo = true` e todas as outras turmas entram na lista |
+
+Usado pelo interruptor da turma favorita no índice das atividades
+(`assets/js/indice-atividades-bloqueio.js`). Na aplicação: 56 atividades, todas com `bloqueio = []`;
+as 22 com `ativo = false` continuam bloqueadas para todos.
+
 ### 💡 Atualização 2026-10-05 — `sugestoes_turmaaluno()` (alunos sem turma)
 
-**Script:** `database/2026-10-05-sugestoes-turmaaluno.sql` (⏳ aplicar no Supabase só com pedido).
+**Script:** `database/2026-10-05-sugestoes-turmaaluno.sql` (aplicado em 2026-10-05 pelo conector do Supabase).
 **Plano:** `docs/sugestao-alunos-por-turma-confirmar.md`. Tela: `alunos.html` (filtro **Turma OK**).
 
 | Objeto | Tipo | Descrição |

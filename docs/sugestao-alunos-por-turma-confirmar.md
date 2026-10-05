@@ -95,7 +95,7 @@ grant execute on function public.sugestoes_turmaaluno() to authenticated;
 | 5 | Integrar na página e no HTML; CSS | `turmas-aluno-pagina.js`, `alunos.html`, `turmas-aluno.css` | `node --check` + leitura | ✅ Concluído |
 | 6 | Documentar a função | `docs/database.md`, `docs/relatorio_verificacao_database.html` | Leitura | ✅ Concluído |
 | 7 | Commit local | — | `git diff --cached --name-only` | ✅ Concluído |
-| 8 | Aplicar o SQL no Supabase (só com pedido) e o professor testar a página | — | Usuário | ⬜ Pendente |
+| 8 | Aplicar o SQL no Supabase (só com pedido) e o professor testar a página | — | Aplicado em 2026-10-05 pelo conector; hoje 0 alunos sem turma; teste do professor pendente | 🔄 Em progresso |
 
 ## Riscos
 

@@ -1,10 +1,13 @@
-// Bloqueio de atividades no ATIVIDADES/index.html: o professor libera pela tabela `atividade`
-// (campo "ativo" do CADASTRAR ATIVIDADES). O RLS só mostra ao aluno as atividades ativas; aqui,
-// o card cuja atividade o aluno não consegue ler fica bloqueado e, ao clicar na atividade,
+// Bloqueio de atividades no ATIVIDADES/index.html, POR TURMA: atividade.bloqueio guarda os
+// códigos das turmas bloqueadas (fora da lista = liberada) e atividade.ativo = false bloqueia
+// para todas. O RLS só mostra ao aluno as atividades liberadas para alguma turma dele; aqui, o
+// card cuja atividade o aluno não consegue ler fica bloqueado e, ao clicar na atividade,
 // aparece a mensagem "Atividade Bloqueada!". O professor não tem bloqueio.
 // Só age em pastas gerenciadas pelo banco (pelo menos uma atividade da pasta cadastrada e ativa).
-// Para o professor, cada card ganha o interruptor ON/OFF (grava atividade.ativo), com o nome
-// "Bloquear" quando a atividade está liberada e "Desbloquear" quando está bloqueada.
+// Para o professor, cada card ganha o interruptor ON/OFF que vale SÓ para a turma favorita
+// (função definir_bloqueio_turma; as outras turmas não mudam), com o nome "Bloquear (turma X)"
+// quando está liberada e "Desbloquear (turma X)" quando está bloqueada. Trocar a favorita na
+// barra do índice (evento turma-favorita-alterada) remonta os interruptores.
 // Carregado por assets/js/atividades-crud-modal.js. Depende de supabase-js e js/supabase.js.
 
 // Cards informativos (sem atividade no banco) usam data-sem-bloqueio e nunca são bloqueados.
@@ -17,6 +20,11 @@ const TEXTO_INTERRUPTOR_BLOQUEAR = 'Bloquear';
 const TEXTO_INTERRUPTOR_DESBLOQUEAR = 'Desbloquear';
 const MSG_ATIVIDADE_BLOQUEADA = 'Atividade Bloqueada!';
 const PERFIL_PROFESSOR_BLOQUEIO = 'PROFESSOR';
+const ROTA_DEFINIR_BLOQUEIO_TURMA = '/rest/v1/rpc/definir_bloqueio_turma';
+const EVENTO_FAVORITA_ALTERADA = 'turma-favorita-alterada';
+const SELETOR_INTERRUPTOR_BLOQUEAR = '.interruptor-bloquear';
+const MSG_SEM_FAVORITA_BLOQUEIO = 'Marque a turma favorita na barra "Turma" do índice: o ' +
+    'bloqueio vale só para a turma favorita.';
 const URL_POPUP_BLOQUEIO = document.currentScript?.src.replace(/[^/]*$/, 'popup.js') || '';
 
 /**
@@ -110,21 +118,25 @@ function listarPaginasDoCard(card) {
 }
 
 /**
- * Define o nome do interruptor conforme o estado: bloqueada = "Desbloquear"; liberada = "Bloquear".
+ * Define o nome do interruptor conforme o estado: bloqueada = "Desbloquear"; liberada =
+ * "Bloquear", seguido da turma afetada (a favorita).
  * @param {HTMLSpanElement} texto - Elemento com o nome do interruptor.
  * @param {boolean} bloqueado - true se a atividade está bloqueada.
+ * @param {string} turma - Código da turma favorita (vazio = sem favorita).
  */
-function atualizarTextoInterruptor(texto, bloqueado) {
-    texto.textContent = bloqueado ? TEXTO_INTERRUPTOR_DESBLOQUEAR : TEXTO_INTERRUPTOR_BLOQUEAR;
+function atualizarTextoInterruptor(texto, bloqueado, turma) {
+    const acao = bloqueado ? TEXTO_INTERRUPTOR_DESBLOQUEAR : TEXTO_INTERRUPTOR_BLOQUEAR;
+    texto.textContent = acao + (turma ? ' (turma ' + turma + ')' : ' (sem turma favorita)');
 }
 
 /**
- * Cria o interruptor ON/OFF "Bloquear"/"Desbloquear" de um card (ON = bloqueada para os alunos).
- * @param {boolean} bloqueado - Estado inicial.
+ * Cria o interruptor ON/OFF "Bloquear"/"Desbloquear" de um card (ON = bloqueada para a turma).
+ * @param {{bloqueado: boolean, turma: string}} estado - Estado inicial e turma favorita.
  * @param {Function} aoMudar - Chamada async com o novo estado; se falhar, o interruptor volta.
  * @returns {HTMLLabelElement} Interruptor pronto.
  */
-function criarInterruptorBloquear(bloqueado, aoMudar) {
+function criarInterruptorBloquear(estado, aoMudar) {
+    const { bloqueado, turma } = estado;
     const etiqueta = document.createElement('label');
     etiqueta.className = 'interruptor-bloquear';
     const caixa = document.createElement('input');
@@ -134,7 +146,7 @@ function criarInterruptorBloquear(bloqueado, aoMudar) {
     chave.className = 'interruptor-bloquear__chave';
     const texto = document.createElement('span');
     texto.className = 'interruptor-bloquear__texto';
-    atualizarTextoInterruptor(texto, bloqueado);
+    atualizarTextoInterruptor(texto, bloqueado, turma);
     caixa.addEventListener('change', async () => {
         caixa.disabled = true;
         try {
@@ -145,7 +157,7 @@ function criarInterruptorBloquear(bloqueado, aoMudar) {
             await mostrarPopup('Não foi possível alterar o bloqueio: ' + erro.message,
                 { tipo: 'erro' });
         }
-        atualizarTextoInterruptor(texto, caixa.checked);
+        atualizarTextoInterruptor(texto, caixa.checked, turma);
         caixa.disabled = false;
     });
     etiqueta.append(caixa, chave, texto);
@@ -153,40 +165,111 @@ function criarInterruptorBloquear(bloqueado, aoMudar) {
 }
 
 /**
- * Grava no banco o bloqueio (ativo = não bloqueado) de todas as atividades do card.
- * @param {{id: number}[]} atividades - Atividades cadastradas do card.
- * @param {boolean} bloquear - true para bloquear.
+ * Busca o código da turma favorita (turma.favorito).
+ * @returns {Promise<string>} Código da favorita ou vazio.
  */
-async function gravarBloqueioCard(atividades, bloquear) {
+async function buscarFavoritaBloqueio() {
+    const linhas = await sbGet('turma', 'select=codigo&favorito=eq.true');
+    return linhas[0]?.codigo || '';
+}
+
+/**
+ * Diz se a atividade está bloqueada para a turma (ativo = false bloqueia para todas).
+ * @param {{ativo: boolean, bloqueio: string[]}} atividade - Linha da atividade.
+ * @param {string} turma - Código da turma (vazio = olha só o ativo).
+ * @returns {boolean} true se bloqueada para a turma.
+ */
+function estaBloqueadaParaTurma(atividade, turma) {
+    if (!atividade.ativo) return true;
+    if (!turma) return false;
+    return (atividade.bloqueio || []).includes(turma);
+}
+
+/**
+ * Bloqueia ou libera uma atividade para uma turma (função definir_bloqueio_turma do banco).
+ * @param {number} idAtividade - Id da atividade.
+ * @param {string} turma - Código da turma.
+ * @param {boolean} bloquear - true para bloquear.
+ * @throws {Error} Se o banco recusar.
+ */
+async function gravarBloqueioTurma(idAtividade, turma, bloquear) {
+    const resposta = await fetch(SUPABASE.URL + ROTA_DEFINIR_BLOQUEIO_TURMA, {
+        method: 'POST',
+        headers: await sbH(),
+        body: JSON.stringify({ p_atividade: idAtividade, p_turma: turma, p_bloquear: bloquear }),
+    });
+    if (resposta.ok) return;
+
+    const erro = await resposta.json().catch(() => ({}));
+    throw new Error(erro.message || 'erro ' + resposta.status);
+}
+
+/**
+ * Grava o bloqueio do card (todas as atividades dele) só para a turma favorita e atualiza as
+ * linhas em memória. As outras turmas não mudam (o banco cuida delas).
+ * @param {Object[]} atividades - Atividades cadastradas do card.
+ * @param {string} turma - Turma favorita.
+ * @param {boolean} bloquear - true para bloquear.
+ * @throws {Error} Sem turma favorita ou se o banco recusar.
+ */
+async function gravarBloqueioCard(atividades, turma, bloquear) {
+    if (!turma) throw new Error(MSG_SEM_FAVORITA_BLOQUEIO);
+
     for (const atividade of atividades) {
-        await sbPatch('atividade', 'id', atividade.id, { ativo: !bloquear });
+        await gravarBloqueioTurma(atividade.id, turma, bloquear);
+        const outras = (atividade.bloqueio || []).filter((codigo) => codigo !== turma);
+        atividade.bloqueio = bloquear ? outras.concat(turma) : outras;
+        if (!bloquear) atividade.ativo = true;
     }
 }
 
 /**
- * Acrescenta o interruptor "Bloquear" aos cards do índice (perfil professor).
+ * Acrescenta ao card o interruptor da turma favorita.
+ * @param {HTMLElement} card - Card do índice.
+ * @param {Object[]} atividades - Atividades cadastradas do card.
+ * @param {string} turma - Turma favorita (vazio = sem favorita).
+ */
+function montarInterruptorCard(card, atividades, turma) {
+    const acoes = card.querySelector('.acoes');
+    if (!atividades.length || !acoes) return;
+
+    const bloqueado = atividades.every((atividade) => estaBloqueadaParaTurma(atividade, turma));
+    card.classList.toggle(CLASSE_TEMA_BLOQUEADO_PROFESSOR, bloqueado);
+    acoes.append(criarInterruptorBloquear({ bloqueado, turma }, async (bloquear) => {
+        await gravarBloqueioCard(atividades, turma, bloquear);
+        card.classList.toggle(CLASSE_TEMA_BLOQUEADO_PROFESSOR, bloquear);
+    }));
+}
+
+/**
+ * Acrescenta (ou refaz) o interruptor da turma favorita nos cards do índice (perfil professor).
  */
 async function montarInterruptoresBloquear() {
+    document.querySelectorAll(SELETOR_INTERRUPTOR_BLOQUEAR).forEach((item) => item.remove());
     const cards = [...document.querySelectorAll(SELETOR_CARD_BLOQUEIO)];
     const todas = [...new Set(cards.flatMap(listarPaginasDoCard))];
     if (!todas.length) return;
 
     const valores = todas.map((pagina) => '"' + pagina.replace(/"/g, '') + '"').join(',');
-    const linhas = await sbGet('atividade',
-        'select=id,pagina,ativo&pagina=in.(' + encodeURIComponent(valores) + ')');
+    const [linhas, turma] = await Promise.all([
+        sbGet('atividade',
+            'select=id,pagina,ativo,bloqueio&pagina=in.(' + encodeURIComponent(valores) + ')'),
+        buscarFavoritaBloqueio(),
+    ]);
     cards.forEach((card) => {
         const paginas = listarPaginasDoCard(card);
         const atividades = linhas.filter((linha) => paginas.includes(linha.pagina));
-        const acoes = card.querySelector('.acoes');
-        if (!atividades.length || !acoes) return;
+        montarInterruptorCard(card, atividades, turma);
+    });
+}
 
-        const bloqueado = atividades.every((atividade) => !atividade.ativo);
-        card.classList.toggle(CLASSE_TEMA_BLOQUEADO_PROFESSOR, bloqueado);
-        acoes.append(criarInterruptorBloquear(bloqueado, async (bloquear) => {
-            await gravarBloqueioCard(atividades, bloquear);
-            atividades.forEach((atividade) => { atividade.ativo = !bloquear; });
-            card.classList.toggle(CLASSE_TEMA_BLOQUEADO_PROFESSOR, bloquear);
-        }));
+/**
+ * Remonta os interruptores quando a turma favorita muda na barra do índice.
+ */
+function ouvirTrocaFavoritaBloqueio() {
+    document.addEventListener(EVENTO_FAVORITA_ALTERADA, () => {
+        montarInterruptoresBloquear().catch((erro) =>
+            console.warn('Bloqueio de atividades indisponível:', erro.message));
     });
 }
 
@@ -195,7 +278,10 @@ async function montarInterruptoresBloquear() {
  */
 async function iniciarBloqueioAtividades() {
     try {
-        if (await usuarioEhProfessorBloqueio()) return montarInterruptoresBloquear();
+        if (await usuarioEhProfessorBloqueio()) {
+            ouvirTrocaFavoritaBloqueio();
+            return montarInterruptoresBloquear();
+        }
 
         const cards = [...document.querySelectorAll(SELETOR_CARD_BLOQUEIO)];
         const caminhos = cards.map((card) =>

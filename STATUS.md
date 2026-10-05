@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 16, item 16.4 — rodar `database/2026-10-05-trabalho-equipe-itic-atividade.sql` no Supabase. Depois: Etapa 15, item 15.8 — aplicar `database/2026-10-05-sugestoes-turmaaluno.sql` no Supabase (só com pedido do usuário) e o professor testar a `alunos.html` (filtro Turma OK + ✅ Confirmar). Pendentes anteriores: 14.6, 6.8 e 4.5.
+**Próximo passo:** Etapa 16, item 16.7 — professor testar o interruptor "Bloquear (turma X)" no índice das atividades (vale só para a turma favorita); item 16.4 aguarda decisão sobre a regra no `CLAUDE.md`. Depois: 15.8 (teste da `alunos.html`), 14.6, 6.8 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -158,7 +158,7 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 15.5 | Integração na `alunos.html`, `turmas-aluno-pagina.js` e CSS + filtro/coluna **Turma OK** (Sim/Não) | ✅ Concluído | 2026-10-05 13:22 | `node --check` + leitura; filtro e coluna Turma OK |
 | 15.6 | `docs/database.md` + `relatorio_verificacao_database.html` | ✅ Concluído | 2026-10-05 13:22 | Leitura |
 | 15.7 | Commit local | ✅ Concluído | 2026-10-05 13:22 | `git diff --cached --name-only` |
-| 15.8 | Aplicar SQL no Supabase (só com pedido) e aceite do usuário | ⬜ Pendente | — | Usuário |
+| 15.8 | Aplicar SQL no Supabase (só com pedido) e aceite do usuário | 🔄 Em progresso | — | SQL aplicado em 2026-10-05 13:36 pelo conector (0 alunos sem turma hoje); falta o aceite |
 
 ## Etapa 16 — Card do trabalho em equipe v2 no índice de atividades da ITIC (pedida em 2026-10-05)
 | Item | Descrição | Status | Concluído em | Verificação |
@@ -177,6 +177,17 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 16.4 | Rodar o SQL no Supabase (usuário, SQL Editor) | ⬜ Pendente | — | — |
 | 16.5 | Aceite do usuário | ⬜ Pendente | — | — |
 
+## Etapa 16 — Bloqueio de atividade por turma (turma favorita) (pedida em 2026-10-05; plano `docs/bloqueio-atividade-por-turma-favorita.md`, aprovado: "SIM, PODE EXECUTAR")
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 16.1 | SQL `database/2026-10-05-bloqueio-atividade-por-turma.sql` (coluna `atividade.bloqueio`, política, `definir_bloqueio_turma`) | ✅ Concluído | 2026-10-05 13:36 | Leitura + banco real conferido antes |
+| 16.2 | Interruptor da turma favorita em `assets/js/indice-atividades-bloqueio.js` + evento em `indice-turma-favorita.js` | ✅ Concluído | 2026-10-05 13:36 | `node --check` |
+| 16.3 | `docs/database.md` + `relatorio_verificacao_database.html` | ✅ Concluído | 2026-10-05 13:36 | Leitura |
+| 16.4 | Regra no `CLAUDE.md` | ⛔ Bloqueado | — | Edição recusada pelo usuário; aguardando decisão |
+| 16.5 | Aplicar o SQL no Supabase (pedido do usuário) | ✅ Concluído | 2026-10-05 13:36 | Conector Supabase; coluna, política e permissões conferidas |
+| 16.6 | Commit local | ✅ Concluído | 2026-10-05 13:36 | `git diff --cached --name-only` |
+| 16.7 | Aceite do usuário (bloquear/liberar uma atividade para a favorita e conferir com um aluno de outra turma) | ⬜ Pendente | — | Sem navegador nesta sessão |
+
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
 |-------|--------|---------|---------|----------|
@@ -184,12 +195,15 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 ## Bloqueios
 | Data | Item | Motivo | O que destrava | Resolvido em |
 |------|------|--------|----------------|--------------|
+| 2026-10-05 | 16.4 (regra no `CLAUDE.md`) | Edições do `CLAUDE.md` recusadas pelo usuário | Usuário dizer se a regra entra | — |
 | 2026-10-05 | 6.8 (SQL das equipes) | Nenhum conector do Supabase nesta sessão (só Claude Docs, visualize, MCP Finder) | Conectar o Supabase na sessão ou o professor rodar o SQL no SQL Editor | — |
 | 2026-10-03 | Etapa 5 (Testes de Frontend) | Usuário pediu confirmação da regra de aulas em `CONTEUDO/` antes de continuar | Respostas do item 4.5 | — |
 
 ## Registro de decisões
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-05 | Bloqueio por turma em `atividade.bloqueio` (JSON de códigos de turma); o interruptor vale só para a turma favorita; `ativo = false` continua bloqueando todas e, ao liberar uma inativa para a favorita, as outras turmas entram na lista | Usuário (pedido) + Claude (forma) | "As outras turmas não devem ser afetadas"; sem vínculo = liberado |
+| 2026-10-05 | SQLs de sugestões (`turmaaluno`) e bloqueio por turma aplicados pelo conector do Supabase | Usuário | Pedido "aplique no Supabase usando MCP do Supabase" |
 | 2026-10-05 | Alunos sem turma entram na própria tabela "Alunos por turma" com a coluna/filtro **Turma OK** (Sim/Não) e o botão ✅ Confirmar; turma sugerida vem do `user_metadata` (só sugestão) | Usuário (pedido) + Claude (forma) | Pedido durante a execução da Etapa 15; uma tabela só evita duplicar listas |
 | 2026-10-05 | Equipes por turma + matéria, CRUD no modal do menu 👥 Equipes das atividades; nomes das equipes cadastrados pelo professor | Usuário | Pedido em 2026-10-05 (escopo revisto do plano inicial) |
 | 2026-10-03 | Criar este `STATUS.md` na raiz | Claude (regra global) | Regra "STATUS.md em toda tarefa" |

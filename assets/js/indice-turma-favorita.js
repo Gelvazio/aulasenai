@@ -85,6 +85,8 @@ async function alternarFavoritaIndice(estado) {
     try {
         await definirTurmaFavorita(nova);
         estado.favorita = nova;
+        // O bloqueio das atividades vale para a favorita: avisa o indice-atividades-bloqueio.js.
+        document.dispatchEvent(new CustomEvent('turma-favorita-alterada', { detail: nova }));
     } catch (erro) {
         if (typeof window.mostrarPopup === 'function') {
             await mostrarPopup(erro.message, { tipo: 'erro' });

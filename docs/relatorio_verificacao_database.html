@@ -553,9 +553,46 @@
       </table>
     </div>
 
+    <h2>🔒 Atualização 2026-10-05 — bloqueio de atividade por turma</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-05-bloqueio-atividade-por-turma.sql</code> (aplicado em 2026-10-05) · Tela: índice das atividades (interruptor da turma favorita)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>atividade.bloqueio</td>
+          <td>Coluna jsonb</td>
+          <td>Códigos das turmas bloqueadas (fora da lista = liberada)</td>
+        </tr>
+        <tr>
+          <td>atividade_liberada_para_usuario(jsonb)</td>
+          <td>Função</td>
+          <td>Professor, visitante, aluno sem turma ou com alguma turma liberada</td>
+        </tr>
+        <tr>
+          <td>atividade_select</td>
+          <td>Política</td>
+          <td>(ativo and atividade_liberada_para_usuario(bloqueio)) or eh_professor()</td>
+        </tr>
+        <tr>
+          <td>item_valido / topico_valido</td>
+          <td>Funções</td>
+          <td>Também conferem o bloqueio por turma</td>
+        </tr>
+        <tr>
+          <td>definir_bloqueio_turma(bigint, text, boolean)</td>
+          <td>Função</td>
+          <td>Bloqueia/libera para uma turma (professor da turma); liberar inativa bloqueia as outras turmas</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>💡 Atualização 2026-10-05 — sugestoes_turmaaluno() (alunos sem turma)</h2>
     <div class="section">
-      <p>Script: <code>database/2026-10-05-sugestoes-turmaaluno.sql</code> (⏳ aplicar só com pedido) · Tela: <code>alunos.html</code> (filtro Turma OK)</p>
+      <p>Script: <code>database/2026-10-05-sugestoes-turmaaluno.sql</code> (aplicado em 2026-10-05) · Tela: <code>alunos.html</code> (filtro Turma OK)</p>
       <table>
         <tr>
           <th>Objeto</th>
