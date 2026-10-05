@@ -112,6 +112,14 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 12.4 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
 | 12.5 | Aceite do usuário | ⬜ Pendente | — | — |
 
+## Etapa 13 — Autorização dos responsáveis para uso do celular na aula (ITIC, trabalho em equipe) (pedida em 2026-10-05)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 13.1 | Gerar `ATIVIDADES/ATIVIDADE-GRANDE/AUTORIZACAO-USO-CELULAR-RESPONSAVEIS.docx` (Word, fora do Git pela regra `*.docx`) | ✅ Concluído | 2026-10-05 10:05 | Aberto no Word (somente leitura): 1 página A4 |
+| 13.2 | Commit local (só o `STATUS.md`; o `.docx` é ignorado pelo Git) | ✅ Concluído | 2026-10-05 10:06 | `git commit` |
+| 13.3 | Aceite do usuário | ⬜ Pendente | — | — |
+
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
 |-------|--------|---------|---------|----------|
