@@ -1,0 +1,82 @@
+/*
+ * Trabalho em equipe (atividade que agrupa várias aulas).
+ * Complementa o atividade.css: tabelas, listas, modelos de texto e checklist.
+ * Genérico: nada de matéria, curso ou docente fixo aqui.
+ */
+:root {
+    --equipe-borda: #e2e8f0;
+    --equipe-cabecalho: #edf2f7;
+    --equipe-modelo-fundo: #fffdf5;
+    --equipe-modelo-borda: #d69e2e;
+    --equipe-alerta-fundo: #fff5f5;
+    --equipe-alerta-borda: #e53e3e;
+    --equipe-ok: #2f855a;
+}
+
+.tabela-equipe {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 8px 0 4px;
+    background: white;
+}
+.tabela-equipe th,
+.tabela-equipe td {
+    border-bottom: 1px solid var(--equipe-borda);
+    padding: 7px 9px;
+    text-align: left;
+    vertical-align: top;
+}
+.tabela-equipe th {
+    background: var(--equipe-cabecalho);
+    color: var(--primary);
+    font-weight: 700;
+}
+.tabela-equipe__numero { text-align: right; white-space: nowrap; }
+.tabela-equipe-rolagem { overflow-x: auto; }
+
+.lista-equipe { margin: 6px 0 4px 20px; font-size: 14px; }
+.lista-equipe li { margin-bottom: 4px; }
+.lista-equipe--checklist { list-style: none; margin-left: 0; }
+.lista-equipe--checklist li::before { content: '☐ '; color: var(--equipe-ok); font-weight: 700; }
+
+.modelo-texto {
+    background: var(--equipe-modelo-fundo);
+    border: 1px dashed var(--equipe-modelo-borda);
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin: 8px 0;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+.alerta-equipe {
+    background: var(--equipe-alerta-fundo);
+    border-left: 4px solid var(--equipe-alerta-borda);
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.aula-card--secao { border-left-color: var(--secondary); }
+.aula-card--modelo { border-left-color: var(--equipe-modelo-borda); }
+.aula-card--avaliacao { border-left-color: var(--equipe-ok); }
+
+.regra-ouro {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    border-radius: 8px;
+    padding: 18px 20px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+@media print {
+    body { background: white; padding: 0; }
+    .container { box-shadow: none; }
+    .aula-card { break-inside: avoid; }
+}

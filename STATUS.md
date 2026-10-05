@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 4, item 4.5 — respostas do usuário às dúvidas da regra "aulas extraídas da ementa em `CONTEUDO/`"; depois, Etapa 5 (a registrar) — Testes de Frontend: aulas em `CONTEUDO/`, atividades, apostila e conferência com a ementa.
+**Próximo passo:** Etapa 7, item 7.6 — aceite do trabalho em equipe da ITIC. Antes: Etapa 6, item 6.2 — aprovação do plano de equipes (`docs/equipes-sala-de-aula.md`). Pendente anterior: Etapa 4, item 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -65,6 +65,33 @@ Cada capítulo: fonte `CAPITULO-NN.md` → `--markdown` (conferência 100%) → 
 | 4.4 | Commit local | ✅ Concluído | 2026-10-03 20:58 | `git commit` só com `CLAUDE.md` e `STATUS.md` |
 | 4.5 | Tirar as dúvidas da regra com o usuário e ajustar o texto conforme as respostas | 🔄 Em progresso | — | — |
 | 4.6 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 6 — Equipes de sala de aula: CRUD global por turma, começando pela 135080 (CEPLAS ITIC Manhã) (pedida em 2026-10-05)
+
+Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 6.1 | Plano em `docs/equipes-sala-de-aula.md` | ✅ Concluído | 2026-10-05 | Arquivo criado |
+| 6.2 | Aprovação do plano pelo usuário | 🔄 Em progresso | — | Resposta do usuário |
+| 6.3 | Executar passos 1 a 10 do plano | ⬜ Pendente | — | `node --check` + leitura |
+| 6.4 | Aplicar SQL no Supabase (só com pedido) e 1º agrupamento da 135080 | ⬜ Pendente | — | Consultas de leitura |
+| 6.5 | Commit local | ⬜ Pendente | — | `git commit` |
+| 6.6 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 7 — Trabalho em equipe ITIC (agrupador das aulas 1 a 7) (pedida em 2026-10-05)
+
+Tarefa pequena (1 página HTML + 1 CSS). Fonte: os `.md` de `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-GRANDE/`
+(nunca os PDF). Entregável: `ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html`.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 7.1 | Ler os 7 Markdowns das aulas (1 a 7) | ✅ Concluído | 2026-10-05 | Leitura dos `.md` |
+| 7.2 | CSS reaproveitável `assets/css/atividade-equipe.css` | ✅ Concluído | 2026-10-05 | Leitura |
+| 7.3 | Página HTML do trabalho (formatação da aula 6 + modelos da aula 7 + cobertura das aulas 1–5) | ✅ Concluído | 2026-10-05 | 384 linhas, sem `<style>`/`<script>` embutidos |
+| 7.4 | Item no `MENU-ATIVIDADES.js` | ✅ Concluído | 2026-10-05 | `node --check` OK |
+| 7.5 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
+| 7.6 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |

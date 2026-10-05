@@ -8,6 +8,10 @@ window.MENU_ATIVIDADES = {
     { rotulo: '📚 Índice', link: 'index.html' },
     { rotulo: '📘 Apostila', link: '../APOSTILA/APOSTILA-INTRODUCAO-TIC.html' },
     {
+      rotulo: '👥 Trabalho em equipe (Aulas 01 a 07)',
+      link: 'ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html',
+    },
+    {
       rotulo: '📝 Atividades por aula',
       subitens: [
         {
