@@ -16,6 +16,17 @@ const TEXTO_BOTAO_WORD_PAGINA = '📝 Exportar em Word';
 const TEXTO_PREPARANDO_WORD_PAGINA = '⏳ Preparando o Word...';
 const MSG_ERRO_WORD_PAGINA = 'Não foi possível gerar o Word: ';
 const ROTA_DOCUMENTO_WORD = 'documento-word.js';
+// Cabeçalho do PDF (só na impressão): dados lidos do <body> (data-uc, data-curso, data-docente,
+// data-turma). Sem data-turma, a linha da turma fica em branco para preencher à mão.
+const CLASSE_CABECALHO_EXPORTACAO = 'cabecalho-exportacao';
+const TITULO_CABECALHO_EXPORTACAO = 'SENAI — Serviço Nacional de Aprendizagem Industrial';
+const CAMPOS_CABECALHO_EXPORTACAO = [
+  { rotulo: 'Matéria', dado: 'uc' },
+  { rotulo: 'Curso', dado: 'curso' },
+  { rotulo: 'Professor', dado: 'docente' },
+  { rotulo: 'Turma', dado: 'turma' },
+];
+const LINHA_EM_BRANCO_EXPORTACAO = '______________________________';
 const SELETOR_RAIZ_EXPORTACAO = '.container';
 const SELETOR_FORA_EXPORTACAO = 'button, input, select, textarea, nav, script, style, noscript, '
   + '.export-bar, .voltar, .restricao-turma-aviso, #header-usuario';
@@ -98,6 +109,7 @@ function aplicarEstiloPagina(original, copia) {
  * @returns {boolean} true quando não deve ir para o documento.
  */
 function ficaForaDaExportacao(elemento) {
+  if (elemento.classList.contains(CLASSE_CABECALHO_EXPORTACAO)) return false;
   const ehSoDaTela = elemento.matches(SELETOR_FORA_EXPORTACAO);
   return ehSoDaTela || getComputedStyle(elemento).display === 'none';
 }
@@ -179,10 +191,49 @@ function prepararBotaoExportarPagina(botaoPdf) {
 }
 
 /**
- * Prepara todos os botões de exportação da página.
+ * Cria uma linha "Rótulo: valor" do cabeçalho do PDF.
+ * @param {string} rotulo - Nome do campo.
+ * @param {string} valor - Valor (vazio vira linha em branco).
+ * @returns {HTMLParagraphElement} Linha montada.
+ */
+function criarLinhaCabecalhoExportacao(rotulo, valor) {
+  const linha = document.createElement('p');
+  linha.className = CLASSE_CABECALHO_EXPORTACAO + '__linha';
+  const nome = document.createElement('strong');
+  nome.textContent = rotulo + ': ';
+  linha.append(nome, valor || LINHA_EM_BRANCO_EXPORTACAO);
+  return linha;
+}
+
+/**
+ * Monta (uma vez) o cabeçalho do PDF no topo da página, com os dados do <body>.
+ * Só aparece na impressão (assets/css/exportar-pagina.css).
+ * @returns {void}
+ */
+function montarCabecalhoExportacao() {
+  const dados = document.body.dataset;
+  const raiz = document.querySelector(SELETOR_RAIZ_EXPORTACAO);
+  const jaExiste = Boolean(document.querySelector('.' + CLASSE_CABECALHO_EXPORTACAO));
+  if (!raiz || !dados.uc || jaExiste) return;
+
+  const cabecalho = document.createElement('div');
+  cabecalho.className = CLASSE_CABECALHO_EXPORTACAO;
+  const titulo = document.createElement('p');
+  titulo.className = CLASSE_CABECALHO_EXPORTACAO + '__titulo';
+  titulo.textContent = TITULO_CABECALHO_EXPORTACAO;
+  const linhas = CAMPOS_CABECALHO_EXPORTACAO
+    .map((campo) => criarLinhaCabecalhoExportacao(campo.rotulo, dados[campo.dado]));
+  const data = new Date().toLocaleDateString('pt-BR');
+  cabecalho.append(titulo, ...linhas, criarLinhaCabecalhoExportacao('Data', data));
+  raiz.prepend(cabecalho);
+}
+
+/**
+ * Prepara o cabeçalho do PDF e todos os botões de exportação da página.
  * @returns {void}
  */
 function iniciarExportarPagina() {
+  montarCabecalhoExportacao();
   document.querySelectorAll(SELETOR_BOTAO_PDF_PAGINA).forEach(prepararBotaoExportarPagina);
 }
 

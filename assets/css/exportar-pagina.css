@@ -1,5 +1,14 @@
 /* Exportação da página inteira (assets/js/exportar-pagina.js): o PDF sai como a tela. */
 
+:root {
+  --cabecalho-exportacao-azul: #004384;
+  --cabecalho-exportacao-borda: #cbd5e0;
+  --cabecalho-exportacao-texto: #1a202c;
+}
+
+/* Cabeçalho com matéria, curso, professor, turma e data: só no PDF. */
+.cabecalho-exportacao { display: none; }
+
 @media print {
   @page { size: A4; margin: 10mm; }
 
@@ -18,6 +27,29 @@
   body.exportar-pagina .restricao-turma-aviso {
     display: none !important;
   }
+
+  body.exportar-pagina .cabecalho-exportacao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 16px;
+    margin: 0 0 10px;
+    padding: 10px 14px;
+    border: 1px solid var(--cabecalho-exportacao-borda);
+    border-top: 4px solid var(--cabecalho-exportacao-azul);
+    color: var(--cabecalho-exportacao-texto);
+    background: #ffffff;
+    font-size: 12px;
+  }
+
+  body.exportar-pagina .cabecalho-exportacao__titulo {
+    grid-column: 1 / -1;
+    margin: 0 0 4px;
+    color: var(--cabecalho-exportacao-azul);
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  body.exportar-pagina .cabecalho-exportacao__linha { margin: 0; }
 
   body.exportar-pagina .aula-card,
   body.exportar-pagina .content-box,
