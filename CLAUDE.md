@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-05 12:19
+**Versão das regras:** 2026-10-05 13:17
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-05 13:17 | Regra "PÁGINA VISÍVEL SÓ PARA ALGUMAS TURMAS": `assets/js/restricao-turma.js` + `data-turmas-permitidas` (turma descoberta pelo aluno logado na `turmaaluno`) |
 | 2026-10-05 12:19 | Regra "EXPORTAR EM WORD AO LADO DE CADA EXPORTAR PDF" (global): toda exportação em PDF de atividade/avaliação tem o botão **📝 Exportar em Word** ao lado, com o mesmo layout do PDF (`assets/js/documento-word.js`, `exportar-word.js`, `exportar-word-pratica.js`) |
 | 2026-10-05 07:39 | Regra "EQUIPES POR TURMA + MATÉRIA": menu **👥 Equipes** nas páginas de atividades abre o modal com o CRUD das equipes (tabelas `equipe` e `equipe_membro`); `js/menu.js` aceita itens de ação (`acao`) |
 | 2026-10-03 20:55 | Regras "MATÉRIA MODELO: INTRODUÇÃO À TIC" (tudo segue a estrutura que funciona na ITIC) e "AULAS EXTRAÍDAS DA EMENTA EM `CONTEUDO/`" (1 aula a cada 4 h, arredondando para cima; arquivo `AULA-NN-DESCRICAO-CURTA.md`; atividades e, no final, apostila feitas a partir dessas aulas); fontes das 50 questões e da apostila apontam para `CONTEUDO/` |
@@ -1585,6 +1586,20 @@ SQL: `database/2026-10-05-equipes-turma-materia.sql` (⏳ aplicar no Supabase s�
   carrega `assets/js/menu-acao-<acao>.js`, que registra `window.ACOES_MENU_ATIVIDADES[acao]`.
 - ✅ **Matérias com o menu:** Introdução à TIC (2026-10-05). Outras matérias recebem o item no
   `MENU-ATIVIDADES.js` quando o usuário pedir (regra das matérias semelhantes).
+
+## 🎯 REGRA — PÁGINA VISÍVEL SÓ PARA ALGUMAS TURMAS
+
+Registrada em 2026-10-05 a pedido do usuário.
+
+- ✅ Página com `<body class="restrito-turma" data-turmas-permitidas="135081">` + o script
+  genérico `assets/js/restricao-turma.js` (+ `assets/css/restricao-turma.css`) só mostra o
+  conteúdo (`<main>` e `<footer>`) para o **aluno logado que tem vínculo, na `turmaaluno`, com
+  uma das turmas da lista** (a turma é descoberta pelo login, nunca digitada). Professor sempre
+  vê, com o aviso das turmas liberadas; sem login, pede para entrar.
+- ⚠️ É restrição de **exibição** (a página é estática e publicada): nunca colocar nela gabarito,
+  dados pessoais ou outro conteúdo sensível.
+- 📌 Primeira página: `INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-v2.html`
+  (versão simplificada do trabalho em equipe), só para a turma **135081 — AI AOPL 2026/2 V1 · Tarde**.
 
 ## 🔑 REGRA CRÍTICA — GABARITO COM AS RESPOSTAS CERTAS: SÓ O PROFESSOR
 
