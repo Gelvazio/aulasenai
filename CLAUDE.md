@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-05 13:37
+**Versão das regras:** 2026-10-05 15:59
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-05 15:59 | Exportação da página inteira: `assets/js/exportar-pagina.js` + `assets/css/exportar-pagina.css` (botões **📥 Exportar Para PDF**, igual à tela, e **📝 Exportar em Word** ao lado), usados no trabalho em equipe v1 e v2 |
 | 2026-10-05 13:37 | Regra "BLOQUEIO DE ATIVIDADE POR TURMA": o interruptor do índice vale só para a **turma favorita** (coluna `atividade.bloqueio` com os códigos das turmas bloqueadas; sem vínculo = liberado; função `definir_bloqueio_turma`); relatório de atividades considera a turma |
 | 2026-10-05 13:17 | Regra "PÁGINA VISÍVEL SÓ PARA ALGUMAS TURMAS": `assets/js/restricao-turma.js` + `data-turmas-permitidas` (turma descoberta pelo aluno logado na `turmaaluno`) |
 | 2026-10-05 12:19 | Regra "EXPORTAR EM WORD AO LADO DE CADA EXPORTAR PDF" (global): toda exportação em PDF de atividade/avaliação tem o botão **📝 Exportar em Word** ao lado, com o mesmo layout do PDF (`assets/js/documento-word.js`, `exportar-word.js`, `exportar-word-pratica.js`) |
@@ -1432,7 +1433,11 @@ Registrada em 2026-10-05 a pedido do usuário. Vale para **todas** as atividades
   - `assets/js/exportar-word-pratica.js` — atividades práticas (Excel): ao lado de cada
     `[data-acao="imprimir"]`, exporta a capa + todas as questões (o mesmo conteúdo do
     "Imprimir / PDF"), com o estilo da página e as telas em PNG (carregado pelo
-    `assets/js/atividade-pratica-excel.js`).
+    `assets/js/atividade-pratica-excel.js`);
+  - `assets/js/exportar-pagina.js` (+ `assets/css/exportar-pagina.css`) — página inteira, como
+    está na tela: o botão `data-acao="exportar-pdf-pagina"` ("📥 Exportar Para PDF") abre a
+    impressão com as cores da tela e o script põe o "📝 Exportar em Word" ao lado (body com a
+    classe `exportar-pagina`). Usado no trabalho em equipe da ITIC (v1 e v2).
 - ✅ **Página ou exportação nova em PDF** deve ganhar o botão de Word junto: usar o
   `atividade.js` (ou o `atividade-pratica-excel.js`) e, se o PDF for feito por outro script,
   acrescentar o espelho em `ESPELHOS_WORD` (`exportar-word.js`) ou criar o equivalente com o
@@ -1745,6 +1750,8 @@ assets/
 │                        documento-word.js + exportar-word.js + exportar-word-pratica.js —
 │                        botão "📝 Exportar em Word" ao lado de cada exportar PDF (regra
 │                        "EXPORTAR EM WORD");
+│                        exportar-pagina.js + css/exportar-pagina.css — "📥 Exportar Para PDF"
+│                        (página inteira, igual à tela) + "📝 Exportar em Word" ao lado;
 │                        exportar-banco-moodle.js + banco-moodle-xml.js — botão "📥 Banco Moodle
 │                        (AVA SENAI)" nas atividades objetivas, só professor (carregado pelo
 │                        atividade.js); o XML segue o mesmo formato do gerador-banco-ava)

@@ -1,0 +1,27 @@
+/* Exportação da página inteira (assets/js/exportar-pagina.js): o PDF sai como a tela. */
+
+@media print {
+  @page { size: A4; margin: 10mm; }
+
+  /* Cores e fundos iguais aos da tela. */
+  body.exportar-pagina,
+  body.exportar-pagina * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Só o que é da tela fica de fora: menus, botões, avisos e a barra do usuário. */
+  body.exportar-pagina #header-usuario,
+  body.exportar-pagina .menu-atividades,
+  body.exportar-pagina .export-bar,
+  body.exportar-pagina .voltar,
+  body.exportar-pagina .restricao-turma-aviso {
+    display: none !important;
+  }
+
+  body.exportar-pagina .aula-card,
+  body.exportar-pagina .content-box,
+  body.exportar-pagina tr {
+    break-inside: avoid;
+  }
+}
