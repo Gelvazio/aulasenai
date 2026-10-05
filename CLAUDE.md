@@ -1437,7 +1437,8 @@ Registrada em 2026-10-05 a pedido do usuário. Vale para **todas** as atividades
   - `assets/js/exportar-pagina.js` (+ `assets/css/exportar-pagina.css`) — página inteira, como
     está na tela: o botão `data-acao="exportar-pdf-pagina"` ("📥 Exportar Para PDF") abre a
     impressão com as cores da tela e o script põe o "📝 Exportar em Word" ao lado (body com a
-    classe `exportar-pagina`). Usado no trabalho em equipe da ITIC (v1 e v2).
+    classe `exportar-pagina`). Usado no trabalho em equipe da ITIC (v1 e v2), **sem o botão de
+    Word** a pedido do usuário (2026-10-05): `data-word="nao"` no botão de PDF desliga o Word.
 - ✅ **Página ou exportação nova em PDF** deve ganhar o botão de Word junto: usar o
   `atividade.js` (ou o `atividade-pratica-excel.js`) e, se o PDF for feito por outro script,
   acrescentar o espelho em `ESPELHOS_WORD` (`exportar-word.js`) ou criar o equivalente com o

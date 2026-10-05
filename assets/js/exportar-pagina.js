@@ -6,6 +6,7 @@
 //     cores e o mesmo layout da tela (o CSS de impressão tira só menus e botões);
 //   - "📝 Exportar em Word": colocado ao lado (regra "EXPORTAR EM WORD"), copia o mesmo conteúdo
 //     com o estilo calculado da página e baixa um .doc (assets/js/documento-word.js).
+//     Com data-word="nao" no botão de PDF, o botão de Word não é criado (pedido do professor).
 // Nada é gravado no banco nem no navegador.
 
 const RAIZ_EXPORTAR_PAGINA = document.currentScript ? document.currentScript.src : location.href;
@@ -158,14 +159,15 @@ async function exportarWordPagina(botao) {
 }
 
 /**
- * Liga o botão de PDF e coloca o botão de Word ao lado dele.
+ * Liga o botão de PDF e coloca o botão de Word ao lado dele (exceto com data-word="nao").
  * @param {HTMLButtonElement} botaoPdf - Botão "Exportar Para PDF".
  * @returns {void}
  */
 function prepararBotaoExportarPagina(botaoPdf) {
   botaoPdf.addEventListener('click', () => window.print());
+  const semWord = botaoPdf.dataset.word === 'nao';
   const proximo = botaoPdf.nextElementSibling;
-  if (proximo?.dataset.acao === ACAO_WORD_PAGINA) return;
+  if (semWord || proximo?.dataset.acao === ACAO_WORD_PAGINA) return;
 
   const botaoWord = document.createElement('button');
   botaoWord.type = 'button';
