@@ -20,3 +20,11 @@
     background: var(--favorita-botao); color: var(--favorita-botao-texto);
 }
 .barra-turma-favorita__botao:disabled { opacity: 0.6; cursor: wait; }
+
+/* Celular: lista e botão na largura da tela; 16 px evita o zoom automático. */
+@media (max-width: 600px) {
+    .barra-turma-favorita { flex-direction: column; align-items: stretch; padding: 10px; }
+    .barra-turma-favorita__rotulo { flex-direction: column; align-items: stretch; }
+    .barra-turma-favorita__lista { width: 100%; padding: 10px; font-size: 16px; }
+    .barra-turma-favorita__botao { width: 100%; padding: 11px 14px; }
+}

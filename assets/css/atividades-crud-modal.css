@@ -76,3 +76,13 @@
 
 .crud-mensagem { margin-top: 10px; min-height: 20px; color: var(--crud-ok); font-weight: 600; }
 .crud-mensagem--erro { color: var(--crud-perigo); }
+
+/* Celular: modal em tela cheia; campos de 16 px (sem zoom automático). */
+@media (max-width: 600px) {
+    .crud-fundo { padding: 0; align-items: stretch; }
+    .crud-caixa { max-height: 100vh; border-radius: 0; padding: 14px 12px; }
+    .crud-linha { flex-wrap: wrap; }
+    .crud-campo input[type="text"], .crud-campo input[type="date"],
+    .crud-campo input[type="number"], .crud-campo select { font-size: 16px; padding: 10px; }
+    .crud-btn { padding: 9px 14px; }
+}

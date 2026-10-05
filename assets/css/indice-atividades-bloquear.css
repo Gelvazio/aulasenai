@@ -31,3 +31,8 @@
 
 /* Professor: o interruptor fica acima do véu do card bloqueado, claro e clicável */
 .aula.bloqueada-professor .interruptor-bloquear { position: relative; z-index: 2; }
+
+/* Celular: interruptor com área de toque maior. */
+@media (max-width: 600px) {
+  .interruptor-bloquear { min-height: 44px; padding: 8px 12px; font-size: 14px; }
+}

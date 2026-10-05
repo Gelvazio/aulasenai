@@ -7,3 +7,8 @@
 }
 .filtro-feitas select { margin-left: 6px; padding: 4px 8px; border-radius: 6px; }
 article.aula[hidden] { display: none; }
+
+@media (max-width: 600px) {
+  .filtro-feitas { padding: 10px 10px 0; flex-wrap: wrap; }
+  .filtro-feitas select { font-size: 16px; padding: 8px 10px; }
+}
