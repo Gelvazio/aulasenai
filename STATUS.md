@@ -177,7 +177,8 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 16.4 | Aplicar o SQL no Supabase (conector, a pedido do usuário) | ✅ Concluído | 2026-10-05 | Consulta: atividade ids 58 (v1) e 59 (v2), aula_id 27, ativo = true |
 | 16.5 | Bloquear a v1 e deixar só a v2 liberada (pedido do usuário) | ✅ Concluído | 2026-10-05 | Consulta: id 58 (v1) ativo = false; id 59 (v2) ativo = true |
 | 16.6 | Tirar `data-sem-bloqueio` do card da v1 (o atributo escondia o interruptor Bloquear) | ✅ Concluído | 2026-10-05 | Leitura do HTML: card v1 sem o atributo; página id 58 no banco |
-| 16.7 | Aceite do usuário | ⬜ Pendente | — | — |
+| 16.7 | Nome "v1" no título do card do trabalho em equipe original | ✅ Concluído | 2026-10-05 | Leitura do HTML |
+| 16.8 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Etapa 16 — Bloqueio de atividade por turma (turma favorita) (pedida em 2026-10-05; plano `docs/bloqueio-atividade-por-turma-favorita.md`, aprovado: "SIM, PODE EXECUTAR")
 | Item | Descrição | Status | Concluído em | Verificação |
