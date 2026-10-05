@@ -1,6 +1,6 @@
 -- Equipes de sala de aula por TURMA + MATÉRIA (CRUD global, usado em todas as matérias).
 -- Plano: docs/equipes-sala-de-aula.md
--- Idempotente e sem apagar dados. Rodar no Supabase → SQL Editor (roda como service_role).
+-- Idempotente e sem apagar dados. ✅ Aplicado no Supabase em 2026-10-05 (migração equipes_turma_materia).
 --
 -- Gravação: professor só nas turmas vinculadas a ele (professor_tem_turma; o administrador em
 -- todas). Leitura: o mesmo professor; o aluno lê só a própria equipe (função minhas_equipes).
@@ -171,7 +171,7 @@ security definer
 set search_path = public
 as $$
   select e.id, e.nome, e.descricao, e.turma_codigo,
-         coalesce(u.nome_completo, 'Aluno'), m.papel, m.tarefas, m.lider,
+         coalesce(u.nome_completo::text, 'Aluno'), m.papel, m.tarefas, m.lider,
          m.aluno_id = auth.uid()
   from public.equipe e
   join public.equipe_membro m on m.equipe_id = e.id

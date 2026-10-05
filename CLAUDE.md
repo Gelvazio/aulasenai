@@ -1568,7 +1568,7 @@ SQL: `database/2026-10-02-turmaaluno.sql` (aplicado no banco).
 ## 👥 REGRA — EQUIPES POR TURMA + MATÉRIA (MENU 👥 EQUIPES NAS ATIVIDADES)
 
 Registrada em 2026-10-05 a pedido do usuário. Plano: `docs/equipes-sala-de-aula.md`;
-SQL: `database/2026-10-05-equipes-turma-materia.sql` (⏳ aplicar no Supabase só com pedido).
+SQL: `database/2026-10-05-equipes-turma-materia.sql` (✅ aplicado no Supabase em 2026-10-05).
 
 - ✅ **Global:** as equipes valem para qualquer matéria e turma. Equipe = **turma + matéria +
   nome** (tabela `equipe`); integrante = aluno da turma (`turmaaluno`) com papel, tarefas e

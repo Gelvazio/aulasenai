@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 17, item 17.4 — professor conferir o `relatorioAtividades.html` com uma atividade bloqueada só para uma turma. Depois: 16.7, 15.8, 14.6, 6.8 e 4.5.
+**Próximo passo:** Etapa 6, item 6.9 — o professor testar o menu 👥 Equipes da ITIC (turmas 135080/135081) e dar o aceite. Pendente anterior: Etapa 4, item 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -87,7 +87,7 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 6.7e | Plano `ATIVIDADE-COMUNICACAO-E-PRODUCAO-TEXTUAL.md` sincronizado com a página do aluno (brainstorming 15 min, líder escolhido pela equipe, ficha + Apêndice A, roteiro de 8 etapas, 15 partes, seções 1–8); corrigido "18 → 19 itens" no `ATIVIDADE-COMUNICACAO-SIMPLES.md` | ✅ Concluído | 2026-10-05 | Comparação seção a seção com o HTML |
 | 6.7f | Versão 2 simplificada do trabalho em equipe (`TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-v2.html`: 5 textos, 8 regras de formatação com onde clicar, rubrica simples) visível só para a turma 135081 (`assets/js/restricao-turma.js` lendo a `turmaaluno`) + item no menu + regra no `CLAUDE.md` | ✅ Concluído | 2026-10-05 13:17 | `node --check`; teste na tela fica com o professor |
 | 6.7g | v2: nova história de logística (Rota Certa — endereço trocado, coletores sem driver, 38 pedidos errados, 70 caixas de diferença, FEFO, phishing), missão em 8 passos e textos 2–5 e rubrica adaptados | ✅ Concluído | 2026-10-05 | Nenhuma menção à história antiga (ERP/backup) na página |
-| 6.8 | Aplicar o SQL no Supabase (pedido em 2026-10-05) | ⛔ Bloqueado — sessão sem conector do Supabase | — | Consultas de leitura |
+| 6.8 | Aplicar o SQL no Supabase (pedido em 2026-10-05) | ✅ Concluído | 2026-10-05 | Leitura: 2 tabelas com RLS, 8 políticas, 2 triggers, 3 funções; anon sem acesso; matéria ITIC (id 25) identificada pelas atividades; 135080 (33 alunos) e 135081 (35) com vínculo e professor |
 | 6.9 | Teste na tela pelo professor e aceite (equipes da turma 135080) | ⬜ Pendente | — | — |
 
 ## Etapa 10 — Detalhar a "Missão da equipe" do trabalho em equipe da ITIC (pedida em 2026-10-05)
@@ -208,7 +208,7 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | Data | Item | Motivo | O que destrava | Resolvido em |
 |------|------|--------|----------------|--------------|
 | 2026-10-05 | 16.4 (regra no `CLAUDE.md`) | Edições do `CLAUDE.md` recusadas pelo usuário | Usuário dizer se a regra entra | 2026-10-05 13:38 |
-| 2026-10-05 | 6.8 (SQL das equipes) | Nenhum conector do Supabase nesta sessão (só Claude Docs, visualize, MCP Finder) | Conectar o Supabase na sessão ou o professor rodar o SQL no SQL Editor | — |
+| 2026-10-05 | 6.8 (SQL das equipes) | Nenhum conector do Supabase nesta sessão (só Claude Docs, visualize, MCP Finder) | Conectar o Supabase na sessão ou o professor rodar o SQL no SQL Editor | 2026-10-05 (conector conectado; SQL aplicado) |
 | 2026-10-03 | Etapa 5 (Testes de Frontend) | Usuário pediu confirmação da regra de aulas em `CONTEUDO/` antes de continuar | Respostas do item 4.5 | — |
 
 ## Registro de decisões

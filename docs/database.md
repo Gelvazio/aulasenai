@@ -532,7 +532,7 @@ este vínculo.
 
 ## 👥 Atualização 2026-10-05 — Equipes por turma + matéria
 
-SQL: `database/2026-10-05-equipes-turma-materia.sql` (⏳ aguardando aplicação no Supabase).
+SQL: `database/2026-10-05-equipes-turma-materia.sql` (✅ aplicado no Supabase em 2026-10-05).
 Plano: `docs/equipes-sala-de-aula.md`. Tela: modal **👥 Equipes** do menu das atividades.
 
 | Tabela / objeto | Campos / regra |

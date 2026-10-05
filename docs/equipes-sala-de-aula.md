@@ -7,7 +7,7 @@ integrantes), começando pela Introdução à TIC (turma 135080 — CEPLAS ITIC 
 **Tech Stack:** Supabase (PostgreSQL + RLS + Auth), JavaScript vanilla, CSS com tokens.
 
 **Criado em:** 2026-10-05
-**Concluído em:** 2026-10-05 (código); SQL aguardando aplicação no Supabase
+**Concluído em:** 2026-10-05 (código e SQL aplicado no Supabase)
 **Tempo decorrido:** —
 
 ---
@@ -41,7 +41,7 @@ integrantes), começando pela Introdução à TIC (turma 135080 — CEPLAS ITIC 
 | 7 | `docs/database.md` + `docs/relatorio_verificacao_database.html` | ✅ Concluído | 2026-10-05 |
 | 8 | Regra no `CLAUDE.md` (versão + histórico) | ✅ Concluído | 2026-10-05 |
 | 9 | Conferência: `node --check` e leitura (sem navegador) | ✅ Concluído | 2026-10-05 |
-| 10 | Aplicar o SQL no Supabase (**só com pedido do usuário**) | ⬜ Pendente | — |
+| 10 | Aplicar o SQL no Supabase (pedido do usuário) | ✅ Concluído | 2026-10-05 |
 | 11 | Teste na tela pelo professor (montar as equipes da 135080) | ⬜ Pendente | — |
 | 12 | Outras matérias: acrescentar o item no `MENU-ATIVIDADES.js` de cada uma | ⬜ Quando o usuário pedir | — |
 
