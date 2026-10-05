@@ -118,7 +118,7 @@ Tabela que mostra onde cada aula aparece no trabalho:
   1,5, 6 pt depois, recuo 1,25 cm; destaques sem sublinhado; estilos Título 1 e Título 2;
   sumário automático; quebra de página antes de cada Título 1; capa centralizada; cabeçalho e
   rodapé; quebra de seção após a capa.
-- **Itens 10 a 18 (elementos obrigatórios):** seção em paisagem; tabelas com cabeçalho
+- **Itens 10 a 19 (elementos obrigatórios):** seção em paisagem; tabelas com cabeçalho
   repetido; figura com legenda; listas e lista multinível; caixa de ATENÇÃO; 2 colunas;
   revisão (idioma, dicionário, Localizar e Substituir); colaboração; nome padronizado; PDF final.
 - ⚠️ Enters repetidos, sumário digitado e títulos formatados à mão **perdem pontos**.
@@ -186,7 +186,7 @@ Fecha com a mesma **regra de ouro** da versão completa.
 | Cobertura por aula | Tabela completa | Não |
 | Roteiro | 8 etapas (pesquisa em paralelo) | 7 passos (pesquisa dentro da redação) — **mesmos 240 min** |
 | Partes do documento | 15, com conteúdo e aula de cada uma | 15, uma linha cada |
-| Formatação | 18 itens numerados (base da rubrica) | Resumo em 2 colunas |
+| Formatação | 19 itens numerados (base da rubrica) | Resumo em 2 colunas |
 | Modelos de texto (ata, memorando, ofício) | Sim, prontos para adaptar | Não |
 | Checklist de entrega | Sim (10 itens) | Não |
 | Rubrica | Com os 4 níveis de desempenho | Só critérios e pontos |
