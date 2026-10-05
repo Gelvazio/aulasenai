@@ -28,12 +28,14 @@
     -webkit-print-color-adjust: exact;
   }
 
-  /* Só o que é da tela fica de fora: menus, botões, avisos e a barra do usuário. */
+  /* Fica de fora do PDF: menus, botões, avisos, a barra do usuário e a faixa do título
+     (no PDF, o cabeçalho SENAI já identifica a atividade). */
   body.exportar-pagina #header-usuario,
   body.exportar-pagina .menu-atividades,
   body.exportar-pagina .export-bar,
   body.exportar-pagina .voltar,
-  body.exportar-pagina .restricao-turma-aviso {
+  body.exportar-pagina .restricao-turma-aviso,
+  body.exportar-pagina .container > header {
     display: none !important;
   }
 
