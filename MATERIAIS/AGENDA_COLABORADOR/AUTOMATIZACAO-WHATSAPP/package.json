@@ -1,0 +1,27 @@
+{
+  "name": "automatizacao-whatsapp",
+  "version": "1.0.0",
+  "description": "Análise, resumos e alertas dos grupos do WhatsApp com dashboard vanilla",
+  "type": "module",
+  "private": true,
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "iniciar": "node --env-file=.env src/index.js",
+    "verificar": "node scripts/verificarSintaxe.js && eslint .",
+    "formatar": "prettier --write ."
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "7.0.0-rc14",
+    "pino": "10.4.0",
+    "qrcode": "1.5.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.9"
+  }
+}

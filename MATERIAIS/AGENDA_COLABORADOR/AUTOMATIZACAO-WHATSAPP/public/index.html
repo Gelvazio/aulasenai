@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Painel de Grupos</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/componentes.css" />
+    <link rel="stylesheet" href="/css/paginas.css" />
+    <script type="module" src="/js/app.js"></script>
+  </head>
+  <body>
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+    <div class="aplicacao" id="aplicacao" hidden>
+      <header class="topo">
+        <div class="topo__marca">
+          <span class="topo__logo" aria-hidden="true">◉</span>
+          <span class="topo__titulo">Painel de Grupos</span>
+        </div>
+        <div class="topo__acoes">
+          <a class="selo selo--neutro" id="indicador-conexao" href="#/conexao">Verificando…</a>
+          <button class="botao botao--icone" id="botao-tema" type="button" aria-label="Alternar tema">
+            ◐
+          </button>
+        </div>
+      </header>
+
+      <nav class="menu" aria-label="Navegação principal">
+        <a class="menu__item" href="#/" data-rota="/">
+          <span class="menu__icone" aria-hidden="true">▦</span><span>Visão geral</span>
+        </a>
+        <a class="menu__item" href="#/grupos" data-rota="/grupos">
+          <span class="menu__icone" aria-hidden="true">☰</span><span>Grupos</span>
+        </a>
+        <a class="menu__item" href="#/resumos" data-rota="/resumos">
+          <span class="menu__icone" aria-hidden="true">✎</span><span>Resumos</span>
+        </a>
+        <a class="menu__item" href="#/alertas" data-rota="/alertas">
+          <span class="menu__icone" aria-hidden="true">⚑</span><span>Alertas</span>
+          <span class="menu__contador" id="contador-alertas" hidden>0</span>
+        </a>
+        <a class="menu__item" href="#/busca" data-rota="/busca">
+          <span class="menu__icone" aria-hidden="true">⌕</span><span>Busca</span>
+        </a>
+        <a class="menu__item" href="#/conexao" data-rota="/conexao">
+          <span class="menu__icone" aria-hidden="true">⇄</span><span>Conexão</span>
+        </a>
+        <a class="menu__item" href="#/configuracoes" data-rota="/configuracoes">
+          <span class="menu__icone" aria-hidden="true">⚙</span><span>Configurações</span>
+        </a>
+      </nav>
+
+      <main class="conteudo" id="conteudo" tabindex="-1"></main>
+    </div>
+
+    <main class="tela-entrada" id="tela-entrada" hidden></main>
+
+    <div class="avisos" id="avisos" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

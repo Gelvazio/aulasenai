@@ -1,0 +1,105 @@
+/* Tokens de design: cores, espaçamentos, tipografia. Componentes dependem só destas variáveis. */
+
+:root {
+  --fonte-base: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --fonte-mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  --tamanho-xs: 0.75rem;
+  --tamanho-sm: 0.875rem;
+  --tamanho-md: 1rem;
+  --tamanho-lg: 1.25rem;
+  --tamanho-xl: 1.75rem;
+
+  --espaco-1: 0.25rem;
+  --espaco-2: 0.5rem;
+  --espaco-3: 0.75rem;
+  --espaco-4: 1rem;
+  --espaco-5: 1.5rem;
+  --espaco-6: 2rem;
+
+  --raio-sm: 6px;
+  --raio-md: 10px;
+  --raio-lg: 16px;
+  --raio-total: 999px;
+
+  --largura-menu: 232px;
+  --altura-topo: 56px;
+  --largura-maxima: 1280px;
+  --transicao: 150ms ease;
+
+  /* Tema claro */
+  --cor-fundo: #f4f6f8;
+  --cor-superficie: #ffffff;
+  --cor-superficie-2: #eef1f4;
+  --cor-borda: #dde2e7;
+  --cor-texto: #1a2128;
+  --cor-texto-suave: #5b6672;
+  --cor-primaria: #14866d;
+  --cor-primaria-forte: #0e6b56;
+  --cor-primaria-suave: #dff3ec;
+  --cor-sobre-primaria: #ffffff;
+  --cor-info: #2563c9;
+  --cor-info-suave: #e3ecfb;
+  --cor-atencao: #b26a00;
+  --cor-atencao-suave: #fdf0d9;
+  --cor-urgente: #c62f2f;
+  --cor-urgente-suave: #fbe4e4;
+  --cor-sucesso: #1d8a4a;
+  --cor-sucesso-suave: #e1f4e8;
+  --cor-marcacao: #fff1a8;
+  --cor-sombra: 0 1px 2px rgb(16 24 32 / 6%), 0 4px 16px rgb(16 24 32 / 6%);
+  --cor-foco: #2563c9;
+  --cor-sobre-destaque: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema='claro']) {
+    --cor-fundo: #0f1418;
+    --cor-superficie: #171e24;
+    --cor-superficie-2: #1f2830;
+    --cor-borda: #2b3640;
+    --cor-texto: #e6ebef;
+    --cor-texto-suave: #9aa7b3;
+    --cor-primaria: #2fbf98;
+    --cor-primaria-forte: #4fd3ae;
+    --cor-primaria-suave: #133a31;
+    --cor-sobre-primaria: #06221b;
+    --cor-info: #6ea2ff;
+    --cor-info-suave: #1a2a45;
+    --cor-atencao: #f0b049;
+    --cor-atencao-suave: #3a2c12;
+    --cor-urgente: #ff7b7b;
+    --cor-urgente-suave: #421c1c;
+    --cor-sucesso: #5fd28f;
+    --cor-sucesso-suave: #16341f;
+    --cor-marcacao: #5b4d00;
+    --cor-sombra: 0 1px 2px rgb(0 0 0 / 40%), 0 4px 16px rgb(0 0 0 / 30%);
+    --cor-foco: #6ea2ff;
+    --cor-sobre-destaque: #1b0707;
+  }
+}
+
+:root[data-tema='escuro'] {
+  --cor-fundo: #0f1418;
+  --cor-superficie: #171e24;
+  --cor-superficie-2: #1f2830;
+  --cor-borda: #2b3640;
+  --cor-texto: #e6ebef;
+  --cor-texto-suave: #9aa7b3;
+  --cor-primaria: #2fbf98;
+  --cor-primaria-forte: #4fd3ae;
+  --cor-primaria-suave: #133a31;
+  --cor-sobre-primaria: #06221b;
+  --cor-info: #6ea2ff;
+  --cor-info-suave: #1a2a45;
+  --cor-atencao: #f0b049;
+  --cor-atencao-suave: #3a2c12;
+  --cor-urgente: #ff7b7b;
+  --cor-urgente-suave: #421c1c;
+  --cor-sucesso: #5fd28f;
+  --cor-sucesso-suave: #16341f;
+  --cor-marcacao: #5b4d00;
+  --cor-sombra: 0 1px 2px rgb(0 0 0 / 40%), 0 4px 16px rgb(0 0 0 / 30%);
+  --cor-foco: #6ea2ff;
+  --cor-sobre-destaque: #1b0707;
+}

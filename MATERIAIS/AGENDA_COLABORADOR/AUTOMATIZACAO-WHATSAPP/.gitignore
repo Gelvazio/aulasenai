@@ -1,0 +1,8 @@
+node_modules/
+.env
+dados/
+*.sqlite
+*.sqlite-*
+graphify-out/cache/
+.env.*
+!.env.example
