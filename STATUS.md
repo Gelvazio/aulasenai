@@ -122,6 +122,7 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 13.4 | Nova seção pedida: celular usado só nas aulas e recolhido assim que o aluno retornar da escola | ✅ Concluído | 2026-10-05 10:20 | Aberto no Word |
 | 13.5 | Um termo por aluno, com o nome preenchido (Muriel Machado, Carol Machado, Ariane do Nascimento, Ana Gabrieli Alves) | ✅ Concluído | 2026-10-05 10:20 | Aberto no Word: 4 páginas, 1 por aluno |
 | 13.6 | Commit local (só o `STATUS.md`) | ✅ Concluído | 2026-10-05 10:21 | `git commit` |
+| 13.7 | Documento vira pedido de liberação e entrega do celular à instituição de acolhimento; turma 135080 (AI AOPL 2026/2 M1) preenchida; campo do celular (marca, modelo, cor); recolhimento pelo responsável da instituição; assinaturas da instituição, professor e aluno | ✅ Concluído | 2026-10-05 10:40 | Aberto no Word: 4 páginas, 1 por aluno |
 
 ## Etapa 13 — Versão resumida do trabalho em equipe da ITIC (pedida em 2026-10-05)
 
