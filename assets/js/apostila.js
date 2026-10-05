@@ -16,6 +16,9 @@ const PARTE_EXERCICIOS = 'exercicios';
 const TAGS_DIVISIVEIS = ['TABLE', 'UL', 'OL'];
 const TAGS_TITULO = ['H2', 'H3', 'H4'];
 const TOLERANCIA_PIXELS = 1;
+// Marca o fim da paginação: só então o CSS de celular mostra as páginas em modo leitura
+// (antes disso as páginas precisam ter o tamanho A4 para a divisão sair igual ao PDF).
+const CLASSE_APOSTILA_PAGINADA = 'apostila--paginada';
 
 /**
  * Cria uma página A4 vazia com logo, área de conteúdo e rodapé.
@@ -253,6 +256,7 @@ async function iniciarApostila() {
   document.querySelectorAll(SELETOR_FONTES).forEach(paginarFonte);
   numerarPaginas();
   preencherSumario();
+  document.body.classList.add(CLASSE_APOSTILA_PAGINADA);
   document.addEventListener('click', tratarClique);
 }
 

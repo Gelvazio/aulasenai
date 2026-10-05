@@ -420,6 +420,98 @@ body.apostila {
     height: 24px;
 }
 
+/* Celular (modo leitura): depois que o apostila.js divide o conteúdo em páginas A4
+   (body.apostila--paginada), cada página passa a ocupar a largura da tela, com altura livre e
+   letras maiores. A divisão e a numeração das páginas continuam iguais às do PDF; a impressão
+   não muda (estas regras valem só para a tela). */
+@media screen and (max-width: 600px) {
+    body.apostila { -webkit-text-size-adjust: 100%; }
+
+    .apostila__container { padding: 8px; }
+
+    .apostila__barra { flex-direction: column; align-items: stretch; gap: 8px; }
+
+    .apostila__botao { width: 100%; padding: 12px 16px; font-size: 15px; }
+
+    .apostila__botao--pequeno { width: auto; margin: 6px 0 0; padding: 8px 12px; font-size: 13px; }
+
+    .apostila__dica { font-size: 13px; text-align: center; }
+
+    body.apostila--paginada .apostila__container { overflow-x: visible; }
+
+    body.apostila--paginada .pagina-senai {
+        width: 100%;
+        margin: 0 0 12px;
+        padding: 64px 14px 44px 22px;
+        font-size: 16px;
+        line-height: 1.6;
+        overflow: visible;
+    }
+
+    body.apostila--paginada .pagina-a4,
+    body.apostila--paginada .pagina-senai__conteudo {
+        height: auto;
+        overflow: visible;
+    }
+
+    body.apostila--paginada .pagina-senai::before,
+    body.apostila--paginada .pagina-senai::after { width: 6px; }
+
+    body.apostila--paginada .pagina-senai__logo { top: 14px; right: 14px; width: 110px; }
+
+    body.apostila--paginada .pagina-senai__rodape {
+        right: 14px;
+        bottom: 12px;
+        left: 22px;
+        font-size: 12px;
+    }
+
+    body.apostila--paginada .pagina-senai h2 { font-size: 21px; overflow-wrap: anywhere; }
+    body.apostila--paginada .pagina-senai h3 { font-size: 18px; }
+    body.apostila--paginada .pagina-senai h4 { font-size: 16px; }
+
+    body.apostila--paginada .pagina-senai p,
+    body.apostila--paginada .pagina-senai li { overflow-wrap: anywhere; }
+
+    /* Tabelas largas rolam para o lado dentro da própria tabela. */
+    body.apostila--paginada .pagina-senai table {
+        display: block;
+        overflow-x: auto;
+        font-size: 14px;
+    }
+
+    body.apostila--paginada .pagina-senai th,
+    body.apostila--paginada .pagina-senai td { min-width: 90px; padding: 6px 8px; }
+
+    body.apostila--paginada .pagina-senai pre { font-size: 13px; }
+
+    body.apostila--paginada .capa-apostila__titulo { font-size: 28px; margin-top: 40px; }
+    body.apostila--paginada .capa-apostila__subtitulo { font-size: 18px; }
+    body.apostila--paginada .capa-apostila__dados { font-size: 15px; }
+
+    body.apostila--paginada .sumario__link { padding: 4px 0; }
+    body.apostila--paginada .sumario__link--nivel-1 { font-size: 16px; }
+    body.apostila--paginada .sumario__link--nivel-2 { padding-left: 10px; }
+    body.apostila--paginada .sumario__link--nivel-3 { padding-left: 20px; font-size: 14px; }
+
+    body.apostila--paginada .glossario__capitulo,
+    body.apostila--paginada .capitulo__capacidades { font-size: 13px; }
+
+    /* Vídeo: miniatura em cima, texto embaixo. */
+    body.apostila--paginada .caixa-video { flex-direction: column; align-items: stretch; }
+    body.apostila--paginada .caixa-video__miniatura {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+    body.apostila--paginada .caixa-video__detalhe { font-size: 13px; }
+
+    body.apostila--paginada .caixa-resumo { padding: 8px 12px 8px 28px; }
+
+    body.apostila--paginada .exercicios__identificacao { grid-template-columns: 1fr; }
+    body.apostila--paginada .exercicio-box { padding: 12px; }
+}
+
 /* Impressão: uma folha A4 por card; margem 0 remove o endereço/paginação do navegador */
 @page {
     size: A4;
