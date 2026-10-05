@@ -61,6 +61,21 @@
     font-size: 14px;
 }
 
+/* Papel responsável, ao lado do título de um texto do trabalho em equipe. */
+.papel-texto {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 2px 10px;
+    border: 1px solid var(--equipe-modelo-borda);
+    border-radius: 12px;
+    background: var(--equipe-modelo-fundo);
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
 .aula-card--secao { border-left-color: var(--secondary); }
 .aula-card--modelo { border-left-color: var(--equipe-modelo-borda); }
 .aula-card--avaliacao { border-left-color: var(--equipe-ok); }
