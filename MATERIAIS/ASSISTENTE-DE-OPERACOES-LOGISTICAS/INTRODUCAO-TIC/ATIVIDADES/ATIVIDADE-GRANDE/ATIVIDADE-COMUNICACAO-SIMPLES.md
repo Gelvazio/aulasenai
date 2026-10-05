@@ -25,7 +25,7 @@ Aulas 01 a 05.
 | Item | Valor (igual nas duas páginas) |
 |---|---|
 | Tipo | Trabalho prático avaliativo em equipe (documento no editor de textos) |
-| Equipe | 4 ou 5 alunos, cada um com um papel |
+| Equipe | 4 a 6 alunos, cada um com um papel (equipe de 6: + analista) |
 | Duração | 1 aula de 4 horas (240 minutos) |
 | Nota | 10 pontos · mínimo 7 |
 | Entrega | 2 arquivos: editável `.docx` (ou `.odt`) e `.pdf` final |
@@ -65,6 +65,7 @@ Aulas 01 a 05.
 | 🔎 Pesquisador(a) | Pesquisa do Modelo 2, avaliação CRAAP, citações e referências |
 | 🎨 Formatador(a) | Página, estilos, sumário, seções, cabeçalho e rodapé (seção 4) |
 | 🛡️ Revisor(a) e segurança | Controle de Alterações, comentários, ortografia e remoção de metadados |
+| 📋 Analista (só em equipe de 6) | Introdução do manual + medidas preventivas e parecer final do Modelo 2 (com o pesquisador) |
 
 - **Regras da equipe:** todos escrevem pelo menos um modelo; equipe de 4 → líder acumula a
   revisão; críticas construtivas e cordiais; troca de papel só com acordo e aviso ao professor.
@@ -201,8 +202,8 @@ são **iguais** nas duas páginas.
 
 1. **Concordância (versão completa, roteiro, etapa 2):** “cria a pasta na nuvem e
    **compartilhar**” → deveria ser “compartilha”.
-2. **Equipe de 6 (versão completa, regras da equipe):** cita “Equipe de 6: dois redatores”,
-   mas o trabalho define equipes de 4 ou 5 e a Ficha tem 5 linhas.
+2. ~~**Equipe de 6:** citava “dois redatores” com equipes de 4 ou 5.~~ ✅ Resolvido em
+   2026-10-05: equipes de 4 a 6, papel de **analista** para o 6º aluno e Ficha com 6 linhas.
 3. **Versão simples sem menu:** não carrega `MENU-ATIVIDADES.js` + `menu.js` (sem 👥 Equipes e
    🧠 Brainstorming) e não tem os atributos `data-*` no `<body>`.
 4. **Tabelas da versão simples:** não estão dentro de `tabela-equipe-rolagem`; no celular podem

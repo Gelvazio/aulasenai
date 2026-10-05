@@ -58,11 +58,12 @@
 | 🔎 **Pesquisador(a)** | Faz a pesquisa do Modelo 2, avalia as fontes (CRAAP) e monta as citações e referências. |
 | 🎨 **Formatador(a)** | Configura página, estilos, sumário, seções, cabeçalho e rodapé (seção 4). |
 | 🛡️ **Revisor(a) e segurança** | Revisa com Controle de Alterações e comentários, confere a ortografia e remove metadados antes do PDF. |
+| 📋 **Analista** (só em equipe de 6) | Separa os dados do incidente (horários, números e efeitos), escreve a **Introdução** do manual e, junto com o(a) pesquisador(a), as **medidas preventivas** e o **parecer final** do Modelo 2. |
 
 ### Regras da equipe
 
 - Todos escrevem **pelo menos um modelo**, além das tarefas do próprio papel.
-- Equipe de 4: o(a) líder acumula a revisão. Equipe de 6: dois redatores.
+- Equipe de 4: o(a) líder acumula a revisão. Equipe de 6: o 6º aluno é o(a) **analista**.
 - Críticas nos comentários são específicas, construtivas e cordiais (comunicação assertiva, sem
   ataques pessoais).
 - Troca de papel durante o trabalho só com acordo da equipe e aviso ao professor (anotar na ficha).
@@ -74,6 +75,7 @@
 | Aluno(a) | Papel | Modelos que redige | Itens de formatação (seção 4) | Modelo que revisa |
 |---|---|---|---|---|
 | | Líder | | | |
+| | | | | |
 | | | | | |
 | | | | | |
 | | | | | |
@@ -90,7 +92,7 @@
 | Campo | Definição |
 |---|---|
 | **Tipo** | Trabalho prático avaliativo em equipe (documento no editor de textos) |
-| **Equipes** | 4 ou 5 integrantes, cada um com um papel atribuído pelo(a) líder (Brainstorming) |
+| **Equipes** | 4 a 6 integrantes, cada um com um papel atribuído pelo(a) líder (Brainstorming) |
 | **Duração** | 1 aula de 4 horas (240 minutos — roteiro na seção 3) |
 | **Pontuação** | 10 pontos (rubrica na seção 8) · nota mínima: **7** |
 | **Entrega** | 2 arquivos — o editável `.docx` (ou `.odt`) e o `.pdf` final |
@@ -149,7 +151,7 @@ do CD que trata o conteúdo das Aulas 01 a 05.
 | 1 | Capa (sem número de página) | Nome da empresa fictícia, título "Manual de Comunicação Técnica do CD", número da equipe, nomes dos integrantes, turma, cidade e ano, tudo centralizado. Termina com **quebra de seção**. | 06 |
 | 2 | Sumário (automático) | Gerado pelo menu Referências a partir dos Título 1 e Título 2, com números de página; atualizado no final. | 06 |
 | 3 | Resumo (Título 1) | Resumo **informativo** de 100 a 250 palavras: objetivo do manual, como foi feito, principais resultados (35 min de parada, 120 pedidos) e conclusão; depois "Palavras-chave:" com 3 a 5 termos. | 07 |
-| 4 | Introdução (Título 1) — início da numeração | Contexto do CD, motivo do manual (o incidente do ERP), objetivo, a quem se destina e como o documento está organizado; normas adotadas declaradas (ex.: ABNT NBR 10719, NBR 6023, NBR 6028). | 01, 07 |
+| 4 | Introdução (Título 1) — início da numeração | Contexto do CD, motivo do manual (o incidente do ERP), objetivo, a quem se destina e como o documento está organizado; normas adotadas declaradas (ex.: ABNT NBR 10719, NBR 6023, NBR 6028). Em equipe de 6, escrita pelo(a) **analista**. | 01, 07 |
 | 5 | Modelo 1 — Ata (Título 1) | Ata da reunião de abertura da equipe: texto corrido, pretérito perfeito, números por extenso, decisões por consenso, ruído e feedback identificados, encerramento e assinaturas. | 01, 07 |
 | 6 | Modelo 2 — Relatório de incidente (Título 1, partes em Título 2) | Linha do tempo em tabela; figura (diagrama com formas) com número, título e fonte; causa raiz; ações imediatas; medidas preventivas; pesquisa (busca com operadores, tabela CRAAP de 2 fontes, 1 citação direta e 1 indireta); parecer final. | 03, 06, 07 |
 | 7 | Modelo 3 — Memorando (Título 1) | Número de controle, Para/De/Data/Assunto, vocativo, demanda, justificativa técnica (CPU, RAM volátil, HDD × SSD, SO, drivers), prazo e fecho; anexo em **página paisagem** com a tabela de equipamentos (mínimo 5 itens). | 02, 06, 07 |
@@ -284,7 +286,7 @@ melhorias com base em pesquisa na web.
 2. **Causa raiz** comprovada (saturação da RAM pelo script de backup) e efeito (35 min, 120 pedidos).
 3. **Ações imediatas** de contenção e **medidas preventivas**.
 4. **Pesquisa:** registrar a busca usada com pelo menos 2 operadores (aspas, `site:`, `filetype:`, AND/OR/−), avaliar 2 fontes pelo **método CRAAP** (tabela) e usar **1 citação direta curta** (entre aspas, com autor, ano e página) e **1 citação indireta**.
-5. **Parecer final** com recomendações baseadas em evidências.
+5. **Parecer final** com recomendações baseadas em evidências. Em equipe de 6, as medidas preventivas e o parecer final são do(a) **analista**, com o(a) pesquisador(a).
 
 - ❌ "A gente achou que o servidor travou porque alguém fez um backup horrível na hora errada."
 - ✅ "Constatou-se, às 10h15 de 14/05, a indisponibilidade do servidor do ERP, ocasionada pela saturação da memória RAM por um script de backup executado durante o fechamento de faturamento."
