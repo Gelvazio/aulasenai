@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 15, item 15.8 — aplicar `database/2026-10-05-sugestoes-turmaaluno.sql` no Supabase (só com pedido do usuário) e o professor testar a `alunos.html` (filtro Turma OK + ✅ Confirmar). Pendentes anteriores: 14.6, 6.8 e 4.5.
+**Próximo passo:** Etapa 16, item 16.4 — rodar `database/2026-10-05-trabalho-equipe-itic-atividade.sql` no Supabase. Depois: Etapa 15, item 15.8 — aplicar `database/2026-10-05-sugestoes-turmaaluno.sql` no Supabase (só com pedido do usuário) e o professor testar a `alunos.html` (filtro Turma OK + ✅ Confirmar). Pendentes anteriores: 14.6, 6.8 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -167,6 +167,15 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 16.2 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
 | 16.3 | Professor cadastrar a página v2 (e a v1) pelo CADASTRAR ATIVIDADES para aparecer o interruptor Bloquear | ⬜ Pendente | — | — |
 | 16.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 16 — Card do trabalho em equipe v2 com bloqueio/liberação no índice da ITIC (pedida em 2026-10-05)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 16.1 | Novo card "TRABALHO EM EQUIPE v2" em `INTRODUCAO-TIC/ATIVIDADES/index.html` (link para `ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-v2.html`) | ✅ Concluído | 2026-10-05 | Leitura do HTML |
+| 16.2 | SQL `database/2026-10-05-trabalho-equipe-itic-atividade.sql` cadastrando v1 e v2 na `atividade` (aula 07, ativo) para aparecer o interruptor Bloquear | ✅ Concluído | 2026-10-05 | Mesmo modelo dos seeds das práticas (`on conflict (pagina)`) |
+| 16.3 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
+| 16.4 | Rodar o SQL no Supabase (usuário, SQL Editor) | ⬜ Pendente | — | — |
+| 16.5 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
