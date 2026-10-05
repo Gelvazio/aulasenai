@@ -160,6 +160,14 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 15.7 | Commit local | ✅ Concluído | 2026-10-05 13:22 | `git diff --cached --name-only` |
 | 15.8 | Aplicar SQL no Supabase (só com pedido) e aceite do usuário | ⬜ Pendente | — | Usuário |
 
+## Etapa 16 — Card do trabalho em equipe v2 no índice de atividades da ITIC (pedida em 2026-10-05)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 16.1 | Novo card "TRABALHO EM EQUIPE v2" em `INTRODUCAO-TIC/ATIVIDADES/index.html`, apontando para `ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-v2.html` | ✅ Concluído | 2026-10-05 | Leitura do HTML (link relativo existente) |
+| 16.2 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
+| 16.3 | Professor cadastrar a página v2 (e a v1) pelo CADASTRAR ATIVIDADES para aparecer o interruptor Bloquear | ⬜ Pendente | — | — |
+| 16.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
 |-------|--------|---------|---------|----------|
