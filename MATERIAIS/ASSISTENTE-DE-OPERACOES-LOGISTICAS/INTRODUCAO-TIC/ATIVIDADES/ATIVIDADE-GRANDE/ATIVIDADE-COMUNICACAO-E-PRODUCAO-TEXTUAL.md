@@ -151,7 +151,7 @@ do CD que trata o conteúdo das Aulas 01 a 05.
 | 1 | Capa (sem número de página) | Nome da empresa fictícia, título "Manual de Comunicação Técnica do CD", número da equipe, nomes dos integrantes, turma, cidade e ano, tudo centralizado. Termina com **quebra de seção**. | 06 |
 | 2 | Sumário (automático) | Gerado pelo menu Referências a partir dos Título 1 e Título 2, com números de página; atualizado no final. | 06 |
 | 3 | Resumo (Título 1) | Resumo **informativo** de 100 a 250 palavras: objetivo do manual, como foi feito, principais resultados (35 min de parada, 120 pedidos) e conclusão; depois "Palavras-chave:" com 3 a 5 termos. | 07 |
-| 4 | Introdução (Título 1) — início da numeração | Contexto do CD, motivo do manual (o incidente do ERP), objetivo, a quem se destina e como o documento está organizado; normas adotadas declaradas (ex.: ABNT NBR 10719, NBR 6023, NBR 6028). Em equipe de 6, escrita pelo(a) **analista**. | 01, 07 |
+| 4 | Introdução (Título 1) — início da numeração | Contexto do CD, motivo do manual (o incidente do ERP), objetivo, a quem se destina e como o documento está organizado; normas adotadas declaradas (ex.: ABNT NBR 10719, NBR 6023, NBR 6028). No fim, a seção **"Integrantes da equipe"** (Título 2): tabela com o **nome de cada aluno**, o **papel** dele e o que produziu (iguais à Ficha de papéis). Em equipe de 6, escrita pelo(a) **analista**. | 01, 07 |
 | 5 | Modelo 1 — Ata (Título 1) | Ata da reunião de abertura da equipe: texto corrido, pretérito perfeito, números por extenso, decisões por consenso, ruído e feedback identificados, encerramento e assinaturas. | 01, 07 |
 | 6 | Modelo 2 — Relatório de incidente (Título 1, partes em Título 2) | Linha do tempo em tabela; figura (diagrama com formas) com número, título e fonte; causa raiz; ações imediatas; medidas preventivas; pesquisa (busca com operadores, tabela CRAAP de 2 fontes, 1 citação direta e 1 indireta); parecer final. | 03, 06, 07 |
 | 7 | Modelo 3 — Memorando (Título 1) | Número de controle, Para/De/Data/Assunto, vocativo, demanda, justificativa técnica (CPU, RAM volátil, HDD × SSD, SO, drivers), prazo e fecho; anexo em **página paisagem** com a tabela de equipamentos (mínimo 5 itens). | 02, 06, 07 |
@@ -383,7 +383,7 @@ jargão), em **2 colunas**: coluna 1 "Como reconhecer um e-mail falso"; coluna 2
 - [ ] Ficha de papéis entregue ao professor e anotada no Apêndice A (todo aluno com um papel).
 - [ ] Capa sem número; numeração a partir da introdução.
 - [ ] Sumário automático atualizado com todos os Título 1 e Título 2.
-- [ ] Resumo, introdução, 7 modelos, conclusão, referências e glossário presentes.
+- [ ] Resumo, introdução (com a seção "Integrantes da equipe": nome e papel de cada aluno), 7 modelos, conclusão, referências e glossário presentes.
 - [ ] Uma seção em paisagem (tabela de equipamentos) e o restante em retrato.
 - [ ] Tabelas com cabeçalho repetido; figura com número, título e fonte.
 - [ ] Caixa de ATENÇÃO, lista multinível e trecho em 2 colunas.
