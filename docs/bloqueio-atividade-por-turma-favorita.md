@@ -49,7 +49,7 @@
 | Risco | Plano B |
 |---|---|
 | Página aberta antes do SQL aplicado | O interruptor mostra o erro no popup e volta; vale o bloqueio antigo (`ativo`) |
-| Relatórios ainda contam atividades por `ativo`, sem olhar a turma | Pendência; ajustar a pedido |
+| Relatórios ainda contavam atividades por `ativo` | ✅ Ajustado em 2026-10-05: `relatorioAtividades.html` usa só as atividades liberadas para a turma da aba |
 | Turma favorita é única para todos os professores | Mantido; o rótulo mostra a turma afetada |
 
 ## Resultado final
@@ -57,5 +57,5 @@
 - SQL aplicado no projeto `AULAS SENAI` (migração `bloqueio_atividade_por_turma_20261005`).
 - Interruptor do índice: "Bloquear (turma X)" / "Desbloquear (turma X)", só para a turma
   favorita; troca da favorita remonta os interruptores.
-- Pendência: relatórios ainda contam atividades por `ativo`, sem olhar a turma.
+- Relatório de atividades ajustado: média e totais por turma consideram o bloqueio da turma.
 - Verificação: `node --check`; consultas de leitura no banco; sem navegador (regra do usuário).

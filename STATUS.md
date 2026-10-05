@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 16, item 16.7 — professor testar o interruptor "Bloquear (turma X)" no índice das atividades (vale só para a turma favorita); item 16.4 aguarda decisão sobre a regra no `CLAUDE.md`. Depois: 15.8 (teste da `alunos.html`), 14.6, 6.8 e 4.5.
+**Próximo passo:** Etapa 17, item 17.4 — professor conferir o `relatorioAtividades.html` com uma atividade bloqueada só para uma turma. Depois: 16.7, 16.4 (regra no `CLAUDE.md`), 15.8, 14.6, 6.8 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -189,6 +189,14 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 16.5 | Aplicar o SQL no Supabase (pedido do usuário) | ✅ Concluído | 2026-10-05 13:36 | Conector Supabase; coluna, política e permissões conferidas |
 | 16.6 | Commit local | ✅ Concluído | 2026-10-05 13:36 | `git diff --cached --name-only` |
 | 16.7 | Aceite do usuário (bloquear/liberar uma atividade para a favorita e conferir com um aluno de outra turma) | ⬜ Pendente | — | Sem navegador nesta sessão |
+
+## Etapa 17 — Relatórios com o bloqueio por turma (pedida em 2026-10-05; tarefa pequena)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 17.1 | `relatorio-atividades-dados.js`: lê `bloqueio`; média, total e conferência só com atividades liberadas para a turma | ✅ Concluído | 2026-10-05 13:37 | `node --check` |
+| 17.2 | `relatorio-atividades-pagina.js`: contagem e conferência pela turma da aba | ✅ Concluído | 2026-10-05 13:37 | `node --check` |
+| 17.3 | Commit local | ✅ Concluído | 2026-10-05 13:37 | `git diff --cached --name-only` |
+| 17.4 | Aceite do usuário (bloquear uma atividade para uma turma e ver a média só dela mudar) | ⬜ Pendente | — | Sem navegador nesta sessão |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |

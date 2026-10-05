@@ -172,7 +172,8 @@ async function carregarRespostasDoAlunoRel() {
     }
     area.textContent = 'Carregando respostas de ' + aluno.nome + '...';
     try {
-        const dados = await carregarRespostasAlunoRel(aluno.id, obterAtividadesFiltradasRel());
+        const dados = await carregarRespostasAlunoRel(aluno.id, obterAtividadesFiltradasRel(),
+            turma.codigo);
         area.replaceChildren(criarElementoRel('h3', '', 'Respostas de ' + aluno.nome));
         if (!dados.length) area.append('Este aluno ainda não respondeu nenhuma atividade desta matéria.');
         dados.forEach((item) => area.appendChild(montarConferenciaAtividadeRel(item)));
@@ -211,13 +212,14 @@ function montarFiltrosRel() {
 }
 
 /**
- * Devolve as atividades ativas da matéria em ordem de aula (e de id).
+ * Devolve as atividades da matéria liberadas para a turma (ativas e fora do bloqueio da turma),
+ * em ordem de aula (e de id). Sem turma, devolve todas as ativas.
  * @param {Object[]} atividades - Atividades da matéria.
- * @returns {Object[]} Atividades ativas ordenadas.
+ * @param {string} [turmaCodigo] - Código da turma.
+ * @returns {Object[]} Atividades liberadas ordenadas.
  */
-function ordenarAtividadesAtivasRel(atividades) {
-    return atividades.filter((atividade) => atividade.ativo).sort((a, b) =>
-        (a.aulas?.numero ?? 0) - (b.aulas?.numero ?? 0) || a.id - b.id);
+function ordenarAtividadesAtivasRel(atividades, turmaCodigo = '') {
+    return filtrarLiberadasParaTurmaRel(atividades, turmaCodigo);
 }
 
 /**
@@ -445,7 +447,7 @@ function renderizarTabelaRel() {
     const tabela = criarElementoRel('table', 'rel-tabela');
     const cabecalho = tabela.createTHead().insertRow();
     ['Nº', 'Aluno', 'Fez Atividade?', 'Atividades feitas', 'Status', 'Tentativas',
-        'Média (atividades ativas)'].forEach((texto) =>
+        'Média (atividades liberadas p/ a turma)'].forEach((texto) =>
         cabecalho.appendChild(criarElementoRel('th', '', texto)));
     let visiveis = 0;
     const atividades = obterAtividadesFiltradasRel();
@@ -458,8 +460,8 @@ function renderizarTabelaRel() {
         visiveis += 1;
     });
     document.getElementById('relResumo').textContent = visiveis + ' de ' + turma.alunos.length +
-        ' aluno(s) · ' + ordenarAtividadesAtivasRel(atividades).length +
-        ' atividade(s) ativa(s) no relatório.';
+        ' aluno(s) · ' + ordenarAtividadesAtivasRel(atividades, turma.codigo).length +
+        ' atividade(s) liberada(s) para a turma no relatório.';
     const rolagem = criarElementoRel('div', 'rel-rolagem');
     rolagem.appendChild(tabela);
     area.appendChild(rolagem);
