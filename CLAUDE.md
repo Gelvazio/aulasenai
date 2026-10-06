@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-05 15:59
+**Versão das regras:** 2026-10-06 09:21
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 09:21 | Regra exclusiva "REFORÇO DE LINGUAGENS: 25 QUESTÕES POR ATIVIDADE": 20 objetivas + 5 discursivas (Contexto, Comando e campo para digitar), discursivas corrigidas com IA e análise do professor |
 | 2026-10-05 15:59 | Exportação da página inteira: `assets/js/exportar-pagina.js` + `assets/css/exportar-pagina.css` (botões **📥 Exportar Para PDF**, igual à tela, e **📝 Exportar em Word** ao lado), usados no trabalho em equipe v1 e v2 |
 | 2026-10-05 13:37 | Regra "BLOQUEIO DE ATIVIDADE POR TURMA": o interruptor do índice vale só para a **turma favorita** (coluna `atividade.bloqueio` com os códigos das turmas bloqueadas; sem vínculo = liberado; função `definir_bloqueio_turma`); relatório de atividades considera a turma |
 | 2026-10-05 13:17 | Regra "PÁGINA VISÍVEL SÓ PARA ALGUMAS TURMAS": `assets/js/restricao-turma.js` + `data-turmas-permitidas` (turma descoberta pelo aluno logado na `turmaaluno`) |
@@ -54,6 +55,8 @@ Registrada em 2026-10-03 a pedido do usuário.
 - ✅ **Aulas: uma por vez, completa** (2026-10-03): gerar e gravar uma aula (e todo o seu material)
   antes de passar à próxima, controlando em `<MATERIA>/AULAS/STATUS-AULAS.md` (ver a regra
   "GERAR E GRAVAR UMA AULA POR VEZ").
+- ✅ **Exceção — Reforço de Linguagens** (2026-10-06): cada atividade tem 25 questões (20 objetivas + 5
+  discursivas); ver a regra exclusiva da matéria.
 - ✅ **1 atividade objetiva de 50 questões por aula** (2026-10-03), controlada em
   `<MATERIA>/ATIVIDADES/STATUS-ATIVIDADES.md` (ver a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES").
 - ⛔ **NUNCA fazer push** (2026-10-01): o push é feito **só pelo usuário, localmente**. Mesmo que
@@ -1994,6 +1997,32 @@ dessas atividades. Registrada em 2026-10-03 a pedido do usuário.
   2026-10-03): o usuário autorizou **aplicar o seed no Supabase ao finalizar cada matéria**.
 - ⏳ **Fila:** gerar **somente uma matéria por vez, na ordem que o usuário liberar**; as demais
   aguardam. Primeira liberada (2026-10-03): **Testes de Frontend**.
+
+## 🗣️ REGRA EXCLUSIVA — REFORÇO DE LINGUAGENS: 25 QUESTÕES POR ATIVIDADE (20 OBJETIVAS + 5 DISCURSIVAS)
+
+Registrada em 2026-10-06 a pedido do usuário. Vale **somente** para a matéria
+`MATERIAIS/RIO_DO_SUL_MAIS_TECH/REFORCO_LINGUAGENS/` e para **todas as atividades** dela; as
+demais matérias continuam com a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES".
+
+- ✅ **Cada atividade tem exatamente 25 questões:** **20 objetivas** (múltipla escolha A–D, padrão
+  ITEM com `- **Capacidade:**`, Contexto quando houver, Comando, Alternativas e Gabarito) e
+  **5 discursivas**.
+- ✅ **Cada questão discursiva tem Contexto, Comando e um campo para o aluno digitar** a resposta
+  (gravada no banco, sem localStorage, como nas avaliações discursivas).
+- ✅ **Correção das 5 discursivas em duas etapas:** conferência com **IA** (a partir do padrão de
+  resposta e dos critérios no `-GABARITO.md`, fora do Git) **e análise do professor**, que
+  confirma ou ajusta a nota sugerida. A nota da discursiva só vale depois da análise do
+  professor.
+- ✅ As objetivas seguem o gabarito equilibrado entre as letras e com posição sorteada; as
+  discursivas citam o texto ou a situação da aula (`AULAS/AULA-NN.md`, onde ficam as aulas desta
+  matéria).
+- ✅ Nome da página: `ATIVIDADES/ATIVIDADES-AULA-NN-25-QUESTOES.html`; fonte em
+  `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-25-QUESTOES.md` (fora do Git, tem gabarito). O
+  `STATUS-ATIVIDADES.md` da matéria controla as 25 questões (20 + 5) de cada aula.
+- ⚠️ **Implementação:** hoje o banco trata cada atividade como só objetiva ou só discursiva
+  (`atividade_completa()`). A forma de juntar as duas partes é decidida pelo usuário antes da
+  primeira atividade (plano em `docs/` quando mexer no banco).
+- ❌ Não aplicar esta regra a outras matérias, nem às matérias semelhantes, sem pedido do usuário.
 
 ## 🏦 REGRA — BANCO DE QUESTÕES DO AVA SENAI (MOODLE XML)
 
