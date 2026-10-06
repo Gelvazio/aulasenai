@@ -185,6 +185,7 @@ ORDER BY ordem;
 | updated_at | TIMESTAMPTZ | Nullable | `now()` | Data última atualização |
 | excluido | SMALLINT | NOT NULL, CHECK (0, 1) | `0` | Exclusão lógica: `1` = aula excluída (card escondido nos índices) |
 | nome_card | TEXT | CHECK (1 a 200 caracteres) ou NULL | NULL | Nome exibido no card do índice de atividades (NULL = título do HTML); editado no modal "✏️ Editar aula" (`database/2026-10-06-aulas-nome-card.sql`) |
+| rotulo_card | TEXT | CHECK (1 a 60 caracteres) ou NULL | NULL | Rótulo do topo do card (ex.: "AULA 01"; NULL = rótulo do HTML); editado no mesmo modal |
 
 **Primary Key:** `id`  
 **Foreign Keys (saídas):**

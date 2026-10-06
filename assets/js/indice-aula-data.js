@@ -1,6 +1,7 @@
 // Data da aula em cada card do ATIVIDADES/index.html: mostra "📅 Data da aula" (lida
 // de aulas.data_planejada) e, para o professor logado, o botão "✏️ Editar aula", que abre um
-// modal para gravar a data e trocar o nome do card (aulas.nome_card; vazio = título do HTML).
+// modal para gravar a data e trocar o rótulo ("AULA 01", aulas.rotulo_card) e o nome do card
+// (aulas.nome_card); vazio = texto escrito no HTML.
 // A aula do card vem da atividade cadastrada para o link principal
 // do card; se ela não vier (ex.: atividade bloqueada para o aluno), a aula é procurada pelo
 // número do card ("AULA 01") na mesma matéria. Alunos e visitantes também veem a data.
@@ -13,15 +14,17 @@
 const SELETOR_CARD_DATA_AULA = 'article.aula';
 const SELETOR_LINK_DATA_AULA = 'a.btn.principal';
 const TABELA_AULAS_DATA = 'aulas';
-const CAMPOS_AULA_DATA = 'id,numero,titulo,nome_card,data_planejada,materia_id,excluido';
+const CAMPOS_AULA_DATA = 'id,numero,titulo,nome_card,rotulo_card,data_planejada,' +
+    'materia_id,excluido';
 const CAMPOS_ATIVIDADE_DATA_AULA = 'pagina,aula_id,aulas(' + CAMPOS_AULA_DATA + ')';
 const SELETOR_NUMERO_DATA_AULA = '.num';
 const SELETOR_NOME_CARD_AULA = '.topo h2';
 const TAMANHO_MAXIMO_NOME_CARD = 200;
+const TAMANHO_MAXIMO_ROTULO_CARD = 60;
 const TEXTO_BOTAO_EDITAR_AULA = '✏️ Editar aula';
 const TEXTO_SEM_DATA_AULA = '📅 Data da aula: não informada';
 const TEXTO_AULA_SEM_CADASTRO = '📅 Aula não cadastrada no banco (use CADASTRAR ATIVIDADES)';
-const MSG_DATA_AULA_GRAVADA = '✅ Aula gravada (nome do card e data).';
+const MSG_DATA_AULA_GRAVADA = '✅ Aula gravada (rótulo, nome do card e data).';
 const MSG_DATA_AULA_ERRO = '❌ Não foi possível gravar. Confira o login de professor e o banco.';
 const RPC_EXCLUIR_AULA = 'excluir_aula';
 const RPC_ADMINISTRADOR_AULA = 'eh_professor_administrador';
@@ -32,7 +35,7 @@ const MSG_EXCLUIR_AULA_ERRO = 'Não foi possível excluir a aula. Só o Professo
 const URL_POPUP_DATA_AULA = document.currentScript?.src.replace(/[^/]*$/, 'popup.js') || '';
 
 const estadoDataAula = {
-    cards: [], aulaEmEdicao: null, tituloOriginalEmEdicao: '',
+    cards: [], aulaEmEdicao: null, itemEmEdicao: null,
     ehProfessor: false, ehAdministrador: false,
 };
 let elementosDataAula = null;
@@ -123,7 +126,8 @@ async function verificarProfessorDataAula() {
 /**
  * Grava a data e o nome do card da aula (null apaga a data / volta ao título do HTML).
  * @param {number} idAula - Id da aula.
- * @param {{data_planejada: string|null, nome_card: string|null}} valores - Campos a gravar.
+ * @param {{data_planejada: string|null, nome_card: string|null, rotulo_card: string|null}}
+ *   valores - Campos a gravar.
  * @returns {Promise<boolean>} true se o banco devolveu a linha alterada.
  */
 async function gravarDataAula(idAula, valores) {
@@ -132,23 +136,25 @@ async function gravarDataAula(idAula, valores) {
 }
 
 /**
- * Escreve no título do card o nome gravado no banco ou, sem ele, o título original do HTML.
- * @param {{card: HTMLElement, aula: Object|null, tituloOriginal: string}} item - Card e aula.
+ * Escreve no card o rótulo e o nome gravados no banco ou, sem eles, os textos originais do HTML.
+ * @param {{card: HTMLElement, aula: Object|null, tituloOriginal: string,
+ *   rotuloOriginal: string}} item - Card e aula.
  */
 function renderizarNomeNoCard(item) {
     const titulo = item.card.querySelector(SELETOR_NOME_CARD_AULA);
-    if (!titulo) return;
-
-    titulo.textContent = item.aula?.nome_card || item.tituloOriginal;
+    const rotulo = item.card.querySelector(SELETOR_NUMERO_DATA_AULA);
+    if (titulo) titulo.textContent = item.aula?.nome_card || item.tituloOriginal;
+    if (rotulo) rotulo.textContent = item.aula?.rotulo_card || item.rotuloOriginal;
 }
 
 /**
- * Lê o título escrito no HTML do card (usado quando a aula não tem nome_card).
+ * Lê um texto escrito no HTML do card (usado quando a aula não tem o texto gravado).
  * @param {HTMLElement} card - Card do índice.
- * @returns {string} Título original do card.
+ * @param {string} seletor - Seletor do elemento (nome ou rótulo).
+ * @returns {string} Texto original do card.
  */
-function lerTituloOriginalCard(card) {
-    return card.querySelector(SELETOR_NOME_CARD_AULA)?.textContent.trim() || '';
+function lerTextoOriginalCard(card, seletor) {
+    return card.querySelector(seletor)?.textContent.trim() || '';
 }
 
 /**
@@ -175,9 +181,9 @@ function renderizarDataNoCard(item) {
 
 /**
  * Monta o modal de edição da aula e o anexa à página (estilos do modal de atividades).
- * @returns {{fundo: HTMLElement, titulo: HTMLElement, campoNome: HTMLInputElement,
- *   campoData: HTMLInputElement, formulario: HTMLFormElement, mensagem: HTMLElement}}
- *   Referências dos elementos.
+ * @returns {{fundo: HTMLElement, titulo: HTMLElement, campoRotulo: HTMLInputElement,
+ *   campoNome: HTMLInputElement, campoData: HTMLInputElement, formulario: HTMLFormElement,
+ *   mensagem: HTMLElement}} Referências dos elementos.
  */
 function montarModalDataAula() {
     const fundo = criarElementoDataAula('div', 'crud-fundo aula-data-fundo');
@@ -186,10 +192,8 @@ function montarModalDataAula() {
     caixa.setAttribute('aria-modal', 'true');
     const titulo = criarElementoDataAula('h2', '', 'Editar aula');
     const formulario = criarElementoDataAula('form', 'crud-form');
-    const campoNome = criarElementoDataAula('input');
-    campoNome.type = 'text';
-    campoNome.name = 'nome_card';
-    campoNome.maxLength = TAMANHO_MAXIMO_NOME_CARD;
+    const campoRotulo = criarCampoTextoAula('rotulo_card', TAMANHO_MAXIMO_ROTULO_CARD);
+    const campoNome = criarCampoTextoAula('nome_card', TAMANHO_MAXIMO_NOME_CARD);
     const campoData = criarElementoDataAula('input');
     campoData.type = 'date';
     campoData.name = 'data_planejada';
@@ -200,14 +204,29 @@ function montarModalDataAula() {
     const botaoExcluir = criarBotaoDataAula('🗑️ Excluir aula', 'aula-excluir-botao', 'excluir');
     botaoExcluir.hidden = !estadoDataAula.ehAdministrador;
     acoes.append(botaoExcluir);
-    formulario.append(criarCampoModalAula('Nome do card', campoNome),
+    formulario.append(criarCampoModalAula('Rótulo do card (ex.: AULA 01)', campoRotulo),
+        criarCampoModalAula('Nome do card', campoNome),
         criarCampoModalAula('Data da aula', campoData), acoes);
     const mensagem = criarElementoDataAula('p', 'crud-mensagem');
     caixa.append(titulo, formulario, mensagem);
     fundo.append(caixa);
     fundo.hidden = true;
     document.body.append(fundo);
-    return { fundo, titulo, campoNome, campoData, formulario, mensagem };
+    return { fundo, titulo, campoRotulo, campoNome, campoData, formulario, mensagem };
+}
+
+/**
+ * Cria um campo de texto do modal.
+ * @param {string} nome - Nome do campo (coluna da tabela aulas).
+ * @param {number} tamanhoMaximo - Quantidade máxima de caracteres.
+ * @returns {HTMLInputElement} Campo criado.
+ */
+function criarCampoTextoAula(nome, tamanhoMaximo) {
+    const campo = criarElementoDataAula('input');
+    campo.type = 'text';
+    campo.name = nome;
+    campo.maxLength = tamanhoMaximo;
+    return campo;
 }
 
 /**
@@ -248,8 +267,8 @@ function mostrarMensagemDataAula(texto, ehErro) {
 
 /**
  * Abre o modal para editar a aula de um card.
- * @param {{aula: Object, tituloOriginal: string}} item - Card com a aula (id, numero, titulo,
- *   nome_card, data_planejada) e o título original do HTML.
+ * @param {{aula: Object, tituloOriginal: string, rotuloOriginal: string}} item - Card com a
+ *   aula (id, numero, titulo, nome_card, rotulo_card, data_planejada) e os textos do HTML.
  */
 function abrirModalDataAula(item) {
     const aula = item.aula;
@@ -259,15 +278,16 @@ function abrirModalDataAula(item) {
         elementosDataAula.fundo.addEventListener('click', aoClicarModalDataAula);
     }
     estadoDataAula.aulaEmEdicao = aula;
-    estadoDataAula.tituloOriginalEmEdicao = item.tituloOriginal;
+    estadoDataAula.itemEmEdicao = item;
     const numero = String(aula.numero ?? '').padStart(2, '0');
     elementosDataAula.titulo.textContent = 'Editar aula ' + numero + ' — ' +
         (aula.nome_card || item.tituloOriginal || aula.titulo || '');
+    elementosDataAula.campoRotulo.value = aula.rotulo_card || item.rotuloOriginal;
     elementosDataAula.campoNome.value = aula.nome_card || item.tituloOriginal;
     elementosDataAula.campoData.value = aula.data_planejada || '';
     mostrarMensagemDataAula('');
     elementosDataAula.fundo.hidden = false;
-    elementosDataAula.campoNome.focus();
+    elementosDataAula.campoRotulo.focus();
 }
 
 /**
@@ -276,7 +296,7 @@ function abrirModalDataAula(item) {
 function fecharModalDataAula() {
     elementosDataAula.fundo.hidden = true;
     estadoDataAula.aulaEmEdicao = null;
-    estadoDataAula.tituloOriginalEmEdicao = '';
+    estadoDataAula.itemEmEdicao = null;
 }
 
 /**
@@ -295,13 +315,15 @@ function aoClicarModalDataAula(evento) {
 }
 
 /**
- * Lê o nome digitado: vazio ou igual ao título do HTML grava null (volta ao título original).
- * @returns {string|null} Nome do card a gravar.
+ * Lê um texto digitado: vazio ou igual ao texto do HTML grava null (volta ao texto original).
+ * @param {HTMLInputElement} campo - Campo do modal.
+ * @param {string} original - Texto escrito no HTML do card.
+ * @returns {string|null} Texto a gravar.
  */
-function lerNomeCardDigitado() {
-    const nome = elementosDataAula.campoNome.value.trim();
-    const usaTituloOriginal = !nome || nome === estadoDataAula.tituloOriginalEmEdicao;
-    return usaTituloOriginal ? null : nome;
+function lerTextoCardDigitado(campo, original) {
+    const texto = campo.value.trim();
+    const usaOriginal = !texto || texto === original;
+    return usaOriginal ? null : texto;
 }
 
 /**
@@ -311,19 +333,21 @@ function lerNomeCardDigitado() {
 async function aoSalvarDataAula(evento) {
     evento.preventDefault();
     const aula = estadoDataAula.aulaEmEdicao;
-    if (!aula) return;
+    const item = estadoDataAula.itemEmEdicao;
+    if (!aula || !item) return;
 
     const valores = {
         data_planejada: elementosDataAula.campoData.value || null,
-        nome_card: lerNomeCardDigitado(),
+        nome_card: lerTextoCardDigitado(elementosDataAula.campoNome, item.tituloOriginal),
+        rotulo_card: lerTextoCardDigitado(elementosDataAula.campoRotulo, item.rotuloOriginal),
     };
     try {
         const gravou = await gravarDataAula(aula.id, valores);
         if (!gravou) throw new Error('Nenhuma linha alterada');
-        estadoDataAula.cards.filter((item) => item.aula?.id === aula.id).forEach((item) => {
-            Object.assign(item.aula, valores);
-            renderizarDataNoCard(item);
-            renderizarNomeNoCard(item);
+        estadoDataAula.cards.filter((card) => card.aula?.id === aula.id).forEach((card) => {
+            Object.assign(card.aula, valores);
+            renderizarDataNoCard(card);
+            renderizarNomeNoCard(card);
         });
         mostrarMensagemDataAula(MSG_DATA_AULA_GRAVADA);
     } catch (erro) {
@@ -438,7 +462,8 @@ async function iniciarDataAulas() {
         estadoDataAula.cards = cards.map((card, i) => ({
             card,
             aula: aulas.get(paginas[i]) || null,
-            tituloOriginal: lerTituloOriginalCard(card),
+            tituloOriginal: lerTextoOriginalCard(card, SELETOR_NOME_CARD_AULA),
+            rotuloOriginal: lerTextoOriginalCard(card, SELETOR_NUMERO_DATA_AULA),
         }));
         await completarAulasPeloNumero(estadoDataAula.cards);
     } catch (erro) {

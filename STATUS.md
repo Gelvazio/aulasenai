@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 47, item 47.4 — aceite do usuário (trocar o nome do card no "Editar aula"). Depois: Etapa 44, item 44.4 — aceite do usuário (liberar e testar a Prova Prática 06-10-2026). Depois: Etapa 38, item 38.3 — aceite do usuário (gabarito nas discursivas). Depois: Etapa 37, item 37.4 — aceite do usuário (testar Liberar gabaritos como professor e Exportar Gabarito como aluno). Depois: Etapa 35, item 35.2 — aceite do usuário (testar a tabela de notas logado como professor). Depois: Etapa 29, item 29.5 — aceite do usuário (discursivas de sexta). Depois: Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
+**Próximo passo:** Etapa 47, item 47.5 — aceite do usuário (trocar rótulo e nome do card no "Editar aula"). Depois: Etapa 44, item 44.4 — aceite do usuário (liberar e testar a Prova Prática 06-10-2026). Depois: Etapa 38, item 38.3 — aceite do usuário (gabarito nas discursivas). Depois: Etapa 37, item 37.4 — aceite do usuário (testar Liberar gabaritos como professor e Exportar Gabarito como aluno). Depois: Etapa 35, item 35.2 — aceite do usuário (testar a tabela de notas logado como professor). Depois: Etapa 29, item 29.5 — aceite do usuário (discursivas de sexta). Depois: Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -517,13 +517,14 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 | 46.2 | LOG bloqueado junto com a atividade bloqueada (pedido do usuário) | ✅ Concluído | 2026-10-06 | `node --check`; CSS sem clique no card bloqueado + checagem no clique |
 | 46.3 | Aceite do usuário | ⬜ Pendente | — | — |
 
-## Etapa 47 — Trocar o nome do card no modal "✏️ Editar aula", além da data (tarefa pequena, 2026-10-06)
+## Etapa 47 — Trocar o rótulo e o nome do card no modal "✏️ Editar aula", além da data (tarefa pequena, 2026-10-06)
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 47.1 | Coluna `aulas.nome_card` (`database/2026-10-06-aulas-nome-card.sql`, aplicada no Supabase a pedido do usuário) | ✅ Concluído | 2026-10-06 | Consulta em `information_schema.columns` |
 | 47.2 | `assets/js/indice-aula-data.js`: campo "Nome do card" no modal, grava junto com a data e mostra o nome no `h2` do card (vazio = título do HTML) | ✅ Concluído | 2026-10-06 | `node --check`; teste no navegador com o usuário |
 | 47.3 | Documentação (`CLAUDE.md`, `database.md`, relatório HTML) | ✅ Concluído | 2026-10-06 | Leitura |
-| 47.4 | Aceite do usuário | ⬜ Pendente | — | — |
+| 47.4 | Campo "Rótulo do card" (o "AULA 01" do topo): coluna `aulas.rotulo_card` (aplicada no Supabase) + modal + documentação | ✅ Concluído | 2026-10-06 | `node --check`; consulta da coluna; teste no navegador com o usuário |
+| 47.5 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Etapa 47 — Exportar PDF no padrão SENAI nas discursivas (tarefa pequena, 2026-10-06)
 | Item | Descrição | Status | Concluído em | Verificação |
