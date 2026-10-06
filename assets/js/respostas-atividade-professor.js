@@ -853,14 +853,15 @@ function criarBotaoFavoritaRelatorio(turmas, aoAlterar) {
 }
 
 /**
- * Mostra a tabela "Notas dos alunos" (nome e nota em ordem alfabética, com PDF) quando a página
- * pede (<body data-tabela-notas="sim">). Uma falha aqui não derruba o relatório.
+ * Mostra a tabela "Notas dos alunos" (nome e nota em ordem alfabética, com PDF) em TODAS as
+ * atividades; só some na página que pedir <body data-tabela-notas="nao">. Uma falha aqui não
+ * derruba o relatório.
  * @param {HTMLElement} bloco - Cartão do relatório do professor.
  * @param {Object[]} linhas - Linhas do resumo.
  * @param {Object[]} turmas - Turmas do relatório.
  */
 async function abrirTabelaNotas(bloco, linhas, turmas) {
-    if (document.body.dataset.tabelaNotas !== 'sim') return;
+    if (document.body.dataset.tabelaNotas === 'nao') return;
     try {
         if (typeof window.montarTabelaNotasProfessor !== 'function') {
             await carregarScript('tabela-notas-professor.js');

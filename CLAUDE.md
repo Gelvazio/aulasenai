@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 18:45
+**Versão das regras:** 2026-10-06 18:50
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 18:50 | Tabela "Notas dos alunos" com Exportar PDF em **todas** as atividades de todas as matérias (padrão ligado; `data-tabela-notas="nao"` desliga numa página) |
 | 2026-10-06 18:45 | Removido o botão "📥 Exportar PDF com gabarito" de todas as páginas e do gerador de atividades |
 | 2026-10-06 18:30 | Removido de todas as atividades o botão "📥 Banco Moodle (AVA SENAI)"; banco do AVA só pelo gerador-banco-ava |
 | 2026-10-06 18:15 | Regra do gabarito também nas discursivas: professor libera no painel por turma (só com todos entregues); aluno "Ver Gabarito" com aviso e registro antes da liberação |
@@ -1855,9 +1856,9 @@ assets/
 │                        tabela-notas-professor.js + css/tabela-notas-professor.css — tabela
 │                        "Notas dos alunos" (só professor) abaixo do relatório da atividade:
 │                        nome e nota (melhor tentativa) em ordem alfabética, da turma da aba, com
-│                        "📥 Exportar PDF (notas)"; ligada por `- **Tabela de notas:** sim` no .md
-│                        (body data-tabela-notas="sim"); 1ª página: Avaliação Objetiva 01 de
-│                        Análise de Dados;
+│                        "📥 Exportar PDF (notas)"; em TODAS as atividades com relatório do
+│                        professor, de todas as matérias (desde 2026-10-06); desligar numa
+│                        página só com body data-tabela-notas="nao";
 │                        respostas-atividade.js + css/respostas-atividade.css — marcação das
 │                        alternativas, folha de respostas no fim da página e entrega; grava
 │                        SOMENTE no banco (sem localStorage); ativado com
