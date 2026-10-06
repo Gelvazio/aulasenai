@@ -23,6 +23,7 @@ const PERFIL_PROFESSOR_BLOQUEIO = 'PROFESSOR';
 const ROTA_DEFINIR_BLOQUEIO_TURMA = '/rest/v1/rpc/definir_bloqueio_turma';
 const EVENTO_FAVORITA_ALTERADA = 'turma-favorita-alterada';
 const SELETOR_INTERRUPTOR_BLOQUEAR = '.interruptor-bloquear';
+const ATRIBUTO_HREF_GUARDADO = 'data-href-bloqueado';
 const MSG_SEM_FAVORITA_BLOQUEIO = 'Marque a turma favorita na barra "Turma" do índice: o ' +
     'bloqueio vale só para a turma favorita.';
 const URL_POPUP_BLOQUEIO = document.currentScript?.src.replace(/[^/]*$/, 'popup.js') || '';
@@ -122,8 +123,8 @@ function bloquearCardAtividade(card) {
  * @returns {string[]} Caminhos sem repetição.
  */
 function listarPaginasDoCard(card) {
-    const caminhos = [...card.querySelectorAll('a.btn')]
-        .map((link) => obterCaminhoBloqueio(link.getAttribute('href')));
+    const caminhos = [...card.querySelectorAll('a.btn')].map((link) => obterCaminhoBloqueio(
+        link.getAttribute('href') || link.getAttribute(ATRIBUTO_HREF_GUARDADO)));
     return [...new Set(caminhos.filter(Boolean))];
 }
 
@@ -234,6 +235,38 @@ async function gravarBloqueioCard(atividades, turma, bloquear) {
 }
 
 /**
+ * Professor: desativa (guardando o href) ou reativa todos os links do card bloqueado.
+ * Os botões do professor (interruptor, cadastro) continuam funcionando.
+ * @param {HTMLElement} card - Card do índice.
+ * @param {boolean} bloquear - true para desativar os links.
+ */
+function definirLinksCardProfessor(card, bloquear) {
+    card.querySelectorAll('a[href], a[' + ATRIBUTO_HREF_GUARDADO + ']').forEach((link) => {
+        if (bloquear && link.hasAttribute('href')) {
+            link.setAttribute(ATRIBUTO_HREF_GUARDADO, link.getAttribute('href'));
+            link.removeAttribute('href');
+        }
+        if (!bloquear && link.hasAttribute(ATRIBUTO_HREF_GUARDADO)) {
+            link.setAttribute('href', link.getAttribute(ATRIBUTO_HREF_GUARDADO));
+            link.removeAttribute(ATRIBUTO_HREF_GUARDADO);
+        }
+        link.toggleAttribute('aria-disabled', bloquear);
+        if (bloquear) link.setAttribute('tabindex', '-1');
+        else link.removeAttribute('tabindex');
+    });
+}
+
+/**
+ * Aplica ao card do professor o estado de bloqueio: visual e links.
+ * @param {HTMLElement} card - Card do índice.
+ * @param {boolean} bloqueado - true se a atividade está bloqueada para a turma favorita.
+ */
+function aplicarBloqueioCardProfessor(card, bloqueado) {
+    card.classList.toggle(CLASSE_TEMA_BLOQUEADO_PROFESSOR, bloqueado);
+    definirLinksCardProfessor(card, bloqueado);
+}
+
+/**
  * Acrescenta ao card o interruptor da turma favorita.
  * @param {HTMLElement} card - Card do índice.
  * @param {Object[]} atividades - Atividades cadastradas do card.
@@ -244,10 +277,10 @@ function montarInterruptorCard(card, atividades, turma) {
     if (!atividades.length || !acoes) return;
 
     const bloqueado = atividades.every((atividade) => estaBloqueadaParaTurma(atividade, turma));
-    card.classList.toggle(CLASSE_TEMA_BLOQUEADO_PROFESSOR, bloqueado);
+    aplicarBloqueioCardProfessor(card, bloqueado);
     acoes.append(criarInterruptorBloquear({ bloqueado, turma }, async (bloquear) => {
         await gravarBloqueioCard(atividades, turma, bloquear);
-        card.classList.toggle(CLASSE_TEMA_BLOQUEADO_PROFESSOR, bloquear);
+        aplicarBloqueioCardProfessor(card, bloquear);
     }));
 }
 

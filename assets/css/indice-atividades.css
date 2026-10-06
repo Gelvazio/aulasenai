@@ -88,6 +88,8 @@ footer { background: #2d3748; color: white; padding: 24px 20px; text-align: cent
 .aula.bloqueada { cursor: not-allowed; }
 .aula.bloqueada::before { pointer-events: auto; }
 .aula.bloqueada a { pointer-events: none; }
+/* Professor: links do card bloqueado desativados (sem href); interruptor e botões continuam */
+.aula.bloqueada-professor a:not([href]) { cursor: not-allowed; opacity: 0.6; }
 
 .menu-principal { margin-top: 14px; display: flex; justify-content: center; gap: 10px; }
 .menu-principal a { color: white; font-size: 13px; font-weight: 700; text-decoration: none; padding: 7px 18px; border: 2px solid var(--gold); border-radius: 16px; }

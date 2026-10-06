@@ -1,12 +1,13 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 17:15
+**Versão das regras:** 2026-10-06 17:30
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
 | 2026-10-06 16:50 | Correção das discursivas (tabela `correcao_discursiva`, tela `correcao-discursiva.html`, menu CORREÇÃO, IA só sugere) e média final do aluno pela função `notas_media_final` (nota vale mesmo com a atividade bloqueada; discursiva "Aguardando correção") |
+| 2026-10-06 17:30 | Links do card bloqueado desativados também para o professor (voltam ao desbloquear); interruptor continua clicável |
 | 2026-10-06 17:15 | Card de atividade bloqueada inteiro inacessível para aluno e visitante (todos os links desativados, clique no card mostra o aviso) |
 | 2026-10-06 17:00 | Removido também o botão "📝 Exportar em Word (gabarito)": atividades e avaliações objetivas ficam sem botão de Word |
 | 2026-10-06 16:45 | `.vercelignore` exclui do site todo arquivo com "gabarito" no nome (o gabarito da prova UC1 TIC fica no Git, mas não é publicado) |
@@ -1988,8 +1989,10 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   visitante, o card bloqueado fica inteiro inacessível** (2026-10-06, pedido do usuário): todos
   os links do card (atividade, slides, PDFs...) perdem o `href`, o véu recebe o clique e qualquer
   clique mostra "Atividade Bloqueada!" (`bloquearCardAtividade` em
-  `assets/js/indice-atividades-bloqueio.js`). Para o professor o véu não bloqueia os cliques e o
-  interruptor fica por cima, claro e clicável (`assets/css/indice-atividades-bloquear.css`). Todo índice de atividades carrega esses arquivos
+  `assets/js/indice-atividades-bloqueio.js`). **Para o professor, os links do card bloqueado
+  também ficam desativados** (2026-10-06, `definirLinksCardProfessor`: o `href` é guardado em
+  `data-href-bloqueado` e volta ao desbloquear); o interruptor e os botões do professor
+  continuam clicáveis, por cima do véu (`assets/css/indice-atividades-bloquear.css`). Todo índice de atividades carrega esses arquivos
   (via `atividades-crud-modal.js`); índice novo, feito à mão ou gerado, também deve carregá-los.
 - ✅ **Turma favorita no índice — REGRA GLOBAL** (2026-09-30, índice de atividades de **todas**
   as matérias): para o professor logado, abaixo do resumo do `ATIVIDADES/index.html` aparece a
