@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 22, item 22.3 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
+**Próximo passo:** Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -240,7 +240,8 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 |------|-----------|--------|--------------|-------------|
 | 22.1 | Botão 👁 dentro do campo senha que mostra/oculta a senha digitada (`login.html`, `assets/css/login.css`, `js/login.js`, `docs/ORIENTACAO_JS_LOGIN.md`) | ✅ Concluído | 2026-10-06 | `node --check` OK; navegador não aberto (regra) |
 | 22.2 | Commit local | ✅ Concluído | 2026-10-06 | `git commit` |
-| 22.3 | Aceite do usuário (testar no navegador) | ⬜ Pendente | — | — |
+| 22.3 | Ícone muda conforme o estado: olho riscado com a senha oculta, olho aberto com a senha visível (SVG no `login.html`, troca pelo CSS via `aria-pressed`) | ✅ Concluído | 2026-10-06 | Leitura do código; navegador não aberto (regra) |
+| 22.4 | Aceite do usuário (testar no navegador) | ⬜ Pendente | — | — |
 
 ## Etapa 22 — Data da aula também para os alunos no índice de atividades (pedida em 2026-10-06; tarefa pequena)
 | Item | Descrição | Status | Concluído em | Verificação |

@@ -67,14 +67,29 @@ body {
     border: none;
     border-radius: 6px;
     background: transparent;
-    font-size: 18px;
-    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--login-texto-suave);
     cursor: pointer;
-    opacity: 0.55;
 }
 .login-olho:hover,
-.login-olho[aria-pressed="true"] { opacity: 1; background: var(--login-fundo); }
+.login-olho[aria-pressed="true"] { color: var(--login-azul); background: var(--login-fundo); }
 .login-olho:focus-visible { outline: 2px solid var(--login-azul-claro); }
+
+/* Senha oculta = olho riscado; senha visível = olho aberto. */
+.login-olho-icone {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.login-olho-icone--aberto,
+.login-olho[aria-pressed="true"] .login-olho-icone--riscado { display: none; }
+.login-olho[aria-pressed="true"] .login-olho-icone--aberto { display: block; }
 
 .login-botao {
     padding: 12px;
