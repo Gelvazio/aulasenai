@@ -482,3 +482,9 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 |------|-----------|--------|--------------|-------------|
 | 42.1 | Botão retirado das 12 páginas e do `gerar_atividades.py` (fica o "Exportar Gabarito" e a variante "📥 Gabarito") | ✅ Concluído | 2026-10-06 | grep: 0 páginas com o botão; `py_compile` e saída do gerador conferida; `node --check` |
 | 42.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 43 — Análise das Provas Práticas id 37 × id 82 de Análise de Dados (tarefa pequena, 2026-10-06)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 43.1 | `ANALISE-PROVA-PRATICA.md` na pasta ATIVIDADES da matéria: comparação questão a questão, conteúdos exclusivos e observações (sem gabarito) | ✅ Concluído | 2026-10-06 | Perguntas lidas das 2 páginas e ids conferidos no banco |
+| 43.2 | Aceite do usuário | ⬜ Pendente | — | — |
