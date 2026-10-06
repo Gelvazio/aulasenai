@@ -23,7 +23,10 @@ const MENU_PROFESSOR_HEADER = [
   { rotulo: "ALUNOS", rota: "../alunos.html" },
 ];
 // Só para o Professor Administrador (confirmado pelo banco: RPC eh_professor_administrador).
-const MENU_ADMINISTRADOR_HEADER = [{ rotulo: "TURMAS", rota: "../turmas.html" }];
+const MENU_ADMINISTRADOR_HEADER = [
+  { rotulo: "TURMAS", rota: "../turmas.html" },
+  { rotulo: "PENDÊNCIAS", rota: "../MATERIAIS/AGENDA_COLABORADOR/pendencias.html" },
+];
 const RPC_ADMINISTRADOR_HEADER = "eh_professor_administrador";
 const TEXTO_REGRAS_HEADER = "Regras";
 const ROTA_REGRAS_JS = "../assets/js/regras-modal.js";

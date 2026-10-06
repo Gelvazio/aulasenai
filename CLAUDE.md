@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 09:21
+**Versão das regras:** 2026-10-06 09:49
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 09:49 | Regra "PENDÊNCIAS DE AULAS": tabela `pendencias` (RLS só do Professor Administrador, exclusão lógica), página `MATERIAIS/AGENDA_COLABORADOR/pendencias.html` com CRUD completo e filtros por todos os campos, menu PENDÊNCIAS |
 | 2026-10-06 09:21 | Regra exclusiva "REFORÇO DE LINGUAGENS: 25 QUESTÕES POR ATIVIDADE": 20 objetivas + 5 discursivas (Contexto, Comando e campo para digitar), discursivas corrigidas com IA e análise do professor |
 | 2026-10-05 15:59 | Exportação da página inteira: `assets/js/exportar-pagina.js` + `assets/css/exportar-pagina.css` (botões **📥 Exportar Para PDF**, igual à tela, e **📝 Exportar em Word** ao lado), usados no trabalho em equipe v1 e v2 |
 | 2026-10-05 13:37 | Regra "BLOQUEIO DE ATIVIDADE POR TURMA": o interruptor do índice vale só para a **turma favorita** (coluna `atividade.bloqueio` com os códigos das turmas bloqueadas; sem vínculo = liberado; função `definir_bloqueio_turma`); relatório de atividades considera a turma |
@@ -1533,6 +1534,38 @@ SQL: `database/2026-10-02-turmaprofessor-professor-administrador.sql` (aplicado 
   nunca afrouxar as políticas da `turmaprofessor` (gravação só com `eh_professor_administrador()`)
   nem devolver TRUNCATE aos papéis da API.
 
+## 📌 REGRA — PENDÊNCIAS DE AULAS (MENU PENDÊNCIAS, SÓ PROFESSOR ADMINISTRADOR)
+
+Registrada em 2026-10-06 a pedido do usuário. Plano: `docs/pendencias-aulas-professor-administrador.md`;
+SQL: `database/2026-10-06-pendencias.sql` (✅ aplicado no Supabase em 2026-10-06).
+
+- ✅ **Tabela `pendencias`:** `id` (identity), `nome` (1–300), `responsavel` (1–120),
+  `datainicio` (date, padrão hoje), `status` (`PENDENTE`, `EM_ANDAMENTO`, `CONCLUIDA`; padrão
+  `PENDENTE`) e `excluido` (`0`/`1`, padrão `0`). Nomes das colunas mantidos como o usuário pediu.
+- ✅ **Só o Professor Administrador** (`eh_professor_administrador()`) lê, cria e altera: RLS
+  ligado com políticas de `select`/`insert`/`update`; `anon` sem acesso. ❌ **Sem `DELETE`:**
+  excluir é **lógico** (`excluido = 1`) e pode ser desfeito (restaurar = `0`); nunca criar
+  política de delete nem apagar linhas.
+- ✅ **Menu PENDÊNCIAS** no header (`js/header-usuario.js`, `MENU_ADMINISTRADOR_HEADER`), exibido
+  só quando o RPC `eh_professor_administrador()` devolve verdadeiro, ao lado de TURMAS. Esconder o
+  menu é só visual: a segurança é o RLS.
+- ✅ **Página `MATERIAIS/AGENDA_COLABORADOR/pendencias.html`** — CRUD completo:
+  - **criar** (nome, responsável, data de início = hoje, status = PENDENTE);
+  - **listar** todas as colunas, da data de início mais recente para a mais antiga, com contagem
+    "Mostrando X de Y";
+  - **editar** (✏️ carrega o formulário; "Salvar alterações" / "Cancelar edição");
+  - **trocar o status** na própria linha (grava na hora, com aviso);
+  - **excluir** (🗑️, popup de confirmação → `excluido = 1`) e **restaurar** (♻️ nas excluídas).
+- ✅ **Filtros por todos os campos, combinados:** ID (exato), nome (contém), responsável (contém),
+  data de início (de / até), status (Todos ou um status) e excluído (Não excluídas — padrão —,
+  Excluídas ou Todas); botão **Limpar filtros**. Filtro feito na página sobre a lista lida do banco.
+- ✅ **Código:** `assets/js/pendencias-repositorio.js` (dados) + `assets/js/pendencias-pagina.js`
+  (tela) + `assets/css/pendencias.css` (reaproveita `criar-usuarios-comando.css` e
+  `turmas-professor.css`). Avisos só pelo popup; nada em localStorage.
+- ⚠️ A página fica na pasta `AGENDA_COLABORADOR`, que **não é curso** e tem regras próprias
+  (`MATERIAIS/AGENDA_COLABORADOR/CLAUDE.md`): não rodar o gerador de índices nela e não misturar
+  esta tabela com o dashboard da agenda do Google Calendar sem pedido do usuário.
+
 ## 🎓 REGRA — ÍNDICE DE CURSOS: SÓ OS CURSOS DO USUÁRIO LOGADO
 
 Registrada em 2026-10-03. Plano: `docs/indice-cursos-do-usuario-logado.md`;
@@ -1751,6 +1784,10 @@ assets/
 │                        turmas-aluno-repositorio.js + turmas-aluno-pagina.js + css/
 │                        turmas-aluno.css — alunos.html da raiz (menu ALUNOS, todo professor):
 │                        CRUD da tabela `turmaaluno`;
+│                        pendencias-repositorio.js + pendencias-pagina.js + css/
+│                        pendencias.css — MATERIAIS/AGENDA_COLABORADOR/pendencias.html
+│                        (menu PENDÊNCIAS, só Professor Administrador): CRUD da
+│                        tabela `pendencias`;
 │                        documento-word.js + exportar-word.js + exportar-word-pratica.js —
 │                        botão "📝 Exportar em Word" ao lado de cada exportar PDF (regra
 │                        "EXPORTAR EM WORD");

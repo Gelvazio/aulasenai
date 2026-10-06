@@ -181,8 +181,8 @@
         </tr>
         <tr>
           <td><strong>pendencias</strong></td>
-          <td>12</td>
-          <td>Pendências de cursos</td>
+          <td>6</td>
+          <td>Pendências de aulas do Professor Administrador (exclusão lógica; RLS só administrador)</td>
           <td><span class="badge badge-ok">✅</span></td>
         </tr>
         <tr>
@@ -440,6 +440,29 @@
 
       <h4 style="margin-top: 15px; color: #2e7d32;">✅ Conclusão: AULAS</h4>
       <p>Documentação perfeita. Todos os campos, tipos e relacionamentos estão corretos.</p>
+    </div>
+
+    <h2>📌 Atualização 2026-10-06 — pendências de aulas (Professor Administrador)</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-06-pendencias.sql</code> (✅ aplicado em 2026-10-06) · Tela: <code>MATERIAIS/AGENDA_COLABORADOR/pendencias.html</code> (menu PENDÊNCIAS)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>pendencias</td>
+          <td>Tabela</td>
+          <td>id (identity), nome (1–300), responsavel (1–120), datainicio (date, padrão hoje), status (PENDENTE / EM_ANDAMENTO / CONCLUIDA), excluido (0/1, padrão 0)</td>
+        </tr>
+        <tr>
+          <td>pendencias_select/insert/update_administrador</td>
+          <td>Políticas RLS</td>
+          <td>Só eh_professor_administrador(); sem política de delete (exclusão lógica); anon sem acesso</td>
+        </tr>
+      </table>
+      <p>A descrição antiga da tabela (colunas data, descricao, materia_id...) não existia no banco e foi substituída.</p>
     </div>
 
     <h2>👥 Atualização 2026-10-05 — equipes por turma + matéria</h2>

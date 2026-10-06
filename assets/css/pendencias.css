@@ -1,0 +1,26 @@
+/* Página MATERIAIS/AGENDA_COLABORADOR/pendencias.html — CRUD da tabela pendencias.
+   Complementa criar-usuarios-comando.css (guia-*) e turmas-professor.css (tp-*). */
+:root {
+    --pd-espaco: 12px;
+    --pd-fundo-excluida: #f4f4f5;
+    --pd-texto-excluida: #71717a;
+}
+
+.pd-campo--largo { grid-column: span 2; }
+
+.pd-filtros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: var(--pd-espaco);
+    align-items: end;
+}
+
+.pd-status-linha { min-width: 160px; }
+
+.pd-linha--excluida { background: var(--pd-fundo-excluida); color: var(--pd-texto-excluida); }
+
+.pd-linha--excluida td:nth-child(2) { text-decoration: line-through; }
+
+@media (max-width: 600px) {
+    .pd-campo--largo { grid-column: auto; }
+}

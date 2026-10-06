@@ -324,26 +324,26 @@ const aulasMateria = await sbGet("aulas", "select=*&materia_id=eq.5&order=numero
 
 ## 1️⃣1️⃣ Tabela: `pendencias`
 
-**Contém:** Pendências de matérias (tarefas a fazer)
+**Contém:** pendências de aulas do Professor Administrador (tela
+`MATERIAIS/AGENDA_COLABORADOR/pendencias.html`, menu PENDÊNCIAS).
+**Script:** `database/2026-10-06-pendencias.sql` (✅ aplicado em 2026-10-06 pelo conector do
+Supabase). **Plano:** `docs/pendencias-aulas-professor-administrador.md`.
+
+> ⚠️ A descrição anterior desta seção (colunas `data`, `descricao`, `materia_id`...) não
+> correspondia ao banco: em 2026-10-06 a tabela não existia e foi criada com a estrutura abaixo.
 
 | Campo | Tipo | Restrição | Padrão | Uso |
 |-------|------|-----------|--------|-----|
-| **id** | BIGINT | PK, Sequence | `nextval('pendencias_id_seq')` | Identificador único |
-| **data** | DATE | NOT NULL | `CURRENT_DATE` | Data da pendência |
-| datavencimento | DATE | Nullable | NULL | Data de vencimento |
-| **descricao** | TEXT | NOT NULL | — | Descrição da pendência |
-| status | TEXT | CHECK | `'PENDENTE'` | Status: PENDENTE, ANDAMENTO, CONCLUIDO, CANCELADO |
-| materia_id | TEXT | Nullable | NULL | ID da matéria (se aplicável) |
-| materia_descricao | TEXT | Nullable | NULL | Descrição da matéria |
-| materia_link | TEXT | Nullable | NULL | Link da matéria |
-| total_horas | INTEGER | Nullable | NULL | Total de horas |
-| horas_ministradas | INTEGER | Nullable | NULL | Horas já ministradas |
-| created_at | TIMESTAMPTZ | NOT NULL | `now()` | Data criação |
-| updated_at | TIMESTAMPTZ | NOT NULL | `now()` | Data última atualização |
+| **id** | BIGINT | PK, identity | gerado | Identificador |
+| **nome** | TEXT | NOT NULL, 1–300 caracteres | — | Descrição da pendência |
+| **responsavel** | TEXT | NOT NULL, 1–120 caracteres | — | Quem resolve |
+| **datainicio** | DATE | NOT NULL | `CURRENT_DATE` | Data de início |
+| **status** | TEXT | CHECK `PENDENTE`, `EM_ANDAMENTO`, `CONCLUIDA` | `'PENDENTE'` | Situação |
+| **excluido** | SMALLINT | CHECK `0` ou `1` | `0` | Exclusão lógica (1 = excluída) |
 
-**Primary Key:** `id`  
-**RLS Status:** ✅ **HABILITADO**  
-**Rows:** 0
+**RLS:** ✅ habilitado. `select`, `insert` e `update` só com `eh_professor_administrador()`;
+**sem política de `delete`** (excluir = `excluido = 1`, restaurar = `0`); `anon` sem acesso;
+`truncate`/`delete` revogados de `authenticated`.
 
 ---
 
