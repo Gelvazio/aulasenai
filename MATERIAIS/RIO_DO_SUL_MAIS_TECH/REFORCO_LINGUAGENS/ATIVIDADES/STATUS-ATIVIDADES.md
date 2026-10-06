@@ -8,7 +8,7 @@
 > atividade mostra o link "Slides da aula". Plano: `docs/reforco-linguagens-10-aulas-e-atividades.md`.
 > Legenda: `⬜ Pendente` · `🔄 Em progresso` · `✅ Concluída`.
 
-**Aulas:** 10 · **✅ Concluídas:** 4 · **Pendentes:** 6
+**Aulas:** 10 · **✅ Concluídas:** 5 · **Pendentes:** 5
 
 ## Atividades por aula (20 objetivas + 5 discursivas)
 
@@ -18,7 +18,7 @@
 | 02 | Tema, Assunto e Ideia Principal | ✅ `ATIVIDADES-AULA-02-20-QUESTOES.html` + ✅ `ATIVIDADE-DISCURSIVA-AULA-02.html` | ✅ `ATIVIDADES-AULA-02-20-QUESTOES.md` + `ATIVIDADE-DISCURSIVA-AULA-02.md` (+ `-GABARITO.md`) | ✅ 2026-10-06 (objetivas: atividade 62, 20 no gabarito, liberada; discursivas: atividade 63, 5 tópicos, nasce bloqueada) | ✅ Concluída |
 | 03 | Intenção Comunicativa e Análise Crítica | ✅ `ATIVIDADES-AULA-03-20-QUESTOES.html` + ✅ `ATIVIDADE-DISCURSIVA-AULA-03.html` | ✅ `ATIVIDADES-AULA-03-20-QUESTOES.md` + `ATIVIDADE-DISCURSIVA-AULA-03.md` (+ `-GABARITO.md`) | ✅ 2026-10-06 (objetivas: atividade 64, 20 no gabarito, liberada; discursivas: atividade 65, 5 tópicos, nasce bloqueada) | ✅ Concluída |
 | 04 | Coesão e Coerência Textual | ✅ `ATIVIDADES-AULA-04-20-QUESTOES.html` + ✅ `ATIVIDADE-DISCURSIVA-AULA-04.html` | ✅ `ATIVIDADES-AULA-04-20-QUESTOES.md` + `ATIVIDADE-DISCURSIVA-AULA-04.md` (+ `-GABARITO.md`) | ✅ 2026-10-06 (objetivas: atividade 66, 20 no gabarito, liberada; discursivas: atividade 67, 5 tópicos, nasce bloqueada) | ✅ Concluída |
-| 05 | Tipologias Textuais na Prática | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
+| 05 | Tipologias Textuais na Prática | ✅ `ATIVIDADES-AULA-05-20-QUESTOES.html` + ✅ `ATIVIDADE-DISCURSIVA-AULA-05.html` | ✅ `ATIVIDADES-AULA-05-20-QUESTOES.md` + `ATIVIDADE-DISCURSIVA-AULA-05.md` (+ `-GABARITO.md`) | ✅ 2026-10-06 (objetivas: atividade 68, 20 no gabarito, liberada; discursivas: atividade 69, 5 tópicos, nasce bloqueada) | ✅ Concluída |
 | 06 | Pontuação e Concordância na Escrita | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
 | 07 | Classes de Palavras e Figuras de Linguagem | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
 | 08 | Oralidade e Apresentação em Público | ⬜ | ⬜ | ⬜ | ⬜ Pendente |

@@ -15,7 +15,7 @@ As 16 aulas antigas de 4 h ficaram em `LEGADO-16-AULAS/` (não são mais usadas)
 | 02 | Tema, Assunto e Ideia Principal | 6 | ✅ `CONTEUDO/AULA-02-TEMA-ASSUNTO-E-IDEIA-PRINCIPAL.md` | ✅ | ✅ | ✅ |
 | 03 | Intenção Comunicativa e Análise Crítica | 6 | ✅ `CONTEUDO/AULA-03-INTENCAO-COMUNICATIVA-E-ANALISE-CRITICA.md` | ✅ | ✅ | ✅ |
 | 04 | Coesão e Coerência Textual | 6 | ✅ `CONTEUDO/AULA-04-COESAO-E-COERENCIA-TEXTUAL.md` | ✅ | ✅ | ✅ |
-| 05 | Tipologias Textuais na Prática | 6 | ⬜ | ✅ | ⬜ | ⬜ |
+| 05 | Tipologias Textuais na Prática | 6 | ✅ `CONTEUDO/AULA-05-TIPOLOGIAS-TEXTUAIS-NA-PRATICA.md` | ✅ | ✅ | ✅ |
 | 06 | Pontuação e Concordância na Escrita | 6 | ⬜ | ✅ | ⬜ | ⬜ |
 | 07 | Classes de Palavras e Figuras de Linguagem | 6 | ⬜ | ✅ | ⬜ | ⬜ |
 | 08 | Oralidade e Apresentação em Público | 7 | ⬜ | ✅ | ⬜ | ⬜ |
