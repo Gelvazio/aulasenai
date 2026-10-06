@@ -121,6 +121,8 @@ PASTA_REFORCO_LINGUAGENS = "MATERIAIS/RIO_DO_SUL_MAIS_TECH/REFORCO_LINGUAGENS/AT
 ATIVIDADES_REFORCO_LINGUAGENS = [
     (1, "Leitura e Compreensão Textual Básica", "2026-09-08",
      f"{PASTA_REFORCO_LINGUAGENS}/ATIVIDADES-AULA-01-20-QUESTOES.md"),
+    (2, "Tema, Assunto e Ideia Principal", "2026-10-09",
+     f"{PASTA_REFORCO_LINGUAGENS}/ATIVIDADES-AULA-02-20-QUESTOES.md"),
 ]
 
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.

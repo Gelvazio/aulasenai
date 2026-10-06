@@ -1,42 +1,40 @@
 # 📝 STATUS DAS ATIVIDADES — REFORCO_LINGUAGENS
 
-> ⚠️ **Desde 2026-10-06 vale a regra EXCLUSIVA desta matéria** (`CLAUDE.md`, "REFORÇO DE
-> LINGUAGENS: 25 QUESTÕES POR ATIVIDADE"): cada aula tem **20 objetivas**
-> (`ATIVIDADES-AULA-NN-20-QUESTOES.html`) + **5 discursivas** (`ATIVIDADE-DISCURSIVA-AULA-NN.html`,
-> conferidas com IA e pela análise do professor). O texto abaixo era da regra anterior.
->
-> Regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES POR AULA" do `CLAUDE.md` da raiz: cada aula tem
-> `ATIVIDADES-AULA-NN-50-QUESTOES.html` com **exatamente 50 questões**, fonte em `CONTEUDO/`,
-> folha de respostas no banco e cadastro em `atividade` + `gabarito`. Gerar uma aula por vez,
-> completa, e atualizar este arquivo a cada atividade.
-> Legenda: `⬜ Pendente` · `🔄 Em progresso / falta banco` · `⚠️ Incompleta` · `✅ Concluída`.
+> Regra **exclusiva** desta matéria (`CLAUDE.md`, "REFORÇO DE LINGUAGENS: 25 QUESTÕES POR
+> ATIVIDADE"): cada aula tem **20 objetivas** (`ATIVIDADES-AULA-NN-20-QUESTOES.html`) + **5
+> discursivas** (`ATIVIDADE-DISCURSIVA-AULA-NN.html`, conferidas com IA e pela análise do
+> professor). Desde 2026-10-06 a matéria tem **10 aulas** (uma por slide de `AULAS-CHALKIE-AI/`)
+> e o conteúdo das atividades vem **sempre** de `AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-*.md`. Toda
+> atividade mostra o link "Slides da aula". Plano: `docs/reforco-linguagens-10-aulas-e-atividades.md`.
+> Legenda: `⬜ Pendente` · `🔄 Em progresso` · `✅ Concluída`.
 
-**Levantamento:** 2026-10-03 (páginas da pasta, contagem de questões no HTML e atividades do banco).
-**Aulas:** 16 · **✅ Concluídas:** 0 · **Pendentes/incompletas:** 16
+**Aulas:** 10 · **✅ Concluídas:** 2 · **Pendentes:** 8
 
-## Atividade objetiva de 50 questões por aula
+## Atividades por aula (20 objetivas + 5 discursivas)
 
-| Aula | Tema | Página | Questões | Fonte (`.md`) | Banco | Status |
-|---|---|---|---|---|---|---|
-| 01 | Leitura e Compreensão Textual Básica | ✅ `ATIVIDADES-AULA-01-20-QUESTOES.html` + ✅ `ATIVIDADE-DISCURSIVA-AULA-01.html` | 20 + 5 | ✅ `CONTEUDO/ATIVIDADES-AULA-01-20-QUESTOES.md` + `CONTEUDO/ATIVIDADE-DISCURSIVA-AULA-01.md` (+ `-GABARITO.md`) | ✅ aplicado em 2026-10-06 (objetivas: atividade 60, 20 no gabarito, liberada; discursivas: atividade 61, 5 tópicos, nasce bloqueada) | ✅ Concluída |
-| 02 | Análise de Tema e Ideia Principal | ⬜ `ATIVIDADES-AULA-02-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 03 | Intenção Comunicativa e Análise Crítica | ⬜ `ATIVIDADES-AULA-03-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 04 | Coesão e Coerência Textual | ⬜ `ATIVIDADES-AULA-04-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 05 | Produção de Textos Narrativos | ⬜ `ATIVIDADES-AULA-05-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 06 | Produção de Textos Descritivos | ⬜ `ATIVIDADES-AULA-06-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 07 | Produção de Textos Argumentativos | ⬜ `ATIVIDADES-AULA-07-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 08 | Gramática: Pontuação e Concordância | ⬜ `ATIVIDADES-AULA-08-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 09 | Classes de Palavras | ⬜ `ATIVIDADES-AULA-09-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 10 | Figuras de Linguagem | ⬜ `ATIVIDADES-AULA-10-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 11 | Oralidade: Apresentação e Discussão | ⬜ `ATIVIDADES-AULA-11-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 12 | Debate e Argumentação Oral | ⬜ `ATIVIDADES-AULA-12-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 13 | Leitura de Gêneros Variados (Crônicas, Poesia) | ⬜ `ATIVIDADES-AULA-13-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 14 | Leitura de Textos Técnicos e Informativos | ⬜ `ATIVIDADES-AULA-14-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 15 | Revisão Colaborativa e Feedback | ⬜ `ATIVIDADES-AULA-15-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 16 | Avaliação e Projetos Finais | ⬜ `ATIVIDADES-AULA-16-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
+| Aula | Tema | Páginas | Fontes (`CONTEUDO/`, fora do Git as com gabarito) | Banco | Status |
+|---|---|---|---|---|---|
+| 01 | Tipos de Texto e Contexto de Produção (atividade feita sobre "Leitura e Compreensão Textual Básica", mantida — decisão D5) | ✅ `ATIVIDADES-AULA-01-20-QUESTOES.html` + ✅ `ATIVIDADE-DISCURSIVA-AULA-01.html` | ✅ `ATIVIDADES-AULA-01-20-QUESTOES.md` + `ATIVIDADE-DISCURSIVA-AULA-01.md` (+ `-GABARITO.md`) | ✅ 2026-10-06 (objetivas: atividade 60, 20 no gabarito; discursivas: atividade 61, 5 tópicos) | ✅ Concluída |
+| 02 | Tema, Assunto e Ideia Principal | ✅ `ATIVIDADES-AULA-02-20-QUESTOES.html` + ✅ `ATIVIDADE-DISCURSIVA-AULA-02.html` | ✅ `ATIVIDADES-AULA-02-20-QUESTOES.md` + `ATIVIDADE-DISCURSIVA-AULA-02.md` (+ `-GABARITO.md`) | ✅ 2026-10-06 (objetivas: atividade 62, 20 no gabarito, liberada; discursivas: atividade 63, 5 tópicos, nasce bloqueada) | ✅ Concluída |
+| 03 | Intenção Comunicativa e Análise Crítica | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
+| 04 | Coesão e Coerência Textual | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
+| 05 | Tipologias Textuais na Prática | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
+| 06 | Pontuação e Concordância na Escrita | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
+| 07 | Classes de Palavras e Figuras de Linguagem | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
+| 08 | Oralidade e Apresentação em Público | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
+| 09 | Argumentação Oral, Debates e Registros | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
+| 10 | Gêneros Literários, Textos Técnicos e Síntese | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
 
 ## Demais atividades da pasta (adicionais)
 
 | Página | Tipo | Banco |
 |---|---|---|
 | — | Nenhuma | — |
+
+## Observações
+
+- Uma aula por vez, completa: fontes → páginas (conferência de 20 + 5, gabarito fora do HTML,
+  link dos slides) → seed aplicado (objetivas antes das discursivas) → índice → este arquivo.
+- As discursivas nascem bloqueadas: o professor libera no índice (turma favorita).
+- Histórico: até 2026-10-06 a matéria tinha 16 aulas de 4 h (`AULAS/LEGADO-16-AULAS/`); o
+  levantamento de 2026-10-03 apontava 16 aulas pendentes da regra de 50 questões.
