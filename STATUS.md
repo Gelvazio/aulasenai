@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 47, item 47.6 — liberação do usuário para separar as outras aulas compartilhadas; depois 47.7 — aceite. Depois: Etapa 44, item 44.4 — aceite do usuário (liberar e testar a Prova Prática 06-10-2026). Depois: Etapa 38, item 38.3 — aceite do usuário (gabarito nas discursivas). Depois: Etapa 37, item 37.4 — aceite do usuário (testar Liberar gabaritos como professor e Exportar Gabarito como aluno). Depois: Etapa 35, item 35.2 — aceite do usuário (testar a tabela de notas logado como professor). Depois: Etapa 29, item 29.5 — aceite do usuário (discursivas de sexta). Depois: Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
+**Próximo passo:** Etapa 48, item 48.7 — decisão do usuário sobre os rótulos fora do padrão "AULA NN"; depois 48.8 — aceite. Depois: Etapa 44, item 44.4 — aceite do usuário (liberar e testar a Prova Prática 06-10-2026). Depois: Etapa 38, item 38.3 — aceite do usuário (gabarito nas discursivas). Depois: Etapa 37, item 37.4 — aceite do usuário (testar Liberar gabaritos como professor e Exportar Gabarito como aluno). Depois: Etapa 35, item 35.2 — aceite do usuário (testar a tabela de notas logado como professor). Depois: Etapa 29, item 29.5 — aceite do usuário (discursivas de sexta). Depois: Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -525,7 +525,7 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 | 47.3 | Documentação (`CLAUDE.md`, `database.md`, relatório HTML) | ✅ Concluído | 2026-10-06 | Leitura |
 | 47.4 | Campo "Rótulo do card" (o "AULA 01" do topo): coluna `aulas.rotulo_card` (aplicada no Supabase) + modal + documentação | ✅ Concluído | 2026-10-06 | `node --check`; consulta da coluna; teste no navegador com o usuário |
 | 47.5 | Bug: cards que dividem a mesma aula mudavam juntos (35 × 82, aula 40). Regra "cada card ligado a apenas 1 aula" no `CLAUDE.md`; aula 40 só com a atividade 82 (33 → aula 67, 35 → aula 68; `database/2026-10-06-um-card-uma-aula-aula-40.sql`); aviso no modal quando a aula é compartilhada | ✅ Concluído | 2026-10-06 | Consulta no banco; `node --check`; levantamento dos cards × aulas de todos os índices |
-| 47.6 | Separar as outras 15 aulas compartilhadas (ver `CLAUDE.md`) | ⬜ Pendente | — | Aguardando liberação do usuário |
+| 47.6 | Separar as outras aulas compartilhadas | ✅ Concluído | 2026-10-06 | Feito na Etapa 48 |
 | 47.7 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Etapa 47 — Exportar PDF no padrão SENAI nas discursivas (tarefa pequena, 2026-10-06)
@@ -533,3 +533,16 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 |------|-----------|--------|--------------|-------------|
 | 47.1 | `assets/js/exportar-pdf-discursiva.js` (carregado pelo `avaliacao-discursiva.js`): barra com "📥 Exportar PDF" + lista "Turma"; PDF com cabeçalho SENAI, capacidades, questões, tópicos e espaço de resposta; vale para todas as discursivas (ex.: Prova Prática 06-10-2026) | ✅ Concluído | 2026-10-06 | `node --check`; teste no navegador com o usuário |
 | 47.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 48 — Card com 100% dos dados da tabela aulas + modal CRUD da aula (2026-10-06) — plano: [docs/card-dados-100-tabela-aulas.md](docs/card-dados-100-tabela-aulas.md)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 48.1 | Gerador de índices junta páginas da mesma aula num card (Reforço de Linguagens: 20 → 10 cards) | ✅ Concluído | 2026-10-06 | Índice regerado; demais índices sem mudança |
+| 48.2 | Separar aulas compartilhadas (12 aulas novas, atividade 13 → aula 23) + backup `atividade_aula_backup_20261006` | ✅ Concluído | 2026-10-06 | Consulta: nenhuma aula em 2 cards |
+| 48.3 | Copiar rótulo e nome atuais dos cards para `aulas.rotulo_card`/`nome_card` | ✅ Concluído | 2026-10-06 | Consulta: 0 aulas com atividade sem rótulo |
+| 48.4 | Card lê só da `aulas` (`indice-aula-repositorio.js`, `indice-aula-data.js`) | ✅ Concluído | 2026-10-06 | `node --check` |
+| 48.5 | Modal CRUD da aula com lista de atividades (Editar / Excluir / Nova) (`indice-aula-modal.js`, `atividades-crud-modal.js`) | ✅ Concluído | 2026-10-06 | `node --check`; teste no navegador com o usuário |
+| 48.6 | Regras no `CLAUDE.md` (card 100% `aulas`, modal CRUD, rótulo "AULA NN", 1 card = 1 aula) | ✅ Concluído | 2026-10-06 | Leitura |
+| 48.7 | Rótulos fora do padrão "AULA NN" (28 aulas) — decisão do usuário | ⬜ Pendente | — | Lista enviada ao usuário |
+| 48.8 | Aceite do usuário | ⬜ Pendente | — | — |
+

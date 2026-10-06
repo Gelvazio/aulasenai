@@ -38,6 +38,8 @@ PASTAS_IGNORADAS = {
 # Só páginas HTML entram no índice (pedido do usuário em 2026-09-27; .docx e .pdf ficam fora).
 EXTENSOES_ATIVIDADE = {".html": "📝 Página"}
 PADRAO_DATA_NOME = re.compile(r"(\d{2})-(\d{2})-(\d{4})")
+# "AULA-NN" no nome da página (sem confundir com a data "AULA-06-10-2026").
+PADRAO_AULA_NOME = re.compile(r"AULA-(\d{2})(?!-\d{2}-\d{4})(?=-|$)", re.IGNORECASE)
 SEM_DATA = (9999, 99, 99)
 PREFIXOS_IGNORADOS = ("~$", "GABARITO", "index.")
 TITULO_SITE = "SENAI — Índice de Atividades"
@@ -225,11 +227,59 @@ def card_atividade(atividade, pasta_indice, materia):
     })
 
 
+def numero_aula_do_arquivo(atividade):
+    """Número da aula escrito no nome da página ("ATIVIDADES-AULA-01-20-QUESTOES" → "01").
+
+    Returns:
+        Número com 2 dígitos ou None se o nome não tiver "AULA-NN".
+    """
+    encontrado = PADRAO_AULA_NOME.search(atividade.stem)
+    return encontrado.group(1) if encontrado else None
+
+
+def agrupar_por_aula(atividades):
+    """Agrupa as páginas da mesma aula (mesma pasta e mesmo "AULA-NN") num card só.
+
+    Regra "cada card ligado a apenas 1 aula": páginas da mesma aula não podem ficar em cards
+    separados. Só agrupa quando há 2 ou mais páginas da aula; a ordem segue a 1ª página.
+
+    Returns:
+        Lista de grupos (listas de páginas), na ordem do índice.
+    """
+    grupos = {}
+    for atividade in atividades:
+        numero = numero_aula_do_arquivo(atividade)
+        chave = (atividade.parent, numero) if numero else atividade
+        grupos.setdefault(chave, []).append(atividade)
+    return list(grupos.values())
+
+
+def card_aula_agrupada(paginas, pasta_indice):
+    """Card de uma aula com várias páginas (um botão por página; discursivas por último)."""
+    paginas = sorted(paginas, key=lambda p: ("DISCURSIVA" in p.name.upper(), p.name.lower()))
+    numero = numero_aula_do_arquivo(paginas[0])
+    return montar_card({
+        "icone": "📝",
+        "rotulo": f"AULA {numero}",
+        "arquivo": paginas[0].name,
+        "titulo": f"Atividades da Aula {numero}",
+        "meta": f"{len(paginas)} páginas · " + " · ".join(p.name for p in paginas),
+        "botoes": [
+            (nome_legivel(Path(p.stem)), link_relativo(p, pasta_indice), "principal")
+            for p in paginas
+        ],
+    })
+
+
 def gerar_indice_materia(materia, curso, forcar):
     """Gera ATIVIDADES/index.html da matéria. Returns: (atividades, situação)."""
     pasta_indice = materia / NOME_PASTA_ATIVIDADES
     atividades = listar_atividades(materia)
-    cards = [card_atividade(a, pasta_indice, materia) for a in atividades]
+    cards = [
+        card_atividade(grupo[0], pasta_indice, materia) if len(grupo) == 1
+        else card_aula_agrupada(grupo, pasta_indice)
+        for grupo in agrupar_por_aula(atividades)
+    ]
     if not cards:
         cards = [montar_card({
             "icone": "⏳", "rotulo": "SEM ATIVIDADES", "titulo": "Nenhuma atividade cadastrada",

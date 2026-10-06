@@ -319,12 +319,70 @@ async function aoSalvarCrud(evento) {
  * @param {number} id - Id da atividade.
  */
 async function aoExcluirCrud(id) {
-    if (!window.confirm(MSG_CONFIRMAR_EXCLUSAO)) return;
+    await garantirPopupCrud();
+    const confirmou = await window.confirmarPopup?.(MSG_CONFIRMAR_EXCLUSAO,
+        { tipo: 'pergunta', titulo: 'Excluir atividade', textoConfirmar: '🗑️ Excluir' });
+    if (!confirmou) return;
 
     try {
         await excluirAtividadeCrud(id);
         await recarregarListaCrud();
         mostrarMensagemCrud('✅ Atividade excluída.');
+    } catch (erro) {
+        mostrarMensagemCrud(MSG_ERRO_CRUD, true);
+    }
+}
+
+/**
+ * Carrega o popup reutilizável (assets/js/popup.js), se ainda não estiver na página.
+ * @returns {Promise<void>} Resolve quando o popup está disponível (ou falhou ao carregar).
+ */
+function garantirPopupCrud() {
+    if (typeof window.confirmarPopup === 'function' || !BASE_ASSETS_CRUD) {
+        return Promise.resolve();
+    }
+
+    return new Promise((resolver) => {
+        const script = criarElementoCrud('script');
+        script.src = BASE_ASSETS_CRUD + 'js/popup.js';
+        script.addEventListener('load', resolver);
+        script.addEventListener('error', resolver);
+        document.head.append(script);
+    });
+}
+
+/**
+ * Garante que o select de link tenha a página da atividade (ela pode não estar no índice).
+ * @param {string} pagina - Caminho da página.
+ */
+function garantirOpcaoPaginaCrud(pagina) {
+    const select = elementosCrud.formulario.elements.pagina;
+    const existe = [...select.options].some((opcao) => opcao.value === pagina);
+    if (!pagina || existe) return;
+
+    const opcao = criarElementoCrud('option', '', pagina.split('/').pop());
+    opcao.value = pagina;
+    select.append(opcao);
+}
+
+/**
+ * Abre o CADASTRAR ATIVIDADES a partir do modal da aula: editar uma atividade (idAtividade) ou
+ * cadastrar uma nova já na aula informada (idAtividade null).
+ * @param {{idAtividade: number|null, idAula: number, pagina: string|null}} pedido - O que abrir.
+ */
+async function abrirEdicaoAtividadeCrud({ idAtividade, idAula, pagina }) {
+    await abrirModalCrud(pagina);
+    if (!idAtividade) {
+        elementosCrud.formulario.elements.aula_id.value = String(idAula);
+        return;
+    }
+
+    try {
+        const atividade = estadoCrud.atividades.find((item) => item.id === idAtividade) ||
+            await buscarAtividadePorIdCrud(idAtividade);
+        if (!atividade) return mostrarMensagemCrud(MSG_ERRO_CRUD, true);
+        garantirOpcaoPaginaCrud(atividade.pagina);
+        preencherFormularioCrud(atividade);
     } catch (erro) {
         mostrarMensagemCrud(MSG_ERRO_CRUD, true);
     }
@@ -476,9 +534,14 @@ function carregarDataAulasIndice() {
     const estilo = criarElementoCrud('link');
     estilo.rel = 'stylesheet';
     estilo.href = BASE_ASSETS_CRUD + 'css/indice-aula-data.css';
-    const script = criarElementoCrud('script');
-    script.src = BASE_ASSETS_CRUD + 'js/indice-aula-data.js';
-    document.head.append(estilo, script);
+    const scripts = ['js/indice-aula-repositorio.js', 'js/indice-aula-modal.js',
+        'js/indice-aula-data.js'].map((caminho) => {
+        const script = criarElementoCrud('script');
+        script.src = BASE_ASSETS_CRUD + caminho;
+        script.async = false;
+        return script;
+    });
+    document.head.append(estilo, ...scripts);
 }
 
 /**

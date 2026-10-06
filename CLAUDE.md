@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 20:15
+**Versão das regras:** 2026-10-06 20:30
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 20:30 | Card do índice com **100% dos dados da tabela `aulas`** (rótulo, nome e data); "✏️ Editar aula" vira modal CRUD da aula com a lista das atividades (✏️ Editar / 🗑️ Excluir / ➕ Nova); todas as aulas compartilhadas separadas (1 card = 1 aula); gerador de índices junta páginas da mesma aula num card; rótulo padrão "AULA NN" |
 | 2026-10-06 20:15 | Regra "CADA CARD LIGADO A APENAS 1 AULA": uma aula nunca é dividida entre cards do índice (aula 40 de Análise de Dados corrigida: fica só com o card da atividade 82) |
 | 2026-10-06 20:00 | Modal "✏️ Editar aula" também troca o **rótulo do card** ("AULA 01", coluna `aulas.rotulo_card`) |
 | 2026-10-06 19:45 | Modal "✏️ Editar aula" também troca o **nome do card** (coluna `aulas.nome_card`; vazio = título do HTML), além da data |
@@ -1614,34 +1615,45 @@ SQL: `database/2026-10-06-aulas-excluido.sql` (✅ aplicado no Supabase em 2026-
   por quem não é administrador (a política de update de `aulas` aceita qualquer professor).
 - ✅ Restaurar: voltar `excluido = 0` pelo SQL Editor (ainda sem tela). Código novo que liste
   aulas deve filtrar `excluido = 0`.
-- ✅ **Rótulo e nome do card** (2026-10-06, pedido do usuário): o modal "✏️ Editar aula" (todo
-  professor) tem os campos **Rótulo do card** (o "AULA 01" do topo, coluna
-  **`aulas.rotulo_card`**, até 60 caracteres) e **Nome do card**, além da data. Grava em **`aulas.nome_card`** (texto de 1 a 200
-  caracteres; SQL `database/2026-10-06-aulas-nome-card.sql`, ✅ aplicado); o título (`h2`) do card
-  mostra esse nome para todos. Campo vazio ou igual ao título do HTML grava `null` = volta ao
-  título escrito no índice.
+- ✅ **Card com 100% dos dados da tabela `aulas`** (2026-10-06, pedido do usuário; plano
+  `docs/card-dados-100-tabela-aulas.md`): o rótulo do card é `aulas.rotulo_card` (vazio =
+  "AULA NN" pelo `numero`), o nome é `aulas.nome_card` (vazio = `aulas.titulo`) e a data é
+  `aulas.data_planejada`. O texto escrito no HTML do índice só é usado para **achar** a aula quando
+  a atividade não pôde ser lida (ex.: bloqueada para o aluno), pelo rótulo; card sem aula no banco
+  fica como está no HTML. Código: `assets/js/indice-aula-repositorio.js` (dados),
+  `assets/js/indice-aula-data.js` (cards) e `assets/js/indice-aula-modal.js` (modal), carregados
+  pelo `atividades-crud-modal.js`. Colunas `rotulo_card` (até 60) e `nome_card` (até 200):
+  `database/2026-10-06-aulas-nome-card.sql` (✅ aplicado).
+- ✅ **"✏️ Editar aula" = modal CRUD completo da aula** (todo professor): edita todos os campos da
+  `aulas` (número, título, rótulo, nome, data, duração, sequência, descrição, conteúdo JSON,
+  ativa, visível aos alunos; id, matéria e curso só leitura) e **lista as atividades da aula**,
+  cada uma com **✏️ Editar** (abre o CADASTRAR ATIVIDADES com a atividade,
+  `abrirEdicaoAtividadeCrud`) e **🗑️ Excluir** (popup de confirmação; apaga a atividade e, em
+  cascata, gabarito, respostas e entregas), mais **➕ Nova atividade nesta aula**. O
+  **🗑️ Excluir aula** continua só do Professor Administrador (exclusão lógica). Campo novo da
+  `aulas` no modal = acrescentar em `CAMPOS_MODAL_AULA`.
+- ✅ **Rótulo padrão "AULA NN"** (2026-10-06, pedido do usuário): toda aula deve ter o rótulo no
+  formato `AULA NN`. Aula com outro rótulo (avaliação, prova, trabalho, "ATIVIDADES"...) é
+  **listada ao usuário, que decide** a mudança — não trocar sem pedido.
 
 ### 🔗 REGRA CRÍTICA — CADA CARD LIGADO A APENAS 1 AULA
 
-Registrada em 2026-10-06 a pedido do usuário. SQL da correção:
-`database/2026-10-06-um-card-uma-aula-aula-40.sql` (✅ aplicado).
+Registrada em 2026-10-06 a pedido do usuário. SQL: `database/2026-10-06-um-card-uma-aula-aula-40.sql`
+e `database/2026-10-06-separar-aulas-por-card.sql` (✅ aplicados; backup do vínculo antigo em
+`atividade_aula_backup_20261006`).
 
 - ✅ **Cada card do índice de atividades (`article.aula`) fica ligado a uma única aula** (linha de
   `aulas`), e **uma aula nunca é dividida entre dois ou mais cards**. A aula do card é a da
-  atividade do link principal; rótulo, nome, data e exclusão gravados na aula valem para o card
-  dela, então aula compartilhada faz a edição de um card mudar os outros.
-- ✅ As várias atividades **do mesmo card** (ex.: objetiva + prática da mesma aula) continuam na
-  mesma aula; atividade em **card próprio** (avaliação, prova, trabalho, discursiva em card
-  separado) precisa de **aula própria**.
-- ✅ Atividade nova em card novo: criar a aula dela antes (`CADASTRAR ATIVIDADES` ou seed) — nunca
-  reaproveitar a aula de outro card.
-- ✅ O modal "✏️ Editar aula" avisa quando a aula do card também está ligada a outros cards da
-  página (`montarAvisoAulaCompartilhada` em `assets/js/indice-aula-data.js`).
-- ✅ Corrigido em 2026-10-06: aula 40 (Análise de Dados) fica só com o card da atividade 82 (Prova
-  Prática); a 33 (card AULA 07) foi para a aula 67 e a 35 (AVALIACAO OBJETIVA 02) para a 68.
-- ⏳ Ainda compartilhadas (corrigir quando o usuário liberar): ITIC aulas 25, 27 e 30; Análise de
-  Dados 37, 38 e 39; Automação 45; Reforço de Linguagens 57 a 66 (objetiva e discursiva da mesma
-  aula em cards separados); e o card AULA 03 da ITIC liga atividades das aulas 23 e 31.
+  atividade do link principal; rótulo, nome, data e exclusão gravados na aula valem para o card.
+- ✅ As várias atividades **do mesmo card** (ex.: objetiva + prática da mesma aula) ficam na mesma
+  aula; atividade em **card próprio** (avaliação, prova, trabalho) tem **aula própria**.
+- ✅ Atividade nova em card novo: criar a aula dela antes — nunca reaproveitar a aula de outro card.
+- ✅ **Gerador de índices** (`assets/gerador-indices/gerar_indices.py`): páginas da mesma pasta com o
+  mesmo `AULA-NN` no nome (2 ou mais) viram **um card só**, rótulo "AULA NN", um botão por página
+  (discursivas por último). Ex.: Reforço de Linguagens (objetivas + discursivas da aula).
+- ✅ Corrigido em 2026-10-06: 12 aulas novas (ITIC 69 a 75, Análise de Dados 76 a 79, Automação
+  80) para os cards que dividiam aula; atividade 13 foi para a aula 23 (card AULA 03 da ITIC);
+  aula 40 ficou só com a Prova Prática (atividade 82); 33 → aula 67, 35 → aula 68.
 
 ## 📌 REGRA — PENDÊNCIAS DE AULAS (MENU PENDÊNCIAS, SÓ PROFESSOR ADMINISTRADOR)
 

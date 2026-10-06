@@ -35,6 +35,17 @@ async function listarAtividadesCrud(paginas) {
 }
 
 /**
+ * Busca uma atividade pelo id (para editar a partir do modal da aula).
+ * @param {number} id - Id da atividade.
+ * @returns {Promise<Object|null>} Atividade ou null.
+ */
+async function buscarAtividadePorIdCrud(id) {
+    const linhas = await sbGet(TABELA_ATIVIDADE,
+        'select=' + CAMPOS_ATIVIDADE_CRUD + '&id=eq.' + encodeURIComponent(id));
+    return linhas[0] || null;
+}
+
+/**
  * Lista as aulas cadastradas e não excluídas, para escolher a aula da atividade.
  * @returns {Promise<Object[]>} Aulas com a matéria.
  */

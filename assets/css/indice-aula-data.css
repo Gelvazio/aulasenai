@@ -22,6 +22,26 @@
 
 .aula-data-caixa { width: min(420px, 100%); }
 
+/* Modal CRUD da aula (assets/js/indice-aula-modal.js): campos da tabela aulas + atividades. */
+.aula-modal-caixa { width: min(760px, 100%); }
+.aula-modal-info { font-size: 13px; color: var(--aula-data-vazia); }
+.aula-modal-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--aula-data-botao-borda);
+    border-radius: 6px;
+    font: inherit;
+    resize: vertical;
+}
+
+.aula-modal-atividades__cabecalho {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
 /* Exclusão lógica da aula (só Professor Administrador): card escondido para todos. */
 .aula.aula--excluida { display: none; }
 
