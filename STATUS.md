@@ -295,7 +295,7 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 26.14 | Atividades Aula 06 | ✅ Concluído | 2026-10-06 10:37 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 70 (20 no gabarito) e 71 (5 tópicos, bloqueada) |
 | 26.15 | Atividades Aula 07 | ✅ Concluído | 2026-10-06 10:39 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 72 (20 no gabarito) e 73 (5 tópicos, bloqueada) |
 | 26.16 | Atividades Aula 08 | ✅ Concluído | 2026-10-06 10:42 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 74 (20 no gabarito) e 75 (5 tópicos, bloqueada) |
-| 26.17 | Atividades Aula 09 | ⬜ Pendente | — | — |
+| 26.17 | Atividades Aula 09 | ✅ Concluído | 2026-10-06 10:44 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 76 (20 no gabarito) e 77 (5 tópicos, bloqueada) |
 | 26.18 | Atividades Aula 10 | ⬜ Pendente | — | — |
 | 26.19 | Índice da matéria | ⬜ Pendente | — | — |
 | 26.20 | Aceite do usuário | ⬜ Pendente | — | — |

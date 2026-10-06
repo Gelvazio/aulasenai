@@ -75,7 +75,7 @@ matéria"; "na pasta ATIVIDADES, crie atividades apenas a partir da aula 02, poi
 | 14 | Atividades da Aula 06 | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:37 | — |
 | 15 | Atividades da Aula 07 | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:39 | — |
 | 16 | Atividades da Aula 08 | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:42 | — |
-| 17 | Atividades da Aula 09 | ⬜ Pendente | 2026-10-06 10:16 | — | — |
+| 17 | Atividades da Aula 09 | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:44 | — |
 | 18 | Atividades da Aula 10 | ⬜ Pendente | 2026-10-06 10:16 | — | — |
 | 19 | Índice da matéria (só o `RL/ATIVIDADES/index.html`) | ⬜ Pendente | 2026-10-06 10:16 | — | — |
 | 20 | Aceite do usuário | ⬜ Pendente | 2026-10-06 10:16 | — | — |
