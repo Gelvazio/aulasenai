@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 17:45
+**Versão das regras:** 2026-10-06 18:00
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 18:00 | Regra do gabarito (liberação pelo professor só com todos entregues) declarada global: todas as atividades de todas as matérias e cursos |
 | 2026-10-06 17:45 | Liberar gabaritos por atividade e turma: botão do professor (só com todos entregues), sem recuperação depois, aluno vê "Aguarde professor liberar os gabaritos" e o pedido fica em `tentativaacessogabarito` |
 | 2026-10-06 17:30 | Links do card bloqueado desativados também para o professor (voltam ao desbloquear); interruptor continua clicável |
 | 2026-10-06 17:15 | Card de atividade bloqueada inteiro inacessível para aluno e visitante (todos os links desativados, clique no card mostra o aviso) |
@@ -1706,7 +1707,8 @@ usuário):** a liberação pelo professor, por atividade e turma, depois que tod
   nunca embutido nas páginas.
 - ✅ Nas avaliações (`AVALIACAO-OBJETIVA-NN`), no fim da página: **Exportar PDF com gabarito** (só
   professor) e **Exportar Gabarito** (professor = gabarito real; aluno = ver a liberação abaixo).
-- ✅ **Vale para avaliações E atividades** (2026-10-06, pedido do usuário): toda atividade com
+- ✅ **REGRA GLOBAL: vale para todas as avaliações e atividades de todas as matérias e de todos
+  os cursos** (2026-10-06, pedido do usuário; hoje 53 páginas objetivas): toda atividade com
   folha de respostas no banco (`data-login="sim"`) ganha o botão "🔑 Exportar Gabarito" (inserido
   pelo `assets/js/atividade.js`, que carrega o `avaliacao-pdf-professor.js`), e o gabarito só é
   liberado **depois que todos os alunos da turma entregaram**.
