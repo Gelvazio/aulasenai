@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 09:49
+**Versão das regras:** 2026-10-06 10:17
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 10:17 | Reforço de Linguagens: o conteúdo das atividades vem **sempre** de `AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-*.md` (slides das 10 aulas convertidos em Markdown) |
 | 2026-10-06 09:49 | Regra "PENDÊNCIAS DE AULAS": tabela `pendencias` (RLS só do Professor Administrador, exclusão lógica), página `MATERIAIS/AGENDA_COLABORADOR/pendencias.html` com CRUD completo e filtros por todos os campos, menu PENDÊNCIAS |
 | 2026-10-06 09:21 | Regra exclusiva "REFORÇO DE LINGUAGENS: 25 QUESTÕES POR ATIVIDADE": 20 objetivas + 5 discursivas (Contexto, Comando e campo para digitar), discursivas corrigidas com IA e análise do professor |
 | 2026-10-05 15:59 | Exportação da página inteira: `assets/js/exportar-pagina.js` + `assets/css/exportar-pagina.css` (botões **📥 Exportar Para PDF**, igual à tela, e **📝 Exportar em Word** ao lado), usados no trabalho em equipe v1 e v2 |
@@ -2050,9 +2051,15 @@ demais matérias continuam com a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES".
   resposta e dos critérios no `-GABARITO.md`, fora do Git) **e análise do professor**, que
   confirma ou ajusta a nota sugerida. A nota da discursiva só vale depois da análise do
   professor.
+- ✅ **Fonte do conteúdo das atividades = SEMPRE
+  `REFORCO_LINGUAGENS/AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-*.md`** (2026-10-06, pedido do usuário):
+  os slides de cada aula convertidos em Markdown (um arquivo por aula, 10 aulas). Objetivas e
+  discursivas são escritas lendo esse arquivo da aula (`- **Conteúdo-base:**
+  ../../AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-....md` na fonte); nunca ler os PDFs da pasta, e as
+  aulas antigas de `AULAS/AULA-NN.md` não são mais fonte das atividades.
 - ✅ As objetivas seguem o gabarito equilibrado entre as letras e com posição sorteada; as
-  discursivas citam o texto ou a situação da aula (`AULAS/AULA-NN.md`, onde ficam as aulas desta
-  matéria).
+  discursivas citam o texto ou a situação da aula (do mesmo arquivo de
+  `AULAS-CHALKIE-AI/CONTEUDO/`).
 - ✅ **Duas páginas por aula** (decisão do usuário em 2026-10-06, sem mudar o banco):
   - **objetivas:** `ATIVIDADES/ATIVIDADES-AULA-NN-20-QUESTOES.html`, fonte
     `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-20-QUESTOES.md` (fora do Git, tem gabarito), gerada por
