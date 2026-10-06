@@ -290,7 +290,7 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 26.9 | Aula 01: `Conteúdo-base` aponta para `AULAS-CHALKIE-AI/CONTEUDO` | ✅ Concluído | 2026-10-06 10:22 | Fontes e páginas da Aula 01 com Conteúdo-base e Slides novos |
 | 26.10 | Atividades Aula 02 (20 + 5, seed aplicado) | ✅ Concluído | 2026-10-06 10:28 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 62 (20 no gabarito) e 63 (5 tópicos, bloqueada) |
 | 26.11 | Atividades Aula 03 | ✅ Concluído | 2026-10-06 10:31 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 64 (20 no gabarito) e 65 (5 tópicos, bloqueada) |
-| 26.12 | Atividades Aula 04 | ⬜ Pendente | — | — |
+| 26.12 | Atividades Aula 04 | ✅ Concluído | 2026-10-06 10:33 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 66 (20 no gabarito) e 67 (5 tópicos, bloqueada) |
 | 26.13 | Atividades Aula 05 | ⬜ Pendente | — | — |
 | 26.14 | Atividades Aula 06 | ⬜ Pendente | — | — |
 | 26.15 | Atividades Aula 07 | ⬜ Pendente | — | — |

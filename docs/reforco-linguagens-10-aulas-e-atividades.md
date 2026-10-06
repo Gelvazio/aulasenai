@@ -70,7 +70,7 @@ matéria"; "na pasta ATIVIDADES, crie atividades apenas a partir da aula 02, poi
 | 9 | Aula 01: `Conteúdo-base` das fontes aponta para `AULAS-CHALKIE-AI/CONTEUDO/AULA-01-*.md` (sem mudar questões) | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:22 | — |
 | 10 | Atividades da Aula 02 (20 objetivas + 5 discursivas) | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:28 | — |
 | 11 | Atividades da Aula 03 | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:31 | — |
-| 12 | Atividades da Aula 04 | ⬜ Pendente | 2026-10-06 10:16 | — | — |
+| 12 | Atividades da Aula 04 | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:33 | — |
 | 13 | Atividades da Aula 05 | ⬜ Pendente | 2026-10-06 10:16 | — | — |
 | 14 | Atividades da Aula 06 | ⬜ Pendente | 2026-10-06 10:16 | — | — |
 | 15 | Atividades da Aula 07 | ⬜ Pendente | 2026-10-06 10:16 | — | — |
