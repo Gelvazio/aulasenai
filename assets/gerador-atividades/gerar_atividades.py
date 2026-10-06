@@ -299,6 +299,7 @@ def gerar_atividade(md_path, dados):
         "{{TEMA}}": e(meta["tema"]),
         "{{ICONE}}": meta["icone"],
         "{{DURACAO}}": e(meta["duracao"]),
+        "{{SLIDES}}": linha_slides(pasta_pagina, meta["pdf"]),
         "{{CAPACIDADES}}": capacidades_inicio,
         "{{CAPACIDADES_CSS}}": capacidades_css,
         "{{ARQUIVO_MD}}": e(md_path.name),
@@ -327,6 +328,22 @@ def link(pasta, nome, rotulo, classe):
     if not (pasta / nome).exists():
         return f'<span class="btn off" title="Arquivo não encontrado">{rotulo}</span>'
     return f'<a class="btn {classe}" href="{quote(nome)}">{rotulo}</a>'
+
+
+def linha_slides(pasta_pagina, nome):
+    """Linha "Slides da aula" das instruções da atividade (vazia se não houver arquivo).
+
+    Args:
+        pasta_pagina: Pasta onde a página HTML é gravada (o caminho do slide é relativo a ela).
+        nome: Valor do campo "Slides" da fonte.
+
+    Returns:
+        Trecho HTML com o link dos slides ou "" quando o arquivo não existe.
+    """
+    if not nome or not (pasta_pagina / nome).exists():
+        return ""
+    return ('<br>\n                        <strong>Slides da aula:</strong> '
+            f'<a href="{quote(nome)}" target="_blank" rel="noopener">{rotulo_slides(nome)}</a>')
 
 
 def rotulo_slides(nome):

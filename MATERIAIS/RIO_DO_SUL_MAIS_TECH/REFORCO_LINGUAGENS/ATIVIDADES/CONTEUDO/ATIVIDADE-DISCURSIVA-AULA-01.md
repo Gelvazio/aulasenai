@@ -12,7 +12,8 @@
 - **Correção:** as respostas ficam gravadas no banco e são conferidas com apoio de IA e pela análise do professor.
 - **Folha de respostas:** sim
 - **Aula no banco:** 1
-- **Conteúdo-base:** ../AULAS/AULA-01.md
+- **Conteúdo-base:** ../AULAS-CHALKIE-AI/CONTEUDO/AULA-01-TIPOS-DE-TEXTO-E-CONTEXTO-DE-PRODUCAO.md
+- **Slides:** ../AULAS-CHALKIE-AI/1-Tipos-de-Texto-e-Contexto-de-Produção.pdf
 
 **Como responder:** Leia o contexto de cada questão com atenção e escreva a resposta **no campo da questão**, com frases completas e com as suas palavras. Respostas copiadas da internet ou de colegas recebem nota zero.
 

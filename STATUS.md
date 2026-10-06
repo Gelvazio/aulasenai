@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
+**Próximo passo:** Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -275,6 +275,30 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 25.2 | Aprovação do plano pelo usuário (com filtros por todos os campos e CRUD completo) | ✅ Concluído | 2026-10-06 | Resposta do usuário |
 | 25.3 | Executar os passos 1 a 7 do plano (SQL aplicado no Supabase) | ✅ Concluído | 2026-10-06 09:50 | Consulta: 6 colunas, RLS, 3 políticas, sem anon/delete; `node --check` OK |
 | 25.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 26 — Reforço de Linguagens: 10 aulas (uma por slide) e atividades das aulas 02 a 10 (aprovada em 2026-10-06; plano `docs/reforco-linguagens-10-aulas-e-atividades.md`)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 26.1 | Plano e decisões D1–D7 aprovados | ✅ Concluído | 2026-10-06 10:18 | Resposta do usuário |
+| 26.2 | Regra no `CLAUDE.md` (10 aulas; fonte das atividades = `AULAS-CHALKIE-AI/CONTEUDO`) | 🔄 Em progresso | — | — |
+| 26.3 | Ementa da matéria (seção VI, tamanho) + status das ementas | ⬜ Pendente | — | — |
+| 26.4 | `materia.json` com as 10 aulas | ⬜ Pendente | — | — |
+| 26.5 | Aulas antigas movidas para `AULAS/LEGADO-16-AULAS/` | ⬜ Pendente | — | — |
+| 26.6 | 10 aulas em `REFORCO_LINGUAGENS/CONTEUDO/` com link dos slides | ⬜ Pendente | — | — |
+| 26.7 | `.gitignore` libera os PDFs de `AULAS-CHALKIE-AI/` | ⬜ Pendente | — | — |
+| 26.8 | `STATUS-AULAS.md` e `STATUS-ATIVIDADES.md` com 10 aulas | ⬜ Pendente | — | — |
+| 26.9 | Aula 01: `Conteúdo-base` aponta para `AULAS-CHALKIE-AI/CONTEUDO` | ⬜ Pendente | — | — |
+| 26.10 | Atividades Aula 02 (20 + 5, seed aplicado) | ⬜ Pendente | — | — |
+| 26.11 | Atividades Aula 03 | ⬜ Pendente | — | — |
+| 26.12 | Atividades Aula 04 | ⬜ Pendente | — | — |
+| 26.13 | Atividades Aula 05 | ⬜ Pendente | — | — |
+| 26.14 | Atividades Aula 06 | ⬜ Pendente | — | — |
+| 26.15 | Atividades Aula 07 | ⬜ Pendente | — | — |
+| 26.16 | Atividades Aula 08 | ⬜ Pendente | — | — |
+| 26.17 | Atividades Aula 09 | ⬜ Pendente | — | — |
+| 26.18 | Atividades Aula 10 | ⬜ Pendente | — | — |
+| 26.19 | Índice da matéria | ⬜ Pendente | — | — |
+| 26.20 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |

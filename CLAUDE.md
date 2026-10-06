@@ -2055,7 +2055,7 @@ demais matérias continuam com a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES".
   `REFORCO_LINGUAGENS/AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-*.md`** (2026-10-06, pedido do usuário):
   os slides de cada aula convertidos em Markdown (um arquivo por aula, 10 aulas). Objetivas e
   discursivas são escritas lendo esse arquivo da aula (`- **Conteúdo-base:**
-  ../../AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-....md` na fonte); nunca ler os PDFs da pasta, e as
+  ../AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-....md` na fonte); nunca ler os PDFs da pasta, e as
   aulas antigas de `AULAS/AULA-NN.md` não são mais fonte das atividades.
 - ✅ As objetivas seguem o gabarito equilibrado entre as letras e com posição sorteada; as
   discursivas citam o texto ou a situação da aula (do mesmo arquivo de

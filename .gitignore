@@ -14,6 +14,7 @@ graphify-out/
 !MATERIAIS/**/ATIVIDADES/**/*.pdf
 !MATERIAIS/**/ATIVIDADES/*.pdf
 !MATERIAIS/**/ATIVIDADES/*.pptx
+!MATERIAIS/**/AULAS-CHALKIE-AI/*.pdf
 # Logo SESI SENAI usado pelas apostilas (assets/css/apostila.css, regra "REGRAS APOSTILAS")
 !assets/img/logo-sesi-senai.png
 

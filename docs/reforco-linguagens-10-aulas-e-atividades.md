@@ -126,7 +126,7 @@ matéria"; "na pasta ATIVIDADES, crie atividades apenas a partir da aula 02, poi
 Para cada aula NN:
 1. `RL/ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-20-QUESTOES.md` — 20 objetivas A–D, com
    `- **Capacidade:**`, Contexto, Comando, Alternativas, Gabarito (letras equilibradas: 5 de cada,
-   posição sorteada), `- **Folha de respostas:** sim`, `Conteúdo-base: ../../AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-*.md`
+   posição sorteada), `- **Folha de respostas:** sim`, `Conteúdo-base: ../AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-*.md` e `Slides: ../AULAS-CHALKIE-AI/<N>-....pdf` (o link aparece nas instruções da página)
    (**regra do CLAUDE.md, 2026-10-06 10:17: o conteúdo das atividades vem SEMPRE desse arquivo**).
    (Fora do Git — tem gabarito.)
 2. `gerar_atividades.py RL/ATIVIDADES --so=ATIVIDADES-AULA-NN-20-QUESTOES.md` → página HTML.

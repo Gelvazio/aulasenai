@@ -14,6 +14,7 @@ import re
 import sys
 from datetime import date
 from pathlib import Path
+from urllib.parse import quote
 
 GERADOR = Path(__file__).resolve().parent
 ASSETS = GERADOR.parent
@@ -368,6 +369,24 @@ def aplicar_capacidades(meta, itens, dados, assets):
     return inicio, f'\n    <link rel="stylesheet" href="{assets}/css/capacidades.css">'
 
 
+def linha_slides(pasta, nome):
+    """Linha "Slides da aula" das instruções (vazia se a fonte não indicar slides existentes).
+
+    Args:
+        pasta: Pasta ATIVIDADES (onde a página é gravada).
+        nome: Valor do campo "Slides" da fonte (pode vir entre crases).
+
+    Returns:
+        Trecho HTML com o link dos slides ou "".
+    """
+    caminho = (nome or "").strip("`")
+    if not caminho or not (pasta / caminho).exists():
+        return ""
+    rotulo = "📕 Slides (PDF)" if caminho.lower().endswith(".pdf") else "📕 Slides"
+    return ('<br>\n                        <strong>Slides da aula:</strong> '
+            f'<a href="{quote(caminho)}" target="_blank" rel="noopener">{rotulo}</a>')
+
+
 def montar_trocas(meta, itens, contexto):
     """Monta o dicionário de placeholders do template.
 
@@ -390,6 +409,7 @@ def montar_trocas(meta, itens, contexto):
         "{{TOPICOS}}": str(sum(len(item["topicos"]) for item in itens)),
         "{{AULA}}": escapar(meta["Aula"]), "{{DURACAO}}": escapar(meta["Duração"]),
         "{{FORMATO}}": escapar(meta["Formato"]), "{{PONTUACAO}}": escapar(meta["Pontuação"]),
+        "{{SLIDES}}": linha_slides(contexto["pasta"], meta.get("Slides", "")),
         "{{CAPACIDADES}}": capacidades_inicio, "{{CAPACIDADES_CSS}}": capacidades_css,
         "{{ORIENTACOES}}": html_orientacoes(contexto["orientacoes"]),
         "{{QUESTOES}}": "".join(html_item(item) for item in itens),
