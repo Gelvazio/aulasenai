@@ -8,7 +8,7 @@
 > atividade mostra o link "Slides da aula". Plano: `docs/reforco-linguagens-10-aulas-e-atividades.md`.
 > Legenda: `⬜ Pendente` · `🔄 Em progresso` · `✅ Concluída`.
 
-**Aulas:** 10 · **✅ Concluídas:** 7 · **Pendentes:** 3
+**Aulas:** 10 · **✅ Concluídas:** 8 · **Pendentes:** 2
 
 ## Atividades por aula (20 objetivas + 5 discursivas)
 
@@ -21,7 +21,7 @@
 | 05 | Tipologias Textuais na Prática | ✅ `ATIVIDADES-AULA-05-20-QUESTOES.html` + ✅ `ATIVIDADE-DISCURSIVA-AULA-05.html` | ✅ `ATIVIDADES-AULA-05-20-QUESTOES.md` + `ATIVIDADE-DISCURSIVA-AULA-05.md` (+ `-GABARITO.md`) | ✅ 2026-10-06 (objetivas: atividade 68, 20 no gabarito, liberada; discursivas: atividade 69, 5 tópicos, nasce bloqueada) | ✅ Concluída |
 | 06 | Pontuação e Concordância na Escrita | ✅ `ATIVIDADES-AULA-06-20-QUESTOES.html` + ✅ `ATIVIDADE-DISCURSIVA-AULA-06.html` | ✅ `ATIVIDADES-AULA-06-20-QUESTOES.md` + `ATIVIDADE-DISCURSIVA-AULA-06.md` (+ `-GABARITO.md`) | ✅ 2026-10-06 (objetivas: atividade 70, 20 no gabarito, liberada; discursivas: atividade 71, 5 tópicos, nasce bloqueada) | ✅ Concluída |
 | 07 | Classes de Palavras e Figuras de Linguagem | ✅ `ATIVIDADES-AULA-07-20-QUESTOES.html` + ✅ `ATIVIDADE-DISCURSIVA-AULA-07.html` | ✅ `ATIVIDADES-AULA-07-20-QUESTOES.md` + `ATIVIDADE-DISCURSIVA-AULA-07.md` (+ `-GABARITO.md`) | ✅ 2026-10-06 (objetivas: atividade 72, 20 no gabarito, liberada; discursivas: atividade 73, 5 tópicos, nasce bloqueada) | ✅ Concluída |
-| 08 | Oralidade e Apresentação em Público | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
+| 08 | Oralidade e Apresentação em Público | ✅ `ATIVIDADES-AULA-08-20-QUESTOES.html` + ✅ `ATIVIDADE-DISCURSIVA-AULA-08.html` | ✅ `ATIVIDADES-AULA-08-20-QUESTOES.md` + `ATIVIDADE-DISCURSIVA-AULA-08.md` (+ `-GABARITO.md`) | ✅ 2026-10-06 (objetivas: atividade 74, 20 no gabarito, liberada; discursivas: atividade 75, 5 tópicos, nasce bloqueada) | ✅ Concluída |
 | 09 | Argumentação Oral, Debates e Registros | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
 | 10 | Gêneros Literários, Textos Técnicos e Síntese | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
 

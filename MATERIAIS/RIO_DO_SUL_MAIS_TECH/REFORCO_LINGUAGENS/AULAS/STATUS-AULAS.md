@@ -18,7 +18,7 @@ As 16 aulas antigas de 4 h ficaram em `LEGADO-16-AULAS/` (não são mais usadas)
 | 05 | Tipologias Textuais na Prática | 6 | ✅ `CONTEUDO/AULA-05-TIPOLOGIAS-TEXTUAIS-NA-PRATICA.md` | ✅ | ✅ | ✅ |
 | 06 | Pontuação e Concordância na Escrita | 6 | ✅ `CONTEUDO/AULA-06-PONTUACAO-E-CONCORDANCIA-NA-ESCRITA.md` | ✅ | ✅ | ✅ |
 | 07 | Classes de Palavras e Figuras de Linguagem | 6 | ✅ `CONTEUDO/AULA-07-CLASSES-DE-PALAVRAS-E-FIGURAS-DE-LINGUAGEM.md` | ✅ | ✅ | ✅ |
-| 08 | Oralidade e Apresentação em Público | 7 | ⬜ | ✅ | ⬜ | ⬜ |
+| 08 | Oralidade e Apresentação em Público | 7 | ✅ `CONTEUDO/AULA-08-ORALIDADE-E-APRESENTACAO-EM-PUBLICO.md` | ✅ | ✅ | ✅ |
 | 09 | Argumentação Oral, Debates e Registros | 7 | ⬜ | ✅ | ⬜ | ⬜ |
 | 10 | Gêneros Literários, Textos Técnicos e Síntese | 7 | ⬜ | ✅ | ⬜ | ⬜ |
 
