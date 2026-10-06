@@ -872,6 +872,24 @@ async function abrirTabelaNotas(bloco, linhas, turmas) {
 }
 
 /**
+ * Mostra o botão "Liberar gabaritos (turma X)" nas páginas que têm o "Exportar Gabarito".
+ * Uma falha aqui não derruba o relatório.
+ * @param {HTMLElement} bloco - Cartão do relatório do professor.
+ * @param {number} atividadeId - Id da atividade no banco.
+ */
+async function abrirLiberarGabarito(bloco, atividadeId) {
+    if (!document.getElementById('btnExportarGabarito')) return;
+    try {
+        if (typeof window.montarLiberarGabaritoProfessor !== 'function') {
+            await carregarScript('liberacao-respostas-professor.js');
+        }
+        montarLiberarGabaritoProfessor(bloco, { atividadeId, turma: turmaEscolhidaRelatorio });
+    } catch (erro) {
+        console.warn('Liberar gabarito indisponível:', erro.message);
+    }
+}
+
+/**
  * Mostra, no início da atividade, o relatório do professor (cria ou substitui o cartão).
  * @param {HTMLElement} secao - Seção de conteúdo da página.
  * @param {number} atividadeId - Id da atividade no banco.
@@ -912,6 +930,7 @@ async function montarRelatorioProfessor(secao, atividadeId, maximo) {
         bloco.appendChild(montarListaAlunosRelatorio(linhas, { secao, atividadeId, maximo }));
         aplicarNotasGlobais(bloco);
         aplicarFiltroTurmaRelatorio(bloco, linhas, turmaEscolhidaRelatorio);
+        await abrirLiberarGabarito(bloco, atividadeId);
         await abrirTabelaNotas(bloco, linhas, turmas);
     } catch (erro) {
         bloco.appendChild(criarElemento('p', CLASSE_RELATORIO + '__erro',

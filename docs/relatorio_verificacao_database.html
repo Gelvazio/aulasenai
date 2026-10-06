@@ -672,6 +672,48 @@
       </table>
     </div>
 
+    <h2>🔓 Atualização 2026-10-06 — Liberar gabaritos por atividade e turma</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-06-liberacao-respostas-turma.sql</code> (aplicado em 2026-10-06) · Telas: quadro "Respostas dos alunos" (professor) e "Exportar Gabarito" (aluno)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>atividade.gabarito_liberado</td>
+          <td>Coluna jsonb</td>
+          <td>Códigos das turmas que já podem ver o gabarito real</td>
+        </tr>
+        <tr>
+          <td>tentativaacessogabarito</td>
+          <td>Tabela (RLS)</td>
+          <td>id, atividade_id, aluno_id, data_hora: pedidos de gabarito antes da liberação; professor lê só os alunos dele; gravação só pela função</td>
+        </tr>
+        <tr>
+          <td>alunos_sem_entrega_turma(bigint, text)</td>
+          <td>Função (security definer)</td>
+          <td>Alunos da turma sem entrega da última tentativa; só o professor da turma recebe a contagem</td>
+        </tr>
+        <tr>
+          <td>liberar_gabarito_turma(bigint, text, boolean)</td>
+          <td>Função (security definer)</td>
+          <td>Libera (só com todos os alunos com entrega) ou recolhe o gabarito para uma turma</td>
+        </tr>
+        <tr>
+          <td>solicitar_gabarito(bigint)</td>
+          <td>Função (security definer)</td>
+          <td>Gabarito real ao aluno da turma liberada e com entrega; senão grava em tentativaacessogabarito e devolve vazio</td>
+        </tr>
+        <tr>
+          <td>liberacao_gabarito_liberado_trg</td>
+          <td>Trigger</td>
+          <td>Recusa nova tentativa/recuperação depois da liberação do gabarito para a turma</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>💡 Atualização 2026-10-05 — sugestoes_turmaaluno() (alunos sem turma)</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-05-sugestoes-turmaaluno.sql</code> (aplicado em 2026-10-05) · Tela: <code>alunos.html</code> (filtro Turma OK)</p>

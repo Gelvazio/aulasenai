@@ -567,6 +567,22 @@ SQL: `database/2026-10-06-notas-media-final-correcao-discursiva.sql` (✅ aplica
 | RLS | professor lê e grava só alunos de `professor_pode_ver_aluno` (administrador todos); aluno lê só as próprias linhas com `nota_professor` preenchida; sem delete; `anon` sem acesso; TRUNCATE revogado |
 | `notas_media_final(p_paginas text[])` | `security definer`, só `authenticated`: para o aluno logado (`auth.uid()`), a melhor nota (0–10) entregue de cada página — objetiva = acertos ÷ total; discursiva = soma de `nota_professor` ÷ soma dos pontos, só com todos os tópicos corrigidos (senão `situacao = 'AGUARDANDO_CORRECAO'`). Não depende do bloqueio da atividade e não devolve gabarito |
 
+## 🔓 Atualização 2026-10-06 — Liberar gabaritos por atividade e turma
+
+SQL: `database/2026-10-06-liberacao-respostas-turma.sql` (✅ aplicado no Supabase em 2026-10-06).
+Plano: `docs/liberacao-respostas-por-turma.md`. Telas: quadro "Respostas dos alunos nesta atividade"
+(professor) e botão "🔑 Exportar Gabarito" (aluno).
+
+| Tabela / objeto | Campos / regra |
+|--------|---------|
+| `atividade.gabarito_liberado` | `jsonb not null default '[]'`: códigos das turmas que já podem ver o gabarito real |
+| `tentativaacessogabarito` | `id` (identity), `atividade_id` → `atividade`, `aluno_id` → `auth.users`, `data_hora` (padrão `now()`): cada pedido de gabarito feito pelo aluno antes da liberação. RLS: professor lê só alunos de `professor_pode_ver_aluno`; ninguém grava pela API (só a função); `anon` sem acesso |
+| `alunos_sem_entrega_turma(bigint, text)` | `security definer`: quantos alunos da turma (`turmaaluno`) não entregaram a última tentativa liberada; só o professor da turma recebe a contagem (demais: 0) |
+| `liberar_gabarito_turma(bigint, text, boolean)` | `security definer`, só `authenticated`: professor da turma (administrador em todas) libera — **só com todos os alunos da turma com entrega** — ou recolhe o gabarito |
+| `solicitar_gabarito(bigint)` | `security definer`, só `authenticated`: devolve o gabarito real ao aluno logado só se a turma dele estiver em `gabarito_liberado` e ele tiver entrega; senão grava o pedido em `tentativaacessogabarito` e devolve vazio |
+| `liberacao_gabarito_liberado_trg` | trigger em `liberacao_atividade`: recusa nova tentativa/recuperação quando o gabarito já foi liberado para a turma do aluno |
+| `gabarito` | sem mudança: RLS só do professor |
+
 ---
 
 ## 🔐 Segurança: RLS (Row Level Security)

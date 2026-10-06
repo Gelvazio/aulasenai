@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 35, item 35.2 — aceite do usuário (testar a tabela de notas logado como professor). Depois: Etapa 29, item 29.5 — aceite do usuário (discursivas de sexta). Depois: Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
+**Próximo passo:** Etapa 37, item 37.4 — aceite do usuário (testar Liberar gabaritos como professor e Exportar Gabarito como aluno). Depois: Etapa 35, item 35.2 — aceite do usuário (testar a tabela de notas logado como professor). Depois: Etapa 29, item 29.5 — aceite do usuário (discursivas de sexta). Depois: Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -435,3 +435,19 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 | 35.1 | `assets/js/tabela-notas-professor.js` + `assets/css/tabela-notas-professor.css`: nome e nota (melhor tentativa entregue) em ordem alfabética, da turma da aba do relatório, botão "📥 Exportar PDF (notas)" ao lado do título; ligado por `data-tabela-notas="sim"` (campo `- **Tabela de notas:** sim` no gerador de atividades) | ✅ Concluído | 2026-10-06 | `node --check` e `py_compile`; teste no navegador fica com o usuário |
 | 35.2 | Aceite do usuário | ⬜ Pendente | — | — |
 
+
+## Etapa 36 — Gabarito fora do alcance dos alunos, botões de Word e card bloqueado (tarefas pequenas, 2026-10-06)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 36.1 | Conferir gabarito nas páginas e no banco; gabarito UC1 TIC no Git, fora do site (`.vercelignore`) | ✅ Concluído | 2026-10-06 | grep nas páginas; RLS de `gabarito` lido no banco; commits `3ba2927`, `5e4894f`, `cc2a88f` |
+| 36.2 | Remover os botões "Exportar em Word", "(respostas)" e "(gabarito)" | ✅ Concluído | 2026-10-06 | `node --check`; commits `87a4ecc`, `84b3061` |
+| 36.3 | Card bloqueado inteiro inacessível (aluno e professor) | ✅ Concluído | 2026-10-06 | `node --check`; commits `1f3b819`, `21c36e7`; teste no navegador com o usuário |
+| 36.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 37 — Liberar gabaritos por atividade e turma (botão do professor) — plano: [docs/liberacao-respostas-por-turma.md](docs/liberacao-respostas-por-turma.md)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 37.1 | Plano criado e apresentado | ✅ Concluído | 2026-10-06 | Plano em `docs/` |
+| 37.2 | Aprovação do plano pelo usuário (recuperação bloqueada após liberar; aplicar SQL autorizado) | ✅ Concluído | 2026-10-06 | Resposta do usuário no chat |
+| 37.3 | Executar os passos 1 a 7 do plano (+ aviso "Aguarde professor liberar os gabaritos", tabela `tentativaacessogabarito` e regra também nas atividades) | ✅ Concluído | 2026-10-06 | SQL aplicado e conferido por consultas de leitura; `node --check` nos JS; teste no navegador com o usuário |
+| 37.4 | Aceite do usuário | ⬜ Pendente | — | — |

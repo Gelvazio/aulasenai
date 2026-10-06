@@ -1,0 +1,22 @@
+/* Botão "Liberar gabaritos (turma X)" no relatório do professor (liberacao-respostas-professor.js). */
+:root {
+    --liberar-gabarito-aviso: #4a5568;
+}
+
+.liberar-gabarito {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.liberar-gabarito__botao:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.liberar-gabarito__aviso {
+    font-size: 13px;
+    color: var(--liberar-gabarito-aviso);
+}

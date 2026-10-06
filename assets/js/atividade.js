@@ -7,13 +7,18 @@
 // aqui): professor com 1 turma já vem escolhida; com várias, ele escolhe antes de exportar.
 // Também carrega o assets/js/exportar-banco-moodle.js: botão "Banco Moodle (AVA SENAI)", só do
 // professor, que baixa as questões da página com o gabarito do banco em Moodle XML.
-// E o assets/js/documento-word.js + assets/js/exportar-word.js: ao lado de cada botão de PDF, um
-// botão "Exportar em Word" com o mesmo layout deste PDF.
+// E o assets/js/documento-word.js + assets/js/exportar-word.js (hoje sem botões de Word).
+// Toda atividade com folha de respostas no banco (body data-login="sim") ganha o botão
+// "🔑 Exportar Gabarito" (assets/js/avaliacao-pdf-professor.js): o aluno só recebe o gabarito
+// depois que o professor liberar para a turma (plano docs/liberacao-respostas-por-turma.md).
 
 const ARQUIVO_TURMA_EXPORTACAO = 'turma-exportacao.js';
 const ARQUIVO_BANCO_MOODLE = 'exportar-banco-moodle.js';
 const ARQUIVO_DOCUMENTO_WORD = 'documento-word.js';
 const ARQUIVO_EXPORTAR_WORD = 'exportar-word.js';
+const ARQUIVO_EXPORTAR_GABARITO = 'avaliacao-pdf-professor.js';
+const ID_BOTAO_EXPORTAR_GABARITO = 'btnExportarGabarito';
+const TEXTO_BOTAO_EXPORTAR_GABARITO = '🔑 Exportar Gabarito';
 const ORIGEM_ATIVIDADE_JS = document.currentScript?.src || '';
 const TURMA_EM_BRANCO_ATIVIDADE_PDF = '___________________';
 const MSG_JSPDF_NAO_CARREGADO = 'Erro: jsPDF não carregado (verifique a conexão com a internet).';
@@ -37,6 +42,32 @@ carregarModuloExportacao(ARQUIVO_TURMA_EXPORTACAO, typeof obterTurmaParaExportac
 carregarModuloExportacao(ARQUIVO_BANCO_MOODLE, typeof exportarBancoMoodle === 'function');
 carregarModuloExportacao(ARQUIVO_DOCUMENTO_WORD, typeof baixarDocumentoWord === 'function');
 carregarModuloExportacao(ARQUIVO_EXPORTAR_WORD, typeof exportarWordAtividade === 'function');
+
+/**
+ * Acrescenta o botão "Exportar Gabarito" às atividades com folha de respostas no banco que ainda
+ * não o têm e carrega o script que o liga (a liberação para o aluno é decidida no banco).
+ */
+function incluirBotaoExportarGabarito() {
+    const barra = document.querySelector('.export-bar');
+    const temFolhaNoBanco = document.body?.dataset.login === 'sim';
+    if (!barra || !temFolhaNoBanco || document.getElementById(ID_BOTAO_EXPORTAR_GABARITO)) return;
+
+    const botao = document.createElement('button');
+    botao.type = 'button';
+    botao.className = 'btn-export';
+    botao.id = ID_BOTAO_EXPORTAR_GABARITO;
+    botao.hidden = true;
+    botao.textContent = TEXTO_BOTAO_EXPORTAR_GABARITO;
+    barra.append(botao);
+    carregarModuloExportacao(ARQUIVO_EXPORTAR_GABARITO,
+        typeof exportarGabaritoPorPerfil === 'function');
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', incluirBotaoExportarGabarito);
+} else {
+    incluirBotaoExportarGabarito();
+}
 
 /**
  * Avisa um erro da exportação em popup (popup.js); sem ele, registra no console.

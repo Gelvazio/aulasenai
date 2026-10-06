@@ -2,21 +2,21 @@
 //  • "Exportar PDF com gabarito": só PROFESSOR; o gabarito real é lido do banco (RLS) no clique.
 //    Com data-modo="gabarito" no botão (rótulo "Gabarito"), o PDF traz SOMENTE o gabarito.
 //  • "Exportar Gabarito": PROFESSOR recebe o gabarito real (só as alternativas certas); ALUNO
-//    recebe as alternativas que ele marcou na tentativa de MAIOR NOTA (lidas do banco), sem
-//    indicar quais estão certas. O gabarito real nunca fica na página.
-// Os mesmos botões têm a versão Word (assets/js/exportar-word.js): as funções recebem o formato
-// (PDF por padrão ou FORMATO_WORD_EXPORTACAO), com o mesmo controle de perfil.
-// Depende de: atividade.js, respostas-atividade-banco.js (buscarAtividadeDaPagina,
-// lerResultadoDaTentativa) e js/supabase.js.
+//    recebe o gabarito real SÓ depois que o professor liberar para a turma dele (função
+//    solicitar_gabarito do banco); antes disso vê "Aguarde professor liberar os gabaritos" e o
+//    pedido fica gravado em tentativaacessogabarito. O gabarito real nunca fica na página.
+// As funções recebem o formato (PDF por padrão; FORMATO_WORD_EXPORTACAO, hoje sem botão).
+// Depende de: atividade.js, respostas-atividade-banco.js (buscarAtividadeDaPagina) e
+// js/supabase.js (sbGet, sbH).
 
 const ID_BOTAO_PDF_GABARITO = 'btnExportarPDFGabarito';
 const ID_BOTAO_SO_GABARITO = 'btnExportarGabarito';
 const MSG_ERRO_PDF_GABARITO = 'Não foi possível gerar o PDF: ';
 const MSG_SO_PROFESSOR_PDF = 'Somente o perfil PROFESSOR pode exportar o PDF com gabarito.';
 const MSG_SEM_LOGIN_PDF = 'Entre com o seu usuário para exportar.';
-const MSG_SEM_ENTREGA_PDF = 'Você ainda não entregou esta atividade: não há tentativa com nota.';
+const MSG_AGUARDE_GABARITO = 'Aguarde professor liberar os gabaritos';
+const ROTA_SOLICITAR_GABARITO = '/rest/v1/rpc/solicitar_gabarito';
 const PERFIL_PROFESSOR_PDF = 'PROFESSOR';
-const NOTA_MAXIMA_PDF = 10;
 const MODO_SO_GABARITO_PDF = 'gabarito';
 
 /** Geradores do PDF (assets/js/atividade.js); o Word usa FORMATO_WORD_EXPORTACAO. */
@@ -64,51 +64,37 @@ async function lerGabaritoDoBanco() {
         'select=item,titulo,letra&atividade_id=eq.' + atividade.id + '&order=item');
     if (!linhas.length) throw new Error('gabarito vazio (confira o login de professor).');
 
+    return formatarLinhasGabarito(linhas);
+}
+
+/**
+ * Converte as linhas do gabarito do banco no formato do PDF.
+ * @param {{item: number, titulo: string, letra: string}[]} linhas - Linhas do banco.
+ * @returns {string[][]} Linhas [item, título, letra].
+ */
+function formatarLinhasGabarito(linhas) {
     return linhas.map((linha) =>
         ['ITEM ' + String(linha.item).padStart(2, '0'), linha.titulo, linha.letra]);
 }
 
 /**
- * Descobre a tentativa entregue de maior nota do aluno logado.
- * @param {number} atividadeId - Id da atividade.
- * @returns {Promise<{tentativa: number, nota: number}>} Melhor tentativa entregue.
- * @throws {Error} Se nenhuma tentativa foi entregue.
+ * Pede ao banco o gabarito liberado para o aluno logado (função solicitar_gabarito). Sem
+ * liberação, o banco grava o pedido em tentativaacessogabarito e devolve lista vazia.
+ * @returns {Promise<string[][]>} Linhas [item, título, letra] (vazio = ainda não liberado).
+ * @throws {Error} Se a atividade não estiver cadastrada ou o banco recusar.
  */
-async function lerMelhorTentativa(atividadeId) {
-    const entregas = await sbGet('entrega_atividade',
-        'select=tentativa&atividade_id=eq.' + atividadeId);
-    const notas = [];
-    for (const entrega of entregas) {
-        const resultado = await lerResultadoDaTentativa(atividadeId, entrega.tentativa);
-        if (resultado) {
-            notas.push({ tentativa: entrega.tentativa,
-                nota: (resultado.acertos / resultado.total) * NOTA_MAXIMA_PDF });
-        }
-    }
-    if (!notas.length) throw new Error(MSG_SEM_ENTREGA_PDF);
-
-    return notas.sort((a, b) => b.nota - a.nota || b.tentativa - a.tentativa)[0];
-}
-
-/**
- * Lê as alternativas marcadas pelo aluno na tentativa de maior nota.
- * Os títulos das questões vêm da própria página (o gabarito não é lido).
- * @returns {Promise<{linhas: string[][], melhor: {tentativa: number, nota: number}}>} Respostas.
- */
-async function lerRespostasDaMelhorTentativa() {
+async function solicitarGabaritoAluno() {
     const atividade = await buscarAtividadeDaPagina();
     if (!atividade) throw new Error('atividade não cadastrada no banco.');
 
-    const melhor = await lerMelhorTentativa(atividade.id);
-    const respostas = await sbGet('resposta_atividade', 'select=item,letra&atividade_id=eq.' +
-        atividade.id + '&tentativa=eq.' + melhor.tentativa + '&order=item');
-    const porItem = new Map(respostas.map((linha) => [Number(linha.item), linha.letra]));
-    const linhas = [...document.querySelectorAll('.aula-card.questao')].map((card) => {
-        const numero = Number((card.querySelector('.aula-badge')?.textContent.match(/\d+/) || [0])[0]);
-        return ['ITEM ' + String(numero).padStart(2, '0'),
-            card.querySelector('.aula-title')?.textContent.trim() || '', porItem.get(numero) || '—'];
+    const resposta = await fetch(SUPABASE.URL + ROTA_SOLICITAR_GABARITO, {
+        method: 'POST',
+        headers: await sbH(),
+        body: JSON.stringify({ p_atividade: atividade.id }),
     });
-    return { linhas, melhor };
+    const dados = await resposta.json().catch(() => ({}));
+    if (!resposta.ok) throw new Error(dados.message || 'erro ' + resposta.status);
+    return formatarLinhasGabarito(dados);
 }
 
 /**
@@ -134,8 +120,8 @@ async function exportarPdfCompletoProfessor(formato = FORMATO_PDF_EXPORTACAO) {
 }
 
 /**
- * Botão "Exportar Gabarito": professor recebe o gabarito real; aluno, as próprias respostas da
- * tentativa de maior nota.
+ * Botão "Exportar Gabarito": professor recebe o gabarito real; aluno, o gabarito real só depois
+ * da liberação pelo professor (antes, o aviso de aguardar).
  * @param {Object} [formato] - FORMATO_PDF_EXPORTACAO (padrão) ou FORMATO_WORD_EXPORTACAO.
  */
 async function exportarGabaritoPorPerfil(formato = FORMATO_PDF_EXPORTACAO) {
@@ -143,19 +129,28 @@ async function exportarGabaritoPorPerfil(formato = FORMATO_PDF_EXPORTACAO) {
         const perfil = await lerPerfilPdf();
         if (!perfil.logado) throw new Error(MSG_SEM_LOGIN_PDF);
 
-        if (perfil.ehProfessor) {
-            formato.soGabarito(await lerGabaritoDoBanco());
+        const gabarito = perfil.ehProfessor
+            ? await lerGabaritoDoBanco() : await solicitarGabaritoAluno();
+        if (gabarito.length) {
+            formato.soGabarito(gabarito);
             return;
         }
-        const { linhas, melhor } = await lerRespostasDaMelhorTentativa();
-        formato.soGabarito(linhas, { titulo: 'MINHAS RESPOSTAS', coluna: 'Sua resposta',
-            arquivo: 'Minhas-Respostas',
-            subtitulo: 'Tentativa ' + melhor.tentativa + ' (maior nota: ' +
-                melhor.nota.toFixed(1).replace('.', ',') + ')' });
+        await avisarAguardeGabarito();
     } catch (erro) {
-        await avisarErroPdfGabarito(erro.message === MSG_SEM_LOGIN_PDF ||
-            erro.message === MSG_SEM_ENTREGA_PDF ? erro.message : MSG_ERRO_PDF_GABARITO + erro.message);
+        await avisarErroPdfGabarito(erro.message === MSG_SEM_LOGIN_PDF
+            ? erro.message : MSG_ERRO_PDF_GABARITO + erro.message);
     }
+}
+
+/**
+ * Avisa o aluno de que o gabarito ainda não foi liberado (popup quando disponível).
+ */
+async function avisarAguardeGabarito() {
+    if (typeof window.mostrarPopup === 'function') {
+        await mostrarPopup(MSG_AGUARDE_GABARITO, { tipo: 'aviso', titulo: 'Gabarito' });
+        return;
+    }
+    console.warn(MSG_AGUARDE_GABARITO);
 }
 
 /**

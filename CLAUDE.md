@@ -1,15 +1,16 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 17:30
+**Versão das regras:** 2026-10-06 17:45
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
-| 2026-10-06 16:50 | Correção das discursivas (tabela `correcao_discursiva`, tela `correcao-discursiva.html`, menu CORREÇÃO, IA só sugere) e média final do aluno pela função `notas_media_final` (nota vale mesmo com a atividade bloqueada; discursiva "Aguardando correção") |
+| 2026-10-06 17:45 | Liberar gabaritos por atividade e turma: botão do professor (só com todos entregues), sem recuperação depois, aluno vê "Aguarde professor liberar os gabaritos" e o pedido fica em `tentativaacessogabarito` |
 | 2026-10-06 17:30 | Links do card bloqueado desativados também para o professor (voltam ao desbloquear); interruptor continua clicável |
 | 2026-10-06 17:15 | Card de atividade bloqueada inteiro inacessível para aluno e visitante (todos os links desativados, clique no card mostra o aviso) |
 | 2026-10-06 17:00 | Removido também o botão "📝 Exportar em Word (gabarito)": atividades e avaliações objetivas ficam sem botão de Word |
+| 2026-10-06 16:50 | Correção das discursivas (tabela `correcao_discursiva`, tela `correcao-discursiva.html`, menu CORREÇÃO, IA só sugere) e média final do aluno pela função `notas_media_final` (nota vale mesmo com a atividade bloqueada; discursiva "Aguardando correção") |
 | 2026-10-06 16:45 | `.vercelignore` exclui do site todo arquivo com "gabarito" no nome (o gabarito da prova UC1 TIC fica no Git, mas não é publicado) |
 | 2026-10-06 16:30 | Removidos os botões "📝 Exportar em Word" e "📝 Exportar em Word (respostas)" das atividades e avaliações objetivas; fica só o Word com gabarito (professor) |
 | 2026-10-06 16:00 | Tabela "Notas dos alunos" (só professor, nome e nota em ordem alfabética, com Exportar PDF) nas atividades com `- **Tabela de notas:** sim` (`assets/js/tabela-notas-professor.js`) |
@@ -1698,14 +1699,32 @@ Registrada em 2026-10-05 a pedido do usuário.
 
 ## 🔑 REGRA CRÍTICA — GABARITO COM AS RESPOSTAS CERTAS: SÓ O PROFESSOR
 
-Registrada em 2026-09-30. Vale para **todos os alunos**, sem exceção.
+Registrada em 2026-09-30. Vale para **todos os alunos**. **Única exceção (2026-10-06, pedido do
+usuário):** a liberação pelo professor, por atividade e turma, depois que todos entregaram.
 
 - ✅ O gabarito real (alternativas certas) só o **professor** lê: tabela `gabarito` com RLS de professor;
   nunca embutido nas páginas.
 - ✅ Nas avaliações (`AVALIACAO-OBJETIVA-NN`), no fim da página: **Exportar PDF com gabarito** (só
-  professor) e **Exportar Gabarito** (professor = gabarito real; **aluno = as próprias respostas da
-  tentativa de maior nota, lidas do banco**, sem indicar quais estão certas).
-- ❌ Nenhuma tela, PDF ou consulta entrega ao aluno a alternativa certa. Código: `assets/js/avaliacao-pdf-professor.js`.
+  professor) e **Exportar Gabarito** (professor = gabarito real; aluno = ver a liberação abaixo).
+- ✅ **Vale para avaliações E atividades** (2026-10-06, pedido do usuário): toda atividade com
+  folha de respostas no banco (`data-login="sim"`) ganha o botão "🔑 Exportar Gabarito" (inserido
+  pelo `assets/js/atividade.js`, que carrega o `avaliacao-pdf-professor.js`), e o gabarito só é
+  liberado **depois que todos os alunos da turma entregaram**.
+- ✅ **Liberar gabaritos (2026-10-06)** — plano `docs/liberacao-respostas-por-turma.md`, SQL
+  `database/2026-10-06-liberacao-respostas-turma.sql` (✅ aplicado):
+  - no quadro "Respostas dos alunos nesta atividade", o professor tem o botão
+    **"🔓 Liberar gabaritos (turma X)"** (turma da aba), que **só funciona quando todos os alunos
+    da turma entregaram** (senão fica desativado com "Faltam N aluno(s) entregar"); depois vira
+    "🔒 Recolher gabarito". Código: `assets/js/liberacao-respostas-professor.js` (+ css);
+  - grava o código da turma em `atividade.gabarito_liberado` (função `liberar_gabarito_turma`);
+  - **depois da liberação, nenhuma nova tentativa nem recuperação** para os alunos da turma
+    (trigger em `liberacao_atividade`);
+  - **aluno** clica em "Exportar Gabarito": se a turma dele foi liberada e ele entregou, recebe o
+    gabarito real (função `solicitar_gabarito`); senão vê **"Aguarde professor liberar os
+    gabaritos"** e o pedido é gravado na tabela **`tentativaacessogabarito`** (atividade, aluno,
+    data e hora; só o professor lê).
+- ❌ Fora dessa liberação, nenhuma tela, PDF ou consulta entrega ao aluno a alternativa certa.
+  Código: `assets/js/avaliacao-pdf-professor.js`.
 
 ## 🙈 REGRA CRÍTICA — O QUE NUNCA É PUBLICADO (GIT / VERCEL)
 
