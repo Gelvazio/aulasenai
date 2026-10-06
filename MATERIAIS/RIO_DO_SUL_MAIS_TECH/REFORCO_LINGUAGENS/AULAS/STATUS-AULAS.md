@@ -13,7 +13,7 @@ As 16 aulas antigas de 4 h ficaram em `LEGADO-16-AULAS/` (não são mais usadas)
 |---|---|---|---|---|---|---|
 | 01 | Tipos de Texto e Contexto de Produção | 6 | ✅ `CONTEUDO/AULA-01-TIPOS-DE-TEXTO-E-CONTEXTO-DE-PRODUCAO.md` | ✅ | ✅ (feitas antes, mantidas) | ✅ |
 | 02 | Tema, Assunto e Ideia Principal | 6 | ✅ `CONTEUDO/AULA-02-TEMA-ASSUNTO-E-IDEIA-PRINCIPAL.md` | ✅ | ✅ | ✅ |
-| 03 | Intenção Comunicativa e Análise Crítica | 6 | ⬜ | ✅ | ⬜ | ⬜ |
+| 03 | Intenção Comunicativa e Análise Crítica | 6 | ✅ `CONTEUDO/AULA-03-INTENCAO-COMUNICATIVA-E-ANALISE-CRITICA.md` | ✅ | ✅ | ✅ |
 | 04 | Coesão e Coerência Textual | 6 | ⬜ | ✅ | ⬜ | ⬜ |
 | 05 | Tipologias Textuais na Prática | 6 | ⬜ | ✅ | ⬜ | ⬜ |
 | 06 | Pontuação e Concordância na Escrita | 6 | ⬜ | ✅ | ⬜ | ⬜ |

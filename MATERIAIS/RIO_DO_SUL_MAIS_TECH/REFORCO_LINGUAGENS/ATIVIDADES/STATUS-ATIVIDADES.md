@@ -8,7 +8,7 @@
 > atividade mostra o link "Slides da aula". Plano: `docs/reforco-linguagens-10-aulas-e-atividades.md`.
 > Legenda: `⬜ Pendente` · `🔄 Em progresso` · `✅ Concluída`.
 
-**Aulas:** 10 · **✅ Concluídas:** 2 · **Pendentes:** 8
+**Aulas:** 10 · **✅ Concluídas:** 3 · **Pendentes:** 7
 
 ## Atividades por aula (20 objetivas + 5 discursivas)
 
@@ -16,7 +16,7 @@
 |---|---|---|---|---|---|
 | 01 | Tipos de Texto e Contexto de Produção (atividade feita sobre "Leitura e Compreensão Textual Básica", mantida — decisão D5) | ✅ `ATIVIDADES-AULA-01-20-QUESTOES.html` + ✅ `ATIVIDADE-DISCURSIVA-AULA-01.html` | ✅ `ATIVIDADES-AULA-01-20-QUESTOES.md` + `ATIVIDADE-DISCURSIVA-AULA-01.md` (+ `-GABARITO.md`) | ✅ 2026-10-06 (objetivas: atividade 60, 20 no gabarito; discursivas: atividade 61, 5 tópicos) | ✅ Concluída |
 | 02 | Tema, Assunto e Ideia Principal | ✅ `ATIVIDADES-AULA-02-20-QUESTOES.html` + ✅ `ATIVIDADE-DISCURSIVA-AULA-02.html` | ✅ `ATIVIDADES-AULA-02-20-QUESTOES.md` + `ATIVIDADE-DISCURSIVA-AULA-02.md` (+ `-GABARITO.md`) | ✅ 2026-10-06 (objetivas: atividade 62, 20 no gabarito, liberada; discursivas: atividade 63, 5 tópicos, nasce bloqueada) | ✅ Concluída |
-| 03 | Intenção Comunicativa e Análise Crítica | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
+| 03 | Intenção Comunicativa e Análise Crítica | ✅ `ATIVIDADES-AULA-03-20-QUESTOES.html` + ✅ `ATIVIDADE-DISCURSIVA-AULA-03.html` | ✅ `ATIVIDADES-AULA-03-20-QUESTOES.md` + `ATIVIDADE-DISCURSIVA-AULA-03.md` (+ `-GABARITO.md`) | ✅ 2026-10-06 (objetivas: atividade 64, 20 no gabarito, liberada; discursivas: atividade 65, 5 tópicos, nasce bloqueada) | ✅ Concluída |
 | 04 | Coesão e Coerência Textual | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
 | 05 | Tipologias Textuais na Prática | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
 | 06 | Pontuação e Concordância na Escrita | ⬜ | ⬜ | ⬜ | ⬜ Pendente |
