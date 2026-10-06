@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 19:30
+**Versão das regras:** 2026-10-06 19:45
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 19:45 | Modal "✏️ Editar aula" também troca o **nome do card** (coluna `aulas.nome_card`; vazio = título do HTML), além da data |
 | 2026-10-06 19:30 | O link "🧾 LOG" fica bloqueado junto com a atividade bloqueada |
 | 2026-10-06 19:15 | Link "🧾 LOG" nos cards do índice (professor): modal com a lista de alunos e o log das alternativas do aluno escolhido |
 | 2026-10-06 18:50 | Tabela "Notas dos alunos" com Exportar PDF em **todas** as atividades de todas as matérias (padrão ligado; `data-tabela-notas="nao"` desliga numa página) |
@@ -1603,6 +1604,11 @@ SQL: `database/2026-10-06-aulas-excluido.sql` (✅ aplicado no Supabase em 2026-
   por quem não é administrador (a política de update de `aulas` aceita qualquer professor).
 - ✅ Restaurar: voltar `excluido = 0` pelo SQL Editor (ainda sem tela). Código novo que liste
   aulas deve filtrar `excluido = 0`.
+- ✅ **Nome do card** (2026-10-06, pedido do usuário): o modal "✏️ Editar aula" (todo professor)
+  tem o campo **Nome do card** além da data. Grava em **`aulas.nome_card`** (texto de 1 a 200
+  caracteres; SQL `database/2026-10-06-aulas-nome-card.sql`, ✅ aplicado); o título (`h2`) do card
+  mostra esse nome para todos. Campo vazio ou igual ao título do HTML grava `null` = volta ao
+  título escrito no índice.
 
 ## 📌 REGRA — PENDÊNCIAS DE AULAS (MENU PENDÊNCIAS, SÓ PROFESSOR ADMINISTRADOR)
 
