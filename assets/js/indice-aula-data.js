@@ -1,7 +1,8 @@
 // Data da aula em cada card do ATIVIDADES/index.html: mostra "📅 Data da aula" (lida
 // de aulas.data_planejada) e, para o professor logado, o botão "✏️ Editar aula", que abre um
 // modal para gravar a data. A aula do card vem da atividade cadastrada para o link principal
-// do card.
+// do card; se ela não vier (ex.: atividade bloqueada para o aluno), a aula é procurada pelo
+// número do card ("AULA 01") na mesma matéria. Alunos e visitantes também veem a data.
 // O RLS da tabela aulas só deixa o professor alterar.
 // Depende de: js/supabase.js, assets/js/atividades-crud-repositorio.js e
 // assets/js/atividades-crud-modal.js (obterCaminhoHtml e estilos do modal).
@@ -9,7 +10,9 @@
 const SELETOR_CARD_DATA_AULA = 'article.aula';
 const SELETOR_LINK_DATA_AULA = 'a.btn.principal';
 const TABELA_AULAS_DATA = 'aulas';
-const CAMPOS_ATIVIDADE_DATA_AULA = 'pagina,aula_id,aulas(id,numero,titulo,data_planejada)';
+const CAMPOS_AULA_DATA = 'id,numero,titulo,data_planejada,materia_id';
+const CAMPOS_ATIVIDADE_DATA_AULA = 'pagina,aula_id,aulas(' + CAMPOS_AULA_DATA + ')';
+const SELETOR_NUMERO_DATA_AULA = '.num';
 const TEXTO_BOTAO_EDITAR_AULA = '✏️ Editar aula';
 const TEXTO_SEM_DATA_AULA = '📅 Data da aula: não informada';
 const TEXTO_AULA_SEM_CADASTRO = '📅 Aula não cadastrada no banco (use CADASTRAR ATIVIDADES)';
@@ -59,6 +62,47 @@ async function buscarAulasDasPaginas(paginas) {
     const linhas = await sbGet('atividade', 'select=' + CAMPOS_ATIVIDADE_DATA_AULA + '&' + filtro);
     linhas.filter((linha) => linha.aulas).forEach((linha) => mapa.set(linha.pagina, linha.aulas));
     return mapa;
+}
+
+/**
+ * Lê o número da aula escrito no card ("AULA 01" → 1).
+ * @param {HTMLElement} card - Card do índice.
+ * @returns {number|null} Número da aula ou null.
+ */
+function lerNumeroAulaDoCard(card) {
+    const texto = card.querySelector(SELETOR_NUMERO_DATA_AULA)?.textContent || '';
+    const encontrado = texto.match(/\d+/);
+    return encontrado ? Number(encontrado[0]) : null;
+}
+
+/**
+ * Completa os cards sem aula (atividade não lida) buscando a aula pelo número do card,
+ * na matéria das aulas já encontradas.
+ * @param {{card: HTMLElement, aula: Object|null}[]} itens - Cards e aulas.
+ */
+async function completarAulasPeloNumero(itens) {
+    const faltando = itens.filter((item) => !item.aula && lerNumeroAulaDoCard(item.card));
+    const materia = itens.find((item) => item.aula?.materia_id)?.aula.materia_id;
+    if (!faltando.length || !materia) return;
+
+    const aulas = await sbGet(TABELA_AULAS_DATA,
+        'select=' + CAMPOS_AULA_DATA + '&materia_id=eq.' + encodeURIComponent(materia));
+    faltando.forEach((item) => {
+        const numero = lerNumeroAulaDoCard(item.card);
+        item.aula = aulas.find((aula) => aula.numero === numero) || null;
+    });
+}
+
+/**
+ * Diz se o usuário logado é professor, sem deixar uma falha esconder as datas.
+ * @returns {Promise<boolean>} true se for professor.
+ */
+async function verificarProfessorDataAula() {
+    try {
+        return await usuarioEhProfessorCrud();
+    } catch (erro) {
+        return false;
+    }
 }
 
 /**
@@ -235,13 +279,14 @@ async function iniciarDataAulas() {
 
     const paginas = cards.map((card) =>
         obterCaminhoHtml(card.querySelector(SELETOR_LINK_DATA_AULA)?.getAttribute('href')));
+    estadoDataAula.ehProfessor = await verificarProfessorDataAula();
     try {
-        estadoDataAula.ehProfessor = await usuarioEhProfessorCrud();
         const aulas = await buscarAulasDasPaginas([...new Set(paginas.filter(Boolean))]);
         estadoDataAula.cards = cards.map((card, i) =>
             ({ card, aula: aulas.get(paginas[i]) || null }));
+        await completarAulasPeloNumero(estadoDataAula.cards);
     } catch (erro) {
-        return;
+        if (!estadoDataAula.cards.length) return;
     }
     estadoDataAula.cards.forEach(renderizarDataNoCard);
     if (estadoDataAula.ehProfessor) estadoDataAula.cards.forEach(adicionarBotaoEditarAula);
