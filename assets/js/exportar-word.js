@@ -24,14 +24,10 @@ const FORMATO_WORD_EXPORTACAO = {
 
 /**
  * Botões de Word espelhados dos botões de PDF da barra (id do PDF → id, rótulo e ação do Word).
- * Só o do PDF com gabarito (professor): "Exportar em Word" e "(respostas)" foram retirados a
- * pedido do usuário em 2026-10-06.
+ * Lista vazia: os botões "Exportar em Word", "(respostas)" e "(gabarito)" foram retirados a
+ * pedido do usuário em 2026-10-06. Para voltar um botão, acrescentar o espelho aqui.
  */
-const ESPELHOS_WORD = [
-    { idPdf: 'btnExportarPDFGabarito', idWord: 'btnExportarWordGabarito',
-        rotulo: '📝 Exportar em Word (gabarito)',
-        acao: () => exportarPdfCompletoProfessor(FORMATO_WORD_EXPORTACAO) }
-];
+const ESPELHOS_WORD = [];
 
 /**
  * Monta uma célula de tabela no padrão do PDF (borda preta fina, fonte 10pt).

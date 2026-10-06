@@ -1,12 +1,13 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 16:50
+**Versão das regras:** 2026-10-06 17:00
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
 | 2026-10-06 16:50 | Correção das discursivas (tabela `correcao_discursiva`, tela `correcao-discursiva.html`, menu CORREÇÃO, IA só sugere) e média final do aluno pela função `notas_media_final` (nota vale mesmo com a atividade bloqueada; discursiva "Aguardando correção") |
+| 2026-10-06 17:00 | Removido também o botão "📝 Exportar em Word (gabarito)": atividades e avaliações objetivas ficam sem botão de Word |
 | 2026-10-06 16:45 | `.vercelignore` exclui do site todo arquivo com "gabarito" no nome (o gabarito da prova UC1 TIC fica no Git, mas não é publicado) |
 | 2026-10-06 16:30 | Removidos os botões "📝 Exportar em Word" e "📝 Exportar em Word (respostas)" das atividades e avaliações objetivas; fica só o Word com gabarito (professor) |
 | 2026-10-06 16:00 | Tabela "Notas dos alunos" (só professor, nome e nota em ordem alfabética, com Exportar PDF) nas atividades com `- **Tabela de notas:** sim` (`assets/js/tabela-notas-professor.js`) |
@@ -1456,11 +1457,10 @@ Registrada em 2026-10-05 a pedido do usuário. Vale para **todas** as atividades
   LibreOffice Writer. Nada é gravado no banco nem no navegador.
 - ✅ **Código único (não repetir por página):**
   - `assets/js/documento-word.js` — monta e baixa o documento (A4, rodapé, imagens embutidas);
-  - `assets/js/exportar-word.js` — atividades e avaliações objetivas: espelha **só**
-    `btnExportarPDFGabarito` (professor), via `avaliacao-pdf-professor.js` com
-    `FORMATO_WORD_EXPORTACAO` (carregado pelo `assets/js/atividade.js`). ⛔ Os botões
-    **"📝 Exportar em Word"** e **"📝 Exportar em Word (respostas)"** foram **removidos** em
-    2026-10-06 a pedido do usuário: não recolocar sem pedido;
+  - `assets/js/exportar-word.js` — atividades e avaliações objetivas (carregado pelo
+    `assets/js/atividade.js`). ⛔ **Sem nenhum botão de Word** desde 2026-10-06, a pedido do
+    usuário: "📝 Exportar em Word", "(respostas)" e "(gabarito)" foram removidos
+    (`ESPELHOS_WORD` vazio); não recolocar sem pedido;
   - `assets/js/exportar-word-pratica.js` — atividades práticas (Excel): ao lado de cada
     `[data-acao="imprimir"]`, exporta a capa + todas as questões (o mesmo conteúdo do
     "Imprimir / PDF"), com o estilo da página e as telas em PNG (carregado pelo
