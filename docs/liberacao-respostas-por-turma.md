@@ -97,5 +97,9 @@ passa a ter a exceção "depois da liberação pelo professor, para a turma libe
     "Exportar Gabarito" em toda página com folha de respostas no banco;
   - arquivos renomeados sem "gabarito" no nome (o `.gitignore` e o `.vercelignore` bloqueiam esse
     nome): `liberacao-respostas-professor.js/.css`, este plano e o SQL.
-- Atividades discursivas (padrão de resposta) ficam fora.
+- **Discursivas incluídas (2026-10-06, pedido do usuário):** função `solicitar_gabarito_discursivo`
+  (SQL `database/2026-10-06-liberacao-respostas-discursiva.sql`, aplicado), módulo
+  `assets/js/liberacao-respostas-discursiva.js` (+ css) carregado pelo `avaliacao-discursiva.js`:
+  professor escolhe a turma e libera no painel; aluno usa "🔑 Ver Gabarito" e vê a resposta
+  esperada abaixo de cada tópico depois da liberação.
 - Teste no navegador: com o usuário (professor e aluno).

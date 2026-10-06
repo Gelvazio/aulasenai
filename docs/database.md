@@ -582,6 +582,8 @@ Plano: `docs/liberacao-respostas-por-turma.md`. Telas: quadro "Respostas dos alu
 | `solicitar_gabarito(bigint)` | `security definer`, só `authenticated`: devolve o gabarito real ao aluno logado só se a turma dele estiver em `gabarito_liberado` e ele tiver entrega; senão grava o pedido em `tentativaacessogabarito` e devolve vazio |
 | `liberacao_gabarito_liberado_trg` | trigger em `liberacao_atividade`: recusa nova tentativa/recuperação quando o gabarito já foi liberado para a turma do aluno |
 | `gabarito` | sem mudança: RLS só do professor |
+| `aluno_pode_ver_gabarito(bigint)` / `registrar_tentativa_acesso_gabarito(bigint)` | internas (`security definer`, sem execução pela API): regra única de liberação (turma liberada + entrega) e gravação do pedido negado |
+| `solicitar_gabarito_discursivo(bigint)` | `security definer`, só `authenticated`: padrão de resposta (`item`, `topico`, `enunciado`, `pontos`, `resposta_esperada`) das discursivas com a mesma regra; senão grava em `tentativaacessogabarito`. SQL: `database/2026-10-06-liberacao-respostas-discursiva.sql` (✅ aplicado) |
 
 ---
 

@@ -177,7 +177,7 @@ async function carregarDiscursiva(sessao) {
     return {
         disponivel: true, logado: true, ehProfessor, ...identificacao, respostas, entregueEm,
         avisoHorario, tentativa: sessao.tentativa, ativa: sessao.atividade.ativo,
-        maximoTentativas: sessao.atividade.max_tentativas,
+        maximoTentativas: sessao.atividade.max_tentativas, atividadeId: sessao.atividade.id,
     };
 }
 

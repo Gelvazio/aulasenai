@@ -1,0 +1,35 @@
+/* Gabarito das discursivas (liberacao-respostas-discursiva.js): área do professor e padrão de
+   resposta mostrado ao aluno depois da liberação. */
+:root {
+    --resposta-esperada-fundo: #eefaf0;
+    --resposta-esperada-borda: #2f855a;
+    --resposta-esperada-texto: #1c4532;
+}
+
+.liberacao-discursiva {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.liberacao-discursiva__titulo {
+    width: 100%;
+}
+
+.liberacao-discursiva__turma select {
+    margin-left: 4px;
+    padding: 4px 8px;
+}
+
+.resposta-esperada {
+    margin-top: 8px;
+    padding: 10px 12px;
+    border-left: 4px solid var(--resposta-esperada-borda);
+    border-radius: 6px;
+    background: var(--resposta-esperada-fundo);
+    color: var(--resposta-esperada-texto);
+    font-size: 14px;
+    white-space: pre-wrap;
+}

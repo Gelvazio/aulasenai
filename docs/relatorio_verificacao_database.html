@@ -711,6 +711,16 @@
           <td>Trigger</td>
           <td>Recusa nova tentativa/recuperação depois da liberação do gabarito para a turma</td>
         </tr>
+        <tr>
+          <td>aluno_pode_ver_gabarito / registrar_tentativa_acesso_gabarito</td>
+          <td>Funções internas</td>
+          <td>Regra única de liberação (turma liberada + entrega) e gravação do pedido negado; sem execução pela API</td>
+        </tr>
+        <tr>
+          <td>solicitar_gabarito_discursivo(bigint)</td>
+          <td>Função (security definer)</td>
+          <td>Padrão de resposta das discursivas para o aluno liberado; senão grava em tentativaacessogabarito</td>
+        </tr>
       </table>
     </div>
 

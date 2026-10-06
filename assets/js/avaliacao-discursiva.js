@@ -4,12 +4,16 @@
 // Dados: assets/js/respostas-discursivas-banco.js. Avisos: assets/js/popup.js.
 // Vocabulário avaliação/recuperação: assets/js/termos-tentativa.js.
 // Plano: docs/avaliacao-pratica-discursiva-itic.md
+// Gabarito (padrão de resposta): assets/js/liberacao-respostas-discursiva.js, carregado aqui —
+// professor libera por turma (só com todos entregues); aluno vê depois da liberação.
 
 const ATRASO_GRAVACAO_MS = 1500;
 const SELETOR_CAMPO = '.topico-resposta__campo';
 const SELETOR_BLOCO_TOPICO = '.topico-resposta';
 const ID_PAINEL = 'painel-discursivo';
 const ID_BOTAO_FINALIZAR = 'btnFinalizarDiscursiva';
+const ARQUIVO_LIBERACAO_DISCURSIVA = 'liberacao-respostas-discursiva.js';
+const BASE_SCRIPTS_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const CLASSE_BLOCO = 'topico-resposta';
 const CLASSE_FALTANDO = 'topico-resposta--faltando';
 const SITUACOES_TOPICO = {
@@ -260,6 +264,30 @@ function montarPainel(dados) {
     painel.appendChild(criarBotaoDiscursivo('btn-export btn-export--secundario', '🚪 Sair',
         fazerLogout));
     atualizarProgresso();
+    abrirLiberacaoRespostas(painel, dados);
+}
+
+/**
+ * Carrega (uma vez) o módulo do gabarito da discursiva e monta a parte dele no painel.
+ * Uma falha aqui não atrapalha a avaliação.
+ * @param {HTMLElement} painel - Painel de identificação.
+ * @param {Object} dados - Estado carregado do banco.
+ */
+async function abrirLiberacaoRespostas(painel, dados) {
+    try {
+        if (typeof window.montarLiberacaoRespostasDiscursiva !== 'function') {
+            await new Promise((resolver, rejeitar) => {
+                const script = document.createElement('script');
+                script.src = BASE_SCRIPTS_DISCURSIVA + ARQUIVO_LIBERACAO_DISCURSIVA;
+                script.onload = () => resolver();
+                script.onerror = () => rejeitar(new Error('módulo do gabarito indisponível'));
+                document.head.appendChild(script);
+            });
+        }
+        await window.montarLiberacaoRespostasDiscursiva(painel, dados);
+    } catch (erro) {
+        console.warn('Gabarito da discursiva:', erro.message);
+    }
 }
 
 /**

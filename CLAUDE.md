@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 18:00
+**Versão das regras:** 2026-10-06 18:15
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 18:15 | Regra do gabarito também nas discursivas: professor libera no painel por turma (só com todos entregues); aluno "Ver Gabarito" com aviso e registro antes da liberação |
 | 2026-10-06 18:00 | Regra do gabarito (liberação pelo professor só com todos entregues) declarada global: todas as atividades de todas as matérias e cursos |
 | 2026-10-06 17:45 | Liberar gabaritos por atividade e turma: botão do professor (só com todos entregues), sem recuperação depois, aluno vê "Aguarde professor liberar os gabaritos" e o pedido fica em `tentativaacessogabarito` |
 | 2026-10-06 17:30 | Links do card bloqueado desativados também para o professor (voltam ao desbloquear); interruptor continua clicável |
@@ -1725,7 +1726,16 @@ usuário):** a liberação pelo professor, por atividade e turma, depois que tod
     gabarito real (função `solicitar_gabarito`); senão vê **"Aguarde professor liberar os
     gabaritos"** e o pedido é gravado na tabela **`tentativaacessogabarito`** (atividade, aluno,
     data e hora; só o professor lê).
-- ❌ Fora dessa liberação, nenhuma tela, PDF ou consulta entrega ao aluno a alternativa certa.
+- ✅ **Também nas DISCURSIVAS** (2026-10-06, pedido do usuário; 19 páginas): o "gabarito" é o
+  padrão de resposta (`topico_discursivo.resposta_esperada`, só do professor). No painel da página
+  (`assets/js/liberacao-respostas-discursiva.js`, carregado pelo `avaliacao-discursiva.js`):
+  professor escolhe a turma e usa o mesmo **"🔓 Liberar gabaritos (turma X)"** (só com todos
+  entregues); aluno clica em **"🔑 Ver Gabarito"** — antes da liberação, "Aguarde professor
+  liberar os gabaritos" + registro em `tentativaacessogabarito`; depois, a resposta esperada de
+  cada tópico aparece abaixo da resposta dele (função `solicitar_gabarito_discursivo`; SQL
+  `database/2026-10-06-liberacao-respostas-discursiva.sql`, ✅ aplicado).
+- ❌ Fora dessa liberação, nenhuma tela, PDF ou consulta entrega ao aluno a alternativa certa
+  nem o padrão de resposta das discursivas.
   Código: `assets/js/avaliacao-pdf-professor.js`.
 
 ## 🙈 REGRA CRÍTICA — O QUE NUNCA É PUBLICADO (GIT / VERCEL)

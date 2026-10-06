@@ -4,8 +4,8 @@
 // vira "🔒 Recolher gabarito (turma X)". Depois da liberação o banco recusa nova tentativa ou
 // recuperação para os alunos da turma. Funções do banco: liberar_gabarito_turma e
 // alunos_sem_entrega_turma (database/2026-10-06-liberacao-respostas-turma.sql).
-// Plano: docs/liberacao-respostas-por-turma.md. Depende de respostas-atividade.js (criarElemento,
-// criarBotao), popup.js e js/supabase.js (sbGet, sbH).
+// Também usado nas discursivas (liberacao-respostas-discursiva.js), com a turma escolhida numa lista.
+// Plano: docs/liberacao-respostas-por-turma.md. Depende de popup.js e js/supabase.js (sbGet, sbH).
 
 const ROTA_LIBERAR_GABARITO = '/rest/v1/rpc/liberar_gabarito_turma';
 const ROTA_SEM_ENTREGA_GABARITO = '/rest/v1/rpc/alunos_sem_entrega_turma';
@@ -104,15 +104,33 @@ async function alternarLiberacaoGabarito() {
 }
 
 /**
+ * Cria um elemento com classe e texto (sem depender de outros scripts da página).
+ * @param {string} tag - Nome da tag.
+ * @param {string} classe - Classe CSS.
+ * @param {string} [texto] - Texto do elemento.
+ * @returns {HTMLElement} Elemento criado.
+ */
+function criarElementoLiberacao(tag, classe, texto = '') {
+    const elemento = document.createElement(tag);
+    elemento.className = classe;
+    elemento.textContent = texto;
+    return elemento;
+}
+
+/**
  * Coloca o botão e o aviso no relatório do professor.
- * @param {HTMLElement} bloco - Cartão do relatório do professor.
+ * @param {HTMLElement} bloco - Onde o botão entra (relatório do professor ou painel).
  * @param {{atividadeId: number, turma: string}} contexto - Atividade e turma escolhida.
  */
 function montarLiberarGabaritoProfessor(bloco, contexto) {
-    const area = criarElemento('div', CLASSE_LIBERAR_GABARITO);
-    estadoLiberarGabarito.botao = criarBotao('btn-export ' + CLASSE_LIBERAR_GABARITO + '__botao',
-        '', alternarLiberacaoGabarito);
-    estadoLiberarGabarito.aviso = criarElemento('span', CLASSE_LIBERAR_GABARITO + '__aviso');
+    const area = criarElementoLiberacao('div', CLASSE_LIBERAR_GABARITO);
+    const botao = criarElementoLiberacao('button', 'btn-export ' + CLASSE_LIBERAR_GABARITO +
+        '__botao');
+    botao.type = 'button';
+    botao.addEventListener('click', alternarLiberacaoGabarito);
+    estadoLiberarGabarito.botao = botao;
+    estadoLiberarGabarito.aviso = criarElementoLiberacao('span',
+        CLASSE_LIBERAR_GABARITO + '__aviso');
     estadoLiberarGabarito.atividadeId = contexto.atividadeId;
     estadoLiberarGabarito.turma = contexto.turma || '';
     area.append(estadoLiberarGabarito.botao, estadoLiberarGabarito.aviso);

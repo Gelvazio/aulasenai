@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 37, item 37.4 — aceite do usuário (testar Liberar gabaritos como professor e Exportar Gabarito como aluno). Depois: Etapa 35, item 35.2 — aceite do usuário (testar a tabela de notas logado como professor). Depois: Etapa 29, item 29.5 — aceite do usuário (discursivas de sexta). Depois: Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
+**Próximo passo:** Etapa 38, item 38.3 — aceite do usuário (gabarito nas discursivas). Depois: Etapa 37, item 37.4 — aceite do usuário (testar Liberar gabaritos como professor e Exportar Gabarito como aluno). Depois: Etapa 35, item 35.2 — aceite do usuário (testar a tabela de notas logado como professor). Depois: Etapa 29, item 29.5 — aceite do usuário (discursivas de sexta). Depois: Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -451,3 +451,10 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 | 37.2 | Aprovação do plano pelo usuário (recuperação bloqueada após liberar; aplicar SQL autorizado) | ✅ Concluído | 2026-10-06 | Resposta do usuário no chat |
 | 37.3 | Executar os passos 1 a 7 do plano (+ aviso "Aguarde professor liberar os gabaritos", tabela `tentativaacessogabarito` e regra também nas atividades) | ✅ Concluído | 2026-10-06 | SQL aplicado e conferido por consultas de leitura; `node --check` nos JS; teste no navegador com o usuário |
 | 37.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 38 — Regra do gabarito também nas discursivas (pedida em 2026-10-06; extensão do plano [docs/liberacao-respostas-por-turma.md](docs/liberacao-respostas-por-turma.md))
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 38.1 | SQL `solicitar_gabarito_discursivo` + funções internas, aplicado no Supabase | ✅ Concluído | 2026-10-06 | Permissões conferidas (anon sem execução; internas sem execução pela API) |
+| 38.2 | Painel da discursiva: professor libera por turma; aluno "🔑 Ver Gabarito" (aviso + registro antes da liberação) | ✅ Concluído | 2026-10-06 | `node --check`; teste no navegador com o usuário |
+| 38.3 | Aceite do usuário | ⬜ Pendente | — | — |
