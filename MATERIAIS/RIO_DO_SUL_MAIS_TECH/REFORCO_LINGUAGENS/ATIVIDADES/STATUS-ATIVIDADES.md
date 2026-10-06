@@ -18,7 +18,7 @@
 
 | Aula | Tema | Página | Questões | Fonte (`.md`) | Banco | Status |
 |---|---|---|---|---|---|---|
-| 01 | Leitura e Compreensão Textual Básica | ✅ `ATIVIDADES-AULA-01-20-QUESTOES.html` + ✅ `ATIVIDADE-DISCURSIVA-AULA-01.html` | 20 + 5 | ✅ `CONTEUDO/ATIVIDADES-AULA-01-20-QUESTOES.md` + `CONTEUDO/ATIVIDADE-DISCURSIVA-AULA-01.md` (+ `-GABARITO.md`) | ⬜ seeds gerados, aguardando aplicar (`database/2026-10-06-reforco-linguagens-aula-01-seed-atividades.sql` e depois `database/2026-10-06-atividade-discursiva-aula-01-seed-atividades.sql`) | 🔄 Falta banco |
+| 01 | Leitura e Compreensão Textual Básica | ✅ `ATIVIDADES-AULA-01-20-QUESTOES.html` + ✅ `ATIVIDADE-DISCURSIVA-AULA-01.html` | 20 + 5 | ✅ `CONTEUDO/ATIVIDADES-AULA-01-20-QUESTOES.md` + `CONTEUDO/ATIVIDADE-DISCURSIVA-AULA-01.md` (+ `-GABARITO.md`) | ✅ aplicado em 2026-10-06 (objetivas: atividade 60, 20 no gabarito, liberada; discursivas: atividade 61, 5 tópicos, nasce bloqueada) | ✅ Concluída |
 | 02 | Análise de Tema e Ideia Principal | ⬜ `ATIVIDADES-AULA-02-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 03 | Intenção Comunicativa e Análise Crítica | ⬜ `ATIVIDADES-AULA-03-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 04 | Coesão e Coerência Textual | ⬜ `ATIVIDADES-AULA-04-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
