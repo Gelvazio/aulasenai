@@ -724,6 +724,28 @@
       </table>
     </div>
 
+    <h2>🧾 Atualização 2026-10-06 — Log de gravação das alternativas</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-06-log-resposta-atividade.sql</code> (aplicado em 2026-10-06)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>log_resposta_atividade</td>
+          <td>Tabela (RLS)</td>
+          <td>Toda alternativa marcada, trocada ou apagada (letra anterior, nova, data e hora); professor lê só os alunos dele; gravação só pelo gatilho</td>
+        </tr>
+        <tr>
+          <td>resposta_atividade_log_trg</td>
+          <td>Trigger</td>
+          <td>after insert/update/delete em resposta_atividade; carga inicial com as respostas atuais (CARGA_INICIAL)</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>💡 Atualização 2026-10-05 — sugestoes_turmaaluno() (alunos sem turma)</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-05-sugestoes-turmaaluno.sql</code> (aplicado em 2026-10-05) · Tela: <code>alunos.html</code> (filtro Turma OK)</p>

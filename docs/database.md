@@ -585,6 +585,17 @@ Plano: `docs/liberacao-respostas-por-turma.md`. Telas: quadro "Respostas dos alu
 | `aluno_pode_ver_gabarito(bigint)` / `registrar_tentativa_acesso_gabarito(bigint)` | internas (`security definer`, sem execução pela API): regra única de liberação (turma liberada + entrega) e gravação do pedido negado |
 | `solicitar_gabarito_discursivo(bigint)` | `security definer`, só `authenticated`: padrão de resposta (`item`, `topico`, `enunciado`, `pontos`, `resposta_esperada`) das discursivas com a mesma regra; senão grava em `tentativaacessogabarito`. SQL: `database/2026-10-06-liberacao-respostas-discursiva.sql` (✅ aplicado) |
 
+## 🧾 Atualização 2026-10-06 — Log de gravação das alternativas
+
+SQL: `database/2026-10-06-log-resposta-atividade.sql` (✅ aplicado no Supabase em 2026-10-06).
+Plano: `docs/log-resposta-atividade.md`.
+
+| Tabela / objeto | Campos / regra |
+|--------|---------|
+| `log_resposta_atividade` | `id` (identity), `aluno_id`, `atividade_id`, `tentativa`, `item`, `letra_anterior`, `letra_nova`, `operacao` (`CARGA_INICIAL`, `MARCOU`, `TROCOU`, `APAGOU`), `herdada`, `gravado_por`, `registrado_em` (padrão `now()`). RLS: professor lê só alunos de `professor_pode_ver_aluno`; ninguém grava pela API; `anon` sem acesso |
+| `resposta_atividade_log_trg` | gatilho `after insert or update or delete` em `resposta_atividade` (função `registrar_log_resposta_atividade`, security definer); regravar a mesma letra não gera linha |
+| Carga inicial | a alternativa atual de cada questão já respondida entrou uma vez como `CARGA_INICIAL` (24.190 linhas) |
+
 ---
 
 ## 🔐 Segurança: RLS (Row Level Security)

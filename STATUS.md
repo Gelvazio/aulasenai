@@ -502,3 +502,10 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 |------|-----------|--------|--------------|-------------|
 | 36.1 | `respostas-atividade-professor.js`: tabela ligada por padrão em toda atividade com relatório do professor (53 páginas de atividade em `MATERIAIS/`); `data-tabela-notas="nao"` desliga; CLAUDE.md atualizado | ✅ Concluído | 2026-10-06 | `node --check`; teste no navegador fica com o usuário |
 | 36.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 45 — Log de gravação das alternativas em qualquer atividade (pedida em 2026-10-06) — plano: [docs/log-resposta-atividade.md](docs/log-resposta-atividade.md)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 45.1 | Tabela `log_resposta_atividade` + gatilho em `resposta_atividade` + carga inicial, aplicados no Supabase | ✅ Concluído | 2026-10-06 | 24.190 linhas de carga = 24.190 respostas; RLS ligado; anon sem leitura |
+| 45.2 | Documentação (`database.md`, relatório HTML, `CLAUDE.md`) | ✅ Concluído | 2026-10-06 | Leitura |
+| 45.3 | Aceite do usuário | ⬜ Pendente | — | — |
