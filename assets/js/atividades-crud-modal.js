@@ -16,6 +16,7 @@ const MSG_CONFIRMAR_EXCLUSAO = 'Excluir esta atividade? O gabarito, as respostas
     'dos alunos dela também serão apagados.';
 
 const BASE_ASSETS_CRUD = document.currentScript?.src.replace(/js\/[^/]*$/, '') || '';
+const TEXTO_ID_NOVA_ATIVIDADE = '(nova atividade — o banco gera o id)';
 
 const estadoCrud = { paginas: [], atividades: [], aulas: [], editandoId: null };
 let elementosCrud = null;
@@ -105,7 +106,13 @@ function montarFormularioCrud() {
     const formulario = criarElementoCrud('form', 'crud-form');
     const ativa = criarControleCrud('input', 'ativo', 'checkbox');
     ativa.checked = true;
+    // Id só para conferência: bloqueado, não é enviado ao banco (lerFormularioCrud não o lê).
+    const idAtividade = criarControleCrud('input', 'id_atividade', 'text');
+    idAtividade.readOnly = true;
+    idAtividade.disabled = true;
+    idAtividade.placeholder = TEXTO_ID_NOVA_ATIVIDADE;
     formulario.append(
+        criarCampoCrud('ID da atividade', idAtividade),
         criarCampoCrud('Descrição', criarControleCrud('input', 'descricao', 'text')),
         criarCampoCrud('Data', criarControleCrud('input', 'data_atividade', 'date')),
         criarCampoCrud('Total de itens', criarControleCrud('input', 'total_itens', 'number')),
@@ -196,6 +203,7 @@ function preencherSelectsCrud() {
 function preencherFormularioCrud(atividade, paginaPadrao) {
     const campos = elementosCrud.formulario.elements;
     estadoCrud.editandoId = atividade ? atividade.id : null;
+    campos.id_atividade.value = atividade ? String(atividade.id) : '';
     campos.descricao.value = atividade?.descricao || '';
     campos.data_atividade.value = atividade?.data_atividade || '';
     campos.total_itens.value = atividade?.total_itens || '';
