@@ -11,8 +11,8 @@ matéria"; "na pasta ATIVIDADES, crie atividades apenas a partir da aula 02, poi
 `gerar_avaliacao_discursiva.py`, `gerar-seed-atividades.py`, `gerar_indices.py`), SQL (seeds no Supabase).
 
 **Criado em:** 2026-10-06 10:16
-**Concluído em:** —
-**Tempo decorrido:** —
+**Concluído em:** 2026-10-06 10:46 (falta só o aceite do usuário)
+**Tempo decorrido:** ~30 min de execução após a aprovação
 
 **Pasta da matéria:** `MATERIAIS/RIO_DO_SUL_MAIS_TECH/REFORCO_LINGUAGENS/` (abaixo, `RL/`).
 
@@ -64,7 +64,7 @@ matéria"; "na pasta ATIVIDADES, crie atividades apenas a partir da aula 02, poi
 | 3 | `EMENTA-CHALKIE-AI.md` (seção VI com 10 aulas, tamanho) + `STATUS-EMENTAS.md` + `STATUS-EMENTAS-CURSOS.md` | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:22 | — |
 | 4 | `materia.json` com `aulas` (10) e cargas | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:22 | — |
 | 5 | Mover as 16 aulas antigas para `AULAS/LEGADO-16-AULAS/` | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:22 | — |
-| 6 | Criar as 10 aulas em `RL/CONTEUDO/` (uma por vez), com link dos slides | ⬜ Pendente | 2026-10-06 10:16 | — | — |
+| 6 | Criar as 10 aulas em `RL/CONTEUDO/` (uma por vez), com link dos slides | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:46 | — |
 | 7 | `.gitignore` liberando os PDFs dos slides (se D4 aprovada) | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:22 | — |
 | 8 | `AULAS/STATUS-AULAS.md` e `ATIVIDADES/STATUS-ATIVIDADES.md` com 10 aulas | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:28 | — |
 | 9 | Aula 01: `Conteúdo-base` das fontes aponta para `AULAS-CHALKIE-AI/CONTEUDO/AULA-01-*.md` (sem mudar questões) | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:22 | — |
@@ -77,7 +77,7 @@ matéria"; "na pasta ATIVIDADES, crie atividades apenas a partir da aula 02, poi
 | 16 | Atividades da Aula 08 | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:42 | — |
 | 17 | Atividades da Aula 09 | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:44 | — |
 | 18 | Atividades da Aula 10 | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:46 | — |
-| 19 | Índice da matéria (só o `RL/ATIVIDADES/index.html`) | ⬜ Pendente | 2026-10-06 10:16 | — | — |
+| 19 | Índice da matéria (só o `RL/ATIVIDADES/index.html`) | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:46 | — |
 | 20 | Aceite do usuário | ⬜ Pendente | 2026-10-06 10:16 | — | — |
 
 ---
@@ -163,4 +163,16 @@ Para cada aula NN:
 
 ## Resultado final
 
-—
+- ✅ 10 aulas em `RL/CONTEUDO/` (63 h), cada uma com link 📕 dos slides e dinâmica; as 16 antigas
+  em `AULAS/LEGADO-16-AULAS/`.
+- ✅ Regra no `CLAUDE.md` (10 aulas; conteúdo das atividades sempre de `AULAS-CHALKIE-AI/CONTEUDO`;
+  link "Slides da aula" nas atividades); ementa (seção VI, 14.866 caracteres), status das ementas e
+  `materia.json` atualizados.
+- ✅ Geradores de objetivas e discursivas mostram "Slides da aula" (campo `Slides` da fonte); PDFs de
+  `AULAS-CHALKIE-AI/` liberados no `.gitignore`.
+- ✅ Atividades das aulas 02 a 10 (20 objetivas + 5 discursivas cada), gabarito equilibrado (5 por
+  letra) e seeds aplicados no Supabase: atividades 62 a 79 (objetivas liberadas; discursivas nascem
+  bloqueadas). Aula 01 mantida (60 e 61), apontando para o novo conteúdo e slide.
+- ✅ Índice da matéria com 20 atividades; um commit por aula.
+- ⬜ Pendente: aceite do usuário. Datas das aulas no banco (`data_planejada`) são provisórias
+  (sextas-feiras de 09/10 a 04/12/2026).

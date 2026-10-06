@@ -284,7 +284,7 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 26.3 | Ementa da matéria (seção VI, tamanho) + status das ementas | ✅ Concluído | 2026-10-06 10:22 | Seção VI com 10 aulas; 14.866 caracteres |
 | 26.4 | `materia.json` com as 10 aulas | ✅ Concluído | 2026-10-06 10:22 | 10 aulas, soma 63 h |
 | 26.5 | Aulas antigas movidas para `AULAS/LEGADO-16-AULAS/` | ✅ Concluído | 2026-10-06 10:22 | 17 arquivos em LEGADO-16-AULAS (git mv) |
-| 26.6 | 10 aulas em `REFORCO_LINGUAGENS/CONTEUDO/` com link dos slides | 🔄 Em progresso (01 e 02 prontas; as demais junto das atividades de cada aula) | — | — |
+| 26.6 | 10 aulas em `REFORCO_LINGUAGENS/CONTEUDO/` com link dos slides | ✅ Concluído | 2026-10-06 10:46 | 10 aulas em CONTEUDO (6 h × 7 + 7 h × 3 = 63 h), cada uma com link do slide e dinâmica |
 | 26.7 | `.gitignore` libera os PDFs de `AULAS-CHALKIE-AI/` | ✅ Concluído | 2026-10-06 10:22 | git check-ignore: PDFs liberados |
 | 26.8 | `STATUS-AULAS.md` e `STATUS-ATIVIDADES.md` com 10 aulas | ✅ Concluído | 2026-10-06 10:28 | Os dois arquivos reescritos com 10 aulas |
 | 26.9 | Aula 01: `Conteúdo-base` aponta para `AULAS-CHALKIE-AI/CONTEUDO` | ✅ Concluído | 2026-10-06 10:22 | Fontes e páginas da Aula 01 com Conteúdo-base e Slides novos |
@@ -297,7 +297,7 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 26.16 | Atividades Aula 08 | ✅ Concluído | 2026-10-06 10:42 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 74 (20 no gabarito) e 75 (5 tópicos, bloqueada) |
 | 26.17 | Atividades Aula 09 | ✅ Concluído | 2026-10-06 10:44 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 76 (20 no gabarito) e 77 (5 tópicos, bloqueada) |
 | 26.18 | Atividades Aula 10 | ✅ Concluído | 2026-10-06 10:46 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 78 (20 no gabarito) e 79 (5 tópicos, bloqueada) |
-| 26.19 | Índice da matéria | ⬜ Pendente | — | — |
+| 26.19 | Índice da matéria | ✅ Concluído | 2026-10-06 10:46 | Índice da matéria e do curso regerados só no Rio do Sul Mais Tech (21 páginas) |
 | 26.20 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Riscos
