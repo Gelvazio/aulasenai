@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 6, item 6.9 — o professor testar o menu 👥 Equipes da ITIC (turmas 135080/135081) e dar o aceite. Pendente anterior: Etapa 4, item 4.5.
+**Próximo passo:** Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -202,6 +202,24 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 17.2 | `relatorio-atividades-pagina.js`: contagem e conferência pela turma da aba | ✅ Concluído | 2026-10-05 13:37 | `node --check` |
 | 17.3 | Commit local | ✅ Concluído | 2026-10-05 13:37 | `git diff --cached --name-only` |
 | 17.4 | Aceite do usuário (bloquear uma atividade para uma turma e ver a média só dela mudar) | ⬜ Pendente | — | Sem navegador nesta sessão |
+
+## Etapa 18 — Vínculo curso × turma e alunos da turma na `turmas.html` (pedida em 2026-10-06; plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`, aguardando aprovação)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 18.1 | Conferir o banco real (turma.curso_id, RLS, grants) | ✅ Concluído | 2026-10-06 | Consultas de leitura no Supabase |
+| 18.2 | Plano em `docs/` e aprovação do usuário | 🔄 Em progresso | — | — |
+| 18.3 | SQL `definir_curso_turma` (aplicar só com pedido) | ⬜ Pendente | — | — |
+| 18.4 | Repositório + tela (seção Curso × Turma e alunos da turma) | ⬜ Pendente | — | — |
+| 18.5 | `database.md`, relatório, `CLAUDE.md`, commit | ⬜ Pendente | — | — |
+| 18.6 | Teste e aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 19 — Editar o card da aula com a data da aula (pedida em 2026-10-06; tarefa pequena, sem mudança no banco)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 19.1 | Conferir no banco onde gravar a data (`aulas.data_planejada`, RLS: só professor altera) | ✅ Concluído | 2026-10-06 | Consulta de leitura no Supabase |
+| 19.2 | Criar `assets/js/indice-aula-data.js` + `assets/css/indice-aula-data.css` (data no card + botão ✏️ Editar aula, só professor) e carregar pelo `atividades-crud-modal.js` | ✅ Concluído | 2026-10-06 | `node --check` OK; navegador não aberto (regra) |
+| 19.3 | Commit local | ✅ Concluído | 2026-10-06 | `git commit` |
+| 19.4 | Aceite do usuário (testar no navegador) | ⬜ Pendente | — | — |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |

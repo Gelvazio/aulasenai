@@ -397,6 +397,19 @@ function carregarMarcacaoFeitas() {
     scriptBloqueio.src = BASE_ASSETS_CRUD + 'js/indice-atividades-bloqueio.js';
     document.head.append(estilo, estiloBloquear, script, scriptBloqueio);
     carregarTurmaFavoritaIndice();
+    carregarDataAulasIndice();
+}
+
+/**
+ * Carrega a data da aula nos cards e o botão "Editar aula" (professor).
+ */
+function carregarDataAulasIndice() {
+    const estilo = criarElementoCrud('link');
+    estilo.rel = 'stylesheet';
+    estilo.href = BASE_ASSETS_CRUD + 'css/indice-aula-data.css';
+    const script = criarElementoCrud('script');
+    script.src = BASE_ASSETS_CRUD + 'js/indice-aula-data.js';
+    document.head.append(estilo, script);
 }
 
 /**
