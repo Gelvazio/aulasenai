@@ -6,6 +6,7 @@
 // Plano: docs/avaliacao-pratica-discursiva-itic.md
 // Gabarito (padrão de resposta): assets/js/liberacao-respostas-discursiva.js, carregado aqui —
 // professor libera por turma (só com todos entregues); aluno vê depois da liberação.
+// PDF no padrão SENAI: assets/js/exportar-pdf-discursiva.js (botão "📥 Exportar PDF"), carregado aqui.
 
 const ATRASO_GRAVACAO_MS = 1500;
 const SELETOR_CAMPO = '.topico-resposta__campo';
@@ -13,6 +14,7 @@ const SELETOR_BLOCO_TOPICO = '.topico-resposta';
 const ID_PAINEL = 'painel-discursivo';
 const ID_BOTAO_FINALIZAR = 'btnFinalizarDiscursiva';
 const ARQUIVO_LIBERACAO_DISCURSIVA = 'liberacao-respostas-discursiva.js';
+const ARQUIVO_PDF_DISCURSIVA = 'exportar-pdf-discursiva.js';
 const BASE_SCRIPTS_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const CLASSE_BLOCO = 'topico-resposta';
 const CLASSE_FALTANDO = 'topico-resposta--faltando';
@@ -268,6 +270,35 @@ function montarPainel(dados) {
 }
 
 /**
+ * Carrega um script de assets/js/ (ao lado deste).
+ * @param {string} arquivo - Nome do script.
+ * @returns {Promise<void>} Resolve quando carregou.
+ */
+function carregarModuloDiscursiva(arquivo) {
+    return new Promise((resolver, rejeitar) => {
+        const script = document.createElement('script');
+        script.src = BASE_SCRIPTS_DISCURSIVA + arquivo;
+        script.onload = () => resolver();
+        script.onerror = () => rejeitar(new Error('Não foi possível carregar ' + arquivo));
+        document.head.appendChild(script);
+    });
+}
+
+/**
+ * Coloca o botão "📥 Exportar PDF" (padrão SENAI). Uma falha aqui não atrapalha a avaliação.
+ */
+async function abrirExportacaoPdfDiscursiva() {
+    try {
+        if (typeof window.montarBarraPdfDiscursiva !== 'function') {
+            await carregarModuloDiscursiva(ARQUIVO_PDF_DISCURSIVA);
+        }
+        window.montarBarraPdfDiscursiva();
+    } catch (erro) {
+        console.warn('Exportar PDF:', erro.message);
+    }
+}
+
+/**
  * Carrega (uma vez) o módulo do gabarito da discursiva e monta a parte dele no painel.
  * Uma falha aqui não atrapalha a avaliação.
  * @param {HTMLElement} painel - Painel de identificação.
@@ -276,13 +307,7 @@ function montarPainel(dados) {
 async function abrirLiberacaoRespostas(painel, dados) {
     try {
         if (typeof window.montarLiberacaoRespostasDiscursiva !== 'function') {
-            await new Promise((resolver, rejeitar) => {
-                const script = document.createElement('script');
-                script.src = BASE_SCRIPTS_DISCURSIVA + ARQUIVO_LIBERACAO_DISCURSIVA;
-                script.onload = () => resolver();
-                script.onerror = () => rejeitar(new Error('módulo do gabarito indisponível'));
-                document.head.appendChild(script);
-            });
+            await carregarModuloDiscursiva(ARQUIVO_LIBERACAO_DISCURSIVA);
         }
         await window.montarLiberacaoRespostasDiscursiva(painel, dados);
     } catch (erro) {
@@ -500,3 +525,4 @@ async function iniciarAvaliacaoDiscursiva() {
 }
 
 document.addEventListener('DOMContentLoaded', iniciarAvaliacaoDiscursiva);
+document.addEventListener('DOMContentLoaded', abrirExportacaoPdfDiscursiva);

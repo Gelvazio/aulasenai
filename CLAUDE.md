@@ -7,6 +7,7 @@
 | Versão (data e hora) | O que mudou |
 |---|---|
 | 2026-10-06 19:45 | Modal "✏️ Editar aula" também troca o **nome do card** (coluna `aulas.nome_card`; vazio = título do HTML), além da data |
+| 2026-10-06 19:45 | Botão "📥 Exportar PDF" no padrão SENAI em todas as atividades e avaliações discursivas |
 | 2026-10-06 19:30 | O link "🧾 LOG" fica bloqueado junto com a atividade bloqueada |
 | 2026-10-06 19:15 | Link "🧾 LOG" nos cards do índice (professor): modal com a lista de alunos e o log das alternativas do aluno escolhido |
 | 2026-10-06 18:50 | Tabela "Notas dos alunos" com Exportar PDF em **todas** as atividades de todas as matérias (padrão ligado; `data-tabela-notas="nao"` desliga numa página) |
@@ -1427,6 +1428,13 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   (tela) + `assets/css/avaliacao-discursiva.css`. Gravação automática 1,5 s após parar de digitar,
   sem localStorage; "Finalizar" relê o banco e lista os tópicos faltando. Valem login, horário da
   turma, bloqueio pelo professor e recuperação (a nova tentativa abre em branco).
+- ✅ **Exportar PDF no padrão SENAI (2026-10-06, pedido do usuário):** toda página discursiva
+  tem a barra com **"📥 Exportar PDF"** (+ lista "Turma" do professor), com o mesmo cabeçalho SENAI
+  das objetivas (ATIVIDADE AVALIATIVA, Desempenho, Data, Docente, UC, Turma, Estudante), quadro
+  CAPACIDADES, uma tabela por questão (capacidade, contexto, comando, tópicos com pontos e o
+  espaço da resposta — a resposta já digitada pelo aluno logado entra no PDF) e "Página X de Y".
+  Nunca leva o padrão de resposta. Código: `assets/js/exportar-pdf-discursiva.js`, carregado pelo
+  `avaliacao-discursiva.js` (vale para todas as discursivas, sem regerar páginas).
 - ✅ **Correção (2026-10-06)**, plano `docs/media-final-notas-do-aluno.md`, SQL
   `database/2026-10-06-notas-media-final-correcao-discursiva.sql` (aplicado):
   - tabela **`correcao_discursiva`**: nota de cada tópico por aluno e tentativa; `nota_ia` é só

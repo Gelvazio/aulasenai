@@ -524,3 +524,9 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 | 47.2 | `assets/js/indice-aula-data.js`: campo "Nome do card" no modal, grava junto com a data e mostra o nome no `h2` do card (vazio = título do HTML) | ✅ Concluído | 2026-10-06 | `node --check`; teste no navegador com o usuário |
 | 47.3 | Documentação (`CLAUDE.md`, `database.md`, relatório HTML) | ✅ Concluído | 2026-10-06 | Leitura |
 | 47.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 47 — Exportar PDF no padrão SENAI nas discursivas (tarefa pequena, 2026-10-06)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 47.1 | `assets/js/exportar-pdf-discursiva.js` (carregado pelo `avaliacao-discursiva.js`): barra com "📥 Exportar PDF" + lista "Turma"; PDF com cabeçalho SENAI, capacidades, questões, tópicos e espaço de resposta; vale para todas as discursivas (ex.: Prova Prática 06-10-2026) | ✅ Concluído | 2026-10-06 | `node --check`; teste no navegador com o usuário |
+| 47.2 | Aceite do usuário | ⬜ Pendente | — | — |
