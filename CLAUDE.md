@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 20:00
+**Versão das regras:** 2026-10-06 20:15
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 20:15 | Regra "CADA CARD LIGADO A APENAS 1 AULA": uma aula nunca é dividida entre cards do índice (aula 40 de Análise de Dados corrigida: fica só com o card da atividade 82) |
 | 2026-10-06 20:00 | Modal "✏️ Editar aula" também troca o **rótulo do card** ("AULA 01", coluna `aulas.rotulo_card`) |
 | 2026-10-06 19:45 | Modal "✏️ Editar aula" também troca o **nome do card** (coluna `aulas.nome_card`; vazio = título do HTML), além da data |
 | 2026-10-06 19:45 | Botão "📥 Exportar PDF" no padrão SENAI em todas as atividades e avaliações discursivas |
@@ -1619,6 +1620,28 @@ SQL: `database/2026-10-06-aulas-excluido.sql` (✅ aplicado no Supabase em 2026-
   caracteres; SQL `database/2026-10-06-aulas-nome-card.sql`, ✅ aplicado); o título (`h2`) do card
   mostra esse nome para todos. Campo vazio ou igual ao título do HTML grava `null` = volta ao
   título escrito no índice.
+
+### 🔗 REGRA CRÍTICA — CADA CARD LIGADO A APENAS 1 AULA
+
+Registrada em 2026-10-06 a pedido do usuário. SQL da correção:
+`database/2026-10-06-um-card-uma-aula-aula-40.sql` (✅ aplicado).
+
+- ✅ **Cada card do índice de atividades (`article.aula`) fica ligado a uma única aula** (linha de
+  `aulas`), e **uma aula nunca é dividida entre dois ou mais cards**. A aula do card é a da
+  atividade do link principal; rótulo, nome, data e exclusão gravados na aula valem para o card
+  dela, então aula compartilhada faz a edição de um card mudar os outros.
+- ✅ As várias atividades **do mesmo card** (ex.: objetiva + prática da mesma aula) continuam na
+  mesma aula; atividade em **card próprio** (avaliação, prova, trabalho, discursiva em card
+  separado) precisa de **aula própria**.
+- ✅ Atividade nova em card novo: criar a aula dela antes (`CADASTRAR ATIVIDADES` ou seed) — nunca
+  reaproveitar a aula de outro card.
+- ✅ O modal "✏️ Editar aula" avisa quando a aula do card também está ligada a outros cards da
+  página (`montarAvisoAulaCompartilhada` em `assets/js/indice-aula-data.js`).
+- ✅ Corrigido em 2026-10-06: aula 40 (Análise de Dados) fica só com o card da atividade 82 (Prova
+  Prática); a 33 (card AULA 07) foi para a aula 67 e a 35 (AVALIACAO OBJETIVA 02) para a 68.
+- ⏳ Ainda compartilhadas (corrigir quando o usuário liberar): ITIC aulas 25, 27 e 30; Análise de
+  Dados 37, 38 e 39; Automação 45; Reforço de Linguagens 57 a 66 (objetiva e discursiva da mesma
+  aula em cards separados); e o card AULA 03 da ITIC liga atividades das aulas 23 e 31.
 
 ## 📌 REGRA — PENDÊNCIAS DE AULAS (MENU PENDÊNCIAS, SÓ PROFESSOR ADMINISTRADOR)
 

@@ -26,6 +26,8 @@ const TEXTO_SEM_DATA_AULA = '📅 Data da aula: não informada';
 const TEXTO_AULA_SEM_CADASTRO = '📅 Aula não cadastrada no banco (use CADASTRAR ATIVIDADES)';
 const MSG_DATA_AULA_GRAVADA = '✅ Aula gravada (rótulo, nome do card e data).';
 const MSG_DATA_AULA_ERRO = '❌ Não foi possível gravar. Confira o login de professor e o banco.';
+const MSG_AULA_COMPARTILHADA = '⚠️ Esta aula também está ligada a outro(s) card(s) — cada card ' +
+    'deve ter a sua aula (CADASTRAR ATIVIDADES); salvar muda todos: ';
 const RPC_EXCLUIR_AULA = 'excluir_aula';
 const RPC_ADMINISTRADOR_AULA = 'eh_professor_administrador';
 const CLASSE_CARD_AULA_EXCLUIDA = 'aula--excluida';
@@ -285,9 +287,24 @@ function abrirModalDataAula(item) {
     elementosDataAula.campoRotulo.value = aula.rotulo_card || item.rotuloOriginal;
     elementosDataAula.campoNome.value = aula.nome_card || item.tituloOriginal;
     elementosDataAula.campoData.value = aula.data_planejada || '';
-    mostrarMensagemDataAula('');
+    mostrarMensagemDataAula(montarAvisoAulaCompartilhada(item), true);
     elementosDataAula.fundo.hidden = false;
     elementosDataAula.campoRotulo.focus();
+}
+
+/**
+ * Monta o aviso para quando a aula do card também está ligada a outros cards da página
+ * (regra: cada card ligado a apenas 1 aula; a edição mudaria todos eles).
+ * @param {{aula: Object, card: HTMLElement}} item - Card em edição.
+ * @returns {string} Aviso ou texto vazio.
+ */
+function montarAvisoAulaCompartilhada(item) {
+    const outros = estadoDataAula.cards.filter((outro) =>
+        outro !== item && outro.aula?.id === item.aula.id);
+    if (!outros.length) return '';
+
+    const nomes = outros.map((outro) => outro.rotuloOriginal + ' — ' + outro.tituloOriginal);
+    return MSG_AULA_COMPARTILHADA + nomes.join('; ') + '.';
 }
 
 /**
