@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.6 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
+**Próximo passo:** Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -362,7 +362,8 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 | 27.3 | Item no `MENU-ATIVIDADES.js`, `STATUS-ATIVIDADES.md` e seed (`database/2026-10-06-atividade-individual-comunicacao-seed-atividades.sql`, fora do Git) | ✅ Concluído | 2026-10-06 | `node` leu o menu; seed com 40 linhas de gabarito |
 | 27.4 | Aplicar o seed no Supabase (sem ele a marcação das respostas fica bloqueada) | ✅ Concluído | 2026-10-06 | Atividade id 80 (aula 27), ativa e liberada para todas as turmas; 40 itens no gabarito (10 de cada letra) |
 | 27.5 | Bloquear para a turma da manhã (135080) pela função `definir_bloqueio_turma`, como o Professor Administrador | ✅ Concluído | 2026-10-06 | `atividade.bloqueio` = ["135080"], `ativo` = true |
-| 27.6 | Aceite do usuário | ⬜ Pendente | — | — |
+| 27.6 | Card da atividade no índice de atividades da ITIC (`ATIVIDADES/index.html`, feito à mão) | ✅ Concluído | 2026-10-06 | Card após o trabalho v2; só o link `.html` da atividade (o bloqueio por turma acha o card) |
+| 27.7 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Etapa 28 — Quadro de respostas no início da atividade e na exportação (pedida em 2026-10-06; plano `docs/quadro-respostas-atividade.md`)
 
