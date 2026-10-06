@@ -7,6 +7,8 @@ Uso (na raiz do projeto):
 Fonte: <pasta>/CONTEUDO/AVALIACAO-PRATICA.md (questões com Contexto, Comando e Tópicos) e,
 se existir, <pasta>/CONTEUDO/AVALIACAO-PRATICA-GABARITO.md (padrão de resposta, fora do Git).
 Saídas: <pasta>/AVALIACAO-PRATICA.html e database/<data>-<nome>-seed-atividades.sql (fora do Git).
+Campos opcionais no cabeçalho da fonte: "- **Pontos por questão:** 0,5" (padrão 1) e
+"- **Página:** NOME.html" (padrão: mesmo nome da fonte).
 Plano: docs/avaliacao-pratica-discursiva-itic.md
 """
 import html
@@ -35,7 +37,9 @@ FONTE_PADRAO = "AVALIACAO-PRATICA.md"
 SUFIXO_GABARITO = "-GABARITO.md"
 PASTA_SQL = RAIZ / "database"
 MAXIMO_CARACTERES = 3000
-PONTOS_POR_QUESTAO = 1.0
+PONTOS_POR_QUESTAO_PADRAO = 1.0
+CAMPO_PONTOS_POR_QUESTAO = "Pontos por questão"
+CAMPO_PAGINA = "Página"
 TOLERANCIA_PONTOS = 0.001
 SEPARADOR_ITEM = re.compile(r"^## ITEM\s+", re.MULTILINE)
 PADRAO_META = re.compile(r"^- \*\*(.+?):\*\*\s*(.+)$", re.MULTILINE)
@@ -164,12 +168,28 @@ def ler_item(bloco):
     }
 
 
-def validar_itens(itens, total_esperado):
+def ler_pontos_por_questao(meta):
+    """Lê o valor de cada questão (campo opcional "Pontos por questão"; padrão 1).
+
+    Args:
+        meta: Metadados da fonte.
+
+    Returns:
+        Pontos que os tópicos de cada questão devem somar.
+    """
+    valor = meta.get(CAMPO_PONTOS_POR_QUESTAO)
+    if not valor:
+        return PONTOS_POR_QUESTAO_PADRAO
+    return float(valor.replace(",", "."))
+
+
+def validar_itens(itens, total_esperado, pontos_por_questao):
     """Confere quantidade, numeração, seções e soma dos pontos de cada item.
 
     Args:
         itens: Itens lidos da fonte.
         total_esperado: Total de questões declarado no cabeçalho.
+        pontos_por_questao: Valor que os tópicos de cada questão devem somar.
 
     Raises:
         ValueError: Na primeira inconsistência encontrada.
@@ -183,8 +203,8 @@ def validar_itens(itens, total_esperado):
         if not (item["contexto"] and item["comando"] and item["topicos"]):
             raise ValueError(f"{rotulo}: falta Contexto, Comando ou Tópicos.")
         soma = sum(topico["pontos"] for topico in item["topicos"])
-        if abs(soma - PONTOS_POR_QUESTAO) > TOLERANCIA_PONTOS:
-            raise ValueError(f"{rotulo}: tópicos somam {soma} (esperado {PONTOS_POR_QUESTAO}).")
+        if abs(soma - pontos_por_questao) > TOLERANCIA_PONTOS:
+            raise ValueError(f"{rotulo}: tópicos somam {soma:g} (esperado {pontos_por_questao:g}).")
 
 
 def ler_fonte(caminho_md):
@@ -200,7 +220,7 @@ def ler_fonte(caminho_md):
     meta = ler_metadados(texto)
     blocos = SEPARADOR_ITEM.split(texto)[1:]
     itens = [ler_item(bloco) for bloco in blocos]
-    validar_itens(itens, int(meta["Total de questões"]))
+    validar_itens(itens, int(meta["Total de questões"]), ler_pontos_por_questao(meta))
     return meta, ler_orientacoes(texto), itens
 
 
@@ -448,7 +468,7 @@ def gerar_pagina(pasta, caminho_md, meta, orientacoes, itens):
         pagina = pagina.replace(chave, valor)
     if "{{" in pagina:
         raise ValueError("Placeholder não substituído no template.")
-    saida = pasta / (caminho_md.stem + ".html")
+    saida = pasta / meta.get(CAMPO_PAGINA, caminho_md.stem + ".html")
     saida.write_text(inserir_header_em_html(pagina, pasta), encoding="utf-8")
     return saida
 

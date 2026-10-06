@@ -30,5 +30,5 @@
 | `AVALIACAO-MEDIA-FINAL.html` | discursiva/prática/composição | ⬜ sem cadastro |
 | `AVALIACAO-OBJETIVA-01.html` | 60 questões objetivas | ✅ liberada |
 | `AVALIACAO-OBJETIVA-02.html` | 60 questões objetivas | ✅ bloqueada |
-| `PROVA-PRATICA.html` | discursiva/prática/composição | ✅ bloqueada |
-| `PROVA-PRATICA-06-10-2026.html` | 10 discursivas (30 tópicos), Aulas 01 a 05, fora da média final | ✅ bloqueada |
+| ~~`PROVA-PRATICA.html`~~ | excluída em 2026-10-06 (id 37; questões unidas na id 82) | ⛔ removida |
+| `PROVA-PRATICA-06-10-2026.html` | 20 discursivas (60 tópicos, 0,5 cada), Aulas 01 a 07, **Avaliação Prática da média final**; fonte `CONTEUDO/PROVA-PRATICA-ADAG-SALETE.md` | ✅ bloqueada |

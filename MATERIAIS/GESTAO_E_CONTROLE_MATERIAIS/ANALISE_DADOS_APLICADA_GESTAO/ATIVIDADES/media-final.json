@@ -77,10 +77,10 @@
       "itens": [
         {
           "nome": "Avaliação Prática",
-          "conteudo": "Discursiva — Aulas 01 a 05 (10 questões)",
+          "conteudo": "Discursiva — Aulas 01 a 07 (20 questões)",
           "pontos": 30,
           "peso": "30%",
-          "pagina": "PROVA-PRATICA.html"
+          "pagina": "PROVA-PRATICA-06-10-2026.html"
         }
       ],
       "sem_subtotal": true
@@ -90,7 +90,7 @@
     "Cada instrumento tem nota de 0 a 10, convertida para os pontos dele. Exemplo: nota 8 na Avaliação Objetiva (30 pontos) = 24 pontos.",
     "Na prova objetiva vale a melhor nota entre a avaliação e as recuperações.",
     "As atividades das Aulas 01, 02, 03, 06 e 07 valem nota 10 para todos os alunos da turma AI SALETE (133933).",
-    "A avaliação prática é a avaliação discursiva das aulas 01 a 05 (10 questões, corrigida pelo professor).",
+    "A avaliação prática é a Prova Prática 06-10-2026: discursiva das aulas 01 a 07 (20 questões, 0,5 ponto cada; correção sugerida pela IA e confirmada pelo professor).",
     "Atividade ou prova não feita vale 0 ponto.",
     "**Peso no sistema:** soma das 7 atividades em sala 40% (lançar a média delas, de 0 a 10, mostrada no subtotal), Avaliação Objetiva 30% e Avaliação Prática 30%. Nota final = soma de cada nota × peso.",
     "**Aprovação: 70 pontos ou mais** (equivale à nota mínima 7)."
