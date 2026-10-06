@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
+**Próximo passo:** Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -227,6 +227,13 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 20.1 | Acrescentar a aluna (nº 12, `bianca.pamela@senai.local`, senha inicial gerada) em `scripts/LISTA-PRESENCA-CEPLAS-MANHA.js` (fora do Git, LGPD) | ✅ Concluído | 2026-10-06 | `node --check` OK; e-mail sem repetição nas listas |
 | 20.2 | Criar a conta no Supabase Auth pela página `scripts/criarUsuariosBancoDados.html` | ⬜ Pendente | — | Feito pelo professor na página local |
 | 20.3 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 21 — Filtro "Só alunos da turma selecionada acima" na `alunos.html` (pedida em 2026-10-06; tarefa pequena)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 21.1 | Caixa de marcar na tabela "Alunos por turma" que filtra pela turma escolhida no formulário (`alunos.html`, `assets/js/turmas-aluno-pagina.js`, `assets/css/turmas-aluno.css`) | ✅ Concluído | 2026-10-06 | `node --check` OK; navegador não aberto (regra) |
+| 21.2 | Commit local | ✅ Concluído | 2026-10-06 | `git commit` |
+| 21.3 | Aceite do usuário (testar no navegador) | ⬜ Pendente | — | — |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |

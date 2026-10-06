@@ -21,3 +21,13 @@
 .ta-botao-confirmar {
     white-space: nowrap;
 }
+
+/* Filtro "Só alunos da turma selecionada acima" (segue a turma do formulário) */
+.ta-filtro-acima {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    align-self: flex-end;
+    font-weight: 600;
+    cursor: pointer;
+}

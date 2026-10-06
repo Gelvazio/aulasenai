@@ -205,13 +205,35 @@ function sugestaoVisivelTa(sugestao, filtro, busca) {
 }
 
 /**
+ * Código da turma usado no filtro da tabela: com "Só alunos da turma selecionada acima"
+ * ligado, vale a turma do formulário; senão, a lista "Filtrar por turma".
+ * @returns {string} Código da turma ("" = todas).
+ */
+function obterFiltroTurmaTa() {
+  const seguirTurmaAcima = elementoTa("taFiltroTurmaAcima").checked;
+  if (seguirTurmaAcima) return elementoTa("taTurma").value;
+  return elementoTa("taFiltroTurma").value;
+}
+
+/** Liga/desliga o filtro pela turma do formulário e redesenha a tabela. */
+function alternarFiltroTurmaAcimaTa() {
+  elementoTa("taFiltroTurma").disabled = elementoTa("taFiltroTurmaAcima").checked;
+  desenharVinculosTa();
+}
+
+/** Redesenha a tabela quando a turma do formulário muda e o filtro por ela está ligado. */
+function aoMudarTurmaFormularioTa() {
+  if (elementoTa("taFiltroTurmaAcima").checked) desenharVinculosTa();
+}
+
+/**
  * Monta as linhas visíveis: vínculos (Turma OK = Sim) e alunos sem turma (Turma OK = Não),
  * conforme os filtros de turma, Turma OK e busca, ordenadas pela turma.
  * @returns {{linhas: {turma: string, criar: Function}[], sim: number, nao: number}} Linhas
  *   e as quantidades visíveis de cada situação.
  */
 function montarLinhasVisiveisTa() {
-  const filtro = elementoTa("taFiltroTurma").value;
+  const filtro = obterFiltroTurmaTa();
   const turmaOk = elementoTa("taFiltroTurmaOk").value;
   const busca = elementoTa("taBusca").value.trim().toLowerCase();
   const vinculos = turmaOk === FILTRO_TURMA_OK_NAO_TA ? []
@@ -370,6 +392,8 @@ function ligarEventosTa() {
   elementoTa("taFormulario").addEventListener("submit", salvarVinculoTa);
   elementoTa("taCancelar").addEventListener("click", limparFormularioTa);
   elementoTa("taFiltroTurma").addEventListener("change", desenharVinculosTa);
+  elementoTa("taFiltroTurmaAcima").addEventListener("change", alternarFiltroTurmaAcimaTa);
+  elementoTa("taTurma").addEventListener("change", aoMudarTurmaFormularioTa);
   elementoTa("taFiltroTurmaOk").addEventListener("change", desenharVinculosTa);
   elementoTa("taBusca").addEventListener("input", desenharVinculosTa);
 }
