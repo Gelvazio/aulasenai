@@ -383,3 +383,10 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 | 29.3 | Card no índice da ITIC e item no `MENU-ATIVIDADES.js` | ✅ Concluído | 2026-10-06 | `node` leu o menu |
 | 29.4 | Seed aplicado no Supabase e liberação só para a tarde (135081) pela função `definir_bloqueio_turma` — também na objetiva (id 80) | ✅ Concluído | 2026-10-06 | id 81: 20 tópicos, `bloqueio` = todas as turmas exceto 135081; id 80 igual |
 | 29.5 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 30 — Curso de Gestão de Materiais no índice de cursos (tarefa pequena, 2026-10-06)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 30.1 | Rota do curso "Assistente em Processos de Gestão e Controle de Materiais" (nome no banco, id 7) para `MATERIAIS/GESTAO_E_CONTROLE_MATERIAIS/` no `index.html` da raiz | ✅ Concluído | 2026-10-06 | Banco: turma 133933 → curso 7, vinculada ao professor |
+| 30.2 | `index.html` da raiz restaurado (o gerador de índices o tinha trocado pela versão estática) e gerador corrigido para nunca sobrescrevê-lo | ✅ Concluído | 2026-10-06 | `py_compile` ok |
+| 30.3 | Aceite do usuário | ⬜ Pendente | — | — |

@@ -316,7 +316,8 @@ def gerar_indice_raiz(pastas_forcadas):
         "rodape": TITULO_SITE,
     })
     caminho_raiz = RAIZ_PROJETO / NOME_INDICE
-    situacoes.append((gravar_indice(caminho_raiz, pagina, forcar=True), caminho_raiz))
+    # O index.html da raiz lista os cursos do banco (cursos_do_usuario): nunca sobrescrever.
+    situacoes.append((gravar_indice(caminho_raiz, pagina), caminho_raiz))
     return situacoes
 
 
