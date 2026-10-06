@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 19:00
+**Versão das regras:** 2026-10-06 19:15
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 19:15 | Link "🧾 LOG" nos cards do índice (professor): modal com a lista de alunos e o log das alternativas do aluno escolhido |
 | 2026-10-06 18:50 | Tabela "Notas dos alunos" com Exportar PDF em **todas** as atividades de todas as matérias (padrão ligado; `data-tabela-notas="nao"` desliga numa página) |
 | 2026-10-06 19:00 | Log de gravação das alternativas (`log_resposta_atividade`, gatilho no banco, só registros novos) |
 | 2026-10-06 18:45 | Removido o botão "📥 Exportar PDF com gabarito" de todas as páginas e do gerador de atividades |
@@ -1349,7 +1350,13 @@ Consulte docs/database.md
 Toda alternativa **marcada, trocada ou apagada** em `resposta_atividade` gera uma linha em
 **`log_resposta_atividade`** (letra anterior, letra nova, operação, data e hora), pelo gatilho
 `resposta_atividade_log_trg`. **Grava só os registros novos** (desde 2026-10-06; as respostas
-antigas não entram no log). Só o professor lê (alunos das turmas dele); ninguém grava pela API. ❌ Não
+antigas não entram no log). Só o professor lê (alunos das turmas dele); ninguém grava pela API.
+**Tela (2026-10-06):** no índice de atividades, ao lado do link de cada atividade cadastrada, o
+professor tem o link pequeno **"🧾 LOG"**, que abre um modal com a lista de alunos (com a
+quantidade de registros de cada um) e mostra o log do aluno escolhido (data e hora, tentativa,
+questão, operação, de → para). Código: `assets/js/indice-log-alternativas.js` +
+`assets/css/indice-log-alternativas.css`, carregados pelo `atividades-crud-modal.js` (todos os
+índices). É botão, não link, para continuar clicável no card bloqueado. ❌ Não
 desligar o gatilho nem apagar o log. SQL: `database/2026-10-06-log-resposta-atividade.sql`;
 plano: `docs/log-resposta-atividade.md`.
 

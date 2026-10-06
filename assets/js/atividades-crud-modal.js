@@ -454,6 +454,19 @@ function carregarMarcacaoFeitas() {
     document.head.append(estilo, estiloBloquear, script, scriptBloqueio);
     carregarTurmaFavoritaIndice();
     carregarDataAulasIndice();
+    carregarLogAlternativasIndice();
+}
+
+/**
+ * Carrega o link "🧾 LOG" dos cards (professor): log das alternativas marcadas pelos alunos.
+ */
+function carregarLogAlternativasIndice() {
+    const estilo = criarElementoCrud('link');
+    estilo.rel = 'stylesheet';
+    estilo.href = BASE_ASSETS_CRUD + 'css/indice-log-alternativas.css';
+    const script = criarElementoCrud('script');
+    script.src = BASE_ASSETS_CRUD + 'js/indice-log-alternativas.js';
+    document.head.append(estilo, script);
 }
 
 /**

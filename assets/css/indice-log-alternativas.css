@@ -1,0 +1,126 @@
+/* Link "🧾 LOG" dos cards do índice e modal do log das alternativas (indice-log-alternativas.js). */
+:root {
+    --log-azul: #004384;
+    --log-fundo: #ffffff;
+    --log-texto: #1a202c;
+    --log-borda: #cbd5e0;
+    --log-cinza: #f1f5f9;
+    --log-erro: #c53030;
+    --log-veu: rgba(0, 0, 0, 0.55);
+}
+
+.log-alternativas__link {
+    position: relative;
+    z-index: 3;
+    padding: 2px 8px;
+    border: 1px solid var(--log-borda);
+    border-radius: 10px;
+    background: var(--log-fundo);
+    color: var(--log-azul);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.6;
+    cursor: pointer;
+}
+
+.log-alternativas__link:hover {
+    border-color: var(--log-azul);
+}
+
+.log-alternativas__fundo {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: var(--log-veu);
+}
+
+.log-alternativas__fundo[hidden] {
+    display: none;
+}
+
+.log-alternativas__caixa {
+    width: min(900px, 100%);
+    max-height: 90vh;
+    overflow: auto;
+    padding: 18px;
+    border-radius: 10px;
+    background: var(--log-fundo);
+    color: var(--log-texto);
+}
+
+.log-alternativas__cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.log-alternativas__titulo {
+    margin: 0;
+    font-size: 17px;
+    color: var(--log-azul);
+}
+
+.log-alternativas__fechar {
+    padding: 5px 12px;
+    border: 1px solid var(--log-borda);
+    border-radius: 6px;
+    background: var(--log-fundo);
+    cursor: pointer;
+}
+
+.log-alternativas__rotulo {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.log-alternativas__lista {
+    max-width: 100%;
+    padding: 6px 8px;
+    font-size: 14px;
+}
+
+.log-alternativas__tabela {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.log-alternativas__tabela th,
+.log-alternativas__tabela td {
+    padding: 6px 8px;
+    border: 1px solid var(--log-borda);
+    text-align: left;
+}
+
+.log-alternativas__tabela th {
+    background: var(--log-cinza);
+}
+
+.log-alternativas__aviso {
+    margin: 8px 0;
+}
+
+.log-alternativas__erro {
+    margin: 8px 0;
+    color: var(--log-erro);
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .log-alternativas__caixa {
+        max-height: 100vh;
+        padding: 12px;
+    }
+
+    .log-alternativas__lista {
+        width: 100%;
+        font-size: 16px;
+    }
+}
