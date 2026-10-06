@@ -72,7 +72,7 @@ matéria"; "na pasta ATIVIDADES, crie atividades apenas a partir da aula 02, poi
 | 11 | Atividades da Aula 03 | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:31 | — |
 | 12 | Atividades da Aula 04 | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:33 | — |
 | 13 | Atividades da Aula 05 | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:35 | — |
-| 14 | Atividades da Aula 06 | ⬜ Pendente | 2026-10-06 10:16 | — | — |
+| 14 | Atividades da Aula 06 | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:37 | — |
 | 15 | Atividades da Aula 07 | ⬜ Pendente | 2026-10-06 10:16 | — | — |
 | 16 | Atividades da Aula 08 | ⬜ Pendente | 2026-10-06 10:16 | — | — |
 | 17 | Atividades da Aula 09 | ⬜ Pendente | 2026-10-06 10:16 | — | — |
