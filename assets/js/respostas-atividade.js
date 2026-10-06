@@ -374,7 +374,7 @@ function destacarPendentes(estado, pendentes) {
 function montarMensagemPendencias(pendentes) {
     const numeros = pendentes.map((item) => item.numero).join(', ');
     return ['Atenção! A atividade ainda não está completa.', '',
-        '• ' + pendentes.length + ' questão(ões) sem resposta: ' + numeros + '.', '',
+        '• ' + pendentes.length + ' questão(ões) sem alternativa marcada:', numeros + '.', '',
         'As questões pendentes foram destacadas em vermelho.'].join('\n');
 }
 

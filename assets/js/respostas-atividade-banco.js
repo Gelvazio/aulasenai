@@ -24,6 +24,9 @@ const MSG_LEITURA_LIVRE = 'Você pode ler a atividade à vontade. ' +
     'Para marcar as respostas, entre com o seu usuário.';
 const MSG_ERRO_ENTREGA = 'Não foi possível registrar a entrega. Confira se todas as questões ' +
     'estão respondidas e tente de novo.';
+const MSG_ENTREGA_INCOMPLETA = 'Atenção! A atividade ainda não está completa no banco.';
+const MSG_ORIENTACAO_FALTANDO = 'Marque essas questões, espere o aviso "Resposta gravada" e ' +
+    'finalize de novo.';
 
 /**
  * Formata o número do item como aparece na página (ex.: 1 → "01").
@@ -239,6 +242,41 @@ async function carregarDoBanco(sessao) {
 }
 
 /**
+ * Lista os itens da tentativa que ainda não têm alternativa gravada no banco.
+ * @param {Object} sessao - Sessão do provedor (atividade, tentativa).
+ * @returns {Promise<string[]>} Números dos itens faltando (ex.: ["05", "12"]).
+ */
+async function listarItensNaoGravados(sessao) {
+    const filtro = 'atividade_id=eq.' + sessao.atividade.id + '&tentativa=eq.' + sessao.tentativa;
+    const linhas = await sbGet('resposta_atividade', 'select=item&' + filtro);
+    const gravados = new Set(linhas.map((linha) => Number(linha.item)));
+    const faltando = [];
+    for (let item = 1; item <= Number(sessao.atividade.total_itens || 0); item++) {
+        if (!gravados.has(item)) faltando.push(formatarNumeroItem(item));
+    }
+    return faltando;
+}
+
+/**
+ * Explica por que o banco recusou a entrega: fora do horário ou as questões que faltam.
+ * @param {Object} sessao - Sessão do provedor.
+ * @returns {Promise<string>} Mensagem para o aluno.
+ */
+async function explicarFalhaEntrega(sessao) {
+    const foraDoHorario = await explicarForaDoHorario();
+    if (foraDoHorario) return foraDoHorario;
+    try {
+        const faltando = await listarItensNaoGravados(sessao);
+        if (!faltando.length) return MSG_ERRO_ENTREGA;
+        return [MSG_ENTREGA_INCOMPLETA, '',
+            '• ' + faltando.length + ' questão(ões) sem alternativa gravada:',
+            faltando.join(', ') + '.', '', MSG_ORIENTACAO_FALTANDO].join('\n');
+    } catch (erro) {
+        return MSG_ERRO_ENTREGA;
+    }
+}
+
+/**
  * Cria o provedor de respostas no banco (mesma interface do provedor local).
  * @returns {Object} Provedor usado por respostas-atividade.js.
  */
@@ -292,7 +330,7 @@ function criarProvedorRespostasBanco() {
                 return { entregueEm: new Date().toISOString(), tentativa: sessao.tentativa,
                     resultado };
             }
-            if (!resposta.ok) throw new Error(await explicarForaDoHorario() || MSG_ERRO_ENTREGA);
+            if (!resposta.ok) throw new Error(await explicarFalhaEntrega(sessao));
             const [entrega] = await resposta.json();
             const resultado = await lerResultadoDaTentativa(sessao.atividade.id, sessao.tentativa);
             return { entregueEm: entrega?.entregue_em, tentativa: sessao.tentativa, resultado };

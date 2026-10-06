@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
+**Próximo passo:** Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -250,6 +250,13 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 22.2 | `assets/js/indice-aula-data.js`: falha na checagem de professor não esconde mais as datas; card sem atividade legível busca a aula pelo número ("AULA NN") na mesma matéria | ✅ Concluído | 2026-10-06 | `node --check` OK; navegador não aberto (regra) |
 | 22.3 | Commit local | ✅ Concluído | 2026-10-06 | `git commit` |
 | 22.4 | Aceite do usuário (testar logado como aluno) | ⬜ Pendente | — | — |
+
+## Etapa 23 — Mostrar as questões que faltam quando a atividade não está completa (pedida em 2026-10-06; tarefa pequena)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 23.1 | Recusa da entrega pelo banco passa a listar as questões sem alternativa gravada (1..`total_itens` × `resposta_atividade` da tentativa) em vez da mensagem genérica; aviso da página com a lista em linha própria (`assets/js/respostas-atividade-banco.js`, `assets/js/respostas-atividade.js`) | ✅ Concluído | 2026-10-06 | `node --check` OK; navegador não aberto (regra) |
+| 23.2 | Commit local | ✅ Concluído | 2026-10-06 | `git commit` |
+| 23.3 | Aceite do usuário (testar no navegador) | ⬜ Pendente | — | — |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
