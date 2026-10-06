@@ -10,7 +10,7 @@ cadastradas no banco). **Aulas encontradas:** 16 em `AULAS/`.
 
 | Aula | Tema | Aula (fonte) | Página HTML da aula | Atividade 50 questões | Prática | Banco |
 |---|---|---|---|---|---|---|
-| 01 | Leitura e Compreensão Textual Básica | ✅ `AULAS/AULA-01.md` | ✅ | ⬜ | ⛔ | ⬜ |
+| 01 | Leitura e Compreensão Textual Básica | ✅ `AULAS/AULA-01.md` | ✅ | ✅ 20 objetivas + 5 discursivas (regra exclusiva) | ⛔ | ⬜ seeds gerados |
 | 02 | Análise de Tema e Ideia Principal | ✅ `AULAS/AULA-02.md` | ⬜ | ⬜ | ⛔ | ⬜ |
 | 03 | Intenção Comunicativa e Análise Crítica | ✅ `AULAS/AULA-03.md` | ⬜ | ⬜ | ⛔ | ⬜ |
 | 04 | Coesão e Coerência Textual | ✅ `AULAS/AULA-04.md` | ⬜ | ⬜ | ⛔ | ⬜ |

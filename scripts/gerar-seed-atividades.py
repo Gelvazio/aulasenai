@@ -114,12 +114,22 @@ ATIVIDADES_AUTOMACAO = [
      f"{PASTA_AUTOMACAO}/ATIVIDADES-AULA-14-50-QUESTOES.md"),
 ]
 
+PASTA_REFORCO_LINGUAGENS = "MATERIAIS/RIO_DO_SUL_MAIS_TECH/REFORCO_LINGUAGENS/ATIVIDADES"
+
+# Reforço de Linguagens: regra exclusiva de 20 objetivas por aula (as 5 discursivas têm seed
+# próprio, do gerador-avaliacao-discursiva, que roda depois deste).
+ATIVIDADES_REFORCO_LINGUAGENS = [
+    (1, "Leitura e Compreensão Textual Básica", "2026-09-08",
+     f"{PASTA_REFORCO_LINGUAGENS}/ATIVIDADES-AULA-01-20-QUESTOES.md"),
+]
+
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.
 GRUPOS = [
     (CURSO, MATERIA, ATIVIDADES),
     ("Rio do Sul Mais Tech", "Fundamentos da Tecnologia e Programação", ATIVIDADES_FUNDAMENTOS),
     ("Operador de Produção Industrial", "Fundamentos de Automação/Instrumentação",
      ATIVIDADES_AUTOMACAO),
+    ("Rio do Sul Mais Tech", "Reforço de Linguagens", ATIVIDADES_REFORCO_LINGUAGENS),
 ]
 
 PADRAO_ITEM = re.compile(r"^## ITEM (\d+) — (.+)$", re.M)

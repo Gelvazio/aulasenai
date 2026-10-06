@@ -2016,12 +2016,18 @@ demais matérias continuam com a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES".
 - ✅ As objetivas seguem o gabarito equilibrado entre as letras e com posição sorteada; as
   discursivas citam o texto ou a situação da aula (`AULAS/AULA-NN.md`, onde ficam as aulas desta
   matéria).
-- ✅ Nome da página: `ATIVIDADES/ATIVIDADES-AULA-NN-25-QUESTOES.html`; fonte em
-  `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-25-QUESTOES.md` (fora do Git, tem gabarito). O
-  `STATUS-ATIVIDADES.md` da matéria controla as 25 questões (20 + 5) de cada aula.
-- ⚠️ **Implementação:** hoje o banco trata cada atividade como só objetiva ou só discursiva
-  (`atividade_completa()`). A forma de juntar as duas partes é decidida pelo usuário antes da
-  primeira atividade (plano em `docs/` quando mexer no banco).
+- ✅ **Duas páginas por aula** (decisão do usuário em 2026-10-06, sem mudar o banco):
+  - **objetivas:** `ATIVIDADES/ATIVIDADES-AULA-NN-20-QUESTOES.html`, fonte
+    `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-20-QUESTOES.md` (fora do Git, tem gabarito), gerada por
+    `assets/gerador-atividades/gerar_atividades.py --so=` e cadastrada pelo
+    `scripts/gerar-seed-atividades.py` (grupo da matéria);
+  - **discursivas:** `ATIVIDADES/ATIVIDADE-DISCURSIVA-AULA-NN.html`, fonte
+    `ATIVIDADES/CONTEUDO/ATIVIDADE-DISCURSIVA-AULA-NN.md` (cada item com Contexto, Comando e um
+    tópico `- a) ... (1,0)`) + `-GABARITO.md` (padrão de resposta e critérios para a IA, fora do
+    Git), gerada por `assets/gerador-avaliacao-discursiva/gerar_avaliacao_discursiva.py`
+    (nasce bloqueada; o professor libera no índice).
+- ✅ O seed das objetivas roda **antes** do das discursivas (ele cria a aula no banco). O
+  `STATUS-ATIVIDADES.md` da matéria controla as duas páginas (20 + 5) de cada aula.
 - ❌ Não aplicar esta regra a outras matérias, nem às matérias semelhantes, sem pedido do usuário.
 
 ## 🏦 REGRA — BANCO DE QUESTÕES DO AVA SENAI (MOODLE XML)

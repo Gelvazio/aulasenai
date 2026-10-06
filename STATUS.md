@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
+**Próximo passo:** Etapa 24, item 24.5 — aplicar os seeds da Aula 01 de Reforço de Linguagens (se o usuário pedir) e 24.6 aceite. Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -258,6 +258,16 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 23.2 | Commit local | ✅ Concluído | 2026-10-06 | `git commit` |
 | 23.3 | Aceite do usuário (testar no navegador) | ⬜ Pendente | — | — |
 
+## Etapa 24 — Reforço de Linguagens: regra de 25 questões e atividade da Aula 01 (pedida em 2026-10-06; tarefa média)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 24.1 | Regra exclusiva no `CLAUDE.md`: 25 questões por atividade (20 objetivas + 5 discursivas com Contexto, Comando e campo para digitar; correção com IA + análise do professor) | ✅ Concluído | 2026-10-06 09:21 | Versão e histórico atualizados; visualizador lê o mesmo formato |
+| 24.2 | Decisão do formato: duas páginas por aula, sem mudar o banco | ✅ Concluído | 2026-10-06 | Resposta do usuário |
+| 24.3 | `materia.json` da matéria (capacidades C1–C6 da UC 7 na ementa do curso) | ✅ Concluído | 2026-10-06 | Gerador leu sem erro |
+| 24.4 | Aula 01: `ATIVIDADES-AULA-01-20-QUESTOES.html` (gabarito 5 de cada letra) + `ATIVIDADE-DISCURSIVA-AULA-01.html` (5 campos) + padrão de resposta; índice da matéria; seed do grupo no `scripts/gerar-seed-atividades.py` | ✅ Concluído | 2026-10-06 | 20 itens e 5 `textarea`; nenhum gabarito nos HTML |
+| 24.5 | Aplicar os seeds no Supabase (objetivas primeiro, depois discursivas) | ⬜ Pendente | — | Só com pedido do usuário |
+| 24.6 | Aceite do usuário | ⬜ Pendente | — | — |
+
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
 |-------|--------|---------|---------|----------|
@@ -272,6 +282,8 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 ## Registro de decisões
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-06 | Reforço de Linguagens: 25 questões por atividade em duas páginas (20 objetivas + 5 discursivas), sem mudar o banco | Usuário | Regra exclusiva da matéria; banco aceita só um tipo por atividade |
+| 2026-10-06 | Capacidades do `materia.json` de Reforço de Linguagens = 6 da UC 7 na ementa do curso (a ementa da matéria lista 7, diferentes) | Claude (regra "a ementa do curso vence") | Divergência avisada ao usuário |
 | 2026-10-05 | Bloqueio por turma em `atividade.bloqueio` (JSON de códigos de turma); o interruptor vale só para a turma favorita; `ativo = false` continua bloqueando todas e, ao liberar uma inativa para a favorita, as outras turmas entram na lista | Usuário (pedido) + Claude (forma) | "As outras turmas não devem ser afetadas"; sem vínculo = liberado |
 | 2026-10-05 | SQLs de sugestões (`turmaaluno`) e bloqueio por turma aplicados pelo conector do Supabase | Usuário | Pedido "aplique no Supabase usando MCP do Supabase" |
 | 2026-10-05 | Alunos sem turma entram na própria tabela "Alunos por turma" com a coluna/filtro **Turma OK** (Sim/Não) e o botão ✅ Confirmar; turma sugerida vem do `user_metadata` (só sugestão) | Usuário (pedido) + Claude (forma) | Pedido durante a execução da Etapa 15; uma tabela só evita duplicar listas |

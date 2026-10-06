@@ -1,0 +1,30 @@
+{
+  "uc": "Reforço de Linguagens",
+  "uc_curta": "Reforço de Linguagens",
+  "curso": "Rio do Sul Mais Tech",
+  "docente": "Gelvazio Camargo",
+  "modulo": "UC 7",
+  "modalidade": "Presencial",
+  "carga_horaria_uc": 63,
+  "horas_por_aula": 4,
+  "fontes": [
+    "MATERIAIS/RIO_DO_SUL_MAIS_TECH/EMENTA-PRINCIPAL-RIO_DO_SUL_MAIS_TECH.md (UC 7 — fonte da verdade)",
+    "MATERIAIS/RIO_DO_SUL_MAIS_TECH/REFORCO_LINGUAGENS/EMENTA-CHALKIE-AI.md"
+  ],
+  "capacidades": {
+    "C1": "Organizar informações de forma clara e coerente",
+    "C2": "Desenvolver autonomia de estudo, utilizando estratégias de leitura e escrita",
+    "C3": "Aplicar pensamento crítico na análise de textos e situações comunicativas",
+    "C4": "Trabalhar em grupo, colaborando em atividades de leitura, produção textual e debates",
+    "C5": "Comunicar-se de forma assertiva, respeitando diferentes opiniões e contextos",
+    "C6": "Cumprir prazos e entregar atividades dentro das orientações propostas"
+  },
+  "conhecimentos": [
+    "Compreensão global e detalhada de textos",
+    "Identificação de tema, ideia principal e intenção comunicativa",
+    "Coesão e coerência textual",
+    "Paragrafação e organização de ideias",
+    "Pontuação e seu uso comunicativo",
+    "Concordância verbal e nominal"
+  ]
+}
