@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 10:22
+**Versão das regras:** 2026-10-06 10:53
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 10:53 | Pendências: acesso só pelo menu PENDÊNCIAS do Professor Administrador logado; nenhum índice/link público para `AGENDA_COLABORADOR`, que o gerador de índices passa a ignorar |
 | 2026-10-06 10:22 | Reforço de Linguagens com **10 aulas** (uma por slide, 6 h/7 h = 63 h, exceção à regra de 4 h) em `CONTEUDO/`; link "Slides da aula" nas atividades (campo `Slides`, geradores de objetivas e discursivas) |
 | 2026-10-06 10:17 | Reforço de Linguagens: o conteúdo das atividades vem **sempre** de `AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-*.md` (slides das 10 aulas convertidos em Markdown) |
 | 2026-10-06 09:49 | Regra "PENDÊNCIAS DE AULAS": tabela `pendencias` (RLS só do Professor Administrador, exclusão lógica), página `MATERIAIS/AGENDA_COLABORADOR/pendencias.html` com CRUD completo e filtros por todos os campos, menu PENDÊNCIAS |
@@ -1567,6 +1568,12 @@ SQL: `database/2026-10-06-pendencias.sql` (✅ aplicado no Supabase em 2026-10-0
 - ⚠️ A página fica na pasta `AGENDA_COLABORADOR`, que **não é curso** e tem regras próprias
   (`MATERIAIS/AGENDA_COLABORADOR/CLAUDE.md`): não rodar o gerador de índices nela e não misturar
   esta tabela com o dashboard da agenda do Google Calendar sem pedido do usuário.
+- ⛔ **Acesso às pendências SÓ pelo menu PENDÊNCIAS do Professor Administrador logado**
+  (2026-10-06, pedido do usuário): nenhum índice, card, link ou menu de atividades aponta para
+  `AGENDA_COLABORADOR/` ou para `pendencias.html`. O gerador de índices **ignora**
+  `AGENDA_COLABORADOR` (`PASTAS_IGNORADAS` em `assets/gerador-indices/gerar_indices.py`) — não
+  gera `index.html` dentro dela nem card dela no índice raiz. Índice gerado ali por engano deve ser
+  removido.
 
 ## 🎓 REGRA — ÍNDICE DE CURSOS: SÓ OS CURSOS DO USUÁRIO LOGADO
 

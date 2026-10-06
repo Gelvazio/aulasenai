@@ -31,7 +31,10 @@ URL_SUPABASE_JS = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
 NOME_INDICE = "index.html"
 NOME_PASTA_ATIVIDADES = "ATIVIDADES"
 MARCADOR = '<meta name="gerador" content="gerador-indices">'
-PASTAS_IGNORADAS = {"MATERIAS-GERAIS", "docs", "scripts", ".claude", "graphify-out"}
+# AGENDA_COLABORADOR não é curso: as pendências só se abrem pelo menu do Professor Administrador.
+PASTAS_IGNORADAS = {
+    "MATERIAS-GERAIS", "AGENDA_COLABORADOR", "docs", "scripts", ".claude", "graphify-out",
+}
 # Só páginas HTML entram no índice (pedido do usuário em 2026-09-27; .docx e .pdf ficam fora).
 EXTENSOES_ATIVIDADE = {".html": "📝 Página"}
 PADRAO_DATA_NOME = re.compile(r"(\d{2})-(\d{2})-(\d{4})")

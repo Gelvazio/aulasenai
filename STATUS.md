@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 27, item 27.6 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
+**Próximo passo:** Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.6 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -300,6 +300,14 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 26.19 | Índice da matéria | ✅ Concluído | 2026-10-06 10:46 | Índice da matéria e do curso regerados só no Rio do Sul Mais Tech (21 páginas) |
 | 26.20 | Aceite do usuário | ⬜ Pendente | — | — |
 
+## Etapa 27 — Pendências só pelo menu do Professor Administrador (pedida em 2026-10-06; tarefa pequena)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 27.1 | Regra no `CLAUDE.md` (sem índice/link público para `AGENDA_COLABORADOR`) | ✅ Concluído | 2026-10-06 10:53 | Versão das regras 2026-10-06 10:53 |
+| 27.2 | Gerador de índices ignora `AGENDA_COLABORADOR` | ✅ Concluído | 2026-10-06 10:53 | `py_compile` OK |
+| 27.3 | Remover os 2 índices gerados por engano em `AGENDA_COLABORADOR/` | ✅ Concluído | 2026-10-06 10:53 | `git status` da pasta limpo |
+| 27.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
 |-------|--------|---------|---------|----------|
@@ -355,3 +363,12 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 | 27.4 | Aplicar o seed no Supabase (sem ele a marcação das respostas fica bloqueada) | ✅ Concluído | 2026-10-06 | Atividade id 80 (aula 27), ativa e liberada para todas as turmas; 40 itens no gabarito (10 de cada letra) |
 | 27.5 | Bloquear para a turma da manhã (135080) pela função `definir_bloqueio_turma`, como o Professor Administrador | ✅ Concluído | 2026-10-06 | `atividade.bloqueio` = ["135080"], `ativo` = true |
 | 27.6 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 28 — Quadro de respostas no início da atividade e na exportação (pedida em 2026-10-06; plano `docs/quadro-respostas-atividade.md`)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 28.1 | Plano em `docs/quadro-respostas-atividade.md` | ✅ Concluído | 2026-10-06 | — |
+| 28.2 | Aprovação do plano pelo usuário | ⬜ Pendente | — | — |
+| 28.3 | Execução dos passos 1 a 6 do plano | ⬜ Pendente | — | — |
+| 28.4 | Aceite do usuário | ⬜ Pendente | — | — |
