@@ -22,16 +22,15 @@ const FORMATO_WORD_EXPORTACAO = {
     soGabarito: (gabarito, opcoes) => exportarSomenteGabaritoWord(gabarito, opcoes)
 };
 
-/** Um botão de Word para cada botão de PDF da barra (id do PDF → id, rótulo e ação do Word). */
+/**
+ * Botões de Word espelhados dos botões de PDF da barra (id do PDF → id, rótulo e ação do Word).
+ * Só o do PDF com gabarito (professor): "Exportar em Word" e "(respostas)" foram retirados a
+ * pedido do usuário em 2026-10-06.
+ */
 const ESPELHOS_WORD = [
-    { idPdf: 'btnExportarPDF', idWord: 'btnExportarWord', rotulo: '📝 Exportar em Word',
-        acao: () => exportarWordAtividade() },
     { idPdf: 'btnExportarPDFGabarito', idWord: 'btnExportarWordGabarito',
         rotulo: '📝 Exportar em Word (gabarito)',
-        acao: () => exportarPdfCompletoProfessor(FORMATO_WORD_EXPORTACAO) },
-    { idPdf: 'btnExportarGabarito', idWord: 'btnExportarGabaritoWord',
-        rotulo: '📝 Exportar em Word (respostas)',
-        acao: () => exportarGabaritoPorPerfil(FORMATO_WORD_EXPORTACAO) }
+        acao: () => exportarPdfCompletoProfessor(FORMATO_WORD_EXPORTACAO) }
 ];
 
 /**

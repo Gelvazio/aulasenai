@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 16:00
+**Versão das regras:** 2026-10-06 16:30
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 16:30 | Removidos os botões "📝 Exportar em Word" e "📝 Exportar em Word (respostas)" das atividades e avaliações objetivas; fica só o Word com gabarito (professor) |
 | 2026-10-06 16:00 | Tabela "Notas dos alunos" (só professor, nome e nota em ordem alfabética, com Exportar PDF) nas atividades com `- **Tabela de notas:** sim` (`assets/js/tabela-notas-professor.js`) |
 | 2026-10-06 15:10 | Média final de Análise de Dados: Aulas 01–03 com nota fixa 10 para todos, exibida como "10-LIVRE" (`rotulo_nota_fixa` no `media-final.json`); Aulas 04–07 pela nota do banco |
 | 2026-10-06 14:29 | Regra "EXCLUIR AULA": botão 🗑️ Excluir aula no modal "Editar aula", só Professor Administrador; exclusão lógica (`aulas.excluido = 1`, função `excluir_aula`) e card escondido nos índices |
@@ -1437,9 +1438,11 @@ Registrada em 2026-10-05 a pedido do usuário. Vale para **todas** as atividades
   LibreOffice Writer. Nada é gravado no banco nem no navegador.
 - ✅ **Código único (não repetir por página):**
   - `assets/js/documento-word.js` — monta e baixa o documento (A4, rodapé, imagens embutidas);
-  - `assets/js/exportar-word.js` — atividades e avaliações objetivas: espelha `btnExportarPDF`,
-    `btnExportarPDFGabarito` e `btnExportarGabarito` (carregado pelo `assets/js/atividade.js`;
-    os botões de gabarito usam `avaliacao-pdf-professor.js` com `FORMATO_WORD_EXPORTACAO`);
+  - `assets/js/exportar-word.js` — atividades e avaliações objetivas: espelha **só**
+    `btnExportarPDFGabarito` (professor), via `avaliacao-pdf-professor.js` com
+    `FORMATO_WORD_EXPORTACAO` (carregado pelo `assets/js/atividade.js`). ⛔ Os botões
+    **"📝 Exportar em Word"** e **"📝 Exportar em Word (respostas)"** foram **removidos** em
+    2026-10-06 a pedido do usuário: não recolocar sem pedido;
   - `assets/js/exportar-word-pratica.js` — atividades práticas (Excel): ao lado de cada
     `[data-acao="imprimir"]`, exporta a capa + todas as questões (o mesmo conteúdo do
     "Imprimir / PDF"), com o estilo da página e as telas em PNG (carregado pelo
