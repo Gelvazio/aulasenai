@@ -5,15 +5,12 @@
 // O docente do PDF é o professor logado; o data-docente só vale quando não há professor logado.
 // A turma do PDF vem da lista "Turma" da .export-bar (assets/js/turma-exportacao.js, carregado
 // aqui): professor com 1 turma já vem escolhida; com várias, ele escolhe antes de exportar.
-// Também carrega o assets/js/exportar-banco-moodle.js: botão "Banco Moodle (AVA SENAI)", só do
-// professor, que baixa as questões da página com o gabarito do banco em Moodle XML.
 // E o assets/js/documento-word.js + assets/js/exportar-word.js (hoje sem botões de Word).
 // Toda atividade com folha de respostas no banco (body data-login="sim") ganha o botão
 // "🔑 Exportar Gabarito" (assets/js/avaliacao-pdf-professor.js): o aluno só recebe o gabarito
 // depois que o professor liberar para a turma (plano docs/liberacao-respostas-por-turma.md).
 
 const ARQUIVO_TURMA_EXPORTACAO = 'turma-exportacao.js';
-const ARQUIVO_BANCO_MOODLE = 'exportar-banco-moodle.js';
 const ARQUIVO_DOCUMENTO_WORD = 'documento-word.js';
 const ARQUIVO_EXPORTAR_WORD = 'exportar-word.js';
 const ARQUIVO_EXPORTAR_GABARITO = 'avaliacao-pdf-professor.js';
@@ -39,7 +36,6 @@ function carregarModuloExportacao(arquivo, jaCarregado) {
 }
 
 carregarModuloExportacao(ARQUIVO_TURMA_EXPORTACAO, typeof obterTurmaParaExportacao === 'function');
-carregarModuloExportacao(ARQUIVO_BANCO_MOODLE, typeof exportarBancoMoodle === 'function');
 carregarModuloExportacao(ARQUIVO_DOCUMENTO_WORD, typeof baixarDocumentoWord === 'function');
 carregarModuloExportacao(ARQUIVO_EXPORTAR_WORD, typeof exportarWordAtividade === 'function');
 

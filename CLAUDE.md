@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 18:15
+**Versão das regras:** 2026-10-06 18:30
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 18:30 | Removido de todas as atividades o botão "📥 Banco Moodle (AVA SENAI)"; banco do AVA só pelo gerador-banco-ava |
 | 2026-10-06 18:15 | Regra do gabarito também nas discursivas: professor libera no painel por turma (só com todos entregues); aluno "Ver Gabarito" com aviso e registro antes da liberação |
 | 2026-10-06 18:00 | Regra do gabarito (liberação pelo professor só com todos entregues) declarada global: todas as atividades de todas as matérias e cursos |
 | 2026-10-06 17:45 | Liberar gabaritos por atividade e turma: botão do professor (só com todos entregues), sem recuperação depois, aluno vê "Aguarde professor liberar os gabaritos" e o pedido fica em `tentativaacessogabarito` |
@@ -1885,10 +1886,7 @@ assets/
 │                        botão "📝 Exportar em Word" ao lado de cada exportar PDF (regra
 │                        "EXPORTAR EM WORD");
 │                        exportar-pagina.js + css/exportar-pagina.css — "📥 Exportar Para PDF"
-│                        (página inteira, igual à tela) + "📝 Exportar em Word" ao lado;
-│                        exportar-banco-moodle.js + banco-moodle-xml.js — botão "📥 Banco Moodle
-│                        (AVA SENAI)" nas atividades objetivas, só professor (carregado pelo
-│                        atividade.js); o XML segue o mesmo formato do gerador-banco-ava)
+│                        (página inteira, igual à tela) + "📝 Exportar em Word" ao lado)
 ├─ gerador-materia/    → materia.py: lê o <MATERIA>/materia.json (arquivo ÚNICO de dados da
 │                        matéria), usado por todos os geradores (ver "REGRAS APOSTILAS")
 ├─ gerador-apostilas/  → gerar_apostila.py + markdown_apostila.py + conferir_ementa.py +
@@ -2201,14 +2199,12 @@ importação no AVA pelo professor; as demais matérias só quando o usuário li
   juntos duplicam as questões).
 - ✅ Depois de alterar uma fonte de questões, gerar o banco de novo e registrar no
   `STATUS-ATIVIDADES.md` da matéria.
-- ✅ **Botão em cada atividade** (2026-10-03, plano `docs/botao-exportar-banco-moodle-atividade.md`):
-  **📥 Banco Moodle (AVA SENAI)** na `.export-bar` de toda página que carrega o `atividade.js`,
-  **só para o professor logado** (`app_metadata.perfil`). Lê as questões da própria página e o
-  gabarito da tabela `gabarito` (RLS do professor), confere quantidade e letras e baixa
-  `<nome-da-pagina>.xml`. Nada é gravado no banco nem no navegador; o gabarito nunca fica na
-  página. Código: `assets/js/exportar-banco-moodle.js` (tela, dados) +
-  `assets/js/banco-moodle-xml.js` (só monta o XML). ⚠️ O `banco-moodle-xml.js` e o
-  `moodle_xml.py` geram **o mesmo XML**: mudou um, mudar o outro e comparar os dois.
+- ⛔ **Sem botão "📥 Banco Moodle (AVA SENAI)" nas atividades** (removido de **todas** as
+  atividades em 2026-10-06, a pedido do usuário; antes: plano
+  `docs/botao-exportar-banco-moodle-atividade.md`). Os scripts `exportar-banco-moodle.js` e
+  `banco-moodle-xml.js` foram apagados e o `atividade.js` não carrega mais nada do Moodle. O banco
+  do AVA é gerado **só** pelo `assets/gerador-banco-ava/gerar_banco_ava.py`. Não recolocar sem
+  pedido.
 
 ## 📘 REGRAS APOSTILAS
 
