@@ -52,6 +52,7 @@ Ordem obrigatória dos scripts na página:
 | `fazerLogout()` | `signOut()` + limpa sessionStorage + volta ao login |
 | `obterUsuarioAtual()` | Dados de exibição do sessionStorage |
 | `prepararLoginBaseLocal()` | Em `127.0.0.1`/`localhost`: preenche `gelvazio.camargo@senai.local` e põe o foco na senha (2026-10-03) |
+| `alternarVisibilidadeSenha()` | Botão de olho (`#btnMostrarSenha`) ao lado da senha: alterna `password`/`text` e atualiza `aria-pressed`/rótulo (2026-10-06) |
 
 ## sessionStorage (apenas exibição — a segurança vem do JWT + RLS)
 `usuarioId`, `usuarioEmail`, `usuarioNome`, `usuarioPerfil`, `usuarioTurmaCodigo`,

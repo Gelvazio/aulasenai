@@ -40,7 +40,11 @@ const IDS_LOGIN = {
   textoConectado: "textoConectado",
   botaoContinuar: "btnContinuar",
   botaoSair: "btnSair",
+  botaoMostrarSenha: "btnMostrarSenha",
 };
+
+const ROTULO_MOSTRAR_SENHA = "Mostrar senha";
+const ROTULO_OCULTAR_SENHA = "Ocultar senha";
 
 /**
  * Completa o login digitado com o domínio dos alunos quando não houver "@".
@@ -236,6 +240,23 @@ function prepararLoginBaseLocal() {
 }
 
 /**
+ * Alterna o campo senha entre oculto e visível (botão de olho ao lado da senha).
+ */
+function alternarVisibilidadeSenha() {
+  const campoSenha = document.getElementById(IDS_LOGIN.senha);
+  const botao = document.getElementById(IDS_LOGIN.botaoMostrarSenha);
+  if (!campoSenha || !botao) return;
+
+  const vaiMostrar = campoSenha.type === "password";
+  const rotulo = vaiMostrar ? ROTULO_OCULTAR_SENHA : ROTULO_MOSTRAR_SENHA;
+  campoSenha.type = vaiMostrar ? "text" : "password";
+  botao.setAttribute("aria-pressed", String(vaiMostrar));
+  botao.setAttribute("aria-label", rotulo);
+  botao.title = rotulo;
+  campoSenha.focus();
+}
+
+/**
  * Inicia a página de login: liga o formulário e os botões e verifica se já há sessão.
  */
 async function iniciarPaginaLogin() {
@@ -244,6 +265,9 @@ async function iniciarPaginaLogin() {
 
   formulario.addEventListener("submit", fazerLogin);
   prepararLoginBaseLocal();
+  document
+    .getElementById(IDS_LOGIN.botaoMostrarSenha)
+    ?.addEventListener("click", alternarVisibilidadeSenha);
   document.getElementById(IDS_LOGIN.botaoSair)?.addEventListener("click", fazerLogout);
   document.getElementById(IDS_LOGIN.botaoContinuar)?.addEventListener("click", () => {
     location.assign(obterDestinoSeguro());

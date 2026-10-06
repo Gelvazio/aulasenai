@@ -23,8 +23,12 @@
                 </label>
                 <label class="login-campo" for="loginSenha">
                     <span>Senha</span>
-                    <input id="loginSenha" name="senha" type="password" autocomplete="current-password"
-                           placeholder="Sua senha" required>
+                    <span class="login-senha">
+                        <input id="loginSenha" name="senha" type="password" autocomplete="current-password"
+                               placeholder="Sua senha" required>
+                        <button class="login-olho" id="btnMostrarSenha" type="button"
+                                aria-label="Mostrar senha" aria-pressed="false" title="Mostrar senha">👁</button>
+                    </span>
                 </label>
                 <button class="login-botao" id="btnEntrar" type="submit">Entrar</button>
                 <p class="login-mensagem" id="loginMsg" role="status" aria-live="polite"></p>
