@@ -20,6 +20,7 @@ window.MENU_ATIVIDADES = {
         { rotulo: 'Aula 07 — Dashboards interativos', link: 'ATIVIDADES-7-DASHBOARDS-INTERATIVOS-E-INTEGRACAO-DE-DADOS-50-QUESTOES.html' },
         { rotulo: '📝 Avaliação Objetiva 02 — Aulas 05 a 07', link: 'AVALIACAO-OBJETIVA-02.html' },
         { rotulo: '✍️ Prova Prática — Aulas 01 a 05 (discursiva)', link: 'PROVA-PRATICA.html' },
+        { rotulo: '✍️ Prova Prática 06-10-2026 — Aulas 01 a 05 (discursiva)', link: 'PROVA-PRATICA-06-10-2026.html' },
       ],
     },
     {

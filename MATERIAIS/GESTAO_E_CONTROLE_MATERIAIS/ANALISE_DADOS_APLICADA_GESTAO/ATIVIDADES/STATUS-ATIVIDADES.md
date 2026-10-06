@@ -31,3 +31,4 @@
 | `AVALIACAO-OBJETIVA-01.html` | 60 questões objetivas | ✅ liberada |
 | `AVALIACAO-OBJETIVA-02.html` | 60 questões objetivas | ✅ bloqueada |
 | `PROVA-PRATICA.html` | discursiva/prática/composição | ✅ bloqueada |
+| `PROVA-PRATICA-06-10-2026.html` | 10 discursivas (30 tópicos), Aulas 01 a 05, fora da média final | ✅ bloqueada |

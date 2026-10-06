@@ -390,3 +390,14 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 | 30.1 | Rota do curso "Assistente em Processos de Gestão e Controle de Materiais" (nome no banco, id 7) para `MATERIAIS/GESTAO_E_CONTROLE_MATERIAIS/` no `index.html` da raiz | ✅ Concluído | 2026-10-06 | Banco: turma 133933 → curso 7, vinculada ao professor |
 | 30.2 | `index.html` da raiz restaurado (o gerador de índices o tinha trocado pela versão estática) e gerador corrigido para nunca sobrescrevê-lo | ✅ Concluído | 2026-10-06 | `py_compile` ok |
 | 30.3 | Aceite do usuário | ✅ Concluído | 2026-10-06 | Usuário confirmou que o curso apareceu |
+
+## Etapa 31 — Prova Prática 06-10-2026 de Análise de Dados (Aulas 01 a 05) — plano: [docs/prova-pratica-06-10-2026-analise-dados.md](docs/prova-pratica-06-10-2026-analise-dados.md)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 31.1 | Plano em `docs/` e aprovação do usuário | ✅ Concluído | 2026-10-06 | Aprovado; seed autorizado; fora da média final |
+| 31.2 | Fonte com 10 questões discursivas (2 por aula) | ✅ Concluído | 2026-10-06 | 10 itens, 30 tópicos |
+| 31.3 | Padrão de resposta detalhado para correção por IA (fora do Git) | ✅ Concluído | 2026-10-06 | 30 tópicos com resposta e critérios |
+| 31.4 | Página HTML e seed pelo gerador | ✅ Concluído | 2026-10-06 | 10 questões, 30 tópicos, 10 pontos; padrão de resposta ausente do HTML |
+| 31.5 | Card novo no índice, menu e `STATUS-ATIVIDADES.md` | ✅ Concluído | 2026-10-06 | `node` leu o menu |
+| 31.6 | Seed no Supabase (só se autorizado) | ✅ Concluído | 2026-10-06 | Atividade id 82, bloqueada, 30 tópicos com padrão |
+| 31.7 | Aceite do usuário | ⬜ Pendente | — | — |
