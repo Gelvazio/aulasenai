@@ -139,6 +139,8 @@ ATIVIDADES_REFORCO_LINGUAGENS = [
      f"{PASTA_REFORCO_LINGUAGENS}/ATIVIDADES-AULA-08-20-QUESTOES.md"),
     (9, "Argumentação Oral, Debates e Registros", "2026-11-27",
      f"{PASTA_REFORCO_LINGUAGENS}/ATIVIDADES-AULA-09-20-QUESTOES.md"),
+    (10, "Gêneros Literários, Textos Técnicos e Síntese", "2026-12-04",
+     f"{PASTA_REFORCO_LINGUAGENS}/ATIVIDADES-AULA-10-20-QUESTOES.md"),
 ]
 
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.

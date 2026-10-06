@@ -20,7 +20,7 @@ As 16 aulas antigas de 4 h ficaram em `LEGADO-16-AULAS/` (não são mais usadas)
 | 07 | Classes de Palavras e Figuras de Linguagem | 6 | ✅ `CONTEUDO/AULA-07-CLASSES-DE-PALAVRAS-E-FIGURAS-DE-LINGUAGEM.md` | ✅ | ✅ | ✅ |
 | 08 | Oralidade e Apresentação em Público | 7 | ✅ `CONTEUDO/AULA-08-ORALIDADE-E-APRESENTACAO-EM-PUBLICO.md` | ✅ | ✅ | ✅ |
 | 09 | Argumentação Oral, Debates e Registros | 7 | ✅ `CONTEUDO/AULA-09-ARGUMENTACAO-ORAL-DEBATES-E-REGISTROS.md` | ✅ | ✅ | ✅ |
-| 10 | Gêneros Literários, Textos Técnicos e Síntese | 7 | ⬜ | ✅ | ⬜ | ⬜ |
+| 10 | Gêneros Literários, Textos Técnicos e Síntese | 7 | ✅ `CONTEUDO/AULA-10-GENEROS-LITERARIOS-TEXTOS-TECNICOS-E-SINTESE.md` | ✅ | ✅ | ✅ |
 
 ## Observações
 
