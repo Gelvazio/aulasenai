@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 19:15
+**Versão das regras:** 2026-10-06 19:30
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 19:30 | O link "🧾 LOG" fica bloqueado junto com a atividade bloqueada |
 | 2026-10-06 19:15 | Link "🧾 LOG" nos cards do índice (professor): modal com a lista de alunos e o log das alternativas do aluno escolhido |
 | 2026-10-06 18:50 | Tabela "Notas dos alunos" com Exportar PDF em **todas** as atividades de todas as matérias (padrão ligado; `data-tabela-notas="nao"` desliga numa página) |
 | 2026-10-06 19:00 | Log de gravação das alternativas (`log_resposta_atividade`, gatilho no banco, só registros novos) |
@@ -1356,7 +1357,7 @@ professor tem o link pequeno **"🧾 LOG"**, que abre um modal com a lista de al
 quantidade de registros de cada um) e mostra o log do aluno escolhido (data e hora, tentativa,
 questão, operação, de → para). Código: `assets/js/indice-log-alternativas.js` +
 `assets/css/indice-log-alternativas.css`, carregados pelo `atividades-crud-modal.js` (todos os
-índices). É botão, não link, para continuar clicável no card bloqueado. ❌ Não
+índices). **Na atividade bloqueada o LOG também fica bloqueado** (sem clique), como os demais links do card. ❌ Não
 desligar o gatilho nem apagar o log. SQL: `database/2026-10-06-log-resposta-atividade.sql`;
 plano: `docs/log-resposta-atividade.md`.
 

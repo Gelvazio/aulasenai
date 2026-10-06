@@ -27,6 +27,15 @@
     border-color: var(--log-azul);
 }
 
+/* Atividade bloqueada: o LOG fica bloqueado junto (sem clique, por baixo do véu). */
+.aula.bloqueada .log-alternativas__link,
+.aula.bloqueada-professor .log-alternativas__link {
+    z-index: auto;
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 .log-alternativas__fundo {
     position: fixed;
     inset: 0;

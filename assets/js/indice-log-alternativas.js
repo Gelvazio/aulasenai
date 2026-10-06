@@ -2,6 +2,7 @@
 // com a lista de alunos (turmas do professor; o administrador vê todas) e, ao escolher o aluno,
 // mostra o log das alternativas dele naquela atividade (tabela log_resposta_atividade, preenchida
 // pelo gatilho do banco: MARCOU, TROCOU, APAGOU). Só leitura; o RLS limita aos alunos do professor.
+// Com a atividade bloqueada, o LOG também fica bloqueado (sem clique).
 // Carregado pelo assets/js/atividades-crud-modal.js. Depende de js/supabase.js (sbGet,
 // obterClienteSupabase) e do popup (assets/js/popup.js), quando disponível.
 
@@ -10,6 +11,7 @@ const SELETOR_LINK_LOG = 'a.btn.principal';
 const ATRIBUTO_HREF_GUARDADO_LOG = 'data-href-bloqueado';
 const PERFIL_PROFESSOR_LOG = 'PROFESSOR';
 const CLASSE_LOG = 'log-alternativas';
+const CLASSES_CARD_BLOQUEADO_LOG = ['bloqueada', 'bloqueada-professor'];
 const TEXTO_SELECIONE_ALUNO_LOG = 'Selecione o aluno…';
 const ROTULOS_OPERACAO_LOG = { MARCOU: '✅ Marcou', TROCOU: '🔁 Trocou', APAGOU: '🗑️ Apagou' };
 const MSG_SEM_REGISTROS_LOG = 'Nenhuma alternativa registrada para este aluno nesta atividade ' +
@@ -243,6 +245,16 @@ async function abrirModalLog(atividade) {
 }
 
 /**
+ * Indica se o card do botão está bloqueado (o LOG fica bloqueado junto com a atividade).
+ * @param {HTMLElement} botao - Botão "🧾 LOG".
+ * @returns {boolean} true se o card estiver bloqueado.
+ */
+function cardEstaBloqueadoLog(botao) {
+    const card = botao.closest(SELETOR_CARD_LOG);
+    return Boolean(card) && CLASSES_CARD_BLOQUEADO_LOG.some((classe) => card.classList.contains(classe));
+}
+
+/**
  * Coloca o link "🧾 LOG" logo depois do link da atividade no card.
  * @param {HTMLAnchorElement} link - Link principal do card.
  * @param {Object} atividade - Atividade cadastrada do card.
@@ -250,11 +262,12 @@ async function abrirModalLog(atividade) {
 function inserirLinkLog(link, atividade) {
     if (link.parentElement.querySelector('.' + CLASSE_LOG + '__link')) return;
 
-    // Botão (não <a>): continua clicável mesmo com o card bloqueado, que desativa os links.
     const botao = criarElementoLog('button', CLASSE_LOG + '__link', '🧾 LOG');
     botao.type = 'button';
     botao.title = 'Log das alternativas marcadas pelos alunos';
-    botao.addEventListener('click', () => abrirModalLog(atividade));
+    botao.addEventListener('click', () => {
+        if (!cardEstaBloqueadoLog(botao)) abrirModalLog(atividade);
+    });
     link.after(botao);
 }
 
