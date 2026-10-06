@@ -7,7 +7,7 @@
 | Versão (data e hora) | O que mudou |
 |---|---|
 | 2026-10-06 18:50 | Tabela "Notas dos alunos" com Exportar PDF em **todas** as atividades de todas as matérias (padrão ligado; `data-tabela-notas="nao"` desliga numa página) |
-| 2026-10-06 19:00 | Log de gravação das alternativas (`log_resposta_atividade`, gatilho no banco, carga inicial das respostas existentes) |
+| 2026-10-06 19:00 | Log de gravação das alternativas (`log_resposta_atividade`, gatilho no banco, só registros novos) |
 | 2026-10-06 18:45 | Removido o botão "📥 Exportar PDF com gabarito" de todas as páginas e do gerador de atividades |
 | 2026-10-06 18:30 | Removido de todas as atividades o botão "📥 Banco Moodle (AVA SENAI)"; banco do AVA só pelo gerador-banco-ava |
 | 2026-10-06 18:15 | Regra do gabarito também nas discursivas: professor libera no painel por turma (só com todos entregues); aluno "Ver Gabarito" com aviso e registro antes da liberação |
@@ -1348,8 +1348,8 @@ Consulte docs/database.md
 
 Toda alternativa **marcada, trocada ou apagada** em `resposta_atividade` gera uma linha em
 **`log_resposta_atividade`** (letra anterior, letra nova, operação, data e hora), pelo gatilho
-`resposta_atividade_log_trg`; a carga inicial guardou as respostas que já existiam
-(`CARGA_INICIAL`). Só o professor lê (alunos das turmas dele); ninguém grava pela API. ❌ Não
+`resposta_atividade_log_trg`. **Grava só os registros novos** (desde 2026-10-06; as respostas
+antigas não entram no log). Só o professor lê (alunos das turmas dele); ninguém grava pela API. ❌ Não
 desligar o gatilho nem apagar o log. SQL: `database/2026-10-06-log-resposta-atividade.sql`;
 plano: `docs/log-resposta-atividade.md`.
 

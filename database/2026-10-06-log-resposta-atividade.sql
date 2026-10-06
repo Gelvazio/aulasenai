@@ -1,9 +1,8 @@
 -- Log de gravação das alternativas (plano: docs/log-resposta-atividade.md).
 -- Cada alternativa marcada, trocada ou apagada em resposta_atividade gera uma linha em
 -- log_resposta_atividade, com a letra anterior, a letra nova, a data e a hora e quem gravou.
--- A partir da aplicação, registra todo clique novo; o histórico de trocas anterior não existe, então
--- a alternativa atual de cada questão já respondida entra uma vez como CARGA_INICIAL (com a hora da
--- última gravação dela). Preenchido só pelo gatilho do banco:
+-- Grava APENAS os registros novos, a partir da aplicação (sem carga das respostas antigas, pedido do
+-- usuário em 2026-10-06). Preenchido só pelo gatilho do banco:
 -- ninguém grava, altera ou apaga o log pela API; o professor lê só os alunos das turmas dele.
 -- Idempotente e sem apagar dados.
 
@@ -15,7 +14,7 @@ create table if not exists public.log_resposta_atividade (
   item            smallint    not null,
   letra_anterior  character,
   letra_nova      character,
-  operacao        text        not null check (operacao in ('CARGA_INICIAL', 'MARCOU', 'TROCOU', 'APAGOU')),
+  operacao        text        not null check (operacao in ('MARCOU', 'TROCOU', 'APAGOU')),
   herdada         boolean     not null default false,
   gravado_por     uuid,
   registrado_em   timestamptz not null default now()
@@ -76,11 +75,3 @@ create trigger resposta_atividade_log_trg
   after insert or update or delete on public.resposta_atividade
   for each row execute function public.registrar_log_resposta_atividade();
 
--- Carga inicial (uma vez só): a alternativa atual de cada questão já respondida, em qualquer atividade.
-insert into public.log_resposta_atividade
-  (aluno_id, atividade_id, tentativa, item, letra_anterior, letra_nova, operacao, herdada,
-   gravado_por, registrado_em)
-select r.aluno_id, r.atividade_id, r.tentativa, r.item, null, r.letra, 'CARGA_INICIAL',
-       coalesce(r.herdada, false), r.aluno_id, coalesce(r.atualizado_em, now())
-from public.resposta_atividade r
-where not exists (select 1 from public.log_resposta_atividade l where l.operacao = 'CARGA_INICIAL');

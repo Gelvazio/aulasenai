@@ -12,9 +12,11 @@ alteração em `resposta_atividade.atualizado_em`).
 
 ## Como funciona
 
+**Só registros novos**, a partir de 2026-10-06 ~15:55 (a carga das respostas antigas foi
+retirada a pedido do usuário). O que foi gravado antes continua só em `resposta_atividade`.
+
 | Operação | Quando é registrada |
 |---|---|
-| `CARGA_INICIAL` | Uma vez, na aplicação: a alternativa atual de cada questão já respondida (hora = `atualizado_em`). O histórico de trocas anterior a 2026-10-06 não existe no banco. |
 | `MARCOU` | O aluno marca a primeira alternativa da questão (inclui as respostas herdadas numa nova tentativa, com `herdada = true`). |
 | `TROCOU` | O aluno troca a alternativa (guarda a letra anterior e a nova). Regravar a mesma letra não gera linha. |
 | `APAGOU` | A resposta da questão é apagada. |
@@ -27,7 +29,8 @@ alteração em `resposta_atividade.atualizado_em`).
 
 ## Verificação
 
-- Carga inicial: 24.190 linhas = 24.190 respostas existentes.
+- Sem carga inicial (linhas `CARGA_INICIAL` apagadas e operação retirada do check); primeiros 20
+  cliques novos registrados como `MARCOU` logo após a ativação.
 - RLS ligado; `anon` sem leitura.
 
 ## Consulta útil (SQL Editor)

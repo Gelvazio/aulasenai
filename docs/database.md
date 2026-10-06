@@ -592,9 +592,9 @@ Plano: `docs/log-resposta-atividade.md`.
 
 | Tabela / objeto | Campos / regra |
 |--------|---------|
-| `log_resposta_atividade` | `id` (identity), `aluno_id`, `atividade_id`, `tentativa`, `item`, `letra_anterior`, `letra_nova`, `operacao` (`CARGA_INICIAL`, `MARCOU`, `TROCOU`, `APAGOU`), `herdada`, `gravado_por`, `registrado_em` (padrão `now()`). RLS: professor lê só alunos de `professor_pode_ver_aluno`; ninguém grava pela API; `anon` sem acesso |
+| `log_resposta_atividade` | `id` (identity), `aluno_id`, `atividade_id`, `tentativa`, `item`, `letra_anterior`, `letra_nova`, `operacao` (`MARCOU`, `TROCOU`, `APAGOU`), `herdada`, `gravado_por`, `registrado_em` (padrão `now()`). RLS: professor lê só alunos de `professor_pode_ver_aluno`; ninguém grava pela API; `anon` sem acesso |
 | `resposta_atividade_log_trg` | gatilho `after insert or update or delete` em `resposta_atividade` (função `registrar_log_resposta_atividade`, security definer); regravar a mesma letra não gera linha |
-| Carga inicial | a alternativa atual de cada questão já respondida entrou uma vez como `CARGA_INICIAL` (24.190 linhas) |
+| Só registros novos | sem carga das respostas antigas (pedido do usuário); vale a partir de 2026-10-06 |
 
 ---
 
