@@ -280,14 +280,14 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 26.1 | Plano e decisões D1–D7 aprovados | ✅ Concluído | 2026-10-06 10:18 | Resposta do usuário |
-| 26.2 | Regra no `CLAUDE.md` (10 aulas; fonte das atividades = `AULAS-CHALKIE-AI/CONTEUDO`) | 🔄 Em progresso | — | — |
-| 26.3 | Ementa da matéria (seção VI, tamanho) + status das ementas | ⬜ Pendente | — | — |
-| 26.4 | `materia.json` com as 10 aulas | ⬜ Pendente | — | — |
-| 26.5 | Aulas antigas movidas para `AULAS/LEGADO-16-AULAS/` | ⬜ Pendente | — | — |
+| 26.2 | Regra no `CLAUDE.md` (10 aulas; fonte das atividades = `AULAS-CHALKIE-AI/CONTEUDO`) | ✅ Concluído | 2026-10-06 10:22 | Seção da matéria + versão 10:22; regras-modal lê o formato |
+| 26.3 | Ementa da matéria (seção VI, tamanho) + status das ementas | ✅ Concluído | 2026-10-06 10:22 | Seção VI com 10 aulas; 14.866 caracteres |
+| 26.4 | `materia.json` com as 10 aulas | ✅ Concluído | 2026-10-06 10:22 | 10 aulas, soma 63 h |
+| 26.5 | Aulas antigas movidas para `AULAS/LEGADO-16-AULAS/` | ✅ Concluído | 2026-10-06 10:22 | 17 arquivos em LEGADO-16-AULAS (git mv) |
 | 26.6 | 10 aulas em `REFORCO_LINGUAGENS/CONTEUDO/` com link dos slides | ⬜ Pendente | — | — |
-| 26.7 | `.gitignore` libera os PDFs de `AULAS-CHALKIE-AI/` | ⬜ Pendente | — | — |
+| 26.7 | `.gitignore` libera os PDFs de `AULAS-CHALKIE-AI/` | ✅ Concluído | 2026-10-06 10:22 | git check-ignore: PDFs liberados |
 | 26.8 | `STATUS-AULAS.md` e `STATUS-ATIVIDADES.md` com 10 aulas | ⬜ Pendente | — | — |
-| 26.9 | Aula 01: `Conteúdo-base` aponta para `AULAS-CHALKIE-AI/CONTEUDO` | ⬜ Pendente | — | — |
+| 26.9 | Aula 01: `Conteúdo-base` aponta para `AULAS-CHALKIE-AI/CONTEUDO` | ✅ Concluído | 2026-10-06 10:22 | Fontes e páginas da Aula 01 com Conteúdo-base e Slides novos |
 | 26.10 | Atividades Aula 02 (20 + 5, seed aplicado) | ⬜ Pendente | — | — |
 | 26.11 | Atividades Aula 03 | ⬜ Pendente | — | — |
 | 26.12 | Atividades Aula 04 | ⬜ Pendente | — | — |

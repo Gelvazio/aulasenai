@@ -6,7 +6,8 @@
   "modulo": "UC 7",
   "modalidade": "Presencial",
   "carga_horaria_uc": 63,
-  "horas_por_aula": 4,
+  "horas_por_aula": 6,
+  "observacao_horas": "Exceção da matéria: 10 aulas, uma por slide — aulas 1 a 7 com 6 h e 8 a 10 com 7 h (63 h). Vale a carga_horaria de cada aula.",
   "fontes": [
     "MATERIAIS/RIO_DO_SUL_MAIS_TECH/EMENTA-PRINCIPAL-RIO_DO_SUL_MAIS_TECH.md (UC 7 — fonte da verdade)",
     "MATERIAIS/RIO_DO_SUL_MAIS_TECH/REFORCO_LINGUAGENS/EMENTA-CHALKIE-AI.md"
@@ -26,5 +27,162 @@
     "Paragrafação e organização de ideias",
     "Pontuação e seu uso comunicativo",
     "Concordância verbal e nominal"
+  ],
+  "aulas": [
+    {
+      "numero": 1,
+      "aula": "Aula 01",
+      "tema": "Tipos de Texto e Contexto de Produção",
+      "carga_horaria": 6,
+      "capacidades": [
+        "C2",
+        "C3"
+      ],
+      "conhecimentos": [
+        "Compreensão global e detalhada de textos"
+      ],
+      "slides": "AULAS-CHALKIE-AI/1-Tipos-de-Texto-e-Contexto-de-Produção.pdf",
+      "conteudo_slides": "AULAS-CHALKIE-AI/CONTEUDO/AULA-01-TIPOS-DE-TEXTO-E-CONTEXTO-DE-PRODUCAO.md"
+    },
+    {
+      "numero": 2,
+      "aula": "Aula 02",
+      "tema": "Tema, Assunto e Ideia Principal",
+      "carga_horaria": 6,
+      "capacidades": [
+        "C1",
+        "C2"
+      ],
+      "conhecimentos": [
+        "Compreensão global e detalhada de textos",
+        "Identificação de tema, ideia principal e intenção comunicativa"
+      ],
+      "slides": "AULAS-CHALKIE-AI/2-Tema,-Assunto-e-Ideia-Principal.pdf",
+      "conteudo_slides": "AULAS-CHALKIE-AI/CONTEUDO/AULA-02-TEMA-ASSUNTO-E-IDEIA-PRINCIPAL.md"
+    },
+    {
+      "numero": 3,
+      "aula": "Aula 03",
+      "tema": "Intenção Comunicativa e Análise Crítica",
+      "carga_horaria": 6,
+      "capacidades": [
+        "C3",
+        "C5"
+      ],
+      "conhecimentos": [
+        "Identificação de tema, ideia principal e intenção comunicativa"
+      ],
+      "slides": "AULAS-CHALKIE-AI/3-Intenção-Comunicativa-e-Análise-Crítica.pdf",
+      "conteudo_slides": "AULAS-CHALKIE-AI/CONTEUDO/AULA-03-INTENCAO-COMUNICATIVA-E-ANALISE-CRITICA.md"
+    },
+    {
+      "numero": 4,
+      "aula": "Aula 04",
+      "tema": "Coesão e Coerência Textual",
+      "carga_horaria": 6,
+      "capacidades": [
+        "C1",
+        "C6"
+      ],
+      "conhecimentos": [
+        "Coesão e coerência textual"
+      ],
+      "slides": "AULAS-CHALKIE-AI/4-Coesão-e-Coerência-Textual.pdf",
+      "conteudo_slides": "AULAS-CHALKIE-AI/CONTEUDO/AULA-04-COESAO-E-COERENCIA-TEXTUAL.md"
+    },
+    {
+      "numero": 5,
+      "aula": "Aula 05",
+      "tema": "Tipologias Textuais na Prática",
+      "carga_horaria": 6,
+      "capacidades": [
+        "C1",
+        "C4"
+      ],
+      "conhecimentos": [
+        "Paragrafação e organização de ideias"
+      ],
+      "slides": "AULAS-CHALKIE-AI/5-Tipologias-Textuais-na-Prática.pdf",
+      "conteudo_slides": "AULAS-CHALKIE-AI/CONTEUDO/AULA-05-TIPOLOGIAS-TEXTUAIS-NA-PRATICA.md"
+    },
+    {
+      "numero": 6,
+      "aula": "Aula 06",
+      "tema": "Pontuação e Concordância na Escrita",
+      "carga_horaria": 6,
+      "capacidades": [
+        "C1",
+        "C6"
+      ],
+      "conhecimentos": [
+        "Pontuação e seu uso comunicativo",
+        "Concordância verbal e nominal"
+      ],
+      "slides": "AULAS-CHALKIE-AI/6-Pontuação-e-Concordância-na-Escrita.pdf",
+      "conteudo_slides": "AULAS-CHALKIE-AI/CONTEUDO/AULA-06-PONTUACAO-E-CONCORDANCIA-NA-ESCRITA.md"
+    },
+    {
+      "numero": 7,
+      "aula": "Aula 07",
+      "tema": "Classes de Palavras e Figuras de Linguagem",
+      "carga_horaria": 6,
+      "capacidades": [
+        "C2",
+        "C3"
+      ],
+      "conhecimentos": [
+        "Compreensão global e detalhada de textos",
+        "Identificação de tema, ideia principal e intenção comunicativa"
+      ],
+      "slides": "AULAS-CHALKIE-AI/7-Classes-de-Palavras-e-Figuras-de-Linguagem.pdf",
+      "conteudo_slides": "AULAS-CHALKIE-AI/CONTEUDO/AULA-07-CLASSES-DE-PALAVRAS-E-FIGURAS-DE-LINGUAGEM.md"
+    },
+    {
+      "numero": 8,
+      "aula": "Aula 08",
+      "tema": "Oralidade e Apresentação em Público",
+      "carga_horaria": 7,
+      "capacidades": [
+        "C4",
+        "C5"
+      ],
+      "conhecimentos": [
+        "Paragrafação e organização de ideias"
+      ],
+      "slides": "AULAS-CHALKIE-AI/8-Oralidade-e-Apresentação-em-Público.pdf",
+      "conteudo_slides": "AULAS-CHALKIE-AI/CONTEUDO/AULA-08-ORALIDADE-E-APRESENTACAO-EM-PUBLICO.md"
+    },
+    {
+      "numero": 9,
+      "aula": "Aula 09",
+      "tema": "Argumentação Oral, Debates e Registros",
+      "carga_horaria": 7,
+      "capacidades": [
+        "C3",
+        "C5"
+      ],
+      "conhecimentos": [
+        "Identificação de tema, ideia principal e intenção comunicativa",
+        "Paragrafação e organização de ideias"
+      ],
+      "slides": "AULAS-CHALKIE-AI/9-Argumentação-Oral,-Debates-e-Registros.pdf",
+      "conteudo_slides": "AULAS-CHALKIE-AI/CONTEUDO/AULA-09-ARGUMENTACAO-ORAL-DEBATES-E-REGISTROS.md"
+    },
+    {
+      "numero": 10,
+      "aula": "Aula 10",
+      "tema": "Gêneros Literários, Textos Técnicos e Síntese",
+      "carga_horaria": 7,
+      "capacidades": [
+        "C2",
+        "C6"
+      ],
+      "conhecimentos": [
+        "Compreensão global e detalhada de textos",
+        "Paragrafação e organização de ideias"
+      ],
+      "slides": "AULAS-CHALKIE-AI/10-Gêneros-Literários,-Textos-Técnicos-e-Síntese.pdf",
+      "conteudo_slides": "AULAS-CHALKIE-AI/CONTEUDO/AULA-10-GENEROS-LITERARIOS-TEXTOS-TECNICOS-E-SINTESE.md"
+    }
   ]
 }

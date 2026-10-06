@@ -64,7 +64,7 @@
 
 # STATUS-EMENTAS-CURSOS — Consolidado
 
-**Última atualização:** 2026-10-03 18:13:55
+**Última atualização:** 2026-10-06 10:22:07
 **Escopo:** todos os cursos em `MATERIAIS/` (exceto `MATERIAS-GERAIS/`)
 **Fonte:** tamanho medido direto em cada `EMENTA-CHALKIE-AI.md`
 **Padrão de tamanho:** 14.800–14.950 caracteres
@@ -143,7 +143,7 @@
 | FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO | 14.928 | ✅ Conforme | VERIFICAR |
 | NOCOES_ELETRICIDADE_CIRCUITOS_BASICOS | 14.863 | ✅ Conforme | VERIFICAR |
 | OFICINAS_IMPRESSAO_3D_ROBOTICA | 14.885 | ✅ Conforme | VERIFICAR |
-| REFORCO_LINGUAGENS | 14.928 | ✅ Conforme | VERIFICAR |
+| REFORCO_LINGUAGENS | 14.866 | ✅ Conforme | VERIFICAR |
 | REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO | 14.887 | ✅ Conforme | VERIFICAR |
 
 ## 🎓 TECNICO-INFORMATICA-INTERNET

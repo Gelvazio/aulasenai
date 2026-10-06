@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 10:17
+**Versão das regras:** 2026-10-06 10:22
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 10:22 | Reforço de Linguagens com **10 aulas** (uma por slide, 6 h/7 h = 63 h, exceção à regra de 4 h) em `CONTEUDO/`; link "Slides da aula" nas atividades (campo `Slides`, geradores de objetivas e discursivas) |
 | 2026-10-06 10:17 | Reforço de Linguagens: o conteúdo das atividades vem **sempre** de `AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-*.md` (slides das 10 aulas convertidos em Markdown) |
 | 2026-10-06 09:49 | Regra "PENDÊNCIAS DE AULAS": tabela `pendencias` (RLS só do Professor Administrador, exclusão lógica), página `MATERIAIS/AGENDA_COLABORADOR/pendencias.html` com CRUD completo e filtros por todos os campos, menu PENDÊNCIAS |
 | 2026-10-06 09:21 | Regra exclusiva "REFORÇO DE LINGUAGENS: 25 QUESTÕES POR ATIVIDADE": 20 objetivas + 5 discursivas (Contexto, Comando e campo para digitar), discursivas corrigidas com IA e análise do professor |
@@ -58,7 +59,7 @@ Registrada em 2026-10-03 a pedido do usuário.
   antes de passar à próxima, controlando em `<MATERIA>/AULAS/STATUS-AULAS.md` (ver a regra
   "GERAR E GRAVAR UMA AULA POR VEZ").
 - ✅ **Exceção — Reforço de Linguagens** (2026-10-06): cada atividade tem 25 questões (20 objetivas + 5
-  discursivas); ver a regra exclusiva da matéria.
+  discursivas) e a matéria tem 10 aulas (uma por slide); ver a regra exclusiva da matéria.
 - ✅ **1 atividade objetiva de 50 questões por aula** (2026-10-03), controlada em
   `<MATERIA>/ATIVIDADES/STATUS-ATIVIDADES.md` (ver a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES").
 - ⛔ **NUNCA fazer push** (2026-10-01): o push é feito **só pelo usuário, localmente**. Mesmo que
@@ -2051,6 +2052,14 @@ demais matérias continuam com a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES".
   resposta e dos critérios no `-GABARITO.md`, fora do Git) **e análise do professor**, que
   confirma ou ajusta a nota sugerida. A nota da discursiva só vale depois da análise do
   professor.
+- ✅ **10 aulas, uma por apresentação de `AULAS-CHALKIE-AI/`** (2026-10-06, decisão do usuário;
+  plano `docs/reforco-linguagens-10-aulas-e-atividades.md`): **exceção** à regra "1 aula a cada
+  4 h" — aulas 01 a 07 com 6 h e 08 a 10 com 7 h (total 63 h, a carga da UC). As aulas ficam em
+  `REFORCO_LINGUAGENS/CONTEUDO/AULA-NN-DESCRICAO.md`; as 16 aulas antigas de 4 h foram
+  guardadas em `AULAS/LEGADO-16-AULAS/` (não são mais usadas).
+- ✅ **Link dos slides em toda atividade:** a fonte tem `- **Slides:** ../AULAS-CHALKIE-AI/<N>-....pdf`
+  e os geradores mostram "Slides da aula: 📕 Slides (PDF)" nas instruções da página. Os PDFs de
+  `AULAS-CHALKIE-AI/` são publicados (exceção no `.gitignore`).
 - ✅ **Fonte do conteúdo das atividades = SEMPRE
   `REFORCO_LINGUAGENS/AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-*.md`** (2026-10-06, pedido do usuário):
   os slides de cada aula convertidos em Markdown (um arquivo por aula, 10 aulas). Objetivas e

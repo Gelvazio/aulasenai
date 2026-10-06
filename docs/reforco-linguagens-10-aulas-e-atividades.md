@@ -59,15 +59,15 @@ matéria"; "na pasta ATIVIDADES, crie atividades apenas a partir da aula 02, poi
 
 | Passo | Descrição | Status | Criado em | Concluído em | Tempo decorrido |
 |-------|-----------|--------|-----------|--------------|-----------------|
-| 1 | Aprovação do plano e das decisões D1–D7 | ⬜ Pendente | 2026-10-06 10:16 | — | — |
-| 2 | Regra exclusiva no `CLAUDE.md` (10 aulas) + versão/histórico + visualizador | 🔄 Em progresso (fonte das atividades já registrada em 10:17) | 2026-10-06 10:16 | — | — |
-| 3 | `EMENTA-CHALKIE-AI.md` (seção VI com 10 aulas, tamanho) + `STATUS-EMENTAS.md` + `STATUS-EMENTAS-CURSOS.md` | ⬜ Pendente | 2026-10-06 10:16 | — | — |
-| 4 | `materia.json` com `aulas` (10) e cargas | ⬜ Pendente | 2026-10-06 10:16 | — | — |
-| 5 | Mover as 16 aulas antigas para `AULAS/LEGADO-16-AULAS/` | ⬜ Pendente | 2026-10-06 10:16 | — | — |
+| 1 | Aprovação do plano e das decisões D1–D7 | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:22 | — |
+| 2 | Regra exclusiva no `CLAUDE.md` (10 aulas) + versão/histórico + visualizador | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:22 | — |
+| 3 | `EMENTA-CHALKIE-AI.md` (seção VI com 10 aulas, tamanho) + `STATUS-EMENTAS.md` + `STATUS-EMENTAS-CURSOS.md` | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:22 | — |
+| 4 | `materia.json` com `aulas` (10) e cargas | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:22 | — |
+| 5 | Mover as 16 aulas antigas para `AULAS/LEGADO-16-AULAS/` | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:22 | — |
 | 6 | Criar as 10 aulas em `RL/CONTEUDO/` (uma por vez), com link dos slides | ⬜ Pendente | 2026-10-06 10:16 | — | — |
-| 7 | `.gitignore` liberando os PDFs dos slides (se D4 aprovada) | ⬜ Pendente | 2026-10-06 10:16 | — | — |
+| 7 | `.gitignore` liberando os PDFs dos slides (se D4 aprovada) | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:22 | — |
 | 8 | `AULAS/STATUS-AULAS.md` e `ATIVIDADES/STATUS-ATIVIDADES.md` com 10 aulas | ⬜ Pendente | 2026-10-06 10:16 | — | — |
-| 9 | Aula 01: `Conteúdo-base` das fontes aponta para `AULAS-CHALKIE-AI/CONTEUDO/AULA-01-*.md` (sem mudar questões) | ⬜ Pendente | 2026-10-06 10:16 | — | — |
+| 9 | Aula 01: `Conteúdo-base` das fontes aponta para `AULAS-CHALKIE-AI/CONTEUDO/AULA-01-*.md` (sem mudar questões) | ✅ Concluído |2026-10-06 10:16| 2026-10-06 10:22 | — |
 | 10 | Atividades da Aula 02 (20 objetivas + 5 discursivas) | ⬜ Pendente | 2026-10-06 10:16 | — | — |
 | 11 | Atividades da Aula 03 | ⬜ Pendente | 2026-10-06 10:16 | — | — |
 | 12 | Atividades da Aula 04 | ⬜ Pendente | 2026-10-06 10:16 | — | — |

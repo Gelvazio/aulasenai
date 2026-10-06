@@ -1,6 +1,6 @@
 # STATUS-EMENTAS — REFORCO_LINGUAGENS
 
-**Última atualização:** 2026-10-01 15:13:58
+**Última atualização:** 2026-10-06 10:22:07
 
 ---
 
@@ -8,7 +8,7 @@
 
 | Arquivo | Status | Tamanho | Observações |
 |---------|--------|---------|-------------|
-| **EMENTA-CHALKIE-AI.md** | ✅ PRESENTE | 14928 chars | ✅ CONFORME (14.800–14.950 chars) |
+| **EMENTA-CHALKIE-AI.md** | ✅ PRESENTE | 14866 chars | ✅ CONFORME (14.800–14.950 chars) |
 
 ## ⏱️ Carga Horária
 

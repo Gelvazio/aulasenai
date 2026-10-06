@@ -128,55 +128,37 @@ Esta unidade curricular integra-se ao programa Rio do Sul Mais Tech, desenvolven
 
 ## 🗓️ VI. SEQUÊNCIA DE AULAS DETALHADA
 
-Sequência oficial da UC: 16 aulas presenciais de 4h = 64h (UC de 63h contada como 64h), na ordem dos arquivos `AULAS/AULA-01.md` a `AULA-16.md`. A última aula é a avaliação final (nota mínima 7 e 75% de frequência).
+Sequência oficial da UC: 10 aulas presenciais, uma para cada apresentação de `AULAS-CHALKIE-AI/` (slides em Markdown em `AULAS-CHALKIE-AI/CONTEUDO/`): aulas 1 a 7 com 6h e aulas 8 a 10 com 7h = 63h. Aulas em `CONTEUDO/AULA-NN-*.md`. A última aula fecha a UC com síntese, portfólio e avaliação final (nota mínima 7 e 75% de frequência). Roteiro de cada aula: retomada, exposição com slides, prática guiada, dinâmica em grupo e registro.
 
-**Aula 1 — Leitura e Compreensão Textual (4h)**
-- Foco: compreensão global e detalhada · Prática: resumo de um texto
+**Aula 1 — Tipos de Texto e Contexto de Produção (6h)**
+- Foco: tipos × gêneros; contexto de produção; compreensão global e detalhada · Prática: análise de mensagens do cotidiano
 
-**Aula 2 — Tema e Ideia Principal (4h)**
-- Foco: tema, assunto e ideia principal · Prática: tema × ideia em notícias
+**Aula 2 — Tema, Assunto e Ideia Principal (6h)**
+- Foco: tema, assunto, ideia principal e tópico frasal · Prática: tema × ideia em notícias
 
-**Aula 3 — Intenção Comunicativa e Análise Crítica (4h)**
-- Foco: intenção comunicativa · Prática: leitura crítica de anúncios
+**Aula 3 — Intenção Comunicativa e Análise Crítica (6h)**
+- Foco: intenção do autor, público-alvo, leitura crítica · Prática: leitura crítica de anúncios
 
-**Aula 4 — Coesão e Coerência (4h)**
-- Foco: coesão; coerência; conectivos · Prática: reescrita com conectivos
+**Aula 4 — Coesão e Coerência Textual (6h)**
+- Foco: coesão referencial e sequencial; coerência; conectivos · Prática: reescrita com conectivos
 
-**Aula 5 — Textos Narrativos (4h)**
-- Foco: paragrafação; organização de ideias · Prática: conto curto
+**Aula 5 — Tipologias Textuais na Prática (6h)**
+- Foco: narração, descrição e argumentação; paragrafação · Prática: conto curto, descrição e parágrafo argumentativo
 
-**Aula 6 — Textos Descritivos (4h)**
-- Foco: paragrafação; organização de ideias · Prática: descrição de um lugar
+**Aula 6 — Pontuação e Concordância na Escrita (6h)**
+- Foco: vírgula e demais sinais; concordância verbal e nominal · Prática: revisão de frases
 
-**Aula 7 — Textos Argumentativos (4h)**
-- Foco: organização de ideias; pensamento crítico · Prática: parágrafo argumentativo
+**Aula 7 — Classes de Palavras e Figuras de Linguagem (6h)**
+- Foco: classes gramaticais no texto; sentido figurado · Prática: figuras em letras e anúncios
 
-**Aula 8 — Pontuação e Concordância (4h)**
-- Foco: pontuação; concordância verbal e nominal · Prática: revisão de frases
+**Aula 8 — Oralidade e Apresentação em Público (7h)**
+- Foco: roteiro, postura, voz, escuta ativa e feedback · Prática: apresentação de 2 minutos
 
-**Aula 9 — Classes de Palavras (4h)**
-- Foco: classes gramaticais no texto · Prática: classificar palavras de um texto
+**Aula 9 — Argumentação Oral, Debates e Registros (7h)**
+- Foco: argumentar respeitando opiniões; registro e revisão em pares · Prática: debate regrado e ata
 
-**Aula 10 — Figuras de Linguagem (4h)**
-- Foco: sentido figurado e efeitos · Prática: figuras em letras e anúncios
-
-**Aula 11 — Oralidade: Apresentação (4h)**
-- Foco: comunicação oral assertiva · Prática: apresentação de 2 minutos
-
-**Aula 12 — Debate e Argumentação Oral (4h)**
-- Foco: argumentar respeitando opiniões · Prática: debate regrado
-
-**Aula 13 — Gêneros Variados (Crônica, Poesia) (4h)**
-- Foco: compreensão de gêneros literários · Prática: leitura e comentário
-
-**Aula 14 — Textos Técnicos e Informativos (4h)**
-- Foco: textos do mundo do trabalho · Prática: síntese de um manual
-
-**Aula 15 — Revisão Colaborativa e Feedback (4h)**
-- Foco: revisão; trabalho em grupo · Prática: revisão em pares
-
-**Aula 16 — Avaliação e Projetos Finais (4h)**
-- Foco: síntese da UC · Prática: projeto final (avaliação)
+**Aula 10 — Gêneros Literários, Textos Técnicos e Síntese (7h)**
+- Foco: crônica, poesia, textos técnicos; síntese, resenha e portfólio · Prática: síntese de um manual e projeto final (avaliação)
 
 ---
 
