@@ -46,6 +46,8 @@ ATIVIDADES = [
      f"{PASTA_TIC}/ATIVIDADES-AULA-06-50-QUESTOES.md"),
     (7, "Textos Técnicos e Redação Empresarial", DATA_PROVISORIA,
      f"{PASTA_TIC}/ATIVIDADES-AULA-07-50-QUESTOES.md"),
+    (7, "Textos Técnicos e Redação Empresarial", "2026-10-09",
+     f"{PASTA_TIC}/ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-QUESTOES.md"),
     (8, "Editor de Planilhas: Organização e Fórmulas", DATA_PROVISORIA,
      f"{PASTA_TIC}/ATIVIDADES-AULA-08-50-QUESTOES.md"),
     (9, "Planilhas Eletrônicas: Análise Visual e Gráficos", DATA_PROVISORIA,
@@ -135,6 +137,8 @@ ATIVIDADES_REFORCO_LINGUAGENS = [
      f"{PASTA_REFORCO_LINGUAGENS}/ATIVIDADES-AULA-07-20-QUESTOES.md"),
     (8, "Oralidade e Apresentação em Público", "2026-11-20",
      f"{PASTA_REFORCO_LINGUAGENS}/ATIVIDADES-AULA-08-20-QUESTOES.md"),
+    (9, "Argumentação Oral, Debates e Registros", "2026-11-27",
+     f"{PASTA_REFORCO_LINGUAGENS}/ATIVIDADES-AULA-09-20-QUESTOES.md"),
 ]
 
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.

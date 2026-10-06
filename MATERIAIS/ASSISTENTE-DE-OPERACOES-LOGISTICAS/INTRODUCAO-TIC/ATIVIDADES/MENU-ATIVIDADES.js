@@ -28,6 +28,10 @@ window.MENU_ATIVIDADES = {
     },
     { rotulo: '🧠 Brainstorming', link: 'ATIVIDADE-GRANDE/brainstorming.html' },
     {
+      rotulo: '📝 Atividade individual — Comunicação técnica (sexta à tarde)',
+      link: 'ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA.html',
+    },
+    {
       rotulo: '📝 Atividades por aula',
       subitens: [
         {

@@ -29,6 +29,7 @@
 
 | Página | Tipo | Banco |
 |---|---|---|
+| `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA.html` | 40 questões objetivas individuais (conteúdo do trabalho em equipe v2, Aulas 01 a 07; sexta 09/10/2026, turma 135081) — fonte `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/` | ⬜ seed gerado (`database/2026-10-06-atividade-individual-comunicacao-seed-atividades.sql`), falta aplicar |
 | `ATIVIDADE-PRATICA-AULA-01.html` | discursiva/prática/composição | ✅ bloqueada |
 | `ATIVIDADE-PRATICA-AULA-02.html` | discursiva/prática/composição | ✅ bloqueada |
 | `ATIVIDADE-PRATICA-AULA-03.html` | discursiva/prática/composição | ✅ bloqueada |

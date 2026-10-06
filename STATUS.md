@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
+**Próximo passo:** Etapa 27, item 27.4 — aplicar no Supabase o seed da atividade individual da ITIC (sexta à tarde) quando o usuário pedir. Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -341,3 +341,16 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 |------|-----------------|--------------------|
 | 2026-10-03 | A análise de 2026-09-08 dizia ITIC presencial e Banco de Dados "completo" | Conferir sempre a ementa do curso e as pastas reais antes de afirmar situação |
 | 2026-10-03 | Abri os slides em PDF da aula 01 para montar a aula | PDF nunca é fonte: conteúdo e conferência só pelos `.md` (ementa primeiro) — regra no `CLAUDE.md` |
+
+## Etapa 27 — ITIC: atividade individual de sexta à tarde (40 objetivas) (pedida em 2026-10-06; tarefa pequena)
+
+Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA.html`
+(fonte em `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/`, fora do Git). Conteúdo: trabalho em equipe v2 (`ATIVIDADE-GRANDE/`) e Aulas 01 a 07.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 27.1 | Fonte com 40 questões objetivas (gabarito 10 de cada letra, posição sorteada) | ✅ Concluído | 2026-10-06 | Fonte lida pelo gerador; `.gitignore` (`*QUESTOES.md`) |
+| 27.2 | Página HTML pelo gerador (exportar PDF, PDF com gabarito do professor, Word, folha no banco) | ✅ Concluído | 2026-10-06 | 40 itens no HTML; sem gabarito embutido |
+| 27.3 | Item no `MENU-ATIVIDADES.js`, `STATUS-ATIVIDADES.md` e seed (`database/2026-10-06-atividade-individual-comunicacao-seed-atividades.sql`, fora do Git) | ✅ Concluído | 2026-10-06 | `node` leu o menu; seed com 40 linhas de gabarito |
+| 27.4 | Aplicar o seed no Supabase (sem ele a marcação das respostas fica bloqueada) | ⬜ Pendente | — | Depende de pedido do usuário |
+| 27.5 | Aceite do usuário | ⬜ Pendente | — | — |
