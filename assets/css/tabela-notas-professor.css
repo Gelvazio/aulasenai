@@ -1,0 +1,50 @@
+/* Tabela "Notas dos alunos" (só professor) — assets/js/tabela-notas-professor.js */
+:root {
+    --tabela-notas-borda: #c9d6e8;
+    --tabela-notas-cabecalho: #004384;
+    --tabela-notas-texto-cabecalho: #ffffff;
+    --tabela-notas-zebra: #f2f6fb;
+}
+
+.tabela-notas-professor__topo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.tabela-notas-professor__topo .aula-title { margin-bottom: 0; }
+
+.tabela-notas-professor__turma { margin: 8px 0; font-weight: 600; }
+
+.tabela-notas-professor__area { overflow-x: auto; }
+
+.tabela-notas-professor__tabela {
+    width: 100%;
+    max-width: 640px;
+    border-collapse: collapse;
+}
+
+.tabela-notas-professor__tabela th,
+.tabela-notas-professor__tabela td {
+    border: 1px solid var(--tabela-notas-borda);
+    padding: 6px 10px;
+    text-align: left;
+}
+
+.tabela-notas-professor__tabela th {
+    background: var(--tabela-notas-cabecalho);
+    color: var(--tabela-notas-texto-cabecalho);
+}
+
+.tabela-notas-professor__tabela td:first-child,
+.tabela-notas-professor__tabela td:last-child,
+.tabela-notas-professor__tabela th:first-child,
+.tabela-notas-professor__tabela th:last-child { text-align: center; width: 70px; }
+
+.tabela-notas-professor__tabela tbody tr:nth-child(even) { background: var(--tabela-notas-zebra); }
+
+@media print {
+    .tabela-notas-professor { display: none; }
+}

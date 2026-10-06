@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 29, item 29.5 — aceite do usuário (discursivas de sexta). Depois: Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
+**Próximo passo:** Etapa 35, item 35.2 — aceite do usuário (testar a tabela de notas logado como professor). Depois: Etapa 29, item 29.5 — aceite do usuário (discursivas de sexta). Depois: Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -417,3 +417,21 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 |------|-----------|--------|--------------|-------------|
 | 33.1 | `media-final.json` (Aulas 01–03 nota fixa 10 para todos com rótulo "10-LIVRE"; 06 e 07 sem nota fixa), gerador e JS da média com o rótulo, `notas-fixas-turma.js` sem 06/07 | ✅ Concluído | 2026-10-06 | Página regenerada: 01–03 = 10-LIVRE, 04–07 = "—" até o banco; `node --check` |
 | 33.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 34 — Média final: aluno vê as próprias notas (Aulas 04–07, Objetiva, Prova Prática) — plano: [docs/media-final-notas-do-aluno.md](docs/media-final-notas-do-aluno.md)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 34.1 | Diagnóstico no banco e plano em `docs/`; aprovação do usuário | ✅ Concluído | 2026-10-06 | Aprovado, com SQL e com a tela de correção |
+| 34.2 | SQL: `correcao_discursiva` + função `notas_media_final` | ✅ Concluído | 2026-10-06 | Idempotente |
+| 34.3 | Aplicar no Supabase | ⬜ Pendente | — | — |
+| 34.4 | JS do aluno na média final | ⬜ Pendente | — | — |
+| 34.4b | Tela de correção da Prova Prática (professor) — escopo acrescentado na aprovação | ⬜ Pendente | — | — |
+| 34.5 | Documentação (database.md, relatório, CLAUDE.md) | ⬜ Pendente | — | — |
+| 34.6 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 35 — Tabela "Notas dos alunos" (só professor) com exportar PDF na Avaliação Objetiva 01 de Análise de Dados (tarefa pequena, 2026-10-06)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 35.1 | `assets/js/tabela-notas-professor.js` + `assets/css/tabela-notas-professor.css`: nome e nota (melhor tentativa entregue) em ordem alfabética, da turma da aba do relatório, botão "📥 Exportar PDF (notas)" ao lado do título; ligado por `data-tabela-notas="sim"` (campo `- **Tabela de notas:** sim` no gerador de atividades) | ✅ Concluído | 2026-10-06 | `node --check` e `py_compile`; teste no navegador fica com o usuário |
+| 35.2 | Aceite do usuário | ⬜ Pendente | — | — |
+

@@ -37,6 +37,7 @@ CAMPOS_DADOS = ("uc", "uc_curta", "curso", "docente")
 CAMPO_FOLHA_RESPOSTAS = "Folha de respostas"
 CAMPO_TURMA = "Turma"
 CAMPO_ROTULO = "Rótulo da aula"
+CAMPO_TABELA_NOTAS = "Tabela de notas"
 CAMPO_PDF_GABARITO = "Exportar PDF com gabarito"
 PREFIXOS_SEM_SUFIXO = ("AVALIACAO-", "ATIVIDADE-")
 VALOR_ATIVADO = "sim"
@@ -120,6 +121,7 @@ def ler_questoes(md_path):
         "pdf": campo(texto, "Slides"),
         "folha": campo_opcional(texto, CAMPO_FOLHA_RESPOSTAS).lower() == VALOR_ATIVADO,
         "turma": campo_opcional(texto, CAMPO_TURMA),
+        "tabela_notas": campo_opcional(texto, CAMPO_TABELA_NOTAS).lower() == VALOR_ATIVADO,
     }
     meta["letras"] = ""
     valor_pdf_gabarito = campo_opcional(texto, CAMPO_PDF_GABARITO).lower()
@@ -288,7 +290,8 @@ def gerar_atividade(md_path, dados):
     trocas = {
         "{{CARDS}}": "\n\n".join(card(it) for it in itens),
         "{{GABARITO}}": tag_gabarito(meta["folha"], gabarito_json),
-        "{{LOGIN}}": ' data-login="sim"' if meta["folha"] else "",
+        "{{LOGIN}}": (' data-login="sim"' if meta["folha"] else "")
+                     + (' data-tabela-notas="sim"' if meta["tabela_notas"] else ""),
         "{{TOTAL}}": str(meta["total"]),
         "{{AULA}}": e(meta["aula"]),
         "{{ROTULO_AULA}}": e(meta["rotulo"]),

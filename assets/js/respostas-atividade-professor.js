@@ -504,6 +504,7 @@ function aplicarFiltroTurmaRelatorio(bloco, linhas, turma) {
     });
     const visiveis = linhas.filter((linha) => idsVisiveis.has(String(linha.aluno_id)));
     atualizarResumoRelatorio(bloco.querySelector('.' + CLASSE_RELATORIO + '__resumo'), visiveis);
+    document.dispatchEvent(new CustomEvent('relatorio-professor:turma', { detail: { turma } }));
 }
 
 /**
@@ -852,6 +853,25 @@ function criarBotaoFavoritaRelatorio(turmas, aoAlterar) {
 }
 
 /**
+ * Mostra a tabela "Notas dos alunos" (nome e nota em ordem alfabética, com PDF) quando a página
+ * pede (<body data-tabela-notas="sim">). Uma falha aqui não derruba o relatório.
+ * @param {HTMLElement} bloco - Cartão do relatório do professor.
+ * @param {Object[]} linhas - Linhas do resumo.
+ * @param {Object[]} turmas - Turmas do relatório.
+ */
+async function abrirTabelaNotas(bloco, linhas, turmas) {
+    if (document.body.dataset.tabelaNotas !== 'sim') return;
+    try {
+        if (typeof window.montarTabelaNotasProfessor !== 'function') {
+            await carregarScript('tabela-notas-professor.js');
+        }
+        montarTabelaNotasProfessor(bloco, linhas, { turmas, turma: turmaEscolhidaRelatorio });
+    } catch (erro) {
+        console.warn('Tabela de notas indisponível:', erro.message);
+    }
+}
+
+/**
  * Mostra, no início da atividade, o relatório do professor (cria ou substitui o cartão).
  * @param {HTMLElement} secao - Seção de conteúdo da página.
  * @param {number} atividadeId - Id da atividade no banco.
@@ -892,6 +912,7 @@ async function montarRelatorioProfessor(secao, atividadeId, maximo) {
         bloco.appendChild(montarListaAlunosRelatorio(linhas, { secao, atividadeId, maximo }));
         aplicarNotasGlobais(bloco);
         aplicarFiltroTurmaRelatorio(bloco, linhas, turmaEscolhidaRelatorio);
+        await abrirTabelaNotas(bloco, linhas, turmas);
     } catch (erro) {
         bloco.appendChild(criarElemento('p', CLASSE_RELATORIO + '__erro',
             MSG_ERRO_RELATORIO + erro.message));
