@@ -183,10 +183,18 @@ ORDER BY ordem;
 | conteudo | JSONB | Nullable | NULL | Conteúdo estruturado (slides, vídeos, etc) |
 | created_at | TIMESTAMPTZ | Nullable | `now()` | Data criação |
 | updated_at | TIMESTAMPTZ | Nullable | `now()` | Data última atualização |
+| excluido | SMALLINT | NOT NULL, CHECK (0, 1) | `0` | Exclusão lógica: `1` = aula excluída (card escondido nos índices) |
 
 **Primary Key:** `id`  
 **Foreign Keys (saídas):**
 - → `material.aula_id`
+
+**Exclusão lógica (2026-10-06, `database/2026-10-06-aulas-excluido.sql`):** só o Professor
+Administrador marca `excluido = 1`, pela função `excluir_aula(p_aula bigint)` (security definer,
+exige `eh_professor_administrador()`; `anon` sem execução). O trigger
+`aulas_excluido_so_administrador_trg` recusa mudanças em `excluido` feitas pela API por quem não
+é administrador (a política de update de `aulas` aceita qualquer professor). Restaurar: voltar
+`excluido = 0` pelo SQL Editor. Nenhuma linha é apagada.
 
 **RLS Status:** ✅ **HABILITADO**  
 **Rows:** 0

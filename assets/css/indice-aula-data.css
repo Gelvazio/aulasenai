@@ -5,6 +5,9 @@
     --aula-data-vazia: #a0aec0;
     --aula-data-botao-fundo: #eef0fd;
     --aula-data-botao-borda: #667eea;
+    --aula-excluir-fundo: #fdecec;
+    --aula-excluir-borda: #c53030;
+    --aula-excluir-texto: #9b2c2c;
 }
 
 .aula-data { font-size: 14px; font-weight: 700; color: var(--aula-data-texto); }
@@ -18,3 +21,14 @@
 }
 
 .aula-data-caixa { width: min(420px, 100%); }
+
+/* Exclusão lógica da aula (só Professor Administrador): card escondido para todos. */
+.aula.aula--excluida { display: none; }
+
+.aula-excluir-botao {
+    background: var(--aula-excluir-fundo);
+    border: 1px solid var(--aula-excluir-borda);
+    color: var(--aula-excluir-texto);
+}
+
+.aula-excluir-botao[hidden] { display: none; }

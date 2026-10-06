@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 10:53
+**Versão das regras:** 2026-10-06 14:29
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 14:29 | Regra "EXCLUIR AULA": botão 🗑️ Excluir aula no modal "Editar aula", só Professor Administrador; exclusão lógica (`aulas.excluido = 1`, função `excluir_aula`) e card escondido nos índices |
 | 2026-10-06 10:53 | Pendências: acesso só pelo menu PENDÊNCIAS do Professor Administrador logado; nenhum índice/link público para `AGENDA_COLABORADOR`, que o gerador de índices passa a ignorar |
 | 2026-10-06 10:22 | Reforço de Linguagens com **10 aulas** (uma por slide, 6 h/7 h = 63 h, exceção à regra de 4 h) em `CONTEUDO/`; link "Slides da aula" nas atividades (campo `Slides`, geradores de objetivas e discursivas) |
 | 2026-10-06 10:17 | Reforço de Linguagens: o conteúdo das atividades vem **sempre** de `AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-*.md` (slides das 10 aulas convertidos em Markdown) |
@@ -1536,6 +1537,23 @@ SQL: `database/2026-10-02-turmaprofessor-professor-administrador.sql` (aplicado 
 - ❌ Nunca usar `user_metadata` nem e-mail digitado na página para decidir quem é administrador;
   nunca afrouxar as políticas da `turmaprofessor` (gravação só com `eh_professor_administrador()`)
   nem devolver TRUNCATE aos papéis da API.
+
+## 🗑️ REGRA — EXCLUIR AULA (SÓ PROFESSOR ADMINISTRADOR, EXCLUSÃO LÓGICA)
+
+Registrada em 2026-10-06 a pedido do usuário. Plano: `docs/excluir-aula-professor-administrador.md`;
+SQL: `database/2026-10-06-aulas-excluido.sql` (✅ aplicado no Supabase em 2026-10-06).
+
+- ✅ No modal **"✏️ Editar aula"** dos índices de atividades (`assets/js/indice-aula-data.js`), o
+  botão **🗑️ Excluir aula** aparece **só para o Professor Administrador** (RPC
+  `eh_professor_administrador()`), com confirmação pelo popup.
+- ✅ **Exclusão lógica:** grava `aulas.excluido = 1` pela função `excluir_aula(p_aula)` (security
+  definer, só administrador). ❌ Nunca apagar a linha da aula nem as atividades/respostas dela.
+- ✅ O card de aula com `excluido = 1` fica **escondido para todos** (professor, aluno e visitante)
+  e a aula sai da lista do **CADASTRAR ATIVIDADES** (`excluido=eq.0`).
+- ✅ O trigger `aulas_excluido_so_administrador_trg` recusa mudança em `excluido` feita pela API
+  por quem não é administrador (a política de update de `aulas` aceita qualquer professor).
+- ✅ Restaurar: voltar `excluido = 0` pelo SQL Editor (ainda sem tela). Código novo que liste
+  aulas deve filtrar `excluido = 0`.
 
 ## 📌 REGRA — PENDÊNCIAS DE AULAS (MENU PENDÊNCIAS, SÓ PROFESSOR ADMINISTRADOR)
 

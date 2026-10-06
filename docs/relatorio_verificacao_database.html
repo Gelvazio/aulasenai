@@ -442,6 +442,33 @@
       <p>Documentação perfeita. Todos os campos, tipos e relacionamentos estão corretos.</p>
     </div>
 
+    <h2>🗑️ Atualização 2026-10-06 — exclusão lógica de aula (Professor Administrador)</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-06-aulas-excluido.sql</code> (✅ aplicado em 2026-10-06) · Tela: botão 🗑️ Excluir aula no modal "✏️ Editar aula" dos índices de atividades</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>aulas.excluido</td>
+          <td>Coluna</td>
+          <td>smallint, not null, padrão 0, check (0, 1); 1 = aula excluída (card escondido nos índices e fora da lista do CADASTRAR ATIVIDADES)</td>
+        </tr>
+        <tr>
+          <td>excluir_aula(p_aula bigint)</td>
+          <td>Função (security definer)</td>
+          <td>Só eh_professor_administrador(); grava excluido = 1; anon sem execução</td>
+        </tr>
+        <tr>
+          <td>aulas_excluido_so_administrador_trg</td>
+          <td>Trigger</td>
+          <td>Recusa mudança de excluido pela API (authenticated/anon) de quem não é administrador; sem DELETE de linhas</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>📌 Atualização 2026-10-06 — pendências de aulas (Professor Administrador)</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-06-pendencias.sql</code> (✅ aplicado em 2026-10-06) · Tela: <code>MATERIAIS/AGENDA_COLABORADOR/pendencias.html</code> (menu PENDÊNCIAS)</p>

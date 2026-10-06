@@ -5,7 +5,8 @@ const TABELA_ATIVIDADE = 'atividade';
 const PERFIL_PROFESSOR_CRUD = 'PROFESSOR';
 const CAMPOS_ATIVIDADE_CRUD = 'id,descricao,data_atividade,total_itens,pagina,ativo,aula_id,' +
     'aulas(numero,titulo)';
-const CONSULTA_AULAS_CRUD = 'select=id,numero,titulo,materia(descricao)&order=materia_id,numero';
+const CONSULTA_AULAS_CRUD = 'select=id,numero,titulo,materia(descricao)&excluido=eq.0' +
+    '&order=materia_id,numero';
 
 /**
  * Indica se há um professor logado (perfil vem do app_metadata, que só a service_role altera).
@@ -34,7 +35,7 @@ async function listarAtividadesCrud(paginas) {
 }
 
 /**
- * Lista as aulas cadastradas, para escolher a aula da atividade.
+ * Lista as aulas cadastradas e não excluídas, para escolher a aula da atividade.
  * @returns {Promise<Object[]>} Aulas com a matéria.
  */
 async function listarAulasCrud() {

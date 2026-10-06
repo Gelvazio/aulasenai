@@ -3,14 +3,16 @@
 // modal para gravar a data. A aula do card vem da atividade cadastrada para o link principal
 // do card; se ela não vier (ex.: atividade bloqueada para o aluno), a aula é procurada pelo
 // número do card ("AULA 01") na mesma matéria. Alunos e visitantes também veem a data.
-// O RLS da tabela aulas só deixa o professor alterar.
+// O RLS da tabela aulas só deixa o professor alterar. O Professor Administrador também vê
+// "🗑️ Excluir aula" no modal: exclusão lógica (aulas.excluido = 1, função excluir_aula) e os
+// cards de aula excluída ficam escondidos para todos.
 // Depende de: js/supabase.js, assets/js/atividades-crud-repositorio.js e
 // assets/js/atividades-crud-modal.js (obterCaminhoHtml e estilos do modal).
 
 const SELETOR_CARD_DATA_AULA = 'article.aula';
 const SELETOR_LINK_DATA_AULA = 'a.btn.principal';
 const TABELA_AULAS_DATA = 'aulas';
-const CAMPOS_AULA_DATA = 'id,numero,titulo,data_planejada,materia_id';
+const CAMPOS_AULA_DATA = 'id,numero,titulo,data_planejada,materia_id,excluido';
 const CAMPOS_ATIVIDADE_DATA_AULA = 'pagina,aula_id,aulas(' + CAMPOS_AULA_DATA + ')';
 const SELETOR_NUMERO_DATA_AULA = '.num';
 const TEXTO_BOTAO_EDITAR_AULA = '✏️ Editar aula';
@@ -18,8 +20,15 @@ const TEXTO_SEM_DATA_AULA = '📅 Data da aula: não informada';
 const TEXTO_AULA_SEM_CADASTRO = '📅 Aula não cadastrada no banco (use CADASTRAR ATIVIDADES)';
 const MSG_DATA_AULA_GRAVADA = '✅ Data da aula gravada.';
 const MSG_DATA_AULA_ERRO = '❌ Não foi possível gravar. Confira o login de professor e o banco.';
+const RPC_EXCLUIR_AULA = 'excluir_aula';
+const RPC_ADMINISTRADOR_AULA = 'eh_professor_administrador';
+const CLASSE_CARD_AULA_EXCLUIDA = 'aula--excluida';
+const AULA_EXCLUIDA = 1;
+const MSG_EXCLUIR_AULA_ERRO = 'Não foi possível excluir a aula. Só o Professor Administrador ' +
+    'pode excluir; confira o login e o banco.';
+const URL_POPUP_DATA_AULA = document.currentScript?.src.replace(/[^/]*$/, 'popup.js') || '';
 
-const estadoDataAula = { cards: [], aulaEmEdicao: null, ehProfessor: false };
+const estadoDataAula = { cards: [], aulaEmEdicao: null, ehProfessor: false, ehAdministrador: false };
 let elementosDataAula = null;
 
 /**
@@ -159,6 +168,9 @@ function montarModalDataAula() {
     acoes.append(criarBotaoDataAula('Salvar', 'crud-btn--principal', 'salvar'),
         criarBotaoDataAula('Limpar data', '', 'limpar'),
         criarBotaoDataAula('✕ Fechar', '', 'fechar'));
+    const botaoExcluir = criarBotaoDataAula('🗑️ Excluir aula', 'aula-excluir-botao', 'excluir');
+    botaoExcluir.hidden = !estadoDataAula.ehAdministrador;
+    acoes.append(botaoExcluir);
     formulario.append(campo, acoes);
     const mensagem = criarElementoDataAula('p', 'crud-mensagem');
     caixa.append(titulo, formulario, mensagem);
@@ -231,6 +243,7 @@ function aoClicarModalDataAula(evento) {
         return;
     }
     if (acao === 'limpar') elementosDataAula.campoData.value = '';
+    if (acao === 'excluir') aoExcluirAula();
 }
 
 /**
@@ -257,6 +270,81 @@ async function aoSalvarDataAula(evento) {
 }
 
 /**
+ * Diz se o usuário logado é o Professor Administrador (só ele exclui aulas).
+ * @returns {Promise<boolean>} true se for o administrador.
+ */
+async function verificarAdministradorDataAula() {
+    const cliente = obterClienteSupabase();
+    if (!cliente) return false;
+
+    const { data, error } = await cliente.rpc(RPC_ADMINISTRADOR_AULA);
+    return !error && data === true;
+}
+
+/**
+ * Carrega o popup reutilizável (assets/js/popup.js), se ainda não estiver na página.
+ * @returns {Promise<void>} Resolve quando o popup está disponível (ou falhou ao carregar).
+ */
+function garantirPopupDataAula() {
+    if (typeof window.confirmarPopup === 'function' || !URL_POPUP_DATA_AULA) {
+        return Promise.resolve();
+    }
+
+    return new Promise((resolver) => {
+        const script = document.createElement('script');
+        script.src = URL_POPUP_DATA_AULA;
+        script.addEventListener('load', resolver);
+        script.addEventListener('error', resolver);
+        document.head.appendChild(script);
+    });
+}
+
+/**
+ * Esconde do índice os cards das aulas excluídas.
+ */
+function esconderCardsExcluidos() {
+    estadoDataAula.cards.forEach((item) => {
+        const excluida = item.aula?.excluido === AULA_EXCLUIDA;
+        item.card.classList.toggle(CLASSE_CARD_AULA_EXCLUIDA, excluida);
+    });
+}
+
+/**
+ * Pede confirmação ao administrador antes de excluir a aula.
+ * @param {Object} aula - Aula em edição.
+ * @returns {Promise<boolean>} true se confirmou.
+ */
+async function confirmarExclusaoAula(aula) {
+    await garantirPopupDataAula();
+    if (typeof window.confirmarPopup !== 'function') return false;
+
+    const numero = String(aula.numero ?? '').padStart(2, '0');
+    return window.confirmarPopup('A aula ' + numero + ' — ' + (aula.titulo || '') + ' será ' +
+        'marcada como excluída e o card dela deixará de aparecer no índice. Continuar?',
+    { tipo: 'pergunta', titulo: 'Excluir aula', textoConfirmar: '🗑️ Excluir' });
+}
+
+/**
+ * Exclui (logicamente) a aula em edição pela função do banco e esconde os cards dela.
+ */
+async function aoExcluirAula() {
+    const aula = estadoDataAula.aulaEmEdicao;
+    if (!aula || !estadoDataAula.ehAdministrador) return;
+    if (!(await confirmarExclusaoAula(aula))) return;
+
+    const { data, error } = await obterClienteSupabase().rpc(RPC_EXCLUIR_AULA, { p_aula: aula.id });
+    if (error || data !== true) {
+        mostrarMensagemDataAula(MSG_EXCLUIR_AULA_ERRO, true);
+        return;
+    }
+    estadoDataAula.cards.filter((item) => item.aula?.id === aula.id)
+        .forEach((item) => { item.aula.excluido = AULA_EXCLUIDA; });
+    esconderCardsExcluidos();
+    fecharModalDataAula();
+    await window.mostrarPopup?.('✅ Aula excluída.', { tipo: 'sucesso', titulo: 'Excluir aula' });
+}
+
+/**
  * Acrescenta o botão "Editar aula" ao card (só professor e aula cadastrada).
  * @param {{card: HTMLElement, aula: Object|null}} item - Card e a aula dele.
  */
@@ -280,6 +368,9 @@ async function iniciarDataAulas() {
     const paginas = cards.map((card) =>
         obterCaminhoHtml(card.querySelector(SELETOR_LINK_DATA_AULA)?.getAttribute('href')));
     estadoDataAula.ehProfessor = await verificarProfessorDataAula();
+    if (estadoDataAula.ehProfessor) {
+        estadoDataAula.ehAdministrador = await verificarAdministradorDataAula().catch(() => false);
+    }
     try {
         const aulas = await buscarAulasDasPaginas([...new Set(paginas.filter(Boolean))]);
         estadoDataAula.cards = cards.map((card, i) =>
@@ -288,6 +379,7 @@ async function iniciarDataAulas() {
     } catch (erro) {
         if (!estadoDataAula.cards.length) return;
     }
+    esconderCardsExcluidos();
     estadoDataAula.cards.forEach(renderizarDataNoCard);
     if (estadoDataAula.ehProfessor) estadoDataAula.cards.forEach(adicionarBotaoEditarAula);
 }
