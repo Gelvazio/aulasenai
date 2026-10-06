@@ -84,6 +84,10 @@ footer { background: #2d3748; color: white; padding: 24px 20px; text-align: cent
     align-items: center; justify-content: center; font-size: 96px; border-radius: 8px;
     background: var(--bloqueio-veu); pointer-events: none;
 }
+/* Aluno/visitante: o véu cobre o card inteiro e recebe o clique (nenhum link fica acessível) */
+.aula.bloqueada { cursor: not-allowed; }
+.aula.bloqueada::before { pointer-events: auto; }
+.aula.bloqueada a { pointer-events: none; }
 
 .menu-principal { margin-top: 14px; display: flex; justify-content: center; gap: 10px; }
 .menu-principal a { color: white; font-size: 13px; font-weight: 700; text-decoration: none; padding: 7px 18px; border: 2px solid var(--gold); border-radius: 16px; }

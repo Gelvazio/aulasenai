@@ -90,20 +90,30 @@ async function avisarBloqueio(evento) {
 }
 
 /**
- * Bloqueia o card: visual de bloqueado e aviso ao clicar em qualquer página de atividade.
+ * Desativa um link do card bloqueado: tira o href (nem clique, nem nova aba, nem teclado abrem).
+ * @param {HTMLAnchorElement} link - Link do card.
+ */
+function desativarLinkBloqueado(link) {
+    link.removeAttribute('href');
+    link.setAttribute('aria-disabled', 'true');
+    link.setAttribute('tabindex', '-1');
+    link.classList.add('off');
+    if (!link.matches(SELETOR_LINK_BLOQUEIO)) return;
+
+    link.classList.remove('principal');
+    link.textContent = TEXTO_BOTAO_BLOQUEADO;
+}
+
+/**
+ * Bloqueia o card inteiro: visual de bloqueado, todos os links desativados (atividade, slides,
+ * PDFs...) e aviso ao clicar em qualquer parte do card.
  * @param {HTMLElement} card - Card do índice.
  */
 function bloquearCardAtividade(card) {
     card.classList.add(CLASSE_CARD_BLOQUEADO);
-    card.querySelectorAll('a.btn').forEach((link) => {
-        if (!obterCaminhoBloqueio(link.getAttribute('href'))) return;
-
-        link.addEventListener('click', avisarBloqueio);
-        if (!link.matches(SELETOR_LINK_BLOQUEIO)) return;
-        link.classList.remove('principal');
-        link.classList.add('off');
-        link.textContent = TEXTO_BOTAO_BLOQUEADO;
-    });
+    card.setAttribute('aria-disabled', 'true');
+    card.querySelectorAll('a[href]').forEach(desativarLinkBloqueado);
+    card.addEventListener('click', avisarBloqueio, true);
 }
 
 /**
