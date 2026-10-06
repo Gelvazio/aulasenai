@@ -151,6 +151,19 @@ function notaDaLinhaMedia(linha, notas) {
 }
 
 /**
+ * Texto da nota de uma linha: o rótulo da nota fixa (data-rotulo-nota-fixa, ex.: "10-LIVRE")
+ * quando a linha usa a nota fixa; senão, a nota formatada.
+ * @param {HTMLTableRowElement} linha - Linha da tabela.
+ * @param {number} nota - Nota de 0 a 10.
+ * @returns {string} Texto da célula de nota.
+ */
+function textoNotaLinhaMedia(linha, nota) {
+    const rotulo = linha.dataset.rotuloNotaFixa;
+    if (rotulo && usaNotaFixaMedia(linha)) return rotulo;
+    return formatarNumeroMedia(nota);
+}
+
+/**
  * Escreve a nota e os pontos das linhas com nota fixa (valem para todos os alunos).
  * @param {HTMLTableElement} tabela - Tabela da média final.
  */
@@ -159,7 +172,7 @@ function preencherNotasFixasMedia(tabela) {
         if (!usaNotaFixaMedia(linha)) return;
         const nota = Number(linha.dataset.notaFixa);
         const pontos = (nota / NOTA_MAXIMA_MEDIA) * Number(linha.dataset.pontos);
-        linha.querySelector('[data-campo="nota"]').textContent = formatarNumeroMedia(nota);
+        linha.querySelector('[data-campo="nota"]').textContent = textoNotaLinhaMedia(linha, nota);
         linha.querySelector('[data-campo="pontos"]').textContent = formatarNumeroMedia(pontos);
     });
 }
@@ -178,7 +191,7 @@ function preencherLinhasMedia(tabela, notas) {
         const pontos = temNota ? (nota / NOTA_MAXIMA_MEDIA) * Number(linha.dataset.pontos) : 0;
         linha.dataset.obtidos = String(pontos);
         linha.querySelector('[data-campo="nota"]').textContent =
-            temNota ? formatarNumeroMedia(nota) : TEXTO_SEM_NOTA_MEDIA;
+            temNota ? textoNotaLinhaMedia(linha, nota) : TEXTO_SEM_NOTA_MEDIA;
         linha.querySelector('[data-campo="pontos"]').textContent =
             temNota ? formatarNumeroMedia(pontos) : TEXTO_SEM_NOTA_MEDIA;
         total += pontos;

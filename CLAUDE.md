@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 14:29
+**Versão das regras:** 2026-10-06 15:10
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 15:10 | Média final de Análise de Dados: Aulas 01–03 com nota fixa 10 para todos, exibida como "10-LIVRE" (`rotulo_nota_fixa` no `media-final.json`); Aulas 04–07 pela nota do banco |
 | 2026-10-06 14:29 | Regra "EXCLUIR AULA": botão 🗑️ Excluir aula no modal "Editar aula", só Professor Administrador; exclusão lógica (`aulas.excluido = 1`, função `excluir_aula`) e card escondido nos índices |
 | 2026-10-06 10:53 | Pendências: acesso só pelo menu PENDÊNCIAS do Professor Administrador logado; nenhum índice/link público para `AGENDA_COLABORADOR`, que o gerador de índices passa a ignorar |
 | 2026-10-06 10:22 | Reforço de Linguagens com **10 aulas** (uma por slide, 6 h/7 h = 63 h, exceção à regra de 4 h) em `CONTEUDO/`; link "Slides da aula" nas atividades (campo `Slides`, geradores de objetivas e discursivas) |
@@ -1785,8 +1786,8 @@ assets/
 ├─ js/                 → scripts reutilizáveis (ex.: atividade.js — exportação de atividades em PDF;
 │                        atividade-pratica-excel.js — imprimir e marcar passo concluído;
 │                        termos-tentativa.js — textos de tentativa/recuperação (avaliações);
-│                        notas-fixas-turma.js — nota fixa por turma (ex.: 10 nas Aulas 01-03,
-│                        06 e 07 de Análise de Dados p/ turma 133933), usada pelo
+│                        notas-fixas-turma.js — nota fixa por turma (ex.: 10 nas Aulas 01-03
+│                        de Análise de Dados p/ turma 133933; 04 a 07 pelo banco), usada pelo
 │                        relatorioAtividades.html e pelo painel-professor.html;
 │                        respostas-atividade.js + css/respostas-atividade.css — marcação das
 │                        alternativas, folha de respostas no fim da página e entrega; grava

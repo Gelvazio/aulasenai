@@ -13,9 +13,7 @@
           "pagina": "ATIVIDADES-1-MATEMATICA-APLICADA-A-GESTAO-PARTE-1-50-QUESTOES.html",
           "pontos": 5.71,
           "nota_fixa": 10,
-          "nota_fixa_turmas": [
-            "133933"
-          ]
+          "rotulo_nota_fixa": "10-LIVRE"
         },
         {
           "nome": "Atividade Aula 02",
@@ -23,9 +21,7 @@
           "pagina": "ATIVIDADES-2-FUNDAMENTOS-MATEMATICOS-PARA-GESTAO-50-QUESTOES.html",
           "pontos": 5.71,
           "nota_fixa": 10,
-          "nota_fixa_turmas": [
-            "133933"
-          ]
+          "rotulo_nota_fixa": "10-LIVRE"
         },
         {
           "nome": "Atividade Aula 03",
@@ -33,9 +29,7 @@
           "pagina": "ATIVIDADES-3-EXCEL-BASICO-INTERFACE-E-FORMULAS-50-QUESTOES.html",
           "pontos": 5.71,
           "nota_fixa": 10,
-          "nota_fixa_turmas": [
-            "133933"
-          ]
+          "rotulo_nota_fixa": "10-LIVRE"
         },
         {
           "nome": "Atividade Aula 04",
@@ -53,21 +47,13 @@
           "nome": "Atividade Aula 06",
           "conteudo": "Excel Avançado Tabelas Dinâmicas e Gráficos",
           "pagina": "ATIVIDADES-6-EXCEL-AVANCADO-TABELAS-DINAMICAS-E-GRAFICOS-50-QUESTOES.html",
-          "pontos": 5.71,
-          "nota_fixa": 10,
-          "nota_fixa_turmas": [
-            "133933"
-          ]
+          "pontos": 5.71
         },
         {
           "nome": "Atividade Aula 07",
           "conteudo": "Dashboards Interativos e Integração de Dados",
           "pagina": "ATIVIDADES-7-DASHBOARDS-INTERATIVOS-E-INTEGRACAO-DE-DADOS-50-QUESTOES.html",
-          "pontos": 5.74,
-          "nota_fixa": 10,
-          "nota_fixa_turmas": [
-            "133933"
-          ]
+          "pontos": 5.74
         }
       ]
     },

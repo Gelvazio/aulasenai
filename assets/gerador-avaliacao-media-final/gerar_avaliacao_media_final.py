@@ -224,13 +224,14 @@ def celula_peso(peso):
     return f'<td class="media-numero media-peso">{escapar(peso)}</td>'
 
 
-def celula_resultado(campo, ativo, valor=None):
+def celula_resultado(campo, ativo, valor=None, rotulo=None):
     """Monta uma célula de resultado (nota ou pontos) preenchida pelo JS.
 
     Args:
         campo: "nota" ou "pontos".
         ativo: True se a célula recebe valor do banco.
         valor: Valor já conhecido (nota fixa); None mostra "—" até o JS preencher.
+        rotulo: Texto exibido no lugar do valor (ex.: "10-LIVRE"), quando houver.
 
     Returns:
         HTML da célula.
@@ -238,6 +239,8 @@ def celula_resultado(campo, ativo, valor=None):
     if not ativo:
         return '<td class="media-numero"></td>'
     texto = TEXTO_SEM_NOTA if valor is None else f"{float(valor):.1f}".replace(".", ",")
+    if rotulo and valor is not None:
+        texto = escapar(rotulo)
     return f'<td class="media-numero" data-campo="{campo}">{texto}</td>'
 
 
@@ -259,9 +262,12 @@ def html_item(identificador, item):
                       f' data-pagina="{escapar(item["pagina"])}"')
     nota_fixa = item.get("nota_fixa") if tem_pagina else None
     turmas = item.get("nota_fixa_turmas", [])
+    rotulo = item.get("rotulo_nota_fixa") if nota_fixa is not None else None
     pontos_fixos = None
     if nota_fixa is not None:
         atributos += f' data-nota-fixa="{numero_atributo(nota_fixa)}"'
+    if rotulo:
+        atributos += f' data-rotulo-nota-fixa="{escapar(rotulo)}"'
         pontos_fixos = float(nota_fixa) / NOTA_MAXIMA * float(item["pontos"])
     if nota_fixa is not None and turmas:
         # Nota fixa só de algumas turmas: o JS preenche depois de saber a turma.
@@ -271,7 +277,7 @@ def html_item(identificador, item):
             f'<td>{escapar(item.get("conteudo", ""))}</td>'
             f'<td class="media-numero">{numero_exibido(item["pontos"])}</td>'
             f'{celula_peso(item.get("peso"))}'
-            f'{celula_resultado("nota", tem_pagina, nota_fixa)}'
+            f'{celula_resultado("nota", tem_pagina, nota_fixa, rotulo)}'
             f'{celula_resultado("pontos", tem_pagina, pontos_fixos)}</tr>')
 
 

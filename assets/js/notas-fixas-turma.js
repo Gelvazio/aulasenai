@@ -4,14 +4,12 @@
 
 const NOTAS_FIXAS_TURMA = [
     {
-        // Análise de Dados Aplicada à Gestão, turma da Salete: Aulas 01, 02, 03, 06 e 07 = nota 10.
+        // Análise de Dados Aplicada à Gestão, turma da Salete: Aulas 01, 02 e 03 = nota 10 (livre).
         turmas: ['133933'], nota: 10,
         paginas: [
             'ATIVIDADES-1-MATEMATICA-APLICADA-A-GESTAO-PARTE-1-50-QUESTOES.html',
             'ATIVIDADES-2-FUNDAMENTOS-MATEMATICOS-PARA-GESTAO-50-QUESTOES.html',
             'ATIVIDADES-3-EXCEL-BASICO-INTERFACE-E-FORMULAS-50-QUESTOES.html',
-            'ATIVIDADES-6-EXCEL-AVANCADO-TABELAS-DINAMICAS-E-GRAFICOS-50-QUESTOES.html',
-            'ATIVIDADES-7-DASHBOARDS-INTERATIVOS-E-INTEGRACAO-DE-DADOS-50-QUESTOES.html',
         ],
     },
 ];
