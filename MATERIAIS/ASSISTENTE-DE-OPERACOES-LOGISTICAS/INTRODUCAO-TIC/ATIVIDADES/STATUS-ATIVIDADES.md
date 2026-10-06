@@ -29,7 +29,8 @@
 
 | Página | Tipo | Banco |
 |---|---|---|
-| `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA.html` | 40 questões objetivas individuais (conteúdo do trabalho em equipe v2, Aulas 01 a 07; sexta 09/10/2026, turma 135081) — fonte `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/` | ✅ id 80 — liberada só para a tarde (135081); bloqueada para a manhã (135080) |
+| `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA.html` | 40 questões objetivas individuais (conteúdo do trabalho em equipe v2, Aulas 01 a 07; sexta 09/10/2026, turma 135081) — fonte `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/` | ✅ id 80 — liberada só para a tarde (135081) |
+| `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-DISCURSIVA.html` | 20 questões discursivas individuais (mesmo conteúdo das 40 objetivas; correção com IA + professor) — fonte e padrão de resposta (fora do Git) em `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/` | ✅ id 81 — liberada só para a tarde (135081) |
 | `ATIVIDADE-PRATICA-AULA-01.html` | discursiva/prática/composição | ✅ bloqueada |
 | `ATIVIDADE-PRATICA-AULA-02.html` | discursiva/prática/composição | ✅ bloqueada |
 | `ATIVIDADE-PRATICA-AULA-03.html` | discursiva/prática/composição | ✅ bloqueada |

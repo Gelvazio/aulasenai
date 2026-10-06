@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
+**Próximo passo:** Etapa 29, item 29.5 — aceite do usuário (discursivas de sexta). Depois: Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -373,3 +373,13 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 | 28.2 | Aprovação do plano pelo usuário | ⬜ Pendente | — | — |
 | 28.3 | Execução dos passos 1 a 6 do plano | ⬜ Pendente | — | — |
 | 28.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 29 — ITIC: atividade individual de sexta — 20 discursivas (pedida em 2026-10-06; tarefa pequena)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 29.1 | Fonte com 20 discursivas (Contexto, Comando, 1 tópico de 1,0) + padrão de resposta (`-GABARITO.md`, fora do Git), a partir das 40 objetivas | ✅ Concluído | 2026-10-06 | Gerador validou 20 questões, 20 tópicos, 20 pontos, 20 padrões |
+| 29.2 | Página `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-DISCURSIVA.html` pelo gerador de discursivas | ✅ Concluído | 2026-10-06 | 20 itens; sem padrão de resposta no HTML |
+| 29.3 | Card no índice da ITIC e item no `MENU-ATIVIDADES.js` | ✅ Concluído | 2026-10-06 | `node` leu o menu |
+| 29.4 | Seed aplicado no Supabase e liberação só para a tarde (135081) pela função `definir_bloqueio_turma` — também na objetiva (id 80) | ✅ Concluído | 2026-10-06 | id 81: 20 tópicos, `bloqueio` = todas as turmas exceto 135081; id 80 igual |
+| 29.5 | Aceite do usuário | ⬜ Pendente | — | — |

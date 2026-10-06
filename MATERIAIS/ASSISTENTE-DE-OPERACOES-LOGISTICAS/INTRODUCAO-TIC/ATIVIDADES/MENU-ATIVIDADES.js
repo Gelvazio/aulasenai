@@ -32,6 +32,10 @@ window.MENU_ATIVIDADES = {
       link: 'ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA.html',
     },
     {
+      rotulo: '✍️ Atividade individual — Discursivas (sexta à tarde)',
+      link: 'ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-DISCURSIVA.html',
+    },
+    {
       rotulo: '📝 Atividades por aula',
       subitens: [
         {
