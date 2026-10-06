@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correção das discursivas</title>
+    <link rel="stylesheet" href="assets/css/criar-usuarios-comando.css">
+    <link rel="stylesheet" href="assets/css/header-usuario.css">
+    <link rel="stylesheet" href="assets/css/turmas-professor.css">
+    <link rel="stylesheet" href="assets/css/correcao-discursiva.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js" defer></script>
+    <script src="js/header-usuario.js" defer></script>
+    <script src="assets/js/popup.js" defer></script>
+    <script src="assets/js/correcao-discursiva-repositorio.js" defer></script>
+    <script src="assets/js/correcao-discursiva-ia.js" defer></script>
+    <script src="assets/js/correcao-discursiva-pagina.js" defer></script>
+</head>
+<body>
+    <div id="header-usuario"></div>
+    <main class="guia cd-guia">
+        <header class="guia-cabecalho">
+            <h1>✍️ Correção das avaliações discursivas</h1>
+            <p>Escolha a avaliação e a entrega do aluno, confira cada tópico com o padrão de
+                resposta e lance a nota. A IA só <strong>sugere</strong>: a nota que vale é a do
+                professor, depois de <strong>💾 Salvar correção</strong>.</p>
+        </header>
+
+        <section class="guia-cartao guia-erro" id="cdBloqueio" hidden></section>
+
+        <div id="cdConteudo" hidden>
+            <section class="guia-cartao">
+                <h2>1. Entrega</h2>
+                <div class="tp-formulario">
+                    <label class="tp-campo">Avaliação discursiva
+                        <select id="cdAvaliacao" class="guia-filtro"></select>
+                    </label>
+                    <label class="tp-campo">Turma
+                        <select id="cdTurma" class="guia-filtro"></select>
+                    </label>
+                    <label class="tp-campo">Aluno e tentativa entregue
+                        <select id="cdEntrega" class="guia-filtro"></select>
+                    </label>
+                </div>
+                <p id="cdResumo" class="tp-resumo"></p>
+            </section>
+
+            <section class="guia-cartao" id="cdCorrecao" hidden>
+                <div class="tp-cabecalho-lista">
+                    <h2 id="cdTitulo">2. Correção</h2>
+                    <p id="cdTotal" class="cd-total"></p>
+                </div>
+                <details class="cd-ia">
+                    <summary>🤖 Sugestão da IA (opcional)</summary>
+                    <ol class="cd-ia__passos">
+                        <li>Clique em <strong>📋 Copiar prompt para a IA</strong> e cole numa
+                            IA.</li>
+                        <li>Copie a resposta da IA, cole no campo abaixo e clique em
+                            <strong>Ler sugestões</strong>.</li>
+                        <li>Confira e use <strong>Usar sugestões da IA</strong> para copiar para a
+                            nota do professor (ou ajuste à mão).</li>
+                    </ol>
+                    <div class="tp-acoes">
+                        <button type="button" class="guia-botao" id="cdCopiarPrompt">
+                            📋 Copiar prompt para a IA
+                        </button>
+                    </div>
+                    <textarea id="cdRespostaIa" class="guia-filtro cd-ia__texto" rows="6"
+                        placeholder="Cole aqui a resposta da IA (ITEM 01-a: 0,3 | justificativa)"
+                    ></textarea>
+                    <div class="tp-acoes">
+                        <button type="button" class="guia-botao tp-botao-secundario" id="cdLerIa">
+                            Ler sugestões
+                        </button>
+                        <button type="button" class="guia-botao tp-botao-secundario" id="cdUsarIa">
+                            Usar sugestões da IA
+                        </button>
+                    </div>
+                </details>
+                <div id="cdItens"></div>
+                <div class="tp-acoes cd-salvar">
+                    <button type="button" class="guia-botao" id="cdSalvar">
+                        💾 Salvar correção
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

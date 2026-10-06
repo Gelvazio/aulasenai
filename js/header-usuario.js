@@ -2,9 +2,9 @@
 // Genérico: preenche o elemento <div id="header-usuario"></div> de qualquer página com o
 // usuário logado (Supabase Auth) e o botão SAIR; sem sessão, mostra o botão ENTRAR.
 // Sempre mostra o botão HOME (index.html da raiz) junto do usuário logado.
-// Para o PROFESSOR, mostra também o menu USUARIOS / RELATORIOS / ALUNOS (nova aba) e, só para o
-// Professor Administrador (confirmado pelo banco), o item TURMAS (turmas.html) e o botão REGRAS
-// (modal com o CLAUDE.md, assets/js/regras-modal.js).
+// Para o PROFESSOR, mostra também o menu USUARIOS / RELATORIOS / ALUNOS / CORREÇÃO (nova aba) e,
+// só para o Professor Administrador (confirmado pelo banco), o item TURMAS (turmas.html) e o
+// botão REGRAS (modal com o CLAUDE.md, assets/js/regras-modal.js).
 // Uso na página: <script src=".../js/header-usuario.js" defer></script> + o div acima.
 // Qualquer elemento com data-somente-perfil="PROFESSOR" (e hidden) só aparece para esse perfil.
 // Os caminhos (CSS, supabase.js, login.html) são calculados a partir do próprio script,
@@ -21,6 +21,7 @@ const MENU_PROFESSOR_HEADER = [
   { rotulo: "USUARIOS", rota: "../scripts/criarUsuariosBancoDados.html" },
   { rotulo: "RELATORIOS", rota: "../relatorioAtividades.html" },
   { rotulo: "ALUNOS", rota: "../alunos.html" },
+  { rotulo: "CORREÇÃO", rota: "../correcao-discursiva.html" },
 ];
 // Só para o Professor Administrador (confirmado pelo banco: RPC eh_professor_administrador).
 const MENU_ADMINISTRADOR_HEADER = [

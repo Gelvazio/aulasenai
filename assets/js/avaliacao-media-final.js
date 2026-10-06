@@ -1,11 +1,14 @@
 // Página AVALIACAO-MEDIA-FINAL.html: preenche a nota (0 a 10) e os pontos de cada instrumento da
-// tabela. ALUNO: as próprias notas (melhor tentativa entregue, calculada no banco por
-// nota_da_tentativa; o gabarito nunca sai do banco). PROFESSOR: escolhe turma e aluno nos combos
+// tabela. ALUNO: as próprias notas (melhor tentativa entregue, calculada no banco pela função
+// notas_media_final, que vale mesmo com a atividade bloqueada; discursiva só depois da correção
+// do professor; o gabarito nunca sai do banco). PROFESSOR: escolhe turma e aluno nos combos
 // (assets/js/avaliacao-media-final-professor.js). Linhas com data-pagina (caminho relativo à
 // página) e data-pontos; subtotais por data-subtotal e total por data-total.
-// Depende de js/supabase.js (SUPABASE, sbGet, sbH, obterClienteSupabase).
+// Depende de js/supabase.js (sbGet, obterClienteSupabase).
 
-const ROTA_NOTA_MEDIA = '/rest/v1/rpc/nota_da_tentativa';
+const RPC_NOTAS_MEDIA_FINAL = 'notas_media_final';
+const SITUACAO_AGUARDANDO_MEDIA = 'AGUARDANDO_CORRECAO';
+const TEXTO_AGUARDANDO_MEDIA = 'Aguardando correção';
 const NOTA_MAXIMA_MEDIA = 10;
 const PERFIL_PROFESSOR_MEDIA = 'PROFESSOR';
 const TEXTO_SEM_NOTA_MEDIA = '—';
@@ -92,37 +95,28 @@ function agruparMelhoresNotasMedia(atividades, notas) {
 }
 
 /**
- * Calcula a nota (0 a 10) de uma tentativa entregue do aluno logado.
- * @param {number} atividadeId - Id da atividade.
- * @param {number} tentativa - Número da tentativa.
- * @returns {Promise<number|null>} Nota ou null se não houver resultado.
+ * Busca no banco (função notas_media_final) a melhor nota do ALUNO logado em cada linha da
+ * tabela. Vale também para atividades bloqueadas; a discursiva entregue sem correção completa
+ * volta como "aguardando correção".
+ * @param {HTMLTableElement} tabela - Tabela da média final.
+ * @returns {Promise<{notas: Map<string, number>, aguardando: Set<string>}>} Notas por caminho e
+ *     caminhos aguardando correção.
+ * @throws {Error} Se a função do banco responder com erro.
  */
-async function lerNotaDaTentativaMedia(atividadeId, tentativa) {
-    const resposta = await fetch(SUPABASE.URL + ROTA_NOTA_MEDIA, {
-        method: 'POST', headers: await sbH(), cache: 'no-store',
-        body: JSON.stringify({ p_atividade: atividadeId, p_tentativa: tentativa }),
+async function buscarNotasDoAlunoLogadoMedia(tabela) {
+    const paginas = [...tabela.querySelectorAll('tr[data-pagina]')]
+        .map((linha) => caminhoDaPaginaMedia(linha.dataset.pagina));
+    const { data, error } = await obterClienteSupabase()
+        .rpc(RPC_NOTAS_MEDIA_FINAL, { p_paginas: paginas });
+    if (error) throw new Error(error.message);
+
+    const notas = new Map();
+    const aguardando = new Set();
+    (data || []).forEach((linha) => {
+        if (linha.situacao === SITUACAO_AGUARDANDO_MEDIA) aguardando.add(linha.pagina);
+        if (linha.nota !== null) notas.set(linha.pagina, Number(linha.nota));
     });
-    if (!resposta.ok) throw new Error('nota indisponível (' + resposta.status + ')');
-
-    const [resultado] = await resposta.json();
-    if (!resultado?.total) return null;
-    return (resultado.acertos / resultado.total) * NOTA_MAXIMA_MEDIA;
-}
-
-/**
- * Busca a melhor nota entregue do ALUNO logado em cada atividade.
- * @param {{id: number, pagina: string}[]} atividades - Atividades da tabela.
- * @returns {Promise<Map<string, number>>} Melhor nota por caminho da página.
- */
-async function buscarNotasDoAlunoLogadoMedia(atividades) {
-    if (!atividades.length) return new Map();
-
-    const ids = atividades.map((atividade) => atividade.id).join(',');
-    const entregas = await sbGet('entrega_atividade',
-        'select=atividade_id,tentativa&atividade_id=in.(' + ids + ')');
-    const notas = await Promise.all(entregas.map(async (entrega) => ({ ...entrega,
-        nota: await lerNotaDaTentativaMedia(entrega.atividade_id, entrega.tentativa) })));
-    return agruparMelhoresNotasMedia(atividades, notas);
+    return { notas, aguardando };
 }
 
 /**
@@ -178,12 +172,24 @@ function preencherNotasFixasMedia(tabela) {
 }
 
 /**
- * Escreve nota e pontos em cada linha com data-pagina (sem nota = "—").
+ * Texto de uma linha sem nota: "Aguardando correção" (discursiva entregue) ou "—".
+ * @param {HTMLTableRowElement} linha - Linha da tabela.
+ * @param {Set<string>} aguardando - Caminhos aguardando correção.
+ * @returns {string} Texto da célula de nota.
+ */
+function textoSemNotaMedia(linha, aguardando) {
+    const estaAguardando = aguardando.has(caminhoDaPaginaMedia(linha.dataset.pagina));
+    return estaAguardando ? TEXTO_AGUARDANDO_MEDIA : TEXTO_SEM_NOTA_MEDIA;
+}
+
+/**
+ * Escreve nota e pontos em cada linha com data-pagina (sem nota = "—" ou "Aguardando correção").
  * @param {HTMLTableElement} tabela - Tabela da média final.
  * @param {Map<string, number>} notas - Melhor nota por caminho.
+ * @param {Set<string>} [aguardando] - Caminhos de discursivas entregues aguardando correção.
  * @returns {number} Total de pontos.
  */
-function preencherLinhasMedia(tabela, notas) {
+function preencherLinhasMedia(tabela, notas, aguardando = new Set()) {
     let total = 0;
     tabela.querySelectorAll('tr[data-pagina]').forEach((linha) => {
         const nota = notaDaLinhaMedia(linha, notas);
@@ -191,7 +197,7 @@ function preencherLinhasMedia(tabela, notas) {
         const pontos = temNota ? (nota / NOTA_MAXIMA_MEDIA) * Number(linha.dataset.pontos) : 0;
         linha.dataset.obtidos = String(pontos);
         linha.querySelector('[data-campo="nota"]').textContent =
-            temNota ? textoNotaLinhaMedia(linha, nota) : TEXTO_SEM_NOTA_MEDIA;
+            temNota ? textoNotaLinhaMedia(linha, nota) : textoSemNotaMedia(linha, aguardando);
         linha.querySelector('[data-campo="pontos"]').textContent =
             temNota ? formatarNumeroMedia(pontos) : TEXTO_SEM_NOTA_MEDIA;
         total += pontos;
@@ -235,9 +241,10 @@ function preencherSomasMedia(tabela, total) {
  * @param {{tabela: HTMLTableElement, aviso: HTMLElement}} pagina - Elementos da página.
  * @param {Map<string, number>} notas - Melhor nota por caminho.
  * @param {string} sujeito - Quem soma os pontos ("Você" ou o nome do aluno).
+ * @param {Set<string>} [aguardando] - Caminhos de discursivas aguardando correção.
  */
-function exibirNotasMedia({ tabela, aviso }, notas, sujeito) {
-    const total = preencherLinhasMedia(tabela, notas);
+function exibirNotasMedia({ tabela, aviso }, notas, sujeito, aguardando) {
+    const total = preencherLinhasMedia(tabela, notas, aguardando);
     preencherSomasMedia(tabela, total);
     const minimo = Number(tabela.dataset.notaMinima);
     const modelo = total >= minimo ? MSG_APROVADO_MEDIA : MSG_ABAIXO_MEDIA;
@@ -261,14 +268,13 @@ async function iniciarMediaFinal() {
             pagina.aviso.textContent = MSG_SEM_LOGIN_MEDIA;
             return;
         }
-        const atividades = await buscarAtividadesMedia(pagina.tabela);
         if (login.ehProfessor) {
-            await iniciarProfessorMedia(pagina, atividades);
+            await iniciarProfessorMedia(pagina, await buscarAtividadesMedia(pagina.tabela));
             return;
         }
         pagina.tabela.dataset.turmaAtual = await lerTurmaDoAlunoMedia(login.usuarioId);
-        exibirNotasMedia(pagina, await buscarNotasDoAlunoLogadoMedia(atividades),
-            SUJEITO_ALUNO_MEDIA);
+        const { notas, aguardando } = await buscarNotasDoAlunoLogadoMedia(pagina.tabela);
+        exibirNotasMedia(pagina, notas, SUJEITO_ALUNO_MEDIA, aguardando);
     } catch (erro) {
         pagina.aviso.textContent = MSG_ERRO_MEDIA + erro.message;
     }

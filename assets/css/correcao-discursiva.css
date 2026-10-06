@@ -1,0 +1,73 @@
+/* Página correcao-discursiva.html
+   (complementa criar-usuarios-comando.css e turmas-professor.css) */
+:root {
+    --cd-fundo-item: #f8fafc;
+    --cd-fundo-resposta: #fffdf3;
+    --cd-borda-resposta: #f0c36d;
+    --cd-fundo-padrao: #eef6ee;
+    --cd-borda-padrao: #9bc59b;
+    --cd-ok: #1b7f3b;
+    --cd-pendente: #b45309;
+}
+
+.cd-guia { max-width: 1100px; }
+
+.cd-total { font-weight: 700; color: var(--guia-azul); margin: 0; }
+
+.cd-ia { margin: 8px 0 16px; }
+.cd-ia summary { cursor: pointer; font-weight: 600; color: var(--guia-azul); }
+.cd-ia__passos { margin: 8px 0 8px 20px; }
+.cd-ia__texto { width: 100%; margin: 8px 0; font-family: inherit; }
+
+.cd-item {
+    background: var(--cd-fundo-item);
+    border: 1px solid var(--guia-borda);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+.cd-item h3 { color: var(--guia-azul); font-size: 16px; margin: 0 0 8px; }
+
+.cd-topico { border-top: 1px solid var(--guia-borda); padding-top: 10px; margin-top: 10px; }
+.cd-topico__enunciado { font-weight: 600; margin: 0 0 6px; }
+
+.cd-bloco {
+    white-space: pre-wrap;
+    border-left: 4px solid var(--guia-borda);
+    padding: 6px 10px;
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+.cd-bloco--resposta {
+    background: var(--cd-fundo-resposta);
+    border-color: var(--cd-borda-resposta);
+}
+.cd-bloco--padrao { background: var(--cd-fundo-padrao); border-color: var(--cd-borda-padrao); }
+.cd-bloco__rotulo {
+    display: block;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.cd-notas {
+    display: grid;
+    grid-template-columns: 140px 160px 1fr;
+    gap: 8px;
+    align-items: end;
+    margin-top: 8px;
+}
+
+.cd-notas input { width: 100%; }
+
+.cd-situacao--ok { color: var(--cd-ok); font-weight: 600; }
+.cd-situacao--pendente { color: var(--cd-pendente); font-weight: 600; }
+
+.cd-salvar { justify-content: flex-end; }
+
+@media (max-width: 640px) {
+    .cd-notas { grid-template-columns: 1fr 1fr; }
+    .cd-notas .cd-notas__comentario { grid-column: 1 / -1; }
+}

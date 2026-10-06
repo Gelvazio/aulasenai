@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 16:45
+**Versão das regras:** 2026-10-06 16:50
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 16:50 | Correção das discursivas (tabela `correcao_discursiva`, tela `correcao-discursiva.html`, menu CORREÇÃO, IA só sugere) e média final do aluno pela função `notas_media_final` (nota vale mesmo com a atividade bloqueada; discursiva "Aguardando correção") |
 | 2026-10-06 16:45 | `.vercelignore` exclui do site todo arquivo com "gabarito" no nome (o gabarito da prova UC1 TIC fica no Git, mas não é publicado) |
 | 2026-10-06 16:30 | Removidos os botões "📝 Exportar em Word" e "📝 Exportar em Word (respostas)" das atividades e avaliações objetivas; fica só o Word com gabarito (professor) |
 | 2026-10-06 16:00 | Tabela "Notas dos alunos" (só professor, nome e nota em ordem alfabética, com Exportar PDF) nas atividades com `- **Tabela de notas:** sim` (`assets/js/tabela-notas-professor.js`) |
@@ -1398,7 +1399,23 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   (tela) + `assets/css/avaliacao-discursiva.css`. Gravação automática 1,5 s após parar de digitar,
   sem localStorage; "Finalizar" relê o banco e lista os tópicos faltando. Valem login, horário da
   turma, bloqueio pelo professor e recuperação (a nova tentativa abre em branco).
-- ⏳ Correção com IA e nota da prática na média final: tarefa seguinte.
+- ✅ **Correção (2026-10-06)**, plano `docs/media-final-notas-do-aluno.md`, SQL
+  `database/2026-10-06-notas-media-final-correcao-discursiva.sql` (aplicado):
+  - tabela **`correcao_discursiva`**: nota de cada tópico por aluno e tentativa; `nota_ia` é só
+    sugestão e **`nota_professor` é a que vale**; o trigger impede passar dos pontos do tópico.
+    RLS: professor só dos alunos das turmas dele; o aluno lê só as próprias notas confirmadas;
+  - tela **`correcao-discursiva.html`** (menu **CORREÇÃO** no header, todo professor):
+    avaliação → turma → entrega; resposta do aluno, padrão de resposta e critérios por tópico.
+    O botão "📋 Copiar prompt para a IA" monta o texto **sem o nome do aluno**; a resposta da
+    IA (`ITEM 01-a: 0,3 | ...`) é colada e lida. ❌ A página **não chama API de IA** (nenhuma
+    chave no site). Código: `assets/js/correcao-discursiva-repositorio.js` (dados),
+    `correcao-discursiva-ia.js` (prompt e leitura), `correcao-discursiva-pagina.js` (tela) +
+    `assets/css/correcao-discursiva.css`;
+  - a nota da discursiva só conta quando **todos** os tópicos da tentativa têm nota do professor.
+- ✅ **Média final do aluno** (`AVALIACAO-MEDIA-FINAL.html`): as notas vêm da função
+  **`notas_media_final(p_paginas)`** (só o aluno logado, sem gabarito). A nota já conquistada
+  aparece **mesmo se a atividade for bloqueada depois**. Discursiva entregue e ainda sem correção
+  completa mostra **"Aguardando correção"**.
 
 ## 🏫 REGRA CRÍTICA — TURMA NA EXPORTAÇÃO DE ATIVIDADES E AVALIAÇÕES (PROJETO TODO)
 

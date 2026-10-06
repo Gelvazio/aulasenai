@@ -442,6 +442,38 @@
       <p>Documentação perfeita. Todos os campos, tipos e relacionamentos estão corretos.</p>
     </div>
 
+    <h2>✍️ Atualização 2026-10-06 — correção das discursivas e notas da média final</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-06-notas-media-final-correcao-discursiva.sql</code> (✅ aplicado em 2026-10-06) · Telas: <code>correcao-discursiva.html</code> (menu CORREÇÃO) e <code>AVALIACAO-MEDIA-FINAL.html</code> (aluno)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>correcao_discursiva</td>
+          <td>Tabela</td>
+          <td>PK aluno + atividade + tentativa + item + tópico; nota_ia (sugestão), nota_professor (vale), comentario, corrigido_por, corrigido_em</td>
+        </tr>
+        <tr>
+          <td>correcao_discursiva_validar_trg</td>
+          <td>Trigger</td>
+          <td>Nota até os pontos do tópico; registra quem confirmou a nota do professor</td>
+        </tr>
+        <tr>
+          <td>correcao_discursiva_select/insert/update</td>
+          <td>Políticas RLS</td>
+          <td>Professor só alunos de professor_pode_ver_aluno; aluno lê só as próprias notas confirmadas; sem delete; anon sem acesso</td>
+        </tr>
+        <tr>
+          <td>notas_media_final(p_paginas text[])</td>
+          <td>Função (security definer)</td>
+          <td>Melhor nota do aluno logado por página (objetiva ou discursiva corrigida); AGUARDANDO_CORRECAO quando faltam notas; independe do bloqueio; sem gabarito</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🗑️ Atualização 2026-10-06 — exclusão lógica de aula (Professor Administrador)</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-06-aulas-excluido.sql</code> (✅ aplicado em 2026-10-06) · Tela: botão 🗑️ Excluir aula no modal "✏️ Editar aula" dos índices de atividades</p>
