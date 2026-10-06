@@ -476,3 +476,9 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 |------|-----------|--------|--------------|-------------|
 | 41.1 | `atividade.js` deixa de carregar o botão; `exportar-banco-moodle.js` e `banco-moodle-xml.js` apagados; regra no `CLAUDE.md` | ✅ Concluído | 2026-10-06 | `node --check`; grep sem referências restantes nas páginas |
 | 41.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 42 — Remover o botão "Exportar PDF com gabarito" (tarefa pequena, 2026-10-06)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 42.1 | Botão retirado das 12 páginas e do `gerar_atividades.py` (fica o "Exportar Gabarito" e a variante "📥 Gabarito") | ✅ Concluído | 2026-10-06 | grep: 0 páginas com o botão; `py_compile` e saída do gerador conferida; `node --check` |
+| 42.2 | Aceite do usuário | ⬜ Pendente | — | — |

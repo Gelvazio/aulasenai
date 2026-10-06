@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 18:30
+**Versão das regras:** 2026-10-06 18:45
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-06 18:45 | Removido o botão "📥 Exportar PDF com gabarito" de todas as páginas e do gerador de atividades |
 | 2026-10-06 18:30 | Removido de todas as atividades o botão "📥 Banco Moodle (AVA SENAI)"; banco do AVA só pelo gerador-banco-ava |
 | 2026-10-06 18:15 | Regra do gabarito também nas discursivas: professor libera no painel por turma (só com todos entregues); aluno "Ver Gabarito" com aviso e registro antes da liberação |
 | 2026-10-06 18:00 | Regra do gabarito (liberação pelo professor só com todos entregues) declarada global: todas as atividades de todas as matérias e cursos |
@@ -1707,8 +1708,10 @@ usuário):** a liberação pelo professor, por atividade e turma, depois que tod
 
 - ✅ O gabarito real (alternativas certas) só o **professor** lê: tabela `gabarito` com RLS de professor;
   nunca embutido nas páginas.
-- ✅ Nas avaliações (`AVALIACAO-OBJETIVA-NN`), no fim da página: **Exportar PDF com gabarito** (só
-  professor) e **Exportar Gabarito** (professor = gabarito real; aluno = ver a liberação abaixo).
+- ✅ Nas avaliações e atividades, no fim da página: **Exportar Gabarito** (professor = gabarito
+  real; aluno = ver a liberação abaixo). ⛔ O botão **"📥 Exportar PDF com gabarito"** foi
+  **removido** de todas as páginas e do gerador em 2026-10-06 (pedido do usuário); fica só a
+  variante "📥 Gabarito" (`data-modo="gabarito"`, só professor) onde já existia.
 - ✅ **REGRA GLOBAL: vale para todas as avaliações e atividades de todas as matérias e de todos
   os cursos** (2026-10-06, pedido do usuário; hoje 53 páginas objetivas): toda atividade com
   folha de respostas no banco (`data-login="sim"`) ganha o botão "🔑 Exportar Gabarito" (inserido

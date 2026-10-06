@@ -1,6 +1,7 @@
 // Botões de exportação no final das avaliações (assets/js/atividade.js faz o PDF).
-//  • "Exportar PDF com gabarito": só PROFESSOR; o gabarito real é lido do banco (RLS) no clique.
-//    Com data-modo="gabarito" no botão (rótulo "Gabarito"), o PDF traz SOMENTE o gabarito.
+//  • Botão btnExportarPDFGabarito, só PROFESSOR: hoje só a variante data-modo="gabarito" (rótulo
+//    "📥 Gabarito", PDF SOMENTE com o gabarito). O "Exportar PDF com gabarito" (atividade completa)
+//    foi removido das páginas em 2026-10-06 a pedido do usuário.
 //  • "Exportar Gabarito": PROFESSOR recebe o gabarito real (só as alternativas certas); ALUNO
 //    recebe o gabarito real SÓ depois que o professor liberar para a turma dele (função
 //    solicitar_gabarito do banco); antes disso vê "Aguarde professor liberar os gabaritos" e o

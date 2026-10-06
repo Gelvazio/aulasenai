@@ -192,6 +192,9 @@ def card(it):
     return "\n".join(partes)
 
 
+QUEBRA_LINHA = chr(10)
+ROTULO_PDF_COM_GABARITO = "Exportar PDF com gabarito</button>"
+
 BLOCO_PDF_GABARITO = '''
             <button class="btn-export" id="btnExportarPDFGabarito" type="button" data-somente-perfil="PROFESSOR" hidden title="Só o professor: atividade completa com o gabarito real (lido do banco)">📥 Exportar PDF com gabarito</button>
             <button class="btn-export" id="btnExportarGabarito" type="button" hidden title="Professor: gabarito real. Aluno: suas respostas da tentativa de maior nota.">🔑 Exportar Gabarito</button>'''
@@ -214,7 +217,10 @@ def bloco_pdf_gabarito(meta):
     if not meta["pdf_gabarito"]:
         return ""
     if not meta["pdf_so_gabarito"]:
-        return BLOCO_PDF_GABARITO
+        # Botão "Exportar PDF com gabarito" removido a pedido do usuário (2026-10-06): fica só o
+        # "Exportar Gabarito".
+        linhas = BLOCO_PDF_GABARITO.split(QUEBRA_LINHA)
+        return QUEBRA_LINHA.join(linha for linha in linhas if ROTULO_PDF_COM_GABARITO not in linha)
 
     linhas = BLOCO_PDF_GABARITO.split("\n")
     linhas[1] = " " * 12 + BOTAO_PDF_SO_GABARITO
