@@ -3,7 +3,7 @@
 
 const TABELA_ATIVIDADE = 'atividade';
 const PERFIL_PROFESSOR_CRUD = 'PROFESSOR';
-const CAMPOS_ATIVIDADE_CRUD = 'id,descricao,data_atividade,total_itens,pagina,ativo,aula_id,' +
+const CAMPOS_ATIVIDADE_CRUD = 'id,nome_atividade,descricao,data_atividade,total_itens,pagina,ativo,aula_id,' +
     'aulas(numero,titulo)';
 const CONSULTA_AULAS_CRUD = 'select=id,numero,titulo,materia(descricao)&excluido=eq.0' +
     '&order=materia_id,numero';

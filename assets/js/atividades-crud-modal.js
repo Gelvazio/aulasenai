@@ -17,6 +17,7 @@ const MSG_CONFIRMAR_EXCLUSAO = 'Excluir esta atividade? O gabarito, as respostas
 
 const BASE_ASSETS_CRUD = document.currentScript?.src.replace(/js\/[^/]*$/, '') || '';
 const TEXTO_ID_NOVA_ATIVIDADE = '(nova atividade — o banco gera o id)';
+const CLASSE_ID_CARD = 'crud-id-card';
 
 const estadoCrud = { paginas: [], atividades: [], aulas: [], editandoId: null };
 let elementosCrud = null;
@@ -53,8 +54,18 @@ function obterCaminhoHtml(href) {
  */
 function coletarPaginasDoIndice() {
     const links = document.querySelectorAll(SELETOR_CARD + ' ' + SELETOR_LINK_ATIVIDADE);
-    const caminhos = [...links].map((link) => obterCaminhoHtml(link.getAttribute('href')));
+    const caminhos = [...links].map((link) => obterCaminhoHtml(lerHrefCrud(link)));
     return [...new Set(caminhos.filter(Boolean))];
+}
+
+/**
+ * Lê o link de um botão do card, mesmo com o card bloqueado (href guardado em
+ * data-href-bloqueado pelo indice-atividades-bloqueio.js).
+ * @param {HTMLAnchorElement} link - Link do card.
+ * @returns {string|null} Endereço do link.
+ */
+function lerHrefCrud(link) {
+    return link.getAttribute('href') || link.getAttribute('data-href-bloqueado');
 }
 
 /**
@@ -113,6 +124,7 @@ function montarFormularioCrud() {
     idAtividade.placeholder = TEXTO_ID_NOVA_ATIVIDADE;
     formulario.append(
         criarCampoCrud('ID da atividade', idAtividade),
+        criarCampoCrud('Nome da atividade', criarControleCrud('input', 'nome_atividade', 'text')),
         criarCampoCrud('Descrição', criarControleCrud('input', 'descricao', 'text')),
         criarCampoCrud('Data', criarControleCrud('input', 'data_atividade', 'date')),
         criarCampoCrud('Total de itens', criarControleCrud('input', 'total_itens', 'number')),
@@ -204,6 +216,7 @@ function preencherFormularioCrud(atividade, paginaPadrao) {
     const campos = elementosCrud.formulario.elements;
     estadoCrud.editandoId = atividade ? atividade.id : null;
     campos.id_atividade.value = atividade ? String(atividade.id) : '';
+    campos.nome_atividade.value = atividade?.nome_atividade || '';
     campos.descricao.value = atividade?.descricao || '';
     campos.data_atividade.value = atividade?.data_atividade || '';
     campos.total_itens.value = atividade?.total_itens || '';
@@ -220,6 +233,7 @@ function preencherFormularioCrud(atividade, paginaPadrao) {
 function lerFormularioCrud() {
     const campos = elementosCrud.formulario.elements;
     const dados = {
+        nome_atividade: campos.nome_atividade.value.trim() || null,
         descricao: campos.descricao.value.trim(),
         data_atividade: campos.data_atividade.value,
         total_itens: Number(campos.total_itens.value),
@@ -246,7 +260,8 @@ function criarLinhaAtividadeCrud(atividade) {
     const detalhe = atividade.data_atividade + ' · ' + atividade.total_itens + ' itens · ' +
         atividade.pagina.split('/').pop() + situacao;
     const texto = criarElementoCrud('div', 'crud-linha__texto');
-    texto.append(criarElementoCrud('strong', '', atividade.descricao),
+    texto.append(criarElementoCrud('strong', '', 'ID ' + atividade.id + ' · ' +
+        (atividade.nome_atividade || atividade.descricao)),
         criarElementoCrud('small', '', detalhe));
     linha.dataset.id = String(atividade.id);
     linha.append(texto, criarBotaoCrud('✏️ Editar', '', 'editar'),
@@ -272,6 +287,8 @@ function renderizarListaCrud() {
 async function recarregarListaCrud() {
     estadoCrud.atividades = await listarAtividadesCrud(estadoCrud.paginas);
     renderizarListaCrud();
+    document.querySelectorAll(SELETOR_CARD)
+        .forEach((card) => mostrarIdNoCard(card, estadoCrud.atividades));
 }
 
 /**
@@ -372,19 +389,50 @@ function adicionarBotaoCrudAoCard(card) {
 
     const botao = criarElementoCrud('button', 'btn crud-botao-card', TEXTO_BOTAO_CRUD);
     botao.type = 'button';
-    const pagina = obterCaminhoHtml(link.getAttribute('href'));
+    const pagina = obterCaminhoHtml(lerHrefCrud(link));
     botao.addEventListener('click', () => abrirModalCrud(pagina));
     acoes.append(botao);
 }
 
 /**
- * Inicia o CRUD: só mostra os botões se houver professor logado.
+ * Mostra no card o ID (e o nome) das atividades cadastradas dos links dele.
+ * @param {HTMLElement} card - Card do índice.
+ * @param {Object[]} atividades - Atividades cadastradas das páginas do índice.
+ */
+function mostrarIdNoCard(card, atividades) {
+    card.querySelector('.' + CLASSE_ID_CARD)?.remove();
+    const paginas = [...card.querySelectorAll('a.btn')]
+        .map((link) => obterCaminhoHtml(lerHrefCrud(link))).filter(Boolean);
+    const doCard = atividades.filter((atividade) => paginas.includes(atividade.pagina));
+    const acoes = card.querySelector(SELETOR_ACOES);
+    if (!doCard.length || !acoes) return;
+
+    const texto = doCard.map((atividade) => 'ID ' + atividade.id +
+        (atividade.nome_atividade ? ' · ' + atividade.nome_atividade : '')).join(' | ');
+    acoes.append(criarElementoCrud('span', CLASSE_ID_CARD, '🆔 ' + texto));
+}
+
+/**
+ * Busca as atividades cadastradas e mostra o ID delas nos cards (falha não quebra o índice).
+ */
+async function mostrarIdsNosCards() {
+    try {
+        const atividades = await listarAtividadesCrud(estadoCrud.paginas);
+        document.querySelectorAll(SELETOR_CARD).forEach((card) => mostrarIdNoCard(card, atividades));
+    } catch (erro) {
+        console.warn('IDs das atividades indisponíveis:', erro.message);
+    }
+}
+
+/**
+ * Inicia o CRUD: só mostra os botões e os IDs se houver professor logado.
  */
 async function iniciarCrudAtividades() {
     if (!await usuarioEhProfessorCrud()) return;
 
     estadoCrud.paginas = coletarPaginasDoIndice();
     document.querySelectorAll(SELETOR_CARD).forEach(adicionarBotaoCrudAoCard);
+    await mostrarIdsNosCards();
 }
 
 /**

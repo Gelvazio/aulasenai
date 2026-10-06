@@ -86,3 +86,15 @@
     .crud-campo input[type="number"], .crud-campo select { font-size: 16px; padding: 10px; }
     .crud-btn { padding: 9px 14px; }
 }
+
+/* ID (e nome) da atividade cadastrada, no card do índice (só professor). */
+.crud-id-card {
+    display: inline-block;
+    padding: 4px 10px;
+    border: 1px solid var(--crud-borda);
+    border-radius: 12px;
+    background: var(--crud-fundo);
+    color: var(--crud-texto);
+    font-size: 12px;
+    font-weight: 600;
+}
