@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 6: Comunicação em Contextos Específicos</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #667eea; --secondary: #764ba2; --gold: #FFD700; --text: #2d3748; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: var(--text); line-height: 1.6; min-height: 100vh; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
+        header { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 40px 20px; text-align: center; border-bottom: 4px solid var(--gold); }
+        header h1 { font-size: 40px; margin-bottom: 10px; }
+        header p { font-size: 16px; opacity: 0.95; }
+        .nav-tabs { display: flex; flex-wrap: wrap; gap: 10px; padding: 20px; background: #f9fafb; border-bottom: 2px solid #e2e8f0; justify-content: center; }
+        .nav-tabs button { padding: 10px 20px; border: 2px solid var(--primary); background: white; color: var(--primary); border-radius: 20px; cursor: pointer; font-weight: 600; transition: all 0.3s; }
+        .nav-tabs button.active { background: var(--primary); color: white; }
+        .content-section { display: none; padding: 40px; }
+        .content-section.active { display: block; }
+        .aula-card { background: #f9fafb; border-left: 5px solid var(--primary); padding: 20px; margin-bottom: 20px; border-radius: 8px; }
+        .aula-badge { background: var(--primary); color: white; padding: 8px 12px; border-radius: 6px; font-weight: 700; font-size: 12px; display: inline-block; margin-bottom: 10px; }
+        .aula-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+        .aula-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+        .tag { background: #e6f2ff; color: var(--primary); padding: 4px 10px; border-radius: 12px; font-size: 12px; }
+        .content-box { padding: 15px; background: white; border-radius: 6px; margin-bottom: 15px; border-left: 3px solid var(--gold); }
+        .content-label { font-weight: 700; color: var(--primary); font-size: 13px; margin-bottom: 8px; }
+        .content-text { font-size: 14px; line-height: 1.6; }
+        .steps { list-style: none; padding: 0; margin: 10px 0; }
+        .steps li { padding: 8px 0; padding-left: 24px; position: relative; font-size: 13px; }
+        .steps li:before { content: "→"; position: absolute; left: 0; font-weight: 700; color: var(--primary); }
+        footer { background: #2d3748; color: white; padding: 30px 20px; text-align: center; }
+        @media (max-width: 768px) { .nav-tabs { gap: 5px; } .nav-tabs button { padding: 8px 12px; font-size: 12px; } header h1 { font-size: 28px; } .content-section { padding: 20px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 Módulo 6: Comunicação em Contextos Específicos</h1>
+            <p>Redes Sociais, Relatório Técnico, Apresentação Profissional — Aulas 18 a 20</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="aula18">Aula 18</button>
+            <button class="tab-btn" data-tab="aula19">Aula 19</button>
+            <button class="tab-btn" data-tab="aula20">Aula 20</button>
+        </div>
+
+        <!-- AULA 18 -->
+        <div id="aula18" class="content-section active">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 18</span>
+                <div class="aula-title">Comunicação em Redes Sociais: Responsabilidade e Impacto</div>
+                <div class="aula-meta">
+                    <span class="tag">60 min</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Análise Digital</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Analisar e produzir conteúdo para redes sociais com consciência de público, permanência digital e impacto social.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um post que você não acha importante ganha 100 mil compartilhamentos. Pode ser falso, prejudicar uma pessoa, ou espalhar conflito. Como você age como comunicador responsável em rede social?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Analise 2 posts virais (um positivo, um problemático). Para cada um: (1) identifique públicos alcançados; (2) avalie impacto; (3) escreva versão melhorada ou contraria. Depois crie seu próprio post educativo respeitoso.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (5 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Riscos e benefícios (10 min):</strong> Professora mostra exemplo: post sem verificação que viraliza e prejudica inocente; discute permanência digital ("apagar é tarde")</li>
+                        <li><strong>Análise do post positivo (10 min):</strong> Estudante lê post de campanha de conscientização bem-feito; identifica: tom, público, ação esperada, impacto real</li>
+                        <li><strong>Análise do post problemático (10 min):</strong> Estuda post ambíguo/falso; identifica: quem foi prejudicado, por que pessoas compartilham sem verificar, consequência</li>
+                        <li><strong>Produção pessoal (20 min):</strong> Estudante cria post próprio sobre tema de interesse escolar (ex: segurança online, saúde mental, inclusão) com objetivo educativo, tom respeitoso, call-to-action clara</li>
+                        <li><strong>Reflexão (10 min):</strong> Responda: como você contribui ou prejudica como comunicador em rede social? Qual responsabilidade tem? Que mudança faria?</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Análise de público e impacto correta<br>
+                        • Distinção entre conteúdo útil e prejudicial<br>
+                        • Post próprio tem objetivo claro e linguagem apropriada<br>
+                        • Demonstra consciência de responsabilidade digital
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AULA 19 -->
+        <div id="aula19" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 19</span>
+                <div class="aula-title">Relatório Técnico: Estrutura e Clareza</div>
+                <div class="aula-meta">
+                    <span class="tag">90 min</span>
+                    <span class="tag">Duplas</span>
+                    <span class="tag">Escrita Técnica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Estruturar relatório técnico com resumo executivo, metodologia, resultados e conclusão; adaptar linguagem para leitor não-especialista.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um projeto de ciência/tecnologia da escola precisa ser documentado para apresentação a direção e possível publicação. Relatório confuso ou desorganizado perde credibilidade.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Escreva relatório de 1-2 páginas de um experimento ou projeto escolar real (ex: teste de germinação de sementes, análise de impacto de tela em concentração). Estruture: resumo, introdução, método, resultados, conclusão.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (6 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Estrutura (10 min):</strong> Professora mostra template: Resumo executivo (3 linhas) | Introdução (contexto + objetivo) | Metodologia (como foi feito) | Resultados (dados/observações) | Conclusão (responde objetivo)</li>
+                        <li><strong>Escolher projeto (10 min):</strong> Dupla escolhe experimento/projeto de sua autoria ou interesse</li>
+                        <li><strong>Resumo executivo (10 min):</strong> Sintetizar em 3-4 linhas: o quê, por quê, resultado principal</li>
+                        <li><strong>Seções restantes (40 min):</strong> Preencher introdução, método, resultados, conclusão; revisar clareza para leitor não-especialista</li>
+                        <li><strong>Feedback colega (15 min):</strong> Outro duo lê e marca: compreendi o objetivo? Os resultados são claros? Falta alguma informação?</li>
+                        <li><strong>Revisão final (5 min):</strong> Dupla aplica feedback e entrega versão revisada</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Resumo executivo sintetiza corretamente<br>
+                        • Objetivo claro e alcançável<br>
+                        • Método descrito em detalhes verificáveis<br>
+                        • Resultados baseados em dados, não opinião<br>
+                        • Conclusão conecta resultados ao objetivo
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AULA 20 -->
+        <div id="aula20" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 20</span>
+                <div class="aula-title">Apresentação Profissional: Slides, Voz, Presença</div>
+                <div class="aula-meta">
+                    <span class="tag">90 min</span>
+                    <span class="tag">Individual/Dupla</span>
+                    <span class="tag">Apresentação</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Criar slides eficazes, preparar fala envolvente, controlar ansiedade, e manter contato com audiência durante apresentação profissional.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você apresentará seu projeto para direção da escola, visitantes ou possíveis parceiros. Slides cheios de texto chato; fala rápida por nervosismo; postura fechada. Resultado: audiência desligada.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Prepare apresentação de 5 minutos de seu projeto escolar com: 6-8 slides (máximo 3 linhas por slide), script falado (não decorado), prática com controle de nervosismo e feedback de postura/voz.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (6 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Regras de slide (10 min):</strong> Máximo 3 linhas texto + 1 imagem/gráfico; fonte legível; cores consistentes; sem animações desnecessárias</li>
+                        <li><strong>Estrutura de apresentação (10 min):</strong> Slide 1 = título/objetivo; slides 2-5 = conteúdo (evolução, 3-4 pontos); slide 6 = conclusão/próximos passos</li>
+                        <li><strong>Script falado (15 min):</strong> Escrever script de 2-3 frases por slide (≈60 segundos cada); ensaiar; cronometrar até 5 min total</li>
+                        <li><strong>Prática 1 (15 min):</strong> Apresentar para professor e 2 colegas; receber feedback sobre: clareza, velocidade, contato visual, nervosismo</li>
+                        <li><strong>Ajustes (15 min):</strong> Revisar slides se necessário; trabalhar pontos fracos da apresentação (velocidade, postura, respiração)</li>
+                        <li><strong>Prática 2 (25 min):</strong> Ensaio final; gravação de vídeo curto para auto-avaliação</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Slides claros, legíveis, sem poluição visual<br>
+                        • Conteúdo estruturado e sequencial<br>
+                        • Fala clara, ritmo apropriado, não muito rápido<br>
+                        • Contato visual com audiência<br>
+                        • Respeita o tempo (5 minutos)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Módulo 6 — Comunicação em Contextos Específicos (Aulas 18-20)</strong></p>
+        <p>Rio do Sul Mais Tech — SENAI</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+                document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.getElementById(tabName).classList.add('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
