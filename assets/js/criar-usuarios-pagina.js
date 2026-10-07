@@ -63,20 +63,53 @@ function montarTurmaProfessoresGuia(turmas) {
 }
 
 /**
- * Junta as turmas de todas as listas carregadas (window.LISTA_PRESENCA e window.LISTAS_PRESENCA).
- * Os professores saem das turmas e ficam só na aba "Professores" (a primeira); turma que fica
- * vazia sem eles não aparece.
- * @returns {Object[]} Turmas de todas as listas, cada uma com a UC e o local da lista;
- *     vazio se nenhuma lista foi carregada.
+ * Separa as listas carregadas pelo LISTA-PRESENCA-PROFESSOR.js (comparando com o retrato tirado
+ * por criar-usuarios-antes-professores.js) das demais listas de alunos.
+ * @returns {{professores: Object[], alunos: Object[]}} Listas de cada origem.
  */
-function reunirTurmasPresenca() {
-    const listas = [window.LISTA_PRESENCA, ...(window.LISTAS_PRESENCA || [])].filter(Boolean);
-    const turmas = listas.flatMap((lista) => (
+function separarListasPresencaGuia() {
+    const unica = window.LISTA_PRESENCA;
+    const varias = window.LISTAS_PRESENCA || [];
+    const antes = window.LISTAS_ANTES_PROFESSOR;
+    if (!antes) return { professores: [], alunos: [unica, ...varias].filter(Boolean) };
+
+    const unicaEhProfessor = Boolean(unica) && unica !== antes.unica;
+    return {
+        professores: [unicaEhProfessor ? unica : null, ...varias.slice(antes.total)].filter(Boolean),
+        alunos: [unicaEhProfessor ? antes.unica : unica, ...varias.slice(0, antes.total)]
+            .filter(Boolean),
+    };
+}
+
+/**
+ * Lista as turmas de um conjunto de listas, cada uma com a UC e o local da lista.
+ * @param {Object[]} listas - Listas de presença.
+ * @returns {Object[]} Turmas.
+ */
+function listarTurmasGuia(listas) {
+    return listas.flatMap((lista) => (
         (lista.turmas || []).map((turma) => ({
             ...turma,
+            alunos: turma.alunos || [],
             uc: turma.uc || lista.uc || '',
             local: turma.local || lista.local || '',
         }))));
+}
+
+/**
+ * Junta as turmas de todas as listas carregadas (window.LISTA_PRESENCA e window.LISTAS_PRESENCA).
+ * A primeira aba é "Professores": todas as pessoas do LISTA-PRESENCA-PROFESSOR.js (sempre com
+ * perfil PROFESSOR) mais quem tem perfil PROFESSOR nas outras listas. Os professores saem das
+ * turmas de alunos; turma que fica vazia sem eles não aparece.
+ * @returns {Object[]} Turmas; vazio se nenhuma lista foi carregada.
+ */
+function reunirTurmasPresenca() {
+    const listas = separarListasPresencaGuia();
+    const turmasProfessor = listarTurmasGuia(listas.professores).map((turma) => ({
+        ...turma,
+        alunos: turma.alunos.map((pessoa) => ({ ...pessoa, perfil: PERFIL_EXIGIDO_GUIA })),
+    }));
+    const turmas = [...turmasProfessor, ...listarTurmasGuia(listas.alunos)];
     if (!turmas.length) return [];
     const turmasAlunos = turmas
         .map((turma) => ({ ...turma, alunos: turma.alunos.filter((a) => !ehProfessorDaLista(a)) }))
