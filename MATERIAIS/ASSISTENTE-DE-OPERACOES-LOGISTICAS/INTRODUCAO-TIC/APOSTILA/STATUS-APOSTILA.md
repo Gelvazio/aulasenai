@@ -9,9 +9,9 @@
 | Parte inicial | Status |
 |---|---|
 | Capa, sumário, introdução, capacidades (C1–C5, S1–S4), glossário | 👀 Aguardando validação |
-| Markdown completo `APOSTILA-INTRODUCAO-TIC.md` (com o capítulo 01) | 👀 Aguardando validação |
+| Markdown completo `APOSTILA-INTRODUCAO-TIC.md` (capítulos 01 a 10) | 👀 Aguardando validação |
 | Conferência Markdown × ementa da matéria (`--conferir`) | ✅ 100% (201/201 itens) em 2026-10-03 |
-| HTML gerado a partir do Markdown completo | ⬜ Pendente |
+| HTML gerado a partir do Markdown completo | ✅ Gerado em 2026-10-07 (igual ao anterior) |
 
 | Cap. | Tema | Teoria | Vídeos (≤ 15 min) | Resumo | Exercícios ITEM | Glossário | Vídeos conferidos pelo professor | Status |
 |---|---|---|---|---|---|---|---|---|
