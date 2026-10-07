@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 20:30
+**Versão das regras:** 2026-10-07 09:00
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 09:00 | Menus USUARIOS, RELATORIOS, ALUNOS e CORREÇÃO do header só para o **Professor Administrador** (os demais professores não veem) |
 | 2026-10-06 20:30 | Card do índice com **100% dos dados da tabela `aulas`** (rótulo, nome e data); "✏️ Editar aula" vira modal CRUD da aula com a lista das atividades (✏️ Editar / 🗑️ Excluir / ➕ Nova); todas as aulas compartilhadas separadas (1 card = 1 aula); gerador de índices junta páginas da mesma aula num card; rótulo padrão "AULA NN" |
 | 2026-10-06 20:15 | Regra "CADA CARD LIGADO A APENAS 1 AULA": uma aula nunca é dividida entre cards do índice (aula 40 de Análise de Dados corrigida: fica só com o card da atividade 82) |
 | 2026-10-06 20:00 | Modal "✏️ Editar aula" também troca o **rótulo do card** ("AULA 01", coluna `aulas.rotulo_card`) |
@@ -1443,7 +1444,7 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   - tabela **`correcao_discursiva`**: nota de cada tópico por aluno e tentativa; `nota_ia` é só
     sugestão e **`nota_professor` é a que vale**; o trigger impede passar dos pontos do tópico.
     RLS: professor só dos alunos das turmas dele; o aluno lê só as próprias notas confirmadas;
-  - tela **`correcao-discursiva.html`** (menu **CORREÇÃO** no header, todo professor):
+  - tela **`correcao-discursiva.html`** (menu **CORREÇÃO** no header, só Professor Administrador desde 2026-10-07):
     avaliação → turma → entrega; resposta do aluno, padrão de resposta e critérios por tópico.
     O botão "📋 Copiar prompt para a IA" monta o texto **sem o nome do aluno**; a resposta da
     IA (`ITEM 01-a: 0,3 | ...`) é colada e lida. ❌ A página **não chama API de IA** (nenhuma
@@ -1590,6 +1591,11 @@ SQL: `database/2026-10-02-turmaprofessor-professor-administrador.sql` (aplicado 
   com filtro por turma; professores = `usuario.perfil = 'PROFESSOR'`. Código:
   `assets/js/turmas-professor-repositorio.js` (dados) + `assets/js/turmas-professor-pagina.js`
   (tela) + `assets/css/turmas-professor.css`. Plano: `docs/menu-turmas-crud-turmaprofessor.md`.
+- ✅ **Menus do header só do administrador (2026-10-07, pedido do usuário):** USUARIOS,
+  RELATORIOS, ALUNOS, CORREÇÃO, TURMAS, PENDÊNCIAS e Regras aparecem **só** para o Professor
+  Administrador (`MENU_ADMINISTRADOR_HEADER` em `js/header-usuario.js`, RPC
+  `eh_professor_administrador()`); os demais professores não veem nenhum desses menus. Esconder
+  é só visual: o acesso aos dados continua pelo RLS.
 - ✅ **Menu Regras (2026-10-03):** botão **Regras** no header, só para o Professor Administrador
   (mesmo RPC `eh_professor_administrador()`), abre um modal com este `CLAUDE.md` renderizado
   (Markdown → HTML com marked + DOMPurify), índice das seções e filtro. Código:
@@ -1717,7 +1723,7 @@ SQL: `database/2026-10-02-turmaaluno.sql` (aplicado no banco).
 - ✅ **RLS:** o professor grava (vincular, editar, excluir) e lê **só nas turmas vinculadas a ele**
   (`professor_tem_turma`, desde 2026-10-03; o administrador em todas); o aluno lê só os próprios
   vínculos; `anon` sem acesso; TRUNCATE revogado.
-- ✅ **Tela:** menu **ALUNOS** no header (todo PROFESSOR) abre `alunos.html` (raiz): CRUD com filtro
+- ✅ **Tela:** menu **ALUNOS** no header (só Professor Administrador desde 2026-10-07) abre `alunos.html` (raiz): CRUD com filtro
   por turma e busca por nome; alunos = `usuario.perfil = 'ALUNO'`. Código:
   `assets/js/turmas-aluno-repositorio.js` + `assets/js/turmas-aluno-pagina.js` +
   `assets/css/turmas-aluno.css` (reaproveita `turmas-professor.css`).

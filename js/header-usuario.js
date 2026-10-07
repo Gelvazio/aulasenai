@@ -2,9 +2,9 @@
 // Genérico: preenche o elemento <div id="header-usuario"></div> de qualquer página com o
 // usuário logado (Supabase Auth) e o botão SAIR; sem sessão, mostra o botão ENTRAR.
 // Sempre mostra o botão HOME (index.html da raiz) junto do usuário logado.
-// Para o PROFESSOR, mostra também o menu USUARIOS / RELATORIOS / ALUNOS / CORREÇÃO (nova aba) e,
-// só para o Professor Administrador (confirmado pelo banco), o item TURMAS (turmas.html) e o
-// botão REGRAS (modal com o CLAUDE.md, assets/js/regras-modal.js).
+// Só para o Professor Administrador (confirmado pelo banco), mostra o menu USUARIOS / RELATORIOS /
+// ALUNOS / CORREÇÃO / TURMAS / PENDÊNCIAS (nova aba) e o botão REGRAS (modal com o CLAUDE.md,
+// assets/js/regras-modal.js). Os demais professores não veem esses menus.
 // Uso na página: <script src=".../js/header-usuario.js" defer></script> + o div acima.
 // Qualquer elemento com data-somente-perfil="PROFESSOR" (e hidden) só aparece para esse perfil.
 // Os caminhos (CSS, supabase.js, login.html) são calculados a partir do próprio script,
@@ -17,14 +17,12 @@ const ROTA_SUPABASE_JS = "supabase.js";
 const ROTA_LOGIN = "../login.html";
 const ROTA_HOME = "../index.html";
 const PERFIL_PROFESSOR_HEADER = "PROFESSOR";
-const MENU_PROFESSOR_HEADER = [
+// Só para o Professor Administrador (confirmado pelo banco: RPC eh_professor_administrador).
+const MENU_ADMINISTRADOR_HEADER = [
   { rotulo: "USUARIOS", rota: "../scripts/criarUsuariosBancoDados.html" },
   { rotulo: "RELATORIOS", rota: "../relatorioAtividades.html" },
   { rotulo: "ALUNOS", rota: "../alunos.html" },
   { rotulo: "CORREÇÃO", rota: "../correcao-discursiva.html" },
-];
-// Só para o Professor Administrador (confirmado pelo banco: RPC eh_professor_administrador).
-const MENU_ADMINISTRADOR_HEADER = [
   { rotulo: "TURMAS", rota: "../turmas.html" },
   { rotulo: "PENDÊNCIAS", rota: "../MATERIAIS/AGENDA_COLABORADOR/pendencias.html" },
 ];
@@ -115,13 +113,11 @@ function criarBotaoHome() {
 }
 
 /**
- * Monta o menu do professor (USUARIOS, RELATORIOS), aberto em nova aba.
- * @returns {HTMLElement} Elemento <nav> com os links.
+ * Monta o menu do professor, vazio: os itens só entram se o banco confirmar o administrador.
+ * @returns {HTMLElement} Elemento <nav> do menu.
  */
 function criarMenuProfessor() {
-  const menu = criarElementoHeader("nav", "header-usuario__menu", "");
-  MENU_PROFESSOR_HEADER.forEach((item) => menu.append(criarLinkMenuHeader(item)));
-  return menu;
+  return criarElementoHeader("nav", "header-usuario__menu", "");
 }
 
 /**

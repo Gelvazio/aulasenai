@@ -27,6 +27,7 @@
 @media print { #header-usuario { display: none; } }
 .header-usuario__home { margin-right: auto; }
 .header-usuario__menu { display: flex; flex-wrap: wrap; gap: 10px; }
+.header-usuario__menu:empty { display: none; }
 .header-usuario__menu-link {
     color: #fff;
     font-size: 13px;
