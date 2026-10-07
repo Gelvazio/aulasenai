@@ -700,3 +700,11 @@ Fontes (fora do Git): `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/ATIVIDADE-INDIVIDUAL-APOST
 | 56.2 | Reforço de Linguagens: autor Gelvazio Camargo, versão 1.0 no `materia.json` e apostila HTML gerada de novo | ✅ Concluído | 2026-10-07 | Markdown com a linha "Autor · Versão · Data e hora"; HTML com o quadro na capa |
 | 56.3 | Regra "IDENTIFICAÇÃO DA APOSTILA" (seção REGRAS APOSTILAS do `CLAUDE.md`): obrigatória em todas, preenchida antes da 1ª geração, padrão Gelvazio Camargo / 1.0; versão e histórico do CLAUDE.md | ✅ Concluído | 2026-10-07 | Linha de versão no formato lido pelo `regras-modal.js` |
 | 56.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 57 — Bloquear de novo 81 e 85 até sexta; conferir capa de Reforço (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 57.1 | Atividades 81 e 85 bloqueadas de novo para as 5 turmas pela `definir_bloqueio_turma` (outra sessão as tinha liberado para 135080 e 135081). Liberar na sexta pelo interruptor do índice | ✅ Concluído | 2026-10-07 | Função devolveu `bloqueada = true` para as 5 turmas nas duas |
+| 57.2 | Atividade 80: respostas e entregas mantidas (decisão do usuário) | ✅ Concluído | 2026-10-07 | Nada alterado (3 entregas) |
+| 57.3 | Capa da apostila de Reforço de Linguagens com Autor Gelvazio Camargo, Versão 1.0 e Data e hora 07/10/2026 às 20:46; rodapé "Versão 1.0" | ✅ Concluído | 2026-10-07 | Lido no HTML gerado (`capa-apostila__identificacao`, `data-rodape`) |
