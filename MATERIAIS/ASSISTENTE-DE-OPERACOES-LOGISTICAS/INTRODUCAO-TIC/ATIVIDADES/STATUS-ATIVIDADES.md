@@ -29,9 +29,9 @@
 
 | Página | Tipo | Banco |
 |---|---|---|
-| `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA.html` | 40 questões objetivas individuais (conteúdo do trabalho em equipe v2, Aulas 01 a 07; sexta 09/10/2026, turma 135081) — fonte `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/` | ✅ id 80 — bloqueada para todas as turmas até sexta (2026-10-07) |
-| `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-DISCURSIVA.html` | 20 questões discursivas individuais (mesmo conteúdo das 40 objetivas; correção com IA + professor) — fonte e padrão de resposta (fora do Git) em `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/` | ✅ id 81 — bloqueada para todas as turmas até sexta (2026-10-07) |
-| `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-APOSTILA-CAP-01-07.html` | 50 questões objetivas individuais (revisão da apostila, capítulos 01 a 07; sexta 09/10/2026, todas as turmas) — fonte `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/` (fora do Git) | ✅ id 85 (aula 20) — bloqueada para todas as turmas até sexta |
+| `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA.html` | 40 questões objetivas individuais (conteúdo do trabalho em equipe v2, Aulas 01 a 07; sexta 09/10/2026, turma 135081) — fonte `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/` | ⛔ id 80 — retirada do índice e do menu em 2026-10-07 (juntada na de 100 questões); página e banco guardados (3 entregas) |
+| `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-DISCURSIVA.html` | 40 questões discursivas individuais (ampliada em 2026-10-07; respostas na apostila, cap. 01 a 07; correção com IA + professor) — fonte e padrão de resposta (fora do Git) em `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/` | ✅ id 81 — 40 tópicos; ITEM 01 a 20 mantidos (respostas de 2 alunos preservadas, entregas reabertas); bloqueada até sexta |
+| `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-APOSTILA-CAP-01-07.html` | 100 questões objetivas individuais (revisão da apostila, capítulos 01 a 07, toda resposta na apostila; sexta 09/10/2026, todas as turmas) — fonte `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/` (fora do Git) | ✅ id 85 (aula 20) — 100 itens no gabarito (25 de cada letra); bloqueada para todas as turmas até sexta |
 | `ATIVIDADE-PRATICA-AULA-01.html` | discursiva/prática/composição | ✅ bloqueada |
 | `ATIVIDADE-PRATICA-AULA-02.html` | discursiva/prática/composição | ✅ bloqueada |
 | `ATIVIDADE-PRATICA-AULA-03.html` | discursiva/prática/composição | ✅ bloqueada |
