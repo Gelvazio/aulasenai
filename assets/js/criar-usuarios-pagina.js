@@ -15,6 +15,8 @@ const MSG_SEM_PERFIL = 'Só o perfil PROFESSOR vê as senhas e grava. Seu perfil
 const PERFIL_DESCONHECIDO = '(sem perfil)';
 const ROTA_LOGIN_GUIA = '../login.html';
 const RPC_ADMINISTRADOR_GUIA = 'eh_professor_administrador';
+// Aba que reúne os professores de todas as listas (virtual: não existe na tabela turma).
+const TURMA_PROFESSORES_GUIA = { codigo: 'PROFESSORES', nome: 'Professores', virtual: true };
 const IDS_GUIA = {
     bloqueio: 'guiaBloqueio',
     opcoes: 'guiaOpcoes',
@@ -34,18 +36,51 @@ function obterElementoGuia(chave) {
 }
 
 /**
+ * Indica se o item da lista tem perfil PROFESSOR.
+ * @param {Object} pessoa - Item da lista de presença.
+ * @returns {boolean} true para professor.
+ */
+function ehProfessorDaLista(pessoa) {
+    return pessoa.perfil === PERFIL_EXIGIDO_GUIA;
+}
+
+/**
+ * Monta a aba "Professores" com os itens de perfil PROFESSOR de todas as listas (sem repetir
+ * e-mail), numerados de 1 em diante. É só agrupamento da página: não é gravada na tabela turma.
+ * @param {Object[]} turmas - Turmas de todas as listas.
+ * @returns {Object|null} Turma virtual; null se nenhuma lista tem professor.
+ */
+function montarTurmaProfessoresGuia(turmas) {
+    const porEmail = new Map();
+    turmas.flatMap((turma) => turma.alunos.filter(ehProfessorDaLista))
+        .forEach((professor) => porEmail.set(professor.email.toLowerCase(), professor));
+    if (!porEmail.size) return null;
+    const professores = [...porEmail.values()]
+        .sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'))
+        .map((professor, posicao) => ({ ...professor, numero: posicao + 1 }));
+    return { ...TURMA_PROFESSORES_GUIA, alunos: professores };
+}
+
+/**
  * Junta as turmas de todas as listas carregadas (window.LISTA_PRESENCA e window.LISTAS_PRESENCA).
+ * Os professores saem das turmas e ficam só na aba "Professores" (a primeira); turma que fica
+ * vazia sem eles não aparece.
  * @returns {Object[]} Turmas de todas as listas, cada uma com a UC e o local da lista;
  *     vazio se nenhuma lista foi carregada.
  */
 function reunirTurmasPresenca() {
     const listas = [window.LISTA_PRESENCA, ...(window.LISTAS_PRESENCA || [])].filter(Boolean);
-    return listas.flatMap((lista) => (
+    const turmas = listas.flatMap((lista) => (
         (lista.turmas || []).map((turma) => ({
             ...turma,
             uc: turma.uc || lista.uc || '',
             local: turma.local || lista.local || '',
         }))));
+    const professores = montarTurmaProfessoresGuia(turmas);
+    const turmasAlunos = turmas
+        .map((turma) => ({ ...turma, alunos: turma.alunos.filter((a) => !ehProfessorDaLista(a)) }))
+        .filter((turma) => turma.alunos.length);
+    return professores ? [professores, ...turmasAlunos] : turmasAlunos;
 }
 
 /**
@@ -252,6 +287,7 @@ function montarLocalTurnoGuia(turma) {
  */
 function montarTituloTurmaGuia(turma) {
     const localTurno = montarLocalTurnoGuia(turma);
+    if (turma.virtual) return turma.nome;
     const base = turma.nome + ' (código: ' + turma.codigo + ')';
     return localTurno ? base + ' - ' + localTurno : base;
 }
@@ -326,7 +362,7 @@ function criarCartaoTurmaGuia(turma, contexto) {
     const titulo = document.createElement('h2');
     titulo.textContent = montarTituloTurmaGuia(turma);
     cartao.append(titulo);
-    if (contexto.podeGravar) cartao.append(criarBotaoFavoritaGuia(turma, contexto));
+    if (contexto.podeGravar && !turma.virtual) cartao.append(criarBotaoFavoritaGuia(turma, contexto));
     cartao.append(barra, botao, resultado, tabela);
     aoMudar();
     return cartao;
