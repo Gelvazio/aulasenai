@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 17:00
+**Versão das regras:** 2026-10-07 19:51:43
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 19:51:43 | Regra "REGISTRO DE TODO PEDIDO NO `TASKS.md`": todo pedido anotado com data e hora **com segundos** (início, passos, conclusão, commit); `TASKS.md` vira quadro atual + histórico (outubro reconstruído dos commits); caminho do `TASKS.md` vale na máquina e na nuvem; versão das regras passa a ter segundos |
 | 2026-10-07 17:00 | Status da regra das apostilas atualizado: ITIC com os 10 capítulos, HTML e PDF prontos, aguardando validação do professor |
 | 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
 | 2026-10-07 10:00 | Apostilas: o HTML passa a ser gerado a partir do Markdown completo `APOSTILA-<MATERIA>.md` (antes lia os `CAPITULO-NN.md`) |
@@ -60,7 +61,7 @@ também deve ser verificado e atualizado junto, para o usuário ver sempre as re
 Registrada em 2026-10-03 a pedido do usuário.
 
 - ✅ **Cada versão tem data e hora:** a cada alteração deste arquivo, atualizar a linha
-  `**Versão das regras:** AAAA-MM-DD HH:MM` (topo) e acrescentar **no início** do
+  `**Versão das regras:** AAAA-MM-DD HH:MM:SS` (topo; segundos desde 2026-10-07) e acrescentar **no início** do
   "HISTÓRICO DE VERSÕES DAS REGRAS" uma linha com a mesma data e hora e o que mudou.
 - ✅ **Verificar o visualizador a cada atualização:** `assets/js/regras-modal.js` (+
   `assets/css/regras-modal.css`, acionado por `js/header-usuario.js`) deve continuar lendo este
@@ -210,45 +211,43 @@ regra "PASTA `AULAS/` SEMPRE GERADA CONFORME A DOCUMENTAÇÃO DA MATÉRIA" (2026
 
 **ANTES DE RESPONDER QUALQUER COISA**, você DEVE:
 
-1. ✅ **LER `C:\fontes\aulasenai\TASKS.md`** — Status da tarefa atual
-2. ✅ **Verificar** qual tarefa está em progresso
-3. ✅ **Verificar** quais são as subtarefas ativas
-4. ✅ **Só então responder** ao usuário
+1. ✅ **LER o `TASKS.md` da raiz do repositório** (na máquina do usuário:
+   `C:\fontes\aulasenai\TASKS.md`; na nuvem: `TASKS.md` do clone) — tarefa atual e histórico
+2. ✅ **Verificar** se há tarefa em andamento (🔄) e quais passos faltam
+3. ✅ **Só então responder** ao usuário e registrar o pedido novo (regra abaixo)
 
-**Por quê?** TASKS.md contém o estado atual de trabalho. Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
-
-**Checklist de inicialização:**
-```
-☐ Li TASKS.md?
-☐ Identifiquei a tarefa atual?
-☐ Identifiquei as subtarefas ativas?
-☐ Entendi o status de cada subtarefa?
-☐ Pronto para responder ao usuário?
-```
-
-**🚀 Só responda depois de marcar TODOS os ☐ acima.**
+**Por quê?** O `TASKS.md` guarda o que está em andamento e tudo o que já foi pedido e feito.
+Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
 
 ---
 
-## 📋 CONSULTAR TAREFAS PENDENTES
+## 📋 REGRA CRÍTICA — REGISTRO DE TODO PEDIDO NO `TASKS.md` (DATA E HORA COM SEGUNDOS)
 
-⚠️ **ANTES DE QUALQUER TRABALHO, LEIA:**
+⚠️ **Todo pedido do usuário que gere trabalho (alterar arquivo, banco, commit, geração de
+material) é registrado no `TASKS.md`, com data e hora até os segundos.** Registrada em
+2026-10-07 a pedido do usuário; **substitui** a antiga "CONSULTAR TAREFAS PENDENTES" (o
+`TASKS.md` deixou de ser só o quadro da tarefa atual e passou a ser também o histórico).
 
-📄 **Arquivo:** `C:\fontes\aulasenai\TASKS.md`
-
-**Conteúdo:**
-- ✅ Tarefa atual (em progresso)
-- 🔄 Subtarefas da tarefa atual
-- ⏳ Fila de próximas tarefas
-- 📊 Estatísticas de progresso
-
-**Fluxo:**
-1. ✅ Ler TASKS.md para ver tarefa atual
-2. ✅ Executar todas as subtarefas
-3. ✅ Marcar tarefa como ✅ CONCLUÍDO
-4. ✅ Sistema aguarda nova tarefa a ser adicionada
-
-**Importante:** TASKS.md contém APENAS a tarefa atual. Não é um histórico — é um quadro de estado.
+- ✅ **Formato de data e hora:** `AAAA-MM-DD HH:MM:SS`, horário de Brasília (America/Sao_Paulo).
+  Na nuvem, pegar com `TZ=America/Sao_Paulo date "+%Y-%m-%d %H:%M:%S"`; na máquina do usuário,
+  com `Get-Date -Format "yyyy-MM-dd HH:mm:ss"`.
+- ✅ **Ao receber o pedido** (antes de começar): criar a entrada em **"🔄 TAREFA ATUAL"** com:
+  ID `TAAAAMMDD-NN` (sequência do dia), **pedido** (resumo fiel das palavras do usuário),
+  **início** (data e hora com segundos), status `🔄 Em andamento` e a lista de passos.
+- ✅ **Durante:** marcar cada passo concluído (✅) com a data e hora com segundos.
+- ✅ **Ao concluir:** preencher **conclusão** (data e hora com segundos), **duração**, **commit(s)**
+  e **plano** em `docs/` (quando houver) e mover a entrada para o topo do
+  **"📜 HISTÓRICO DE TAREFAS"** (mais recente primeiro, agrupado por dia). O `TASKS.md` entra
+  **no mesmo commit** da tarefa.
+- ✅ Tarefa interrompida ou cancelada pelo usuário: status `⏸️ Pausada` ou `⛔ Cancelada`, com a
+  data e hora e o motivo; ao retomar, continuar a mesma entrada.
+- ✅ Perguntas que não geram trabalho (ex.: "quantas páginas tem a apostila?") não precisam de
+  entrada.
+- ✅ Tarefas grandes continuam com o plano em `docs/<tarefa>.md` (passos, status e datas); o
+  `TASKS.md` aponta para ele. Os `STATUS-*.md` das matérias continuam controlando aulas,
+  atividades e apostila.
+- ✅ Histórico anterior a esta regra: reconstruído dos commits de 2026-10-01 a 2026-10-07 (horário
+  do commit = conclusão; início não registrado).
 
 ---
 
