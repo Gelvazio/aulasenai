@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 16:30
+**Versão das regras:** 2026-10-07 23:20
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 23:20 | Apostila de Reforço de Linguagens (10 capítulos, aguardando validação); gerador de apostilas aceita a carga horária de cada aula (6 h/7 h), ementas com capacidades em lista, conteúdos programáticos por módulo e aulas em negrito, e vídeos "⏳ pendentes" quando o YouTube não pode ser conferido; ementa de Reforço de Linguagens com as 6 capacidades da ementa do curso |
 | 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
 | 2026-10-07 10:00 | Apostilas: o HTML passa a ser gerado a partir do Markdown completo `APOSTILA-<MATERIA>.md` (antes lia os `CAPITULO-NN.md`) |
 | 2026-10-07 09:00 | Menus USUARIOS, RELATORIOS, ALUNOS e CORREÇÃO do header só para o **Professor Administrador** (os demais professores não veem) |
@@ -2297,7 +2298,9 @@ importação no AVA pelo professor; as demais matérias só quando o usuário li
 ## 📘 REGRAS APOSTILAS
 
 Registrada em 2026-10-03 a pedido do usuário (padrões definidos na validação do piloto). Plano:
-`docs/gerador-apostilas.md`. **Status:** 🔄 piloto **Introdução à TIC (ITIC)** — só o capítulo 01
+`docs/gerador-apostilas.md`. **Reforço de Linguagens (2026-10-07):** introdução + 10 capítulos gerados, conferência 100%
+(138/138), aguardando validação; vídeos pendentes (`REFORCO_LINGUAGENS/APOSTILA/STATUS-APOSTILA.md`).
+**Status:** 🔄 piloto **Introdução à TIC (ITIC)** — só o capítulo 01
 gerado, aguardando validação do usuário; os demais capítulos só depois que ele liberar, **um por
 vez, perguntando a cada capítulo** (rascunhos em `APOSTILA/RASCUNHOS/`, fora da apostila).
 
@@ -2353,6 +2356,13 @@ matéria.**
   capacidades, estratégias, atividade/entrega); listas e textos da seção de sequência
   (situações de aprendizagem, dificuldades, pirâmide, datas previstas); recursos item a item;
   BNCC com "aulas 1, 2 e 7" ou "todas".
+- ✅ **Formato de ementa em listas** (2026-10-07, Reforço de Linguagens): capacidades em lista
+  numerada sob "Capacidades ...", "CONTEÚDOS PROGRAMÁTICOS" com `### Módulo N: Título` + lista,
+  aulas em negrito `**Aula N — Tema (6h)**`, indicadores `- **Nome:** texto`, situações-problema
+  em listas e parágrafos e as seções de texto livre de `SECOES_TEXTO_LIVRE` (Alinhamento,
+  Metodologias, Integração, Acompanhamento). No `materia.json`, essas seções ficam em
+  `conteudos_programaticos`, `textos_ementa` (`{titulo, texto|itens}`) e
+  `avaliacao.rubrica_lista`.
 - ⛔ **Seção que existe na ementa mas não foi reconhecida reprova a conferência** (capacidades,
   socioemocionais, indicadores, conhecimentos, sequência, avaliação, BNCC, recursos, prompts,
   regras para IA, glossário): nada pode ficar de fora em silêncio. Formato novo de ementa =
@@ -2427,6 +2437,14 @@ Registrada em 2026-10-03 a pedido do usuário.
   `assets/gerador-apostilas/markdown_apostila.py`. O plano de capítulos vem do `materia.json`
   (`carga_horaria_uc`, `horas_por_aula` = 4, `aulas` = uma por aula); o gerador confere
   se capítulos × 4 h = carga da UC. Glossário em ordem alfabética sem considerar acentos.
+- ✅ **Carga horária por aula** (2026-10-07): quando as aulas não têm 4 h (exceção de Reforço de
+  Linguagens: 6 h e 7 h), cada aula do `materia.json` traz `carga_horaria`; o gerador soma as
+  aulas para conferir a carga da UC e mostra as horas de cada capítulo. Sem `carga_horaria`, vale
+  o `horas_por_aula` (padrão 4).
+- ✅ **Vídeos pendentes** (2026-10-07): se o YouTube não puder ser conferido (rede bloqueada), o
+  capítulo leva na seção "Vídeos" a linha `- ⏳ Vídeos pendentes: ...` (o gerador avisa e o HTML
+  mostra o aviso). ❌ Nunca inventar link, título ou duração; trocar pela lista real assim que
+  conferida (status no `STATUS-APOSTILA.md`).
 - ✅ **O HTML é gerado a partir do Markdown completo** (2026-10-07): o `gerar_apostila.py` lê a
   `# Introdução` e cada `# Capítulo NN` do `APOSTILA-<MATERIA>.md` (glossário de cada capítulo
   pelo `_(cap. NN)_` do glossário geral); sem o Markdown completo, o gerador para com erro

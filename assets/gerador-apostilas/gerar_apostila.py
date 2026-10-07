@@ -7,7 +7,8 @@ Fontes em <MATERIA>/APOSTILA/:
 - CONTEUDO/CAPITULO-NN.md — um por aula, com "## Teoria", "## Vídeos", "## Exercícios",
   "## Resumo" e "## Glossário";
 Dados da matéria (arquivo único): <MATERIA>/materia.json — identificação, capacidades,
-conhecimentos e o plano de aulas ("aulas", 1 aula de 4 h = 1 capítulo).
+conhecimentos e o plano de aulas ("aulas", 1 aula = 1 capítulo; padrão 4 h, ou a
+"carga_horaria" de cada aula).
 Saída: <MATERIA>/APOSTILA/APOSTILA-<NOME DA PASTA DA MATÉRIA>.html. O assets/js/apostila.js
 divide o conteúdo em páginas A4 no navegador.
 Regras: seção "REGRAS APOSTILAS" do CLAUDE.md; plano: docs/gerador-apostilas.md.
@@ -68,6 +69,7 @@ PADRAO_CAMPO = r"^-?\s*\*\*{rotulo}:\*\*\s*(.+?)\s*$"
 PADRAO_VIDEO = re.compile(
     r"^-\s*\[(?P<titulo>[^\]]+)\]\((?P<url>[^)]+)\)\s*[—-]\s*(?P<duracao>[\d:]+)"
     r"(?:\s*[—-]\s*(?P<canal>.+?))?\s*$", re.MULTILINE)
+PADRAO_VIDEOS_PENDENTES = re.compile(r"^-\s*⏳\s*(?P<texto>.+?)\s*$", re.MULTILINE)
 PADRAO_ID_YOUTUBE = re.compile(r"(?:v=|youtu\.be/|/embed/)([A-Za-z0-9_-]{11})")
 PADRAO_TERMO = re.compile(r"^-\s*\*\*(?P<termo>.+?):\*\*\s*(?P<definicao>.+?)\s*$", re.MULTILINE)
 PADRAO_H3_HTML = re.compile(r"<h3>(.*?)</h3>", re.DOTALL)
@@ -144,8 +146,10 @@ def validar_plano_capitulos(dados):
     if not previstos:
         erro(f'{ARQUIVO_MATERIA}: falta "{CAMPO_AULAS}" (uma entrada por aula de {horas} h)')
     carga = dados["carga_horaria_uc"]
-    if carga and len(previstos) * horas != carga:
-        erro(f"{ARQUIVO_MATERIA}: {len(previstos)} aulas × {horas} h não fecham "
+    soma = sum(md_apostila.horas_da_aula(dados, indice)
+               for indice in range(1, len(previstos) + 1))
+    if carga and soma != carga:
+        erro(f"{ARQUIVO_MATERIA}: a soma das {len(previstos)} aulas ({soma} h) não fecha "
              f"com a carga da UC ({carga} h)")
 
 
@@ -205,9 +209,12 @@ def ler_videos(texto, rotulo):
         if duracao_em_segundos(achado["duracao"], rotulo_video) > DURACAO_MAXIMA_SEGUNDOS:
             erro(f"{rotulo_video}: passa de 15 minutos ({achado['duracao']})")
         videos.append({**achado.groupdict(), "id": id_video.group(1)})
-    if not videos:
+    if not videos and not PADRAO_VIDEOS_PENDENTES.search(texto):
         erro(f"{rotulo}: a seção Vídeos precisa de ao menos um vídeo no formato "
-             "'- [título](url) — mm:ss — canal'")
+             "'- [título](url) — mm:ss — canal' (ou da linha '- ⏳ Vídeos pendentes: ...', "
+             "enquanto a duração não puder ser conferida)")
+    if not videos:
+        print(f"⚠️ {rotulo}: vídeos pendentes (duração ainda não conferida no YouTube)")
     return videos
 
 
@@ -484,6 +491,9 @@ def blocos_conteudo_capitulo(capitulo, capacidades):
         *[linha for linha in teoria.split("\n") if linha.strip()],
         f'<h3 id="{id_cap}-videos">🎬 Vídeos para assistir (até 15 min)</h3>',
         *[html_video(video) for video in capitulo["videos"]],
+        *[f'<p class="caixa-video__detalhe">⏳ {html.escape(pendente)}</p>'
+          for pendente in ([] if capitulo["videos"] else
+                           PADRAO_VIDEOS_PENDENTES.findall(secoes["Vídeos"]))],
         f'<h3 id="{id_cap}-resumo">📌 Resumo</h3>',
         resumo.replace("\n", ""),
     ]
@@ -801,7 +811,7 @@ def conferir_cobertura_ementa(dados, capitulos):
     Returns:
         Quantidade de avisos emitidos.
     """
-    plano_por_numero = {item["numero"]: item for item in dados["plano_capitulos"]}
+    plano_por_numero = {f"{int(item['numero']):02d}": item for item in dados["plano_capitulos"]}
     glossario = {termo["termo"]: termo["definicao"]
                  for termo in dados["materia"].get("glossario_ementa", [])}
     total = 0
@@ -865,7 +875,7 @@ def gerar_markdown_completo(pasta_materia, forcar):
         texto = saida.read_text(encoding="utf-8")
         presentes = md_apostila.capitulos_no_markdown(texto)
         novos = [capitulo for capitulo in capitulos if capitulo["numero"] not in presentes]
-        texto = md_apostila.acrescentar_capitulos(texto, novos, dados["horas_por_capitulo"])
+        texto = md_apostila.acrescentar_capitulos(texto, novos, dados)
         print(f"📝 Markdown existente preservado; capítulos acrescentados: {len(novos)}")
     saida.write_text(texto, encoding="utf-8")
     return saida
