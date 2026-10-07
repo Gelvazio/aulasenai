@@ -2,6 +2,9 @@
 
 Uso (na raiz do projeto):
     C:\\Python314\\python.exe scripts\\gerar-seed-atividades.py
+    C:\\Python314\\python.exe scripts\\gerar-seed-atividades.py --so=<trecho do caminho> --saida=<arquivo>
+        (só as atividades cujo .md contém um dos trechos, separados por vírgula;
+         ex.: --so=FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO/ATIVIDADES/ATIVIDADES-AULA-01-50)
 
 Fonte do gabarito: os .md das atividades (mesmo leitor do assets/gerador-atividades).
 Saída: database/2026-09-28-seed-atividades.sql (idempotente; rodar depois do schema).
@@ -81,6 +84,30 @@ ATIVIDADES_FUNDAMENTOS = [
      f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-10-11-2026-50-QUESTOES.md"),
 ]
 
+DATA_PROVISORIA_FUNDAMENTOS = "2026-10-07"  # datas das 9 aulas da ementa ainda a definir
+
+# 9 aulas extraídas da ementa em CONTEUDO/ (8 × 4 h + 1 h), uma atividade de 50 questões cada.
+ATIVIDADES_FUNDAMENTOS_EMENTA = [
+    (1, "Tecnologia, Dispositivos Digitais e Cidadania Digital", DATA_PROVISORIA_FUNDAMENTOS,
+     f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-01-50-QUESTOES.md"),
+    (2, "Segurança Online, Fake News e Hardware × Software", DATA_PROVISORIA_FUNDAMENTOS,
+     f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-02-50-QUESTOES.md"),
+    (3, "Sistemas Operacionais, Arquivos e Pastas", DATA_PROVISORIA_FUNDAMENTOS,
+     f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-03-50-QUESTOES.md"),
+    (4, "Atalhos de Teclado, Editor de Texto e Apresentações", DATA_PROVISORIA_FUNDAMENTOS,
+     f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-04-50-QUESTOES.md"),
+    (5, "Planilhas Simples e Boas Práticas de Pesquisa", DATA_PROVISORIA_FUNDAMENTOS,
+     f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-05-50-QUESTOES.md"),
+    (6, "Internet Segura e Pensamento Computacional", DATA_PROVISORIA_FUNDAMENTOS,
+     f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-06-50-QUESTOES.md"),
+    (7, "Algoritmos, Fluxogramas e Primeiros Passos no Scratch", DATA_PROVISORIA_FUNDAMENTOS,
+     f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-07-50-QUESTOES.md"),
+    (8, "Scratch: Condições, Repetições, Variáveis e Projeto Autoral", DATA_PROVISORIA_FUNDAMENTOS,
+     f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-08-50-QUESTOES.md"),
+    (9, "Avaliação Final: Prova Conceitual e Apresentação do Projeto", DATA_PROVISORIA_FUNDAMENTOS,
+     f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-09-50-QUESTOES.md"),
+]
+
 PASTA_AUTOMACAO = (
     "MATERIAIS/OPERADOR_PRODUCAO_INDUSTRIAL/FUNDAMENTOS-DE-AUTOMACAO-INSTRUMENTACAO/ATIVIDADES"
 )
@@ -149,6 +176,8 @@ ATIVIDADES_REFORCO_LINGUAGENS = [
 GRUPOS = [
     (CURSO, MATERIA, ATIVIDADES),
     ("Rio do Sul Mais Tech", "Fundamentos da Tecnologia e Programação", ATIVIDADES_FUNDAMENTOS),
+    ("Rio do Sul Mais Tech", "Fundamentos da Tecnologia e Programação",
+     ATIVIDADES_FUNDAMENTOS_EMENTA),
     ("Operador de Produção Industrial", "Fundamentos de Automação/Instrumentação",
      ATIVIDADES_AUTOMACAO),
     ("Rio do Sul Mais Tech", "Reforço de Linguagens", ATIVIDADES_REFORCO_LINGUAGENS),
@@ -351,13 +380,31 @@ begin
 """
 
 
-def montar_sql():
-    """Monta o arquivo de seed completo.
+def filtrar_grupos(trecho):
+    """Mantém só as atividades cujo caminho do .md contém o trecho (grupos vazios saem).
+
+    Args:
+        trecho: Parte(s) do caminho do .md, separadas por vírgula; vazio = todas.
+
+    Returns:
+        Lista de grupos (curso, matéria, atividades).
+    """
+    trechos = [parte for parte in trecho.split(",") if parte] or [""]
+    grupos = [(curso, materia, [a for a in atividades if any(t in a[3] for t in trechos)])
+              for curso, materia, atividades in GRUPOS]
+    return [grupo for grupo in grupos if grupo[2]]
+
+
+def montar_sql(grupos=None):
+    """Monta o arquivo de seed (todas as matérias ou só os grupos informados).
+
+    Args:
+        grupos: Grupos a incluir; None = todos.
 
     Returns:
         Conteúdo SQL.
     """
-    blocos = "\n".join(sql_grupo(*grupo) for grupo in GRUPOS)
+    blocos = "\n".join(sql_grupo(*grupo) for grupo in (grupos or GRUPOS))
     return f"""-- Seed gerado por scripts/gerar-seed-atividades.py — não editar à mão.
 -- Rodar depois de 2026-09-28-atividades-gabarito.sql. Idempotente.
 
@@ -365,16 +412,34 @@ def montar_sql():
 {blocos}"""
 
 
+def opcao(nome):
+    """Lê uma opção "--nome=valor" da linha de comando.
+
+    Args:
+        nome: Nome da opção, sem os hífens.
+
+    Returns:
+        Valor da opção ou "" se ausente.
+    """
+    prefixo = f"--{nome}="
+    return next((arg[len(prefixo):] for arg in sys.argv[1:] if arg.startswith(prefixo)), "")
+
+
 def main():
     """Gera o arquivo de seed e informa o resumo."""
-    ARQUIVO_SAIDA.parent.mkdir(exist_ok=True)
-    ARQUIVO_SAIDA.write_text(montar_sql(), encoding="utf-8")
-    for curso, materia, atividades in GRUPOS:
+    trecho = opcao("so")
+    grupos = filtrar_grupos(trecho)
+    if not grupos:
+        raise SystemExit(f"nenhuma atividade com '{trecho}' no caminho")
+    saida = RAIZ / opcao("saida") if opcao("saida") else ARQUIVO_SAIDA
+    saida.parent.mkdir(exist_ok=True)
+    saida.write_text(montar_sql(grupos), encoding="utf-8")
+    for curso, materia, atividades in grupos:
         print(f"== {curso} / {materia}")
         for numero, titulo, data, caminho in atividades:
             meta, itens = ler_atividade(RAIZ / caminho)
             print(f"Aula {numero} — {titulo}: {len(itens)} itens no gabarito ({data})")
-    print(f"Gerado: {ARQUIVO_SAIDA.relative_to(RAIZ)}")
+    print(f"Gerado: {saida.relative_to(RAIZ)}")
 
 
 if __name__ == "__main__":
