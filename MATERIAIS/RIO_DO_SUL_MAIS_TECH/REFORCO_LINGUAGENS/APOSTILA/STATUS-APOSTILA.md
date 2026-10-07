@@ -16,6 +16,7 @@
 | Introdução (`CONTEUDO/INTRODUCAO.md`) | 👀 Aguardando validação |
 | Conferência Markdown × ementa da matéria (`--conferir`) | ✅ 100% (138/138 itens) em 2026-10-07 |
 | HTML gerado a partir do Markdown completo | ✅ Gerado em 2026-10-07 |
+| Identificação (autor, versão, data e hora) | ✅ Gelvazio Camargo · versão 1.0 · 2026-10-07 |
 
 | Cap. | Tema | Horas | Teoria | Vídeos (≤ 15 min) | Resumo | Exercícios ITEM | Glossário | Status |
 |---|---|---|---|---|---|---|---|---|
