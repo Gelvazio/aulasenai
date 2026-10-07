@@ -37,5 +37,5 @@
   `- ⏳ Vídeos pendentes: ...` na seção "Vídeos" (o HTML mostra o aviso). Para incluir: trocar a
   linha por `- [título](url) — mm:ss — canal` (1 a 4 vídeos, conferidos com `curl`), rodar
   `--markdown --forcar` e gerar o HTML de novo.
-- ⏳ **Menu:** a matéria não tem `ATIVIDADES/MENU-ATIVIDADES.js`; a apostila ainda não tem link
-  no índice das atividades (a capa da apostila já aponta para `../ATIVIDADES/index.html`).
+- ✅ **Menu (2026-10-07):** `ATIVIDADES/MENU-ATIVIDADES.js` criado com o item "📘 Apostila"; o menu
+  aparece no índice, nas 20 páginas de atividades e na própria apostila.
