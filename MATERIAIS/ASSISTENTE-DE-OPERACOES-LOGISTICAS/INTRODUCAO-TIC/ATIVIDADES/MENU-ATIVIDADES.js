@@ -32,7 +32,7 @@ window.MENU_ATIVIDADES = {
       link: 'ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-APOSTILA-CAP-01-07.html',
     },
     {
-      rotulo: '✍️ Atividade individual — 40 discursivas (sexta)',
+      rotulo: '✍️ Atividade individual — 30 discursivas (sexta)',
       link: 'ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-DISCURSIVA.html',
     },
     {

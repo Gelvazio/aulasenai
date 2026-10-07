@@ -1,13 +1,13 @@
-# Atividade: Comunicação Técnica no CD — 40 Questões Discursivas
+# Atividade: Comunicação Técnica no CD — 30 Questões Discursivas
 
 - **Aula:** 01 a 07
 - **Rótulo da aula:** Atividade Individual — Discursivas
 - **Tema:** Comunicação Técnica no CD
 - **Ícone:** ✍️
-- **Duração:** 240–300 minutos
+- **Duração:** 195–225 minutos
 - **Formato:** Discursiva (resposta escrita no campo de cada questão)
-- **Total de questões:** 40
-- **Pontuação:** 1 ponto por questão (total: 40 pontos)
+- **Total de questões:** 30
+- **Pontuação:** 1 ponto por questão (total: 30 pontos)
 - **Capacidade avaliada:** Empregar a comunicação oral e escrita, a segurança da informação, o hardware e o software e os recursos da Web na produção dos textos técnicos do Manual de Comunicação do CD.
 - **Correção:** as respostas ficam gravadas no banco e são conferidas com apoio de IA e pela análise do professor.
 - **Folha de respostas:** sim
@@ -340,71 +340,7 @@ Escreva a introdução do Manual de Comunicação do CD (de 6 a 10 linhas), como
 
 ---
 
-## ITEM 21 — Nível de linguagem com o cliente
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C1
-
-**Contexto:**
-Um cliente ligou perguntando pelo pedido dele. O atendente respondeu: "O romaneio já fechou, mas a NF-e está pendente de SEFAZ".
-
-**Comando:**
-Diga qual nível de linguagem o atendente usou, explique por que ele é inadequado para esse público e reescreva a resposta de forma clara para o cliente.
-
-**Tópicos:**
-- a) Nível de linguagem, justificativa e resposta reescrita. (1,0)
-
----
-
-## ITEM 22 — Tipos de ruído
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C1
-
-**Contexto:**
-No recebimento há quatro problemas: barulho das empilhadeiras, rádio com chiado, um colega que usa siglas que ninguém conhece e um conferente muito cansado no fim do turno.
-
-**Comando:**
-Classifique cada problema como ruído físico, técnico, semântico ou psicológico e proponha uma ação para reduzir os ruídos.
-
-**Tópicos:**
-- a) Quatro classificações corretas e uma ação para reduzir os ruídos. (1,0)
-
----
-
-## ITEM 23 — Escuta ativa e conflito na doca
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C1
-
-**Contexto:**
-Na doca 3, o conferente diz ao motorista que a carga só será liberada às 14h. O motorista, irritado, diz que tinha agendado para as 11h e começa a falar alto.
-
-**Comando:**
-Explique como o conferente pode conduzir a conversa usando escuta ativa e comunicação assertiva, com foco no problema e não na pessoa.
-
-**Tópicos:**
-- a) Atitudes de escuta ativa e fala assertiva aplicadas ao caso. (1,0)
-
----
-
-## ITEM 24 — Hardware e software
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C4
-
-**Contexto:**
-No almoxarifado há: computador, sistema de estoque, leitor de código de barras, impressora de etiquetas, sistema operacional e planilha de controle.
-
-**Comando:**
-Separe os itens em hardware e software e explique a diferença entre os dois.
-
-**Tópicos:**
-- a) Separação correta e diferença entre hardware e software. (1,0)
-
----
-
-## ITEM 25 — Memória RAM e armazenamento
+## ITEM 21 — Memória RAM e armazenamento
 
 - **Aula:** 01 a 07 · Apostila de ITIC
 - **Capacidade:** C4
@@ -420,23 +356,7 @@ Explique, usando os conceitos de memória RAM e de armazenamento (HDD/SSD), por 
 
 ---
 
-## ITEM 26 — Pastas e nomes de arquivos
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C4
-
-**Contexto:**
-Na Área de Trabalho do setor estão soltos os arquivos "planilha nova.xlsx", "inventário final FINAL (2).xlsx" e "documento1.docx".
-
-**Comando:**
-Renomeie os três arquivos seguindo as boas práticas da apostila e explique as regras que você usou.
-
-**Tópicos:**
-- a) Três nomes no padrão e regras aplicadas (data invertida, sem acentos e espaços, versão). (1,0)
-
----
-
-## ITEM 27 — Sistema operacional
+## ITEM 22 — Sistema operacional
 
 - **Aula:** 01 a 07 · Apostila de ITIC
 - **Capacidade:** C4
@@ -452,7 +372,7 @@ Explique as três tarefas que o sistema operacional gerencia e diga qual é o ti
 
 ---
 
-## ITEM 28 — Internet e web
+## ITEM 23 — Internet e web
 
 - **Aula:** 01 a 07 · Apostila de ITIC
 - **Capacidade:** C5
@@ -468,23 +388,7 @@ Explique a diferença entre internet e web e diga se a afirmação do colega est
 
 ---
 
-## ITEM 29 — Operadores de busca
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C5
-
-**Contexto:**
-O supervisor pediu documentos oficiais em PDF sobre armazenamento de líquidos inflamáveis, publicados em sites do governo brasileiro.
-
-**Comando:**
-Escreva a busca completa usando aspas, site: e filetype: e explique a função de cada operador.
-
-**Tópicos:**
-- a) Busca completa e função dos três operadores. (1,0)
-
----
-
-## ITEM 30 — Plágio e citação
+## ITEM 24 — Plágio e citação
 
 - **Aula:** 01 a 07 · Apostila de ITIC
 - **Capacidade:** C5
@@ -500,23 +404,7 @@ Explique por que isso é plágio, qual lei protege os direitos autorais e como f
 
 ---
 
-## ITEM 31 — Janela anônima e uso aceitável
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C5, C2
-
-**Contexto:**
-Um colega recebeu por e-mail o arquivo "tabela_frete.pdf.exe" e usou a janela anônima do navegador para baixar um programa pirata, achando que assim ninguém veria.
-
-**Comando:**
-Aponte os dois erros de segurança cometidos, explique o que a janela anônima realmente faz e o que diz a Política de Uso Aceitável.
-
-**Tópicos:**
-- a) Dois erros, função real da janela anônima e regra da PUA. (1,0)
-
----
-
-## ITEM 32 — Para, CC e CCO
+## ITEM 25 — Para, CC e CCO
 
 - **Aula:** 01 a 07 · Apostila de ITIC
 - **Capacidade:** C1
@@ -532,7 +420,7 @@ Explique o problema dessa escolha (inclusive em relação à LGPD) e indique com
 
 ---
 
-## ITEM 33 — Permissões na nuvem
+## ITEM 26 — Permissões na nuvem
 
 - **Aula:** 01 a 07 · Apostila de ITIC
 - **Capacidade:** C5
@@ -548,23 +436,7 @@ Indique a permissão de cada um (leitor, comentador ou editor), justifique e exp
 
 ---
 
-## ITEM 34 — Histórico de versões
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C5
-
-**Contexto:**
-A planilha de controle de coletas, editada por várias pessoas na nuvem, amanheceu com metade das linhas apagadas.
-
-**Comando:**
-Explique como recuperar os dados e proponha duas medidas para evitar que isso se repita.
-
-**Tópicos:**
-- a) Recuperação pelo histórico de versões e duas medidas preventivas. (1,0)
-
----
-
-## ITEM 35 — Pilares da segurança
+## ITEM 27 — Pilares da segurança
 
 - **Aula:** 01 a 07 · Apostila de ITIC
 - **Capacidade:** C2
@@ -580,7 +452,7 @@ Relacione cada incidente ao pilar da segurança da informação violado (confide
 
 ---
 
-## ITEM 36 — Ransomware e backup 3-2-1
+## ITEM 28 — Ransomware e backup 3-2-1
 
 - **Aula:** 01 a 07 · Apostila de ITIC
 - **Capacidade:** C2
@@ -596,23 +468,7 @@ Explique o que é ransomware, por que pagar o resgate não é solução e monte 
 
 ---
 
-## ITEM 37 — LGPD e dados dos motoristas
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C2
-
-**Contexto:**
-Um colega enviou para um grupo de mensagens com pessoas de fora da empresa uma planilha com nome, CPF, endereço e telefone dos motoristas cadastrados, "para facilitar o contato".
-
-**Comando:**
-Diga que tipo de dados são esses, explique por que a atitude desrespeita a LGPD (Lei 13.709/2018) e como o compartilhamento deveria ter sido feito.
-
-**Tópicos:**
-- a) Dados pessoais, desrespeito à LGPD e forma correta de compartilhar. (1,0)
-
----
-
-## ITEM 38 — Formatação de procedimento
+## ITEM 29 — Formatação de procedimento
 
 - **Aula:** 01 a 07 · Apostila de ITIC
 - **Capacidade:** C1
@@ -628,7 +484,7 @@ Descreva como formatar o documento: estilos nos títulos, lista numerada nos pas
 
 ---
 
-## ITEM 39 — Revisão antes de enviar ao cliente
+## ITEM 30 — Revisão antes de enviar ao cliente
 
 - **Aula:** 01 a 07 · Apostila de ITIC
 - **Capacidade:** C1
@@ -644,18 +500,3 @@ Explique o que fazer com as alterações e os comentários, como renomear o arqu
 
 ---
 
-## ITEM 40 — Tipos de textos técnicos
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C3
-
-**Contexto:**
-Na pasta do setor estão: um registro do que foi decidido na reunião de segunda, um aviso interno do almoxarifado para a expedição, um texto que condensa o relatório mensal em 10 linhas e um passo a passo de recebimento.
-
-**Comando:**
-Identifique o tipo de cada texto (ata, memorando, resumo ou procedimento/POP) e diga qual norma ABNT se aplica ao relatório técnico e qual se aplica ao resumo.
-
-**Tópicos:**
-- a) Quatro tipos corretos e as duas normas ABNT. (1,0)
-
----
