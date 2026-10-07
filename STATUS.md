@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 56, item 56.4 — aceite do usuário (atividades de sexta: objetiva de 100 e discursiva de 40). Depois: Etapa 51, item 51.3 — aceite do usuário (importar o .doc no Google Docs). Depois: Etapa 50, item 50.3 — aceite do usuário (header de professor comum sem os menus). Etapa 49, item 49.2 — criar a conta da professora Cintia em `criarUsuariosBancoDados.html`. Depois: Etapa 49, item 49.2 — criar a conta da professora Cintia na aba Professores de `criarUsuariosBancoDados.html`. Depois: Etapa 48, item 48.7 — o usuário preenche `docs/rotulos-aulas-ajustar.md` (rótulos "AULA NN") e pede para aplicar; depois 48.8 — aceite. Depois: Etapa 44, item 44.4 — aceite do usuário (liberar e testar a Prova Prática 06-10-2026). Depois: Etapa 38, item 38.3 — aceite do usuário (gabarito nas discursivas). Depois: Etapa 37, item 37.4 — aceite do usuário (testar Liberar gabaritos como professor e Exportar Gabarito como aluno). Depois: Etapa 35, item 35.2 — aceite do usuário (testar a tabela de notas logado como professor). Depois: Etapa 29, item 29.5 — aceite do usuário (discursivas de sexta). Depois: Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
+**Próximo passo:** Etapa 63, item 63.2 — aceite do usuário (link do curso no índice). Depois: Etapa 62, item 62.2 — aceite do usuário (apostila de Testes de Frontend). Depois: Etapa 61, item 61.4 — aceite do usuário (autor, versão, data e hora na apostila da ITIC). Depois: Etapa 56, item 56.4 — aceite do usuário (atividades de sexta: objetiva de 100 e discursiva de 40). Depois: Etapa 51, item 51.3 — aceite do usuário (importar o .doc no Google Docs). Depois: Etapa 50, item 50.3 — aceite do usuário (header de professor comum sem os menus). Etapa 49, item 49.2 — criar a conta da professora Cintia em `criarUsuariosBancoDados.html`. Depois: Etapa 49, item 49.2 — criar a conta da professora Cintia na aba Professores de `criarUsuariosBancoDados.html`. Depois: Etapa 48, item 48.7 — o usuário preenche `docs/rotulos-aulas-ajustar.md` (rótulos "AULA NN") e pede para aplicar; depois 48.8 — aceite. Depois: Etapa 44, item 44.4 — aceite do usuário (liberar e testar a Prova Prática 06-10-2026). Depois: Etapa 38, item 38.3 — aceite do usuário (gabarito nas discursivas). Depois: Etapa 37, item 37.4 — aceite do usuário (testar Liberar gabaritos como professor e Exportar Gabarito como aluno). Depois: Etapa 35, item 35.2 — aceite do usuário (testar a tabela de notas logado como professor). Depois: Etapa 29, item 29.5 — aceite do usuário (discursivas de sexta). Depois: Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -659,3 +659,35 @@ Fontes (fora do Git): `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/ATIVIDADE-INDIVIDUAL-APOST
 |------|-----------|--------|--------------|-------------|
 | 60.1 | Turma 135080 (AI AOPL 2026/2 M1) retirada de `atividade.bloqueio` nas ids 85 (objetiva de 100) e 81 (discursiva de 30), a pedido do usuário; continuam bloqueadas para 122552, 133933 e QA LBTSN 2026/1 M2. A manhã responde só no horário dela (07:15–11:15) | ✅ Concluído | 2026-10-07 | Consulta: manhã e tarde liberadas nas duas |
 | 60.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 55 — Combo "Aluno" do professor também nas objetivas (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 55.1 | Módulo da Etapa 54 tornado genérico: `respostas-aluno-discursiva.js/.css` → `assets/js/respostas-aluno-professor.js` + `assets/css/respostas-aluno-professor.css` (tabela, colunas e conversão vêm de quem chama) | ✅ Concluído | 2026-10-07 | `node --check` ok |
+| 55.2 | Discursivas usam o módulo genérico (`avaliacao-discursiva.js`) | ✅ Concluído | 2026-10-07 | `node --check` ok |
+| 55.3 | Objetivas: combo abaixo da identificação; ao escolher o aluno, destaca as alternativas dele (`respostas-atividade.js`) | ✅ Concluído | 2026-10-07 | `node --check` ok |
+| 55.4 | Aceite do usuário (abrir uma objetiva como professor e escolher um aluno) | ⬜ Pendente | — | — |
+
+## Etapa 61 — Data, hora, autor e versão nas apostilas (regra global; começa pela ITIC) (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 61.1 | Gerador: campos `autor_apostila` e `versao_apostila` obrigatórios no `materia.json`; capa e rodapé do HTML e cabeçalho do Markdown completo com autor, versão, data e hora | ✅ Concluído | 2026-10-07 20:15 | Gerador rodou sem erro; conferência 100% |
+| 61.2 | ITIC: `autor_apostila` = Gelvazio Camargo, `versao_apostila` = 1.0; cabeçalho do Markdown completo atualizado; HTML regerado | ✅ Concluído | 2026-10-07 20:15 | HTML: quadro na capa (Gelvazio Camargo · 1.0 · 07/10/2026 às 20:12) e rodapé "Versão 1.0"; linha igual no Markdown. O `APOSTILA-INTRODUCAO-TIC.pdf` antigo não tem os dados (reexportar pelo botão) |
+| 61.3 | Regra registrada no `CLAUDE.md` do projeto (REGRAS APOSTILAS, versão 2026-10-07 20:15) e no global | ✅ Concluído | 2026-10-07 20:15 | Leitura das seções; visualizador lê a versão no mesmo formato |
+| 61.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 62 — Autor, versão, data e hora na apostila de Testes de Frontend (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 62.1 | `materia.json`: `autor_apostila` = Gelvazio Camargo, `versao_apostila` = 1.0; HTML regerado (capa, rodapé e Markdown). Corrigido no gerador: comentário `# ...` dentro de bloco de código (YAML do cap. 09) era lido como título de capítulo no Markdown completo | ✅ Concluído | 2026-10-07 20:20 | Conferência 100%; 10 capítulos lidos; capa e rodapé com Gelvazio Camargo · 1.0 |
+| 62.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 63 — Link do curso "Técnico em Desenvolvimento de Sistemas" no índice de cursos (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 63.1 | A rota apontava para `MATERIAIS/TECNICO-DESENVOLVIMENTO-SISTEMAS/` (pasta movida para `C:\fontes\BACKUP-CURSOS-SENAI`). A pedido do usuário ("novo nome do curso: TECNICO-INFORMATICA-INTERNET"), as duas rotas do curso no `index.html` da raiz passam a abrir `MATERIAIS/TECNICO-INFORMATICA-INTERNET/index.html`. Banco não alterado (curso id 3 sem turmas) | ✅ Concluído | 2026-10-07 20:25 | `node`: JSON de rotas válido; pasta de destino existe |
+| 63.2 | Aceite do usuário (abrir o card no índice) | ⬜ Pendente | — | — |

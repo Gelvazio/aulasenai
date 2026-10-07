@@ -10,6 +10,8 @@
 | 2026-10-07 23:55 | Reforço de Linguagens ganha menu de atividades (`MENU-ATIVIDADES.js` com 📚 Índice, 📘 Apostila e as atividades por aula) |
 | 2026-10-07 23:45 | Regra do push dividida por ambiente: **local** = nunca fazer push (continua); **nuvem** (Claude Code na web/remoto) = sempre fazer push, direto na `main`, sem pull request |
 | 2026-10-07 23:20 | Apostila de Reforço de Linguagens (10 capítulos, aguardando validação); gerador de apostilas aceita a carga horária de cada aula (6 h/7 h), ementas com capacidades em lista, conteúdos programáticos por módulo e aulas em negrito, e vídeos "⏳ pendentes" quando o YouTube não pode ser conferido; ementa de Reforço de Linguagens com as 6 capacidades da ementa do curso |
+| 2026-10-07 20:15 | Regra "IDENTIFICAÇÃO DA APOSTILA" (global): toda apostila mostra autor, versão, data e hora (campos `autor_apostila` e `versao_apostila` no `materia.json`); começou pela ITIC (autor Gelvazio Camargo, versão 1.0) |
+| 2026-10-07 17:00 | Combo "Aluno" do professor também nas atividades objetivas (alternativas marcadas pelo aluno, somente leitura); módulo único `respostas-aluno-professor.js` |
 | 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
 | 2026-10-07 10:00 | Apostilas: o HTML passa a ser gerado a partir do Markdown completo `APOSTILA-<MATERIA>.md` (antes lia os `CAPITULO-NN.md`) |
 | 2026-10-07 09:00 | Menus USUARIOS, RELATORIOS, ALUNOS e CORREÇÃO do header só para o **Professor Administrador** (os demais professores não veem) |
@@ -1385,6 +1387,13 @@ quantidade de alunos) que filtram as linhas e o resumo; a turma escolhida é lem
 `resumo_tentativas_atividade` (`database/2026-09-30-resumo-tentativas-professor.sql`); só o
 professor consegue chamá-la.
 
+**Combo "Aluno" (2026-10-07, pedido do usuário):** logo abaixo da identificação, o professor tem
+**"🧑‍🎓 Respostas dos alunos"**: ao escolher um aluno (quem respondeu, com tentativa e entrega),
+as alternativas marcadas por ele aparecem destacadas nas questões, **somente leitura**. Sem
+escolha, as questões ficam sem marcação (as leituras filtram pelo `aluno_id` do usuário logado).
+Código: `assets/js/respostas-aluno-professor.js` (o mesmo das discursivas), carregado pelo
+`respostas-atividade.js`.
+
 ### 🕒 Horário da turma e liberação fora do horário
 
 Registrada em 2026-10-01. O aluno só grava alternativas e entrega **dentro do horário da turma**
@@ -1452,8 +1461,9 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   da entrega); ao escolher um aluno, as respostas dele aparecem nos campos, **somente leitura**
   (nada é gravado). Os campos do professor ficam **vazios até ele escolher** — as leituras da
   página filtram sempre pelo `aluno_id` do usuário logado (o RLS deixa o professor ler os alunos
-  das turmas dele). Código: `assets/js/respostas-aluno-discursiva.js` (+ css), carregado pelo
-  `avaliacao-discursiva.js`.
+  das turmas dele). Código único (objetivas e discursivas):
+  `assets/js/respostas-aluno-professor.js` (+ `assets/css/respostas-aluno-professor.css`),
+  carregado pelo `avaliacao-discursiva.js` e pelo `respostas-atividade.js`.
 - ✅ **Correção (2026-10-06)**, plano `docs/media-final-notas-do-aluno.md`, SQL
   `database/2026-10-06-notas-media-final-correcao-discursiva.sql` (aplicado):
   - tabela **`correcao_discursiva`**: nota de cada tópico por aluno e tentativa; `nota_ia` é só
@@ -2327,6 +2337,27 @@ Registrada em 2026-10-03 a pedido do usuário (padrões definidos na validação
 **Status:** 🔄 piloto **Introdução à TIC (ITIC)** — só o capítulo 01
 gerado, aguardando validação do usuário; os demais capítulos só depois que ele liberar, **um por
 vez, perguntando a cada capítulo** (rascunhos em `APOSTILA/RASCUNHOS/`, fora da apostila).
+
+### 🏷️ IDENTIFICAÇÃO DA APOSTILA: AUTOR, VERSÃO, DATA E HORA (REGRA GLOBAL)
+
+Registrada em 2026-10-07 a pedido do usuário. Vale para **todas as apostilas de todas as
+matérias**; começou pela ITIC.
+
+- ✅ **Toda apostila mostra autor, versão, data e hora:**
+  - **HTML:** na capa (quadro "Autor · Versão · Data e hora") e a versão no rodapé de todas as
+    páginas ("Apostila — <UC> · Versão X · SESI SENAI"), saindo também no PDF;
+  - **Markdown completo:** a linha `> **Autor:** … · **Versão:** … · **Data e hora:** …` no
+    cabeçalho, regravada pelo gerador a cada geração do HTML (sempre igual ao HTML).
+- ✅ **Dados no `materia.json`** (obrigatórios; sem eles o gerador para com erro):
+  `autor_apostila` (ITIC: **Gelvazio Camargo**) e `versao_apostila` (ex.: `"1.0"`).
+- ✅ **Data e hora** = momento da geração do HTML (`DD/MM/AAAA às HH:MM`), automáticas.
+- ✅ **Versão:** ao mudar o conteúdo da apostila, aumentar `versao_apostila` antes de gerar —
+  ajuste/correção → `1.0` para `1.1`; capítulo novo ou mudança grande → `1.x` para `2.0`.
+  Gerar de novo sem mudar conteúdo mantém a versão (só a data e hora mudam).
+- ✅ Código: `assets/gerador-apostilas/gerar_apostila.py` (`gravar_identificacao_markdown`),
+  `markdown_apostila.py` (`linha_identificacao`, `atualizar_identificacao`),
+  `template_apostila.html` e `assets/css/apostila.css` (`.capa-apostila__identificacao`).
+- ✅ Aplicada em: Introdução à TIC e Testes de Frontend (ambas versão 1.0, 2026-10-07).
 
 ### ⛔ PRÉ-REQUISITO: o Markdown completo bate 100% com a ementa da matéria
 

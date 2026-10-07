@@ -8,7 +8,7 @@ Regras: seção "REGRAS APOSTILAS" do CLAUDE.md.
 """
 import re
 import unicodedata
-from datetime import date
+from datetime import date, datetime
 
 MARCADOR_SUMARIO_INICIO = "<!-- sumario:inicio (gerado; atualizado a cada geração) -->"
 MARCADOR_SUMARIO_FIM = "<!-- sumario:fim -->"
@@ -26,6 +26,9 @@ PADRAO_TITULO_MD = re.compile(r"^(#{1,3})\s+(.+?)\s*$")
 PADRAO_LIMPAR_SLUG = re.compile(r"[^\w\- ]", re.UNICODE)
 PADRAO_H3_MD = re.compile(r"^###\s+", re.MULTILINE)
 CERCA_CODIGO = "```"
+FORMATO_DATA_HORA = "%d/%m/%Y às %H:%M"
+PREFIXO_IDENTIFICACAO = "> **Autor:**"
+PREFIXO_GERADO_EM = "> **Gerado em:**"
 
 
 def slug_titulo(texto, usados):
@@ -101,6 +104,47 @@ def atualizar_sumario(texto_md):
     return f"{texto_md[:inicio]}\n{montar_sumario(texto_md)}\n{texto_md[fim:]}"
 
 
+def agora_formatado():
+    """Data e hora atuais no formato usado na apostila.
+
+    Returns:
+        Texto "DD/MM/AAAA às HH:MM".
+    """
+    return datetime.now().strftime(FORMATO_DATA_HORA)
+
+
+def linha_identificacao(dados, data_hora):
+    """Linha do cabeçalho com autor, versão e data e hora da geração da apostila.
+
+    Args:
+        dados: Dados da matéria (autor_apostila e versao_apostila).
+        data_hora: Data e hora da geração, já formatadas.
+
+    Returns:
+        Linha Markdown do quadro de identificação.
+    """
+    return (f"{PREFIXO_IDENTIFICACAO} {dados['autor_apostila']} · **Versão:** "
+            f"{dados['versao_apostila']} · **Data e hora:** {data_hora}  ")
+
+
+def atualizar_identificacao(texto_md, dados, data_hora):
+    """Grava no Markdown completo o autor, a versão e a data e hora da geração do HTML.
+
+    Args:
+        texto_md: Markdown completo da apostila.
+        dados: Dados da matéria.
+        data_hora: Data e hora da geração, já formatadas.
+
+    Returns:
+        Markdown com a linha de identificação trocada (ou inserida antes de "Gerado em").
+    """
+    linha = linha_identificacao(dados, data_hora)
+    padrao = re.compile(rf"^{re.escape(PREFIXO_IDENTIFICACAO)}.*$", re.MULTILINE)
+    if padrao.search(texto_md):
+        return padrao.sub(lambda _achado: linha, texto_md, count=1)
+    return texto_md.replace(PREFIXO_GERADO_EM, "\n".join((linha, PREFIXO_GERADO_EM)), 1)
+
+
 def horas_da_aula(dados, numero):
     """Carga horária da aula/capítulo: a "carga_horaria" da aula no plano ou o padrão da matéria.
 
@@ -167,6 +211,7 @@ def md_cabecalho(dados, total_previstos):
         f"> **Ementa:** {materia.get('versao_ementa', '—')}  ",
         f"> **Carga horária da UC:** {texto_carga} · **Capítulos previstos:** {total_previstos} "
         f"({texto_aula_capitulo(dados)})  ",
+        linha_identificacao(dados, agora_formatado()),
         f"> **Gerado em:** {date.today():%d/%m/%Y}, a partir de `APOSTILA/CONTEUDO/`.",
         "",
         "> ✏️ **Este arquivo é a fonte final da apostila.** Revise, compare e acrescente "

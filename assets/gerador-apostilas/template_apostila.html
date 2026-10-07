@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ASSETS}}/css/apostila.css">
     <script src="{{ASSETS}}/js/apostila.js" defer></script>{{MENU}}
 </head>
-<body class="apostila" data-logo="{{LOGO}}" data-rodape="Apostila — {{UC_CURTA}} · SESI SENAI">
+<body class="apostila" data-logo="{{LOGO}}" data-rodape="Apostila — {{UC_CURTA}} · Versão {{VERSAO_APOSTILA}} · SESI SENAI">
     <!-- Gerado por assets/gerador-apostilas/gerar_apostila.py — não editar à mão -->
     <div class="apostila__container">
         <header class="apostila__topo">
@@ -25,6 +25,11 @@
                 <p class="capa-apostila__subtitulo">{{CURSO}}</p>
                 <div class="capa-apostila__faixa"></div>
                 <p class="capa-apostila__dados">Docente: {{DOCENTE}} · {{TOTAL_CAPITULOS}} capítulo(s)</p>
+                <dl class="capa-apostila__identificacao">
+                    <div><dt>Autor</dt><dd>{{AUTOR_APOSTILA}}</dd></div>
+                    <div><dt>Versão</dt><dd>{{VERSAO_APOSTILA}}</dd></div>
+                    <div><dt>Data e hora</dt><dd>{{GERADO_EM}}</dd></div>
+                </dl>
             </div>
             <footer class="pagina-senai__rodape"></footer>
         </section>

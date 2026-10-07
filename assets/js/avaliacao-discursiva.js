@@ -15,7 +15,7 @@ const ID_PAINEL = 'painel-discursivo';
 const ID_BOTAO_FINALIZAR = 'btnFinalizarDiscursiva';
 const ARQUIVO_LIBERACAO_DISCURSIVA = 'liberacao-respostas-discursiva.js';
 const ARQUIVO_PDF_DISCURSIVA = 'exportar-pdf-discursiva.js';
-const ARQUIVO_RESPOSTAS_ALUNO = 'respostas-aluno-discursiva.js';
+const ARQUIVO_RESPOSTAS_ALUNO = 'respostas-aluno-professor.js';
 const BASE_SCRIPTS_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const CLASSE_BLOCO = 'topico-resposta';
 const CLASSE_FALTANDO = 'topico-resposta--faltando';
@@ -272,6 +272,19 @@ function montarPainel(dados) {
 }
 
 /**
+ * Converte linhas {item, topico, texto} do banco no mapa chave do tópico → texto.
+ * @param {Object[]} linhas - Linhas de resposta_discursiva.
+ * @returns {Object<string, string>} Respostas no formato de preencherCampos.
+ */
+function converterRespostasDiscursivas(linhas) {
+    const respostas = {};
+    linhas.forEach((linha) => {
+        respostas[estadoDiscursivo.repositorio.chaveTopico(linha.item, linha.topico)] = linha.texto;
+    });
+    return respostas;
+}
+
+/**
  * Professor: carrega (uma vez) o combo "Aluno" que mostra as respostas de cada aluno nos campos.
  * Uma falha aqui não atrapalha a avaliação.
  * @param {HTMLElement} painel - Painel de identificação.
@@ -279,13 +292,15 @@ function montarPainel(dados) {
  */
 async function abrirRespostasDoAluno(painel, dados) {
     try {
-        if (typeof window.montarRespostasDoAlunoDiscursiva !== 'function') {
+        if (typeof window.montarRespostasDoAluno !== 'function') {
             await carregarModuloDiscursiva(ARQUIVO_RESPOSTAS_ALUNO);
         }
-        await window.montarRespostasDoAlunoDiscursiva(painel, {
+        await window.montarRespostasDoAluno(painel, {
             atividadeId: dados.atividadeId,
+            tabela: 'resposta_discursiva',
+            colunas: 'item,topico,texto',
+            converter: converterRespostasDiscursivas,
             preencher: preencherCampos,
-            chaveTopico: estadoDiscursivo.repositorio.chaveTopico,
         });
     } catch (erro) {
         console.warn('Respostas dos alunos:', erro.message);

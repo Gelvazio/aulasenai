@@ -54,7 +54,7 @@ OPCAO_FORCAR = "--forcar"
 OPCAO_CONFERIR = "--conferir"
 CAMINHO_LOGO = "img/logo-sesi-senai.png"
 URL_MINIATURA = "https://i.ytimg.com/vi/{}/hqdefault.jpg"
-CAMPOS_DADOS = ("uc", "uc_curta", "curso", "docente")
+CAMPOS_DADOS = ("uc", "uc_curta", "curso", "docente", "autor_apostila", "versao_apostila")
 SECOES_OBRIGATORIAS = ("Teoria", "Vídeos", "Exercícios", "Resumo", "Glossário")
 DURACAO_MAXIMA_SEGUNDOS = 15 * 60
 DURACAO_A_CONFERIR = "a conferir"
@@ -64,6 +64,7 @@ EXTENSOES_MARKDOWN = ["tables", "sane_lists", "fenced_code"]
 RECUO = " " * 12
 
 PADRAO_TITULO = re.compile(r"^#\s+(.+?)\s*$", re.MULTILINE)
+PADRAO_CERCA_CODIGO = re.compile(r"^\s*```", re.MULTILINE)
 PADRAO_SECAO = re.compile(r"^##\s+(.+?)\s*$", re.MULTILINE)
 PADRAO_ITEM = re.compile(r"^###\s+ITEM\s+(\d+)\s*$", re.MULTILINE)
 PADRAO_CAMPO = r"^-?\s*\*\*{rotulo}:\*\*\s*(.+?)\s*$"
@@ -293,6 +294,32 @@ def ler_texto_capitulo(texto, numero, capacidades, rotulo):
             "exercicios": ler_exercicios(secoes["Exercícios"], capacidades, rotulo)}
 
 
+def trechos_de_codigo(texto):
+    """Localiza os blocos de código cercados por ``` no Markdown.
+
+    Args:
+        texto: Markdown completo da apostila.
+
+    Returns:
+        Lista de (início, fim) de cada bloco de código, em posições do texto.
+    """
+    cercas = [achado.start() for achado in PADRAO_CERCA_CODIGO.finditer(texto)]
+    return list(zip(cercas[::2], cercas[1::2]))
+
+
+def esta_em_codigo(posicao, blocos):
+    """Diz se a posição está dentro de um bloco de código (ex.: comentário "# ..." em YAML).
+
+    Args:
+        posicao: Posição no texto.
+        blocos: Blocos de código de trechos_de_codigo().
+
+    Returns:
+        True se a posição estiver dentro de algum bloco.
+    """
+    return any(inicio < posicao < fim for inicio, fim in blocos)
+
+
 def partes_markdown_completo(texto):
     """Divide o Markdown completo pelos títulos de primeiro nível ("# Título").
 
@@ -302,7 +329,9 @@ def partes_markdown_completo(texto):
     Returns:
         Lista de (título, texto da parte com o título), sem a linha "---" que separa as partes.
     """
-    inicios = [achado.start() for achado in PADRAO_TITULO.finditer(texto)] + [len(texto)]
+    blocos = trechos_de_codigo(texto)
+    inicios = [achado.start() for achado in PADRAO_TITULO.finditer(texto)
+               if not esta_em_codigo(achado.start(), blocos)] + [len(texto)]
     partes = []
     for inicio, fim in zip(inicios, inicios[1:]):
         trecho = PADRAO_SEPARADOR_FINAL.sub("", texto[inicio:fim].strip()).strip()
@@ -703,18 +732,19 @@ def montar_tags_menu_apostila(pasta_materia, pasta_saida):
             f'\n    <script src="{script}" defer></script>')
 
 
-def montar_pagina(pasta_materia, dados, texto_introducao, capitulos):
+def montar_pagina(pasta_materia, dados, conteudo, data_hora):
     """Preenche o template da apostila.
 
     Args:
         pasta_materia: Pasta da matéria.
         dados: Dados da matéria.
-        texto_introducao: Markdown da introdução.
-        capitulos: Capítulos lidos.
+        conteudo: Tupla (Markdown da introdução, capítulos lidos).
+        data_hora: Data e hora da geração, já formatadas.
 
     Returns:
         HTML completo da apostila.
     """
+    texto_introducao, capitulos = conteudo
     pasta_saida = pasta_materia / PASTA_APOSTILA
     assets = caminho_relativo(ASSETS, pasta_saida)
     capitulos_html = "\n\n".join(html_capitulo(capitulo, dados["todas"])
@@ -727,6 +757,7 @@ def montar_pagina(pasta_materia, dados, texto_introducao, capitulos):
         "SUMARIO": html_sumario(capitulos, subtitulos_introducao),
         "INTRODUCAO": introducao, "CAPACIDADES": html_capacidades(dados, capitulos),
         "GLOSSARIO": html_glossario(capitulos), "CAPITULOS": capitulos_html,
+        "GERADO_EM": html.escape(data_hora),
     }
     valores.update({campo.upper(): html.escape(dados[campo]) for campo in CAMPOS_DADOS})
     pagina = TEMPLATE
@@ -759,6 +790,20 @@ def conferir_com_ementa(pasta_materia):
     return conferir_ementa.conferir_materia(pasta_materia, caminho_markdown_completo(pasta_materia))
 
 
+def gravar_identificacao_markdown(pasta_materia, dados, data_hora):
+    """Atualiza autor, versão e data e hora no Markdown completo, igual ao HTML gerado.
+
+    Args:
+        pasta_materia: Pasta da matéria.
+        dados: Dados da matéria.
+        data_hora: Data e hora da geração, já formatadas.
+    """
+    caminho = caminho_markdown_completo(pasta_materia)
+    texto = caminho.read_text(encoding="utf-8")
+    caminho.write_text(md_apostila.atualizar_identificacao(texto, dados, data_hora),
+                       encoding="utf-8")
+
+
 def gerar_apostila(pasta_materia):
     """Gera a apostila HTML a partir do Markdown completo, só com a conferência em 100%.
 
@@ -776,8 +821,10 @@ def gerar_apostila(pasta_materia):
              "antes de gerar a apostila (regra CONFERÊNCIA OBRIGATÓRIA)")
     dados = ler_dados_materia(pasta_materia)
     introducao, capitulos = ler_markdown_completo(pasta_materia, dados)
+    data_hora = md_apostila.agora_formatado()
+    gravar_identificacao_markdown(pasta_materia, dados, data_hora)
     saida = pasta_materia / PASTA_APOSTILA / f"APOSTILA-{pasta_materia.name}.html"
-    saida.write_text(montar_pagina(pasta_materia, dados, introducao, capitulos),
+    saida.write_text(montar_pagina(pasta_materia, dados, (introducao, capitulos), data_hora),
                      encoding="utf-8")
     for capitulo in capitulos:
         print(f"✅ {capitulo['titulo']}: {len(capitulo['videos'])} vídeo(s), "

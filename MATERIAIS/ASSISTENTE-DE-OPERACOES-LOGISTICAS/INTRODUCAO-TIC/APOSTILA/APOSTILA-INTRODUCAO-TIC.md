@@ -4,6 +4,7 @@
 > **Módulo:** Educação para o Trabalho (Básico) · **Modalidade:** Presencial  
 > **Ementa:** EMENTA-CHALKIE-AI.md v3.1 — conciliada e compactada (2026-09-23)  
 > **Carga horária da UC:** 40 horas · **Capítulos previstos:** 10 (1 capítulo = 1 aula de 4 horas)  
+> **Autor:** Gelvazio Camargo · **Versão:** 1.0 · **Data e hora:** 07/10/2026 às 20:12  
 > **Gerado em:** 03/10/2026, a partir de `APOSTILA/CONTEUDO/`.
 
 > ✏️ **Este arquivo é a fonte final da apostila.** Revise, compare e acrescente dados aqui; o HTML é gerado depois, a partir dele. O sumário é refeito a cada geração.
