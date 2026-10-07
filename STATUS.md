@@ -645,3 +645,10 @@ Fontes (fora do Git): `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/ATIVIDADE-INDIVIDUAL-APOST
 | 58.2 | Banco (id 81): backup `topico_discursivo_backup_20261007_40`, 10 tópicos removidos, 10 renumerados, `total_itens` = 30 | ✅ Concluído | 2026-10-07 | 30 tópicos, 30 pontos; as 40 respostas dos 2 alunos (itens 01–20) mantidas; nenhuma resposta nos itens removidos |
 | 58.3 | Página regerada, card do índice, menu e `STATUS-ATIVIDADES.md` | ✅ Concluído | 2026-10-07 | `node` lê o menu |
 | 58.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 59 — Turma 135081 responde até 17h15 (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 59.1 | `turma.hora_fim` da 135081 (AI AOPL 2026/2 V1 · Tarde) de 17:00 para 17:15, a pedido do usuário; vale para todas as atividades e avaliações da turma. Fora do horário continua bloqueado (nenhum aluno em `atividade_liberada_fora_horario` nas ids 81 e 85) | ✅ Concluído | 2026-10-07 | Consulta: 13:00–17:15 |
+| 59.2 | Aceite do usuário | ⬜ Pendente | — | — |
