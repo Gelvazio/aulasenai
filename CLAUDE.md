@@ -2330,8 +2330,7 @@ matérias**; começou pela ITIC.
 - ✅ Código: `assets/gerador-apostilas/gerar_apostila.py` (`gravar_identificacao_markdown`),
   `markdown_apostila.py` (`linha_identificacao`, `atualizar_identificacao`),
   `template_apostila.html` e `assets/css/apostila.css` (`.capa-apostila__identificacao`).
-- ⏳ Testes de Frontend: acrescentar os dois campos no `materia.json` quando a apostila dela for
-  gerada de novo (a pedido do usuário).
+- ✅ Aplicada em: Introdução à TIC e Testes de Frontend (ambas versão 1.0, 2026-10-07).
 
 ### ⛔ PRÉ-REQUISITO: o Markdown completo bate 100% com a ementa da matéria
 

@@ -62,6 +62,7 @@ EXTENSOES_MARKDOWN = ["tables", "sane_lists", "fenced_code"]
 RECUO = " " * 12
 
 PADRAO_TITULO = re.compile(r"^#\s+(.+?)\s*$", re.MULTILINE)
+PADRAO_CERCA_CODIGO = re.compile(r"^\s*```", re.MULTILINE)
 PADRAO_SECAO = re.compile(r"^##\s+(.+?)\s*$", re.MULTILINE)
 PADRAO_ITEM = re.compile(r"^###\s+ITEM\s+(\d+)\s*$", re.MULTILINE)
 PADRAO_CAMPO = r"^-?\s*\*\*{rotulo}:\*\*\s*(.+?)\s*$"
@@ -283,6 +284,32 @@ def ler_texto_capitulo(texto, numero, capacidades, rotulo):
             "exercicios": ler_exercicios(secoes["Exercícios"], capacidades, rotulo)}
 
 
+def trechos_de_codigo(texto):
+    """Localiza os blocos de código cercados por ``` no Markdown.
+
+    Args:
+        texto: Markdown completo da apostila.
+
+    Returns:
+        Lista de (início, fim) de cada bloco de código, em posições do texto.
+    """
+    cercas = [achado.start() for achado in PADRAO_CERCA_CODIGO.finditer(texto)]
+    return list(zip(cercas[::2], cercas[1::2]))
+
+
+def esta_em_codigo(posicao, blocos):
+    """Diz se a posição está dentro de um bloco de código (ex.: comentário "# ..." em YAML).
+
+    Args:
+        posicao: Posição no texto.
+        blocos: Blocos de código de trechos_de_codigo().
+
+    Returns:
+        True se a posição estiver dentro de algum bloco.
+    """
+    return any(inicio < posicao < fim for inicio, fim in blocos)
+
+
 def partes_markdown_completo(texto):
     """Divide o Markdown completo pelos títulos de primeiro nível ("# Título").
 
@@ -292,7 +319,9 @@ def partes_markdown_completo(texto):
     Returns:
         Lista de (título, texto da parte com o título), sem a linha "---" que separa as partes.
     """
-    inicios = [achado.start() for achado in PADRAO_TITULO.finditer(texto)] + [len(texto)]
+    blocos = trechos_de_codigo(texto)
+    inicios = [achado.start() for achado in PADRAO_TITULO.finditer(texto)
+               if not esta_em_codigo(achado.start(), blocos)] + [len(texto)]
     partes = []
     for inicio, fim in zip(inicios, inicios[1:]):
         trecho = PADRAO_SEPARADOR_FINAL.sub("", texto[inicio:fim].strip()).strip()
