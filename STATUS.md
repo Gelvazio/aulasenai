@@ -652,3 +652,10 @@ Fontes (fora do Git): `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/ATIVIDADE-INDIVIDUAL-APOST
 |------|-----------|--------|--------------|-------------|
 | 59.1 | `turma.hora_fim` da 135081 (AI AOPL 2026/2 V1 · Tarde) de 17:00 para 17:15, a pedido do usuário; vale para todas as atividades e avaliações da turma. Fora do horário continua bloqueado (nenhum aluno em `atividade_liberada_fora_horario` nas ids 81 e 85) | ✅ Concluído | 2026-10-07 | Consulta: 13:00–17:15 |
 | 59.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 60 — Atividades de sexta liberadas para a manhã (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 60.1 | Turma 135080 (AI AOPL 2026/2 M1) retirada de `atividade.bloqueio` nas ids 85 (objetiva de 100) e 81 (discursiva de 30), a pedido do usuário; continuam bloqueadas para 122552, 133933 e QA LBTSN 2026/1 M2. A manhã responde só no horário dela (07:15–11:15) | ✅ Concluído | 2026-10-07 | Consulta: manhã e tarde liberadas nas duas |
+| 60.2 | Aceite do usuário | ⬜ Pendente | — | — |
