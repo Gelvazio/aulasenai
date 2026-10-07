@@ -4,7 +4,7 @@
 > **Módulo:** UC 7 · **Modalidade:** Presencial  
 > **Ementa:** 2026-09  
 > **Carga horária da UC:** 63 horas · **Capítulos previstos:** 10 (1 capítulo = 1 aula; a carga horária de cada aula está no plano de capítulos)  
-> **Autor:** Gelvazio Camargo · **Versão:** 1.0 · **Data e hora:** 07/10/2026 às 20:46  
+> **Autor:** Gelvazio Camargo · **Versão:** 1.0 · **Data e hora:** 07/10/2026 às 20:49  
 > **Gerado em:** 07/10/2026, a partir de `APOSTILA/CONTEUDO/`.
 
 > ✏️ **Este arquivo é a fonte final da apostila.** Revise, compare e acrescente dados aqui; o HTML é gerado depois, a partir dele. O sumário é refeito a cada geração.
@@ -1032,7 +1032,9 @@ O assunto é parecido; o **contexto** muda tudo.
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre tipos e gêneros textuais e contexto de produção (a duração precisa ser conferida antes de entrar na apostila).
+- [Gêneros Textuais](https://www.youtube.com/watch?v=Ucjv4LT8CSg) — a conferir — Prof. Noslen
+- [Tipos Textuais](https://www.youtube.com/watch?v=ibwf_X3498c) — a conferir — Prof. Noslen
+- [TIPOS E GÊNEROS TEXTUAIS](https://www.youtube.com/watch?v=NuMX0fm3V3I) — a conferir — Português com Letícia
 
 ## Resumo
 
@@ -1197,7 +1199,9 @@ técnico."
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre tema, assunto, ideia principal e como fazer resumo (a duração precisa ser conferida antes de entrar na apostila).
+- [Assunto e tema de um texto](https://www.youtube.com/watch?v=Bk0oBjBTIpA) — a conferir — Profa. Diana Ribeiro
+- [Ideia principal e ideias secundárias de um texto](https://www.youtube.com/watch?v=-Em_S_2HPbE) — a conferir
+- [A ideia principal em um texto](https://www.youtube.com/watch?v=pHRXFkx7pes) — a conferir
 
 ## Resumo
 
@@ -1368,7 +1372,9 @@ nos dois títulos: **quantos** empregos mudam? Haverá **requalificação**? Que
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre fato e opinião, leitura crítica e como identificar fake news (a duração precisa ser conferida antes de entrar na apostila).
+- [Fato, opinião ou fake?](https://www.youtube.com/watch?v=pTRRZikcmqc) — a conferir — Profa. Fabiana Santos
+- [Você sabe diferenciar fatos e opiniões?](https://www.youtube.com/watch?v=IEPv0weuDxw) — a conferir
+- [Como checar fatos?](https://www.youtube.com/watch?v=ZFpFsXn4BOk) — a conferir
 
 ## Resumo
 
@@ -1530,7 +1536,9 @@ Reescrita com coesão e coerência:
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre coesão referencial, conectivos e coerência textual (a duração precisa ser conferida antes de entrar na apostila).
+- [Os conectivos](https://www.youtube.com/watch?v=PC4b4jt0Bl0) — a conferir
+- [Coesão e coerência](https://www.youtube.com/watch?v=IIU6i3UXyi0) — a conferir — Prof. Noslen
+- [Coesão e coerência textual - Redação - Ensino Médio](https://www.youtube.com/watch?v=3E4ULflHHGo) — a conferir
 
 ## Resumo
 
@@ -1698,7 +1706,8 @@ A **TecVale** (empresa **fictícia**) inaugura um laboratório de robótica:
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre narração, descrição, argumentação e paragrafação (a duração precisa ser conferida antes de entrar na apostila).
+- [Narração, Descrição e Dissertação - Português](https://www.youtube.com/watch?v=YWohiTlnrH8) — a conferir — Natália Guirado
+- [Tipologias Textuais](https://www.youtube.com/watch?v=7wIhBsb5Kzo) — a conferir — Brasil Escola
 
 ## Resumo
 
@@ -1858,7 +1867,9 @@ Revisado:
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre uso da vírgula, concordância verbal e concordância nominal (a duração precisa ser conferida antes de entrar na apostila).
+- [Uso da Vírgula](https://www.youtube.com/watch?v=37bpap7OgOY) — a conferir — Prof. Alexandre Luz
+- [Concordância verbal e nominal (6º ano)](https://www.youtube.com/watch?v=lc2Gw838IBo) — a conferir
+- [Concordância verbal](https://www.youtube.com/watch?v=-qT0FjSQbe4) — a conferir — Brasil Escola
 
 ## Resumo
 
@@ -2014,7 +2025,9 @@ para 200 °C." Cada gênero pede o seu tipo de linguagem.
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre classes de palavras, denotação e conotação e figuras de linguagem (a duração precisa ser conferida antes de entrar na apostila).
+- [O que são Figuras de Linguagem? Quais são? Aprenda em menos de 4 minutos!](https://www.youtube.com/watch?v=ZdgHIUUQIyk) — a conferir
+- [Figuras de linguagem](https://www.youtube.com/watch?v=BA_GiXoiszY) — a conferir — Brasil Escola
+- [Figuras de Palavras](https://www.youtube.com/watch?v=fDslEF5Jzn8) — a conferir — Brasil Escola
 
 ## Resumo
 
@@ -2173,7 +2186,9 @@ do almoxarifado."
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre como falar em público, oratória, storytelling e controle do nervosismo (a duração precisa ser conferida antes de entrar na apostila).
+- [Como falar em público: DICAS SIMPLES!](https://www.youtube.com/watch?v=mkT-XZTYFKU) — a conferir
+- [COMO FAZER BOAS APRESENTAÇÕES E FALAR EM PÚBLICO!](https://www.youtube.com/watch?v=Ded0NZyK_TE) — a conferir — Débora Aladim
+- [Dicas de oratória para não ficar nervoso em apresentações](https://www.youtube.com/watch?v=Go52CIDZMm0) — a conferir
 
 ## Resumo
 
@@ -2342,7 +2357,9 @@ em linguagem formal:
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre argumentação, debate regrado, comunicação assertiva e variação linguística (a duração precisa ser conferida antes de entrar na apostila).
+- [Preconceito Linguístico](https://www.youtube.com/watch?v=TDCcSKl5maI) — a conferir — Brasil Escola
+- [Variação linguística e preconceito linguístico](https://www.youtube.com/watch?v=a6IitrQGksE) — a conferir
+- [Debate de tema - Preconceito Linguístico](https://www.youtube.com/watch?v=tw3yRUUsHqo) — a conferir
 
 ## Resumo
 
@@ -2520,7 +2537,9 @@ Revisado (impessoal, preciso, sem repetições):
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre crônica, poesia, relatório técnico, resumo e resenha (a duração precisa ser conferida antes de entrar na apostila).
+- [Gênero Textual: Crônica](https://www.youtube.com/watch?v=Oikb9X5tUas) — a conferir
+- [Resenha x Resumo](https://www.youtube.com/watch?v=jJb2nsCEvZ0) — a conferir — Brasil Escola
+- [Crônica](https://www.youtube.com/watch?v=2XcMASxk4oM) — a conferir — Brasil Escola
 
 ## Resumo
 

@@ -7,9 +7,10 @@
 | Versão (data e hora) | O que mudou |
 |---|---|
 | 2026-10-07 20:50 | Identificação da apostila obrigatória em **todas** as apostilas: `autor_apostila` (padrão Gelvazio Camargo) e `versao_apostila` (começa em 1.0) preenchidos no `materia.json` antes da 1ª geração; aplicada também em Reforço de Linguagens |
-| 2026-10-07 23:55 | Reforço de Linguagens ganha menu de atividades (`MENU-ATIVIDADES.js` com 📚 Índice, 📘 Apostila e as atividades por aula) |
-| 2026-10-07 23:45 | Regra do push dividida por ambiente: **local** = nunca fazer push (continua); **nuvem** (Claude Code na web/remoto) = sempre fazer push, direto na `main`, sem pull request |
-| 2026-10-07 23:20 | Apostila de Reforço de Linguagens (10 capítulos, aguardando validação); gerador de apostilas aceita a carga horária de cada aula (6 h/7 h), ementas com capacidades em lista, conteúdos programáticos por módulo e aulas em negrito, e vídeos "⏳ pendentes" quando o YouTube não pode ser conferido; ementa de Reforço de Linguagens com as 6 capacidades da ementa do curso |
+| 2026-10-07 20:50 | Apostilas: vídeo com duração `a conferir` (link real, duração não conferida por bloqueio de rede) aceito pelo gerador, com aviso; 29 vídeos na apostila de Reforço de Linguagens |
+| 2026-10-07 20:40 | Reforço de Linguagens ganha menu de atividades (`MENU-ATIVIDADES.js` com 📚 Índice, 📘 Apostila e as atividades por aula) |
+| 2026-10-07 20:30 | Regra do push dividida por ambiente: **local** = nunca fazer push (continua); **nuvem** (Claude Code na web/remoto) = sempre fazer push, direto na `main`, sem pull request |
+| 2026-10-07 20:20 | Apostila de Reforço de Linguagens (10 capítulos, aguardando validação); gerador de apostilas aceita a carga horária de cada aula (6 h/7 h), ementas com capacidades em lista, conteúdos programáticos por módulo e aulas em negrito, e vídeos "⏳ pendentes" quando o YouTube não pode ser conferido; ementa de Reforço de Linguagens com as 6 capacidades da ementa do curso |
 | 2026-10-07 20:15 | Regra "IDENTIFICAÇÃO DA APOSTILA" (global): toda apostila mostra autor, versão, data e hora (campos `autor_apostila` e `versao_apostila` no `materia.json`); começou pela ITIC (autor Gelvazio Camargo, versão 1.0) |
 | 2026-10-07 17:00 | Combo "Aluno" do professor também nas atividades objetivas (alternativas marcadas pelo aluno, somente leitura); módulo único `respostas-aluno-professor.js` |
 | 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
@@ -2506,6 +2507,10 @@ Registrada em 2026-10-03 a pedido do usuário.
   capítulo leva na seção "Vídeos" a linha `- ⏳ Vídeos pendentes: ...` (o gerador avisa e o HTML
   mostra o aviso). ❌ Nunca inventar link, título ou duração; trocar pela lista real assim que
   conferida (status no `STATUS-APOSTILA.md`).
+- ✅ **Vídeo com duração "a conferir"** (2026-10-07, decisão do usuário): quando o vídeo foi
+  achado pela busca (link, título e canal reais) mas a duração não pôde ser lida, a linha fica
+  `- [título](url) — a conferir — canal`; o gerador avisa e o HTML mostra "⏱️ duração a conferir
+  pelo professor". O professor troca por `mm:ss` (até 15 min) ou apaga a linha.
 - ✅ **O HTML é gerado a partir do Markdown completo** (2026-10-07): o `gerar_apostila.py` lê a
   `# Introdução` e cada `# Capítulo NN` do `APOSTILA-<MATERIA>.md` (glossário de cada capítulo
   pelo `_(cap. NN)_` do glossário geral); sem o Markdown completo, o gerador para com erro

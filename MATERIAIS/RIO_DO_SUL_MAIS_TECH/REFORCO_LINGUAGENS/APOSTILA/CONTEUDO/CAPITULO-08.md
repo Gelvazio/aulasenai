@@ -104,7 +104,9 @@ do almoxarifado."
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre como falar em público, oratória, storytelling e controle do nervosismo (a duração precisa ser conferida antes de entrar na apostila).
+- [Como falar em público: DICAS SIMPLES!](https://www.youtube.com/watch?v=mkT-XZTYFKU) — a conferir
+- [COMO FAZER BOAS APRESENTAÇÕES E FALAR EM PÚBLICO!](https://www.youtube.com/watch?v=Ded0NZyK_TE) — a conferir — Débora Aladim
+- [Dicas de oratória para não ficar nervoso em apresentações](https://www.youtube.com/watch?v=Go52CIDZMm0) — a conferir
 
 ## Exercícios
 

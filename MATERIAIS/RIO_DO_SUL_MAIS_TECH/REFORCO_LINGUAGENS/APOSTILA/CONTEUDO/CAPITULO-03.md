@@ -116,7 +116,9 @@ nos dois títulos: **quantos** empregos mudam? Haverá **requalificação**? Que
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre fato e opinião, leitura crítica e como identificar fake news (a duração precisa ser conferida antes de entrar na apostila).
+- [Fato, opinião ou fake?](https://www.youtube.com/watch?v=pTRRZikcmqc) — a conferir — Profa. Fabiana Santos
+- [Você sabe diferenciar fatos e opiniões?](https://www.youtube.com/watch?v=IEPv0weuDxw) — a conferir
+- [Como checar fatos?](https://www.youtube.com/watch?v=ZFpFsXn4BOk) — a conferir
 
 ## Exercícios
 

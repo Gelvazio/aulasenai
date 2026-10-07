@@ -110,7 +110,9 @@ técnico."
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre tema, assunto, ideia principal e como fazer resumo (a duração precisa ser conferida antes de entrar na apostila).
+- [Assunto e tema de um texto](https://www.youtube.com/watch?v=Bk0oBjBTIpA) — a conferir — Profa. Diana Ribeiro
+- [Ideia principal e ideias secundárias de um texto](https://www.youtube.com/watch?v=-Em_S_2HPbE) — a conferir
+- [A ideia principal em um texto](https://www.youtube.com/watch?v=pHRXFkx7pes) — a conferir
 
 ## Exercícios
 

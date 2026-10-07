@@ -16,26 +16,28 @@
 | Introdução (`CONTEUDO/INTRODUCAO.md`) | 👀 Aguardando validação |
 | Conferência Markdown × ementa da matéria (`--conferir`) | ✅ 100% (138/138 itens) em 2026-10-07 |
 | HTML gerado a partir do Markdown completo | ✅ Gerado em 2026-10-07 |
+| Identificação (autor, versão, data e hora) | ✅ Gelvazio Camargo · versão 1.0 · 2026-10-07 |
 
 | Cap. | Tema | Horas | Teoria | Vídeos (≤ 15 min) | Resumo | Exercícios ITEM | Glossário | Status |
 |---|---|---|---|---|---|---|---|---|
-| 01 | Tipos de Texto e Contexto de Produção | 6 | ✅ | ⏳ pendentes | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
-| 02 | Tema, Assunto e Ideia Principal | 6 | ✅ | ⏳ pendentes | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
-| 03 | Intenção Comunicativa e Análise Crítica | 6 | ✅ | ⏳ pendentes | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
-| 04 | Coesão e Coerência Textual | 6 | ✅ | ⏳ pendentes | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
-| 05 | Tipologias Textuais na Prática | 6 | ✅ | ⏳ pendentes | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
-| 06 | Pontuação e Concordância na Escrita | 6 | ✅ | ⏳ pendentes | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
-| 07 | Classes de Palavras e Figuras de Linguagem | 6 | ✅ | ⏳ pendentes | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
-| 08 | Oralidade e Apresentação em Público | 7 | ✅ | ⏳ pendentes | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
-| 09 | Argumentação Oral, Debates e Registros | 7 | ✅ | ⏳ pendentes | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
-| 10 | Gêneros Literários, Textos Técnicos e Síntese | 7 | ✅ | ⏳ pendentes | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 01 | Tipos de Texto e Contexto de Produção | 6 | ✅ | 🔗 3 (duração a conferir) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 02 | Tema, Assunto e Ideia Principal | 6 | ✅ | 🔗 3 (duração a conferir) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 03 | Intenção Comunicativa e Análise Crítica | 6 | ✅ | 🔗 3 (duração a conferir) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 04 | Coesão e Coerência Textual | 6 | ✅ | 🔗 3 (duração a conferir) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 05 | Tipologias Textuais na Prática | 6 | ✅ | 🔗 2 (duração a conferir) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 06 | Pontuação e Concordância na Escrita | 6 | ✅ | 🔗 3 (duração a conferir) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 07 | Classes de Palavras e Figuras de Linguagem | 6 | ✅ | 🔗 3 (duração a conferir) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 08 | Oralidade e Apresentação em Público | 7 | ✅ | 🔗 3 (duração a conferir) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 09 | Argumentação Oral, Debates e Registros | 7 | ✅ | 🔗 3 (duração a conferir) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 10 | Gêneros Literários, Textos Técnicos e Síntese | 7 | ✅ | 🔗 3 (duração a conferir) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
 
 ## Pendências
 
-- ⏳ **Vídeos:** a rede do ambiente em que a apostila foi gerada bloqueia o YouTube, então a
-  duração (≤ 15 min) não pôde ser conferida nos metadados. Cada capítulo tem a linha
-  `- ⏳ Vídeos pendentes: ...` na seção "Vídeos" (o HTML mostra o aviso). Para incluir: trocar a
-  linha por `- [título](url) — mm:ss — canal` (1 a 4 vídeos, conferidos com `curl`), rodar
+- ⏳ **Vídeos (2026-10-07):** 29 vídeos reais do YouTube (2 a 3 por capítulo), achados pela busca
+  na web, com título, link e canal (quando identificado). A rede da nuvem bloqueia o YouTube, então
+  a **duração não pôde ser conferida**: cada vídeo está como `— a conferir` (o HTML mostra
+  "⏱️ duração a conferir pelo professor"). O professor confere cada um: se tiver até 15 min,
+  trocar `a conferir` por `mm:ss`; se passar de 15 min ou não servir, apagar a linha; depois rodar
   `--markdown --forcar` e gerar o HTML de novo.
 - ✅ **Menu (2026-10-07):** `ATIVIDADES/MENU-ATIVIDADES.js` criado com o item "📘 Apostila"; o menu
   aparece no índice, nas 20 páginas de atividades e na própria apostila.

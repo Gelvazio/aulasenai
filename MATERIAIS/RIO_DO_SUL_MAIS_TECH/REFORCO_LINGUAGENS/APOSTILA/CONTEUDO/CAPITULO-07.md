@@ -101,7 +101,9 @@ para 200 °C." Cada gênero pede o seu tipo de linguagem.
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre classes de palavras, denotação e conotação e figuras de linguagem (a duração precisa ser conferida antes de entrar na apostila).
+- [O que são Figuras de Linguagem? Quais são? Aprenda em menos de 4 minutos!](https://www.youtube.com/watch?v=ZdgHIUUQIyk) — a conferir
+- [Figuras de linguagem](https://www.youtube.com/watch?v=BA_GiXoiszY) — a conferir — Brasil Escola
+- [Figuras de Palavras](https://www.youtube.com/watch?v=fDslEF5Jzn8) — a conferir — Brasil Escola
 
 ## Exercícios
 
