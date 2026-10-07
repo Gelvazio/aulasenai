@@ -574,3 +574,27 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 | 51.2a | Nomes reais do Grupo 04 (4 integrantes: líder também revisora, introdução pela equipe) no `.doc` | ✅ Concluído | 2026-10-07 15:10 | Word (COM): 10 páginas, nenhum nome fictício restante |
 | 51.2b | Papéis do Grupo 04 conforme o usuário (Lousclarita líder e revisora, Stephanie formatadora, Vitória pesquisadora, Yusbelis redatora) em todo o `.doc` | ✅ Concluído | 2026-10-07 15:25 | Word (COM): tabela de integrantes conferida, 10 páginas |
 | 51.3 | Aceite do usuário (importar no Google Docs) | ⬜ Pendente | — | — |
+
+## Etapa 52 — ITIC: nova atividade de sexta — 50 objetivas a partir da apostila (capítulos 01 a 07) (tarefa pequena, 2026-10-07)
+
+Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-APOSTILA-CAP-01-07.html`
+(fonte `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/ATIVIDADE-INDIVIDUAL-APOSTILA-CAP-01-07-QUESTOES.md`, fora do Git). Conteúdo: `APOSTILA/APOSTILA-INTRODUCAO-TIC.md`, capítulos 01 a 07. Decisões do usuário: nova atividade (as atuais ficam), 50 objetivas, seed aplicado e liberada para todas as turmas.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 52.1 | Ler a apostila (capítulos 01 a 07) | ✅ Concluído | 2026-10-07 | Capítulos 01 a 07 lidos |
+| 52.2 | Fonte com 50 objetivas (gabarito 12–13 de cada letra, posição sorteada) | ✅ Concluído | 2026-10-07 | A 13, B 13, C 12, D 12; fora do Git (`*QUESTOES.md`) |
+| 52.3 | Página HTML pelo gerador | ✅ Concluído | 2026-10-07 | 50 itens; sem gabarito no HTML |
+| 52.4 | Seed (`scripts/gerar-seed-atividades.py`), menu e card no índice | ⛔ Bloqueado | — | Pausado: usuário pediu primeiro a correção do bug das respostas (Etapa 53) e decidir se a atividade fica bloqueada até sexta |
+| 52.5 | Aplicar o seed no Supabase, liberada para todas as turmas | ⬜ Pendente | — | — |
+| 52.6 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 53 — Bug: professor via respostas dos alunos nos campos da atividade (tarefa pequena — correção de bug, 2026-10-07)
+
+Causa: as leituras de `resposta_discursiva`, `resposta_atividade`, `entrega_atividade` e `liberacao_atividade` filtravam só atividade e tentativa; como o RLS deixa o professor ler os alunos das turmas dele, as respostas dos alunos (ex.: 2 entregas na discursiva id 81) caíam nos campos da página do professor.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 53.1 | Filtrar por `aluno_id` do usuário logado em `assets/js/respostas-discursivas-banco.js` (tentativa, respostas, entrega, conferência) | ✅ Concluído | 2026-10-07 | `node --check` ok |
+| 53.2 | Mesmo filtro em `assets/js/respostas-atividade-banco.js` (objetivas) | ✅ Concluído | 2026-10-07 | `node --check` ok; grep sem leituras sem `aluno_id` (o índice "Fez atividade?" só roda para aluno) |
+| 53.3 | Aceite do usuário (abrir como professor e ver os campos vazios) | ⬜ Pendente | — | — |

@@ -66,11 +66,13 @@ async function lerIdentificacao(usuario) {
 /**
  * Lê a tentativa em andamento do aluno logado: a maior liberada pelo professor (mínimo 1).
  * @param {number} atividadeId - Id da atividade.
+ * @param {string} alunoId - Id do usuário logado.
  * @returns {Promise<number>} Número da tentativa em andamento.
  */
-async function lerTentativaAtual(atividadeId) {
+async function lerTentativaAtual(atividadeId, alunoId) {
+    // Filtro pelo usuário: o RLS deixa o professor ler as liberações dos alunos da turma.
     const liberacoes = await sbGet('liberacao_atividade',
-        'select=tentativa&atividade_id=eq.' + atividadeId);
+        'select=tentativa&atividade_id=eq.' + atividadeId + '&aluno_id=eq.' + alunoId);
     return Math.max(1, ...liberacoes.map((liberacao) => liberacao.tentativa));
 }
 
@@ -91,13 +93,15 @@ async function lerResultadoDaTentativa(atividadeId, tentativa) {
 /**
  * Lê as respostas e a entrega do aluno logado na tentativa em andamento desta atividade.
  * @param {number} atividadeId - Id da atividade.
+ * @param {string} alunoId - Id do usuário logado (o professor lê os alunos da turma pelo RLS).
  * @returns {Promise<{respostas: Object<string, string>, herdadas: string[], entregueEm: string,
  *     tentativa: number}>}
  *     Dados do aluno.
  */
-async function lerRespostasDoAluno(atividadeId) {
-    const tentativa = await lerTentativaAtual(atividadeId);
-    const filtro = 'atividade_id=eq.' + atividadeId + '&tentativa=eq.' + tentativa;
+async function lerRespostasDoAluno(atividadeId, alunoId) {
+    const tentativa = await lerTentativaAtual(atividadeId, alunoId);
+    const filtro = 'atividade_id=eq.' + atividadeId + '&tentativa=eq.' + tentativa +
+        '&aluno_id=eq.' + alunoId;
     const [linhas, entregas] = await Promise.all([
         sbGet('resposta_atividade', 'select=item,letra,herdada&' + filtro),
         sbGet('entrega_atividade', 'select=entregue_em&' + filtro),
@@ -219,7 +223,7 @@ async function carregarDoBanco(sessao) {
         if (!sessao.usuario) return { disponivel: true, logado: false, respostas: {} };
 
         Object.assign(sessao, await lerIdentificacao(sessao.usuario));
-        const doAluno = await lerRespostasDoAluno(sessao.atividade.id);
+        const doAluno = await lerRespostasDoAluno(sessao.atividade.id, sessao.usuario.id);
         sessao.tentativa = doAluno.tentativa;
         const ehAluno = sessao.usuario.app_metadata?.perfil !== PERFIL_PROFESSOR_PAGINA;
         if (ehAluno && !doAluno.entregueEm) {
@@ -247,7 +251,8 @@ async function carregarDoBanco(sessao) {
  * @returns {Promise<string[]>} Números dos itens faltando (ex.: ["05", "12"]).
  */
 async function listarItensNaoGravados(sessao) {
-    const filtro = 'atividade_id=eq.' + sessao.atividade.id + '&tentativa=eq.' + sessao.tentativa;
+    const filtro = 'atividade_id=eq.' + sessao.atividade.id + '&tentativa=eq.' + sessao.tentativa +
+        '&aluno_id=eq.' + sessao.usuario.id;
     const linhas = await sbGet('resposta_atividade', 'select=item&' + filtro);
     const gravados = new Set(linhas.map((linha) => Number(linha.item)));
     const faltando = [];
@@ -310,7 +315,7 @@ function criarProvedorRespostasBanco() {
         },
         async lerGravadas() {
             const filtro = 'atividade_id=eq.' + sessao.atividade.id +
-                '&tentativa=eq.' + sessao.tentativa;
+                '&tentativa=eq.' + sessao.tentativa + '&aluno_id=eq.' + sessao.usuario.id;
             const linhas = await sbGet('resposta_atividade', 'select=item,letra&' + filtro);
             const gravadas = {};
             linhas.forEach((linha) => { gravadas[formatarNumeroItem(linha.item)] = linha.letra; });

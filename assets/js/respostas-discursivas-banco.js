@@ -74,22 +74,23 @@ async function lerIdentificacaoDiscursiva(usuario) {
 /**
  * Lê a tentativa em andamento: a maior liberada pelo professor (mínimo 1).
  * @param {number} atividadeId - Id da atividade.
+ * @param {string} alunoId - Id do usuário logado.
  * @returns {Promise<number>} Tentativa em andamento.
  */
-async function lerTentativaDiscursiva(atividadeId) {
+async function lerTentativaDiscursiva(atividadeId, alunoId) {
+    // Filtro pelo usuário: o RLS deixa o professor ler as liberações dos alunos da turma.
     const liberacoes = await sbGet('liberacao_atividade',
-        'select=tentativa&atividade_id=eq.' + atividadeId);
+        'select=tentativa&atividade_id=eq.' + atividadeId + '&aluno_id=eq.' + alunoId);
     return Math.max(1, ...liberacoes.map((liberacao) => liberacao.tentativa));
 }
 
 /**
- * Lê do banco as respostas gravadas de uma tentativa.
- * @param {number} atividadeId - Id da atividade.
- * @param {number} tentativa - Tentativa.
+ * Lê do banco as respostas gravadas pelo usuário logado em uma tentativa.
+ * @param {Object} sessao - Estado do repositório (atividade, tentativa e usuário).
  * @returns {Promise<Object<string, string>>} Mapa chave do tópico → texto gravado.
  */
-async function lerRespostasDiscursivas(atividadeId, tentativa) {
-    const filtro = 'atividade_id=eq.' + atividadeId + '&tentativa=eq.' + tentativa;
+async function lerRespostasDiscursivas(sessao) {
+    const filtro = filtroDoUsuarioDiscursiva(sessao);
     const linhas = await sbGet(TABELA_RESPOSTA_DISCURSIVA, 'select=item,topico,texto&' + filtro);
     const respostas = {};
     linhas.forEach((linha) => { respostas[chaveTopico(linha.item, linha.topico)] = linha.texto; });
@@ -97,13 +98,23 @@ async function lerRespostasDiscursivas(atividadeId, tentativa) {
 }
 
 /**
- * Lê a data da entrega de uma tentativa (vazio se ainda não entregou).
- * @param {number} atividadeId - Id da atividade.
- * @param {number} tentativa - Tentativa.
+ * Monta o filtro da atividade, da tentativa e do usuário logado.
+ * O professor lê pelo RLS as linhas dos alunos da turma; sem o aluno_id, elas cairiam na tela dele.
+ * @param {Object} sessao - Estado do repositório (atividade, tentativa e usuário).
+ * @returns {string} Filtro PostgREST.
+ */
+function filtroDoUsuarioDiscursiva(sessao) {
+    return 'atividade_id=eq.' + sessao.atividade.id + '&tentativa=eq.' + sessao.tentativa +
+        '&aluno_id=eq.' + sessao.usuario.id;
+}
+
+/**
+ * Lê a data da entrega do usuário logado na tentativa (vazio se ainda não entregou).
+ * @param {Object} sessao - Estado do repositório (atividade, tentativa e usuário).
  * @returns {Promise<string>} Data ISO da entrega ou ''.
  */
-async function lerEntregaDiscursiva(atividadeId, tentativa) {
-    const filtro = 'atividade_id=eq.' + atividadeId + '&tentativa=eq.' + tentativa;
+async function lerEntregaDiscursiva(sessao) {
+    const filtro = filtroDoUsuarioDiscursiva(sessao);
     const entregas = await sbGet('entrega_atividade', 'select=entregue_em&' + filtro);
     return entregas[0]?.entregue_em || '';
 }
@@ -163,10 +174,10 @@ async function carregarDiscursiva(sessao) {
 
     const ehProfessor = sessao.usuario.app_metadata?.perfil === PERFIL_PROFESSOR_DISCURSIVA;
     const identificacao = await lerIdentificacaoDiscursiva(sessao.usuario);
-    sessao.tentativa = await lerTentativaDiscursiva(sessao.atividade.id);
+    sessao.tentativa = await lerTentativaDiscursiva(sessao.atividade.id, sessao.usuario.id);
     const [respostas, entregueEm, avisoHorario] = await Promise.all([
-        lerRespostasDiscursivas(sessao.atividade.id, sessao.tentativa),
-        lerEntregaDiscursiva(sessao.atividade.id, sessao.tentativa),
+        lerRespostasDiscursivas(sessao),
+        lerEntregaDiscursiva(sessao),
         ehProfessor ? '' : explicarHorarioDiscursiva(),
     ]);
     const deveRegistrarAbertura = !ehProfessor && !entregueEm && sessao.atividade.ativo;
@@ -232,7 +243,7 @@ function criarRepositorioDiscursivo() {
     return {
         carregar: () => carregarDiscursiva(sessao),
         gravarTopico: (resposta) => gravarTopicoDiscursivo(sessao, resposta),
-        lerGravadas: () => lerRespostasDiscursivas(sessao.atividade.id, sessao.tentativa),
+        lerGravadas: () => lerRespostasDiscursivas(sessao),
         entregar: () => entregarDiscursiva(sessao),
         chaveTopico,
     };
