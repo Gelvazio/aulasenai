@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-06 20:30
+**Versão das regras:** 2026-10-07 10:00
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 10:00 | Apostilas: o HTML passa a ser gerado a partir do Markdown completo `APOSTILA-<MATERIA>.md` (antes lia os `CAPITULO-NN.md`) |
 | 2026-10-06 20:30 | Card do índice com **100% dos dados da tabela `aulas`** (rótulo, nome e data); "✏️ Editar aula" vira modal CRUD da aula com a lista das atividades (✏️ Editar / 🗑️ Excluir / ➕ Nova); todas as aulas compartilhadas separadas (1 card = 1 aula); gerador de índices junta páginas da mesma aula num card; rótulo padrão "AULA NN" |
 | 2026-10-06 20:15 | Regra "CADA CARD LIGADO A APENAS 1 AULA": uma aula nunca é dividida entre cards do índice (aula 40 de Análise de Dados corrigida: fica só com o card da atividade 82) |
 | 2026-10-06 20:00 | Modal "✏️ Editar aula" também troca o **rótulo do card** ("AULA 01", coluna `aulas.rotulo_card`) |
@@ -2412,7 +2413,10 @@ Registrada em 2026-10-03 a pedido do usuário.
   `assets/gerador-apostilas/markdown_apostila.py`. O plano de capítulos vem do `materia.json`
   (`carga_horaria_uc`, `horas_por_aula` = 4, `aulas` = uma por aula); o gerador confere
   se capítulos × 4 h = carga da UC. Glossário em ordem alfabética sem considerar acentos.
-- ⏳ Gerar o HTML a partir do Markdown completo: pendente (hoje o HTML ainda lê os capítulos).
+- ✅ **O HTML é gerado a partir do Markdown completo** (2026-10-07): o `gerar_apostila.py` lê a
+  `# Introdução` e cada `# Capítulo NN` do `APOSTILA-<MATERIA>.md` (glossário de cada capítulo
+  pelo `_(cap. NN)_` do glossário geral); sem o Markdown completo, o gerador para com erro
+  (gerar antes com `--markdown`). Os `CAPITULO-NN.md` continuam sendo a fonte do `--markdown`.
 
 ### `materia.json`: ARQUIVO ÚNICO de dados de cada matéria (opção B)
 

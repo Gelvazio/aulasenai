@@ -71,6 +71,13 @@ PADRAO_VIDEO = re.compile(
 PADRAO_ID_YOUTUBE = re.compile(r"(?:v=|youtu\.be/|/embed/)([A-Za-z0-9_-]{11})")
 PADRAO_TERMO = re.compile(r"^-\s*\*\*(?P<termo>.+?):\*\*\s*(?P<definicao>.+?)\s*$", re.MULTILINE)
 PADRAO_H3_HTML = re.compile(r"<h3>(.*?)</h3>", re.DOTALL)
+PADRAO_TITULO_CAPITULO = re.compile(r"^Capítulo\s+(\d+)\b")
+PADRAO_SEPARADOR_FINAL = re.compile(r"\n-{3,}\s*$")
+PADRAO_SECAO_INTRODUCAO = re.compile(r"^##\s+", re.MULTILINE)
+TITULO_INTRODUCAO = "Introdução"
+TITULO_GLOSSARIO = "Glossário"
+PADRAO_TERMO_CAPITULO = re.compile(
+    r"^(?P<linha>-\s*\*\*.+?:\*\*.+?)\s*_\(cap\.\s*(?P<numero>\d+)\)_\s*$", re.MULTILINE)
 
 
 def erro(mensagem):
@@ -244,21 +251,104 @@ def ler_capitulo(arquivo, capacidades):
     Returns:
         Dicionário com os dados do capítulo.
     """
-    texto = arquivo.read_text(encoding="utf-8")
+    return ler_texto_capitulo(arquivo.read_text(encoding="utf-8"), arquivo.stem[-2:],
+                              capacidades, arquivo.name)
+
+
+def ler_texto_capitulo(texto, numero, capacidades, rotulo):
+    """Lê e valida o texto de um capítulo (do CAPITULO-NN.md ou do Markdown completo).
+
+    Args:
+        texto: Markdown do capítulo, começando por "# Capítulo NN — Tema".
+        numero: Número do capítulo com 2 dígitos.
+        capacidades: Dicionário código → texto oficial (básicas e socioemocionais).
+        rotulo: Origem do texto, para as mensagens de erro.
+
+    Returns:
+        Dicionário com os dados do capítulo.
+    """
     titulo = PADRAO_TITULO.search(texto)
     if not titulo:
-        erro(f"{arquivo.name}: falta o título '# Capítulo NN — Tema'")
+        erro(f"{rotulo}: falta o título '# Capítulo NN — Tema'")
     cabecalho = PADRAO_SECAO.split(texto)[0]
     codigos = cap.ler_codigos_questao(cabecalho)
-    cap.validar_codigos(capacidades, codigos, arquivo.name)
-    secoes = separar_secoes(texto, arquivo.name)
+    cap.validar_codigos(capacidades, codigos, rotulo)
+    secoes = separar_secoes(texto, rotulo)
     termos = [achado.groupdict() for achado in PADRAO_TERMO.finditer(secoes["Glossário"])]
     if not termos:
-        erro(f"{arquivo.name}: o Glossário precisa de termos '- **Termo:** definição'")
-    return {"id": arquivo.stem.lower(), "numero": arquivo.stem[-2:], "titulo": titulo.group(1),
+        erro(f"{rotulo}: o Glossário precisa de termos '- **Termo:** definição'")
+    return {"id": f"capitulo-{numero}", "numero": numero, "titulo": titulo.group(1),
             "codigos": codigos, "aula": ler_campo(cabecalho, "Aula"), "secoes": secoes,
-            "termos": termos, "videos": ler_videos(secoes["Vídeos"], arquivo.name),
-            "exercicios": ler_exercicios(secoes["Exercícios"], capacidades, arquivo.name)}
+            "termos": termos, "videos": ler_videos(secoes["Vídeos"], rotulo),
+            "exercicios": ler_exercicios(secoes["Exercícios"], capacidades, rotulo)}
+
+
+def partes_markdown_completo(texto):
+    """Divide o Markdown completo pelos títulos de primeiro nível ("# Título").
+
+    Args:
+        texto: Markdown completo da apostila.
+
+    Returns:
+        Lista de (título, texto da parte com o título), sem a linha "---" que separa as partes.
+    """
+    inicios = [achado.start() for achado in PADRAO_TITULO.finditer(texto)] + [len(texto)]
+    partes = []
+    for inicio, fim in zip(inicios, inicios[1:]):
+        trecho = PADRAO_SEPARADOR_FINAL.sub("", texto[inicio:fim].strip()).strip()
+        partes.append((PADRAO_TITULO.match(trecho).group(1), trecho))
+    return partes
+
+
+def termos_por_capitulo(texto_glossario):
+    """Separa o glossário do Markdown completo pelos capítulos indicados em "_(cap. NN)_".
+
+    Args:
+        texto_glossario: Parte "# Glossário" do Markdown completo.
+
+    Returns:
+        Dicionário número do capítulo → linhas "- **Termo:** definição".
+    """
+    termos = {}
+    for achado in PADRAO_TERMO_CAPITULO.finditer(texto_glossario):
+        numero = f"{int(achado.group('numero')):02d}"
+        termos.setdefault(numero, []).append(achado.group("linha"))
+    return termos
+
+
+def ler_markdown_completo(pasta_materia, dados):
+    """Lê a introdução e os capítulos do Markdown completo (fonte final do HTML).
+
+    Args:
+        pasta_materia: Pasta da matéria.
+        dados: Dados da matéria.
+
+    Returns:
+        Tupla (texto Markdown da introdução, lista de capítulos em ordem).
+    """
+    arquivo = caminho_markdown_completo(pasta_materia)
+    if not arquivo.is_file():
+        erro(f"falta o Markdown completo da apostila: {arquivo} (gere com {OPCAO_MARKDOWN})")
+    partes = partes_markdown_completo(arquivo.read_text(encoding="utf-8"))
+    glossario = termos_por_capitulo(dict(partes).get(TITULO_GLOSSARIO, ""))
+    introducao, capitulos = None, []
+    for titulo, trecho in partes:
+        numero = PADRAO_TITULO_CAPITULO.match(titulo)
+        if titulo == TITULO_INTRODUCAO:
+            corpo = PADRAO_TITULO.sub("", trecho, count=1).strip()
+            introducao = PADRAO_SECAO_INTRODUCAO.sub("### ", corpo)
+        elif numero:
+            numero = f"{int(numero.group(1)):02d}"
+            trecho += "\n\n## Glossário\n\n" + "\n".join(glossario.get(numero, []))
+            capitulos.append(ler_texto_capitulo(trecho, numero, dados["todas"],
+                                                f"{arquivo.name} ({titulo})"))
+    if introducao is None:
+        erro(f"{arquivo.name}: falta a parte '# {TITULO_INTRODUCAO}'")
+    if not capitulos:
+        erro(f"{arquivo.name}: nenhum '# Capítulo NN — Tema'")
+    if dados["plano_capitulos"]:
+        conferir_cobertura_ementa(dados, capitulos)
+    return introducao, capitulos
 
 
 def converter_markdown(texto):
@@ -494,16 +584,15 @@ def ler_texto_introducao(pasta_materia):
     return PADRAO_TITULO.sub("", arquivo.read_text(encoding="utf-8"), count=1).strip()
 
 
-def html_introducao(pasta_materia):
-    """Converte a INTRODUCAO.md (obrigatória) em blocos da página de introdução.
+def html_introducao(texto):
+    """Converte o texto da introdução em blocos da página de introdução.
 
     Args:
-        pasta_materia: Pasta da matéria.
+        texto: Markdown da introdução (subtítulos "###"), sem o título.
 
     Returns:
         Tupla (HTML dos blocos, lista de (id, texto) dos subtítulos).
     """
-    texto = ler_texto_introducao(pasta_materia)
     corpo, subtitulos = numerar_subtitulos(converter_markdown(texto), "introducao-t", "h3")
     blocos = ['<h2 id="introducao">Introdução</h2>']
     blocos += [linha for linha in corpo.split("\n") if linha.strip()]
@@ -589,12 +678,13 @@ def montar_tags_menu_apostila(pasta_materia, pasta_saida):
             f'\n    <script src="{script}" defer></script>')
 
 
-def montar_pagina(pasta_materia, dados, capitulos):
+def montar_pagina(pasta_materia, dados, texto_introducao, capitulos):
     """Preenche o template da apostila.
 
     Args:
         pasta_materia: Pasta da matéria.
         dados: Dados da matéria.
+        texto_introducao: Markdown da introdução.
         capitulos: Capítulos lidos.
 
     Returns:
@@ -604,7 +694,7 @@ def montar_pagina(pasta_materia, dados, capitulos):
     assets = caminho_relativo(ASSETS, pasta_saida)
     capitulos_html = "\n\n".join(html_capitulo(capitulo, dados["todas"])
                                  for capitulo in capitulos)
-    introducao, subtitulos_introducao = html_introducao(pasta_materia)
+    introducao, subtitulos_introducao = html_introducao(texto_introducao)
     valores = {
         "ASSETS": assets, "LOGO": f"{assets}/{CAMINHO_LOGO}",
         "TOTAL_CAPITULOS": str(len(capitulos)),
@@ -645,7 +735,7 @@ def conferir_com_ementa(pasta_materia):
 
 
 def gerar_apostila(pasta_materia):
-    """Gera a apostila HTML, só depois de a conferência com a ementa bater 100%.
+    """Gera a apostila HTML a partir do Markdown completo, só com a conferência em 100%.
 
     Args:
         pasta_materia: Pasta da matéria.
@@ -660,9 +750,10 @@ def gerar_apostila(pasta_materia):
         erro("o Markdown completo não bate 100% com a ementa da matéria: corrija o que falta "
              "antes de gerar a apostila (regra CONFERÊNCIA OBRIGATÓRIA)")
     dados = ler_dados_materia(pasta_materia)
-    capitulos = ler_fontes_capitulos(pasta_materia, dados)
+    introducao, capitulos = ler_markdown_completo(pasta_materia, dados)
     saida = pasta_materia / PASTA_APOSTILA / f"APOSTILA-{pasta_materia.name}.html"
-    saida.write_text(montar_pagina(pasta_materia, dados, capitulos), encoding="utf-8")
+    saida.write_text(montar_pagina(pasta_materia, dados, introducao, capitulos),
+                     encoding="utf-8")
     for capitulo in capitulos:
         print(f"✅ {capitulo['titulo']}: {len(capitulo['videos'])} vídeo(s), "
               f"{len(capitulo['exercicios'])} exercício(s), {len(capitulo['termos'])} termo(s)")
