@@ -63,7 +63,8 @@ function montarUsuarioDaLista(aluno, turma) {
         email: aluno.email,
         senha: aluno.senha,
         appMetadata: ehAluno ? { perfil, turma_codigo: turma.codigo } : { perfil },
-        userMetadata: { nome: aluno.nome, turma_codigo: turma.codigo, turma_nome: turma.nome },
+        userMetadata: turma.virtual ? { nome: aluno.nome }
+            : { nome: aluno.nome, turma_codigo: turma.codigo, turma_nome: turma.nome },
         linhaUsuario: {
             nome_completo: aluno.nome,
             email: aluno.email,
@@ -226,7 +227,8 @@ async function gravarListaNoSupabase(lista, opcoes) {
     const problemas = validarUsuariosDaLista(usuarios);
     if (problemas.length) throw new Error('Nada foi gravado. ' + problemas.join('; '));
 
-    const turmas = lista.turmas.map((t) => ({
+    // Turma virtual (aba "Professores") é só agrupamento da página: não vai para a tabela turma.
+    const turmas = lista.turmas.filter((t) => !t.virtual).map((t) => ({
         codigo: t.codigo, nome: t.nome, turno: t.turno, horario: t.horario,
         ...(t.local ? { local: t.local } : {}), ...(t.uc ? { uc: t.uc } : {}),
     }));

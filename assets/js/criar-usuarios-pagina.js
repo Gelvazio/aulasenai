@@ -15,6 +15,10 @@ const MSG_SEM_PERFIL = 'Só o perfil PROFESSOR vê as senhas e grava. Seu perfil
 const PERFIL_DESCONHECIDO = '(sem perfil)';
 const ROTA_LOGIN_GUIA = '../login.html';
 const RPC_ADMINISTRADOR_GUIA = 'eh_professor_administrador';
+// Aba que reúne os professores de todas as listas (virtual: não existe na tabela turma).
+const TURMA_PROFESSORES_GUIA = { codigo: 'PROFESSORES', nome: 'Professores', virtual: true };
+const MSG_SEM_PROFESSORES = 'Nenhum professor nas listas. Acrescente no LISTA-PRESENCA-PROFESSOR.js '
+    + "uma linha com perfil: 'PROFESSOR'.";
 const IDS_GUIA = {
     bloqueio: 'guiaBloqueio',
     opcoes: 'guiaOpcoes',
@@ -34,18 +38,83 @@ function obterElementoGuia(chave) {
 }
 
 /**
- * Junta as turmas de todas as listas carregadas (window.LISTA_PRESENCA e window.LISTAS_PRESENCA).
- * @returns {Object[]} Turmas de todas as listas, cada uma com a UC e o local da lista;
- *     vazio se nenhuma lista foi carregada.
+ * Indica se o item da lista tem perfil PROFESSOR.
+ * @param {Object} pessoa - Item da lista de presença.
+ * @returns {boolean} true para professor.
  */
-function reunirTurmasPresenca() {
-    const listas = [window.LISTA_PRESENCA, ...(window.LISTAS_PRESENCA || [])].filter(Boolean);
+function ehProfessorDaLista(pessoa) {
+    return String(pessoa.perfil || '').trim().toUpperCase() === PERFIL_EXIGIDO_GUIA;
+}
+
+/**
+ * Monta a aba "Professores" com os itens de perfil PROFESSOR de todas as listas (sem repetir
+ * e-mail), numerados de 1 em diante. É só agrupamento da página: não é gravada na tabela turma.
+ * @param {Object[]} turmas - Turmas de todas as listas.
+ * @returns {Object} Turma virtual (sem alunos se nenhuma lista tem professor).
+ */
+function montarTurmaProfessoresGuia(turmas) {
+    const porEmail = new Map();
+    turmas.flatMap((turma) => turma.alunos.filter(ehProfessorDaLista))
+        .forEach((professor) => porEmail.set(professor.email.toLowerCase(), professor));
+    const professores = [...porEmail.values()]
+        .sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'))
+        .map((professor, posicao) => ({ ...professor, numero: posicao + 1 }));
+    return { ...TURMA_PROFESSORES_GUIA, alunos: professores };
+}
+
+/**
+ * Separa as listas carregadas pelo LISTA-PRESENCA-PROFESSOR.js (comparando com o retrato tirado
+ * por criar-usuarios-antes-professores.js) das demais listas de alunos.
+ * @returns {{professores: Object[], alunos: Object[]}} Listas de cada origem.
+ */
+function separarListasPresencaGuia() {
+    const unica = window.LISTA_PRESENCA;
+    const varias = window.LISTAS_PRESENCA || [];
+    const antes = window.LISTAS_ANTES_PROFESSOR;
+    if (!antes) return { professores: [], alunos: [unica, ...varias].filter(Boolean) };
+
+    const unicaEhProfessor = Boolean(unica) && unica !== antes.unica;
+    return {
+        professores: [unicaEhProfessor ? unica : null, ...varias.slice(antes.total)].filter(Boolean),
+        alunos: [unicaEhProfessor ? antes.unica : unica, ...varias.slice(0, antes.total)]
+            .filter(Boolean),
+    };
+}
+
+/**
+ * Lista as turmas de um conjunto de listas, cada uma com a UC e o local da lista.
+ * @param {Object[]} listas - Listas de presença.
+ * @returns {Object[]} Turmas.
+ */
+function listarTurmasGuia(listas) {
     return listas.flatMap((lista) => (
         (lista.turmas || []).map((turma) => ({
             ...turma,
+            alunos: turma.alunos || [],
             uc: turma.uc || lista.uc || '',
             local: turma.local || lista.local || '',
         }))));
+}
+
+/**
+ * Junta as turmas de todas as listas carregadas (window.LISTA_PRESENCA e window.LISTAS_PRESENCA).
+ * A primeira aba é "Professores": todas as pessoas do LISTA-PRESENCA-PROFESSOR.js (sempre com
+ * perfil PROFESSOR) mais quem tem perfil PROFESSOR nas outras listas. Os professores saem das
+ * turmas de alunos; turma que fica vazia sem eles não aparece.
+ * @returns {Object[]} Turmas; vazio se nenhuma lista foi carregada.
+ */
+function reunirTurmasPresenca() {
+    const listas = separarListasPresencaGuia();
+    const turmasProfessor = listarTurmasGuia(listas.professores).map((turma) => ({
+        ...turma,
+        alunos: turma.alunos.map((pessoa) => ({ ...pessoa, perfil: PERFIL_EXIGIDO_GUIA })),
+    }));
+    const turmas = [...turmasProfessor, ...listarTurmasGuia(listas.alunos)];
+    if (!turmas.length) return [];
+    const turmasAlunos = turmas
+        .map((turma) => ({ ...turma, alunos: turma.alunos.filter((a) => !ehProfessorDaLista(a)) }))
+        .filter((turma) => turma.alunos.length);
+    return [montarTurmaProfessoresGuia(turmas), ...turmasAlunos];
 }
 
 /**
@@ -252,6 +321,7 @@ function montarLocalTurnoGuia(turma) {
  */
 function montarTituloTurmaGuia(turma) {
     const localTurno = montarLocalTurnoGuia(turma);
+    if (turma.virtual) return turma.nome;
     const base = turma.nome + ' (código: ' + turma.codigo + ')';
     return localTurno ? base + ' - ' + localTurno : base;
 }
@@ -326,8 +396,13 @@ function criarCartaoTurmaGuia(turma, contexto) {
     const titulo = document.createElement('h2');
     titulo.textContent = montarTituloTurmaGuia(turma);
     cartao.append(titulo);
-    if (contexto.podeGravar) cartao.append(criarBotaoFavoritaGuia(turma, contexto));
+    if (contexto.podeGravar && !turma.virtual) cartao.append(criarBotaoFavoritaGuia(turma, contexto));
     cartao.append(barra, botao, resultado, tabela);
+    if (turma.virtual && !turma.alunos.length) {
+        const vazio = document.createElement('p');
+        vazio.textContent = MSG_SEM_PROFESSORES;
+        cartao.append(vazio);
+    }
     aoMudar();
     return cartao;
 }
