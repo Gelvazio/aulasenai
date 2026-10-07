@@ -1,0 +1,27 @@
+/* Combo "Aluno" do professor nas discursivas (respostas-aluno-discursiva.js). */
+:root {
+    --respostas-aluno-aviso: #1a4f8b;
+}
+
+.respostas-aluno-discursiva {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.respostas-aluno-discursiva__titulo {
+    width: 100%;
+}
+
+.respostas-aluno-discursiva__aluno select {
+    max-width: 100%;
+    margin-left: 4px;
+    padding: 4px 8px;
+}
+
+.respostas-aluno-discursiva__aviso {
+    color: var(--respostas-aluno-aviso);
+    font-size: 14px;
+}

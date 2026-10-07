@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 10:00
+**Versão das regras:** 2026-10-07 16:30
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
 | 2026-10-07 10:00 | Apostilas: o HTML passa a ser gerado a partir do Markdown completo `APOSTILA-<MATERIA>.md` (antes lia os `CAPITULO-NN.md`) |
 | 2026-10-07 09:00 | Menus USUARIOS, RELATORIOS, ALUNOS e CORREÇÃO do header só para o **Professor Administrador** (os demais professores não veem) |
 | 2026-10-06 20:30 | Card do índice com **100% dos dados da tabela `aulas`** (rótulo, nome e data); "✏️ Editar aula" vira modal CRUD da aula com a lista das atividades (✏️ Editar / 🗑️ Excluir / ➕ Nova); todas as aulas compartilhadas separadas (1 card = 1 aula); gerador de índices junta páginas da mesma aula num card; rótulo padrão "AULA NN" |
@@ -1440,6 +1441,13 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   espaço da resposta — a resposta já digitada pelo aluno logado entra no PDF) e "Página X de Y".
   Nunca leva o padrão de resposta. Código: `assets/js/exportar-pdf-discursiva.js`, carregado pelo
   `avaliacao-discursiva.js` (vale para todas as discursivas, sem regerar páginas).
+- ✅ **Combo "Aluno" do professor (2026-10-07, pedido do usuário):** no painel da página, o
+  professor tem a lista **"🧑‍🎓 Respostas dos alunos"** (quem respondeu, com tentativa e situação
+  da entrega); ao escolher um aluno, as respostas dele aparecem nos campos, **somente leitura**
+  (nada é gravado). Os campos do professor ficam **vazios até ele escolher** — as leituras da
+  página filtram sempre pelo `aluno_id` do usuário logado (o RLS deixa o professor ler os alunos
+  das turmas dele). Código: `assets/js/respostas-aluno-discursiva.js` (+ css), carregado pelo
+  `avaliacao-discursiva.js`.
 - ✅ **Correção (2026-10-06)**, plano `docs/media-final-notas-do-aluno.md`, SQL
   `database/2026-10-06-notas-media-final-correcao-discursiva.sql` (aplicado):
   - tabela **`correcao_discursiva`**: nota de cada tópico por aluno e tentativa; `nota_ia` é só
