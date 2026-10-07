@@ -48,6 +48,8 @@ ATIVIDADES = [
      f"{PASTA_TIC}/ATIVIDADES-AULA-07-50-QUESTOES.md"),
     (7, "Textos Técnicos e Redação Empresarial", "2026-10-09",
      f"{PASTA_TIC}/ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-QUESTOES.md"),
+    (20, "Revisão da Apostila — Capítulos 01 a 07", "2026-10-09",
+     f"{PASTA_TIC}/ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-APOSTILA-CAP-01-07-QUESTOES.md"),
     (8, "Editor de Planilhas: Organização e Fórmulas", DATA_PROVISORIA,
      f"{PASTA_TIC}/ATIVIDADES-AULA-08-50-QUESTOES.md"),
     (9, "Planilhas Eletrônicas: Análise Visual e Gráficos", DATA_PROVISORIA,

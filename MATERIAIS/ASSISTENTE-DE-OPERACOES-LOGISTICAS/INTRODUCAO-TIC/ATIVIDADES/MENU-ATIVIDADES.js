@@ -36,6 +36,10 @@ window.MENU_ATIVIDADES = {
       link: 'ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-DISCURSIVA.html',
     },
     {
+      rotulo: '📘 Atividade individual — Revisão da apostila (cap. 01 a 07)',
+      link: 'ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-APOSTILA-CAP-01-07.html',
+    },
+    {
       rotulo: '📝 Atividades por aula',
       subitens: [
         {

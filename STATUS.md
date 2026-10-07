@@ -585,8 +585,8 @@ Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVID
 | 52.1 | Ler a apostila (capítulos 01 a 07) | ✅ Concluído | 2026-10-07 | Capítulos 01 a 07 lidos |
 | 52.2 | Fonte com 50 objetivas (gabarito 12–13 de cada letra, posição sorteada) | ✅ Concluído | 2026-10-07 | A 13, B 13, C 12, D 12; fora do Git (`*QUESTOES.md`) |
 | 52.3 | Página HTML pelo gerador | ✅ Concluído | 2026-10-07 | 50 itens; sem gabarito no HTML |
-| 52.4 | Seed (`scripts/gerar-seed-atividades.py`), menu e card no índice | ⛔ Bloqueado | — | Pausado: usuário pediu primeiro a correção do bug das respostas (Etapa 53) e decidir se a atividade fica bloqueada até sexta |
-| 52.5 | Aplicar o seed no Supabase, liberada para todas as turmas | ⬜ Pendente | — | — |
+| 52.4 | Seed (`scripts/gerar-seed-atividades.py`, aula 20; `database/2026-10-07-atividade-individual-apostila-seed-atividades.sql`, fora do Git), menu e card no índice | ✅ Concluído | 2026-10-07 | `node` leu o menu (11 itens); card após a discursiva |
+| 52.5 | Aplicar o seed no Supabase e, a pedido do usuário, bloquear até sexta as 3 atividades (80, 81 e a nova) para todas as turmas pela `definir_bloqueio_turma` | ✅ Concluído | 2026-10-07 | id 85: 50 itens no gabarito (A13 B13 C12 D12); 80, 81 e 85 com as 5 turmas em `bloqueio`. Liberar na sexta pelo interruptor do índice |
 | 52.6 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Etapa 53 — Bug: professor via respostas dos alunos nos campos da atividade (tarefa pequena — correção de bug, 2026-10-07)
