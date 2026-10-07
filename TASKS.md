@@ -31,6 +31,16 @@
 
 ## ✅ TAREFAS CONCLUÍDAS
 
+### #11: Apostila de Introdução à TIC (ITIC) ✅
+**Data:** 2026-10-03 a 2026-10-07 | **Commit:** `26c5772` (PR Gelvazio/aulasenai#2, merge na `main` em 2026-10-07) | **Status:** ✅ produção concluída · 👀 aguardando validação do professor
+
+- ✅ 10 capítulos (`APOSTILA/CONTEUDO/CAPITULO-01..10.md`), Markdown completo e conferência com a ementa 278/278 (100%)
+- ✅ HTML gerado a partir do Markdown completo (`gerar_apostila.py`) e PDF de 84 páginas A4 (fora do Git)
+- ⏳ Professor: validar os 10 capítulos e conferir os vídeos (`APOSTILA/STATUS-APOSTILA.md`)
+- 📄 Histórico completo: `docs/gerador-apostilas.md` (seção "Registro — 2026-10-07")
+
+---
+
 ### #1: Expandir Template + Aplicar em 24 Disciplinas ✅
 **Data:** 2026-09-21 | **Commit:** ea9fdb6 | **Status:** 23/23 ✅
 
@@ -185,12 +195,12 @@ do documento, divergências e campos pendentes registrados). Os arquivos atuais 
 
 | Métrica | Valor |
 |---------|-------|
-| Total de tarefas planejadas | 10 |
-| Concluídas | 5 |
+| Total de tarefas planejadas | 11 |
+| Concluídas | 6 |
 | Em progresso | 0 |
 | Planejadas | 4 |
 | Canceladas | 1 |
-| Taxa de conclusão | 50% |
+| Taxa de conclusão | 55% |
 
 ---
 

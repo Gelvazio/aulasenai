@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 16:30
+**Versão das regras:** 2026-10-07 17:00
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 17:00 | Status da regra das apostilas atualizado: ITIC com os 10 capítulos, HTML e PDF prontos, aguardando validação do professor |
 | 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
 | 2026-10-07 10:00 | Apostilas: o HTML passa a ser gerado a partir do Markdown completo `APOSTILA-<MATERIA>.md` (antes lia os `CAPITULO-NN.md`) |
 | 2026-10-07 09:00 | Menus USUARIOS, RELATORIOS, ALUNOS e CORREÇÃO do header só para o **Professor Administrador** (os demais professores não veem) |
@@ -2297,9 +2298,11 @@ importação no AVA pelo professor; as demais matérias só quando o usuário li
 ## 📘 REGRAS APOSTILAS
 
 Registrada em 2026-10-03 a pedido do usuário (padrões definidos na validação do piloto). Plano:
-`docs/gerador-apostilas.md`. **Status:** 🔄 piloto **Introdução à TIC (ITIC)** — só o capítulo 01
-gerado, aguardando validação do usuário; os demais capítulos só depois que ele liberar, **um por
-vez, perguntando a cada capítulo** (rascunhos em `APOSTILA/RASCUNHOS/`, fora da apostila).
+`docs/gerador-apostilas.md`. **Status (2026-10-07):** ✅ piloto **Introdução à TIC (ITIC)** com os
+**10 capítulos** escritos, Markdown completo (conferência 100%), HTML e PDF (84 páginas) gerados;
+👀 aguardando a validação dos capítulos e a conferência dos vídeos pelo professor. Nas próximas
+matérias, continua **um capítulo por vez, perguntando a cada capítulo** (rascunhos em
+`APOSTILA/RASCUNHOS/`, fora da apostila).
 
 ### ⛔ PRÉ-REQUISITO: o Markdown completo bate 100% com a ementa da matéria
 
