@@ -1,9 +1,10 @@
-// Professor: combo "Aluno" no painel das discursivas para carregar nos campos as respostas
-// gravadas de um aluno (somente leitura). Só aparece para o professor; o RLS limita aos alunos
-// das turmas dele. Nada é gravado. Carregado por assets/js/avaliacao-discursiva.js.
-// Depende de js/supabase.js (sbGet).
+// Professor: combo "Aluno" nas páginas de atividade (objetivas e discursivas) para carregar na
+// tela as respostas gravadas de um aluno (somente leitura). Só aparece para o professor; o RLS
+// limita aos alunos das turmas dele. Nada é gravado.
+// Carregado por assets/js/avaliacao-discursiva.js e assets/js/respostas-atividade.js, que
+// informam a tabela, as colunas e como mostrar as respostas. Depende de js/supabase.js (sbGet).
 
-const CLASSE_RESPOSTAS_ALUNO = 'respostas-aluno-discursiva';
+const CLASSE_RESPOSTAS_ALUNO = 'respostas-aluno-professor';
 const TEXTO_OPCAO_VAZIA = '— Selecione o aluno —';
 const BASE_SCRIPTS_RESPOSTAS_ALUNO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 
@@ -31,17 +32,17 @@ function formatarDataRespostasAluno(dataIso) {
 }
 
 /**
- * Agrupa as respostas por aluno e tentativa, contando os tópicos gravados.
- * @param {Object[]} linhas - Linhas {aluno_id, tentativa} de resposta_discursiva.
- * @returns {Map<string, {alunoId: string, tentativa: number, topicos: number}>} Grupos.
+ * Agrupa as respostas por aluno e tentativa, contando as linhas gravadas.
+ * @param {Object[]} linhas - Linhas {aluno_id, tentativa} da tabela de respostas.
+ * @returns {Map<string, {alunoId: string, tentativa: number, gravadas: number}>} Grupos.
  */
 function agruparPorAlunoETentativa(linhas) {
     const grupos = new Map();
     linhas.forEach((linha) => {
         const chave = linha.aluno_id + '|' + linha.tentativa;
         const grupo = grupos.get(chave) ||
-            { alunoId: linha.aluno_id, tentativa: linha.tentativa, topicos: 0 };
-        grupo.topicos += 1;
+            { alunoId: linha.aluno_id, tentativa: linha.tentativa, gravadas: 0 };
+        grupo.gravadas += 1;
         grupos.set(chave, grupo);
     });
     return grupos;
@@ -49,13 +50,13 @@ function agruparPorAlunoETentativa(linhas) {
 
 /**
  * Lê do banco quem respondeu a atividade, com nome e situação da entrega.
- * @param {number} atividadeId - Id da atividade.
- * @returns {Promise<Object[]>} Lista {alunoId, tentativa, topicos, nome, entregueEm}, por nome.
+ * @param {{atividadeId: number, tabela: string}} opcoes - Atividade e tabela de respostas.
+ * @returns {Promise<Object[]>} Lista {alunoId, tentativa, gravadas, nome, entregueEm}, por nome.
  */
-async function listarAlunosQueResponderam(atividadeId) {
-    const filtro = 'atividade_id=eq.' + atividadeId;
+async function listarAlunosQueResponderam(opcoes) {
+    const filtro = 'atividade_id=eq.' + opcoes.atividadeId;
     const [respostas, entregas] = await Promise.all([
-        sbGet('resposta_discursiva', 'select=aluno_id,tentativa&' + filtro),
+        sbGet(opcoes.tabela, 'select=aluno_id,tentativa&' + filtro),
         sbGet('entrega_atividade', 'select=aluno_id,tentativa,entregue_em&' + filtro),
     ]);
     const grupos = [...agruparPorAlunoETentativa(respostas).values()];
@@ -81,25 +82,22 @@ async function listarAlunosQueResponderam(atividadeId) {
 function rotuloOpcaoAluno(aluno) {
     const situacao = aluno.entregueEm
         ? 'entregue em ' + formatarDataRespostasAluno(aluno.entregueEm)
-        : 'não entregue (' + aluno.topicos + ' tópico(s) gravado(s))';
+        : 'não entregue (' + aluno.gravadas + ' resposta(s) gravada(s))';
     return aluno.nome + ' — tentativa ' + aluno.tentativa + ' — ' + situacao;
 }
 
 /**
- * Lê as respostas de um aluno numa tentativa e devolve o mapa chave do tópico → texto.
- * @param {{atividadeId: number, alunoId: string, tentativa: number, chaveTopico: Function}} pedido
- *     Dados do pedido.
- * @returns {Promise<Object<string, string>>} Respostas do aluno.
+ * Lê as respostas de um aluno numa tentativa e as converte para a tela.
+ * @param {Object} aluno - Registro de listarAlunosQueResponderam.
+ * @param {{atividadeId: number, tabela: string, colunas: string, converter: Function}} opcoes
+ *     Atividade, tabela, colunas lidas e conversão das linhas.
+ * @returns {Promise<Object>} Respostas no formato da tela.
  */
-async function lerRespostasDoAlunoEscolhido(pedido) {
-    const filtro = 'atividade_id=eq.' + pedido.atividadeId + '&aluno_id=eq.' + pedido.alunoId +
-        '&tentativa=eq.' + pedido.tentativa;
-    const linhas = await sbGet('resposta_discursiva', 'select=item,topico,texto&' + filtro);
-    const respostas = {};
-    linhas.forEach((linha) => {
-        respostas[pedido.chaveTopico(linha.item, linha.topico)] = linha.texto;
-    });
-    return respostas;
+async function lerRespostasDoAlunoEscolhido(aluno, opcoes) {
+    const filtro = 'atividade_id=eq.' + opcoes.atividadeId + '&aluno_id=eq.' + aluno.alunoId +
+        '&tentativa=eq.' + aluno.tentativa;
+    const linhas = await sbGet(opcoes.tabela, 'select=' + opcoes.colunas + '&' + filtro);
+    return opcoes.converter(linhas);
 }
 
 /**
@@ -116,9 +114,9 @@ function criarComboAlunos(alunos) {
 }
 
 /**
- * Carrega nos campos as respostas do aluno escolhido (ou limpa, se nenhum).
+ * Mostra na tela as respostas do aluno escolhido (ou limpa, se nenhum).
  * @param {{combo: HTMLSelectElement, alunos: Object[], aviso: HTMLElement}} tela - Elementos.
- * @param {{atividadeId: number, preencher: Function, chaveTopico: Function}} opcoes - Ações.
+ * @param {Object} opcoes - Opções de montarRespostasDoAluno.
  */
 async function carregarAlunoEscolhido(tela, opcoes) {
     const aluno = tela.alunos[Number(tela.combo.value)];
@@ -129,9 +127,7 @@ async function carregarAlunoEscolhido(tela, opcoes) {
     }
     tela.combo.disabled = true;
     try {
-        const respostas = await lerRespostasDoAlunoEscolhido({ atividadeId: opcoes.atividadeId,
-            alunoId: aluno.alunoId, tentativa: aluno.tentativa, chaveTopico: opcoes.chaveTopico });
-        opcoes.preencher(respostas);
+        opcoes.preencher(await lerRespostasDoAlunoEscolhido(aluno, opcoes));
         tela.aviso.textContent = '👀 Mostrando as respostas de ' + aluno.nome +
             ' (somente leitura).';
     } catch (erro) {
@@ -142,18 +138,19 @@ async function carregarAlunoEscolhido(tela, opcoes) {
 }
 
 /**
- * Monta no painel o combo "Aluno" que carrega as respostas de cada aluno nos campos.
- * @param {HTMLElement} painel - Painel de identificação da página.
- * @param {{atividadeId: number, preencher: Function, chaveTopico: Function}} opcoes
- *     Id da atividade, função que preenche os campos e função da chave do tópico.
+ * Monta o combo "Aluno" que carrega na tela as respostas de cada aluno.
+ * @param {HTMLElement} destino - Elemento onde a área do combo é acrescentada.
+ * @param {{atividadeId: number, tabela: string, colunas: string, converter: Function,
+ *     preencher: Function}} opcoes - Atividade, tabela de respostas, colunas lidas, conversão
+ *     das linhas para o formato da tela e função que mostra as respostas.
  */
-async function montarRespostasDoAlunoDiscursiva(painel, opcoes) {
+async function montarRespostasDoAluno(destino, opcoes) {
     const area = criarElementoRespostasAluno('div', CLASSE_RESPOSTAS_ALUNO);
     area.appendChild(criarElementoRespostasAluno('strong', CLASSE_RESPOSTAS_ALUNO + '__titulo',
         '🧑‍🎓 Respostas dos alunos'));
-    painel.appendChild(area);
+    destino.appendChild(area);
 
-    const alunos = await listarAlunosQueResponderam(opcoes.atividadeId);
+    const alunos = await listarAlunosQueResponderam(opcoes);
     if (!alunos.length) {
         area.appendChild(criarElementoRespostasAluno('span', CLASSE_RESPOSTAS_ALUNO + '__aviso',
             'Nenhum aluno das suas turmas respondeu ainda.'));
@@ -173,8 +170,8 @@ async function montarRespostasDoAlunoDiscursiva(painel, opcoes) {
     if (!BASE_SCRIPTS_RESPOSTAS_ALUNO) return;
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = BASE_SCRIPTS_RESPOSTAS_ALUNO + '../css/respostas-aluno-discursiva.css';
+    link.href = BASE_SCRIPTS_RESPOSTAS_ALUNO + '../css/respostas-aluno-professor.css';
     document.head.appendChild(link);
 })();
 
-window.montarRespostasDoAlunoDiscursiva = montarRespostasDoAlunoDiscursiva;
+window.montarRespostasDoAluno = montarRespostasDoAluno;

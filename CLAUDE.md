@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 16:30
+**Versão das regras:** 2026-10-07 17:00
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 17:00 | Combo "Aluno" do professor também nas atividades objetivas (alternativas marcadas pelo aluno, somente leitura); módulo único `respostas-aluno-professor.js` |
 | 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
 | 2026-10-07 10:00 | Apostilas: o HTML passa a ser gerado a partir do Markdown completo `APOSTILA-<MATERIA>.md` (antes lia os `CAPITULO-NN.md`) |
 | 2026-10-07 09:00 | Menus USUARIOS, RELATORIOS, ALUNOS e CORREÇÃO do header só para o **Professor Administrador** (os demais professores não veem) |
@@ -1379,6 +1380,13 @@ quantidade de alunos) que filtram as linhas e o resumo; a turma escolhida é lem
 `resumo_tentativas_atividade` (`database/2026-09-30-resumo-tentativas-professor.sql`); só o
 professor consegue chamá-la.
 
+**Combo "Aluno" (2026-10-07, pedido do usuário):** logo abaixo da identificação, o professor tem
+**"🧑‍🎓 Respostas dos alunos"**: ao escolher um aluno (quem respondeu, com tentativa e entrega),
+as alternativas marcadas por ele aparecem destacadas nas questões, **somente leitura**. Sem
+escolha, as questões ficam sem marcação (as leituras filtram pelo `aluno_id` do usuário logado).
+Código: `assets/js/respostas-aluno-professor.js` (o mesmo das discursivas), carregado pelo
+`respostas-atividade.js`.
+
 ### 🕒 Horário da turma e liberação fora do horário
 
 Registrada em 2026-10-01. O aluno só grava alternativas e entrega **dentro do horário da turma**
@@ -1446,8 +1454,9 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   da entrega); ao escolher um aluno, as respostas dele aparecem nos campos, **somente leitura**
   (nada é gravado). Os campos do professor ficam **vazios até ele escolher** — as leituras da
   página filtram sempre pelo `aluno_id` do usuário logado (o RLS deixa o professor ler os alunos
-  das turmas dele). Código: `assets/js/respostas-aluno-discursiva.js` (+ css), carregado pelo
-  `avaliacao-discursiva.js`.
+  das turmas dele). Código único (objetivas e discursivas):
+  `assets/js/respostas-aluno-professor.js` (+ `assets/css/respostas-aluno-professor.css`),
+  carregado pelo `avaliacao-discursiva.js` e pelo `respostas-atividade.js`.
 - ✅ **Correção (2026-10-06)**, plano `docs/media-final-notas-do-aluno.md`, SQL
   `database/2026-10-06-notas-media-final-correcao-discursiva.sql` (aplicado):
   - tabela **`correcao_discursiva`**: nota de cada tópico por aluno e tentativa; `nota_ia` é só

@@ -659,3 +659,12 @@ Fontes (fora do Git): `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/ATIVIDADE-INDIVIDUAL-APOST
 |------|-----------|--------|--------------|-------------|
 | 60.1 | Turma 135080 (AI AOPL 2026/2 M1) retirada de `atividade.bloqueio` nas ids 85 (objetiva de 100) e 81 (discursiva de 30), a pedido do usuário; continuam bloqueadas para 122552, 133933 e QA LBTSN 2026/1 M2. A manhã responde só no horário dela (07:15–11:15) | ✅ Concluído | 2026-10-07 | Consulta: manhã e tarde liberadas nas duas |
 | 60.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 55 — Combo "Aluno" do professor também nas objetivas (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 55.1 | Módulo da Etapa 54 tornado genérico: `respostas-aluno-discursiva.js/.css` → `assets/js/respostas-aluno-professor.js` + `assets/css/respostas-aluno-professor.css` (tabela, colunas e conversão vêm de quem chama) | ✅ Concluído | 2026-10-07 | `node --check` ok |
+| 55.2 | Discursivas usam o módulo genérico (`avaliacao-discursiva.js`) | ✅ Concluído | 2026-10-07 | `node --check` ok |
+| 55.3 | Objetivas: combo abaixo da identificação; ao escolher o aluno, destaca as alternativas dele (`respostas-atividade.js`) | ✅ Concluído | 2026-10-07 | `node --check` ok |
+| 55.4 | Aceite do usuário (abrir uma objetiva como professor e escolher um aluno) | ⬜ Pendente | — | — |
