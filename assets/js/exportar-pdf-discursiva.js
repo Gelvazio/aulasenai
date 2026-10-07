@@ -17,6 +17,7 @@ const COR_SENAI_PDF_DISCURSIVA = [0, 51, 153];
 const COR_CINZA_PDF_DISCURSIVA = [240, 240, 240];
 const COR_QUESTAO_PDF_DISCURSIVA = [220, 220, 220];
 const COR_FAIXA_CAPACIDADES_DISCURSIVA = [31, 56, 100];
+const COR_AVISO_PDF_DISCURSIVA = [197, 48, 48];
 const ALTURA_RESPOSTA_VAZIA_MM = 24;
 const ESTILO_TABELA_PDF_DISCURSIVA = { fontSize: 10, cellPadding: 3, lineColor: [0, 0, 0],
     lineWidth: 0.1, textColor: [0, 0, 0] };
@@ -125,6 +126,26 @@ function desenharCabecalhoDiscursiva(doc, cabecalho, turma) {
 }
 
 /**
+ * Desenha o aviso em destaque da página (caixa .aviso-atividade), quando existir.
+ * @param {Object} doc - Documento jsPDF.
+ * @param {number} yPos - Posição inicial.
+ * @returns {number} Posição Y depois do aviso.
+ */
+function desenharAvisoDiscursiva(doc, yPos) {
+    const aviso = textoPdfDiscursiva(document.querySelector('.aviso-atividade')?.textContent);
+    if (!aviso) return yPos;
+
+    doc.autoTable({
+        body: [[{ content: aviso, styles: { fontStyle: 'bold', fontSize: 11, halign: 'center',
+            textColor: COR_AVISO_PDF_DISCURSIVA, lineColor: COR_AVISO_PDF_DISCURSIVA, lineWidth: 0.6 } }]],
+        startY: yPos,
+        margin: MARGEM_PDF_DISCURSIVA,
+        styles: ESTILO_TABELA_PDF_DISCURSIVA,
+    });
+    return doc.lastAutoTable.finalY + 8;
+}
+
+/**
  * Desenha o quadro CAPACIDADES (linhas do quadro da página).
  * @param {Object} doc - Documento jsPDF.
  * @param {number} yPos - Posição inicial.
@@ -211,6 +232,7 @@ async function exportarPdfDiscursiva() {
         const cabecalho = await dadosCabecalhoDiscursiva();
         const doc = new jsPDF('p', 'mm', 'a4');
         let yPos = desenharCabecalhoDiscursiva(doc, cabecalho, turma);
+        yPos = desenharAvisoDiscursiva(doc, yPos);
         yPos = desenharCapacidadesDiscursiva(doc, yPos);
         document.querySelectorAll('.questao-discursiva').forEach((secao) => {
             doc.autoTable({ body: linhasDaQuestaoDiscursiva(secao), startY: yPos,

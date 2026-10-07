@@ -8,7 +8,8 @@ Fonte: <pasta>/CONTEUDO/AVALIACAO-PRATICA.md (questões com Contexto, Comando e 
 se existir, <pasta>/CONTEUDO/AVALIACAO-PRATICA-GABARITO.md (padrão de resposta, fora do Git).
 Saídas: <pasta>/AVALIACAO-PRATICA.html e database/<data>-<nome>-seed-atividades.sql (fora do Git).
 Campos opcionais no cabeçalho da fonte: "- **Pontos por questão:** 0,5" (padrão 1) e
-"- **Página:** NOME.html" (padrão: mesmo nome da fonte).
+"- **Página:** NOME.html" (padrão: mesmo nome da fonte) e "- **Aviso:** texto" (caixa em
+destaque no início da página).
 Plano: docs/avaliacao-pratica-discursiva-itic.md
 """
 import html
@@ -40,6 +41,7 @@ MAXIMO_CARACTERES = 3000
 PONTOS_POR_QUESTAO_PADRAO = 1.0
 CAMPO_PONTOS_POR_QUESTAO = "Pontos por questão"
 CAMPO_PAGINA = "Página"
+CAMPO_AVISO = "Aviso"
 TOLERANCIA_PONTOS = 0.001
 SEPARADOR_ITEM = re.compile(r"^## ITEM\s+", re.MULTILINE)
 PADRAO_META = re.compile(r"^- \*\*(.+?):\*\*\s*(.+)$", re.MULTILINE)
@@ -364,6 +366,20 @@ def html_orientacoes(orientacoes):
     return "\n".join(caixas)
 
 
+def html_aviso(texto):
+    """Monta a caixa de aviso em destaque do início da página (campo "Aviso" da fonte).
+
+    Args:
+        texto: Texto do aviso ('' quando a fonte não tem o campo).
+
+    Returns:
+        HTML da caixa ou ''.
+    """
+    if not texto:
+        return ""
+    return f'            <p class="aviso-atividade" role="alert">⚠️ {escapar(texto)}</p>\n'
+
+
 def aplicar_capacidades(meta, itens, dados, assets):
     """Monta o quadro de capacidades do início e o de cada questão (campo "- **Capacidade:**").
 
@@ -432,6 +448,7 @@ def montar_trocas(meta, itens, contexto):
         "{{SLIDES}}": linha_slides(contexto["pasta"], meta.get("Slides", "")),
         "{{CAPACIDADES}}": capacidades_inicio, "{{CAPACIDADES_CSS}}": capacidades_css,
         "{{ORIENTACOES}}": html_orientacoes(contexto["orientacoes"]),
+        "{{AVISO}}": html_aviso(meta.get(CAMPO_AVISO, "")),
         "{{QUESTOES}}": "".join(html_item(item) for item in itens),
         "{{ARQUIVO_MD}}": escapar(contexto["arquivo_md"]),
         "{{UC}}": escapar(dados["uc"]), "{{UC_CURTA}}": escapar(dados["uc_curta"]),

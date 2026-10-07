@@ -628,3 +628,11 @@ Fontes (fora do Git): `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/ATIVIDADE-INDIVIDUAL-APOST
 | 56.2 | Aprovação do plano pelo usuário | ✅ Concluído | 2026-10-07 | Aprovado com a ampliação da discursiva id 81 no lugar (manter respostas dos 2 alunos) e reabertura das 2 entregas |
 | 56.3 | Execução dos passos 1 a 12 do plano | ✅ Concluído | 2026-10-07 | Objetiva id 85: 100 itens (50 da apostila + 12 das 40 + 38 novas), 25 de cada letra, todas com resposta localizada na apostila; gabarito aplicado (backup `gabarito_backup_20261007`). Discursiva id 81: 40 tópicos (ITEM 04, 09, 13, 14, 18, 19 e 20 ajustados à apostila; 21–40 novos), backup `topico_discursivo_backup_20261007` e `entrega_atividade_backup_20261007`, 2 entregas reabertas, 40 respostas mantidas. Índice e menu só com as 2; id 80 fora do índice |
 | 56.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 57 — Aviso "sem computador/celular, só a apostila" na discursiva de sexta (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 57.1 | Campo opcional `- **Aviso:**` no gerador de discursivas (caixa `.aviso-atividade` no início da página, `assets/css/avaliacao-discursiva.css`) e o mesmo aviso no PDF (`assets/js/exportar-pdf-discursiva.js`) | ✅ Concluído | 2026-10-07 | `py_compile` e `node --check` ok |
+| 57.2 | Aviso na fonte da discursiva id 81 e página regerada (tópicos sem mudança, banco não alterado) | ✅ Concluído | 2026-10-07 | Aviso na linha 29 do HTML, antes das instruções |
+| 57.3 | Aceite do usuário (abrir a página e exportar o PDF) | ⬜ Pendente | — | — |
