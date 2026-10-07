@@ -7,7 +7,10 @@ Lê <MATERIA>/EMENTA-CHALKIE-AI.md pela estrutura (tabelas, listas e campos em n
 fixos de matéria, e procura cada item, literalmente, em <MATERIA>/APOSTILA/APOSTILA-<MATERIA>.md.
 Aceita as variações de formato das ementas (ex.: "**S1 Nome** texto" ou "**S1** — texto";
 conhecimentos "**Título:** a; b" ou "**Título** — 1.1 a · 1.2 b"; tabela de sequência lida pelos
-títulos das colunas). Seção da ementa que existe mas não foi reconhecida REPROVA a conferência.
+títulos das colunas) e o formato por MÓDULOS (ex.: Rio do Sul Mais Tech: capacidades com indicador
+na mesma tabela, "Conteúdos programáticos" por módulo, "Cronograma por módulo", BNCC em tabela,
+glossário em lista "- **Termo:** definição"); esses formatos só são lidos quando o formato padrão
+da mesma seção não existe na ementa. Seção da ementa que existe mas não foi reconhecida REPROVA a conferência.
 Comparação sem diferenciar maiúsculas, sem marcação Markdown (**, _, `) e com travessões
 normalizados. Fora da conferência: materiais da pasta, plataforma, checklist, status e notas.
 Regra: CLAUDE.md → REGRAS APOSTILAS → "CONFERÊNCIA OBRIGATÓRIA".
@@ -19,7 +22,16 @@ ARQUIVO_EMENTA = "EMENTA-CHALKIE-AI.md"
 PADRAO_TITULO = re.compile(r"^(#{2,3})\s+(.+?)\s*$")
 PADRAO_FAIXA_CAPACIDADES = re.compile(r"([A-Z])(\d+)\s*[–-]\s*[A-Z](\d+)")
 PADRAO_CAMPO_LINHA = re.compile(r"^\*\*(.+?):\*\*\s*(.+?)\s*$")
+PADRAO_ROTULO_SO = re.compile(r"^\*\*[^*]+:\*\*$")
+PADRAO_ITEM_ROTULADO = re.compile(r"^-\s+\*\*(.+?):\*\*\s*(.+)$")
+PADRAO_ROTULO_INICIAL = re.compile(r"^\*\*[^*]+:\*\*\s*")
 TAMANHO_MINIMO_CELULA = 25
+CAMPOS_IDENTIFICACAO_NA_LINHA = ("Público",)
+CAMPOS_IDENTIFICACAO_LINHA = ("Programa",)
+SECOES_DIDATICAS_LISTA = (("ESTRATÉGIAS DE ENSINO", "Estratégias de ensino"),
+                          ("EXEMPLOS PRÁTICOS", "Exemplos práticos"),
+                          ("INTEGRAÇÃO COM", "Integração com as demais UCs"),
+                          ("ORIENTAÇÕES AO PROFESSOR", "Orientações ao professor"))
 ROTULOS_FORA_RECURSOS = ("materiais da pasta", "acessibilidade", "referências")
 ROTULOS_TRATADOS_SEQUENCIA = ("aula padrão", "marcos")
 INICIOS_TRATADOS_AVALIACAO = ("**formativa", "**recuperação")
@@ -28,7 +40,9 @@ SECOES_OBRIGATORIAS = (
     ("socioemocionais", "Capacidades socioemocionais"),
     ("Indicadores", "Indicadores"),
     ("CONHECIMENTOS", "Conhecimentos"),
+    ("CONTEÚDOS PROGRAMÁTICOS", "Conhecimentos"),
     ("SEQUÊNCIA", "Sequência de aulas"),
+    ("CRONOGRAMA", "Sequência de aulas"),
     ("AVALIAÇÃO", "Avaliação"),
     ("BNCC", "BNCC"),
     ("RECURSOS", "Recursos"),
@@ -150,19 +164,27 @@ def itens_identificacao(ementa):
         Lista de tuplas (grupo, descrição, texto procurado).
     """
     itens = []
-    uc = campo(ementa, "Unidade curricular")
+    uc = campo(ementa, "Unidade curricular") or campo(ementa, "Disciplina")
     if uc:
         itens.append(("Identificação", f"UC: {uc}", uc))
     modulo = re.search(r"\*\*Módulo:\*\*\s*(.+?)\s*\|", ementa)
     if modulo:
         itens.append(("Identificação", f"Módulo: {modulo.group(1)}", modulo.group(1)))
-    carga = re.search(r"\*\*Carga horária:\*\*\s*(\d+)\s*h", ementa)
+    carga = re.search(r"\*\*Carga horária:\*\*\s*(\d+)\s*h", ementa, re.I)
     if carga:
         itens.append(("Identificação", f"Carga horária: {carga.group(1)} h",
                       f"{carga.group(1)} horas"))
     modalidade = re.search(r"\*\*Modalidade:\*\*\s*([^|\n]+?)\s*(?:\||$)", ementa, re.M)
     if modalidade:
         itens.append(("Identificação", f"Modalidade: {modalidade.group(1)}", modalidade.group(1)))
+    for rotulo in CAMPOS_IDENTIFICACAO_NA_LINHA:
+        achado = re.search(rf"\*\*{rotulo}:\*\*\s*([^|\n]+?)\s*(?:\||$)", ementa, re.M)
+        if achado:
+            itens.append(("Identificação", f"{rotulo}: {achado.group(1)}", achado.group(1)))
+    for rotulo in CAMPOS_IDENTIFICACAO_LINHA:
+        valor = campo(ementa, rotulo)
+        if valor:
+            itens.append(("Identificação", f"{rotulo}: {valor}", valor))
     itens += [("Função", linha.strip(), linha.strip())
               for linha in secao(ementa, "Função").splitlines() if linha.strip()]
     return itens
@@ -180,9 +202,10 @@ def itens_objetivos(ementa):
     itens = []
     justificativa = " ".join(linha for linha in secao(ementa, "Justificativa").splitlines()
                              if linha.strip())
+    justificativa = justificativa or campo(ementa, "Alinhamento")
     if justificativa:
         itens.append(("Justificativa", justificativa[:60] + "…", justificativa))
-    objetivo = secao(ementa, "Objetivo geral")
+    objetivo = secao(ementa, "Objetivo geral") or campo(ementa, "Objetivo geral")
     for linha in objetivo.splitlines():
         if linha.strip() and not re.match(r"^\d\.", linha):
             itens.append(("Objetivo geral", linha.strip()[:60], linha.strip().rstrip(":")))
@@ -207,8 +230,10 @@ def itens_capacidades(ementa):
     Returns:
         Lista de tuplas (grupo, descrição, texto procurado).
     """
-    itens = [("Capacidades básicas", f"{codigo}: {texto}", f"{codigo}: {texto}")
-             for codigo, texto in re.findall(r"^\| \*\*([A-Z]\d+)\*\* \| (.+?) \|$", ementa, re.M)]
+    itens = []
+    for linha in re.findall(r"^\| \*\*[A-Z]\d+\*\* \| .+? \|$", ementa, re.M):
+        codigo, texto = celulas(linha)[0].strip("*"), celulas(linha)[1]
+        itens.append(("Capacidades básicas", f"{codigo}: {texto}", f"{codigo}: {texto}"))
     for linha in re.findall(r"^- \*\*(S\d+.*)$", ementa, re.M):
         achado = (re.match(r"(S\d+)\*\*\s*—\s*(.+)$", linha)
                   or re.match(r"(S\d+) (.+?)\*\*\s*(.+)$", linha))
@@ -216,9 +241,17 @@ def itens_capacidades(ementa):
             texto = " ".join(achado.groups()[1:])
             itens.append(("Capacidades socioemocionais", f"{achado.group(1)} {texto}"[:70],
                           f"{achado.group(1)}: {texto}"))
-    for cabecalho, linhas in tabelas(secao(ementa, "Indicadores de desempenho")):
-        itens += [("Indicadores", f"{linha[0]}. {linha[1]}", linha[1])
-                  for linha in linhas if len(linha) >= 2 and linha[0].isdigit()]
+    indicadores = secao(ementa, "Indicadores de desempenho")
+    if indicadores.strip():
+        for cabecalho, linhas in tabelas(indicadores):
+            itens += [("Indicadores", f"{linha[0]}. {linha[1]}", linha[1])
+                      for linha in linhas if len(linha) >= 2 and linha[0].isdigit()]
+        return itens
+    for cabecalho, linhas in tabelas(secao(ementa, "Indicadores")):
+        indice = coluna(cabecalho, "Indicador")
+        if indice is not None:
+            itens += [("Indicadores", f"{linha[0].strip('*')}: {linha[indice]}", linha[indice])
+                      for linha in linhas if len(linha) > indice and linha[indice]]
     return itens
 
 
@@ -243,9 +276,52 @@ def itens_conhecimentos(ementa):
         itens.append(("Conhecimentos", f"{numero}. {titulo}", f"{numero}. {titulo}"))
         itens += [("Conhecimentos", f"{numero}. {parte.strip()}", parte.strip())
                   for parte in conteudos.rstrip(".").split(separador) if parte.strip()]
+    if not itens:
+        itens = itens_conteudos_programaticos(ementa)
     detalhamento = campo(texto or ementa, "Detalhamento didático")
     itens += [("Detalhamento didático", parte.strip(), parte.strip())
               for parte in detalhamento.rstrip(".").split(";") if "=" in parte]
+    return itens
+
+
+def partes_item_lista(linha):
+    """Separa um item de lista "- Rótulo: a; b | Rótulo: c" em partes, sem os rótulos.
+
+    Args:
+        linha: Linha da lista sem o "- " inicial.
+
+    Returns:
+        Partes literais (sem espaços nas pontas e sem ponto final).
+    """
+    partes = []
+    for trecho in linha.split(" | "):
+        trecho = re.sub(r"^[^:;]{1,30}:\s+", "", trecho.strip())
+        partes += [parte.strip().rstrip(".") for parte in trecho.split(";") if parte.strip()]
+    return partes
+
+
+def itens_conteudos_programaticos(ementa):
+    """Itens dos conteúdos programáticos por módulo (formato sem a seção CONHECIMENTOS).
+
+    Lê títulos em negrito ("**Módulo 1 — Tema (3h)**"), listas "- Tópicos: a; b" e
+    "- Atividade: x | Produto: y" e campos "**Rótulo:** texto".
+
+    Args:
+        ementa: Texto da ementa.
+
+    Returns:
+        Lista de tuplas (grupo, descrição, texto procurado).
+    """
+    itens = []
+    for linha in (linha.strip() for linha in secao(ementa, "CONTEÚDOS PROGRAMÁTICOS").splitlines()):
+        titulo = re.match(r"^\*\*([^*]+)\*\*$", linha)
+        campo_linha = PADRAO_CAMPO_LINHA.match(linha)
+        if titulo:
+            itens.append(("Conhecimentos", titulo.group(1), titulo.group(1)))
+        elif campo_linha:
+            itens.append(("Conhecimentos", campo_linha.group(2)[:60], campo_linha.group(2)))
+        elif linha.startswith("- "):
+            itens += [("Conhecimentos", parte[:60], parte) for parte in partes_item_lista(linha[2:])]
     return itens
 
 
@@ -288,7 +364,8 @@ def itens_linha_sequencia(cabecalho, linha, siglas):
     Returns:
         Lista de tuplas (grupo, descrição, texto procurado).
     """
-    rotulo = f"Aula {int(linha[0]):02d}"
+    nome = re.sub(r"[^\w ]", "", cabecalho[0]).strip()
+    rotulo = f"{nome} {int(linha[0])}" if "módulo" in nome.casefold() else f"Aula {int(linha[0]):02d}"
     valor = lambda *nomes: linha[i] if (i := coluna(cabecalho, *nomes)) is not None else ""
     itens = [("Sequência de aulas", f"{rotulo}: tema", f"{rotulo} — {valor('Tema')}")]
     if valor("Dom", "Conhecimentos"):
@@ -317,6 +394,8 @@ def itens_textos_sequencia(texto):
     itens = []
     for linha in (linha.strip() for linha in texto.splitlines()):
         campo_linha = PADRAO_CAMPO_LINHA.match(linha)
+        if linha == "---":
+            continue
         if linha.startswith("- "):
             itens.append(("Sequência (textos)", linha[2:62], linha[2:]))
         elif campo_linha and not campo_linha.group(1).casefold().startswith(
@@ -337,7 +416,7 @@ def itens_sequencia(ementa):
     Returns:
         Lista de tuplas (grupo, descrição, texto procurado).
     """
-    texto = secao(ementa, "SEQUÊNCIA")
+    texto = secao(ementa, "SEQUÊNCIA") or secao(ementa, "CRONOGRAMA")
     siglas = siglas_estrategias(texto)
     itens = []
     for cabecalho, linhas in tabelas(texto):
@@ -365,8 +444,10 @@ def itens_aula_e_situacoes(ementa):
         if achado:
             itens.append(("Marcos", marco.strip(), f"Aula {achado.group(1)} — {achado.group(2)}"))
     situacoes = secao(ementa, "Situações-problema")
-    itens += [("Situações-problema", f"{numero}. {texto}", texto)
+    itens += [("Situações-problema", f"{numero}. {texto}", PADRAO_ROTULO_INICIAL.sub("", texto))
               for numero, texto in re.findall(r"^(\d+)\. (.+)$", situacoes, re.M)]
+    itens += [("Situações-problema", f"{rotulo}: {texto}"[:70], texto) for rotulo, texto in
+              re.findall(r"^\*\*(.+?):\*\*\s*(.+)$", situacoes, re.M)]
     return itens
 
 
@@ -397,7 +478,13 @@ def itens_avaliacao(ementa):
     for linha in (linha.strip() for linha in texto.splitlines()):
         livre = linha and not linha.startswith(("|", "#")) and \
             not linha.casefold().startswith(INICIOS_TRATADOS_AVALIACAO)
-        if livre:
+        if not livre or linha == "---" or PADRAO_ROTULO_SO.match(linha):
+            continue
+        rotulado = PADRAO_ITEM_ROTULADO.match(linha)
+        if rotulado:
+            itens.append(("Rubrica", f"{rotulado.group(1)}: {rotulado.group(2)}"[:70],
+                          rotulado.group(2)))
+        else:
             itens.append(("Avaliação", linha[:60] + "…", linha))
     return itens
 
@@ -429,11 +516,21 @@ def itens_recursos(ementa):
              re.findall(r"^- \*\*(CG\d+ .+?)\*\* — (.+?): (.+)$", ementa, re.M)]
     itens += [("BNCC", foco[:70], foco) for cg, aulas, foco in
               re.findall(r"^- \*\*(CG\d+ .+?)\*\* — (.+?): (.+)$", ementa, re.M)]
+    if not itens:
+        for cabecalho, linhas in tabelas(secao(ementa, "BNCC")):
+            itens += [("BNCC", linha[0][:70], f"{linha[0]}: {cabecalho[1].casefold()} {linha[1]}")
+                      for linha in linhas if len(linha) >= 2 and linha[0]]
+    recursos = []
     for linha in secao(ementa, "RECURSOS").splitlines():
         achado = PADRAO_CAMPO_LINHA.match(linha.strip())
         if not achado or achado.group(1).casefold().startswith(ROTULOS_FORA_RECURSOS):
             continue
-        itens += [("Recursos", parte, parte) for parte in partes_lista(achado.group(2))]
+        recursos += [("Recursos", parte, parte) for parte in partes_lista(achado.group(2))]
+    if not recursos:
+        recursos = [("Recursos", linha.strip()[2:62], linha.strip()[2:])
+                    for linha in secao(ementa, "RECURSOS").splitlines()
+                    if linha.strip().startswith("- ")]
+    itens += recursos
     acessibilidade = campo(ementa, r"Acessibilidade \[?\(?.+?[\]\)]")
     for trecho in re.split(r"\*\*[^*]+:\*\*", acessibilidade):
         partes = trecho.split(" · ") if " · " in trecho else [trecho]
@@ -444,6 +541,10 @@ def itens_recursos(ementa):
     for rotulo, grupo in (("Referências", "Referências"), ("Métricas", "Métricas")):
         itens += [(grupo, parte.strip(), parte.strip().rstrip("."))
                   for parte in campo(ementa, rotulo).split("·") if parte.strip()]
+    if not campo(ementa, "Métricas"):
+        itens += [("Métricas", linha.strip()[2:62], linha.strip()[2:])
+                  for linha in secao(ementa, "Indicadores de sucesso").splitlines()
+                  if linha.strip().startswith("- ")]
     return itens
 
 
@@ -458,20 +559,52 @@ def itens_listas(ementa):
     """
     itens = [("Ideias (prompts)", texto[:60] + "…", texto)
              for texto in re.findall(r'^\d+\. \*"(.+)"\*\s*$', secao(ementa, "PROMPTS"), re.M)]
+    if not itens:
+        itens = [("Ideias (prompts)", texto[:60] + "…", texto) for texto in re.findall(
+            r'^\d+\. \*\*.+?:\*\* "(.+)"\s*$', secao(ementa, "PROMPTS"), re.M)]
     itens += [("Regras para IA", regra[:70], regra)
               for regra in re.findall(r"^\d+\. (.+)$", secao(ementa, "REGRAS PARA IA"), re.M)]
+    regras_campo = campo(secao(ementa, "PROMPTS"), "Regras para a IA")
+    if regras_campo and not secao(ementa, "REGRAS PARA IA").strip():
+        itens.append(("Regras para IA", regras_campo[:70], regras_campo))
     relacao = next((linha for linha in secao(ementa, "×").splitlines() if "→" in linha), "")
     itens += [("Capacidades × conhecimentos", parte.strip(), parte.strip().rstrip("."))
               for parte in relacao.split("·") if parte.strip()]
     glossario = secao(ementa, "GLOSSÁRIO")
-    itens += [("Glossário oficial", f"{termo} — {definicao}"[:70], f"{termo}: {definicao}")
+    termos = [("Glossário oficial", f"{termo} — {definicao}"[:70], f"{termo}: {definicao}")
               for termo, definicao in re.findall(r"\*\*(.+?)\*\* — (.+?)(?= · |\n|$)", glossario)]
+    if not termos:
+        termos = [("Glossário oficial", f"{termo} — {definicao}"[:70], f"{termo}: {definicao}")
+                  for termo, definicao in re.findall(r"^- \*\*(.+?):\*\*\s*(.+)$", glossario, re.M)]
+        marcos = campo(glossario, "Marcos de competência")
+        if marcos:
+            termos.append(("Marcos", marcos[:70], marcos))
+    return itens + termos
+
+
+def itens_secoes_didaticas(ementa):
+    """Itens das seções didáticas em lista (estratégias, exemplos, integração, orientações).
+
+    Args:
+        ementa: Texto da ementa.
+
+    Returns:
+        Lista de tuplas (grupo, descrição, texto procurado).
+    """
+    itens = []
+    for palavra, grupo in SECOES_DIDATICAS_LISTA:
+        for linha in (linha.strip() for linha in secao(ementa, palavra).splitlines()):
+            rotulado = PADRAO_ITEM_ROTULADO.match(linha)
+            if rotulado:
+                itens.append((grupo, rotulado.group(2)[:60], rotulado.group(2)))
+            elif linha.startswith("- "):
+                itens.append((grupo, linha[2:62], linha[2:]))
     return itens
 
 
 EXTRATORES = (itens_identificacao, itens_objetivos, itens_capacidades, itens_conhecimentos,
               itens_sequencia, itens_aula_e_situacoes, itens_avaliacao, itens_recursos,
-              itens_listas)
+              itens_listas, itens_secoes_didaticas)
 
 
 def secoes_nao_reconhecidas(ementa, itens):

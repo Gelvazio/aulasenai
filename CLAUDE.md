@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 16:30
+**Versão das regras:** 2026-10-07 20:30
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 20:30 | Apostilas: carga da UC que não divide por 4 vira aulas de 4 h + **última aula menor** (ex.: 33 h = 8 × 4 h + 1 h; gerador confere a soma); conferência com a ementa aceita o **formato por módulos** (Rio do Sul Mais Tech) e o `materia.json` ganha `secoes_literais_ementa` |
 | 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
 | 2026-10-07 10:00 | Apostilas: o HTML passa a ser gerado a partir do Markdown completo `APOSTILA-<MATERIA>.md` (antes lia os `CAPITULO-NN.md`) |
 | 2026-10-07 09:00 | Menus USUARIOS, RELATORIOS, ALUNOS e CORREÇÃO do header só para o **Professor Administrador** (os demais professores não veem) |
@@ -2427,6 +2428,18 @@ Registrada em 2026-10-03 a pedido do usuário.
   `assets/gerador-apostilas/markdown_apostila.py`. O plano de capítulos vem do `materia.json`
   (`carga_horaria_uc`, `horas_por_aula` = 4, `aulas` = uma por aula); o gerador confere
   se capítulos × 4 h = carga da UC. Glossário em ordem alfabética sem considerar acentos.
+- ✅ **Carga que não divide por 4** (2026-10-07, pedido do usuário; 1º caso: Fundamentos da
+  Tecnologia e Programação, 33 h = 9 capítulos): todas as aulas têm 4 h e **só a última pode ter
+  menos** (`carga_horaria` da aula no `materia.json`); o gerador confere se a **soma das horas** das
+  aulas = carga da UC e mostra as horas de cada capítulo no plano e no capítulo.
+- ✅ **Ementa no formato por módulos** (2026-10-07, matérias do Rio do Sul Mais Tech): a
+  conferência (`conferir_ementa.py`) também lê capacidades com indicador na mesma tabela,
+  "Conteúdos programáticos" por módulo, "Cronograma por módulo", BNCC em tabela, prompts
+  `**M1:** "..."`, glossário `- **Termo:** definição`, marcos de competência e as listas de
+  estratégias, exemplos, integração e orientações ao professor — só quando o formato padrão da
+  seção não existe (ITIC e Testes de Frontend continuam iguais). As seções da ementa sem campo
+  próprio vão literais para o campo `secoes_literais_ementa` do `materia.json`
+  (`{titulo, texto?, itens?, numerada?}`), reproduzido na "Ementa da matéria (texto oficial)".
 - ✅ **O HTML é gerado a partir do Markdown completo** (2026-10-07): o `gerar_apostila.py` lê a
   `# Introdução` e cada `# Capítulo NN` do `APOSTILA-<MATERIA>.md` (glossário de cada capítulo
   pelo `_(cap. NN)_` do glossário geral); sem o Markdown completo, o gerador para com erro

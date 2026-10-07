@@ -7,7 +7,8 @@ Fontes em <MATERIA>/APOSTILA/:
 - CONTEUDO/CAPITULO-NN.md — um por aula, com "## Teoria", "## Vídeos", "## Exercícios",
   "## Resumo" e "## Glossário";
 Dados da matéria (arquivo único): <MATERIA>/materia.json — identificação, capacidades,
-conhecimentos e o plano de aulas ("aulas", 1 aula de 4 h = 1 capítulo).
+conhecimentos e o plano de aulas ("aulas", 1 aula de 4 h = 1 capítulo; a última aula pode ter
+menos horas quando a carga da UC não divide por 4, ex.: 33 h = 8 × 4 h + 1 h).
 Saída: <MATERIA>/APOSTILA/APOSTILA-<NOME DA PASTA DA MATÉRIA>.html. O assets/js/apostila.js
 divide o conteúdo em páginas A4 no navegador.
 Regras: seção "REGRAS APOSTILAS" do CLAUDE.md; plano: docs/gerador-apostilas.md.
@@ -137,16 +138,36 @@ def validar_plano_capitulos(dados):
     Args:
         dados: Dados da matéria.
 
+    A soma das horas das aulas ("carga_horaria" de cada uma; padrão = horas_por_aula) tem de ser
+    igual à carga da UC; só a última aula pode ter menos horas (regra "1 aula a cada 4 h",
+    arredondando para cima).
+
     Raises:
         SystemExit: Se faltar o plano ou se a soma das aulas não fechar com a carga da UC.
     """
     previstos, horas = dados["capitulos_previstos"], dados["horas_por_capitulo"]
     if not previstos:
         erro(f'{ARQUIVO_MATERIA}: falta "{CAMPO_AULAS}" (uma entrada por aula de {horas} h)')
+    cargas = [horas_da_aula(item, horas) for item in dados["plano_capitulos"]]
+    if any(carga_aula != horas for carga_aula in cargas[:-1]) or cargas[-1] > horas:
+        erro(f"{ARQUIVO_MATERIA}: todas as aulas têm {horas} h; só a última pode ter menos")
     carga = dados["carga_horaria_uc"]
-    if carga and len(previstos) * horas != carga:
-        erro(f"{ARQUIVO_MATERIA}: {len(previstos)} aulas × {horas} h não fecham "
+    if carga and sum(cargas) != carga:
+        erro(f"{ARQUIVO_MATERIA}: {len(previstos)} aulas somam {sum(cargas)} h e não fecham "
              f"com a carga da UC ({carga} h)")
+
+
+def horas_da_aula(item, horas_padrao):
+    """Carga horária de uma aula do plano (padrão = horas_por_aula).
+
+    Args:
+        item: Entrada de "aulas" do materia.json.
+        horas_padrao: Horas por aula da matéria.
+
+    Returns:
+        Horas da aula.
+    """
+    return item.get("carga_horaria", horas_padrao)
 
 
 def separar_secoes(texto, rotulo):
@@ -856,6 +877,11 @@ def gerar_markdown_completo(pasta_materia, forcar):
     dados = ler_dados_materia(pasta_materia)
     validar_plano_capitulos(dados)
     capitulos = ler_fontes_capitulos(pasta_materia, dados, obrigatorio=False)
+    plano_por_numero = {item["numero"]: item for item in dados["plano_capitulos"]}
+    for capitulo in capitulos:
+        if capitulo["numero"] in plano_por_numero:
+            capitulo["carga_horaria"] = horas_da_aula(plano_por_numero[capitulo["numero"]],
+                                                      dados["horas_por_capitulo"])
     saida = caminho_markdown_completo(pasta_materia)
     if forcar or not saida.is_file():
         texto = md_apostila.montar_markdown_completo(

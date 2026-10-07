@@ -114,6 +114,10 @@ def md_cabecalho(dados, total_previstos):
     carga = dados.get("carga_horaria_uc")
     texto_carga = f"{carga} horas" if carga else "não informada"
     materia = dados.get("materia", {})
+    horas = dados["horas_por_capitulo"]
+    ultima = dados.get("plano_capitulos", [{}])[-1].get("carga_horaria", horas) \
+        if dados.get("plano_capitulos") else horas
+    texto_ultima = f"; a última aula tem {ultima} h" if ultima != horas else ""
     return "\n".join([
         f"# Apostila — {dados['uc']}",
         "",
@@ -122,7 +126,7 @@ def md_cabecalho(dados, total_previstos):
         f"{materia.get('modalidade', '—')}  ",
         f"> **Ementa:** {materia.get('versao_ementa', '—')}  ",
         f"> **Carga horária da UC:** {texto_carga} · **Capítulos previstos:** {total_previstos} "
-        f"(1 capítulo = 1 aula de {dados['horas_por_capitulo']} horas)  ",
+        f"(1 capítulo = 1 aula de {horas} horas{texto_ultima})  ",
         f"> **Gerado em:** {date.today():%d/%m/%Y}, a partir de `APOSTILA/CONTEUDO/`.",
         "",
         "> ✏️ **Este arquivo é a fonte final da apostila.** Revise, compare e acrescente "
@@ -142,14 +146,19 @@ def md_plano(dados, numeros_incluidos):
         Markdown da seção.
     """
     horas = dados["horas_por_capitulo"]
+    plano = dados.get("plano_capitulos", [])
+    ultima = plano[-1].get("carga_horaria", horas) if plano else horas
+    texto_ultima = f" (a última aula tem {ultima} horas)" if ultima != horas else ""
     linhas = [TITULO_PLANO, "",
-              f"Cada capítulo corresponde a **uma aula de {horas} horas** da unidade curricular.",
+              f"Cada capítulo corresponde a **uma aula de {horas} horas** da unidade "
+              f"curricular{texto_ultima}.",
               "", "| Capítulo | Aula | Tema | Carga horária | Situação |",
               "|---|---|---|---|---|"]
     for indice, tema in enumerate(dados["capitulos_previstos"], start=1):
         numero = f"{indice:02d}"
         situacao = SITUACAO_INCLUIDO if numero in numeros_incluidos else SITUACAO_PENDENTE
-        linhas.append(f"| {numero} | {numero} | {tema} | {horas} h | {situacao} |")
+        horas_aula = plano[indice - 1].get("carga_horaria", horas) if plano else horas
+        linhas.append(f"| {numero} | {numero} | {tema} | {horas_aula} h | {situacao} |")
     materia = dados.get("materia", {})
     datas = [item["data_prevista"] for item in dados.get("plano_capitulos", [])
              if item.get("data_prevista")]
@@ -387,7 +396,7 @@ def md_capitulo(capitulo, horas):
     """
     linhas = [f"# {capitulo['titulo']}", "",
               f"- **Aula:** {capitulo['aula'] or capitulo['numero']}",
-              f"- **Carga horária:** {horas} horas (1 aula)",
+              f"- **Carga horária:** {capitulo.get('carga_horaria', horas)} horas (1 aula)",
               f"- **Capacidade:** {', '.join(capitulo['codigos'])}",
               f"- **Fonte:** `APOSTILA/CONTEUDO/{capitulo['id'].upper()}.md`"]
     for parte in ORDEM_PARTES_CAPITULO:
@@ -432,7 +441,8 @@ def md_objetivos_ementa(materia):
         Lista de linhas Markdown.
     """
     objetivo = materia.get("objetivo_geral", {})
-    linhas = ["## Justificativa", "", materia.get("justificativa", ""), ""]
+    linhas = ["## Justificativa", "", materia["justificativa"], ""] \
+        if materia.get("justificativa") else []
     if materia.get("funcao"):
         linhas += ["## Função", "", materia["funcao"], ""]
     linhas += ["## Objetivo geral", "", objetivo.get("texto", ""), ""]
@@ -578,6 +588,28 @@ def md_listas_ementa(materia):
     return linhas
 
 
+def md_secoes_literais(materia):
+    """Monta as seções literais da ementa sem campo próprio (ementas no formato por módulos).
+
+    Cada entrada de "secoes_literais_ementa" é {"titulo", "texto"?, "itens"?, "numerada"?}; os
+    textos são copiados da ementa, para a conferência achar cada item.
+
+    Args:
+        materia: Conteúdo do materia.json.
+
+    Returns:
+        Lista de linhas Markdown.
+    """
+    linhas = []
+    for secao in materia.get("secoes_literais_ementa", []):
+        linhas += ["", f"## {secao['titulo']}", ""]
+        if secao.get("texto"):
+            linhas += [secao["texto"], ""]
+        marcador = (lambda i: f"{i}.") if secao.get("numerada") else (lambda i: "-")
+        linhas += [f"{marcador(i)} {item}" for i, item in enumerate(secao.get("itens", []), 1)]
+    return linhas
+
+
 def md_ementa_oficial(dados):
     """Monta a seção com o texto oficial da ementa que não é por aula (referência literal).
 
@@ -594,7 +626,7 @@ def md_ementa_oficial(dados):
     linhas += md_objetivos_ementa(materia) + md_avaliacao_ementa(materia)
     linhas += md_recursos_ementa(materia) + md_aula_padrao(materia)
     linhas += md_textos_didaticos_ementa(materia)
-    linhas += md_listas_ementa(materia) + md_bncc(materia)
+    linhas += md_listas_ementa(materia) + md_bncc(materia) + md_secoes_literais(materia)
     return "\n".join(linhas)
 
 

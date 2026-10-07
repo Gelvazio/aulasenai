@@ -33,3 +33,21 @@ cadastradas no banco). **Aulas encontradas:** 16 em `AULAS/`.
 - As atividades usam a data no nome (`ATIVIDADES-AULA-DD-MM-AAAA-50-QUESTOES.html`).
 - Aulas a gerar ou completar seguem a regra: uma por vez, completa, atualizando esta tabela.
 - "Banco" = atividade cadastrada na tabela `atividade` (liberada/bloqueada pelo professor no índice).
+
+## Aulas da ementa em `CONTEUDO/` (fonte da apostila) — 2026-10-07
+
+Geradas pela regra "AULAS EXTRAÍDAS DA EMENTA EM `CONTEUDO/`": 33 h = 8 aulas de 4 h + 1 aula de
+1 h (decisão do usuário em 2026-10-07). As 16 aulas antigas de `AULAS/` e as atividades já
+publicadas continuam como estão (renomear ou mover só a pedido do usuário).
+
+| Aula | Tema | Horas | Módulos da ementa | Arquivo | Status |
+|---|---|---|---|---|---|
+| 01 | Tecnologia, Dispositivos Digitais e Cidadania Digital | 4 | M1 (3 h) + M2 (1 h) | `CONTEUDO/AULA-01-TECNOLOGIA-DISPOSITIVOS-E-CIDADANIA-DIGITAL.md` | ✅ |
+| 02 | Segurança Online, Fake News e Hardware × Software | 4 | M2 (2 h) + M3 (2 h) | `CONTEUDO/AULA-02-SEGURANCA-ONLINE-FAKE-NEWS-E-HARDWARE-SOFTWARE.md` | ✅ |
+| 03 | Sistemas Operacionais, Arquivos e Pastas | 4 | M3 (2 h) + M4 (2 h) | `CONTEUDO/AULA-03-SISTEMAS-OPERACIONAIS-ARQUIVOS-E-PASTAS.md` | ✅ |
+| 04 | Atalhos de Teclado, Editor de Texto e Apresentações | 4 | M4 (1 h) + M5 (3 h) | `CONTEUDO/AULA-04-ATALHOS-EDITOR-DE-TEXTO-E-APRESENTACOES.md` | ✅ |
+| 05 | Planilhas Simples e Boas Práticas de Pesquisa | 4 | M5 (3 h) + M6 (1 h) | `CONTEUDO/AULA-05-PLANILHAS-SIMPLES-E-PESQUISA.md` | ✅ |
+| 06 | Internet Segura e Pensamento Computacional | 4 | M6 (1 h) + M7 (3 h) | `CONTEUDO/AULA-06-INTERNET-SEGURA-E-PENSAMENTO-COMPUTACIONAL.md` | ✅ |
+| 07 | Algoritmos, Fluxogramas e Primeiros Passos no Scratch | 4 | M7 (2 h) + M8 (2 h) | `CONTEUDO/AULA-07-ALGORITMOS-FLUXOGRAMAS-E-SCRATCH.md` | ✅ |
+| 08 | Scratch: Condições, Repetições, Variáveis e Projeto Autoral | 4 | M8 (4 h) | `CONTEUDO/AULA-08-SCRATCH-PROJETO-AUTORAL.md` | ✅ |
+| 09 | Avaliação Final: Prova Conceitual e Apresentação do Projeto | 1 | Avaliação final (1 h) | `CONTEUDO/AULA-09-AVALIACAO-FINAL.md` | ✅ |
