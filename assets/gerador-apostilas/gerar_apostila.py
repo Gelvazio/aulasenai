@@ -134,6 +134,9 @@ def ler_dados_materia(pasta_materia):
 def validar_plano_capitulos(dados):
     """Confere o plano de capítulos (1 capítulo = 1 aula) contra a carga horária da UC.
 
+    A soma das horas das aulas ("carga_horaria" de cada aula; sem ela, "horas_por_aula") tem de
+    ser igual à carga da UC — a última aula pode ter menos horas (ex.: 30 h = 7 × 4 h + 2 h).
+
     Args:
         dados: Dados da matéria.
 
@@ -144,9 +147,10 @@ def validar_plano_capitulos(dados):
     if not previstos:
         erro(f'{ARQUIVO_MATERIA}: falta "{CAMPO_AULAS}" (uma entrada por aula de {horas} h)')
     carga = dados["carga_horaria_uc"]
-    if carga and len(previstos) * horas != carga:
-        erro(f"{ARQUIVO_MATERIA}: {len(previstos)} aulas × {horas} h não fecham "
-             f"com a carga da UC ({carga} h)")
+    soma = sum(aula.get("carga_horaria", horas) for aula in dados["plano_capitulos"])
+    if carga and soma != carga:
+        erro(f"{ARQUIVO_MATERIA}: a soma das horas das {len(previstos)} aulas ({soma} h) não "
+             f"fecha com a carga da UC ({carga} h)")
 
 
 def separar_secoes(texto, rotulo):

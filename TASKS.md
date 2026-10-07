@@ -32,9 +32,9 @@ _Nenhuma tarefa em andamento._
 ## 📜 HISTÓRICO DE TAREFAS (mais recente primeiro)
 
 Uma linha por tarefa (= 1 commit, regra "COMMIT POR TAREFA"); dentro do dia, da mais antiga para
-a mais nova. Total registrado: 315 tarefas.
+a mais nova. Total registrado: 316 tarefas.
 
-### 2026-10-07 — 23 tarefa(s)
+### 2026-10-07 — 24 tarefa(s)
 
 | ID | Concluída em | Tarefa (commit) | Commit | Plano |
 |---|---|---|---|---|
@@ -61,6 +61,7 @@ a mais nova. Total registrado: 315 tarefas.
 | T20261007-21 | 2026-10-07 17:03:24 | docs(status): turma 135081 responde até 17h15 | `94230bd` | — |
 | T20261007-22 | 2026-10-07 19:48:22 | docs(apostila): registro da apostila de ITIC concluída (TASKS, plano e status da regra) | `d07267e` | — |
 | T20261007-23 | 2026-10-07 19:51:35 | Registrar a regra do `TASKS.md` (todo pedido anotado, data e hora com segundos) e preencher o histórico de outubro (início 2026-10-07 19:50:36) | este commit (`docs(tarefas): ...`) | — |
+| T20261007-24 | 2026-10-07 20:03:42 | Resolver os conflitos do `CLAUDE.md` com as decisões do usuário (Word não global; push/PR só com pedido explícito; Reforço de Linguagens) + gerador da apostila pela soma das horas (início 2026-10-07 20:01:51) | este commit (`docs(regras): resolve conflitos ...`) | — |
 
 ### 2026-10-06 — 67 tarefa(s)
 
