@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila — Fundamentos da Tecnologia</title>
+    <link rel="stylesheet" href="../../../../assets/css/apostila.css">
+    <script src="../../../../assets/js/apostila.js" defer></script>
+    <script src="../../../../js/header-usuario.js" defer></script>
+</head>
+<body class="apostila" data-logo="../../../../assets/img/logo-sesi-senai.png" data-rodape="Apostila — Fundamentos da Tecnologia · SESI SENAI">
+<div id="header-usuario"></div>
+    <!-- Gerado por assets/gerador-apostilas/gerar_apostila.py — não editar à mão -->
+    <div class="apostila__container">
+        <header class="apostila__topo">
+            <div class="apostila__barra">
+                <button class="apostila__botao" id="botao-exportar-pdf" type="button">📥 Exportar PDF (apostila completa)</button>
+                <small class="apostila__dica">Na janela de impressão, escolha "Salvar como PDF".</small>
+            </div>
+        </header>
+
+        <section class="pagina-senai pagina-a4 capa-apostila">
+            <img class="pagina-senai__logo" src="../../../../assets/img/logo-sesi-senai.png" alt="SESI SENAI">
+            <div class="pagina-senai__conteudo">
+                <a class="capa-apostila__voltar" href="../ATIVIDADES/index.html">← Atividades da matéria</a>
+                <h1 class="capa-apostila__titulo">Apostila<br>Fundamentos da Tecnologia e Programação</h1>
+                <p class="capa-apostila__subtitulo">Rio do Sul Mais Tech</p>
+                <div class="capa-apostila__faixa"></div>
+                <p class="capa-apostila__dados">Docente: Gelvazio Camargo · 9 capítulo(s)</p>
+            </div>
+            <footer class="pagina-senai__rodape"></footer>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="sumario">
+            <h2 id="sumario">Sumário</h2>
+            <a class="sumario__link sumario__link--nivel-1" href="#introducao"><span class="sumario__texto">Introdução</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t1"><span class="sumario__texto">Apresentação</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t2"><span class="sumario__texto">Objetivo geral da unidade curricular</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t3"><span class="sumario__texto">Como a apostila está organizada</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t4"><span class="sumario__texto">Como estudar com esta apostila</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t5"><span class="sumario__texto">Como você será avaliado</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t6"><span class="sumario__texto">Ambientes, recursos e acessibilidade</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t7"><span class="sumario__texto">Situações de aprendizagem</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t7"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capacidades"><span class="sumario__texto">Capacidades da matéria</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capacidades"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#glossario"><span class="sumario__texto">Glossário</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="glossario"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-01"><span class="sumario__texto">Capítulo 01 — Tecnologia, Dispositivos Digitais e Cidadania Digital</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-01-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t1"><span class="sumario__texto">O que é tecnologia?</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t2"><span class="sumario__texto">Dispositivos digitais no cotidiano</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t3"><span class="sumario__texto">Evolução dos computadores</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t4"><span class="sumario__texto">Como os dispositivos se comunicam</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t5"><span class="sumario__texto">Cidadania digital</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-01-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-01-exercicios"><span class="sumario__texto">Exercícios</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-exercicios"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-02"><span class="sumario__texto">Capítulo 02 — Segurança Online, Fake News e Hardware × Software</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-02-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-02-t1"><span class="sumario__texto">Por que falar de segurança e de peças do computador na mesma aula?</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-02-t2"><span class="sumario__texto">Fake news: como reconhecer e checar</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-02-t3"><span class="sumario__texto">Golpes: o falso prêmio</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-02-t4"><span class="sumario__texto">Cyberbullying</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-02-t5"><span class="sumario__texto">Pegada digital</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-02-t6"><span class="sumario__texto">Hardware e software</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-02-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-02-exercicios"><span class="sumario__texto">Exercícios</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02-exercicios"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-03"><span class="sumario__texto">Capítulo 03 — Sistemas Operacionais, Arquivos e Pastas</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-03-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-03-t1"><span class="sumario__texto">O trabalho perdido</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-03-t2"><span class="sumario__texto">O que faz o sistema operacional</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-03-t3"><span class="sumario__texto">Tipos de sistemas operacionais</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-03-t4"><span class="sumario__texto">Área de trabalho, janelas e menus</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-03-t5"><span class="sumario__texto">Arquivos, pastas e extensões</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-03-t6"><span class="sumario__texto">Operações com arquivos e pastas</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-03-t7"><span class="sumario__texto">Organização que evita perder trabalhos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03-t7"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-03-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-03-exercicios"><span class="sumario__texto">Exercícios</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03-exercicios"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-04"><span class="sumario__texto">Capítulo 04 — Atalhos de Teclado, Editor de Texto e Apresentações</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-04-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-04-t1"><span class="sumario__texto">O portfólio do jovem aprendiz</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-04-t2"><span class="sumario__texto">Digitação e postura</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-04-t3"><span class="sumario__texto">Atalhos de teclado</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-04-t4"><span class="sumario__texto">Editor de texto</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-04-t5"><span class="sumario__texto">Apresentações básicas</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-04-t6"><span class="sumario__texto">Criatividade com tecnologia</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-04-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-04-exercicios"><span class="sumario__texto">Exercícios</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04-exercicios"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-05"><span class="sumario__texto">Capítulo 05 — Planilhas Simples e Boas Práticas de Pesquisa</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-05-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t1"><span class="sumario__texto">Quanto você gasta por semana?</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t2"><span class="sumario__texto">Planilhas simples</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t3"><span class="sumario__texto">Fórmulas</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t4"><span class="sumario__texto">Gráficos e o slide do resultado</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t5"><span class="sumario__texto">Mini portfólio digital</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t6"><span class="sumario__texto">Navegadores e buscadores</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t7"><span class="sumario__texto">Como avaliar uma fonte</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t7"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-05-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-05-exercicios"><span class="sumario__texto">Exercícios</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-exercicios"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-06"><span class="sumario__texto">Capítulo 06 — Internet Segura e Pensamento Computacional</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-06-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-06-t1"><span class="sumario__texto">Dois jeitos de pensar com segurança</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-06-t2"><span class="sumario__texto">Vírus e malware</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-06-t3"><span class="sumario__texto">Golpes (phishing)</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-06-t4"><span class="sumario__texto">Senhas fortes</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-06-t5"><span class="sumario__texto">Privacidade</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-06-t6"><span class="sumario__texto">Pensamento computacional</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-06-t7"><span class="sumario__texto">Entrada → processamento → saída</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-t7"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-06-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-06-exercicios"><span class="sumario__texto">Exercícios</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-exercicios"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-07"><span class="sumario__texto">Capítulo 07 — Algoritmos, Fluxogramas e Primeiros Passos no Scratch</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-07-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-07-t1"><span class="sumario__texto">Do papel para a tela</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-07-t2"><span class="sumario__texto">As três estruturas dos algoritmos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-07-t3"><span class="sumario__texto">Fluxogramas</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-07-t4"><span class="sumario__texto">Achando erros em algoritmos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-07-t5"><span class="sumario__texto">Scratch: a interface</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-07-t6"><span class="sumario__texto">Eventos e movimento</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-07-t7"><span class="sumario__texto">Entrada e saída no Scratch</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-t7"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-07-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-07-exercicios"><span class="sumario__texto">Exercícios</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-exercicios"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-08"><span class="sumario__texto">Capítulo 08 — Scratch: Condições, Repetições, Variáveis e Projeto Autoral</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-08-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-08-t1"><span class="sumario__texto">Seu primeiro jogo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-08-t2"><span class="sumario__texto">Condições</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-08-t3"><span class="sumario__texto">Repetições</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-08-t4"><span class="sumario__texto">Variáveis</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-08-t5"><span class="sumario__texto">Mini jogo: pegue a maçã</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-08-t6"><span class="sumario__texto">Animações, jogos e histórias interativas</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-08-t7"><span class="sumario__texto">Projeto autoral: do papel ao palco</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-t7"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-08-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-08-exercicios"><span class="sumario__texto">Exercícios</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-exercicios"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-09"><span class="sumario__texto">Capítulo 09 — Avaliação Final: Prova Conceitual e Apresentação do Projeto</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-09"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-09-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-09-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-09-t1"><span class="sumario__texto">Como é a avaliação final</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-09-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-09-t2"><span class="sumario__texto">Revisão dos 8 módulos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-09-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-09-t3"><span class="sumario__texto">Roteiro da apresentação (cerca de 1 minuto)</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-09-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-09-t4"><span class="sumario__texto">Como você será avaliado</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-09-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-09-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-09-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-09-exercicios"><span class="sumario__texto">Exercícios</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-09-exercicios"></span></a>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="introducao">
+            <h2 id="introducao">Introdução</h2>
+            <h3 id="introducao-t1">Apresentação</h3>
+            <p>Celular, computador, internet, aplicativos e jogos fazem parte do seu dia a dia. Mas você sabe
+            como eles funcionam por dentro, como usar cada um com segurança e como criar a sua própria
+            solução com tecnologia? Esta apostila acompanha a unidade curricular <strong>Fundamentos da Tecnologia
+            e Programação (UC 2)</strong> do programa <strong>Rio do Sul Mais Tech — SENAI</strong> e prepara você para as
+            oficinas de robótica e impressão 3D, para o raciocínio lógico e para o uso de ferramentas
+            digitais no trabalho.</p>
+            <p>Os exemplos acontecem na <strong>TecVale</strong>, uma empresa <strong>fictícia</strong> de tecnologia de Rio do Sul, e em
+            situações do seu cotidiano: a mensagem para um amigo, o golpe do falso prêmio, a planilha de
+            gastos da semana, o jogo no Scratch.</p>
+            <h3 id="introducao-t2">Objetivo geral da unidade curricular</h3>
+            <p>Desenvolver competências tecnológicas e computacionais, compreendendo os fundamentos da
+            informática e da programação, com foco no uso consciente da tecnologia e resolução de problemas.</p>
+            <h3 id="introducao-t3">Como a apostila está organizada</h3>
+            <p>A unidade tem <strong>33 horas</strong> em <strong>9 capítulos</strong>: cada capítulo corresponde a uma aula de 4 horas
+            (o capítulo 09 é a aula de 1 hora da avaliação final). Todos têm as mesmas partes:</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Parte</th>
+            <th>O que você encontra</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>🎯 Capacidades</td>
+            <td>O que você vai desenvolver no capítulo</td>
+            </tr>
+            <tr>
+            <td>📖 Teoria e exemplos</td>
+            <td>Explicação do conteúdo com situações do cotidiano e da TecVale</td>
+            </tr>
+            <tr>
+            <td>📌 Resumo</td>
+            <td>Os pontos principais para estudar antes da avaliação</td>
+            </tr>
+            <tr>
+            <td>✍️ Exercícios</td>
+            <td>Questões no padrão ITEM (Capacidade, Contexto, Comando e Resposta)</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>O <strong>glossário</strong>, no início da apostila, reúne os termos técnicos de todos os capítulos, em ordem
+            alfabética.</p>
+            <h3 id="introducao-t4">Como estudar com esta apostila</h3>
+            <ul>
+            <li>Leia a teoria <strong>antes ou logo depois</strong> da aula correspondente.</li>
+            <li>Anote as dúvidas para levar ao professor.</li>
+            <li>Revise o resumo e consulte o glossário sempre que encontrar um termo novo.</li>
+            <li>Responda os exercícios com suas palavras e <strong>explique o seu raciocínio</strong>: o caminho da solução
+              vale tanto quanto o resultado.</li>
+            <li>Os exercícios podem ser impressos separadamente pelo botão <strong>Exportar PDF</strong> ao lado do título
+              de cada seção de exercícios.</li>
+            </ul>
+            <h3 id="introducao-t5">Como você será avaliado</h3>
+            <p>A nota final combina quatro partes:</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Critério</th>
+            <th>Peso</th>
+            <th>O que é avaliado</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Testes/Provas</td>
+            <td>35%</td>
+            <td>Compreensão conceitual (atividades das aulas e prova final)</td>
+            </tr>
+            <tr>
+            <td>Projetos</td>
+            <td>40%</td>
+            <td>Documento, planilha e projeto Scratch (cada produto dos módulos vale como evidência)</td>
+            </tr>
+            <tr>
+            <td>Participação</td>
+            <td>15%</td>
+            <td>Engajamento e colaboração</td>
+            </tr>
+            <tr>
+            <td>Autoavaliação</td>
+            <td>10%</td>
+            <td>Reflexão sobre o seu progresso</td>
+            </tr>
+            </tbody>
+            </table>
+            <table>
+            <thead>
+            <tr>
+            <th>Nível</th>
+            <th>Nota</th>
+            <th>O que significa</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Excelente</td>
+            <td>9 a 10</td>
+            <td>Domina os conceitos, aplica com criatividade e explica o raciocínio com clareza</td>
+            </tr>
+            <tr>
+            <td>Bom</td>
+            <td>7 a 8</td>
+            <td>Compreende bem e aplica com pouca orientação</td>
+            </tr>
+            <tr>
+            <td>Aceitável</td>
+            <td>5 a 6</td>
+            <td>Compreensão básica, precisa de orientação frequente</td>
+            </tr>
+            <tr>
+            <td>Insuficiente</td>
+            <td>0 a 4</td>
+            <td>Dificuldade em aplicar; exige reforço</td>
+            </tr>
+            </tbody>
+            </table>
+            <p><strong>Aprovação:</strong> nota final igual ou maior que <strong>7,0</strong>. Na <strong>avaliação final</strong> (capítulo 09) há uma
+            prova conceitual e a apresentação do seu projeto no Scratch.</p>
+            <p><strong>Recuperação:</strong> reforço no tópico em que você errou, nova entrega do produto do módulo com
+            feedback do professor e revisão em duplas antes da avaliação final.</p>
+            <h3 id="introducao-t6">Ambientes, recursos e acessibilidade</h3>
+            <p>As aulas acontecem no <strong>laboratório de informática</strong>, com computadores, internet e projetor.
+            Usaremos Google Workspace (Docs, Slides, Sheets) ou LibreOffice como alternativa gratuita, o
+            Scratch (online ou instalado), ferramentas de fluxograma e, quando houver, um kit de peças de
+            computador. Textos curtos, vídeos de 2 a 5 minutos e quizzes ajudam a revisar.</p>
+            <p><strong>Acessibilidade:</strong> os materiais têm texto, imagem e vídeo, com legenda e contraste adequado.
+            Quem tem pouca prática com o computador trabalha em dupla, e alunos com necessidades específicas
+            podem ter mais tempo e passos menores. Se precisar, converse com o professor.</p>
+            <h3 id="introducao-t7">Situações de aprendizagem</h3>
+            <p>Em cada módulo você resolve uma situação-problema e entrega um produto:</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Capítulos</th>
+            <th>Produto</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>01</td>
+            <td>Mural digital com a linha do tempo dos computadores</td>
+            </tr>
+            <tr>
+            <td>02</td>
+            <td>Cartaz digital da campanha da turma (fake news, golpes ou cyberbullying)</td>
+            </tr>
+            <tr>
+            <td>03</td>
+            <td>Quadro comparativo de sistemas e estrutura de pastas de um projeto</td>
+            </tr>
+            <tr>
+            <td>04 e 05</td>
+            <td>Mini portfólio digital: documento, slides e planilha; ficha de pesquisa</td>
+            </tr>
+            <tr>
+            <td>06 e 07</td>
+            <td>Algoritmo e fluxograma de uma rotina</td>
+            </tr>
+            <tr>
+            <td>08 e 09</td>
+            <td>Jogo ou história no Scratch, apresentado e explicado</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Em todas, vale o <strong>critério comum</strong>: explicar o caminho da solução, não apenas o resultado, e
+            citar ao menos um exemplo real.</p>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="capacidades">
+            <h2 id="capacidades">Capacidades da matéria</h2>
+            <h3>Capacidades básicas</h3>
+            <p class="capacidade-item"><strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p>
+            <p class="capacidade-item"><strong>C2</strong> — Compreender como os diferentes dispositivos interagem, desde computadores até dispositivos móveis.</p>
+            <p class="capacidade-item"><strong>C3</strong> — Desenvolver a habilidade de pensar de forma lógica, sequencial e estruturada para resolver problemas através de código.</p>
+            <p class="capacidade-item"><strong>C4</strong> — Aprender a desenvolver e entender algoritmos simples para resolver problemas.</p>
+            <p class="capacidade-item"><strong>C5</strong> — Aprender a interagir com o usuário ou com outros sistemas através de entrada e saída de dados.</p>
+            <p class="capacidade-item"><strong>C6</strong> — Desenvolver a capacidade de pensar criativamente sobre como solucionar problemas de forma inovadora utilizando tecnologia.</p>
+            <p class="capacidade-item"><strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p>
+            <h3>Capacidades por capítulo</h3>
+            <table><thead><tr><th>Capítulo</th><th>Capacidades</th></tr></thead><tbody><tr><td>Capítulo 01 — Tecnologia, Dispositivos Digitais e Cidadania Digital</td><td>C1, C2, C7</td></tr><tr><td>Capítulo 02 — Segurança Online, Fake News e Hardware × Software</td><td>C1, C7</td></tr><tr><td>Capítulo 03 — Sistemas Operacionais, Arquivos e Pastas</td><td>C1, C2</td></tr><tr><td>Capítulo 04 — Atalhos de Teclado, Editor de Texto e Apresentações</td><td>C1, C6</td></tr><tr><td>Capítulo 05 — Planilhas Simples e Boas Práticas de Pesquisa</td><td>C1, C6, C7</td></tr><tr><td>Capítulo 06 — Internet Segura e Pensamento Computacional</td><td>C1, C3, C4, C7</td></tr><tr><td>Capítulo 07 — Algoritmos, Fluxogramas e Primeiros Passos no Scratch</td><td>C3, C4, C5</td></tr><tr><td>Capítulo 08 — Scratch: Condições, Repetições, Variáveis e Projeto Autoral</td><td>C3, C4, C5, C6</td></tr><tr><td>Capítulo 09 — Avaliação Final: Prova Conceitual e Apresentação do Projeto</td><td>C1, C2, C3, C4, C5, C6, C7</td></tr></tbody></table>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="glossario">
+            <h2 id="glossario">Glossário</h2>
+            <p class="glossario__termo"><strong>Abstração:</strong> ignorar detalhes para focar no essencial <a class="glossario__capitulo" href="#capitulo-06">(cap. 06)</a></p>
+            <p class="glossario__termo"><strong>Agência de checagem:</strong> organização que verifica se notícias são verdadeiras. <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
+            <p class="glossario__termo"><strong>Algoritmo:</strong> sequência finita de passos para resolver um problema <a class="glossario__capitulo" href="#capitulo-06">(cap. 06)</a></p>
+            <p class="glossario__termo"><strong>Apresentação oral:</strong> exposição falada do projeto para a turma. <a class="glossario__capitulo" href="#capitulo-09">(cap. 09)</a></p>
+            <p class="glossario__termo"><strong>Área de trabalho:</strong> tela inicial do sistema, com ícones e papel de parede. <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
+            <p class="glossario__termo"><strong>Armazenamento:</strong> peça (SSD ou HD) que guarda arquivos e programas de forma permanente. <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
+            <p class="glossario__termo"><strong>Arquivo:</strong> conjunto de dados guardado com um nome e uma extensão (texto, imagem, vídeo). <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
+            <p class="glossario__termo"><strong>Atalho de teclado:</strong> combinação de teclas que executa um comando sem usar o mouse. <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>Ator:</strong> personagem ou objeto do Scratch que recebe os blocos. <a class="glossario__capitulo" href="#capitulo-07">(cap. 07)</a></p>
+            <p class="glossario__termo"><strong>Autoavaliação:</strong> reflexão do próprio aluno sobre o que aprendeu e o que precisa melhorar. <a class="glossario__capitulo" href="#capitulo-09">(cap. 09)</a></p>
+            <p class="glossario__termo"><strong>Avaliação conceitual:</strong> prova que verifica se você compreendeu os conceitos. <a class="glossario__capitulo" href="#capitulo-09">(cap. 09)</a></p>
+            <p class="glossario__termo"><strong>Bloco:</strong> peça de comando do Scratch que se encaixa em outras. <a class="glossario__capitulo" href="#capitulo-07">(cap. 07)</a></p>
+            <p class="glossario__termo"><strong>Buscador:</strong> site que encontra páginas na internet (Google, Bing). <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
+            <p class="glossario__termo"><strong>Caminho:</strong> endereço de um arquivo, com as pastas em que ele está. <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
+            <p class="glossario__termo"><strong>Célula:</strong> encontro de uma coluna com uma linha, identificado como B3. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
+            <p class="glossario__termo"><strong>Cidadania digital:</strong> uso da internet com respeito, responsabilidade e segurança, conhecendo direitos e deveres. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Compartilhar:</strong> dar a outra pessoa acesso para ler, comentar ou editar um arquivo na nuvem. <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>Condição:</strong> pergunta de verdadeiro ou falso que decide o que o programa faz. <a class="glossario__capitulo" href="#capitulo-08">(cap. 08)</a></p>
+            <p class="glossario__termo"><strong>Contraste:</strong> diferença de cor entre o texto e o fundo, que facilita a leitura. <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>Critério comum:</strong> regra que vale para todas as atividades: explicar o caminho da solução. <a class="glossario__capitulo" href="#capitulo-09">(cap. 09)</a></p>
+            <p class="glossario__termo"><strong>Cyberbullying:</strong> agressão repetida pela internet, como ofensas, exposição e perfis falsos. <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
+            <p class="glossario__termo"><strong>Decisão (condicional):</strong> estrutura que escolhe um caminho conforme uma condição (se... então... senão). <a class="glossario__capitulo" href="#capitulo-07">(cap. 07)</a></p>
+            <p class="glossario__termo"><strong>Decomposição:</strong> dividir um problema grande em partes menores <a class="glossario__capitulo" href="#capitulo-06">(cap. 06)</a></p>
+            <p class="glossario__termo"><strong>Depuração:</strong> encontrar e corrigir erros em um programa. <a class="glossario__capitulo" href="#capitulo-08">(cap. 08)</a></p>
+            <p class="glossario__termo"><strong>Dispositivo digital:</strong> equipamento que recebe dados, processa e devolve um resultado (celular, notebook, smart TV). <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Distribuição Linux:</strong> versão do Linux montada por um grupo ou empresa (ex.: Ubuntu). <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
+            <p class="glossario__termo"><strong>Editor de texto:</strong> programa para escrever e formatar documentos (Google Docs, WordPad, Writer). <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>ENIAC:</strong> um dos primeiros computadores eletrônicos (1946), feito com milhares de válvulas. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Entrada:</strong> dado que o dispositivo recebe (toque, tecla, voz, imagem). <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Entrada e saída de dados:</strong> o que o programa recebe do usuário e o que mostra para ele. <a class="glossario__capitulo" href="#capitulo-07">(cap. 07)</a></p>
+            <p class="glossario__termo"><strong>Ergonomia:</strong> cuidado com a postura e o ambiente para evitar dores e cansaço. <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>Evento (Scratch):</strong> ação que dispara um bloco, como clicar na bandeira verde <a class="glossario__capitulo" href="#capitulo-07">(cap. 07)</a></p>
+            <p class="glossario__termo"><strong>Extensão:</strong> final do nome do arquivo que indica o tipo (.docx, .pdf, .png). <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
+            <p class="glossario__termo"><strong>Fake news:</strong> informação falsa apresentada como verdadeira <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
+            <p class="glossario__termo"><strong>Fantasia:</strong> aparência de um ator do Scratch; trocar fantasias cria animação. <a class="glossario__capitulo" href="#capitulo-08">(cap. 08)</a></p>
+            <p class="glossario__termo"><strong>Fluxograma:</strong> desenho que mostra os passos de um algoritmo com símbolos <a class="glossario__capitulo" href="#capitulo-07">(cap. 07)</a></p>
+            <p class="glossario__termo"><strong>Fonte confiável:</strong> origem de informação com autor, data e referências, confirmada por outras fontes. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
+            <p class="glossario__termo"><strong>Formatação:</strong> aparência do texto (fonte, tamanho, cor, alinhamento). <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>Fórmula:</strong> instrução que começa com = e faz um cálculo na planilha. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
+            <p class="glossario__termo"><strong>Golpe digital:</strong> mensagem falsa que tenta obter dados ou dinheiro, como o falso prêmio. <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
+            <p class="glossario__termo"><strong>Gráfico:</strong> representação visual dos dados (colunas, pizza, linhas). <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
+            <p class="glossario__termo"><strong>Hardware / software:</strong> parte física / parte lógica do computador <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
+            <p class="glossario__termo"><strong>Intervalo:</strong> conjunto de células, como B2:B8. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
+            <p class="glossario__termo"><strong>Janela:</strong> área da tela onde um programa aparece aberto. <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
+            <p class="glossario__termo"><strong>Laço infinito:</strong> repetição sem fim, como o bloco &quot;sempre&quot;. <a class="glossario__capitulo" href="#capitulo-08">(cap. 08)</a></p>
+            <p class="glossario__termo"><strong>Lixeira:</strong> local onde ficam os arquivos excluídos até serem apagados de vez. <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
+            <p class="glossario__termo"><strong>Malware:</strong> qualquer software criado para causar dano ou roubar dados. <a class="glossario__capitulo" href="#capitulo-06">(cap. 06)</a></p>
+            <p class="glossario__termo"><strong>Memória RAM:</strong> memória que guarda o que está em uso e se apaga ao desligar. <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
+            <p class="glossario__termo"><strong>Menu de contexto:</strong> lista de opções aberta com o botão direito do mouse. <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
+            <p class="glossario__termo"><strong>Navegador:</strong> programa que abre sites (Chrome, Edge, Firefox). <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
+            <p class="glossario__termo"><strong>Operador:</strong> bloco que compara ou calcula valores (&gt;, &lt;, =, +). <a class="glossario__capitulo" href="#capitulo-08">(cap. 08)</a></p>
+            <p class="glossario__termo"><strong>Palavra-chave:</strong> termo principal usado numa pesquisa. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
+            <p class="glossario__termo"><strong>Palco:</strong> área do Scratch onde a ação acontece. <a class="glossario__capitulo" href="#capitulo-07">(cap. 07)</a></p>
+            <p class="glossario__termo"><strong>Pasta:</strong> recipiente que organiza arquivos e outras pastas. <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
+            <p class="glossario__termo"><strong>PDF:</strong> formato de arquivo que mantém a aparência do documento em qualquer dispositivo. <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>Pegada digital:</strong> rastro deixado por tudo que fazemos online <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
+            <p class="glossario__termo"><strong>Pensamento computacional:</strong> forma de resolver problemas usando decomposição, padrões, abstração e algoritmos. <a class="glossario__capitulo" href="#capitulo-06">(cap. 06)</a></p>
+            <p class="glossario__termo"><strong>Periférico:</strong> dispositivo ligado ao computador para entrada ou saída de dados. <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
+            <p class="glossario__termo"><strong>Phishing:</strong> golpe que imita empresas ou pessoas para roubar senhas e dados. <a class="glossario__capitulo" href="#capitulo-06">(cap. 06)</a></p>
+            <p class="glossario__termo"><strong>Placar:</strong> exibição dos pontos e vidas no palco. <a class="glossario__capitulo" href="#capitulo-08">(cap. 08)</a></p>
+            <p class="glossario__termo"><strong>Planilha:</strong> programa ou arquivo que organiza dados em linhas e colunas e faz cálculos. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
+            <p class="glossario__termo"><strong>Portfólio:</strong> conjunto de trabalhos que mostra o que a pessoa sabe fazer. <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>Processador (CPU):</strong> peça que executa as instruções dos programas. <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
+            <p class="glossario__termo"><strong>Projeto autoral:</strong> projeto criado com uma ideia original do próprio aluno. <a class="glossario__capitulo" href="#capitulo-08">(cap. 08)</a></p>
+            <p class="glossario__termo"><strong>Protocolo:</strong> conjunto de regras que os dispositivos seguem para se comunicar. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Reconhecimento de padrões:</strong> perceber o que se repete em problemas parecidos. <a class="glossario__capitulo" href="#capitulo-06">(cap. 06)</a></p>
+            <p class="glossario__termo"><strong>Repetição (laço):</strong> estrutura que repete passos várias vezes ou até uma condição. <a class="glossario__capitulo" href="#capitulo-07">(cap. 07)</a></p>
+            <p class="glossario__termo"><strong>Revisão:</strong> retomada dos conteúdos antes da avaliação. <a class="glossario__capitulo" href="#capitulo-09">(cap. 09)</a></p>
+            <p class="glossario__termo"><strong>Roteador:</strong> aparelho que distribui a internet e encaminha os dados entre os dispositivos e a rede. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Roteiro:</strong> planejamento escrito do projeto antes de programar. <a class="glossario__capitulo" href="#capitulo-08">(cap. 08)</a></p>
+            <p class="glossario__termo"><strong>Rubrica:</strong> tabela com os níveis de desempenho e o que cada um significa. <a class="glossario__capitulo" href="#capitulo-09">(cap. 09)</a></p>
+            <p class="glossario__termo"><strong>Saída:</strong> resultado que o dispositivo entrega (imagem, som, impressão). <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Scratch:</strong> linguagem de programação em blocos criada pelo MIT. <a class="glossario__capitulo" href="#capitulo-07">(cap. 07)</a></p>
+            <p class="glossario__termo"><strong>Senha forte:</strong> senha longa, única e com letras, números e símbolos. <a class="glossario__capitulo" href="#capitulo-06">(cap. 06)</a></p>
+            <p class="glossario__termo"><strong>Sensor:</strong> bloco do Scratch que verifica toques, teclas, cores e distâncias. <a class="glossario__capitulo" href="#capitulo-08">(cap. 08)</a></p>
+            <p class="glossario__termo"><strong>Sequência:</strong> passos de um algoritmo executados um depois do outro. <a class="glossario__capitulo" href="#capitulo-07">(cap. 07)</a></p>
+            <p class="glossario__termo"><strong>Servidor:</strong> computador que guarda e oferece dados e serviços para outros dispositivos pela rede. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Sistema operacional:</strong> software que gerencia o computador e os programas <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
+            <p class="glossario__termo"><strong>Slide:</strong> cada página de uma apresentação. <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>Tecnologia:</strong> conhecimento, ferramenta ou técnica criada para resolver um problema ou facilitar uma tarefa. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Tecnologia digital:</strong> tecnologia que trabalha com informações transformadas em números (0 e 1). <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Transição:</strong> efeito de passagem de um slide para o próximo. <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>URL:</strong> endereço de uma página na internet. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
+            <p class="glossario__termo"><strong>Variável:</strong> espaço nomeado que guarda um valor mutável <a class="glossario__capitulo" href="#capitulo-08">(cap. 08)</a></p>
+            <p class="glossario__termo"><strong>Verificação em duas etapas:</strong> proteção que pede, além da senha, um código enviado ao celular. <a class="glossario__capitulo" href="#capitulo-06">(cap. 06)</a></p>
+            <p class="glossario__termo"><strong>Vírus:</strong> malware que se espalha copiando-se para outros arquivos. <a class="glossario__capitulo" href="#capitulo-06">(cap. 06)</a></p>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-01">
+            <div class="capitulo__abertura" id="capitulo-01" data-titulo="sim"><span class="capitulo__rotulo">AULA 01</span><h2>Capítulo 01 — Tecnologia, Dispositivos Digitais e Cidadania Digital</h2><p class="capitulo__capacidades">🎯 <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.<br><strong>C2</strong> — Compreender como os diferentes dispositivos interagem, desde computadores até dispositivos móveis.<br><strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p></div>
+            <h3 id="capitulo-01-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-01-t1">O que é tecnologia?</h4>
+            <p>Pense no seu dia: o despertador do celular tocou, você esquentou o café no micro-ondas, pegou o
+            ônibus, passou o cartão na catraca da escola e mandou uma mensagem para um amigo. Em cada passo
+            havia <strong>tecnologia</strong>.</p>
+            <p><strong>Tecnologia</strong> é todo conhecimento, ferramenta ou técnica que o ser humano cria para resolver um
+            problema ou facilitar uma tarefa. A roda, o lápis, a lâmpada e a geladeira são tecnologias. O
+            computador e o celular são <strong>tecnologias digitais</strong>: trabalham com informações transformadas em
+            números (0 e 1), o que permite guardar, processar e enviar textos, fotos, sons e vídeos.</p>
+            <blockquote>
+            <p>🎯 <strong>Objetivos do capítulo:</strong> explicar o que é tecnologia, reconhecer os dispositivos digitais do
+            cotidiano, ordenar os principais marcos da evolução dos computadores, entender como dois
+            dispositivos se comunicam e conhecer o que é cidadania digital.</p>
+            </blockquote>
+            <h4 id="capitulo-01-t2">Dispositivos digitais no cotidiano</h4>
+            <p>Dispositivo digital é todo equipamento que recebe dados, processa e devolve um resultado. Todos
+            seguem a mesma lógica: <strong>entrada → processamento → saída</strong>.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Dispositivo</th>
+            <th>Entrada (o que recebe)</th>
+            <th>Saída (o que entrega)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Celular</td>
+            <td>Toque na tela, voz, câmera</td>
+            <td>Imagem na tela, som, vibração</td>
+            </tr>
+            <tr>
+            <td>Notebook ou Chromebook</td>
+            <td>Teclado, mouse, microfone</td>
+            <td>Tela, caixa de som, impressão</td>
+            </tr>
+            <tr>
+            <td>Smart TV</td>
+            <td>Controle remoto, voz, internet</td>
+            <td>Vídeo e áudio</td>
+            </tr>
+            <tr>
+            <td>Relógio inteligente</td>
+            <td>Batimentos, passos, toque</td>
+            <td>Notificações, contagem de passos</td>
+            </tr>
+            <tr>
+            <td>Máquina de cartão</td>
+            <td>Cartão, senha</td>
+            <td>Comprovante e aprovação da compra</td>
+            </tr>
+            <tr>
+            <td>Catraca da escola</td>
+            <td>Cartão ou digital</td>
+            <td>Liberação da passagem e registro da presença</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>🔍 <strong>Exemplo:</strong> na <strong>TecVale</strong> (empresa fictícia de tecnologia de Rio do Sul usada nos exemplos
+            desta apostila), o técnico recebe um pedido pelo celular, consulta o estoque no notebook, imprime a
+            etiqueta e registra a entrega num tablet. São quatro dispositivos diferentes trabalhando no mesmo
+            processo.</p>
+            <h4 id="capitulo-01-t3">Evolução dos computadores</h4>
+            <p>Os computadores nem sempre foram pequenos e portáteis. Veja os principais marcos:</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Época</th>
+            <th>Marco</th>
+            <th>O que mudou</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Antiguidade</td>
+            <td><strong>Ábaco</strong></td>
+            <td>Contas deslizando em varetas ajudavam a calcular</td>
+            </tr>
+            <tr>
+            <td>Séc. XVII a XIX</td>
+            <td><strong>Máquinas de calcular mecânicas</strong></td>
+            <td>Engrenagens faziam somas e multiplicações</td>
+            </tr>
+            <tr>
+            <td>1946</td>
+            <td><strong>ENIAC</strong></td>
+            <td>Computador eletrônico com milhares de válvulas; ocupava uma sala e pesava cerca de 30 toneladas</td>
+            </tr>
+            <tr>
+            <td>Anos 1950 e 1960</td>
+            <td><strong>Transistor e circuito integrado</strong></td>
+            <td>Computadores menores, mais rápidos, mais baratos e que esquentavam menos</td>
+            </tr>
+            <tr>
+            <td>Anos 1980</td>
+            <td><strong>Computador pessoal (PC)</strong></td>
+            <td>O computador chega às casas, escolas e escritórios</td>
+            </tr>
+            <tr>
+            <td>Anos 1990</td>
+            <td><strong>Internet</strong></td>
+            <td>Computadores do mundo inteiro passam a se comunicar</td>
+            </tr>
+            <tr>
+            <td>Anos 2000</td>
+            <td><strong>Smartphone</strong></td>
+            <td>Um computador no bolso, sempre conectado</td>
+            </tr>
+            <tr>
+            <td>Hoje</td>
+            <td><strong>Nuvem e inteligência artificial</strong></td>
+            <td>Arquivos guardados em servidores e programas que aprendem com dados</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>🔑 <strong>Ponto-chave:</strong> a cada etapa, os computadores ficaram <strong>menores, mais rápidos, mais baratos e
+            mais conectados</strong>. O seu celular tem muito mais capacidade do que o ENIAC inteiro.</p>
+            <h4 id="capitulo-01-t4">Como os dispositivos se comunicam</h4>
+            <p>Quando você manda uma mensagem pelo WhatsApp, ela faz um caminho:</p>
+            <ol>
+            <li>O <strong>celular</strong> transforma o texto em dados digitais.</li>
+            <li>Os dados vão pelo <strong>Wi-Fi</strong> (ou pela rede móvel 4G/5G) até o <strong>roteador</strong> ou a antena.</li>
+            <li>O roteador envia os dados pela <strong>internet</strong>, uma rede que liga redes do mundo inteiro.</li>
+            <li>Os dados chegam ao <strong>servidor</strong> do aplicativo, um computador que guarda e repassa as mensagens.</li>
+            <li>O servidor envia a mensagem para o <strong>celular do seu amigo</strong>, que mostra o aviso na tela.</li>
+            </ol>
+            <p>Dispositivos de marcas e tipos diferentes (celular, notebook, smart TV) conseguem conversar porque
+            todos seguem as mesmas regras de comunicação, chamadas <strong>protocolos</strong>.</p>
+            <h4 id="capitulo-01-t5">Cidadania digital</h4>
+            <p>Ser <strong>cidadão digital</strong> é usar a internet com <strong>respeito, responsabilidade e segurança</strong>. Os mesmos
+            direitos e deveres da vida fora da tela valem dentro dela.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Direitos</th>
+            <th>Deveres</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Privacidade dos seus dados</td>
+            <td>Respeitar a privacidade dos outros (não expor fotos e conversas sem permissão)</td>
+            </tr>
+            <tr>
+            <td>Liberdade de expressão</td>
+            <td>Expressar opiniões sem ofender, discriminar ou espalhar mentiras</td>
+            </tr>
+            <tr>
+            <td>Acesso à informação</td>
+            <td>Conferir a informação antes de compartilhar</td>
+            </tr>
+            <tr>
+            <td>Segurança</td>
+            <td>Proteger senhas e não clicar em links suspeitos</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>🔍 <strong>Exemplo:</strong> um colega posta no grupo da turma a foto de outro aluno dormindo na aula, com uma
+            legenda engraçada. Mesmo que pareça brincadeira, a foto foi exposta sem permissão. O cidadão
+            digital não compartilha, avisa o colega e, se continuar, conta para um adulto de confiança.</p>
+            <h3 id="capitulo-01-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li><strong>Tecnologia</strong> é o que o ser humano cria para resolver problemas; as <strong>tecnologias digitais</strong> trabalham com dados transformados em números.</li><li>Todo dispositivo digital segue a lógica <strong>entrada → processamento → saída</strong>.</li><li>Os computadores evoluíram do ábaco ao ENIAC, ao PC, à internet e ao smartphone, ficando <strong>menores, mais rápidos e mais conectados</strong>.</li><li>Uma mensagem vai do celular ao <strong>roteador</strong>, passa pela <strong>internet</strong> e pelo <strong>servidor</strong> até chegar ao destino; dispositivos diferentes se entendem por seguirem os mesmos <strong>protocolos</strong>.</li><li><strong>Cidadania digital</strong> é usar a internet com respeito, responsabilidade e segurança: os direitos e deveres valem também na tela.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="exercicios" data-capitulo="capitulo-01">
+            <h3 id="capitulo-01-exercicios">✍️ Exercícios<button class="apostila__botao apostila__botao--pequeno" type="button" data-exportar-exercicios="capitulo-01">📥 Exportar PDF</button></h3>
+            <p class="exercicios__capitulo">Capítulo 01 — Tecnologia, Dispositivos Digitais e Cidadania Digital</p>
+            <div class="exercicios__identificacao"><span class="exercicios__campo">Aluno(a):</span><span class="exercicios__campo">Turma:</span><span class="exercicios__campo">Data:</span></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 1</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Seu avô pergunta o que mudou dos primeiros computadores para o celular que ele usa hoje.</p><p><span class="exercicio-label">Comando:</span> Explique em 5 frases o que mudou, citando pelo menos três marcos da evolução dos computadores (por exemplo: ENIAC, computador pessoal, internet, smartphone).</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 2</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C2</strong> — Compreender como os diferentes dispositivos interagem, desde computadores até dispositivos móveis.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Você mandou pelo WhatsApp uma foto da apresentação do trabalho para um colega que está em casa.</p><p><span class="exercicio-label">Comando:</span> Monte um esquema (desenho com setas ou lista numerada) do caminho da foto, do seu celular até o celular do colega, e explique a função de cada parte (Wi-Fi, roteador, internet, servidor).</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 3</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Na TecVale, o técnico usa no mesmo dia um celular, um notebook, uma impressora de etiquetas e um tablet.</p><p><span class="exercicio-label">Comando:</span> Escolha três desses dispositivos e diga, para cada um, qual é a entrada, o processamento e a saída.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 4</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> A turma vai montar um mural digital com a linha do tempo dos computadores. Os cartões chegaram embaralhados: smartphone, ábaco, ENIAC, internet, computador pessoal, transistor.</p><p><span class="exercicio-label">Comando:</span> Coloque os cartões na ordem correta e escreva, ao lado de cada um, uma frase sobre o que ele mudou.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 5</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> No grupo da turma, um aluno postou a foto de um colega dormindo na aula com uma legenda engraçada. Muitos riram e alguns já estão repassando a foto para outros grupos.</p><p><span class="exercicio-label">Comando:</span> Explique, como cidadão digital, o que está errado nessa situação, que direito do colega foi desrespeitado e o que você faria.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 6</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C2</strong> — Compreender como os diferentes dispositivos interagem, desde computadores até dispositivos móveis.<br><strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Sua família tem um celular, uma smart TV e um notebook ligados no mesmo Wi-Fi. Seu irmão mais novo quer usar todos ao mesmo tempo e não sabe o que pode ou não postar.</p><p><span class="exercicio-label">Comando:</span> Explique por que esses dispositivos conseguem se comunicar e escreva três regras de uso responsável da internet para ensinar a ele.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-02">
+            <div class="capitulo__abertura" id="capitulo-02" data-titulo="sim"><span class="capitulo__rotulo">AULA 02</span><h2>Capítulo 02 — Segurança Online, Fake News e Hardware × Software</h2><p class="capitulo__capacidades">🎯 <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.<br><strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p></div>
+            <h3 id="capitulo-02-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-02-t1">Por que falar de segurança e de peças do computador na mesma aula?</h4>
+            <p>Um funcionário da <strong>TecVale</strong> recebeu um e-mail: "Parabéns, você ganhou um notebook! Clique aqui
+            e confirme seu login e senha". Ele clicou. No dia seguinte, o computador estava lento e cheio de
+            janelas estranhas. A equipe de TI explicou: as peças do computador (o <strong>hardware</strong>) estavam
+            perfeitas; o problema era um programa malicioso (<strong>software</strong>) instalado pelo link falso.</p>
+            <p>Para usar a tecnologia com segurança, é preciso saber <strong>o que é verdade na internet</strong> e <strong>como o
+            computador funciona por dentro</strong>.</p>
+            <blockquote>
+            <p>🎯 <strong>Objetivos do capítulo:</strong> checar notícias antes de compartilhar, reconhecer e combater o
+            cyberbullying, cuidar da sua pegada digital e diferenciar hardware de software, nomeando as
+            principais peças do computador.</p>
+            </blockquote>
+            <h4 id="capitulo-02-t2">Fake news: como reconhecer e checar</h4>
+            <p><strong>Fake news</strong> é informação falsa apresentada como verdadeira. Ela se espalha rápido porque mexe
+            com emoções (medo, raiva, surpresa) e porque muita gente compartilha sem ler.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Sinal de alerta</th>
+            <th>Exemplo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Título alarmante, em letras maiúsculas</td>
+            <td>"URGENTE!!! VACINA TEM CHIP"</td>
+            </tr>
+            <tr>
+            <td>Pede para compartilhar</td>
+            <td>"Mande para todos os seus contatos antes que apaguem"</td>
+            </tr>
+            <tr>
+            <td>Não tem autor, fonte ou data</td>
+            <td>Texto copiado sem origem</td>
+            </tr>
+            <tr>
+            <td>Imagem antiga ou fora de contexto</td>
+            <td>Foto de enchente de 2015 usada como se fosse de hoje</td>
+            </tr>
+            <tr>
+            <td>Promessa boa demais</td>
+            <td>"Ganhe R$ 500 só por responder esta pesquisa"</td>
+            </tr>
+            </tbody>
+            </table>
+            <p><strong>Como checar em 5 passos:</strong></p>
+            <ol>
+            <li>Leia a notícia inteira, não só o título.</li>
+            <li>Veja <strong>quem publicou</strong> e se o site é conhecido.</li>
+            <li>Confira a <strong>data</strong>.</li>
+            <li>Procure a mesma informação em <strong>outros veículos</strong> confiáveis.</li>
+            <li>Consulte <strong>agências de checagem</strong> e faça a busca reversa da imagem.</li>
+            </ol>
+            <h4 id="capitulo-02-t3">Golpes: o falso prêmio</h4>
+            <p>Golpes usam a mesma lógica das fake news: uma mensagem que parece de uma loja, banco ou amigo pede
+            que você clique num link, informe dados ou faça um pagamento. Se recebeu um link de prêmio que não
+            pediu, <strong>não clique</strong>, confirme com a empresa pelo site oficial, avise quem enviou e denuncie a
+            mensagem no aplicativo.</p>
+            <h4 id="capitulo-02-t4">Cyberbullying</h4>
+            <p><strong>Cyberbullying</strong> é a agressão repetida pela internet: ofensas, apelidos, exposição de fotos,
+            perfis falsos, ameaças ou exclusão proposital de grupos. Por estar na rede, alcança muita gente e
+            fica registrado.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Se você é a vítima</th>
+            <th>Se você presencia</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Não responda com agressão</td>
+            <td>Não curta nem compartilhe</td>
+            </tr>
+            <tr>
+            <td>Guarde provas (prints com data)</td>
+            <td>Apoie a vítima em particular</td>
+            </tr>
+            <tr>
+            <td>Bloqueie e denuncie na plataforma</td>
+            <td>Denuncie o conteúdo</td>
+            </tr>
+            <tr>
+            <td>Conte para um adulto de confiança</td>
+            <td>Avise um professor ou responsável</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>🔑 <strong>Ponto-chave:</strong> quem compartilha uma agressão também participa dela.</p>
+            <h4 id="capitulo-02-t5">Pegada digital</h4>
+            <p><strong>Pegada digital</strong> é o rastro deixado por tudo que fazemos online.</p>
+            <ul>
+            <li><strong>Ativa:</strong> o que você publica, comenta, curte e envia.</li>
+            <li><strong>Passiva:</strong> o que é coletado sem você perceber — localização, histórico de navegação, cookies,
+              tempo em cada vídeo.</li>
+            </ul>
+            <p>Uma empresa pode pesquisar seu nome antes de uma entrevista de emprego. Pense antes de postar:
+            <strong>"eu ficaria tranquilo se isto aparecesse daqui a cinco anos?"</strong></p>
+            <h4 id="capitulo-02-t6">Hardware e software</h4>
+            <ul>
+            <li><strong>Hardware</strong> é a parte <strong>física</strong> do computador: tudo o que se pode tocar.</li>
+            <li><strong>Software</strong> é a parte <strong>lógica</strong>: os programas e as instruções que dizem ao hardware o que fazer.</li>
+            </ul>
+            <p>Um não funciona sem o outro: sem software, o hardware não faz nada; sem hardware, o software não
+            tem onde rodar.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Peça (hardware)</th>
+            <th>Função</th>
+            <th>Comparação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Processador (CPU)</td>
+            <td>Executa as instruções dos programas</td>
+            <td>Cérebro</td>
+            </tr>
+            <tr>
+            <td>Memória RAM</td>
+            <td>Guarda o que está em uso agora; apaga ao desligar</td>
+            <td>Mesa de trabalho</td>
+            </tr>
+            <tr>
+            <td>Armazenamento (SSD ou HD)</td>
+            <td>Guarda arquivos e programas mesmo desligado</td>
+            <td>Armário</td>
+            </tr>
+            <tr>
+            <td>Placa-mãe</td>
+            <td>Liga todas as peças</td>
+            <td>Esqueleto e nervos</td>
+            </tr>
+            <tr>
+            <td>Fonte</td>
+            <td>Fornece energia</td>
+            <td>Coração</td>
+            </tr>
+            <tr>
+            <td>Periféricos de entrada</td>
+            <td>Teclado, mouse, microfone, câmera</td>
+            <td>Sentidos</td>
+            </tr>
+            <tr>
+            <td>Periféricos de saída</td>
+            <td>Monitor, impressora, caixa de som</td>
+            <td>Voz</td>
+            </tr>
+            </tbody>
+            </table>
+            <table>
+            <thead>
+            <tr>
+            <th>Tipo de software</th>
+            <th>Exemplos</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Sistema operacional</td>
+            <td>Windows, Linux, ChromeOS, Android</td>
+            </tr>
+            <tr>
+            <td>Aplicativos</td>
+            <td>Navegador, editor de texto, planilha, jogos, WhatsApp</td>
+            </tr>
+            <tr>
+            <td>Malware (software malicioso)</td>
+            <td>Vírus, programas espiões, golpes que roubam senhas</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>🔍 <strong>Exemplo:</strong> o computador da escola está lento. No <strong>hardware</strong>, verifique se a memória RAM é
+            pequena ou se o armazenamento está quase cheio. No <strong>software</strong>, veja se há programas demais
+            abertos, atualizações pendentes ou algum vírus.</p>
+            <h3 id="capitulo-02-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li><strong>Fake news</strong> é informação falsa apresentada como verdadeira; antes de compartilhar, confira autor, data, outras fontes e agências de checagem.</li><li>Golpes de <strong>falso prêmio</strong> pedem clique, dados ou pagamento: não clique e confirme pelo canal oficial.</li><li><strong>Cyberbullying</strong> é agressão repetida pela internet; guarde provas, bloqueie, denuncie e peça ajuda — quem compartilha também participa.</li><li>A <strong>pegada digital</strong> pode ser ativa (o que você posta) ou passiva (o que é coletado); pense antes de publicar.</li><li><strong>Hardware</strong> é a parte física (processador, RAM, armazenamento, periféricos); <strong>software</strong> é a parte lógica (sistema operacional, aplicativos).</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="exercicios" data-capitulo="capitulo-02">
+            <h3 id="capitulo-02-exercicios">✍️ Exercícios<button class="apostila__botao apostila__botao--pequeno" type="button" data-exportar-exercicios="capitulo-02">📥 Exportar PDF</button></h3>
+            <p class="exercicios__capitulo">Capítulo 02 — Segurança Online, Fake News e Hardware × Software</p>
+            <div class="exercicios__identificacao"><span class="exercicios__campo">Aluno(a):</span><span class="exercicios__campo">Turma:</span><span class="exercicios__campo">Data:</span></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 1</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Um colega recebeu no WhatsApp a mensagem &quot;Você ganhou um celular novo! Clique no link e informe seu CPF para receber&quot;.</p><p><span class="exercicio-label">Comando:</span> Escreva o que você diria a ele e explique por que a mensagem é suspeita, citando pelo menos dois sinais de alerta.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 2</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> No grupo da família circula a notícia &quot;Escolas de Rio do Sul vão fechar amanhã por causa de um vírus&quot;, sem autor e sem link.</p><p><span class="exercicio-label">Comando:</span> Descreva, em passos numerados, como você checaria se a notícia é verdadeira antes de compartilhar.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 3</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Um aluno criou um perfil falso para zombar de uma colega, e a turma está compartilhando as postagens.</p><p><span class="exercicio-label">Comando:</span> Explique por que isso é cyberbullying e o que a vítima e os colegas que presenciam devem fazer.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 4</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Você vai se candidatar a uma vaga de jovem aprendiz na TecVale e a empresa costuma pesquisar o nome dos candidatos na internet.</p><p><span class="exercicio-label">Comando:</span> Explique o que é pegada digital, dê um exemplo de pegada ativa e um de passiva e diga duas atitudes para cuidar da sua.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 5</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Na bancada do laboratório estão: teclado, navegador Chrome, memória RAM, Windows, processador, jogo instalado, monitor e editor de texto.</p><p><span class="exercicio-label">Comando:</span> Separe os itens em hardware e software e explique a função de duas peças de hardware.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 6</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.<br><strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> O computador da escola está lento desde que um aluno instalou um programa &quot;gratuito&quot; baixado de um site desconhecido.</p><p><span class="exercicio-label">Comando:</span> Diga que partes do hardware e do software você verificaria primeiro e explique qual é a causa mais provável nesse caso.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-03">
+            <div class="capitulo__abertura" id="capitulo-03" data-titulo="sim"><span class="capitulo__rotulo">AULA 03</span><h2>Capítulo 03 — Sistemas Operacionais, Arquivos e Pastas</h2><p class="capitulo__capacidades">🎯 <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.<br><strong>C2</strong> — Compreender como os diferentes dispositivos interagem, desde computadores até dispositivos móveis.</p></div>
+            <h3 id="capitulo-03-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-03-t1">O trabalho perdido</h4>
+            <p>Faltando uma hora para entregar o trabalho, Ana não conseguia achar o arquivo. Na área de trabalho
+            havia "trabalho.docx", "trabalho final.docx", "trabalho final AGORA VAI.docx" e mais 200 arquivos
+            misturados. Quem organiza essa bagunça — e ajuda você a não criá-la — é o <strong>sistema operacional</strong>.</p>
+            <blockquote>
+            <p>🎯 <strong>Objetivos do capítulo:</strong> explicar o que faz o sistema operacional, comparar Windows, Linux
+            e ChromeOS, usar área de trabalho, janelas e menus e criar, copiar, renomear, mover e excluir
+            arquivos e pastas.</p>
+            </blockquote>
+            <h4 id="capitulo-03-t2">O que faz o sistema operacional</h4>
+            <p>O <strong>sistema operacional</strong> (SO) é o software que gerencia o computador e os programas. Ele fica
+            entre o hardware e os aplicativos:</p>
+            <ul>
+            <li>liga o computador e carrega os programas;</li>
+            <li>divide a memória e o processador entre os programas abertos;</li>
+            <li>organiza <strong>arquivos e pastas</strong> no armazenamento;</li>
+            <li>controla teclado, mouse, impressora, Wi-Fi e outros dispositivos;</li>
+            <li>cuida das contas de usuário e das senhas.</li>
+            </ul>
+            <h4 id="capitulo-03-t3">Tipos de sistemas operacionais</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Sistema</th>
+            <th>Onde aparece</th>
+            <th>Características</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Windows</strong></td>
+            <td>A maioria dos PCs e notebooks</td>
+            <td>Pago, compatível com muitos programas e jogos</td>
+            </tr>
+            <tr>
+            <td><strong>Linux</strong></td>
+            <td>Servidores, escolas, empresas</td>
+            <td>Livre e gratuito, várias versões (distribuições)</td>
+            </tr>
+            <tr>
+            <td><strong>ChromeOS</strong></td>
+            <td>Chromebooks</td>
+            <td>Leve, rápido, trabalha principalmente na nuvem e no navegador</td>
+            </tr>
+            <tr>
+            <td><strong>Android / iOS</strong></td>
+            <td>Celulares e tablets</td>
+            <td>Sistemas para dispositivos móveis, com lojas de aplicativos</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>🔍 <strong>Dispositivos que interagem:</strong> um arquivo pode sair do celular Android e chegar ao notebook
+            Windows por <strong>cabo USB</strong>, pela <strong>nuvem</strong> (Google Drive, OneDrive), por <strong>e-mail</strong> ou por
+            <strong>Bluetooth</strong>. Sistemas diferentes se entendem porque usam formatos de arquivo e protocolos comuns.</p>
+            <h4 id="capitulo-03-t4">Área de trabalho, janelas e menus</h4>
+            <ul>
+            <li><strong>Área de trabalho:</strong> a tela inicial, com papel de parede e ícones.</li>
+            <li><strong>Barra de tarefas</strong> (Windows) ou <strong>estante</strong> (ChromeOS): mostra os programas abertos e fixados.</li>
+            <li><strong>Menu Iniciar</strong> ou <strong>inicializador:</strong> lista os programas e a busca.</li>
+            <li><strong>Janelas:</strong> cada programa abre numa janela, com botões <strong>minimizar</strong>, <strong>maximizar</strong> e <strong>fechar</strong>.</li>
+            <li><strong>Menu de contexto:</strong> aparece com o <strong>botão direito</strong> do mouse, com opções para o item clicado.</li>
+            </ul>
+            <h4 id="capitulo-03-t5">Arquivos, pastas e extensões</h4>
+            <ul>
+            <li><strong>Arquivo:</strong> um documento, imagem, música ou vídeo. Tem <strong>nome</strong> e <strong>extensão</strong>.</li>
+            <li><strong>Pasta:</strong> organiza arquivos; pode ter <strong>subpastas</strong>.</li>
+            <li><strong>Caminho:</strong> o endereço do arquivo, como <code>Documentos &gt; Escola &gt; FTP &gt; Aula03 &gt; relatorio.pdf</code>.</li>
+            </ul>
+            <table>
+            <thead>
+            <tr>
+            <th>Extensão</th>
+            <th>Tipo de arquivo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>.docx / .odt</td>
+            <td>Texto (Word / Writer)</td>
+            </tr>
+            <tr>
+            <td>.pdf</td>
+            <td>Documento para leitura e impressão</td>
+            </tr>
+            <tr>
+            <td>.xlsx / .ods</td>
+            <td>Planilha</td>
+            </tr>
+            <tr>
+            <td>.pptx / .odp</td>
+            <td>Apresentação</td>
+            </tr>
+            <tr>
+            <td>.png / .jpg</td>
+            <td>Imagem</td>
+            </tr>
+            <tr>
+            <td>.mp3 / .mp4</td>
+            <td>Áudio / vídeo</td>
+            </tr>
+            <tr>
+            <td>.sb3</td>
+            <td>Projeto do Scratch</td>
+            </tr>
+            </tbody>
+            </table>
+            <h4 id="capitulo-03-t6">Operações com arquivos e pastas</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Operação</th>
+            <th>Como fazer</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Criar pasta</strong></td>
+            <td>Botão direito → Novo → Pasta (ou Ctrl+Shift+N no Windows)</td>
+            </tr>
+            <tr>
+            <td><strong>Copiar</strong></td>
+            <td>Selecionar → Ctrl+C → ir ao destino → Ctrl+V (o original continua)</td>
+            </tr>
+            <tr>
+            <td><strong>Mover</strong></td>
+            <td>Selecionar → Ctrl+X → ir ao destino → Ctrl+V (sai do lugar antigo)</td>
+            </tr>
+            <tr>
+            <td><strong>Renomear</strong></td>
+            <td>Selecionar → F2 (ou botão direito → Renomear)</td>
+            </tr>
+            <tr>
+            <td><strong>Excluir</strong></td>
+            <td>Selecionar → Delete (vai para a Lixeira)</td>
+            </tr>
+            <tr>
+            <td><strong>Restaurar</strong></td>
+            <td>Abrir a Lixeira → botão direito → Restaurar</td>
+            </tr>
+            </tbody>
+            </table>
+            <h4 id="capitulo-03-t7">Organização que evita perder trabalhos</h4>
+            <p>Na <strong>TecVale</strong>, todo projeto tem as mesmas pastas: <code>01-Contrato</code>, <code>02-Fotos</code>, <code>03-Relatorios</code>,
+            <code>04-Entrega</code>. Os nomes seguem o padrão <strong>data-assunto</strong>, sem espaços nem acentos:
+            <code>2026-10-20-relatorio-cliente-silva.pdf</code>.</p>
+            <p>🔑 <strong>Ponto-chave:</strong> um bom padrão de pastas e nomes vale mais que horas procurando arquivos.</p>
+            <h3 id="capitulo-03-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li>O <strong>sistema operacional</strong> gerencia o computador e os programas: memória, arquivos, dispositivos e usuários.</li><li><strong>Windows</strong>, <strong>Linux</strong> e <strong>ChromeOS</strong> são sistemas de computador; <strong>Android</strong> e <strong>iOS</strong>, de celular.</li><li>A <strong>área de trabalho</strong>, as <strong>janelas</strong> e os <strong>menus</strong> são a forma de conversar com o SO.</li><li><strong>Arquivos</strong> têm nome e extensão; <strong>pastas</strong> os organizam; o <strong>caminho</strong> é o endereço do arquivo.</li><li>Copiar (Ctrl+C), mover (Ctrl+X), colar (Ctrl+V), renomear (F2) e excluir (Delete → Lixeira) são as operações básicas.</li><li>Um padrão de pastas e nomes evita perder trabalhos.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="exercicios" data-capitulo="capitulo-03">
+            <h3 id="capitulo-03-exercicios">✍️ Exercícios<button class="apostila__botao apostila__botao--pequeno" type="button" data-exportar-exercicios="capitulo-03">📥 Exportar PDF</button></h3>
+            <p class="exercicios__capitulo">Capítulo 03 — Sistemas Operacionais, Arquivos e Pastas</p>
+            <div class="exercicios__identificacao"><span class="exercicios__campo">Aluno(a):</span><span class="exercicios__campo">Turma:</span><span class="exercicios__campo">Data:</span></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 1</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> O computador da escola está lento e o técnico disse que &quot;o sistema operacional está sobrecarregado&quot;.</p><p><span class="exercicio-label">Comando:</span> Explique o que é o sistema operacional e cite três tarefas que ele faz no computador.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 2</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> A escola vai comprar computadores e está em dúvida entre notebooks com Windows, computadores com Linux e Chromebooks.</p><p><span class="exercicio-label">Comando:</span> Monte um quadro comparativo com os três sistemas (onde aparece, custo e uma vantagem de cada) e indique o que você escolheria para a sala de informática, justificando.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 3</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C2</strong> — Compreender como os diferentes dispositivos interagem, desde computadores até dispositivos móveis.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Você tirou fotos do trabalho em grupo com um celular Android e precisa colocá-las no notebook Windows da escola.</p><p><span class="exercicio-label">Comando:</span> Descreva duas formas diferentes de passar as fotos e explique por que dispositivos com sistemas diferentes conseguem trocar arquivos.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 4</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Você perdeu um trabalho no meio de 200 arquivos misturados na área de trabalho.</p><p><span class="exercicio-label">Comando:</span> Proponha uma estrutura de pastas e um padrão de nomes para não acontecer de novo, escrevendo o caminho completo de um arquivo de exemplo.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 5</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> A professora pediu para deixar uma cópia do trabalho no pen drive, tirar o rascunho da área de trabalho e guardá-lo na pasta &quot;Rascunhos&quot; e trocar o nome &quot;trab1&quot; por &quot;2026-10-20-trabalho-ftp&quot;.</p><p><span class="exercicio-label">Comando:</span> Diga qual operação (copiar, mover, renomear) resolve cada pedido e os atalhos de teclado que você usaria.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 6</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Um colega apagou sem querer o arquivo &quot;relatorio.docx&quot; e ficou desesperado.</p><p><span class="exercicio-label">Comando:</span> Explique onde o arquivo excluído vai parar e como restaurá-lo, e diga qual a diferença entre as extensões .docx e .pdf.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-04">
+            <div class="capitulo__abertura" id="capitulo-04" data-titulo="sim"><span class="capitulo__rotulo">AULA 04</span><h2>Capítulo 04 — Atalhos de Teclado, Editor de Texto e Apresentações</h2><p class="capitulo__capacidades">🎯 <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.<br><strong>C6</strong> — Desenvolver a capacidade de pensar criativamente sobre como solucionar problemas de forma inovadora utilizando tecnologia.</p></div>
+            <h3 id="capitulo-04-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-04-t1">O portfólio do jovem aprendiz</h4>
+            <p>A <strong>TecVale</strong> vai receber jovens aprendizes e pediu a cada candidato duas coisas: um <strong>currículo</strong>
+            de uma página e uma <strong>apresentação</strong> de 5 slides sobre a profissão que gostaria de seguir. Para
+            fazer isso bem e rápido, você vai precisar de atalhos de teclado, de um editor de texto e de um
+            programa de apresentações.</p>
+            <blockquote>
+            <p>🎯 <strong>Objetivos do capítulo:</strong> digitar com postura correta e usar os atalhos principais, formatar
+            um documento e salvá-lo em PDF e criar uma apresentação clara e criativa.</p>
+            </blockquote>
+            <h4 id="capitulo-04-t2">Digitação e postura</h4>
+            <ul>
+            <li>Costas apoiadas e pés no chão.</li>
+            <li>Pulsos retos, sem apoiar a mão "quebrada" na mesa.</li>
+            <li>Tela na altura dos olhos, a cerca de um braço de distância.</li>
+            <li>Dedos indicadores sobre as letras <strong>F</strong> e <strong>J</strong> (elas têm um pequeno relevo).</li>
+            <li>Pausas curtas a cada hora para alongar mãos e olhos.</li>
+            </ul>
+            <h4 id="capitulo-04-t3">Atalhos de teclado</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Atalho</th>
+            <th>Função</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Ctrl+C</strong></td>
+            <td>Copiar</td>
+            </tr>
+            <tr>
+            <td><strong>Ctrl+X</strong></td>
+            <td>Recortar</td>
+            </tr>
+            <tr>
+            <td><strong>Ctrl+V</strong></td>
+            <td>Colar</td>
+            </tr>
+            <tr>
+            <td><strong>Ctrl+Z</strong></td>
+            <td>Desfazer</td>
+            </tr>
+            <tr>
+            <td><strong>Ctrl+Y</strong></td>
+            <td>Refazer</td>
+            </tr>
+            <tr>
+            <td><strong>Ctrl+S</strong></td>
+            <td>Salvar</td>
+            </tr>
+            <tr>
+            <td><strong>Ctrl+A</strong></td>
+            <td>Selecionar tudo</td>
+            </tr>
+            <tr>
+            <td><strong>Ctrl+F</strong></td>
+            <td>Localizar uma palavra</td>
+            </tr>
+            <tr>
+            <td><strong>Ctrl+B</strong> (Docs) ou <strong>Ctrl+N</strong> (Word em português)</td>
+            <td>Negrito</td>
+            </tr>
+            <tr>
+            <td><strong>Alt+Tab</strong></td>
+            <td>Alternar entre janelas</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>🔑 <strong>Ponto-chave:</strong> quem usa atalhos trabalha mais rápido e cansa menos o braço que usa o mouse.</p>
+            <h4 id="capitulo-04-t4">Editor de texto</h4>
+            <p>Editores como <strong>Google Docs</strong> (online), <strong>WordPad</strong> e <strong>LibreOffice Writer</strong> criam documentos.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Recurso</th>
+            <th>Para que serve</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Fonte (tipo, tamanho, cor)</td>
+            <td>Destacar títulos e facilitar a leitura</td>
+            </tr>
+            <tr>
+            <td>Negrito, itálico, sublinhado</td>
+            <td>Destacar palavras importantes</td>
+            </tr>
+            <tr>
+            <td>Alinhamento</td>
+            <td>Esquerda, centro, direita ou justificado</td>
+            </tr>
+            <tr>
+            <td>Listas</td>
+            <td>Organizar itens com marcadores ou números</td>
+            </tr>
+            <tr>
+            <td>Inserir imagem e tabela</td>
+            <td>Ilustrar e organizar informações</td>
+            </tr>
+            <tr>
+            <td>Verificação ortográfica</td>
+            <td>Sublinha palavras com erro</td>
+            </tr>
+            <tr>
+            <td>Exportar em PDF</td>
+            <td>Envia o documento sem que a formatação mude</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>📄 <strong>Currículo simples:</strong> nome e contato; objetivo; formação (escola e série); cursos (como o Rio do
+            Sul Mais Tech); habilidades (digitação, Docs, Scratch, trabalho em equipe); experiências
+            (voluntariado, ajuda em casa ou no comércio da família).</p>
+            <p>🔍 <strong>Docs × Word:</strong> no Google Docs, o arquivo fica na nuvem e você pode <strong>compartilhar</strong> para outra
+            pessoa ler, comentar ou editar ao mesmo tempo. No Word ou no Writer, o arquivo fica no computador e
+            é enviado como anexo — por isso é comum exportar em PDF antes de mandar.</p>
+            <h4 id="capitulo-04-t5">Apresentações básicas</h4>
+            <p><strong>Google Slides</strong> e <strong>PowerPoint</strong> (ou LibreOffice Impress) montam apresentações em slides.</p>
+            <p><strong>Regras de ouro:</strong></p>
+            <ol>
+            <li>Uma ideia por slide.</li>
+            <li>No máximo 6 linhas curtas por slide.</li>
+            <li>Fonte grande (no mínimo 24 no texto).</li>
+            <li>Contraste: texto escuro em fundo claro ou o contrário.</li>
+            <li>Imagens que explicam, não que enfeitam.</li>
+            <li>Transições discretas.</li>
+            </ol>
+            <table>
+            <thead>
+            <tr>
+            <th>Slide ruim ❌</th>
+            <th>Slide bom ✅</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Um parágrafo inteiro copiado da internet, letra 12, fundo colorido com texto amarelo</td>
+            <td>Título "O que faz um técnico em informática", 3 tópicos curtos, foto de um técnico trabalhando</td>
+            </tr>
+            </tbody>
+            </table>
+            <h4 id="capitulo-04-t6">Criatividade com tecnologia</h4>
+            <p>Ser criativo não é encher o slide de efeitos: é encontrar uma <strong>forma original e clara</strong> de
+            comunicar. Um gráfico no lugar de uma tabela, uma foto feita por você, uma pergunta no primeiro
+            slide ou um exemplo de alguém da sua cidade deixam a apresentação memorável.</p>
+            <h3 id="capitulo-04-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li>Postura correta e dedos sobre <strong>F</strong> e <strong>J</strong> evitam dores e aumentam a velocidade.</li><li>Atalhos essenciais: <strong>Ctrl+C</strong>, <strong>Ctrl+X</strong>, <strong>Ctrl+V</strong>, <strong>Ctrl+Z</strong>, <strong>Ctrl+S</strong>, <strong>Ctrl+A</strong>, <strong>Ctrl+F</strong> e <strong>Alt+Tab</strong>.</li><li>O <strong>editor de texto</strong> formata fonte, parágrafos, listas, imagens e tabelas; o <strong>PDF</strong> mantém a formatação ao enviar.</li><li>No <strong>Google Docs</strong>, várias pessoas editam e comentam o mesmo arquivo na nuvem.</li><li>Apresentação boa: <strong>uma ideia por slide</strong>, pouco texto, fonte grande, contraste e imagens que explicam.</li><li>Criatividade é achar uma forma <strong>original e clara</strong> de comunicar.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="exercicios" data-capitulo="capitulo-04">
+            <h3 id="capitulo-04-exercicios">✍️ Exercícios<button class="apostila__botao apostila__botao--pequeno" type="button" data-exportar-exercicios="capitulo-04">📥 Exportar PDF</button></h3>
+            <p class="exercicios__capitulo">Capítulo 04 — Atalhos de Teclado, Editor de Texto e Apresentações</p>
+            <div class="exercicios__identificacao"><span class="exercicios__campo">Aluno(a):</span><span class="exercicios__campo">Turma:</span><span class="exercicios__campo">Data:</span></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 1</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Você precisa copiar um parágrafo de um documento, colá-lo em outro, desfazer um erro e salvar o arquivo, tudo sem usar o mouse.</p><p><span class="exercicio-label">Comando:</span> Escreva, na ordem, os atalhos de teclado que você usaria e o que cada um faz.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 2</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Um colega digita com os pulsos dobrados, o notebook no colo e a tela muito baixa, e reclama de dor nas costas e nas mãos.</p><p><span class="exercicio-label">Comando:</span> Dê quatro orientações de postura e digitação para ele.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 3</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> A TecVale pediu um currículo de uma página, enviado em PDF.</p><p><span class="exercicio-label">Comando:</span> Liste as partes do seu currículo e explique três recursos do editor de texto que você usaria para formatá-lo e por que enviar em PDF.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 4</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Você escreveu o mesmo texto no Google Docs e no Word e precisa que dois colegas revisem ao mesmo tempo.</p><p><span class="exercicio-label">Comando:</span> Compare o que muda ao compartilhar o texto em cada programa e indique qual você usaria nesse caso.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 5</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C6</strong> — Desenvolver a capacidade de pensar criativamente sobre como solucionar problemas de forma inovadora utilizando tecnologia.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Um slide tem um parágrafo inteiro copiado da internet, letra 12, fundo vermelho e texto amarelo.</p><p><span class="exercicio-label">Comando:</span> Aponte três problemas do slide e descreva como você o refaria de forma criativa e clara.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 6</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.<br><strong>C6</strong> — Desenvolver a capacidade de pensar criativamente sobre como solucionar problemas de forma inovadora utilizando tecnologia.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Você vai apresentar em 5 slides uma profissão de tecnologia que existe em Rio do Sul.</p><p><span class="exercicio-label">Comando:</span> Escreva o título e o conteúdo resumido de cada um dos 5 slides e diga qual ideia original você usaria para prender a atenção da turma.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-05">
+            <div class="capitulo__abertura" id="capitulo-05" data-titulo="sim"><span class="capitulo__rotulo">AULA 05</span><h2>Capítulo 05 — Planilhas Simples e Boas Práticas de Pesquisa</h2><p class="capitulo__capacidades">🎯 <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.<br><strong>C6</strong> — Desenvolver a capacidade de pensar criativamente sobre como solucionar problemas de forma inovadora utilizando tecnologia.<br><strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p></div>
+            <h3 id="capitulo-05-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-05-t1">Quanto você gasta por semana?</h4>
+            <p>Lucas jura que gasta "quase nada" com lanches. Quando anotou tudo numa planilha, descobriu que
+            eram R$ 62,00 por semana — o preço de um fone novo por mês. Planilhas transformam números soltos em
+            <strong>informação</strong>. E, para decidir bem, também é preciso saber <strong>pesquisar</strong> em fontes confiáveis.</p>
+            <blockquote>
+            <p>🎯 <strong>Objetivos do capítulo:</strong> montar uma planilha com fórmulas de soma e média e um gráfico,
+            apresentar o resultado em um slide, pesquisar com eficiência no navegador e avaliar se uma fonte
+            é confiável.</p>
+            </blockquote>
+            <h4 id="capitulo-05-t2">Planilhas simples</h4>
+            <p><strong>Google Sheets</strong>, <strong>Excel</strong> e <strong>LibreOffice Calc</strong> organizam dados em uma grade.</p>
+            <ul>
+            <li><strong>Coluna:</strong> identificada por letra (A, B, C...).</li>
+            <li><strong>Linha:</strong> identificada por número (1, 2, 3...).</li>
+            <li><strong>Célula:</strong> o encontro de uma coluna com uma linha, como <strong>B3</strong>.</li>
+            <li><strong>Intervalo:</strong> um grupo de células, como <strong>B2:B8</strong> (de B2 até B8).</li>
+            </ul>
+            <h4 id="capitulo-05-t3">Fórmulas</h4>
+            <p>Toda fórmula começa com o sinal de <strong>=</strong>.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Fórmula</th>
+            <th>O que faz</th>
+            <th>Exemplo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><code>=B2+B3</code></td>
+            <td>Soma duas células</td>
+            <td>8,00 + 12,50 = 20,50</td>
+            </tr>
+            <tr>
+            <td><code>=SOMA(B2:B8)</code></td>
+            <td>Soma um intervalo</td>
+            <td>Total da semana</td>
+            </tr>
+            <tr>
+            <td><code>=MÉDIA(B2:B8)</code></td>
+            <td>Calcula a média</td>
+            <td>Gasto médio por dia</td>
+            </tr>
+            <tr>
+            <td><code>=MÁXIMO(B2:B8)</code></td>
+            <td>Maior valor</td>
+            <td>Dia em que mais gastou</td>
+            </tr>
+            <tr>
+            <td><code>=MÍNIMO(B2:B8)</code></td>
+            <td>Menor valor</td>
+            <td>Dia em que menos gastou</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>📊 <strong>Planilha de gastos da semana:</strong></p>
+            <table>
+            <thead>
+            <tr>
+            <th></th>
+            <th>A</th>
+            <th>B</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>1</td>
+            <td><strong>Dia</strong></td>
+            <td><strong>Gasto (R$)</strong></td>
+            </tr>
+            <tr>
+            <td>2</td>
+            <td>Segunda</td>
+            <td>8,00</td>
+            </tr>
+            <tr>
+            <td>3</td>
+            <td>Terça</td>
+            <td>12,50</td>
+            </tr>
+            <tr>
+            <td>4</td>
+            <td>Quarta</td>
+            <td>6,00</td>
+            </tr>
+            <tr>
+            <td>5</td>
+            <td>Quinta</td>
+            <td>15,00</td>
+            </tr>
+            <tr>
+            <td>6</td>
+            <td>Sexta</td>
+            <td>10,50</td>
+            </tr>
+            <tr>
+            <td>7</td>
+            <td>Sábado</td>
+            <td>10,00</td>
+            </tr>
+            <tr>
+            <td>8</td>
+            <td>Domingo</td>
+            <td>0,00</td>
+            </tr>
+            <tr>
+            <td>9</td>
+            <td><strong>Total</strong></td>
+            <td><code>=SOMA(B2:B8)</code> → 62,00</td>
+            </tr>
+            <tr>
+            <td>10</td>
+            <td><strong>Média</strong></td>
+            <td><code>=MÉDIA(B2:B8)</code> → 8,86</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>🔑 <strong>Ponto-chave:</strong> se você muda um valor, a fórmula recalcula sozinha. É por isso que se usa
+            fórmula, e não a calculadora.</p>
+            <h4 id="capitulo-05-t4">Gráficos e o slide do resultado</h4>
+            <p>Selecione os dados (A1:B8) → <strong>Inserir → Gráfico</strong>. Gráfico de <strong>colunas</strong> compara dias; gráfico de
+            <strong>pizza</strong> mostra partes de um total. Copie o gráfico para um slide com um título que diga a
+            conclusão, por exemplo: <strong>"Quinta é o dia em que mais gasto: R$ 15,00"</strong>.</p>
+            <h4 id="capitulo-05-t5">Mini portfólio digital</h4>
+            <p>Com o currículo (documento), os 5 slides e a planilha, você completa o <strong>mini portfólio digital</strong>.
+            Guarde tudo numa pasta organizada: <code>Portfolio &gt; 01-Documento</code>, <code>02-Slides</code>, <code>03-Planilha</code>.</p>
+            <h4 id="capitulo-05-t6">Navegadores e buscadores</h4>
+            <ul>
+            <li><strong>Navegador:</strong> programa que abre sites (Chrome, Edge, Firefox, Safari).</li>
+            <li><strong>Buscador:</strong> site que encontra páginas (Google, Bing, DuckDuckGo).</li>
+            <li><strong>Site / endereço (URL):</strong> como <code>www.sc.senai.br</code>.</li>
+            </ul>
+            <table>
+            <thead>
+            <tr>
+            <th>Técnica de pesquisa</th>
+            <th>Exemplo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Palavras-chave em vez de frases longas</td>
+            <td><code>impressora 3D preço escola</code></td>
+            </tr>
+            <tr>
+            <td>Aspas para a frase exata</td>
+            <td><code>"pensamento computacional"</code></td>
+            </tr>
+            <tr>
+            <td>Sinal de menos para excluir</td>
+            <td><code>scratch -gato</code></td>
+            </tr>
+            <tr>
+            <td><code>site:</code> para buscar num site</td>
+            <td><code>robótica site:gov.br</code></td>
+            </tr>
+            <tr>
+            <td>Filtro de data e de tipo (imagens, notícias)</td>
+            <td>Ferramentas → Qualquer data → Último ano</td>
+            </tr>
+            </tbody>
+            </table>
+            <h4 id="capitulo-05-t7">Como avaliar uma fonte</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Pergunta</th>
+            <th>Fonte confiável</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Quem escreveu?</td>
+            <td>Tem autor ou instituição identificada</td>
+            </tr>
+            <tr>
+            <td>Quando?</td>
+            <td>Tem data e está atualizada</td>
+            </tr>
+            <tr>
+            <td>Onde foi publicado?</td>
+            <td>Órgão público, universidade, jornal conhecido</td>
+            </tr>
+            <tr>
+            <td>Mostra de onde tirou os dados?</td>
+            <td>Cita referências</td>
+            </tr>
+            <tr>
+            <td>Outras fontes confirmam?</td>
+            <td>Sim, pelo menos uma segunda fonte</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>🔍 <strong>Exemplo:</strong> antes de comprar uma impressora, a <strong>TecVale</strong> comparou a página do fabricante, a
+            avaliação de um site de tecnologia conhecido e a opinião de outra escola que usa o modelo.</p>
+            <h3 id="capitulo-05-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li>Planilhas organizam dados em <strong>colunas</strong> (letras), <strong>linhas</strong> (números) e <strong>células</strong> (como B3).</li><li>Fórmulas começam com <strong>=</strong>: <code>=SOMA()</code>, <code>=MÉDIA()</code>, <code>=MÁXIMO()</code>, <code>=MÍNIMO()</code>; o resultado muda sozinho quando os dados mudam.</li><li><strong>Gráficos</strong> transformam números em imagem; um slide com o gráfico e uma conclusão fecha o mini portfólio.</li><li>O <strong>navegador</strong> abre sites e o <strong>buscador</strong> encontra páginas; palavras-chave, aspas, sinal de menos e filtros melhoram a pesquisa.</li><li>Fonte confiável tem <strong>autor, data, referências</strong> e é confirmada por <strong>outra fonte</strong>.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="exercicios" data-capitulo="capitulo-05">
+            <h3 id="capitulo-05-exercicios">✍️ Exercícios<button class="apostila__botao apostila__botao--pequeno" type="button" data-exportar-exercicios="capitulo-05">📥 Exportar PDF</button></h3>
+            <p class="exercicios__capitulo">Capítulo 05 — Planilhas Simples e Boas Práticas de Pesquisa</p>
+            <div class="exercicios__identificacao"><span class="exercicios__campo">Aluno(a):</span><span class="exercicios__campo">Turma:</span><span class="exercicios__campo">Data:</span></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 1</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Você anotou seus gastos com lanches de segunda a domingo nas células B2 a B8 de uma planilha.</p><p><span class="exercicio-label">Comando:</span> Escreva as fórmulas para calcular o total e a média da semana e explique por que é melhor usar fórmula do que somar na calculadora.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 2</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.<br><strong>C6</strong> — Desenvolver a capacidade de pensar criativamente sobre como solucionar problemas de forma inovadora utilizando tecnologia.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Você precisa apresentar o resultado da sua planilha de gastos em um único slide para a turma.</p><p><span class="exercicio-label">Comando:</span> Diga que tipo de gráfico usaria, que título colocaria no slide e que conclusão ele deve mostrar.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 3</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Na planilha, a célula B5 tem 15,00 e a fórmula em B9 é =SOMA(B2:B8).</p><p><span class="exercicio-label">Comando:</span> Explique o que significam &quot;B5&quot; e &quot;B2:B8&quot; e o que acontece com B9 se você mudar o valor de B5 para 20,00.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 4</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Você precisa achar informações sobre &quot;pensamento computacional&quot;, mas a busca traz milhares de resultados que não ajudam.</p><p><span class="exercicio-label">Comando:</span> Escreva duas buscas melhores usando técnicas de pesquisa (aspas, sinal de menos, site: ou filtro) e explique cada uma.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 5</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Duas notícias dizem o contrário uma da outra: uma afirma que &quot;celulares serão proibidos em todas as escolas no mês que vem&quot;; a outra, que &quot;não há nenhuma lei sobre isso&quot;.</p><p><span class="exercicio-label">Comando:</span> Explique como descobrir qual é confiável, usando as perguntas de avaliação de fontes.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 6</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C6</strong> — Desenvolver a capacidade de pensar criativamente sobre como solucionar problemas de forma inovadora utilizando tecnologia.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> A TecVale quer saber quanto a equipe gasta com café e pediu uma solução simples.</p><p><span class="exercicio-label">Comando:</span> Proponha como organizar a planilha (colunas, fórmulas e gráfico) e uma ideia criativa para apresentar o resultado na reunião de sexta.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-06">
+            <div class="capitulo__abertura" id="capitulo-06" data-titulo="sim"><span class="capitulo__rotulo">AULA 06</span><h2>Capítulo 06 — Internet Segura e Pensamento Computacional</h2><p class="capitulo__capacidades">🎯 <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.<br><strong>C3</strong> — Desenvolver a habilidade de pensar de forma lógica, sequencial e estruturada para resolver problemas através de código.<br><strong>C4</strong> — Aprender a desenvolver e entender algoritmos simples para resolver problemas.<br><strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p></div>
+            <h3 id="capitulo-06-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-06-t1">Dois jeitos de pensar com segurança</h4>
+            <p>Uma senha "123456" cai em segundos; uma festa da turma sem planejamento vira bagunça. Neste
+            capítulo você aprende a <strong>se proteger na internet</strong> e a <strong>pensar como um programador</strong>: dividir o
+            problema, achar padrões, focar no essencial e escrever o passo a passo.</p>
+            <blockquote>
+            <p>🎯 <strong>Objetivos do capítulo:</strong> criar senhas fortes, reconhecer vírus e golpes, proteger a
+            privacidade, aplicar os quatro pilares do pensamento computacional e identificar entrada,
+            processamento e saída de um algoritmo.</p>
+            </blockquote>
+            <h4 id="capitulo-06-t2">Vírus e malware</h4>
+            <p><strong>Malware</strong> é todo software malicioso. O <strong>vírus</strong> é um tipo de malware que se espalha de
+            arquivo em arquivo. Eles chegam por:</p>
+            <ul>
+            <li>links e anexos de mensagens desconhecidas;</li>
+            <li>programas e jogos piratas;</li>
+            <li>pen drives de origem desconhecida;</li>
+            <li>sites falsos que pedem para "atualizar" algo.</li>
+            </ul>
+            <p><strong>Proteção:</strong> manter o sistema e os aplicativos <strong>atualizados</strong>, usar <strong>antivírus</strong>, baixar
+            programas só das lojas e sites oficiais e desconfiar de pressa e de prêmios.</p>
+            <h4 id="capitulo-06-t3">Golpes (phishing)</h4>
+            <p><strong>Phishing</strong> é a "pescaria" de dados: mensagens que imitam bancos, lojas, a escola ou um amigo para
+            roubar senha e dinheiro. Sinais: urgência ("sua conta será bloqueada hoje"), erros de português,
+            endereço de site estranho (<code>banco-seguro-premio.xyz</code>) e pedido de senha ou código por mensagem.</p>
+            <h4 id="capitulo-06-t4">Senhas fortes</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Senha fraca ❌</th>
+            <th>Senha forte ✅</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>123456, senha, nome+ano</td>
+            <td>Longa (12 caracteres ou mais)</td>
+            </tr>
+            <tr>
+            <td>A mesma em todos os sites</td>
+            <td>Diferente em cada serviço</td>
+            </tr>
+            <tr>
+            <td>Data de aniversário</td>
+            <td>Mistura letras, números e símbolos</td>
+            </tr>
+            <tr>
+            <td>Anotada no caderno da escola</td>
+            <td>Guardada num gerenciador de senhas</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>💡 <strong>Frase-senha:</strong> <code>MeuGatoComeu3Pizzas!</code> é longa, fácil de lembrar e difícil de adivinhar. Ative
+            também a <strong>verificação em duas etapas</strong>: além da senha, o serviço pede um código no celular.</p>
+            <h4 id="capitulo-06-t5">Privacidade</h4>
+            <ul>
+            <li>Deixe o perfil das redes sociais <strong>fechado</strong>.</li>
+            <li>Não publique endereço, escola, horários e rotina.</li>
+            <li>Revise as <strong>permissões</strong> dos aplicativos (câmera, microfone, localização).</li>
+            <li>Nunca compartilhe senha, nem com amigos.</li>
+            </ul>
+            <h4 id="capitulo-06-t6">Pensamento computacional</h4>
+            <p>É um jeito de resolver problemas como um computador resolveria, com quatro pilares:</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Pilar</th>
+            <th>O que é</th>
+            <th>Exemplo: festa da turma</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Decomposição</strong></td>
+            <td>Dividir um problema grande em partes menores</td>
+            <td>Convite, comida, música, decoração, limpeza</td>
+            </tr>
+            <tr>
+            <td><strong>Reconhecimento de padrões</strong></td>
+            <td>Achar o que se repete</td>
+            <td>Todo convite tem data, hora e local</td>
+            </tr>
+            <tr>
+            <td><strong>Abstração</strong></td>
+            <td>Ignorar detalhes para focar no essencial</td>
+            <td>A cor da toalha não importa para o horário</td>
+            </tr>
+            <tr>
+            <td><strong>Algoritmo</strong></td>
+            <td>Sequência finita de passos para resolver o problema</td>
+            <td>Passo a passo para enviar os convites</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>🔍 <strong>Exemplo:</strong> o suporte da <strong>TecVale</strong> recebe "o computador não liga". Decompõe (energia, cabo,
+            fonte, tela), percebe um padrão (muitos chamados na segunda-feira = tomadas desligadas no fim de
+            semana), abstrai (o modelo do computador não importa para esse teste) e cria um algoritmo de
+            atendimento.</p>
+            <h4 id="capitulo-06-t7">Entrada → processamento → saída</h4>
+            <p>Todo algoritmo segue esse caminho:</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Parte</th>
+            <th>Lanche</th>
+            <th>Média da turma</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Entrada</strong></td>
+            <td>Pão, presunto, queijo</td>
+            <td>As notas dos alunos</td>
+            </tr>
+            <tr>
+            <td><strong>Processamento</strong></td>
+            <td>Montar e aquecer</td>
+            <td>Somar as notas e dividir pela quantidade</td>
+            </tr>
+            <tr>
+            <td><strong>Saída</strong></td>
+            <td>Lanche pronto</td>
+            <td>A média</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>🔑 <strong>Ponto-chave:</strong> um algoritmo precisa ser <strong>preciso</strong> (sem dúvida em nenhum passo), <strong>ordenado</strong>
+            e <strong>terminar</strong>.</p>
+            <h3 id="capitulo-06-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li><strong>Malware</strong> e <strong>vírus</strong> chegam por links, anexos, programas piratas e pen drives; atualize o sistema e use antivírus.</li><li><strong>Phishing</strong> imita empresas e amigos para roubar dados: desconfie de urgência e pedidos de senha.</li><li><strong>Senha forte</strong> é longa, única e misturada; ative a <strong>verificação em duas etapas</strong>.</li><li>Os quatro pilares do <strong>pensamento computacional</strong>: decomposição, reconhecimento de padrões, abstração e algoritmo.</li><li>Todo algoritmo tem <strong>entrada → processamento → saída</strong> e precisa ser preciso, ordenado e terminar.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="exercicios" data-capitulo="capitulo-06">
+            <h3 id="capitulo-06-exercicios">✍️ Exercícios<button class="apostila__botao apostila__botao--pequeno" type="button" data-exportar-exercicios="capitulo-06">📥 Exportar PDF</button></h3>
+            <p class="exercicios__capitulo">Capítulo 06 — Internet Segura e Pensamento Computacional</p>
+            <div class="exercicios__identificacao"><span class="exercicios__campo">Aluno(a):</span><span class="exercicios__campo">Turma:</span><span class="exercicios__campo">Data:</span></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 1</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Sua prima usa a senha &quot;julia2010&quot; em todas as redes sociais e no e-mail.</p><p><span class="exercicio-label">Comando:</span> Explique por que essa senha é fraca, crie um exemplo de senha forte (frase-senha) e diga o que é a verificação em duas etapas.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 2</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Você recebeu a mensagem &quot;Seu acesso à conta da escola será bloqueado hoje. Clique em escola-acesso-rapido.xyz e digite sua senha&quot;.</p><p><span class="exercicio-label">Comando:</span> Aponte três sinais de que é um golpe (phishing) e o que você deve fazer.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 3</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Debate da turma: &quot;Postar fotos do uniforme da escola e da rua de casa é perigoso?&quot;.</p><p><span class="exercicio-label">Comando:</span> Escreva sua opinião com dois argumentos sobre privacidade e uma regra que a turma poderia adotar.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 4</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C3</strong> — Desenvolver a habilidade de pensar de forma lógica, sequencial e estruturada para resolver problemas através de código.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> A turma vai organizar uma feira de tecnologia na escola.</p><p><span class="exercicio-label">Comando:</span> Decomponha o problema em pelo menos cinco partes e aponte um padrão que se repete entre elas.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 5</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C3</strong> — Desenvolver a habilidade de pensar de forma lógica, sequencial e estruturada para resolver problemas através de código.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Para ensinar alguém a ir de ônibus até o SENAI, você vai desenhar um mapa simples.</p><p><span class="exercicio-label">Comando:</span> Explique o que é abstração usando esse mapa: o que deve aparecer e o que pode ser ignorado.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 6</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C4</strong> — Aprender a desenvolver e entender algoritmos simples para resolver problemas.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Você quer um algoritmo que calcule quanto cada amigo paga numa pizza dividida igualmente.</p><p><span class="exercicio-label">Comando:</span> Identifique a entrada, o processamento e a saída e escreva o algoritmo em passos numerados.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-07">
+            <div class="capitulo__abertura" id="capitulo-07" data-titulo="sim"><span class="capitulo__rotulo">AULA 07</span><h2>Capítulo 07 — Algoritmos, Fluxogramas e Primeiros Passos no Scratch</h2><p class="capitulo__capacidades">🎯 <strong>C3</strong> — Desenvolver a habilidade de pensar de forma lógica, sequencial e estruturada para resolver problemas através de código.<br><strong>C4</strong> — Aprender a desenvolver e entender algoritmos simples para resolver problemas.<br><strong>C5</strong> — Aprender a interagir com o usuário ou com outros sistemas através de entrada e saída de dados.</p></div>
+            <h3 id="capitulo-07-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-07-t1">Do papel para a tela</h4>
+            <p>Antes de programar, todo programador <strong>pensa no papel</strong>: escreve o algoritmo e desenha o
+            fluxograma. Só depois passa para o computador. Neste capítulo você faz esse caminho completo e cria
+            o seu primeiro programa no <strong>Scratch</strong>.</p>
+            <blockquote>
+            <p>🎯 <strong>Objetivos do capítulo:</strong> usar sequência, decisão e repetição em algoritmos, desenhar
+            fluxogramas, conhecer a interface do Scratch e criar um programa que pergunta e responde.</p>
+            </blockquote>
+            <h4 id="capitulo-07-t2">As três estruturas dos algoritmos</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Estrutura</th>
+            <th>O que faz</th>
+            <th>Exemplo: de casa até a escola</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Sequência</strong></td>
+            <td>Passos executados um depois do outro</td>
+            <td>Sair de casa → caminhar até o ponto → pegar o ônibus</td>
+            </tr>
+            <tr>
+            <td><strong>Decisão (condicional)</strong></td>
+            <td>Escolhe um caminho conforme uma condição</td>
+            <td><strong>Se</strong> o sinal estiver vermelho, <strong>então</strong> esperar; <strong>senão</strong>, atravessar</td>
+            </tr>
+            <tr>
+            <td><strong>Repetição (laço)</strong></td>
+            <td>Repete passos enquanto algo for verdade ou um número de vezes</td>
+            <td><strong>Repita</strong> "andar um quarteirão" <strong>até</strong> chegar à esquina da escola</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>📝 <strong>Algoritmo: ir de casa até a escola</strong></p>
+            <ol>
+            <li>Início.</li>
+            <li>Pegar a mochila.</li>
+            <li>Sair de casa.</li>
+            <li>Repita "andar um quarteirão" até chegar à avenida.</li>
+            <li>Se o sinal estiver vermelho, esperar; senão, atravessar.</li>
+            <li>Andar até o portão da escola.</li>
+            <li>Fim.</li>
+            </ol>
+            <h4 id="capitulo-07-t3">Fluxogramas</h4>
+            <p>O <strong>fluxograma</strong> é o desenho do algoritmo com símbolos padronizados:</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Símbolo</th>
+            <th>Forma</th>
+            <th>Uso</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Terminal</td>
+            <td>Oval</td>
+            <td>Início e fim</td>
+            </tr>
+            <tr>
+            <td>Processo</td>
+            <td>Retângulo</td>
+            <td>Uma ação ("pegar a mochila")</td>
+            </tr>
+            <tr>
+            <td>Decisão</td>
+            <td>Losango</td>
+            <td>Pergunta com sim/não ("sinal vermelho?")</td>
+            </tr>
+            <tr>
+            <td>Entrada/saída</td>
+            <td>Paralelogramo</td>
+            <td>Ler ou mostrar dados ("ler o nome")</td>
+            </tr>
+            <tr>
+            <td>Fluxo</td>
+            <td>Seta</td>
+            <td>Indica o próximo passo</td>
+            </tr>
+            </tbody>
+            </table>
+            <pre><code>( Início ) → [ Pegar mochila ] → &lt; Sinal vermelho? &gt; —sim→ [ Esperar ] ↺ volta à pergunta
+                                                     |não
+                                                     ↓
+                                             [ Atravessar ] → ( Fim )
+            </code></pre>
+            <p>🔍 <strong>Exemplo:</strong> na <strong>TecVale</strong>, o atendimento segue um fluxograma: "O cliente tem cadastro?" —
+            <strong>sim</strong>, abrir o chamado; <strong>não</strong>, cadastrar primeiro e depois abrir o chamado.</p>
+            <h4 id="capitulo-07-t4">Achando erros em algoritmos</h4>
+            <p>Algoritmo de "fazer café" com erros:</p>
+            <ol>
+            <li>Coar o café. ← fora de ordem: ainda não tem água quente</li>
+            <li>Esquentar a água.</li>
+            <li>Se tiver açúcar, adoçar. ← falta o "senão" (e se não tiver?)</li>
+            <li>Repita "mexer". ← repetição sem fim: mexer até quando?</li>
+            </ol>
+            <p>Algoritmo corrigido: esquentar a água → colocar o pó no filtro → despejar a água → <strong>se</strong> quiser
+            doce, adoçar, <strong>senão</strong>, servir puro → mexer <strong>3 vezes</strong> → servir.</p>
+            <h4 id="capitulo-07-t5">Scratch: a interface</h4>
+            <p>O <strong>Scratch</strong> (scratch.mit.edu, online, ou instalado) programa com <strong>blocos</strong> que se encaixam.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Parte</th>
+            <th>O que é</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Palco</strong></td>
+            <td>Área onde a ação acontece</td>
+            </tr>
+            <tr>
+            <td><strong>Ator</strong></td>
+            <td>Personagem ou objeto que recebe os blocos (o gato é o ator padrão)</td>
+            </tr>
+            <tr>
+            <td><strong>Paleta de blocos</strong></td>
+            <td>Categorias coloridas: Movimento, Aparência, Som, Eventos, Controle, Sensores, Operadores, Variáveis</td>
+            </tr>
+            <tr>
+            <td><strong>Área de programação</strong></td>
+            <td>Onde os blocos são arrastados e encaixados</td>
+            </tr>
+            <tr>
+            <td><strong>Bandeira verde / sinal vermelho</strong></td>
+            <td>Começa e para o programa</td>
+            </tr>
+            </tbody>
+            </table>
+            <h4 id="capitulo-07-t6">Eventos e movimento</h4>
+            <p>Um <strong>evento</strong> é uma ação que dispara os blocos. O mais comum é <strong>"quando a bandeira verde for
+            clicada"</strong>. Outros: "quando a tecla espaço for pressionada", "quando este ator for clicado".</p>
+            <p>Primeiro programa:</p>
+            <ul>
+            <li>quando a bandeira verde for clicada</li>
+            <li>mova 10 passos</li>
+            <li>gire 15 graus</li>
+            <li>diga "Olá, turma!" por 2 segundos</li>
+            </ul>
+            <h4 id="capitulo-07-t7">Entrada e saída no Scratch</h4>
+            <ul>
+            <li><strong>Entrada:</strong> o bloco <strong>"pergunte ... e espere"</strong> mostra uma pergunta e guarda o que o usuário
+              digitou no bloco <strong>resposta</strong>.</li>
+            <li><strong>Saída:</strong> o bloco <strong>"diga"</strong> mostra o resultado no balão do ator.</li>
+            </ul>
+            <p>Programa que pergunta e responde:</p>
+            <ul>
+            <li>quando a bandeira verde for clicada</li>
+            <li>pergunte "Qual é o seu nome?" e espere</li>
+            <li>diga (junte "Olá, " com resposta) por 2 segundos</li>
+            </ul>
+            <h3 id="capitulo-07-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li>Algoritmos usam três estruturas: <strong>sequência</strong>, <strong>decisão</strong> (se... então... senão) e <strong>repetição</strong> (repita).</li><li>O <strong>fluxograma</strong> desenha o algoritmo: oval (início/fim), retângulo (ação), losango (decisão), paralelogramo (entrada/saída) e setas.</li><li>Achar e corrigir erros de ordem, de decisão e de repetição faz parte de programar.</li><li>No <strong>Scratch</strong>, os blocos se encaixam no ator; o <strong>evento</strong> "bandeira verde" inicia o programa.</li><li><strong>"Pergunte e espere"</strong> recebe a entrada do usuário e <strong>"diga"</strong> mostra a saída.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="exercicios" data-capitulo="capitulo-07">
+            <h3 id="capitulo-07-exercicios">✍️ Exercícios<button class="apostila__botao apostila__botao--pequeno" type="button" data-exportar-exercicios="capitulo-07">📥 Exportar PDF</button></h3>
+            <p class="exercicios__capitulo">Capítulo 07 — Algoritmos, Fluxogramas e Primeiros Passos no Scratch</p>
+            <div class="exercicios__identificacao"><span class="exercicios__campo">Aluno(a):</span><span class="exercicios__campo">Turma:</span><span class="exercicios__campo">Data:</span></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 1</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C4</strong> — Aprender a desenvolver e entender algoritmos simples para resolver problemas.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Você precisa ensinar um colega novo a ir da sua casa até a escola.</p><p><span class="exercicio-label">Comando:</span> Escreva o algoritmo em passos numerados com pelo menos uma decisão e uma repetição, marcando cada uma.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 2</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C4</strong> — Aprender a desenvolver e entender algoritmos simples para resolver problemas.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> O algoritmo do ITEM 1 precisa ser apresentado de forma visual para a turma.</p><p><span class="exercicio-label">Comando:</span> Desenhe o fluxograma usando os símbolos corretos (oval, retângulo, losango e setas) e indique o caminho do &quot;sim&quot; e do &quot;não&quot;.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 3</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C3</strong> — Desenvolver a habilidade de pensar de forma lógica, sequencial e estruturada para resolver problemas através de código.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Um algoritmo diz: &quot;1. Servir o café. 2. Coar o café. 3. Esquentar a água. 4. Repita mexer.&quot;</p><p><span class="exercicio-label">Comando:</span> Aponte os erros de sequência e de repetição e reescreva o algoritmo corrigido.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 4</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C3</strong> — Desenvolver a habilidade de pensar de forma lógica, sequencial e estruturada para resolver problemas através de código.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Você abriu o Scratch pela primeira vez no laboratório.</p><p><span class="exercicio-label">Comando:</span> Explique para que servem o palco, o ator, a paleta de blocos e a bandeira verde.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 5</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C5</strong> — Aprender a interagir com o usuário ou com outros sistemas através de entrada e saída de dados.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> A TecVale quer um programa de boas-vindas no Scratch para a feira de tecnologia: ele pergunta o nome do visitante e responde com uma saudação.</p><p><span class="exercicio-label">Comando:</span> Escreva os blocos do programa, na ordem, e indique qual bloco é a entrada e qual é a saída de dados.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 6</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C4</strong> — Aprender a desenvolver e entender algoritmos simples para resolver problemas.<br><strong>C5</strong> — Aprender a interagir com o usuário ou com outros sistemas através de entrada e saída de dados.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> O programa de boas-vindas deve perguntar também a idade e dizer &quot;Você pode participar da oficina de robótica&quot; se a idade for 15 ou mais; senão, &quot;Venha conhecer a oficina de Scratch&quot;.</p><p><span class="exercicio-label">Comando:</span> Desenhe o fluxograma desse programa, com a entrada, a decisão e as duas saídas.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-08">
+            <div class="capitulo__abertura" id="capitulo-08" data-titulo="sim"><span class="capitulo__rotulo">AULA 08</span><h2>Capítulo 08 — Scratch: Condições, Repetições, Variáveis e Projeto Autoral</h2><p class="capitulo__capacidades">🎯 <strong>C3</strong> — Desenvolver a habilidade de pensar de forma lógica, sequencial e estruturada para resolver problemas através de código.<br><strong>C4</strong> — Aprender a desenvolver e entender algoritmos simples para resolver problemas.<br><strong>C5</strong> — Aprender a interagir com o usuário ou com outros sistemas através de entrada e saída de dados.<br><strong>C6</strong> — Desenvolver a capacidade de pensar criativamente sobre como solucionar problemas de forma inovadora utilizando tecnologia.</p></div>
+            <h3 id="capitulo-08-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-08-t1">Seu primeiro jogo</h4>
+            <p>Todo jogo que você conhece tem <strong>regras</strong> (se tocar no inimigo, perde uma vida), <strong>repetição</strong> (o
+            jogo continua rodando) e <strong>memória</strong> (pontos, vidas, fase). No Scratch, isso vira <strong>condições</strong>,
+            <strong>repetições</strong> e <strong>variáveis</strong>. Neste capítulo você monta um jogo completo e cria o seu <strong>projeto
+            autoral</strong>.</p>
+            <blockquote>
+            <p>🎯 <strong>Objetivos do capítulo:</strong> usar condições e repetições, criar variáveis de pontos e vidas,
+            planejar, programar e testar um jogo ou história e explicar cada bloco usado.</p>
+            </blockquote>
+            <h4 id="capitulo-08-t2">Condições</h4>
+            <p>O bloco <strong>"se &lt; &gt; então ... senão ..."</strong> escolhe o que fazer. A condição (o espaço hexagonal) vem de:</p>
+            <ul>
+            <li><strong>Sensores:</strong> "tocando em [Maçã]?", "tecla [espaço] pressionada?", "tocando na cor [vermelho]?";</li>
+            <li><strong>Operadores:</strong> <code>pontos &gt; 10</code>, <code>vidas = 0</code>, <code>resposta = "sim"</code>.</li>
+            </ul>
+            <h4 id="capitulo-08-t3">Repetições</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Bloco</th>
+            <th>Uso</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>repita 10 vezes</strong></td>
+            <td>Repete um número exato de vezes (andar 10 passos de 1 em 1)</td>
+            </tr>
+            <tr>
+            <td><strong>sempre</strong></td>
+            <td>Repete sem parar — mantém o jogo verificando teclas e toques</td>
+            </tr>
+            <tr>
+            <td><strong>repita até &lt; &gt;</strong></td>
+            <td>Repete até a condição ficar verdadeira (até vidas = 0)</td>
+            </tr>
+            </tbody>
+            </table>
+            <h4 id="capitulo-08-t4">Variáveis</h4>
+            <p>Uma <strong>variável</strong> guarda um valor que muda durante o programa. Em <strong>Variáveis → Criar uma variável</strong>:</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Bloco</th>
+            <th>O que faz</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>mude [pontos] para 0</td>
+            <td>Começa o jogo com 0 pontos</td>
+            </tr>
+            <tr>
+            <td>adicione 1 a [pontos]</td>
+            <td>Soma 1 ponto</td>
+            </tr>
+            <tr>
+            <td>adicione -1 a [vidas]</td>
+            <td>Tira 1 vida</td>
+            </tr>
+            <tr>
+            <td>mostre a variável [pontos]</td>
+            <td>Exibe o placar no palco</td>
+            </tr>
+            </tbody>
+            </table>
+            <h4 id="capitulo-08-t5">Mini jogo: pegue a maçã</h4>
+            <p><strong>Gato (jogador):</strong></p>
+            <ul>
+            <li>quando a bandeira verde for clicada</li>
+            <li>mude [pontos] para 0 · mude [vidas] para 3</li>
+            <li>sempre</li>
+            <li>se tecla [seta para direita] pressionada, então mude x por 10</li>
+            <li>se tecla [seta para esquerda] pressionada, então mude x por -10</li>
+            </ul>
+            <p><strong>Maçã:</strong></p>
+            <ul>
+            <li>quando a bandeira verde for clicada</li>
+            <li>sempre</li>
+            <li>vá para x: (número aleatório entre -200 e 200) y: 180</li>
+            <li>repita até &lt; (tocando em Gato?) ou (y &lt; -170) &gt;: mude y por -5</li>
+            <li>se tocando em [Gato], então adicione 1 a [pontos]; senão, adicione -1 a [vidas]</li>
+            <li>se vidas = 0, então diga "Fim de jogo!" e pare tudo</li>
+            </ul>
+            <p>🔑 <strong>Ponto-chave:</strong> <strong>evento</strong> inicia, <strong>repetição</strong> mantém o jogo vivo, <strong>condição</strong> aplica as regras
+            e <strong>variável</strong> guarda o placar.</p>
+            <h4 id="capitulo-08-t6">Animações, jogos e histórias interativas</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Tipo</th>
+            <th>Ingredientes</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Animação</strong></td>
+            <td>Troca de fantasias ("próxima fantasia"), movimento e espera</td>
+            </tr>
+            <tr>
+            <td><strong>Jogo</strong></td>
+            <td>Objetivo, regras, pontos, vidas, fases e fim</td>
+            </tr>
+            <tr>
+            <td><strong>História interativa</strong></td>
+            <td>Cenários, diálogos ("diga"), escolhas do usuário ("pergunte e espere")</td>
+            </tr>
+            </tbody>
+            </table>
+            <h4 id="capitulo-08-t7">Projeto autoral: do papel ao palco</h4>
+            <ol>
+            <li><strong>Ideia:</strong> o que o projeto faz e para quem.</li>
+            <li><strong>Roteiro no papel:</strong> atores, cenários, regras e fim.</li>
+            <li><strong>Programação:</strong> um ator por vez, testando a cada bloco.</li>
+            <li><strong>Teste e correção:</strong> jogue, ache erros e corrija.</li>
+            <li><strong>Apresentação:</strong> mostre o projeto e <strong>explique cada bloco</strong>.</li>
+            </ol>
+            <p>🔍 <strong>Exemplo:</strong> a <strong>TecVale</strong> fez um jogo de treinamento: o jogador ganha pontos ao separar o lixo
+            eletrônico corretamente e perde vidas quando erra; com 10 pontos, passa de fase.</p>
+            <p><strong>Rubrica do projeto:</strong> funcionamento, criatividade, uso de condição e repetição e explicação oral.</p>
+            <h3 id="capitulo-08-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li><strong>Condições</strong> (se... então... senão) usam sensores e operadores para aplicar as regras.</li><li><strong>Repetições</strong>: "repita N vezes", "sempre" e "repita até" mantêm o programa funcionando.</li><li><strong>Variáveis</strong> guardam valores que mudam, como pontos, vidas e fase.</li><li>Um jogo junta <strong>evento + repetição + condição + variável</strong>.</li><li>Projeto autoral: ideia → roteiro no papel → programação → teste → apresentação explicando cada bloco.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="exercicios" data-capitulo="capitulo-08">
+            <h3 id="capitulo-08-exercicios">✍️ Exercícios<button class="apostila__botao apostila__botao--pequeno" type="button" data-exportar-exercicios="capitulo-08">📥 Exportar PDF</button></h3>
+            <p class="exercicios__capitulo">Capítulo 08 — Scratch: Condições, Repetições, Variáveis e Projeto Autoral</p>
+            <div class="exercicios__identificacao"><span class="exercicios__campo">Aluno(a):</span><span class="exercicios__campo">Turma:</span><span class="exercicios__campo">Data:</span></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 1</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C3</strong> — Desenvolver a habilidade de pensar de forma lógica, sequencial e estruturada para resolver problemas através de código.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> No seu jogo, o gato deve ganhar um ponto quando tocar na maçã.</p><p><span class="exercicio-label">Comando:</span> Escreva os blocos dessa regra, indicando qual é o evento, a repetição, a condição e a variável.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 2</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C4</strong> — Aprender a desenvolver e entender algoritmos simples para resolver problemas.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> O jogo deve acabar quando as vidas chegarem a zero.</p><p><span class="exercicio-label">Comando:</span> Explique qual bloco de repetição e qual condição você usaria e por que o bloco &quot;sempre&quot; sozinho não resolve.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 3</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C5</strong> — Aprender a interagir com o usuário ou com outros sistemas através de entrada e saída de dados.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Você quer um jogo de perguntas no Scratch: o programa faz 3 perguntas e soma 1 ponto em cada acerto.</p><p><span class="exercicio-label">Comando:</span> Escreva os blocos da primeira pergunta (entrada, condição, variável de pontos e saída com o resultado).</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 4</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C6</strong> — Desenvolver a capacidade de pensar criativamente sobre como solucionar problemas de forma inovadora utilizando tecnologia.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> O professor pediu um projeto autoral: um jogo ou uma história interativa.</p><p><span class="exercicio-label">Comando:</span> Escreva o roteiro do seu projeto: ideia, atores, cenário, regras (ou escolhas) e como termina.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 5</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C3</strong> — Desenvolver a habilidade de pensar de forma lógica, sequencial e estruturada para resolver problemas através de código.<br><strong>C6</strong> — Desenvolver a capacidade de pensar criativamente sobre como solucionar problemas de forma inovadora utilizando tecnologia.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Crie um jogo em que o jogador ganha pontos e perde vidas.</p><p><span class="exercicio-label">Comando:</span> Explique cada bloco usado no seu jogo (evento, repetição, condição e variáveis) e diga qual regra original você inventou.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 6</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C4</strong> — Aprender a desenvolver e entender algoritmos simples para resolver problemas.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Ao testar o jogo, a maçã cai e o placar nunca aumenta, mesmo quando o gato a pega.</p><p><span class="exercicio-label">Comando:</span> Liste duas causas prováveis do erro nos blocos e como você testaria e corrigiria cada uma.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-09">
+            <div class="capitulo__abertura" id="capitulo-09" data-titulo="sim"><span class="capitulo__rotulo">AULA 09</span><h2>Capítulo 09 — Avaliação Final: Prova Conceitual e Apresentação do Projeto</h2><p class="capitulo__capacidades">🎯 <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.<br><strong>C2</strong> — Compreender como os diferentes dispositivos interagem, desde computadores até dispositivos móveis.<br><strong>C3</strong> — Desenvolver a habilidade de pensar de forma lógica, sequencial e estruturada para resolver problemas através de código.<br><strong>C4</strong> — Aprender a desenvolver e entender algoritmos simples para resolver problemas.<br><strong>C5</strong> — Aprender a interagir com o usuário ou com outros sistemas através de entrada e saída de dados.<br><strong>C6</strong> — Desenvolver a capacidade de pensar criativamente sobre como solucionar problemas de forma inovadora utilizando tecnologia.<br><strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p></div>
+            <h3 id="capitulo-09-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-09-t1">Como é a avaliação final</h4>
+            <p>A última aula (1 hora) tem duas partes:</p>
+            <ol>
+            <li><strong>Prova conceitual</strong> — 15 questões cobrindo os 8 módulos.</li>
+            <li><strong>Apresentação do projeto Scratch</strong> — você mostra o projeto e explica como ele funciona.</li>
+            </ol>
+            <p>Vale o <strong>critério comum</strong> de toda a unidade: explicar o <strong>caminho da solução</strong>, não apenas o
+            resultado, e citar ao menos um <strong>exemplo real</strong>.</p>
+            <blockquote>
+            <p>🎯 <strong>Objetivo do capítulo:</strong> revisar os 8 módulos e preparar a apresentação do projeto.</p>
+            </blockquote>
+            <h4 id="capitulo-09-t2">Revisão dos 8 módulos</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Módulo</th>
+            <th>O que você precisa saber</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>1. Tecnologia e dispositivos</td>
+            <td>O que é tecnologia; entrada → processamento → saída; marcos da evolução dos computadores; caminho de uma mensagem</td>
+            </tr>
+            <tr>
+            <td>2. Cidadania digital e segurança</td>
+            <td>Checar notícias; cyberbullying; pegada digital ativa e passiva</td>
+            </tr>
+            <tr>
+            <td>3. Hardware, software e SO</td>
+            <td>Peças e suas funções; tipos de software; Windows, Linux, ChromeOS</td>
+            </tr>
+            <tr>
+            <td>4. Arquivos, pastas e atalhos</td>
+            <td>Copiar, mover, renomear, excluir; extensões; Ctrl+C, Ctrl+V, Ctrl+Z, Ctrl+S</td>
+            </tr>
+            <tr>
+            <td>5. Editor, apresentações, planilhas</td>
+            <td>Formatação e PDF; regras de ouro dos slides; =SOMA e =MÉDIA; gráficos</td>
+            </tr>
+            <tr>
+            <td>6. Navegadores e internet segura</td>
+            <td>Técnicas de pesquisa; fonte confiável; senha forte; phishing; privacidade</td>
+            </tr>
+            <tr>
+            <td>7. Pensamento computacional</td>
+            <td>Decomposição, padrões, abstração, algoritmo; sequência, decisão, repetição; fluxograma</td>
+            </tr>
+            <tr>
+            <td>8. Scratch</td>
+            <td>Eventos, movimento, condições, repetições, variáveis; projeto autoral</td>
+            </tr>
+            </tbody>
+            </table>
+            <h4 id="capitulo-09-t3">Roteiro da apresentação (cerca de 1 minuto)</h4>
+            <ol>
+            <li><strong>Nome do projeto</strong> e o que ele faz.</li>
+            <li><strong>Como jogar</strong> ou interagir.</li>
+            <li><strong>Blocos principais:</strong> evento, repetição, condição e variável — o que cada um faz.</li>
+            <li><strong>Um problema que você teve</strong> e como resolveu.</li>
+            <li><strong>Uma ideia</strong> para a próxima versão.</li>
+            </ol>
+            <h4 id="capitulo-09-t4">Como você será avaliado</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Nível</th>
+            <th>Nota</th>
+            <th>O que significa</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Excelente</td>
+            <td>9 a 10</td>
+            <td>Domina os conceitos, aplica com criatividade e explica o raciocínio com clareza</td>
+            </tr>
+            <tr>
+            <td>Bom</td>
+            <td>7 a 8</td>
+            <td>Compreende bem e aplica com pouca orientação</td>
+            </tr>
+            <tr>
+            <td>Aceitável</td>
+            <td>5 a 6</td>
+            <td>Compreensão básica, precisa de orientação frequente</td>
+            </tr>
+            <tr>
+            <td>Insuficiente</td>
+            <td>0 a 4</td>
+            <td>Dificuldade em aplicar; exige reforço</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Aprovação: nota final <strong>≥ 7,0</strong>. A <strong>autoavaliação</strong> (10% da nota) é a sua reflexão sobre o que
+            aprendeu e o que ainda quer melhorar.</p>
+            <h3 id="capitulo-09-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li>A avaliação final tem <strong>prova conceitual</strong> (15 questões, 8 módulos) e <strong>apresentação do projeto Scratch</strong>.</li><li>O critério comum vale sempre: explique o <strong>caminho da solução</strong> e cite um <strong>exemplo real</strong>.</li><li>Revise cada módulo pela tabela e prepare a apresentação em 5 passos.</li><li>Aprovação com nota final <strong>≥ 7,0</strong>; a autoavaliação vale 10%.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="exercicios" data-capitulo="capitulo-09">
+            <h3 id="capitulo-09-exercicios">✍️ Exercícios<button class="apostila__botao apostila__botao--pequeno" type="button" data-exportar-exercicios="capitulo-09">📥 Exportar PDF</button></h3>
+            <p class="exercicios__capitulo">Capítulo 09 — Avaliação Final: Prova Conceitual e Apresentação do Projeto</p>
+            <div class="exercicios__identificacao"><span class="exercicios__campo">Aluno(a):</span><span class="exercicios__campo">Turma:</span><span class="exercicios__campo">Data:</span></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 1</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.<br><strong>C2</strong> — Compreender como os diferentes dispositivos interagem, desde computadores até dispositivos móveis.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Na prova, aparece: &quot;Explique como uma foto enviada pelo celular chega ao notebook de um amigo e cite duas peças de hardware envolvidas&quot;.</p><p><span class="exercicio-label">Comando:</span> Responda à questão explicando o caminho e as peças.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 2</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Dilema: &quot;A escola deve proibir o celular durante as aulas?&quot;.</p><p><span class="exercicio-label">Comando:</span> Escreva sua posição com dois argumentos, um a favor e um contra, e uma proposta que respeite os dois lados.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 3</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C1</strong> — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Seu mini portfólio tem currículo, slides e planilha.</p><p><span class="exercicio-label">Comando:</span> Explique como você organizou as pastas do portfólio e qual recurso de cada programa foi mais útil.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 4</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C3</strong> — Desenvolver a habilidade de pensar de forma lógica, sequencial e estruturada para resolver problemas através de código.<br><strong>C4</strong> — Aprender a desenvolver e entender algoritmos simples para resolver problemas.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Problema: &quot;Organizar a apresentação dos projetos da turma em 20 minutos&quot;.</p><p><span class="exercicio-label">Comando:</span> Decomponha o problema e escreva um algoritmo com uma decisão e uma repetição para resolvê-lo.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 5</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C5</strong> — Aprender a interagir com o usuário ou com outros sistemas através de entrada e saída de dados.<br><strong>C6</strong> — Desenvolver a capacidade de pensar criativamente sobre como solucionar problemas de forma inovadora utilizando tecnologia.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Você vai apresentar seu projeto Scratch para a turma.</p><p><span class="exercicio-label">Comando:</span> Escreva o roteiro da sua apresentação: o que o projeto faz, a entrada e a saída de dados, os blocos principais e a sua ideia original.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+            <div class="exercicio-box"><div class="exercicio-header">ITEM 6</div><p><span class="exercicio-label">CAPACIDADE:</span> <strong>C6</strong> — Desenvolver a capacidade de pensar criativamente sobre como solucionar problemas de forma inovadora utilizando tecnologia.<br><strong>C7</strong> — Refletir sobre as implicações éticas e sociais das tecnologias.</p><div class="exercicio-divisoria"></div><p><span class="exercicio-label">Contexto:</span> Autoavaliação de fim de unidade.</p><p><span class="exercicio-label">Comando:</span> Escreva o que você aprendeu de mais importante, uma dificuldade que superou e uma meta para a próxima unidade (robótica), citando um exemplo real.</p><div class="resposta-campo"><span class="exercicio-label">Resposta:</span><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div><div class="resposta-linha"></div></div></div>
+        </section>
+    </div>
+</body>
+</html>

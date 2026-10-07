@@ -27,7 +27,6 @@ A unidade tem **33 horas** em **9 capítulos**: cada capítulo corresponde a uma
 |---|---|
 | 🎯 Capacidades | O que você vai desenvolver no capítulo |
 | 📖 Teoria e exemplos | Explicação do conteúdo com situações do cotidiano e da TecVale |
-| 🎬 Vídeos | Vídeos curtos do YouTube (no máximo 15 minutos) para revisar o tema |
 | 📌 Resumo | Os pontos principais para estudar antes da avaliação |
 | ✍️ Exercícios | Questões no padrão ITEM (Capacidade, Contexto, Comando e Resposta) |
 
@@ -37,7 +36,7 @@ alfabética.
 ### Como estudar com esta apostila
 
 - Leia a teoria **antes ou logo depois** da aula correspondente.
-- Assista aos vídeos e anote dúvidas para levar ao professor.
+- Anote as dúvidas para levar ao professor.
 - Revise o resumo e consulte o glossário sempre que encontrar um termo novo.
 - Responda os exercícios com suas palavras e **explique o seu raciocínio**: o caminho da solução
   vale tanto quanto o resultado.

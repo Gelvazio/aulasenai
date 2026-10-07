@@ -400,7 +400,8 @@ def md_capitulo(capitulo, horas):
               f"- **Capacidade:** {', '.join(capitulo['codigos'])}",
               f"- **Fonte:** `APOSTILA/CONTEUDO/{capitulo['id'].upper()}.md`"]
     for parte in ORDEM_PARTES_CAPITULO:
-        linhas += ["", f"## {parte}", "", capitulo["secoes"][parte].strip()]
+        if parte in capitulo["secoes"]:
+            linhas += ["", f"## {parte}", "", capitulo["secoes"][parte].strip()]
     return "\n".join(linhas)
 
 

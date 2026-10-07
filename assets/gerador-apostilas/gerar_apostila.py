@@ -4,7 +4,7 @@ Uso: C:\Python314\python.exe assets\gerador-apostilas\gerar_apostila.py <pasta d
 
 Fontes em <MATERIA>/APOSTILA/:
 - CONTEUDO/INTRODUCAO.md — introdução da apostila (Markdown livre, subtítulos "###");
-- CONTEUDO/CAPITULO-NN.md — um por aula, com "## Teoria", "## Vídeos", "## Exercícios",
+- CONTEUDO/CAPITULO-NN.md — um por aula, com "## Teoria", "## Vídeos" (opcional), "## Exercícios",
   "## Resumo" e "## Glossário";
 Dados da matéria (arquivo único): <MATERIA>/materia.json — identificação, capacidades,
 conhecimentos e o plano de aulas ("aulas", 1 aula de 4 h = 1 capítulo; a última aula pode ter
@@ -55,7 +55,8 @@ OPCAO_CONFERIR = "--conferir"
 CAMINHO_LOGO = "img/logo-sesi-senai.png"
 URL_MINIATURA = "https://i.ytimg.com/vi/{}/hqdefault.jpg"
 CAMPOS_DADOS = ("uc", "uc_curta", "curso", "docente")
-SECOES_OBRIGATORIAS = ("Teoria", "Vídeos", "Exercícios", "Resumo", "Glossário")
+SECOES_OBRIGATORIAS = ("Teoria", "Exercícios", "Resumo", "Glossário")
+SECAO_VIDEOS = "Vídeos"
 DURACAO_MAXIMA_SEGUNDOS = 15 * 60
 LINHAS_RESPOSTA_PADRAO = 3
 QUANTIDADE_MINIMA_EXERCICIOS = 5
@@ -300,7 +301,7 @@ def ler_texto_capitulo(texto, numero, capacidades, rotulo):
         erro(f"{rotulo}: o Glossário precisa de termos '- **Termo:** definição'")
     return {"id": f"capitulo-{numero}", "numero": numero, "titulo": titulo.group(1),
             "codigos": codigos, "aula": ler_campo(cabecalho, "Aula"), "secoes": secoes,
-            "termos": termos, "videos": ler_videos(secoes["Vídeos"], rotulo),
+            "termos": termos, "videos": ler_videos(secoes[SECAO_VIDEOS], rotulo) if SECAO_VIDEOS in secoes else [],
             "exercicios": ler_exercicios(secoes["Exercícios"], capacidades, rotulo)}
 
 
@@ -503,7 +504,8 @@ def blocos_conteudo_capitulo(capitulo, capacidades):
         f'{html_texto_capacidades(capitulo["codigos"], capacidades)}</p></div>',
         f'<h3 id="{id_cap}-teoria">📖 Teoria e exemplos</h3>',
         *[linha for linha in teoria.split("\n") if linha.strip()],
-        f'<h3 id="{id_cap}-videos">🎬 Vídeos para assistir (até 15 min)</h3>',
+        *([f'<h3 id="{id_cap}-videos">🎬 Vídeos para assistir (até 15 min)</h3>']
+          if capitulo["videos"] else []),
         *[html_video(video) for video in capitulo["videos"]],
         f'<h3 id="{id_cap}-resumo">📌 Resumo</h3>',
         resumo.replace("\n", ""),
@@ -585,8 +587,9 @@ def html_sumario(capitulos, subtitulos_introducao):
         linhas.append(item_sumario(id_cap, capitulo["titulo"], 1))
         linhas.append(item_sumario(f"{id_cap}-teoria", "Teoria e exemplos", 2))
         linhas += [item_sumario(alvo, texto, 3) for alvo, texto in capitulo["subtitulos"]]
+        partes = (("videos", "Vídeos"),) if capitulo["videos"] else ()
         linhas += [item_sumario(f"{id_cap}-{parte}", rotulo, 2) for parte, rotulo in
-                   (("videos", "Vídeos"), ("resumo", "Resumo"), ("exercicios", "Exercícios"))]
+                   partes + (("resumo", "Resumo"), ("exercicios", "Exercícios"))]
     return "\n".join(RECUO + linha for linha in linhas)
 
 

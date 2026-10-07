@@ -86,15 +86,6 @@ direitos e deveres da vida fora da tela valem dentro dela.
 legenda engraçada. Mesmo que pareça brincadeira, a foto foi exposta sem permissão. O cidadão
 digital não compartilha, avisa o colega e, se continuar, conta para um adulto de confiança.
 
-## Vídeos
-
-<!-- conferir a duração e o canal de cada vídeo no YouTube (máximo 15:00) e escrever no formato
-"- [título exato](url) — mm:ss — canal" antes de mover este capítulo para APOSTILA/CONTEUDO/ -->
-- [Conteúdo de Tecnologia da Informação: História e evolução dos computadores](https://www.youtube.com/watch?v=SNABaP2iORg) — DURAÇÃO A CONFERIR — CANAL A CONFERIR
-- [Evolução dos Computadores - Linha do Tempo](https://www.youtube.com/watch?v=yMGm7cPCh6o) — DURAÇÃO A CONFERIR — CANAL A CONFERIR
-- [Por onde vem a internet? Seguimos a fibra até sua casa!](https://www.youtube.com/watch?v=fYJl-7jRzuw) — DURAÇÃO A CONFERIR — Manual do Mundo
-- [Entenda... Cidadania Digital](https://www.youtube.com/watch?v=XHFfXJglFhY) — DURAÇÃO A CONFERIR — CANAL A CONFERIR
-
 ## Exercícios
 
 ### ITEM 1

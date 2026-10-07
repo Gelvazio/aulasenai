@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 20:30
+**Versão das regras:** 2026-10-07 21:15
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 21:15 | Apostilas: a seção "## Vídeos" do capítulo passa a ser **opcional** (pedido do usuário; apostila de Fundamentos da Tecnologia e Programação sem vídeos) |
 | 2026-10-07 20:30 | Apostilas: carga da UC que não divide por 4 vira aulas de 4 h + **última aula menor** (ex.: 33 h = 8 × 4 h + 1 h; gerador confere a soma); conferência com a ementa aceita o **formato por módulos** (Rio do Sul Mais Tech) e o `materia.json` ganha `secoes_literais_ementa` |
 | 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
 | 2026-10-07 10:00 | Apostilas: o HTML passa a ser gerado a partir do Markdown completo `APOSTILA-<MATERIA>.md` (antes lia os `CAPITULO-NN.md`) |
@@ -2590,7 +2591,9 @@ faltava. Vale para **todas as matérias**.
 
 1. **Abertura** com as capacidades do capítulo (`- **Capacidade:** C1, S1`);
 2. **Teoria + exemplos**;
-3. **Vídeos do YouTube de no máximo 15 minutos** (`- [título](url) — mm:ss — canal`): miniatura +
+3. **Vídeos do YouTube de no máximo 15 minutos** (opcional desde 2026-10-07, a pedido do usuário:
+   capítulo sem `## Vídeos` é aceito e a apostila sai sem a parte de vídeos; se a seção existir,
+   vale tudo abaixo) (`- [título](url) — mm:ss — canal`): miniatura +
    título + duração + canal + link (funciona na tela e no papel). O gerador **recusa** vídeo sem
    duração ou com mais de 15:00. A duração é conferida nos metadados do YouTube (`curl`, sem
    navegador) e o professor confere o conteúdo;
