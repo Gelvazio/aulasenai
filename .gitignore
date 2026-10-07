@@ -46,3 +46,5 @@ CONTEUDO-PROF-*/
 PROVA-OBJETIVA-*.md
 # Listas de alunos (nomes, CPF): dados pessoais (LGPD), só local
 LISTA-ALUNOS/
+# Resoluções modelo das atividades (respostas do professor) — nunca publicar
+RESOLUCAO/
