@@ -53,7 +53,7 @@ OPCAO_FORCAR = "--forcar"
 OPCAO_CONFERIR = "--conferir"
 CAMINHO_LOGO = "img/logo-sesi-senai.png"
 URL_MINIATURA = "https://i.ytimg.com/vi/{}/hqdefault.jpg"
-CAMPOS_DADOS = ("uc", "uc_curta", "curso", "docente")
+CAMPOS_DADOS = ("uc", "uc_curta", "curso", "docente", "autor_apostila", "versao_apostila")
 SECOES_OBRIGATORIAS = ("Teoria", "Vídeos", "Exercícios", "Resumo", "Glossário")
 DURACAO_MAXIMA_SEGUNDOS = 15 * 60
 LINHAS_RESPOSTA_PADRAO = 3
@@ -678,18 +678,19 @@ def montar_tags_menu_apostila(pasta_materia, pasta_saida):
             f'\n    <script src="{script}" defer></script>')
 
 
-def montar_pagina(pasta_materia, dados, texto_introducao, capitulos):
+def montar_pagina(pasta_materia, dados, conteudo, data_hora):
     """Preenche o template da apostila.
 
     Args:
         pasta_materia: Pasta da matéria.
         dados: Dados da matéria.
-        texto_introducao: Markdown da introdução.
-        capitulos: Capítulos lidos.
+        conteudo: Tupla (Markdown da introdução, capítulos lidos).
+        data_hora: Data e hora da geração, já formatadas.
 
     Returns:
         HTML completo da apostila.
     """
+    texto_introducao, capitulos = conteudo
     pasta_saida = pasta_materia / PASTA_APOSTILA
     assets = caminho_relativo(ASSETS, pasta_saida)
     capitulos_html = "\n\n".join(html_capitulo(capitulo, dados["todas"])
@@ -702,6 +703,7 @@ def montar_pagina(pasta_materia, dados, texto_introducao, capitulos):
         "SUMARIO": html_sumario(capitulos, subtitulos_introducao),
         "INTRODUCAO": introducao, "CAPACIDADES": html_capacidades(dados, capitulos),
         "GLOSSARIO": html_glossario(capitulos), "CAPITULOS": capitulos_html,
+        "GERADO_EM": html.escape(data_hora),
     }
     valores.update({campo.upper(): html.escape(dados[campo]) for campo in CAMPOS_DADOS})
     pagina = TEMPLATE
@@ -734,6 +736,20 @@ def conferir_com_ementa(pasta_materia):
     return conferir_ementa.conferir_materia(pasta_materia, caminho_markdown_completo(pasta_materia))
 
 
+def gravar_identificacao_markdown(pasta_materia, dados, data_hora):
+    """Atualiza autor, versão e data e hora no Markdown completo, igual ao HTML gerado.
+
+    Args:
+        pasta_materia: Pasta da matéria.
+        dados: Dados da matéria.
+        data_hora: Data e hora da geração, já formatadas.
+    """
+    caminho = caminho_markdown_completo(pasta_materia)
+    texto = caminho.read_text(encoding="utf-8")
+    caminho.write_text(md_apostila.atualizar_identificacao(texto, dados, data_hora),
+                       encoding="utf-8")
+
+
 def gerar_apostila(pasta_materia):
     """Gera a apostila HTML a partir do Markdown completo, só com a conferência em 100%.
 
@@ -751,8 +767,10 @@ def gerar_apostila(pasta_materia):
              "antes de gerar a apostila (regra CONFERÊNCIA OBRIGATÓRIA)")
     dados = ler_dados_materia(pasta_materia)
     introducao, capitulos = ler_markdown_completo(pasta_materia, dados)
+    data_hora = md_apostila.agora_formatado()
+    gravar_identificacao_markdown(pasta_materia, dados, data_hora)
     saida = pasta_materia / PASTA_APOSTILA / f"APOSTILA-{pasta_materia.name}.html"
-    saida.write_text(montar_pagina(pasta_materia, dados, introducao, capitulos),
+    saida.write_text(montar_pagina(pasta_materia, dados, (introducao, capitulos), data_hora),
                      encoding="utf-8")
     for capitulo in capitulos:
         print(f"✅ {capitulo['titulo']}: {len(capitulo['videos'])} vídeo(s), "

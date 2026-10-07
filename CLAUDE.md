@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 17:00
+**Versão das regras:** 2026-10-07 20:15
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 20:15 | Regra "IDENTIFICAÇÃO DA APOSTILA" (global): toda apostila mostra autor, versão, data e hora (campos `autor_apostila` e `versao_apostila` no `materia.json`); começou pela ITIC (autor Gelvazio Camargo, versão 1.0) |
 | 2026-10-07 17:00 | Combo "Aluno" do professor também nas atividades objetivas (alternativas marcadas pelo aluno, somente leitura); módulo único `respostas-aluno-professor.js` |
 | 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
 | 2026-10-07 10:00 | Apostilas: o HTML passa a ser gerado a partir do Markdown completo `APOSTILA-<MATERIA>.md` (antes lia os `CAPITULO-NN.md`) |
@@ -2309,6 +2310,28 @@ Registrada em 2026-10-03 a pedido do usuário (padrões definidos na validação
 `docs/gerador-apostilas.md`. **Status:** 🔄 piloto **Introdução à TIC (ITIC)** — só o capítulo 01
 gerado, aguardando validação do usuário; os demais capítulos só depois que ele liberar, **um por
 vez, perguntando a cada capítulo** (rascunhos em `APOSTILA/RASCUNHOS/`, fora da apostila).
+
+### 🏷️ IDENTIFICAÇÃO DA APOSTILA: AUTOR, VERSÃO, DATA E HORA (REGRA GLOBAL)
+
+Registrada em 2026-10-07 a pedido do usuário. Vale para **todas as apostilas de todas as
+matérias**; começou pela ITIC.
+
+- ✅ **Toda apostila mostra autor, versão, data e hora:**
+  - **HTML:** na capa (quadro "Autor · Versão · Data e hora") e a versão no rodapé de todas as
+    páginas ("Apostila — <UC> · Versão X · SESI SENAI"), saindo também no PDF;
+  - **Markdown completo:** a linha `> **Autor:** … · **Versão:** … · **Data e hora:** …` no
+    cabeçalho, regravada pelo gerador a cada geração do HTML (sempre igual ao HTML).
+- ✅ **Dados no `materia.json`** (obrigatórios; sem eles o gerador para com erro):
+  `autor_apostila` (ITIC: **Gelvazio Camargo**) e `versao_apostila` (ex.: `"1.0"`).
+- ✅ **Data e hora** = momento da geração do HTML (`DD/MM/AAAA às HH:MM`), automáticas.
+- ✅ **Versão:** ao mudar o conteúdo da apostila, aumentar `versao_apostila` antes de gerar —
+  ajuste/correção → `1.0` para `1.1`; capítulo novo ou mudança grande → `1.x` para `2.0`.
+  Gerar de novo sem mudar conteúdo mantém a versão (só a data e hora mudam).
+- ✅ Código: `assets/gerador-apostilas/gerar_apostila.py` (`gravar_identificacao_markdown`),
+  `markdown_apostila.py` (`linha_identificacao`, `atualizar_identificacao`),
+  `template_apostila.html` e `assets/css/apostila.css` (`.capa-apostila__identificacao`).
+- ⏳ Testes de Frontend: acrescentar os dois campos no `materia.json` quando a apostila dela for
+  gerada de novo (a pedido do usuário).
 
 ### ⛔ PRÉ-REQUISITO: o Markdown completo bate 100% com a ementa da matéria
 

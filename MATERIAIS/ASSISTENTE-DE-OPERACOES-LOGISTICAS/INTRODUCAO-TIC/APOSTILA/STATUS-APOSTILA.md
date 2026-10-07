@@ -12,6 +12,7 @@
 | Markdown completo `APOSTILA-INTRODUCAO-TIC.md` (capítulos 01 a 10) | 👀 Aguardando validação |
 | Conferência Markdown × ementa da matéria (`--conferir`) | ✅ 100% (201/201 itens) em 2026-10-03 |
 | HTML gerado a partir do Markdown completo | ✅ Gerado em 2026-10-07 (igual ao anterior) |
+| Autor, versão, data e hora (capa, rodapé e Markdown) | ✅ Gelvazio Camargo · versão 1.0 · 07/10/2026 às 20:12 |
 
 | Cap. | Tema | Teoria | Vídeos (≤ 15 min) | Resumo | Exercícios ITEM | Glossário | Vídeos conferidos pelo professor | Status |
 |---|---|---|---|---|---|---|---|---|

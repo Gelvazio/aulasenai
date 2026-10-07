@@ -265,6 +265,30 @@ body.apostila {
     font-size: 15px;
 }
 
+/* Autor, versão e data e hora da geração (regra "IDENTIFICAÇÃO DA APOSTILA") */
+.capa-apostila__identificacao {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+    margin: 18px 0 0;
+    padding: 12px 16px;
+    border-left: 4px solid var(--apostila-verde);
+    background: var(--apostila-exercicio-fundo);
+    font-size: 14px;
+}
+
+.capa-apostila__identificacao dt {
+    color: var(--apostila-texto-suave);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.capa-apostila__identificacao dd {
+    margin: 2px 0 0;
+    color: var(--apostila-azul-escuro);
+    font-weight: 600;
+}
+
 /* Sumário */
 .sumario__link {
     display: flex;
