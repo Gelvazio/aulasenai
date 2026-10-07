@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 16:30
+**Versão das regras:** 2026-10-07 17:30
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 17:30 | Conferência da apostila aceita também ementas no formato Rio do Sul Mais Tech (capacidades em lista numerada, módulos de conteúdo, aulas em negrito, indicadores e casos em lista) |
 | 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
 | 2026-10-07 10:00 | Apostilas: o HTML passa a ser gerado a partir do Markdown completo `APOSTILA-<MATERIA>.md` (antes lia os `CAPITULO-NN.md`) |
 | 2026-10-07 09:00 | Menus USUARIOS, RELATORIOS, ALUNOS e CORREÇÃO do header só para o **Professor Administrador** (os demais professores não veem) |
@@ -2352,7 +2353,12 @@ matéria.**
   sequência de aulas lida pelos **títulos das colunas** (tema, domínios/conhecimentos,
   capacidades, estratégias, atividade/entrega); listas e textos da seção de sequência
   (situações de aprendizagem, dificuldades, pirâmide, datas previstas); recursos item a item;
-  BNCC com "aulas 1, 2 e 7" ou "todas".
+  BNCC com "aulas 1, 2 e 7" ou "todas". Desde 2026-10-07 também: capacidades em lista numerada
+  (sem tabela), conteúdos programáticos em `### Módulo N: Título` + lista, aulas em
+  `**Aula N — Tema (4h)**`, indicadores em listas `- **Nome:** texto` e situações-problema em
+  lista (o `materia.json` traz esses textos em `capacidades_especificas_ementa`,
+  `conteudos_programaticos`, `estrategias_ensino`, `textos_sequencia`, `situacoes_problema` e
+  `avaliacao.textos`, escritos pelo `markdown_apostila.py`).
 - ⛔ **Seção que existe na ementa mas não foi reconhecida reprova a conferência** (capacidades,
   socioemocionais, indicadores, conhecimentos, sequência, avaliação, BNCC, recursos, prompts,
   regras para IA, glossário): nada pode ficar de fora em silêncio. Formato novo de ementa =

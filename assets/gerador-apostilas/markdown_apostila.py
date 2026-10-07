@@ -490,6 +490,8 @@ def md_avaliacao_ementa(materia):
         linhas += [avaliacao["nota_final"], ""]
     linhas += [f"- **{rotulo}:** {avaliacao[campo]}" for rotulo, campo in
                (("Formativa", "formativa"), ("Recuperação", "recuperacao")) if avaliacao.get(campo)]
+    if avaliacao.get("textos"):
+        linhas += ["", *avaliacao["textos"]]
     if avaliacao.get("rubrica"):
         linhas += ["", "| Nível | Nota | Descrição |", "|---|---|---|"]
         linhas += [f"| {nivel['nivel']} | {nivel['nota']} | {nivel['descricao']} |"
@@ -515,6 +517,8 @@ def md_recursos_ementa(materia):
         Lista de linhas Markdown.
     """
     recursos = materia.get("recursos", {})
+    if not recursos and not materia.get("acessibilidade"):
+        return []
     linhas = ["", "## Recursos e ambientes", ""]
     for campo, rotulo in ROTULOS_RECURSOS:
         valor = recursos.get(campo)
@@ -549,6 +553,37 @@ def md_textos_didaticos_ementa(materia):
             linhas += ["", f"## {titulo}", ""] + [f"- {item}" for item in materia[campo]]
     if materia.get("estrategia_testes"):
         linhas += ["", "## Estratégia de testes da UC (pirâmide)", "", materia["estrategia_testes"]]
+    return linhas
+
+
+def md_conteudos_ementa(materia):
+    """Monta capacidades específicas, conteúdos programáticos (módulos), metodologias, textos da
+    sequência de aulas e situações-problema da ementa da matéria, quando existirem (literais).
+
+    Args:
+        materia: Conteúdo do materia.json.
+
+    Returns:
+        Lista de linhas Markdown.
+    """
+    linhas = []
+    if materia.get("capacidades_especificas_ementa"):
+        linhas += ["", "## Capacidades específicas (ementa da matéria)", ""]
+        linhas += [f"{i}. {texto}" for i, texto in
+                   enumerate(materia["capacidades_especificas_ementa"], 1)]
+    if materia.get("conteudos_programaticos"):
+        linhas += ["", "## Conteúdos programáticos (ementa da matéria)"]
+        for modulo in materia["conteudos_programaticos"]:
+            linhas += ["", f"### {modulo['titulo']}", ""]
+            linhas += [f"- {topico}" for topico in modulo["topicos"]]
+    if materia.get("estrategias_ensino"):
+        linhas += ["", "## Metodologias recomendadas", ""]
+        linhas += [f"- {item}" for item in materia["estrategias_ensino"]]
+    if materia.get("textos_sequencia"):
+        linhas += ["", "## Sequência de aulas (ementa)", "", *materia["textos_sequencia"]]
+    if materia.get("situacoes_problema"):
+        linhas += ["", "## Situações-problema (ementa)", ""]
+        linhas += [f"- {item}" for item in materia["situacoes_problema"]]
     return linhas
 
 
@@ -591,7 +626,8 @@ def md_ementa_oficial(dados):
     linhas = ["# Ementa da matéria (texto oficial)", "",
               "Referência literal da ementa da matéria, para comparar com a apostila. Não editar "
               "aqui: quem muda é a ementa (e o `materia.json`).", ""]
-    linhas += md_objetivos_ementa(materia) + md_avaliacao_ementa(materia)
+    linhas += md_objetivos_ementa(materia) + md_conteudos_ementa(materia)
+    linhas += md_avaliacao_ementa(materia)
     linhas += md_recursos_ementa(materia) + md_aula_padrao(materia)
     linhas += md_textos_didaticos_ementa(materia)
     linhas += md_listas_ementa(materia) + md_bncc(materia)
