@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 23:55
+**Versão das regras:** 2026-10-07 20:50
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 20:50 | Identificação da apostila obrigatória em **todas** as apostilas: `autor_apostila` (padrão Gelvazio Camargo) e `versao_apostila` (começa em 1.0) preenchidos no `materia.json` antes da 1ª geração; aplicada também em Reforço de Linguagens |
 | 2026-10-07 23:55 | Reforço de Linguagens ganha menu de atividades (`MENU-ATIVIDADES.js` com 📚 Índice, 📘 Apostila e as atividades por aula) |
 | 2026-10-07 23:45 | Regra do push dividida por ambiente: **local** = nunca fazer push (continua); **nuvem** (Claude Code na web/remoto) = sempre fazer push, direto na `main`, sem pull request |
 | 2026-10-07 23:20 | Apostila de Reforço de Linguagens (10 capítulos, aguardando validação); gerador de apostilas aceita a carga horária de cada aula (6 h/7 h), ementas com capacidades em lista, conteúdos programáticos por módulo e aulas em negrito, e vídeos "⏳ pendentes" quando o YouTube não pode ser conferido; ementa de Reforço de Linguagens com as 6 capacidades da ementa do curso |
@@ -2356,7 +2357,13 @@ matérias**; começou pela ITIC.
 - ✅ Código: `assets/gerador-apostilas/gerar_apostila.py` (`gravar_identificacao_markdown`),
   `markdown_apostila.py` (`linha_identificacao`, `atualizar_identificacao`),
   `template_apostila.html` e `assets/css/apostila.css` (`.capa-apostila__identificacao`).
-- ✅ Aplicada em: Introdução à TIC e Testes de Frontend (ambas versão 1.0, 2026-10-07).
+- ✅ **Obrigatória em TODAS as apostilas** (2026-10-07, pedido do usuário): toda matéria que
+  tem apostila — ou que vai ganhar uma — tem `autor_apostila` e `versao_apostila` no
+  `materia.json` **antes da primeira geração** (Markdown completo ou HTML). Padrão quando o
+  usuário não disser outro: autor **Gelvazio Camargo**, versão **"1.0"**. Logo após preencher,
+  gerar o HTML de novo para a identificação aparecer na capa, no rodapé e no Markdown completo.
+- ✅ Aplicada em: Introdução à TIC, Testes de Frontend e Reforço de Linguagens (todas versão
+  1.0; Reforço em 2026-10-07).
 
 ### ⛔ PRÉ-REQUISITO: o Markdown completo bate 100% com a ementa da matéria
 
@@ -2524,7 +2531,8 @@ capacidades básicas: completar socioemocionais e conhecimentos quando cada uma 
   **e a UC na ementa do curso** (`EMENTA-PRINCIPAL-<CURSO>.md`, que vence) e manter o
   `materia.json` atualizado com o que a ementa diz.
 - ✅ **O `materia.json` sempre contém:**
-  - **identificação:** `uc`, `uc_curta`, `curso`, `docente`, `modulo`, `modalidade`,
+  - **identificação:** `uc`, `uc_curta`, `curso`, `docente`, `autor_apostila`,
+    `versao_apostila` (regra "IDENTIFICAÇÃO DA APOSTILA"), `modulo`, `modalidade`,
     `carga_horaria_uc`, `fontes`, `versao_ementa`, `proveniencia`;
   - **capacidades e conhecimentos da ementa:** `capacidades` (básicas `C1`..., texto da ementa do
     curso), `capacidades_socioemocionais` (`S1`...), `conhecimentos` (`dominio`, `titulo`,

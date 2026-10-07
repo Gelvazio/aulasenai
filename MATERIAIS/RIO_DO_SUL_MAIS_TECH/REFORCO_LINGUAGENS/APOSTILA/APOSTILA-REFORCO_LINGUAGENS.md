@@ -4,6 +4,7 @@
 > **Módulo:** UC 7 · **Modalidade:** Presencial  
 > **Ementa:** 2026-09  
 > **Carga horária da UC:** 63 horas · **Capítulos previstos:** 10 (1 capítulo = 1 aula; a carga horária de cada aula está no plano de capítulos)  
+> **Autor:** Gelvazio Camargo · **Versão:** 1.0 · **Data e hora:** 07/10/2026 às 20:46  
 > **Gerado em:** 07/10/2026, a partir de `APOSTILA/CONTEUDO/`.
 
 > ✏️ **Este arquivo é a fonte final da apostila.** Revise, compare e acrescente dados aqui; o HTML é gerado depois, a partir dele. O sumário é refeito a cada geração.

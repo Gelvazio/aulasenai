@@ -691,3 +691,12 @@ Fontes (fora do Git): `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/ATIVIDADE-INDIVIDUAL-APOST
 |------|-----------|--------|--------------|-------------|
 | 63.1 | A rota apontava para `MATERIAIS/TECNICO-DESENVOLVIMENTO-SISTEMAS/` (pasta movida para `C:\fontes\BACKUP-CURSOS-SENAI`). A pedido do usuário ("novo nome do curso: TECNICO-INFORMATICA-INTERNET"), as duas rotas do curso no `index.html` da raiz passam a abrir `MATERIAIS/TECNICO-INFORMATICA-INTERNET/index.html`. Banco não alterado (curso id 3 sem turmas) | ✅ Concluído | 2026-10-07 20:25 | `node`: JSON de rotas válido; pasta de destino existe |
 | 63.2 | Aceite do usuário (abrir o card no índice) | ⬜ Pendente | — | — |
+
+## Etapa 56 — Autor e versão em todas as apostilas + regra no CLAUDE.md (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 56.1 | Conferir as apostilas existentes: ITIC e Testes de Frontend já tinham `autor_apostila`/`versao_apostila`; faltava Reforço de Linguagens | ✅ Concluído | 2026-10-07 | grep nos 3 `materia.json` |
+| 56.2 | Reforço de Linguagens: autor Gelvazio Camargo, versão 1.0 no `materia.json` e apostila HTML gerada de novo | ✅ Concluído | 2026-10-07 | Markdown com a linha "Autor · Versão · Data e hora"; HTML com o quadro na capa |
+| 56.3 | Regra "IDENTIFICAÇÃO DA APOSTILA" (seção REGRAS APOSTILAS do `CLAUDE.md`): obrigatória em todas, preenchida antes da 1ª geração, padrão Gelvazio Camargo / 1.0; versão e histórico do CLAUDE.md | ✅ Concluído | 2026-10-07 | Linha de versão no formato lido pelo `regras-modal.js` |
+| 56.4 | Aceite do usuário | ⬜ Pendente | — | — |
