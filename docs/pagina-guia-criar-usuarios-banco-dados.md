@@ -43,6 +43,7 @@ Página criada; o comando gerado chama `node scripts/criar-usuarios-supabase-aut
 - Todo item com `perfil: 'PROFESSOR'`, de qualquer `LISTA-PRESENCA*.js`, sai da aba da sua turma e
   aparece só na aba **Professores** (a primeira), sem repetir e-mail, em ordem alfabética e
   numerada de 1 em diante. Turma que fica vazia sem os professores não aparece.
+- A aba aparece sempre (sem professor nas listas, mostra o aviso). Perfil lido sem diferenciar maiúsculas.
 - É uma turma **virtual** (`codigo: 'PROFESSORES'`, `virtual: true`): não é gravada na tabela
   `turma`, não tem botão de turma favorita e não vai para o `user_metadata` do professor.
 - Gravar pela aba cria/atualiza a conta no Auth com `app_metadata.perfil = 'PROFESSOR'` e a linha

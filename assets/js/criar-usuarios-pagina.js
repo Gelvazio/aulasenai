@@ -17,6 +17,8 @@ const ROTA_LOGIN_GUIA = '../login.html';
 const RPC_ADMINISTRADOR_GUIA = 'eh_professor_administrador';
 // Aba que reúne os professores de todas as listas (virtual: não existe na tabela turma).
 const TURMA_PROFESSORES_GUIA = { codigo: 'PROFESSORES', nome: 'Professores', virtual: true };
+const MSG_SEM_PROFESSORES = 'Nenhum professor nas listas. Acrescente no LISTA-PRESENCA-PROFESSOR.js '
+    + "uma linha com perfil: 'PROFESSOR'.";
 const IDS_GUIA = {
     bloqueio: 'guiaBloqueio',
     opcoes: 'guiaOpcoes',
@@ -41,20 +43,19 @@ function obterElementoGuia(chave) {
  * @returns {boolean} true para professor.
  */
 function ehProfessorDaLista(pessoa) {
-    return pessoa.perfil === PERFIL_EXIGIDO_GUIA;
+    return String(pessoa.perfil || '').trim().toUpperCase() === PERFIL_EXIGIDO_GUIA;
 }
 
 /**
  * Monta a aba "Professores" com os itens de perfil PROFESSOR de todas as listas (sem repetir
  * e-mail), numerados de 1 em diante. É só agrupamento da página: não é gravada na tabela turma.
  * @param {Object[]} turmas - Turmas de todas as listas.
- * @returns {Object|null} Turma virtual; null se nenhuma lista tem professor.
+ * @returns {Object} Turma virtual (sem alunos se nenhuma lista tem professor).
  */
 function montarTurmaProfessoresGuia(turmas) {
     const porEmail = new Map();
     turmas.flatMap((turma) => turma.alunos.filter(ehProfessorDaLista))
         .forEach((professor) => porEmail.set(professor.email.toLowerCase(), professor));
-    if (!porEmail.size) return null;
     const professores = [...porEmail.values()]
         .sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'))
         .map((professor, posicao) => ({ ...professor, numero: posicao + 1 }));
@@ -76,11 +77,11 @@ function reunirTurmasPresenca() {
             uc: turma.uc || lista.uc || '',
             local: turma.local || lista.local || '',
         }))));
-    const professores = montarTurmaProfessoresGuia(turmas);
+    if (!turmas.length) return [];
     const turmasAlunos = turmas
         .map((turma) => ({ ...turma, alunos: turma.alunos.filter((a) => !ehProfessorDaLista(a)) }))
         .filter((turma) => turma.alunos.length);
-    return professores ? [professores, ...turmasAlunos] : turmasAlunos;
+    return [montarTurmaProfessoresGuia(turmas), ...turmasAlunos];
 }
 
 /**
@@ -364,6 +365,11 @@ function criarCartaoTurmaGuia(turma, contexto) {
     cartao.append(titulo);
     if (contexto.podeGravar && !turma.virtual) cartao.append(criarBotaoFavoritaGuia(turma, contexto));
     cartao.append(barra, botao, resultado, tabela);
+    if (turma.virtual && !turma.alunos.length) {
+        const vazio = document.createElement('p');
+        vazio.textContent = MSG_SEM_PROFESSORES;
+        cartao.append(vazio);
+    }
     aoMudar();
     return cartao;
 }
