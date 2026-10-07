@@ -1,7 +1,7 @@
 """Monta e atualiza o Markdown completo da apostila (<MATERIA>/APOSTILA/APOSTILA-<MATERIA>.md).
 
 O Markdown completo junta, na ordem da apostila: cabeçalho, sumário, plano de capítulos
-(1 capítulo = 1 aula de 4 horas), introdução, capacidades, glossário e todos os capítulos.
+(1 capítulo = 1 aula; padrão de 4 horas), introdução, capacidades, glossário e todos os capítulos.
 É o arquivo em que o usuário compara e acrescenta dados antes de gerar o HTML.
 Usado por assets/gerador-apostilas/gerar_apostila.py (opção --markdown).
 Regras: seção "REGRAS APOSTILAS" do CLAUDE.md.
@@ -145,6 +145,50 @@ def atualizar_identificacao(texto_md, dados, data_hora):
     return texto_md.replace(PREFIXO_GERADO_EM, "\n".join((linha, PREFIXO_GERADO_EM)), 1)
 
 
+def horas_da_aula(dados, numero):
+    """Carga horária da aula/capítulo: a "carga_horaria" da aula no plano ou o padrão da matéria.
+
+    Args:
+        dados: Dados da matéria (plano_capitulos, horas_por_capitulo).
+        numero: Número do capítulo (1, 2... ou "01", "02"...).
+
+    Returns:
+        Horas da aula.
+    """
+    plano = dados.get("plano_capitulos", [])
+    indice = int(numero) - 1
+    if 0 <= indice < len(plano) and plano[indice].get("carga_horaria"):
+        return plano[indice]["carga_horaria"]
+    return dados["horas_por_capitulo"]
+
+
+def horas_uniformes(dados):
+    """Diz se todas as aulas do plano têm a mesma carga horária (a padrão da matéria).
+
+    Args:
+        dados: Dados da matéria.
+
+    Returns:
+        True se todas as aulas têm horas_por_capitulo.
+    """
+    return all(horas_da_aula(dados, indice) == dados["horas_por_capitulo"]
+               for indice in range(1, len(dados["capitulos_previstos"]) + 1))
+
+
+def texto_aula_capitulo(dados):
+    """Texto "1 capítulo = 1 aula de N horas" (ou com a carga de cada aula, se variar).
+
+    Args:
+        dados: Dados da matéria.
+
+    Returns:
+        Texto para o cabeçalho.
+    """
+    if horas_uniformes(dados):
+        return f"1 capítulo = 1 aula de {dados['horas_por_capitulo']} horas"
+    return "1 capítulo = 1 aula; a carga horária de cada aula está no plano de capítulos"
+
+
 def md_cabecalho(dados, total_previstos):
     """Monta o título e o quadro de identificação da apostila.
 
@@ -166,7 +210,7 @@ def md_cabecalho(dados, total_previstos):
         f"{materia.get('modalidade', '—')}  ",
         f"> **Ementa:** {materia.get('versao_ementa', '—')}  ",
         f"> **Carga horária da UC:** {texto_carga} · **Capítulos previstos:** {total_previstos} "
-        f"(1 capítulo = 1 aula de {dados['horas_por_capitulo']} horas)  ",
+        f"({texto_aula_capitulo(dados)})  ",
         linha_identificacao(dados, agora_formatado()),
         f"> **Gerado em:** {date.today():%d/%m/%Y}, a partir de `APOSTILA/CONTEUDO/`.",
         "",
@@ -187,14 +231,18 @@ def md_plano(dados, numeros_incluidos):
         Markdown da seção.
     """
     horas = dados["horas_por_capitulo"]
-    linhas = [TITULO_PLANO, "",
-              f"Cada capítulo corresponde a **uma aula de {horas} horas** da unidade curricular.",
+    frase = (f"Cada capítulo corresponde a **uma aula de {horas} horas** da unidade curricular."
+             if horas_uniformes(dados) else
+             "Cada capítulo corresponde a **uma aula** da unidade curricular, com a carga "
+             "horária indicada na tabela.")
+    linhas = [TITULO_PLANO, "", frase,
               "", "| Capítulo | Aula | Tema | Carga horária | Situação |",
               "|---|---|---|---|---|"]
     for indice, tema in enumerate(dados["capitulos_previstos"], start=1):
         numero = f"{indice:02d}"
         situacao = SITUACAO_INCLUIDO if numero in numeros_incluidos else SITUACAO_PENDENTE
-        linhas.append(f"| {numero} | {numero} | {tema} | {horas} h | {situacao} |")
+        linhas.append(f"| {numero} | {numero} | {tema} | {horas_da_aula(dados, indice)} h | "
+                      f"{situacao} |")
     materia = dados.get("materia", {})
     datas = [item["data_prevista"] for item in dados.get("plano_capitulos", [])
              if item.get("data_prevista")]
@@ -354,6 +402,7 @@ def md_conhecimentos(dados):
         return []
     linhas = ["", "## Conhecimentos da unidade curricular", ""]
     linhas += [f"{item['dominio']}. **{item['titulo']}:** {'; '.join(item['conteudos'])}."
+               if item.get("conteudos") else f"{item['dominio']}. **{item['titulo']}**"
                for item in dados["conhecimentos"]]
     detalhamento = dados.get("materia", {}).get("detalhamento_didatico_conhecimentos", {})
     if detalhamento:
@@ -420,19 +469,19 @@ def md_glossario(capitulos):
                       "alfabética (o número indica o capítulo).", "", *ordenar_termos(termos)])
 
 
-def md_capitulo(capitulo, horas):
+def md_capitulo(capitulo, dados):
     """Monta um capítulo: identificação, teoria, vídeos, resumo e exercícios.
 
     Args:
         capitulo: Dicionário do capítulo (com as seções originais da fonte).
-        horas: Carga horária do capítulo (uma aula).
+        dados: Dados da matéria (a carga horária vem da aula do capítulo).
 
     Returns:
         Markdown do capítulo.
     """
     linhas = [f"# {capitulo['titulo']}", "",
               f"- **Aula:** {capitulo['aula'] or capitulo['numero']}",
-              f"- **Carga horária:** {horas} horas (1 aula)",
+              f"- **Carga horária:** {horas_da_aula(dados, capitulo['numero'])} horas (1 aula)",
               f"- **Capacidade:** {', '.join(capitulo['codigos'])}",
               f"- **Fonte:** `APOSTILA/CONTEUDO/{capitulo['id'].upper()}.md`"]
     for parte in ORDEM_PARTES_CAPITULO:
@@ -535,6 +584,9 @@ def md_avaliacao_ementa(materia):
         linhas += [avaliacao["nota_final"], ""]
     linhas += [f"- **{rotulo}:** {avaliacao[campo]}" for rotulo, campo in
                (("Formativa", "formativa"), ("Recuperação", "recuperacao")) if avaliacao.get(campo)]
+    if avaliacao.get("rubrica_lista"):
+        linhas += ["", "**Rubrica de desempenho:**", ""]
+        linhas += [f"- {nivel}" for nivel in avaliacao["rubrica_lista"]]
     if avaliacao.get("rubrica"):
         linhas += ["", "| Nível | Nota | Descrição |", "|---|---|---|"]
         linhas += [f"| {nivel['nivel']} | {nivel['nota']} | {nivel['descricao']} |"
@@ -560,6 +612,8 @@ def md_recursos_ementa(materia):
         Lista de linhas Markdown.
     """
     recursos = materia.get("recursos", {})
+    if not recursos and not materia.get("acessibilidade"):
+        return []
     linhas = ["", "## Recursos e ambientes", ""]
     for campo, rotulo in ROTULOS_RECURSOS:
         valor = recursos.get(campo)
@@ -623,6 +677,42 @@ def md_listas_ementa(materia):
     return linhas
 
 
+def md_conteudos_programaticos(materia):
+    """Monta os conteúdos programáticos por módulo (literais da ementa), se houver.
+
+    Args:
+        materia: Conteúdo do materia.json ("conteudos_programaticos": [{modulo, itens}]).
+
+    Returns:
+        Lista de linhas Markdown.
+    """
+    modulos = materia.get("conteudos_programaticos", [])
+    if not modulos:
+        return []
+    linhas = ["", "## Conteúdos programáticos"]
+    for modulo in modulos:
+        linhas += ["", f"### {modulo['modulo']}", ""] + [f"- {item}" for item in modulo["itens"]]
+    return linhas
+
+
+def md_textos_ementa(materia):
+    """Monta as demais seções literais da ementa ("textos_ementa": [{titulo, texto|itens}]).
+
+    Args:
+        materia: Conteúdo do materia.json.
+
+    Returns:
+        Lista de linhas Markdown.
+    """
+    linhas = []
+    for secao in materia.get("textos_ementa", []):
+        linhas += ["", f"## {secao['titulo']}", ""]
+        if secao.get("texto"):
+            linhas.append(secao["texto"])
+        linhas += [f"- {item}" for item in secao.get("itens", [])]
+    return linhas
+
+
 def md_ementa_oficial(dados):
     """Monta a seção com o texto oficial da ementa que não é por aula (referência literal).
 
@@ -636,7 +726,8 @@ def md_ementa_oficial(dados):
     linhas = ["# Ementa da matéria (texto oficial)", "",
               "Referência literal da ementa da matéria, para comparar com a apostila. Não editar "
               "aqui: quem muda é a ementa (e o `materia.json`).", ""]
-    linhas += md_objetivos_ementa(materia) + md_avaliacao_ementa(materia)
+    linhas += md_objetivos_ementa(materia) + md_conteudos_programaticos(materia)
+    linhas += md_textos_ementa(materia) + md_avaliacao_ementa(materia)
     linhas += md_recursos_ementa(materia) + md_aula_padrao(materia)
     linhas += md_textos_didaticos_ementa(materia)
     linhas += md_listas_ementa(materia) + md_bncc(materia)
@@ -653,6 +744,8 @@ def md_referencias(dados):
         Markdown da seção.
     """
     referencias = dados.get("materia", {}).get("referencias", [])
+    if not referencias:
+        return "# Referências\n\nA ementa da matéria não lista referências."
     return "\n".join(["# Referências", "", *[f"- {referencia}" for referencia in referencias]])
 
 
@@ -673,7 +766,7 @@ def montar_markdown_completo(dados, texto_introducao, capitulos):
         f"## Sumário\n\n{MARCADOR_SUMARIO_INICIO}\n{MARCADOR_SUMARIO_FIM}",
         md_ementa_oficial(dados), md_plano(dados, numeros), md_introducao(texto_introducao),
         md_capacidades(dados, capitulos), md_glossario(capitulos), md_referencias(dados),
-        *[md_capitulo(capitulo, dados["horas_por_capitulo"]) for capitulo in capitulos],
+        *[md_capitulo(capitulo, dados) for capitulo in capitulos],
     ]
     return atualizar_sumario("\n\n---\n\n".join(partes) + "\n")
 
@@ -764,7 +857,7 @@ def capitulos_no_markdown(texto_md):
     return {f"{int(numero):02d}" for numero in PADRAO_CAPITULO_MD.findall(texto_md)}
 
 
-def acrescentar_capitulos(texto_md, capitulos_novos, horas):
+def acrescentar_capitulos(texto_md, capitulos_novos, dados):
     """Acrescenta capítulos novos ao Markdown completo sem mexer no que o usuário editou.
 
     Atualiza também o glossário, a tabela de capacidades por capítulo, o plano e o sumário.
@@ -772,7 +865,7 @@ def acrescentar_capitulos(texto_md, capitulos_novos, horas):
     Args:
         texto_md: Markdown completo existente.
         capitulos_novos: Capítulos que ainda não estão no arquivo.
-        horas: Carga horária de cada capítulo.
+        dados: Dados da matéria (carga horária de cada capítulo).
 
     Returns:
         Markdown atualizado.
@@ -782,5 +875,5 @@ def acrescentar_capitulos(texto_md, capitulos_novos, horas):
         texto_md = acrescentar_linha_tabela(texto_md, TITULO_CAPACIDADES_POR_CAPITULO,
                                             linha_capacidades_capitulo(capitulo))
         texto_md = marcar_incluido_no_plano(texto_md, capitulo["numero"])
-        texto_md = f"{texto_md.rstrip()}\n\n---\n\n{md_capitulo(capitulo, horas)}\n"
+        texto_md = f"{texto_md.rstrip()}\n\n---\n\n{md_capitulo(capitulo, dados)}\n"
     return atualizar_sumario(texto_md)

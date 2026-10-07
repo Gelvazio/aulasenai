@@ -1,11 +1,14 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 20:15
+**Versão das regras:** 2026-10-07 23:55
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 23:55 | Reforço de Linguagens ganha menu de atividades (`MENU-ATIVIDADES.js` com 📚 Índice, 📘 Apostila e as atividades por aula) |
+| 2026-10-07 23:45 | Regra do push dividida por ambiente: **local** = nunca fazer push (continua); **nuvem** (Claude Code na web/remoto) = sempre fazer push, direto na `main`, sem pull request |
+| 2026-10-07 23:20 | Apostila de Reforço de Linguagens (10 capítulos, aguardando validação); gerador de apostilas aceita a carga horária de cada aula (6 h/7 h), ementas com capacidades em lista, conteúdos programáticos por módulo e aulas em negrito, e vídeos "⏳ pendentes" quando o YouTube não pode ser conferido; ementa de Reforço de Linguagens com as 6 capacidades da ementa do curso |
 | 2026-10-07 20:15 | Regra "IDENTIFICAÇÃO DA APOSTILA" (global): toda apostila mostra autor, versão, data e hora (campos `autor_apostila` e `versao_apostila` no `materia.json`); começou pela ITIC (autor Gelvazio Camargo, versão 1.0) |
 | 2026-10-07 17:00 | Combo "Aluno" do professor também nas atividades objetivas (alternativas marcadas pelo aluno, somente leitura); módulo único `respostas-aluno-professor.js` |
 | 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
@@ -83,7 +86,7 @@ Registrada em 2026-10-03 a pedido do usuário.
   nem resumo).
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
-- ✅ **Um commit por tarefa** (local).
+- ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, na `main`).
 - ✅ **Aulas: uma por vez, completa** (2026-10-03): gerar e gravar uma aula (e todo o seu material)
   antes de passar à próxima, controlando em `<MATERIA>/AULAS/STATUS-AULAS.md` (ver a regra
   "GERAR E GRAVAR UMA AULA POR VEZ").
@@ -91,8 +94,10 @@ Registrada em 2026-10-03 a pedido do usuário.
   discursivas) e a matéria tem 10 aulas (uma por slide); ver a regra exclusiva da matéria.
 - ✅ **1 atividade objetiva de 50 questões por aula** (2026-10-03), controlada em
   `<MATERIA>/ATIVIDADES/STATUS-ATIVIDADES.md` (ver a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES").
-- ⛔ **NUNCA fazer push** (2026-10-01): o push é feito **só pelo usuário, localmente**. Mesmo que
-  ele peça "faça push", não executar `git push`; avisar que o commit está pronto para ele enviar.
+- ⛔ **Push depende do ambiente** (2026-10-07): **local** (máquina do usuário) = **nunca fazer
+  push**, mesmo que ele peça — avisar que o commit está pronto para ele enviar; **nuvem** (Claude
+  Code na web/remoto) = **sempre fazer push, direto na `main`, sem pull request** (ver a regra
+  "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM").
 - ⛔ **Conteúdo só pelos Markdowns, nunca de PDF** (2026-10-03): para conferir ou gerar conteúdo,
   ler os `.md` da matéria — em primeiro lugar o `EMENTA-CHALKIE-AI.md` (ver a regra "CONTEÚDO SÓ
   PELOS MARKDOWNS").
@@ -1901,16 +1906,33 @@ Registrada em 2026-09-28.
 - ✅ Lista das turmas com os e-mails: `ATIVIDADES/LISTA-PRESENCA.js` de cada matéria.
   ⚠️ Dados pessoais de menores (LGPD): arquivo no `.gitignore`, nunca publicar.
 
-## ⛔ REGRA — NUNCA FAZER PUSH (O USUÁRIO FAZ LOCALMENTE)
+## ⛔ REGRA — PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM (DIRETO NA `main`)
+
+Registrada em 2026-10-01 a pedido do usuário ("NUNCA FAZER PUSH"); **alterada em 2026-10-07**, a
+pedido do usuário, para valer **conforme o ambiente**.
+
+### 💻 Ambiente local (máquina do usuário, ex.: `C:\fontes\aulasenai`)
 
 ⛔ **O Claude NUNCA faz `git push`.** O push é feito **somente pelo usuário, na máquina dele**.
-Registrada em 2026-10-01 a pedido do usuário; **substitui** a regra "PUSH PERMITIDO QUANDO O USUÁRIO
-PEDIR" (2026-09-28).
 
 - ✅ O Claude faz só o **commit local** de cada tarefa.
 - ❌ Não executar `git push` em nenhuma situação, nem quando o usuário pedir "faça push" ou
   "commit e push": responder que o commit está pronto e que o push fica com ele.
 - ❌ Sem `git pull`/merge com o remoto, push forçado, push de tags ou mudança de remotos.
+
+### ☁️ Ambiente de nuvem (Claude Code na web / sessão remota, contêiner temporário)
+
+✅ **O Claude SEMPRE faz o push, direto na `main`, sem pull request.** No contêiner da nuvem o
+commit se perde quando a sessão acaba, e o usuário não tem como enviá-lo da máquina dele.
+
+- ✅ Ao concluir cada tarefa: commit (regra "COMMIT POR TAREFA") e **`git push origin HEAD:main`**.
+- ✅ **Sem pull request:** não abrir PR; o trabalho vai direto para a `main`.
+- ✅ Antes do push, `git fetch origin main`; se a `main` andou, trazer as mudanças dela para o
+  trabalho (merge ou rebase do próprio commit ainda não enviado) e conferir de novo antes de enviar.
+- ❌ **Nunca push forçado** (`--force`), nunca reescrever o histórico já publicado da `main`, nunca
+  push de tags nem mudança de remotos.
+- ✅ Antes do push, conferir `git diff --cached --name-only` contra a regra "O QUE NUNCA É
+  PUBLICADO" (a `main` é publicada pela Vercel).
 
 ## 💾 REGRA — COMMIT POR TAREFA (SEMPRE)
 
@@ -1925,7 +1947,8 @@ regra global de mesmo nome.
   gabaritos, listas de alunos ou outros itens da regra "O QUE NUNCA É PUBLICADO").
 - ✅ Antes do commit, conferir `git diff --cached --name-only` contra a regra "O QUE NUNCA É
   PUBLICADO".
-- ✅ O commit é **local**; o **push nunca é feito pelo Claude** (ver "NUNCA FAZER PUSH").
+- ✅ No ambiente **local** o commit fica só local (o push é do usuário); na **nuvem**, o Claude faz
+  o push direto na `main` (ver "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM").
 - ✅ Usuário pediu commit explícito → fazer na hora.
 - ✅ Arquivos ignorados pelo Git (gabaritos, fontes de questões, listas de alunos) não entram no
   commit; não usar `-f` para forçá-los. Desde 2026-09-30 os `*.md` e `*.py` **são versionados**
@@ -2037,8 +2060,9 @@ assets/
 - ✅ Os itens vêm de **`ATIVIDADES/MENU-ATIVIDADES.js`** da pasta de atividades
   (`window.MENU_ATIVIDADES = { titulo, itens: [{ rotulo, link } | { rotulo, subitens }] }`),
   com links relativos a essa pasta. Nada de nomes fixos no `menu.js`.
-- ✅ Pastas com menu: `GESTAO_E_CONTROLE_MATERIAIS/.../AULAS-CHALKIE-AI-COLORIDA/ATIVIDADES/` e
-  `ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/`.
+- ✅ Pastas com menu: `GESTAO_E_CONTROLE_MATERIAIS/.../AULAS-CHALKIE-AI-COLORIDA/ATIVIDADES/`,
+  `ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/` e
+  `RIO_DO_SUL_MAIS_TECH/REFORCO_LINGUAGENS/ATIVIDADES/` (2026-10-07, com a apostila).
 - ✅ Página ou atividade nova numa dessas pastas: acrescentar o item no `MENU-ATIVIDADES.js`.
   Os geradores já incluem as tags quando o arquivo de dados existe.
 
@@ -2307,7 +2331,9 @@ importação no AVA pelo professor; as demais matérias só quando o usuário li
 ## 📘 REGRAS APOSTILAS
 
 Registrada em 2026-10-03 a pedido do usuário (padrões definidos na validação do piloto). Plano:
-`docs/gerador-apostilas.md`. **Status:** 🔄 piloto **Introdução à TIC (ITIC)** — só o capítulo 01
+`docs/gerador-apostilas.md`. **Reforço de Linguagens (2026-10-07):** introdução + 10 capítulos gerados, conferência 100%
+(138/138), aguardando validação; vídeos pendentes (`REFORCO_LINGUAGENS/APOSTILA/STATUS-APOSTILA.md`).
+**Status:** 🔄 piloto **Introdução à TIC (ITIC)** — só o capítulo 01
 gerado, aguardando validação do usuário; os demais capítulos só depois que ele liberar, **um por
 vez, perguntando a cada capítulo** (rascunhos em `APOSTILA/RASCUNHOS/`, fora da apostila).
 
@@ -2384,6 +2410,13 @@ matéria.**
   capacidades, estratégias, atividade/entrega); listas e textos da seção de sequência
   (situações de aprendizagem, dificuldades, pirâmide, datas previstas); recursos item a item;
   BNCC com "aulas 1, 2 e 7" ou "todas".
+- ✅ **Formato de ementa em listas** (2026-10-07, Reforço de Linguagens): capacidades em lista
+  numerada sob "Capacidades ...", "CONTEÚDOS PROGRAMÁTICOS" com `### Módulo N: Título` + lista,
+  aulas em negrito `**Aula N — Tema (6h)**`, indicadores `- **Nome:** texto`, situações-problema
+  em listas e parágrafos e as seções de texto livre de `SECOES_TEXTO_LIVRE` (Alinhamento,
+  Metodologias, Integração, Acompanhamento). No `materia.json`, essas seções ficam em
+  `conteudos_programaticos`, `textos_ementa` (`{titulo, texto|itens}`) e
+  `avaliacao.rubrica_lista`.
 - ⛔ **Seção que existe na ementa mas não foi reconhecida reprova a conferência** (capacidades,
   socioemocionais, indicadores, conhecimentos, sequência, avaliação, BNCC, recursos, prompts,
   regras para IA, glossário): nada pode ficar de fora em silêncio. Formato novo de ementa =
@@ -2458,6 +2491,14 @@ Registrada em 2026-10-03 a pedido do usuário.
   `assets/gerador-apostilas/markdown_apostila.py`. O plano de capítulos vem do `materia.json`
   (`carga_horaria_uc`, `horas_por_aula` = 4, `aulas` = uma por aula); o gerador confere
   se capítulos × 4 h = carga da UC. Glossário em ordem alfabética sem considerar acentos.
+- ✅ **Carga horária por aula** (2026-10-07): quando as aulas não têm 4 h (exceção de Reforço de
+  Linguagens: 6 h e 7 h), cada aula do `materia.json` traz `carga_horaria`; o gerador soma as
+  aulas para conferir a carga da UC e mostra as horas de cada capítulo. Sem `carga_horaria`, vale
+  o `horas_por_aula` (padrão 4).
+- ✅ **Vídeos pendentes** (2026-10-07): se o YouTube não puder ser conferido (rede bloqueada), o
+  capítulo leva na seção "Vídeos" a linha `- ⏳ Vídeos pendentes: ...` (o gerador avisa e o HTML
+  mostra o aviso). ❌ Nunca inventar link, título ou duração; trocar pela lista real assim que
+  conferida (status no `STATUS-APOSTILA.md`).
 - ✅ **O HTML é gerado a partir do Markdown completo** (2026-10-07): o `gerar_apostila.py` lê a
   `# Introdução` e cada `# Capítulo NN` do `APOSTILA-<MATERIA>.md` (glossário de cada capítulo
   pelo `_(cap. NN)_` do glossário geral); sem o Markdown completo, o gerador para com erro

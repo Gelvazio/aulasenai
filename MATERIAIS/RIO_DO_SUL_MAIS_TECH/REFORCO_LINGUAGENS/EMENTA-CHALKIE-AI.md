@@ -21,15 +21,14 @@ Esta unidade curricular integra-se ao programa Rio do Sul Mais Tech, desenvolven
 ## 🎯 II. OBJETIVOS E CAPACIDADES
 
 
-### Capacidades Específicas da UC
+### Capacidades Básicas/Técnicas da UC (ementa do curso, UC 7)
 
 1. Organizar informações de forma clara e coerente
-2. Desenvolver autonomia de estudo utilizando estratégias de leitura e escrita
-3. Aplicar pensamento crítico na análise de textos
-4. Trabalhar em grupo colaborando em atividades de produção textual
-5. Comunicar-se de forma assertiva respeitando diferentes contextos
-6. Compreender e produzir diversos tipos de textos
-7. Dominar aspectos gramaticais e ortográficos
+2. Desenvolver autonomia de estudo, utilizando estratégias de leitura e escrita
+3. Aplicar pensamento crítico na análise de textos e situações comunicativas
+4. Trabalhar em grupo, colaborando em atividades de leitura, produção textual e debates
+5. Comunicar-se de forma assertiva, respeitando diferentes opiniões e contextos
+6. Cumprir prazos e entregar atividades dentro das orientações propostas
 
 
 ---

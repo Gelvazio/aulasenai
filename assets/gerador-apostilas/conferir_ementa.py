@@ -19,7 +19,16 @@ ARQUIVO_EMENTA = "EMENTA-CHALKIE-AI.md"
 PADRAO_TITULO = re.compile(r"^(#{2,3})\s+(.+?)\s*$")
 PADRAO_FAIXA_CAPACIDADES = re.compile(r"([A-Z])(\d+)\s*[–-]\s*[A-Z](\d+)")
 PADRAO_CAMPO_LINHA = re.compile(r"^\*\*(.+?):\*\*\s*(.+?)\s*$")
+PADRAO_AULA_NEGRITO = re.compile(r"^\*\*Aula (\d+) — (.+?) \((\d+) ?h\)\*\*\s*$", re.M)
+PADRAO_CAMPO_LISTA = re.compile(r"^- \*\*(.+?):\*\*\s*(.+?)\s*$", re.M)
 TAMANHO_MINIMO_CELULA = 25
+# Seções de texto livre (listas e parágrafos) conferidas literalmente quando existirem na ementa.
+SECOES_TEXTO_LIVRE = (
+    ("Alinhamento com", "Alinhamento"),
+    ("Metodologias", "Estratégias de ensino"),
+    ("INTEGRAÇÃO COM", "Integração"),
+    ("Acompanhamento Contínuo", "Acompanhamento"),
+)
 ROTULOS_FORA_RECURSOS = ("materiais da pasta", "acessibilidade", "referências")
 ROTULOS_TRATADOS_SEQUENCIA = ("aula padrão", "marcos")
 INICIOS_TRATADOS_AVALIACAO = ("**formativa", "**recuperação")
@@ -28,6 +37,7 @@ SECOES_OBRIGATORIAS = (
     ("socioemocionais", "Capacidades socioemocionais"),
     ("Indicadores", "Indicadores"),
     ("CONHECIMENTOS", "Conhecimentos"),
+    ("CONTEÚDOS PROGRAMÁTICOS", "Conteúdos programáticos"),
     ("SEQUÊNCIA", "Sequência de aulas"),
     ("AVALIAÇÃO", "Avaliação"),
     ("BNCC", "BNCC"),
@@ -77,6 +87,47 @@ def secao(ementa, palavra, excluir=None):
                    len(linhas))
         return "\n".join(linhas[indice + 1: fim])
     return ""
+
+
+def secoes(ementa, palavra):
+    """Devolve o texto de TODAS as seções cujo título (## ou ###) contém a palavra.
+
+    Args:
+        ementa: Texto da ementa.
+        palavra: Trecho do título procurado (sem diferenciar maiúsculas).
+
+    Returns:
+        Lista com o texto de cada seção encontrada.
+    """
+    linhas, resultado = ementa.splitlines(), []
+    for indice, linha in enumerate(linhas):
+        achado = PADRAO_TITULO.match(linha)
+        if not achado or palavra.casefold() not in achado.group(2).casefold():
+            continue
+        nivel = len(achado.group(1))
+        fim = next((j for j in range(indice + 1, len(linhas))
+                    if (outro := PADRAO_TITULO.match(linhas[j])) and len(outro.group(1)) <= nivel),
+                   len(linhas))
+        resultado.append("\n".join(linhas[indice + 1: fim]))
+    return resultado
+
+
+def linhas_livres(texto):
+    """Itens de listas ("- ") e parágrafos de um trecho (sem títulos, tabelas e listas numeradas).
+
+    Args:
+        texto: Trecho da ementa.
+
+    Returns:
+        Lista de textos (itens de lista sem o "- ").
+    """
+    resultado = []
+    for linha in (linha.strip() for linha in texto.splitlines()):
+        if linha.startswith("- "):
+            resultado.append(linha[2:])
+        elif linha and not linha.startswith(("|", "#", "---")) and not re.match(r"^\d+\.", linha):
+            resultado.append(linha)
+    return resultado
 
 
 def campo(texto, rotulo):
@@ -209,6 +260,12 @@ def itens_capacidades(ementa):
     """
     itens = [("Capacidades básicas", f"{codigo}: {texto}", f"{codigo}: {texto}")
              for codigo, texto in re.findall(r"^\| \*\*([A-Z]\d+)\*\* \| (.+?) \|$", ementa, re.M)]
+    if not itens:
+        # Formato em lista numerada ("1. texto") sob um título "Capacidades ...".
+        textos = dict.fromkeys(texto for trecho in secoes(ementa, "Capacidades")
+                               if "×" not in trecho
+                               for texto in re.findall(r"^\d+\. (.+?)\s*$", trecho, re.M))
+        itens = [("Capacidades básicas", texto[:70], texto) for texto in textos]
     for linha in re.findall(r"^- \*\*(S\d+.*)$", ementa, re.M):
         achado = (re.match(r"(S\d+)\*\*\s*—\s*(.+)$", linha)
                   or re.match(r"(S\d+) (.+?)\*\*\s*(.+)$", linha))
@@ -219,7 +276,41 @@ def itens_capacidades(ementa):
     for cabecalho, linhas in tabelas(secao(ementa, "Indicadores de desempenho")):
         itens += [("Indicadores", f"{linha[0]}. {linha[1]}", linha[1])
                   for linha in linhas if len(linha) >= 2 and linha[0].isdigit()]
+    if not any(grupo == "Indicadores" for grupo, _, _ in itens):
+        # Formato em lista ("- **Nome:** texto") sob títulos "Indicadores ...".
+        itens += [("Indicadores", f"{rotulo}: {texto}"[:70], f"{rotulo}: {texto}")
+                  for trecho in secoes(ementa, "Indicadores")
+                  for rotulo, texto in PADRAO_CAMPO_LISTA.findall(trecho)]
     return itens
+
+
+def itens_conteudos_programaticos(ementa):
+    """Itens dos conteúdos programáticos por módulo ("### Módulo N: Título" + lista).
+
+    Args:
+        ementa: Texto da ementa.
+
+    Returns:
+        Lista de tuplas (grupo, descrição, texto procurado).
+    """
+    texto = secao(ementa, "CONTEÚDOS PROGRAMÁTICOS")
+    itens = [("Conteúdos programáticos", titulo, titulo)
+             for titulo in re.findall(r"^###\s+(.+?)\s*$", texto, re.M)]
+    return itens + [("Conteúdos programáticos", linha[:70], linha)
+                    for linha in linhas_livres(texto)]
+
+
+def itens_textos_livres(ementa):
+    """Itens das seções de texto livre (SECOES_TEXTO_LIVRE) que existirem na ementa.
+
+    Args:
+        ementa: Texto da ementa.
+
+    Returns:
+        Lista de tuplas (grupo, descrição, texto procurado).
+    """
+    return [(grupo, linha[:70], linha) for palavra, grupo in SECOES_TEXTO_LIVRE
+            for trecho in secoes(ementa, palavra) for linha in linhas_livres(trecho)]
 
 
 def itens_conhecimentos(ementa):
@@ -345,6 +436,10 @@ def itens_sequencia(ementa):
             continue
         itens += [item for linha in linhas if linha and linha[0].isdigit()
                   for item in itens_linha_sequencia(cabecalho, linha, siglas)]
+    for numero, tema, horas in PADRAO_AULA_NEGRITO.findall(texto):
+        # Formato "**Aula N — Tema (6h)**": tema e carga horária da aula no plano.
+        itens.append(("Sequência de aulas", f"Aula {numero}: tema", f"Aula {numero} — {tema}"))
+        itens.append(("Sequência de aulas", f"Aula {numero}: {horas} h", f"{tema} | {horas} h"))
     return itens + itens_textos_sequencia(texto)
 
 
@@ -365,8 +460,11 @@ def itens_aula_e_situacoes(ementa):
         if achado:
             itens.append(("Marcos", marco.strip(), f"Aula {achado.group(1)} — {achado.group(2)}"))
     situacoes = secao(ementa, "Situações-problema")
-    itens += [("Situações-problema", f"{numero}. {texto}", texto)
-              for numero, texto in re.findall(r"^(\d+)\. (.+)$", situacoes, re.M)]
+    numeradas = re.findall(r"^(\d+)\. (.+)$", situacoes, re.M)
+    itens += [("Situações-problema", f"{numero}. {texto}", texto) for numero, texto in numeradas]
+    if not numeradas:
+        # Formato em listas e parágrafos (ex.: casos "- Caso: ...", contextos, trabalhos).
+        itens += [("Situações-problema", linha[:70], linha) for linha in linhas_livres(situacoes)]
     return itens
 
 
@@ -470,7 +568,7 @@ def itens_listas(ementa):
 
 
 EXTRATORES = (itens_identificacao, itens_objetivos, itens_capacidades, itens_conhecimentos,
-              itens_sequencia, itens_aula_e_situacoes, itens_avaliacao, itens_recursos,
+              itens_conteudos_programaticos, itens_textos_livres, itens_sequencia, itens_aula_e_situacoes, itens_avaliacao, itens_recursos,
               itens_listas)
 
 
