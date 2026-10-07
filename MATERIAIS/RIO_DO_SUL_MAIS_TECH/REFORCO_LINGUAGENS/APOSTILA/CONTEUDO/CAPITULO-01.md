@@ -133,7 +133,9 @@ O assunto é parecido; o **contexto** muda tudo.
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre tipos e gêneros textuais e contexto de produção (a duração precisa ser conferida antes de entrar na apostila).
+- [Gêneros Textuais](https://www.youtube.com/watch?v=Ucjv4LT8CSg) — a conferir — Prof. Noslen
+- [Tipos Textuais](https://www.youtube.com/watch?v=ibwf_X3498c) — a conferir — Prof. Noslen
+- [TIPOS E GÊNEROS TEXTUAIS](https://www.youtube.com/watch?v=NuMX0fm3V3I) — a conferir — Português com Letícia
 
 ## Exercícios
 

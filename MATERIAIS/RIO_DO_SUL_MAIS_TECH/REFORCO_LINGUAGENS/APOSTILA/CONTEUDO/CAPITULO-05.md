@@ -113,7 +113,8 @@ A **TecVale** (empresa **fictícia**) inaugura um laboratório de robótica:
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre narração, descrição, argumentação e paragrafação (a duração precisa ser conferida antes de entrar na apostila).
+- [Narração, Descrição e Dissertação - Português](https://www.youtube.com/watch?v=YWohiTlnrH8) — a conferir — Natália Guirado
+- [Tipologias Textuais](https://www.youtube.com/watch?v=7wIhBsb5Kzo) — a conferir — Brasil Escola
 
 ## Exercícios
 

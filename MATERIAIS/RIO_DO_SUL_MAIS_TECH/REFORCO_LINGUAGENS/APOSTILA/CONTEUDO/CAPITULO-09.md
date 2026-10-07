@@ -114,7 +114,9 @@ em linguagem formal:
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre argumentação, debate regrado, comunicação assertiva e variação linguística (a duração precisa ser conferida antes de entrar na apostila).
+- [Preconceito Linguístico](https://www.youtube.com/watch?v=TDCcSKl5maI) — a conferir — Brasil Escola
+- [Variação linguística e preconceito linguístico](https://www.youtube.com/watch?v=a6IitrQGksE) — a conferir
+- [Debate de tema - Preconceito Linguístico](https://www.youtube.com/watch?v=tw3yRUUsHqo) — a conferir
 
 ## Exercícios
 

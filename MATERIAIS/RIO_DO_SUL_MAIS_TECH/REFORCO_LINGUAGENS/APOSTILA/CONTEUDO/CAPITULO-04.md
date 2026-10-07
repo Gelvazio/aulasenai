@@ -107,7 +107,9 @@ Reescrita com coesão e coerência:
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre coesão referencial, conectivos e coerência textual (a duração precisa ser conferida antes de entrar na apostila).
+- [Os conectivos](https://www.youtube.com/watch?v=PC4b4jt0Bl0) — a conferir
+- [Coesão e coerência](https://www.youtube.com/watch?v=IIU6i3UXyi0) — a conferir — Prof. Noslen
+- [Coesão e coerência textual - Redação - Ensino Médio](https://www.youtube.com/watch?v=3E4ULflHHGo) — a conferir
 
 ## Exercícios
 

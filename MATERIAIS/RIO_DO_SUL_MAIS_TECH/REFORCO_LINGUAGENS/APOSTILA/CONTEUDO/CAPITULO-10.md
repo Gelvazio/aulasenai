@@ -123,7 +123,9 @@ Revisado (impessoal, preciso, sem repetições):
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre crônica, poesia, relatório técnico, resumo e resenha (a duração precisa ser conferida antes de entrar na apostila).
+- [Gênero Textual: Crônica](https://www.youtube.com/watch?v=Oikb9X5tUas) — a conferir
+- [Resenha x Resumo](https://www.youtube.com/watch?v=jJb2nsCEvZ0) — a conferir — Brasil Escola
+- [Crônica](https://www.youtube.com/watch?v=2XcMASxk4oM) — a conferir — Brasil Escola
 
 ## Exercícios
 

@@ -105,7 +105,9 @@ Revisado:
 
 ## Vídeos
 
-- ⏳ Vídeos pendentes: o professor indica de 1 a 4 vídeos do YouTube de até 15 minutos sobre uso da vírgula, concordância verbal e concordância nominal (a duração precisa ser conferida antes de entrar na apostila).
+- [Uso da Vírgula](https://www.youtube.com/watch?v=37bpap7OgOY) — a conferir — Prof. Alexandre Luz
+- [Concordância verbal e nominal (6º ano)](https://www.youtube.com/watch?v=lc2Gw838IBo) — a conferir
+- [Concordância verbal](https://www.youtube.com/watch?v=-qT0FjSQbe4) — a conferir — Brasil Escola
 
 ## Exercícios
 

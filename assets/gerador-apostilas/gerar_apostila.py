@@ -57,6 +57,7 @@ URL_MINIATURA = "https://i.ytimg.com/vi/{}/hqdefault.jpg"
 CAMPOS_DADOS = ("uc", "uc_curta", "curso", "docente")
 SECOES_OBRIGATORIAS = ("Teoria", "Vídeos", "Exercícios", "Resumo", "Glossário")
 DURACAO_MAXIMA_SEGUNDOS = 15 * 60
+DURACAO_A_CONFERIR = "a conferir"
 LINHAS_RESPOSTA_PADRAO = 3
 QUANTIDADE_MINIMA_EXERCICIOS = 5
 EXTENSOES_MARKDOWN = ["tables", "sane_lists", "fenced_code"]
@@ -67,8 +68,8 @@ PADRAO_SECAO = re.compile(r"^##\s+(.+?)\s*$", re.MULTILINE)
 PADRAO_ITEM = re.compile(r"^###\s+ITEM\s+(\d+)\s*$", re.MULTILINE)
 PADRAO_CAMPO = r"^-?\s*\*\*{rotulo}:\*\*\s*(.+?)\s*$"
 PADRAO_VIDEO = re.compile(
-    r"^-\s*\[(?P<titulo>[^\]]+)\]\((?P<url>[^)]+)\)\s*[—-]\s*(?P<duracao>[\d:]+)"
-    r"(?:\s*[—-]\s*(?P<canal>.+?))?\s*$", re.MULTILINE)
+    r"^-\s*\[(?P<titulo>[^\]]+)\]\((?P<url>[^)]+)\)\s*[—-]\s*(?P<duracao>[\d:]+|a conferir)"
+    r"(?:[ \t]*[—-][ \t]*(?P<canal>[^\n]+?))?[ \t]*$", re.MULTILINE)
 PADRAO_VIDEOS_PENDENTES = re.compile(r"^-\s*⏳\s*(?P<texto>.+?)\s*$", re.MULTILINE)
 PADRAO_ID_YOUTUBE = re.compile(r"(?:v=|youtu\.be/|/embed/)([A-Za-z0-9_-]{11})")
 PADRAO_TERMO = re.compile(r"^-\s*\*\*(?P<termo>.+?):\*\*\s*(?P<definicao>.+?)\s*$", re.MULTILINE)
@@ -206,7 +207,9 @@ def ler_videos(texto, rotulo):
         id_video = PADRAO_ID_YOUTUBE.search(achado["url"])
         if not id_video:
             erro(f"{rotulo_video}: o link não é de um vídeo do YouTube")
-        if duracao_em_segundos(achado["duracao"], rotulo_video) > DURACAO_MAXIMA_SEGUNDOS:
+        if achado["duracao"] == DURACAO_A_CONFERIR:
+            print(f"⚠️ {rotulo_video}: duração a conferir pelo professor")
+        elif duracao_em_segundos(achado["duracao"], rotulo_video) > DURACAO_MAXIMA_SEGUNDOS:
             erro(f"{rotulo_video}: passa de 15 minutos ({achado['duracao']})")
         videos.append({**achado.groupdict(), "id": id_video.group(1)})
     if not videos and not PADRAO_VIDEOS_PENDENTES.search(texto):
@@ -405,6 +408,18 @@ def html_texto_capacidades(codigos, capacidades):
                        f"{html.escape(capacidades[codigo])}" for codigo in codigos)
 
 
+def texto_duracao(duracao):
+    """Texto da duração do vídeo ("a conferir" vira aviso para o professor).
+
+    Args:
+        duracao: Duração "mm:ss" ou "a conferir".
+
+    Returns:
+        Texto exibido na caixa do vídeo.
+    """
+    return "duração a conferir pelo professor" if duracao == DURACAO_A_CONFERIR else duracao
+
+
 def html_video(video):
     """Monta a caixa de um vídeo: miniatura com link, título, duração, canal e endereço.
 
@@ -420,7 +435,7 @@ def html_video(video):
             f'<img class="caixa-video__miniatura" src="{URL_MINIATURA.format(video["id"])}" '
             f'alt="Miniatura do vídeo {titulo}"></a><div>'
             f'<p class="caixa-video__titulo">▶️ {titulo}</p>'
-            f'<p class="caixa-video__detalhe">⏱️ {video["duracao"]}{canal}</p>'
+            f'<p class="caixa-video__detalhe">⏱️ {texto_duracao(video["duracao"])}{canal}</p>'
             f'<p class="caixa-video__detalhe">🔗 <a href="{url}" target="_blank" '
             f'rel="noopener">{url}</a></p></div></div>')
 
