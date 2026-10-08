@@ -122,12 +122,14 @@ async function carregarAlunoEscolhido(tela, opcoes) {
     const aluno = tela.alunos[Number(tela.combo.value)];
     if (!tela.combo.value || !aluno) {
         opcoes.preencher({});
+        opcoes.aoMostrarAluno?.(null);
         tela.aviso.textContent = '';
         return;
     }
     tela.combo.disabled = true;
     try {
         opcoes.preencher(await lerRespostasDoAlunoEscolhido(aluno, opcoes));
+        await opcoes.aoMostrarAluno?.(aluno);
         tela.aviso.textContent = '👀 Mostrando as respostas de ' + aluno.nome +
             ' (somente leitura).';
     } catch (erro) {
@@ -141,8 +143,9 @@ async function carregarAlunoEscolhido(tela, opcoes) {
  * Monta o combo "Aluno" que carrega na tela as respostas de cada aluno.
  * @param {HTMLElement} destino - Elemento onde a área do combo é acrescentada.
  * @param {{atividadeId: number, tabela: string, colunas: string, converter: Function,
- *     preencher: Function}} opcoes - Atividade, tabela de respostas, colunas lidas, conversão
- *     das linhas para o formato da tela e função que mostra as respostas.
+ *     preencher: Function, aoMostrarAluno?: Function}} opcoes - Atividade, tabela de respostas,
+ *     colunas lidas, conversão das linhas para o formato da tela, função que mostra as respostas
+ *     e (opcional) função chamada com o aluno mostrado (ou null ao limpar).
  */
 async function montarRespostasDoAluno(destino, opcoes) {
     const area = criarElementoRespostasAluno('div', CLASSE_RESPOSTAS_ALUNO);

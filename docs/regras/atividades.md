@@ -196,6 +196,10 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     corrigidas — nota ÷ pontos delas — e "(N/60)") e **"Nota IA (a
     confirmar)"** (só com a entrega feita e os 60 tópicos corrigidos). Nada disso vale sem a
     confirmação do professor em CORREÇÃO. Orientação da IA: `CORRECAO-PROVA-ADAG.md`.
+  - **Ícone da nota da IA em "Respostas dos alunos"** (2026-10-08): ao escolher o aluno no combo,
+    cada alternativa mostra ✅ Certa / 🟡 Meia certa / ❌ Errada com "IA nota/pontos" (ou ⏳ sem
+    correção) e o comentário da IA ao passar o mouse; `assets/js/nota-ia-respostas-discursiva.js`
+    (+ CSS), ligado pelo callback opcional `aoMostrarAluno` do `respostas-aluno-professor.js`.
   - **1º uso:** Prova Prática ADAG (id 82).
   - ⏳ **Regra para o futuro:** o progresso deve aparecer em **todas as atividades** (discursivas
     e objetivas — estas usam `assets/js/respostas-atividade.js` e precisam de módulo equivalente);

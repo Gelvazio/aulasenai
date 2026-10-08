@@ -17,6 +17,7 @@ const ARQUIVO_LIBERACAO_DISCURSIVA = 'liberacao-respostas-discursiva.js';
 const ARQUIVO_PDF_DISCURSIVA = 'exportar-pdf-discursiva.js';
 const ARQUIVO_RESPOSTAS_ALUNO = 'respostas-aluno-professor.js';
 const ARQUIVO_PROGRESSO_TURMA = 'progresso-turma-discursiva.js';
+const ARQUIVO_NOTA_IA_RESPOSTAS = 'nota-ia-respostas-discursiva.js';
 const BASE_SCRIPTS_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const CLASSE_BLOCO = 'topico-resposta';
 const CLASSE_FALTANDO = 'topico-resposta--faltando';
@@ -306,6 +307,7 @@ async function abrirRespostasDoAluno(painel, dados) {
             colunas: 'item,topico,texto',
             converter: converterRespostasDiscursivas,
             preencher: preencherCampos,
+            aoMostrarAluno: (aluno) => mostrarNotasIaDasRespostas(aluno, dados.atividadeId),
         });
     } catch (erro) {
         console.warn('Respostas dos alunos:', erro.message);
@@ -328,6 +330,23 @@ async function abrirProgressoDaTurma(dados) {
         await window.montarProgressoDaTurma(dados.atividadeId);
     } catch (erro) {
         console.warn('Progresso da turma:', erro.message);
+    }
+}
+
+/**
+ * Professor: ao carregar as respostas de um aluno, mostra o ícone da nota parcial da IA em cada
+ * alternativa (certa, meia certa, errada). Uma falha aqui não atrapalha a avaliação.
+ * @param {Object|null} aluno - Aluno mostrado no combo (null ao limpar).
+ * @param {number} atividadeId - Id da atividade.
+ */
+async function mostrarNotasIaDasRespostas(aluno, atividadeId) {
+    try {
+        if (typeof window.mostrarNotasIaDoAluno !== 'function') {
+            await carregarModuloDiscursiva(ARQUIVO_NOTA_IA_RESPOSTAS);
+        }
+        await window.mostrarNotasIaDoAluno(aluno, atividadeId);
+    } catch (erro) {
+        console.warn('Nota da IA nas respostas:', erro.message);
     }
 }
 

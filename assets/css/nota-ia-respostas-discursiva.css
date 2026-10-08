@@ -1,0 +1,48 @@
+/* Professor: nota parcial da IA ao lado de cada alternativa (nota-ia-respostas-discursiva.js). */
+
+:root {
+    --nota-ia-certa-fundo: #c6f6d5;
+    --nota-ia-certa-texto: #22543d;
+    --nota-ia-meia-fundo: #fefcbf;
+    --nota-ia-meia-texto: #744210;
+    --nota-ia-errada-fundo: #fed7d7;
+    --nota-ia-errada-texto: #742a2a;
+    --nota-ia-pendente-fundo: #edf2f7;
+    --nota-ia-pendente-texto: #4a5568;
+}
+
+.nota-ia-resposta {
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: help;
+}
+
+.nota-ia-resposta--certa {
+    background: var(--nota-ia-certa-fundo);
+    color: var(--nota-ia-certa-texto);
+}
+
+.nota-ia-resposta--meia {
+    background: var(--nota-ia-meia-fundo);
+    color: var(--nota-ia-meia-texto);
+}
+
+.nota-ia-resposta--errada {
+    background: var(--nota-ia-errada-fundo);
+    color: var(--nota-ia-errada-texto);
+}
+
+.nota-ia-resposta--pendente {
+    background: var(--nota-ia-pendente-fundo);
+    color: var(--nota-ia-pendente-texto);
+    cursor: default;
+}
+
+@media print {
+    .nota-ia-resposta {
+        display: none;
+    }
+}
