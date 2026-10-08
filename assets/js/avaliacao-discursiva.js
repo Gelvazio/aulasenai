@@ -39,7 +39,9 @@ const MSG_LEITURA_LIVRE_DISCURSIVA = 'Você pode ler a avaliação à vontade. P
 const MSG_ENTRAR_DISCURSIVA = 'Para responder, entre com o seu usuário e senha.\n\n' +
     'Ir para a página de login agora?';
 const MSG_PROFESSOR_DISCURSIVA = 'O professor não responde a avaliação: só os alunos escrevem. ' +
-    'Aqui você confere as questões; as respostas dos alunos ficam gravadas no banco.';
+    'Aqui você confere as questões; as respostas dos alunos ficam gravadas no banco e aparecem ' +
+    'só quando você escolhe um aluno em "Respostas dos alunos".';
+const CLASSE_RESPOSTAS_OCULTAS_PROFESSOR = 'discursiva--respostas-ocultas';
 const MSG_BLOQUEADA_DISCURSIVA = '🔒 Avaliação bloqueada pelo professor. Aguarde a liberação ' +
     'para escrever as respostas.';
 const NOTA_MAXIMA_DISCURSIVA = 10;
@@ -330,6 +332,7 @@ async function abrirRespostasDoAluno(painel, dados) {
             converter: converterRespostasDiscursivas,
             preencher: preencherCampos,
             aoMostrarAluno: (aluno) => Promise.all([
+                alternarRespostasDoProfessor(Boolean(aluno)),
                 mostrarNotasIaDasRespostas(aluno, dados.atividadeId),
                 mostrarConfirmacaoDoProfessor(aluno, dados.atividadeId),
             ]),
@@ -356,6 +359,15 @@ async function abrirProgressoDaTurma(dados) {
     } catch (erro) {
         console.warn('Progresso da turma:', erro.message);
     }
+}
+
+/**
+ * Professor: as respostas (campos de cada alternativa) ficam escondidas por padrão e só aparecem
+ * quando um aluno é escolhido em "Respostas dos alunos".
+ * @param {boolean} mostrar - true mostra as respostas; false esconde.
+ */
+function alternarRespostasDoProfessor(mostrar) {
+    document.body.classList.toggle(CLASSE_RESPOSTAS_OCULTAS_PROFESSOR, !mostrar);
 }
 
 /**
@@ -694,6 +706,7 @@ async function iniciarAvaliacaoDiscursiva() {
         estadoDiscursivo.dados = { disponivel: false };
     }
     preencherCampos(estadoDiscursivo.dados.respostas || {});
+    if (estadoDiscursivo.dados.ehProfessor) alternarRespostasDoProfessor(false);
     aplicarPermissaoDeEscrita();
     montarPainel(estadoDiscursivo.dados);
     ligarEventosDosCampos();

@@ -52,6 +52,12 @@
     background: var(--discursiva-fundo-campo);
 }
 
+/* Professor: respostas escondidas até escolher um aluno em "Respostas dos alunos" */
+.discursiva--respostas-ocultas .topico-resposta__campo,
+.discursiva--respostas-ocultas .topico-resposta__rodape {
+    display: none;
+}
+
 .topico-resposta__rotulo {
     display: block;
     margin-bottom: 8px;

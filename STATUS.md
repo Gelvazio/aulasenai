@@ -1312,3 +1312,10 @@ Pasta: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/CONTEUDO/` · 
 | 102.13 | Conferência das 10 aulas (seções, 240 min, conhecimentos) | ✅ Concluído | 2026-10-08 20:15:40 | Script: 9 seções em todas, roteiro 240 min, conhecimentos e capacidades = materia.json, sem empresa fictícia |
 | 102.14 | Commit local + graphify | ✅ Concluído | 2026-10-08 20:16:25 | git diff --cached --name-only conferido; push fica com o usuário |
 | 102.15 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 100 — Respostas escondidas para o professor até escolher um aluno (tarefa pequena, 2026-10-08 20:16:56)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 100.1 | Professor: campos de resposta e rodapés das alternativas escondidos por padrão; aparecem ao escolher um aluno em "Respostas dos alunos" e somem ao limpar; aviso no painel (todas as discursivas) | ✅ Concluído | 2026-10-08 20:16:56 | `node --check` |
+| 100.2 | Aceite do usuário | ⬜ Pendente | — | — |
