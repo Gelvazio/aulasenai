@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 21:36 | Removida de "Outras Regras" a linha "Tabelas de resultado ao finalizar tarefas" (contradizia a frase final): ao concluir uma tarefa vale só `TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?` |
 | 2026-10-07 21:15 | Histórico de versões movido para `docs/HISTORICO-REGRAS.md` (no `CLAUDE.md` ficam as 5 mudanças mais recentes e o link); o visualizador de regras mostra também o histórico |
 | 2026-10-07 21:10 | `CLAUDE.md` dividido em **núcleo + `docs/regras/`** (6 arquivos, texto das regras sem alteração): no `CLAUDE.md` ficam as regras de sempre, segurança, Git e o "ÍNDICE DAS REGRAS DETALHADAS" com as proibições; o visualizador de regras passa a carregar também os arquivos de `docs/regras/` |
 | 2026-10-07 20:50 | Identificação da apostila obrigatória em **todas** as apostilas: `autor_apostila` (padrão Gelvazio Camargo) e `versao_apostila` (começa em 1.0) preenchidos no `materia.json` antes da 1ª geração; aplicada também em Reforço de Linguagens |

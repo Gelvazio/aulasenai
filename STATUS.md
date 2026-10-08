@@ -805,3 +805,17 @@ Plano: [docs/reorganizar-comunicacao-oral-escrita-rio-do-sul.md](docs/reorganiza
 | 71.2 | Aprovação do plano pelo usuário — aprovado: pasta `INTRODUCAO_COMUNICACAO_ORAL_ESCRITA`, backup dos binários fora do repositório | ✅ Concluído | 2026-10-07 21:27 | Resposta do usuário no chat |
 | 71.3 | Executar as etapas A a F do plano, um item por vez (andamento detalhado no plano) | 🔄 Em progresso | — | — |
 | 71.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 72 — Corrigir as contradições do CLAUDE.md, uma de cada vez (pedida em 2026-10-07)
+
+Tarefa pequena por item (só texto das regras). Cada item: mostrar a contradição exata, perguntar e aplicar a escolha do usuário.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 72.1 | "Tabelas de resultado ao finalizar tarefas" × frase final — escolha: apagar a linha de "Outras Regras" | ✅ Concluído | 2026-10-07 21:36 | Linha removida; versão 2026-10-07 21:36 no CLAUDE.md e no histórico |
+| 72.2 | Menu ALUNOS: todo professor × só administrador | 🔄 Em progresso | — | — |
+| 72.3 | Título da regra do Word × botões removidos | ⬜ Pendente | — | — |
+| 72.4 | "PDF com gabarito" na regra da Turma × botão removido | ⬜ Pendente | — | — |
+| 72.5 | Reforço de Linguagens "aula 16 com 50 questões" × 10 aulas de 25 | ⬜ Pendente | — | — |
+| 72.6 | Local da ementa: raiz da matéria × `DOCUMENTACAO/` | ⬜ Pendente | — | — |
+| 72.7 | `git add .` (global) × proibido (projeto) | ⬜ Pendente | — | — |
