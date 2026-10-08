@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:20 | Trazidas do `CLAUDE.md` global (aprovadas item por item): nunca escrever testes; `docs/regras/codigo.md` (SOLID e regras de código); gestão de projetos + modelo do `STATUS.md` na seção de status; `docs/regras/infograficos.md`; Git sem perguntar, sem `git status` repetido e sem worktree; comando do graphify no início de cada conversa; fluxo da documentação padrão |
 | 2026-10-08 08:18 | Sessão na **nuvem**: ler e aplicar as regras globais de `.claude/regras-globais/` (`CLAUDE-GLOBAL.md` e `CLAUDE-DOCS-BEFORE-EVERY-TASK.md`), porque lá o `~/.claude/CLAUDE.md` da máquina do usuário não existe; o `CLAUDE.md` do projeto continua com precedência |
 | 2026-10-08 08:17 | Nova regra "REGRAS E SKILLS GLOBAIS NO PROJETO": skills do usuário em `.claude/skills/` e cópia de referência (não carregada) das regras globais em `.claude/regras-globais/`, sincronizadas sempre que o original mudar |
 | 2026-10-08 08:14 | Log da sessão só é gravado quando o usuário responde **SIM** à pergunta do fim da tarefa (tirada a obrigação de gravar a cada pedido e antes de parar); o `STATUS.md` continua sempre atualizado |

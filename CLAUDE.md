@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 08:18
+**Versão das regras:** 2026-10-08 08:20
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:20 | Trazidas do `CLAUDE.md` global (aprovadas item por item): nunca escrever testes; `docs/regras/codigo.md` (SOLID e regras de código); gestão de projetos + modelo do `STATUS.md` na seção de status; `docs/regras/infograficos.md`; Git sem perguntar, sem `git status` repetido e sem worktree; comando do graphify no início de cada conversa; fluxo da documentação padrão |
 | 2026-10-08 08:18 | Sessão na **nuvem**: ler e aplicar as regras globais de `.claude/regras-globais/` (`CLAUDE-GLOBAL.md` e `CLAUDE-DOCS-BEFORE-EVERY-TASK.md`), porque lá o `~/.claude/CLAUDE.md` da máquina do usuário não existe; o `CLAUDE.md` do projeto continua com precedência |
 | 2026-10-08 08:17 | Nova regra "REGRAS E SKILLS GLOBAIS NO PROJETO": skills do usuário em `.claude/skills/` e cópia de referência (não carregada) das regras globais em `.claude/regras-globais/`, sincronizadas sempre que o original mudar |
 | 2026-10-08 08:14 | Log da sessão só é gravado quando o usuário responde **SIM** à pergunta do fim da tarefa (tirada a obrigação de gravar a cada pedido e antes de parar); o `STATUS.md` continua sempre atualizado |
 | 2026-10-08 08:13 | Nova seção **"MUITO IMPORTANTE — ARQUIVOS DE STATUS"** (logo após as regras de sempre): mapa de todos os arquivos de status (`STATUS.md`, `TASKS.md`, `SESSOES-CLAUDE/`, STATUS da matéria e das ementas), legenda única, quando atualizar, hierarquia (o `STATUS.md` vence) e critério de `CONCLUÍDO` |
-| 2026-10-08 08:11 | Fonte única do estado: o `STATUS.md` manda; cada tarefa do `TASKS.md` tem linha na seção "📌 Tarefas do `TASKS.md`" do `STATUS.md` (o `TASKS.md` guarda só a descrição longa) e os logs de `SESSOES-CLAUDE/` citam a etapa/item do `STATUS.md`; em conflito, o `STATUS.md` vence |
 
 ---
 
@@ -48,6 +48,9 @@ Registrada em 2026-10-03 a pedido do usuário.
   regra "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`", 2026-10-08).
 - 🧭 **Arquivos de status são MUITO IMPORTANTES** (2026-10-08): `STATUS.md` é a fonte única do
   estado; ver a seção "MUITO IMPORTANTE — ARQUIVOS DE STATUS" logo abaixo.
+- ⛔ **Nunca escrever testes automatizados** (regra permanente do global): nada de `*.test.js`,
+  `*.spec.js`, `test_*.py` nem passo de teste em plano; a **única exceção** é corrigir um bug.
+  Vale mesmo que haja suíte de testes no repositório ou que uma skill (TDD etc.) mande.
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
 - ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, numa branch própria + novo PR para a `main`).
@@ -114,6 +117,90 @@ Registrada em 2026-10-03 a pedido do usuário.
    e removido (regra "REGISTRO DA SESSÃO").
 8. ✅ **Commit junto:** os arquivos de status alterados entram no commit da tarefa.
 
+### 📋 Gestão de projetos — regras aplicadas ao `STATUS.md` (do global)
+
+Registrada em 2026-10-03 a pedido do usuário. Todo `STATUS.md` segue estas regras e o modelo abaixo.
+
+#### Regras
+
+| # | Fase | Regra | Onde fica no `STATUS.md` |
+|---|------|-------|--------------------------|
+| 1 | Início | **Objetivo claro** — 1 frase: o que será entregue e por quê | Cabeçalho |
+| 2 | Início | **Escopo fechado** — o que entra e o que **não** entra | Seção Escopo |
+| 3 | Início | **Critério de pronto** — como saber que o item terminou e foi aceito | Seção Escopo |
+| 4 | Início | **Partes interessadas** — quem decide, aprova e usa | Cabeçalho |
+| 5 | Início | **Premissas e restrições** — prazo, tecnologia, regras | Seção Escopo |
+| 6 | Planejamento | **Dividir em etapas e itens pequenos** (horas, não semanas) | Etapas |
+| 7 | Planejamento | **Ordem e dependências** — itens na ordem de execução | Etapas |
+| 8 | Planejamento | **Riscos com plano B** — e acompanhados até o fim | Seção Riscos |
+| 9 | Planejamento | **Plano aprovado antes de executar** | Registro de decisões |
+| 10 | Execução | **Status atualizado na hora** (⬜ 🔄 ✅ ⛔) | Etapas |
+| 11 | Execução | **Um item por vez** — terminar antes de começar outro | Etapas (só 1 🔄) |
+| 12 | Execução | **Bloqueio informado na hora** com motivo e o que destrava | Seção Bloqueios |
+| 13 | Execução | **Mudança de escopo = nova aprovação** | Registro de decisões |
+| 14 | Execução | **Entregas pequenas e verificadas** — cada item com verificação | Etapas |
+| 15 | Comunicação | **Fonte única da verdade** — links para plano, regras e entregável | Cabeçalho |
+| 16 | Comunicação | **Registro de decisões** — o quê, quando, quem, por quê | Seção Decisões |
+| 17 | Comunicação | **Linguagem simples** — entendível por quem não é técnico | Todo o arquivo |
+| 18 | Continuidade | **Não depende de memória** — qualquer pessoa/IA retoma pelo arquivo | Próximo passo |
+| 19 | Continuidade | **Versionamento** — commit por item/tarefa concluída | Coluna/nota de commit |
+| 20 | Continuidade | **Histórico nunca é apagado** — só se acrescentam etapas | Etapas |
+| 21 | Encerramento | **Aceite formal** de quem pediu | Último item da etapa |
+| 22 | Encerramento | **Pendências documentadas** — o que ficou para depois e por quê | Seção Pendências |
+| 23 | Encerramento | **Lições aprendidas** — o que funcionou, o que não, o que vira regra | Seção Lições |
+
+⭐ **Regra de ouro:** planejar → aprovar → executar 1 item por vez → registrar na hora → entregar.
+**O que não está no `STATUS.md` não aconteceu.**
+
+#### Modelo obrigatório do `STATUS.md`
+
+```markdown
+# STATUS — <Nome do projeto>
+
+**Objetivo:** <1 frase: o que e por quê>
+**Partes interessadas:** <quem decide / aprova / usa>
+**Links:** [Regras](CLAUDE.md) · [Planos](docs/) · <entregável>
+**Próximo passo:** <item exato a executar agora — atualizar sempre>
+
+Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
+
+## Escopo
+- **Entra:** …
+- **Não entra:** …
+- **Critério de pronto:** …
+- **Premissas e restrições:** …
+
+## Etapa N — <nome> (aprovada em AAAA-MM-DD)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| N.1 | … | ⬜ Pendente | — | <como foi conferido> |
+| N.x | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Riscos
+| Risco | Chance | Impacto | Plano B | Situação |
+|-------|--------|---------|---------|----------|
+
+## Bloqueios
+| Data | Item | Motivo | O que destrava | Resolvido em |
+|------|------|--------|----------------|--------------|
+
+## Registro de decisões
+| Data | Decisão | Quem | Por quê |
+|------|---------|------|---------|
+
+## Pendências (ficou para depois)
+| Item | Motivo | Quando retomar |
+|------|--------|----------------|
+
+## Lições aprendidas
+| Data | O que aconteceu | Lição / nova regra |
+|------|-----------------|--------------------|
+```
+
+- ✅ Seções sem conteúdo ficam com a tabela vazia (não apagar o cabeçalho).
+- ✅ **"Próximo passo"** é a primeira coisa a ler ao retomar e a última a atualizar ao parar.
+- ✅ Projetos com `STATUS.md` antigo: **migrar para o modelo** sem apagar o histórico já registrado.
+
 ---
 
 ## 🗂️ ÍNDICE DAS REGRAS DETALHADAS (`docs/regras/`) — LEITURA OBRIGATÓRIA ANTES DE MEXER
@@ -137,6 +224,8 @@ Aqui ficam as regras de sempre, as de segurança e este índice.
 | [docs/regras/usuarios-turmas-paginas-professor.md](docs/regras/usuarios-turmas-paginas-professor.md) | mexer em contas/senhas, turmas, alunos, equipes, aulas (excluir/editar card), pendências ou índice de cursos | contas e senhas; excluir aula e card = 1 aula; pendências; índice de cursos; `turmaaluno`; equipes; página por turma; e-mail do aluno |
 | [docs/regras/assets-e-geradores.md](docs/regras/assets-e-geradores.md) | criar ou alterar CSS, JS, menus, header ou geradores (`assets/`), e avisos ao usuário | CSS e JS genéricos em `assets/`; menu; header; geradores; popup no lugar de `alert()` |
 | [docs/regras/paginas-legadas.md](docs/regras/paginas-legadas.md) | mexer nas páginas antigas (`dashboard.html`, `uc.html`, `questionarios.html`, `validacao.html`) ou na apostila de Reforço de Matemática | descrição das páginas antigas; fluxo de navegação; exercícios da apostila de Reforço de Matemática |
+| [docs/regras/codigo.md](docs/regras/codigo.md) | criar ou alterar qualquer código (JS, Python, HTML, CSS) | princípios SOLID; até 1000 linhas por arquivo e 45 por função; JSDoc/docstring; return early; constantes; nomes em português sem acento; até 3 parâmetros; até 2 níveis; Prettier/ESLint e Black/Ruff |
+| [docs/regras/infograficos.md](docs/regras/infograficos.md) | criar infográficos | cabeçalho, no mínimo 6 seções numeradas e coloridas, fundo escuro, exemplos, regra de ouro no rodapé, cores por tema |
 
 ### ⛔ Proibições das regras detalhadas (resumo — o detalhe está nos arquivos acima)
 
@@ -508,6 +597,7 @@ USING (id = auth.uid());
 📍 **Localização:** `C:\fontes\aulasenai\graphify-out\GRAPH_REPORT.md`  
 🔄 **Atualização:** a cada sessão (`graphify update .`); a data e os números (nós, arestas,
 comunidades) ficam no topo do próprio `GRAPH_REPORT.md` — não copiar para cá (ficam velhos).
+⚡ **Comando (sem perguntar):** `C:\Python314\python.exe -m graphify update .` na raiz do projeto, **no início de cada conversa** e **depois de cada sessão/commit de tarefa** (Python sempre `C:\Python314\python.exe`). Antes de responder, ler o `graphify-out/GRAPH_REPORT.md`.
 
 Este relatório contém:
 - ✅ Visão geral da estrutura do projeto (nós e arestas)
@@ -727,6 +817,11 @@ regra global de mesmo nome.
   o push numa branch própria e abre um novo pull request para a `main` (ver "PUSH: NUNCA NO
   AMBIENTE LOCAL, SEMPRE NA NUVEM").
 - ✅ Usuário pediu commit explícito → fazer na hora.
+- ✅ **Nunca perguntar antes de commitar ou de executar comandos Git** (add, commit, log, diff):
+  executar direto. O push continua proibido no ambiente local (regra do push).
+- ⛔ **Não rodar `git status` repetido** entre comandos nem depois do commit; conferir só
+  `git diff --cached --name-only` antes de commitar.
+- ⛔ **Não usar git worktree:** trabalhar direto na `main` (local) ou na branch da sessão (nuvem).
 - ✅ Arquivos ignorados pelo Git (gabaritos, fontes de questões, listas de alunos) não entram no
   commit; não usar `-f` para forçá-los. Desde 2026-09-30 os `*.md` e `*.py` **são versionados**
   (inclusive este `CLAUDE.md`, os planos em `docs/` e os geradores em `assets/`).
@@ -739,6 +834,7 @@ regra global de mesmo nome.
 ✅ **Fonte única de regras:** este `CLAUDE.md` + os arquivos de `docs/regras/` listados no "ÍNDICE DAS REGRAS DETALHADAS" (desde 2026-10-07). O `AGENTS.md` (Codex e outros agentes) contém apenas a instrução de ler e seguir este arquivo — o conteúdo que existia nele foi mesclado aqui em 2026-09-23. Novas regras são escritas **somente aqui ou em `docs/regras/`**.  
 ✅ Grafo: `graphify update .` após cada sessão  
 ✅ Documentação: `docs/<tarefa>.md` antes de implementar nas **tarefas grandes** (as pequenas dispensam o plano — ver "REGRAS DO USUÁRIO QUE VALEM SEMPRE"); `STATUS.md` em todas  
+✅ **Fluxo da documentação padrão (tarefas grandes, skill `documentacao-padrao` em `.claude/skills/`):** se não houver `docs/`, pedir autorização para criar; o plano `docs/<nome-em-kebab-case>.md` traz objetivo, escopo, arquivos, riscos e dependências, **data e hora de criação, de conclusão e o tempo decorrido**, e passos numerados (ação, caminho exato, verificação sem navegador nem teste automatizado) com ⬜/🔄/✅/⛔; mostrar o resumo e pedir aprovação; executar só o aprovado; no fim registrar resultado, pendências e commit.  
 
 ---
 
