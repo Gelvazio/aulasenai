@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:14 | Log da sessão só é gravado quando o usuário responde **SIM** à pergunta do fim da tarefa (tirada a obrigação de gravar a cada pedido e antes de parar); o `STATUS.md` continua sempre atualizado |
 | 2026-10-08 08:13 | Nova seção **"MUITO IMPORTANTE — ARQUIVOS DE STATUS"** (logo após as regras de sempre): mapa de todos os arquivos de status (`STATUS.md`, `TASKS.md`, `SESSOES-CLAUDE/`, STATUS da matéria e das ementas), legenda única, quando atualizar, hierarquia (o `STATUS.md` vence) e critério de `CONCLUÍDO` |
 | 2026-10-08 08:11 | Fonte única do estado: o `STATUS.md` manda; cada tarefa do `TASKS.md` tem linha na seção "📌 Tarefas do `TASKS.md`" do `STATUS.md` (o `TASKS.md` guarda só a descrição longa) e os logs de `SESSOES-CLAUDE/` citam a etapa/item do `STATUS.md`; em conflito, o `STATUS.md` vence |
 | 2026-10-08 08:10 | Inicialização: ler `SESSOES-CLAUDE/STATUS-SESSOES.md` (e o log das sessões `PENDENTE`) **sempre antes de iniciar uma nova tarefa**, junto com o `STATUS.md`; sessões `CONCLUÍDO` passam pela limpeza antes |
