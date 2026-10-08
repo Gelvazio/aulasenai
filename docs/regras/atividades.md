@@ -200,6 +200,7 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     cada alternativa mostra ✅ Certa / 🟡 Meia certa / ❌ Errada com "IA nota/pontos" (ou ⏳ sem
     correção) e o comentário da IA ao passar o mouse; `assets/js/nota-ia-respostas-discursiva.js`
     (+ CSS), ligado pelo callback opcional `aoMostrarAluno` do `respostas-aluno-professor.js`.
+    **Vale para todas as avaliações discursivas** (regra no `CLAUDE.md`, 2026-10-08).
   - **1º uso:** Prova Prática ADAG (id 82).
   - ⏳ **Regra para o futuro:** o progresso deve aparecer em **todas as atividades** (discursivas
     e objetivas — estas usam `assets/js/respostas-atividade.js` e precisam de módulo equivalente);

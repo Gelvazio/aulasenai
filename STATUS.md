@@ -1205,3 +1205,10 @@ Pedido do usuário: a rodada da IA não gravou nada (0 entregas; a orientação 
 | 92.5 | Aceite do usuário (rodar a tarefa da IA e ver a nota parcial no painel) | ⬜ Pendente | — | — |
 | 95.4 | Pedido do usuário (2026-10-08 18:42:56): ao lado do nome da equipe, os primeiros nomes dos integrantes — "Equipe 1 (Ana, João)"; vazia = "(sem integrantes)" (`equipes-tabela.js`, `equipes-modal.css`) | ✅ Concluído | 2026-10-08 18:42:56 | `node --check`; leitura do código |
 | 95.5 | Formulários de equipe e de integrante em janelas próprias (modal sobre o modal): botões "+ Nova equipe" e "+ Novo integrante" no modal; ✏️ da equipe/integrante abre a janela já preenchida; "Cancelar", clique fora ou Esc fecham; salvar fecha a janela (adiado e retomado a pedido do usuário) | ✅ Concluído | 2026-10-08 18:48:42 | `node --check`; leitura do código (sem navegador) |
+
+## Etapa 93 — Regra: nota parcial da IA em todas as avaliações discursivas (tarefa pequena, 2026-10-08 15:54:25)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 93.1 | Regra no `CLAUDE.md` (versão, histórico resumido e completo) e em `docs/regras/atividades.md`: ícone da nota parcial da IA por alternativa em "Respostas dos alunos" vale para todas as avaliações discursivas | ✅ Concluído | 2026-10-08 15:54:25 | Leitura dos arquivos; o código já é comum a todas as discursivas (`avaliacao-discursiva.js`) |
+| 93.2 | Aceite do usuário | ⬜ Pendente | — | — |
