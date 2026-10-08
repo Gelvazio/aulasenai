@@ -7,7 +7,8 @@
 - **Duração:** 130–150 minutos
 - **Formato:** Discursiva (resposta escrita no campo de cada questão)
 - **Total de questões:** 20
-- **Pontuação:** 1 ponto por questão (total: 20 pontos)
+- **Pontuação:** 0,5 ponto por questão (total: 10 pontos)
+- **Pontos por questão:** 0,5
 - **Capacidade avaliada:** Empregar a comunicação oral e escrita, a segurança da informação, o hardware e o software e os recursos da Web na produção dos textos técnicos do Manual de Comunicação do CD.
 - **Correção:** as respostas ficam gravadas no banco e são conferidas com apoio de IA e pela análise do professor.
 - **Folha de respostas:** sim
@@ -34,7 +35,7 @@ O supervisor do CD avisou pelo rádio: "Separação, o pedido 1520 é de sabão 
 Identifique nessa situação o emissor, o receptor, a mensagem, o canal e o feedback.
 
 **Tópicos:**
-- a) Identificação dos cinco elementos na situação. (1,0)
+- a) Identificação dos cinco elementos na situação. (0,5)
 
 ---
 
@@ -50,7 +51,7 @@ Na reunião da equipe, um aluno achou que ia escrever o Texto 3 (memorando), mas
 Explique o que é ruído na comunicação, por que essa situação é um ruído e cite uma atitude que teria evitado o problema.
 
 **Tópicos:**
-- a) Conceito de ruído, relação com a situação e atitude preventiva. (1,0)
+- a) Conceito de ruído, relação com a situação e atitude preventiva. (0,5)
 
 ---
 
@@ -66,7 +67,7 @@ Ao revisar o relatório de um colega, você encontrou a frase: "Muitos pedidos d
 Escreva um comentário de revisão assertivo e cordial para o colega e explique por que ele é assertivo (e não agressivo nem passivo).
 
 **Tópicos:**
-- a) Comentário assertivo e explicação. (1,0)
+- a) Comentário assertivo e explicação. (0,5)
 
 ---
 
@@ -82,7 +83,7 @@ Sua equipe tem 15 minutos para escolher o líder e dividir os papéis do Manual 
 Explique o que é consenso e como a equipe deve buscá-lo para escolher o líder, e por que cada integrante precisa saber o seu papel e informar o andamento da tarefa.
 
 **Tópicos:**
-- a) Conceito de consenso, como buscá-lo e justificativa dos papéis. (1,0)
+- a) Conceito de consenso, como buscá-lo e justificativa dos papéis. (0,5)
 
 ---
 
@@ -98,7 +99,7 @@ A equipe 3 reuniu-se no dia 09/10/2026, às 13h30, na sala 12, com Ana, Bruno, C
 Redija a ata dessa reunião em texto corrido, com verbos no passado, a data por extenso, as decisões (quem fica com cada papel) e o encerramento com assinaturas.
 
 **Tópicos:**
-- a) Ata em texto corrido, com cabeçalho, decisões e encerramento, verbos no passado. (1,0)
+- a) Ata em texto corrido, com cabeçalho, decisões e encerramento, verbos no passado. (0,5)
 
 ---
 
@@ -114,7 +115,7 @@ No CD da Rota Certa Logística e Armazenagem (empresa fictícia), na segunda-fei
 Escreva o desenvolvimento do relatório: liste, em ordem de horário, pelo menos quatro fatos, cada um com o horário, o setor e os números, sem opinião.
 
 **Tópicos:**
-- a) Quatro fatos com horário, setor e números, sem opinião. (1,0)
+- a) Quatro fatos com horário, setor e números, sem opinião. (0,5)
 
 ---
 
@@ -130,7 +131,7 @@ Use o caso da segunda-feira no CD da Rota Certa, descrito no ITEM 06.
 Escreva a conclusão do relatório com a causa provável de quatro problemas do dia, na terceira pessoa e sem culpar pessoas.
 
 **Tópicos:**
-- a) Conclusão com quatro causas prováveis, impessoal. (1,0)
+- a) Conclusão com quatro causas prováveis, impessoal. (0,5)
 
 ---
 
@@ -146,7 +147,7 @@ No inventário das 11h, o sistema (WMS) mostrava 320 caixas de sabão em pó no 
 Calcule a diferença de estoque e escreva uma frase técnica, para o relatório, explicando o número e uma causa provável.
 
 **Tópicos:**
-- a) Cálculo correto e frase técnica. (1,0)
+- a) Cálculo correto e frase técnica. (0,5)
 
 ---
 
@@ -162,7 +163,7 @@ As caixas novas de amaciante foram colocadas na frente das antigas e 15 caixas v
 Escreva, em linguagem técnica e impessoal, uma frase de fato (o que aconteceu, com números) e uma frase de recomendação sobre a perda das 15 caixas, deixando separado o fato da recomendação.
 
 **Tópicos:**
-- a) Frase de fato com números e frase de recomendação, separadas e impessoais. (1,0)
+- a) Frase de fato com números e frase de recomendação, separadas e impessoais. (0,5)
 
 ---
 
@@ -178,7 +179,7 @@ Use o caso da segunda-feira no CD da Rota Certa, descrito no ITEM 06.
 Escreva duas recomendações para a conclusão do relatório (comece com "Recomenda-se"), cada uma ligada a uma causa diferente.
 
 **Tópicos:**
-- a) Duas recomendações, cada uma ligada a uma causa. (1,0)
+- a) Duas recomendações, cada uma ligada a uma causa. (0,5)
 
 ---
 
@@ -194,7 +195,7 @@ Para o relatório, o pesquisador precisa explicar o que é inventário rotativo 
 Explique como fazer a busca (com aspas), como avaliar se a fonte é confiável (teste CRAAP e quantas fontes conferir) e como usar a fonte no texto sem plágio.
 
 **Tópicos:**
-- a) Busca com aspas, teste CRAAP com 3 fontes e citação da fonte. (1,0)
+- a) Busca com aspas, teste CRAAP com 3 fontes e citação da fonte. (0,5)
 
 ---
 
@@ -210,7 +211,7 @@ O setor de TI precisa pedir ao gerente do CD a compra de coletores de dados, por
 Escreva o memorando completo: número, Para, Assunto, a solicitação com o motivo e os dados do caso e o prazo.
 
 **Tópicos:**
-- a) Memorando com número, Para, Assunto, solicitação com dados e prazo. (1,0)
+- a) Memorando com número, Para, Assunto, solicitação com dados e prazo. (0,5)
 
 ---
 
@@ -226,7 +227,7 @@ A tabela do memorando lista: leitor de código de barras (lê o código da caixa
 Classifique cada equipamento como periférico de entrada, de saída ou de entrada e saída, conforme a apostila, e explique o motivo de cada classificação.
 
 **Tópicos:**
-- a) Classificação dos três equipamentos com justificativa. (1,0)
+- a) Classificação dos três equipamentos com justificativa. (0,5)
 
 ---
 
@@ -242,7 +243,7 @@ Depois da última atualização do sistema, 2 coletores de dados pararam de ler 
 Explique o que é um driver, por que a atualização pode ter parado os coletores e em que ordem verificar o problema (hardware, driver e configuração do sistema).
 
 **Tópicos:**
-- a) Conceito de driver, relação com o problema e ordem de verificação. (1,0)
+- a) Conceito de driver, relação com o problema e ordem de verificação. (0,5)
 
 ---
 
@@ -258,7 +259,7 @@ O Supermercado Bom Preço (fictício) reclamou que recebeu detergente no lugar d
 Escreva o e-mail de resposta completo: Para, CC, Assunto, saudação, desculpas, explicação curta, solução com data e fecho (use apenas e-mails fictícios).
 
 **Tópicos:**
-- a) E-mail completo e adequado ao cliente. (1,0)
+- a) E-mail completo e adequado ao cliente. (0,5)
 
 ---
 
@@ -274,7 +275,7 @@ No e-mail ao Supermercado Bom Preço, o setor comercial da Rota Certa foi coloca
 Explique para que serve o campo CC nesse e-mail e por que a frase sugerida pelo colega não deve ser usada com o cliente.
 
 **Tópicos:**
-- a) Função do CC e justificativa sobre a frase. (1,0)
+- a) Função do CC e justificativa sobre a frase. (0,5)
 
 ---
 
@@ -290,7 +291,7 @@ Explique para que serve o campo CC nesse e-mail e por que a frase sugerida pelo 
 Explique o que é phishing, cite dois sinais de que esse e-mail é falso e o que o auxiliar deve fazer.
 
 **Tópicos:**
-- a) Conceito, dois sinais e conduta correta. (1,0)
+- a) Conceito, dois sinais e conduta correta. (0,5)
 
 ---
 
@@ -306,7 +307,7 @@ Depois do e-mail falso, o revisor precisa escrever as regras de segurança do co
 Escreva uma lista numerada com quatro regras (senha forte, autenticação em dois fatores, bloquear a tela e backup), cada uma com uma frase explicando como fazer, e um aviso final de ATENÇÃO.
 
 **Tópicos:**
-- a) Quatro regras explicadas, em lista numerada, e aviso de atenção. (1,0)
+- a) Quatro regras explicadas, em lista numerada, e aviso de atenção. (0,5)
 
 ---
 
@@ -322,7 +323,7 @@ O formatador vai preparar o Manual de Comunicação do CD no editor de textos.
 Explique três regras de formatação do manual (margens, estilos Título 1 e Título 2 com sumário automático, quebra de página ou número de página no rodapé) e para que serve cada uma.
 
 **Tópicos:**
-- a) Três regras corretas e para que serve cada uma. (1,0)
+- a) Três regras corretas e para que serve cada uma. (0,5)
 
 ---
 
@@ -338,6 +339,6 @@ Use o caso da segunda-feira no CD da Rota Certa, descrito no ITEM 06.
 Escreva a introdução do Manual de Comunicação do CD (de 6 a 10 linhas), como a apostila define a introdução do relatório (contexto e objetivo): a empresa, o que aconteceu com os números e o objetivo do manual.
 
 **Tópicos:**
-- a) Introdução com contexto, números e objetivo, impessoal. (1,0)
+- a) Introdução com contexto, números e objetivo, impessoal. (0,5)
 
 ---

@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Aceites do usuário: Etapa 84 (item 84.5 — discursiva id 81 com 20 questões, respostas no caderno, PDF em 3 páginas); Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Aceites do usuário: Etapas 84 e 85 (itens 84.5 e 85.3 — discursiva id 81 com 20 questões de 0,5 ponto, respostas no caderno, PDF em 3 páginas); Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -1031,3 +1031,11 @@ Pedido: deixar só 20 questões e o PDF de cada aluno em no máximo 2 folhas. De
 | 84.4 | Página e seed regerados; banco id 81: backup e 20 tópicos | ✅ Concluído | 2026-10-08 10:48 | Backup `topico_discursivo_backup_20261008_81_20q` (30 linhas, RLS); tópicos 21–30 apagados (nenhuma resposta neles); `total_itens` = 20; conferido: 20 tópicos, 20 pontos, 40 respostas mantidas; índice e menu com 20 questões |
 | 84.4a | **Pedido novo (durante a tarefa):** respostas no caderno — PDF sem as caixas de resposta (campo opcional `PDF sem respostas`; instrução "Responda no caderno" no PDF); a página continua com os campos; limite de 500 caracteres retirado (padrão 3000) | ✅ Concluído | 2026-10-08 10:48 | `node --check` OK; página com `data-pdf-sem-respostas`; simulação: 3 páginas |
 | 84.5 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 85 — Discursiva de sexta (id 81): 0,5 ponto por questão (tarefa pequena, 2026-10-08 10:59:06)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 85.1 | Fonte: `Pontos por questão: 0,5`, tópicos (0,5) e pontuação total 10; página e seed regerados | ✅ Concluído | 2026-10-08 10:59 | Gerador: 20 questões, 20 tópicos, 10 pontos; página mostra "0,5 ponto" em cada tópico |
+| 85.2 | Banco id 81: `topico_discursivo.pontos` = 0,5 (backup antes) | ✅ Concluído | 2026-10-08 10:59 | Backup `topico_discursivo_backup_20261008_81_pontos` (20 linhas, RLS); conferido: 20 tópicos de 0,5 = 10 pontos; 0 correções; 40 respostas mantidas |
+| 85.3 | Aceite do usuário | ⬜ Pendente | — | — |
