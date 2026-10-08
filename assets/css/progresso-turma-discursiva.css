@@ -82,6 +82,21 @@
     color: var(--progresso-turma-nota-ia);
 }
 
+.progresso-turma__ordenar {
+    padding: 2px 4px;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.progresso-turma__ordenar:hover {
+    background: var(--progresso-turma-barra-fundo);
+}
+
 .progresso-turma__nota-ia--parcial {
     font-weight: 600;
     opacity: 0.85;

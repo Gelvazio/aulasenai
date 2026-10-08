@@ -12,8 +12,18 @@ const CLASSE_PROGRESSO_TURMA = 'progresso-turma';
 const INTERVALO_ATUALIZACAO_PROGRESSO_MS = 5000;
 const TABELA_RESPOSTAS_PROGRESSO = 'resposta_discursiva';
 const TABELA_CORRECAO_PROGRESSO = 'correcao_discursiva';
-const TITULOS_COLUNAS_PROGRESSO = ['Aluno', 'Questões', 'Progresso', 'Situação',
-    'Nota parcial IA', 'Nota IA (a confirmar)'];
+// Colunas do painel; "chave" = campo para ordenar ao clicar no título (vazio = sem ordenação).
+const COLUNAS_PROGRESSO = [
+    { titulo: 'Aluno', chave: 'nome' },
+    { titulo: 'Questões', chave: '' },
+    { titulo: 'Progresso', chave: 'percentual' },
+    { titulo: 'Situação', chave: 'valorSituacao' },
+    { titulo: 'Nota parcial IA', chave: 'valorNotaParcial' },
+    { titulo: 'Nota IA (a confirmar)', chave: 'valorNotaFinal' },
+];
+const CHAVE_ORDEM_ALFABETICA = 'nome';
+const SETAS_ORDENACAO = { semOrdem: '↕', crescente: '▲', decrescente: '▼' };
+const SEM_NOTA = -1;
 const SELETOR_TOPICO_PROGRESSO = '.topico-resposta';
 const SELETOR_CABECALHO_ATIVIDADE = '.container > header';
 const BASE_SCRIPTS_PROGRESSO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
@@ -25,6 +35,7 @@ const SITUACOES_QUESTAO = {
 
 const estadoProgressoTurma = {
     nomes: new Map(), pontosDosTopicos: null, temporizador: null, lendo: false,
+    ordenacao: { chave: CHAVE_ORDEM_ALFABETICA, crescente: true }, ultimosAlunos: [],
 };
 
 /**
@@ -250,36 +261,119 @@ function montarCelulaNotaFinal(aluno, totalTopicos) {
 }
 
 /**
- * Monta a linha de títulos das colunas.
- * @returns {HTMLElement} Linha de títulos.
- */
-function montarTitulosDasColunas() {
-    const linha = criarElementoProgresso('div', CLASSE_PROGRESSO_TURMA + '__linha ' +
-        CLASSE_PROGRESSO_TURMA + '__linha--titulos');
-    TITULOS_COLUNAS_PROGRESSO.forEach((titulo) => linha.appendChild(
-        criarElementoProgresso('span', CLASSE_PROGRESSO_TURMA + '__coluna', titulo)));
-    return linha;
-}
-
-/**
- * Monta a linha de um aluno: nome, questões, barra, situação, nota parcial e nota final da IA.
+ * Calcula os indicadores de um aluno usados na linha e na ordenação.
  * @param {Object} aluno - Registro de lerProgressoDaTurma.
  * @param {{topicos: Map<number, number>, totalTopicos: number}} medida - Estrutura da prova.
- * @returns {HTMLElement} Linha pronta.
+ * @returns {Object} Aluno com respondidos, percentual, completas e os valores de ordenação.
  */
-function montarLinhaDoAluno(aluno, medida) {
+function calcularIndicadoresDoAluno(aluno, medida) {
     const respondidos = [...aluno.porQuestao.values()].reduce((soma, valor) => soma + valor, 0);
     const percentual = Math.min(100, Math.round((respondidos / medida.totalTopicos) * 100));
     const completas = [...medida.topicos].filter(([item, total]) =>
         (aluno.porQuestao.get(item) || 0) >= total).length;
+    const temNotaFinal = aluno.entregue && aluno.notaIa?.corrigidos >= medida.totalTopicos;
+    return {
+        ...aluno, respondidos, percentual, completas,
+        valorSituacao: aluno.entregue ? medida.topicos.size + 1 : completas,
+        valorNotaParcial: aluno.notaIa ? aluno.notaIa.nota : SEM_NOTA,
+        valorNotaFinal: temNotaFinal ? aluno.notaIa.nota : SEM_NOTA,
+    };
+}
+
+/**
+ * Compara dois alunos pela coluna escolhida (texto em ordem alfabética, números pelo valor);
+ * no empate, pelo nome.
+ * @param {Object} a - Aluno com indicadores.
+ * @param {Object} b - Aluno com indicadores.
+ * @returns {number} Resultado da comparação.
+ */
+function compararAlunos(a, b) {
+    const { chave, crescente } = estadoProgressoTurma.ordenacao;
+    const porNome = a.nome.localeCompare(b.nome, 'pt-BR');
+    const diferenca = chave === CHAVE_ORDEM_ALFABETICA ? porNome : a[chave] - b[chave];
+    const sentido = crescente ? 1 : -1;
+    return (diferenca || porNome) * sentido;
+}
+
+/**
+ * Troca a ordenação: mesma coluna inverte o sentido; outra coluna começa crescente.
+ * @param {string} chave - Campo da coluna clicada.
+ */
+function trocarOrdenacao(chave) {
+    const atual = estadoProgressoTurma.ordenacao;
+    const mesmaColuna = atual.chave === chave;
+    estadoProgressoTurma.ordenacao = { chave, crescente: mesmaColuna ? !atual.crescente : true };
+}
+
+/**
+ * Seta do título: ↕ (sem ordem), ▲ (crescente) ou ▼ (decrescente).
+ * @param {string} chave - Campo da coluna.
+ * @returns {string} Seta.
+ */
+function setaDaColuna(chave) {
+    const { chave: chaveAtual, crescente } = estadoProgressoTurma.ordenacao;
+    if (chave !== chaveAtual) return SETAS_ORDENACAO.semOrdem;
+    return crescente ? SETAS_ORDENACAO.crescente : SETAS_ORDENACAO.decrescente;
+}
+
+/**
+ * Cria o botão de título de uma coluna ordenável.
+ * @param {{titulo: string, chave: string}} coluna - Coluna.
+ * @param {Function} aoOrdenar - Chamada depois de trocar a ordenação (redesenha a lista).
+ * @returns {HTMLButtonElement} Botão pronto.
+ */
+function criarBotaoOrdenar(coluna, aoOrdenar) {
+    const botao = criarElementoProgresso('button', CLASSE_PROGRESSO_TURMA + '__ordenar',
+        coluna.titulo + ' ' + setaDaColuna(coluna.chave));
+    botao.type = 'button';
+    botao.title = 'Clique para ordenar por ' + coluna.titulo;
+    botao.addEventListener('click', () => {
+        trocarOrdenacao(coluna.chave);
+        aoOrdenar();
+    });
+    return botao;
+}
+
+/**
+ * Monta a linha de títulos; colunas ordenáveis viram botões com seta.
+ * @param {Function} aoOrdenar - Chamada depois de trocar a ordenação (redesenha a lista).
+ * @returns {HTMLElement} Linha de títulos.
+ */
+function montarTitulosDasColunas(aoOrdenar) {
+    const linha = criarElementoProgresso('div', CLASSE_PROGRESSO_TURMA + '__linha ' +
+        CLASSE_PROGRESSO_TURMA + '__linha--titulos');
+    COLUNAS_PROGRESSO.forEach((coluna) => linha.appendChild(coluna.chave
+        ? criarBotaoOrdenar(coluna, aoOrdenar)
+        : criarElementoProgresso('span', CLASSE_PROGRESSO_TURMA + '__coluna', coluna.titulo)));
+    return linha;
+}
+
+/**
+ * Redesenha os títulos e as linhas dos alunos na ordem escolhida (sem ler o banco de novo).
+ * @param {{lista: HTMLElement}} tela - Elementos da área.
+ * @param {Object} opcoes - topicos (Map) e totalTopicos.
+ */
+function desenharListaDeAlunos(tela, opcoes) {
+    const alunos = [...estadoProgressoTurma.ultimosAlunos].sort(compararAlunos);
+    tela.lista.replaceChildren(montarTitulosDasColunas(() => desenharListaDeAlunos(tela, opcoes)),
+        ...alunos.map((aluno) => montarLinhaDoAluno(aluno, opcoes)));
+}
+
+/**
+ * Monta a linha de um aluno: nome, questões, barra, situação, nota parcial e nota final da IA.
+ * @param {Object} aluno - Aluno com indicadores (calcularIndicadoresDoAluno).
+ * @param {{topicos: Map<number, number>, totalTopicos: number}} medida - Estrutura da prova.
+ * @returns {HTMLElement} Linha pronta.
+ */
+function montarLinhaDoAluno(aluno, medida) {
     const situacao = aluno.entregue
         ? '✅ Entregue'
-        : completas + '/' + medida.topicos.size + ' questões · ' + percentual + '%';
+        : aluno.completas + '/' + medida.topicos.size + ' questões · ' + aluno.percentual + '%';
     const linha = criarElementoProgresso('div', CLASSE_PROGRESSO_TURMA + '__linha');
     linha.append(
         criarElementoProgresso('span', CLASSE_PROGRESSO_TURMA + '__nome', aluno.nome),
         montarCelulasDasQuestoes(aluno.porQuestao, medida.topicos),
-        montarBarra(percentual, aluno.entregue ? 'entregue' : ''),
+        montarBarra(aluno.percentual, aluno.entregue ? 'entregue' : ''),
         criarElementoProgresso('span', CLASSE_PROGRESSO_TURMA + '__situacao', situacao),
         montarCelulaNotaParcial(aluno.notaIa, medida.totalTopicos),
         montarCelulaNotaFinal(aluno, medida.totalTopicos));
@@ -322,8 +416,9 @@ async function atualizarProgressoDaTurma(tela, opcoes) {
             return;
         }
         tela.resumo.replaceChildren(...montarResumoDaTurma(alunos, opcoes.totalTopicos));
-        tela.lista.replaceChildren(montarTitulosDasColunas(),
-            ...alunos.map((aluno) => montarLinhaDoAluno(aluno, opcoes)));
+        estadoProgressoTurma.ultimosAlunos = alunos.map((aluno) =>
+            calcularIndicadoresDoAluno(aluno, opcoes));
+        desenharListaDeAlunos(tela, opcoes);
     } catch (erro) {
         tela.resumo.replaceChildren('❌ Não foi possível ler o progresso: ' + erro.message);
     } finally {
