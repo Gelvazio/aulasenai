@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 20:50
+**Versão das regras:** 2026-10-08 09:00
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 09:00 | Push na **nuvem** passa a ser sempre numa **branch própria + novo pull request** para a `main` (nunca push direto na `main`), para não sobrescrever nada; **local** continua sem push |
 | 2026-10-07 20:50 | Identificação da apostila obrigatória em **todas** as apostilas: `autor_apostila` (padrão Gelvazio Camargo) e `versao_apostila` (começa em 1.0) preenchidos no `materia.json` antes da 1ª geração; aplicada também em Reforço de Linguagens |
 | 2026-10-07 20:50 | Apostilas: vídeo com duração `a conferir` (link real, duração não conferida por bloqueio de rede) aceito pelo gerador, com aviso; 29 vídeos na apostila de Reforço de Linguagens |
 | 2026-10-07 20:40 | Reforço de Linguagens ganha menu de atividades (`MENU-ATIVIDADES.js` com 📚 Índice, 📘 Apostila e as atividades por aula) |
@@ -88,7 +89,7 @@ Registrada em 2026-10-03 a pedido do usuário.
   nem resumo).
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
-- ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, na `main`).
+- ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, numa branch própria + novo PR para a `main`).
 - ✅ **Aulas: uma por vez, completa** (2026-10-03): gerar e gravar uma aula (e todo o seu material)
   antes de passar à próxima, controlando em `<MATERIA>/AULAS/STATUS-AULAS.md` (ver a regra
   "GERAR E GRAVAR UMA AULA POR VEZ").
@@ -98,8 +99,9 @@ Registrada em 2026-10-03 a pedido do usuário.
   `<MATERIA>/ATIVIDADES/STATUS-ATIVIDADES.md` (ver a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES").
 - ⛔ **Push depende do ambiente** (2026-10-07): **local** (máquina do usuário) = **nunca fazer
   push**, mesmo que ele peça — avisar que o commit está pronto para ele enviar; **nuvem** (Claude
-  Code na web/remoto) = **sempre fazer push, direto na `main`, sem pull request** (ver a regra
-  "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM").
+  Code na web/remoto) = **sempre fazer push numa branch própria e abrir um NOVO pull request
+  para a `main`**, nunca push direto na `main` (2026-10-08; ver a regra "PUSH: NUNCA NO AMBIENTE
+  LOCAL, SEMPRE NA NUVEM").
 - ⛔ **Conteúdo só pelos Markdowns, nunca de PDF** (2026-10-03): para conferir ou gerar conteúdo,
   ler os `.md` da matéria — em primeiro lugar o `EMENTA-CHALKIE-AI.md` (ver a regra "CONTEÚDO SÓ
   PELOS MARKDOWNS").
@@ -1908,10 +1910,11 @@ Registrada em 2026-09-28.
 - ✅ Lista das turmas com os e-mails: `ATIVIDADES/LISTA-PRESENCA.js` de cada matéria.
   ⚠️ Dados pessoais de menores (LGPD): arquivo no `.gitignore`, nunca publicar.
 
-## ⛔ REGRA — PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM (DIRETO NA `main`)
+## ⛔ REGRA — PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM (BRANCH PRÓPRIA + NOVO PR)
 
 Registrada em 2026-10-01 a pedido do usuário ("NUNCA FAZER PUSH"); **alterada em 2026-10-07**, a
-pedido do usuário, para valer **conforme o ambiente**.
+pedido do usuário, para valer **conforme o ambiente**; **alterada em 2026-10-08**, a pedido do
+usuário: na nuvem, **sempre um novo pull request**, para evitar sobrescrever algo na `main`.
 
 ### 💻 Ambiente local (máquina do usuário, ex.: `C:\fontes\aulasenai`)
 
@@ -1924,17 +1927,25 @@ pedido do usuário, para valer **conforme o ambiente**.
 
 ### ☁️ Ambiente de nuvem (Claude Code na web / sessão remota, contêiner temporário)
 
-✅ **O Claude SEMPRE faz o push, direto na `main`, sem pull request.** No contêiner da nuvem o
-commit se perde quando a sessão acaba, e o usuário não tem como enviá-lo da máquina dele.
+✅ **O Claude SEMPRE faz o push numa branch própria e abre um NOVO pull request para a `main`.**
+No contêiner da nuvem o commit se perde quando a sessão acaba, por isso o push é obrigatório; o
+pull request garante que **nada na `main` é sobrescrito** sem o usuário revisar e fazer o merge.
 
-- ✅ Ao concluir cada tarefa: commit (regra "COMMIT POR TAREFA") e **`git push origin HEAD:main`**.
-- ✅ **Sem pull request:** não abrir PR; o trabalho vai direto para a `main`.
-- ✅ Antes do push, `git fetch origin main`; se a `main` andou, trazer as mudanças dela para o
-  trabalho (merge ou rebase do próprio commit ainda não enviado) e conferir de novo antes de enviar.
-- ❌ **Nunca push forçado** (`--force`), nunca reescrever o histórico já publicado da `main`, nunca
-  push de tags nem mudança de remotos.
+- ✅ Ao concluir cada tarefa: commit (regra "COMMIT POR TAREFA"), **`git push -u origin <branch>`**
+  (a branch de trabalho da sessão, nunca a `main`) e **abrir um novo pull request** da branch para
+  a `main`, com título e descrição do que mudou.
+- ⛔ **Nunca push direto na `main`** (`git push origin HEAD:main` está proibido) e o Claude
+  **não faz o merge** do pull request: quem revisa e junta na `main` é o usuário.
+- ✅ **Sempre um PR novo:** se o PR da branch já foi juntado (merged) ou fechado, a tarefa seguinte
+  recomeça a branch a partir da `main` atualizada e abre **outro** PR — nunca reaproveitar PR
+  juntado. Enquanto o PR da branch ainda estiver aberto, os commits novos da mesma sessão entram
+  nele (o GitHub não aceita dois PRs abertos da mesma branch).
+- ✅ Antes do push, `git fetch origin main`; se a `main` andou, trazer as mudanças dela para a
+  branch (merge) e conferir de novo antes de enviar.
+- ❌ **Nunca push forçado** (`--force`), nunca reescrever histórico já publicado, nunca push de tags
+  nem mudança de remotos.
 - ✅ Antes do push, conferir `git diff --cached --name-only` contra a regra "O QUE NUNCA É
-  PUBLICADO" (a `main` é publicada pela Vercel).
+  PUBLICADO" (a `main` é publicada pela Vercel depois do merge).
 
 ## 💾 REGRA — COMMIT POR TAREFA (SEMPRE)
 
@@ -1950,7 +1961,8 @@ regra global de mesmo nome.
 - ✅ Antes do commit, conferir `git diff --cached --name-only` contra a regra "O QUE NUNCA É
   PUBLICADO".
 - ✅ No ambiente **local** o commit fica só local (o push é do usuário); na **nuvem**, o Claude faz
-  o push direto na `main` (ver "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM").
+  o push numa branch própria e abre um novo pull request para a `main` (ver "PUSH: NUNCA NO
+  AMBIENTE LOCAL, SEMPRE NA NUVEM").
 - ✅ Usuário pediu commit explícito → fazer na hora.
 - ✅ Arquivos ignorados pelo Git (gabaritos, fontes de questões, listas de alunos) não entram no
   commit; não usar `-f` para forçá-los. Desde 2026-09-30 os `*.md` e `*.py` **são versionados**
