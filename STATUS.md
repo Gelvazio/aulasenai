@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Aceites do usuário: Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Aceites do usuário: Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -1008,3 +1008,13 @@ Plano: [docs/remover-apostila-itic-v1.md](docs/remover-apostila-itic-v1.md).
 | 83.5 | Aplicar a D2 (se aprovada) | ✅ Concluído | 2026-10-08 09:42 | 100 questões conferidas com a V2: 87 com resposta; 13 reescritas (12, 14, 26, 36, 41, 52, 54, 65, 71, 86, 92, 95, 99) com a MESMA letra do gabarito (banco id 85 sem mudança); página regerada sem gabarito |
 | 83.6 | Regras (`docs/regras/apostilas.md`, `CLAUDE.md`, histórico) | ✅ Concluído | 2026-10-08 09:43 | Versão das regras 2026-10-08 09:42:37 (resumo e histórico completo); visualizador lê o mesmo formato |
 | 83.7 | Aceite do usuário | 👀 Aguardando validação | — | — |
+
+## Etapa 84 — Botão "Exportar Usuários em PDF" na página de usuários (tarefa pequena, 2026-10-08 13:17:15)
+
+Pedido: em `scripts/criarUsuariosBancoDados.html`, botão que exporta em PDF os usuários selecionados da tabela de consulta, só em ambiente local.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 84.1 | `assets/js/criar-usuarios-exportar-pdf.js` (novo): folha com as linhas marcadas e visíveis (Nº, Aluno, Aluno anotou?, E-mail, Senha como exibida, Cadastrado) + impressão do navegador; bloqueado fora de 127.0.0.1/localhost | ✅ Concluído | 2026-10-08 13:20 | `node --check` sem erros |
+| 84.2 | Botão em cada turma (`criar-usuarios-pagina.js`), script na página e CSS de impressão (`criar-usuarios-comando.css`) | ✅ Concluído | 2026-10-08 13:20 | `node --check`; leitura do código (sem navegador, regra do usuário) |
+| 84.3 | Aceite do usuário (testar no Live Server: marcar alunos → Exportar → "Salvar como PDF") | ⬜ Pendente | — | — |

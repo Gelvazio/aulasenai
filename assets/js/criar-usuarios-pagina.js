@@ -380,11 +380,13 @@ function criarCartaoTurmaGuia(turma, contexto) {
     resultado.className = 'guia-comando';
     const aoMudar = () => {
         atualizarBotaoGuia(botao, tabela, contexto.podeGravar);
+        atualizarBotaoExportarPdf(botaoPdf, tabela);
         atualizarSenhasGuia(tabela);
         barra.marcarTodos.checked = todosVisiveisMarcadosGuia(tabela);
     };
     const tabela = criarTabelaAlunosGuia(turma, contexto, aoMudar);
     const barra = criarBarraControlesGuia(tabela, aoMudar);
+    const botaoPdf = criarBotaoExportarPdf(tabela, montarTituloTurmaGuia(turma));
     botao.addEventListener('click', () => gravarSelecionadosGuia(
         { turma, botao, tabela, resultado, podeGravar: contexto.podeGravar }));
     cartao.reaplicarFiltro = () => {
@@ -397,7 +399,7 @@ function criarCartaoTurmaGuia(turma, contexto) {
     titulo.textContent = montarTituloTurmaGuia(turma);
     cartao.append(titulo);
     if (contexto.podeGravar && !turma.virtual) cartao.append(criarBotaoFavoritaGuia(turma, contexto));
-    cartao.append(barra, botao, resultado, tabela);
+    cartao.append(barra, botao, botaoPdf, resultado, tabela);
     if (turma.virtual && !turma.alunos.length) {
         const vazio = document.createElement('p');
         vazio.textContent = MSG_SEM_PROFESSORES;

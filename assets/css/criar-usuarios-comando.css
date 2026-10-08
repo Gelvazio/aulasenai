@@ -170,3 +170,17 @@ a.guia-botao { display: inline-block; text-decoration: none; margin-top: 8px; }
 .guia-anotou { padding: 3px 6px; border: 1px solid #cbd5e0; border-radius: 4px; font-weight: 600; }
 .guia-anotou--sim { color: var(--guia-ok); }
 .guia-anotou--nao { color: var(--guia-erro); }
+
+/* Exportação em PDF (criar-usuarios-exportar-pdf.js): a folha só existe durante a impressão */
+.guia-exportacao { display: none; }
+.guia-exportacao__tabela { width: 100%; border-collapse: collapse; font-size: 12px; }
+.guia-exportacao__tabela th,
+.guia-exportacao__tabela td { border: 1px solid #999; padding: 4px 6px; text-align: left; }
+.guia-exportacao__tabela th { background: #e8eef7; }
+
+@media print {
+    body.guia-exportando > *:not(.guia-exportacao) { display: none; }
+    body.guia-exportando > .guia-exportacao { display: block; }
+    .guia-exportacao h1 { font-size: 18px; margin: 0 0 4px; }
+    .guia-exportacao__tabela tr { break-inside: avoid; }
+}
