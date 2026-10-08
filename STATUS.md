@@ -30,6 +30,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 88 | 88.5 | testar o bloqueio de colar na Prova Prática ADAG (id 82) | Aceite |
 | 82 e 83 | 82.5 e 83.7 | aceite da remoção da V1 (apostila única 2.1), da discursiva id 81 (já aplicada no banco) e das 13 questões novas da objetiva id 85 | Aceite |
 | 79 e 81 | 79.8 e 81.5 | validar a apostila ITIC V2 versão 2.1 (28 páginas, sem vídeos e exercícios; S2, S3, normas declaradas e referências complementares) e a paginação/faixa do PDF | Aceite |
 | 71 | 71.3 (C) | revisar as 9 aulas de Comunicação Oral e Escrita (Rio do Sul) em `CONTEUDO/` | Aceite |
@@ -397,6 +398,7 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 ## Pendências (ficou para depois)
 | Item | Motivo | Quando retomar |
 |------|--------|----------------|
+| Ligar `Bloquear colar: sim` nas outras avaliações discursivas (e, opcional, registrar no banco as tentativas de colar) | Usuário sem tempo em 2026-10-08; começou só pela prova ADAG id 82 | Quando o usuário pedir (regra em `docs/regras/atividades.md`) |
 | Botão "Exportar em Word" na apostila (`assets/js/apostila.js`) e nas páginas antigas com PDF próprio (`REFORCO_MATEMATICA.../AULAS/`) | Fora das atividades com `atividade.js`/`atividade-pratica-excel.js` | Quando forem mexidas ou a pedido do usuário |
 | Destino da pasta `Testes de Sistemas-EXISTENTES` (não é UC do curso) | Decisão do usuário | Quando o usuário decidir |
 | Renomear `BANCO_DE_DADOS` e `TESTES-DE-FRONTEND` para o padrão | Só a pedido do usuário | Quando o usuário pedir |
@@ -1070,3 +1072,15 @@ Fonte: `MATERIAL-PADRAO-PROVAS-SENAI/Turma Roberto Machado - T5 Vespertino.pdf` 
 | 87.1 | `scripts/LISTA-PRESENCA-ROBERTO-MACHADO-T5-TARDE.js` (fora do Git, LGPD): 10 alunos, e-mail `nome.sobrenome@senai.local`, senha inicial de 6 caracteres; local ROBERTO MACHADO, turno Tarde | ✅ Concluído | 2026-10-08 | `node --check`; `git check-ignore` confirma fora do Git; e-mails sem repetição nas outras listas e no `auth.users` (consulta de leitura); turma 124403 ainda não existe no banco |
 | 87.2 | Lista carregada em `scripts/criarUsuariosBancoDados.html` | ✅ Concluído | 2026-10-08 | Leitura do HTML |
 | 87.3 | Usuário grava no banco pela página (aba QA LBTSN 2026/1 V1 → Marcar todos → Gravar): cria turma, contas no Auth, `usuario`, `aluno` e `turmaaluno` | ⬜ Pendente | — | — |
+
+## Etapa 88 — Bloquear colar na Prova Prática ADAG (id 82) e regra para as outras discursivas (tarefa pequena, 2026-10-08 13:46:24)
+
+Pedido do usuário: bloquear copiar e colar (obrigar a digitar cada resposta) **só nesta prova** e anotar a regra no `CLAUDE.md` para fazer nas outras depois.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 88.1 | `assets/js/bloqueio-colar-discursiva.js`: cancela colar, arrastar, copiar e recortar nos campos de resposta e avisa com popup; só age com `data-bloquear-colar="sim"` no `<body>` | ✅ Concluído | 2026-10-08 13:50:19 | `node --check` |
+| 88.2 | Gerador discursivo: campo opcional `- **Bloquear colar:** sim` (`ATRIBUTOS_BODY`) e o template inclui o script | ✅ Concluído | 2026-10-08 13:50:19 | `py_compile` |
+| 88.3 | Campo ligado em `PROVA-PRATICA-ADAG-SALETE.md` e `PROVA-PRATICA-06-10-2026.html` regerada | ✅ Concluído | 2026-10-08 13:50:19 | `git diff`: só o atributo no `<body>` e o `<script>` novo; 20 questões, 60 tópicos, 10 pontos |
+| 88.4 | Regra em `docs/regras/atividades.md` e no `CLAUDE.md` (versão + histórico) | ✅ Concluído | 2026-10-08 13:50:19 | Leitura dos arquivos |
+| 88.5 | Aceite do usuário (testar no navegador: Ctrl+V num campo da prova mostra o aviso e não cola) | ⬜ Pendente | — | — |

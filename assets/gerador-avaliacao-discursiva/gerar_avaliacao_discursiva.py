@@ -12,7 +12,8 @@ Campos opcionais no cabeçalho da fonte: "- **Pontos por questão:** 0,5" (padr�
 destaque no início da página), "- **Máximo de caracteres:** 500" (limite de cada resposta; padrão
 3000), "- **PDF compacto:** sim" (o PDF exportado usa fonte e espaços menores, para caber em
 menos folhas) e "- **PDF sem respostas:** sim" (o PDF sai sem as caixas de resposta: o aluno
-responde no caderno); os dois em assets/js/exportar-pdf-discursiva.js.
+responde no caderno); os dois em assets/js/exportar-pdf-discursiva.js. "- **Bloquear colar:** sim"
+liga o bloqueio de colar/arrastar/copiar nos campos (assets/js/bloqueio-colar-discursiva.js).
 Plano: docs/avaliacao-pratica-discursiva-itic.md
 """
 import html
@@ -48,8 +49,10 @@ CAMPO_AVISO = "Aviso"
 CAMPO_MAXIMO_CARACTERES = "Máximo de caracteres"
 CAMPO_PDF_COMPACTO = "PDF compacto"
 CAMPO_PDF_SEM_RESPOSTAS = "PDF sem respostas"
-ATRIBUTOS_PDF = {CAMPO_PDF_COMPACTO: "data-pdf-compacto",
-                 CAMPO_PDF_SEM_RESPOSTAS: "data-pdf-sem-respostas"}
+CAMPO_BLOQUEAR_COLAR = "Bloquear colar"
+ATRIBUTOS_BODY = {CAMPO_PDF_COMPACTO: "data-pdf-compacto",
+                  CAMPO_PDF_SEM_RESPOSTAS: "data-pdf-sem-respostas",
+                  CAMPO_BLOQUEAR_COLAR: "data-bloquear-colar"}
 VALOR_SIM = "sim"
 TOLERANCIA_PONTOS = 0.001
 SEPARADOR_ITEM = re.compile(r"^## ITEM\s+", re.MULTILINE)
@@ -452,8 +455,8 @@ def ler_maximo_caracteres(meta):
     return int(valor)
 
 
-def atributos_pdf(meta):
-    """Atributos do <body> que mudam o PDF exportado (campos opcionais "... : sim" da fonte).
+def atributos_body(meta):
+    """Atributos opcionais do <body> (PDF exportado e bloqueio de colar; campos "... : sim").
 
     Args:
         meta: Metadados da fonte.
@@ -461,7 +464,7 @@ def atributos_pdf(meta):
     Returns:
         Atributos ligados (ex.: ' data-pdf-compacto="sim"') ou '' quando nenhum está ligado.
     """
-    ligados = [atributo for campo, atributo in ATRIBUTOS_PDF.items()
+    ligados = [atributo for campo, atributo in ATRIBUTOS_BODY.items()
                if meta.get(campo, "").strip().lower() == VALOR_SIM]
     return "".join(f' {atributo}="{VALOR_SIM}"' for atributo in ligados)
 
@@ -499,7 +502,7 @@ def montar_trocas(meta, itens, contexto):
         "{{UC}}": escapar(dados["uc"]), "{{UC_CURTA}}": escapar(dados["uc_curta"]),
         "{{CURSO}}": escapar(dados["curso"]), "{{DOCENTE}}": escapar(dados["docente"]),
         "{{TURMA}}": f' data-turma="{escapar(turma)}"' if turma else "",
-        "{{ATRIBUTOS_PDF}}": atributos_pdf(meta),
+        "{{ATRIBUTOS_BODY}}": atributos_body(meta),
         "{{MAXIMO_CARACTERES}}": str(maximo),
         "{{ASSETS}}": contexto["assets"], "{{RAIZ}}": contexto["raiz"],
         "{{MENU}}": montar_tags_menu(contexto["pasta"], "    "),

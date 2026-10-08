@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 14:19:41
+**Versão das regras:** 2026-10-08 13:49:59
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 13:49:59 | Discursivas: **bloqueio de colar** (campo opcional `Bloquear colar: sim` → `assets/js/bloqueio-colar-discursiva.js` cancela colar, arrastar, copiar e recortar nos campos; `docs/regras/atividades.md`); 1º uso: Prova Prática ADAG (id 82); ligar nas outras discursivas fica para depois (pendência no `STATUS.md`) |
 | 2026-10-08 14:19:41 | Atividades **sem empresa fictícia**: o aluno atua como **"Você como aluno consultor"** — regra nova no `CLAUDE.md` global (e na cópia `.claude/regras-globais/CLAUDE-GLOBAL.md`); `docs/regras/atividades.md` (padrão das atividades de Excel) ajustado |
 | 2026-10-08 10:48:09 | Discursivas: campos opcionais `PDF compacto`, `PDF sem respostas` (aluno responde no caderno) e `Máximo de caracteres` no gerador e no exportador de PDF (`docs/regras/atividades.md`); 1º uso: discursiva de sexta da ITIC (id 81), 20 questões, PDF em 3 páginas |
 | 2026-10-08 09:42:37 | Apostila da **ITIC**: **V1 removida** a pedido do usuário; a antiga V2 (versão 2.1, 28 páginas, sem vídeos e exercícios) é a apostila única, no nome padrão; gerador aceita `apostila_sem_videos_e_exercicios` e `referencias_complementares` no topo do `materia.json` (sem edição); `docs/regras/apostilas.md` e a tabela da matéria modelo atualizadas |
 | 2026-10-08 08:51:27 | Apostilas: **PDF com paginação "Página N de T"** (exportação parcial numera só as folhas exportadas) e **sem a faixa azul da esquerda** na impressão (todas as apostilas; também no `CLAUDE.md` global); **edições da apostila** (`--edicao=V2`, fontes em `CONTEUDO-V2/`, `edicoes_apostila` no `materia.json`, opção `sem_videos_e_exercicios`) — 1ª: ITIC V2 reduzida (28 páginas, sem vídeos e exercícios) |
-| 2026-10-08 08:33:47 | Merge com a `main` (PR #8): mantida a estrutura núcleo + `docs/regras/` e o `STATUS.md` como fonte única; trazidas da `main` a versão das regras **com segundos**, o registro de todo pedido com data e hora em segundos + "📜 HISTÓRICO POR COMMIT" no `TASKS_COMPLETE.md`, a exceção do navegador headless para gerar arquivo pedido, os avisos em poucas linhas antes da frase final, capacidades da UC (não "10+") na ementa, nota de que a descrição do `index.html` é antiga, as duas pastas `CONTEUDO` do Reforço de Linguagens e a apostila pela soma das horas e a partir do Markdown completo |
 
 ---
 
@@ -63,6 +63,10 @@ Registrada em 2026-10-03 a pedido do usuário.
   "GERAR E GRAVAR UMA AULA POR VEZ").
 - ✅ **Exceção — Reforço de Linguagens** (2026-10-06): cada atividade tem 25 questões (20 objetivas + 5
   discursivas) e a matéria tem 10 aulas (uma por slide); ver a regra exclusiva da matéria.
+- ✅ **Discursivas: aluno obrigado a digitar** (2026-10-08): campo `- **Bloquear colar:** sim` na
+  fonte `.md` bloqueia colar/arrastar/copiar/recortar nas respostas. Hoje só na Prova Prática ADAG
+  (id 82); **ligar nas outras discursivas depois**, quando o usuário pedir (ver
+  `docs/regras/atividades.md`).
 - ✅ **1 atividade objetiva de 50 questões por aula** (2026-10-03), controlada em
   `<MATERIA>/ATIVIDADES/STATUS-ATIVIDADES.md` (ver a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES").
 - ⛔ **Push depende do ambiente** (2026-10-07): **local** (máquina do usuário) = **nunca fazer

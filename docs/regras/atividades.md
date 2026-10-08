@@ -160,6 +160,17 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   **`notas_media_final(p_paginas)`** (só o aluno logado, sem gabarito). A nota já conquistada
   aparece **mesmo se a atividade for bloqueada depois**. Discursiva entregue e ainda sem correção
   completa mostra **"Aguardando correção"**.
+- ✅ **Bloqueio de colar nas discursivas (2026-10-08, pedido do usuário):** o aluno é obrigado a
+  **digitar** cada resposta. Campo opcional `- **Bloquear colar:** sim` no cabeçalho da fonte `.md`
+  → o gerador põe `data-bloquear-colar="sim"` no `<body>` e o
+  `assets/js/bloqueio-colar-discursiva.js` (incluído em toda página gerada, só age com o atributo)
+  cancela **colar, arrastar texto para dentro, copiar e recortar** nos campos de resposta e
+  mostra um popup. Não é 100% (extensões e ditado por voz passam); prova com pesquisa continua
+  permitida — o aluno lê e escreve com as próprias palavras.
+  - **1º uso:** Prova Prática ADAG (id 82, `PROVA-PRATICA-ADAG-SALETE.md`).
+  - ⏳ **Futuro (pendência no `STATUS.md`):** ligar o campo nas **outras avaliações
+    discursivas** (fonte `.md` + regerar a página), uma por vez, quando o usuário pedir. Opcional
+    (tarefa grande, mexe no banco): registrar as tentativas de colar para o professor ver.
 
 ## 🏫 REGRA CRÍTICA — TURMA NA EXPORTAÇÃO DE ATIVIDADES E AVALIAÇÕES (PROJETO TODO)
 
