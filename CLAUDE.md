@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 07:58
+**Versão das regras:** 2026-10-08 08:02
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:02 | Registro da sessão em `SESSOES-CLAUDE/`: grava só o **mínimo necessário para continuar** em outra sessão (estado, decisões, arquivos, commits, pendências e próximo passo exato), **não** uma cópia completa da conversa |
 | 2026-10-08 07:58 | Ao final de cada tarefa finalizada, perguntar se o usuário quer **atualizar o log da sessão atual**; com *SIM*: gravar em `SESSOES-CLAUDE/` com data, hora e status (`CONCLUÍDO` se não houver nada pendente, senão `PENDENTE`) e, no fim, pedir ao usuário que rode `/clear` (o Claude não consegue executar esse comando sozinho) |
 | 2026-10-08 07:56 | Nova seção "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`": todo o contexto da sessão gravado num arquivo próprio por sessão, separado por data e hora, com `Status: PENDENTE` até o aceite final, e linha no índice `SESSAO-CLAUDE.md` |
 | 2026-10-08 07:48 | Revisão final das regras (12 itens, um por vez): pastas que não são curso numa lista só; plano em `docs/` só nas tarefas grandes; título "Regras do projeto Aulas SENAI"; menu Regras e aviso de segredo cobrem `docs/regras/` e o histórico; autenticação cita `login.html` e `header-usuario.js`; grafo sem data/números fixos; comando da ementa com `-Raw`; STATUS-EMENTAS com caminho genérico; registro do `cursoprofessor` removido. No CLAUDE.md global: exceção das tarefas pequenas e exemplo sem `git status` |
 | 2026-10-08 07:47 | Merge com a `origin/main` (sessões em nuvem): regras novas da `main` trazidas para a estrutura núcleo + `docs/regras/` — push na nuvem em branch própria + novo PR, automático; `TASKS.md` só com pendentes + `TASKS_COMPLETE.md`; status da apostila de ITIC, ementa no formato por módulos e exceção do vídeo `a conferir` em `docs/regras/apostilas.md` |
-| 2026-10-08 11:10 | Na **nuvem** o push é **sempre permitido e automático**: ao final de **toda** tarefa que mudar arquivos, commit + push + PR sem esperar pedido nem confirmação do usuário |
 
 ---
 
@@ -193,11 +193,15 @@ TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
 Registrada em 2026-10-08 a pedido do usuário. Vale para **toda sessão** (local ou nuvem), junto com
 o `STATUS.md`.
 
-- ✅ **Todo o contexto da sessão é gravado em `SESSOES-CLAUDE/`**, num arquivo próprio:
-  `SESSOES-CLAUDE/SESSAO-AAAA-MM-DD-HHMM-ASSUNTO-CURTO.md` (data e hora do início da sessão;
-  assunto em MAIÚSCULAS, sem acentos, com hífen).
-- ✅ **Separado por data e hora:** uma seção `## AAAA-MM-DD HH:MM — <pedido> · <status>` para cada
-  pedido do usuário, em ordem, com o que foi feito, as decisões dele e os commits.
+- ✅ **Grava-se o MÍNIMO NECESSÁRIO PARA CONTINUAR em outra sessão** (2026-10-08, pedido do
+  usuário) — **não** é uma cópia completa da conversa. Só dados detalhados que permitam retomar:
+  o que está pronto, decisões do usuário (e por quê), arquivos e caminhos envolvidos, commits,
+  bloqueios, pendências e o **próximo passo exato**. Nada de transcrever perguntas, respostas,
+  análises já concluídas ou textos que já estão nos arquivos (citar o caminho em vez de copiar).
+- ✅ Arquivo próprio em `SESSOES-CLAUDE/SESSAO-AAAA-MM-DD-HHMM-ASSUNTO-CURTO.md` (data e hora do
+  início da sessão; assunto em MAIÚSCULAS, sem acentos, com hífen).
+- ✅ **Separado por data e hora:** uma seção curta `## AAAA-MM-DD HH:MM — <pedido> · <status>` por
+  pedido do usuário que ainda importa para continuar, com o resultado, as decisões e os commits.
 - ✅ **Cabeçalho do arquivo:** `**Status:** PENDENTE`, ambiente, modelo, branch, links para o plano
   (`docs/`), o `STATUS.md` (etapa) e o entregável.
 - ✅ **Status = `PENDENTE`** enquanto houver qualquer item pendente ou sem aceite do usuário;
@@ -210,8 +214,9 @@ o `STATUS.md`.
 - ✅ **Pergunta ao final de cada tarefa (2026-10-08, pedido do usuário):** depois de
   `TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?`, perguntar **"Deseja atualizar o log da sessão
   atual?"**. Se o usuário responder **SIM**:
-  1. gravar tudo o que foi feito na sessão em `SESSOES-CLAUDE/` (arquivo da sessão, com data e
-     hora de cada pedido, e a linha no índice `SESSAO-CLAUDE.md`), seguindo esta regra;
+  1. gravar em `SESSOES-CLAUDE/` o mínimo necessário para continuar (arquivo da sessão, com data
+     e hora de cada pedido e **tudo o que falta fazer**, e a linha no índice `SESSAO-CLAUDE.md`),
+     seguindo esta regra;
   2. definir o status: **`CONCLUÍDO`** se não houver nada pendente (tabela "⏳ Pendências" vazia);
      senão **`PENDENTE`**;
   3. fazer o commit do log (regra "COMMIT POR TAREFA");
