@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:06 | `SESSOES-CLAUDE/STATUS-SESSOES.md` (status de todas as sessões, lido no início de cada sessão) e regra da sessão `CONCLUÍDO`: ler o que foi feito, atualizar o `CLAUDE.md` se preciso, conferir as pendências e remover os dados da sessão |
 | 2026-10-08 08:04 | Registro da sessão: motivo registrado — o usuário alterna entre 2 licenças do Claude Code e perde o contexto ao trocar; o log precisa bastar sozinho para a outra licença continuar |
 | 2026-10-08 08:02 | Registro da sessão em `SESSOES-CLAUDE/`: grava só o **mínimo necessário para continuar** em outra sessão (estado, decisões, arquivos, commits, pendências e próximo passo exato), **não** uma cópia completa da conversa |
 | 2026-10-08 07:58 | Ao final de cada tarefa finalizada, perguntar se o usuário quer **atualizar o log da sessão atual**; com *SIM*: gravar em `SESSOES-CLAUDE/` com data, hora e status (`CONCLUÍDO` se não houver nada pendente, senão `PENDENTE`) e, no fim, pedir ao usuário que rode `/clear` (o Claude não consegue executar esse comando sozinho) |

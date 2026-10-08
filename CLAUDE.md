@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 08:04
+**Versão das regras:** 2026-10-08 08:06
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:06 | `SESSOES-CLAUDE/STATUS-SESSOES.md` (status de todas as sessões, lido no início de cada sessão) e regra da sessão `CONCLUÍDO`: ler o que foi feito, atualizar o `CLAUDE.md` se preciso, conferir as pendências e remover os dados da sessão |
 | 2026-10-08 08:04 | Registro da sessão: motivo registrado — o usuário alterna entre 2 licenças do Claude Code e perde o contexto ao trocar; o log precisa bastar sozinho para a outra licença continuar |
 | 2026-10-08 08:02 | Registro da sessão em `SESSOES-CLAUDE/`: grava só o **mínimo necessário para continuar** em outra sessão (estado, decisões, arquivos, commits, pendências e próximo passo exato), **não** uma cópia completa da conversa |
 | 2026-10-08 07:58 | Ao final de cada tarefa finalizada, perguntar se o usuário quer **atualizar o log da sessão atual**; com *SIM*: gravar em `SESSOES-CLAUDE/` com data, hora e status (`CONCLUÍDO` se não houver nada pendente, senão `PENDENTE`) e, no fim, pedir ao usuário que rode `/clear` (o Claude não consegue executar esse comando sozinho) |
 | 2026-10-08 07:56 | Nova seção "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`": todo o contexto da sessão gravado num arquivo próprio por sessão, separado por data e hora, com `Status: PENDENTE` até o aceite final, e linha no índice `SESSAO-CLAUDE.md` |
-| 2026-10-08 07:48 | Revisão final das regras (12 itens, um por vez): pastas que não são curso numa lista só; plano em `docs/` só nas tarefas grandes; título "Regras do projeto Aulas SENAI"; menu Regras e aviso de segredo cobrem `docs/regras/` e o histórico; autenticação cita `login.html` e `header-usuario.js`; grafo sem data/números fixos; comando da ementa com `-Raw`; STATUS-EMENTAS com caminho genérico; registro do `cursoprofessor` removido. No CLAUDE.md global: exceção das tarefas pequenas e exemplo sem `git status` |
 
 ---
 
@@ -228,6 +228,22 @@ licença (ou outra IA) continuar exatamente de onde parou, sem precisar da conve
      usuário digita (o Claude não consegue executá-lo) — então a última mensagem é
      `Log da sessão gravado. Digite /clear para limpar o contexto da sessão atual.`
   Se responder **NÃO**, não gravar e seguir normalmente.
+- ✅ **Status das sessões (2026-10-08, pedido do usuário):** `SESSOES-CLAUDE/STATUS-SESSOES.md`
+  tem uma linha por sessão (início, ambiente, assunto, arquivo, status, atualizada em, próximo
+  passo). Atualizar a linha sempre que o log da sessão for gravado. **Ler este arquivo no início de
+  cada sessão**, junto com o `STATUS.md`.
+- ✅ **Sessão com status `CONCLUÍDO` → aproveitar e remover** (2026-10-08, pedido do usuário). Logo
+  depois de marcar uma sessão como `CONCLUÍDO` (ou ao encontrar uma assim no início da sessão):
+  1. **ler** o arquivo da sessão (o que foi feito, decisões e lições);
+  2. **atualizar o `CLAUDE.md`** (ou o arquivo de `docs/regras/` do assunto) **se necessário**: só
+     decisões e lições que valem para o futuro e ainda não estão nas regras — com nova versão e
+     linha no histórico (regra do visualizador);
+  3. conferir que nada pendente se perde (o que sobrar vai para o `STATUS.md` ou o `TASKS.md`);
+  4. **remover os dados que não serão mais usados:** apagar o arquivo da sessão e a seção dela no
+     índice `SESSAO-CLAUDE.md` (o Git guarda o histórico);
+  5. no `STATUS-SESSOES.md`, trocar o status para `🗑️ REMOVIDA` com a data e o que foi aproveitado
+     (ex.: "regra X no CLAUDE.md" ou "nada a aproveitar");
+  6. fazer o commit (regra "COMMIT POR TAREFA").
 - ⛔ A pasta é versionada e publicada: **nunca** gravar senhas, chaves, gabaritos, respostas certas
   nem dados pessoais de alunos.
 - ✅ Exemplo: `SESSOES-CLAUDE/SESSAO-2026-10-07-2110-COMUNICACAO-RIO-DO-SUL.md`.

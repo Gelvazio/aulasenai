@@ -1,6 +1,7 @@
 # 🤖 SESSÕES DO CLAUDE
 
 Registro dos dados de cada sessão do Claude (uma seção por sessão, a mais recente no topo).
+Status de todas as sessões: [STATUS-SESSOES.md](STATUS-SESSOES.md).
 
 > ⚠️ Esta pasta é versionada no Git e publicada pela Vercel: **nunca** gravar aqui senhas, chaves,
 > gabaritos ou dados pessoais de alunos.
