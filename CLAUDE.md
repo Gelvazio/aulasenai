@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 16:10:08
+**Versão das regras:** 2026-10-08 16:20:56
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 16:20:56 | Discursivas: **Progresso da turma global** (aparece para o professor em **todas** as avaliações discursivas, sem campo na fonte) com o botão **📈 Gráficos** — modal com 5 gráficos (barras, pizza, barras por questão, rosca da correção da IA, barras horizontais da nota parcial); `assets/js/graficos-progresso-turma.js` |
 | 2026-10-08 16:10:08 | Discursivas: **botões ✅ Certa / 🟡 Meia certa / ❌ Errada** para o professor confirmar cada alternativa em "Respostas dos alunos" (grava `nota_professor`) e **nota confirmada travada — nem o professor altera** (trigger `correcao_discursiva_validar`, SQL `database/2026-10-08-correcao-discursiva-nota-professor-travada.sql`, aplicado) |
 | 2026-10-08 15:54:25 | Avaliações discursivas: **nota parcial da IA em cada alternativa** (ícone ✅ certa / 🟡 meia certa / ❌ errada / ⏳ sem correção, com o comentário da IA) em "Respostas dos alunos" vale para **todas** as avaliações discursivas (`assets/js/nota-ia-respostas-discursiva.js`; `docs/regras/atividades.md`) |
 | 2026-10-08 14:34:44 | Atividades: **progresso da turma para o professor** no topo da atividade, por aluno e por questão, atualizado a cada 5 s (campo `Progresso para o professor: sim`, `assets/js/progresso-turma-discursiva.js`; `docs/regras/atividades.md`); 1º uso: Prova Prática ADAG (id 82); regra: depois em **todas** as atividades |
 | 2026-10-08 17:27:53 | Unidade das turmas vem do arquivo global **`assets/js/unidade.js`** (código da turma → nome da unidade, ex.: "AIAC SALETE TARDE"); substitui o `turma-unidade.js` — `docs/regras/usuarios-turmas-paginas-professor.md` |
-| 2026-10-08 17:26:54 | Toda lista de turmas mostra a **unidade** (local + turno, ex.: "AI SALETE TARDE"): função única `assets/js/turma-unidade.js` — `docs/regras/usuarios-turmas-paginas-professor.md` |
 
 ---
 
@@ -81,9 +81,11 @@ Registrada em 2026-10-03 a pedido do usuário.
   `correcao_discursiva`); toda avaliação discursiva nova ou alterada deve mantê-lo. Detalhe em
   `docs/regras/atividades.md`.
 - ✅ **Progresso da turma para o professor em todas as atividades** (2026-10-08): no topo da
-  atividade, só para o professor, por aluno e por questão, atualizado a cada 5 s. Hoje só na Prova
-  Prática ADAG (id 82); **ligar nas outras atividades (discursivas e objetivas) depois**, quando o
-  usuário pedir (ver `docs/regras/atividades.md`).
+  atividade, só para o professor, por aluno e por questão, atualizado a cada 5 s, com o botão
+  **📈 Gráficos** (modal com 5 gráficos: barras, pizza, barras por questão, rosca da correção da
+  IA e barras horizontais da nota parcial). **Nas avaliações discursivas já é global** (todas,
+  sem campo na fonte); **nas objetivas ainda falta** — fazer quando o usuário pedir (ver
+  `docs/regras/atividades.md`).
 - ✅ **1 atividade objetiva de 50 questões por aula** (2026-10-03), controlada em
   `<MATERIA>/ATIVIDADES/STATUS-ATIVIDADES.md` (ver a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES").
 - ⛔ **Push depende do ambiente** (2026-10-07): **local** (máquina do usuário) = **nunca fazer

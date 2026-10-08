@@ -22,6 +22,7 @@ const COLUNAS_PROGRESSO = [
     { titulo: 'Nota IA (a confirmar)', chave: 'valorNotaFinal' },
 ];
 const CHAVE_ORDEM_ALFABETICA = 'nome';
+const ARQUIVO_GRAFICOS_PROGRESSO = 'graficos-progresso-turma.js';
 const SETAS_ORDENACAO = { semOrdem: '↕', crescente: '▲', decrescente: '▼' };
 const SEM_NOTA = -1;
 const SELETOR_TOPICO_PROGRESSO = '.topico-resposta';
@@ -124,11 +125,18 @@ function somarNotasDaIa(correcoes, pontos) {
     correcoes.forEach((linha) => {
         if (linha.nota_ia === null || linha.nota_ia === undefined) return;
         const chave = linha.aluno_id + '|' + linha.tentativa;
-        const atual = notas.get(chave) || { nota: 0, possivel: 0, corrigidos: 0 };
+        const atual = notas.get(chave) ||
+            { nota: 0, possivel: 0, corrigidos: 0, certas: 0, meias: 0, erradas: 0 };
+        const valor = Number(linha.nota_ia);
+        const pontosDoTopico = pontos.get(linha.item + '|' + linha.topico) || 0;
+        const estaCerta = pontosDoTopico > 0 && valor >= pontosDoTopico;
         notas.set(chave, {
-            nota: atual.nota + Number(linha.nota_ia),
-            possivel: atual.possivel + (pontos.get(linha.item + '|' + linha.topico) || 0),
+            nota: atual.nota + valor,
+            possivel: atual.possivel + pontosDoTopico,
             corrigidos: atual.corrigidos + 1,
+            certas: atual.certas + (estaCerta ? 1 : 0),
+            meias: atual.meias + (!estaCerta && valor > 0 ? 1 : 0),
+            erradas: atual.erradas + (valor === 0 ? 1 : 0),
         });
     });
     return notas;
@@ -441,6 +449,54 @@ function montarLegendaProgresso() {
 }
 
 /**
+ * Abre o modal de gráficos com os dados de agora (carrega o módulo na primeira vez).
+ * @param {{topicos: Map<number, number>}} opcoes - Estrutura da prova.
+ */
+async function abrirGraficosDoProgresso(opcoes) {
+    try {
+        if (typeof window.abrirGraficosProgresso !== 'function') {
+            await carregarScriptProgresso(ARQUIVO_GRAFICOS_PROGRESSO);
+        }
+        await window.abrirGraficosProgresso(estadoProgressoTurma.ultimosAlunos, opcoes);
+    } catch (erro) {
+        await mostrarPopup('Não foi possível abrir os gráficos: ' + erro.message,
+            { tipo: 'erro', titulo: 'Gráficos' });
+    }
+}
+
+/**
+ * Carrega um script de assets/js/ (ao lado deste).
+ * @param {string} arquivo - Nome do script.
+ * @returns {Promise<void>} Resolve quando carregou.
+ */
+function carregarScriptProgresso(arquivo) {
+    return new Promise((resolver, rejeitar) => {
+        const script = document.createElement('script');
+        script.src = BASE_SCRIPTS_PROGRESSO + arquivo;
+        script.onload = () => resolver();
+        script.onerror = () => rejeitar(new Error('Não foi possível carregar ' + arquivo));
+        document.head.appendChild(script);
+    });
+}
+
+/**
+ * Monta o cabeçalho do painel: título e botão "📈 Gráficos".
+ * @param {{topicos: Map<number, number>}} opcoes - Estrutura da prova.
+ * @returns {HTMLElement} Cabeçalho pronto.
+ */
+function montarCabecalhoProgresso(opcoes) {
+    const cabecalho = criarElementoProgresso('div', CLASSE_PROGRESSO_TURMA + '__cabecalho');
+    const botao = criarElementoProgresso('button', CLASSE_PROGRESSO_TURMA + '__graficos',
+        '📈 Gráficos');
+    botao.type = 'button';
+    botao.title = 'Abrir 5 gráficos do progresso da turma';
+    botao.addEventListener('click', () => abrirGraficosDoProgresso(opcoes));
+    cabecalho.append(criarElementoProgresso('h2', CLASSE_PROGRESSO_TURMA + '__titulo',
+        '📊 Progresso da turma (só o professor vê · atualiza a cada 5 segundos)'), botao);
+    return cabecalho;
+}
+
+/**
  * Monta a área "Progresso da turma" no topo da atividade e a atualiza a cada 5 segundos.
  * @param {number} atividadeId - Id da atividade no banco.
  */
@@ -457,9 +513,8 @@ async function montarProgressoDaTurma(atividadeId) {
         resumo: criarElementoProgresso('div', CLASSE_PROGRESSO_TURMA + '__geral', 'Lendo...'),
         lista: criarElementoProgresso('div', CLASSE_PROGRESSO_TURMA + '__lista'),
     };
-    area.append(criarElementoProgresso('h2', CLASSE_PROGRESSO_TURMA + '__titulo',
-        '📊 Progresso da turma (só o professor vê · atualiza a cada 5 segundos)'),
-    montarLegendaProgresso(), tela.resumo, tela.lista);
+    area.append(montarCabecalhoProgresso(opcoes), montarLegendaProgresso(), tela.resumo,
+        tela.lista);
     cabecalho.after(area);
 
     await atualizarProgressoDaTurma(tela, opcoes);

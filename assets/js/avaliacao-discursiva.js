@@ -323,13 +323,13 @@ async function abrirRespostasDoAluno(painel, dados) {
 }
 
 /**
- * Professor: progresso da turma no topo da atividade, por aluno e por questão, atualizado a cada
- * 5 s (só com data-progresso-professor="sim" no <body>). Uma falha aqui não atrapalha a avaliação.
+ * Professor: progresso da turma (com o botão "📈 Gráficos") no topo de TODA avaliação
+ * discursiva, por aluno e por questão, atualizado a cada 5 s (global desde 2026-10-08).
+ * Uma falha aqui não atrapalha a avaliação.
  * @param {Object} dados - Estado carregado do banco.
  */
 async function abrirProgressoDaTurma(dados) {
-    const estaLigado = document.body.dataset.progressoProfessor === 'sim';
-    if (!estaLigado || !dados.atividadeId) return;
+    if (!dados.atividadeId) return;
 
     try {
         if (typeof window.montarProgressoDaTurma !== 'function') {

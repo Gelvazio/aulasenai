@@ -29,6 +29,25 @@
     background: var(--progresso-turma-fundo);
 }
 
+.progresso-turma__cabecalho {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.progresso-turma__graficos {
+    padding: 6px 14px;
+    border: 1px solid var(--progresso-turma-barra);
+    border-radius: var(--progresso-turma-raio);
+    background: var(--progresso-turma-barra);
+    color: var(--progresso-turma-fundo);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
 .progresso-turma__titulo {
     margin: 0;
     font-size: 18px;

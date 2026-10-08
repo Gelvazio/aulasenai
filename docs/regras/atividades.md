@@ -209,6 +209,14 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     e o trigger `correcao_discursiva_validar` recusa qualquer mudança da `nota_professor` já
     gravada, **nem o professor altera** (SQL
     `database/2026-10-08-correcao-discursiva-nota-professor-travada.sql`, aplicado).
+  - **Global nas discursivas (2026-10-08, pedido do usuário):** o painel aparece para o
+    professor em **todas** as avaliações discursivas (o campo `Progresso para o professor` da
+    fonte não é mais necessário).
+  - **Botão "📈 Gráficos"** ao lado do título: modal com 5 gráficos dos dados de agora — barras
+    (% respondido por aluno), pizza (situação da turma), barras (alunos que completaram cada
+    questão), rosca (correção da IA: certas, meias certas, erradas) e barras horizontais (nota
+    parcial da IA por aluno). `assets/js/graficos-progresso-turma.js` + CSS, Chart.js 4.4.1
+    carregado sob demanda; fecha com ✕, Esc ou clique fora.
   - **1º uso:** Prova Prática ADAG (id 82).
   - ⏳ **Regra para o futuro:** o progresso deve aparecer em **todas as atividades** (discursivas
     e objetivas — estas usam `assets/js/respostas-atividade.js` e precisam de módulo equivalente);

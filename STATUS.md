@@ -30,6 +30,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 96 | 96.4 | botão Gráficos e progresso global nas discursivas | Aceite |
 | 95 | 95.4 | botões Certa / Meia certa / Errada do professor e nota travada (prova id 82) | Aceite |
 | 94 | 94.3 | aluno que entregou a Prova Prática ADAG (id 82) não vê as próprias respostas | Aceite |
 | 92 | 92.5 | rodar a correção parcial da IA e ver a "Nota parcial IA" no Progresso da turma (prova id 82) | Aceite |
@@ -1231,3 +1232,12 @@ Pedido do usuário: a rodada da IA não gravou nada (0 entregas; a orientação 
 | 95.2 | Trava no banco: trigger `correcao_discursiva_validar` recusa alterar `nota_professor` já confirmada (SQL `database/2026-10-08-correcao-discursiva-nota-professor-travada.sql`, aplicado pelo conector) | ✅ Concluído | 2026-10-08 16:10:08 | Função conferida (trava presente); 0 notas confirmadas no banco no momento |
 | 95.3 | Regra no `CLAUDE.md` (versão + históricos), `docs/regras/atividades.md`, `docs/database.md` e relatório HTML | ✅ Concluído | 2026-10-08 16:10:08 | Leitura |
 | 95.4 | Aceite do usuário (escolher aluno, confirmar uma alternativa e ver o botão travar) | ⬜ Pendente | — | — |
+
+## Etapa 96 — Botão Gráficos no Progresso da turma e progresso global nas discursivas (tarefa pequena, 2026-10-08 16:20:56)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 96.1 | `assets/js/graficos-progresso-turma.js` + CSS: modal com 5 gráficos (barras, pizza, barras por questão, rosca da IA, barras horizontais da nota parcial), Chart.js sob demanda; botão "📈 Gráficos" no cabeçalho do painel; contagem de certas/meias/erradas da IA | ✅ Concluído | 2026-10-08 16:20:56 | `node --check` |
+| 96.2 | Progresso da turma global em todas as avaliações discursivas (sem depender do campo da fonte) — pedido do usuário | ✅ Concluído | 2026-10-08 16:20:56 | Leitura de `abrirProgressoDaTurma` |
+| 96.3 | Regra no `CLAUDE.md` (versão + históricos) e em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-08 16:20:56 | Leitura |
+| 96.4 | Aceite do usuário (abrir os gráficos logado como professor) | ⬜ Pendente | — | — |
