@@ -191,9 +191,11 @@ SQL: `database/2026-10-05-equipes-turma-materia.sql` (✅ aplicado no Supabase e
   equipes da turma, integrantes, líder, papel e alunos sem equipe → impressão "Salvar como PDF") +
   `assets/css/equipes-modal.css`. O `js/menu.js` aceita itens de **ação**: `{ rotulo, acao }`
   carrega `assets/js/menu-acao-<acao>.js`, que registra `window.ACOES_MENU_ATIVIDADES[acao]`.
-- ✅ **Matérias com o menu:** Introdução à TIC (2026-10-05) e Análise de Dados Aplicada à Gestão
-  (2026-10-08, para cadastrar as duplas da prova prática; a prova continua individual por login). Outras matérias recebem o item no
-  `MENU-ATIVIDADES.js` quando o usuário pedir (regra das matérias semelhantes).
+- ✅ **Menu das atividades = só 👥 Equipes** (2026-10-08, pedido do usuário): em **todas** as
+  matérias com `MENU-ATIVIDADES.js` (Introdução à TIC, Análise de Dados Aplicada à Gestão e
+  Reforço de Linguagens) o menu tem apenas o item 👥 Equipes; os demais itens (índice,
+  atividades, avaliações, Excel) saíram do menu — as páginas continuam publicadas. Matéria nova
+  com menu segue o mesmo padrão.
 
 ## 🎯 REGRA — PÁGINA VISÍVEL SÓ PARA ALGUMAS TURMAS
 

@@ -1,12 +1,10 @@
 /**
  * Dados do menu das atividades de Introdução à TIC (lido por js/menu.js).
- * Os links são relativos a esta pasta ATIVIDADES/.
+ * Desde 2026-10-08, a pedido do usuário, o menu tem só o item 👥 Equipes (todas as matérias).
  */
 window.MENU_ATIVIDADES = {
   titulo: 'Introdução à TIC',
   itens: [
-    { rotulo: '📚 Índice', link: 'index.html' },
-    { rotulo: '📘 Apostila', link: '../APOSTILA/APOSTILA-INTRODUCAO-TIC.html' },
     {
       rotulo: '👥 Equipes',
       acao: 'equipes',
@@ -16,117 +14,6 @@ window.MENU_ATIVIDADES = {
         'Pesquisador(a)',
         'Formatador(a)',
         'Revisor(a) e segurança',
-      ],
-    },
-    {
-      rotulo: '👥 Trabalho em equipe (Aulas 01 a 07)',
-      link: 'ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html',
-    },
-    {
-      rotulo: '👥 Trabalho em equipe v2 (turma da tarde)',
-      link: 'ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-v2.html',
-    },
-    { rotulo: '🧠 Brainstorming', link: 'ATIVIDADE-GRANDE/brainstorming.html' },
-    {
-      rotulo: '📘 Atividade individual — 100 questões da apostila (sexta)',
-      link: 'ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-APOSTILA-CAP-01-07.html',
-    },
-    {
-      rotulo: '✍️ Atividade individual — 20 discursivas (sexta)',
-      link: 'ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-DISCURSIVA.html',
-    },
-    {
-      rotulo: '📝 Atividades por aula',
-      subitens: [
-        {
-          rotulo: 'Aula 01 — Comunicação profissional',
-          link: 'ATIVIDADES-AULA-01-50-QUESTOES.html',
-        },
-        {
-          rotulo: 'Aula 01 — Atividade prática (comunicação profissional)',
-          link: 'ATIVIDADE-PRATICA-AULA-01.html',
-        },
-        {
-          rotulo: 'Aula 02 — Hardware, periféricos e SO',
-          link: 'ATIVIDADES-AULA-02-50-QUESTOES.html',
-        },
-        {
-          rotulo: 'Aula 02 — Atividade prática (hardware e SO)',
-          link: 'ATIVIDADE-PRATICA-AULA-02.html',
-        },
-        {
-          rotulo: 'Aula 03 — Navegação na web e pesquisa',
-          link: 'ATIVIDADES-AULA-03-50-QUESTOES.html',
-        },
-        {
-          rotulo: 'Aula 03 — Atividade prática (web e pesquisa)',
-          link: 'ATIVIDADE-PRATICA-AULA-03.html',
-        },
-        {
-          rotulo: 'Aula 04 — Comunicação digital e nuvem',
-          link: 'ATIVIDADES-AULA-04-50-QUESTOES.html',
-        },
-        {
-          rotulo: 'Aula 04 — Atividade prática (e-mail e nuvem)',
-          link: 'ATIVIDADE-PRATICA-AULA-04.html',
-        },
-        {
-          rotulo: 'Aula 05 — Segurança da informação',
-          link: 'ATIVIDADES-AULA-05-50-QUESTOES.html',
-        },
-        {
-          rotulo: 'Aula 05 — Atividade prática (segurança da informação)',
-          link: 'ATIVIDADE-PRATICA-AULA-05.html',
-        },
-        {
-          rotulo: '📝 Avaliação Objetiva 01 (aulas 01–05)',
-          link: 'AVALIACAO-OBJETIVA-01.html',
-        },
-        {
-          rotulo: '📝 Avaliação Objetiva 02 (aulas 06–10)',
-          link: 'AVALIACAO-OBJETIVA-02.html',
-        },
-        {
-          rotulo: '✍️ Avaliação Prática (aulas 01–10, discursiva)',
-          link: 'AVALIACAO-PRATICA.html',
-        },
-        {
-          rotulo: '🏁 Avaliação — Média Final (100 pontos)',
-          link: 'AVALIACAO-MEDIA-FINAL.html',
-        },
-        {
-          rotulo: 'Aula 06 — Editor de textos',
-          link: 'ATIVIDADES-AULA-06-50-QUESTOES.html',
-        },
-        {
-          rotulo: 'Aula 06 — Atividade prática (editor de textos)',
-          link: 'ATIVIDADE-PRATICA-AULA-06.html',
-        },
-        {
-          rotulo: 'Aula 07 — Textos técnicos e redação',
-          link: 'ATIVIDADES-AULA-07-50-QUESTOES.html',
-        },
-        {
-          rotulo: 'Aula 08 — Planilhas: organização e fórmulas',
-          link: 'ATIVIDADES-AULA-08-50-QUESTOES.html',
-        },
-        {
-          rotulo: 'Aula 09 — Planilhas: análise visual e gráficos',
-          link: 'ATIVIDADES-AULA-09-50-QUESTOES.html',
-        },
-        {
-          rotulo: 'Aula 10 — Editor de apresentações',
-          link: 'ATIVIDADES-AULA-10-50-QUESTOES.html',
-        },
-      ],
-    },
-    {
-      rotulo: '🔄 Ciclo do feedback (28/09)',
-      subitens: [
-        {
-          rotulo: 'Atividade — 25 questões',
-          link: 'ATIVIDADES-AULA-28-09-2026-25-QUESTOES.html',
-        },
       ],
     },
   ],

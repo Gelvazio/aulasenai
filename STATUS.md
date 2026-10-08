@@ -1111,3 +1111,10 @@ Pedido do usuário: bloquear copiar e colar (obrigar a digitar cada resposta) **
 |------|-----------|--------|--------------|-------------|
 | 90.1 | `assets/js/equipes-modal.js`: botão **+Integrante** no card abre uma seleção só com os alunos sem equipe (Adicionar/Cancelar) e grava o integrante (sem papel, sem líder); `assets/css/equipes-modal.css` | ✅ Concluído | 2026-10-08 17:18:19 | `node --check`; leitura do código (sem navegador) |
 | 90.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 91 — Menu das atividades só com 👥 Equipes em todas as matérias (pedido em 2026-10-08 17:20:14)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 91.1 | Os 3 `MENU-ATIVIDADES.js` (ITIC, Análise de Dados, Reforço de Linguagens) ficam só com o item 👥 Equipes (papéis mantidos; Reforço ganhou papéis genéricos); regra e histórico atualizados | ✅ Concluído | 2026-10-08 17:20:14 | `node --check` nos 3 arquivos; confirmação do usuário no chat ("isso em todas as matérias") |
+| 91.2 | Aceite do usuário | ⬜ Pendente | — | — |
