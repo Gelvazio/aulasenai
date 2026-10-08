@@ -115,6 +115,12 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
 - ✅ Gerador: `C:\Python314\python.exe assets\gerador-avaliacao-discursiva\gerar_avaliacao_discursiva.py
   <pasta ATIVIDADES> [<NOME>.md]` → página `<NOME>.html` (um campo por tópico) e seed
   `database/<data>-<nome>-seed-atividades.sql` (fora do Git; a avaliação nasce bloqueada).
+- ✅ **Campos opcionais da fonte (2026-10-08, pedido do usuário):** `- **PDF compacto:** sim`
+  (PDF com fonte e espaços menores, sem a linha "Aula" e a caixa de capacidade de cada questão),
+  `- **PDF sem respostas:** sim` (PDF sem as caixas de resposta e com a instrução de responder no
+  caderno; a página continua com os campos) e `- **Máximo de caracteres:** N` (limite de cada
+  resposta; padrão 3000). Primeira: discursiva de sexta da ITIC (id 81), 20 questões, PDF em 3
+  páginas.
 - ✅ Banco: `resposta_discursiva` (texto por aluno, tentativa, item e tópico) e `topico_discursivo`
   (enunciado, pontos, padrão de resposta; só o professor lê). `atividade_completa()` exige todos
   os tópicos gravados para entregar. SQL: `database/2026-10-01-respostas-discursivas.sql`.

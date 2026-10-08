@@ -1,18 +1,20 @@
-# Atividade: Comunicação Técnica no CD — 30 Questões Discursivas
+# Atividade: Comunicação Técnica no CD — 20 Questões Discursivas
 
 - **Aula:** 01 a 07
 - **Rótulo da aula:** Atividade Individual — Discursivas
 - **Tema:** Comunicação Técnica no CD
 - **Ícone:** ✍️
-- **Duração:** 195–225 minutos
+- **Duração:** 130–150 minutos
 - **Formato:** Discursiva (resposta escrita no campo de cada questão)
-- **Total de questões:** 30
-- **Pontuação:** 1 ponto por questão (total: 30 pontos)
+- **Total de questões:** 20
+- **Pontuação:** 1 ponto por questão (total: 20 pontos)
 - **Capacidade avaliada:** Empregar a comunicação oral e escrita, a segurança da informação, o hardware e o software e os recursos da Web na produção dos textos técnicos do Manual de Comunicação do CD.
 - **Correção:** as respostas ficam gravadas no banco e são conferidas com apoio de IA e pela análise do professor.
 - **Folha de respostas:** sim
 - **Aviso:** ATIVIDADE INDIVIDUAL. É PROIBIDO USAR COMPUTADOR OU CELULAR PARA PESQUISA. CONSULTE APENAS A APOSTILA DE ITIC.
 - **Aula no banco:** 7
+- **PDF compacto:** sim
+- **PDF sem respostas:** sim
 - **Turma:** todas as turmas
 - **Conteúdo-base:** `../../../APOSTILA/APOSTILA-INTRODUCAO-TIC.md` (apostila única, versão 2.1, capítulos 01 a 07) — toda resposta se apoia na apostila e nos dados do contexto
 
@@ -122,7 +124,7 @@ Escreva o desenvolvimento do relatório: liste, em ordem de horário, pelo menos
 - **Capacidade:** C1, C4
 
 **Contexto:**
-No CD da Rota Certa Logística e Armazenagem (empresa fictícia), na segunda-feira: às 7h30, 600 caixas de detergente foram guardadas no endereço B-04-03 em vez de B-03-04; das 8h às 11h, 2 dos 6 coletores de dados não liam o código de barras (problema de driver) e 38 dos 150 pedidos saíram errados; às 11h, o sistema mostrava 320 caixas de sabão em pó, mas havia 250; às 13h, 15 caixas de amaciante venceram; às 15h, os caminhões saíram 3 horas atrasados; às 16h, chegou um e-mail falso pedindo a senha do WMS. Prejuízo: cerca de R$ 4.200.
+Use o caso da segunda-feira no CD da Rota Certa, descrito no ITEM 06.
 
 **Comando:**
 Escreva a conclusão do relatório com a causa provável de quatro problemas do dia, na terceira pessoa e sem culpar pessoas.
@@ -170,7 +172,7 @@ Escreva, em linguagem técnica e impessoal, uma frase de fato (o que aconteceu, 
 - **Capacidade:** C1
 
 **Contexto:**
-No CD da Rota Certa Logística e Armazenagem (empresa fictícia), na segunda-feira: às 7h30, 600 caixas de detergente foram guardadas no endereço B-04-03 em vez de B-03-04; das 8h às 11h, 2 dos 6 coletores de dados não liam o código de barras (problema de driver) e 38 dos 150 pedidos saíram errados; às 11h, o sistema mostrava 320 caixas de sabão em pó, mas havia 250; às 13h, 15 caixas de amaciante venceram; às 15h, os caminhões saíram 3 horas atrasados; às 16h, chegou um e-mail falso pedindo a senha do WMS. Prejuízo: cerca de R$ 4.200.
+Use o caso da segunda-feira no CD da Rota Certa, descrito no ITEM 06.
 
 **Comando:**
 Escreva duas recomendações para a conclusão do relatório (comece com "Recomenda-se"), cada uma ligada a uma causa diferente.
@@ -330,7 +332,7 @@ Explique três regras de formatação do manual (margens, estilos Título 1 e T�
 - **Capacidade:** C1
 
 **Contexto:**
-No CD da Rota Certa Logística e Armazenagem (empresa fictícia), na segunda-feira: às 7h30, 600 caixas de detergente foram guardadas no endereço B-04-03 em vez de B-03-04; das 8h às 11h, 2 dos 6 coletores de dados não liam o código de barras (problema de driver) e 38 dos 150 pedidos saíram errados; às 11h, o sistema mostrava 320 caixas de sabão em pó, mas havia 250; às 13h, 15 caixas de amaciante venceram; às 15h, os caminhões saíram 3 horas atrasados; às 16h, chegou um e-mail falso pedindo a senha do WMS. Prejuízo: cerca de R$ 4.200.
+Use o caso da segunda-feira no CD da Rota Certa, descrito no ITEM 06.
 
 **Comando:**
 Escreva a introdução do Manual de Comunicação do CD (de 6 a 10 linhas), como a apostila define a introdução do relatório (contexto e objetivo): a empresa, o que aconteceu com os números e o objetivo do manual.
@@ -339,164 +341,3 @@ Escreva a introdução do Manual de Comunicação do CD (de 6 a 10 linhas), como
 - a) Introdução com contexto, números e objetivo, impessoal. (1,0)
 
 ---
-
-## ITEM 21 — Memória RAM e armazenamento
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C4
-
-**Contexto:**
-Um conferente digitou a contagem do inventário durante duas horas e a energia acabou antes de ele salvar. Ao religar, a contagem tinha sumido.
-
-**Comando:**
-Explique, usando os conceitos de memória RAM e de armazenamento (HDD/SSD), por que os dados foram perdidos e o que ele deveria ter feito.
-
-**Tópicos:**
-- a) RAM volátil × armazenamento permanente e conduta correta. (1,0)
-
----
-
-## ITEM 22 — Sistema operacional
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C4
-
-**Contexto:**
-Os computadores do escritório usam um sistema operacional de desktop e os coletores de dados do armazém usam outro tipo de sistema operacional.
-
-**Comando:**
-Explique as três tarefas que o sistema operacional gerencia e diga qual é o tipo de sistema operacional usado nos coletores de dados, com um exemplo.
-
-**Tópicos:**
-- a) Três tarefas do SO e o tipo de SO dos coletores com exemplo. (1,0)
-
----
-
-## ITEM 23 — Internet e web
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C5
-
-**Contexto:**
-Um colega diz: "Internet e web são a mesma coisa".
-
-**Comando:**
-Explique a diferença entre internet e web (o que cada uma é) e diga se a afirmação do colega está correta, justificando.
-
-**Tópicos:**
-- a) Diferença entre internet e web e avaliação da afirmação. (1,0)
-
----
-
-## ITEM 24 — Plágio e citação
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C5
-
-**Contexto:**
-Um estagiário copiou três parágrafos de um site para o relatório do setor, sem aspas e sem indicar a fonte.
-
-**Comando:**
-Explique por que isso é plágio, qual lei protege os direitos autorais e como fazer uma citação direta e uma citação indireta corretas.
-
-**Tópicos:**
-- a) Plágio, Lei 9.610/98 e regras das citações direta e indireta. (1,0)
-
----
-
-## ITEM 25 — Para, CC e CCO
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C1
-
-**Contexto:**
-A empresa vai mudar o horário de coleta e precisa avisar 40 clientes por e-mail. Um colega colocou todos os endereços no campo "Para".
-
-**Comando:**
-Explique o problema dessa escolha (inclusive em relação à LGPD) e indique como usar os campos Para, CC e CCO nesse caso.
-
-**Tópicos:**
-- a) Problema da escolha, LGPD e uso correto de Para, CC e CCO. (1,0)
-
----
-
-## ITEM 26 — Permissões na nuvem
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C5
-
-**Contexto:**
-A pasta "Romaneios Outubro" na nuvem será compartilhada com a transportadora (só consulta), a auditoria interna (precisa deixar observações) e dois colegas da expedição (atualizam os arquivos).
-
-**Comando:**
-Indique a permissão de cada um (leitor, comentador ou editor), justifique e explique por que não usar um link público de edição.
-
-**Tópicos:**
-- a) Três permissões corretas e risco do link público de edição. (1,0)
-
----
-
-## ITEM 27 — Pilares da segurança
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C2
-
-**Contexto:**
-Em uma semana aconteceram três incidentes: (a) a planilha de preços dos clientes apareceu num grupo externo; (b) alguém mudou a quantidade de uma nota fiscal no sistema; (c) o sistema de estoque ficou fora do ar por uma tarde.
-
-**Comando:**
-Relacione cada incidente ao pilar da segurança da informação violado (confidencialidade, integridade ou disponibilidade) e explique o que cada pilar garante.
-
-**Tópicos:**
-- a) Três relações corretas e o que cada pilar garante. (1,0)
-
----
-
-## ITEM 28 — Ransomware e backup 3-2-1
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C2
-
-**Contexto:**
-O computador do almoxarifado foi atacado por ransomware: os arquivos ficaram bloqueados e os criminosos pedem pagamento. A planilha de inventário estava só naquele computador.
-
-**Comando:**
-Explique o que é ransomware e o que é backup, monte um plano de backup 3-2-1 para a planilha e diga como saber se o backup funciona.
-
-**Tópicos:**
-- a) Conceito de ransomware e de backup, plano 3-2-1 e teste de restauração. (1,0)
-
----
-
-## ITEM 29 — Formatação de procedimento
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C1
-
-**Contexto:**
-O procedimento de recebimento de carga está em texto corrido, sem títulos, sem numeração dos passos e sem destaque para os cuidados de segurança.
-
-**Comando:**
-Descreva como formatar o documento: estilos nos títulos, lista numerada nos passos, marcadores na lista de EPIs e destaque do aviso de segurança.
-
-**Tópicos:**
-- a) Estilos, numeração, marcadores e aviso com borda e sombreamento. (1,0)
-
----
-
-## ITEM 30 — Revisão antes de enviar ao cliente
-
-- **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C1
-
-**Contexto:**
-O relatório de avaria será enviado à transportadora. O arquivo está como "relatorio final(3).docx", com alterações marcadas e comentários internos sobre negociação de valores.
-
-**Comando:**
-Explique o que fazer com as alterações e os comentários, como renomear o arquivo e em que formato enviá-lo, justificando.
-
-**Tópicos:**
-- a) Aceitar/rejeitar e apagar comentários, nome padronizado e envio em PDF. (1,0)
-
----
-

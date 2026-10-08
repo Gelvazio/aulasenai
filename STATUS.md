@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Aceites do usuário: Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Aceites do usuário: Etapa 84 (item 84.5 — discursiva id 81 com 20 questões, respostas no caderno, PDF em 3 páginas); Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -1016,5 +1016,18 @@ Pedido: em `scripts/criarUsuariosBancoDados.html`, botão que exporta em PDF os 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 84.1 | `assets/js/criar-usuarios-exportar-pdf.js` (novo): folha com as linhas marcadas e visíveis (Nº, Aluno, Aluno anotou?, E-mail, Senha como exibida, Cadastrado) + impressão do navegador; bloqueado fora de 127.0.0.1/localhost | ✅ Concluído | 2026-10-08 13:20 | `node --check` sem erros |
-| 84.2 | Botão em cada turma (`criar-usuarios-pagina.js`), script na página e CSS de impressão (`criar-usuarios-comando.css`) | ✅ Concluído | 2026-10-08 13:20 | `node --check`; leitura do código (sem navegador, regra do usuário) |
-| 84.3 | Aceite do usuário (testar no Live Server: marcar alunos → Exportar → "Salvar como PDF") | ⬜ Pendente | — | — |
+| 84.2 | PDF compacto só nesta atividade (campo opcional `PDF compacto` no gerador e no exportador): fonte e espaços menores, sem a linha "Aula" e sem a caixa de capacidade de cada questão (fica no quadro do topo) | ✅ Concluído | 2026-10-08 10:48 | `py_compile` e `node --check` OK; sem o campo, o PDF continua igual |
+| 84.3 | Medição do PDF (larguras da Helvetica, sem navegador): até 4 páginas | ✅ Concluído | 2026-10-08 10:48 | Sem caixas de resposta: **3 páginas** (2 folhas frente e verso) |
+
+## Etapa 84 — Discursiva de sexta (id 81) com 20 questões e PDF de até 2 folhas (tarefa pequena, 2026-10-08 10:41:37)
+
+Pedido: deixar só 20 questões e o PDF de cada aluno em no máximo 2 folhas. Decisões do usuário: ficam os **itens 01 a 20** (as respostas dos 2 alunos são desses itens); **2 folhas = frente e verso** (até 4 páginas A4). Mesmo caminho da Etapa 58 (redução de 40 para 30).
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 84.1 | Fonte e padrão de resposta: itens 21 a 30 removidos; caso da segunda-feira escrito uma vez (itens 07, 10 e 20 remetem ao 06); duração e pontuação | ✅ Concluído | 2026-10-08 10:45 | Gerador: 20 questões, 20 tópicos, 20 pontos, 0 sem padrão; caso escrito 1 vez |
+| 84.2 | PDF compacto só nesta atividade (campos opcionais `PDF compacto` e `Máximo de caracteres` no gerador e no exportador) | ✅ Concluído | 2026-10-08 10:45 | `py_compile` e `node --check` OK; sem os campos, o gerador e o PDF continuam iguais (padrão 3000 caracteres, layout normal); no compacto sai a caixa de capacidade de cada questão (fica no quadro do topo); limite 500 caracteres |
+| 84.3 | Medição do PDF (larguras da Helvetica, sem navegador): até 4 páginas | ✅ Concluído | 2026-10-08 10:45 | Simulação com larguras da Helvetica (reportlab): em branco = 4 páginas; todas as 20 respostas com 500 caracteres = 4 páginas (sobra ~55 mm na 4ª) |
+| 84.4 | Página e seed regerados; banco id 81: backup e 20 tópicos | ✅ Concluído | 2026-10-08 10:48 | Backup `topico_discursivo_backup_20261008_81_20q` (30 linhas, RLS); tópicos 21–30 apagados (nenhuma resposta neles); `total_itens` = 20; conferido: 20 tópicos, 20 pontos, 40 respostas mantidas; índice e menu com 20 questões |
+| 84.4a | **Pedido novo (durante a tarefa):** respostas no caderno — PDF sem as caixas de resposta (campo opcional `PDF sem respostas`; instrução "Responda no caderno" no PDF); a página continua com os campos; limite de 500 caracteres retirado (padrão 3000) | ✅ Concluído | 2026-10-08 10:48 | `node --check` OK; página com `data-pdf-sem-respostas`; simulação: 3 páginas |
+| 84.5 | Aceite do usuário | ⬜ Pendente | — | — |

@@ -9,7 +9,10 @@ se existir, <pasta>/CONTEUDO/AVALIACAO-PRATICA-GABARITO.md (padrão de resposta,
 Saídas: <pasta>/AVALIACAO-PRATICA.html e database/<data>-<nome>-seed-atividades.sql (fora do Git).
 Campos opcionais no cabeçalho da fonte: "- **Pontos por questão:** 0,5" (padrão 1) e
 "- **Página:** NOME.html" (padrão: mesmo nome da fonte) e "- **Aviso:** texto" (caixa em
-destaque no início da página).
+destaque no início da página), "- **Máximo de caracteres:** 500" (limite de cada resposta; padrão
+3000), "- **PDF compacto:** sim" (o PDF exportado usa fonte e espaços menores, para caber em
+menos folhas) e "- **PDF sem respostas:** sim" (o PDF sai sem as caixas de resposta: o aluno
+responde no caderno); os dois em assets/js/exportar-pdf-discursiva.js.
 Plano: docs/avaliacao-pratica-discursiva-itic.md
 """
 import html
@@ -42,6 +45,12 @@ PONTOS_POR_QUESTAO_PADRAO = 1.0
 CAMPO_PONTOS_POR_QUESTAO = "Pontos por questão"
 CAMPO_PAGINA = "Página"
 CAMPO_AVISO = "Aviso"
+CAMPO_MAXIMO_CARACTERES = "Máximo de caracteres"
+CAMPO_PDF_COMPACTO = "PDF compacto"
+CAMPO_PDF_SEM_RESPOSTAS = "PDF sem respostas"
+ATRIBUTOS_PDF = {CAMPO_PDF_COMPACTO: "data-pdf-compacto",
+                 CAMPO_PDF_SEM_RESPOSTAS: "data-pdf-sem-respostas"}
+VALOR_SIM = "sim"
 TOLERANCIA_PONTOS = 0.001
 SEPARADOR_ITEM = re.compile(r"^## ITEM\s+", re.MULTILINE)
 PADRAO_META = re.compile(r"^- \*\*(.+?):\*\*\s*(.+)$", re.MULTILINE)
@@ -309,11 +318,11 @@ def html_topico(item, topico):
                         <span class="topico-resposta__pontos">{formatar_pontos(topico["pontos"])}</span>
                     </label>
                     <textarea id="{ident}" class="topico-resposta__campo" {atributos}
-                              maxlength="{MAXIMO_CARACTERES}" rows="5" readonly
+                              maxlength="{item['maximo_caracteres']}" rows="5" readonly
                               placeholder="Escreva aqui a sua resposta do tópico {topico["letra"]})..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
-                        <span class="topico-resposta__contador">0/{MAXIMO_CARACTERES}</span>
+                        <span class="topico-resposta__contador">0/{item['maximo_caracteres']}</span>
                     </div>
                 </div>
 '''
@@ -423,6 +432,40 @@ def linha_slides(pasta, nome):
             f'<a href="{quote(caminho)}" target="_blank" rel="noopener">{rotulo}</a>')
 
 
+def ler_maximo_caracteres(meta):
+    """Lê o limite de caracteres de cada resposta (campo opcional da fonte).
+
+    Args:
+        meta: Metadados da fonte.
+
+    Returns:
+        Limite informado na fonte ou MAXIMO_CARACTERES.
+
+    Raises:
+        SystemExit: Se o valor não for um número inteiro positivo.
+    """
+    valor = meta.get(CAMPO_MAXIMO_CARACTERES, "").strip()
+    if not valor:
+        return MAXIMO_CARACTERES
+    if not valor.isdigit() or int(valor) <= 0:
+        raise SystemExit(f'❌ "{CAMPO_MAXIMO_CARACTERES}" inválido: {valor} (use um número inteiro)')
+    return int(valor)
+
+
+def atributos_pdf(meta):
+    """Atributos do <body> que mudam o PDF exportado (campos opcionais "... : sim" da fonte).
+
+    Args:
+        meta: Metadados da fonte.
+
+    Returns:
+        Atributos ligados (ex.: ' data-pdf-compacto="sim"') ou '' quando nenhum está ligado.
+    """
+    ligados = [atributo for campo, atributo in ATRIBUTOS_PDF.items()
+               if meta.get(campo, "").strip().lower() == VALOR_SIM]
+    return "".join(f' {atributo}="{VALOR_SIM}"' for atributo in ligados)
+
+
 def montar_trocas(meta, itens, contexto):
     """Monta o dicionário de placeholders do template.
 
@@ -436,6 +479,8 @@ def montar_trocas(meta, itens, contexto):
     """
     dados = contexto["dados"]
     turma = meta.get("Turma", "")
+    maximo = ler_maximo_caracteres(meta)
+    itens = [{**item, "maximo_caracteres": maximo} for item in itens]
     capacidades_inicio, capacidades_css = aplicar_capacidades(
         meta, itens, dados, contexto["assets"])
     return {
@@ -454,7 +499,8 @@ def montar_trocas(meta, itens, contexto):
         "{{UC}}": escapar(dados["uc"]), "{{UC_CURTA}}": escapar(dados["uc_curta"]),
         "{{CURSO}}": escapar(dados["curso"]), "{{DOCENTE}}": escapar(dados["docente"]),
         "{{TURMA}}": f' data-turma="{escapar(turma)}"' if turma else "",
-        "{{MAXIMO_CARACTERES}}": str(MAXIMO_CARACTERES),
+        "{{ATRIBUTOS_PDF}}": atributos_pdf(meta),
+        "{{MAXIMO_CARACTERES}}": str(maximo),
         "{{ASSETS}}": contexto["assets"], "{{RAIZ}}": contexto["raiz"],
         "{{MENU}}": montar_tags_menu(contexto["pasta"], "    "),
     }
