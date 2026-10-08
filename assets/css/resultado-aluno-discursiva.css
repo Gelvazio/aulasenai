@@ -1,0 +1,108 @@
+/* Aluno: prova corrigida depois da liberação do gabarito (resultado-aluno-discursiva.js). */
+
+:root {
+    --resultado-certa-fundo: #c6f6d5;
+    --resultado-certa-texto: #22543d;
+    --resultado-meia-fundo: #fefcbf;
+    --resultado-meia-texto: #744210;
+    --resultado-errada-fundo: #fed7d7;
+    --resultado-errada-texto: #742a2a;
+    --resultado-pendente-fundo: #edf2f7;
+    --resultado-pendente-texto: #4a5568;
+    --resultado-balao-fundo: #ffffff;
+    --resultado-balao-texto: #1a202c;
+    --resultado-balao-borda: #667eea;
+    --resultado-balao-sombra: rgba(26, 32, 44, 0.25);
+    --resultado-esperada-fundo: #f0fff4;
+    --resultado-esperada-borda: #38a169;
+}
+
+.resultado-aluno {
+    text-align: center;
+}
+
+.resultado-aluno__nota {
+    margin: 0 0 6px;
+    font-size: 24px;
+}
+
+.resultado-aluno__dica {
+    margin: 0;
+    color: var(--resultado-pendente-texto);
+}
+
+.resultado-aluno__selo {
+    position: relative;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: help;
+}
+
+.resultado-aluno__selo--certa {
+    background: var(--resultado-certa-fundo);
+    color: var(--resultado-certa-texto);
+}
+
+.resultado-aluno__selo--meia {
+    background: var(--resultado-meia-fundo);
+    color: var(--resultado-meia-texto);
+}
+
+.resultado-aluno__selo--errada {
+    background: var(--resultado-errada-fundo);
+    color: var(--resultado-errada-texto);
+}
+
+.resultado-aluno__selo--pendente {
+    background: var(--resultado-pendente-fundo);
+    color: var(--resultado-pendente-texto);
+    cursor: default;
+}
+
+.resultado-aluno__balao {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 0;
+    z-index: 50;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    width: min(560px, 85vw);
+    padding: 16px 18px;
+    border: 2px solid var(--resultado-balao-borda);
+    border-radius: 12px;
+    background: var(--resultado-balao-fundo);
+    color: var(--resultado-balao-texto);
+    box-shadow: 0 8px 24px var(--resultado-balao-sombra);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    white-space: normal;
+    text-align: left;
+}
+
+.resultado-aluno__selo:hover .resultado-aluno__balao,
+.resultado-aluno__selo:focus .resultado-aluno__balao {
+    display: flex;
+}
+
+.resultado-aluno__balao-titulo {
+    font-size: 18px;
+}
+
+.resultado-aluno__esperada {
+    margin-top: 8px;
+    padding: 8px 10px;
+    border-left: 4px solid var(--resultado-esperada-borda);
+    background: var(--resultado-esperada-fundo);
+    font-size: 14px;
+}
+
+@media print {
+    .resultado-aluno__balao {
+        display: none;
+    }
+}

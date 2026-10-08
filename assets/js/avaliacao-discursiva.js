@@ -20,6 +20,7 @@ const ARQUIVO_PROGRESSO_TURMA = 'progresso-turma-discursiva.js';
 const ARQUIVO_NOTA_IA_RESPOSTAS = 'nota-ia-respostas-discursiva.js';
 const ARQUIVO_CONFIRMAR_PROFESSOR = 'confirmar-nota-professor-discursiva.js';
 const ARQUIVO_FINALIZAR_PROFESSOR = 'finalizar-atividade-professor.js';
+const ARQUIVO_RESULTADO_ALUNO = 'resultado-aluno-discursiva.js';
 const BASE_SCRIPTS_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const CLASSE_BLOCO = 'topico-resposta';
 const CLASSE_FALTANDO = 'topico-resposta--faltando';
@@ -360,6 +361,24 @@ async function abrirProgressoDaTurma(dados) {
         await window.montarProgressoDaTurma(dados.atividadeId);
     } catch (erro) {
         console.warn('Progresso da turma:', erro.message);
+    }
+}
+
+/**
+ * Aluno que entregou, com o gabarito liberado para a turma: mostra a prova corrigida (nota,
+ * resultado de cada alternativa, observação da IA e padrão de resposta). Falha não quebra a página.
+ * @param {Object} dados - Estado carregado do banco.
+ */
+async function abrirResultadoDoAluno(dados) {
+    const podeVerResultado = !dados.ehProfessor && dados.entregueEm && dados.gabaritoLiberado;
+    if (!podeVerResultado) return;
+    try {
+        if (typeof window.mostrarResultadoDoAluno !== 'function') {
+            await carregarModuloDiscursiva(ARQUIVO_RESULTADO_ALUNO);
+        }
+        await window.mostrarResultadoDoAluno(dados.atividadeId);
+    } catch (erro) {
+        console.warn('Resultado do aluno:', erro.message);
     }
 }
 
@@ -728,6 +747,7 @@ async function iniciarAvaliacaoDiscursiva() {
     if (estadoDiscursivo.dados.ehProfessor) alternarRespostasDoProfessor(false);
     aplicarPermissaoDeEscrita();
     montarPainel(estadoDiscursivo.dados);
+    abrirResultadoDoAluno(estadoDiscursivo.dados);
     ligarEventosDosCampos();
     document.getElementById(ID_BOTAO_FINALIZAR).addEventListener('click', finalizarDiscursiva);
     document.addEventListener('click', gravarPeloBotao);

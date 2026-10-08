@@ -12,6 +12,7 @@ const ROTA_ENTREGA_DISCURSIVA = '/rest/v1/entrega_atividade';
 const ROTA_ABERTURA_DISCURSIVA = '/rest/v1/abertura_atividade';
 const ROTA_HORARIO_DISCURSIVA = '/rest/v1/rpc/horario_da_turma_do_aluno';
 const ROTA_MINIMO_QUESTOES_DISCURSIVA = '/rest/v1/rpc/minimo_questoes_para_entregar';
+const ROTA_GABARITO_LIBERADO_DISCURSIVA = '/rest/v1/rpc/aluno_pode_ver_gabarito';
 const PREFERENCIA_UPSERT_DISCURSIVA = 'resolution=merge-duplicates,return=minimal';
 const PREFERENCIA_IGNORAR_REPETIDA = 'resolution=ignore-duplicates,return=minimal';
 const PERFIL_PROFESSOR_DISCURSIVA = 'PROFESSOR';
@@ -179,6 +180,25 @@ async function lerMinimoQuestoesDiscursiva(sessao) {
 }
 
 /**
+ * Indica se o gabarito desta atividade já foi liberado para a turma do aluno logado
+ * (função aluno_pode_ver_gabarito; não registra pedido de gabarito).
+ * @param {Object} sessao - Estado do repositório (atividade).
+ * @returns {Promise<boolean>} true se liberado (falha = false).
+ */
+async function lerGabaritoLiberadoDiscursiva(sessao) {
+    try {
+        const resposta = await enviarPedidoDiscursivo({
+            rota: ROTA_GABARITO_LIBERADO_DISCURSIVA, corpo: { p_atividade: sessao.atividade.id },
+            preferencia: 'return=representation',
+        });
+        if (!resposta.ok) return false;
+        return (await resposta.json()) === true;
+    } catch (erro) {
+        return false;
+    }
+}
+
+/**
  * Indica se a página esconde do aluno as próprias respostas depois da entrega
  * (data-ocultar-respostas-entregue="sim" no <body>; campo da fonte .md).
  * @returns {boolean} true quando o bloqueio está ligado.
@@ -211,8 +231,13 @@ async function carregarDiscursiva(sessao) {
         ehProfessor ? '' : explicarHorarioDiscursiva(),
         ehProfessor ? null : lerMinimoQuestoesDiscursiva(sessao),
     ]);
-    // Aluno que já entregou, em página com o bloqueio ligado: as respostas nem são lidas do banco.
-    const respostasOcultas = Boolean(!ehProfessor && entregueEm && ocultaRespostasEntregues());
+    // Gabarito liberado para a turma do aluno que entregou: a prova volta com respostas e nota.
+    const gabaritoLiberado = Boolean(!ehProfessor && entregueEm &&
+        await lerGabaritoLiberadoDiscursiva(sessao));
+    // Aluno que já entregou, em página com o bloqueio ligado: as respostas nem são lidas do banco
+    // (exceto com o gabarito liberado).
+    const respostasOcultas = Boolean(!ehProfessor && entregueEm && !gabaritoLiberado &&
+        ocultaRespostasEntregues());
     const respostas = respostasOcultas ? {} : await lerRespostasDiscursivas(sessao);
     const deveRegistrarAbertura = !ehProfessor && !entregueEm && sessao.atividade.ativo;
     if (deveRegistrarAbertura) {
@@ -221,7 +246,7 @@ async function carregarDiscursiva(sessao) {
     }
     return {
         disponivel: true, logado: true, ehProfessor, ...identificacao, respostas, respostasOcultas,
-        entregueEm, minimoQuestoes,
+        entregueEm, minimoQuestoes, gabaritoLiberado,
         avisoHorario, tentativa: sessao.tentativa, ativa: sessao.atividade.ativo,
         maximoTentativas: sessao.atividade.max_tentativas, atividadeId: sessao.atividade.id,
     };

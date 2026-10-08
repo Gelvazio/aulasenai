@@ -254,6 +254,15 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     mostra o resumo e a tabela dos alunos, e o botão **"Quantidade Mínima de Questões"** grava o
     mínimo informado **só para quem ainda está com o total** (quem tem mínimo próprio não muda).
     A nota continua seguindo o mínimo de cada aluno. `assets/js/calculo-nota-progresso.js` + CSS.
+- ✅ **Prova corrigida para o aluno (2026-10-08, pedido do usuário):** aluno que entregou e com o
+  gabarito liberado para a turma (`aluno_pode_ver_gabarito`, sem registrar pedido; execução
+  liberada para `authenticated` em `database/2026-10-08-aluno-pode-ver-gabarito-execute.sql`,
+  aplicado) vê a prova com as respostas dele (o "Ocultar respostas após entrega" deixa de
+  valer), o quadro **"🎓 Sua nota"** (`notas_media_final`), o selo de cada alternativa pela
+  nota do professor (✅ Certa / 🟡 Meia certa / ❌ Errada / ⏳ aguardando) com a **observação da
+  IA** num balão grande, e o padrão de resposta (mesma caixa do "Ver Gabarito"). O aluno só lê
+  as próprias correções confirmadas (RLS da `correcao_discursiva`).
+  `assets/js/resultado-aluno-discursiva.js` + CSS.
 - ✅ **Entrega só com tudo preenchido (já existia):** ao clicar em "Finalizar e entregar", a página
   confere no banco os tópicos sem texto (só espaços conta como vazio), destaca e lista os que faltam;
   o RLS da `entrega_atividade` também recusa a entrega incompleta.

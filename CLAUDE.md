@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 20:21:56
+**Versão das regras:** 2026-10-08 20:24:44
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 20:24:44 | Discursivas: **aluno vê a prova corrigida** depois da entrega e da liberação do gabarito — respostas, **nota**, resultado de cada alternativa (✅/🟡/❌) e a **observação da IA** do porquê, mais o padrão de resposta (`assets/js/resultado-aluno-discursiva.js`; `aluno_pode_ver_gabarito` liberada para `authenticated`) |
 | 2026-10-08 20:21:56 | Discursivas: botão **✅ Finalizar Atividade** (professor, embaixo da prova depois de escolher o aluno) que **lança a nota** com base nas alternativas confirmadas (certa / meia certa / errada), sobre o mínimo do aluno e no máximo 10 (`assets/js/finalizar-atividade-professor.js`) |
 | 2026-10-08 16:42:10 | Discursivas: **quantidade mínima de questões implementada** — coluna `atividade.minimo_questoes_entrega`, tabela `minimo_questoes_aluno` (RLS), entrega conferindo o mínimo (`atividade_completa`) e média final proporcional ao mínimo, máximo 10 (`notas_media_final`); botão no Progresso da turma (SQL `database/2026-10-08-minimo-questoes-entrega.sql`, aplicado) |
 | 2026-10-08 16:34:56 | Discursivas: **quantidade mínima de questões para entregar** (padrão = total; o professor muda por aluno no Progresso da turma) e **nota proporcional ao mínimo, máximo 10** (mínimo 10 de 20 + 10 certas = nota 10) — regra anotada; implementação no plano `docs/quantidade-minima-questoes-discursiva.md` |
 | 2026-10-08 16:20:56 | Discursivas: **Progresso da turma global** (aparece para o professor em **todas** as avaliações discursivas, sem campo na fonte) com o botão **📈 Gráficos** — modal com 5 gráficos (barras, pizza, barras por questão, rosca da correção da IA, barras horizontais da nota parcial); `assets/js/graficos-progresso-turma.js` |
-| 2026-10-08 16:10:08 | Discursivas: **botões ✅ Certa / 🟡 Meia certa / ❌ Errada** para o professor confirmar cada alternativa em "Respostas dos alunos" (grava `nota_professor`) e **nota confirmada travada — nem o professor altera** (trigger `correcao_discursiva_validar`, SQL `database/2026-10-08-correcao-discursiva-nota-professor-travada.sql`, aplicado) |
 
 ---
 
@@ -88,6 +88,15 @@ Registrada em 2026-10-03 a pedido do usuário.
   final (`notas_media_final`). Só finaliza com o aluno tendo **entregado** e **todas as
   alternativas respondidas confirmadas**; questões em branco não contam. Código:
   `assets/js/finalizar-atividade-professor.js` + CSS. Detalhe em `docs/regras/atividades.md`.
+- ✅ **Aluno vê a prova corrigida depois da liberação do gabarito** (2026-10-08, pedido do
+  usuário): quando o aluno logado **já entregou** a avaliação discursiva e o professor **já
+  liberou os gabaritos** da turma dele, a página carrega a prova do aluno com: as **respostas**
+  dele (mesmo com "Ocultar respostas após entrega"), a **nota** (`notas_media_final`), o
+  resultado de cada alternativa corrigida pelo professor (✅ Certa / 🟡 Meia certa / ❌ Errada;
+  ⏳ se ainda não corrigida), a **observação da IA** do porquê (balão grande ao passar o mouse ou
+  tocar) e o padrão de resposta. Antes da liberação nada disso aparece. Vale para todas as
+  avaliações discursivas. Código: `assets/js/resultado-aluno-discursiva.js` + CSS. Detalhe em
+  `docs/regras/atividades.md`.
 - ⛔ **Nota confirmada pelo professor é definitiva** (2026-10-08, pedido do usuário): depois que o
   professor confirma a nota de uma alternativa (botões ✅ Certa / 🟡 Meia certa / ❌ Errada em
   "Respostas dos alunos" ou a tela CORREÇÃO), ela **não pode mais ser alterada nem apagada —
