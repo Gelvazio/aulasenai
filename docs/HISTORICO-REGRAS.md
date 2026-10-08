@@ -6,6 +6,8 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+$NOVA2
+| 2026-10-08 23:45:55 | **Faixa de matérias**: botões **SOMENTE ENSALADO** e **VER TODAS MATÉRIAS** ao lado do título, e **ON/OFF** por matéria (coluna `materia.ensalado`, só PROFESSOR grava) em todos os `index.html` dos cursos (`CLAUDE.md`: seção "FAIXA DE MATÉRIAS") |
 | 2026-10-08 20:33:13 | **Menu das atividades desligado** em todas as páginas (barra com o nome da matéria e "Equipes"): tudo já está no menu base do header; `MENU_ATIVIDADES_LIGADO = false` em `js/menu.js` (`docs/regras/assets-e-geradores.md`) |
 | 2026-10-08 20:24:44 | Discursivas: **aluno vê a prova corrigida** depois da entrega e da liberação do gabarito — respostas, **nota**, resultado de cada alternativa (✅/🟡/❌) e a **observação da IA** do porquê, mais o padrão de resposta (`assets/js/resultado-aluno-discursiva.js`; `aluno_pode_ver_gabarito` liberada para `authenticated`) |
 | 2026-10-08 20:21:56 | Discursivas: botão **✅ Finalizar Atividade** (professor, embaixo da prova depois de escolher o aluno) que **lança a nota** com base nas alternativas confirmadas (certa / meia certa / errada), sobre o mínimo do aluno e no máximo 10 (`assets/js/finalizar-atividade-professor.js`) |
