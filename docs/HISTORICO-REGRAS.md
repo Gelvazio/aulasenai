@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 23:59:44 | Aluno líder: **no máximo 1 líder por turma** (`definir_lider_usuario` recusa o segundo e diz quem é o atual); coluna Líder da tela ALUNOS como interruptor ON/OFF — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 23:57:37 | **Aluno líder** (`usuario.lider` 1/0): professor marca na tela ALUNOS; o líder vê 👥 EQUIPES e cadastra/altera equipes da própria turma (não exclui); menu EQUIPES só para professor e líder; aviso do grant por coluna da `usuario` — `docs/regras/usuarios-turmas-paginas-professor.md` |
 $NOVA2
 | 2026-10-08 23:45:55 | **Faixa de matérias**: botões **SOMENTE ENSALADO** e **VER TODAS MATÉRIAS** ao lado do título, e **ON/OFF** por matéria (coluna `materia.ensalado`, só PROFESSOR grava) em todos os `index.html` dos cursos (`CLAUDE.md`: seção "FAIXA DE MATÉRIAS") |

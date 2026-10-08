@@ -197,6 +197,9 @@ SQL: `database/2026-10-05-equipes-turma-materia.sql` (✅ aplicado no Supabase e
   função `definir_lider_usuario`). O líder vê o menu **👥 EQUIPES** e, nas turmas em que está
   (`turmaaluno`), **cadastra e altera equipes** e adiciona/altera/remove integrantes (políticas
   `*_lider` com `aluno_lider_da_turma`); **não exclui equipe**. O aluno não muda o próprio `lider`.
+  **No máximo 1 líder por turma** (2026-10-08): `definir_lider_usuario` recusa ligar o líder se
+  alguma turma do aluno já tem outro líder e diz quem é (desligar o atual antes). Na tela ALUNOS
+  o líder é um interruptor **ON/OFF**.
   Não confundir com `turma.lider_aluno_id` (líder da turma, média final).
 - ⚠️ **`usuario` tem permissão de leitura por coluna:** coluna nova precisa de
   `grant select (<coluna>) on public.usuario to authenticated`, senão a leitura dá

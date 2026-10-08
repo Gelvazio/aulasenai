@@ -1404,4 +1404,5 @@ Plano: [docs/aluno-lider-cadastra-equipes.md](docs/aluno-lider-cadastra-equipes.
 | 106.7 | Regra no `CLAUDE.md` do projeto (`docs/regras/usuarios-turmas-paginas-professor.md`, versão + históricos) | ✅ Concluído | 2026-10-08 23:58:03 | grep "lider" na regra |
 | 106.8 | Commits d3f40b5 (código, banco e regra) + complementar (SQL do grant, STATUS e plano) | ✅ Concluído | 2026-10-08 23:58:03 | git log |
 | 106.10 | Pedido do usuário (2026-10-08 23:58:54): coluna Líder da tela ALUNOS vira interruptor ON/OFF (`.guia-interruptor` + texto ON/OFF) no lugar da lista 1/0 | ✅ Concluído | 2026-10-08 23:58:54 | `node --check`; leitura do código |
+| 106.11 | Pedido do usuário (2026-10-08 23:59:44): **1 líder por turma** — `definir_lider_usuario` recusa ligar o líder se alguma turma do aluno já tem outro (SQL `database/2026-10-09-lider-unico-por-turma.sql`, aplicado pelo conector); regra, `docs/database.md` e relatório HTML | ✅ Concluído | 2026-10-08 23:59:44 | trava conferida no código da função; 0 turmas com mais de 1 líder; anon sem execução |
 | 106.9 | Aceite do usuário | ⬜ Pendente | — | — |

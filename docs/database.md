@@ -557,7 +557,7 @@ Plano: `docs/equipes-sala-de-aula.md`. Tela: modal **👥 Equipes** do menu das 
 | `aluno_lider_da_turma(p_turma_codigo)` | (2026-10-08) verdadeiro se o usuário logado tem `usuario.lider = 1` e está na turma (`turmaaluno`) |
 | Políticas `*_lider` | (2026-10-08) `equipe`: select/insert/update; `equipe_membro`: select/insert/update/delete — todas com `aluno_lider_da_turma(turma_codigo)`; o líder **não** exclui equipe |
 | `alunos_da_turma_lider(p_turma_codigo)` | (2026-10-08) `security definer`: id e nome dos alunos da turma, só para o líder dela |
-| `definir_lider_usuario(p_usuario, p_lider)` | (2026-10-08) `security definer`: professor que vê o aluno (`professor_pode_ver_aluno`) marca `lider` 0/1 |
+| `definir_lider_usuario(p_usuario, p_lider)` | (2026-10-08) `security definer`: professor que vê o aluno (`professor_pode_ver_aluno`) marca `lider` 0/1; **1 líder por turma** — recusa ligar se alguma turma do aluno já tem outro líder (`database/2026-10-09-lider-unico-por-turma.sql`) |
 
 ---
 
