@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 79, item 79.8 — aceite do usuário da apostila ITIC V2. Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -30,7 +30,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
-| 79 | 79.8 | validar a apostila ITIC V2 (28 páginas, sem vídeos e exercícios) e a paginação/faixa do PDF | Aceite |
+| 79 e 81 | 79.8 e 81.5 | validar a apostila ITIC V2 versão 2.1 (28 páginas, sem vídeos e exercícios; S2, S3, normas declaradas e referências complementares) e a paginação/faixa do PDF | Aceite |
 | 71 | 71.3 (C) | revisar as 9 aulas de Comunicação Oral e Escrita (Rio do Sul) em `CONTEUDO/` | Aceite |
 | 72 | 72.8 | 7 contradições do CLAUDE.md corrigidas (uma por commit) | Aceite |
 | 70 | 70.5 | CLAUDE.md dividido em núcleo + `docs/regras/`, histórico em `docs/HISTORICO-REGRAS.md` e esta tabela; depois, as correções das contradições do CLAUDE.md, uma de cada vez | Aceite |
@@ -969,3 +969,15 @@ Plano: [docs/apostila-itic-v2-40-paginas.md](docs/apostila-itic-v2-40-paginas.md
 |------|-----------|--------|--------------|-------------|
 | 80.1 | Conferência do "conflito de merge": nenhum merge em andamento nem marcador de conflito; `main` 45 commits à frente da `origin/main`, sem atraso | ✅ Concluído | 2026-10-08 11:58 | `git status`, `git grep` dos marcadores, `git rev-list` |
 | 80.2 | `git rm ".gitignore copy"` (cópia antiga deixada pelo commit `85a8531`) | ✅ Concluído | 2026-10-08 12:00 | Commit `eb8e8f0` |
+
+## Etapa 81 — Apostila ITIC V2: correções da conferência com a ementa (tarefa pequena, 2026-10-08 09:03:16)
+
+Pedido: corrigir os 4 pontos achados na conferência da V2 com o `EMENTA-CHALKIE-AI.md` e gerar de novo a V2 (versão 2.0 → 2.1).
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 81.1 | S2 (hierarquias e autonomia) no cap. 01 e S3 (abertura à mudança) no cap. 04 de `CONTEUDO-V2/` | ✅ Concluído | 2026-10-08 12:03 | Trechos conferidos nos arquivos |
+| 81.2 | Cap. 03: citação declara a ABNT NBR 10520; cap. 06: margens declaram a ABNT NBR 14724 | ✅ Concluído | 2026-10-08 12:03 | Trechos conferidos nos arquivos |
+| 81.3 | Referências complementares (NBR 10520, NBR 14724, NBR 6028, Lei 12.737/2012) só na V2 (`referencias_complementares` da edição no `materia.json` + gerador) | ✅ Concluído | 2026-10-08 09:05 | `py_compile` OK; seção "Referências complementares" no Markdown e no HTML V2; V1 sem mudança (`--conferir` 100%) |
+| 81.4 | V2 versão 2.1: Markdown completo (`--forcar`), conferência 100% e HTML | ✅ Concluído | 2026-10-08 09:05 | `--conferir` V2 277/277; HTML e PDF headless 2.1 (28 páginas, "Página N de 28") |
+| 81.5 | Aceite do usuário | 👀 Aguardando validação | — | — |

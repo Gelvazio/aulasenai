@@ -51,6 +51,10 @@ prazo, custo e segurança; na **gestão de conflitos**, o foco é o problema, co
 combinados por escrito. Ofensas, sabotagem ou vazamento são faltas graves: guarde provas, não
 revide e procure os canais oficiais.
 
+**Abertura à mudança (S3):** um sistema novo, um processo diferente ou a ideia de um colega podem
+melhorar o trabalho. Ouça antes de rejeitar, peça os fatos ("o novo romaneio digital reduziu os
+erros?") e teste a proposta — discordar com argumentos é diferente de resistir por hábito.
+
 ## Resumo
 
 - E-mail profissional: assunto claro, saudação, corpo objetivo, anexo conferido e assinatura.

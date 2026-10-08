@@ -4,7 +4,7 @@
 > **Módulo:** Educação para o Trabalho (Básico) · **Modalidade:** Presencial  
 > **Ementa:** EMENTA-CHALKIE-AI.md v3.1 — conciliada e compactada (2026-09-23)  
 > **Carga horária da UC:** 40 horas · **Capítulos previstos:** 10 (1 capítulo = 1 aula de 4 horas)  
-> **Autor:** Gelvazio Camargo · **Versão:** 2.0 · **Data e hora:** 08/10/2026 às 08:51  
+> **Autor:** Gelvazio Camargo · **Versão:** 2.1 · **Data e hora:** 08/10/2026 às 09:04  
 > **Gerado em:** 08/10/2026, a partir de `APOSTILA/CONTEUDO-V2/`.
 
 > ✏️ **Este arquivo é a fonte final da apostila.** Revise, compare e acrescente dados aqui; o HTML é gerado depois, a partir dele. O sumário é refeito a cada geração.
@@ -54,6 +54,7 @@
   - [Capacidades por capítulo](#capacidades-por-capítulo)
 - [Glossário](#glossário)
 - [Referências](#referências)
+  - [Referências complementares (citadas nos capítulos)](#referências-complementares-citadas-nos-capítulos)
 - [Capítulo 01 — Comunicação Profissional e Seus Fundamentos](#capítulo-01--comunicação-profissional-e-seus-fundamentos)
   - [Teoria](#teoria)
     - [Os sete elementos da comunicação](#os-sete-elementos-da-comunicação)
@@ -734,6 +735,13 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - ABNT NBR 10719
 - ajuda Microsoft 365, Google Workspace, LibreOffice
 
+## Referências complementares (citadas nos capítulos)
+
+- ABNT NBR 10520 — Citações em documentos (cap. 03)
+- ABNT NBR 14724 — Trabalhos acadêmicos: apresentação (margens, cap. 06)
+- ABNT NBR 6028 — Resumo (cap. 07)
+- Lei 12.737/2012 — Delitos informáticos (Lei Carolina Dieckmann, cap. 05)
+
 ---
 
 # Capítulo 01 — Comunicação Profissional e Seus Fundamentos
@@ -787,6 +795,10 @@ nota fiscal chega por e-mail em até 1 hora".
 menos; podemos recontar juntos?" em vez de "você sempre erra!". **Escuta ativa** é não interromper
 e confirmar o que entendeu. **Consenso** é todos serem ouvidos e apoiarem a decisão; **conflitos**
 se resolvem com critérios objetivos (segurança, custo, prazo), nunca com ataques pessoais.
+
+**Hierarquias e autonomia (S2):** saiba quem decide o quê. O conferente tem autonomia para recontar
+uma carga ou parar o carregamento por risco à segurança; trocar a doca ou a ordem dos pedidos é
+decisão do supervisor. Na dúvida, comunique ao nível certo — sem pular etapas e sem ficar parado.
 
 ## Resumo
 
@@ -929,7 +941,7 @@ padrão do setor e anote de onde ele veio.
 - **Direitos autorais (Lei 9.610/98):** estar na internet não libera a cópia. **Plágio** é
   apresentar como seu o trabalho de outra pessoa. Licenças **Creative Commons** indicam o que o
   autor permite (BY, NC, ND, SA).
-- **Citação (ABNT):** direta, entre aspas, com autor, ano e página — "A informação é o combustível
+- **Citação (norma adotada: ABNT NBR 10520):** direta, entre aspas, com autor, ano e página — "A informação é o combustível
   da indústria" (SILVA, 2023, p. 15); indireta, com suas palavras — Para Silva (2023), os dados
   sustentam a produção. No fim, as **referências** completas.
 
@@ -941,7 +953,7 @@ citando as fontes.
 - Internet é a infraestrutura; a web é o serviço de páginas; prefira HTTPS.
 - Operadores (`" "`, `-`, `OR`, `site:`, `filetype:`) tornam a busca precisa.
 - CRAAP e 3 fontes garantem informação confiável; grave downloads na pasta certa.
-- Copiar sem citar é plágio (Lei 9.610/98): cite pela ABNT e siga a PUA.
+- Copiar sem citar é plágio (Lei 9.610/98): cite pela ABNT NBR 10520 e siga a PUA.
 
 ---
 
@@ -999,6 +1011,10 @@ cada um sabe seu papel e avisa impedimentos cedo; a **busca de consenso** compar
 prazo, custo e segurança; na **gestão de conflitos**, o foco é o problema, com escuta ativa e
 combinados por escrito. Ofensas, sabotagem ou vazamento são faltas graves: guarde provas, não
 revide e procure os canais oficiais.
+
+**Abertura à mudança (S3):** um sistema novo, um processo diferente ou a ideia de um colega podem
+melhorar o trabalho. Ouça antes de rejeitar, peça os fatos ("o novo romaneio digital reduziu os
+erros?") e teste a proposta — discordar com argumentos é diferente de resistir por hábito.
 
 ## Resumo
 
@@ -1110,7 +1126,7 @@ Fonte sem serifa (Arial, Calibri) em 11 ou 12 para tela; **negrito** para termos
 | **Recuo** | Use a régua, nunca espaços |
 | **Tabulação** | Tecla Tab para alinhar colunas simples |
 | **Espaçamento** | 1,5 entre linhas e "6 pt depois" em vez de vários Enter |
-| **Margens** | ABNT: 3 cm em cima e à esquerda; 2 cm embaixo e à direita |
+| **Margens** | ABNT NBR 14724 (norma adotada): 3 cm em cima e à esquerda; 2 cm embaixo e à direita |
 
 ### Configuração de página
 

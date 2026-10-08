@@ -25,7 +25,7 @@ Fonte sem serifa (Arial, Calibri) em 11 ou 12 para tela; **negrito** para termos
 | **Recuo** | Use a régua, nunca espaços |
 | **Tabulação** | Tecla Tab para alinhar colunas simples |
 | **Espaçamento** | 1,5 entre linhas e "6 pt depois" em vez de vários Enter |
-| **Margens** | ABNT: 3 cm em cima e à esquerda; 2 cm embaixo e à direita |
+| **Margens** | ABNT NBR 14724 (norma adotada): 3 cm em cima e à esquerda; 2 cm embaixo e à direita |
 
 ### Configuração de página
 

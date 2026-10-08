@@ -49,7 +49,7 @@ padrão do setor e anote de onde ele veio.
 - **Direitos autorais (Lei 9.610/98):** estar na internet não libera a cópia. **Plágio** é
   apresentar como seu o trabalho de outra pessoa. Licenças **Creative Commons** indicam o que o
   autor permite (BY, NC, ND, SA).
-- **Citação (ABNT):** direta, entre aspas, com autor, ano e página — "A informação é o combustível
+- **Citação (norma adotada: ABNT NBR 10520):** direta, entre aspas, com autor, ano e página — "A informação é o combustível
   da indústria" (SILVA, 2023, p. 15); indireta, com suas palavras — Para Silva (2023), os dados
   sustentam a produção. No fim, as **referências** completas.
 
@@ -61,7 +61,7 @@ citando as fontes.
 - Internet é a infraestrutura; a web é o serviço de páginas; prefira HTTPS.
 - Operadores (`" "`, `-`, `OR`, `site:`, `filetype:`) tornam a busca precisa.
 - CRAAP e 3 fontes garantem informação confiável; grave downloads na pasta certa.
-- Copiar sem citar é plágio (Lei 9.610/98): cite pela ABNT e siga a PUA.
+- Copiar sem citar é plágio (Lei 9.610/98): cite pela ABNT NBR 10520 e siga a PUA.
 
 ## Glossário
 

@@ -30,12 +30,12 @@
 ## Edição V2 — reduzida (até 40 páginas) · plano `docs/apostila-itic-v2-40-paginas.md`
 
 Fontes em `CONTEUDO-V2/`; Markdown `APOSTILA-INTRODUCAO-TIC-V2.md`; HTML
-`APOSTILA-INTRODUCAO-TIC-V2.html`; versão **2.0**. **Sem vídeos e sem exercícios** (pedido do
+`APOSTILA-INTRODUCAO-TIC-V2.html`; versão **2.1** (2.0 → 2.1 em 2026-10-08 09:05: S2 no cap. 01, S3 no cap. 04, NBR 10520 e NBR 14724 declaradas, referências complementares). **Sem vídeos e sem exercícios** (pedido do
 usuário: ele fará à parte). A V1 não mudou.
 
 | Parte | Status |
 |---|---|
 | Introdução + capítulos 01 a 10 (teoria, resumo, glossário) | 👀 Aguardando validação (2026-10-08 08:52) |
-| Conferência Markdown V2 × ementa | ✅ 100% (277/277) em 2026-10-08 08:52 |
-| HTML V2 gerado | ✅ 2026-10-08 08:52 |
-| Páginas do PDF (headless) | ✅ 28 páginas (limite 40), "Página N de T" e sem a faixa azul |
+| Conferência Markdown V2 × ementa | ✅ 100% (277/277) em 2026-10-08 09:05 (versão 2.1) |
+| HTML V2 gerado | ✅ 2026-10-08 09:05 (versão 2.1) |
+| Páginas do PDF (headless) | ✅ 28 páginas (versão 2.1, 2026-10-08 09:05) (limite 40), "Página N de T" e sem a faixa azul |

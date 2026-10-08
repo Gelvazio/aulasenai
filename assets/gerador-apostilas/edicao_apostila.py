@@ -4,7 +4,8 @@ Sem edição, tudo continua como na apostila normal: fontes em APOSTILA/CONTEUDO
 APOSTILA-<MATÉRIA>.md/.html. Com --edicao=V2: fontes em APOSTILA/CONTEUDO-V2/, arquivos
 APOSTILA-<MATÉRIA>-V2.md/.html e a configuração vem de "edicoes_apostila" do materia.json
 (ex.: {"V2": {"versao": "2.0", "sem_videos_e_exercicios": true}}). Com
-"sem_videos_e_exercicios", os capítulos podem ter só Teoria, Resumo e Glossário.
+"sem_videos_e_exercicios", os capítulos podem ter só Teoria, Resumo e Glossário; com
+"referencias_complementares" (lista), a seção Referências ganha as obras citadas nos capítulos.
 Usado por assets/gerador-apostilas/gerar_apostila.py. Plano: docs/apostila-itic-v2-40-paginas.md.
 """
 import re
@@ -15,6 +16,7 @@ OPCAO_EDICAO = "--edicao="
 CAMPO_EDICOES = "edicoes_apostila"
 CAMPO_VERSAO = "versao"
 CAMPO_SEM_PRATICAS = "sem_videos_e_exercicios"
+CAMPO_REFERENCIAS_COMPLEMENTARES = "referencias_complementares"
 ARQUIVO_MATERIA = "materia.json"
 PADRAO_NOME_EDICAO = re.compile(r"^[A-Z0-9]+$")
 
@@ -85,12 +87,14 @@ def caminho_apostila(pasta_materia, edicao, extensao):
 def aplicar_edicao(dados, edicao):
     """Troca a versão da apostila pela da edição e registra a pasta das fontes.
 
+    Também repassa "sem_videos_e_exercicios" e "referencias_complementares" da edição.
+
     Args:
         dados: Dados da matéria já organizados (com "materia" = conteúdo do materia.json).
         edicao: Nome da edição ou "" (só registra a pasta padrão).
 
     Returns:
-        Novo dicionário com "versao_apostila" e "pasta_fontes" da edição.
+        Novo dicionário com "versao_apostila", "pasta_fontes" e os ajustes da edição.
 
     Raises:
         SystemExit: Se a edição não estiver em "edicoes_apostila" do materia.json.
@@ -104,4 +108,6 @@ def aplicar_edicao(dados, edicao):
                          f'"{CAMPO_EDICOES}" (ex.: {{"{edicao}": {{"{CAMPO_VERSAO}": "2.0"}}}})')
     return {**dados, "versao_apostila": configuracao[CAMPO_VERSAO],
             "pasta_fontes": nome_pasta_fontes(edicao),
-            CAMPO_SEM_PRATICAS: bool(configuracao.get(CAMPO_SEM_PRATICAS))}
+            CAMPO_SEM_PRATICAS: bool(configuracao.get(CAMPO_SEM_PRATICAS)),
+            CAMPO_REFERENCIAS_COMPLEMENTARES:
+                list(configuracao.get(CAMPO_REFERENCIAS_COMPLEMENTARES, []))}

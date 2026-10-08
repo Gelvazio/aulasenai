@@ -17,6 +17,7 @@ TITULO_PLANO = "# Plano de capítulos"
 TITULO_CAPACIDADES_POR_CAPITULO = "## Capacidades por capítulo"
 TITULO_TEORIA = "Teoria"
 TITULO_SUMARIO = "Sumário"
+TITULO_REFERENCIAS_COMPLEMENTARES = "## Referências complementares (citadas nos capítulos)"
 PREFIXO_ITEM = "ITEM "
 SITUACAO_INCLUIDO = "✅ Incluído"
 SITUACAO_PENDENTE = "⬜ Pendente"
@@ -738,8 +739,24 @@ def md_ementa_oficial(dados):
     return "\n".join(linhas)
 
 
+def md_referencias_complementares(dados):
+    """Monta a lista de obras citadas nos capítulos que não estão na ementa (só em edições).
+
+    Args:
+        dados: Dados da matéria (com "referencias_complementares" vindo da edição, se houver).
+
+    Returns:
+        Linhas em Markdown da subseção, ou lista vazia se não houver complementares.
+    """
+    complementares = dados.get("referencias_complementares", [])
+    if not complementares:
+        return []
+    return ["", TITULO_REFERENCIAS_COMPLEMENTARES, "",
+            *[f"- {referencia}" for referencia in complementares]]
+
+
 def md_referencias(dados):
-    """Monta a seção de referências da ementa.
+    """Monta a seção de referências da ementa (e as complementares da edição, se houver).
 
     Args:
         dados: Dados da matéria (com "materia").
@@ -750,7 +767,8 @@ def md_referencias(dados):
     referencias = dados.get("materia", {}).get("referencias", [])
     if not referencias:
         return "# Referências\n\nA ementa da matéria não lista referências."
-    return "\n".join(["# Referências", "", *[f"- {referencia}" for referencia in referencias]])
+    linhas = ["# Referências", "", *[f"- {referencia}" for referencia in referencias]]
+    return "\n".join(linhas + md_referencias_complementares(dados))
 
 
 def montar_markdown_completo(dados, texto_introducao, capitulos):

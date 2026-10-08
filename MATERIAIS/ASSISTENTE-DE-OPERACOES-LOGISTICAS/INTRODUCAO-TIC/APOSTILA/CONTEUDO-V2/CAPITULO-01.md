@@ -48,6 +48,10 @@ menos; podemos recontar juntos?" em vez de "você sempre erra!". **Escuta ativa*
 e confirmar o que entendeu. **Consenso** é todos serem ouvidos e apoiarem a decisão; **conflitos**
 se resolvem com critérios objetivos (segurança, custo, prazo), nunca com ataques pessoais.
 
+**Hierarquias e autonomia (S2):** saiba quem decide o quê. O conferente tem autonomia para recontar
+uma carga ou parar o carregamento por risco à segurança; trocar a doca ou a ordem dos pedidos é
+decisão do supervisor. Na dúvida, comunique ao nível certo — sem pular etapas e sem ficar parado.
+
 ## Resumo
 
 - Sete elementos: emissor, receptor, mensagem, canal, código, ruído e feedback.
