@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 21:38
+**Versão das regras:** 2026-10-07 21:39
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 21:39 | Regra "TURMA NA EXPORTAÇÃO": tirada a menção ao "PDF com gabarito" (botão removido em 2026-10-06) |
 | 2026-10-07 21:38 | Removida a regra "EXPORTAR EM WORD AO LADO DE CADA EXPORTAR PDF" (decisão do usuário): Word não é mais obrigatório; os scripts continuam (hoje só as práticas de Excel têm Word); índice e lista de `assets/` ajustados |
 | 2026-10-07 21:37 | `docs/regras/assets-e-geradores.md`: `alunos.html` (menu ALUNOS) passa a dizer "só Professor Administrador", igual ao código e às demais regras |
 | 2026-10-07 21:36 | Removida de "Outras Regras" a linha "Tabelas de resultado ao finalizar tarefas" (contradizia a frase final): ao concluir uma tarefa vale só `TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?` |
 | 2026-10-07 21:15 | Histórico de versões movido para `docs/HISTORICO-REGRAS.md` (no `CLAUDE.md` ficam as 5 mudanças mais recentes e o link); o visualizador de regras mostra também o histórico |
-| 2026-10-07 21:10 | `CLAUDE.md` dividido em **núcleo + `docs/regras/`** (6 arquivos, texto das regras sem alteração): no `CLAUDE.md` ficam as regras de sempre, segurança, Git e o "ÍNDICE DAS REGRAS DETALHADAS" com as proibições; o visualizador de regras passa a carregar também os arquivos de `docs/regras/` |
 
 ---
 

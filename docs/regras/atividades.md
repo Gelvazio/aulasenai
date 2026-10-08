@@ -159,7 +159,7 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
 
 Registrada em 2026-10-03. Vale para **todas** as atividades e avaliações de **todas** as matérias.
 
-- ✅ Ao exportar (PDF da atividade/prova completa, PDF com gabarito, **Gabarito**), o campo
+- ✅ Ao exportar (PDF da atividade/prova completa e **Gabarito** do professor), o campo
   **Turma** do PDF é preenchido com a **turma selecionada** — não fica a linha em branco quando o
   professor tem turma.
 - ✅ **Lista (combo) "Turma" antes dos botões de exportar**, no início da `.export-bar`, só para o
