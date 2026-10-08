@@ -189,7 +189,8 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   `assets/js/progresso-turma-discursiva.js` + `assets/css/progresso-turma-discursiva.css`
   (carregado pelo `avaliacao-discursiva.js` só para o professor; o RLS limita às turmas dele).
   - **Correção parcial pela IA** (2026-10-08): a IA corrige as alternativas já respondidas **antes
-    da entrega** e recorrige só o que o aluno mudou (`correcao_discursiva.nota_ia_em`, SQL
+    da entrega** (cada alternativa uma vez) e **recorrige só após a entrega final** o que o aluno
+    mudou depois da nota parcial (`correcao_discursiva.nota_ia_em`, SQL
     `database/2026-10-08-correcao-discursiva-nota-ia-em.sql`, aplicado). Colunas do painel:
     **"Nota parcial IA"** (soma do que a IA já corrigiu, com "(N/60)") e **"Nota IA (a
     confirmar)"** (só com a entrega feita e os 60 tópicos corrigidos). Nada disso vale sem a

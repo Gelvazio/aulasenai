@@ -1,9 +1,10 @@
 # Correção da Prova Prática ADAG (Salete) — orientação para a IA
 
 > **Para a IA:** este arquivo é a sua instrução. Execute-o **de tempos em tempos**. A correção é
-> **parcial**: corrige as alternativas que os alunos já responderam, **mesmo antes da entrega**, e a
-> cada rodada **recorrige só o que o aluno mudou** desde a última nota da IA. Assim a **nota parcial**
-> vai subindo durante a prova (coluna "Nota parcial IA" do Progresso da turma). Você **sugere** a nota e o comentário de cada
+> **parcial**: corrige as alternativas que os alunos já responderam, **mesmo antes da entrega** (cada
+> alternativa só **uma vez** enquanto a prova não foi entregue). **Recorrigir só depois da entrega
+> final:** o que o aluno mudou depois da nota parcial é corrigido de novo apenas quando ele entrega.
+> Assim a **nota parcial** vai subindo durante a prova (coluna "Nota parcial IA" do Progresso da turma). Você **sugere** a nota e o comentário de cada
 > alternativa; a nota que vale é a que o **professor** confirma na tela **CORREÇÃO**
 > (`correcao-discursiva.html`).
 
@@ -76,9 +77,14 @@ Regras para decidir (as mesmas do padrão de resposta da prova):
 
 ### 4.1 Quem falta corrigir (correção parcial)
 
-Entram **todos os alunos com resposta**, entregues ou não. Uma alternativa está pendente quando o
-aluno escreveu (ou mudou) a resposta **depois** da última nota da IA, ou quando apagou uma resposta
-que já tinha nota da IA. Alternativas com `nota_professor` nunca entram.
+Entram **todos os alunos com resposta**, entregues ou não. Uma alternativa está pendente quando:
+
+- **ainda não tem nota da IA** (`nota_ia_em` vazio) — correção parcial, antes ou depois da entrega;
+- **o aluno já entregou** e a resposta mudou **depois** da nota parcial (`atualizado_em > nota_ia_em`)
+  — **recorreção só após a entrega final**; antes da entrega, mudanças não são recorrigidas;
+- **o aluno já entregou** e apagou uma resposta que tinha nota da IA.
+
+Alternativas com `nota_professor` nunca entram.
 
 ```sql
 with pendentes as (
@@ -89,11 +95,17 @@ with pendentes as (
    and c.tentativa = r.tentativa and c.item = r.item and c.topico = r.topico
   where r.atividade_id = 82
     and c.nota_professor is null
-    and (c.nota_ia_em is null or r.atualizado_em > c.nota_ia_em)
+    and trim(r.texto) <> ''
+    and (c.nota_ia_em is null
+      or (r.atualizado_em > c.nota_ia_em and exists (
+        select 1 from entrega_atividade e
+        where e.aluno_id = r.aluno_id and e.atividade_id = 82 and e.tentativa = r.tentativa)))
   union
   select c.aluno_id, c.tentativa, c.item, c.topico
   from correcao_discursiva c
   where c.atividade_id = 82 and c.nota_professor is null and c.nota_ia > 0
+    and exists (select 1 from entrega_atividade e
+      where e.aluno_id = c.aluno_id and e.atividade_id = 82 and e.tentativa = c.tentativa)
     and not exists (select 1 from resposta_discursiva r
       where r.aluno_id = c.aluno_id and r.atividade_id = 82 and r.tentativa = c.tentativa
         and r.item = c.item and r.topico = c.topico)
@@ -104,7 +116,8 @@ from pendentes group by aluno_id, tentativa order by alternativas_pendentes desc
 
 Nenhuma linha → nada a corrigir nesta rodada: registrar no fim deste arquivo e parar.
 Alternativa **sem resposta** (o aluno ainda não escreveu) não recebe nota parcial — fica sem linha.
-Alternativa que **foi apagada** pelo aluno volta para `0` com o comentário `[IA] Errada: em branco.`
+Alternativa que **foi apagada** pelo aluno (visto só após a entrega) volta para `0` com o comentário
+`[IA] Errada: em branco.`
 
 ### 4.2 Ler as 60 alternativas de um aluno (uma entrega por vez)
 
@@ -124,7 +137,7 @@ order by t.item, t.topico;
 ```
 
 Corrigir só as alternativas que a consulta 4.1 apontou para este aluno (`nota_professor` vazia e
-resposta nova ou mudada). As demais já têm nota da IA atualizada.
+resposta ainda sem nota da IA ou, após a entrega final, mudada depois da nota parcial).
 
 ### 4.3 (Prova em dupla) Ver textos iguais entre alunos
 
