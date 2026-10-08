@@ -127,4 +127,16 @@ nuvem não acessa o YouTube e o usuário pediu para seguir e conferir depois, lo
 
 ---
 
-**Última atualização:** 2026-10-08 (branches das sessões juntadas; tarefa #14 adicionada)
+### #15: Apostila de ITIC versão 2 (até 40 páginas) — pedida em 2026-10-08 08:36:51
+
+Plano: `docs/apostila-itic-v2-40-paginas.md` · Status: `STATUS.md`, Etapa 79.
+Nova edição reduzida da apostila de Introdução à TIC (`APOSTILA-INTRODUCAO-TIC-V2.md` e `.html`,
+versão 2.0), **sem vídeos e sem exercícios** (o usuário fará à parte), sem alterar a V1. Junto:
+rodapé "Página N de T" e PDF sem a faixa azul da esquerda em todas as apostilas.
+
+- [x] Gerar V2 (28 páginas, conferência 100%).
+- [ ] Aceite do usuário.
+
+---
+
+**Última atualização:** 2026-10-08 (tarefa #15 adicionada)

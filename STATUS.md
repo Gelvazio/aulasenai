@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Etapa 79, item 79.8 — aceite do usuário da apostila ITIC V2. Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -22,6 +22,7 @@ A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale 
 | #11 | Conferir a duração dos vídeos da apostila de Reforço de Linguagens | ⬜ Pendente (local) | Fazer na máquina local, com YouTube |
 | #12 | Conferir a duração dos vídeos da apostila de Fundamentos da Tecnologia | ⬜ Pendente (local) | Fazer na máquina local, com YouTube |
 | #14 | Conferir a duração dos vídeos da apostila de Exploração de Carreiras | ⬜ Pendente (local) | Fazer na máquina local, com YouTube |
+| #15 | Apostila de ITIC versão 2 (até 40 páginas, sem vídeos e exercícios) | 👀 Aguardando validação | Aceite do usuário (Etapa 79, item 79.8) |
 
 ## ⏳ Aguardando o usuário (aceites, aprovações e ações dele)
 
@@ -29,6 +30,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 79 | 79.8 | validar a apostila ITIC V2 (28 páginas, sem vídeos e exercícios) e a paginação/faixa do PDF | Aceite |
 | 71 | 71.3 (C) | revisar as 9 aulas de Comunicação Oral e Escrita (Rio do Sul) em `CONTEUDO/` | Aceite |
 | 72 | 72.8 | 7 contradições do CLAUDE.md corrigidas (uma por commit) | Aceite |
 | 70 | 70.5 | CLAUDE.md dividido em núcleo + `docs/regras/`, histórico em `docs/HISTORICO-REGRAS.md` e esta tabela; depois, as correções das contradições do CLAUDE.md, uma de cada vez | Aceite |
@@ -942,3 +944,21 @@ Comparação do global com o `CLAUDE.md` + `docs/regras/`: 7 regras faltavam; o 
 | 78.6 | Graphify: comando completo no início de cada conversa | ✅ Concluído | 2026-10-08 08:20 | `grep` no CLAUDE.md |
 | 78.7 | Fluxo da documentação padrão em "Outras Regras" | ✅ Concluído | 2026-10-08 08:20 | `grep` no CLAUDE.md |
 | 78.8 | Aceite do usuário | 👀 Aguardando validação | — | — |
+
+## Etapa 79 — Apostila da ITIC versão 2 (até 40 páginas) (pedida em 2026-10-08 08:36:51)
+
+Plano: [docs/apostila-itic-v2-40-paginas.md](docs/apostila-itic-v2-40-paginas.md). A V1 (84 páginas) não muda.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 79.0 | Plano criado e aprovação do usuário (aprovado: os 10 capítulos de uma vez; PDF headless para contar páginas) | ✅ Concluído | 2026-10-08 08:45 | Resposta do usuário no chat |
+| 79.1 | Opção `--edicao=V2` no gerador (módulo novo `assets/gerador-apostilas/edicao_apostila.py`) + `edicoes_apostila` no `materia.json` | ✅ Concluído | 2026-10-08 11:40 | `py_compile` OK; `--conferir` da V1 continua 100% |
+| 79.2 | `CONTEUDO-V2/INTRODUCAO.md` condensada | ✅ Concluído | 2026-10-08 08:48 | Conferência 277/277 (100%) |
+| 79.3 | Capítulos 01 a 10 condensados em `CONTEUDO-V2/` (teoria + resumo + glossário; todos os conteúdos oficiais e termos oficiais mantidos) | ✅ Concluído | 2026-10-08 08:52 | Gerador sem ⚠️ |
+| 79.3a | **Mudança de escopo (pedido do usuário, 2026-10-08 08:48):** a V2 sai **sem vídeos e sem exercícios** (ele fará à parte); gerador aceita capítulo só com Teoria/Resumo/Glossário quando a edição tem `sem_videos_e_exercicios` | ✅ Concluído | 2026-10-08 08:48 | Teste: cap. 01 sem vídeos/exercícios gerou o HTML; V1 continua exigindo as duas seções |
+| 79.3b | **Pedido novo (2026-10-08 08:48):** paginação "Página N de T" ao exportar PDF em **todas** as apostilas (`assets/js/apostila.js`) + regra no `CLAUDE.md` global (cópia em `.claude/regras-globais/` sincronizada) | ✅ Concluído | 2026-10-08 08:48 | `node --check` OK; `diff` global × cópia igual |
+| 79.4 | Markdown completo V2 + conferência 100% | ✅ Concluído | 2026-10-08 08:52 | `--conferir`: 277/277 |
+| 79.5 | HTML V2 (versão 2.0) | ✅ Concluído | 2026-10-08 08:52 | Versão 2.0 na capa e no rodapé |
+| 79.6 | Contagem de páginas ≤ 40 | ✅ Concluído | 2026-10-08 08:52 | PDF headless: 28 páginas; rodapé "Página N de 28" |
+| 79.7 | Regra, status e commit (+ pedido do usuário: PDF **sem a faixa azul da esquerda** em todas as apostilas, `assets/css/apostila.css`, regra no global e no projeto) | ✅ Concluído | 2026-10-08 08:52 | Imagem da página 6 do PDF sem a faixa |
+| 79.8 | Aceite do usuário | 👀 Aguardando validação | — | — |

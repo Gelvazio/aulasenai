@@ -601,6 +601,13 @@ do `CLAUDE.md` do projeto (ex.: `C:\fontes\aulasenai\CLAUDE.md`).
   (capa e rodapé do HTML/PDF e cabeçalho do Markdown completo). Autor e versão no `materia.json`
   (`autor_apostila`, `versao_apostila`); data e hora = geração do HTML. Ao mudar o conteúdo,
   aumentar a versão (ajuste 1.0 → 1.1; mudança grande → 2.0). Autor padrão: **Gelvazio Camargo**.
+- ✅ **Paginação no PDF (2026-10-08, todas as apostilas):** ao exportar em PDF, toda folha mostra
+  no rodapé **"Página N de T"** (apostila completa = numeração da apostila; exportação parcial,
+  ex.: só os exercícios, = numeração das folhas exportadas: "Página 1 de 2"). No projeto
+  `aulasenai`: `assets/js/apostila.js` (`numerarPaginas`, `numerarPaginasExportadas`).
+- ✅ **PDF sem a faixa azul da esquerda (2026-10-08, todas as apostilas):** a faixa vertical do
+  tema aparece só na tela; na impressão/PDF ela não sai (`@media print` em
+  `assets/css/apostila.css`), mantendo as mesmas margens para a paginação não mudar.
 
 ---
 

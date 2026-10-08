@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila — Introdução à TIC</title>
+    <link rel="stylesheet" href="../../../../assets/css/apostila.css">
+    <script src="../../../../assets/js/apostila.js" defer></script>
+    <link rel="stylesheet" href="../../../../assets/css/menu.css">
+    <script src="../ATIVIDADES/MENU-ATIVIDADES.js" defer></script>
+    <script src="../../../../js/menu.js" defer></script>
+    <script src="../../../../js/header-usuario.js" defer></script>
+</head>
+<body class="apostila" data-logo="../../../../assets/img/logo-sesi-senai.png" data-rodape="Apostila — Introdução à TIC · Versão 2.0 · SESI SENAI">
+<div id="header-usuario"></div>
+    <!-- Gerado por assets/gerador-apostilas/gerar_apostila.py — não editar à mão -->
+    <div class="apostila__container">
+        <header class="apostila__topo">
+            <div class="apostila__barra">
+                <button class="apostila__botao" id="botao-exportar-pdf" type="button">📥 Exportar PDF (apostila completa)</button>
+                <small class="apostila__dica">Na janela de impressão, escolha "Salvar como PDF".</small>
+            </div>
+        </header>
+
+        <section class="pagina-senai pagina-a4 capa-apostila">
+            <img class="pagina-senai__logo" src="../../../../assets/img/logo-sesi-senai.png" alt="SESI SENAI">
+            <div class="pagina-senai__conteudo">
+                <a class="capa-apostila__voltar" href="../ATIVIDADES/index.html">← Atividades da matéria</a>
+                <h1 class="capa-apostila__titulo">Apostila<br>Introdução à Tecnologia da Informação e Comunicação</h1>
+                <p class="capa-apostila__subtitulo">Assistente de Operações Logísticas</p>
+                <div class="capa-apostila__faixa"></div>
+                <p class="capa-apostila__dados">Docente: Gelvazio Camargo · 10 capítulo(s)</p>
+                <dl class="capa-apostila__identificacao">
+                    <div><dt>Autor</dt><dd>Gelvazio Camargo</dd></div>
+                    <div><dt>Versão</dt><dd>2.0</dd></div>
+                    <div><dt>Data e hora</dt><dd>08/10/2026 às 08:51</dd></div>
+                </dl>
+            </div>
+            <footer class="pagina-senai__rodape"></footer>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="sumario">
+            <h2 id="sumario">Sumário</h2>
+            <a class="sumario__link sumario__link--nivel-1" href="#introducao"><span class="sumario__texto">Introdução</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t1"><span class="sumario__texto">Apresentação</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t2"><span class="sumario__texto">Objetivo geral da unidade curricular</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t3"><span class="sumario__texto">Como a apostila está organizada</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t4"><span class="sumario__texto">Como estudar com esta apostila</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t5"><span class="sumario__texto">Como você será avaliado</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t6"><span class="sumario__texto">Ambientes, recursos e acessibilidade</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#introducao-t7"><span class="sumario__texto">Competência integradora</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="introducao-t7"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capacidades"><span class="sumario__texto">Capacidades da matéria</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capacidades"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#glossario"><span class="sumario__texto">Glossário</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="glossario"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-01"><span class="sumario__texto">Capítulo 01 — Comunicação Profissional e Seus Fundamentos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-01-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t1"><span class="sumario__texto">Os sete elementos da comunicação</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t2"><span class="sumario__texto">Ruídos e como reduzi-los</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t3"><span class="sumario__texto">Níveis de fala</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-01-t4"><span class="sumario__texto">Comunicação em equipes</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-01-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-01-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-02"><span class="sumario__texto">Capítulo 02 — Hardware, Periféricos e Sistemas Operacionais</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-02-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-02-t1"><span class="sumario__texto">Hardware e software</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-02-t2"><span class="sumario__texto">Componentes e processadores</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-02-t3"><span class="sumario__texto">Periféricos e sua utilização</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-02-t4"><span class="sumario__texto">Sistema operacional: tipos, fundamentos e funções</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-02-t5"><span class="sumario__texto">Pastas, pesquisa e compactação de arquivos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-02-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-02-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-03"><span class="sumario__texto">Capítulo 03 — Navegação na Web e Pesquisa Acadêmica</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-03-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-03-t1"><span class="sumario__texto">Internet, web e navegadores</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-03-t2"><span class="sumario__texto">Sites, buscadores e operadores</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-03-t3"><span class="sumario__texto">Fonte confiável</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-03-t4"><span class="sumario__texto">Download e gravação</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-03-t5"><span class="sumario__texto">Políticas de uso, direitos autorais e citação de fontes</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-03-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-03-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-04"><span class="sumario__texto">Capítulo 04 — Comunicação Digital e Colaboração em Nuvem</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-04-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-04-t1"><span class="sumario__texto">Correio eletrônico profissional</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-04-t2"><span class="sumario__texto">Armazenamento e compartilhamento em nuvem</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-04-t3"><span class="sumario__texto">Comunicação em equipes</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-04-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-04-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-05"><span class="sumario__texto">Capítulo 05 — Segurança da Informação e Proteção de Dados</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-05-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t1"><span class="sumario__texto">Pilares da segurança da informação</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t2"><span class="sumario__texto">Leis vigentes</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t3"><span class="sumario__texto">Golpes na internet</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t4"><span class="sumario__texto">Códigos maliciosos (malware)</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t5"><span class="sumario__texto">Contas e senhas</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t6"><span class="sumario__texto">Navegação segura</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-05-t7"><span class="sumario__texto">Backup</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-t7"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-05-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-05-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-06"><span class="sumario__texto">Capítulo 06 — Editor de Textos: Formatação e Estruturação</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-06-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-06-t1"><span class="sumario__texto">Tipos e funções do editor de textos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-06-t2"><span class="sumario__texto">Formatação</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-06-t3"><span class="sumario__texto">Recuos, tabulação, parágrafos, espaçamentos e margens</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-06-t4"><span class="sumario__texto">Configuração de página</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-06-t5"><span class="sumario__texto">Marcadores e numeração, tabelas e gráficos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-06-t6"><span class="sumario__texto">Figuras e objetos, bordas e sombreamento, colunas</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-06-t7"><span class="sumario__texto">Ortografia, dicionário e exibição</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-t7"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-06-t8"><span class="sumario__texto">Controle de alterações</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-t8"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-06-t9"><span class="sumario__texto">Arquivamento e impressão</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-t9"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-06-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-06-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-07"><span class="sumario__texto">Capítulo 07 — Textos Técnicos e Redação Empresarial</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-07-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-07-t1"><span class="sumario__texto">Definição, tipos e exemplos de textos técnicos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-07-t2"><span class="sumario__texto">Normas de redação</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-07-t3"><span class="sumario__texto">Identificação e interpretação</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-07-t4"><span class="sumario__texto">Relatório técnico</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-07-t5"><span class="sumario__texto">Ata</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-07-t6"><span class="sumario__texto">Memorando e resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-07-t7"><span class="sumario__texto">Comunicação e níveis de fala</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-t7"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-07-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-07-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-08"><span class="sumario__texto">Capítulo 08 — Editor de Planilhas: Organização e Fórmulas</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-08-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-08-t1"><span class="sumario__texto">Funções básicas da planilha</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-08-t2"><span class="sumario__texto">Linhas, colunas e endereços</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-08-t3"><span class="sumario__texto">Formatação de células</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-08-t4"><span class="sumario__texto">Fórmulas básicas</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-08-t5"><span class="sumario__texto">Classificação e filtro</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-08-t6"><span class="sumario__texto">Configuração de página e impressão</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-08-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-08-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-09"><span class="sumario__texto">Capítulo 09 — Planilhas: Análise Visual e Gráficos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-09"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-09-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-09-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-09-t1"><span class="sumario__texto">Classificação e filtro para analisar</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-09-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-09-t2"><span class="sumario__texto">Quadros e tabelas</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-09-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-09-t3"><span class="sumario__texto">Gráficos: a pergunta decide</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-09-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-09-t4"><span class="sumario__texto">Interpretar e analisar o problema</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-09-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-09-t5"><span class="sumario__texto">Impressão</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-09-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-09-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-09-resumo"></span></a>
+            <a class="sumario__link sumario__link--nivel-1" href="#capitulo-10"><span class="sumario__texto">Capítulo 10 — Editor de Apresentações e TIC + Avaliação</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-10"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-10-teoria"><span class="sumario__texto">Teoria e exemplos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-10-teoria"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-10-t1"><span class="sumario__texto">Funções e tipos de apresentação</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-10-t1"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-10-t2"><span class="sumario__texto">Página e slide mestre</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-10-t2"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-10-t3"><span class="sumario__texto">Formatação e legibilidade</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-10-t3"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-10-t4"><span class="sumario__texto">Figuras, tabelas e gráficos</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-10-t4"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-10-t5"><span class="sumario__texto">Slides, vídeos e recursos multimídia</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-10-t5"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-10-t6"><span class="sumario__texto">Exibição e arquivamento</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-10-t6"></span></a>
+            <a class="sumario__link sumario__link--nivel-3" href="#capitulo-10-t7"><span class="sumario__texto">Integração da UC e avaliações</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-10-t7"></span></a>
+            <a class="sumario__link sumario__link--nivel-2" href="#capitulo-10-resumo"><span class="sumario__texto">Resumo</span><span class="sumario__pontos"></span><span class="sumario__pagina" data-alvo="capitulo-10-resumo"></span></a>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="introducao">
+            <h2 id="introducao">Introdução</h2>
+            <h3 id="introducao-t1">Apresentação</h3>
+            <p>Na logística, quase toda operação passa por um recurso digital: o e-mail para a transportadora, a
+            planilha de estoque, o relatório de avaria, a ata do turno. Esta apostila (versão reduzida)
+            acompanha a unidade curricular <strong>Introdução à Tecnologia da Informação e Comunicação (ITIC)</strong>. Os
+            exemplos acontecem na <strong>Distribuidora Vale Norte</strong>, uma empresa fictícia com armazém, expedição e
+            escritório.</p>
+            <h3 id="introducao-t2">Objetivo geral da unidade curricular</h3>
+            <p>Desenvolver capacidades básicas e socioemocionais em três dimensões: <strong>comunicação profissional</strong>
+            (oral e escrita, clara e assertiva), <strong>interpretação técnica</strong> (normas, textos e dados) e <strong>uso
+            seguro de TIC</strong> (pesquisar, produzir, armazenar e compartilhar informações com segurança).</p>
+            <h3 id="introducao-t3">Como a apostila está organizada</h3>
+            <p>Cada capítulo corresponde a uma aula: capacidades, teoria com exemplos e resumo. Nesta versão
+            reduzida, os vídeos e os exercícios são entregues pelo professor em material separado. O
+            <strong>glossário</strong> fica no início da apostila.</p>
+            <h3 id="introducao-t4">Como estudar com esta apostila</h3>
+            <p>Leia a teoria perto da aula, revise o resumo e consulte o glossário sempre que encontrar um termo
+            novo, ligando cada conteúdo a uma situação do trabalho.</p>
+            <h3 id="introducao-t5">Como você será avaliado</h3>
+            <p>Nas aulas 1 a 9 a avaliação é <strong>formativa</strong> (atividades, quizzes e registro do professor). Na
+            <strong>aula 10</strong>:</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Instrumento</th>
+            <th>Valor</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Avaliação objetiva — 40 questões, 60 min (C1 a C5)</td>
+            <td>4,0</td>
+            </tr>
+            <tr>
+            <td>Avaliação prática — 4 tarefas, 100 min (C1 a C5)</td>
+            <td>6,0</td>
+            </tr>
+            <tr>
+            <td><strong>Nota final</strong> (mínimo 7,0)</td>
+            <td><strong>10,0</strong></td>
+            </tr>
+            </tbody>
+            </table>
+            <p><strong>Recuperação:</strong> contínua, com roteiro guiado; abaixo de 7,0, refazem-se as tarefas de maior perda
+            e/ou uma nova avaliação objetiva, só nas capacidades não atingidas.</p>
+            <h3 id="introducao-t6">Ambientes, recursos e acessibilidade</h3>
+            <p>Sala de aula, laboratório de informática, auditório e realidade virtual quando houver. Use a suíte
+            disponível (Microsoft 365, Google Workspace ou LibreOffice). Se precisar, peça ao professor zoom,
+            leitor de tela, legendas, atalhos, tempo estendido ou passo a passo numerado.</p>
+            <h3 id="introducao-t7">Competência integradora</h3>
+            <p><strong>Eixo:</strong> Mediação e Intervenção Sociocultural — reconhecer conflitos e sugerir soluções,
+            demonstrando empatia, escuta ativa e diálogo nas relações profissionais.</p>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="capacidades">
+            <h2 id="capacidades">Capacidades da matéria</h2>
+            <h3>Capacidades básicas</h3>
+            <p class="capacidade-item"><strong>C1</strong> — Empregar princípios, padrões e normas técnicas para comunicação oral e escrita clara, assertiva e eficaz no trabalho.</p>
+            <p class="capacidade-item"><strong>C2</strong> — Aplicar recursos e procedimentos de segurança da informação.</p>
+            <p class="capacidade-item"><strong>C3</strong> — Interpretar dados, informações técnicas e terminologias em textos dos processos industriais.</p>
+            <p class="capacidade-item"><strong>C4</strong> — Reconhecer características e aplicações de hardware e software dos sistemas informatizados da indústria.</p>
+            <p class="capacidade-item"><strong>C5</strong> — Utilizar recursos da Web na comunicação, busca, armazenamento e compartilhamento de informação.</p>
+            <h3>Capacidades socioemocionais</h3>
+            <p class="capacidade-item"><strong>S1</strong> — Amabilidade e cooperação nas relações profissionais.</p>
+            <p class="capacidade-item"><strong>S2</strong> — Hierarquias e autonomia — perceber instâncias de decisão e níveis de autonomia.</p>
+            <p class="capacidade-item"><strong>S3</strong> — Abertura à mudança — acolher fatos, ideias e opiniões diferentes.</p>
+            <p class="capacidade-item"><strong>S4</strong> — Análise de problemas — analisar complexidades e oportunidades de melhoria.</p>
+            <h3>Capacidades por capítulo</h3>
+            <table><thead><tr><th>Capítulo</th><th>Capacidades</th></tr></thead><tbody><tr><td>Capítulo 01 — Comunicação Profissional e Seus Fundamentos</td><td>C1, S1</td></tr><tr><td>Capítulo 02 — Hardware, Periféricos e Sistemas Operacionais</td><td>C4</td></tr><tr><td>Capítulo 03 — Navegação na Web e Pesquisa Acadêmica</td><td>C5</td></tr><tr><td>Capítulo 04 — Comunicação Digital e Colaboração em Nuvem</td><td>C1, C5</td></tr><tr><td>Capítulo 05 — Segurança da Informação e Proteção de Dados</td><td>C2</td></tr><tr><td>Capítulo 06 — Editor de Textos: Formatação e Estruturação</td><td>C1</td></tr><tr><td>Capítulo 07 — Textos Técnicos e Redação Empresarial</td><td>C1, C3</td></tr><tr><td>Capítulo 08 — Editor de Planilhas: Organização e Fórmulas</td><td>C3</td></tr><tr><td>Capítulo 09 — Planilhas: Análise Visual e Gráficos</td><td>C3, S4</td></tr><tr><td>Capítulo 10 — Editor de Apresentações e TIC + Avaliação</td><td>C1, C2, C3, C4, C5</td></tr></tbody></table>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="glossario">
+            <h2 id="glossario">Glossário</h2>
+            <p class="glossario__termo"><strong>Assertividade:</strong> comunicar com clareza, firmeza e respeito, sem agressividade nem omissão. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Ata:</strong> registro formal do que foi discutido e decidido. <a class="glossario__capitulo" href="#capitulo-07">(cap. 07)</a></p>
+            <p class="glossario__termo"><strong>Backup:</strong> cópia de segurança em outro local. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
+            <p class="glossario__termo"><strong>CCO:</strong> cópia oculta; os destinatários não veem os endereços uns dos outros. <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>Célula:</strong> interseção de linha e coluna (B4). <a class="glossario__capitulo" href="#capitulo-08">(cap. 08)</a></p>
+            <p class="glossario__termo"><strong>Compactação:</strong> redução do tamanho de arquivos, reunindo-os em um único pacote (ZIP). <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
+            <p class="glossario__termo"><strong>Controle de alterações:</strong> recurso que registra as mudanças feitas por cada revisor. <a class="glossario__capitulo" href="#capitulo-06">(cap. 06)</a></p>
+            <p class="glossario__termo"><strong>Driver:</strong> programa que permite ao sistema operacional controlar um periférico. <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
+            <p class="glossario__termo"><strong>Eixo truncado:</strong> eixo de valores que não começa no zero e pode exagerar diferenças. <a class="glossario__capitulo" href="#capitulo-09">(cap. 09)</a></p>
+            <p class="glossario__termo"><strong>Estilo:</strong> conjunto de formatações salvo com um nome (ex.: Título 1), aplicado de uma vez. <a class="glossario__capitulo" href="#capitulo-06">(cap. 06)</a></p>
+            <p class="glossario__termo"><strong>Feedback:</strong> retorno que confirma a compreensão. <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Filtro:</strong> recurso que mostra só as linhas que atendem a um critério. <a class="glossario__capitulo" href="#capitulo-08">(cap. 08)</a></p>
+            <p class="glossario__termo"><strong>Função:</strong> fórmula pronta com nome, como SOMA, MÉDIA, CONT.VALORES e SE. <a class="glossario__capitulo" href="#capitulo-08">(cap. 08)</a></p>
+            <p class="glossario__termo"><strong>Hardware:</strong> parte física do computador (peças, cabos e circuitos). <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
+            <p class="glossario__termo"><strong>Indicador (KPI):</strong> medida usada para acompanhar o desempenho em relação a uma meta. <a class="glossario__capitulo" href="#capitulo-09">(cap. 09)</a></p>
+            <p class="glossario__termo"><strong>Intervalo:</strong> conjunto de células, como C2:C16. <a class="glossario__capitulo" href="#capitulo-08">(cap. 08)</a></p>
+            <p class="glossario__termo"><strong>Jargão:</strong> termo de grupo profissional (&quot;picking&quot;, &quot;cross-docking&quot;). <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Legenda:</strong> guia que identifica as cores ou séries de um gráfico. <a class="glossario__capitulo" href="#capitulo-09">(cap. 09)</a></p>
+            <p class="glossario__termo"><strong>LGPD:</strong> Lei Geral de Proteção de Dados (Lei 13.709/2018). <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
+            <p class="glossario__termo"><strong>Malware:</strong> programa malicioso (vírus, ransomware, spyware). <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
+            <p class="glossario__termo"><strong>Memorando:</strong> comunicação escrita interna entre setores da mesma empresa. <a class="glossario__capitulo" href="#capitulo-07">(cap. 07)</a></p>
+            <p class="glossario__termo"><strong>Modo apresentador:</strong> exibição em que o orador vê notas, próximo slide e cronômetro. <a class="glossario__capitulo" href="#capitulo-10">(cap. 10)</a></p>
+            <p class="glossario__termo"><strong>Netiqueta:</strong> regras de boa educação na comunicação digital. <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>Norma técnica:</strong> regra publicada por um órgão (ABNT, ISO, IEEE, ANSI) que padroniza produtos, processos ou documentos. <a class="glossario__capitulo" href="#capitulo-07">(cap. 07)</a></p>
+            <p class="glossario__termo"><strong>Nuvem:</strong> arquivos em servidores na internet. <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>Objeto vinculado:</strong> gráfico ou tabela que se atualiza quando o arquivo de origem muda. <a class="glossario__capitulo" href="#capitulo-10">(cap. 10)</a></p>
+            <p class="glossario__termo"><strong>Operador de busca:</strong> símbolo ou palavra que refina a pesquisa no buscador. <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
+            <p class="glossario__termo"><strong>Periférico:</strong> dispositivo de entrada/saída (leitor de código de barras, impressora de etiquetas). <a class="glossario__capitulo" href="#capitulo-02">(cap. 02)</a></p>
+            <p class="glossario__termo"><strong>Permissão:</strong> nível de acesso a um arquivo ou pasta (leitor, comentador ou editor). <a class="glossario__capitulo" href="#capitulo-04">(cap. 04)</a></p>
+            <p class="glossario__termo"><strong>Phishing:</strong> golpe que imita mensagem legítima. <a class="glossario__capitulo" href="#capitulo-05">(cap. 05)</a></p>
+            <p class="glossario__termo"><strong>Plágio:</strong> apresentar como seu o trabalho de outra pessoa, sem dar crédito. <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
+            <p class="glossario__termo"><strong>Quadro-resumo:</strong> tabela que condensa os dados brutos em totais e indicadores. <a class="glossario__capitulo" href="#capitulo-09">(cap. 09)</a></p>
+            <p class="glossario__termo"><strong>Quebra de seção:</strong> divisão que permite formatação diferente em partes do mesmo documento. <a class="glossario__capitulo" href="#capitulo-06">(cap. 06)</a></p>
+            <p class="glossario__termo"><strong>Recuo:</strong> distância entre o parágrafo e a margem. <a class="glossario__capitulo" href="#capitulo-06">(cap. 06)</a></p>
+            <p class="glossario__termo"><strong>Recursos multimídia:</strong> integração de texto, imagem, áudio e vídeo na apresentação. <a class="glossario__capitulo" href="#capitulo-10">(cap. 10)</a></p>
+            <p class="glossario__termo"><strong>Ruído:</strong> interferência que distorce a mensagem (barulho, termo ambíguo, e-mail sem assunto). <a class="glossario__capitulo" href="#capitulo-01">(cap. 01)</a></p>
+            <p class="glossario__termo"><strong>Slide mestre:</strong> modelo que define cores, fontes, logotipo e rodapé de todos os slides. <a class="glossario__capitulo" href="#capitulo-10">(cap. 10)</a></p>
+            <p class="glossario__termo"><strong>Teste CRAAP:</strong> critérios para avaliar fontes: atualidade, relevância, autoridade, precisão e propósito. <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
+            <p class="glossario__termo"><strong>Texto técnico:</strong> documento de trabalho que informa ou instrui sem ambiguidade. <a class="glossario__capitulo" href="#capitulo-07">(cap. 07)</a></p>
+            <p class="glossario__termo"><strong>World Wide Web (WWW):</strong> serviço de páginas ligadas por links que funciona sobre a internet. <a class="glossario__capitulo" href="#capitulo-03">(cap. 03)</a></p>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-01">
+            <div class="capitulo__abertura" id="capitulo-01" data-titulo="sim"><span class="capitulo__rotulo">AULA 01</span><h2>Capítulo 01 — Comunicação Profissional e Seus Fundamentos</h2><p class="capitulo__capacidades">🎯 <strong>C1</strong> — Empregar princípios, padrões e normas técnicas para comunicação oral e escrita clara, assertiva e eficaz no trabalho.<br><strong>S1</strong> — Amabilidade e cooperação nas relações profissionais.</p></div>
+            <h3 id="capitulo-01-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-01-t1">Os sete elementos da comunicação</h4>
+            <p>Na expedição da <strong>Distribuidora Vale Norte</strong>, o supervisor avisa pelo rádio que o pedido 4512 sai
+            na doca 3; com o barulho, o conferente entende "doca 2". Nenhum computador falhou — falhou a
+            <strong>comunicação</strong>.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Elemento</th>
+            <th>Exemplo na Vale Norte</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Emissor</strong> — quem envia</td>
+            <td>Supervisor da expedição</td>
+            </tr>
+            <tr>
+            <td><strong>Receptor</strong> — quem recebe e interpreta</td>
+            <td>Conferente da doca</td>
+            </tr>
+            <tr>
+            <td><strong>Mensagem</strong> — o conteúdo</td>
+            <td>"Pedido 4512 na doca 3 até 7h"</td>
+            </tr>
+            <tr>
+            <td><strong>Canal</strong> — o meio</td>
+            <td>Rádio, e-mail, sistema</td>
+            </tr>
+            <tr>
+            <td><strong>Código</strong> — linguagem comum</td>
+            <td>Português, códigos de pedido</td>
+            </tr>
+            <tr>
+            <td><strong>Ruído</strong> — interferência</td>
+            <td>Barulho das empilhadeiras</td>
+            </tr>
+            <tr>
+            <td><strong>Feedback</strong> — retorno</td>
+            <td>"Entendido: 4512, doca 3, até 7h"</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>🔑 Sem feedback, o emissor <em>acha</em> que foi entendido; com feedback, ele <em>sabe</em>.</p>
+            <h4 id="capitulo-01-t2">Ruídos e como reduzi-los</h4>
+            <p>Ruídos podem ser <strong>físicos</strong> (empilhadeiras), <strong>técnicos</strong> (rádio falhando), <strong>semânticos</strong> (siglas
+            desconhecidas, palavras ambíguas) ou <strong>psicológicos</strong> (pressa, cansaço). Para reduzir: canal
+            adequado, mensagem em tópicos com números e prazos, pedir que o colega repita e registrar por
+            escrito o que é importante.</p>
+            <h4 id="capitulo-01-t3">Níveis de fala</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Nível</th>
+            <th>Quando usar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Culta (formal)</strong></td>
+            <td>Relatórios, e-mails a clientes, atas</td>
+            </tr>
+            <tr>
+            <td><strong>Técnica</strong></td>
+            <td>Entre profissionais da área (romaneio, nota fiscal)</td>
+            </tr>
+            <tr>
+            <td><strong>Jargão</strong></td>
+            <td>Gírias internas — evitar com clientes e visitantes</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Para o cliente, "o romaneio fechou e a NF-e está pendente" vira "seu pedido já foi carregado; a
+            nota fiscal chega por e-mail em até 1 hora".</p>
+            <h4 id="capitulo-01-t4">Comunicação em equipes</h4>
+            <p><strong>Assertividade</strong> é falar com clareza, firmeza e respeito: "a contagem do corredor B deu 12 caixas a
+            menos; podemos recontar juntos?" em vez de "você sempre erra!". <strong>Escuta ativa</strong> é não interromper
+            e confirmar o que entendeu. <strong>Consenso</strong> é todos serem ouvidos e apoiarem a decisão; <strong>conflitos</strong>
+            se resolvem com critérios objetivos (segurança, custo, prazo), nunca com ataques pessoais.</p>
+            <h3 id="capitulo-01-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li>Sete elementos: emissor, receptor, mensagem, canal, código, ruído e feedback.</li><li>Ruídos (físicos, técnicos, semânticos, psicológicos) sempre podem ser reduzidos.</li><li>Linguagem culta com clientes, técnica entre colegas; jargão só dentro da equipe.</li><li>Equipe: assertividade, escuta ativa, consenso e critérios objetivos nos conflitos.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-02">
+            <div class="capitulo__abertura" id="capitulo-02" data-titulo="sim"><span class="capitulo__rotulo">AULA 02</span><h2>Capítulo 02 — Hardware, Periféricos e Sistemas Operacionais</h2><p class="capitulo__capacidades">🎯 <strong>C4</strong> — Reconhecer características e aplicações de hardware e software dos sistemas informatizados da indústria.</p></div>
+            <h3 id="capitulo-02-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-02-t1">Hardware e software</h4>
+            <p>No armazém da <strong>Distribuidora Vale Norte</strong>, notas, etiquetas, inventário e e-mails passam pelo
+            computador. Se o equipamento falha, surge <strong>ruído técnico</strong> e a operação para.</p>
+            <table>
+            <thead>
+            <tr>
+            <th></th>
+            <th>Hardware (o corpo)</th>
+            <th>Software (a mente)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>O que é</td>
+            <td>Partes físicas: peças, cabos, circuitos</td>
+            <td>Programas e instruções</td>
+            </tr>
+            <tr>
+            <td>Exemplos</td>
+            <td>Processador, memória, disco, monitor</td>
+            <td>Sistema operacional, navegador, planilha</td>
+            </tr>
+            </tbody>
+            </table>
+            <h4 id="capitulo-02-t2">Componentes e processadores</h4>
+            <ul>
+            <li><strong>Processador (CPU):</strong> o "cérebro"; faz os cálculos e coordena as instruções.</li>
+            <li><strong>Memória RAM:</strong> guarda o que está <strong>em uso agora</strong>; é rápida, mas <strong>volátil</strong> (perde tudo ao
+              desligar).</li>
+            <li><strong>Placa-mãe:</strong> liga todas as peças.</li>
+            <li><strong>Armazenamento:</strong> guarda os arquivos de forma <strong>permanente</strong> — <strong>HDD</strong> (discos magnéticos, mais
+              barato) ou <strong>SSD</strong> (eletrônico, até 10 vezes mais rápido e resistente a impacto).</li>
+            </ul>
+            <p>⚠️ Quem guarda o arquivo depois de desligar é o HDD ou o SSD, não a RAM: salve antes de desligar.</p>
+            <h4 id="capitulo-02-t3">Periféricos e sua utilização</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Tipo</th>
+            <th>Exemplos no armazém</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Entrada</strong></td>
+            <td>Teclado, mouse, <strong>leitor de código de barras</strong>, scanner</td>
+            </tr>
+            <tr>
+            <td><strong>Saída</strong></td>
+            <td>Monitor, <strong>impressora de etiquetas</strong>, caixa de som</td>
+            </tr>
+            <tr>
+            <td><strong>Entrada e saída</strong></td>
+            <td>Tela touch, pen drive, coletor de dados</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Conexões comuns: <strong>USB</strong> (dados e energia), <strong>HDMI</strong> (vídeo) e <strong>RJ-45</strong> (rede). Use
+            <strong>Remover hardware com segurança</strong> antes de tirar o pen drive, confira a <strong>impressora padrão</strong> antes
+            de imprimir etiquetas e lembre que o <strong>driver</strong> é o programa que permite ao sistema controlar o
+            periférico. Leitor parou? Verifique <strong>cabo e porta → driver → configuração do sistema</strong>.</p>
+            <h4 id="capitulo-02-t4">Sistema operacional: tipos, fundamentos e funções</h4>
+            <p>O <strong>sistema operacional (SO)</strong> faz a mediação entre usuário, programas e hardware: gerencia
+            <strong>processos</strong>, <strong>memória</strong> e <strong>arquivos</strong>.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Tipo</th>
+            <th>Exemplos</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Desktop</strong></td>
+            <td>Windows, Linux, macOS, ChromeOS</td>
+            </tr>
+            <tr>
+            <td><strong>Servidor</strong></td>
+            <td>Linux, Windows Server</td>
+            </tr>
+            <tr>
+            <td><strong>Móvel</strong> (celular, coletor)</td>
+            <td>Android, iOS</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>A <strong>área de trabalho</strong> e a <strong>barra de ferramentas/tarefas</strong> dão acesso rápido aos programas.
+            Atalhos úteis (Windows; outros sistemas têm equivalentes): <strong>Ctrl + C / V</strong> (copiar/colar),
+            <strong>Ctrl + Z</strong> (desfazer), <strong>F2</strong> (renomear), <strong>Windows + E</strong> (arquivos) e <strong>Windows + L</strong> (bloquear
+            a tela ao sair da mesa).</p>
+            <h4 id="capitulo-02-t5">Pastas, pesquisa e compactação de arquivos</h4>
+            <p>Os arquivos ficam numa <strong>árvore de pastas</strong>. Exemplo: <code>C:\ValeNorte\Logistica\Expedicao\2026\</code>.</p>
+            <ul>
+            <li><strong>Nomes:</strong> sem acentos e símbolos, com data invertida e versão:
+              <code>2026-10-03_Inventario_CorredorB_v01.xlsx</code>.</li>
+            <li><strong>Pesquisa de arquivos e diretórios:</strong> na busca do explorador, <code>*.pdf</code> encontra todos os PDFs;
+              filtre por data de modificação e tamanho.</li>
+            <li><strong>Compactação:</strong> selecione os arquivos → <strong>Compactar para ZIP</strong> → nomeie
+              (<code>2026-10_Romaneios.zip</code>) → anexe. No destino, use <strong>Extrair tudo</strong>.</li>
+            </ul>
+            <h3 id="capitulo-02-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li>Hardware é a parte física; software são os programas — um não funciona sem o outro.</li><li>CPU executa, RAM guarda o que está em uso, HDD/SSD guardam de forma permanente.</li><li>Periféricos são de entrada, saída ou ambos e precisam de driver e uso correto.</li><li>O SO gerencia processos, memória e arquivos; pastas organizadas, busca e ZIP agilizam o trabalho.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-03">
+            <div class="capitulo__abertura" id="capitulo-03" data-titulo="sim"><span class="capitulo__rotulo">AULA 03</span><h2>Capítulo 03 — Navegação na Web e Pesquisa Acadêmica</h2><p class="capitulo__capacidades">🎯 <strong>C5</strong> — Utilizar recursos da Web na comunicação, busca, armazenamento e compartilhamento de informação.</p></div>
+            <h3 id="capitulo-03-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-03-t1">Internet, web e navegadores</h4>
+            <p>O supervisor da <strong>Distribuidora Vale Norte</strong> pede: "encontre a norma de armazenagem de inflamáveis e
+            me mande a fonte". Uma busca devolve milhares de páginas — como achar a certa e mostrar de onde
+            veio?</p>
+            <p>A <strong>internet</strong> é a infraestrutura (cabos, roteadores, servidores); a <strong>World Wide Web (WWW)</strong> é o
+            serviço de páginas ligadas por links que funciona sobre ela. O <strong>navegador</strong> recebe o endereço, o
+            <strong>DNS</strong> traduz o nome para o IP do servidor e a página é montada. Prefira sites com <strong>HTTPS</strong>
+            (cadeado). A <strong>janela anônima</strong> não esconde o acesso da rede da empresa nem protege contra vírus.</p>
+            <h4 id="capitulo-03-t2">Sites, buscadores e operadores</h4>
+            <p>Os buscadores (Google, Bing, DuckDuckGo) <strong>rastreiam</strong>, <strong>indexam</strong> e <strong>ranqueiam</strong> as páginas.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Operador</th>
+            <th>O que faz</th>
+            <th>Exemplo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><code>" "</code></td>
+            <td>Frase exata</td>
+            <td><code>"armazenagem de inflamáveis"</code></td>
+            </tr>
+            <tr>
+            <td><code>-</code></td>
+            <td>Exclui um termo</td>
+            <td><code>empilhadeira -venda</code></td>
+            </tr>
+            <tr>
+            <td><code>OR</code></td>
+            <td>Um termo ou outro</td>
+            <td><code>romaneio OR "lista de carga"</code></td>
+            </tr>
+            <tr>
+            <td><code>site:</code></td>
+            <td>Só num domínio</td>
+            <td><code>site:gov.br</code></td>
+            </tr>
+            <tr>
+            <td><code>filetype:</code></td>
+            <td>Tipo de arquivo</td>
+            <td><code>filetype:pdf</code></td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Fontes técnicas: Google Acadêmico, SciELO, normas ABNT e sites <code>.gov.br</code> e <code>.edu.br</code>.</p>
+            <h4 id="capitulo-03-t3">Fonte confiável</h4>
+            <p>Use o <strong>teste CRAAP</strong>: <strong>atualidade</strong> (é recente?), <strong>relevância</strong> (responde à pergunta?),
+            <strong>autoridade</strong> (quem escreveu?), <strong>precisão</strong> (tem fonte, outros confirmam?) e <strong>propósito</strong>
+            (informar ou vender?). Confirme em <strong>pelo menos 3 fontes independentes</strong>.</p>
+            <h4 id="capitulo-03-t4">Download e gravação</h4>
+            <p>Baixe só de sites oficiais, passe o antivírus e desconfie de <code>.exe</code>, <code>.bat</code> ou <strong>extensão dupla</strong>
+            (<code>relatorio.pdf.exe</code>). <strong>Grave</strong> o arquivo na pasta certa (não deixe em Downloads), renomeie no
+            padrão do setor e anote de onde ele veio.</p>
+            <h4 id="capitulo-03-t5">Políticas de uso, direitos autorais e citação de fontes</h4>
+            <ul>
+            <li><strong>Política de Uso Aceitável (PUA):</strong> regras da empresa para internet e computadores (sem
+              pirataria nem downloads sem autorização); o tráfego pode ser monitorado.</li>
+            <li><strong>Direitos autorais (Lei 9.610/98):</strong> estar na internet não libera a cópia. <strong>Plágio</strong> é
+              apresentar como seu o trabalho de outra pessoa. Licenças <strong>Creative Commons</strong> indicam o que o
+              autor permite (BY, NC, ND, SA).</li>
+            <li><strong>Citação (ABNT):</strong> direta, entre aspas, com autor, ano e página — "A informação é o combustível
+              da indústria" (SILVA, 2023, p. 15); indireta, com suas palavras — Para Silva (2023), os dados
+              sustentam a produção. No fim, as <strong>referências</strong> completas.</li>
+            </ul>
+            <p><strong>Roteiro:</strong> definir palavras-chave → buscar com operadores → avaliar (CRAAP, 3 fontes) → escrever
+            citando as fontes.</p>
+            <h3 id="capitulo-03-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li>Internet é a infraestrutura; a web é o serviço de páginas; prefira HTTPS.</li><li>Operadores (<code>" "</code>, <code>-</code>, <code>OR</code>, <code>site:</code>, <code>filetype:</code>) tornam a busca precisa.</li><li>CRAAP e 3 fontes garantem informação confiável; grave downloads na pasta certa.</li><li>Copiar sem citar é plágio (Lei 9.610/98): cite pela ABNT e siga a PUA.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-04">
+            <div class="capitulo__abertura" id="capitulo-04" data-titulo="sim"><span class="capitulo__rotulo">AULA 04</span><h2>Capítulo 04 — Comunicação Digital e Colaboração em Nuvem</h2><p class="capitulo__capacidades">🎯 <strong>C1</strong> — Empregar princípios, padrões e normas técnicas para comunicação oral e escrita clara, assertiva e eficaz no trabalho.<br><strong>C5</strong> — Utilizar recursos da Web na comunicação, busca, armazenamento e compartilhamento de informação.</p></div>
+            <h3 id="capitulo-04-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-04-t1">Correio eletrônico profissional</h4>
+            <p>A transportadora não recebeu o romaneio: o e-mail saiu <strong>sem anexo</strong>, com o assunto "Urgente" e o
+            link da nuvem <strong>sem permissão</strong>. Caminhão parado na doca. O <strong>e-mail corporativo</strong> é um registro
+            formal e precisa de:</p>
+            <ol>
+            <li><strong>Assunto</strong> claro: <code>[Setor] Assunto – Ação/Prazo</code> (ex.: <code>[Expedição] Romaneio carga 2210 –
+               coleta até 14h</code>);</li>
+            <li><strong>Saudação</strong> adequada ("Prezado Sr. Carlos");</li>
+            <li><strong>Corpo</strong> objetivo: o quê, quando e o que se espera do leitor;</li>
+            <li><strong>Anexo</strong> citado no texto e conferido antes de enviar (prefira PDF; arquivo grande vai por link);</li>
+            <li><strong>Encerramento e assinatura:</strong> "Atenciosamente", nome, setor e ramal.</li>
+            </ol>
+            <table>
+            <thead>
+            <tr>
+            <th>Campo</th>
+            <th>Para quem</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Para</strong></td>
+            <td>Quem precisa agir</td>
+            </tr>
+            <tr>
+            <td><strong>CC</strong></td>
+            <td>Quem só acompanha</td>
+            </tr>
+            <tr>
+            <td><strong>CCO</strong></td>
+            <td>Muitos destinatários sem expor os endereços (respeita a LGPD)</td>
+            </tr>
+            </tbody>
+            </table>
+            <p><strong>Netiqueta:</strong> nada de CAPS LOCK, de "responder a todos" sem necessidade ou de encaminhar conversa
+            confidencial.</p>
+            <h4 id="capitulo-04-t2">Armazenamento e compartilhamento em nuvem</h4>
+            <p><strong>Nuvem</strong> são arquivos e serviços guardados em servidores na internet (Google Drive, OneDrive,
+            Dropbox — a empresa define). Organize por ano e processo (<code>2026 &gt; Expedição &gt; Romaneios</code>) e
+            acompanhe a <strong>sincronização</strong> entre nuvem e computador.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Permissão</th>
+            <th>Pode</th>
+            <th>Quando usar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Leitor</strong></td>
+            <td>Ver e baixar</td>
+            <td>Transportadora que só precisa do romaneio</td>
+            </tr>
+            <tr>
+            <td><strong>Comentador</strong></td>
+            <td>Ver e comentar</td>
+            <td>Cliente que revisa um relatório</td>
+            </tr>
+            <tr>
+            <td><strong>Editor</strong></td>
+            <td>Alterar e excluir</td>
+            <td>Colegas que atualizam a planilha</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>⚠️ Evite <strong>link público com edição</strong>: compartilhe com os e-mails certos. A <strong>edição simultânea</strong>, o
+            <strong>histórico de versões</strong> (restaurar o que foi apagado) e as menções <code>@nome</code> facilitam o trabalho
+            conjunto.</p>
+            <h4 id="capitulo-04-t3">Comunicação em equipes</h4>
+            <p>Muitas mensagens são <strong>assíncronas</strong>: escreva-as completas. Na <strong>dinâmica do trabalho em equipe</strong>,
+            cada um sabe seu papel e avisa impedimentos cedo; a <strong>busca de consenso</strong> compara alternativas por
+            prazo, custo e segurança; na <strong>gestão de conflitos</strong>, o foco é o problema, com escuta ativa e
+            combinados por escrito. Ofensas, sabotagem ou vazamento são faltas graves: guarde provas, não
+            revide e procure os canais oficiais.</p>
+            <h3 id="capitulo-04-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li>E-mail profissional: assunto claro, saudação, corpo objetivo, anexo conferido e assinatura.</li><li>Para = quem age; CC = quem acompanha; CCO = muitos destinatários (LGPD).</li><li>Nuvem com pastas organizadas e permissão certa (leitor, comentador, editor).</li><li>Em equipe: mensagens completas, consenso por critérios objetivos e conflitos com respeito.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-05">
+            <div class="capitulo__abertura" id="capitulo-05" data-titulo="sim"><span class="capitulo__rotulo">AULA 05</span><h2>Capítulo 05 — Segurança da Informação e Proteção de Dados</h2><p class="capitulo__capacidades">🎯 <strong>C2</strong> — Aplicar recursos e procedimentos de segurança da informação.</p></div>
+            <h3 id="capitulo-05-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-05-t1">Pilares da segurança da informação</h4>
+            <p>Na <strong>Distribuidora Vale Norte</strong>, dados de clientes, notas fiscais, rotas e estoque valem tanto
+            quanto as mercadorias. Senha em post-it, clique em qualquer link e pen drive desconhecido são
+            "portões abertos".</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Pilar</th>
+            <th>O que garante</th>
+            <th>Falha na logística</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Confidencialidade</strong></td>
+            <td>Só quem tem autorização acessa</td>
+            <td>Lista de clientes vazada</td>
+            </tr>
+            <tr>
+            <td><strong>Integridade</strong></td>
+            <td>A informação não é alterada indevidamente</td>
+            <td>Quantidade da nota modificada</td>
+            </tr>
+            <tr>
+            <td><strong>Disponibilidade</strong></td>
+            <td>Está acessível quando precisa</td>
+            <td>Sistema fora do ar no inventário</td>
+            </tr>
+            </tbody>
+            </table>
+            <h4 id="capitulo-05-t2">Leis vigentes</h4>
+            <ul>
+            <li><strong>LGPD (Lei 13.709/2018):</strong> regula o uso de <strong>dados pessoais</strong> (nome, CPF, placa e CNH do
+              motorista) e <strong>sensíveis</strong> (saúde, biometria, religião); exige finalidade clara e segurança.</li>
+            <li><strong>Lei Carolina Dieckmann (Lei 12.737/2012):</strong> é crime <strong>invadir dispositivo informático</strong>. Usar
+              a senha de um colega ou abrir pastas restritas sem permissão pode configurar crime.</li>
+            </ul>
+            <h4 id="capitulo-05-t3">Golpes na internet</h4>
+            <p><strong>Phishing</strong> imita uma mensagem legítima (banco, fornecedor, TI) para roubar senhas ou instalar
+            programas; faz parte da <strong>engenharia social</strong>. Sinais: remetente parecido com o verdadeiro
+            (<code>vaIenorte</code> com "I"), <strong>urgência e ameaça</strong>, pedido de senha ou código, link que mostra outro
+            endereço e anexo inesperado. <strong>Conduta:</strong> não clicar, não encaminhar, avisar a TI e confirmar por
+            canal oficial.</p>
+            <h4 id="capitulo-05-t4">Códigos maliciosos (malware)</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Tipo</th>
+            <th>Como age</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Vírus</strong></td>
+            <td>Precisa que o usuário abra um arquivo</td>
+            </tr>
+            <tr>
+            <td><strong>Worm</strong></td>
+            <td>Espalha-se sozinho pela rede</td>
+            </tr>
+            <tr>
+            <td><strong>Cavalo de Troia</strong></td>
+            <td>Finge ser útil e abre a porta ao invasor</td>
+            </tr>
+            <tr>
+            <td><strong>Ransomware</strong></td>
+            <td>Criptografa os arquivos e pede resgate</td>
+            </tr>
+            <tr>
+            <td><strong>Spyware</strong></td>
+            <td>Espiona o que é digitado e acessado</td>
+            </tr>
+            </tbody>
+            </table>
+            <h4 id="capitulo-05-t5">Contas e senhas</h4>
+            <p>Senha forte tem <strong>12 a 16 caracteres</strong> com maiúsculas, minúsculas, números e símbolos (ex.:
+            <code>Doca3-Carga!Sai-14h</code>). Não reutilize nem compartilhe, use <strong>gerenciador de senhas</strong>, ative a
+            <strong>autenticação em dois fatores (2FA)</strong> e <strong>bloqueie a tela</strong> ao sair da mesa.</p>
+            <h4 id="capitulo-05-t6">Navegação segura</h4>
+            <p>Prefira <strong>HTTPS</strong>, digite o endereço de sistemas importantes, use a <strong>VPN</strong> em Wi-Fi público e
+            mantenha sistema e antivírus <strong>atualizados</strong>.</p>
+            <h4 id="capitulo-05-t7">Backup</h4>
+            <p><strong>Backup</strong> é a cópia de segurança em outro local. <strong>Regra 3-2-1:</strong> 3 cópias, em 2 mídias
+            diferentes, 1 fora da empresa (nuvem corporativa). Teste a restauração: backup que não abre não é
+            backup.</p>
+            <h3 id="capitulo-05-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li>Pilares: confidencialidade, integridade e disponibilidade.</li><li>LGPD protege dados pessoais; a Lei 12.737/2012 pune a invasão de dispositivos.</li><li>Phishing usa urgência para enganar; malware entra por anexos, downloads e pen drives.</li><li>Senha forte + 2FA, navegação com HTTPS/VPN e backup 3-2-1.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-06">
+            <div class="capitulo__abertura" id="capitulo-06" data-titulo="sim"><span class="capitulo__rotulo">AULA 06</span><h2>Capítulo 06 — Editor de Textos: Formatação e Estruturação</h2><p class="capitulo__capacidades">🎯 <strong>C1</strong> — Empregar princípios, padrões e normas técnicas para comunicação oral e escrita clara, assertiva e eficaz no trabalho.</p></div>
+            <h3 id="capitulo-06-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-06-t1">Tipos e funções do editor de textos</h4>
+            <p>O procedimento de recebimento da <strong>Distribuidora Vale Norte</strong> é um bloco de texto corrido, sem
+            títulos nem numeração: cada conferente faz de um jeito. O conteúdo está certo; falta <strong>formatação e
+            estrutura</strong>. O editor de textos (Microsoft 365, Google Workspace ou LibreOffice) cria, formata,
+            revisa, salva e imprime documentos; os recursos são os mesmos, só os menus mudam.</p>
+            <h4 id="capitulo-06-t2">Formatação</h4>
+            <p>Fonte sem serifa (Arial, Calibri) em 11 ou 12 para tela; <strong>negrito</strong> para termos-chave e
+            <em>itálico</em> para palavras estrangeiras ("picking"). Evite sublinhar e excesso de cores.</p>
+            <h4 id="capitulo-06-t3">Recuos, tabulação, parágrafos, espaçamentos e margens</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Recurso</th>
+            <th>Dica profissional</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>Alinhamento</strong></td>
+            <td>Justificado em relatórios; centralizado só em títulos</td>
+            </tr>
+            <tr>
+            <td><strong>Recuo</strong></td>
+            <td>Use a régua, nunca espaços</td>
+            </tr>
+            <tr>
+            <td><strong>Tabulação</strong></td>
+            <td>Tecla Tab para alinhar colunas simples</td>
+            </tr>
+            <tr>
+            <td><strong>Espaçamento</strong></td>
+            <td>1,5 entre linhas e "6 pt depois" em vez de vários Enter</td>
+            </tr>
+            <tr>
+            <td><strong>Margens</strong></td>
+            <td>ABNT: 3 cm em cima e à esquerda; 2 cm embaixo e à direita</td>
+            </tr>
+            </tbody>
+            </table>
+            <h4 id="capitulo-06-t4">Configuração de página</h4>
+            <p>A4, retrato para texto e paisagem para tabelas largas; <strong>quebra de página</strong> (sem vários Enter);
+            <strong>quebra de seção</strong> para mudar orientação ou numeração num trecho; <strong>cabeçalho e rodapé</strong> com
+            empresa, documento e número da página.</p>
+            <h4 id="capitulo-06-t5">Marcadores e numeração, tabelas e gráficos</h4>
+            <p><strong>Numeração</strong> para passos com ordem, <strong>marcadores</strong> para itens sem ordem e lista multinível para
+            subpassos. Nas <strong>tabelas</strong>, a primeira linha é cabeçalho (repetido em cada página), texto à
+            esquerda e números à direita. <strong>Gráficos</strong> podem ser feitos no editor ou trazidos da planilha.</p>
+            <h4 id="capitulo-06-t6">Figuras e objetos, bordas e sombreamento, colunas</h4>
+            <p><strong>Figuras</strong> "alinhadas com o texto" e com número, título e fonte ("Figura 1 – Etiqueta do
+            palete"). <strong>Bordas e sombreamento</strong> destacam avisos como "ATENÇÃO: usar luvas". <strong>Colunas</strong> servem
+            a comunicados e boletins; procedimentos usam coluna única. Com <strong>estilos</strong> (Título 1, Título 2) o
+            <strong>sumário automático</strong> é gerado e atualizado com um clique.</p>
+            <h4 id="capitulo-06-t7">Ortografia, dicionário e exibição</h4>
+            <p>Idioma em português do Brasil; acrescente ao <strong>dicionário</strong> termos da área ("WMS", "romaneio");
+            confira a autocorreção em siglas. Modos de <strong>exibição</strong>: layout de impressão, modo de leitura e
+            painel de navegação; o zoom não muda o tamanho real da fonte.</p>
+            <h4 id="capitulo-06-t8">Controle de alterações</h4>
+            <p>Com o <strong>controle de alterações</strong> ligado, cada mudança fica marcada para ser aceita ou rejeitada;
+            <strong>comentários</strong> sugerem ajustes sem mexer no texto. Antes de enviar ao cliente, aceite/rejeite
+            tudo e apague os comentários internos.</p>
+            <h4 id="capitulo-06-t9">Arquivamento e impressão</h4>
+            <p><code>.docx</code>/<code>.odt</code> para editar, <strong><code>.pdf</code></strong> para a versão final e modelo (<code>.dotx</code>/<code>.ott</code>) para
+            documentos repetidos. Nome padronizado: <code>2026-10-13_Procedimento_Recebimento_v02.docx</code>. Antes de
+            imprimir, <strong>visualize a impressão</strong>, confira a escala e decida frente e verso.</p>
+            <h3 id="capitulo-06-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li>Parágrafos usam alinhamento, recuo, tabulação, espaçamento e margens — nunca Enter ou espaços.</li><li>Página com quebras, cabeçalho e rodapé; numeração, marcadores, tabelas, figuras e colunas.</li><li>Estilos geram o sumário automático; ortografia e controle de alterações revisam o texto.</li><li>Versão final em PDF, nome padronizado e visualização antes de imprimir.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-07">
+            <div class="capitulo__abertura" id="capitulo-07" data-titulo="sim"><span class="capitulo__rotulo">AULA 07</span><h2>Capítulo 07 — Textos Técnicos e Redação Empresarial</h2><p class="capitulo__capacidades">🎯 <strong>C1</strong> — Empregar princípios, padrões e normas técnicas para comunicação oral e escrita clara, assertiva e eficaz no trabalho.<br><strong>C3</strong> — Interpretar dados, informações técnicas e terminologias em textos dos processos industriais.</p></div>
+            <h3 id="capitulo-07-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-07-t1">Definição, tipos e exemplos de textos técnicos</h4>
+            <p>Na descarga, a <strong>Distribuidora Vale Norte</strong> recebeu 4 de 40 caixas amassadas e vazando. O
+            supervisor pediu um <strong>relatório de avaria</strong> e uma reunião com <strong>ata</strong>. Texto confuso pode custar a
+            indenização.</p>
+            <p><strong>Texto técnico</strong> transmite informação de trabalho <strong>sem ambiguidade</strong> e vale como registro:
+            relatórios, atas, memorandos, ofícios, POP, ordens de serviço e fichas técnicas. Pilares:
+            <strong>clareza, concisão, objetividade e impessoalidade</strong>.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Pessoal e vago ❌</th>
+            <th>Técnico e impessoal ✅</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>"A gente achou que o motorista bateu o palete."</td>
+            <td>"Constatou-se avaria em 4 das 40 caixas do lote 3381, às 9h15, na doca 2."</td>
+            </tr>
+            </tbody>
+            </table>
+            <h4 id="capitulo-07-t2">Normas de redação</h4>
+            <p>Ao citar uma norma, <strong>declare qual é</strong>: <strong>ABNT NBR 10719</strong> (relatório técnico, adotada aqui),
+            ABNT NBR 6028 (resumo), <strong>ISO</strong> 9001 (qualidade e registros), <strong>IEEE</strong> 802.3 (redes) e <strong>ANSI</strong>
+            Z535 (sinalização de segurança em equipamentos importados).</p>
+            <h4 id="capitulo-07-t3">Identificação e interpretação</h4>
+            <ol>
+            <li>Identifique o <strong>tipo e a finalidade</strong>.</li>
+            <li>Localize o quê, quem, quando, onde, quanto e o prazo.</li>
+            <li>Separe <strong>fato</strong> de <strong>recomendação</strong>.</li>
+            <li>Confira unidades, códigos e siglas (kg × t, lote, código do produto).</li>
+            <li>Confirme o entendimento antes de executar.</li>
+            </ol>
+            <h4 id="capitulo-07-t4">Relatório técnico</h4>
+            <p><strong>Introdução</strong> (contexto e objetivo) → <strong>desenvolvimento</strong> (fatos, dados, evidências, análise) →
+            <strong>conclusão</strong> (causa provável e recomendações) → <strong>anexos</strong> (fotos, NF, canhoto). Exemplo: "Às 9h15,
+            na doca 2, constatou-se que 4 das 40 caixas do lote 3381 estavam amassadas. Recomenda-se registrar
+            a ressalva no canhoto e solicitar reposição ao fornecedor." Evite opiniões e não esqueça números
+            nem evidências.</p>
+            <h4 id="capitulo-07-t5">Ata</h4>
+            <p><strong>Ata</strong> é o registro formal do que foi discutido e decidido: cabeçalho (data, hora, local,
+            participantes) → pauta → decisões com <strong>responsável e prazo</strong> → encerramento e assinaturas;
+            <strong>verbos no passado</strong>, texto corrido e números importantes por extenso. Ex.: "Aos quatorze dias do
+            mês de outubro de dois mil e vinte e seis, reuniram-se... decidiu-se devolver as quatro caixas,
+            responsável Bruno, até 16/10."</p>
+            <h4 id="capitulo-07-t6">Memorando e resumo</h4>
+            <ul>
+            <li><strong>Memorando:</strong> comunicação <strong>interna</strong> entre setores (número, para, assunto, solicitação, prazo).</li>
+            <li><strong>Ofício:</strong> comunicação <strong>externa</strong> e formal.</li>
+            <li><strong>Resumo:</strong> condensa as ideias principais sem opinião (indicativo ou informativo).</li>
+            </ul>
+            <h4 id="capitulo-07-t7">Comunicação e níveis de fala</h4>
+            <p>Linguagem <strong>culta</strong> nos documentos, <strong>técnica</strong> com precisão entre profissionais e <strong>jargão</strong> só na
+            conversa informal: "deu ruim na doca 2" vira "na doca 2, constatou-se avaria em parte da carga".</p>
+            <h3 id="capitulo-07-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li>Texto técnico é registro: claro, conciso, objetivo e impessoal.</li><li>Normas (ABNT, ISO, IEEE, ANSI) dão padrão — declare a norma usada.</li><li>Relatório: introdução, desenvolvimento, conclusão; ata: decisões no passado, com responsável e prazo.</li><li>Memorando é interno, ofício é externo, resumo condensa sem opinião.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-08">
+            <div class="capitulo__abertura" id="capitulo-08" data-titulo="sim"><span class="capitulo__rotulo">AULA 08</span><h2>Capítulo 08 — Editor de Planilhas: Organização e Fórmulas</h2><p class="capitulo__capacidades">🎯 <strong>C3</strong> — Interpretar dados, informações técnicas e terminologias em textos dos processos industriais.</p></div>
+            <h3 id="capitulo-08-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-08-t1">Funções básicas da planilha</h4>
+            <p>No almoxarifado da <strong>Distribuidora Vale Norte</strong>, a contagem é feita num caderno e a comparação com
+            o estoque mínimo é feita de cabeça. Uma <strong>planilha</strong> faz as contas sozinha e <strong>avisa</strong> quando um
+            item chega ao mínimo. Os recursos são os mesmos no Excel, nas Planilhas Google e no LibreOffice
+            Calc.</p>
+            <h4 id="capitulo-08-t2">Linhas, colunas e endereços</h4>
+            <ul>
+            <li><strong>Pasta de trabalho</strong> é o arquivo, com várias <strong>abas</strong> ("Estoque", "Pedidos").</li>
+            <li><strong>Colunas</strong> têm letras (A, B, C) e <strong>linhas</strong> têm números (1, 2, 3).</li>
+            <li><strong>Célula</strong> é a interseção de linha e coluna (B4); o <strong>endereço</strong> é a letra da coluna + o número
+              da linha. <strong>Intervalo</strong> é um conjunto de células: <code>C2:C16</code>.</li>
+            </ul>
+            <h4 id="capitulo-08-t3">Formatação de células</h4>
+            <p>Use o tipo certo de dado: número sem texto junto ("15 un" não entra em cálculo), data formatada
+            como data e moeda formatada (não digite "R$"). Textos à esquerda e números à direita, cabeçalho em
+            negrito com borda e preenchimento. <code>#####</code> indica coluna estreita. A <strong>formatação condicional</strong>
+            pinta de vermelho o estoque abaixo do mínimo.</p>
+            <h4 id="capitulo-08-t4">Fórmulas básicas</h4>
+            <p>Toda fórmula começa com <strong>=</strong> e usa endereços: <code>=C2-D2</code> recalcula sozinha. Ao copiar, a
+            referência <strong>relativa</strong> (<code>C2</code>) muda e a <strong>absoluta</strong> (<code>$H$1</code>) fica fixa.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Função</th>
+            <th>Exemplo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><strong>SOMA</strong></td>
+            <td><code>=SOMA(C2:C16)</code> → total em estoque</td>
+            </tr>
+            <tr>
+            <td><strong>MÉDIA</strong></td>
+            <td><code>=MÉDIA(C2:C16)</code> → estoque médio por item</td>
+            </tr>
+            <tr>
+            <td><strong>CONT.VALORES</strong></td>
+            <td><code>=CONT.VALORES(B2:B16)</code> → itens cadastrados</td>
+            </tr>
+            <tr>
+            <td><strong>SE</strong></td>
+            <td><code>=SE(C2&lt;=D2;"REPOR";"OK")</code> → alerta de mínimo</td>
+            </tr>
+            </tbody>
+            </table>
+            <p><strong>SE</strong> segue <code>=SE(teste; se_verdadeiro; se_falso)</code>.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Código</th>
+            <th>Produto</th>
+            <th>Atual (C)</th>
+            <th>Mínimo (D)</th>
+            <th>Situação (E)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>A01</td>
+            <td>Luva nitrílica M</td>
+            <td>120</td>
+            <td>100</td>
+            <td>OK</td>
+            </tr>
+            <tr>
+            <td>A02</td>
+            <td>Fita adesiva 48 mm</td>
+            <td>35</td>
+            <td>50</td>
+            <td>REPOR</td>
+            </tr>
+            <tr>
+            <td>A03</td>
+            <td>Filme stretch</td>
+            <td>18</td>
+            <td>20</td>
+            <td>REPOR</td>
+            </tr>
+            <tr>
+            <td>A04</td>
+            <td>Etiqueta térmica</td>
+            <td>64</td>
+            <td>40</td>
+            <td>OK</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>A fórmula da E2 é copiada para as linhas de baixo; abaixo da tabela ficam o total, a média e a
+            quantidade de itens.</p>
+            <h4 id="capitulo-08-t5">Classificação e filtro</h4>
+            <p><strong>Classificar</strong> ordena (ex.: do menor para o maior estoque) — selecione a tabela inteira para não
+            separar produto e quantidade. <strong>Filtrar</strong> mostra só as linhas que interessam (ex.: REPOR), sem
+            apagar as outras. <strong>Congelar painéis</strong> mantém o cabeçalho visível.</p>
+            <h4 id="capitulo-08-t6">Configuração de página e impressão</h4>
+            <p>Paisagem para tabelas largas, <strong>área de impressão</strong>, <strong>ajustar a uma página de largura</strong>, títulos
+            repetidos e cabeçalho/rodapé com nome, data e página. Confira a <strong>visualização de impressão</strong>.</p>
+            <h3 id="capitulo-08-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li>Linhas (números), colunas (letras) e células com endereço (B4); intervalos como <code>C2:C16</code>.</li><li>Tipo de dado e formatação certos; formatação condicional destaca alertas.</li><li>Fórmulas começam com =; SOMA, MÉDIA, CONT.VALORES e SE controlam o estoque.</li><li>Classificar ordena, filtrar mostra o que interessa; configure a página antes de imprimir.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-09">
+            <div class="capitulo__abertura" id="capitulo-09" data-titulo="sim"><span class="capitulo__rotulo">AULA 09</span><h2>Capítulo 09 — Planilhas: Análise Visual e Gráficos</h2><p class="capitulo__capacidades">🎯 <strong>C3</strong> — Interpretar dados, informações técnicas e terminologias em textos dos processos industriais.<br><strong>S4</strong> — Análise de problemas — analisar complexidades e oportunidades de melhoria.</p></div>
+            <h3 id="capitulo-09-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-09-t1">Classificação e filtro para analisar</h4>
+            <p>A gerência da <strong>Distribuidora Vale Norte</strong> quer saber qual rota mais atrasou em outubro. São 300
+            linhas, uma por entrega, com a coluna <strong>Situação</strong> <code>=SE(entrega&lt;=prazo;"No prazo";"Atrasada")</code>.
+            <strong>Filtrar</strong> Rota = "Leste" e Situação = "Atrasada" mostra só as entregas problemáticas;
+            <strong>classificar</strong> o resumo por "% no prazo" põe a pior rota no topo. Uma <strong>lista suspensa</strong>
+            (validação de dados) evita "Leste", "leste" e "LESTE" como rotas diferentes.</p>
+            <h4 id="capitulo-09-t2">Quadros e tabelas</h4>
+            <p>O <strong>quadro-resumo</strong> condensa as 300 linhas no que importa para decidir:</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Rota</th>
+            <th>Entregas</th>
+            <th>No prazo</th>
+            <th>Atrasadas</th>
+            <th>% no prazo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Norte</td>
+            <td>80</td>
+            <td>76</td>
+            <td>4</td>
+            <td>95%</td>
+            </tr>
+            <tr>
+            <td>Sul</td>
+            <td>70</td>
+            <td>63</td>
+            <td>7</td>
+            <td>90%</td>
+            </tr>
+            <tr>
+            <td>Leste</td>
+            <td>90</td>
+            <td>72</td>
+            <td>18</td>
+            <td>80%</td>
+            </tr>
+            <tr>
+            <td>Oeste</td>
+            <td>60</td>
+            <td>57</td>
+            <td>3</td>
+            <td>95%</td>
+            </tr>
+            <tr>
+            <td><strong>Total</strong></td>
+            <td><strong>300</strong></td>
+            <td><strong>268</strong></td>
+            <td><strong>32</strong></td>
+            <td><strong>89%</strong></td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Cabeçalho em negrito, números à direita e linha de total.</p>
+            <h4 id="capitulo-09-t3">Gráficos: a pergunta decide</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Pergunta</th>
+            <th>Gráfico</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Comparar categorias</td>
+            <td><strong>Colunas</strong> (atrasos por rota)</td>
+            </tr>
+            <tr>
+            <td>Muitas categorias ou nomes longos</td>
+            <td><strong>Barras</strong> (atrasos por cliente)</td>
+            </tr>
+            <tr>
+            <td>Evolução no tempo</td>
+            <td><strong>Linhas</strong> (% no prazo por mês)</td>
+            </tr>
+            <tr>
+            <td>Partes de um todo (até 5 fatias)</td>
+            <td><strong>Setores</strong> (motivos dos atrasos)</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Selecione o quadro com os cabeçalhos → <strong>Inserir → Gráfico</strong> → complete com <strong>título com período</strong>
+            ("Entregas atrasadas por rota — outubro/2026"), <strong>eixos</strong> com unidade, <strong>rótulos de dados</strong> e
+            <strong>legenda</strong> só com duas ou mais séries. Cuidado com gráficos que enganam: <strong>eixo truncado</strong> (comece
+            no zero), efeito 3D, pizza com muitas fatias e cores sem contraste.</p>
+            <h4 id="capitulo-09-t4">Interpretar e analisar o problema</h4>
+            <p>O <strong>indicador</strong> de entregas no prazo = no prazo ÷ total. Com meta de 95%, Norte e Oeste atingem;
+            <strong>Leste, com 80%, concentra 18 dos 32 atrasos</strong>. Veja também a tendência mês a mês. O gráfico mostra
+            <strong>onde</strong> está o problema; a análise (S4) busca o <strong>porquê</strong>: levante hipóteses (trânsito no pico,
+            excesso de entregas por viagem, endereços incompletos), confira nos dados filtrados e proponha
+            melhorias mensuráveis.</p>
+            <h4 id="capitulo-09-t5">Impressão</h4>
+            <p>Defina a <strong>área de impressão</strong> com quadro e gráfico, use paisagem e <strong>ajustar a uma página</strong>,
+            confira a legibilidade em preto e branco e a <strong>visualização de impressão</strong>. Para o relatório, cole
+            o gráfico como imagem (fixo) ou como objeto vinculado (atualiza com a planilha).</p>
+            <h3 id="capitulo-09-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li>Filtrar e classificar destacam o problema; validação padroniza os dados.</li><li>O quadro-resumo condensa os dados; a pergunta define o gráfico.</li><li>Gráfico com título, eixos, rótulos e legenda só quando há mais de uma série.</li><li>Interpretar = comparar com a meta e analisar causas e melhorias; conferir a impressão.</li></ul>
+        </section>
+
+        <section class="pagina-senai fonte-paginas" data-parte="conteudo" data-capitulo="capitulo-10">
+            <div class="capitulo__abertura" id="capitulo-10" data-titulo="sim"><span class="capitulo__rotulo">AULA 10</span><h2>Capítulo 10 — Editor de Apresentações e TIC + Avaliação</h2><p class="capitulo__capacidades">🎯 <strong>C1</strong> — Empregar princípios, padrões e normas técnicas para comunicação oral e escrita clara, assertiva e eficaz no trabalho.<br><strong>C2</strong> — Aplicar recursos e procedimentos de segurança da informação.<br><strong>C3</strong> — Interpretar dados, informações técnicas e terminologias em textos dos processos industriais.<br><strong>C4</strong> — Reconhecer características e aplicações de hardware e software dos sistemas informatizados da indústria.<br><strong>C5</strong> — Utilizar recursos da Web na comunicação, busca, armazenamento e compartilhamento de informação.</p></div>
+            <h3 id="capitulo-10-teoria">📖 Teoria e exemplos</h3>
+            <h4 id="capitulo-10-t1">Funções e tipos de apresentação</h4>
+            <p>No fim do turno, a supervisora da <strong>Distribuidora Vale Norte</strong> tem <strong>5 minutos</strong> para mostrar os
+            resultados à equipe seguinte. Apresentar não é ler texto na tela: os slides guiam o olhar; quem
+            comunica é você. Tipos: de <strong>resultados</strong>, de <strong>treinamento</strong>, de <strong>passagem de turno</strong> e
+            <strong>autoexecutável</strong> (avisos na TV do refeitório), em Microsoft 365, Google Workspace ou LibreOffice.</p>
+            <h4 id="capitulo-10-t2">Página e slide mestre</h4>
+            <p>Formato <strong>16:9</strong> para telas atuais (4:3 para projetores antigos), definido antes do conteúdo. O
+            <strong>slide mestre</strong> guarda cores, fontes, logotipo e rodapé de todos os slides; os <strong>layouts</strong>
+            organizam cada slide.</p>
+            <h4 id="capitulo-10-t3">Formatação e legibilidade</h4>
+            <p>Contraste forte, hierarquia (título grande), no máximo duas fontes, corpo a partir de 24 pt, pouco
+            texto e <strong>uma ideia por slide</strong>. Letras miúdas e animações exageradas são <strong>ruído</strong>.</p>
+            <p><strong>Sequência lógica:</strong> situação → complicação → resolução → conclusão.</p>
+            <table>
+            <thead>
+            <tr>
+            <th>Slide</th>
+            <th>Conteúdo</th>
+            <th>Tempo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>1</td>
+            <td>"Passagem de turno — Expedição — 14/10"</td>
+            <td>20 s</td>
+            </tr>
+            <tr>
+            <td>2</td>
+            <td>89% no prazo (meta 95%) em número grande</td>
+            <td>1 min</td>
+            </tr>
+            <tr>
+            <td>3</td>
+            <td>Gráfico de atrasos por rota (destaque na Leste)</td>
+            <td>1 min 30 s</td>
+            </tr>
+            <tr>
+            <td>4</td>
+            <td>Pendências: 3 cargas, 1 avaria</td>
+            <td>1 min</td>
+            </tr>
+            <tr>
+            <td>5</td>
+            <td>Ações do próximo turno e segurança</td>
+            <td>1 min</td>
+            </tr>
+            </tbody>
+            </table>
+            <h4 id="capitulo-10-t4">Figuras, tabelas e gráficos</h4>
+            <p>Gráficos do capítulo 9 com título e rótulos, tabelas curtas, imagens com fonte citada. <strong>Objeto
+            vinculado</strong> atualiza com a planilha. Respeite a <strong>LGPD</strong>: não projete dados pessoais.</p>
+            <h4 id="capitulo-10-t5">Slides, vídeos e recursos multimídia</h4>
+            <p>Vídeos e áudios curtos, iniciando ao clique e testados antes; <strong>transições</strong> suaves; <strong>animações</strong>
+            só para revelar um tópico por vez; <strong>hiperlinks</strong> para slides de apoio ou documentos.</p>
+            <h4 id="capitulo-10-t6">Exibição e arquivamento</h4>
+            <p>No <strong>modo apresentador</strong> você vê notas do orador, próximo slide e cronômetro. Ensaie, leve o
+            arquivo também na nuvem e olhe para o público. Formatos: <code>.pptx</code>/<code>.odp</code> (editável), <code>.ppsx</code> (abre
+            em apresentação) e <code>.pdf</code> (para distribuir; perde vídeos e animações).</p>
+            <h4 id="capitulo-10-t7">Integração da UC e avaliações</h4>
+            <table>
+            <thead>
+            <tr>
+            <th>Capítulos</th>
+            <th>Domínio</th>
+            <th>Capacidade</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>1, 4, 6, 7, 10</td>
+            <td>Comunicar com clareza</td>
+            <td>C1</td>
+            </tr>
+            <tr>
+            <td>5</td>
+            <td>Proteger informações</td>
+            <td>C2</td>
+            </tr>
+            <tr>
+            <td>7, 8, 9</td>
+            <td>Interpretar textos técnicos, fórmulas e gráficos</td>
+            <td>C3</td>
+            </tr>
+            <tr>
+            <td>2, 6, 8, 10</td>
+            <td>Usar hardware, SO e programas</td>
+            <td>C4</td>
+            </tr>
+            <tr>
+            <td>3, 4</td>
+            <td>Pesquisar, citar, e-mail e nuvem</td>
+            <td>C5</td>
+            </tr>
+            </tbody>
+            </table>
+            <p><strong>Avaliação objetiva:</strong> 40 questões, 60 min (4,0). <strong>Avaliação prática:</strong> 4 tarefas, 100 min
+            (6,0) — T1 organização, backup e comunicação; T2 relatório técnico; T3 planilha de análise; T4
+            apresentação. Nota mínima <strong>7,0</strong>: revise os resumos de cada capítulo.</p>
+            <h3 id="capitulo-10-resumo">📌 Resumo</h3>
+            <ul class="caixa-resumo"><li>Slides guiam o olhar; defina página e slide mestre antes do conteúdo.</li><li>Legibilidade e sequência lógica (situação, complicação, resolução, conclusão).</li><li>Gráficos, multimídia e transições com propósito; modo apresentador e formato certo.</li><li>Revise C1 a C5 para as avaliações objetiva e prática.</li></ul>
+        </section>
+    </div>
+</body>
+</html>

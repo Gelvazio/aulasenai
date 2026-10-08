@@ -11,6 +11,8 @@ conhecimentos e o plano de aulas ("aulas", 1 aula = 1 capítulo; padrão 4 h, ou
 "carga_horaria" de cada aula).
 Saída: <MATERIA>/APOSTILA/APOSTILA-<NOME DA PASTA DA MATÉRIA>.html. O assets/js/apostila.js
 divide o conteúdo em páginas A4 no navegador.
+Edição (ex.: versão reduzida): --edicao=V2 lê as fontes de APOSTILA/CONTEUDO-V2/, grava
+APOSTILA-<MATÉRIA>-V2.md/.html e usa a versão de "edicoes_apostila" do materia.json.
 Regras: seção "REGRAS APOSTILAS" do CLAUDE.md; plano: docs/gerador-apostilas.md.
 """
 import html
@@ -36,10 +38,10 @@ import materia as dados_materia  # noqa: E402
 sys.path.insert(0, str(GERADOR))
 import markdown_apostila as md_apostila  # noqa: E402
 import conferir_ementa  # noqa: E402
+import edicao_apostila as edicoes  # noqa: E402
 
 TEMPLATE = (GERADOR / "template_apostila.html").read_text(encoding="utf-8")
 PASTA_APOSTILA = "APOSTILA"
-PASTA_FONTES = "CONTEUDO"
 PADRAO_FONTES = "CAPITULO-*.md"
 ARQUIVO_INTRODUCAO = "INTRODUCAO.md"
 ARQUIVO_MATERIA = dados_materia.ARQUIVO_MATERIA
@@ -55,7 +57,10 @@ OPCAO_CONFERIR = "--conferir"
 CAMINHO_LOGO = "img/logo-sesi-senai.png"
 URL_MINIATURA = "https://i.ytimg.com/vi/{}/hqdefault.jpg"
 CAMPOS_DADOS = ("uc", "uc_curta", "curso", "docente", "autor_apostila", "versao_apostila")
-SECOES_OBRIGATORIAS = ("Teoria", "Vídeos", "Exercícios", "Resumo", "Glossário")
+SECOES_OBRIGATORIAS = ("Teoria", "Resumo", "Glossário")
+SECOES_PRATICAS = ("Vídeos", "Exercícios")
+PARTES_SUMARIO = (("videos", "Vídeos"), ("resumo", "Resumo"), ("exercicios", "Exercícios"))
+PARTES_SO_TEORIA = (("resumo", "Resumo"),)
 DURACAO_MAXIMA_SEGUNDOS = 15 * 60
 DURACAO_A_CONFERIR = "a conferir"
 LINHAS_RESPOSTA_PADRAO = 3
@@ -110,29 +115,32 @@ def ler_campo(texto, rotulo):
     return achado.group(1) if achado else ""
 
 
-def ler_dados_materia(pasta_materia):
+def ler_dados_materia(pasta_materia, edicao=""):
     """Lê o materia.json e organiza os dados usados pela apostila.
 
     Args:
         pasta_materia: Pasta da matéria.
+        edicao: Nome da edição (ex.: "V2") ou "" para a apostila normal.
 
     Returns:
         Dicionário com uc, uc_curta, curso, docente, basicas, socioemocionais, todas,
         carga_horaria_uc, horas_por_capitulo, capitulos_previstos, plano_capitulos,
-        conhecimentos e capacidades_x_conhecimentos.
+        conhecimentos, capacidades_x_conhecimentos e pasta_fontes.
     """
     dados = dados_materia.ler_materia(pasta_materia, CAMPOS_DADOS + (cap.CAMPO_DADOS,))
     basicas = dados[cap.CAMPO_DADOS]
     socioemocionais = dados.get(CAMPO_SOCIOEMOCIONAIS, {})
     plano = dados.get(CAMPO_AULAS, [])
-    return {**{campo: dados[campo] for campo in CAMPOS_DADOS}, "basicas": basicas,
-            "socioemocionais": socioemocionais, "todas": {**basicas, **socioemocionais},
-            "carga_horaria_uc": dados.get(CAMPO_CARGA_UC),
-            "horas_por_capitulo": dados.get(CAMPO_HORAS_AULA, HORAS_POR_CAPITULO_PADRAO),
-            "capitulos_previstos": [aula["tema"] for aula in plano], "plano_capitulos": plano,
-            "conhecimentos": dados.get("conhecimentos", []),
-            "capacidades_x_conhecimentos": dados.get("capacidades_x_conhecimentos", {}),
-            "materia": dados}
+    organizados = {
+        **{campo: dados[campo] for campo in CAMPOS_DADOS}, "basicas": basicas,
+        "socioemocionais": socioemocionais, "todas": {**basicas, **socioemocionais},
+        "carga_horaria_uc": dados.get(CAMPO_CARGA_UC),
+        "horas_por_capitulo": dados.get(CAMPO_HORAS_AULA, HORAS_POR_CAPITULO_PADRAO),
+        "capitulos_previstos": [aula["tema"] for aula in plano], "plano_capitulos": plano,
+        "conhecimentos": dados.get("conhecimentos", []),
+        "capacidades_x_conhecimentos": dados.get("capacidades_x_conhecimentos", {}),
+        "materia": dados}
+    return edicoes.aplicar_edicao(organizados, edicao)
 
 
 def validar_plano_capitulos(dados):
@@ -161,6 +169,9 @@ def validar_plano_capitulos(dados):
 def separar_secoes(texto, rotulo):
     """Divide o capítulo pelas seções "## Nome" e confere as obrigatórias.
 
+    Vídeos e Exercícios vêm juntos: se o capítulo tem um deles, precisa dos dois; sem os dois, o
+    capítulo é "só teoria" (permitido apenas na edição que libera — validar_so_teoria).
+
     Args:
         texto: Conteúdo do CAPITULO-NN.md.
         rotulo: Nome do arquivo, para as mensagens de erro.
@@ -170,7 +181,9 @@ def separar_secoes(texto, rotulo):
     """
     partes = PADRAO_SECAO.split(texto)
     secoes = {partes[i].strip(): partes[i + 1].strip() for i in range(1, len(partes), 2)}
-    faltando = [nome for nome in SECOES_OBRIGATORIAS if not secoes.get(nome)]
+    tem_praticas = any(nome in secoes for nome in SECOES_PRATICAS)
+    exigidas = SECOES_OBRIGATORIAS + (SECOES_PRATICAS if tem_praticas else ())
+    faltando = [nome for nome in exigidas if not secoes.get(nome)]
     if faltando:
         erro(f"{rotulo}: faltam as seções {', '.join(faltando)}")
     return secoes
@@ -291,10 +304,32 @@ def ler_texto_capitulo(texto, numero, capacidades, rotulo):
     termos = [achado.groupdict() for achado in PADRAO_TERMO.finditer(secoes["Glossário"])]
     if not termos:
         erro(f"{rotulo}: o Glossário precisa de termos '- **Termo:** definição'")
-    return {"id": f"capitulo-{numero}", "numero": numero, "titulo": titulo.group(1),
-            "codigos": codigos, "aula": ler_campo(cabecalho, "Aula"), "secoes": secoes,
-            "termos": termos, "videos": ler_videos(secoes["Vídeos"], rotulo),
+    so_teoria = not any(nome in secoes for nome in SECOES_PRATICAS)
+    capitulo = {"id": f"capitulo-{numero}", "numero": numero, "titulo": titulo.group(1),
+                "codigos": codigos, "aula": ler_campo(cabecalho, "Aula"), "secoes": secoes,
+                "termos": termos, "so_teoria": so_teoria, "videos": [], "exercicios": []}
+    if so_teoria:
+        return capitulo
+    return {**capitulo, "videos": ler_videos(secoes["Vídeos"], rotulo),
             "exercicios": ler_exercicios(secoes["Exercícios"], capacidades, rotulo)}
+
+
+def validar_so_teoria(capitulos, dados):
+    """Recusa capítulo sem Vídeos e Exercícios fora da edição que libera isso.
+
+    Args:
+        capitulos: Capítulos lidos.
+        dados: Dados da matéria ("sem_videos_e_exercicios" vem da edição).
+
+    Raises:
+        SystemExit: Se houver capítulo só com teoria e a edição não permitir.
+    """
+    if dados.get("sem_videos_e_exercicios"):
+        return
+    so_teoria = [capitulo["numero"] for capitulo in capitulos if capitulo["so_teoria"]]
+    if so_teoria:
+        erro(f"capítulo(s) {', '.join(so_teoria)} sem as seções {', '.join(SECOES_PRATICAS)} "
+             '(só permitido numa edição com "sem_videos_e_exercicios")')
 
 
 def trechos_de_codigo(texto):
@@ -358,17 +393,16 @@ def termos_por_capitulo(texto_glossario):
     return termos
 
 
-def ler_markdown_completo(pasta_materia, dados):
+def ler_markdown_completo(arquivo, dados):
     """Lê a introdução e os capítulos do Markdown completo (fonte final do HTML).
 
     Args:
-        pasta_materia: Pasta da matéria.
+        arquivo: Caminho do Markdown completo (da apostila ou da edição).
         dados: Dados da matéria.
 
     Returns:
         Tupla (texto Markdown da introdução, lista de capítulos em ordem).
     """
-    arquivo = caminho_markdown_completo(pasta_materia)
     if not arquivo.is_file():
         erro(f"falta o Markdown completo da apostila: {arquivo} (gere com {OPCAO_MARKDOWN})")
     partes = partes_markdown_completo(arquivo.read_text(encoding="utf-8"))
@@ -388,6 +422,7 @@ def ler_markdown_completo(pasta_materia, dados):
         erro(f"{arquivo.name}: falta a parte '# {TITULO_INTRODUCAO}'")
     if not capitulos:
         erro(f"{arquivo.name}: nenhum '# Capítulo NN — Tema'")
+    validar_so_teoria(capitulos, dados)
     if dados["plano_capitulos"]:
         conferir_cobertura_ementa(dados, capitulos)
     return introducao, capitulos
@@ -536,14 +571,29 @@ def blocos_conteudo_capitulo(capitulo, capacidades):
         f'{html_texto_capacidades(capitulo["codigos"], capacidades)}</p></div>',
         f'<h3 id="{id_cap}-teoria">📖 Teoria e exemplos</h3>',
         *[linha for linha in teoria.split("\n") if linha.strip()],
-        f'<h3 id="{id_cap}-videos">🎬 Vídeos para assistir (até 15 min)</h3>',
-        *[html_video(video) for video in capitulo["videos"]],
-        *[f'<p class="caixa-video__detalhe">⏳ {html.escape(pendente)}</p>'
-          for pendente in ([] if capitulo["videos"] else
-                           PADRAO_VIDEOS_PENDENTES.findall(secoes["Vídeos"]))],
+        *blocos_videos_capitulo(capitulo),
         f'<h3 id="{id_cap}-resumo">📌 Resumo</h3>',
         resumo.replace("\n", ""),
     ]
+
+
+def blocos_videos_capitulo(capitulo):
+    """Monta o título e as caixas dos vídeos (nada no capítulo só com teoria).
+
+    Args:
+        capitulo: Dicionário do capítulo.
+
+    Returns:
+        Lista de trechos HTML.
+    """
+    if capitulo["so_teoria"]:
+        return []
+    pendentes = [] if capitulo["videos"] else PADRAO_VIDEOS_PENDENTES.findall(
+        capitulo["secoes"]["Vídeos"])
+    return [f'<h3 id="{capitulo["id"]}-videos">🎬 Vídeos para assistir (até 15 min)</h3>',
+            *[html_video(video) for video in capitulo["videos"]],
+            *[f'<p class="caixa-video__detalhe">⏳ {html.escape(pendente)}</p>'
+              for pendente in pendentes]]
 
 
 def blocos_exercicios_capitulo(capitulo, capacidades):
@@ -570,19 +620,21 @@ def blocos_exercicios_capitulo(capitulo, capacidades):
 
 
 def html_capitulo(capitulo, capacidades):
-    """Monta as duas partes de um capítulo: conteúdo e exercícios.
+    """Monta as partes de um capítulo: conteúdo e, quando houver, exercícios.
 
     Args:
         capitulo: Dicionário do capítulo.
         capacidades: Dicionário código → texto oficial.
 
     Returns:
-        HTML das duas seções.
+        HTML das seções do capítulo.
     """
-    conteudo = blocos_conteudo_capitulo(capitulo, capacidades)
+    conteudo = html_fonte(blocos_conteudo_capitulo(capitulo, capacidades), "conteudo",
+                          capitulo["id"])
+    if capitulo["so_teoria"]:
+        return conteudo
     exercicios = blocos_exercicios_capitulo(capitulo, capacidades)
-    return "\n\n".join([html_fonte(conteudo, "conteudo", capitulo["id"]),
-                        html_fonte(exercicios, "exercicios", capitulo["id"])])
+    return "\n\n".join([conteudo, html_fonte(exercicios, "exercicios", capitulo["id"])])
 
 
 def item_sumario(alvo, texto, nivel):
@@ -621,21 +673,21 @@ def html_sumario(capitulos, subtitulos_introducao):
         linhas.append(item_sumario(id_cap, capitulo["titulo"], 1))
         linhas.append(item_sumario(f"{id_cap}-teoria", "Teoria e exemplos", 2))
         linhas += [item_sumario(alvo, texto, 3) for alvo, texto in capitulo["subtitulos"]]
-        linhas += [item_sumario(f"{id_cap}-{parte}", rotulo, 2) for parte, rotulo in
-                   (("videos", "Vídeos"), ("resumo", "Resumo"), ("exercicios", "Exercícios"))]
+        partes = PARTES_SO_TEORIA if capitulo["so_teoria"] else PARTES_SUMARIO
+        linhas += [item_sumario(f"{id_cap}-{parte}", rotulo, 2) for parte, rotulo in partes]
     return "\n".join(RECUO + linha for linha in linhas)
 
 
-def ler_texto_introducao(pasta_materia):
+def ler_texto_introducao(pasta_fontes):
     """Lê a INTRODUCAO.md (obrigatória), sem o título "# Introdução".
 
     Args:
-        pasta_materia: Pasta da matéria.
+        pasta_fontes: Pasta das fontes da apostila (CONTEUDO ou CONTEUDO-<EDIÇÃO>).
 
     Returns:
         Texto Markdown da introdução.
     """
-    arquivo = pasta_materia / PASTA_APOSTILA / PASTA_FONTES / ARQUIVO_INTRODUCAO
+    arquivo = pasta_fontes / ARQUIVO_INTRODUCAO
     if not arquivo.is_file():
         erro(f"falta a introdução da apostila: {arquivo}")
     return PADRAO_TITULO.sub("", arquivo.read_text(encoding="utf-8"), count=1).strip()
@@ -769,49 +821,52 @@ def montar_pagina(pasta_materia, dados, conteudo, data_hora):
     return inserir_header_em_html(pagina, str(pasta_saida))
 
 
-def caminho_markdown_completo(pasta_materia):
+def caminho_markdown_completo(pasta_materia, edicao=""):
     """Caminho do Markdown completo da apostila da matéria.
 
     Args:
         pasta_materia: Pasta da matéria.
+        edicao: Nome da edição ou "".
 
     Returns:
-        Caminho de <MATERIA>/APOSTILA/APOSTILA-<MATERIA>.md.
+        Caminho de <MATERIA>/APOSTILA/APOSTILA-<MATERIA>[-<EDIÇÃO>].md.
     """
-    return pasta_materia / PASTA_APOSTILA / f"APOSTILA-{pasta_materia.name}.md"
+    return edicoes.caminho_apostila(pasta_materia, edicao, ".md")
 
 
-def conferir_com_ementa(pasta_materia):
+def conferir_com_ementa(pasta_materia, edicao=""):
     """Roda a conferência obrigatória do Markdown completo com a ementa da matéria.
 
     Args:
         pasta_materia: Pasta da matéria.
+        edicao: Nome da edição ou "".
 
     Returns:
         True se o Markdown completo bate 100% com a ementa.
     """
-    return conferir_ementa.conferir_materia(pasta_materia, caminho_markdown_completo(pasta_materia))
+    return conferir_ementa.conferir_materia(
+        pasta_materia, caminho_markdown_completo(pasta_materia, edicao))
 
 
-def gravar_identificacao_markdown(pasta_materia, dados, data_hora):
+def gravar_identificacao_markdown(caminho, dados, data_hora):
     """Atualiza autor, versão e data e hora no Markdown completo, igual ao HTML gerado.
 
     Args:
-        pasta_materia: Pasta da matéria.
+        caminho: Caminho do Markdown completo.
         dados: Dados da matéria.
         data_hora: Data e hora da geração, já formatadas.
     """
-    caminho = caminho_markdown_completo(pasta_materia)
     texto = caminho.read_text(encoding="utf-8")
     caminho.write_text(md_apostila.atualizar_identificacao(texto, dados, data_hora),
                        encoding="utf-8")
 
 
-def gerar_apostila(pasta_materia):
+def gerar_apostila(pasta_materia, edicao=""):
     """Gera a apostila HTML a partir do Markdown completo, só com a conferência em 100%.
 
     Args:
         pasta_materia: Pasta da matéria.
+        edicao: Nome da edição (ex.: "V2") ou "" para a apostila normal.
 
     Returns:
         Caminho do HTML gerado.
@@ -819,14 +874,15 @@ def gerar_apostila(pasta_materia):
     Raises:
         SystemExit: Se o Markdown completo não bater 100% com a ementa da matéria.
     """
-    if not conferir_com_ementa(pasta_materia):
+    if not conferir_com_ementa(pasta_materia, edicao):
         erro("o Markdown completo não bate 100% com a ementa da matéria: corrija o que falta "
              "antes de gerar a apostila (regra CONFERÊNCIA OBRIGATÓRIA)")
-    dados = ler_dados_materia(pasta_materia)
-    introducao, capitulos = ler_markdown_completo(pasta_materia, dados)
+    dados = ler_dados_materia(pasta_materia, edicao)
+    markdown_completo = caminho_markdown_completo(pasta_materia, edicao)
+    introducao, capitulos = ler_markdown_completo(markdown_completo, dados)
     data_hora = md_apostila.agora_formatado()
-    gravar_identificacao_markdown(pasta_materia, dados, data_hora)
-    saida = pasta_materia / PASTA_APOSTILA / f"APOSTILA-{pasta_materia.name}.html"
+    gravar_identificacao_markdown(markdown_completo, dados, data_hora)
+    saida = edicoes.caminho_apostila(pasta_materia, edicao, ".html")
     saida.write_text(montar_pagina(pasta_materia, dados, (introducao, capitulos), data_hora),
                      encoding="utf-8")
     for capitulo in capitulos:
@@ -890,11 +946,11 @@ def conferir_cobertura_ementa(dados, capitulos):
     return total
 
 
-def ler_fontes_capitulos(pasta_materia, dados, obrigatorio=True):
+def ler_fontes_capitulos(pasta_fontes, dados, obrigatorio=True):
     """Lê e valida todos os CAPITULO-NN.md da matéria.
 
     Args:
-        pasta_materia: Pasta da matéria.
+        pasta_fontes: Pasta das fontes (CONTEUDO ou CONTEUDO-<EDIÇÃO>).
         dados: Dados da matéria.
         obrigatorio: Se True (HTML), exige ao menos um capítulo; o Markdown completo pode ser
             montado antes do primeiro capítulo, para a conferência com a ementa.
@@ -902,7 +958,6 @@ def ler_fontes_capitulos(pasta_materia, dados, obrigatorio=True):
     Returns:
         Lista de capítulos em ordem.
     """
-    pasta_fontes = pasta_materia / PASTA_APOSTILA / PASTA_FONTES
     fontes = sorted(pasta_fontes.glob(PADRAO_FONTES))
     if not fontes and obrigatorio:
         erro(f"nenhum {PADRAO_FONTES} em {pasta_fontes}")
@@ -910,12 +965,13 @@ def ler_fontes_capitulos(pasta_materia, dados, obrigatorio=True):
         print(f"ℹ️ Nenhum capítulo ainda em {pasta_fontes}: Markdown só com as partes iniciais")
         return []
     capitulos = [ler_capitulo(fonte, dados["todas"]) for fonte in fontes]
+    validar_so_teoria(capitulos, dados)
     if dados["plano_capitulos"]:
         conferir_cobertura_ementa(dados, capitulos)
     return capitulos
 
 
-def gerar_markdown_completo(pasta_materia, forcar):
+def gerar_markdown_completo(pasta_materia, forcar, edicao=""):
     """Gera (ou completa) o Markdown completo <MATERIA>/APOSTILA/APOSTILA-<MATERIA>.md.
 
     Sem --forcar, um arquivo existente não é refeito: só recebe os capítulos novos, para não
@@ -924,17 +980,19 @@ def gerar_markdown_completo(pasta_materia, forcar):
     Args:
         pasta_materia: Pasta da matéria.
         forcar: True para refazer o arquivo do zero a partir dos capítulos.
+        edicao: Nome da edição (ex.: "V2") ou "" para a apostila normal.
 
     Returns:
         Caminho do Markdown completo.
     """
-    dados = ler_dados_materia(pasta_materia)
+    dados = ler_dados_materia(pasta_materia, edicao)
     validar_plano_capitulos(dados)
-    capitulos = ler_fontes_capitulos(pasta_materia, dados, obrigatorio=False)
-    saida = caminho_markdown_completo(pasta_materia)
+    pasta_fontes = edicoes.pasta_fontes(pasta_materia, edicao)
+    capitulos = ler_fontes_capitulos(pasta_fontes, dados, obrigatorio=False)
+    saida = caminho_markdown_completo(pasta_materia, edicao)
     if forcar or not saida.is_file():
         texto = md_apostila.montar_markdown_completo(
-            dados, ler_texto_introducao(pasta_materia), capitulos)
+            dados, ler_texto_introducao(pasta_fontes), capitulos)
         print(f"📝 Markdown completo montado com {len(capitulos)} capítulo(s)")
     else:
         texto = saida.read_text(encoding="utf-8")
@@ -950,23 +1008,26 @@ def main():
     """Lê a pasta da matéria e as opções da linha de comando e gera o Markdown ou o HTML.
 
     Uso: gerar_apostila.py <pasta da matéria> [--markdown [--forcar] | --conferir]
+    [--edicao=V2]
     """
     sys.stdout.reconfigure(encoding="utf-8")
     argumentos = [argumento for argumento in sys.argv[1:] if not argumento.startswith("--")]
     opcoes = {argumento for argumento in sys.argv[1:] if argumento.startswith("--")}
     if len(argumentos) != 1:
-        erro("uso: gerar_apostila.py <pasta da matéria> [--markdown [--forcar] | --conferir]")
+        erro("uso: gerar_apostila.py <pasta da matéria> [--markdown [--forcar] | --conferir] "
+             "[--edicao=V2]")
     pasta_materia = Path(argumentos[0]).resolve()
     if not pasta_materia.is_dir():
         erro(f"pasta não encontrada: {pasta_materia}")
+    edicao = edicoes.ler_opcao_edicao(opcoes)
     if OPCAO_CONFERIR in opcoes:
-        sys.exit(0 if conferir_com_ementa(pasta_materia) else 1)
+        sys.exit(0 if conferir_com_ementa(pasta_materia, edicao) else 1)
     if OPCAO_MARKDOWN in opcoes:
-        caminho = gerar_markdown_completo(pasta_materia, OPCAO_FORCAR in opcoes)
+        caminho = gerar_markdown_completo(pasta_materia, OPCAO_FORCAR in opcoes, edicao)
         print(f"📘 Markdown completo: {caminho}")
-        conferir_com_ementa(pasta_materia)
+        conferir_com_ementa(pasta_materia, edicao)
         return
-    print(f"📘 Apostila gerada: {gerar_apostila(pasta_materia)}")
+    print(f"📘 Apostila gerada: {gerar_apostila(pasta_materia, edicao)}")
 
 
 if __name__ == "__main__":

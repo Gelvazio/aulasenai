@@ -26,3 +26,16 @@
 | 08 | Editor de Planilhas: Organização e Fórmulas | ✅ | ✅ 4 | ✅ | ✅ 7 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 09 | Planilhas: Análise Visual e Gráficos | ✅ | ✅ 4 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
 | 10 | Editor de Apresentações e TIC + Avaliação | ✅ | ✅ 4 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
+
+## Edição V2 — reduzida (até 40 páginas) · plano `docs/apostila-itic-v2-40-paginas.md`
+
+Fontes em `CONTEUDO-V2/`; Markdown `APOSTILA-INTRODUCAO-TIC-V2.md`; HTML
+`APOSTILA-INTRODUCAO-TIC-V2.html`; versão **2.0**. **Sem vídeos e sem exercícios** (pedido do
+usuário: ele fará à parte). A V1 não mudou.
+
+| Parte | Status |
+|---|---|
+| Introdução + capítulos 01 a 10 (teoria, resumo, glossário) | 👀 Aguardando validação (2026-10-08 08:52) |
+| Conferência Markdown V2 × ementa | ✅ 100% (277/277) em 2026-10-08 08:52 |
+| HTML V2 gerado | ✅ 2026-10-08 08:52 |
+| Páginas do PDF (headless) | ✅ 28 páginas (limite 40), "Página N de T" e sem a faixa azul |

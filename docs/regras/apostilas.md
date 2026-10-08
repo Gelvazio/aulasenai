@@ -373,6 +373,33 @@ faltava. Vale para **todas as matérias**.
   ainda mostrar, desmarcar "Cabeçalhos e rodapés" na impressão.
 - ✅ Botões: **Exportar PDF (apostila completa)** no topo e **Exportar PDF** dos exercícios de cada
   capítulo. Os botões não aparecem no PDF.
+- ✅ **Paginação no PDF (2026-10-08, todas as apostilas):** o rodapé de toda folha mostra
+  **"Página N de T"**; na exportação parcial (só os exercícios de um capítulo), as folhas
+  exportadas são numeradas entre si ("Página 1 de 2") e a numeração da apostila volta depois.
+  Código: `assets/js/apostila.js` (`numerarPaginas`, `numerarPaginasExportadas`).
+- ✅ **PDF sem a faixa azul da esquerda (2026-10-08, todas as apostilas):** a faixa vertical do
+  tema só aparece na tela; no `@media print` de `assets/css/apostila.css` ela não sai. As margens
+  continuam iguais, para a divisão das páginas não mudar.
+
+### Edições da apostila (ex.: versão reduzida V2)
+
+Registrada em 2026-10-08 a pedido do usuário (1ª edição: ITIC V2 com até 40 páginas). Plano:
+`docs/apostila-itic-v2-40-paginas.md`.
+
+- ✅ Uma edição é **outra apostila da mesma matéria**, sem mexer na normal: fontes em
+  `APOSTILA/CONTEUDO-<EDIÇÃO>/` (`INTRODUCAO.md` + `CAPITULO-NN.md`), Markdown completo
+  `APOSTILA-<MATERIA>-<EDIÇÃO>.md` e HTML `APOSTILA-<MATERIA>-<EDIÇÃO>.html`.
+- ✅ Configuração no `materia.json`: `"edicoes_apostila": {"V2": {"versao": "2.0",
+  "sem_videos_e_exercicios": true}}` — a versão da edição aparece na capa, no rodapé e no
+  Markdown; a apostila normal continua com `versao_apostila`.
+- ✅ Comandos: `gerar_apostila.py <pasta da matéria> --markdown --edicao=V2` (`--forcar` refaz) e
+  `gerar_apostila.py <pasta da matéria> --edicao=V2` (HTML). A **conferência com a ementa
+  (100%)** vale igual para a edição.
+- ✅ Com `sem_videos_e_exercicios` (pedido do usuário: ele faz vídeos e exercícios à parte), cada
+  capítulo tem só **Teoria, Resumo e Glossário**; sem essa opção, Vídeos e Exercícios continuam
+  obrigatórios (mínimo de 5 exercícios). Mesmo reduzida, a edição trata **todos os conteúdos
+  oficiais** de cada aula e mantém os termos oficiais do glossário com a definição da ementa.
+- ✅ Código: `assets/gerador-apostilas/edicao_apostila.py`.
 
 ### Controle e limites
 

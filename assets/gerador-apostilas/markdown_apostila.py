@@ -29,6 +29,7 @@ CERCA_CODIGO = "```"
 FORMATO_DATA_HORA = "%d/%m/%Y às %H:%M"
 PREFIXO_IDENTIFICACAO = "> **Autor:**"
 PREFIXO_GERADO_EM = "> **Gerado em:**"
+PASTA_FONTES_PADRAO = "CONTEUDO"
 
 
 def slug_titulo(texto, usados):
@@ -212,7 +213,8 @@ def md_cabecalho(dados, total_previstos):
         f"> **Carga horária da UC:** {texto_carga} · **Capítulos previstos:** {total_previstos} "
         f"({texto_aula_capitulo(dados)})  ",
         linha_identificacao(dados, agora_formatado()),
-        f"> **Gerado em:** {date.today():%d/%m/%Y}, a partir de `APOSTILA/CONTEUDO/`.",
+        f"> **Gerado em:** {date.today():%d/%m/%Y}, a partir de "
+        f"`APOSTILA/{dados.get('pasta_fontes', PASTA_FONTES_PADRAO)}/`.",
         "",
         "> ✏️ **Este arquivo é a fonte final da apostila.** Revise, compare e acrescente "
         "dados "
@@ -483,9 +485,11 @@ def md_capitulo(capitulo, dados):
               f"- **Aula:** {capitulo['aula'] or capitulo['numero']}",
               f"- **Carga horária:** {horas_da_aula(dados, capitulo['numero'])} horas (1 aula)",
               f"- **Capacidade:** {', '.join(capitulo['codigos'])}",
-              f"- **Fonte:** `APOSTILA/CONTEUDO/{capitulo['id'].upper()}.md`"]
+              f"- **Fonte:** `APOSTILA/{dados.get('pasta_fontes', PASTA_FONTES_PADRAO)}/"
+              f"{capitulo['id'].upper()}.md`"]
     for parte in ORDEM_PARTES_CAPITULO:
-        linhas += ["", f"## {parte}", "", capitulo["secoes"][parte].strip()]
+        if parte in capitulo["secoes"]:
+            linhas += ["", f"## {parte}", "", capitulo["secoes"][parte].strip()]
     return "\n".join(linhas)
 
 

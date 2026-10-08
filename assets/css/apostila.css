@@ -566,6 +566,13 @@ body.apostila {
         break-after: page;
     }
 
+    /* PDF sem a faixa azul da esquerda (pedido do usuário, 2026-10-08); a margem continua
+       igual, para a divisão das páginas sair idêntica à da tela */
+    .pagina-senai::before,
+    .pagina-senai::after {
+        display: none;
+    }
+
     .pagina-senai,
     .pagina-senai * {
         print-color-adjust: exact;

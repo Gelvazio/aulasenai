@@ -13,6 +13,8 @@ const ID_BOTAO_PDF = 'botao-exportar-pdf';
 const CLASSE_IMPRIMINDO_PARTE = 'imprimindo-parte';
 const CLASSE_PAGINA_IMPRIMIR = 'pagina--imprimir';
 const PARTE_EXERCICIOS = 'exercicios';
+// Paginação do PDF (todas as apostilas): "Página N de T" no rodapé de cada folha.
+const MODELO_PAGINACAO = 'Página {numero} de {total}';
 const TAGS_DIVISIVEIS = ['TABLE', 'UL', 'OL'];
 const TAGS_TITULO = ['H2', 'H3', 'H4'];
 const TOLERANCIA_PIXELS = 1;
@@ -167,22 +169,51 @@ function paginarFonte(fonte) {
 }
 
 /**
- * Numera todas as páginas e escreve o rodapé (nome da apostila e número).
+ * Monta o texto da paginação ("Página N de T").
+ * @param {number} numero - Número da página.
+ * @param {number} total - Total de páginas.
+ * @returns {string} Texto da paginação.
+ */
+function textoPaginacao(numero, total) {
+  return MODELO_PAGINACAO.replace('{numero}', String(numero)).replace('{total}', String(total));
+}
+
+/**
+ * Escreve o rodapé de uma página: nome da apostila e paginação.
+ * @param {HTMLElement} pagina - Página A4.
+ * @param {string} paginacao - Texto "Página N de T".
+ * @returns {void}
+ */
+function escreverRodape(pagina, paginacao) {
+  const rodape = pagina.querySelector('.pagina-senai__rodape');
+  if (!rodape) return;
+  const nome = document.createElement('span');
+  nome.textContent = document.body.dataset.rodape || '';
+  const numeroPagina = document.createElement('span');
+  numeroPagina.textContent = paginacao;
+  rodape.replaceChildren(nome, numeroPagina);
+}
+
+/**
+ * Numera todas as páginas ("Página N de T") e guarda o número para o sumário.
  * @returns {void}
  */
 function numerarPaginas() {
-  const textoRodape = document.body.dataset.rodape || '';
-  document.querySelectorAll(SELETOR_PAGINAS).forEach((pagina, indice) => {
-    const numero = String(indice + 1);
-    pagina.dataset.numero = numero;
-    const rodape = pagina.querySelector('.pagina-senai__rodape');
-    if (!rodape) return;
-    rodape.replaceChildren();
-    const nome = document.createElement('span');
-    nome.textContent = textoRodape;
-    const numeroPagina = document.createElement('span');
-    numeroPagina.textContent = numero;
-    rodape.append(nome, numeroPagina);
+  const paginas = document.querySelectorAll(SELETOR_PAGINAS);
+  paginas.forEach((pagina, indice) => {
+    pagina.dataset.numero = String(indice + 1);
+    escreverRodape(pagina, textoPaginacao(indice + 1, paginas.length));
+  });
+}
+
+/**
+ * Numera só as páginas da exportação parcial (ex.: exercícios: "Página 1 de 2").
+ * @param {NodeListOf<HTMLElement>} paginas - Páginas que vão para o PDF.
+ * @returns {void}
+ */
+function numerarPaginasExportadas(paginas) {
+  paginas.forEach((pagina, indice) => {
+    escreverRodape(pagina, textoPaginacao(indice + 1, paginas.length));
   });
 }
 
@@ -199,13 +230,14 @@ function preencherSumario() {
 }
 
 /**
- * Desfaz a marcação de impressão parcial.
+ * Desfaz a marcação de impressão parcial e volta a paginação da apostila inteira.
  * @returns {void}
  */
 function limparImpressaoParcial() {
   document.body.classList.remove(CLASSE_IMPRIMINDO_PARTE);
   document.querySelectorAll(`.${CLASSE_PAGINA_IMPRIMIR}`)
     .forEach((pagina) => pagina.classList.remove(CLASSE_PAGINA_IMPRIMIR));
+  numerarPaginas();
 }
 
 /**
@@ -226,8 +258,9 @@ function exportarExerciciosPDF(idCapitulo) {
   limparImpressaoParcial();
   const seletor = `${SELETOR_PAGINAS}[data-capitulo="${idCapitulo}"]`
     + `[data-parte="${PARTE_EXERCICIOS}"]`;
-  document.querySelectorAll(seletor)
-    .forEach((pagina) => pagina.classList.add(CLASSE_PAGINA_IMPRIMIR));
+  const paginas = document.querySelectorAll(seletor);
+  paginas.forEach((pagina) => pagina.classList.add(CLASSE_PAGINA_IMPRIMIR));
+  numerarPaginasExportadas(paginas);
   document.body.classList.add(CLASSE_IMPRIMINDO_PARTE);
   window.addEventListener('afterprint', limparImpressaoParcial, { once: true });
   window.print();
