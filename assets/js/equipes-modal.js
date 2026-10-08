@@ -457,7 +457,7 @@ async function carregarTurmaEquipes() {
 }
 
 /**
- * Texto da turma na lista: código — nome · UNIDADE (local + turno, assets/js/turma-unidade.js).
+ * Texto da turma na lista: código — nome · UNIDADE (local + turno, assets/js/unidade.js).
  * @param {{codigo: string, nome: string, turno: string, local: string}} turma - Turma.
  * @returns {string} Rótulo.
  */

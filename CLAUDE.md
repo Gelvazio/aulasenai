@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 17:26:54
+**Versão das regras:** 2026-10-08 17:27:53
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 17:27:53 | Unidade das turmas vem do arquivo global **`assets/js/unidade.js`** (código da turma → nome da unidade, ex.: "AIAC SALETE TARDE"); substitui o `turma-unidade.js` — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 17:26:54 | Toda lista de turmas mostra a **unidade** (local + turno, ex.: "AI SALETE TARDE"): função única `assets/js/turma-unidade.js` — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 17:22:44 | Equipes: **botão 👥 EQUIPES global no header** (`js/header-usuario.js`) em toda página de matéria, para todo usuário logado — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 17:20:14 | Menu das atividades **só com 👥 Equipes** em todas as matérias (ITIC, Análise de Dados e Reforço de Linguagens); demais itens saíram do menu — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 17:12:16 | Equipes: botão **📄 Exportar Equipes** no modal (PDF pela impressão, com integrantes, líder, papel e alunos sem equipe) — `docs/regras/usuarios-turmas-paginas-professor.md` |
-| 2026-10-08 17:11:10 | Menu **👥 Equipes** também em **Análise de Dados Aplicada à Gestão** (duplas da prova prática; a prova continua individual por login) — `docs/regras/usuarios-turmas-paginas-professor.md` |
 
 ---
 

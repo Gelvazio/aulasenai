@@ -207,11 +207,14 @@ SQL: `database/2026-10-05-equipes-turma-materia.sql` (✅ aplicado no Supabase e
 
 Registrada em 2026-10-08 a pedido do usuário.
 
-- ✅ Em **todo lugar que seleciona turma**, o texto da turma traz a **unidade** = local + turno
-  em maiúsculas (ex.: `133933 — AI AIAC 2026/2 V1 · AI SALETE TARDE`, `… · AI CEPLAS MANHÃ`,
-  `… · ROBERTO MACHADO TARDE`). O turno não se repete se o local já o traz.
-- ✅ Função única: `assets/js/turma-unidade.js` (`montarUnidadeTurma`, `acrescentarUnidadeTurma`);
-  a consulta da turma deve trazer a coluna `local`. Lista nova de turmas usa essa função.
+- ✅ Em **todo lugar que seleciona turma**, o texto da turma traz a **unidade** onde ela está,
+  com o turno (ex.: `133933 — AI AIAC 2026/2 V1 · AIAC SALETE TARDE`, `… · CEPLAS MANHÃ`,
+  `… · ROBERTO MACHADO TARDE`).
+- ✅ **Arquivo global `assets/js/unidade.js`** (2026-10-08): `UNIDADES_POR_TURMA` = código da turma
+  no banco (`turma.codigo`) → nome da unidade; mais as funções `montarUnidadeTurma` e
+  `acrescentarUnidadeTurma`. **Turma nova = acrescentar a linha nesse arquivo.** Turma que não
+  está nele usa `local` + `turno` da tabela `turma` (a consulta deve trazer `local`). Não
+  confundir com o antigo `js/unidade.js` (órfão, não carregado).
 - ✅ Usada hoje em: equipes, `turmas.html`, `alunos.html`, turma da exportação (atividades e
   discursivas), turma favorita dos índices, média final e liberação do gabarito das discursivas.
 

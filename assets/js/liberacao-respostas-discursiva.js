@@ -12,7 +12,7 @@ const MSG_AGUARDE_GABARITO_DISCURSIVO = 'Aguarde professor liberar os gabaritos'
 const CLASSE_LIBERACAO_DISCURSIVA = 'liberacao-discursiva';
 const CLASSE_RESPOSTA_ESPERADA = 'resposta-esperada';
 const ARQUIVO_LIBERACAO_PROFESSOR = 'liberacao-respostas-professor.js';
-const ARQUIVO_TURMA_UNIDADE_LIBERACAO = 'turma-unidade.js';
+const ARQUIVO_TURMA_UNIDADE_LIBERACAO = 'unidade.js';
 const EVENTO_TURMA_LIBERACAO_DISCURSIVA = 'relatorio-professor:turma';
 const BASE_SCRIPTS_LIBERACAO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 
@@ -47,7 +47,7 @@ function carregarScriptLiberacao(arquivo) {
 
 /**
  * Lista as turmas vinculadas ao professor (o administrador lê todos os vínculos), com o texto
- * "código — nome · UNIDADE" (assets/js/turma-unidade.js).
+ * "código — nome · UNIDADE" (assets/js/unidade.js).
  * @returns {Promise<{codigo: string, rotulo: string}[]>} Turmas sem repetição, em ordem.
  */
 async function listarTurmasLiberacaoDiscursiva() {

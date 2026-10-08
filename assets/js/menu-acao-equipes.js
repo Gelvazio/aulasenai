@@ -16,7 +16,7 @@ const DEPENDENCIAS_EQUIPES = [
     endereco: '../../js/supabase.js',
   },
   { estaCarregada: () => typeof confirmarPopup === 'function', endereco: 'popup.js' },
-  { estaCarregada: () => typeof acrescentarUnidadeTurma === 'function', endereco: 'turma-unidade.js' },
+  { estaCarregada: () => typeof acrescentarUnidadeTurma === 'function', endereco: 'unidade.js' },
   {
     estaCarregada: () => typeof criarRepositorioEquipes === 'function',
     endereco: 'equipes-repositorio.js',

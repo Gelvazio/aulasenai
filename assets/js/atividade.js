@@ -11,7 +11,7 @@
 // depois que o professor liberar para a turma (plano docs/liberacao-respostas-por-turma.md).
 
 const ARQUIVO_TURMA_EXPORTACAO = 'turma-exportacao.js';
-const ARQUIVO_TURMA_UNIDADE = 'turma-unidade.js';
+const ARQUIVO_TURMA_UNIDADE = 'unidade.js';
 const ARQUIVO_DOCUMENTO_WORD = 'documento-word.js';
 const ARQUIVO_EXPORTAR_WORD = 'exportar-word.js';
 const ARQUIVO_EXPORTAR_GABARITO = 'avaliacao-pdf-professor.js';
