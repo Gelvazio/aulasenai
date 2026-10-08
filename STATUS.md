@@ -813,8 +813,8 @@ Tarefa pequena por item (só texto das regras). Cada item: mostrar a contradiç�
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 72.1 | "Tabelas de resultado ao finalizar tarefas" × frase final — escolha: apagar a linha de "Outras Regras" | ✅ Concluído | 2026-10-07 21:36 | Linha removida; versão 2026-10-07 21:36 no CLAUDE.md e no histórico |
-| 72.2 | Menu ALUNOS: todo professor × só administrador | 🔄 Em progresso | — | — |
-| 72.3 | Título da regra do Word × botões removidos | ⬜ Pendente | — | — |
+| 72.2 | Menu ALUNOS: todo professor × só administrador — escolha: corrigir a lista de assets | ✅ Concluído | 2026-10-07 21:37 | Linha 58 de `assets-e-geradores.md` = "só Professor Administrador"; confere com `MENU_ADMINISTRADOR_HEADER` |
+| 72.3 | Título da regra do Word × botões removidos | 🔄 Em progresso | — | — |
 | 72.4 | "PDF com gabarito" na regra da Turma × botão removido | ⬜ Pendente | — | — |
 | 72.5 | Reforço de Linguagens "aula 16 com 50 questões" × 10 aulas de 25 | ⬜ Pendente | — | — |
 | 72.6 | Local da ementa: raiz da matéria × `DOCUMENTACAO/` | ⬜ Pendente | — | — |

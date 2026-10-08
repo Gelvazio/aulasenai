@@ -55,7 +55,7 @@ assets/
 │                        turmas-professor.css — turmas.html da raiz (menu TURMAS, só Professor
 │                        Administrador): CRUD da tabela `turmaprofessor`;
 │                        turmas-aluno-repositorio.js + turmas-aluno-pagina.js + css/
-│                        turmas-aluno.css — alunos.html da raiz (menu ALUNOS, todo professor):
+│                        turmas-aluno.css — alunos.html da raiz (menu ALUNOS, só Professor Administrador):
 │                        CRUD da tabela `turmaaluno`;
 │                        pendencias-repositorio.js + pendencias-pagina.js + css/
 │                        pendencias.css — MATERIAIS/AGENDA_COLABORADOR/pendencias.html
