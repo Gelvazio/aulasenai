@@ -1,6 +1,6 @@
 // ── Modal REGRAS (CLAUDE.md) ──────────────────────────
-// Abre um modal com as regras do projeto (CLAUDE.md da raiz) renderizadas em HTML, com índice
-// das seções. Carregado sob demanda pelo js/header-usuario.js (menu REGRAS, só administrador).
+// Abre um modal com as regras do projeto (CLAUDE.md da raiz + os arquivos de docs/regras/ citados
+// no índice dele) renderizadas em HTML, com índice das seções. Carregado sob demanda pelo js/header-usuario.js (menu REGRAS, só administrador).
 // Uso: await abrirModalRegras(urlClaudeMd).
 
 const URL_MARKED_REGRAS = "https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js";
@@ -16,6 +16,8 @@ const TEXTO_FILTRO_REGRAS = "Filtrar seções…";
 const TEXTO_VERSAO_REGRAS = "Versão das regras: ";
 const TEXTO_SEM_VERSAO_REGRAS = "Versão das regras: não informada no CLAUDE.md";
 const PADRAO_VERSAO_REGRAS = /\*\*Versão das regras:\*\*\s*([^\n]+)/;
+const PADRAO_ARQUIVOS_REGRAS = /\]\((docs\/regras\/[\w.-]+\.md)\)/g;
+const SEPARADOR_ARQUIVOS_REGRAS = "\n\n---\n\n";
 
 const urlScriptRegras = document.currentScript?.src || "";
 
@@ -109,20 +111,44 @@ function extrairVersaoRegras(markdown) {
 }
 
 /**
- * Busca o CLAUDE.md (sempre sem cache) e devolve o HTML seguro e a versão das regras.
+ * Busca um arquivo Markdown de regras, sempre sem cache.
+ * @param {string} url - Endereço do arquivo.
+ * @returns {Promise<string>} Texto do arquivo.
+ * @throws {Error} Se o arquivo não puder ser lido.
+ */
+async function buscarMarkdownRegras(url) {
+  const resposta = await fetch(url, { cache: "no-store" });
+  if (!resposta.ok) throw new Error(TEXTO_ERRO_REGRAS + " (" + url + ")");
+  return resposta.text();
+}
+
+/**
+ * Lista, sem repetir e na ordem do índice, os arquivos de docs/regras/ citados no CLAUDE.md.
+ * @param {string} markdown - Texto do CLAUDE.md.
+ * @returns {string[]} Caminhos relativos à raiz do projeto.
+ */
+function listarArquivosRegras(markdown) {
+  const caminhos = [...markdown.matchAll(PADRAO_ARQUIVOS_REGRAS)].map((achou) => achou[1]);
+  return [...new Set(caminhos)];
+}
+
+/**
+ * Busca o CLAUDE.md e os arquivos de docs/regras/ do índice e devolve o HTML seguro e a versão.
  * @param {string} urlClaudeMd - Endereço do CLAUDE.md.
  * @returns {Promise<{html: string, versao: string}>} HTML sanitizado e texto da versão.
- * @throws {Error} Se o arquivo não puder ser lido.
+ * @throws {Error} Se algum arquivo não puder ser lido.
  */
 async function obterRegras(urlClaudeMd) {
   await carregarScriptRegras(URL_MARKED_REGRAS);
   await carregarScriptRegras(URL_DOMPURIFY_REGRAS);
-  const resposta = await fetch(urlClaudeMd, { cache: "no-store" });
-  if (!resposta.ok) throw new Error(TEXTO_ERRO_REGRAS);
-  const markdown = await resposta.text();
+  const principal = await buscarMarkdownRegras(urlClaudeMd);
+  const base = new URL(urlClaudeMd, window.location.href);
+  const detalhadas = await Promise.all(listarArquivosRegras(principal)
+    .map((caminho) => buscarMarkdownRegras(new URL(caminho, base).href)));
+  const markdown = [principal, ...detalhadas].join(SEPARADOR_ARQUIVOS_REGRAS);
   return {
     html: window.DOMPurify.sanitize(window.marked.parse(markdown)),
-    versao: extrairVersaoRegras(markdown),
+    versao: extrairVersaoRegras(principal),
   };
 }
 
