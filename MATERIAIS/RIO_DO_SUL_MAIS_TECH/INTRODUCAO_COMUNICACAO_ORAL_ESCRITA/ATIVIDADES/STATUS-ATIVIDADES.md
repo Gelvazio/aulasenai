@@ -14,7 +14,7 @@ Avaliação Prática e a aula 09 a Avaliação Objetiva (30 questões).
 | Aula | Tema | Objetiva (50) | Questões | Gabarito A/B/C/D | Prática (10) | Banco |
 |---|---|---|---|---|---|---|
 | 01 | Fundamentos da Comunicação no Mundo do Trabalho | ✅ `ATIVIDADES-AULA-01-50-QUESTOES.html` | 50 | 13/13/12/12 | ✅ `ATIVIDADE-PRATICA-AULA-01.html` | ⬜ |
-| 02 | Comunicação Interpessoal e Trabalho em Equipe | ⬜ | — | — | ⬜ | ⬜ |
+| 02 | Comunicação Interpessoal e Trabalho em Equipe | ✅ `ATIVIDADES-AULA-02-50-QUESTOES.html` | 50 | 13/13/12/12 | ✅ `ATIVIDADE-PRATICA-AULA-02.html` | ⬜ |
 | 03 | Falar em Público e Apresentações | ⬜ | — | — | ⬜ | ⬜ |
 | 04 | Reuniões e Atendimento ao Cliente | ⬜ | — | — | ⬜ | ⬜ |
 | 05 | Redação Técnica: Clareza, Estrutura e Norma-Padrão | ⬜ | — | — | ⬜ | ⬜ |

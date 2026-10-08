@@ -105,7 +105,7 @@ curso.
 ### Etapa D — Atividades (uma aula por vez, com `ATIVIDADES/STATUS-ATIVIDADES.md`)
 | Passo | Ação | Status |
 |---|---|---|
-| D.1 a D.9 | Para cada aula: fonte `ATIVIDADES-AULA-NN-50-QUESTOES.md` (fora do Git) → HTML pelo `assets/gerador-atividades`, mais a atividade prática `.md` → `.html` | ⬜ |
+| D.1 a D.9 | Para cada aula: fonte `ATIVIDADES-AULA-NN-50-QUESTOES.md` (fora do Git) → HTML pelo `assets/gerador-atividades`, mais a atividade prática `.md` → `.html` | 🔄 aulas 01 e 02 ✅ (2026-10-08); aulas 08 e 09 sem atividade (decisão do usuário); próximas: 03 a 07 |
 | D.10 | Avaliações (objetiva, prática, média final) pelos geradores de `assets/` | ⬜ |
 | D.11 | `MENU-ATIVIDADES.js` e `ATIVIDADES/index.html` (geradores de menu e índices); card da matéria no `index.html` do curso | ⬜ |
 | D.12 | Aceite do usuário | ⬜ |

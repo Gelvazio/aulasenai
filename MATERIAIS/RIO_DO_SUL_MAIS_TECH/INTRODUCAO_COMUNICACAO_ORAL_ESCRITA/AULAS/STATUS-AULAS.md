@@ -11,7 +11,7 @@ extraídas do `EMENTA-CHALKIE-AI.md` e do `materia.json`. Plano:
 | Aula | Tema | Horas | Aula (fonte) | Atividade 50 questões | Atividade prática | Apostila (capítulo) |
 |---|---|---|---|---|---|---|
 | 01 | Fundamentos da Comunicação no Mundo do Trabalho | 4 | ✅ `CONTEUDO/AULA-01-FUNDAMENTOS-DA-COMUNICACAO-NO-MUNDO-DO-TRABALHO.md` | ✅ | ✅ | ⬜ |
-| 02 | Comunicação Interpessoal e Trabalho em Equipe | 4 | ✅ `CONTEUDO/AULA-02-COMUNICACAO-INTERPESSOAL-E-TRABALHO-EM-EQUIPE.md` | ⬜ | ⬜ | ⬜ |
+| 02 | Comunicação Interpessoal e Trabalho em Equipe | 4 | ✅ `CONTEUDO/AULA-02-COMUNICACAO-INTERPESSOAL-E-TRABALHO-EM-EQUIPE.md` | ✅ | ✅ | ⬜ |
 | 03 | Falar em Público e Apresentações | 4 | ✅ `CONTEUDO/AULA-03-FALAR-EM-PUBLICO-E-APRESENTACOES.md` | ⬜ | ⬜ | ⬜ |
 | 04 | Reuniões e Atendimento ao Cliente | 4 | ✅ `CONTEUDO/AULA-04-REUNIOES-E-ATENDIMENTO-AO-CLIENTE.md` | ⬜ | ⬜ | ⬜ |
 | 05 | Redação Técnica: Clareza, Estrutura e Norma-Padrão | 4 | ✅ `CONTEUDO/AULA-05-REDACAO-TECNICA-CLAREZA-ESTRUTURA-E-NORMA-PADRAO.md` | ⬜ | ⬜ | ⬜ |
