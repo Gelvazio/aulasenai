@@ -25,6 +25,14 @@ Status de todas as sessões: [STATUS-SESSOES.md](STATUS-SESSOES.md).
 
 ---
 
+## Sessão 4 (2026-09-30 a 2026-10-08) — status PENDENTE
+
+- **Ambiente:** local · **Modelo:** Claude Opus 5.5 · **Branch:** `main` (commits `5f154fe`, `8791014`, `6e6515b`, `6a5677c`, `2941d1e`, `d75c993`, `086d11b`, `a0da2e7`, `cb7c641`, `c18c246`, `bb283c7`)
+- **Pedido:** índices de atividades, média final da ITIC, padronização de Testes de Frontend, permissão por matéria, JEV-AI e dashboard do Jev
+- **Arquivo:** [sessao-claude-4.md](sessao-claude-4.md) · **Próximo passo:** aceite 74.5; depois as aulas de Testes de Frontend
+
+---
+
 ## Sessão 2026-10-08 09:00 — status PENDENTE
 
 - **Ambiente:** local · **Modelo:** Claude Opus 5.5 · **Branch:** `main` (commits `c86f7f2`, `dbc2834`, `ef24d6d`, `b7c4b07`) · atualizada em 2026-10-08 10:17
