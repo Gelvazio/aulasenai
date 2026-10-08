@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 71, item 71.2 — aprovação do plano de Comunicação Oral e Escrita (Rio do Sul). Depois: Etapa 70, item 70.3 — perguntar ao usuário sobre o "Próximo passo" em tabela de pendências. Pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Etapa 71, item 71.2 — aprovação do plano de Comunicação Oral e Escrita (Rio do Sul). Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -14,6 +14,8 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 71 | 71.2 | aprovação do plano de Comunicação Oral e Escrita (Rio do Sul) | Aprovação |
+| 70 | 70.5 | CLAUDE.md dividido em núcleo + `docs/regras/`, histórico em `docs/HISTORICO-REGRAS.md` e esta tabela; depois, as correções das contradições do CLAUDE.md, uma de cada vez | Aceite |
 | 67 | 67.4 | conferir a duração dos 29 vídeos da apostila de Reforço de Linguagens | Aceite |
 | 64 | 64.6 | apostila de Reforço de Linguagens | Aceite |
 | 66 | 66.2 | menu da matéria | Aceite |
