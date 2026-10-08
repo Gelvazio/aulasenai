@@ -1039,3 +1039,10 @@ Pedido: deixar só 20 questões e o PDF de cada aluno em no máximo 2 folhas. De
 | 85.1 | Fonte: `Pontos por questão: 0,5`, tópicos (0,5) e pontuação total 10; página e seed regerados | ✅ Concluído | 2026-10-08 10:59 | Gerador: 20 questões, 20 tópicos, 10 pontos; página mostra "0,5 ponto" em cada tópico |
 | 85.2 | Banco id 81: `topico_discursivo.pontos` = 0,5 (backup antes) | ✅ Concluído | 2026-10-08 10:59 | Backup `topico_discursivo_backup_20261008_81_pontos` (20 linhas, RLS); conferido: 20 tópicos de 0,5 = 10 pontos; 0 correções; 40 respostas mantidas |
 | 85.3 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 85 — Regra: atividades sem empresa fictícia, "Você como aluno consultor" (tarefa pequena, 2026-10-08 14:19:41)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 85.1 | Regra nova no `~/.claude/CLAUDE.md` e na cópia `.claude/regras-globais/CLAUDE-GLOBAL.md`; `docs/regras/atividades.md` ajustado (tirava "empresa fictícia"); versão e histórico do `CLAUDE.md` | ✅ Concluído | 2026-10-08 14:21 | `diff` global × cópia sem diferenças; resumo do histórico com 5 linhas |
+| 85.2 | Aceite do usuário | ⬜ Pendente | — | — |

@@ -611,6 +611,21 @@ do `CLAUDE.md` do projeto (ex.: `C:\fontes\aulasenai\CLAUDE.md`).
 
 ---
 
+## 📝 ATIVIDADES — SEM EMPRESA FICTÍCIA: "VOCÊ COMO ALUNO CONSULTOR"
+
+Registrada em 2026-10-08 a pedido do usuário. Vale para **toda atividade** gerada (objetiva,
+prática, discursiva, avaliação, situação-problema, Excel, Word etc.), em qualquer projeto.
+
+- ⛔ **Não criar empresa fictícia** como contexto das atividades (nada de "a empresa X Ltda.",
+  "a Distribuidora Y" etc.).
+- ✅ **Usar sempre o papel "Você como aluno consultor":** o enunciado coloca o aluno como
+  consultor que analisa a situação e resolve o problema (ex.: "Você, como aluno consultor, foi
+  chamado para organizar o controle de estoque de um almoxarifado...").
+- ✅ O contexto profissional do curso continua (almoxarifado, logística, escritório...), mas
+  sem nome de empresa inventada.
+
+---
+
 ## Testes e Validação
 
 ### 🚫 REGRA PERMANENTE — NUNCA ABRIR NAVEGADOR

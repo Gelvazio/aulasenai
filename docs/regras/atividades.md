@@ -298,7 +298,8 @@ Gerador reutilizável: `assets/gerador-atividade-excel/gerar_atividade_excel.py 
   feito (questões, passos, imagens, tempos, pontuação, gabarito) e **aguardar aprovação**.
 - ✅ **Fonte:** o Markdown das aulas indicadas e o `EMENTA-CHALKIE-AI.md` da matéria (a ementa
   vence; nunca extrair de PDF — regra "CONTEÚDO SÓ PELOS MARKDOWNS"). Contexto profissional do
-  curso (ex.: almoxarifado), empresa **fictícia**.
+  curso (ex.: almoxarifado), **sem empresa fictícia**: o aluno atua como
+  **"Você como aluno consultor"** (regra global de 2026-10-08).
 - ✅ **Tempo realista:** somar o tempo de cada questão + abertura + entrega e caber na duração
   pedida (ex.: 3h a 3h30). Tabela de tempos no plano e na capa.
 - ✅ **Arquivos:** uma capa `ATIVIDADE-EXCEL-<data>.html` (contexto, tempos, pontuação, links) e
