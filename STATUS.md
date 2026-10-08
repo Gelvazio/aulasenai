@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 97, item 97.4 — aceite do usuário da quantidade mínima de questões; depois: Aceites do usuário: Etapas 84 e 85 (itens 84.5 e 85.3 — discursiva id 81 com 20 questões de 0,5 ponto, respostas no caderno, PDF em 3 páginas); Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Etapa 105, item 105.1 — decisão do usuário sobre a opção R1 (cadastrar as 19 matérias do ITIC em `materia`) em [docs/somente-ensalado-materias.md](docs/somente-ensalado-materias.md); depois, Etapa 97, item 97.4 — aceite do usuário da quantidade mínima de questões; depois: Aceites do usuário: Etapas 84 e 85 (itens 84.5 e 85.3 — discursiva id 81 com 20 questões de 0,5 ponto, respostas no caderno, PDF em 3 páginas); Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -1370,3 +1370,19 @@ Pedido do usuário: "corrija isso" (pendência da Etapa 102). Plano: seção "Et
 |------|-----------|--------|--------------|-------------|
 | 104.1 | `js/menu.js`: `MENU_ATIVIDADES_LIGADO = false` (a barra com o nome da matéria e "Equipes" some das 81 páginas que carregam o script); seletor do menu tirado do CSS da discursiva; regra em `docs/regras/assets-e-geradores.md` e versão do `CLAUDE.md` | ✅ Concluído | 2026-10-08 20:33:13 | `node --check`; `grep`: 81 páginas com `js/menu.js` |
 | 104.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 105 — Botões SOMENTE ENSALADO e VER TODAS MATÉRIAS na faixa de matérias (pedido em 2026-10-08 23:42:02)
+
+Plano: [docs/somente-ensalado-materias.md](docs/somente-ensalado-materias.md) · Regra: `CLAUDE.md` global (seção "Faixa de matérias").
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 105.1 | Decisão do usuário: R1 (cadastrar as 19 matérias do ITIC em `materia`) e confirmar que ENSALADO = `materia.ensalado` | ⬜ Pendente | — | — |
+| 105.2 | Ler `docs/ORIENTACAO_JS_SUPABASE.md` e `docs/ORIENTACAO_USUARIO.md` | ⬜ Pendente | — | — |
+| 105.3 | `assets/js/faixa-materias-ensalado.js` (filtro + ON/OFF) | ⬜ Pendente | — | — |
+| 105.4 | `index.html` da ITIC: botões, `data-materia`, ON/OFF só PROFESSOR | ⬜ Pendente | — | — |
+| 105.5 | Estilo dos botões em `assets/css/indice-atividades.css` | ⬜ Pendente | — | — |
+| 105.6 | Banco: cadastrar/conferir as matérias (conforme 105.1) | ⬜ Pendente | — | — |
+| 105.7 | Regra salva no `CLAUDE.md` global | ✅ Concluído | 2026-10-08 23:42 | Leitura da seção "Faixa de matérias" |
+| 105.8 | Commit local (sem push) | ⬜ Pendente | — | — |
+| 105.9 | Aceite do usuário (testar na tela) | ⬜ Pendente | — | — |
