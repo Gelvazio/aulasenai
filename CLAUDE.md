@@ -1,20 +1,23 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-08 10:00
+**Versão das regras:** 2026-10-08 11:00
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 11:00 | Branches das sessões juntadas na `main` (pull request): regra do push por branch + PR, apostila de ITIC concluída e apostila de Exploração de Carreiras (9 capítulos, conferência 157/157); vídeos sem duração unificados no formato `a conferir` (o `??:??` da branch de Exploração deixou de existir) e dados da matéria no formato do gerador da `main` (`textos_ementa`, `rubrica_lista`) |
 | 2026-10-08 10:00 | `TASKS.md` só com tarefas pendentes; concluídas e canceladas movidas para o novo `TASKS_COMPLETE.md` (lido só quando precisar do histórico) |
 | 2026-10-08 09:30 | Merge com a `main`: apostila e 9 atividades de 50 questões de Fundamentos da Tecnologia e Programação (33 h = 8 × 4 h + 1 h, aulas nº 6 a 14 no banco com cards "AULA 01" a "AULA 09"); conferência com a ementa lê também o **formato por módulos** do Rio do Sul Mais Tech (indicador na tabela de capacidades, BNCC em tabela, prompts `**M1:**`, glossário em lista, marcos, recursos em lista, exemplos e orientações) só quando o formato padrão não existe; vídeos pendentes da apostila na tarefa #12 do `TASKS.md` |
 | 2026-10-08 09:00 | Push na **nuvem** passa a ser sempre numa **branch própria + novo pull request** para a `main` (nunca push direto na `main`), para não sobrescrever nada; **local** continua sem push |
+| 2026-10-08 08:00 | Apostilas: vídeo sem duração conferida é aceito a pedido do usuário (hoje no formato `a conferir`); conferir depois (Exploração de Carreiras: tarefa #14 do `TASKS.md`) |
 | 2026-10-07 20:50 | Identificação da apostila obrigatória em **todas** as apostilas: `autor_apostila` (padrão Gelvazio Camargo) e `versao_apostila` (começa em 1.0) preenchidos no `materia.json` antes da 1ª geração; aplicada também em Reforço de Linguagens |
 | 2026-10-07 20:50 | Apostilas: vídeo com duração `a conferir` (link real, duração não conferida por bloqueio de rede) aceito pelo gerador, com aviso; 29 vídeos na apostila de Reforço de Linguagens |
 | 2026-10-07 20:40 | Reforço de Linguagens ganha menu de atividades (`MENU-ATIVIDADES.js` com 📚 Índice, 📘 Apostila e as atividades por aula) |
 | 2026-10-07 20:30 | Regra do push dividida por ambiente: **local** = nunca fazer push (continua); **nuvem** (Claude Code na web/remoto) = sempre fazer push, direto na `main`, sem pull request |
 | 2026-10-07 20:20 | Apostila de Reforço de Linguagens (10 capítulos, aguardando validação); gerador de apostilas aceita a carga horária de cada aula (6 h/7 h), ementas com capacidades em lista, conteúdos programáticos por módulo e aulas em negrito, e vídeos "⏳ pendentes" quando o YouTube não pode ser conferido; ementa de Reforço de Linguagens com as 6 capacidades da ementa do curso |
 | 2026-10-07 20:15 | Regra "IDENTIFICAÇÃO DA APOSTILA" (global): toda apostila mostra autor, versão, data e hora (campos `autor_apostila` e `versao_apostila` no `materia.json`); começou pela ITIC (autor Gelvazio Camargo, versão 1.0) |
+| 2026-10-07 17:30 | Conferência da apostila aceita também ementas no formato Rio do Sul Mais Tech (capacidades em lista numerada, módulos de conteúdo, aulas em negrito, indicadores e casos em lista) |
 | 2026-10-07 17:00 | Combo "Aluno" do professor também nas atividades objetivas (alternativas marcadas pelo aluno, somente leitura); módulo único `respostas-aluno-professor.js` |
 | 2026-10-07 17:00 | Status da regra das apostilas atualizado: ITIC com os 10 capítulos, HTML e PDF prontos, aguardando validação do professor |
 | 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
@@ -2686,8 +2689,11 @@ faltava. Vale para **todas as matérias**.
 1. **Abertura** com as capacidades do capítulo (`- **Capacidade:** C1, S1`);
 2. **Teoria + exemplos**;
 3. **Vídeos do YouTube de no máximo 15 minutos** (`- [título](url) — mm:ss — canal`): miniatura +
-   título + duração + canal + link (funciona na tela e no papel). O gerador **recusa** vídeo sem
-   duração ou com mais de 15:00. A duração é conferida nos metadados do YouTube (`curl`, sem
+   título + duração + canal + link (funciona na tela e no papel). O gerador **recusa** vídeo com
+   mais de 15:00. **Exceção (2026-10-08, pedido do usuário):** quando a duração não pôde ser
+   conferida (ex.: sessão em nuvem sem acesso ao YouTube), escrever `a conferir` no lugar de
+   `mm:ss` (ver "Vídeo com duração 'a conferir'") e registrar uma tarefa no `TASKS.md` para
+   conferir depois. O canal é opcional. A duração é conferida nos metadados do YouTube (`curl`, sem
    navegador) e o professor confere o conteúdo;
 4. **Resumo**;
 5. **No mínimo 5 exercícios (questões) por capítulo** (mais é permitido), no padrão ITEM

@@ -106,4 +106,24 @@ conferida nos metadados (regra "REGRAS APOSTILAS": nada de duração inventada; 
 
 ---
 
-**Última atualização:** 2026-10-08 (tarefas concluídas e canceladas movidas para `TASKS_COMPLETE.md`)
+### #14: Conferir localmente a duração dos vídeos da apostila de Exploração de Carreiras
+
+**Status:** ⏳ PENDENTE (fazer na máquina local, com acesso ao YouTube)  
+**Prioridade:** 🟡 Média  
+**Adicionada em:** 2026-10-08 _(registrada na branch de origem como #11)_
+
+A apostila `MATERIAIS/RIO_DO_SUL_MAIS_TECH/EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS/APOSTILA/` (9 capítulos) tem **28 vídeos com a duração `a conferir`**: a sessão em
+nuvem não acessa o YouTube e o usuário pediu para seguir e conferir depois, localmente.
+
+- [ ] Conferir cada vídeo da lista `MATERIAIS/RIO_DO_SUL_MAIS_TECH/EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS/APOSTILA/RASCUNHOS/VIDEOS-A-CONFERIR.md` pelos metadados
+      (`curl` na página do vídeo: `lengthSeconds`, `ownerChannelName`), sem navegador.
+- [ ] Nos `APOSTILA/CONTEUDO/CAPITULO-NN.md`, trocar `a conferir` pela duração (`mm:ss`) e
+      acrescentar ` — <canal>` no fim da linha.
+- [ ] Apagar os vídeos com mais de 15:00 ou fora do tema (cada capítulo precisa de ao menos 1).
+- [ ] Aumentar `versao_apostila` no `materia.json` (1.0 → 1.1), rodar `gerar_apostila.py <pasta>
+      --markdown --forcar` e depois o HTML (conferência 100%).
+- [ ] Atualizar `APOSTILA/STATUS-APOSTILA.md`.
+
+---
+
+**Última atualização:** 2026-10-08 (branches das sessões juntadas; tarefa #14 adicionada)
