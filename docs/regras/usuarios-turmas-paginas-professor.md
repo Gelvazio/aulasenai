@@ -186,7 +186,9 @@ SQL: `database/2026-10-05-equipes-turma-materia.sql` (✅ aplicado no Supabase e
   administrador em todas). O aluno só **vê** a própria equipe (função `minhas_equipes`). Nada em
   localStorage; avisos pelo popup.
 - ✅ **Código:** `assets/js/menu-acao-equipes.js` (carrega as dependências e abre),
-  `assets/js/equipes-modal.js` (tela), `assets/js/equipes-repositorio.js` (dados) +
+  `assets/js/equipes-modal.js` (tela), `assets/js/equipes-repositorio.js` (dados),
+  `assets/js/equipes-exportar-pdf.js` (botão **📄 Exportar Equipes**, 2026-10-08: folha com as
+  equipes da turma, integrantes, líder, papel e alunos sem equipe → impressão "Salvar como PDF") +
   `assets/css/equipes-modal.css`. O `js/menu.js` aceita itens de **ação**: `{ rotulo, acao }`
   carrega `assets/js/menu-acao-<acao>.js`, que registra `window.ACOES_MENU_ATIVIDADES[acao]`.
 - ✅ **Matérias com o menu:** Introdução à TIC (2026-10-05) e Análise de Dados Aplicada à Gestão

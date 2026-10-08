@@ -171,7 +171,8 @@ function montarModalEquipes(papeis) {
   cabecalho.append(titulo, criarBotaoEquipes({ texto: '✕ Fechar', acao: 'fechar' }));
   const turma = criarControleEquipes('select', 'turma');
   const barra = criarElementoEquipes('div', 'equipes-barra');
-  barra.append(criarCampoEquipes('Turma', turma));
+  barra.append(criarCampoEquipes('Turma', turma),
+    criarBotaoEquipes({ texto: '📄 Exportar Equipes', acao: 'exportar-equipes' }));
   const elementos = {
     fundo, titulo, turma, barra,
     mensagem: criarElementoEquipes('p', 'equipes-mensagem'),
@@ -648,6 +649,7 @@ const ACOES_CLIQUE_EQUIPES = {
   'excluir-equipe': excluirEquipe,
   'editar-membro': editarMembro,
   'excluir-membro': excluirMembro,
+  'exportar-equipes': () => exportarEquipesPdf(),
 };
 
 /**

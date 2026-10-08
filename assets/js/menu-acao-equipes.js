@@ -20,6 +20,10 @@ const DEPENDENCIAS_EQUIPES = [
     estaCarregada: () => typeof criarRepositorioEquipes === 'function',
     endereco: 'equipes-repositorio.js',
   },
+  {
+    estaCarregada: () => typeof exportarEquipesPdf === 'function',
+    endereco: 'equipes-exportar-pdf.js',
+  },
   { estaCarregada: () => typeof abrirModalEquipes === 'function', endereco: 'equipes-modal.js' },
 ];
 

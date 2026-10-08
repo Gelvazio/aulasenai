@@ -46,7 +46,7 @@
 .equipes-caixa h2 { margin: 0; color: var(--equipes-azul); font-size: 20px; }
 .equipes-caixa h3 { margin: 0 0 8px; color: var(--equipes-azul); font-size: 16px; }
 
-.equipes-barra { margin-top: 12px; max-width: 420px; }
+.equipes-barra { margin-top: 12px; max-width: 560px; display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; }
 .equipes-mensagem {
   margin: 12px 0 0;
   padding: 10px 12px;
@@ -151,4 +151,19 @@
 
 @media print {
   .equipes-fundo { display: none; }
+}
+
+/* Exportação em PDF (equipes-exportar-pdf.js): a folha só aparece durante a impressão */
+.equipes-exportacao { display: none; }
+.equipes-exportacao__tabela { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 8px; }
+.equipes-exportacao__tabela th,
+.equipes-exportacao__tabela td { border: 1px solid #999; padding: 4px 6px; text-align: left; }
+.equipes-exportacao__tabela th { background: #e8eef7; }
+
+@media print {
+  body.equipes-exportando > *:not(.equipes-exportacao) { display: none !important; }
+  body.equipes-exportando > .equipes-exportacao { display: block; }
+  .equipes-exportacao h1 { font-size: 18px; margin: 0 0 4px; }
+  .equipes-exportacao h2 { font-size: 15px; margin: 12px 0 4px; }
+  .equipes-exportacao__equipe { break-inside: avoid; }
 }

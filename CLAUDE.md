@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 17:11:10
+**Versão das regras:** 2026-10-08 17:12:16
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 17:12:16 | Equipes: botão **📄 Exportar Equipes** no modal (PDF pela impressão, com integrantes, líder, papel e alunos sem equipe) — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 17:11:10 | Menu **👥 Equipes** também em **Análise de Dados Aplicada à Gestão** (duplas da prova prática; a prova continua individual por login) — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 13:49:59 | Discursivas: **bloqueio de colar** (campo opcional `Bloquear colar: sim` → `assets/js/bloqueio-colar-discursiva.js` cancela colar, arrastar, copiar e recortar nos campos; `docs/regras/atividades.md`); 1º uso: Prova Prática ADAG (id 82); ligar nas outras discursivas fica para depois (pendência no `STATUS.md`) |
 | 2026-10-08 14:19:41 | Atividades **sem empresa fictícia**: o aluno atua como **"Você como aluno consultor"** — regra nova no `CLAUDE.md` global (e na cópia `.claude/regras-globais/CLAUDE-GLOBAL.md`); `docs/regras/atividades.md` (padrão das atividades de Excel) ajustado |
 | 2026-10-08 10:48:09 | Discursivas: campos opcionais `PDF compacto`, `PDF sem respostas` (aluno responde no caderno) e `Máximo de caracteres` no gerador e no exportador de PDF (`docs/regras/atividades.md`); 1º uso: discursiva de sexta da ITIC (id 81), 20 questões, PDF em 3 páginas |
-| 2026-10-08 09:42:37 | Apostila da **ITIC**: **V1 removida** a pedido do usuário; a antiga V2 (versão 2.1, 28 páginas, sem vídeos e exercícios) é a apostila única, no nome padrão; gerador aceita `apostila_sem_videos_e_exercicios` e `referencias_complementares` no topo do `materia.json` (sem edição); `docs/regras/apostilas.md` e a tabela da matéria modelo atualizadas |
 
 ---
 
