@@ -9,9 +9,11 @@
 Registrada em 2026-10-03 a pedido do usuário (padrões definidos na validação do piloto). Plano:
 `docs/gerador-apostilas.md`. **Reforço de Linguagens (2026-10-07):** introdução + 10 capítulos gerados, conferência 100%
 (138/138), aguardando validação; vídeos pendentes (`REFORCO_LINGUAGENS/APOSTILA/STATUS-APOSTILA.md`).
-**Status (2026-10-07):** ✅ piloto **Introdução à TIC (ITIC)** com os
-**10 capítulos** escritos, Markdown completo (conferência 100%), HTML e PDF (84 páginas) gerados;
-👀 aguardando a validação dos capítulos e a conferência dos vídeos pelo professor. Nas próximas
+**Status (2026-10-08):** a **Introdução à TIC (ITIC)** foi o piloto (V1, 84 páginas, com vídeos e
+exercícios); a pedido do usuário, a **V1 foi removida** e a apostila única da ITIC passou a ser a
+antiga V2 (versão 2.1, 28 páginas, **sem vídeos e exercícios**), no nome padrão
+(`APOSTILA/CONTEUDO/`, `APOSTILA-INTRODUCAO-TIC.md/.html`). O formato completo, com vídeos e
+exercícios, segue nas outras matérias (ex.: Reforço de Linguagens) e no histórico do Git. Nas próximas
 matérias, continua **um capítulo por vez, perguntando a cada capítulo** (rascunhos em
 `APOSTILA/RASCUNHOS/`, fora da apostila).
 
@@ -400,6 +402,14 @@ Registrada em 2026-10-08 a pedido do usuário (1ª edição: ITIC V2 com até 40
   obrigatórios (mínimo de 5 exercícios). Mesmo reduzida, a edição trata **todos os conteúdos
   oficiais** de cada aula e mantém os termos oficiais do glossário com a definição da ementa.
 - ✅ Código: `assets/gerador-apostilas/edicao_apostila.py`.
+- ✅ **Referências complementares (2026-10-08):** `"referencias_complementares": [...]` (na edição
+  ou no topo do `materia.json`) acrescenta à seção Referências a subseção "Referências
+  complementares (citadas nos capítulos)" — normas e leis citadas nos capítulos que não estão na
+  ementa (a lista oficial da ementa continua literal).
+- ✅ **Apostila única sem vídeos e exercícios (2026-10-08):** sem edição, as mesmas opções vêm do
+  topo do `materia.json`: `"apostila_sem_videos_e_exercicios": true` e
+  `"referencias_complementares"`. É o caso da ITIC depois da remoção da V1 (plano
+  `docs/remover-apostila-itic-v1.md`).
 
 ### Controle e limites
 

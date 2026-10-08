@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 08:51:27
+**Versão das regras:** 2026-10-08 09:42:37
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 09:42:37 | Apostila da **ITIC**: **V1 removida** a pedido do usuário; a antiga V2 (versão 2.1, 28 páginas, sem vídeos e exercícios) é a apostila única, no nome padrão; gerador aceita `apostila_sem_videos_e_exercicios` e `referencias_complementares` no topo do `materia.json` (sem edição); `docs/regras/apostilas.md` e a tabela da matéria modelo atualizadas |
 | 2026-10-08 08:51:27 | Apostilas: **PDF com paginação "Página N de T"** (exportação parcial numera só as folhas exportadas) e **sem a faixa azul da esquerda** na impressão (todas as apostilas; também no `CLAUDE.md` global); **edições da apostila** (`--edicao=V2`, fontes em `CONTEUDO-V2/`, `edicoes_apostila` no `materia.json`, opção `sem_videos_e_exercicios`) — 1ª: ITIC V2 reduzida (28 páginas, sem vídeos e exercícios) |
 | 2026-10-08 08:33:47 | Merge com a `main` (PR #8): mantida a estrutura núcleo + `docs/regras/` e o `STATUS.md` como fonte única; trazidas da `main` a versão das regras **com segundos**, o registro de todo pedido com data e hora em segundos + "📜 HISTÓRICO POR COMMIT" no `TASKS_COMPLETE.md`, a exceção do navegador headless para gerar arquivo pedido, os avisos em poucas linhas antes da frase final, capacidades da UC (não "10+") na ementa, nota de que a descrição do `index.html` é antiga, as duas pastas `CONTEUDO` do Reforço de Linguagens e a apostila pela soma das horas e a partir do Markdown completo |
 | 2026-10-08 08:20 | Trazidas do `CLAUDE.md` global (aprovadas item por item): nunca escrever testes; `docs/regras/codigo.md` (SOLID e regras de código); gestão de projetos + modelo do `STATUS.md` na seção de status; `docs/regras/infograficos.md`; Git sem perguntar, sem `git status` repetido e sem worktree; comando do graphify no início de cada conversa; fluxo da documentação padrão |
 | 2026-10-08 08:18 | Sessão na **nuvem**: ler e aplicar as regras globais de `.claude/regras-globais/` (`CLAUDE-GLOBAL.md` e `CLAUDE-DOCS-BEFORE-EVERY-TASK.md`), porque lá o `~/.claude/CLAUDE.md` da máquina do usuário não existe; o `CLAUDE.md` do projeto continua com precedência |
-| 2026-10-08 08:17 | Nova regra "REGRAS E SKILLS GLOBAIS NO PROJETO": skills do usuário em `.claude/skills/` e cópia de referência (não carregada) das regras globais em `.claude/regras-globais/`, sincronizadas sempre que o original mudar |
 
 ---
 
@@ -291,7 +291,7 @@ Registrada em 2026-10-03 a pedido do usuário.
 | Avaliações e média final | `ATIVIDADES/AVALIACAO-OBJETIVA-NN.html`, `AVALIACAO-PRATICA.html`, `AVALIACAO-MEDIA-FINAL.html` (+ `media-final.json`) |
 | Menu e índice das atividades | `ATIVIDADES/MENU-ATIVIDADES.js`, `ATIVIDADES/index.html` |
 | Controles | `AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` |
-| Apostila | `APOSTILA/` (`CONTEUDO/INTRODUCAO.md`, `CONTEUDO/CAPITULO-NN.md`, Markdown completo e HTML) |
+| Apostila | `APOSTILA/` (`CONTEUDO/INTRODUCAO.md`, `CONTEUDO/CAPITULO-NN.md`, Markdown completo e HTML) — apostila única, versão 2.1, sem vídeos e exercícios (V1 removida em 2026-10-08) |
 | Banco de questões do AVA | `ATIVIDADES/BANCO-AVA/` (fora do Git) |
 
 - ✅ A ITIC é modelo de **estrutura e funcionamento**; o conteúdo de cada matéria vem da ementa

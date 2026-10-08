@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 83 — remover a apostila V1 da ITIC (plano aguardando aprovação); Etapa 82, item 82.4 — aplicar o seed da discursiva de sexta no banco se o usuário pedir; depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Aceites do usuário: Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); Etapa 82, item 82.4 — aplicar o seed da discursiva de sexta no banco se o usuário pedir; depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -22,7 +22,7 @@ A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale 
 | #11 | Conferir a duração dos vídeos da apostila de Reforço de Linguagens | ⬜ Pendente (local) | Fazer na máquina local, com YouTube |
 | #12 | Conferir a duração dos vídeos da apostila de Fundamentos da Tecnologia | ⬜ Pendente (local) | Fazer na máquina local, com YouTube |
 | #14 | Conferir a duração dos vídeos da apostila de Exploração de Carreiras | ⬜ Pendente (local) | Fazer na máquina local, com YouTube |
-| #15 | Apostila de ITIC versão 2 (até 40 páginas, sem vídeos e exercícios) | 👀 Aguardando validação | Aceite do usuário (Etapa 79, item 79.8) |
+| #15 | Apostila de ITIC versão 2 (até 40 páginas, sem vídeos e exercícios) — agora a apostila única (V1 removida) | 👀 Aguardando validação | Aceite do usuário (Etapas 79, 81 e 83) |
 
 ## ⏳ Aguardando o usuário (aceites, aprovações e ações dele)
 
@@ -30,6 +30,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 82 e 83 | 82.4, 82.5 e 83.7 | aceite da remoção da V1 (apostila única 2.1), da discursiva id 81 e das 13 questões novas da objetiva id 85; decidir se aplica no banco o seed da discursiva id 81 (2 alunos já têm respostas nos itens 01–20) | Aceite / decisão |
 | 79 e 81 | 79.8 e 81.5 | validar a apostila ITIC V2 versão 2.1 (28 páginas, sem vídeos e exercícios; S2, S3, normas declaradas e referências complementares) e a paginação/faixa do PDF | Aceite |
 | 71 | 71.3 (C) | revisar as 9 aulas de Comunicação Oral e Escrita (Rio do Sul) em `CONTEUDO/` | Aceite |
 | 72 | 72.8 | 7 contradições do CLAUDE.md corrigidas (uma por commit) | Aceite |
@@ -993,3 +994,17 @@ Pedido (opção B): a prova `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICA
 | 82.3 | Página HTML e seed regerados (`gerar_avaliacao_discursiva.py`; seed fora do Git) | ✅ Concluído | 2026-10-08 09:35 | 30 questões, 30 tópicos, 30 pontos; HTML sem padrão de resposta; seed `database/2026-10-08-atividade-individual-comunicacao-tecnica-discursiva-seed-atividades.sql` |
 | 82.4 | Banco (id 81, `topico_discursivo`): aplicar o seed só se o usuário pedir | ⬜ Aguardando o usuário | — | Pedir ao usuário (2 alunos já têm respostas nos itens 01–20 da id 81) |
 | 82.5 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 83 — Remover a apostila V1 da ITIC (tarefa grande, pedida em 2026-10-08 09:36)
+
+Plano: [docs/remover-apostila-itic-v1.md](docs/remover-apostila-itic-v1.md).
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 83.1 | Plano criado; aprovação do usuário e decisões D1 (nome da V2) e D2 (objetiva id 85) | ✅ Concluído | 2026-10-08 09:37 | Usuário aprovou; D1 = V2 vira a principal; D2 = conferir a id 85 com a V2 |
+| 83.2 | Apagar os arquivos da V1 | ✅ Concluído | 2026-10-08 09:38 | `git rm` de 13 arquivos; PDF (14 MB) e pastas vazias apagados do disco |
+| 83.3 | Aplicar a D1 e gerar a apostila de novo (conferência 100%) | ✅ Concluído | 2026-10-08 09:39 | `CONTEUDO-V2/` → `CONTEUDO/` e arquivos sem "-V2" (`git mv`); `materia.json` versão 2.1 com `apostila_sem_videos_e_exercicios` e `referencias_complementares` (sem `edicoes_apostila`); gerador lê essas opções sem edição; conferência 277/277; PDF 28 páginas "Página N de 28" |
+| 83.4 | Menu, fonte da id 85 e `STATUS-APOSTILA.md` sem link para a V1 | ✅ Concluído | 2026-10-08 09:42 | Menu já aponta para `APOSTILA-INTRODUCAO-TIC.html` (nome padrão); conteúdo-base da discursiva id 81 corrigido (página sem mudança); id 85 já aponta para o nome padrão; `STATUS-APOSTILA.md` reescrito com histórico |
+| 83.5 | Aplicar a D2 (se aprovada) | ✅ Concluído | 2026-10-08 09:42 | 100 questões conferidas com a V2: 87 com resposta; 13 reescritas (12, 14, 26, 36, 41, 52, 54, 65, 71, 86, 92, 95, 99) com a MESMA letra do gabarito (banco id 85 sem mudança); página regerada sem gabarito |
+| 83.6 | Regras (`docs/regras/apostilas.md`, `CLAUDE.md`, histórico) | ✅ Concluído | 2026-10-08 09:43 | Versão das regras 2026-10-08 09:42:37 (resumo e histórico completo); visualizador lê o mesmo formato |
+| 83.7 | Aceite do usuário | 👀 Aguardando validação | — | — |

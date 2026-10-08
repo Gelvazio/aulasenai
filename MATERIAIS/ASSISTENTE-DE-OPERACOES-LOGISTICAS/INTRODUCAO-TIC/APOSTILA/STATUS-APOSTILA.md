@@ -1,41 +1,31 @@
 # 📘 STATUS DA APOSTILA — INTRODUCAO-TIC
 
-> Regra "REGRAS APOSTILAS" do `CLAUDE.md` da raiz: um capítulo por vez, completo, validado pelo
-> usuário antes do próximo. Legenda: `⬜ Pendente` · `🔄 Em progresso` · `✅ Concluído` ·
+> Regra "REGRAS APOSTILAS" (`docs/regras/apostilas.md`). Estado geral no `STATUS.md` da raiz
+> (Etapas 79, 81 e 83). Legenda: `⬜ Pendente` · `🔄 Em progresso` · `✅ Concluído` ·
 > `👀 Aguardando validação`.
 
-**Apostila:** `APOSTILA-INTRODUCAO-TIC.html` · **Gerador:** `assets/gerador-apostilas/gerar_apostila.py`
+**Apostila (única):** `APOSTILA-INTRODUCAO-TIC.md` → `APOSTILA-INTRODUCAO-TIC.html` (+ PDF, fora do
+Git) · **Fontes:** `CONTEUDO/INTRODUCAO.md` e `CONTEUDO/CAPITULO-01.md` a `CAPITULO-10.md` ·
+**Gerador:** `assets/gerador-apostilas/gerar_apostila.py` (sem `--edicao`).
 
-| Parte inicial | Status |
-|---|---|
-| Capa, sumário, introdução, capacidades (C1–C5, S1–S4), glossário | 👀 Aguardando validação |
-| Markdown completo `APOSTILA-INTRODUCAO-TIC.md` (capítulos 01 a 10) | 👀 Aguardando validação |
-| Conferência Markdown × ementa da matéria (`--conferir`) | ✅ 100% (201/201 itens) em 2026-10-03 |
-| HTML gerado a partir do Markdown completo | ✅ Gerado em 2026-10-07 (igual ao anterior) |
-| Autor, versão, data e hora (capa, rodapé e Markdown) | ✅ Gelvazio Camargo · versão 1.0 · 07/10/2026 às 20:12 |
-
-| Cap. | Tema | Teoria | Vídeos (≤ 15 min) | Resumo | Exercícios ITEM | Glossário | Vídeos conferidos pelo professor | Status |
-|---|---|---|---|---|---|---|---|---|
-| 01 | Comunicação Profissional e Seus Fundamentos | ✅ | ✅ 3 | ✅ | ✅ 6 | ✅ 9 | ⬜ | 👀 Aguardando validação |
-| 02 | Hardware, Periféricos e Sistemas Operacionais | ✅ | ✅ 3 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
-| 03 | Navegação na Web e Pesquisa Acadêmica | ✅ | ✅ 4 | ✅ | ✅ 5 | ✅ 10 | ⬜ | 👀 Aguardando validação |
-| 04 | Comunicação Digital e Colaboração em Nuvem | ✅ | ✅ 4 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
-| 05 | Segurança da Informação e Proteção de Dados | ✅ | ✅ 4 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
-| 06 | Editor de Textos: Formatação e Estruturação | ✅ | ✅ 4 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
-| 07 | Textos Técnicos e Redação Empresarial | ✅ | ✅ 4 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
-| 08 | Editor de Planilhas: Organização e Fórmulas | ✅ | ✅ 4 | ✅ | ✅ 7 | ✅ 10 | ⬜ | 👀 Aguardando validação |
-| 09 | Planilhas: Análise Visual e Gráficos | ✅ | ✅ 4 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
-| 10 | Editor de Apresentações e TIC + Avaliação | ✅ | ✅ 4 | ✅ | ✅ 6 | ✅ 10 | ⬜ | 👀 Aguardando validação |
-
-## Edição V2 — reduzida (até 40 páginas) · plano `docs/apostila-itic-v2-40-paginas.md`
-
-Fontes em `CONTEUDO-V2/`; Markdown `APOSTILA-INTRODUCAO-TIC-V2.md`; HTML
-`APOSTILA-INTRODUCAO-TIC-V2.html`; versão **2.1** (2.0 → 2.1 em 2026-10-08 09:05: S2 no cap. 01, S3 no cap. 04, NBR 10520 e NBR 14724 declaradas, referências complementares). **Sem vídeos e sem exercícios** (pedido do
-usuário: ele fará à parte). A V1 não mudou.
+**Versão 2.1** — 28 páginas, **sem vídeos e sem exercícios** (o professor faz à parte;
+`apostila_sem_videos_e_exercicios` no `materia.json`) e com as referências complementares
+(`referencias_complementares` no `materia.json`).
 
 | Parte | Status |
 |---|---|
-| Introdução + capítulos 01 a 10 (teoria, resumo, glossário) | 👀 Aguardando validação (2026-10-08 08:52) |
-| Conferência Markdown V2 × ementa | ✅ 100% (277/277) em 2026-10-08 09:05 (versão 2.1) |
-| HTML V2 gerado | ✅ 2026-10-08 09:05 (versão 2.1) |
-| Páginas do PDF (headless) | ✅ 28 páginas (versão 2.1, 2026-10-08 09:05) (limite 40), "Página N de T" e sem a faixa azul |
+| Introdução + capítulos 01 a 10 (teoria, resumo, glossário) | 👀 Aguardando validação |
+| Conferência Markdown × ementa (`--conferir`) | ✅ 100% (277/277) em 2026-10-08 09:38 |
+| HTML gerado a partir do Markdown completo | ✅ 2026-10-08 09:38 (versão 2.1) |
+| PDF (headless) | ✅ 28 páginas, "Página N de 28" e sem a faixa azul (2026-10-08 09:39) |
+
+## Histórico
+
+- **2026-10-03 a 2026-10-07 — V1** (versão 1.0, 84 páginas, com vídeos e exercícios).
+- **2026-10-08 08:52 — V2** (versão 2.0, reduzida, 28 páginas) em `CONTEUDO-V2/`
+  (plano `docs/apostila-itic-v2-40-paginas.md`).
+- **2026-10-08 09:05 — V2 versão 2.1:** S2 no cap. 01, S3 no cap. 04, NBR 10520 e NBR 14724
+  declaradas, referências complementares.
+- **2026-10-08 09:38 — V1 removida a pedido do usuário** (plano `docs/remover-apostila-itic-v1.md`);
+  a V2 passou a ser a apostila única, com o nome padrão. Os capítulos da V1 (com vídeos e
+  exercícios) ficam só no histórico do Git (commit anterior à remoção).

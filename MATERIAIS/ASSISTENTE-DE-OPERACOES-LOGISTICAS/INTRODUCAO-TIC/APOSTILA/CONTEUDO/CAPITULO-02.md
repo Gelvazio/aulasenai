@@ -5,203 +5,77 @@
 
 ## Teoria
 
-### O computador como canal de trabalho
-
-No capítulo anterior, vimos que o **canal** é o meio por onde a mensagem passa. No armazém da
-**Distribuidora Vale Norte**, boa parte das mensagens passa pelo computador: lançamento de notas,
-etiquetas, inventário e e-mails para transportadoras. Se o equipamento falha, surge **ruído técnico**
-— e a operação para.
-
-> 🎯 **Objetivos do capítulo:** diferenciar **hardware, software e periféricos**, entender o papel
-> do **sistema operacional** e organizar **pastas e arquivos** com segurança.
-
 ### Hardware e software
+
+No armazém da **Distribuidora Vale Norte**, notas, etiquetas, inventário e e-mails passam pelo
+computador. Se o equipamento falha, surge **ruído técnico** e a operação para.
 
 | | Hardware (o corpo) | Software (a mente) |
 |---|---|---|
 | O que é | Partes físicas: peças, cabos, circuitos | Programas e instruções |
-| Exemplos | Processador, memória, disco, monitor | Sistema operacional, navegador, planilha, sistema de estoque |
-| Sem o outro | Fica parado, sem utilidade | Não tem onde ser executado |
+| Exemplos | Processador, memória, disco, monitor | Sistema operacional, navegador, planilha |
 
-Desde 1945, os computadores seguem a ideia de **John von Neumann**: os programas e os dados ficam
-na **mesma memória**, e o processador busca, entende e executa as instruções uma a uma.
+### Componentes e processadores
 
-### Os principais componentes
+- **Processador (CPU):** o "cérebro"; faz os cálculos e coordena as instruções.
+- **Memória RAM:** guarda o que está **em uso agora**; é rápida, mas **volátil** (perde tudo ao
+  desligar).
+- **Placa-mãe:** liga todas as peças.
+- **Armazenamento:** guarda os arquivos de forma **permanente** — **HDD** (discos magnéticos, mais
+  barato) ou **SSD** (eletrônico, até 10 vezes mais rápido e resistente a impacto).
 
-- **Processador (CPU):** o "cérebro". Faz os cálculos (ULA) e coordena as instruções (UC). Executa
-  bilhões de operações por segundo.
-- **Memória RAM:** guarda o que está **em uso agora**. É rápida, mas **volátil**: ao desligar, perde
-  tudo. Pouca RAM deixa o computador lento quando muitos programas estão abertos.
-- **Placa-mãe:** liga todas as peças. Tem o soquete do processador, os slots de expansão e o
-  chipset, que controla o tráfego de dados.
-- **Armazenamento:** guarda os arquivos de forma **permanente**.
+⚠️ Quem guarda o arquivo depois de desligar é o HDD ou o SSD, não a RAM: salve antes de desligar.
 
-| | HDD (disco rígido) | SSD (unidade sólida) |
-|---|---|---|
-| Tecnologia | Discos magnéticos que giram | Memória eletrônica (Flash), sem peças móveis |
-| Velocidade | Menor | Até 10 vezes maior |
-| Resistência a impacto | Baixa | Alta |
-| Custo por TB | Menor | Maior |
+### Periféricos e sua utilização
 
-⚠️ **Atenção:** a RAM **não** guarda arquivos depois que o computador é desligado. Quem guarda é o
-HDD ou o SSD. Por isso, salve o trabalho antes de desligar.
-
-### Periféricos
-
-Periféricos são os equipamentos que se ligam ao computador para **entrada** ou **saída** de dados.
-
-| Tipo | Função | Exemplos no armazém |
-|---|---|---|
-| **Entrada** | Enviam dados ao computador | Teclado, mouse, **leitor de código de barras**, scanner |
-| **Saída** | Mostram ou entregam o resultado | Monitor, **impressora de etiquetas**, caixa de som |
-| **Entrada e saída** | Fazem os dois | Tela touch, pen drive, headset, coletor de dados |
-
-**Conexões mais comuns:** USB (tipos A e C) para dados e energia; HDMI e DisplayPort para vídeo;
-RJ-45 (cabo de rede) para a rede da empresa.
-
-**Uso correto dos periféricos:**
-
-- Use **Ejetar / Remover hardware com segurança** antes de tirar o pen drive.
-- **Driver** é o programa que permite ao sistema controlar o periférico; equipamento novo pode
-  exigir instalar ou atualizar o driver.
-- Confira a **impressora padrão** antes de imprimir etiquetas.
-- Cabos sem dobras e equipamentos longe de umidade.
-
-🔍 **Situação-problema:** o leitor de código de barras parou de funcionar. Verifique nesta ordem:
-**hardware** (cabo e porta; testar outra porta USB) → **driver** (o aparelho aparece com alerta no
-Gerenciador de Dispositivos?) → **configuração do sistema** (o dispositivo está habilitado?).
-
-### O sistema operacional (SO)
-
-Sem sistema operacional, o computador é só uma caixa de metal. O SO faz a **mediação** entre o
-usuário, os programas e o hardware:
-
-- **Gerencia processos:** divide o tempo do processador entre os programas abertos.
-- **Gerencia a memória:** reserva espaço da RAM para cada programa.
-- **Gerencia arquivos:** organiza e protege o que é gravado no disco.
-
-| Tipo de SO | Onde é usado | Exemplos |
-|---|---|---|
-| **Desktop** | Computadores do escritório | Windows, Linux, macOS, ChromeOS |
-| **Servidor** | Máquinas que guardam sistemas e bancos de dados da empresa | Linux, Windows Server |
-| **Móvel** | Celulares, tablets e **coletores de dados** | Android, iOS |
-
-- **Proprietário:** código fechado, geralmente pago (ex.: Windows).
-- **Código aberto:** código disponível para estudo e adaptação, geralmente gratuito (ex.: Linux).
-
-A **interface gráfica** (janelas, ícones, menus) facilita o uso: área de trabalho, barra de tarefas
-e menu Iniciar.
-
-| Atalho (exemplo no Windows) | Função |
+| Tipo | Exemplos no armazém |
 |---|---|
-| Ctrl + C / Ctrl + X / Ctrl + V | Copiar / Recortar / Colar |
-| Ctrl + Z | Desfazer |
-| F2 | Renomear |
-| Windows + E | Abrir o Explorador de Arquivos |
-| Alt + Tab | Alternar entre janelas |
-| Windows + L | Bloquear a tela (ao sair da mesa) |
+| **Entrada** | Teclado, mouse, **leitor de código de barras**, scanner |
+| **Saída** | Monitor, **impressora de etiquetas**, caixa de som |
+| **Entrada e saída** | Tela touch, pen drive, coletor de dados |
 
-No Linux, no macOS e no ChromeOS existem atalhos equivalentes: confira na ajuda do sistema
-que a empresa usa. O importante é o hábito (copiar, desfazer, renomear e bloquear a tela).
+Conexões comuns: **USB** (dados e energia), **HDMI** (vídeo) e **RJ-45** (rede). Use
+**Remover hardware com segurança** antes de tirar o pen drive, confira a **impressora padrão** antes
+de imprimir etiquetas e lembre que o **driver** é o programa que permite ao sistema controlar o
+periférico. Leitor parou? Verifique **cabo e porta → driver → configuração do sistema**.
 
-### Pastas, arquivos e boas práticas
+### Sistema operacional: tipos, fundamentos e funções
 
-Os arquivos ficam organizados em uma **árvore de pastas**, a partir da raiz (`C:\` no Windows ou
-`/` no Linux).
+O **sistema operacional (SO)** faz a mediação entre usuário, programas e hardware: gerencia
+**processos**, **memória** e **arquivos**.
 
-🔍 **Exemplo de caminho:** `C:\ValeNorte\Logistica\Expedicao\2026\`
-
-**Boas práticas de nomes:**
-
-- Evite acentos, espaços e símbolos (`ç`, `/`, `#`, `?`).
-- Use a data invertida no início: `2026-10-03_Inventario_CorredorB.xlsx`.
-- Controle versões: `_v01`, `_v02`.
-- Nunca use nomes genéricos como `documento1.docx`.
-
-| Extensão | Uso |
+| Tipo | Exemplos |
 |---|---|
-| `.pdf` | Relatórios e documentos para leitura e envio |
-| `.docx` / `.odt` | Textos editáveis |
-| `.xlsx` / `.ods` | Planilhas |
-| `.zip` | Vários arquivos compactados em um só |
+| **Desktop** | Windows, Linux, macOS, ChromeOS |
+| **Servidor** | Linux, Windows Server |
+| **Móvel** (celular, coletor) | Android, iOS |
 
-**Compactar para enviar por e-mail:** selecionar os arquivos → botão direito → **Compactar para
-ZIP** → nomear com data e assunto (`2026-10_Romaneios.zip`) → anexar. No destino, use **Extrair
-tudo**.
+A **área de trabalho** e a **barra de ferramentas/tarefas** dão acesso rápido aos programas.
+Atalhos úteis (Windows; outros sistemas têm equivalentes): **Ctrl + C / V** (copiar/colar),
+**Ctrl + Z** (desfazer), **F2** (renomear), **Windows + E** (arquivos) e **Windows + L** (bloquear
+a tela ao sair da mesa).
 
-**Pesquisa no Explorador:** `*.pdf` encontra todos os PDFs; dá para filtrar por data de modificação
-e por tamanho.
+### Pastas, pesquisa e compactação de arquivos
 
-### Cuidados com o equipamento e com os dados
+Os arquivos ficam numa **árvore de pastas**. Exemplo: `C:\ValeNorte\Logistica\Expedicao\2026\`.
 
-- **Sinais de problema:** ventoinha barulhenta e travamentos (superaquecimento), tela azul e
-  reinícios (memória), lentidão para abrir pastas (disco).
-- **Manutenção preventiva:** limpeza sem panos úmidos, boa ventilação e uso de nobreak.
-- **Backup:** cópias periódicas na nuvem ou em disco externo.
-- **Permissões:** cada usuário acessa só o que precisa, protegendo arquivos do sistema.
-
-## Vídeos
-
-- [Informática para Concursos — Hardware, software e periféricos](https://www.youtube.com/watch?v=YrDLtdP4LI4) — 14:37 — Newbie Aulas
-- [O que é um sistema operacional e exemplos (Informática Básica)](https://www.youtube.com/watch?v=yjfB-asZVF4) — 04:59 — Eu TI Ensino
-- [Organizando arquivos, pastas e subpastas no computador](https://www.youtube.com/watch?v=yzIDFLSVa6U) — 08:28 — Professora Marcia
-
-## Exercícios
-
-### ITEM 1
-- **Capacidade:** C4
-- **Contexto:** No almoxarifado e na expedição da Vale Norte há: computador, sistema de estoque, leitor de código de barras, impressora de etiquetas, sistema operacional, planilha de controle e pen drive.
-- **Comando:** Separe os itens em hardware e software e, entre os hardwares, classifique os periféricos como entrada, saída ou entrada e saída.
-- **Linhas:** 5
-
-### ITEM 2
-- **Capacidade:** C4
-- **Contexto:** Um conferente digitou a contagem do inventário durante duas horas e a energia acabou antes de ele salvar. Ao religar, a contagem tinha sumido.
-- **Comando:** Explique, usando os conceitos de memória RAM e armazenamento (HDD/SSD), por que os dados foram perdidos e o que ele deveria ter feito.
-- **Linhas:** 4
-
-### ITEM 3
-- **Capacidade:** C4
-- **Contexto:** O leitor de código de barras do recebimento parou de funcionar no meio do turno.
-- **Comando:** Descreva, em ordem, as três verificações que devem ser feitas (hardware, driver e configuração do sistema) e o que observar em cada uma.
-- **Linhas:** 4
-
-### ITEM 4
-- **Capacidade:** C4
-- **Contexto:** A pasta do setor tem arquivos chamados "planilha nova.xlsx", "inventário final FINAL (2).xlsx" e "documento1.docx", todos soltos na Área de Trabalho.
-- **Comando:** Proponha uma estrutura de pastas para o setor e renomeie os três arquivos seguindo as boas práticas (data invertida, sem acentos e espaços, versão).
-- **Linhas:** 5
-
-### ITEM 5
-- **Capacidade:** C4
-- **Contexto:** A transportadora pediu os 15 romaneios da semana em um único e-mail, mas os arquivos juntos são grandes demais para anexar um a um.
-- **Comando:** Descreva o passo a passo para compactar os arquivos, nomear o pacote corretamente e explicar à transportadora como abri-lo.
-- **Linhas:** 4
-
-### ITEM 6
-- **Capacidade:** C4
-- **Contexto:** O setor fiscal pediu as notas fiscais de recebimento de setembro em um único arquivo. Hoje elas estão soltas na Área de Trabalho, com nomes como "nota1.pdf" e "scan 2.pdf".
-- **Comando:** Monte um checklist de 5 passos para organizar as notas em pastas (por mês e por fornecedor), renomear os arquivos no padrão `AAAA-MM-DD_Fornecedor_NF`, compactar tudo em ZIP com nome padronizado e conferir o pacote antes de enviar.
-- **Linhas:** 6
+- **Nomes:** sem acentos e símbolos, com data invertida e versão:
+  `2026-10-03_Inventario_CorredorB_v01.xlsx`.
+- **Pesquisa de arquivos e diretórios:** na busca do explorador, `*.pdf` encontra todos os PDFs;
+  filtre por data de modificação e tamanho.
+- **Compactação:** selecione os arquivos → **Compactar para ZIP** → nomeie
+  (`2026-10_Romaneios.zip`) → anexe. No destino, use **Extrair tudo**.
 
 ## Resumo
 
-- **Hardware** é a parte física; **software** são os programas. Um não funciona sem o outro.
-- O **processador** executa as instruções; a **RAM** guarda o que está em uso e perde tudo ao desligar; **HDD/SSD** guardam os arquivos de forma permanente.
-- **Periféricos** são de entrada, saída ou entrada e saída; precisam de **driver** e de uso correto.
-- O **sistema operacional** gerencia processos, memória e arquivos; existem SOs de desktop, servidor e móveis, proprietários ou de código aberto.
-- Pastas organizadas e nomes padronizados (`AAAA-MM-DD_Assunto_v01`) evitam perda de tempo e de arquivos.
-- **Compactar**, fazer **backup** e cuidar do equipamento são rotinas do profissional.
+- Hardware é a parte física; software são os programas — um não funciona sem o outro.
+- CPU executa, RAM guarda o que está em uso, HDD/SSD guardam de forma permanente.
+- Periféricos são de entrada, saída ou ambos e precisam de driver e uso correto.
+- O SO gerencia processos, memória e arquivos; pastas organizadas, busca e ZIP agilizam o trabalho.
 
 ## Glossário
 
 - **Hardware:** parte física do computador (peças, cabos e circuitos).
-- **Software:** programas e instruções executados pelo computador.
-- **Processador (CPU):** componente que executa os cálculos e as instruções.
-- **Memória RAM:** memória rápida e volátil que guarda os dados em uso.
-- **SSD:** unidade de armazenamento eletrônica, sem peças móveis, mais rápida que o HDD.
 - **Periférico:** dispositivo de entrada/saída (leitor de código de barras, impressora de etiquetas).
 - **Driver:** programa que permite ao sistema operacional controlar um periférico.
-- **Sistema operacional:** software que gerencia o hardware e serve de base para os outros programas.
 - **Compactação:** redução do tamanho de arquivos, reunindo-os em um único pacote (ZIP).
-- **Backup:** cópia de segurança dos arquivos.

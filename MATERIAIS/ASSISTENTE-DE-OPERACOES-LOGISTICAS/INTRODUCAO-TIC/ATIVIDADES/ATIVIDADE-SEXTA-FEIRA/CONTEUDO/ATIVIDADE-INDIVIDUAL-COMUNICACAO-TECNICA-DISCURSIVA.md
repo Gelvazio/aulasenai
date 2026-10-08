@@ -14,7 +14,7 @@
 - **Aviso:** ATIVIDADE INDIVIDUAL. É PROIBIDO USAR COMPUTADOR OU CELULAR PARA PESQUISA. CONSULTE APENAS A APOSTILA DE ITIC.
 - **Aula no banco:** 7
 - **Turma:** todas as turmas
-- **Conteúdo-base:** `../../../APOSTILA/APOSTILA-INTRODUCAO-TIC-V2.md` (apostila V2, capítulos 01 a 07) — toda resposta se apoia na apostila e nos dados do contexto
+- **Conteúdo-base:** `../../../APOSTILA/APOSTILA-INTRODUCAO-TIC.md` (apostila única, versão 2.1, capítulos 01 a 07) — toda resposta se apoia na apostila e nos dados do contexto
 
 **Como responder:** Leia o contexto de cada questão e escreva a resposta **no campo da questão**, com frases completas e com as suas palavras. Consulte a apostila de ITIC (capítulos 01 a 07) e use os dados do contexto de cada questão (horários, números e setores). Respostas copiadas da internet ou de colegas recebem nota zero.
 

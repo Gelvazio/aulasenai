@@ -4,8 +4,8 @@
 > **Módulo:** Educação para o Trabalho (Básico) · **Modalidade:** Presencial  
 > **Ementa:** EMENTA-CHALKIE-AI.md v3.1 — conciliada e compactada (2026-09-23)  
 > **Carga horária da UC:** 40 horas · **Capítulos previstos:** 10 (1 capítulo = 1 aula de 4 horas)  
-> **Autor:** Gelvazio Camargo · **Versão:** 1.0 · **Data e hora:** 07/10/2026 às 20:12  
-> **Gerado em:** 03/10/2026, a partir de `APOSTILA/CONTEUDO/`.
+> **Autor:** Gelvazio Camargo · **Versão:** 2.1 · **Data e hora:** 08/10/2026 às 09:38  
+> **Gerado em:** 08/10/2026, a partir de `APOSTILA/CONTEUDO/`.
 
 > ✏️ **Este arquivo é a fonte final da apostila.** Revise, compare e acrescente dados aqui; o HTML é gerado depois, a partir dele. O sumário é refeito a cada geração.
 
@@ -54,147 +54,95 @@
   - [Capacidades por capítulo](#capacidades-por-capítulo)
 - [Glossário](#glossário)
 - [Referências](#referências)
+  - [Referências complementares (citadas nos capítulos)](#referências-complementares-citadas-nos-capítulos)
 - [Capítulo 01 — Comunicação Profissional e Seus Fundamentos](#capítulo-01--comunicação-profissional-e-seus-fundamentos)
   - [Teoria](#teoria)
-    - [Por que estudar comunicação num curso de logística?](#por-que-estudar-comunicação-num-curso-de-logística)
     - [Os sete elementos da comunicação](#os-sete-elementos-da-comunicação)
-    - [Ruídos: o que atrapalha a mensagem](#ruídos-o-que-atrapalha-a-mensagem)
-    - [Comunicação assertiva e escuta ativa](#comunicação-assertiva-e-escuta-ativa)
-    - [Níveis de linguagem: falar certo para cada público](#níveis-de-linguagem-falar-certo-para-cada-público)
-    - [Trabalho em equipe, consenso e ética](#trabalho-em-equipe-consenso-e-ética)
-    - [Na prática: aviso com ruído × aviso eficaz](#na-prática-aviso-com-ruído--aviso-eficaz)
-  - [Vídeos](#vídeos)
+    - [Ruídos e como reduzi-los](#ruídos-e-como-reduzi-los)
+    - [Níveis de fala](#níveis-de-fala)
+    - [Comunicação em equipes](#comunicação-em-equipes)
   - [Resumo](#resumo)
-  - [Exercícios](#exercícios)
 - [Capítulo 02 — Hardware, Periféricos e Sistemas Operacionais](#capítulo-02--hardware-periféricos-e-sistemas-operacionais)
   - [Teoria](#teoria-1)
-    - [O computador como canal de trabalho](#o-computador-como-canal-de-trabalho)
     - [Hardware e software](#hardware-e-software)
-    - [Os principais componentes](#os-principais-componentes)
-    - [Periféricos](#periféricos)
-    - [O sistema operacional (SO)](#o-sistema-operacional-so)
-    - [Pastas, arquivos e boas práticas](#pastas-arquivos-e-boas-práticas)
-    - [Cuidados com o equipamento e com os dados](#cuidados-com-o-equipamento-e-com-os-dados)
-  - [Vídeos](#vídeos-1)
+    - [Componentes e processadores](#componentes-e-processadores)
+    - [Periféricos e sua utilização](#periféricos-e-sua-utilização)
+    - [Sistema operacional: tipos, fundamentos e funções](#sistema-operacional-tipos-fundamentos-e-funções)
+    - [Pastas, pesquisa e compactação de arquivos](#pastas-pesquisa-e-compactação-de-arquivos)
   - [Resumo](#resumo-1)
-  - [Exercícios](#exercícios-1)
 - [Capítulo 03 — Navegação na Web e Pesquisa Acadêmica](#capítulo-03--navegação-na-web-e-pesquisa-acadêmica)
   - [Teoria](#teoria-2)
-    - [A web tem tudo — mas nem tudo é confiável](#a-web-tem-tudo--mas-nem-tudo-é-confiável)
-    - [Internet e web não são a mesma coisa](#internet-e-web-não-são-a-mesma-coisa)
-    - [Como o navegador funciona](#como-o-navegador-funciona)
-    - [Como os buscadores funcionam](#como-os-buscadores-funcionam)
-    - [Operadores de busca: pesquise como profissional](#operadores-de-busca-pesquise-como-profissional)
-    - [Como saber se uma fonte é confiável](#como-saber-se-uma-fonte-é-confiável)
-    - [Direitos autorais e plágio](#direitos-autorais-e-plágio)
-    - [Citação correta (ABNT)](#citação-correta-abnt)
-    - [Uso aceitável na empresa](#uso-aceitável-na-empresa)
-    - [Roteiro de pesquisa em 4 passos](#roteiro-de-pesquisa-em-4-passos)
-  - [Vídeos](#vídeos-2)
+    - [Internet, web e navegadores](#internet-web-e-navegadores)
+    - [Sites, buscadores e operadores](#sites-buscadores-e-operadores)
+    - [Fonte confiável](#fonte-confiável)
+    - [Download e gravação](#download-e-gravação)
+    - [Políticas de uso, direitos autorais e citação de fontes](#políticas-de-uso-direitos-autorais-e-citação-de-fontes)
   - [Resumo](#resumo-2)
-  - [Exercícios](#exercícios-2)
 - [Capítulo 04 — Comunicação Digital e Colaboração em Nuvem](#capítulo-04--comunicação-digital-e-colaboração-em-nuvem)
   - [Teoria](#teoria-3)
-    - [Quando a mensagem digital falha, a carga para](#quando-a-mensagem-digital-falha-a-carga-para)
-    - [O e-mail corporativo é um documento oficial](#o-e-mail-corporativo-é-um-documento-oficial)
-    - [Para, CC e CCO: quem recebe o quê](#para-cc-e-cco-quem-recebe-o-quê)
-    - [Anexos e boas maneiras (netiqueta)](#anexos-e-boas-maneiras-netiqueta)
-    - [Computação em nuvem](#computação-em-nuvem)
-    - [Compartilhar com a permissão certa](#compartilhar-com-a-permissão-certa)
-    - [Trabalhar junto, mesmo a distância](#trabalhar-junto-mesmo-a-distância)
-    - [Comunicação em equipe: consenso e conflitos](#comunicação-em-equipe-consenso-e-conflitos)
-  - [Vídeos](#vídeos-3)
+    - [Correio eletrônico profissional](#correio-eletrônico-profissional)
+    - [Armazenamento e compartilhamento em nuvem](#armazenamento-e-compartilhamento-em-nuvem)
+    - [Comunicação em equipes](#comunicação-em-equipes-1)
   - [Resumo](#resumo-3)
-  - [Exercícios](#exercícios-3)
 - [Capítulo 05 — Segurança da Informação e Proteção de Dados](#capítulo-05--segurança-da-informação-e-proteção-de-dados)
   - [Teoria](#teoria-4)
-    - [Você deixaria o portão do armazém aberto?](#você-deixaria-o-portão-do-armazém-aberto)
-    - [Os três pilares da segurança da informação](#os-três-pilares-da-segurança-da-informação)
+    - [Pilares da segurança da informação](#pilares-da-segurança-da-informação)
     - [Leis vigentes](#leis-vigentes)
-    - [Golpes na internet: phishing e engenharia social](#golpes-na-internet-phishing-e-engenharia-social)
+    - [Golpes na internet](#golpes-na-internet)
     - [Códigos maliciosos (malware)](#códigos-maliciosos-malware)
     - [Contas e senhas](#contas-e-senhas)
     - [Navegação segura](#navegação-segura)
-    - [Backup: a cópia que salva o dia](#backup-a-cópia-que-salva-o-dia)
-    - [Checklist diário de segurança](#checklist-diário-de-segurança)
-  - [Vídeos](#vídeos-4)
+    - [Backup](#backup)
   - [Resumo](#resumo-4)
-  - [Exercícios](#exercícios-4)
 - [Capítulo 06 — Editor de Textos: Formatação e Estruturação](#capítulo-06--editor-de-textos-formatação-e-estruturação)
   - [Teoria](#teoria-5)
-    - [Um procedimento que ninguém consegue seguir](#um-procedimento-que-ninguém-consegue-seguir)
     - [Tipos e funções do editor de textos](#tipos-e-funções-do-editor-de-textos)
-    - [Formatação de fonte](#formatação-de-fonte)
-    - [Parágrafos: alinhamento, recuos, tabulação, espaçamentos e margens](#parágrafos-alinhamento-recuos-tabulação-espaçamentos-e-margens)
+    - [Formatação](#formatação)
+    - [Recuos, tabulação, parágrafos, espaçamentos e margens](#recuos-tabulação-parágrafos-espaçamentos-e-margens)
     - [Configuração de página](#configuração-de-página)
-    - [Marcadores e numeração](#marcadores-e-numeração)
-    - [Tabelas e gráficos](#tabelas-e-gráficos)
-    - [Figuras e objetos](#figuras-e-objetos)
-    - [Bordas e sombreamento](#bordas-e-sombreamento)
-    - [Colunas](#colunas)
-    - [Estilos e sumário automático](#estilos-e-sumário-automático)
+    - [Marcadores e numeração, tabelas e gráficos](#marcadores-e-numeração-tabelas-e-gráficos)
+    - [Figuras e objetos, bordas e sombreamento, colunas](#figuras-e-objetos-bordas-e-sombreamento-colunas)
     - [Ortografia, dicionário e exibição](#ortografia-dicionário-e-exibição)
-    - [Controle de alterações e comentários](#controle-de-alterações-e-comentários)
+    - [Controle de alterações](#controle-de-alterações)
     - [Arquivamento e impressão](#arquivamento-e-impressão)
-  - [Vídeos](#vídeos-5)
   - [Resumo](#resumo-5)
-  - [Exercícios](#exercícios-5)
 - [Capítulo 07 — Textos Técnicos e Redação Empresarial](#capítulo-07--textos-técnicos-e-redação-empresarial)
   - [Teoria](#teoria-6)
-    - [Uma avaria, dois documentos](#uma-avaria-dois-documentos)
-    - [O que é um texto técnico](#o-que-é-um-texto-técnico)
+    - [Definição, tipos e exemplos de textos técnicos](#definição-tipos-e-exemplos-de-textos-técnicos)
     - [Normas de redação](#normas-de-redação)
-    - [Identificação e interpretação de textos técnicos](#identificação-e-interpretação-de-textos-técnicos)
-    - [Relatório técnico (ABNT NBR 10719)](#relatório-técnico-abnt-nbr-10719)
-    - [Ata de reunião](#ata-de-reunião)
-    - [Memorando e ofício](#memorando-e-ofício)
-    - [Resumo](#resumo-6)
+    - [Identificação e interpretação](#identificação-e-interpretação)
+    - [Relatório técnico](#relatório-técnico)
+    - [Ata](#ata)
+    - [Memorando e resumo](#memorando-e-resumo)
     - [Comunicação e níveis de fala](#comunicação-e-níveis-de-fala)
-  - [Vídeos](#vídeos-6)
-  - [Resumo](#resumo-7)
-  - [Exercícios](#exercícios-6)
+  - [Resumo](#resumo-6)
 - [Capítulo 08 — Editor de Planilhas: Organização e Fórmulas](#capítulo-08--editor-de-planilhas-organização-e-fórmulas)
   - [Teoria](#teoria-7)
-    - [Do caderno de contagem para a planilha](#do-caderno-de-contagem-para-a-planilha)
-    - [Anatomia da planilha](#anatomia-da-planilha)
-    - [Tipos de dados](#tipos-de-dados)
+    - [Funções básicas da planilha](#funções-básicas-da-planilha)
+    - [Linhas, colunas e endereços](#linhas-colunas-e-endereços)
     - [Formatação de células](#formatação-de-células)
-    - [Fórmulas: o coração da planilha](#fórmulas-o-coração-da-planilha)
-    - [Funções básicas](#funções-básicas)
-    - [Exemplo: estoque de 15 itens com alerta de mínimo](#exemplo-estoque-de-15-itens-com-alerta-de-mínimo)
+    - [Fórmulas básicas](#fórmulas-básicas)
     - [Classificação e filtro](#classificação-e-filtro)
     - [Configuração de página e impressão](#configuração-de-página-e-impressão)
-  - [Vídeos](#vídeos-7)
-  - [Resumo](#resumo-8)
-  - [Exercícios](#exercícios-7)
+  - [Resumo](#resumo-7)
 - [Capítulo 09 — Planilhas: Análise Visual e Gráficos](#capítulo-09--planilhas-análise-visual-e-gráficos)
   - [Teoria](#teoria-8)
-    - [Qual rota mais atrasa?](#qual-rota-mais-atrasa)
-    - [Da planilha de entregas ao quadro-resumo](#da-planilha-de-entregas-ao-quadro-resumo)
-    - [Classificar e filtrar para analisar](#classificar-e-filtrar-para-analisar)
-    - [Que gráfico usar? A pergunta decide](#que-gráfico-usar-a-pergunta-decide)
-    - [Montando o gráfico](#montando-o-gráfico)
-    - [Interpretar: o gráfico precisa virar decisão](#interpretar-o-gráfico-precisa-virar-decisão)
-    - [Gráficos que enganam](#gráficos-que-enganam)
-    - [Levar para o relatório e para a impressão](#levar-para-o-relatório-e-para-a-impressão)
-  - [Vídeos](#vídeos-8)
-  - [Resumo](#resumo-9)
-  - [Exercícios](#exercícios-8)
+    - [Classificação e filtro para analisar](#classificação-e-filtro-para-analisar)
+    - [Quadros e tabelas](#quadros-e-tabelas)
+    - [Gráficos: a pergunta decide](#gráficos-a-pergunta-decide)
+    - [Interpretar e analisar o problema](#interpretar-e-analisar-o-problema)
+    - [Impressão](#impressão)
+  - [Resumo](#resumo-8)
 - [Capítulo 10 — Editor de Apresentações e TIC + Avaliação](#capítulo-10--editor-de-apresentações-e-tic--avaliação)
   - [Teoria](#teoria-9)
-    - [Cinco minutos para o próximo turno](#cinco-minutos-para-o-próximo-turno)
     - [Funções e tipos de apresentação](#funções-e-tipos-de-apresentação)
-    - [Página do slide e slide mestre](#página-do-slide-e-slide-mestre)
+    - [Página e slide mestre](#página-e-slide-mestre)
     - [Formatação e legibilidade](#formatação-e-legibilidade)
-    - [Sequência lógica: a narrativa](#sequência-lógica-a-narrativa)
     - [Figuras, tabelas e gráficos](#figuras-tabelas-e-gráficos)
     - [Slides, vídeos e recursos multimídia](#slides-vídeos-e-recursos-multimídia)
-    - [Exibição: apresentar com segurança](#exibição-apresentar-com-segurança)
-    - [Arquivamento](#arquivamento)
-    - [Integrando a UC: revisão para as avaliações](#integrando-a-uc-revisão-para-as-avaliações)
-  - [Vídeos](#vídeos-9)
-  - [Resumo](#resumo-10)
-  - [Exercícios](#exercícios-9)
+    - [Exibição e arquivamento](#exibição-e-arquivamento)
+    - [Integração da UC e avaliações](#integração-da-uc-e-avaliações)
+  - [Resumo](#resumo-9)
 <!-- sumario:fim -->
 
 ---
@@ -623,105 +571,52 @@ Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular.
 ## Apresentação
 
 Na logística, quase toda operação passa por um recurso digital: o e-mail para a transportadora, a
-planilha de estoque, o relatório de avaria, a ata do turno, o rastreio da carga na nuvem. Esta
-apostila acompanha a unidade curricular **Introdução à Tecnologia da Informação e Comunicação
-(ITIC)** e prepara você para usar esses recursos com **clareza, segurança e postura profissional**.
-
-Os exemplos acontecem na **Distribuidora Vale Norte**, uma empresa fictícia com armazém,
-recebimento, expedição e escritório administrativo — situações parecidas com as que você vai
-encontrar no trabalho de Assistente de Operações Logísticas.
+planilha de estoque, o relatório de avaria, a ata do turno. Esta apostila
+acompanha a unidade curricular **Introdução à Tecnologia da Informação e Comunicação (ITIC)**. Os
+exemplos acontecem na **Distribuidora Vale Norte**, uma empresa fictícia com armazém, expedição e
+escritório.
 
 ## Objetivo geral da unidade curricular
 
-Desenvolver capacidades básicas e socioemocionais em três dimensões:
-
-1. **Comunicação profissional** — comunicar-se oralmente e por escrito de forma clara,
-   assertiva e eficaz.
-2. **Interpretação técnica** — compreender normas, textos, dados e terminologias de contextos
-   técnicos e industriais.
-3. **Uso seguro de TIC** — pesquisar, produzir, armazenar e compartilhar informações com segurança.
+Desenvolver capacidades básicas e socioemocionais em três dimensões: **comunicação profissional**
+(oral e escrita, clara e assertiva), **interpretação técnica** (normas, textos e dados) e **uso
+seguro de TIC** (pesquisar, produzir, armazenar e compartilhar informações com segurança).
 
 ## Como a apostila está organizada
 
-Cada capítulo corresponde a uma aula e tem sempre as mesmas partes:
-
-| Parte | O que você encontra |
-|---|---|
-| 🎯 Capacidades | O que você vai desenvolver no capítulo |
-| 📖 Teoria e exemplos | Explicação do conteúdo com situações da Vale Norte |
-| 🎬 Vídeos | Vídeos curtos do YouTube (no máximo 15 minutos) para revisar o tema |
-| 📌 Resumo | Os pontos principais para estudar antes da avaliação |
-| ✍️ Exercícios | Questões no padrão ITEM (Capacidade, Contexto, Comando e Resposta) |
-
-O **glossário**, no início da apostila, reúne os termos técnicos de todos os capítulos, em ordem
-alfabética.
+Cada capítulo corresponde a uma aula: capacidades, teoria com exemplos e resumo. Os vídeos e os
+exercícios são entregues pelo professor em material separado. O
+**glossário** fica no início da apostila.
 
 ## Como estudar com esta apostila
 
-- Leia a teoria **antes ou logo depois** da aula correspondente.
-- Assista aos vídeos e anote dúvidas para levar ao professor.
-- Revise o resumo e consulte o glossário sempre que encontrar um termo novo.
-- Responda os exercícios com suas palavras, sempre ligando a resposta ao contexto do trabalho.
-- Os exercícios podem ser impressos separadamente pelo botão **Exportar PDF** ao lado do título
-  de cada seção de exercícios.
+Leia a teoria perto da aula, revise o resumo e consulte o glossário sempre que encontrar um termo
+novo, ligando cada conteúdo a uma situação do trabalho.
 
 ## Como você será avaliado
 
-Durante as aulas 1 a 9, a avaliação é **formativa**: a atividade de 50 questões de cada aula, os
-quizzes e o registro qualitativo do professor mostram o que você já domina e o que precisa revisar.
-Na **aula 10** acontecem as avaliações que formam a nota final:
+Nas aulas 1 a 9 a avaliação é **formativa** (atividades, quizzes e registro do professor). Na
+**aula 10**:
 
-| Instrumento | Valor | Capacidades |
-|---|---|---|
-| Avaliação objetiva — 40 questões, 7 eixos, 60 min | 4,0 | C1 a C5 |
-| Avaliação prática — 4 tarefas, 100 min | 6,0 | C1 a C5 |
-| ↳ T1 Organização, backup e comunicação | 1,5 | C1, C2, C4, C5 |
-| ↳ T2 Relatório técnico | 2,0 | C1, C3 |
-| ↳ T3 Planilha de análise | 1,5 | C3, C4 |
-| ↳ T4 Apresentação | 1,0 | C1 |
-| **Nota final** | **10,0** | **mínimo 7,0** |
+| Instrumento | Valor |
+|---|---|
+| Avaliação objetiva — 40 questões, 60 min (C1 a C5) | 4,0 |
+| Avaliação prática — 4 tarefas, 100 min (C1 a C5) | 6,0 |
+| **Nota final** (mínimo 7,0) | **10,0** |
 
-| Nível | Nota | O que significa |
-|---|---|---|
-| Excelente | 9 a 10 | Usa a ferramenta com autonomia, produz documento correto e comunica com clareza e segurança |
-| Bom | 7 a 8 | Cumpre a tarefa com pequenos ajustes; poucas falhas de formatação ou linguagem |
-| Aceitável | 5 a 6 | Cumpre o essencial com orientação; erros que não comprometem a mensagem |
-| Insuficiente | 0 a 4 | Não conclui ou compromete a compreensão ou a segurança |
-
-**Recuperação:** é contínua — quem não concluir uma atividade refaz com roteiro guiado na aula
-seguinte ou como tarefa. Com nota final abaixo de 7,0, você refaz as tarefas práticas de maior
-perda e/ou uma nova avaliação objetiva equivalente, conforme o regimento do SENAI, retomando só as
-capacidades não atingidas.
+**Recuperação:** contínua, com roteiro guiado; abaixo de 7,0, refazem-se as tarefas de maior perda
+e/ou uma nova avaliação objetiva, só nas capacidades não atingidas.
 
 ## Ambientes, recursos e acessibilidade
 
-As aulas acontecem na sala de aula, no **laboratório de informática**, no auditório e em
-ambiente de realidade virtual (RV), quando disponível. Usaremos projetor, computadores, quadro
-branco, lousa digital e recursos de RA/RV, além da **Estante Virtual SENAI**.
-
-Os exemplos citam categorias de programas (editor de textos, planilha, apresentação), e você pode
-usar a suíte disponível na escola ou em casa: Microsoft 365, Google Workspace ou LibreOffice.
-
-**Acessibilidade:** se precisar, peça ao professor:
-
-- **visual:** zoom, alto contraste, leitor de tela (NVDA, TalkBack, ChromeVox), fonte ampliada;
-- **auditiva:** legendas, instruções escritas, intérprete de Libras quando houver;
-- **motora:** atalhos, digitação por voz, tempo estendido;
-- **leitura/TDAH:** passo a passo numerado, etapas curtas, checklist;
-- **pouca familiaridade com o computador:** duplas e demonstração lenta.
-
-O tempo e o formato podem ser adaptados sem alterar as capacidades avaliadas.
+Sala de aula, laboratório de informática, auditório e realidade virtual quando houver. Use a suíte
+disponível (Microsoft 365, Google Workspace ou LibreOffice). Se precisar, peça ao professor zoom,
+leitor de tela, legendas, atalhos, tempo estendido ou passo a passo numerado.
 
 ## Competência integradora
 
-**Eixo:** Mediação e Intervenção Sociocultural.
-
-**Competência:** reconhecer conflitos e sugerir soluções para problemas identificados na comunidade.
-
-**Resultados esperados:**
-
-- identificar ações para um ambiente de trabalho saudável, considerando diversidades;
-- demonstrar empatia, escuta ativa e diálogo nas relações profissionais.
+**Eixo:** Mediação e Intervenção Sociocultural — reconhecer conflitos e sugerir soluções,
+demonstrando empatia, escuta ativa e diálogo nas relações profissionais.
 
 ---
 
@@ -788,104 +683,45 @@ O tempo e o formato podem ser adaptados sem alterar as capacidades avaliadas.
 
 Termos técnicos de todos os capítulos, em ordem alfabética (o número indica o capítulo).
 
-- **Anexo:** arquivo enviado junto com o e-mail. _(cap. 04)_
-- **Animação:** efeito aplicado a um elemento dentro do slide. _(cap. 10)_
-- **Área de impressão:** intervalo definido para ser impresso. _(cap. 08)_
 - **Assertividade:** comunicar com clareza, firmeza e respeito, sem agressividade nem omissão. _(cap. 01)_
 - **Ata:** registro formal do que foi discutido e decidido. _(cap. 07)_
-- **Autenticação em dois fatores (2FA):** acesso que exige, além da senha, uma segunda prova de identidade. _(cap. 05)_
-- **Backup:** cópia de segurança dos arquivos. _(cap. 02)_
 - **Backup:** cópia de segurança em outro local. _(cap. 05)_
-- **Bordas e sombreamento:** contorno e fundo colorido aplicados a parágrafos, tabelas ou páginas. _(cap. 06)_
-- **Canal:** meio usado para transmitir a mensagem (rádio, e-mail, sistema, reunião). _(cap. 01)_
-- **CC:** campo de cópia, para quem precisa acompanhar a mensagem. _(cap. 04)_
 - **CCO:** cópia oculta; os destinatários não veem os endereços uns dos outros. _(cap. 04)_
 - **Célula:** interseção de linha e coluna (B4). _(cap. 08)_
-- **Classificação:** ordenação dos dados por uma coluna. _(cap. 08)_
-- **Código:** conjunto de sinais e palavras comum ao emissor e ao receptor. _(cap. 01)_
 - **Compactação:** redução do tamanho de arquivos, reunindo-os em um único pacote (ZIP). _(cap. 02)_
-- **Comunicação assíncrona:** troca de mensagens em que a resposta não é imediata. _(cap. 04)_
-- **Confidencialidade:** garantia de que só pessoas autorizadas acessam a informação. _(cap. 05)_
 - **Controle de alterações:** recurso que registra as mudanças feitas por cada revisor. _(cap. 06)_
-- **Cookie:** pequeno arquivo que o site grava no navegador para lembrar preferências e logins. _(cap. 03)_
-- **Creative Commons:** licenças em que o autor indica como a obra pode ser usada. _(cap. 03)_
-- **Disponibilidade:** garantia de que a informação está acessível quando necessária. _(cap. 05)_
-- **DNS:** sistema que traduz nomes de sites em endereços IP. _(cap. 03)_
 - **Driver:** programa que permite ao sistema operacional controlar um periférico. _(cap. 02)_
-- **E-mail corporativo:** mensagem eletrônica da empresa que serve como registro formal. _(cap. 04)_
-- **Eixo:** linha de referência do gráfico (horizontal = categorias ou tempo; vertical = valores). _(cap. 09)_
 - **Eixo truncado:** eixo de valores que não começa no zero e pode exagerar diferenças. _(cap. 09)_
-- **Emissor:** quem cria e envia a mensagem. _(cap. 01)_
-- **Engenharia social:** manipulação das pessoas para que revelem dados ou cometam erros. _(cap. 05)_
-- **Escuta ativa:** ouvir com atenção total, sem interromper, confirmando o que foi entendido. _(cap. 01)_
 - **Estilo:** conjunto de formatações salvo com um nome (ex.: Título 1), aplicado de uma vez. _(cap. 06)_
 - **Feedback:** retorno que confirma a compreensão. _(cap. 01)_
 - **Filtro:** recurso que mostra só as linhas que atendem a um critério. _(cap. 08)_
-- **Formatação:** ajuste da aparência do texto (fonte, parágrafo, página). _(cap. 06)_
-- **Fórmula:** cálculo que começa com o sinal de igual (=). _(cap. 08)_
 - **Função:** fórmula pronta com nome, como SOMA, MÉDIA, CONT.VALORES e SE. _(cap. 08)_
-- **Gráfico:** representação visual de dados numéricos de uma tabela. _(cap. 09)_
-- **Gráfico de linhas:** gráfico indicado para mostrar a evolução de valores ao longo do tempo. _(cap. 09)_
-- **Gráfico de setores (pizza):** gráfico que mostra as partes de um todo que soma 100%. _(cap. 09)_
 - **Hardware:** parte física do computador (peças, cabos e circuitos). _(cap. 02)_
-- **Histórico de versões:** registro das versões anteriores de um arquivo, que permite restaurá-lo. _(cap. 04)_
-- **Impessoalidade:** escrita na terceira pessoa, com foco no fato e não em quem o realizou. _(cap. 07)_
 - **Indicador (KPI):** medida usada para acompanhar o desempenho em relação a uma meta. _(cap. 09)_
-- **Integridade:** garantia de que a informação não foi alterada indevidamente. _(cap. 05)_
-- **Internet:** rede mundial que conecta computadores e outras redes. _(cap. 03)_
 - **Intervalo:** conjunto de células, como C2:C16. _(cap. 08)_
 - **Jargão:** termo de grupo profissional ("picking", "cross-docking"). _(cap. 01)_
-- **Layout:** distribuição dos espaços de título, texto e imagens em um slide. _(cap. 10)_
 - **Legenda:** guia que identifica as cores ou séries de um gráfico. _(cap. 09)_
 - **LGPD:** Lei Geral de Proteção de Dados (Lei 13.709/2018). _(cap. 05)_
 - **Malware:** programa malicioso (vírus, ransomware, spyware). _(cap. 05)_
-- **Margem:** espaço entre o texto e a borda da folha. _(cap. 06)_
 - **Memorando:** comunicação escrita interna entre setores da mesma empresa. _(cap. 07)_
-- **Memória RAM:** memória rápida e volátil que guarda os dados em uso. _(cap. 02)_
-- **Modelo de documento:** arquivo-base padronizado para documentos que se repetem. _(cap. 06)_
 - **Modo apresentador:** exibição em que o orador vê notas, próximo slide e cronômetro. _(cap. 10)_
-- **Narrativa:** sequência lógica que conduz o raciocínio do público. _(cap. 10)_
-- **Navegador:** programa que acessa e exibe as páginas da web. _(cap. 03)_
 - **Netiqueta:** regras de boa educação na comunicação digital. _(cap. 04)_
 - **Norma técnica:** regra publicada por um órgão (ABNT, ISO, IEEE, ANSI) que padroniza produtos, processos ou documentos. _(cap. 07)_
-- **Notas do orador:** anotações de apoio que só o apresentador vê. _(cap. 10)_
 - **Nuvem:** arquivos em servidores na internet. _(cap. 04)_
 - **Objeto vinculado:** gráfico ou tabela que se atualiza quando o arquivo de origem muda. _(cap. 10)_
-- **Ofício:** comunicação escrita formal enviada para fora da empresa. _(cap. 07)_
 - **Operador de busca:** símbolo ou palavra que refina a pesquisa no buscador. _(cap. 03)_
-- **Ordem de serviço (OS):** documento que autoriza e registra a execução de um trabalho técnico. _(cap. 07)_
-- **Pasta de trabalho:** arquivo de planilha, que pode ter várias abas. _(cap. 08)_
 - **Periférico:** dispositivo de entrada/saída (leitor de código de barras, impressora de etiquetas). _(cap. 02)_
 - **Permissão:** nível de acesso a um arquivo ou pasta (leitor, comentador ou editor). _(cap. 04)_
 - **Phishing:** golpe que imita mensagem legítima. _(cap. 05)_
 - **Plágio:** apresentar como seu o trabalho de outra pessoa, sem dar crédito. _(cap. 03)_
-- **Planilha:** grade de linhas e colunas para organizar dados e fazer cálculos. _(cap. 08)_
-- **Política de Uso Aceitável (PUA):** regras da empresa para uso da internet e dos computadores. _(cap. 03)_
-- **POP:** procedimento operacional padrão, passo a passo de uma tarefa. _(cap. 07)_
-- **Processador (CPU):** componente que executa os cálculos e as instruções. _(cap. 02)_
 - **Quadro-resumo:** tabela que condensa os dados brutos em totais e indicadores. _(cap. 09)_
 - **Quebra de seção:** divisão que permite formatação diferente em partes do mesmo documento. _(cap. 06)_
-- **Ransomware:** malware que bloqueia os arquivos e exige resgate. _(cap. 05)_
-- **Receptor:** quem recebe e interpreta a mensagem. _(cap. 01)_
 - **Recuo:** distância entre o parágrafo e a margem. _(cap. 06)_
 - **Recursos multimídia:** integração de texto, imagem, áudio e vídeo na apresentação. _(cap. 10)_
-- **Referência absoluta:** endereço fixado com $ (ex.: $H$1), que não muda ao copiar a fórmula. _(cap. 08)_
-- **Relatório técnico:** documento que apresenta fatos, dados, análise e recomendações. _(cap. 07)_
-- **Resumo:** texto que condensa as ideias principais de um documento, sem opinião. _(cap. 07)_
-- **Rótulo de dados:** número exibido junto de cada coluna, barra ou ponto. _(cap. 09)_
 - **Ruído:** interferência que distorce a mensagem (barulho, termo ambíguo, e-mail sem assunto). _(cap. 01)_
-- **Série de dados:** conjunto de valores representado com uma mesma cor no gráfico. _(cap. 09)_
-- **Sincronização:** atualização automática que mantém iguais as cópias da nuvem e do computador. _(cap. 04)_
-- **Sistema operacional:** software que gerencia o hardware e serve de base para os outros programas. _(cap. 02)_
-- **Slide:** página de uma apresentação. _(cap. 10)_
 - **Slide mestre:** modelo que define cores, fontes, logotipo e rodapé de todos os slides. _(cap. 10)_
-- **Software:** programas e instruções executados pelo computador. _(cap. 02)_
-- **SSD:** unidade de armazenamento eletrônica, sem peças móveis, mais rápida que o HDD. _(cap. 02)_
-- **Sumário automático:** índice gerado a partir dos estilos de título e atualizado com um clique. _(cap. 06)_
-- **Tabulação:** parada da tecla Tab que alinha textos em colunas. _(cap. 06)_
 - **Teste CRAAP:** critérios para avaliar fontes: atualidade, relevância, autoridade, precisão e propósito. _(cap. 03)_
 - **Texto técnico:** documento de trabalho que informa ou instrui sem ambiguidade. _(cap. 07)_
-- **Transição:** efeito na passagem de um slide para outro. _(cap. 10)_
 - **World Wide Web (WWW):** serviço de páginas ligadas por links que funciona sobre a internet. _(cap. 03)_
 
 ---
@@ -899,6 +735,13 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 - ABNT NBR 10719
 - ajuda Microsoft 365, Google Workspace, LibreOffice
 
+## Referências complementares (citadas nos capítulos)
+
+- ABNT NBR 10520 — Citações em documentos (cap. 03)
+- ABNT NBR 14724 — Trabalhos acadêmicos: apresentação (margens, cap. 06)
+- ABNT NBR 6028 — Resumo (cap. 07)
+- Lei 12.737/2012 — Delitos informáticos (Lei Carolina Dieckmann, cap. 05)
+
 ---
 
 # Capítulo 01 — Comunicação Profissional e Seus Fundamentos
@@ -910,175 +753,59 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 
 ## Teoria
 
-### Por que estudar comunicação num curso de logística?
-
-Imagine a expedição da **Distribuidora Vale Norte** (empresa fictícia usada nos exemplos desta
-apostila) às 6h da manhã: o supervisor avisa pelo rádio que o pedido 4512 deve sair no caminhão da
-doca 3. Com o barulho das empilhadeiras, o conferente entende "doca 2". Resultado: carga no
-caminhão errado, cliente sem mercadoria, frete extra e retrabalho. Nenhum computador falhou — falhou
-a **comunicação**.
-
-No trabalho com Tecnologia da Informação e Comunicação (TIC), a tecnologia é só o meio. Quem decide
-se a mensagem gera alinhamento ou retrabalho é a pessoa que a escreve, fala, lê ou ouve.
-
-> 🎯 **Objetivos do capítulo:** identificar os **sete elementos** da comunicação, reconhecer
-> **ruídos** e saber como reduzi-los, e adequar a **linguagem** e a postura ao ambiente de trabalho.
-
 ### Os sete elementos da comunicação
 
-Toda comunicação depende de sete elementos que trabalham juntos. Se um deles falha, a mensagem
-perde qualidade.
+Na expedição da **Distribuidora Vale Norte**, o supervisor avisa pelo rádio que o pedido 4512 sai
+na doca 3; com o barulho, o conferente entende "doca 2". Nenhum computador falhou — falhou a
+**comunicação**.
 
-| Elemento | O que é | Exemplo na Vale Norte |
-|---|---|---|
-| **Emissor** | Quem cria e envia a mensagem | Supervisor da expedição |
-| **Receptor** | Quem recebe e interpreta | Conferente da doca |
-| **Mensagem** | O conteúdo transmitido | "Pedido 4512 na doca 3 até 7h" |
-| **Canal** | O meio usado | Rádio, e-mail, sistema, quadro de avisos |
-| **Código** | A linguagem comum aos dois | Língua portuguesa, códigos de pedido |
-| **Ruído** | Qualquer interferência | Barulho das empilhadeiras |
-| **Feedback** | O retorno que confirma o entendimento | "Entendido: 4512, doca 3, até 7h" |
-
-**Emissor.** É o responsável pela clareza inicial: precisa organizar a ideia antes de falar ou
-escrever e escolher palavras que o outro entenda.
-
-**Receptor.** Receber não é só ouvir ou ler: é **interpretar**. Exige atenção e escuta ativa. Quem
-ouve "mais ou menos" e completa o resto por suposição causa erros operacionais.
-
-**Mensagem e canal.** A mensagem deve ser precisa e objetiva (o quê, onde, quando, quem). O canal
-deve combinar com a mensagem: uma instrução com muitos números funciona melhor por escrito (e-mail
-ou sistema) do que pelo rádio.
-
-**Código.** Só há comunicação quando os dois dominam o mesmo código. Usar siglas internas ("manda
-o ASN do PO") com um cliente que não conhece esses termos quebra o código.
-
-**Feedback.** Transforma a comunicação numa via de mão dupla — um **circuito fechado**:
-
-1. O emissor envia a instrução.
-2. O receptor interpreta.
-3. O receptor repete com as próprias palavras e confirma.
-4. O emissor valida ou corrige.
-
-🔑 **Ponto-chave:** sem feedback, o emissor *acha* que foi entendido. Com feedback, ele *sabe*.
-
-### Ruídos: o que atrapalha a mensagem
-
-Ruído é toda interferência que altera ou impede o entendimento. Não é só barulho:
-
-| Tipo de ruído | Exemplos no armazém e no escritório |
+| Elemento | Exemplo na Vale Norte |
 |---|---|
-| **Físico** | Empilhadeiras, sirenes, conversas paralelas |
-| **Técnico** | Rádio falhando, internet instável, áudio cortando |
-| **Semântico** | Palavras ambíguas ("dá uma geral"), siglas desconhecidas, texto confuso |
-| **Psicológico** | Pressa, estresse, cansaço no fim do turno, desatenção |
+| **Emissor** — quem envia | Supervisor da expedição |
+| **Receptor** — quem recebe e interpreta | Conferente da doca |
+| **Mensagem** — o conteúdo | "Pedido 4512 na doca 3 até 7h" |
+| **Canal** — o meio | Rádio, e-mail, sistema |
+| **Código** — linguagem comum | Português, códigos de pedido |
+| **Ruído** — interferência | Barulho das empilhadeiras |
+| **Feedback** — retorno | "Entendido: 4512, doca 3, até 7h" |
 
-**Como reduzir ruídos:**
+🔑 Sem feedback, o emissor *acha* que foi entendido; com feedback, ele *sabe*.
 
-- Escolha o canal certo para cada tipo de mensagem.
-- Organize a mensagem em tópicos, com números, horários e prazos exatos.
-- Peça que o colega **repita** o que entendeu (paráfrase).
-- Mensagens importantes combinadas de forma oral devem ser **registradas por escrito**.
+### Ruídos e como reduzi-los
 
-### Comunicação assertiva e escuta ativa
+Ruídos podem ser **físicos** (empilhadeiras), **técnicos** (rádio falhando), **semânticos** (siglas
+desconhecidas, palavras ambíguas) ou **psicológicos** (pressa, cansaço). Para reduzir: canal
+adequado, mensagem em tópicos com números e prazos, pedir que o colega repita e registrar por
+escrito o que é importante.
 
-**Assertividade** é falar com clareza, firmeza e respeito, sem agredir e sem se omitir.
-
-| Estilo | Como age | Efeito na equipe |
-|---|---|---|
-| **Passivo** | Não aponta o erro por medo | Problemas se acumulam |
-| **Agressivo** | Grita, interrompe, culpa | Conflito e desmotivação |
-| **Assertivo** ✅ | Apresenta fatos e propõe solução | Resolve sem desgastar |
-
-🔍 **Exemplo:** em vez de "você sempre erra a contagem!", diga: "a contagem do corredor B deu 12
-caixas a menos que o sistema. Podemos recontar juntos antes de fechar o inventário?"
-
-**Escuta ativa** é prestar atenção de verdade: não interromper, anotar e confirmar ("Se entendi bem,
-a prioridade hoje é o pedido da transportadora X?").
-
-### Níveis de linguagem: falar certo para cada público
+### Níveis de fala
 
 | Nível | Quando usar |
 |---|---|
-| **Culta (formal)** | Relatórios, e-mails a clientes, atas, ofícios |
-| **Técnica** | Entre profissionais da área (romaneio, nota fiscal, inventário) |
-| **Jargão** | Gírias internas da equipe — evitar com clientes e visitantes |
+| **Culta (formal)** | Relatórios, e-mails a clientes, atas |
+| **Técnica** | Entre profissionais da área (romaneio, nota fiscal) |
+| **Jargão** | Gírias internas — evitar com clientes e visitantes |
 
-O bom profissional **adapta** o discurso ao interlocutor. Para o cliente, "o pedido saiu no
-romaneio 2210 com o NF-e pendente de SEFAZ" vira: "seu pedido já foi carregado; a nota fiscal será
-enviada por e-mail em até 1 hora".
+Para o cliente, "o romaneio fechou e a NF-e está pendente" vira "seu pedido já foi carregado; a
+nota fiscal chega por e-mail em até 1 hora".
 
-### Trabalho em equipe, consenso e ética
+### Comunicação em equipes
 
-- **Consenso** não é todos pensarem igual: é todos serem ouvidos e concordarem em **apoiar** a
-  decisão final.
-- **Conflitos** devem ser tratados com critérios objetivos (segurança, custo, prazo), nunca com
-  ataques pessoais.
-- **Capacidades socioemocionais** valorizadas: amabilidade, cooperação, respeito à hierarquia e
-  abertura à mudança.
-- **Ética:** quem trabalha com sistemas tem acesso a dados de clientes, preços e senhas. Não se
-  repassam essas informações nem se escondem falhas: incidente comunicado cedo custa menos.
+**Assertividade** é falar com clareza, firmeza e respeito: "a contagem do corredor B deu 12 caixas a
+menos; podemos recontar juntos?" em vez de "você sempre erra!". **Escuta ativa** é não interromper
+e confirmar o que entendeu. **Consenso** é todos serem ouvidos e apoiarem a decisão; **conflitos**
+se resolvem com critérios objetivos (segurança, custo, prazo), nunca com ataques pessoais.
 
-### Na prática: aviso com ruído × aviso eficaz
-
-| Com ruído ❌ | Eficaz ✅ |
-|---|---|
-| "Pessoal, sábado o sistema vai cair, salvem as coisas aí." | "Manutenção programada: o sistema de estoque ficará fora do ar no sábado (18/10), das 22h às 23h. Finalize os lançamentos até 21h30. Dúvidas: ramal 4020." |
-
-Sequência para uma instrução sem ruídos: **organizar em tópicos → enviar pelo canal adequado →
-pedir confirmação → registrar por escrito**.
-
-## Vídeos
-
-- [Elementos da comunicação: aprenda o que são em poucos minutos](https://www.youtube.com/watch?v=oQ10Zbf2GBU) — 07:48 — Português com Carla Holz
-- [Três dicas para ser mais assertivo no trabalho](https://www.youtube.com/watch?v=5uXBzsW4mTM) — 04:02 — IOB
-- [Comunicação assertiva no trabalho: evite estas frases](https://www.youtube.com/watch?v=PuOMxWMaaMI) — 10:41 — Vânia Marques
+**Hierarquias e autonomia (S2):** saiba quem decide o quê. O conferente tem autonomia para recontar
+uma carga ou parar o carregamento por risco à segurança; trocar a doca ou a ordem dos pedidos é
+decisão do supervisor. Na dúvida, comunique ao nível certo — sem pular etapas e sem ficar parado.
 
 ## Resumo
 
-- A comunicação tem **sete elementos**: emissor, receptor, mensagem, canal, código, ruído e feedback.
-- O **feedback** fecha o circuito e confirma o entendimento; sem ele, o erro aparece só no resultado.
-- **Ruídos** podem ser físicos, técnicos, semânticos ou psicológicos — e sempre podem ser reduzidos.
-- A comunicação **assertiva** apresenta fatos e soluções com respeito; a **escuta ativa** confirma o que foi dito.
-- A linguagem deve se **adequar ao público**: técnica entre colegas, clara e formal com clientes.
-- Instrução importante: **tópicos → canal certo → confirmação → registro escrito**.
-
-## Exercícios
-
-### ITEM 1
-- **Capacidade:** C1, S1
-- **Contexto:** O supervisor da Vale Norte avisou pelo rádio: "Pedido 4512 na doca 3 até as 7h". O conferente respondeu "ok" e carregou o pedido na doca 2.
-- **Comando:** Identifique, nessa situação, quem é o emissor, o receptor, a mensagem, o canal, o código, o ruído e explique por que o feedback dado ("ok") não foi suficiente.
-- **Linhas:** 5
-
-### ITEM 2
-- **Capacidade:** C1, S1
-- **Contexto:** No recebimento de mercadorias há quatro problemas: barulho das empilhadeiras, rádio com chiado, um colega que usa siglas que ninguém conhece e um conferente muito cansado no fim do turno.
-- **Comando:** Classifique cada problema como ruído físico, técnico, semântico ou psicológico e proponha uma ação para reduzir cada um.
-- **Linhas:** 4
-
-### ITEM 3
-- **Capacidade:** C1, S1
-- **Contexto:** Durante o inventário, um colega diz em voz alta para toda a equipe: "Você é um desastre, errou a contagem de novo!".
-- **Comando:** Reescreva a fala de forma assertiva, apresentando o fato e propondo uma solução, sem ataque pessoal.
-- **Linhas:** 3
-
-### ITEM 4
-- **Capacidade:** C1, S1
-- **Contexto:** Um cliente ligou perguntando pelo pedido dele. O atendente respondeu: "o romaneio já fechou, mas a NF-e está travada no SEFAZ por rejeição de CFOP".
-- **Comando:** Explique qual nível de linguagem foi usado, por que ele é inadequado para esse público e reescreva a resposta de forma clara para o cliente.
-- **Linhas:** 4
-
-### ITEM 5
-- **Capacidade:** C1, S1
-- **Contexto:** O sistema de estoque da Vale Norte ficará fora do ar na sexta-feira, das 18h às 19h30, para atualização. Todos precisam terminar os lançamentos antes.
-- **Comando:** Redija um aviso eficaz para a equipe (canal escolhido, data, horário, impacto, o que fazer e contato para dúvidas).
-- **Linhas:** 5
-
-### ITEM 6
-- **Capacidade:** C1, S1
-- **Contexto:** Na doca 3 da Vale Norte, o conferente diz ao motorista que a carga só será liberada às 14h. O motorista, irritado, responde que tinha agendado para as 11h e começa a falar alto. Os dois param de se ouvir e a fila de caminhões aumenta.
-- **Comando:** Descreva como o conferente pode conduzir a conversa usando escuta ativa e comunicação assertiva, e proponha uma solução de consenso que respeite o agendamento, o procedimento da empresa e o motorista.
-- **Linhas:** 5
+- Sete elementos: emissor, receptor, mensagem, canal, código, ruído e feedback.
+- Ruídos (físicos, técnicos, semânticos, psicológicos) sempre podem ser reduzidos.
+- Linguagem culta com clientes, técnica entre colegas; jargão só dentro da equipe.
+- Equipe: assertividade, escuta ativa, consenso e critérios objetivos nos conflitos.
 
 ---
 
@@ -1091,193 +818,73 @@ pedir confirmação → registrar por escrito**.
 
 ## Teoria
 
-### O computador como canal de trabalho
-
-No capítulo anterior, vimos que o **canal** é o meio por onde a mensagem passa. No armazém da
-**Distribuidora Vale Norte**, boa parte das mensagens passa pelo computador: lançamento de notas,
-etiquetas, inventário e e-mails para transportadoras. Se o equipamento falha, surge **ruído técnico**
-— e a operação para.
-
-> 🎯 **Objetivos do capítulo:** diferenciar **hardware, software e periféricos**, entender o papel
-> do **sistema operacional** e organizar **pastas e arquivos** com segurança.
-
 ### Hardware e software
+
+No armazém da **Distribuidora Vale Norte**, notas, etiquetas, inventário e e-mails passam pelo
+computador. Se o equipamento falha, surge **ruído técnico** e a operação para.
 
 | | Hardware (o corpo) | Software (a mente) |
 |---|---|---|
 | O que é | Partes físicas: peças, cabos, circuitos | Programas e instruções |
-| Exemplos | Processador, memória, disco, monitor | Sistema operacional, navegador, planilha, sistema de estoque |
-| Sem o outro | Fica parado, sem utilidade | Não tem onde ser executado |
+| Exemplos | Processador, memória, disco, monitor | Sistema operacional, navegador, planilha |
 
-Desde 1945, os computadores seguem a ideia de **John von Neumann**: os programas e os dados ficam
-na **mesma memória**, e o processador busca, entende e executa as instruções uma a uma.
+### Componentes e processadores
 
-### Os principais componentes
+- **Processador (CPU):** o "cérebro"; faz os cálculos e coordena as instruções.
+- **Memória RAM:** guarda o que está **em uso agora**; é rápida, mas **volátil** (perde tudo ao
+  desligar).
+- **Placa-mãe:** liga todas as peças.
+- **Armazenamento:** guarda os arquivos de forma **permanente** — **HDD** (discos magnéticos, mais
+  barato) ou **SSD** (eletrônico, até 10 vezes mais rápido e resistente a impacto).
 
-- **Processador (CPU):** o "cérebro". Faz os cálculos (ULA) e coordena as instruções (UC). Executa
-  bilhões de operações por segundo.
-- **Memória RAM:** guarda o que está **em uso agora**. É rápida, mas **volátil**: ao desligar, perde
-  tudo. Pouca RAM deixa o computador lento quando muitos programas estão abertos.
-- **Placa-mãe:** liga todas as peças. Tem o soquete do processador, os slots de expansão e o
-  chipset, que controla o tráfego de dados.
-- **Armazenamento:** guarda os arquivos de forma **permanente**.
+⚠️ Quem guarda o arquivo depois de desligar é o HDD ou o SSD, não a RAM: salve antes de desligar.
 
-| | HDD (disco rígido) | SSD (unidade sólida) |
-|---|---|---|
-| Tecnologia | Discos magnéticos que giram | Memória eletrônica (Flash), sem peças móveis |
-| Velocidade | Menor | Até 10 vezes maior |
-| Resistência a impacto | Baixa | Alta |
-| Custo por TB | Menor | Maior |
+### Periféricos e sua utilização
 
-⚠️ **Atenção:** a RAM **não** guarda arquivos depois que o computador é desligado. Quem guarda é o
-HDD ou o SSD. Por isso, salve o trabalho antes de desligar.
-
-### Periféricos
-
-Periféricos são os equipamentos que se ligam ao computador para **entrada** ou **saída** de dados.
-
-| Tipo | Função | Exemplos no armazém |
-|---|---|---|
-| **Entrada** | Enviam dados ao computador | Teclado, mouse, **leitor de código de barras**, scanner |
-| **Saída** | Mostram ou entregam o resultado | Monitor, **impressora de etiquetas**, caixa de som |
-| **Entrada e saída** | Fazem os dois | Tela touch, pen drive, headset, coletor de dados |
-
-**Conexões mais comuns:** USB (tipos A e C) para dados e energia; HDMI e DisplayPort para vídeo;
-RJ-45 (cabo de rede) para a rede da empresa.
-
-**Uso correto dos periféricos:**
-
-- Use **Ejetar / Remover hardware com segurança** antes de tirar o pen drive.
-- **Driver** é o programa que permite ao sistema controlar o periférico; equipamento novo pode
-  exigir instalar ou atualizar o driver.
-- Confira a **impressora padrão** antes de imprimir etiquetas.
-- Cabos sem dobras e equipamentos longe de umidade.
-
-🔍 **Situação-problema:** o leitor de código de barras parou de funcionar. Verifique nesta ordem:
-**hardware** (cabo e porta; testar outra porta USB) → **driver** (o aparelho aparece com alerta no
-Gerenciador de Dispositivos?) → **configuração do sistema** (o dispositivo está habilitado?).
-
-### O sistema operacional (SO)
-
-Sem sistema operacional, o computador é só uma caixa de metal. O SO faz a **mediação** entre o
-usuário, os programas e o hardware:
-
-- **Gerencia processos:** divide o tempo do processador entre os programas abertos.
-- **Gerencia a memória:** reserva espaço da RAM para cada programa.
-- **Gerencia arquivos:** organiza e protege o que é gravado no disco.
-
-| Tipo de SO | Onde é usado | Exemplos |
-|---|---|---|
-| **Desktop** | Computadores do escritório | Windows, Linux, macOS, ChromeOS |
-| **Servidor** | Máquinas que guardam sistemas e bancos de dados da empresa | Linux, Windows Server |
-| **Móvel** | Celulares, tablets e **coletores de dados** | Android, iOS |
-
-- **Proprietário:** código fechado, geralmente pago (ex.: Windows).
-- **Código aberto:** código disponível para estudo e adaptação, geralmente gratuito (ex.: Linux).
-
-A **interface gráfica** (janelas, ícones, menus) facilita o uso: área de trabalho, barra de tarefas
-e menu Iniciar.
-
-| Atalho (exemplo no Windows) | Função |
+| Tipo | Exemplos no armazém |
 |---|---|
-| Ctrl + C / Ctrl + X / Ctrl + V | Copiar / Recortar / Colar |
-| Ctrl + Z | Desfazer |
-| F2 | Renomear |
-| Windows + E | Abrir o Explorador de Arquivos |
-| Alt + Tab | Alternar entre janelas |
-| Windows + L | Bloquear a tela (ao sair da mesa) |
+| **Entrada** | Teclado, mouse, **leitor de código de barras**, scanner |
+| **Saída** | Monitor, **impressora de etiquetas**, caixa de som |
+| **Entrada e saída** | Tela touch, pen drive, coletor de dados |
 
-No Linux, no macOS e no ChromeOS existem atalhos equivalentes: confira na ajuda do sistema
-que a empresa usa. O importante é o hábito (copiar, desfazer, renomear e bloquear a tela).
+Conexões comuns: **USB** (dados e energia), **HDMI** (vídeo) e **RJ-45** (rede). Use
+**Remover hardware com segurança** antes de tirar o pen drive, confira a **impressora padrão** antes
+de imprimir etiquetas e lembre que o **driver** é o programa que permite ao sistema controlar o
+periférico. Leitor parou? Verifique **cabo e porta → driver → configuração do sistema**.
 
-### Pastas, arquivos e boas práticas
+### Sistema operacional: tipos, fundamentos e funções
 
-Os arquivos ficam organizados em uma **árvore de pastas**, a partir da raiz (`C:\` no Windows ou
-`/` no Linux).
+O **sistema operacional (SO)** faz a mediação entre usuário, programas e hardware: gerencia
+**processos**, **memória** e **arquivos**.
 
-🔍 **Exemplo de caminho:** `C:\ValeNorte\Logistica\Expedicao\2026\`
-
-**Boas práticas de nomes:**
-
-- Evite acentos, espaços e símbolos (`ç`, `/`, `#`, `?`).
-- Use a data invertida no início: `2026-10-03_Inventario_CorredorB.xlsx`.
-- Controle versões: `_v01`, `_v02`.
-- Nunca use nomes genéricos como `documento1.docx`.
-
-| Extensão | Uso |
+| Tipo | Exemplos |
 |---|---|
-| `.pdf` | Relatórios e documentos para leitura e envio |
-| `.docx` / `.odt` | Textos editáveis |
-| `.xlsx` / `.ods` | Planilhas |
-| `.zip` | Vários arquivos compactados em um só |
+| **Desktop** | Windows, Linux, macOS, ChromeOS |
+| **Servidor** | Linux, Windows Server |
+| **Móvel** (celular, coletor) | Android, iOS |
 
-**Compactar para enviar por e-mail:** selecionar os arquivos → botão direito → **Compactar para
-ZIP** → nomear com data e assunto (`2026-10_Romaneios.zip`) → anexar. No destino, use **Extrair
-tudo**.
+A **área de trabalho** e a **barra de ferramentas/tarefas** dão acesso rápido aos programas.
+Atalhos úteis (Windows; outros sistemas têm equivalentes): **Ctrl + C / V** (copiar/colar),
+**Ctrl + Z** (desfazer), **F2** (renomear), **Windows + E** (arquivos) e **Windows + L** (bloquear
+a tela ao sair da mesa).
 
-**Pesquisa no Explorador:** `*.pdf` encontra todos os PDFs; dá para filtrar por data de modificação
-e por tamanho.
+### Pastas, pesquisa e compactação de arquivos
 
-### Cuidados com o equipamento e com os dados
+Os arquivos ficam numa **árvore de pastas**. Exemplo: `C:\ValeNorte\Logistica\Expedicao\2026\`.
 
-- **Sinais de problema:** ventoinha barulhenta e travamentos (superaquecimento), tela azul e
-  reinícios (memória), lentidão para abrir pastas (disco).
-- **Manutenção preventiva:** limpeza sem panos úmidos, boa ventilação e uso de nobreak.
-- **Backup:** cópias periódicas na nuvem ou em disco externo.
-- **Permissões:** cada usuário acessa só o que precisa, protegendo arquivos do sistema.
-
-## Vídeos
-
-- [Informática para Concursos — Hardware, software e periféricos](https://www.youtube.com/watch?v=YrDLtdP4LI4) — 14:37 — Newbie Aulas
-- [O que é um sistema operacional e exemplos (Informática Básica)](https://www.youtube.com/watch?v=yjfB-asZVF4) — 04:59 — Eu TI Ensino
-- [Organizando arquivos, pastas e subpastas no computador](https://www.youtube.com/watch?v=yzIDFLSVa6U) — 08:28 — Professora Marcia
+- **Nomes:** sem acentos e símbolos, com data invertida e versão:
+  `2026-10-03_Inventario_CorredorB_v01.xlsx`.
+- **Pesquisa de arquivos e diretórios:** na busca do explorador, `*.pdf` encontra todos os PDFs;
+  filtre por data de modificação e tamanho.
+- **Compactação:** selecione os arquivos → **Compactar para ZIP** → nomeie
+  (`2026-10_Romaneios.zip`) → anexe. No destino, use **Extrair tudo**.
 
 ## Resumo
 
-- **Hardware** é a parte física; **software** são os programas. Um não funciona sem o outro.
-- O **processador** executa as instruções; a **RAM** guarda o que está em uso e perde tudo ao desligar; **HDD/SSD** guardam os arquivos de forma permanente.
-- **Periféricos** são de entrada, saída ou entrada e saída; precisam de **driver** e de uso correto.
-- O **sistema operacional** gerencia processos, memória e arquivos; existem SOs de desktop, servidor e móveis, proprietários ou de código aberto.
-- Pastas organizadas e nomes padronizados (`AAAA-MM-DD_Assunto_v01`) evitam perda de tempo e de arquivos.
-- **Compactar**, fazer **backup** e cuidar do equipamento são rotinas do profissional.
-
-## Exercícios
-
-### ITEM 1
-- **Capacidade:** C4
-- **Contexto:** No almoxarifado e na expedição da Vale Norte há: computador, sistema de estoque, leitor de código de barras, impressora de etiquetas, sistema operacional, planilha de controle e pen drive.
-- **Comando:** Separe os itens em hardware e software e, entre os hardwares, classifique os periféricos como entrada, saída ou entrada e saída.
-- **Linhas:** 5
-
-### ITEM 2
-- **Capacidade:** C4
-- **Contexto:** Um conferente digitou a contagem do inventário durante duas horas e a energia acabou antes de ele salvar. Ao religar, a contagem tinha sumido.
-- **Comando:** Explique, usando os conceitos de memória RAM e armazenamento (HDD/SSD), por que os dados foram perdidos e o que ele deveria ter feito.
-- **Linhas:** 4
-
-### ITEM 3
-- **Capacidade:** C4
-- **Contexto:** O leitor de código de barras do recebimento parou de funcionar no meio do turno.
-- **Comando:** Descreva, em ordem, as três verificações que devem ser feitas (hardware, driver e configuração do sistema) e o que observar em cada uma.
-- **Linhas:** 4
-
-### ITEM 4
-- **Capacidade:** C4
-- **Contexto:** A pasta do setor tem arquivos chamados "planilha nova.xlsx", "inventário final FINAL (2).xlsx" e "documento1.docx", todos soltos na Área de Trabalho.
-- **Comando:** Proponha uma estrutura de pastas para o setor e renomeie os três arquivos seguindo as boas práticas (data invertida, sem acentos e espaços, versão).
-- **Linhas:** 5
-
-### ITEM 5
-- **Capacidade:** C4
-- **Contexto:** A transportadora pediu os 15 romaneios da semana em um único e-mail, mas os arquivos juntos são grandes demais para anexar um a um.
-- **Comando:** Descreva o passo a passo para compactar os arquivos, nomear o pacote corretamente e explicar à transportadora como abri-lo.
-- **Linhas:** 4
-
-### ITEM 6
-- **Capacidade:** C4
-- **Contexto:** O setor fiscal pediu as notas fiscais de recebimento de setembro em um único arquivo. Hoje elas estão soltas na Área de Trabalho, com nomes como "nota1.pdf" e "scan 2.pdf".
-- **Comando:** Monte um checklist de 5 passos para organizar as notas em pastas (por mês e por fornecedor), renomear os arquivos no padrão `AAAA-MM-DD_Fornecedor_NF`, compactar tudo em ZIP com nome padronizado e conferir o pacote antes de enviar.
-- **Linhas:** 6
+- Hardware é a parte física; software são os programas — um não funciona sem o outro.
+- CPU executa, RAM guarda o que está em uso, HDD/SSD guardam de forma permanente.
+- Periféricos são de entrada, saída ou ambos e precisam de driver e uso correto.
+- O SO gerencia processos, memória e arquivos; pastas organizadas, busca e ZIP agilizam o trabalho.
 
 ---
 
@@ -1290,167 +897,63 @@ e por tamanho.
 
 ## Teoria
 
-### A web tem tudo — mas nem tudo é confiável
+### Internet, web e navegadores
 
-O supervisor da **Distribuidora Vale Norte** pediu: "encontre a norma de armazenagem de produtos
-inflamáveis e me mande a fonte". Uma busca rápida devolve milhares de páginas: blogs, vídeos,
-lojas, sites do governo. Como achar a informação certa em poucos minutos e mostrar de onde ela veio?
+O supervisor da **Distribuidora Vale Norte** pede: "encontre a norma de armazenagem de inflamáveis e
+me mande a fonte". Uma busca devolve milhares de páginas — como achar a certa e mostrar de onde
+veio?
 
-> 🎯 **Objetivos do capítulo:** usar **operadores de busca**, avaliar a **confiabilidade das
-> fontes** e respeitar os **direitos autorais**, citando corretamente o que foi pesquisado.
+A **internet** é a infraestrutura (cabos, roteadores, servidores); a **World Wide Web (WWW)** é o
+serviço de páginas ligadas por links que funciona sobre ela. O **navegador** recebe o endereço, o
+**DNS** traduz o nome para o IP do servidor e a página é montada. Prefira sites com **HTTPS**
+(cadeado). A **janela anônima** não esconde o acesso da rede da empresa nem protege contra vírus.
 
-### Internet e web não são a mesma coisa
+### Sites, buscadores e operadores
 
-| Internet | World Wide Web (WWW) |
-|---|---|
-| A **infraestrutura**: cabos, roteadores, servidores e protocolos (TCP/IP) | Um **serviço** que funciona sobre a internet: páginas ligadas por links (HTML, HTTP) |
-| Surgiu da ARPANET (1969) | Criada por **Tim Berners-Lee** no CERN (1989) |
-
-E-mail, aplicativos de mensagem e videochamadas também usam a internet, mas não são a web.
-
-### Como o navegador funciona
-
-1. Você digita um endereço (ex.: `www.gov.br`).
-2. O **DNS** traduz o nome para o endereço IP do servidor.
-3. O navegador envia uma **requisição HTTP/HTTPS**.
-4. O servidor responde, e o navegador **monta a página** (HTML, CSS e scripts).
-
-**Recursos úteis:** **cache** (guarda partes das páginas para abrir mais rápido), **cookies**
-(lembram preferências e logins) e **extensões** (complementos do navegador).
-
-⚠️ **Atenção:** a **janela anônima** só não salva histórico e cookies **no seu computador**. A rede
-da empresa e o provedor continuam vendo o acesso. Ela não protege contra vírus.
-
-🔒 Prefira sites com **HTTPS** (cadeado na barra de endereço), principalmente para fazer login.
-
-### Como os buscadores funcionam
-
-Os buscadores (como Google, Bing ou DuckDuckGo) não varrem a web na hora da busca. Eles
-consultam um catálogo montado antes:
-
-1. **Rastreamento:** robôs percorrem os links e coletam as páginas.
-2. **Indexação:** o conteúdo é organizado por palavras-chave.
-3. **Ranqueamento:** os resultados são ordenados por relevância e autoridade.
-
-### Operadores de busca: pesquise como profissional
+Os buscadores (Google, Bing, DuckDuckGo) **rastreiam**, **indexam** e **ranqueiam** as páginas.
 
 | Operador | O que faz | Exemplo |
 |---|---|---|
-| `" "` (aspas) | Frase exata | `"armazenagem de inflamáveis"` |
-| `-` (menos) | Exclui um termo | `empilhadeira -venda` |
+| `" "` | Frase exata | `"armazenagem de inflamáveis"` |
+| `-` | Exclui um termo | `empilhadeira -venda` |
 | `OR` | Um termo ou outro | `romaneio OR "lista de carga"` |
-| `site:` | Busca só em um domínio | `site:gov.br` |
-| `filetype:` | Busca um tipo de arquivo | `filetype:pdf` |
+| `site:` | Só num domínio | `site:gov.br` |
+| `filetype:` | Tipo de arquivo | `filetype:pdf` |
 
-🔍 **Exemplo completo:** `"armazenamento de líquidos inflamáveis" site:gov.br filetype:pdf` traz
-documentos oficiais em PDF, sem lojas nem propagandas.
+Fontes técnicas: Google Acadêmico, SciELO, normas ABNT e sites `.gov.br` e `.edu.br`.
 
-**Fontes acadêmicas e técnicas:** Google Acadêmico, SciELO, Periódicos CAPES, normas ABNT e sites
-oficiais (`.gov.br`, `.edu.br`).
+### Fonte confiável
 
-### Como saber se uma fonte é confiável
+Use o **teste CRAAP**: **atualidade** (é recente?), **relevância** (responde à pergunta?),
+**autoridade** (quem escreveu?), **precisão** (tem fonte, outros confirmam?) e **propósito**
+(informar ou vender?). Confirme em **pelo menos 3 fontes independentes**.
 
-Use o **teste CRAAP** — perguntas simples antes de usar qualquer informação:
+### Download e gravação
 
-| Critério | Pergunta |
-|---|---|
-| **Atualidade** | Quando foi publicado ou atualizado? Ainda vale? |
-| **Relevância** | Responde exatamente ao que preciso? |
-| **Autoridade** | Quem escreveu? É órgão oficial, universidade, especialista? |
-| **Precisão** | Os dados têm fonte? Outros sites confirmam? |
-| **Propósito** | O objetivo é informar ou vender? Tem viés? |
+Baixe só de sites oficiais, passe o antivírus e desconfie de `.exe`, `.bat` ou **extensão dupla**
+(`relatorio.pdf.exe`). **Grave** o arquivo na pasta certa (não deixe em Downloads), renomeie no
+padrão do setor e anote de onde ele veio.
 
-| Sinais de fonte confiável ✅ | Sinais de fonte duvidosa ❌ |
-|---|---|
-| Autor e instituição identificados, data, referências | Texto anônimo, sem data |
-| Linguagem técnica e neutra | Manchete sensacionalista, excesso de anúncios |
-| Confirmada por outras fontes | Só aparece em um lugar |
+### Políticas de uso, direitos autorais e citação de fontes
 
-🔑 **Regra prática:** confirme a informação em **pelo menos 3 fontes independentes**.
+- **Política de Uso Aceitável (PUA):** regras da empresa para internet e computadores (sem
+  pirataria nem downloads sem autorização); o tráfego pode ser monitorado.
+- **Direitos autorais (Lei 9.610/98):** estar na internet não libera a cópia. **Plágio** é
+  apresentar como seu o trabalho de outra pessoa. Licenças **Creative Commons** indicam o que o
+  autor permite (BY, NC, ND, SA).
+- **Citação (norma adotada: ABNT NBR 10520):** direta, entre aspas, com autor, ano e página — "A informação é o combustível
+  da indústria" (SILVA, 2023, p. 15); indireta, com suas palavras — Para Silva (2023), os dados
+  sustentam a produção. No fim, as **referências** completas.
 
-**Download e gravação com segurança:** baixe só de sites oficiais, passe o antivírus e desconfie
-de arquivos `.exe`, `.bat`, `.scr` ou com **extensão dupla** (`relatorio.pdf.exe`). Depois de
-baixar, **grave o arquivo na pasta certa** (não deixe na pasta Downloads), renomeie no padrão do
-setor (`2026-10-03_Norma_Inflamaveis.pdf`) e anote de onde ele veio, para poder citar a fonte.
-
-### Direitos autorais e plágio
-
-Tudo o que alguém cria — texto, imagem, vídeo, programa — é protegido pela **Lei 9.610/98**. Estar
-na internet **não** significa ser livre para copiar.
-
-- **Plágio** é apresentar como seu o trabalho de outra pessoa: copiar trechos sem citar, misturar
-  pedaços de vários textos ou reescrever ideias sem dar crédito.
-- **Creative Commons** são licenças que dizem o que o autor permite: **BY** (dar crédito), **NC**
-  (sem uso comercial), **ND** (sem modificações), **SA** (compartilhar com a mesma licença).
-
-### Citação correta (ABNT)
-
-- **Citação direta** (as palavras exatas do autor, até 3 linhas): entre aspas, com autor, ano e
-  página. Ex.: "A informação é o combustível da indústria" (SILVA, 2023, p. 15).
-- **Citação indireta** (a ideia do autor com suas palavras): sem aspas, com autor e ano. Ex.: Para
-  Silva (2023), os dados sustentam a produção.
-- No fim do documento, liste as **referências** completas (autor, título, site, data de acesso).
-
-### Uso aceitável na empresa
-
-A **Política de Uso Aceitável (PUA)** define as regras de uso da internet e dos computadores da
-empresa: nada de programas piratas, downloads sem autorização ou uso pessoal excessivo. O tráfego
-pode ser monitorado, e descumprir as regras pode gerar advertência ou demissão.
-
-### Roteiro de pesquisa em 4 passos
-
-1. **Defina** as palavras-chave e os operadores.
-2. **Busque** em fontes confiáveis e filtre por data.
-3. **Avalie** com o teste CRAAP e compare 3 fontes.
-4. **Escreva** a síntese citando as fontes (ABNT).
-
-## Vídeos
-
-- [Internet e Web — O que é? Qual a diferença?](https://www.youtube.com/watch?v=rtCAh_hMB4A) — 02:48 — Canal TI
-- [Buscador Google — aspas em busca exata](https://www.youtube.com/watch?v=d0vLtbVcfzM) — 02:08 — Professor Fabio Rosar
-- [Métodos para checagem de fontes e validação de informações](https://www.youtube.com/watch?v=4V_YJrgMvXY) — 04:07 — Academia do Jornalista
-- [O que é plágio](https://www.youtube.com/watch?v=R-hgQtWM08I) — 06:12 — Instituto Observatório do Direito Autoral
+**Roteiro:** definir palavras-chave → buscar com operadores → avaliar (CRAAP, 3 fontes) → escrever
+citando as fontes.
 
 ## Resumo
 
-- A **internet** é a infraestrutura; a **web** é o serviço de páginas que funciona sobre ela.
-- O navegador usa **DNS** e **HTTP/HTTPS** para buscar e montar as páginas; a janela anônima **não** esconde o acesso da rede da empresa.
-- **Operadores** (`" "`, `-`, `OR`, `site:`, `filetype:`) tornam a busca rápida e precisa.
-- O **teste CRAAP** e a comparação de **3 fontes** garantem informação confiável.
-- Copiar sem citar é **plágio** e viola a **Lei 9.610/98**; cite com as regras da **ABNT**.
-- A **Política de Uso Aceitável** define o uso correto da internet na empresa.
-
-## Exercícios
-
-### ITEM 1
-- **Capacidade:** C5
-- **Contexto:** Um colega da Vale Norte diz: "internet e web são a mesma coisa; o WhatsApp é um site da web".
-- **Comando:** Explique a diferença entre internet e web e diga se a afirmação do colega está correta, justificando.
-- **Linhas:** 4
-
-### ITEM 2
-- **Capacidade:** C5
-- **Contexto:** O supervisor pediu documentos oficiais em PDF sobre armazenamento de líquidos inflamáveis, publicados em sites do governo brasileiro.
-- **Comando:** Escreva a busca completa que você digitaria no buscador usando aspas, site: e filetype:, e explique a função de cada operador usado.
-- **Linhas:** 4
-
-### ITEM 3
-- **Capacidade:** C5
-- **Contexto:** Você encontrou duas fontes sobre empilhamento máximo de caixas: um blog sem autor, cheio de anúncios, de 2014; e uma cartilha de um órgão oficial, com autor e data de 2025.
-- **Comando:** Aplique o teste CRAAP às duas fontes e indique qual delas deve ser usada no relatório, justificando com pelo menos três critérios.
-- **Linhas:** 5
-
-### ITEM 4
-- **Capacidade:** C5
-- **Contexto:** Um estagiário copiou três parágrafos de um site para o relatório do setor, sem aspas e sem indicar a fonte.
-- **Comando:** Explique por que isso é plágio, o que diz a Lei 9.610/98 e reescreva a situação mostrando como fazer uma citação direta ou indireta correta.
-- **Linhas:** 5
-
-### ITEM 5
-- **Capacidade:** C5
-- **Contexto:** Um colega recebeu por e-mail o arquivo "tabela_frete.pdf.exe" e usou a janela anônima do navegador para baixar um programa pirata, achando que assim ninguém veria.
-- **Comando:** Aponte os dois erros de segurança cometidos e explique o que a janela anônima realmente faz e o que diz a Política de Uso Aceitável.
-- **Linhas:** 5
+- Internet é a infraestrutura; a web é o serviço de páginas; prefira HTTPS.
+- Operadores (`" "`, `-`, `OR`, `site:`, `filetype:`) tornam a busca precisa.
+- CRAAP e 3 fontes garantem informação confiável; grave downloads na pasta certa.
+- Copiar sem citar é plágio (Lei 9.610/98): cite pela ABNT NBR 10520 e siga a PUA.
 
 ---
 
@@ -1463,184 +966,62 @@ pode ser monitorado, e descumprir as regras pode gerar advertência ou demissão
 
 ## Teoria
 
-### Quando a mensagem digital falha, a carga para
+### Correio eletrônico profissional
 
-Segunda-feira, 8h: a transportadora liga para a **Distribuidora Vale Norte** dizendo que não recebeu
-o romaneio da carga do dia. O assistente jura que enviou. Ao conferir, a equipe descobre três
-falhas: o e-mail saiu **sem o anexo**, o assunto era só "Urgente" e o link da pasta na nuvem
-estava **sem permissão** para a transportadora. Resultado: caminhão parado na doca e cliente
-esperando.
+A transportadora não recebeu o romaneio: o e-mail saiu **sem anexo**, com o assunto "Urgente" e o
+link da nuvem **sem permissão**. Caminhão parado na doca. O **e-mail corporativo** é um registro
+formal e precisa de:
 
-> 🎯 **Objetivos do capítulo:** redigir **e-mails profissionais** completos, **armazenar e
-> compartilhar arquivos na nuvem** com a permissão correta e **comunicar-se em equipe** (inclusive a
-> distância) buscando consenso e resolvendo conflitos com respeito.
+1. **Assunto** claro: `[Setor] Assunto – Ação/Prazo` (ex.: `[Expedição] Romaneio carga 2210 –
+   coleta até 14h`);
+2. **Saudação** adequada ("Prezado Sr. Carlos");
+3. **Corpo** objetivo: o quê, quando e o que se espera do leitor;
+4. **Anexo** citado no texto e conferido antes de enviar (prefira PDF; arquivo grande vai por link);
+5. **Encerramento e assinatura:** "Atenciosamente", nome, setor e ramal.
 
-### O e-mail corporativo é um documento oficial
-
-Diferente das mensagens instantâneas, o e-mail da empresa é um **registro formal**: comprova
-pedidos, entregas, prazos e responsabilidades. Por isso precisa ser claro e completo.
-
-**Anatomia de um e-mail profissional:**
-
-1. **Assunto** — contexto claro e objetivo;
-2. **Saudação** — tratamento adequado ao destinatário;
-3. **Corpo** — mensagem direta: o quê, quando, o que se espera do leitor;
-4. **Anexo** — citado no texto e conferido antes de enviar;
-5. **Encerramento e assinatura** — nome, cargo/setor e contato.
-
-**Assunto que funciona:** use a fórmula `[Setor/Processo] Assunto – Ação/Prazo`.
-
-| Assunto ruim ❌ | Assunto bom ✅ |
+| Campo | Para quem |
 |---|---|
-| Urgente | [Expedição] Romaneio carga 2210 – conferir até 14h |
-| Dúvida | [Recebimento] Divergência NF 4587 – confirmar quantidade |
-| Arquivo | [Estoque] Inventário corredor B – versão final |
+| **Para** | Quem precisa agir |
+| **CC** | Quem só acompanha |
+| **CCO** | Muitos destinatários sem expor os endereços (respeita a LGPD) |
 
-**Saudação e encerramento:** "Prezado Sr. Carlos", "Olá, equipe da Transportadora Sul" ·
-"Atenciosamente" ou "Cordialmente" + nome completo + setor + ramal. Evite "E aí", "Fala, galera".
+**Netiqueta:** nada de CAPS LOCK, de "responder a todos" sem necessidade ou de encaminhar conversa
+confidencial.
 
-### Para, CC e CCO: quem recebe o quê
+### Armazenamento e compartilhamento em nuvem
 
-| Campo | Para quem | Exemplo na Vale Norte |
-|---|---|---|
-| **Para** | Quem precisa agir | Transportadora que vai buscar a carga |
-| **CC** (cópia) | Quem precisa só acompanhar | Supervisor da expedição |
-| **CCO** (cópia oculta) | Muitos destinatários que não devem ver os e-mails uns dos outros | Comunicado a 40 clientes |
+**Nuvem** são arquivos e serviços guardados em servidores na internet (Google Drive, OneDrive,
+Dropbox — a empresa define). Organize por ano e processo (`2026 > Expedição > Romaneios`) e
+acompanhe a **sincronização** entre nuvem e computador.
 
-⚠️ **Atenção:** enviar um comunicado a muitos clientes com todos os endereços em "Para" ou "CC"
-expõe dados pessoais e pode violar a **LGPD**. Use **CCO**.
-
-### Anexos e boas maneiras (netiqueta)
-
-- Cite o anexo no texto ("segue em anexo o romaneio...") e **confira se ele foi anexado**.
-- Nome padronizado: `2026-10-06_Romaneio_Carga2210.pdf`. Prefira **PDF** para documentos finais.
-- Arquivo grande (acima de cerca de 20 MB): envie um **link da nuvem** em vez de anexo.
-- Nada de CAPS LOCK (parece grito), de "responder a todos" para um simples "obrigado" ou de
-  encaminhar conversas confidenciais sem autorização.
-- Revise ortografia e confirme o recebimento de mensagens importantes.
-
-**O e-mail da situação inicial, corrigido:**
-
-> **Para:** expedicao@transportadorasul.com.br · **CC:** supervisao@valenorte.com.br
-> **Assunto:** [Expedição] Romaneio carga 2210 – coleta hoje até 14h
-> Prezado Sr. Carlos, segue em anexo o romaneio da carga 2210 (12 volumes, 860 kg) para coleta
-> hoje, até as 14h, na doca 3. O mesmo arquivo está na pasta compartilhada "Romaneios Outubro".
-> Por favor, confirme o recebimento. Atenciosamente, Ana Souza — Expedição — ramal 4021.
-
-### Computação em nuvem
-
-**Nuvem** é o nome dado a arquivos e serviços guardados em **servidores na internet**, em vez de
-ficarem só no computador. Com ela, o arquivo pode ser aberto de qualquer equipamento autorizado:
-o computador do escritório, o notebook do supervisor ou o coletor de dados do armazém.
-
-- **Armazenamento:** serviços como Google Drive, OneDrive ou Dropbox (a empresa define qual usar).
-- **Aplicativos no navegador:** editores de texto e planilhas que funcionam sem instalar nada.
-
-**Organização na nuvem:** pastas por ano, processo ou cliente (`2026 > Expedição > Romaneios >
-Outubro`), subpastas `Rascunhos` e `Final` e datas no formato `AAAA-MM-DD` no nome dos arquivos.
-
-**Sincronização:** mantém iguais a cópia da nuvem e a do computador. Se você trabalhar sem
-internet, as alterações são enviadas quando a conexão voltar. Ícones comuns: nuvem (só na
-nuvem), ✔ verde (disponível no computador) e setas girando (enviando).
-
-### Compartilhar com a permissão certa
-
-| Permissão | O que a pessoa pode fazer | Quando usar |
+| Permissão | Pode | Quando usar |
 |---|---|---|
 | **Leitor** | Ver e baixar | Transportadora que só precisa do romaneio |
-| **Comentador** | Ver e sugerir/comentar | Auditoria ou cliente que revisa um relatório |
-| **Editor** | Alterar, excluir e compartilhar | Colegas do setor que atualizam a planilha |
+| **Comentador** | Ver e comentar | Cliente que revisa um relatório |
+| **Editor** | Alterar e excluir | Colegas que atualizam a planilha |
 
-⚠️ Evite **link público com permissão de edição**: qualquer pessoa com o link pode apagar ou
-alterar o arquivo. Compartilhe com os **e-mails** das pessoas certas e revise os acessos.
+⚠️ Evite **link público com edição**: compartilhe com os e-mails certos. A **edição simultânea**, o
+**histórico de versões** (restaurar o que foi apagado) e as menções `@nome` facilitam o trabalho
+conjunto.
 
-**Passo a passo para compartilhar uma pasta:** (1) criar a pasta com nome padronizado; (2) colocar
-os arquivos finais; (3) definir a permissão para cada e-mail; (4) avisar por e-mail formal, com
-o link e o objetivo.
+### Comunicação em equipes
 
-### Trabalhar junto, mesmo a distância
+Muitas mensagens são **assíncronas**: escreva-as completas. Na **dinâmica do trabalho em equipe**,
+cada um sabe seu papel e avisa impedimentos cedo; a **busca de consenso** compara alternativas por
+prazo, custo e segurança; na **gestão de conflitos**, o foco é o problema, com escuta ativa e
+combinados por escrito. Ofensas, sabotagem ou vazamento são faltas graves: guarde provas, não
+revide e procure os canais oficiais.
 
-- **Edição simultânea:** várias pessoas no mesmo arquivo, sem trocar dez versões por anexo.
-- **Histórico de versões:** se alguém apagar dados, é possível **restaurar** uma versão anterior.
-- **Comentários e menções:** escreva `@nome` para chamar um colega e marque como **resolvido**
-  quando terminar.
-
-### Comunicação em equipe: consenso e conflitos
-
-Grande parte da comunicação no trabalho é **assíncrona**: a mensagem não é respondida na hora.
-Por isso, escreva mensagens **completas** (não mande só "Oi" e espere a resposta para explicar).
-
-- **Dinâmica do trabalho em equipe:** cada um sabe o seu papel, informa o andamento e avisa
-  impedimentos cedo.
-- **Busca de consenso:** ouvir todos, comparar alternativas por critérios objetivos (prazo, custo,
-  segurança) e combinar uma decisão que todos apoiem.
-- **Gestão de conflitos:** foco no problema, não na pessoa; escuta ativa; prazos e combinados por
-  escrito.
-
-| Fonte de ruído na equipe | Como alinhar |
-|---|---|
-| Mensagem ambígua | Pedir confirmação (feedback) |
-| Prazo implícito | Combinar data e hora por escrito |
-| "Achei que você já tinha feito" | Atualizar o andamento no grupo ou na planilha compartilhada |
-
-**Ética digital:** tudo deixa registro (logs). Ofensas em grupos (cyberbullying), apagar arquivos
-de colegas (sabotagem) e repassar dados sem autorização (vazamento) são faltas graves. Se
-acontecer: **guarde as provas** (prints com data e hora), **não revide** e procure os **canais
-oficiais** (supervisão, RH, canal de denúncia).
-
-## Vídeos
-
-- [Como escrever um e-mail formal perfeito em 5 passos simples](https://www.youtube.com/watch?v=HXWkvcjlwnk) — 05:06 — Na Prática
-- [E-mail sem gafes](https://www.youtube.com/watch?v=zFLMRtxPQHM) — 06:55 — Camila Renaux
-- [Você sabe o que é computação em nuvem?](https://www.youtube.com/watch?v=9b04CQozjdw) — 02:20 — IPM Sistemas
-- [Aprenda isso antes de compartilhar arquivos e pastas na nuvem](https://www.youtube.com/watch?v=6m2vj-KHey0) — 11:37 — Me Ensina
+**Abertura à mudança (S3):** um sistema novo, um processo diferente ou a ideia de um colega podem
+melhorar o trabalho. Ouça antes de rejeitar, peça os fatos ("o novo romaneio digital reduziu os
+erros?") e teste a proposta — discordar com argumentos é diferente de resistir por hábito.
 
 ## Resumo
 
-- O **e-mail corporativo** é um registro formal: assunto claro, saudação, corpo objetivo, anexo citado e conferido, encerramento e assinatura.
-- **Para** = quem age; **CC** = quem acompanha; **CCO** = muitos destinatários sem expor endereços (LGPD).
-- **Nuvem** guarda arquivos em servidores na internet; organize pastas, use datas no nome e acompanhe a sincronização.
-- Compartilhe com a **permissão certa** (leitor, comentador, editor) e evite link público de edição.
-- **Histórico de versões**, comentários e menções tornam o trabalho em equipe mais seguro.
-- Em equipe: mensagens completas, **consenso** por critérios objetivos e **conflitos** tratados com foco na solução e respeito.
-
-## Exercícios
-
-### ITEM 1
-- **Capacidade:** C1, C5
-- **Contexto:** A transportadora não recebeu o romaneio: o e-mail foi enviado com o assunto "Urgente", sem anexo, e o link da pasta na nuvem estava sem permissão para ela.
-- **Comando:** Reescreva o e-mail completo (Para, CC, assunto, saudação, corpo citando o anexo, encerramento e assinatura) e diga qual permissão a transportadora deve receber na pasta.
-- **Linhas:** 8
-
-### ITEM 2
-- **Capacidade:** C1
-- **Contexto:** A Vale Norte vai mudar o horário de coleta e precisa avisar 40 clientes por e-mail. Um colega colocou todos os endereços no campo "Para".
-- **Comando:** Explique o problema dessa escolha (inclusive em relação à LGPD) e indique como preencher os campos Para, CC e CCO nesse caso.
-- **Linhas:** 4
-
-### ITEM 3
-- **Capacidade:** C5
-- **Contexto:** A pasta "Romaneios Outubro" na nuvem será compartilhada com: a transportadora (só consulta), a auditoria interna (precisa deixar observações) e dois colegas da expedição (atualizam os arquivos).
-- **Comando:** Indique a permissão de cada um (leitor, comentador ou editor), justifique e explique por que não usar um link público de edição.
-- **Linhas:** 5
-
-### ITEM 4
-- **Capacidade:** C5
-- **Contexto:** A planilha de controle de coletas, editada por várias pessoas na nuvem, amanheceu com metade das linhas apagadas.
-- **Comando:** Descreva como recuperar os dados usando o histórico de versões e proponha duas medidas para evitar que isso se repita.
-- **Linhas:** 4
-
-### ITEM 5
-- **Capacidade:** C1
-- **Contexto:** No grupo de mensagens da doca, um motorista reclama em letras maiúsculas que espera há duas horas, e o conferente responde de forma ríspida que "o horário é o do sistema". A discussão esquenta.
-- **Comando:** Proponha como o conferente deveria responder (escuta ativa, assertividade e foco na solução) e como a equipe pode chegar a um consenso sobre a regra de horários de doca.
-- **Linhas:** 6
-
-### ITEM 6
-- **Capacidade:** C1, C5
-- **Contexto:** Para trabalhar de casa, um colega compartilhou a pasta de pedidos dos clientes com permissão de editor para "qualquer pessoa com o link" e mandou o link no grupo da família.
-- **Comando:** Aponte os riscos dessa atitude, diga o que deve ser feito imediatamente na pasta e como orientar o colega com respeito e firmeza.
-- **Linhas:** 5
+- E-mail profissional: assunto claro, saudação, corpo objetivo, anexo conferido e assinatura.
+- Para = quem age; CC = quem acompanha; CCO = muitos destinatários (LGPD).
+- Nuvem com pastas organizadas e permissão certa (leitor, comentador, editor).
+- Em equipe: mensagens completas, consenso por critérios objetivos e conflitos com respeito.
 
 ---
 
@@ -1653,161 +1034,66 @@ oficiais** (supervisão, RH, canal de denúncia).
 
 ## Teoria
 
-### Você deixaria o portão do armazém aberto?
+### Pilares da segurança da informação
 
-Ninguém deixa o portão do armazém aberto à noite. Mesmo assim, muita gente deixa a senha num
-post-it no monitor, clica em qualquer link e conecta pen drives desconhecidos no computador da
-empresa. Na **Distribuidora Vale Norte**, os dados de clientes, notas fiscais, rotas e estoque
-valem tanto quanto as mercadorias: se forem roubados, alterados ou ficarem indisponíveis, a
-operação para.
+Na **Distribuidora Vale Norte**, dados de clientes, notas fiscais, rotas e estoque valem tanto
+quanto as mercadorias. Senha em post-it, clique em qualquer link e pen drive desconhecido são
+"portões abertos".
 
-> 🎯 **Objetivos do capítulo:** conhecer os **pilares** da segurança da informação e as **leis
-> vigentes**, reconhecer **golpes** (como o phishing) e **códigos maliciosos**, cuidar de **contas e
-> senhas**, **navegar com segurança** e fazer **backup**.
-
-### Os três pilares da segurança da informação
-
-| Pilar | O que garante | Exemplo de falha na logística |
+| Pilar | O que garante | Falha na logística |
 |---|---|---|
-| **Confidencialidade** | Só quem tem autorização acessa | Lista de clientes e preços vazada para um concorrente |
-| **Integridade** | A informação não é alterada indevidamente | Quantidade de uma nota fiscal modificada no sistema |
-| **Disponibilidade** | A informação está acessível quando precisa | Sistema de estoque fora do ar no meio do inventário |
-
-🔑 **Ponto-chave:** se qualquer um dos três falha, a empresa perde dinheiro, clientes e
-credibilidade.
+| **Confidencialidade** | Só quem tem autorização acessa | Lista de clientes vazada |
+| **Integridade** | A informação não é alterada indevidamente | Quantidade da nota modificada |
+| **Disponibilidade** | Está acessível quando precisa | Sistema fora do ar no inventário |
 
 ### Leis vigentes
 
-- **LGPD — Lei Geral de Proteção de Dados (Lei 13.709/2018):** regula coleta, uso, guarda e
-  compartilhamento de **dados pessoais**. Exige **finalidade** clara, segurança e cuidado no
-  compartilhamento; a ANPD fiscaliza e pode aplicar multas de até 2% do faturamento, limitadas a
-  R$ 50 milhões por infração.
-- **Lei Carolina Dieckmann (Lei 12.737/2012):** tornou crime **invadir dispositivo informático**
-  (computador, celular) violando mecanismo de segurança. No trabalho: usar a senha de um colega ou
-  abrir pastas restritas sem permissão pode configurar crime e causar demissão por justa causa.
+- **LGPD (Lei 13.709/2018):** regula o uso de **dados pessoais** (nome, CPF, placa e CNH do
+  motorista) e **sensíveis** (saúde, biometria, religião); exige finalidade clara e segurança.
+- **Lei Carolina Dieckmann (Lei 12.737/2012):** é crime **invadir dispositivo informático**. Usar
+  a senha de um colega ou abrir pastas restritas sem permissão pode configurar crime.
 
-| Dados pessoais comuns | Dados pessoais sensíveis |
-|---|---|
-| Nome, CPF, endereço, telefone, e-mail | Origem racial ou étnica, religião, opinião política |
-| Placa e CNH do motorista | Dados de saúde, genéticos e biométricos |
+### Golpes na internet
 
-### Golpes na internet: phishing e engenharia social
-
-**Phishing** é o golpe que imita uma mensagem legítima (banco, fornecedor, transportadora, o
-próprio setor de TI) para fazer a pessoa clicar num link, abrir um anexo ou informar senhas.
-Faz parte da **engenharia social**: manipular as emoções (medo, pressa, curiosidade) para
-induzir ao erro.
-
-**Sinais de alerta:**
-
-- remetente estranho ou parecido com o verdadeiro (`suporte@vaIenorte.com` com "I" no lugar de "l");
-- **urgência e ameaça** ("sua conta será bloqueada em 1 hora");
-- pedido de **senha**, código ou dados bancários (empresas sérias não pedem senha por e-mail);
-- links que, ao passar o mouse, mostram outro endereço; anexos inesperados (`.exe`, `.zip`).
-
-**Conduta correta:** não clicar, não responder, não encaminhar a colegas; **avisar o suporte de
-TI** e confirmar a informação por um canal oficial (telefone conhecido, site digitado à mão).
+**Phishing** imita uma mensagem legítima (banco, fornecedor, TI) para roubar senhas ou instalar
+programas; faz parte da **engenharia social**. Sinais: remetente parecido com o verdadeiro
+(`vaIenorte` com "I"), **urgência e ameaça**, pedido de senha ou código, link que mostra outro
+endereço e anexo inesperado. **Conduta:** não clicar, não encaminhar, avisar a TI e confirmar por
+canal oficial.
 
 ### Códigos maliciosos (malware)
 
 | Tipo | Como age |
 |---|---|
-| **Vírus** | Precisa de um arquivo e da ação do usuário (abrir um anexo) para se espalhar |
+| **Vírus** | Precisa que o usuário abra um arquivo |
 | **Worm** | Espalha-se sozinho pela rede |
-| **Cavalo de Troia** | Finge ser um programa útil e abre uma "porta" para o invasor |
-| **Ransomware** | Criptografa os arquivos e pede resgate; pagar não garante a devolução |
-| **Spyware** | Espiona o que é digitado (senhas) e acessado |
-
-⚠️ **Atenção:** pen drive pessoal ou desconhecido é uma das portas de entrada mais comuns.
+| **Cavalo de Troia** | Finge ser útil e abre a porta ao invasor |
+| **Ransomware** | Criptografa os arquivos e pede resgate |
+| **Spyware** | Espiona o que é digitado e acessado |
 
 ### Contas e senhas
 
-- Senha forte: **12 a 16 caracteres**, com letras maiúsculas e minúsculas, números e símbolos.
-  Uma frase também funciona: `Doca3-Carga!Sai-14h`.
-- **Nunca** reutilize a mesma senha em sistemas diferentes nem a compartilhe com colegas.
-- Use um **gerenciador de senhas** aprovado pela empresa; nada de papel colado no monitor.
-- Ative a **autenticação em dois fatores (2FA)**: além da senha (algo que você sabe), um código no
-  celular (algo que você tem) ou a biometria (algo que você é).
-- Ao sair da mesa, **bloqueie a tela** (no Windows, tecla Windows + L).
+Senha forte tem **12 a 16 caracteres** com maiúsculas, minúsculas, números e símbolos (ex.:
+`Doca3-Carga!Sai-14h`). Não reutilize nem compartilhe, use **gerenciador de senhas**, ative a
+**autenticação em dois fatores (2FA)** e **bloqueie a tela** ao sair da mesa.
 
 ### Navegação segura
 
-- Prefira sites com **HTTPS** (cadeado): a conexão é criptografada — mas o cadeado sozinho não
-  prova que o site é honesto.
-- Digite o endereço de sistemas importantes em vez de clicar em links recebidos.
-- Em Wi-Fi público, não acesse sistemas da empresa sem a **VPN** corporativa.
-- Mantenha o sistema operacional e o antivírus **atualizados**.
+Prefira **HTTPS**, digite o endereço de sistemas importantes, use a **VPN** em Wi-Fi público e
+mantenha sistema e antivírus **atualizados**.
 
-### Backup: a cópia que salva o dia
+### Backup
 
-**Backup** é a cópia de segurança em outro local. Se o computador queimar, for roubado ou sofrer
-ransomware, os dados são recuperados a partir dela.
-
-**Regra 3-2-1:** **3** cópias dos dados (a original + 2), em **2** tipos de mídia diferentes (ex.:
-servidor e disco externo) e **1** cópia fora da empresa (ex.: nuvem corporativa). Teste a
-restauração de vez em quando: backup que não abre não é backup.
-
-### Checklist diário de segurança
-
-| Rotina | Manutenção |
-|---|---|
-| Bloquear a tela ao levantar | Sistema e antivírus atualizados |
-| Não compartilhar senhas | Backup periódico na nuvem da empresa |
-| Conferir o remetente antes de abrir anexos | Avisar o suporte de TI sobre qualquer incidente |
-
-## Vídeos
-
-- [Phishing: como identificar e-mails falsos?](https://www.youtube.com/watch?v=7qeutLGZ84c) — 07:08 — PHS Brasil Consultoria em Informática
-- [2FA: tudo sobre a autenticação de dois fatores!](https://www.youtube.com/watch?v=Kn943mQsWfs) — 10:18 — Locaweb
-- [LGPD: resumo da lei em 4 minutos](https://www.youtube.com/watch?v=n3e0HVcNml0) — 04:06 — ManageEngine Brasil
-- [Plano de backup 3-2-1: aprenda como usar na sua empresa](https://www.youtube.com/watch?v=2O8eUuK-bfM) — 06:39 — FourServ
+**Backup** é a cópia de segurança em outro local. **Regra 3-2-1:** 3 cópias, em 2 mídias
+diferentes, 1 fora da empresa (nuvem corporativa). Teste a restauração: backup que não abre não é
+backup.
 
 ## Resumo
 
-- Os **pilares** da segurança são **confidencialidade, integridade e disponibilidade**.
-- **LGPD (13.709/2018)** protege dados pessoais; a **Lei 12.737/2012** pune a invasão de dispositivos.
-- **Phishing** imita mensagens legítimas e usa urgência para roubar senhas: não clique, avise a TI.
-- **Malware** (vírus, worm, cavalo de Troia, ransomware, spyware) entra por anexos, downloads e pen drives.
-- Senhas fortes e únicas, gerenciador de senhas e **2FA** protegem as contas.
-- Navegue com HTTPS e VPN, mantenha tudo atualizado e faça **backup** pela regra **3-2-1**.
-
-## Exercícios
-
-### ITEM 1
-- **Capacidade:** C2
-- **Contexto:** Um conferente de carga da Vale Norte recebe um e-mail "URGENTE" do "banco" dizendo que a conta da empresa será bloqueada em 1 hora, a menos que ele informe a senha do sistema de estoque no link enviado.
-- **Comando:** Aponte pelo menos três sinais de que é phishing, descreva a conduta correta do conferente e explique o que poderia acontecer com os dados dos clientes (relacione com a LGPD) se ele clicasse.
-- **Linhas:** 6
-
-### ITEM 2
-- **Capacidade:** C2
-- **Contexto:** Em uma semana aconteceram três incidentes: (a) a planilha de preços dos clientes apareceu num grupo externo; (b) alguém mudou a quantidade de uma nota fiscal no sistema; (c) o sistema de rastreio ficou fora do ar por uma tarde.
-- **Comando:** Relacione cada incidente ao pilar da segurança da informação que foi violado (confidencialidade, integridade ou disponibilidade) e proponha uma medida de prevenção para cada um.
-- **Linhas:** 5
-
-### ITEM 3
-- **Capacidade:** C2
-- **Contexto:** Na expedição, as senhas usadas são "valenorte2026", "123456" e a data de nascimento do supervisor. Todos usam a mesma senha no e-mail e no sistema de estoque.
-- **Comando:** Explique por que essas senhas são fracas, crie um exemplo de senha forte seguindo as regras do capítulo e explique como a autenticação em dois fatores aumenta a proteção.
-- **Linhas:** 5
-
-### ITEM 4
-- **Capacidade:** C2
-- **Contexto:** O computador do almoxarifado foi atacado por ransomware: todos os arquivos ficaram bloqueados e os criminosos pedem pagamento. A planilha de inventário do mês estava só naquele computador.
-- **Comando:** Explique o que é backup e por que pagar o resgate não é solução, e monte um plano de backup 3-2-1 para a planilha de inventário.
-- **Linhas:** 5
-
-### ITEM 5
-- **Capacidade:** C2
-- **Contexto:** Um colega enviou para um grupo de mensagens com pessoas de fora da empresa uma planilha com nome, CPF, endereço e telefone de todos os motoristas cadastrados, "para facilitar o contato".
-- **Comando:** Diga quais desses dados são pessoais, explique por que a atitude desrespeita a LGPD e descreva como o compartilhamento deveria ter sido feito.
-- **Linhas:** 5
-
-### ITEM 6
-- **Capacidade:** C2
-- **Contexto:** Ao chegar ao escritório, você encontra uma estação de trabalho com a senha num post-it no monitor, a tela desbloqueada e um pen drive pessoal desconhecido conectado.
-- **Comando:** Identifique as três vulnerabilidades, explique o risco de cada uma (inclusive de malware) e proponha a correção.
-- **Linhas:** 5
+- Pilares: confidencialidade, integridade e disponibilidade.
+- LGPD protege dados pessoais; a Lei 12.737/2012 pune a invasão de dispositivos.
+- Phishing usa urgência para enganar; malware entra por anexos, downloads e pen drives.
+- Senha forte + 2FA, navegação com HTTPS/VPN e backup 3-2-1.
 
 ---
 
@@ -1820,180 +1106,71 @@ restauração de vez em quando: backup que não abre não é backup.
 
 ## Teoria
 
-### Um procedimento que ninguém consegue seguir
-
-O procedimento de recebimento de carga da **Distribuidora Vale Norte** existe, mas é um bloco de
-texto corrido de duas páginas, sem títulos, sem numeração e sem destaque para os cuidados de
-segurança. Resultado: cada conferente faz de um jeito, e os erros se repetem. O conteúdo está
-certo; o que falta é **formatação e estrutura**.
-
-> 🎯 **Objetivos do capítulo:** usar o editor de textos para **formatar** e **estruturar**
-> documentos profissionais — página, parágrafos, listas, tabelas, figuras, estilos e sumário —,
-> **revisar** com controle de alterações e **arquivar e imprimir** corretamente.
-
 ### Tipos e funções do editor de textos
 
-O editor de textos serve para criar, formatar, revisar, salvar e imprimir documentos: procedimentos,
-relatórios, comunicados, atas e memorandos. Há editores instalados no computador e editores que
-funcionam no navegador, nas suítes **Microsoft 365, Google Workspace ou LibreOffice**. Os nomes dos
-menus mudam um pouco entre elas, mas os recursos são os mesmos: faixa de opções ou menus, **régua**
-(margens e recuos) e **barra de status** (páginas, palavras e idioma).
+O procedimento de recebimento da **Distribuidora Vale Norte** é um bloco de texto corrido, sem
+títulos nem numeração: cada conferente faz de um jeito. O conteúdo está certo; falta **formatação e
+estrutura**. O editor de textos (Microsoft 365, Google Workspace ou LibreOffice) cria, formata,
+revisa, salva e imprime documentos; os recursos são os mesmos, só os menus mudam.
 
-### Formatação de fonte
+### Formatação
 
-- **Fonte sem serifa** (ex.: Arial, Calibri) para leitura em tela; **serifada** (ex.: Times) para
-  impressos longos. Tamanho 11 ou 12 para o corpo do texto.
-- **Negrito** para termos-chave; **itálico** para palavras estrangeiras ("picking").
-- Evite sublinhar (parece link) e evite muitas cores.
+Fonte sem serifa (Arial, Calibri) em 11 ou 12 para tela; **negrito** para termos-chave e
+*itálico* para palavras estrangeiras ("picking"). Evite sublinhar e excesso de cores.
 
-### Parágrafos: alinhamento, recuos, tabulação, espaçamentos e margens
+### Recuos, tabulação, parágrafos, espaçamentos e margens
 
-| Recurso | Para que serve | Dica profissional |
-|---|---|---|
-| **Alinhamento** | À esquerda, centralizado, à direita ou justificado | Justificado em relatórios; centralizado só em títulos e capas |
-| **Recuo** | Afasta o parágrafo da margem; recuo de primeira linha marca nova ideia | Use a régua ou "Parágrafo", nunca espaços |
-| **Tabulação** | Alinha textos em colunas com a tecla Tab | Útil em listas de conferência simples |
-| **Espaçamento entre linhas** | 1,0 a 1,5 | 1,5 em relatórios longos |
-| **Espaçamento antes/depois** | Separa um parágrafo do outro | Use "6 pt depois" em vez de vários Enter |
-| **Margens** | Espaço entre o texto e a borda | Padrão ABNT: 3 cm em cima e à esquerda; 2 cm embaixo e à direita |
-
-⚠️ **Atenção:** apertar Enter várias vezes para "pular" de página ou usar a barra de espaço para
-alinhar texto quebra o documento assim que alguém edita uma linha.
+| Recurso | Dica profissional |
+|---|---|
+| **Alinhamento** | Justificado em relatórios; centralizado só em títulos |
+| **Recuo** | Use a régua, nunca espaços |
+| **Tabulação** | Tecla Tab para alinhar colunas simples |
+| **Espaçamento** | 1,5 entre linhas e "6 pt depois" em vez de vários Enter |
+| **Margens** | ABNT NBR 14724 (norma adotada): 3 cm em cima e à esquerda; 2 cm embaixo e à direita |
 
 ### Configuração de página
 
-- **Tamanho** A4 (210 × 297 mm); **orientação** retrato para texto e **paisagem** para tabelas largas.
-- **Quebra de página:** começa uma nova página sem apertar vários Enter.
-- **Quebra de seção:** permite margens, orientação ou numeração diferentes no mesmo arquivo (ex.:
-  só a página da tabela de produtos em paisagem).
-- **Cabeçalho e rodapé:** nome da empresa e do documento; número da página no rodapé.
+A4, retrato para texto e paisagem para tabelas largas; **quebra de página** (sem vários Enter);
+**quebra de seção** para mudar orientação ou numeração num trecho; **cabeçalho e rodapé** com
+empresa, documento e número da página.
 
-### Marcadores e numeração
+### Marcadores e numeração, tabelas e gráficos
 
-- **Numeração** para passos que têm ordem (1, 2, 3...) — o ideal para procedimentos.
-- **Marcadores** para itens sem ordem (lista de EPIs).
-- **Lista multinível** para subpassos (1, 1.1, 1.2).
+**Numeração** para passos com ordem, **marcadores** para itens sem ordem e lista multinível para
+subpassos. Nas **tabelas**, a primeira linha é cabeçalho (repetido em cada página), texto à
+esquerda e números à direita. **Gráficos** podem ser feitos no editor ou trazidos da planilha.
 
-### Tabelas e gráficos
+### Figuras e objetos, bordas e sombreamento, colunas
 
-- Primeira linha como **cabeçalho**, repetida em cada página quando a tabela continua.
-- Texto alinhado à esquerda; números à direita.
-- **Gráficos** podem ser criados no próprio editor ou trazidos da planilha (ver capítulo 9).
-
-### Figuras e objetos
-
-Fotos, formas, caixas de texto e diagramas ilustram o procedimento (ex.: fluxo do recebimento).
-Use o layout "alinhado com o texto" para que a figura não "pule" ao editar, e coloque **número,
-título e fonte** em toda figura (ex.: "Figura 1 – Etiqueta de identificação do palete").
-
-### Bordas e sombreamento
-
-Servem para destacar o que não pode passar despercebido, como uma caixa de **ATENÇÃO: usar luvas
-ao manusear embalagens danificadas**, ou para sombrear de leve o cabeçalho de uma tabela. Use com
-moderação e cores suaves, que fiquem legíveis na impressão em preto e branco.
-
-### Colunas
-
-Duas ou três colunas funcionam em comunicados e boletins (ex.: aviso de segurança no mural da
-doca). Procedimentos e relatórios usam **coluna única**. Para usar colunas só num trecho, coloque
-**quebras de seção** antes e depois dele.
-
-### Estilos e sumário automático
-
-O erro mais comum é formatar cada título "na mão". Com **estilos** (Título 1, Título 2, Normal):
-
-1. aplique **Título 1** às seções e **Título 2** às subseções;
-2. para mudar a aparência de todos os títulos, altere o **estilo** uma única vez;
-3. insira o **sumário automático** (menu Referências ou Inserir) e **atualize** depois de editar.
+**Figuras** "alinhadas com o texto" e com número, título e fonte ("Figura 1 – Etiqueta do
+palete"). **Bordas e sombreamento** destacam avisos como "ATENÇÃO: usar luvas". **Colunas** servem
+a comunicados e boletins; procedimentos usam coluna única. Com **estilos** (Título 1, Título 2) o
+**sumário automático** é gerado e atualizado com um clique.
 
 ### Ortografia, dicionário e exibição
 
-- Defina o idioma **português do Brasil** para a verificação ortográfica funcionar.
-- Adicione ao **dicionário** termos corretos da área ("WMS", "romaneio", "picking").
-- Confira a **autocorreção**: ela pode trocar siglas e códigos de produto.
-- **Localizar e substituir** troca um termo em todo o documento de uma vez.
+Idioma em português do Brasil; acrescente ao **dicionário** termos da área ("WMS", "romaneio");
+confira a autocorreção em siglas. Modos de **exibição**: layout de impressão, modo de leitura e
+painel de navegação; o zoom não muda o tamanho real da fonte.
 
-| Modo de exibição | Para que serve |
-|---|---|
-| Layout de impressão | Ver como sairá no papel |
-| Modo de leitura | Ler e revisar sem as ferramentas |
-| Estrutura de tópicos / painel de navegação | Navegar e reorganizar pelos títulos |
+### Controle de alterações
 
-O **zoom** muda só a visualização, não o tamanho real da fonte.
-
-### Controle de alterações e comentários
-
-- Com o **controle de alterações** ligado, tudo o que cada pessoa acrescenta ou apaga fica marcado;
-  o responsável **aceita ou rejeita** cada mudança.
-- **Comentários** sugerem ajustes sem mexer no texto; seja específico e cordial e marque como
-  **resolvido** depois de ajustar.
-- Antes de enviar a um cliente, **aceite/rejeite tudo e apague os comentários internos**.
+Com o **controle de alterações** ligado, cada mudança fica marcada para ser aceita ou rejeitada;
+**comentários** sugerem ajustes sem mexer no texto. Antes de enviar ao cliente, aceite/rejeite
+tudo e apague os comentários internos.
 
 ### Arquivamento e impressão
 
-| Formato | Uso |
-|---|---|
-| `.docx` / `.odt` | Documento editável |
-| `.pdf` | Versão final para distribuir, sem edição |
-| Modelo (`.dotx` / `.ott`) | Base padrão para documentos repetidos (ex.: relatório de avaria) |
-
-- Salve logo no início e com frequência; nome padronizado: `2026-10-13_Procedimento_Recebimento_v02.docx`.
-- Antes de imprimir: **visualizar impressão**, conferir escala de 100%, evitar linha sozinha no
-  topo ou no fim da página e decidir frente e verso.
-
-## Vídeos
-
-- [Inserir estilos aos títulos e criar sumário](https://www.youtube.com/watch?v=HTiZJll9-vY) — 07:15 — Biblioteca Universitária Unisul
-- [Margens, parágrafos, espaçamento, fonte e recuo (normas ABNT)](https://www.youtube.com/watch?v=FuNEWGVNwsQ) — 05:53 — Maycon Júlio Faria Fontes
-- [Como usar o controle de alterações do Word](https://www.youtube.com/watch?v=4YVeteowhoY) — 05:12 — Você Mais Tech
-- [Como controlar as alterações no Google Documentos](https://www.youtube.com/watch?v=IadMj-sgmy4) — 07:16 — Tu quer saber mais?
+`.docx`/`.odt` para editar, **`.pdf`** para a versão final e modelo (`.dotx`/`.ott`) para
+documentos repetidos. Nome padronizado: `2026-10-13_Procedimento_Recebimento_v02.docx`. Antes de
+imprimir, **visualize a impressão**, confira a escala e decida frente e verso.
 
 ## Resumo
 
-- O editor de textos cria, formata, revisa, salva e imprime documentos; os recursos são parecidos nas diferentes suítes.
-- Parágrafos bem formatados usam **alinhamento, recuo, tabulação, espaçamento e margens** — nunca vários Enter ou espaços.
-- **Configuração de página**, quebras de página e de seção, cabeçalho e rodapé organizam o documento.
-- **Numeração** para passos, **marcadores** para itens, **tabelas** com cabeçalho, **figuras** com legenda, **bordas e sombreamento** para avisos e **colunas** para comunicados.
-- **Estilos** de título geram o **sumário automático** e padronizam o documento.
-- Revise com **ortografia, dicionário e controle de alterações**; salve com nome padronizado, envie a versão final em **PDF** e confira a visualização antes de imprimir.
-
-## Exercícios
-
-### ITEM 1
-- **Capacidade:** C1
-- **Contexto:** O procedimento de recebimento de carga da Vale Norte está em texto corrido, sem títulos, sem numeração dos passos e sem destaque para os cuidados de segurança.
-- **Comando:** Descreva como você formataria o documento: quais estilos usaria nos títulos, onde aplicaria lista numerada, que tabela criaria para a conferência e como destacaria o aviso de segurança com borda e sombreamento.
-- **Linhas:** 7
-
-### ITEM 2
-- **Capacidade:** C1
-- **Contexto:** O relatório de estoque tem 10 páginas em retrato e, no meio, uma tabela de produtos com 12 colunas que não cabe na largura da folha.
-- **Comando:** Explique como deixar só a página da tabela em paisagem sem mudar o resto do documento e informe as margens que você configuraria no padrão ABNT.
-- **Linhas:** 4
-
-### ITEM 3
-- **Capacidade:** C1
-- **Contexto:** Um colega aperta Enter três vezes para separar os parágrafos, usa a barra de espaço para fazer o recuo da primeira linha e, para mudar de página, aperta Enter até o texto descer.
-- **Comando:** Explique por que essas práticas causam problemas e indique o recurso correto para cada uma (espaçamento, recuo e quebra de página).
-- **Linhas:** 4
-
-### ITEM 4
-- **Capacidade:** C1
-- **Contexto:** O supervisor vai revisar o procedimento antes de publicá-lo e quer ver exatamente o que cada pessoa mudou, além de deixar sugestões sem alterar o texto.
-- **Comando:** Descreva como usar o controle de alterações e os comentários nessa revisão e o que deve ser feito com eles antes de enviar a versão final.
-- **Linhas:** 4
-
-### ITEM 5
-- **Capacidade:** C1
-- **Contexto:** O relatório de avaria será enviado à transportadora. O arquivo está como "relatorio final(3).docx", ainda com comentários internos sobre negociação de valores.
-- **Comando:** Indique como renomear, em que formato enviar e o que conferir antes (comentários, visualização de impressão), justificando cada escolha.
-- **Linhas:** 4
-
-### ITEM 6
-- **Capacidade:** C1
-- **Contexto:** Será afixado no mural da doca um comunicado de segurança com foto de uma empilhadeira, texto em duas colunas e termos como "WMS" e "picking", que o corretor marca como erro.
-- **Comando:** Explique como organizar o comunicado em colunas, como inserir a foto com legenda numerada e como resolver as marcações do corretor ortográfico sem trocar os termos técnicos.
-- **Linhas:** 5
+- Parágrafos usam alinhamento, recuo, tabulação, espaçamento e margens — nunca Enter ou espaços.
+- Página com quebras, cabeçalho e rodapé; numeração, marcadores, tabelas, figuras e colunas.
+- Estilos geram o sumário automático; ortografia e controle de alterações revisam o texto.
+- Versão final em PDF, nome padronizado e visualização antes de imprimir.
 
 ---
 
@@ -2006,187 +1183,67 @@ O **zoom** muda só a visualização, não o tamanho real da fonte.
 
 ## Teoria
 
-### Uma avaria, dois documentos
+### Definição, tipos e exemplos de textos técnicos
 
-Na descarga de terça-feira, a **Distribuidora Vale Norte** recebeu 4 caixas de um lote de 40
-amassadas e com produto vazando. O supervisor pediu duas coisas: um **relatório de avaria** para
-a transportadora e o fornecedor e uma **reunião** com a equipe do turno para decidir o que fazer —
-com **ata**. Se esses textos saírem confusos, a empresa pode perder o direito à indenização e a
-decisão da reunião pode ser contestada depois.
+Na descarga, a **Distribuidora Vale Norte** recebeu 4 de 40 caixas amassadas e vazando. O
+supervisor pediu um **relatório de avaria** e uma reunião com **ata**. Texto confuso pode custar a
+indenização.
 
-> 🎯 **Objetivos do capítulo:** identificar e interpretar **textos técnicos**, aplicar **normas de
-> redação**, produzir **relatório, ata, memorando e resumo** com a estrutura correta e escolher o
-> **nível de linguagem** adequado.
-
-### O que é um texto técnico
-
-Texto técnico é o documento **utilitário** que transmite informações de trabalho **sem
-ambiguidade**: relatórios, atas, memorandos, ofícios, procedimentos (POP), ordens de serviço (OS),
-fichas técnicas e manuais. Ele é **registro e evidência**: vale como prova em auditorias,
-reclamações e processos.
-
-**Pilares da redação técnica:**
-
-- **Clareza** — uma só interpretação possível;
-- **Concisão** — sem palavras inúteis;
-- **Objetividade** — fatos e números, não impressões;
-- **Impessoalidade** — terceira pessoa e foco no fato, não em quem fez.
+**Texto técnico** transmite informação de trabalho **sem ambiguidade** e vale como registro:
+relatórios, atas, memorandos, ofícios, POP, ordens de serviço e fichas técnicas. Pilares:
+**clareza, concisão, objetividade e impessoalidade**.
 
 | Pessoal e vago ❌ | Técnico e impessoal ✅ |
 |---|---|
-| "A gente achou que o motorista bateu o palete e fez um estrago horrível." | "Constatou-se avaria em 4 das 40 caixas do lote 3381, com vazamento de produto, às 9h15, durante a descarga na doca 2." |
+| "A gente achou que o motorista bateu o palete." | "Constatou-se avaria em 4 das 40 caixas do lote 3381, às 9h15, na doca 2." |
 
 ### Normas de redação
 
-Normas dão padrão e credibilidade aos documentos. **Ao citar uma norma, declare qual é:**
+Ao citar uma norma, **declare qual é**: **ABNT NBR 10719** (relatório técnico, adotada aqui),
+ABNT NBR 6028 (resumo), **ISO** 9001 (qualidade e registros), **IEEE** 802.3 (redes) e **ANSI**
+Z535 (sinalização de segurança em equipamentos importados).
 
-| Organização | Exemplo de norma | Para quê |
-|---|---|---|
-| **ABNT** (Brasil) | **ABNT NBR 10719** — relatório técnico e/ou científico | Estrutura do relatório técnico (norma adotada neste capítulo) |
-| **ABNT** (Brasil) | ABNT NBR 6028 — resumo | Regras para escrever resumos |
-| **ISO** (internacional) | ISO 9001 — gestão da qualidade | Registros de não conformidade e rastreabilidade |
-| **IEEE** (internacional) | IEEE 802.3 — redes Ethernet | Normas de eletricidade, eletrônica e redes (ex.: rede do armazém) |
-| **ANSI** (EUA) | ANSI Z535 — sinalização de segurança | Alertas em manuais de equipamentos importados (ex.: empilhadeira) |
+### Identificação e interpretação
 
-### Identificação e interpretação de textos técnicos
+1. Identifique o **tipo e a finalidade**.
+2. Localize o quê, quem, quando, onde, quanto e o prazo.
+3. Separe **fato** de **recomendação**.
+4. Confira unidades, códigos e siglas (kg × t, lote, código do produto).
+5. Confirme o entendimento antes de executar.
 
-Para interpretar sem distorcer:
+### Relatório técnico
 
-1. **Identifique o tipo e a finalidade** (relatório, ata, memorando, POP, OS, ficha técnica).
-2. **Localize os dados essenciais:** o quê, quem, quando, onde, quanto, qual prazo.
-3. **Separe fato de recomendação:** o que aconteceu × o que deve ser feito.
-4. **Confira unidades, códigos e siglas:** kg × t, número do lote, código do produto.
-5. **Confirme o entendimento** antes de executar (feedback, capítulo 1).
+**Introdução** (contexto e objetivo) → **desenvolvimento** (fatos, dados, evidências, análise) →
+**conclusão** (causa provável e recomendações) → **anexos** (fotos, NF, canhoto). Exemplo: "Às 9h15,
+na doca 2, constatou-se que 4 das 40 caixas do lote 3381 estavam amassadas. Recomenda-se registrar
+a ressalva no canhoto e solicitar reposição ao fornecedor." Evite opiniões e não esqueça números
+nem evidências.
 
-🔍 **Exemplo:** antes de armazenar um produto químico, leia a **ficha com dados de segurança**
-(FDS/FISPQ): ela diz como guardar, quais EPIs usar e o que fazer em caso de vazamento.
+### Ata
 
-### Relatório técnico (ABNT NBR 10719)
+**Ata** é o registro formal do que foi discutido e decidido: cabeçalho (data, hora, local,
+participantes) → pauta → decisões com **responsável e prazo** → encerramento e assinaturas;
+**verbos no passado**, texto corrido e números importantes por extenso. Ex.: "Aos quatorze dias do
+mês de outubro de dois mil e vinte e seis, reuniram-se... decidiu-se devolver as quatro caixas,
+responsável Bruno, até 16/10."
 
-- **Elementos pré-textuais:** capa ou identificação, sumário (em relatórios longos).
-- **Texto:** **introdução** (contexto e objetivo), **desenvolvimento** (fatos, dados, evidências,
-  análise) e **conclusão** (causa provável e recomendações).
-- **Pós-textuais:** anexos (fotos, notas fiscais, canhoto assinado).
+### Memorando e resumo
 
-**Modelo comentado — relatório de avaria (resumido):**
-
-> **Relatório de Avaria nº 027/2026 — Recebimento — 14/10/2026**
-> **1. Introdução:** registro da avaria constatada na descarga da NF 4587 (Fornecedor Alfa;
-> Transportadora Sul; veículo placa ABC1D23).
-> **2. Fatos:** às 9h15, na doca 2, constatou-se que 4 das 40 caixas do lote 3381 estavam
-> amassadas, com vazamento de produto. As caixas foram separadas na área de quarentena. Fotos no
-> anexo A.
-> **3. Análise:** as avarias concentram-se nas caixas da base do palete; o filme stretch estava
-> rompido na lateral.
-> **4. Conclusão e recomendações:** avaria provavelmente ocorrida no transporte. Recomenda-se
-> registrar a ressalva no canhoto, solicitar reposição ao fornecedor e indenização à
-> transportadora.
-
-⚠️ **Erros comuns:** escrever opiniões ("o motorista é descuidado"), esquecer números (lote, NF,
-quantidade, horário), não anexar evidências e misturar fatos com recomendações.
-
-### Ata de reunião
-
-A **ata** é o registro formal do que foi discutido e decidido numa reunião. Regras:
-
-- **ordem:** cabeçalho (data, hora, local, participantes) → pauta → discussão e decisões
-  (responsável e prazo) → encerramento e assinaturas;
-- **verbos no passado** ("reuniram-se", "decidiu-se", "ficou definido");
-- **texto corrido** e números importantes **por extenso** (datas, valores), para evitar rasuras;
-- registra **decisões**, não conversas paralelas.
-
-**Modelo comentado — ata de reunião de turno (resumido):**
-
-> Aos quatorze dias do mês de outubro de dois mil e vinte e seis, às dez horas, na sala da
-> expedição da Vale Norte, reuniram-se Ana Souza (supervisora), Bruno Lima e Carla Reis
-> (conferentes) para tratar da avaria do lote 3381. Após a apresentação do relatório nº 027/2026,
-> decidiu-se: (1) devolver as quatro caixas avariadas ao fornecedor, responsável Bruno, até
-> 16/10; (2) conferir o filme stretch de todos os paletes na descarga, a partir de 15/10. Nada
-> mais havendo a tratar, encerrou-se a reunião, e eu, Carla Reis, lavrei a presente ata.
-
-⚠️ **Erros comuns:** ata em tópicos soltos com espaços em branco, decisões sem responsável e sem
-prazo, verbos no presente ou no futuro e falta de assinaturas.
-
-### Memorando e ofício
-
-- **Memorando:** comunicação **interna**, rápida, entre setores da mesma empresa.
-  Estrutura: `Mem. nº 12/2026 – Expedição` · Para (setor/cargo) · Assunto · texto com a
-  solicitação, a justificativa e o prazo · "Atenciosamente" e assinatura.
-- **Ofício:** comunicação **externa** e formal (outras empresas, órgãos públicos).
-  Observação: na administração pública federal, o memorando foi incorporado ao ofício; nas
-  empresas, o memorando interno continua comum.
-
-### Resumo
-
-O **resumo** condensa as ideias principais sem opinião (ABNT NBR 6028): o **indicativo** só aponta
-os tópicos; o **informativo** traz objetivo, método, resultados e conclusão, e permite decidir se
-vale ler o documento inteiro.
+- **Memorando:** comunicação **interna** entre setores (número, para, assunto, solicitação, prazo).
+- **Ofício:** comunicação **externa** e formal.
+- **Resumo:** condensa as ideias principais sem opinião (indicativo ou informativo).
 
 ### Comunicação e níveis de fala
 
-- **Linguagem culta** em relatórios, atas, ofícios e e-mails a clientes.
-- **Linguagem técnica** entre profissionais (romaneio, lote, avaria, cross-docking), sempre com
-  precisão.
-- **Jargão** ("deu ruim na doca", "faz o picking aí") só na conversa informal da equipe — nunca
-  em documento.
-
-| Jargão ❌ | Redação empresarial ✅ |
-|---|---|
-| "Deu ruim na doca 2, a carga chegou toda zoada." | "Na doca 2, constatou-se avaria em parte da carga recebida (4 de 40 caixas)." |
-
-## Vídeos
-
-- [Como redigir uma ata de reunião](https://www.youtube.com/watch?v=Zwmh0o5Aym4) — 08:03 — Edutin_br
-- [Saiba como elaborar um relatório técnico](https://www.youtube.com/watch?v=0Yb4n-Pt3ZE) — 06:32 — SPDA e Aterramento - Eng. Pablo Guimarães
-- [Relatório, como escrever?](https://www.youtube.com/watch?v=sjflNG4gS_8) — 08:05 — Professor Noslen
-- [Memorando — Redação oficial](https://www.youtube.com/watch?v=-chOfg3xI4E) — 07:22 — Brasil Escola Oficial
+Linguagem **culta** nos documentos, **técnica** com precisão entre profissionais e **jargão** só na
+conversa informal: "deu ruim na doca 2" vira "na doca 2, constatou-se avaria em parte da carga".
 
 ## Resumo
 
-- **Texto técnico** transmite informação de trabalho sem ambiguidade e vale como registro: clareza, concisão, objetividade e impessoalidade.
-- Normas dão padrão: **ABNT NBR 10719** (relatório), ABNT NBR 6028 (resumo), ISO, IEEE e ANSI — sempre declarando a norma usada.
-- Interpretar = identificar tipo e finalidade, localizar dados, separar fato de recomendação e conferir unidades.
-- **Relatório:** introdução, desenvolvimento e conclusão, com números e evidências; **ata:** registro formal das decisões, no passado, com responsáveis e prazos.
-- **Memorando** é interno; **ofício** é externo; **resumo** condensa sem opinião.
-- Linguagem **culta** nos documentos, **técnica** com precisão e **jargão** só na conversa informal.
-
-## Exercícios
-
-### ITEM 1
-- **Capacidade:** C1, C3
-- **Contexto:** Na descarga da NF 7710, a conferente encontrou 6 de 60 fardos rasgados, com produto espalhado no baú do caminhão. Ela tirou fotos e separou os fardos.
-- **Comando:** Redija um relatório de avaria curto com introdução, fatos (com números), análise e conclusão com recomendações, seguindo a estrutura da ABNT NBR 10719 e a linguagem impessoal.
-- **Linhas:** 10
-
-### ITEM 2
-- **Capacidade:** C1
-- **Contexto:** A equipe do turno se reuniu para decidir o que fazer com os fardos rasgados e definiu responsáveis e prazos para a devolução e para uma nova conferência na descarga.
-- **Comando:** Escreva a ata dessa reunião (cabeçalho, pauta, decisões com responsável e prazo, encerramento), usando verbos no passado e texto corrido.
-- **Linhas:** 8
-
-### ITEM 3
-- **Capacidade:** C1
-- **Contexto:** A expedição precisa pedir ao setor de compras mais filme stretch e cantoneiras, porque o estoque desses materiais acaba em 5 dias.
-- **Comando:** Redija um memorando interno completo (número, destinatário, assunto, solicitação, justificativa, prazo e fecho).
-- **Linhas:** 7
-
-### ITEM 4
-- **Capacidade:** C3
-- **Contexto:** Trecho de instrução de armazenagem: "Manter o produto em local ventilado, entre 15 °C e 25 °C, afastado de fontes de calor. Empilhamento máximo: 4 caixas. Em caso de vazamento, isolar a área e usar luvas nitrílicas."
-- **Comando:** Interprete o texto: liste o que deve ser feito no armazenamento, os limites numéricos (com unidades) e a conduta em emergência, separando instrução de recomendação.
-- **Linhas:** 5
-
-### ITEM 5
-- **Capacidade:** C1
-- **Contexto:** Mensagem escrita por um colega para entrar no relatório: "A gente acha que o pessoal da transportadora largou as caixas de qualquer jeito, foi um estrago horrível, deu ruim geral."
-- **Comando:** Identifique os problemas de linguagem (pessoalidade, opinião, jargão) e reescreva o trecho em linguagem técnica, impessoal e objetiva.
-- **Linhas:** 4
-
-### ITEM 6
-- **Capacidade:** C3
-- **Contexto:** Na pasta do setor estão: um registro do que foi decidido na reunião de segunda, um aviso interno do almoxarifado para a expedição, um texto que condensa o relatório mensal em 10 linhas, um passo a passo de recebimento e uma mensagem pessoal de aniversário.
-- **Comando:** Identifique o tipo de cada texto (ata, memorando, resumo, POP ou texto não técnico) e diga qual norma ABNT se aplica ao relatório e ao resumo.
-- **Linhas:** 5
+- Texto técnico é registro: claro, conciso, objetivo e impessoal.
+- Normas (ABNT, ISO, IEEE, ANSI) dão padrão — declare a norma usada.
+- Relatório: introdução, desenvolvimento, conclusão; ata: decisões no passado, com responsável e prazo.
+- Memorando é interno, ofício é externo, resumo condensa sem opinião.
 
 ---
 
@@ -2199,169 +1256,68 @@ vale ler o documento inteiro.
 
 ## Teoria
 
-### Do caderno de contagem para a planilha
+### Funções básicas da planilha
 
-No almoxarifado da **Distribuidora Vale Norte**, a contagem de estoque ainda é feita num caderno.
-Para saber se um item precisa ser reposto, alguém compara, de cabeça, a quantidade contada com o
-estoque mínimo. Erros de soma, itens esquecidos e pedidos de compra atrasados são comuns. Uma
-**planilha** bem organizada faz as contas sozinha e **avisa** quando um item chega ao mínimo.
+No almoxarifado da **Distribuidora Vale Norte**, a contagem é feita num caderno e a comparação com
+o estoque mínimo é feita de cabeça. Uma **planilha** faz as contas sozinha e **avisa** quando um
+item chega ao mínimo. Os recursos são os mesmos no Excel, nas Planilhas Google e no LibreOffice
+Calc.
 
-> 🎯 **Objetivos do capítulo:** organizar dados em **linhas, colunas e células**, **formatar** a
-> planilha, usar **fórmulas e funções básicas** (SOMA, MÉDIA, CONT.VALORES e SE), **classificar e
-> filtrar** e **configurar a página para impressão**.
+### Linhas, colunas e endereços
 
-### Anatomia da planilha
-
-- **Pasta de trabalho:** o arquivo; pode ter várias **abas** (planilhas), como "Estoque" e "Pedidos".
-- **Colunas** são identificadas por letras (A, B, C...) e **linhas** por números (1, 2, 3...).
-- **Célula** é a interseção de linha e coluna (B4). O **endereço** da célula é a letra da coluna
-  seguida do número da linha.
-- **Intervalo** é um conjunto de células: `C2:C16` (da C2 até a C16).
-
-Os recursos são os mesmos nas principais planilhas (Excel, Planilhas Google, LibreOffice Calc);
-as funções em português têm os mesmos nomes.
-
-### Tipos de dados
-
-| Tipo | Exemplo | Cuidado |
-|---|---|---|
-| Texto | Luva nitrílica M | Não misture número com texto: "15 un" não entra em cálculo |
-| Número | 15 | Use uma coluna para a unidade, se precisar |
-| Data | 14/10/2026 | Formate como data para poder ordenar |
-| Moeda | R$ 3,50 | Formate como moeda; não digite "R$" à mão |
+- **Pasta de trabalho** é o arquivo, com várias **abas** ("Estoque", "Pedidos").
+- **Colunas** têm letras (A, B, C) e **linhas** têm números (1, 2, 3).
+- **Célula** é a interseção de linha e coluna (B4); o **endereço** é a letra da coluna + o número
+  da linha. **Intervalo** é um conjunto de células: `C2:C16`.
 
 ### Formatação de células
 
-- **Formato de número:** número, moeda, porcentagem, data.
-- **Alinhamento:** textos à esquerda, números à direita; títulos centralizados sobre a tabela.
-- **Bordas e preenchimento** no cabeçalho; **negrito** nos títulos.
-- **Largura da coluna:** se aparecer `#####`, a coluna está estreita demais para o número.
-- **Formatação condicional:** pinta a célula automaticamente (ex.: vermelho quando o estoque
-  está abaixo do mínimo).
+Use o tipo certo de dado: número sem texto junto ("15 un" não entra em cálculo), data formatada
+como data e moeda formatada (não digite "R$"). Textos à esquerda e números à direita, cabeçalho em
+negrito com borda e preenchimento. `#####` indica coluna estreita. A **formatação condicional**
+pinta de vermelho o estoque abaixo do mínimo.
 
-### Fórmulas: o coração da planilha
+### Fórmulas básicas
 
-Toda fórmula começa com **=**. Operadores: `+` soma, `-` subtração, `*` multiplicação, `/`
-divisão. Use **endereços**, não números fixos: `=C2-D2` é recalculado sozinho quando C2 muda.
+Toda fórmula começa com **=** e usa endereços: `=C2-D2` recalcula sozinha. Ao copiar, a
+referência **relativa** (`C2`) muda e a **absoluta** (`$H$1`) fica fixa.
 
-- **Referência relativa** (`C2`): muda quando a fórmula é copiada para baixo (C3, C4...).
-- **Referência absoluta** (`$H$1`): fica fixa ao copiar — útil para um valor único, como o custo
-  de armazenagem por caixa guardado na célula H1.
+| Função | Exemplo |
+|---|---|
+| **SOMA** | `=SOMA(C2:C16)` → total em estoque |
+| **MÉDIA** | `=MÉDIA(C2:C16)` → estoque médio por item |
+| **CONT.VALORES** | `=CONT.VALORES(B2:B16)` → itens cadastrados |
+| **SE** | `=SE(C2<=D2;"REPOR";"OK")` → alerta de mínimo |
 
-### Funções básicas
+**SE** segue `=SE(teste; se_verdadeiro; se_falso)`.
 
-| Função | O que faz | Exemplo na planilha de estoque |
-|---|---|---|
-| **SOMA** | Soma um intervalo | `=SOMA(C2:C16)` → total de unidades em estoque |
-| **MÉDIA** | Calcula a média | `=MÉDIA(C2:C16)` → estoque médio por item |
-| **CONT.VALORES** | Conta células preenchidas | `=CONT.VALORES(B2:B16)` → quantos itens estão cadastrados |
-| **SE** | Testa uma condição e devolve um de dois resultados | `=SE(C2<=D2;"REPOR";"OK")` → alerta de estoque mínimo |
-
-A função **SE** segue a lógica: `=SE(teste; valor_se_verdadeiro; valor_se_falso)`. No exemplo,
-se o estoque atual (C2) for menor ou igual ao mínimo (D2), aparece **REPOR**; senão, **OK**.
-
-### Exemplo: estoque de 15 itens com alerta de mínimo
-
-| Código | Produto | Estoque atual (C) | Estoque mínimo (D) | Situação (E) |
+| Código | Produto | Atual (C) | Mínimo (D) | Situação (E) |
 |---|---|---|---|---|
-| A01 | Luva nitrílica M (par) | 120 | 100 | OK |
+| A01 | Luva nitrílica M | 120 | 100 | OK |
 | A02 | Fita adesiva 48 mm | 35 | 50 | REPOR |
-| A03 | Filme stretch (rolo) | 18 | 20 | REPOR |
-| A04 | Etiqueta térmica (rolo) | 64 | 40 | OK |
-| A05 | Palete PBR | 42 | 30 | OK |
-| A06 | Cantoneira de papelão | 300 | 250 | OK |
-| A07 | Caixa de papelão G | 90 | 120 | REPOR |
-| A08 | Caixa de papelão M | 210 | 150 | OK |
-| A09 | Saco plástico 60 L | 500 | 400 | OK |
-| A10 | Lacre numerado | 950 | 1000 | REPOR |
-| A11 | Bateria do coletor | 6 | 4 | OK |
-| A12 | Óculos de proteção | 25 | 20 | OK |
-| A13 | Capacete | 12 | 10 | OK |
-| A14 | Ribbon para impressora | 9 | 10 | REPOR |
-| A15 | Marcador permanente | 40 | 30 | OK |
+| A03 | Filme stretch | 18 | 20 | REPOR |
+| A04 | Etiqueta térmica | 64 | 40 | OK |
 
-Os dados começam na linha 2 (a linha 1 é o cabeçalho). Na célula E2 vai `=SE(C2<=D2;"REPOR";"OK")`
-e a fórmula é **copiada** até a E16. Embaixo da tabela: total (SOMA), média (MÉDIA) e quantidade de
-itens (CONT.VALORES). Com esses dados, um **gráfico de colunas** comparando estoque atual e mínimo
-mostra rapidamente o que precisa ser reposto (gráficos são o tema do capítulo 9).
+A fórmula da E2 é copiada para as linhas de baixo; abaixo da tabela ficam o total, a média e a
+quantidade de itens.
 
 ### Classificação e filtro
 
-- **Classificar:** ordena os dados (de A a Z, do menor para o maior) — ex.: produtos do menor para
-  o maior estoque. Selecione **a tabela inteira** antes, para não separar o produto da sua
-  quantidade.
-- **Filtrar:** mostra só as linhas que interessam — ex.: só os itens com situação **REPOR**. As
-  outras linhas ficam escondidas, não apagadas.
-- **Congelar painéis:** mantém o cabeçalho visível ao rolar uma lista longa.
+**Classificar** ordena (ex.: do menor para o maior estoque) — selecione a tabela inteira para não
+separar produto e quantidade. **Filtrar** mostra só as linhas que interessam (ex.: REPOR), sem
+apagar as outras. **Congelar painéis** mantém o cabeçalho visível.
 
 ### Configuração de página e impressão
 
-- **Orientação** paisagem para tabelas largas; **margens** estreitas quando necessário.
-- **Área de impressão:** imprime só o intervalo escolhido.
-- **Ajustar a uma página de largura:** evita a tabela cortada em várias folhas.
-- **Repetir a linha de títulos** em todas as páginas e colocar **cabeçalho/rodapé** com o nome do
-  relatório, a data e o número da página.
-- Sempre confira a **visualização de impressão** antes de imprimir.
-
-## Vídeos
-
-- [Como usar SOMA, MÉDIA, MÍNIMO e MÁXIMO passo a passo](https://www.youtube.com/watch?v=xokwgKhcGOo) — 09:09 — Érika Melo
-- [Como usar a função SE no Google Planilha](https://www.youtube.com/watch?v=1FX0whI33u8) — 04:52 — As dicas de informatica
-- [Como usar Classificar e Filtrar no Excel](https://www.youtube.com/watch?v=PBqXGDfzZPE) — 08:45 — Curso de Excel Online
-- [Planilha de controle de estoque](https://www.youtube.com/watch?v=Ohvui4-ili8) — 03:50 — Smart Planilhas
+Paisagem para tabelas largas, **área de impressão**, **ajustar a uma página de largura**, títulos
+repetidos e cabeçalho/rodapé com nome, data e página. Confira a **visualização de impressão**.
 
 ## Resumo
 
-- A planilha é organizada em **linhas** (números), **colunas** (letras) e **células** (endereço como B4); intervalos como `C2:C16`.
-- Use o **tipo de dado** certo e **formate** células (moeda, data, bordas, formatação condicional).
-- Fórmulas começam com **=** e usam endereços; **$** fixa uma referência ao copiar.
-- **SOMA**, **MÉDIA**, **CONT.VALORES** e **SE** resolvem o controle de estoque, inclusive o alerta de mínimo.
-- **Classificar** ordena; **filtrar** mostra só o que interessa, sem apagar dados.
-- Configure orientação, área de impressão, ajuste à página e títulos repetidos e confira a visualização antes de imprimir.
-
-## Exercícios
-
-### ITEM 1
-- **Capacidade:** C3
-- **Contexto:** A contagem de estoque do almoxarifado é feita em papel, e ninguém percebe a tempo quando um item chega ao estoque mínimo.
-- **Comando:** Descreva como montar a planilha de controle: quais colunas criar, em que linha começam os dados, que fórmula usar para o alerta de estoque mínimo e como formatar a coluna do alerta para destacar os itens a repor.
-- **Linhas:** 6
-
-### ITEM 2
-- **Capacidade:** C3
-- **Contexto:** Use a tabela de 15 itens do capítulo (estoque atual na coluna C, das linhas 2 a 16; mínimo na coluna D; produtos na coluna B).
-- **Comando:** Escreva as fórmulas para: (a) total de unidades em estoque; (b) estoque médio por item; (c) quantidade de itens cadastrados; (d) situação do item da linha 2. Explique o que cada uma faz.
-- **Linhas:** 6
-
-### ITEM 3
-- **Capacidade:** C3
-- **Contexto:** O custo de armazenagem por unidade (R$ 0,40) está na célula H1. Na coluna F, você quer calcular o custo de cada item multiplicando o estoque (coluna C) por esse valor e copiar a fórmula para os 15 itens.
-- **Comando:** Escreva a fórmula da célula F2 e explique por que ela precisa de referência absoluta ($) em H1. O que aconteceria sem o $ ao copiar a fórmula para baixo?
-- **Linhas:** 4
-
-### ITEM 4
-- **Capacidade:** C3
-- **Contexto:** O supervisor pediu uma lista só com os itens que precisam ser repostos, do menor para o maior estoque, para montar o pedido de compra.
-- **Comando:** Explique, passo a passo, como usar filtro e classificação para obter essa lista sem apagar nenhum dado da planilha.
-- **Linhas:** 4
-
-### ITEM 5
-- **Capacidade:** C3
-- **Contexto:** Ao imprimir a planilha de estoque, ela saiu em três folhas, com a última coluna sozinha numa página e sem o cabeçalho nas folhas seguintes.
-- **Comando:** Indique as configurações de página e de impressão que resolvem o problema e o que conferir antes de imprimir de novo.
-- **Linhas:** 4
-
-### ITEM 6
-- **Capacidade:** C3
-- **Contexto:** Na planilha de um colega aparecem três problemas: a quantidade foi digitada como "15 un", uma coluna mostra "#####" e a soma não inclui os itens novos colocados no fim da lista.
-- **Comando:** Explique a causa de cada problema e como corrigi-lo.
-- **Linhas:** 4
-
-### ITEM 7
-- **Capacidade:** C3
-- **Contexto:** Na reunião semanal, a gerência quer ver, num relance, quais dos 15 itens estão abaixo do mínimo.
-- **Comando:** Explique que gráfico você faria com a tabela (quais colunas selecionar e por quê) e como ele ajuda a decidir a reposição.
-- **Linhas:** 4
+- Linhas (números), colunas (letras) e células com endereço (B4); intervalos como `C2:C16`.
+- Tipo de dado e formatação certos; formatação condicional destaca alertas.
+- Fórmulas começam com =; SOMA, MÉDIA, CONT.VALORES e SE controlam o estoque.
+- Classificar ordena, filtrar mostra o que interessa; configure a página antes de imprimir.
 
 ---
 
@@ -2374,24 +1330,17 @@ mostra rapidamente o que precisa ser reposto (gráficos são o tema do capítulo
 
 ## Teoria
 
-### Qual rota mais atrasa?
+### Classificação e filtro para analisar
 
-A gerência da **Distribuidora Vale Norte** fez uma pergunta simples: "qual rota mais atrasou as
-entregas em outubro?". A planilha tem 300 linhas, uma por entrega. Olhando linha por linha,
-ninguém responde em menos de uma hora. Com **filtro**, um **quadro-resumo** e um **gráfico** bem
-escolhido, a resposta aparece em segundos — e abre espaço para a pergunta mais importante: **por
-que** essa rota atrasa e o que dá para melhorar.
+A gerência da **Distribuidora Vale Norte** quer saber qual rota mais atrasou em outubro. São 300
+linhas, uma por entrega, com a coluna **Situação** `=SE(entrega<=prazo;"No prazo";"Atrasada")`.
+**Filtrar** Rota = "Leste" e Situação = "Atrasada" mostra só as entregas problemáticas;
+**classificar** o resumo por "% no prazo" põe a pior rota no topo. Uma **lista suspensa**
+(validação de dados) evita "Leste", "leste" e "LESTE" como rotas diferentes.
 
-> 🎯 **Objetivos do capítulo:** **classificar e filtrar** dados para análise, montar **quadros e
-> tabelas-resumo**, escolher e construir o **gráfico** adequado, **interpretar** o resultado (como
-> o indicador de entregas no prazo), **analisar o problema** e **imprimir** o resultado.
+### Quadros e tabelas
 
-### Da planilha de entregas ao quadro-resumo
-
-A planilha de entregas tem, em cada linha: data, rota, cliente, prazo combinado, data da entrega
-e uma coluna **Situação** com `=SE(entrega<=prazo;"No prazo";"Atrasada")` (função SE, capítulo 8).
-
-O **quadro-resumo** (tabela-resumo) condensa as 300 linhas no que interessa para decidir:
+O **quadro-resumo** condensa as 300 linhas no que importa para decidir:
 
 | Rota | Entregas | No prazo | Atrasadas | % no prazo |
 |---|---|---|---|---|
@@ -2401,128 +1350,42 @@ O **quadro-resumo** (tabela-resumo) condensa as 300 linhas no que interessa para
 | Oeste | 60 | 57 | 3 | 95% |
 | **Total** | **300** | **268** | **32** | **89%** |
 
-**Boa apresentação do quadro:** cabeçalho em negrito com fundo suave, textos à esquerda,
-números à direita, porcentagens com o mesmo número de casas e uma linha de total.
+Cabeçalho em negrito, números à direita e linha de total.
 
-### Classificar e filtrar para analisar
+### Gráficos: a pergunta decide
 
-- **Filtrar** a coluna Rota por "Leste" e a coluna Situação por "Atrasada" mostra só as 18
-  entregas problemáticas — e a barra de status conta quantas linhas ficaram visíveis.
-- **Classificar** o quadro-resumo pela coluna "% no prazo", do menor para o maior, coloca a rota
-  pior no topo.
-- Antes de classificar, selecione **toda a tabela** (ou use o filtro do cabeçalho) para não
-  separar a rota dos seus números.
-- **Validação de dados** ajuda a manter a análise confiável: uma **lista suspensa** com as rotas
-  impede que alguém digite "Leste", "leste" e "LESTE" como se fossem rotas diferentes.
+| Pergunta | Gráfico |
+|---|---|
+| Comparar categorias | **Colunas** (atrasos por rota) |
+| Muitas categorias ou nomes longos | **Barras** (atrasos por cliente) |
+| Evolução no tempo | **Linhas** (% no prazo por mês) |
+| Partes de um todo (até 5 fatias) | **Setores** (motivos dos atrasos) |
 
-### Que gráfico usar? A pergunta decide
+Selecione o quadro com os cabeçalhos → **Inserir → Gráfico** → complete com **título com período**
+("Entregas atrasadas por rota — outubro/2026"), **eixos** com unidade, **rótulos de dados** e
+**legenda** só com duas ou mais séries. Cuidado com gráficos que enganam: **eixo truncado** (comece
+no zero), efeito 3D, pizza com muitas fatias e cores sem contraste.
 
-| Pergunta | Gráfico | Exemplo na Vale Norte |
-|---|---|---|
-| Comparar valores entre categorias | **Colunas** | Entregas atrasadas por rota |
-| Comparar muitas categorias ou nomes longos | **Barras** (horizontais) | Atrasos por cliente |
-| Mostrar evolução no tempo | **Linhas** | % no prazo de janeiro a outubro |
-| Mostrar partes de um todo (até 5 fatias, somando 100%) | **Setores (pizza)** | Motivos dos atrasos: trânsito, carga, endereço |
+### Interpretar e analisar o problema
 
-### Montando o gráfico
+O **indicador** de entregas no prazo = no prazo ÷ total. Com meta de 95%, Norte e Oeste atingem;
+**Leste, com 80%, concentra 18 dos 32 atrasos**. Veja também a tendência mês a mês. O gráfico mostra
+**onde** está o problema; a análise (S4) busca o **porquê**: levante hipóteses (trânsito no pico,
+excesso de entregas por viagem, endereços incompletos), confira nos dados filtrados e proponha
+melhorias mensuráveis.
 
-1. Selecione o **quadro-resumo** com os cabeçalhos (ex.: colunas Rota e Atrasadas).
-2. **Inserir → Gráfico** e escolha o tipo.
-3. Confira se as **categorias** (rotas) estão no eixo certo.
-4. Complete os elementos:
-   - **título** que diga o que é medido e o período: "Entregas atrasadas por rota — outubro/2026";
-   - **eixos** com rótulos e unidade (entregas, %);
-   - **rótulos de dados** (o número em cima de cada coluna);
-   - **legenda** só quando houver **duas ou mais séries** (ex.: Meta × Realizado); com uma série
-     só, a legenda é desnecessária.
+### Impressão
 
-### Interpretar: o gráfico precisa virar decisão
-
-O **indicador** (KPI) de entregas no prazo = entregas no prazo ÷ total. Com meta de 95%:
-
-- **Aderência à meta:** Norte e Oeste atingem 95%; Sul fica perto (90%); **Leste, com 80%, está
-  bem abaixo** e concentra 18 dos 32 atrasos (mais da metade).
-- **Tendência:** num gráfico de linhas mês a mês, o indicador está subindo ou caindo?
-- **Variabilidade:** há meses com quedas bruscas? Elas coincidem com algo (chuva, obras, novo
-  motorista)?
-
-**Análise do problema (S4):** o gráfico mostra **onde** está o problema; a análise busca o
-**porquê**. Para a rota Leste, levante hipóteses (trânsito em horário de pico, excesso de
-entregas por viagem, endereços incompletos, saída tardia da doca), confira com os dados
-(filtre as entregas atrasadas e veja horários, clientes e motivos) e proponha melhorias que
-possam ser medidas no mês seguinte.
-
-### Gráficos que enganam
-
-- **Eixo truncado:** se o eixo das colunas começa em 85% e não em 0%, uma diferença de 90% para
-  95% parece enorme. Em colunas e barras, comece o eixo no **zero** (ou avise claramente).
-- **Efeito 3D:** distorce o tamanho das colunas e fatias; em documentos técnicos, use **2D**.
-- **Pizza com muitas fatias:** acima de 5, ninguém compara; use barras.
-- **Cores:** use bom contraste e rótulos diretos; evite depender só de vermelho × verde, que
-  pessoas com daltonismo não diferenciam.
-
-### Levar para o relatório e para a impressão
-
-- **Colar como imagem:** o gráfico fica "congelado" com os dados daquele dia.
-- **Colar como objeto vinculado:** o gráfico no relatório ou no slide se atualiza quando a
-  planilha muda (útil para relatórios mensais).
-- **Impressão:** selecione o quadro e o gráfico e defina a **área de impressão**; use **paisagem**
-  e **ajustar a uma página**; confira se as cores continuam legíveis em preto e branco; veja a
-  **visualização de impressão** antes.
-
-## Vídeos
-
-- [Quando usar cada gráfico (linhas, setores e colunas/barras)?](https://www.youtube.com/watch?v=ECH16Pb4q6M) — 07:15 — Calcula rápido - Renan Marcel
-- [Como criar gráficos no Excel para iniciantes](https://www.youtube.com/watch?v=FrypMTi2HiY) — 11:48 — Curso de Excel Online
-- [Como criar gráfico no Google Planilhas](https://www.youtube.com/watch?v=GH-JHN_qxkQ) — 14:43 — Flávio Moita
-- [Gráficos de linha enganosos](https://www.youtube.com/watch?v=oQXjKi5w-WA) — 04:57 — Khan Academy Brasil
+Defina a **área de impressão** com quadro e gráfico, use paisagem e **ajustar a uma página**,
+confira a legibilidade em preto e branco e a **visualização de impressão**. Para o relatório, cole
+o gráfico como imagem (fixo) ou como objeto vinculado (atualiza com a planilha).
 
 ## Resumo
 
-- **Filtrar** mostra só o que interessa; **classificar** ordena; **validação** (lista suspensa) mantém os dados padronizados.
-- O **quadro-resumo** condensa centenas de linhas nos números que importam para decidir.
-- A **pergunta** define o gráfico: colunas (comparar), barras (muitas categorias), linhas (tempo), pizza (partes de um todo, até 5 fatias).
-- Gráfico profissional tem **título com período, eixos com unidade, rótulos** e legenda só com duas ou mais séries.
-- **Interpretar** é comparar com a meta, ver tendência e variabilidade e **analisar o problema** até chegar a causas e melhorias.
-- Cuidado com **eixo truncado**, 3D e cores sem contraste; leve o gráfico ao relatório (imagem ou vínculo) e confira a impressão.
-
-## Exercícios
-
-### ITEM 1
-- **Capacidade:** C3, S4
-- **Contexto:** Use o quadro-resumo de outubro do capítulo (rotas Norte, Sul, Leste e Oeste, com entregas, atrasos e % no prazo). A meta da empresa é 95% de entregas no prazo.
-- **Comando:** Indique qual rota mais atrasa e qual gráfico mostraria isso melhor, interprete o resultado em relação à meta e proponha duas hipóteses de causa e uma melhoria para a rota com pior resultado.
-- **Linhas:** 7
-
-### ITEM 2
-- **Capacidade:** C3
-- **Contexto:** A gerência quer quatro gráficos: (a) % de entregas no prazo de janeiro a outubro; (b) atrasos por rota em outubro; (c) motivos dos atrasos (trânsito, carga mal arrumada, endereço incorreto); (d) atrasos de 15 clientes com nomes longos.
-- **Comando:** Escolha o tipo de gráfico mais adequado para cada pedido e justifique cada escolha.
-- **Linhas:** 5
-
-### ITEM 3
-- **Capacidade:** C3
-- **Contexto:** Você vai criar um gráfico comparando, por rota, a meta (95%) e o resultado realizado de outubro.
-- **Comando:** Descreva os passos para criar o gráfico e os elementos que ele precisa ter (título, eixos, rótulos e legenda), explicando por que, nesse caso, a legenda é necessária.
-- **Linhas:** 5
-
-### ITEM 4
-- **Capacidade:** C3
-- **Contexto:** Na planilha com as 300 entregas de outubro, o supervisor quer ver só as entregas atrasadas da rota Leste, da mais antiga para a mais recente.
-- **Comando:** Explique como usar filtro e classificação para obter essa lista sem perder nem apagar dados, e como a validação de dados por lista suspensa evitaria erros na coluna Rota.
-- **Linhas:** 5
-
-### ITEM 5
-- **Capacidade:** C3, S4
-- **Contexto:** Num relatório da transportadora, o gráfico de colunas de "% no prazo" tem o eixo começando em 85%, e a coluna da rota Sul (90%) parece ter metade do tamanho da rota Norte (95%).
-- **Comando:** Explique por que o gráfico engana, como corrigi-lo e por que é importante analisar criticamente gráficos antes de tomar decisões.
-- **Linhas:** 5
-
-### ITEM 6
-- **Capacidade:** C3
-- **Contexto:** O quadro-resumo e o gráfico de outubro precisam entrar no relatório mensal da expedição, que é atualizado todo mês, e também ser impressos para a reunião em uma única folha.
-- **Comando:** Indique como inserir o gráfico no relatório para que ele se atualize sozinho e quais configurações de impressão usar para caber em uma folha legível.
-- **Linhas:** 4
+- Filtrar e classificar destacam o problema; validação padroniza os dados.
+- O quadro-resumo condensa os dados; a pergunta define o gráfico.
+- Gráfico com título, eixos, rótulos e legenda só quando há mais de uma série.
+- Interpretar = comparar com a meta e analisar causas e melhorias; conferir a impressão.
 
 ---
 
@@ -2535,172 +1398,67 @@ possam ser medidas no mês seguinte.
 
 ## Teoria
 
-### Cinco minutos para o próximo turno
-
-No fim de cada turno, a supervisora da **Distribuidora Vale Norte** tem **5 minutos** para mostrar à
-equipe seguinte os resultados do setor: entregas no prazo, pendências e cuidados de segurança. Se
-os slides estiverem cheios de texto miúdo, ninguém lê; se não houver sequência, ninguém entende o
-que fazer. **Apresentar não é ler texto na tela**: os slides guiam o olhar e reforçam as ideias;
-quem comunica é você.
-
-> 🎯 **Objetivos do capítulo:** usar as **funções do editor de apresentações** (formatação, página,
-> figuras, tabelas, gráficos, vídeos e recursos multimídia, arquivamento e exibição), montar
-> apresentações **legíveis e em sequência lógica** e **integrar** o que foi estudado na UC para as
-> **avaliações**.
-
 ### Funções e tipos de apresentação
 
-| Tipo de apresentação | Exemplo na logística |
-|---|---|
-| De resultados | Indicadores de entregas no prazo para a gerência |
-| De treinamento | Novo procedimento de recebimento para os conferentes |
-| De passagem de turno | Resumo de 5 minutos para a equipe seguinte |
-| Autoexecutável | Avisos de segurança passando sozinhos na TV do refeitório |
+No fim do turno, a supervisora da **Distribuidora Vale Norte** tem **5 minutos** para mostrar os
+resultados à equipe seguinte. Apresentar não é ler texto na tela: os slides guiam o olhar; quem
+comunica é você. Tipos: de **resultados**, de **treinamento**, de **passagem de turno** e
+**autoexecutável** (avisos na TV do refeitório), em Microsoft 365, Google Workspace ou LibreOffice.
 
-O editor de apresentações existe instalado no computador ou no navegador (com edição em equipe),
-nas suítes **Microsoft 365, Google Workspace ou LibreOffice**. As funções principais são as mesmas.
+### Página e slide mestre
 
-### Página do slide e slide mestre
-
-- **Formato da página:** **16:9** para telas e projetores atuais; **4:3** para projetores antigos.
-  Defina antes de criar o conteúdo — mudar depois distorce imagens.
-- **Slide mestre:** guarda cores, fontes, logotipo e rodapé de **todos** os slides; mudou o mestre,
-  mudou a apresentação inteira. Os **layouts** (título, título e conteúdo, duas colunas)
-  organizam cada slide.
+Formato **16:9** para telas atuais (4:3 para projetores antigos), definido antes do conteúdo. O
+**slide mestre** guarda cores, fontes, logotipo e rodapé de todos os slides; os **layouts**
+organizam cada slide.
 
 ### Formatação e legibilidade
 
-- **Contraste:** texto escuro em fundo claro ou texto claro em fundo escuro; nada de texto sobre
-  foto "poluída".
-- **Hierarquia:** título grande e em negrito; tópicos médios; detalhes discretos.
-- **No máximo duas fontes** simples; tamanho que dê para ler do fundo da sala (corpo a partir
-  de 24 pt, como referência).
-- **Pouco texto:** palavras-chave e números, não parágrafos; uma ideia por slide.
-- **Espaço vazio** e alinhamento dão aparência profissional.
+Contraste forte, hierarquia (título grande), no máximo duas fontes, corpo a partir de 24 pt, pouco
+texto e **uma ideia por slide**. Letras miúdas e animações exageradas são **ruído**.
 
-⚠️ Parágrafos longos, letras miúdas, contraste fraco e animações exageradas são **ruído**
-(capítulo 1): o público se esforça para decifrar a tela e deixa de ouvir você.
+**Sequência lógica:** situação → complicação → resolução → conclusão.
 
-### Sequência lógica: a narrativa
-
-1. **Situação** — o contexto ("Como foi o turno").
-2. **Complicação** — o problema ou o dado que chama atenção ("Rota Leste atrasou 18 entregas").
-3. **Resolução** — a proposta ("Sair 30 min mais cedo com a carga da Leste").
-4. **Conclusão** — próximos passos e decisões ("Conferir a doca 3 antes das 14h").
-
-**Roteiro de 5 slides sobre indicadores de entrega (cerca de 5 minutos):**
-
-| Slide | Conteúdo | Tempo de fala |
+| Slide | Conteúdo | Tempo |
 |---|---|---|
-| 1 | Título: "Passagem de turno — Expedição — 14/10" | 20 s |
-| 2 | Indicador do dia: 89% no prazo (meta 95%) em número grande | 1 min |
-| 3 | Gráfico de colunas: atrasos por rota (destaque na Leste) | 1 min 30 s |
-| 4 | Pendências: 3 cargas aguardando, 1 avaria em análise | 1 min |
-| 5 | Ações do próximo turno e cuidado de segurança | 1 min |
+| 1 | "Passagem de turno — Expedição — 14/10" | 20 s |
+| 2 | 89% no prazo (meta 95%) em número grande | 1 min |
+| 3 | Gráfico de atrasos por rota (destaque na Leste) | 1 min 30 s |
+| 4 | Pendências: 3 cargas, 1 avaria | 1 min |
+| 5 | Ações do próximo turno e segurança | 1 min |
 
 ### Figuras, tabelas e gráficos
 
-- Use **gráficos** do capítulo 9 com título e rótulos visíveis; **tabelas** curtas (poucas linhas).
-- **Imagem estática** congela os dados; **objeto vinculado** atualiza o slide quando a planilha
-  muda (mantenha os arquivos na mesma pasta).
-- Fotos e ícones com o mesmo estilo; **cite a fonte** e respeite os direitos autorais
-  (capítulo 3).
-- **LGPD:** nunca projete CPF, telefone ou dados de clientes sem necessidade — anonimize.
+Gráficos do capítulo 9 com título e rótulos, tabelas curtas, imagens com fonte citada. **Objeto
+vinculado** atualiza com a planilha. Respeite a **LGPD**: não projete dados pessoais.
 
 ### Slides, vídeos e recursos multimídia
 
-- **Vídeos e áudios** curtos (até cerca de 1 minuto), com propósito, iniciando **ao clique**.
-  Teste o som e o equipamento antes.
-- **Transições** suaves e rápidas (ex.: esmaecer); **animações** só para revelar um tópico por
-  vez — nada de giros e sons.
-- **Hiperlinks** levam a um slide de apoio, a um documento ou a uma página da web.
+Vídeos e áudios curtos, iniciando ao clique e testados antes; **transições** suaves; **animações**
+só para revelar um tópico por vez; **hiperlinks** para slides de apoio ou documentos.
 
-### Exibição: apresentar com segurança
+### Exibição e arquivamento
 
-- **Modo apresentador:** você vê o slide atual, o próximo, o cronômetro e as **notas do orador**;
-  o público vê só o slide.
-- **Ensaie** com o cronômetro; leve o arquivo também na nuvem ou num pen drive.
-- **Postura:** olhe para o público, não leia a tela de costas, fale com calma e confirme se todos
-  entenderam (feedback).
+No **modo apresentador** você vê notas do orador, próximo slide e cronômetro. Ensaie, leve o
+arquivo também na nuvem e olhe para o público. Formatos: `.pptx`/`.odp` (editável), `.ppsx` (abre
+em apresentação) e `.pdf` (para distribuir; perde vídeos e animações).
 
-### Arquivamento
+### Integração da UC e avaliações
 
-| Formato | Uso |
-|---|---|
-| `.pptx` / `.odp` | Arquivo editável |
-| `.ppsx` | Abre direto em modo de apresentação |
-| `.pdf` | Distribuir aos participantes (perde vídeos e animações) |
-
-Nome padronizado (`2026-10-14_Passagem_Turno_Expedicao_v01.pptx`) e, se houver vídeos ou
-planilhas vinculadas, leve a pasta inteira (ou incorpore as mídias ao arquivo).
-
-### Integrando a UC: revisão para as avaliações
-
-| Capítulos | O que você deve dominar | Capacidade |
+| Capítulos | Domínio | Capacidade |
 |---|---|---|
-| 1, 4, 6, 7, 10 | Comunicar com clareza: elementos da comunicação, e-mail, documentos, apresentações | C1 |
-| 5 | Proteger informações: senhas, phishing, backup, LGPD | C2 |
+| 1, 4, 6, 7, 10 | Comunicar com clareza | C1 |
+| 5 | Proteger informações | C2 |
 | 7, 8, 9 | Interpretar textos técnicos, fórmulas e gráficos | C3 |
-| 2, 6, 8, 10 | Usar hardware, sistema operacional e programas do escritório | C4 |
-| 3, 4 | Pesquisar na web, citar fontes, usar e-mail e nuvem | C5 |
+| 2, 6, 8, 10 | Usar hardware, SO e programas | C4 |
+| 3, 4 | Pesquisar, citar, e-mail e nuvem | C5 |
 
-**Nesta aula acontecem as avaliações:**
-
-- **Avaliação objetiva** — 40 questões, 7 eixos, 60 min (valor 4,0).
-- **Avaliação prática** — 4 tarefas, 100 min (valor 6,0): **T1** organização, backup e
-  comunicação; **T2** relatório técnico; **T3** planilha de análise; **T4** apresentação.
-- Nota mínima: **7,0**. Revise os resumos de cada capítulo e refaça os exercícios.
-
-## Vídeos
-
-- [5 dicas para os slides de sua apresentação](https://www.youtube.com/watch?v=yhZbN2gcuxI) — 03:48 — IMPARIAMO Cursos e Consultoria
-- [10 dicas de design para criar apresentações impactantes](https://www.youtube.com/watch?v=5NVcKM1Ytzw) — 08:06 — Design na Madrugada
-- [Dominando o slide mestre: tutorial passo a passo](https://www.youtube.com/watch?v=3N25xVoYhoI) — 08:27 — Pedro Outlier
-- [Dicas de oratória para não ficar nervoso em apresentações](https://www.youtube.com/watch?v=Go52CIDZMm0) — 05:28 — Marcello Pepe
+**Avaliação objetiva:** 40 questões, 60 min (4,0). **Avaliação prática:** 4 tarefas, 100 min
+(6,0) — T1 organização, backup e comunicação; T2 relatório técnico; T3 planilha de análise; T4
+apresentação. Nota mínima **7,0**: revise os resumos de cada capítulo.
 
 ## Resumo
 
-- Apresentar não é ler: slides **guiam o olhar**; quem comunica é você.
-- Defina a **página** (16:9 ou 4:3) e o **slide mestre** antes do conteúdo.
-- **Legibilidade:** contraste, hierarquia, no máximo duas fontes, pouco texto e uma ideia por slide.
-- **Sequência lógica:** situação, complicação, resolução e conclusão — com tempo de fala ensaiado.
-- Gráficos com título e rótulos (imagem ou **vínculo**), vídeos curtos ao clique, transições sóbrias e respeito à **LGPD** e aos direitos autorais.
-- **Modo apresentador** e notas do orador; arquive no formato certo; revise C1 a C5 para as **avaliações objetiva e prática**.
-
-## Exercícios
-
-### ITEM 1
-- **Capacidade:** C1
-- **Contexto:** Você tem 5 minutos para apresentar ao próximo turno os resultados da expedição: 89% de entregas no prazo (meta 95%), a rota Leste com mais atrasos, duas pendências e um aviso de segurança.
-- **Comando:** Monte o roteiro de 5 slides (título e conteúdo de cada um) com o tempo de fala de cada slide, seguindo a sequência situação, complicação, resolução e conclusão.
-- **Linhas:** 8
-
-### ITEM 2
-- **Capacidade:** C1
-- **Contexto:** Um slide da apresentação tem um parágrafo de 12 linhas em fonte 12, texto branco sobre uma foto colorida do armazém, três fontes diferentes e uma animação que gira e faz barulho.
-- **Comando:** Aponte os problemas de legibilidade e de ruído e reescreva o slide (o que fica, como formatar e como destacar a informação principal).
-- **Linhas:** 5
-
-### ITEM 3
-- **Capacidade:** C1, C3
-- **Contexto:** O gráfico de atrasos por rota está numa planilha atualizada toda semana. Na mesma planilha há nome e telefone dos clientes de cada entrega.
-- **Comando:** Explique como levar o gráfico para o slide de forma que ele se atualize sozinho, que elementos o gráfico precisa ter para ser entendido sem explicação e o cuidado necessário com os dados dos clientes.
-- **Linhas:** 5
-
-### ITEM 4
-- **Capacidade:** C2, C5
-- **Contexto:** A apresentação será feita em outra sala, tem um vídeo de 50 segundos e um gráfico vinculado e também precisa ser enviada à gerência depois da reunião.
-- **Comando:** Indique como salvar e organizar os arquivos para não perder o vídeo nem o vínculo, como fazer uma cópia de segurança na nuvem com a permissão correta e em que formato enviar à gerência.
-- **Linhas:** 5
-
-### ITEM 5
-- **Capacidade:** C4
-- **Contexto:** O projetor da sala de treinamento é antigo e a apresentação foi criada em 16:9. Você também quer ver suas anotações sem que o público as veja e usar um passador de slides.
-- **Comando:** Explique como ajustar o formato da página dos slides (e por que fazer isso antes de criar o conteúdo), como usar o modo apresentador com as notas do orador e o que conferir no hardware (projetor, cabo, passador) antes de começar.
-- **Linhas:** 5
-
-### ITEM 6
-- **Capacidade:** C1, C3, C4, C5
-- **Contexto:** Na avaliação prática, você vai entregar uma pasta com: um relatório técnico, uma planilha de análise com gráfico e uma apresentação curta, tudo organizado e compactado para envio.
-- **Comando:** Planeje a entrega: estrutura de pastas e nomes dos arquivos, o que cada arquivo precisa conter (relatório, planilha, apresentação), como compactar e enviar com segurança e um checklist final de conferência.
-- **Linhas:** 8
+- Slides guiam o olhar; defina página e slide mestre antes do conteúdo.
+- Legibilidade e sequência lógica (situação, complicação, resolução, conclusão).
+- Gráficos, multimídia e transições com propósito; modo apresentador e formato certo.
+- Revise C1 a C5 para as avaliações objetiva e prática.

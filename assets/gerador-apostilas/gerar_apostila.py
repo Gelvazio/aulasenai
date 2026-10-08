@@ -315,21 +315,22 @@ def ler_texto_capitulo(texto, numero, capacidades, rotulo):
 
 
 def validar_so_teoria(capitulos, dados):
-    """Recusa capítulo sem Vídeos e Exercícios fora da edição que libera isso.
+    """Recusa capítulo sem Vídeos e Exercícios quando a apostila não libera isso.
 
     Args:
         capitulos: Capítulos lidos.
-        dados: Dados da matéria ("sem_videos_e_exercicios" vem da edição).
+        dados: Dados da matéria ("sem_videos_e_exercicios" vem da edição ou do materia.json).
 
     Raises:
-        SystemExit: Se houver capítulo só com teoria e a edição não permitir.
+        SystemExit: Se houver capítulo só com teoria e a apostila não permitir.
     """
     if dados.get("sem_videos_e_exercicios"):
         return
     so_teoria = [capitulo["numero"] for capitulo in capitulos if capitulo["so_teoria"]]
     if so_teoria:
         erro(f"capítulo(s) {', '.join(so_teoria)} sem as seções {', '.join(SECOES_PRATICAS)} "
-             '(só permitido numa edição com "sem_videos_e_exercicios")')
+             '(só permitido com "sem_videos_e_exercicios" na edição ou '
+             '"apostila_sem_videos_e_exercicios" no materia.json)')
 
 
 def trechos_de_codigo(texto):

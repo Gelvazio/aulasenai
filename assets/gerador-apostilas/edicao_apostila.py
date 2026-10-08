@@ -6,6 +6,8 @@ APOSTILA-<MATÉRIA>-V2.md/.html e a configuração vem de "edicoes_apostila" do 
 (ex.: {"V2": {"versao": "2.0", "sem_videos_e_exercicios": true}}). Com
 "sem_videos_e_exercicios", os capítulos podem ter só Teoria, Resumo e Glossário; com
 "referencias_complementares" (lista), a seção Referências ganha as obras citadas nos capítulos.
+Sem edição, as mesmas opções vêm do topo do materia.json: "apostila_sem_videos_e_exercicios"
+e "referencias_complementares" (ex.: ITIC, cuja apostila única é a antiga V2).
 Usado por assets/gerador-apostilas/gerar_apostila.py. Plano: docs/apostila-itic-v2-40-paginas.md.
 """
 import re
@@ -17,6 +19,7 @@ CAMPO_EDICOES = "edicoes_apostila"
 CAMPO_VERSAO = "versao"
 CAMPO_SEM_PRATICAS = "sem_videos_e_exercicios"
 CAMPO_REFERENCIAS_COMPLEMENTARES = "referencias_complementares"
+CAMPO_APOSTILA_SEM_PRATICAS = "apostila_sem_videos_e_exercicios"
 ARQUIVO_MATERIA = "materia.json"
 PADRAO_NOME_EDICAO = re.compile(r"^[A-Z0-9]+$")
 
@@ -100,7 +103,11 @@ def aplicar_edicao(dados, edicao):
         SystemExit: Se a edição não estiver em "edicoes_apostila" do materia.json.
     """
     if not edicao:
-        return {**dados, "pasta_fontes": PASTA_FONTES}
+        materia = dados["materia"]
+        return {**dados, "pasta_fontes": PASTA_FONTES,
+                CAMPO_SEM_PRATICAS: bool(materia.get(CAMPO_APOSTILA_SEM_PRATICAS)),
+                CAMPO_REFERENCIAS_COMPLEMENTARES:
+                    list(materia.get(CAMPO_REFERENCIAS_COMPLEMENTARES, []))}
     configuracoes = dados["materia"].get(CAMPO_EDICOES, {})
     configuracao = configuracoes.get(edicao)
     if not isinstance(configuracao, dict) or not configuracao.get(CAMPO_VERSAO):
