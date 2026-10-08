@@ -1388,3 +1388,19 @@ Plano: [docs/somente-ensalado-materias.md](docs/somente-ensalado-materias.md) ·
 | 105.9 | Aceite do usuário (testar na tela) | ⬜ Pendente | — | — |
 | 105.10 | Pendente: ligar Rio do Sul Mais Tech (curso 1 ou 6? ambíguo) e Qualificação Profissional (sem curso no banco) — decisão do usuário | ⬜ Pendente | — | — |
 | 105.11 | Descrições das matérias 25 (Logística), 27 (Gestão) e 28 (Operador) no banco ajustadas para os nomes dos cartões (já existiam; sem duplicatas). Valores antigos: 25 "Introdução à Tecnologia da Informação e Comunicação", 27 "Análise de Dados Aplicada à Gestão", 28 "Fundamentos de Automação/Instrumentação" | ✅ Concluído | 2026-10-08 23:51:12 | select: 3 linhas atualizadas |
+
+## Etapa 106 — Aluno líder (`usuario.lider` 1/0) cadastra e altera equipes (tarefa grande, aprovada em 2026-10-08 23:53)
+
+Plano: [docs/aluno-lider-cadastra-equipes.md](docs/aluno-lider-cadastra-equipes.md). Decisões D1–D3 aprovadas como propostas.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 106.1 | SQL versionado `database/2026-10-08-usuario-lider-equipes.sql` | ✅ Concluído | 2026-10-08 23:53 | 7 políticas no arquivo |
+| 106.2 | Aplicar pelo conector e conferir | ✅ Concluído | 2026-10-08 23:54 | 132 usuários com lider = 0; 7 políticas *_lider; 3 funções sem execução para anon |
+| 106.3 | `docs/database.md` + relatório HTML | ✅ Concluído | 2026-10-08 23:54 | grep "lider" nos dois arquivos |
+| 106.4 | Tela ALUNOS: coluna Líder (1/0) | 🔄 Em progresso | — | — |
+| 106.5 | Header: menu 👥 EQUIPES só para professor e aluno líder | ⬜ Pendente | — | — |
+| 106.6 | Modal/repositório de equipes no modo líder | ⬜ Pendente | — | — |
+| 106.7 | Regra no `CLAUDE.md` do projeto | ⬜ Pendente | — | — |
+| 106.8 | Commit | ⬜ Pendente | — | — |
+| 106.9 | Aceite do usuário | ⬜ Pendente | — | — |

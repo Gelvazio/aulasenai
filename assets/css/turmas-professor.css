@@ -8,16 +8,33 @@
 
 .tp-formulario {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) auto;
     gap: var(--tp-espaco);
     align-items: end;
 }
 
+/* Campo = rótulo em cima e lista embaixo; min-width: 0 impede a lista de opções longas
+   (com a unidade da turma) de passar por cima do campo vizinho. */
 .tp-campo {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 4px;
+    min-width: 0;
     font-weight: 600;
     color: var(--guia-texto);
+}
+
+.tp-campo .guia-filtro {
+    width: 100%;
+    min-width: 0;
+    min-height: 40px;
+    padding: 8px 10px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 760px) {
+    .tp-formulario { grid-template-columns: minmax(0, 1fr); }
 }
 
 .tp-campo--filtro { min-width: 240px; }

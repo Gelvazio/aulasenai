@@ -12,7 +12,7 @@ const TITULO_NOVO_TA = "Novo vínculo";
 const TITULO_EDITAR_TA = "Editar vínculo";
 const VALOR_TODAS_TURMAS_TA = "";
 const ROTA_LOGIN_TA = "login.html";
-const COLUNAS_TABELA_TA = 6;
+const COLUNAS_TABELA_TA = 7;
 const FILTRO_TURMA_OK_SIM_TA = "sim";
 const FILTRO_TURMA_OK_NAO_TA = "nao";
 const TEXTO_TURMA_OK_SIM_TA = "✅ Sim";
@@ -167,6 +167,7 @@ function criarLinhaVinculoTa(vinculo) {
     criarCelulaTa(turma.turno || "", turma.horario || ""),
     criarCelulaTa(aluno.nome_completo || "(usuário sem cadastro)", aluno.email || vinculo.aluno_id),
     criarCelulaTa(TEXTO_TURMA_OK_SIM_TA),
+    criarCelulaLiderTa(aluno),
     criarCelulaTa(formatarDataTa(vinculo.criado_em)),
     criarCelulaAcoesTa(vinculo),
   );

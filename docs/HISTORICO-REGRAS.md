@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 23:57:37 | **Aluno líder** (`usuario.lider` 1/0): professor marca na tela ALUNOS; o líder vê 👥 EQUIPES e cadastra/altera equipes da própria turma (não exclui); menu EQUIPES só para professor e líder; aviso do grant por coluna da `usuario` — `docs/regras/usuarios-turmas-paginas-professor.md` |
 $NOVA2
 | 2026-10-08 23:45:55 | **Faixa de matérias**: botões **SOMENTE ENSALADO** e **VER TODAS MATÉRIAS** ao lado do título, e **ON/OFF** por matéria (coluna `materia.ensalado`, só PROFESSOR grava) em todos os `index.html` dos cursos (`CLAUDE.md`: seção "FAIXA DE MATÉRIAS") |
 | 2026-10-08 20:33:13 | **Menu das atividades desligado** em todas as páginas (barra com o nome da matéria e "Equipes"): tudo já está no menu base do header; `MENU_ATIVIDADES_LIGADO = false` em `js/menu.js` (`docs/regras/assets-e-geradores.md`) |

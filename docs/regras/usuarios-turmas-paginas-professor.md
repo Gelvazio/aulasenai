@@ -191,8 +191,18 @@ SQL: `database/2026-10-05-equipes-turma-materia.sql` (✅ aplicado no Supabase e
   equipes da turma, integrantes, líder, papel e alunos sem equipe → impressão "Salvar como PDF") +
   `assets/css/equipes-modal.css`. O `js/menu.js` aceita itens de **ação**: `{ rotulo, acao }`
   carrega `assets/js/menu-acao-<acao>.js`, que registra `window.ACOES_MENU_ATIVIDADES[acao]`.
+- ✅ **Aluno líder (`usuario.lider` = 1 ou 0)** (2026-10-08, pedido do usuário; plano
+  `docs/aluno-lider-cadastra-equipes.md`, SQL `database/2026-10-08-usuario-lider-equipes.sql`):
+  o professor da turma marca o líder na coluna **Líder (1/0)** da tela **ALUNOS** (`alunos.html`,
+  função `definir_lider_usuario`). O líder vê o menu **👥 EQUIPES** e, nas turmas em que está
+  (`turmaaluno`), **cadastra e altera equipes** e adiciona/altera/remove integrantes (políticas
+  `*_lider` com `aluno_lider_da_turma`); **não exclui equipe**. O aluno não muda o próprio `lider`.
+  Não confundir com `turma.lider_aluno_id` (líder da turma, média final).
+- ⚠️ **`usuario` tem permissão de leitura por coluna:** coluna nova precisa de
+  `grant select (<coluna>) on public.usuario to authenticated`, senão a leitura dá
+  "permission denied for table usuario" (aconteceu com `lider` em 2026-10-08).
 - ✅ **Botão 👥 EQUIPES global no header** (2026-10-08, pedido do usuário): `js/header-usuario.js`
-  mostra o botão a todo usuário logado em qualquer página dentro de uma matéria
+  mostra o botão ao **professor e ao aluno líder** em qualquer página dentro de uma matéria
   (`/MATERIAIS/<CURSO>/<MATÉRIA>/...`, exceto `MATERIAS-GERAIS` e `AGENDA_COLABORADOR`) e abre o
   mesmo modal (`assets/js/menu-acao-equipes.js`) com a pasta da matéria. ⚠️ A matéria é achada
   pelo `atividade.pagina` no banco: matéria sem atividade cadastrada mostra "Não foi possível

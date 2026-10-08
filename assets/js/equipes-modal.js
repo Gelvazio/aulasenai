@@ -20,7 +20,7 @@ const MSG_MEMBRO_OBRIGATORIO = 'Escolha a equipe e o aluno.';
 
 const estadoEquipes = {
   repositorio: null, prefixoPasta: '', papeis: [], materia: null, usuario: null,
-  turmaCodigo: '', alunos: [], equipes: [], membros: [],
+  turmaCodigo: '', alunos: [], equipes: [], membros: [], ehLider: false,
   editandoEquipeId: null, editandoMembroId: null,
 };
 let elementosEquipes = null;
@@ -400,7 +400,9 @@ async function carregarTurmaEquipes() {
   }
   mostrarMensagemEquipes('');
   const filtro = { turmaCodigo, materiaId: estadoEquipes.materia.id };
-  estadoEquipes.alunos = await repositorio.listarAlunosDaTurma(turmaCodigo);
+  estadoEquipes.alunos = estadoEquipes.ehLider
+    ? await repositorio.listarAlunosDaTurmaLider(turmaCodigo)
+    : await repositorio.listarAlunosDaTurma(turmaCodigo);
   estadoEquipes.equipes = await repositorio.listarEquipes(filtro);
   estadoEquipes.membros = await repositorio.listarMembros(estadoEquipes.equipes.map((e) => e.id));
   renderizarTurmaEquipes();
@@ -420,7 +422,9 @@ function rotuloTurmaEquipes(turma) {
  * @returns {Promise<void>}
  */
 async function iniciarModoProfessor() {
-  const turmas = await estadoEquipes.repositorio.listarTurmasDoProfessor(estadoEquipes.usuario.id);
+  const { repositorio, usuario, ehLider } = estadoEquipes;
+  const turmas = ehLider ? await repositorio.listarTurmasDoAluno(usuario.id)
+    : await repositorio.listarTurmasDoProfessor(usuario.id);
   if (!turmas.length) {
     alternarModoProfessor(false);
     mostrarMensagemEquipes(MSG_SEM_TURMA_EQUIPES);
@@ -506,9 +510,12 @@ async function carregarInicialEquipes() {
   elementosEquipes.titulo.textContent = TITULO_MODAL_EQUIPES + ' — ' +
     estadoEquipes.materia.descricao;
   const ehProfessor = repositorio.ehProfessor(estadoEquipes.usuario);
-  alternarModoProfessor(ehProfessor);
+  // Aluno líder (usuario.lider = 1) também cadastra e altera as equipes da própria turma.
+  estadoEquipes.ehLider = !ehProfessor && await repositorio.ehLider(estadoEquipes.usuario);
+  const podeGerir = ehProfessor || estadoEquipes.ehLider;
+  alternarModoProfessor(podeGerir);
   mostrarMensagemEquipes('');
-  if (ehProfessor) return iniciarModoProfessor();
+  if (podeGerir) return iniciarModoProfessor();
   return iniciarModoAluno();
 }
 

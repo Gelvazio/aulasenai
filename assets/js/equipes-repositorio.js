@@ -13,6 +13,8 @@ const TABELA_USUARIO_EQUIPES = 'usuario';
 const TABELA_ATIVIDADE_EQUIPES = 'atividade';
 const RPC_ADMINISTRADOR_EQUIPES = 'eh_professor_administrador';
 const RPC_MINHAS_EQUIPES = 'minhas_equipes';
+const RPC_ALUNOS_TURMA_LIDER = 'alunos_da_turma_lider';
+const VALOR_ALUNO_LIDER = 1;
 const PERFIL_PROFESSOR_EQUIPES = 'PROFESSOR';
 const COLUNAS_TURMA_EQUIPES = 'codigo, nome, turno, local';
 const COLUNAS_EQUIPE = 'id, turma_codigo, materia_id, nome, descricao, criado_em';
@@ -49,6 +51,43 @@ function criarLeiturasContextoEquipes(cliente) {
      */
     ehProfessor(usuario) {
       return usuario?.app_metadata?.perfil === PERFIL_PROFESSOR_EQUIPES;
+    },
+
+    /**
+     * Diz se o usuário é aluno líder (usuario.lider = 1; lê a própria linha pelo RLS).
+     * @param {Object} usuario - Usuário logado.
+     * @returns {Promise<boolean>} Verdadeiro para o aluno líder.
+     */
+    async ehLider(usuario) {
+      const { data, error } = await cliente.from(TABELA_USUARIO_EQUIPES).select('lider')
+        .eq('id', usuario.id).maybeSingle();
+      return !error && data?.lider === VALOR_ALUNO_LIDER;
+    },
+
+    /**
+     * Turmas do aluno (turmaaluno), para o aluno líder montar as equipes.
+     * @param {string} alunoId - Id do aluno logado.
+     * @returns {Promise<Object[]>} Turmas ordenadas pelo código.
+     */
+    async listarTurmasDoAluno(alunoId) {
+      const vinculos = dadosOuErroEquipes(await cliente.from(TABELA_TURMAALUNO_EQUIPES)
+        .select('turma_codigo').eq('aluno_id', alunoId));
+      const codigos = new Set(vinculos.map((vinculo) => vinculo.turma_codigo));
+      const turmas = dadosOuErroEquipes(await cliente.from(TABELA_TURMA_EQUIPES)
+        .select(COLUNAS_TURMA_EQUIPES).order('codigo'));
+      return turmas.filter((turma) => codigos.has(turma.codigo));
+    },
+
+    /**
+     * Alunos da turma para o aluno líder (função alunos_da_turma_lider; só a turma dele).
+     * @param {string} turmaCodigo - Código da turma.
+     * @returns {Promise<{id: string, nome: string}[]>} Alunos pelo nome.
+     */
+    async listarAlunosDaTurmaLider(turmaCodigo) {
+      const linhas = dadosOuErroEquipes(await cliente.rpc(RPC_ALUNOS_TURMA_LIDER,
+        { p_turma_codigo: turmaCodigo }));
+      return linhas.map((linha) => ({ id: linha.id, nome: linha.nome || 'Aluno sem nome' }))
+        .sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
     },
 
     /**

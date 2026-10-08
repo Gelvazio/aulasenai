@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 23:45:55
+**Versão das regras:** 2026-10-08 23:57:37
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 23:57:37 | **Aluno líder** (`usuario.lider` 1/0): professor marca na tela ALUNOS; o líder vê 👥 EQUIPES e cadastra/altera equipes da própria turma (não exclui); menu EQUIPES só para professor e líder; aviso do grant por coluna da `usuario` — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 23:45:55 | **Faixa de matérias**: botões **SOMENTE ENSALADO** e **VER TODAS MATÉRIAS** ao lado do título, e **ON/OFF** por matéria (coluna `materia.ensalado`, só PROFESSOR grava) em todos os `index.html` dos cursos (`docs/regras`: seção "FAIXA DE MATÉRIAS") |
 | 2026-10-08 20:33:13 | **Menu das atividades desligado** em todas as páginas (barra com o nome da matéria e "Equipes"): tudo já está no menu base do header; `MENU_ATIVIDADES_LIGADO = false` em `js/menu.js` (`docs/regras/assets-e-geradores.md`) |
 | 2026-10-08 20:24:44 | Discursivas: **aluno vê a prova corrigida** depois da entrega e da liberação do gabarito — respostas, **nota**, resultado de cada alternativa (✅/🟡/❌) e a **observação da IA** do porquê, mais o padrão de resposta (`assets/js/resultado-aluno-discursiva.js`; `aluno_pode_ver_gabarito` liberada para `authenticated`) |
 | 2026-10-08 20:21:56 | Discursivas: botão **✅ Finalizar Atividade** (professor, embaixo da prova depois de escolher o aluno) que **lança a nota** com base nas alternativas confirmadas (certa / meia certa / errada), sobre o mínimo do aluno e no máximo 10 (`assets/js/finalizar-atividade-professor.js`) |
-| 2026-10-08 16:42:10 | Discursivas: **quantidade mínima de questões implementada** — coluna `atividade.minimo_questoes_entrega`, tabela `minimo_questoes_aluno` (RLS), entrega conferindo o mínimo (`atividade_completa`) e média final proporcional ao mínimo, máximo 10 (`notas_media_final`); botão no Progresso da turma (SQL `database/2026-10-08-minimo-questoes-entrega.sql`, aplicado) |
 
 ---
 

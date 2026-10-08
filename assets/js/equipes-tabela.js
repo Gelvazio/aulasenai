@@ -76,13 +76,15 @@ function criarLinhaGrupoEquipe(equipe, membros) {
     criarElementoEquipes('span', 'equipes-tabela__integrantes',
       ' ' + listarPrimeirosNomesEquipe(membros)));
   if (equipe.descricao) nome.title = equipe.descricao;
-  linha.append(nome, criarCelulaAcoesEquipes([
+  const botoes = [
     criarBotaoEquipes({ texto: '+ Integrante', acao: 'abrir-integrante', id: equipe.id,
       classe: 'equipes-btn--link' }),
     criarBotaoIconeEquipes({ icone: '✏️', titulo: 'Editar equipe', acao: 'editar-equipe',
-      id: equipe.id }),
-    criarBotaoIconeEquipes({ icone: '🗑️', titulo: 'Excluir equipe', acao: 'excluir-equipe',
-      id: equipe.id })]));
+      id: equipe.id })];
+  // O aluno líder cadastra e altera, mas não exclui equipe (só o professor).
+  if (!estadoEquipes.ehLider) botoes.push(criarBotaoIconeEquipes({ icone: '🗑️',
+    titulo: 'Excluir equipe', acao: 'excluir-equipe', id: equipe.id }));
+  linha.append(nome, criarCelulaAcoesEquipes(botoes));
   return linha;
 }
 

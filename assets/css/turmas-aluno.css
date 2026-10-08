@@ -31,3 +31,7 @@
     font-weight: 600;
     cursor: pointer;
 }
+
+/* Coluna Líder (1/0): 1 em destaque (aluno líder das equipes) */
+.ta-lider { min-width: 56px; }
+.ta-lider--sim { border-color: var(--guia-ok); color: var(--guia-ok); font-weight: 700; }

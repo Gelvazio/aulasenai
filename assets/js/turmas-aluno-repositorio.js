@@ -9,7 +9,7 @@ const TABELA_USUARIO_ALUNOS = "usuario";
 const PERFIL_ALUNO_REPOSITORIO = "ALUNO";
 const PERFIL_PROFESSOR_ALUNOS = "PROFESSOR";
 const COLUNAS_TURMA_ALUNOS = "codigo, nome, turno, horario, local, uc";
-const COLUNAS_ALUNO_REPOSITORIO = "id, nome_completo, email";
+const COLUNAS_ALUNO_REPOSITORIO = "id, nome_completo, email, lider";
 const COLUNAS_VINCULO_ALUNO = "id, turma_codigo, aluno_id, criado_em";
 const FUNCAO_SUGESTOES_ALUNOS = "sugestoes_turmaaluno";
 
@@ -100,6 +100,17 @@ function criarRepositorioTurmasAluno(cliente) {
      */
     async excluirVinculo(id) {
       dadosOuErroAlunos(await cliente.from(TABELA_TURMAALUNO).delete().eq("id", id));
+    },
+
+    /**
+     * Marca (1) ou desmarca (0) o aluno líder das equipes (função definir_lider_usuario).
+     * @param {string} usuarioId - Id do aluno (usuario.id).
+     * @param {number} lider - 1 = líder, 0 = não.
+     * @returns {Promise<void>}
+     */
+    async definirLider(usuarioId, lider) {
+      dadosOuErroAlunos(await cliente.rpc("definir_lider_usuario",
+        { p_usuario: usuarioId, p_lider: lider }));
     },
   };
 }

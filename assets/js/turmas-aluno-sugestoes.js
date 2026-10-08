@@ -114,7 +114,7 @@ function criarCelulaSugestaoTa(principal, detalhe) {
 
 /**
  * Monta a linha de um aluno sem turma: lista de turmas, Turma OK = Não e botão Confirmar.
- * Colunas: Turma | Turno / horário | Aluno | Turma OK | Vinculado em | Ações.
+ * Colunas: Turma | Turno / horário | Aluno | Turma OK | Líder | Vinculado em | Ações.
  * @param {Object} sugestao - Linha da função sugestoes_turmaaluno.
  * @returns {HTMLTableRowElement} Linha.
  */
@@ -135,6 +135,7 @@ function criarLinhaSugestaoTa(sugestao) {
     criarCelulaSugestaoTa(""),
     criarCelulaSugestaoTa(sugestao.nome_completo || "(sem nome)", sugestao.email || ""),
     criarCelulaSugestaoTa(TEXTO_TURMA_OK_NAO_TA),
+    criarCelulaSugestaoTa("—"),
     criarCelulaSugestaoTa("—"),
     celulaAcao,
   );

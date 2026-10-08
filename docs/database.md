@@ -52,6 +52,7 @@ CURSO (1) ──→ (N) CURSOMATERIA (N) ←─── (1) MATERIA
 | senha_hash, codigoacesso, codigousado, dataexpiracaocodigo | — | Nullable | — | Legado (login manual antigo) |
 | **senha_informada** | BOOLEAN | NOT NULL | `false` | O professor informou a senha inicial ao aluno |
 | senha_informada_em | TIMESTAMPTZ | Nullable | NULL | Quando foi marcado |
+| **lider** | SMALLINT | NOT NULL | `0` | 1 = aluno líder (cadastra/altera equipes da própria turma), 0 = não; check `in (0, 1)`; grava só `definir_lider_usuario` (professor da turma) — 2026-10-08, `database/2026-10-08-usuario-lider-equipes.sql` |
 
 **Primary Key:** `id` (UUID = `auth.users.id`) · **Rows:** 118 (uma por conta do Auth)
 **Backup do que existia antes:** `usuario_legado_20260930` (17 linhas; RLS ligado, sem políticas).
@@ -553,6 +554,10 @@ Plano: `docs/equipes-sala-de-aula.md`. Tela: modal **👥 Equipes** do menu das 
 | `equipe_bloquear_troca_turma_trg` | recusa trocar turma/matéria de equipe que tem integrantes |
 | RLS | ligado nas duas; select/insert/update/delete só com `professor_tem_turma(turma_codigo)` (administrador em todas); `anon` sem acesso; TRUNCATE revogado |
 | `minhas_equipes(p_materia_id)` | `security definer`, só `authenticated`: o aluno lê a(s) própria(s) equipe(s) da matéria com os nomes dos colegas |
+| `aluno_lider_da_turma(p_turma_codigo)` | (2026-10-08) verdadeiro se o usuário logado tem `usuario.lider = 1` e está na turma (`turmaaluno`) |
+| Políticas `*_lider` | (2026-10-08) `equipe`: select/insert/update; `equipe_membro`: select/insert/update/delete — todas com `aluno_lider_da_turma(turma_codigo)`; o líder **não** exclui equipe |
+| `alunos_da_turma_lider(p_turma_codigo)` | (2026-10-08) `security definer`: id e nome dos alunos da turma, só para o líder dela |
+| `definir_lider_usuario(p_usuario, p_lider)` | (2026-10-08) `security definer`: professor que vê o aluno (`professor_pode_ver_aluno`) marca `lider` 0/1 |
 
 ---
 

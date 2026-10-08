@@ -194,7 +194,7 @@
         <tr>
           <td><strong>usuario</strong></td>
           <td>118</td>
-          <td>Usuários do sistema (id = auth.users.id; coluna senha_informada)</td>
+          <td>Usuários do sistema (id = auth.users.id; colunas senha_informada e lider 0/1 — aluno líder das equipes, 2026-10-08)</td>
           <td><span class="badge badge-ok">✅</span></td>
         </tr>
       </table>
@@ -587,6 +587,11 @@
           <td>minhas_equipes(materia)</td>
           <td>Função</td>
           <td>security definer: o aluno lê a própria equipe da matéria com os nomes dos colegas</td>
+        </tr>
+        <tr>
+          <td>aluno_lider_da_turma / alunos_da_turma_lider / definir_lider_usuario</td>
+          <td>Função</td>
+          <td>2026-10-08: aluno com usuario.lider = 1 cadastra e altera equipes da própria turma (políticas *_lider; não exclui equipe); só o professor da turma marca o líder</td>
         </tr>
       </table>
     </div>
