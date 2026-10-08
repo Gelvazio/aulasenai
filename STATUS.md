@@ -1266,3 +1266,12 @@ Pedido do usuário: a rodada da IA não gravou nada (0 entregas; a orientação 
 |------|-----------|--------|--------------|-------------|
 | 99.1 | Botão "🧮 Cálculo Nota" ao lado de "📈 Gráficos": modal com o mínimo que 85% da turma já completou, resumo, tabela dos alunos e botão "🎯 Quantidade Mínima de Questões" que grava o mínimo só para quem ainda está com o total (`minimo_questoes_aluno`); nota segue o mínimo de cada aluno | ✅ Concluído | 2026-10-08 16:57:30 | `node --check`; sem mudança no banco (tabela e RLS já existentes) |
 | 99.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 100 — Excluir as respostas de uma aluna na atividade id 82 (tarefa pequena, pedido em 2026-10-08 22:55:39)
+
+Motivo: a outra integrante da dupla é quem está fazendo a atividade.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 100.1 | Backup (RLS ligado, sem políticas) em `resposta_discursiva_backup_20261008_82_thais` e `correcao_discursiva_backup_20261008_82_thais`; exclusão das 6 respostas discursivas e das 6 correções da IA da aluna na atividade 82 (nenhuma nota confirmada pelo professor; sem entrega) | ✅ Concluído | 2026-10-08 22:55:39 | Consulta: 6 linhas em cada backup e 0 restantes nas tabelas originais |
+| 100.2 | Aceite do usuário | ⬜ Pendente | — | — |
