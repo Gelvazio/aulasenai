@@ -1053,3 +1053,10 @@ Pedido: deixar só 20 questões e o PDF de cada aluno em no máximo 2 folhas. De
 |------|-----------|--------|--------------|-------------|
 | 86.1 | Linha nº 4 em `scripts/LISTA-PRESENCA-PROFESSOR.js` (fora do Git): perfil PROFESSOR, e-mail `grazi.ferreira@senai.local`, senha inicial de 6 caracteres no padrão da lista | ✅ Concluído | 2026-10-08 | `node --check` sem erros |
 | 86.2 | Usuário grava a conta no Auth pela página `scripts/criarUsuariosBancoDados.html` (aba Professores → marcar → Gravar) | ⬜ Pendente | — | — |
+
+## Etapa 86 — PDF "Orientação à professora" da atividade de sexta (tarefa pequena, 2026-10-08 11:33:33)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 86.1 | `ATIVIDADES/ATIVIDADE-SEXTA-FEIRA/ORIENTACAO-PROFESSORA.pdf` (1 página A4, texto centralizado, gerado com reportlab, sem navegador). Fora do Git (`*.pdf` no `.gitignore`) | ✅ Concluído | 2026-10-08 11:33 | Texto lido do PDF (pypdf): título + 4 orientações |
+| 86.2 | Aceite do usuário | ⬜ Pendente | — | — |
