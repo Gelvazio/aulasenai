@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 08:14
+**Versão das regras:** 2026-10-08 08:17
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:17 | Nova regra "REGRAS E SKILLS GLOBAIS NO PROJETO": skills do usuário em `.claude/skills/` e cópia de referência (não carregada) das regras globais em `.claude/regras-globais/`, sincronizadas sempre que o original mudar |
 | 2026-10-08 08:14 | Log da sessão só é gravado quando o usuário responde **SIM** à pergunta do fim da tarefa (tirada a obrigação de gravar a cada pedido e antes de parar); o `STATUS.md` continua sempre atualizado |
 | 2026-10-08 08:13 | Nova seção **"MUITO IMPORTANTE — ARQUIVOS DE STATUS"** (logo após as regras de sempre): mapa de todos os arquivos de status (`STATUS.md`, `TASKS.md`, `SESSOES-CLAUDE/`, STATUS da matéria e das ementas), legenda única, quando atualizar, hierarquia (o `STATUS.md` vence) e critério de `CONCLUÍDO` |
 | 2026-10-08 08:11 | Fonte única do estado: o `STATUS.md` manda; cada tarefa do `TASKS.md` tem linha na seção "📌 Tarefas do `TASKS.md`" do `STATUS.md` (o `TASKS.md` guarda só a descrição longa) e os logs de `SESSOES-CLAUDE/` citam a etapa/item do `STATUS.md`; em conflito, o `STATUS.md` vence |
 | 2026-10-08 08:10 | Inicialização: ler `SESSOES-CLAUDE/STATUS-SESSOES.md` (e o log das sessões `PENDENTE`) **sempre antes de iniciar uma nova tarefa**, junto com o `STATUS.md`; sessões `CONCLUÍDO` passam pela limpeza antes |
-| 2026-10-08 08:09 | Sessão só fica `CONCLUÍDO` quando a tarefa inteira foi finalizada: antes, validar **cada** pedido do usuário da sessão (feito, conferido e aceito), com a tabela "✅ Validação dos pedidos" no log; faltando qualquer item, continua `PENDENTE` |
 
 ---
 
@@ -312,6 +312,25 @@ licença (ou outra IA) continuar exatamente de onde parou, sem precisar da conve
 - ⛔ A pasta é versionada e publicada: **nunca** gravar senhas, chaves, gabaritos, respostas certas
   nem dados pessoais de alunos.
 - ✅ Exemplo: `SESSOES-CLAUDE/SESSAO-2026-10-07-2110-COMUNICACAO-RIO-DO-SUL.md`.
+
+---
+
+## 🧩 REGRA — REGRAS E SKILLS GLOBAIS NO PROJETO (`.claude/`)
+
+Registrada em 2026-10-08 a pedido do usuário (ele usa 2 licenças do Claude Code e outras máquinas).
+
+- ✅ **Skills:** as skills do usuário (`EXERCICIOS`, `documentacao-padrao`, `graphify`,
+  `padrao-slides-senai`) ficam também em **`.claude/skills/`** do projeto — copiadas de
+  `C:\Users\gelva\.agents\skills\` (versão mais nova). A pasta `synced/` (skills do claude.ai,
+  geridas pelo app) **não** é copiada.
+- ✅ **Regras globais:** cópia de **referência** em **`.claude/regras-globais/`**
+  (`CLAUDE-GLOBAL.md` = `~/.claude/CLAUDE.md` e `CLAUDE-DOCS-BEFORE-EVERY-TASK.md`). Essa cópia
+  **não é carregada** pelo Claude (evita regras em dobro em toda mensagem); serve de backup
+  versionado para outra licença/máquina conferir ou restaurar.
+- ✅ **Sincronizar sempre:** ao alterar uma regra global ou uma skill do usuário, atualizar a cópia
+  do projeto **na mesma tarefa** (e também `~/.claude/skills/` e `~/.agents/skills/`, que devem
+  ficar iguais) e incluir no commit.
+- ⛔ Nada de segredo, senha ou dado de aluno nesses arquivos (a pasta é versionada e publicada).
 
 ---
 
