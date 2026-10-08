@@ -1046,3 +1046,10 @@ Pedido: deixar só 20 questões e o PDF de cada aluno em no máximo 2 folhas. De
 |------|-----------|--------|--------------|-------------|
 | 85.1 | Regra nova no `~/.claude/CLAUDE.md` e na cópia `.claude/regras-globais/CLAUDE-GLOBAL.md`; `docs/regras/atividades.md` ajustado (tirava "empresa fictícia"); versão e histórico do `CLAUDE.md` | ✅ Concluído | 2026-10-08 14:21 | `diff` global × cópia sem diferenças; resumo do histórico com 5 linhas |
 | 85.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 86 — Professora Grazi Ferreira na lista de professores (tarefa pequena, 2026-10-08)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 86.1 | Linha nº 4 em `scripts/LISTA-PRESENCA-PROFESSOR.js` (fora do Git): perfil PROFESSOR, e-mail `grazi.ferreira@senai.local`, senha inicial de 6 caracteres no padrão da lista | ✅ Concluído | 2026-10-08 | `node --check` sem erros |
+| 86.2 | Usuário grava a conta no Auth pela página `scripts/criarUsuariosBancoDados.html` (aba Professores → marcar → Gravar) | ⬜ Pendente | — | — |
