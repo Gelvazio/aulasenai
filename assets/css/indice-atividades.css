@@ -101,3 +101,12 @@ footer { background: #2d3748; color: white; padding: 24px 20px; text-align: cent
 .faixa-materias__card { display: block; break-inside: avoid; margin-bottom: 8px; font-size: 13px; font-weight: 600; text-decoration: none; color: var(--text); background: #f7fafc; border: 2px solid #e2e8f0; border-radius: 10px; padding: 8px 12px; }
 .faixa-materias__card:hover { border-color: var(--primary); background: #eef0fd; }
 .faixa-materias__card--atual { background: var(--primary); border-color: var(--primary); color: white; }
+/* Faixa de matérias: barra SOMENTE ENSALADO / VER TODAS MATÉRIAS e botão ON/OFF por matéria */
+.faixa-materias__barra { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.faixa-materias__filtro { font: inherit; font-size: 12px; font-weight: 700; color: var(--primary); background: white; border: 2px solid var(--primary); border-radius: 8px; padding: 6px 10px; cursor: pointer; }
+.faixa-materias__filtro:hover { background: #eef0fd; }
+.faixa-materias__item { display: flex; gap: 6px; align-items: stretch; break-inside: avoid; margin-bottom: 8px; }
+.faixa-materias__item[hidden] { display: none; }
+.faixa-materias__item > .faixa-materias__card { flex: 1 1 auto; margin-bottom: 0; }
+.faixa-materias__onoff { font: inherit; font-size: 11px; font-weight: 800; color: #4a5568; background: #edf2f7; border: 2px solid #cbd5e0; border-radius: 8px; padding: 0 8px; cursor: pointer; min-width: 44px; }
+.faixa-materias__onoff--ligado { color: white; background: #38a169; border-color: #38a169; }

@@ -1378,11 +1378,13 @@ Plano: [docs/somente-ensalado-materias.md](docs/somente-ensalado-materias.md) ·
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 105.1 | Decisão do usuário: cadastrar as 20 matérias do curso 4 (Técnico em Informática para Internet) em `materia` | ✅ Concluído | 2026-10-08 23:44:57 | Usuário pediu a inserção via Supabase MCP |
-| 105.2 | Ler `docs/ORIENTACAO_JS_SUPABASE.md` e `docs/ORIENTACAO_USUARIO.md` | ⬜ Pendente | — | — |
-| 105.3 | `assets/js/faixa-materias-ensalado.js` (filtro + ON/OFF) | ⬜ Pendente | — | — |
-| 105.4 | `index.html` da ITIC: botões, `data-materia`, ON/OFF só PROFESSOR | ⬜ Pendente | — | — |
-| 105.5 | Estilo dos botões em `assets/css/indice-atividades.css` | ⬜ Pendente | — | — |
+| 105.2 | Ler `docs/ORIENTACAO_JS_SUPABASE.md` (feito; `ORIENTACAO_USUARIO.md` não lido) | ✅ Concluído | 2026-10-08 23:47:19 | sbGet/sbPatch conforme a orientação |
+| 105.3 | `assets/js/faixa-materias-ensalado.js` (filtro + ON/OFF) | ✅ Concluído | 2026-10-08 23:47:19 | `node --check` OK |
+| 105.4 | 25 `index.html` (ITIC 21, Operador 2, Logística 1, Gestão 1) com `data-curso-id` e scripts; Rio do Sul e Qualificação pendentes (ver 105.10) | ✅ Concluído | 2026-10-08 23:47:19 | grep: 25 páginas ligadas |
+| 105.5 | Estilo dos botões em `assets/css/indice-atividades.css` | ✅ Concluído | 2026-10-08 23:47:19 | Leitura do CSS |
 | 105.6 | Banco: 20 matérias inseridas em `materia` (curso_id 4, ensalado false) e ligadas em `cursomateria` (cursoid 4) | ✅ Concluído | 2026-10-08 23:44:57 | select: curso 4 = 20 matérias, 0 ensaladas |
 | 105.7 | Regra salva no `CLAUDE.md` global | ✅ Concluído | 2026-10-08 23:42 | Leitura da seção "Faixa de matérias" |
 | 105.8 | Commit local (sem push) | ⬜ Pendente | — | — |
 | 105.9 | Aceite do usuário (testar na tela) | ⬜ Pendente | — | — |
+| 105.10 | Pendente: ligar Rio do Sul Mais Tech (curso 1 ou 6? ambíguo) e Qualificação Profissional (sem curso no banco) — decisão do usuário | ⬜ Pendente | — | — |
+| 105.11 | Pendente: cadastrar no banco as matérias de Operador, Logística e Gestão (hoje só 4 linhas, e os nomes não batem com os cartões) — decisão do usuário | ⬜ Pendente | — | — |
