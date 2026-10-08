@@ -27,7 +27,9 @@ clicar em **"Finalizar e entregar"**, a página e o banco conferem se o aluno j�
 | D3 | Mínimo por aluno | Tabela nova `minimo_questoes_aluno` (`atividade_id`, `aluno_id`, `minimo`, `definido_por`, `definido_em`); vale para todas as tentativas do aluno nessa atividade |
 | D4 | Quem altera | Só professor, e só de alunos das turmas dele (`professor_pode_ver_aluno`); aluno só **lê** o próprio mínimo |
 | D5 | Limites | Mínimo entre **1** e o total de questões da atividade |
-| D6 | Questões não respondidas | Valem **0** na nota; a IA corrige só o que foi respondido. A coluna "Nota IA (a confirmar)" passa a aparecer quando a entrega está feita e **todas as alternativas respondidas** foram corrigidas (hoje exige 60/60) |
+| D6 | Questões não respondidas | Não entram na conta; a IA corrige só o que foi respondido. A coluna "Nota IA (a confirmar)" aparece quando a entrega está feita e **todas as alternativas respondidas** foram corrigidas (hoje exige 60/60) |
+| D7 | **Nota proporcional ao mínimo (decisão do usuário, 2026-10-08)** | A nota vale sobre o **mínimo do aluno**: cada questão passa a valer **10 ÷ mínimo**. Ex.: prova de 20 questões com mínimo 10 → cada questão vale 1,0; fazendo as 10 certas, **nota 10**. Conta: `nota = soma dos pontos obtidos × (total de questões ÷ mínimo)` |
+| D8 | **Nota máxima sempre 10 (decisão do usuário, 2026-10-08)** | Se o aluno responder mais que o mínimo, a nota é **limitada a 10** (`menor(10, conta da D7)`) |
 
 ## Arquivos previstos
 
@@ -38,7 +40,8 @@ clicar em **"Finalizar e entregar"**, a página e o banco conferem se o aluno j�
 | `assets/js/progresso-turma-discursiva.js` | Botão ao lado do nome; mostra o mínimo atual do aluno |
 | `assets/js/respostas-discursivas-banco.js` | Lê o mínimo do aluno logado |
 | `assets/js/avaliacao-discursiva.js` | "Finalizar e entregar" confere o mínimo (em vez de todas) e explica quantas faltam; painel do aluno mostra "mínimo para entregar: N questões" |
-| `CORRECAO-PROVA-ADAG.md` | Nota final da IA com o mínimo (questões em branco = 0) |
+| Função `notas_media_final` (banco) | A nota da discursiva na média final segue D7 e D8 (proporcional ao mínimo do aluno, máximo 10) |
+| `CORRECAO-PROVA-ADAG.md` | Nota final da IA com o mínimo (D7 e D8) |
 | `docs/database.md`, `docs/relatorio_verificacao_database.html`, `docs/regras/atividades.md`, `CLAUDE.md` | Documentação e regra |
 
 ## Passos
@@ -50,7 +53,8 @@ clicar em **"Finalizar e entregar"**, a página e o banco conferem se o aluno j�
 | 3 | Aplicar no Supabase pelo conector e conferir coluna, tabela, RLS e função | Consultas de leitura | ⬜ Pendente |
 | 4 | Módulo do botão e da janela do mínimo no Progresso da turma | `node --check` | ⬜ Pendente |
 | 5 | Entrega na página do aluno conferindo o mínimo + aviso no painel | `node --check` | ⬜ Pendente |
-| 6 | Ajustar a coluna "Nota IA (a confirmar)" e o `CORRECAO-PROVA-ADAG.md` (D6) | `node --check`, leitura | ⬜ Pendente |
+| 6 | Ajustar a coluna "Nota IA (a confirmar)", a "Nota parcial IA" e o `CORRECAO-PROVA-ADAG.md` (D6, D7 e D8) | `node --check`, leitura | ⬜ Pendente |
+| 6.1 | Ajustar `notas_media_final` no banco (D7 e D8), com cópia da definição antiga no SQL | Consultas de leitura com aluno de teste | ⬜ Pendente |
 | 7 | Documentação, regra no `CLAUDE.md`, `STATUS.md` e commit | Leitura, `git diff --cached --name-only` | ⬜ Pendente |
 | 8 | Aceite do usuário | Teste dele no navegador | ⬜ Pendente |
 
@@ -60,4 +64,5 @@ clicar em **"Finalizar e entregar"**, a página e o banco conferem se o aluno j�
 |---|---|
 | Mudar `atividade_completa` afetar as objetivas | A função mantém exatamente o ramo das objetivas; só o ramo das discursivas muda |
 | Aluno entregar sem o mínimo burlando a página | A regra fica no banco (RLS da `entrega_atividade` via `atividade_completa`) |
+| Mudar `notas_media_final` alterar notas já lançadas | Com mínimo = total (padrão) a conta dá o mesmo valor de hoje; só muda para quem tiver mínimo menor |
 | Professor pôr mínimo inválido | `check` no banco (1 ≤ mínimo) e conferência do total na função e na janela |
