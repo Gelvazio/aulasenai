@@ -30,6 +30,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 90 | 90.2 | orientação da correção por IA da Prova Prática ADAG (`CORRECAO-PROVA-ADAG.md`) | Aceite |
 | 89 | 89.5 | testar o progresso da turma (logado como professor) na Prova Prática ADAG (id 82) | Aceite |
 | 88 | 88.8 | testar na Prova Prática ADAG (id 82): bloqueio de colar, campo do tamanho da resposta, botão Gravar e entrega só com tudo preenchido | Aceite |
 | 82 e 83 | 82.5 e 83.7 | aceite da remoção da V1 (apostila única 2.1), da discursiva id 81 (já aplicada no banco) e das 13 questões novas da objetiva id 85 | Aceite |
@@ -1165,3 +1166,12 @@ Pedido do usuário: barra de progresso por aluno e por questão, só para o prof
 | 95.1 | `assets/js/equipes-tabela.js` (novo): tabela com um grupo por equipe (linha da equipe com +Integrante/Editar/Excluir, linhas dos integrantes com papel, tarefas, líder e ✏️/🗑️, linha "+ Adicionar integrante" que abre a seleção dos alunos sem equipe); `equipes-modal.js` sem os cards antigos do professor; alunos sem equipe no início do modal (refeitos a cada gravação); `menu-acao-equipes.js` e `equipes-modal.css` | ✅ Concluído | 2026-10-08 17:39:22 | `node --check` nos 3 JS; leitura do código (sem navegador) |
 | 95.2 | Aceite do usuário | ⬜ Pendente | — | — |
 | 95.3 | Pedido do usuário (2026-10-08 17:42:16): tabela mais simples (colunas Equipe / Integrante · Papel · ações; botões ✏️/🗑️ só com ícone, "+ Integrante" em texto; sem colunas Tarefas e Líder — líder pelo 👑, tarefas e descrição no title; sem a linha "+ Adicionar integrante"; linhas finas sem fundo) e modal mais largo (até 1280 px / 96% da tela) | ✅ Concluído | 2026-10-08 17:42:16 | `node --check`; leitura do código (sem navegador) |
+
+## Etapa 90 — Orientação para a IA corrigir a Prova Prática ADAG (id 82) (tarefa pequena, 2026-10-08 14:48:26)
+
+Pedido do usuário: arquivo `CORRECAO-PROVA-ADAG.md` com a orientação para a IA corrigir, de tempos em tempos, a prova prática da Salete: nota sugerida e comentário do porquê por alternativa (certa / meia certa / errada; 0,5 ponto por questão dividido entre as alternativas).
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 90.1 | `MATERIAIS/GESTAO_E_CONTROLE_MATERIAIS/ANALISE_DADOS_APLICADA_GESTAO/ATIVIDADES/CORRECAO-PROVA-ADAG.md`: regras de nota (0,1/0,05/0 e 0,2/0,1/0), comentário `[IA] ...`, SQL de cada rodada (pendentes, leitura, textos iguais, gravação em `correcao_discursiva.nota_ia` e `comentario` só sem `nota_professor`, conferência) e registro das rodadas | ✅ Concluído | 2026-10-08 14:48:26 | Colunas, trigger, restrições e RLS da `correcao_discursiva` conferidos no banco (só leitura); arquivo sem respostas esperadas nem dados de alunos |
+| 90.2 | Aceite do usuário | ⬜ Pendente | — | — |
