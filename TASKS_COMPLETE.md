@@ -115,6 +115,17 @@ do documento, divergências e campos pendentes registrados). Os arquivos atuais 
 - ✅ Executada com autorização do usuário para todos os cursos, inclusive os em `IGNORAR` (marcação mantida).
 - ✅ Plano e resultado: `docs/tarefa-10-ementas-principais-demais-cursos.md`.
 
+### #13: Apostila de Introdução à TIC (ITIC)
+
+**Status:** ✅ CONCLUÍDO (2026-10-07) · 👀 aguardando validação do professor  
+**Data:** 2026-10-03 a 2026-10-07 | **Commit:** `26c5772` (PR Gelvazio/aulasenai#2, merge na `main` em 2026-10-07)  
+_(registrada na sua branch como #11; renumerada para #13 porque #11 e #12 já existem no `TASKS.md`)_
+
+- ✅ 10 capítulos (`APOSTILA/CONTEUDO/CAPITULO-01..10.md`), Markdown completo e conferência com a ementa 278/278 (100%)
+- ✅ HTML gerado a partir do Markdown completo (`gerar_apostila.py`) e PDF de 84 páginas A4 (fora do Git)
+- ⏳ Professor: validar os 10 capítulos e conferir os vídeos (`APOSTILA/STATUS-APOSTILA.md`)
+- 📄 Histórico completo: `docs/gerador-apostilas.md` (seção "Registro — 2026-10-07")
+
 ---
 
 ## ⛔ CANCELADAS

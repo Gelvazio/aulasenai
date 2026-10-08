@@ -6,7 +6,7 @@ qualquer matéria a partir das aulas, e gerar a primeira apostila para Introduç
 **Tech Stack:** Python 3.14 (`markdown` 3.10), HTML5, CSS3 (impressão), JavaScript Vanilla.
 
 **Criado em:** 2026-10-03 13:55
-**Concluído em:** — (piloto em andamento)
+**Concluído em:** 2026-10-07 (produção da ITIC concluída; aguardando validação dos capítulos pelo professor)
 **Tempo decorrido:** —
 
 **Regra registrada:** seção `## 📘 REGRAS APOSTILAS` do `CLAUDE.md` da raiz.
@@ -85,10 +85,11 @@ qualquer matéria a partir das aulas, e gerar a primeira apostila para Introduç
 | 2 | `assets/css/apostila.css` + `assets/js/apostila.js` | ✅ Concluído | 2026-10-03 13:55 | 2026-10-03 14:30 | — |
 | 3 | Template + `gerar_apostila.py` (parse, validação, HTML) | ✅ Concluído | 2026-10-03 13:55 | 2026-10-03 15:00 | — |
 | 4 | `STATUS-APOSTILA.md` da ITIC | ✅ Concluído | 2026-10-03 13:55 | 2026-10-03 14:40 | — |
-| 5 | Capítulos 01 a 10 — um por vez (fonte → gerar → conferir → status) | 🔄 Em progresso — capítulo 01 aguardando validação; 02 e 03 em rascunho | 2026-10-03 13:55 | — | — |
+| 5 | Capítulos 01 a 10 — um por vez (fonte → gerar → conferir → status) | ✅ Escritos os 10 (👀 aguardando validação do professor e conferência dos vídeos) | 2026-10-03 13:55 | 2026-10-07 | — |
 | 6 | Item "Apostila" no `MENU-ATIVIDADES.js` + mapa de `assets/` no `CLAUDE.md` | ✅ Concluído | 2026-10-03 13:55 | 2026-10-03 14:40 | — |
 | 7 | Conferência final (`py_compile`, `node --check`, script de conferência) | ✅ Concluído (py_compile, node --check, conferência por script) | 2026-10-03 13:55 | 2026-10-03 15:45 | — |
 | 8 | Commit local (sem push) + `graphify update .` | ✅ Concluído (commit único com a migração para materia.json) | 2026-10-03 13:55 | 2026-10-03 15:50 | — |
+| 9 | HTML gerado a partir do Markdown completo + PDF da apostila completa | ✅ Concluído (commit `26c5772`, PR Gelvazio/aulasenai#2, merge na `main`) | 2026-10-07 | 2026-10-07 18:49 | — |
 
 ---
 
@@ -140,3 +141,26 @@ Glossário · Gerado · Vídeos conferidos pelo professor.
 - Markdown completo `<MATERIA>/APOSTILA/APOSTILA-<MATERIA>.md` (`--markdown`, `--forcar`).
 - Dados da matéria no arquivo único `<MATERIA>/materia.json` (ver `docs/arquivo-unico-materia-json.md`)
   e conferência de cobertura da ementa por capítulo.
+
+---
+
+## Registro — 2026-10-07 (sessão Claude Code na nuvem)
+
+- ✅ **Situação encontrada:** os 10 capítulos da ITIC (`APOSTILA/CONTEUDO/CAPITULO-01..10.md`) já
+  escritos; Markdown completo com os 10 capítulos; conferência com a ementa 278/278 (100%).
+- ✅ **Gerador:** `gerar_apostila.py` passou a gerar o HTML **a partir do Markdown completo**
+  `APOSTILA-<MATERIA>.md` (lê `# Introdução` e cada `# Capítulo NN`; glossário de cada capítulo
+  pelo `_(cap. NN)_` do glossário geral). O HTML da ITIC saiu idêntico ao anterior; teste de
+  edição no Markdown confirmou que a mudança chega ao HTML.
+- ✅ **Commit `26c5772`** (gerador + `CLAUDE.md` versão 2026-10-07 10:00 + `STATUS-APOSTILA.md`),
+  enviado na branch `claude/beautiful-hawking-lryf76` e incorporado à `main` pelo PR
+  Gelvazio/aulasenai#2 (merge pelo professor em 2026-10-07 18:49 UTC).
+- ✅ **PDF da apostila completa:** 84 páginas A4, gerado com Chromium headless no servidor (a
+  pedido do usuário) e entregue no chat. Fora do Git (`*.pdf` no `.gitignore`). As miniaturas
+  dos vídeos saíram em branco (a rede da nuvem bloqueia `i.ytimg.com`); gerando pelo botão
+  "📥 Exportar PDF (apostila completa)" numa máquina com internet, elas aparecem.
+- ⛔ **Regra do push na nuvem:** o usuário pediu para permitir push direto na `main` pelo Claude
+  em nuvem; a alteração do `CLAUDE.md` foi **bloqueada pelas permissões da sessão** e não foi
+  feita. A regra "NUNCA FAZER PUSH" continua como estava.
+- ⏳ **Pendente (professor):** validar os 10 capítulos e conferir os vídeos de cada capítulo
+  (`APOSTILA/STATUS-APOSTILA.md`).

@@ -16,6 +16,7 @@
 | 2026-10-07 20:20 | Apostila de Reforço de Linguagens (10 capítulos, aguardando validação); gerador de apostilas aceita a carga horária de cada aula (6 h/7 h), ementas com capacidades em lista, conteúdos programáticos por módulo e aulas em negrito, e vídeos "⏳ pendentes" quando o YouTube não pode ser conferido; ementa de Reforço de Linguagens com as 6 capacidades da ementa do curso |
 | 2026-10-07 20:15 | Regra "IDENTIFICAÇÃO DA APOSTILA" (global): toda apostila mostra autor, versão, data e hora (campos `autor_apostila` e `versao_apostila` no `materia.json`); começou pela ITIC (autor Gelvazio Camargo, versão 1.0) |
 | 2026-10-07 17:00 | Combo "Aluno" do professor também nas atividades objetivas (alternativas marcadas pelo aluno, somente leitura); módulo único `respostas-aluno-professor.js` |
+| 2026-10-07 17:00 | Status da regra das apostilas atualizado: ITIC com os 10 capítulos, HTML e PDF prontos, aguardando validação do professor |
 | 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
 | 2026-10-07 10:00 | Apostilas: o HTML passa a ser gerado a partir do Markdown completo `APOSTILA-<MATERIA>.md` (antes lia os `CAPITULO-NN.md`) |
 | 2026-10-07 09:00 | Menus USUARIOS, RELATORIOS, ALUNOS e CORREÇÃO do header só para o **Professor Administrador** (os demais professores não veem) |
@@ -2348,9 +2349,11 @@ importação no AVA pelo professor; as demais matérias só quando o usuário li
 Registrada em 2026-10-03 a pedido do usuário (padrões definidos na validação do piloto). Plano:
 `docs/gerador-apostilas.md`. **Reforço de Linguagens (2026-10-07):** introdução + 10 capítulos gerados, conferência 100%
 (138/138), aguardando validação; vídeos pendentes (`REFORCO_LINGUAGENS/APOSTILA/STATUS-APOSTILA.md`).
-**Status:** 🔄 piloto **Introdução à TIC (ITIC)** — só o capítulo 01
-gerado, aguardando validação do usuário; os demais capítulos só depois que ele liberar, **um por
-vez, perguntando a cada capítulo** (rascunhos em `APOSTILA/RASCUNHOS/`, fora da apostila).
+**Status (2026-10-07):** ✅ piloto **Introdução à TIC (ITIC)** com os
+**10 capítulos** escritos, Markdown completo (conferência 100%), HTML e PDF (84 páginas) gerados;
+👀 aguardando a validação dos capítulos e a conferência dos vídeos pelo professor. Nas próximas
+matérias, continua **um capítulo por vez, perguntando a cada capítulo** (rascunhos em
+`APOSTILA/RASCUNHOS/`, fora da apostila).
 
 ### 🏷️ IDENTIFICAÇÃO DA APOSTILA: AUTOR, VERSÃO, DATA E HORA (REGRA GLOBAL)
 
