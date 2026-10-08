@@ -108,7 +108,7 @@ function montarFormularioEquipe() {
     classe: 'equipes-btn--principal' });
   salvar.type = 'submit';
   const acoes = criarElementoEquipes('div', 'equipes-form__acoes');
-  acoes.append(salvar, criarBotaoEquipes({ texto: 'Nova / limpar', acao: 'limpar-equipe' }));
+  acoes.append(salvar, criarBotaoEquipes({ texto: 'Cancelar', acao: 'fechar-janela' }));
   formulario.append(criarElementoEquipes('h3', '', 'Equipe — cadastrar / editar'),
     criarCampoEquipes('Nome da equipe', nome),
     criarCampoEquipes('Descrição (tema, o que a equipe vai fazer)', descricao), acoes);
@@ -145,7 +145,7 @@ function montarFormularioMembro(papeis) {
     classe: 'equipes-btn--principal' });
   salvar.type = 'submit';
   const acoes = criarElementoEquipes('div', 'equipes-form__acoes');
-  acoes.append(salvar, criarBotaoEquipes({ texto: 'Novo / limpar', acao: 'limpar-membro' }));
+  acoes.append(salvar, criarBotaoEquipes({ texto: 'Cancelar', acao: 'fechar-janela' }));
   formulario.append(criarElementoEquipes('h3', '', 'Integrante — adicionar / editar'),
     criarCampoEquipes('Equipe', criarControleEquipes('select', 'equipe_id')),
     criarCampoEquipes('Aluno', criarControleEquipes('select', 'aluno_id')),
@@ -154,6 +154,62 @@ function montarFormularioMembro(papeis) {
     criarCampoEquipes('Líder da equipe', criarControleEquipes('input', 'lider', 'checkbox')),
     acoes);
   return formulario;
+}
+
+/**
+ * Cria uma janela (modal sobre o modal de equipes) com o formulário dentro; começa fechada.
+ * @param {HTMLFormElement} formulario - Formulário da equipe ou do integrante.
+ * @returns {HTMLDivElement} Janela.
+ */
+function criarJanelaEquipes(formulario) {
+  const janela = criarElementoEquipes('div', 'equipes-janela');
+  janela.hidden = true;
+  const caixa = criarElementoEquipes('div', 'equipes-janela__caixa');
+  caixa.setAttribute('role', 'dialog');
+  caixa.setAttribute('aria-modal', 'true');
+  caixa.appendChild(formulario);
+  janela.appendChild(caixa);
+  return janela;
+}
+
+/**
+ * Abre a janela do formulário e põe o cursor no primeiro campo editável.
+ * @param {HTMLDivElement} janela - Janela da equipe ou do integrante.
+ * @param {HTMLElement} [campo] - Campo que recebe o foco.
+ * @returns {void}
+ */
+function abrirJanelaEquipes(janela, campo) {
+  janela.hidden = false;
+  campo?.focus();
+}
+
+/**
+ * Fecha as janelas dos formulários.
+ * @returns {boolean} true se alguma janela estava aberta.
+ */
+function fecharJanelasEquipes() {
+  const janelas = [elementosEquipes.janelaEquipe, elementosEquipes.janelaMembro];
+  const haviaAberta = janelas.some((janela) => !janela.hidden);
+  janelas.forEach((janela) => { janela.hidden = true; });
+  return haviaAberta;
+}
+
+/**
+ * Abre a janela de nova equipe (formulário limpo).
+ * @returns {void}
+ */
+function abrirNovaEquipe() {
+  limparFormularioEquipe();
+  abrirJanelaEquipes(elementosEquipes.janelaEquipe, elementosEquipes.formularioEquipe.nome);
+}
+
+/**
+ * Abre a janela de novo integrante (formulário limpo).
+ * @returns {void}
+ */
+function abrirNovoIntegrante() {
+  limparFormularioMembro();
+  abrirJanelaEquipes(elementosEquipes.janelaMembro, elementosEquipes.formularioMembro.equipe_id);
 }
 
 /**
@@ -182,11 +238,17 @@ function montarModalEquipes(papeis) {
     formularioEquipe: montarFormularioEquipe(),
     formularioMembro: montarFormularioMembro(papeis),
   };
-  elementos.formularios = criarElementoEquipes('div', 'equipes-formularios');
-  elementos.formularios.append(elementos.formularioEquipe, elementos.formularioMembro);
+  // Os formulários abrem em janelas próprias (sobre o modal); no modal ficam só os botões.
+  elementos.janelaEquipe = criarJanelaEquipes(elementos.formularioEquipe);
+  elementos.janelaMembro = criarJanelaEquipes(elementos.formularioMembro);
+  elementos.formularios = criarElementoEquipes('div', 'equipes-cadastro');
+  elementos.formularios.append(
+    criarBotaoEquipes({ texto: '+ Nova equipe', acao: 'nova-equipe',
+      classe: 'equipes-btn--principal' }),
+    criarBotaoEquipes({ texto: '+ Novo integrante', acao: 'novo-integrante' }));
   caixa.append(cabecalho, barra, elementos.mensagem, elementos.resumo, elementos.semEquipe,
     elementos.formularios, elementos.lista);
-  fundo.appendChild(caixa);
+  fundo.append(caixa, elementos.janelaEquipe, elementos.janelaMembro);
   document.body.appendChild(fundo);
   return elementos;
 }
@@ -485,7 +547,9 @@ async function salvarEquipe() {
     return estadoEquipes.repositorio.criarEquipe({ ...campos,
       turma_codigo: estadoEquipes.turmaCodigo, materia_id: estadoEquipes.materia.id });
   });
-  if (gravou) limparFormularioEquipe();
+  if (!gravou) return;
+  limparFormularioEquipe();
+  fecharJanelasEquipes();
 }
 
 /**
@@ -522,7 +586,9 @@ async function salvarMembro() {
     if (id) return estadoEquipes.repositorio.alterarMembro(id, campos);
     return estadoEquipes.repositorio.criarMembro(campos);
   });
-  if (gravou) limparFormularioMembro();
+  if (!gravou) return;
+  limparFormularioMembro();
+  fecharJanelasEquipes();
 }
 
 /**
@@ -538,7 +604,7 @@ function editarEquipe(id) {
   estadoEquipes.editandoEquipeId = id;
   formulario.nome.value = equipe.nome;
   formulario.descricao.value = equipe.descricao || '';
-  formulario.nome.focus();
+  abrirJanelaEquipes(elementosEquipes.janelaEquipe, formulario.nome);
 }
 
 /**
@@ -558,7 +624,7 @@ function editarMembro(id) {
   formulario.papel.value = membro.papel || '';
   formulario.tarefas.value = membro.tarefas || '';
   formulario.lider.checked = membro.lider;
-  formulario.papel.focus();
+  abrirJanelaEquipes(elementosEquipes.janelaMembro, formulario.papel);
 }
 
 /**
@@ -597,13 +663,15 @@ async function excluirMembro(id) {
  * @returns {void}
  */
 function fecharModalEquipes() {
+  fecharJanelasEquipes();
   elementosEquipes.fundo.hidden = true;
 }
 
 const ACOES_CLIQUE_EQUIPES = {
   'fechar': fecharModalEquipes,
-  'limpar-equipe': limparFormularioEquipe,
-  'limpar-membro': limparFormularioMembro,
+  'nova-equipe': abrirNovaEquipe,
+  'novo-integrante': abrirNovoIntegrante,
+  'fechar-janela': fecharJanelasEquipes,
   'editar-equipe': editarEquipe,
   'excluir-equipe': excluirEquipe,
   'editar-membro': editarMembro,
@@ -621,6 +689,7 @@ const ACOES_CLIQUE_EQUIPES = {
  */
 function tratarCliqueEquipes(evento) {
   if (evento.target === elementosEquipes.fundo) return fecharModalEquipes();
+  if (evento.target.classList.contains('equipes-janela')) return void fecharJanelasEquipes();
 
   const botao = evento.target.closest('button[data-acao]');
   const acao = botao && ACOES_CLIQUE_EQUIPES[botao.dataset.acao];
@@ -650,7 +719,8 @@ function ligarEventosEquipes() {
     carregarTurmaEquipes().catch((erro) => mostrarMensagemEquipes(traduzirErroEquipes(erro)));
   });
   document.addEventListener('keydown', (evento) => {
-    if (evento.key === 'Escape' && !elementosEquipes.fundo.hidden) fecharModalEquipes();
+    const modalAberto = evento.key === 'Escape' && !elementosEquipes.fundo.hidden;
+    if (modalAberto && !fecharJanelasEquipes()) fecharModalEquipes();
   });
 }
 
