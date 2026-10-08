@@ -178,44 +178,6 @@ Registrada em 2026-10-03. Vale para **todas** as atividades e avaliações de **
 - ✅ Página com PDF próprio (fora do `atividade.js`) carrega o `turma-exportacao.js` direto e usa
   `await obterTurmaParaExportacao()` (retorno `null` = cancelar a exportação).
 
-## 📝 REGRA CRÍTICA — EXPORTAR EM WORD AO LADO DE CADA EXPORTAR PDF (PROJETO TODO)
-
-Registrada em 2026-10-05 a pedido do usuário. Vale para **todas** as atividades e avaliações de
-**todas** as matérias (regra global do projeto).
-
-- ✅ **Ao lado de cada botão de exportar em PDF** existe o botão **📝 Exportar em Word**, com o
-  **mesmo layout e o mesmo conteúdo do PDF** (cabeçalho SENAI, capacidades, questões, gabarito
-  quando o PDF tem, rodapé "Página X de Y", folha A4 com margem de 15 mm).
-- ✅ **Mesma visibilidade e mesmas regras do PDF:** o botão de Word acompanha o `hidden` e o
-  `data-somente-perfil` do botão de PDF; o Word com gabarito só sai para o PROFESSOR (gabarito
-  lido do banco, como no PDF) e o aluno recebe só as próprias respostas; a turma vem da mesma
-  lista "Turma" da exportação.
-- ✅ **Arquivo:** `.doc` no formato MHTML (HTML + imagens embutidas), abre no Word e no
-  LibreOffice Writer. Nada é gravado no banco nem no navegador.
-- ✅ **Código único (não repetir por página):**
-  - `assets/js/documento-word.js` — monta e baixa o documento (A4, rodapé, imagens embutidas);
-  - `assets/js/exportar-word.js` — atividades e avaliações objetivas (carregado pelo
-    `assets/js/atividade.js`). ⛔ **Sem nenhum botão de Word** desde 2026-10-06, a pedido do
-    usuário: "📝 Exportar em Word", "(respostas)" e "(gabarito)" foram removidos
-    (`ESPELHOS_WORD` vazio); não recolocar sem pedido;
-  - `assets/js/exportar-word-pratica.js` — atividades práticas (Excel): ao lado de cada
-    `[data-acao="imprimir"]`, exporta a capa + todas as questões (o mesmo conteúdo do
-    "Imprimir / PDF"), com o estilo da página e as telas em PNG (carregado pelo
-    `assets/js/atividade-pratica-excel.js`);
-  - `assets/js/exportar-pagina.js` (+ `assets/css/exportar-pagina.css`) — página inteira, como
-    está na tela: o botão `data-acao="exportar-pdf-pagina"` ("📥 Exportar Para PDF") abre a
-    impressão com as cores da tela e o script põe o "📝 Exportar em Word" ao lado (body com a
-    classe `exportar-pagina`). Usado no trabalho em equipe da ITIC (v1 e v2), **sem o botão de
-    Word** a pedido do usuário (2026-10-05): `data-word="nao"` no botão de PDF desliga o Word.
-- ✅ **Página ou exportação nova em PDF** deve ganhar o botão de Word junto: usar o
-  `atividade.js` (ou o `atividade-pratica-excel.js`) e, se o PDF for feito por outro script,
-  acrescentar o espelho em `ESPELHOS_WORD` (`exportar-word.js`) ou criar o equivalente com o
-  `documento-word.js`. Mudou o layout do PDF → mudar o Word junto.
-- ⏳ **Ainda sem o botão de Word** (fazer quando forem mexidas ou a pedido): exportação dos
-  exercícios e da apostila completa (`assets/js/apostila.js`) e páginas antigas com PDF próprio
-  fora dos scripts acima (ex.: `REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO/AULAS/`, botões
-  `onclick`).
-
 ## 🔑 REGRA CRÍTICA — GABARITO COM AS RESPOSTAS CERTAS: SÓ O PROFESSOR
 
 Registrada em 2026-09-30. Vale para **todos os alunos**. **Única exceção (2026-10-06, pedido do

@@ -62,10 +62,10 @@ assets/
 │                        (menu PENDÊNCIAS, só Professor Administrador): CRUD da
 │                        tabela `pendencias`;
 │                        documento-word.js + exportar-word.js + exportar-word-pratica.js —
-│                        botão "📝 Exportar em Word" ao lado de cada exportar PDF (regra
-│                        "EXPORTAR EM WORD");
+│                        exportação em Word (hoje só nas atividades práticas de Excel;
+│                        Word não é obrigatório: só onde o usuário pedir);
 │                        exportar-pagina.js + css/exportar-pagina.css — "📥 Exportar Para PDF"
-│                        (página inteira, igual à tela) + "📝 Exportar em Word" ao lado)
+│                        (página inteira, igual à tela); Word ao lado desligado com data-word="nao")
 ├─ gerador-materia/    → materia.py: lê o <MATERIA>/materia.json (arquivo ÚNICO de dados da
 │                        matéria), usado por todos os geradores (ver "REGRAS APOSTILAS")
 ├─ gerador-apostilas/  → gerar_apostila.py + markdown_apostila.py + conferir_ementa.py +

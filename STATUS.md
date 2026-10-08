@@ -14,7 +14,6 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
-| 71 | 71.3 (B.4) | aceite da ementa nova e do plano das 9 aulas de Comunicação Oral e Escrita (Rio do Sul) | Aceite |
 | 70 | 70.5 | CLAUDE.md dividido em núcleo + `docs/regras/`, histórico em `docs/HISTORICO-REGRAS.md` e esta tabela; depois, as correções das contradições do CLAUDE.md, uma de cada vez | Aceite |
 | 67 | 67.4 | conferir a duração dos 29 vídeos da apostila de Reforço de Linguagens | Aceite |
 | 64 | 64.6 | apostila de Reforço de Linguagens | Aceite |
@@ -359,6 +358,7 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 ## Registro de decisões
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-07 | Comunicação Oral e Escrita (Rio do Sul): 9 aulas (8 × 4h + 1 × 1h), só C1–C4 oficiais, empresa fictícia Vale Tech, avaliação prática 6,0 (aula 8) + objetiva 4,0 (aula 9) | Usuário | Aceite B.4 do plano, perguntas uma por vez |
 | 2026-10-06 | Reforço de Linguagens: 25 questões por atividade em duas páginas (20 objetivas + 5 discursivas), sem mudar o banco | Usuário | Regra exclusiva da matéria; banco aceita só um tipo por atividade |
 | 2026-10-06 | Capacidades do `materia.json` de Reforço de Linguagens = 6 da UC 7 na ementa do curso (a ementa da matéria lista 7, diferentes) | Claude (regra "a ementa do curso vence") | Divergência avisada ao usuário |
 | 2026-10-05 | Bloqueio por turma em `atividade.bloqueio` (JSON de códigos de turma); o interruptor vale só para a turma favorita; `ativo = false` continua bloqueando todas e, ao liberar uma inativa para a favorita, as outras turmas entram na lista | Usuário (pedido) + Claude (forma) | "As outras turmas não devem ser afetadas"; sem vínculo = liberado |
@@ -814,8 +814,8 @@ Tarefa pequena por item (só texto das regras). Cada item: mostrar a contradiç�
 |------|-----------|--------|--------------|-------------|
 | 72.1 | "Tabelas de resultado ao finalizar tarefas" × frase final — escolha: apagar a linha de "Outras Regras" | ✅ Concluído | 2026-10-07 21:36 | Linha removida; versão 2026-10-07 21:36 no CLAUDE.md e no histórico |
 | 72.2 | Menu ALUNOS: todo professor × só administrador — escolha: corrigir a lista de assets | ✅ Concluído | 2026-10-07 21:37 | Linha 58 de `assets-e-geradores.md` = "só Professor Administrador"; confere com `MENU_ADMINISTRADOR_HEADER` |
-| 72.3 | Título da regra do Word × botões removidos | 🔄 Em progresso | — | — |
-| 72.4 | "PDF com gabarito" na regra da Turma × botão removido | ⬜ Pendente | — | — |
+| 72.3 | Título da regra do Word × botões removidos — escolha: remover a regra do Word | ✅ Concluído | 2026-10-07 21:38 | Seção apagada de `atividades.md`; lista de `assets` e índice do `CLAUDE.md` sem a regra; scripts mantidos |
+| 72.4 | "PDF com gabarito" na regra da Turma × botão removido | 🔄 Em progresso | — | — |
 | 72.5 | Reforço de Linguagens "aula 16 com 50 questões" × 10 aulas de 25 | ⬜ Pendente | — | — |
 | 72.6 | Local da ementa: raiz da matéria × `DOCUMENTACAO/` | ⬜ Pendente | — | — |
 | 72.7 | `git add .` (global) × proibido (projeto) | ⬜ Pendente | — | — |

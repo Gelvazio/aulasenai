@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 21:37
+**Versão das regras:** 2026-10-07 21:38
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 21:38 | Removida a regra "EXPORTAR EM WORD AO LADO DE CADA EXPORTAR PDF" (decisão do usuário): Word não é mais obrigatório; os scripts continuam (hoje só as práticas de Excel têm Word); índice e lista de `assets/` ajustados |
 | 2026-10-07 21:37 | `docs/regras/assets-e-geradores.md`: `alunos.html` (menu ALUNOS) passa a dizer "só Professor Administrador", igual ao código e às demais regras |
 | 2026-10-07 21:36 | Removida de "Outras Regras" a linha "Tabelas de resultado ao finalizar tarefas" (contradizia a frase final): ao concluir uma tarefa vale só `TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?` |
 | 2026-10-07 21:15 | Histórico de versões movido para `docs/HISTORICO-REGRAS.md` (no `CLAUDE.md` ficam as 5 mudanças mais recentes e o link); o visualizador de regras mostra também o histórico |
 | 2026-10-07 21:10 | `CLAUDE.md` dividido em **núcleo + `docs/regras/`** (6 arquivos, texto das regras sem alteração): no `CLAUDE.md` ficam as regras de sempre, segurança, Git e o "ÍNDICE DAS REGRAS DETALHADAS" com as proibições; o visualizador de regras passa a carregar também os arquivos de `docs/regras/` |
-| 2026-10-07 20:50 | Identificação da apostila obrigatória em **todas** as apostilas: `autor_apostila` (padrão Gelvazio Camargo) e `versao_apostila` (começa em 1.0) preenchidos no `materia.json` antes da 1ª geração; aplicada também em Reforço de Linguagens |
 
 ---
 
@@ -87,7 +87,7 @@ Aqui ficam as regras de sempre, as de segurança e este índice.
 | Arquivo | Ler antes de… | Regras dentro |
 |---|---|---|
 | [docs/regras/ementas-e-cursos.md](docs/regras/ementas-e-cursos.md) | criar ou alterar ementas, pastas de curso/matéria, aulas em `CONTEUDO/`, STATUS-EMENTAS e dashboards | aulas extraídas da ementa; `EMENTA-CHALKIE-AI.md`; STATUS-EMENTAS; STATUS-PERMISSAO-EMENTA/MATERIA; `EMENTA-PRINCIPAL-<CURSO>.md`; pasta = UC; matérias semelhantes; `dashboard.html` |
-| [docs/regras/atividades.md](docs/regras/atividades.md) | mexer em atividades, avaliações, discursivas, respostas no banco, gabarito, exportação PDF/Word, índices de atividades, Excel, banco do AVA ou Reforço de Linguagens | alternativas no banco (tentativas, horário, log, discursivas, correção); turma na exportação; Word; gabarito; índices e bloqueio por turma; Excel; uma aula por vez; 50 questões; Reforço de Linguagens; banco do AVA |
+| [docs/regras/atividades.md](docs/regras/atividades.md) | mexer em atividades, avaliações, discursivas, respostas no banco, gabarito, exportação PDF, índices de atividades, Excel, banco do AVA ou Reforço de Linguagens | alternativas no banco (tentativas, horário, log, discursivas, correção); turma na exportação; gabarito; índices e bloqueio por turma; Excel; uma aula por vez; 50 questões; Reforço de Linguagens; banco do AVA |
 | [docs/regras/apostilas.md](docs/regras/apostilas.md) | gerar ou alterar apostilas (capítulos, Markdown completo, HTML, `materia.json`) | identificação; conferência 100% com a ementa; gerador; Markdown completo; `materia.json`; formato e ordem; páginas A4 |
 | [docs/regras/usuarios-turmas-paginas-professor.md](docs/regras/usuarios-turmas-paginas-professor.md) | mexer em contas/senhas, turmas, alunos, equipes, aulas (excluir/editar card), pendências ou índice de cursos | contas e senhas; excluir aula e card = 1 aula; pendências; índice de cursos; `turmaaluno`; equipes; página por turma; e-mail do aluno |
 | [docs/regras/assets-e-geradores.md](docs/regras/assets-e-geradores.md) | criar ou alterar CSS, JS, menus, header ou geradores (`assets/`), e avisos ao usuário | CSS e JS genéricos em `assets/`; menu; header; geradores; popup no lugar de `alert()` |
