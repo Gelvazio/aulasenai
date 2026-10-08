@@ -3800,6 +3800,9 @@
     {
       "id": "q1",
       "numero": 1,
+      "capacidades": [
+        "C1"
+      ],
       "arquivo": "QUESTAO-01-CADASTRO-E-FORMATACAO.html",
       "titulo": "Cadastro de materiais e formatação profissional",
       "tempo": "25 min",
@@ -4446,6 +4449,9 @@
     {
       "id": "q2",
       "numero": 2,
+      "capacidades": [
+        "C1"
+      ],
       "arquivo": "QUESTAO-02-MOVIMENTACAO-E-VALIDACAO.html",
       "titulo": "Movimentação com validação de dados",
       "tempo": "30 min",
@@ -5261,6 +5267,9 @@
     {
       "id": "q3",
       "numero": 3,
+      "capacidades": [
+        "C1"
+      ],
       "arquivo": "QUESTAO-03-PROCV-SEERRO-INDICE-CORRESP.html",
       "titulo": "Buscar dados com PROCV, SEERRO e ÍNDICE + CORRESP",
       "tempo": "30 min",
@@ -5921,6 +5930,10 @@
     {
       "id": "q4",
       "numero": 4,
+      "capacidades": [
+        "C1",
+        "C2"
+      ],
       "arquivo": "QUESTAO-04-SALDO-SE-FORMATACAO-CONDICIONAL.html",
       "titulo": "Saldo, situação do item e formatação condicional",
       "tempo": "35 min",
@@ -6708,6 +6721,10 @@
     {
       "id": "q5",
       "numero": 5,
+      "capacidades": [
+        "C1",
+        "C2"
+      ],
       "arquivo": "QUESTAO-05-RESUMO-CONTSE-SOMASE-PROCH.html",
       "titulo": "Resumo gerencial com CONT.SE, SOMASE e PROCH",
       "tempo": "25 min",
@@ -7329,6 +7346,9 @@
     {
       "id": "q6",
       "numero": 6,
+      "capacidades": [
+        "C1"
+      ],
       "arquivo": "QUESTAO-06-FILTRO-PROTECAO.html",
       "titulo": "Filtro e proteção da planilha",
       "tempo": "15 min",
@@ -7882,6 +7902,9 @@
     {
       "id": "q7",
       "numero": 7,
+      "capacidades": [
+        "C1"
+      ],
       "arquivo": "QUESTAO-07-BASE-REQUISICOES-FORMATACAO.html",
       "titulo": "Base de requisições: formatação de números, datas e cabeçalho",
       "tempo": "22 min",
@@ -8428,6 +8451,9 @@
     {
       "id": "q8",
       "numero": 8,
+      "capacidades": [
+        "C1"
+      ],
       "arquivo": "QUESTAO-08-FORMATACAO-CONDICIONAL.html",
       "titulo": "Formatação condicional na base de requisições",
       "tempo": "23 min",
@@ -9159,6 +9185,10 @@
     {
       "id": "q9",
       "numero": 9,
+      "capacidades": [
+        "C1",
+        "C2"
+      ],
       "arquivo": "QUESTAO-09-FILTROS-E-CLASSIFICACAO.html",
       "titulo": "Filtros, classificação e resumo com CONT.SE e SOMASE",
       "tempo": "22 min",
@@ -9768,6 +9798,9 @@
     {
       "id": "q10",
       "numero": 10,
+      "capacidades": [
+        "C1"
+      ],
       "arquivo": "QUESTAO-10-CONGELAR-IMPRESSAO-ENTREGA.html",
       "titulo": "Congelar painéis, impressão e entrega",
       "tempo": "23 min",

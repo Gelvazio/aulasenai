@@ -128,3 +128,11 @@ matéria (C1, C2...). Os textos não são inventados nem alterados.
   alinhada à ementa do curso: tabela C1–C7 com o texto oficial, indicador e módulos (os itens
   extras foram distribuídos nos indicadores de C1 e C7). Tamanho 14.928 caracteres (cortes: FAQ
   de aprovação, que repetia a seção V, e a métrica de abandono). STATUS-EMENTAS atualizados.
+
+## Atualização 2026-10-07 — últimas pendências
+
+- Atividade de 28/09 da ITIC (25 questões, feedback): C1 em todas, página regenerada.
+- Gerador de atividades de Excel (`assets/gerador-atividade-excel/`): campo `capacidades` em cada
+  questão do `atividade.json` → bloco "🎯 Capacidade" na página da questão e quadro
+  "CAPACIDADES" na capa (textos do `materia.json`). Aplicado nas práticas de 29/09 e 01/10 de
+  Análise de Dados. Com isso, todas as páginas com questões de `MATERIAIS/` têm capacidades.

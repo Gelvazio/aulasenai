@@ -823,6 +823,26 @@ Tarefa pequena por item (só texto das regras). Cada item: mostrar a contradiç�
 | 72.7 | `git add .` (global) × proibido (projeto) — escolha: mudar a regra global | ✅ Concluído | 2026-10-07 21:44 | CLAUDE.md global: 4 trechos com `git add <arquivos da tarefa>` e "nunca `git add .`" (arquivo fora do Git; cópia anterior no scratchpad da sessão) |
 | 72.8 | Aceite do usuário (7 contradições corrigidas) | ⬜ Pendente | — | — |
 
+## Etapa 73 — Revisão final das regras: problemas novos + desatualizados (pedida em 2026-10-07)
+
+Uma pergunta por item; **um commit só no final** (pedido do usuário).
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 73.1 | Pastas a ignorar: só MATERIAS-GERAIS × AGENDA_COLABORADOR — escolha: lista única | ✅ Concluído | 2026-10-07 21:46 | "Estrutura de pastas" lista as 2 pastas; seção solta do fim apagada |
+| 73.2 | "docs/<tarefa>.md antes de implementar" × tarefas pequenas — escolha: acrescentar a exceção | ✅ Concluído | 2026-10-07 21:46 | Linha de "Outras Regras" com a exceção e o STATUS.md |
+| 73.3 | Global: DOCUMENTAR / documentacao-padrao "sem exceção" × tarefas pequenas — escolha: valer a exceção | ✅ Concluído | 2026-10-07 21:50 | CLAUDE.md global, linhas 162 e 292 (fora do Git) |
+| 73.4 | Global: "NUNCA git status" × "Executar git status" — escolha: trocar o exemplo | ✅ Concluído | 2026-10-07 21:50 | CLAUDE.md global, linha 720 (fora do Git) |
+| 73.5 | Título e linha 387 "6 arquivos HTML" — escolha: novo título e texto | ✅ Concluído | 2026-10-07 21:51 | Título "Regras do projeto Aulas SENAI"; seção do grafo cita docs/regras |
+| 73.6 | Menu Regras descrito só como CLAUDE.md — escolha: atualizar a descrição | ✅ Concluído | 2026-10-07 21:51 | Descrição e aviso de segredo cobrem docs/regras e o histórico |
+| 73.7 | Autenticação cita `index.html` (login é `login.html`) — escolha: trocar por login.html + header | ✅ Concluído | 2026-10-07 21:52 | Linha da regra de autenticação lista login.html, login.js, header-usuario.js e supabase.js |
+| 73.8 | Data do grafo desatualizada — escolha: tirar data e números | ✅ Concluído | 2026-10-07 21:55 | Seção do grafo remete ao topo do GRAPH_REPORT.md; sem números fixos |
+| 73.9 | TASKS.md parado × STATUS.md — escolha: trocar por STATUS.md | ✅ Concluído | 2026-10-07 21:58 | As 2 seções do TASKS.md viraram "Inicialização de cada chat — ler o STATUS.md"; TASKS.md citado só como histórico |
+| 73.10 | Comando de tamanho da ementa conta linhas | 🔄 Em progresso | — | — |
+| 73.11 | Caminho do STATUS-EMENTAS só Rio do Sul | ⬜ Pendente | — | — |
+| 73.12 | Registro do cursoprofessor (substituído) | ⬜ Pendente | — | — |
+| 73.13 | Versão das regras + commit único | ⬜ Pendente | — | — |
+
 ## Etapa 74 — Dashboard do Jev (JEV-AI de Testes de Frontend) (tarefa pequena, 2026-10-07)
 
 Página visual que lê `JEV-AI/CLAUDE.md` e `JEV-AI/documentacao.md`. Sem banco, sem segurança.
@@ -834,3 +854,33 @@ Página visual que lê `JEV-AI/CLAUDE.md` e `JEV-AI/documentacao.md`. Sem banco,
 | 74.3 | `JEV-AI/dashboard.html` só com dados (`data-claude`, `data-documentacao`) e header | ✅ Concluído | 2026-10-07 22:20 | Sem `<style>`, `onclick` nem script embutido; 13 IDs usados pelo JS presentes |
 | 74.4 | Commit local | ✅ Concluído | 2026-10-07 22:20 | `git diff --cached --name-only` (4 arquivos) |
 | 74.5 | Aceite do usuário (abrir no navegador e testar) | ⬜ Pendente | — | — |
+
+## Etapa 75 — Atividades práticas das Aulas 06 a 10 da ITIC (pedida em 2026-10-07)
+
+Mesmo padrão das práticas 01–05: discursiva (10 questões, 20 tópicos, 10 pontos), fonte em
+`ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-NN.md` (+ `-GABARITO.md`, fora do Git), página gerada por
+`assets/gerador-avaliacao-discursiva`, link no card da aula e no menu, seed em `database/` (fora do
+Git). Uma aula por vez. Aplicar o seed só com pedido do usuário.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 75.1 | Prática da Aula 06 (Editor de Textos) | ⬜ Pendente | — | — |
+| 75.2 | Prática da Aula 07 (Textos Técnicos) | ⬜ Pendente | — | — |
+| 75.3 | Prática da Aula 08 (Planilhas: Fórmulas) | ⬜ Pendente | — | — |
+| 75.4 | Prática da Aula 09 (Planilhas: Gráficos) | ⬜ Pendente | — | — |
+| 75.5 | Prática da Aula 10 (Apresentações e TIC) | ⬜ Pendente | — | — |
+| 75.6 | STATUS-AULAS, STATUS-ATIVIDADES e commit local | ⬜ Pendente | — | — |
+| 75.7 | Aceite do usuário (aplicar os seeds no banco, se pedir) | ⬜ Pendente | — | — |
+
+
+## Etapa 75 — Capacidades nas 2 últimas pendências (tarefa pequena, 2026-10-07)
+
+Plano: [docs/capacidade-por-questao-avaliacoes.md](docs/capacidade-por-questao-avaliacoes.md). Sem banco, sem mexer em questões ou alternativas.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 75.1 | ITIC `ATIVIDADES-AULA-28-09-2026-25-QUESTOES`: `- **Capacidade:** C1` nas 25 questões (todas sobre feedback/comunicação) e página regenerada | ✅ Concluído | 2026-10-07 22:45 | 25 caixas + quadro no início; diff só com capacidades e o link dos slides que o gerador já põe |
+| 75.2 | `gerar_atividade_excel.py`: caixa "🎯 Capacidade" em cada questão e quadro "CAPACIDADES" na capa, lendo o `materia.json` (código inexistente = erro) | ✅ Concluído | 2026-10-07 22:45 | `py_compile` ok |
+| 75.3 | `atividade.json` das práticas de Excel 29/09 e 01/10 com `capacidades` por questão (C1; C1 e C2 nas de cálculo: 29/09 Q4, Q5, Q9; 01/10 Q5) e regeneradas | ✅ Concluído | 2026-10-07 22:45 | 16 questões com a caixa, 2 capas com o quadro; a regeneração também corrigiu os caminhos de CSS/JS que estavam com um `../` a mais |
+| 75.4 | Commit local | ✅ Concluído | 2026-10-07 22:45 | `git diff --cached --name-only` sem gabaritos nem fontes `*QUESTOES.md` |
+| 75.5 | Aceite do usuário (abrir as 3 atividades) | ⬜ Pendente | — | — |

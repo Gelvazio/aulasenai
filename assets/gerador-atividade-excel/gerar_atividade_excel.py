@@ -22,6 +22,11 @@ sys.path.insert(0, os.path.join(PASTA_ASSETS, "gerador-menu"))
 from tags_menu import montar_tags_menu  # noqa: E402
 from tags_header import inserir_header_em_html  # noqa: E402
 
+sys.path.insert(0, os.path.join(PASTA_ASSETS, "gerador-capacidades"))
+sys.path.insert(0, os.path.join(PASTA_ASSETS, "gerador-materia"))
+import capacidades as cap  # noqa: E402
+from materia import localizar_materia  # noqa: E402
+
 PASTA_IMAGENS = "img"
 ROTULOS_CAIXAS = {
     "dica": "💡 Dica",
@@ -360,6 +365,70 @@ def criterios_html(questao):
     )
 
 
+def carregar_capacidades(pasta):
+    """Lê as capacidades oficiais do materia.json da matéria (procura nas pastas acima).
+
+    Args:
+        pasta: Pasta da atividade.
+
+    Returns:
+        Dicionário código → texto oficial ({} se não houver materia.json).
+    """
+    caminho = localizar_materia(pasta)
+    if not caminho:
+        return {}
+    with open(caminho, encoding="utf-8") as arquivo:
+        return json.load(arquivo).get(cap.CAMPO_DADOS, {})
+
+
+def validar_capacidades(atividade, tabela):
+    """Confere os códigos de "capacidades" de cada questão contra o materia.json.
+
+    Args:
+        atividade: Atividade completa.
+        tabela: Dicionário código → texto oficial.
+    """
+    for questao in atividade["questoes"]:
+        cap.validar_codigos(tabela, questao.get("capacidades", []), f'Questão {questao["numero"]}')
+
+
+def capacidade_questao_html(questao, tabela):
+    """Monta o bloco "🎯 Capacidade" da questão ('' se a questão não tiver capacidades).
+
+    Args:
+        questao: Dados da questão (lista "capacidades" com os códigos).
+        tabela: Dicionário código → texto oficial.
+
+    Returns:
+        HTML do bloco.
+    """
+    codigos = questao.get("capacidades", [])
+    if not codigos:
+        return ""
+    return ('<section class="bloco">\n<h2>🎯 Capacidade</h2>\n'
+            f"<p>{cap.texto_capacidades(tabela, codigos)}</p>\n</section>\n")
+
+
+def capacidades_capa_html(atividade, tabela, pasta_capa):
+    """Monta o quadro "CAPACIDADES" da capa e a tag do CSS dele.
+
+    Args:
+        atividade: Atividade completa.
+        tabela: Dicionário código → texto oficial.
+        pasta_capa: Pasta onde a capa é gravada.
+
+    Returns:
+        Tupla (HTML do quadro, tag <link> do CSS); vazios se nenhuma questão tiver capacidades.
+    """
+    listas = [questao.get("capacidades", []) for questao in atividade["questoes"]]
+    usados = cap.codigos_usados(listas, tabela)
+    if not usados:
+        return "", ""
+    quadro = f'<section class="bloco">\n{cap.html_quadro(tabela, usados, "")}\n</section>\n'
+    link = f'<link rel="stylesheet" href="{caminho_assets(pasta_capa)}/css/capacidades.css">\n'
+    return quadro, link
+
+
 def objetivo_html(questao):
     """Monta o bloco "O que você vai fazer" da questão.
 
@@ -401,7 +470,9 @@ def pagina_questao(atividade, indice, pasta):
              (questao["pontos"] + " pontos", ""), (f'{len(questao["passos"])} passos', "")]
     html = cabecalho_html(titulo, pasta, atividade["id"])
     html += topo_html(atividade, titulo, atividade["titulo"], selos)
-    html += navegacao_html(anterior, capa, proxima) + objetivo_html(questao)
+    html += navegacao_html(anterior, capa, proxima)
+    html += capacidade_questao_html(questao, atividade["capacidades_oficiais"])
+    html += objetivo_html(questao)
     html += "".join(passo_html(questao, numero, dados_no_passo(atividade, passo))
                     for numero, passo in enumerate(questao["passos"], start=1))
     html += criterios_html(questao) + navegacao_html(anterior, capa, proxima)
@@ -547,6 +618,8 @@ def pagina_capa(atividade, pasta):
             f'href="{atividade["id"]}/{atividade["questoes"][0]["arquivo"]}">Começar pela ' \
             "Questão 1 →</a></nav>\n"
     html += bloco_html("📌 Sobre esta atividade", lista_html(capa["sobre"]))
+    quadro, link = capacidades_capa_html(atividade, atividade["capacidades_oficiais"], pasta_capa)
+    html = html.replace("</head>", link + "</head>", 1) + quadro
     contexto = "".join(f"<p>{formatar_texto(paragrafo)}</p>" for paragrafo in capa["contexto"])
     contexto += (f'<figure class="passo__figura"><img src="{imagem}" alt="As quatro abas da '
                  'planilha final"><figcaption class="passo__legenda">'
@@ -587,6 +660,8 @@ def gerar(pasta):
         Quantidade de imagens geradas.
     """
     atividade = carregar_atividade(pasta)
+    atividade["capacidades_oficiais"] = carregar_capacidades(pasta)
+    validar_capacidades(atividade, atividade["capacidades_oficiais"])
     os.makedirs(os.path.join(pasta, PASTA_IMAGENS), exist_ok=True)
     if atividade.get("arquivo_base"):
         gerar_base_xlsx(atividade, atividade["arquivo_base"], pasta)

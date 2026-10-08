@@ -97,9 +97,22 @@ def html_caixa_questao(capacidades, codigos, recuo):
     """
     if not codigos:
         return ""
-    texto = "<br>".join(f"{html.escape(codigo)} — {html.escape(capacidades[codigo])}"
-                        for codigo in codigos)
+    texto = texto_capacidades(capacidades, codigos)
     return "\n".join([f'{recuo}<div class="content-box">',
                       f'{recuo}    <div class="content-label">{ROTULO_CAIXA_QUESTAO}</div>',
                       f'{recuo}    <div class="content-text">{texto}</div>',
                       f"{recuo}</div>"])
+
+
+def texto_capacidades(capacidades, codigos):
+    """Junta as capacidades em linhas "C1 — texto" separadas por <br> (HTML escapado).
+
+    Args:
+        capacidades: Dicionário código → texto oficial.
+        codigos: Códigos a mostrar.
+
+    Returns:
+        HTML com uma linha por capacidade.
+    """
+    return "<br>".join(f"{html.escape(codigo)} — {html.escape(capacidades[codigo])}"
+                       for codigo in codigos)

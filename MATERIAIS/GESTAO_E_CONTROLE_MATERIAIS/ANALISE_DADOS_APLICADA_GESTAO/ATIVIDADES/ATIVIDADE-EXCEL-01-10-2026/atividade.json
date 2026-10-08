@@ -1449,6 +1449,9 @@
     {
       "id": "q1",
       "numero": 1,
+      "capacidades": [
+        "C1"
+      ],
       "arquivo": "QUESTAO-01-PREPARAR-BASE.html",
       "titulo": "Preparar a base de compras",
       "tempo": "20 min",
@@ -1866,6 +1869,9 @@
     {
       "id": "q2",
       "numero": 2,
+      "capacidades": [
+        "C1"
+      ],
       "arquivo": "QUESTAO-02-TD-FORNECEDOR.html",
       "titulo": "Quanto foi comprado de cada fornecedor?",
       "tempo": "30 min",
@@ -2437,6 +2443,9 @@
     {
       "id": "q3",
       "numero": 3,
+      "capacidades": [
+        "C1"
+      ],
       "arquivo": "QUESTAO-03-TD-MES-TRIMESTRE.html",
       "titulo": "Em que mês as compras se concentram?",
       "tempo": "25 min",
@@ -3047,6 +3056,9 @@
     {
       "id": "q4",
       "numero": 4,
+      "capacidades": [
+        "C1"
+      ],
       "arquivo": "QUESTAO-04-GRAFICOS-DINAMICOS.html",
       "titulo": "Gráficos dinâmicos",
       "tempo": "35 min",
@@ -3638,6 +3650,10 @@
     {
       "id": "q5",
       "numero": 5,
+      "capacidades": [
+        "C1",
+        "C2"
+      ],
       "arquivo": "QUESTAO-05-CAMPO-CALCULADO-COMBINADO.html",
       "titulo": "Campo calculado e gráfico combinado",
       "tempo": "25 min",
@@ -4111,6 +4127,9 @@
     {
       "id": "q6",
       "numero": 6,
+      "capacidades": [
+        "C1"
+      ],
       "arquivo": "QUESTAO-06-SEGMENTACAO-ATUALIZACAO-PROTECAO.html",
       "titulo": "Painel interativo, atualização e proteção",
       "tempo": "30 min",
