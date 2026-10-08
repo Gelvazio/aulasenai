@@ -1104,3 +1104,10 @@ Pedido do usuário: bloquear copiar e colar (obrigar a digitar cada resposta) **
 | 89.2 | Usuário escolheu o escopo turma + matéria (outra turma pode repetir o nome) | ✅ Concluído | 2026-10-08 17:17:38 | Resposta do usuário no chat |
 | 89.3 | Índice único `equipe_turma_materia_nome_normalizado_uk` em `(turma_codigo, materia_id, lower(btrim(nome)))` aplicado pelo conector; SQL em `database/2026-10-08-equipe-nome-unico-sem-maiusculas.sql`; `docs/database.md` + relatório HTML | ✅ Concluído | 2026-10-08 17:17:38 | `pg_indexes` mostra o índice; 15 equipes mantidas |
 | 89.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 90 — Botão +Integrante no card de cada equipe (tarefa pequena, 2026-10-08 17:18:19)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 90.1 | `assets/js/equipes-modal.js`: botão **+Integrante** no card abre uma seleção só com os alunos sem equipe (Adicionar/Cancelar) e grava o integrante (sem papel, sem líder); `assets/css/equipes-modal.css` | ✅ Concluído | 2026-10-08 17:18:19 | `node --check`; leitura do código (sem navegador) |
+| 90.2 | Aceite do usuário | ⬜ Pendente | — | — |

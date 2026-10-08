@@ -17,6 +17,8 @@ const MSG_DUPLICADO_EQUIPES = 'Já existe: o nome da equipe se repete ou o aluno
 const MSG_ERRO_EQUIPES = 'Não foi possível concluir: ';
 const MSG_NOME_OBRIGATORIO = 'Informe o nome da equipe.';
 const MSG_MEMBRO_OBRIGATORIO = 'Escolha a equipe e o aluno.';
+const MSG_TODOS_COM_EQUIPE = 'Todos os alunos da turma já estão em uma equipe.';
+const MSG_ESCOLHA_INTEGRANTE = 'Escolha o aluno que vai entrar na equipe.';
 
 const estadoEquipes = {
   repositorio: null, prefixoPasta: '', papeis: [], materia: null, usuario: null,
@@ -289,10 +291,13 @@ function criarLinhaMembro(membro) {
 function criarCardEquipe(equipe) {
   const membros = membrosDaEquipe(equipe.id);
   const card = criarElementoEquipes('article', 'equipes-card');
+  card.dataset.equipeId = String(equipe.id);
   const topo = criarElementoEquipes('div', 'equipes-card__topo');
   topo.append(criarElementoEquipes('h3', '', equipe.nome + ' (' + membros.length + ')'));
   const acoes = criarElementoEquipes('div', 'equipes-acoes');
-  acoes.append(criarBotaoEquipes({ texto: '✏️ Editar', acao: 'editar-equipe', id: equipe.id }),
+  acoes.append(criarBotaoEquipes({ texto: '+Integrante', acao: 'abrir-integrante', id: equipe.id,
+    classe: 'equipes-btn--principal' }),
+    criarBotaoEquipes({ texto: '✏️ Editar', acao: 'editar-equipe', id: equipe.id }),
     criarBotaoEquipes({ texto: '🗑️ Excluir', acao: 'excluir-equipe', id: equipe.id,
       classe: 'equipes-btn--perigo' }));
   topo.append(acoes);
@@ -305,6 +310,74 @@ function criarCardEquipe(equipe) {
   if (!membros.length) lista.append(semIntegrantes);
   card.append(lista);
   return card;
+}
+
+/**
+ * Cria a seleção "+Integrante" do card: alunos sem equipe, Adicionar e Cancelar.
+ * @param {number} equipeId - Id da equipe.
+ * @returns {HTMLDivElement} Seleção pronta.
+ */
+function criarSeletorIntegrante(equipeId) {
+  const seletor = criarElementoEquipes('div', 'equipes-card__adicionar');
+  const select = criarControleEquipes('select', 'novo_integrante');
+  const opcoes = [{ valor: '', texto: 'Selecione o aluno sem equipe…' }].concat(
+    alunosSemEquipe().map((aluno) => ({ valor: aluno.id, texto: aluno.nome })));
+  preencherSelectEquipes(select, opcoes, '');
+  const acoes = criarElementoEquipes('div', 'equipes-acoes');
+  acoes.append(criarBotaoEquipes({ texto: '✔ Adicionar', acao: 'confirmar-integrante',
+    id: equipeId, classe: 'equipes-btn--principal' }),
+    criarBotaoEquipes({ texto: 'Cancelar', acao: 'cancelar-integrante', id: equipeId }));
+  seletor.append(select, acoes);
+  return seletor;
+}
+
+/**
+ * Card da equipe na lista do modal.
+ * @param {number} equipeId - Id da equipe.
+ * @returns {HTMLElement|null} Card ou null.
+ */
+function obterCardEquipe(equipeId) {
+  return elementosEquipes.lista.querySelector('[data-equipe-id="' + equipeId + '"]');
+}
+
+/**
+ * Abre (ou fecha, se já aberta) a seleção de novo integrante no card da equipe.
+ * @param {number} equipeId - Id da equipe.
+ * @returns {Promise<void>}
+ */
+async function abrirSeletorIntegrante(equipeId) {
+  const card = obterCardEquipe(equipeId);
+  if (!card) return;
+
+  const aberto = card.querySelector('.equipes-card__adicionar');
+  if (aberto) return void aberto.remove();
+  if (!alunosSemEquipe().length) {
+    return void await mostrarPopup(MSG_TODOS_COM_EQUIPE, { tipo: 'info' });
+  }
+  card.querySelector('.equipes-card__topo').after(criarSeletorIntegrante(equipeId));
+}
+
+/**
+ * Fecha a seleção de novo integrante do card.
+ * @param {number} equipeId - Id da equipe.
+ * @returns {void}
+ */
+function cancelarSeletorIntegrante(equipeId) {
+  obterCardEquipe(equipeId)?.querySelector('.equipes-card__adicionar')?.remove();
+}
+
+/**
+ * Grava o aluno escolhido na seleção do card como integrante da equipe.
+ * @param {number} equipeId - Id da equipe.
+ * @returns {Promise<void>}
+ */
+async function confirmarIntegrante(equipeId) {
+  const select = obterCardEquipe(equipeId)?.querySelector('.equipes-card__adicionar select');
+  const alunoId = select?.value;
+  if (!alunoId) return void await mostrarPopup(MSG_ESCOLHA_INTEGRANTE, { tipo: 'aviso' });
+
+  await executarGravacaoEquipes(() => estadoEquipes.repositorio.criarMembro({
+    equipe_id: equipeId, aluno_id: alunoId, papel: null, tarefas: null, lider: false }));
 }
 
 /**
@@ -650,6 +723,9 @@ const ACOES_CLIQUE_EQUIPES = {
   'editar-membro': editarMembro,
   'excluir-membro': excluirMembro,
   'exportar-equipes': () => exportarEquipesPdf(),
+  'abrir-integrante': abrirSeletorIntegrante,
+  'cancelar-integrante': cancelarSeletorIntegrante,
+  'confirmar-integrante': confirmarIntegrante,
 };
 
 /**
