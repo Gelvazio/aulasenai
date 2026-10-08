@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-08 11:00
+**Versão das regras:** 2026-10-08 11:10
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 11:10 | Na **nuvem** o push é **sempre permitido e automático**: ao final de **toda** tarefa que mudar arquivos, commit + push + PR sem esperar pedido nem confirmação do usuário |
 | 2026-10-08 11:00 | Branches das sessões juntadas na `main` (pull request): regra do push por branch + PR, apostila de ITIC concluída e apostila de Exploração de Carreiras (9 capítulos, conferência 157/157); vídeos sem duração unificados no formato `a conferir` (o `??:??` da branch de Exploração deixou de existir) e dados da matéria no formato do gerador da `main` (`textos_ementa`, `rubrica_lista`) |
 | 2026-10-08 10:00 | `TASKS.md` só com tarefas pendentes; concluídas e canceladas movidas para o novo `TASKS_COMPLETE.md` (lido só quando precisar do histórico) |
 | 2026-10-08 09:30 | Merge com a `main`: apostila e 9 atividades de 50 questões de Fundamentos da Tecnologia e Programação (33 h = 8 × 4 h + 1 h, aulas nº 6 a 14 no banco com cards "AULA 01" a "AULA 09"); conferência com a ementa lê também o **formato por módulos** do Rio do Sul Mais Tech (indicador na tabela de capacidades, BNCC em tabela, prompts `**M1:**`, glossário em lista, marcos, recursos em lista, exemplos e orientações) só quando o formato padrão não existe; vídeos pendentes da apostila na tarefa #12 do `TASKS.md` |
@@ -1935,6 +1936,11 @@ usuário: na nuvem, **sempre um novo pull request**, para evitar sobrescrever al
 ✅ **O Claude SEMPRE faz o push numa branch própria e abre um NOVO pull request para a `main`.**
 No contêiner da nuvem o commit se perde quando a sessão acaba, por isso o push é obrigatório; o
 pull request garante que **nada na `main` é sobrescrito** sem o usuário revisar e fazer o merge.
+
+✅ **Push sempre permitido e automático na nuvem** (2026-10-08 11:10, pedido do usuário): ao final
+de **toda** tarefa que mudar arquivos, o Claude faz commit + push + PR **sem esperar pedido nem
+confirmação** do usuário — não perguntar "posso fazer push?". Tarefa que não muda nenhum arquivo
+(só consulta ou resposta) não gera commit nem push vazio.
 
 - ✅ Ao concluir cada tarefa: commit (regra "COMMIT POR TAREFA"), **`git push -u origin <branch>`**
   (a branch de trabalho da sessão, nunca a `main`) e **abrir um novo pull request** da branch para
