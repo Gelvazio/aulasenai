@@ -887,3 +887,18 @@ Plano: [docs/capacidade-por-questao-avaliacoes.md](docs/capacidade-por-questao-a
 | 75.3 | `atividade.json` das práticas de Excel 29/09 e 01/10 com `capacidades` por questão (C1; C1 e C2 nas de cálculo: 29/09 Q4, Q5, Q9; 01/10 Q5) e regeneradas | ✅ Concluído | 2026-10-07 22:45 | 16 questões com a caixa, 2 capas com o quadro; a regeneração também corrigiu os caminhos de CSS/JS que estavam com um `../` a mais |
 | 75.4 | Commit local | ✅ Concluído | 2026-10-07 22:45 | `git diff --cached --name-only` sem gabaritos nem fontes `*QUESTOES.md` |
 | 75.5 | Aceite do usuário (abrir as 3 atividades) | ⬜ Pendente | — | — |
+
+## Etapa 76 — Conflitos entre as regras de TASKS.md, documentação e sessões (pedida em 2026-10-08)
+
+Levantamento feito no chat (6 conflitos); correção **um por vez, com confirmação do usuário**.
+Arquivos globais (`C:\Users\gelva\.claude\...`, skill `documentacao-padrao`) ficam fora do Git do projeto.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 76.1 | Exceção das tarefas pequenas também no `CLAUDE-DOCS-BEFORE-EVERY-TASK.md` e na skill `documentacao-padrao` (antes: "sem exceção") | ✅ Concluído | 2026-10-08 08:09 | `grep` mostra "TAREFA GRANDE" e a exceção nos dois arquivos |
+| 76.2 | Testes e navegador nas regras de documentação → verificação por leitura/`node`/banco/terminal | 🔄 Em progresso | — | — |
+| 76.3 | Fonte única: `STATUS.md` × `TASKS.md` × `SESSOES-CLAUDE/` | ⬜ Pendente | — | — |
+| 76.4 | Log da sessão: obrigatório × só com SIM | ⬜ Pendente | — | — |
+| 76.5 | Frase final da tarefa (global) × pergunta do log (projeto) | ⬜ Pendente | — | — |
+| 76.6 | Confirmação antes de comando mutável × Git sem perguntar | ⬜ Pendente | — | — |
+| 76.7 | Aceite do usuário | ⬜ Pendente | — | — |
