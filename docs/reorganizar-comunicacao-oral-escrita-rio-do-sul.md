@@ -100,7 +100,7 @@ curso.
 ### Etapa C — Aulas (uma por vez, com `AULAS/STATUS-AULAS.md`)
 | Passo | Ação | Status |
 |---|---|---|
-| C.1 a C.9 | Aulas 01 a 09 em `CONTEUDO/AULA-NN-....md`. Cada uma com roteiro, conteúdo, exemplos, pelo menos 1 dinâmica e verificação. A aula 09 tem 1h. Validação do usuário a cada aula | 🔄 Aula 01 👀 aguardando validação (2026-10-07) |
+| C.1 a C.9 | Aulas 01 a 09 em `CONTEUDO/AULA-NN-....md`. Cada uma com roteiro, conteúdo, exemplos, pelo menos 1 dinâmica e verificação. A aula 09 tem 1h. Validação do usuário a cada aula | ✅ 2026-10-07 21:43 — 9 aulas geradas a pedido do usuário; roteiros somam 33h; 1 dinâmica por aula |
 
 ### Etapa D — Atividades (uma aula por vez, com `ATIVIDADES/STATUS-ATIVIDADES.md`)
 | Passo | Ação | Status |
