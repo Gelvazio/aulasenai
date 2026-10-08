@@ -77,9 +77,32 @@ function criarIconeNotaIa(correcao, pontos) {
     const nota = Number(correcao.nota_ia).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
     const total = pontos.toLocaleString('pt-BR', { minimumFractionDigits: 1 });
     icone.textContent = resultado.icone + ' ' + resultado.texto + ' · IA ' + nota + '/' + total;
-    icone.title = (correcao.comentario || resultado.texto) + ' (nota parcial da IA, a confirmar ' +
-        'pelo professor em CORREÇÃO)';
+    icone.tabIndex = 0;
+    icone.appendChild(criarBalaoNotaIa(correcao.comentario || resultado.texto, resultado));
     return icone;
+}
+
+/**
+ * Cria o balão grande com o porquê da nota (aparece ao passar o mouse ou focar o ícone).
+ * @param {string} comentario - Comentário da IA.
+ * @param {Object} resultado - Item de RESULTADOS_NOTA_IA.
+ * @returns {HTMLElement} Balão pronto.
+ */
+function criarBalaoNotaIa(comentario, resultado) {
+    const balao = document.createElement('span');
+    balao.className = CLASSE_NOTA_IA_RESPOSTA + '__balao';
+    balao.setAttribute('role', 'tooltip');
+    const titulo = document.createElement('strong');
+    titulo.className = CLASSE_NOTA_IA_RESPOSTA + '__balao-titulo';
+    titulo.textContent = resultado.icone + ' ' + resultado.texto + ' — por quê:';
+    const texto = document.createElement('span');
+    texto.className = CLASSE_NOTA_IA_RESPOSTA + '__balao-texto';
+    texto.textContent = comentario;
+    const nota = document.createElement('em');
+    nota.className = CLASSE_NOTA_IA_RESPOSTA + '__balao-nota';
+    nota.textContent = 'Nota parcial da IA — vale só depois da confirmação do professor.';
+    balao.append(titulo, texto, nota);
+    return balao;
 }
 
 /**

@@ -1252,3 +1252,10 @@ Pedido do usuário: a rodada da IA não gravou nada (0 entregas; a orientação 
 | 97.2 | Aprovação do plano pelo usuário (D1–D8): "sim, aprovado, pode executar" | ✅ Concluído | 2026-10-08 16:36:42 | Mensagem do usuário |
 | 97.3 | Execução dos passos 2 a 7 do plano: SQL aplicado (coluna, tabela com RLS, funções, entrega e média final), botão e janela no Progresso da turma, entrega conferindo o mínimo, notas proporcionais (máx. 10), documentação e regras | ✅ Concluído | 2026-10-08 16:42:10 | Consultas de leitura no banco; `node --check` nos JS |
 | 97.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 98 — Balão grande com o porquê da nota da IA (tarefa pequena, 2026-10-08 16:50:05)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 98.1 | Em "Respostas dos alunos", o porquê da nota da IA sai num balão grande (até 560px, fonte 17px, título com o resultado) ao passar o mouse ou focar o ícone, no lugar do balão pequeno do navegador (`nota-ia-respostas-discursiva.js` + CSS) | ✅ Concluído | 2026-10-08 16:50:05 | `node --check` |
+| 98.2 | Aceite do usuário | ⬜ Pendente | — | — |
