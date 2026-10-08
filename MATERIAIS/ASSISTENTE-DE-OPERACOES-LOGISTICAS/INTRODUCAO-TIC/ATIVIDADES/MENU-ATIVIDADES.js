@@ -99,6 +99,10 @@ window.MENU_ATIVIDADES = {
           link: 'ATIVIDADES-AULA-06-50-QUESTOES.html',
         },
         {
+          rotulo: 'Aula 06 — Atividade prática (editor de textos)',
+          link: 'ATIVIDADE-PRATICA-AULA-06.html',
+        },
+        {
           rotulo: 'Aula 07 — Textos técnicos e redação',
           link: 'ATIVIDADES-AULA-07-50-QUESTOES.html',
         },

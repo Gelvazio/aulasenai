@@ -864,7 +864,7 @@ Git). Uma aula por vez. Aplicar o seed só com pedido do usuário.
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 75.1 | Prática da Aula 06 (Editor de Textos) | ⬜ Pendente | — | — |
+| 75.1 | Prática da Aula 06 (Editor de Textos) | ✅ Concluído | 2026-10-07 22:11 | 10 questões, 20 tópicos, 10 pontos; padrão de resposta fora do HTML; links no índice e no menu |
 | 75.2 | Prática da Aula 07 (Textos Técnicos) | ⬜ Pendente | — | — |
 | 75.3 | Prática da Aula 08 (Planilhas: Fórmulas) | ⬜ Pendente | — | — |
 | 75.4 | Prática da Aula 09 (Planilhas: Gráficos) | ⬜ Pendente | — | — |

@@ -1,4 +1,4 @@
-# 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
+# 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
 **Versão das regras:** 2026-10-07 21:44
 
@@ -163,51 +163,24 @@ Registrada em 2026-10-03 a pedido do usuário.
 
 ---
 
-## 🚨 INICIALIZAÇÃO DE CADA CHAT — LEITURA OBRIGATÓRIA
+## 🚨 INICIALIZAÇÃO DE CADA CHAT — LER O `STATUS.md`
 
-⚠️ **DE SUMA IMPORTÂNCIA — SEM EXCEÇÃO**
+⚠️ **DE SUMA IMPORTÂNCIA — SEM EXCEÇÃO.** Alterada em 2026-10-07 (antes mandava ler o `TASKS.md`).
 
 **ANTES DE RESPONDER QUALQUER COISA**, você DEVE:
 
-1. ✅ **LER `C:\fontes\aulasenai\TASKS.md`** — Status da tarefa atual
-2. ✅ **Verificar** qual tarefa está em progresso
-3. ✅ **Verificar** quais são as subtarefas ativas
+1. ✅ **LER `C:\fontes\aulasenai\STATUS.md`** — primeiro o **"Próximo passo"** e a tabela
+   **"⏳ Aguardando o usuário"**
+2. ✅ **Verificar** se há item `🔄 Em progresso` ou `⬜ Pendente` de tarefa aprovada e conferir o que
+   já foi feito nos arquivos/commits
+3. ✅ **Prosseguir de onde parou** (sem refazer itens `✅` nem pular itens)
 4. ✅ **Só então responder** ao usuário
 
-**Por quê?** TASKS.md contém o estado atual de trabalho. Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
+**Por quê?** O `STATUS.md` é a fonte única do estado do trabalho (regra global "`STATUS.md` EM TODA
+TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
 
-**Checklist de inicialização:**
-```
-☐ Li TASKS.md?
-☐ Identifiquei a tarefa atual?
-☐ Identifiquei as subtarefas ativas?
-☐ Entendi o status de cada subtarefa?
-☐ Pronto para responder ao usuário?
-```
-
-**🚀 Só responda depois de marcar TODOS os ☐ acima.**
-
----
-
-## 📋 CONSULTAR TAREFAS PENDENTES
-
-⚠️ **ANTES DE QUALQUER TRABALHO, LEIA:**
-
-📄 **Arquivo:** `C:\fontes\aulasenai\TASKS.md`
-
-**Conteúdo:**
-- ✅ Tarefa atual (em progresso)
-- 🔄 Subtarefas da tarefa atual
-- ⏳ Fila de próximas tarefas
-- 📊 Estatísticas de progresso
-
-**Fluxo:**
-1. ✅ Ler TASKS.md para ver tarefa atual
-2. ✅ Executar todas as subtarefas
-3. ✅ Marcar tarefa como ✅ CONCLUÍDO
-4. ✅ Sistema aguarda nova tarefa a ser adicionada
-
-**Importante:** TASKS.md contém APENAS a tarefa atual. Não é um histórico — é um quadro de estado.
+- ℹ️ O `TASKS.md` é **histórico antigo** (tarefas #1 a #10, até 2026-09-25): não é mais lido nem
+  atualizado.
 
 ---
 
@@ -279,7 +252,7 @@ js/
 
 ## 🔐 REGRA CRÍTICA — AUTENTICAÇÃO COM SUPABASE AUTH
 
-⚠️ **ANTES de modificar `js/login.js`, `index.html` ou `js/supabase.js`, LEIA:**
+⚠️ **ANTES de modificar `login.html`, `js/login.js`, `js/header-usuario.js` ou `js/supabase.js`, LEIA:**
 
 📄 **Arquivo obrigatório:** `docs/ORIENTACAO_USUARIO.md`
 
@@ -374,17 +347,18 @@ USING (id = auth.uid());
 
 📄 **Arquivo:** `graphify-out/GRAPH_REPORT.md`  
 📍 **Localização:** `C:\fontes\aulasenai\graphify-out\GRAPH_REPORT.md`  
-⚠️ **Atualizado em:** 2026-09-08 (7678 nós, 7612 arestas, 640 comunidades)
+🔄 **Atualização:** a cada sessão (`graphify update .`); a data e os números (nós, arestas,
+comunidades) ficam no topo do próprio `GRAPH_REPORT.md` — não copiar para cá (ficam velhos).
 
 Este relatório contém:
-- ✅ Visão geral da estrutura do projeto (7678 nós, 7612 arestas)
-- ✅ Comunidades de código (640 clusters)
+- ✅ Visão geral da estrutura do projeto (nós e arestas)
+- ✅ Comunidades de código (clusters)
 - ✅ Dependências entre arquivos
 - ✅ Padrões de arquitetura
 - ✅ Hot spots (arquivos críticos)
 - ✅ Mapa completo de navegação
 
-**Por quê?** O GRAPH_REPORT fornece uma análise automática de toda a codebase, enquanto este CLAUDE.md documenta os 6 arquivos HTML principais. Juntos, oferecem visão 360° do projeto.
+**Por quê?** O GRAPH_REPORT fornece uma análise automática de toda a codebase, enquanto este CLAUDE.md e `docs/regras/` trazem as regras do projeto. Juntos, oferecem visão 360° do projeto.
 
 ---
 
@@ -397,15 +371,17 @@ Este relatório contém:
 - Documentação, ementas, apostilas e recursos são organizados **por curso**
 
 **Regra de ouro:**
-- ✅ **TODA pasta em `MATERIAIS/` (exceto MATERIAS-GERAIS) = 1 CURSO COMPLETO**
+- ✅ **TODA pasta em `MATERIAIS/` = 1 CURSO COMPLETO, exceto as pastas da lista abaixo**
 - ✅ Cada curso é independente e tem suas próprias matérias, ementas, apostilas
 
-**Pastas a IGNORAR em análises:**
-- ❌ `MATERIAIS/MATERIAS-GERAIS/` — **NÃO é um curso**, é repositório genérico
-- ❌ Não ignorar outras pastas — cada uma é um curso válido!
+**Pastas que NÃO são curso (ignorar em análises, scripts e geradores):**
+- ❌ `MATERIAIS/MATERIAS-GERAIS/` — repositório genérico
+- ❌ `MATERIAIS/AGENDA_COLABORADOR/` — tem regras próprias (`MATERIAIS/AGENDA_COLABORADOR/CLAUDE.md`)
+  e não segue as regras das demais pastas (o gerador de índices já a ignora)
+- ✅ Todas as outras pastas de `MATERIAIS/` são cursos válidos — não ignorar nenhuma fora desta lista.
 
 **Scripts de análise DEVEM:**
-- ✅ Processar TODAS as pastas em MATERIAIS/ EXCETO `MATERIAS-GERAIS/`
+- ✅ Processar TODAS as pastas em MATERIAIS/ EXCETO as que não são curso (lista acima)
 - ✅ Cada pasta = 1 curso a processar
 - ✅ Executar operações para cada curso independentemente
 
@@ -421,6 +397,7 @@ MATERIAIS/
 │  ├─ ...
 │  └─ ...
 ├─ MATERIAS-GERAIS/               ← IGNORAR ❌ (não é curso)
+├─ AGENDA_COLABORADOR/            ← IGNORAR ❌ (não é curso, regras próprias)
 │  ├─ recurso1/
 │  └─ ...
 └─ STATUS-EMENTAS-CURSOS.md        ← Consolidado de todos os cursos (ignorar)
@@ -473,10 +450,12 @@ SQL: `database/2026-10-02-turmaprofessor-professor-administrador.sql` (aplicado 
   `eh_professor_administrador()`); os demais professores não veem nenhum desses menus. Esconder
   é só visual: o acesso aos dados continua pelo RLS.
 - ✅ **Menu Regras (2026-10-03):** botão **Regras** no header, só para o Professor Administrador
-  (mesmo RPC `eh_professor_administrador()`), abre um modal com este `CLAUDE.md` renderizado
-  (Markdown → HTML com marked + DOMPurify), índice das seções e filtro. Código:
-  `assets/js/regras-modal.js` (carregado sob demanda) + `assets/css/regras-modal.css`.
-  ⚠️ Esconder o botão é só visual: o `CLAUDE.md` é versionado e publicado; nunca colocar segredo nele.
+  (mesmo RPC `eh_professor_administrador()`), abre um modal com este `CLAUDE.md` + os arquivos de
+  `docs/regras/` e o `docs/HISTORICO-REGRAS.md` renderizados (Markdown → HTML com marked +
+  DOMPurify), índice das seções e filtro. Código: `assets/js/regras-modal.js` (carregado sob
+  demanda) + `assets/css/regras-modal.css`.
+  ⚠️ Esconder o botão é só visual: o `CLAUDE.md`, `docs/regras/` e o histórico são versionados e
+  publicados; nunca colocar segredo neles.
 - ❌ Nunca usar `user_metadata` nem e-mail digitado na página para decidir quem é administrador;
   nunca afrouxar as políticas da `turmaprofessor` (gravação só com `eh_professor_administrador()`)
   nem devolver TRUNCATE aos papéis da API.
@@ -585,13 +564,10 @@ regra global de mesmo nome.
 ✅ Tudo conforme `C:\Users\gelva\.claude\CLAUDE.md` (global)  
 ✅ **Fonte única de regras:** este `CLAUDE.md` + os arquivos de `docs/regras/` listados no "ÍNDICE DAS REGRAS DETALHADAS" (desde 2026-10-07). O `AGENTS.md` (Codex e outros agentes) contém apenas a instrução de ler e seguir este arquivo — o conteúdo que existia nele foi mesclado aqui em 2026-09-23. Novas regras são escritas **somente aqui ou em `docs/regras/`**.  
 ✅ Grafo: `graphify update .` após cada sessão  
-✅ Documentação: `docs/<tarefa>.md` antes de implementar  
+✅ Documentação: `docs/<tarefa>.md` antes de implementar nas **tarefas grandes** (as pequenas dispensam o plano — ver "REGRAS DO USUÁRIO QUE VALEM SEMPRE"); `STATUS.md` em todas  
 
 ---
 
 **Versão:** ver "Versão das regras" e o histórico no topo deste arquivo  
 **Status:** ✅ Ativo
 
-
-## PASTAS A SEREM IGNORADAS DENTRO DA PASTA **MATERIAIS**
-- ✅ LISTA DE PASTAS A SEREM IGNORADAS, OU SEJA, QUE NAO SAO CURSOS:*AGENDA_COLABORADOR* - Esta pasta tem suas proprias regras e não segue as regras das demais pastas.

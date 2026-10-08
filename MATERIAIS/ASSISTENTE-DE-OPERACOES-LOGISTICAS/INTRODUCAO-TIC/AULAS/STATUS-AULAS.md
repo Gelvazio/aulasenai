@@ -15,7 +15,7 @@ cadastradas no banco). **Aulas encontradas:** 10 em `AULAS/`.
 | 03 | Navegação na Web e Pesquisa Acadêmica | ✅ `AULAS/3-Navegação-na-Web-e-Pesquisa-Acadêmica.pdf` | ⛔ | ✅ `ATIVIDADES-AULA-03-50-QUESTOES.html` | ✅ | ✅ liberada |
 | 04 | Comunicação Digital e Colaboração em Nuvem | ✅ `AULAS/4-Comunicação-Digital-e-Colaboração-em-Nuvem.pdf` | ⛔ | ✅ `ATIVIDADES-AULA-04-50-QUESTOES.html` | ✅ | ✅ liberada |
 | 05 | Segurança da Informação e Proteção de Dados | ✅ `AULAS/5-Segurança-da-Informação-e-Proteção-de-Dados.pdf` | ⛔ | ✅ `ATIVIDADES-AULA-05-50-QUESTOES.html` | ✅ | ✅ bloqueada |
-| 06 | Editor de Textos Formatação e Estruturação | ✅ `AULAS/6-Editor-de-Textos-Formatação-e-Estruturação.pdf` | ⛔ | ✅ `ATIVIDADES-AULA-06-50-QUESTOES.html` | ⬜ | ✅ bloqueada |
+| 06 | Editor de Textos Formatação e Estruturação | ✅ `AULAS/6-Editor-de-Textos-Formatação-e-Estruturação.pdf` | ⛔ | ✅ `ATIVIDADES-AULA-06-50-QUESTOES.html` | ✅ | ✅ bloqueada |
 | 07 | Textos Técnicos e Redação Empresarial | ✅ `AULAS/7-Textos-Técnicos-e-Redação-Empresarial.pdf` | ⛔ | ✅ `ATIVIDADES-AULA-07-50-QUESTOES.html` | ⬜ | ✅ bloqueada |
 | 08 | Editor de Planilhas Organização e Fórmulas | ✅ `AULAS/8-Editor-de-Planilhas-Organização-e-Fórmulas.pdf` | ⛔ | ✅ `ATIVIDADES-AULA-08-50-QUESTOES.html` | ⬜ | ✅ bloqueada |
 | 09 | Planilhas Eletrônicas Análise Visual e Gráficos | ✅ `AULAS/9-Planilhas-Eletrônicas-Análise-Visual-e-Gráficos.pdf` | ⛔ | ✅ `ATIVIDADES-AULA-09-50-QUESTOES.html` | ⬜ | ✅ bloqueada |

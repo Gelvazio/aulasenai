@@ -1,0 +1,2811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category>
+      <text>top/Introdução à TIC/Aula 05 — Segurança da Informação e Proteção de Dados</text>
+    </category>
+    <info format="html">
+      <text></text>
+    </info>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 01 — Confidencialidade</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que o pilar da confidencialidade garante?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q01</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Que os dados nunca sejam alterados.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Que o sistema funcione 24 horas por dia.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Que os dados sejam apagados após o uso.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Que os dados fiquem restritos apenas a pessoas autorizadas.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 02 — Integridade Violada</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; Um malware altera os valores das notas fiscais de frete antes da emissão.&lt;/p&gt;&lt;p&gt;Qual pilar da segurança foi violado?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q02</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Confidencialidade&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Integridade&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Disponibilidade&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Nenhum pilar&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 03 — Disponibilidade Violada</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; Um ataque DDoS sobrecarrega os servidores e derruba o portal de rastreamento de cargas.&lt;/p&gt;&lt;p&gt;Qual pilar da segurança foi violado?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q03</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Disponibilidade&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Integridade&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Confidencialidade&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Nenhum pilar&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 04 — Confidencialidade Violada</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; A lista de clientes da empresa vazou após um ataque a um banco de dados sem criptografia.&lt;/p&gt;&lt;p&gt;Qual pilar da segurança foi violado?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Disponibilidade&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Integridade&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Confidencialidade&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Redundância&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 05 — Tríade CIA</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Quais são os três pilares da segurança da informação (tríade CIA)?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q05</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Confidencialidade, Integridade e Disponibilidade.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Controle, Internet e Acesso.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Cópia, Instalação e Antivírus.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Criptografia, Identidade e Autorização.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 06 — Protegendo a Integridade</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual medida protege o pilar da integridade?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q06</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Servidores redundantes.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Planos de recuperação.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Assinaturas digitais e trilhas de auditoria.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Uso de Wi-Fi público.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 07 — Protegendo a Disponibilidade</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual medida protege o pilar da disponibilidade?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q07</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Criptografia em trânsito.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Gestão de credenciais.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Assinatura digital.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Servidores redundantes e planos de recuperação.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 08 — Criptografia</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que é criptografia?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q08</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Uma cópia de segurança.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;A codificação que torna os dados ilegíveis sem uma chave secreta.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Um tipo de vírus.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Uma senha fraca.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 09 — Lei Carolina Dieckmann</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual crime a Lei Carolina Dieckmann (12.737/2012) tipificou?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q09</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Violação de direitos autorais.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Invasão de dispositivo informático.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Infração de trânsito.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Sonegação fiscal.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 10 — Invasão no Trabalho</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; Um funcionário descobre a senha de um colega e acessa a pasta restrita da diretoria.&lt;/p&gt;&lt;p&gt;Essa conduta:&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q10</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;É permitida, se o acesso for rápido.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;É apenas falta de educação.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Só é problema se ele apagar arquivos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Configura crime, passível de demissão por justa causa e reclusão.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 11 — Código Penal</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Em qual artigo do Código Penal a Lei Carolina Dieckmann inseriu o crime de invasão de dispositivo?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q11</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Art. 5º&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Art. 121&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Art. 154-A&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Art. 1º&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 12 — O Que a LGPD Regula</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que a LGPD regula?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q12</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;A coleta, o uso, o armazenamento e o compartilhamento de dados pessoais.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Os direitos autorais.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A velocidade da internet.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;O horário de trabalho.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 13 — Número da LGPD</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;A LGPD corresponde a qual lei federal?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q13</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Lei 9.610/1998&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Lei 12.737/2012&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Lei 13.709/2018&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Lei 8.078/1990&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 14 — Finalidade da Coleta</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; O cadastro de motoristas terceirizados pede religião e dados de saúde, sem nenhuma justificativa.&lt;/p&gt;&lt;p&gt;O que a LGPD exige nesse caso?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q14</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Finalidade legítima e explícita para cada dado coletado.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Coletar o máximo de dados possível.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Guardar os dados para sempre.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Divulgar os dados publicamente.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 15 — Multas da LGPD</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual é o limite das multas previstas na LGPD?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q15</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;R$ 500 por infração.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Até 2% do faturamento, limitadas a R$ 50 milhões por infração.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;50% do faturamento anual.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Não há multas previstas.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 16 — ANPD</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Quem aplica as sanções previstas na LGPD?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q16</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A Polícia Rodoviária.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A Receita Federal.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A Prefeitura.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;A ANPD (Autoridade Nacional de Proteção de Dados).&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 17 — Dado Pessoal Comum</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual das opções é um dado pessoal comum?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q17</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Origem étnica&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Convicção religiosa&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Dados biométricos&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Nome completo e CPF&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 18 — Dado Pessoal Sensível</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual das opções é um dado pessoal sensível?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q18</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;E-mail&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Histórico de saúde&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Telefone&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Endereço&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 19 — Guardar para Sempre</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;A afirmação "a empresa pode coletar qualquer dado dos clientes e guardá-lo para sempre, sem justificar" está:&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q19</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Falsa: a LGPD exige finalidade específica e veda o armazenamento abusivo.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Verdadeira, em qualquer caso.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Verdadeira, se o cliente não reclamar.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Verdadeira, para dados comuns.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 20 — Vírus</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; Um vírus só se espalhou depois que o usuário abriu o anexo "relatorio.pdf.exe".&lt;/p&gt;&lt;p&gt;Qual característica do vírus esse caso mostra?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q20</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Propaga-se sozinho, sem ajuda.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Não precisa de nenhum arquivo.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Exige arquivo hospedeiro e ação do usuário.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Apenas exibe anúncios.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 21 — Worm</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual malware se propaga sozinho pela rede, sem interação humana?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q21</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Worm&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Vírus&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Adware&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Trojan&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 22 — Trojan</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que caracteriza o trojan (Cavalo de Troia)?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q22</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Exibe anúncios indesejados.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Criptografa os arquivos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Finge ser um programa legítimo e abre backdoors para controle remoto.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Infecta apenas celulares.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 23 — Ransomware</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual malware criptografa os arquivos e exige pagamento para liberá-los?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q23</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Worm&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Adware&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Spyware&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Ransomware&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 24 — Pagar o Resgate?</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Por que não se deve pagar o resgate de um ransomware?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q24</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Porque o valor é baixo.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Porque não garante a devolução dos dados e financia o crime.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Porque o antivírus paga no lugar.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Porque é ilegal recuperar dados.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 25 — Keylogger</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; Um programa oculto registra tudo o que o funcionário digita, inclusive a senha do banco.&lt;/p&gt;&lt;p&gt;Que tipo de malware é esse?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q25</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Adware&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Spyware (keylogger)&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Worm&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ransomware&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 26 — Adware</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que faz o adware?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q26</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Criptografa os arquivos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Propaga-se sozinho pela rede.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Danifica o hardware.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Injeta anúncios indesejados e sequestra mecanismos de busca.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 27 — Engenharia Social</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que é engenharia social?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q27</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Uma área da construção civil.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A programação de sistemas.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;A manipulação psicológica para induzir erros, explorando curiosidade, medo ou urgência.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Um tipo de antivírus.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 28 — Sinais de Phishing</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; Um e-mail do "Banco Braziil" avisa que sua conta será cancelada em 1 hora se você não clicar no link.&lt;/p&gt;&lt;p&gt;Quais sinais de phishing aparecem nessa mensagem?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q28</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Remetente com erro sutil de digitação e senso de urgência.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Nenhum sinal.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Remetente oficial do banco.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ausência de link.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 29 — Phishing</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que é phishing?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q29</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Um tipo de backup.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Um protocolo seguro.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Uma fraude com mensagens falsas para induzir cliques e roubar credenciais.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Um filtro de spam.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 30 — Senha Forte</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual senha segue as recomendações da aula?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q30</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Uma senha de 14 caracteres com maiúsculas, minúsculas, números e símbolos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;123456&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A data de nascimento.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;O nome da empresa.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 31 — Tamanho da Senha</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Quantos caracteres a aula recomenda para uma senha robusta?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q31</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;De 4 a 6&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;De 12 a 16&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Exatamente 8&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Apenas 1&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 32 — Reutilizar Senhas</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Por que não se deve reutilizar a mesma senha em sistemas diferentes?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q32</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Porque fica difícil lembrar.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Porque o sistema bloqueia.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Porque é proibido por lei.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Porque, se um sistema for invadido, os outros também ficam expostos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 33 — Senha no Post-it</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual prática é inadequada?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q33</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Usar um gerenciador de senhas.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ativar o 2FA.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Criar senhas longas.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Anotar a senha em um post-it colado no monitor.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 34 — Autenticação em Dois Fatores</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual é a vantagem da autenticação em dois fatores (2FA)?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q34</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Dispensa o uso de senha.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Mesmo com a senha descoberta, o invasor não acessa a conta sem o segundo fator.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Deixa a internet mais rápida.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Remove vírus do computador.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 35 — "Algo que Você Tem"</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual é um exemplo do fator "algo que você tem"?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q35</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Token de aplicativo autenticador ou chave física USB.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Senha.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Impressão digital.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Reconhecimento facial.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 36 — "Algo que Você É"</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual é um exemplo do fator "algo que você é"?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q36</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Senha&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Token&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Biometria digital ou reconhecimento facial&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Frase secreta&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 37 — HTTPS</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que o protocolo HTTPS garante?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q37</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;A criptografia da conexão entre o navegador e o servidor.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Que o site é honesto.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Que não há vírus na página.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Uma internet mais rápida.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 38 — O Cadeado Não Basta</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; Um site de "promoção imperdível" exibe o cadeado do HTTPS na barra de endereço.&lt;/p&gt;&lt;p&gt;Isso garante que o site é confiável?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q38</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Sim, sempre.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Sim, se tiver anúncios.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Não: o HTTPS criptografa a conexão, mas não impede fraudes.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Sim, se o endereço terminar em .com.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 39 — VPN</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Para que serve a VPN corporativa?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q39</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Aumentar a memória RAM.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Imprimir remotamente.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Bloquear anúncios.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Criar um túnel criptografado entre o dispositivo remoto e a rede interna da empresa.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 40 — Wi-Fi Público</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; O supervisor precisa acessar o sistema de estoque pelo Wi-Fi do aeroporto.&lt;/p&gt;&lt;p&gt;Qual é a prática segura?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q40</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Acessar diretamente, sem proteção.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Conectar-se pela VPN corporativa.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Usar a guia anônima do navegador.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Desligar o antivírus.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 41 — Conexão Remota Segura</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual é a ordem segura para iniciar o expediente em home office?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q41</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;VPN → Rede → Pastas do projeto → 2FA&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Rede confiável → VPN corporativa → Credencial e token 2FA → Pastas do projeto&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Pastas do projeto → VPN → Rede → 2FA&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;2FA → Pastas do projeto → Rede → VPN&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 42 — Regra 3-2-1</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que significa a regra de backup 3-2-1?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q42</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;3 senhas, 2 usuários e 1 administrador.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;3 antivírus, 2 firewalls e 1 VPN.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Fazer backup a cada 3 dias.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;3 cópias, em 2 mídias diferentes, com 1 cópia fora do local.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 43 — Cópia Externa</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Por que manter uma cópia de backup fora da empresa ou na nuvem?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q43</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Para economizar energia.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Não há motivo.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Para proteger os dados contra ransomware, falhas ou desastres no local.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Por exigência fiscal.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 44 — Celular Corporativo</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual conjunto de medidas protege um celular corporativo?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q44</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Biometria, criptografia e bloqueio remoto.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Deixar sem senha para agilizar.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Instalar aplicativos de qualquer site.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Emprestar a amigos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 45 — Instalação de Aplicativos</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;De onde devem ser instalados os aplicativos no celular corporativo?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q45</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;De links recebidos por mensagem.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;De sites de download grátis.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;De repositórios homologados.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;De pen drives de colegas.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 46 — Caso do Pen Drive</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; Um funcionário conectou um pen drive pessoal com trojan ao PC da empresa, e a folha de pagamento de 1.200 colaboradores vazou.&lt;/p&gt;&lt;p&gt;De quem é a responsabilidade, segundo a aula?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q46</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Compartilhada: o colaborador violou condutas e a empresa falhou nos controles técnicos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Apenas do pen drive.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Apenas do fabricante do computador.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;De ninguém.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 47 — Bloquear a Tela</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual atalho bloqueia a tela do Windows ao se afastar da mesa?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q47</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ctrl + C&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Windows + L&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Alt + Tab&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Windows + E&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 48 — Reportar Incidentes</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; Você clicou em um link suspeito e o computador começou a se comportar de forma estranha.&lt;/p&gt;&lt;p&gt;O que você deve fazer?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q48</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Esconder o ocorrido.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Desligar o computador e esquecer.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Esperar para ver se passa.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Reportar imediatamente ao suporte de TI.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 49 — Fator Humano</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Segundo a síntese da aula, o que é determinante na segurança da informação?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q49</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;O preço do antivírus.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A marca do computador.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A velocidade da internet.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;O fator humano: a atenção constante das pessoas.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 50 — Auditoria de Risco</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; Na estação de trabalho foram encontrados um post-it com senha, a tela desbloqueada e um pen drive sem identificação.&lt;/p&gt;&lt;p&gt;Qual é a medida corretiva para a tela desbloqueada?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-05-Q50</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Trocar o teclado.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Bloquear a tela com Windows + L sempre que se afastar.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Formatar o computador.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Colar outro post-it com um lembrete.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>Aula 05</text></tag>
+    </tags>
+  </question>
+</quiz>

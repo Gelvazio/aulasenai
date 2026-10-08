@@ -1,0 +1,57 @@
+graphify-output/cache/
+graphify-out/
+.tmp.driveupload
+*.pdf
+*.png
+*.docx
+*.pptx
+*.xlsx
+*.jpg
+*.jpeg
+
+
+# Slides em PDF das pastas de atividades (linkados pelos índices publicados na Vercel)
+!MATERIAIS/**/ATIVIDADES/**/*.pdf
+!MATERIAIS/**/ATIVIDADES/*.pdf
+!MATERIAIS/**/ATIVIDADES/*.pptx
+!MATERIAIS/**/AULAS-CHALKIE-AI/*.pdf
+# Logo SESI SENAI usado pelas apostilas (assets/css/apostila.css, regra "REGRAS APOSTILAS")
+!assets/img/logo-sesi-senai.png
+
+# Dados pessoais de alunos (LGPD) — nunca publicar
+LISTA-PRESENCA*.js
+
+.env
+
+# Seed com o gabarito das atividades (respostas certas) — nunca publicar
+database/*-seed-atividades.sql
+
+# Arquivos gerados pelo Python
+__pycache__/
+
+# Segredos locais (chave service_role) — nunca publicar
+variaveis.js
+
+# Fontes de atividades e gabaritos (contêm as respostas certas) — nunca publicar
+*[Gg][Aa][Bb][Aa][Rr][Ii][Tt][Oo]*
+*QUESTOES.md
+docs/atividade-raciocinio-logico.md
+GERADOR-AULAS/ESTRUTURA-PROVAS/Prova Pr*tica.md
+# Banco de questões do AVA SENAI (Moodle XML com as respostas certas) — nunca publicar
+BANCO-AVA/
+
+# Material de outros professores (slides, figuras e transcrições): só local, não publicar
+CONTEUDO-PROF-*/
+# Fontes de provas objetivas (com a linha Gabarito): nunca publicar
+PROVA-OBJETIVA-*.md
+# Listas de alunos (nomes, CPF): dados pessoais (LGPD), só local
+LISTA-ALUNOS/
+# Resoluções modelo das atividades (respostas do professor) — nunca publicar
+RESOLUCAO/
+
+# Scripts-Comunicacao (2026-10-07): gabaritos dos Google Forms e códigos de acesso dos alunos — nunca publicar
+MATERIAIS/RIO_DO_SUL_MAIS_TECH/Scripts-Comunicacao/**/*.gs
+MATERIAIS/RIO_DO_SUL_MAIS_TECH/Scripts-Comunicacao/.clasp.json
+MATERIAIS/RIO_DO_SUL_MAIS_TECH/Scripts-Comunicacao/AVALIACOES_CRIADAS/CODIGOS-ALUNOS.txt
+MATERIAIS/RIO_DO_SUL_MAIS_TECH/Scripts-Comunicacao/AVALIACOES_CRIADAS/QUIZZES-ESTRUTURADOS.md
+MATERIAIS/RIO_DO_SUL_MAIS_TECH/Scripts-Comunicacao/FORMULARIOS-SEPARADOS/26-Quiz-Revisao-Aulas-1-9.html

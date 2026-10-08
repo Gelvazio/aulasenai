@@ -1,0 +1,2832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="category">
+    <category>
+      <text>top/Introdução à TIC/Aula 07 — Textos Técnicos e Redação Empresarial</text>
+    </category>
+    <info format="html">
+      <text></text>
+    </info>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 01 — Texto Técnico</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual é a finalidade de um texto técnico?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q01</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Emocionar o leitor.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Transmitir informações operacionais ou instrutivas sem ambiguidade.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Persuadir pela beleza do texto.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Entreter o público.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 02 — Relatório</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que é um relatório?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q02</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Um documento que expõe fatos e resultados de forma sistemática.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Uma comunicação formal para outras empresas.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;O registro de uma reunião.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Um aviso interno rápido.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 03 — Ata</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que é uma ata?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q03</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Uma comunicação enviada a fornecedores.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Um manual de procedimento.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;O registro formal e cronológico das decisões e ocorrências de uma reunião.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Um aviso de férias.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 04 — Norma</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que é uma norma técnica?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q04</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A opinião do gestor.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Um tipo de fonte.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Um resumo de texto.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Uma regra técnica que assegura qualidade e conformidade.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 05 — Clareza</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que significa clareza na redação técnica?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q05</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Usar muitas palavras.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Usar termos vagos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Expressar opiniões pessoais.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Sentido direto, sem duplo sentido.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 06 — Concisão</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; Um e-mail começa assim: "Venho, por meio deste humilde e respeitoso e-mail, com todo o respeito possível, comunicar que talvez...".&lt;/p&gt;&lt;p&gt;Qual pilar da redação técnica está faltando?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q06</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Tipografia&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Colorido&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Concisão&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Criatividade&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 07 — Objetividade</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que caracteriza a objetividade?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q07</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Foco em dados mensuráveis e fatos ocorridos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Foco em emoções.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Foco em opiniões.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Uso de humor.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 08 — Impessoalidade</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que caracteriza a impessoalidade?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q08</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Uso da primeira pessoa.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Uso da terceira pessoa, neutralidade e ausência de opiniões emotivas.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Uso de gírias.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Uso de muitos adjetivos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 09 — Frase Impessoal</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual frase está adequada a um relatório técnico?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q09</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;"Eu notei que o banco caiu e achei melhor reiniciar."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;"Nós percebemos um problema chato no sistema."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;"Constatou-se a indisponibilidade do banco de dados às 14h20; procedeu-se ao reinício do serviço."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;"Acho que o servidor caiu."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 10 — Expressões a Evitar</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Quais expressões devem ser evitadas em textos técnicos?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q10</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;"Constatou-se"&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;"Procedeu-se"&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;"Verificou-se"&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;"Eu acho" e "na minha opinião"&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 11 — NBR 14724</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que a norma ABNT NBR 14724 regula?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q11</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Referências bibliográficas.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Trabalhos acadêmicos e relatórios técnicos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Resumos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Segurança da informação.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 12 — NBR 6023</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que a norma ABNT NBR 6023 regula?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q12</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Referências bibliográficas.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Resumos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Gestão da qualidade.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ciclo de vida de software.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 13 — ISO 9001</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;A norma ISO 9001 trata de:&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q13</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Gestão da qualidade e rastreabilidade.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Segurança da informação.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ciclo de vida de software.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Referências bibliográficas.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 14 — ISO/IEC 27001</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;A norma ISO/IEC 27001 trata de:&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q14</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Gestão da qualidade.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Segurança da informação.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Resumos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Trabalhos acadêmicos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C2</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 15 — Aplicação das Normas</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;A afirmação "normas ABNT e ISO servem apenas para provas acadêmicas" está:&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q15</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Verdadeira.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Verdadeira, apenas para a ISO.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Verdadeira, apenas para a ABNT.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Falsa: as normas garantem rastreabilidade, segurança jurídica e integração com clientes e fornecedores.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 16 — Partes do Relatório</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Segundo a ABNT NBR 10719, em quais partes se organiza o relatório técnico?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q16</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Começo, meio e fim.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Título, texto e assinatura.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Pré-textual, textual e pós-textual.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Introdução e anexos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 17 — Parte Pós-Textual</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual elemento pertence à parte pós-textual do relatório?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q17</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Capa&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Referências e anexos&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Introdução&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Sumário&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 18 — Parte Pré-Textual</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Quais elementos pertencem à parte pré-textual do relatório?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q18</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Capa, folha de rosto e sumário.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Conclusão.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Glossário.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Apêndices.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 19 — Relatório de Incidente</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que um relatório de incidente (post-mortem) deve descrever?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q19</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A opinião sobre os culpados.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Apenas o horário do problema.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Linha do tempo, causa raiz, ações imediatas e medidas preventivas.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;O nome de todos os funcionários da empresa.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 20 — Fluxo do Relatório</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual é a ordem correta do fluxo de redação de um relatório?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q20</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Parecer → Coleta → Redação → Análise&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Redação → Parecer → Análise → Coleta&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Análise → Coleta → Parecer → Redação&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Coleta de dados → Análise → Redação técnica → Parecer final&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 21 — Norma IEEE 802.3</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual norma define a rede cabeada Ethernet, usada com o conector RJ-45?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q21</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;ISO 9001&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;ABNT NBR 14724&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;ANSI Z535&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;IEEE 802.3&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 22 — Finalidade da Ata</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual é a finalidade da ata de reunião?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q22</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Divulgar ações de marketing.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Servir de contrato de trabalho.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Registrar oficialmente acordos, prazos e responsabilidades.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ensinar um procedimento.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 23 — Verbos da Ata</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Em que tempo verbal a ata deve ser redigida?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q23</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Pretérito perfeito, como "deliberou-se".&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Futuro.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Imperativo.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Com gírias.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 24 — Números por Extenso</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Por que datas, horários e valores são escritos por extenso na ata?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q24</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Por estética.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Para impedir rasuras e fraudes.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Para economizar espaço.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Porque ninguém lê números.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 25 — A Expressão "Digo"</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; O secretário da reunião errou um número ao escrever a ata física.&lt;/p&gt;&lt;p&gt;Como deve corrigir o erro?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q25</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Apagar com corretivo.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Rasgar a folha.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Usar a expressão "digo" e escrever a informação correta.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Deixar o erro como está.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 26 — Norma ANSI Z535</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; O manual de uma empilhadeira importada usa as palavras PERIGO, ADVERTÊNCIA e CUIDADO para classificar os alertas por gravidade.&lt;/p&gt;&lt;p&gt;Qual norma organiza esse tipo de sinalização de segurança?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q26</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;IEEE 802.11&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;ABNT NBR 6028&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;ISO 9001&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;ANSI Z535&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 27 — Ordem da Ata</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual é a ordem correta dos elementos de uma ata?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q27</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Encerramento → Discussões → Cabeçalho → Abertura&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Cabeçalho → Abertura e leitura da pauta → Discussões e deliberações → Encerramento e assinaturas&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Abertura → Encerramento → Cabeçalho → Discussões&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Discussões → Cabeçalho → Abertura → Encerramento&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 28 — Memorando</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; O setor de expedição precisa pedir ao RH a contratação de 2 temporários para o pico de vendas.&lt;/p&gt;&lt;p&gt;Qual documento deve ser usado?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q28</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Memorando&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ofício&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ata&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ordem de serviço&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 29 — Ofício</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; A diretoria do centro de distribuição precisa se comunicar formalmente com a prefeitura.&lt;/p&gt;&lt;p&gt;Qual documento deve ser usado?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q29</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Ofício&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Memorando&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ata&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Resumo&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 30 — Interpretar um Documento</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual é o primeiro passo para interpretar um documento técnico?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q30</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Executar a tarefa imediatamente.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Identificar o tipo e a finalidade do documento.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ler apenas a assinatura.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ler apenas o título.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 31 — Ficha com Dados de Segurança</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; Chegou ao armazém um lote de produto químico inflamável.&lt;/p&gt;&lt;p&gt;Qual documento deve ser consultado para saber como armazenar o produto, quais EPIs usar e o que fazer em caso de vazamento?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q31</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ata de reunião&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Memorando&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Ofício&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;FDS/FISPQ (Ficha com Dados de Segurança)&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 32 — Resumo Informativo</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que o resumo informativo apresenta?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q32</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Apenas os tópicos abordados.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Opiniões pessoais sobre o documento.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Objetivos, métodos, resultados e conclusões.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Somente o título.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 33 — Fato ou Recomendação</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; Um relatório diz: "A carga chegou às 9h com 12 caixas amassadas. Recomenda-se revisar a amarração na origem."&lt;/p&gt;&lt;p&gt;Qual trecho é uma recomendação, e não um fato?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q33</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;"A carga chegou às 9h."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;"Recomenda-se revisar a amarração na origem."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;"12 caixas estavam amassadas."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Nenhum dos trechos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 34 — Declarar a Norma</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Ao citar uma norma em um documento técnico, o que deve ser feito?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q34</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Declarar qual norma e qual edição está sendo adotada.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Escrever apenas "conforme as normas".&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Não citar nenhuma norma.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Citar só a sigla da organização, como "ABNT".&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 35 — Estilo de Citação IEEE</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Como são feitas as citações no estilo IEEE?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q35</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Com autor e ano entre parênteses.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Apenas com notas de rodapé.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Com referências numeradas entre colchetes, como [1].&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Sem nenhuma referência.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 36 — Verbos no POP</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Como devem ser os verbos em um Procedimento Operacional Padrão (POP)?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q36</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;No pretérito.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;No futuro do subjuntivo.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Em gírias.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;No infinitivo ou no imperativo.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 37 — POP para Novatos</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual cuidado é essencial ao redigir um POP?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q37</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Supor que todos já sabem o procedimento.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Pular as etapas óbvias.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Usar metáforas literárias.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Descrever cada etapa sem assumir conhecimento prévio.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 38 — Alertas e EPIs</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; Você está redigindo o POP de operação da empilhadeira.&lt;/p&gt;&lt;p&gt;Como tratar os riscos e os EPIs obrigatórios?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q38</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Omitir os riscos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Colocar os alertas no final do documento.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Destacar os alertas críticos e os EPIs antes do início da tarefa.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Citar os EPIs apenas na assinatura.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 39 — Ordem de Serviço</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que é uma Ordem de Serviço (OS)?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q39</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;A formalização que autoriza e orienta a execução de um trabalho de manutenção ou suporte.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Uma ata de reunião.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Um relatório de vendas.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Um currículo.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 40 — Campos da OS</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Quais campos são indispensáveis em uma OS?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q40</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Apenas o nome do cliente.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Identificação do ativo, descrição do chamado e registro de execução.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Apenas o preço.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;A opinião do técnico.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 41 — Identificação do Ativo</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; Um técnico diz que não precisa anotar o código patrimonial da empilhadeira na OS porque já conhece o cliente.&lt;/p&gt;&lt;p&gt;A atitude do técnico está:&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q41</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Correta.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Correta, se o serviço for urgente.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Incorreta: a identificação do ativo é um campo indispensável.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Correta, se ele tirar uma foto.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 42 — Relatório para a Diretoria</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual versão é adequada para um relatório executivo?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q42</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;"Subimos a branch e deu pau no banco."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;"O deploy bugou geral."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;"Deu ruim no servidor."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;"A publicação da atualização na sexta-feira causou instabilidade no banco de dados por 30 minutos."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 43 — Prolixidade</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;O que é prolixidade?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q43</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Frases com duplo sentido.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Excesso de palavras para ideias simples.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Uso de dados numéricos.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Uso da terceira pessoa.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 44 — Juízo de Valor</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual trecho contém um juízo de valor?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q44</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;"O atraso foi terrível."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;"O atraso foi de 45 minutos."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;"Foram represados 120 pedidos."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;"O incidente começou às 10h15."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 45 — Substituir Adjetivos</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Pelo que devem ser substituídos os adjetivos emocionais em textos técnicos?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q45</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Por métricas, como tempo, custo e latência.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Por emojis.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Por gírias.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Por nada.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 46 — Completar a Frase</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Complete: "O redator deve manter a ____ na descrição dos dados, a ____ eliminando palavras supérfluas e a ____ ao evitar a primeira pessoa."&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q46</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;prolixidade, ambiguidade, subjetividade&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;objetividade, concisão, impessoalidade&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;subjetividade, prolixidade, ambiguidade&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;concisão, objetividade, ambiguidade&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 47 — Reescrita Técnica</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Qual versão é técnica e profissional?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q47</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;"Achamos que o computador queimou porque o aluno ligou errado."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;"Saiu uma fumaça horrível no laboratório."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;"O aluno ligou errado sem querer."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;"Constatou-se avaria na fonte do computador LAB-04 em 12/03 às 08h30, por conexão em 220V com seletor em 110V."&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 48 — Tempo de Indisponibilidade</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; O servidor do ERP parou às 10h15 e o serviço foi restabelecido às 10h50.&lt;/p&gt;&lt;p&gt;Quanto tempo durou a indisponibilidade?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q48</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;15 minutos&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;25 minutos&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;35 minutos&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;60 minutos&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 49 — Causa Raiz</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; No incidente do ERP, a equipe verificou saturação de memória causada por um script de backup mal programado.&lt;/p&gt;&lt;p&gt;Qual foi a causa raiz do incidente?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q49</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Falta de energia.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Saturação de memória RAM por um script de backup mal programado.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Um vírus.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Um erro de digitação no pedido.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>ITEM 50 — Responsabilidade na OS</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;&lt;strong&gt;Contexto:&lt;/strong&gt; Um erro de redação em uma Ordem de Serviço causou a queima de um equipamento.&lt;/p&gt;&lt;p&gt;De quem é a responsabilidade, segundo a aula?&lt;/p&gt;</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber>INTRODUCAO-TIC-AULA-07-Q50</idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>ABCD</answernumbering>
+    <showstandardinstruction>0</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>&lt;p&gt;Resposta correta.&lt;/p&gt;</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta parcialmente correta.&lt;/p&gt;</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>&lt;p&gt;Resposta incorreta.&lt;/p&gt;</text>
+    </incorrectfeedback>
+    <answer fraction="100" format="html">
+      <text>&lt;p&gt;Compartilhada: quem redigiu responde pela instrução falha; operador e supervisor, pela execução sem checagem.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Apenas de quem redigiu.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;Apenas do operador.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>&lt;p&gt;De ninguém.&lt;/p&gt;</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag><text>C1</text></tag>
+      <tag><text>C3</text></tag>
+      <tag><text>Aula 07</text></tag>
+    </tags>
+  </question>
+</quiz>
