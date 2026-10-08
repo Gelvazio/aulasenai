@@ -896,8 +896,8 @@ Arquivos globais (`C:\Users\gelva\.claude\...`, skill `documentacao-padrao`) fic
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 76.1 | Exceção das tarefas pequenas também no `CLAUDE-DOCS-BEFORE-EVERY-TASK.md` e na skill `documentacao-padrao` (antes: "sem exceção") | ✅ Concluído | 2026-10-08 08:09 | `grep` mostra "TAREFA GRANDE" e a exceção nos dois arquivos |
-| 76.2 | Testes e navegador nas regras de documentação → verificação por leitura/`node`/banco/terminal | 🔄 Em progresso | — | — |
-| 76.3 | Fonte única: `STATUS.md` × `TASKS.md` × `SESSOES-CLAUDE/` | ⬜ Pendente | — | — |
+| 76.2 | Testes e navegador nas regras de documentação → verificação por leitura/`node`/banco/terminal | ✅ Concluído | 2026-10-08 08:10 | `grep` sem "Testar no navegador" nem "testadas"; skill sem "como testar" |
+| 76.3 | Fonte única: `STATUS.md` × `TASKS.md` × `SESSOES-CLAUDE/` | 🔄 Em progresso | — | — |
 | 76.4 | Log da sessão: obrigatório × só com SIM | ⬜ Pendente | — | — |
 | 76.5 | Frase final da tarefa (global) × pergunta do log (projeto) | ⬜ Pendente | — | — |
 | 76.6 | Confirmação antes de comando mutável × Git sem perguntar | ⬜ Pendente | — | — |
