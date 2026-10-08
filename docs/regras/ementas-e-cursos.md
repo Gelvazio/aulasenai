@@ -163,7 +163,7 @@ A ementa de cada matéria é só o `EMENTA-CHALKIE-AI.md`; não criar nem verifi
 wc -c EMENTA-CHALKIE-AI.md
 
 # PowerShell (Windows)
-(Get-Content EMENTA-CHALKIE-AI.md).Length
+(Get-Content EMENTA-CHALKIE-AI.md -Raw).Length   # -Raw = caracteres (sem -Raw conta linhas)
 ```
 
 **Se estiver fora do intervalo:**
@@ -172,14 +172,14 @@ wc -c EMENTA-CHALKIE-AI.md
 3. ✅ Valore conteúdo sobre volume — não adicione texto vazio
 
 **Exemplo:** `MATERIAIS/RIO_DO_SUL_MAIS_TECH/INTRODUCAO_COMUNICACAO_ORAL_ESCRITA/EMENTA-CHALKIE-AI.md`
-- Tamanho atual: ~14.920 caracteres ✅ Dentro do intervalo
+- Exemplo de **estrutura** (o tamanho real muda com as edições: medir sempre com o comando acima).
 
 ---
 
 ## 🎓 REGRA CRÍTICA — ATUALIZAR STATUS-EMENTAS AO MODIFICAR EMENTAS
 
 ⚠️ **SEMPRE que modificar o EMENTA-CHALKIE-AI.md de qualquer matéria, DEVE atualizar:**
-- 📄 `MATERIAIS/RIO_DO_SUL_MAIS_TECH/<materia>/STATUS-EMENTAS.md` (status da matéria)
+- 📄 `MATERIAIS/<CURSO>/<MATERIA>/STATUS-EMENTAS.md` (status da matéria, quando a matéria tiver)
 - 📄 `MATERIAIS/STATUS-EMENTAS-CURSOS.md` (status consolidado do curso)
 
 **Ordem de atualização (OBRIGATÓRIA):**
@@ -198,8 +198,8 @@ wc -c EMENTA-CHALKIE-AI.md
 - [ ] Todos os arquivos foram commitados com mensagem descritiva
 
 **Scripts disponíveis para atualizar status:**
-- `RIO_DO_SUL_MAIS_TECH/scripts/criar-status-ementas.py` — Atualiza STATUS-EMENTAS.md de todas as matérias
-- `RIO_DO_SUL_MAIS_TECH/scripts/criar-status-cursos.py` — Atualiza STATUS-EMENTAS-CURSOS.md
+- `RIO_DO_SUL_MAIS_TECH/scripts/criar-status-ementas.py` — atualiza o STATUS-EMENTAS.md **só das matérias de Rio do Sul**; nos outros cursos, atualizar o `STATUS-EMENTAS.md` da matéria à mão
+- `RIO_DO_SUL_MAIS_TECH/scripts/criar-status-cursos.py` — atualiza o STATUS-EMENTAS-CURSOS.md (todos os cursos)
 
 ---
 

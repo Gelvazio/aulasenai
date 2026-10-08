@@ -841,9 +841,10 @@ Uma pergunta por item; **um commit só no final** (pedido do usuário).
 | 73.8 | Data do grafo desatualizada — escolha: tirar data e números | ✅ Concluído | 2026-10-07 21:55 | Seção do grafo remete ao topo do GRAPH_REPORT.md; sem números fixos |
 | 73.9 | TASKS.md parado × STATUS.md — escolha: trocar por STATUS.md | ✅ Concluído | 2026-10-07 21:58 | As 2 seções do TASKS.md viraram "Inicialização de cada chat — ler o STATUS.md"; TASKS.md citado só como histórico |
 | 73.10 | Comando de tamanho da ementa conta linhas — escolha: corrigir comando e exemplo | ✅ Concluído | 2026-10-08 07:37 | Comando com -Raw (testado: 219 linhas × 15.657 caracteres); exemplo sem número fixo |
-| 73.11 | Caminho do STATUS-EMENTAS só Rio do Sul | 🔄 Em progresso | — | — |
-| 73.12 | Registro do cursoprofessor (substituído) | ⬜ Pendente | — | — |
-| 73.13 | Versão das regras + commit único | ⬜ Pendente | — | — |
+| 73.11 | Caminho do STATUS-EMENTAS só Rio do Sul — escolha: caminho genérico + aviso | ✅ Concluído | 2026-10-08 07:40 | Linhas 182, 201 e 202 de `ementas-e-cursos.md` |
+| 73.12 | Registro do cursoprofessor (substituído) — escolha: apagar a seção | ✅ Concluído | 2026-10-08 07:49 | Seção apagada de `paginas-legadas.md` e do índice do `CLAUDE.md`; histórico fica em `docs/registro-vinculos-cursos-professor-2026-10-03.md` |
+| 73.13 | Versão das regras + commit único | ✅ Concluído | 2026-10-08 07:49 | Versão 2026-10-08 07:48 no CLAUDE.md e no histórico; reaplicado depois do merge da origin/main (feito por outra sessão); 12 itens conferidos por busca; 7 links do índice existem |
+| 73.14 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Etapa 74 — Dashboard do Jev (JEV-AI de Testes de Frontend) (tarefa pequena, 2026-10-07)
 
