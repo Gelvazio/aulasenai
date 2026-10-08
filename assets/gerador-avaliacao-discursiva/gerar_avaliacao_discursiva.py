@@ -16,6 +16,8 @@ responde no caderno); os dois em assets/js/exportar-pdf-discursiva.js. "- **Bloq
 liga o bloqueio de colar/arrastar/copiar nos campos (assets/js/bloqueio-colar-discursiva.js).
 "- **Campo do tamanho da resposta:** sim" dá a cada campo a altura da resposta esperada (padrão
 de resposta, com folga) e o faz crescer ao digitar (assets/js/campo-tamanho-discursiva.js).
+"- **Botão gravar:** sim" põe um botão "💾 Gravar" em cada tópico (grava na hora; a gravação
+automática continua).
 Plano: docs/avaliacao-pratica-discursiva-itic.md
 """
 import html
@@ -58,6 +60,9 @@ ATRIBUTOS_BODY = {CAMPO_PDF_COMPACTO: "data-pdf-compacto",
                   CAMPO_PDF_SEM_RESPOSTAS: "data-pdf-sem-respostas",
                   CAMPO_BLOQUEAR_COLAR: "data-bloquear-colar",
                   CAMPO_TAMANHO_RESPOSTA: "data-campo-tamanho-resposta"}
+CAMPO_BOTAO_GRAVAR = "Botão gravar"
+HTML_BOTAO_GRAVAR = (
+    '\n                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>')
 LINHAS_CAMPO_PADRAO = 5
 LINHAS_CAMPO_MAXIMO = 16
 CARACTERES_POR_LINHA = 70
@@ -359,6 +364,7 @@ def html_topico(item, topico):
     ident = f"resposta-{numero}-{topico['letra']}"
     atributos = f'data-item="{item["numero"]}" data-topico="{topico["numero"]}"'
     linhas = topico.get("linhas", LINHAS_CAMPO_PADRAO)
+    botao_gravar = HTML_BOTAO_GRAVAR if item.get("botao_gravar") else ""
     return f'''                <div class="topico-resposta" {atributos}>
                     <label class="topico-resposta__rotulo" for="{ident}">
                         <span class="topico-resposta__letra">{topico["letra"]})</span>
@@ -370,7 +376,7 @@ def html_topico(item, topico):
                               placeholder="Escreva aqui a sua resposta do tópico {topico["letra"]})..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
-                        <span class="topico-resposta__contador">0/{item['maximo_caracteres']}</span>
+                        <span class="topico-resposta__contador">0/{item['maximo_caracteres']}</span>{botao_gravar}
                     </div>
                 </div>
 '''
@@ -528,7 +534,9 @@ def montar_trocas(meta, itens, contexto):
     dados = contexto["dados"]
     turma = meta.get("Turma", "")
     maximo = ler_maximo_caracteres(meta)
-    itens = [{**item, "maximo_caracteres": maximo} for item in itens]
+    botao_gravar = meta.get(CAMPO_BOTAO_GRAVAR, "").strip().lower() == VALOR_SIM
+    itens = [{**item, "maximo_caracteres": maximo, "botao_gravar": botao_gravar}
+             for item in itens]
     capacidades_inicio, capacidades_css = aplicar_capacidades(
         meta, itens, dados, contexto["assets"])
     return {

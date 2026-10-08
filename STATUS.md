@@ -30,7 +30,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
-| 88 | 88.7 | testar na Prova Prática ADAG (id 82): bloqueio de colar, campo do tamanho da resposta e entrega só com tudo preenchido | Aceite |
+| 88 | 88.8 | testar na Prova Prática ADAG (id 82): bloqueio de colar, campo do tamanho da resposta, botão Gravar e entrega só com tudo preenchido | Aceite |
 | 82 e 83 | 82.5 e 83.7 | aceite da remoção da V1 (apostila única 2.1), da discursiva id 81 (já aplicada no banco) e das 13 questões novas da objetiva id 85 | Aceite |
 | 79 e 81 | 79.8 e 81.5 | validar a apostila ITIC V2 versão 2.1 (28 páginas, sem vídeos e exercícios; S2, S3, normas declaradas e referências complementares) e a paginação/faixa do PDF | Aceite |
 | 71 | 71.3 (C) | revisar as 9 aulas de Comunicação Oral e Escrita (Rio do Sul) em `CONTEUDO/` | Aceite |
@@ -1085,4 +1085,5 @@ Pedido do usuário: bloquear copiar e colar (obrigar a digitar cada resposta) **
 | 88.4 | Regra em `docs/regras/atividades.md` e no `CLAUDE.md` (versão + histórico) | ✅ Concluído | 2026-10-08 13:50:19 | Leitura dos arquivos |
 | 88.5 | Campo do tamanho da resposta: gerador calcula as linhas de cada campo pelo padrão de resposta (5 a 16 linhas) e `assets/js/campo-tamanho-discursiva.js` faz o campo crescer ao digitar; ligado na prova id 82 | ✅ Concluído | 2026-10-08 13:52:33 | `py_compile`, `node --check`; página regerada: 22 campos com 5 linhas, 38 maiores (até 13) |
 | 88.6 | Validação de todos os tópicos preenchidos na entrega | ✅ Concluído | 2026-10-08 13:52:33 | Já existia: `conferirTudoGravado` (espaços = vazio) + RLS da entrega; regra anotada em `docs/regras/atividades.md` |
-| 88.7 | Aceite do usuário (testar no navegador: Ctrl+V bloqueado, campo cresce ao digitar, entrega recusa tópico vazio) | ⬜ Pendente | — | — |
+| 88.7 | Botão "💾 Gravar" em cada tópico (campo `Botão gravar: sim`), mantendo a gravação automática — as duas opções juntas, pedido do usuário; ligado na prova id 82 | ✅ Concluído | 2026-10-08 13:53:51 | `py_compile`, `node --check`; página regerada com 60 botões |
+| 88.8 | Aceite do usuário (testar no navegador: Ctrl+V bloqueado, campo cresce ao digitar, botão Gravar, entrega recusa tópico vazio) | ⬜ Pendente | — | — |

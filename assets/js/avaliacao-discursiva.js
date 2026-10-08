@@ -20,6 +20,7 @@ const BASE_SCRIPTS_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, ''
 const CLASSE_BLOCO = 'topico-resposta';
 const CLASSE_FALTANDO = 'topico-resposta--faltando';
 const EVENTO_CAMPOS_PREENCHIDOS = 'discursiva:campos-preenchidos';
+const SELETOR_BOTAO_GRAVAR = '.topico-resposta__gravar';
 const SITUACOES_TOPICO = {
     vazio: { classe: 'topico-resposta--vazia', texto: '' },
     pendente: { classe: 'topico-resposta--pendente', texto: '✏️ Alteração ainda não gravada...' },
@@ -534,6 +535,26 @@ function ligarEventosDosCampos() {
 }
 
 /**
+ * Botão "💾 Gravar" do tópico (campo opcional da fonte): grava na hora o campo do mesmo bloco.
+ * A gravação automática continua; o botão só dá ao aluno a opção de gravar quando quiser.
+ * @param {MouseEvent} evento - Clique na página.
+ */
+async function gravarPeloBotao(evento) {
+    const botao = evento.target.closest(SELETOR_BOTAO_GRAVAR);
+    if (!botao) return;
+    if (!podeEscrever()) return explicarBloqueio();
+
+    const campo = botao.closest(SELETOR_BLOCO_TOPICO).querySelector(SELETOR_CAMPO);
+    botao.disabled = true;
+    try {
+        await gravarCampo(campo);
+        atualizarProgresso();
+    } finally {
+        botao.disabled = false;
+    }
+}
+
+/**
  * Avisa ao fechar a página se ainda houver resposta sem gravar.
  * @param {BeforeUnloadEvent} evento - Evento de saída.
  */
@@ -561,6 +582,7 @@ async function iniciarAvaliacaoDiscursiva() {
     montarPainel(estadoDiscursivo.dados);
     ligarEventosDosCampos();
     document.getElementById(ID_BOTAO_FINALIZAR).addEventListener('click', finalizarDiscursiva);
+    document.addEventListener('click', gravarPeloBotao);
     window.addEventListener('beforeunload', avisarSaidaComPendencia);
 }
 

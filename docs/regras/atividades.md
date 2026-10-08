@@ -176,6 +176,10 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   (padrão de resposta × 1,5 de folga ÷ 70 caracteres por linha; mínimo 5, máximo 16 linhas) e
   **cresce enquanto o aluno digita** (`assets/js/campo-tamanho-discursiva.js`). 1º uso: Prova
   Prática ADAG (id 82); nas outras discursivas, ligar junto com o bloqueio de colar.
+- ✅ **Botão "💾 Gravar" em cada tópico (2026-10-08, pedido do usuário):** campo opcional
+  `- **Botão gravar:** sim` → cada tópico ganha o botão, que grava na hora (`gravarPeloBotao` em
+  `assets/js/avaliacao-discursiva.js`). **As duas opções valem juntas:** a gravação automática
+  (1,5 s depois de parar de digitar e ao sair do campo) continua. 1º uso: Prova Prática ADAG (id 82).
 - ✅ **Entrega só com tudo preenchido (já existia):** ao clicar em "Finalizar e entregar", a página
   confere no banco os tópicos sem texto (só espaços conta como vazio), destaca e lista os que faltam;
   o RLS da `entrega_atividade` também recusa a entrega incompleta.

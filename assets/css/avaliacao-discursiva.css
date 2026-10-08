@@ -109,6 +109,29 @@
     color: var(--discursiva-texto-suave);
 }
 
+.topico-resposta__gravar {
+    margin-left: auto;
+    padding: 4px 12px;
+    border: 1px solid var(--discursiva-gravada);
+    border-radius: var(--discursiva-raio);
+    background: var(--discursiva-gravada-fundo);
+    color: var(--discursiva-gravada);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.topico-resposta__gravar:hover:not(:disabled) {
+    background: var(--discursiva-gravada);
+    color: var(--discursiva-fundo-campo);
+}
+
+.topico-resposta__gravar:disabled {
+    cursor: wait;
+    opacity: 0.6;
+}
+
 .topico-resposta__situacao {
     font-weight: 600;
 }
