@@ -1387,4 +1387,4 @@ Plano: [docs/somente-ensalado-materias.md](docs/somente-ensalado-materias.md) ·
 | 105.8 | Commit local (sem push) | ⬜ Pendente | — | — |
 | 105.9 | Aceite do usuário (testar na tela) | ⬜ Pendente | — | — |
 | 105.10 | Pendente: ligar Rio do Sul Mais Tech (curso 1 ou 6? ambíguo) e Qualificação Profissional (sem curso no banco) — decisão do usuário | ⬜ Pendente | — | — |
-| 105.11 | Pendente: cadastrar no banco as matérias de Operador, Logística e Gestão (hoje só 4 linhas, e os nomes não batem com os cartões) — decisão do usuário | ⬜ Pendente | — | — |
+| 105.11 | Descrições das matérias 25 (Logística), 27 (Gestão) e 28 (Operador) no banco ajustadas para os nomes dos cartões (já existiam; sem duplicatas). Valores antigos: 25 "Introdução à Tecnologia da Informação e Comunicação", 27 "Análise de Dados Aplicada à Gestão", 28 "Fundamentos de Automação/Instrumentação" | ✅ Concluído | 2026-10-08 23:51:12 | select: 3 linhas atualizadas |
