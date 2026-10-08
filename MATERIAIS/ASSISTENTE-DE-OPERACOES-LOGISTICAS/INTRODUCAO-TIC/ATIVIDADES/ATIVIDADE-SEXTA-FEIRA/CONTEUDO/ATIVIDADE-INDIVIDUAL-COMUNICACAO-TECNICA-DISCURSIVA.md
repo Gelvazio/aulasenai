@@ -14,7 +14,7 @@
 - **Aviso:** ATIVIDADE INDIVIDUAL. É PROIBIDO USAR COMPUTADOR OU CELULAR PARA PESQUISA. CONSULTE APENAS A APOSTILA DE ITIC.
 - **Aula no banco:** 7
 - **Turma:** todas as turmas
-- **Conteúdo-base:** `../../../APOSTILA/APOSTILA-INTRODUCAO-TIC.md` (capítulos 01 a 07) — toda resposta se apoia na apostila e nos dados do contexto
+- **Conteúdo-base:** `../../../APOSTILA/APOSTILA-INTRODUCAO-TIC-V2.md` (apostila V2, capítulos 01 a 07) — toda resposta se apoia na apostila e nos dados do contexto
 
 **Como responder:** Leia o contexto de cada questão e escreva a resposta **no campo da questão**, com frases completas e com as suas palavras. Consulte a apostila de ITIC (capítulos 01 a 07) e use os dados do contexto de cada questão (horários, números e setores). Respostas copiadas da internet ou de colegas recebem nota zero.
 
@@ -93,14 +93,14 @@ Explique o que é consenso e como a equipe deve buscá-lo para escolher o líder
 A equipe 3 reuniu-se no dia 09/10/2026, às 13h30, na sala 12, com Ana, Bruno, Carla e Davi. Ana ficou como líder (ata), Bruno como pesquisador (relatório), Carla como redatora (memorando) e Davi como formatador (e-mail).
 
 **Comando:**
-Redija a ata dessa reunião em um único parágrafo, com verbos no passado e com a frase de encerramento.
+Redija a ata dessa reunião em texto corrido, com verbos no passado, a data por extenso, as decisões (quem fica com cada papel) e o encerramento com assinaturas.
 
 **Tópicos:**
-- a) Ata em parágrafo único, com abertura, decisões e encerramento. (1,0)
+- a) Ata em texto corrido, com cabeçalho, decisões e encerramento, verbos no passado. (1,0)
 
 ---
 
-## ITEM 06 — Relatório — tabela do que aconteceu
+## ITEM 06 — Relatório — desenvolvimento (fatos e dados)
 
 - **Aula:** 01 a 07 · Apostila de ITIC
 - **Capacidade:** C1
@@ -109,14 +109,14 @@ Redija a ata dessa reunião em um único parágrafo, com verbos no passado e com
 No CD da Rota Certa Logística e Armazenagem (empresa fictícia), na segunda-feira: às 7h30, 600 caixas de detergente foram guardadas no endereço B-04-03 em vez de B-03-04; das 8h às 11h, 2 dos 6 coletores de dados não liam o código de barras (problema de driver) e 38 dos 150 pedidos saíram errados; às 11h, o sistema mostrava 320 caixas de sabão em pó, mas havia 250; às 13h, 15 caixas de amaciante venceram; às 15h, os caminhões saíram 3 horas atrasados; às 16h, chegou um e-mail falso pedindo a senha do WMS. Prejuízo: cerca de R$ 4.200.
 
 **Comando:**
-Monte, em texto, as linhas da tabela "O que aconteceu" do relatório (Horário — Setor — Problema), com pelo menos quatro linhas.
+Escreva o desenvolvimento do relatório: liste, em ordem de horário, pelo menos quatro fatos, cada um com o horário, o setor e os números, sem opinião.
 
 **Tópicos:**
-- a) Quatro linhas corretas com horário, setor e problema. (1,0)
+- a) Quatro fatos com horário, setor e números, sem opinião. (1,0)
 
 ---
 
-## ITEM 07 — Relatório — causas
+## ITEM 07 — Relatório — conclusão (causas prováveis)
 
 - **Aula:** 01 a 07 · Apostila de ITIC
 - **Capacidade:** C1, C4
@@ -125,10 +125,10 @@ Monte, em texto, as linhas da tabela "O que aconteceu" do relatório (Horário �
 No CD da Rota Certa Logística e Armazenagem (empresa fictícia), na segunda-feira: às 7h30, 600 caixas de detergente foram guardadas no endereço B-04-03 em vez de B-03-04; das 8h às 11h, 2 dos 6 coletores de dados não liam o código de barras (problema de driver) e 38 dos 150 pedidos saíram errados; às 11h, o sistema mostrava 320 caixas de sabão em pó, mas havia 250; às 13h, 15 caixas de amaciante venceram; às 15h, os caminhões saíram 3 horas atrasados; às 16h, chegou um e-mail falso pedindo a senha do WMS. Prejuízo: cerca de R$ 4.200.
 
 **Comando:**
-Escreva o parágrafo "Por que aconteceu" do relatório, explicando as quatro causas, na terceira pessoa e sem culpar pessoas.
+Escreva a conclusão do relatório com a causa provável de quatro problemas do dia, na terceira pessoa e sem culpar pessoas.
 
 **Tópicos:**
-- a) Parágrafo com as quatro causas, impessoal. (1,0)
+- a) Conclusão com quatro causas prováveis, impessoal. (1,0)
 
 ---
 
@@ -151,7 +151,7 @@ Calcule a diferença de estoque e escreva uma frase técnica, para o relatório,
 ## ITEM 09 — Fato e recomendação no relatório
 
 - **Aula:** 01 a 07 · Apostila de ITIC
-- **Capacidade:** C5
+- **Capacidade:** C1, C3
 
 **Contexto:**
 As caixas novas de amaciante foram colocadas na frente das antigas e 15 caixas venceram no fundo da prateleira.
@@ -164,7 +164,7 @@ Escreva, em linguagem técnica e impessoal, uma frase de fato (o que aconteceu, 
 
 ---
 
-## ITEM 10 — Sugestões de melhoria
+## ITEM 10 — Relatório — recomendações
 
 - **Aula:** 01 a 07 · Apostila de ITIC
 - **Capacidade:** C1
@@ -173,10 +173,10 @@ Escreva, em linguagem técnica e impessoal, uma frase de fato (o que aconteceu, 
 No CD da Rota Certa Logística e Armazenagem (empresa fictícia), na segunda-feira: às 7h30, 600 caixas de detergente foram guardadas no endereço B-04-03 em vez de B-03-04; das 8h às 11h, 2 dos 6 coletores de dados não liam o código de barras (problema de driver) e 38 dos 150 pedidos saíram errados; às 11h, o sistema mostrava 320 caixas de sabão em pó, mas havia 250; às 13h, 15 caixas de amaciante venceram; às 15h, os caminhões saíram 3 horas atrasados; às 16h, chegou um e-mail falso pedindo a senha do WMS. Prejuízo: cerca de R$ 4.200.
 
 **Comando:**
-Escreva duas sugestões para "O que fazer para não acontecer de novo", cada uma ligada a uma causa diferente.
+Escreva duas recomendações para a conclusão do relatório (comece com "Recomenda-se"), cada uma ligada a uma causa diferente.
 
 **Tópicos:**
-- a) Duas sugestões, cada uma ligada a uma causa. (1,0)
+- a) Duas recomendações, cada uma ligada a uma causa. (1,0)
 
 ---
 
@@ -189,10 +189,10 @@ Escreva duas sugestões para "O que fazer para não acontecer de novo", cada uma
 Para o relatório, o pesquisador precisa explicar o que é inventário rotativo usando uma fonte da internet.
 
 **Comando:**
-Explique como fazer a busca (com aspas), como escolher uma fonte confiável e o que deve aparecer na referência no fim do texto.
+Explique como fazer a busca (com aspas), como avaliar se a fonte é confiável (teste CRAAP e quantas fontes conferir) e como usar a fonte no texto sem plágio.
 
 **Tópicos:**
-- a) Busca, avaliação da fonte e dados da referência. (1,0)
+- a) Busca com aspas, teste CRAAP com 3 fontes e citação da fonte. (1,0)
 
 ---
 
@@ -205,10 +205,10 @@ Explique como fazer a busca (com aspas), como escolher uma fonte confiável e o 
 O setor de TI precisa pedir ao gerente do CD a compra de coletores de dados, porque 2 dos 6 estão parados e 38 pedidos saíram errados.
 
 **Comando:**
-Escreva o memorando completo: cabeçalho (número, Para, De, Data, Assunto), saudação, pedido com o motivo e os dados, prazo e fecho.
+Escreva o memorando completo: número, Para, Assunto, a solicitação com o motivo e os dados do caso e o prazo.
 
 **Tópicos:**
-- a) Memorando com todas as partes e os dados do caso. (1,0)
+- a) Memorando com número, Para, Assunto, solicitação com dados e prazo. (1,0)
 
 ---
 
@@ -218,10 +218,10 @@ Escreva o memorando completo: cabeçalho (número, Para, De, Data, Assunto), sau
 - **Capacidade:** C4
 
 **Contexto:**
-A tabela do memorando lista: coletor de dados (lê o código de barras), impressora de etiquetas (imprime o endereço) e cartão de memória (guarda os dados).
+A tabela do memorando lista: leitor de código de barras (lê o código da caixa), impressora de etiquetas (imprime o endereço) e coletor de dados (lê o código e mostra o pedido na tela).
 
 **Comando:**
-Classifique cada equipamento como entrada, saída, entrada e saída ou armazenamento, conforme a apostila, e explique o motivo de cada classificação.
+Classifique cada equipamento como periférico de entrada, de saída ou de entrada e saída, conforme a apostila, e explique o motivo de cada classificação.
 
 **Tópicos:**
 - a) Classificação dos três equipamentos com justificativa. (1,0)
@@ -301,10 +301,10 @@ Explique o que é phishing, cite dois sinais de que esse e-mail é falso e o que
 Depois do e-mail falso, o revisor precisa escrever as regras de segurança do computador do CD.
 
 **Comando:**
-Escreva uma lista numerada com quatro regras, cada uma começando com um verbo de ordem (senha forte, autenticação em dois fatores, bloquear a tela e backup), e a frase final de ATENÇÃO.
+Escreva uma lista numerada com quatro regras (senha forte, autenticação em dois fatores, bloquear a tela e backup), cada uma com uma frase explicando como fazer, e um aviso final de ATENÇÃO.
 
 **Tópicos:**
-- a) Quatro regras com verbo de ordem e frase de atenção. (1,0)
+- a) Quatro regras explicadas, em lista numerada, e aviso de atenção. (1,0)
 
 ---
 
@@ -378,10 +378,10 @@ Explique as três tarefas que o sistema operacional gerencia e diga qual é o ti
 - **Capacidade:** C5
 
 **Contexto:**
-Um colega diz: "Internet e web são a mesma coisa; o aplicativo de mensagens é um site da web".
+Um colega diz: "Internet e web são a mesma coisa".
 
 **Comando:**
-Explique a diferença entre internet e web e diga se a afirmação do colega está correta, justificando.
+Explique a diferença entre internet e web (o que cada uma é) e diga se a afirmação do colega está correta, justificando.
 
 **Tópicos:**
 - a) Diferença entre internet e web e avaliação da afirmação. (1,0)
@@ -461,10 +461,10 @@ Relacione cada incidente ao pilar da segurança da informação violado (confide
 O computador do almoxarifado foi atacado por ransomware: os arquivos ficaram bloqueados e os criminosos pedem pagamento. A planilha de inventário estava só naquele computador.
 
 **Comando:**
-Explique o que é ransomware, por que pagar o resgate não é solução e monte um plano de backup 3-2-1 para a planilha.
+Explique o que é ransomware e o que é backup, monte um plano de backup 3-2-1 para a planilha e diga como saber se o backup funciona.
 
 **Tópicos:**
-- a) Conceito de ransomware, risco do pagamento e plano 3-2-1. (1,0)
+- a) Conceito de ransomware e de backup, plano 3-2-1 e teste de restauração. (1,0)
 
 ---
 

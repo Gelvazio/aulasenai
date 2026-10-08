@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Etapa 83 — remover a apostila V1 da ITIC (plano aguardando aprovação); Etapa 82, item 82.4 — aplicar o seed da discursiva de sexta no banco se o usuário pedir; depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -981,3 +981,15 @@ Pedido: corrigir os 4 pontos achados na conferência da V2 com o `EMENTA-CHALKIE
 | 81.3 | Referências complementares (NBR 10520, NBR 14724, NBR 6028, Lei 12.737/2012) só na V2 (`referencias_complementares` da edição no `materia.json` + gerador) | ✅ Concluído | 2026-10-08 09:05 | `py_compile` OK; seção "Referências complementares" no Markdown e no HTML V2; V1 sem mudança (`--conferir` 100%) |
 | 81.4 | V2 versão 2.1: Markdown completo (`--forcar`), conferência 100% e HTML | ✅ Concluído | 2026-10-08 09:05 | `--conferir` V2 277/277; HTML e PDF headless 2.1 (28 páginas, "Página N de 28") |
 | 81.5 | Aceite do usuário | 👀 Aguardando validação | — | — |
+
+## Etapa 82 — Discursiva de sexta (id 81) ajustada à apostila V2 (tarefa pequena, 2026-10-08 09:33:18)
+
+Pedido (opção B): a prova `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-DISCURSIVA` passa a cobrar só o que está na apostila ITIC V2. Itens ajustados: 05, 06, 07, 10, 11, 12, 13, 18, 23 e 28 (+ capacidade do 09 de C5 para C1, C3; conteúdo-base = V2).
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 82.1 | Fonte `.md` da prova: 10 comandos/tópicos ajustados à V2, capacidade do item 09, conteúdo-base V2 | ✅ Concluído | 2026-10-08 09:35 | Trocas conferidas uma a uma pelo script (cada trecho achado 1 vez) |
+| 82.2 | Padrão de resposta (`-GABARITO.md`, local; não entra no commit) dos 10 itens | ✅ Concluído | 2026-10-08 09:35 | Gerador: 30 tópicos com padrão (0 sem padrão) |
+| 82.3 | Página HTML e seed regerados (`gerar_avaliacao_discursiva.py`; seed fora do Git) | ✅ Concluído | 2026-10-08 09:35 | 30 questões, 30 tópicos, 30 pontos; HTML sem padrão de resposta; seed `database/2026-10-08-atividade-individual-comunicacao-tecnica-discursiva-seed-atividades.sql` |
+| 82.4 | Banco (id 81, `topico_discursivo`): aplicar o seed só se o usuário pedir | ⬜ Aguardando o usuário | — | Pedir ao usuário (2 alunos já têm respostas nos itens 01–20 da id 81) |
+| 82.5 | Aceite do usuário | ⬜ Pendente | — | — |
