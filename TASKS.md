@@ -10,11 +10,17 @@ tarefa, no mesmo commit).
 
 ### #2: Organizar Apostilas em Formato Markdown (.md)
 
-**Status:** ⏳ PLANEJADO  
+**Status:** 🔄 PLANO AGUARDANDO APROVAÇÃO (2026-10-08)  
 **Prioridade:** 🟠 Alta  
 **Data de Início Estimada:** 2026-09-22
 
 Garantir que todas as apostilas estão em formato **Markdown (.md) apenas** — sem PDF/DOCX no momento. Consolidar arquivos redundantes e manter estrutura limpa.
+
+- ✅ Levantamento e plano: `docs/tarefa-02-apostilas-em-markdown.md` (nenhuma apostila em
+  PDF/DOCX no Git; 4 matérias já no padrão; 5 itens fora do padrão para decidir).
+- [ ] Aprovação do usuário (itens A–E e pergunta sobre Comunicação Oral e Escrita).
+- [ ] Executar os passos do plano.
+- [ ] Na máquina local: conferir PDF/DOCX de apostila fora do Git.
 
 ---
 
