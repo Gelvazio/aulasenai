@@ -202,7 +202,8 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     (+ CSS), ligado pelo callback opcional `aoMostrarAluno` do `respostas-aluno-professor.js`.
     **Vale para todas as avaliações discursivas** (regra no `CLAUDE.md`, 2026-10-08).
   - **Prova escondida para o professor (2026-10-08, pedido do usuário):** por padrão a prova
-    inteira (instruções, questões e entrega) fica escondida para o professor; só o painel e o
+    inteira (instruções, questões, entrega, link "← Índice" e menu da matéria) fica escondida para o
+    professor; só o painel e o
     Progresso da turma aparecem. A prova, com as respostas do aluno, aparece ao escolher um aluno
     no combo e some ao limpar a escolha (classe `discursiva--respostas-ocultas` no `<body>`,
     `avaliacao-discursiva.js` + CSS).
