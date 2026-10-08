@@ -1087,3 +1087,10 @@ Pedido do usuário: bloquear copiar e colar (obrigar a digitar cada resposta) **
 | 88.6 | Validação de todos os tópicos preenchidos na entrega | ✅ Concluído | 2026-10-08 13:52:33 | Já existia: `conferirTudoGravado` (espaços = vazio) + RLS da entrega; regra anotada em `docs/regras/atividades.md` |
 | 88.7 | Botão "💾 Gravar" em cada tópico (campo `Botão gravar: sim`), mantendo a gravação automática — as duas opções juntas, pedido do usuário; ligado na prova id 82 | ✅ Concluído | 2026-10-08 13:53:51 | `py_compile`, `node --check`; página regerada com 60 botões |
 | 88.8 | Aceite do usuário (testar no navegador: Ctrl+V bloqueado, campo cresce ao digitar, botão Gravar, entrega recusa tópico vazio) | ⬜ Pendente | — | — |
+
+## Etapa 88 — Menu 👥 Equipes em Análise de Dados Aplicada à Gestão (duplas da prova) (tarefa pequena, 2026-10-08 17:11:10)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 88.1 | Item `{ rotulo: '👥 Equipes', acao: 'equipes', papeis }` no `MATERIAIS/GESTAO_E_CONTROLE_MATERIAIS/ANALISE_DADOS_APLICADA_GESTAO/ATIVIDADES/MENU-ATIVIDADES.js`; regra das matérias com o menu atualizada (versão das regras + histórico) | ✅ Concluído | 2026-10-08 17:11:10 | `node --check`; mesmo formato do menu da ITIC |
+| 88.2 | Usuário cadastra as duplas da turma 133933 pelo menu (professor vinculado à turma em `turmaprofessor`) e dá o aceite | ⬜ Pendente | — | — |

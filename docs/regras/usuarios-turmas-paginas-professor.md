@@ -189,7 +189,8 @@ SQL: `database/2026-10-05-equipes-turma-materia.sql` (✅ aplicado no Supabase e
   `assets/js/equipes-modal.js` (tela), `assets/js/equipes-repositorio.js` (dados) +
   `assets/css/equipes-modal.css`. O `js/menu.js` aceita itens de **ação**: `{ rotulo, acao }`
   carrega `assets/js/menu-acao-<acao>.js`, que registra `window.ACOES_MENU_ATIVIDADES[acao]`.
-- ✅ **Matérias com o menu:** Introdução à TIC (2026-10-05). Outras matérias recebem o item no
+- ✅ **Matérias com o menu:** Introdução à TIC (2026-10-05) e Análise de Dados Aplicada à Gestão
+  (2026-10-08, para cadastrar as duplas da prova prática; a prova continua individual por login). Outras matérias recebem o item no
   `MENU-ATIVIDADES.js` quando o usuário pedir (regra das matérias semelhantes).
 
 ## 🎯 REGRA — PÁGINA VISÍVEL SÓ PARA ALGUMAS TURMAS

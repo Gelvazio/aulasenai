@@ -6,6 +6,11 @@ window.MENU_ATIVIDADES = {
   titulo: 'Análise de Dados Aplicada à Gestão',
   itens: [
     { rotulo: '📚 Índice', link: 'index.html' },
+    {
+      rotulo: '👥 Equipes',
+      acao: 'equipes',
+      papeis: ['Líder (digita as respostas)', 'Dupla (confere e revisa)'],
+    },
     { rotulo: '🏁 Avaliação — Média Final (100 pontos)', link: 'AVALIACAO-MEDIA-FINAL.html' },
     {
       rotulo: '📝 Atividades por aula (50 questões)',
