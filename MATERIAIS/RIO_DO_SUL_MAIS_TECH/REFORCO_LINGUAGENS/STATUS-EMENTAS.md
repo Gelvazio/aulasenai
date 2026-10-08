@@ -1,6 +1,6 @@
 # STATUS-EMENTAS — REFORCO_LINGUAGENS
 
-**Última atualização:** 2026-10-06 10:22:07
+**Última atualização:** 2026-10-07 22:59:24
 
 ---
 
@@ -8,7 +8,7 @@
 
 | Arquivo | Status | Tamanho | Observações |
 |---------|--------|---------|-------------|
-| **EMENTA-CHALKIE-AI.md** | ✅ PRESENTE | 14866 chars | ✅ CONFORME (14.800–14.950 chars) |
+| **EMENTA-CHALKIE-AI.md** | ✅ PRESENTE | 14929 chars | ✅ CONFORME (14.800–14.950 chars) |
 
 ## ⏱️ Carga Horária
 
@@ -39,6 +39,7 @@
 | Data | Ação | Detalhes |
 |------|------|----------|
 | 2026-10-01 | Inicialização | Status criado automaticamente |
+| 2026-10-07 | Capacidades | Lista de capacidades trocada pelas 6 da UC 7 na ementa do curso (14.929 chars) |
 
 ---
 

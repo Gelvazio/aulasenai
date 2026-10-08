@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 56, item 56.4 — aceite do usuário (atividades de sexta: objetiva de 100 e discursiva de 40). Depois: Etapa 51, item 51.3 — aceite do usuário (importar o .doc no Google Docs). Depois: Etapa 50, item 50.3 — aceite do usuário (header de professor comum sem os menus). Etapa 49, item 49.2 — criar a conta da professora Cintia em `criarUsuariosBancoDados.html`. Depois: Etapa 49, item 49.2 — criar a conta da professora Cintia na aba Professores de `criarUsuariosBancoDados.html`. Depois: Etapa 48, item 48.7 — o usuário preenche `docs/rotulos-aulas-ajustar.md` (rótulos "AULA NN") e pede para aplicar; depois 48.8 — aceite. Depois: Etapa 44, item 44.4 — aceite do usuário (liberar e testar a Prova Prática 06-10-2026). Depois: Etapa 38, item 38.3 — aceite do usuário (gabarito nas discursivas). Depois: Etapa 37, item 37.4 — aceite do usuário (testar Liberar gabaritos como professor e Exportar Gabarito como aluno). Depois: Etapa 35, item 35.2 — aceite do usuário (testar a tabela de notas logado como professor). Depois: Etapa 29, item 29.5 — aceite do usuário (discursivas de sexta). Depois: Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
+**Próximo passo:** Etapa 67, item 67.4 — aceite do usuário (conferir a duração dos 29 vídeos da apostila de Reforço de Linguagens). Depois: Etapa 64, item 64.6 — aceite do usuário (apostila de Reforço de Linguagens). Depois: Etapa 66, item 66.2 — aceite do usuário (menu da matéria). Depois: Etapa 63, item 63.2 — aceite do usuário (link do curso no índice). Depois: Etapa 62, item 62.2 — aceite do usuário (apostila de Testes de Frontend). Depois: Etapa 61, item 61.4 — aceite do usuário (autor, versão, data e hora na apostila da ITIC). Depois: Etapa 56, item 56.4 — aceite do usuário (atividades de sexta: objetiva de 100 e discursiva de 40). Depois: Etapa 51, item 51.3 — aceite do usuário (importar o .doc no Google Docs). Depois: Etapa 50, item 50.3 — aceite do usuário (header de professor comum sem os menus). Etapa 49, item 49.2 — criar a conta da professora Cintia em `criarUsuariosBancoDados.html`. Depois: Etapa 49, item 49.2 — criar a conta da professora Cintia na aba Professores de `criarUsuariosBancoDados.html`. Depois: Etapa 48, item 48.7 — o usuário preenche `docs/rotulos-aulas-ajustar.md` (rótulos "AULA NN") e pede para aplicar; depois 48.8 — aceite. Depois: Etapa 44, item 44.4 — aceite do usuário (liberar e testar a Prova Prática 06-10-2026). Depois: Etapa 38, item 38.3 — aceite do usuário (gabarito nas discursivas). Depois: Etapa 37, item 37.4 — aceite do usuário (testar Liberar gabaritos como professor e Exportar Gabarito como aluno). Depois: Etapa 35, item 35.2 — aceite do usuário (testar a tabela de notas logado como professor). Depois: Etapa 29, item 29.5 — aceite do usuário (discursivas de sexta). Depois: Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -12,7 +12,7 @@ Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
 - **Não entra:** histórico anterior (está no Git, em `TASKS.md` e em `docs/`).
 - **Critério de pronto:** item verificado, commit local feito e aceite do usuário.
-- **Premissas e restrições:** regras do `CLAUDE.md` (sem navegador, sem push, um commit por tarefa).
+- **Premissas e restrições:** regras do `CLAUDE.md` (sem navegador, push só na nuvem — direto na `main` —, um commit por tarefa).
 
 ## Etapa 1 — Atualizar `ANALISE-GERACAO-AULAS.md` do Técnico em Informática para Internet (pedida em 2026-10-03)
 | Item | Descrição | Status | Concluído em | Verificação |
@@ -652,3 +652,97 @@ Fontes (fora do Git): `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/ATIVIDADE-INDIVIDUAL-APOST
 |------|-----------|--------|--------------|-------------|
 | 59.1 | `turma.hora_fim` da 135081 (AI AOPL 2026/2 V1 · Tarde) de 17:00 para 17:15, a pedido do usuário; vale para todas as atividades e avaliações da turma. Fora do horário continua bloqueado (nenhum aluno em `atividade_liberada_fora_horario` nas ids 81 e 85) | ✅ Concluído | 2026-10-07 | Consulta: 13:00–17:15 |
 | 59.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 60 — Atividades de sexta liberadas para a manhã (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 60.1 | Turma 135080 (AI AOPL 2026/2 M1) retirada de `atividade.bloqueio` nas ids 85 (objetiva de 100) e 81 (discursiva de 30), a pedido do usuário; continuam bloqueadas para 122552, 133933 e QA LBTSN 2026/1 M2. A manhã responde só no horário dela (07:15–11:15) | ✅ Concluído | 2026-10-07 | Consulta: manhã e tarde liberadas nas duas |
+| 60.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 55 — Combo "Aluno" do professor também nas objetivas (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 55.1 | Módulo da Etapa 54 tornado genérico: `respostas-aluno-discursiva.js/.css` → `assets/js/respostas-aluno-professor.js` + `assets/css/respostas-aluno-professor.css` (tabela, colunas e conversão vêm de quem chama) | ✅ Concluído | 2026-10-07 | `node --check` ok |
+| 55.2 | Discursivas usam o módulo genérico (`avaliacao-discursiva.js`) | ✅ Concluído | 2026-10-07 | `node --check` ok |
+| 55.3 | Objetivas: combo abaixo da identificação; ao escolher o aluno, destaca as alternativas dele (`respostas-atividade.js`) | ✅ Concluído | 2026-10-07 | `node --check` ok |
+| 55.4 | Aceite do usuário (abrir uma objetiva como professor e escolher um aluno) | ⬜ Pendente | — | — |
+
+## Etapa 61 — Data, hora, autor e versão nas apostilas (regra global; começa pela ITIC) (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 61.1 | Gerador: campos `autor_apostila` e `versao_apostila` obrigatórios no `materia.json`; capa e rodapé do HTML e cabeçalho do Markdown completo com autor, versão, data e hora | ✅ Concluído | 2026-10-07 20:15 | Gerador rodou sem erro; conferência 100% |
+| 61.2 | ITIC: `autor_apostila` = Gelvazio Camargo, `versao_apostila` = 1.0; cabeçalho do Markdown completo atualizado; HTML regerado | ✅ Concluído | 2026-10-07 20:15 | HTML: quadro na capa (Gelvazio Camargo · 1.0 · 07/10/2026 às 20:12) e rodapé "Versão 1.0"; linha igual no Markdown. O `APOSTILA-INTRODUCAO-TIC.pdf` antigo não tem os dados (reexportar pelo botão) |
+| 61.3 | Regra registrada no `CLAUDE.md` do projeto (REGRAS APOSTILAS, versão 2026-10-07 20:15) e no global | ✅ Concluído | 2026-10-07 20:15 | Leitura das seções; visualizador lê a versão no mesmo formato |
+| 61.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 62 — Autor, versão, data e hora na apostila de Testes de Frontend (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 62.1 | `materia.json`: `autor_apostila` = Gelvazio Camargo, `versao_apostila` = 1.0; HTML regerado (capa, rodapé e Markdown). Corrigido no gerador: comentário `# ...` dentro de bloco de código (YAML do cap. 09) era lido como título de capítulo no Markdown completo | ✅ Concluído | 2026-10-07 20:20 | Conferência 100%; 10 capítulos lidos; capa e rodapé com Gelvazio Camargo · 1.0 |
+| 62.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 63 — Link do curso "Técnico em Desenvolvimento de Sistemas" no índice de cursos (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 63.1 | A rota apontava para `MATERIAIS/TECNICO-DESENVOLVIMENTO-SISTEMAS/` (pasta movida para `C:\fontes\BACKUP-CURSOS-SENAI`). A pedido do usuário ("novo nome do curso: TECNICO-INFORMATICA-INTERNET"), as duas rotas do curso no `index.html` da raiz passam a abrir `MATERIAIS/TECNICO-INFORMATICA-INTERNET/index.html`. Banco não alterado (curso id 3 sem turmas) | ✅ Concluído | 2026-10-07 20:25 | `node`: JSON de rotas válido; pasta de destino existe |
+| 63.2 | Aceite do usuário (abrir o card no índice) | ⬜ Pendente | — | — |
+
+## Etapa 64 — Apostila de Reforço de Linguagens (pedida em 2026-10-07)
+
+Plano: [docs/apostila-reforco-linguagens.md](docs/apostila-reforco-linguagens.md) · Status por capítulo:
+`MATERIAIS/RIO_DO_SUL_MAIS_TECH/REFORCO_LINGUAGENS/APOSTILA/STATUS-APOSTILA.md`.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 64.1 | Ementa da matéria com as 6 capacidades da UC 7 da ementa do curso (decisão do usuário); `STATUS-EMENTAS.md` e `STATUS-EMENTAS-CURSOS.md` | ✅ Concluído | 2026-10-07 20:20 | 14.929 caracteres (dentro de 14.800–14.950) |
+| 64.2 | `materia.json` completo e literal (objetivo, justificativa, conhecimentos, 7 módulos, textos da ementa, avaliação, BNCC, prompts, indicadores) | ✅ Concluído | 2026-10-07 20:20 | Conferência 138/138 (100%) |
+| 64.3 | Gerador: carga horária por aula (6 h/7 h), ementa em listas, vídeos pendentes; ITIC e Testes de Frontend sem mudança | ✅ Concluído | 2026-10-07 20:20 | ITIC 278/278 e TF 185/185; Markdown completo das duas idêntico antes e depois |
+| 64.4 | Introdução + capítulos 01 a 10 (6 exercícios ITEM e 10 termos cada), Markdown completo e HTML | ✅ Concluído | 2026-10-07 20:20 | Gerador sem avisos de tema/capacidades · commit `da167c7` |
+| 64.5 | Push (branch e `main`) | ✅ Concluído | 2026-10-07 20:30 | `main` em `72901c7` |
+| 64.6 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 65 — Regra do push por ambiente (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 65.1 | `CLAUDE.md`: local = nunca fazer push; nuvem = sempre push direto na `main`, sem pull request e sem push forçado | ✅ Concluído | 2026-10-07 20:30 | Commit `72901c7` na `main` |
+| 65.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 66 — Apostila no menu de atividades de Reforço de Linguagens (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 66.1 | `ATIVIDADES/MENU-ATIVIDADES.js` (Índice, 📘 Apostila, atividades por aula 20 + 5) e tags do menu no índice, nas 20 atividades e na apostila | ✅ Concluído | 2026-10-07 20:40 | `node`: 3 itens e 20 subitens; todas as páginas têm `<header>` · commit `bffa74a` |
+| 66.2 | Aceite do usuário (abrir o menu numa atividade e clicar em Apostila) | ⬜ Pendente | — | — |
+
+## Etapa 67 — Vídeos na apostila de Reforço de Linguagens + identificação (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 67.1 | 29 vídeos reais (busca na web; 2 a 3 por capítulo) com duração "a conferir" (YouTube bloqueado na nuvem; decisão do usuário) | ✅ Concluído | 2026-10-07 20:50 | HTML com 29 caixas de vídeo e o aviso "duração a conferir pelo professor" |
+| 67.2 | Gerador aceita `a conferir` e não junta mais a linha seguinte ao canal de vídeo sem canal | ✅ Concluído | 2026-10-07 20:50 | ITIC e TF continuam lendo os mesmos vídeos |
+| 67.3 | Merge da `main` (sem conflitos) e identificação da apostila: Gelvazio Camargo · versão 1.0 · data e hora | ✅ Concluído | 2026-10-07 20:50 | Conferência 100% · `main` em `e5972a9` |
+| 67.4 | Aceite do usuário: conferir a duração de cada vídeo (trocar `a conferir` por `mm:ss` até 15 min ou apagar a linha) | ⬜ Pendente | — | — |
+| 67.5 | Anotação "⏳ CONFERIR LOCALMENTE" nas seções de vídeos (capítulos e Markdown completo, fora do HTML) e tarefa #11 no `TASKS.md` para conferir a duração no ambiente local | ✅ Concluído | 2026-10-08 | Conferência 138/138; HTML sem a anotação |
+
+## Etapa 68 — Autor e versão em todas as apostilas + regra no CLAUDE.md (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 68.1 | Conferir as apostilas existentes: ITIC e Testes de Frontend já tinham `autor_apostila`/`versao_apostila`; faltava Reforço de Linguagens | ✅ Concluído | 2026-10-07 | grep nos 3 `materia.json` |
+| 68.2 | Reforço de Linguagens: autor Gelvazio Camargo, versão 1.0 no `materia.json` e apostila HTML gerada de novo | ✅ Concluído | 2026-10-07 | Markdown com a linha "Autor · Versão · Data e hora"; HTML com o quadro na capa |
+| 68.3 | Regra "IDENTIFICAÇÃO DA APOSTILA" (seção REGRAS APOSTILAS do `CLAUDE.md`): obrigatória em todas, preenchida antes da 1ª geração, padrão Gelvazio Camargo / 1.0; versão e histórico do CLAUDE.md | ✅ Concluído | 2026-10-07 | Linha de versão no formato lido pelo `regras-modal.js` |
+| 68.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 69 — Bloquear de novo 81 e 85 até sexta; conferir capa de Reforço (tarefa pequena, 2026-10-07)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 69.1 | Atividades 81 e 85 bloqueadas de novo para as 5 turmas pela `definir_bloqueio_turma` (outra sessão as tinha liberado para 135080 e 135081). Liberar na sexta pelo interruptor do índice | ✅ Concluído | 2026-10-07 | Função devolveu `bloqueada = true` para as 5 turmas nas duas |
+| 69.2 | Atividade 80: respostas e entregas mantidas (decisão do usuário) | ✅ Concluído | 2026-10-07 | Nada alterado (3 entregas) |
+| 69.3 | Capa da apostila de Reforço de Linguagens com Autor Gelvazio Camargo, Versão 1.0 e Data e hora 07/10/2026 às 20:49 (versão do merge, com os 29 vídeos); rodapé "Versão 1.0" | ✅ Concluído | 2026-10-07 | Lido no HTML gerado (`capa-apostila__identificacao`, `data-rodape`) |

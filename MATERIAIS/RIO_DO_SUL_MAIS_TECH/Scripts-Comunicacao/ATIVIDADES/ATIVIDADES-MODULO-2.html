@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2: Comunicação Oral</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --gold: #FFD700;
+            --text: #2d3748;
+            --light: #f7fafc;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--gold);
+        }
+        header h1 { font-size: 40px; margin-bottom: 10px; }
+        header p { font-size: 16px; opacity: 0.95; }
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+            background: #f9fafb;
+            border-bottom: 2px solid #e2e8f0;
+            justify-content: center;
+        }
+        .nav-tabs button {
+            padding: 10px 20px;
+            border: 2px solid var(--primary);
+            background: white;
+            color: var(--primary);
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .nav-tabs button.active {
+            background: var(--primary);
+            color: white;
+        }
+        .content-section { display: none; padding: 40px; }
+        .content-section.active { display: block; }
+        .aula-card {
+            background: #f9fafb;
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .aula-badge {
+            background: var(--primary);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 12px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .aula-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+        .aula-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .tag {
+            background: #e6f2ff;
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+        .content-box {
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--gold);
+        }
+        .content-label {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+        .content-text { font-size: 14px; line-height: 1.6; }
+        .steps {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        .steps li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 13px;
+        }
+        .steps li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .nav-tabs { gap: 5px; }
+            .nav-tabs button { padding: 8px 12px; font-size: 12px; }
+            header h1 { font-size: 28px; }
+            .content-section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗣️ Módulo 2: Comunicação Oral</h1>
+            <p>Apresentações, Reuniões, Atendimento e Entrevistas — Aulas 04 a 09</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="aula04">Aula 04</button>
+            <button class="tab-btn" data-tab="aula05">Aula 05</button>
+            <button class="tab-btn" data-tab="aula06">Aula 06</button>
+            <button class="tab-btn" data-tab="aula07">Aula 07</button>
+            <button class="tab-btn" data-tab="aula08">Aula 08</button>
+            <button class="tab-btn" data-tab="aula09">Aula 09</button>
+        </div>
+
+        <!-- AULA 04 -->
+        <div id="aula04" class="content-section active">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 04</span>
+                <div class="aula-title">Preparar uma Apresentação Curta</div>
+                <div class="aula-meta">
+                    <span class="tag">60 min</span>
+                    <span class="tag">Duplas</span>
+                    <span class="tag">Apresentação Oral</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Organizar apresentação com introdução, desenvolvimento e conclusão, considerando objetivo e público.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A turma apresentará propostas para melhorar a organização dos materiais da sala. É preciso convencer colegas a adotar uma medida simples e viável (identificar caixas, organizar empréstimos ou reservar 5 minutos para guardar materiais).</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Prepare uma fala de dois minutos sobre uma proposta: identifique o problema, exponha a solução, dê um exemplo e mostre a ação esperada dos colegas.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (5 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Planejamento (10 min):</strong> Complete "Meu público é…", "Ao final, quero que ele…" e "Minha ideia principal é…"</li>
+                        <li><strong>Roteiro (15 min):</strong> Escreva abertura 30s, desenvolvimento 60s, conclusão 30s (palavras-chave, não texto decorado)</li>
+                        <li><strong>Apoio visual (10 min):</strong> Monte cartão ou slide com título e até 3 tópicos</li>
+                        <li><strong>Ensaio (15 min):</strong> Cada um apresenta e recebe feedback do colega; repetir parte confusa</li>
+                        <li><strong>Fechamento (10 min):</strong> Entregar roteiro revisado e registrar estratégia contra o nervosismo</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Objetivo definido<br>
+                        • Sequência lógica<br>
+                        • Exemplo compreensível<br>
+                        • Conclusão com ação esperada<br>
+                        • Respeito ao tempo (≈2 min)
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📦 ENTREGA</div>
+                    <div class="content-text">Roteiro, apoio visual e proposta de melhoria.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AULA 05 -->
+        <div id="aula05" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 05</span>
+                <div class="aula-title">Tom, Ritmo e Pausas</div>
+                <div class="aula-meta">
+                    <span class="tag">90 min</span>
+                    <span class="tag">Trios</span>
+                    <span class="tag">Oratória</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Usar recursos da voz para tornar a mensagem clara e ajustar a fala a partir de feedback.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um aviso importante perde clareza quando falado rápido demais, sem pausas ou sem destaque para a informação principal. "A oficina começa às 14h, na sala 3. Tragam caderno e lápis. Se não puderem participar, avisem a equipe até o intervalo."</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Apresente a mesma mensagem de duas formas e explique como as escolhas de voz mudam a compreensão. Depois, aplique os ajustes à apresentação da aula 04.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (6 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Demonstração (10 min):</strong> Professor lê aviso sem pausas e depois destacando horário, local, materiais</li>
+                        <li><strong>Marcação (15 min):</strong> Inserir barras para pausas e sublinhar palavras que precisam destaque</li>
+                        <li><strong>Rodízio (20 min):</strong> Cada estudante lê e recebe feedback sobre audibilidade, velocidade, clareza</li>
+                        <li><strong>Aplicação (20 min):</strong> Revisar e ensaiar a fala da aula 04 com pausas e ênfases</li>
+                        <li><strong>Segunda rodada (15 min):</strong> Apresentar novamente aos colegas e comparar compreensão antes/depois</li>
+                        <li><strong>Registro (10 min):</strong> "Ajustei…; o efeito percebido foi…; ainda preciso…"</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Pausas coerentes com mudança de ideia<br>
+                        • Destaque às informações essenciais<br>
+                        • Fala compreensível (nem rápido demais, nem lento)<br>
+                        • Uso efetivo do feedback
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AULA 06 -->
+        <div id="aula06" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 06</span>
+                <div class="aula-title">Reunião com Decisão e Registro</div>
+                <div class="aula-meta">
+                    <span class="tag">90 min</span>
+                    <span class="tag">Grupos de 4-6</span>
+                    <span class="tag">Reunião</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Participar de reunião, escutar propostas, argumentar e sintetizar decisões.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A equipe precisa escolher uma atividade para uma feira de 40 minutos. Há 6 integrantes e apenas uma sala. As opções são: quiz de comunicação, oficina de cartazes ou simulação de atendimento. Materiais disponíveis: papel, canetas e quadro.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Conduza uma reunião para escolher uma opção, distribuir responsabilidades e registrar o acordo. A escolha precisa caber no tempo e nos recursos disponíveis.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (6 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Preparação (10 min):</strong> Ler o problema e distribuir papéis (mediador, secretário, controlador de tempo, participantes)</li>
+                        <li><strong>Propostas individuais (15 min):</strong> Cada estudante apresenta opção, vantagem e dificuldade prevista</li>
+                        <li><strong>Reunião (25 min):</strong> Comparar propostas, esclarecer dúvidas e decidir por consenso ou votação registrada</li>
+                        <li><strong>Síntese (15 min):</strong> Registrar pauta, participantes, opção escolhida, justificativa, tarefas, responsáveis e prazos</li>
+                        <li><strong>Leitura de confirmação (15 min):</strong> Secretário lê o registro; participantes indicam se ele representa o acordo</li>
+                        <li><strong>Reflexão (10 min):</strong> Cada estudante relata uma contribuição sua e uma ideia de colega que considerou</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Pertinência das propostas apresentadas<br>
+                        • Respeito aos turnos de fala<br>
+                        • Decisão viável dentro do contexto<br>
+                        • Responsabilidades e prazos explícitos
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AULA 07 -->
+        <div id="aula07" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 07</span>
+                <div class="aula-title">Escutar Antes de Responder</div>
+                <div class="aula-meta">
+                    <span class="tag">60 min</span>
+                    <span class="tag">Trios</span>
+                    <span class="tag">Atendimento</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Praticar escuta ativa, esclarecer necessidades e propor encaminhamento respeitoso.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Uma visitante da feira reclama: "Vim para a oficina das 14h e ninguém sabe onde vai acontecer!" A sala mudou da 3 para a 5; a atividade começará às 14h15; a organização esqueceu de atualizar um cartaz.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Simule o atendimento sem culpar a visitante e sem prometer o que não pode cumprir. Confirme a dúvida, explique a mudança e ofereça um encaminhamento claro.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (5 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Leitura (10 min):</strong> Separar fatos confirmados de suposições</li>
+                        <li><strong>Preparação (10 min):</strong> Escrever duas perguntas de esclarecimento e uma frase de acolhimento</li>
+                        <li><strong>Simulações (20 min):</strong> Realizar três rodadas, trocando os papéis (visitante, atendente, observador)</li>
+                        <li><strong>Revisão (10 min):</strong> Reescrever uma resposta pouco adequada, como "O problema não é meu, vai procurar lá"</li>
+                        <li><strong>Fechamento (10 min):</strong> Produzir um registro de atendimento com dúvida, informação fornecida e solução proposta</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Escuta sem interrupção desnecessária<br>
+                        • Confirmação de entendimento da dúvida<br>
+                        • Informações corretas (sala e horário)<br>
+                        • Encaminhamento respeitoso e claro
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AULA 08 -->
+        <div id="aula08" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 08</span>
+                <div class="aula-title">Entrevista Simulada</div>
+                <div class="aula-meta">
+                    <span class="tag">60 min</span>
+                    <span class="tag">Trios</span>
+                    <span class="tag">Entrevista</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Apresentar experiências com clareza, preparar respostas e manter postura respeitosa em entrevista.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A escola selecionará estudantes para a equipe de apoio de um evento. É uma simulação educativa, sem contratação. O entrevistador quer conhecer experiências de colaboração, organização e aprendizagem.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Prepare respostas com exemplos escolares ou pessoais que você queira compartilhar. Não invente experiência profissional. Responda: "Por que quer participar?", "Conte uma situação em que colaborou com um grupo" e "Como age quando não sabe realizar uma tarefa?". Prepare também uma pergunta sobre a função.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (5 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Preparação (10 min):</strong> Identificar responsabilidades da equipe: orientar visitantes e organizar materiais</li>
+                        <li><strong>Respostas (15 min):</strong> Estruturar um exemplo em situação → sua ação → resultado ou aprendizado</li>
+                        <li><strong>Entrevistas (20 min):</strong> Alternar os papéis em rodadas breves e registrar pontos fortes e dúvidas</li>
+                        <li><strong>Reformulação (10 min):</strong> Melhorar uma resposta genérica ("Sou bom em tudo") utilizando um exemplo concreto</li>
+                        <li><strong>Saída (5 min):</strong> Registrar uma pergunta pertinente que faria ao entrevistador</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Respostas coerentes com a função<br>
+                        • Exemplos concretos e verdadeiros<br>
+                        • Sinceridade e autenticidade<br>
+                        • Escuta e clareza na comunicação
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AULA 09 -->
+        <div id="aula09" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 09</span>
+                <div class="aula-title">Atendimento e Escuta Ativa</div>
+                <div class="aula-meta">
+                    <span class="tag">90 min</span>
+                    <span class="tag">Duplas</span>
+                    <span class="tag">Atendimento com Empatia</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Diferenciar ouvir de escutar ativamente; aplicar técnicas de parafraseamento, validação emocional e perguntas abertas em situações de atendimento com reclamações ou dúvidas.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um cliente/usuário chega indignado com um problema: comprou um produto que não funciona, perdeu um prazo importante, ou recebeu atendimento inadequado. A frustração é legítima e o atendente precisa demonstrar que compreende o incômodo antes de oferecer soluções técnicas.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Simule um atendimento aplicando os três pilares da escuta ativa: eliminar distrações, usar linguagem corporal aberta e suspender julgamentos. Aplique parafraseamento, validação emocional e perguntas abertas para compreender e desescalar o conflito.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (6 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Preparação (10 min):</strong> Ler cenário de reclamação e criar dois personagens (cliente irritado, atendente profissional); definir 3 informações que o atendente desconhece</li>
+                        <li><strong>Acolhimento (10 min):</strong> Cliente expõe reclamação sem interrupção; atendente ouve com contato visual, postura aberta e sem rebater</li>
+                        <li><strong>Parafraseamento (15 min):</strong> Atendente resume o problema com suas palavras ("Deixe-me ver se entendi: você chegou atrasado porque…"); cliente confirma ou corrige</li>
+                        <li><strong>Validação emocional (15 min):</strong> Atendente reconhece o incômodo ("Compreendo totalmente como isso causou transtorno"); depois propõe solução viável dentro de regras</li>
+                        <li><strong>Perguntas abertas (20 min):</strong> Trocar papéis e repetir; observador registra exemplo de pergunta fechada ("Você quer reembolso?") e como reformulá-la de forma aberta ("O que você espera que façamos para resolver isso?")</li>
+                        <li><strong>Registro (20 min):</strong> Produzir chamado profissional com: Identificação, Fato Narrado (neutro), Ações Executadas, Compromisso e Prazo</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Ouve sem interrupção e sem preparar resposta defensiva<br>
+                        • Parafraseia com precisão (palavra-chave + contexto)<br>
+                        • Valida emoção antes de explicar regras<br>
+                        • Perguntas abertas estimulam fala do cliente<br>
+                        • Encaminhamento ganha-ganha (cliente e instituição respeitados)<br>
+                        • Registro objetivo e fidedigno
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📦 ENTREGA</div>
+                    <div class="content-text">Simulação prática com rotação de papéis, reescrita de uma resposta inadequada e um chamado profissional completo.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Módulo 2 — Comunicação Oral (Aulas 04-09)</strong></p>
+        <p>Rio do Sul Mais Tech — SENAI</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+                document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.getElementById(tabName).classList.add('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

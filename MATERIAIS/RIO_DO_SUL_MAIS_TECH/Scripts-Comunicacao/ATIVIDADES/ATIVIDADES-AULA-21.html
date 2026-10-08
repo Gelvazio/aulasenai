@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 21: Avaliação e Autoavaliação</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #2d3748; line-height: 1.6; min-height: 100vh; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 20px; text-align: center; border-bottom: 4px solid #FFD700; }
+        header h1 { font-size: 40px; margin-bottom: 10px; }
+        header p { font-size: 16px; opacity: 0.9; }
+        .content { padding: 40px; }
+        .aula-card { background: #f9fafb; border-left: 5px solid #667eea; padding: 25px; margin-bottom: 20px; border-radius: 8px; }
+        .aula-header { display: flex; gap: 15px; align-items: start; margin-bottom: 20px; }
+        .aula-badge { background: #667eea; color: white; padding: 8px 12px; border-radius: 6px; font-weight: 700; font-size: 12px; min-width: 60px; text-align: center; }
+        .aula-title { font-size: 22px; font-weight: 700; color: #1a202c; }
+        .aula-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+        .tag { background: #e6f2ff; color: #667eea; padding: 4px 10px; border-radius: 12px; font-size: 12px; }
+        .content-box { padding: 18px; background: white; border-radius: 6px; border-left: 3px solid #FFD700; margin: 15px 0; }
+        .content-label { font-weight: 700; color: #667eea; font-size: 14px; margin-bottom: 8px; }
+        .content-text { font-size: 14px; color: #2d3748; line-height: 1.6; }
+        .question-box { background: #e6f2ff; padding: 15px; border-radius: 6px; margin: 12px 0; border-left: 4px solid #667eea; }
+        .question-num { font-weight: 700; color: #667eea; font-size: 13px; }
+        .question-text { margin-top: 6px; font-size: 13px; color: #2d3748; }
+        .pontuacao { font-size: 12px; color: #667eea; font-weight: 600; margin-top: 4px; }
+        .timeline { display: grid; gap: 12px; margin: 15px 0; }
+        .timeline-item { display: flex; gap: 12px; }
+        .timeline-dot { width: 24px; height: 24px; background: #667eea; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: 700; }
+        .timeline-text { font-size: 13px; padding-top: 2px; }
+        .checklist { list-style: none; margin: 12px 0; }
+        .checklist li { padding: 8px 0; font-size: 13px; display: flex; gap: 8px; }
+        .checklist li:before { content: "✓"; color: #2E7D32; font-weight: 700; }
+        footer { background: #2d3748; color: white; padding: 30px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Aula 21: Avaliação e Autoavaliação</h1>
+            <p>Transferir o Aprendizado para Outro Caso — 30 minutos</p>
+        </header>
+
+        <div class="content">
+            <div class="aula-card">
+                <div class="aula-header">
+                    <div class="aula-badge">AULA 21</div>
+                    <div>
+                        <div class="aula-title">Transferir o Aprendizado para Outro Caso</div>
+                        <div class="aula-meta">
+                            <span class="tag">30 min</span>
+                            <span class="tag">Individual</span>
+                            <span class="tag">Avaliação Final</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Aplicar conhecimentos em situação nova, identificar melhorias e estabelecer uma meta de desenvolvimento.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um clube de leitura envia: "Galera, mudou tudo. Vai ser lá amanhã. Levem as coisas. Quem não entendeu pergunta pra alguém."<br><br>
+                    <strong>Dados confirmados:</strong> encontro na quarta-feira, às 15h, na sala 2; levar um livro escolhido; confirmar presença até terça-feira às 17h pelo canal interno da turma.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 FORMATO DA AVALIAÇÃO</div>
+                    <div class="content-text">Responda individualmente às 4 questões abaixo e complete a autoavaliação. Esta é uma proposta de avaliação breve adequada aos 30 minutos previstos (não equivale a prova de 15-20 questões).</div>
+                </div>
+            </div>
+
+            <div class="aula-card">
+                <div class="content-label">⏱️ CRONOGRAMA (30 min)</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot">1</div>
+                        <div class="timeline-text"><strong>Orientação e leitura:</strong> conhecer a tarefa e critérios (3 min)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">2</div>
+                        <div class="timeline-text"><strong>Respostas individuais:</strong> responder as 4 questões (20 min)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">3</div>
+                        <div class="timeline-text"><strong>Autoavaliação:</strong> completar reflexão pessoal (5 min)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">4</div>
+                        <div class="timeline-text"><strong>Entrega:</strong> entregar respostas e autoavaliação (2 min)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="aula-card">
+                <div class="content-label">❓ 4 QUESTÕES DE AVALIAÇÃO</div>
+
+                <div class="question-box">
+                    <div class="question-num">QUESTÃO 1 — Reescrever o Aviso</div>
+                    <div class="question-text">Reescreva o aviso em até 80 palavras, incluindo todas as informações necessárias.</div>
+                    <div class="pontuacao">Pontuação: 3 pontos (0,5 pt por elemento: dia, horário, sala, material, prazo confirmação, canal confirmação)</div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-num">QUESTÃO 2 — Identificar Problemas</div>
+                    <div class="question-text">Identifique dois problemas da mensagem original e explique a consequência de cada um.<br><br>
+                    <strong>Exemplos de problemas:</strong> "lá" não identifica o local; "as coisas" não informa o material; "amanhã" não especifica que dia.</div>
+                    <div class="pontuacao">Pontuação: 2 pontos (1 ponto por relação problema → consequência coerente)</div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-num">QUESTÃO 3 — Escolher e Justificar Canal</div>
+                    <div class="question-text">Escolha um canal para o aviso, justifique considerando o público e indique como obter confirmação de entendimento.</div>
+                    <div class="pontuacao">Pontuação: 3 pontos (1 pt canal viável + 1 pt justificativa + 1 pt confirmação útil)</div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question-num">QUESTÃO 4 — Feedback Respeitoso</div>
+                    <div class="question-text">Escreva um feedback respeitoso ao autor do aviso, com observação concreta e sugestão de melhoria.</div>
+                    <div class="pontuacao">Pontuação: 2 pontos (1 pt observação específica + 1 pt sugestão executável)</div>
+                </div>
+            </div>
+
+            <div class="aula-card">
+                <div class="content-label">📊 AUTOAVALIAÇÃO (Reflexão Individual)</div>
+                <div class="content-text" style="margin-top: 12px;">Complete as três frases abaixo:</div>
+                <div class="question-box" style="background: #fff9e6; border-left-color: #FFD700;">
+                    <div class="question-num">1. Hoje consigo…</div>
+                    <div class="question-text" style="margin-top: 8px; font-style: italic;">Reflita sobre uma habilidade de comunicação que agora você domina</div>
+                </div>
+                <div class="question-box" style="background: #fff9e6; border-left-color: #FFD700;">
+                    <div class="question-num">2. A evidência no meu portfólio é…</div>
+                    <div class="question-text" style="margin-top: 8px; font-style: italic;">Cite um arquivo ou produção que mostra seu progresso</div>
+                </div>
+                <div class="question-box" style="background: #fff9e6; border-left-color: #FFD700;">
+                    <div class="question-num">3. Na próxima atividade vou…</div>
+                    <div class="question-text" style="margin-top: 8px; font-style: italic;">Estabeleça uma meta realista para sua próxima avaliação</div>
+                </div>
+            </div>
+
+            <div class="aula-card">
+                <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                <ul class="checklist">
+                    <li>Fidelidade aos dados (dia, horário, sala, material, prazos)</li>
+                    <li>Identificação de ambiguidades e suas consequências</li>
+                    <li>Canal justificado considerando acesso do público</li>
+                    <li>Feedback acionável e respeitoso</li>
+                    <li>Autoavaliação reflexiva e honesta</li>
+                </ul>
+            </div>
+
+            <div class="aula-card">
+                <div class="content-label">📝 REFERÊNCIA DE CORREÇÃO (Para o Professor)</div>
+                <div class="content-text">
+                    <strong>Q1:</strong> Atribuir 0,5 ponto para cada elemento (dia, horário, sala, material, prazo, canal). Uma formulação possível: "O clube se reunirá quarta às 15h, sala 2. Traga um livro e confirme presença até terça 17h pelo canal interno."<br><br>
+
+                    <strong>Q2:</strong> 1 ponto por relação problema → consequência coerente. Não pontuar duas vezes a mesma relação repetida.<br><br>
+
+                    <strong>Q3:</strong> 1 pt pelo canal viável; 1 pela justificativa ligada ao acesso/finalidade; 1 por forma útil de confirmação.<br><br>
+
+                    <strong>Q4:</strong> 1 pt pela observação específica, respeitosa, dirigida ao texto; 1 por sugestão executável relacionada ao problema.<br><br>
+
+                    <strong>Devolutiva posterior:</strong> Apresentar um ponto consolidado e um próximo passo por estudante. Para retomada, solicitar reescrita apenas dos trechos com dificuldade.
+                </div>
+            </div>
+
+            <div class="aula-card" style="background: #e6f2ff; border-left-color: #667eea;">
+                <div class="content-label" style="color: #667eea;">💡 NOTA IMPORTANTE</div>
+                <div class="content-text">A autoavaliação é um registro separado e <strong>não altera automaticamente os 10 pontos das questões</strong>. Serve como reflexão sobre o progresso pessoal durante o módulo.</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Aula 21 — Avaliação e Autoavaliação (Fechamento do Módulo)</strong></p>
+        <p>Rio do Sul Mais Tech — SENAI</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 5: Argumentação e Persuasão</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #667eea; --secondary: #764ba2; --gold: #FFD700; --text: #2d3748; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: var(--text); line-height: 1.6; min-height: 100vh; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
+        header { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 40px 20px; text-align: center; border-bottom: 4px solid var(--gold); }
+        header h1 { font-size: 40px; margin-bottom: 10px; }
+        header p { font-size: 16px; opacity: 0.95; }
+        .nav-tabs { display: flex; flex-wrap: wrap; gap: 10px; padding: 20px; background: #f9fafb; border-bottom: 2px solid #e2e8f0; justify-content: center; }
+        .nav-tabs button { padding: 10px 20px; border: 2px solid var(--primary); background: white; color: var(--primary); border-radius: 20px; cursor: pointer; font-weight: 600; transition: all 0.3s; }
+        .nav-tabs button.active { background: var(--primary); color: white; }
+        .content-section { display: none; padding: 40px; }
+        .content-section.active { display: block; }
+        .aula-card { background: #f9fafb; border-left: 5px solid var(--primary); padding: 20px; margin-bottom: 20px; border-radius: 8px; }
+        .aula-badge { background: var(--primary); color: white; padding: 8px 12px; border-radius: 6px; font-weight: 700; font-size: 12px; display: inline-block; margin-bottom: 10px; }
+        .aula-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+        .aula-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+        .tag { background: #e6f2ff; color: var(--primary); padding: 4px 10px; border-radius: 12px; font-size: 12px; }
+        .content-box { padding: 15px; background: white; border-radius: 6px; margin-bottom: 15px; border-left: 3px solid var(--gold); }
+        .content-label { font-weight: 700; color: var(--primary); font-size: 13px; margin-bottom: 8px; }
+        .content-text { font-size: 14px; line-height: 1.6; }
+        .steps { list-style: none; padding: 0; margin: 10px 0; }
+        .steps li { padding: 8px 0; padding-left: 24px; position: relative; font-size: 13px; }
+        .steps li:before { content: "→"; position: absolute; left: 0; font-weight: 700; color: var(--primary); }
+        footer { background: #2d3748; color: white; padding: 30px 20px; text-align: center; }
+        @media (max-width: 768px) { .nav-tabs { gap: 5px; } .nav-tabs button { padding: 8px 12px; font-size: 12px; } header h1 { font-size: 28px; } .content-section { padding: 20px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💡 Módulo 5: Argumentação e Persuasão</h1>
+            <p>Construção de Argumento, Refutação, Debate — Aulas 15 a 17</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="aula15">Aula 15</button>
+            <button class="tab-btn" data-tab="aula16">Aula 16</button>
+            <button class="tab-btn" data-tab="aula17">Aula 17</button>
+        </div>
+
+        <!-- AULA 15 -->
+        <div id="aula15" class="content-section active">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 15</span>
+                <div class="aula-title">Estrutura de Argumento: Afirmação, Evidência, Conclusão</div>
+                <div class="aula-meta">
+                    <span class="tag">60 min</span>
+                    <span class="tag">Duplas</span>
+                    <span class="tag">Lógica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Construir argumento coerente em 3 partes: tese (afirmação principal), prova (evidência/exemplo), conclusão (reafirmação da tese).</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um estudante quer convencer amigos a estudar em grupo para a prova. Pode dizer "estudar em grupo é melhor" (fraco) ou estruturar: por quê, com qual evidência, e qual benefício (forte).</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Construa um argumento de 3 partes sobre um tema escolar (ex: escola deve ter aula de educação financeira). Depois avalie argumentos de 2 colegas identificando onde faltam elementos.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (5 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Modelo (10 min):</strong> Professora mostra exemplo: "Escola deve ter aula de educação financeira (tese) porque 65% dos adultos não conseguem poupar (evidência), logo adolescentes precisam aprender cedo (conclusão)"</li>
+                        <li><strong>Escolher tópico (5 min):</strong> Dupla escolhe tema; define sua posição (a favor ou contra)</li>
+                        <li><strong>Construir argumento (20 min):</strong> Escrever afirmação, 2-3 evidências concretas (dados, exemplos, lógica), reafirmação clara</li>
+                        <li><strong>Compartilhar (15 min):</strong> Dois trios juntam-se; cada um apresenta seu argumento; outro trio identifica: tese clara? Evidências convincentes? Conclusão reafirma tese?</li>
+                        <li><strong>Revisão (10 min):</strong> Dupla reescreve seu argumento reforçando partes fracas</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Afirmação principal clara e mensurável<br>
+                        • Evidência concreta (não opinião vaga)<br>
+                        • Lógica conectando evidência à conclusão<br>
+                        • Conclusão reafirma tese original
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AULA 16 -->
+        <div id="aula16" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 16</span>
+                <div class="aula-title">Identificar Falácia: Refutar Argumento Fraco</div>
+                <div class="aula-meta">
+                    <span class="tag">75 min</span>
+                    <span class="tag">Trios</span>
+                    <span class="tag">Crítica Lógica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Reconhecer falácias comuns (ad hominem, apelo à emoção, generalização precipitada) e responder com argumento racional.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Em discussão, alguém diz: "Você nunca vai conseguir manter dieta porque é preguiçoso" (ataque pessoal, não argumento). Como responder sem ficar na defensiva?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Receba 4 argumentos de exemplo (cada um com um tipo de falácia diferente). Identifique a falácia e reescreva o argumento de forma lógica, sem o erro.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (6 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Introdução (10 min):</strong> Professora explica 4 falácias: ad hominem (ataque pessoal), apelo à emoção (manipula sentimentos), generalização ("todos são assim"), falsa causalidade ("porque A aconteceu, B foi causado por A")</li>
+                        <li><strong>Exemplo 1 (12 min):</strong> Trio recebe argumento falacioso; identifica tipo de erro; escreve versão corrigida</li>
+                        <li><strong>Exemplo 2 (12 min):</strong> Processa segundo argumento; análise similar</li>
+                        <li><strong>Exemplo 3 (12 min):</strong> Terceiro argumento; análise similar</li>
+                        <li><strong>Exemplo 4 (12 min):</strong> Quarto argumento; análise similar</li>
+                        <li><strong>Discussão (17 min):</strong> Grupos apresentam correções; discutem como evitar falácias em próprio argumento</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Tipo de falácia identificado corretamente<br>
+                        • Explicação de por que é falácia<br>
+                        • Argumento corrigido é logicamente válido<br>
+                        • Resposta refuta sem atacar pessoalmente
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AULA 17 -->
+        <div id="aula17" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 17</span>
+                <div class="aula-title">Micro-Debate: Apresentar Posição, Ouvir Objeção, Refutar</div>
+                <div class="aula-meta">
+                    <span class="tag">90 min</span>
+                    <span class="tag">Grupos</span>
+                    <span class="tag">Debate</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Articular posição clara, escutar crítica sem defensividade, e responder logicamente refutando contraposição.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Dois grupos debaterão: "Redes sociais trazem mais benefícios ou malefícios para adolescentes?" Um grupo a favor, outro contra. Não há "vencedor"; o objetivo é diálogo respeitoso e construção de argumento.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Prepare um debate de 30 minutos dividido em 3 rodadas: (1) apresentação de posição; (2) objeções cruzadas; (3) conclusões. Ao fim, reflita sobre argumentos fortes de cada lado e elementos não ditos.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (6 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Preparação (20 min):</strong> Cada grupo prepara: tese, 3 argumentos principais, possíveis objeções. Escolhe porta-voz</li>
+                        <li><strong>Rodada 1: Apresentação (10 min):</strong> Grupo A apresenta posição (5 min); Grupo B responde com objeção principal (5 min)</li>
+                        <li><strong>Rodada 2: Refutação (10 min):</strong> Grupo A refuta objeção (5 min); Grupo B contra-refuta (5 min)</li>
+                        <li><strong>Rodada 3: Síntese (10 min):</strong> Cada grupo sintetiza sua posição e reconhece um ponto válido do outro grupo</li>
+                        <li><strong>Escuta atenta (30 min total):</strong> Audiência (resto da turma) toma notas sobre argumentos fortes vs. fracos</li>
+                        <li><strong>Reflexão (15 min):</strong> Turma discute: qual grupo argumentou melhor? Que evidência faltou? Como o debate muda percepção?</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Posição clara e bem estruturada<br>
+                        • Argumentos suportados por evidência<br>
+                        • Escuta respeitosa de contraposição<br>
+                        • Refutação lógica e sem ad hominem<br>
+                        • Reconhecimento de ponto válido do outro
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Módulo 5 — Argumentação e Persuasão (Aulas 15-17)</strong></p>
+        <p>Rio do Sul Mais Tech — SENAI</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+                document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.getElementById(tabName).classList.add('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

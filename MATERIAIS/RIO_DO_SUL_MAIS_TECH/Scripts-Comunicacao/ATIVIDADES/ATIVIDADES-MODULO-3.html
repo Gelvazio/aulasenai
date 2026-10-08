@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3: Comunicação Escrita Prática</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --gold: #FFD700;
+            --text: #2d3748;
+            --light: #f7fafc;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--gold);
+        }
+        header h1 { font-size: 40px; margin-bottom: 10px; }
+        header p { font-size: 16px; opacity: 0.95; }
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+            background: #f9fafb;
+            border-bottom: 2px solid #e2e8f0;
+            justify-content: center;
+        }
+        .nav-tabs button {
+            padding: 10px 20px;
+            border: 2px solid var(--primary);
+            background: white;
+            color: var(--primary);
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .nav-tabs button.active {
+            background: var(--primary);
+            color: white;
+        }
+        .content-section { display: none; padding: 40px; }
+        .content-section.active { display: block; }
+        .aula-card {
+            background: #f9fafb;
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .aula-badge {
+            background: var(--primary);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 12px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .aula-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+        .aula-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .tag {
+            background: #e6f2ff;
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+        .content-box {
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--gold);
+        }
+        .content-label {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+        .content-text { font-size: 14px; line-height: 1.6; }
+        .steps {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        .steps li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 13px;
+        }
+        .steps li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .nav-tabs { gap: 5px; }
+            .nav-tabs button { padding: 8px 12px; font-size: 12px; }
+            header h1 { font-size: 28px; }
+            .content-section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✍️ Módulo 3: Comunicação Escrita Prática</h1>
+            <p>Anotações, Avisos, Email Profissional — Aulas 09 a 11</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="aula09">Aula 09</button>
+            <button class="tab-btn" data-tab="aula10">Aula 10</button>
+            <button class="tab-btn" data-tab="aula11">Aula 11</button>
+        </div>
+
+        <!-- AULA 09 -->
+        <div id="aula09" class="content-section active">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 09</span>
+                <div class="aula-title">Anotação Eficaz em Aula</div>
+                <div class="aula-meta">
+                    <span class="tag">45 min</span>
+                    <span class="tag">Individual</span>
+                    <span class="tag">Estudo</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Registrar ideias principais durante aula, distinguindo informação essencial de detalhe, e organizar anotações para revisão.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um estudante enfrenta dilema durante aula de Química: escrever tudo (lentidão, perde aula) ou escrever pouco (depois não lembra). O desafio é encontrar equilíbrio e técnica de anotação que funcione.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Compare três técnicas (anotação linear, mapa mental, Cornell) assistindo uma mini-aula de 10 minutos sobre um tema real (ex: fotossíntese). Depois reflita qual técnica ajudou a retenção e organize revisão.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (5 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Técnicas (10 min):</strong> Professora mostra as 3 técnicas em pôster ou quadro; estudantes leem e discutem brevemente</li>
+                        <li><strong>Mini-aula (10 min):</strong> Professora leciona sobre um tema; estudantes anotam usando uma técnica à escolha</li>
+                        <li><strong>Comparação (10 min):</strong> Duplas trocam cadernos; leem e comentam legibilidade e clareza</li>
+                        <li><strong>Organização (10 min):</strong> Estudante coloca sua anotação em limpo, marca títulos e cria índice se necessário</li>
+                        <li><strong>Reflexão (5 min):</strong> Responda: qual técnica funcionou? Quais informações seu cérebro reteve? Como vai revisar?</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Ideias principais identificadas corretamente<br>
+                        • Anotação legível e bem organizada<br>
+                        • Distingue informação essencial de exemplo<br>
+                        • Técnica escolhida é executável em aula real
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AULA 10 -->
+        <div id="aula10" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 10</span>
+                <div class="aula-title">Aviso Escrito Claro e Preciso</div>
+                <div class="aula-meta">
+                    <span class="tag">60 min</span>
+                    <span class="tag">Duplas</span>
+                    <span class="tag">Comunicação</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Escrever aviso que inclua todas as informações essenciais, sem ambiguidade e formatado para leitura rápida.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A turma organiza uma viagem de estudos. Precisam avisar a todos sobre local, data, horário, o que trazer, prazo para confirmação, bem como destinatário de dúvidas. Um aviso confuso causa atraso e frustração.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Escriba um aviso de viagem que permita ao leitor: (1) saber imediatamente se participa; (2) ter certeza do que precisa levar e quando; (3) saber a quem perguntar se tiver dúvida. Depois revise com colega usando checklist.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (6 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Dados (10 min):</strong> Liste informações que o aviso precisa conter: data, horário, local, materiais, prazo confirmação, contato</li>
+                        <li><strong>Primeira versão (15 min):</strong> Escreva o aviso em forma corrida, sem se preocupar com formatação</li>
+                        <li><strong>Revisão de clareza (10 min):</strong> Leia o próprio aviso; remova jargão, esclareça abreviações, verifique se alguém desconheceria a resposta a cada pergunta</li>
+                        <li><strong>Formatação (10 min):</strong> Aplique estrutura: título, data/horário em destaque, lista de materiais com marcadores, prazo, contato</li>
+                        <li><strong>Feedback colega (10 min):</strong> Colega lê e responde: "Vou? Quando? Onde? O que levo? Quem me ajuda se confundido?"</li>
+                        <li><strong>Versão final (5 min):</strong> Aplique correções e entregue versão revisada</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Todas as 6 informações essenciais presentes<br>
+                        • Linguagem clara e acessível<br>
+                        • Formatação facilita leitura (títulos, listas)<br>
+                        • Leitor consegue responder às 5 perguntas
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AULA 11 -->
+        <div id="aula11" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 11</span>
+                <div class="aula-title">Email Profissional</div>
+                <div class="aula-meta">
+                    <span class="tag">75 min</span>
+                    <span class="tag">Duplas</span>
+                    <span class="tag">Escrita Formal</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Compor email profissional respeitoso, com solicitação clara, e avaliar tom apropriado ao contexto (professor, empresa, colega).</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um estudante precisa: (1) pedir extensão de prazo ao professor; (2) solicitar informação a uma empresa sobre estágio; (3) coobrar colega sobre tarefa atrasada. Cada contexto exige tom diferente.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Escreva 3 emails curtos (5-8 linhas cada), um para cada cenário, ajustando tom, formalidade e estrutura. Depois analise um email de ejemplo muito informal ou muito formal e reescreva.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (6 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Estrutura (10 min):</strong> Professora mostra template: Assunto | Saudação | Contexto | Solicitação | Fechamento</li>
+                        <li><strong>Email 1: ao professor (15 min):</strong> Solicite extensão de prazo com justificativa genuína e proposta de nova data</li>
+                        <li><strong>Email 2: a empresa (15 min):</strong> Solicite informações sobre processo de seleção para estágio; mencione interesse específico</li>
+                        <li><strong>Email 3: ao colega (10 min):</strong> Cobre tarefa atrasada com tom firme mas respeitoso; defina novo prazo</li>
+                        <li><strong>Análise de exemplo (10 min):</strong> Professora mostra email muito casual ("Oi, preciso de ajuda") e muito formal/robótico; dupla reescreve para tom apropriado</li>
+                        <li><strong>Auto-revisão (15 min):</strong> Cada estudante lê seus 3 emails; verifica tom, clareza, cortesia; ajusta se necessário</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Assunto apropriado e informativo<br>
+                        • Saudação e fechamento corretos para contexto<br>
+                        • Solicitação clara sem ambiguidade<br>
+                        • Tom respeitoso, nem muito formal nem muito casual<br>
+                        • Sem erros graves de ortografia
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Módulo 3 — Comunicação Escrita Prática (Aulas 09-11)</strong></p>
+        <p>Rio do Sul Mais Tech — SENAI</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+                document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.getElementById(tabName).classList.add('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

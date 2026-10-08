@@ -13,6 +13,7 @@
 | `materia.json` completo e literal (ementa da matéria + UC na ementa do curso) | ✅ Concluído |
 | Introdução (`CONTEUDO/INTRODUCAO.md`) | 👀 Aguardando validação |
 | Conferência Markdown × ementa da matéria (`--conferir`) | ✅ 100% (185/185 itens) em 2026-10-03 |
+| Autor, versão, data e hora (capa, rodapé e Markdown) | ✅ Gelvazio Camargo · versão 1.0 · 2026-10-07 |
 
 | Cap. | Tema | Teoria | Vídeos (≤ 15 min) | Resumo | Exercícios ITEM | Glossário | Vídeos conferidos pelo professor | Status |
 |---|---|---|---|---|---|---|---|---|

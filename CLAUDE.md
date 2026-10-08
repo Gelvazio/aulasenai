@@ -1,13 +1,28 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 20:03:29
+**Versão das regras:** 2026-10-08 08:22:48
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:22:48 | Merge da branch de 2026-10-07 com a `main`: valem as regras mais novas da `main` (push na nuvem automático em branch própria + PR; `TASKS.md` só pendentes + `TASKS_COMPLETE.md`); mantidos da branch o registro com **data e hora em segundos** (agora dentro da regra do `TASKS.md`, com o "📜 HISTÓRICO POR COMMIT" no `TASKS_COMPLETE.md`) e as correções de conflitos de 2026-10-07 20:03:29 que não foram substituídas (Word não global, final de tarefa, `AGENDA_COLABORADOR`, ementa na raiz, navegador headless, trechos antigos) |
+| 2026-10-08 11:10 | Na **nuvem** o push é **sempre permitido e automático**: ao final de **toda** tarefa que mudar arquivos, commit + push + PR sem esperar pedido nem confirmação do usuário |
+| 2026-10-08 11:00 | Branches das sessões juntadas na `main` (pull request): regra do push por branch + PR, apostila de ITIC concluída e apostila de Exploração de Carreiras (9 capítulos, conferência 157/157); vídeos sem duração unificados no formato `a conferir` (o `??:??` da branch de Exploração deixou de existir) e dados da matéria no formato do gerador da `main` (`textos_ementa`, `rubrica_lista`) |
+| 2026-10-08 10:00 | `TASKS.md` só com tarefas pendentes; concluídas e canceladas movidas para o novo `TASKS_COMPLETE.md` (lido só quando precisar do histórico) |
+| 2026-10-08 09:30 | Merge com a `main`: apostila e 9 atividades de 50 questões de Fundamentos da Tecnologia e Programação (33 h = 8 × 4 h + 1 h, aulas nº 6 a 14 no banco com cards "AULA 01" a "AULA 09"); conferência com a ementa lê também o **formato por módulos** do Rio do Sul Mais Tech (indicador na tabela de capacidades, BNCC em tabela, prompts `**M1:**`, glossário em lista, marcos, recursos em lista, exemplos e orientações) só quando o formato padrão não existe; vídeos pendentes da apostila na tarefa #12 do `TASKS.md` |
+| 2026-10-08 09:00 | Push na **nuvem** passa a ser sempre numa **branch própria + novo pull request** para a `main` (nunca push direto na `main`), para não sobrescrever nada; **local** continua sem push |
+| 2026-10-08 08:00 | Apostilas: vídeo sem duração conferida é aceito a pedido do usuário (hoje no formato `a conferir`); conferir depois (Exploração de Carreiras: tarefa #14 do `TASKS.md`) |
+| 2026-10-07 20:50 | Identificação da apostila obrigatória em **todas** as apostilas: `autor_apostila` (padrão Gelvazio Camargo) e `versao_apostila` (começa em 1.0) preenchidos no `materia.json` antes da 1ª geração; aplicada também em Reforço de Linguagens |
+| 2026-10-07 20:50 | Apostilas: vídeo com duração `a conferir` (link real, duração não conferida por bloqueio de rede) aceito pelo gerador, com aviso; 29 vídeos na apostila de Reforço de Linguagens |
+| 2026-10-07 20:40 | Reforço de Linguagens ganha menu de atividades (`MENU-ATIVIDADES.js` com 📚 Índice, 📘 Apostila e as atividades por aula) |
+| 2026-10-07 20:30 | Regra do push dividida por ambiente: **local** = nunca fazer push (continua); **nuvem** (Claude Code na web/remoto) = sempre fazer push, direto na `main`, sem pull request |
+| 2026-10-07 20:20 | Apostila de Reforço de Linguagens (10 capítulos, aguardando validação); gerador de apostilas aceita a carga horária de cada aula (6 h/7 h), ementas com capacidades em lista, conteúdos programáticos por módulo e aulas em negrito, e vídeos "⏳ pendentes" quando o YouTube não pode ser conferido; ementa de Reforço de Linguagens com as 6 capacidades da ementa do curso |
+| 2026-10-07 20:15 | Regra "IDENTIFICAÇÃO DA APOSTILA" (global): toda apostila mostra autor, versão, data e hora (campos `autor_apostila` e `versao_apostila` no `materia.json`); começou pela ITIC (autor Gelvazio Camargo, versão 1.0) |
 | 2026-10-07 20:03:29 | Conflitos resolvidos: push e pull request **só com pedido explícito** do usuário; Word deixa de ser regra global (só onde já existe ou a pedido); final de tarefa e plano em `docs/` sem contradição; `AGENDA_COLABORADOR` fora dos cursos; apostila 1 capítulo = 1 aula pela soma das horas; Reforço de Linguagens (duas pastas `CONTEUDO` se completam); ementa na raiz da matéria; navegador headless só para gerar arquivo pedido; trechos antigos (PDF com gabarito, menu ALUNOS, index.html, Supabase) atualizados |
 | 2026-10-07 19:51:43 | Regra "REGISTRO DE TODO PEDIDO NO `TASKS.md`": todo pedido anotado com data e hora **com segundos** (início, passos, conclusão, commit); `TASKS.md` vira quadro atual + histórico (outubro reconstruído dos commits); caminho do `TASKS.md` vale na máquina e na nuvem; versão das regras passa a ter segundos |
+| 2026-10-07 17:30 | Conferência da apostila aceita também ementas no formato Rio do Sul Mais Tech (capacidades em lista numerada, módulos de conteúdo, aulas em negrito, indicadores e casos em lista) |
+| 2026-10-07 17:00 | Combo "Aluno" do professor também nas atividades objetivas (alternativas marcadas pelo aluno, somente leitura); módulo único `respostas-aluno-professor.js` |
 | 2026-10-07 17:00 | Status da regra das apostilas atualizado: ITIC com os 10 capítulos, HTML e PDF prontos, aguardando validação do professor |
 | 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
 | 2026-10-07 10:00 | Apostilas: o HTML passa a ser gerado a partir do Markdown completo `APOSTILA-<MATERIA>.md` (antes lia os `CAPITULO-NN.md`) |
@@ -87,7 +102,7 @@ Registrada em 2026-10-03 a pedido do usuário.
   pendências do usuário, commit/push) vêm **em poucas linhas antes** da frase final.
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
-- ✅ **Um commit por tarefa** (local).
+- ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, numa branch própria + novo PR para a `main`).
 - ✅ **Aulas: uma por vez, completa** (2026-10-03): gerar e gravar uma aula (e todo o seu material)
   antes de passar à próxima, controlando em `<MATERIA>/AULAS/STATUS-AULAS.md` (ver a regra
   "GERAR E GRAVAR UMA AULA POR VEZ").
@@ -95,9 +110,11 @@ Registrada em 2026-10-03 a pedido do usuário.
   discursivas) e a matéria tem 10 aulas (uma por slide); ver a regra exclusiva da matéria.
 - ✅ **1 atividade objetiva de 50 questões por aula** (2026-10-03), controlada em
   `<MATERIA>/ATIVIDADES/STATUS-ATIVIDADES.md` (ver a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES").
-- ⛔ **Push só com pedido explícito** (2026-10-01; ajustada em 2026-10-07): o Claude faz o commit
-  local e **não** envia por conta própria. Quando o usuário **pedir explicitamente** ("faça push",
-  "faça o pull request"), o Claude faz o push e/ou abre o pull request (ver a regra "PUSH").
+- ⛔ **Push depende do ambiente** (2026-10-07): **local** (máquina do usuário) = **nunca fazer
+  push**, mesmo que ele peça — avisar que o commit está pronto para ele enviar; **nuvem** (Claude
+  Code na web/remoto) = **sempre fazer push numa branch própria e abrir um NOVO pull request
+  para a `main`**, nunca push direto na `main` (2026-10-08; ver a regra "PUSH: NUNCA NO AMBIENTE
+  LOCAL, SEMPRE NA NUVEM").
 - ⛔ **Conteúdo só pelos Markdowns, nunca de PDF** (2026-10-03): para conferir ou gerar conteúdo,
   ler os `.md` da matéria — em primeiro lugar o `EMENTA-CHALKIE-AI.md` (ver a regra "CONTEÚDO SÓ
   PELOS MARKDOWNS").
@@ -217,42 +234,40 @@ regra "PASTA `AULAS/` SEMPRE GERADA CONFORME A DOCUMENTAÇÃO DA MATÉRIA" (2026
 **ANTES DE RESPONDER QUALQUER COISA**, você DEVE:
 
 1. ✅ **LER o `TASKS.md` da raiz do repositório** (na máquina do usuário:
-   `C:\fontes\aulasenai\TASKS.md`; na nuvem: `TASKS.md` do clone) — tarefa atual e histórico
-2. ✅ **Verificar** se há tarefa em andamento (🔄) e quais passos faltam
+   `C:\fontes\aulasenai\TASKS.md`; na nuvem: `TASKS.md` do clone) — só as tarefas pendentes (as
+   concluídas ficam em `TASKS_COMPLETE.md`, que não precisa ser lido aqui)
+2. ✅ **Verificar** qual tarefa está em progresso e quais subtarefas faltam
 3. ✅ **Só então responder** ao usuário e registrar o pedido novo (regra abaixo)
 
-**Por quê?** O `TASKS.md` guarda o que está em andamento e tudo o que já foi pedido e feito.
-Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
+**Por quê?** O `TASKS.md` contém o estado atual de trabalho. Sem ler, você pode executar tarefas
+fora de ordem ou duplicadas.
 
 ---
 
-## 📋 REGRA CRÍTICA — REGISTRO DE TODO PEDIDO NO `TASKS.md` (DATA E HORA COM SEGUNDOS)
+## 📋 CONSULTAR TAREFAS PENDENTES — `TASKS.md` E `TASKS_COMPLETE.md`
 
-⚠️ **Todo pedido do usuário que gere trabalho (alterar arquivo, banco, commit, geração de
-material) é registrado no `TASKS.md`, com data e hora até os segundos.** Registrada em
-2026-10-07 a pedido do usuário; **substitui** a antiga "CONSULTAR TAREFAS PENDENTES" (o
-`TASKS.md` deixou de ser só o quadro da tarefa atual e passou a ser também o histórico).
+📄 **Arquivos:** `TASKS.md` (pendentes) e `TASKS_COMPLETE.md` (histórico), na raiz do repositório.
 
-- ✅ **Formato de data e hora:** `AAAA-MM-DD HH:MM:SS`, horário de Brasília (America/Sao_Paulo).
-  Na nuvem, pegar com `TZ=America/Sao_Paulo date "+%Y-%m-%d %H:%M:%S"`; na máquina do usuário,
-  com `Get-Date -Format "yyyy-MM-dd HH:mm:ss"`.
-- ✅ **Ao receber o pedido** (antes de começar): criar a entrada em **"🔄 TAREFA ATUAL"** com:
-  ID `TAAAAMMDD-NN` (sequência do dia), **pedido** (resumo fiel das palavras do usuário),
-  **início** (data e hora com segundos), status `🔄 Em andamento` e a lista de passos.
-- ✅ **Durante:** marcar cada passo concluído (✅) com a data e hora com segundos.
-- ✅ **Ao concluir:** preencher **conclusão** (data e hora com segundos), **duração**, **commit(s)**
-  e **plano** em `docs/` (quando houver) e mover a entrada para o topo do
-  **"📜 HISTÓRICO DE TAREFAS"** (mais recente primeiro, agrupado por dia). O `TASKS.md` entra
-  **no mesmo commit** da tarefa.
-- ✅ Tarefa interrompida ou cancelada pelo usuário: status `⏸️ Pausada` ou `⛔ Cancelada`, com a
-  data e hora e o motivo; ao retomar, continuar a mesma entrada.
-- ✅ Perguntas que não geram trabalho (ex.: "quantas páginas tem a apostila?") não precisam de
-  entrada.
-- ✅ Tarefas grandes continuam com o plano em `docs/<tarefa>.md` (passos, status e datas); o
-  `TASKS.md` aponta para ele. Os `STATUS-*.md` das matérias continuam controlando aulas,
-  atividades e apostila.
-- ✅ Histórico anterior a esta regra: reconstruído dos commits de 2026-10-01 a 2026-10-07 (horário
-  do commit = conclusão; início não registrado).
+Registrada em 2026-10-08 a pedido do usuário (separar pendentes de concluídas, para o chat ler
+menos texto); junta a regra de 2026-10-07 "registro de todo pedido com data e hora (segundos)".
+
+- ✅ **`TASKS.md` = SOMENTE tarefas pendentes** (⏳ planejadas e 🔄 em progresso), com as
+  subtarefas de cada uma. É o único arquivo de tarefas lido na inicialização do chat.
+- ✅ **`TASKS_COMPLETE.md` = histórico** das tarefas ✅ concluídas e ⛔ canceladas, mais o
+  "📜 HISTÓRICO POR COMMIT" (uma linha por tarefa/commit). Não é lido na inicialização;
+  consultar só quando precisar do histórico. Se não existir, criar.
+- ✅ **Data e hora sempre com segundos** (2026-10-07, pedido do usuário): `AAAA-MM-DD HH:MM:SS`,
+  horário de Brasília. Na nuvem: `TZ=America/Sao_Paulo date "+%Y-%m-%d %H:%M:%S"`; na máquina do
+  usuário: `Get-Date -Format "yyyy-MM-dd HH:mm:ss"`.
+- ✅ **Todo pedido que gere trabalho** (arquivo, banco, commit, material) é registrado: tarefa
+  grande entra no `TASKS.md` (com início e subtarefas datados); ao concluir, ganha conclusão,
+  commit e plano e vai para o `TASKS_COMPLETE.md`. Toda tarefa concluída ganha também a sua linha
+  no "📜 HISTÓRICO POR COMMIT", no mesmo commit da tarefa. Perguntas sem trabalho não entram.
+- ✅ **Ao concluir ou cancelar uma tarefa:** marcar o status (✅ CONCLUÍDO ou ⛔ CANCELADA, com a
+  data e hora), **mover o bloco inteiro** para `TASKS_COMPLETE.md` (seção CONCLUÍDAS ou
+  CANCELADAS, em ordem de número) e tirá-lo do `TASKS.md`, no mesmo commit da tarefa.
+- ✅ Tarefa nova entra no `TASKS.md` com o próximo número livre (contando os dois arquivos).
+- ❌ Não deixar tarefa concluída no `TASKS.md` nem tarefa pendente no `TASKS_COMPLETE.md`.
 
 ---
 
@@ -1394,6 +1409,13 @@ quantidade de alunos) que filtram as linhas e o resumo; a turma escolhida é lem
 `resumo_tentativas_atividade` (`database/2026-09-30-resumo-tentativas-professor.sql`); só o
 professor consegue chamá-la.
 
+**Combo "Aluno" (2026-10-07, pedido do usuário):** logo abaixo da identificação, o professor tem
+**"🧑‍🎓 Respostas dos alunos"**: ao escolher um aluno (quem respondeu, com tentativa e entrega),
+as alternativas marcadas por ele aparecem destacadas nas questões, **somente leitura**. Sem
+escolha, as questões ficam sem marcação (as leituras filtram pelo `aluno_id` do usuário logado).
+Código: `assets/js/respostas-aluno-professor.js` (o mesmo das discursivas), carregado pelo
+`respostas-atividade.js`.
+
 ### 🕒 Horário da turma e liberação fora do horário
 
 Registrada em 2026-10-01. O aluno só grava alternativas e entrega **dentro do horário da turma**
@@ -1461,8 +1483,9 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   da entrega); ao escolher um aluno, as respostas dele aparecem nos campos, **somente leitura**
   (nada é gravado). Os campos do professor ficam **vazios até ele escolher** — as leituras da
   página filtram sempre pelo `aluno_id` do usuário logado (o RLS deixa o professor ler os alunos
-  das turmas dele). Código: `assets/js/respostas-aluno-discursiva.js` (+ css), carregado pelo
-  `avaliacao-discursiva.js`.
+  das turmas dele). Código único (objetivas e discursivas):
+  `assets/js/respostas-aluno-professor.js` (+ `assets/css/respostas-aluno-professor.css`),
+  carregado pelo `avaliacao-discursiva.js` e pelo `respostas-atividade.js`.
 - ✅ **Correção (2026-10-06)**, plano `docs/media-final-notas-do-aluno.md`, SQL
   `database/2026-10-06-notas-media-final-correcao-discursiva.sql` (aplicado):
   - tabela **`correcao_discursiva`**: nota de cada tópico por aluno e tentativa; `nota_ia` é só
@@ -1903,21 +1926,47 @@ Registrada em 2026-09-28.
 - ✅ Lista das turmas com os e-mails: `ATIVIDADES/LISTA-PRESENCA.js` de cada matéria.
   ⚠️ Dados pessoais de menores (LGPD): arquivo no `.gitignore`, nunca publicar.
 
-## ⛔ REGRA — PUSH E PULL REQUEST SÓ COM PEDIDO EXPLÍCITO DO USUÁRIO
+## ⛔ REGRA — PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM (BRANCH PRÓPRIA + NOVO PR)
 
-Registrada em 2026-10-01 ("nunca fazer push"); **ajustada em 2026-10-07** a pedido do usuário:
-push e pull request passam a ser permitidos **quando ele pedir explicitamente**.
+Registrada em 2026-10-01 a pedido do usuário ("NUNCA FAZER PUSH"); **alterada em 2026-10-07**, a
+pedido do usuário, para valer **conforme o ambiente**; **alterada em 2026-10-08**, a pedido do
+usuário: na nuvem, **sempre um novo pull request**, para evitar sobrescrever algo na `main`.
 
-- ✅ Por padrão, o Claude faz só o **commit local** de cada tarefa e avisa que está pronto.
-- ✅ **Pedido explícito** ("faça push", "commit e push", "faça o pull request", "faça o merge"):
-  o Claude envia a branch (`git push -u origin <branch>`), abre o pull request para a `main` ou
-  faz o merge pedido. Antes do push, conferir `git diff --cached --name-only` contra "O QUE NUNCA
-  É PUBLICADO".
-- ✅ Para enviar, pode buscar a branch base (`git fetch`) e trazer as mudanças com merge; conflito
-  = avisar o usuário.
-- ❌ Aviso automático (hook) pedindo push **não** é pedido do usuário.
-- ❌ Nunca: push forçado (`--force`), reescrever a história da `main`, push de tags ou mudança de
-  remotos.
+### 💻 Ambiente local (máquina do usuário, ex.: `C:\fontes\aulasenai`)
+
+⛔ **O Claude NUNCA faz `git push`.** O push é feito **somente pelo usuário, na máquina dele**.
+
+- ✅ O Claude faz só o **commit local** de cada tarefa.
+- ❌ Não executar `git push` em nenhuma situação, nem quando o usuário pedir "faça push" ou
+  "commit e push": responder que o commit está pronto e que o push fica com ele.
+- ❌ Sem `git pull`/merge com o remoto, push forçado, push de tags ou mudança de remotos.
+
+### ☁️ Ambiente de nuvem (Claude Code na web / sessão remota, contêiner temporário)
+
+✅ **O Claude SEMPRE faz o push numa branch própria e abre um NOVO pull request para a `main`.**
+No contêiner da nuvem o commit se perde quando a sessão acaba, por isso o push é obrigatório; o
+pull request garante que **nada na `main` é sobrescrito** sem o usuário revisar e fazer o merge.
+
+✅ **Push sempre permitido e automático na nuvem** (2026-10-08 11:10, pedido do usuário): ao final
+de **toda** tarefa que mudar arquivos, o Claude faz commit + push + PR **sem esperar pedido nem
+confirmação** do usuário — não perguntar "posso fazer push?". Tarefa que não muda nenhum arquivo
+(só consulta ou resposta) não gera commit nem push vazio.
+
+- ✅ Ao concluir cada tarefa: commit (regra "COMMIT POR TAREFA"), **`git push -u origin <branch>`**
+  (a branch de trabalho da sessão, nunca a `main`) e **abrir um novo pull request** da branch para
+  a `main`, com título e descrição do que mudou.
+- ⛔ **Nunca push direto na `main`** (`git push origin HEAD:main` está proibido) e o Claude
+  **não faz o merge** do pull request: quem revisa e junta na `main` é o usuário.
+- ✅ **Sempre um PR novo:** se o PR da branch já foi juntado (merged) ou fechado, a tarefa seguinte
+  recomeça a branch a partir da `main` atualizada e abre **outro** PR — nunca reaproveitar PR
+  juntado. Enquanto o PR da branch ainda estiver aberto, os commits novos da mesma sessão entram
+  nele (o GitHub não aceita dois PRs abertos da mesma branch).
+- ✅ Antes do push, `git fetch origin main`; se a `main` andou, trazer as mudanças dela para a
+  branch (merge) e conferir de novo antes de enviar.
+- ❌ **Nunca push forçado** (`--force`), nunca reescrever histórico já publicado, nunca push de tags
+  nem mudança de remotos.
+- ✅ Antes do push, conferir `git diff --cached --name-only` contra a regra "O QUE NUNCA É
+  PUBLICADO" (a `main` é publicada pela Vercel depois do merge).
 
 ## 💾 REGRA — COMMIT POR TAREFA (SEMPRE)
 
@@ -1932,7 +1981,9 @@ regra global de mesmo nome.
   gabaritos, listas de alunos ou outros itens da regra "O QUE NUNCA É PUBLICADO").
 - ✅ Antes do commit, conferir `git diff --cached --name-only` contra a regra "O QUE NUNCA É
   PUBLICADO".
-- ✅ O commit é **local**; push e pull request só com pedido explícito do usuário (regra "PUSH").
+- ✅ No ambiente **local** o commit fica só local (o push é do usuário); na **nuvem**, o Claude faz
+  o push numa branch própria e abre um novo pull request para a `main` (ver "PUSH: NUNCA NO
+  AMBIENTE LOCAL, SEMPRE NA NUVEM").
 - ✅ Usuário pediu commit explícito → fazer na hora.
 - ✅ Arquivos ignorados pelo Git (gabaritos, fontes de questões, listas de alunos) não entram no
   commit; não usar `-f` para forçá-los. Desde 2026-09-30 os `*.md` e `*.py` **são versionados**
@@ -2044,8 +2095,9 @@ assets/
 - ✅ Os itens vêm de **`ATIVIDADES/MENU-ATIVIDADES.js`** da pasta de atividades
   (`window.MENU_ATIVIDADES = { titulo, itens: [{ rotulo, link } | { rotulo, subitens }] }`),
   com links relativos a essa pasta. Nada de nomes fixos no `menu.js`.
-- ✅ Pastas com menu: `GESTAO_E_CONTROLE_MATERIAIS/.../AULAS-CHALKIE-AI-COLORIDA/ATIVIDADES/` e
-  `ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/`.
+- ✅ Pastas com menu: `GESTAO_E_CONTROLE_MATERIAIS/.../AULAS-CHALKIE-AI-COLORIDA/ATIVIDADES/`,
+  `ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/` e
+  `RIO_DO_SUL_MAIS_TECH/REFORCO_LINGUAGENS/ATIVIDADES/` (2026-10-07, com a apostila).
 - ✅ Página ou atividade nova numa dessas pastas: acrescentar o item no `MENU-ATIVIDADES.js`.
   Os geradores já incluem as tags quando o arquivo de dados existe.
 
@@ -2319,11 +2371,40 @@ importação no AVA pelo professor; as demais matérias só quando o usuário li
 ## 📘 REGRAS APOSTILAS
 
 Registrada em 2026-10-03 a pedido do usuário (padrões definidos na validação do piloto). Plano:
-`docs/gerador-apostilas.md`. **Status (2026-10-07):** ✅ piloto **Introdução à TIC (ITIC)** com os
+`docs/gerador-apostilas.md`. **Reforço de Linguagens (2026-10-07):** introdução + 10 capítulos gerados, conferência 100%
+(138/138), aguardando validação; vídeos pendentes (`REFORCO_LINGUAGENS/APOSTILA/STATUS-APOSTILA.md`).
+**Status (2026-10-07):** ✅ piloto **Introdução à TIC (ITIC)** com os
 **10 capítulos** escritos, Markdown completo (conferência 100%), HTML e PDF (84 páginas) gerados;
 👀 aguardando a validação dos capítulos e a conferência dos vídeos pelo professor. Nas próximas
 matérias, continua **um capítulo por vez, perguntando a cada capítulo** (rascunhos em
 `APOSTILA/RASCUNHOS/`, fora da apostila).
+
+### 🏷️ IDENTIFICAÇÃO DA APOSTILA: AUTOR, VERSÃO, DATA E HORA (REGRA GLOBAL)
+
+Registrada em 2026-10-07 a pedido do usuário. Vale para **todas as apostilas de todas as
+matérias**; começou pela ITIC.
+
+- ✅ **Toda apostila mostra autor, versão, data e hora:**
+  - **HTML:** na capa (quadro "Autor · Versão · Data e hora") e a versão no rodapé de todas as
+    páginas ("Apostila — <UC> · Versão X · SESI SENAI"), saindo também no PDF;
+  - **Markdown completo:** a linha `> **Autor:** … · **Versão:** … · **Data e hora:** …` no
+    cabeçalho, regravada pelo gerador a cada geração do HTML (sempre igual ao HTML).
+- ✅ **Dados no `materia.json`** (obrigatórios; sem eles o gerador para com erro):
+  `autor_apostila` (ITIC: **Gelvazio Camargo**) e `versao_apostila` (ex.: `"1.0"`).
+- ✅ **Data e hora** = momento da geração do HTML (`DD/MM/AAAA às HH:MM`), automáticas.
+- ✅ **Versão:** ao mudar o conteúdo da apostila, aumentar `versao_apostila` antes de gerar —
+  ajuste/correção → `1.0` para `1.1`; capítulo novo ou mudança grande → `1.x` para `2.0`.
+  Gerar de novo sem mudar conteúdo mantém a versão (só a data e hora mudam).
+- ✅ Código: `assets/gerador-apostilas/gerar_apostila.py` (`gravar_identificacao_markdown`),
+  `markdown_apostila.py` (`linha_identificacao`, `atualizar_identificacao`),
+  `template_apostila.html` e `assets/css/apostila.css` (`.capa-apostila__identificacao`).
+- ✅ **Obrigatória em TODAS as apostilas** (2026-10-07, pedido do usuário): toda matéria que
+  tem apostila — ou que vai ganhar uma — tem `autor_apostila` e `versao_apostila` no
+  `materia.json` **antes da primeira geração** (Markdown completo ou HTML). Padrão quando o
+  usuário não disser outro: autor **Gelvazio Camargo**, versão **"1.0"**. Logo após preencher,
+  gerar o HTML de novo para a identificação aparecer na capa, no rodapé e no Markdown completo.
+- ✅ Aplicada em: Introdução à TIC, Testes de Frontend e Reforço de Linguagens (todas versão
+  1.0; Reforço em 2026-10-07).
 
 ### ⛔ PRÉ-REQUISITO: o Markdown completo bate 100% com a ementa da matéria
 
@@ -2377,6 +2458,13 @@ matéria.**
   capacidades, estratégias, atividade/entrega); listas e textos da seção de sequência
   (situações de aprendizagem, dificuldades, pirâmide, datas previstas); recursos item a item;
   BNCC com "aulas 1, 2 e 7" ou "todas".
+- ✅ **Formato de ementa em listas** (2026-10-07, Reforço de Linguagens): capacidades em lista
+  numerada sob "Capacidades ...", "CONTEÚDOS PROGRAMÁTICOS" com `### Módulo N: Título` + lista,
+  aulas em negrito `**Aula N — Tema (6h)**`, indicadores `- **Nome:** texto`, situações-problema
+  em listas e parágrafos e as seções de texto livre de `SECOES_TEXTO_LIVRE` (Alinhamento,
+  Metodologias, Integração, Acompanhamento). No `materia.json`, essas seções ficam em
+  `conteudos_programaticos`, `textos_ementa` (`{titulo, texto|itens}`) e
+  `avaliacao.rubrica_lista`.
 - ⛔ **Seção que existe na ementa mas não foi reconhecida reprova a conferência** (capacidades,
   socioemocionais, indicadores, conhecimentos, sequência, avaliação, BNCC, recursos, prompts,
   regras para IA, glossário): nada pode ficar de fora em silêncio. Formato novo de ementa =
@@ -2449,8 +2537,27 @@ Registrada em 2026-10-03 a pedido do usuário.
   `C:\Python314\python.exe assets\gerador-apostilas\gerar_apostila.py <pasta da matéria> --markdown`
   (`--forcar` refaz do zero). Módulo:
   `assets/gerador-apostilas/markdown_apostila.py`. O plano de capítulos vem do `materia.json`
-  (`carga_horaria_uc`, `horas_por_aula`, `aulas` = uma por aula, com a `carga_horaria` de cada);
-  o gerador confere se a **soma das horas das aulas** = carga da UC (corrigido em 2026-10-07). Glossário em ordem alfabética sem considerar acentos.
+  (`carga_horaria_uc`, `horas_por_aula` = 4, `aulas` = uma por aula); o gerador confere
+  se a **soma das horas das aulas** = carga da UC (ver "Carga horária por aula"). Glossário em ordem alfabética sem considerar acentos.
+- ✅ **Carga horária por aula** (2026-10-07): quando as aulas não têm 4 h (exceção de Reforço de
+  Linguagens: 6 h e 7 h), cada aula do `materia.json` traz `carga_horaria`; o gerador soma as
+  aulas para conferir a carga da UC e mostra as horas de cada capítulo. Sem `carga_horaria`, vale
+  o `horas_por_aula` (padrão 4).
+- ✅ **Vídeos pendentes** (2026-10-07): se o YouTube não puder ser conferido (rede bloqueada), o
+  capítulo leva na seção "Vídeos" a linha `- ⏳ Vídeos pendentes: ...` (o gerador avisa e o HTML
+  mostra o aviso). ❌ Nunca inventar link, título ou duração; trocar pela lista real assim que
+  conferida (status no `STATUS-APOSTILA.md`).
+- ✅ **Vídeo com duração "a conferir"** (2026-10-07, decisão do usuário): quando o vídeo foi
+  achado pela busca (link, título e canal reais) mas a duração não pôde ser lida, a linha fica
+  `- [título](url) — a conferir — canal`; o gerador avisa e o HTML mostra "⏱️ duração a conferir
+  pelo professor". O professor troca por `mm:ss` (até 15 min) ou apaga a linha.
+- ✅ **Ementa no formato por módulos** (2026-10-08, Fundamentos da Tecnologia e Programação): o
+  `conferir_ementa.py` também lê o indicador na tabela de capacidades ("Indicador ..."), BNCC em
+  tabela ("Competência geral | Módulos"), prompts `1. **M1:** "..."` e "**Regras para a IA:**",
+  glossário `- **Termo:** definição` com "**Marcos de competência:**", recursos em lista, métricas
+  em "Indicadores de sucesso" e as listas "Exemplos práticos" e "Orientações ao professor" — sempre
+  como alternativa, quando o formato padrão da seção não existe (ITIC, Testes de Frontend e
+  Reforço de Linguagens continuam 100%). As seções sem campo próprio vão em `textos_ementa`.
 - ✅ **O HTML é gerado a partir do Markdown completo** (2026-10-07): o `gerar_apostila.py` lê a
   `# Introdução` e cada `# Capítulo NN` do `APOSTILA-<MATERIA>.md` (glossário de cada capítulo
   pelo `_(cap. NN)_` do glossário geral); sem o Markdown completo, o gerador para com erro
@@ -2476,7 +2583,8 @@ capacidades básicas: completar socioemocionais e conhecimentos quando cada uma 
   **e a UC na ementa do curso** (`EMENTA-PRINCIPAL-<CURSO>.md`, que vence) e manter o
   `materia.json` atualizado com o que a ementa diz.
 - ✅ **O `materia.json` sempre contém:**
-  - **identificação:** `uc`, `uc_curta`, `curso`, `docente`, `modulo`, `modalidade`,
+  - **identificação:** `uc`, `uc_curta`, `curso`, `docente`, `autor_apostila`,
+    `versao_apostila` (regra "IDENTIFICAÇÃO DA APOSTILA"), `modulo`, `modalidade`,
     `carga_horaria_uc`, `fontes`, `versao_ementa`, `proveniencia`;
   - **capacidades e conhecimentos da ementa:** `capacidades` (básicas `C1`..., texto da ementa do
     curso), `capacidades_socioemocionais` (`S1`...), `conhecimentos` (`dominio`, `titulo`,
@@ -2602,8 +2710,11 @@ faltava. Vale para **todas as matérias**.
 1. **Abertura** com as capacidades do capítulo (`- **Capacidade:** C1, S1`);
 2. **Teoria + exemplos**;
 3. **Vídeos do YouTube de no máximo 15 minutos** (`- [título](url) — mm:ss — canal`): miniatura +
-   título + duração + canal + link (funciona na tela e no papel). O gerador **recusa** vídeo sem
-   duração ou com mais de 15:00. A duração é conferida nos metadados do YouTube (`curl`, sem
+   título + duração + canal + link (funciona na tela e no papel). O gerador **recusa** vídeo com
+   mais de 15:00. **Exceção (2026-10-08, pedido do usuário):** quando a duração não pôde ser
+   conferida (ex.: sessão em nuvem sem acesso ao YouTube), escrever `a conferir` no lugar de
+   `mm:ss` (ver "Vídeo com duração 'a conferir'") e registrar uma tarefa no `TASKS.md` para
+   conferir depois. O canal é opcional. A duração é conferida nos metadados do YouTube (`curl`, sem
    navegador) e o professor confere o conteúdo;
 4. **Resumo**;
 5. **No mínimo 5 exercícios (questões) por capítulo** (mais é permitido), no padrão ITEM

@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03 — Sistemas Operacionais, Arquivos e Pastas (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+    <script src="../../../../js/header-usuario.js" defer></script>
+</head>
+<body data-aula="03" data-tema="Sistemas Operacionais, Arquivos e Pastas" data-total="50"
+      data-uc="Fundamentos da Tecnologia e Programação" data-uc-curta="Fundamentos da Tecnologia"
+      data-docente="Gelvazio Camargo" data-login="sim" data-tabela-notas="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🗂️ Aula 03: Sistemas Operacionais, Arquivos e Pastas</h1>
+            <p>Fundamentos da Tecnologia · Rio do Sul Mais Tech — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-03-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C1 —</strong> Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</p>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Compreender como os diferentes dispositivos interagem, desde computadores até dispositivos móveis.</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Revisão: hardware e software</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Retomando a aula 02, o sistema operacional é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Software.</li>
+                        <li><span class="letra">B)</span>Hardware de entrada.</li>
+                        <li><span class="letra">C)</span>Hardware de saída.</li>
+                        <li><span class="letra">D)</span>Uma peça da placa-mãe.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Conceito de sistema operacional</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é o sistema operacional?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O programa usado só para editar textos e montar currículos.</li>
+                        <li><span class="letra">B)</span>O software que gerencia o computador e os programas.</li>
+                        <li><span class="letra">C)</span>O cabo que liga o computador ao roteador e à internet.</li>
+                        <li><span class="letra">D)</span>A peça que fornece energia para todas as partes do computador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Posição do SO</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O sistema operacional fica entre:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O monitor e a impressora.</li>
+                        <li><span class="letra">B)</span>O teclado e o mouse.</li>
+                        <li><span class="letra">C)</span>O hardware e os aplicativos.</li>
+                        <li><span class="letra">D)</span>A tomada e a fonte.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Tarefa: carregar programas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual destas é uma tarefa do sistema operacional?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ligar o computador e carregar os programas.</li>
+                        <li><span class="letra">B)</span>Fabricar o processador dentro do computador.</li>
+                        <li><span class="letra">C)</span>Escrever o texto do trabalho no lugar do aluno.</li>
+                        <li><span class="letra">D)</span>Escolher o tema e as cores da apresentação.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Tarefa: memória</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando vários programas estão abertos, quem divide a memória e o processador entre eles?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O roteador (a rede).</li>
+                        <li><span class="letra">B)</span>O mouse (o apontador).</li>
+                        <li><span class="letra">C)</span>O sistema operacional.</li>
+                        <li><span class="letra">D)</span>O monitor (a tela).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Tarefa: dispositivos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quem controla o teclado, o mouse, a impressora e o Wi-Fi no computador?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A planilha.</li>
+                        <li><span class="letra">B)</span>O navegador.</li>
+                        <li><span class="letra">C)</span>O sistema operacional.</li>
+                        <li><span class="letra">D)</span>O editor de texto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Tarefa: usuários</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">As contas de usuário e as senhas de acesso ao computador são gerenciadas pelo:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Editor de apresentações.</li>
+                        <li><span class="letra">B)</span>Gabinete.</li>
+                        <li><span class="letra">C)</span>Processador de texto.</li>
+                        <li><span class="letra">D)</span>Sistema operacional.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Windows</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual sistema operacional aparece na maioria dos PCs e notebooks e é pago?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ChromeOS.</li>
+                        <li><span class="letra">B)</span>Android.</li>
+                        <li><span class="letra">C)</span>Linux.</li>
+                        <li><span class="letra">D)</span>Windows.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Linux</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual sistema operacional é livre, gratuito e tem várias distribuições?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Linux.</li>
+                        <li><span class="letra">B)</span>ChromeOS.</li>
+                        <li><span class="letra">C)</span>iOS.</li>
+                        <li><span class="letra">D)</span>Windows.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">ChromeOS</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O ChromeOS, usado nos Chromebooks, se destaca por:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ser leve e trabalhar principalmente na nuvem e no navegador.</li>
+                        <li><span class="letra">B)</span>Ser o sistema dos celulares iPhone e dos tablets da Apple.</li>
+                        <li><span class="letra">C)</span>Funcionar só sem internet, guardando tudo no próprio aparelho.</li>
+                        <li><span class="letra">D)</span>Ser usado apenas em servidores de grandes empresas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Sistemas móveis</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais são sistemas operacionais de celulares e tablets?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Windows e Word.</li>
+                        <li><span class="letra">B)</span>ChromeOS e PowerPoint.</li>
+                        <li><span class="letra">C)</span>Android e iOS.</li>
+                        <li><span class="letra">D)</span>Linux e Excel.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Distribuição Linux</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é uma distribuição Linux?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um tipo de impressora que só funciona com o sistema Linux.</li>
+                        <li><span class="letra">B)</span>Um cabo de rede especial usado em computadores com Linux.</li>
+                        <li><span class="letra">C)</span>Um vírus que ataca apenas computadores com Linux instalado.</li>
+                        <li><span class="letra">D)</span>Uma versão do Linux montada por um grupo ou empresa, como o Ubuntu.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Escolha para a escola</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A escola quer computadores sem custo de licença do sistema operacional.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual sistema atende a essa necessidade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Windows.</li>
+                        <li><span class="letra">B)</span>Linux.</li>
+                        <li><span class="letra">C)</span>iOS.</li>
+                        <li><span class="letra">D)</span>Nenhum sistema operacional.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Área de trabalho</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A tela inicial do sistema, com papel de parede e ícones, chama-se:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Barra de rolagem.</li>
+                        <li><span class="letra">B)</span>Lixeira.</li>
+                        <li><span class="letra">C)</span>Menu de contexto.</li>
+                        <li><span class="letra">D)</span>Área de trabalho.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Barra de tarefas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No Windows, a barra que mostra os programas abertos e fixados é a:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Barra de tarefas.</li>
+                        <li><span class="letra">B)</span>Barra de rolagem.</li>
+                        <li><span class="letra">C)</span>Barra de endereço.</li>
+                        <li><span class="letra">D)</span>Barra de fórmulas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Estante do ChromeOS</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No ChromeOS, a área equivalente à barra de tarefas do Windows chama-se:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Prompt.</li>
+                        <li><span class="letra">B)</span>Estante.</li>
+                        <li><span class="letra">C)</span>Lixeira.</li>
+                        <li><span class="letra">D)</span>Painel de controle.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Janelas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais botões costumam aparecer no canto de uma janela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Minimizar, maximizar e fechar.</li>
+                        <li><span class="letra">B)</span>Salvar, imprimir e enviar.</li>
+                        <li><span class="letra">C)</span>Copiar, colar e recortar.</li>
+                        <li><span class="letra">D)</span>Negrito, itálico e sublinhado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Menu de contexto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como abrir o menu de contexto de um arquivo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Clicando com o botão direito do mouse sobre ele.</li>
+                        <li><span class="letra">B)</span>Clicando duas vezes no papel de parede.</li>
+                        <li><span class="letra">C)</span>Apertando a tecla Esc três vezes.</li>
+                        <li><span class="letra">D)</span>Desligando o computador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Conceito de arquivo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um arquivo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um cabo de conexão que liga o computador à impressora.</li>
+                        <li><span class="letra">B)</span>Um conjunto de dados guardado com nome e extensão.</li>
+                        <li><span class="letra">C)</span>Uma peça de hardware que guarda energia para o computador.</li>
+                        <li><span class="letra">D)</span>Uma janela do sistema que mostra os programas abertos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Conceito de pasta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve uma pasta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mostrar as imagens e os vídeos na tela.</li>
+                        <li><span class="letra">B)</span>Conectar o computador à internet sem fio.</li>
+                        <li><span class="letra">C)</span>Organizar arquivos e outras pastas.</li>
+                        <li><span class="letra">D)</span>Executar os programas instalados no computador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Extensão .pdf</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A extensão .pdf indica:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um arquivo de música que toca no reprodutor de áudio.</li>
+                        <li><span class="letra">B)</span>Um documento para leitura e impressão que mantém a formatação.</li>
+                        <li><span class="letra">C)</span>Um projeto do Scratch com atores, blocos e cenários.</li>
+                        <li><span class="letra">D)</span>Uma planilha com fórmulas que pode ser editada no Sheets.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Extensão .xlsx</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um arquivo com extensão .xlsx é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma imagem.</li>
+                        <li><span class="letra">B)</span>Uma planilha.</li>
+                        <li><span class="letra">C)</span>Um vídeo.</li>
+                        <li><span class="letra">D)</span>Um texto do Writer.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Extensão .png</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">As extensões .png e .jpg indicam arquivos de:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Áudio.</li>
+                        <li><span class="letra">B)</span>Imagem.</li>
+                        <li><span class="letra">C)</span>Apresentação.</li>
+                        <li><span class="letra">D)</span>Texto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Extensão .sb3</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual extensão corresponde a um projeto do Scratch?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>.mp3</li>
+                        <li><span class="letra">B)</span>.pptx</li>
+                        <li><span class="letra">C)</span>.docx</li>
+                        <li><span class="letra">D)</span>.sb3</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Caminho</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é o caminho de um arquivo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O nome do programa usado para abrir o arquivo.</li>
+                        <li><span class="letra">B)</span>O tamanho do arquivo, medido em megabytes.</li>
+                        <li><span class="letra">C)</span>O endereço com as pastas em que ele está.</li>
+                        <li><span class="letra">D)</span>A data e a hora em que o arquivo foi criado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Lendo um caminho</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O caminho é Documentos &gt; Escola &gt; FTP &gt; Aula03 &gt; relatorio.pdf.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em qual pasta está o arquivo relatorio.pdf?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Aula03.</li>
+                        <li><span class="letra">B)</span>Documentos.</li>
+                        <li><span class="letra">C)</span>Escola.</li>
+                        <li><span class="letra">D)</span>FTP.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Criar pasta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Uma forma de criar uma nova pasta é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ctrl+P.</li>
+                        <li><span class="letra">B)</span>Clicar no botão fechar da janela.</li>
+                        <li><span class="letra">C)</span>Botão direito → Novo → Pasta.</li>
+                        <li><span class="letra">D)</span>Arrastar o arquivo para a Lixeira.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Copiar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao copiar um arquivo (Ctrl+C e Ctrl+V) para outra pasta:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O original sai do lugar antigo e vai só para o destino.</li>
+                        <li><span class="letra">B)</span>O arquivo muda de extensão e vira um documento PDF.</li>
+                        <li><span class="letra">C)</span>O original continua no lugar e uma cópia aparece no destino.</li>
+                        <li><span class="letra">D)</span>O arquivo é apagado e enviado direto para a Lixeira.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Mover</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao mover um arquivo (Ctrl+X e Ctrl+V):</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ele é apagado para sempre, sem passar pela Lixeira.</li>
+                        <li><span class="letra">B)</span>Ele é enviado por e-mail para o professor da turma.</li>
+                        <li><span class="letra">C)</span>Ele sai do lugar antigo e vai para o destino.</li>
+                        <li><span class="letra">D)</span>Ele fica duplicado, com uma cópia em cada pasta.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Renomear</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual tecla renomeia o arquivo selecionado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Tab.</li>
+                        <li><span class="letra">B)</span>F2.</li>
+                        <li><span class="letra">C)</span>Esc.</li>
+                        <li><span class="letra">D)</span>F5.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Excluir</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao excluir um arquivo com a tecla Delete, ele normalmente vai para:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A área de trabalho de outro usuário.</li>
+                        <li><span class="letra">B)</span>A internet.</li>
+                        <li><span class="letra">C)</span>A Lixeira.</li>
+                        <li><span class="letra">D)</span>O pen drive.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Restaurar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um colega apagou sem querer o arquivo &quot;relatorio.docx&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como recuperá-lo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Criar um arquivo vazio com outro nome no mesmo lugar do apagado.</li>
+                        <li><span class="letra">B)</span>Abrir a Lixeira, clicar com o botão direito no arquivo e escolher Restaurar.</li>
+                        <li><span class="letra">C)</span>Formatar o computador para que todos os arquivos voltem ao início.</li>
+                        <li><span class="letra">D)</span>Desligar o computador da tomada e ligar de novo para o arquivo voltar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Operação certa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A professora pediu para deixar uma cópia do trabalho no pen drive e manter o original no computador.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual operação usar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mover.</li>
+                        <li><span class="letra">B)</span>Excluir.</li>
+                        <li><span class="letra">C)</span>Renomear.</li>
+                        <li><span class="letra">D)</span>Copiar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Tirar da área de trabalho</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você quer tirar o rascunho da área de trabalho e guardá-lo só na pasta &quot;Rascunhos&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual operação usar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Restaurar.</li>
+                        <li><span class="letra">B)</span>Mover.</li>
+                        <li><span class="letra">C)</span>Copiar.</li>
+                        <li><span class="letra">D)</span>Excluir.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Padrão de nome</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual nome de arquivo segue o padrão data-assunto recomendado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>trabalho final AGORA VAI versao2.pdf</li>
+                        <li><span class="letra">B)</span>2026-10-20-relatorio-cliente-silva.pdf</li>
+                        <li><span class="letra">C)</span>arquivo novo (2) - copia - copia.pdf</li>
+                        <li><span class="letra">D)</span>sem nome documento do relatorio.pdf</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Estrutura da TecVale</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na TecVale, todo projeto tem as pastas 01-Contrato, 02-Fotos, 03-Relatorios e 04-Entrega. Qual é a vantagem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Os arquivos mudam de extensão.</li>
+                        <li><span class="letra">B)</span>Qualquer pessoa encontra um arquivo rapidamente.</li>
+                        <li><span class="letra">C)</span>Os arquivos ficam mais pesados.</li>
+                        <li><span class="letra">D)</span>O computador fica mais rápido sozinho.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">200 arquivos misturados</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Ana perdeu o trabalho no meio de 200 arquivos soltos na área de trabalho.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a melhor solução para não acontecer de novo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apagar os arquivos antigos sem olhar.</li>
+                        <li><span class="letra">B)</span>Criar pastas por assunto e usar um padrão de nomes.</li>
+                        <li><span class="letra">C)</span>Deixar todos os arquivos na área de trabalho.</li>
+                        <li><span class="letra">D)</span>Dar a todos os arquivos o nome &quot;trabalho&quot;.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Sem espaços e acentos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que se recomenda nomes de arquivos sem espaços nem acentos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque arquivos com acento ficam muito maiores e mais lentos.</li>
+                        <li><span class="letra">B)</span>Porque o computador não aceita letras no nome dos arquivos.</li>
+                        <li><span class="letra">C)</span>Porque assim o arquivo é convertido em PDF automaticamente.</li>
+                        <li><span class="letra">D)</span>Para evitar problemas ao enviar e abrir os arquivos em sistemas diferentes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Subpastas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Uma pasta dentro de outra pasta é chamada de:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Subpasta.</li>
+                        <li><span class="letra">B)</span>Atalho.</li>
+                        <li><span class="letra">C)</span>Extensão.</li>
+                        <li><span class="letra">D)</span>Lixeira.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Celular para notebook: cabo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como os diferentes dispositivos interagem, desde computadores até dispositivos móveis.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você precisa passar fotos do celular Android para o notebook Windows.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é uma forma de fazer isso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Imprimir as fotos e escanear de novo.</li>
+                        <li><span class="letra">B)</span>Trocar o sistema operacional do notebook.</li>
+                        <li><span class="letra">C)</span>Desligar os dois aparelhos.</li>
+                        <li><span class="letra">D)</span>Conectar o celular ao notebook por cabo USB.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Celular para notebook: nuvem</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como os diferentes dispositivos interagem, desde computadores até dispositivos móveis.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Outra forma de passar arquivos do celular para o notebook é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Desligar o Wi-Fi dos dois aparelhos ao mesmo tempo.</li>
+                        <li><span class="letra">B)</span>Renomear o arquivo com F2 para ele aparecer no outro aparelho.</li>
+                        <li><span class="letra">C)</span>Copiar o arquivo para a Lixeira e abrir a Lixeira no notebook.</li>
+                        <li><span class="letra">D)</span>Enviar para a nuvem (Google Drive, OneDrive) e baixar no notebook.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Sistemas diferentes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como os diferentes dispositivos interagem, desde computadores até dispositivos móveis.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que um celular Android e um notebook Windows conseguem trocar arquivos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque usam formatos de arquivo e protocolos comuns.</li>
+                        <li><span class="letra">B)</span>Porque os dois aparelhos usam a mesma senha de acesso.</li>
+                        <li><span class="letra">C)</span>Porque os dois aparelhos têm o mesmo tamanho de tela.</li>
+                        <li><span class="letra">D)</span>Porque todos os aparelhos são feitos pelo mesmo fabricante.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Bluetooth</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como os diferentes dispositivos interagem, desde computadores até dispositivos móveis.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O Bluetooth é usado para:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Trocar dados sem fio entre dispositivos próximos.</li>
+                        <li><span class="letra">B)</span>Aumentar a memória RAM do computador sem trocar peças.</li>
+                        <li><span class="letra">C)</span>Formatar o computador e reinstalar o sistema operacional.</li>
+                        <li><span class="letra">D)</span>Imprimir documentos em papel sem usar cabos ou tinta.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">E-mail como transferência</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como os diferentes dispositivos interagem, desde computadores até dispositivos móveis.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Enviar o arquivo por e-mail para você mesmo é uma forma de:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Passar o arquivo de um dispositivo para outro pela internet.</li>
+                        <li><span class="letra">B)</span>Apagar o arquivo de todos os dispositivos ao mesmo tempo.</li>
+                        <li><span class="letra">C)</span>Instalar um novo sistema operacional no outro aparelho.</li>
+                        <li><span class="letra">D)</span>Mudar a extensão do arquivo para que ele fique menor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Celular e computador</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Compreender como os diferentes dispositivos interagem, desde computadores até dispositivos móveis.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em relação ao sistema operacional, o celular e o computador:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Só o celular tem sistema operacional; o computador não precisa.</li>
+                        <li><span class="letra">B)</span>Nenhum dos dois usa sistema operacional para funcionar.</li>
+                        <li><span class="letra">C)</span>Ambos precisam de um sistema operacional para funcionar.</li>
+                        <li><span class="letra">D)</span>Só o computador tem sistema operacional; o celular não precisa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Computador lento e SO</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O técnico disse: &quot;o sistema operacional está sobrecarregado com muitos programas abertos&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é uma ação simples para ajudar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Trocar o papel de parede por uma foto mais colorida.</li>
+                        <li><span class="letra">B)</span>Desconectar o mouse e usar só o teclado do computador.</li>
+                        <li><span class="letra">C)</span>Abrir mais programas ao mesmo tempo para ganhar tempo.</li>
+                        <li><span class="letra">D)</span>Fechar os programas que não estão sendo usados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Atualizações</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que é importante manter o sistema operacional atualizado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque as atualizações apagam os arquivos antigos do usuário.</li>
+                        <li><span class="letra">B)</span>Porque as atualizações trocam as peças de hardware sozinhas.</li>
+                        <li><span class="letra">C)</span>Porque as atualizações deixam o computador sem internet.</li>
+                        <li><span class="letra">D)</span>Porque as atualizações corrigem falhas e melhoram a segurança.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Quadro comparativo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em um quadro comparativo de sistemas operacionais, quais informações fazem sentido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O preço do mouse e do teclado usados na escola.</li>
+                        <li><span class="letra">B)</span>O tamanho do papel de parede usado em cada sistema.</li>
+                        <li><span class="letra">C)</span>A cor preferida de cada aluno e o nome do grupo.</li>
+                        <li><span class="letra">D)</span>Onde aparece, custo e uma característica de cada sistema.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Selecionar vários arquivos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para selecionar todos os arquivos de uma pasta de uma vez, usa-se:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ctrl+A.</li>
+                        <li><span class="letra">B)</span>Ctrl+Z.</li>
+                        <li><span class="letra">C)</span>Alt+F4.</li>
+                        <li><span class="letra">D)</span>F2.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Extensão .docx e .odt</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Entender como funcionam computadores, sistemas operacionais, redes e dispositivos digitais.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">As extensões .docx e .odt indicam arquivos de:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Imagem.</li>
+                        <li><span class="letra">B)</span>Planilha.</li>
+                        <li><span class="letra">C)</span>Texto.</li>
+                        <li><span class="letra">D)</span>Vídeo.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Fundamentos da Tecnologia e Programação — Aula 03: Sistemas Operacionais, Arquivos e Pastas</strong></p>
+        <p>Rio do Sul Mais Tech — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

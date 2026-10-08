@@ -48,3 +48,10 @@ PROVA-OBJETIVA-*.md
 LISTA-ALUNOS/
 # Resoluções modelo das atividades (respostas do professor) — nunca publicar
 RESOLUCAO/
+
+# Scripts-Comunicacao (2026-10-07): gabaritos dos Google Forms e códigos de acesso dos alunos — nunca publicar
+MATERIAIS/RIO_DO_SUL_MAIS_TECH/Scripts-Comunicacao/**/*.gs
+MATERIAIS/RIO_DO_SUL_MAIS_TECH/Scripts-Comunicacao/.clasp.json
+MATERIAIS/RIO_DO_SUL_MAIS_TECH/Scripts-Comunicacao/AVALIACOES_CRIADAS/CODIGOS-ALUNOS.txt
+MATERIAIS/RIO_DO_SUL_MAIS_TECH/Scripts-Comunicacao/AVALIACOES_CRIADAS/QUIZZES-ESTRUTURADOS.md
+MATERIAIS/RIO_DO_SUL_MAIS_TECH/Scripts-Comunicacao/FORMULARIOS-SEPARADOS/26-Quiz-Revisao-Aulas-1-9.html
