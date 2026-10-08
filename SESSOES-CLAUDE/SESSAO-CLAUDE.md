@@ -25,6 +25,15 @@ Status de todas as sessões: [STATUS-SESSOES.md](STATUS-SESSOES.md).
 
 ---
 
+## Sessão 2026-10-08 09:00 — status PENDENTE
+
+- **Ambiente:** local · **Modelo:** Claude Opus 5.5 · **Branch:** `main` (commits `c86f7f2`, `dbc2834`, `ef24d6d`, `b7c4b07`) · atualizada em 2026-10-08 10:17
+- **Pedido do usuário:** conferir a apostila ITIC V2 com a ementa e corrigir; ajustar a discursiva
+  de sexta à V2 e aplicar o seed; remover a V1 (a V2 virou a apostila única) e ajustar a objetiva id 85.
+- **Detalhe por data e hora:** [SESSAO-2026-10-08-0900-APOSTILA-ITIC-V2.md](SESSAO-2026-10-08-0900-APOSTILA-ITIC-V2.md)
+
+---
+
 ## Sessão 2026-10-07 21:10 — status PENDENTE
 
 - **Ambiente:** local · **Modelo:** Claude Opus 5.5 · **Branch:** `main` (commits `f8687be` a `8795ff3`) · atualizada em 2026-10-08 08:32
