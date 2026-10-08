@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 71, item 71.3 — Etapa D (atividades) de Comunicação (Rio do Sul): perguntar se as aulas 08 e 09 têm atividade de 50 questões; depois seguir o plano `docs/reorganizar-comunicacao-oral-escrita-rio-do-sul.md` do primeiro passo não ✅. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Etapa 71, item 71.2 — aprovação do plano de Comunicação Oral e Escrita (Rio do Sul). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -15,6 +15,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
 | 71 | 71.3 (C) | revisar as 9 aulas de Comunicação Oral e Escrita (Rio do Sul) em `CONTEUDO/` | Aceite |
+| 72 | 72.8 | 7 contradições do CLAUDE.md corrigidas (uma por commit) | Aceite |
 | 70 | 70.5 | CLAUDE.md dividido em núcleo + `docs/regras/`, histórico em `docs/HISTORICO-REGRAS.md` e esta tabela; depois, as correções das contradições do CLAUDE.md, uma de cada vez | Aceite |
 | 67 | 67.4 | conferir a duração dos 29 vídeos da apostila de Reforço de Linguagens | Aceite |
 | 64 | 64.6 | apostila de Reforço de Linguagens | Aceite |
@@ -819,4 +820,5 @@ Tarefa pequena por item (só texto das regras). Cada item: mostrar a contradiç�
 | 72.4 | "PDF com gabarito" na regra da Turma × botão removido — escolha: tirar a menção | ✅ Concluído | 2026-10-07 21:39 | Linha 162 de `atividades.md` sem "PDF com gabarito" |
 | 72.5 | Reforço de Linguagens "aula 16 com 50 questões" × 10 aulas de 25 — escolha: tirar do exemplo | ✅ Concluído | 2026-10-07 21:40 | Linhas 377–378 de `atividades.md` remetem à regra exclusiva |
 | 72.6 | Local da ementa: raiz da matéria × `DOCUMENTACAO/` — escolha: raiz da matéria | ✅ Concluído | 2026-10-07 21:43 | Estrutura recomendada, comandos e exemplo de `ementas-e-cursos.md` apontam para a raiz; 35 ementas já estão lá |
-| 72.7 | `git add .` (global) × proibido (projeto) | 🔄 Em progresso | — | — |
+| 72.7 | `git add .` (global) × proibido (projeto) — escolha: mudar a regra global | ✅ Concluído | 2026-10-07 21:44 | CLAUDE.md global: 4 trechos com `git add <arquivos da tarefa>` e "nunca `git add .`" (arquivo fora do Git; cópia anterior no scratchpad da sessão) |
+| 72.8 | Aceite do usuário (7 contradições corrigidas) | ⬜ Pendente | — | — |
