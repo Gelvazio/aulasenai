@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 08:17
+**Versão das regras:** 2026-10-08 08:18
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:18 | Sessão na **nuvem**: ler e aplicar as regras globais de `.claude/regras-globais/` (`CLAUDE-GLOBAL.md` e `CLAUDE-DOCS-BEFORE-EVERY-TASK.md`), porque lá o `~/.claude/CLAUDE.md` da máquina do usuário não existe; o `CLAUDE.md` do projeto continua com precedência |
 | 2026-10-08 08:17 | Nova regra "REGRAS E SKILLS GLOBAIS NO PROJETO": skills do usuário em `.claude/skills/` e cópia de referência (não carregada) das regras globais em `.claude/regras-globais/`, sincronizadas sempre que o original mudar |
 | 2026-10-08 08:14 | Log da sessão só é gravado quando o usuário responde **SIM** à pergunta do fim da tarefa (tirada a obrigação de gravar a cada pedido e antes de parar); o `STATUS.md` continua sempre atualizado |
 | 2026-10-08 08:13 | Nova seção **"MUITO IMPORTANTE — ARQUIVOS DE STATUS"** (logo após as regras de sempre): mapa de todos os arquivos de status (`STATUS.md`, `TASKS.md`, `SESSOES-CLAUDE/`, STATUS da matéria e das ementas), legenda única, quando atualizar, hierarquia (o `STATUS.md` vence) e critério de `CONCLUÍDO` |
 | 2026-10-08 08:11 | Fonte única do estado: o `STATUS.md` manda; cada tarefa do `TASKS.md` tem linha na seção "📌 Tarefas do `TASKS.md`" do `STATUS.md` (o `TASKS.md` guarda só a descrição longa) e os logs de `SESSOES-CLAUDE/` citam a etapa/item do `STATUS.md`; em conflito, o `STATUS.md` vence |
-| 2026-10-08 08:10 | Inicialização: ler `SESSOES-CLAUDE/STATUS-SESSOES.md` (e o log das sessões `PENDENTE`) **sempre antes de iniciar uma nova tarefa**, junto com o `STATUS.md`; sessões `CONCLUÍDO` passam pela limpeza antes |
 
 ---
 
@@ -223,6 +223,8 @@ Registrada em 2026-10-03 a pedido do usuário.
    regra "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`"
 3. ✅ **Verificar** se há item `🔄 Em progresso` ou `⬜ Pendente` de tarefa aprovada e conferir o que
    já foi feito nos arquivos/commits
+   - ☁️ **Na nuvem:** ler também `.claude/regras-globais/CLAUDE-GLOBAL.md` e
+     `CLAUDE-DOCS-BEFORE-EVERY-TASK.md` (regras globais; ver "REGRAS E SKILLS GLOBAIS NO PROJETO")
 4. ✅ **Prosseguir de onde parou** (sem refazer itens `✅` nem pular itens)
 5. ✅ **Só então responder** ao usuário (ou iniciar a tarefa)
 
@@ -327,6 +329,13 @@ Registrada em 2026-10-08 a pedido do usuário (ele usa 2 licenças do Claude Cod
   (`CLAUDE-GLOBAL.md` = `~/.claude/CLAUDE.md` e `CLAUDE-DOCS-BEFORE-EVERY-TASK.md`). Essa cópia
   **não é carregada** pelo Claude (evita regras em dobro em toda mensagem); serve de backup
   versionado para outra licença/máquina conferir ou restaurar.
+- ✅ **Sessão na NUVEM (2026-10-08, pedido do usuário):** no Claude Code na web/remoto o
+  `C:\Users\gelva\.claude\CLAUDE.md` da máquina do usuário **não existe**. Por isso, no início de
+  toda sessão em nuvem (junto com o `STATUS.md` e o `STATUS-SESSOES.md`), **ler e aplicar** as
+  regras globais da cópia do projeto: `.claude/regras-globais/CLAUDE-GLOBAL.md` e
+  `.claude/regras-globais/CLAUDE-DOCS-BEFORE-EVERY-TASK.md`, como se fossem o `CLAUDE.md` global.
+  A ordem de precedência continua: **`CLAUDE.md` do projeto** (e `docs/regras/`) vence o global.
+  As skills do usuário também estão em `.claude/skills/`.
 - ✅ **Sincronizar sempre:** ao alterar uma regra global ou uma skill do usuário, atualizar a cópia
   do projeto **na mesma tarefa** (e também `~/.claude/skills/` e `~/.agents/skills/`, que devem
   ficar iguais) e incluir no commit.
