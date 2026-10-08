@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 08:11
+**Versão das regras:** 2026-10-08 08:13
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:13 | Nova seção **"MUITO IMPORTANTE — ARQUIVOS DE STATUS"** (logo após as regras de sempre): mapa de todos os arquivos de status (`STATUS.md`, `TASKS.md`, `SESSOES-CLAUDE/`, STATUS da matéria e das ementas), legenda única, quando atualizar, hierarquia (o `STATUS.md` vence) e critério de `CONCLUÍDO` |
 | 2026-10-08 08:11 | Fonte única do estado: o `STATUS.md` manda; cada tarefa do `TASKS.md` tem linha na seção "📌 Tarefas do `TASKS.md`" do `STATUS.md` (o `TASKS.md` guarda só a descrição longa) e os logs de `SESSOES-CLAUDE/` citam a etapa/item do `STATUS.md`; em conflito, o `STATUS.md` vence |
 | 2026-10-08 08:10 | Inicialização: ler `SESSOES-CLAUDE/STATUS-SESSOES.md` (e o log das sessões `PENDENTE`) **sempre antes de iniciar uma nova tarefa**, junto com o `STATUS.md`; sessões `CONCLUÍDO` passam pela limpeza antes |
 | 2026-10-08 08:09 | Sessão só fica `CONCLUÍDO` quando a tarefa inteira foi finalizada: antes, validar **cada** pedido do usuário da sessão (feito, conferido e aceito), com a tabela "✅ Validação dos pedidos" no log; faltando qualquer item, continua `PENDENTE` |
 | 2026-10-08 08:06 | `SESSOES-CLAUDE/STATUS-SESSOES.md` (status de todas as sessões, lido no início de cada sessão) e regra da sessão `CONCLUÍDO`: ler o que foi feito, atualizar o `CLAUDE.md` se preciso, conferir as pendências e remover os dados da sessão |
-| 2026-10-08 08:04 | Registro da sessão: motivo registrado — o usuário alterna entre 2 licenças do Claude Code e perde o contexto ao trocar; o log precisa bastar sozinho para a outra licença continuar |
 
 ---
 
@@ -46,6 +46,8 @@ Registrada em 2026-10-03 a pedido do usuário.
 - ✅ **Final de tarefa:** responder `TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?` (sem tabela
   nem resumo) e, logo abaixo, perguntar **"Deseja atualizar o log da sessão atual?"** (ver a
   regra "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`", 2026-10-08).
+- 🧭 **Arquivos de status são MUITO IMPORTANTES** (2026-10-08): `STATUS.md` é a fonte única do
+  estado; ver a seção "MUITO IMPORTANTE — ARQUIVOS DE STATUS" logo abaixo.
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
 - ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, numa branch própria + novo PR para a `main`).
@@ -70,6 +72,47 @@ Registrada em 2026-10-03 a pedido do usuário.
 - ✅ **Aulas extraídas da ementa em `CONTEUDO/`** (2026-10-03): 1 aula a cada 4 h da ementa
   (arredondando para cima), arquivo `AULA-NN-DESCRICAO-CURTA.md`; atividades e, no final, a
   apostila são feitas a partir dessas aulas (ver a regra "AULAS EXTRAÍDAS DA EMENTA").
+
+---
+
+## 🧭 MUITO IMPORTANTE — ARQUIVOS DE STATUS (ONDE FICA O ESTADO DE CADA COISA)
+
+⚠️ **Regra de altíssima prioridade** (2026-10-08, pedido do usuário). O usuário alterna entre
+**2 licenças do Claude Code** e outras IAs; o trabalho só continua certo se o status estiver
+**gravado nos arquivos**, nunca só na conversa. **O que não está no status não aconteceu.**
+
+### Mapa dos arquivos de status
+
+| Arquivo | Guarda | Quem manda |
+|---|---|---|
+| `STATUS.md` (raiz) | Etapas e itens de **todas** as tarefas, "Próximo passo", "⏳ Aguardando o usuário", "📌 Tarefas do `TASKS.md`", decisões, riscos, bloqueios, pendências e lições | 🥇 **Fonte única do estado** — em conflito, **ele vence** |
+| `TASKS.md` / `TASKS_COMPLETE.md` | Só a **descrição longa** das tarefas pendentes / histórico das concluídas | Aponta para o `STATUS.md` (sem status próprio) |
+| `SESSOES-CLAUDE/STATUS-SESSOES.md` | Uma linha por sessão: status (`PENDENTE` · `CONCLUÍDO` · `🗑️ REMOVIDA`), data e próximo passo | Aponta para o `STATUS.md` |
+| `SESSOES-CLAUDE/SESSAO-AAAA-MM-DD-HHMM-*.md` | Mínimo para outra licença continuar: próximo passo, decisões, validação dos pedidos, pendências (com a etapa/item do `STATUS.md`) | Aponta para o `STATUS.md` |
+| `docs/<tarefa>.md` | Plano da tarefa grande com os passos e o status de cada passo | Detalha a etapa do `STATUS.md` |
+| `<MATERIA>/AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` | Peça por peça da matéria (aula, atividade, capítulo) | Detalha a etapa do `STATUS.md` |
+| `<MATERIA>/STATUS-EMENTAS.md`, `MATERIAIS/STATUS-EMENTAS-CURSOS.md` | Situação das ementas e permissões `VERIFICAR`/`IGNORAR` | Gerados pelos scripts (regras em `docs/regras/ementas-e-cursos.md`) |
+
+### Regras
+
+1. ✅ **Ler antes de agir:** no início de cada chat **e antes de cada tarefa nova**, ler o
+   `STATUS.md` e o `SESSOES-CLAUDE/STATUS-SESSOES.md` (ver "INICIALIZAÇÃO DE CADA CHAT E DE CADA
+   TAREFA").
+2. ✅ **Atualizar na hora:** marcar `🔄` ao começar e `✅` (com data e hora reais do relógio) ao
+   terminar **cada item**, em todos os arquivos de status envolvidos — nunca acumular para o fim.
+3. ✅ **Legenda única:** `⬜ Pendente` · `🔄 Em progresso` · `👀 Aguardando validação` ·
+   `✅ Concluído` · `⛔ Bloqueado/não se aplica` (com o motivo). Só **um** item `🔄` por vez.
+4. ⛔ **Fonte única:** nenhum arquivo mantém status próprio divergente do `STATUS.md`; se divergir,
+   corrigir o outro arquivo na mesma tarefa.
+5. ⛔ **`✅`/`CONCLUÍDO` só com tudo validado:** conferir **cada** pedido do usuário nos arquivos,
+   nos commits e no `STATUS.md` (não pela memória). Faltando item, commit ou aceite → continua
+   pendente. Nunca marcar concluída uma tarefa parcial.
+6. ✅ **"Próximo passo" sempre atual:** é a primeira linha lida ao retomar e a última atualizada ao
+   parar; deve dizer o item **exato** a fazer.
+7. ✅ **Histórico nunca é apagado** no `STATUS.md` (só se acrescentam etapas); o que sai das listas
+   de espera é marcado no item da etapa. A exceção é o log de sessão `CONCLUÍDO`, que é aproveitado
+   e removido (regra "REGISTRO DA SESSÃO").
+8. ✅ **Commit junto:** os arquivos de status alterados entram no commit da tarefa.
 
 ---
 
