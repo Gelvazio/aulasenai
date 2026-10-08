@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-08 11:10
+**Versão das regras:** 2026-10-08 08:22:48
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:22:48 | Merge da branch de 2026-10-07 com a `main`: valem as regras mais novas da `main` (push na nuvem automático em branch própria + PR; `TASKS.md` só pendentes + `TASKS_COMPLETE.md`); mantidos da branch o registro com **data e hora em segundos** (agora dentro da regra do `TASKS.md`, com o "📜 HISTÓRICO POR COMMIT" no `TASKS_COMPLETE.md`) e as correções de conflitos de 2026-10-07 20:03:29 que não foram substituídas (Word não global, final de tarefa, `AGENDA_COLABORADOR`, ementa na raiz, navegador headless, trechos antigos) |
 | 2026-10-08 11:10 | Na **nuvem** o push é **sempre permitido e automático**: ao final de **toda** tarefa que mudar arquivos, commit + push + PR sem esperar pedido nem confirmação do usuário |
 | 2026-10-08 11:00 | Branches das sessões juntadas na `main` (pull request): regra do push por branch + PR, apostila de ITIC concluída e apostila de Exploração de Carreiras (9 capítulos, conferência 157/157); vídeos sem duração unificados no formato `a conferir` (o `??:??` da branch de Exploração deixou de existir) e dados da matéria no formato do gerador da `main` (`textos_ementa`, `rubrica_lista`) |
 | 2026-10-08 10:00 | `TASKS.md` só com tarefas pendentes; concluídas e canceladas movidas para o novo `TASKS_COMPLETE.md` (lido só quando precisar do histórico) |
@@ -18,6 +19,8 @@
 | 2026-10-07 20:30 | Regra do push dividida por ambiente: **local** = nunca fazer push (continua); **nuvem** (Claude Code na web/remoto) = sempre fazer push, direto na `main`, sem pull request |
 | 2026-10-07 20:20 | Apostila de Reforço de Linguagens (10 capítulos, aguardando validação); gerador de apostilas aceita a carga horária de cada aula (6 h/7 h), ementas com capacidades em lista, conteúdos programáticos por módulo e aulas em negrito, e vídeos "⏳ pendentes" quando o YouTube não pode ser conferido; ementa de Reforço de Linguagens com as 6 capacidades da ementa do curso |
 | 2026-10-07 20:15 | Regra "IDENTIFICAÇÃO DA APOSTILA" (global): toda apostila mostra autor, versão, data e hora (campos `autor_apostila` e `versao_apostila` no `materia.json`); começou pela ITIC (autor Gelvazio Camargo, versão 1.0) |
+| 2026-10-07 20:03:29 | Conflitos resolvidos: push e pull request **só com pedido explícito** do usuário; Word deixa de ser regra global (só onde já existe ou a pedido); final de tarefa e plano em `docs/` sem contradição; `AGENDA_COLABORADOR` fora dos cursos; apostila 1 capítulo = 1 aula pela soma das horas; Reforço de Linguagens (duas pastas `CONTEUDO` se completam); ementa na raiz da matéria; navegador headless só para gerar arquivo pedido; trechos antigos (PDF com gabarito, menu ALUNOS, index.html, Supabase) atualizados |
+| 2026-10-07 19:51:43 | Regra "REGISTRO DE TODO PEDIDO NO `TASKS.md`": todo pedido anotado com data e hora **com segundos** (início, passos, conclusão, commit); `TASKS.md` vira quadro atual + histórico (outubro reconstruído dos commits); caminho do `TASKS.md` vale na máquina e na nuvem; versão das regras passa a ter segundos |
 | 2026-10-07 17:30 | Conferência da apostila aceita também ementas no formato Rio do Sul Mais Tech (capacidades em lista numerada, módulos de conteúdo, aulas em negrito, indicadores e casos em lista) |
 | 2026-10-07 17:00 | Combo "Aluno" do professor também nas atividades objetivas (alternativas marcadas pelo aluno, somente leitura); módulo único `respostas-aluno-professor.js` |
 | 2026-10-07 17:00 | Status da regra das apostilas atualizado: ITIC com os 10 capítulos, HTML e PDF prontos, aguardando validação do professor |
@@ -74,7 +77,7 @@ também deve ser verificado e atualizado junto, para o usuário ver sempre as re
 Registrada em 2026-10-03 a pedido do usuário.
 
 - ✅ **Cada versão tem data e hora:** a cada alteração deste arquivo, atualizar a linha
-  `**Versão das regras:** AAAA-MM-DD HH:MM` (topo) e acrescentar **no início** do
+  `**Versão das regras:** AAAA-MM-DD HH:MM:SS` (topo; segundos desde 2026-10-07) e acrescentar **no início** do
   "HISTÓRICO DE VERSÕES DAS REGRAS" uma linha com a mesma data e hora e o que mudou.
 - ✅ **Verificar o visualizador a cada atualização:** `assets/js/regras-modal.js` (+
   `assets/css/regras-modal.css`, acionado por `js/header-usuario.js`) deve continuar lendo este
@@ -91,9 +94,12 @@ Registrada em 2026-10-03 a pedido do usuário.
 
 - ⛔ **Nunca abrir navegador** (preview, Browser pane, computer-use, Playwright...) nem iniciar
   servidor de desenvolvimento para validar. Validar por leitura do código, `node`, banco e terminal;
-  se só o navegador confirmar, pedir ao usuário que teste.
+  se só o navegador confirmar, pedir ao usuário que teste. ✅ **Exceção (2026-10-07):** quando o
+  usuário pedir um **arquivo** que só o navegador gera (ex.: o PDF da apostila completa), pode-se
+  usar o Chromium **sem janela** (headless) para gerá-lo — nunca para validar telas.
 - ✅ **Final de tarefa:** responder **apenas** `TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?` (sem tabela
-  nem resumo).
+  nem resumo). Os avisos que outra regra manda dar (matérias semelhantes, tabela de permissões,
+  pendências do usuário, commit/push) vêm **em poucas linhas antes** da frase final.
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
 - ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, numa branch própria + novo PR para a `main`).
@@ -227,42 +233,39 @@ regra "PASTA `AULAS/` SEMPRE GERADA CONFORME A DOCUMENTAÇÃO DA MATÉRIA" (2026
 
 **ANTES DE RESPONDER QUALQUER COISA**, você DEVE:
 
-1. ✅ **LER `C:\fontes\aulasenai\TASKS.md`** — só as tarefas pendentes (as concluídas ficam em `TASKS_COMPLETE.md`, que não precisa ser lido aqui)
-2. ✅ **Verificar** qual tarefa está em progresso
-3. ✅ **Verificar** quais são as subtarefas ativas
-4. ✅ **Só então responder** ao usuário
+1. ✅ **LER o `TASKS.md` da raiz do repositório** (na máquina do usuário:
+   `C:\fontes\aulasenai\TASKS.md`; na nuvem: `TASKS.md` do clone) — só as tarefas pendentes (as
+   concluídas ficam em `TASKS_COMPLETE.md`, que não precisa ser lido aqui)
+2. ✅ **Verificar** qual tarefa está em progresso e quais subtarefas faltam
+3. ✅ **Só então responder** ao usuário e registrar o pedido novo (regra abaixo)
 
-**Por quê?** TASKS.md contém o estado atual de trabalho. Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
-
-**Checklist de inicialização:**
-```
-☐ Li TASKS.md?
-☐ Identifiquei a tarefa atual?
-☐ Identifiquei as subtarefas ativas?
-☐ Entendi o status de cada subtarefa?
-☐ Pronto para responder ao usuário?
-```
-
-**🚀 Só responda depois de marcar TODOS os ☐ acima.**
+**Por quê?** O `TASKS.md` contém o estado atual de trabalho. Sem ler, você pode executar tarefas
+fora de ordem ou duplicadas.
 
 ---
 
 ## 📋 CONSULTAR TAREFAS PENDENTES — `TASKS.md` E `TASKS_COMPLETE.md`
 
-⚠️ **ANTES DE QUALQUER TRABALHO, LEIA:**
-
-📄 **Arquivo:** `C:\fontes\aulasenai\TASKS.md`
+📄 **Arquivos:** `TASKS.md` (pendentes) e `TASKS_COMPLETE.md` (histórico), na raiz do repositório.
 
 Registrada em 2026-10-08 a pedido do usuário (separar pendentes de concluídas, para o chat ler
-menos texto).
+menos texto); junta a regra de 2026-10-07 "registro de todo pedido com data e hora (segundos)".
 
 - ✅ **`TASKS.md` = SOMENTE tarefas pendentes** (⏳ planejadas e 🔄 em progresso), com as
   subtarefas de cada uma. É o único arquivo de tarefas lido na inicialização do chat.
-- ✅ **`TASKS_COMPLETE.md` = histórico** das tarefas ✅ concluídas e ⛔ canceladas. Não é lido na
-  inicialização; consultar só quando precisar do histórico. Se não existir, criar.
+- ✅ **`TASKS_COMPLETE.md` = histórico** das tarefas ✅ concluídas e ⛔ canceladas, mais o
+  "📜 HISTÓRICO POR COMMIT" (uma linha por tarefa/commit). Não é lido na inicialização;
+  consultar só quando precisar do histórico. Se não existir, criar.
+- ✅ **Data e hora sempre com segundos** (2026-10-07, pedido do usuário): `AAAA-MM-DD HH:MM:SS`,
+  horário de Brasília. Na nuvem: `TZ=America/Sao_Paulo date "+%Y-%m-%d %H:%M:%S"`; na máquina do
+  usuário: `Get-Date -Format "yyyy-MM-dd HH:mm:ss"`.
+- ✅ **Todo pedido que gere trabalho** (arquivo, banco, commit, material) é registrado: tarefa
+  grande entra no `TASKS.md` (com início e subtarefas datados); ao concluir, ganha conclusão,
+  commit e plano e vai para o `TASKS_COMPLETE.md`. Toda tarefa concluída ganha também a sua linha
+  no "📜 HISTÓRICO POR COMMIT", no mesmo commit da tarefa. Perguntas sem trabalho não entram.
 - ✅ **Ao concluir ou cancelar uma tarefa:** marcar o status (✅ CONCLUÍDO ou ⛔ CANCELADA, com a
-  data), **mover o bloco inteiro** para `TASKS_COMPLETE.md` (seção CONCLUÍDAS ou CANCELADAS, em
-  ordem de número) e tirá-lo do `TASKS.md`, no mesmo commit da tarefa.
+  data e hora), **mover o bloco inteiro** para `TASKS_COMPLETE.md` (seção CONCLUÍDAS ou
+  CANCELADAS, em ordem de número) e tirá-lo do `TASKS.md`, no mesmo commit da tarefa.
 - ✅ Tarefa nova entra no `TASKS.md` com o próximo número livre (contando os dois arquivos).
 - ❌ Não deixar tarefa concluída no `TASKS.md` nem tarefa pendente no `TASKS_COMPLETE.md`.
 
@@ -443,7 +446,7 @@ USING (id = auth.uid());
 - [ ] **NOME DA DISCIPLINA:** Identificação clara no título
 - [ ] **CARGA HORÁRIA:** Total de horas da matéria (e por módulo/aula no cronograma)
 - [ ] **CONTEÚDOS ESPECÍFICOS:** Tópicos, temas e assuntos exclusivos da matéria
-- [ ] **CAPACIDADES MENSURÁVEIS:** 10+ competências específicas da disciplina
+- [ ] **CAPACIDADES MENSURÁVEIS:** as capacidades da UC na ementa do curso (que vence; "10+" é só referência)
 - [ ] **MÓDULOS TEMÁTICOS:** 7–10 módulos refletindo a sequência real de ensino
 - [ ] **CRONOGRAMA DETALHADO:** Aulas estruturadas por semana/período
 - [ ] **ATIVIDADES PRÁTICAS:** Exercícios, projetos e trabalhos da disciplina
@@ -462,7 +465,7 @@ USING (id = auth.uid());
 - ✅ Contexto e alinhamento curricular (BNCC, competências)
 - ✅ Objetivo geral e específicos da disciplina
 - ✅ Carga horária total da disciplina
-- ✅ 10 capacidades mensuráveis com indicadores
+- ✅ Capacidades mensuráveis da UC (as da ementa do curso) com indicadores
 - ✅ Conteúdos programáticos em módulos (com tópicos, exemplos, atividades)
 - ✅ Sequência de aulas (cronograma detalhado)
 - ✅ Critérios e rúbricas de avaliação (0–10 com 4 níveis)
@@ -472,7 +475,10 @@ USING (id = auth.uid());
 - ✅ Prompts para Chalkie AI gerar conteúdo
 - ✅ Checklist de implementação
 
-**Estrutura Recomendada:**
+**Local:** o `EMENTA-CHALKIE-AI.md` fica na **raiz da pasta da matéria** (como na ITIC; em
+2026-10-07 as 33 ementas estão na raiz). A estrutura abaixo é a antiga, só como referência.
+
+**Estrutura Recomendada (antiga):**
 
 ```
 DOCUMENTACAO/
@@ -489,7 +495,7 @@ A ementa de cada matéria é só o `EMENTA-CHALKIE-AI.md`; não criar nem verifi
 - [ ] Estrutura em 10 seções (contexto, objetivos, conteúdos, cronograma, etc)
 - [ ] Carga horária total informada no início do arquivo
 - [ ] 7–10 módulos temáticos definidos
-- [ ] 10+ capacidades mensuráveis com indicadores
+- [ ] Capacidades da UC (as da ementa do curso) com indicadores
 - [ ] Rubrica de avaliação com 4 níveis (Excelente/Bom/Aceitável/Insuficiente)
 - [ ] Mapeamento BNCC explícito
 - [ ] Atividades para cada módulo
@@ -511,10 +517,10 @@ A ementa de cada matéria é só o `EMENTA-CHALKIE-AI.md`; não criar nem verifi
 **Como validar:**
 ```bash
 # Linux/Mac
-wc -c DOCUMENTACAO/EMENTA-CHALKIE-AI.md
+wc -c EMENTA-CHALKIE-AI.md
 
 # PowerShell (Windows)
-(Get-Content DOCUMENTACAO/EMENTA-CHALKIE-AI.md).Length
+(Get-Content EMENTA-CHALKIE-AI.md).Length
 ```
 
 **Se estiver fora do intervalo:**
@@ -549,7 +555,7 @@ wc -c DOCUMENTACAO/EMENTA-CHALKIE-AI.md
 ## 🎓 REGRA CRÍTICA — ATUALIZAR STATUS-EMENTAS AO MODIFICAR EMENTAS
 
 ⚠️ **SEMPRE que modificar o EMENTA-CHALKIE-AI.md de qualquer matéria, DEVE atualizar:**
-- 📄 `MATERIAIS/RIO_DO_SUL_MAIS_TECH/<materia>/STATUS-EMENTAS.md` (status da matéria)
+- 📄 `MATERIAIS/<CURSO>/<materia>/STATUS-EMENTAS.md` (status da matéria; vale para todos os cursos)
 - 📄 `MATERIAIS/STATUS-EMENTAS-CURSOS.md` (status consolidado do curso)
 
 **Ordem de atualização (OBRIGATÓRIA):**
@@ -711,11 +717,13 @@ Este relatório contém:
 - Documentação, ementas, apostilas e recursos são organizados **por curso**
 
 **Regra de ouro:**
-- ✅ **TODA pasta em `MATERIAIS/` (exceto MATERIAS-GERAIS) = 1 CURSO COMPLETO**
+- ✅ **TODA pasta em `MATERIAIS/` (exceto `MATERIAS-GERAIS/` e `AGENDA_COLABORADOR/`) = 1 CURSO COMPLETO**
+  (`QUALIFICACAO-PROFISSIONAL/` é curso, mas sem ementa de curso — ver a exceção dela)
 - ✅ Cada curso é independente e tem suas próprias matérias, ementas, apostilas
 
 **Pastas a IGNORAR em análises:**
 - ❌ `MATERIAIS/MATERIAS-GERAIS/` — **NÃO é um curso**, é repositório genérico
+- ❌ `MATERIAIS/AGENDA_COLABORADOR/` — **NÃO é um curso** (regras próprias no `CLAUDE.md` dela)
 - ❌ Não ignorar outras pastas — cada uma é um curso válido!
 
 **Scripts de análise DEVEM:**
@@ -804,6 +812,11 @@ MATERIAIS/
 ## 📄 Descrição Detalhada de Cada Arquivo
 
 ### 1️⃣ **index.html** — Portal de Login
+
+> ⚠️ **Descrição antiga (só histórico).** Hoje o login é a `login.html` com Supabase Auth
+> (regras "AUTENTICAÇÃO" e "CONTAS, SENHAS E PERFIL": perfil no `app_metadata`, sem
+> `HASH_ALUNO`/`senha_hash` nem perfil no `localStorage`) e o `index.html` lista os cursos do
+> usuário logado (regra "ÍNDICE DE CURSOS"). Em caso de dúvida, valem essas regras.
 
 #### 📊 Especificações
 - **Linhas:** ~370
@@ -1495,7 +1508,7 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
 
 Registrada em 2026-10-03. Vale para **todas** as atividades e avaliações de **todas** as matérias.
 
-- ✅ Ao exportar (PDF da atividade/prova completa, PDF com gabarito, **Gabarito**), o campo
+- ✅ Ao exportar (PDF da atividade/prova completa e **Gabarito** do professor), o campo
   **Turma** do PDF é preenchido com a **turma selecionada** — não fica a linha em branco quando o
   professor tem turma.
 - ✅ **Lista (combo) "Turma" antes dos botões de exportar**, no início da `.export-bar`, só para o
@@ -1514,14 +1527,14 @@ Registrada em 2026-10-03. Vale para **todas** as atividades e avaliações de **
 - ✅ Página com PDF próprio (fora do `atividade.js`) carrega o `turma-exportacao.js` direto e usa
   `await obterTurmaParaExportacao()` (retorno `null` = cancelar a exportação).
 
-## 📝 REGRA CRÍTICA — EXPORTAR EM WORD AO LADO DE CADA EXPORTAR PDF (PROJETO TODO)
+## 📝 REGRA — EXPORTAR EM WORD (SÓ ONDE JÁ EXISTE OU A PEDIDO)
 
-Registrada em 2026-10-05 a pedido do usuário. Vale para **todas** as atividades e avaliações de
-**todas** as matérias (regra global do projeto).
+Registrada em 2026-10-05 como regra global; **deixou de ser global em 2026-10-07** a pedido do
+usuário. O botão de Word **não é mais obrigatório** ao lado de cada PDF: fica só onde já existe
+(atividades práticas de Excel) e só é criado em página nova **quando o usuário pedir**.
 
-- ✅ **Ao lado de cada botão de exportar em PDF** existe o botão **📝 Exportar em Word**, com o
-  **mesmo layout e o mesmo conteúdo do PDF** (cabeçalho SENAI, capacidades, questões, gabarito
-  quando o PDF tem, rodapé "Página X de Y", folha A4 com margem de 15 mm).
+- ✅ **Onde existe, o botão 📝 Exportar em Word** tem o **mesmo layout e o mesmo conteúdo do PDF**
+  (cabeçalho SENAI, capacidades, questões, rodapé "Página X de Y", folha A4 com margem de 15 mm).
 - ✅ **Mesma visibilidade e mesmas regras do PDF:** o botão de Word acompanha o `hidden` e o
   `data-somente-perfil` do botão de PDF; o Word com gabarito só sai para o PROFESSOR (gabarito
   lido do banco, como no PDF) e o aluno recebe só as próprias respostas; a turma vem da mesma
@@ -1543,14 +1556,11 @@ Registrada em 2026-10-05 a pedido do usuário. Vale para **todas** as atividades
     impressão com as cores da tela e o script põe o "📝 Exportar em Word" ao lado (body com a
     classe `exportar-pagina`). Usado no trabalho em equipe da ITIC (v1 e v2), **sem o botão de
     Word** a pedido do usuário (2026-10-05): `data-word="nao"` no botão de PDF desliga o Word.
-- ✅ **Página ou exportação nova em PDF** deve ganhar o botão de Word junto: usar o
-  `atividade.js` (ou o `atividade-pratica-excel.js`) e, se o PDF for feito por outro script,
-  acrescentar o espelho em `ESPELHOS_WORD` (`exportar-word.js`) ou criar o equivalente com o
-  `documento-word.js`. Mudou o layout do PDF → mudar o Word junto.
-- ⏳ **Ainda sem o botão de Word** (fazer quando forem mexidas ou a pedido): exportação dos
-  exercícios e da apostila completa (`assets/js/apostila.js`) e páginas antigas com PDF próprio
-  fora dos scripts acima (ex.: `REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO/AULAS/`, botões
-  `onclick`).
+- ✅ **Página ou exportação nova em PDF:** **sem** botão de Word, salvo pedido do usuário. Quando
+  pedido, usar o `documento-word.js` (ou acrescentar o espelho em `ESPELHOS_WORD` do
+  `exportar-word.js`); onde houver Word, mudou o layout do PDF → mudar o Word junto.
+- ✅ Sem Word hoje (e assim ficam, salvo pedido): atividades e avaliações objetivas, discursivas,
+  trabalho em equipe, apostila (completa e exercícios) e páginas antigas com PDF próprio.
 
 ## 🪟 REGRA CRÍTICA — AVISOS AO USUÁRIO: sempre POPUP, nunca `alert()`/`confirm()`
 
@@ -2022,7 +2032,7 @@ assets/
 │                        turmas-professor.css — turmas.html da raiz (menu TURMAS, só Professor
 │                        Administrador): CRUD da tabela `turmaprofessor`;
 │                        turmas-aluno-repositorio.js + turmas-aluno-pagina.js + css/
-│                        turmas-aluno.css — alunos.html da raiz (menu ALUNOS, todo professor):
+│                        turmas-aluno.css — alunos.html da raiz (menu ALUNOS, só Professor Administrador):
 │                        CRUD da tabela `turmaaluno`;
 │                        pendencias-repositorio.js + pendencias-pagina.js + css/
 │                        pendencias.css — MATERIAIS/AGENDA_COLABORADOR/pendencias.html
@@ -2271,8 +2281,8 @@ dessas atividades. Registrada em 2026-10-03 a pedido do usuário.
   definidas fica aguardando o professor.
 - ✅ **Aulas de avaliação** (decisão do usuário, 2026-10-03): a **Aula 15 de Fundamentos de
   Automação/Instrumentação** (avaliação integradora) tem atividade objetiva de **20 questões**;
-  as demais aulas de avaliação (ex.: Eletricidade aula 09, Reforço de Linguagens aula 16) seguem
-  com **50 questões**.
+  as demais aulas de avaliação (ex.: Eletricidade aula 09) seguem com **50 questões**. O Reforço
+  de Linguagens segue a regra exclusiva dele (10 aulas, 20 objetivas + 5 discursivas).
 - ✅ **Banco na geração das pendentes** (plano `docs/gerar-atividades-50-questoes-todas-materias.md`,
   2026-10-03): o usuário autorizou **aplicar o seed no Supabase ao finalizar cada matéria**.
 - ⏳ **Fila:** gerar **somente uma matéria por vez, na ordem que o usuário liberar**; as demais
@@ -2307,6 +2317,11 @@ demais matérias continuam com a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES".
   discursivas são escritas lendo esse arquivo da aula (`- **Conteúdo-base:**
   ../AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-....md` na fonte); nunca ler os PDFs da pasta, e as
   aulas antigas de `AULAS/AULA-NN.md` não são mais fonte das atividades.
+- ✅ **As duas pastas `CONTEUDO` se completam** (conferido em 2026-10-07): `REFORCO_LINGUAGENS/CONTEUDO/AULA-NN-*.md`
+  é o **plano da aula** (módulo, horas, capacidades, indicadores, roteiro, com link para os slides)
+  e `AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-*.md` é o **conteúdo dos slides**, de onde saem as questões.
+  As 10 aulas já têm as duas páginas de atividades; aula que ficar **sem** atividade ganha as
+  páginas desta regra (20 objetivas + 5 discursivas).
 - ✅ As objetivas seguem o gabarito equilibrado entre as letras e com posição sorteada; as
   discursivas citam o texto ou a situação da aula (do mesmo arquivo de
   `AULAS-CHALKIE-AI/CONTEUDO/`).
@@ -2470,8 +2485,8 @@ matéria.**
 ### Gerador e arquivos
 
 - ✅ **Gerador único:** `C:\Python314\python.exe assets\gerador-apostilas\gerar_apostila.py
-  <pasta da matéria>` → `<MATERIA>/APOSTILA/APOSTILA-<MATERIA>.html` (inclui todos os
-  `CAPITULO-*.md` de `APOSTILA/CONTEUDO/`). Não montar apostila à mão.
+  <pasta da matéria>` → `<MATERIA>/APOSTILA/APOSTILA-<MATERIA>.html`, gerado a partir do Markdown completo
+  `APOSTILA-<MATERIA>.md` (que reúne os `CAPITULO-*.md`). Não montar apostila à mão.
 - ✅ **CSS e JS globais e reutilizáveis em qualquer matéria:** `assets/css/apostila.css`,
   `assets/js/apostila.js` e `assets/img/logo-sesi-senai.png`, sem matéria, curso ou docente fixo no
   código e sem `<style>`/`<script>` embutidos. O que muda vem dos dados.
@@ -2487,8 +2502,8 @@ matéria.**
 
 Registrada em 2026-10-03 a pedido do usuário.
 
-- ✅ **1 capítulo = 1 aula de 4 horas.** Cada aula da matéria vira um `CAPITULO-NN.md` em
-  `APOSTILA/CONTEUDO/` (lógica mantida).
+- ✅ **1 capítulo = 1 aula** (em geral de 4 h; a última aula pode ter menos horas, e o Reforço de
+  Linguagens tem aulas de 6 h e 7 h). Cada aula vira um `CAPITULO-NN.md` em `APOSTILA/CONTEUDO/`.
 - ✅ **Fluxo em 3 etapas:**
   1. escrever e validar os capítulos (`CAPITULO-NN.md`), um por vez;
   2. gerar o **Markdown completo da apostila** dentro da pasta `APOSTILA` da própria matéria:
@@ -2523,7 +2538,7 @@ Registrada em 2026-10-03 a pedido do usuário.
   (`--forcar` refaz do zero). Módulo:
   `assets/gerador-apostilas/markdown_apostila.py`. O plano de capítulos vem do `materia.json`
   (`carga_horaria_uc`, `horas_por_aula` = 4, `aulas` = uma por aula); o gerador confere
-  se capítulos × 4 h = carga da UC. Glossário em ordem alfabética sem considerar acentos.
+  se a **soma das horas das aulas** = carga da UC (ver "Carga horária por aula"). Glossário em ordem alfabética sem considerar acentos.
 - ✅ **Carga horária por aula** (2026-10-07): quando as aulas não têm 4 h (exceção de Reforço de
   Linguagens: 6 h e 7 h), cada aula do `materia.json` traz `carga_horaria`; o gerador soma as
   aulas para conferir a carga da UC e mostra as horas de cada capítulo. Sem `carga_horaria`, vale
@@ -2759,8 +2774,8 @@ faltava. Vale para **todas as matérias**.
 ✅ Tudo conforme `C:\Users\gelva\.claude\CLAUDE.md` (global)  
 ✅ **Fonte única de regras:** este `CLAUDE.md`. O `AGENTS.md` (Codex e outros agentes) contém apenas a instrução de ler e seguir este arquivo — o conteúdo que existia nele foi mesclado aqui em 2026-09-23. Novas regras devem ser escritas **somente aqui**.  
 ✅ Grafo: `graphify update .` após cada sessão  
-✅ Documentação: `docs/<tarefa>.md` antes de implementar  
-✅ Tabelas de resultado ao finalizar tarefas  
+✅ Documentação: `docs/<tarefa>.md` antes de implementar **tarefas grandes** (pequenas não precisam)  
+✅ Final de tarefa: só a frase "TAREFA FINALIZADA!…" (ver "REGRAS DO USUÁRIO"); sem tabelas  
 
 ---
 
@@ -2775,7 +2790,7 @@ faltava. Vale para **todas as matérias**.
 - ✅ `ccb9d3b`: plano detalhado da implementação registrado em `docs/superpowers/plans/2026-10-02-cursoprofessor.md`.
 - ✅ O plano recebeu revisão independente; os pontos levantados incluem conferir tabela/permissões existentes, políticas e acesso de leitura a `usuario`, proteger a consulta de funções ausentes e identificar perfil pela sessão Auth (`app_metadata.perfil`).
 - ⛔ Substituído em 2026-10-03: o índice filtra pelo curso da turma (`turma.curso_id` + `cursos_do_usuario()`); a `cursoprofessor` não será criada.
-- ⛔ Não há conector Supabase/SQL disponível nesta sessão. O usuário recebeu consultas somente de leitura para executar no SQL Editor e fornecer os resultados. Não afirmar que `cursoprofessor` existe no banco remoto antes da aplicação confirmada da migração.
+- ⛔ (Situação de 2026-10-03; hoje há conector do Supabase — vale a regra "BANCO REAL ANTES DE ALTERAR O SCHEMA".) Não havia conector Supabase/SQL naquela sessão. O usuário recebeu consultas somente de leitura para executar no SQL Editor e fornecer os resultados. Não afirmar que `cursoprofessor` existe no banco remoto antes da aplicação confirmada da migração.
 - ✅ Não foram executados testes, navegador ou servidor; essa restrição continua valendo.
 - 📄 Registro desta atualização: `docs/registro-vinculos-cursos-professor-2026-10-03.md`.
 

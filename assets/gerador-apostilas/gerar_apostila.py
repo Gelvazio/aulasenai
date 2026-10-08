@@ -138,6 +138,9 @@ def ler_dados_materia(pasta_materia):
 def validar_plano_capitulos(dados):
     """Confere o plano de capítulos (1 capítulo = 1 aula) contra a carga horária da UC.
 
+    A soma das horas das aulas ("carga_horaria" de cada aula; sem ela, "horas_por_aula") tem de
+    ser igual à carga da UC — a última aula pode ter menos horas (ex.: 30 h = 7 × 4 h + 2 h).
+
     Args:
         dados: Dados da matéria.
 
