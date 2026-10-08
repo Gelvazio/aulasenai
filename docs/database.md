@@ -547,7 +547,7 @@ Plano: `docs/equipes-sala-de-aula.md`. Tela: modal **👥 Equipes** do menu das 
 
 | Tabela / objeto | Campos / regra |
 |--------|---------|
-| `equipe` | `id` (identity), `turma_codigo` → `turma.codigo`, `materia_id` → `materia.id`, `nome` (único em turma + matéria), `descricao`, `criado_em`, `criado_por` |
+| `equipe` | `id` (identity), `turma_codigo` → `turma.codigo`, `materia_id` → `materia.id`, `nome` (único em turma + matéria, ignorando maiúsculas/minúsculas e espaços nas pontas: índice `equipe_turma_materia_nome_normalizado_uk`, 2026-10-08, `database/2026-10-08-equipe-nome-unico-sem-maiusculas.sql`), `descricao`, `criado_em`, `criado_por` |
 | `equipe_membro` | `id`, `equipe_id` → `equipe.id` (cascade), `aluno_id` → `auth.users.id`, `turma_codigo` e `materia_id` (cópias da equipe, pelo trigger), `papel`, `tarefas`, `lider`; único (`turma_codigo`, `materia_id`, `aluno_id`); índice único parcial = 1 líder por equipe |
 | `equipe_membro_preparar_trg` | copia turma/matéria da equipe e exige o aluno na `turmaaluno` da turma |
 | `equipe_bloquear_troca_turma_trg` | recusa trocar turma/matéria de equipe que tem integrantes |

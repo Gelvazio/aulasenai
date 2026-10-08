@@ -1095,3 +1095,12 @@ Pedido do usuário: bloquear copiar e colar (obrigar a digitar cada resposta) **
 | 88.1 | Item `{ rotulo: '👥 Equipes', acao: 'equipes', papeis }` no `MATERIAIS/GESTAO_E_CONTROLE_MATERIAIS/ANALISE_DADOS_APLICADA_GESTAO/ATIVIDADES/MENU-ATIVIDADES.js`; regra das matérias com o menu atualizada (versão das regras + histórico) | ✅ Concluído | 2026-10-08 17:11:10 | `node --check`; mesmo formato do menu da ITIC |
 | 88.2 | Usuário cadastra as duplas da turma 133933 pelo menu (professor vinculado à turma em `turmaprofessor`) e dá o aceite | ⬜ Pendente | — | — |
 | 88.3 | Botão **📄 Exportar Equipes** no modal de equipes (pedido do usuário, 2026-10-08 17:12:16): `assets/js/equipes-exportar-pdf.js` (novo), `equipes-modal.js`, `menu-acao-equipes.js`, `assets/css/equipes-modal.css`; regra e histórico atualizados | ✅ Concluído | 2026-10-08 17:12:16 | `node --check` nos 3 JS; leitura do código (sem navegador) |
+
+## Etapa 89 — Banco: nome de equipe único na turma + matéria sem diferenciar maiúsculas (pedido em 2026-10-08 17:17:38)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 89.1 | Conferir o banco real: já havia `UNIQUE (turma_codigo, materia_id, nome)` (nome exato); 0 duplicados ignorando maiúsculas/espaços | ✅ Concluído | 2026-10-08 17:17:38 | Consultas de leitura pelo conector |
+| 89.2 | Usuário escolheu o escopo turma + matéria (outra turma pode repetir o nome) | ✅ Concluído | 2026-10-08 17:17:38 | Resposta do usuário no chat |
+| 89.3 | Índice único `equipe_turma_materia_nome_normalizado_uk` em `(turma_codigo, materia_id, lower(btrim(nome)))` aplicado pelo conector; SQL em `database/2026-10-08-equipe-nome-unico-sem-maiusculas.sql`; `docs/database.md` + relatório HTML | ✅ Concluído | 2026-10-08 17:17:38 | `pg_indexes` mostra o índice; 15 equipes mantidas |
+| 89.4 | Aceite do usuário | ⬜ Pendente | — | — |
