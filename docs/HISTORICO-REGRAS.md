@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 07:56 | Nova seção "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`": todo o contexto da sessão gravado num arquivo próprio por sessão, separado por data e hora, com `Status: PENDENTE` até o aceite final, e linha no índice `SESSAO-CLAUDE.md` |
 | 2026-10-08 07:48 | Revisão final das regras (12 itens, um por vez): pastas que não são curso numa lista só; plano em `docs/` só nas tarefas grandes; título "Regras do projeto Aulas SENAI"; menu Regras e aviso de segredo cobrem `docs/regras/` e o histórico; autenticação cita `login.html` e `header-usuario.js`; grafo sem data/números fixos; comando da ementa com `-Raw`; STATUS-EMENTAS com caminho genérico; registro do `cursoprofessor` removido. No CLAUDE.md global: exceção das tarefas pequenas e exemplo sem `git status` |
 | 2026-10-08 07:47 | Merge com a `origin/main` (sessões em nuvem): regras novas da `main` trazidas para a estrutura núcleo + `docs/regras/` — push na nuvem em branch própria + novo PR, automático; `TASKS.md` só com pendentes + `TASKS_COMPLETE.md`; status da apostila de ITIC, ementa no formato por módulos e exceção do vídeo `a conferir` em `docs/regras/apostilas.md` |
 | 2026-10-08 11:10 | Na **nuvem** o push é **sempre permitido e automático**: ao final de **toda** tarefa que mudar arquivos, commit + push + PR sem esperar pedido nem confirmação do usuário |

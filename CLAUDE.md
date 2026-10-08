@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 07:48
+**Versão das regras:** 2026-10-08 07:56
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 07:56 | Nova seção "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`": todo o contexto da sessão gravado num arquivo próprio por sessão, separado por data e hora, com `Status: PENDENTE` até o aceite final, e linha no índice `SESSAO-CLAUDE.md` |
 | 2026-10-08 07:48 | Revisão final das regras (12 itens, um por vez): pastas que não são curso numa lista só; plano em `docs/` só nas tarefas grandes; título "Regras do projeto Aulas SENAI"; menu Regras e aviso de segredo cobrem `docs/regras/` e o histórico; autenticação cita `login.html` e `header-usuario.js`; grafo sem data/números fixos; comando da ementa com `-Raw`; STATUS-EMENTAS com caminho genérico; registro do `cursoprofessor` removido. No CLAUDE.md global: exceção das tarefas pequenas e exemplo sem `git status` |
 | 2026-10-08 07:47 | Merge com a `origin/main` (sessões em nuvem): regras novas da `main` trazidas para a estrutura núcleo + `docs/regras/` — push na nuvem em branch própria + novo PR, automático; `TASKS.md` só com pendentes + `TASKS_COMPLETE.md`; status da apostila de ITIC, ementa no formato por módulos e exceção do vídeo `a conferir` em `docs/regras/apostilas.md` |
 | 2026-10-08 11:10 | Na **nuvem** o push é **sempre permitido e automático**: ao final de **toda** tarefa que mudar arquivos, commit + push + PR sem esperar pedido nem confirmação do usuário |
 | 2026-10-08 11:00 | Branches das sessões juntadas na `main` (pull request): regra do push por branch + PR, apostila de ITIC concluída e apostila de Exploração de Carreiras (9 capítulos, conferência 157/157); vídeos sem duração unificados no formato `a conferir` e dados da matéria no formato do gerador da `main` (`textos_ementa`, `rubrica_lista`) |
-| 2026-10-08 10:00 | `TASKS.md` só com tarefas pendentes; concluídas e canceladas movidas para o novo `TASKS_COMPLETE.md` (lido só quando precisar do histórico) |
 
 ---
 
@@ -184,6 +184,31 @@ TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
   `TASKS_COMPLETE.md`, desde 2026-10-08; ao concluir ou cancelar, mover o bloco no mesmo commit).
   Consultar o `TASKS.md` quando o `STATUS.md` ou uma regra citar uma tarefa dele (ex.: vídeos
   `a conferir` das apostilas); o `TASKS_COMPLETE.md` só quando precisar do histórico.
+
+---
+
+## 🗒️ REGRA CRÍTICA — REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/` (POR DATA E HORA, STATUS PENDENTE)
+
+Registrada em 2026-10-08 a pedido do usuário. Vale para **toda sessão** (local ou nuvem), junto com
+o `STATUS.md`.
+
+- ✅ **Todo o contexto da sessão é gravado em `SESSOES-CLAUDE/`**, num arquivo próprio:
+  `SESSOES-CLAUDE/SESSAO-AAAA-MM-DD-HHMM-ASSUNTO-CURTO.md` (data e hora do início da sessão;
+  assunto em MAIÚSCULAS, sem acentos, com hífen).
+- ✅ **Separado por data e hora:** uma seção `## AAAA-MM-DD HH:MM — <pedido> · <status>` para cada
+  pedido do usuário, em ordem, com o que foi feito, as decisões dele e os commits.
+- ✅ **Cabeçalho do arquivo:** `**Status:** PENDENTE`, ambiente, modelo, branch, links para o plano
+  (`docs/`), o `STATUS.md` (etapa) e o entregável.
+- ✅ **Status = `PENDENTE`** enquanto houver qualquer item sem aceite do usuário; só vira
+  `CONCLUÍDO` depois do aceite final. No fim do arquivo, a tabela **"⏳ Pendências"** (o que falta e
+  quem faz) — é por ela que a próxima sessão (ou outra IA) retoma.
+- ✅ **Índice:** acrescentar no topo de `SESSOES-CLAUDE/SESSAO-CLAUDE.md` uma seção curta da sessão
+  (ambiente, modelo, commits, pedido, status e link para o arquivo da sessão).
+- ✅ Atualizar o arquivo da sessão a cada pedido concluído e **antes de parar**; o commit dele entra
+  no commit da tarefa (ou num commit próprio, se a sessão não mudou outros arquivos).
+- ⛔ A pasta é versionada e publicada: **nunca** gravar senhas, chaves, gabaritos, respostas certas
+  nem dados pessoais de alunos.
+- ✅ Exemplo: `SESSOES-CLAUDE/SESSAO-2026-10-07-2110-COMUNICACAO-RIO-DO-SUL.md`.
 
 ---
 
