@@ -42,7 +42,8 @@ const MSG_PROFESSOR_DISCURSIVA = 'O professor não responde a avaliação: só o
     'Aqui você confere as questões; as respostas dos alunos ficam gravadas no banco.';
 const MSG_BLOQUEADA_DISCURSIVA = '🔒 Avaliação bloqueada pelo professor. Aguarde a liberação ' +
     'para escrever as respostas.';
-const MSG_RESPOSTAS_OCULTAS = '🔒 Depois da entrega, as respostas não ficam mais visíveis nesta ' +
+const NOTA_MAXIMA_DISCURSIVA = 10;
+const MSG_RESPOSTAS_OCULTAS ='🔒 Depois da entrega, as respostas não ficam mais visíveis nesta ' +
     'página. Elas estão gravadas no banco para a correção do professor.';
 const MSG_AUTOMATICO ='Cada resposta é gravada sozinha no banco quando você para de digitar.';
 const MSG_SAIDA_PENDENTE = 'Há respostas ainda não gravadas.';
@@ -217,10 +218,26 @@ function montarMensagensAluno(dados) {
         if (dados.respostasOcultas) mensagens.push(MSG_RESPOSTAS_OCULTAS);
         return mensagens;
     }
+    if (dados.minimoQuestoes) mensagens.push(textoMinimoParaEntregar(dados.minimoQuestoes));
     if (!dados.ativa) mensagens.push(MSG_BLOQUEADA_DISCURSIVA);
     if (dados.avisoHorario) mensagens.push('🕒 ' + dados.avisoHorario);
     if (podeEscrever()) mensagens.push(MSG_AUTOMATICO);
     return mensagens;
+}
+
+/**
+ * Texto do mínimo de questões para entregar (com quanto vale cada questão; nota máxima 10).
+ * @param {number} minimo - Mínimo de questões do aluno.
+ * @returns {string} Mensagem do painel.
+ */
+function textoMinimoParaEntregar(minimo) {
+    const total = new Set(obterCamposDiscursivos().map((campo) => campo.dataset.item)).size;
+    const efetivo = Math.min(total, minimo);
+    const valor = (NOTA_MAXIMA_DISCURSIVA / efetivo).toLocaleString('pt-BR',
+        { maximumFractionDigits: 2 });
+    return '📌 Para entregar: no mínimo ' + efetivo + ' de ' + total + ' questões completas ' +
+        '(todas as alternativas respondidas). Cada questão vale ' + valor + ' ponto(s); a nota ' +
+        'máxima é 10.';
 }
 
 /**
@@ -532,13 +549,34 @@ async function conferirTudoGravado() {
     const gravadas = await estadoDiscursivo.repositorio.lerGravadas();
     preencherSituacaoPeloBanco(gravadas);
     const faltantes = listarFaltantes(gravadas);
-    if (!faltantes.length) return true;
+    const { completas, total, minimo } = contarQuestoesParaEntregar(gravadas);
+    if (completas >= minimo) return true;
 
     const lista = destacarFaltantes(faltantes);
-    await mostrarPopup('Ainda faltam ' + faltantes.length + ' tópico(s) sem resposta gravada ' +
-        'no banco:\n\n' + lista + '\n\nResponda e aguarde o ✅ Resposta gravada.',
+    await mostrarPopup('Você completou ' + completas + ' de ' + total + ' questões. Para ' +
+        'entregar, o mínimo é ' + minimo + ' questão(ões) completa(s) — todas as alternativas ' +
+        'respondidas. Faltam ' + (minimo - completas) + '.\n\nTópicos sem resposta gravada:\n\n' +
+        lista + '\n\nResponda e aguarde o ✅ Resposta gravada.',
     { tipo: 'aviso', titulo: 'Avaliação incompleta' });
     return false;
+}
+
+/**
+ * Conta as questões completas (todos os tópicos gravados com texto) e o mínimo para entregar.
+ * @param {Object<string, string>} gravadas - Respostas lidas do banco.
+ * @returns {{completas: number, total: number, minimo: number}} Contagem e mínimo do aluno.
+ */
+function contarQuestoesParaEntregar(gravadas) {
+    const questoes = new Map();
+    obterCamposDiscursivos().forEach((campo) => {
+        const temTexto = Boolean((gravadas[chaveDoCampo(campo)] || '').trim());
+        const atual = questoes.get(campo.dataset.item) ?? true;
+        questoes.set(campo.dataset.item, atual && temTexto);
+    });
+    const total = questoes.size;
+    const completas = [...questoes.values()].filter(Boolean).length;
+    const minimo = Math.min(total, estadoDiscursivo.dados?.minimoQuestoes || total);
+    return { completas, total, minimo };
 }
 
 /**

@@ -25,6 +25,9 @@ const CHAVE_ORDEM_ALFABETICA = 'nome';
 const ARQUIVO_GRAFICOS_PROGRESSO = 'graficos-progresso-turma.js';
 const SETAS_ORDENACAO = { semOrdem: '↕', crescente: '▲', decrescente: '▼' };
 const SEM_NOTA = -1;
+const NOTA_MAXIMA = 10;
+const TABELA_MINIMO_ALUNO = 'minimo_questoes_aluno';
+const ARQUIVO_MINIMO_QUESTOES = 'minimo-questoes-discursiva.js';
 const SELETOR_TOPICO_PROGRESSO = '.topico-resposta';
 const SELETOR_CABECALHO_ATIVIDADE = '.container > header';
 const BASE_SCRIPTS_PROGRESSO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
@@ -37,6 +40,7 @@ const SITUACOES_QUESTAO = {
 const estadoProgressoTurma = {
     nomes: new Map(), pontosDosTopicos: null, temporizador: null, lendo: false,
     ordenacao: { chave: CHAVE_ORDEM_ALFABETICA, crescente: true }, ultimosAlunos: [],
+    minimoPadrao: undefined, atualizarAgora: null,
 };
 
 /**
@@ -143,18 +147,45 @@ function somarNotasDaIa(correcoes, pontos) {
 }
 
 /**
+ * Lê (uma vez) o mínimo padrão de questões da atividade (vazio = todas).
+ * @param {number} atividadeId - Id da atividade.
+ * @returns {Promise<number|null>} Mínimo padrão ou null.
+ */
+async function carregarMinimoPadrao(atividadeId) {
+    if (estadoProgressoTurma.minimoPadrao !== undefined) return estadoProgressoTurma.minimoPadrao;
+
+    const [atividade] = await sbGet('atividade',
+        'select=minimo_questoes_entrega&id=eq.' + atividadeId);
+    estadoProgressoTurma.minimoPadrao = atividade?.minimo_questoes_entrega || null;
+    return estadoProgressoTurma.minimoPadrao;
+}
+
+/**
+ * Nota proporcional ao mínimo do aluno (cada questão vale 10 ÷ mínimo), no máximo 10.
+ * @param {number} nota - Soma das notas na escala da prova (0 a 10).
+ * @param {{totalQuestoes: number, minimo: number}} aluno - Total de questões e mínimo do aluno.
+ * @returns {number} Nota proporcional, limitada a NOTA_MAXIMA.
+ */
+function notaProporcionalAoMinimo(nota, aluno) {
+    return Math.min(NOTA_MAXIMA, nota * aluno.totalQuestoes / aluno.minimo);
+}
+
+/**
  * Lê do banco o progresso de cada aluno (tópicos por questão, entrega, nota da IA e nome).
  * @param {number} atividadeId - Id da atividade.
  * @returns {Promise<Object[]>} Lista {nome, porQuestao, entregue, notaIa}, em ordem alfabética.
  */
 async function lerProgressoDaTurma(atividadeId) {
     const filtro = 'atividade_id=eq.' + atividadeId;
-    const [respostas, entregas, correcoes, pontos] = await Promise.all([
+    const [respostas, entregas, correcoes, pontos, minimos] = await Promise.all([
         sbGet(TABELA_RESPOSTAS_PROGRESSO, 'select=aluno_id,tentativa,item,texto&' + filtro),
         sbGet('entrega_atividade', 'select=aluno_id,tentativa&' + filtro),
         sbGet(TABELA_CORRECAO_PROGRESSO, 'select=aluno_id,tentativa,item,topico,nota_ia&' + filtro),
         carregarPontosDosTopicos(atividadeId),
+        sbGet(TABELA_MINIMO_ALUNO, 'select=aluno_id,minimo&' + filtro),
+        carregarMinimoPadrao(atividadeId),
     ]);
+    const minimoPorAluno = new Map(minimos.map((linha) => [linha.aluno_id, linha.minimo]));
     const notasDaIa = somarNotasDaIa(correcoes, pontos);
     const progresso = contarRespostasPorAluno(respostas);
     const ids = [...progresso.keys()];
@@ -162,6 +193,8 @@ async function lerProgressoDaTurma(atividadeId) {
     const entregues = new Set(entregas.map((entrega) =>
         entrega.aluno_id + '|' + entrega.tentativa));
     return ids.map((id) => ({
+        alunoId: id,
+        minimoDoAluno: minimoPorAluno.get(id) || null,
         nome: estadoProgressoTurma.nomes.get(id) || 'Aluno sem nome',
         porQuestao: progresso.get(id).porQuestao,
         entregue: entregues.has(id + '|' + progresso.get(id).tentativa),
@@ -235,17 +268,19 @@ function formatarNotaProgresso(nota) {
  * @param {number} totalTopicos - Tópicos da prova.
  * @returns {HTMLElement} Célula pronta.
  */
-function montarCelulaNotaParcial(notaIa, totalTopicos) {
+function montarCelulaNotaParcial(aluno, totalTopicos) {
     const classe = CLASSE_PROGRESSO_TURMA + '__nota-ia';
+    const notaIa = aluno.notaIa;
     if (!notaIa) return criarElementoProgresso('span', classe + ' ' + classe + '--vazia', '—');
 
     const acerto = notaIa.possivel ? Math.round((notaIa.nota / notaIa.possivel) * 100) : 0;
     const celula = criarElementoProgresso('span', classe + ' ' + classe + '--parcial',
-        '🤖 ' + formatarNotaProgresso(notaIa.nota) + ' · ' + acerto + '% (' +
+        '🤖 ' + formatarNotaProgresso(aluno.notaParcial) + ' · ' + acerto + '% (' +
         notaIa.corrigidos + '/' + totalTopicos + ')');
-    celula.title = 'Nota parcial sugerida pela IA: ' + notaIa.corrigidos + ' de ' + totalTopicos +
-        ' tópicos corrigidos até agora, com ' + acerto + '% de acerto nas alternativas ' +
-        'corrigidas (prévia; vale só depois da confirmação do professor).';
+    celula.title = 'Nota parcial sugerida pela IA (sobre o mínimo de ' + aluno.minimo +
+        ' questões, máximo 10): ' + notaIa.corrigidos + ' de ' + totalTopicos + ' tópicos ' +
+        'corrigidos, com ' + acerto + '% de acerto nas alternativas corrigidas (prévia; vale só ' +
+        'depois da confirmação do professor).';
     return celula;
 }
 
@@ -255,16 +290,16 @@ function montarCelulaNotaParcial(notaIa, totalTopicos) {
  * @param {number} totalTopicos - Tópicos da prova.
  * @returns {HTMLElement} Célula pronta.
  */
-function montarCelulaNotaFinal(aluno, totalTopicos) {
+function montarCelulaNotaFinal(aluno) {
     const classe = CLASSE_PROGRESSO_TURMA + '__nota-ia';
-    const estaCompleta = aluno.entregue && aluno.notaIa?.corrigidos >= totalTopicos;
     const vazia = classe + ' ' + classe + '--vazia';
-    if (!estaCompleta) return criarElementoProgresso('span', vazia, '—');
+    if (aluno.valorNotaFinal === SEM_NOTA) return criarElementoProgresso('span', vazia, '—');
 
     const celula = criarElementoProgresso('span', classe,
-        '🤖 ' + formatarNotaProgresso(aluno.notaIa.nota));
-    celula.title = 'Nota sugerida pela IA com a prova entregue e toda corrigida — vale só ' +
-        'depois da confirmação do professor em CORREÇÃO.';
+        '🤖 ' + formatarNotaProgresso(aluno.valorNotaFinal));
+    celula.title = 'Nota sugerida pela IA com a prova entregue e as respostas corrigidas ' +
+        '(sobre o mínimo de ' + aluno.minimo + ' questões, máximo 10) — vale só depois da confirmação do ' +
+        'professor.';
     return celula;
 }
 
@@ -279,12 +314,19 @@ function calcularIndicadoresDoAluno(aluno, medida) {
     const percentual = Math.min(100, Math.round((respondidos / medida.totalTopicos) * 100));
     const completas = [...medida.topicos].filter(([item, total]) =>
         (aluno.porQuestao.get(item) || 0) >= total).length;
-    const temNotaFinal = aluno.entregue && aluno.notaIa?.corrigidos >= medida.totalTopicos;
+    const totalQuestoes = medida.topicos.size;
+    const minimo = Math.min(totalQuestoes,
+        aluno.minimoDoAluno || estadoProgressoTurma.minimoPadrao || totalQuestoes);
+    const escala = { totalQuestoes, minimo };
+    const notaParcial = aluno.notaIa ? notaProporcionalAoMinimo(aluno.notaIa.nota, escala) : null;
+    // Nota final: entregue e todas as alternativas respondidas já corrigidas pela IA.
+    const temNotaFinal = aluno.entregue && respondidos > 0 &&
+        aluno.notaIa?.corrigidos >= respondidos;
     return {
-        ...aluno, respondidos, percentual, completas,
-        valorSituacao: aluno.entregue ? medida.topicos.size + 1 : completas,
-        valorNotaParcial: aluno.notaIa ? aluno.notaIa.nota : SEM_NOTA,
-        valorNotaFinal: temNotaFinal ? aluno.notaIa.nota : SEM_NOTA,
+        ...aluno, respondidos, percentual, completas, totalQuestoes, minimo, notaParcial,
+        valorSituacao: aluno.entregue ? totalQuestoes + 1 : completas,
+        valorNotaParcial: notaParcial === null ? SEM_NOTA : notaParcial,
+        valorNotaFinal: temNotaFinal ? notaParcial : SEM_NOTA,
     };
 }
 
@@ -368,6 +410,46 @@ function desenharListaDeAlunos(tela, opcoes) {
 }
 
 /**
+ * Monta a célula do nome com o botão "Quantidade Mínima de Questões" do aluno.
+ * @param {Object} aluno - Aluno com indicadores (alunoId, nome, minimo, totalQuestoes).
+ * @returns {HTMLElement} Célula pronta.
+ */
+function montarCelulaNomeDoAluno(aluno) {
+    const celula = criarElementoProgresso('div', CLASSE_PROGRESSO_TURMA + '__celula-nome');
+    const nome = criarElementoProgresso('span', CLASSE_PROGRESSO_TURMA + '__nome', aluno.nome);
+    nome.title = aluno.nome;
+    const botao = criarElementoProgresso('button', CLASSE_PROGRESSO_TURMA + '__minimo',
+        '🎯 Quantidade Mínima de Questões: ' + aluno.minimo + '/' + aluno.totalQuestoes);
+    botao.type = 'button';
+    if (aluno.minimoDoAluno) botao.classList.add(CLASSE_PROGRESSO_TURMA + '__minimo--proprio');
+    botao.addEventListener('click', () => abrirMinimoDoAluno(aluno));
+    celula.append(nome, botao);
+    return celula;
+}
+
+/**
+ * Abre a janela para o professor informar o mínimo de questões do aluno e atualiza o painel.
+ * @param {Object} aluno - Aluno com indicadores.
+ */
+async function abrirMinimoDoAluno(aluno) {
+    try {
+        if (typeof window.abrirMinimoQuestoes !== 'function') {
+            await carregarScriptProgresso(ARQUIVO_MINIMO_QUESTOES);
+        }
+        const mudou = await window.abrirMinimoQuestoes({
+            atividadeId: estadoProgressoTurma.atividadeId, alunoId: aluno.alunoId,
+            nome: aluno.nome, minimo: aluno.minimo, totalQuestoes: aluno.totalQuestoes,
+            temMinimoProprio: Boolean(aluno.minimoDoAluno),
+        });
+        const deveAtualizar = mudou && estadoProgressoTurma.atualizarAgora;
+        if (deveAtualizar) await estadoProgressoTurma.atualizarAgora();
+    } catch (erro) {
+        await mostrarPopup('Não foi possível abrir o mínimo de questões: ' + erro.message,
+            { tipo: 'erro', titulo: 'Quantidade mínima' });
+    }
+}
+
+/**
  * Monta a linha de um aluno: nome, questões, barra, situação, nota parcial e nota final da IA.
  * @param {Object} aluno - Aluno com indicadores (calcularIndicadoresDoAluno).
  * @param {{topicos: Map<number, number>, totalTopicos: number}} medida - Estrutura da prova.
@@ -376,15 +458,15 @@ function desenharListaDeAlunos(tela, opcoes) {
 function montarLinhaDoAluno(aluno, medida) {
     const situacao = aluno.entregue
         ? '✅ Entregue'
-        : aluno.completas + '/' + medida.topicos.size + ' questões · ' + aluno.percentual + '%';
+        : aluno.completas + '/' + aluno.totalQuestoes + ' questões · mín. ' + aluno.minimo;
     const linha = criarElementoProgresso('div', CLASSE_PROGRESSO_TURMA + '__linha');
     linha.append(
-        criarElementoProgresso('span', CLASSE_PROGRESSO_TURMA + '__nome', aluno.nome),
+        montarCelulaNomeDoAluno(aluno),
         montarCelulasDasQuestoes(aluno.porQuestao, medida.topicos),
         montarBarra(aluno.percentual, aluno.entregue ? 'entregue' : ''),
         criarElementoProgresso('span', CLASSE_PROGRESSO_TURMA + '__situacao', situacao),
-        montarCelulaNotaParcial(aluno.notaIa, medida.totalTopicos),
-        montarCelulaNotaFinal(aluno, medida.totalTopicos));
+        montarCelulaNotaParcial(aluno, medida.totalTopicos),
+        montarCelulaNotaFinal(aluno));
     return linha;
 }
 
@@ -517,6 +599,8 @@ async function montarProgressoDaTurma(atividadeId) {
         tela.lista);
     cabecalho.after(area);
 
+    estadoProgressoTurma.atividadeId = atividadeId;
+    estadoProgressoTurma.atualizarAgora = () => atualizarProgressoDaTurma(tela, opcoes);
     await atualizarProgressoDaTurma(tela, opcoes);
     estadoProgressoTurma.temporizador = setInterval(() => atualizarProgressoDaTurma(tela, opcoes),
         INTERVALO_ATUALIZACAO_PROGRESSO_MS);

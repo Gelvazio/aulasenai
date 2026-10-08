@@ -11,6 +11,7 @@ const TABELA_RESPOSTA_DISCURSIVA = 'resposta_discursiva';
 const ROTA_ENTREGA_DISCURSIVA = '/rest/v1/entrega_atividade';
 const ROTA_ABERTURA_DISCURSIVA = '/rest/v1/abertura_atividade';
 const ROTA_HORARIO_DISCURSIVA = '/rest/v1/rpc/horario_da_turma_do_aluno';
+const ROTA_MINIMO_QUESTOES_DISCURSIVA = '/rest/v1/rpc/minimo_questoes_para_entregar';
 const PREFERENCIA_UPSERT_DISCURSIVA = 'resolution=merge-duplicates,return=minimal';
 const PREFERENCIA_IGNORAR_REPETIDA = 'resolution=ignore-duplicates,return=minimal';
 const PERFIL_PROFESSOR_DISCURSIVA = 'PROFESSOR';
@@ -157,6 +158,27 @@ async function registrarAberturaDiscursiva(dados) {
 }
 
 /**
+ * Lê o mínimo de questões completas que o aluno logado precisa para entregar
+ * (o do aluno, senão o da atividade, senão todas — função minimo_questoes_para_entregar).
+ * @param {Object} sessao - Estado do repositório (atividade e usuário).
+ * @returns {Promise<number|null>} Mínimo ou null (falha: a página exige todas, como antes).
+ */
+async function lerMinimoQuestoesDiscursiva(sessao) {
+    try {
+        const resposta = await enviarPedidoDiscursivo({
+            rota: ROTA_MINIMO_QUESTOES_DISCURSIVA,
+            corpo: { p_atividade: sessao.atividade.id, p_aluno: sessao.usuario.id },
+            preferencia: 'return=representation',
+        });
+        if (!resposta.ok) return null;
+        const minimo = Number(await resposta.json());
+        return minimo > 0 ? minimo : null;
+    } catch (erro) {
+        return null;
+    }
+}
+
+/**
  * Indica se a página esconde do aluno as próprias respostas depois da entrega
  * (data-ocultar-respostas-entregue="sim" no <body>; campo da fonte .md).
  * @returns {boolean} true quando o bloqueio está ligado.
@@ -184,9 +206,10 @@ async function carregarDiscursiva(sessao) {
     const ehProfessor = sessao.usuario.app_metadata?.perfil === PERFIL_PROFESSOR_DISCURSIVA;
     const identificacao = await lerIdentificacaoDiscursiva(sessao.usuario);
     sessao.tentativa = await lerTentativaDiscursiva(sessao.atividade.id, sessao.usuario.id);
-    const [entregueEm, avisoHorario] = await Promise.all([
+    const [entregueEm, avisoHorario, minimoQuestoes] = await Promise.all([
         lerEntregaDiscursiva(sessao),
         ehProfessor ? '' : explicarHorarioDiscursiva(),
+        ehProfessor ? null : lerMinimoQuestoesDiscursiva(sessao),
     ]);
     // Aluno que já entregou, em página com o bloqueio ligado: as respostas nem são lidas do banco.
     const respostasOcultas = Boolean(!ehProfessor && entregueEm && ocultaRespostasEntregues());
@@ -198,7 +221,7 @@ async function carregarDiscursiva(sessao) {
     }
     return {
         disponivel: true, logado: true, ehProfessor, ...identificacao, respostas, respostasOcultas,
-        entregueEm,
+        entregueEm, minimoQuestoes,
         avisoHorario, tentativa: sessao.tentativa, ativa: sessao.atividade.ativo,
         maximoTentativas: sessao.atividade.max_tentativas, atividadeId: sessao.atividade.id,
     };

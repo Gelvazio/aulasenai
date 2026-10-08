@@ -63,6 +63,18 @@ Regras para decidir (as mesmas do padrão de resposta da prova):
    da internet, **não zerar**: corrigir normalmente e escrever no comentário
    `⚠️ Texto igual ao de outro(s) aluno(s) — conferir.` O professor decide.
 
+### 2.1 Mínimo de questões e nota final (desde 2026-10-08)
+
+- Cada aluno tem um **mínimo de questões completas** para entregar (padrão = todas as 20; o
+  professor pode mudar por aluno). Consultar com
+  `select public.minimo_questoes_para_entregar(82, '<ALUNO_ID>');`
+- A IA corrige **só as alternativas respondidas**; questão em branco **não recebe linha** (não
+  gravar zero nela).
+- A **nota vale sobre o mínimo**: cada questão vale **10 ÷ mínimo**, ou seja,
+  `nota = soma das notas × (20 ÷ mínimo)`, com **máximo 10**. Ex.: mínimo 10, fez as 10 e acertou
+  tudo → nota 10. O banco e o Progresso da turma já fazem essa conta; a IA continua gravando a
+  nota de cada alternativa na escala normal (0,1 / 0,2).
+
 ## 3. Como escrever o comentário
 
 - Começar com **`[IA]`** e o resultado: `[IA] Certa:`, `[IA] Meia certa:` ou `[IA] Errada:`.

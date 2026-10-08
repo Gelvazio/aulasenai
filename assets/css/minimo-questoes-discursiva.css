@@ -1,0 +1,84 @@
+/* Professor: janela da quantidade mínima de questões do aluno (minimo-questoes-discursiva.js). */
+
+:root {
+    --minimo-fundo-escuro: rgba(26, 32, 44, 0.6);
+    --minimo-janela: #ffffff;
+    --minimo-borda: #cbd5e0;
+    --minimo-destaque: #667eea;
+    --minimo-texto-suave: #4a5568;
+    --minimo-erro: #c53030;
+    --minimo-raio: 10px;
+}
+
+.minimo-questoes {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: var(--minimo-fundo-escuro);
+}
+
+.minimo-questoes__janela {
+    width: min(460px, 100%);
+    padding: 20px;
+    border-radius: var(--minimo-raio);
+    background: var(--minimo-janela);
+}
+
+.minimo-questoes__titulo {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+.minimo-questoes__aluno,
+.minimo-questoes__explicacao {
+    color: var(--minimo-texto-suave);
+    font-size: 14px;
+}
+
+.minimo-questoes__rotulo {
+    display: block;
+    margin: 12px 0 4px;
+    font-weight: 600;
+}
+
+.minimo-questoes__campo {
+    width: 90px;
+    margin-left: 6px;
+    padding: 6px 8px;
+    border: 1px solid var(--minimo-borda);
+    border-radius: var(--minimo-raio);
+    font: inherit;
+}
+
+.minimo-questoes__aviso {
+    min-height: 1em;
+    color: var(--minimo-erro);
+    font-size: 13px;
+}
+
+.minimo-questoes__botoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.minimo-questoes__botoes button {
+    padding: 6px 14px;
+    border: 1px solid var(--minimo-destaque);
+    border-radius: var(--minimo-raio);
+    background: transparent;
+    color: var(--minimo-destaque);
+    font: inherit;
+    cursor: pointer;
+}
+
+.minimo-questoes__botoes .minimo-questoes__salvar {
+    background: var(--minimo-destaque);
+    color: var(--minimo-janela);
+    font-weight: 700;
+}

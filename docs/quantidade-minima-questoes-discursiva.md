@@ -1,9 +1,9 @@
 # Quantidade mínima de questões para entregar a avaliação discursiva
 
 - **Criado em:** 2026-10-08 (pedido do usuário)
-- **Concluído em:** —
+- **Concluído em:** 2026-10-08 16:42:10 (falta o aceite)
 - **Tempo decorrido:** —
-- **Status:** ⬜ Aguardando aprovação do usuário
+- **Status:** ✅ Executado (2026-10-08 16:42:10); aguardando o aceite do usuário
 - **Etapa no `STATUS.md`:** 97
 
 ## Objetivo
@@ -49,13 +49,13 @@ clicar em **"Finalizar e entregar"**, a página e o banco conferem se o aluno j�
 | # | Ação | Verificação | Status |
 |---|---|---|---|
 | 1 | Conferir no banco real `atividade`, `entrega_atividade`, `atividade_completa` e políticas (já feito: a entrega exige `atividade_completa` = todos os tópicos) | Consultas de leitura | ✅ Concluído |
-| 2 | Escrever o SQL idempotente (sem apagar dados) | Leitura do SQL | ⬜ Pendente |
-| 3 | Aplicar no Supabase pelo conector e conferir coluna, tabela, RLS e função | Consultas de leitura | ⬜ Pendente |
-| 4 | Módulo do botão e da janela do mínimo no Progresso da turma | `node --check` | ⬜ Pendente |
-| 5 | Entrega na página do aluno conferindo o mínimo + aviso no painel | `node --check` | ⬜ Pendente |
-| 6 | Ajustar a coluna "Nota IA (a confirmar)", a "Nota parcial IA" e o `CORRECAO-PROVA-ADAG.md` (D6, D7 e D8) | `node --check`, leitura | ⬜ Pendente |
-| 6.1 | Ajustar `notas_media_final` no banco (D7 e D8), com cópia da definição antiga no SQL | Consultas de leitura com aluno de teste | ⬜ Pendente |
-| 7 | Documentação, regra no `CLAUDE.md`, `STATUS.md` e commit | Leitura, `git diff --cached --name-only` | ⬜ Pendente |
+| 2 | Escrever o SQL idempotente (sem apagar dados): `database/2026-10-08-minimo-questoes-entrega.sql` | Leitura do SQL | ✅ Concluído (2026-10-08 16:38:07) |
+| 3 | Aplicar no Supabase pelo conector e conferir coluna, tabela, RLS e função | Consultas de leitura: coluna criada, RLS ligado, 4 políticas, prova 82 = 20 questões e mínimo padrão 20 | ✅ Concluído (2026-10-08 16:38:07) |
+| 4 | Módulo do botão e da janela do mínimo no Progresso da turma: `assets/js/minimo-questoes-discursiva.js` + CSS; botão "🎯 Quantidade Mínima de Questões: N/20" sob o nome; Situação mostra "mín. N" | `node --check` | ✅ Concluído (2026-10-08 16:41:22) |
+| 5 | Entrega na página do aluno conferindo o mínimo (RPC `minimo_questoes_para_entregar`) + aviso "📌 Para entregar..." no painel | `node --check` | ✅ Concluído (2026-10-08 16:41:22) |
+| 6 | Ajustar a coluna "Nota IA (a confirmar)", a "Nota parcial IA", o gráfico 5 e o `CORRECAO-PROVA-ADAG.md` (D6, D7 e D8) | `node --check`, leitura | ✅ Concluído (2026-10-08 16:41:22) |
+| 6.1 | Ajustar `notas_media_final` no banco (D7 e D8), com cópia da definição antiga no SQL | Aplicada junto no passo 3; 0 notas de professor lançadas, objetivas sem mudança | ✅ Concluído (2026-10-08 16:38:07) |
+| 7 | Documentação, regra no `CLAUDE.md`, `STATUS.md` e commit | Leitura, `git diff --cached --name-only` | ✅ Concluído (2026-10-08 16:42:10) |
 | 8 | Aceite do usuário | Teste dele no navegador | ⬜ Pendente |
 
 ## Riscos

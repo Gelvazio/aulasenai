@@ -569,6 +569,21 @@ SQL: `database/2026-10-06-notas-media-final-correcao-discursiva.sql` (✅ aplica
 | RLS | professor lê e grava só alunos de `professor_pode_ver_aluno` (administrador todos); aluno lê só as próprias linhas com `nota_professor` preenchida; sem delete; `anon` sem acesso; TRUNCATE revogado |
 | `notas_media_final(p_paginas text[])` | `security definer`, só `authenticated`: para o aluno logado (`auth.uid()`), a melhor nota (0–10) entregue de cada página — objetiva = acertos ÷ total; discursiva = soma de `nota_professor` ÷ soma dos pontos, só com todos os tópicos corrigidos (senão `situacao = 'AGUARDANDO_CORRECAO'`). Não depende do bloqueio da atividade e não devolve gabarito |
 
+## 🎯 Atualização 2026-10-08 — Quantidade mínima de questões nas discursivas
+
+SQL: `database/2026-10-08-minimo-questoes-entrega.sql` (✅ aplicado no Supabase em 2026-10-08).
+Plano: `docs/quantidade-minima-questoes-discursiva.md`.
+
+| Tabela / objeto | Campos / regra |
+|--------|---------|
+| `atividade.minimo_questoes_entrega` | `smallint`, vazio = todas as questões; `check` ≥ 1 |
+| `minimo_questoes_aluno` | PK (`atividade_id`, `aluno_id`); `minimo` (≥ 1), `definido_por`, `definido_em`; vale para todas as tentativas. RLS: aluno lê o próprio; professor lê e grava (insert/update/delete) só alunos de `professor_pode_ver_aluno`; `anon` sem acesso |
+| `total_questoes_discursiva(p_atividade)` | Quantidade de questões (itens) da discursiva |
+| `minimo_questoes_para_entregar(p_atividade, p_aluno)` | Mínimo do aluno, senão o da atividade, senão o total (nunca acima do total) |
+| `questoes_completas_discursiva(p_atividade, p_aluno, p_tentativa)` | Questões com todos os tópicos com texto |
+| `atividade_completa` (RLS da `entrega_atividade`) | Discursiva: questões completas ≥ mínimo; objetiva sem mudança |
+| `notas_media_final` | Discursiva: só tópicos respondidos (todos com `nota_professor`); nota = soma × (total ÷ mínimo), **máximo 10**; com mínimo = total, igual a antes |
+
 ## 🔓 Atualização 2026-10-06 — Liberar gabaritos por atividade e turma
 
 SQL: `database/2026-10-06-liberacao-respostas-turma.sql` (✅ aplicado no Supabase em 2026-10-06).

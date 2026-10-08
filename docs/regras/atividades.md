@@ -227,6 +227,17 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   (`carregarDiscursiva` em `assets/js/respostas-discursivas-banco.js`), os campos ficam vazios, a
   barra do aluno some e o painel avisa. Logo após entregar, a tela também é limpa. O professor
   continua vendo tudo; nada é apagado do banco. 1º uso: Prova Prática ADAG (id 82).
+- ✅ **Quantidade mínima de questões para entregar (2026-10-08, pedido do usuário):** toda
+  discursiva tem um mínimo de **questões completas** (todas as alternativas com texto); padrão =
+  todas (`atividade.minimo_questoes_entrega` vazio). O professor muda **por aluno** no Progresso
+  da turma (botão "🎯 Quantidade Mínima de Questões: N/20" sob o nome → janela com o número, de
+  1 ao total, ou "Voltar ao padrão"; tabela `minimo_questoes_aluno`, vale para todas as
+  tentativas). "Finalizar e entregar" confere o mínimo na página e no banco
+  (`atividade_completa`). **Nota proporcional ao mínimo:** cada questão vale 10 ÷ mínimo e a
+  **nota máxima é 10** (`notas_media_final`, Nota parcial IA e Nota IA no painel). Código:
+  `assets/js/minimo-questoes-discursiva.js` + CSS. Plano:
+  `docs/quantidade-minima-questoes-discursiva.md`. SQL:
+  `database/2026-10-08-minimo-questoes-entrega.sql` (aplicado).
 - ✅ **Entrega só com tudo preenchido (já existia):** ao clicar em "Finalizar e entregar", a página
   confere no banco os tópicos sem texto (só espaços conta como vazio), destaca e lista os que faltam;
   o RLS da `entrega_atividade` também recusa a entrega incompleta.

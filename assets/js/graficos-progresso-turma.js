@@ -113,7 +113,7 @@ function montarConfiguracoesDosGraficos(alunos, opcoes) {
         { titulo: '5. Nota parcial da IA por aluno (a confirmar)', config: { type: 'bar',
             data: { labels: comNota.map((aluno) => nomeCurto(aluno.nome)), datasets: [{
                 label: 'nota parcial', backgroundColor: CORES_GRAFICOS.roxo,
-                data: comNota.map((aluno) => Number(aluno.notaIa.nota.toFixed(2))) }] },
+                data: comNota.map((aluno) => Number(aluno.notaParcial.toFixed(2))) }] },
             options: { indexAxis: 'y', scales: { x: { min: 0, max: 10 } } } } },
     ];
 }

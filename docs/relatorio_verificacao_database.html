@@ -471,6 +471,21 @@
           <td>Função (security definer)</td>
           <td>Melhor nota do aluno logado por página (objetiva ou discursiva corrigida); AGUARDANDO_CORRECAO quando faltam notas; independe do bloqueio; sem gabarito</td>
         </tr>
+        <tr>
+          <td>minimo_questoes_aluno</td>
+          <td>Tabela (RLS)</td>
+          <td>PK atividade + aluno; minimo (≥ 1), definido_por, definido_em; aluno lê o próprio, professor grava só alunos das turmas dele (2026-10-08)</td>
+        </tr>
+        <tr>
+          <td>atividade.minimo_questoes_entrega</td>
+          <td>Coluna</td>
+          <td>Mínimo padrão da discursiva; vazio = todas (2026-10-08)</td>
+        </tr>
+        <tr>
+          <td>minimo_questoes_para_entregar / questoes_completas_discursiva</td>
+          <td>Funções</td>
+          <td>Mínimo efetivo do aluno e questões completas; usadas na entrega (atividade_completa) e na média final (nota proporcional ao mínimo, máximo 10) (2026-10-08)</td>
+        </tr>
       </table>
     </div>
 

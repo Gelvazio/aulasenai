@@ -79,7 +79,7 @@
 .progresso-turma__linha {
     display: grid;
     /* Larguras fixas (só Questões é flexível): as colunas ficam alinhadas em todas as linhas. */
-    grid-template-columns: 180px minmax(0, 1fr) 70px 150px 150px 120px;
+    grid-template-columns: 220px minmax(0, 1fr) 70px 150px 150px 120px;
     align-items: center;
     gap: 10px;
     font-size: 13px;
@@ -125,7 +125,32 @@
     color: var(--progresso-turma-texto-suave);
 }
 
+.progresso-turma__celula-nome {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+.progresso-turma__minimo {
+    padding: 2px 6px;
+    border: 1px solid var(--progresso-turma-borda);
+    border-radius: var(--progresso-turma-raio);
+    background: var(--progresso-turma-fundo);
+    color: var(--progresso-turma-texto-suave);
+    font: inherit;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.progresso-turma__minimo--proprio {
+    border-color: var(--progresso-turma-barra);
+    color: var(--progresso-turma-barra);
+    font-weight: 700;
+}
+
 .progresso-turma__nome {
+    max-width: 100%;
     overflow: hidden;
     font-weight: 600;
     text-overflow: ellipsis;
