@@ -1,6 +1,7 @@
 # 📋 TAREFAS — SENAI Aulas
 
 **Somente tarefas PENDENTES** (planejadas ou em progresso).
+**O status oficial de cada tarefa fica no [STATUS.md](STATUS.md)** (seção "📌 Tarefas do `TASKS.md`"); aqui fica só a descrição longa. Em conflito, o `STATUS.md` vence.
 Ao concluir ou cancelar uma tarefa, **mover o bloco dela para `TASKS_COMPLETE.md`** (na mesma
 tarefa, no mesmo commit).
 

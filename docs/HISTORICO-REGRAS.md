@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:11 | Fonte única do estado: o `STATUS.md` manda; cada tarefa do `TASKS.md` tem linha na seção "📌 Tarefas do `TASKS.md`" do `STATUS.md` (o `TASKS.md` guarda só a descrição longa) e os logs de `SESSOES-CLAUDE/` citam a etapa/item do `STATUS.md`; em conflito, o `STATUS.md` vence |
 | 2026-10-08 08:10 | Inicialização: ler `SESSOES-CLAUDE/STATUS-SESSOES.md` (e o log das sessões `PENDENTE`) **sempre antes de iniciar uma nova tarefa**, junto com o `STATUS.md`; sessões `CONCLUÍDO` passam pela limpeza antes |
 | 2026-10-08 08:09 | Sessão só fica `CONCLUÍDO` quando a tarefa inteira foi finalizada: antes, validar **cada** pedido do usuário da sessão (feito, conferido e aceito), com a tabela "✅ Validação dos pedidos" no log; faltando qualquer item, continua `PENDENTE` |
 | 2026-10-08 08:06 | `SESSOES-CLAUDE/STATUS-SESSOES.md` (status de todas as sessões, lido no início de cada sessão) e regra da sessão `CONCLUÍDO`: ler o que foi feito, atualizar o `CLAUDE.md` se preciso, conferir as pendências e remover os dados da sessão |

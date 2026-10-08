@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 08:10
+**Versão das regras:** 2026-10-08 08:11
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:11 | Fonte única do estado: o `STATUS.md` manda; cada tarefa do `TASKS.md` tem linha na seção "📌 Tarefas do `TASKS.md`" do `STATUS.md` (o `TASKS.md` guarda só a descrição longa) e os logs de `SESSOES-CLAUDE/` citam a etapa/item do `STATUS.md`; em conflito, o `STATUS.md` vence |
 | 2026-10-08 08:10 | Inicialização: ler `SESSOES-CLAUDE/STATUS-SESSOES.md` (e o log das sessões `PENDENTE`) **sempre antes de iniciar uma nova tarefa**, junto com o `STATUS.md`; sessões `CONCLUÍDO` passam pela limpeza antes |
 | 2026-10-08 08:09 | Sessão só fica `CONCLUÍDO` quando a tarefa inteira foi finalizada: antes, validar **cada** pedido do usuário da sessão (feito, conferido e aceito), com a tabela "✅ Validação dos pedidos" no log; faltando qualquer item, continua `PENDENTE` |
 | 2026-10-08 08:06 | `SESSOES-CLAUDE/STATUS-SESSOES.md` (status de todas as sessões, lido no início de cada sessão) e regra da sessão `CONCLUÍDO`: ler o que foi feito, atualizar o `CLAUDE.md` se preciso, conferir as pendências e remover os dados da sessão |
 | 2026-10-08 08:04 | Registro da sessão: motivo registrado — o usuário alterna entre 2 licenças do Claude Code e perde o contexto ao trocar; o log precisa bastar sozinho para a outra licença continuar |
-| 2026-10-08 08:02 | Registro da sessão em `SESSOES-CLAUDE/`: grava só o **mínimo necessário para continuar** em outra sessão (estado, decisões, arquivos, commits, pendências e próximo passo exato), **não** uma cópia completa da conversa |
 
 ---
 
@@ -190,6 +190,15 @@ TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
   `TASKS_COMPLETE.md`, desde 2026-10-08; ao concluir ou cancelar, mover o bloco no mesmo commit).
   Consultar o `TASKS.md` quando o `STATUS.md` ou uma regra citar uma tarefa dele (ex.: vídeos
   `a conferir` das apostilas); o `TASKS_COMPLETE.md` só quando precisar do histórico.
+- ⛔ **FONTE ÚNICA DO ESTADO = `STATUS.md`** (2026-10-08, decisão do usuário). Os outros arquivos
+  **apontam** para ele, nunca mantêm status próprio divergente:
+  - **`TASKS.md`:** guarda só a **descrição longa** das tarefas pendentes; o **status** de cada uma
+    fica numa linha da seção **"📌 Tarefas do `TASKS.md`"** do `STATUS.md` (tarefa nova no
+    `TASKS.md` = linha nova lá, no mesmo commit; tarefa concluída = linha marcada ✅ e bloco
+    movido para o `TASKS_COMPLETE.md`).
+  - **Logs de `SESSOES-CLAUDE/`:** citam a **etapa/item do `STATUS.md`** e o próximo passo; não
+    mantêm uma lista própria de pendências diferente da do `STATUS.md`.
+  - **Em conflito, o `STATUS.md` vence:** corrigir o outro arquivo na mesma tarefa.
 
 ---
 
@@ -220,7 +229,8 @@ licença (ou outra IA) continuar exatamente de onde parou, sem precisar da conve
   **todos** os pedidos da sessão, e conferir cada um nos arquivos, nos commits e no `STATUS.md`
   (não pela memória). Se faltar qualquer pedido, etapa do plano, commit ou aceite do usuário, o
   status continua **`PENDENTE`** — nunca marcar `CONCLUÍDO` por tarefa parcial. No fim do arquivo, a tabela **"⏳ Pendências"**
-  (o que falta e quem faz) — é por ela que a próxima sessão (ou outra IA) retoma.
+  (o que falta e quem faz), **com a etapa/item do `STATUS.md`** de cada linha — é por ela que a
+  próxima sessão (ou outra IA) retoma; se divergir do `STATUS.md`, o `STATUS.md` vence.
 - ✅ **Índice:** acrescentar no topo de `SESSOES-CLAUDE/SESSAO-CLAUDE.md` uma seção curta da sessão
   (ambiente, modelo, commits, pedido, status e link para o arquivo da sessão).
 - ✅ Atualizar o arquivo da sessão a cada pedido concluído e **antes de parar**; o commit dele entra

@@ -8,6 +8,21 @@ retome o trabalho de onde parou.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
+## 📌 Tarefas do `TASKS.md` (o status oficial fica aqui)
+
+A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale **só** nesta tabela.
+
+| Tarefa | Descrição curta | Status | Próximo passo |
+|--------|-----------------|--------|---------------|
+| #2 | Apostilas só em Markdown (.md) | 🔄 Plano aguardando aprovação | Usuário aprova os itens A–E de `docs/tarefa-02-apostilas-em-markdown.md` |
+| #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | ⬜ Planejada | Aguardando liberação do usuário |
+| #5 | Organizar atividades em `ATIVIDADES/` | ⬜ Planejada | Aguardando liberação do usuário |
+| #6 | Preencher `AVALIACOES/` | ⬜ Planejada | Aguardando liberação do usuário |
+| #7 | Executar análise final | ⬜ Planejada | Aguardando liberação do usuário |
+| #11 | Conferir a duração dos vídeos da apostila de Reforço de Linguagens | ⬜ Pendente (local) | Fazer na máquina local, com YouTube |
+| #12 | Conferir a duração dos vídeos da apostila de Fundamentos da Tecnologia | ⬜ Pendente (local) | Fazer na máquina local, com YouTube |
+| #14 | Conferir a duração dos vídeos da apostila de Exploração de Carreiras | ⬜ Pendente (local) | Fazer na máquina local, com YouTube |
+
 ## ⏳ Aguardando o usuário (aceites, aprovações e ações dele)
 
 Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etapa e **remover a linha daqui**.
@@ -897,8 +912,8 @@ Arquivos globais (`C:\Users\gelva\.claude\...`, skill `documentacao-padrao`) fic
 |------|-----------|--------|--------------|-------------|
 | 76.1 | Exceção das tarefas pequenas também no `CLAUDE-DOCS-BEFORE-EVERY-TASK.md` e na skill `documentacao-padrao` (antes: "sem exceção") | ✅ Concluído | 2026-10-08 08:09 | `grep` mostra "TAREFA GRANDE" e a exceção nos dois arquivos |
 | 76.2 | Testes e navegador nas regras de documentação → verificação por leitura/`node`/banco/terminal | ✅ Concluído | 2026-10-08 08:10 | `grep` sem "Testar no navegador" nem "testadas"; skill sem "como testar" |
-| 76.3 | Fonte única: `STATUS.md` × `TASKS.md` × `SESSOES-CLAUDE/` | 🔄 Em progresso | — | — |
-| 76.4 | Log da sessão: obrigatório × só com SIM | ⬜ Pendente | — | — |
+| 76.3 | Fonte única: `STATUS.md` × `TASKS.md` × `SESSOES-CLAUDE/` — escolha do usuário: "STATUS.md manda; os outros apontam" | ✅ Concluído | 2026-10-08 08:11 | Regra no CLAUDE.md, seção "📌 Tarefas do TASKS.md" no STATUS.md com as 8 tarefas, aviso no topo do TASKS.md |
+| 76.4 | Log da sessão: obrigatório × só com SIM | 🔄 Em progresso | — | — |
 | 76.5 | Frase final da tarefa (global) × pergunta do log (projeto) | ⬜ Pendente | — | — |
 | 76.6 | Confirmação antes de comando mutável × Git sem perguntar | ⬜ Pendente | — | — |
 | 76.7 | Aceite do usuário | ⬜ Pendente | — | — |
