@@ -924,4 +924,4 @@ Arquivos globais (`C:\Users\gelva\.claude\...`, skill `documentacao-padrao`) fic
 |------|-----------|--------|--------------|-------------|
 | 77.1 | Copiar as 4 skills do usuário (`EXERCICIOS`, `documentacao-padrao`, `graphify`, `padrao-slides-senai`) de `~/.agents/skills/` (versão mais nova) para `.claude/skills/`; a pasta `synced/` (skills do claude.ai, 8,7 MB, geridas pelo app) não foi copiada | ✅ Concluído | 2026-10-08 08:15 | `diff -rq` igual nas 4 |
 | 77.2 | `~/.claude/skills/documentacao-padrao` estava desatualizada (sem a exceção do item 76.1): sincronizada com a de `~/.agents/skills` | ✅ Concluído | 2026-10-08 08:15 | `diff` igual |
-| 77.3 | Regras globais (`~/.claude/CLAUDE.md` e `CLAUDE-DOCS-BEFORE-EVERY-TASK.md`) no projeto: decisão do usuário | 🔄 Em progresso | — | — |
+| 77.3 | Regras globais (`~/.claude/CLAUDE.md` e `CLAUDE-DOCS-BEFORE-EVERY-TASK.md`) no projeto: decisão do usuário — escolha: "Cópia de referência, sem carregar" (`.claude/regras-globais/` + regra no CLAUDE.md) | ✅ Concluído | 2026-10-08 08:16 | `diff` das cópias com os originais |
