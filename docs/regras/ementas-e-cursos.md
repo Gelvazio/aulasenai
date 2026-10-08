@@ -123,11 +123,12 @@ regra "PASTA `AULAS/` SEMPRE GERADA CONFORME A DOCUMENTAÇÃO DA MATÉRIA" (2026
 **Estrutura Recomendada:**
 
 ```
-DOCUMENTACAO/
-├─ EMENTA-CHALKIE-AI.md         (versão IA, 10+ páginas, detalhada) ⭐
-├─ PLANO-AULAS.md              (resumo das aulas de CONTEUDO/ — não é fonte)
-├─ INDEX.md                     (mapa de navegação)
-└─ VERIFICACAO_COBERTURA_EMENTA.md (checklist)
+<MATERIA>/
+├─ EMENTA-CHALKIE-AI.md            (na raiz da matéria — versão IA, detalhada) ⭐
+└─ DOCUMENTACAO/
+   ├─ PLANO-AULAS.md              (resumo das aulas de CONTEUDO/ — não é fonte)
+   ├─ INDEX.md                     (mapa de navegação)
+   └─ VERIFICACAO_COBERTURA_EMENTA.md (checklist)
 ```
 
 **Versão simplificada `EMENTA.md`: não existe mais** (removida em 2026-10-01 a pedido do usuário).
@@ -159,10 +160,10 @@ A ementa de cada matéria é só o `EMENTA-CHALKIE-AI.md`; não criar nem verifi
 **Como validar:**
 ```bash
 # Linux/Mac
-wc -c DOCUMENTACAO/EMENTA-CHALKIE-AI.md
+wc -c EMENTA-CHALKIE-AI.md
 
 # PowerShell (Windows)
-(Get-Content DOCUMENTACAO/EMENTA-CHALKIE-AI.md).Length
+(Get-Content EMENTA-CHALKIE-AI.md).Length
 ```
 
 **Se estiver fora do intervalo:**
@@ -170,7 +171,7 @@ wc -c DOCUMENTACAO/EMENTA-CHALKIE-AI.md
 2. ✅ Se > 14.950: Remova redundâncias ou examples menos críticos
 3. ✅ Valore conteúdo sobre volume — não adicione texto vazio
 
-**Exemplo:** `MATERIAIS/RIO_DO_SUL_MAIS_TECH/INTRODUCAO_COMUNICACAO_ORAL_ESCRITA/DOCUMENTACAO/EMENTA-CHALKIE-AI.md`
+**Exemplo:** `MATERIAIS/RIO_DO_SUL_MAIS_TECH/INTRODUCAO_COMUNICACAO_ORAL_ESCRITA/EMENTA-CHALKIE-AI.md`
 - Tamanho atual: ~14.920 caracteres ✅ Dentro do intervalo
 
 ---

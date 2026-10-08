@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 21:43 | Ementa da matéria: `EMENTA-CHALKIE-AI.md` fica na **raiz da pasta da matéria** (igual ao disco e à ITIC); `DOCUMENTACAO/` só com PLANO-AULAS, INDEX e verificação; comandos e exemplo ajustados |
 | 2026-10-07 21:40 | Regra das 50 questões: tirado o exemplo "Reforço de Linguagens aula 16" (a matéria tem 10 aulas e segue a regra exclusiva de 25 questões) |
 | 2026-10-07 21:39 | Regra "TURMA NA EXPORTAÇÃO": tirada a menção ao "PDF com gabarito" (botão removido em 2026-10-06) |
 | 2026-10-07 21:38 | Removida a regra "EXPORTAR EM WORD AO LADO DE CADA EXPORTAR PDF" (decisão do usuário): Word não é mais obrigatório; os scripts continuam (hoje só as práticas de Excel têm Word); índice e lista de `assets/` ajustados |

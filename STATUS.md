@@ -818,5 +818,5 @@ Tarefa pequena por item (só texto das regras). Cada item: mostrar a contradiç�
 | 72.3 | Título da regra do Word × botões removidos — escolha: remover a regra do Word | ✅ Concluído | 2026-10-07 21:38 | Seção apagada de `atividades.md`; lista de `assets` e índice do `CLAUDE.md` sem a regra; scripts mantidos |
 | 72.4 | "PDF com gabarito" na regra da Turma × botão removido — escolha: tirar a menção | ✅ Concluído | 2026-10-07 21:39 | Linha 162 de `atividades.md` sem "PDF com gabarito" |
 | 72.5 | Reforço de Linguagens "aula 16 com 50 questões" × 10 aulas de 25 — escolha: tirar do exemplo | ✅ Concluído | 2026-10-07 21:40 | Linhas 377–378 de `atividades.md` remetem à regra exclusiva |
-| 72.6 | Local da ementa: raiz da matéria × `DOCUMENTACAO/` | 🔄 Em progresso | — | — |
-| 72.7 | `git add .` (global) × proibido (projeto) | ⬜ Pendente | — | — |
+| 72.6 | Local da ementa: raiz da matéria × `DOCUMENTACAO/` — escolha: raiz da matéria | ✅ Concluído | 2026-10-07 21:43 | Estrutura recomendada, comandos e exemplo de `ementas-e-cursos.md` apontam para a raiz; 35 ementas já estão lá |
+| 72.7 | `git add .` (global) × proibido (projeto) | 🔄 Em progresso | — | — |
