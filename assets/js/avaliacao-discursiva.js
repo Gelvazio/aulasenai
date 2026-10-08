@@ -19,6 +19,7 @@ const ARQUIVO_RESPOSTAS_ALUNO = 'respostas-aluno-professor.js';
 const BASE_SCRIPTS_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const CLASSE_BLOCO = 'topico-resposta';
 const CLASSE_FALTANDO = 'topico-resposta--faltando';
+const EVENTO_CAMPOS_PREENCHIDOS = 'discursiva:campos-preenchidos';
 const SITUACOES_TOPICO = {
     vazio: { classe: 'topico-resposta--vazia', texto: '' },
     pendente: { classe: 'topico-resposta--pendente', texto: '✏️ Alteração ainda não gravada...' },
@@ -137,6 +138,7 @@ function preencherCampos(respostas) {
         atualizarContador(campo);
         definirSituacao(campo, texto ? 'gravada' : 'vazio');
     });
+    document.dispatchEvent(new CustomEvent(EVENTO_CAMPOS_PREENCHIDOS));
 }
 
 /**

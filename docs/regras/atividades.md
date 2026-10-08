@@ -171,6 +171,14 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   - ⏳ **Futuro (pendência no `STATUS.md`):** ligar o campo nas **outras avaliações
     discursivas** (fonte `.md` + regerar a página), uma por vez, quando o usuário pedir. Opcional
     (tarefa grande, mexe no banco): registrar as tentativas de colar para o professor ver.
+- ✅ **Campo do tamanho da resposta (2026-10-08, pedido do usuário):** campo opcional
+  `- **Campo do tamanho da resposta:** sim` → cada campo nasce com a altura da resposta esperada
+  (padrão de resposta × 1,5 de folga ÷ 70 caracteres por linha; mínimo 5, máximo 16 linhas) e
+  **cresce enquanto o aluno digita** (`assets/js/campo-tamanho-discursiva.js`). 1º uso: Prova
+  Prática ADAG (id 82); nas outras discursivas, ligar junto com o bloqueio de colar.
+- ✅ **Entrega só com tudo preenchido (já existia):** ao clicar em "Finalizar e entregar", a página
+  confere no banco os tópicos sem texto (só espaços conta como vazio), destaca e lista os que faltam;
+  o RLS da `entrega_atividade` também recusa a entrega incompleta.
 
 ## 🏫 REGRA CRÍTICA — TURMA NA EXPORTAÇÃO DE ATIVIDADES E AVALIAÇÕES (PROJETO TODO)
 

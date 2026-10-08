@@ -14,9 +14,12 @@ destaque no início da página), "- **Máximo de caracteres:** 500" (limite de c
 menos folhas) e "- **PDF sem respostas:** sim" (o PDF sai sem as caixas de resposta: o aluno
 responde no caderno); os dois em assets/js/exportar-pdf-discursiva.js. "- **Bloquear colar:** sim"
 liga o bloqueio de colar/arrastar/copiar nos campos (assets/js/bloqueio-colar-discursiva.js).
+"- **Campo do tamanho da resposta:** sim" dá a cada campo a altura da resposta esperada (padrão
+de resposta, com folga) e o faz crescer ao digitar (assets/js/campo-tamanho-discursiva.js).
 Plano: docs/avaliacao-pratica-discursiva-itic.md
 """
 import html
+import math
 import re
 import sys
 from datetime import date
@@ -50,9 +53,15 @@ CAMPO_MAXIMO_CARACTERES = "Máximo de caracteres"
 CAMPO_PDF_COMPACTO = "PDF compacto"
 CAMPO_PDF_SEM_RESPOSTAS = "PDF sem respostas"
 CAMPO_BLOQUEAR_COLAR = "Bloquear colar"
+CAMPO_TAMANHO_RESPOSTA = "Campo do tamanho da resposta"
 ATRIBUTOS_BODY = {CAMPO_PDF_COMPACTO: "data-pdf-compacto",
                   CAMPO_PDF_SEM_RESPOSTAS: "data-pdf-sem-respostas",
-                  CAMPO_BLOQUEAR_COLAR: "data-bloquear-colar"}
+                  CAMPO_BLOQUEAR_COLAR: "data-bloquear-colar",
+                  CAMPO_TAMANHO_RESPOSTA: "data-campo-tamanho-resposta"}
+LINHAS_CAMPO_PADRAO = 5
+LINHAS_CAMPO_MAXIMO = 16
+CARACTERES_POR_LINHA = 70
+FOLGA_RESPOSTA_ALUNO = 1.5
 VALOR_SIM = "sim"
 TOLERANCIA_PONTOS = 0.001
 SEPARADOR_ITEM = re.compile(r"^## ITEM\s+", re.MULTILINE)
@@ -274,6 +283,41 @@ def extrair_campo(corpo, rotulo):
     return achado.group(1).strip() if achado else None
 
 
+def calcular_linhas_campo(resposta_esperada):
+    """Calcula as linhas do campo pela resposta esperada (com folga para a escrita do aluno).
+
+    Args:
+        resposta_esperada: Texto do padrão de resposta do tópico ('' se não houver).
+
+    Returns:
+        Número de linhas entre LINHAS_CAMPO_PADRAO e LINHAS_CAMPO_MAXIMO.
+    """
+    if not resposta_esperada:
+        return LINHAS_CAMPO_PADRAO
+    linhas = math.ceil(len(resposta_esperada) * FOLGA_RESPOSTA_ALUNO / CARACTERES_POR_LINHA)
+    return min(LINHAS_CAMPO_MAXIMO, max(LINHAS_CAMPO_PADRAO, linhas))
+
+
+def aplicar_linhas_campos(meta, itens, gabarito):
+    """Grava em cada tópico as linhas do campo (só com "Campo do tamanho da resposta: sim").
+
+    Args:
+        meta: Metadados da fonte.
+        itens: Itens validados.
+        gabarito: Padrão de resposta por (item, letra).
+
+    Returns:
+        Itens com "linhas" em cada tópico (padrão quando o campo não está ligado).
+    """
+    ligado = meta.get(CAMPO_TAMANHO_RESPOSTA, "").strip().lower() == VALOR_SIM
+    for item in itens:
+        for topico in item["topicos"]:
+            padrao = gabarito.get((item["numero"], topico["letra"]), {})
+            resposta = padrao.get("resposta", "") if ligado else ""
+            topico["linhas"] = calcular_linhas_campo(resposta)
+    return itens
+
+
 def formatar_pontos(pontos):
     """Formata pontos no padrão brasileiro (ex.: 0.5 → "0,5 ponto").
 
@@ -314,6 +358,7 @@ def html_topico(item, topico):
     numero = f"{item['numero']:02d}"
     ident = f"resposta-{numero}-{topico['letra']}"
     atributos = f'data-item="{item["numero"]}" data-topico="{topico["numero"]}"'
+    linhas = topico.get("linhas", LINHAS_CAMPO_PADRAO)
     return f'''                <div class="topico-resposta" {atributos}>
                     <label class="topico-resposta__rotulo" for="{ident}">
                         <span class="topico-resposta__letra">{topico["letra"]})</span>
@@ -321,7 +366,7 @@ def html_topico(item, topico):
                         <span class="topico-resposta__pontos">{formatar_pontos(topico["pontos"])}</span>
                     </label>
                     <textarea id="{ident}" class="topico-resposta__campo" {atributos}
-                              maxlength="{item['maximo_caracteres']}" rows="5" readonly
+                              maxlength="{item['maximo_caracteres']}" rows="{linhas}" readonly
                               placeholder="Escreva aqui a sua resposta do tópico {topico["letra"]})..."></textarea>
                     <div class="topico-resposta__rodape">
                         <span class="topico-resposta__situacao" aria-live="polite"></span>
@@ -639,6 +684,7 @@ def main():
         caminho_md = pasta / nome_fonte
     meta, orientacoes, itens = ler_fonte(caminho_md)
     gabarito = ler_gabarito(caminho_md.with_name(caminho_md.stem + SUFIXO_GABARITO))
+    itens = aplicar_linhas_campos(meta, itens, gabarito)
     html_gerado = gerar_pagina(pasta, caminho_md, meta, orientacoes, itens)
     sql_gerado = gerar_seed(pasta, html_gerado, meta, itens, gabarito)
     total_topicos = sum(len(item["topicos"]) for item in itens)
