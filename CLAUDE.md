@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-08 09:30
+**Versão das regras:** 2026-10-08 10:00
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 10:00 | `TASKS.md` só com tarefas pendentes; concluídas e canceladas movidas para o novo `TASKS_COMPLETE.md` (lido só quando precisar do histórico) |
 | 2026-10-08 09:30 | Merge com a `main`: apostila e 9 atividades de 50 questões de Fundamentos da Tecnologia e Programação (33 h = 8 × 4 h + 1 h, aulas nº 6 a 14 no banco com cards "AULA 01" a "AULA 09"); conferência com a ementa lê também o **formato por módulos** do Rio do Sul Mais Tech (indicador na tabela de capacidades, BNCC em tabela, prompts `**M1:**`, glossário em lista, marcos, recursos em lista, exemplos e orientações) só quando o formato padrão não existe; vídeos pendentes da apostila na tarefa #12 do `TASKS.md` |
 | 2026-10-07 20:50 | Identificação da apostila obrigatória em **todas** as apostilas: `autor_apostila` (padrão Gelvazio Camargo) e `versao_apostila` (começa em 1.0) preenchidos no `materia.json` antes da 1ª geração; aplicada também em Reforço de Linguagens |
 | 2026-10-07 20:50 | Apostilas: vídeo com duração `a conferir` (link real, duração não conferida por bloqueio de rede) aceito pelo gerador, com aviso; 29 vídeos na apostila de Reforço de Linguagens |
@@ -219,7 +220,7 @@ regra "PASTA `AULAS/` SEMPRE GERADA CONFORME A DOCUMENTAÇÃO DA MATÉRIA" (2026
 
 **ANTES DE RESPONDER QUALQUER COISA**, você DEVE:
 
-1. ✅ **LER `C:\fontes\aulasenai\TASKS.md`** — Status da tarefa atual
+1. ✅ **LER `C:\fontes\aulasenai\TASKS.md`** — só as tarefas pendentes (as concluídas ficam em `TASKS_COMPLETE.md`, que não precisa ser lido aqui)
 2. ✅ **Verificar** qual tarefa está em progresso
 3. ✅ **Verificar** quais são as subtarefas ativas
 4. ✅ **Só então responder** ao usuário
@@ -239,25 +240,24 @@ regra "PASTA `AULAS/` SEMPRE GERADA CONFORME A DOCUMENTAÇÃO DA MATÉRIA" (2026
 
 ---
 
-## 📋 CONSULTAR TAREFAS PENDENTES
+## 📋 CONSULTAR TAREFAS PENDENTES — `TASKS.md` E `TASKS_COMPLETE.md`
 
 ⚠️ **ANTES DE QUALQUER TRABALHO, LEIA:**
 
 📄 **Arquivo:** `C:\fontes\aulasenai\TASKS.md`
 
-**Conteúdo:**
-- ✅ Tarefa atual (em progresso)
-- 🔄 Subtarefas da tarefa atual
-- ⏳ Fila de próximas tarefas
-- 📊 Estatísticas de progresso
+Registrada em 2026-10-08 a pedido do usuário (separar pendentes de concluídas, para o chat ler
+menos texto).
 
-**Fluxo:**
-1. ✅ Ler TASKS.md para ver tarefa atual
-2. ✅ Executar todas as subtarefas
-3. ✅ Marcar tarefa como ✅ CONCLUÍDO
-4. ✅ Sistema aguarda nova tarefa a ser adicionada
-
-**Importante:** TASKS.md contém APENAS a tarefa atual. Não é um histórico — é um quadro de estado.
+- ✅ **`TASKS.md` = SOMENTE tarefas pendentes** (⏳ planejadas e 🔄 em progresso), com as
+  subtarefas de cada uma. É o único arquivo de tarefas lido na inicialização do chat.
+- ✅ **`TASKS_COMPLETE.md` = histórico** das tarefas ✅ concluídas e ⛔ canceladas. Não é lido na
+  inicialização; consultar só quando precisar do histórico. Se não existir, criar.
+- ✅ **Ao concluir ou cancelar uma tarefa:** marcar o status (✅ CONCLUÍDO ou ⛔ CANCELADA, com a
+  data), **mover o bloco inteiro** para `TASKS_COMPLETE.md` (seção CONCLUÍDAS ou CANCELADAS, em
+  ordem de número) e tirá-lo do `TASKS.md`, no mesmo commit da tarefa.
+- ✅ Tarefa nova entra no `TASKS.md` com o próximo número livre (contando os dois arquivos).
+- ❌ Não deixar tarefa concluída no `TASKS.md` nem tarefa pendente no `TASKS_COMPLETE.md`.
 
 ---
 
