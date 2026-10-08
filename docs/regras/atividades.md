@@ -188,9 +188,12 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   `- **Progresso para o professor:** sim` → `data-progresso-professor="sim"`; código
   `assets/js/progresso-turma-discursiva.js` + `assets/css/progresso-turma-discursiva.css`
   (carregado pelo `avaliacao-discursiva.js` só para o professor; o RLS limita às turmas dele).
-  - **Coluna "Nota IA (a confirmar)"** (2026-10-08): soma da `nota_ia` da `correcao_discursiva`
-    do aluno, lida do banco a cada atualização, com "(N/60)" enquanto a IA não corrigiu tudo;
-    só vale depois da confirmação do professor em CORREÇÃO.
+  - **Correção parcial pela IA** (2026-10-08): a IA corrige as alternativas já respondidas **antes
+    da entrega** e recorrige só o que o aluno mudou (`correcao_discursiva.nota_ia_em`, SQL
+    `database/2026-10-08-correcao-discursiva-nota-ia-em.sql`, aplicado). Colunas do painel:
+    **"Nota parcial IA"** (soma do que a IA já corrigiu, com "(N/60)") e **"Nota IA (a
+    confirmar)"** (só com a entrega feita e os 60 tópicos corrigidos). Nada disso vale sem a
+    confirmação do professor em CORREÇÃO. Orientação da IA: `CORRECAO-PROVA-ADAG.md`.
   - **1º uso:** Prova Prática ADAG (id 82).
   - ⏳ **Regra para o futuro:** o progresso deve aparecer em **todas as atividades** (discursivas
     e objetivas — estas usam `assets/js/respostas-atividade.js` e precisam de módulo equivalente);

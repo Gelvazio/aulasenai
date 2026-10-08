@@ -60,7 +60,7 @@
 .progresso-turma__linha {
     display: grid;
     /* Larguras fixas (só Questões é flexível): as colunas ficam alinhadas em todas as linhas. */
-    grid-template-columns: 180px minmax(0, 1fr) 70px 150px 130px;
+    grid-template-columns: 180px minmax(0, 1fr) 70px 150px 120px 120px;
     align-items: center;
     gap: 10px;
     font-size: 13px;
@@ -80,6 +80,11 @@
     font-weight: 700;
     text-align: right;
     color: var(--progresso-turma-nota-ia);
+}
+
+.progresso-turma__nota-ia--parcial {
+    font-weight: 600;
+    opacity: 0.85;
 }
 
 .progresso-turma__nota-ia--vazia {

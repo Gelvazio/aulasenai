@@ -2,7 +2,8 @@
 // célula por questão (vazia, em andamento ou completa), a barra geral e a entrega. Montado em
 // tempo de execução e atualizado a cada 5 segundos. Só aparece para o professor e só quando o
 // <body> tem data-progresso-professor="sim" (campo "- **Progresso para o professor:** sim" da
-// fonte .md). Coluna "Nota IA": soma da nota_ia (correcao_discursiva) a confirmar pelo professor.
+// fonte .md). Colunas da IA (correcao_discursiva): "Nota parcial IA" (soma do que a IA já corrigiu,
+// também antes da entrega) e "Nota IA (a confirmar)" (só com a entrega toda corrigida).
 // O RLS limita aos alunos das turmas do professor. Nada é gravado.
 // Carregado por assets/js/avaliacao-discursiva.js. Depende de js/supabase.js (sbGet).
 // Regra: docs/regras/atividades.md
@@ -12,7 +13,7 @@ const INTERVALO_ATUALIZACAO_PROGRESSO_MS = 5000;
 const TABELA_RESPOSTAS_PROGRESSO = 'resposta_discursiva';
 const TABELA_CORRECAO_PROGRESSO = 'correcao_discursiva';
 const TITULOS_COLUNAS_PROGRESSO = ['Aluno', 'Questões', 'Progresso', 'Situação',
-    'Nota IA (a confirmar)'];
+    'Nota parcial IA', 'Nota IA (a confirmar)'];
 const SELETOR_TOPICO_PROGRESSO = '.topico-resposta';
 const SELETOR_CABECALHO_ATIVIDADE = '.container > header';
 const BASE_SCRIPTS_PROGRESSO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
@@ -176,24 +177,48 @@ function montarBarra(percentual, modificador = '') {
 }
 
 /**
- * Monta a célula "Nota IA": soma das notas sugeridas pela IA (a confirmar pelo professor).
+ * Formata uma nota com duas casas decimais (ex.: 7,35).
+ * @param {number} nota - Nota.
+ * @returns {string} Nota formatada.
+ */
+function formatarNotaProgresso(nota) {
+    return nota.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+/**
+ * Monta a célula "Nota parcial IA": soma do que a IA já corrigiu, mesmo antes da entrega.
  * @param {{nota: number, corrigidos: number}|null} notaIa - Nota da IA do aluno.
  * @param {number} totalTopicos - Tópicos da prova.
  * @returns {HTMLElement} Célula pronta.
  */
-function montarCelulaNotaIa(notaIa, totalTopicos) {
+function montarCelulaNotaParcial(notaIa, totalTopicos) {
     const classe = CLASSE_PROGRESSO_TURMA + '__nota-ia';
     if (!notaIa) return criarElementoProgresso('span', classe + ' ' + classe + '--vazia', '—');
 
-    const nota = notaIa.nota.toLocaleString('pt-BR',
-        { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    const estaCompleta = notaIa.corrigidos >= totalTopicos;
-    const texto = estaCompleta
-        ? '🤖 ' + nota
-        : '🤖 ' + nota + ' (' + notaIa.corrigidos + '/' + totalTopicos + ')';
-    const celula = criarElementoProgresso('span', classe, texto);
-    celula.title = 'Nota sugerida pela IA (' + notaIa.corrigidos + ' de ' + totalTopicos +
-        ' tópicos corrigidos) — vale só depois da confirmação do professor em CORREÇÃO.';
+    const celula = criarElementoProgresso('span', classe + ' ' + classe + '--parcial',
+        '🤖 ' + formatarNotaProgresso(notaIa.nota) + ' (' + notaIa.corrigidos + '/' +
+        totalTopicos + ')');
+    celula.title = 'Nota parcial sugerida pela IA: ' + notaIa.corrigidos + ' de ' + totalTopicos +
+        ' tópicos corrigidos até agora (prévia; muda se o aluno alterar as respostas).';
+    return celula;
+}
+
+/**
+ * Monta a célula "Nota IA (a confirmar)": só com a entrega feita e todos os tópicos corrigidos.
+ * @param {Object} aluno - Registro de lerProgressoDaTurma (entregue e notaIa).
+ * @param {number} totalTopicos - Tópicos da prova.
+ * @returns {HTMLElement} Célula pronta.
+ */
+function montarCelulaNotaFinal(aluno, totalTopicos) {
+    const classe = CLASSE_PROGRESSO_TURMA + '__nota-ia';
+    const estaCompleta = aluno.entregue && aluno.notaIa?.corrigidos >= totalTopicos;
+    const vazia = classe + ' ' + classe + '--vazia';
+    if (!estaCompleta) return criarElementoProgresso('span', vazia, '—');
+
+    const celula = criarElementoProgresso('span', classe,
+        '🤖 ' + formatarNotaProgresso(aluno.notaIa.nota));
+    celula.title = 'Nota sugerida pela IA com a prova entregue e toda corrigida — vale só ' +
+        'depois da confirmação do professor em CORREÇÃO.';
     return celula;
 }
 
@@ -210,7 +235,7 @@ function montarTitulosDasColunas() {
 }
 
 /**
- * Monta a linha de um aluno: nome, células das questões, barra, situação e nota da IA.
+ * Monta a linha de um aluno: nome, questões, barra, situação, nota parcial e nota final da IA.
  * @param {Object} aluno - Registro de lerProgressoDaTurma.
  * @param {{topicos: Map<number, number>, totalTopicos: number}} medida - Estrutura da prova.
  * @returns {HTMLElement} Linha pronta.
@@ -229,7 +254,8 @@ function montarLinhaDoAluno(aluno, medida) {
         montarCelulasDasQuestoes(aluno.porQuestao, medida.topicos),
         montarBarra(percentual, aluno.entregue ? 'entregue' : ''),
         criarElementoProgresso('span', CLASSE_PROGRESSO_TURMA + '__situacao', situacao),
-        montarCelulaNotaIa(aluno.notaIa, medida.totalTopicos));
+        montarCelulaNotaParcial(aluno.notaIa, medida.totalTopicos),
+        montarCelulaNotaFinal(aluno, medida.totalTopicos));
     return linha;
 }
 

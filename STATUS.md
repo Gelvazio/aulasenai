@@ -30,6 +30,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 92 | 92.5 | rodar a correção parcial da IA e ver a "Nota parcial IA" no Progresso da turma (prova id 82) | Aceite |
 | 91 | 91.2 | coluna "Nota IA" no progresso da turma da Prova Prática ADAG (id 82) | Aceite |
 | 90 | 90.2 | orientação da correção por IA da Prova Prática ADAG (`CORRECAO-PROVA-ADAG.md`) | Aceite |
 | 89 | 89.5 | testar o progresso da turma (logado como professor) na Prova Prática ADAG (id 82) | Aceite |
@@ -1185,3 +1186,15 @@ Pedido do usuário: arquivo `CORRECAO-PROVA-ADAG.md` com a orientação para a I
 | 91.3 | Coluna Progresso mais estreita (`minmax(40px, 0.5fr)`) e `min-width: 0` nas células, para não dar barra de rolagem (commit `a40fa9f`) | ✅ Concluído | 2026-10-08 14:53:06 | Leitura do CSS |
 | 91.4 | Colunas com largura fixa (Aluno 180px, Progresso 70px, Situação 150px, Nota IA 130px; só Questões flexível) para a coluna Progresso ficar reta em todas as linhas | ✅ Concluído | 2026-10-08 14:53:47 | Leitura do CSS |
 | 91.2 | Aceite do usuário (testar logado como professor) | ⬜ Pendente | — | — |
+
+## Etapa 92 — Correção parcial pela IA e coluna "Nota parcial IA" (Prova Prática ADAG id 82, 2026-10-08 15:07:27)
+
+Pedido do usuário: a rodada da IA não gravou nada (0 entregas; a orientação só corrigia entregues). Gerar correção parcial numa nova coluna, dando a nota parcial, e ajustar o arquivo de orientação.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 92.1 | Coluna `correcao_discursiva.nota_ia_em` (`database/2026-10-08-correcao-discursiva-nota-ia-em.sql`, idempotente, sem apagar dados) aplicada no Supabase a pedido do usuário | ✅ Concluído | 2026-10-08 15:07:27 | Consulta ao `information_schema`: coluna `timestamptz` existe |
+| 92.2 | `CORRECAO-PROVA-ADAG.md`: correção parcial (todos os alunos com resposta, antes da entrega), recorrige o que mudou (`atualizado_em > nota_ia_em`), resposta apagada volta a 0, grava `nota_ia_em = now()` | ✅ Concluído | 2026-10-08 15:07:27 | Consulta 4.1 executada no banco (só leitura): 15 alunos, 128 alternativas pendentes |
+| 92.3 | Painel: coluna "Nota parcial IA" (soma com "(N/60)") e "Nota IA (a confirmar)" só com entrega e 60/60 | ✅ Concluído | 2026-10-08 15:07:27 | `node --check` |
+| 92.4 | `docs/database.md`, `docs/relatorio_verificacao_database.html` e `docs/regras/atividades.md` atualizados | ✅ Concluído | 2026-10-08 15:07:27 | Leitura |
+| 92.5 | Aceite do usuário (rodar a tarefa da IA e ver a nota parcial no painel) | ⬜ Pendente | — | — |

@@ -1,7 +1,9 @@
 # Correção da Prova Prática ADAG (Salete) — orientação para a IA
 
-> **Para a IA:** este arquivo é a sua instrução. Execute-o **de tempos em tempos** (a cada rodada,
-> corrija só o que ainda não tem nota da IA). Você **sugere** a nota e o comentário de cada
+> **Para a IA:** este arquivo é a sua instrução. Execute-o **de tempos em tempos**. A correção é
+> **parcial**: corrige as alternativas que os alunos já responderam, **mesmo antes da entrega**, e a
+> cada rodada **recorrige só o que o aluno mudou** desde a última nota da IA. Assim a **nota parcial**
+> vai subindo durante a prova (coluna "Nota parcial IA" do Progresso da turma). Você **sugere** a nota e o comentário de cada
 > alternativa; a nota que vale é a que o **professor** confirma na tela **CORREÇÃO**
 > (`correcao-discursiva.html`).
 
@@ -21,7 +23,7 @@
 | `topico_discursivo` | enunciado, `pontos`, `resposta_esperada` e `criterios` de cada alternativa (`item`, `topico`) | só **lê** |
 | `resposta_discursiva` | `texto` digitado pelo aluno, por `aluno_id`, `tentativa`, `item`, `topico` | só **lê** |
 | `entrega_atividade` | quem entregou (`aluno_id`, `tentativa`, `entregue_em`) | só **lê** |
-| `correcao_discursiva` | **`nota_ia`** (nota sugerida pela IA) e **`comentario`** (porquê da nota) por alternativa; `nota_professor` é a do professor | **grava** só `nota_ia` e `comentario` |
+| `correcao_discursiva` | **`nota_ia`** (nota sugerida pela IA), **`comentario`** (porquê da nota) e **`nota_ia_em`** (quando a IA deu a nota) por alternativa; `nota_professor` é a do professor | **grava** só `nota_ia`, `comentario` e `nota_ia_em` |
 
 - ⛔ **Nunca** gravar ou alterar `nota_professor`, `corrigido_por` ou `corrigido_em`.
 - ⛔ **Nunca** mexer em linha que já tem `nota_professor` (o professor já decidiu).
@@ -72,26 +74,37 @@ Regras para decidir (as mesmas do padrão de resposta da prova):
 
 ## 4. Passo a passo de cada rodada (SQL pelo conector do Supabase)
 
-### 4.1 Quem falta corrigir
+### 4.1 Quem falta corrigir (correção parcial)
 
-Só entra quem **já entregou** (as respostas não mudam mais depois da entrega).
+Entram **todos os alunos com resposta**, entregues ou não. Uma alternativa está pendente quando o
+aluno escreveu (ou mudou) a resposta **depois** da última nota da IA, ou quando apagou uma resposta
+que já tinha nota da IA. Alternativas com `nota_professor` nunca entram.
 
 ```sql
-select e.aluno_id, e.tentativa, e.entregue_em
-from entrega_atividade e
-where e.atividade_id = 82
-  and exists (
-    select 1 from topico_discursivo t
-    where t.atividade_id = 82
-      and not exists (
-        select 1 from correcao_discursiva c
-        where c.aluno_id = e.aluno_id and c.atividade_id = 82 and c.tentativa = e.tentativa
-          and c.item = t.item and c.topico = t.topico
-          and (c.nota_ia is not null or c.nota_professor is not null)))
-order by e.entregue_em;
+with pendentes as (
+  select r.aluno_id, r.tentativa, r.item, r.topico
+  from resposta_discursiva r
+  left join correcao_discursiva c
+    on c.aluno_id = r.aluno_id and c.atividade_id = r.atividade_id
+   and c.tentativa = r.tentativa and c.item = r.item and c.topico = r.topico
+  where r.atividade_id = 82
+    and c.nota_professor is null
+    and (c.nota_ia_em is null or r.atualizado_em > c.nota_ia_em)
+  union
+  select c.aluno_id, c.tentativa, c.item, c.topico
+  from correcao_discursiva c
+  where c.atividade_id = 82 and c.nota_professor is null and c.nota_ia > 0
+    and not exists (select 1 from resposta_discursiva r
+      where r.aluno_id = c.aluno_id and r.atividade_id = 82 and r.tentativa = c.tentativa
+        and r.item = c.item and r.topico = c.topico)
+)
+select aluno_id, tentativa, count(*) as alternativas_pendentes
+from pendentes group by aluno_id, tentativa order by alternativas_pendentes desc;
 ```
 
 Nenhuma linha → nada a corrigir nesta rodada: registrar no fim deste arquivo e parar.
+Alternativa **sem resposta** (o aluno ainda não escreveu) não recebe nota parcial — fica sem linha.
+Alternativa que **foi apagada** pelo aluno volta para `0` com o comentário `[IA] Errada: em branco.`
 
 ### 4.2 Ler as 60 alternativas de um aluno (uma entrega por vez)
 
@@ -110,7 +123,8 @@ where t.atividade_id = 82
 order by t.item, t.topico;
 ```
 
-Corrigir só as linhas em que `nota_ia` e `nota_professor` estão vazias.
+Corrigir só as alternativas que a consulta 4.1 apontou para este aluno (`nota_professor` vazia e
+resposta nova ou mudada). As demais já têm nota da IA atualizada.
 
 ### 4.3 (Prova em dupla) Ver textos iguais entre alunos
 
@@ -131,17 +145,19 @@ Gravar as alternativas do aluno num único comando (uma linha de `values` por al
 
 ```sql
 insert into correcao_discursiva
-  (aluno_id, atividade_id, tentativa, item, topico, nota_ia, comentario)
+  (aluno_id, atividade_id, tentativa, item, topico, nota_ia, comentario, nota_ia_em)
 values
-  ('<ALUNO_ID>', 82, <TENTATIVA>, 1, 1, 0.10, '[IA] Certa: ...'),
-  ('<ALUNO_ID>', 82, <TENTATIVA>, 1, 2, 0.10, '[IA] Meia certa: ...')
+  ('<ALUNO_ID>', 82, <TENTATIVA>, 1, 1, 0.10, '[IA] Certa: ...', now()),
+  ('<ALUNO_ID>', 82, <TENTATIVA>, 1, 2, 0.10, '[IA] Meia certa: ...', now())
 on conflict (aluno_id, atividade_id, tentativa, item, topico) do update
   set nota_ia = excluded.nota_ia,
-      comentario = excluded.comentario
+      comentario = excluded.comentario,
+      nota_ia_em = excluded.nota_ia_em
   where correcao_discursiva.nota_professor is null;
 ```
 
 - A nota é sempre `pontos`, `pontos / 2` ou `0` (ponto como separador decimal no SQL).
+- `nota_ia_em = now()` é obrigatório: é por ele que a próxima rodada sabe o que o aluno mudou.
 - O banco recusa nota maior que os pontos da alternativa (trigger `correcao_discursiva_validar`).
 - Apóstrofo dentro do comentário é escrito em dobro (`''`).
 
@@ -149,23 +165,25 @@ on conflict (aluno_id, atividade_id, tentativa, item, topico) do update
 
 ```sql
 select count(*) filter (where nota_ia is not null) as com_nota_ia,
-       sum(nota_ia) as total_sugerido
+       sum(nota_ia) as nota_parcial
 from correcao_discursiva
 where atividade_id = 82 and aluno_id = '<ALUNO_ID>' and tentativa = <TENTATIVA>;
 ```
 
-Esperado: `com_nota_ia` = 60 e `total_sugerido` entre 0 e 10. Repetir 4.2 a 4.5 para cada entrega
-pendente.
+Esperado: `com_nota_ia` = alternativas respondidas pelo aluno (60 depois da entrega) e
+`nota_parcial` entre 0 e 10. Repetir 4.2 a 4.5 para cada aluno pendente da 4.1.
 
 ## 5. Ao terminar a rodada
 
-1. Acrescentar uma linha na tabela abaixo (data e hora de Brasília, quantas entregas e
-   alternativas foram corrigidas). **Sem nomes nem notas de alunos.**
+1. Acrescentar uma linha na tabela abaixo (data e hora de Brasília, quantos alunos e
+   alternativas foram corrigidos). **Sem nomes nem notas de alunos.**
 2. Fazer o commit deste arquivo (regra "COMMIT POR TAREFA" do `CLAUDE.md`).
-3. O professor abre **CORREÇÃO** → avaliação "Prova Prática" (id 82) → turma → entrega, confere a
+3. Durante a prova, o professor acompanha a **nota parcial** no Progresso da turma (topo da página
+   da prova, coluna "Nota parcial IA"); ela só vale como prévia.
+4. Depois da entrega, o professor abre **CORREÇÃO** → avaliação "Prova Prática" (id 82) → turma → entrega, confere a
    **Nota da IA** e o **Comentário** e grava a **nota do professor**, que é a que conta na média.
 
 ## Registro das rodadas
 
-| Data e hora | Entregas corrigidas | Alternativas gravadas | Observação |
+| Data e hora | Alunos corrigidos | Alternativas gravadas | Observação |
 |---|---|---|---|
