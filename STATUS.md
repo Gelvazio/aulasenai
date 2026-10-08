@@ -30,6 +30,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 102 | 102.15 | revisar as 10 aulas de Testes de Front-End em `CONTEUDO/` e o `DOCUMENTACAO/PLANO-AULAS.md` | Aceite |
 | 97 | 97.4 | testar a quantidade mínima de questões (botão no Progresso da turma, entrega com o mínimo e nota proporcional) | Aceite |
 | 96 | 96.4 | botão Gráficos e progresso global nas discursivas | Aceite |
 | 95 | 95.4 | botões Certa / Meia certa / Errada do professor e nota travada (prova id 82) | Aceite |
@@ -387,6 +388,7 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 ## Registro de decisões
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-08 20:00 | Aulas de Testes de Front-End sem empresa fictícia ("você como aluno consultor"), mesmo com a regra 4 da Seção IX da ementa da matéria pedindo empresas fictícias | Claude, pela regra global de 2026-10-08 | A regra global é mais nova; a divergência fica avisada ao usuário |
 | 2026-10-08 | Comunicação Oral e Escrita (Rio do Sul): atividade de 50 questões só nas aulas 01 a 07; aula 08 = Avaliação Prática e aula 09 = Avaliação Objetiva (30 questões). Fontes com gabarito não entram em commit até o usuário ajustar o `.gitignore` | Usuário | Aulas 08 e 09 são de avaliação; o usuário cuida do `.gitignore` |
 | 2026-10-07 | Comunicação Oral e Escrita (Rio do Sul): 9 aulas (8 × 4h + 1 × 1h), só C1–C4 oficiais, empresa fictícia Vale Tech, avaliação prática 6,0 (aula 8) + objetiva 4,0 (aula 9) | Usuário | Aceite B.4 do plano, perguntas uma por vez |
 | 2026-10-06 | Reforço de Linguagens: 25 questões por atividade em duas páginas (20 objetivas + 5 discursivas), sem mudar o banco | Usuário | Regra exclusiva da matéria; banco aceita só um tipo por atividade |
@@ -417,6 +419,7 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 ## Lições aprendidas
 | Data | O que aconteceu | Lição / nova regra |
 |------|-----------------|--------------------|
+| 2026-10-08 20:15 | No Git Bash local, `TZ=America/Sao_Paulo date` mostrou a hora em UTC (3 h a mais) | Na máquina local, pegar a hora com `Get-Date -Format "yyyy-MM-dd HH:mm:ss"` (PowerShell), como manda o CLAUDE.md |
 | 2026-10-03 | A análise de 2026-09-08 dizia ITIC presencial e Banco de Dados "completo" | Conferir sempre a ementa do curso e as pastas reais antes de afirmar situação |
 | 2026-10-03 | Abri os slides em PDF da aula 01 para montar a aula | PDF nunca é fonte: conteúdo e conferência só pelos `.md` (ementa primeiro) — regra no `CLAUDE.md` |
 
@@ -1285,3 +1288,27 @@ Motivo: a outra integrante da dupla é quem está fazendo a atividade.
 | 101.3 | Linha no `STATUS-SESSOES.md` e seção no `SESSAO-CLAUDE.md` | ✅ Concluído | 2026-10-08 19:58 | `grep sessao-claude-4` nos dois |
 | 101.4 | Commit local | ✅ Concluído | 2026-10-08 19:58 | `git diff --cached --name-only` |
 | 101.5 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 102 — Aulas de Testes de Front-End em Markdown (`CONTEUDO/`) (pedido e aprovação em 2026-10-08 20:00:46)
+
+Plano: [docs/aulas-conteudo-testes-de-frontend.md](docs/aulas-conteudo-testes-de-frontend.md) ·
+Pasta: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/CONTEUDO/` · Controle por aula:
+`TESTES-DE-FRONTEND/AULAS/STATUS-AULAS.md`.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 102.1 | Plano em `docs/`, esta etapa e coluna "Aula em `CONTEUDO/`" no `STATUS-AULAS.md` | ✅ Concluído | 2026-10-08 20:02 | Arquivos criados |
+| 102.2 | Aula 01 — Fundamentos de Testes de Software | ✅ Concluído | 2026-10-08 20:03:56 | Seções do modelo; roteiro = 240 min |
+| 102.3 | Aula 02 — Planejamento, Verificação, Validação e Casos de Teste | ✅ Concluído | 2026-10-08 20:05:02 | Seções do modelo; roteiro = 240 min |
+| 102.4 | Aula 03 — Testes Unitários com Vitest | ✅ Concluído | 2026-10-08 20:06:15 | Seções do modelo; roteiro = 240 min; código conferido por leitura |
+| 102.5 | Aula 04 — Integração com DOM (Testing Library) | ✅ Concluído | 2026-10-08 20:07:15 | Seções do modelo; roteiro = 240 min; código conferido por leitura |
+| 102.6 | Aula 05 — Integração Avançada e Mock de APIs | ✅ Concluído | 2026-10-08 20:08:32 | Seções do modelo; roteiro = 240 min; código conferido por leitura |
+| 102.7 | Aula 06 — End-to-End com Cypress e Playwright | ✅ Concluído | 2026-10-08 20:09:35 | Seções do modelo; roteiro = 240 min; código conferido por leitura |
+| 102.8 | Aula 07 — Métricas e Cobertura de Testes | ✅ Concluído | 2026-10-08 20:10:47 | Seções do modelo; roteiro = 240 min; código conferido por leitura |
+| 102.9 | Aula 08 — TDD e Debugging no Front-End | ✅ Concluído | 2026-10-08 20:12:09 | Seções do modelo; roteiro = 240 min; CPFs de exemplo calculados |
+| 102.10 | Aula 09 — Qualidade, Performance, Acessibilidade e CI/CD | ✅ Concluído | 2026-10-08 20:13:12 | Seções do modelo; roteiro = 240 min; YAML conferido por leitura |
+| 102.11 | Aula 10 — Projeto Integrador: Suíte de Testes | ✅ Concluído | 2026-10-08 20:14:19 | Seções do modelo; roteiro = 240 min |
+| 102.12 | `DOCUMENTACAO/PLANO-AULAS.md` (resumo) | ✅ Concluído | 2026-10-08 20:14:54 | 10 linhas, total 40 h |
+| 102.13 | Conferência das 10 aulas (seções, 240 min, conhecimentos) | ✅ Concluído | 2026-10-08 20:15:40 | Script: 9 seções em todas, roteiro 240 min, conhecimentos e capacidades = materia.json, sem empresa fictícia |
+| 102.14 | Commit local + graphify | ✅ Concluído | 2026-10-08 20:16:25 | git diff --cached --name-only conferido; push fica com o usuário |
+| 102.15 | Aceite do usuário | ⬜ Pendente | — | — |

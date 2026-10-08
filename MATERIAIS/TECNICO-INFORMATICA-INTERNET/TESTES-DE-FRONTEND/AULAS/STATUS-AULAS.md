@@ -6,20 +6,20 @@
 
 **Levantamento inicial:** 2026-10-03 (conferência de todas as matérias; arquivos da pasta + atividades
 cadastradas no banco). **Aulas encontradas:** 10 (slides `AULAS/AULA-NN-SLIDES.pdf`, movidos de `AULAS-CHALKIE-AI/` na padronização de 2026-10-03).
-**`DOCUMENTACAO/PLANO-AULAS.md`:** ⬜ não existe (exigido pela regra da pasta AULAS antes de gerar novas aulas).
+**`DOCUMENTACAO/PLANO-AULAS.md`:** ⬜ em geração (Etapa 102 do `STATUS.md`; plano `docs/aulas-conteudo-testes-de-frontend.md`).
 
-| Aula | Tema | Aula (fonte) | Página HTML da aula | Atividade 50 questões | Prática | Banco |
-|---|---|---|---|---|---|---|
-| 01 | Fundamentos de Testes de Software | ✅ `AULA-01-SLIDES.pdf` | ⛔ | ⬜ | ⛔ | ⬜ |
-| 02 | Planejamento, Verificação, Validação e Casos de Teste | ✅ `AULA-02-SLIDES.pdf` | ⛔ | ⬜ | ⛔ | ⬜ |
-| 03 | Testes Unitários no Frontend com Vitest | ✅ `AULA-03-SLIDES.pdf` | ⛔ | ⬜ | ⛔ | ⬜ |
-| 04 | Testes de Integração com DOM usando Testing Library | ✅ `AULA-04-SLIDES.pdf` | ⛔ | ⬜ | ⛔ | ⬜ |
-| 05 | Testes de Integração Avançados e Mock de APIs | ✅ `AULA-05-SLIDES.pdf` | ⛔ | ⬜ | ⛔ | ⬜ |
-| 06 | Testes End to End com Cypress e Playwright | ✅ `AULA-06-SLIDES.pdf` | ⛔ | ⬜ | ⛔ | ⬜ |
-| 07 | Métricas e Cobertura de Testes | ✅ `AULA-07-SLIDES.pdf` | ⛔ | ⬜ | ⛔ | ⬜ |
-| 08 | TDD e Debugging Moderno no Frontend | ✅ `AULA-08-SLIDES.pdf` | ⛔ | ⬜ | ⛔ | ⬜ |
-| 09 | Qualidade, Performance, Acessibilidade e CI CD | ✅ `AULA-09-SLIDES.pdf` | ⛔ | ⬜ | ⛔ | ⬜ |
-| 10 | Projeto Prático Integrador Suíte de Testes | ✅ `AULA-10-SLIDES.pdf` | ⛔ | ⬜ | ⛔ | ⬜ |
+| Aula | Tema | Aula (fonte) | Aula em `CONTEUDO/` | Página HTML da aula | Atividade 50 questões | Prática | Banco |
+|---|---|---|---|---|---|---|---|
+| 01 | Fundamentos de Testes de Software | ✅ `AULA-01-SLIDES.pdf` | ✅ `CONTEUDO/AULA-01-FUNDAMENTOS-DE-TESTES-DE-SOFTWARE.md` | ⛔ | ⬜ | ⛔ | ⬜ |
+| 02 | Planejamento, Verificação, Validação e Casos de Teste | ✅ `AULA-02-SLIDES.pdf` | ✅ `CONTEUDO/AULA-02-PLANEJAMENTO-VERIFICACAO-VALIDACAO-E-CASOS-DE-TESTE.md` | ⛔ | ⬜ | ⛔ | ⬜ |
+| 03 | Testes Unitários no Frontend com Vitest | ✅ `AULA-03-SLIDES.pdf` | ✅ `CONTEUDO/AULA-03-TESTES-UNITARIOS-COM-VITEST.md` | ⛔ | ⬜ | ⛔ | ⬜ |
+| 04 | Testes de Integração com DOM usando Testing Library | ✅ `AULA-04-SLIDES.pdf` | ✅ `CONTEUDO/AULA-04-TESTES-DE-INTEGRACAO-COM-TESTING-LIBRARY.md` | ⛔ | ⬜ | ⛔ | ⬜ |
+| 05 | Testes de Integração Avançados e Mock de APIs | ✅ `AULA-05-SLIDES.pdf` | ✅ `CONTEUDO/AULA-05-INTEGRACAO-AVANCADA-E-MOCK-DE-APIS.md` | ⛔ | ⬜ | ⛔ | ⬜ |
+| 06 | Testes End to End com Cypress e Playwright | ✅ `AULA-06-SLIDES.pdf` | ✅ `CONTEUDO/AULA-06-TESTES-END-TO-END-COM-CYPRESS-E-PLAYWRIGHT.md` | ⛔ | ⬜ | ⛔ | ⬜ |
+| 07 | Métricas e Cobertura de Testes | ✅ `AULA-07-SLIDES.pdf` | ✅ `CONTEUDO/AULA-07-METRICAS-E-COBERTURA-DE-TESTES.md` | ⛔ | ⬜ | ⛔ | ⬜ |
+| 08 | TDD e Debugging Moderno no Frontend | ✅ `AULA-08-SLIDES.pdf` | ✅ `CONTEUDO/AULA-08-TDD-E-DEBUGGING-NO-FRONT-END.md` | ⛔ | ⬜ | ⛔ | ⬜ |
+| 09 | Qualidade, Performance, Acessibilidade e CI CD | ✅ `AULA-09-SLIDES.pdf` | ✅ `CONTEUDO/AULA-09-QUALIDADE-PERFORMANCE-ACESSIBILIDADE-E-CI-CD.md` | ⛔ | ⬜ | ⛔ | ⬜ |
+| 10 | Projeto Prático Integrador Suíte de Testes | ✅ `AULA-10-SLIDES.pdf` | ✅ `CONTEUDO/AULA-10-PROJETO-INTEGRADOR-SUITE-DE-TESTES.md` | ⛔ | ⬜ | ⛔ | ⬜ |
 
 ## Observações
 
