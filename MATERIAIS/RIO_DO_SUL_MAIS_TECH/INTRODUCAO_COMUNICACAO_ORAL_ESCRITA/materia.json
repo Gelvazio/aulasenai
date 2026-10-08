@@ -1,0 +1,899 @@
+{
+  "uc": "Introdução à Comunicação Oral e Escrita para o Mundo do Trabalho",
+  "uc_curta": "Comunicação Oral e Escrita",
+  "curso": "Rio do Sul Mais Tech",
+  "docente": "Gelvazio Camargo",
+  "autor_apostila": "Gelvazio Camargo",
+  "versao_apostila": "1.0",
+  "modulo": "UC 5",
+  "modalidade": "Presencial",
+  "carga_horaria_uc": 33,
+  "fontes": [
+    "MATERIAIS/RIO_DO_SUL_MAIS_TECH/EMENTA-PRINCIPAL-RIO_DO_SUL_MAIS_TECH.md (UC 5 — fonte da verdade: capacidades e conhecimentos)",
+    "INTRODUCAO_COMUNICACAO_ORAL_ESCRITA/EMENTA-CHALKIE-AI.md v1.0 (indicadores, sequência de aulas, situações-problema e detalhamento didático)"
+  ],
+  "versao_ementa": "EMENTA-CHALKIE-AI.md v1.0 — recriada no padrão da ITIC (2026-10-07)",
+  "proveniencia": "Capacidades e conhecimentos literais da UC 5 da ementa do curso; o detalhamento não cria capacidades nem conteúdos obrigatórios.",
+  "justificativa": "Em qualquer trabalho, a comunicação decide o resultado: um aviso mal dado atrasa a produção, um e-mail confuso gera retrabalho, uma reunião sem registro vira discussão repetida. A UC é o primeiro contato do estudante de 12 a 15 anos com a comunicação do mundo do trabalho.",
+  "objetivo_geral": {
+    "texto": "Desenvolver habilidades de comunicação oral e escrita essenciais para atuar de forma eficiente no ambiente profissional.",
+    "dimensoes": []
+  },
+  "publico": "Estudantes do 8º e 9º anos do ensino fundamental (12–15 anos)",
+  "contexto_exemplos": "Vale Tech, indústria fictícia de Rio do Sul que fabrica pequenos robôs educativos, e situações próximas do jovem (trabalho em grupo, apresentação de projeto, grupo de mensagens, primeiro estágio).",
+  "capacidades": {
+    "C1": "Comunicar-se de forma clara, objetiva e respeitosa em diferentes contextos profissionais",
+    "C2": "Produzir textos técnicos e comunicativos alinhados às exigências do mundo do trabalho",
+    "C3": "Aplicar técnicas de comunicação interpessoal para melhorar a interação em equipe",
+    "C4": "Utilizar ferramentas digitais para facilitar a comunicação escrita e organizacional"
+  },
+  "capacidades_socioemocionais": null,
+  "conhecimentos": [
+    {
+      "dominio": 1,
+      "titulo": "Fundamentos da comunicação no mundo do trabalho",
+      "conteudos": [
+        "fundamentos da comunicação no mundo do trabalho"
+      ]
+    },
+    {
+      "dominio": 2,
+      "titulo": "Técnicas de comunicação oral",
+      "conteudos": [
+        "falar em público",
+        "reuniões",
+        "atendimento ao cliente"
+      ]
+    },
+    {
+      "dominio": 3,
+      "titulo": "Estrutura e normas de redação técnica e formal",
+      "conteudos": [
+        "estrutura e normas de redação técnica e formal"
+      ]
+    },
+    {
+      "dominio": 4,
+      "titulo": "Ferramentas digitais para comunicação",
+      "conteudos": [
+        "e-mails",
+        "redes corporativas",
+        "segurança digital"
+      ]
+    }
+  ],
+  "capacidades_x_conhecimentos": {
+    "C1": [
+      1,
+      2
+    ],
+    "C2": [
+      3
+    ],
+    "C3": [
+      1,
+      2
+    ],
+    "C4": [
+      4
+    ]
+  },
+  "horas_por_aula": 4,
+  "aulas": [
+    {
+      "numero": "01",
+      "aula": 1,
+      "tema": "Fundamentos da Comunicação no Mundo do Trabalho",
+      "carga_horaria": 4,
+      "dominios": [
+        1
+      ],
+      "capacidades": [
+        "C1",
+        "C3"
+      ],
+      "conteudos_oficiais": [
+        "Fundamentos da comunicação no mundo do trabalho"
+      ],
+      "detalhamento_didatico": [
+        "Elementos da comunicação: emissor, receptor, mensagem, canal, código, ruído e feedback",
+        "Tipos de ruído no ambiente de trabalho",
+        "Linguagem formal e informal: adequação ao contexto",
+        "Comunicação verbal e não verbal"
+      ],
+      "indicadores": [
+        "Identifica emissor, receptor, mensagem, canal, código, ruído e feedback numa situação de trabalho",
+        "Adapta a mesma mensagem a contextos formal e informal"
+      ],
+      "situacao_problema": "O aviso \"trocar a peça amanhã\" foi dado no corredor barulhento: metade da equipe não entendeu qual peça.",
+      "atividade": "Telefone sem fio + diagnóstico de ruídos num aviso da fábrica",
+      "dinamica": "Telefone sem fio da fábrica",
+      "estrategias": [
+        "Exposição dialogada",
+        "Dinâmica de grupo",
+        "Gamificação"
+      ],
+      "bncc": [
+        "CG4 Comunicação"
+      ],
+      "termos_glossario_ementa": [
+        "Ruído",
+        "Feedback"
+      ],
+      "ideias_ementa": [
+        "Aula de 4h para jovens de 13 anos sobre elementos da comunicação, com dinâmica de telefone sem fio e um aviso de fábrica cheio de ruídos."
+      ],
+      "indicadores_numeros": [
+        1,
+        2
+      ],
+      "conteudo_aula": "CONTEUDO/AULA-01-FUNDAMENTOS-DA-COMUNICACAO-NO-MUNDO-DO-TRABALHO.md"
+    },
+    {
+      "numero": "02",
+      "aula": 2,
+      "tema": "Comunicação Interpessoal e Trabalho em Equipe",
+      "carga_horaria": 4,
+      "dominios": [
+        1
+      ],
+      "capacidades": [
+        "C3",
+        "C1"
+      ],
+      "conteudos_oficiais": [
+        "Fundamentos da comunicação no mundo do trabalho"
+      ],
+      "detalhamento_didatico": [
+        "Escuta ativa: atenção, confirmação e perguntas",
+        "Feedback construtivo: elogio, sugestão e combinado",
+        "Papéis, prazos e regras de convivência na equipe",
+        "Conflitos no grupo e busca de acordo"
+      ],
+      "indicadores": [
+        "Pratica escuta ativa e dá feedback construtivo a um colega",
+        "Combina com o grupo papéis, prazos e regras de convivência"
+      ],
+      "situacao_problema": "Um integrante do grupo faz tudo sozinho e os outros reclamam: como resolver sem briga?",
+      "atividade": "Combinado do grupo + rodada de feedback",
+      "dinamica": "Torre de papel em silêncio",
+      "estrategias": [
+        "Dinâmica de grupo",
+        "Simulação de papéis",
+        "Trabalho em grupo"
+      ],
+      "bncc": [
+        "CG9 Empatia e cooperação"
+      ],
+      "termos_glossario_ementa": [
+        "Escuta ativa"
+      ],
+      "ideias_ementa": [],
+      "indicadores_numeros": [
+        3,
+        4
+      ],
+      "conteudo_aula": "CONTEUDO/AULA-02-COMUNICACAO-INTERPESSOAL-E-TRABALHO-EM-EQUIPE.md"
+    },
+    {
+      "numero": "03",
+      "aula": 3,
+      "tema": "Falar em Público e Apresentações",
+      "carga_horaria": 4,
+      "dominios": [
+        2
+      ],
+      "capacidades": [
+        "C1"
+      ],
+      "conteudos_oficiais": [
+        "Técnicas de comunicação oral (falar em público, reuniões, atendimento ao cliente)"
+      ],
+      "detalhamento_didatico": [
+        "Estrutura da apresentação: abertura, desenvolvimento e fechamento",
+        "Voz, ritmo, postura e contato visual",
+        "Controle do nervosismo e ensaio",
+        "Pitch: apresentar uma ideia em pouco tempo"
+      ],
+      "indicadores": [
+        "Apresenta um tema em 3 minutos com abertura, desenvolvimento e fechamento"
+      ],
+      "situacao_problema": "A equipe tem 3 minutos para apresentar o novo robô à diretoria e ninguém quer falar.",
+      "atividade": "Pitch de 3 minutos sobre um produto da Vale Tech",
+      "dinamica": "Pitch relâmpago",
+      "estrategias": [
+        "Exposição dialogada",
+        "Demonstração",
+        "Apresentação para público"
+      ],
+      "bncc": [
+        "CG4 Comunicação",
+        "CG7 Argumentação"
+      ],
+      "termos_glossario_ementa": [
+        "Pitch"
+      ],
+      "ideias_ementa": [
+        "Roteiro de pitch de 3 minutos sobre um robô educativo, com abertura que prende a atenção e fechamento."
+      ],
+      "indicadores_numeros": [
+        5
+      ],
+      "conteudo_aula": "CONTEUDO/AULA-03-FALAR-EM-PUBLICO-E-APRESENTACOES.md"
+    },
+    {
+      "numero": "04",
+      "aula": 4,
+      "tema": "Reuniões e Atendimento ao Cliente",
+      "carga_horaria": 4,
+      "dominios": [
+        2
+      ],
+      "capacidades": [
+        "C1",
+        "C3"
+      ],
+      "conteudos_oficiais": [
+        "Técnicas de comunicação oral (falar em público, reuniões, atendimento ao cliente)"
+      ],
+      "detalhamento_didatico": [
+        "Reunião: pauta, mediador, relator e controle de tempo",
+        "Participar com objetividade e respeito",
+        "Etapas do atendimento: acolher, ouvir, resolver e confirmar",
+        "Cliente insatisfeito: empatia e solução"
+      ],
+      "indicadores": [
+        "Participa de reunião com pauta e registra as decisões",
+        "Atende um cliente simulado com cordialidade, escuta e solução"
+      ],
+      "situacao_problema": "A reunião de turno durou uma hora e ninguém lembra o que foi decidido; um cliente liga reclamando do atraso.",
+      "atividade": "Reunião com pauta + atendimento a cliente insatisfeito",
+      "dinamica": "Balcão de atendimento",
+      "estrategias": [
+        "Simulação de papéis",
+        "Estudo de caso",
+        "Trabalho em grupo"
+      ],
+      "bncc": [
+        "CG7 Argumentação",
+        "CG9 Empatia e cooperação"
+      ],
+      "termos_glossario_ementa": [
+        "Pauta"
+      ],
+      "ideias_ementa": [
+        "Simulação de reunião de equipe com pauta, mediador, relator e controle de tempo, sobre um problema escolar.",
+        "Cartões de atendimento ao cliente (atraso, defeito, troca) com a resposta ideal e os erros que irritam o cliente."
+      ],
+      "indicadores_numeros": [
+        6,
+        7
+      ],
+      "conteudo_aula": "CONTEUDO/AULA-04-REUNIOES-E-ATENDIMENTO-AO-CLIENTE.md"
+    },
+    {
+      "numero": "05",
+      "aula": 5,
+      "tema": "Redação Técnica: Clareza, Estrutura e Norma-Padrão",
+      "carga_horaria": 4,
+      "dominios": [
+        3
+      ],
+      "capacidades": [
+        "C2"
+      ],
+      "conteudos_oficiais": [
+        "Estrutura e normas de redação técnica e formal"
+      ],
+      "detalhamento_didatico": [
+        "Clareza e objetividade: frases curtas e informação completa",
+        "Coesão e coerência",
+        "Norma-padrão: pontuação, concordância e ortografia",
+        "Revisão do texto antes de enviar"
+      ],
+      "indicadores": [
+        "Reescreve texto confuso com clareza, objetividade e norma-padrão"
+      ],
+      "situacao_problema": "O aviso no mural tem erros, frases longas e nenhuma data: ninguém seguiu a orientação.",
+      "atividade": "Reescrever avisos confusos da fábrica",
+      "dinamica": "Detetive do texto",
+      "estrategias": [
+        "Exposição dialogada",
+        "Atividade prática",
+        "Gamificação"
+      ],
+      "bncc": [
+        "CG4 Comunicação"
+      ],
+      "termos_glossario_ementa": [
+        "Norma-padrão"
+      ],
+      "ideias_ementa": [
+        "5 avisos de mural mal escritos para reescrever com clareza, objetividade e norma-padrão."
+      ],
+      "indicadores_numeros": [
+        8
+      ],
+      "conteudo_aula": "CONTEUDO/AULA-05-REDACAO-TECNICA-CLAREZA-ESTRUTURA-E-NORMA-PADRAO.md"
+    },
+    {
+      "numero": "06",
+      "aula": 6,
+      "tema": "Textos do Trabalho: Relatório, Ata, Comunicado e Procedimento",
+      "carga_horaria": 4,
+      "dominios": [
+        3
+      ],
+      "capacidades": [
+        "C2"
+      ],
+      "conteudos_oficiais": [
+        "Estrutura e normas de redação técnica e formal"
+      ],
+      "detalhamento_didatico": [
+        "Relatório: introdução, desenvolvimento e conclusão",
+        "Ata: data, participantes, assuntos e decisões",
+        "Comunicado e memorando: destinatário, assunto e mensagem objetiva",
+        "Procedimento: passos numerados, verbos no imperativo e sem ambiguidade"
+      ],
+      "indicadores": [
+        "Produz relatório, ata, comunicado ou procedimento com a estrutura correta"
+      ],
+      "situacao_problema": "A linha parou e é preciso registrar o que aconteceu e ensinar o novo procedimento.",
+      "atividade": "Ata da reunião da aula 4 + procedimento passo a passo",
+      "dinamica": "Linha de montagem do procedimento",
+      "estrategias": [
+        "Demonstração",
+        "Trabalho em grupo",
+        "Atividade prática"
+      ],
+      "bncc": [
+        "CG4 Comunicação",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [
+        "Ata",
+        "Procedimento",
+        "Comunicado"
+      ],
+      "ideias_ementa": [
+        "Modelos comentados de ata, comunicado e procedimento passo a passo de uma pequena indústria."
+      ],
+      "indicadores_numeros": [
+        9
+      ],
+      "conteudo_aula": "CONTEUDO/AULA-06-TEXTOS-DO-TRABALHO-RELATORIO-ATA-COMUNICADO-E-PROCEDIMENTO.md"
+    },
+    {
+      "numero": "07",
+      "aula": 7,
+      "tema": "E-mail, Redes Corporativas e Segurança Digital",
+      "carga_horaria": 4,
+      "dominios": [
+        4,
+        3
+      ],
+      "capacidades": [
+        "C4",
+        "C2"
+      ],
+      "conteudos_oficiais": [
+        "Ferramentas digitais para comunicação (e-mails, redes corporativas, segurança digital)",
+        "Estrutura e normas de redação técnica e formal"
+      ],
+      "detalhamento_didatico": [
+        "Partes do e-mail profissional: assunto, saudação, corpo, anexo e assinatura",
+        "E-mail, chat e videochamada: quando usar cada um",
+        "Documentos compartilhados, comentários e permissões",
+        "Senhas, golpes (phishing), dados pessoais e LGPD",
+        "Etiqueta digital"
+      ],
+      "indicadores": [
+        "Redige e-mail profissional com assunto, saudação, corpo, anexo e assinatura",
+        "Usa rede corporativa e documento compartilhado com segurança e boa conduta"
+      ],
+      "situacao_problema": "O fornecedor não recebeu o pedido: e-mail sem assunto e sem anexo; chega uma mensagem \"urgente\" pedindo a senha.",
+      "atividade": "E-mail ao fornecedor + caça ao golpe",
+      "dinamica": "Caça ao golpe",
+      "estrategias": [
+        "Demonstração",
+        "Estudo de caso",
+        "Atividade prática"
+      ],
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [
+        "Phishing",
+        "Etiqueta digital",
+        "LGPD"
+      ],
+      "ideias_ementa": [
+        "Caça ao golpe: 6 mensagens (e-mail e chat) para classificar em seguras ou phishing, com justificativa."
+      ],
+      "indicadores_numeros": [
+        10,
+        11
+      ],
+      "conteudo_aula": "CONTEUDO/AULA-07-E-MAIL-REDES-CORPORATIVAS-E-SEGURANCA-DIGITAL.md"
+    },
+    {
+      "numero": "08",
+      "aula": 8,
+      "tema": "Projeto Integrador: Comunicação em Equipe + Avaliação Prática",
+      "carga_horaria": 4,
+      "dominios": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "capacidades": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "conteudos_oficiais": [
+        "Fundamentos da comunicação no mundo do trabalho",
+        "Técnicas de comunicação oral (falar em público, reuniões, atendimento ao cliente)",
+        "Estrutura e normas de redação técnica e formal",
+        "Ferramentas digitais para comunicação (e-mails, redes corporativas, segurança digital)"
+      ],
+      "detalhamento_didatico": [
+        "Planejamento da comunicação de um evento em equipe",
+        "Convite por e-mail e documento compartilhado",
+        "Comunicado ou procedimento do evento",
+        "Apresentação oral e avaliação entre pares"
+      ],
+      "indicadores": [
+        "Integra fala, texto e ferramenta digital num projeto em equipe"
+      ],
+      "situacao_problema": "A Vale Tech vai abrir as portas para as famílias: a equipe precisa divulgar, convidar e apresentar o evento.",
+      "atividade": "Campanha de comunicação de um evento da Vale Tech (avaliação prática)",
+      "dinamica": "Feira da Vale Tech",
+      "estrategias": [
+        "Trabalho em grupo",
+        "Apresentação para público",
+        "Atividade prática"
+      ],
+      "bncc": [
+        "CG4 Comunicação",
+        "CG9 Empatia e cooperação"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [
+        "Roteiro de projeto integrador em equipe: convite por e-mail, comunicado no mural, apresentação de 5 minutos e ficha de avaliação entre pares."
+      ],
+      "indicadores_numeros": [
+        12
+      ],
+      "conteudo_aula": "CONTEUDO/AULA-08-PROJETO-INTEGRADOR-COMUNICACAO-EM-EQUIPE.md"
+    },
+    {
+      "numero": "09",
+      "aula": 9,
+      "tema": "Avaliação Objetiva e Encerramento",
+      "carga_horaria": 1,
+      "dominios": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "capacidades": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "conteudos_oficiais": [
+        "Fundamentos da comunicação no mundo do trabalho",
+        "Técnicas de comunicação oral (falar em público, reuniões, atendimento ao cliente)",
+        "Estrutura e normas de redação técnica e formal",
+        "Ferramentas digitais para comunicação (e-mails, redes corporativas, segurança digital)"
+      ],
+      "detalhamento_didatico": [
+        "Revisão rápida dos 4 domínios",
+        "Avaliação objetiva",
+        "Autoavaliação e encerramento"
+      ],
+      "indicadores": [],
+      "situacao_problema": "",
+      "atividade": "Avaliação objetiva + autoavaliação",
+      "dinamica": "Roda de encerramento: uma palavra sobre o que aprendeu",
+      "estrategias": [
+        "Atividade prática",
+        "Dinâmica de grupo"
+      ],
+      "bncc": [],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "indicadores_numeros": [],
+      "conteudo_aula": "CONTEUDO/AULA-09-AVALIACAO-OBJETIVA-E-ENCERRAMENTO.md"
+    }
+  ],
+  "aula_padrao_4h": [
+    "pergunta disparadora (15 min)",
+    "exposição dialogada (50)",
+    "dinâmica (30)",
+    "intervalo (15)",
+    "prática guiada e autônoma (90)",
+    "socialização e registro (40)"
+  ],
+  "aula_padrao_1h": [
+    "avaliação objetiva (40 min)",
+    "autoavaliação e encerramento (20)"
+  ],
+  "indicadores_desempenho": [
+    {
+      "numero": 1,
+      "indicador": "Identifica emissor, receptor, mensagem, canal, código, ruído e feedback numa situação de trabalho",
+      "capacidades": [
+        "C1"
+      ],
+      "aula": 1
+    },
+    {
+      "numero": 2,
+      "indicador": "Adapta a mesma mensagem a contextos formal e informal",
+      "capacidades": [
+        "C1"
+      ],
+      "aula": 1
+    },
+    {
+      "numero": 3,
+      "indicador": "Pratica escuta ativa e dá feedback construtivo a um colega",
+      "capacidades": [
+        "C3"
+      ],
+      "aula": 2
+    },
+    {
+      "numero": 4,
+      "indicador": "Combina com o grupo papéis, prazos e regras de convivência",
+      "capacidades": [
+        "C3"
+      ],
+      "aula": 2
+    },
+    {
+      "numero": 5,
+      "indicador": "Apresenta um tema em 3 minutos com abertura, desenvolvimento e fechamento",
+      "capacidades": [
+        "C1"
+      ],
+      "aula": 3
+    },
+    {
+      "numero": 6,
+      "indicador": "Participa de reunião com pauta e registra as decisões",
+      "capacidades": [
+        "C1",
+        "C3"
+      ],
+      "aula": 4
+    },
+    {
+      "numero": 7,
+      "indicador": "Atende um cliente simulado com cordialidade, escuta e solução",
+      "capacidades": [
+        "C1",
+        "C3"
+      ],
+      "aula": 4
+    },
+    {
+      "numero": 8,
+      "indicador": "Reescreve texto confuso com clareza, objetividade e norma-padrão",
+      "capacidades": [
+        "C2"
+      ],
+      "aula": 5
+    },
+    {
+      "numero": 9,
+      "indicador": "Produz relatório, ata, comunicado ou procedimento com a estrutura correta",
+      "capacidades": [
+        "C2"
+      ],
+      "aula": 6
+    },
+    {
+      "numero": 10,
+      "indicador": "Redige e-mail profissional com assunto, saudação, corpo, anexo e assinatura",
+      "capacidades": [
+        "C2",
+        "C4"
+      ],
+      "aula": 7
+    },
+    {
+      "numero": 11,
+      "indicador": "Usa rede corporativa e documento compartilhado com segurança e boa conduta",
+      "capacidades": [
+        "C4"
+      ],
+      "aula": 7
+    },
+    {
+      "numero": 12,
+      "indicador": "Integra fala, texto e ferramenta digital num projeto em equipe",
+      "capacidades": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "aula": 8
+    }
+  ],
+  "estrategias_siglas": {
+    "ED": "Exposição dialogada",
+    "DG": "Dinâmica de grupo",
+    "TG": "Trabalho em grupo",
+    "DM": "Demonstração",
+    "AP": "Atividade prática",
+    "EC": "Estudo de caso",
+    "GM": "Gamificação",
+    "SP": "Simulação de papéis",
+    "PP": "Apresentação para público"
+  },
+  "marcos": [
+    {
+      "aula": 2,
+      "marco": "Comunica-se com respeito e escuta no grupo"
+    },
+    {
+      "aula": 4,
+      "marco": "Fala em público, em reunião e no atendimento"
+    },
+    {
+      "aula": 6,
+      "marco": "Produz textos técnicos com estrutura"
+    },
+    {
+      "aula": 8,
+      "marco": "Integra oral, escrita e ferramenta digital"
+    }
+  ],
+  "avaliacao": {
+    "instrumentos": [
+      {
+        "instrumento": "Avaliação Objetiva — 30 questões, 40 min",
+        "valor": 4.0,
+        "momento": "Aula 9",
+        "capacidades": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ]
+      },
+      {
+        "instrumento": "Avaliação Prática — projeto integrador em equipe",
+        "valor": 6.0,
+        "momento": "Aula 8",
+        "capacidades": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ],
+        "tarefas": [
+          {
+            "tarefa": "T1 Apresentação oral do projeto",
+            "valor": 2.0,
+            "capacidades": [
+              "C1"
+            ]
+          },
+          {
+            "tarefa": "T2 Texto técnico (comunicado ou procedimento)",
+            "valor": 2.0,
+            "capacidades": [
+              "C2"
+            ]
+          },
+          {
+            "tarefa": "T3 E-mail e documento compartilhado",
+            "valor": 1.0,
+            "capacidades": [
+              "C4"
+            ]
+          },
+          {
+            "tarefa": "T4 Organização e cooperação da equipe",
+            "valor": 1.0,
+            "capacidades": [
+              "C3"
+            ]
+          }
+        ]
+      }
+    ],
+    "nota_final": 10.0,
+    "aprovacao": "75% de frequência e nota mínima 7 (ementa do curso)",
+    "formativa": "Atividade de 50 questões e atividade prática de cada aula (1 a 7), com devolutiva.",
+    "recuperacao": "Contínua: refazer a atividade com roteiro guiado. Final: nota < 7,0 refaz a tarefa prática de maior perda e/ou nova objetiva equivalente, só nas capacidades não atingidas.",
+    "rubrica": [
+      {
+        "nivel": "Excelente",
+        "nota": "9–10",
+        "descricao": "Comunica com clareza, adequa a linguagem ao contexto e produz texto correto e completo"
+      },
+      {
+        "nivel": "Bom",
+        "nota": "7–8",
+        "descricao": "Cumpre a tarefa com pequenos ajustes de linguagem, estrutura ou postura"
+      },
+      {
+        "nivel": "Aceitável",
+        "nota": "5–6",
+        "descricao": "Cumpre o essencial com orientação; falhas que não impedem a compreensão"
+      },
+      {
+        "nivel": "Insuficiente",
+        "nota": "0–4",
+        "descricao": "Não conclui ou a mensagem não é compreendida"
+      }
+    ]
+  },
+  "mapeamento_bncc": [
+    {
+      "competencia": "CG4 Comunicação",
+      "aulas": [
+        1,
+        3,
+        5,
+        6,
+        8
+      ],
+      "foco": "Linguagens oral e escrita"
+    },
+    {
+      "competencia": "CG5 Cultura digital",
+      "aulas": [
+        7
+      ],
+      "foco": "Uso ético e seguro de ferramentas"
+    },
+    {
+      "competencia": "CG7 Argumentação",
+      "aulas": [
+        3,
+        4
+      ],
+      "foco": "Defender ideias com respeito"
+    },
+    {
+      "competencia": "CG9 Empatia e cooperação",
+      "aulas": [
+        2,
+        4,
+        8
+      ],
+      "foco": "Escuta, conflitos, equipe"
+    },
+    {
+      "competencia": "CG10 Responsabilidade",
+      "aulas": [
+        6,
+        7
+      ],
+      "foco": "Registros, dados pessoais"
+    }
+  ],
+  "recursos": {
+    "ambientes": [
+      "sala de aula",
+      "laboratório de informática",
+      "auditório"
+    ],
+    "equipamentos": [
+      "projetor",
+      "computadores com internet",
+      "quadro branco",
+      "celular ou câmera para gravar ensaios (com autorização)"
+    ],
+    "materiais": [
+      "modelos impressos de ata, comunicado e procedimento",
+      "cartões das dinâmicas",
+      "ficha de avaliação entre pares"
+    ]
+  },
+  "acessibilidade": {
+    "visual": "zoom, alto contraste, leitor de tela",
+    "auditiva": "legendas, instruções escritas, Libras quando houver",
+    "fala": "apresentar em dupla, por escrito ou em vídeo",
+    "leitura/TDAH": "passo a passo numerado, etapas curtas, checklist",
+    "timidez": "ensaio em dupla antes do grupo",
+    "regra": "Adaptar tempo e formato sem alterar as capacidades avaliadas"
+  },
+  "glossario_ementa": [
+    {
+      "termo": "Ruído",
+      "definicao": "tudo o que atrapalha a mensagem (barulho, palavra ambígua, e-mail sem assunto)",
+      "capitulo": "01"
+    },
+    {
+      "termo": "Feedback",
+      "definicao": "retorno que mostra se a mensagem foi entendida",
+      "capitulo": "01"
+    },
+    {
+      "termo": "Escuta ativa",
+      "definicao": "ouvir com atenção, confirmar e perguntar",
+      "capitulo": "02"
+    },
+    {
+      "termo": "Pitch",
+      "definicao": "apresentação curta e convincente de uma ideia ou produto",
+      "capitulo": "03"
+    },
+    {
+      "termo": "Pauta",
+      "definicao": "lista dos assuntos de uma reunião",
+      "capitulo": "04"
+    },
+    {
+      "termo": "Norma-padrão",
+      "definicao": "regras da escrita formal",
+      "capitulo": "05"
+    },
+    {
+      "termo": "Ata",
+      "definicao": "registro do que foi discutido e decidido",
+      "capitulo": "06"
+    },
+    {
+      "termo": "Procedimento",
+      "definicao": "passo a passo para executar uma tarefa",
+      "capitulo": "06"
+    },
+    {
+      "termo": "Comunicado",
+      "definicao": "texto curto que informa uma decisão a um grupo",
+      "capitulo": "06"
+    },
+    {
+      "termo": "Phishing",
+      "definicao": "golpe que imita mensagem confiável",
+      "capitulo": "07"
+    },
+    {
+      "termo": "Etiqueta digital",
+      "definicao": "boas maneiras na comunicação on-line",
+      "capitulo": "07"
+    },
+    {
+      "termo": "LGPD",
+      "definicao": "lei que protege os dados pessoais",
+      "capitulo": "07"
+    }
+  ],
+  "regras_ia": [
+    "Capacidades = resultados amplos; conhecimentos = meios para desenvolvê-las.",
+    "Não inventar capacidades, conhecimentos ou quantidade de aulas além das Seções II a IV.",
+    "Linguagem acessível para 12–15 anos, exemplos do cotidiano juvenil e do mundo do trabalho.",
+    "Toda aula tem pelo menos uma dinâmica em dupla ou grupo.",
+    "Não impor marcas de software: falar em categorias (e-mail, chat, editor de textos).",
+    "Diferenciar conteúdo [oficial] de exemplos e aprofundamentos.",
+    "Promover uso ético, seguro e respeitoso da comunicação e dos dados pessoais."
+  ],
+  "metricas": [
+    "80%+ dos estudantes com nota final ≥ 7,0 e frequência ≥ 75%",
+    "100% das equipes apresentam o projeto integrador",
+    "90% entregam o e-mail da aula 7 com assunto, anexo e assinatura corretos"
+  ],
+  "referencias": [
+    "SENAI, Metodologia SENAI de Educação Profissional",
+    "Lei 13.709/2018 (LGPD)",
+    "CERT.br, Cartilha de Segurança para Internet",
+    "ABNT NBR 10719 (relatórios técnicos)",
+    "Manual de Redação da Presidência da República (clareza e objetividade)"
+  ],
+  "capacidades_x_conhecimentos_ementa": "C1 Comunicação clara → domínios 1, 2 · C2 Textos técnicos → 3 · C3 Interação em equipe → 1, 2 · C4 Ferramentas digitais → 4."
+}

@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 71, item 71.2 — aprovação do plano de Comunicação Oral e Escrita (Rio do Sul). Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Etapa 71, item 71.3 — seguir o plano `docs/reorganizar-comunicacao-oral-escrita-rio-do-sul.md` do primeiro passo não ✅. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -14,7 +14,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
-| 71 | 71.2 | aprovação do plano de Comunicação Oral e Escrita (Rio do Sul) | Aprovação |
+| 71 | 71.3 (B.4) | aceite da ementa nova e do plano das 9 aulas de Comunicação Oral e Escrita (Rio do Sul) | Aceite |
 | 70 | 70.5 | CLAUDE.md dividido em núcleo + `docs/regras/`, histórico em `docs/HISTORICO-REGRAS.md` e esta tabela; depois, as correções das contradições do CLAUDE.md, uma de cada vez | Aceite |
 | 67 | 67.4 | conferir a duração dos 29 vídeos da apostila de Reforço de Linguagens | Aceite |
 | 64 | 64.6 | apostila de Reforço de Linguagens | Aceite |
@@ -801,7 +801,7 @@ Plano: [docs/reorganizar-comunicacao-oral-escrita-rio-do-sul.md](docs/reorganiza
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 71.1 | Levantar a pasta `Scripts-Comunicacao` e escrever o plano em `docs/` | ✅ Concluído | 2026-10-07 21:40 | Plano com etapas A a F, riscos e lista dos binários fora do Git |
-| 71.2 | Aprovação do plano pelo usuário (nome da pasta e backup dos binários) | ⬜ Pendente | — | — |
-| 71.3 | Executar as etapas A a F do plano, um item por vez | ⬜ Pendente | — | — |
+| 71.1 | Levantar a pasta `Scripts-Comunicacao` e escrever o plano em `docs/` | ✅ Concluído | 2026-10-07 21:25 | Plano com etapas A a F, riscos e lista dos binários fora do Git |
+| 71.2 | Aprovação do plano pelo usuário — aprovado: pasta `INTRODUCAO_COMUNICACAO_ORAL_ESCRITA`, backup dos binários fora do repositório | ✅ Concluído | 2026-10-07 21:27 | Resposta do usuário no chat |
+| 71.3 | Executar as etapas A a F do plano, um item por vez (andamento detalhado no plano) | 🔄 Em progresso | — | — |
 | 71.4 | Aceite do usuário | ⬜ Pendente | — | — |
