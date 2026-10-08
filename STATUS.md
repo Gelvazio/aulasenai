@@ -1346,4 +1346,19 @@ Pasta: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/CONTEUDO/` · 
 | 103.2 | Banco: `atividade.pagina` do id 82 atualizada para o nome novo (SQL `database/2026-10-08-prova-pratica-01-renomear-pagina.sql`, valor antigo no comentário) | ✅ Concluído | 2026-10-08 20:26:16 | Consulta: id 82 com a página nova, 60 tópicos e 586 respostas intactos |
 | 103.4 | Texto do card no índice das atividades: "PROVA PRÁTICA 01" / "Prova Prática 01 — Aulas 01 a 07" (o link já apontava para o arquivo novo) | ✅ Concluído | 2026-10-08 20:28:06 | Leitura do `index.html` |
 | 103.5 | Banco: `nome_atividade` = "Prova Prática 01" e descrição ajustada (id 82; valores antigos no SQL); `Rótulo da aula` da fonte `.md` também | ✅ Concluído | 2026-10-08 20:29:43 | Consulta com `returning` |
+| 103.6 | Título da página `PROVA-PRATICA-01.html` = "Prova Prática 01" (título da aba, cabeçalho e rodapé) | ✅ Concluído | 2026-10-08 20:30:08 | `grep` |
 | 103.3 | Aceite do usuário (abrir pelo card do índice) | ⬜ Pendente | — | — |
+
+## Etapa 103 — Práticas de Testes de Front-End em `ATIVIDADES/CONTEUDO/` e sem empresa fictícia (pedido em 2026-10-08 20:29:54)
+
+Pedido do usuário: "corrija isso" (pendência da Etapa 102). Plano: seção "Etapa 103" em
+[docs/aulas-conteudo-testes-de-frontend.md](docs/aulas-conteudo-testes-de-frontend.md).
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 103.1 | Mover as 10 práticas para `ATIVIDADES/CONTEUDO/` (`git mv`) e corrigir os caminhos relativos | 🔄 Em progresso | — | — |
+| 103.2 | Trocar a "Loja Vale Digital" por "você como aluno consultor" (aulas 02 e 10) | ⬜ Pendente | — | — |
+| 103.3 | Ligar cada prática à aula (`- **Aula:**` e `- **Conteúdo-base:**`) | ⬜ Pendente | — | — |
+| 103.4 | Atualizar as referências (aulas, `materia.json`, STATUS-ATIVIDADES, STATUS-APOSTILA, INDEX, ementa) | ⬜ Pendente | — | — |
+| 103.5 | Conferência (sem link quebrado, sem empresa fictícia) + commit local | ⬜ Pendente | — | — |
+| 103.6 | Aceite do usuário | ⬜ Pendente | — | — |
