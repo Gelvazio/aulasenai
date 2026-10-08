@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Aceites do usuário: Etapas 84 e 85 (itens 84.5 e 85.3 — discursiva id 81 com 20 questões de 0,5 ponto, respostas no caderno, PDF em 3 páginas); Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Etapa 97, item 97.2 — aprovação do plano da quantidade mínima de questões; depois: Aceites do usuário: Etapas 84 e 85 (itens 84.5 e 85.3 — discursiva id 81 com 20 questões de 0,5 ponto, respostas no caderno, PDF em 3 páginas); Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -30,6 +30,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 97 | 97.2 | aprovar o plano da quantidade mínima de questões (`docs/quantidade-minima-questoes-discursiva.md`) | Aprovação |
 | 96 | 96.4 | botão Gráficos e progresso global nas discursivas | Aceite |
 | 95 | 95.4 | botões Certa / Meia certa / Errada do professor e nota travada (prova id 82) | Aceite |
 | 94 | 94.3 | aluno que entregou a Prova Prática ADAG (id 82) não vê as próprias respostas | Aceite |
@@ -1241,3 +1242,12 @@ Pedido do usuário: a rodada da IA não gravou nada (0 entregas; a orientação 
 | 96.2 | Progresso da turma global em todas as avaliações discursivas (sem depender do campo da fonte) — pedido do usuário | ✅ Concluído | 2026-10-08 16:20:56 | Leitura de `abrirProgressoDaTurma` |
 | 96.3 | Regra no `CLAUDE.md` (versão + históricos) e em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-08 16:20:56 | Leitura |
 | 96.4 | Aceite do usuário (abrir os gráficos logado como professor) | ⬜ Pendente | — | — |
+
+## Etapa 97 — Quantidade mínima de questões para entregar a discursiva (tarefa grande; plano: [docs/quantidade-minima-questoes-discursiva.md](docs/quantidade-minima-questoes-discursiva.md); pedido em 2026-10-08 16:30:59)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 97.1 | Plano com decisões D1–D6 em `docs/` e conferência do banco real | ✅ Concluído | 2026-10-08 16:30:59 | Consultas de leitura (`entrega_atividade`, `atividade_completa`, `atividade`) |
+| 97.2 | Aprovação do plano pelo usuário | ⬜ Pendente | — | — |
+| 97.3 | Execução dos passos 2 a 7 do plano | ⬜ Pendente | — | — |
+| 97.4 | Aceite do usuário | ⬜ Pendente | — | — |
