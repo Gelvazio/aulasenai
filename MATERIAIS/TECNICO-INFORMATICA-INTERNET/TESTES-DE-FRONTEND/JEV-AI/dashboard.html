@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Jev — Testes de Front-End</title>
+    <link rel="stylesheet" href="../../../../assets/css/dashboard-jev.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js" defer></script>
+    <script src="../../../../assets/js/dashboard-jev.js" defer></script>
+    <script src="../../../../js/header-usuario.js" defer></script>
+</head>
+<body data-claude="CLAUDE.md" data-documentacao="documentacao.md">
+<div id="header-usuario"></div>
+    <header class="jev-cabecalho">
+        <h1>🤖 Dashboard do Jev</h1>
+        <p class="jev-cabecalho__subtitulo">TypeSafe · System One · decisões tipadas com confiança calibrada</p>
+        <p class="jev-cabecalho__status" id="jevStatus"></p>
+    </header>
+
+    <main class="jev-conteudo">
+        <p class="jev-aviso" id="jevAviso">Carregando CLAUDE.md e documentacao.md...</p>
+
+        <section class="jev-secao">
+            <h2>1. Como o Jev funciona</h2>
+            <p class="jev-secao__descricao">Você manda um estado e perguntas tipadas; o modelo avalia
+                todas em paralelo e devolve respostas tipadas com probabilidades e confiança.</p>
+            <div class="jev-fluxo" id="jevFluxo"></div>
+        </section>
+
+        <section class="jev-secao">
+            <h2>2. As três primitivas</h2>
+            <p class="jev-secao__descricao">Cada pergunta é de um destes tipos. A resposta é sempre
+                uma das saídas definidas antes.</p>
+            <div class="jev-grade" id="jevPrimitivas"></div>
+        </section>
+
+        <section class="jev-secao">
+            <h2>3. LLM comum × Jev</h2>
+            <p class="jev-secao__descricao">Números informados pelo fabricante (early access).</p>
+            <div class="jev-comparacao__linha jev-comparacao__linha--titulo">
+                <span>Item</span><span>LLM comum</span><span>Jev (System One)</span>
+            </div>
+            <div id="jevComparacao"></div>
+        </section>
+
+        <section class="jev-secao">
+            <h2>4. Simulador de confiança</h2>
+            <p class="jev-secao__descricao">Mexa nos controles para mudar as probabilidades e veja a
+                confiança e a decisão recomendada (baixa &lt; 0,5 · média · alta ≥ 0,9).</p>
+            <div class="jev-abas" role="group" aria-label="Tipo de pergunta">
+                <button type="button" class="jev-aba" data-tipo="choice">Choice</button>
+                <button type="button" class="jev-aba" data-tipo="score">Score</button>
+            </div>
+            <div class="jev-simulador">
+                <div id="jevSimuladorControles"></div>
+                <div class="jev-resultado" aria-live="polite">
+                    <p class="jev-resultado__rotulo">Resposta do modelo</p>
+                    <p class="jev-resultado__resposta" id="jevSimuladorResposta">—</p>
+                    <p class="jev-resultado__rotulo">Confiança</p>
+                    <div class="jev-medidor"><span class="jev-medidor__valor" id="jevSimuladorMedidor"></span></div>
+                    <p class="jev-resultado__confianca" id="jevSimuladorConfianca">—</p>
+                    <p class="jev-decisao" id="jevSimuladorDecisao">—</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="jev-secao">
+            <h2>5. Como implementar neste projeto</h2>
+            <p class="jev-secao__descricao">A chave nunca vai para o navegador: a página chama uma
+                Edge Function do Supabase, que chama o Jev.</p>
+            <div id="jevImplementacao"></div>
+        </section>
+
+        <section class="jev-secao">
+            <h2>6. Ideias de uso na UC</h2>
+            <p class="jev-secao__descricao">Só ideias; nada implementado ainda.</p>
+            <div class="jev-grade" id="jevIdeias"></div>
+        </section>
+
+        <section class="jev-secao">
+            <h2>7. Arquivos completos</h2>
+            <div class="jev-abas" role="group" aria-label="Arquivo">
+                <button type="button" class="jev-aba" data-arquivo="documentacao">documentacao.md</button>
+                <button type="button" class="jev-aba" data-arquivo="claude">CLAUDE.md</button>
+            </div>
+            <div class="jev-leitura" id="jevLeitura"></div>
+        </section>
+
+        <footer class="jev-rodape">
+            <p>⭐ <strong>Regra de ouro:</strong> o Jev decide, o código controla — perguntas
+                pequenas e tipadas, e confiança baixa sempre vai para revisão humana.</p>
+        </footer>
+    </main>
+</body>
+</html>

@@ -822,3 +822,15 @@ Tarefa pequena por item (só texto das regras). Cada item: mostrar a contradiç�
 | 72.6 | Local da ementa: raiz da matéria × `DOCUMENTACAO/` — escolha: raiz da matéria | ✅ Concluído | 2026-10-07 21:43 | Estrutura recomendada, comandos e exemplo de `ementas-e-cursos.md` apontam para a raiz; 35 ementas já estão lá |
 | 72.7 | `git add .` (global) × proibido (projeto) — escolha: mudar a regra global | ✅ Concluído | 2026-10-07 21:44 | CLAUDE.md global: 4 trechos com `git add <arquivos da tarefa>` e "nunca `git add .`" (arquivo fora do Git; cópia anterior no scratchpad da sessão) |
 | 72.8 | Aceite do usuário (7 contradições corrigidas) | ⬜ Pendente | — | — |
+
+## Etapa 74 — Dashboard do Jev (JEV-AI de Testes de Frontend) (tarefa pequena, 2026-10-07)
+
+Página visual que lê `JEV-AI/CLAUDE.md` e `JEV-AI/documentacao.md`. Sem banco, sem segurança.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 74.1 | `assets/js/dashboard-jev.js` (já no Git em `fefde8f`): ajustar 2 linhas > 100 caracteres | ✅ Concluído | 2026-10-07 22:20 | `node --check` ok; nenhuma linha > 100; leitura das seções conferida no Node com os 2 arquivos reais |
+| 74.2 | `assets/css/dashboard-jev.css` (tokens em `:root`, claro/escuro) | ✅ Concluído | 2026-10-07 22:20 | Todas as classes usadas pelo JS existem no CSS |
+| 74.3 | `JEV-AI/dashboard.html` só com dados (`data-claude`, `data-documentacao`) e header | ✅ Concluído | 2026-10-07 22:20 | Sem `<style>`, `onclick` nem script embutido; 13 IDs usados pelo JS presentes |
+| 74.4 | Commit local | ✅ Concluído | 2026-10-07 22:20 | `git diff --cached --name-only` (4 arquivos) |
+| 74.5 | Aceite do usuário (abrir no navegador e testar) | ⬜ Pendente | — | — |

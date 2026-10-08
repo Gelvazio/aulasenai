@@ -29,7 +29,9 @@ const EXEMPLO_PADRAO = {
     choice: { billing: 'Pagamento', technical: 'Problema técnico', sales: 'Vendas' },
     score: ['Calmo', 'Frustrado, mas educado', 'Muito irritado'],
 };
-const PARTES_CAMINHO = ['🖥️ Página (JWT do usuário)', '🛡️ Edge Function (chave secreta)', '🤖 Jev'];
+const PARTES_CAMINHO = [
+    '🖥️ Página (JWT do usuário)', '🛡️ Edge Function (chave secreta)', '🤖 Jev',
+];
 
 /**
  * Busca um arquivo de texto sem cache.
@@ -186,7 +188,9 @@ function montarPrimitivasJev(destino, { claude, documentacao }) {
         destino.append(criarCardPrimitivaJev(linha, extra));
     });
     const atomicas = lerListaJev(obterSecaoJev(documentacao, TITULOS_JEV.atomicas));
-    if (atomicas.length) destino.append(criarElementoJev('p', 'jev-dica', '💡 ' + atomicas.join(' ')));
+    if (!atomicas.length) return;
+
+    destino.append(criarElementoJev('p', 'jev-dica', '💡 ' + atomicas.join(' ')));
 }
 
 /**
