@@ -1,6 +1,7 @@
 # ATIVIDADE AULA 07 — Métricas e Cobertura de Testes
 
-**Slides:** `../AULAS/AULA-07-SLIDES.pdf`  
+**Slides:** `../../AULAS/AULA-07-SLIDES.pdf`  
+**Aula:** 07 · **Conteúdo-base:** [`../../CONTEUDO/AULA-07-METRICAS-E-COBERTURA-DE-TESTES.md`](../../CONTEUDO/AULA-07-METRICAS-E-COBERTURA-DE-TESTES.md)  
 **Duração:** 4 horas | **Modalidade:** Laboratório, individual  
 **Capacidades:** C3, C4 · S2 | **Conhecimentos:** 7.4–7.5 · 4.5  
 **Entrega da aula:** relatório de cobertura comentado (60% → 85%) — **início da SA 2**

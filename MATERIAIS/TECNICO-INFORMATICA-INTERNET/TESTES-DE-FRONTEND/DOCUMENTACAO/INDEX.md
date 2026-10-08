@@ -18,7 +18,7 @@ Técnico em Informática para Internet. Pasta padronizada em 2026-10-03
 | `SA-BLOCO-01-ESTRUTURACAO-SUITE-TESTES.md`, `SA-BLOCO-02-DASHBOARD-CI-CD-COBERTURA.md` | Situações de aprendizagem 1 e 2 |
 | `PLANO-AULAS.md` | ⬜ Plano de aulas (próxima tarefa, antes de gerar as aulas) |
 | `../AULAS/` | Slides `AULA-NN-SLIDES.pdf`, guia e exercícios da Aula 01, `STATUS-AULAS.md` |
-| `../ATIVIDADES/` | Roteiros `ATIVIDADE-PRATICA-AULA-NN.md`, `STATUS-ATIVIDADES.md`, índice de atividades |
+| `../ATIVIDADES/` | Roteiros `CONTEUDO/ATIVIDADE-PRATICA-AULA-NN.md`, `STATUS-ATIVIDADES.md`, índice de atividades |
 | `../REFERENCIA-TESTES-DE-SISTEMAS/` | Material de outra UC, só como apoio (revisão pendente pelo professor) |
 
 ---

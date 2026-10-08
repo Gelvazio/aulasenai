@@ -14,7 +14,7 @@
   naturezas à luz de referenciais técnicos, legais, normativos e institucionais
 - **Estratégias:** projeto integrador em duplas, code review cruzado, avaliação prática e
   avaliação objetiva individual
-- **Prática da aula:** [`../ATIVIDADES/ATIVIDADE-PRATICA-AULA-10.md`](../ATIVIDADES/ATIVIDADE-PRATICA-AULA-10.md)
+- **Prática da aula:** [`../ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-10.md`](../ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-10.md)
 
 ## Indicadores
 

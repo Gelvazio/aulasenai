@@ -1,6 +1,7 @@
 # ATIVIDADE AULA 02 — Planejamento, Verificação, Validação e Casos de Teste
 
-**Slides:** `../AULAS/AULA-02-SLIDES.pdf`  
+**Slides:** `../../AULAS/AULA-02-SLIDES.pdf`  
+**Aula:** 02 · **Conteúdo-base:** [`../../CONTEUDO/AULA-02-PLANEJAMENTO-VERIFICACAO-VALIDACAO-E-CASOS-DE-TESTE.md`](../../CONTEUDO/AULA-02-PLANEJAMENTO-VERIFICACAO-VALIDACAO-E-CASOS-DE-TESTE.md)  
 **Duração:** 4 horas | **Modalidade:** Oficina em trios  
 **Capacidades:** C1, C2, C3 · S2 | **Conhecimentos:** 6 · 7.1–7.2 · 3  
 **Entrega da aula:** plano de testes + 10 casos de teste — **início da SA 1**
@@ -12,7 +13,7 @@
 | Etapa | Tempo |
 |---|---|
 | Quiz de revisão e verificação × validação | 30 min |
-| Prática 1 — Plano de testes da Loja Vale Digital | 60 min |
+| Prática 1 — Plano de testes da loja virtual | 60 min |
 | Prática 2 — 10 casos de teste | 70 min |
 | Prática 3 — Refinamento BDD | 40 min |
 | Debate sobre clareza e entrega | 40 min |
@@ -21,8 +22,9 @@
 
 ## Contexto — SA 1
 
-A **Loja Vale Digital** (empresa fictícia) vai lançar um e-commerce em React. Ninguém definiu o que
-testar, quanto testar nem como. Seu trio é a equipe de qualidade. Três funcionalidades são críticas:
+Você, como aluno consultor, foi chamado por uma startup que vai lançar uma loja virtual
+(e-commerce) em React. Ninguém definiu o que testar, quanto testar nem como. Seu trio faz o papel
+da equipe de qualidade. Três funcionalidades são críticas:
 **autenticação**, **carrinho** e **checkout**.
 
 ---

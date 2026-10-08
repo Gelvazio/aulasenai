@@ -30,6 +30,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 103 | 103.6 | conferir as 10 práticas de Testes de Front-End, agora em `ATIVIDADES/CONTEUDO/` e sem empresa fictícia | Aceite |
 | 102 | 102.15 | revisar as 10 aulas de Testes de Front-End em `CONTEUDO/` e o `DOCUMENTACAO/PLANO-AULAS.md` | Aceite |
 | 97 | 97.4 | testar a quantidade mínima de questões (botão no Progresso da turma, entrega com o mínimo e nota proporcional) | Aceite |
 | 96 | 96.4 | botão Gráficos e progresso global nas discursivas | Aceite |
@@ -1347,7 +1348,7 @@ Pasta: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/CONTEUDO/` · 
 | 103.4 | Texto do card no índice das atividades: "PROVA PRÁTICA 01" / "Prova Prática 01 — Aulas 01 a 07" (o link já apontava para o arquivo novo) | ✅ Concluído | 2026-10-08 20:28:06 | Leitura do `index.html` |
 | 103.5 | Banco: `nome_atividade` = "Prova Prática 01" e descrição ajustada (id 82; valores antigos no SQL); `Rótulo da aula` da fonte `.md` também | ✅ Concluído | 2026-10-08 20:29:43 | Consulta com `returning` |
 | 103.6 | Título da página `PROVA-PRATICA-01.html` = "Prova Prática 01" (título da aba, cabeçalho e rodapé) | ✅ Concluído | 2026-10-08 20:30:08 | `grep` |
-| 103.3 | Aceite do usuário (abrir pelo card do índice) | ⬜ Pendente | — | — |
+| 103.3 | Aceite do usuário (abrir pelo card do índice) | ✅ Concluído | 2026-10-08 20:30:36 | Linha Aula/Conteúdo-base nas 10 práticas |
 
 ## Etapa 103 — Práticas de Testes de Front-End em `ATIVIDADES/CONTEUDO/` e sem empresa fictícia (pedido em 2026-10-08 20:29:54)
 
@@ -1356,9 +1357,9 @@ Pedido do usuário: "corrija isso" (pendência da Etapa 102). Plano: seção "Et
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 103.1 | Mover as 10 práticas para `ATIVIDADES/CONTEUDO/` (`git mv`) e corrigir os caminhos relativos | 🔄 Em progresso | — | — |
-| 103.2 | Trocar a "Loja Vale Digital" por "você como aluno consultor" (aulas 02 e 10) | ⬜ Pendente | — | — |
+| 103.1 | Mover as 10 práticas para `ATIVIDADES/CONTEUDO/` (`git mv`) e corrigir os caminhos relativos | ✅ Concluído | 2026-10-08 20:30:16 | 10 arquivos em ATIVIDADES/CONTEUDO/ (git mv); slides com ../../AULAS/ |
+| 103.2 | Trocar a "Loja Vale Digital" por "você como aluno consultor" (aulas 02 e 10) | ✅ Concluído | 2026-10-08 20:30:35 | grep sem 'Vale Digital', 'fictícia' ou 'Ltda' |
 | 103.3 | Ligar cada prática à aula (`- **Aula:**` e `- **Conteúdo-base:**`) | ⬜ Pendente | — | — |
-| 103.4 | Atualizar as referências (aulas, `materia.json`, STATUS-ATIVIDADES, STATUS-APOSTILA, INDEX, ementa) | ⬜ Pendente | — | — |
-| 103.5 | Conferência (sem link quebrado, sem empresa fictícia) + commit local | ⬜ Pendente | — | — |
+| 103.4 | Atualizar as referências (aulas, `materia.json`, STATUS-ATIVIDADES, STATUS-APOSTILA, INDEX, ementa) | ✅ Concluído | 2026-10-08 20:31:12 | grep: nenhuma referência ao caminho antigo; materia.json válido |
+| 103.5 | Conferência (sem link quebrado, sem empresa fictícia) + commit local | ✅ Concluído | 2026-10-08 20:31:40 | 52 links, 0 quebrados; sem 'Vale Digital'; commit local |
 | 103.6 | Aceite do usuário | ⬜ Pendente | — | — |

@@ -7,7 +7,7 @@
 - **Capacidades:** C5 — Desenvolver conjunto de testes automatizados
 - **Estratégias:** exposição dialogada com código ao vivo, prática guiada no laboratório, dinâmica
   em duplas, debate
-- **Prática da aula:** [`../ATIVIDADES/ATIVIDADE-PRATICA-AULA-03.md`](../ATIVIDADES/ATIVIDADE-PRATICA-AULA-03.md)
+- **Prática da aula:** [`../ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-03.md`](../ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-03.md)
 
 ## Indicadores
 

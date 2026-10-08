@@ -28,13 +28,13 @@
 
 | Página | Tipo | Banco |
 |---|---|---|
-| `ATIVIDADE-PRATICA-AULA-01.md` | Roteiro da prática da aula 01 (Markdown, sem página HTML) | — |
-| `ATIVIDADE-PRATICA-AULA-02.md` | Roteiro da prática da aula 02 (Markdown, sem página HTML) | — |
-| `ATIVIDADE-PRATICA-AULA-03.md` | Roteiro da prática da aula 03 (Markdown, sem página HTML) | — |
-| `ATIVIDADE-PRATICA-AULA-04.md` | Roteiro da prática da aula 04 (Markdown, sem página HTML) | — |
-| `ATIVIDADE-PRATICA-AULA-05.md` | Roteiro da prática da aula 05 (Markdown, sem página HTML) | — |
-| `ATIVIDADE-PRATICA-AULA-06.md` | Roteiro da prática da aula 06 (Markdown, sem página HTML) | — |
-| `ATIVIDADE-PRATICA-AULA-07.md` | Roteiro da prática da aula 07 (Markdown, sem página HTML) | — |
-| `ATIVIDADE-PRATICA-AULA-08.md` | Roteiro da prática da aula 08 (Markdown, sem página HTML) | — |
-| `ATIVIDADE-PRATICA-AULA-09.md` | Roteiro da prática da aula 09 (Markdown, sem página HTML) | — |
-| `ATIVIDADE-PRATICA-AULA-10.md` | Roteiro da prática da aula 10 (Markdown, sem página HTML) | — |
+| `CONTEUDO/ATIVIDADE-PRATICA-AULA-01.md` | Roteiro da prática da aula 01 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-01-*.md`) | — |
+| `CONTEUDO/ATIVIDADE-PRATICA-AULA-02.md` | Roteiro da prática da aula 02 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-02-*.md`) | — |
+| `CONTEUDO/ATIVIDADE-PRATICA-AULA-03.md` | Roteiro da prática da aula 03 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-03-*.md`) | — |
+| `CONTEUDO/ATIVIDADE-PRATICA-AULA-04.md` | Roteiro da prática da aula 04 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-04-*.md`) | — |
+| `CONTEUDO/ATIVIDADE-PRATICA-AULA-05.md` | Roteiro da prática da aula 05 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-05-*.md`) | — |
+| `CONTEUDO/ATIVIDADE-PRATICA-AULA-06.md` | Roteiro da prática da aula 06 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-06-*.md`) | — |
+| `CONTEUDO/ATIVIDADE-PRATICA-AULA-07.md` | Roteiro da prática da aula 07 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-07-*.md`) | — |
+| `CONTEUDO/ATIVIDADE-PRATICA-AULA-08.md` | Roteiro da prática da aula 08 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-08-*.md`) | — |
+| `CONTEUDO/ATIVIDADE-PRATICA-AULA-09.md` | Roteiro da prática da aula 09 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-09-*.md`) | — |
+| `CONTEUDO/ATIVIDADE-PRATICA-AULA-10.md` | Roteiro da prática da aula 10 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-10-*.md`) | — |

@@ -8,7 +8,7 @@
   definidos no Plano de Testes.
 - **Estratégias:** exposição dialogada com código ao vivo, análise de relatório, prática guiada,
   dinâmica em grupos
-- **Prática da aula:** [`../ATIVIDADES/ATIVIDADE-PRATICA-AULA-07.md`](../ATIVIDADES/ATIVIDADE-PRATICA-AULA-07.md)
+- **Prática da aula:** [`../ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-07.md`](../ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-07.md)
 
 ## Indicadores
 

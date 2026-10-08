@@ -1,6 +1,7 @@
 # ATIVIDADE AULA 05 — Testes de Integração Avançados e Mock de APIs
 
-**Slides:** `../AULAS/AULA-05-SLIDES.pdf`  
+**Slides:** `../../AULAS/AULA-05-SLIDES.pdf`  
+**Aula:** 05 · **Conteúdo-base:** [`../../CONTEUDO/AULA-05-INTEGRACAO-AVANCADA-E-MOCK-DE-APIS.md`](../../CONTEUDO/AULA-05-INTEGRACAO-AVANCADA-E-MOCK-DE-APIS.md)  
 **Duração:** 4 horas | **Modalidade:** Laboratório, em dupla  
 **Capacidades:** C4, C5 · S1 | **Conhecimentos:** 2.3 · 4.3 · 7.3  
 **Entrega da aula:** testes com API simulada, erros de rede e persistência

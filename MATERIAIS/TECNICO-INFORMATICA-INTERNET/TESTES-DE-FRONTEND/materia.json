@@ -162,7 +162,7 @@
         2
       ],
       "atividade": "Mapa: erro, defeito, falha e tipos de teste",
-      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-01.md",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-01.md",
       "slides": "AULAS/AULA-01-SLIDES.pdf",
       "bncc": [
         "CG2 Pensamento científico e crítico",
@@ -214,7 +214,7 @@
         13
       ],
       "atividade": "Plano de testes + 10 casos (SA 1)",
-      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-02.md",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-02.md",
       "slides": "AULAS/AULA-02-SLIDES.pdf",
       "bncc": [
         "CG2 Pensamento científico e crítico",
@@ -260,7 +260,7 @@
         6
       ],
       "atividade": "Suíte unitária de funções utilitárias",
-      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-03.md",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-03.md",
       "slides": "AULAS/AULA-03-SLIDES.pdf",
       "bncc": [
         "CG5 Cultura digital",
@@ -301,7 +301,7 @@
         7
       ],
       "atividade": "Testes de botão e formulário",
-      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-04.md",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-04.md",
       "slides": "AULAS/AULA-04-SLIDES.pdf",
       "bncc": [
         "CG5 Cultura digital",
@@ -339,7 +339,7 @@
         8
       ],
       "atividade": "Testes com API simulada e erros de rede",
-      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-05.md",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-05.md",
       "slides": "AULAS/AULA-05-SLIDES.pdf",
       "bncc": [
         "CG5 Cultura digital",
@@ -381,7 +381,7 @@
         9
       ],
       "atividade": "Fluxos de login e checkout",
-      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-06.md",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-06.md",
       "slides": "AULAS/AULA-06-SLIDES.pdf",
       "bncc": [
         "CG5 Cultura digital",
@@ -422,7 +422,7 @@
         10
       ],
       "atividade": "Relatório de cobertura comentado",
-      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-07.md",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-07.md",
       "slides": "AULAS/AULA-07-SLIDES.pdf",
       "bncc": [
         "CG2 Pensamento científico e crítico",
@@ -465,7 +465,7 @@
         14
       ],
       "atividade": "Funcionalidade feita com TDD",
-      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-08.md",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-08.md",
       "slides": "AULAS/AULA-08-SLIDES.pdf",
       "bncc": [
         "CG5 Cultura digital",
@@ -506,7 +506,7 @@
         12
       ],
       "atividade": "Pipeline GitHub Actions (SA 2)",
-      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-09.md",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-09.md",
       "slides": "AULAS/AULA-09-SLIDES.pdf",
       "bncc": [
         "CG5 Cultura digital",
@@ -556,7 +556,7 @@
         14
       ],
       "atividade": "Suíte completa + avaliações finais",
-      "pratica": "ATIVIDADES/ATIVIDADE-PRATICA-AULA-10.md",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-10.md",
       "slides": "AULAS/AULA-10-SLIDES.pdf",
       "bncc": [
         "CG4 Comunicação",

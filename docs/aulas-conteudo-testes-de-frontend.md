@@ -67,7 +67,7 @@ O pedido já traz a aprovação para executar este plano.
 |---|---|
 | Código de exemplo com sintaxe ou API desatualizada | Usar só APIs estáveis e conferir os blocos de código por leitura |
 | A aula cobrar conteúdo de outra UC | Só os conhecimentos da linha da aula na Seção IV da ementa |
-| As práticas atuais usam empresa fictícia ("Loja Vale Digital") | Fica registrado como pendência; as aulas não citam empresa |
+| As práticas atuais usam empresa fictícia ("Loja Vale Digital") | Resolvido na Etapa 103 (abaixo) |
 
 ---
 
@@ -172,5 +172,19 @@ dinâmica, conhecimentos e capacidades iguais ao `materia.json`, sem empresa fic
 | Item | Motivo | Quando retomar |
 |---|---|---|
 | Páginas HTML das aulas | Falta definir o padrão (template e CSS em `assets/`) e o gerador | A pedido do usuário |
-| Práticas sem empresa fictícia e movidas para `ATIVIDADES/CONTEUDO/` | Fora do escopo deste plano | A pedido do usuário |
 | Atividades de 50 questões, avaliações e banco | Próxima peça na ordem da regra | Depois do aceite das aulas |
+
+---
+
+## Etapa 103 — Práticas em `ATIVIDADES/CONTEUDO/` e sem empresa fictícia
+
+**Pedido do usuário:** "corrija isso" (2026-10-08 20:29:54), sobre a pendência acima.
+**Status:** ver a Etapa 103 do [`STATUS.md`](../STATUS.md).
+
+| Passo | Ação | Verificação |
+|---|---|---|
+| 1 | `git mv` das 10 práticas de `ATIVIDADES/` para `ATIVIDADES/CONTEUDO/`; slides com `../../AULAS/` | 10 arquivos no destino |
+| 2 | Práticas 02 e 10: "Loja Vale Digital" → "você, como aluno consultor" e "loja virtual" | `grep -i "vale digital"` vazio |
+| 3 | Linha `**Aula:** NN · **Conteúdo-base:** ../../CONTEUDO/AULA-NN-*.md` em cada prática | Link aberto pelo script |
+| 4 | Referências atualizadas: 10 aulas de `CONTEUDO/`, `materia.json`, `STATUS-ATIVIDADES.md`, `STATUS-APOSTILA.md`, `DOCUMENTACAO/INDEX.md`, `EMENTA-CHALKIE-AI.md` | Nenhuma referência ao caminho antigo; 52 links, 0 quebrados |
+| 5 | Commit local | `git diff --cached --name-only` |

@@ -12,7 +12,7 @@
   problemáticas de diferentes naturezas à luz de referenciais técnicos, legais, normativos e
   institucionais
 - **Estratégias:** exposição dialogada, estudo de caso (SA 1), trabalho em trios, dinâmica
-- **Prática da aula:** [`../ATIVIDADES/ATIVIDADE-PRATICA-AULA-02.md`](../ATIVIDADES/ATIVIDADE-PRATICA-AULA-02.md)
+- **Prática da aula:** [`../ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-02.md`](../ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-02.md)
 
 ## Indicadores
 

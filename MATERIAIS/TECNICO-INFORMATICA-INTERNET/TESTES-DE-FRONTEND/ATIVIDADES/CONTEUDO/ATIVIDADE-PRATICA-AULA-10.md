@@ -1,6 +1,7 @@
 # ATIVIDADE AULA 10 — Projeto Prático Integrador: Suíte de Testes
 
-**Slides:** `../AULAS/AULA-10-SLIDES.pdf`  
+**Slides:** `../../AULAS/AULA-10-SLIDES.pdf`  
+**Aula:** 10 · **Conteúdo-base:** [`../../CONTEUDO/AULA-10-PROJETO-INTEGRADOR-SUITE-DE-TESTES.md`](../../CONTEUDO/AULA-10-PROJETO-INTEGRADOR-SUITE-DE-TESTES.md)  
 **Duração:** 4 horas | **Modalidade:** Em dupla (projeto) e individual (prova objetiva)  
 **Capacidades:** C1 a C5 · S1, S2 | **Conhecimentos:** 7 · 6.3 · 2.4  
 **Entrega da aula:** suíte completa no CI + avaliações finais (ementa: prática 25% · objetiva 15%)
@@ -18,11 +19,12 @@
 
 ---
 
-## Contexto — Black Friday da Loja Vale Digital
+## Contexto — Black Friday da loja virtual
 
-A loja fictícia da SA 1 vai enfrentar a Black Friday. O professor entrega o **repositório-base do
-e-commerce** (vitrine, carrinho, cupom, checkout). A dupla usa o plano e os casos da **aula 2** e
-monta a suíte de três camadas, rodando no pipeline da **aula 9**.
+Você, como aluno consultor, volta à loja virtual da SA 1, que vai enfrentar a Black Friday. O
+professor entrega o **repositório-base do e-commerce** (vitrine, carrinho, cupom, checkout). A
+dupla usa o plano e os casos da **aula 2** e monta a suíte de três camadas, rodando no pipeline da
+**aula 9**.
 
 ---
 

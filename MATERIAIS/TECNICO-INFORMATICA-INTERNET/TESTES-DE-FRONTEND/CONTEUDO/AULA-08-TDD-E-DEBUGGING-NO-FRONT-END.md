@@ -9,7 +9,7 @@
   responsabilidade
 - **Estratégias:** programação em par (piloto e copiloto), código ao vivo, depuração guiada, code
   review entre duplas
-- **Prática da aula:** [`../ATIVIDADES/ATIVIDADE-PRATICA-AULA-08.md`](../ATIVIDADES/ATIVIDADE-PRATICA-AULA-08.md)
+- **Prática da aula:** [`../ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-08.md`](../ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-08.md)
 
 ## Indicadores
 

@@ -6,7 +6,7 @@
 
 **Apostila:** `APOSTILA-TESTES-DE-FRONTEND.html` · **Markdown completo:** `APOSTILA-TESTES-DE-FRONTEND.md` ·
 **Gerador:** `assets/gerador-apostilas/gerar_apostila.py` · **Fonte do conteúdo:** slides
-`AULAS/AULA-NN-SLIDES.pdf`, `ATIVIDADES/ATIVIDADE-PRATICA-AULA-NN.md` e `EMENTA-CHALKIE-AI.md`.
+`AULAS/AULA-NN-SLIDES.pdf`, `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-NN.md` e `EMENTA-CHALKIE-AI.md`.
 
 | Parte inicial | Status |
 |---|---|

@@ -1,6 +1,7 @@
 # ATIVIDADE AULA 06 — Testes End-to-End com Cypress e Playwright
 
-**Slides:** `../AULAS/AULA-06-SLIDES.pdf`  
+**Slides:** `../../AULAS/AULA-06-SLIDES.pdf`  
+**Aula:** 06 · **Conteúdo-base:** [`../../CONTEUDO/AULA-06-TESTES-END-TO-END-COM-CYPRESS-E-PLAYWRIGHT.md`](../../CONTEUDO/AULA-06-TESTES-END-TO-END-COM-CYPRESS-E-PLAYWRIGHT.md)  
 **Duração:** 4 horas | **Modalidade:** Laboratório, em dupla  
 **Capacidades:** C4, C5 · S2 | **Conhecimentos:** 2.2–2.3 · 3.1 · 4.2  
 **Entrega da aula:** fluxos E2E de login e de checkout automatizados

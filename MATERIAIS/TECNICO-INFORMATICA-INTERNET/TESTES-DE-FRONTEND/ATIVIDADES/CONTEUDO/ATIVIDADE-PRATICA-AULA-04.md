@@ -1,6 +1,7 @@
 # ATIVIDADE AULA 04 — Testes de Integração com DOM usando Testing Library
 
-**Slides:** `../AULAS/AULA-04-SLIDES.pdf`  
+**Slides:** `../../AULAS/AULA-04-SLIDES.pdf`  
+**Aula:** 04 · **Conteúdo-base:** [`../../CONTEUDO/AULA-04-TESTES-DE-INTEGRACAO-COM-TESTING-LIBRARY.md`](../../CONTEUDO/AULA-04-TESTES-DE-INTEGRACAO-COM-TESTING-LIBRARY.md)  
 **Duração:** 4 horas | **Modalidade:** Laboratório, individual  
 **Capacidades:** C1, C4, C5 | **Conhecimentos:** 2.3 · 3.1 · 4.1  
 **Entrega da aula:** testes de um botão com estados e de um formulário

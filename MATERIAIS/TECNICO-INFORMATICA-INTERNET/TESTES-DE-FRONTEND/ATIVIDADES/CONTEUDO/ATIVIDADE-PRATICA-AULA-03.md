@@ -1,6 +1,7 @@
 # ATIVIDADE AULA 03 — Testes Unitários no Front-End com Vitest
 
-**Slides:** `../AULAS/AULA-03-SLIDES.pdf`  
+**Slides:** `../../AULAS/AULA-03-SLIDES.pdf`  
+**Aula:** 03 · **Conteúdo-base:** [`../../CONTEUDO/AULA-03-TESTES-UNITARIOS-COM-VITEST.md`](../../CONTEUDO/AULA-03-TESTES-UNITARIOS-COM-VITEST.md)  
 **Duração:** 4 horas | **Modalidade:** Laboratório, individual  
 **Capacidades:** C4, C5 · S1 | **Conhecimentos:** 2.1–2.3 · 3.2  
 **Entrega da aula:** suíte unitária de funções utilitárias + teste com mock de API

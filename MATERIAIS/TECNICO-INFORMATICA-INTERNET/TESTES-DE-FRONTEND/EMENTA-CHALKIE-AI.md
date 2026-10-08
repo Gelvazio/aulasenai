@@ -200,7 +200,8 @@ C1 Especificações da interface → 5, 6.1 · C2 Requisitos da documentação �
 
 - [x] Ementa oficial conciliada; 10 aulas × 4h alinhadas aos slides e ao horário
 - [x] Situações de aprendizagem 1 e 2 do plano de ensino
-- [x] `ATIVIDADES/ATIVIDADE-PRATICA-AULA-01..10.md` alinhadas aos slides das 10 aulas, com rubricas (2026-09-27)
+- [x] `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-01..10.md` alinhadas aos slides das 10 aulas, com rubricas (2026-09-27; movidas para `CONTEUDO/` em 2026-10-08)
+- [x] Aulas em Markdown `CONTEUDO/AULA-01..10-*.md` extraídas desta ementa (2026-10-08)
 - [ ] Atividades de 50 questões por aula (padrão `assets/gerador-atividades/`)
 
 **Métricas:** 80%+ dos estudantes com nota ≥ 7,0 · 100% entregam a suíte do projeto integrador rodando no CI.

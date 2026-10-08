@@ -8,7 +8,7 @@
   de testes automatizados
 - **Estratégias:** exposição dialogada com código ao vivo, prática guiada, dinâmica em duplas,
   desafio
-- **Prática da aula:** [`../ATIVIDADES/ATIVIDADE-PRATICA-AULA-04.md`](../ATIVIDADES/ATIVIDADE-PRATICA-AULA-04.md)
+- **Prática da aula:** [`../ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-04.md`](../ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-04.md)
 
 ## Indicadores
 

@@ -1,6 +1,7 @@
 # ATIVIDADE AULA 01 — Fundamentos de Testes de Software
 
-**Slides:** `../AULAS/AULA-01-SLIDES.pdf`  
+**Slides:** `../../AULAS/AULA-01-SLIDES.pdf`  
+**Aula:** 01 · **Conteúdo-base:** [`../../CONTEUDO/AULA-01-FUNDAMENTOS-DE-TESTES-DE-SOFTWARE.md`](../../CONTEUDO/AULA-01-FUNDAMENTOS-DE-TESTES-DE-SOFTWARE.md)  
 **Duração:** 4 horas | **Modalidade:** Laboratório, individual e em grupo  
 **Capacidades:** C1, C2, C3 · S1 | **Conhecimentos:** 5 · 4 · 1.1  
 **Entrega da aula:** mapa de conceitos (erro, defeito, falha e tipos de teste) + estratégia de testes

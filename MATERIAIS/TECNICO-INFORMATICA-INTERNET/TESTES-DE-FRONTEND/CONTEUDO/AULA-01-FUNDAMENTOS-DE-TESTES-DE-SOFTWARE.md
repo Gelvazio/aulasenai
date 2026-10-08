@@ -8,7 +8,7 @@
 - **Capacidades:** C1 — Reconhecer as especificações técnicas da interface · C2 — Reconhecer os
   requisitos da documentação de testes · C3 — Reconhecer as etapas de planejamento de testes
 - **Estratégias:** exposição dialogada, estudo de caso, dinâmica em grupo, mapa de conceitos
-- **Prática da aula:** [`../ATIVIDADES/ATIVIDADE-PRATICA-AULA-01.md`](../ATIVIDADES/ATIVIDADE-PRATICA-AULA-01.md)
+- **Prática da aula:** [`../ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-01.md`](../ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-01.md)
 
 ## Indicadores
 
