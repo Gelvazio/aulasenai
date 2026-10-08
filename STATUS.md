@@ -1337,3 +1337,11 @@ Pasta: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/CONTEUDO/` · 
 | 102.2 | `respostas-discursivas-banco.js` (gabarito liberado volta a carregar as respostas) e `resultado-aluno-discursiva.js` + CSS: nota, selo por alternativa, observação da IA em balão grande e padrão de resposta; ligado em `avaliacao-discursiva.js` | ✅ Concluído | 2026-10-08 20:24:44 | `node --check` |
 | 102.3 | Regra no `CLAUDE.md` (versão + históricos) e em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-08 20:24:44 | Leitura |
 | 102.4 | Aceite do usuário (aluno com entrega e gabarito liberado abre a prova) | ⬜ Pendente | — | — |
+
+## Etapa 103 — Prova Prática ADAG renomeada para PROVA-PRATICA-01.html (tarefa pequena, 2026-10-08 20:26:16)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 103.1 | `git mv` de `PROVA-PRATICA-06-10-2026.html` para `PROVA-PRATICA-01.html`; referências trocadas em `index.html` (card), `media-final.json`, `AVALIACAO-MEDIA-FINAL.html`, fonte `PROVA-PRATICA-ADAG-SALETE.md` (campo Página), `CORRECAO-PROVA-ADAG.md` e `STATUS-ATIVIDADES.md` (planos antigos em `docs/` e seeds mantidos como histórico) | ✅ Concluído | 2026-10-08 20:26:16 | `grep` sem o nome antigo fora do histórico |
+| 103.2 | Banco: `atividade.pagina` do id 82 atualizada para o nome novo (SQL `database/2026-10-08-prova-pratica-01-renomear-pagina.sql`, valor antigo no comentário) | ✅ Concluído | 2026-10-08 20:26:16 | Consulta: id 82 com a página nova, 60 tópicos e 586 respostas intactos |
+| 103.3 | Aceite do usuário (abrir pelo card do índice) | ⬜ Pendente | — | — |

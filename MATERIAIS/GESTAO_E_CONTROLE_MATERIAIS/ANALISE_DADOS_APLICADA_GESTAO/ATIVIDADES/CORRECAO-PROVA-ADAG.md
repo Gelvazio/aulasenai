@@ -10,7 +10,7 @@
 
 | Dado | Valor |
 |---|---|
-| Atividade | **id 82 · Prova Prática** (página `PROVA-PRATICA-06-10-2026.html`) |
+| Atividade | **id 82 · Prova Prática** (página `PROVA-PRATICA-01.html`) |
 | Matéria | Análise de Dados Aplicada à Gestão (ADAG) |
 | Turma | AI AIAC 2026/2 V1 (133933) — prova feita **em dupla e com pesquisa** |
 | Questões | 20, cada uma vale **0,5 ponto** = **10 pontos** no total |

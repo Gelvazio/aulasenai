@@ -9,7 +9,7 @@
 - **Total de questões:** 20
 - **Pontuação:** 0,5 ponto por questão, dividido em 3 tópicos (0,1 + 0,2 + 0,2) — total: 10 pontos
 - **Pontos por questão:** 0,5
-- **Página:** PROVA-PRATICA-06-10-2026.html
+- **Página:** PROVA-PRATICA-01.html
 - **Bloquear colar:** sim
 - **Campo do tamanho da resposta:** sim
 - **Botão gravar:** sim
