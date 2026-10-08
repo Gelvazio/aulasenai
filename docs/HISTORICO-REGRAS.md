@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 14:34:44 | Atividades: **progresso da turma para o professor** no topo da atividade, por aluno e por questão, atualizado a cada 5 s (campo `Progresso para o professor: sim`, `assets/js/progresso-turma-discursiva.js`; `docs/regras/atividades.md`); 1º uso: Prova Prática ADAG (id 82); regra: depois em **todas** as atividades |
 | 2026-10-08 17:27:53 | Unidade das turmas vem do arquivo global **`assets/js/unidade.js`** (código da turma → nome da unidade, ex.: "AIAC SALETE TARDE"); substitui o `turma-unidade.js` — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 17:26:54 | Toda lista de turmas mostra a **unidade** (local + turno, ex.: "AI SALETE TARDE"): função única `assets/js/turma-unidade.js` — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 17:22:44 | Equipes: **botão 👥 EQUIPES global no header** (`js/header-usuario.js`) em toda página de matéria, para todo usuário logado — `docs/regras/usuarios-turmas-paginas-professor.md` |

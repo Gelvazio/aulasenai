@@ -1,0 +1,149 @@
+/* Professor: progresso da turma no topo da discursiva (progresso-turma-discursiva.js). */
+
+:root {
+    --progresso-turma-borda: #cbd5e0;
+    --progresso-turma-fundo: #ffffff;
+    --progresso-turma-texto-suave: #4a5568;
+    --progresso-turma-barra-fundo: #e2e8f0;
+    --progresso-turma-barra: #667eea;
+    --progresso-turma-geral: #2b6cb0;
+    --progresso-turma-entregue: #38a169;
+    --progresso-turma-vazia-fundo: #edf2f7;
+    --progresso-turma-vazia-texto: #a0aec0;
+    --progresso-turma-andamento-fundo: #fefcbf;
+    --progresso-turma-andamento-texto: #744210;
+    --progresso-turma-completa-fundo: #c6f6d5;
+    --progresso-turma-completa-texto: #22543d;
+    --progresso-turma-raio: 8px;
+}
+
+.progresso-turma {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 16px 0;
+    padding: 16px;
+    border: 2px solid var(--progresso-turma-barra);
+    border-radius: var(--progresso-turma-raio);
+    background: var(--progresso-turma-fundo);
+}
+
+.progresso-turma__titulo {
+    margin: 0;
+    font-size: 18px;
+}
+
+.progresso-turma__legenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.progresso-turma__geral {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.progresso-turma__resumo {
+    font-size: 13px;
+    color: var(--progresso-turma-texto-suave);
+}
+
+.progresso-turma__lista {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.progresso-turma__linha {
+    display: grid;
+    grid-template-columns: minmax(140px, 1.2fr) 3fr minmax(80px, 1fr) minmax(120px, auto);
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+}
+
+.progresso-turma__nome {
+    overflow: hidden;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.progresso-turma__questoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
+.progresso-turma__questao {
+    min-width: 24px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.progresso-turma__questao--vazia {
+    background: var(--progresso-turma-vazia-fundo);
+    color: var(--progresso-turma-vazia-texto);
+}
+
+.progresso-turma__questao--andamento {
+    background: var(--progresso-turma-andamento-fundo);
+    color: var(--progresso-turma-andamento-texto);
+}
+
+.progresso-turma__questao--completa {
+    background: var(--progresso-turma-completa-fundo);
+    color: var(--progresso-turma-completa-texto);
+}
+
+.progresso-turma__barra {
+    height: 12px;
+    overflow: hidden;
+    border-radius: var(--progresso-turma-raio);
+    background: var(--progresso-turma-barra-fundo);
+}
+
+.progresso-turma__barra-preenchida {
+    height: 100%;
+    background: var(--progresso-turma-barra);
+    transition: width 0.4s ease;
+}
+
+.progresso-turma__barra--geral {
+    height: 16px;
+}
+
+.progresso-turma__barra--geral .progresso-turma__barra-preenchida {
+    background: var(--progresso-turma-geral);
+}
+
+.progresso-turma__barra--entregue .progresso-turma__barra-preenchida {
+    background: var(--progresso-turma-entregue);
+}
+
+.progresso-turma__situacao {
+    font-weight: 600;
+    text-align: right;
+}
+
+@media (max-width: 700px) {
+    .progresso-turma__linha {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .progresso-turma__situacao {
+        text-align: left;
+    }
+}
+
+@media print {
+    .progresso-turma {
+        display: none;
+    }
+}

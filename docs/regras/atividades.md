@@ -180,6 +180,18 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   `- **Botão gravar:** sim` → cada tópico ganha o botão, que grava na hora (`gravarPeloBotao` em
   `assets/js/avaliacao-discursiva.js`). **As duas opções valem juntas:** a gravação automática
   (1,5 s depois de parar de digitar e ao sair do campo) continua. 1º uso: Prova Prática ADAG (id 82).
+- ✅ **Progresso da turma para o professor (2026-10-08, pedido do usuário):** no **topo da
+  atividade** (logo abaixo do cabeçalho), só para o professor, montado em tempo de execução e
+  **atualizado a cada 5 segundos**: uma linha por aluno com uma célula por questão (cinza = sem
+  resposta, amarela = em andamento, verde = completa), barra do aluno, "N/20 questões · %" ou
+  "✅ Entregue", e no alto o resumo e a barra geral da turma. Campo opcional
+  `- **Progresso para o professor:** sim` → `data-progresso-professor="sim"`; código
+  `assets/js/progresso-turma-discursiva.js` + `assets/css/progresso-turma-discursiva.css`
+  (carregado pelo `avaliacao-discursiva.js` só para o professor; o RLS limita às turmas dele).
+  - **1º uso:** Prova Prática ADAG (id 82).
+  - ⏳ **Regra para o futuro:** o progresso deve aparecer em **todas as atividades** (discursivas
+    e objetivas — estas usam `assets/js/respostas-atividade.js` e precisam de módulo equivalente);
+    ligar uma por vez quando o usuário pedir (pendência no `STATUS.md`).
 - ✅ **Entrega só com tudo preenchido (já existia):** ao clicar em "Finalizar e entregar", a página
   confere no banco os tópicos sem texto (só espaços conta como vazio), destaca e lista os que faltam;
   o RLS da `entrega_atividade` também recusa a entrega incompleta.

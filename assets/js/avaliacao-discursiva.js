@@ -16,6 +16,7 @@ const ID_BOTAO_FINALIZAR = 'btnFinalizarDiscursiva';
 const ARQUIVO_LIBERACAO_DISCURSIVA = 'liberacao-respostas-discursiva.js';
 const ARQUIVO_PDF_DISCURSIVA = 'exportar-pdf-discursiva.js';
 const ARQUIVO_RESPOSTAS_ALUNO = 'respostas-aluno-professor.js';
+const ARQUIVO_PROGRESSO_TURMA = 'progresso-turma-discursiva.js';
 const BASE_SCRIPTS_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const CLASSE_BLOCO = 'topico-resposta';
 const CLASSE_FALTANDO = 'topico-resposta--faltando';
@@ -271,6 +272,7 @@ function montarPainel(dados) {
         fazerLogout));
     atualizarProgresso();
     if (dados.ehProfessor) abrirRespostasDoAluno(painel, dados);
+    if (dados.ehProfessor) abrirProgressoDaTurma(dados);
     abrirLiberacaoRespostas(painel, dados);
 }
 
@@ -307,6 +309,25 @@ async function abrirRespostasDoAluno(painel, dados) {
         });
     } catch (erro) {
         console.warn('Respostas dos alunos:', erro.message);
+    }
+}
+
+/**
+ * Professor: progresso da turma no topo da atividade, por aluno e por questão, atualizado a cada
+ * 5 s (só com data-progresso-professor="sim" no <body>). Uma falha aqui não atrapalha a avaliação.
+ * @param {Object} dados - Estado carregado do banco.
+ */
+async function abrirProgressoDaTurma(dados) {
+    const estaLigado = document.body.dataset.progressoProfessor === 'sim';
+    if (!estaLigado || !dados.atividadeId) return;
+
+    try {
+        if (typeof window.montarProgressoDaTurma !== 'function') {
+            await carregarModuloDiscursiva(ARQUIVO_PROGRESSO_TURMA);
+        }
+        await window.montarProgressoDaTurma(dados.atividadeId);
+    } catch (erro) {
+        console.warn('Progresso da turma:', erro.message);
     }
 }
 

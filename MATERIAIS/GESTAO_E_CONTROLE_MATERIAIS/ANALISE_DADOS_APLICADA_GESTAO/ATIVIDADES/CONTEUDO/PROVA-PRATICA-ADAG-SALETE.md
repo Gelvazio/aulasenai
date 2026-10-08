@@ -13,6 +13,7 @@
 - **Bloquear colar:** sim
 - **Campo do tamanho da resposta:** sim
 - **Botão gravar:** sim
+- **Progresso para o professor:** sim
 - **Capacidade avaliada:** Aplicar, por escrito e em situações reais de um almoxarifado, 100% dos conteúdos das aulas 01 a 07 (pasta `CONTEUDO/`): conjuntos numéricos, custo unitário, razão, proporção, regra de três simples (direta e inversa) e composta, conversão de unidades, área, volume e peso; porcentagem (variação, margem, porcentagem sobre porcentagem, formação de preço), média, mediana, moda, tabela de frequência, amplitude, variância e desvio padrão, PA e PG; interface, tipos de dados, operadores, precedência, referências relativas e absolutas, alça e preenchimento relâmpago, SOMA, MÉDIA, CONT.NÚM, CONT.VALORES, MÁXIMO, MÍNIMO e SE; formatos de número e data, formatação condicional, escalas de cor e barras de dados, congelar painéis, validação de dados, filtros, proteção de planilha e de pasta; PROCV, PROCH, SEERRO, ÍNDICE + CORRESP, SE aninhado, CONT.SE e SOMASE; tabela dinâmica, agrupamento, campo calculado, segmentação, linha do tempo, gráficos dinâmicos e combinados; KPIs, dashboard e storytelling com dados.
 - **Correção:** as respostas ficam gravadas no banco e são corrigidas depois: a IA sugere a nota de cada tópico pelo padrão de resposta (`PROVA-PRATICA-ADAG-SALETE-GABARITO.md`, fora do Git) e o professor confirma ou ajusta.
 - **Folha de respostas:** sim

@@ -17,7 +17,8 @@ liga o bloqueio de colar/arrastar/copiar nos campos (assets/js/bloqueio-colar-di
 "- **Campo do tamanho da resposta:** sim" dá a cada campo a altura da resposta esperada (padrão
 de resposta, com folga) e o faz crescer ao digitar (assets/js/campo-tamanho-discursiva.js).
 "- **Botão gravar:** sim" põe um botão "💾 Gravar" em cada tópico (grava na hora; a gravação
-automática continua).
+automática continua). "- **Progresso para o professor:** sim" mostra ao professor a barra de
+progresso de cada aluno da turma (assets/js/progresso-turma-discursiva.js).
 Plano: docs/avaliacao-pratica-discursiva-itic.md
 """
 import html
@@ -56,10 +57,12 @@ CAMPO_PDF_COMPACTO = "PDF compacto"
 CAMPO_PDF_SEM_RESPOSTAS = "PDF sem respostas"
 CAMPO_BLOQUEAR_COLAR = "Bloquear colar"
 CAMPO_TAMANHO_RESPOSTA = "Campo do tamanho da resposta"
+CAMPO_PROGRESSO_PROFESSOR = "Progresso para o professor"
 ATRIBUTOS_BODY = {CAMPO_PDF_COMPACTO: "data-pdf-compacto",
                   CAMPO_PDF_SEM_RESPOSTAS: "data-pdf-sem-respostas",
                   CAMPO_BLOQUEAR_COLAR: "data-bloquear-colar",
-                  CAMPO_TAMANHO_RESPOSTA: "data-campo-tamanho-resposta"}
+                  CAMPO_TAMANHO_RESPOSTA: "data-campo-tamanho-resposta",
+                  CAMPO_PROGRESSO_PROFESSOR: "data-progresso-professor"}
 CAMPO_BOTAO_GRAVAR = "Botão gravar"
 HTML_BOTAO_GRAVAR = (
     '\n                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>')

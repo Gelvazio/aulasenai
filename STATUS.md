@@ -30,6 +30,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 89 | 89.5 | testar o progresso da turma (logado como professor) na Prova Prática ADAG (id 82) | Aceite |
 | 88 | 88.8 | testar na Prova Prática ADAG (id 82): bloqueio de colar, campo do tamanho da resposta, botão Gravar e entrega só com tudo preenchido | Aceite |
 | 82 e 83 | 82.5 e 83.7 | aceite da remoção da V1 (apostila única 2.1), da discursiva id 81 (já aplicada no banco) e das 13 questões novas da objetiva id 85 | Aceite |
 | 79 e 81 | 79.8 e 81.5 | validar a apostila ITIC V2 versão 2.1 (28 páginas, sem vídeos e exercícios; S2, S3, normas declaradas e referências complementares) e a paginação/faixa do PDF | Aceite |
@@ -398,6 +399,8 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 ## Pendências (ficou para depois)
 | Item | Motivo | Quando retomar |
 |------|--------|----------------|
+| Progresso da turma para o professor em **todas** as atividades (discursivas: ligar o campo; objetivas: módulo equivalente em `respostas-atividade.js`) | Começou só pela prova ADAG id 82 (pedido do usuário) | Quando o usuário pedir |
+| Nome "08-10-2026" da prova id 82 está **só no HTML**: regerar a página pelo `.md` volta para "06-10-2026" | Usuário pediu a correção apenas no HTML | Antes de regerar, trocar o `Rótulo da aula` no `.md` (se o usuário quiser) |
 | Ligar `Bloquear colar: sim` nas outras avaliações discursivas (e, opcional, registrar no banco as tentativas de colar) | Usuário sem tempo em 2026-10-08; começou só pela prova ADAG id 82 | Quando o usuário pedir (regra em `docs/regras/atividades.md`) |
 | Botão "Exportar em Word" na apostila (`assets/js/apostila.js`) e nas páginas antigas com PDF próprio (`REFORCO_MATEMATICA.../AULAS/`) | Fora das atividades com `atividade.js`/`atividade-pratica-excel.js` | Quando forem mexidas ou a pedido do usuário |
 | Destino da pasta `Testes de Sistemas-EXISTENTES` (não é UC do curso) | Decisão do usuário | Quando o usuário decidir |
@@ -1142,3 +1145,15 @@ Pedido do usuário: bloquear copiar e colar (obrigar a digitar cada resposta) **
 | 94.2 | Dados: o `local` vem da tabela `turma` (hoje: AI SALETE, AI CEPLAS, CEPLAS, APRENDIZAGEM INDUSTRIAL TAIÓ TARDE); a turma Roberto Machado ganha o local ao ser gravada pela página de usuários | ⬜ Pendente | — | Consulta de leitura em `turma` |
 | 94.3 | Aceite do usuário | ⬜ Pendente | — | — |
 | 94.4 | Pedido do usuário (2026-10-08 17:27:53): unidades vindas do arquivo global **`assets/js/unidade.js`** (código da turma → unidade: 122552 TAIÓ TARDE, 124403 ROBERTO MACHADO TARDE, 133933 AIAC SALETE TARDE, 135080 CEPLAS MANHÃ, 135081 CEPLAS TARDE, QA LBTSN 2026/1 M2 CEPLAS MANHÃ); `turma-unidade.js` renomeado e as 12 referências trocadas; regra e histórico | ✅ Concluído | 2026-10-08 17:27:53 | `node --check`; `grep` sem "turma-unidade" no código |
+
+## Etapa 89 — Progresso da turma para o professor e nome da prova 08-10-2026 (Prova Prática ADAG id 82, tarefa pequena, 2026-10-08 14:34:44)
+
+Pedido do usuário: barra de progresso por aluno e por questão, só para o professor, no topo da atividade, atualizada a cada 5 s — só nesta prova por enquanto, com a regra anotada no `CLAUDE.md` para todas as atividades; e corrigir **só no HTML** o nome da prova para 08-10-2026.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 89.1 | `assets/js/progresso-turma-discursiva.js` + `assets/css/progresso-turma-discursiva.css`: linha por aluno, célula por questão (sem resposta / em andamento / completa), barra do aluno e geral, entrega; atualiza a cada 5 s; carregado pelo `avaliacao-discursiva.js` só para o professor | ✅ Concluído | 2026-10-08 14:34:44 | `node --check` |
+| 89.2 | Gerador: campo `Progresso para o professor: sim` → `data-progresso-professor`; ligado na prova e página regerada | ✅ Concluído | 2026-10-08 14:34:44 | `py_compile`; `git diff` só com o atributo novo no `<body>` |
+| 89.3 | Nome da prova no HTML: "Prova Prática 06-10-2026" → "08-10-2026" (título, h1 e rodapé; nome do arquivo e banco sem mudança) | ✅ Concluído | 2026-10-08 14:34:44 | 3 trocas conferidas com `grep` |
+| 89.4 | Regra no `CLAUDE.md` (versão + histórico) e em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-08 14:34:44 | Leitura dos arquivos |
+| 89.5 | Aceite do usuário (testar logado como professor: painel no topo, atualização a cada 5 s) | ⬜ Pendente | — | — |
