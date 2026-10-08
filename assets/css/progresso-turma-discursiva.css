@@ -59,11 +59,15 @@
 
 .progresso-turma__linha {
     display: grid;
-    grid-template-columns: minmax(140px, 1.2fr) 3fr minmax(80px, 1fr) minmax(120px, auto)
-        minmax(110px, auto);
+    grid-template-columns: minmax(120px, 1.2fr) 3fr minmax(40px, 0.5fr) minmax(110px, auto)
+        minmax(100px, auto);
     align-items: center;
     gap: 10px;
     font-size: 13px;
+}
+
+.progresso-turma__linha > * {
+    min-width: 0;
 }
 
 .progresso-turma__linha--titulos {
