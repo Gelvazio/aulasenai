@@ -3,7 +3,8 @@
 > Controle da regra "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`" do [`CLAUDE.md`](../CLAUDE.md).
 > **Ler este arquivo no início de cada sessão:** sessão `PENDENTE` = retomar pelo arquivo dela;
 > sessão `CONCLUÍDO` = aproveitar o que importa no `CLAUDE.md` e remover os dados dela (ver a regra).
-> Legenda: `PENDENTE` · `CONCLUÍDO` (aguardando limpeza) · `🗑️ REMOVIDA` (dados já aproveitados e apagados).
+> Legenda: `PENDENTE` · `CONCLUÍDO` (só com a tarefa inteira finalizada e **todos** os pedidos
+> validados no log; aguardando limpeza) · `🗑️ REMOVIDA` (dados já aproveitados e apagados).
 
 | Sessão (início) | Ambiente | Assunto | Arquivo | Status | Atualizada em | Próximo passo |
 |---|---|---|---|---|---|---|

@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 08:06
+**Versão das regras:** 2026-10-08 08:09
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:09 | Sessão só fica `CONCLUÍDO` quando a tarefa inteira foi finalizada: antes, validar **cada** pedido do usuário da sessão (feito, conferido e aceito), com a tabela "✅ Validação dos pedidos" no log; faltando qualquer item, continua `PENDENTE` |
 | 2026-10-08 08:06 | `SESSOES-CLAUDE/STATUS-SESSOES.md` (status de todas as sessões, lido no início de cada sessão) e regra da sessão `CONCLUÍDO`: ler o que foi feito, atualizar o `CLAUDE.md` se preciso, conferir as pendências e remover os dados da sessão |
 | 2026-10-08 08:04 | Registro da sessão: motivo registrado — o usuário alterna entre 2 licenças do Claude Code e perde o contexto ao trocar; o log precisa bastar sozinho para a outra licença continuar |
 | 2026-10-08 08:02 | Registro da sessão em `SESSOES-CLAUDE/`: grava só o **mínimo necessário para continuar** em outra sessão (estado, decisões, arquivos, commits, pendências e próximo passo exato), **não** uma cópia completa da conversa |
 | 2026-10-08 07:58 | Ao final de cada tarefa finalizada, perguntar se o usuário quer **atualizar o log da sessão atual**; com *SIM*: gravar em `SESSOES-CLAUDE/` com data, hora e status (`CONCLUÍDO` se não houver nada pendente, senão `PENDENTE`) e, no fim, pedir ao usuário que rode `/clear` (o Claude não consegue executar esse comando sozinho) |
-| 2026-10-08 07:56 | Nova seção "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`": todo o contexto da sessão gravado num arquivo próprio por sessão, separado por data e hora, com `Status: PENDENTE` até o aceite final, e linha no índice `SESSAO-CLAUDE.md` |
 
 ---
 
@@ -208,8 +208,13 @@ licença (ou outra IA) continuar exatamente de onde parou, sem precisar da conve
   pedido do usuário que ainda importa para continuar, com o resultado, as decisões e os commits.
 - ✅ **Cabeçalho do arquivo:** `**Status:** PENDENTE`, ambiente, modelo, branch, links para o plano
   (`docs/`), o `STATUS.md` (etapa) e o entregável.
-- ✅ **Status = `PENDENTE`** enquanto houver qualquer item pendente ou sem aceite do usuário;
-  **`CONCLUÍDO`** quando não houver nada pendente. No fim do arquivo, a tabela **"⏳ Pendências"**
+- ✅ **Status = `PENDENTE`** enquanto houver qualquer item pendente ou sem aceite do usuário.
+- ⛔ **`CONCLUÍDO` só existe quando a tarefa COMPLETA já foi finalizada** (2026-10-08, pedido do
+  usuário). Antes de marcar, **validar SEMPRE tudo o que foi pedido**: listar no log a tabela
+  **"✅ Validação dos pedidos"** (`Pedido do usuário | Feito? | Como foi conferido | Aceite`), com
+  **todos** os pedidos da sessão, e conferir cada um nos arquivos, nos commits e no `STATUS.md`
+  (não pela memória). Se faltar qualquer pedido, etapa do plano, commit ou aceite do usuário, o
+  status continua **`PENDENTE`** — nunca marcar `CONCLUÍDO` por tarefa parcial. No fim do arquivo, a tabela **"⏳ Pendências"**
   (o que falta e quem faz) — é por ela que a próxima sessão (ou outra IA) retoma.
 - ✅ **Índice:** acrescentar no topo de `SESSOES-CLAUDE/SESSAO-CLAUDE.md` uma seção curta da sessão
   (ambiente, modelo, commits, pedido, status e link para o arquivo da sessão).
@@ -221,8 +226,8 @@ licença (ou outra IA) continuar exatamente de onde parou, sem precisar da conve
   1. gravar em `SESSOES-CLAUDE/` o mínimo necessário para continuar (arquivo da sessão, com data
      e hora de cada pedido e **tudo o que falta fazer**, e a linha no índice `SESSAO-CLAUDE.md`),
      seguindo esta regra;
-  2. definir o status: **`CONCLUÍDO`** se não houver nada pendente (tabela "⏳ Pendências" vazia);
-     senão **`PENDENTE`**;
+  2. definir o status: **`CONCLUÍDO`** só se a validação de **todos** os pedidos estiver completa
+     (tabela "✅ Validação dos pedidos" toda conferida e "⏳ Pendências" vazia); senão **`PENDENTE`**;
   3. fazer o commit do log (regra "COMMIT POR TAREFA");
   4. **ao final, limpar o contexto com `/clear`**: o `/clear` é um comando do Claude Code que só o
      usuário digita (o Claude não consegue executá-lo) — então a última mensagem é
