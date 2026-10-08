@@ -184,18 +184,21 @@ function montarCelulasDasQuestoes(porQuestao, topicos) {
 }
 
 /**
- * Monta uma barra com o percentual preenchido.
+ * Monta uma barra com o percentual preenchido e o percentual escrito em cima dela.
  * @param {number} percentual - De 0 a 100.
  * @param {string} [modificador] - Modificador da barra (ex.: 'entregue').
- * @returns {HTMLElement} Barra pronta.
+ * @returns {HTMLElement} Bloco com o percentual e a barra.
  */
 function montarBarra(percentual, modificador = '') {
+    const bloco = criarElementoProgresso('div', CLASSE_PROGRESSO_TURMA + '__bloco-barra');
     const barra = criarElementoProgresso('div', CLASSE_PROGRESSO_TURMA + '__barra');
     if (modificador) barra.classList.add(CLASSE_PROGRESSO_TURMA + '__barra--' + modificador);
     const preenchida = criarElementoProgresso('div', CLASSE_PROGRESSO_TURMA + '__barra-preenchida');
     preenchida.style.width = percentual + '%';
     barra.appendChild(preenchida);
-    return barra;
+    bloco.append(criarElementoProgresso('span', CLASSE_PROGRESSO_TURMA + '__percentual',
+        percentual + '%'), barra);
+    return bloco;
 }
 
 /**

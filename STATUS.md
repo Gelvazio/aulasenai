@@ -1199,4 +1199,5 @@ Pedido do usuário: a rodada da IA não gravou nada (0 entregas; a orientação 
 | 92.4 | `docs/database.md`, `docs/relatorio_verificacao_database.html` e `docs/regras/atividades.md` atualizados | ✅ Concluído | 2026-10-08 15:07:27 | Leitura |
 | 92.6 | Pedido do usuário: **recorrigir só após a entrega final** — antes da entrega cada alternativa é corrigida uma vez; mudanças posteriores só são recorrigidas depois da entrega (`CORRECAO-PROVA-ADAG.md`, consulta 4.1) | ✅ Concluído | 2026-10-08 15:08:02 | Consulta 4.1 nova executada no banco (só leitura): 15 alunos, 128 alternativas pendentes |
 | 92.7 | "Nota parcial IA" com o **% de acerto** nas alternativas já corrigidas (nota da IA ÷ pontos delas, lidos uma vez da `topico_discursivo`), ex.: "🤖 3,20 · 80% (40/60)" | ✅ Concluído | 2026-10-08 15:28:59 | `node --check` |
+| 92.8 | Percentual escrito em cima de cada barra de progresso (alunos e barra geral da turma) | ✅ Concluído | 2026-10-08 15:32:14 | `node --check` |
 | 92.5 | Aceite do usuário (rodar a tarefa da IA e ver a nota parcial no painel) | ⬜ Pendente | — | — |
