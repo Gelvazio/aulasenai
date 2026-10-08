@@ -25,6 +25,10 @@ const DEPENDENCIAS_EQUIPES = [
     estaCarregada: () => typeof exportarEquipesPdf === 'function',
     endereco: 'equipes-exportar-pdf.js',
   },
+  {
+    estaCarregada: () => typeof criarTabelaEquipes === 'function',
+    endereco: 'equipes-tabela.js',
+  },
   { estaCarregada: () => typeof abrirModalEquipes === 'function', endereco: 'equipes-modal.js' },
 ];
 

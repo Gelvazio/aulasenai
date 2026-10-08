@@ -148,8 +148,41 @@
 .equipes-vazio { color: var(--equipes-suave); font-style: italic; }
 .equipes-acoes { display: flex; flex-wrap: wrap; gap: 6px; }
 
-.equipes-sem-equipe { margin-top: 14px; }
+.equipes-sem-equipe { margin: 14px 0; }
 .equipes-sem-equipe__nomes { margin: 0; color: var(--equipes-suave); }
+
+/* Tabela das equipes (equipes-tabela.js): grupo por equipe, integrantes e ações à direita */
+.equipes-lista > .equipes-tabela { grid-column: 1 / -1; }
+.equipes-lista { overflow-x: auto; }
+.equipes-tabela { width: 100%; border-collapse: separate; border-spacing: 0 2px; font-size: 14px; }
+.equipes-tabela th {
+  padding: 6px 8px;
+  color: var(--equipes-suave);
+  font-weight: 600;
+  text-align: left;
+  border-bottom: 1px solid var(--equipes-borda);
+}
+.equipes-tabela td { padding: 6px 8px; background: var(--equipes-fundo-suave); vertical-align: middle; }
+.equipes-tabela td:first-child { border-left: 4px solid var(--equipes-azul); }
+.equipes-tabela__grupo td { background: var(--equipes-destaque); }
+.equipes-tabela__nome small { color: var(--equipes-suave); }
+.equipes-tabela__membro td:first-child { padding-left: 22px; }
+.equipes-tabela__acoes { width: 1%; white-space: nowrap; }
+.equipes-tabela__acoes .equipes-acoes { justify-content: flex-end; flex-wrap: nowrap; }
+.equipes-tabela__adicionar td { background: transparent; }
+.equipes-tabela__seletor td { background: var(--equipes-fundo); }
+.equipes-tabela__seletor .equipes-controle { max-width: 360px; margin-right: 8px; }
+.equipes-btn--link { border: none; background: transparent; color: var(--equipes-azul); padding: 2px 0; }
+.equipes-tabela tbody + tbody tr:first-child td { border-top: 8px solid var(--equipes-fundo); }
+
+.equipes-sem-equipe__lista { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.equipes-sem-equipe__aluno {
+  padding: 3px 10px;
+  border: 1px solid var(--equipes-borda);
+  border-radius: 999px;
+  background: var(--equipes-fundo-suave);
+  font-size: 13px;
+}
 
 /* Celular: modal em tela cheia, uma coluna e campos de 16 px (sem zoom automático). */
 @media (max-width: 600px) {

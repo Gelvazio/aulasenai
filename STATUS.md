@@ -1157,3 +1157,10 @@ Pedido do usuário: barra de progresso por aluno e por questão, só para o prof
 | 89.3 | Nome da prova no HTML: "Prova Prática 06-10-2026" → "08-10-2026" (título, h1 e rodapé; nome do arquivo e banco sem mudança) | ✅ Concluído | 2026-10-08 14:34:44 | 3 trocas conferidas com `grep` |
 | 89.4 | Regra no `CLAUDE.md` (versão + histórico) e em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-08 14:34:44 | Leitura dos arquivos |
 | 89.5 | Aceite do usuário (testar logado como professor: painel no topo, atualização a cada 5 s) | ⬜ Pendente | — | — |
+
+## Etapa 95 — Modal de equipes em tabela + alunos sem equipe no início (tarefa pequena, 2026-10-08 17:39:22)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 95.1 | `assets/js/equipes-tabela.js` (novo): tabela com um grupo por equipe (linha da equipe com +Integrante/Editar/Excluir, linhas dos integrantes com papel, tarefas, líder e ✏️/🗑️, linha "+ Adicionar integrante" que abre a seleção dos alunos sem equipe); `equipes-modal.js` sem os cards antigos do professor; alunos sem equipe no início do modal (refeitos a cada gravação); `menu-acao-equipes.js` e `equipes-modal.css` | ✅ Concluído | 2026-10-08 17:39:22 | `node --check` nos 3 JS; leitura do código (sem navegador) |
+| 95.2 | Aceite do usuário | ⬜ Pendente | — | — |
