@@ -82,6 +82,10 @@ Na **TecVale**, todo projeto tem as mesmas pastas: `01-Contrato`, `02-Fotos`, `0
 
 🔑 **Ponto-chave:** um bom padrão de pastas e nomes vale mais que horas procurando arquivos.
 
+## Vídeos
+
+- ⏳ Vídeos pendentes: escolher de 1 a 4 vídeos de até 15 min e conferir localmente a duração (TASKS.md #12).
+
 ## Exercícios
 
 ### ITEM 1

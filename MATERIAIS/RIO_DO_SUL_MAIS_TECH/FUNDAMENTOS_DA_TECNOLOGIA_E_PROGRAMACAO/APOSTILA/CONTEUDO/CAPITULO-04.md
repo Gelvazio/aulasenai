@@ -85,6 +85,10 @@ Ser criativo não é encher o slide de efeitos: é encontrar uma **forma origina
 comunicar. Um gráfico no lugar de uma tabela, uma foto feita por você, uma pergunta no primeiro
 slide ou um exemplo de alguém da sua cidade deixam a apresentação memorável.
 
+## Vídeos
+
+- ⏳ Vídeos pendentes: escolher de 1 a 4 vídeos de até 15 min e conferir localmente a duração (TASKS.md #12).
+
 ## Exercícios
 
 ### ITEM 1

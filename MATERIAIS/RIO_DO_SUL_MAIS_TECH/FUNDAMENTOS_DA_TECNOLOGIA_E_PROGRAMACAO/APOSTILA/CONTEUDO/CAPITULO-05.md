@@ -92,6 +92,10 @@ Guarde tudo numa pasta organizada: `Portfolio > 01-Documento`, `02-Slides`, `03-
 🔍 **Exemplo:** antes de comprar uma impressora, a **TecVale** comparou a página do fabricante, a
 avaliação de um site de tecnologia conhecido e a opinião de outra escola que usa o modelo.
 
+## Vídeos
+
+- ⏳ Vídeos pendentes: escolher de 1 a 4 vídeos de até 15 min e conferir localmente a duração (TASKS.md #12).
+
 ## Exercícios
 
 ### ITEM 1

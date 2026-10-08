@@ -583,6 +583,45 @@ async function abrirRelatorioProfessor(secao, atividadeId, maximo) {
 }
 
 /**
+ * Converte linhas {item, letra} do banco no mapa número do item ("01") → letra.
+ * @param {Object[]} linhas - Linhas de resposta_atividade.
+ * @returns {Object<string, string>} Respostas por item.
+ */
+function converterRespostasObjetivas(linhas) {
+    const respostas = {};
+    linhas.forEach((linha) => {
+        respostas[String(linha.item).padStart(2, '0')] = linha.letra;
+    });
+    return respostas;
+}
+
+/**
+ * Perfil professor: combo "Aluno" logo abaixo da identificação, que mostra nas questões as
+ * alternativas marcadas pelo aluno escolhido (somente leitura). Uma falha aqui não pode
+ * impedir o resto da página.
+ * @param {Object} estado - Estado da página.
+ * @param {HTMLElement} identificacao - Bloco de identificação do início da página.
+ * @param {number} atividadeId - Id da atividade no banco.
+ */
+async function abrirRespostasDoAlunoProfessor(estado, identificacao, atividadeId) {
+    try {
+        if (typeof window.montarRespostasDoAluno !== 'function') {
+            await carregarScript('respostas-aluno-professor.js');
+        }
+        const area = criarElemento('div', 'aula-card');
+        identificacao.after(area);
+        await window.montarRespostasDoAluno(area, {
+            atividadeId, tabela: 'resposta_atividade', colunas: 'item,letra',
+            converter: converterRespostasObjetivas,
+            preencher: (respostas) => estado.itens.forEach((item) =>
+                destacarAlternativa(item, respostas[item.numero] || '')),
+        });
+    } catch (erro) {
+        console.warn('Respostas dos alunos indisponíveis:', erro.message);
+    }
+}
+
+/**
  * Inicia a página: identificação no início, folha no fim e alternativas clicáveis.
  */
 async function iniciarRespostasAtividade() {
@@ -604,7 +643,8 @@ async function iniciarRespostasAtividade() {
     };
     estado.atualizarFolha = () => atualizarFolha(estado);
 
-    secao.insertBefore(provedor.montarIdentificacao(), secao.firstChild);
+    const identificacao = provedor.montarIdentificacao();
+    secao.insertBefore(identificacao, secao.firstChild);
     secao.appendChild(montarFolha(estado));
     ligarAlternativas(estado);
     if (!estado.entregue) esconderQuestoesHerdadas(estado, carregado.herdadas || []);
@@ -612,6 +652,7 @@ async function iniciarRespostasAtividade() {
     if (estado.entregue) marcarEntregue(estado, carregado.entregueEm);
     if (estado.entregue) mostrarResultadoNoInicio(estado, carregado.resultado);
     if (carregado.ehProfessor) {
+        await abrirRespostasDoAlunoProfessor(estado, identificacao, carregado.atividadeId);
         await abrirRelatorioProfessor(secao, carregado.atividadeId, carregado.maximoTentativas);
     }
 }

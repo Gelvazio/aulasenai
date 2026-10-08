@@ -181,22 +181,45 @@ do documento, divergências e campos pendentes registrados). Os arquivos atuais 
 
 ---
 
-### #11: Conferir localmente a duração dos vídeos da apostila de Fundamentos da Tecnologia
+### #11: Conferir localmente a duração dos vídeos da apostila de Reforço de Linguagens
+
+**Status:** ⏳ PENDENTE (fazer no ambiente **local**, onde o YouTube funciona)  
+**Prioridade:** 🟠 Alta  
+**Adicionada em:** 2026-10-08
+
+A apostila `MATERIAIS/RIO_DO_SUL_MAIS_TECH/REFORCO_LINGUAGENS/APOSTILA/` tem **29 vídeos** (2 a 3
+por capítulo) com a duração `a conferir`: na nuvem o YouTube estava bloqueado e a duração não pôde
+ser lida. Cada seção "Vídeos" tem a anotação "⏳ CONFERIR LOCALMENTE (TASKS.md #11)".
+
+- [ ] Para cada vídeo de `APOSTILA/CONTEUDO/CAPITULO-01.md` a `CAPITULO-10.md`, ler a duração
+  pelos metadados (`curl` na página do vídeo: `lengthSeconds`, `ownerChannelName`), sem navegador.
+- [ ] Até 15:00 → trocar `a conferir` por `mm:ss` (e completar o canal, se faltar); acima de
+  15:00 ou vídeo indisponível → apagar a linha (e, se o capítulo ficar sem vídeo, buscar outro).
+- [ ] Remover a anotação "⏳ CONFERIR LOCALMENTE" dos capítulos e do Markdown completo.
+- [ ] Aumentar `versao_apostila` no `materia.json` (1.0 → 1.1), rodar
+  `gerar_apostila.py <pasta> --markdown --forcar` e depois o HTML (conferência 100%).
+- [ ] Atualizar `APOSTILA/STATUS-APOSTILA.md` (coluna Vídeos) e o `STATUS.md` (item 67.4).
+- [ ] Commit (no local, o push é do usuário).
+
+---
+
+### #12: Conferir localmente a duração dos vídeos da apostila de Fundamentos da Tecnologia
 
 **Status:** ⏳ PENDENTE (fazer na máquina local, com acesso ao YouTube)  
 **Prioridade:** 🟡 Média  
 **Adicionada em:** 2026-10-08
 
 A apostila `MATERIAIS/RIO_DO_SUL_MAIS_TECH/FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO/APOSTILA/`
-foi gerada **sem vídeos**: o ambiente de nuvem bloqueia `www.youtube.com` e a duração não pôde ser
+foi gerada **sem vídeos** (cada capítulo tem só a anotação "⏳ Vídeos pendentes"): o ambiente de nuvem bloqueia `www.youtube.com` e a duração não pôde ser
 conferida nos metadados (regra "REGRAS APOSTILAS": nada de duração inventada; máximo 15:00).
 
 - [ ] Para cada capítulo (01 a 09), escolher de 1 a 4 vídeos em português, de canais educacionais.
 - [ ] Conferir **localmente** título, canal e duração (`curl` na página do vídeo: `lengthSeconds`,
       `ownerChannelName`), descartando os de mais de 15:00.
-- [ ] Acrescentar a seção `## Vídeos` em `APOSTILA/CONTEUDO/CAPITULO-NN.md`, no formato
-      `- [título exato](url) — mm:ss — canal`, entre `## Teoria` e `## Exercícios`.
-- [ ] Gerar de novo: `gerar_apostila.py <pasta da matéria> --markdown --forcar` e depois sem opções.
+- [ ] Em `APOSTILA/CONTEUDO/CAPITULO-NN.md`, trocar a linha "⏳ Vídeos pendentes" da seção
+      `## Vídeos` pelos vídeos no formato `- [título exato](url) — mm:ss — canal`.
+- [ ] Aumentar `versao_apostila` no `materia.json`, rodar `gerar_apostila.py <pasta da matéria>
+      --markdown --forcar` e depois o HTML (conferência 100%).
 - [ ] Atualizar a coluna "Vídeos" do `APOSTILA/STATUS-APOSTILA.md`.
 - 📌 Candidatos já levantados para o capítulo 01 (duração a conferir): SNABaP2iORg (História e
   evolução dos computadores), yMGm7cPCh6o (Evolução dos Computadores — Linha do Tempo),

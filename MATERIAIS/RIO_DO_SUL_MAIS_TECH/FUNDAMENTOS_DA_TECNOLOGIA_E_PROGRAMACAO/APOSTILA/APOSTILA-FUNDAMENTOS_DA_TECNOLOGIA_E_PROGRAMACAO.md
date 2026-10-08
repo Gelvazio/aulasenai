@@ -3,28 +3,20 @@
 > **Curso:** Rio do Sul Mais Tech · **Docente:** Gelvazio Camargo  
 > **Módulo:** UC 2 · **Modalidade:** Presencial  
 > **Ementa:** 2026-09  
-> **Carga horária da UC:** 33 horas · **Capítulos previstos:** 9 (1 capítulo = 1 aula de 4 horas; a última aula tem 1 h)  
-> **Gerado em:** 07/10/2026, a partir de `APOSTILA/CONTEUDO/`.
+> **Carga horária da UC:** 33 horas · **Capítulos previstos:** 9 (1 capítulo = 1 aula; a carga horária de cada aula está no plano de capítulos)  
+> **Autor:** Gelvazio Camargo · **Versão:** 1.0 · **Data e hora:** 08/10/2026 às 00:45  
+> **Gerado em:** 08/10/2026, a partir de `APOSTILA/CONTEUDO/`.
 
 > ✏️ **Este arquivo é a fonte final da apostila.** Revise, compare e acrescente dados aqui; o HTML é gerado depois, a partir dele. O sumário é refeito a cada geração.
 
 ---
 
-> ⚠️ **Vídeos pendentes:** os capítulos estão sem a seção "Vídeos" porque o ambiente de nuvem
-> bloqueia o YouTube. **Conferir localmente a duração dos vídeos (máximo 15:00) posteriormente** e
-> acrescentá-los em `APOSTILA/CONTEUDO/CAPITULO-NN.md` — ver a tarefa #11 do `TASKS.md`.
-
 ## Sumário
 
 <!-- sumario:inicio (gerado; atualizado a cada geração) -->
 - [Ementa da matéria (texto oficial)](#ementa-da-matéria-texto-oficial)
+  - [Justificativa](#justificativa)
   - [Objetivo geral](#objetivo-geral)
-  - [Avaliação](#avaliação)
-  - [Recursos e ambientes](#recursos-e-ambientes)
-  - [Acessibilidade](#acessibilidade)
-  - [Regras para IA (seguidas na escrita da apostila)](#regras-para-ia-seguidas-na-escrita-da-apostila)
-  - [Métricas](#métricas)
-  - [Mapeamento BNCC](#mapeamento-bncc)
   - [Identificação (ementa da matéria)](#identificação-ementa-da-matéria)
   - [Alinhamento](#alinhamento)
   - [Objetivo geral (redação da ementa da matéria)](#objetivo-geral-redação-da-ementa-da-matéria)
@@ -39,6 +31,12 @@
   - [Glossário e marcos (ementa da matéria)](#glossário-e-marcos-ementa-da-matéria)
   - [Orientações ao professor por módulo](#orientações-ao-professor-por-módulo)
   - [Situações-problema por módulo](#situações-problema-por-módulo)
+  - [Avaliação](#avaliação)
+  - [Recursos e ambientes](#recursos-e-ambientes)
+  - [Acessibilidade](#acessibilidade)
+  - [Regras para IA (seguidas na escrita da apostila)](#regras-para-ia-seguidas-na-escrita-da-apostila)
+  - [Métricas](#métricas)
+  - [Mapeamento BNCC](#mapeamento-bncc)
 - [Plano de capítulos](#plano-de-capítulos)
   - [Aula 01 — Tecnologia, Dispositivos Digitais e Cidadania Digital](#aula-01--tecnologia-dispositivos-digitais-e-cidadania-digital)
   - [Aula 02 — Segurança Online, Fake News e Hardware × Software](#aula-02--segurança-online-fake-news-e-hardware--software)
@@ -71,6 +69,7 @@
     - [Evolução dos computadores](#evolução-dos-computadores)
     - [Como os dispositivos se comunicam](#como-os-dispositivos-se-comunicam)
     - [Cidadania digital](#cidadania-digital)
+  - [Vídeos](#vídeos)
   - [Resumo](#resumo)
   - [Exercícios](#exercícios)
 - [Capítulo 02 — Segurança Online, Fake News e Hardware × Software](#capítulo-02--segurança-online-fake-news-e-hardware--software)
@@ -81,6 +80,7 @@
     - [Cyberbullying](#cyberbullying)
     - [Pegada digital](#pegada-digital)
     - [Hardware e software](#hardware-e-software)
+  - [Vídeos](#vídeos-1)
   - [Resumo](#resumo-1)
   - [Exercícios](#exercícios-1)
 - [Capítulo 03 — Sistemas Operacionais, Arquivos e Pastas](#capítulo-03--sistemas-operacionais-arquivos-e-pastas)
@@ -92,6 +92,7 @@
     - [Arquivos, pastas e extensões](#arquivos-pastas-e-extensões)
     - [Operações com arquivos e pastas](#operações-com-arquivos-e-pastas)
     - [Organização que evita perder trabalhos](#organização-que-evita-perder-trabalhos)
+  - [Vídeos](#vídeos-2)
   - [Resumo](#resumo-2)
   - [Exercícios](#exercícios-2)
 - [Capítulo 04 — Atalhos de Teclado, Editor de Texto e Apresentações](#capítulo-04--atalhos-de-teclado-editor-de-texto-e-apresentações)
@@ -102,6 +103,7 @@
     - [Editor de texto](#editor-de-texto)
     - [Apresentações básicas](#apresentações-básicas)
     - [Criatividade com tecnologia](#criatividade-com-tecnologia)
+  - [Vídeos](#vídeos-3)
   - [Resumo](#resumo-3)
   - [Exercícios](#exercícios-3)
 - [Capítulo 05 — Planilhas Simples e Boas Práticas de Pesquisa](#capítulo-05--planilhas-simples-e-boas-práticas-de-pesquisa)
@@ -113,6 +115,7 @@
     - [Mini portfólio digital](#mini-portfólio-digital)
     - [Navegadores e buscadores](#navegadores-e-buscadores)
     - [Como avaliar uma fonte](#como-avaliar-uma-fonte)
+  - [Vídeos](#vídeos-4)
   - [Resumo](#resumo-4)
   - [Exercícios](#exercícios-4)
 - [Capítulo 06 — Internet Segura e Pensamento Computacional](#capítulo-06--internet-segura-e-pensamento-computacional)
@@ -124,6 +127,7 @@
     - [Privacidade](#privacidade)
     - [Pensamento computacional](#pensamento-computacional)
     - [Entrada → processamento → saída](#entrada--processamento--saída)
+  - [Vídeos](#vídeos-5)
   - [Resumo](#resumo-5)
   - [Exercícios](#exercícios-5)
 - [Capítulo 07 — Algoritmos, Fluxogramas e Primeiros Passos no Scratch](#capítulo-07--algoritmos-fluxogramas-e-primeiros-passos-no-scratch)
@@ -135,6 +139,7 @@
     - [Scratch: a interface](#scratch-a-interface)
     - [Eventos e movimento](#eventos-e-movimento)
     - [Entrada e saída no Scratch](#entrada-e-saída-no-scratch)
+  - [Vídeos](#vídeos-6)
   - [Resumo](#resumo-6)
   - [Exercícios](#exercícios-6)
 - [Capítulo 08 — Scratch: Condições, Repetições, Variáveis e Projeto Autoral](#capítulo-08--scratch-condições-repetições-variáveis-e-projeto-autoral)
@@ -146,6 +151,7 @@
     - [Mini jogo: pegue a maçã](#mini-jogo-pegue-a-maçã)
     - [Animações, jogos e histórias interativas](#animações-jogos-e-histórias-interativas)
     - [Projeto autoral: do papel ao palco](#projeto-autoral-do-papel-ao-palco)
+  - [Vídeos](#vídeos-7)
   - [Resumo](#resumo-7)
   - [Exercícios](#exercícios-7)
 - [Capítulo 09 — Avaliação Final: Prova Conceitual e Apresentação do Projeto](#capítulo-09--avaliação-final-prova-conceitual-e-apresentação-do-projeto)
@@ -154,6 +160,7 @@
     - [Revisão dos 8 módulos](#revisão-dos-8-módulos)
     - [Roteiro da apresentação (cerca de 1 minuto)](#roteiro-da-apresentação-cerca-de-1-minuto)
     - [Como você será avaliado](#como-você-será-avaliado-1)
+  - [Vídeos](#vídeos-8)
   - [Resumo](#resumo-8)
   - [Exercícios](#exercícios-8)
 <!-- sumario:fim -->
@@ -164,57 +171,14 @@
 
 Referência literal da ementa da matéria, para comparar com a apostila. Não editar aqui: quem muda é a ementa (e o `materia.json`).
 
+## Justificativa
+
+
+
 ## Objetivo geral
 
 Desenvolver competências tecnológicas e computacionais, compreendendo os fundamentos da informática e da programação, com foco no uso consciente da tecnologia e resolução de problemas.
 
-
-## Avaliação
-
-| Instrumento | Momento | Peso | Critérios |
-|---|---|---|---|
-| Testes/Provas | Aulas 01 a 09 | 35% | Compreensão conceitual |
-| Projetos | Produtos dos módulos (aulas 01 a 08) | 40% | Documento, planilha e projeto Scratch |
-| Participação | Todas as aulas | 15% | Engajamento e colaboração |
-| Autoavaliação | Aulas 08 e 09 | 10% | Reflexão sobre o progresso |
-
-Aprovação: nota final ≥ 7,0. Cada produto dos módulos vale como evidência de projeto.
-
-- **Recuperação:** Reforço automático do Chalkie no tópico em que o aluno errou; Nova entrega do produto do módulo, com feedback do professor; Revisão em duplas antes da avaliação final.
-
-| Nível | Nota | Descrição |
-|---|---|---|
-| Excelente | 9–10 | domina os conceitos, aplica com criatividade e explica o raciocínio com clareza |
-| Bom | 7–8 | compreende bem e aplica com pouca orientação |
-| Aceitável | 5–6 | compreensão básica, precisa de orientação frequente |
-| Insuficiente | 0–4 | dificuldade em aplicar; exige reforço |
-
-## Recursos e ambientes
-
-- **Recursos didáticos:** Laboratório com computadores, internet e projetor; Google Workspace (Docs, Slides, Sheets) e LibreOffice como alternativa gratuita; Scratch (online ou instalado) e ferramentas de fluxograma; Kit de peças de computador para o módulo 3, quando houver; Textos curtos, vídeos de 2 a 5 minutos e quizzes do Chalkie.
-
-## Acessibilidade
-
-- **Resumo (ementa da matéria):** Materiais em texto, imagem e vídeo, com legenda e contraste adequado; Atividades em dupla para quem tem pouca prática com o computador; Mais tempo e passos menores para alunos com necessidades específicas
-
-## Regras para IA (seguidas na escrita da apostila)
-
-1. usar linguagem simples, exemplos do cotidiano do aluno, um comando por vez e sempre pedir ao aluno que explique o raciocínio.
-
-## Métricas
-
-- 80% dos alunos com nota ≥ 7,0 e engajamento ≥ 80%
-- 70% aplicam o aprendizado em contexto novo
-- 100% das capacidades trabalhadas em pelo menos um produto
-
-## Mapeamento BNCC
-
-- 2 — Pensamento científico, crítico e criativo: módulos 7, 8
-- 4 — Comunicação: módulos 5, 6
-- 5 — Cultura digital: módulos 1, 2, 3, 4, 5, 6
-- 7 — Argumentação: módulos 2, 6
-- 9 — Empatia e cooperação: módulos 2, 8
-- 10 — Responsabilidade e cidadania: módulos 2, 6
 
 ## Identificação (ementa da matéria)
 
@@ -227,11 +191,9 @@ Aprovação: nota final ≥ 7,0. Cada produto dos módulos vale como evidência 
 
 a UC prepara o aluno para as oficinas de robótica e impressão 3D, para o raciocínio lógico e para o uso de ferramentas digitais no trabalho. Segue a BNCC (Cultura Digital, Pensamento Computacional e Mundo Digital).
 
-
 ## Objetivo geral (redação da ementa da matéria)
 
 desenvolver competências tecnológicas e computacionais, compreendendo os fundamentos da informática e da programação, com foco no uso consciente da tecnologia e na resolução de problemas.
-
 
 ## Capacidades e indicadores (ementa da matéria)
 
@@ -258,7 +220,6 @@ desenvolver competências tecnológicas e computacionais, compreendendo os funda
 ## Cronograma por módulo (ementa da matéria)
 
 Cada módulo segue o ciclo: retomada do anterior, exposição curta, prática guiada, prática autônoma e feedback. A sequência é a mesma para qualquer turma; o que já foi lecionado é registrado à parte em `CONTEUDO/`.
-
 - Módulo 1 — Tecnologia e dispositivos — 3h
 - Módulo 2 — Cidadania digital e segurança — 3h
 - Módulo 3 — Hardware, software e SO — 4h
@@ -311,15 +272,15 @@ Cada módulo segue o ciclo: retomada do anterior, exposição curta, prática gu
 
 ## Prompts para Chalkie AI
 
-1. **M1:** "Crie uma linha do tempo com 8 marcos da evolução dos computadores e 5 perguntas de revisão."
-2. **M2:** "Explique pegada digital com 3 exemplos do cotidiano e uma atividade de 15 minutos."
-3. **M3:** "Crie 10 questões de múltipla escolha sobre hardware e software, com gabarito comentado."
-4. **M4:** "Monte um desafio prático de organizar arquivos e pastas com 6 tarefas em ordem crescente."
-5. **M5:** "Proponha um mini portfólio com um documento, 5 slides e uma planilha, com critérios de correção."
-6. **M6:** "Gere um quiz de 8 questões sobre senhas, vírus, privacidade e pesquisa segura."
-7. **M7:** "Crie 5 problemas de algoritmo com sequência, decisão e repetição, do mais fácil ao mais difícil."
-8. **M8:** "Proponha um projeto Scratch com variável e condição, com passo a passo e rubrica."
-9. **Avaliação:** "Elabore uma prova de 15 questões cobrindo os 8 módulos, com matriz de conteúdo."
+- **M1:** "Crie uma linha do tempo com 8 marcos da evolução dos computadores e 5 perguntas de revisão."
+- **M2:** "Explique pegada digital com 3 exemplos do cotidiano e uma atividade de 15 minutos."
+- **M3:** "Crie 10 questões de múltipla escolha sobre hardware e software, com gabarito comentado."
+- **M4:** "Monte um desafio prático de organizar arquivos e pastas com 6 tarefas em ordem crescente."
+- **M5:** "Proponha um mini portfólio com um documento, 5 slides e uma planilha, com critérios de correção."
+- **M6:** "Gere um quiz de 8 questões sobre senhas, vírus, privacidade e pesquisa segura."
+- **M7:** "Crie 5 problemas de algoritmo com sequência, decisão e repetição, do mais fácil ao mais difícil."
+- **M8:** "Proponha um projeto Scratch com variável e condição, com passo a passo e rubrica."
+- **Avaliação:** "Elabore uma prova de 15 questões cobrindo os 8 módulos, com matriz de conteúdo."
 
 ## Glossário e marcos (ementa da matéria)
 
@@ -348,21 +309,67 @@ Cada módulo segue o ciclo: retomada do anterior, exposição curta, prática gu
 ## Situações-problema por módulo
 
 **Critério comum:** o aluno explica o caminho da solução, não apenas o resultado, e cita ao menos um exemplo real.
+- **M1:** "Seu avô pergunta o que mudou dos primeiros computadores para o celular. Explique em 5 frases."
+- **M2:** "Um colega recebeu um link de prêmio no WhatsApp. O que você diz a ele e por quê?"
+- **M3:** "O computador da escola está lento. Que partes do hardware e do software você verifica primeiro?"
+- **M4:** "Você perdeu um trabalho no meio de 200 arquivos. Como organizar para não acontecer de novo?"
+- **M5:** "Monte uma planilha simples de gastos da semana e apresente o resultado em um slide."
+- **M6:** "Duas notícias dizem o contrário uma da outra. Como descobrir qual é confiável?"
+- **M7:** "Escreva o algoritmo para ir de casa até a escola, com uma decisão e uma repetição."
+- **M8:** "Crie um jogo em que o jogador ganha pontos e perde vidas, e explique cada bloco usado."
 
-1. **M1:** "Seu avô pergunta o que mudou dos primeiros computadores para o celular. Explique em 5 frases."
-2. **M2:** "Um colega recebeu um link de prêmio no WhatsApp. O que você diz a ele e por quê?"
-3. **M3:** "O computador da escola está lento. Que partes do hardware e do software você verifica primeiro?"
-4. **M4:** "Você perdeu um trabalho no meio de 200 arquivos. Como organizar para não acontecer de novo?"
-5. **M5:** "Monte uma planilha simples de gastos da semana e apresente o resultado em um slide."
-6. **M6:** "Duas notícias dizem o contrário uma da outra. Como descobrir qual é confiável?"
-7. **M7:** "Escreva o algoritmo para ir de casa até a escola, com uma decisão e uma repetição."
-8. **M8:** "Crie um jogo em que o jogador ganha pontos e perde vidas, e explique cada bloco usado."
+## Avaliação
+
+| Instrumento | Momento | Peso | Critérios |
+|---|---|---|---|
+| Testes/Provas | Aulas 01 a 09 | 35% | Compreensão conceitual |
+| Projetos | Produtos dos módulos (aulas 01 a 08) | 40% | Documento, planilha e projeto Scratch |
+| Participação | Todas as aulas | 15% | Engajamento e colaboração |
+| Autoavaliação | Aulas 08 e 09 | 10% | Reflexão sobre o progresso |
+
+Aprovação: nota final ≥ 7,0. Cada produto dos módulos vale como evidência de projeto.
+
+- **Recuperação:** Reforço automático do Chalkie no tópico em que o aluno errou; Nova entrega do produto do módulo, com feedback do professor; Revisão em duplas antes da avaliação final.
+
+| Nível | Nota | Descrição |
+|---|---|---|
+| Excelente | 9–10 | domina os conceitos, aplica com criatividade e explica o raciocínio com clareza |
+| Bom | 7–8 | compreende bem e aplica com pouca orientação |
+| Aceitável | 5–6 | compreensão básica, precisa de orientação frequente |
+| Insuficiente | 0–4 | dificuldade em aplicar; exige reforço |
+
+## Recursos e ambientes
+
+- **Recursos didáticos:** Laboratório com computadores, internet e projetor; Google Workspace (Docs, Slides, Sheets) e LibreOffice como alternativa gratuita; Scratch (online ou instalado) e ferramentas de fluxograma; Kit de peças de computador para o módulo 3, quando houver; Textos curtos, vídeos de 2 a 5 minutos e quizzes do Chalkie.
+
+## Acessibilidade
+
+- **Resumo (ementa da matéria):** Materiais em texto, imagem e vídeo, com legenda e contraste adequado; Atividades em dupla para quem tem pouca prática com o computador; Mais tempo e passos menores para alunos com necessidades específicas
+
+## Regras para IA (seguidas na escrita da apostila)
+
+1. usar linguagem simples, exemplos do cotidiano do aluno, um comando por vez e sempre pedir ao aluno que explique o raciocínio.
+
+## Métricas
+
+- 80% dos alunos com nota ≥ 7,0 e engajamento ≥ 80%
+- 70% aplicam o aprendizado em contexto novo
+- 100% das capacidades trabalhadas em pelo menos um produto
+
+## Mapeamento BNCC
+
+- 2 — Pensamento científico, crítico e criativo: módulos 7, 8
+- 4 — Comunicação: módulos 5, 6
+- 5 — Cultura digital: módulos 1, 2, 3, 4, 5, 6
+- 7 — Argumentação: módulos 2, 6
+- 9 — Empatia e cooperação: módulos 2, 8
+- 10 — Responsabilidade e cidadania: módulos 2, 6
 
 ---
 
 # Plano de capítulos
 
-Cada capítulo corresponde a **uma aula de 4 horas** da unidade curricular (a última aula tem 1 horas).
+Cada capítulo corresponde a **uma aula** da unidade curricular, com a carga horária indicada na tabela.
 
 | Capítulo | Aula | Tema | Carga horária | Situação |
 |---|---|---|---|---|
@@ -931,6 +938,7 @@ Termos técnicos de todos os capítulos, em ordem alfabética (o número indica 
 
 # Referências
 
+A ementa da matéria não lista referências.
 
 ---
 
@@ -1023,6 +1031,15 @@ direitos e deveres da vida fora da tela valem dentro dela.
 🔍 **Exemplo:** um colega posta no grupo da turma a foto de outro aluno dormindo na aula, com uma
 legenda engraçada. Mesmo que pareça brincadeira, a foto foi exposta sem permissão. O cidadão
 digital não compartilha, avisa o colega e, se continuar, conta para um adulto de confiança.
+
+## Vídeos
+
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #12):** a duração dos vídeos deste capítulo ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds` e `ownerChannelName`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
+
+- [Conteúdo de Tecnologia da Informação: História e evolução dos computadores](https://www.youtube.com/watch?v=SNABaP2iORg) — a conferir — canal a conferir
+- [Evolução dos Computadores - Linha do Tempo](https://www.youtube.com/watch?v=yMGm7cPCh6o) — a conferir — canal a conferir
+- [Por onde vem a internet? Seguimos a fibra até sua casa!](https://www.youtube.com/watch?v=fYJl-7jRzuw) — a conferir — Manual do Mundo
+- [Entenda... Cidadania Digital](https://www.youtube.com/watch?v=XHFfXJglFhY) — a conferir — canal a conferir
 
 ## Resumo
 
@@ -1177,6 +1194,10 @@ tem onde rodar.
 pequena ou se o armazenamento está quase cheio. No **software**, veja se há programas demais
 abertos, atualizações pendentes ou algum vírus.
 
+## Vídeos
+
+- ⏳ Vídeos pendentes: escolher de 1 a 4 vídeos de até 15 min e conferir localmente a duração (TASKS.md #12).
+
 ## Resumo
 
 - **Fake news** é informação falsa apresentada como verdadeira; antes de compartilhar, confira autor, data, outras fontes e agências de checagem.
@@ -1310,6 +1331,10 @@ Na **TecVale**, todo projeto tem as mesmas pastas: `01-Contrato`, `02-Fotos`, `0
 `2026-10-20-relatorio-cliente-silva.pdf`.
 
 🔑 **Ponto-chave:** um bom padrão de pastas e nomes vale mais que horas procurando arquivos.
+
+## Vídeos
+
+- ⏳ Vídeos pendentes: escolher de 1 a 4 vídeos de até 15 min e conferir localmente a duração (TASKS.md #12).
 
 ## Resumo
 
@@ -1448,6 +1473,10 @@ pessoa ler, comentar ou editar ao mesmo tempo. No Word ou no Writer, o arquivo f
 Ser criativo não é encher o slide de efeitos: é encontrar uma **forma original e clara** de
 comunicar. Um gráfico no lugar de uma tabela, uma foto feita por você, uma pergunta no primeiro
 slide ou um exemplo de alguém da sua cidade deixam a apresentação memorável.
+
+## Vídeos
+
+- ⏳ Vídeos pendentes: escolher de 1 a 4 vídeos de até 15 min e conferir localmente a duração (TASKS.md #12).
 
 ## Resumo
 
@@ -1594,6 +1623,10 @@ Guarde tudo numa pasta organizada: `Portfolio > 01-Documento`, `02-Slides`, `03-
 🔍 **Exemplo:** antes de comprar uma impressora, a **TecVale** comparou a página do fabricante, a
 avaliação de um site de tecnologia conhecido e a opinião de outra escola que usa o modelo.
 
+## Vídeos
+
+- ⏳ Vídeos pendentes: escolher de 1 a 4 vídeos de até 15 min e conferir localmente a duração (TASKS.md #12).
+
 ## Resumo
 
 - Planilhas organizam dados em **colunas** (letras), **linhas** (números) e **células** (como B3).
@@ -1727,6 +1760,10 @@ Todo algoritmo segue esse caminho:
 
 🔑 **Ponto-chave:** um algoritmo precisa ser **preciso** (sem dúvida em nenhum passo), **ordenado**
 e **terminar**.
+
+## Vídeos
+
+- ⏳ Vídeos pendentes: escolher de 1 a 4 vídeos de até 15 min e conferir localmente a duração (TASKS.md #12).
 
 ## Resumo
 
@@ -1882,6 +1919,10 @@ Programa que pergunta e responde:
 - pergunte "Qual é o seu nome?" e espere
 - diga (junte "Olá, " com resposta) por 2 segundos
 
+## Vídeos
+
+- ⏳ Vídeos pendentes: escolher de 1 a 4 vídeos de até 15 min e conferir localmente a duração (TASKS.md #12).
+
 ## Resumo
 
 - Algoritmos usam três estruturas: **sequência**, **decisão** (se... então... senão) e **repetição** (repita).
@@ -2018,6 +2059,10 @@ eletrônico corretamente e perde vidas quando erra; com 10 pontos, passa de fase
 
 **Rubrica do projeto:** funcionamento, criatividade, uso de condição e repetição e explicação oral.
 
+## Vídeos
+
+- ⏳ Vídeos pendentes: escolher de 1 a 4 vídeos de até 15 min e conferir localmente a duração (TASKS.md #12).
+
 ## Resumo
 
 - **Condições** (se... então... senão) usam sensores e operadores para aplicar as regras.
@@ -2119,6 +2164,10 @@ resultado, e citar ao menos um **exemplo real**.
 
 Aprovação: nota final **≥ 7,0**. A **autoavaliação** (10% da nota) é a sua reflexão sobre o que
 aprendeu e o que ainda quer melhorar.
+
+## Vídeos
+
+- ⏳ Vídeos pendentes: escolher de 1 a 4 vídeos de até 15 min e conferir localmente a duração (TASKS.md #12).
 
 ## Resumo
 

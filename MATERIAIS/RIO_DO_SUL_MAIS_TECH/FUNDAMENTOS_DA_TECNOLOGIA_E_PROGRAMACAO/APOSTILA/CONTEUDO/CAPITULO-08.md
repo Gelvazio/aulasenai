@@ -84,6 +84,10 @@ eletrônico corretamente e perde vidas quando erra; com 10 pontos, passa de fase
 
 **Rubrica do projeto:** funcionamento, criatividade, uso de condição e repetição e explicação oral.
 
+## Vídeos
+
+- ⏳ Vídeos pendentes: escolher de 1 a 4 vídeos de até 15 min e conferir localmente a duração (TASKS.md #12).
+
 ## Exercícios
 
 ### ITEM 1

@@ -50,6 +50,10 @@ resultado, e citar ao menos um **exemplo real**.
 Aprovação: nota final **≥ 7,0**. A **autoavaliação** (10% da nota) é a sua reflexão sobre o que
 aprendeu e o que ainda quer melhorar.
 
+## Vídeos
+
+- ⏳ Vídeos pendentes: escolher de 1 a 4 vídeos de até 15 min e conferir localmente a duração (TASKS.md #12).
+
 ## Exercícios
 
 ### ITEM 1

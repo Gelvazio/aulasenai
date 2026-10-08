@@ -4,11 +4,11 @@ Uso: C:\Python314\python.exe assets\gerador-apostilas\gerar_apostila.py <pasta d
 
 Fontes em <MATERIA>/APOSTILA/:
 - CONTEUDO/INTRODUCAO.md — introdução da apostila (Markdown livre, subtítulos "###");
-- CONTEUDO/CAPITULO-NN.md — um por aula, com "## Teoria", "## Vídeos" (opcional), "## Exercícios",
+- CONTEUDO/CAPITULO-NN.md — um por aula, com "## Teoria", "## Vídeos", "## Exercícios",
   "## Resumo" e "## Glossário";
 Dados da matéria (arquivo único): <MATERIA>/materia.json — identificação, capacidades,
-conhecimentos e o plano de aulas ("aulas", 1 aula de 4 h = 1 capítulo; a última aula pode ter
-menos horas quando a carga da UC não divide por 4, ex.: 33 h = 8 × 4 h + 1 h).
+conhecimentos e o plano de aulas ("aulas", 1 aula = 1 capítulo; padrão 4 h, ou a
+"carga_horaria" de cada aula).
 Saída: <MATERIA>/APOSTILA/APOSTILA-<NOME DA PASTA DA MATÉRIA>.html. O assets/js/apostila.js
 divide o conteúdo em páginas A4 no navegador.
 Regras: seção "REGRAS APOSTILAS" do CLAUDE.md; plano: docs/gerador-apostilas.md.
@@ -54,22 +54,24 @@ OPCAO_FORCAR = "--forcar"
 OPCAO_CONFERIR = "--conferir"
 CAMINHO_LOGO = "img/logo-sesi-senai.png"
 URL_MINIATURA = "https://i.ytimg.com/vi/{}/hqdefault.jpg"
-CAMPOS_DADOS = ("uc", "uc_curta", "curso", "docente")
-SECOES_OBRIGATORIAS = ("Teoria", "Exercícios", "Resumo", "Glossário")
-SECAO_VIDEOS = "Vídeos"
+CAMPOS_DADOS = ("uc", "uc_curta", "curso", "docente", "autor_apostila", "versao_apostila")
+SECOES_OBRIGATORIAS = ("Teoria", "Vídeos", "Exercícios", "Resumo", "Glossário")
 DURACAO_MAXIMA_SEGUNDOS = 15 * 60
+DURACAO_A_CONFERIR = "a conferir"
 LINHAS_RESPOSTA_PADRAO = 3
 QUANTIDADE_MINIMA_EXERCICIOS = 5
 EXTENSOES_MARKDOWN = ["tables", "sane_lists", "fenced_code"]
 RECUO = " " * 12
 
 PADRAO_TITULO = re.compile(r"^#\s+(.+?)\s*$", re.MULTILINE)
+PADRAO_CERCA_CODIGO = re.compile(r"^\s*```", re.MULTILINE)
 PADRAO_SECAO = re.compile(r"^##\s+(.+?)\s*$", re.MULTILINE)
 PADRAO_ITEM = re.compile(r"^###\s+ITEM\s+(\d+)\s*$", re.MULTILINE)
 PADRAO_CAMPO = r"^-?\s*\*\*{rotulo}:\*\*\s*(.+?)\s*$"
 PADRAO_VIDEO = re.compile(
-    r"^-\s*\[(?P<titulo>[^\]]+)\]\((?P<url>[^)]+)\)\s*[—-]\s*(?P<duracao>[\d:]+)"
-    r"(?:\s*[—-]\s*(?P<canal>.+?))?\s*$", re.MULTILINE)
+    r"^-\s*\[(?P<titulo>[^\]]+)\]\((?P<url>[^)]+)\)\s*[—-]\s*(?P<duracao>[\d:]+|a conferir)"
+    r"(?:[ \t]*[—-][ \t]*(?P<canal>[^\n]+?))?[ \t]*$", re.MULTILINE)
+PADRAO_VIDEOS_PENDENTES = re.compile(r"^-\s*⏳\s*(?P<texto>.+?)\s*$", re.MULTILINE)
 PADRAO_ID_YOUTUBE = re.compile(r"(?:v=|youtu\.be/|/embed/)([A-Za-z0-9_-]{11})")
 PADRAO_TERMO = re.compile(r"^-\s*\*\*(?P<termo>.+?):\*\*\s*(?P<definicao>.+?)\s*$", re.MULTILINE)
 PADRAO_H3_HTML = re.compile(r"<h3>(.*?)</h3>", re.DOTALL)
@@ -139,36 +141,18 @@ def validar_plano_capitulos(dados):
     Args:
         dados: Dados da matéria.
 
-    A soma das horas das aulas ("carga_horaria" de cada uma; padrão = horas_por_aula) tem de ser
-    igual à carga da UC; só a última aula pode ter menos horas (regra "1 aula a cada 4 h",
-    arredondando para cima).
-
     Raises:
         SystemExit: Se faltar o plano ou se a soma das aulas não fechar com a carga da UC.
     """
     previstos, horas = dados["capitulos_previstos"], dados["horas_por_capitulo"]
     if not previstos:
         erro(f'{ARQUIVO_MATERIA}: falta "{CAMPO_AULAS}" (uma entrada por aula de {horas} h)')
-    cargas = [horas_da_aula(item, horas) for item in dados["plano_capitulos"]]
-    if any(carga_aula != horas for carga_aula in cargas[:-1]) or cargas[-1] > horas:
-        erro(f"{ARQUIVO_MATERIA}: todas as aulas têm {horas} h; só a última pode ter menos")
     carga = dados["carga_horaria_uc"]
-    if carga and sum(cargas) != carga:
-        erro(f"{ARQUIVO_MATERIA}: {len(previstos)} aulas somam {sum(cargas)} h e não fecham "
+    soma = sum(md_apostila.horas_da_aula(dados, indice)
+               for indice in range(1, len(previstos) + 1))
+    if carga and soma != carga:
+        erro(f"{ARQUIVO_MATERIA}: a soma das {len(previstos)} aulas ({soma} h) não fecha "
              f"com a carga da UC ({carga} h)")
-
-
-def horas_da_aula(item, horas_padrao):
-    """Carga horária de uma aula do plano (padrão = horas_por_aula).
-
-    Args:
-        item: Entrada de "aulas" do materia.json.
-        horas_padrao: Horas por aula da matéria.
-
-    Returns:
-        Horas da aula.
-    """
-    return item.get("carga_horaria", horas_padrao)
 
 
 def separar_secoes(texto, rotulo):
@@ -224,12 +208,17 @@ def ler_videos(texto, rotulo):
         id_video = PADRAO_ID_YOUTUBE.search(achado["url"])
         if not id_video:
             erro(f"{rotulo_video}: o link não é de um vídeo do YouTube")
-        if duracao_em_segundos(achado["duracao"], rotulo_video) > DURACAO_MAXIMA_SEGUNDOS:
+        if achado["duracao"] == DURACAO_A_CONFERIR:
+            print(f"⚠️ {rotulo_video}: duração a conferir pelo professor")
+        elif duracao_em_segundos(achado["duracao"], rotulo_video) > DURACAO_MAXIMA_SEGUNDOS:
             erro(f"{rotulo_video}: passa de 15 minutos ({achado['duracao']})")
         videos.append({**achado.groupdict(), "id": id_video.group(1)})
-    if not videos:
+    if not videos and not PADRAO_VIDEOS_PENDENTES.search(texto):
         erro(f"{rotulo}: a seção Vídeos precisa de ao menos um vídeo no formato "
-             "'- [título](url) — mm:ss — canal'")
+             "'- [título](url) — mm:ss — canal' (ou da linha '- ⏳ Vídeos pendentes: ...', "
+             "enquanto a duração não puder ser conferida)")
+    if not videos:
+        print(f"⚠️ {rotulo}: vídeos pendentes (duração ainda não conferida no YouTube)")
     return videos
 
 
@@ -301,8 +290,34 @@ def ler_texto_capitulo(texto, numero, capacidades, rotulo):
         erro(f"{rotulo}: o Glossário precisa de termos '- **Termo:** definição'")
     return {"id": f"capitulo-{numero}", "numero": numero, "titulo": titulo.group(1),
             "codigos": codigos, "aula": ler_campo(cabecalho, "Aula"), "secoes": secoes,
-            "termos": termos, "videos": ler_videos(secoes[SECAO_VIDEOS], rotulo) if SECAO_VIDEOS in secoes else [],
+            "termos": termos, "videos": ler_videos(secoes["Vídeos"], rotulo),
             "exercicios": ler_exercicios(secoes["Exercícios"], capacidades, rotulo)}
+
+
+def trechos_de_codigo(texto):
+    """Localiza os blocos de código cercados por ``` no Markdown.
+
+    Args:
+        texto: Markdown completo da apostila.
+
+    Returns:
+        Lista de (início, fim) de cada bloco de código, em posições do texto.
+    """
+    cercas = [achado.start() for achado in PADRAO_CERCA_CODIGO.finditer(texto)]
+    return list(zip(cercas[::2], cercas[1::2]))
+
+
+def esta_em_codigo(posicao, blocos):
+    """Diz se a posição está dentro de um bloco de código (ex.: comentário "# ..." em YAML).
+
+    Args:
+        posicao: Posição no texto.
+        blocos: Blocos de código de trechos_de_codigo().
+
+    Returns:
+        True se a posição estiver dentro de algum bloco.
+    """
+    return any(inicio < posicao < fim for inicio, fim in blocos)
 
 
 def partes_markdown_completo(texto):
@@ -314,7 +329,9 @@ def partes_markdown_completo(texto):
     Returns:
         Lista de (título, texto da parte com o título), sem a linha "---" que separa as partes.
     """
-    inicios = [achado.start() for achado in PADRAO_TITULO.finditer(texto)] + [len(texto)]
+    blocos = trechos_de_codigo(texto)
+    inicios = [achado.start() for achado in PADRAO_TITULO.finditer(texto)
+               if not esta_em_codigo(achado.start(), blocos)] + [len(texto)]
     partes = []
     for inicio, fim in zip(inicios, inicios[1:]):
         trecho = PADRAO_SEPARADOR_FINAL.sub("", texto[inicio:fim].strip()).strip()
@@ -420,6 +437,18 @@ def html_texto_capacidades(codigos, capacidades):
                        f"{html.escape(capacidades[codigo])}" for codigo in codigos)
 
 
+def texto_duracao(duracao):
+    """Texto da duração do vídeo ("a conferir" vira aviso para o professor).
+
+    Args:
+        duracao: Duração "mm:ss" ou "a conferir".
+
+    Returns:
+        Texto exibido na caixa do vídeo.
+    """
+    return "duração a conferir pelo professor" if duracao == DURACAO_A_CONFERIR else duracao
+
+
 def html_video(video):
     """Monta a caixa de um vídeo: miniatura com link, título, duração, canal e endereço.
 
@@ -435,7 +464,7 @@ def html_video(video):
             f'<img class="caixa-video__miniatura" src="{URL_MINIATURA.format(video["id"])}" '
             f'alt="Miniatura do vídeo {titulo}"></a><div>'
             f'<p class="caixa-video__titulo">▶️ {titulo}</p>'
-            f'<p class="caixa-video__detalhe">⏱️ {video["duracao"]}{canal}</p>'
+            f'<p class="caixa-video__detalhe">⏱️ {texto_duracao(video["duracao"])}{canal}</p>'
             f'<p class="caixa-video__detalhe">🔗 <a href="{url}" target="_blank" '
             f'rel="noopener">{url}</a></p></div></div>')
 
@@ -504,9 +533,11 @@ def blocos_conteudo_capitulo(capitulo, capacidades):
         f'{html_texto_capacidades(capitulo["codigos"], capacidades)}</p></div>',
         f'<h3 id="{id_cap}-teoria">📖 Teoria e exemplos</h3>',
         *[linha for linha in teoria.split("\n") if linha.strip()],
-        *([f'<h3 id="{id_cap}-videos">🎬 Vídeos para assistir (até 15 min)</h3>']
-          if capitulo["videos"] else []),
+        f'<h3 id="{id_cap}-videos">🎬 Vídeos para assistir (até 15 min)</h3>',
         *[html_video(video) for video in capitulo["videos"]],
+        *[f'<p class="caixa-video__detalhe">⏳ {html.escape(pendente)}</p>'
+          for pendente in ([] if capitulo["videos"] else
+                           PADRAO_VIDEOS_PENDENTES.findall(secoes["Vídeos"]))],
         f'<h3 id="{id_cap}-resumo">📌 Resumo</h3>',
         resumo.replace("\n", ""),
     ]
@@ -587,9 +618,8 @@ def html_sumario(capitulos, subtitulos_introducao):
         linhas.append(item_sumario(id_cap, capitulo["titulo"], 1))
         linhas.append(item_sumario(f"{id_cap}-teoria", "Teoria e exemplos", 2))
         linhas += [item_sumario(alvo, texto, 3) for alvo, texto in capitulo["subtitulos"]]
-        partes = (("videos", "Vídeos"),) if capitulo["videos"] else ()
         linhas += [item_sumario(f"{id_cap}-{parte}", rotulo, 2) for parte, rotulo in
-                   partes + (("resumo", "Resumo"), ("exercicios", "Exercícios"))]
+                   (("videos", "Vídeos"), ("resumo", "Resumo"), ("exercicios", "Exercícios"))]
     return "\n".join(RECUO + linha for linha in linhas)
 
 
@@ -702,18 +732,19 @@ def montar_tags_menu_apostila(pasta_materia, pasta_saida):
             f'\n    <script src="{script}" defer></script>')
 
 
-def montar_pagina(pasta_materia, dados, texto_introducao, capitulos):
+def montar_pagina(pasta_materia, dados, conteudo, data_hora):
     """Preenche o template da apostila.
 
     Args:
         pasta_materia: Pasta da matéria.
         dados: Dados da matéria.
-        texto_introducao: Markdown da introdução.
-        capitulos: Capítulos lidos.
+        conteudo: Tupla (Markdown da introdução, capítulos lidos).
+        data_hora: Data e hora da geração, já formatadas.
 
     Returns:
         HTML completo da apostila.
     """
+    texto_introducao, capitulos = conteudo
     pasta_saida = pasta_materia / PASTA_APOSTILA
     assets = caminho_relativo(ASSETS, pasta_saida)
     capitulos_html = "\n\n".join(html_capitulo(capitulo, dados["todas"])
@@ -726,6 +757,7 @@ def montar_pagina(pasta_materia, dados, texto_introducao, capitulos):
         "SUMARIO": html_sumario(capitulos, subtitulos_introducao),
         "INTRODUCAO": introducao, "CAPACIDADES": html_capacidades(dados, capitulos),
         "GLOSSARIO": html_glossario(capitulos), "CAPITULOS": capitulos_html,
+        "GERADO_EM": html.escape(data_hora),
     }
     valores.update({campo.upper(): html.escape(dados[campo]) for campo in CAMPOS_DADOS})
     pagina = TEMPLATE
@@ -758,6 +790,20 @@ def conferir_com_ementa(pasta_materia):
     return conferir_ementa.conferir_materia(pasta_materia, caminho_markdown_completo(pasta_materia))
 
 
+def gravar_identificacao_markdown(pasta_materia, dados, data_hora):
+    """Atualiza autor, versão e data e hora no Markdown completo, igual ao HTML gerado.
+
+    Args:
+        pasta_materia: Pasta da matéria.
+        dados: Dados da matéria.
+        data_hora: Data e hora da geração, já formatadas.
+    """
+    caminho = caminho_markdown_completo(pasta_materia)
+    texto = caminho.read_text(encoding="utf-8")
+    caminho.write_text(md_apostila.atualizar_identificacao(texto, dados, data_hora),
+                       encoding="utf-8")
+
+
 def gerar_apostila(pasta_materia):
     """Gera a apostila HTML a partir do Markdown completo, só com a conferência em 100%.
 
@@ -775,8 +821,10 @@ def gerar_apostila(pasta_materia):
              "antes de gerar a apostila (regra CONFERÊNCIA OBRIGATÓRIA)")
     dados = ler_dados_materia(pasta_materia)
     introducao, capitulos = ler_markdown_completo(pasta_materia, dados)
+    data_hora = md_apostila.agora_formatado()
+    gravar_identificacao_markdown(pasta_materia, dados, data_hora)
     saida = pasta_materia / PASTA_APOSTILA / f"APOSTILA-{pasta_materia.name}.html"
-    saida.write_text(montar_pagina(pasta_materia, dados, introducao, capitulos),
+    saida.write_text(montar_pagina(pasta_materia, dados, (introducao, capitulos), data_hora),
                      encoding="utf-8")
     for capitulo in capitulos:
         print(f"✅ {capitulo['titulo']}: {len(capitulo['videos'])} vídeo(s), "
@@ -825,7 +873,7 @@ def conferir_cobertura_ementa(dados, capitulos):
     Returns:
         Quantidade de avisos emitidos.
     """
-    plano_por_numero = {item["numero"]: item for item in dados["plano_capitulos"]}
+    plano_por_numero = {f"{int(item['numero']):02d}": item for item in dados["plano_capitulos"]}
     glossario = {termo["termo"]: termo["definicao"]
                  for termo in dados["materia"].get("glossario_ementa", [])}
     total = 0
@@ -880,11 +928,6 @@ def gerar_markdown_completo(pasta_materia, forcar):
     dados = ler_dados_materia(pasta_materia)
     validar_plano_capitulos(dados)
     capitulos = ler_fontes_capitulos(pasta_materia, dados, obrigatorio=False)
-    plano_por_numero = {item["numero"]: item for item in dados["plano_capitulos"]}
-    for capitulo in capitulos:
-        if capitulo["numero"] in plano_por_numero:
-            capitulo["carga_horaria"] = horas_da_aula(plano_por_numero[capitulo["numero"]],
-                                                      dados["horas_por_capitulo"])
     saida = caminho_markdown_completo(pasta_materia)
     if forcar or not saida.is_file():
         texto = md_apostila.montar_markdown_completo(
@@ -894,7 +937,7 @@ def gerar_markdown_completo(pasta_materia, forcar):
         texto = saida.read_text(encoding="utf-8")
         presentes = md_apostila.capitulos_no_markdown(texto)
         novos = [capitulo for capitulo in capitulos if capitulo["numero"] not in presentes]
-        texto = md_apostila.acrescentar_capitulos(texto, novos, dados["horas_por_capitulo"])
+        texto = md_apostila.acrescentar_capitulos(texto, novos, dados)
         print(f"📝 Markdown existente preservado; capítulos acrescentados: {len(novos)}")
     saida.write_text(texto, encoding="utf-8")
     return saida

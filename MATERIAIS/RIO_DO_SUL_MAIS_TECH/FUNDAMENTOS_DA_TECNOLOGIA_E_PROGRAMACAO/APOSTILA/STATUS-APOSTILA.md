@@ -18,28 +18,24 @@ a coluna "observacao" de cada aula no `materia.json` diz como.
 | Aulas da ementa em `CONTEUDO/` (9 aulas) | ✅ Concluído em 2026-10-07 |
 | Introdução (`CONTEUDO/INTRODUCAO.md`) | 👀 Aguardando validação |
 | Markdown completo (9 capítulos) | 👀 Aguardando validação |
-| Conferência Markdown × ementa da matéria (`--conferir`) | ✅ 100% (174/174 itens) em 2026-10-07 |
-| HTML `APOSTILA-FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO.html` (9 capítulos) | ✅ Gerado em 2026-10-07 |
+| Conferência Markdown × ementa da matéria (`--conferir`) | ✅ 100% (128/128 itens, gerador da `main`) em 2026-10-08 |
+| HTML `APOSTILA-FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO.html` (9 capítulos, versão 1.0, autor Gelvazio Camargo) | ✅ Gerado em 2026-10-08 |
 
 | Cap. | Tema | Horas | Teoria | Vídeos | Resumo | Exercícios ITEM | Glossário | Status |
 |---|---|---|---|---|---|---|---|---|
-| 01 | Tecnologia, Dispositivos Digitais e Cidadania Digital | 4 | ✅ | ⛔ sem vídeos | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
-| 02 | Segurança Online, Fake News e Hardware × Software | 4 | ✅ | ⛔ sem vídeos | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
-| 03 | Sistemas Operacionais, Arquivos e Pastas | 4 | ✅ | ⛔ sem vídeos | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
-| 04 | Atalhos de Teclado, Editor de Texto e Apresentações | 4 | ✅ | ⛔ sem vídeos | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
-| 05 | Planilhas Simples e Boas Práticas de Pesquisa | 4 | ✅ | ⛔ sem vídeos | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
-| 06 | Internet Segura e Pensamento Computacional | 4 | ✅ | ⛔ sem vídeos | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
-| 07 | Algoritmos, Fluxogramas e Primeiros Passos no Scratch | 4 | ✅ | ⛔ sem vídeos | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
-| 08 | Scratch: Condições, Repetições, Variáveis e Projeto Autoral | 4 | ✅ | ⛔ sem vídeos | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
-| 09 | Avaliação Final: Prova Conceitual e Apresentação do Projeto | 1 | ✅ | ⛔ sem vídeos | ✅ | ✅ 6 | ✅ 6 | 👀 Aguardando validação |
+| 01 | Tecnologia, Dispositivos Digitais e Cidadania Digital | 4 | ✅ | ⏳ 4 a conferir (#12) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 02 | Segurança Online, Fake News e Hardware × Software | 4 | ✅ | ⏳ pendentes (#12) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 03 | Sistemas Operacionais, Arquivos e Pastas | 4 | ✅ | ⏳ pendentes (#12) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 04 | Atalhos de Teclado, Editor de Texto e Apresentações | 4 | ✅ | ⏳ pendentes (#12) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 05 | Planilhas Simples e Boas Práticas de Pesquisa | 4 | ✅ | ⏳ pendentes (#12) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 06 | Internet Segura e Pensamento Computacional | 4 | ✅ | ⏳ pendentes (#12) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 07 | Algoritmos, Fluxogramas e Primeiros Passos no Scratch | 4 | ✅ | ⏳ pendentes (#12) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 08 | Scratch: Condições, Repetições, Variáveis e Projeto Autoral | 4 | ✅ | ⏳ pendentes (#12) | ✅ | ✅ 6 | ✅ 10 | 👀 Aguardando validação |
+| 09 | Avaliação Final: Prova Conceitual e Apresentação do Projeto | 1 | ✅ | ⏳ pendentes (#12) | ✅ | ✅ 6 | ✅ 6 | 👀 Aguardando validação |
 
 ## Vídeos
 
-Por decisão do usuário (2026-10-07), esta apostila **não tem vídeos do YouTube**: a rede do
-ambiente de nuvem bloqueava o `www.youtube.com` e não era possível conferir a duração. O gerador
-passou a aceitar capítulo sem a seção `## Vídeos`. Para acrescentar vídeos depois, incluir
-`## Vídeos` no capítulo (formato `- [título](url) — mm:ss — canal`, até 15:00) e gerar de novo
-com `--markdown --forcar`.
-
-⏳ **Conferir localmente a duração dos vídeos posteriormente:** tarefa #11 do `TASKS.md` (a nota
-também está no topo do Markdown completo).
+O ambiente de nuvem bloqueava `www.youtube.com`, então a duração não pôde ser lida nos metadados.
+Seguindo o padrão da apostila de Reforço de Linguagens: o capítulo 01 tem 4 vídeos com duração
+"a conferir" e a nota "⏳ CONFERIR LOCALMENTE"; os capítulos 02 a 09 têm a linha "⏳ Vídeos
+pendentes". **Conferir localmente a duração dos vídeos posteriormente: tarefa #12 do `TASKS.md`.**

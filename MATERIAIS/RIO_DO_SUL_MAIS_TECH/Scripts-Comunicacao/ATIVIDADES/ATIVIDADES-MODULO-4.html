@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4: Leitura Crítica</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #667eea; --secondary: #764ba2; --gold: #FFD700; --text: #2d3748; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: var(--text); line-height: 1.6; min-height: 100vh; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
+        header { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 40px 20px; text-align: center; border-bottom: 4px solid var(--gold); }
+        header h1 { font-size: 40px; margin-bottom: 10px; }
+        header p { font-size: 16px; opacity: 0.95; }
+        .nav-tabs { display: flex; flex-wrap: wrap; gap: 10px; padding: 20px; background: #f9fafb; border-bottom: 2px solid #e2e8f0; justify-content: center; }
+        .nav-tabs button { padding: 10px 20px; border: 2px solid var(--primary); background: white; color: var(--primary); border-radius: 20px; cursor: pointer; font-weight: 600; transition: all 0.3s; }
+        .nav-tabs button.active { background: var(--primary); color: white; }
+        .content-section { display: none; padding: 40px; }
+        .content-section.active { display: block; }
+        .aula-card { background: #f9fafb; border-left: 5px solid var(--primary); padding: 20px; margin-bottom: 20px; border-radius: 8px; }
+        .aula-badge { background: var(--primary); color: white; padding: 8px 12px; border-radius: 6px; font-weight: 700; font-size: 12px; display: inline-block; margin-bottom: 10px; }
+        .aula-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+        .aula-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+        .tag { background: #e6f2ff; color: var(--primary); padding: 4px 10px; border-radius: 12px; font-size: 12px; }
+        .content-box { padding: 15px; background: white; border-radius: 6px; margin-bottom: 15px; border-left: 3px solid var(--gold); }
+        .content-label { font-weight: 700; color: var(--primary); font-size: 13px; margin-bottom: 8px; }
+        .content-text { font-size: 14px; line-height: 1.6; }
+        .steps { list-style: none; padding: 0; margin: 10px 0; }
+        .steps li { padding: 8px 0; padding-left: 24px; position: relative; font-size: 13px; }
+        .steps li:before { content: "→"; position: absolute; left: 0; font-weight: 700; color: var(--primary); }
+        footer { background: #2d3748; color: white; padding: 30px 20px; text-align: center; }
+        @media (max-width: 768px) { .nav-tabs { gap: 5px; } .nav-tabs button { padding: 8px 12px; font-size: 12px; } header h1 { font-size: 28px; } .content-section { padding: 20px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📖 Módulo 4: Leitura Crítica e Compreensão</h1>
+            <p>Seleção de Informação, Fact-Check, Análise — Aulas 12 a 14</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="aula12">Aula 12</button>
+            <button class="tab-btn" data-tab="aula13">Aula 13</button>
+            <button class="tab-btn" data-tab="aula14">Aula 14</button>
+        </div>
+
+        <!-- AULA 12 -->
+        <div id="aula12" class="content-section active">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 12</span>
+                <div class="aula-title">Leitura Estratégica: Skim e Scan</div>
+                <div class="aula-meta">
+                    <span class="tag">60 min</span>
+                    <span class="tag">Duplas</span>
+                    <span class="tag">Leitura</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Aplicar técnicas de leitura rápida (skim) e busca de informação específica (scan) para poupar tempo e localizar dados essenciais em texto longo.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um estudante enfrenta manual técnico de 15 páginas mas precisa encontrar apenas a seção de "Instruções de Uso". Ler tudo é ineficiente; skim (pré-leitura rápida) e scan (busca direcionada) economizam tempo.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Você receberá 2 textos (um de 5 min, outro de 2 min). Use skim no primeiro (pré-leitura) para identificar estrutura; depois use scan no segundo para encontrar 3 informações específicas.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (5 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Introdução (10 min):</strong> Professora explica skim (título, subtítulos, primeiro parágrafo, imagens) e scan (busca por palavra-chave)</li>
+                        <li><strong>Prática de skim (10 min):</strong> Estudantes folheiam artigo; listam títulos e palavras-chave encontradas</li>
+                        <li><strong>Criação de pergunta (5 min):</strong> Dupla formula 3 perguntas específicas que gostariam responder no texto</li>
+                        <li><strong>Scan (10 min):</strong> Procuram especificamente as 3 respostas usando palavras-chave</li>
+                        <li><strong>Reflexão (25 min):</strong> Quanto tempo economizaram vs. leitura completa? Qual técnica é melhor para cada tipo de texto?</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Estrutura do texto identificada via skim<br>
+                        • Palavras-chave listadas corretamente<br>
+                        • Perguntas específicas e relevantes<br>
+                        • 3 informações localizadas via scan
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AULA 13 -->
+        <div id="aula13" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 13</span>
+                <div class="aula-title">Fact-Check e Verificação de Fonte</div>
+                <div class="aula-meta">
+                    <span class="tag">75 min</span>
+                    <span class="tag">Trios</span>
+                    <span class="tag">Crítica</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Avaliar confiabilidade de fonte, verificar fatos usando busca independente, e identificar possível viés ou desinformação.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Em redes sociais, um post viral afirma: "Vacina X causa autismo comprovado". Parece autoridade com muitos likes. Mas será verdade? Como verificar sem cair em armadilha?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Receba 3 afirmações (uma verdadeira, uma falsa, uma ambígua). Para cada uma: (1) identifique a fonte original; (2) verifique independentemente; (3) classifique como verdadeira, falsa ou incompleta.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (6 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Ferramentas (10 min):</strong> Professora mostra sites de fact-check (Snopes, AFP, Mídia Ninja), e como buscar informação em fontes confiáveis</li>
+                        <li><strong>Análise de afirmação 1 (15 min):</strong> Trio recebe primeira afirmação; identifica quem a fez; busca informação independente; classifica</li>
+                        <li><strong>Análise de afirmação 2 (15 min):</strong> Processa segunda afirmação; compara com fontes confiáveis</li>
+                        <li><strong>Análise de afirmação 3 (15 min):</strong> Terceira afirmação; identifica partes verdadeiras vs. enganosas</li>
+                        <li><strong>Apresentação de conclusões (15 min):</strong> Cada trio apresenta achados; discute diferenças de interpretação</li>
+                        <li><strong>Reflex ão final (5 min):</strong> Como você evita cair em fake news no futuro?</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Fonte original identificada<br>
+                        • Busca independente realizada<br>
+                        • Classificação justificada com evidência<br>
+                        • Distingue fato de opinião
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AULA 14 -->
+        <div id="aula14" class="content-section">
+            <div class="aula-card">
+                <span class="aula-badge">AULA 14</span>
+                <div class="aula-title">Análise de Viés e Perspectiva</div>
+                <div class="aula-meta">
+                    <span class="tag">75 min</span>
+                    <span class="tag">Grupos</span>
+                    <span class="tag">Crítica Textual</span>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">Reconhecer perspectiva do autor, possível viés ideológico, e comparar cobertura do mesmo assunto por múltiplas fontes.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um evento (ex: protesto, decisão de política pública) é coberto por 3 veículos diferentes. Um de esquerda, um de direita, um "neutro". Como a mesma notícia muda de perspectiva?</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Receba 3 artigos sobre o mesmo assunto. Identifique: (1) fatos compartilhados; (2) interpretações diferentes; (3) informações ausentes em cada versão. Depois redija resumo "neutro" unificando as 3 perspectivas.</div>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">📝 ETAPAS (6 passos)</div>
+                    <ul class="steps">
+                        <li><strong>Introdução (10 min):</strong> Professora explica viés (escolha de palavras, ênfase, omissão) e como os media influenciam percepção</li>
+                        <li><strong>Leitura individual (15 min):</strong> Cada grupo recebe um dos 3 artigos; lê e marca: fatos, interpretações, opinião</li>
+                        <li><strong>Comparação em grupo (20 min):</strong> Os 3 grupos juntam-se; compartilham suas análises; identificam concordâncias e divergências</li>
+                        <li><strong>Matriz de análise (15 min):</strong> Preenchem tabela: Fato Compartilhado | Perspectiva A | Perspectiva B | Perspectiva C</li>
+                        <li><strong>Redação neutra (10 min):</strong> Grupo produz parágrafo que resume a notícia sem adotar nenhuma das perspectivas</li>
+                        <li><strong>Discussão (5 min):</strong> É possível relatar sem viés? Qual papel cada leitor tem?</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <div class="content-label">✅ CRITÉRIOS DE AVALIAÇÃO</div>
+                    <div class="content-text">
+                        • Fatos compartilhados identificados<br>
+                        • Vieses reconhecidos e descritos<br>
+                        • Informações ausentes por veículo<br>
+                        • Resumo neutro equilibra as perspectivas
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Módulo 4 — Leitura Crítica e Compreensão (Aulas 12-14)</strong></p>
+        <p>Rio do Sul Mais Tech — SENAI</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+                document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.getElementById(tabName).classList.add('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

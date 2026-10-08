@@ -101,6 +101,10 @@ tem onde rodar.
 pequena ou se o armazenamento está quase cheio. No **software**, veja se há programas demais
 abertos, atualizações pendentes ou algum vírus.
 
+## Vídeos
+
+- ⏳ Vídeos pendentes: escolher de 1 a 4 vídeos de até 15 min e conferir localmente a duração (TASKS.md #12).
+
 ## Exercícios
 
 ### ITEM 1

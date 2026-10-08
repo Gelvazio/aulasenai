@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1: Fundamentos da Comunicação</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .header-meta {
+            margin-top: 15px;
+            font-size: 0.95em;
+            opacity: 0.85;
+        }
+
+        .nav-voltar {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-voltar:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Content */
+        .content {
+            padding: 40px;
+        }
+
+        .modulo-header {
+            background: linear-gradient(135deg, #667eea22 0%, #764ba222 100%);
+            border-left: 5px solid #667eea;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        .modulo-header h2 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+
+        /* Aula Card */
+        .aula-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .aula-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        .aula-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .aula-icon {
+            font-size: 2.5em;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+        }
+
+        .aula-title h3 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .aula-capacity {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .aula-body {
+            padding: 25px;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            color: #667eea;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        .section-title i {
+            color: #764ba2;
+        }
+
+        .badge-container {
+            margin: 15px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .badge-time {
+            background: #667eea22;
+            color: #667eea;
+        }
+
+        .badge-group {
+            background: #764ba222;
+            color: #764ba2;
+        }
+
+        .badge-category {
+            background: #4facfe22;
+            color: #4facfe;
+        }
+
+        .context-box, .command-box, .criteria-box {
+            background: #f9f9f9;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .command-box {
+            border-left-color: #764ba2;
+            background: #f5f3ff;
+        }
+
+        .criteria-box {
+            border-left-color: #43e97b;
+            background: #f0fff4;
+        }
+
+        .steps-list {
+            counter-reset: step-counter;
+            list-style: none;
+        }
+
+        .steps-list li {
+            counter-increment: step-counter;
+            margin-bottom: 20px;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .steps-list li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .step-time {
+            color: #888;
+            font-size: 0.9em;
+            margin-left: 5px;
+        }
+
+        .media-gallery {
+            margin: 25px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .media-item {
+            background: #f5f5f5;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .media-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .media-caption {
+            padding: 12px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .video-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.95em;
+            margin: 10px 0;
+            transition: background 0.3s ease;
+        }
+
+        .video-link:hover {
+            background: #764ba2;
+        }
+
+        .entrega-checklist {
+            background: #f0fff4;
+            border: 1px solid #c6f6d5;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .entrega-checklist li {
+            margin-bottom: 8px;
+            list-style: none;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .entrega-checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #43e97b;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #f5f5f5;
+            border-top: 1px solid #e0e0e0;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .aula-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1><i class="fas fa-book"></i> Módulo 1: Fundamentos da Comunicação</h1>
+            <p>Aulas 01–03 | 4 horas | Compreenda os elementos básicos de toda comunicação efetiva</p>
+            <div class="header-meta">
+                <p><strong>Programa:</strong> Rio do Sul Mais Tech — SENAI | <strong>Público:</strong> 8º–9º anos | <strong>Carga Horária:</strong> 4h</p>
+            </div>
+            <a href="index.html" class="nav-voltar"><i class="fas fa-arrow-left"></i> Voltar ao Menu</a>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Aula 01 -->
+            <div class="aula-card">
+                <div class="aula-header">
+                    <div class="aula-icon"><i class="fas fa-map"></i></div>
+                    <div class="aula-title">
+                        <h3>Aula 01: Quem Comunica o Quê?</h3>
+                        <div class="aula-capacity"><strong>Capacidade:</strong> Reconhecer emissor, receptor, mensagem, canal e feedback</div>
+                    </div>
+                </div>
+                <div class="aula-body">
+                    <div class="badge-container">
+                        <span class="badge badge-time"><i class="fas fa-clock"></i> 60 min</span>
+                        <span class="badge badge-group"><i class="fas fa-users"></i> Duplas</span>
+                        <span class="badge badge-category"><i class="fas fa-tag"></i> Comunicação Básica</span>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-lightbulb"></i> Contexto</div>
+                    <div class="context-box">
+                        <p>Uma equipe de feira escolar recebe mensagem no grupo: <strong>"Amanhã tragam aquilo e apareçam cedo lá. Avisem o pessoal."</strong> Muitos estudantes não sabem o que levar, onde chegar ou a que horas. Falta clareza!</p>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-tasks"></i> Comando</div>
+                    <div class="command-box">
+                        <p>Identifique as informações ausentes e produza um aviso compreensível considerando:</p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Feira na sexta-feira, às 14h, na biblioteca</li>
+                            <li>Chegada: 13h30</li>
+                            <li>Material: cartazes</li>
+                            <li>Confirmação de recebimento obrigatória</li>
+                        </ul>
+                    </div>
+
+                    <div class="media-gallery">
+                        <div class="media-item">
+                            <img src="https://images.pexels.com/photos/3761622/pexels-photo-3761622.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Comunicação clara">
+                            <div class="media-caption">Mensagens Claras</div>
+                        </div>
+                        <div class="media-item">
+                            <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Equipe comunicando">
+                            <div class="media-caption">Comunicação em Equipe</div>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-list-ol"></i> Passos da Atividade</div>
+                    <ol class="steps-list">
+                        <li>
+                            <div class="step-title">Diagnóstico Individual <span class="step-time">(10 min)</span></div>
+                            <p>Responda: Quem envia uma mensagem? Quem a recebe? O que é um canal? Uma mensagem pode chegar e não ser compreendida? Como perceber se o outro entendeu? <strong>Dê um exemplo em cada resposta.</strong></p>
+                        </li>
+                        <li>
+                            <div class="step-title">Leitura e Análise <span class="step-time">(10 min)</span></div>
+                            <p>Sublinhe expressões vagas no aviso original. Liste <strong>pelo menos 4 dúvidas</strong> que elas provocariam em um receptor.</p>
+                        </li>
+                        <li>
+                            <div class="step-title">Mapa da Comunicação <span class="step-time">(15 min)</span></div>
+                            <p>Desenhe: <strong>Emissor → Mensagem/Canal → Receptor → Feedback</strong>. Use a equipe como emissora e integrantes como receptores. <strong>Indique uma possível barreira</strong> à compreensão.</p>
+                        </li>
+                        <li>
+                            <div class="step-title">Reescrita do Aviso <span class="step-time">(15 min)</span></div>
+                            <p>Produza o aviso com <strong>até 70 palavras</strong> e uma solicitação de confirmação clara. Não acrescente informações que contrariem os dados fornecidos.</p>
+                        </li>
+                        <li>
+                            <div class="step-title">Troca e Fechamento <span class="step-time">(10 min)</span></div>
+                            <p>Outra dupla responde: <em>onde</em> deve comparecer? <em>quando</em>? <em>com o quê</em>? O autor ajusta o que não ficou claro.</p>
+                        </li>
+                    </ol>
+
+                    <div class="section-title"><i class="fas fa-video"></i> Vídeos de Referência</div>
+                    <a href="https://www.youtube.com/watch?v=vVzJWt1nZVs" target="_blank" class="video-link"><i class="fas fa-play-circle"></i> Elementos da Comunicação (TED-Ed)</a>
+                    <a href="https://www.youtube.com/watch?v=oQpSJ5kDiYo" target="_blank" class="video-link"><i class="fas fa-play-circle"></i> Feedback Efetivo</a>
+
+                    <div class="section-title"><i class="fas fa-check-circle"></i> Entrega e Critérios</div>
+                    <div class="entrega-checklist">
+                        <h4>Entrega:</h4>
+                        <ul>
+                            <li>Diagnóstico individual</li>
+                            <li>Mapa da dupla com barreira identificada</li>
+                            <li>Aviso reescrito</li>
+                        </ul>
+                    </div>
+
+                    <div class="criteria-box">
+                        <h4><i class="fas fa-bullseye"></i> Critérios:</h4>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Identifica todos os elementos da comunicação</li>
+                            <li>Inclui local, horários e materiais no aviso</li>
+                            <li>Pede confirmação explícita de recebimento</li>
+                            <li>Usa linguagem respeitosa</li>
+                        </ul>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-pen"></i> Reflexão Final</div>
+                    <p><em>Qual informação você passou a incluir para evitar uma dúvida?</em></p>
+                </div>
+            </div>
+
+            <!-- Aula 02 -->
+            <div class="aula-card">
+                <div class="aula-header">
+                    <div class="aula-icon"><i class="fas fa-search-minus"></i></div>
+                    <div class="aula-title">
+                        <h3>Aula 02: A Mensagem Muda no Caminho</h3>
+                        <div class="aula-capacity"><strong>Capacidade:</strong> Analisar processos comunicativos e localizar ruídos</div>
+                    </div>
+                </div>
+                <div class="aula-body">
+                    <div class="badge-container">
+                        <span class="badge badge-time"><i class="fas fa-clock"></i> 90 min</span>
+                        <span class="badge badge-group"><i class="fas fa-users"></i> Grupos de 4</span>
+                        <span class="badge badge-category"><i class="fas fa-tag"></i> Análise de Falhas</span>
+                    </div>
+
+                    <div class="context-box">
+                        <p>Uma oficina precisa de <strong>12 caixas pequenas</strong> até quinta-feira, às 10h. O responsável diz por áudio: <em>"Preciso de uma dúzia das pequenas para quinta de manhã."</em> Um colega entende <strong>"duas caixas"</strong>. Outro não consegue ouvir o áudio no transporte.</p>
+                    </div>
+
+                    <div class="media-gallery">
+                        <div class="media-item">
+                            <img src="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Comunicação falha">
+                            <div class="media-caption">Barreiras na Comunicação</div>
+                        </div>
+                        <div class="media-item">
+                            <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Resolução de conflitos">
+                            <div class="media-caption">Soluções Colaborativas</div>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-list-ol"></i> Passos da Atividade</div>
+                    <ol class="steps-list">
+                        <li>
+                            <div class="step-title">Retomada <span class="step-time">(10 min)</span></div>
+                            <p>Recupere o mapa da aula 01 e situe os elementos (emissor, receptor, canal, ruído, feedback) neste novo caso.</p>
+                        </li>
+                        <li>
+                            <div class="step-title">Análise de Falhas <span class="step-time">(20 min)</span></div>
+                            <p>Preencha tabela: <strong>Informação Original | Interpretação Recebida | Causa Provável | Consequência | Solução</strong>. Registre <strong>pelo menos 3 falhas</strong>, distinguindo dificuldade de acesso (áudio inaudível) de ambiguidade (palavra mal interpretada).</p>
+                        </li>
+                        <li>
+                            <div class="step-title">Comparação de Registros <span class="step-time">(15 min)</span></div>
+                            <p>Transforme <strong>"Manda isso logo!"</strong> em pedido respeitoso para colega E para responsável. Discuta: por que informalidade não significa falta de respeito?</p>
+                        </li>
+                        <li>
+                            <div class="step-title">Produção de Mensagens <span class="step-time">(20 min)</span></div>
+                            <p>Escreva 2 solicitações (para colega e para almoxarifado), indicando quantidade, tamanho e prazo exato. Inclua pergunta de confirmação.</p>
+                        </li>
+                        <li>
+                            <div class="step-title">Simulação de Recebimento <span class="step-time">(15 min)</span></div>
+                            <p>Troque mensagens entre grupos. O receptor registra o que entendeu <strong>sem consultar o autor</strong>. Depois, comparem.</p>
+                        </li>
+                        <li>
+                            <div class="step-title">Síntese <span class="step-time">(10 min)</span></div>
+                            <p>Cada estudante explica uma mudança que faria e seu efeito sobre a compreensão.</p>
+                        </li>
+                    </ol>
+
+                    <a href="https://www.youtube.com/watch?v=iQHpYaZE7_E" target="_blank" class="video-link"><i class="fas fa-play-circle"></i> Barreiras na Comunicação</a>
+
+                    <div class="entrega-checklist">
+                        <h4>Entrega:</h4>
+                        <ul>
+                            <li>Tabela de falhas identificadas</li>
+                            <li>Duas versões da solicitação</li>
+                            <li>Síntese individual de mudanças</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aula 03 -->
+            <div class="aula-card">
+                <div class="aula-header">
+                    <div class="aula-icon"><i class="fas fa-comments"></i></div>
+                    <div class="aula-title">
+                        <h3>Aula 03: Feedback que Ajuda a Melhorar</h3>
+                        <div class="aula-capacity"><strong>Capacidade:</strong> Dar e receber feedback específico e colaborativo</div>
+                    </div>
+                </div>
+                <div class="aula-body">
+                    <div class="badge-container">
+                        <span class="badge badge-time"><i class="fas fa-clock"></i> 90 min</span>
+                        <span class="badge badge-group"><i class="fas fa-users"></i> Trios</span>
+                        <span class="badge badge-category"><i class="fas fa-tag"></i> Devolutiva Construtiva</span>
+                    </div>
+
+                    <div class="context-box">
+                        <p>Um cartaz de uma equipe diz: <strong>"Campanha de doação — participe!"</strong> Mas não informa data, local ou itens aceitos. Colegas comentam: <em>"Está horrível"</em>, <em>"Está perfeito"</em>, <em>"Ninguém vai entender"</em>. <strong>Nenhum comentário explica como melhorar!</strong></p>
+                    </div>
+
+                    <div class="media-gallery">
+                        <div class="media-item">
+                            <img src="https://images.pexels.com/photos/3727501/pexels-photo-3727501.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Feedback positivo">
+                            <div class="media-caption">Feedback Construtivo</div>
+                        </div>
+                        <div class="media-item">
+                            <img src="https://images.pexels.com/photos/3927401/pexels-photo-3927401.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Trabalho em equipe">
+                            <div class="media-caption">Colaboração Respeitosa</div>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-list-ol"></i> Passos da Atividade</div>
+                    <ol class="steps-list">
+                        <li>
+                            <div class="step-title">Discussão <span class="step-time">(10 min)</span></div>
+                            <p>Separe crítica ao trabalho de ataque à pessoa. Exemplo: <strong>"Crítica útil:"</strong> <em>Não encontrei o local.</em> | <strong>"Ataque:"</strong> <em>Você é desorganizado.</em></p>
+                        </li>
+                        <li>
+                            <div class="step-title">Classificação de Comentários <span class="step-time">(15 min)</span></div>
+                            <p>Analise os 3 comentários: qual evidência apresentam? Que mudança permitem realizar? (Dica: "está horrível" não é evidência.)</p>
+                        </li>
+                        <li>
+                            <div class="step-title">Produção de Cartaz <span class="step-time">(20 min)</span></div>
+                            <p>Crie o cartaz e registre uma dúvida sobre a própria produção.</p>
+                        </li>
+                        <li>
+                            <div class="step-title">Rodada de Feedback <span class="step-time">(20 min)</span></div>
+                            <p>Modelo de feedback útil: <em>"Não encontrei o horário. Isso pode dificultar a entrega. Sugiro incluir 'durante os intervalos'."</em> O autor repete o que entendeu e faz uma pergunta.</p>
+                        </li>
+                        <li>
+                            <div class="step-title">Revisão <span class="step-time">(15 min)</span></div>
+                            <p>Ajuste o cartaz. Anote quais sugestões foram adotadas e por quê.</p>
+                        </li>
+                        <li>
+                            <div class="step-title">Autoavaliação <span class="step-time">(10 min)</span></div>
+                            <p>Registre: um avanço, uma dificuldade e uma meta para a próxima aula.</p>
+                        </li>
+                    </ol>
+
+                    <a href="https://www.youtube.com/watch?v=UtSkWOoXO04" target="_blank" class="video-link"><i class="fas fa-play-circle"></i> Arte do Feedback Efetivo</a>
+
+                    <div class="entrega-checklist">
+                        <h4>Entrega:</h4>
+                        <ul>
+                            <li>Cartaz inicial e revisado</li>
+                            <li>Duas devolutivas modelo</li>
+                            <li>Autoavaliação individual</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p><strong>Módulo 1: Fundamentos da Comunicação</strong> | Rio do Sul Mais Tech — SENAI 2026</p>
+            <p style="margin-top: 10px; opacity: 0.8;">📚 Disciplina: Introdução à Comunicação Oral e Escrita | 👨‍🏫 Para: Alunos 8º–9º ano | ⏱️ Carga Horária: 4h (3 aulas)</p>
+        </footer>
+    </div>
+
+    <!-- Supabase SDK (quando integrado) -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> -->
+    <!-- <script src="atividades.js"></script> -->
+</body>
+</html>

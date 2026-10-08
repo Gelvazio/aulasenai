@@ -82,6 +82,10 @@ Todo algoritmo segue esse caminho:
 🔑 **Ponto-chave:** um algoritmo precisa ser **preciso** (sem dúvida em nenhum passo), **ordenado**
 e **terminar**.
 
+## Vídeos
+
+- ⏳ Vídeos pendentes: escolher de 1 a 4 vídeos de até 15 min e conferir localmente a duração (TASKS.md #12).
+
 ## Exercícios
 
 ### ITEM 1

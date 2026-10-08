@@ -1,13 +1,19 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 21:15
+**Versão das regras:** 2026-10-08 09:30
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
-| 2026-10-07 21:15 | Apostilas: a seção "## Vídeos" do capítulo passa a ser **opcional** (pedido do usuário; apostila de Fundamentos da Tecnologia e Programação sem vídeos) |
-| 2026-10-07 20:30 | Apostilas: carga da UC que não divide por 4 vira aulas de 4 h + **última aula menor** (ex.: 33 h = 8 × 4 h + 1 h; gerador confere a soma); conferência com a ementa aceita o **formato por módulos** (Rio do Sul Mais Tech) e o `materia.json` ganha `secoes_literais_ementa` |
+| 2026-10-08 09:30 | Merge com a `main`: apostila e 9 atividades de 50 questões de Fundamentos da Tecnologia e Programação (33 h = 8 × 4 h + 1 h, aulas nº 6 a 14 no banco com cards "AULA 01" a "AULA 09"); conferência com a ementa lê também o **formato por módulos** do Rio do Sul Mais Tech (indicador na tabela de capacidades, BNCC em tabela, prompts `**M1:**`, glossário em lista, marcos, recursos em lista, exemplos e orientações) só quando o formato padrão não existe; vídeos pendentes da apostila na tarefa #12 do `TASKS.md` |
+| 2026-10-07 20:50 | Identificação da apostila obrigatória em **todas** as apostilas: `autor_apostila` (padrão Gelvazio Camargo) e `versao_apostila` (começa em 1.0) preenchidos no `materia.json` antes da 1ª geração; aplicada também em Reforço de Linguagens |
+| 2026-10-07 20:50 | Apostilas: vídeo com duração `a conferir` (link real, duração não conferida por bloqueio de rede) aceito pelo gerador, com aviso; 29 vídeos na apostila de Reforço de Linguagens |
+| 2026-10-07 20:40 | Reforço de Linguagens ganha menu de atividades (`MENU-ATIVIDADES.js` com 📚 Índice, 📘 Apostila e as atividades por aula) |
+| 2026-10-07 20:30 | Regra do push dividida por ambiente: **local** = nunca fazer push (continua); **nuvem** (Claude Code na web/remoto) = sempre fazer push, direto na `main`, sem pull request |
+| 2026-10-07 20:20 | Apostila de Reforço de Linguagens (10 capítulos, aguardando validação); gerador de apostilas aceita a carga horária de cada aula (6 h/7 h), ementas com capacidades em lista, conteúdos programáticos por módulo e aulas em negrito, e vídeos "⏳ pendentes" quando o YouTube não pode ser conferido; ementa de Reforço de Linguagens com as 6 capacidades da ementa do curso |
+| 2026-10-07 20:15 | Regra "IDENTIFICAÇÃO DA APOSTILA" (global): toda apostila mostra autor, versão, data e hora (campos `autor_apostila` e `versao_apostila` no `materia.json`); começou pela ITIC (autor Gelvazio Camargo, versão 1.0) |
+| 2026-10-07 17:00 | Combo "Aluno" do professor também nas atividades objetivas (alternativas marcadas pelo aluno, somente leitura); módulo único `respostas-aluno-professor.js` |
 | 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
 | 2026-10-07 10:00 | Apostilas: o HTML passa a ser gerado a partir do Markdown completo `APOSTILA-<MATERIA>.md` (antes lia os `CAPITULO-NN.md`) |
 | 2026-10-07 09:00 | Menus USUARIOS, RELATORIOS, ALUNOS e CORREÇÃO do header só para o **Professor Administrador** (os demais professores não veem) |
@@ -83,7 +89,7 @@ Registrada em 2026-10-03 a pedido do usuário.
   nem resumo).
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
-- ✅ **Um commit por tarefa** (local).
+- ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, na `main`).
 - ✅ **Aulas: uma por vez, completa** (2026-10-03): gerar e gravar uma aula (e todo o seu material)
   antes de passar à próxima, controlando em `<MATERIA>/AULAS/STATUS-AULAS.md` (ver a regra
   "GERAR E GRAVAR UMA AULA POR VEZ").
@@ -91,8 +97,10 @@ Registrada em 2026-10-03 a pedido do usuário.
   discursivas) e a matéria tem 10 aulas (uma por slide); ver a regra exclusiva da matéria.
 - ✅ **1 atividade objetiva de 50 questões por aula** (2026-10-03), controlada em
   `<MATERIA>/ATIVIDADES/STATUS-ATIVIDADES.md` (ver a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES").
-- ⛔ **NUNCA fazer push** (2026-10-01): o push é feito **só pelo usuário, localmente**. Mesmo que
-  ele peça "faça push", não executar `git push`; avisar que o commit está pronto para ele enviar.
+- ⛔ **Push depende do ambiente** (2026-10-07): **local** (máquina do usuário) = **nunca fazer
+  push**, mesmo que ele peça — avisar que o commit está pronto para ele enviar; **nuvem** (Claude
+  Code na web/remoto) = **sempre fazer push, direto na `main`, sem pull request** (ver a regra
+  "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM").
 - ⛔ **Conteúdo só pelos Markdowns, nunca de PDF** (2026-10-03): para conferir ou gerar conteúdo,
   ler os `.md` da matéria — em primeiro lugar o `EMENTA-CHALKIE-AI.md` (ver a regra "CONTEÚDO SÓ
   PELOS MARKDOWNS").
@@ -1381,6 +1389,13 @@ quantidade de alunos) que filtram as linhas e o resumo; a turma escolhida é lem
 `resumo_tentativas_atividade` (`database/2026-09-30-resumo-tentativas-professor.sql`); só o
 professor consegue chamá-la.
 
+**Combo "Aluno" (2026-10-07, pedido do usuário):** logo abaixo da identificação, o professor tem
+**"🧑‍🎓 Respostas dos alunos"**: ao escolher um aluno (quem respondeu, com tentativa e entrega),
+as alternativas marcadas por ele aparecem destacadas nas questões, **somente leitura**. Sem
+escolha, as questões ficam sem marcação (as leituras filtram pelo `aluno_id` do usuário logado).
+Código: `assets/js/respostas-aluno-professor.js` (o mesmo das discursivas), carregado pelo
+`respostas-atividade.js`.
+
 ### 🕒 Horário da turma e liberação fora do horário
 
 Registrada em 2026-10-01. O aluno só grava alternativas e entrega **dentro do horário da turma**
@@ -1448,8 +1463,9 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   da entrega); ao escolher um aluno, as respostas dele aparecem nos campos, **somente leitura**
   (nada é gravado). Os campos do professor ficam **vazios até ele escolher** — as leituras da
   página filtram sempre pelo `aluno_id` do usuário logado (o RLS deixa o professor ler os alunos
-  das turmas dele). Código: `assets/js/respostas-aluno-discursiva.js` (+ css), carregado pelo
-  `avaliacao-discursiva.js`.
+  das turmas dele). Código único (objetivas e discursivas):
+  `assets/js/respostas-aluno-professor.js` (+ `assets/css/respostas-aluno-professor.css`),
+  carregado pelo `avaliacao-discursiva.js` e pelo `respostas-atividade.js`.
 - ✅ **Correção (2026-10-06)**, plano `docs/media-final-notas-do-aluno.md`, SQL
   `database/2026-10-06-notas-media-final-correcao-discursiva.sql` (aplicado):
   - tabela **`correcao_discursiva`**: nota de cada tópico por aluno e tentativa; `nota_ia` é só
@@ -1893,16 +1909,33 @@ Registrada em 2026-09-28.
 - ✅ Lista das turmas com os e-mails: `ATIVIDADES/LISTA-PRESENCA.js` de cada matéria.
   ⚠️ Dados pessoais de menores (LGPD): arquivo no `.gitignore`, nunca publicar.
 
-## ⛔ REGRA — NUNCA FAZER PUSH (O USUÁRIO FAZ LOCALMENTE)
+## ⛔ REGRA — PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM (DIRETO NA `main`)
+
+Registrada em 2026-10-01 a pedido do usuário ("NUNCA FAZER PUSH"); **alterada em 2026-10-07**, a
+pedido do usuário, para valer **conforme o ambiente**.
+
+### 💻 Ambiente local (máquina do usuário, ex.: `C:\fontes\aulasenai`)
 
 ⛔ **O Claude NUNCA faz `git push`.** O push é feito **somente pelo usuário, na máquina dele**.
-Registrada em 2026-10-01 a pedido do usuário; **substitui** a regra "PUSH PERMITIDO QUANDO O USUÁRIO
-PEDIR" (2026-09-28).
 
 - ✅ O Claude faz só o **commit local** de cada tarefa.
 - ❌ Não executar `git push` em nenhuma situação, nem quando o usuário pedir "faça push" ou
   "commit e push": responder que o commit está pronto e que o push fica com ele.
 - ❌ Sem `git pull`/merge com o remoto, push forçado, push de tags ou mudança de remotos.
+
+### ☁️ Ambiente de nuvem (Claude Code na web / sessão remota, contêiner temporário)
+
+✅ **O Claude SEMPRE faz o push, direto na `main`, sem pull request.** No contêiner da nuvem o
+commit se perde quando a sessão acaba, e o usuário não tem como enviá-lo da máquina dele.
+
+- ✅ Ao concluir cada tarefa: commit (regra "COMMIT POR TAREFA") e **`git push origin HEAD:main`**.
+- ✅ **Sem pull request:** não abrir PR; o trabalho vai direto para a `main`.
+- ✅ Antes do push, `git fetch origin main`; se a `main` andou, trazer as mudanças dela para o
+  trabalho (merge ou rebase do próprio commit ainda não enviado) e conferir de novo antes de enviar.
+- ❌ **Nunca push forçado** (`--force`), nunca reescrever o histórico já publicado da `main`, nunca
+  push de tags nem mudança de remotos.
+- ✅ Antes do push, conferir `git diff --cached --name-only` contra a regra "O QUE NUNCA É
+  PUBLICADO" (a `main` é publicada pela Vercel).
 
 ## 💾 REGRA — COMMIT POR TAREFA (SEMPRE)
 
@@ -1917,7 +1950,8 @@ regra global de mesmo nome.
   gabaritos, listas de alunos ou outros itens da regra "O QUE NUNCA É PUBLICADO").
 - ✅ Antes do commit, conferir `git diff --cached --name-only` contra a regra "O QUE NUNCA É
   PUBLICADO".
-- ✅ O commit é **local**; o **push nunca é feito pelo Claude** (ver "NUNCA FAZER PUSH").
+- ✅ No ambiente **local** o commit fica só local (o push é do usuário); na **nuvem**, o Claude faz
+  o push direto na `main` (ver "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM").
 - ✅ Usuário pediu commit explícito → fazer na hora.
 - ✅ Arquivos ignorados pelo Git (gabaritos, fontes de questões, listas de alunos) não entram no
   commit; não usar `-f` para forçá-los. Desde 2026-09-30 os `*.md` e `*.py` **são versionados**
@@ -2029,8 +2063,9 @@ assets/
 - ✅ Os itens vêm de **`ATIVIDADES/MENU-ATIVIDADES.js`** da pasta de atividades
   (`window.MENU_ATIVIDADES = { titulo, itens: [{ rotulo, link } | { rotulo, subitens }] }`),
   com links relativos a essa pasta. Nada de nomes fixos no `menu.js`.
-- ✅ Pastas com menu: `GESTAO_E_CONTROLE_MATERIAIS/.../AULAS-CHALKIE-AI-COLORIDA/ATIVIDADES/` e
-  `ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/`.
+- ✅ Pastas com menu: `GESTAO_E_CONTROLE_MATERIAIS/.../AULAS-CHALKIE-AI-COLORIDA/ATIVIDADES/`,
+  `ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/` e
+  `RIO_DO_SUL_MAIS_TECH/REFORCO_LINGUAGENS/ATIVIDADES/` (2026-10-07, com a apostila).
 - ✅ Página ou atividade nova numa dessas pastas: acrescentar o item no `MENU-ATIVIDADES.js`.
   Os geradores já incluem as tags quando o arquivo de dados existe.
 
@@ -2299,9 +2334,38 @@ importação no AVA pelo professor; as demais matérias só quando o usuário li
 ## 📘 REGRAS APOSTILAS
 
 Registrada em 2026-10-03 a pedido do usuário (padrões definidos na validação do piloto). Plano:
-`docs/gerador-apostilas.md`. **Status:** 🔄 piloto **Introdução à TIC (ITIC)** — só o capítulo 01
+`docs/gerador-apostilas.md`. **Reforço de Linguagens (2026-10-07):** introdução + 10 capítulos gerados, conferência 100%
+(138/138), aguardando validação; vídeos pendentes (`REFORCO_LINGUAGENS/APOSTILA/STATUS-APOSTILA.md`).
+**Status:** 🔄 piloto **Introdução à TIC (ITIC)** — só o capítulo 01
 gerado, aguardando validação do usuário; os demais capítulos só depois que ele liberar, **um por
 vez, perguntando a cada capítulo** (rascunhos em `APOSTILA/RASCUNHOS/`, fora da apostila).
+
+### 🏷️ IDENTIFICAÇÃO DA APOSTILA: AUTOR, VERSÃO, DATA E HORA (REGRA GLOBAL)
+
+Registrada em 2026-10-07 a pedido do usuário. Vale para **todas as apostilas de todas as
+matérias**; começou pela ITIC.
+
+- ✅ **Toda apostila mostra autor, versão, data e hora:**
+  - **HTML:** na capa (quadro "Autor · Versão · Data e hora") e a versão no rodapé de todas as
+    páginas ("Apostila — <UC> · Versão X · SESI SENAI"), saindo também no PDF;
+  - **Markdown completo:** a linha `> **Autor:** … · **Versão:** … · **Data e hora:** …` no
+    cabeçalho, regravada pelo gerador a cada geração do HTML (sempre igual ao HTML).
+- ✅ **Dados no `materia.json`** (obrigatórios; sem eles o gerador para com erro):
+  `autor_apostila` (ITIC: **Gelvazio Camargo**) e `versao_apostila` (ex.: `"1.0"`).
+- ✅ **Data e hora** = momento da geração do HTML (`DD/MM/AAAA às HH:MM`), automáticas.
+- ✅ **Versão:** ao mudar o conteúdo da apostila, aumentar `versao_apostila` antes de gerar —
+  ajuste/correção → `1.0` para `1.1`; capítulo novo ou mudança grande → `1.x` para `2.0`.
+  Gerar de novo sem mudar conteúdo mantém a versão (só a data e hora mudam).
+- ✅ Código: `assets/gerador-apostilas/gerar_apostila.py` (`gravar_identificacao_markdown`),
+  `markdown_apostila.py` (`linha_identificacao`, `atualizar_identificacao`),
+  `template_apostila.html` e `assets/css/apostila.css` (`.capa-apostila__identificacao`).
+- ✅ **Obrigatória em TODAS as apostilas** (2026-10-07, pedido do usuário): toda matéria que
+  tem apostila — ou que vai ganhar uma — tem `autor_apostila` e `versao_apostila` no
+  `materia.json` **antes da primeira geração** (Markdown completo ou HTML). Padrão quando o
+  usuário não disser outro: autor **Gelvazio Camargo**, versão **"1.0"**. Logo após preencher,
+  gerar o HTML de novo para a identificação aparecer na capa, no rodapé e no Markdown completo.
+- ✅ Aplicada em: Introdução à TIC, Testes de Frontend e Reforço de Linguagens (todas versão
+  1.0; Reforço em 2026-10-07).
 
 ### ⛔ PRÉ-REQUISITO: o Markdown completo bate 100% com a ementa da matéria
 
@@ -2355,6 +2419,13 @@ matéria.**
   capacidades, estratégias, atividade/entrega); listas e textos da seção de sequência
   (situações de aprendizagem, dificuldades, pirâmide, datas previstas); recursos item a item;
   BNCC com "aulas 1, 2 e 7" ou "todas".
+- ✅ **Formato de ementa em listas** (2026-10-07, Reforço de Linguagens): capacidades em lista
+  numerada sob "Capacidades ...", "CONTEÚDOS PROGRAMÁTICOS" com `### Módulo N: Título` + lista,
+  aulas em negrito `**Aula N — Tema (6h)**`, indicadores `- **Nome:** texto`, situações-problema
+  em listas e parágrafos e as seções de texto livre de `SECOES_TEXTO_LIVRE` (Alinhamento,
+  Metodologias, Integração, Acompanhamento). No `materia.json`, essas seções ficam em
+  `conteudos_programaticos`, `textos_ementa` (`{titulo, texto|itens}`) e
+  `avaliacao.rubrica_lista`.
 - ⛔ **Seção que existe na ementa mas não foi reconhecida reprova a conferência** (capacidades,
   socioemocionais, indicadores, conhecimentos, sequência, avaliação, BNCC, recursos, prompts,
   regras para IA, glossário): nada pode ficar de fora em silêncio. Formato novo de ementa =
@@ -2429,18 +2500,25 @@ Registrada em 2026-10-03 a pedido do usuário.
   `assets/gerador-apostilas/markdown_apostila.py`. O plano de capítulos vem do `materia.json`
   (`carga_horaria_uc`, `horas_por_aula` = 4, `aulas` = uma por aula); o gerador confere
   se capítulos × 4 h = carga da UC. Glossário em ordem alfabética sem considerar acentos.
-- ✅ **Carga que não divide por 4** (2026-10-07, pedido do usuário; 1º caso: Fundamentos da
-  Tecnologia e Programação, 33 h = 9 capítulos): todas as aulas têm 4 h e **só a última pode ter
-  menos** (`carga_horaria` da aula no `materia.json`); o gerador confere se a **soma das horas** das
-  aulas = carga da UC e mostra as horas de cada capítulo no plano e no capítulo.
-- ✅ **Ementa no formato por módulos** (2026-10-07, matérias do Rio do Sul Mais Tech): a
-  conferência (`conferir_ementa.py`) também lê capacidades com indicador na mesma tabela,
-  "Conteúdos programáticos" por módulo, "Cronograma por módulo", BNCC em tabela, prompts
-  `**M1:** "..."`, glossário `- **Termo:** definição`, marcos de competência e as listas de
-  estratégias, exemplos, integração e orientações ao professor — só quando o formato padrão da
-  seção não existe (ITIC e Testes de Frontend continuam iguais). As seções da ementa sem campo
-  próprio vão literais para o campo `secoes_literais_ementa` do `materia.json`
-  (`{titulo, texto?, itens?, numerada?}`), reproduzido na "Ementa da matéria (texto oficial)".
+- ✅ **Carga horária por aula** (2026-10-07): quando as aulas não têm 4 h (exceção de Reforço de
+  Linguagens: 6 h e 7 h), cada aula do `materia.json` traz `carga_horaria`; o gerador soma as
+  aulas para conferir a carga da UC e mostra as horas de cada capítulo. Sem `carga_horaria`, vale
+  o `horas_por_aula` (padrão 4).
+- ✅ **Vídeos pendentes** (2026-10-07): se o YouTube não puder ser conferido (rede bloqueada), o
+  capítulo leva na seção "Vídeos" a linha `- ⏳ Vídeos pendentes: ...` (o gerador avisa e o HTML
+  mostra o aviso). ❌ Nunca inventar link, título ou duração; trocar pela lista real assim que
+  conferida (status no `STATUS-APOSTILA.md`).
+- ✅ **Vídeo com duração "a conferir"** (2026-10-07, decisão do usuário): quando o vídeo foi
+  achado pela busca (link, título e canal reais) mas a duração não pôde ser lida, a linha fica
+  `- [título](url) — a conferir — canal`; o gerador avisa e o HTML mostra "⏱️ duração a conferir
+  pelo professor". O professor troca por `mm:ss` (até 15 min) ou apaga a linha.
+- ✅ **Ementa no formato por módulos** (2026-10-08, Fundamentos da Tecnologia e Programação): o
+  `conferir_ementa.py` também lê o indicador na tabela de capacidades ("Indicador ..."), BNCC em
+  tabela ("Competência geral | Módulos"), prompts `1. **M1:** "..."` e "**Regras para a IA:**",
+  glossário `- **Termo:** definição` com "**Marcos de competência:**", recursos em lista, métricas
+  em "Indicadores de sucesso" e as listas "Exemplos práticos" e "Orientações ao professor" — sempre
+  como alternativa, quando o formato padrão da seção não existe (ITIC, Testes de Frontend e
+  Reforço de Linguagens continuam 100%). As seções sem campo próprio vão em `textos_ementa`.
 - ✅ **O HTML é gerado a partir do Markdown completo** (2026-10-07): o `gerar_apostila.py` lê a
   `# Introdução` e cada `# Capítulo NN` do `APOSTILA-<MATERIA>.md` (glossário de cada capítulo
   pelo `_(cap. NN)_` do glossário geral); sem o Markdown completo, o gerador para com erro
@@ -2466,7 +2544,8 @@ capacidades básicas: completar socioemocionais e conhecimentos quando cada uma 
   **e a UC na ementa do curso** (`EMENTA-PRINCIPAL-<CURSO>.md`, que vence) e manter o
   `materia.json` atualizado com o que a ementa diz.
 - ✅ **O `materia.json` sempre contém:**
-  - **identificação:** `uc`, `uc_curta`, `curso`, `docente`, `modulo`, `modalidade`,
+  - **identificação:** `uc`, `uc_curta`, `curso`, `docente`, `autor_apostila`,
+    `versao_apostila` (regra "IDENTIFICAÇÃO DA APOSTILA"), `modulo`, `modalidade`,
     `carga_horaria_uc`, `fontes`, `versao_ementa`, `proveniencia`;
   - **capacidades e conhecimentos da ementa:** `capacidades` (básicas `C1`..., texto da ementa do
     curso), `capacidades_socioemocionais` (`S1`...), `conhecimentos` (`dominio`, `titulo`,
@@ -2591,9 +2670,7 @@ faltava. Vale para **todas as matérias**.
 
 1. **Abertura** com as capacidades do capítulo (`- **Capacidade:** C1, S1`);
 2. **Teoria + exemplos**;
-3. **Vídeos do YouTube de no máximo 15 minutos** (opcional desde 2026-10-07, a pedido do usuário:
-   capítulo sem `## Vídeos` é aceito e a apostila sai sem a parte de vídeos; se a seção existir,
-   vale tudo abaixo) (`- [título](url) — mm:ss — canal`): miniatura +
+3. **Vídeos do YouTube de no máximo 15 minutos** (`- [título](url) — mm:ss — canal`): miniatura +
    título + duração + canal + link (funciona na tela e no papel). O gerador **recusa** vídeo sem
    duração ou com mais de 15:00. A duração é conferida nos metadados do YouTube (`curl`, sem
    navegador) e o professor confere o conteúdo;

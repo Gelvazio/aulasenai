@@ -3,6 +3,8 @@
   "uc_curta": "Fundamentos da Tecnologia",
   "curso": "Rio do Sul Mais Tech",
   "docente": "Gelvazio Camargo",
+  "autor_apostila": "Gelvazio Camargo",
+  "versao_apostila": "1.0",
   "modulo": "UC 2",
   "modalidade": "Presencial",
   "carga_horaria_uc": 33,
@@ -885,7 +887,7 @@
     "100% das capacidades trabalhadas em pelo menos um produto"
   ],
   "referencias": [],
-  "secoes_literais_ementa": [
+  "textos_ementa": [
     {
       "titulo": "Identificação (ementa da matéria)",
       "itens": [
@@ -1004,8 +1006,7 @@
         "**M7:** \"Crie 5 problemas de algoritmo com sequência, decisão e repetição, do mais fácil ao mais difícil.\"",
         "**M8:** \"Proponha um projeto Scratch com variável e condição, com passo a passo e rubrica.\"",
         "**Avaliação:** \"Elabore uma prova de 15 questões cobrindo os 8 módulos, com matriz de conteúdo.\""
-      ],
-      "numerada": true
+      ]
     },
     {
       "titulo": "Glossário e marcos (ementa da matéria)",
@@ -1047,8 +1048,7 @@
         "**M6:** \"Duas notícias dizem o contrário uma da outra. Como descobrir qual é confiável?\"",
         "**M7:** \"Escreva o algoritmo para ir de casa até a escola, com uma decisão e uma repetição.\"",
         "**M8:** \"Crie um jogo em que o jogador ganha pontos e perde vidas, e explique cada bloco usado.\""
-      ],
-      "numerada": true
+      ]
     }
   ]
 }
