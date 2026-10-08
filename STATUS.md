@@ -1377,12 +1377,12 @@ Plano: [docs/somente-ensalado-materias.md](docs/somente-ensalado-materias.md) ·
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 105.1 | Decisão do usuário: R1 (cadastrar as 19 matérias do ITIC em `materia`) e confirmar que ENSALADO = `materia.ensalado` | ⬜ Pendente | — | — |
+| 105.1 | Decisão do usuário: cadastrar as 20 matérias do curso 4 (Técnico em Informática para Internet) em `materia` | ✅ Concluído | 2026-10-08 23:44:57 | Usuário pediu a inserção via Supabase MCP |
 | 105.2 | Ler `docs/ORIENTACAO_JS_SUPABASE.md` e `docs/ORIENTACAO_USUARIO.md` | ⬜ Pendente | — | — |
 | 105.3 | `assets/js/faixa-materias-ensalado.js` (filtro + ON/OFF) | ⬜ Pendente | — | — |
 | 105.4 | `index.html` da ITIC: botões, `data-materia`, ON/OFF só PROFESSOR | ⬜ Pendente | — | — |
 | 105.5 | Estilo dos botões em `assets/css/indice-atividades.css` | ⬜ Pendente | — | — |
-| 105.6 | Banco: cadastrar/conferir as matérias (conforme 105.1) | ⬜ Pendente | — | — |
+| 105.6 | Banco: 20 matérias inseridas em `materia` (curso_id 4, ensalado false) e ligadas em `cursomateria` (cursoid 4) | ✅ Concluído | 2026-10-08 23:44:57 | select: curso 4 = 20 matérias, 0 ensaladas |
 | 105.7 | Regra salva no `CLAUDE.md` global | ✅ Concluído | 2026-10-08 23:42 | Leitura da seção "Faixa de matérias" |
 | 105.8 | Commit local (sem push) | ⬜ Pendente | — | — |
 | 105.9 | Aceite do usuário (testar na tela) | ⬜ Pendente | — | — |
