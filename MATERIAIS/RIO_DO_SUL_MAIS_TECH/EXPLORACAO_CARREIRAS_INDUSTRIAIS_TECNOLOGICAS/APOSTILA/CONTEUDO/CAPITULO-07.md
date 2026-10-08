@@ -77,11 +77,9 @@ publicações para o próximo mês.
 
 ## Vídeos
 
-<!-- RASCUNHO: duração e canal a conferir no YouTube (a sessão em nuvem não acessa o site). -->
-
-- [LINKEDIN PARA ESTUDANTES](https://www.youtube.com/watch?v=fTMppFMsVOc) — ??:?? — (canal a conferir)
-- [LinkedIn Sem EXPERIÊNCIA - Como Montar um Perfil (Passo a Passo)](https://www.youtube.com/watch?v=5HiK9Wpswyg) — ??:?? — (canal a conferir)
-- [LINKEDIN para JOVEM APRENDIZ / Faça do Jeito Certo](https://www.youtube.com/watch?v=1IfNLRakdaM) — ??:?? — (canal a conferir)
+- [LINKEDIN PARA ESTUDANTES](https://www.youtube.com/watch?v=fTMppFMsVOc) — ??:??
+- [LinkedIn Sem EXPERIÊNCIA - Como Montar um Perfil (Passo a Passo)](https://www.youtube.com/watch?v=5HiK9Wpswyg) — ??:??
+- [LINKEDIN para JOVEM APRENDIZ / Faça do Jeito Certo](https://www.youtube.com/watch?v=1IfNLRakdaM) — ??:??
 
 ## Exercícios
 

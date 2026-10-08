@@ -56,6 +56,8 @@ URL_MINIATURA = "https://i.ytimg.com/vi/{}/hqdefault.jpg"
 CAMPOS_DADOS = ("uc", "uc_curta", "curso", "docente")
 SECOES_OBRIGATORIAS = ("Teoria", "Vídeos", "Exercícios", "Resumo", "Glossário")
 DURACAO_MAXIMA_SEGUNDOS = 15 * 60
+DURACAO_NAO_CONFERIDA = "??:??"
+TEXTO_DURACAO_NAO_CONFERIDA = "duração não conferida"
 LINHAS_RESPOSTA_PADRAO = 3
 QUANTIDADE_MINIMA_EXERCICIOS = 5
 EXTENSOES_MARKDOWN = ["tables", "sane_lists", "fenced_code"]
@@ -66,8 +68,8 @@ PADRAO_SECAO = re.compile(r"^##\s+(.+?)\s*$", re.MULTILINE)
 PADRAO_ITEM = re.compile(r"^###\s+ITEM\s+(\d+)\s*$", re.MULTILINE)
 PADRAO_CAMPO = r"^-?\s*\*\*{rotulo}:\*\*\s*(.+?)\s*$"
 PADRAO_VIDEO = re.compile(
-    r"^-\s*\[(?P<titulo>[^\]]+)\]\((?P<url>[^)]+)\)\s*[—-]\s*(?P<duracao>[\d:]+)"
-    r"(?:\s*[—-]\s*(?P<canal>.+?))?\s*$", re.MULTILINE)
+    r"^-\s*\[(?P<titulo>[^\]]+)\]\((?P<url>[^)]+)\)\s*[—-]\s*(?P<duracao>[\d:]+|\?\?:\?\?)"
+    r"(?:[ \t]*[—-][ \t]*(?P<canal>.+?))?[ \t]*$", re.MULTILINE)
 PADRAO_ID_YOUTUBE = re.compile(r"(?:v=|youtu\.be/|/embed/)([A-Za-z0-9_-]{11})")
 PADRAO_TERMO = re.compile(r"^-\s*\*\*(?P<termo>.+?):\*\*\s*(?P<definicao>.+?)\s*$", re.MULTILINE)
 PADRAO_H3_HTML = re.compile(r"<h3>(.*?)</h3>", re.DOTALL)
@@ -202,7 +204,9 @@ def ler_videos(texto, rotulo):
         id_video = PADRAO_ID_YOUTUBE.search(achado["url"])
         if not id_video:
             erro(f"{rotulo_video}: o link não é de um vídeo do YouTube")
-        if duracao_em_segundos(achado["duracao"], rotulo_video) > DURACAO_MAXIMA_SEGUNDOS:
+        conferida = achado["duracao"] != DURACAO_NAO_CONFERIDA
+        if conferida and duracao_em_segundos(achado["duracao"], rotulo_video) > \
+                DURACAO_MAXIMA_SEGUNDOS:
             erro(f"{rotulo_video}: passa de 15 minutos ({achado['duracao']})")
         videos.append({**achado.groupdict(), "id": id_video.group(1)})
     if not videos:
@@ -409,11 +413,13 @@ def html_video(video):
     """
     titulo, url = html.escape(video["titulo"]), html.escape(video["url"])
     canal = f" · {html.escape(video['canal'])}" if video.get("canal") else ""
+    duracao = video["duracao"] if video["duracao"] != DURACAO_NAO_CONFERIDA \
+        else TEXTO_DURACAO_NAO_CONFERIDA
     return (f'<div class="caixa-video"><a href="{url}" target="_blank" rel="noopener">'
             f'<img class="caixa-video__miniatura" src="{URL_MINIATURA.format(video["id"])}" '
             f'alt="Miniatura do vídeo {titulo}"></a><div>'
             f'<p class="caixa-video__titulo">▶️ {titulo}</p>'
-            f'<p class="caixa-video__detalhe">⏱️ {video["duracao"]}{canal}</p>'
+            f'<p class="caixa-video__detalhe">⏱️ {duracao}{canal}</p>'
             f'<p class="caixa-video__detalhe">🔗 <a href="{url}" target="_blank" '
             f'rel="noopener">{url}</a></p></div></div>')
 

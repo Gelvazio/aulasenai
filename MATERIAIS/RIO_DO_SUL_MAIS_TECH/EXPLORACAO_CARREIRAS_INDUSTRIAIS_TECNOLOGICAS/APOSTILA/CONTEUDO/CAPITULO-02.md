@@ -112,11 +112,9 @@ registre:
 
 ## Vídeos
 
-<!-- RASCUNHO: duração e canal a conferir no YouTube (a sessão em nuvem não acessa o site). -->
-
-- [Conheça as novas profissões com Inteligência Artificial](https://www.youtube.com/watch?v=G24tDH9jkXc) — ??:?? — (canal a conferir)
-- [Como ficam as profissões na era da Inteligência Artificial](https://www.youtube.com/watch?v=N-ljmF-adg0) — ??:?? — (canal a conferir)
-- [As 10 profissões que deixam de existir e as 21 novas](https://www.youtube.com/watch?v=HcEICLfDKHc) — ??:?? — (canal a conferir)
+- [Conheça as novas profissões com Inteligência Artificial](https://www.youtube.com/watch?v=G24tDH9jkXc) — ??:??
+- [Como ficam as profissões na era da Inteligência Artificial](https://www.youtube.com/watch?v=N-ljmF-adg0) — ??:??
+- [As 10 profissões que deixam de existir e as 21 novas](https://www.youtube.com/watch?v=HcEICLfDKHc) — ??:??
 
 ## Exercícios
 

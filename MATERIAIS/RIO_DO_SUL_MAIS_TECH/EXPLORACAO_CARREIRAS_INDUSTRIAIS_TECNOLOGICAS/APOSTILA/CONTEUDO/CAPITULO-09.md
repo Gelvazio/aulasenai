@@ -105,11 +105,9 @@ Para aprovação na UC, é preciso **nota mínima 7** e **75% de frequência**.
 
 ## Vídeos
 
-<!-- RASCUNHO: duração e canal a conferir no YouTube (a sessão em nuvem não acessa o site). -->
-
-- [5 PRINCIPAIS PERGUNTAS NA ENTREVISTA DE JOVEM APRENDIZ](https://www.youtube.com/watch?v=tdADwahigdU) — ??:?? — (canal a conferir)
-- [ENTREVISTA DE EMPREGO DE JOVEM APRENDIZ](https://www.youtube.com/watch?v=tIB_dywgGqw) — ??:?? — (canal a conferir)
-- [FAÇA ISSO para passar na ENTREVISTA de JOVEM APRENDIZ!](https://www.youtube.com/watch?v=6YPTCKDu7iw) — ??:?? — (canal a conferir)
+- [5 PRINCIPAIS PERGUNTAS NA ENTREVISTA DE JOVEM APRENDIZ](https://www.youtube.com/watch?v=tdADwahigdU) — ??:??
+- [ENTREVISTA DE EMPREGO DE JOVEM APRENDIZ](https://www.youtube.com/watch?v=tIB_dywgGqw) — ??:??
+- [FAÇA ISSO para passar na ENTREVISTA de JOVEM APRENDIZ!](https://www.youtube.com/watch?v=6YPTCKDu7iw) — ??:??
 
 ## Exercícios
 

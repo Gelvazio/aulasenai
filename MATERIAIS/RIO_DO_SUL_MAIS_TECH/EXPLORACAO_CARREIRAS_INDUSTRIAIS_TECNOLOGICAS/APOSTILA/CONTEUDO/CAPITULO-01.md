@@ -162,14 +162,10 @@ A prática desta aula é o **mapa de empresas e oportunidades do Alto Vale**. Pa
 
 ## Vídeos
 
-<!-- RASCUNHO: links encontrados por pesquisa; a duração e o canal precisam ser conferidos no
-YouTube antes de o capítulo ir para APOSTILA/CONTEUDO/ (o ambiente da sessão não acessa o
-YouTube). Manter só os de até 15 minutos. -->
-
 - [SENAI São Paulo - O que é a Indústria 4.0?](https://www.youtube.com/watch?v=3ixQQ4elwm0) — ??:?? — SENAI São Paulo
-- [Indústria 4.0 traz novas mudanças para o mercado de trabalho](https://www.youtube.com/watch?v=SV-6Jo-4TU8) — ??:?? — (canal a conferir; professores da FURB)
-- [O que é Indústria 4.0? Funcionamento e exemplos](https://www.youtube.com/watch?v=Ih4Ue___6RI) — ??:?? — (canal a conferir)
-- [As profissões e a Indústria 4.0 - O futuro do mercado de trabalho](https://www.youtube.com/watch?v=a-o1zS7kTgY) — ??:?? — (canal a conferir)
+- [Indústria 4.0 traz novas mudanças para o mercado de trabalho](https://www.youtube.com/watch?v=SV-6Jo-4TU8) — ??:??
+- [O que é Indústria 4.0? Funcionamento e exemplos](https://www.youtube.com/watch?v=Ih4Ue___6RI) — ??:??
+- [As profissões e a Indústria 4.0 - O futuro do mercado de trabalho](https://www.youtube.com/watch?v=a-o1zS7kTgY) — ??:??
 
 ## Exercícios
 

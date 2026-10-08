@@ -95,11 +95,9 @@ profissional? Objetivo ligado a uma vaga? Verbos de ação? Uma página? Sem err
 
 ## Vídeos
 
-<!-- RASCUNHO: duração e canal a conferir no YouTube (a sessão em nuvem não acessa o site). -->
-
-- [Currículo para JOVEM APRENDIZ do Zero](https://www.youtube.com/watch?v=0hDWTET1vX8) — ??:?? — (canal a conferir)
-- [O que colocar em um CURRÍCULO sem experiência? Impressione o recrutador!](https://www.youtube.com/watch?v=rUsFnXuJhCU) — ??:?? — (canal a conferir)
-- [Como fazer CURRÍCULO primeiro emprego e jovem aprendiz](https://www.youtube.com/watch?v=9Ut5U3YmcMQ) — ??:?? — (canal a conferir)
+- [Currículo para JOVEM APRENDIZ do Zero](https://www.youtube.com/watch?v=0hDWTET1vX8) — ??:??
+- [O que colocar em um CURRÍCULO sem experiência? Impressione o recrutador!](https://www.youtube.com/watch?v=rUsFnXuJhCU) — ??:??
+- [Como fazer CURRÍCULO primeiro emprego e jovem aprendiz](https://www.youtube.com/watch?v=9Ut5U3YmcMQ) — ??:??
 
 ## Exercícios
 

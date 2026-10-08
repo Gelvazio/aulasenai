@@ -98,11 +98,9 @@ alimentam as metas do próximo capítulo.
 
 ## Vídeos
 
-<!-- RASCUNHO: duração e canal a conferir no YouTube (a sessão em nuvem não acessa o site). -->
-
-- [Orientação Vocacional nº 1 - Autoconhecimento](https://www.youtube.com/watch?v=-cPSzGAv45k) — ??:?? — (canal a conferir)
-- [Teste vocacional funciona? Devo fazer um?](https://www.youtube.com/watch?v=bOXfcRNIXqo) — ??:?? — (canal a conferir)
-- [ORIENTAÇÃO PROFISSIONAL OU TESTE VOCACIONAL?](https://www.youtube.com/watch?v=m6vXTfvtw08) — ??:?? — (canal a conferir)
+- [Orientação Vocacional nº 1 - Autoconhecimento](https://www.youtube.com/watch?v=-cPSzGAv45k) — ??:??
+- [Teste vocacional funciona? Devo fazer um?](https://www.youtube.com/watch?v=bOXfcRNIXqo) — ??:??
+- [ORIENTAÇÃO PROFISSIONAL OU TESTE VOCACIONAL?](https://www.youtube.com/watch?v=m6vXTfvtw08) — ??:??
 
 ## Exercícios
 

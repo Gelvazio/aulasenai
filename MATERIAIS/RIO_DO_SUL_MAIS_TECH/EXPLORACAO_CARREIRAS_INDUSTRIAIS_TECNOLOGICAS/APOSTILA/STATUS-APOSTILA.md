@@ -4,7 +4,7 @@
 > (100%) antes dos capítulos e do HTML; um capítulo por vez, com validação do usuário.
 > Legenda: `⬜ Pendente` · `🔄 Em progresso` · `✅ Concluído` · `👀 Aguardando validação`.
 
-**Apostila:** `APOSTILA-EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS.html` (⬜ ainda não gerada) ·
+**Apostila:** `APOSTILA-EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS.html` (✅ gerada em 2026-10-08, com a duração dos vídeos ainda não conferida — tarefa #11 do `TASKS.md`) ·
 **Markdown completo:** `APOSTILA-EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS.md` ·
 **Gerador:** `assets/gerador-apostilas/gerar_apostila.py` · **Fonte do conteúdo:** `EMENTA-CHALKIE-AI.md`,
 UC 6 da `EMENTA-PRINCIPAL-RIO_DO_SUL_MAIS_TECH.md` e as aulas `AULAS/AULA-NN.md` (a matéria ainda
@@ -19,29 +19,29 @@ não tem `CONTEUDO/AULA-NN-*.md`; mover/renomear só a pedido do usuário).
 
 | Cap. | Tema | Teoria | Vídeos (≤ 15 min) | Resumo | Exercícios ITEM | Glossário | Status |
 |---|---|---|---|---|---|---|---|
-| 01 | Panorama do Mercado Industrial e Tecnológico | ✅ | ⚠️ 4 candidatos, duração a conferir | ✅ | ✅ 6 | ✅ 11 | ✅ Aprovado pelo usuário (2026-10-07); falta a duração dos vídeos |
-| 02 | Profissões do Futuro | ✅ | ⚠️ 3 candidatos, duração a conferir | ✅ | ✅ 6 | ✅ 11 | 👀 Rascunho em `RASCUNHOS/CAPITULO-02.md` |
-| 03 | Autoavaliação de Habilidades e Aptidões | ✅ | ⚠️ 3 candidatos, duração a conferir | ✅ | ✅ 6 | ✅ 11 | 👀 Rascunho em `RASCUNHOS/CAPITULO-03.md` |
-| 04 | Metas Profissionais | ✅ | ⚠️ 3 candidatos, duração a conferir | ✅ | ✅ 6 | ✅ 10 | 👀 Rascunho em `RASCUNHOS/CAPITULO-04.md` |
-| 05 | Plataformas de Emprego e Networking | ✅ | ⚠️ 3 candidatos, duração a conferir | ✅ | ✅ 6 | ✅ 10 | 👀 Rascunho em `RASCUNHOS/CAPITULO-05.md` |
-| 06 | Construção de Currículo | ✅ | ⚠️ 3 candidatos, duração a conferir | ✅ | ✅ 6 | ✅ 10 | 👀 Rascunho em `RASCUNHOS/CAPITULO-06.md` |
-| 07 | LinkedIn e Presença Digital | ✅ | ⚠️ 3 candidatos, duração a conferir | ✅ | ✅ 6 | ✅ 10 | 👀 Rascunho em `RASCUNHOS/CAPITULO-07.md` |
-| 08 | Portfólio Profissional | ✅ | ⚠️ 3 candidatos, duração a conferir | ✅ | ✅ 6 | ✅ 10 | 👀 Rascunho em `RASCUNHOS/CAPITULO-08.md` |
-| 09 | Entrevistas e Apresentação de Carreira | ✅ | ⚠️ 3 candidatos, duração a conferir | ✅ | ✅ 6 | ✅ 10 | 👀 Rascunho em `RASCUNHOS/CAPITULO-09.md` |
+| 01 | Panorama do Mercado Industrial e Tecnológico | ✅ | ⚠️ 4 vídeos, duração a conferir (#11) | ✅ | ✅ 6 | ✅ 11 | ✅ Aprovado pelo usuário (2026-10-07), na apostila |
+| 02 | Profissões do Futuro | ✅ | ⚠️ 3 vídeos, duração a conferir (#11) | ✅ | ✅ 6 | ✅ 11 | ✅ Na apostila (`CONTEUDO/CAPITULO-02.md` |
+| 03 | Autoavaliação de Habilidades e Aptidões | ✅ | ⚠️ 3 vídeos, duração a conferir (#11) | ✅ | ✅ 6 | ✅ 11 | ✅ Na apostila (`CONTEUDO/CAPITULO-03.md` |
+| 04 | Metas Profissionais | ✅ | ⚠️ 3 vídeos, duração a conferir (#11) | ✅ | ✅ 6 | ✅ 10 | ✅ Na apostila (`CONTEUDO/CAPITULO-04.md` |
+| 05 | Plataformas de Emprego e Networking | ✅ | ⚠️ 3 vídeos, duração a conferir (#11) | ✅ | ✅ 6 | ✅ 10 | ✅ Na apostila (`CONTEUDO/CAPITULO-05.md` |
+| 06 | Construção de Currículo | ✅ | ⚠️ 3 vídeos, duração a conferir (#11) | ✅ | ✅ 6 | ✅ 10 | ✅ Na apostila (`CONTEUDO/CAPITULO-06.md` |
+| 07 | LinkedIn e Presença Digital | ✅ | ⚠️ 3 vídeos, duração a conferir (#11) | ✅ | ✅ 6 | ✅ 10 | ✅ Na apostila (`CONTEUDO/CAPITULO-07.md` |
+| 08 | Portfólio Profissional | ✅ | ⚠️ 3 vídeos, duração a conferir (#11) | ✅ | ✅ 6 | ✅ 10 | ✅ Na apostila (`CONTEUDO/CAPITULO-08.md` |
+| 09 | Entrevistas e Apresentação de Carreira | ✅ | ⚠️ 3 vídeos, duração a conferir (#11) | ✅ | ✅ 6 | ✅ 10 | ✅ Na apostila (`CONTEUDO/CAPITULO-09.md` |
 
 ## Teste do pipeline completo (2026-10-08)
 
 Os 9 capítulos passaram pelo gerador real numa cópia temporária (durações fictícias só no teste,
 cópia apagada): Markdown completo com 9 capítulos, conferência **130/130 (100%)**, nenhum aviso de
-cobertura (tema, capacidades, glossário) e HTML gerado sem erro. **Único bloqueio para publicar o
-HTML: a duração real dos 28 vídeos** (lista em `RASCUNHOS/VIDEOS-A-CONFERIR.md`).
+cobertura (tema, capacidades, glossário) e HTML gerado sem erro. Em 2026-10-08 o usuário mandou **ignorar a regra da duração** e gerar o HTML; a duração dos 28 vídeos
+fica para conferir localmente (lista em `RASCUNHOS/VIDEOS-A-CONFERIR.md`).
 
-## Como finalizar (depois de conferir os vídeos)
+## Como finalizar (tarefa #11 do `TASKS.md`)
 
-1. Trocar `??:??` pela duração real e o canal "(a conferir)" pelo nome do canal; apagar vídeos com
-   mais de 15:00 (cada capítulo precisa de ao menos 1 vídeo).
-2. Mover `RASCUNHOS/CAPITULO-NN.md` para `CONTEUDO/`.
-3. `gerar_apostila.py <pasta da matéria> --markdown` e depois `gerar_apostila.py <pasta da matéria>`.
+1. Trocar `??:??` pela duração real e acrescentar ` — <canal>` nos `CONTEUDO/CAPITULO-NN.md` e no
+   Markdown completo; apagar vídeos com mais de 15:00 (cada capítulo precisa de ao menos 1).
+2. `gerar_apostila.py <pasta da matéria>` (o HTML é gerado a partir do Markdown completo).
+3. Apagar a anotação "⚠️ Duração dos vídeos não conferida" do topo do Markdown completo.
 
 ## Pendências
 

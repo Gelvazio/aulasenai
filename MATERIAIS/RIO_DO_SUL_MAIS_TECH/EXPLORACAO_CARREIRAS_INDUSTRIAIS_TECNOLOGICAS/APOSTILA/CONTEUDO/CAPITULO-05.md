@@ -92,11 +92,9 @@ numa tabela e escolha a que mais combina com suas metas do capítulo 4.
 
 ## Vídeos
 
-<!-- RASCUNHO: duração e canal a conferir no YouTube (a sessão em nuvem não acessa o site). -->
-
-- [Como o networking pode abrir portas na carreira?](https://www.youtube.com/watch?v=VWoPqaBXkqo) — ??:?? — (canal a conferir)
-- [JOVEM APRENDIZ: O que é, pra quem é, como faz?](https://www.youtube.com/watch?v=6ezuvJwAmXA) — ??:?? — (canal a conferir)
-- [Como Encontrar Vagas de Jovem Aprendiz em 2026](https://www.youtube.com/watch?v=KjSP2MRjbig) — ??:?? — (canal a conferir)
+- [Como o networking pode abrir portas na carreira?](https://www.youtube.com/watch?v=VWoPqaBXkqo) — ??:??
+- [JOVEM APRENDIZ: O que é, pra quem é, como faz?](https://www.youtube.com/watch?v=6ezuvJwAmXA) — ??:??
+- [Como Encontrar Vagas de Jovem Aprendiz em 2026](https://www.youtube.com/watch?v=KjSP2MRjbig) — ??:??
 
 ## Exercícios
 

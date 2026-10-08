@@ -82,11 +82,9 @@ desta UC), descreva cada um com o storytelling e decida o formato do seu portfó
 
 ## Vídeos
 
-<!-- RASCUNHO: duração e canal a conferir no YouTube (a sessão em nuvem não acessa o site). -->
-
-- [Como fazer um portfólio mesmo sem experiência?](https://www.youtube.com/watch?v=dJvcz_Spe40) — ??:?? — (canal a conferir)
-- [Como fazer um portfólio: orientações passo a passo](https://www.youtube.com/watch?v=EtrE7icLfxs) — ??:?? — (canal a conferir)
-- [O que é e como criar o seu Portfólio](https://www.youtube.com/watch?v=KMQMfphEwCY) — ??:?? — (canal a conferir)
+- [Como fazer um portfólio mesmo sem experiência?](https://www.youtube.com/watch?v=dJvcz_Spe40) — ??:??
+- [Como fazer um portfólio: orientações passo a passo](https://www.youtube.com/watch?v=EtrE7icLfxs) — ??:??
+- [O que é e como criar o seu Portfólio](https://www.youtube.com/watch?v=KMQMfphEwCY) — ??:??
 
 ## Exercícios
 

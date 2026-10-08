@@ -87,11 +87,9 @@ Monte seu plano com: (1) 3 metas SMART (curto, médio e longo prazo); (2) a tril
 
 ## Vídeos
 
-<!-- RASCUNHO: duração e canal a conferir no YouTube (a sessão em nuvem não acessa o site). -->
-
-- [RESUMÃO - O que são as Metas Smart?](https://www.youtube.com/watch?v=94BtedRWN3c) — ??:?? — (canal a conferir)
-- [SMART : Definindo metas MAIS EFICAZES](https://www.youtube.com/watch?v=xKquEgpqASY) — ??:?? — SejaUmaPessoaMelhor (a conferir)
-- [Como definir OBJETIVOS de longo, médio e curto prazo.](https://www.youtube.com/watch?v=8itSHfZJycA) — ??:?? — (canal a conferir)
+- [RESUMÃO - O que são as Metas Smart?](https://www.youtube.com/watch?v=94BtedRWN3c) — ??:??
+- [SMART : Definindo metas MAIS EFICAZES](https://www.youtube.com/watch?v=xKquEgpqASY) — ??:?? — SejaUmaPessoaMelhor
+- [Como definir OBJETIVOS de longo, médio e curto prazo.](https://www.youtube.com/watch?v=8itSHfZJycA) — ??:??
 
 ## Exercícios
 

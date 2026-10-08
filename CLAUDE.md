@@ -1,11 +1,12 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 17:30
+**Versão das regras:** 2026-10-08 08:00
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:00 | Apostilas: vídeo com duração `??:??` (não conferida) é aceito a pedido do usuário e aparece como "duração não conferida"; conferir depois (Exploração de Carreiras: tarefa #11 do `TASKS.md`) |
 | 2026-10-07 17:30 | Conferência da apostila aceita também ementas no formato Rio do Sul Mais Tech (capacidades em lista numerada, módulos de conteúdo, aulas em negrito, indicadores e casos em lista) |
 | 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
 | 2026-10-07 10:00 | Apostilas: o HTML passa a ser gerado a partir do Markdown completo `APOSTILA-<MATERIA>.md` (antes lia os `CAPITULO-NN.md`) |
@@ -2584,8 +2585,11 @@ faltava. Vale para **todas as matérias**.
 1. **Abertura** com as capacidades do capítulo (`- **Capacidade:** C1, S1`);
 2. **Teoria + exemplos**;
 3. **Vídeos do YouTube de no máximo 15 minutos** (`- [título](url) — mm:ss — canal`): miniatura +
-   título + duração + canal + link (funciona na tela e no papel). O gerador **recusa** vídeo sem
-   duração ou com mais de 15:00. A duração é conferida nos metadados do YouTube (`curl`, sem
+   título + duração + canal + link (funciona na tela e no papel). O gerador **recusa** vídeo com
+   mais de 15:00. **Exceção (2026-10-08, pedido do usuário):** quando a duração não pôde ser
+   conferida (ex.: sessão em nuvem sem acesso ao YouTube), escrever `??:??` no lugar de `mm:ss`; o
+   HTML mostra "duração não conferida" e fica uma anotação no topo do Markdown completo e uma
+   tarefa no `TASKS.md` para conferir depois. O canal é opcional. A duração é conferida nos metadados do YouTube (`curl`, sem
    navegador) e o professor confere o conteúdo;
 4. **Resumo**;
 5. **No mínimo 5 exercícios (questões) por capítulo** (mais é permitido), no padrão ITEM

@@ -181,6 +181,27 @@ do documento, divergências e campos pendentes registrados). Os arquivos atuais 
 
 ---
 
+### #11: Conferir a duração dos vídeos da apostila de Exploração de Carreiras
+
+**Status:** ⬜ PENDENTE (conferir localmente)  
+**Prioridade:** 🟡 Média  
+**Adicionada em:** 2026-10-08
+
+A apostila `MATERIAIS/RIO_DO_SUL_MAIS_TECH/EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS/APOSTILA/APOSTILA-EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS.html` foi gerada
+com os **28 vídeos sem a duração conferida** (`??:??`, que aparece como "duração não conferida"),
+porque a sessão em nuvem não acessa o YouTube. O usuário pediu para seguir e conferir depois,
+localmente.
+
+- [ ] Abrir cada vídeo da lista `MATERIAIS/RIO_DO_SUL_MAIS_TECH/EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS/APOSTILA/RASCUNHOS/VIDEOS-A-CONFERIR.md` e anotar duração e canal.
+- [ ] Nos `APOSTILA/CONTEUDO/CAPITULO-NN.md` **e** no Markdown completo `APOSTILA-EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS.md`,
+      trocar `??:??` pela duração (`mm:ss`) e acrescentar ` — <canal>` no fim da linha.
+- [ ] Apagar os vídeos com mais de 15:00 ou fora do tema (cada capítulo precisa de ao menos 1).
+- [ ] Gerar de novo: `C:\Python314\python.exe assets\gerador-apostilas\gerar_apostila.py MATERIAIS/RIO_DO_SUL_MAIS_TECH/EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS`.
+- [ ] Apagar a anotação "⚠️ Duração dos vídeos não conferida" do topo do Markdown completo e
+      atualizar `APOSTILA/STATUS-APOSTILA.md`.
+
+---
+
 ## 📊 ESTATÍSTICAS
 
 | Métrica | Valor |
