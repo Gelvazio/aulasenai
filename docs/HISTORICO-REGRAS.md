@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 16:34:56 | Discursivas: **quantidade mínima de questões para entregar** (padrão = total; o professor muda por aluno no Progresso da turma) e **nota proporcional ao mínimo, máximo 10** (mínimo 10 de 20 + 10 certas = nota 10) — regra anotada; implementação no plano `docs/quantidade-minima-questoes-discursiva.md` |
 | 2026-10-08 16:20:56 | Discursivas: **Progresso da turma global** (aparece para o professor em **todas** as avaliações discursivas, sem campo na fonte) com o botão **📈 Gráficos** — modal com 5 gráficos (barras, pizza, barras por questão, rosca da correção da IA, barras horizontais da nota parcial); `assets/js/graficos-progresso-turma.js` |
 | 2026-10-08 16:10:08 | Discursivas: **botões ✅ Certa / 🟡 Meia certa / ❌ Errada** para o professor confirmar cada alternativa em "Respostas dos alunos" (grava `nota_professor`) e **nota confirmada travada — nem o professor altera** (trigger `correcao_discursiva_validar`, SQL `database/2026-10-08-correcao-discursiva-nota-professor-travada.sql`, aplicado) |
 | 2026-10-08 15:54:25 | Avaliações discursivas: **nota parcial da IA em cada alternativa** (ícone ✅ certa / 🟡 meia certa / ❌ errada / ⏳ sem correção, com o comentário da IA) em "Respostas dos alunos" vale para **todas** as avaliações discursivas (`assets/js/nota-ia-respostas-discursiva.js`; `docs/regras/atividades.md`) |

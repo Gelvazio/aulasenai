@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 16:20:56
+**Versão das regras:** 2026-10-08 16:34:56
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 16:34:56 | Discursivas: **quantidade mínima de questões para entregar** (padrão = total; o professor muda por aluno no Progresso da turma) e **nota proporcional ao mínimo, máximo 10** (mínimo 10 de 20 + 10 certas = nota 10) — regra anotada; implementação no plano `docs/quantidade-minima-questoes-discursiva.md` |
 | 2026-10-08 16:20:56 | Discursivas: **Progresso da turma global** (aparece para o professor em **todas** as avaliações discursivas, sem campo na fonte) com o botão **📈 Gráficos** — modal com 5 gráficos (barras, pizza, barras por questão, rosca da correção da IA, barras horizontais da nota parcial); `assets/js/graficos-progresso-turma.js` |
 | 2026-10-08 16:10:08 | Discursivas: **botões ✅ Certa / 🟡 Meia certa / ❌ Errada** para o professor confirmar cada alternativa em "Respostas dos alunos" (grava `nota_professor`) e **nota confirmada travada — nem o professor altera** (trigger `correcao_discursiva_validar`, SQL `database/2026-10-08-correcao-discursiva-nota-professor-travada.sql`, aplicado) |
 | 2026-10-08 15:54:25 | Avaliações discursivas: **nota parcial da IA em cada alternativa** (ícone ✅ certa / 🟡 meia certa / ❌ errada / ⏳ sem correção, com o comentário da IA) em "Respostas dos alunos" vale para **todas** as avaliações discursivas (`assets/js/nota-ia-respostas-discursiva.js`; `docs/regras/atividades.md`) |
 | 2026-10-08 14:34:44 | Atividades: **progresso da turma para o professor** no topo da atividade, por aluno e por questão, atualizado a cada 5 s (campo `Progresso para o professor: sim`, `assets/js/progresso-turma-discursiva.js`; `docs/regras/atividades.md`); 1º uso: Prova Prática ADAG (id 82); regra: depois em **todas** as atividades |
-| 2026-10-08 17:27:53 | Unidade das turmas vem do arquivo global **`assets/js/unidade.js`** (código da turma → nome da unidade, ex.: "AIAC SALETE TARDE"); substitui o `turma-unidade.js` — `docs/regras/usuarios-turmas-paginas-professor.md` |
 
 ---
 
@@ -67,6 +67,18 @@ Registrada em 2026-10-03 a pedido do usuário.
   fonte `.md` bloqueia colar/arrastar/copiar/recortar nas respostas. Hoje só na Prova Prática ADAG
   (id 82); **ligar nas outras discursivas depois**, quando o usuário pedir (ver
   `docs/regras/atividades.md`).
+- ✅ **Quantidade mínima de questões e nota proporcional nas discursivas** (2026-10-08, pedido
+  do usuário):
+  - cada avaliação discursiva tem um **mínimo de questões para entregar**; o padrão é o
+    **total** de questões, e o professor pode mudar **por aluno** (botão "Quantidade Mínima de
+    Questões" ao lado do nome no Progresso da turma);
+  - "Finalizar e entregar" só aceita quando o aluno respondeu o mínimo (conferido na página e
+    no banco);
+  - **a nota vale sobre o mínimo:** cada questão vale **10 ÷ mínimo** (prova de 20 questões com
+    mínimo 10 → cada uma vale 1,0; fez as 10 e acertou = **nota 10**);
+  - ⛔ **a nota máxima é sempre 10**, mesmo que o aluno responda mais que o mínimo.
+  - ⏳ Implementação: plano `docs/quantidade-minima-questoes-discursiva.md` (Etapa 97 do
+    `STATUS.md`), aguardando aprovação.
 - ⛔ **Nota confirmada pelo professor é definitiva** (2026-10-08, pedido do usuário): depois que o
   professor confirma a nota de uma alternativa (botões ✅ Certa / 🟡 Meia certa / ❌ Errada em
   "Respostas dos alunos" ou a tela CORREÇÃO), ela **não pode mais ser alterada nem apagada —

@@ -1248,6 +1248,7 @@ Pedido do usuário: a rodada da IA não gravou nada (0 entregas; a orientação 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 97.1 | Plano com decisões D1–D6 em `docs/` e conferência do banco real | ✅ Concluído | 2026-10-08 16:30:59 | Consultas de leitura (`entrega_atividade`, `atividade_completa`, `atividade`) |
+| 97.1b | Regra (mínimo, nota proporcional ao mínimo e máximo 10) anotada no `CLAUDE.md` da raiz e no histórico, a pedido do usuário | ✅ Concluído | 2026-10-08 16:34:56 | Leitura |
 | 97.2 | Aprovação do plano pelo usuário | ⬜ Pendente | — | — |
 | 97.3 | Execução dos passos 2 a 7 do plano | ⬜ Pendente | — | — |
 | 97.4 | Aceite do usuário | ⬜ Pendente | — | — |
