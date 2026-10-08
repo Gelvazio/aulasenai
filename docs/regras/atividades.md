@@ -410,6 +410,11 @@ demais matérias continuam com a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES".
   discursivas são escritas lendo esse arquivo da aula (`- **Conteúdo-base:**
   ../AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-....md` na fonte); nunca ler os PDFs da pasta, e as
   aulas antigas de `AULAS/AULA-NN.md` não são mais fonte das atividades.
+- ✅ **As duas pastas `CONTEUDO` se completam** (conferido em 2026-10-07): `REFORCO_LINGUAGENS/CONTEUDO/AULA-NN-*.md`
+  é o **plano da aula** (módulo, horas, capacidades, indicadores, roteiro, com link para os slides)
+  e `AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-*.md` é o **conteúdo dos slides**, de onde saem as questões.
+  As 10 aulas já têm as duas páginas de atividades; aula que ficar **sem** atividade ganha as
+  páginas desta regra (20 objetivas + 5 discursivas).
 - ✅ As objetivas seguem o gabarito equilibrado entre as letras e com posição sorteada; as
   discursivas citam o texto ou a situação da aula (do mesmo arquivo de
   `AULAS-CHALKIE-AI/CONTEUDO/`).

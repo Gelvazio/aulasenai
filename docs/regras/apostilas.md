@@ -121,8 +121,8 @@ matéria.**
 ### Gerador e arquivos
 
 - ✅ **Gerador único:** `C:\Python314\python.exe assets\gerador-apostilas\gerar_apostila.py
-  <pasta da matéria>` → `<MATERIA>/APOSTILA/APOSTILA-<MATERIA>.html` (inclui todos os
-  `CAPITULO-*.md` de `APOSTILA/CONTEUDO/`). Não montar apostila à mão.
+  <pasta da matéria>` → `<MATERIA>/APOSTILA/APOSTILA-<MATERIA>.html`, gerado a partir do Markdown completo
+  `APOSTILA-<MATERIA>.md` (que reúne os `CAPITULO-*.md`). Não montar apostila à mão.
 - ✅ **CSS e JS globais e reutilizáveis em qualquer matéria:** `assets/css/apostila.css`,
   `assets/js/apostila.js` e `assets/img/logo-sesi-senai.png`, sem matéria, curso ou docente fixo no
   código e sem `<style>`/`<script>` embutidos. O que muda vem dos dados.
@@ -138,8 +138,8 @@ matéria.**
 
 Registrada em 2026-10-03 a pedido do usuário.
 
-- ✅ **1 capítulo = 1 aula de 4 horas.** Cada aula da matéria vira um `CAPITULO-NN.md` em
-  `APOSTILA/CONTEUDO/` (lógica mantida).
+- ✅ **1 capítulo = 1 aula** (em geral de 4 h; a última aula pode ter menos horas, e o Reforço de
+  Linguagens tem aulas de 6 h e 7 h). Cada aula vira um `CAPITULO-NN.md` em `APOSTILA/CONTEUDO/`.
 - ✅ **Fluxo em 3 etapas:**
   1. escrever e validar os capítulos (`CAPITULO-NN.md`), um por vez;
   2. gerar o **Markdown completo da apostila** dentro da pasta `APOSTILA` da própria matéria:
@@ -174,7 +174,7 @@ Registrada em 2026-10-03 a pedido do usuário.
   (`--forcar` refaz do zero). Módulo:
   `assets/gerador-apostilas/markdown_apostila.py`. O plano de capítulos vem do `materia.json`
   (`carga_horaria_uc`, `horas_por_aula` = 4, `aulas` = uma por aula); o gerador confere
-  se capítulos × 4 h = carga da UC. Glossário em ordem alfabética sem considerar acentos.
+  se a **soma das horas das aulas** = carga da UC (ver "Carga horária por aula"). Glossário em ordem alfabética sem considerar acentos.
 - ✅ **Carga horária por aula** (2026-10-07): quando as aulas não têm 4 h (exceção de Reforço de
   Linguagens: 6 h e 7 h), cada aula do `materia.json` traz `carga_horaria`; o gerador soma as
   aulas para conferir a carga da UC e mostra as horas de cada capítulo. Sem `carga_horaria`, vale

@@ -61,6 +61,11 @@
 
 ### 1️⃣ **index.html** — Portal de Login
 
+> ⚠️ **Descrição antiga (só histórico).** Hoje o login é a `login.html` com Supabase Auth
+> (regras "AUTENTICAÇÃO" e "CONTAS, SENHAS E PERFIL": perfil no `app_metadata`, sem
+> `HASH_ALUNO`/`senha_hash` nem perfil no `localStorage`) e o `index.html` lista os cursos do
+> usuário logado (regra "ÍNDICE DE CURSOS"). Em caso de dúvida, valem essas regras.
+
 #### 📊 Especificações
 - **Linhas:** ~370
 - **Tamanho:** ~12 KB

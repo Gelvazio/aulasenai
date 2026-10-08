@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 08:20
+**Versão das regras:** 2026-10-08 08:33:47
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:33:47 | Merge com a `main` (PR #8): mantida a estrutura núcleo + `docs/regras/` e o `STATUS.md` como fonte única; trazidas da `main` a versão das regras **com segundos**, o registro de todo pedido com data e hora em segundos + "📜 HISTÓRICO POR COMMIT" no `TASKS_COMPLETE.md`, a exceção do navegador headless para gerar arquivo pedido, os avisos em poucas linhas antes da frase final, capacidades da UC (não "10+") na ementa, nota de que a descrição do `index.html` é antiga, as duas pastas `CONTEUDO` do Reforço de Linguagens e a apostila pela soma das horas e a partir do Markdown completo |
 | 2026-10-08 08:20 | Trazidas do `CLAUDE.md` global (aprovadas item por item): nunca escrever testes; `docs/regras/codigo.md` (SOLID e regras de código); gestão de projetos + modelo do `STATUS.md` na seção de status; `docs/regras/infograficos.md`; Git sem perguntar, sem `git status` repetido e sem worktree; comando do graphify no início de cada conversa; fluxo da documentação padrão |
 | 2026-10-08 08:18 | Sessão na **nuvem**: ler e aplicar as regras globais de `.claude/regras-globais/` (`CLAUDE-GLOBAL.md` e `CLAUDE-DOCS-BEFORE-EVERY-TASK.md`), porque lá o `~/.claude/CLAUDE.md` da máquina do usuário não existe; o `CLAUDE.md` do projeto continua com precedência |
 | 2026-10-08 08:17 | Nova regra "REGRAS E SKILLS GLOBAIS NO PROJETO": skills do usuário em `.claude/skills/` e cópia de referência (não carregada) das regras globais em `.claude/regras-globais/`, sincronizadas sempre que o original mudar |
 | 2026-10-08 08:14 | Log da sessão só é gravado quando o usuário responde **SIM** à pergunta do fim da tarefa (tirada a obrigação de gravar a cada pedido e antes de parar); o `STATUS.md` continua sempre atualizado |
-| 2026-10-08 08:13 | Nova seção **"MUITO IMPORTANTE — ARQUIVOS DE STATUS"** (logo após as regras de sempre): mapa de todos os arquivos de status (`STATUS.md`, `TASKS.md`, `SESSOES-CLAUDE/`, STATUS da matéria e das ementas), legenda única, quando atualizar, hierarquia (o `STATUS.md` vence) e critério de `CONCLUÍDO` |
 
 ---
 
@@ -23,7 +23,8 @@ também deve ser verificado e atualizado junto, para o usuário ver sempre as re
 Registrada em 2026-10-03 a pedido do usuário.
 
 - ✅ **Cada versão tem data e hora:** a cada alteração deste arquivo, atualizar a linha
-  `**Versão das regras:** AAAA-MM-DD HH:MM` (topo) e acrescentar **no início** do
+  `**Versão das regras:** AAAA-MM-DD HH:MM:SS` (topo; **com segundos** desde 2026-10-07,
+  horário de Brasília) e acrescentar **no início** do
   "HISTÓRICO DE VERSÕES DAS REGRAS" uma linha com a mesma data e hora e o que mudou — nos **dois**
   lugares: no histórico completo (`docs/HISTORICO-REGRAS.md`) e no resumo do topo deste arquivo,
   que mantém só as **5 mais recentes** (apagar a 6ª do resumo; o completo nunca perde linhas).
@@ -42,9 +43,12 @@ Registrada em 2026-10-03 a pedido do usuário.
 
 - ⛔ **Nunca abrir navegador** (preview, Browser pane, computer-use, Playwright...) nem iniciar
   servidor de desenvolvimento para validar. Validar por leitura do código, `node`, banco e terminal;
-  se só o navegador confirmar, pedir ao usuário que teste.
+  se só o navegador confirmar, pedir ao usuário que teste. ✅ **Exceção (2026-10-07):** quando o
+  usuário pedir um **arquivo** que só o navegador gera (ex.: o PDF da apostila completa), pode-se
+  usar o Chromium **sem janela** (headless) para gerá-lo — nunca para validar telas.
 - ✅ **Final de tarefa:** responder `TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?` (sem tabela
-  nem resumo) e, logo abaixo, perguntar **"Deseja atualizar o log da sessão atual?"** (ver a
+  nem resumo; os avisos que outra regra manda dar — matérias semelhantes, tabela de permissões,
+  pendências do usuário, commit/push — vêm **em poucas linhas antes** da frase) e, logo abaixo, perguntar **"Deseja atualizar o log da sessão atual?"** (ver a
   regra "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`", 2026-10-08).
 - 🧭 **Arquivos de status são MUITO IMPORTANTES** (2026-10-08): `STATUS.md` é a fonte única do
   estado; ver a seção "MUITO IMPORTANTE — ARQUIVOS DE STATUS" logo abaixo.
@@ -324,6 +328,13 @@ TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
   `TASKS_COMPLETE.md`, desde 2026-10-08; ao concluir ou cancelar, mover o bloco no mesmo commit).
   Consultar o `TASKS.md` quando o `STATUS.md` ou uma regra citar uma tarefa dele (ex.: vídeos
   `a conferir` das apostilas); o `TASKS_COMPLETE.md` só quando precisar do histórico.
+- ✅ **Registro de todo pedido com data e hora em segundos** (2026-10-07, vindo da `main`):
+  `AAAA-MM-DD HH:MM:SS`, horário de Brasília (na máquina: `Get-Date -Format "yyyy-MM-dd HH:mm:ss"`;
+  na nuvem: `TZ=America/Sao_Paulo date "+%Y-%m-%d %H:%M:%S"`). Todo pedido que gere trabalho é
+  registrado no `STATUS.md` (fonte única); tarefa grande também ganha a descrição no `TASKS.md`
+  e, ao concluir, vai para o `TASKS_COMPLETE.md` com conclusão, commit e plano, mais a linha no
+  **"📜 HISTÓRICO POR COMMIT"** do `TASKS_COMPLETE.md`, no mesmo commit da tarefa. Perguntas sem
+  trabalho não entram. Caminho: `TASKS.md` da raiz do repositório (vale na máquina e na nuvem).
 - ⛔ **FONTE ÚNICA DO ESTADO = `STATUS.md`** (2026-10-08, decisão do usuário). Os outros arquivos
   **apontam** para ele, nunca mantêm status próprio divergente:
   - **`TASKS.md`:** guarda só a **descrição longa** das tarefas pendentes; o **status** de cada uma

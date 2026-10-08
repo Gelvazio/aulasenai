@@ -91,7 +91,7 @@ regra "PASTA `AULAS/` SEMPRE GERADA CONFORME A DOCUMENTAÇÃO DA MATÉRIA" (2026
 - [ ] **NOME DA DISCIPLINA:** Identificação clara no título
 - [ ] **CARGA HORÁRIA:** Total de horas da matéria (e por módulo/aula no cronograma)
 - [ ] **CONTEÚDOS ESPECÍFICOS:** Tópicos, temas e assuntos exclusivos da matéria
-- [ ] **CAPACIDADES MENSURÁVEIS:** 10+ competências específicas da disciplina
+- [ ] **CAPACIDADES MENSURÁVEIS:** as capacidades da UC na ementa do curso (que vence; "10+" é só referência)
 - [ ] **MÓDULOS TEMÁTICOS:** 7–10 módulos refletindo a sequência real de ensino
 - [ ] **CRONOGRAMA DETALHADO:** Aulas estruturadas por semana/período
 - [ ] **ATIVIDADES PRÁTICAS:** Exercícios, projetos e trabalhos da disciplina
@@ -110,7 +110,7 @@ regra "PASTA `AULAS/` SEMPRE GERADA CONFORME A DOCUMENTAÇÃO DA MATÉRIA" (2026
 - ✅ Contexto e alinhamento curricular (BNCC, competências)
 - ✅ Objetivo geral e específicos da disciplina
 - ✅ Carga horária total da disciplina
-- ✅ 10 capacidades mensuráveis com indicadores
+- ✅ Capacidades mensuráveis da UC (as da ementa do curso) com indicadores
 - ✅ Conteúdos programáticos em módulos (com tópicos, exemplos, atividades)
 - ✅ Sequência de aulas (cronograma detalhado)
 - ✅ Critérios e rúbricas de avaliação (0–10 com 4 níveis)
@@ -138,7 +138,7 @@ A ementa de cada matéria é só o `EMENTA-CHALKIE-AI.md`; não criar nem verifi
 - [ ] Estrutura em 10 seções (contexto, objetivos, conteúdos, cronograma, etc)
 - [ ] Carga horária total informada no início do arquivo
 - [ ] 7–10 módulos temáticos definidos
-- [ ] 10+ capacidades mensuráveis com indicadores
+- [ ] Capacidades da UC (as da ementa do curso) com indicadores
 - [ ] Rubrica de avaliação com 4 níveis (Excelente/Bom/Aceitável/Insuficiente)
 - [ ] Mapeamento BNCC explícito
 - [ ] Atividades para cada módulo

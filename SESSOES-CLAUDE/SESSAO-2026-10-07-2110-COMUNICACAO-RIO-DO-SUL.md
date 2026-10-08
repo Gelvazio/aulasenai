@@ -1,9 +1,9 @@
-# 🤖 Sessão 2026-10-07 21:10 — Comunicação Oral e Escrita (Rio do Sul) + regras de sessão
+# 🤖 Sessão 2026-10-07 21:10 — Comunicação Oral e Escrita (Rio do Sul) + regras do CLAUDE.md
 
 - **Status:** PENDENTE
-- **Atualizado em:** 2026-10-08 08:04
+- **Atualizado em:** 2026-10-08 08:32
 - **Ambiente:** local (`C:\fontes\aulasenai`) · **Modelo:** Claude Opus 5.5 · **Branch:** `main` (commits só locais; o push é do usuário)
-- **Plano:** [docs/reorganizar-comunicacao-oral-escrita-rio-do-sul.md](../docs/reorganizar-comunicacao-oral-escrita-rio-do-sul.md) · **Controle:** [STATUS.md](../STATUS.md), Etapa 71
+- **Plano:** [docs/reorganizar-comunicacao-oral-escrita-rio-do-sul.md](../docs/reorganizar-comunicacao-oral-escrita-rio-do-sul.md) · **Controle:** [STATUS.md](../STATUS.md), Etapas 71, 76, 77 e 78
 - **Entregável:** `MATERIAIS/RIO_DO_SUL_MAIS_TECH/INTRODUCAO_COMUNICACAO_ORAL_ESCRITA/`
 
 > Só o mínimo para continuar em outra sessão (regra "REGISTRO DA SESSÃO" do `CLAUDE.md`).
@@ -40,6 +40,9 @@ aula por vez, como foi feito nas aulas 01 e 02:
 | 2026-10-08 | Atividade de 50 questões só nas aulas 01 a 07 |
 | 2026-10-08 | `.gitignore`: "não mexer, eu cuido" — fontes com respostas (`*QUESTOES.md`, `*-GABARITO.md`) e seeds de `database/` **não entram em commit** |
 | 2026-10-08 | Log da sessão = mínimo para continuar (o usuário alterna 2 licenças); `STATUS-SESSOES.md`; `CONCLUÍDO` só com todos os pedidos validados |
+| 2026-10-08 | Conflitos das regras (Etapa 76): exceção das tarefas pequenas também no global e na skill; sem navegador/testes nas regras de documentação; `STATUS.md` é a fonte única; log da sessão só com SIM; pergunta do log aceita no global; commit/STATUS/graphify sem confirmação |
+| 2026-10-08 | Skills do usuário em `.claude/skills/` e cópia de referência (não carregada) das regras globais em `.claude/regras-globais/`; na nuvem, ler essa cópia (Etapa 77) |
+| 2026-10-08 | 7 regras do global trazidas ao projeto: nunca escrever testes, `docs/regras/codigo.md`, gestão de projetos + modelo do `STATUS.md`, `docs/regras/infograficos.md`, Git sem perguntar/sem worktree, graphify no início de cada conversa, fluxo da documentação padrão (Etapa 78) |
 
 ## ✅ Validação dos pedidos
 
@@ -51,12 +54,18 @@ aula por vez, como foi feito nas aulas 01 e 02:
 | Recriar a matéria no padrão da ITIC e apagar o antigo | 🔄 etapas A, B, C ✅; D em andamento (aulas 01–02); E e F pendentes | plano e `STATUS.md` (Etapa 71) | ⬜ |
 | Commitar tudo o que foi feito | ✅ | `git log` (`b13aa19`) | ✅ |
 | Registrar a sessão em `SESSOES-CLAUDE/` + regras do log no `CLAUDE.md` | ✅ | commits `9e2b6b9` a `00b5d3b` | ✅ |
+| `STATUS-SESSOES.md`, regra da sessão `CONCLUÍDO` e leitura antes de cada tarefa | ✅ | commits `1fcfc6e`, `04ba9e1` | ✅ |
+| Seção "MUITO IMPORTANTE — ARQUIVOS DE STATUS" no `CLAUDE.md` | ✅ | commit `80ea919` | ⬜ |
+| Corrigir os 6 conflitos das regras (Etapa 76) | ✅ 6/6 | `STATUS.md` 76.1–76.6 | ⬜ (76.7) |
+| Skills e regras globais no projeto + regra da nuvem (Etapa 77) | ✅ | commits `790ea94` a `da72ce2` | ⬜ (77.5) |
+| 7 regras do global no `CLAUDE.md` do projeto (Etapa 78) | ✅ | commit `8795ff3` | ⬜ (78.8) |
 
 ## 🧾 Commits da sessão
 
 `f8687be` ementa, `materia.json` e status · `62791c0` aula 01 · `ca7195a` aulas 02–09 ·
 `5527397` atividades aula 01 · `b13aa19` atividades aula 02 · `9e2b6b9` log da sessão ·
 `1ace163`, `52c6560`, `6e5ca10`, `f63fef5`, `1fcfc6e`, `00b5d3b` regras do log de sessão no `CLAUDE.md`.
+`04ba9e1` a `8795ff3` (Etapas 76, 77 e 78): conflitos das regras, seção de status, skills/regras globais no projeto e 7 regras do global.
 
 ## ⏳ Pendências
 
@@ -71,3 +80,5 @@ aula por vez, como foi feito nas aulas 01 e 02:
 | 7 | Cadastro da matéria/aulas no banco e aplicação dos seeds — só a pedido | Usuário decide |
 | 8 | Revisar as 9 aulas e dar o aceite final da Etapa 71 | Usuário |
 | 9 | Versões das regras 08:04, 08:06 e 08:09 ficaram alguns minutos à frente do relógio real (correção opcional) | Usuário decide |
+| 10 | Aceite das Etapas 76, 77 e 78 (`STATUS.md` 76.7, 77.5 e 78.8) | Usuário |
+| 11 | `.claude/skills/` e `.claude/regras-globais/` devem ser sincronizados sempre que uma regra global ou skill mudar | Claude (regra contínua) |
