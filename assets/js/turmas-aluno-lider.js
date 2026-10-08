@@ -1,31 +1,34 @@
-// Coluna "Líder (1/0)" da tela ALUNOS (alunos.html): o professor marca o aluno líder
-// (usuario.lider = 1), que passa a cadastrar e alterar as equipes da própria turma.
-// Grava pela função do banco definir_lider_usuario (só o professor que vê o aluno).
-// Plano: docs/aluno-lider-cadastra-equipes.md. Depende de turmas-aluno-pagina.js (estadoTa,
-// criarElementoTa) e de popup.js.
+// Coluna "Líder" da tela ALUNOS (alunos.html): interruptor ON/OFF com que o professor marca o
+// aluno líder (usuario.lider = 1 ligado, 0 desligado), que passa a cadastrar e alterar as equipes
+// da própria turma. Grava pela função do banco definir_lider_usuario (só o professor que vê o
+// aluno). Plano: docs/aluno-lider-cadastra-equipes.md. Depende de turmas-aluno-pagina.js
+// (estadoTa, criarElementoTa), de popup.js e do estilo .guia-interruptor
+// (assets/css/criar-usuarios-comando.css).
 
-const VALOR_LIDER_SIM_TA = "1";
-const VALOR_LIDER_NAO_TA = "0";
-const CLASSE_LIDER_SIM_TA = "ta-lider--sim";
+const TEXTO_LIDER_ON_TA = "ON";
+const TEXTO_LIDER_OFF_TA = "OFF";
 
 /**
- * Pinta a lista de escolha conforme o valor (1 = líder em destaque).
- * @param {HTMLSelectElement} escolha - Lista 1/0.
+ * Atualiza o texto ON/OFF ao lado do interruptor.
+ * @param {HTMLInputElement} interruptor - Caixa do interruptor.
+ * @param {HTMLElement} rotulo - Texto ON/OFF.
  * @returns {void}
  */
-function pintarLiderTa(escolha) {
-  escolha.classList.toggle(CLASSE_LIDER_SIM_TA, escolha.value === VALOR_LIDER_SIM_TA);
+function pintarLiderTa(interruptor, rotulo) {
+  rotulo.textContent = interruptor.checked ? TEXTO_LIDER_ON_TA : TEXTO_LIDER_OFF_TA;
+  rotulo.classList.toggle("ta-lider__texto--on", interruptor.checked);
 }
 
 /**
  * Grava a escolha de líder no banco; se falhar, volta ao valor anterior e avisa.
- * @param {HTMLSelectElement} escolha - Lista 1/0.
+ * @param {{interruptor: HTMLInputElement, rotulo: HTMLElement}} controle - Interruptor e texto.
  * @param {Object} aluno - Aluno (linha de usuario já carregada).
  * @returns {Promise<void>}
  */
-async function gravarLiderTa(escolha, aluno) {
-  const lider = Number(escolha.value);
-  escolha.disabled = true;
+async function gravarLiderTa(controle, aluno) {
+  const { interruptor, rotulo } = controle;
+  const lider = interruptor.checked ? 1 : 0;
+  interruptor.disabled = true;
   try {
     await estadoTa.repositorio.definirLider(aluno.id, lider);
     aluno.lider = lider;
@@ -33,30 +36,34 @@ async function gravarLiderTa(escolha, aluno) {
       : " deixou de ser líder.";
     await mostrarPopup((aluno.nome_completo || "O aluno") + texto, { tipo: "sucesso" });
   } catch (erro) {
-    escolha.value = String(aluno.lider || 0);
+    interruptor.checked = aluno.lider === 1;
     await mostrarPopup("Não foi possível gravar o líder: " + (erro?.message || erro),
       { tipo: "erro" });
   } finally {
-    escolha.disabled = false;
-    pintarLiderTa(escolha);
+    interruptor.disabled = false;
+    pintarLiderTa(interruptor, rotulo);
   }
 }
 
 /**
- * Cria a célula "Líder (1/0)" de um aluno vinculado.
+ * Cria a célula "Líder" (interruptor ON/OFF) de um aluno vinculado.
  * @param {Object} aluno - Aluno (linha de usuario com id e lider).
- * @returns {HTMLTableCellElement} Célula com a lista 1/0 ("—" se o aluno não tem cadastro).
+ * @returns {HTMLTableCellElement} Célula com o interruptor ("—" se o aluno não tem cadastro).
  */
 function criarCelulaLiderTa(aluno) {
   if (!aluno?.id) return criarElementoTa("td", "", "—");
 
-  const escolha = criarElementoTa("select", "guia-filtro ta-lider");
-  escolha.setAttribute("aria-label", "Líder: " + (aluno.nome_completo || ""));
-  escolha.append(new Option("0", VALOR_LIDER_NAO_TA), new Option("1", VALOR_LIDER_SIM_TA));
-  escolha.value = String(aluno.lider || 0);
-  pintarLiderTa(escolha);
-  escolha.addEventListener("change", () => gravarLiderTa(escolha, aluno));
+  const interruptor = criarElementoTa("input", "guia-interruptor");
+  interruptor.type = "checkbox";
+  interruptor.setAttribute("role", "switch");
+  interruptor.setAttribute("aria-label", "Líder: " + (aluno.nome_completo || ""));
+  interruptor.checked = aluno.lider === 1;
+  const rotulo = criarElementoTa("span", "ta-lider__texto");
+  pintarLiderTa(interruptor, rotulo);
+  interruptor.addEventListener("change", () => gravarLiderTa({ interruptor, rotulo }, aluno));
+  const caixa = criarElementoTa("label", "ta-lider");
+  caixa.append(interruptor, rotulo);
   const celula = criarElementoTa("td");
-  celula.append(escolha);
+  celula.append(caixa);
   return celula;
 }
