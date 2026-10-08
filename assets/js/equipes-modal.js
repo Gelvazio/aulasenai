@@ -293,15 +293,14 @@ function criarCardEquipe(equipe) {
   const card = criarElementoEquipes('article', 'equipes-card');
   card.dataset.equipeId = String(equipe.id);
   const topo = criarElementoEquipes('div', 'equipes-card__topo');
-  topo.append(criarElementoEquipes('h3', '', equipe.nome + ' (' + membros.length + ')'));
-  const acoes = criarElementoEquipes('div', 'equipes-acoes');
-  acoes.append(criarBotaoEquipes({ texto: '+Integrante', acao: 'abrir-integrante', id: equipe.id,
-    classe: 'equipes-btn--principal' }),
-    criarBotaoEquipes({ texto: '✏️ Editar', acao: 'editar-equipe', id: equipe.id }),
+  topo.append(criarElementoEquipes('h3', '', equipe.nome + ' (' + membros.length + ')'),
+    criarBotaoEquipes({ texto: '+Integrante', acao: 'abrir-integrante', id: equipe.id,
+      classe: 'equipes-btn--principal equipes-card__integrante' }));
+  const acoes = criarElementoEquipes('div', 'equipes-acoes equipes-card__acoes');
+  acoes.append(criarBotaoEquipes({ texto: '✏️ Editar', acao: 'editar-equipe', id: equipe.id }),
     criarBotaoEquipes({ texto: '🗑️ Excluir', acao: 'excluir-equipe', id: equipe.id,
       classe: 'equipes-btn--perigo' }));
-  topo.append(acoes);
-  card.append(topo);
+  card.append(topo, acoes);
   if (equipe.descricao) card.append(criarElementoEquipes('p', 'equipes-card__descricao',
     equipe.descricao));
   const lista = criarElementoEquipes('ul', 'equipes-membros');
@@ -354,7 +353,7 @@ async function abrirSeletorIntegrante(equipeId) {
   if (!alunosSemEquipe().length) {
     return void await mostrarPopup(MSG_TODOS_COM_EQUIPE, { tipo: 'info' });
   }
-  card.querySelector('.equipes-card__topo').after(criarSeletorIntegrante(equipeId));
+  card.querySelector('.equipes-card__acoes').after(criarSeletorIntegrante(equipeId));
 }
 
 /**
