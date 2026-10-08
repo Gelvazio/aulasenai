@@ -1,20 +1,25 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-08 10:00
+**Versão das regras:** 2026-10-08 11:00
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 11:00 | Branches das sessões juntadas na `main` (pull request): regra do push por branch + PR, apostila de ITIC concluída e apostila de Exploração de Carreiras (9 capítulos, conferência 157/157); vídeos sem duração unificados no formato `a conferir` (o `??:??` da branch de Exploração deixou de existir) e dados da matéria no formato do gerador da `main` (`textos_ementa`, `rubrica_lista`) |
 | 2026-10-08 10:00 | `TASKS.md` só com tarefas pendentes; concluídas e canceladas movidas para o novo `TASKS_COMPLETE.md` (lido só quando precisar do histórico) |
 | 2026-10-08 09:30 | Merge com a `main`: apostila e 9 atividades de 50 questões de Fundamentos da Tecnologia e Programação (33 h = 8 × 4 h + 1 h, aulas nº 6 a 14 no banco com cards "AULA 01" a "AULA 09"); conferência com a ementa lê também o **formato por módulos** do Rio do Sul Mais Tech (indicador na tabela de capacidades, BNCC em tabela, prompts `**M1:**`, glossário em lista, marcos, recursos em lista, exemplos e orientações) só quando o formato padrão não existe; vídeos pendentes da apostila na tarefa #12 do `TASKS.md` |
+| 2026-10-08 09:00 | Push na **nuvem** passa a ser sempre numa **branch própria + novo pull request** para a `main` (nunca push direto na `main`), para não sobrescrever nada; **local** continua sem push |
+| 2026-10-08 08:00 | Apostilas: vídeo sem duração conferida é aceito a pedido do usuário (hoje no formato `a conferir`); conferir depois (Exploração de Carreiras: tarefa #14 do `TASKS.md`) |
 | 2026-10-07 20:50 | Identificação da apostila obrigatória em **todas** as apostilas: `autor_apostila` (padrão Gelvazio Camargo) e `versao_apostila` (começa em 1.0) preenchidos no `materia.json` antes da 1ª geração; aplicada também em Reforço de Linguagens |
 | 2026-10-07 20:50 | Apostilas: vídeo com duração `a conferir` (link real, duração não conferida por bloqueio de rede) aceito pelo gerador, com aviso; 29 vídeos na apostila de Reforço de Linguagens |
 | 2026-10-07 20:40 | Reforço de Linguagens ganha menu de atividades (`MENU-ATIVIDADES.js` com 📚 Índice, 📘 Apostila e as atividades por aula) |
 | 2026-10-07 20:30 | Regra do push dividida por ambiente: **local** = nunca fazer push (continua); **nuvem** (Claude Code na web/remoto) = sempre fazer push, direto na `main`, sem pull request |
 | 2026-10-07 20:20 | Apostila de Reforço de Linguagens (10 capítulos, aguardando validação); gerador de apostilas aceita a carga horária de cada aula (6 h/7 h), ementas com capacidades em lista, conteúdos programáticos por módulo e aulas em negrito, e vídeos "⏳ pendentes" quando o YouTube não pode ser conferido; ementa de Reforço de Linguagens com as 6 capacidades da ementa do curso |
 | 2026-10-07 20:15 | Regra "IDENTIFICAÇÃO DA APOSTILA" (global): toda apostila mostra autor, versão, data e hora (campos `autor_apostila` e `versao_apostila` no `materia.json`); começou pela ITIC (autor Gelvazio Camargo, versão 1.0) |
+| 2026-10-07 17:30 | Conferência da apostila aceita também ementas no formato Rio do Sul Mais Tech (capacidades em lista numerada, módulos de conteúdo, aulas em negrito, indicadores e casos em lista) |
 | 2026-10-07 17:00 | Combo "Aluno" do professor também nas atividades objetivas (alternativas marcadas pelo aluno, somente leitura); módulo único `respostas-aluno-professor.js` |
+| 2026-10-07 17:00 | Status da regra das apostilas atualizado: ITIC com os 10 capítulos, HTML e PDF prontos, aguardando validação do professor |
 | 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
 | 2026-10-07 10:00 | Apostilas: o HTML passa a ser gerado a partir do Markdown completo `APOSTILA-<MATERIA>.md` (antes lia os `CAPITULO-NN.md`) |
 | 2026-10-07 09:00 | Menus USUARIOS, RELATORIOS, ALUNOS e CORREÇÃO do header só para o **Professor Administrador** (os demais professores não veem) |
@@ -90,7 +95,7 @@ Registrada em 2026-10-03 a pedido do usuário.
   nem resumo).
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
-- ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, na `main`).
+- ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, numa branch própria + novo PR para a `main`).
 - ✅ **Aulas: uma por vez, completa** (2026-10-03): gerar e gravar uma aula (e todo o seu material)
   antes de passar à próxima, controlando em `<MATERIA>/AULAS/STATUS-AULAS.md` (ver a regra
   "GERAR E GRAVAR UMA AULA POR VEZ").
@@ -100,8 +105,9 @@ Registrada em 2026-10-03 a pedido do usuário.
   `<MATERIA>/ATIVIDADES/STATUS-ATIVIDADES.md` (ver a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES").
 - ⛔ **Push depende do ambiente** (2026-10-07): **local** (máquina do usuário) = **nunca fazer
   push**, mesmo que ele peça — avisar que o commit está pronto para ele enviar; **nuvem** (Claude
-  Code na web/remoto) = **sempre fazer push, direto na `main`, sem pull request** (ver a regra
-  "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM").
+  Code na web/remoto) = **sempre fazer push numa branch própria e abrir um NOVO pull request
+  para a `main`**, nunca push direto na `main` (2026-10-08; ver a regra "PUSH: NUNCA NO AMBIENTE
+  LOCAL, SEMPRE NA NUVEM").
 - ⛔ **Conteúdo só pelos Markdowns, nunca de PDF** (2026-10-03): para conferir ou gerar conteúdo,
   ler os `.md` da matéria — em primeiro lugar o `EMENTA-CHALKIE-AI.md` (ver a regra "CONTEÚDO SÓ
   PELOS MARKDOWNS").
@@ -1909,10 +1915,11 @@ Registrada em 2026-09-28.
 - ✅ Lista das turmas com os e-mails: `ATIVIDADES/LISTA-PRESENCA.js` de cada matéria.
   ⚠️ Dados pessoais de menores (LGPD): arquivo no `.gitignore`, nunca publicar.
 
-## ⛔ REGRA — PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM (DIRETO NA `main`)
+## ⛔ REGRA — PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM (BRANCH PRÓPRIA + NOVO PR)
 
 Registrada em 2026-10-01 a pedido do usuário ("NUNCA FAZER PUSH"); **alterada em 2026-10-07**, a
-pedido do usuário, para valer **conforme o ambiente**.
+pedido do usuário, para valer **conforme o ambiente**; **alterada em 2026-10-08**, a pedido do
+usuário: na nuvem, **sempre um novo pull request**, para evitar sobrescrever algo na `main`.
 
 ### 💻 Ambiente local (máquina do usuário, ex.: `C:\fontes\aulasenai`)
 
@@ -1925,17 +1932,25 @@ pedido do usuário, para valer **conforme o ambiente**.
 
 ### ☁️ Ambiente de nuvem (Claude Code na web / sessão remota, contêiner temporário)
 
-✅ **O Claude SEMPRE faz o push, direto na `main`, sem pull request.** No contêiner da nuvem o
-commit se perde quando a sessão acaba, e o usuário não tem como enviá-lo da máquina dele.
+✅ **O Claude SEMPRE faz o push numa branch própria e abre um NOVO pull request para a `main`.**
+No contêiner da nuvem o commit se perde quando a sessão acaba, por isso o push é obrigatório; o
+pull request garante que **nada na `main` é sobrescrito** sem o usuário revisar e fazer o merge.
 
-- ✅ Ao concluir cada tarefa: commit (regra "COMMIT POR TAREFA") e **`git push origin HEAD:main`**.
-- ✅ **Sem pull request:** não abrir PR; o trabalho vai direto para a `main`.
-- ✅ Antes do push, `git fetch origin main`; se a `main` andou, trazer as mudanças dela para o
-  trabalho (merge ou rebase do próprio commit ainda não enviado) e conferir de novo antes de enviar.
-- ❌ **Nunca push forçado** (`--force`), nunca reescrever o histórico já publicado da `main`, nunca
-  push de tags nem mudança de remotos.
+- ✅ Ao concluir cada tarefa: commit (regra "COMMIT POR TAREFA"), **`git push -u origin <branch>`**
+  (a branch de trabalho da sessão, nunca a `main`) e **abrir um novo pull request** da branch para
+  a `main`, com título e descrição do que mudou.
+- ⛔ **Nunca push direto na `main`** (`git push origin HEAD:main` está proibido) e o Claude
+  **não faz o merge** do pull request: quem revisa e junta na `main` é o usuário.
+- ✅ **Sempre um PR novo:** se o PR da branch já foi juntado (merged) ou fechado, a tarefa seguinte
+  recomeça a branch a partir da `main` atualizada e abre **outro** PR — nunca reaproveitar PR
+  juntado. Enquanto o PR da branch ainda estiver aberto, os commits novos da mesma sessão entram
+  nele (o GitHub não aceita dois PRs abertos da mesma branch).
+- ✅ Antes do push, `git fetch origin main`; se a `main` andou, trazer as mudanças dela para a
+  branch (merge) e conferir de novo antes de enviar.
+- ❌ **Nunca push forçado** (`--force`), nunca reescrever histórico já publicado, nunca push de tags
+  nem mudança de remotos.
 - ✅ Antes do push, conferir `git diff --cached --name-only` contra a regra "O QUE NUNCA É
-  PUBLICADO" (a `main` é publicada pela Vercel).
+  PUBLICADO" (a `main` é publicada pela Vercel depois do merge).
 
 ## 💾 REGRA — COMMIT POR TAREFA (SEMPRE)
 
@@ -1951,7 +1966,8 @@ regra global de mesmo nome.
 - ✅ Antes do commit, conferir `git diff --cached --name-only` contra a regra "O QUE NUNCA É
   PUBLICADO".
 - ✅ No ambiente **local** o commit fica só local (o push é do usuário); na **nuvem**, o Claude faz
-  o push direto na `main` (ver "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM").
+  o push numa branch própria e abre um novo pull request para a `main` (ver "PUSH: NUNCA NO
+  AMBIENTE LOCAL, SEMPRE NA NUVEM").
 - ✅ Usuário pediu commit explícito → fazer na hora.
 - ✅ Arquivos ignorados pelo Git (gabaritos, fontes de questões, listas de alunos) não entram no
   commit; não usar `-f` para forçá-los. Desde 2026-09-30 os `*.md` e `*.py` **são versionados**
@@ -2336,9 +2352,11 @@ importação no AVA pelo professor; as demais matérias só quando o usuário li
 Registrada em 2026-10-03 a pedido do usuário (padrões definidos na validação do piloto). Plano:
 `docs/gerador-apostilas.md`. **Reforço de Linguagens (2026-10-07):** introdução + 10 capítulos gerados, conferência 100%
 (138/138), aguardando validação; vídeos pendentes (`REFORCO_LINGUAGENS/APOSTILA/STATUS-APOSTILA.md`).
-**Status:** 🔄 piloto **Introdução à TIC (ITIC)** — só o capítulo 01
-gerado, aguardando validação do usuário; os demais capítulos só depois que ele liberar, **um por
-vez, perguntando a cada capítulo** (rascunhos em `APOSTILA/RASCUNHOS/`, fora da apostila).
+**Status (2026-10-07):** ✅ piloto **Introdução à TIC (ITIC)** com os
+**10 capítulos** escritos, Markdown completo (conferência 100%), HTML e PDF (84 páginas) gerados;
+👀 aguardando a validação dos capítulos e a conferência dos vídeos pelo professor. Nas próximas
+matérias, continua **um capítulo por vez, perguntando a cada capítulo** (rascunhos em
+`APOSTILA/RASCUNHOS/`, fora da apostila).
 
 ### 🏷️ IDENTIFICAÇÃO DA APOSTILA: AUTOR, VERSÃO, DATA E HORA (REGRA GLOBAL)
 
@@ -2671,8 +2689,11 @@ faltava. Vale para **todas as matérias**.
 1. **Abertura** com as capacidades do capítulo (`- **Capacidade:** C1, S1`);
 2. **Teoria + exemplos**;
 3. **Vídeos do YouTube de no máximo 15 minutos** (`- [título](url) — mm:ss — canal`): miniatura +
-   título + duração + canal + link (funciona na tela e no papel). O gerador **recusa** vídeo sem
-   duração ou com mais de 15:00. A duração é conferida nos metadados do YouTube (`curl`, sem
+   título + duração + canal + link (funciona na tela e no papel). O gerador **recusa** vídeo com
+   mais de 15:00. **Exceção (2026-10-08, pedido do usuário):** quando a duração não pôde ser
+   conferida (ex.: sessão em nuvem sem acesso ao YouTube), escrever `a conferir` no lugar de
+   `mm:ss` (ver "Vídeo com duração 'a conferir'") e registrar uma tarefa no `TASKS.md` para
+   conferir depois. O canal é opcional. A duração é conferida nos metadados do YouTube (`curl`, sem
    navegador) e o professor confere o conteúdo;
 4. **Resumo**;
 5. **No mínimo 5 exercícios (questões) por capítulo** (mais é permitido), no padrão ITEM
