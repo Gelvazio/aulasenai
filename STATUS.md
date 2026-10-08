@@ -30,6 +30,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 91 | 91.2 | coluna "Nota IA" no progresso da turma da Prova Prática ADAG (id 82) | Aceite |
 | 90 | 90.2 | orientação da correção por IA da Prova Prática ADAG (`CORRECAO-PROVA-ADAG.md`) | Aceite |
 | 89 | 89.5 | testar o progresso da turma (logado como professor) na Prova Prática ADAG (id 82) | Aceite |
 | 88 | 88.8 | testar na Prova Prática ADAG (id 82): bloqueio de colar, campo do tamanho da resposta, botão Gravar e entrega só com tudo preenchido | Aceite |
@@ -1175,3 +1176,10 @@ Pedido do usuário: arquivo `CORRECAO-PROVA-ADAG.md` com a orientação para a I
 |------|-----------|--------|--------------|-------------|
 | 90.1 | `MATERIAIS/GESTAO_E_CONTROLE_MATERIAIS/ANALISE_DADOS_APLICADA_GESTAO/ATIVIDADES/CORRECAO-PROVA-ADAG.md`: regras de nota (0,1/0,05/0 e 0,2/0,1/0), comentário `[IA] ...`, SQL de cada rodada (pendentes, leitura, textos iguais, gravação em `correcao_discursiva.nota_ia` e `comentario` só sem `nota_professor`, conferência) e registro das rodadas | ✅ Concluído | 2026-10-08 14:48:26 | Colunas, trigger, restrições e RLS da `correcao_discursiva` conferidos no banco (só leitura); arquivo sem respostas esperadas nem dados de alunos |
 | 90.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 91 — Coluna "Nota IA" no progresso da turma (Prova Prática ADAG id 82, tarefa pequena, 2026-10-08 14:52:04)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 91.1 | `assets/js/progresso-turma-discursiva.js` + CSS: coluna "Nota IA (a confirmar)" por aluno (soma da `nota_ia` da `correcao_discursiva`, tentativa mais recente, "(N/60)" se incompleta) e linha de títulos das colunas; regra em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-08 14:52:04 | `node --check`; colunas da `correcao_discursiva` e RLS de leitura do professor conferidos no banco |
+| 91.2 | Aceite do usuário (testar logado como professor) | ⬜ Pendente | — | — |

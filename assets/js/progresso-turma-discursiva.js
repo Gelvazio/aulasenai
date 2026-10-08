@@ -2,13 +2,17 @@
 // célula por questão (vazia, em andamento ou completa), a barra geral e a entrega. Montado em
 // tempo de execução e atualizado a cada 5 segundos. Só aparece para o professor e só quando o
 // <body> tem data-progresso-professor="sim" (campo "- **Progresso para o professor:** sim" da
-// fonte .md). O RLS limita aos alunos das turmas do professor. Nada é gravado.
+// fonte .md). Coluna "Nota IA": soma da nota_ia (correcao_discursiva) a confirmar pelo professor.
+// O RLS limita aos alunos das turmas do professor. Nada é gravado.
 // Carregado por assets/js/avaliacao-discursiva.js. Depende de js/supabase.js (sbGet).
 // Regra: docs/regras/atividades.md
 
 const CLASSE_PROGRESSO_TURMA = 'progresso-turma';
 const INTERVALO_ATUALIZACAO_PROGRESSO_MS = 5000;
 const TABELA_RESPOSTAS_PROGRESSO = 'resposta_discursiva';
+const TABELA_CORRECAO_PROGRESSO = 'correcao_discursiva';
+const TITULOS_COLUNAS_PROGRESSO = ['Aluno', 'Questões', 'Progresso', 'Situação',
+    'Nota IA (a confirmar)'];
 const SELETOR_TOPICO_PROGRESSO = '.topico-resposta';
 const SELETOR_CABECALHO_ATIVIDADE = '.container > header';
 const BASE_SCRIPTS_PROGRESSO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
@@ -81,16 +85,35 @@ async function carregarNomesNovos(ids) {
 }
 
 /**
- * Lê do banco o progresso de cada aluno (tópicos por questão, entrega e nome).
+ * Soma, por aluno e tentativa, a nota sugerida pela IA e quantos tópicos ela já corrigiu.
+ * @param {Object[]} correcoes - Linhas {aluno_id, tentativa, nota_ia} da correcao_discursiva.
+ * @returns {Map<string, {nota: number, corrigidos: number}>} Chave "aluno|tentativa".
+ */
+function somarNotasDaIa(correcoes) {
+    const notas = new Map();
+    correcoes.forEach((linha) => {
+        if (linha.nota_ia === null || linha.nota_ia === undefined) return;
+        const chave = linha.aluno_id + '|' + linha.tentativa;
+        const atual = notas.get(chave) || { nota: 0, corrigidos: 0 };
+        notas.set(chave, { nota: atual.nota + Number(linha.nota_ia),
+            corrigidos: atual.corrigidos + 1 });
+    });
+    return notas;
+}
+
+/**
+ * Lê do banco o progresso de cada aluno (tópicos por questão, entrega, nota da IA e nome).
  * @param {number} atividadeId - Id da atividade.
- * @returns {Promise<Object[]>} Lista {nome, porQuestao, entregue}, em ordem alfabética.
+ * @returns {Promise<Object[]>} Lista {nome, porQuestao, entregue, notaIa}, em ordem alfabética.
  */
 async function lerProgressoDaTurma(atividadeId) {
     const filtro = 'atividade_id=eq.' + atividadeId;
-    const [respostas, entregas] = await Promise.all([
+    const [respostas, entregas, correcoes] = await Promise.all([
         sbGet(TABELA_RESPOSTAS_PROGRESSO, 'select=aluno_id,tentativa,item,texto&' + filtro),
         sbGet('entrega_atividade', 'select=aluno_id,tentativa&' + filtro),
+        sbGet(TABELA_CORRECAO_PROGRESSO, 'select=aluno_id,tentativa,nota_ia&' + filtro),
     ]);
+    const notasDaIa = somarNotasDaIa(correcoes);
     const progresso = contarRespostasPorAluno(respostas);
     const ids = [...progresso.keys()];
     await carregarNomesNovos(ids);
@@ -100,6 +123,7 @@ async function lerProgressoDaTurma(atividadeId) {
         nome: estadoProgressoTurma.nomes.get(id) || 'Aluno sem nome',
         porQuestao: progresso.get(id).porQuestao,
         entregue: entregues.has(id + '|' + progresso.get(id).tentativa),
+        notaIa: notasDaIa.get(id + '|' + progresso.get(id).tentativa) || null,
     })).sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
 }
 
@@ -152,7 +176,41 @@ function montarBarra(percentual, modificador = '') {
 }
 
 /**
- * Monta a linha de um aluno: nome, células das questões, barra e situação.
+ * Monta a célula "Nota IA": soma das notas sugeridas pela IA (a confirmar pelo professor).
+ * @param {{nota: number, corrigidos: number}|null} notaIa - Nota da IA do aluno.
+ * @param {number} totalTopicos - Tópicos da prova.
+ * @returns {HTMLElement} Célula pronta.
+ */
+function montarCelulaNotaIa(notaIa, totalTopicos) {
+    const classe = CLASSE_PROGRESSO_TURMA + '__nota-ia';
+    if (!notaIa) return criarElementoProgresso('span', classe + ' ' + classe + '--vazia', '—');
+
+    const nota = notaIa.nota.toLocaleString('pt-BR',
+        { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const estaCompleta = notaIa.corrigidos >= totalTopicos;
+    const texto = estaCompleta
+        ? '🤖 ' + nota
+        : '🤖 ' + nota + ' (' + notaIa.corrigidos + '/' + totalTopicos + ')';
+    const celula = criarElementoProgresso('span', classe, texto);
+    celula.title = 'Nota sugerida pela IA (' + notaIa.corrigidos + ' de ' + totalTopicos +
+        ' tópicos corrigidos) — vale só depois da confirmação do professor em CORREÇÃO.';
+    return celula;
+}
+
+/**
+ * Monta a linha de títulos das colunas.
+ * @returns {HTMLElement} Linha de títulos.
+ */
+function montarTitulosDasColunas() {
+    const linha = criarElementoProgresso('div', CLASSE_PROGRESSO_TURMA + '__linha ' +
+        CLASSE_PROGRESSO_TURMA + '__linha--titulos');
+    TITULOS_COLUNAS_PROGRESSO.forEach((titulo) => linha.appendChild(
+        criarElementoProgresso('span', CLASSE_PROGRESSO_TURMA + '__coluna', titulo)));
+    return linha;
+}
+
+/**
+ * Monta a linha de um aluno: nome, células das questões, barra, situação e nota da IA.
  * @param {Object} aluno - Registro de lerProgressoDaTurma.
  * @param {{topicos: Map<number, number>, totalTopicos: number}} medida - Estrutura da prova.
  * @returns {HTMLElement} Linha pronta.
@@ -170,7 +228,8 @@ function montarLinhaDoAluno(aluno, medida) {
         criarElementoProgresso('span', CLASSE_PROGRESSO_TURMA + '__nome', aluno.nome),
         montarCelulasDasQuestoes(aluno.porQuestao, medida.topicos),
         montarBarra(percentual, aluno.entregue ? 'entregue' : ''),
-        criarElementoProgresso('span', CLASSE_PROGRESSO_TURMA + '__situacao', situacao));
+        criarElementoProgresso('span', CLASSE_PROGRESSO_TURMA + '__situacao', situacao),
+        montarCelulaNotaIa(aluno.notaIa, medida.totalTopicos));
     return linha;
 }
 
@@ -210,7 +269,8 @@ async function atualizarProgressoDaTurma(tela, opcoes) {
             return;
         }
         tela.resumo.replaceChildren(...montarResumoDaTurma(alunos, opcoes.totalTopicos));
-        tela.lista.replaceChildren(...alunos.map((aluno) => montarLinhaDoAluno(aluno, opcoes)));
+        tela.lista.replaceChildren(montarTitulosDasColunas(),
+            ...alunos.map((aluno) => montarLinhaDoAluno(aluno, opcoes)));
     } catch (erro) {
         tela.resumo.replaceChildren('❌ Não foi possível ler o progresso: ' + erro.message);
     } finally {

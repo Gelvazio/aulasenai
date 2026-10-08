@@ -14,6 +14,7 @@
     --progresso-turma-andamento-texto: #744210;
     --progresso-turma-completa-fundo: #c6f6d5;
     --progresso-turma-completa-texto: #22543d;
+    --progresso-turma-nota-ia: #6b46c1;
     --progresso-turma-raio: 8px;
 }
 
@@ -58,10 +59,27 @@
 
 .progresso-turma__linha {
     display: grid;
-    grid-template-columns: minmax(140px, 1.2fr) 3fr minmax(80px, 1fr) minmax(120px, auto);
+    grid-template-columns: minmax(140px, 1.2fr) 3fr minmax(80px, 1fr) minmax(120px, auto)
+        minmax(110px, auto);
     align-items: center;
     gap: 10px;
     font-size: 13px;
+}
+
+.progresso-turma__linha--titulos {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--progresso-turma-texto-suave);
+}
+
+.progresso-turma__nota-ia {
+    font-weight: 700;
+    text-align: right;
+    color: var(--progresso-turma-nota-ia);
+}
+
+.progresso-turma__nota-ia--vazia {
+    color: var(--progresso-turma-texto-suave);
 }
 
 .progresso-turma__nome {
@@ -137,8 +155,13 @@
         gap: 4px;
     }
 
-    .progresso-turma__situacao {
+    .progresso-turma__situacao,
+    .progresso-turma__nota-ia {
         text-align: left;
+    }
+
+    .progresso-turma__linha--titulos {
+        display: none;
     }
 }
 
