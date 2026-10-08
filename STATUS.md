@@ -915,5 +915,5 @@ Arquivos globais (`C:\Users\gelva\.claude\...`, skill `documentacao-padrao`) fic
 | 76.3 | Fonte única: `STATUS.md` × `TASKS.md` × `SESSOES-CLAUDE/` — escolha do usuário: "STATUS.md manda; os outros apontam" | ✅ Concluído | 2026-10-08 08:11 | Regra no CLAUDE.md, seção "📌 Tarefas do TASKS.md" no STATUS.md com as 8 tarefas, aviso no topo do TASKS.md |
 | 76.4 | Log da sessão: obrigatório × só com SIM — escolha do usuário: "Só com SIM" | ✅ Concluído | 2026-10-08 08:14 | CLAUDE.md sem a obrigação de gravar a cada pedido |
 | 76.5 | Frase final da tarefa (global) × pergunta do log (projeto) | ✅ Concluído | 2026-10-08 08:14 | CLAUDE.md global com a exceção nas 2 seções (fora do Git) |
-| 76.6 | Confirmação antes de comando mutável × Git sem perguntar | 🔄 Em progresso | — | — |
-| 76.7 | Aceite do usuário | ⬜ Pendente | — | — |
+| 76.6 | Confirmação antes de comando mutável × Git sem perguntar | ✅ Concluído | 2026-10-08 08:14 | Item 9 do CLAUDE.md global com a exceção (fora do Git) |
+| 76.7 | Aceite do usuário | 👀 Aguardando validação | — | — |
