@@ -238,6 +238,11 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   `assets/js/minimo-questoes-discursiva.js` + CSS. Plano:
   `docs/quantidade-minima-questoes-discursiva.md`. SQL:
   `database/2026-10-08-minimo-questoes-entrega.sql` (aplicado).
+  - **Botão "🧮 Cálculo Nota"** (ao lado de "📈 Gráficos", 2026-10-08): calcula quantas questões
+    completas **85% da turma** (alunos que começaram) já atingiram e sugere esse número; o modal
+    mostra o resumo e a tabela dos alunos, e o botão **"Quantidade Mínima de Questões"** grava o
+    mínimo informado **só para quem ainda está com o total** (quem tem mínimo próprio não muda).
+    A nota continua seguindo o mínimo de cada aluno. `assets/js/calculo-nota-progresso.js` + CSS.
 - ✅ **Entrega só com tudo preenchido (já existia):** ao clicar em "Finalizar e entregar", a página
   confere no banco os tópicos sem texto (só espaços conta como vazio), destaca e lista os que faltam;
   o RLS da `entrega_atividade` também recusa a entrega incompleta.

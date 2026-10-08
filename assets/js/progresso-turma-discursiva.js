@@ -28,6 +28,7 @@ const SEM_NOTA = -1;
 const NOTA_MAXIMA = 10;
 const TABELA_MINIMO_ALUNO = 'minimo_questoes_aluno';
 const ARQUIVO_MINIMO_QUESTOES = 'minimo-questoes-discursiva.js';
+const ARQUIVO_CALCULO_NOTA = 'calculo-nota-progresso.js';
 const SELETOR_TOPICO_PROGRESSO = '.topico-resposta';
 const SELETOR_CABECALHO_ATIVIDADE = '.container > header';
 const BASE_SCRIPTS_PROGRESSO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
@@ -298,8 +299,8 @@ function montarCelulaNotaFinal(aluno) {
     const celula = criarElementoProgresso('span', classe,
         '🤖 ' + formatarNotaProgresso(aluno.valorNotaFinal));
     celula.title = 'Nota sugerida pela IA com a prova entregue e as respostas corrigidas ' +
-        '(sobre o mínimo de ' + aluno.minimo + ' questões, máximo 10) — vale só depois da confirmação do ' +
-        'professor.';
+        '(sobre o mínimo de ' + aluno.minimo + ' questões, máximo 10) — vale só depois da ' +
+        'confirmação do professor.';
     return celula;
 }
 
@@ -573,9 +574,36 @@ function montarCabecalhoProgresso(opcoes) {
     botao.type = 'button';
     botao.title = 'Abrir 5 gráficos do progresso da turma';
     botao.addEventListener('click', () => abrirGraficosDoProgresso(opcoes));
+    const calculo = criarElementoProgresso('button', CLASSE_PROGRESSO_TURMA + '__graficos',
+        '🧮 Cálculo Nota');
+    calculo.type = 'button';
+    calculo.title = 'Mínimo de questões que 85% da turma já completou';
+    calculo.addEventListener('click', abrirCalculoNotaDoProgresso);
+    const botoes = criarElementoProgresso('div', CLASSE_PROGRESSO_TURMA + '__botoes-cabecalho');
+    botoes.append(botao, calculo);
     cabecalho.append(criarElementoProgresso('h2', CLASSE_PROGRESSO_TURMA + '__titulo',
-        '📊 Progresso da turma (só o professor vê · atualiza a cada 5 segundos)'), botao);
+        '📊 Progresso da turma (só o professor vê · atualiza a cada 5 segundos)'), botoes);
     return cabecalho;
+}
+
+/**
+ * Abre o modal "Cálculo Nota" (carrega o módulo na primeira vez) e atualiza o painel depois.
+ */
+async function abrirCalculoNotaDoProgresso() {
+    try {
+        if (typeof window.abrirCalculoNota !== 'function') {
+            await carregarScriptProgresso(ARQUIVO_CALCULO_NOTA);
+        }
+        const mudou = await window.abrirCalculoNota({
+            alunos: estadoProgressoTurma.ultimosAlunos,
+            atividadeId: estadoProgressoTurma.atividadeId,
+        });
+        const deveAtualizar = mudou && estadoProgressoTurma.atualizarAgora;
+        if (deveAtualizar) await estadoProgressoTurma.atualizarAgora();
+    } catch (erro) {
+        await mostrarPopup('Não foi possível abrir o Cálculo Nota: ' + erro.message,
+            { tipo: 'erro', titulo: 'Cálculo Nota' });
+    }
 }
 
 /**

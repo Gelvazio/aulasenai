@@ -37,6 +37,12 @@
     gap: 8px;
 }
 
+.progresso-turma__botoes-cabecalho {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
 .progresso-turma__graficos {
     padding: 6px 14px;
     border: 1px solid var(--progresso-turma-barra);

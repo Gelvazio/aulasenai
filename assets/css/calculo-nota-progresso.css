@@ -1,0 +1,100 @@
+/* Professor: modal "Cálculo Nota" do Progresso da turma (calculo-nota-progresso.js). */
+
+:root {
+    --calculo-fundo-escuro: rgba(26, 32, 44, 0.6);
+    --calculo-janela: #ffffff;
+    --calculo-borda: #e2e8f0;
+    --calculo-destaque: #2f855a;
+    --calculo-texto-suave: #4a5568;
+    --calculo-erro: #c53030;
+    --calculo-raio: 10px;
+}
+
+.calculo-nota {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: var(--calculo-fundo-escuro);
+}
+
+.calculo-nota__janela {
+    width: min(760px, 100%);
+    max-height: 92vh;
+    overflow-y: auto;
+    padding: 20px;
+    border-radius: var(--calculo-raio);
+    background: var(--calculo-janela);
+}
+
+.calculo-nota__titulo {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+.calculo-nota__resumo {
+    margin: 0 0 12px;
+    padding-left: 18px;
+    color: var(--calculo-texto-suave);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.calculo-nota__rotulo {
+    font-weight: 700;
+}
+
+.calculo-nota__campo {
+    width: 90px;
+    margin-left: 6px;
+    padding: 6px 8px;
+    border: 1px solid var(--calculo-borda);
+    border-radius: var(--calculo-raio);
+    font: inherit;
+}
+
+.calculo-nota__aviso {
+    min-height: 1em;
+    color: var(--calculo-erro);
+    font-size: 13px;
+}
+
+.calculo-nota__botoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.calculo-nota__botoes button {
+    padding: 8px 16px;
+    border: 1px solid var(--calculo-destaque);
+    border-radius: var(--calculo-raio);
+    background: transparent;
+    color: var(--calculo-destaque);
+    font: inherit;
+    cursor: pointer;
+}
+
+.calculo-nota__botoes .calculo-nota__aplicar {
+    background: var(--calculo-destaque);
+    color: var(--calculo-janela);
+    font-weight: 700;
+}
+
+.calculo-nota__tabela {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.calculo-nota__tabela th,
+.calculo-nota__tabela td {
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--calculo-borda);
+    text-align: left;
+}
