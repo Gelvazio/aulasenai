@@ -1,7 +1,7 @@
 # Atividade: Prova Prática ADAG — 20 Questões Discursivas (Aulas 01 a 07)
 
 - **Aula:** AV-PR-06-10
-- **Rótulo da aula:** Prova Prática 06-10-2026
+- **Rótulo da aula:** Prova Prática 01
 - **Tema:** Aulas 01 a 07
 - **Ícone:** ✍️
 - **Duração:** 180–220 minutos
