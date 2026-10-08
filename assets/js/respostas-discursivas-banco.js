@@ -157,6 +157,15 @@ async function registrarAberturaDiscursiva(dados) {
 }
 
 /**
+ * Indica se a página esconde do aluno as próprias respostas depois da entrega
+ * (data-ocultar-respostas-entregue="sim" no <body>; campo da fonte .md).
+ * @returns {boolean} true quando o bloqueio está ligado.
+ */
+function ocultaRespostasEntregues() {
+    return document.body?.dataset.ocultarRespostasEntregue === 'sim';
+}
+
+/**
  * Carrega sessão, atividade, tentativa, respostas e entrega do usuário logado.
  * @param {Object} sessao - Estado do repositório (preenchido aqui).
  * @returns {Promise<Object>} Dados iniciais da página (disponivel=false sem banco ou cadastro).
@@ -175,18 +184,21 @@ async function carregarDiscursiva(sessao) {
     const ehProfessor = sessao.usuario.app_metadata?.perfil === PERFIL_PROFESSOR_DISCURSIVA;
     const identificacao = await lerIdentificacaoDiscursiva(sessao.usuario);
     sessao.tentativa = await lerTentativaDiscursiva(sessao.atividade.id, sessao.usuario.id);
-    const [respostas, entregueEm, avisoHorario] = await Promise.all([
-        lerRespostasDiscursivas(sessao),
+    const [entregueEm, avisoHorario] = await Promise.all([
         lerEntregaDiscursiva(sessao),
         ehProfessor ? '' : explicarHorarioDiscursiva(),
     ]);
+    // Aluno que já entregou, em página com o bloqueio ligado: as respostas nem são lidas do banco.
+    const respostasOcultas = Boolean(!ehProfessor && entregueEm && ocultaRespostasEntregues());
+    const respostas = respostasOcultas ? {} : await lerRespostasDiscursivas(sessao);
     const deveRegistrarAbertura = !ehProfessor && !entregueEm && sessao.atividade.ativo;
     if (deveRegistrarAbertura) {
         await registrarAberturaDiscursiva({ atividadeId: sessao.atividade.id,
             tentativa: sessao.tentativa, alunoId: sessao.usuario.id });
     }
     return {
-        disponivel: true, logado: true, ehProfessor, ...identificacao, respostas, entregueEm,
+        disponivel: true, logado: true, ehProfessor, ...identificacao, respostas, respostasOcultas,
+        entregueEm,
         avisoHorario, tentativa: sessao.tentativa, ativa: sessao.atividade.ativo,
         maximoTentativas: sessao.atividade.max_tentativas, atividadeId: sessao.atividade.id,
     };

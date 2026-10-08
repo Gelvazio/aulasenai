@@ -205,6 +205,12 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   - ⏳ **Regra para o futuro:** o progresso deve aparecer em **todas as atividades** (discursivas
     e objetivas — estas usam `assets/js/respostas-atividade.js` e precisam de módulo equivalente);
     ligar uma por vez quando o usuário pedir (pendência no `STATUS.md`).
+- ✅ **Ocultar as respostas depois da entrega (2026-10-08, pedido do usuário):** campo opcional
+  `- **Ocultar respostas após entrega:** sim` → `data-ocultar-respostas-entregue="sim"`. O aluno que
+  já entregou **não vê** as próprias respostas: a página **nem as lê do banco**
+  (`carregarDiscursiva` em `assets/js/respostas-discursivas-banco.js`), os campos ficam vazios, a
+  barra do aluno some e o painel avisa. Logo após entregar, a tela também é limpa. O professor
+  continua vendo tudo; nada é apagado do banco. 1º uso: Prova Prática ADAG (id 82).
 - ✅ **Entrega só com tudo preenchido (já existia):** ao clicar em "Finalizar e entregar", a página
   confere no banco os tópicos sem texto (só espaços conta como vazio), destaca e lista os que faltam;
   o RLS da `entrega_atividade` também recusa a entrega incompleta.

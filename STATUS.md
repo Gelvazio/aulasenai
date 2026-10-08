@@ -30,6 +30,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 94 | 94.3 | aluno que entregou a Prova Prática ADAG (id 82) não vê as próprias respostas | Aceite |
 | 92 | 92.5 | rodar a correção parcial da IA e ver a "Nota parcial IA" no Progresso da turma (prova id 82) | Aceite |
 | 91 | 91.2 | coluna "Nota IA" no progresso da turma da Prova Prática ADAG (id 82) | Aceite |
 | 90 | 90.2 | orientação da correção por IA da Prova Prática ADAG (`CORRECAO-PROVA-ADAG.md`) | Aceite |
@@ -1212,3 +1213,11 @@ Pedido do usuário: a rodada da IA não gravou nada (0 entregas; a orientação 
 |------|-----------|--------|--------------|-------------|
 | 93.1 | Regra no `CLAUDE.md` (versão, histórico resumido e completo) e em `docs/regras/atividades.md`: ícone da nota parcial da IA por alternativa em "Respostas dos alunos" vale para todas as avaliações discursivas | ✅ Concluído | 2026-10-08 15:54:25 | Leitura dos arquivos; o código já é comum a todas as discursivas (`avaliacao-discursiva.js`) |
 | 93.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 94 — Prova Prática ADAG (id 82): aluno que entregou não vê as respostas (tarefa pequena, 2026-10-08 15:59:36)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 94.1 | Campo `Ocultar respostas após entrega: sim` (gerador → `data-ocultar-respostas-entregue`); `carregarDiscursiva` nem lê as respostas do banco para aluno que entregou; campos vazios, sem barra do aluno, aviso no painel e tela limpa logo após entregar; professor sem mudança | ✅ Concluído | 2026-10-08 15:59:36 | `node --check`, `py_compile`; página regerada só com o atributo novo |
+| 94.2 | Nome "Prova Prática 08-10-2026" reaplicado no HTML depois de regerar (3 trocas) | ✅ Concluído | 2026-10-08 15:59:36 | `grep` |
+| 94.3 | Aceite do usuário (aluno que entregou abre a prova e não vê as respostas) | ⬜ Pendente | — | — |

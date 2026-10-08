@@ -19,6 +19,8 @@ de resposta, com folga) e o faz crescer ao digitar (assets/js/campo-tamanho-disc
 "- **Botão gravar:** sim" põe um botão "💾 Gravar" em cada tópico (grava na hora; a gravação
 automática continua). "- **Progresso para o professor:** sim" mostra ao professor a barra de
 progresso de cada aluno da turma (assets/js/progresso-turma-discursiva.js).
+"- **Ocultar respostas após entrega:** sim" faz o aluno que já entregou não ver (nem carregar do
+banco) as próprias respostas (assets/js/respostas-discursivas-banco.js).
 Plano: docs/avaliacao-pratica-discursiva-itic.md
 """
 import html
@@ -58,11 +60,13 @@ CAMPO_PDF_SEM_RESPOSTAS = "PDF sem respostas"
 CAMPO_BLOQUEAR_COLAR = "Bloquear colar"
 CAMPO_TAMANHO_RESPOSTA = "Campo do tamanho da resposta"
 CAMPO_PROGRESSO_PROFESSOR = "Progresso para o professor"
+CAMPO_OCULTAR_RESPOSTAS = "Ocultar respostas após entrega"
 ATRIBUTOS_BODY = {CAMPO_PDF_COMPACTO: "data-pdf-compacto",
                   CAMPO_PDF_SEM_RESPOSTAS: "data-pdf-sem-respostas",
                   CAMPO_BLOQUEAR_COLAR: "data-bloquear-colar",
                   CAMPO_TAMANHO_RESPOSTA: "data-campo-tamanho-resposta",
-                  CAMPO_PROGRESSO_PROFESSOR: "data-progresso-professor"}
+                  CAMPO_PROGRESSO_PROFESSOR: "data-progresso-professor",
+                  CAMPO_OCULTAR_RESPOSTAS: "data-ocultar-respostas-entregue"}
 CAMPO_BOTAO_GRAVAR = "Botão gravar"
 HTML_BOTAO_GRAVAR = (
     '\n                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>')

@@ -41,7 +41,9 @@ const MSG_PROFESSOR_DISCURSIVA = 'O professor não responde a avaliação: só o
     'Aqui você confere as questões; as respostas dos alunos ficam gravadas no banco.';
 const MSG_BLOQUEADA_DISCURSIVA = '🔒 Avaliação bloqueada pelo professor. Aguarde a liberação ' +
     'para escrever as respostas.';
-const MSG_AUTOMATICO = 'Cada resposta é gravada sozinha no banco quando você para de digitar.';
+const MSG_RESPOSTAS_OCULTAS = '🔒 Depois da entrega, as respostas não ficam mais visíveis nesta ' +
+    'página. Elas estão gravadas no banco para a correção do professor.';
+const MSG_AUTOMATICO ='Cada resposta é gravada sozinha no banco quando você para de digitar.';
 const MSG_SAIDA_PENDENTE = 'Há respostas ainda não gravadas.';
 
 const estadoDiscursivo = {
@@ -211,6 +213,7 @@ function montarMensagensAluno(dados) {
     if (dados.entregueEm) {
         mensagens.push('✅ Entregue em ' + formatarDataHora(dados.entregueEm) +
             '. As respostas não podem mais ser alteradas; a correção será feita pelo professor.');
+        if (dados.respostasOcultas) mensagens.push(MSG_RESPOSTAS_OCULTAS);
         return mensagens;
     }
     if (!dados.ativa) mensagens.push(MSG_BLOQUEADA_DISCURSIVA);
@@ -268,7 +271,8 @@ function montarPainel(dados) {
     mensagens.forEach((mensagem) => {
         painel.appendChild(criarElementoDiscursivo('p', 'painel-discursivo__texto', mensagem));
     });
-    if (!dados.ehProfessor) painel.appendChild(montarBarraProgresso());
+    const mostraBarraDoAluno = !dados.ehProfessor && !dados.respostasOcultas;
+    if (mostraBarraDoAluno) painel.appendChild(montarBarraProgresso());
     painel.appendChild(criarBotaoDiscursivo('btn-export btn-export--secundario', '🚪 Sair',
         fazerLogout));
     atualizarProgresso();
@@ -542,6 +546,7 @@ async function finalizarDiscursiva() {
         if (!confirmou) return;
 
         estadoDiscursivo.dados.entregueEm = await estadoDiscursivo.repositorio.entregar();
+        esconderRespostasDepoisDaEntrega();
         aplicarPermissaoDeEscrita();
         montarPainel(estadoDiscursivo.dados);
         await mostrarPopup('Avaliação entregue! As suas respostas estão gravadas e serão ' +
@@ -592,6 +597,17 @@ async function gravarPeloBotao(evento) {
     } finally {
         botao.disabled = false;
     }
+}
+
+/**
+ * Depois da entrega, limpa as respostas da tela quando a página pede (campo "Ocultar respostas
+ * após entrega" da fonte .md). Nada é apagado do banco.
+ */
+function esconderRespostasDepoisDaEntrega() {
+    if (!ocultaRespostasEntregues()) return;
+
+    estadoDiscursivo.dados.respostasOcultas = true;
+    preencherCampos({});
 }
 
 /**
