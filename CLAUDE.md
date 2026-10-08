@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 08:02
+**Versão das regras:** 2026-10-08 08:04
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:04 | Registro da sessão: motivo registrado — o usuário alterna entre 2 licenças do Claude Code e perde o contexto ao trocar; o log precisa bastar sozinho para a outra licença continuar |
 | 2026-10-08 08:02 | Registro da sessão em `SESSOES-CLAUDE/`: grava só o **mínimo necessário para continuar** em outra sessão (estado, decisões, arquivos, commits, pendências e próximo passo exato), **não** uma cópia completa da conversa |
 | 2026-10-08 07:58 | Ao final de cada tarefa finalizada, perguntar se o usuário quer **atualizar o log da sessão atual**; com *SIM*: gravar em `SESSOES-CLAUDE/` com data, hora e status (`CONCLUÍDO` se não houver nada pendente, senão `PENDENTE`) e, no fim, pedir ao usuário que rode `/clear` (o Claude não consegue executar esse comando sozinho) |
 | 2026-10-08 07:56 | Nova seção "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`": todo o contexto da sessão gravado num arquivo próprio por sessão, separado por data e hora, com `Status: PENDENTE` até o aceite final, e linha no índice `SESSAO-CLAUDE.md` |
 | 2026-10-08 07:48 | Revisão final das regras (12 itens, um por vez): pastas que não são curso numa lista só; plano em `docs/` só nas tarefas grandes; título "Regras do projeto Aulas SENAI"; menu Regras e aviso de segredo cobrem `docs/regras/` e o histórico; autenticação cita `login.html` e `header-usuario.js`; grafo sem data/números fixos; comando da ementa com `-Raw`; STATUS-EMENTAS com caminho genérico; registro do `cursoprofessor` removido. No CLAUDE.md global: exceção das tarefas pequenas e exemplo sem `git status` |
-| 2026-10-08 07:47 | Merge com a `origin/main` (sessões em nuvem): regras novas da `main` trazidas para a estrutura núcleo + `docs/regras/` — push na nuvem em branch própria + novo PR, automático; `TASKS.md` só com pendentes + `TASKS_COMPLETE.md`; status da apostila de ITIC, ementa no formato por módulos e exceção do vídeo `a conferir` em `docs/regras/apostilas.md` |
 
 ---
 
@@ -192,6 +192,10 @@ TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
 
 Registrada em 2026-10-08 a pedido do usuário. Vale para **toda sessão** (local ou nuvem), junto com
 o `STATUS.md`.
+
+**Por quê:** o usuário usa **2 licenças do Claude Code ao mesmo tempo** e, ao trocar de uma para a
+outra, o contexto da conversa se perde. O log da sessão tem de **bastar sozinho** para a outra
+licença (ou outra IA) continuar exatamente de onde parou, sem precisar da conversa anterior.
 
 - ✅ **Grava-se o MÍNIMO NECESSÁRIO PARA CONTINUAR em outra sessão** (2026-10-08, pedido do
   usuário) — **não** é uma cópia completa da conversa. Só dados detalhados que permitam retomar:
