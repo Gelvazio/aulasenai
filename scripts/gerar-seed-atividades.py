@@ -87,24 +87,26 @@ ATIVIDADES_FUNDAMENTOS = [
 DATA_PROVISORIA_FUNDAMENTOS = "2026-10-07"  # datas das 9 aulas da ementa ainda a definir
 
 # 9 aulas extraídas da ementa em CONTEUDO/ (8 × 4 h + 1 h), uma atividade de 50 questões cada.
+# Números 6 a 14 (1 a 5 são das aulas antigas; aulas_materia_id_numero_key); no banco o
+# rotulo_card delas é "AULA 01" a "AULA 09" (aplicado em 2026-10-08).
 ATIVIDADES_FUNDAMENTOS_EMENTA = [
-    (1, "Tecnologia, Dispositivos Digitais e Cidadania Digital", DATA_PROVISORIA_FUNDAMENTOS,
+    (6, "Tecnologia, Dispositivos Digitais e Cidadania Digital", DATA_PROVISORIA_FUNDAMENTOS,
      f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-01-50-QUESTOES.md"),
-    (2, "Segurança Online, Fake News e Hardware × Software", DATA_PROVISORIA_FUNDAMENTOS,
+    (7, "Segurança Online, Fake News e Hardware × Software", DATA_PROVISORIA_FUNDAMENTOS,
      f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-02-50-QUESTOES.md"),
-    (3, "Sistemas Operacionais, Arquivos e Pastas", DATA_PROVISORIA_FUNDAMENTOS,
+    (8, "Sistemas Operacionais, Arquivos e Pastas", DATA_PROVISORIA_FUNDAMENTOS,
      f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-03-50-QUESTOES.md"),
-    (4, "Atalhos de Teclado, Editor de Texto e Apresentações", DATA_PROVISORIA_FUNDAMENTOS,
+    (9, "Atalhos de Teclado, Editor de Texto e Apresentações", DATA_PROVISORIA_FUNDAMENTOS,
      f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-04-50-QUESTOES.md"),
-    (5, "Planilhas Simples e Boas Práticas de Pesquisa", DATA_PROVISORIA_FUNDAMENTOS,
+    (10, "Planilhas Simples e Boas Práticas de Pesquisa", DATA_PROVISORIA_FUNDAMENTOS,
      f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-05-50-QUESTOES.md"),
-    (6, "Internet Segura e Pensamento Computacional", DATA_PROVISORIA_FUNDAMENTOS,
+    (11, "Internet Segura e Pensamento Computacional", DATA_PROVISORIA_FUNDAMENTOS,
      f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-06-50-QUESTOES.md"),
-    (7, "Algoritmos, Fluxogramas e Primeiros Passos no Scratch", DATA_PROVISORIA_FUNDAMENTOS,
+    (12, "Algoritmos, Fluxogramas e Primeiros Passos no Scratch", DATA_PROVISORIA_FUNDAMENTOS,
      f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-07-50-QUESTOES.md"),
-    (8, "Scratch: Condições, Repetições, Variáveis e Projeto Autoral", DATA_PROVISORIA_FUNDAMENTOS,
+    (13, "Scratch: Condições, Repetições, Variáveis e Projeto Autoral", DATA_PROVISORIA_FUNDAMENTOS,
      f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-08-50-QUESTOES.md"),
-    (9, "Avaliação Final: Prova Conceitual e Apresentação do Projeto", DATA_PROVISORIA_FUNDAMENTOS,
+    (14, "Avaliação Final: Prova Conceitual e Apresentação do Projeto", DATA_PROVISORIA_FUNDAMENTOS,
      f"{PASTA_FUNDAMENTOS}/ATIVIDADES-AULA-09-50-QUESTOES.md"),
 ]
 

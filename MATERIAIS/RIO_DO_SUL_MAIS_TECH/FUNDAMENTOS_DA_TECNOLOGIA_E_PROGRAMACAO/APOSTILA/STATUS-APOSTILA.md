@@ -40,3 +40,6 @@ ambiente de nuvem bloqueava o `www.youtube.com` e não era possível conferir a 
 passou a aceitar capítulo sem a seção `## Vídeos`. Para acrescentar vídeos depois, incluir
 `## Vídeos` no capítulo (formato `- [título](url) — mm:ss — canal`, até 15:00) e gerar de novo
 com `--markdown --forcar`.
+
+⏳ **Conferir localmente a duração dos vídeos posteriormente:** tarefa #11 do `TASKS.md` (a nota
+também está no topo do Markdown completo).

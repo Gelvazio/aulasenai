@@ -10,6 +10,10 @@
 
 ---
 
+> ⚠️ **Vídeos pendentes:** os capítulos estão sem a seção "Vídeos" porque o ambiente de nuvem
+> bloqueia o YouTube. **Conferir localmente a duração dos vídeos (máximo 15:00) posteriormente** e
+> acrescentá-los em `APOSTILA/CONTEUDO/CAPITULO-NN.md` — ver a tarefa #11 do `TASKS.md`.
+
 ## Sumário
 
 <!-- sumario:inicio (gerado; atualizado a cada geração) -->

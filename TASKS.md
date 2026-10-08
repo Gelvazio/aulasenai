@@ -181,6 +181,29 @@ do documento, divergências e campos pendentes registrados). Os arquivos atuais 
 
 ---
 
+### #11: Conferir localmente a duração dos vídeos da apostila de Fundamentos da Tecnologia
+
+**Status:** ⏳ PENDENTE (fazer na máquina local, com acesso ao YouTube)  
+**Prioridade:** 🟡 Média  
+**Adicionada em:** 2026-10-08
+
+A apostila `MATERIAIS/RIO_DO_SUL_MAIS_TECH/FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO/APOSTILA/`
+foi gerada **sem vídeos**: o ambiente de nuvem bloqueia `www.youtube.com` e a duração não pôde ser
+conferida nos metadados (regra "REGRAS APOSTILAS": nada de duração inventada; máximo 15:00).
+
+- [ ] Para cada capítulo (01 a 09), escolher de 1 a 4 vídeos em português, de canais educacionais.
+- [ ] Conferir **localmente** título, canal e duração (`curl` na página do vídeo: `lengthSeconds`,
+      `ownerChannelName`), descartando os de mais de 15:00.
+- [ ] Acrescentar a seção `## Vídeos` em `APOSTILA/CONTEUDO/CAPITULO-NN.md`, no formato
+      `- [título exato](url) — mm:ss — canal`, entre `## Teoria` e `## Exercícios`.
+- [ ] Gerar de novo: `gerar_apostila.py <pasta da matéria> --markdown --forcar` e depois sem opções.
+- [ ] Atualizar a coluna "Vídeos" do `APOSTILA/STATUS-APOSTILA.md`.
+- 📌 Candidatos já levantados para o capítulo 01 (duração a conferir): SNABaP2iORg (História e
+  evolução dos computadores), yMGm7cPCh6o (Evolução dos Computadores — Linha do Tempo),
+  fYJl-7jRzuw (Manual do Mundo — Por onde vem a internet?), XHFfXJglFhY (Entenda... Cidadania Digital).
+
+---
+
 ## 📊 ESTATÍSTICAS
 
 | Métrica | Valor |
