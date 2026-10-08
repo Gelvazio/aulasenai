@@ -191,6 +191,12 @@ SQL: `database/2026-10-05-equipes-turma-materia.sql` (✅ aplicado no Supabase e
   equipes da turma, integrantes, líder, papel e alunos sem equipe → impressão "Salvar como PDF") +
   `assets/css/equipes-modal.css`. O `js/menu.js` aceita itens de **ação**: `{ rotulo, acao }`
   carrega `assets/js/menu-acao-<acao>.js`, que registra `window.ACOES_MENU_ATIVIDADES[acao]`.
+- ✅ **Botão 👥 EQUIPES global no header** (2026-10-08, pedido do usuário): `js/header-usuario.js`
+  mostra o botão a todo usuário logado em qualquer página dentro de uma matéria
+  (`/MATERIAIS/<CURSO>/<MATÉRIA>/...`, exceto `MATERIAS-GERAIS` e `AGENDA_COLABORADOR`) e abre o
+  mesmo modal (`assets/js/menu-acao-equipes.js`) com a pasta da matéria. ⚠️ A matéria é achada
+  pelo `atividade.pagina` no banco: matéria sem atividade cadastrada mostra "Não foi possível
+  identificar a matéria".
 - ✅ **Menu das atividades = só 👥 Equipes** (2026-10-08, pedido do usuário): em **todas** as
   matérias com `MENU-ATIVIDADES.js` (Introdução à TIC, Análise de Dados Aplicada à Gestão e
   Reforço de Linguagens) o menu tem apenas o item 👥 Equipes; os demais itens (índice,

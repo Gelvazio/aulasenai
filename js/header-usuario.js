@@ -6,6 +6,8 @@
 // ALUNOS / CORREÇÃO / TURMAS / PENDÊNCIAS (nova aba) e o botão REGRAS (modal com o CLAUDE.md,
 // assets/js/regras-modal.js). Os demais professores não veem esses menus.
 // Uso na página: <script src=".../js/header-usuario.js" defer></script> + o div acima.
+// Em páginas de matéria (/MATERIAIS/<CURSO>/<MATÉRIA>/), todo usuário logado vê o botão
+// 👥 EQUIPES (modal de equipes da matéria: professor monta, aluno vê a própria equipe).
 // Qualquer elemento com data-somente-perfil="PROFESSOR" (e hidden) só aparece para esse perfil.
 // Os caminhos (CSS, supabase.js, login.html) são calculados a partir do próprio script,
 // então a mesma chamada serve para qualquer pasta do projeto.
@@ -36,6 +38,13 @@ const TEXTO_ENTRAR = "ENTRAR";
 const TEXTO_SAIR = "SAIR";
 const TEXTO_SEM_LOGIN = "Você não está logado";
 const ROTULO_PERFIL = { PROFESSOR: "Professor", ALUNO: "Aluno" };
+// Botão EQUIPES (global, 2026-10-08): aparece em toda página dentro de uma matéria
+// (/MATERIAIS/<CURSO>/<MATÉRIA>/...) e abre o modal de equipes daquela matéria.
+const TEXTO_EQUIPES_HEADER = "👥 EQUIPES";
+const ROTA_ACAO_EQUIPES_JS = "../assets/js/menu-acao-equipes.js";
+const MARCADOR_MATERIAIS_HEADER = "/MATERIAIS/";
+const PASTAS_SEM_MATERIA_HEADER = ["MATERIAS-GERAIS", "AGENDA_COLABORADOR"];
+const PAPEIS_EQUIPES_HEADER = ["Líder (coordenador)", "Integrante"];
 
 const urlScriptHeader = document.currentScript?.src || "";
 
@@ -154,6 +163,48 @@ function criarBotaoRegrasHeader() {
 }
 
 /**
+ * Descobre a pasta da matéria da página atual (/MATERIAIS/<CURSO>/<MATÉRIA>/).
+ * @returns {string|null} URL absoluta da pasta da matéria ou null fora de uma matéria.
+ */
+function obterPastaMateriaHeader() {
+  const caminho = decodeURIComponent(location.pathname);
+  const inicio = caminho.indexOf(MARCADOR_MATERIAIS_HEADER);
+  if (inicio < 0) return null;
+
+  const partes = caminho.slice(inicio + MARCADOR_MATERIAIS_HEADER.length).split("/");
+  const [curso, materia] = partes;
+  const estaNumaMateria = partes.length > 2 && Boolean(curso && materia);
+  if (!estaNumaMateria || PASTAS_SEM_MATERIA_HEADER.includes(curso)) return null;
+  const pasta = caminho.slice(0, inicio) + MARCADOR_MATERIAIS_HEADER + curso + "/" + materia + "/";
+  return new URL(pasta, location.href).href;
+}
+
+/**
+ * Cria o botão EQUIPES: carrega a ação de equipes sob demanda e abre o modal da matéria.
+ * @param {string} pastaMateria - URL da pasta da matéria.
+ * @returns {HTMLButtonElement} Botão do header.
+ */
+function criarBotaoEquipesHeader(pastaMateria) {
+  const botao = criarElementoHeader("button", "header-usuario__menu-link", TEXTO_EQUIPES_HEADER);
+  botao.type = "button";
+  botao.addEventListener("click", async () => {
+    try {
+      if (typeof window.ACOES_MENU_ATIVIDADES?.equipes !== "function") {
+        await carregarScriptHeader(resolverRotaHeader(ROTA_ACAO_EQUIPES_JS));
+      }
+      // urlBase = um arquivo dentro da pasta da matéria (a ação usa a pasta dele).
+      await window.ACOES_MENU_ATIVIDADES.equipes({
+        item: { papeis: PAPEIS_EQUIPES_HEADER },
+        urlBase: pastaMateria + "index.html",
+      });
+    } catch (erro) {
+      console.error("Não foi possível abrir as equipes:", erro);
+    }
+  });
+  return botao;
+}
+
+/**
  * Acrescenta ao menu os itens do Professor Administrador, só se o banco confirmar o papel.
  * O e-mail e o user_metadata não decidem nada: quem decide é eh_professor_administrador().
  * @param {Object} cliente - Cliente do Supabase.
@@ -235,6 +286,8 @@ function desenharHeaderUsuario(destino, cliente, usuario) {
     barra.append(menu);
     if (cliente) incluirMenuAdministrador(cliente, menu);
   }
+  const pastaMateria = obterPastaMateriaHeader();
+  if (usuario && pastaMateria) barra.append(criarBotaoEquipesHeader(pastaMateria));
   barra.append(criarElementoHeader("span", "header-usuario__nome", texto));
   barra.append(usuario ? criarBotaoSair(cliente) : criarBotaoEntrar());
   destino.replaceChildren(barra);
