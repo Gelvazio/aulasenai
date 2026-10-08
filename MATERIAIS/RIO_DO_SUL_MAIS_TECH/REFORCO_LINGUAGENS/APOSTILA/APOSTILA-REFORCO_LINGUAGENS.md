@@ -4,12 +4,14 @@
 > **Módulo:** UC 7 · **Modalidade:** Presencial  
 > **Ementa:** 2026-09  
 > **Carga horária da UC:** 63 horas · **Capítulos previstos:** 10 (1 capítulo = 1 aula; a carga horária de cada aula está no plano de capítulos)  
-> **Autor:** Gelvazio Camargo · **Versão:** 1.0 · **Data e hora:** 07/10/2026 às 20:49  
+> **Autor:** Gelvazio Camargo · **Versão:** 1.0 · **Data e hora:** 07/10/2026 às 21:11  
 > **Gerado em:** 07/10/2026, a partir de `APOSTILA/CONTEUDO/`.
 
 > ✏️ **Este arquivo é a fonte final da apostila.** Revise, compare e acrescente dados aqui; o HTML é gerado depois, a partir dele. O sumário é refeito a cada geração.
 
 ---
+
+> ⏳ **PENDENTE — CONFERIR LOCALMENTE (TASKS.md #11):** os 29 vídeos dos capítulos estão com a duração `a conferir`; conferir no ambiente local, onde o YouTube funciona, e gerar a apostila de novo.
 
 ## Sumário
 
@@ -1032,6 +1034,8 @@ O assunto é parecido; o **contexto** muda tudo.
 
 ## Vídeos
 
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #11):** a duração destes vídeos ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
+
 - [Gêneros Textuais](https://www.youtube.com/watch?v=Ucjv4LT8CSg) — a conferir — Prof. Noslen
 - [Tipos Textuais](https://www.youtube.com/watch?v=ibwf_X3498c) — a conferir — Prof. Noslen
 - [TIPOS E GÊNEROS TEXTUAIS](https://www.youtube.com/watch?v=NuMX0fm3V3I) — a conferir — Português com Letícia
@@ -1198,6 +1202,8 @@ emprego de jovens nas indústrias do Alto Vale. O autor sustenta que a formaçã
 técnico."
 
 ## Vídeos
+
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #11):** a duração destes vídeos ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
 
 - [Assunto e tema de um texto](https://www.youtube.com/watch?v=Bk0oBjBTIpA) — a conferir — Profa. Diana Ribeiro
 - [Ideia principal e ideias secundárias de um texto](https://www.youtube.com/watch?v=-Em_S_2HPbE) — a conferir
@@ -1372,6 +1378,8 @@ nos dois títulos: **quantos** empregos mudam? Haverá **requalificação**? Que
 
 ## Vídeos
 
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #11):** a duração destes vídeos ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
+
 - [Fato, opinião ou fake?](https://www.youtube.com/watch?v=pTRRZikcmqc) — a conferir — Profa. Fabiana Santos
 - [Você sabe diferenciar fatos e opiniões?](https://www.youtube.com/watch?v=IEPv0weuDxw) — a conferir
 - [Como checar fatos?](https://www.youtube.com/watch?v=ZFpFsXn4BOk) — a conferir
@@ -1535,6 +1543,8 @@ Reescrita com coesão e coerência:
 > equipamento** quebrou na primeira semana; **por isso**, a empresa acionou a garantia."
 
 ## Vídeos
+
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #11):** a duração destes vídeos ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
 
 - [Os conectivos](https://www.youtube.com/watch?v=PC4b4jt0Bl0) — a conferir
 - [Coesão e coerência](https://www.youtube.com/watch?v=IIU6i3UXyi0) — a conferir — Prof. Noslen
@@ -1706,6 +1716,8 @@ A **TecVale** (empresa **fictícia**) inaugura um laboratório de robótica:
 
 ## Vídeos
 
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #11):** a duração destes vídeos ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
+
 - [Narração, Descrição e Dissertação - Português](https://www.youtube.com/watch?v=YWohiTlnrH8) — a conferir — Natália Guirado
 - [Tipologias Textuais](https://www.youtube.com/watch?v=7wIhBsb5Kzo) — a conferir — Brasil Escola
 
@@ -1867,6 +1879,8 @@ Revisado:
 
 ## Vídeos
 
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #11):** a duração destes vídeos ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
+
 - [Uso da Vírgula](https://www.youtube.com/watch?v=37bpap7OgOY) — a conferir — Prof. Alexandre Luz
 - [Concordância verbal e nominal (6º ano)](https://www.youtube.com/watch?v=lc2Gw838IBo) — a conferir
 - [Concordância verbal](https://www.youtube.com/watch?v=-qT0FjSQbe4) — a conferir — Brasil Escola
@@ -2024,6 +2038,8 @@ No **manual** da impressora, porém, a linguagem é **denotativa**: "Ajuste a te
 para 200 °C." Cada gênero pede o seu tipo de linguagem.
 
 ## Vídeos
+
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #11):** a duração destes vídeos ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
 
 - [O que são Figuras de Linguagem? Quais são? Aprenda em menos de 4 minutos!](https://www.youtube.com/watch?v=ZdgHIUUQIyk) — a conferir
 - [Figuras de linguagem](https://www.youtube.com/watch?v=BA_GiXoiszY) — a conferir — Brasil Escola
@@ -2185,6 +2201,8 @@ No fim, os colegas dão feedback: "O exemplo do parafuso foi ótimo; da próxima
 do almoxarifado."
 
 ## Vídeos
+
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #11):** a duração destes vídeos ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
 
 - [Como falar em público: DICAS SIMPLES!](https://www.youtube.com/watch?v=mkT-XZTYFKU) — a conferir
 - [COMO FAZER BOAS APRESENTAÇÕES E FALAR EM PÚBLICO!](https://www.youtube.com/watch?v=Ded0NZyK_TE) — a conferir — Débora Aladim
@@ -2356,6 +2374,8 @@ em linguagem formal:
 > teste de dois turnos por um mês, com nova avaliação ao final."
 
 ## Vídeos
+
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #11):** a duração destes vídeos ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
 
 - [Preconceito Linguístico](https://www.youtube.com/watch?v=TDCcSKl5maI) — a conferir — Brasil Escola
 - [Variação linguística e preconceito linguístico](https://www.youtube.com/watch?v=a6IitrQGksE) — a conferir
@@ -2536,6 +2556,8 @@ Revisado (impessoal, preciso, sem repetições):
 > e torna os processos mais eficientes."
 
 ## Vídeos
+
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #11):** a duração destes vídeos ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
 
 - [Gênero Textual: Crônica](https://www.youtube.com/watch?v=Oikb9X5tUas) — a conferir
 - [Resenha x Resumo](https://www.youtube.com/watch?v=jJb2nsCEvZ0) — a conferir — Brasil Escola

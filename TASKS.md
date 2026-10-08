@@ -1,78 +1,26 @@
 # 📋 TAREFAS — SENAI Aulas
 
-**Sistema de rastreamento de tarefas em progresso**
+**Somente tarefas PENDENTES** (planejadas ou em progresso).
+Ao concluir ou cancelar uma tarefa, **mover o bloco dela para `TASKS_COMPLETE.md`** (na mesma
+tarefa, no mesmo commit).
 
 ---
 
-## ✅ TAREFA CONCLUÍDA
-
-### #1: Expandir Template + Aplicar em 24 Disciplinas
-
-**Status:** ✅ CONCLUÍDO  
-**Data de Início:** 2026-09-21  
-**Data de Conclusão:** 2026-09-21  
-**Tempo Total:** < 1 hora
-
-**Resumo:**
-- ✅ Expandir TEMPLATE-EMENTA-CHALKIE-AI.md (10.392 → 13.927 chars)
-- ✅ Adicionar seções: Marcos de Competência (IV.B), Estratégias Avançadas (VI), FAQ (XVII), Glossário (XVIII)
-- ✅ Aplicar template em 23 disciplinas (exceto 1 já dentro padrão)
-- ✅ Personalizar cada ementa com contexto específico (nome, área, carga, exemplos)
-- ✅ Expandir/ajustar cada para 14.800–14.950 chars (100% dentro padrão)
-- ✅ Auditoria: 23/23 ✅ OK
-- ✅ Commit: ea9fdb6
-
-**Arquivos Modificados:**
-- TEMPLATE-EMENTA-CHALKIE-AI.md (base)
-- 23 disciplinas em MATERIAIS/*/DOCUMENTACAO/EMENTA-CHALKIE-AI.md
-- 2 scripts auxiliares: aplicar-template-ementa.py, ajustar-tamanho-final.py
-
----
-
-## ✅ TAREFAS CONCLUÍDAS
-
-### #1: Expandir Template + Aplicar em 24 Disciplinas ✅
-**Data:** 2026-09-21 | **Commit:** ea9fdb6 | **Status:** 23/23 ✅
-
----
-
-### #0: Reorganização Completa de Todas as Disciplinas
-
-**Status:** ✅ CONCLUÍDO  
-**Data de Conclusão:** 2026-09-21  
-
-**Resumo:**
-- Reorganizou pasta de Comunicação Oral e Escrita (7 passos)
-- Mesclou conteúdo de turmas nas pastas principais
-- Criou EMENTA-CHALKIE-AI.md detalhada (1 disciplina)
-- Atualizou CLAUDE.md com regra de tamanho
-- Criou index.html portal visual
-- Criou script de análise (analise-materias.py)
-- Aplicou padrão em 20 disciplinas
-- Criou EMENTA-CHALKIE-AI.md em 19 disciplinas (template base)
-- 7 commits realizados com ~150 arquivos alterados
-
----
-
-## 🔄 PRÓXIMA TAREFA
+## ⏳ TAREFAS PENDENTES
 
 ### #2: Organizar Apostilas em Formato Markdown (.md)
 
-**Status:** ⏳ PLANEJADO  
+**Status:** 🔄 PLANO AGUARDANDO APROVAÇÃO (2026-10-08)  
 **Prioridade:** 🟠 Alta  
 **Data de Início Estimada:** 2026-09-22
 
 Garantir que todas as apostilas estão em formato **Markdown (.md) apenas** — sem PDF/DOCX no momento. Consolidar arquivos redundantes e manter estrutura limpa.
 
----
-
-### #3: Preencher EMENTA.md Simples em 8 Disciplinas
-
-**Status:** ⛔ CANCELADA (2026-10-01)  
-**Prioridade:** —
-
-Cancelada a pedido do usuário: a versão simplificada `EMENTA.md` deixou de existir; a ementa de
-cada matéria é só o `EMENTA-CHALKIE-AI.md`.
+- ✅ Levantamento e plano: `docs/tarefa-02-apostilas-em-markdown.md` (nenhuma apostila em
+  PDF/DOCX no Git; 4 matérias já no padrão; 5 itens fora do padrão para decidir).
+- [ ] Aprovação do usuário (itens A–E e pergunta sobre Comunicação Oral e Escrita).
+- [ ] Executar os passos do plano.
+- [ ] Na máquina local: conferir PDF/DOCX de apostila fora do Git.
 
 ---
 
@@ -112,96 +60,70 @@ Rodar `python analise-materias.py` para validar completude e gerar relatório fi
 
 ---
 
-### #8: EMENTA-PRINCIPAL de Assistente Técnico em Tecnologia da Informação (860h)
+### #11: Conferir localmente a duração dos vídeos da apostila de Reforço de Linguagens
 
-**Status:** ✅ CONCLUÍDO (2026-09-25)  
+**Status:** ⏳ PENDENTE (fazer no ambiente **local**, onde o YouTube funciona)  
 **Prioridade:** 🟠 Alta  
-**Adicionada em:** 2026-09-25
+**Adicionada em:** 2026-10-08
 
-Ler `MATERIAIS/Assistente-Tecnico-Tecnologia-Informacao-860horas/Assistente Técnico em Tecnologia da Informação - 860h - Prática Profissional.docx`
-e criar `MATERIAIS/Assistente-Tecnico-Tecnologia-Informacao-860horas/EMENTA-PRINCIPAL-Assistente-Tecnico-Tecnologia-Informacao-860horas.md`,
-detalhado para uso em IA, no mesmo formato das ementas principais de Logística e de
-Assistente-Processos (14 seções, UCs do Anexo II transcritas por script, divergências e campos
-pendentes registrados).
+A apostila `MATERIAIS/RIO_DO_SUL_MAIS_TECH/REFORCO_LINGUAGENS/APOSTILA/` tem **29 vídeos** (2 a 3
+por capítulo) com a duração `a conferir`: na nuvem o YouTube estava bloqueado e a duração não pôde
+ser lida. Cada seção "Vídeos" tem a anotação "⏳ CONFERIR LOCALMENTE (TASKS.md #11)".
 
-- ✅ Executada com confirmação do usuário (curso em `IGNORAR`, marcação mantida).
-- ✅ Plano: `docs/ementa-principal-assistente-tecnico-ti.md`. 16 de 18 UCs detalhadas; 2 UCs do
-  Específico sem detalhamento no original, registradas na seção 10.1.
-
----
-
-### #9: EMENTA-PRINCIPAL de Programador de Sistemas da Informação (860h)
-
-**Status:** ✅ CONCLUÍDO (2026-09-25)  
-**Prioridade:** 🟠 Alta  
-**Adicionada em:** 2026-09-25
-
-Ler `MATERIAIS/PROGRAMADOR-DE-SISTEMAS-860-HORAS/Programador de Sistemas da Informação_860h.docx`
-e criar `MATERIAIS/PROGRAMADOR-DE-SISTEMAS-860-HORAS/EMENTA-PRINCIPAL-PROGRAMADOR-DE-SISTEMAS-860-HORAS.md`,
-detalhado para uso em IA, no mesmo formato das ementas principais já criadas (14 seções, UCs do
-Anexo II transcritas por script, divergências e campos pendentes registrados).
-
-- ✅ Executada com confirmação do usuário (curso em `IGNORAR`, marcação mantida).
-- ✅ Plano: `docs/ementa-principal-programador-sistemas.md`. 14 de 14 UCs detalhadas.
+- [ ] Para cada vídeo de `APOSTILA/CONTEUDO/CAPITULO-01.md` a `CAPITULO-10.md`, ler a duração
+  pelos metadados (`curl` na página do vídeo: `lengthSeconds`, `ownerChannelName`), sem navegador.
+- [ ] Até 15:00 → trocar `a conferir` por `mm:ss` (e completar o canal, se faltar); acima de
+  15:00 ou vídeo indisponível → apagar a linha (e, se o capítulo ficar sem vídeo, buscar outro).
+- [ ] Remover a anotação "⏳ CONFERIR LOCALMENTE" dos capítulos e do Markdown completo.
+- [ ] Aumentar `versao_apostila` no `materia.json` (1.0 → 1.1), rodar
+  `gerar_apostila.py <pasta> --markdown --forcar` e depois o HTML (conferência 100%).
+- [ ] Atualizar `APOSTILA/STATUS-APOSTILA.md` (coluna Vídeos) e o `STATUS.md` (item 67.4).
+- [ ] Commit (no local, o push é do usuário).
 
 ---
 
-### #10: EMENTA-PRINCIPAL detalhada dos demais cursos
+### #12: Conferir localmente a duração dos vídeos da apostila de Fundamentos da Tecnologia
 
-**Status:** ✅ CONCLUÍDO (2026-09-25)  
-**Prioridade:** 🟠 Alta  
-**Adicionada em:** 2026-09-25
+**Status:** ⏳ PENDENTE (fazer na máquina local, com acesso ao YouTube)  
+**Prioridade:** 🟡 Média  
+**Adicionada em:** 2026-10-08
 
-Refazer o `EMENTA-PRINCIPAL-<CURSO>.md` de cada curso restante a partir do documento oficial do
-curso, detalhado para uso em IA, no mesmo formato das tarefas #8 e #9 (14 seções, UCs transcritas
-do documento, divergências e campos pendentes registrados). Os arquivos atuais serão substituídos.
+A apostila `MATERIAIS/RIO_DO_SUL_MAIS_TECH/FUNDAMENTOS_DA_TECNOLOGIA_E_PROGRAMACAO/APOSTILA/`
+foi gerada **sem vídeos** (cada capítulo tem só a anotação "⏳ Vídeos pendentes"): o ambiente de nuvem bloqueia `www.youtube.com` e a duração não pôde ser
+conferida nos metadados (regra "REGRAS APOSTILAS": nada de duração inventada; máximo 15:00).
 
-| # | Curso | Documento-fonte | Permissão |
-|---|-------|-----------------|-----------|
-| 10.1 | AUTOMACAO-INDUSTRIAL-1200-HORAS | `CT Automação Industrial 1200 SENAI SED.pdf` | IGNORAR |
-| 10.2 | BACKEND-560-HORAS | `BackEnd - 570h.docx` | IGNORAR |
-| 10.3 | GESTAO_E_CONTROLE_MATERIAIS | `GestaoControleMateriais_456h.docx` | VERIFICAR |
-| 10.4 | INFORMATICA | `Curso-Tecnico-Informatica-1200h.txt` | IGNORAR |
-| 10.5 | INTERNET-DAS-COISAS | `CT Internet das coisas 1300 SENAI SED.pdf` | IGNORAR |
-| 10.6 | MECATRONICA | `CT-Mecatronica_1348h.txt` | IGNORAR |
-| 10.7 | OPERADOR-PRODUCAO-INDUSTRIAL | `Operador de Produção Industrial_ 860h - Pratica Profissional.docx` | IGNORAR |
-| 10.8 | REDES-DE-COMPUTADORES | `EMENTA-PRINCIPAL-Redesde-Computadores.txt` | IGNORAR |
-| 10.9 | RIO_DO_SUL_MAIS_TECH | Sem documento na pasta (ementa atual veio da ficha `FICHA PRODUTO MAISTECH ATUALIZADA.docx`) | VERIFICAR |
-| 10.10 | TECNICO-DESENVOLVIMENTO-SISTEMAS | `CT Desenvolvimento de Sistemas 1200 SENAI SED.pdf` | IGNORAR |
-| 10.11 | TECNICO-INFORMATICA-INTERNET | `CT-Informatica-Internet-1000-SENAI-SED-2026.pdf` | IGNORAR |
-
-- ⛔ Fora da tarefa: `QUALIFICACAO-PROFISSIONAL/` (exceção do `CLAUDE.md`: não tem ementa de
-  curso) e `MATERIAS-GERAIS/`.
-- ⚠️ Cursos em `IGNORAR`: confirmar com o usuário antes de executar cada um.
-- ⚠️ Executar um curso por vez: criar o plano em `docs/`, conferir o documento-fonte (PDF e TXT
-  podem ter estrutura diferente dos .docx) e pedir aprovação antes de gerar o arquivo.
-- ✅ RIO_DO_SUL_MAIS_TECH: conferido com `FICHA PRODUTO RIO DO SUL MAIS TECH ATUALIZADA.docx`.
-- ✅ Executada com autorização do usuário para todos os cursos, inclusive os em `IGNORAR` (marcação mantida).
-- ✅ Plano e resultado: `docs/tarefa-10-ementas-principais-demais-cursos.md`.
+- [ ] Para cada capítulo (01 a 09), escolher de 1 a 4 vídeos em português, de canais educacionais.
+- [ ] Conferir **localmente** título, canal e duração (`curl` na página do vídeo: `lengthSeconds`,
+      `ownerChannelName`), descartando os de mais de 15:00.
+- [ ] Em `APOSTILA/CONTEUDO/CAPITULO-NN.md`, trocar a linha "⏳ Vídeos pendentes" da seção
+      `## Vídeos` pelos vídeos no formato `- [título exato](url) — mm:ss — canal`.
+- [ ] Aumentar `versao_apostila` no `materia.json`, rodar `gerar_apostila.py <pasta da matéria>
+      --markdown --forcar` e depois o HTML (conferência 100%).
+- [ ] Atualizar a coluna "Vídeos" do `APOSTILA/STATUS-APOSTILA.md`.
+- 📌 Candidatos já levantados para o capítulo 01 (duração a conferir): SNABaP2iORg (História e
+  evolução dos computadores), yMGm7cPCh6o (Evolução dos Computadores — Linha do Tempo),
+  fYJl-7jRzuw (Manual do Mundo — Por onde vem a internet?), XHFfXJglFhY (Entenda... Cidadania Digital).
 
 ---
 
-## 📊 ESTATÍSTICAS
+### #14: Conferir localmente a duração dos vídeos da apostila de Exploração de Carreiras
 
-| Métrica | Valor |
-|---------|-------|
-| Total de tarefas planejadas | 10 |
-| Concluídas | 5 |
-| Em progresso | 0 |
-| Planejadas | 4 |
-| Canceladas | 1 |
-| Taxa de conclusão | 50% |
+**Status:** ⏳ PENDENTE (fazer na máquina local, com acesso ao YouTube)  
+**Prioridade:** 🟡 Média  
+**Adicionada em:** 2026-10-08 _(registrada na branch de origem como #11)_
 
----
+A apostila `MATERIAIS/RIO_DO_SUL_MAIS_TECH/EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS/APOSTILA/` (9 capítulos) tem **28 vídeos com a duração `a conferir`**: a sessão em
+nuvem não acessa o YouTube e o usuário pediu para seguir e conferir depois, localmente.
 
-## 🔗 REFERÊNCIAS
-
-- **Auditoria:** `AUDITORIA-TAMANHO-EMENTA.json`
-- **Template Base:** `TEMPLATE-EMENTA-CHALKIE-AI.md` (13.927 chars)
-- **Padrão de Tamanho:** 14.800–14.950 caracteres
-- **Disciplinas:** 25 total (25/25 ✅ dentro padrão)
+- [ ] Conferir cada vídeo da lista `MATERIAIS/RIO_DO_SUL_MAIS_TECH/EXPLORACAO_CARREIRAS_INDUSTRIAIS_TECNOLOGICAS/APOSTILA/RASCUNHOS/VIDEOS-A-CONFERIR.md` pelos metadados
+      (`curl` na página do vídeo: `lengthSeconds`, `ownerChannelName`), sem navegador.
+- [ ] Nos `APOSTILA/CONTEUDO/CAPITULO-NN.md`, trocar `a conferir` pela duração (`mm:ss`) e
+      acrescentar ` — <canal>` no fim da linha.
+- [ ] Apagar os vídeos com mais de 15:00 ou fora do tema (cada capítulo precisa de ao menos 1).
+- [ ] Aumentar `versao_apostila` no `materia.json` (1.0 → 1.1), rodar `gerar_apostila.py <pasta>
+      --markdown --forcar` e depois o HTML (conferência 100%).
+- [ ] Atualizar `APOSTILA/STATUS-APOSTILA.md`.
 
 ---
 
-**Última atualização:** 2026-09-25 (Tarefa #10 concluída)  
-**Próxima revisão:** Ao iniciar Tarefa #2
+**Última atualização:** 2026-10-08 (branches das sessões juntadas; tarefa #14 adicionada)

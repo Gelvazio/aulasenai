@@ -101,6 +101,8 @@ para 200 °C." Cada gênero pede o seu tipo de linguagem.
 
 ## Vídeos
 
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #11):** a duração destes vídeos ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
+
 - [O que são Figuras de Linguagem? Quais são? Aprenda em menos de 4 minutos!](https://www.youtube.com/watch?v=ZdgHIUUQIyk) — a conferir
 - [Figuras de linguagem](https://www.youtube.com/watch?v=BA_GiXoiszY) — a conferir — Brasil Escola
 - [Figuras de Palavras](https://www.youtube.com/watch?v=fDslEF5Jzn8) — a conferir — Brasil Escola

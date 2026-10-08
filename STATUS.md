@@ -768,6 +768,7 @@ Plano: [docs/apostila-reforco-linguagens.md](docs/apostila-reforco-linguagens.md
 | 67.2 | Gerador aceita `a conferir` e não junta mais a linha seguinte ao canal de vídeo sem canal | ✅ Concluído | 2026-10-07 20:50 | ITIC e TF continuam lendo os mesmos vídeos |
 | 67.3 | Merge da `main` (sem conflitos) e identificação da apostila: Gelvazio Camargo · versão 1.0 · data e hora | ✅ Concluído | 2026-10-07 20:50 | Conferência 100% · `main` em `e5972a9` |
 | 67.4 | Aceite do usuário: conferir a duração de cada vídeo (trocar `a conferir` por `mm:ss` até 15 min ou apagar a linha) | ⬜ Pendente | — | — |
+| 67.5 | Anotação "⏳ CONFERIR LOCALMENTE" nas seções de vídeos (capítulos e Markdown completo, fora do HTML) e tarefa #11 no `TASKS.md` para conferir a duração no ambiente local | ✅ Concluído | 2026-10-08 | Conferência 138/138; HTML sem a anotação |
 
 ## Etapa 68 — Autor e versão em todas as apostilas + regra no CLAUDE.md (tarefa pequena, 2026-10-07)
 

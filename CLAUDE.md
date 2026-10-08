@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-07 21:44
+**Versão das regras:** 2026-10-08 07:47
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
-| 2026-10-07 21:44 | CLAUDE.md **global** (`C:\Users\gelva\.claude\CLAUDE.md`, fora do Git): `git add .` trocado por `git add <arquivos da tarefa>` (nunca `git add .`), igual à regra "COMMIT POR TAREFA" deste projeto |
-| 2026-10-07 21:43 | Ementa da matéria: `EMENTA-CHALKIE-AI.md` fica na **raiz da pasta da matéria** (igual ao disco e à ITIC); `DOCUMENTACAO/` só com PLANO-AULAS, INDEX e verificação; comandos e exemplo ajustados |
-| 2026-10-07 21:40 | Regra das 50 questões: tirado o exemplo "Reforço de Linguagens aula 16" (a matéria tem 10 aulas e segue a regra exclusiva de 25 questões) |
-| 2026-10-07 21:39 | Regra "TURMA NA EXPORTAÇÃO": tirada a menção ao "PDF com gabarito" (botão removido em 2026-10-06) |
-| 2026-10-07 21:38 | Removida a regra "EXPORTAR EM WORD AO LADO DE CADA EXPORTAR PDF" (decisão do usuário): Word não é mais obrigatório; os scripts continuam (hoje só as práticas de Excel têm Word); índice e lista de `assets/` ajustados |
+| 2026-10-08 07:47 | Merge com a `origin/main` (sessões em nuvem): regras novas da `main` trazidas para a estrutura núcleo + `docs/regras/` — push na nuvem em branch própria + novo PR, automático; `TASKS.md` só com pendentes + `TASKS_COMPLETE.md`; status da apostila de ITIC, ementa no formato por módulos e exceção do vídeo `a conferir` em `docs/regras/apostilas.md` |
+| 2026-10-08 11:10 | Na **nuvem** o push é **sempre permitido e automático**: ao final de **toda** tarefa que mudar arquivos, commit + push + PR sem esperar pedido nem confirmação do usuário |
+| 2026-10-08 11:00 | Branches das sessões juntadas na `main` (pull request): regra do push por branch + PR, apostila de ITIC concluída e apostila de Exploração de Carreiras (9 capítulos, conferência 157/157); vídeos sem duração unificados no formato `a conferir` e dados da matéria no formato do gerador da `main` (`textos_ementa`, `rubrica_lista`) |
+| 2026-10-08 10:00 | `TASKS.md` só com tarefas pendentes; concluídas e canceladas movidas para o novo `TASKS_COMPLETE.md` (lido só quando precisar do histórico) |
+| 2026-10-08 09:30 | Merge com a `main`: apostila e 9 atividades de 50 questões de Fundamentos da Tecnologia e Programação; conferência com a ementa lê também o **formato por módulos** do Rio do Sul Mais Tech |
 
 ---
 
@@ -47,7 +47,7 @@ Registrada em 2026-10-03 a pedido do usuário.
   nem resumo).
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
-- ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, na `main`).
+- ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, numa branch própria + novo PR para a `main`).
 - ✅ **Aulas: uma por vez, completa** (2026-10-03): gerar e gravar uma aula (e todo o seu material)
   antes de passar à próxima, controlando em `<MATERIA>/AULAS/STATUS-AULAS.md` (ver a regra
   "GERAR E GRAVAR UMA AULA POR VEZ").
@@ -57,8 +57,9 @@ Registrada em 2026-10-03 a pedido do usuário.
   `<MATERIA>/ATIVIDADES/STATUS-ATIVIDADES.md` (ver a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES").
 - ⛔ **Push depende do ambiente** (2026-10-07): **local** (máquina do usuário) = **nunca fazer
   push**, mesmo que ele peça — avisar que o commit está pronto para ele enviar; **nuvem** (Claude
-  Code na web/remoto) = **sempre fazer push, direto na `main`, sem pull request** (ver a regra
-  "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM").
+  Code na web/remoto) = **sempre fazer push numa branch própria e abrir um NOVO pull request
+  para a `main`**, nunca push direto na `main` (2026-10-08; ver a regra "PUSH: NUNCA NO AMBIENTE
+  LOCAL, SEMPRE NA NUVEM").
 - ⛔ **Conteúdo só pelos Markdowns, nunca de PDF** (2026-10-03): para conferir ou gerar conteúdo,
   ler os `.md` da matéria — em primeiro lugar o `EMENTA-CHALKIE-AI.md` (ver a regra "CONTEÚDO SÓ
   PELOS MARKDOWNS").
@@ -179,8 +180,10 @@ Registrada em 2026-10-03 a pedido do usuário.
 **Por quê?** O `STATUS.md` é a fonte única do estado do trabalho (regra global "`STATUS.md` EM TODA
 TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
 
-- ℹ️ O `TASKS.md` é **histórico antigo** (tarefas #1 a #10, até 2026-09-25): não é mais lido nem
-  atualizado.
+- ℹ️ O `TASKS.md` guarda **só tarefas pendentes** (as concluídas e canceladas ficam em
+  `TASKS_COMPLETE.md`, desde 2026-10-08; ao concluir ou cancelar, mover o bloco no mesmo commit).
+  Consultar o `TASKS.md` quando o `STATUS.md` ou uma regra citar uma tarefa dele (ex.: vídeos
+  `a conferir` das apostilas); o `TASKS_COMPLETE.md` só quando precisar do histórico.
 
 ---
 
@@ -509,10 +512,11 @@ Registrada em 2026-09-28.
 - ✅ **Tabela nova ou alterada = RLS ligado** e políticas explícitas; nunca deixar `anon` com
   acesso de escrita. Dados sensíveis (`senha_hash`, gabarito) não ficam legíveis pela API pública.
 
-## ⛔ REGRA — PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM (DIRETO NA `main`)
+## ⛔ REGRA — PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM (BRANCH PRÓPRIA + NOVO PR)
 
 Registrada em 2026-10-01 a pedido do usuário ("NUNCA FAZER PUSH"); **alterada em 2026-10-07**, a
-pedido do usuário, para valer **conforme o ambiente**.
+pedido do usuário, para valer **conforme o ambiente**; **alterada em 2026-10-08**, a pedido do
+usuário: na nuvem, **sempre um novo pull request**, para evitar sobrescrever algo na `main`.
 
 ### 💻 Ambiente local (máquina do usuário, ex.: `C:\fontes\aulasenai`)
 
@@ -525,17 +529,30 @@ pedido do usuário, para valer **conforme o ambiente**.
 
 ### ☁️ Ambiente de nuvem (Claude Code na web / sessão remota, contêiner temporário)
 
-✅ **O Claude SEMPRE faz o push, direto na `main`, sem pull request.** No contêiner da nuvem o
-commit se perde quando a sessão acaba, e o usuário não tem como enviá-lo da máquina dele.
+✅ **O Claude SEMPRE faz o push numa branch própria e abre um NOVO pull request para a `main`.**
+No contêiner da nuvem o commit se perde quando a sessão acaba, por isso o push é obrigatório; o
+pull request garante que **nada na `main` é sobrescrito** sem o usuário revisar e fazer o merge.
 
-- ✅ Ao concluir cada tarefa: commit (regra "COMMIT POR TAREFA") e **`git push origin HEAD:main`**.
-- ✅ **Sem pull request:** não abrir PR; o trabalho vai direto para a `main`.
-- ✅ Antes do push, `git fetch origin main`; se a `main` andou, trazer as mudanças dela para o
-  trabalho (merge ou rebase do próprio commit ainda não enviado) e conferir de novo antes de enviar.
-- ❌ **Nunca push forçado** (`--force`), nunca reescrever o histórico já publicado da `main`, nunca
-  push de tags nem mudança de remotos.
+✅ **Push sempre permitido e automático na nuvem** (2026-10-08 11:10, pedido do usuário): ao final
+de **toda** tarefa que mudar arquivos, o Claude faz commit + push + PR **sem esperar pedido nem
+confirmação** do usuário — não perguntar "posso fazer push?". Tarefa que não muda nenhum arquivo
+(só consulta ou resposta) não gera commit nem push vazio.
+
+- ✅ Ao concluir cada tarefa: commit (regra "COMMIT POR TAREFA"), **`git push -u origin <branch>`**
+  (a branch de trabalho da sessão, nunca a `main`) e **abrir um novo pull request** da branch para
+  a `main`, com título e descrição do que mudou.
+- ⛔ **Nunca push direto na `main`** (`git push origin HEAD:main` está proibido) e o Claude
+  **não faz o merge** do pull request: quem revisa e junta na `main` é o usuário.
+- ✅ **Sempre um PR novo:** se o PR da branch já foi juntado (merged) ou fechado, a tarefa seguinte
+  recomeça a branch a partir da `main` atualizada e abre **outro** PR — nunca reaproveitar PR
+  juntado. Enquanto o PR da branch ainda estiver aberto, os commits novos da mesma sessão entram
+  nele (o GitHub não aceita dois PRs abertos da mesma branch).
+- ✅ Antes do push, `git fetch origin main`; se a `main` andou, trazer as mudanças dela para a
+  branch (merge) e conferir de novo antes de enviar.
+- ❌ **Nunca push forçado** (`--force`), nunca reescrever histórico já publicado, nunca push de tags
+  nem mudança de remotos.
 - ✅ Antes do push, conferir `git diff --cached --name-only` contra a regra "O QUE NUNCA É
-  PUBLICADO" (a `main` é publicada pela Vercel).
+  PUBLICADO" (a `main` é publicada pela Vercel depois do merge).
 
 ## 💾 REGRA — COMMIT POR TAREFA (SEMPRE)
 
@@ -551,7 +568,8 @@ regra global de mesmo nome.
 - ✅ Antes do commit, conferir `git diff --cached --name-only` contra a regra "O QUE NUNCA É
   PUBLICADO".
 - ✅ No ambiente **local** o commit fica só local (o push é do usuário); na **nuvem**, o Claude faz
-  o push direto na `main` (ver "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM").
+  o push numa branch própria e abre um novo pull request para a `main` (ver "PUSH: NUNCA NO
+  AMBIENTE LOCAL, SEMPRE NA NUVEM").
 - ✅ Usuário pediu commit explícito → fazer na hora.
 - ✅ Arquivos ignorados pelo Git (gabaritos, fontes de questões, listas de alunos) não entram no
   commit; não usar `-f` para forçá-los. Desde 2026-09-30 os `*.md` e `*.py` **são versionados**

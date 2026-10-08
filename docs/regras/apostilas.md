@@ -9,9 +9,11 @@
 Registrada em 2026-10-03 a pedido do usuário (padrões definidos na validação do piloto). Plano:
 `docs/gerador-apostilas.md`. **Reforço de Linguagens (2026-10-07):** introdução + 10 capítulos gerados, conferência 100%
 (138/138), aguardando validação; vídeos pendentes (`REFORCO_LINGUAGENS/APOSTILA/STATUS-APOSTILA.md`).
-**Status:** 🔄 piloto **Introdução à TIC (ITIC)** — só o capítulo 01
-gerado, aguardando validação do usuário; os demais capítulos só depois que ele liberar, **um por
-vez, perguntando a cada capítulo** (rascunhos em `APOSTILA/RASCUNHOS/`, fora da apostila).
+**Status (2026-10-07):** ✅ piloto **Introdução à TIC (ITIC)** com os
+**10 capítulos** escritos, Markdown completo (conferência 100%), HTML e PDF (84 páginas) gerados;
+👀 aguardando a validação dos capítulos e a conferência dos vídeos pelo professor. Nas próximas
+matérias, continua **um capítulo por vez, perguntando a cada capítulo** (rascunhos em
+`APOSTILA/RASCUNHOS/`, fora da apostila).
 
 ### 🏷️ IDENTIFICAÇÃO DA APOSTILA: AUTOR, VERSÃO, DATA E HORA (REGRA GLOBAL)
 
@@ -185,6 +187,13 @@ Registrada em 2026-10-03 a pedido do usuário.
   achado pela busca (link, título e canal reais) mas a duração não pôde ser lida, a linha fica
   `- [título](url) — a conferir — canal`; o gerador avisa e o HTML mostra "⏱️ duração a conferir
   pelo professor". O professor troca por `mm:ss` (até 15 min) ou apaga a linha.
+- ✅ **Ementa no formato por módulos** (2026-10-08, Fundamentos da Tecnologia e Programação): o
+  `conferir_ementa.py` também lê o indicador na tabela de capacidades ("Indicador ..."), BNCC em
+  tabela ("Competência geral | Módulos"), prompts `1. **M1:** "..."` e "**Regras para a IA:**",
+  glossário `- **Termo:** definição` com "**Marcos de competência:**", recursos em lista, métricas
+  em "Indicadores de sucesso" e as listas "Exemplos práticos" e "Orientações ao professor" — sempre
+  como alternativa, quando o formato padrão da seção não existe (ITIC, Testes de Frontend e
+  Reforço de Linguagens continuam 100%). As seções sem campo próprio vão em `textos_ementa`.
 - ✅ **O HTML é gerado a partir do Markdown completo** (2026-10-07): o `gerar_apostila.py` lê a
   `# Introdução` e cada `# Capítulo NN` do `APOSTILA-<MATERIA>.md` (glossário de cada capítulo
   pelo `_(cap. NN)_` do glossário geral); sem o Markdown completo, o gerador para com erro
@@ -337,8 +346,11 @@ faltava. Vale para **todas as matérias**.
 1. **Abertura** com as capacidades do capítulo (`- **Capacidade:** C1, S1`);
 2. **Teoria + exemplos**;
 3. **Vídeos do YouTube de no máximo 15 minutos** (`- [título](url) — mm:ss — canal`): miniatura +
-   título + duração + canal + link (funciona na tela e no papel). O gerador **recusa** vídeo sem
-   duração ou com mais de 15:00. A duração é conferida nos metadados do YouTube (`curl`, sem
+   título + duração + canal + link (funciona na tela e no papel). O gerador **recusa** vídeo com
+   mais de 15:00. **Exceção (2026-10-08, pedido do usuário):** quando a duração não pôde ser
+   conferida (ex.: sessão em nuvem sem acesso ao YouTube), escrever `a conferir` no lugar de
+   `mm:ss` (ver "Vídeo com duração 'a conferir'") e registrar uma tarefa no `TASKS.md` para
+   conferir depois. O canal é opcional. A duração é conferida nos metadados do YouTube (`curl`, sem
    navegador) e o professor confere o conteúdo;
 4. **Resumo**;
 5. **No mínimo 5 exercícios (questões) por capítulo** (mais é permitido), no padrão ITEM

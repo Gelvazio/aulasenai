@@ -107,6 +107,8 @@ Reescrita com coesão e coerência:
 
 ## Vídeos
 
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #11):** a duração destes vídeos ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
+
 - [Os conectivos](https://www.youtube.com/watch?v=PC4b4jt0Bl0) — a conferir
 - [Coesão e coerência](https://www.youtube.com/watch?v=IIU6i3UXyi0) — a conferir — Prof. Noslen
 - [Coesão e coerência textual - Redação - Ensino Médio](https://www.youtube.com/watch?v=3E4ULflHHGo) — a conferir
