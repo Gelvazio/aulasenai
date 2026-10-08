@@ -95,12 +95,12 @@ curso.
 | B.1 | Criar a pasta nova e o `EMENTA-CHALKIE-AI.md` a partir da UC 5: nome exato, 33h, 4 capacidades e 4 conhecimentos da ementa do curso, sequência de 9 aulas | `.../INTRODUCAO_COMUNICACAO_ORAL_ESCRITA/EMENTA-CHALKIE-AI.md` | `wc -c` entre 14.800 e 14.950 e conferência com a UC 5 | ✅ 2026-10-07 21:31 — 14.835 caracteres |
 | B.2 | Criar o `materia.json` (formato da ITIC, `autor_apostila` = Gelvazio Camargo, `versao_apostila` = 1.0) | `materia.json` | `python -m json.tool` e leitura por `assets/gerador-materia/materia.py` | ✅ 2026-10-07 21:31 — 9 aulas, soma 33h |
 | B.3 | Criar o `STATUS-EMENTAS.md` da matéria e regenerar `STATUS-EMENTAS-CURSOS.md` | script `criar-status-cursos.py` | Ler o resultado | ✅ 2026-10-07 21:33 — script passou a ignorar `AGENDA_COLABORADOR` (não é curso, regra do CLAUDE.md) |
-| B.4 | Aceite do usuário (ementa e plano das 9 aulas) | — | — | 🔄 aguardando o usuário |
+| B.4 | Aceite do usuário (ementa e plano das 9 aulas) | — | — | ✅ 2026-10-07 21:37 — 9 temas, só C1–C4, Vale Tech, prática 6,0 + objetiva 4,0 |
 
 ### Etapa C — Aulas (uma por vez, com `AULAS/STATUS-AULAS.md`)
 | Passo | Ação | Status |
 |---|---|---|
-| C.1 a C.9 | Aulas 01 a 09 em `CONTEUDO/AULA-NN-....md`. Cada uma com roteiro, conteúdo, exemplos, pelo menos 1 dinâmica e verificação. A aula 09 tem 1h. Validação do usuário a cada aula | ⬜ |
+| C.1 a C.9 | Aulas 01 a 09 em `CONTEUDO/AULA-NN-....md`. Cada uma com roteiro, conteúdo, exemplos, pelo menos 1 dinâmica e verificação. A aula 09 tem 1h. Validação do usuário a cada aula | 🔄 Aula 01 👀 aguardando validação (2026-10-07) |
 
 ### Etapa D — Atividades (uma aula por vez, com `ATIVIDADES/STATUS-ATIVIDADES.md`)
 | Passo | Ação | Status |
