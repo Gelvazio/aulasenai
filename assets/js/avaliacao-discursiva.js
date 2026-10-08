@@ -39,8 +39,8 @@ const MSG_LEITURA_LIVRE_DISCURSIVA = 'Você pode ler a avaliação à vontade. P
 const MSG_ENTRAR_DISCURSIVA = 'Para responder, entre com o seu usuário e senha.\n\n' +
     'Ir para a página de login agora?';
 const MSG_PROFESSOR_DISCURSIVA = 'O professor não responde a avaliação: só os alunos escrevem. ' +
-    'Aqui você confere as questões; as respostas dos alunos ficam gravadas no banco e aparecem ' +
-    'só quando você escolhe um aluno em "Respostas dos alunos".';
+    'A prova fica escondida: ela aparece, com as respostas do aluno, só quando você escolhe um ' +
+    'aluno em "Respostas dos alunos".';
 const CLASSE_RESPOSTAS_OCULTAS_PROFESSOR = 'discursiva--respostas-ocultas';
 const MSG_BLOQUEADA_DISCURSIVA = '🔒 Avaliação bloqueada pelo professor. Aguarde a liberação ' +
     'para escrever as respostas.';

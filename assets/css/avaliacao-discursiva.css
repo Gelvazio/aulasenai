@@ -52,9 +52,9 @@
     background: var(--discursiva-fundo-campo);
 }
 
-/* Professor: respostas escondidas até escolher um aluno em "Respostas dos alunos" */
-.discursiva--respostas-ocultas .topico-resposta__campo,
-.discursiva--respostas-ocultas .topico-resposta__rodape {
+/* Professor: a prova inteira (instruções e questões) fica escondida até escolher um aluno em
+   "Respostas dos alunos"; o painel e o Progresso da turma continuam visíveis. */
+.discursiva--respostas-ocultas .content-section > .aula-card:not(.painel-discursivo) {
     display: none;
 }
 

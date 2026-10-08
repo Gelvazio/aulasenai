@@ -201,10 +201,11 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     correção) e o comentário da IA ao passar o mouse; `assets/js/nota-ia-respostas-discursiva.js`
     (+ CSS), ligado pelo callback opcional `aoMostrarAluno` do `respostas-aluno-professor.js`.
     **Vale para todas as avaliações discursivas** (regra no `CLAUDE.md`, 2026-10-08).
-  - **Respostas escondidas para o professor (2026-10-08, pedido do usuário):** por padrão o
-    professor vê as questões sem os campos de resposta; os campos (e os ícones e botões de cada
-    alternativa) só aparecem ao escolher um aluno no combo e somem ao limpar a escolha (classe
-    `discursiva--respostas-ocultas` no `<body>`, `avaliacao-discursiva.js` + CSS).
+  - **Prova escondida para o professor (2026-10-08, pedido do usuário):** por padrão a prova
+    inteira (instruções, questões e entrega) fica escondida para o professor; só o painel e o
+    Progresso da turma aparecem. A prova, com as respostas do aluno, aparece ao escolher um aluno
+    no combo e some ao limpar a escolha (classe `discursiva--respostas-ocultas` no `<body>`,
+    `avaliacao-discursiva.js` + CSS).
   - **Botões do professor (2026-10-08):** ao escolher o aluno, cada alternativa ganha, antes do
     "💾 Gravar", os botões ✅ Certa (pontos) / 🟡 Meia certa (metade) / ❌ Errada (0), que gravam a
     `nota_professor` (upsert só dessa coluna; `nota_ia` e comentário ficam). Código
