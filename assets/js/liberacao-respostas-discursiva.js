@@ -12,6 +12,7 @@ const MSG_AGUARDE_GABARITO_DISCURSIVO = 'Aguarde professor liberar os gabaritos'
 const CLASSE_LIBERACAO_DISCURSIVA = 'liberacao-discursiva';
 const CLASSE_RESPOSTA_ESPERADA = 'resposta-esperada';
 const ARQUIVO_LIBERACAO_PROFESSOR = 'liberacao-respostas-professor.js';
+const ARQUIVO_TURMA_UNIDADE_LIBERACAO = 'turma-unidade.js';
 const EVENTO_TURMA_LIBERACAO_DISCURSIVA = 'relatorio-professor:turma';
 const BASE_SCRIPTS_LIBERACAO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 
@@ -45,24 +46,34 @@ function carregarScriptLiberacao(arquivo) {
 }
 
 /**
- * Lista os códigos das turmas vinculadas ao professor (o administrador lê todos os vínculos).
- * @returns {Promise<string[]>} Códigos sem repetição, em ordem.
+ * Lista as turmas vinculadas ao professor (o administrador lê todos os vínculos), com o texto
+ * "código — nome · UNIDADE" (assets/js/turma-unidade.js).
+ * @returns {Promise<{codigo: string, rotulo: string}[]>} Turmas sem repetição, em ordem.
  */
 async function listarTurmasLiberacaoDiscursiva() {
-    const vinculos = await sbGet('turmaprofessor', 'select=turma_codigo');
-    return [...new Set(vinculos.map((vinculo) => vinculo.turma_codigo))].sort();
+    if (typeof acrescentarUnidadeTurma !== 'function') {
+        await carregarScriptLiberacao(ARQUIVO_TURMA_UNIDADE_LIBERACAO);
+    }
+    const [vinculos, turmas] = await Promise.all([sbGet('turmaprofessor', 'select=turma_codigo'),
+        sbGet('turma', 'select=codigo,nome,turno,local')]);
+    const porCodigo = new Map(turmas.map((turma) => [turma.codigo, turma]));
+    const codigos = [...new Set(vinculos.map((vinculo) => vinculo.turma_codigo))].sort();
+    return codigos.map((codigo) => {
+        const turma = porCodigo.get(codigo) || { codigo };
+        return { codigo, rotulo: acrescentarUnidadeTurma(codigo + ' — ' + (turma.nome || ''), turma) };
+    });
 }
 
 /**
  * Monta a lista "Turma" do professor; trocar a turma atualiza o botão de liberar.
- * @param {string[]} turmas - Códigos das turmas.
+ * @param {{codigo: string, rotulo: string}[]} turmas - Turmas da lista.
  * @returns {HTMLLabelElement} Lista pronta.
  */
 function criarListaTurmasLiberacao(turmas) {
     const etiqueta = criarElementoDiscursivaLiberacao('label',
         CLASSE_LIBERACAO_DISCURSIVA + '__turma', 'Turma: ');
     const lista = document.createElement('select');
-    turmas.forEach((codigo) => lista.appendChild(new Option(codigo, codigo)));
+    turmas.forEach((turma) => lista.appendChild(new Option(turma.rotulo, turma.codigo)));
     lista.addEventListener('change', () => document.dispatchEvent(new CustomEvent(
         EVENTO_TURMA_LIBERACAO_DISCURSIVA, { detail: { turma: lista.value } })));
     etiqueta.appendChild(lista);
@@ -89,7 +100,7 @@ async function montarLiberacaoProfessorDiscursiva(painel, atividadeId) {
         await carregarScriptLiberacao(ARQUIVO_LIBERACAO_PROFESSOR);
     }
     area.appendChild(criarListaTurmasLiberacao(turmas));
-    montarLiberarGabaritoProfessor(area, { atividadeId, turma: turmas[0] });
+    montarLiberarGabaritoProfessor(area, { atividadeId, turma: turmas[0].codigo });
 }
 
 /**

@@ -551,7 +551,7 @@ function carregarTurmaFavoritaIndice() {
     const estilo = criarElementoCrud('link');
     estilo.rel = 'stylesheet';
     estilo.href = BASE_ASSETS_CRUD + 'css/indice-turma-favorita.css';
-    const scripts = ['js/turma-favorita.js', 'js/indice-turma-favorita.js'].map((caminho) => {
+    const scripts = ['js/turma-favorita.js', 'js/turma-unidade.js', 'js/indice-turma-favorita.js'].map((caminho) => {
         const script = criarElementoCrud('script');
         script.src = BASE_ASSETS_CRUD + caminho;
         script.async = false;

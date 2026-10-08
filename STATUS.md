@@ -1133,3 +1133,11 @@ Pedido do usuário: bloquear copiar e colar (obrigar a digitar cada resposta) **
 |------|-----------|--------|--------------|-------------|
 | 93.1 | Card da equipe: nome + **+Integrante** na mesma linha, botão alinhado à direita; Editar/Excluir na linha de baixo, à direita (`equipes-modal.js`, `equipes-modal.css`) | ✅ Concluído | 2026-10-08 17:23:35 | `node --check`; leitura do código (sem navegador) |
 | 93.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 94 — Unidade (local + turno) em toda lista de turmas (pedido em 2026-10-08 17:26:54)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 94.1 | `assets/js/turma-unidade.js` (novo) e uso em: equipes, `turmas.html`, `alunos.html`, `turma-exportacao.js` (+ carregamento em `atividade.js` e `exportar-pdf-discursiva.js`), `indice-turma-favorita.js` (+ `atividades-crud-modal.js`), média final (2 páginas + template do gerador) e liberação do gabarito das discursivas; regra nova e histórico | ✅ Concluído | 2026-10-08 17:26:54 | `node --check` nos 13 JS; leitura do código (sem navegador) |
+| 94.2 | Dados: o `local` vem da tabela `turma` (hoje: AI SALETE, AI CEPLAS, CEPLAS, APRENDIZAGEM INDUSTRIAL TAIÓ TARDE); a turma Roberto Machado ganha o local ao ser gravada pela página de usuários | ⬜ Pendente | — | Consulta de leitura em `turma` |
+| 94.3 | Aceite do usuário | ⬜ Pendente | — | — |

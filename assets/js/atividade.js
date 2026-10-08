@@ -11,6 +11,7 @@
 // depois que o professor liberar para a turma (plano docs/liberacao-respostas-por-turma.md).
 
 const ARQUIVO_TURMA_EXPORTACAO = 'turma-exportacao.js';
+const ARQUIVO_TURMA_UNIDADE = 'turma-unidade.js';
 const ARQUIVO_DOCUMENTO_WORD = 'documento-word.js';
 const ARQUIVO_EXPORTAR_WORD = 'exportar-word.js';
 const ARQUIVO_EXPORTAR_GABARITO = 'avaliacao-pdf-professor.js';
@@ -35,6 +36,7 @@ function carregarModuloExportacao(arquivo, jaCarregado) {
     document.head.append(script);
 }
 
+carregarModuloExportacao(ARQUIVO_TURMA_UNIDADE, typeof acrescentarUnidadeTurma === 'function');
 carregarModuloExportacao(ARQUIVO_TURMA_EXPORTACAO, typeof obterTurmaParaExportacao === 'function');
 carregarModuloExportacao(ARQUIVO_DOCUMENTO_WORD, typeof baixarDocumentoWord === 'function');
 carregarModuloExportacao(ARQUIVO_EXPORTAR_WORD, typeof exportarWordAtividade === 'function');

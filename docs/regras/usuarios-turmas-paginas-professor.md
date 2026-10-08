@@ -203,6 +203,18 @@ SQL: `database/2026-10-05-equipes-turma-materia.sql` (✅ aplicado no Supabase e
   atividades, avaliações, Excel) saíram do menu — as páginas continuam publicadas. Matéria nova
   com menu segue o mesmo padrão.
 
+## 🏫 REGRA — TODA LISTA DE TURMAS MOSTRA A UNIDADE (LOCAL + TURNO)
+
+Registrada em 2026-10-08 a pedido do usuário.
+
+- ✅ Em **todo lugar que seleciona turma**, o texto da turma traz a **unidade** = local + turno
+  em maiúsculas (ex.: `133933 — AI AIAC 2026/2 V1 · AI SALETE TARDE`, `… · AI CEPLAS MANHÃ`,
+  `… · ROBERTO MACHADO TARDE`). O turno não se repete se o local já o traz.
+- ✅ Função única: `assets/js/turma-unidade.js` (`montarUnidadeTurma`, `acrescentarUnidadeTurma`);
+  a consulta da turma deve trazer a coluna `local`. Lista nova de turmas usa essa função.
+- ✅ Usada hoje em: equipes, `turmas.html`, `alunos.html`, turma da exportação (atividades e
+  discursivas), turma favorita dos índices, média final e liberação do gabarito das discursivas.
+
 ## 🎯 REGRA — PÁGINA VISÍVEL SÓ PARA ALGUMAS TURMAS
 
 Registrada em 2026-10-05 a pedido do usuário.

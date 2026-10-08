@@ -68,8 +68,7 @@ function bloquearPaginaTa(texto, comLogin) {
  * @returns {string} Texto da turma.
  */
 function descreverTurmaTa(turma) {
-  const turno = turma.turno ? " (" + turma.turno + ")" : "";
-  return turma.codigo + " — " + (turma.nome || "") + turno;
+  return acrescentarUnidadeTurma(turma.codigo + " — " + (turma.nome || ""), turma);
 }
 
 /**

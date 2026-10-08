@@ -35,7 +35,7 @@ async function listarTurmasVisiveisFavorita(cliente, usuario) {
         await cliente.rpc(RPC_ADMINISTRADOR_FAVORITA);
     if (erroAdministrador) throw erroAdministrador;
 
-    let consulta = cliente.from('turma').select('codigo,nome,turno').order('nome');
+    let consulta = cliente.from('turma').select('codigo,nome,turno,local').order('nome');
     if (ehAdministrador !== true) {
         const { data: vinculos, error: erroVinculos } = await cliente
             .from('turmaprofessor').select('turma_codigo').eq('professor_id', usuario.id);
@@ -58,7 +58,7 @@ async function listarTurmasVisiveisFavorita(cliente, usuario) {
  * @returns {string} Texto da opção.
  */
 function textoOpcaoFavorita(turma, favorita) {
-    const partes = [turma.nome || turma.codigo, turma.turno].filter(Boolean).join(' · ');
+    const partes = acrescentarUnidadeTurma(turma.nome || turma.codigo, turma);
     const prefixo = turma.codigo === favorita ? PREFIXO_OPCAO_FAVORITA : '';
     return prefixo + partes + ' (' + turma.codigo + ')';
 }

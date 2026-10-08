@@ -143,7 +143,7 @@ async function iniciarProfessorMedia(pagina, atividades) {
     const comboTurma = criarComboMedia(ROTULO_TURMA_MEDIA);
     const comboAluno = criarComboMedia(ROTULO_ALUNO_MEDIA);
     estadoProfessorMedia.turmas.forEach((turma) => comboTurma.lista.add(new Option(
-        [turma.nome, turma.local, turma.turno].filter(Boolean).join(' · '), turma.codigo)));
+        acrescentarUnidadeTurma(turma.nome || turma.codigo, turma), turma.codigo)));
     const buscarTurma = (codigo) =>
         estadoProfessorMedia.turmas.find((turma) => turma.codigo === codigo);
     comboTurma.lista.addEventListener('change', () =>

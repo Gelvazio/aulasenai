@@ -80,7 +80,7 @@ async function listarTurmasDoProfessorExportacao(cliente, usuario) {
         await cliente.rpc(RPC_ADMINISTRADOR_EXPORTACAO);
     if (erroAdministrador) throw erroAdministrador;
 
-    let consulta = cliente.from('turma').select('codigo,nome,turno').order('nome');
+    let consulta = cliente.from('turma').select('codigo,nome,turno,local').order('nome');
     if (ehAdministrador !== true) {
         const { data: vinculos, error: erroVinculos } = await cliente
             .from('turmaprofessor').select('turma_codigo').eq('professor_id', usuario.id);
@@ -102,8 +102,7 @@ async function listarTurmasDoProfessorExportacao(cliente, usuario) {
  * @returns {string} Texto da turma.
  */
 function textoTurmaExportacao(turma) {
-    const partes = [turma.nome || turma.codigo, turma.turno].filter(Boolean).join(' · ');
-    return partes + ' (' + turma.codigo + ')';
+    return acrescentarUnidadeTurma(turma.nome || turma.codigo, turma) + ' (' + turma.codigo + ')';
 }
 
 /**

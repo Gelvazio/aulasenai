@@ -457,13 +457,12 @@ async function carregarTurmaEquipes() {
 }
 
 /**
- * Texto da turma na lista: código — nome (turno).
- * @param {{codigo: string, nome: string, turno: string}} turma - Turma.
+ * Texto da turma na lista: código — nome · UNIDADE (local + turno, assets/js/turma-unidade.js).
+ * @param {{codigo: string, nome: string, turno: string, local: string}} turma - Turma.
  * @returns {string} Rótulo.
  */
 function rotuloTurmaEquipes(turma) {
-  const turno = turma.turno ? ' (' + turma.turno + ')' : '';
-  return turma.codigo + ' — ' + (turma.nome || '') + turno;
+  return acrescentarUnidadeTurma(turma.codigo + ' — ' + (turma.nome || ''), turma);
 }
 
 /**

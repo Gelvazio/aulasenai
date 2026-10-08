@@ -15,6 +15,7 @@ const URL_JSPDF_DISCURSIVA = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1
 const URL_AUTOTABLE_DISCURSIVA =
     'https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js';
 const ARQUIVO_TURMA_DISCURSIVA = 'turma-exportacao.js';
+const ARQUIVO_TURMA_UNIDADE_DISCURSIVA = 'turma-unidade.js';
 const BASE_SCRIPTS_PDF_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const TURMA_EM_BRANCO_DISCURSIVA = '___________________';
 const MARGEM_PDF_DISCURSIVA = 15;
@@ -345,7 +346,9 @@ function montarBarraPdfDiscursiva() {
     barra.append(botao);
     conteudo.prepend(barra);
     if (typeof obterTurmaParaExportacao !== 'function' && BASE_SCRIPTS_PDF_DISCURSIVA) {
-        carregarScriptPdfDiscursiva(BASE_SCRIPTS_PDF_DISCURSIVA + ARQUIVO_TURMA_DISCURSIVA)
+        carregarScriptPdfDiscursiva(BASE_SCRIPTS_PDF_DISCURSIVA + ARQUIVO_TURMA_UNIDADE_DISCURSIVA)
+            .then(() => carregarScriptPdfDiscursiva(
+                BASE_SCRIPTS_PDF_DISCURSIVA + ARQUIVO_TURMA_DISCURSIVA))
             .catch((erro) => console.warn(erro.message));
     }
 }
