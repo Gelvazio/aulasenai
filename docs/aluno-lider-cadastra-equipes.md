@@ -10,8 +10,8 @@ ou 0, se for líder, deve liberar o menu de nome equipe pra ele cadastrar ou alt
 esta regra no claude do projeto".
 
 **Criado em:** 2026-10-08 23:52:37
-**Concluído em:** —
-**Tempo decorrido:** —
+**Concluído em:** 2026-10-08 23:58:03 (falta o aceite do usuário)
+**Tempo decorrido:** ~45 min
 
 ---
 
@@ -37,20 +37,20 @@ esta regra no claude do projeto".
 
 | Passo | Descrição | Status | Criado em | Concluído em | Tempo decorrido |
 |-------|-----------|--------|-----------|--------------|-----------------|
-| 1 | SQL versionado (coluna, funções, políticas) | ⬜ Pendente | 2026-10-08 23:52 | — | — |
-| 2 | Aplicar pelo conector do Supabase e conferir | ⬜ Pendente | 2026-10-08 23:52 | — | — |
-| 3 | `docs/database.md` + relatório HTML | ⬜ Pendente | 2026-10-08 23:52 | — | — |
-| 4 | Tela ALUNOS: coluna Líder (1/0) | ⬜ Pendente | 2026-10-08 23:52 | — | — |
-| 5 | Header: menu 👥 EQUIPES só para professor e aluno líder | ⬜ Pendente | 2026-10-08 23:52 | — | — |
-| 6 | Modal/repositório de equipes no modo líder | ⬜ Pendente | 2026-10-08 23:52 | — | — |
-| 7 | Regra no `CLAUDE.md` do projeto (versão + histórico) | ⬜ Pendente | 2026-10-08 23:52 | — | — |
-| 8 | `STATUS.md` + commit | ⬜ Pendente | 2026-10-08 23:52 | — | — |
+| 1 | SQL versionado (coluna, funções, políticas) | ✅ Concluído | 2026-10-08 23:52 | 2026-10-08 23:58 | — |
+| 2 | Aplicar pelo conector do Supabase e conferir | ✅ Concluído | 2026-10-08 23:52 | 2026-10-08 23:58 | — |
+| 3 | `docs/database.md` + relatório HTML | ✅ Concluído | 2026-10-08 23:52 | 2026-10-08 23:58 | — |
+| 4 | Tela ALUNOS: coluna Líder (1/0) | ✅ Concluído | 2026-10-08 23:52 | 2026-10-08 23:58 | — |
+| 5 | Header: menu 👥 EQUIPES só para professor e aluno líder | ✅ Concluído | 2026-10-08 23:52 | 2026-10-08 23:58 | — |
+| 6 | Modal/repositório de equipes no modo líder | ✅ Concluído | 2026-10-08 23:52 | 2026-10-08 23:58 | — |
+| 7 | Regra no `CLAUDE.md` do projeto (versão + histórico) | ✅ Concluído | 2026-10-08 23:52 | 2026-10-08 23:58 | — |
+| 8 | `STATUS.md` + commit | ✅ Concluído | 2026-10-08 23:52 | 2026-10-08 23:58 | — |
 
 ---
 
 ### Passo 1: SQL versionado
 
-**Status:** ⬜ Pendente
+**Status:** ✅ Concluído
 
 **Arquivo:** Criar `database/2026-10-08-usuario-lider-equipes.sql` (idempotente, sem apagar dados)
 
@@ -130,7 +130,7 @@ para ele; só a função `definir_lider_usuario` (professor da turma) grava.
 
 ### Passo 2: Aplicar e conferir
 
-**Status:** ⬜ Pendente
+**Status:** ✅ Concluído
 
 **Ação:** aplicar pelo conector (projeto `hxlvonriearllcmfqeri`); a mudança só **acrescenta** (sem
 backup necessário: nenhum dado é apagado ou reorganizado).
@@ -142,7 +142,7 @@ backup necessário: nenhum dado é apagado ou reorganizado).
 
 ### Passo 3: Documentação do banco
 
-**Status:** ⬜ Pendente
+**Status:** ✅ Concluído
 
 **Arquivos:** `docs/database.md` e `docs/relatorio_verificacao_database.html` (juntos) — coluna
 `usuario.lider`, funções e políticas novas.
@@ -153,7 +153,7 @@ backup necessário: nenhum dado é apagado ou reorganizado).
 
 ### Passo 4: Tela ALUNOS — coluna Líder (1/0)
 
-**Status:** ⬜ Pendente
+**Status:** ✅ Concluído
 
 **Arquivos:** `assets/js/turmas-aluno-repositorio.js` (ler `lider` do `usuario` e gravar pelo RPC
 `definir_lider_usuario`), `assets/js/turmas-aluno-pagina.js` (coluna com seleção 1/0 e popup de
@@ -165,7 +165,7 @@ confirmação/erro), `assets/css/` da página se precisar.
 
 ### Passo 5: Header — menu 👥 EQUIPES
 
-**Status:** ⬜ Pendente
+**Status:** ✅ Concluído
 
 **Arquivo:** `js/header-usuario.js` — o botão aparece em página de matéria só se o perfil for
 PROFESSOR **ou** a linha do próprio usuário em `usuario` tiver `lider = 1`.
@@ -176,7 +176,7 @@ PROFESSOR **ou** a linha do próprio usuário em `usuario` tiver `lider = 1`.
 
 ### Passo 6: Modal e repositório no modo líder
 
-**Status:** ⬜ Pendente
+**Status:** ✅ Concluído
 
 **Arquivos:** `assets/js/equipes-repositorio.js` (`ehLider`, turmas do aluno pela `turmaaluno`,
 alunos pelo RPC `alunos_da_turma_lider`), `assets/js/equipes-modal.js` (líder entra no mesmo modo
@@ -188,7 +188,7 @@ de gestão do professor, sem o 🗑️ de excluir equipe), `assets/js/equipes-ta
 
 ### Passo 7: Regra no `CLAUDE.md` do projeto
 
-**Status:** ⬜ Pendente
+**Status:** ✅ Concluído
 
 **Arquivos:** `docs/regras/usuarios-turmas-paginas-professor.md` (seção Equipes), `CLAUDE.md`
 (versão das regras + resumo do histórico) e `docs/HISTORICO-REGRAS.md`.
@@ -199,7 +199,7 @@ de gestão do professor, sem o 🗑️ de excluir equipe), `assets/js/equipes-ta
 
 ### Passo 8: `STATUS.md` + commit
 
-**Status:** ⬜ Pendente
+**Status:** ✅ Concluído
 
 **Ação:** etapa nova no `STATUS.md`; `git add` só dos arquivos da tarefa; commit local (sem push).
 

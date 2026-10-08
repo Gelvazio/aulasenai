@@ -1398,9 +1398,9 @@ Plano: [docs/aluno-lider-cadastra-equipes.md](docs/aluno-lider-cadastra-equipes.
 | 106.1 | SQL versionado `database/2026-10-08-usuario-lider-equipes.sql` | ✅ Concluído | 2026-10-08 23:53 | 7 políticas no arquivo |
 | 106.2 | Aplicar pelo conector e conferir | ✅ Concluído | 2026-10-08 23:54 | 132 usuários com lider = 0; 7 políticas *_lider; 3 funções sem execução para anon |
 | 106.3 | `docs/database.md` + relatório HTML | ✅ Concluído | 2026-10-08 23:54 | grep "lider" nos dois arquivos |
-| 106.4 | Tela ALUNOS: coluna Líder (1/0) | 🔄 Em progresso | — | — |
-| 106.5 | Header: menu 👥 EQUIPES só para professor e aluno líder | ⬜ Pendente | — | — |
-| 106.6 | Modal/repositório de equipes no modo líder | ⬜ Pendente | — | — |
-| 106.7 | Regra no `CLAUDE.md` do projeto | ⬜ Pendente | — | — |
-| 106.8 | Commit | ⬜ Pendente | — | — |
+| 106.4 | Tela ALUNOS: coluna Líder (1/0) (`turmas-aluno-lider.js` novo, repositório, página, sugestões, `alunos.html`, CSS) + correção do CSS do formulário que se sobrepunha (`turmas-professor.css`, pedido do usuário) + `grant select (lider)` que faltava (erro "permission denied for table usuario" relatado pelo usuário) | ✅ Concluído | 2026-10-08 23:58:03 | `node --check`; grant conferido em `column_privileges` |
+| 106.5 | Header: menu 👥 EQUIPES só para professor e aluno líder | ✅ Concluído | 2026-10-08 23:58:03 | `node --check js/header-usuario.js` |
+| 106.6 | Modal/repositório de equipes no modo líder (turmas do aluno, alunos pelo RPC, sem 🗑️ de equipe) | ✅ Concluído | 2026-10-08 23:58:03 | `node --check` nos 3 JS; trigger `equipe_membro_preparar` é security definer |
+| 106.7 | Regra no `CLAUDE.md` do projeto (`docs/regras/usuarios-turmas-paginas-professor.md`, versão + históricos) | ✅ Concluído | 2026-10-08 23:58:03 | grep "lider" na regra |
+| 106.8 | Commits d3f40b5 (código, banco e regra) + complementar (SQL do grant, STATUS e plano) | ✅ Concluído | 2026-10-08 23:58:03 | git log |
 | 106.9 | Aceite do usuário | ⬜ Pendente | — | — |

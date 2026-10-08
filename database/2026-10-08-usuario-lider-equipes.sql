@@ -6,6 +6,9 @@
 alter table public.usuario add column if not exists lider smallint not null default 0;
 alter table public.usuario drop constraint if exists usuario_lider_check;
 alter table public.usuario add constraint usuario_lider_check check (lider in (0, 1));
+-- A tabela usuario usa permissão de leitura POR COLUNA: coluna nova precisa do grant,
+-- senão a leitura dá "permission denied for table usuario" (aconteceu em 2026-10-08).
+grant select (lider) on public.usuario to authenticated;
 
 -- 2) O usuário logado é aluno líder e está na turma?
 create or replace function public.aluno_lider_da_turma(p_turma_codigo text)
