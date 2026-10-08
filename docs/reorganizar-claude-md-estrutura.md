@@ -38,7 +38,7 @@ Deixar o `CLAUDE.md` menor e mais fácil de manter (hoje: 2.748 linhas, ~177 mil
 | Passo | Ação | Arquivos | Verificação | Status |
 |---|---|---|---|---|
 | 1 | Perguntar e aplicar: dividir as regras em `docs/regras/` | `CLAUDE.md`, `docs/regras/*.md`, `regras-modal.js` | todas as seções presentes; `node --check` no JS | ✅ Concluído (2026-10-07 21:15) |
-| 2 | Perguntar e aplicar: histórico para `docs/HISTORICO-REGRAS.md` | `CLAUDE.md`, `docs/HISTORICO-REGRAS.md` | linha "Versão das regras" mantida no topo | ⬜ Pendente |
+| 2 | Perguntar e aplicar: histórico para `docs/HISTORICO-REGRAS.md` | `CLAUDE.md`, `docs/HISTORICO-REGRAS.md` | linha "Versão das regras" mantida no topo | ✅ Concluído (2026-10-07 21:18) |
 | 3 | Perguntar e aplicar: "Próximo passo" do `STATUS.md` em tabela | `STATUS.md` | nenhuma pendência perdida, duplicada removida (49.2) | ⬜ Pendente |
 | 4 | Versão das regras + histórico + commit | `CLAUDE.md` | commit feito | ⬜ Pendente |
 | 5 | Aceite do usuário | — | — | ⬜ Pendente |

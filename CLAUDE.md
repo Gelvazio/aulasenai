@@ -1,62 +1,18 @@
 # 📚 CLAUDE.md — Sistema Completo SENAI — 6 Arquivos HTML
 
-**Versão das regras:** 2026-10-07 21:10
+**Versão das regras:** 2026-10-07 21:15
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
+Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORICO-REGRAS.md](docs/HISTORICO-REGRAS.md).
+
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-07 21:15 | Histórico de versões movido para `docs/HISTORICO-REGRAS.md` (no `CLAUDE.md` ficam as 5 mudanças mais recentes e o link); o visualizador de regras mostra também o histórico |
 | 2026-10-07 21:10 | `CLAUDE.md` dividido em **núcleo + `docs/regras/`** (6 arquivos, texto das regras sem alteração): no `CLAUDE.md` ficam as regras de sempre, segurança, Git e o "ÍNDICE DAS REGRAS DETALHADAS" com as proibições; o visualizador de regras passa a carregar também os arquivos de `docs/regras/` |
 | 2026-10-07 20:50 | Identificação da apostila obrigatória em **todas** as apostilas: `autor_apostila` (padrão Gelvazio Camargo) e `versao_apostila` (começa em 1.0) preenchidos no `materia.json` antes da 1ª geração; aplicada também em Reforço de Linguagens |
 | 2026-10-07 20:50 | Apostilas: vídeo com duração `a conferir` (link real, duração não conferida por bloqueio de rede) aceito pelo gerador, com aviso; 29 vídeos na apostila de Reforço de Linguagens |
 | 2026-10-07 20:40 | Reforço de Linguagens ganha menu de atividades (`MENU-ATIVIDADES.js` com 📚 Índice, 📘 Apostila e as atividades por aula) |
-| 2026-10-07 20:30 | Regra do push dividida por ambiente: **local** = nunca fazer push (continua); **nuvem** (Claude Code na web/remoto) = sempre fazer push, direto na `main`, sem pull request |
-| 2026-10-07 20:20 | Apostila de Reforço de Linguagens (10 capítulos, aguardando validação); gerador de apostilas aceita a carga horária de cada aula (6 h/7 h), ementas com capacidades em lista, conteúdos programáticos por módulo e aulas em negrito, e vídeos "⏳ pendentes" quando o YouTube não pode ser conferido; ementa de Reforço de Linguagens com as 6 capacidades da ementa do curso |
-| 2026-10-07 20:15 | Regra "IDENTIFICAÇÃO DA APOSTILA" (global): toda apostila mostra autor, versão, data e hora (campos `autor_apostila` e `versao_apostila` no `materia.json`); começou pela ITIC (autor Gelvazio Camargo, versão 1.0) |
-| 2026-10-07 17:00 | Combo "Aluno" do professor também nas atividades objetivas (alternativas marcadas pelo aluno, somente leitura); módulo único `respostas-aluno-professor.js` |
-| 2026-10-07 16:30 | Discursivas: combo "Aluno" do professor carrega nos campos as respostas de cada aluno (somente leitura); páginas de atividade leem respostas/entrega/tentativa só do usuário logado (`aluno_id`) |
-| 2026-10-07 10:00 | Apostilas: o HTML passa a ser gerado a partir do Markdown completo `APOSTILA-<MATERIA>.md` (antes lia os `CAPITULO-NN.md`) |
-| 2026-10-07 09:00 | Menus USUARIOS, RELATORIOS, ALUNOS e CORREÇÃO do header só para o **Professor Administrador** (os demais professores não veem) |
-| 2026-10-06 20:30 | Card do índice com **100% dos dados da tabela `aulas`** (rótulo, nome e data); "✏️ Editar aula" vira modal CRUD da aula com a lista das atividades (✏️ Editar / 🗑️ Excluir / ➕ Nova); todas as aulas compartilhadas separadas (1 card = 1 aula); gerador de índices junta páginas da mesma aula num card; rótulo padrão "AULA NN" |
-| 2026-10-06 20:15 | Regra "CADA CARD LIGADO A APENAS 1 AULA": uma aula nunca é dividida entre cards do índice (aula 40 de Análise de Dados corrigida: fica só com o card da atividade 82) |
-| 2026-10-06 20:00 | Modal "✏️ Editar aula" também troca o **rótulo do card** ("AULA 01", coluna `aulas.rotulo_card`) |
-| 2026-10-06 19:45 | Modal "✏️ Editar aula" também troca o **nome do card** (coluna `aulas.nome_card`; vazio = título do HTML), além da data |
-| 2026-10-06 19:45 | Botão "📥 Exportar PDF" no padrão SENAI em todas as atividades e avaliações discursivas |
-| 2026-10-06 19:30 | O link "🧾 LOG" fica bloqueado junto com a atividade bloqueada |
-| 2026-10-06 19:15 | Link "🧾 LOG" nos cards do índice (professor): modal com a lista de alunos e o log das alternativas do aluno escolhido |
-| 2026-10-06 18:50 | Tabela "Notas dos alunos" com Exportar PDF em **todas** as atividades de todas as matérias (padrão ligado; `data-tabela-notas="nao"` desliga numa página) |
-| 2026-10-06 19:00 | Log de gravação das alternativas (`log_resposta_atividade`, gatilho no banco, só registros novos) |
-| 2026-10-06 18:45 | Removido o botão "📥 Exportar PDF com gabarito" de todas as páginas e do gerador de atividades |
-| 2026-10-06 18:30 | Removido de todas as atividades o botão "📥 Banco Moodle (AVA SENAI)"; banco do AVA só pelo gerador-banco-ava |
-| 2026-10-06 18:15 | Regra do gabarito também nas discursivas: professor libera no painel por turma (só com todos entregues); aluno "Ver Gabarito" com aviso e registro antes da liberação |
-| 2026-10-06 18:00 | Regra do gabarito (liberação pelo professor só com todos entregues) declarada global: todas as atividades de todas as matérias e cursos |
-| 2026-10-06 17:45 | Liberar gabaritos por atividade e turma: botão do professor (só com todos entregues), sem recuperação depois, aluno vê "Aguarde professor liberar os gabaritos" e o pedido fica em `tentativaacessogabarito` |
-| 2026-10-06 17:30 | Links do card bloqueado desativados também para o professor (voltam ao desbloquear); interruptor continua clicável |
-| 2026-10-06 17:15 | Card de atividade bloqueada inteiro inacessível para aluno e visitante (todos os links desativados, clique no card mostra o aviso) |
-| 2026-10-06 17:00 | Removido também o botão "📝 Exportar em Word (gabarito)": atividades e avaliações objetivas ficam sem botão de Word |
-| 2026-10-06 16:50 | Correção das discursivas (tabela `correcao_discursiva`, tela `correcao-discursiva.html`, menu CORREÇÃO, IA só sugere) e média final do aluno pela função `notas_media_final` (nota vale mesmo com a atividade bloqueada; discursiva "Aguardando correção") |
-| 2026-10-06 16:45 | `.vercelignore` exclui do site todo arquivo com "gabarito" no nome (o gabarito da prova UC1 TIC fica no Git, mas não é publicado) |
-| 2026-10-06 16:30 | Removidos os botões "📝 Exportar em Word" e "📝 Exportar em Word (respostas)" das atividades e avaliações objetivas; fica só o Word com gabarito (professor) |
-| 2026-10-06 16:00 | Tabela "Notas dos alunos" (só professor, nome e nota em ordem alfabética, com Exportar PDF) nas atividades com `- **Tabela de notas:** sim` (`assets/js/tabela-notas-professor.js`) |
-| 2026-10-06 15:10 | Média final de Análise de Dados: Aulas 01–03 com nota fixa 10 para todos, exibida como "10-LIVRE" (`rotulo_nota_fixa` no `media-final.json`); Aulas 04–07 pela nota do banco |
-| 2026-10-06 14:29 | Regra "EXCLUIR AULA": botão 🗑️ Excluir aula no modal "Editar aula", só Professor Administrador; exclusão lógica (`aulas.excluido = 1`, função `excluir_aula`) e card escondido nos índices |
-| 2026-10-06 10:53 | Pendências: acesso só pelo menu PENDÊNCIAS do Professor Administrador logado; nenhum índice/link público para `AGENDA_COLABORADOR`, que o gerador de índices passa a ignorar |
-| 2026-10-06 10:22 | Reforço de Linguagens com **10 aulas** (uma por slide, 6 h/7 h = 63 h, exceção à regra de 4 h) em `CONTEUDO/`; link "Slides da aula" nas atividades (campo `Slides`, geradores de objetivas e discursivas) |
-| 2026-10-06 10:17 | Reforço de Linguagens: o conteúdo das atividades vem **sempre** de `AULAS-CHALKIE-AI/CONTEUDO/AULA-NN-*.md` (slides das 10 aulas convertidos em Markdown) |
-| 2026-10-06 09:49 | Regra "PENDÊNCIAS DE AULAS": tabela `pendencias` (RLS só do Professor Administrador, exclusão lógica), página `MATERIAIS/AGENDA_COLABORADOR/pendencias.html` com CRUD completo e filtros por todos os campos, menu PENDÊNCIAS |
-| 2026-10-06 09:21 | Regra exclusiva "REFORÇO DE LINGUAGENS: 25 QUESTÕES POR ATIVIDADE": 20 objetivas + 5 discursivas (Contexto, Comando e campo para digitar), discursivas corrigidas com IA e análise do professor |
-| 2026-10-05 15:59 | Exportação da página inteira: `assets/js/exportar-pagina.js` + `assets/css/exportar-pagina.css` (botões **📥 Exportar Para PDF**, igual à tela, e **📝 Exportar em Word** ao lado), usados no trabalho em equipe v1 e v2 |
-| 2026-10-05 13:37 | Regra "BLOQUEIO DE ATIVIDADE POR TURMA": o interruptor do índice vale só para a **turma favorita** (coluna `atividade.bloqueio` com os códigos das turmas bloqueadas; sem vínculo = liberado; função `definir_bloqueio_turma`); relatório de atividades considera a turma |
-| 2026-10-05 13:17 | Regra "PÁGINA VISÍVEL SÓ PARA ALGUMAS TURMAS": `assets/js/restricao-turma.js` + `data-turmas-permitidas` (turma descoberta pelo aluno logado na `turmaaluno`) |
-| 2026-10-05 12:19 | Regra "EXPORTAR EM WORD AO LADO DE CADA EXPORTAR PDF" (global): toda exportação em PDF de atividade/avaliação tem o botão **📝 Exportar em Word** ao lado, com o mesmo layout do PDF (`assets/js/documento-word.js`, `exportar-word.js`, `exportar-word-pratica.js`) |
-| 2026-10-05 07:39 | Regra "EQUIPES POR TURMA + MATÉRIA": menu **👥 Equipes** nas páginas de atividades abre o modal com o CRUD das equipes (tabelas `equipe` e `equipe_membro`); `js/menu.js` aceita itens de ação (`acao`) |
-| 2026-10-03 20:55 | Regras "MATÉRIA MODELO: INTRODUÇÃO À TIC" (tudo segue a estrutura que funciona na ITIC) e "AULAS EXTRAÍDAS DA EMENTA EM `CONTEUDO/`" (1 aula a cada 4 h, arredondando para cima; arquivo `AULA-NN-DESCRICAO-CURTA.md`; atividades e, no final, apostila feitas a partir dessas aulas); fontes das 50 questões e da apostila apontam para `CONTEUDO/` |
-| 2026-10-03 20:47 | Regra "CONTEÚDO SÓ PELOS MARKDOWNS": para conferir ou gerar conteúdo, ler sempre os arquivos Markdown da matéria (em primeiro lugar o `EMENTA-CHALKIE-AI.md`) e **nunca extrair dados de PDF**; fonte da atividade prática de Excel ajustada |
-| 2026-10-03 19:04 | Apostilas: conferência com a ementa aceita os formatos de ementa das diferentes matérias (ex.: Testes de Frontend) e **reprova** seção da ementa não reconhecida; Markdown completo pode ser montado antes do 1º capítulo; introdução com "Competência integradora" ou "Situações de aprendizagem", conforme a ementa |
-| 2026-10-03 18:14 | Permissão por matéria: seção `STATUS-PERMISSAO-MATERIA` no `STATUS-EMENTAS-CURSOS.md` (matéria só vale com curso e matéria em `VERIFICAR`); no Técnico em Informática para Internet só `TESTES-DE-FRONTEND` fica em `VERIFICAR` |
-| 2026-10-03 17:22 | Regra "VISUALIZADOR DE REGRAS ATUALIZADO JUNTO COM O CLAUDE.md" e controle de versão com data e hora (linha acima + este histórico); o visualizador passa a mostrar a versão e a recarregar as regras a cada abertura |
-| 2026-10-03 | Regras de aulas uma por vez (`STATUS-AULAS.md`), 1 atividade objetiva de 50 questões por aula (`STATUS-ATIVIDADES.md`) e decisões da fila de geração |
-| 2026-09-30 | Versão 1.1 (registro anterior ao controle por data e hora) |
 
 ---
 
@@ -68,7 +24,9 @@ Registrada em 2026-10-03 a pedido do usuário.
 
 - ✅ **Cada versão tem data e hora:** a cada alteração deste arquivo, atualizar a linha
   `**Versão das regras:** AAAA-MM-DD HH:MM` (topo) e acrescentar **no início** do
-  "HISTÓRICO DE VERSÕES DAS REGRAS" uma linha com a mesma data e hora e o que mudou.
+  "HISTÓRICO DE VERSÕES DAS REGRAS" uma linha com a mesma data e hora e o que mudou — nos **dois**
+  lugares: no histórico completo (`docs/HISTORICO-REGRAS.md`) e no resumo do topo deste arquivo,
+  que mantém só as **5 mais recentes** (apagar a 6ª do resumo; o completo nunca perde linhas).
 - ✅ **Verificar o visualizador a cada atualização:** `assets/js/regras-modal.js` (+
   `assets/css/regras-modal.css`, acionado por `js/header-usuario.js`) deve continuar lendo este
   arquivo **e os arquivos de `docs/regras/` citados no índice** (desde 2026-10-07), mostrar a versão (data e hora) no topo do modal e montar o índice com todas as seções
