@@ -1,10 +1,10 @@
-// Tabela das equipes do modal (visão do professor, assets/js/equipes-modal.js): um grupo por
-// equipe — linha da equipe (nome, quantidade, descrição e ações +Integrante / Editar / Excluir),
-// uma linha por integrante (papel, tarefas, líder e ações) e a linha "+ Adicionar integrante",
-// que abre a seleção só com os alunos sem equipe. Pedido do usuário em 2026-10-08.
+// Tabela simples das equipes do modal (visão do professor, assets/js/equipes-modal.js): um grupo
+// por equipe — linha da equipe (nome, quantidade e ações + Integrante / ✏️ / 🗑️) e uma linha por
+// integrante (👑 no líder, papel e ✏️ / 🗑️). "+ Integrante" abre a seleção só com os alunos sem
+// equipe. Pedido do usuário em 2026-10-08 (simplificada no mesmo dia).
 // Usa as funções e o estado do equipes-modal.js (carregado depois, usado só nos cliques).
 
-const COLUNAS_TABELA_EQUIPES = ['Equipe / Integrante', 'Papel', 'Tarefas', 'Líder', 'Ações'];
+const COLUNAS_TABELA_EQUIPES = ['Equipe / Integrante', 'Papel', ''];
 const TOTAL_COLUNAS_EQUIPES = COLUNAS_TABELA_EQUIPES.length;
 const CLASSE_SELETOR_INTEGRANTE = 'equipes-tabela__seletor';
 const MSG_TODOS_COM_EQUIPE = 'Todos os alunos da turma já estão em uma equipe.';
@@ -37,7 +37,21 @@ function criarCelulaAcoesEquipes(botoes) {
 }
 
 /**
- * Cria a linha da equipe: nome (quantidade), descrição e ações.
+ * Cria um botão só com ícone (o texto da ação vai no title e no aria-label).
+ * @param {{icone: string, titulo: string, acao: string, id: number, classe?: string}} opcoes -
+ *   Dados do botão.
+ * @returns {HTMLButtonElement} Botão.
+ */
+function criarBotaoIconeEquipes(opcoes) {
+  const botao = criarBotaoEquipes({ texto: opcoes.icone, acao: opcoes.acao, id: opcoes.id,
+    classe: 'equipes-btn--icone ' + (opcoes.classe || '') });
+  botao.title = opcoes.titulo;
+  botao.setAttribute('aria-label', opcoes.titulo);
+  return botao;
+}
+
+/**
+ * Cria a linha da equipe: nome (quantidade) e ações.
  * @param {Object} equipe - Equipe.
  * @param {number} total - Quantidade de integrantes.
  * @returns {HTMLTableRowElement} Linha da equipe.
@@ -46,13 +60,14 @@ function criarLinhaGrupoEquipe(equipe, total) {
   const linha = criarElementoEquipes('tr', 'equipes-tabela__grupo');
   const nome = criarCelulaEquipes('', 'equipes-tabela__nome', TOTAL_COLUNAS_EQUIPES - 1);
   nome.append(criarElementoEquipes('strong', '', equipe.nome + ' (' + total + ')'));
-  if (equipe.descricao) nome.append(criarElementoEquipes('small', '', ' — ' + equipe.descricao));
+  if (equipe.descricao) nome.title = equipe.descricao;
   linha.append(nome, criarCelulaAcoesEquipes([
-    criarBotaoEquipes({ texto: '+Integrante', acao: 'abrir-integrante', id: equipe.id,
-      classe: 'equipes-btn--principal' }),
-    criarBotaoEquipes({ texto: '✏️ Editar', acao: 'editar-equipe', id: equipe.id }),
-    criarBotaoEquipes({ texto: '🗑️ Excluir', acao: 'excluir-equipe', id: equipe.id,
-      classe: 'equipes-btn--perigo' })]));
+    criarBotaoEquipes({ texto: '+ Integrante', acao: 'abrir-integrante', id: equipe.id,
+      classe: 'equipes-btn--link' }),
+    criarBotaoIconeEquipes({ icone: '✏️', titulo: 'Editar equipe', acao: 'editar-equipe',
+      id: equipe.id }),
+    criarBotaoIconeEquipes({ icone: '🗑️', titulo: 'Excluir equipe', acao: 'excluir-equipe',
+      id: equipe.id })]));
   return linha;
 }
 
@@ -64,27 +79,14 @@ function criarLinhaGrupoEquipe(equipe, total) {
 function criarLinhaMembroTabela(membro) {
   const linha = criarElementoEquipes('tr', 'equipes-tabela__membro');
   const coroa = membro.lider ? '👑 ' : '';
-  linha.append(criarCelulaEquipes(coroa + nomeDoAlunoEquipes(membro.aluno_id)),
-    criarCelulaEquipes(membro.papel || '—'), criarCelulaEquipes(membro.tarefas || '—'),
-    criarCelulaEquipes(membro.lider ? 'Sim' : '—'),
+  const nome = criarCelulaEquipes(coroa + nomeDoAlunoEquipes(membro.aluno_id));
+  if (membro.tarefas) nome.title = membro.tarefas;
+  linha.append(nome, criarCelulaEquipes(membro.papel || ''),
     criarCelulaAcoesEquipes([
-      criarBotaoEquipes({ texto: '✏️', acao: 'editar-membro', id: membro.id }),
-      criarBotaoEquipes({ texto: '🗑️', acao: 'excluir-membro', id: membro.id,
-        classe: 'equipes-btn--perigo' })]));
-  return linha;
-}
-
-/**
- * Cria a linha "+ Adicionar integrante" do fim do grupo.
- * @param {number} equipeId - Id da equipe.
- * @returns {HTMLTableRowElement} Linha.
- */
-function criarLinhaAdicionarIntegrante(equipeId) {
-  const linha = criarElementoEquipes('tr', 'equipes-tabela__adicionar');
-  const celula = criarCelulaEquipes('', '', TOTAL_COLUNAS_EQUIPES);
-  celula.append(criarBotaoEquipes({ texto: '+ Adicionar integrante', acao: 'abrir-integrante',
-    id: equipeId, classe: 'equipes-btn--link' }));
-  linha.append(celula);
+      criarBotaoIconeEquipes({ icone: '✏️', titulo: 'Editar integrante', acao: 'editar-membro',
+        id: membro.id }),
+      criarBotaoIconeEquipes({ icone: '🗑️', titulo: 'Remover integrante', acao: 'excluir-membro',
+        id: membro.id })]));
   return linha;
 }
 
@@ -103,7 +105,6 @@ function criarGrupoEquipe(equipe) {
     vazio.append(criarCelulaEquipes('Sem integrantes.', 'equipes-vazio', TOTAL_COLUNAS_EQUIPES));
     grupo.append(vazio);
   }
-  grupo.append(criarLinhaAdicionarIntegrante(equipe.id));
   return grupo;
 }
 
@@ -154,7 +155,7 @@ function criarSeletorIntegrante(equipeId) {
 }
 
 /**
- * Abre (ou fecha, se já aberta) a seleção de novo integrante no fim do grupo da equipe.
+ * Abre (ou fecha, se já aberta) a seleção de novo integrante logo abaixo da linha da equipe.
  * @param {number} equipeId - Id da equipe.
  * @returns {Promise<void>}
  */
@@ -167,7 +168,7 @@ async function abrirSeletorIntegrante(equipeId) {
   if (!alunosSemEquipe().length) {
     return void await mostrarPopup(MSG_TODOS_COM_EQUIPE, { tipo: 'info' });
   }
-  grupo.querySelector('.equipes-tabela__adicionar').before(criarSeletorIntegrante(equipeId));
+  grupo.querySelector('.equipes-tabela__grupo').after(criarSeletorIntegrante(equipeId));
 }
 
 /**
