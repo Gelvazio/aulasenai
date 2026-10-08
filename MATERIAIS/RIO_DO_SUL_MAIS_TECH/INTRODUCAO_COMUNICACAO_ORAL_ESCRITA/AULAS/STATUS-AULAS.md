@@ -10,19 +10,19 @@ extraídas do `EMENTA-CHALKIE-AI.md` e do `materia.json`. Plano:
 
 | Aula | Tema | Horas | Aula (fonte) | Atividade 50 questões | Atividade prática | Apostila (capítulo) |
 |---|---|---|---|---|---|---|
-| 01 | Fundamentos da Comunicação no Mundo do Trabalho | 4 | ✅ `CONTEUDO/AULA-01-FUNDAMENTOS-DA-COMUNICACAO-NO-MUNDO-DO-TRABALHO.md` | ⬜ | ⬜ | ⬜ |
+| 01 | Fundamentos da Comunicação no Mundo do Trabalho | 4 | ✅ `CONTEUDO/AULA-01-FUNDAMENTOS-DA-COMUNICACAO-NO-MUNDO-DO-TRABALHO.md` | ✅ | ✅ | ⬜ |
 | 02 | Comunicação Interpessoal e Trabalho em Equipe | 4 | ✅ `CONTEUDO/AULA-02-COMUNICACAO-INTERPESSOAL-E-TRABALHO-EM-EQUIPE.md` | ⬜ | ⬜ | ⬜ |
 | 03 | Falar em Público e Apresentações | 4 | ✅ `CONTEUDO/AULA-03-FALAR-EM-PUBLICO-E-APRESENTACOES.md` | ⬜ | ⬜ | ⬜ |
 | 04 | Reuniões e Atendimento ao Cliente | 4 | ✅ `CONTEUDO/AULA-04-REUNIOES-E-ATENDIMENTO-AO-CLIENTE.md` | ⬜ | ⬜ | ⬜ |
 | 05 | Redação Técnica: Clareza, Estrutura e Norma-Padrão | 4 | ✅ `CONTEUDO/AULA-05-REDACAO-TECNICA-CLAREZA-ESTRUTURA-E-NORMA-PADRAO.md` | ⬜ | ⬜ | ⬜ |
 | 06 | Textos do Trabalho: Relatório, Ata, Comunicado e Procedimento | 4 | ✅ `CONTEUDO/AULA-06-TEXTOS-DO-TRABALHO-RELATORIO-ATA-COMUNICADO-E-PROCEDIMENTO.md` | ⬜ | ⬜ | ⬜ |
 | 07 | E-mail, Redes Corporativas e Segurança Digital | 4 | ✅ `CONTEUDO/AULA-07-E-MAIL-REDES-CORPORATIVAS-E-SEGURANCA-DIGITAL.md` | ⬜ | ⬜ | ⬜ |
-| 08 | Projeto Integrador: Comunicação em Equipe + Avaliação Prática | 4 | ✅ `CONTEUDO/AULA-08-PROJETO-INTEGRADOR-COMUNICACAO-EM-EQUIPE.md` | ❓ a confirmar | ⬜ | ⬜ |
-| 09 | Avaliação Objetiva e Encerramento | 1 | ✅ `CONTEUDO/AULA-09-AVALIACAO-OBJETIVA-E-ENCERRAMENTO.md` | ❓ a confirmar | ❓ a confirmar | ⬜ |
+| 08 | Projeto Integrador: Comunicação em Equipe + Avaliação Prática | 4 | ✅ `CONTEUDO/AULA-08-PROJETO-INTEGRADOR-COMUNICACAO-EM-EQUIPE.md` | ⛔ (avaliação prática) | ⬜ | ⬜ |
+| 09 | Avaliação Objetiva e Encerramento | 1 | ✅ `CONTEUDO/AULA-09-AVALIACAO-OBJETIVA-E-ENCERRAMENTO.md` | ⛔ (avaliação objetiva) | ⛔ | ⬜ |
 
 ## Observações
 
 - 2026-10-07: as 9 aulas foram geradas em sequência a pedido do usuário ("faça todas as aulas até o final"); revisão geral das aulas fica no aceite da etapa C.
 
-- ❓ A regra pede 1 atividade de 50 questões por aula, mas a aula 08 é a avaliação prática e a aula 09 (1 h) a
-  avaliação objetiva: perguntar ao usuário, na Etapa D, se essas duas aulas têm atividade própria.
+- Decisão do usuário (2026-10-08): atividade de 50 questões só nas aulas 01 a 07; a aula 08 é a avaliação
+  prática e a aula 09 (1 h) a avaliação objetiva (30 questões).

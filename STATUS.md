@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 71, item 71.2 — aprovação do plano de Comunicação Oral e Escrita (Rio do Sul). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Etapa 71, item 71.3 — Etapa D (atividades) de Comunicação Oral e Escrita (Rio do Sul): perguntar se as aulas 08 e 09 têm atividade de 50 questões; as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -360,6 +360,7 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 ## Registro de decisões
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-08 | Comunicação Oral e Escrita (Rio do Sul): atividade de 50 questões só nas aulas 01 a 07; aula 08 = Avaliação Prática e aula 09 = Avaliação Objetiva (30 questões). Fontes com gabarito não entram em commit até o usuário ajustar o `.gitignore` | Usuário | Aulas 08 e 09 são de avaliação; o usuário cuida do `.gitignore` |
 | 2026-10-07 | Comunicação Oral e Escrita (Rio do Sul): 9 aulas (8 × 4h + 1 × 1h), só C1–C4 oficiais, empresa fictícia Vale Tech, avaliação prática 6,0 (aula 8) + objetiva 4,0 (aula 9) | Usuário | Aceite B.4 do plano, perguntas uma por vez |
 | 2026-10-06 | Reforço de Linguagens: 25 questões por atividade em duas páginas (20 objetivas + 5 discursivas), sem mudar o banco | Usuário | Regra exclusiva da matéria; banco aceita só um tipo por atividade |
 | 2026-10-06 | Capacidades do `materia.json` de Reforço de Linguagens = 6 da UC 7 na ementa do curso (a ementa da matéria lista 7, diferentes) | Claude (regra "a ementa do curso vence") | Divergência avisada ao usuário |
@@ -838,8 +839,8 @@ Uma pergunta por item; **um commit só no final** (pedido do usuário).
 | 73.7 | Autenticação cita `index.html` (login é `login.html`) — escolha: trocar por login.html + header | ✅ Concluído | 2026-10-07 21:52 | Linha da regra de autenticação lista login.html, login.js, header-usuario.js e supabase.js |
 | 73.8 | Data do grafo desatualizada — escolha: tirar data e números | ✅ Concluído | 2026-10-07 21:55 | Seção do grafo remete ao topo do GRAPH_REPORT.md; sem números fixos |
 | 73.9 | TASKS.md parado × STATUS.md — escolha: trocar por STATUS.md | ✅ Concluído | 2026-10-07 21:58 | As 2 seções do TASKS.md viraram "Inicialização de cada chat — ler o STATUS.md"; TASKS.md citado só como histórico |
-| 73.10 | Comando de tamanho da ementa conta linhas | 🔄 Em progresso | — | — |
-| 73.11 | Caminho do STATUS-EMENTAS só Rio do Sul | ⬜ Pendente | — | — |
+| 73.10 | Comando de tamanho da ementa conta linhas — escolha: corrigir comando e exemplo | ✅ Concluído | 2026-10-08 07:37 | Comando com -Raw (testado: 219 linhas × 15.657 caracteres); exemplo sem número fixo |
+| 73.11 | Caminho do STATUS-EMENTAS só Rio do Sul | 🔄 Em progresso | — | — |
 | 73.12 | Registro do cursoprofessor (substituído) | ⬜ Pendente | — | — |
 | 73.13 | Versão das regras + commit único | ⬜ Pendente | — | — |
 
