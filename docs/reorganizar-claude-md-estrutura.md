@@ -1,6 +1,6 @@
 # Reorganizar o `CLAUDE.md` — estrutura e manutenção
 
-**Criado em:** 2026-10-07 · **Concluído em:** — · **Tempo decorrido:** —
+**Criado em:** 2026-10-07 21:05 · **Concluído em:** 2026-10-07 21:25 (aguardando aceite) · **Tempo decorrido:** ~20 min
 **Pedido do usuário:** aplicar a parte "Estrutura e manutenção" da análise do `CLAUDE.md`,
 **perguntando uma alteração de cada vez**.
 
@@ -39,6 +39,6 @@ Deixar o `CLAUDE.md` menor e mais fácil de manter (hoje: 2.748 linhas, ~177 mil
 |---|---|---|---|---|
 | 1 | Perguntar e aplicar: dividir as regras em `docs/regras/` | `CLAUDE.md`, `docs/regras/*.md`, `regras-modal.js` | todas as seções presentes; `node --check` no JS | ✅ Concluído (2026-10-07 21:15) |
 | 2 | Perguntar e aplicar: histórico para `docs/HISTORICO-REGRAS.md` | `CLAUDE.md`, `docs/HISTORICO-REGRAS.md` | linha "Versão das regras" mantida no topo | ✅ Concluído (2026-10-07 21:18) |
-| 3 | Perguntar e aplicar: "Próximo passo" do `STATUS.md` em tabela | `STATUS.md` | nenhuma pendência perdida, duplicada removida (49.2) | ⬜ Pendente |
-| 4 | Versão das regras + histórico + commit | `CLAUDE.md` | commit feito | ⬜ Pendente |
+| 3 | Perguntar e aplicar: "Próximo passo" do `STATUS.md` em tabela | `STATUS.md` | nenhuma pendência perdida, duplicada removida (49.2) | ✅ Concluído (2026-10-07 21:25) |
+| 4 | Versão das regras + histórico + commit | `CLAUDE.md` | commit feito | ✅ Concluído (2026-10-07 21:25) |
 | 5 | Aceite do usuário | — | — | ⬜ Pendente |

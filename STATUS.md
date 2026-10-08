@@ -4,9 +4,44 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 70, item 70.3 — perguntar ao usuário sobre o "Próximo passo" em tabela de pendências. Depois: Etapa 67, item 67.4 — aceite do usuário (conferir a duração dos 29 vídeos da apostila de Reforço de Linguagens). Depois: Etapa 64, item 64.6 — aceite do usuário (apostila de Reforço de Linguagens). Depois: Etapa 66, item 66.2 — aceite do usuário (menu da matéria). Depois: Etapa 63, item 63.2 — aceite do usuário (link do curso no índice). Depois: Etapa 62, item 62.2 — aceite do usuário (apostila de Testes de Frontend). Depois: Etapa 61, item 61.4 — aceite do usuário (autor, versão, data e hora na apostila da ITIC). Depois: Etapa 56, item 56.4 — aceite do usuário (atividades de sexta: objetiva de 100 e discursiva de 40). Depois: Etapa 51, item 51.3 — aceite do usuário (importar o .doc no Google Docs). Depois: Etapa 50, item 50.3 — aceite do usuário (header de professor comum sem os menus). Etapa 49, item 49.2 — criar a conta da professora Cintia em `criarUsuariosBancoDados.html`. Depois: Etapa 49, item 49.2 — criar a conta da professora Cintia na aba Professores de `criarUsuariosBancoDados.html`. Depois: Etapa 48, item 48.7 — o usuário preenche `docs/rotulos-aulas-ajustar.md` (rótulos "AULA NN") e pede para aplicar; depois 48.8 — aceite. Depois: Etapa 44, item 44.4 — aceite do usuário (liberar e testar a Prova Prática 06-10-2026). Depois: Etapa 38, item 38.3 — aceite do usuário (gabarito nas discursivas). Depois: Etapa 37, item 37.4 — aceite do usuário (testar Liberar gabaritos como professor e Exportar Gabarito como aluno). Depois: Etapa 35, item 35.2 — aceite do usuário (testar a tabela de notas logado como professor). Depois: Etapa 29, item 29.5 — aceite do usuário (discursivas de sexta). Depois: Etapa 28, item 28.2 — aprovação do plano do quadro de respostas. Depois: Etapa 27, item 27.7 — aceite do usuário (atividade individual da ITIC, sexta à tarde). Depois: Etapa 26 (Reforço de Linguagens, 10 aulas) — continuar do primeiro item não ✅. Depois: Etapa 25, item 25.4 — aceite do usuário (testar a página de pendências). Depois: Etapa 24, item 24.6 — aceite do usuário (liberar a discursiva no índice e testar). Depois: Etapa 23, item 23.3 — aceite do usuário. Depois: Etapa 22, item 22.4 — aceite do usuário. Depois: Etapa 21, item 21.3 — aceite do usuário. Depois: Etapa 20, item 20.2 — professor criar a conta na página local. Depois: Etapa 19, item 19.4 — aceite do usuário. Depois: Etapa 18, item 18.2 — aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`. Pendentes anteriores: 6.9 e 4.5.
+**Próximo passo:** Etapa 71, item 71.2 — aprovação do plano de Comunicação Oral e Escrita (Rio do Sul). Depois: Etapa 70, item 70.3 — perguntar ao usuário sobre o "Próximo passo" em tabela de pendências. Pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
+
+## ⏳ Aguardando o usuário (aceites, aprovações e ações dele)
+
+Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etapa e **remover a linha daqui**.
+
+| Etapa | Item | O que falta | Tipo |
+|-------|------|-------------|------|
+| 67 | 67.4 | conferir a duração dos 29 vídeos da apostila de Reforço de Linguagens | Aceite |
+| 64 | 64.6 | apostila de Reforço de Linguagens | Aceite |
+| 66 | 66.2 | menu da matéria | Aceite |
+| 63 | 63.2 | link do curso no índice | Aceite |
+| 62 | 62.2 | apostila de Testes de Frontend | Aceite |
+| 61 | 61.4 | autor, versão, data e hora na apostila da ITIC | Aceite |
+| 56 | 56.4 | atividades de sexta: objetiva de 100 e discursiva de 40 | Aceite |
+| 51 | 51.3 | importar o .doc no Google Docs | Aceite |
+| 50 | 50.3 | header de professor comum sem os menus | Aceite |
+| 49 | 49.2 | criar a conta da professora Cintia em `criarUsuariosBancoDados.html` | Ação do usuário/professor |
+| 48 | 48.7 | o usuário preenche `docs/rotulos-aulas-ajustar.md` (rótulos "AULA NN") e pede para aplicar; depois 48.8 — aceite | Ação do usuário/professor |
+| 44 | 44.4 | liberar e testar a Prova Prática 06-10-2026 | Aceite |
+| 38 | 38.3 | gabarito nas discursivas | Aceite |
+| 37 | 37.4 | testar Liberar gabaritos como professor e Exportar Gabarito como aluno | Aceite |
+| 35 | 35.2 | testar a tabela de notas logado como professor | Aceite |
+| 29 | 29.5 | discursivas de sexta | Aceite |
+| 28 | 28.2 | aprovação do plano do quadro de respostas | Aprovação |
+| 27 | 27.7 | atividade individual da ITIC, sexta à tarde | Aceite |
+| 26 | — | Reforço de Linguagens, 10 aulas — continuar do primeiro item não ✅ (quando o usuário liberar) | Continuar (IA) |
+| 25 | 25.4 | testar a página de pendências | Aceite |
+| 24 | 24.6 | liberar a discursiva no índice e testar | Aceite |
+| 23 | 23.3 | conferir e aceitar a etapa | Aceite |
+| 22 | 22.4 | conferir e aceitar a etapa | Aceite |
+| 21 | 21.3 | conferir e aceitar a etapa | Aceite |
+| 20 | 20.2 | professor criar a conta na página local | Ação do usuário/professor |
+| 19 | 19.4 | conferir e aceitar a etapa | Aceite |
+| 18 | 18.2 | aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md` | Aprovação |
+| — | 6.9 e 4.5 | itens anteriores pendentes (ver as etapas) | Ação do usuário/professor |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -754,6 +789,17 @@ Plano: [docs/reorganizar-claude-md-estrutura.md](docs/reorganizar-claude-md-estr
 |------|-----------|--------|--------------|-------------|
 | 70.1 | Dividir as regras em `docs/regras/` — escolha do usuário: "Núcleo + docs/regras". `CLAUDE.md` 2.748 → 640 linhas; 36 seções movidas para 6 arquivos; índice + proibições no `CLAUDE.md`; `regras-modal.js` carrega os arquivos do índice | ✅ Concluído | 2026-10-07 21:15 | Comparação linha a linha antes × depois: nenhum texto perdido; `node --check`; os 6 links do índice existem |
 | 70.2 | Histórico de versões para `docs/HISTORICO-REGRAS.md` — escolha do usuário: "Mover para docs/". Completo (53 linhas) no arquivo novo; no `CLAUDE.md` o resumo das 5 mais recentes + link; regra do visualizador manda registrar nos dois; modal carrega o histórico | ✅ Concluído | 2026-10-07 21:18 | Todas as linhas do histórico antigo presentes no novo; `node --check`; links do modal existem |
-| 70.3 | "Próximo passo" do `STATUS.md` em tabela de pendências | 🔄 Em progresso | — | — |
-| 70.4 | Versão das regras + commit | ⬜ Pendente | — | — |
+| 70.3 | "Próximo passo" do `STATUS.md` em tabela — escolha do usuário: "Linha curta + tabela". Seção "⏳ Aguardando o usuário" com 28 linhas (Etapa · Item · O que falta · Tipo), 49.2 sem repetição | ✅ Concluído | 2026-10-07 21:25 | Todas as pendências da linha antiga presentes na tabela |
+| 70.4 | Versão das regras + commit | ✅ Concluído | 2026-10-07 21:25 | Versões 21:10 e 21:15 no histórico; commits b4148c0, afec916 e o desta etapa |
 | 70.5 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 71 — Recriar Comunicação Oral e Escrita (Rio do Sul) no padrão da ITIC (pedida em 2026-10-07)
+
+Plano: [docs/reorganizar-comunicacao-oral-escrita-rio-do-sul.md](docs/reorganizar-comunicacao-oral-escrita-rio-do-sul.md). Tarefa grande: só executar depois da aprovação.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 71.1 | Levantar a pasta `Scripts-Comunicacao` e escrever o plano em `docs/` | ✅ Concluído | 2026-10-07 21:40 | Plano com etapas A a F, riscos e lista dos binários fora do Git |
+| 71.2 | Aprovação do plano pelo usuário (nome da pasta e backup dos binários) | ⬜ Pendente | — | — |
+| 71.3 | Executar as etapas A a F do plano, um item por vez | ⬜ Pendente | — | — |
+| 71.4 | Aceite do usuário | ⬜ Pendente | — | — |
