@@ -110,6 +110,8 @@ técnico."
 
 ## Vídeos
 
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #11):** a duração destes vídeos ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
+
 - [Assunto e tema de um texto](https://www.youtube.com/watch?v=Bk0oBjBTIpA) — a conferir — Profa. Diana Ribeiro
 - [Ideia principal e ideias secundárias de um texto](https://www.youtube.com/watch?v=-Em_S_2HPbE) — a conferir
 - [A ideia principal em um texto](https://www.youtube.com/watch?v=pHRXFkx7pes) — a conferir
