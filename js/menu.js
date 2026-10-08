@@ -7,6 +7,7 @@
  * o menu funciona em qualquer subpasta, inclusive abrindo a página por file://.
  */
 
+const MENU_ATIVIDADES_LIGADO = false;
 const NOME_ARQUIVO_DADOS = 'MENU-ATIVIDADES.js';
 const CLASSE_MENU = 'menu-atividades';
 const CLASSE_ABERTO = 'menu-atividades--aberto';
@@ -278,6 +279,10 @@ function tratarTecla(evento) {
  * @returns {void}
  */
 function inicializarMenu() {
+  // Desligado em 2026-10-08 a pedido do usuário: tudo o que o menu oferecia já está no menu
+  // base do header (js/header-usuario.js). Para voltar, trocar MENU_ATIVIDADES_LIGADO para true.
+  if (!MENU_ATIVIDADES_LIGADO) return;
+
   const dados = lerDadosMenu();
   const urlBase = obterUrlBase();
   const cabecalho = document.querySelector('header');

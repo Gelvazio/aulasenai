@@ -112,6 +112,12 @@ assets/
                          `python assets\gerador-menu\tags_menu.py <arquivo.html> [...]`
 ```
 
+> ⛔ **Desligado em 2026-10-08, a pedido do usuário:** a barra do menu das atividades (nome da
+> matéria + "Equipes") não aparece mais em nenhuma página — tudo o que ela oferecia já está no
+> menu base do header (`js/header-usuario.js`, com o botão 👥 EQUIPES global). Chave única:
+> `MENU_ATIVIDADES_LIGADO = false` em `js/menu.js` (as páginas continuam com as tags; não é
+> preciso editar página por página). Só religar a pedido do usuário.
+
 **Menu das atividades** (registrado em 2026-09-27, plano `docs/criar-menu-js-atividades.md`):
 - ✅ Script em **`js/menu.js`** (na raiz do projeto, por pedido do usuário — exceção à regra de
   `assets/js/`). Monta o menu no topo do primeiro `<header>` da página.

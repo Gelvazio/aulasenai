@@ -1363,3 +1363,10 @@ Pedido do usuário: "corrija isso" (pendência da Etapa 102). Plano: seção "Et
 | 103.4 | Atualizar as referências (aulas, `materia.json`, STATUS-ATIVIDADES, STATUS-APOSTILA, INDEX, ementa) | ✅ Concluído | 2026-10-08 20:31:12 | grep: nenhuma referência ao caminho antigo; materia.json válido |
 | 103.5 | Conferência (sem link quebrado, sem empresa fictícia) + commit local | ✅ Concluído | 2026-10-08 20:31:40 | 52 links, 0 quebrados; sem 'Vale Digital'; commit local |
 | 103.6 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 104 — Menu das atividades desligado em todas as páginas (tarefa pequena, 2026-10-08 20:33:13)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 104.1 | `js/menu.js`: `MENU_ATIVIDADES_LIGADO = false` (a barra com o nome da matéria e "Equipes" some das 81 páginas que carregam o script); seletor do menu tirado do CSS da discursiva; regra em `docs/regras/assets-e-geradores.md` e versão do `CLAUDE.md` | ✅ Concluído | 2026-10-08 20:33:13 | `node --check`; `grep`: 81 páginas com `js/menu.js` |
+| 104.2 | Aceite do usuário | ⬜ Pendente | — | — |
