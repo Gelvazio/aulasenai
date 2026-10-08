@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Aceites do usuário: Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); Etapa 82, item 82.4 — aplicar o seed da discursiva de sexta no banco se o usuário pedir; depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Aceites do usuário: Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -30,7 +30,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
-| 82 e 83 | 82.4, 82.5 e 83.7 | aceite da remoção da V1 (apostila única 2.1), da discursiva id 81 e das 13 questões novas da objetiva id 85; decidir se aplica no banco o seed da discursiva id 81 (2 alunos já têm respostas nos itens 01–20) | Aceite / decisão |
+| 82 e 83 | 82.5 e 83.7 | aceite da remoção da V1 (apostila única 2.1), da discursiva id 81 (já aplicada no banco) e das 13 questões novas da objetiva id 85 | Aceite |
 | 79 e 81 | 79.8 e 81.5 | validar a apostila ITIC V2 versão 2.1 (28 páginas, sem vídeos e exercícios; S2, S3, normas declaradas e referências complementares) e a paginação/faixa do PDF | Aceite |
 | 71 | 71.3 (C) | revisar as 9 aulas de Comunicação Oral e Escrita (Rio do Sul) em `CONTEUDO/` | Aceite |
 | 72 | 72.8 | 7 contradições do CLAUDE.md corrigidas (uma por commit) | Aceite |
@@ -992,7 +992,7 @@ Pedido (opção B): a prova `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICA
 | 82.1 | Fonte `.md` da prova: 10 comandos/tópicos ajustados à V2, capacidade do item 09, conteúdo-base V2 | ✅ Concluído | 2026-10-08 09:35 | Trocas conferidas uma a uma pelo script (cada trecho achado 1 vez) |
 | 82.2 | Padrão de resposta (`-GABARITO.md`, local; não entra no commit) dos 10 itens | ✅ Concluído | 2026-10-08 09:35 | Gerador: 30 tópicos com padrão (0 sem padrão) |
 | 82.3 | Página HTML e seed regerados (`gerar_avaliacao_discursiva.py`; seed fora do Git) | ✅ Concluído | 2026-10-08 09:35 | 30 questões, 30 tópicos, 30 pontos; HTML sem padrão de resposta; seed `database/2026-10-08-atividade-individual-comunicacao-tecnica-discursiva-seed-atividades.sql` |
-| 82.4 | Banco (id 81, `topico_discursivo`): aplicar o seed só se o usuário pedir | ⬜ Aguardando o usuário | — | Pedir ao usuário (2 alunos já têm respostas nos itens 01–20 da id 81) |
+| 82.4 | Banco (id 81, `topico_discursivo`): aplicar o seed só se o usuário pedir | ✅ Concluído | 2026-10-08 09:48 | A pedido do usuário: backup `topico_discursivo_backup_20261008_81` (30 linhas, RLS ligado); seed aplicado pelo conector; conferido: 30 tópicos, 30 pontos, 40 respostas mantidas, mudaram só os itens 5, 6, 7, 10, 11, 12, 13, 18, 23 e 28 |
 | 82.5 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Etapa 83 — Remover a apostila V1 da ITIC (tarefa grande, pedida em 2026-10-08 09:36)
