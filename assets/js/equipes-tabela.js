@@ -51,15 +51,30 @@ function criarBotaoIconeEquipes(opcoes) {
 }
 
 /**
- * Cria a linha da equipe: nome (quantidade) e ações.
+ * Lista os primeiros nomes dos integrantes entre parênteses: "(Ana, João)".
+ * @param {Object[]} membros - Integrantes da equipe (líder primeiro).
+ * @returns {string} Texto pronto ("(sem integrantes)" se a equipe estiver vazia).
+ */
+function listarPrimeirosNomesEquipe(membros) {
+  if (!membros.length) return '(sem integrantes)';
+
+  const nomes = membros.map((membro) => (
+    nomeDoAlunoEquipes(membro.aluno_id).trim().split(/\s+/)[0]));
+  return '(' + nomes.join(', ') + ')';
+}
+
+/**
+ * Cria a linha da equipe: nome, primeiros nomes dos integrantes e ações.
  * @param {Object} equipe - Equipe.
- * @param {number} total - Quantidade de integrantes.
+ * @param {Object[]} membros - Integrantes da equipe.
  * @returns {HTMLTableRowElement} Linha da equipe.
  */
-function criarLinhaGrupoEquipe(equipe, total) {
+function criarLinhaGrupoEquipe(equipe, membros) {
   const linha = criarElementoEquipes('tr', 'equipes-tabela__grupo');
   const nome = criarCelulaEquipes('', 'equipes-tabela__nome', TOTAL_COLUNAS_EQUIPES - 1);
-  nome.append(criarElementoEquipes('strong', '', equipe.nome + ' (' + total + ')'));
+  nome.append(criarElementoEquipes('strong', '', equipe.nome),
+    criarElementoEquipes('span', 'equipes-tabela__integrantes',
+      ' ' + listarPrimeirosNomesEquipe(membros)));
   if (equipe.descricao) nome.title = equipe.descricao;
   linha.append(nome, criarCelulaAcoesEquipes([
     criarBotaoEquipes({ texto: '+ Integrante', acao: 'abrir-integrante', id: equipe.id,
@@ -99,7 +114,7 @@ function criarGrupoEquipe(equipe) {
   const membros = membrosDaEquipe(equipe.id);
   const grupo = criarElementoEquipes('tbody', 'equipes-tabela__equipe');
   grupo.dataset.equipeId = String(equipe.id);
-  grupo.append(criarLinhaGrupoEquipe(equipe, membros.length), ...membros.map(criarLinhaMembroTabela));
+  grupo.append(criarLinhaGrupoEquipe(equipe, membros), ...membros.map(criarLinhaMembroTabela));
   if (!membros.length) {
     const vazio = criarElementoEquipes('tr', 'equipes-tabela__membro');
     vazio.append(criarCelulaEquipes('Sem integrantes.', 'equipes-vazio', TOTAL_COLUNAS_EQUIPES));

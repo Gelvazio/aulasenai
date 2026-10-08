@@ -165,6 +165,7 @@
 }
 .equipes-tabela td { padding: 5px 8px; border-bottom: 1px solid var(--equipes-borda); vertical-align: middle; }
 .equipes-tabela__grupo td { padding-top: 12px; color: var(--equipes-azul); }
+.equipes-tabela__integrantes { color: var(--equipes-suave); font-weight: 400; }
 .equipes-tabela__membro td:first-child { padding-left: 24px; }
 .equipes-tabela__acoes { width: 1%; white-space: nowrap; }
 .equipes-tabela__acoes .equipes-acoes { justify-content: flex-end; flex-wrap: nowrap; gap: 2px; }

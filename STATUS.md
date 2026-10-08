@@ -1202,3 +1202,5 @@ Pedido do usuário: a rodada da IA não gravou nada (0 entregas; a orientação 
 | 92.8 | Percentual escrito em cima de cada barra de progresso (alunos e barra geral da turma) | ✅ Concluído | 2026-10-08 15:32:14 | `node --check` |
 | 92.9 | Ordenação clicável (seta ↕ ▲ ▼) nos títulos Aluno (alfabética), Progresso, Situação, Nota parcial IA e Nota IA (numéricas); mesma coluna inverte; empate pelo nome; mantida nas atualizações de 5 s | ✅ Concluído | 2026-10-08 15:34:55 | `node --check` |
 | 92.5 | Aceite do usuário (rodar a tarefa da IA e ver a nota parcial no painel) | ⬜ Pendente | — | — |
+| 95.4 | Pedido do usuário (2026-10-08 18:42:56): ao lado do nome da equipe, os primeiros nomes dos integrantes — "Equipe 1 (Ana, João)"; vazia = "(sem integrantes)" (`equipes-tabela.js`, `equipes-modal.css`) | ✅ Concluído | 2026-10-08 18:42:56 | `node --check`; leitura do código |
+| 95.5 | Formulários de equipe e de integrante em janelas próprias (modal sobre o modal), com botões "+ Nova equipe" e "+ Novo integrante" — **adiado a pedido do usuário** ("deixe as janelas pra depois"); rascunho descartado do código, retomar quando ele pedir | ⬜ Pendente | — | — |
