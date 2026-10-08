@@ -27,7 +27,7 @@ Status de todas as sessões: [STATUS-SESSOES.md](STATUS-SESSOES.md).
 
 ## Sessão 2026-10-07 21:10 — status PENDENTE
 
-- **Ambiente:** local · **Modelo:** Claude Opus 5.5 · **Branch:** `main` (commits `f8687be` a `b13aa19`)
+- **Ambiente:** local · **Modelo:** Claude Opus 5.5 · **Branch:** `main` (commits `f8687be` a `00b5d3b`) · atualizada em 2026-10-08 08:04
 - **Pedido do usuário:** revisar o `.gitignore`, analisar `Scripts-Comunicacao` e recriar a matéria
   de Comunicação Oral e Escrita (Rio do Sul) no padrão da ITIC.
 - **Detalhe por data e hora:** [SESSAO-2026-10-07-2110-COMUNICACAO-RIO-DO-SUL.md](SESSAO-2026-10-07-2110-COMUNICACAO-RIO-DO-SUL.md)
