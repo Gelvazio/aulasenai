@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 08:09
+**Versão das regras:** 2026-10-08 08:10
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 08:10 | Inicialização: ler `SESSOES-CLAUDE/STATUS-SESSOES.md` (e o log das sessões `PENDENTE`) **sempre antes de iniciar uma nova tarefa**, junto com o `STATUS.md`; sessões `CONCLUÍDO` passam pela limpeza antes |
 | 2026-10-08 08:09 | Sessão só fica `CONCLUÍDO` quando a tarefa inteira foi finalizada: antes, validar **cada** pedido do usuário da sessão (feito, conferido e aceito), com a tabela "✅ Validação dos pedidos" no log; faltando qualquer item, continua `PENDENTE` |
 | 2026-10-08 08:06 | `SESSOES-CLAUDE/STATUS-SESSOES.md` (status de todas as sessões, lido no início de cada sessão) e regra da sessão `CONCLUÍDO`: ler o que foi feito, atualizar o `CLAUDE.md` se preciso, conferir as pendências e remover os dados da sessão |
 | 2026-10-08 08:04 | Registro da sessão: motivo registrado — o usuário alterna entre 2 licenças do Claude Code e perde o contexto ao trocar; o log precisa bastar sozinho para a outra licença continuar |
 | 2026-10-08 08:02 | Registro da sessão em `SESSOES-CLAUDE/`: grava só o **mínimo necessário para continuar** em outra sessão (estado, decisões, arquivos, commits, pendências e próximo passo exato), **não** uma cópia completa da conversa |
-| 2026-10-08 07:58 | Ao final de cada tarefa finalizada, perguntar se o usuário quer **atualizar o log da sessão atual**; com *SIM*: gravar em `SESSOES-CLAUDE/` com data, hora e status (`CONCLUÍDO` se não houver nada pendente, senão `PENDENTE`) e, no fim, pedir ao usuário que rode `/clear` (o Claude não consegue executar esse comando sozinho) |
 
 ---
 
@@ -165,7 +165,7 @@ Registrada em 2026-10-03 a pedido do usuário.
 
 ---
 
-## 🚨 INICIALIZAÇÃO DE CADA CHAT — LER O `STATUS.md`
+## 🚨 INICIALIZAÇÃO DE CADA CHAT E DE CADA TAREFA — LER O `STATUS.md` E O `STATUS-SESSOES.md`
 
 ⚠️ **DE SUMA IMPORTÂNCIA — SEM EXCEÇÃO.** Alterada em 2026-10-07 (antes mandava ler o `TASKS.md`).
 
@@ -173,10 +173,15 @@ Registrada em 2026-10-03 a pedido do usuário.
 
 1. ✅ **LER `C:\fontes\aulasenai\STATUS.md`** — primeiro o **"Próximo passo"** e a tabela
    **"⏳ Aguardando o usuário"**
-2. ✅ **Verificar** se há item `🔄 Em progresso` ou `⬜ Pendente` de tarefa aprovada e conferir o que
+2. ✅ **LER `C:\fontes\aulasenai\SESSOES-CLAUDE\STATUS-SESSOES.md`** (2026-10-08, pedido do
+   usuário) — **sempre antes de iniciar uma nova tarefa**, não só no início do chat: para cada
+   sessão `PENDENTE`, ler o log dela (próximo passo, decisões e pendências) para não repetir nem
+   contradizer o que outra licença/sessão já fez; sessão `CONCLUÍDO` passa antes pela limpeza da
+   regra "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`"
+3. ✅ **Verificar** se há item `🔄 Em progresso` ou `⬜ Pendente` de tarefa aprovada e conferir o que
    já foi feito nos arquivos/commits
-3. ✅ **Prosseguir de onde parou** (sem refazer itens `✅` nem pular itens)
-4. ✅ **Só então responder** ao usuário
+4. ✅ **Prosseguir de onde parou** (sem refazer itens `✅` nem pular itens)
+5. ✅ **Só então responder** ao usuário (ou iniciar a tarefa)
 
 **Por quê?** O `STATUS.md` é a fonte única do estado do trabalho (regra global "`STATUS.md` EM TODA
 TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
