@@ -113,6 +113,8 @@ A **TecVale** (empresa **fictícia**) inaugura um laboratório de robótica:
 
 ## Vídeos
 
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #11):** a duração destes vídeos ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
+
 - [Narração, Descrição e Dissertação - Português](https://www.youtube.com/watch?v=YWohiTlnrH8) — a conferir — Natália Guirado
 - [Tipologias Textuais](https://www.youtube.com/watch?v=7wIhBsb5Kzo) — a conferir — Brasil Escola
 

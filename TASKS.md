@@ -181,6 +181,28 @@ do documento, divergências e campos pendentes registrados). Os arquivos atuais 
 
 ---
 
+### #11: Conferir localmente a duração dos vídeos da apostila de Reforço de Linguagens
+
+**Status:** ⏳ PENDENTE (fazer no ambiente **local**, onde o YouTube funciona)  
+**Prioridade:** 🟠 Alta  
+**Adicionada em:** 2026-10-08
+
+A apostila `MATERIAIS/RIO_DO_SUL_MAIS_TECH/REFORCO_LINGUAGENS/APOSTILA/` tem **29 vídeos** (2 a 3
+por capítulo) com a duração `a conferir`: na nuvem o YouTube estava bloqueado e a duração não pôde
+ser lida. Cada seção "Vídeos" tem a anotação "⏳ CONFERIR LOCALMENTE (TASKS.md #11)".
+
+- [ ] Para cada vídeo de `APOSTILA/CONTEUDO/CAPITULO-01.md` a `CAPITULO-10.md`, ler a duração
+  pelos metadados (`curl` na página do vídeo: `lengthSeconds`, `ownerChannelName`), sem navegador.
+- [ ] Até 15:00 → trocar `a conferir` por `mm:ss` (e completar o canal, se faltar); acima de
+  15:00 ou vídeo indisponível → apagar a linha (e, se o capítulo ficar sem vídeo, buscar outro).
+- [ ] Remover a anotação "⏳ CONFERIR LOCALMENTE" dos capítulos e do Markdown completo.
+- [ ] Aumentar `versao_apostila` no `materia.json` (1.0 → 1.1), rodar
+  `gerar_apostila.py <pasta> --markdown --forcar` e depois o HTML (conferência 100%).
+- [ ] Atualizar `APOSTILA/STATUS-APOSTILA.md` (coluna Vídeos) e o `STATUS.md` (item 67.4).
+- [ ] Commit (no local, o push é do usuário).
+
+---
+
 ## 📊 ESTATÍSTICAS
 
 | Métrica | Valor |

@@ -133,6 +133,8 @@ O assunto é parecido; o **contexto** muda tudo.
 
 ## Vídeos
 
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #11):** a duração destes vídeos ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
+
 - [Gêneros Textuais](https://www.youtube.com/watch?v=Ucjv4LT8CSg) — a conferir — Prof. Noslen
 - [Tipos Textuais](https://www.youtube.com/watch?v=ibwf_X3498c) — a conferir — Prof. Noslen
 - [TIPOS E GÊNEROS TEXTUAIS](https://www.youtube.com/watch?v=NuMX0fm3V3I) — a conferir — Português com Letícia

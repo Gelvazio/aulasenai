@@ -114,6 +114,8 @@ em linguagem formal:
 
 ## Vídeos
 
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #11):** a duração destes vídeos ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
+
 - [Preconceito Linguístico](https://www.youtube.com/watch?v=TDCcSKl5maI) — a conferir — Brasil Escola
 - [Variação linguística e preconceito linguístico](https://www.youtube.com/watch?v=a6IitrQGksE) — a conferir
 - [Debate de tema - Preconceito Linguístico](https://www.youtube.com/watch?v=tw3yRUUsHqo) — a conferir

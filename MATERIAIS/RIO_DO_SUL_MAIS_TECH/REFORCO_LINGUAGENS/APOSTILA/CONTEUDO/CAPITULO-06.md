@@ -105,6 +105,8 @@ Revisado:
 
 ## Vídeos
 
+> ⏳ **CONFERIR LOCALMENTE (TASKS.md #11):** a duração destes vídeos ainda não foi conferida (o YouTube estava bloqueado na nuvem). No ambiente local, ler a duração de cada link (`curl`, metadados `lengthSeconds`), trocar `a conferir` por `mm:ss` (até 15:00) ou apagar a linha do vídeo que passar de 15 min.
+
 - [Uso da Vírgula](https://www.youtube.com/watch?v=37bpap7OgOY) — a conferir — Prof. Alexandre Luz
 - [Concordância verbal e nominal (6º ano)](https://www.youtube.com/watch?v=lc2Gw838IBo) — a conferir
 - [Concordância verbal](https://www.youtube.com/watch?v=-qT0FjSQbe4) — a conferir — Brasil Escola
