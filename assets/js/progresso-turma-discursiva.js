@@ -23,7 +23,9 @@ const SITUACOES_QUESTAO = {
     completa: { modificador: 'completa', texto: 'completa' },
 };
 
-const estadoProgressoTurma = { nomes: new Map(), temporizador: null, lendo: false };
+const estadoProgressoTurma = {
+    nomes: new Map(), pontosDosTopicos: null, temporizador: null, lendo: false,
+};
 
 /**
  * Cria um elemento com classe e texto.
@@ -86,18 +88,37 @@ async function carregarNomesNovos(ids) {
 }
 
 /**
- * Soma, por aluno e tentativa, a nota sugerida pela IA e quantos tópicos ela já corrigiu.
- * @param {Object[]} correcoes - Linhas {aluno_id, tentativa, nota_ia} da correcao_discursiva.
- * @returns {Map<string, {nota: number, corrigidos: number}>} Chave "aluno|tentativa".
+ * Lê (uma vez) os pontos de cada tópico da atividade, para o percentual de acerto.
+ * @param {number} atividadeId - Id da atividade.
+ * @returns {Promise<Map<string, number>>} Chave "item|topico" → pontos.
  */
-function somarNotasDaIa(correcoes) {
+async function carregarPontosDosTopicos(atividadeId) {
+    if (estadoProgressoTurma.pontosDosTopicos) return estadoProgressoTurma.pontosDosTopicos;
+
+    const topicos = await sbGet('topico_discursivo',
+        'select=item,topico,pontos&atividade_id=eq.' + atividadeId);
+    estadoProgressoTurma.pontosDosTopicos = new Map(topicos.map((topico) =>
+        [topico.item + '|' + topico.topico, Number(topico.pontos)]));
+    return estadoProgressoTurma.pontosDosTopicos;
+}
+
+/**
+ * Soma, por aluno e tentativa, a nota da IA, os pontos possíveis e os tópicos já corrigidos.
+ * @param {Object[]} correcoes - Linhas {aluno_id, tentativa, item, topico, nota_ia}.
+ * @param {Map<string, number>} pontos - Pontos de cada tópico ("item|topico").
+ * @returns {Map<string, {nota: number, possivel: number, corrigidos: number}>} "aluno|tentativa".
+ */
+function somarNotasDaIa(correcoes, pontos) {
     const notas = new Map();
     correcoes.forEach((linha) => {
         if (linha.nota_ia === null || linha.nota_ia === undefined) return;
         const chave = linha.aluno_id + '|' + linha.tentativa;
-        const atual = notas.get(chave) || { nota: 0, corrigidos: 0 };
-        notas.set(chave, { nota: atual.nota + Number(linha.nota_ia),
-            corrigidos: atual.corrigidos + 1 });
+        const atual = notas.get(chave) || { nota: 0, possivel: 0, corrigidos: 0 };
+        notas.set(chave, {
+            nota: atual.nota + Number(linha.nota_ia),
+            possivel: atual.possivel + (pontos.get(linha.item + '|' + linha.topico) || 0),
+            corrigidos: atual.corrigidos + 1,
+        });
     });
     return notas;
 }
@@ -109,12 +130,13 @@ function somarNotasDaIa(correcoes) {
  */
 async function lerProgressoDaTurma(atividadeId) {
     const filtro = 'atividade_id=eq.' + atividadeId;
-    const [respostas, entregas, correcoes] = await Promise.all([
+    const [respostas, entregas, correcoes, pontos] = await Promise.all([
         sbGet(TABELA_RESPOSTAS_PROGRESSO, 'select=aluno_id,tentativa,item,texto&' + filtro),
         sbGet('entrega_atividade', 'select=aluno_id,tentativa&' + filtro),
-        sbGet(TABELA_CORRECAO_PROGRESSO, 'select=aluno_id,tentativa,nota_ia&' + filtro),
+        sbGet(TABELA_CORRECAO_PROGRESSO, 'select=aluno_id,tentativa,item,topico,nota_ia&' + filtro),
+        carregarPontosDosTopicos(atividadeId),
     ]);
-    const notasDaIa = somarNotasDaIa(correcoes);
+    const notasDaIa = somarNotasDaIa(correcoes, pontos);
     const progresso = contarRespostasPorAluno(respostas);
     const ids = [...progresso.keys()];
     await carregarNomesNovos(ids);
@@ -195,11 +217,13 @@ function montarCelulaNotaParcial(notaIa, totalTopicos) {
     const classe = CLASSE_PROGRESSO_TURMA + '__nota-ia';
     if (!notaIa) return criarElementoProgresso('span', classe + ' ' + classe + '--vazia', '—');
 
+    const acerto = notaIa.possivel ? Math.round((notaIa.nota / notaIa.possivel) * 100) : 0;
     const celula = criarElementoProgresso('span', classe + ' ' + classe + '--parcial',
-        '🤖 ' + formatarNotaProgresso(notaIa.nota) + ' (' + notaIa.corrigidos + '/' +
-        totalTopicos + ')');
+        '🤖 ' + formatarNotaProgresso(notaIa.nota) + ' · ' + acerto + '% (' +
+        notaIa.corrigidos + '/' + totalTopicos + ')');
     celula.title = 'Nota parcial sugerida pela IA: ' + notaIa.corrigidos + ' de ' + totalTopicos +
-        ' tópicos corrigidos até agora (prévia; muda se o aluno alterar as respostas).';
+        ' tópicos corrigidos até agora, com ' + acerto + '% de acerto nas alternativas ' +
+        'corrigidas (prévia; vale só depois da confirmação do professor).';
     return celula;
 }
 
