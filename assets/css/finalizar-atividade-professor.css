@@ -1,0 +1,45 @@
+/* Professor: botão "Finalizar Atividade" embaixo da prova (finalizar-atividade-professor.js). */
+
+:root {
+    --finalizar-destaque: #2f855a;
+    --finalizar-texto-claro: #ffffff;
+    --finalizar-texto-suave: #4a5568;
+    --finalizar-raio: 10px;
+}
+
+.finalizar-atividade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.finalizar-atividade__botao {
+    padding: 12px 28px;
+    border: none;
+    border-radius: var(--finalizar-raio);
+    background: var(--finalizar-destaque);
+    color: var(--finalizar-texto-claro);
+    font: inherit;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.finalizar-atividade__botao:disabled {
+    cursor: wait;
+    opacity: 0.6;
+}
+
+.finalizar-atividade__situacao {
+    margin: 0;
+    color: var(--finalizar-texto-suave);
+    font-size: 15px;
+}
+
+@media print {
+    .finalizar-atividade {
+        display: none;
+    }
+}

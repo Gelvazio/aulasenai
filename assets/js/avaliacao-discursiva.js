@@ -19,6 +19,7 @@ const ARQUIVO_RESPOSTAS_ALUNO = 'respostas-aluno-professor.js';
 const ARQUIVO_PROGRESSO_TURMA = 'progresso-turma-discursiva.js';
 const ARQUIVO_NOTA_IA_RESPOSTAS = 'nota-ia-respostas-discursiva.js';
 const ARQUIVO_CONFIRMAR_PROFESSOR = 'confirmar-nota-professor-discursiva.js';
+const ARQUIVO_FINALIZAR_PROFESSOR = 'finalizar-atividade-professor.js';
 const BASE_SCRIPTS_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const CLASSE_BLOCO = 'topico-resposta';
 const CLASSE_FALTANDO = 'topico-resposta--faltando';
@@ -335,6 +336,7 @@ async function abrirRespostasDoAluno(painel, dados) {
                 alternarRespostasDoProfessor(Boolean(aluno)),
                 mostrarNotasIaDasRespostas(aluno, dados.atividadeId),
                 mostrarConfirmacaoDoProfessor(aluno, dados.atividadeId),
+                mostrarFinalizarDoProfessor(aluno, dados.atividadeId),
             ]),
         });
     } catch (erro) {
@@ -384,6 +386,23 @@ async function mostrarNotasIaDasRespostas(aluno, atividadeId) {
         await window.mostrarNotasIaDoAluno(aluno, atividadeId);
     } catch (erro) {
         console.warn('Nota da IA nas respostas:', erro.message);
+    }
+}
+
+/**
+ * Professor: ao carregar um aluno, mostra embaixo da prova o botão "Finalizar Atividade", que
+ * lança a nota com base nas alternativas confirmadas. Uma falha aqui não atrapalha a avaliação.
+ * @param {Object|null} aluno - Aluno mostrado no combo (null ao limpar).
+ * @param {number} atividadeId - Id da atividade.
+ */
+async function mostrarFinalizarDoProfessor(aluno, atividadeId) {
+    try {
+        if (typeof window.mostrarFinalizarAtividade !== 'function') {
+            await carregarModuloDiscursiva(ARQUIVO_FINALIZAR_PROFESSOR);
+        }
+        window.mostrarFinalizarAtividade(aluno, atividadeId);
+    } catch (erro) {
+        console.warn('Finalizar Atividade:', erro.message);
     }
 }
 

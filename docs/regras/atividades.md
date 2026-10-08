@@ -211,6 +211,11 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     "💾 Gravar", os botões ✅ Certa (pontos) / 🟡 Meia certa (metade) / ❌ Errada (0), que gravam a
     `nota_professor` (upsert só dessa coluna; `nota_ia` e comentário ficam). Código
     `assets/js/confirmar-nota-professor-discursiva.js` + CSS, pelo `aoMostrarAluno`.
+  - **Botão "✅ Finalizar Atividade" (2026-10-08):** embaixo da prova, depois de escolher o
+    aluno (só professor). Confere que o aluno entregou e que todas as alternativas respondidas
+    têm `nota_professor`; então lança a nota (soma ÷ pontos × 10 × total ÷ mínimo, máximo 10)
+    e mostra a contagem de certas, meias certas, erradas e em branco. A nota entra na média
+    final pela `notas_media_final`. `assets/js/finalizar-atividade-professor.js` + CSS.
   - ⛔ **Nota confirmada é definitiva:** pede confirmação antes de gravar; depois os botões travam
     e o trigger `correcao_discursiva_validar` recusa qualquer mudança da `nota_professor` já
     gravada, **nem o professor altera** (SQL

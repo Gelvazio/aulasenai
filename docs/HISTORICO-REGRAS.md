@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 20:21:56 | Discursivas: botão **✅ Finalizar Atividade** (professor, embaixo da prova depois de escolher o aluno) que **lança a nota** com base nas alternativas confirmadas (certa / meia certa / errada), sobre o mínimo do aluno e no máximo 10 (`assets/js/finalizar-atividade-professor.js`) |
 | 2026-10-08 16:42:10 | Discursivas: **quantidade mínima de questões implementada** — coluna `atividade.minimo_questoes_entrega`, tabela `minimo_questoes_aluno` (RLS), entrega conferindo o mínimo (`atividade_completa`) e média final proporcional ao mínimo, máximo 10 (`notas_media_final`); botão no Progresso da turma (SQL `database/2026-10-08-minimo-questoes-entrega.sql`, aplicado) |
 | 2026-10-08 16:34:56 | Discursivas: **quantidade mínima de questões para entregar** (padrão = total; o professor muda por aluno no Progresso da turma) e **nota proporcional ao mínimo, máximo 10** (mínimo 10 de 20 + 10 certas = nota 10) — regra anotada; implementação no plano `docs/quantidade-minima-questoes-discursiva.md` |
 | 2026-10-08 16:20:56 | Discursivas: **Progresso da turma global** (aparece para o professor em **todas** as avaliações discursivas, sem campo na fonte) com o botão **📈 Gráficos** — modal com 5 gráficos (barras, pizza, barras por questão, rosca da correção da IA, barras horizontais da nota parcial); `assets/js/graficos-progresso-turma.js` |
