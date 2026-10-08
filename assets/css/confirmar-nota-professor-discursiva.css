@@ -1,0 +1,70 @@
+/* Professor: botões Certa / Meia certa / Errada (confirmar-nota-professor-discursiva.js). */
+
+:root {
+    --confirmar-borda: #cbd5e0;
+    --confirmar-fundo: #ffffff;
+    --confirmar-certa: #2f855a;
+    --confirmar-certa-fundo: #c6f6d5;
+    --confirmar-meia: #975a16;
+    --confirmar-meia-fundo: #fefcbf;
+    --confirmar-errada: #c53030;
+    --confirmar-errada-fundo: #fed7d7;
+    --confirmar-raio: 8px;
+}
+
+.confirmar-professor {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-left: auto;
+}
+
+.confirmar-professor--gravando {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.confirmar-professor--confirmada .confirmar-professor__botao {
+    cursor: not-allowed;
+}
+
+.confirmar-professor__botao--inativo {
+    opacity: 0.35;
+}
+
+.confirmar-professor__botao {
+    padding: 3px 8px;
+    border: 1px solid var(--confirmar-borda);
+    border-radius: var(--confirmar-raio);
+    background: var(--confirmar-fundo);
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.confirmar-professor__botao--certa.confirmar-professor__botao--ativo {
+    border-color: var(--confirmar-certa);
+    background: var(--confirmar-certa-fundo);
+    color: var(--confirmar-certa);
+    font-weight: 700;
+}
+
+.confirmar-professor__botao--meia.confirmar-professor__botao--ativo {
+    border-color: var(--confirmar-meia);
+    background: var(--confirmar-meia-fundo);
+    color: var(--confirmar-meia);
+    font-weight: 700;
+}
+
+.confirmar-professor__botao--errada.confirmar-professor__botao--ativo {
+    border-color: var(--confirmar-errada);
+    background: var(--confirmar-errada-fundo);
+    color: var(--confirmar-errada);
+    font-weight: 700;
+}
+
+@media print {
+    .confirmar-professor {
+        display: none;
+    }
+}

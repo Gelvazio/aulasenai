@@ -30,6 +30,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 95 | 95.4 | botões Certa / Meia certa / Errada do professor e nota travada (prova id 82) | Aceite |
 | 94 | 94.3 | aluno que entregou a Prova Prática ADAG (id 82) não vê as próprias respostas | Aceite |
 | 92 | 92.5 | rodar a correção parcial da IA e ver a "Nota parcial IA" no Progresso da turma (prova id 82) | Aceite |
 | 91 | 91.2 | coluna "Nota IA" no progresso da turma da Prova Prática ADAG (id 82) | Aceite |
@@ -1221,3 +1222,12 @@ Pedido do usuário: a rodada da IA não gravou nada (0 entregas; a orientação 
 | 94.1 | Campo `Ocultar respostas após entrega: sim` (gerador → `data-ocultar-respostas-entregue`); `carregarDiscursiva` nem lê as respostas do banco para aluno que entregou; campos vazios, sem barra do aluno, aviso no painel e tela limpa logo após entregar; professor sem mudança | ✅ Concluído | 2026-10-08 15:59:36 | `node --check`, `py_compile`; página regerada só com o atributo novo |
 | 94.2 | Nome "Prova Prática 08-10-2026" reaplicado no HTML depois de regerar (3 trocas) | ✅ Concluído | 2026-10-08 15:59:36 | `grep` |
 | 94.3 | Aceite do usuário (aluno que entregou abre a prova e não vê as respostas) | ⬜ Pendente | — | — |
+
+## Etapa 95 — Botões do professor Certa / Meia certa / Errada e nota confirmada travada (tarefa pequena, 2026-10-08 16:10:08)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 95.1 | `assets/js/confirmar-nota-professor-discursiva.js` + CSS: em "Respostas dos alunos", 3 botões antes do "💾 Gravar" em cada alternativa; gravam `nota_professor` (pontos, metade, 0) com confirmação; ligados em `avaliacao-discursiva.js` (`aoMostrarAluno`) | ✅ Concluído | 2026-10-08 16:10:08 | `node --check` |
+| 95.2 | Trava no banco: trigger `correcao_discursiva_validar` recusa alterar `nota_professor` já confirmada (SQL `database/2026-10-08-correcao-discursiva-nota-professor-travada.sql`, aplicado pelo conector) | ✅ Concluído | 2026-10-08 16:10:08 | Função conferida (trava presente); 0 notas confirmadas no banco no momento |
+| 95.3 | Regra no `CLAUDE.md` (versão + históricos), `docs/regras/atividades.md`, `docs/database.md` e relatório HTML | ✅ Concluído | 2026-10-08 16:10:08 | Leitura |
+| 95.4 | Aceite do usuário (escolher aluno, confirmar uma alternativa e ver o botão travar) | ⬜ Pendente | — | — |

@@ -18,6 +18,7 @@ const ARQUIVO_PDF_DISCURSIVA = 'exportar-pdf-discursiva.js';
 const ARQUIVO_RESPOSTAS_ALUNO = 'respostas-aluno-professor.js';
 const ARQUIVO_PROGRESSO_TURMA = 'progresso-turma-discursiva.js';
 const ARQUIVO_NOTA_IA_RESPOSTAS = 'nota-ia-respostas-discursiva.js';
+const ARQUIVO_CONFIRMAR_PROFESSOR = 'confirmar-nota-professor-discursiva.js';
 const BASE_SCRIPTS_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const CLASSE_BLOCO = 'topico-resposta';
 const CLASSE_FALTANDO = 'topico-resposta--faltando';
@@ -311,7 +312,10 @@ async function abrirRespostasDoAluno(painel, dados) {
             colunas: 'item,topico,texto',
             converter: converterRespostasDiscursivas,
             preencher: preencherCampos,
-            aoMostrarAluno: (aluno) => mostrarNotasIaDasRespostas(aluno, dados.atividadeId),
+            aoMostrarAluno: (aluno) => Promise.all([
+                mostrarNotasIaDasRespostas(aluno, dados.atividadeId),
+                mostrarConfirmacaoDoProfessor(aluno, dados.atividadeId),
+            ]),
         });
     } catch (erro) {
         console.warn('Respostas dos alunos:', erro.message);
@@ -351,6 +355,24 @@ async function mostrarNotasIaDasRespostas(aluno, atividadeId) {
         await window.mostrarNotasIaDoAluno(aluno, atividadeId);
     } catch (erro) {
         console.warn('Nota da IA nas respostas:', erro.message);
+    }
+}
+
+/**
+ * Professor: ao carregar as respostas de um aluno, põe os botões Certa / Meia certa / Errada em
+ * cada alternativa (nota do professor, travada depois de confirmada). Uma falha aqui não
+ * atrapalha a avaliação.
+ * @param {Object|null} aluno - Aluno mostrado no combo (null ao limpar).
+ * @param {number} atividadeId - Id da atividade.
+ */
+async function mostrarConfirmacaoDoProfessor(aluno, atividadeId) {
+    try {
+        if (typeof window.mostrarConfirmacaoProfessor !== 'function') {
+            await carregarModuloDiscursiva(ARQUIVO_CONFIRMAR_PROFESSOR);
+        }
+        await window.mostrarConfirmacaoProfessor(aluno, atividadeId);
+    } catch (erro) {
+        console.warn('Confirmação do professor:', erro.message);
     }
 }
 

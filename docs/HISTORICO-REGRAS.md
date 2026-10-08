@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 16:10:08 | Discursivas: **botões ✅ Certa / 🟡 Meia certa / ❌ Errada** para o professor confirmar cada alternativa em "Respostas dos alunos" (grava `nota_professor`) e **nota confirmada travada — nem o professor altera** (trigger `correcao_discursiva_validar`, SQL `database/2026-10-08-correcao-discursiva-nota-professor-travada.sql`, aplicado) |
 | 2026-10-08 15:54:25 | Avaliações discursivas: **nota parcial da IA em cada alternativa** (ícone ✅ certa / 🟡 meia certa / ❌ errada / ⏳ sem correção, com o comentário da IA) em "Respostas dos alunos" vale para **todas** as avaliações discursivas (`assets/js/nota-ia-respostas-discursiva.js`; `docs/regras/atividades.md`) |
 | 2026-10-08 14:34:44 | Atividades: **progresso da turma para o professor** no topo da atividade, por aluno e por questão, atualizado a cada 5 s (campo `Progresso para o professor: sim`, `assets/js/progresso-turma-discursiva.js`; `docs/regras/atividades.md`); 1º uso: Prova Prática ADAG (id 82); regra: depois em **todas** as atividades |
 | 2026-10-08 17:27:53 | Unidade das turmas vem do arquivo global **`assets/js/unidade.js`** (código da turma → nome da unidade, ex.: "AIAC SALETE TARDE"); substitui o `turma-unidade.js` — `docs/regras/usuarios-turmas-paginas-professor.md` |

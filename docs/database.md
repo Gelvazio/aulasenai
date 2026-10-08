@@ -565,7 +565,7 @@ SQL: `database/2026-10-06-notas-media-final-correcao-discursiva.sql` (✅ aplica
 | Tabela / objeto | Campos / regra |
 |--------|---------|
 | `correcao_discursiva` | PK (`aluno_id`, `atividade_id`, `tentativa`, `item`, `topico`); `nota_ia` (sugestão), `nota_ia_em` (quando a IA deu a nota; correção parcial, 2026-10-08), `nota_professor` (a que vale), `comentario`, `corrigido_por`, `corrigido_em`; notas ≥ 0 |
-| `correcao_discursiva_validar_trg` | nota ≤ `topico_discursivo.pontos` do tópico; tópico tem de existir; grava `corrigido_por`/`corrigido_em` quando a nota do professor muda |
+| `correcao_discursiva_validar_trg` | nota ≤ `topico_discursivo.pontos` do tópico; tópico tem de existir; grava `corrigido_por`/`corrigido_em` quando a nota do professor muda; **recusa alterar `nota_professor` já confirmada** (2026-10-08) |
 | RLS | professor lê e grava só alunos de `professor_pode_ver_aluno` (administrador todos); aluno lê só as próprias linhas com `nota_professor` preenchida; sem delete; `anon` sem acesso; TRUNCATE revogado |
 | `notas_media_final(p_paginas text[])` | `security definer`, só `authenticated`: para o aluno logado (`auth.uid()`), a melhor nota (0–10) entregue de cada página — objetiva = acertos ÷ total; discursiva = soma de `nota_professor` ÷ soma dos pontos, só com todos os tópicos corrigidos (senão `situacao = 'AGUARDANDO_CORRECAO'`). Não depende do bloqueio da atividade e não devolve gabarito |
 

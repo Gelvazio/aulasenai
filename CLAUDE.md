@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 15:54:25
+**Versão das regras:** 2026-10-08 16:10:08
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 16:10:08 | Discursivas: **botões ✅ Certa / 🟡 Meia certa / ❌ Errada** para o professor confirmar cada alternativa em "Respostas dos alunos" (grava `nota_professor`) e **nota confirmada travada — nem o professor altera** (trigger `correcao_discursiva_validar`, SQL `database/2026-10-08-correcao-discursiva-nota-professor-travada.sql`, aplicado) |
 | 2026-10-08 15:54:25 | Avaliações discursivas: **nota parcial da IA em cada alternativa** (ícone ✅ certa / 🟡 meia certa / ❌ errada / ⏳ sem correção, com o comentário da IA) em "Respostas dos alunos" vale para **todas** as avaliações discursivas (`assets/js/nota-ia-respostas-discursiva.js`; `docs/regras/atividades.md`) |
 | 2026-10-08 14:34:44 | Atividades: **progresso da turma para o professor** no topo da atividade, por aluno e por questão, atualizado a cada 5 s (campo `Progresso para o professor: sim`, `assets/js/progresso-turma-discursiva.js`; `docs/regras/atividades.md`); 1º uso: Prova Prática ADAG (id 82); regra: depois em **todas** as atividades |
 | 2026-10-08 17:27:53 | Unidade das turmas vem do arquivo global **`assets/js/unidade.js`** (código da turma → nome da unidade, ex.: "AIAC SALETE TARDE"); substitui o `turma-unidade.js` — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 17:26:54 | Toda lista de turmas mostra a **unidade** (local + turno, ex.: "AI SALETE TARDE"): função única `assets/js/turma-unidade.js` — `docs/regras/usuarios-turmas-paginas-professor.md` |
-| 2026-10-08 17:22:44 | Equipes: **botão 👥 EQUIPES global no header** (`js/header-usuario.js`) em toda página de matéria, para todo usuário logado — `docs/regras/usuarios-turmas-paginas-professor.md` |
 
 ---
 
@@ -67,6 +67,13 @@ Registrada em 2026-10-03 a pedido do usuário.
   fonte `.md` bloqueia colar/arrastar/copiar/recortar nas respostas. Hoje só na Prova Prática ADAG
   (id 82); **ligar nas outras discursivas depois**, quando o usuário pedir (ver
   `docs/regras/atividades.md`).
+- ⛔ **Nota confirmada pelo professor é definitiva** (2026-10-08, pedido do usuário): depois que o
+  professor confirma a nota de uma alternativa (botões ✅ Certa / 🟡 Meia certa / ❌ Errada em
+  "Respostas dos alunos" ou a tela CORREÇÃO), ela **não pode mais ser alterada nem apagada —
+  nem pelo professor**. O banco garante (trigger `correcao_discursiva_validar` recusa mudar uma
+  `nota_professor` já gravada); a tela pede confirmação antes e trava os botões. Nunca criar
+  código, SQL ou atalho que permita alterar nota confirmada. Detalhe em
+  `docs/regras/atividades.md`.
 - ✅ **Nota parcial da IA em todas as avaliações discursivas** (2026-10-08): em "Respostas dos
   alunos", ao escolher o aluno, cada alternativa mostra o ícone ✅ Certa / 🟡 Meia certa / ❌ Errada
   ("IA nota/pontos") ou ⏳ sem correção, com o comentário da IA ao passar o mouse — só prévia; vale

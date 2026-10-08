@@ -201,6 +201,14 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     correção) e o comentário da IA ao passar o mouse; `assets/js/nota-ia-respostas-discursiva.js`
     (+ CSS), ligado pelo callback opcional `aoMostrarAluno` do `respostas-aluno-professor.js`.
     **Vale para todas as avaliações discursivas** (regra no `CLAUDE.md`, 2026-10-08).
+  - **Botões do professor (2026-10-08):** ao escolher o aluno, cada alternativa ganha, antes do
+    "💾 Gravar", os botões ✅ Certa (pontos) / 🟡 Meia certa (metade) / ❌ Errada (0), que gravam a
+    `nota_professor` (upsert só dessa coluna; `nota_ia` e comentário ficam). Código
+    `assets/js/confirmar-nota-professor-discursiva.js` + CSS, pelo `aoMostrarAluno`.
+  - ⛔ **Nota confirmada é definitiva:** pede confirmação antes de gravar; depois os botões travam
+    e o trigger `correcao_discursiva_validar` recusa qualquer mudança da `nota_professor` já
+    gravada, **nem o professor altera** (SQL
+    `database/2026-10-08-correcao-discursiva-nota-professor-travada.sql`, aplicado).
   - **1º uso:** Prova Prática ADAG (id 82).
   - ⏳ **Regra para o futuro:** o progresso deve aparecer em **todas as atividades** (discursivas
     e objetivas — estas usam `assets/js/respostas-atividade.js` e precisam de módulo equivalente);
