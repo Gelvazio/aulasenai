@@ -917,3 +917,11 @@ Arquivos globais (`C:\Users\gelva\.claude\...`, skill `documentacao-padrao`) fic
 | 76.5 | Frase final da tarefa (global) × pergunta do log (projeto) | ✅ Concluído | 2026-10-08 08:14 | CLAUDE.md global com a exceção nas 2 seções (fora do Git) |
 | 76.6 | Confirmação antes de comando mutável × Git sem perguntar | ✅ Concluído | 2026-10-08 08:14 | Item 9 do CLAUDE.md global com a exceção (fora do Git) |
 | 76.7 | Aceite do usuário | 👀 Aguardando validação | — | — |
+
+## Etapa 77 — Skills globais copiadas para `.claude/skills/` do projeto (tarefa pequena, 2026-10-08)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 77.1 | Copiar as 4 skills do usuário (`EXERCICIOS`, `documentacao-padrao`, `graphify`, `padrao-slides-senai`) de `~/.agents/skills/` (versão mais nova) para `.claude/skills/`; a pasta `synced/` (skills do claude.ai, 8,7 MB, geridas pelo app) não foi copiada | ✅ Concluído | 2026-10-08 08:15 | `diff -rq` igual nas 4 |
+| 77.2 | `~/.claude/skills/documentacao-padrao` estava desatualizada (sem a exceção do item 76.1): sincronizada com a de `~/.agents/skills` | ✅ Concluído | 2026-10-08 08:15 | `diff` igual |
+| 77.3 | Regras globais (`~/.claude/CLAUDE.md` e `CLAUDE-DOCS-BEFORE-EVERY-TASK.md`) no projeto: decisão do usuário | 🔄 Em progresso | — | — |
