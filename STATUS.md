@@ -1569,3 +1569,12 @@ Plano: [docs/trigger-bloqueio-aula-bloqueia-atividades.md](docs/trigger-bloqueio
 | 119.6 | Aceite do usuário (testar 🏢 Unidades e a unidade dos cursos 5, 6 e 7) | ⬜ Pendente | — | Usuário |
 | 119.7 | Fase 2 pedida pelo usuário — ver 119.8 | ✅ Concluído | 2026-10-09 13:35 | — |
 | 119.8 | Fase 2 (pedido em 2026-10-09 13:30): `unidade.js` pela ligação; 13 JS com `unidade:unidade_id(nome)`; criar usuários grava `unidade_id`; colunas `turma.local` e `curso.unidade` apagadas (`database/2026-10-09-unidade-fase2-apagar-textos.sql`); docs e `CLAUDE.md` (versão 2026-10-09 13:33:10) | ✅ Concluído | 2026-10-09 13:35 | `node --check` em todos os JS; consulta das colunas; backups com 7 locais e 4 unidades |
+
+## Etapa 120 — Curso desativado some do índice; unidade do banco nas abas de criar usuários (pedido em 2026-10-09 13:50)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 120.1 | `cursos_do_usuario()` sem curso desativado para aluno/professor (administrador vê todos) — `database/2026-10-09-cursos-do-usuario-sem-inativos.sql`, aplicado | ✅ Concluído |  | Definição com o filtro; `anon` sem execute; `authenticated` com execute |
+| 120.2 | Abas de `scripts/criarUsuariosBancoDados.html` com a unidade da tabela `unidade` (turma no banco ou `unidadeId` da lista), sem o "local" da lista — `assets/js/criar-usuarios-pagina.js` | ✅ Concluído |  | `node --check` |
+| 120.3 | `docs/database.md`, relatório, `CLAUDE.md` (versão ) e histórico | ✅ Concluído |  | Leitura |
+| 120.4 | Aceite do usuário | ⬜ Pendente | — | — |

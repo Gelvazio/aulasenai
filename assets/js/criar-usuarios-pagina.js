@@ -2,6 +2,8 @@
 // "Cadastrado" (Sim/Não, de auth.users), seleção, marcar todos, filtro e um botão que grava só os
 // selecionados. Depende de criar-usuarios-api.js, criar-usuarios-tabela.js e das listas
 // window.LISTA_PRESENCA e window.LISTAS_PRESENCA (arquivos LISTA-PRESENCA*.js da pasta).
+// A unidade das abas vem só da tabela unidade: a da turma no banco (turma.unidade_id) ou, para
+// turma ainda não gravada, a do campo unidadeId da lista. O "local" escrito na lista não é usado.
 
 const MSG_SEM_LISTA = 'Nenhuma lista encontrada. Coloque os arquivos LISTA-PRESENCA*.js nesta pasta.';
 const MSG_GRAVANDO = 'Gravando...';
@@ -15,6 +17,8 @@ const MSG_SEM_PERFIL = 'Só o perfil PROFESSOR vê as senhas e grava. Seu perfil
 const PERFIL_DESCONHECIDO = '(sem perfil)';
 const ROTA_LOGIN_GUIA = '../login.html';
 const RPC_ADMINISTRADOR_GUIA = 'eh_professor_administrador';
+const TABELA_UNIDADE_GUIA = 'unidade';
+const TABELA_TURMA_GUIA = 'turma';
 // Aba que reúne os professores de todas as listas (virtual: não existe na tabela turma).
 const TURMA_PROFESSORES_GUIA = { codigo: 'PROFESSORES', nome: 'Professores', virtual: true };
 const MSG_SEM_PROFESSORES = 'Nenhum professor nas listas. Acrescente no LISTA-PRESENCA-PROFESSOR.js '
@@ -82,7 +86,7 @@ function separarListasPresencaGuia() {
 }
 
 /**
- * Lista as turmas de um conjunto de listas, cada uma com a UC e o local da lista.
+ * Lista as turmas de um conjunto de listas, cada uma com a UC da lista.
  * @param {Object[]} listas - Listas de presença.
  * @returns {Object[]} Turmas.
  */
@@ -92,7 +96,6 @@ function listarTurmasGuia(listas) {
             ...turma,
             alunos: turma.alunos || [],
             uc: turma.uc || lista.uc || '',
-            local: turma.local || lista.local || '',
         }))));
 }
 
@@ -306,12 +309,53 @@ async function gravarSelecionadosGuia(contexto) {
 }
 
 /**
- * Monta o local e o turno em maiúsculas (ex.: "AI CEPLAS MANHÃ").
- * @param {Object} turma - Turma com local e turno.
- * @returns {string} Texto pronto; vazio se a turma não tem local nem turno.
+ * Busca no banco o nome das unidades por turma e por id (tabela unidade).
+ * @returns {Promise<{porTurma: Map<string, string>, porId: Map<number, string>}>} Nomes; vazios
+ *     se a consulta falhar.
+ */
+async function buscarUnidadesGuia() {
+    const vazio = { porTurma: new Map(), porId: new Map() };
+    try {
+        const cliente = obterClienteSupabase();
+        const [unidades, turmas] = await Promise.all([
+            cliente.from(TABELA_UNIDADE_GUIA).select('id, nome'),
+            cliente.from(TABELA_TURMA_GUIA).select('codigo, unidade:unidade_id(nome)')]);
+        if (unidades.error || turmas.error) return vazio;
+        return {
+            porId: new Map(unidades.data.map((unidade) => [unidade.id, unidade.nome])),
+            porTurma: new Map(turmas.data.map((turma) => [turma.codigo, turma.unidade?.nome || ''])),
+        };
+    } catch (erro) {
+        return vazio;
+    }
+}
+
+/**
+ * Põe em cada turma o nome da unidade: a do banco; se a turma ainda não existe, a do unidadeId.
+ * @param {Object[]} turmas - Turmas das listas.
+ * @param {{porTurma: Map<string, string>, porId: Map<number, string>}} unidades - Nomes.
+ * @returns {Object[]} Turmas com unidadeNome.
+ */
+function aplicarUnidadesGuia(turmas, unidades) {
+    return turmas.map((turma) => ({
+        ...turma,
+        unidadeNome: unidades.porTurma.get(String(turma.codigo))
+            || unidades.porId.get(turma.unidadeId) || '',
+    }));
+}
+
+/**
+ * Monta a unidade e o turno em maiúsculas (ex.: "CEPLAS MANHÃ"); o turno não se repete se o
+ * nome da unidade já o traz (ex.: "AI TAIÓ TARDE").
+ * @param {Object} turma - Turma com unidadeNome e turno.
+ * @returns {string} Texto pronto; vazio se a turma não tem unidade nem turno.
  */
 function montarLocalTurnoGuia(turma) {
-    return [turma.local, turma.turno].filter(Boolean).join(' ').toUpperCase();
+    const unidade = String(turma.unidadeNome || '').toUpperCase();
+    const turno = String(turma.turno || '').toUpperCase();
+    const unidadeJaTemTurno = Boolean(turno) && unidade.includes(turno);
+    if (unidadeJaTemTurno) return unidade;
+    return [unidade, turno].filter(Boolean).join(' ');
 }
 
 /**
@@ -464,7 +508,7 @@ async function iniciarGuiaUsuarios() {
     if (!ehProfessor) avisarSemPermissaoGuia(usuario);
     obterElementoGuia('aviso').textContent = ehProfessor ? MSG_CONSULTANDO : MSG_SOMENTE_LEITURA;
 
-    const turmas = reunirTurmasPresenca();
+    const turmas = aplicarUnidadesGuia(reunirTurmasPresenca(), await buscarUnidadesGuia());
     if (!turmas.length) {
         const aviso = obterElementoGuia('aviso');
         aviso.textContent = MSG_SEM_LISTA;
