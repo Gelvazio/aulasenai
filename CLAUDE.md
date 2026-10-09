@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 00:01:37
+**Versão das regras:** 2026-10-08 21:15:46
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 21:15:46 | **Faixa de matérias abre em SOMENTE ENSALADO** em todos os cursos (se nenhuma matéria estiver ensalada ou o banco falhar, mostra todas); VER TODAS MATÉRIAS volta à lista completa — `assets/js/faixa-materias-ensalado.js` |
 | 2026-10-09 00:01:37 | Equipes: **professor sempre vê o botão 👥 EQUIPES** (todas as páginas; fora de uma matéria escolhe a matéria no modal); a regra do líder vale só para aluno — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 23:59:44 | Aluno líder: **no máximo 1 líder por turma** (`definir_lider_usuario` recusa o segundo e diz quem é o atual); coluna Líder da tela ALUNOS como interruptor ON/OFF — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 23:57:37 | **Aluno líder** (`usuario.lider` 1/0): professor marca na tela ALUNOS; o líder vê 👥 EQUIPES e cadastra/altera equipes da própria turma (não exclui); menu EQUIPES só para professor e líder; aviso do grant por coluna da `usuario` — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 23:45:55 | **Faixa de matérias**: botões **SOMENTE ENSALADO** e **VER TODAS MATÉRIAS** ao lado do título, e **ON/OFF** por matéria (coluna `materia.ensalado`, só PROFESSOR grava) em todos os `index.html` dos cursos (`docs/regras`: seção "FAIXA DE MATÉRIAS") |
-| 2026-10-08 20:33:13 | **Menu das atividades desligado** em todas as páginas (barra com o nome da matéria e "Equipes"): tudo já está no menu base do header; `MENU_ATIVIDADES_LIGADO = false` em `js/menu.js` (`docs/regras/assets-e-geradores.md`) |
 
 ---
 
@@ -899,6 +899,8 @@ Registrada em 2026-10-08 a pedido do usuário. Vale para **todos os `index.html`
 
 - ✅ Ao lado do título da faixa: botão **SOMENTE ENSALADO** (mostra só as matérias com `ensalado = true`)
   e **VER TODAS MATÉRIAS** (volta à lista completa).
+- ✅ **Toda faixa abre em SOMENTE ENSALADO** (2026-10-08, pedido do usuário); sem matéria ensalada
+  (ou sem banco) mostra todas.
 - ✅ Ao lado do nome de cada matéria: botão **ON/OFF** para marcar/desmarcar `ensalado` ali mesmo.
 - ✅ Usa a coluna `materia.ensalado` (boolean: ENSALADO = 1 ou 0). Não criar coluna nova (ela já existe).
 - ✅ O ON/OFF aparece e grava **só para o perfil PROFESSOR** (RLS); o aluno vê só os botões de filtro.

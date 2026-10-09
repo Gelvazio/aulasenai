@@ -775,3 +775,13 @@ Ao finalizar qualquer tarefa, responda APENAS com a frase: **TAREFA FINALIZADA!,
 Nao adicione resumos, explicacoes ou qualquer outro texto apos concluir uma tarefa.
 Exceção (2026-10-08): quando o `CLAUDE.md` do projeto pedir, logo abaixo da frase vem a pergunta
 **"Deseja atualizar o log da sessão atual?"** (ex.: projeto `aulasenai`).
+
+# Faixa de matérias: botões SOMENTE ENSALADO e VER TODAS MATÉRIAS (2026-10-08 23:42:02)
+Registrada a pedido do usuário. Vale para qualquer faixa "Matérias — <CURSO>" de índice de curso.
+- Ao lado do título "Matérias — <CURSO>" da faixa, dois botões: **SOMENTE ENSALADO** (mostra só as
+  matérias com `ensalado = true`) e **VER TODAS MATÉRIAS** (volta à lista completa).
+- **A faixa sempre abre em SOMENTE ENSALADO** (2026-10-08); sem matéria ensalada mostra todas.
+- Cada matéria da faixa tem um botão **ON/OFF** ao lado do nome, ali mesmo, para marcar/desmarcar
+  `ensalado`; a mudança grava no banco (coluna `materia.ensalado`, boolean, ENSALADO = 1 ou 0).
+- O ON/OFF aparece e grava só para o perfil PROFESSOR (RLS); o aluno só vê o filtro.
+- Não criar coluna nova para isso: `ensalado` já existe em `materia` (ver `docs/database.md`).

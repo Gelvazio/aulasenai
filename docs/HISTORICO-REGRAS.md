@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-08 21:15:46 | **Faixa de matérias abre em SOMENTE ENSALADO** em todos os cursos (se nenhuma matéria estiver ensalada ou o banco falhar, mostra todas); VER TODAS MATÉRIAS volta à lista completa — `assets/js/faixa-materias-ensalado.js` |
 | 2026-10-09 00:01:37 | Equipes: **professor sempre vê o botão 👥 EQUIPES** (todas as páginas; fora de uma matéria escolhe a matéria no modal); a regra do líder vale só para aluno — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 23:59:44 | Aluno líder: **no máximo 1 líder por turma** (`definir_lider_usuario` recusa o segundo e diz quem é o atual); coluna Líder da tela ALUNOS como interruptor ON/OFF — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 23:57:37 | **Aluno líder** (`usuario.lider` 1/0): professor marca na tela ALUNOS; o líder vê 👥 EQUIPES e cadastra/altera equipes da própria turma (não exclui); menu EQUIPES só para professor e líder; aviso do grant por coluna da `usuario` — `docs/regras/usuarios-turmas-paginas-professor.md` |

@@ -2,6 +2,7 @@
 // e um botão ON/OFF ao lado de cada matéria (só PROFESSOR grava). Lê e grava materia.ensalado.
 // Depende de js/supabase.js (sbGet, sbPatch, obterClienteSupabase) e assets/js/popup.js.
 // Cada faixa informa o curso do banco em <nav class="faixa-materias" data-curso-id="N">.
+// Toda faixa já abre mostrando só as matérias ensaladas (SOMENTE ENSALADO).
 // Regra: CLAUDE.md, seção "FAIXA DE MATÉRIAS". Plano: docs/somente-ensalado-materias.md
 
 const SELETOR_FAIXA_MATERIAS = '.faixa-materias';
@@ -169,6 +170,20 @@ async function ligarFaixaEnsalado(faixa, perfil) {
 
   somente.addEventListener('click', () => aplicarFiltroEnsalado(itens, mapaMaterias, true));
   todas.addEventListener('click', () => aplicarFiltroEnsalado(itens, mapaMaterias, false));
+  aplicarFiltroInicialEnsalado(itens, mapaMaterias);
+}
+
+/**
+ * Abre a faixa já em SOMENTE ENSALADO (padrão de todos os cursos).
+ * Sem nenhuma matéria ensalada (ou sem banco), mantém a lista completa para não esvaziar a faixa.
+ * @param {Object[]} itens - Itens montados por envolverCardsEnsalado.
+ * @param {Map<string, Object>} mapaMaterias - Matérias do banco por nome normalizado.
+ */
+function aplicarFiltroInicialEnsalado(itens, mapaMaterias) {
+  const temEnsalada = [...mapaMaterias.values()].some((materia) => materia.ensalado);
+  if (!temEnsalada) return;
+
+  aplicarFiltroEnsalado(itens, mapaMaterias, true);
 }
 
 /**

@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 105, item 105.1 — decisão do usuário sobre a opção R1 (cadastrar as 19 matérias do ITIC em `materia`) em [docs/somente-ensalado-materias.md](docs/somente-ensalado-materias.md); depois, Etapa 97, item 97.4 — aceite do usuário da quantidade mínima de questões; depois: Aceites do usuário: Etapas 84 e 85 (itens 84.5 e 85.3 — discursiva id 81 com 20 questões de 0,5 ponto, respostas no caderno, PDF em 3 páginas); Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Etapa 108 — aprovação do plano [docs/atividades-testes-frontend-aulas-01-a-03.md](docs/atividades-testes-frontend-aulas-01-a-03.md) (D1, D2, D3); depois, Etapa 105, item 105.1 — decisão do usuário sobre a opção R1 (cadastrar as 19 matérias do ITIC em `materia`) em [docs/somente-ensalado-materias.md](docs/somente-ensalado-materias.md); depois, Etapa 97, item 97.4 — aceite do usuário da quantidade mínima de questões; depois: Aceites do usuário: Etapas 84 e 85 (itens 84.5 e 85.3 — discursiva id 81 com 20 questões de 0,5 ponto, respostas no caderno, PDF em 3 páginas); Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -374,6 +374,8 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 27.2 | Gerador de índices ignora `AGENDA_COLABORADOR` | ✅ Concluído | 2026-10-06 10:53 | `py_compile` OK |
 | 27.3 | Remover os 2 índices gerados por engano em `AGENDA_COLABORADOR/` | ✅ Concluído | 2026-10-06 10:53 | `git status` da pasta limpo |
 | 27.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
@@ -1415,3 +1417,24 @@ Plano: [docs/aluno-lider-cadastra-equipes.md](docs/aluno-lider-cadastra-equipes.
 | 107.1 | `turmas.html` vira consulta das turmas: botão **➕ Vincular Professor** à esquerda de cada turma, professores vinculados em etiquetas (✏️/🗑️), busca; modal da turma (só professores que ainda não estão nela) e modal de edição do vínculo (`turmas-professor-pagina.js` reescrito, `turmas-professor-modais.js` novo, CSS) — sem mudança no banco | ✅ Concluído | 2026-10-09 00:06:32 | `node --check` nos 2 JS; leitura do código (sem navegador) |
 | 107.2 | Modal com os **dados da tabela `turma`** (CRUD: cadastrar, editar e excluir turma) — precisa de políticas novas no banco (hoje a `turma` só tem leitura no RLS): plano `docs/crud-turmas-administrador.md` aguardando aprovação | ⬜ Pendente | — | — |
 | 107.3 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 108 — Testes de Front-End: objetivas e práticas das aulas 01 a 03 + `docs/REGRAS-ATIVIDADE-PRATICA.md` (pedido em 2026-10-09 00:13:29)
+
+Plano: [docs/atividades-testes-frontend-aulas-01-a-03.md](docs/atividades-testes-frontend-aulas-01-a-03.md) — aguardando aprovação (decisões D1, D2, D3).
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 108.1 | Regra da atividade prática (`docs/REGRAS-ATIVIDADE-PRATICA.md`, seção no `CLAUDE.md`, visualizador) | ⬜ Pendente | — | — |
+| 108.2 | Aula 01 — objetiva 50 questões + prática discursiva (padrão id 82) | ⬜ Pendente | — | — |
+| 108.3 | Aula 02 — objetiva 50 questões + prática discursiva | ⬜ Pendente | — | — |
+| 108.4 | Aula 03 — objetiva 50 questões + prática discursiva | ⬜ Pendente | — | — |
+| 108.5 | Seeds no Supabase e conferência | ⬜ Pendente | — | — |
+| 108.6 | Commit e graphify | ⬜ Pendente | — | — |
+| 108.7 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 109 — Faixa de matérias de todos os cursos abre em SOMENTE ENSALADO (tarefa pequena, pedido em 2026-10-08 21:15:15)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 109.1 | **Todos os cursos**: a faixa de matérias abre em SOMENTE ENSALADO (`assets/js/faixa-materias-ensalado.js`, `aplicarFiltroInicialEnsalado`); sem matéria ensalada ou sem banco mostra todas; VER TODAS MATÉRIAS continua. Regra no `CLAUDE.md` (seção FAIXA DE MATÉRIAS), histórico e regra global | ✅ Concluído | 2026-10-08 21:15:46 | `node --check`; leitura do código (sem navegador) — teste na página fica com o usuário |
+| 109.2 | Aceite do usuário | ⬜ Pendente | — | — |
