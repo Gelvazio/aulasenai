@@ -1619,4 +1619,5 @@ Decisões do usuário (2026-10-09 10:31): D1 o painel global **substitui** o das
 | 123.2 | Registrar no Git a mudança de `STATUS.md`, `TASKS.md`, `TASKS_COMPLETE.md` e relatórios da raiz para `tasks/` | ✅ Concluído | 2026-10-09 12:35 | `git diff --cached -M` = renomeações R100 |
 | 123.3 | `CLAUDE.md` (versão 2026-10-09 12:33:04 + histórico) lê e grava as tarefas em `C:\fontes\aulasenai\tasks\` | ✅ Concluído | 2026-10-09 12:35 | Leitura das linhas alteradas |
 | 123.4 | Links relativos dentro de `tasks/STATUS.md` e `tasks/TASKS.md` (ex.: `docs/...`) passam a precisar de `../` | ⬜ Pendente | — | Corrigir quando o usuário pedir |
-| 123.5 | Aceite do usuário | ⬜ Pendente | — | — |
+| 123.5 | Regra no `CLAUDE.md`: id de tarefa nova = número + UUID (ex.: `#19-3f9a2c7e-8b1d-4e2a`) | ✅ Concluído | 2026-10-09 12:37 | Leitura da regra e do histórico |
+| 123.6 | Aceite do usuário | ⬜ Pendente | — | — |

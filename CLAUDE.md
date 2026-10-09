@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 12:33:04
+**Versão das regras:** 2026-10-09 12:36:43
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 12:36:43 | **Id de tarefa nova = número + UUID** (ex.: `#19-3f9a2c7e-8b1d-4e2a`), para duas licenças/branches não gerarem o mesmo número; as antigas (até #18) não mudam |
 | 2026-10-09 12:33:04 | **Arquivos de tarefas em `tasks/`:** `STATUS.md`, `TASKS.md` e `TASKS_COMPLETE.md` saíram da raiz e ficam em `C:\fontes\aulasenai\tasks\` (ler e atualizar lá; na nuvem, `tasks/` da raiz do repositório) |
 | 2026-10-09 11:03:21 | **Nova seção "Pull Requests" (só na nuvem):** todo commit feito na nuvem é enviado na hora (`git push`) e, se a branch não tiver PR aberto para a `main`, um **novo PR** é criado |
 | 2026-10-09 11:02:12 | **Mínimo de questões nas objetivas aplicado no banco** (`database/2026-10-09-minimo-questoes-objetivas.sql`, pelo conector do Supabase): entrega e nota da objetiva sobre o mínimo valem também no banco |
 | 2026-10-09 10:54:45 | **Progresso da turma GLOBAL** em toda atividade com banco (objetivas e discursivas), aberto junto com a página para o professor (`progresso-turma-global.js` substitui o das discursivas); objetiva com acertos e nota pelo banco; **mínimo de questões também nas objetivas** (SQL `database/2026-10-09-minimo-questoes-objetivas.sql`) |
-| 2026-10-09 10:47:05 | **Tamanho da ementa medido com Python** (`docs/regras/ementas-e-cursos.md`): conta caracteres (acento = 1); `wc -c` (bytes) e `Get-Content` sem `-Raw` (linhas) deixam de ser usados; versão vazia da linha anterior preenchida com a hora do commit `6829542` |
 
 ---
 
@@ -392,7 +392,16 @@ TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
   registrado no `STATUS.md` (fonte única); tarefa grande também ganha a descrição no `TASKS.md`
   e, ao concluir, vai para o `TASKS_COMPLETE.md` com conclusão, commit e plano, mais a linha no
   **"📜 HISTÓRICO POR COMMIT"** do `TASKS_COMPLETE.md`, no mesmo commit da tarefa. Perguntas sem
-  trabalho não entram. Caminho (2026-10-09): **`C:\fontes\aulasenai\tasks\TASKS.md`** (na nuvem, `tasks/TASKS.md` da raiz do repositório); `STATUS.md` e `TASKS_COMPLETE.md` ficam na mesma pasta `tasks/`.
+  trabalho não entram. Caminho (2026-10-09): **`C:\fontes\aulasenai\tasks\TASKS.md`** (na nuvem,
+  `tasks/TASKS.md` da raiz do repositório); `STATUS.md` e `TASKS_COMPLETE.md` ficam na mesma
+  pasta `tasks/`.
+- ✅ **Id de tarefa nova = número + UUID** (2026-10-09 12:36:43, pedido do usuário, para duas
+  licenças/branches não criarem a mesma "#17"): toda tarefa nova do `TASKS.md` recebe o próximo
+  número **seguido de um UUID gerado na hora**, ex.: **`#19-3f9a2c7e-8b1d-4e2a`** (número + os 3
+  primeiros blocos de um UUID v4; na máquina `[guid]::NewGuid()`, na nuvem
+  `python -c "import uuid; print(uuid.uuid4())"`). O id completo é usado igual no título do
+  `TASKS.md`, na linha "📌 Tarefas do `TASKS.md`" do `STATUS.md`, nos planos e nos logs. As
+  tarefas antigas (até a #18) mantêm o número sozinho.
 - ⛔ **FONTE ÚNICA DO ESTADO = `STATUS.md`** (2026-10-08, decisão do usuário). Os outros arquivos
   **apontam** para ele, nunca mantêm status próprio divergente:
   - **`TASKS.md`:** guarda só a **descrição longa** das tarefas pendentes; o **status** de cada uma
