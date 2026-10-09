@@ -1645,7 +1645,7 @@ Matéria: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO_DE_DADOS/` · Plano: `do
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 124.0 | Tarefa registrada no `TASKS.md` e no "📌 Tarefas" | ✅ Concluído | 2026-10-09 13:27 | Leitura |
-| 124.1 | Plano em `docs/` (permissão IGNORAR → VERIFICAR, nome da pasta, destino dos arquivos antigos, nº de aulas) e aprovação do usuário | ⬜ Pendente | — | — |
+| 124.1 | Plano em `docs/` (permissão IGNORAR → VERIFICAR, nome da pasta, destino dos arquivos antigos, nº de aulas) e aprovação do usuário. **Decidido e feito pelo usuário (2026-10-09):** permissão `VERIFICAR` (linha 36 do `MATERIAIS/STATUS-EMENTAS-CURSOS.md`) e pasta renomeada para `BANCO-DE-DADOS` (ainda sem commit). Falta no plano: corrigir as 31 referências ao nome antigo (faixa de matérias de 20 índices do curso, `index.html` do curso, linha 158 do STATUS-EMENTAS-CURSOS, docs e scripts), conferir `atividade.pagina` no banco, ementa genérica a refazer pela UC do curso | 🔄 Em progresso | — | `git grep BANCO_DE_DADOS`: 31 arquivos |
 | 124.2 | `materia.json` copiado da ementa | ⬜ Pendente | — | — |
 | 124.3 | Aulas em `CONTEUDO/` (uma por vez) + `AULAS/STATUS-AULAS.md` | ⬜ Pendente | — | — |
 | 124.4 | Atividades por aula (objetiva de 50 + prática padrão id 82), fontes em `ATIVIDADES/CONTEUDO/`, `STATUS-ATIVIDADES.md`, índice regerado; seeds só com pedido | ⬜ Pendente | — | — |
