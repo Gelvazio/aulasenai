@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 12:36:43
+**Versão das regras:** 2026-10-09 12:58:34
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 12:58:34 | **`TASKS_COMPLETE.md` apagado:** tarefa concluída ou cancelada tem o bloco **removido** do `TASKS.md` (o registro fica no `STATUS.md` e no Git) |
 | 2026-10-09 12:36:43 | **Id de tarefa nova = número + UUID** (ex.: `#19-3f9a2c7e-8b1d-4e2a`), para duas licenças/branches não gerarem o mesmo número; as antigas (até #18) não mudam |
 | 2026-10-09 12:33:04 | **Arquivos de tarefas em `tasks/`:** `STATUS.md`, `TASKS.md` e `TASKS_COMPLETE.md` saíram da raiz e ficam em `C:\fontes\aulasenai\tasks\` (ler e atualizar lá; na nuvem, `tasks/` da raiz do repositório) |
 | 2026-10-09 11:03:21 | **Nova seção "Pull Requests" (só na nuvem):** todo commit feito na nuvem é enviado na hora (`git push`) e, se a branch não tiver PR aberto para a `main`, um **novo PR** é criado |
 | 2026-10-09 11:02:12 | **Mínimo de questões nas objetivas aplicado no banco** (`database/2026-10-09-minimo-questoes-objetivas.sql`, pelo conector do Supabase): entrega e nota da objetiva sobre o mínimo valem também no banco |
-| 2026-10-09 10:54:45 | **Progresso da turma GLOBAL** em toda atividade com banco (objetivas e discursivas), aberto junto com a página para o professor (`progresso-turma-global.js` substitui o das discursivas); objetiva com acertos e nota pelo banco; **mínimo de questões também nas objetivas** (SQL `database/2026-10-09-minimo-questoes-objetivas.sql`) |
 
 ---
 
@@ -144,14 +144,14 @@ Registrada em 2026-10-03 a pedido do usuário.
 
 ### Mapa dos arquivos de status
 
-📁 **Desde 2026-10-09 o `STATUS.md`, o `TASKS.md` e o `TASKS_COMPLETE.md` ficam na pasta
-`tasks/`** (`C:\fontes\aulasenai\tasks\`); onde estas regras dizem só `STATUS.md`/`TASKS.md`, é o
-arquivo dessa pasta.
+📁 **Desde 2026-10-09 o `STATUS.md` e o `TASKS.md` ficam na pasta `tasks/`**
+(`C:\fontes\aulasenai\tasks\`); onde estas regras dizem só `STATUS.md`/`TASKS.md`, é o arquivo dessa
+pasta. O `TASKS_COMPLETE.md` foi apagado em 2026-10-09: tarefa concluída sai do `TASKS.md`.
 
 | Arquivo | Guarda | Quem manda |
 |---|---|---|
 | `tasks/STATUS.md` | Etapas e itens de **todas** as tarefas, "Próximo passo", "⏳ Aguardando o usuário", "📌 Tarefas do `TASKS.md`", decisões, riscos, bloqueios, pendências e lições | 🥇 **Fonte única do estado** — em conflito, **ele vence** |
-| `tasks/TASKS.md` / `tasks/TASKS_COMPLETE.md` | Só a **descrição longa** das tarefas pendentes / histórico das concluídas | Aponta para o `STATUS.md` (sem status próprio) |
+| `tasks/TASKS.md` | Só a **descrição longa** das tarefas pendentes (concluída ou cancelada = bloco removido) | Aponta para o `STATUS.md` (sem status próprio) |
 | `SESSOES-CLAUDE/STATUS-SESSOES.md` | Uma linha por sessão: status (`PENDENTE` · `CONCLUÍDO` · `🗑️ REMOVIDA`), data e próximo passo | Aponta para o `STATUS.md` |
 | `SESSOES-CLAUDE/SESSAO-AAAA-MM-DD-HHMM-*.md` | Mínimo para outra licença continuar: próximo passo, decisões, validação dos pedidos, pendências (com a etapa/item do `STATUS.md`) | Aponta para o `STATUS.md` |
 | `docs/<tarefa>.md` | Plano da tarefa grande com os passos e o status de cada passo | Detalha a etapa do `STATUS.md` |
@@ -382,19 +382,19 @@ Registrada em 2026-10-03 a pedido do usuário.
 **Por quê?** O `STATUS.md` é a fonte única do estado do trabalho (regra global "`STATUS.md` EM TODA
 TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
 
-- ℹ️ O `TASKS.md` guarda **só tarefas pendentes** (as concluídas e canceladas ficam em
-  `TASKS_COMPLETE.md`, desde 2026-10-08; ao concluir ou cancelar, mover o bloco no mesmo commit).
-  Consultar o `TASKS.md` quando o `STATUS.md` ou uma regra citar uma tarefa dele (ex.: vídeos
-  `a conferir` das apostilas); o `TASKS_COMPLETE.md` só quando precisar do histórico.
+- ℹ️ O `TASKS.md` guarda **só tarefas pendentes**. **Ao concluir ou cancelar uma tarefa, o bloco
+  dela é REMOVIDO do `TASKS.md`** no mesmo commit (2026-10-09, pedido do usuário; o antigo
+  `TASKS_COMPLETE.md` foi apagado). O registro do que foi feito fica no `STATUS.md` (linha ✅ em
+  "📌 Tarefas do `TASKS.md`" e itens da etapa) e no Git. Consultar o `TASKS.md` quando o
+  `STATUS.md` ou uma regra citar uma tarefa dele (ex.: vídeos `a conferir` das apostilas).
 - ✅ **Registro de todo pedido com data e hora em segundos** (2026-10-07, vindo da `main`):
   `AAAA-MM-DD HH:MM:SS`, horário de Brasília (na máquina: `Get-Date -Format "yyyy-MM-dd HH:mm:ss"`;
   na nuvem: `TZ=America/Sao_Paulo date "+%Y-%m-%d %H:%M:%S"`). Todo pedido que gere trabalho é
   registrado no `STATUS.md` (fonte única); tarefa grande também ganha a descrição no `TASKS.md`
-  e, ao concluir, vai para o `TASKS_COMPLETE.md` com conclusão, commit e plano, mais a linha no
-  **"📜 HISTÓRICO POR COMMIT"** do `TASKS_COMPLETE.md`, no mesmo commit da tarefa. Perguntas sem
-  trabalho não entram. Caminho (2026-10-09): **`C:\fontes\aulasenai\tasks\TASKS.md`** (na nuvem,
-  `tasks/TASKS.md` da raiz do repositório); `STATUS.md` e `TASKS_COMPLETE.md` ficam na mesma
-  pasta `tasks/`.
+  e, ao concluir, o bloco é **removido** do `TASKS.md` no mesmo commit da tarefa (conclusão,
+  commit e plano ficam registrados no `STATUS.md`). Perguntas sem trabalho não entram. Caminho
+  (2026-10-09): **`C:\fontes\aulasenai\tasks\TASKS.md`** (na nuvem, `tasks/TASKS.md` da raiz do
+  repositório); o `STATUS.md` fica na mesma pasta `tasks/`.
 - ✅ **Id de tarefa nova = número + UUID** (2026-10-09 12:36:43, pedido do usuário, para duas
   licenças/branches não criarem a mesma "#17"): toda tarefa nova do `TASKS.md` recebe o próximo
   número **seguido de um UUID gerado na hora**, ex.: **`#19-3f9a2c7e-8b1d-4e2a`** (número + os 3
@@ -407,7 +407,7 @@ TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
   - **`TASKS.md`:** guarda só a **descrição longa** das tarefas pendentes; o **status** de cada uma
     fica numa linha da seção **"📌 Tarefas do `TASKS.md`"** do `STATUS.md` (tarefa nova no
     `TASKS.md` = linha nova lá, no mesmo commit; tarefa concluída = linha marcada ✅ e bloco
-    movido para o `TASKS_COMPLETE.md`).
+    removido do `TASKS.md`).
   - **Logs de `SESSOES-CLAUDE/`:** citam a **etapa/item do `STATUS.md`** e o próximo passo; não
     mantêm uma lista própria de pendências diferente da do `STATUS.md`.
   - **Em conflito, o `STATUS.md` vence:** corrigir o outro arquivo na mesma tarefa.

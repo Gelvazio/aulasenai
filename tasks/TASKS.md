@@ -2,8 +2,8 @@
 
 **Somente tarefas PENDENTES** (planejadas ou em progresso).
 **O status oficial de cada tarefa fica no [STATUS.md](STATUS.md)** (seção "📌 Tarefas do `TASKS.md`"); aqui fica só a descrição longa. Em conflito, o `STATUS.md` vence.
-Ao concluir ou cancelar uma tarefa, **mover o bloco dela para `TASKS_COMPLETE.md`** (na mesma
-tarefa, no mesmo commit).
+Ao concluir ou cancelar uma tarefa, **remover o bloco dela deste arquivo** (na mesma tarefa, no
+mesmo commit); o registro do que foi feito fica no `STATUS.md`.
 
 ---
 
