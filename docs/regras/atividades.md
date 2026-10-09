@@ -351,6 +351,10 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   (ex.: Exploração de Carreiras, que está como "Nenhuma atividade").
 - ⚠️ Índices sem o marcador `gerador-indices` (feitos à mão, como o de Introdução à TIC) são
   preservados; seguir a mesma regra ao editá-los.
+- ✅ **ID NA FRENTE DE CADA ATIVIDADE** (2026-10-09, pedido do usuário, todos os índices, só
+  professor): etiqueta "ID 07" no começo do botão da atividade (menor que 10 com zero à esquerda;
+  10 em diante normal); a antiga caixa "🆔 ID · nome" do card foi removida
+  (`assets/js/atividades-crud-modal.js`).
 - ✅ **BOTÃO ON/OFF AO LADO DE CADA ATIVIDADE — REGRA GLOBAL** (2026-10-09, pedido do usuário;
   substitui o antigo interruptor "Bloquear/Desbloquear" por card de 2026-09-30): no índice de
   atividades de **todas** as matérias, o professor tem **um botão ON/OFF logo depois de cada

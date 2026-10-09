@@ -17,7 +17,9 @@ const MSG_CONFIRMAR_EXCLUSAO = 'Excluir esta atividade? O gabarito, as respostas
 
 const BASE_ASSETS_CRUD = document.currentScript?.src.replace(/js\/[^/]*$/, '') || '';
 const TEXTO_ID_NOVA_ATIVIDADE = '(nova atividade — o banco gera o id)';
-const CLASSE_ID_CARD = 'crud-id-card';
+const CLASSE_ID_CARD = 'crud-id-atividade';
+// IDs menores que 10 com zero à esquerda (7 → 07); de 10 em diante, normal.
+const DIGITOS_ID_ATIVIDADE = 2;
 // Botão "🧾 LOG" dos cards escondido em todos os índices (pedido do usuário, 2026-10-09); o banco
 // continua gravando o log_resposta_atividade. Para mostrar de novo, trocar para true.
 const LOG_ALTERNATIVAS_LIGADO = false;
@@ -456,21 +458,30 @@ function adicionarBotaoCrudAoCard(card) {
 }
 
 /**
- * Mostra no card o ID (e o nome) das atividades cadastradas dos links dele.
+ * Formata o ID da atividade com dois dígitos (7 → "07"; 99 e 100 ficam como estão).
+ * @param {number} id - Id da atividade.
+ * @returns {string} ID formatado.
+ */
+function formatarIdAtividadeCrud(id) {
+    return String(id).padStart(DIGITOS_ID_ATIVIDADE, '0');
+}
+
+/**
+ * Mostra o ID na frente de cada atividade cadastrada do card (etiqueta dentro do botão).
  * @param {HTMLElement} card - Card do índice.
  * @param {Object[]} atividades - Atividades cadastradas das páginas do índice.
  */
 function mostrarIdNoCard(card, atividades) {
-    card.querySelector('.' + CLASSE_ID_CARD)?.remove();
-    const paginas = [...card.querySelectorAll('a.btn')]
-        .map((link) => obterCaminhoHtml(lerHrefCrud(link))).filter(Boolean);
-    const doCard = atividades.filter((atividade) => paginas.includes(atividade.pagina));
-    const acoes = card.querySelector(SELETOR_ACOES);
-    if (!doCard.length || !acoes) return;
+    card.querySelectorAll('.' + CLASSE_ID_CARD).forEach((etiqueta) => etiqueta.remove());
+    card.querySelectorAll('a.btn').forEach((link) => {
+        const pagina = obterCaminhoHtml(lerHrefCrud(link));
+        const atividade = atividades.find((linha) => linha.pagina === pagina);
+        if (!atividade) return;
 
-    const texto = doCard.map((atividade) => 'ID ' + atividade.id +
-        (atividade.nome_atividade ? ' · ' + atividade.nome_atividade : '')).join(' | ');
-    acoes.append(criarElementoCrud('span', CLASSE_ID_CARD, '🆔 ' + texto));
+        const etiqueta = criarElementoCrud('span', CLASSE_ID_CARD,
+            'ID ' + formatarIdAtividadeCrud(atividade.id));
+        link.prepend(etiqueta);
+    });
 }
 
 /**

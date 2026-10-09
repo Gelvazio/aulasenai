@@ -1519,3 +1519,11 @@ Plano: [docs/trigger-bloqueio-aula-bloqueia-atividades.md](docs/trigger-bloqueio
 | 115.4 | `docs/database.md` + `relatorio_verificacao_database.html`, `docs/regras/atividades.md`, `CLAUDE.md` (versão 2026-10-09 01:09:35) e histórico | ✅ Concluído | 2026-10-09 01:09 | Leitura |
 | 115.6 | Pedido do usuário: aula bloqueada sem nenhum acesso, nem para o professor; só o botão de desbloquear clica (`travarCardAulaProfessor`, CSS `pointer-events`, ON/OFF das atividades nascem travados) + regra no `CLAUDE.md` (versão 2026-10-09 01:10:16) e em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-09 01:10 | `node --check` nos 2 JS; leitura do CSS (sem navegador) |
 | 115.5 | Aceite do usuário (bloquear uma aula no índice e ver as atividades OFF) | ⬜ Pendente | — | — |
+
+## Etapa 116 — ID na frente de cada atividade nos índices (tarefa pequena, pedido em 2026-10-09 01:11)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 116.1 | Etiqueta "ID 07" no começo de cada botão de atividade cadastrada (zero à esquerda abaixo de 10), no lugar da caixa "🆔 ID · nome" do card — `assets/js/atividades-crud-modal.js` + `assets/css/atividades-crud-modal.css`; vale em todos os índices (só professor) | ✅ Concluído | 2026-10-09 01:11 | `node --check`; nenhum outro script lê o texto dos botões |
+| 116.2 | Regra no `CLAUDE.md` (versão 2026-10-09 01:11:42), histórico e `docs/regras/atividades.md` | ✅ Concluído | 2026-10-09 01:12 | Leitura |
+| 116.3 | Aceite do usuário | ⬜ Pendente | — | — |
