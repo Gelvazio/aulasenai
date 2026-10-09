@@ -1,7 +1,7 @@
 # Unidade em um só lugar — tabela `unidade` ligada a `curso` e `turma`
 
 **Criado em:** 2026-10-09 13:20 · **Aprovado em:** 2026-10-09 13:23 · **Concluído em:** 2026-10-09 13:29 · **Tempo decorrido:** 9 min
-**Status:** 👀 Fase 1 implementada — aguardando o aceite do usuário (passo 6)
+**Status:** 👀 Fases 1 e 2 implementadas (fase 2 concluída em 2026-10-09 13:35) — aguardando o aceite do usuário
 **STATUS.md:** Etapa 119
 
 ## Objetivo
@@ -60,6 +60,16 @@ unidade.
 | 5 | Commit + graphify | `git diff --cached --name-only` | ✅ |
 | 6 | Aceite do usuário | Teste no navegador pelo usuário | ⬜ |
 
+## Fase 2 (pedida em 2026-10-09 13:33 — "faça a 2ª parte também")
+
+| Nº | Ação | Arquivos | Verificação | Status |
+|---|---|---|---|---|
+| 7 | `assets/js/unidade.js`: unidade da turma só pela ligação (`unidade:unidade_id(nome)`), sem a tabela fixa `UNIDADES_POR_TURMA` | `assets/js/unidade.js` | `node --check` | ✅ |
+| 8 | Consultas de turma trocam `local` por `unidade:unidade_id(nome)` | avaliacao-media-final-professor, equipes-repositorio, indice-turma-favorita, liberacao-respostas-discursiva, relatorio-atividades-dados/pagina, respostas-atividade-professor, turma-exportacao, turmas-aluno-*, turmas-professor-repositorio, cursos-* | `node --check`; `grep` sem `turma.local` | ✅ |
+| 9 | Criar usuários grava `unidade_id` (campo `unidadeId` da turma nas listas locais) e não grava mais `local` | `assets/js/criar-usuarios-api.js`; listas `scripts/LISTA-PRESENCA*.js` (fora do Git) | `node --check` | ✅ |
+| 10 | Apagar `turma.local` e `curso.unidade` (backups de 2026-10-09 já guardam os textos) | `database/2026-10-09-unidade-fase2-apagar-textos.sql` | Consulta das colunas | ✅ |
+| 11 | Documentação, commit e graphify | `docs/database.md`, relatório, `CLAUDE.md` | Leitura | ✅ |
+
 ## Riscos
 
 | Risco | Plano B |
@@ -75,5 +85,8 @@ unidade.
 - Tela: unidade do curso em lista (tabela `unidade`); modal 🏢 Unidades com incluir, editar e
   excluir (bloqueia unidade em uso); turmas descritas pela unidade da tabela.
 - `js/unidade.js` (órfão) ajustado para a coluna `nome`.
-- **Pendências (fase 2):** os 11 arquivos que leem `turma.local`; a página de criar usuários ainda
-  cria turma sem `unidade_id`; depois apagar `curso.unidade` e `turma.local`.
+- **Fase 2 (2026-10-09 13:35):** `assets/js/unidade.js` sem a tabela fixa `UNIDADES_POR_TURMA`;
+  13 arquivos JS consultam `unidade:unidade_id(nome)`; criar usuários grava `unidade_id` (listas
+  locais com `unidadeId`); colunas `turma.local` e `curso.unidade` apagadas.
+- Pendência: a página de criar usuários ainda mostra, nas abas, o "local" escrito no arquivo da
+  lista de presença (dado do arquivo, não do banco).

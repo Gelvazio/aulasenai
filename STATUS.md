@@ -1565,4 +1565,5 @@ Plano: [docs/trigger-bloqueio-aula-bloqueia-atividades.md](docs/trigger-bloqueio
 | 119.4 | `docs/database.md`, relatório HTML, `CLAUDE.md` (versão 2026-10-09 13:27:14) e histórico | ✅ Concluído | 2026-10-09 13:29 | Leitura |
 | 119.5 | Commit | ✅ Concluído | 2026-10-09 13:30 | `git diff --cached --name-only` |
 | 119.6 | Aceite do usuário (testar 🏢 Unidades e a unidade dos cursos 5, 6 e 7) | ⬜ Pendente | — | Usuário |
-| 119.7 | Fase 2: 11 arquivos que leem `turma.local` + criar usuários gravando `unidade_id`; depois apagar os textos antigos | ⬜ Pendente — só com pedido do usuário | — | — |
+| 119.7 | Fase 2 pedida pelo usuário — ver 119.8 | ✅ Concluído | 2026-10-09 13:35 | — |
+| 119.8 | Fase 2 (pedido em 2026-10-09 13:30): `unidade.js` pela ligação; 13 JS com `unidade:unidade_id(nome)`; criar usuários grava `unidade_id`; colunas `turma.local` e `curso.unidade` apagadas (`database/2026-10-09-unidade-fase2-apagar-textos.sql`); docs e `CLAUDE.md` (versão 2026-10-09 13:33:10) | ✅ Concluído | 2026-10-09 13:35 | `node --check` em todos os JS; consulta das colunas; backups com 7 locais e 4 unidades |

@@ -468,7 +468,7 @@ function renderizarTabelaRel() {
 }
 
 /**
- * Cria o cartão de aba de uma turma (local/turno, UC e turma com a quantidade de alunos).
+ * Cria o cartão de aba de uma turma (unidade/turno, UC e turma com a quantidade de alunos).
  * @param {Object} turma - Turma da matéria.
  * @returns {HTMLButtonElement} Botão da aba.
  */
@@ -476,7 +476,7 @@ function criarAbaTurmaRel(turma) {
     const aba = criarElementoRel('button', 'rel-aba');
     aba.type = 'button';
     aba.dataset.turma = turma.codigo;
-    const localTurno = [turma.local, turma.turno].filter(Boolean).join(' ').toUpperCase();
+    const localTurno = [turma.unidadeNome, turma.turno].filter(Boolean).join(' ').toUpperCase();
     if (turma.favorita) aba.append(criarElementoRel('span', 'rel-aba-uc', '⭐ Turma favorita'));
     if (localTurno) aba.append(criarElementoRel('span', 'rel-aba-local', localTurno));
     if (turma.uc) aba.append(criarElementoRel('span', 'rel-aba-uc', turma.uc));

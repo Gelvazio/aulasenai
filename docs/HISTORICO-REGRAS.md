@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 13:33:10 | **Fase 2 da unidade:** colunas `turma.local` e `curso.unidade` apagadas; todas as telas mostram a unidade pela ligação (`unidade:unidade_id(nome)`, `assets/js/unidade.js`); criar usuários grava `unidade_id` (campo `unidadeId` da turma na lista) |
 | 2026-10-09 13:27:14 | **Unidade só na tabela `unidade`** (`id`, `nome`, `endereco`): `curso.unidade_id` e `turma.unidade_id` apontam para ela; CRUD no modal **🏢 Unidades** de `cursos.html`; os textos antigos `curso.unidade` e `turma.local` só até a fase 2 |
 | 2026-10-09 12:59:06 | **Menu CURSO** (só o Professor Administrador) abre `cursos.html`: CRUD da tabela `curso` (sem exclusão: desativar = `ativo 0`, pois apagar levaria as aulas em cascata) e ação **🏫 Turmas** para vincular turmas ao curso (função `definir_curso_turma`) |
 | 2026-10-09 01:12:55 | **Botões de atividade com a mesma largura** e **ON/OFF sempre ao lado** (texto menor e quebrando a linha para caber, também no celular) em todos os índices |

@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 13:27:14
+**Versão das regras:** 2026-10-09 13:33:10
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 13:33:10 | **Fase 2 da unidade:** colunas `turma.local` e `curso.unidade` apagadas; todas as telas mostram a unidade pela ligação (`unidade:unidade_id(nome)`, `assets/js/unidade.js`); criar usuários grava `unidade_id` (campo `unidadeId` da turma na lista) |
 | 2026-10-09 13:27:14 | **Unidade só na tabela `unidade`** (`id`, `nome`, `endereco`): `curso.unidade_id` e `turma.unidade_id` apontam para ela; CRUD no modal **🏢 Unidades** de `cursos.html`; os textos antigos `curso.unidade` e `turma.local` só até a fase 2 |
 | 2026-10-09 12:59:06 | **Menu CURSO** (só o Professor Administrador) abre `cursos.html`: CRUD da tabela `curso` (sem exclusão: desativar = `ativo 0`, pois apagar levaria as aulas em cascata) e ação **🏫 Turmas** para vincular turmas ao curso (função `definir_curso_turma`) |
 | 2026-10-09 01:12:55 | **Botões de atividade com a mesma largura** e **ON/OFF sempre ao lado** (texto menor e quebrando a linha para caber, também no celular) em todos os índices |
 | 2026-10-09 01:11:42 | **ID na frente de cada atividade** nos índices (professor): etiqueta "ID 07" no botão (menor que 10 com zero à esquerda; 10 em diante normal); a caixa "ID · nome" do card foi removida |
-| 2026-10-09 01:10:16 | **Aula bloqueada = nenhum acesso, nem para o professor:** no card só o botão de desbloquear responde (links, slides, ON/OFF das atividades, CADASTRAR ATIVIDADES e Editar aula travados) |
 
 ---
 
@@ -771,8 +771,10 @@ SQL: `database/2026-10-02-turmaprofessor-professor-administrador.sql` (aplicado 
 - ✅ **Unidade só na tabela `unidade` (2026-10-09, pedido do usuário):** a unidade (nome e
   endereço) de cursos e turmas vem **sempre** da tabela `unidade` (`curso.unidade_id`,
   `turma.unidade_id`; unidade em uso não se apaga). Cadastro no modal **🏢 Unidades** de
-  `cursos.html` (`assets/js/unidades-modal.js`). ⛔ Código novo não lê nem grava `curso.unidade`
-  nem `turma.local` (textos antigos, apagados na fase 2 de `docs/tabela-unidade-curso-turma.md`).
+  `cursos.html` (`assets/js/unidades-modal.js`). As colunas antigas `curso.unidade` e
+  `turma.local` foram **apagadas** (2026-10-09): consulta de turma pede `unidade:unidade_id(nome)`
+  e mostra com `montarUnidadeTurma` (`assets/js/unidade.js`); turma nova da página de criar
+  usuários precisa do campo `unidadeId` na lista de presença.
 - ✅ **Menu Regras (2026-10-03):** botão **Regras** no header, só para o Professor Administrador
   (mesmo RPC `eh_professor_administrador()`), abre um modal com este `CLAUDE.md` + os arquivos de
   `docs/regras/` e o `docs/HISTORICO-REGRAS.md` renderizados (Markdown → HTML com marked +

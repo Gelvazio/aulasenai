@@ -89,7 +89,6 @@ CURSO (1) ──→ (N) CURSOMATERIA (N) ←─── (1) MATERIA
 | **nome_completo** | TEXT | NOT NULL | — | Nome do curso (obrigatório) |
 | descricao | TEXT | Nullable | NULL | Descrição do curso |
 | ativo | INTEGER | Nullable | `1` | Status (1=ativo, 0=inativo) |
-| unidade | TEXT | Nullable | NULL | ⚠️ Antigo (texto livre) — usar `unidade_id`; apagar na fase 2 |
 | unidade_id | BIGINT | FK → `unidade.id` (on delete restrict) | NULL | Unidade do curso (2026-10-09) |
 | materias | JSONB | Nullable | NULL | Cache de matérias (denormalizado) |
 | created_at | TIMESTAMPTZ | Nullable | `now()` | Data criação |
@@ -338,8 +337,8 @@ const aulasMateria = await sbGet("aulas", "select=*&materia_id=eq.5&order=numero
 **RLS Status:** ✅ **HABILITADO** (leitura pública; gravação só PROFESSOR)  
 **Rows:** 5 (2026-10-09)  
 **Fonte única da unidade** (2026-10-09): `curso.unidade_id` e `turma.unidade_id` apontam para cá
-(on delete restrict). Os textos antigos `curso.unidade` e `turma.local` ficam até a fase 2 do plano
-`docs/tabela-unidade-curso-turma.md`. CRUD na página `cursos.html` (modal 🏢 Unidades).
+(on delete restrict). Os textos antigos `curso.unidade` e `turma.local` foram **apagados** em
+2026-10-09 (fase 2 de `docs/tabela-unidade-curso-turma.md`; valores nos backups `*_backup_20261009`). CRUD na página `cursos.html` (modal 🏢 Unidades).
 
 ---
 
@@ -572,6 +571,7 @@ Supabase). **Plano:** `docs/tabela-unidade-curso-turma.md`.
 | `unidade.descricao` | renomeada para `nome`, com `unique` (`unidade_nome_key`) |
 | `unidade` (dados) | 1 SENAI Rio do Sul (era a linha de teste); 2 CEPLAS; 3 AI SALETE; 4 ROBERTO MACHADO; 5 APRENDIZAGEM INDUSTRIAL TAIÓ TARDE |
 | `curso.unidade_id`, `turma.unidade_id` | novas colunas → `unidade.id` (on delete restrict), com índice |
+| Fase 2 (`database/2026-10-09-unidade-fase2-apagar-textos.sql`) | colunas `turma.local` e `curso.unidade` **apagadas**; consultas usam `unidade:unidade_id(nome)` |
 | Migração | cursos 1–4 → 1; turmas: AI CEPLAS/CEPLAS → 2, SN.RDS-LAB… Rio do Sul → 1, demais pelo nome igual. Cursos 5, 6 e 7 sem unidade (já estavam vazios) |
 
 ---
