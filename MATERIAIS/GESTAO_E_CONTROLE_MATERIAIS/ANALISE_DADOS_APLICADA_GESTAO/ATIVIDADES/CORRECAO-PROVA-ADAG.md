@@ -212,3 +212,4 @@ Esperado: `com_nota_ia` = alternativas respondidas pelo aluno (60 depois da entr
 
 | Data e hora | Alunos corrigidos | Alternativas gravadas | Observação |
 |---|---|---|---|
+| 2026-10-09 02:55:18 | 0 | 0 | Nenhuma alternativa pendente nesta rodada. |
