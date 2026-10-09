@@ -24,11 +24,11 @@ registrar aqui"); criado em 2026-10-09 19:19:18 e com status em todos os seeds d
 - ⛔ Este arquivo não leva gabarito, padrão de resposta, senha nem dado de aluno (só nomes de
   arquivo, contagens e status).
 
-## Resumo (conferência de 2026-10-09 19:23)
+## Resumo (atualizado em 2026-10-09 19:30)
 
 | PENDENTE | APLICADO | CONCLUÍDO | Total |
 |---|---|---|---|
-| 26 | 3 | 40 | 69 |
+| 25 | 3 | 41 | 69 |
 
 ## Todos os seeds
 
@@ -75,7 +75,7 @@ registrar aqui"); criado em 2026-10-09 19:19:18 e com status em todos os seeds d
 | `2026-10-07-atividade-individual-100-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | Atualiza a atividade id 85 para 100 questões; banco com 100 itens no gabarito |
 | `2026-10-07-atividade-individual-apostila-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **APLICADO** | 2026-10-09 19:23 | Substituído por `2026-10-07-atividade-individual-100-seed-atividades.sql` (id 85 passou de 50 para 100 questões) |
 | `2026-10-07-atividade-individual-comunicacao-tecnica-discursiva-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **APLICADO** | 2026-10-09 19:23 | Substituído por `2026-10-08-atividade-individual-comunicacao-tecnica-discursiva-seed-atividades.sql` (id 81 com 20 tópicos) |
-| `2026-10-07-atividade-pratica-aula-06-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **PENDENTE** | 2026-10-09 19:23 | Nunca entrou porque procurava a matéria pelo nome antigo; nome corrigido no arquivo para `INTRODUCAO TIC` (id 25, aula 6 = id 26) em 2026-10-09; aplicação pelo conector cancelada antes de gravar (aguarda o usuário aprovar ou rodar no SQL Editor) |
+| `2026-10-07-atividade-pratica-aula-06-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **CONCLUÍDO** | 2026-10-09 19:30 | Aplicado em 2026-10-09 19:28 a pedido do usuário, em 3 partes pelo conector (atividade id 102, bloqueada; 20 tópicos, 10 pontos); conferido por md5 do texto dos tópicos igual ao do arquivo. Antes: nunca entrou porque procurava a matéria pelo nome antigo (corrigido para `INTRODUCAO TIC`) |
 | `2026-10-08-atividade-individual-comunicacao-tecnica-discursiva-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-08-atividade-pratica-aula-01-seed-atividades.sql` | Comunicação Oral e Escrita (RSL) | 1 | **PENDENTE** | 2026-10-09 19:23 | Não pode ser aplicado ainda: a matéria "Introdução à Comunicação Oral e Escrita para o Mundo do Trabalho" e as aulas dela não existem no banco (o seed para com erro); falta criar a matéria e as aulas (decisão do usuário) |
 | `2026-10-08-atividade-pratica-aula-02-seed-atividades.sql` | Comunicação Oral e Escrita (RSL) | 1 | **PENDENTE** | 2026-10-09 19:23 | Não pode ser aplicado ainda: a matéria "Introdução à Comunicação Oral e Escrita para o Mundo do Trabalho" e as aulas dela não existem no banco (o seed para com erro); falta criar a matéria e as aulas (decisão do usuário) |
