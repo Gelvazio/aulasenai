@@ -27,7 +27,7 @@
 | 13 | DDL: relações, chaves e restrições | ✅ `ATIVIDADES-AULA-13-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 14 | DML: inserção, atualização e exclusão | ✅ `ATIVIDADES-AULA-14-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 15 | DML: consultas com filtros e ordenação | ✅ `ATIVIDADES-AULA-15-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
-| 16 | Consultas com junções, agrupamentos e subconsultas | ⬜ `ATIVIDADES-AULA-16-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
+| 16 | Consultas com junções, agrupamentos e subconsultas | ✅ `ATIVIDADES-AULA-16-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 17 | Procedimentos armazenados | ⬜ `ATIVIDADES-AULA-17-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 18 | Triggers (disparadores) | ⬜ `ATIVIDADES-AULA-18-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 19 | Segurança da informação: pilares, acesso e auditoria | ⬜ `ATIVIDADES-AULA-19-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
@@ -52,7 +52,7 @@
 | 13 | ✅ `ATIVIDADE-PRATICA-AULA-13.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 14 | ✅ `ATIVIDADE-PRATICA-AULA-14.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 15 | ✅ `ATIVIDADE-PRATICA-AULA-15.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
-| 16 | ⬜ `ATIVIDADE-PRATICA-AULA-16.html` | — | ⬜ | ⬜ | ⬜ Pendente |
+| 16 | ✅ `ATIVIDADE-PRATICA-AULA-16.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 17 | ⬜ `ATIVIDADE-PRATICA-AULA-17.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 18 | ⬜ `ATIVIDADE-PRATICA-AULA-18.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 19 | ⬜ `ATIVIDADE-PRATICA-AULA-19.html` | — | ⬜ | ⬜ | ⬜ Pendente |
