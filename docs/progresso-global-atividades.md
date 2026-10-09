@@ -92,7 +92,7 @@ as matérias, o mesmo painel de **Progresso da turma** da Prova Prática ADAG (i
 | 6 | Página objetiva: entrega com o mínimo e nota sobre o mínimo | `assets/js/respostas-atividade.js`, `assets/js/respostas-atividade-banco.js` | `node --check` | ✅ 2026-10-09 10:52 |
 | 7 | Relatório do professor: nota sobre o mínimo | `assets/js/respostas-atividade-professor.js` | `node --check` | ✅ 2026-10-09 10:53 |
 | 8 | Regras e visualizador | `CLAUDE.md`, `docs/regras/atividades.md`, `docs/HISTORICO-REGRAS.md` | leitura | ✅ 2026-10-09 10:56 |
-| 9 | Commit, push e pull request | git | `git diff --cached --name-only` | 🔄 |
+| 9 | Commit, push e pull request | git | `git diff --cached --name-only` | ✅ 2026-10-09 10:57 |
 | 10 | Aplicar o SQL (só com pedido do usuário) | conector do Supabase | consultas de leitura | ⬜ |
 | 11 | Aceite do usuário (Testes de Front-End, aula 01) | `ATIVIDADES-AULA-01-50-QUESTOES.html` | usuário | ⬜ |
 
