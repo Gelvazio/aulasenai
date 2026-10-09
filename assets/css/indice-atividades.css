@@ -64,7 +64,8 @@ footer { background: #2d3748; color: white; padding: 24px 20px; text-align: cent
     details ol { columns: 1; margin-left: 20px; }
     details li { margin-bottom: 4px; }
     .aula.bloqueada::before,
-    .aula.bloqueada-professor::before { font-size: 64px; }
+    .aula.bloqueada-professor::before,
+    .aula.aula--bloqueada-professor::before { font-size: 64px; }
     .menu-principal { flex-wrap: wrap; }
     .menu-principal a { padding: 9px 16px; }
     .faixa-materias { border-radius: 0; margin-bottom: 0; padding: 10px; }
@@ -74,12 +75,14 @@ footer { background: #2d3748; color: white; padding: 24px 20px; text-align: cent
 }
 /* Atividade bloqueada (aluno e professor, todas as matérias): card escurecido + cadeado grande */
 .aula.bloqueada,
-.aula.bloqueada-professor {
+.aula.bloqueada-professor,
+.aula.aula--bloqueada-professor {
     position: relative; background: var(--bloqueio-fundo); border-left-color: var(--bloqueio-borda);
     color: var(--bloqueio-texto);
 }
 .aula.bloqueada::before,
-.aula.bloqueada-professor::before {
+.aula.bloqueada-professor::before,
+.aula.aula--bloqueada-professor::before {
     content: "🔒"; position: absolute; inset: 0; z-index: 1; display: flex;
     align-items: center; justify-content: center; font-size: 96px; border-radius: 8px;
     background: var(--bloqueio-veu); pointer-events: none;

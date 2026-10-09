@@ -47,6 +47,8 @@ TITULO_SITE = "SENAI — Índice de Atividades"
 PASTA_AULAS = "AULAS"
 MODELO_SLIDES_AULA = "AULA-{numero}-SLIDES.pdf"
 TEXTO_BOTAO_SLIDES = "📕 Slides (PDF)"
+# Slides e documentos abrem em nova aba (pedido do usuário, 2026-10-09).
+EXTENSOES_NOVA_ABA = (".pdf", ".pptx")
 
 escapar = html.escape
 
@@ -106,10 +108,24 @@ def link_relativo(destino, origem):
     return quote(os.path.relpath(destino, origem).replace(os.sep, "/"))
 
 
+def atributos_nova_aba(href):
+    """Atributos para abrir em nova aba os slides e documentos (PDF e PowerPoint) do card.
+
+    Args:
+        href: Endereço do botão.
+
+    Returns:
+        Texto com target e rel, ou vazio para páginas HTML.
+    """
+    if not href.lower().endswith(EXTENSOES_NOVA_ABA):
+        return ""
+    return ' target="_blank" rel="noopener"'
+
+
 def montar_card(dados):
     """Monta um card (article.aula) a partir de rótulo, título, meta e botões."""
     botoes = "".join(
-        f'<a class="btn {classe}" href="{href}">{escapar(texto)}</a>'
+        f'<a class="btn {classe}" href="{href}"{atributos_nova_aba(href)}>{escapar(texto)}</a>'
         for texto, href, classe in dados["botoes"]
     )
     atributo_arquivo = ""

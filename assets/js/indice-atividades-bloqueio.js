@@ -9,6 +9,9 @@
 // definir_bloqueio_turma; as outras turmas não mudam). Regra global de todas as matérias
 // (CLAUDE.md, 2026-10-09). Trocar a favorita na barra do índice (evento
 // turma-favorita-alterada) remonta os botões.
+// Nas matérias com o bloqueio da AULA ligado (assets/js/indice-bloqueio-aula-config.js), o ON/OFF
+// das atividades NUNCA bloqueia o card inteiro: só o botão da aula faz isso
+// (assets/js/indice-aula-bloqueio.js).
 // Carregado por assets/js/atividades-crud-modal.js. Depende de supabase-js e js/supabase.js.
 
 // Cards informativos (sem atividade no banco) usam data-sem-bloqueio e nunca são bloqueados.
@@ -147,8 +150,17 @@ function bloquearLinkAluno(link) {
 }
 
 /**
+ * Diz se o card inteiro pode ser bloqueado pelas atividades (não pode nas matérias com o
+ * bloqueio da aula ligado: lá, só o botão da aula bloqueia o card).
+ * @returns {boolean} true se as atividades podem bloquear o card.
+ */
+function atividadesBloqueiamCard() {
+    return !(typeof bloqueioDeAulaLigado === 'function' && bloqueioDeAulaLigado());
+}
+
+/**
  * Aluno: bloqueia as atividades do card que ele não consegue ler; se todas estiverem
- * bloqueadas, o card inteiro fica bloqueado.
+ * bloqueadas, o card inteiro fica bloqueado (exceto nas matérias com o bloqueio da aula).
  * @param {HTMLElement} card - Card do índice.
  * @param {Set<string>} ativas - Páginas liberadas para o aluno.
  */
@@ -157,7 +169,7 @@ function bloquearLinksAluno(card, ativas) {
     const bloqueados = links.filter((link) => !ativas.has(caminhoDoLink(link)));
     if (!bloqueados.length) return;
 
-    if (bloqueados.length === links.length) {
+    if (bloqueados.length === links.length && atividadesBloqueiamCard()) {
         bloquearCardAtividade(card);
         return;
     }
@@ -257,7 +269,7 @@ function definirLinkProfessor(link, bloquear) {
  * @param {{link: HTMLAnchorElement, bloqueado: boolean}[]} itens - Atividades do card.
  */
 function aplicarEstadoCardProfessor(card, itens) {
-    const cardBloqueado = itens.every((item) => item.bloqueado);
+    const cardBloqueado = atividadesBloqueiamCard() && itens.every((item) => item.bloqueado);
     card.classList.toggle(CLASSE_TEMA_BLOQUEADO_PROFESSOR, cardBloqueado);
     const links = card.querySelectorAll('a[href], a[' + ATRIBUTO_HREF_GUARDADO + ']');
     links.forEach((link) => definirLinkProfessor(link, cardBloqueado));

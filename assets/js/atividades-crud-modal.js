@@ -18,6 +18,9 @@ const MSG_CONFIRMAR_EXCLUSAO = 'Excluir esta atividade? O gabarito, as respostas
 const BASE_ASSETS_CRUD = document.currentScript?.src.replace(/js\/[^/]*$/, '') || '';
 const TEXTO_ID_NOVA_ATIVIDADE = '(nova atividade — o banco gera o id)';
 const CLASSE_ID_CARD = 'crud-id-card';
+// Botão "🧾 LOG" dos cards escondido em todos os índices (pedido do usuário, 2026-10-09); o banco
+// continua gravando o log_resposta_atividade. Para mostrar de novo, trocar para true.
+const LOG_ALTERNATIVAS_LIGADO = false;
 
 const estadoCrud = { paginas: [], atividades: [], aulas: [], editandoId: null };
 let elementosCrud = null;
@@ -507,9 +510,14 @@ function carregarMarcacaoFeitas() {
     estiloBloquear.href = BASE_ASSETS_CRUD + 'css/indice-atividades-bloquear.css';
     const script = criarElementoCrud('script');
     script.src = BASE_ASSETS_CRUD + 'js/indice-atividades-feitas.js';
+    // A lista de matérias com o bloqueio da aula roda antes dos scripts de bloqueio (em ordem).
+    const scriptConfigBloqueio = criarElementoCrud('script');
+    scriptConfigBloqueio.src = BASE_ASSETS_CRUD + 'js/indice-bloqueio-aula-config.js';
+    scriptConfigBloqueio.async = false;
     const scriptBloqueio = criarElementoCrud('script');
     scriptBloqueio.src = BASE_ASSETS_CRUD + 'js/indice-atividades-bloqueio.js';
-    document.head.append(estilo, estiloBloquear, script, scriptBloqueio);
+    scriptBloqueio.async = false;
+    document.head.append(estilo, estiloBloquear, script, scriptConfigBloqueio, scriptBloqueio);
     carregarTurmaFavoritaIndice();
     carregarDataAulasIndice();
     carregarLogAlternativasIndice();
@@ -519,6 +527,8 @@ function carregarMarcacaoFeitas() {
  * Carrega o link "🧾 LOG" dos cards (professor): log das alternativas marcadas pelos alunos.
  */
 function carregarLogAlternativasIndice() {
+    if (!LOG_ALTERNATIVAS_LIGADO) return;
+
     const estilo = criarElementoCrud('link');
     estilo.rel = 'stylesheet';
     estilo.href = BASE_ASSETS_CRUD + 'css/indice-log-alternativas.css';
@@ -535,7 +545,7 @@ function carregarDataAulasIndice() {
     estilo.rel = 'stylesheet';
     estilo.href = BASE_ASSETS_CRUD + 'css/indice-aula-data.css';
     const scripts = ['js/indice-aula-repositorio.js', 'js/indice-aula-modal.js',
-        'js/indice-aula-data.js'].map((caminho) => {
+        'js/indice-aula-bloqueio.js', 'js/indice-aula-data.js'].map((caminho) => {
         const script = criarElementoCrud('script');
         script.src = BASE_ASSETS_CRUD + caminho;
         script.async = false;

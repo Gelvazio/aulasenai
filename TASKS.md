@@ -142,6 +142,9 @@ rodapé "Página N de T" e PDF sem a faixa azul da esquerda em todas as apostila
 ### #16: Bloqueio da AULA (card inteiro) × bloqueio da ATIVIDADE em todos os índices — pedida em 2026-10-09 01:00
 
 **Status:** ⏳ PENDENTE — fazer em **outra sessão** (decisão do usuário, 2026-10-09 01:02)
+**Andamento:** ✅ ligada em **Testes de Front-End** (2026-10-09, Etapa 114 do `STATUS.md`). Para as
+demais matérias, só acrescentar a pasta em `PASTAS_COM_BLOQUEIO_AULA`
+(`assets/js/indice-bloqueio-aula-config.js`), uma por vez, quando o usuário pedir.
 **Prioridade:** 🟠 Alta
 **Regra:** `CLAUDE.md`, seção "⏳ REGRA PENDENTE — BLOQUEIO DA AULA × BLOQUEIO DA ATIVIDADE".
 **STATUS:** `STATUS.md`, Etapa 113, item 113.6. Vale para **todas as atividades de todas as matérias**.

@@ -39,3 +39,40 @@
 @media (max-width: 600px) {
   .interruptor-atividade { min-height: 44px; margin: 0 8px 0 4px; }
 }
+
+/* Botão ON/OFF da AULA (antes de "Editar aula"), nas matérias com o bloqueio da aula ligado:
+   ON (verde) = aula liberada; OFF (vermelho) = aula bloqueada (card inteiro para os alunos). */
+.interruptor-aula {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer; padding: 6px 12px;
+  border: 1px solid #cbd5e0; border-radius: 10px; background: #f7fafc; font-size: 13px;
+  font-weight: 700; color: #2d3748;
+}
+.interruptor-aula input { position: absolute; opacity: 0; pointer-events: none; }
+.interruptor-aula__chave {
+  position: relative; width: 52px; height: 24px; border-radius: 24px; background: #c53030;
+  transition: background 0.2s;
+}
+.interruptor-aula__chave::after {
+  content: 'OFF'; position: absolute; right: 6px; top: 6px; font-size: 10px; font-weight: 700;
+  color: #fff;
+}
+.interruptor-aula__chave::before {
+  content: ''; position: absolute; left: 3px; top: 3px; width: 18px; height: 18px;
+  border-radius: 50%; background: #fff; transition: transform 0.2s; z-index: 1;
+}
+.interruptor-aula input:checked + .interruptor-aula__chave { background: #2f855a; }
+.interruptor-aula input:checked + .interruptor-aula__chave::after {
+  content: 'ON'; left: 8px; right: auto;
+}
+.interruptor-aula input:checked + .interruptor-aula__chave::before { transform: translateX(28px); }
+.interruptor-aula input:disabled + .interruptor-aula__chave { opacity: 0.6; }
+.interruptor-aula input:focus-visible + .interruptor-aula__chave {
+  outline: 2px solid #1a56db; outline-offset: 2px;
+}
+
+/* Professor: aula bloqueada fica escurecida com cadeado, mas links e botões continuam usáveis */
+.aula.aula--bloqueada-professor .acoes { position: relative; z-index: 2; }
+
+@media (max-width: 600px) {
+  .interruptor-aula { min-height: 44px; }
+}

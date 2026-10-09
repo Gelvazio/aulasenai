@@ -23,7 +23,7 @@ A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale 
 | #12 | Conferir a duração dos vídeos da apostila de Fundamentos da Tecnologia | ⬜ Pendente (local) | Fazer na máquina local, com YouTube |
 | #14 | Conferir a duração dos vídeos da apostila de Exploração de Carreiras | ⬜ Pendente (local) | Fazer na máquina local, com YouTube |
 | #15 | Apostila de ITIC versão 2 (até 40 páginas, sem vídeos e exercícios) — agora a apostila única (V1 removida) | 👀 Aguardando validação | Aceite do usuário (Etapas 79, 81 e 83) |
-| #16 | Bloqueio da AULA (card inteiro, `aulas.ativo`) × ON/OFF da atividade (nunca bloqueia o card) em todos os índices | ⬜ Pendente (outra sessão) | Fazer em outra sessão, pela descrição no `TASKS.md` (Etapa 113, item 113.6) |
+| #16 | Bloqueio da AULA (card inteiro, `aulas.ativo`) × ON/OFF da atividade (nunca bloqueia o card) em todos os índices | 🔄 Ligada em Testes de Front-End (Etapa 114) | Demais matérias: acrescentar a pasta em `assets/js/indice-bloqueio-aula-config.js`, uma por vez, quando o usuário pedir |
 
 ## ⏳ Aguardando o usuário (aceites, aprovações e ações dele)
 
@@ -1496,3 +1496,13 @@ Plano: [docs/validacao-sessao-todas-paginas.md](docs/validacao-sessao-todas-pagi
 | 114.2 | `assets/gerador-indices/gerar_indices.py`: card de aula ganha o botão de slides quando existe `<MATÉRIA>/AULAS/AULA-NN-SLIDES.pdf` (vale para todas as matérias ao regenerar) | ✅ Concluído | 2026-10-09 00:58 | `py_compile` + geração em memória mostrou o botão |
 | 114.3 | Os 10 PDFs `TESTES-DE-FRONTEND/AULAS/AULA-NN-SLIDES.pdf` versionados (exceção no `.gitignore`) | ✅ Concluído | 2026-10-09 00:58 | `git check-ignore` mostra a exceção |
 | 114.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 114 — Testes de Front-End: bloqueio da aula e das atividades; LOG escondido; slides em nova aba (tarefa pequena, pedido em 2026-10-09 01:04)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 114.1 | Tarefa #16 ligada **só em Testes de Front-End**: lista `assets/js/indice-bloqueio-aula-config.js`; botão "Aula liberada / Aula bloqueada" (`aulas.ativo`) antes de "Editar aula" (`assets/js/indice-aula-bloqueio.js` + `indice-aula-data.js`); aula bloqueada = card inteiro bloqueado para o aluno; nela o ON/OFF das atividades nunca bloqueia o card (`indice-atividades-bloqueio.js`); CSS em `indice-atividades-bloquear.css` e `indice-atividades.css`; carregamento em ordem no `atividades-crud-modal.js` | ✅ Concluído | 2026-10-09 01:06 | `node --check` nos 5 JS; nenhum nome global repetido entre os 19 scripts dos índices; chaves do CSS balanceadas; sem navegador |
+| 114.2 | Botão "🧾 LOG" escondido em todos os índices (`LOG_ALTERNATIVAS_LIGADO = false`) | ✅ Concluído | 2026-10-09 01:06 | `node --check`; único botão de log do projeto |
+| 114.3 | "📕 Slides" dos cards abrem em nova aba: 18 botões em 3 índices (ITIC, Fundamentos da Tecnologia, Testes de Front-End) + gerador de índices (`atributos_nova_aba`) | ✅ Concluído | 2026-10-09 01:07 | `grep`: nenhum botão de slides sem `target="_blank"`; `ast.parse` do gerador |
+| 114.4 | Regras: `CLAUDE.md` (versão 2026-10-09 01:07:02), histórico, `TASKS.md` (#16), `docs/regras/atividades.md` | ✅ Concluído | 2026-10-09 01:07 | Leitura dos arquivos |
+| 114.5 | Aceite do usuário (índice de Testes de Front-End como professor e como aluno) | ⬜ Pendente | — | — |

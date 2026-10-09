@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 01:07:02 | Bloqueio da AULA × bloqueio da ATIVIDADE **ligado em Testes de Front-End** (lista em `assets/js/indice-bloqueio-aula-config.js`; demais matérias seguem pendentes na tarefa #16); botão **🧾 LOG escondido** em todos os índices; **slides abrem em nova aba** |
 | 2026-10-09 01:03:11 | **Regra pendente (tarefa #16 do TASKS.md, outra sessão):** o ON/OFF da atividade nunca bloqueia o card; botão de bloqueio da AULA (`aulas.ativo`) antes de "Editar aula" é o único que bloqueia o card |
 | 2026-10-09 00:56:07 | **Botão ON/OFF ao lado de cada atividade** em todos os índices de atividades de todas as matérias (ON = liberada, OFF = bloqueada para a turma favorita; substitui o interruptor por card) — `docs/regras/atividades.md` |
 | 2026-10-09 00:33:19 | **Sessão obrigatória em todo HTML:** sem login **nada da página é carregado nem mostrado** e o usuário vai direto para o `index.html` da raiz; exceções só o `index.html` (apresentação do professor + botão Entrar) e o `login.html` — regra "SESSÃO OBRIGATÓRIA EM TODAS AS PÁGINAS" no `CLAUDE.md`; plano [docs/validacao-sessao-todas-paginas.md](validacao-sessao-todas-paginas.md) |

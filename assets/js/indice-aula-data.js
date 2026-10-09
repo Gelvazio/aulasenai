@@ -5,6 +5,9 @@
 // procurada na mesma matéria pelo rótulo escrito no card. Sem aula no banco, o card fica como
 // está no HTML. Aula excluída (aulas.excluido = 1) esconde o card para todos.
 // O professor vê "✏️ Editar aula", que abre o modal CRUD (assets/js/indice-aula-modal.js).
+// Nas matérias com o bloqueio da aula ligado (assets/js/indice-bloqueio-aula-config.js), o botão
+// "Aula liberada / Aula bloqueada" (aulas.ativo) fica antes de "Editar aula" e a aula bloqueada
+// bloqueia o card inteiro para os alunos (assets/js/indice-aula-bloqueio.js).
 // Depende de: js/supabase.js, assets/js/indice-aula-repositorio.js, assets/js/indice-aula-modal.js,
 // assets/js/atividades-crud-repositorio.js e assets/js/atividades-crud-modal.js (obterCaminhoHtml).
 
@@ -165,6 +168,15 @@ function desenharCardAula(item) {
     esconderCardExcluido(item);
     renderizarTextosNoCard(item);
     renderizarDataNoCard(item);
+    if (bloqueioDaAulaNoIndice()) aplicarBloqueioAulaNoCard(item, estadoCardsAula.ehProfessor);
+}
+
+/**
+ * Diz se o bloqueio da aula vale nesta página e se o módulo dele foi carregado.
+ * @returns {boolean} true se ligado.
+ */
+function bloqueioDaAulaNoIndice() {
+    return typeof bloqueioAulaAtivoNaPagina === 'function' && bloqueioAulaAtivoNaPagina();
 }
 
 /**
@@ -182,6 +194,7 @@ function adicionarBotaoEditarAula(item) {
         ehAdministrador: estadoCardsAula.ehAdministrador,
         aoGravar: atualizarCardsDaAula,
     }));
+    if (bloqueioDaAulaNoIndice()) acoes.append(criarBotaoBloqueioAula(item, atualizarCardsDaAula));
     acoes.append(botao);
 }
 
@@ -244,8 +257,8 @@ async function iniciarCardsAula() {
         console.warn('Aulas dos cards indisponíveis:', erro.message);
     }
     estadoCardsAula.cards = itens;
-    itens.forEach(desenharCardAula);
     if (estadoCardsAula.ehProfessor) itens.forEach(adicionarBotaoEditarAula);
+    itens.forEach(desenharCardAula);
 }
 
 iniciarCardsAula();

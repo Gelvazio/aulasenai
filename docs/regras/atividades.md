@@ -49,6 +49,9 @@ questão, operação, de → para). Código: `assets/js/indice-log-alternativas.
 índices). **Na atividade bloqueada o LOG também fica bloqueado** (sem clique), como os demais links do card. ❌ Não
 desligar o gatilho nem apagar o log. SQL: `database/2026-10-06-log-resposta-atividade.sql`;
 plano: `docs/log-resposta-atividade.md`.
+**Botão escondido (2026-10-09, pedido do usuário):** o "🧾 LOG" não aparece mais em nenhum
+índice (`LOG_ALTERNATIVAS_LIGADO = false` em `assets/js/atividades-crud-modal.js`); o log continua
+sendo gravado no banco.
 
 ### 👩‍🏫 Professor dentro da atividade
 
