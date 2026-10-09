@@ -314,8 +314,6 @@ Se o arquivo da skill estiver temporariamente indisponível, o Claude deve infor
 e sem texto extra.** A antiga regra "Resultados finais em formato de tabela" foi **substituída** em
 2026-09-30 (era contraditória com esta). Perguntas do usuário e relatos de bloqueio/erro continuam
 sendo respondidos normalmente; a frase é só para o encerramento de uma tarefa concluída.
-✅ **Exceção (2026-10-08):** quando o `CLAUDE.md` do projeto pedir, logo abaixo da frase vem a
-pergunta **"Deseja atualizar o log da sessão atual?"** — isso não conta como texto extra.
 
 ---
 
@@ -773,8 +771,6 @@ C:\Python314\python.exe -m graphify update .
 # Finalizacao de tarefas
 Ao finalizar qualquer tarefa, responda APENAS com a frase: **TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?**
 Nao adicione resumos, explicacoes ou qualquer outro texto apos concluir uma tarefa.
-Exceção (2026-10-08): quando o `CLAUDE.md` do projeto pedir, logo abaixo da frase vem a pergunta
-**"Deseja atualizar o log da sessão atual?"** (ex.: projeto `aulasenai`).
 
 # Faixa de matérias: botões SOMENTE ENSALADO e VER TODAS MATÉRIAS (2026-10-08 23:42:02)
 Registrada a pedido do usuário. Vale para qualquer faixa "Matérias — <CURSO>" de índice de curso.
