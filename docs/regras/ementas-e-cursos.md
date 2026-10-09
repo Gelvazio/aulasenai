@@ -159,11 +159,9 @@ A ementa de cada matéria é só o `EMENTA-CHALKIE-AI.md`; não criar nem verifi
 
 **Como validar:**
 ```bash
-# Linux/Mac
-wc -c EMENTA-CHALKIE-AI.md
-
-# PowerShell (Windows)
-(Get-Content EMENTA-CHALKIE-AI.md -Raw).Length   # -Raw = caracteres (sem -Raw conta linhas)
+# Windows, Linux ou Mac (conta caracteres: acento = 1; quebra de linha = 1)
+C:\Python314\python.exe -c "import sys;print(len(open(sys.argv[1],encoding='utf-8').read()))" EMENTA-CHALKIE-AI.md
+# Não usar wc -c (conta bytes: acento = 2) nem Get-Content sem -Raw (conta linhas)
 ```
 
 **Se estiver fora do intervalo:**
