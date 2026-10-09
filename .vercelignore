@@ -7,6 +7,15 @@
 *[Gg][Aa][Bb][Aa][Rr][Ii][Tt][Oo]*
 # Resoluções modelo das atividades (respostas do professor)
 RESOLUCAO/
+# Fontes das atividades objetivas (linha **Gabarito:** com a resposta certa): no Git, fora do site
+# (decisão do usuário em 2026-10-09, tarefa #20)
+*QUESTOES.md
+# Fontes de provas objetivas (linha **Gabarito:**)
+PROVA-OBJETIVA-*.md
+# Seeds das atividades (gravam o gabarito e o padrão de resposta no banco)
+database/*-seed-atividades.sql
+# Atividade de raciocínio lógico com as respostas
+docs/atividade-raciocinio-logico.md
 
 # Binários (vindos do .gitignore em 2026-10-09)
 *.pdf
@@ -26,5 +35,3 @@ LISTA-PRESENCA*.js
 # Listas de alunos (nomes, CPF): dados pessoais (LGPD)
 LISTA-ALUNOS/
 
-# Fontes de provas objetivas (com a linha Gabarito): nunca publicar
-PROVA-OBJETIVA-*.md

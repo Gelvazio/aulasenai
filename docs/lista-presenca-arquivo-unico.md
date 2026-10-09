@@ -3,7 +3,7 @@
 **Criado em:** 2026-10-09 17:50 · **Concluído em:** 2026-10-09 18:00 (falta o aceite) · **Tempo decorrido:** ~30 min
 **Pedido do usuário:** "leia todas as listas de presença e deixe tudo em apenas 1 arquivo de nome
 LISTAPRESENCA.js, e ajuste os html e javascript pra que isso funcione".
-**STATUS:** [tasks/STATUS.md](../tasks/STATUS.md), Etapa 126.
+**STATUS:** [tasks/STATUS.md](../tasks/STATUS.md), Etapa 133 (era 126 na `main`; renumerada no merge).
 
 ## Objetivo
 

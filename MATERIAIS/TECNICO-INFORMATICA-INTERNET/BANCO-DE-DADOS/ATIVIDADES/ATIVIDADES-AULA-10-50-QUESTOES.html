@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 10 — Normalização de Dados (1FN, 2FN e 3FN) (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="10" data-tema="Normalização de Dados (1FN, 2FN e 3FN)" data-total="50"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🧹 Aula 10: Normalização de Dados (1FN, 2FN e 3FN)</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-10-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C3 —</strong> Aplicar os procedimentos de normalização e padronização de dados.</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Objetivo da Normalização</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o objetivo da normalização?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Trocar a porta do servidor.</li>
+                        <li><span class="letra">B)</span>Organizar as tabelas para que cada fato seja guardado uma única vez, evitando redundância e anomalias.</li>
+                        <li><span class="letra">C)</span>Deixar o banco com o maior número possível de colunas por tabela.</li>
+                        <li><span class="letra">D)</span>Apagar dados antigos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Benefício da Normalização</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é um benefício da normalização?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dispensar chaves primárias.</li>
+                        <li><span class="letra">B)</span>Guardar o mesmo dado em várias tabelas.</li>
+                        <li><span class="letra">C)</span>Eliminar a necessidade de SQL.</li>
+                        <li><span class="letra">D)</span>Alterar um dado em um só lugar, valendo para todo o sistema.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Anomalia de Inserção</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na planilha &quot;tudo junto&quot; da escola, não dá para cadastrar um curso sem ter um aluno matriculado. Que anomalia é essa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Anomalia de inserção.</li>
+                        <li><span class="letra">B)</span>Anomalia de exclusão.</li>
+                        <li><span class="letra">C)</span>Anomalia de atualização.</li>
+                        <li><span class="letra">D)</span>Não é anomalia.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Anomalia de Atualização</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A carga do Excel mudou e foi alterada em só algumas linhas da planilha. Que anomalia é essa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Normalização correta.</li>
+                        <li><span class="letra">B)</span>Anomalia de inserção.</li>
+                        <li><span class="letra">C)</span>Anomalia de exclusão.</li>
+                        <li><span class="letra">D)</span>Anomalia de atualização.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Anomalia de Exclusão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao apagar a única matrícula do curso de Python, a escola perde a informação de que o curso existe. Que anomalia é essa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Integridade garantida.</li>
+                        <li><span class="letra">B)</span>Anomalia de exclusão.</li>
+                        <li><span class="letra">C)</span>Anomalia de atualização.</li>
+                        <li><span class="letra">D)</span>Anomalia de inserção.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Dependência Funcional</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa a dependência funcional A → B?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A e B são sempre iguais.</li>
+                        <li><span class="letra">B)</span>Conhecendo A, sabe-se um único valor de B.</li>
+                        <li><span class="letra">C)</span>B é a chave primária de A.</li>
+                        <li><span class="letra">D)</span>A e B ficam sempre em tabelas diferentes, sem ligação.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Exemplo de Dependência</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual destas é uma dependência funcional correta no sistema da escola?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>turno → id_turma.</li>
+                        <li><span class="letra">B)</span>carga_curso → id_curso.</li>
+                        <li><span class="letra">C)</span>id_aluno → nome do aluno.</li>
+                        <li><span class="letra">D)</span>nome do aluno → id_aluno, sempre.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Curso e Carga</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A dependência curso → carga_curso indica que:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Conhecendo o curso, sabe-se a sua carga horária.</li>
+                        <li><span class="letra">B)</span>O curso não tem carga.</li>
+                        <li><span class="letra">C)</span>A carga define o curso de forma única.</li>
+                        <li><span class="letra">D)</span>Conhecendo a carga, sabe-se o aluno.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Definição de 1FN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando uma tabela está na primeira forma normal (1FN)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quando cada célula pode ter vários valores separados por vírgula.</li>
+                        <li><span class="letra">B)</span>Quando tem colunas telefone1, telefone2 e telefone3.</li>
+                        <li><span class="letra">C)</span>Quando todos os valores são atômicos, não há grupos repetidos e existe chave primária.</li>
+                        <li><span class="letra">D)</span>Quando não tem nenhuma chave.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Valor Atômico</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um valor atômico?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um valor nulo obrigatório.</li>
+                        <li><span class="letra">B)</span>Um valor criptografado.</li>
+                        <li><span class="letra">C)</span>Um único valor por célula.</li>
+                        <li><span class="letra">D)</span>Um valor com muitos dados separados por vírgula.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Telefones na Mesma Célula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A célula &quot;99999-1111, 98888-2222&quot; fere qual forma normal?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nenhuma.</li>
+                        <li><span class="letra">B)</span>2FN.</li>
+                        <li><span class="letra">C)</span>1FN, porque a célula tem mais de um valor.</li>
+                        <li><span class="letra">D)</span>3FN.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Grupos Repetidos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">As colunas telefone1, telefone2 e telefone3 são exemplo de:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Atributo referencial.</li>
+                        <li><span class="letra">B)</span>Dependência transitiva.</li>
+                        <li><span class="letra">C)</span>Chave composta correta.</li>
+                        <li><span class="letra">D)</span>Grupo repetido, que fere a 1FN.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Solução para a 1FN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como resolver os vários telefones do aluno para atingir a 1FN?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Criar a tabela TELEFONE_ALUNO (id_aluno, telefone), com uma linha por telefone.</li>
+                        <li><span class="letra">B)</span>Criar 10 colunas de telefone.</li>
+                        <li><span class="letra">C)</span>Juntar todos os telefones num campo de texto maior.</li>
+                        <li><span class="letra">D)</span>Apagar os telefones extras.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Definição de 2FN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando uma tabela está na segunda forma normal (2FN)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quando tem exatamente duas colunas.</li>
+                        <li><span class="letra">B)</span>Quando tem duas chaves primárias.</li>
+                        <li><span class="letra">C)</span>Quando não está na 1FN.</li>
+                        <li><span class="letra">D)</span>Quando está na 1FN e todo atributo não chave depende da chave inteira.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Dependência Parcial</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é dependência parcial?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quando um atributo depende de outro atributo não chave.</li>
+                        <li><span class="letra">B)</span>Quando a tabela não tem chave.</li>
+                        <li><span class="letra">C)</span>Quando um atributo depende só de uma parte de uma chave composta.</li>
+                        <li><span class="letra">D)</span>Quando o atributo é composto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">2FN e Chave Simples</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Uma tabela na 1FN com chave primária simples, de uma só coluna, pode ter dependência parcial?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Sim, sempre.</li>
+                        <li><span class="letra">B)</span>Só se a chave for texto.</li>
+                        <li><span class="letra">C)</span>Não, a dependência parcial só ocorre com chave composta.</li>
+                        <li><span class="letra">D)</span>Sim, se tiver mais de dez colunas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Nome do Aluno na Matrícula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na tabela com chave (id_aluno, id_turma), o atributo nome_aluno depende só de id_aluno. O que fazer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mover nome_aluno para a tabela ALUNO.</li>
+                        <li><span class="letra">B)</span>Apagar a tabela ALUNO.</li>
+                        <li><span class="letra">C)</span>Deixar nome_aluno na tabela de matrículas.</li>
+                        <li><span class="letra">D)</span>Copiar nome_aluno para TURMA.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Turno na Matrícula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na tabela com chave (id_aluno, id_turma), o turno depende só de id_turma. Para onde ele vai?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Fica na matrícula.</li>
+                        <li><span class="letra">B)</span>Para a tabela TURMA.</li>
+                        <li><span class="letra">C)</span>Para a tabela ALUNO.</li>
+                        <li><span class="letra">D)</span>Para a tabela TELEFONE_ALUNO.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Data da Matrícula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na tabela com chave (id_aluno, id_turma), por que data_matricula fica nela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque depende da chave inteira: da combinação daquele aluno com aquela turma.</li>
+                        <li><span class="letra">B)</span>Porque datas nunca saem de tabela nenhuma.</li>
+                        <li><span class="letra">C)</span>Porque depende só do aluno.</li>
+                        <li><span class="letra">D)</span>Porque depende só da turma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Definição de 3FN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando uma tabela está na terceira forma normal (3FN)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quando tem exatamente três tabelas.</li>
+                        <li><span class="letra">B)</span>Quando está só na 1FN.</li>
+                        <li><span class="letra">C)</span>Quando está na 2FN e nenhum atributo não chave depende de outro atributo não chave.</li>
+                        <li><span class="letra">D)</span>Quando tem três chaves primárias.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Dependência Transitiva</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é dependência transitiva?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quando A → B e B → C, fazendo C depender da chave por meio de outro atributo não chave.</li>
+                        <li><span class="letra">B)</span>Quando o valor é atômico.</li>
+                        <li><span class="letra">C)</span>Quando a tabela tem chave composta.</li>
+                        <li><span class="letra">D)</span>Quando o atributo depende da chave inteira.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Carga do Curso na Turma</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em TURMA (id_turma, turno, id_curso, nome_curso, carga_curso), por que nome_curso e carga_curso ferem a 3FN?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque dependem do curso, e não diretamente da turma (dependência transitiva).</li>
+                        <li><span class="letra">B)</span>Porque dependem só de parte da chave composta.</li>
+                        <li><span class="letra">C)</span>Porque são valores não atômicos.</li>
+                        <li><span class="letra">D)</span>Porque não têm acento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Correção da 3FN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como corrigir TURMA (id_turma, turno, id_curso, nome_curso, carga_curso) para a 3FN?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Juntar TURMA e CURSO em uma só tabela com todos os campos.</li>
+                        <li><span class="letra">B)</span>Copiar a carga para ALUNO.</li>
+                        <li><span class="letra">C)</span>Apagar id_curso de TURMA.</li>
+                        <li><span class="letra">D)</span>Criar CURSO (id_curso, nome_curso, carga_curso) e deixar em TURMA só id_curso como chave estrangeira.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Regra de Bolso</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual frase resume as três formas normais?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Toda tabela deve repetir o nome do cliente.</li>
+                        <li><span class="letra">B)</span>Cada tabela deve ter o maior número de colunas possível.</li>
+                        <li><span class="letra">C)</span>Cada atributo depende do usuário que o criou.</li>
+                        <li><span class="letra">D)</span>Cada atributo depende da chave, da chave inteira e de nada além da chave.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Ordem das Formas Normais</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem correta para normalizar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>2FN, depois 3FN, sem 1FN.</li>
+                        <li><span class="letra">B)</span>Qualquer ordem dá o mesmo resultado.</li>
+                        <li><span class="letra">C)</span>3FN, depois 1FN.</li>
+                        <li><span class="letra">D)</span>1FN, depois 2FN, depois 3FN.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Resultado da Escola</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual conjunto de tabelas resulta da normalização da planilha da escola?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ALUNO, TELEFONE_ALUNO, CURSO, TURMA e MATRICULA.</li>
+                        <li><span class="letra">B)</span>Apenas ALUNO e CURSO.</li>
+                        <li><span class="letra">C)</span>PLANILHA1 e PLANILHA2.</li>
+                        <li><span class="letra">D)</span>Uma única tabela com todos os campos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Normalização e DER</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois de normalizar, as tabelas devem ser conferidas com:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O manual do sistema operacional.</li>
+                        <li><span class="letra">B)</span>O DER da aula 9, para ver se coincidem com as entidades e associativas.</li>
+                        <li><span class="letra">C)</span>A lista de senhas.</li>
+                        <li><span class="letra">D)</span>O arquivo pg_hba.conf.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Mudança da Carga</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois da normalização, a carga do Excel muda para 44 h. Quantos lugares precisam ser alterados?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nenhum, a carga não pode mudar.</li>
+                        <li><span class="letra">B)</span>Um só: a linha do Excel na tabela CURSO.</li>
+                        <li><span class="letra">C)</span>Todas as linhas de matrícula do Excel.</li>
+                        <li><span class="letra">D)</span>Todas as turmas do Excel.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Pedido com Dados do Cliente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">PEDIDO (id_pedido, data, id_cliente, nome_cliente, cidade_cliente) fere qual forma normal?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1FN, pois tem chave simples.</li>
+                        <li><span class="letra">B)</span>2FN, pois tem chave composta.</li>
+                        <li><span class="letra">C)</span>3FN, pois nome e cidade dependem do cliente, não do pedido.</li>
+                        <li><span class="letra">D)</span>Nenhuma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Correção do Pedido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como normalizar PEDIDO (id_pedido, data, id_cliente, nome_cliente, cidade_cliente)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>PEDIDO com todos os campos e CLIENTE vazio.</li>
+                        <li><span class="letra">B)</span>PEDIDO (id_pedido, data, id_cliente) e CLIENTE (id_cliente, nome, cidade).</li>
+                        <li><span class="letra">C)</span>Apagar o cliente do pedido.</li>
+                        <li><span class="letra">D)</span>Juntar PEDIDO e PRODUTO.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Item do Pedido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">ITEM_PEDIDO (id_pedido, id_produto, quantidade, nome_produto) tem nome_produto dependendo só de id_produto. Que forma normal é ferida?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1FN.</li>
+                        <li><span class="letra">B)</span>2FN, por dependência parcial da chave composta.</li>
+                        <li><span class="letra">C)</span>Nenhuma.</li>
+                        <li><span class="letra">D)</span>3FN apenas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Preço no Item</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que guardar o preço unitário no ITEM_PEDIDO não é, necessariamente, um erro de normalização?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o preço nunca muda.</li>
+                        <li><span class="letra">B)</span>Porque normalização não vale para preços.</li>
+                        <li><span class="letra">C)</span>Porque o item não tem chave.</li>
+                        <li><span class="letra">D)</span>Porque é o preço daquela venda (histórico), que não deve mudar quando o preço atual do produto mudar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Desnormalização</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é desnormalização?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apagar as chaves estrangeiras.</li>
+                        <li><span class="letra">B)</span>Esquecer de normalizar o banco.</li>
+                        <li><span class="letra">C)</span>Normalizar até a 5FN.</li>
+                        <li><span class="letra">D)</span>Repetir um dado de propósito, para ganhar desempenho, como decisão documentada e justificada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Justificar a Separação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a aula pede para justificar cada separação de tabela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para mostrar qual dependência funcional motivou a separação e defender a decisão.</li>
+                        <li><span class="letra">B)</span>Porque o SGBD exige um texto para cada tabela.</li>
+                        <li><span class="letra">C)</span>Porque a justificativa substitui o DER.</li>
+                        <li><span class="letra">D)</span>Para aumentar o tamanho do documento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Biblioteca</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">EMPRESTIMO (id_emprestimo, data, id_livro, titulo_livro, autor_livro) tem título e autor dependendo do livro. O que fazer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Criar uma coluna titulo2.</li>
+                        <li><span class="letra">B)</span>Apagar o livro do sistema.</li>
+                        <li><span class="letra">C)</span>Mover título e autor para LIVRO e deixar id_livro em EMPRESTIMO.</li>
+                        <li><span class="letra">D)</span>Manter tudo em EMPRESTIMO.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Clínica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">CONSULTA (id_consulta, data, id_medico, nome_medico, especialidade) tem dados do médico. Qual é a forma normal ferida?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>3FN, por dependência transitiva pelo id_medico.</li>
+                        <li><span class="letra">B)</span>Nenhuma.</li>
+                        <li><span class="letra">C)</span>2FN, pois a chave é composta.</li>
+                        <li><span class="letra">D)</span>1FN.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Endereço em Várias Partes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O campo endereço &quot;Rua A, 10, Centro, Rio do Sul&quot; num só valor, quando a escola precisa filtrar por bairro, prejudica qual princípio?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nenhum, está correto.</li>
+                        <li><span class="letra">B)</span>A 3FN, sempre.</li>
+                        <li><span class="letra">C)</span>A atomicidade (1FN), pois o sistema precisa usar as partes separadamente.</li>
+                        <li><span class="letra">D)</span>A durabilidade.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Tabela sem Chave</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Uma tabela sem chave primária pode estar na 1FN?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Sim, sempre.</li>
+                        <li><span class="letra">B)</span>Não, a 1FN exige uma chave primária.</li>
+                        <li><span class="letra">C)</span>Só se tiver mais de cem linhas.</li>
+                        <li><span class="letra">D)</span>Só se tiver acentos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Redundância e Normalização</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O nome do aluno repetido em todas as linhas de matrícula é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma boa prática de desempenho sempre.</li>
+                        <li><span class="letra">B)</span>Exigência da 3FN.</li>
+                        <li><span class="letra">C)</span>Redundância, que a normalização elimina.</li>
+                        <li><span class="letra">D)</span>Um atributo referencial.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Anomalia e Consequência</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a consequência prática de uma anomalia de atualização?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dados contraditórios, com o mesmo fato com valores diferentes em linhas diferentes.</li>
+                        <li><span class="letra">B)</span>O banco fica mais rápido.</li>
+                        <li><span class="letra">C)</span>O DER fica mais bonito.</li>
+                        <li><span class="letra">D)</span>O servidor muda de porta.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Dinâmica: Primeiro Passo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica &quot;Desmonta a planilha&quot;, qual é o primeiro passo do grupo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Criar o banco no PostgreSQL.</li>
+                        <li><span class="letra">B)</span>Apontar um exemplo de cada anomalia na planilha.</li>
+                        <li><span class="letra">C)</span>Escrever o backup.</li>
+                        <li><span class="letra">D)</span>Apagar a planilha.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Dinâmica: Justificativa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica, como o grupo justifica cada separação de tabela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Pela cor da planilha.</li>
+                        <li><span class="letra">B)</span>Pela preferência pessoal.</li>
+                        <li><span class="letra">C)</span>Pelo número de linhas.</li>
+                        <li><span class="letra">D)</span>Pela dependência funcional que motivou a separação.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Entrega da SA 1</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o grupo entrega nesta aula, na SA 1?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O script de backup.</li>
+                        <li><span class="letra">B)</span>As tabelas do sistema de matrículas na 3FN, com chaves, dependências e justificativas, conferidas com o DER.</li>
+                        <li><span class="letra">C)</span>A configuração do servidor.</li>
+                        <li><span class="letra">D)</span>Apenas o documento de escopo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Chave da Associativa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na tabela MATRICULA (id_aluno, id_turma, data_matricula), qual é a chave primária?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não precisa de chave.</li>
+                        <li><span class="letra">B)</span>Somente o nome do aluno.</li>
+                        <li><span class="letra">C)</span>Somente data_matricula.</li>
+                        <li><span class="letra">D)</span>A chave composta (id_aluno, id_turma), ou um id próprio com UNIQUE na combinação.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">FK Depois da 3FN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois da 3FN, TURMA guarda id_curso. Esse campo é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Chave estrangeira para CURSO.</li>
+                        <li><span class="letra">B)</span>Chave primária de ALUNO.</li>
+                        <li><span class="letra">C)</span>Atributo descritivo sem ligação.</li>
+                        <li><span class="letra">D)</span>Grupo repetido.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Dados Contraditórios</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A planilha mostra o Excel com 40 h numa linha e 44 h em outra. Qual é a causa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Redundância: a carga está repetida em várias linhas e foi alterada em só algumas.</li>
+                        <li><span class="letra">B)</span>O curso tem duas cargas diferentes de propósito.</li>
+                        <li><span class="letra">C)</span>Erro do sistema operacional.</li>
+                        <li><span class="letra">D)</span>Falta de UTF8.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Curso Novo Sem Aluno</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois da normalização, como a escola cadastra um curso novo ainda sem alunos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não é possível.</li>
+                        <li><span class="letra">B)</span>Inserindo uma linha em CURSO, sem precisar de matrícula.</li>
+                        <li><span class="letra">C)</span>Criando uma matrícula falsa.</li>
+                        <li><span class="letra">D)</span>Editando a planilha antiga.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Apagar Matrícula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois da normalização, ao apagar a única matrícula do Python, o que acontece com o curso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O curso é apagado junto.</li>
+                        <li><span class="letra">B)</span>O curso continua cadastrado em CURSO.</li>
+                        <li><span class="letra">C)</span>A carga do curso é zerada.</li>
+                        <li><span class="letra">D)</span>Todos os alunos são apagados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">3FN e Turma</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em TURMA (id_turma, codigo, turno, id_curso), por que a tabela está na 3FN?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque tem quatro colunas.</li>
+                        <li><span class="letra">B)</span>Porque repete a carga do curso.</li>
+                        <li><span class="letra">C)</span>Porque codigo e turno dependem só de id_turma, e id_curso é chave estrangeira.</li>
+                        <li><span class="letra">D)</span>Porque não tem chave primária.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Normalização e Requisitos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a normalização ajuda a atender o requisito &quot;alterações em um só lugar&quot; do cliente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque impede qualquer alteração.</li>
+                        <li><span class="letra">B)</span>Porque copia o dado em todas as tabelas.</li>
+                        <li><span class="letra">C)</span>Porque apaga os dados antigos.</li>
+                        <li><span class="letra">D)</span>Porque cada fato fica guardado uma única vez, na tabela certa.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Aula 10: Normalização de Dados (1FN, 2FN e 3FN)</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

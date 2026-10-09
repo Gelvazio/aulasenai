@@ -1,0 +1,18 @@
+> Etapa movida do `tasks/STATUS.md` em 2026-10-09 (texto sem alteração; links relativos ajustados à pasta). Índice e estado geral: [../STATUS.md](../STATUS.md).
+
+## Etapa 125 — Banco de Dados 100% no padrão da ITIC, etapa 1 sem a apostila (tarefa grande #20-2ac1a8ec-911b-466f, pedida em 2026-10-09 13:26:40)
+
+Matéria: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/` (renomeada em 2026-10-09) · Plano: [docs/banco-de-dados-materia-100.md](../../docs/banco-de-dados-materia-100.md) · Descrição: `TASKS.md` #20.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 125.0 | Tarefa registrada no `TASKS.md` e no "📌 Tarefas" | ✅ Concluído | 2026-10-09 13:27 | Leitura |
+| 125.1 | Plano em `docs/` e aprovação do usuário | ✅ Concluído | 2026-10-09 13:40 | Usuário escolheu: 80 h / 20 aulas, renomear para `BANCO-DE-DADOS`, PostgreSQL, apagar os arquivos antigos |
+| 125.2 | Permissão `VERIFICAR`, pasta renomeada `BANCO-DE-DADOS` (links de 21 `index.html`), antigos apagados (gabarito, exemplo-biblioteca, avaliação de outro curso), `EMENTA-CHALKIE-AI.md` v2.0 da UC (80 h) + `STATUS-EMENTAS.md` e `materia.json` | ✅ Concluído | 2026-10-09 13:50 | Ementa 14.923 caracteres; `json.tool` OK; 20 aulas somando 80 h |
+| 125.2a | Links quebrados pela troca de nome corrigidos (pedido do usuário, Supabase MCP): banco conferido em todas as colunas de texto — nenhuma referência ao caminho antigo; 22 `index.html` do curso apontam para `BANCO-DE-DADOS`; textos em `STATUS-EMENTAS-CURSOS.md` (linha 158 → VERIFICAR), `ANALISE-GERACAO-AULAS.md`, `INDEX.md` da matéria e `docs/regra-pasta-materia-vinculo-uc.md` | ✅ Concluído | 2026-10-09 14:08 | `git grep` sem o caminho antigo nos HTML; varredura de links de todos os 265 HTML |
+| 125.2b | Varredura de links quebrados em todos os HTML (pedido do usuário): corrigidos "← Índice" das 3 atividades de sexta da ITIC (`../index.html`), link da apresentação do professor em Fundamentos da Tecnologia e removidos 12 botões "📄 Questões (.md)" do índice da ITIC (apontavam para fontes com gabarito, fora do Git). Restam 85 links em 34 páginas, todos explicados: `Scripts-Comunicacao` (25 páginas antigas), app do WhatsApp (servidor próprio), 4 atividades de Comunicação Oral sem `ATIVIDADES/index.html` (Etapa 71) e 4 templates dos geradores | ✅ Concluído | 2026-10-09 14:08 | Varredura: 101 → 85 links |
+| 125.3 | Aulas em `CONTEUDO/` (uma por vez, cada uma com objetiva e prática — itens 125.3 e 125.4 juntos) + `AULAS/STATUS-AULAS.md`, `STATUS-ATIVIDADES.md`, `PLANO-AULAS.md` | 🔄 Em progresso — aulas 01 a 15 ✅ (última em 2026-10-09 15:15); próxima: 16 | — | Aula 01: 50 questões no HTML sem gabarito; prática 10 × 3 com 30 padrões; índice da matéria e card do curso atualizados; seeds gerados em `database/` (no Git desde 2026-10-09 14:09, fora da Vercel, não aplicados) |
+| 125.4 | Atividades por aula (objetiva de 50 + prática padrão id 82), fontes em `ATIVIDADES/CONTEUDO/`, `STATUS-ATIVIDADES.md`, índice regerado; seeds só com pedido | ⬜ Pendente | — | — |
+| 125.5 | Avaliações e média final no modelo da ITIC (se a ementa pedir) | ⬜ Pendente | — | — |
+| 125.6 | `scripts/analise-materias.py`: sem pendências, exceto as da apostila | ⬜ Pendente | — | — |
+| 125.7 | Aceite do usuário | ⬜ Pendente | — | — |
