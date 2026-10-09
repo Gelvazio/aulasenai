@@ -84,7 +84,7 @@ function montarUsuarioDaLista(aluno, turma) {
 
 /**
  * Transforma a lista de presença em usuários do Auth mais a linha da tabela aluno.
- * @param {{turmas: Object[]}} lista - window.LISTA_PRESENCA.
+ * @param {{turmas: Object[]}} lista - Lista (ou turmas reunidas) do LISTAPRESENCA.js.
  * @returns {Object[]} Usuários: email, senha, appMetadata, userMetadata, linhaAluno.
  */
 function montarUsuariosDaLista(lista) {
@@ -216,7 +216,7 @@ async function gravarUsuariosNoAuth(usuarios, contexto, aoResultado) {
 
 /**
  * Grava turmas, usuários do Auth e alunos no Supabase.
- * @param {{turmas: Object[]}} lista - window.LISTA_PRESENCA.
+ * @param {{turmas: Object[]}} lista - Lista (ou turmas reunidas) do LISTAPRESENCA.js.
  * @param {{redefinirSenhas: boolean, aoResultado: Function}} opcoes - Opção e callback de log.
  * @returns {Promise<Object>} Resumo com criado, atualizado e erro.
  * @throws {Error} Se a chave, o host ou os dados forem inválidos.

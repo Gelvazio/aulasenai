@@ -39,7 +39,7 @@ assets/
 │                        SOMENTE no banco (sem localStorage); ativado com
 │                        `- **Folha de respostas:** sim` no .md;
 │                        lista-presenca.js + css/lista-presenca.css — página LISTA-PRESENCA.html
-│                        da matéria, uma tabela por turma a partir de ATIVIDADES/LISTA-PRESENCA.js;
+│                        da matéria, uma tabela por turma (UC em data-uc) a partir de scripts/LISTAPRESENCA.js;
 │                        css/login.css — página login.html da raiz, com js/login.js (Supabase Auth,
 │                        orientação em docs/ORIENTACAO_JS_LOGIN.md);
 │                        respostas-atividade-banco.js — grava alternativas/entrega no Supabase

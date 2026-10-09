@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 15:09:56
+**Versão das regras:** 2026-10-09 18:06:19
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 18:06:19 | **Regra do `graphify update .` removida:** o grafo não é mais atualizado nem lido automaticamente (início de sessão, commits, `GRAPH_REPORT.md`); só roda quando o usuário pedir (`/graphify`) |
+| 2026-10-09 18:00:00 | **Lista de presença única:** todas as listas em `scripts/LISTAPRESENCA.js` (versionado, fora do site); páginas e `criar-usuarios-supabase-auth.js --turma=CODIGO` leem só dele (`docs/regras/usuarios-turmas-paginas-professor.md`) |
+| 2026-10-09 17:25:12 | **`.gitignore` mínimo:** só `__pycache__/`, graphify, `variaveis.js` e `.env`; binários, gabaritos, listas de presença e `LISTA-ALUNOS/` saem do site pelo `.vercelignore` (regra "O QUE NUNCA É PUBLICADO" reescrita) |
 | 2026-10-09 15:09:56 | `docs/regras/atividades.md` (Reforço de Linguagens): `-GABARITO.md` "no Git e fora do site", como a regra geral (revisão do PR) |
 | 2026-10-09 15:08:47 | **Banco de questões do AVA (Moodle XML) removido:** regra de `docs/regras/atividades.md`, gerador `assets/gerador-banco-ava/`, pasta `BANCO-AVA/` da ITIC, planos em `docs/` e todas as citações (pedido do usuário) |
-| 2026-10-09 15:08:10 | **`BANCO-AVA/` coerente com a regra do gabarito:** tabela da ITIC no `CLAUDE.md`, `docs/regras/atividades.md` e `docs/regras/assets-e-geradores.md` dizem "no Git, fora do site" (apontado na revisão do PR) |
-| 2026-10-09 15:03:21 | **Registro da sessão em `SESSOES-CLAUDE/` removido** (regra, pergunta do fim da tarefa, leitura do `STATUS-SESSOES.md` e a pasta): o estado fica só no `STATUS.md`, onde já estavam todas as pendências dos logs |
-| 2026-10-09 15:00:25 | **Nuvem: sem a pergunta "Deseja atualizar o log da sessão atual?"** no fim da tarefa (só no ambiente local); a frase final continua |
 
 ---
 
@@ -270,7 +270,7 @@ Registrada em 2026-10-09 13:20:11 a pedido do usuário.
   `MATERIAIS/` (menos `MATERIAS-GERAIS` e `AGENDA_COLABORADOR`), confere cada matéria no padrão da
   matéria modelo (ITIC) e grava **o que falta e o que está OK** em
   **`tasks/ANALISE-MATERIAS-RELATORIO.json`**. Só lê as matérias; não altera nada nelas.
-- ✅ **Rodar SEMPRE:** no início de cada sessão (junto com o graphify) e ao concluir qualquer tarefa
+- ✅ **Rodar SEMPRE:** no início de cada sessão e ao concluir qualquer tarefa
   que mexa numa matéria; o JSON atualizado entra no commit da tarefa e a linha da tarefa #19 no
   `STATUS.md` recebe os números (cursos, matérias, completas, incompletas) e a data e hora da rodada.
 - ⛔ **A tarefa #19 NUNCA fica com status CONCLUÍDO** (nem ✅ no `STATUS.md`, nem removida do
@@ -608,25 +608,14 @@ USING (id = auth.uid());
 
 ---
 
-## 🚀 LEIA PRIMEIRO — Grafo de Conhecimento do Projeto
+## 🕸️ GRAFO (graphify) — SÓ QUANDO O USUÁRIO PEDIR
 
-⚠️ **ANTES DE QUALQUER COISA, leia o relatório do grafo de conhecimento para entender a arquitetura completa:**
+Alterada em 2026-10-09 18:06:19 a pedido do usuário.
 
-📄 **Arquivo:** `graphify-out/GRAPH_REPORT.md`  
-📍 **Localização:** `C:\fontes\aulasenai\graphify-out\GRAPH_REPORT.md`  
-🔄 **Atualização:** a cada sessão (`graphify update .`); a data e os números (nós, arestas,
-comunidades) ficam no topo do próprio `GRAPH_REPORT.md` — não copiar para cá (ficam velhos).
-⚡ **Comando (sem perguntar):** `C:\Python314\python.exe -m graphify update .` na raiz do projeto, **no início de cada conversa** e **depois de cada sessão/commit de tarefa** (Python sempre `C:\Python314\python.exe`). Antes de responder, ler o `graphify-out/GRAPH_REPORT.md`.
-
-Este relatório contém:
-- ✅ Visão geral da estrutura do projeto (nós e arestas)
-- ✅ Comunidades de código (clusters)
-- ✅ Dependências entre arquivos
-- ✅ Padrões de arquitetura
-- ✅ Hot spots (arquivos críticos)
-- ✅ Mapa completo de navegação
-
-**Por quê?** O GRAPH_REPORT fornece uma análise automática de toda a codebase, enquanto este CLAUDE.md e `docs/regras/` trazem as regras do projeto. Juntos, oferecem visão 360° do projeto.
+- ⛔ **Não rodar `graphify update .` automaticamente** (nem no início da conversa, nem depois de
+  sessões ou commits) e **não ler o `graphify-out/GRAPH_REPORT.md` antes de responder**.
+- ✅ O graphify só roda quando o usuário pedir (ex.: `/graphify`); a skill continua em
+  `.claude/skills/graphify/`.
 
 ---
 
@@ -746,29 +735,28 @@ SQL: `database/2026-10-02-turmaprofessor-professor-administrador.sql` (aplicado 
 Registrada em 2026-09-28. O repositório vai para o GitHub e a Vercel publica **todo** o conteúdo
 versionado (inclusive `database/`).
 
-- ✅ **Gabarito vai para o Git, mas NUNCA é publicado na Vercel** (alterada em 2026-10-09 14:09:46, pedido do
-  usuário): `-GABARITO.md`, fontes `*QUESTOES.md` e `PROVA-OBJETIVA-*.md`, seeds
-  `database/*-seed-atividades.sql` são **versionados** (na nuvem, o que não entra no
-  commit se perde) e ficam **fora do site** pelo **`.vercelignore`**. Arquivo novo com resposta certa:
-  acrescentar o padrão ao `.vercelignore` **antes** do commit.
-- ❌ **Gabarito nunca em página de aluno** (HTML, PDF ou consulta), salvo a liberação do professor
-  por turma (`docs/regras/atividades.md`).
-- ❌ **Dados pessoais de alunos (LGPD):** `LISTA-PRESENCA.js` no `.gitignore`; listas `.docx`
-  continuam fora (regra `*.docx`). A página `LISTA-PRESENCA.html` não contém dados (lê o `.js`
-  local).
-- ❌ `__pycache__/` e arquivos gerados pelo Python.
-- ✅ **Publicados por exceção no `.gitignore`:** slides `*.pdf` e `*.pptx` das pastas
-  `MATERIAIS/**/ATIVIDADES/` (os índices apontam para eles). `*.pdf`/`*.pptx` são binários no
-  `.gitattributes`.
-- ✅ Antes de cada commit, conferir `git diff --cached --name-only` contra esta lista.
-- ✅ **Gabarito no Git, fora do site** (2026-10-06, pedido do usuário): o `.vercelignore` exclui da
-  publicação na Vercel todo arquivo com "gabarito" no nome. Assim
-  `GERADOR-AULAS/.../GABARITO_PROVA_OBJETIVA_UC1_TIC.html` fica versionado, mas os alunos não o
-  acessam pelo site. ⚠️ Se o repositório do GitHub for público, o arquivo continua visível lá.
-- ✅ **`*.md` e `*.py` são versionados** (liberados em 2026-09-30). Os que têm resposta certa
-  (`*gabarito*`, `*QUESTOES.md`, `docs/atividade-raciocinio-logico.md`) também vão para o Git, mas
-  ficam no **`.vercelignore`** (não publicados). Senha, chave secreta e dados pessoais de aluno
-  continuam **fora do Git** (`.gitignore`). Conferir `git diff --cached --name-only` sempre.
+📄 **O `.gitignore` atual é a referência** (definido pelo usuário em 2026-10-09 17:25:12). Ele
+ignora **só** `__pycache__/`, `graphify-output/cache/`, `graphify-out/`, `variaveis.js` (chave
+`service_role`) e `.env`. **Todo o resto é versionado** (vai para o GitHub, que é privado).
+
+O que **não pode ir ao site** fica no **`.vercelignore`**:
+
+| Padrão no `.vercelignore` | Por quê |
+|---|---|
+| `*[Gg][Aa][Bb][Aa][Rr][Ii][Tt][Oo]*`, `RESOLUCAO/`, `*QUESTOES.md`, `PROVA-OBJETIVA-*.md`, `database/*-seed-atividades.sql`, `docs/atividade-raciocinio-logico.md` | Respostas certas (só o professor) |
+| `*.pdf`, `*.png`, `*.docx`, `*.pptx`, `*.xlsx`, `*.jpg`, `*.jpeg` | Binários; exceção: `!MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/AULAS/*.pdf` (slides publicados) |
+| `LISTAPRESENCA*.js`, `LISTA-PRESENCA*.js`, `LISTA-ALUNOS/` | Dados pessoais de alunos (LGPD); a lista única `scripts/LISTAPRESENCA.js` é versionada (decisão do usuário, 2026-10-09) |
+
+- ⚠️ **Sem o `.gitignore`, o Git não barra mais nada disso:** gabaritos, listas de presença
+  (nomes, e-mails, senhas iniciais, CPF), documentos pessoais e binários aparecem como arquivos
+  novos. **Nunca `git add .`**: adicionar só os caminhos da tarefa e conferir
+  `git diff --cached --name-only` antes de cada commit. Dado pessoal de aluno, senha, CPF ou
+  documento pessoal **não entra no commit** sem pedido expresso do usuário.
+- ⛔ **O `.vercelignore` só protege o site**, não o GitHub. Arquivo novo com resposta certa ou dado
+  pessoal que não case com os padrões acima: acrescentar o padrão ao `.vercelignore` **antes** do
+  commit (senão vai ao ar).
+- ⛔ **Gabarito nunca em página de aluno** (HTML, JS ou PDF do aluno) — continua valendo.
+- ✅ A página `LISTA-PRESENCA.html` não contém dados (lê o `scripts/LISTAPRESENCA.js`, lista única de presença — regra em `docs/regras/usuarios-turmas-paginas-professor.md`).
 
 ## 🗄️ REGRA — BANCO REAL ANTES DE ALTERAR O SCHEMA
 
@@ -883,8 +871,8 @@ regra global de mesmo nome.
 - ⛔ **Não rodar `git status` repetido** entre comandos nem depois do commit; conferir só
   `git diff --cached --name-only` antes de commitar.
 - ⛔ **Não usar git worktree:** trabalhar direto na `main` (local) ou na branch da sessão (nuvem).
-- ✅ Arquivos ignorados pelo Git (gabaritos, fontes de questões, listas de alunos) não entram no
-  commit; não usar `-f` para forçá-los. Desde 2026-09-30 os `*.md` e `*.py` **são versionados**
+- ✅ Gabaritos, fontes de questões, listas de alunos e documentos pessoais não entram no commit
+  sem pedido do usuário (o `.gitignore` não os barra mais: ver "O QUE NUNCA É PUBLICADO"). Desde 2026-09-30 os `*.md` e `*.py` **são versionados**
   (inclusive este `CLAUDE.md`, os planos em `docs/` e os geradores em `assets/`).
 
 ---
@@ -1073,7 +1061,6 @@ Registrada em 2026-10-09 a pedido do usuário.
 
 ✅ Tudo conforme `C:\Users\gelva\.claude\CLAUDE.md` (global)  
 ✅ **Fonte única de regras:** este `CLAUDE.md` + os arquivos de `docs/regras/` listados no "ÍNDICE DAS REGRAS DETALHADAS" (desde 2026-10-07). O `AGENTS.md` (Codex e outros agentes) contém apenas a instrução de ler e seguir este arquivo — o conteúdo que existia nele foi mesclado aqui em 2026-09-23. Novas regras são escritas **somente aqui ou em `docs/regras/`**.  
-✅ Grafo: `graphify update .` após cada sessão  
 ✅ Documentação: `docs/<tarefa>.md` antes de implementar nas **tarefas grandes** (as pequenas dispensam o plano — ver "REGRAS DO USUÁRIO QUE VALEM SEMPRE"); `STATUS.md` em todas  
 ✅ **Fluxo da documentação padrão (tarefas grandes, skill `documentacao-padrao` em `.claude/skills/`):** se não houver `docs/`, pedir autorização para criar; o plano `docs/<nome-em-kebab-case>.md` traz objetivo, escopo, arquivos, riscos e dependências, **data e hora de criação, de conclusão e o tempo decorrido**, e passos numerados (ação, caminho exato, verificação sem navegador nem teste automatizado) com ⬜/🔄/✅/⛔; mostrar o resumo e pedir aprovação; executar só o aprovado; no fim registrar resultado, pendências e commit.  
 

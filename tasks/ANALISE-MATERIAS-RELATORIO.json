@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-10-09 18:15:54",
+  "gerado_em": "2026-10-09 18:16:58",
   "padrao": "Matéria modelo: Introdução à TIC (CLAUDE.md, 2026-10-03)",
   "pastas_que_nao_sao_curso": [
     "AGENDA_COLABORADOR",
@@ -17,9 +17,9 @@
     "RIO_DO_SUL_MAIS_TECH",
     "TECNICO-INFORMATICA-INTERNET"
   ],
-  "total_materias": 35,
+  "total_materias": 34,
   "completas": 2,
-  "incompletas": 33,
+  "incompletas": 32,
   "materias": [
     {
       "curso": "ASSISTENTE-DE-OPERACOES-LOGISTICAS",
@@ -307,7 +307,7 @@
         "ementa": true,
         "materia_json": true,
         "status_aulas": true,
-        "indice_atividades": false,
+        "indice_atividades": true,
         "status_atividades": true,
         "status_apostila": false
       },
@@ -323,7 +323,6 @@
         "dentro_da_faixa": true
       },
       "pendencias": [
-        "Gerar ATIVIDADES/index.html",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
       ]
@@ -450,40 +449,6 @@
         "Criar materia.json (copiado da ementa)",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
-        "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
-        "Gerar a atividade objetiva de 50 questões de cada aula",
-        "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
-      ]
-    },
-    {
-      "curso": "RIO_DO_SUL_MAIS_TECH",
-      "materia": "Scripts-Comunicacao",
-      "caminho": "MATERIAIS/RIO_DO_SUL_MAIS_TECH/Scripts-Comunicacao",
-      "completa": false,
-      "pecas": {
-        "ementa": true,
-        "materia_json": false,
-        "status_aulas": false,
-        "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
-      },
-      "contagem": {
-        "aulas_conteudo": 2,
-        "fontes_atividades": 0,
-        "atividades_50_questoes": 0,
-        "atividades_praticas": 0,
-        "apostila_html": 0
-      },
-      "ementa": {
-        "caracteres": 14918,
-        "dentro_da_faixa": true
-      },
-      "pendencias": [
-        "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"

@@ -855,6 +855,7 @@ Plano: [docs/reorganizar-comunicacao-oral-escrita-rio-do-sul.md](docs/reorganiza
 | 71.1 | Levantar a pasta `Scripts-Comunicacao` e escrever o plano em `docs/` | ✅ Concluído | 2026-10-07 21:25 | Plano com etapas A a F, riscos e lista dos binários fora do Git |
 | 71.2 | Aprovação do plano pelo usuário — aprovado: pasta `INTRODUCAO_COMUNICACAO_ORAL_ESCRITA`, backup dos binários fora do repositório | ✅ Concluído | 2026-10-07 21:27 | Resposta do usuário no chat |
 | 71.3 | Executar as etapas A a F do plano, um item por vez (andamento detalhado no plano) | 🔄 Em progresso | — | — |
+| 71.3a | Pedido do usuário (2026-10-09): pasta antiga `Scripts-Comunicacao` apagada (passos F.1 e F.2 adiantados; backup conferido) e `INTRODUCAO_COMUNICACAO_ORAL_ESCRITA/ATIVIDADES/index.html` gerado (D.11 parcial), com card no índice do curso Rio do Sul e na faixa das matérias. Links quebrados no projeto: 85 → 11 (só o app do WhatsApp e os templates dos geradores, que não são erro) | ✅ Concluído | 2026-10-09 14:12 | Varredura dos 235 HTML; `git diff` dos índices regravados só com o card/faixa novos |
 | 71.4 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Etapa 72 — Corrigir as contradições do CLAUDE.md, uma de cada vez (pedida em 2026-10-07)
@@ -1651,6 +1652,8 @@ Matéria: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/` (renomeada em
 | 125.0 | Tarefa registrada no `TASKS.md` e no "📌 Tarefas" | ✅ Concluído | 2026-10-09 13:27 | Leitura |
 | 125.1 | Plano em `docs/` e aprovação do usuário | ✅ Concluído | 2026-10-09 13:40 | Usuário escolheu: 80 h / 20 aulas, renomear para `BANCO-DE-DADOS`, PostgreSQL, apagar os arquivos antigos |
 | 125.2 | Permissão `VERIFICAR`, pasta renomeada `BANCO-DE-DADOS` (links de 21 `index.html`), antigos apagados (gabarito, exemplo-biblioteca, avaliação de outro curso), `EMENTA-CHALKIE-AI.md` v2.0 da UC (80 h) + `STATUS-EMENTAS.md` e `materia.json` | ✅ Concluído | 2026-10-09 13:50 | Ementa 14.923 caracteres; `json.tool` OK; 20 aulas somando 80 h |
+| 125.2a | Links quebrados pela troca de nome corrigidos (pedido do usuário, Supabase MCP): banco conferido em todas as colunas de texto — nenhuma referência ao caminho antigo; 22 `index.html` do curso apontam para `BANCO-DE-DADOS`; textos em `STATUS-EMENTAS-CURSOS.md` (linha 158 → VERIFICAR), `ANALISE-GERACAO-AULAS.md`, `INDEX.md` da matéria e `docs/regra-pasta-materia-vinculo-uc.md` | ✅ Concluído | 2026-10-09 14:08 | `git grep` sem o caminho antigo nos HTML; varredura de links de todos os 265 HTML |
+| 125.2b | Varredura de links quebrados em todos os HTML (pedido do usuário): corrigidos "← Índice" das 3 atividades de sexta da ITIC (`../index.html`), link da apresentação do professor em Fundamentos da Tecnologia e removidos 12 botões "📄 Questões (.md)" do índice da ITIC (apontavam para fontes com gabarito, fora do Git). Restam 85 links em 34 páginas, todos explicados: `Scripts-Comunicacao` (25 páginas antigas), app do WhatsApp (servidor próprio), 4 atividades de Comunicação Oral sem `ATIVIDADES/index.html` (Etapa 71) e 4 templates dos geradores | ✅ Concluído | 2026-10-09 14:08 | Varredura: 101 → 85 links |
 | 125.3 | Aulas em `CONTEUDO/` (uma por vez, cada uma com objetiva e prática — itens 125.3 e 125.4 juntos) + `AULAS/STATUS-AULAS.md`, `STATUS-ATIVIDADES.md`, `PLANO-AULAS.md` | 🔄 Em progresso — aulas 01 a 15 ✅ (última em 2026-10-09 15:15); próxima: 16 | — | Aula 01: 50 questões no HTML sem gabarito; prática 10 × 3 com 30 padrões; índice da matéria e card do curso atualizados; seeds gerados em `database/` (no Git desde 2026-10-09 14:09, fora da Vercel, não aplicados) |
 | 125.4 | Atividades por aula (objetiva de 50 + prática padrão id 82), fontes em `ATIVIDADES/CONTEUDO/`, `STATUS-ATIVIDADES.md`, índice regerado; seeds só com pedido | ⬜ Pendente | — | — |
 | 125.5 | Avaliações e média final no modelo da ITIC (se a ementa pedir) | ⬜ Pendente | — | — |
@@ -1705,3 +1708,24 @@ Matéria: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/` (renomeada em
 | 131.3 | ⚠️ Achado do script: a ementa de Testes de Front-End está com 14.955 caracteres (limite 14.950) — não corrigida (outra matéria; só com pedido do usuário) | ⛔ Aguardando o usuário | — | Contagem em Python |
 | 131.4 | Pedido do usuário (2026-10-09 15:08:47): remover tudo do banco do AVA — pasta `BANCO-AVA/` da ITIC (14 XML com respostas, estavam no Git), `assets/gerador-banco-ava/`, 3 planos em `docs/`, regra, seção do `STATUS-ATIVIDADES.md` da ITIC, `.vercelignore` e citações no `CLAUDE.md` | ✅ Concluído | 2026-10-09 15:08 | grep sem ocorrências fora do histórico |
 | 131.5 | Demais conversas do CodeRabbit: plano (caminho da pasta, prática 10 × 3, gabaritos no Git), regra do Reforço, texto da loja na aula 01 e instrução de cópia das 14 práticas (agora "sinalizadas ao professor"), páginas regeradas | ✅ Concluído | 2026-10-09 15:09 | Gerador: 14 × "0 sem padrão"; grep nos HTML |
+
+> ℹ️ As Etapas 132 a 134 vieram da `main` com os números 125 a 127 e foram renumeradas no merge de 2026-10-09 (os números 125 a 131 já eram usados nesta branch).
+
+## Etapa 132 — `.gitignore` mínimo e `.vercelignore` (tarefa pequena, pedido em 2026-10-09 17:20)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 132.1 | `.gitignore` só com `__pycache__/`, graphify, `variaveis.js` (e `.env`, acrescentado pelo usuário); demais padrões movidos para o `.vercelignore` | ✅ Concluído | 2026-10-09 17:40 | Leitura dos dois arquivos |
+| 132.2 | Regra "O QUE NUNCA É PUBLICADO" do `CLAUDE.md` reescrita + versão 2026-10-09 17:25:12 + histórico | ✅ Concluído | 2026-10-09 17:40 | Leitura do `CLAUDE.md` e do `docs/HISTORICO-REGRAS.md` |
+| 132.3 | Aceite do usuário (alertado: sem `.gitignore`, listas de presença, gabaritos e documentos pessoais podem ir ao GitHub num `git add` amplo) | ⬜ Pendente | — | — |
+
+## Etapa 133 — Lista de presença em um arquivo único `scripts/LISTAPRESENCA.js` (tarefa grande, pedido em 2026-10-09 17:45; plano [docs/lista-presenca-arquivo-unico.md](../docs/lista-presenca-arquivo-unico.md))
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 133.0 | Plano aprovado; decisões: alunos M1/V1 eram pessoas diferentes (ambos mantidos), antigos apagados, `LISTAPRESENCA.js` versionado | ✅ Concluído | 2026-10-09 17:55 | Respostas do usuário no chat |
+| 133.1–133.9 | Passos 1 a 9 do plano: arquivo único (157 pessoas), 3 páginas + script Node (`--turma=`), `.vercelignore`, regras/docs, 10 antigos apagados | ✅ Concluído | 2026-10-09 18:00 | `node --check`, contagens por turma, simulação do script Node |
+| 133.10 | Aceite do usuário (testar criarUsuariosBancoDados.html, relatorioAtividades.html e LISTA-PRESENCA.html da ITIC) | ⬜ Pendente | — | — |
+
+## Etapa 134 — Regra do `graphify update .` removida (tarefa pequena, pedido em 2026-10-09 18:05)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 134.1 | Regra removida do `CLAUDE.md` do projeto (seção "LEIA PRIMEIRO — Grafo" vira "GRAFO só quando o usuário pedir"), do `~/.claude/CLAUDE.md`, do `CLAUDE-DOCS-BEFORE-EVERY-TASK.md` e das cópias em `.claude/regras-globais/`; a skill `/graphify` continua | ✅ Concluído | 2026-10-09 18:08 | `grep graphify` nos arquivos de regras; cópias iguais às globais |

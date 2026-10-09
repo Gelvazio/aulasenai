@@ -1,5 +1,5 @@
 // Dados do relatorioAtividades.html: busca no Supabase as atividades da matéria, as turmas, os
-// alunos (banco + listas de presença em scripts/LISTA-PRESENCA*.js) e as tentativas de cada
+// alunos (banco + listas de presença em scripts/LISTAPRESENCA.js) e as tentativas de cada
 // aluno, e calcula o resumo por aluno (fez a atividade, status, tentativas e média).
 // Só o professor logado enxerga tudo (RLS). Depende de js/supabase.js (sbGet, sbH, SUPABASE).
 // Regra da média: soma das melhores notas das atividades LIBERADAS PARA A TURMA (ativo e turma
@@ -71,13 +71,12 @@ function agruparMateriasRel(atividades) {
 }
 
 /**
- * Lê as listas de presença carregadas pelos arquivos scripts/LISTA-PRESENCA*.js.
+ * Lê as listas de presença do arquivo único scripts/LISTAPRESENCA.js (sem a lista de professores).
  * @returns {{codigo: string, nome: string, turno: string, uc: string,
  *     alunos: Object[]}[]} Turmas das listas (professor excluído).
  */
 function lerListasPresencaRel() {
-    const listas = [...(window.LISTAS_PRESENCA || [])];
-    if (window.LISTA_PRESENCA) listas.push(window.LISTA_PRESENCA);
+    const listas = (window.LISTAS_PRESENCA || []).filter((lista) => lista.professores !== true);
     return listas.flatMap((lista) => (lista.turmas || []).map((turma) => ({
         codigo: String(turma.codigo), nome: turma.nome, turno: turma.turno || '',
         uc: turma.uc || lista.uc || '',

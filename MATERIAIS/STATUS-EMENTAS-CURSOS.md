@@ -33,7 +33,6 @@
 | VERIFICAR | RIO_DO_SUL_MAIS_TECH | OFICINAS_IMPRESSAO_3D_ROBOTICA |
 | VERIFICAR | RIO_DO_SUL_MAIS_TECH | REFORCO_LINGUAGENS |
 | VERIFICAR | RIO_DO_SUL_MAIS_TECH | REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO |
-| IGNORAR | RIO_DO_SUL_MAIS_TECH | Scripts-Comunicacao |
 | IGNORAR | TECNICO-INFORMATICA-INTERNET | ARQUITETURA-DE-HARDWARE-E-SOFTWARE |
 | VERIFICAR | TECNICO-INFORMATICA-INTERNET | BANCO-DE-DADOS |
 | IGNORAR | TECNICO-INFORMATICA-INTERNET | CODIFICACAO-PARA-BACK-END |
@@ -55,7 +54,7 @@
 | IGNORAR | TECNICO-INFORMATICA-INTERNET | Testes de Sistemas-EXISTENTES |
 | IGNORAR | TECNICO-INFORMATICA-INTERNET | VERSIONAMENTO-E-COLABORACAO |
 
-**Matérias valendo (curso e matéria em VERIFICAR):** 16 de 35
+**Matérias valendo (curso e matéria em VERIFICAR):** 16 de 34
 
 > Vale por matéria, dentro do curso. A matéria só é processada quando o **curso** e a **matéria**
 > estão em `VERIFICAR`; matéria em `IGNORAR` fica fora de pendências, ajustes
@@ -66,7 +65,7 @@
 
 # STATUS-EMENTAS-CURSOS — Consolidado
 
-**Última atualização:** 2026-10-09 15:07:46
+**Última atualização:** 2026-10-09 15:16:58
 **Escopo:** todos os cursos em `MATERIAIS/` (exceto `MATERIAS-GERAIS/`)
 **Fonte:** tamanho medido direto em cada `EMENTA-CHALKIE-AI.md`
 **Padrão de tamanho:** 14.800–14.950 caracteres
@@ -83,9 +82,9 @@
 | GESTAO_E_CONTROLE_MATERIAIS | 1 | 1 | 0 | 0 | 0 |
 | OPERADOR_PRODUCAO_INDUSTRIAL | 1 | 1 | 0 | 0 | 0 |
 | QUALIFICACAO-PROFISSIONAL | 3 | 1 | 0 | 2 | 0 |
-| RIO_DO_SUL_MAIS_TECH | 9 | 8 | 0 | 1 | 0 |
+| RIO_DO_SUL_MAIS_TECH | 8 | 8 | 0 | 0 | 0 |
 | TECNICO-INFORMATICA-INTERNET | 20 | 1 | 18 | 1 | 0 |
-| **TOTAL** | **35** | **13** | **18** | **4** | **0** |
+| **TOTAL** | **34** | **13** | **18** | **3** | **0** |
 
 ---
 
@@ -148,7 +147,6 @@
 | OFICINAS_IMPRESSAO_3D_ROBOTICA | 14.885 | ✅ Conforme | VERIFICAR |
 | REFORCO_LINGUAGENS | 14.929 | ✅ Conforme | VERIFICAR |
 | REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO | 14.887 | ✅ Conforme | VERIFICAR |
-| Scripts-Comunicacao | 14.918 | ⚠️ Genérica (modelo, sem conteúdo próprio) | IGNORAR |
 
 ## 🎓 TECNICO-INFORMATICA-INTERNET
 

@@ -6,6 +6,9 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 18:06:19 | **Regra do `graphify update .` removida:** o grafo não é mais atualizado nem lido automaticamente (início de sessão, commits, `GRAPH_REPORT.md`); só roda quando o usuário pedir (`/graphify`) |
+| 2026-10-09 18:00:00 | **Lista de presença única:** todas as listas em `scripts/LISTAPRESENCA.js` (versionado, fora do site); páginas e `criar-usuarios-supabase-auth.js --turma=CODIGO` leem só dele (`docs/regras/usuarios-turmas-paginas-professor.md`) |
+| 2026-10-09 17:25:12 | **`.gitignore` mínimo:** só `__pycache__/`, graphify, `variaveis.js` e `.env`; binários, gabaritos, listas de presença e `LISTA-ALUNOS/` saem do site pelo `.vercelignore` (regra "O QUE NUNCA É PUBLICADO" reescrita) |
 | 2026-10-09 15:09:56 | `docs/regras/atividades.md` (Reforço de Linguagens): `-GABARITO.md` "no Git e fora do site", como a regra geral (revisão do PR) |
 | 2026-10-09 15:08:47 | **Banco de questões do AVA (Moodle XML) removido:** regra de `docs/regras/atividades.md`, gerador `assets/gerador-banco-ava/`, pasta `BANCO-AVA/` da ITIC, planos em `docs/` e todas as citações (pedido do usuário) |
 | 2026-10-09 15:08:10 | **`BANCO-AVA/` coerente com a regra do gabarito:** tabela da ITIC no `CLAUDE.md`, `docs/regras/atividades.md` e `docs/regras/assets-e-geradores.md` dizem "no Git, fora do site" (apontado na revisão do PR) |

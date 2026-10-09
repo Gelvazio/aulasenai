@@ -32,8 +32,8 @@ Ordem obrigatória dos scripts na página:
 ```
 
 ## Contas
-- Criadas **só pelo professor**: `scripts/criar-usuarios-supabase-auth.js` (lê
-  `ATIVIDADES/LISTA-PRESENCA.js`). Não há cadastro na página.
+- Criadas **só pelo professor**: `scripts/criar-usuarios-supabase-auth.js` (lê a
+  turma `--turma=CODIGO` do `scripts/LISTAPRESENCA.js`). Não há cadastro na página.
 - E-mail padrão `nome.sobrenome@senai.local` (regra no `CLAUDE.md`), senha de 6 caracteres.
 - `app_metadata` (só a `service_role` altera; usado pelo RLS): `perfil` (ALUNO/PROFESSOR),
   `turma_codigo`. O `login.js` lê **perfil e turma daqui**.

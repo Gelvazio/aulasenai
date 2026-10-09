@@ -1,11 +1,11 @@
 // Página scripts/criarUsuariosBancoDados.html: uma aba por turma; cada aba lista os alunos com
 // "Cadastrado" (Sim/Não, de auth.users), seleção, marcar todos, filtro e um botão que grava só os
-// selecionados. Depende de criar-usuarios-api.js, criar-usuarios-tabela.js e das listas
-// window.LISTA_PRESENCA e window.LISTAS_PRESENCA (arquivos LISTA-PRESENCA*.js da pasta).
+// selecionados. Depende de criar-usuarios-api.js, criar-usuarios-tabela.js e da lista única
+// window.LISTAS_PRESENCA (arquivo scripts/LISTAPRESENCA.js).
 // A unidade das abas vem só da tabela unidade: a da turma no banco (turma.unidade_id) ou, para
 // turma ainda não gravada, a do campo unidadeId da lista. O "local" escrito na lista não é usado.
 
-const MSG_SEM_LISTA = 'Nenhuma lista encontrada. Coloque os arquivos LISTA-PRESENCA*.js nesta pasta.';
+const MSG_SEM_LISTA = 'Nenhuma lista encontrada. Coloque o arquivo LISTAPRESENCA.js nesta pasta.';
 const MSG_GRAVANDO = 'Gravando...';
 const MSG_CONSULTANDO = 'Consultando auth.users...';
 const MSG_SOMENTE_LEITURA = 'Modo somente leitura: senhas ocultas e gravação desabilitada.';
@@ -21,8 +21,8 @@ const TABELA_UNIDADE_GUIA = 'unidade';
 const TABELA_TURMA_GUIA = 'turma';
 // Aba que reúne os professores de todas as listas (virtual: não existe na tabela turma).
 const TURMA_PROFESSORES_GUIA = { codigo: 'PROFESSORES', nome: 'Professores', virtual: true };
-const MSG_SEM_PROFESSORES = 'Nenhum professor nas listas. Acrescente no LISTA-PRESENCA-PROFESSOR.js '
-    + "uma linha com perfil: 'PROFESSOR'.";
+const MSG_SEM_PROFESSORES = 'Nenhum professor nas listas. Acrescente no LISTAPRESENCA.js, na lista '
+    + "com professores: true, uma linha com perfil: 'PROFESSOR'.";
 const IDS_GUIA = {
     bloqueio: 'guiaBloqueio',
     opcoes: 'guiaOpcoes',
@@ -67,21 +67,15 @@ function montarTurmaProfessoresGuia(turmas) {
 }
 
 /**
- * Separa as listas carregadas pelo LISTA-PRESENCA-PROFESSOR.js (comparando com o retrato tirado
- * por criar-usuarios-antes-professores.js) das demais listas de alunos.
+ * Separa as listas de professores (marcadas com professores: true no LISTAPRESENCA.js) das
+ * demais listas de alunos.
  * @returns {{professores: Object[], alunos: Object[]}} Listas de cada origem.
  */
 function separarListasPresencaGuia() {
-    const unica = window.LISTA_PRESENCA;
-    const varias = window.LISTAS_PRESENCA || [];
-    const antes = window.LISTAS_ANTES_PROFESSOR;
-    if (!antes) return { professores: [], alunos: [unica, ...varias].filter(Boolean) };
-
-    const unicaEhProfessor = Boolean(unica) && unica !== antes.unica;
+    const listas = window.LISTAS_PRESENCA || [];
     return {
-        professores: [unicaEhProfessor ? unica : null, ...varias.slice(antes.total)].filter(Boolean),
-        alunos: [unicaEhProfessor ? antes.unica : unica, ...varias.slice(0, antes.total)]
-            .filter(Boolean),
+        professores: listas.filter((lista) => lista.professores === true),
+        alunos: listas.filter((lista) => lista.professores !== true),
     };
 }
 
@@ -100,8 +94,8 @@ function listarTurmasGuia(listas) {
 }
 
 /**
- * Junta as turmas de todas as listas carregadas (window.LISTA_PRESENCA e window.LISTAS_PRESENCA).
- * A primeira aba é "Professores": todas as pessoas do LISTA-PRESENCA-PROFESSOR.js (sempre com
+ * Junta as turmas de todas as listas do LISTAPRESENCA.js (window.LISTAS_PRESENCA).
+ * A primeira aba é "Professores": todas as pessoas das listas com professores: true (sempre com
  * perfil PROFESSOR) mais quem tem perfil PROFESSOR nas outras listas. Os professores saem das
  * turmas de alunos; turma que fica vazia sem eles não aparece.
  * @returns {Object[]} Turmas; vazio se nenhuma lista foi carregada.

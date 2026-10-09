@@ -299,7 +299,7 @@ Essa skill é obrigatória em todas as tarefas grandes; as tarefas pequenas fica
 6. criar passos numerados, detalhados e rastreáveis com os estados `⬜ Pendente`, `🔄 Em progresso`, `✅ Concluído` ou `⛔ Bloqueado/não aplicável`;
 7. incluir em cada passo a ação, o caminho exato dos arquivos e a forma de verificação permitida;
 8. apresentar ao usuário um resumo do plano, arquivos afetados, riscos e verificações;
-9. solicitar confirmação explícita antes de iniciar qualquer implementação ou comando mutável — **exceto** o commit local da tarefa, a atualização do `STATUS.md` e o graphify, que são feitos sem perguntar (o push continua proibido no ambiente local);
+9. solicitar confirmação explícita antes de iniciar qualquer implementação ou comando mutável — **exceto** o commit local da tarefa, e a atualização do `STATUS.md`, que são feitos sem perguntar (o push continua proibido no ambiente local);
 10. após a confirmação, executar somente o escopo aprovado e atualizar continuamente os estados da tarefa;
 11. registrar o resultado final, pendências e commit quando o projeto for versionado.
 
@@ -678,7 +678,6 @@ a antiga contagem de 10 (ou 20) interações e vale **sempre**, em todos os proj
 1. Execute a tarefa (edite, gere, aplique) — sem commitar no meio dela.
 2. Ao concluir e verificar: `git add` dos arquivos da tarefa + `git commit -m "mensagem descritiva"`.
 3. Uma tarefa = um commit (mensagem clara do que mudou). Tarefa nova = novo commit.
-4. Atualizar o grafo (graphify) junto, quando a regra do projeto pedir.
 
 **Regras complementares:**
 - ❌ Não acumular várias tarefas num commit só, nem deixar tarefa concluída sem commit.
@@ -718,7 +717,6 @@ git status              # ❌ Desnecessário — o commit já foi feito
 3. ✅ `git commit -m "mensagem descritiva"` — Fazer commit com Co-Authored-By
 4. ❌ **FIM** — Não fazer `git status` depois
 
-Execute `C:\Python314\python.exe -m graphify update .` no diretório do projeto para atualizar o grafo.
 
 ⚠️ **NUNCA perguntar se deve commitar — sempre executar o commit diretamente, sem confirmar.**
 
@@ -754,19 +752,8 @@ When the user types `/graphify`, invoke the Skill tool with `skill: "graphify"` 
 - **Caminho do Python:** `C:\Python314\python.exe`
 - Usar sempre este Python para executar scripts do graphify.
 
-## Como executar o graphify
-Comando de atualização incremental (rodar no diretório do projeto):
-```powershell
-C:\Python314\python.exe -m graphify update .
-```
-
-⚠️ **NUNCA perguntar confirmação antes de rodar o graphify — sempre executar diretamente, sem perguntar.**
-
-## Execução automática a cada sessão
-⚡ **AO INÍCIO DE CADA CONVERSA**, execute automaticamente `C:\Python314\python.exe -m graphify update .` no diretório do projeto ativo (raiz do repositório aberto na sessão) para manter o grafo de conhecimento atualizado com as últimas alterações.
-
-# Leitura obrigatória antes de responder
-⚡ **ANTES DE RESPONDER QUALQUER PERGUNTA**, leia o arquivo `graphify-out/GRAPH_REPORT.md` no diretório do projeto ativo (raiz do repositório aberto na sessão) para ter contexto atualizado do grafo de conhecimento do projeto.
+## Rodar o graphify só quando o usuário pedir (2026-10-09)
+⛔ Não rodar `graphify update .` automaticamente (nem no início da conversa, nem depois de commits) e não ler o `GRAPH_REPORT.md` antes de responder. O graphify só roda quando o usuário pedir (ex.: `/graphify`).
 
 # Finalizacao de tarefas
 Ao finalizar qualquer tarefa, responda APENAS com a frase: **TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?**
