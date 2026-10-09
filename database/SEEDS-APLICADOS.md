@@ -24,11 +24,11 @@ registrar aqui"); criado em 2026-10-09 19:19:18 e com status em todos os seeds d
 - ⛔ Este arquivo não leva gabarito, padrão de resposta, senha nem dado de aluno (só nomes de
   arquivo, contagens e status).
 
-## Resumo (atualizado em 2026-10-09 19:30)
+## Resumo (atualizado em 2026-10-09 19:33)
 
 | PENDENTE | APLICADO | CONCLUÍDO | Total |
 |---|---|---|---|
-| 25 | 3 | 41 | 69 |
+| 24 | 4 | 41 | 69 |
 
 ## Todos os seeds
 
@@ -80,7 +80,7 @@ registrar aqui"); criado em 2026-10-09 19:19:18 e com status em todos os seeds d
 | `2026-10-08-atividade-pratica-aula-01-seed-atividades.sql` | Comunicação Oral e Escrita (RSL) | 1 | **PENDENTE** | 2026-10-09 19:23 | Não pode ser aplicado ainda: a matéria "Introdução à Comunicação Oral e Escrita para o Mundo do Trabalho" e as aulas dela não existem no banco (o seed para com erro); falta criar a matéria e as aulas (decisão do usuário) |
 | `2026-10-08-atividade-pratica-aula-02-seed-atividades.sql` | Comunicação Oral e Escrita (RSL) | 1 | **PENDENTE** | 2026-10-09 19:23 | Não pode ser aplicado ainda: a matéria "Introdução à Comunicação Oral e Escrita para o Mundo do Trabalho" e as aulas dela não existem no banco (o seed para com erro); falta criar a matéria e as aulas (decisão do usuário) |
 | `2026-10-08-prova-pratica-06-10-2026-seed-atividades.sql` | Análise de Dados (GCM) | 1 | **PENDENTE** | 2026-10-09 19:23 | Página `PROVA-PRATICA-06-10-2026.html` não está no banco (a prova id 82 está como `PROVA-PRATICA-01.html`): conferir com o usuário se foi substituído |
-| `2026-10-09-banco-de-dados-atividade-pratica-aula-01-seed-atividades.sql` | Banco de Dados (TII) | 1 | **PENDENTE** | 2026-10-09 19:23 | Ainda não aplicado; Etapa 125, item 125.8 (1ª tentativa pelo conector cancelada antes de gravar) |
+| `2026-10-09-banco-de-dados-atividade-pratica-aula-01-seed-atividades.sql` | Banco de Dados (TII) | 1 | **PENDENTE** | 2026-10-09 19:33 | Próximo a aplicar (lote pronto, em partes); a aula 1 já existe no banco (id 96). Etapa 125, item 125.8 |
 | `2026-10-09-banco-de-dados-atividade-pratica-aula-02-seed-atividades.sql` | Banco de Dados (TII) | 1 | **PENDENTE** | 2026-10-09 19:23 | Ainda não aplicado; Etapa 125, item 125.8 (1ª tentativa pelo conector cancelada antes de gravar) |
 | `2026-10-09-banco-de-dados-atividade-pratica-aula-03-seed-atividades.sql` | Banco de Dados (TII) | 1 | **PENDENTE** | 2026-10-09 19:23 | Ainda não aplicado; Etapa 125, item 125.8 (1ª tentativa pelo conector cancelada antes de gravar) |
 | `2026-10-09-banco-de-dados-atividade-pratica-aula-04-seed-atividades.sql` | Banco de Dados (TII) | 1 | **PENDENTE** | 2026-10-09 19:23 | Ainda não aplicado; Etapa 125, item 125.8 (1ª tentativa pelo conector cancelada antes de gravar) |
@@ -98,7 +98,7 @@ registrar aqui"); criado em 2026-10-09 19:19:18 e com status em todos os seeds d
 | `2026-10-09-banco-de-dados-atividade-pratica-aula-16-seed-atividades.sql` | Banco de Dados (TII) | 1 | **PENDENTE** | 2026-10-09 19:23 | Ainda não aplicado; Etapa 125, item 125.8 (1ª tentativa pelo conector cancelada antes de gravar) |
 | `2026-10-09-banco-de-dados-atividade-pratica-aula-17-seed-atividades.sql` | Banco de Dados (TII) | 1 | **PENDENTE** | 2026-10-09 19:23 | Ainda não aplicado; Etapa 125, item 125.8 (1ª tentativa pelo conector cancelada antes de gravar) |
 | `2026-10-09-banco-de-dados-atividade-pratica-aula-18-seed-atividades.sql` | Banco de Dados (TII) | 1 | **PENDENTE** | 2026-10-09 19:23 | Ainda não aplicado; Etapa 125, item 125.8 (1ª tentativa pelo conector cancelada antes de gravar) |
-| `2026-10-09-banco-de-dados-objetivas-seed-atividades.sql` | Banco de Dados (TII) | 18 | **PENDENTE** | 2026-10-09 19:23 | Ainda não aplicado; Etapa 125, item 125.8 (1ª tentativa pelo conector cancelada antes de gravar) |
+| `2026-10-09-banco-de-dados-objetivas-seed-atividades.sql` | Banco de Dados (TII) | 18 | **APLICADO** | 2026-10-09 19:33 | Parcial — aplicado em partes pelo conector (um comando por aula, sem `delete`), a pedido do usuário: **aula 01 aplicada e conferida** (aula id 96, atividade id 103, 50 itens, md5 do gabarito igual ao do arquivo); faltam as aulas 02 a 18. Vira CONCLUÍDO quando as 18 estiverem conferidas |
 | `2026-10-09-testes-frontend-atividade-pratica-aula-01-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-09-testes-frontend-atividade-pratica-aula-02-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-09-testes-frontend-atividade-pratica-aula-03-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |

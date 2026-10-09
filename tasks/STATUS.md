@@ -47,7 +47,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
-| 125 | 125.8 | aplicar os seeds de Banco de Dados: aprovar os 12 lotes pelo conector do Supabase ou rodar os 19 arquivos no SQL Editor | Ação do usuário |
+| 125 | 125.8 | seeds de Banco de Dados sendo aplicados em partes pelo conector (a pedido do usuário): aula 01 objetiva ✅; faltam a prática 01 e as aulas 02 a 18 | Em andamento |
 | 136-f0a07de9 | 136.5 | aceite do registro `database/SEEDS-APLICADOS.md` e da regra dos seeds | Aceite |
 | 136-f0a07de9 | 136.4b | decidir os 7 seeds PENDENTE fora do Banco de Dados (`database/SEEDS-APLICADOS.md`): 4 de prova prática de Análise de Dados que talvez tenham sido substituídos pela `PROVA-PRATICA-01.html` (id 82), a prática da aula 06 da ITIC e as práticas 01 e 02 de Comunicação Oral e Escrita | Decisão do usuário |
 | 124 | 124.4 | testar o modal "➕ Nova Pendência" e a coluna Descrição em `pendencias.html` | Aceite |

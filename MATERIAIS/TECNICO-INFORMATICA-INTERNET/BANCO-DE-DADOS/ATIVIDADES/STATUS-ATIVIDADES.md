@@ -12,7 +12,7 @@
 
 | Aula | Tema | Página | Questões | Fonte (`.md`) | Banco | Status |
 |---|---|---|---|---|---|---|
-| 01 | Banco de dados e SGBD: conceitos e usos | ✅ `ATIVIDADES-AULA-01-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
+| 01 | Banco de dados e SGBD: conceitos e usos | ✅ `ATIVIDADES-AULA-01-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 96, atividade id 103; conferido por md5 em 2026-10-09 19:33) | ✅ Concluída |
 | 02 | Gerenciadores: características, requisitos e níveis | ✅ `ATIVIDADES-AULA-02-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 03 | Preparação do ambiente: instalação do PostgreSQL | ✅ `ATIVIDADES-AULA-03-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 04 | Configuração do SGBD e infraestrutura do sistema | ✅ `ATIVIDADES-AULA-04-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |

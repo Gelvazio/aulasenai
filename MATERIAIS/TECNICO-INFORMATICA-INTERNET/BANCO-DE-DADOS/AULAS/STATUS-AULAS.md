@@ -10,7 +10,7 @@
 
 | Aula | Tema | Aula em `CONTEUDO/` | Slides | Atividade 50 questões | Prática | Banco |
 |---|---|---|---|---|---|---|
-| 01 | Banco de dados e SGBD: conceitos e usos | ✅ `CONTEUDO/AULA-01-BANCO-DE-DADOS-E-SGBD.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-01-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-01.html` | ⬜ seeds gerados, não aplicados |
+| 01 | Banco de dados e SGBD: conceitos e usos | ✅ `CONTEUDO/AULA-01-BANCO-DE-DADOS-E-SGBD.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-01-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-01.html` | 🔄 objetiva no banco (id 103); prática pendente |
 | 02 | Gerenciadores: características, requisitos e níveis | ✅ `CONTEUDO/AULA-02-GERENCIADORES-CARACTERISTICAS-REQUISITOS-E-NIVEIS.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-02-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-02.html` | ⬜ seeds gerados, não aplicados |
 | 03 | Preparação do ambiente: instalação do PostgreSQL | ✅ `CONTEUDO/AULA-03-PREPARACAO-DO-AMBIENTE-INSTALACAO-DO-POSTGRESQL.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-03-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-03.html` | ⬜ seeds gerados, não aplicados |
 | 04 | Configuração do SGBD e infraestrutura do sistema | ✅ `CONTEUDO/AULA-04-CONFIGURACAO-DO-SGBD-E-INFRAESTRUTURA.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-04-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-04.html` | ⬜ seeds gerados, não aplicados |
