@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 19:19:18
+**Versão das regras:** 2026-10-09 19:23:21
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 19:23:21 | **Status em todos os seeds:** cada `database/*-seed-atividades.sql` tem status **PENDENTE**, **APLICADO** ou **CONCLUÍDO** em `database/SEEDS-APLICADOS.md` (69 arquivos conferidos no banco: 26 pendentes, 3 aplicados, 40 concluídos); item da etapa acompanha o status |
 | 2026-10-09 19:19:18 | **Seeds aplicados:** registro único `database/SEEDS-APLICADOS.md`; toda tarefa que gera seed tem o item "Aplicar os seeds no Supabase" no arquivo da etapa (⬜ até o pedido, ✅ só depois de aplicado e conferido); autorização de 2026-10-03 vale só para o plano daquela data (`docs/regras/atividades.md`) |
 | 2026-10-09 15:24:44 | **Conversa entre sessões e licenças:** `tasks/STATUS.md` vira índice (etapas em `tasks/etapas/`, uma por arquivo), "🧭 Frentes de trabalho" (próximo passo por ambiente + branch), coluna "Em uso por" (reserva da tarefa), `tasks/RECADOS.md`, etapa nova com UUID, trazer a `main` no início e no fim, arquivo gerado em conflito = regerar |
 | 2026-10-09 18:06:19 | **Regra do `graphify update .` removida:** o grafo não é mais atualizado nem lido automaticamente (início de sessão, commits, `GRAPH_REPORT.md`); só roda quando o usuário pedir (`/graphify`) |
 | 2026-10-09 18:00:00 | **Lista de presença única:** todas as listas em `scripts/LISTAPRESENCA.js` (versionado, fora do site); páginas e `criar-usuarios-supabase-auth.js --turma=CODIGO` leem só dele (`docs/regras/usuarios-turmas-paginas-professor.md`) |
-| 2026-10-09 17:25:12 | **`.gitignore` mínimo:** só `__pycache__/`, graphify, `variaveis.js` e `.env`; binários, gabaritos, listas de presença e `LISTA-ALUNOS/` saem do site pelo `.vercelignore` (regra "O QUE NUNCA É PUBLICADO" reescrita) |
 
 ---
 
@@ -819,9 +819,10 @@ Registrada em 2026-09-28.
   (ex.: `usuario_legado_20260930`, com RLS ligado e sem políticas). Depois de aplicar, **conferir o
   resultado** com consultas de leitura. Sem pedido do usuário, não alterar o banco.
 - ✅ **Seeds de atividades** (`database/*-seed-atividades.sql`, 2026-10-09 19:19:18): aplicar só com
-  pedido; toda tarefa que gera seed tem o item "Aplicar os seeds no Supabase" no arquivo da etapa
-  e cada aplicação, depois de conferida, ganha uma linha em **`database/SEEDS-APLICADOS.md`**
-  (registro único; detalhe em `docs/regras/atividades.md`).
+  pedido; **todo seed tem status PENDENTE, APLICADO ou CONCLUÍDO** em
+  **`database/SEEDS-APLICADOS.md`** (registro único, desde 2026-10-09 19:23:21); toda tarefa que gera seed
+  tem o item "Aplicar os seeds no Supabase" no arquivo da etapa, com o mesmo status (detalhe em
+  `docs/regras/atividades.md`).
 - ✅ **Estrutura dos cursos só o professor escreve** (2026-09-30,
   `database/2026-09-30-estrutura-curso-so-professor-escreve.sql`): `aulas`, `materia`, `curso`,
   `cursomateria` e `unidade` aceitam insert/update/delete só de usuário logado com perfil PROFESSOR;

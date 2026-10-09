@@ -492,13 +492,16 @@ Vale para **todas as aulas de todas as matérias**. Registrada em 2026-10-03 a p
 - ✅ **Seeds: aplicar só com pedido e registrar aqui** (alterada em 2026-10-09 19:19:18, pedido do usuário):
   - aplicar `database/*-seed-atividades.sql` no Supabase **só com pedido do usuário** (pelo
     conector ou o próprio usuário no SQL Editor), depois de conferir o banco real;
+  - **todo seed tem um status** em **[`database/SEEDS-APLICADOS.md`](../../database/SEEDS-APLICADOS.md)**
+    (registro único, uma linha por arquivo; desde 2026-10-09 19:23:21): **PENDENTE** (gerado, ainda não rodado
+    no banco), **APLICADO** (rodado, falta conferir ou a conferência não bate) e **CONCLUÍDO**
+    (rodado e conferido: atividade de cada página no banco com a mesma quantidade de itens do
+    gabarito ou de tópicos do arquivo, com a data e hora da conferência);
+  - seed novo entra no registro como **PENDENTE** no mesmo commit em que é gerado;
   - **toda tarefa que gera seed tem um item próprio no arquivo da etapa** (`tasks/etapas/`):
-    "Aplicar os seeds no Supabase", que fica `⬜` até o pedido e só vira `✅` depois de aplicado
-    **e conferido** com consultas de leitura (aulas, atividades, itens do gabarito, tópicos);
-  - ao aplicar: linha nova em **[`database/SEEDS-APLICADOS.md`](../../database/SEEDS-APLICADOS.md)**
-    (registro único: arquivos, data e hora, pedido, frente, conferência), o item da etapa citando
-    essa linha e a coluna **Banco** do `STATUS-ATIVIDADES.md` (e do `STATUS-AULAS.md`) da matéria;
-  - seed gerado e ainda não aplicado fica em "⏳ Gerados e ainda não aplicados" do mesmo registro.
+    "Aplicar os seeds no Supabase", com o mesmo status do registro (`⬜ PENDENTE` → `🔄 APLICADO`
+    → `✅ CONCLUÍDO`), e a coluna **Banco** do `STATUS-ATIVIDADES.md` (e do `STATUS-AULAS.md`) da
+    matéria acompanha.
 - ⚠️ Respeita `STATUS-PERMISSAO-EMENTA`, matérias semelhantes e a exceção de
   `QUALIFICACAO-PROFISSIONAL/`.
 

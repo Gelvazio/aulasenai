@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 19:23:21 | **Status em todos os seeds:** cada `database/*-seed-atividades.sql` tem status **PENDENTE**, **APLICADO** ou **CONCLUÍDO** em `database/SEEDS-APLICADOS.md` (69 arquivos conferidos no banco: 26 pendentes, 3 aplicados, 40 concluídos); item da etapa acompanha o status |
 | 2026-10-09 19:19:18 | **Seeds aplicados:** registro único `database/SEEDS-APLICADOS.md`; toda tarefa que gera seed tem o item "Aplicar os seeds no Supabase" no arquivo da etapa (⬜ até o pedido, ✅ só depois de aplicado e conferido); autorização de 2026-10-03 vale só para o plano daquela data (`docs/regras/atividades.md`) |
 | 2026-10-09 15:24:44 | **Conversa entre sessões e licenças:** `tasks/STATUS.md` vira índice (etapas em `tasks/etapas/`, uma por arquivo), "🧭 Frentes de trabalho" (próximo passo por ambiente + branch), coluna "Em uso por" (reserva da tarefa), `tasks/RECADOS.md`, etapa nova com UUID, trazer a `main` no início e no fim, arquivo gerado em conflito = regerar |
 | 2026-10-09 18:06:19 | **Regra do `graphify update .` removida:** o grafo não é mais atualizado nem lido automaticamente (início de sessão, commits, `GRAPH_REPORT.md`); só roda quando o usuário pedir (`/graphify`) |
