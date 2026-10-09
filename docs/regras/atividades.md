@@ -365,7 +365,9 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   com 🔒 no nome e "Atividade Bloqueada!" ao clicar; o card inteiro só trava quando todas
   estão bloqueadas. Código único: `assets/js/indice-atividades-bloqueio.js` +
   `assets/css/indice-atividades-bloquear.css` (carregados pelo `atividades-crud-modal.js` em
-  todos os índices; não repetir por matéria nem por página).
+  todos os índices; não repetir por matéria nem por página). **Largura (2026-10-09):** os botões de
+  atividade do card têm a mesma largura e o ON/OFF fica sempre ao lado (texto do botão menor e
+  quebrando a linha para caber, também no celular).
 - ✅ **BLOQUEIO DE ATIVIDADE POR TURMA — REGRA GLOBAL** (2026-10-05, índices de **todas** as
   matérias; plano `docs/bloqueio-atividade-por-turma-favorita.md`; SQL
   `database/2026-10-05-bloqueio-atividade-por-turma.sql`, aplicado no banco):

@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 01:12:55 | **Botões de atividade com a mesma largura** e **ON/OFF sempre ao lado** (texto menor e quebrando a linha para caber, também no celular) em todos os índices |
 | 2026-10-09 01:11:42 | **ID na frente de cada atividade** nos índices (professor): etiqueta "ID 07" no botão (menor que 10 com zero à esquerda; 10 em diante normal); a caixa "ID · nome" do card foi removida |
 | 2026-10-09 01:10:16 | **Aula bloqueada = nenhum acesso, nem para o professor:** no card só o botão de desbloquear responde (links, slides, ON/OFF das atividades, CADASTRAR ATIVIDADES e Editar aula travados) |
 | 2026-10-09 01:09:35 | **Bloquear a aula bloqueia todas as atividades dela** (trigger `aulas_bloqueio_propaga_atividades_trg`: `aulas.ativo` → false grava `atividade.ativo = false`); desbloquear a aula não mexe nas atividades |

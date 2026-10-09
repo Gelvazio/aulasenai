@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 01:11:42
+**Versão das regras:** 2026-10-09 01:12:55
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 01:12:55 | **Botões de atividade com a mesma largura** e **ON/OFF sempre ao lado** (texto menor e quebrando a linha para caber, também no celular) em todos os índices |
 | 2026-10-09 01:11:42 | **ID na frente de cada atividade** nos índices (professor): etiqueta "ID 07" no botão (menor que 10 com zero à esquerda; 10 em diante normal); a caixa "ID · nome" do card foi removida |
 | 2026-10-09 01:10:16 | **Aula bloqueada = nenhum acesso, nem para o professor:** no card só o botão de desbloquear responde (links, slides, ON/OFF das atividades, CADASTRAR ATIVIDADES e Editar aula travados) |
 | 2026-10-09 01:09:35 | **Bloquear a aula bloqueia todas as atividades dela** (trigger `aulas_bloqueio_propaga_atividades_trg`: `aulas.ativo` → false grava `atividade.ativo = false`); desbloquear a aula não mexe nas atividades |
 | 2026-10-09 01:07:02 | Bloqueio da AULA × bloqueio da ATIVIDADE **ligado em Testes de Front-End** (lista em `assets/js/indice-bloqueio-aula-config.js`; demais matérias seguem pendentes na tarefa #16); botão **🧾 LOG escondido** em todos os índices; **slides abrem em nova aba** |
-| 2026-10-09 01:03:11 | **Regra pendente (tarefa #16 do TASKS.md, outra sessão):** o ON/OFF da atividade nunca bloqueia o card; botão de bloqueio da AULA (`aulas.ativo`) antes de "Editar aula" é o único que bloqueia o card |
 
 ---
 
@@ -979,6 +979,10 @@ de todos os cursos (todo `ATIVIDADES/index.html`). Detalhe em
   cadastrada no banco: **ON (verde) = liberada**, **OFF (vermelho) = bloqueada**. Um card com
   várias atividades tem um botão para cada uma.
 - ✅ O bloqueio vale para a **turma favorita** (`definir_bloqueio_turma`); as outras turmas não mudam.
+- ✅ **Mesma largura e ON/OFF sempre ao lado** (2026-10-09, pedido do usuário): todos os botões de
+  atividade do card têm a mesma largura (um por linha) e o ON/OFF fica **sempre ao lado** do botão,
+  também no celular — o texto do botão fica menor (12 px) e quebra a linha para caber
+  (`assets/css/indice-atividades.css`, medida `--largura-onoff-atividade`).
 - ✅ O aluno vê a atividade bloqueada com 🔒 e "Atividade Bloqueada!" ao clicar; o card inteiro só
   trava quando todas as atividades dele estão bloqueadas.
 - ✅ Código único para todos os índices: `assets/js/indice-atividades-bloqueio.js` +
