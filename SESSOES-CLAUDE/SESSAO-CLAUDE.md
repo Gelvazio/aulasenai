@@ -25,6 +25,14 @@ Status de todas as sessões: [STATUS-SESSOES.md](STATUS-SESSOES.md).
 
 ---
 
+## Sessão 5 (2026-10-09 00:23) — status PENDENTE
+
+- **Ambiente:** local · **Modelo:** Claude Opus 5.5 · **Branch:** `main` (commit `559ddc6`)
+- **Pedido:** validar a sessão em todo HTML; sem login nada carrega e vai para o `index.html`
+- **Status:** PENDENTE (aceite 111.5) · **Log:** [sessao-claude-5.md](sessao-claude-5.md)
+
+---
+
 ## Sessão 4 (2026-09-30 a 2026-10-08) — status PENDENTE
 
 - **Ambiente:** local · **Modelo:** Claude Opus 5.5 · **Branch:** `main` (commits `5f154fe`, `8791014`, `6e6515b`, `6a5677c`, `2941d1e`, `d75c993`, `086d11b`, `a0da2e7`, `cb7c641`, `c18c246`, `bb283c7`)
