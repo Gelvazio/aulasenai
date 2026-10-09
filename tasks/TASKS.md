@@ -252,7 +252,7 @@ O que fazer, sempre:
 
 ### #20-2ac1a8ec-911b-466f: Banco de Dados (Técnico em Informática para Internet) 100% no padrão da ITIC — pedida em 2026-10-09 13:26:40
 
-**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 124 (fonte única).
+**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 125 (fonte única).
 **Prioridade:** 🟠 Alta · **Tarefa grande:** plano em `docs/` e aprovação antes de executar.
 **Matéria:** `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO_DE_DADOS/` (modelo: Introdução à TIC).
 **Etapa 1 (esta):** tudo **menos a apostila** (pedido do usuário). A apostila fica para uma etapa 2.
