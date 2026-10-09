@@ -1466,3 +1466,10 @@ Plano: [docs/validacao-sessao-todas-paginas.md](docs/validacao-sessao-todas-pagi
 | 111.3 | `assets/gerador-menu/tags_header.py`: tag do header como primeiro script do `<head>`, sem `defer`, em todos os `.html` (menos `login.html`, `.claude/`, templates e app do WhatsApp) | ✅ Concluído | 2026-10-09 00:33 | 2ª execução = 0 alteradas |
 | 111.4 | Aplicado nas 257 páginas | ✅ Concluído | 2026-10-09 00:33 | Nenhum `header-usuario.js" defer` restante |
 | 111.5 | Aceite do usuário (abrir uma página sem login → modal e `index.html`; com login → página normal) | ⬜ Pendente | — | — |
+
+## Etapa 112 — Estilo dos destaques na apresentação do professor (tarefa pequena, pedido em 2026-10-09 00:48)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 112.1 | "mais de 15 anos de experiência" e "professor do SENAI/SC" sem o marca-texto amarelo: mesmo estilo dos outros destaques (roxo, negrito) — `assets/css/apresentacao-professor.css` (`mark`) | ✅ Concluído | 2026-10-09 00:49 | Leitura do CSS (sem navegador) |
+| 112.2 | Aceite do usuário (ver a página inicial sem login) | ⬜ Pendente | — | — |

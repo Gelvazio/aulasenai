@@ -140,12 +140,10 @@
     color: var(--apresentacao-cor-roxo);
 }
 
-/* Marca-texto dourado nos pontos principais. */
+/* Pontos principais com o mesmo estilo dos demais destaques (sem marca-texto). */
 .apresentacao-professor__boas-vindas mark {
-    padding: 0 4px;
-    border-radius: 4px;
-    background: linear-gradient(transparent 45%, var(--apresentacao-cor-ouro) 45%);
-    color: var(--apresentacao-cor-texto);
+    background: none;
+    color: var(--apresentacao-cor-roxo);
     font-weight: 700;
 }
 
