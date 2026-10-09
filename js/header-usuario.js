@@ -55,7 +55,6 @@ const MARCADOR_MATERIAIS_HEADER = "/MATERIAIS/";
 const PASTAS_SEM_MATERIA_HEADER = ["MATERIAS-GERAIS", "AGENDA_COLABORADOR"];
 const PAPEIS_EQUIPES_HEADER = ["Líder (coordenador)", "Integrante"];
 const TABELA_USUARIO_HEADER = "usuario";
-
 // Guarda de sessão (2026-10-09): sem login nada da página aparece e vai para o index.html.
 // Páginas públicas (relativas à raiz do site): só o index.html e o login.html.
 const PAGINAS_PUBLICAS_HEADER = ["", "index.html", "index", "login.html", "login"];
