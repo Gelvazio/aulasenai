@@ -5,6 +5,7 @@ const ELEMENTO_LISTA_CURSOS = document.getElementById('lista-cursos');
 const ELEMENTO_RESUMO_CURSOS = document.getElementById('resumo-cursos');
 const ELEMENTO_ROTAS_CURSOS = document.getElementById('rotas-cursos');
 const ELEMENTO_APRESENTACAO_PROFESSOR = document.getElementById('apresentacao-professor');
+const ELEMENTO_CABECALHO_CURSOS = document.getElementById('cabecalho-cursos');
 const ICONE_CURSO_INDICE = '🎓';
 const RPC_CURSOS_DO_USUARIO = 'cursos_do_usuario';
 const TEXTO_SEM_CURSOS = 'Nenhum curso vinculado às suas turmas.';
@@ -30,8 +31,9 @@ function mostrarMensagemListaIndice(texto) {
     ELEMENTO_LISTA_CURSOS.replaceChildren(mensagem);
 }
 
-/** Sem login: esconde resumo e lista e mostra a apresentação do professor. */
+/** Sem login: esconde cabeçalho, resumo e lista e mostra a apresentação do professor. */
 function mostrarApresentacaoProfessor() {
+    ELEMENTO_CABECALHO_CURSOS.hidden = true;
     ELEMENTO_RESUMO_CURSOS.hidden = true;
     ELEMENTO_LISTA_CURSOS.hidden = true;
     ELEMENTO_APRESENTACAO_PROFESSOR.hidden = false;

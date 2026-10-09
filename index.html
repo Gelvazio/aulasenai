@@ -15,28 +15,30 @@
 <body>
     <div id="header-usuario"></div>
     <main class="container">
-        <header>
+        <header id="cabecalho-cursos">
             <h1>📚 Cursos</h1>
             <p>Selecione um curso para acessar suas matérias e atividades.</p>
         </header>
         <div class="resumo" id="resumo-cursos" aria-live="polite">Carregando cursos…</div>
         <section class="apresentacao-professor" id="apresentacao-professor"
             aria-labelledby="titulo-apresentacao-professor" hidden>
-            <div class="apresentacao-professor__perfil">
-                <span class="apresentacao-professor__avatar" aria-hidden="true">GC</span>
-                <div>
-                    <p class="apresentacao-professor__rotulo">PROFESSOR</p>
-                    <h2 id="titulo-apresentacao-professor">Gelvazio Camargo</h2>
-                    <p class="apresentacao-professor__cargo">Desenvolvedor Full Stack | Professor SENAI/SC</p>
+            <div class="apresentacao-professor__topo">
+                <div class="apresentacao-professor__perfil">
+                    <span class="apresentacao-professor__avatar" aria-hidden="true">GC</span>
+                    <div>
+                        <p class="apresentacao-professor__rotulo">PROFESSOR</p>
+                        <h2 id="titulo-apresentacao-professor">Gelvazio Camargo</h2>
+                        <p class="apresentacao-professor__cargo">Desenvolvedor Full Stack | Professor SENAI/SC</p>
+                    </div>
                 </div>
+                <p class="apresentacao-professor__boas-vindas">
+                    Desenvolvedor Full Stack PHP | Python | IA com mais de 15 anos de experiência em
+                    desenvolvimento de software, análise de sistemas e transformação digital, com atuação em
+                    projetos de gestão pública, ERP, qualidade de software e aplicações web modernas.
+                    Atualmente é professor do SENAI/SC, formando profissionais nas áreas de Backend,
+                    Frontend e Inteligência Artificial.
+                </p>
             </div>
-            <p class="apresentacao-professor__boas-vindas">
-                Desenvolvedor Full Stack PHP | Python | IA com mais de 15 anos de experiência em
-                desenvolvimento de software, análise de sistemas e transformação digital, com atuação em
-                projetos de gestão pública, ERP, qualidade de software e aplicações web modernas.
-                Atualmente é professor do SENAI/SC, formando profissionais nas áreas de Backend,
-                Frontend e Inteligência Artificial.
-            </p>
             <div class="apresentacao-professor__grade">
                 <article class="apresentacao-professor__cartao">
                     <h3>🏢 Experiência profissional</h3>
@@ -74,14 +76,14 @@
                     </ul>
                 </article>
             </div>
-            <nav class="apresentacao-professor__contato" aria-label="Contato do professor">
-                <a class="btn" href="mailto:gelvazio.c@edu.sc.senai.br">📧 gelvazio.c@edu.sc.senai.br</a>
-                <a class="btn" href="https://linkedin.com/in/gelvaziocamargo" target="_blank"
-                    rel="noopener">🔗 LinkedIn</a>
-                <a class="btn" href="https://gelvazio.github.io/" target="_blank"
-                    rel="noopener">🌐 Portfólio</a>
-            </nav>
             <div class="apresentacao-professor__acesso">
+                <nav class="apresentacao-professor__contato" aria-label="Contato do professor">
+                    <a class="btn" href="mailto:gelvazio.c@edu.sc.senai.br">📧 gelvazio.c@edu.sc.senai.br</a>
+                    <a class="btn" href="https://linkedin.com/in/gelvaziocamargo" target="_blank"
+                        rel="noopener">🔗 LinkedIn</a>
+                    <a class="btn" href="https://gelvazio.github.io/" target="_blank"
+                        rel="noopener">🌐 Portfólio</a>
+                </nav>
                 <p>Entre no sistema para acessar seus cursos!</p>
                 <a class="btn principal" href="login.html">🔑 Entrar</a>
             </div>
