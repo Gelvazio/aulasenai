@@ -372,7 +372,7 @@
     }
 }
 
-/* Telas estreitas (tablet): topo empilhado e cartões em duas colunas; a rolagem é necessária. */
+/* Telas estreitas: tudo em uma coluna (aqui a rolagem é necessária). */
 @media (max-width: 900px) {
     .apresentacao-professor__topo {
         flex-direction: column;
@@ -381,89 +381,19 @@
     }
 
     .apresentacao-professor__grade {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-/* Celular: uma coluna, espaços e fontes menores e textos longos quebrando sem estourar a tela. */
-@media (max-width: 600px) {
-    .apresentacao-professor {
-        padding: 12px;
-        overflow-wrap: anywhere;
-    }
-
-    .apresentacao-professor__topo {
-        padding: 12px;
-    }
-
-    .apresentacao-professor__perfil {
-        flex-shrink: 1;
-        min-width: 0;
-        gap: 10px;
-    }
-
-    .apresentacao-professor__avatar {
-        width: 56px;
-        height: 56px;
-        font-size: 20px;
-    }
-
-    .apresentacao-professor h2 {
-        font-size: 19px;
-    }
-
-    .apresentacao-professor__boas-vindas {
-        padding-left: 10px;
-        font-size: 14px;
-    }
-
-    .apresentacao-professor__boas-vindas li {
-        gap: 8px;
-    }
-
-    .curriculo__resumo-icone {
-        width: 26px;
-        height: 26px;
-        font-size: 14px;
-    }
-
-    .apresentacao-professor__grade {
         grid-template-columns: 1fr;
     }
-
-    .curriculo__cartao {
-        padding: 10px 12px;
-    }
-
-    .curriculo__cartao:hover {
-        transform: none;
-    }
-
-    .curriculo__idiomas li {
-        grid-template-columns: 80px 1fr auto;
-        gap: 6px;
-    }
 }
 
-/* Tablet: duas colunas de cartões quando couber. */
+/* Tablet: Competências (o 3º cartão) ocupa a linha inteira abaixo dos outros dois. */
 @media (min-width: 601px) and (max-width: 900px) {
-    .apresentacao-professor__grade {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
     .curriculo__cartao--laranja {
         grid-column: 1 / -1;
     }
 }
 
-/* Celular: espaços menores, fonte legível, toque sem efeito de "flutuar" e card de entrar
-   ocupando a largura. */
+/* Celular (complemento): card de entrar na largura toda e fontes dos cartões legíveis. */
 @media (max-width: 600px) {
-    .apresentacao-professor {
-        gap: 10px;
-        padding: 12px 10px;
-    }
-
     .apresentacao-professor__entrar {
         margin: 2px 0 8px;
     }
@@ -473,51 +403,8 @@
         width: 100%;
     }
 
-    .apresentacao-professor__topo {
-        padding: 12px;
-        border-radius: 10px;
-    }
-
-    .apresentacao-professor__perfil {
-        flex-shrink: 1;
-        gap: 10px;
-    }
-
-    .apresentacao-professor__avatar {
-        width: 56px;
-        height: 56px;
-        font-size: 20px;
-    }
-
-    .apresentacao-professor h2 {
-        font-size: 19px;
-    }
-
     .apresentacao-professor__cargo {
         font-size: 12.5px;
-    }
-
-    .apresentacao-professor__boas-vindas {
-        padding-left: 10px;
-        font-size: 14.5px;
-    }
-
-    .apresentacao-professor__boas-vindas li {
-        gap: 8px;
-    }
-
-    .curriculo__resumo-icone {
-        width: 26px;
-        height: 26px;
-        font-size: 14px;
-    }
-
-    .curriculo__cartao {
-        padding: 12px;
-    }
-
-    .curriculo__cartao:hover {
-        transform: none;
     }
 
     .curriculo__cartao h3 {
@@ -529,14 +416,7 @@
         font-size: 13.5px;
     }
 
-    .curriculo__periodo {
-        font-size: 12.5px;
-    }
-
-    .curriculo__idiomas li {
-        grid-template-columns: 92px 1fr auto;
-    }
-
+    .curriculo__periodo,
     .curriculo__etiquetas li,
     .curriculo__destaques li {
         font-size: 12.5px;
