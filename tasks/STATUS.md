@@ -26,7 +26,7 @@ A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale 
 | #16 | Bloqueio da AULA (card inteiro, `aulas.ativo`) × ON/OFF da atividade (nunca bloqueia o card) em todos os índices | 🔄 Ligada em Testes de Front-End (Etapa 114) | Demais matérias: acrescentar a pasta em `assets/js/indice-bloqueio-aula-config.js`, uma por vez, quando o usuário pedir |
 | #17 | Fechar a revisão das regras do `CLAUDE.md` (aceites 70.5, 72.8, 73.14; commit `85a8531` com gabarito; ementa fora do tamanho) | ⬜ Pendente — nova sessão | Usuário confere e dá os aceites; decide sobre os gabaritos do commit `85a8531` antes do push |
 | #18 | Progresso da turma global em todas as atividades (objetivas e discursivas com banco) | 👀 Aguardando validação (Etapa 121) | Item 121.11 (teste e aceite do usuário) |
-| #19-91cbac65-87ca-45a0 | Análise contínua das matérias (`scripts/analise-materias.py` → `tasks/ANALISE-MATERIAS-RELATORIO.json`) — ⛔ permanente: nunca CONCLUÍDA enquanto houver matéria incompleta ou pendência | 🔄 Em andamento — última rodada 2026-10-09 14:08: 6 cursos, 35 matérias, 2 completas, 33 incompletas | Rodar a rotina no início de cada sessão e ao concluir tarefa em matéria; resolver pendências só a pedido do usuário |
+| #19-91cbac65-87ca-45a0 | Análise contínua das matérias (`scripts/analise-materias.py` → `tasks/ANALISE-MATERIAS-RELATORIO.json`) — ⛔ permanente: nunca CONCLUÍDA enquanto houver matéria incompleta ou pendência | 🔄 Em andamento — última rodada 2026-10-09 14:11: 6 cursos, 34 matérias, 2 completas, 32 incompletas | Rodar a rotina no início de cada sessão e ao concluir tarefa em matéria; resolver pendências só a pedido do usuário |
 | #20-2ac1a8ec-911b-466f | Banco de Dados (Técnico em Informática para Internet) 100% no padrão da ITIC — etapa 1 sem a apostila | ⬜ Planejada (Etapa 124) | Item 124.1 — plano em `docs/banco-de-dados-materia-100.md` e aprovação do usuário |
 
 ## ⏳ Aguardando o usuário (aceites, aprovações e ações dele)
@@ -852,6 +852,7 @@ Plano: [docs/reorganizar-comunicacao-oral-escrita-rio-do-sul.md](docs/reorganiza
 | 71.1 | Levantar a pasta `Scripts-Comunicacao` e escrever o plano em `docs/` | ✅ Concluído | 2026-10-07 21:25 | Plano com etapas A a F, riscos e lista dos binários fora do Git |
 | 71.2 | Aprovação do plano pelo usuário — aprovado: pasta `INTRODUCAO_COMUNICACAO_ORAL_ESCRITA`, backup dos binários fora do repositório | ✅ Concluído | 2026-10-07 21:27 | Resposta do usuário no chat |
 | 71.3 | Executar as etapas A a F do plano, um item por vez (andamento detalhado no plano) | 🔄 Em progresso | — | — |
+| 71.3a | Pedido do usuário (2026-10-09): pasta antiga `Scripts-Comunicacao` apagada (passos F.1 e F.2 adiantados; backup conferido) e `INTRODUCAO_COMUNICACAO_ORAL_ESCRITA/ATIVIDADES/index.html` gerado (D.11 parcial), com card no índice do curso Rio do Sul e na faixa das matérias. Links quebrados no projeto: 85 → 11 (só o app do WhatsApp e os templates dos geradores, que não são erro) | ✅ Concluído | 2026-10-09 14:12 | Varredura dos 235 HTML; `git diff` dos índices regravados só com o card/faixa novos |
 | 71.4 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Etapa 72 — Corrigir as contradições do CLAUDE.md, uma de cada vez (pedida em 2026-10-07)

@@ -107,7 +107,7 @@ curso.
 |---|---|---|
 | D.1 a D.9 | Para cada aula: fonte `ATIVIDADES-AULA-NN-50-QUESTOES.md` (fora do Git) → HTML pelo `assets/gerador-atividades`, mais a atividade prática `.md` → `.html` | 🔄 aulas 01 e 02 ✅ (2026-10-08); aulas 08 e 09 sem atividade (decisão do usuário); próximas: 03 a 07 |
 | D.10 | Avaliações (objetiva, prática, média final) pelos geradores de `assets/` | ⬜ |
-| D.11 | `MENU-ATIVIDADES.js` e `ATIVIDADES/index.html` (geradores de menu e índices); card da matéria no `index.html` do curso | ⬜ |
+| D.11 | `MENU-ATIVIDADES.js` e `ATIVIDADES/index.html` (geradores de menu e índices); card da matéria no `index.html` do curso | 🔄 2026-10-09 14:10 — `ATIVIDADES/index.html` gerado (aulas 01 e 02), card no índice do curso e faixa das matérias; falta o `MENU-ATIVIDADES.js` e regerar quando as aulas 03 a 07 tiverem atividade |
 | D.12 | Aceite do usuário | ⬜ |
 
 ### Etapa E — Apostila (um capítulo por vez)
@@ -121,8 +121,8 @@ curso.
 ### Etapa F — Limpeza
 | Passo | Ação | Verificação | Status |
 |---|---|---|---|
-| F.1 | Apagar `MATERIAIS/RIO_DO_SUL_MAIS_TECH/Scripts-Comunicacao/` (depois do backup A.1) | `ls` não encontra a pasta; o backup continua | ⬜ |
-| F.2 | Procurar links para `Scripts-Comunicacao` no projeto e corrigir | `grep` sem resultado | ⬜ |
+| F.1 | Apagar `MATERIAIS/RIO_DO_SUL_MAIS_TECH/Scripts-Comunicacao/` (depois do backup A.1) | `ls` não encontra a pasta; o backup continua | ✅ 2026-10-09 14:10 — adiantado a pedido do usuário; backup conferido (tudo fora do Git está nele, menos o cache `graphify-out`); `git rm` de 64 arquivos e o resto na Lixeira |
+| F.2 | Procurar links para `Scripts-Comunicacao` no projeto e corrigir | `grep` sem resultado | ✅ 2026-10-09 14:11 — nenhum link em HTML; linhas da pasta tiradas do `STATUS-EMENTAS-CURSOS.md`; citações em planos antigos ficam como histórico |
 | F.3 | Aceite final do usuário | — | ⬜ |
 
 Cada passo concluído ganha um commit local, sem push (ambiente local).
