@@ -90,7 +90,8 @@ function montarMensagemEntrega(estado, resultado) {
     const orientacao = tentativa >= maximoTentativas
         ? montarMsgUltimaTentativa(maximoTentativas) : termosTentativa().pedirNova;
     const linhaNota = resultado
-        ? ['Sua nota: ' + formatarNota(calcularNota(resultado)) + '.', ''] : [];
+        ? ['Sua nota: ' + formatarNota(calcularNota({ ...resultado, minimo: estado.minimo })) +
+            '.', ''] : [];
     return ['Atividade entregue!',
         'Suas respostas foram gravadas (' +
             termosTentativa().rotulo(tentativa, maximoTentativas) + ').',
@@ -104,7 +105,11 @@ function montarMensagemEntrega(estado, resultado) {
  */
 function montarMensagemConfirmarEntrega(estado) {
     const { tentativa, maximoTentativas } = estado;
+    const emBranco = listarPendentes(estado).length;
+    const avisoEmBranco = emBranco
+        ? [emBranco + ' questão(ões) em branco: contam como não acertadas.'] : [];
     return ['Entregar a ' + termosTentativa().rotulo(tentativa, maximoTentativas) + '?', '',
+        ...avisoEmBranco,
         'Depois de entregar, as respostas não poderão ser alteradas.',
         tentativa >= maximoTentativas
             ? montarMsgUltimaTentativa(maximoTentativas) : termosTentativa().pedirNova,
@@ -112,12 +117,24 @@ function montarMensagemConfirmarEntrega(estado) {
 }
 
 /**
- * Calcula a nota (0 a 10) de acertos e total; a comparação com o mínimo usa o valor exato.
- * @param {{acertos: number, total: number}} resultado - Acertos e total de itens.
- * @returns {number} Nota exata (sem arredondar).
+ * Calcula a nota (0 a 10) pelos acertos sobre o mínimo de questões do aluno (sem mínimo, sobre
+ * o total); a nota máxima é sempre 10. A comparação com o 7 usa o valor exato.
+ * @param {{acertos: number, total: number, minimo: number}} resultado - Acertos, total de itens
+ *     e mínimo de questões do aluno (opcional).
+ * @returns {number} Nota exata (sem arredondar), no máximo 10.
  */
 function calcularNota(resultado) {
-    return (resultado.acertos / resultado.total) * NOTA_MAXIMA;
+    const divisor = resultado.minimo || resultado.total;
+    return Math.min(NOTA_MAXIMA, (resultado.acertos / divisor) * NOTA_MAXIMA);
+}
+
+/**
+ * Indica se o aluno tem mínimo de questões menor que o total da atividade.
+ * @param {Object} estado - Estado da página (minimo e itens).
+ * @returns {boolean} true se o mínimo é menor que o total.
+ */
+function temMinimoMenorQueTotal(estado) {
+    return estado.minimo < estado.itens.length;
 }
 
 /**
@@ -138,8 +155,10 @@ function mostrarResultadoNoInicio(estado, resultado) {
     if (!resultado) return;
     const secao = document.querySelector('.content-section');
     secao.querySelector('.' + CLASSE_RESULTADO)?.remove();
-    const nota = calcularNota(resultado);
+    const nota = calcularNota({ ...resultado, minimo: estado.minimo });
     const atingiu = nota >= NOTA_MINIMA_APROVACAO;
+    const sobreMinimo = temMinimoMenorQueTotal(estado)
+        ? ' Nota sobre o mínimo de ' + estado.minimo + ' questões (máximo 10).' : '';
     const bloco = criarElemento('div', 'aula-card ' + CLASSE_RESULTADO + ' ' + (atingiu
         ? CLASSE_RESULTADO_APROVADO : CLASSE_RESULTADO_REPROVADO));
     bloco.setAttribute('role', 'status');
@@ -147,7 +166,7 @@ function mostrarResultadoNoInicio(estado, resultado) {
     bloco.appendChild(criarElemento('div', 'aula-title', 'Sua nota: ' + formatarNota(nota) +
         ' (' + termosTentativa().rotulo(estado.tentativa, estado.maximoTentativas) + ')'));
     bloco.appendChild(criarElemento('p', 'resultado-atividade__detalhe',
-        resultado.acertos + ' acertos em ' + resultado.total + ' questões.'));
+        resultado.acertos + ' acertos em ' + resultado.total + ' questões.' + sobreMinimo));
     bloco.appendChild(criarElemento('p', 'resultado-atividade__mensagem',
         atingiu ? MSG_NOTA_APROVADO : MSG_NOTA_REPROVADO_INICIO + termosTentativa().reprovado));
     secao.insertBefore(bloco, secao.firstChild.nextSibling);
@@ -369,15 +388,29 @@ function destacarPendentes(estado, pendentes) {
 }
 
 /**
- * Monta a mensagem de alerta com as questões que faltam.
+ * Monta a mensagem de alerta com as questões que faltam (e quantas faltam para o mínimo).
  * @param {{numero: string}[]} pendentes - Itens sem resposta.
+ * @param {Object} estado - Estado da página (minimo e itens).
  * @returns {string} Mensagem para o aluno.
  */
-function montarMensagemPendencias(pendentes) {
+function montarMensagemPendencias(pendentes, estado) {
     const numeros = pendentes.map((item) => item.numero).join(', ');
-    return ['Atenção! A atividade ainda não está completa.', '',
+    const linhaMinimo = temMinimoMenorQueTotal(estado)
+        ? ['• Faltam ' + faltamParaOMinimo(estado, pendentes) + ' questão(ões) para o mínimo de ' +
+            estado.minimo + ' de ' + estado.itens.length + '.'] : [];
+    return ['Atenção! A atividade ainda não está completa.', '', ...linhaMinimo,
         '• ' + pendentes.length + ' questão(ões) sem alternativa marcada:', numeros + '.', '',
         'As questões pendentes foram destacadas em vermelho.'].join('\n');
+}
+
+/**
+ * Quantas questões ainda faltam responder para chegar ao mínimo do aluno (0 = já chegou).
+ * @param {Object} estado - Estado da página (minimo e itens).
+ * @param {{numero: string}[]} pendentes - Itens sem resposta.
+ * @returns {number} Questões que faltam para o mínimo.
+ */
+function faltamParaOMinimo(estado, pendentes) {
+    return Math.max(0, estado.minimo - (estado.itens.length - pendentes.length));
 }
 
 /**
@@ -389,10 +422,11 @@ function montarMensagemPendencias(pendentes) {
 async function validarAtividade(estado) {
     if (!estado.provedor.podeResponder()) return false;
     const pendentes = listarPendentes(estado);
-    destacarPendentes(estado, pendentes);
-    if (pendentes.length === 0) return true;
+    const chegouAoMinimo = faltamParaOMinimo(estado, pendentes) === 0;
+    destacarPendentes(estado, chegouAoMinimo ? [] : pendentes);
+    if (chegouAoMinimo) return true;
 
-    await mostrarPopup(montarMensagemPendencias(pendentes), { tipo: 'aviso' });
+    await mostrarPopup(montarMensagemPendencias(pendentes, estado), { tipo: 'aviso' });
     pendentes[0].card.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return false;
 }
@@ -457,8 +491,9 @@ async function conferirGravacao(estado) {
     estado.itens.forEach((item) => destacarAlternativa(item, gravadas[item.numero] || ''));
     estado.atualizarFolha();
     const faltando = listarPendentes(estado);
-    destacarPendentes(estado, faltando);
-    if (faltando.length === 0) return true;
+    const chegouAoMinimo = faltamParaOMinimo(estado, faltando) === 0;
+    destacarPendentes(estado, chegouAoMinimo ? [] : faltando);
+    if (chegouAoMinimo) return true;
 
     await mostrarPopup(montarMensagemNaoGravadas(faltando), { tipo: 'aviso' });
     faltando[0].card.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -520,8 +555,10 @@ function atualizarFolha(estado) {
     const contagem = document.querySelector('.folha-respostas__contagem');
     if (!contagem) return;
 
+    const minimo = temMinimoMenorQueTotal(estado)
+        ? ' · mínimo para entregar: ' + estado.minimo : '';
     contagem.textContent = 'Respondidas: ' + respondidas + ' de ' + estado.itens.length +
-        ' · ' + maiusculaInicial(termosTentativa().rotulo(estado.tentativa,
+        minimo + ' · ' + maiusculaInicial(termosTentativa().rotulo(estado.tentativa,
             estado.maximoTentativas));
 }
 
@@ -660,6 +697,7 @@ async function iniciarRespostasAtividade() {
         gravacoes: [],
         entregue: Boolean(carregado.entregueEm),
     };
+    estado.minimo = Math.min(carregado.minimoQuestoes || estado.itens.length, estado.itens.length);
     estado.atualizarFolha = () => atualizarFolha(estado);
 
     const identificacao = provedor.montarIdentificacao();

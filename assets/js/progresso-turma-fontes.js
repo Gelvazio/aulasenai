@@ -309,7 +309,8 @@ const FONTES_PROGRESSO_TURMA = {
             dicaParcial: 'Nota parcial sugerida pela IA (sobre o mínimo do aluno, máximo 10) — ' +
                 'prévia; vale só depois da confirmação do professor.',
             dicaFinal: 'Nota sugerida pela IA com a prova entregue e as respostas corrigidas ' +
-                '(sobre o mínimo do aluno, máximo 10) — vale só depois da confirmação do professor.',
+                '(sobre o mínimo do aluno, máximo 10) — vale só depois da confirmação do ' +
+                'professor.',
             graficoCorrecao: '4. Correção da IA (alternativas)',
             rotulosCorrecao: ['Certas', 'Meias certas', 'Erradas'],
             graficoNota: '5. Nota parcial da IA por aluno (a confirmar)',

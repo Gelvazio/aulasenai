@@ -12,6 +12,7 @@ const ROTA_RESPOSTAS =
     '/rest/v1/resposta_atividade?on_conflict=aluno_id,atividade_id,tentativa,item';
 const ROTA_ENTREGAS = '/rest/v1/entrega_atividade';
 const ROTA_NOTA = '/rest/v1/rpc/nota_da_tentativa';
+const ROTA_MINIMO_OBJETIVA = '/rest/v1/rpc/minimo_questoes_para_entregar';
 const PERFIL_PROFESSOR_PAGINA = 'PROFESSOR';
 const MSG_PROFESSOR_NAO_ASSINA = 'O professor não assina atividades: só os alunos respondem. ' +
     'Aqui você acompanha as respostas e ';
@@ -88,6 +89,27 @@ async function lerResultadoDaTentativa(atividadeId, tentativa) {
     if (!resposta.ok) return null;
     const [linha] = await resposta.json();
     return linha && linha.total > 0 ? linha : null;
+}
+
+/**
+ * Lê o mínimo de questões que o aluno precisa responder para entregar (o do aluno, senão o da
+ * atividade, senão todas — função minimo_questoes_para_entregar). Um valor fora de 1 ao total
+ * (banco sem o SQL de 2026-10-09 ou falha) vale como "todas", como era antes.
+ * @param {Object} sessao - Sessão do provedor (atividade e usuário).
+ * @returns {Promise<number>} Mínimo de questões para entregar.
+ */
+async function lerMinimoQuestoesObjetiva(sessao) {
+    const total = Number(sessao.atividade.total_itens || 0);
+    try {
+        const corpo = { p_atividade: sessao.atividade.id, p_aluno: sessao.usuario.id };
+        const resposta = await enviarAoBanco(ROTA_MINIMO_OBJETIVA, corpo, 'return=representation');
+        if (!resposta.ok) return total;
+        const minimo = Number(await resposta.json());
+        const estaValido = Number.isInteger(minimo) && minimo >= 1 && minimo <= total;
+        return estaValido ? minimo : total;
+    } catch (erro) {
+        return total;
+    }
 }
 
 /**
@@ -234,10 +256,11 @@ async function carregarDoBanco(sessao) {
             ? await lerResultadoDaTentativa(sessao.atividade.id, doAluno.tentativa) : null;
         sessao.ehProfessor = sessao.usuario.app_metadata?.perfil === PERFIL_PROFESSOR_PAGINA;
         sessao.maximoTentativas = sessao.atividade.max_tentativas;
+        sessao.minimoQuestoes = await lerMinimoQuestoesObjetiva(sessao);
         return {
             disponivel: true, logado: true, ...identificacao, ...doAluno, resultado,
             ehProfessor: sessao.ehProfessor, atividadeId: sessao.atividade.id,
-            maximoTentativas: sessao.maximoTentativas,
+            maximoTentativas: sessao.maximoTentativas, minimoQuestoes: sessao.minimoQuestoes,
         };
     } catch (erro) {
         console.warn('Banco indisponível:', erro.message);
@@ -272,10 +295,14 @@ async function explicarFalhaEntrega(sessao) {
     if (foraDoHorario) return foraDoHorario;
     try {
         const faltando = await listarItensNaoGravados(sessao);
-        if (!faltando.length) return MSG_ERRO_ENTREGA;
+        const total = Number(sessao.atividade.total_itens || 0);
+        const faltamParaMinimo = sessao.minimoQuestoes - (total - faltando.length);
+        if (faltamParaMinimo <= 0) return MSG_ERRO_ENTREGA;
         return [MSG_ENTREGA_INCOMPLETA, '',
-            '• ' + faltando.length + ' questão(ões) sem alternativa gravada:',
-            faltando.join(', ') + '.', '', MSG_ORIENTACAO_FALTANDO].join('\n');
+            '• Faltam ' + faltamParaMinimo + ' questão(ões) para o mínimo de ' +
+                sessao.minimoQuestoes + ' de ' + total + '.',
+            '• Questões sem alternativa gravada: ' + faltando.join(', ') + '.', '',
+            MSG_ORIENTACAO_FALTANDO].join('\n');
     } catch (erro) {
         return MSG_ERRO_ENTREGA;
     }
@@ -288,7 +315,7 @@ async function explicarFalhaEntrega(sessao) {
 function criarProvedorRespostasBanco() {
     const sessao = {
         usuario: null, atividade: null, nome: '', turma: '', tentativa: 1, maximoTentativas: 1,
-        ehProfessor: false,
+        ehProfessor: false, minimoQuestoes: 0,
     };
     return {
         carregar: () => carregarDoBanco(sessao),
