@@ -1624,7 +1624,8 @@ Decisões do usuário (2026-10-09 10:31): D1 o painel global **substitui** o das
 | 123.6 | `TASKS_COMPLETE.md` apagado; regra: tarefa concluída ou cancelada tem o bloco removido do `TASKS.md` (`CLAUDE.md` versão 2026-10-09 12:58:34 + histórico) | ✅ Concluído | 2026-10-09 13:00 | `grep` sem `TASKS_COMPLETE` no `CLAUDE.md` (fora do histórico) e no `TASKS.md` |
 | 123.7 | Apagados `tasks/ANALISE-EMENTAS-COMPLETA.md` (`git rm`) e `tasks/GUIA-MAESTRO-EMENTAS-CHALKIE-AI.md` (fora do Git; enviado para a Lixeira do Windows) — pedido do usuário | ✅ Concluído | 2026-10-09 13:05 | `Test-Path` = falso nos dois; nenhum arquivo citava os dois |
 | 123.8 | `tasks/CALENDARIO-COMPLETO-2026.md` refeito pela Google Agenda `gelvazio.c@edu.sc.senai.br` (194 eventos de 22/09 a 20/12, conector): 50 blocos, 180 aulas, coluna Horário e turma; notebooks/projetor mantidos do calendário anterior; link em `docs/PROFESSOR-GELVAZIO-CAMARGO.md` corrigido para `tasks/` | ✅ Concluído | 2026-10-09 13:18 | Leitura do arquivo gerado; 194 eventos lidos (sem próxima página) |
-| 123.9 | Aceite do usuário | ⬜ Pendente | — | — |
+| 123.9 | `scripts/analise-materias.py` reescrito no padrão da matéria modelo (ITIC): todos os cursos (menos MATERIAS-GERAIS e AGENDA_COLABORADOR), matéria = pasta com ementa ou `materia.json`, confere ementa (tamanho), `materia.json`, `CONTEUDO/`, STATUS-AULAS, índice/STATUS/fontes das atividades, objetivas de 50 e apostila; grava `tasks/ANALISE-MATERIAS-RELATORIO.json` (6 cursos, 35 matérias, 2 completas) | ✅ Concluído | 2026-10-09 13:25 | `py_compile`; linhas ≤ 100; relatório gerado e lido |
+| 123.10 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Etapa 124 — Pendências: coluna "Descrição" (tarefa grande — banco, pedido em 2026-10-09 12:51:22; plano [docs/pendencias-coluna-descricao.md](../docs/pendencias-coluna-descricao.md))
 | Item | Descrição | Status | Concluído em | Verificação |

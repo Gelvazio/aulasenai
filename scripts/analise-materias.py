@@ -1,164 +1,224 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+"""Análise das matérias no padrão da matéria modelo (Introdução à TIC).
 
-"""
-Análise de Materiais SENAI — Versão Corrigida
-Verifica estrutura de disciplinas e gera relatório de pendências
-Atualiza index.html com status de cada matéria
+Percorre todos os cursos de MATERIAIS/ (menos as pastas que não são curso), confere em cada
+matéria as peças da ITIC (ementa, materia.json, aulas, atividades e apostila) e grava o
+relatório em tasks/ANALISE-MATERIAS-RELATORIO.json. Só lê arquivos; não altera nada.
 """
 
-import os
 import json
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 
-# Configurações
-PROJECT_ROOT = Path(__file__).parent
-MATERIAIS_BASE = PROJECT_ROOT / "MATERIAIS" / "RIO_DO_SUL_MAIS_TECH"
+RAIZ_PROJETO = Path(__file__).resolve().parent.parent
+PASTA_MATERIAIS = RAIZ_PROJETO / "MATERIAIS"
+ARQUIVO_RELATORIO = RAIZ_PROJETO / "tasks" / "ANALISE-MATERIAS-RELATORIO.json"
+PASTAS_QUE_NAO_SAO_CURSO = {"MATERIAS-GERAIS", "AGENDA_COLABORADOR"}
+ARQUIVOS_QUE_MARCAM_MATERIA = ("EMENTA-CHALKIE-AI.md", "materia.json")
+TAMANHO_MINIMO_EMENTA = 14800
+TAMANHO_MAXIMO_EMENTA = 14950
+VERSAO_PADRAO = "Matéria modelo: Introdução à TIC (CLAUDE.md, 2026-10-03)"
 
-# Estrutura esperada
-REQUIRED_FOLDERS = {
-    "DOCUMENTACAO": "Documentação",
-    "CONTEUDO": "Conteúdo",
-    "SLIDES": "Apresentações",
-    "ATIVIDADES": "Atividades",
-    "AVALIACOES": "Avaliações"
+PECAS_ARQUIVO = {
+    "ementa": "EMENTA-CHALKIE-AI.md",
+    "materia_json": "materia.json",
+    "status_aulas": "AULAS/STATUS-AULAS.md",
+    "indice_atividades": "ATIVIDADES/index.html",
+    "status_atividades": "ATIVIDADES/STATUS-ATIVIDADES.md",
+    "status_apostila": "APOSTILA/STATUS-APOSTILA.md",
 }
 
-REQUIRED_FILES = {
-    "DOCUMENTACAO/EMENTA-CHALKIE-AI.md": "Ementa IA ⭐",
-    "DOCUMENTACAO/INDEX.md": "Índice",
-    "DOCUMENTACAO/PLANO-AULAS.md": "Plano",
+CONTAGENS = {
+    "aulas_conteudo": ("CONTEUDO", "*.md"),
+    "fontes_atividades": ("ATIVIDADES/CONTEUDO", "*.md"),
+    "atividades_50_questoes": ("ATIVIDADES", "ATIVIDADES-AULA-*-50-QUESTOES.html"),
+    "atividades_praticas": ("ATIVIDADES", "ATIVIDADE-PRATICA-AULA-*.html"),
+    "apostila_html": ("APOSTILA", "APOSTILA-*.html"),
+}
+
+PENDENCIA_POR_PECA = {
+    "ementa": "Criar EMENTA-CHALKIE-AI.md na raiz da matéria",
+    "materia_json": "Criar materia.json (copiado da ementa)",
+    "status_aulas": "Criar AULAS/STATUS-AULAS.md",
+    "indice_atividades": "Gerar ATIVIDADES/index.html",
+    "status_atividades": "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
+    "status_apostila": "Criar APOSTILA/STATUS-APOSTILA.md",
+    "aulas_conteudo": "Extrair as aulas da ementa para CONTEUDO/",
+    "fontes_atividades": "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
+    "atividades_50_questoes": "Gerar a atividade objetiva de 50 questões de cada aula",
+    "apostila_html": "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
 }
 
 
-class DisciplinaAnalyzer:
-    """Analisa uma disciplina"""
+def listar_cursos():
+    """Lista as pastas de curso em MATERIAIS/.
 
-    def __init__(self, path):
-        self.path = Path(path)
-        self.nome = self.path.name
-        self.status = {}
-        self.pendencias = []
-        self.completo = True
-
-    def analisar(self):
-        """Análise completa"""
-        self._check_folders()
-        self._check_files()
-        self._check_apostila()
-
-        return {
-            'nome': self.nome,
-            'path': str(self.path),
-            'completo': self.completo,
-            'status': self.status,
-            'pendencias': self.pendencias
-        }
-
-    def _check_folders(self):
-        """Verifica pastas obrigatórias"""
-        for folder, descricao in REQUIRED_FOLDERS.items():
-            folder_path = self.path / folder
-            existe = folder_path.exists() and folder_path.is_dir()
-            self.status[f"Pasta: {folder}"] = "✅" if existe else "❌"
-
-            if not existe:
-                self.completo = False
-
-    def _check_files(self):
-        """Verifica arquivos obrigatórios"""
-        for file_path, descricao in REQUIRED_FILES.items():
-            full_path = self.path / file_path
-            existe = full_path.exists() and full_path.is_file()
-            status = "✅" if existe else "❌"
-            self.status[f"Arquivo: {file_path}"] = status
-
-            if not existe:
-                self.completo = False
-                self.pendencias.append(f"Criar arquivo: {file_path}")
-
-    def _check_apostila(self):
-        """Verifica apostilas"""
-        conteudo_path = self.path / "CONTEUDO"
-        if not conteudo_path.exists():
-            return
-
-        files = list(conteudo_path.glob("APOSTILA*"))
-        if files:
-            self.status["Apostila"] = f"✅ ({len(files)} arquivos)"
-        else:
-            self.status["Apostila"] = "❌"
-            self.completo = False
-            self.pendencias.append("❌ Nenhuma apostila encontrada em CONTEUDO/")
+    Returns:
+        list[Path]: pastas de curso, em ordem alfabética.
+    """
+    if not PASTA_MATERIAIS.is_dir():
+        return []
+    return sorted(
+        pasta for pasta in PASTA_MATERIAIS.iterdir()
+        if pasta.is_dir() and pasta.name not in PASTAS_QUE_NAO_SAO_CURSO
+        and not pasta.name.startswith(".")
+    )
 
 
-def analisar_todas_disciplinas():
-    """Analisa todas as disciplinas"""
-    resultado = {
-        'data': datetime.now().isoformat(),
-        'total': 0,
-        'completas': 0,
-        'incompletas': 0,
-        'disciplinas': []
+def eh_pasta_de_materia(pasta):
+    """Diz se a pasta é uma matéria (tem ementa ou materia.json na raiz).
+
+    Args:
+        pasta: pasta dentro de um curso.
+
+    Returns:
+        bool: True se for matéria.
+    """
+    return any((pasta / nome).is_file() for nome in ARQUIVOS_QUE_MARCAM_MATERIA)
+
+
+def medir_ementa(pasta_materia):
+    """Mede a ementa em caracteres (acento = 1), como manda a regra das ementas.
+
+    Args:
+        pasta_materia: pasta da matéria.
+
+    Returns:
+        dict | None: tamanho e se está na faixa; None se não houver ementa.
+    """
+    caminho = pasta_materia / PECAS_ARQUIVO["ementa"]
+    if not caminho.is_file():
+        return None
+    tamanho = len(caminho.read_text(encoding="utf-8"))
+    dentro_da_faixa = TAMANHO_MINIMO_EMENTA <= tamanho <= TAMANHO_MAXIMO_EMENTA
+    return {"caracteres": tamanho, "dentro_da_faixa": dentro_da_faixa}
+
+
+def contar_arquivos(pasta_materia):
+    """Conta as peças de cada tipo (aulas, fontes, atividades, apostila).
+
+    Args:
+        pasta_materia: pasta da matéria.
+
+    Returns:
+        dict: quantidade por tipo de peça.
+    """
+    contagem = {}
+    for chave, (subpasta, padrao) in CONTAGENS.items():
+        pasta = pasta_materia / subpasta
+        contagem[chave] = len(list(pasta.glob(padrao))) if pasta.is_dir() else 0
+    return contagem
+
+
+def listar_pendencias(pecas, contagem, ementa):
+    """Monta a lista de pendências da matéria a partir do que falta.
+
+    Args:
+        pecas: dict peça -> existe (bool).
+        contagem: dict tipo -> quantidade.
+        ementa: resultado de medir_ementa.
+
+    Returns:
+        list[str]: pendências em linguagem simples.
+    """
+    pendencias = [PENDENCIA_POR_PECA[peca] for peca, existe in pecas.items() if not existe]
+    pendencias += [
+        PENDENCIA_POR_PECA[chave] for chave, quantidade in contagem.items()
+        if quantidade == 0 and chave in PENDENCIA_POR_PECA
+    ]
+    ementa_fora_da_faixa = ementa is not None and not ementa["dentro_da_faixa"]
+    if ementa_fora_da_faixa:
+        pendencias.append(
+            f"Ajustar a ementa para {TAMANHO_MINIMO_EMENTA}–{TAMANHO_MAXIMO_EMENTA} caracteres "
+            f"(hoje {ementa['caracteres']})"
+        )
+    return pendencias
+
+
+def analisar_materia(curso, pasta_materia):
+    """Confere uma matéria no padrão da ITIC.
+
+    Args:
+        curso: nome da pasta do curso.
+        pasta_materia: pasta da matéria.
+
+    Returns:
+        dict: resultado da matéria para o relatório.
+    """
+    pecas = {
+        peca: (pasta_materia / caminho).is_file() for peca, caminho in PECAS_ARQUIVO.items()
+    }
+    contagem = contar_arquivos(pasta_materia)
+    ementa = medir_ementa(pasta_materia)
+    pendencias = listar_pendencias(pecas, contagem, ementa)
+    return {
+        "curso": curso,
+        "materia": pasta_materia.name,
+        "caminho": pasta_materia.relative_to(RAIZ_PROJETO).as_posix(),
+        "completa": not pendencias,
+        "pecas": pecas,
+        "contagem": contagem,
+        "ementa": ementa,
+        "pendencias": pendencias,
     }
 
-    if not MATERIAIS_BASE.exists():
-        print(f"❌ Pasta não encontrada: {MATERIAIS_BASE}")
-        return resultado
 
-    # Listar todas as subpastas
-    for item in MATERIAIS_BASE.iterdir():
-        if item.is_dir() and not item.name.startswith('.'):
-            print(f"\n📚 Analisando: {item.name}")
+def analisar_curso(pasta_curso):
+    """Analisa todas as matérias de um curso.
 
-            analyzer = DisciplinaAnalyzer(item)
-            info = analyzer.analisar()
-            resultado['disciplinas'].append(info)
-            resultado['total'] += 1
+    Args:
+        pasta_curso: pasta do curso em MATERIAIS/.
 
-            if info['completo']:
-                resultado['completas'] += 1
-                print(f"   ✅ Completo")
-            else:
-                resultado['incompletas'] += 1
-                print(f"   ❌ Incompleto ({len(info['pendencias'])} pendências)")
-                for pend in info['pendencias'][:3]:
-                    print(f"      - {pend}")
-
-    return resultado
+    Returns:
+        tuple[list, list]: (matérias analisadas, pastas ignoradas por não serem matéria).
+    """
+    materias, ignoradas = [], []
+    for pasta in sorted(p for p in pasta_curso.iterdir() if p.is_dir()):
+        if eh_pasta_de_materia(pasta):
+            materias.append(analisar_materia(pasta_curso.name, pasta))
+        else:
+            ignoradas.append(pasta.relative_to(RAIZ_PROJETO).as_posix())
+    return materias, ignoradas
 
 
-def salvar_relatorio(resultado):
-    """Salva relatório JSON"""
-    relatorio_path = PROJECT_ROOT / "ANALISE-MATERIAS-RELATORIO.json"
+def montar_relatorio():
+    """Percorre todos os cursos e monta o relatório completo.
 
-    with open(relatorio_path, 'w', encoding='utf-8') as f:
-        json.dump(resultado, f, indent=2, ensure_ascii=False)
-
-    print(f"\n📄 Relatório salvo: {relatorio_path}")
+    Returns:
+        dict: relatório pronto para gravar em JSON.
+    """
+    materias, ignoradas = [], []
+    cursos = listar_cursos()
+    for pasta_curso in cursos:
+        materias_curso, ignoradas_curso = analisar_curso(pasta_curso)
+        materias += materias_curso
+        ignoradas += ignoradas_curso
+    completas = sum(1 for materia in materias if materia["completa"])
+    return {
+        "gerado_em": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "padrao": VERSAO_PADRAO,
+        "pastas_que_nao_sao_curso": sorted(PASTAS_QUE_NAO_SAO_CURSO),
+        "faixa_ementa": [TAMANHO_MINIMO_EMENTA, TAMANHO_MAXIMO_EMENTA],
+        "cursos": [pasta.name for pasta in cursos],
+        "total_materias": len(materias),
+        "completas": completas,
+        "incompletas": len(materias) - completas,
+        "materias": materias,
+        "pastas_ignoradas_sem_ementa_nem_materia_json": ignoradas,
+    }
 
 
 def main():
-    """Função principal"""
-    print("🔍 Iniciando análise de materiais SENAI...\n")
-
-    resultado = analisar_todas_disciplinas()
-
-    print(f"\n{'='*60}")
-    print(f"📊 RESUMO DA ANÁLISE")
-    print(f"{'='*60}")
-    print(f"Total de disciplinas: {resultado['total']}")
-    print(f"✅ Completas: {resultado['completas']}")
-    print(f"⏳ Incompletas: {resultado['incompletas']}")
-    if resultado['total'] > 0:
-        print(f"Taxa de completude: {int(resultado['completas']/resultado['total']*100)}%")
-    print(f"{'='*60}\n")
-
-    # Salvar relatório
-    salvar_relatorio(resultado)
-
-    print("✅ Análise concluída com sucesso!")
+    """Gera o relatório e mostra o resumo no terminal."""
+    relatorio = montar_relatorio()
+    ARQUIVO_RELATORIO.parent.mkdir(parents=True, exist_ok=True)
+    ARQUIVO_RELATORIO.write_text(
+        json.dumps(relatorio, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    print(f"Cursos: {len(relatorio['cursos'])} | Matérias: {relatorio['total_materias']} | "
+          f"Completas: {relatorio['completas']} | Incompletas: {relatorio['incompletas']}")
+    print(f"Relatório: {ARQUIVO_RELATORIO.relative_to(RAIZ_PROJETO).as_posix()}")
 
 
 if __name__ == "__main__":
