@@ -1622,7 +1622,8 @@ Decisões do usuário (2026-10-09 10:31): D1 o painel global **substitui** o das
 | 123.4 | Links relativos dentro de `tasks/STATUS.md` e `tasks/TASKS.md` (ex.: `docs/...`) passam a precisar de `../` | ⬜ Pendente | — | Corrigir quando o usuário pedir |
 | 123.5 | Regra no `CLAUDE.md`: id de tarefa nova = número + UUID (ex.: `#19-3f9a2c7e-8b1d-4e2a`) | ✅ Concluído | 2026-10-09 12:37 | Leitura da regra e do histórico |
 | 123.6 | `TASKS_COMPLETE.md` apagado; regra: tarefa concluída ou cancelada tem o bloco removido do `TASKS.md` (`CLAUDE.md` versão 2026-10-09 12:58:34 + histórico) | ✅ Concluído | 2026-10-09 13:00 | `grep` sem `TASKS_COMPLETE` no `CLAUDE.md` (fora do histórico) e no `TASKS.md` |
-| 123.7 | Aceite do usuário | ⬜ Pendente | — | — |
+| 123.7 | Apagados `tasks/ANALISE-EMENTAS-COMPLETA.md` (`git rm`) e `tasks/GUIA-MAESTRO-EMENTAS-CHALKIE-AI.md` (fora do Git; enviado para a Lixeira do Windows) — pedido do usuário | ✅ Concluído | 2026-10-09 13:05 | `Test-Path` = falso nos dois; nenhum arquivo citava os dois |
+| 123.8 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Etapa 124 — Pendências: coluna "Descrição" (tarefa grande — banco, pedido em 2026-10-09 12:51:22; plano [docs/pendencias-coluna-descricao.md](../docs/pendencias-coluna-descricao.md))
 | Item | Descrição | Status | Concluído em | Verificação |
