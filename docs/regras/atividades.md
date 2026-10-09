@@ -348,17 +348,23 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   (ex.: Exploração de Carreiras, que está como "Nenhuma atividade").
 - ⚠️ Índices sem o marcador `gerador-indices` (feitos à mão, como o de Introdução à TIC) são
   preservados; seguir a mesma regra ao editá-los.
-- ✅ **Nome do interruptor de bloqueio** (2026-09-30, vale para os índices de **todas** as
-  matérias): no card do professor, o interruptor se chama **"Desbloquear"** quando a atividade
-  está bloqueada e **"Bloquear"** quando está liberada; o nome muda na hora ao clicar. Fica no
-  script genérico `assets/js/indice-atividades-bloqueio.js` (não repetir por matéria).
+- ✅ **BOTÃO ON/OFF AO LADO DE CADA ATIVIDADE — REGRA GLOBAL** (2026-10-09, pedido do usuário;
+  substitui o antigo interruptor "Bloquear/Desbloquear" por card de 2026-09-30): no índice de
+  atividades de **todas** as matérias, o professor tem **um botão ON/OFF logo depois de cada
+  atividade** cadastrada no banco (ON verde = liberada; OFF vermelho = bloqueada para a turma
+  favorita; a dica do botão mostra a turma). Um card com várias atividades (ex.: objetiva +
+  prática da mesma aula) tem um botão por atividade, e cada uma é bloqueada sozinha. O card só
+  fica escurecido quando **todas** as atividades dele estão OFF. O aluno vê a atividade bloqueada
+  com 🔒 no nome e "Atividade Bloqueada!" ao clicar; o card inteiro só trava quando todas
+  estão bloqueadas. Código único: `assets/js/indice-atividades-bloqueio.js` +
+  `assets/css/indice-atividades-bloquear.css` (carregados pelo `atividades-crud-modal.js` em
+  todos os índices; não repetir por matéria nem por página).
 - ✅ **BLOQUEIO DE ATIVIDADE POR TURMA — REGRA GLOBAL** (2026-10-05, índices de **todas** as
   matérias; plano `docs/bloqueio-atividade-por-turma-favorita.md`; SQL
   `database/2026-10-05-bloqueio-atividade-por-turma.sql`, aplicado no banco):
-  - o interruptor **Bloquear/Desbloquear** do card vale **só para a turma favorita**
-    (`turma.favorito`) e mostra a turma: "Bloquear (turma X)" / "Desbloquear (turma X)". **As
-    outras turmas não são afetadas.** Sem turma favorita marcada, avisa (popup) e não grava;
-    trocar a favorita na barra do índice remonta os interruptores;
+  - o botão **ON/OFF de cada atividade** vale **só para a turma favorita** (`turma.favorito`).
+    **As outras turmas não são afetadas.** Sem turma favorita marcada, avisa (popup) e não
+    grava; trocar a favorita na barra do índice remonta os botões;
   - coluna **`atividade.bloqueio`** (JSON com os **códigos das turmas** bloqueadas, padrão `[]`):
     turma fora da lista = **liberada** (sem vínculo = liberado sempre);
   - gravação **só** pela função `definir_bloqueio_turma(atividade, turma, bloquear)` (professor

@@ -1475,3 +1475,12 @@ Plano: [docs/validacao-sessao-todas-paginas.md](docs/validacao-sessao-todas-pagi
 | 112.1 | "mais de 15 anos de experiência" e "professor do SENAI/SC" sem o marca-texto amarelo: mesmo estilo dos outros destaques (roxo, negrito) — `assets/css/apresentacao-professor.css` (`mark`) | ✅ Concluído | 2026-10-09 00:49 | Leitura do CSS (sem navegador) |
 | 112.3 | Responsividade da apresentação do professor: tablet (até 900 px) com cartões em 2 colunas; celular (até 600 px) com 1 coluna, espaços, fontes e avatar menores, perfil que quebra linha, idiomas mais estreitos e textos longos quebrando — `assets/css/apresentacao-professor.css` | ✅ Concluído | 2026-10-09 00:56 | Leitura do CSS (sem navegador), chaves balanceadas; a outra sessão fez o mesmo ajuste ao mesmo tempo: blocos unidos num só (tablet 601–900 px e celular até 600 px), sem regras repetidas |
 | 112.2 | Aceite do usuário (ver a página inicial sem login, no computador e no celular) | ⬜ Pendente | — | — |
+
+## Etapa 113 — Botão ON/OFF ao lado de cada atividade em todos os índices (tarefa pequena, pedido em 2026-10-09 00:51)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 113.1 | `assets/js/indice-atividades-bloqueio.js`: um botão ON/OFF logo depois de cada atividade cadastrada (ON = liberada, OFF = bloqueada para a turma favorita), no lugar do interruptor por card; aluno vê 🔒 só na atividade bloqueada (card inteiro só trava com todas bloqueadas) | ✅ Concluído | 2026-10-09 00:55 | `node --check`; linhas ≤ 100; leitura do código (sem navegador) |
+| 113.2 | `assets/css/indice-atividades-bloquear.css`: estilo do botão (verde ON / vermelho OFF), acima do véu do card e com área de toque maior no celular | ✅ Concluído | 2026-10-09 00:55 | Leitura do CSS |
+| 113.3 | Regra global no `CLAUDE.md` (seção "BOTÃO ON/OFF AO LADO DE CADA ATIVIDADE", versão 2026-10-09 00:56:07 + histórico) e em `docs/regras/atividades.md` (substitui a regra do interruptor por card) | ✅ Concluído | 2026-10-09 00:56 | Leitura dos arquivos; link de `docs/regras/atividades.md` já lido pelo visualizador |
+| 113.4 | Aceite do usuário (abrir um índice de atividades como professor e como aluno) | ⬜ Pendente | — | — |

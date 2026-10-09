@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 00:33:19
+**Versão das regras:** 2026-10-09 00:56:07
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 00:56:07 | **Botão ON/OFF ao lado de cada atividade** em todos os índices de atividades de todas as matérias (ON = liberada, OFF = bloqueada para a turma favorita; substitui o interruptor por card) — `docs/regras/atividades.md` |
 | 2026-10-09 00:33:19 | **Sessão obrigatória em todo HTML:** sem login **nada da página é carregado nem mostrado** e o usuário vai direto para o `index.html` da raiz; exceções só o `index.html` (apresentação do professor + botão Entrar) e o `login.html` — regra "SESSÃO OBRIGATÓRIA EM TODAS AS PÁGINAS" no `CLAUDE.md`; plano [docs/validacao-sessao-todas-paginas.md](docs/validacao-sessao-todas-paginas.md) |
 | 2026-10-09 00:25:47 | **Dados do professor Gelvazio Camargo** em arquivo único [docs/PROFESSOR-GELVAZIO-CAMARGO.md](docs/PROFESSOR-GELVAZIO-CAMARGO.md) (identificação, contato, experiência, formação, competências); seção no `CLAUDE.md`; página inicial sem login mostra a apresentação do professor |
 | 2026-10-09 00:24:10 | **Atividade prática no padrão da Prova Prática id 82** (10 questões × 3 tópicos, discursiva no banco, com Progresso, Gráficos, Cálculo Nota e correção): regra em [docs/REGRAS-ATIVIDADE-PRATICA.md](docs/REGRAS-ATIVIDADE-PRATICA.md) e seção no `CLAUDE.md` |
 | 2026-10-08 21:19:06 | Faixa de matérias: **botão do filtro em uso** (SOMENTE ENSALADO ou VER TODAS MATÉRIAS) **em fundo verde piscando levemente**; no índice do curso a **grade de matérias de baixo segue o mesmo filtro** — `assets/js/faixa-materias-ensalado.js` + `assets/css/indice-atividades.css` |
-| 2026-10-08 21:15:46 | **Faixa de matérias abre em SOMENTE ENSALADO** em todos os cursos (se nenhuma matéria estiver ensalada ou o banco falhar, mostra todas); VER TODAS MATÉRIAS volta à lista completa — `assets/js/faixa-materias-ensalado.js` |
 
 ---
 
@@ -968,6 +968,22 @@ competências, idiomas, cursos que leciona e onde os dados aparecem) ficam em
 - ✅ A página inicial (`index.html`) sem login mostra a apresentação do professor
   (`assets/css/apresentacao-professor.css`, exibida por `assets/js/indice-cursos.js`).
 - ⛔ O arquivo é publicado: nada de senha, chave, CPF/RG nem dados de alunos.
+
+## 🔛 REGRA GLOBAL — BOTÃO ON/OFF AO LADO DE CADA ATIVIDADE (2026-10-09)
+
+Registrada em 2026-10-09 a pedido do usuário. Vale para **todas as atividades de todas as matérias**
+de todos os cursos (todo `ATIVIDADES/index.html`). Detalhe em
+[docs/regras/atividades.md](docs/regras/atividades.md) (seção dos índices de atividades).
+
+- ✅ No índice de atividades, o **professor** tem **um botão ON/OFF logo depois de cada atividade**
+  cadastrada no banco: **ON (verde) = liberada**, **OFF (vermelho) = bloqueada**. Um card com
+  várias atividades tem um botão para cada uma.
+- ✅ O bloqueio vale para a **turma favorita** (`definir_bloqueio_turma`); as outras turmas não mudam.
+- ✅ O aluno vê a atividade bloqueada com 🔒 e "Atividade Bloqueada!" ao clicar; o card inteiro só
+  trava quando todas as atividades dele estão bloqueadas.
+- ✅ Código único para todos os índices: `assets/js/indice-atividades-bloqueio.js` +
+  `assets/css/indice-atividades-bloquear.css` (carregados pelo `atividades-crud-modal.js`).
+  ⛔ Não criar botão de bloqueio por matéria nem por página, e não voltar ao interruptor por card.
 
 ## 📝 Outras Regras
 

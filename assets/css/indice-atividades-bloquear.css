@@ -1,38 +1,41 @@
-/* Interruptor ON/OFF "Bloquear" dos cards do índice de atividades (perfil professor) */
-.interruptor-bloquear {
-  display: inline-flex; align-items: center; gap: 6px; cursor: pointer; padding: 4px 8px;
-  font-size: 13px; font-weight: 700; border: 1px solid #cbd5e0; border-radius: 8px;
-  background: #f7fafc;
+/* Botão ON/OFF ao lado de cada atividade do índice (perfil professor):
+   ON (verde) = liberada; OFF (vermelho) = bloqueada para a turma favorita. */
+.interruptor-atividade {
+  display: inline-flex; align-items: center; vertical-align: middle; cursor: pointer;
+  margin: 0 6px 0 2px;
 }
-.interruptor-bloquear input { position: absolute; opacity: 0; pointer-events: none; }
-.interruptor-bloquear__chave {
-  position: relative; width: 48px; height: 22px; border-radius: 22px; background: #a0aec0;
+.interruptor-atividade input { position: absolute; opacity: 0; pointer-events: none; }
+.interruptor-atividade__chave {
+  position: relative; width: 52px; height: 24px; border-radius: 24px; background: #c53030;
   transition: background 0.2s;
 }
-.interruptor-bloquear__chave::after {
-  content: 'OFF'; position: absolute; right: 6px; top: 5px; font-size: 9px; font-weight: 700;
+.interruptor-atividade__chave::after {
+  content: 'OFF'; position: absolute; right: 6px; top: 6px; font-size: 10px; font-weight: 700;
   color: #fff;
 }
-.interruptor-bloquear__chave::before {
-  content: ''; position: absolute; left: 3px; top: 3px; width: 16px; height: 16px;
+.interruptor-atividade__chave::before {
+  content: ''; position: absolute; left: 3px; top: 3px; width: 18px; height: 18px;
   border-radius: 50%; background: #fff; transition: transform 0.2s; z-index: 1;
 }
-.interruptor-bloquear input:checked + .interruptor-bloquear__chave { background: #c53030; }
-.interruptor-bloquear input:checked + .interruptor-bloquear__chave::after {
+.interruptor-atividade input:checked + .interruptor-atividade__chave { background: #2f855a; }
+.interruptor-atividade input:checked + .interruptor-atividade__chave::after {
   content: 'ON'; left: 8px; right: auto;
 }
-.interruptor-bloquear input:checked + .interruptor-bloquear__chave::before {
-  transform: translateX(26px);
+.interruptor-atividade input:checked + .interruptor-atividade__chave::before {
+  transform: translateX(28px);
 }
-.interruptor-bloquear input:disabled + .interruptor-bloquear__chave { opacity: 0.6; }
-.interruptor-bloquear input:focus-visible + .interruptor-bloquear__chave {
+.interruptor-atividade input:disabled + .interruptor-atividade__chave { opacity: 0.6; }
+.interruptor-atividade input:focus-visible + .interruptor-atividade__chave {
   outline: 2px solid #1a56db; outline-offset: 2px;
 }
 
-/* Professor: o interruptor fica acima do véu do card bloqueado, claro e clicável */
-.aula.bloqueada-professor .interruptor-bloquear { position: relative; z-index: 2; }
+/* Professor: o botão fica acima do véu do card bloqueado, claro e clicável */
+.aula.bloqueada-professor .interruptor-atividade { position: relative; z-index: 2; }
 
-/* Celular: interruptor com área de toque maior. */
+/* Professor: link de uma atividade bloqueada (o card continua liberado para as outras) */
+.link-bloqueado-professor { cursor: not-allowed; opacity: 0.6; }
+
+/* Celular: botão com área de toque maior. */
 @media (max-width: 600px) {
-  .interruptor-bloquear { min-height: 44px; padding: 8px 12px; font-size: 14px; }
+  .interruptor-atividade { min-height: 44px; margin: 0 8px 0 4px; }
 }
