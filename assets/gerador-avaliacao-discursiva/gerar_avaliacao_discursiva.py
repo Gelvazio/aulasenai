@@ -17,8 +17,8 @@ liga o bloqueio de colar/arrastar/copiar nos campos (assets/js/bloqueio-colar-di
 "- **Campo do tamanho da resposta:** sim" dá a cada campo a altura da resposta esperada (padrão
 de resposta, com folga) e o faz crescer ao digitar (assets/js/campo-tamanho-discursiva.js).
 "- **Botão gravar:** sim" põe um botão "💾 Gravar" em cada tópico (grava na hora; a gravação
-automática continua). "- **Progresso para o professor:** sim" mostra ao professor a barra de
-progresso de cada aluno da turma (assets/js/progresso-turma-discursiva.js).
+automática continua). O professor vê o Progresso da turma GLOBAL em toda atividade
+(assets/js/progresso-turma-global.js), sem campo na fonte.
 "- **Ocultar respostas após entrega:** sim" faz o aluno que já entregou não ver (nem carregar do
 banco) as próprias respostas (assets/js/respostas-discursivas-banco.js).
 Plano: docs/avaliacao-pratica-discursiva-itic.md

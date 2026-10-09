@@ -74,6 +74,31 @@ async function acrescentarAberturas(linhas, atividadeId) {
 }
 
 /**
+ * Acrescenta a cada linha o mínimo de questões do aluno (o dele, senão o da atividade, senão
+ * todas; no máximo o total), para a nota valer sobre o mínimo (máximo 10), como no banco.
+ * Sem conseguir ler, a linha fica sem mínimo e a nota continua sobre o total.
+ * @param {Object[]} linhas - Linhas do resumo.
+ * @param {number} atividadeId - Id da atividade.
+ * @returns {Promise<Object[]>} Linhas com minimo.
+ */
+async function acrescentarMinimos(linhas, atividadeId) {
+    try {
+        const [minimos, atividades] = await Promise.all([
+            sbGet('minimo_questoes_aluno', 'select=aluno_id,minimo&atividade_id=eq.' + atividadeId),
+            sbGet('atividade', 'select=minimo_questoes_entrega&id=eq.' + atividadeId),
+        ]);
+        const porAluno = new Map(minimos.map((linha) => [linha.aluno_id, linha.minimo]));
+        const padrao = atividades[0]?.minimo_questoes_entrega || null;
+        return linhas.map((linha) => {
+            const minimo = porAluno.get(linha.aluno_id) || padrao || linha.total;
+            return { ...linha, minimo: Math.min(minimo, linha.total) };
+        });
+    } catch (erro) {
+        return linhas;
+    }
+}
+
+/**
  * Formata data e hora para exibição (dd/mm/aaaa hh:mm:ss).
  * @param {string|null} dataIso - Data ISO ou vazio.
  * @returns {string} Data e hora formatadas ou "—".
@@ -194,7 +219,8 @@ function criarControleLiberar(contexto) {
  */
 function montarLinhaRelatorio(contexto) {
     const { linha, maximo } = contexto;
-    const nota = calcularNota({ acertos: linha.acertos, total: linha.total });
+    const nota = calcularNota({ acertos: linha.acertos, total: linha.total,
+        minimo: linha.minimo });
     const abaixoDoMinimo = linha.entregue_em && nota < NOTA_MINIMA_APROVACAO;
     const tr = document.createElement('tr');
     tr.append(
@@ -218,7 +244,8 @@ function montarLinhaRelatorio(contexto) {
  */
 function calcularNotaFinalAluno(tentativas) {
     const notas = tentativas.filter((linha) => linha.entregue_em)
-        .map((linha) => calcularNota({ acertos: linha.acertos, total: linha.total }));
+        .map((linha) => calcularNota({ acertos: linha.acertos, total: linha.total,
+            minimo: linha.minimo }));
     return notas.length ? Math.max(...notas) : null;
 }
 
@@ -910,9 +937,10 @@ async function montarRelatorioProfessor(secao, atividadeId, maximo) {
     secao.insertBefore(bloco, secao.firstChild.nextSibling);
     try {
         const dadosTurmas = await buscarDadosTurmas();
+        const tentativas = await acrescentarMinimos(await buscarResumoTentativas(atividadeId),
+            atividadeId);
         const linhas = await acrescentarAlunosSemResposta(
-            await acrescentarAberturas(await buscarResumoTentativas(atividadeId), atividadeId),
-            atividadeId, dadosTurmas);
+            await acrescentarAberturas(tentativas, atividadeId), atividadeId, dadosTurmas);
         const resumo = criarElemento('p', CLASSE_RELATORIO + '__resumo');
         bloco.appendChild(resumo);
         atualizarResumoRelatorio(resumo, linhas);

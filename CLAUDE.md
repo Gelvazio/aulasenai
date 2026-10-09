@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 10:47:05
+**Versão das regras:** 2026-10-09 11:03:21
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 11:03:21 | **Nova seção "Pull Requests" (só na nuvem):** todo commit feito na nuvem é enviado na hora (`git push`) e, se a branch não tiver PR aberto para a `main`, um **novo PR** é criado |
+| 2026-10-09 11:02:12 | **Mínimo de questões nas objetivas aplicado no banco** (`database/2026-10-09-minimo-questoes-objetivas.sql`, pelo conector do Supabase): entrega e nota da objetiva sobre o mínimo valem também no banco |
+| 2026-10-09 10:54:45 | **Progresso da turma GLOBAL** em toda atividade com banco (objetivas e discursivas), aberto junto com a página para o professor (`progresso-turma-global.js` substitui o das discursivas); objetiva com acertos e nota pelo banco; **mínimo de questões também nas objetivas** (SQL `database/2026-10-09-minimo-questoes-objetivas.sql`) |
 | 2026-10-09 10:47:05 | **Tamanho da ementa medido com Python** (`docs/regras/ementas-e-cursos.md`): conta caracteres (acento = 1); `wc -c` (bytes) e `Get-Content` sem `-Raw` (linhas) deixam de ser usados; versão vazia da linha anterior preenchida com a hora do commit `6829542` |
 | 2026-10-09 10:43:11 | **Curso desativado some do índice** de alunos e professores (`cursos_do_usuario` filtra `curso.ativo = 0`; o administrador vê todos); abas da página de criar usuários mostram a **unidade do banco** (não o "local" da lista) |
-| 2026-10-09 13:33:10 | **Fase 2 da unidade:** colunas `turma.local` e `curso.unidade` apagadas; todas as telas mostram a unidade pela ligação (`unidade:unidade_id(nome)`, `assets/js/unidade.js`); criar usuários grava `unidade_id` (campo `unidadeId` da turma na lista) |
-| 2026-10-09 13:27:14 | **Unidade só na tabela `unidade`** (`id`, `nome`, `endereco`): `curso.unidade_id` e `turma.unidade_id` apontam para ela; CRUD no modal **🏢 Unidades** de `cursos.html`; os textos antigos `curso.unidade` e `turma.local` só até a fase 2 |
-| 2026-10-09 12:59:06 | **Menu CURSO** (só o Professor Administrador) abre `cursos.html`: CRUD da tabela `curso` (sem exclusão: desativar = `ativo 0`, pois apagar levaria as aulas em cascata) e ação **🏫 Turmas** para vincular turmas ao curso (função `definir_curso_turma`) |
 
 ---
 
@@ -68,7 +68,9 @@ Registrada em 2026-10-03 a pedido do usuário.
   (id 82); **ligar nas outras discursivas depois**, quando o usuário pedir (ver
   `docs/regras/atividades.md`).
 - ✅ **Quantidade mínima de questões e nota proporcional nas discursivas** (2026-10-08, pedido
-  do usuário):
+  do usuário) — **também nas objetivas desde 2026-10-09** (entrega com o mínimo de questões
+  respondidas e nota = acertos ÷ mínimo × 10, máximo 10; SQL
+  `database/2026-10-09-minimo-questoes-objetivas.sql`, aplicado no banco em 2026-10-09):
   - cada avaliação discursiva tem um **mínimo de questões para entregar**; o padrão é o
     **total** de questões, e o professor pode mudar **por aluno** (botão "Quantidade Mínima de
     Questões" ao lado do nome no Progresso da turma);
@@ -110,12 +112,11 @@ Registrada em 2026-10-03 a pedido do usuário.
   a nota do professor em CORREÇÃO. Já funciona em toda discursiva do gerador (lê a
   `correcao_discursiva`); toda avaliação discursiva nova ou alterada deve mantê-lo. Detalhe em
   `docs/regras/atividades.md`.
-- ✅ **Progresso da turma para o professor em todas as atividades** (2026-10-08): no topo da
-  atividade, só para o professor, por aluno e por questão, atualizado a cada 5 s, com o botão
-  **📈 Gráficos** (modal com 5 gráficos: barras, pizza, barras por questão, rosca da correção da
-  IA e barras horizontais da nota parcial). **Nas avaliações discursivas já é global** (todas,
-  sem campo na fonte); **nas objetivas ainda falta** — fazer quando o usuário pedir (ver
-  `docs/regras/atividades.md`).
+- ✅ **Progresso da turma GLOBAL em todas as atividades** (2026-10-08; global nas objetivas e
+  discursivas desde 2026-10-09): no topo da atividade, só para o professor, **aberto junto com a
+  página**, por aluno e por questão, atualizado a cada 5 s, com **📈 Gráficos**, **🧮 Cálculo
+  Nota** e **🎯 Quantidade Mínima de Questões**. Um só módulo para todas as atividades com banco
+  (ver a regra "PROGRESSO DA TURMA GLOBAL" abaixo e `docs/regras/atividades.md`).
 - ✅ **1 atividade objetiva de 50 questões por aula** (2026-10-03), controlada em
   `<MATERIA>/ATIVIDADES/STATUS-ATIVIDADES.md` (ver a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES").
 - ⛔ **Push depende do ambiente** (2026-10-07): **local** (máquina do usuário) = **nunca fazer
@@ -876,6 +877,25 @@ confirmação** do usuário — não perguntar "posso fazer push?". Tarefa que n
   nem mudança de remotos.
 - ✅ Antes do push, conferir `git diff --cached --name-only` contra a regra "O QUE NUNCA É
   PUBLICADO" (a `main` é publicada pela Vercel depois do merge).
+- ✅ **Cada commit na nuvem = push + PR** (2026-10-09): ver a seção "Pull Requests" logo abaixo.
+
+## 🔀 Pull Requests (SÓ NO AMBIENTE DE NUVEM)
+
+Registrada em 2026-10-09 11:03:21 a pedido do usuário. **Vale só na nuvem** (Claude Code na web /
+sessão remota); no ambiente **local** nada muda: só o commit, o push continua com o usuário.
+
+- ✅ **Todo commit feito na nuvem é enviado na hora:** depois de **cada** `git commit`, fazer
+  **`git push -u origin <branch>`** (a branch da sessão, nunca a `main`) — sem esperar o fim da
+  tarefa e sem perguntar ao usuário. Nenhum commit fica só no contêiner.
+- ✅ **Sem PR, cria um novo:** depois do push, conferir se a branch tem pull request **aberto** para
+  a `main`. Se **não tiver** (nunca teve, ou o anterior foi juntado ou fechado), **abrir um novo
+  PR** na hora, com título e descrição do que mudou. Se já tiver PR aberto, o push entra nele.
+- ✅ PR anterior **juntado ou fechado**: antes do commit novo, recomeçar a branch a partir da `main`
+  atualizada (regra "Sempre um PR novo" da seção do push) e abrir **outro** PR.
+- ✅ Antes do push: `git fetch origin main` (se a `main` andou, merge nela e conferir de novo) e
+  `git diff --cached --name-only` contra a regra "O QUE NUNCA É PUBLICADO".
+- ⛔ Nunca push na `main`, nunca push forçado e o Claude **nunca faz o merge** do PR (é do usuário).
+- ✅ Na resposta ao usuário, citar o link do PR criado ou atualizado.
 
 ## 💾 REGRA — COMMIT POR TAREFA (SEMPRE)
 
@@ -1029,6 +1049,34 @@ atividades de todas as matérias** (todo `ATIVIDADES/index.html`).
 - ⏳ **Demais matérias: pendentes** (tarefa #16 do `TASKS.md`) — ligar uma por vez, só quando o
   usuário pedir, acrescentando a pasta na lista. Nelas continua valendo o comportamento da seção
   "BOTÃO ON/OFF AO LADO DE CADA ATIVIDADE" (card escurecido quando todas as atividades estão OFF).
+
+## 📊 REGRA GLOBAL — PROGRESSO DA TURMA EM TODAS AS ATIVIDADES (2026-10-09)
+
+Registrada em 2026-10-09 a pedido do usuário ("gerador de progresso global, semelhante ao da turma
+de ADAG, para todas as matérias"). Plano: [docs/progresso-global-atividades.md](docs/progresso-global-atividades.md).
+Detalhe em [docs/regras/atividades.md](docs/regras/atividades.md).
+
+- ✅ **Toda atividade que grava no banco** (objetiva e discursiva), de todas as matérias e
+  cursos, mostra ao **professor** o painel **"📊 Progresso da turma" logo ao abrir a página**,
+  igual ao da Prova Prática ADAG (id 82): uma linha por aluno, uma célula por questão, barra,
+  situação ("✅ Entregue"), 🎯 mínimo por aluno, nota parcial e nota final, ordenação, resumo da
+  turma, **📈 Gráficos** e **🧮 Cálculo Nota**, atualizado a cada 5 s. O aluno não vê o painel.
+- ✅ **Um só módulo global** (tudo vem dele): `assets/js/progresso-turma-global.js` (tela) +
+  `assets/js/progresso-turma-fontes.js` (dados) + `assets/css/progresso-turma-global.css`. Ligado
+  pelos motores das páginas — `assets/js/respostas-atividade.js` (objetivas) e
+  `assets/js/avaliacao-discursiva.js` (discursivas) —, então **toda página com banco, já
+  existente ou nova, ganha o painel sem regerar** e sem campo na fonte `.md`.
+- ✅ **Objetiva:** colunas "Nota parcial (acertos)" e "Nota final", com os acertos calculados no
+  banco (`resumo_tentativas_atividade`; **o gabarito nunca sai do banco**). **Discursiva:** "Nota
+  parcial IA" e "Nota IA (a confirmar)", como antes.
+- ✅ **Mínimo de questões também na objetiva:** entrega com o mínimo de questões respondidas e
+  nota = acertos ÷ mínimo × 10, **máximo 10** (página, relatório do professor e banco — SQL
+  `database/2026-10-09-minimo-questoes-objetivas.sql`, aplicado em 2026-10-09). Sem mínimo
+  definido, o mínimo é o total (todas as questões), como antes.
+- ✅ O painel lê o banco de 1000 em 1000 linhas (turmas grandes não ficam cortadas) e só lê; o
+  RLS limita aos alunos das turmas do professor.
+- ⛔ Não criar painel de progresso por matéria nem por página, e não voltar ao antigo
+  `progresso-turma-discursiva.js` (removido em 2026-10-09).
 
 ## 🆔 REGRA — ID NA FRENTE DE CADA ATIVIDADE NOS ÍNDICES (2026-10-09)
 

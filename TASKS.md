@@ -208,7 +208,24 @@ O que falta:
 - [ ] **Opcional, só se pedido:** generalizar `RIO_DO_SUL_MAIS_TECH/scripts/criar-status-ementas.py`
   para todos os cursos (hoje só percorre Rio do Sul; a regra manda atualizar os outros à mão) —
   é código: tarefa com plano próprio.
+### #18: Progresso da turma GLOBAL em todas as atividades — pedida em 2026-10-09 10:22:23
+
+**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 121 (fonte única).
+**Plano:** [docs/progresso-global-atividades.md](docs/progresso-global-atividades.md) (aprovado em 2026-10-09 10:31).
+**Prioridade:** 🟠 Alta
+
+Pedido do usuário: criar um gerador de progresso global, igual ao da Prova Prática ADAG (id 82),
+para todas as matérias; anotar a regra no `CLAUDE.md`; começar pela objetiva da aula 01 de
+Testes de Front-End (`ATIVIDADES-AULA-01-50-QUESTOES.html`) e depois todas as atividades devem
+exibir o progresso logo ao abrir a página.
+
+- [ ] Módulo global (substitui o painel das discursivas; tudo vem do global: gráficos, Cálculo
+  Nota e mínimo de questões).
+- [ ] Objetivas: acertos e nota pelo banco (sem expor o gabarito); mínimo de questões e Cálculo
+  Nota também nas objetivas (SQL novo, aplicado só com pedido do usuário).
+- [ ] Escopo: objetivas e discursivas que gravam no banco.
+- [ ] Regra no `CLAUDE.md` e em `docs/regras/atividades.md`; aceite do usuário.
 
 ---
 
-**Última atualização:** 2026-10-09 (tarefa #17 adicionada)
+**Última atualização:** 2026-10-09 (tarefas #17 e #18 adicionadas)

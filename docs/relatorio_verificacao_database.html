@@ -630,6 +630,38 @@
       </table>
     </div>
 
+    <h2>🎯 Atualização 2026-10-09 — mínimo de questões também nas objetivas</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-09-minimo-questoes-objetivas.sql</code> (aplicado em 2026-10-09). Nenhuma tabela nem dado mudou; só funções.</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Mudança</th>
+        </tr>
+        <tr>
+          <td>total_questoes_atividade(p_atividade)</td>
+          <td>Função (nova)</td>
+          <td>Security definer, só authenticated: total de questões (discursiva = questões com tópicos; objetiva = atividade.total_itens, senão o gabarito)</td>
+        </tr>
+        <tr>
+          <td>minimo_questoes_para_entregar(p_atividade, p_aluno)</td>
+          <td>Função</td>
+          <td>Vale também na objetiva (mínimo do aluno, senão da atividade, senão o total)</td>
+        </tr>
+        <tr>
+          <td>atividade_completa</td>
+          <td>Função (RLS da entrega)</td>
+          <td>Objetiva entrega com respostas gravadas ≥ mínimo (antes: todas)</td>
+        </tr>
+        <tr>
+          <td>notas_media_final, liberar_nova_tentativa</td>
+          <td>Função</td>
+          <td>Nota da objetiva = acertos ÷ mínimo × 10, máximo 10</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🏢 Atualização 2026-10-09 — unidade em um só lugar (tabela unidade)</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-09-unidade-curso-turma.sql</code> (aplicado em 2026-10-09)</p>

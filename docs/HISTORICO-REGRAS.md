@@ -6,6 +6,9 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 11:03:21 | **Nova seção "Pull Requests" (só na nuvem):** todo commit feito na nuvem é enviado na hora (`git push`) e, se a branch não tiver PR aberto para a `main`, um **novo PR** é criado |
+| 2026-10-09 11:02:12 | **Mínimo de questões nas objetivas aplicado no banco** (`database/2026-10-09-minimo-questoes-objetivas.sql`, pelo conector do Supabase): entrega e nota da objetiva sobre o mínimo valem também no banco |
+| 2026-10-09 10:54:45 | **Progresso da turma GLOBAL** em toda atividade com banco (objetivas e discursivas), aberto junto com a página para o professor (`progresso-turma-global.js` substitui o das discursivas); objetiva com acertos e nota pelo banco; **mínimo de questões também nas objetivas** (SQL `database/2026-10-09-minimo-questoes-objetivas.sql`) |
 | 2026-10-09 10:47:05 | **Tamanho da ementa medido com Python** (`docs/regras/ementas-e-cursos.md`): conta caracteres (acento = 1); `wc -c` (bytes) e `Get-Content` sem `-Raw` (linhas) deixam de ser usados; versão vazia da linha anterior preenchida com a hora do commit `6829542` |
 | 2026-10-09 10:43:11 | **Curso desativado some do índice** de alunos e professores (`cursos_do_usuario` filtra `curso.ativo = 0`; o administrador vê todos); abas da página de criar usuários mostram a **unidade do banco** (não o "local" da lista) |
 | 2026-10-09 13:33:10 | **Fase 2 da unidade:** colunas `turma.local` e `curso.unidade` apagadas; todas as telas mostram a unidade pela ligação (`unidade:unidade_id(nome)`, `assets/js/unidade.js`); criar usuários grava `unidade_id` (campo `unidadeId` da turma na lista) |

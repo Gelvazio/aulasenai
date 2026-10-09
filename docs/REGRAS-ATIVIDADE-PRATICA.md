@@ -97,7 +97,7 @@ O que o aluno deve fazer.
 | Gravação automática + botão 💾 Gravar por tópico | aluno | `avaliacao-discursiva.js` |
 | Bloqueio de colar / campo do tamanho da resposta | aluno | `bloqueio-colar-discursiva.js`, `campo-tamanho-discursiva.js` |
 | Respostas ocultas depois da entrega | aluno | `respostas-discursivas-banco.js` |
-| **Progresso da turma** (atualiza a cada 5 s) | professor | `progresso-turma-discursiva.js` |
+| **Progresso da turma** (atualiza a cada 5 s; global em toda atividade) | professor | `progresso-turma-global.js` |
 | **📈 Gráficos** (5 gráficos) | professor | `graficos-progresso-turma.js` |
 | **🧮 Cálculo Nota** e Quantidade Mínima de Questões por aluno | professor | `calculo-nota-progresso.js`, `minimo-questoes-discursiva.js` |
 | Nota parcial da IA e ícones ✅ / 🟡 / ❌ | professor | `nota-ia-respostas-discursiva.js` |
