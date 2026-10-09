@@ -16,7 +16,7 @@
 | 02 | Gerenciadores: características, requisitos e níveis | ✅ `ATIVIDADES-AULA-02-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 03 | Preparação do ambiente: instalação do PostgreSQL | ✅ `ATIVIDADES-AULA-03-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 04 | Configuração do SGBD e infraestrutura do sistema | ✅ `ATIVIDADES-AULA-04-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
-| 05 | Demandas do cliente e escopo do projeto | ⬜ `ATIVIDADES-AULA-05-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
+| 05 | Demandas do cliente e escopo do projeto | ✅ `ATIVIDADES-AULA-05-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 06 | Entidades fortes, fracas e associativas | ⬜ `ATIVIDADES-AULA-06-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 07 | Atributos | ⬜ `ATIVIDADES-AULA-07-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 08 | Relacionamentos 1:1, 1:N e N:N | ⬜ `ATIVIDADES-AULA-08-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
@@ -41,7 +41,7 @@
 | 02 | ✅ `ATIVIDADE-PRATICA-AULA-02.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 03 | ✅ `ATIVIDADE-PRATICA-AULA-03.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 04 | ✅ `ATIVIDADE-PRATICA-AULA-04.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
-| 05 | ⬜ `ATIVIDADE-PRATICA-AULA-05.html` | — | ⬜ | ⬜ | ⬜ Pendente |
+| 05 | ✅ `ATIVIDADE-PRATICA-AULA-05.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 06 | ⬜ `ATIVIDADE-PRATICA-AULA-06.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 07 | ⬜ `ATIVIDADE-PRATICA-AULA-07.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 08 | ⬜ `ATIVIDADE-PRATICA-AULA-08.html` | — | ⬜ | ⬜ | ⬜ Pendente |

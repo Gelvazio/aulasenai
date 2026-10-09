@@ -14,7 +14,7 @@
 | 02 | Gerenciadores: características, requisitos e níveis | ✅ `CONTEUDO/AULA-02-GERENCIADORES-CARACTERISTICAS-REQUISITOS-E-NIVEIS.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-02-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-02.html` | ⬜ seeds gerados, não aplicados |
 | 03 | Preparação do ambiente: instalação do PostgreSQL | ✅ `CONTEUDO/AULA-03-PREPARACAO-DO-AMBIENTE-INSTALACAO-DO-POSTGRESQL.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-03-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-03.html` | ⬜ seeds gerados, não aplicados |
 | 04 | Configuração do SGBD e infraestrutura do sistema | ✅ `CONTEUDO/AULA-04-CONFIGURACAO-DO-SGBD-E-INFRAESTRUTURA.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-04-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-04.html` | ⬜ seeds gerados, não aplicados |
-| 05 | Demandas do cliente e escopo do projeto | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 05 | Demandas do cliente e escopo do projeto | ✅ `CONTEUDO/AULA-05-DEMANDAS-DO-CLIENTE-E-ESCOPO-DO-PROJETO.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-05-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-05.html` | ⬜ seeds gerados, não aplicados |
 | 06 | Entidades fortes, fracas e associativas | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 07 | Atributos | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 08 | Relacionamentos 1:1, 1:N e N:N | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |

@@ -12,7 +12,7 @@
 | 02 | Gerenciadores: características, requisitos e níveis | 4 | 4.1.1–4.1.2 | C4, C6, C9 | [AULA-02](../CONTEUDO/AULA-02-GERENCIADORES-CARACTERISTICAS-REQUISITOS-E-NIVEIS.md) |
 | 03 | Preparação do ambiente: instalação do PostgreSQL | 4 | 4.2.1 | C10, C11 | [AULA-03](../CONTEUDO/AULA-03-PREPARACAO-DO-AMBIENTE-INSTALACAO-DO-POSTGRESQL.md) |
 | 04 | Configuração do SGBD e infraestrutura do sistema | 4 | 4.2.2 | C5, C10, C11 | [AULA-04](../CONTEUDO/AULA-04-CONFIGURACAO-DO-SGBD-E-INFRAESTRUTURA.md) |
-| 05 | Demandas do cliente e escopo do projeto | 4 | 6.1 · 1.1 | C1, S2 | ⬜ |
+| 05 | Demandas do cliente e escopo do projeto | 4 | 6.1 · 1.1 | C1, S2 | [AULA-05](../CONTEUDO/AULA-05-DEMANDAS-DO-CLIENTE-E-ESCOPO-DO-PROJETO.md) |
 | 06 | Entidades fortes, fracas e associativas | 4 | 5.1 | C2 | ⬜ |
 | 07 | Atributos | 4 | 5.3 | C2 | ⬜ |
 | 08 | Relacionamentos 1:1, 1:N e N:N | 4 | 5.2 | C2 | ⬜ |
