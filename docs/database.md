@@ -199,6 +199,12 @@ exige `eh_professor_administrador()`; `anon` sem execução). O trigger
 é administrador (a política de update de `aulas` aceita qualquer professor). Restaurar: voltar
 `excluido = 0` pelo SQL Editor. Nenhuma linha é apagada.
 
+**Bloqueio da aula bloqueia as atividades (2026-10-09, `database/2026-10-09-trigger-bloqueio-aula-atividades.sql`):**
+o trigger `aulas_bloqueio_propaga_atividades_trg` (AFTER UPDATE OF ativo, só quando `ativo` passa a
+`false`) chama `aulas_bloqueio_propaga_atividades()` (security definer, sem execução pela API), que
+grava `atividade.ativo = false` em todas as atividades da aula. Desbloquear a aula **não** mexe nas
+atividades (o professor libera cada uma no ON/OFF do índice).
+
 **RLS Status:** ✅ **HABILITADO**  
 **Rows:** 0
 

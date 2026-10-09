@@ -376,6 +376,9 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   - `atividade.ativo = false` (CRUD "CADASTRAR ATIVIDADES") continua bloqueando **todas** as
     turmas; liberar para a favorita uma atividade inativa faz `ativo = true` e põe as outras
     turmas em `bloqueio` (elas continuam bloqueadas);
+  - **bloquear a aula (`aulas.ativo = false`) bloqueia todas as atividades dela** (trigger
+    `aulas_bloqueio_propaga_atividades_trg`, 2026-10-09: grava `atividade.ativo = false`);
+    desbloquear a aula não mexe nas atividades;
   - aluno: vê a atividade se **alguma** turma dele (`turmaaluno`) estiver liberada; aluno sem
     turma e visitante, liberado. Garantido no banco pela política `atividade_select` e por
     `item_valido`/`topico_valido` (função `atividade_liberada_para_usuario`);

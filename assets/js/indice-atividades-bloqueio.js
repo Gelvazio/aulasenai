@@ -30,6 +30,9 @@ const MSG_ATIVIDADE_BLOQUEADA = 'Atividade Bloqueada!';
 const PERFIL_PROFESSOR_BLOQUEIO = 'PROFESSOR';
 const ROTA_DEFINIR_BLOQUEIO_TURMA = '/rest/v1/rpc/definir_bloqueio_turma';
 const EVENTO_FAVORITA_ALTERADA = 'turma-favorita-alterada';
+// Disparado pelo botão da aula (indice-aula-bloqueio.js): o trigger do banco bloqueia as
+// atividades da aula bloqueada.
+const EVENTO_AULA_ALTERADA_BLOQUEIO = 'aula-bloqueio-alterado';
 const SELETOR_INTERRUPTOR_ATIVIDADE = '.interruptor-atividade';
 const ATRIBUTO_HREF_GUARDADO = 'data-href-bloqueado';
 const MSG_SEM_FAVORITA_BLOQUEIO = 'Marque a turma favorita na barra "Turma" do índice: o ' +
@@ -368,13 +371,13 @@ async function montarInterruptoresBloquear() {
 }
 
 /**
- * Remonta os botões quando a turma favorita muda na barra do índice.
+ * Remonta os botões quando a turma favorita muda ou quando a aula é bloqueada/desbloqueada.
  */
 function ouvirTrocaFavoritaBloqueio() {
-    document.addEventListener(EVENTO_FAVORITA_ALTERADA, () => {
-        montarInterruptoresBloquear().catch((erro) =>
-            console.warn('Bloqueio de atividades indisponível:', erro.message));
-    });
+    const remontar = () => montarInterruptoresBloquear().catch((erro) =>
+        console.warn('Bloqueio de atividades indisponível:', erro.message));
+    document.addEventListener(EVENTO_FAVORITA_ALTERADA, remontar);
+    document.addEventListener(EVENTO_AULA_ALTERADA_BLOQUEIO, remontar);
 }
 
 /**

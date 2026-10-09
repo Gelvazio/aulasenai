@@ -15,6 +15,9 @@ const MSG_AULA_BLOQUEIO = 'Aula Bloqueada!';
 const TEXTO_LIBERADA_AULA_BLOQUEIO = 'Aula liberada';
 const TEXTO_BLOQUEADA_AULA_BLOQUEIO = 'Aula bloqueada';
 const MSG_FALHA_AULA_BLOQUEIO = 'Não foi possível alterar o bloqueio da aula: ';
+// Avisa o indice-atividades-bloqueio.js para reler as atividades (o trigger do banco bloqueia
+// todas as atividades da aula bloqueada).
+const EVENTO_AULA_BLOQUEIO_ALTERADO = 'aula-bloqueio-alterado';
 
 /**
  * Diz se o bloqueio da aula vale nesta página (matéria listada na configuração).
@@ -133,6 +136,7 @@ function criarBotaoBloqueioAula(item, aoGravar) {
         caixa.disabled = true;
         try {
             aoGravar(await gravarBloqueioAula(item.aula, caixa.checked));
+            document.dispatchEvent(new CustomEvent(EVENTO_AULA_BLOQUEIO_ALTERADO));
         } catch (erro) {
             atualizarBotaoBloqueioAula(etiqueta, !caixa.checked);
             await avisarBloqueioAula(MSG_FALHA_AULA_BLOQUEIO + erro.message, 'erro');

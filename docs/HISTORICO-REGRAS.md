@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 01:09:35 | **Bloquear a aula bloqueia todas as atividades dela** (trigger `aulas_bloqueio_propaga_atividades_trg`: `aulas.ativo` → false grava `atividade.ativo = false`); desbloquear a aula não mexe nas atividades |
 | 2026-10-09 01:07:02 | Bloqueio da AULA × bloqueio da ATIVIDADE **ligado em Testes de Front-End** (lista em `assets/js/indice-bloqueio-aula-config.js`; demais matérias seguem pendentes na tarefa #16); botão **🧾 LOG escondido** em todos os índices; **slides abrem em nova aba** |
 | 2026-10-09 01:03:11 | **Regra pendente (tarefa #16 do TASKS.md, outra sessão):** o ON/OFF da atividade nunca bloqueia o card; botão de bloqueio da AULA (`aulas.ativo`) antes de "Editar aula" é o único que bloqueia o card |
 | 2026-10-09 00:56:07 | **Botão ON/OFF ao lado de cada atividade** em todos os índices de atividades de todas as matérias (ON = liberada, OFF = bloqueada para a turma favorita; substitui o interruptor por card) — `docs/regras/atividades.md` |

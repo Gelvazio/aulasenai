@@ -1506,3 +1506,15 @@ Plano: [docs/validacao-sessao-todas-paginas.md](docs/validacao-sessao-todas-pagi
 | 114.3 | "📕 Slides" dos cards abrem em nova aba: 18 botões em 3 índices (ITIC, Fundamentos da Tecnologia, Testes de Front-End) + gerador de índices (`atributos_nova_aba`) | ✅ Concluído | 2026-10-09 01:07 | `grep`: nenhum botão de slides sem `target="_blank"`; `ast.parse` do gerador |
 | 114.4 | Regras: `CLAUDE.md` (versão 2026-10-09 01:07:02), histórico, `TASKS.md` (#16), `docs/regras/atividades.md` | ✅ Concluído | 2026-10-09 01:07 | Leitura dos arquivos |
 | 114.5 | Aceite do usuário (índice de Testes de Front-End como professor e como aluno) | ⬜ Pendente | — | — |
+
+## Etapa 115 — Trigger: bloquear a aula bloqueia todas as atividades dela (tarefa de banco, pedido em 2026-10-09 01:09)
+
+Plano: [docs/trigger-bloqueio-aula-bloqueia-atividades.md](docs/trigger-bloqueio-aula-bloqueia-atividades.md) — decisão D1 do usuário: desbloquear a aula não mexe nas atividades.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 115.1 | SQL `database/2026-10-09-trigger-bloqueio-aula-atividades.sql` e aplicação pelo MCP (trigger `aulas_bloqueio_propaga_atividades_trg` + função security definer) | ✅ Concluído | 2026-10-09 01:13 | `pg_trigger` com a definição; `authenticated` sem execução da função |
+| 115.2 | Teste no banco em bloco desfeito (aula 93): bloquear → atividade 96 false; desbloquear → nada muda; estado final igual ao anterior | ✅ Concluído | 2026-10-09 01:14 | Consulta antes/depois |
+| 115.3 | Tela: botão da aula avisa o script das atividades (`aula-bloqueio-alterado`) para reler os ON/OFF | ✅ Concluído | 2026-10-09 01:15 | `node --check` |
+| 115.4 | `docs/database.md` + `relatorio_verificacao_database.html`, `docs/regras/atividades.md`, `CLAUDE.md` (versão 2026-10-09 01:09:35) e histórico | ✅ Concluído | 2026-10-09 01:15 | Leitura |
+| 115.5 | Aceite do usuário (bloquear uma aula no índice e ver as atividades OFF) | ⬜ Pendente | — | — |
