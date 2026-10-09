@@ -21,7 +21,7 @@
 | 07 | Atributos | ✅ `ATIVIDADES-AULA-07-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 08 | Relacionamentos 1:1, 1:N e N:N | ✅ `ATIVIDADES-AULA-08-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 09 | Diagrama entidade-relacionamento | ✅ `ATIVIDADES-AULA-09-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
-| 10 | Normalização de dados (1FN, 2FN e 3FN) | ⬜ `ATIVIDADES-AULA-10-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
+| 10 | Normalização de dados (1FN, 2FN e 3FN) | ✅ `ATIVIDADES-AULA-10-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 11 | Padronização de dados, cronograma e fluxograma | ⬜ `ATIVIDADES-AULA-11-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 12 | DDL: tabelas e campos | ⬜ `ATIVIDADES-AULA-12-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 13 | DDL: relações, chaves e restrições | ⬜ `ATIVIDADES-AULA-13-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
@@ -46,7 +46,7 @@
 | 07 | ✅ `ATIVIDADE-PRATICA-AULA-07.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 08 | ✅ `ATIVIDADE-PRATICA-AULA-08.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 09 | ✅ `ATIVIDADE-PRATICA-AULA-09.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
-| 10 | ⬜ `ATIVIDADE-PRATICA-AULA-10.html` | — | ⬜ | ⬜ | ⬜ Pendente |
+| 10 | ✅ `ATIVIDADE-PRATICA-AULA-10.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 11 | ⬜ `ATIVIDADE-PRATICA-AULA-11.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 12 | ⬜ `ATIVIDADE-PRATICA-AULA-12.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 13 | ⬜ `ATIVIDADE-PRATICA-AULA-13.html` | — | ⬜ | ⬜ | ⬜ Pendente |

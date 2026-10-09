@@ -206,6 +206,8 @@ ATIVIDADES_BANCO_DADOS = [
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-07-50-QUESTOES.md"),
     (8, "Relacionamentos 1:1, 1:N e N:N", DATA_PROVISORIA,
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-08-50-QUESTOES.md"),
+    (10, "Normalização de Dados (1FN, 2FN e 3FN)", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-10-50-QUESTOES.md"),
 ]
 
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.

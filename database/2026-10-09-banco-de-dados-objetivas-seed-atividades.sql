@@ -525,4 +525,75 @@ begin
       (v_atividade, 48, 'Cardinalidade Máxima e Mínima', 'D'),
       (v_atividade, 49, 'Ligação com a Aula 6', 'C'),
       (v_atividade, 50, 'Verbo nos Dois Sentidos', 'D');
+
+  -- Aula 10: Normalização de Dados (1FN, 2FN e 3FN)
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Normalização de Dados (1FN, 2FN e 3FN)' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (10, 'Normalização de Dados (1FN, 2FN e 3FN)', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Normalização de Dados (1FN, 2FN e 3FN)', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Normalização de Dados (1FN, 2FN e 3FN) (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-10-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Objetivo da Normalização', 'B'),
+      (v_atividade, 2, 'Benefício da Normalização', 'D'),
+      (v_atividade, 3, 'Anomalia de Inserção', 'A'),
+      (v_atividade, 4, 'Anomalia de Atualização', 'D'),
+      (v_atividade, 5, 'Anomalia de Exclusão', 'B'),
+      (v_atividade, 6, 'Dependência Funcional', 'B'),
+      (v_atividade, 7, 'Exemplo de Dependência', 'C'),
+      (v_atividade, 8, 'Curso e Carga', 'A'),
+      (v_atividade, 9, 'Definição de 1FN', 'C'),
+      (v_atividade, 10, 'Valor Atômico', 'C'),
+      (v_atividade, 11, 'Telefones na Mesma Célula', 'C'),
+      (v_atividade, 12, 'Grupos Repetidos', 'D'),
+      (v_atividade, 13, 'Solução para a 1FN', 'A'),
+      (v_atividade, 14, 'Definição de 2FN', 'D'),
+      (v_atividade, 15, 'Dependência Parcial', 'C'),
+      (v_atividade, 16, '2FN e Chave Simples', 'C'),
+      (v_atividade, 17, 'Nome do Aluno na Matrícula', 'A'),
+      (v_atividade, 18, 'Turno na Matrícula', 'B'),
+      (v_atividade, 19, 'Data da Matrícula', 'A'),
+      (v_atividade, 20, 'Definição de 3FN', 'C'),
+      (v_atividade, 21, 'Dependência Transitiva', 'A'),
+      (v_atividade, 22, 'Carga do Curso na Turma', 'A'),
+      (v_atividade, 23, 'Correção da 3FN', 'D'),
+      (v_atividade, 24, 'Regra de Bolso', 'D'),
+      (v_atividade, 25, 'Ordem das Formas Normais', 'D'),
+      (v_atividade, 26, 'Resultado da Escola', 'A'),
+      (v_atividade, 27, 'Normalização e DER', 'B'),
+      (v_atividade, 28, 'Mudança da Carga', 'B'),
+      (v_atividade, 29, 'Pedido com Dados do Cliente', 'C'),
+      (v_atividade, 30, 'Correção do Pedido', 'B'),
+      (v_atividade, 31, 'Item do Pedido', 'B'),
+      (v_atividade, 32, 'Preço no Item', 'D'),
+      (v_atividade, 33, 'Desnormalização', 'D'),
+      (v_atividade, 34, 'Justificar a Separação', 'A'),
+      (v_atividade, 35, 'Biblioteca', 'C'),
+      (v_atividade, 36, 'Clínica', 'A'),
+      (v_atividade, 37, 'Endereço em Várias Partes', 'C'),
+      (v_atividade, 38, 'Tabela sem Chave', 'B'),
+      (v_atividade, 39, 'Redundância e Normalização', 'C'),
+      (v_atividade, 40, 'Anomalia e Consequência', 'A'),
+      (v_atividade, 41, 'Dinâmica: Primeiro Passo', 'B'),
+      (v_atividade, 42, 'Dinâmica: Justificativa', 'D'),
+      (v_atividade, 43, 'Entrega da SA 1', 'B'),
+      (v_atividade, 44, 'Chave da Associativa', 'D'),
+      (v_atividade, 45, 'FK Depois da 3FN', 'A'),
+      (v_atividade, 46, 'Dados Contraditórios', 'A'),
+      (v_atividade, 47, 'Curso Novo Sem Aluno', 'B'),
+      (v_atividade, 48, 'Apagar Matrícula', 'B'),
+      (v_atividade, 49, '3FN e Turma', 'C'),
+      (v_atividade, 50, 'Normalização e Requisitos', 'D');
 end $$;
