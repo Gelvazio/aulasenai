@@ -14,7 +14,7 @@
 // Cards informativos (sem atividade no banco) usam data-sem-bloqueio e nunca são bloqueados.
 const SELETOR_CARD_BLOQUEIO = 'article.aula:not([data-sem-bloqueio])';
 const SELETOR_LINK_BLOQUEIO = 'a.btn.principal';
-const SELETOR_LINK_ATIVIDADE = 'a.btn';
+const SELETOR_LINK_ATIVIDADE_BLOQUEIO = 'a.btn';
 const CLASSE_CARD_BLOQUEADO = 'bloqueada';
 const CLASSE_TEMA_BLOQUEADO_PROFESSOR = 'bloqueada-professor';
 const CLASSE_LINK_BLOQUEADO_PROFESSOR = 'link-bloqueado-professor';
@@ -170,7 +170,7 @@ function bloquearLinksAluno(card, ativas) {
  * @returns {string[]} Caminhos sem repetição.
  */
 function listarPaginasDoCard(card) {
-    const caminhos = [...card.querySelectorAll(SELETOR_LINK_ATIVIDADE)].map(caminhoDoLink);
+    const caminhos = [...card.querySelectorAll(SELETOR_LINK_ATIVIDADE_BLOQUEIO)].map(caminhoDoLink);
     return [...new Set(caminhos.filter(Boolean))];
 }
 
@@ -318,7 +318,7 @@ function criarInterruptorAtividade(liberada, turma, aoMudar) {
  * @param {string} turma - Turma favorita (vazio = sem favorita).
  */
 function montarInterruptoresCard(card, linhas, turma) {
-    const itens = [...card.querySelectorAll(SELETOR_LINK_ATIVIDADE)]
+    const itens = [...card.querySelectorAll(SELETOR_LINK_ATIVIDADE_BLOQUEIO)]
         .map((link) => {
             const pagina = caminhoDoLink(link);
             return { link, atividade: linhas.find((linha) => linha.pagina === pagina) };
