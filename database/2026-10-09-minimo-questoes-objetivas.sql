@@ -1,6 +1,6 @@
 -- =============================================================================================
 -- Quantidade mínima de questões também nas atividades OBJETIVAS (2026-10-09, pedido do usuário)
--- Plano: docs/progresso-global-atividades.md (decisão D3) · STATUS.md, Etapa 119, item 119.5
+-- Plano: docs/progresso-global-atividades.md (decisão D3) · STATUS.md, Etapa 121, item 121.5
 -- Regra: docs/regras/atividades.md ("Quantidade mínima de questões para entregar")
 --
 -- O que muda (as discursivas continuam iguais; o total delas é o mesmo de antes):
