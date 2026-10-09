@@ -170,4 +170,75 @@ begin
       (v_atividade, 48, 'Leilão dos Gerenciadores', 'D'),
       (v_atividade, 49, 'Requisito ou Característica', 'C'),
       (v_atividade, 50, 'Visão para Cada Setor', 'A');
+
+  -- Aula 4: Configuração do SGBD e Infraestrutura do Sistema
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Configuração do SGBD e Infraestrutura do Sistema' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (4, 'Configuração do SGBD e Infraestrutura do Sistema', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Configuração do SGBD e Infraestrutura do Sistema', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Configuração do SGBD e Infraestrutura do Sistema (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-04-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Arquivo postgresql.conf', 'B'),
+      (v_atividade, 2, 'Arquivo pg_hba.conf', 'A'),
+      (v_atividade, 3, 'Localizar a Configuração', 'A'),
+      (v_atividade, 4, 'Localizar o pg_hba.conf', 'D'),
+      (v_atividade, 5, 'listen_addresses', 'D'),
+      (v_atividade, 6, 'listen_addresses = ''localhost''', 'C'),
+      (v_atividade, 7, 'Parâmetro port', 'A'),
+      (v_atividade, 8, 'max_connections', 'D'),
+      (v_atividade, 9, 'shared_buffers', 'B'),
+      (v_atividade, 10, 'timezone', 'C'),
+      (v_atividade, 11, 'log_connections', 'C'),
+      (v_atividade, 12, 'ALTER SYSTEM', 'D'),
+      (v_atividade, 13, 'pg_reload_conf', 'C'),
+      (v_atividade, 14, 'Parâmetro que Exige Restart', 'C'),
+      (v_atividade, 15, 'Reload ou Restart', 'B'),
+      (v_atividade, 16, 'Quando Fazer Restart', 'B'),
+      (v_atividade, 17, 'Linha do pg_hba.conf', 'C'),
+      (v_atividade, 18, 'Método scram-sha-256', 'C'),
+      (v_atividade, 19, 'Método trust', 'A'),
+      (v_atividade, 20, 'Ordem das Linhas', 'D'),
+      (v_atividade, 21, 'Depois de Alterar o pg_hba.conf', 'A'),
+      (v_atividade, 22, 'Erro no pg_hba.conf', 'B'),
+      (v_atividade, 23, 'Criar o Banco', 'C'),
+      (v_atividade, 24, 'Criar o Usuário da Aplicação', 'B'),
+      (v_atividade, 25, 'GRANT CONNECT', 'B'),
+      (v_atividade, 26, 'Por Que um Usuário Próprio', 'A'),
+      (v_atividade, 27, 'Testar o Usuário Novo', 'C'),
+      (v_atividade, 28, 'String de Conexão', 'A'),
+      (v_atividade, 29, 'Partes da String', 'A'),
+      (v_atividade, 30, 'Variável de Ambiente', 'D'),
+      (v_atividade, 31, 'Arquivo .env', 'D'),
+      (v_atividade, 32, 'Caminho da Requisição', 'A'),
+      (v_atividade, 33, 'Banco em Rede Interna', 'B'),
+      (v_atividade, 34, 'Firewall do Banco', 'B'),
+      (v_atividade, 35, 'Muitos Acessos', 'C'),
+      (v_atividade, 36, 'Pool de Conexões', 'D'),
+      (v_atividade, 37, 'Disponibilidade', 'A'),
+      (v_atividade, 38, 'Desempenho e Infraestrutura', 'A'),
+      (v_atividade, 39, 'Datas Erradas', 'A'),
+      (v_atividade, 40, 'Correlação Característica e Infraestrutura', 'A'),
+      (v_atividade, 41, 'Escola: Endereços', 'D'),
+      (v_atividade, 42, 'Escola: listen_addresses', 'D'),
+      (v_atividade, 43, 'Dados de Configuração', 'B'),
+      (v_atividade, 44, 'Pasta da Configuração no Linux', 'B'),
+      (v_atividade, 45, 'Ficha de Configuração', 'C'),
+      (v_atividade, 46, 'Permissões nas Tabelas', 'D'),
+      (v_atividade, 47, 'Erro Típico de Infraestrutura', 'B'),
+      (v_atividade, 48, 'Parâmetro de Memória', 'C'),
+      (v_atividade, 49, 'Mudança Sem Derrubar', 'B'),
+      (v_atividade, 50, 'Monte a Arquitetura', 'D');
 end $$;

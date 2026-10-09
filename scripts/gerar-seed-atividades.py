@@ -196,6 +196,8 @@ ATIVIDADES_BANCO_DADOS = [
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-01-50-QUESTOES.md"),
     (2, "Gerenciadores: Características, Requisitos e Níveis", DATA_PROVISORIA,
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-02-50-QUESTOES.md"),
+    (4, "Configuração do SGBD e Infraestrutura do Sistema", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-04-50-QUESTOES.md"),
 ]
 
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.
