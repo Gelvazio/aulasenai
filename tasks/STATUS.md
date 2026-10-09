@@ -27,6 +27,7 @@ A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale 
 | #17 | Fechar a revisão das regras do `CLAUDE.md` (aceites 70.5, 72.8, 73.14; commit `85a8531` com gabarito; ementa fora do tamanho) | ⬜ Pendente — nova sessão | Usuário confere e dá os aceites; decide sobre os gabaritos do commit `85a8531` antes do push |
 | #18 | Progresso da turma global em todas as atividades (objetivas e discursivas com banco) | 👀 Aguardando validação (Etapa 121) | Item 121.11 (teste e aceite do usuário) |
 | #19-91cbac65-87ca-45a0 | Análise contínua das matérias (`scripts/analise-materias.py` → `tasks/ANALISE-MATERIAS-RELATORIO.json`) — ⛔ permanente: nunca CONCLUÍDA enquanto houver matéria incompleta ou pendência | 🔄 Em andamento — última rodada 2026-10-09 13:25: 6 cursos, 35 matérias, 2 completas, 33 incompletas | Rodar a rotina no início de cada sessão e ao concluir tarefa em matéria; resolver pendências só a pedido do usuário |
+| #20-2ac1a8ec-911b-466f | Banco de Dados (Técnico em Informática para Internet) 100% no padrão da ITIC — etapa 1 sem a apostila | ⬜ Planejada (Etapa 124) | Item 124.1 — plano em `docs/banco-de-dados-materia-100.md` e aprovação do usuário |
 
 ## ⏳ Aguardando o usuário (aceites, aprovações e ações dele)
 
@@ -1636,3 +1637,18 @@ Decisões do usuário (2026-10-09 10:31): D1 o painel global **substitui** o das
 | 124.2 | Aprovação do plano pelo usuário | ✅ Concluído | 2026-10-09 12:54 | Resposta "aprovo" |
 | 124.3 | Executar os passos 1 a 6 do plano (SQL aplicado no Supabase) | ✅ Concluído | 2026-10-09 12:54:31 | Coluna e check conferidos no banco; `node --check` OK |
 | 124.4 | Aceite do usuário (testar o modal "Nova Pendência" e a coluna Descrição no navegador) | ⬜ Pendente | — | — |
+
+## Etapa 124 — Banco de Dados 100% no padrão da ITIC, etapa 1 sem a apostila (tarefa grande #20-2ac1a8ec-911b-466f, pedida em 2026-10-09 13:26:40)
+
+Matéria: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO_DE_DADOS/` · Plano: `docs/banco-de-dados-materia-100.md` (a criar) · Descrição: `TASKS.md` #20.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 124.0 | Tarefa registrada no `TASKS.md` e no "📌 Tarefas" | ✅ Concluído | 2026-10-09 13:27 | Leitura |
+| 124.1 | Plano em `docs/` (permissão IGNORAR → VERIFICAR, nome da pasta, destino dos arquivos antigos, nº de aulas) e aprovação do usuário | ⬜ Pendente | — | — |
+| 124.2 | `materia.json` copiado da ementa | ⬜ Pendente | — | — |
+| 124.3 | Aulas em `CONTEUDO/` (uma por vez) + `AULAS/STATUS-AULAS.md` | ⬜ Pendente | — | — |
+| 124.4 | Atividades por aula (objetiva de 50 + prática padrão id 82), fontes em `ATIVIDADES/CONTEUDO/`, `STATUS-ATIVIDADES.md`, índice regerado; seeds só com pedido | ⬜ Pendente | — | — |
+| 124.5 | Avaliações e média final no modelo da ITIC (se a ementa pedir) | ⬜ Pendente | — | — |
+| 124.6 | `scripts/analise-materias.py`: sem pendências, exceto as da apostila | ⬜ Pendente | — | — |
+| 124.7 | Aceite do usuário | ⬜ Pendente | — | — |
