@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 14:09:46
+**Versão das regras:** 2026-10-09 14:58:46
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 14:58:46 | **Nuvem: cada arquivo criado = commit + push na hora** (seção "Pull Requests"), sem esperar o fim da tarefa; arquivo parcial vai como `wip(...)` com o que falta no `STATUS.md` |
 | 2026-10-09 14:09:46 | **Gabarito vai para o Git, mas não é publicado na Vercel:** `-GABARITO.md`, `*QUESTOES.md`, `PROVA-OBJETIVA-*.md`, seeds `database/*-seed-atividades.sql` e `BANCO-AVA/` versionados e listados no `.vercelignore` (saíram do `.gitignore`); regras atualizadas no `CLAUDE.md`, `docs/regras/atividades.md` e `docs/REGRAS-ATIVIDADE-PRATICA.md` |
 | 2026-10-09 14:04:30 | **Atividade prática de uma aula = 10 questões × 3 tópicos** (`docs/REGRAS-ATIVIDADE-PRATICA.md`); a prova id 82 é de várias aulas e serve **só como referência dos recursos compartilhados** (não do tamanho nem do formato das questões) |
 | 2026-10-09 13:20:11 | **Análise contínua das matérias (tarefa permanente #19-91cbac65-87ca-45a0):** `scripts/analise-materias.py` grava `tasks/ANALISE-MATERIAS-RELATORIO.json` no início de cada sessão e ao concluir tarefa em matéria; a tarefa **nunca fica CONCLUÍDA** enquanto houver matéria incompleta ou pendência |
 | 2026-10-09 12:58:34 | **`TASKS_COMPLETE.md` apagado:** tarefa concluída ou cancelada tem o bloco **removido** do `TASKS.md` (o registro fica no `STATUS.md` e no Git) |
-| 2026-10-09 12:36:43 | **Id de tarefa nova = número + UUID** (ex.: `#19-3f9a2c7e-8b1d-4e2a`), para duas licenças/branches não gerarem o mesmo número; as antigas (até #18) não mudam |
 
 ---
 
@@ -922,6 +922,13 @@ confirmação** do usuário — não perguntar "posso fazer push?". Tarefa que n
 Registrada em 2026-10-09 11:03:21 a pedido do usuário. **Vale só na nuvem** (Claude Code na web /
 sessão remota); no ambiente **local** nada muda: só o commit, o push continua com o usuário.
 
+- ✅ **Cada arquivo criado na nuvem = commit + push na hora** (2026-10-09 14:58:46, pedido do usuário): ao
+  **criar** qualquer arquivo numa sessão de nuvem (aula, fonte de atividade, página gerada, plano,
+  status), fazer **logo em seguida** o `git commit` dele e o `git push -u origin <branch>`, sem
+  esperar o fim da tarefa nem juntar vários arquivos — assim nada se perde se a sessão parar ou o
+  contêiner for reciclado. Vale também para arquivo parcial (commit marcado como `wip(...)` e o
+  `STATUS.md` dizendo o que falta). Rascunhos de trabalho no scratchpad (fora do repositório) não
+  entram nesta regra. Continuam valendo "O QUE NUNCA É PUBLICADO" e o `git diff --cached --name-only`.
 - ✅ **Todo commit feito na nuvem é enviado na hora:** depois de **cada** `git commit`, fazer
   **`git push -u origin <branch>`** (a branch da sessão, nunca a `main`) — sem esperar o fim da
   tarefa e sem perguntar ao usuário. Nenhum commit fica só no contêiner.
