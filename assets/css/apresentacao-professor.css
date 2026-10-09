@@ -338,31 +338,8 @@
     --cor-etiqueta: var(--apresentacao-cor-laranja);
 }
 
-/* ── Contato e acesso ── */
-.apresentacao-professor__acesso {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 10px 14px;
-    padding: 10px 14px;
-    border: 2px solid var(--apresentacao-cor-ouro);
-    border-radius: 8px;
-    background: var(--apresentacao-fundo-acesso);
-    font-size: 16px;
-    font-weight: 700;
-    text-align: center;
-}
-
-.apresentacao-professor__contato {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-}
-
 /* Telas largas e altas: a apresentação cabe inteira, então a página não rola. */
-@media (min-width: 901px) and (min-height: 780px) {
+@media (min-width: 901px) and (min-height: 720px) {
     html:has(.apresentacao-professor:not([hidden])) {
         overflow: hidden;
     }
