@@ -12,9 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/supabase.js" defer></script>
     <script src="assets/js/popup.js" defer></script>
-    <script src="assets/js/unidade.js" defer></script>
     <script src="assets/js/cursos-repositorio.js" defer></script>
     <script src="assets/js/cursos-modais.js" defer></script>
+    <script src="assets/js/unidades-modal.js" defer></script>
     <script src="assets/js/cursos-pagina.js" defer></script>
 </head>
 <body>
@@ -37,6 +37,7 @@
                                 placeholder="Curso, unidade ou turma">
                         </label>
                         <button type="button" class="guia-botao" id="cuNovoCurso">➕ Novo curso</button>
+                        <button type="button" class="guia-botao" id="cuAbrirUnidades">🏢 Unidades</button>
                     </div>
                 </div>
                 <p id="cuResumo" class="tp-resumo"></p>
@@ -65,7 +66,7 @@
                     <input type="text" id="cuNome" class="guia-filtro" maxlength="200" required>
                 </label>
                 <label class="tp-campo">Unidade
-                    <input type="text" id="cuUnidade" class="guia-filtro" maxlength="200">
+                    <select id="cuUnidade" class="guia-filtro"></select>
                 </label>
                 <label class="tp-campo">Descrição
                     <textarea id="cuDescricao" class="guia-filtro cu-descricao" rows="4"></textarea>
@@ -87,6 +88,27 @@
                 <div class="tp-acoes">
                     <button type="button" class="guia-botao tp-botao-secundario" data-fechar-modal>Fechar</button>
                 </div>
+            </div>
+        </div>
+
+        <div id="cuModalUnidades" class="tp-modal" hidden>
+            <div class="tp-modal__caixa" role="dialog" aria-modal="true" aria-labelledby="cuTituloUnidades">
+                <h2 id="cuTituloUnidades">🏢 Unidades</h2>
+                <ul id="unLista" class="cu-lista-turmas"></ul>
+                <form id="unFormulario" class="cu-formulario-unidade">
+                    <h3 id="unTituloFormulario" class="tp-modal__subtitulo">Nova unidade</h3>
+                    <label class="tp-campo">Nome
+                        <input type="text" id="unNome" class="guia-filtro" maxlength="200" required>
+                    </label>
+                    <label class="tp-campo">Endereço
+                        <input type="text" id="unEndereco" class="guia-filtro" maxlength="300">
+                    </label>
+                    <div class="tp-acoes">
+                        <button type="submit" class="guia-botao">Salvar unidade</button>
+                        <button type="button" class="guia-botao tp-botao-secundario" id="unCancelarEdicao" hidden>Cancelar edição</button>
+                        <button type="button" class="guia-botao tp-botao-secundario" data-fechar-modal>Fechar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </main>

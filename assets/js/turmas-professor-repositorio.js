@@ -9,7 +9,7 @@ const TABELA_TURMA_REPOSITORIO = "turma";
 const TABELA_USUARIO_REPOSITORIO = "usuario";
 const RPC_ADMINISTRADOR_REPOSITORIO = "eh_professor_administrador";
 const PERFIL_PROFESSOR_REPOSITORIO = "PROFESSOR";
-const COLUNAS_TURMA_REPOSITORIO = "codigo, nome, turno, horario, local, uc";
+const COLUNAS_TURMA_REPOSITORIO = "codigo, nome, turno, horario, unidade:unidade_id(nome), uc";
 const COLUNAS_PROFESSOR_REPOSITORIO = "id, nome_completo, email";
 const COLUNAS_VINCULO_REPOSITORIO = "id, turma_codigo, professor_id, criado_em";
 

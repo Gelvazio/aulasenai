@@ -2,6 +2,8 @@
 // Tela do Professor Administrador. Cada curso tem ✏️ Editar, 🏫 Turmas (modal de vínculo em
 // assets/js/cursos-modais.js) e Desativar/Ativar. Não há exclusão: apagar um curso apagaria as
 // aulas dele em cascata, por isso desativar grava ativo = 0.
+// A unidade vem só da tabela unidade (curso.unidade_id e turma.unidade_id); o CRUD das unidades
+// fica no modal 🏢 Unidades (assets/js/unidades-modal.js).
 // Dados: assets/js/cursos-repositorio.js; avisos: assets/js/popup.js.
 
 const TEXTO_SEM_LOGIN_CU = "Entre com a conta do Professor Administrador para gerenciar os cursos.";
@@ -12,7 +14,7 @@ const ROTA_LOGIN_CU = "login.html";
 const CURSO_ATIVO = 1;
 const CURSO_INATIVO = 0;
 
-const estadoCu = { repositorio: null, cursos: [], turmas: [] };
+const estadoCu = { repositorio: null, cursos: [], turmas: [], unidades: [] };
 
 /**
  * Atalho para document.getElementById.
@@ -86,12 +88,24 @@ function turmasDoCursoCu(cursoId) {
 }
 
 /**
- * Descreve uma turma: "124519 — T TIIN 2026/1 M1 · LOCAL TURNO" (assets/js/unidade.js).
+ * Nome da unidade pelo id (tabela unidade).
+ * @param {number|null} unidadeId - Id da unidade.
+ * @returns {string} Nome da unidade ou texto vazio.
+ */
+function nomeDaUnidadeCu(unidadeId) {
+  return estadoCu.unidades.find((unidade) => unidade.id === unidadeId)?.nome || "";
+}
+
+/**
+ * Descreve uma turma: "124519 — T TIIN 2026/1 M1 · SENAI RIO DO SUL MANHÃ" (unidade da tabela).
  * @param {Object} turma - Linha da tabela turma.
  * @returns {string} Texto da turma.
  */
 function descreverTurmaCu(turma) {
-  return acrescentarUnidadeTurma(turma.codigo + " — " + (turma.nome || ""), turma);
+  const unidade = [nomeDaUnidadeCu(turma.unidade_id), turma.turno].filter(Boolean).join(" ");
+  const texto = turma.codigo + " — " + (turma.nome || "");
+  if (!unidade) return texto;
+  return texto + " · " + unidade.toUpperCase();
 }
 
 /**
@@ -161,7 +175,7 @@ function criarLinhaCursoCu(curso) {
   const celulaCurso = criarElementoCu("td", "", curso.nome_completo || "");
   celulaCurso.append(criarElementoCu("span", "tp-detalhe", curso.descricao || ""));
   const situacao = cursoEstaAtivoCu(curso) ? "Ativo" : "Inativo";
-  linha.append(celulaCurso, criarElementoCu("td", "", curso.unidade || ""),
+  linha.append(celulaCurso, criarElementoCu("td", "", nomeDaUnidadeCu(curso.unidade_id)),
     criarElementoCu("td", "", situacao), criarCelulaTurmasCu(curso.id), criarCelulaAcoesCu(curso));
   return linha;
 }
@@ -175,7 +189,8 @@ function criarLinhaCursoCu(curso) {
 function cursoVisivelCu(curso, busca) {
   if (!busca) return true;
   const turmas = turmasDoCursoCu(curso.id).map(descreverTurmaCu);
-  const texto = [curso.nome_completo, curso.unidade, curso.descricao, ...turmas].join(" ");
+  const unidade = nomeDaUnidadeCu(curso.unidade_id);
+  const texto = [curso.nome_completo, unidade, curso.descricao, ...turmas].join(" ");
   return texto.toLowerCase().includes(busca);
 }
 
@@ -197,12 +212,14 @@ function desenharCursosCu() {
     " curso(s) · " + semCurso + " turma(s) sem curso";
 }
 
-/** Recarrega cursos e turmas do banco e redesenha a tabela e o modal de turmas aberto. */
+/** Recarrega cursos, turmas e unidades do banco e redesenha a tabela e os modais abertos. */
 async function recarregarDadosCu() {
-  [estadoCu.cursos, estadoCu.turmas] = await Promise.all([
-    estadoCu.repositorio.listarCursos(), estadoCu.repositorio.listarTurmas()]);
+  const repositorio = estadoCu.repositorio;
+  [estadoCu.cursos, estadoCu.turmas, estadoCu.unidades] = await Promise.all([
+    repositorio.listarCursos(), repositorio.listarTurmas(), repositorio.listarUnidades()]);
   desenharCursosCu();
   atualizarModalTurmasCu();
+  atualizarModalUnidadesCu();
 }
 
 /**
@@ -240,6 +257,7 @@ async function iniciarPaginaCu() {
     }
     elementoCu("cuBusca").addEventListener("input", desenharCursosCu);
     ligarEventosModaisCu();
+    ligarEventosUnidadesCu();
     await recarregarDadosCu();
     elementoCu("cuConteudo").hidden = false;
   } catch (erro) {

@@ -176,7 +176,7 @@ RLS da `aulas` já deixa o professor alterá-la):
 
 ### #17: Progresso da turma GLOBAL em todas as atividades — pedida em 2026-10-09 10:22:23
 
-**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 119 (fonte única).
+**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 121 (fonte única).
 **Plano:** [docs/progresso-global-atividades.md](docs/progresso-global-atividades.md) (aprovado em 2026-10-09 10:31).
 **Prioridade:** 🟠 Alta
 

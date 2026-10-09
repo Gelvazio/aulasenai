@@ -13,7 +13,7 @@ const NOTA_MAXIMA_REL = 10;
 const PERFIL_PROFESSOR_REL = 'PROFESSOR';
 const CONSULTA_ATIVIDADES_REL =
     'select=id,descricao,pagina,ativo,bloqueio,aulas(numero,materia(id,descricao))&order=id';
-const CONSULTA_TURMAS_REL = 'select=codigo,nome,turno,local,uc,favorito';
+const CONSULTA_TURMAS_REL = 'select=codigo,nome,turno,unidade:unidade_id(nome),uc,favorito';
 const CONSULTA_ALUNOS_REL = 'select=id,nome,email,turma_codigo,numero_chamada,na_chamada';
 const STATUS_NOTA_FIXA_REL = 'fixa';
 
@@ -72,7 +72,7 @@ function agruparMateriasRel(atividades) {
 
 /**
  * Lê as listas de presença carregadas pelos arquivos scripts/LISTA-PRESENCA*.js.
- * @returns {{codigo: string, nome: string, turno: string, local: string, uc: string,
+ * @returns {{codigo: string, nome: string, turno: string, uc: string,
  *     alunos: Object[]}[]} Turmas das listas (professor excluído).
  */
 function lerListasPresencaRel() {
@@ -80,7 +80,7 @@ function lerListasPresencaRel() {
     if (window.LISTA_PRESENCA) listas.push(window.LISTA_PRESENCA);
     return listas.flatMap((lista) => (lista.turmas || []).map((turma) => ({
         codigo: String(turma.codigo), nome: turma.nome, turno: turma.turno || '',
-        local: turma.local || lista.local || '', uc: turma.uc || lista.uc || '',
+        uc: turma.uc || lista.uc || '',
         alunos: (turma.alunos || []).filter((aluno) => aluno.perfil !== PERFIL_PROFESSOR_REL),
     })));
 }
@@ -123,7 +123,8 @@ async function carregarTurmasRel(materia) {
         const lista = listas.find((turma) => turma.codigo === codigo) || {};
         return {
             codigo, nome: banco.nome || lista.nome || codigo, uc: banco.uc || lista.uc || '',
-            turno: banco.turno || lista.turno || '', local: banco.local || lista.local || '',
+            turno: banco.turno || lista.turno || '',
+            unidadeNome: banco.unidade?.nome || '',
             favorita: Boolean(banco.favorito),
             alunos: mesclarAlunosRel(
                 alunosBanco.filter((aluno) => aluno.turma_codigo === codigo), lista.alunos || []),
