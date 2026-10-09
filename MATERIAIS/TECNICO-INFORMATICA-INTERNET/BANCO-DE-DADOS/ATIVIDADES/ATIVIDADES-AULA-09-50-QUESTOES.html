@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 09 — Diagrama Entidade-Relacionamento (DER) (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="09" data-tema="Diagrama Entidade-Relacionamento (DER)" data-total="50"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🗺️ Aula 09: Diagrama Entidade-Relacionamento (DER)</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-09-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">O Que É o DER</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é o DER?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um arquivo de configuração do PostgreSQL.</li>
+                        <li><span class="letra">B)</span>Um comando SQL de consulta.</li>
+                        <li><span class="letra">C)</span>Um relatório de backup.</li>
+                        <li><span class="letra">D)</span>O desenho do modelo entidade-relacionamento, mostrando entidades, atributos e relacionamentos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Forma da Entidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na notação de Chen, qual forma representa a entidade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Losango.</li>
+                        <li><span class="letra">B)</span>Triângulo.</li>
+                        <li><span class="letra">C)</span>Retângulo.</li>
+                        <li><span class="letra">D)</span>Elipse.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Forma do Relacionamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na notação de Chen, qual forma representa o relacionamento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Losango.</li>
+                        <li><span class="letra">B)</span>Elipse.</li>
+                        <li><span class="letra">C)</span>Retângulo.</li>
+                        <li><span class="letra">D)</span>Círculo preenchido.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Forma do Atributo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na notação de Chen, qual forma representa o atributo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Elipse ligada à entidade.</li>
+                        <li><span class="letra">B)</span>Retângulo de linha dupla.</li>
+                        <li><span class="letra">C)</span>Losango.</li>
+                        <li><span class="letra">D)</span>Seta tracejada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Identificador no DER</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como o identificador aparece no DER de Chen?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com o nome do atributo sublinhado, ou bolinha preenchida no brModelo.</li>
+                        <li><span class="letra">B)</span>Sem nenhuma marcação.</li>
+                        <li><span class="letra">C)</span>Dentro de um losango.</li>
+                        <li><span class="letra">D)</span>Com o nome em vermelho.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Entidade Fraca no DER</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como a entidade fraca aparece no DER?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Elipse pontilhada.</li>
+                        <li><span class="letra">B)</span>Losango simples.</li>
+                        <li><span class="letra">C)</span>Retângulo de linha dupla.</li>
+                        <li><span class="letra">D)</span>Retângulo sem nome.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Atributo Composto no DER</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como o atributo composto aparece no DER de Chen?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Como um retângulo dentro de outro.</li>
+                        <li><span class="letra">B)</span>Como uma seta com tridente.</li>
+                        <li><span class="letra">C)</span>Como uma elipse ligada a outras elipses, que são as suas partes.</li>
+                        <li><span class="letra">D)</span>Como um losango duplo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Associativa no DER</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como a entidade associativa aparece no DER de Chen?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Como uma elipse dupla.</li>
+                        <li><span class="letra">B)</span>Como um círculo vazio.</li>
+                        <li><span class="letra">C)</span>Como dois losangos lado a lado.</li>
+                        <li><span class="letra">D)</span>Como um retângulo envolvendo o losango do relacionamento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Cardinalidade no DER</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No DER de Chen usado na aula, onde aparece a cardinalidade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Como (mín, máx) junto a cada entidade, nos dois lados do relacionamento.</li>
+                        <li><span class="letra">B)</span>Somente no título do diagrama.</li>
+                        <li><span class="letra">C)</span>Dentro do nome da entidade.</li>
+                        <li><span class="letra">D)</span>Em nenhum lugar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Notação Pé de Galinha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A notação pé de galinha é usada principalmente em qual modelo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No modelo lógico, com as tabelas e as chaves.</li>
+                        <li><span class="letra">B)</span>No documento de escopo.</li>
+                        <li><span class="letra">C)</span>No nível físico dos discos.</li>
+                        <li><span class="letra">D)</span>No arquivo pg_hba.conf.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Caixa no Pé de Galinha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No pé de galinha, como cada entidade aparece?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Como uma caixa com a lista de atributos, indicando PK e FK.</li>
+                        <li><span class="letra">B)</span>Como uma elipse sublinhada.</li>
+                        <li><span class="letra">C)</span>Como um losango com verbo.</li>
+                        <li><span class="letra">D)</span>Como um texto solto sem forma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Tridente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No pé de galinha, o tridente na ponta da linha indica:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Muitos.</li>
+                        <li><span class="letra">B)</span>Um.</li>
+                        <li><span class="letra">C)</span>Zero.</li>
+                        <li><span class="letra">D)</span>Identificador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">N:N no Pé de Galinha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como o relacionamento N:N aparece no modelo lógico em pé de galinha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Como um atributo composto.</li>
+                        <li><span class="letra">B)</span>Como uma linha direta com dois tridentes, sem tabela no meio.</li>
+                        <li><span class="letra">C)</span>Já resolvido por uma tabela associativa entre as duas entidades.</li>
+                        <li><span class="letra">D)</span>Não aparece.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Conversão para Pé de Galinha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">CURSO (1,1) —oferece— (0,N) TURMA, em pé de galinha, fica:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Do lado de CURSO, círculo e tridente; do lado de TURMA, dois traços.</li>
+                        <li><span class="letra">B)</span>Tridente nos dois lados.</li>
+                        <li><span class="letra">C)</span>Círculo nos dois lados.</li>
+                        <li><span class="letra">D)</span>Do lado de CURSO, dois traços (exatamente um); do lado de TURMA, círculo e tridente (zero ou muitos).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Conceitual e Lógico</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a diferença entre o DER conceitual e o lógico?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O conceitual mostra o negócio para validar com o cliente; o lógico mostra tabelas, chaves primárias e estrangeiras.</li>
+                        <li><span class="letra">B)</span>Não há diferença.</li>
+                        <li><span class="letra">C)</span>O lógico é desenhado à mão e o conceitual não.</li>
+                        <li><span class="letra">D)</span>O conceitual tem SQL e o lógico não.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Para Que Serve o Lógico</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O DER lógico prepara quais etapas seguintes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O backup do servidor.</li>
+                        <li><span class="letra">B)</span>A escolha da cor das telas.</li>
+                        <li><span class="letra">C)</span>A instalação do sistema operacional.</li>
+                        <li><span class="letra">D)</span>A normalização e a escrita do SQL de criação das tabelas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Passo 1 do Desenho</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o primeiro passo para desenhar o DER na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Colocar as entidades fortes principais no centro.</li>
+                        <li><span class="letra">B)</span>Desenhar os atributos antes das entidades.</li>
+                        <li><span class="letra">C)</span>Escolher a fonte do texto.</li>
+                        <li><span class="letra">D)</span>Escrever o CREATE TABLE.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Passo do Verbo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois de ligar as entidades com relacionamentos, o que se escreve no losango?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O tipo de dado.</li>
+                        <li><span class="letra">B)</span>O verbo do relacionamento.</li>
+                        <li><span class="letra">C)</span>A porta do servidor.</li>
+                        <li><span class="letra">D)</span>A senha do banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Linhas Cruzadas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que evitar linhas cruzadas no DER?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para que o diagrama fique legível, inclusive para o cliente.</li>
+                        <li><span class="letra">B)</span>Porque é exigido pelo PostgreSQL.</li>
+                        <li><span class="letra">C)</span>Porque o SGBD rejeita linhas cruzadas.</li>
+                        <li><span class="letra">D)</span>Porque linhas cruzadas apagam atributos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Nomes no DER</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como os nomes das entidades devem estar no DER?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Em idiomas misturados.</li>
+                        <li><span class="letra">B)</span>Com números aleatórios.</li>
+                        <li><span class="letra">C)</span>No singular e padronizados.</li>
+                        <li><span class="letra">D)</span>No plural e com abreviações diferentes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">brModelo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é o brModelo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um SGBD não relacional.</li>
+                        <li><span class="letra">B)</span>Um navegador de internet.</li>
+                        <li><span class="letra">C)</span>Uma ferramenta feita para ensino, que desenha o modelo conceitual de Chen e gera o lógico.</li>
+                        <li><span class="letra">D)</span>Um antivírus.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">draw.io</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é o draw.io (diagrams.net)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um compilador de C.</li>
+                        <li><span class="letra">B)</span>Uma ferramenta gratuita, no navegador, com formas de ER e pé de galinha.</li>
+                        <li><span class="letra">C)</span>Um gerenciador de banco pago.</li>
+                        <li><span class="letra">D)</span>Um servidor de e-mail.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">pgAdmin ERD Tool</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a ERD Tool do pgAdmin permite?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Criar slides de apresentação.</li>
+                        <li><span class="letra">B)</span>Desenhar o modelo lógico e gerar o SQL para o PostgreSQL.</li>
+                        <li><span class="letra">C)</span>Editar fotos.</li>
+                        <li><span class="letra">D)</span>Instalar o Windows.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Checklist: Requisitos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No checklist do DER, por que conferir se todo requisito do escopo aparece no diagrama?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para aumentar o número de entidades.</li>
+                        <li><span class="letra">B)</span>Para apagar os requisitos.</li>
+                        <li><span class="letra">C)</span>Para trocar a porta do servidor.</li>
+                        <li><span class="letra">D)</span>Para garantir que nenhum dado pedido pelo cliente ficou de fora.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Checklist: Identificador</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual pergunta do checklist confere os identificadores?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Toda entidade tem mais de dez atributos?</li>
+                        <li><span class="letra">B)</span>Toda entidade tem nome em inglês?</li>
+                        <li><span class="letra">C)</span>Toda entidade tem cor?</li>
+                        <li><span class="letra">D)</span>Toda entidade tem identificador?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Checklist: Relacionamentos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual item do checklist confere os relacionamentos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Todo relacionamento fica fora do diagrama.</li>
+                        <li><span class="letra">B)</span>Todo relacionamento tem uma senha.</li>
+                        <li><span class="letra">C)</span>Todo relacionamento é 1:1.</li>
+                        <li><span class="letra">D)</span>Todo relacionamento tem verbo e cardinalidade nos dois lados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Checklist: Atributo Repetido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o checklist pede atenção a atributos repetidos em duas entidades sem motivo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque podem indicar redundância no modelo.</li>
+                        <li><span class="letra">B)</span>Porque o SGBD apaga atributos repetidos.</li>
+                        <li><span class="letra">C)</span>Porque atributos nunca se repetem.</li>
+                        <li><span class="letra">D)</span>Porque o desenho fica colorido.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Checklist: Legibilidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o critério de legibilidade do checklist?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O desenho só precisa ser lido pelo autor.</li>
+                        <li><span class="letra">B)</span>O desenho deve ter letras pequenas para caber tudo.</li>
+                        <li><span class="letra">C)</span>O desenho deve ser lido por quem não o fez, inclusive o cliente.</li>
+                        <li><span class="letra">D)</span>O desenho não precisa de nomes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Checklist: Fraca e Dona</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O checklist pede que as entidades fracas indiquem o quê?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A cor da linha dupla.</li>
+                        <li><span class="letra">B)</span>A entidade dona de que dependem.</li>
+                        <li><span class="letra">C)</span>O número de telefone do cliente.</li>
+                        <li><span class="letra">D)</span>O tamanho do disco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Revisão em Dupla</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que revisar o DER com outra pessoa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para aumentar o tempo da aula.</li>
+                        <li><span class="letra">B)</span>Porque o revisor encontra erros que o autor não percebe.</li>
+                        <li><span class="letra">C)</span>Porque o SGBD exige duas assinaturas.</li>
+                        <li><span class="letra">D)</span>Porque o autor não pode desenhar sozinho.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Atitude do Revisor</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a atitude adequada do revisor do DER?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não dizer nada para não incomodar.</li>
+                        <li><span class="letra">B)</span>Rir dos erros encontrados.</li>
+                        <li><span class="letra">C)</span>Apagar o DER do colega e fazer outro.</li>
+                        <li><span class="letra">D)</span>Fazer perguntas, como &quot;este relacionamento é mesmo 1:1?&quot;, em vez de acusar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Atitude do Autor</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Diante de uma sugestão no seu DER, qual é a atitude do autor?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Recusar qualquer sugestão sem ouvir.</li>
+                        <li><span class="letra">B)</span>Aceitar tudo sem verificar.</li>
+                        <li><span class="letra">C)</span>Escutar, verificar nos requisitos e aceitar ou justificar a decisão.</li>
+                        <li><span class="letra">D)</span>Desistir do projeto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Registro das Mudanças</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que registrar as mudanças feitas a partir da revisão?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para aumentar o tamanho do arquivo.</li>
+                        <li><span class="letra">B)</span>Porque sem registro o DER some.</li>
+                        <li><span class="letra">C)</span>Para que o grupo saiba o que mudou, por quê, e mantenha o histórico das decisões.</li>
+                        <li><span class="letra">D)</span>Porque o pgAdmin exige registro.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Escola: Associativa MATRÍCULA</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No DER da escola, quais atributos estão na associativa MATRÍCULA?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>CPF e nome do aluno.</li>
+                        <li><span class="letra">B)</span>Endereço do responsável.</li>
+                        <li><span class="letra">C)</span>Data, situação e nota final.</li>
+                        <li><span class="letra">D)</span>Nome do curso e carga horária.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Escola: PARCELA</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No DER da escola, PARCELA aparece como:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Entidade fraca, ligada a MATRÍCULA por &quot;gera&quot;.</li>
+                        <li><span class="letra">B)</span>Atributo de CURSO.</li>
+                        <li><span class="letra">C)</span>Entidade forte sem ligação.</li>
+                        <li><span class="letra">D)</span>Entidade associativa entre aluno e curso.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Escola: Professor e Turma</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No DER da escola, como PROFESSOR e TURMA estão ligados?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Por um relacionamento 1:1 obrigatório.</li>
+                        <li><span class="letra">B)</span>Pela associativa AULA_TURMA, com dia da semana e horário.</li>
+                        <li><span class="letra">C)</span>Por uma chave do professor dentro de CURSO.</li>
+                        <li><span class="letra">D)</span>Não estão ligados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Escola: Sugestão da Revisão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na revisão do DER da escola, qual atributo faltava e foi incluído?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O nome do professor em PARCELA.</li>
+                        <li><span class="letra">B)</span>A senha do aluno em MATRÍCULA.</li>
+                        <li><span class="letra">C)</span>O CPF em TURMA.</li>
+                        <li><span class="letra">D)</span>O valor da mensalidade (valor_mensal) em CURSO.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Escola: Curso e Turma</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No DER da escola, qual é a cardinalidade entre CURSO e TURMA?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>CURSO (1,1) — (1,1) TURMA.</li>
+                        <li><span class="letra">B)</span>CURSO (1,1) — oferece — (0,N) TURMA.</li>
+                        <li><span class="letra">C)</span>CURSO (0,N) — (0,N) TURMA.</li>
+                        <li><span class="letra">D)</span>Não há relacionamento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Escola: Responsável</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No DER da escola, RESPONSÁVEL e ALUNO estão ligados como:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>RESPONSÁVEL como atributo de PARCELA.</li>
+                        <li><span class="letra">B)</span>RESPONSÁVEL (1,1) — responde por — (0,N) ALUNO.</li>
+                        <li><span class="letra">C)</span>Sem ligação.</li>
+                        <li><span class="letra">D)</span>RESPONSÁVEL (0,N) — (0,N) ALUNO com tabela associativa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Dinâmica: Revisão Cruzada</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica &quot;Revisão cruzada&quot;, quantas perguntas ou sugestões cada grupo escreve, no máximo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Exatamente 50.</li>
+                        <li><span class="letra">B)</span>Até 5.</li>
+                        <li><span class="letra">C)</span>Nenhuma.</li>
+                        <li><span class="letra">D)</span>Uma por atributo, sem limite.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Dinâmica: O Que o Autor Registra</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica, o que o grupo autor registra depois da conversa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A cor preferida de cada integrante.</li>
+                        <li><span class="letra">B)</span>Somente os nomes dos revisores.</li>
+                        <li><span class="letra">C)</span>O que aceitou e o que manteve, com o motivo.</li>
+                        <li><span class="letra">D)</span>A nota do outro grupo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Entrega da SA 1</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o grupo entrega nesta aula, na SA 1?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O script de backup.</li>
+                        <li><span class="letra">B)</span>O cronograma do semestre.</li>
+                        <li><span class="letra">C)</span>O pg_hba.conf.</li>
+                        <li><span class="letra">D)</span>O DER do sistema de matrículas na ferramenta, completo, mais o registro da revisão cruzada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">DER Incompleto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um DER mostra entidades e relacionamentos, mas nenhum identificador. O que está faltando?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Colocar a senha do banco.</li>
+                        <li><span class="letra">B)</span>Trocar as elipses por retângulos.</li>
+                        <li><span class="letra">C)</span>Marcar o identificador de cada entidade.</li>
+                        <li><span class="letra">D)</span>Desenhar mais losangos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">N:N no Conceitual</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No DER conceitual de Chen, um N:N com dados próprios aparece como:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma entidade fraca de linha dupla sem relação.</li>
+                        <li><span class="letra">B)</span>Um atributo composto.</li>
+                        <li><span class="letra">C)</span>Duas tabelas sem ligação.</li>
+                        <li><span class="letra">D)</span>Relacionamento com atributos ou entidade associativa envolvendo o losango.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">DER e Requisitos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O DER deve ser conferido com qual documento das aulas anteriores?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O relatório de backup.</li>
+                        <li><span class="letra">B)</span>O documento de escopo com os requisitos de dados.</li>
+                        <li><span class="letra">C)</span>O manual do sistema operacional.</li>
+                        <li><span class="letra">D)</span>O instalador do PostgreSQL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Erro: Cardinalidade num Lado Só</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um DER tem a cardinalidade marcada só do lado de TURMA no relacionamento com CURSO. O que fazer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Deixar como está.</li>
+                        <li><span class="letra">B)</span>Marcar também a cardinalidade do lado de CURSO, pois o relacionamento é lido nos dois sentidos.</li>
+                        <li><span class="letra">C)</span>Transformar o relacionamento em atributo.</li>
+                        <li><span class="letra">D)</span>Apagar a cardinalidade de TURMA.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Erro: Associativa sem Chaves</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No modelo lógico, a tabela MATRÍCULA aparece sem id_aluno e id_turma. O que está errado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Faltam as chaves estrangeiras que ligam a associativa às duas entidades.</li>
+                        <li><span class="letra">B)</span>Nada está errado.</li>
+                        <li><span class="letra">C)</span>Falta a senha do aluno.</li>
+                        <li><span class="letra">D)</span>Falta a cor da tabela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Por Que Desenhar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que desenhar o DER antes de escrever o SQL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o SQL não aceita tabelas sem desenho anexado.</li>
+                        <li><span class="letra">B)</span>Porque o desenho permite ver e validar o modelo inteiro antes de construir.</li>
+                        <li><span class="letra">C)</span>Porque o desenho substitui o banco.</li>
+                        <li><span class="letra">D)</span>Porque o servidor exige um arquivo de imagem.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Próxima Etapa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois do DER, qual é a próxima etapa da modelagem na UC?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O backup do banco.</li>
+                        <li><span class="letra">B)</span>A normalização de dados (1FN, 2FN e 3FN).</li>
+                        <li><span class="letra">C)</span>A instalação do PostgreSQL.</li>
+                        <li><span class="letra">D)</span>A apresentação final.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Legenda do Diagrama</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que é útil colocar uma legenda ou título no DER?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para esconder os relacionamentos.</li>
+                        <li><span class="letra">B)</span>Para que o SGBD leia o desenho.</li>
+                        <li><span class="letra">C)</span>Para substituir os atributos.</li>
+                        <li><span class="letra">D)</span>Para identificar o sistema, a versão e a notação usada, facilitando a leitura.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Aula 09: Diagrama Entidade-Relacionamento (DER)</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>
