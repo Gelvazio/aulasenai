@@ -47,6 +47,8 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 125 | 125.8 | aplicar os seeds de Banco de Dados: aprovar os 12 lotes pelo conector do Supabase ou rodar os 19 arquivos no SQL Editor | Ação do usuário |
+| 136-f0a07de9 | 136.5 | aceite do registro `database/SEEDS-APLICADOS.md` e da regra dos seeds | Aceite |
 | 124 | 124.4 | testar o modal "➕ Nova Pendência" e a coluna Descrição em `pendencias.html` | Aceite |
 | 121 | 121.11 | testar o Progresso da turma global na objetiva da aula 01 de Testes de Front-End (professor vê ao abrir; aluno não vê) e numa discursiva | Aceite |
 | 103 | 103.6 | conferir as 10 práticas de Testes de Front-End, agora em `ATIVIDADES/CONTEUDO/` e sem empresa fictícia | Aceite |
@@ -264,6 +266,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (regra "CONVERSA ENTRE SESSÕES 
 | 133 | Lista de presença em um arquivo único `scripts/LISTAPRESENCA.js` (tarefa grande, pedido em 2026-10-09 17:45; plano [docs/lista-presenca-arquivo-unico.md](../docs/lista-presenca-arquivo-unico.md)) | [ETAPA-133-LISTA-DE-PRESENCA-EM-UM-ARQUIVO-UNICO.md](etapas/ETAPA-133-LISTA-DE-PRESENCA-EM-UM-ARQUIVO-UNICO.md) |
 | 134 | Regra do `graphify update .` removida (tarefa pequena, pedido em 2026-10-09 18:05) | [ETAPA-134-REGRA-DO-GRAPHIFY-UPDATE-REMOVIDA.md](etapas/ETAPA-134-REGRA-DO-GRAPHIFY-UPDATE-REMOVIDA.md) |
 | 135-eeefc710 | Colaboração entre sessões e licenças pelo `STATUS.md` | [ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md) |
+| 136-f0a07de9 | Registro dos seeds aplicados e item próprio em cada tarefa | [ETAPA-136-f0a07de9-REGISTRO-DOS-SEEDS-APLICADOS.md](etapas/ETAPA-136-f0a07de9-REGISTRO-DOS-SEEDS-APLICADOS.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
