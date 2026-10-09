@@ -1,6 +1,6 @@
 # Trigger: bloquear a aula bloqueia todas as atividades dela
 
-**Criado em:** 2026-10-09 01:10 (horário de referência do projeto) · **Concluído em:** 2026-10-09 01:15 · **Tempo decorrido:** 5 min
+**Criado em:** 2026-10-09 01:10 (horário de referência do projeto) · **Concluído em:** 2026-10-09 01:09 · **Tempo decorrido:** 0 h (minutos)
 **Pedido do usuário:** "ao bloquear uma aula inteira, automaticamente todas as atividades dela devem
 ser marcadas como bloqueadas; faça isso através de trigger e usando MCP Supabase para gravar a
 trigger". **STATUS.md:** Etapa 115.

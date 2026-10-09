@@ -376,6 +376,8 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   - `atividade.ativo = false` (CRUD "CADASTRAR ATIVIDADES") continua bloqueando **todas** as
     turmas; liberar para a favorita uma atividade inativa faz `ativo = true` e põe as outras
     turmas em `bloqueio` (elas continuam bloqueadas);
+  - **aula bloqueada não dá nenhum acesso, nem ao professor** (2026-10-09): no card, só o botão de
+    desbloquear responde; o resto fica travado até ele desbloquear;
   - **bloquear a aula (`aulas.ativo = false`) bloqueia todas as atividades dela** (trigger
     `aulas_bloqueio_propaga_atividades_trg`, 2026-10-09: grava `atividade.ativo = false`);
     desbloquear a aula não mexe nas atividades;

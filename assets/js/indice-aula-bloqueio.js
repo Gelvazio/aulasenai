@@ -3,7 +3,8 @@
 // bloqueia o card inteiro; o ON/OFF de cada atividade bloqueia só aquela atividade. Liga apenas
 // nas matérias de assets/js/indice-bloqueio-aula-config.js.
 // Professor: botão ON/OFF "Aula liberada / Aula bloqueada" logo antes de "✏️ Editar aula"; a aula
-// bloqueada fica escurecida para ele, mas os links e botões continuam funcionando.
+// bloqueada fica escurecida e SEM NENHUM acesso também para ele (links, slides, ON/OFF das
+// atividades, CADASTRAR ATIVIDADES, Editar aula): só o botão da aula continua, para desbloquear.
 // Aluno: card da aula bloqueada escurecido com cadeado, links desativados e "Aula Bloqueada!".
 // Usado por assets/js/indice-aula-data.js; grava com gravarAulaCard (indice-aula-repositorio.js).
 
@@ -75,6 +76,38 @@ function bloquearCardAulaAluno(card) {
 }
 
 /**
+ * Professor: desativa (guardando o href) ou reativa um link do card da aula.
+ * @param {HTMLAnchorElement} link - Link do card.
+ * @param {boolean} travar - true para desativar.
+ */
+function travarLinkAulaProfessor(link, travar) {
+    if (travar && link.hasAttribute('href')) {
+        link.setAttribute(ATRIBUTO_HREF_AULA_BLOQUEIO, link.getAttribute('href'));
+        link.removeAttribute('href');
+    }
+    if (!travar && link.hasAttribute(ATRIBUTO_HREF_AULA_BLOQUEIO)) {
+        link.setAttribute('href', link.getAttribute(ATRIBUTO_HREF_AULA_BLOQUEIO));
+        link.removeAttribute(ATRIBUTO_HREF_AULA_BLOQUEIO);
+    }
+}
+
+/**
+ * Professor: trava (ou destrava) todo o card da aula bloqueada, menos o botão da aula.
+ * O CSS também corta o clique (pointer-events) nos controles criados depois.
+ * @param {HTMLElement} card - Card da aula.
+ * @param {boolean} travar - true para travar.
+ */
+function travarCardAulaProfessor(card, travar) {
+    card.classList.toggle(CLASSE_PROFESSOR_AULA_BLOQUEIO, travar);
+    const seletorLinks = 'a[href], a[' + ATRIBUTO_HREF_AULA_BLOQUEIO + ']';
+    card.querySelectorAll(seletorLinks).forEach((link) => travarLinkAulaProfessor(link, travar));
+    card.querySelectorAll('button, input, select').forEach((controle) => {
+        if (controle.closest('.' + CLASSE_BOTAO_AULA_BLOQUEIO)) return;
+        controle.disabled = travar;
+    });
+}
+
+/**
  * Atualiza a marcação e o texto do botão da aula conforme o estado.
  * @param {HTMLLabelElement} etiqueta - Botão da aula.
  * @param {boolean} liberada - true se a aula está liberada (ON).
@@ -86,7 +119,8 @@ function atualizarBotaoBloqueioAula(etiqueta, liberada) {
 }
 
 /**
- * Aplica ao card o estado de bloqueio da aula (professor: só visual; aluno: card bloqueado).
+ * Aplica ao card o estado de bloqueio da aula (professor e aluno: card inteiro sem acesso; o
+ * professor mantém só o botão da aula para desbloquear).
  * @param {{card: HTMLElement, aula: Object|null}} item - Card e aula.
  * @param {boolean} ehProfessor - true se o usuário logado é professor.
  */
@@ -95,7 +129,7 @@ function aplicarBloqueioAulaNoCard(item, ehProfessor) {
     const botao = item.card.querySelector('.' + CLASSE_BOTAO_AULA_BLOQUEIO);
     if (botao) atualizarBotaoBloqueioAula(botao, !bloqueada);
     if (ehProfessor) {
-        item.card.classList.toggle(CLASSE_PROFESSOR_AULA_BLOQUEIO, bloqueada);
+        travarCardAulaProfessor(item.card, bloqueada);
         return;
     }
     if (bloqueada) bloquearCardAulaAluno(item.card);

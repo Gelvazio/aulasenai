@@ -34,6 +34,8 @@ const EVENTO_FAVORITA_ALTERADA = 'turma-favorita-alterada';
 // atividades da aula bloqueada.
 const EVENTO_AULA_ALTERADA_BLOQUEIO = 'aula-bloqueio-alterado';
 const SELETOR_INTERRUPTOR_ATIVIDADE = '.interruptor-atividade';
+// Card de aula bloqueada (indice-aula-bloqueio.js): os botões das atividades nascem travados.
+const CLASSE_AULA_TRAVADA_BLOQUEIO = 'aula--bloqueada-professor';
 const ATRIBUTO_HREF_GUARDADO = 'data-href-bloqueado';
 const MSG_SEM_FAVORITA_BLOQUEIO = 'Marque a turma favorita na barra "Turma" do índice: o ' +
     'bloqueio vale só para a turma favorita.';
@@ -343,11 +345,14 @@ function montarInterruptoresCard(card, linhas, turma) {
 
     itens.forEach((item) => {
         item.bloqueado = estaBloqueadaParaTurma(item.atividade, turma);
-        item.link.after(criarInterruptorAtividade(!item.bloqueado, turma, async (bloquear) => {
+        const botao = criarInterruptorAtividade(!item.bloqueado, turma, async (bloquear) => {
             await gravarBloqueioAtividade(item.atividade, turma, bloquear);
             item.bloqueado = bloquear;
             aplicarEstadoCardProfessor(card, itens);
-        }));
+        });
+        botao.querySelector('input').disabled =
+            card.classList.contains(CLASSE_AULA_TRAVADA_BLOQUEIO);
+        item.link.after(botao);
     });
     aplicarEstadoCardProfessor(card, itens);
 }

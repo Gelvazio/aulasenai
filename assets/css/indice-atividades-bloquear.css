@@ -70,8 +70,13 @@
   outline: 2px solid #1a56db; outline-offset: 2px;
 }
 
-/* Professor: aula bloqueada fica escurecida com cadeado, mas links e botões continuam usáveis */
-.aula.aula--bloqueada-professor .acoes { position: relative; z-index: 2; }
+/* Aula bloqueada: nem o professor acessa nada do card (links, slides, ON/OFF das atividades,
+   cadastrar, editar); só o botão da aula fica acima do véu e clicável, para desbloquear. */
+.aula.aula--bloqueada-professor { cursor: not-allowed; }
+.aula.aula--bloqueada-professor * { pointer-events: none; }
+.aula.aula--bloqueada-professor .interruptor-aula,
+.aula.aula--bloqueada-professor .interruptor-aula * { pointer-events: auto; cursor: pointer; }
+.aula.aula--bloqueada-professor .interruptor-aula { position: relative; z-index: 2; }
 
 @media (max-width: 600px) {
   .interruptor-aula { min-height: 44px; }
