@@ -1611,3 +1611,12 @@ Decisões do usuário (2026-10-09 10:31): D1 o painel global **substitui** o das
 |------|-----------|--------|--------------|-------------|
 | 122.1 | Seção "🔀 Pull Requests" no `CLAUDE.md`: cada commit na nuvem = push na hora + PR novo se a branch não tiver PR aberto; versão 2026-10-09 11:03:21 + histórico (resumo e `docs/HISTORICO-REGRAS.md`) | ✅ Concluído | 2026-10-09 11:03:21 | Leitura; visualizador lê a linha de versão (`PADRAO_VERSAO_REGRAS`) e os títulos `##` |
 | 122.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 123 — Conflitos do merge do PR #11 e `CLAUDE.md` apontando para `tasks/` (tarefa pequena, pedido em 2026-10-09 12:20)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 123.1 | Resolver conflitos de `STATUS.md`/`TASKS.md` (duas tarefas #17: mantida a da revisão das regras; a do progresso global virou #18) e concluir o merge | ✅ Concluído | 2026-10-09 12:30 | Sem marcas de conflito; commit `5619910` |
+| 123.2 | Registrar no Git a mudança de `STATUS.md`, `TASKS.md`, `TASKS_COMPLETE.md` e relatórios da raiz para `tasks/` | ✅ Concluído | 2026-10-09 12:35 | `git diff --cached -M` = renomeações R100 |
+| 123.3 | `CLAUDE.md` (versão 2026-10-09 12:33:04 + histórico) lê e grava as tarefas em `C:\fontes\aulasenai\tasks\` | ✅ Concluído | 2026-10-09 12:35 | Leitura das linhas alteradas |
+| 123.4 | Links relativos dentro de `tasks/STATUS.md` e `tasks/TASKS.md` (ex.: `docs/...`) passam a precisar de `../` | ⬜ Pendente | — | Corrigir quando o usuário pedir |
+| 123.5 | Aceite do usuário | ⬜ Pendente | — | — |

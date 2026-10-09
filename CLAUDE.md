@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 11:03:21
+**Versão das regras:** 2026-10-09 12:33:04
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 12:33:04 | **Arquivos de tarefas em `tasks/`:** `STATUS.md`, `TASKS.md` e `TASKS_COMPLETE.md` saíram da raiz e ficam em `C:\fontes\aulasenai\tasks\` (ler e atualizar lá; na nuvem, `tasks/` da raiz do repositório) |
 | 2026-10-09 11:03:21 | **Nova seção "Pull Requests" (só na nuvem):** todo commit feito na nuvem é enviado na hora (`git push`) e, se a branch não tiver PR aberto para a `main`, um **novo PR** é criado |
 | 2026-10-09 11:02:12 | **Mínimo de questões nas objetivas aplicado no banco** (`database/2026-10-09-minimo-questoes-objetivas.sql`, pelo conector do Supabase): entrega e nota da objetiva sobre o mínimo valem também no banco |
 | 2026-10-09 10:54:45 | **Progresso da turma GLOBAL** em toda atividade com banco (objetivas e discursivas), aberto junto com a página para o professor (`progresso-turma-global.js` substitui o das discursivas); objetiva com acertos e nota pelo banco; **mínimo de questões também nas objetivas** (SQL `database/2026-10-09-minimo-questoes-objetivas.sql`) |
 | 2026-10-09 10:47:05 | **Tamanho da ementa medido com Python** (`docs/regras/ementas-e-cursos.md`): conta caracteres (acento = 1); `wc -c` (bytes) e `Get-Content` sem `-Raw` (linhas) deixam de ser usados; versão vazia da linha anterior preenchida com a hora do commit `6829542` |
-| 2026-10-09 10:43:11 | **Curso desativado some do índice** de alunos e professores (`cursos_do_usuario` filtra `curso.ativo = 0`; o administrador vê todos); abas da página de criar usuários mostram a **unidade do banco** (não o "local" da lista) |
 
 ---
 
@@ -144,10 +144,14 @@ Registrada em 2026-10-03 a pedido do usuário.
 
 ### Mapa dos arquivos de status
 
+📁 **Desde 2026-10-09 o `STATUS.md`, o `TASKS.md` e o `TASKS_COMPLETE.md` ficam na pasta
+`tasks/`** (`C:\fontes\aulasenai\tasks\`); onde estas regras dizem só `STATUS.md`/`TASKS.md`, é o
+arquivo dessa pasta.
+
 | Arquivo | Guarda | Quem manda |
 |---|---|---|
-| `STATUS.md` (raiz) | Etapas e itens de **todas** as tarefas, "Próximo passo", "⏳ Aguardando o usuário", "📌 Tarefas do `TASKS.md`", decisões, riscos, bloqueios, pendências e lições | 🥇 **Fonte única do estado** — em conflito, **ele vence** |
-| `TASKS.md` / `TASKS_COMPLETE.md` | Só a **descrição longa** das tarefas pendentes / histórico das concluídas | Aponta para o `STATUS.md` (sem status próprio) |
+| `tasks/STATUS.md` | Etapas e itens de **todas** as tarefas, "Próximo passo", "⏳ Aguardando o usuário", "📌 Tarefas do `TASKS.md`", decisões, riscos, bloqueios, pendências e lições | 🥇 **Fonte única do estado** — em conflito, **ele vence** |
+| `tasks/TASKS.md` / `tasks/TASKS_COMPLETE.md` | Só a **descrição longa** das tarefas pendentes / histórico das concluídas | Aponta para o `STATUS.md` (sem status próprio) |
 | `SESSOES-CLAUDE/STATUS-SESSOES.md` | Uma linha por sessão: status (`PENDENTE` · `CONCLUÍDO` · `🗑️ REMOVIDA`), data e próximo passo | Aponta para o `STATUS.md` |
 | `SESSOES-CLAUDE/SESSAO-AAAA-MM-DD-HHMM-*.md` | Mínimo para outra licença continuar: próximo passo, decisões, validação dos pedidos, pendências (com a etapa/item do `STATUS.md`) | Aponta para o `STATUS.md` |
 | `docs/<tarefa>.md` | Plano da tarefa grande com os passos e o status de cada passo | Detalha a etapa do `STATUS.md` |
@@ -361,7 +365,7 @@ Registrada em 2026-10-03 a pedido do usuário.
 
 **ANTES DE RESPONDER QUALQUER COISA**, você DEVE:
 
-1. ✅ **LER `C:\fontes\aulasenai\STATUS.md`** — primeiro o **"Próximo passo"** e a tabela
+1. ✅ **LER `C:\fontes\aulasenai\tasks\STATUS.md`** — primeiro o **"Próximo passo"** e a tabela
    **"⏳ Aguardando o usuário"**
 2. ✅ **LER `C:\fontes\aulasenai\SESSOES-CLAUDE\STATUS-SESSOES.md`** (2026-10-08, pedido do
    usuário) — **sempre antes de iniciar uma nova tarefa**, não só no início do chat: para cada
@@ -388,7 +392,7 @@ TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
   registrado no `STATUS.md` (fonte única); tarefa grande também ganha a descrição no `TASKS.md`
   e, ao concluir, vai para o `TASKS_COMPLETE.md` com conclusão, commit e plano, mais a linha no
   **"📜 HISTÓRICO POR COMMIT"** do `TASKS_COMPLETE.md`, no mesmo commit da tarefa. Perguntas sem
-  trabalho não entram. Caminho: `TASKS.md` da raiz do repositório (vale na máquina e na nuvem).
+  trabalho não entram. Caminho (2026-10-09): **`C:\fontes\aulasenai\tasks\TASKS.md`** (na nuvem, `tasks/TASKS.md` da raiz do repositório); `STATUS.md` e `TASKS_COMPLETE.md` ficam na mesma pasta `tasks/`.
 - ⛔ **FONTE ÚNICA DO ESTADO = `STATUS.md`** (2026-10-08, decisão do usuário). Os outros arquivos
   **apontam** para ele, nunca mantêm status próprio divergente:
   - **`TASKS.md`:** guarda só a **descrição longa** das tarefas pendentes; o **status** de cada uma
@@ -1025,7 +1029,7 @@ de todos os cursos (todo `ATIVIDADES/index.html`). Detalhe em
 ## ⏳ REGRA — BLOQUEIO DA AULA × BLOQUEIO DA ATIVIDADE (2026-10-09; LIGADA EM TESTES DE FRONT-END, DEMAIS MATÉRIAS PENDENTES)
 
 Registrada em 2026-10-09 a pedido do usuário. **Ainda NÃO implementada** — fica na fila: tarefa
-**#16** do [TASKS.md](TASKS.md) (status no `STATUS.md`, Etapa 113, item 113.6). Vale para **todas as
+**#16** do [TASKS.md](tasks/TASKS.md) (status no `STATUS.md`, Etapa 113, item 113.6). Vale para **todas as
 atividades de todas as matérias** (todo `ATIVIDADES/index.html`).
 
 - ⛔ **O ON/OFF de cada atividade nunca bloqueia o card inteiro:** os alunos sempre veem a aula

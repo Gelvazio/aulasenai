@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 12:33:04 | **Arquivos de tarefas em `tasks/`:** `STATUS.md`, `TASKS.md` e `TASKS_COMPLETE.md` saíram da raiz e ficam em `C:\fontes\aulasenai\tasks\` (ler e atualizar lá; na nuvem, `tasks/` da raiz do repositório) |
 | 2026-10-09 11:03:21 | **Nova seção "Pull Requests" (só na nuvem):** todo commit feito na nuvem é enviado na hora (`git push`) e, se a branch não tiver PR aberto para a `main`, um **novo PR** é criado |
 | 2026-10-09 11:02:12 | **Mínimo de questões nas objetivas aplicado no banco** (`database/2026-10-09-minimo-questoes-objetivas.sql`, pelo conector do Supabase): entrega e nota da objetiva sobre o mínimo valem também no banco |
 | 2026-10-09 10:54:45 | **Progresso da turma GLOBAL** em toda atividade com banco (objetivas e discursivas), aberto junto com a página para o professor (`progresso-turma-global.js` substitui o das discursivas); objetiva com acertos e nota pelo banco; **mínimo de questões também nas objetivas** (SQL `database/2026-10-09-minimo-questoes-objetivas.sql`) |

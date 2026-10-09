@@ -4,7 +4,7 @@
 **Aprovado em:** 2026-10-09 10:31 (decisões D1 a D5 abaixo)
 **Concluído em:** — (pendente)
 **Tempo decorrido:** — (pendente)
-**Status do plano:** 🔄 Em execução — Etapa 121 do [`STATUS.md`](../STATUS.md); tarefa #18 do [`TASKS.md`](../TASKS.md)
+**Status do plano:** 🔄 Em execução — Etapa 121 do [`STATUS.md`](../tasks/STATUS.md); tarefa #18 do [`TASKS.md`](../tasks/TASKS.md)
 
 ## Objetivo
 
