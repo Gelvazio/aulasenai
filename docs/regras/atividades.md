@@ -501,7 +501,13 @@ Vale para **todas as aulas de todas as matérias**. Registrada em 2026-10-03 a p
   - **toda tarefa que gera seed tem um item próprio no arquivo da etapa** (`tasks/etapas/`):
     "Aplicar os seeds no Supabase", com o mesmo status do registro (`⬜ PENDENTE` → `🔄 APLICADO`
     → `✅ CONCLUÍDO`), e a coluna **Banco** do `STATUS-ATIVIDADES.md` (e do `STATUS-AULAS.md`) da
-    matéria acompanha.
+    matéria acompanha;
+  - **análise dos seeds** (2026-10-09 19:35:54, pedido do usuário): ao iniciar, conferir no banco **pelo md5**
+    (gabarito `item|titulo|letra` ou tópicos `item|topico|enunciado|resposta_esperada|criterios`,
+    por página, na ordem de item e tópico) **só os seeds com status APLICADO**; existindo e o md5
+    batendo com o arquivo → **CONCLUÍDO**; não batendo → continua **APLICADO** com o motivo.
+    ⛔ Seed **CONCLUÍDO não é verificado de novo**; só volta a ser conferido se o arquivo do seed
+    mudar (volta a **PENDENTE**).
 - ⚠️ Respeita `STATUS-PERMISSAO-EMENTA`, matérias semelhantes e a exceção de
   `QUALIFICACAO-PROFISSIONAL/`.
 

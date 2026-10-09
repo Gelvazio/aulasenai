@@ -19,6 +19,10 @@ registrar aqui"); criado em 2026-10-09 19:19:18 e com status em todos os seeds d
   banco, **CONCLUÍDO** (com a data e hora da conferência). Na mesma tarefa, atualizar o item
   "Aplicar os seeds no Supabase" do arquivo da etapa (`tasks/etapas/`) e a coluna **Banco** do
   `STATUS-ATIVIDADES.md` da matéria.
+- ✅ **Ao iniciar a análise dos seeds** (2026-10-09 19:35:54): conferir no banco **pelo md5** só os seeds com
+  status **APLICADO**; existindo e o md5 batendo com o arquivo → **CONCLUÍDO**; senão continua
+  APLICADO com o motivo. ⛔ **Seed CONCLUÍDO não é verificado de novo** (só se o arquivo mudar, aí
+  volta a PENDENTE).
 - ✅ A conferência compara, por página, a atividade (`atividade.pagina`) e a quantidade de linhas em
   `gabarito` (objetivas) ou `topico_discursivo` (discursivas) com o arquivo.
 - ⛔ Este arquivo não leva gabarito, padrão de resposta, senha nem dado de aluno (só nomes de
