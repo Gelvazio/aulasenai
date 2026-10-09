@@ -1533,5 +1533,5 @@ Plano: [docs/trigger-bloqueio-aula-bloqueia-atividades.md](docs/trigger-bloqueio
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 117.1 | Lista com os 17 alunos (nome, menor, frequência, situação, sigla e login proposto) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/LISTA-ALUNOS/ALUNOS-TECNICO-INFORMATICA-MANHA.md` — só local (LGPD, `LISTA-ALUNOS/` no `.gitignore`); sem cadastro no banco | ✅ Concluído | 2026-10-09 12:36 | `git check-ignore` confirma fora do Git; logins sem repetição |
+| 117.1 | Lista da turma T TIIN 2026/1 M1 (124519), SN.RDS-LAB INFORMATICA 01 - SENAI/SC - Rio do Sul, com os 17 alunos (nome, menor, frequência, situação, sigla e login proposto) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/LISTA-ALUNOS/ALUNOS-TECNICO-INFORMATICA-MANHA.md` — só local (LGPD, `LISTA-ALUNOS/` no `.gitignore`); sem cadastro no banco | ✅ Concluído | 2026-10-09 12:36 | `git check-ignore` confirma fora do Git; logins sem repetição |
 | 117.2 | Aceite do usuário | ⬜ Pendente | — | — |
