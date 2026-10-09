@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 12:58:34
+**Versão das regras:** 2026-10-09 13:20:11
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 13:20:11 | **Análise contínua das matérias (tarefa permanente #19-91cbac65-87ca-45a0):** `scripts/analise-materias.py` grava `tasks/ANALISE-MATERIAS-RELATORIO.json` no início de cada sessão e ao concluir tarefa em matéria; a tarefa **nunca fica CONCLUÍDA** enquanto houver matéria incompleta ou pendência |
 | 2026-10-09 12:58:34 | **`TASKS_COMPLETE.md` apagado:** tarefa concluída ou cancelada tem o bloco **removido** do `TASKS.md` (o registro fica no `STATUS.md` e no Git) |
 | 2026-10-09 12:36:43 | **Id de tarefa nova = número + UUID** (ex.: `#19-3f9a2c7e-8b1d-4e2a`), para duas licenças/branches não gerarem o mesmo número; as antigas (até #18) não mudam |
 | 2026-10-09 12:33:04 | **Arquivos de tarefas em `tasks/`:** `STATUS.md`, `TASKS.md` e `TASKS_COMPLETE.md` saíram da raiz e ficam em `C:\fontes\aulasenai\tasks\` (ler e atualizar lá; na nuvem, `tasks/` da raiz do repositório) |
 | 2026-10-09 11:03:21 | **Nova seção "Pull Requests" (só na nuvem):** todo commit feito na nuvem é enviado na hora (`git push`) e, se a branch não tiver PR aberto para a `main`, um **novo PR** é criado |
-| 2026-10-09 11:02:12 | **Mínimo de questões nas objetivas aplicado no banco** (`database/2026-10-09-minimo-questoes-objetivas.sql`, pelo conector do Supabase): entrega e nota da objetiva sobre o mínimo valem também no banco |
 
 ---
 
@@ -262,6 +262,28 @@ Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 - ✅ Seções sem conteúdo ficam com a tabela vazia (não apagar o cabeçalho).
 - ✅ **"Próximo passo"** é a primeira coisa a ler ao retomar e a última a atualizar ao parar.
 - ✅ Projetos com `STATUS.md` antigo: **migrar para o modelo** sem apagar o histórico já registrado.
+
+---
+
+## 🔁 REGRA CRÍTICA — ANÁLISE CONTÍNUA DAS MATÉRIAS (TAREFA PERMANENTE #19-91cbac65-87ca-45a0)
+
+Registrada em 2026-10-09 13:20:11 a pedido do usuário.
+
+- ✅ **Rotina:** `C:\Python314\python.exe scripts/analise-materias.py` — percorre todos os cursos de
+  `MATERIAIS/` (menos `MATERIAS-GERAIS` e `AGENDA_COLABORADOR`), confere cada matéria no padrão da
+  matéria modelo (ITIC) e grava **o que falta e o que está OK** em
+  **`tasks/ANALISE-MATERIAS-RELATORIO.json`**. Só lê as matérias; não altera nada nelas.
+- ✅ **Rodar SEMPRE:** no início de cada sessão (junto com o graphify) e ao concluir qualquer tarefa
+  que mexa numa matéria; o JSON atualizado entra no commit da tarefa e a linha da tarefa #19 no
+  `STATUS.md` recebe os números (cursos, matérias, completas, incompletas) e a data e hora da rodada.
+- ⛔ **A tarefa #19 NUNCA fica com status CONCLUÍDO** (nem ✅ no `STATUS.md`, nem removida do
+  `TASKS.md`) **enquanto o `ANALISE-MATERIAS-RELATORIO.json` tiver qualquer matéria com
+  `"completa": false` ou qualquer pendência.** Só quando o relatório mostrar `incompletas = 0` e
+  nenhuma pendência, **e** o usuário der o aceite, ela pode ser concluída.
+- ✅ As pendências do relatório são resolvidas **só quando o usuário pedir**, uma matéria por vez
+  (cada uma vira etapa própria no `STATUS.md`), respeitando `IGNORAR`/`VERIFICAR` das ementas.
+- ⛔ Não mudar o padrão conferido pela rotina sem pedido do usuário; se a ITIC mudar, atualizar a
+  rotina na mesma tarefa.
 
 ---
 

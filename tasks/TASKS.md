@@ -228,4 +228,26 @@ exibir o progresso logo ao abrir a página.
 
 ---
 
+### #19-91cbac65-87ca-45a0: Análise contínua das matérias (o que falta e o que está OK) — pedida em 2026-10-09 13:20:11
+
+**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`". ⛔ **Tarefa PERMANENTE: nunca fica
+CONCLUÍDA** enquanto `tasks/ANALISE-MATERIAS-RELATORIO.json` tiver alguma matéria com
+`"completa": false` ou alguma pendência (regra no `CLAUDE.md`, seção "ANÁLISE CONTÍNUA DAS MATÉRIAS").
+**Prioridade:** 🟠 Alta
+**Rotina:** `C:\Python314\python.exe scripts/analise-materias.py` (só lê as matérias; grava
+`tasks/ANALISE-MATERIAS-RELATORIO.json`).
+
+O que fazer, sempre:
+
+- [ ] Rodar a rotina no início de cada sessão e ao concluir qualquer tarefa que mexa numa matéria
+  (`MATERIAIS/`), e incluir o JSON atualizado no commit da tarefa.
+- [ ] Atualizar a linha desta tarefa no `STATUS.md` com os números do relatório (cursos, matérias,
+  completas, incompletas) e a data e hora da última rodada.
+- [ ] Resolver as pendências **só quando o usuário pedir**, uma matéria por vez (cada uma vira
+  etapa própria no `STATUS.md`); respeitar `IGNORAR`/`VERIFICAR` das ementas e cursos.
+- [ ] Só remover esta tarefa do `TASKS.md` quando o relatório mostrar `incompletas = 0` e nenhuma
+  pendência, com o aceite do usuário.
+
+---
+
 **Última atualização:** 2026-10-09 (tarefas #17 e #18 adicionadas)
