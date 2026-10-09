@@ -1630,7 +1630,8 @@ Decisões do usuário (2026-10-09 10:31): D1 o painel global **substitui** o das
 | 123.8 | `tasks/CALENDARIO-COMPLETO-2026.md` refeito pela Google Agenda `gelvazio.c@edu.sc.senai.br` (194 eventos de 22/09 a 20/12, conector): 50 blocos, 180 aulas, coluna Horário e turma; notebooks/projetor mantidos do calendário anterior; link em `docs/PROFESSOR-GELVAZIO-CAMARGO.md` corrigido para `tasks/` | ✅ Concluído | 2026-10-09 13:18 | Leitura do arquivo gerado; 194 eventos lidos (sem próxima página) |
 | 123.9 | `scripts/analise-materias.py` reescrito no padrão da matéria modelo (ITIC): todos os cursos (menos MATERIAS-GERAIS e AGENDA_COLABORADOR), matéria = pasta com ementa ou `materia.json`, confere ementa (tamanho), `materia.json`, `CONTEUDO/`, STATUS-AULAS, índice/STATUS/fontes das atividades, objetivas de 50 e apostila; grava `tasks/ANALISE-MATERIAS-RELATORIO.json` (6 cursos, 35 matérias, 2 completas) | ✅ Concluído | 2026-10-09 13:25 | `py_compile`; linhas ≤ 100; relatório gerado e lido |
 | 123.10 | Tarefa permanente #19-91cbac65-87ca-45a0 no `TASKS.md` e no "📌 Tarefas" + regra "ANÁLISE CONTÍNUA DAS MATÉRIAS" no `CLAUDE.md` (versão 2026-10-09 13:20:11 + histórico): rodar a rotina sempre; nunca CONCLUÍDA enquanto o relatório tiver pendência | ✅ Concluído | 2026-10-09 13:22 | Leitura da seção; resumo do histórico com 5 linhas |
-| 123.11 | Aceite do usuário | ⬜ Pendente | — | — |
+| 123.11 | `GUIA-MAESTRO-EMENTAS-CHALKIE-AI.md` recuperado pelo Git (versão da raiz, 836 linhas) e movido para `tasks/` (pedido do usuário; desfaz parte do item 123.7) | ✅ Concluído | 2026-10-09 13:40 | `git diff --cached -M` = R100 |
+| 123.12 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Etapa 124 — Pendências: coluna "Descrição" (tarefa grande — banco, pedido em 2026-10-09 12:51:22; plano [docs/pendencias-coluna-descricao.md](../docs/pendencias-coluna-descricao.md))
 | Item | Descrição | Status | Concluído em | Verificação |
