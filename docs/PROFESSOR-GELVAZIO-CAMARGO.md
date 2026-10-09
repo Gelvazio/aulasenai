@@ -89,7 +89,7 @@ técnico, liderança e paixão por compartilhar conhecimento.
 | Técnico em Informática para Internet | Testes de Front-End e demais UCs da pasta do curso |
 | Qualificação Profissional | Digital Skills |
 
-Calendário completo: [CALENDARIO-COMPLETO-2026.md](../CALENDARIO-COMPLETO-2026.md).
+Calendário completo: [CALENDARIO-COMPLETO-2026.md](../tasks/CALENDARIO-COMPLETO-2026.md).
 
 ## 11. Onde os dados aparecem no sistema
 
