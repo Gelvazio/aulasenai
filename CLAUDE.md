@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 18:06:19
+**Versão das regras:** 2026-10-09 15:24:44
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 15:24:44 | **Conversa entre sessões e licenças:** `tasks/STATUS.md` vira índice (etapas em `tasks/etapas/`, uma por arquivo), "🧭 Frentes de trabalho" (próximo passo por ambiente + branch), coluna "Em uso por" (reserva da tarefa), `tasks/RECADOS.md`, etapa nova com UUID, trazer a `main` no início e no fim, arquivo gerado em conflito = regerar |
 | 2026-10-09 18:06:19 | **Regra do `graphify update .` removida:** o grafo não é mais atualizado nem lido automaticamente (início de sessão, commits, `GRAPH_REPORT.md`); só roda quando o usuário pedir (`/graphify`) |
 | 2026-10-09 18:00:00 | **Lista de presença única:** todas as listas em `scripts/LISTAPRESENCA.js` (versionado, fora do site); páginas e `criar-usuarios-supabase-auth.js --turma=CODIGO` leem só dele (`docs/regras/usuarios-turmas-paginas-professor.md`) |
 | 2026-10-09 17:25:12 | **`.gitignore` mínimo:** só `__pycache__/`, graphify, `variaveis.js` e `.env`; binários, gabaritos, listas de presença e `LISTA-ALUNOS/` saem do site pelo `.vercelignore` (regra "O QUE NUNCA É PUBLICADO" reescrita) |
 | 2026-10-09 15:09:56 | `docs/regras/atividades.md` (Reforço de Linguagens): `-GABARITO.md` "no Git e fora do site", como a regra geral (revisão do PR) |
-| 2026-10-09 15:08:47 | **Banco de questões do AVA (Moodle XML) removido:** regra de `docs/regras/atividades.md`, gerador `assets/gerador-banco-ava/`, pasta `BANCO-AVA/` da ITIC, planos em `docs/` e todas as citações (pedido do usuário) |
 
 ---
 
@@ -151,7 +151,9 @@ pasta. O `TASKS_COMPLETE.md` foi apagado em 2026-10-09: tarefa concluída sai do
 
 | Arquivo | Guarda | Quem manda |
 |---|---|---|
-| `tasks/STATUS.md` | Etapas e itens de **todas** as tarefas, "Próximo passo", "⏳ Aguardando o usuário", "📌 Tarefas do `TASKS.md`", decisões, riscos, bloqueios, pendências e lições | 🥇 **Fonte única do estado** — em conflito, **ele vence** |
+| `tasks/STATUS.md` | **Índice do estado:** "🧭 Frentes de trabalho" (próximo passo de cada sessão), "📌 Tarefas do `TASKS.md`" (com "Em uso por"), "⏳ Aguardando o usuário", tabela "🗂️ Etapas", decisões, riscos, bloqueios, pendências e lições | 🥇 **Fonte única do estado** (junto com `tasks/etapas/`) — em conflito, **ele vence** |
+| `tasks/etapas/ETAPA-NNN[-uuid8]-ASSUNTO.md` | **Uma etapa por arquivo** (itens, status, verificação) — desde 2026-10-09 | Faz parte da fonte única; listado na tabela "🗂️ Etapas" do `STATUS.md` |
+| `tasks/RECADOS.md` | Recados entre sessões e licenças (só se acrescentam linhas) | Aviso, não estado: o que virar trabalho vai para o `STATUS.md` |
 | `tasks/TASKS.md` | Só a **descrição longa** das tarefas pendentes (concluída ou cancelada = bloco removido) | Aponta para o `STATUS.md` (sem status próprio) |
 | `docs/<tarefa>.md` | Plano da tarefa grande com os passos e o status de cada passo | Detalha a etapa do `STATUS.md` |
 | `<MATERIA>/AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` | Peça por peça da matéria (aula, atividade, capítulo) | Detalha a etapa do `STATUS.md` |
@@ -170,10 +172,11 @@ pasta. O `TASKS_COMPLETE.md` foi apagado em 2026-10-09: tarefa concluída sai do
 5. ⛔ **`✅`/`CONCLUÍDO` só com tudo validado:** conferir **cada** pedido do usuário nos arquivos,
    nos commits e no `STATUS.md` (não pela memória). Faltando item, commit ou aceite → continua
    pendente. Nunca marcar concluída uma tarefa parcial.
-6. ✅ **"Próximo passo" sempre atual:** é a primeira linha lida ao retomar e a última atualizada ao
-   parar; deve dizer o item **exato** a fazer.
-7. ✅ **Histórico nunca é apagado** no `STATUS.md` (só se acrescentam etapas); o que sai das listas
-   de espera é marcado no item da etapa.
+6. ✅ **"Próximo passo" sempre atual:** fica na linha **da sua frente** em "🧭 Frentes de trabalho"
+   do `STATUS.md`; é a primeira coisa lida ao retomar e a última atualizada ao parar; deve dizer o
+   item **exato** a fazer.
+7. ✅ **Histórico nunca é apagado** (só se acrescentam etapas, cada uma num arquivo de
+   `tasks/etapas/`); o que sai das listas de espera é marcado no item da etapa.
 8. ✅ **Commit junto:** os arquivos de status alterados entram no commit da tarefa.
 
 ### 📋 Gestão de projetos — regras aplicadas ao `STATUS.md` (do global)
@@ -259,6 +262,44 @@ Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 - ✅ Seções sem conteúdo ficam com a tabela vazia (não apagar o cabeçalho).
 - ✅ **"Próximo passo"** é a primeira coisa a ler ao retomar e a última a atualizar ao parar.
 - ✅ Projetos com `STATUS.md` antigo: **migrar para o modelo** sem apagar o histórico já registrado.
+
+---
+
+## 🤝 REGRA CRÍTICA — CONVERSA ENTRE SESSÕES E LICENÇAS (PELO REPOSITÓRIO)
+
+Registrada em 2026-10-09 15:24:44 a pedido do usuário (tarefa #21-eeefc710-3e74-4928; plano
+[docs/colaboracao-entre-sessoes.md](docs/colaboracao-entre-sessoes.md)). Sessões de **contas
+diferentes** do Claude (e outras IAs) não conversam diretamente: só se falam pelo **Git**. Estas
+regras evitam trabalho repetido, tarefa pega em dobro e conflito de merge.
+
+- ✅ **Frente de trabalho = ambiente + branch** (ex.: `nuvem · claude/festive-maxwell-25jnhl`,
+  `local · main`). É como cada sessão se identifica no `STATUS.md` e nos recados (nunca e-mail ou
+  nome de conta: os arquivos são publicados).
+- ✅ **1. Etapa nova com UUID:** toda etapa nova recebe o próximo número **+ o 1º bloco de um UUID
+  v4** (ex.: **`Etapa 136-3f9a2c7e`**, itens `136.1`, `136.2`…), igual às tarefas do `TASKS.md`;
+  assim duas frentes nunca criam a mesma "Etapa 136". As antigas (até a 135) não mudam.
+- ✅ **2. Reserva da tarefa ("Em uso por"):** antes de começar uma tarefa, a frente preenche a coluna
+  **"Em uso por"** do "📌 Tarefas" (`<frente> (desde AAAA-MM-DD HH:MM)`) e faz commit + push na
+  hora; ao terminar ou parar, volta a `—`. ⛔ Tarefa reservada por outra frente **não é mexida** —
+  se precisar, deixar recado e perguntar ao usuário.
+- ✅ **3. Próximo passo por frente:** cada frente tem a **sua linha** em "🧭 Frentes de trabalho" e
+  atualiza **só a dela** (ao começar e ao parar); nunca sobrescrever a linha de outra frente.
+- ✅ **4. Recados em `tasks/RECADOS.md`:** aviso para outra frente (ex.: "não mexer em X", "mudei a
+  regra Y") vai como linha nova em "Abertos" (data e hora, De, Para, recado, etapa). **Ler ao
+  iniciar**; ao cumprir, mover para "Cumpridos". Só acrescentar, nunca apagar recado de outra frente.
+- ✅ **5. Trazer a `main` no início e no fim:** ao iniciar a sessão e cada tarefa, `git fetch origin
+  main` e merge na branch (no local, o usuário faz o pull); de novo **antes de cada push**. PR
+  pequeno e juntado logo deixa a outra frente ver o trabalho mais cedo.
+- ✅ **6. Arquivo gerado em conflito = regerar:** em conflito de merge em arquivo gerado por script
+  (`tasks/ANALISE-MATERIAS-RELATORIO.json`, `MATERIAIS/STATUS-EMENTAS-CURSOS.md`, `STATUS-EMENTAS.md`,
+  páginas HTML dos geradores, seeds), **não mesclar à mão**: aceitar um dos lados e **rodar o script
+  de novo**.
+- ✅ **7. Uma etapa por arquivo:** cada etapa fica em **`tasks/etapas/ETAPA-NNN[-uuid8]-ASSUNTO.md`**
+  e ganha uma linha na tabela **"🗂️ Etapas"** do `STATUS.md` no mesmo commit; o `STATUS.md` guarda só
+  o índice. Duas frentes em tarefas diferentes deixam de editar o mesmo arquivo. Se o merge trouxer
+  mudança de etapa feita no `STATUS.md` antigo (antes de 2026-10-09 15:24), aplicá-la no arquivo da
+  etapa.
+- ⛔ Nada de senha, chave, gabarito nem dado de aluno no `STATUS.md`, nas etapas ou nos recados.
 
 ---
 
@@ -383,8 +424,12 @@ Registrada em 2026-10-03 a pedido do usuário.
 
 **ANTES DE RESPONDER QUALQUER COISA**, você DEVE:
 
-1. ✅ **LER `C:\fontes\aulasenai\tasks\STATUS.md`** — primeiro o **"Próximo passo"** e a tabela
-   **"⏳ Aguardando o usuário"**
+0. ✅ **Trazer a `main`** (`git fetch origin main` + merge na branch; no local, o usuário faz o pull)
+   — regra "CONVERSA ENTRE SESSÕES E LICENÇAS"
+1. ✅ **LER `C:\fontes\aulasenai\tasks\STATUS.md`** — primeiro a linha da sua frente em
+   **"🧭 Frentes de trabalho"**, a coluna **"Em uso por"** do "📌 Tarefas" e a tabela
+   **"⏳ Aguardando o usuário"**; depois o arquivo da etapa em `tasks/etapas/` — e o
+   **`tasks/RECADOS.md`** (recados abertos para a sua frente ou para `todas`)
 2. ✅ **Verificar** se há item `🔄 Em progresso` ou `⬜ Pendente` de tarefa aprovada e conferir o que
    já foi feito nos arquivos/commits
    - ☁️ **Na nuvem:** ler também `.claude/regras-globais/CLAUDE-GLOBAL.md` e

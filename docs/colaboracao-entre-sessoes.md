@@ -53,8 +53,8 @@ pegue a mesma tarefa**, **deixe recados** e **não gere conflitos** de merge no 
 |---|---|---|---|---|
 | 1 | Plano | `docs/colaboracao-entre-sessoes.md` | Leitura | ✅ 2026-10-09 15:24 |
 | 2 | Recados | `tasks/RECADOS.md` | Leitura | ✅ 2026-10-09 15:24 |
-| 3 | Dividir as etapas (script no scratchpad, sem editar o texto) | `tasks/etapas/` + `tasks/STATUS.md` | Soma das linhas movidas = linhas das etapas; nenhuma etapa perdida (contagem dos títulos) | ⬜ |
-| 4 | Índice: frentes de trabalho, coluna "Em uso por", tabela de etapas | `tasks/STATUS.md` | Leitura; cada link aponta para arquivo existente | ⬜ |
-| 5 | Regras (1 a 7) | `CLAUDE.md`, `docs/HISTORICO-REGRAS.md` | Linha de versão no formato do `regras-modal.js` | ⬜ |
-| 6 | Tarefa #21 no `TASKS.md` e etapa 135 | `tasks/TASKS.md`, `tasks/etapas/` | Leitura | ⬜ |
+| 3 | Dividir as etapas (script no scratchpad, sem editar o texto) | `tasks/etapas/` + `tasks/STATUS.md` | Soma das linhas movidas = linhas das etapas; nenhuma etapa perdida (contagem dos títulos) | ✅ 2026-10-09 15:24 |
+| 4 | Índice: frentes de trabalho, coluna "Em uso por", tabela de etapas | `tasks/STATUS.md` | Leitura; cada link aponta para arquivo existente | ✅ 2026-10-09 15:24 |
+| 5 | Regras (1 a 7) | `CLAUDE.md`, `docs/HISTORICO-REGRAS.md` | Linha de versão no formato do `regras-modal.js` | ✅ 2026-10-09 15:26 |
+| 6 | Tarefa #21 no `TASKS.md` e etapa 135 | `tasks/TASKS.md`, `tasks/etapas/` | Leitura | ✅ 2026-10-09 15:24 |
 | 7 | Aceite do usuário | — | — | ⬜ |

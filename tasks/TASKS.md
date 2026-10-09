@@ -290,10 +290,10 @@ Claude (que só se falam pelo repositório) colaborarem sem se atrapalhar:
 - [x] (7) Uma etapa por arquivo em `tasks/etapas/`; o `STATUS.md` vira o índice.
 - [x] (3) "🧭 Frentes de trabalho": próximo passo por ambiente + branch.
 - [x] (2) Coluna "Em uso por" no "📌 Tarefas": reserva da tarefa.
-- [ ] (1, 5, 6) Regras no `CLAUDE.md`: etapa nova com UUID; trazer a `main` no início e no fim;
+- [x] (1, 5, 6) Regras no `CLAUDE.md`: etapa nova com UUID; trazer a `main` no início e no fim;
   arquivo gerado em conflito = regerar com o script.
 - [ ] Aceite do usuário (ele vai juntar o PR na `main`).
 
 ---
 
-**Última atualização:** 2026-10-09 15:30 (tarefa #21 adicionada)
+**Última atualização:** 2026-10-09 15:26 (tarefa #21 adicionada)
