@@ -174,6 +174,19 @@ ATIVIDADES_REFORCO_LINGUAGENS = [
      f"{PASTA_REFORCO_LINGUAGENS}/ATIVIDADES-AULA-10-20-QUESTOES.md"),
 ]
 
+PASTA_TESTES_FRONTEND = "MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/ATIVIDADES"
+
+# Testes de Front-End (Técnico em Informática para Internet): datas de CONTEUDO/AULA-NN-*.md.
+# As práticas discursivas (ATIVIDADE-PRATICA-AULA-NN) têm seed próprio, que roda depois deste.
+ATIVIDADES_TESTES_FRONTEND = [
+    (1, "Fundamentos de Testes de Software", "2026-10-08",
+     f"{PASTA_TESTES_FRONTEND}/ATIVIDADES-AULA-01-50-QUESTOES.md"),
+    (2, "Planejamento, Verificação, Validação e Casos de Teste", "2026-10-14",
+     f"{PASTA_TESTES_FRONTEND}/ATIVIDADES-AULA-02-50-QUESTOES.md"),
+    (3, "Testes Unitários no Front-End com Vitest", "2026-10-15",
+     f"{PASTA_TESTES_FRONTEND}/ATIVIDADES-AULA-03-50-QUESTOES.md"),
+]
+
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.
 GRUPOS = [
     (CURSO, MATERIA, ATIVIDADES),
@@ -183,6 +196,7 @@ GRUPOS = [
     ("Operador de Produção Industrial", "Fundamentos de Automação/Instrumentação",
      ATIVIDADES_AUTOMACAO),
     ("Rio do Sul Mais Tech", "Reforço de Linguagens", ATIVIDADES_REFORCO_LINGUAGENS),
+    ("Técnico em Informática para Internet", "TESTES DE FRONTEND", ATIVIDADES_TESTES_FRONTEND),
 ]
 
 PADRAO_ITEM = re.compile(r"^## ITEM (\d+) — (.+)$", re.M)

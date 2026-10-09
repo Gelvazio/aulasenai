@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03 — Testes Unitários no Front-End com Vitest (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="03" data-tema="Testes Unitários no Front-End com Vitest" data-total="50"
+      data-uc="Testes de Front-End" data-uc-curta="Testes de Front-End"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>⚡ Aula 03: Testes Unitários no Front-End com Vitest</h1>
+            <p>Testes de Front-End · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-03-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)<br>
+                        <strong>Slides da aula:</strong> <a href="../AULAS/AULA-03-SLIDES.pdf" target="_blank" rel="noopener">📕 Slides (PDF)</a>
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C5 —</strong> Desenvolver conjunto de testes automatizados</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">O Que É Teste Automatizado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um teste automatizado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um programa que testa outro programa, comparando o resultado com o esperado.</li>
+                        <li><span class="letra">B)</span>Uma revisão visual das telas feita pelo designer.</li>
+                        <li><span class="letra">C)</span>Um relatório escrito depois da publicação.</li>
+                        <li><span class="letra">D)</span>Um teste feito à mão pelo cliente na loja.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Vantagem da Automação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é uma vantagem do teste automatizado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dispensa escrever qualquer requisito.</li>
+                        <li><span class="letra">B)</span>Roda em segundos, quantas vezes for preciso, e avisa na hora quando algo quebra.</li>
+                        <li><span class="letra">C)</span>Só precisa ser executado uma vez na vida.</li>
+                        <li><span class="letra">D)</span>Garante que o sistema não tem nenhum defeito.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Teste de Regressão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um teste de regressão?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O teste feito só na primeira versão.</li>
+                        <li><span class="letra">B)</span>O teste que apaga as funções antigas.</li>
+                        <li><span class="letra">C)</span>O teste que mede o tempo de carregamento.</li>
+                        <li><span class="letra">D)</span>O teste que avisa quando uma alteração quebra algo que já funcionava.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Teste Unitário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que verifica um teste unitário?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A menor parte do código, como uma função, de forma isolada.</li>
+                        <li><span class="letra">B)</span>O fluxo completo no navegador real.</li>
+                        <li><span class="letra">C)</span>A integração entre a tela e o banco de dados.</li>
+                        <li><span class="letra">D)</span>A opinião do usuário sobre a interface.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">O Que o Unitário Não Usa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um teste unitário roda:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Sempre com a API real da loja.</li>
+                        <li><span class="letra">B)</span>Somente dentro do navegador do usuário.</li>
+                        <li><span class="letra">C)</span>Sempre com o banco de produção.</li>
+                        <li><span class="letra">D)</span>Sem banco, sem rede e sem navegador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Unitário na Pirâmide</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde fica o teste unitário na pirâmide de testes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No meio: testes de componentes com API.</li>
+                        <li><span class="letra">B)</span>Fora da pirâmide.</li>
+                        <li><span class="letra">C)</span>No topo: poucos testes, lentos e caros.</li>
+                        <li><span class="letra">D)</span>Na base: muitos testes, rápidos e baratos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Para Que Serve o Vitest</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve o Vitest?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Controlar o navegador real em testes E2E.</li>
+                        <li><span class="letra">B)</span>Publicar o site na internet.</li>
+                        <li><span class="letra">C)</span>Executar testes JS/TS com asserções, mocks e cobertura.</li>
+                        <li><span class="letra">D)</span>Desenhar o protótipo das telas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Por Que Vitest</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a UC usa o Vitest?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Só funciona com testes manuais.</li>
+                        <li><span class="letra">B)</span>É rápido, compatível com a sintaxe do Jest e integrado a projetos Vite/React.</li>
+                        <li><span class="letra">C)</span>É o único framework de testes que existe.</li>
+                        <li><span class="letra">D)</span>Dispensa o Node.js e o npm.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Ferramenta de E2E</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais ferramentas controlam o navegador real em testes E2E?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Vitest e Jest.</li>
+                        <li><span class="letra">B)</span>Cypress e Playwright.</li>
+                        <li><span class="letra">C)</span>Testing Library e Vite.</li>
+                        <li><span class="letra">D)</span>npm e Node.js.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Testing Library</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve a Testing Library?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Criar o banco de dados de testes.</li>
+                        <li><span class="letra">B)</span>Substituir o Node.js no terminal.</li>
+                        <li><span class="letra">C)</span>Medir o tempo de resposta da API.</li>
+                        <li><span class="letra">D)</span>Testar componentes pelo que o usuário vê na tela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Jest e Vitest</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a relação entre Jest e Vitest?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O Jest só testa back-end em Java.</li>
+                        <li><span class="letra">B)</span>O Jest é um editor de código.</li>
+                        <li><span class="letra">C)</span>O Jest é uma alternativa mais antiga, com API quase igual à do Vitest.</li>
+                        <li><span class="letra">D)</span>O Jest é uma ferramenta de E2E.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Instalando o Vitest</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando instala o Vitest como dependência de desenvolvimento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>npm install -D vitest</li>
+                        <li><span class="letra">B)</span>npm start vitest</li>
+                        <li><span class="letra">C)</span>node vitest --install</li>
+                        <li><span class="letra">D)</span>npm run vitest</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Iniciando o Projeto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando cria o package.json do projeto de testes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>npm run test:run</li>
+                        <li><span class="letra">B)</span>npm test</li>
+                        <li><span class="letra">C)</span>npm init -y</li>
+                        <li><span class="letra">D)</span>node init</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Modo Observação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz o comando npm test (script &quot;vitest&quot;)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Roda uma vez e termina, como no CI.</li>
+                        <li><span class="letra">B)</span>Roda em modo observação, repetindo os testes a cada arquivo salvo.</li>
+                        <li><span class="letra">C)</span>Publica o projeto no servidor.</li>
+                        <li><span class="letra">D)</span>Apaga todos os testes do projeto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Rodar Uma Vez</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando roda a suíte uma vez e termina, como no CI?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>npm install -D vitest</li>
+                        <li><span class="letra">B)</span>npm test (vitest)</li>
+                        <li><span class="letra">C)</span>npm init -y</li>
+                        <li><span class="letra">D)</span>npm run test:run (vitest run)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Nome do Arquivo de Teste</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Pela convenção, onde fica o teste de src/utils/frete.js?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>src/utils/frete.json</li>
+                        <li><span class="letra">B)</span>src/frete.css</li>
+                        <li><span class="letra">C)</span>testes/frete.html</li>
+                        <li><span class="letra">D)</span>src/utils/frete.test.js</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Padrão AAA</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa o padrão AAA?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Arrange (preparar), Act (agir) e Assert (conferir).</li>
+                        <li><span class="letra">B)</span>Analisar, Aprovar e Arquivar.</li>
+                        <li><span class="letra">C)</span>Abrir, Apagar e Atualizar.</li>
+                        <li><span class="letra">D)</span>Acessar, Alterar e Agendar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Arrange</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No padrão AAA, o que se faz no Arrange?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Conferir o resultado com o esperado.</li>
+                        <li><span class="letra">B)</span>Executar a função testada.</li>
+                        <li><span class="letra">C)</span>Preparar os dados e o cenário do teste.</li>
+                        <li><span class="letra">D)</span>Publicar o resultado do teste.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Act</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No padrão AAA, o que se faz no Act?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Preparar os dados do teste.</li>
+                        <li><span class="letra">B)</span>Conferir o resultado.</li>
+                        <li><span class="letra">C)</span>Executar o código que está sendo testado.</li>
+                        <li><span class="letra">D)</span>Escrever o nome do teste.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Assert</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No padrão AAA, o que se faz no Assert?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Preparar os dados de entrada.</li>
+                        <li><span class="letra">B)</span>Instalar as dependências.</li>
+                        <li><span class="letra">C)</span>Chamar a função testada.</li>
+                        <li><span class="letra">D)</span>Conferir se o resultado obtido é igual ao esperado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Identificando o Assert</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Um teste tem as linhas: const subtotal = 198.99; · const frete = calcularFrete(subtotal); · expect(frete).toBe(19.9);</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual linha é o Assert?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nenhuma das linhas.</li>
+                        <li><span class="letra">B)</span>expect(frete).toBe(19.9);</li>
+                        <li><span class="letra">C)</span>const subtotal = 198.99;</li>
+                        <li><span class="letra">D)</span>const frete = calcularFrete(subtotal);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Função do describe</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve o describe em um arquivo de teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Agrupar os testes de uma mesma unidade.</li>
+                        <li><span class="letra">B)</span>Criar um mock da API.</li>
+                        <li><span class="letra">C)</span>Executar o código em produção.</li>
+                        <li><span class="letra">D)</span>Conferir um valor com o esperado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Função do it</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que representa o it (ou test) no Vitest?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um grupo de arquivos.</li>
+                        <li><span class="letra">B)</span>Um caso de teste.</li>
+                        <li><span class="letra">C)</span>Uma dependência instalada.</li>
+                        <li><span class="letra">D)</span>Um matcher de números.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Nome do Teste</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como deve ser o nome de um teste (o texto do it)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ter só uma letra.</li>
+                        <li><span class="letra">B)</span>Descrever o comportamento esperado, como um caso de teste.</li>
+                        <li><span class="letra">C)</span>Repetir o nome do arquivo.</li>
+                        <li><span class="letra">D)</span>Ser um número aleatório.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Independência dos Testes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa dizer que cada teste é independente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ele só passa se todos os outros passarem.</li>
+                        <li><span class="letra">B)</span>Ele usa os dados deixados pelo teste anterior.</li>
+                        <li><span class="letra">C)</span>Ele precisa rodar sempre depois do anterior.</li>
+                        <li><span class="letra">D)</span>Ele não depende da ordem nem do resultado de outro teste.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Matcher toBe</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando usar o matcher toBe?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para comparar um valor primitivo exato, como um número.</li>
+                        <li><span class="letra">B)</span>Para conferir um mock chamado.</li>
+                        <li><span class="letra">C)</span>Para comparar objetos com o mesmo conteúdo.</li>
+                        <li><span class="letra">D)</span>Para esperar que a função lance erro.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Matcher toEqual</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual matcher compara o objeto { id: 1, qtd: 2 } pelo conteúdo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>toBe</li>
+                        <li><span class="letra">B)</span>toEqual</li>
+                        <li><span class="letra">C)</span>toBeTruthy</li>
+                        <li><span class="letra">D)</span>toThrow</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Somando 0.1 e 0.2</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual matcher usar para conferir 0.1 + 0.2 igual a 0.3?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>toBeCloseTo</li>
+                        <li><span class="letra">B)</span>toHaveBeenCalledWith</li>
+                        <li><span class="letra">C)</span>toBe</li>
+                        <li><span class="letra">D)</span>toContain</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Esperando Erro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual matcher confere que a função lança um erro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>toThrow</li>
+                        <li><span class="letra">B)</span>toBeCloseTo</li>
+                        <li><span class="letra">C)</span>toContain</li>
+                        <li><span class="letra">D)</span>toEqual</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Forma do toThrow</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como escrever corretamente a expectativa de erro de calcularFrete(-1)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>expect(-1).toContain(calcularFrete)</li>
+                        <li><span class="letra">B)</span>expect(calcularFrete(-1)).toBe(-1)</li>
+                        <li><span class="letra">C)</span>expect(() =&gt; calcularFrete(-1)).toThrow()</li>
+                        <li><span class="letra">D)</span>expect(calcularFrete).toEqual(-1)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Matcher toContain</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual matcher confere que a lista de produtos contém &quot;Teclado&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>toBe</li>
+                        <li><span class="letra">B)</span>toBeCloseTo</li>
+                        <li><span class="letra">C)</span>toContain</li>
+                        <li><span class="letra">D)</span>toThrow</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Matcher do Mock</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual matcher confere que um mock foi chamado com certos argumentos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>toBeFalsy</li>
+                        <li><span class="letra">B)</span>toBeCloseTo</li>
+                        <li><span class="letra">C)</span>toEqual</li>
+                        <li><span class="letra">D)</span>toHaveBeenCalledWith</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Matcher Mais Específico</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que preferir expect(frete).toBe(0) a expect(frete).toBeFalsy()?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque toBe é sempre mais rápido.</li>
+                        <li><span class="letra">B)</span>Porque o matcher mais específico diz exatamente o valor esperado.</li>
+                        <li><span class="letra">C)</span>Porque toBeFalsy só funciona com textos.</li>
+                        <li><span class="letra">D)</span>Porque toBeFalsy não existe no Vitest.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Caixa Branca no Unitário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na caixa branca aplicada ao teste unitário, o objetivo é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Garantir que cada caminho do código foi exercitado.</li>
+                        <li><span class="letra">B)</span>Ignorar os if/else da função.</li>
+                        <li><span class="letra">C)</span>Testar apenas o caminho feliz.</li>
+                        <li><span class="letra">D)</span>Testar só pelo que o usuário vê.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Caminhos do Frete</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A função da loja é: if (subtotal &lt; 0) throw new Error(&#x27;Subtotal inválido&#x27;); if (subtotal &gt;= 199) return 0; return 19.9;</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quantos caminhos essa função tem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>5: um para cada linha.</li>
+                        <li><span class="letra">B)</span>2: grátis e pago.</li>
+                        <li><span class="letra">C)</span>3: negativo, abaixo de 199 e a partir de 199.</li>
+                        <li><span class="letra">D)</span>1: apenas o retorno do frete.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Mínimo de Testes do Frete</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A função da loja é: if (subtotal &lt; 0) throw new Error(&#x27;Subtotal inválido&#x27;); if (subtotal &gt;= 199) return 0; return 19.9;</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o mínimo de testes para cobrir todos os caminhos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>2 testes.</li>
+                        <li><span class="letra">B)</span>3 testes.</li>
+                        <li><span class="letra">C)</span>1 teste.</li>
+                        <li><span class="letra">D)</span>10 testes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Limite do Frete</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A função da loja é: if (subtotal &lt; 0) throw new Error(&#x27;Subtotal inválido&#x27;); if (subtotal &gt;= 199) return 0; return 19.9;</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual resultado esperado para calcularFrete(199)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Erro &quot;Subtotal inválido&quot;</li>
+                        <li><span class="letra">B)</span>199</li>
+                        <li><span class="letra">C)</span>0</li>
+                        <li><span class="letra">D)</span>19.9</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Abaixo do Limite</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A função da loja é: if (subtotal &lt; 0) throw new Error(&#x27;Subtotal inválido&#x27;); if (subtotal &gt;= 199) return 0; return 19.9;</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual resultado esperado para calcularFrete(198.99)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>0</li>
+                        <li><span class="letra">B)</span>Erro &quot;Subtotal inválido&quot;</li>
+                        <li><span class="letra">C)</span>19.9</li>
+                        <li><span class="letra">D)</span>198.99</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Mutante Sobrevivente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A função da loja é: if (subtotal &lt; 0) throw new Error(&#x27;Subtotal inválido&#x27;); if (subtotal &gt;= 199) return 0; return 19.9; Um colega trocou &gt;= por &gt; e todos os testes continuaram passando.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que essa situação revela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O Vitest está com defeito.</li>
+                        <li><span class="letra">B)</span>Os testes estão perfeitos.</li>
+                        <li><span class="letra">C)</span>Falta um teste com o valor-limite 199.</li>
+                        <li><span class="letra">D)</span>O operador &gt; é sempre melhor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Valor de um Teste</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Segundo a dinâmica &quot;Mutante sobrevivente&quot;, quando um teste tem valor?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quando roda mais devagar.</li>
+                        <li><span class="letra">B)</span>Quando ele falha se o código estiver errado.</li>
+                        <li><span class="letra">C)</span>Quando passa em qualquer situação.</li>
+                        <li><span class="letra">D)</span>Quando tem o nome mais longo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">If Dentro de If</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Uma função tem um if/else dentro de outro if (que não tem else). Quantos testes, no mínimo, cobrem todos os caminhos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1 teste, porque é uma função só.</li>
+                        <li><span class="letra">B)</span>3 testes: o if de fora falso, e o if de dentro verdadeiro e falso.</li>
+                        <li><span class="letra">C)</span>4 testes, sempre o dobro dos ifs.</li>
+                        <li><span class="letra">D)</span>2 testes, um para cada if.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">O Que É Mock</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um mock?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um substituto controlado de uma dependência, que devolve o que o teste precisa e registra as chamadas.</li>
+                        <li><span class="letra">B)</span>A API real usada em produção.</li>
+                        <li><span class="letra">C)</span>Um erro proposital no código.</li>
+                        <li><span class="letra">D)</span>Um tipo de matcher de números.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Quando Usar Mock</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em qual situação se usa mock no teste unitário?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quando a função depende de algo externo, como API, data atual ou localStorage.</li>
+                        <li><span class="letra">B)</span>Quando o teste é E2E no navegador real.</li>
+                        <li><span class="letra">C)</span>Quando a função é pura e não depende de nada.</li>
+                        <li><span class="letra">D)</span>Quando se quer testar a API real.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Criando Mock no Vitest</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual função do Vitest cria uma função mock?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>npm init</li>
+                        <li><span class="letra">B)</span>describe()</li>
+                        <li><span class="letra">C)</span>expect()</li>
+                        <li><span class="letra">D)</span>vi.fn()</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Mock que Resolve</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como fazer um mock assíncrono devolver uma resposta de sucesso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>vi.fn().mockResolvedValue({ ok: true, json: async () =&gt; ({ token: &#x27;x&#x27; }) })</li>
+                        <li><span class="letra">B)</span>expect.fn().resolve(true)</li>
+                        <li><span class="letra">C)</span>describe.mock({ ok: true })</li>
+                        <li><span class="letra">D)</span>vi.fn().toBe({ ok: true })</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Injeção de Dependência</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A função entrar(email, senha, cliente = fetch) recebe o cliente HTTP por parâmetro.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que isso facilita o teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque impede o uso de matchers.</li>
+                        <li><span class="letra">B)</span>Porque o teste pode passar um mock no lugar do fetch real.</li>
+                        <li><span class="letra">C)</span>Porque deixa a função mais lenta.</li>
+                        <li><span class="letra">D)</span>Porque obriga o teste a usar a API real.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">API Real no Unitário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que um teste unitário não deve chamar a API real?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque fica lento, instável e deixa de testar só a unidade.</li>
+                        <li><span class="letra">B)</span>Porque o Vitest proíbe qualquer rede.</li>
+                        <li><span class="letra">C)</span>Porque a API real sempre responde certo.</li>
+                        <li><span class="letra">D)</span>Porque a API real é mais rápida que o mock.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">beforeEach</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve recriar os mocks no beforeEach?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apagar o arquivo de teste.</li>
+                        <li><span class="letra">B)</span>Executar os testes só uma vez.</li>
+                        <li><span class="letra">C)</span>Chamar a API real antes de cada teste.</li>
+                        <li><span class="letra">D)</span>Garantir o isolamento, com mocks novos antes de cada teste.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Cupom de 15%</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, investiga um total errado com cupom de 15% numa loja virtual.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a abordagem correta antes de alterar o código?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apagar a função de cupom.</li>
+                        <li><span class="letra">B)</span>Testar só o cupom de 15% uma vez à mão.</li>
+                        <li><span class="letra">C)</span>Alterar o código direto e publicar.</li>
+                        <li><span class="letra">D)</span>Escrever os testes de aplicarCupom (0%, 15%, 100%, negativo e centavos) para mostrar o defeito.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Total com Centavos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Desenvolver conjunto de testes automatizados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">No teste de aplicarCupom, o total com desconto tem centavos (ex.: 84.915).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual matcher é o mais adequado para conferir esse valor?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>toHaveBeenCalledWith</li>
+                        <li><span class="letra">B)</span>toThrow</li>
+                        <li><span class="letra">C)</span>toBeCloseTo</li>
+                        <li><span class="letra">D)</span>toContain</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Testes de Front-End — Aula 03: Testes Unitários no Front-End com Vitest</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

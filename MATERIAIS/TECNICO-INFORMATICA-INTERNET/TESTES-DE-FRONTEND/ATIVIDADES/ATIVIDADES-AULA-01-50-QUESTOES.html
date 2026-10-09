@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 01 — Fundamentos de Testes de Software (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="01" data-tema="Fundamentos de Testes de Software" data-total="50"
+      data-uc="Testes de Front-End" data-uc-curta="Testes de Front-End"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🧪 Aula 01: Fundamentos de Testes de Software</h1>
+            <p>Testes de Front-End · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-01-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)<br>
+                        <strong>Slides da aula:</strong> <a href="../AULAS/AULA-01-SLIDES.pdf" target="_blank" rel="noopener">📕 Slides (PDF)</a>
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C1 —</strong> Reconhecer as especificações técnicas da interface</p>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Reconhecer os requisitos da documentação de testes</p>
+                    <p class="quadro-capacidades__linha"><strong>C3 —</strong> Reconhecer as etapas de planejamento de testes</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Para Que Serve Testar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as especificações técnicas da interface</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o principal objetivo de testar uma interface web?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Deixar a tela mais bonita antes da entrega.</li>
+                        <li><span class="letra">B)</span>Substituir a revisão do código feita pela equipe.</li>
+                        <li><span class="letra">C)</span>Provar que o software não tem nenhum defeito.</li>
+                        <li><span class="letra">D)</span>Produzir evidência de que o software atende aos requisitos antes que o usuário encontre o problema.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">O Que o Teste Não Prova</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Sobre o que um conjunto de testes aprovados permite concluir, assinale a correta.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não é mais preciso testar nas próximas versões.</li>
+                        <li><span class="letra">B)</span>O usuário nunca verá uma falha na tela.</li>
+                        <li><span class="letra">C)</span>O sistema está livre de qualquer defeito.</li>
+                        <li><span class="letra">D)</span>Os defeitos procurados não foram encontrados, mas podem existir outros.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Verdadeiro ou Falso do Teste</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A frase &quot;se todos os testes passam, o sistema não tem defeitos&quot; é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Falsa, porque testar mostra a presença de defeitos, não a ausência deles.</li>
+                        <li><span class="letra">B)</span>Verdadeira, desde que os testes sejam automatizados.</li>
+                        <li><span class="letra">C)</span>Falsa, porque testes automatizados nunca passam de primeira.</li>
+                        <li><span class="letra">D)</span>Verdadeira, se a cobertura passar de 50%.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Escolha do Que Testar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como se escolhe o que testar, já que não é possível testar tudo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Pelos requisitos e pelos riscos de cada funcionalidade.</li>
+                        <li><span class="letra">B)</span>Pela ordem alfabética das telas.</li>
+                        <li><span class="letra">C)</span>Somente pelas telas mais bonitas.</li>
+                        <li><span class="letra">D)</span>Pelo que for mais rápido de escrever.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Definição de Erro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No vocabulário de testes, o que é um erro (engano)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma linha de log gerada pelo navegador.</li>
+                        <li><span class="letra">B)</span>Uma ação humana equivocada, como entender errado um requisito.</li>
+                        <li><span class="letra">C)</span>O comportamento errado que o usuário vê na tela.</li>
+                        <li><span class="letra">D)</span>O resultado esperado escrito no caso de teste.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Definição de Defeito</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um defeito (bug)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A reclamação registrada pelo cliente no suporte.</li>
+                        <li><span class="letra">B)</span>O engano da pessoa que escreveu o requisito.</li>
+                        <li><span class="letra">C)</span>O problema que ficou no código ou no documento.</li>
+                        <li><span class="letra">D)</span>A ferramenta usada para rodar os testes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Definição de Falha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é uma falha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A linha de código que contém o problema.</li>
+                        <li><span class="letra">B)</span>A pessoa que causou o problema.</li>
+                        <li><span class="letra">C)</span>O documento com os requisitos da tela.</li>
+                        <li><span class="letra">D)</span>O comportamento errado observado quando o sistema é executado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Cadeia Erro → Defeito → Falha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a sequência correta entre os três conceitos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A falha gera o defeito, que gera o erro.</li>
+                        <li><span class="letra">B)</span>A falha gera o erro, que gera o defeito.</li>
+                        <li><span class="letra">C)</span>O defeito gera o erro, que gera a falha.</li>
+                        <li><span class="letra">D)</span>O erro gera o defeito, e o defeito, quando executado, provoca a falha.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Identificando o Erro no CEP</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na tela de cadastro, a pessoa programadora entendeu que o CEP tem 9 dígitos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Esse entendimento equivocado é classificado como:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Falha.</li>
+                        <li><span class="letra">B)</span>Defeito.</li>
+                        <li><span class="letra">C)</span>Erro (engano).</li>
+                        <li><span class="letra">D)</span>Validação.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Identificando o Defeito no CEP</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">A validação do campo CEP foi escrita para aceitar somente 9 dígitos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A regra escrita no código é classificada como:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Falha.</li>
+                        <li><span class="letra">B)</span>Defeito.</li>
+                        <li><span class="letra">C)</span>Verificação.</li>
+                        <li><span class="letra">D)</span>Erro (engano).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Identificando a Falha no CEP</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">O usuário digita um CEP válido de 8 dígitos e recebe a mensagem &quot;CEP inválido&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o usuário observa é classificado como:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Defeito.</li>
+                        <li><span class="letra">B)</span>Erro (engano).</li>
+                        <li><span class="letra">C)</span>Falha.</li>
+                        <li><span class="letra">D)</span>Requisito.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Defeito Que Não Vira Falha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que nem todo defeito vira falha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o navegador corrige o defeito sozinho.</li>
+                        <li><span class="letra">B)</span>Porque o trecho com defeito pode nunca ser executado.</li>
+                        <li><span class="letra">C)</span>Porque defeitos só aparecem em testes automatizados.</li>
+                        <li><span class="letra">D)</span>Porque o usuário nunca usa telas de cadastro.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Defeito Como Risco</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Mesmo que um defeito nunca tenha provocado falha, ele deve ser tratado como:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um risco, pois pode virar falha quando o trecho for executado.</li>
+                        <li><span class="letra">B)</span>Um problema resolvido, já que ninguém reclamou.</li>
+                        <li><span class="letra">C)</span>Uma melhoria opcional de aparência.</li>
+                        <li><span class="letra">D)</span>Um teste aprovado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Preço Que Aparece Como NaN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, foi chamado para analisar as telas de uma loja virtual antes da publicação. Na vitrine, o preço aparece como &quot;NaN&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O texto &quot;NaN&quot; exibido na vitrine é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O defeito, que é a linha de código.</li>
+                        <li><span class="letra">B)</span>A falha, que é o que o usuário vê de errado.</li>
+                        <li><span class="letra">C)</span>O erro, que é o engano humano.</li>
+                        <li><span class="letra">D)</span>A validação, que é a necessidade do usuário.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Regra de 10 de Myers</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que diz a Regra de 10 de Myers?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Todo sistema precisa de exatamente 10 testes.</li>
+                        <li><span class="letra">B)</span>A cada 10 linhas de código existe um defeito.</li>
+                        <li><span class="letra">C)</span>Um teste deve durar no máximo 10 segundos.</li>
+                        <li><span class="letra">D)</span>O custo de corrigir um defeito cresce cerca de 10 vezes a cada fase em que ele avança.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Fase Mais Barata Para Corrigir</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em qual fase corrigir um defeito costuma ser mais barato?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No requisito, antes de o código ser escrito.</li>
+                        <li><span class="letra">B)</span>Em produção, quando o cliente reclama.</li>
+                        <li><span class="letra">C)</span>Depois da publicação, numa versão nova.</li>
+                        <li><span class="letra">D)</span>Na fase de testes do sistema completo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Custo do Defeito em Produção</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que um defeito encontrado em produção custa mais caro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque a ferramenta de testes é paga só em produção.</li>
+                        <li><span class="letra">B)</span>Envolve vendas perdidas, suporte, correção urgente e nova publicação.</li>
+                        <li><span class="letra">C)</span>Porque o código em produção não pode ser alterado.</li>
+                        <li><span class="letra">D)</span>Porque em produção os defeitos se multiplicam sozinhos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Pergunta da Verificação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as especificações técnicas da interface</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual pergunta resume a verificação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quantos usuários vão acessar a tela?</li>
+                        <li><span class="letra">B)</span>Qual é a cor preferida do cliente?</li>
+                        <li><span class="letra">C)</span>É o produto que o usuário realmente precisa?</li>
+                        <li><span class="letra">D)</span>Estamos construindo o produto certo conforme a especificação?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Pergunta da Validação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as especificações técnicas da interface</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual pergunta resume a validação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>É o produto que o usuário precisa?</li>
+                        <li><span class="letra">B)</span>O código segue o padrão de nomes da equipe?</li>
+                        <li><span class="letra">C)</span>A tela foi feita na tecnologia combinada?</li>
+                        <li><span class="letra">D)</span>O campo senha tem 8 caracteres, como diz o requisito?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Com o Que a Verificação Compara</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as especificações técnicas da interface</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A verificação compara o produto com:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O tempo de resposta do servidor.</li>
+                        <li><span class="letra">B)</span>Requisitos, protótipo e regras de negócio.</li>
+                        <li><span class="letra">C)</span>A opinião do usuário em uso real.</li>
+                        <li><span class="letra">D)</span>A quantidade de acessos da tela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Com o Que a Validação Compara</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as especificações técnicas da interface</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A validação compara o produto com:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A necessidade real e o uso do usuário.</li>
+                        <li><span class="letra">B)</span>O documento de requisitos linha a linha.</li>
+                        <li><span class="letra">C)</span>O código-fonte da aplicação.</li>
+                        <li><span class="letra">D)</span>A lista de bibliotecas instaladas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Exemplo de Verificação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as especificações técnicas da interface</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual situação é um exemplo de verificação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Observar se o usuário cria a senha sem desistir do cadastro.</li>
+                        <li><span class="letra">B)</span>Perguntar ao cliente se gostou das cores.</li>
+                        <li><span class="letra">C)</span>Medir quantos usuários voltam no dia seguinte.</li>
+                        <li><span class="letra">D)</span>Conferir se o campo senha exige 8 caracteres, como diz o requisito.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Exemplo de Validação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as especificações técnicas da interface</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual situação é um exemplo de validação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Comparar o layout com o protótipo aprovado.</li>
+                        <li><span class="letra">B)</span>Conferir se o campo senha exige 8 caracteres.</li>
+                        <li><span class="letra">C)</span>Observar se o usuário consegue criar a senha sem desistir do cadastro.</li>
+                        <li><span class="letra">D)</span>Ler o código da função de cadastro.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Passa na Verificação e Falha na Validação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as especificações técnicas da interface</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, foi chamado para analisar as telas de uma loja virtual antes da publicação. Tudo está como a especificação pediu, mas o usuário não encontra o botão de continuar.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Essa tela:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Falhou na verificação e na validação.</li>
+                        <li><span class="letra">B)</span>Passou na verificação e na validação.</li>
+                        <li><span class="letra">C)</span>Falhou na verificação e passou na validação.</li>
+                        <li><span class="letra">D)</span>Passou na verificação e falhou na validação.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Login Bloqueado Sem Mensagem</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as especificações técnicas da interface</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, analisa o login de uma loja: após a 3ª senha errada, o botão Entrar fica desabilitado, como pede o requisito, mas não aparece mensagem e os clientes acham que o site travou.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o diagnóstico correto?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A tela está perfeita, pois seguiu o requisito.</li>
+                        <li><span class="letra">B)</span>O problema é de desempenho, pois o site travou.</li>
+                        <li><span class="letra">C)</span>A tela atende à especificação (verificação), mas não atende ao usuário (validação).</li>
+                        <li><span class="letra">D)</span>A tela falhou na verificação, pois o botão foi desabilitado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Quando a Verificação Acontece</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando a verificação deve acontecer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente no último dia do projeto.</li>
+                        <li><span class="letra">B)</span>Somente depois da publicação.</li>
+                        <li><span class="letra">C)</span>Apenas quando o cliente reclamar.</li>
+                        <li><span class="letra">D)</span>Durante todo o desenvolvimento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Quando a Validação Acontece</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando a validação acontece?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente na leitura do documento de requisitos.</li>
+                        <li><span class="letra">B)</span>Com o produto ou o protótipo em uso pelo usuário.</li>
+                        <li><span class="letra">C)</span>Antes de existir qualquer protótipo.</li>
+                        <li><span class="letra">D)</span>Apenas na revisão do código.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Teste de Funcionalidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual pergunta o teste de funcionalidade (4.1) responde?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Faz o que o requisito pede?</li>
+                        <li><span class="letra">B)</span>Continua funcionando quando algo dá errado?</li>
+                        <li><span class="letra">C)</span>Responde no tempo esperado?</li>
+                        <li><span class="letra">D)</span>É fácil de alterar sem quebrar?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Exemplo de Funcionalidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é um exemplo de teste de funcionalidade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A vitrine carrega em menos de 2,5 s no 4G.</li>
+                        <li><span class="letra">B)</span>A mensagem de erro indica o campo a corrigir.</li>
+                        <li><span class="letra">C)</span>Trocar uma classe CSS não quebra a suíte.</li>
+                        <li><span class="letra">D)</span>O cupom de 10% reduz o total da compra em 10%.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Teste de Usabilidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual pergunta o teste de usabilidade (4.2) responde?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Faz o que o requisito pede?</li>
+                        <li><span class="letra">B)</span>Responde no tempo esperado?</li>
+                        <li><span class="letra">C)</span>O usuário consegue usar com facilidade?</li>
+                        <li><span class="letra">D)</span>É fácil de alterar sem quebrar?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Exemplo de Usabilidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é um exemplo de teste de usabilidade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A API responde em 200 ms.</li>
+                        <li><span class="letra">B)</span>A tela funciona com teclado e com leitor de tela.</li>
+                        <li><span class="letra">C)</span>A suíte roda em menos de 1 minuto.</li>
+                        <li><span class="letra">D)</span>O total do carrinho soma os itens corretamente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Teste de Confiabilidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual pergunta o teste de confiabilidade (4.3) responde?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Continua funcionando quando algo dá errado?</li>
+                        <li><span class="letra">B)</span>O usuário consegue usar com facilidade?</li>
+                        <li><span class="letra">C)</span>Faz o que o requisito pede?</li>
+                        <li><span class="letra">D)</span>Os testes são legíveis?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Exemplo de Confiabilidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é um exemplo de teste de confiabilidade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Se a API falhar, a tela mostra um aviso e não perde o carrinho.</li>
+                        <li><span class="letra">B)</span>O cupom de 10% reduz o total em 10%.</li>
+                        <li><span class="letra">C)</span>O botão Pagar tem contraste adequado.</li>
+                        <li><span class="letra">D)</span>A página do produto abre em 2 s.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Teste de Desempenho</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual pergunta o teste de desempenho (4.4) responde?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Responde no tempo esperado?</li>
+                        <li><span class="letra">B)</span>É fácil de alterar sem quebrar?</li>
+                        <li><span class="letra">C)</span>Continua funcionando quando algo dá errado?</li>
+                        <li><span class="letra">D)</span>O usuário entende as mensagens?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Página Que Leva 6 Segundos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, foi chamado para analisar as telas de uma loja virtual antes da publicação. A página do produto leva 6 segundos para abrir.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Esse problema seria encontrado por qual tipo de teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Desempenho (4.4).</li>
+                        <li><span class="letra">B)</span>Manutenibilidade (4.5).</li>
+                        <li><span class="letra">C)</span>Usabilidade (4.2).</li>
+                        <li><span class="letra">D)</span>Funcionalidade (4.1).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Teste de Manutenibilidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual pergunta o teste de manutenibilidade (4.5) responde?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O usuário consegue usar com facilidade?</li>
+                        <li><span class="letra">B)</span>É fácil de alterar sem quebrar?</li>
+                        <li><span class="letra">C)</span>Responde no tempo esperado?</li>
+                        <li><span class="letra">D)</span>Faz o que o requisito pede?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Teste Que Quebra Com Classe CSS</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Na suíte de testes da loja, um teste quebra sempre que mudam o nome de uma classe CSS.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Esse problema está ligado a qual tipo de teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Desempenho (4.4).</li>
+                        <li><span class="letra">B)</span>Manutenibilidade (4.5).</li>
+                        <li><span class="letra">C)</span>Confiabilidade (4.3).</li>
+                        <li><span class="letra">D)</span>Funcionalidade (4.1).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Campo de Data Sem Teclado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, foi chamado para analisar as telas de uma loja virtual antes da publicação. O campo de data não aceita digitação pelo teclado, só o clique no calendário.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Esse problema seria encontrado por qual tipo de teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Manutenibilidade (4.5).</li>
+                        <li><span class="letra">B)</span>Desempenho (4.4).</li>
+                        <li><span class="letra">C)</span>Confiabilidade (4.3).</li>
+                        <li><span class="letra">D)</span>Usabilidade (4.2).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Carrinho Some ao Atualizar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, foi chamado para analisar as telas de uma loja virtual antes da publicação. O total do carrinho some quando o usuário atualiza a página.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual tipo de teste teria pego esse problema antes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Usabilidade (4.2), pois o usuário clicou em atualizar.</li>
+                        <li><span class="letra">B)</span>Desempenho (4.4), pois a página foi recarregada.</li>
+                        <li><span class="letra">C)</span>Confiabilidade (4.3), pois a tela não preserva o estado em uma situação adversa.</li>
+                        <li><span class="letra">D)</span>Manutenibilidade (4.5), pois o código mudou.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Botão Pagar e Leitor de Tela</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, foi chamado para analisar as telas de uma loja virtual antes da publicação. O botão Pagar não é lido pelo leitor de tela.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Esse problema é de qual tipo de teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Manutenibilidade (4.5).</li>
+                        <li><span class="letra">B)</span>Desempenho (4.4).</li>
+                        <li><span class="letra">C)</span>Usabilidade (4.2), que inclui a acessibilidade.</li>
+                        <li><span class="letra">D)</span>Confiabilidade (4.3).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Base da Pirâmide</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que fica na base da pirâmide de testes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Testes de integração com o banco de produção.</li>
+                        <li><span class="letra">B)</span>Poucos testes E2E no navegador real.</li>
+                        <li><span class="letra">C)</span>Muitos testes unitários, rápidos, de funções isoladas.</li>
+                        <li><span class="letra">D)</span>Testes manuais feitos pelo cliente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Meio da Pirâmide</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que fica no meio da pirâmide de testes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Testes de funções puras isoladas.</li>
+                        <li><span class="letra">B)</span>Testes de integração de componentes com DOM, eventos e API simulada.</li>
+                        <li><span class="letra">C)</span>Fluxos completos no navegador real.</li>
+                        <li><span class="letra">D)</span>Revisões de código feitas em dupla.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Topo da Pirâmide</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que fica no topo da pirâmide de testes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Poucos testes E2E dos fluxos críticos no navegador real.</li>
+                        <li><span class="letra">B)</span>Muitos testes unitários de funções.</li>
+                        <li><span class="letra">C)</span>Testes de integração com API simulada.</li>
+                        <li><span class="letra">D)</span>Medições de cobertura de código.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Subindo na Pirâmide</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quanto mais alto na pirâmide de testes, o teste tende a ser:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mais barato e com menos dependências.</li>
+                        <li><span class="letra">B)</span>Mais rápido, mais barato e mais isolado.</li>
+                        <li><span class="letra">C)</span>Mais lento, mais caro e mais próximo da experiência do usuário.</li>
+                        <li><span class="letra">D)</span>Mais rápido e mais distante do usuário.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Cone de Sorvete</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é a pirâmide invertida, chamada de &quot;cone de sorvete&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma suíte sem nenhum teste automatizado.</li>
+                        <li><span class="letra">B)</span>Uma suíte que só tem testes de integração.</li>
+                        <li><span class="letra">C)</span>Uma suíte com muitos unitários e poucos E2E.</li>
+                        <li><span class="letra">D)</span>Uma suíte com muitos E2E e poucos unitários, que fica lenta e instável.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Pirâmide de Uma Fintech</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, propõe a estratégia de testes de um app de crédito com cálculo de juros, regras fiscais e simulação de empréstimo.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual proporção faz mais sentido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nenhum teste unitário, apenas integração.</li>
+                        <li><span class="letra">B)</span>Base unitária forte, pois as regras matemáticas pedem muitos testes de funções.</li>
+                        <li><span class="letra">C)</span>Maioria de testes E2E, pois o usuário usa o navegador.</li>
+                        <li><span class="letra">D)</span>Somente testes manuais, pois juros são complexos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Classificando Cenário Unitário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A função calcularDesconto() para compras acima de R$ 200 deve ser testada principalmente com:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Teste de integração com API.</li>
+                        <li><span class="letra">B)</span>Teste E2E.</li>
+                        <li><span class="letra">C)</span>Teste unitário.</li>
+                        <li><span class="letra">D)</span>Teste de carga.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Classificando Cenário E2E</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A compra completa (vitrine → carrinho → pagamento → confirmação) deve ser testada com:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Teste de componente isolado.</li>
+                        <li><span class="letra">B)</span>Teste de manutenibilidade.</li>
+                        <li><span class="letra">C)</span>Teste E2E.</li>
+                        <li><span class="letra">D)</span>Teste unitário.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Responsabilidade de Quem Desenvolve</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Reconhecer as etapas de planejamento de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa a responsabilidade (1.1) de quem desenvolve na qualidade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não marcar tarefa como pronta sem teste e relatar defeitos, mesmo os próprios.</li>
+                        <li><span class="letra">B)</span>Deixar os testes só para a equipe de qualidade.</li>
+                        <li><span class="letra">C)</span>Relatar apenas os defeitos dos colegas.</li>
+                        <li><span class="letra">D)</span>Esconder os defeitos que a própria pessoa causou.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Registro de Uma Falha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Reconhecer os requisitos da documentação de testes</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📋 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, encontrou uma falha no checkout e precisa registrá-la para a equipe.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o registro deve conter para permitir reproduzir a falha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente a frase &quot;o checkout não funciona&quot;.</li>
+                        <li><span class="letra">B)</span>Passos, dado usado, resultado obtido e resultado esperado.</li>
+                        <li><span class="letra">C)</span>O nome da pessoa que causou o problema.</li>
+                        <li><span class="letra">D)</span>Apenas um print da tela sem descrição.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Testes de Front-End — Aula 01: Fundamentos de Testes de Software</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

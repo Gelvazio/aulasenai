@@ -7,15 +7,15 @@
 > Legenda: `⬜ Pendente` · `🔄 Em progresso / falta banco` · `⚠️ Incompleta` · `✅ Concluída`.
 
 **Levantamento:** 2026-10-03 (páginas da pasta, contagem de questões no HTML e atividades do banco).
-**Aulas:** 10 · **✅ Concluídas:** 0 · **Pendentes/incompletas:** 10
+**Aulas:** 10 · **✅ Concluídas:** 3 (aulas 01 a 03, 2026-10-09, Etapa 108) · **Pendentes/incompletas:** 7
 
 ## Atividade objetiva de 50 questões por aula
 
 | Aula | Tema | Página | Questões | Fonte (`.md`) | Banco | Status |
 |---|---|---|---|---|---|---|
-| 01 | Fundamentos de Testes de Software | ⬜ `ATIVIDADES-AULA-01-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 02 | Planejamento, Verificação, Validação e Casos de Teste | ⬜ `ATIVIDADES-AULA-02-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
-| 03 | Testes Unitários no Frontend com Vitest | ⬜ `ATIVIDADES-AULA-03-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
+| 01 | Fundamentos de Testes de Software | ✅ `ATIVIDADES-AULA-01-50-QUESTOES.html` | 50 | ✅ | ✅ id 96 | ✅ Concluída |
+| 02 | Planejamento, Verificação, Validação e Casos de Teste | ✅ `ATIVIDADES-AULA-02-50-QUESTOES.html` | 50 | ✅ | ✅ id 97 | ✅ Concluída |
+| 03 | Testes Unitários no Front-End com Vitest | ✅ `ATIVIDADES-AULA-03-50-QUESTOES.html` | 50 | ✅ | ✅ id 98 | ✅ Concluída |
 | 04 | Testes de Integração com DOM usando Testing Library | ⬜ `ATIVIDADES-AULA-04-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 05 | Testes de Integração Avançados e Mock de APIs | ⬜ `ATIVIDADES-AULA-05-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 06 | Testes End to End com Cypress e Playwright | ⬜ `ATIVIDADES-AULA-06-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
@@ -28,9 +28,9 @@
 
 | Página | Tipo | Banco |
 |---|---|---|
-| `CONTEUDO/ATIVIDADE-PRATICA-AULA-01.md` | Roteiro da prática da aula 01 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-01-*.md`) | — |
-| `CONTEUDO/ATIVIDADE-PRATICA-AULA-02.md` | Roteiro da prática da aula 02 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-02-*.md`) | — |
-| `CONTEUDO/ATIVIDADE-PRATICA-AULA-03.md` | Roteiro da prática da aula 03 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-03-*.md`) | — |
+| `ATIVIDADE-PRATICA-AULA-01.html` | ✅ Prática discursiva no padrão da prova id 82 (10 questões × 3 tópicos, 10 pontos; fonte `CONTEUDO/ATIVIDADE-PRATICA-AULA-01.md` + `-GABARITO.md`, regra `docs/REGRAS-ATIVIDADE-PRATICA.md`) | ✅ id 99 (bloqueada; o professor libera no índice) |
+| `ATIVIDADE-PRATICA-AULA-02.html` | ✅ Prática discursiva no padrão da prova id 82 (10 questões × 3 tópicos, 10 pontos; fonte `CONTEUDO/ATIVIDADE-PRATICA-AULA-02.md` + `-GABARITO.md`, regra `docs/REGRAS-ATIVIDADE-PRATICA.md`) | ✅ id 100 (bloqueada; o professor libera no índice) |
+| `ATIVIDADE-PRATICA-AULA-03.html` | ✅ Prática discursiva no padrão da prova id 82 (10 questões × 3 tópicos, 10 pontos; fonte `CONTEUDO/ATIVIDADE-PRATICA-AULA-03.md` + `-GABARITO.md`, regra `docs/REGRAS-ATIVIDADE-PRATICA.md`) | ✅ id 101 (bloqueada; o professor libera no índice) |
 | `CONTEUDO/ATIVIDADE-PRATICA-AULA-04.md` | Roteiro da prática da aula 04 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-04-*.md`) | — |
 | `CONTEUDO/ATIVIDADE-PRATICA-AULA-05.md` | Roteiro da prática da aula 05 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-05-*.md`) | — |
 | `CONTEUDO/ATIVIDADE-PRATICA-AULA-06.md` | Roteiro da prática da aula 06 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-06-*.md`) | — |

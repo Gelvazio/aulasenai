@@ -1,6 +1,6 @@
 // ── Modal REGRAS (CLAUDE.md) ──────────────────────────
-// Abre um modal com as regras do projeto (CLAUDE.md da raiz + os arquivos de docs/regras/ e o
-// docs/HISTORICO-REGRAS.md citados nele) renderizadas em HTML, com índice das seções. Carregado sob demanda pelo js/header-usuario.js (menu REGRAS, só administrador).
+// Abre um modal com as regras do projeto (CLAUDE.md da raiz + os arquivos de docs/regras/, o
+// docs/REGRAS-ATIVIDADE-PRATICA.md e o docs/HISTORICO-REGRAS.md citados nele) renderizadas em HTML, com índice das seções. Carregado sob demanda pelo js/header-usuario.js (menu REGRAS, só administrador).
 // Uso: await abrirModalRegras(urlClaudeMd).
 
 const URL_MARKED_REGRAS = "https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js";
@@ -16,7 +16,8 @@ const TEXTO_FILTRO_REGRAS = "Filtrar seções…";
 const TEXTO_VERSAO_REGRAS = "Versão das regras: ";
 const TEXTO_SEM_VERSAO_REGRAS = "Versão das regras: não informada no CLAUDE.md";
 const PADRAO_VERSAO_REGRAS = /\*\*Versão das regras:\*\*\s*([^\n]+)/;
-const PADRAO_ARQUIVOS_REGRAS = /\]\((docs\/(?:regras\/[\w.-]+|HISTORICO-REGRAS)\.md)\)/g;
+const PADRAO_ARQUIVOS_REGRAS =
+  /\]\((docs\/(?:regras\/[\w.-]+|HISTORICO-REGRAS|REGRAS-ATIVIDADE-PRATICA)\.md)\)/g;
 const SEPARADOR_ARQUIVOS_REGRAS = "\n\n---\n\n";
 
 const urlScriptRegras = document.currentScript?.src || "";
