@@ -1,10 +1,10 @@
 // Monta os cards da página inicial com os cursos do usuário logado (RPC cursos_do_usuario).
-// Sem login, não lista nada: mostra só a mensagem para entrar no sistema.
+// Sem login, não lista nada: mostra a apresentação do professor e o botão de entrar.
 
 const ELEMENTO_LISTA_CURSOS = document.getElementById('lista-cursos');
 const ELEMENTO_RESUMO_CURSOS = document.getElementById('resumo-cursos');
 const ELEMENTO_ROTAS_CURSOS = document.getElementById('rotas-cursos');
-const ELEMENTO_MENSAGEM_ENTRAR = document.getElementById('mensagem-entrar');
+const ELEMENTO_APRESENTACAO_PROFESSOR = document.getElementById('apresentacao-professor');
 const ICONE_CURSO_INDICE = '🎓';
 const RPC_CURSOS_DO_USUARIO = 'cursos_do_usuario';
 const TEXTO_SEM_CURSOS = 'Nenhum curso vinculado às suas turmas.';
@@ -30,11 +30,11 @@ function mostrarMensagemListaIndice(texto) {
     ELEMENTO_LISTA_CURSOS.replaceChildren(mensagem);
 }
 
-/** Sem login: esconde resumo e lista e mostra só a mensagem centralizada. */
-function mostrarSomenteMensagemEntrar() {
+/** Sem login: esconde resumo e lista e mostra a apresentação do professor. */
+function mostrarApresentacaoProfessor() {
     ELEMENTO_RESUMO_CURSOS.hidden = true;
     ELEMENTO_LISTA_CURSOS.hidden = true;
-    ELEMENTO_MENSAGEM_ENTRAR.hidden = false;
+    ELEMENTO_APRESENTACAO_PROFESSOR.hidden = false;
 }
 
 /** Cria o topo do card (ícone, tipo e nome do curso). */
@@ -119,14 +119,14 @@ function apresentarCursosIndice(cursos) {
     cursos.forEach((curso) => ELEMENTO_LISTA_CURSOS.append(criarCardCursoIndice(curso, rotas)));
 }
 
-/** Carrega e apresenta os cursos do usuário logado; sem login, só a mensagem de entrar. */
+/** Carrega e apresenta os cursos do usuário logado; sem login, a apresentação do professor. */
 async function carregarCursosIndice() {
     try {
         const cliente = obterClienteSupabase();
         const { data } = cliente ? await cliente.auth.getSession() : { data: null };
         const estaLogado = Boolean(data?.session);
         if (!estaLogado) {
-            mostrarSomenteMensagemEntrar();
+            mostrarApresentacaoProfessor();
             return;
         }
 

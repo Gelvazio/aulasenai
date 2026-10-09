@@ -1,23 +1,5 @@
-/* Página inicial (index.html): mensagem centralizada para quem não está logado. */
-:root {
-    --mensagem-entrar-cor: #4a5568;
-    --mensagem-entrar-altura: 50vh;
-}
-
-.mensagem-entrar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: var(--mensagem-entrar-altura);
-    margin: 0;
-    padding: 24px 16px;
-    text-align: center;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--mensagem-entrar-cor);
-}
-
-.mensagem-entrar[hidden],
+/* Página inicial (index.html): sem login, resumo e lista ficam escondidos
+   (a apresentação do professor fica em apresentacao-professor.css). */
 .resumo[hidden],
 .grade[hidden] {
     display: none;

@@ -1,0 +1,128 @@
+/* Página inicial (index.html): apresentação do professor para quem não está logado. */
+:root {
+    --apresentacao-cor-texto: #2d3748;
+    --apresentacao-cor-suave: #4a5568;
+    --apresentacao-cor-destaque: #667eea;
+    --apresentacao-cor-ouro: #ffd700;
+    --apresentacao-fundo-cartao: #f9fafb;
+    --apresentacao-fundo-etiqueta: #eef0fd;
+    --apresentacao-fundo-acesso: #fffbea;
+}
+
+.apresentacao-professor {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 24px 20px;
+    color: var(--apresentacao-cor-texto);
+}
+
+.apresentacao-professor[hidden] {
+    display: none;
+}
+
+.apresentacao-professor__perfil {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.apresentacao-professor__avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    border: 3px solid var(--apresentacao-cor-ouro);
+    background: var(--apresentacao-cor-destaque);
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.apresentacao-professor__rotulo {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--apresentacao-cor-destaque);
+}
+
+.apresentacao-professor h2 {
+    font-size: 26px;
+    line-height: 1.2;
+}
+
+.apresentacao-professor__cargo {
+    font-size: 15px;
+    color: var(--apresentacao-cor-suave);
+}
+
+.apresentacao-professor__boas-vindas {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.apresentacao-professor__grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+    gap: 16px;
+}
+
+.apresentacao-professor__cartao {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 18px;
+    border-left: 5px solid var(--apresentacao-cor-destaque);
+    border-radius: 8px;
+    background: var(--apresentacao-fundo-cartao);
+}
+
+.apresentacao-professor__cartao h3 {
+    font-size: 16px;
+}
+
+.apresentacao-professor__cartao ul {
+    margin-left: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.apresentacao-professor__cartao .apresentacao-professor__etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-left: 0;
+    list-style: none;
+}
+
+.apresentacao-professor__etiquetas li {
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: var(--apresentacao-fundo-etiqueta);
+    font-size: 13px;
+}
+
+.apresentacao-professor__contato {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.apresentacao-professor__acesso {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px;
+    border: 2px solid var(--apresentacao-cor-ouro);
+    border-radius: 8px;
+    background: var(--apresentacao-fundo-acesso);
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}

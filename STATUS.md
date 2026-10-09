@@ -1440,3 +1440,10 @@ Plano: [docs/atividades-testes-frontend-aulas-01-a-03.md](docs/atividades-testes
 | 109.2 | Botão do filtro em uso (SOMENTE ENSALADO ou VER TODAS MATÉRIAS) em fundo verde piscando levemente (`faixa-materias__filtro--ativo`, sem animação com `prefers-reduced-motion`) | ✅ Concluído | 2026-10-08 21:19:06 | `node --check`; leitura do código |
 | 109.3 | Índice do curso: a grade de matérias de baixo segue o filtro de cima (cartões casados pelo link da matéria; nas páginas de matéria nada muda) | ✅ Concluído | 2026-10-08 21:19:06 | `node --check`; linhas ≤ 100; leitura do código — teste na página fica com o usuário |
 | 109.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 110 — Apresentação do professor Gelvazio Camargo na página inicial sem login (tarefa pequena, pedido em 2026-10-09 00:20:57)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 110.1 | `index.html` sem login mostra a apresentação do professor Gelvazio Camargo (seção `#apresentacao-professor`, CSS `assets/css/apresentacao-professor.css`, exibida por `assets/js/indice-cursos.js`); logado continua com os cursos. Dados tirados de `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/AULAS/apresentacao-professor.html` (perfil, experiência, formação, competências, idiomas, e-mail, LinkedIn e portfólio; telefone fora por ser página pública). O PDF `APRESENTAÇÃO-PROFESSOR-GELVAZIO-CAMARGO.pdf` não foi lido (regra: nunca extrair de PDF) | ✅ Concluído | 2026-10-09 00:22:31 | `node --check`; linhas ≤ 100; leitura do código (sem navegador) — teste na página fica com o usuário |
+| 110.2 | Aceite do usuário | ⬜ Pendente | — | — |
