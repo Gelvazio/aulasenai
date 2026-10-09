@@ -406,12 +406,12 @@ function montarListaAlunosRelatorio(linhas, base) {
 }
 
 /**
- * Busca no banco local, turno e unidade curricular das turmas (para os cartões das abas).
+ * Busca no banco unidade (tabela unidade), turno e UC das turmas (para os cartões das abas).
  * @returns {Promise<Map<string, Object>>} Turmas por código (vazio se a consulta falhar).
  */
 async function buscarDadosTurmas() {
     try {
-        const turmas = await sbGet('turma', 'select=codigo,nome,turno,local,uc,favorito,hora_inicio,hora_fim');
+        const turmas = await sbGet('turma', 'select=codigo,nome,turno,unidade:unidade_id(nome),uc,favorito,hora_inicio,hora_fim');
         return new Map(turmas.map((turma) => [turma.codigo, turma]));
     } catch (erro) {
         return new Map();
@@ -481,7 +481,7 @@ function listarTurmasRelatorio(linhas, dadosTurmas) {
         const dados = dadosTurmas.get(codigo) || {};
         const turma = turmas.get(codigo) || {
             codigo, nome: linha.turma_nome || dados.nome || codigo || 'Sem turma', uc: dados.uc || '',
-            local: [dados.local, dados.turno].filter(Boolean).join(' ').toUpperCase(),
+            local: [dados.unidade?.nome, dados.turno].filter(Boolean).join(' ').toUpperCase(),
             favorita: Boolean(dados.favorito),
             inicio: formatarHoraTurma(dados.hora_inicio), fim: formatarHoraTurma(dados.hora_fim),
             alunos: new Set(),

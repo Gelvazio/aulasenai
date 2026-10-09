@@ -55,7 +55,7 @@ async function listarTurmasLiberacaoDiscursiva() {
         await carregarScriptLiberacao(ARQUIVO_TURMA_UNIDADE_LIBERACAO);
     }
     const [vinculos, turmas] = await Promise.all([sbGet('turmaprofessor', 'select=turma_codigo'),
-        sbGet('turma', 'select=codigo,nome,turno,local')]);
+        sbGet('turma', 'select=codigo,nome,turno,unidade:unidade_id(nome)')]);
     const porCodigo = new Map(turmas.map((turma) => [turma.codigo, turma]));
     const codigos = [...new Set(vinculos.map((vinculo) => vinculo.turma_codigo))].sort();
     return codigos.map((codigo) => {

@@ -163,7 +163,7 @@ function criarLinhaVinculoTa(vinculo) {
   const { turma, aluno } = detalharVinculoTa(vinculo);
   const linha = criarElementoTa("tr", vinculo.id === estadoTa.editandoId ? "tp-linha--editando" : "");
   linha.append(
-    criarCelulaTa(vinculo.turma_codigo + " — " + (turma.nome || ""), turma.local || ""),
+    criarCelulaTa(vinculo.turma_codigo + " — " + (turma.nome || ""), montarUnidadeTurma(turma)),
     criarCelulaTa(turma.turno || "", turma.horario || ""),
     criarCelulaTa(aluno.nome_completo || "(usuário sem cadastro)", aluno.email || vinculo.aluno_id),
     criarCelulaTa(TEXTO_TURMA_OK_SIM_TA),

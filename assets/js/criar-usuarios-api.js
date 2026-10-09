@@ -228,9 +228,11 @@ async function gravarListaNoSupabase(lista, opcoes) {
     if (problemas.length) throw new Error('Nada foi gravado. ' + problemas.join('; '));
 
     // Turma virtual (aba "Professores") é só agrupamento da página: não vai para a tabela turma.
+    // A unidade vai só como unidade_id (tabela unidade; campo unidadeId da turma na lista). Sem ele,
+    // a turma que já existe mantém a unidade gravada (upsert só altera as colunas enviadas).
     const turmas = lista.turmas.filter((t) => !t.virtual).map((t) => ({
         codigo: t.codigo, nome: t.nome, turno: t.turno, horario: t.horario,
-        ...(t.local ? { local: t.local } : {}), ...(t.uc ? { uc: t.uc } : {}),
+        ...(t.unidadeId ? { unidade_id: t.unidadeId } : {}), ...(t.uc ? { uc: t.uc } : {}),
     }));
     await gravarTabelaUsuarios('turma', turmas, chave);
     const contexto = { chave, redefinirSenhas: opcoes.redefinirSenhas };

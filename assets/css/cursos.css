@@ -63,3 +63,11 @@
     background: var(--cu-fundo-turma);
     font-size: 14px;
 }
+
+/* Formulário do modal 🏢 Unidades (unidades-modal.js) */
+.cu-formulario-unidade {
+    display: grid;
+    gap: var(--cu-espaco);
+    padding-top: var(--cu-espaco);
+    border-top: 1px solid var(--guia-borda);
+}
