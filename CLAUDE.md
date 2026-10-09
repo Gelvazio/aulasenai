@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 21:15:46
+**Versão das regras:** 2026-10-08 21:19:06
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,12 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 00:24:10 | **Atividade prática no padrão da Prova Prática id 82** (10 questões × 3 tópicos, discursiva no banco, com Progresso, Gráficos, Cálculo Nota e correção): regra em [docs/REGRAS-ATIVIDADE-PRATICA.md](docs/REGRAS-ATIVIDADE-PRATICA.md) e seção no `CLAUDE.md` |
+| 2026-10-08 21:19:06 | Faixa de matérias: **botão do filtro em uso** (SOMENTE ENSALADO ou VER TODAS MATÉRIAS) **em fundo verde piscando levemente**; no índice do curso a **grade de matérias de baixo segue o mesmo filtro** — `assets/js/faixa-materias-ensalado.js` + `assets/css/indice-atividades.css` |
 | 2026-10-08 21:15:46 | **Faixa de matérias abre em SOMENTE ENSALADO** em todos os cursos (se nenhuma matéria estiver ensalada ou o banco falhar, mostra todas); VER TODAS MATÉRIAS volta à lista completa — `assets/js/faixa-materias-ensalado.js` |
 | 2026-10-09 00:01:37 | Equipes: **professor sempre vê o botão 👥 EQUIPES** (todas as páginas; fora de uma matéria escolhe a matéria no modal); a regra do líder vale só para aluno — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 23:59:44 | Aluno líder: **no máximo 1 líder por turma** (`definir_lider_usuario` recusa o segundo e diz quem é o atual); coluna Líder da tela ALUNOS como interruptor ON/OFF — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 23:57:37 | **Aluno líder** (`usuario.lider` 1/0): professor marca na tela ALUNOS; o líder vê 👥 EQUIPES e cadastra/altera equipes da própria turma (não exclui); menu EQUIPES só para professor e líder; aviso do grant por coluna da `usuario` — `docs/regras/usuarios-turmas-paginas-professor.md` |
-| 2026-10-08 23:45:55 | **Faixa de matérias**: botões **SOMENTE ENSALADO** e **VER TODAS MATÉRIAS** ao lado do título, e **ON/OFF** por matéria (coluna `materia.ensalado`, só PROFESSOR grava) em todos os `index.html` dos cursos (`docs/regras`: seção "FAIXA DE MATÉRIAS") |
 
 ---
 
@@ -901,6 +902,8 @@ Registrada em 2026-10-08 a pedido do usuário. Vale para **todos os `index.html`
   e **VER TODAS MATÉRIAS** (volta à lista completa).
 - ✅ **Toda faixa abre em SOMENTE ENSALADO** (2026-10-08, pedido do usuário); sem matéria ensalada
   (ou sem banco) mostra todas.
+- ✅ O botão do filtro em uso fica **em fundo verde, piscando levemente**; no índice do curso a
+  **grade de matérias de baixo** mostra só as matérias do filtro escolhido (2026-10-08).
 - ✅ Ao lado do nome de cada matéria: botão **ON/OFF** para marcar/desmarcar `ensalado` ali mesmo.
 - ✅ Usa a coluna `materia.ensalado` (boolean: ENSALADO = 1 ou 0). Não criar coluna nova (ela já existe).
 - ✅ O ON/OFF aparece e grava **só para o perfil PROFESSOR** (RLS); o aluno vê só os botões de filtro.
@@ -910,6 +913,24 @@ Registrada em 2026-10-08 a pedido do usuário. Vale para **todos os `index.html`
 - ✅ Código: `assets/js/faixa-materias-ensalado.js`. Plano: `docs/somente-ensalado-materias.md`.
   Regra global espelhada em `~/.claude/CLAUDE.md`.
 - ⛔ Sem `onclick` no HTML e sem `alert()` (usar o popup, `assets/js/popup.js`).
+
+## 📝 REGRA — ATIVIDADE PRÁTICA: PADRÃO DA PROVA PRÁTICA ID 82 (2026-10-09)
+
+Registrada em 2026-10-09 a pedido do usuário. **Regra completa (leitura obrigatória antes de criar ou
+alterar qualquer atividade prática):** [docs/REGRAS-ATIVIDADE-PRATICA.md](docs/REGRAS-ATIVIDADE-PRATICA.md).
+
+- ✅ Toda **atividade prática de aula** (`ATIVIDADES/ATIVIDADE-PRATICA-AULA-NN.html`) segue a lógica da
+  **Prova Prática id 82** (`PROVA-PRATICA-01.html` de Análise de Dados, turma de Salete): discursiva,
+  resposta digitada em cada tópico e gravada no banco.
+- ✅ Tamanho: **10 questões × 3 tópicos (0,2 + 0,4 + 0,4)**, total 10 pontos; prova de várias aulas,
+  20 questões × 3 tópicos.
+- ✅ Além das perguntas, tem **tudo** o que a id 82 tem: Progresso da turma, 📈 Gráficos, 🧮 Cálculo
+  Nota, quantidade mínima por aluno, correção pela IA, botões Certa / Meia certa / Errada, Finalizar
+  Atividade, prova corrigida para o aluno, liberação do gabarito por turma e PDF SENAI.
+- ✅ Gerada por `assets/gerador-avaliacao-discursiva/gerar_avaliacao_discursiva.py`, com os campos
+  `Bloquear colar`, `Campo do tamanho da resposta`, `Botão gravar`, `Progresso para o professor` e
+  `Ocultar respostas após entrega` = `sim`; padrão de resposta no `-GABARITO.md` (fora do Git).
+- ⛔ Sem empresa fictícia ("Você, como aluno consultor..."); sem padrão de resposta na página do aluno.
 
 ## 📝 Outras Regras
 

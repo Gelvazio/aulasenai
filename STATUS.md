@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 108 — aprovação do plano [docs/atividades-testes-frontend-aulas-01-a-03.md](docs/atividades-testes-frontend-aulas-01-a-03.md) (D1, D2, D3); depois, Etapa 105, item 105.1 — decisão do usuário sobre a opção R1 (cadastrar as 19 matérias do ITIC em `materia`) em [docs/somente-ensalado-materias.md](docs/somente-ensalado-materias.md); depois, Etapa 97, item 97.4 — aceite do usuário da quantidade mínima de questões; depois: Aceites do usuário: Etapas 84 e 85 (itens 84.5 e 85.3 — discursiva id 81 com 20 questões de 0,5 ponto, respostas no caderno, PDF em 3 páginas); Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Etapa 108 — executar o plano aprovado [docs/atividades-testes-frontend-aulas-01-a-03.md](docs/atividades-testes-frontend-aulas-01-a-03.md), item 108.1 em diante; depois, Etapa 105, item 105.1 — decisão do usuário sobre a opção R1 (cadastrar as 19 matérias do ITIC em `materia`) em [docs/somente-ensalado-materias.md](docs/somente-ensalado-materias.md); depois, Etapa 97, item 97.4 — aceite do usuário da quantidade mínima de questões; depois: Aceites do usuário: Etapas 84 e 85 (itens 84.5 e 85.3 — discursiva id 81 com 20 questões de 0,5 ponto, respostas no caderno, PDF em 3 páginas); Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -1420,12 +1420,12 @@ Plano: [docs/aluno-lider-cadastra-equipes.md](docs/aluno-lider-cadastra-equipes.
 
 ## Etapa 108 — Testes de Front-End: objetivas e práticas das aulas 01 a 03 + `docs/REGRAS-ATIVIDADE-PRATICA.md` (pedido em 2026-10-09 00:13:29)
 
-Plano: [docs/atividades-testes-frontend-aulas-01-a-03.md](docs/atividades-testes-frontend-aulas-01-a-03.md) — aguardando aprovação (decisões D1, D2, D3).
+Plano: [docs/atividades-testes-frontend-aulas-01-a-03.md](docs/atividades-testes-frontend-aulas-01-a-03.md) — **aprovado em 2026-10-09 00:20** (D1: 10 questões × 3 tópicos 0,2+0,4+0,4; D2: substituir os roteiros; D3: aplicar os seeds e conferir).
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 108.1 | Regra da atividade prática (`docs/REGRAS-ATIVIDADE-PRATICA.md`, seção no `CLAUDE.md`, visualizador) | ⬜ Pendente | — | — |
-| 108.2 | Aula 01 — objetiva 50 questões + prática discursiva (padrão id 82) | ⬜ Pendente | — | — |
+| 108.1 | Regra da atividade prática (`docs/REGRAS-ATIVIDADE-PRATICA.md`, seção no `CLAUDE.md`, visualizador) | ✅ Concluído | 2026-10-09 00:27 | `node --check`; regex do visualizador lista `docs/REGRAS-ATIVIDADE-PRATICA.md` (node); versão 2026-10-09 00:24:10 + histórico |
+| 108.2 | Aula 01 — objetiva 50 questões + prática discursiva (padrão id 82) | 🔄 Em progresso | — | — |
 | 108.3 | Aula 02 — objetiva 50 questões + prática discursiva | ⬜ Pendente | — | — |
 | 108.4 | Aula 03 — objetiva 50 questões + prática discursiva | ⬜ Pendente | — | — |
 | 108.5 | Seeds no Supabase e conferência | ⬜ Pendente | — | — |
@@ -1437,4 +1437,6 @@ Plano: [docs/atividades-testes-frontend-aulas-01-a-03.md](docs/atividades-testes
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 109.1 | **Todos os cursos**: a faixa de matérias abre em SOMENTE ENSALADO (`assets/js/faixa-materias-ensalado.js`, `aplicarFiltroInicialEnsalado`); sem matéria ensalada ou sem banco mostra todas; VER TODAS MATÉRIAS continua. Regra no `CLAUDE.md` (seção FAIXA DE MATÉRIAS), histórico e regra global | ✅ Concluído | 2026-10-08 21:15:46 | `node --check`; leitura do código (sem navegador) — teste na página fica com o usuário |
-| 109.2 | Aceite do usuário | ⬜ Pendente | — | — |
+| 109.2 | Botão do filtro em uso (SOMENTE ENSALADO ou VER TODAS MATÉRIAS) em fundo verde piscando levemente (`faixa-materias__filtro--ativo`, sem animação com `prefers-reduced-motion`) | ✅ Concluído | 2026-10-08 21:19:06 | `node --check`; leitura do código |
+| 109.3 | Índice do curso: a grade de matérias de baixo segue o filtro de cima (cartões casados pelo link da matéria; nas páginas de matéria nada muda) | ✅ Concluído | 2026-10-08 21:19:06 | `node --check`; linhas ≤ 100; leitura do código — teste na página fica com o usuário |
+| 109.4 | Aceite do usuário | ⬜ Pendente | — | — |

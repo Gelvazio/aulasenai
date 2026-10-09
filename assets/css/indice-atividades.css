@@ -3,6 +3,7 @@
     --primary: #667eea; --secondary: #764ba2; --gold: #FFD700; --text: #2d3748;
     --bloqueio-fundo: #2d3748; --bloqueio-borda: #1a202c; --bloqueio-texto: #a0aec0;
     --bloqueio-veu: rgba(10, 14, 22, 0.62);
+    --verde-filtro-ativo: #38a169; --verde-filtro-brilho: rgba(56, 161, 105, 0.45);
 }
 /* A altura mínima fica no html: a barra #header-usuario é movida para fora do body e,
    com min-height no body, a página passaria de 100vh e criaria rolagem sem necessidade. */
@@ -105,8 +106,13 @@ footer { background: #2d3748; color: white; padding: 24px 20px; text-align: cent
 .faixa-materias__barra { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
 .faixa-materias__filtro { font: inherit; font-size: 12px; font-weight: 700; color: var(--primary); background: white; border: 2px solid var(--primary); border-radius: 8px; padding: 6px 10px; cursor: pointer; }
 .faixa-materias__filtro:hover { background: #eef0fd; }
+/* Botão do filtro em uso (SOMENTE ENSALADO ou VER TODAS MATÉRIAS): verde, piscando levemente */
+.faixa-materias__filtro--ativo, .faixa-materias__filtro--ativo:hover { color: white; background: var(--verde-filtro-ativo); border-color: var(--verde-filtro-ativo); animation: piscar-filtro-ativo 1.6s ease-in-out infinite; }
+@keyframes piscar-filtro-ativo { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 var(--verde-filtro-brilho); } 50% { opacity: 0.8; box-shadow: 0 0 0 4px var(--verde-filtro-brilho); } }
+@media (prefers-reduced-motion: reduce) { .faixa-materias__filtro--ativo { animation: none; } }
 .faixa-materias__item { display: flex; gap: 6px; align-items: stretch; break-inside: avoid; margin-bottom: 8px; }
 .faixa-materias__item[hidden] { display: none; }
+.grade > article[hidden] { display: none; }
 .faixa-materias__item > .faixa-materias__card { flex: 1 1 auto; margin-bottom: 0; }
 .faixa-materias__onoff { font: inherit; font-size: 11px; font-weight: 800; color: #4a5568; background: #edf2f7; border: 2px solid #cbd5e0; border-radius: 8px; padding: 0 8px; cursor: pointer; min-width: 44px; }
 .faixa-materias__onoff--ligado { color: white; background: #38a169; border-color: #38a169; }

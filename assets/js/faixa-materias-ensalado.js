@@ -8,12 +8,15 @@
 const SELETOR_FAIXA_MATERIAS = '.faixa-materias';
 const SELETOR_CARD_MATERIA = 'a.faixa-materias__card';
 const SELETOR_LISTA_MATERIAS = '.faixa-materias__lista';
+const SELETOR_CARTOES_GRADE = '.grade > article';
+const SELETOR_LINK_CARTAO_GRADE = '.acoes a[href]';
 const ATRIBUTO_CURSO_FAIXA = 'cursoId';
 const PERFIL_PROFESSOR_ENSALADO = 'PROFESSOR';
 const TABELA_MATERIA_ENSALADO = 'materia';
 const PREFIXO_EMOJI_CARD = /^📘\s*/;
 const TEXTO_SOMENTE_ENSALADO = 'SOMENTE ENSALADO';
 const TEXTO_VER_TODAS_MATERIAS = 'VER TODAS MATÉRIAS';
+const CLASSE_FILTRO_ATIVO = 'faixa-materias__filtro--ativo';
 const MENSAGEM_ERRO_GRAVACAO = 'Não foi possível gravar a matéria. Tente novamente.';
 
 /**
@@ -65,18 +68,37 @@ function criarBotaoEnsalado(texto, classe) {
 }
 
 /**
+ * Agrupa os cartões da grade de baixo (index do curso) pelo link da matéria, para que o
+ * filtro de cima também os esconda. Nas páginas de matéria os links não casam e nada muda.
+ * @returns {Map<string, HTMLElement[]>} Cartões da grade por href.
+ */
+function mapearCartoesGrade() {
+  const mapa = new Map();
+  document.querySelectorAll(SELETOR_CARTOES_GRADE).forEach((cartao) => {
+    const link = cartao.querySelector(SELETOR_LINK_CARTAO_GRADE);
+    if (!link) return;
+    const href = link.getAttribute('href');
+    mapa.set(href, [...(mapa.get(href) ?? []), cartao]);
+  });
+  return mapa;
+}
+
+/**
  * Envolve cada cartão em um item próprio, para que o ON/OFF fique ao lado dele.
  * @param {HTMLElement} faixa - Elemento nav.faixa-materias.
- * @returns {{item: HTMLElement, card: HTMLElement, nome: string}[]} Itens da faixa.
+ * @returns {{item: HTMLElement, card: HTMLElement, nome: string, cartoesGrade: HTMLElement[]}[]}
+ *   Itens da faixa, com os cartões da grade de baixo da mesma matéria.
  */
 function envolverCardsEnsalado(faixa) {
+  const cartoesPorHref = mapearCartoesGrade();
   return [...faixa.querySelectorAll(SELETOR_CARD_MATERIA)].map((card) => {
     const item = document.createElement('div');
     item.className = 'faixa-materias__item';
     card.before(item);
     item.append(card);
     const nome = normalizarNomeMateria(card.textContent.replace(PREFIXO_EMOJI_CARD, ''));
-    return { item, card, nome };
+    const cartoesGrade = cartoesPorHref.get(card.getAttribute('href')) ?? [];
+    return { item, card, nome, cartoesGrade };
   });
 }
 
@@ -96,17 +118,42 @@ function montarBarraEnsalado(faixa) {
 }
 
 /**
- * Mostra só as matérias ensaladas (ou todas), escondendo as demais.
+ * Mostra só as matérias ensaladas (ou todas), escondendo as demais na faixa e na grade.
  * @param {Object[]} itens - Itens montados por envolverCardsEnsalado.
  * @param {Map<string, Object>} mapaMaterias - Matérias do banco por nome normalizado.
  * @param {boolean} somenteEnsalado - true para mostrar só as ensaladas.
  */
 function aplicarFiltroEnsalado(itens, mapaMaterias, somenteEnsalado) {
-  itens.forEach(({ item, nome }) => {
+  itens.forEach(({ item, nome, cartoesGrade }) => {
     const materia = mapaMaterias.get(nome);
     const ocultar = somenteEnsalado && !materia?.ensalado;
     item.hidden = ocultar;
+    cartoesGrade.forEach((cartao) => {
+      cartao.hidden = ocultar;
+    });
   });
+}
+
+/**
+ * Destaca (verde, piscando) o botão do filtro em uso e apaga o destaque do outro.
+ * @param {{somente: HTMLButtonElement, todas: HTMLButtonElement}} botoes - Botões da barra.
+ * @param {boolean} somenteEnsalado - true quando o filtro em uso é SOMENTE ENSALADO.
+ */
+function marcarFiltroAtivo(botoes, somenteEnsalado) {
+  botoes.somente.classList.toggle(CLASSE_FILTRO_ATIVO, somenteEnsalado);
+  botoes.todas.classList.toggle(CLASSE_FILTRO_ATIVO, !somenteEnsalado);
+  botoes.somente.setAttribute('aria-pressed', String(somenteEnsalado));
+  botoes.todas.setAttribute('aria-pressed', String(!somenteEnsalado));
+}
+
+/**
+ * Aplica o filtro escolhido e destaca o botão correspondente.
+ * @param {{itens: Object[], mapaMaterias: Map, botoes: Object}} faixaMontada - Dados da faixa.
+ * @param {boolean} somenteEnsalado - true para mostrar só as ensaladas.
+ */
+function escolherFiltroEnsalado(faixaMontada, somenteEnsalado) {
+  aplicarFiltroEnsalado(faixaMontada.itens, faixaMontada.mapaMaterias, somenteEnsalado);
+  marcarFiltroAtivo(faixaMontada.botoes, somenteEnsalado);
 }
 
 /**
@@ -157,7 +204,7 @@ function criarOnOffEnsalado(materia) {
 async function ligarFaixaEnsalado(faixa, perfil) {
   const cursoId = faixa.dataset[ATRIBUTO_CURSO_FAIXA];
   const itens = envolverCardsEnsalado(faixa);
-  const { somente, todas } = montarBarraEnsalado(faixa);
+  const botoes = montarBarraEnsalado(faixa);
   const materias = await buscarMateriasEnsalado(cursoId).catch(() => []);
   const mapaMaterias = new Map(materias.map((m) => [normalizarNomeMateria(m.descricao), m]));
   const ehProfessor = perfil === PERFIL_PROFESSOR_ENSALADO;
@@ -168,22 +215,21 @@ async function ligarFaixaEnsalado(faixa, perfil) {
     item.append(criarOnOffEnsalado(materia));
   });
 
-  somente.addEventListener('click', () => aplicarFiltroEnsalado(itens, mapaMaterias, true));
-  todas.addEventListener('click', () => aplicarFiltroEnsalado(itens, mapaMaterias, false));
-  aplicarFiltroInicialEnsalado(itens, mapaMaterias);
+  const faixaMontada = { itens, mapaMaterias, botoes };
+  botoes.somente.addEventListener('click', () => escolherFiltroEnsalado(faixaMontada, true));
+  botoes.todas.addEventListener('click', () => escolherFiltroEnsalado(faixaMontada, false));
+  aplicarFiltroInicialEnsalado(faixaMontada);
 }
 
 /**
  * Abre a faixa já em SOMENTE ENSALADO (padrão de todos os cursos).
- * Sem nenhuma matéria ensalada (ou sem banco), mantém a lista completa para não esvaziar a faixa.
- * @param {Object[]} itens - Itens montados por envolverCardsEnsalado.
- * @param {Map<string, Object>} mapaMaterias - Matérias do banco por nome normalizado.
+ * Sem matéria ensalada (ou sem banco), mantém a lista completa para não esvaziar a faixa.
+ * @param {{itens: Object[], mapaMaterias: Map, botoes: Object}} faixaMontada - Dados da faixa.
  */
-function aplicarFiltroInicialEnsalado(itens, mapaMaterias) {
-  const temEnsalada = [...mapaMaterias.values()].some((materia) => materia.ensalado);
-  if (!temEnsalada) return;
-
-  aplicarFiltroEnsalado(itens, mapaMaterias, true);
+function aplicarFiltroInicialEnsalado(faixaMontada) {
+  const materias = [...faixaMontada.mapaMaterias.values()];
+  const temEnsalada = materias.some((materia) => materia.ensalado);
+  escolherFiltroEnsalado(faixaMontada, temEnsalada);
 }
 
 /**

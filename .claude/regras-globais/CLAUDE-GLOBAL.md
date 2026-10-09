@@ -781,6 +781,8 @@ Registrada a pedido do usuário. Vale para qualquer faixa "Matérias — <CURSO>
 - Ao lado do título "Matérias — <CURSO>" da faixa, dois botões: **SOMENTE ENSALADO** (mostra só as
   matérias com `ensalado = true`) e **VER TODAS MATÉRIAS** (volta à lista completa).
 - **A faixa sempre abre em SOMENTE ENSALADO** (2026-10-08); sem matéria ensalada mostra todas.
+- O botão do filtro em uso fica em fundo verde piscando levemente; no índice do curso a grade de
+  matérias de baixo segue o mesmo filtro (2026-10-08).
 - Cada matéria da faixa tem um botão **ON/OFF** ao lado do nome, ali mesmo, para marcar/desmarcar
   `ensalado`; a mudança grava no banco (coluna `materia.ensalado`, boolean, ENSALADO = 1 ou 0).
 - O ON/OFF aparece e grava só para o perfil PROFESSOR (RLS); o aluno só vê o filtro.
