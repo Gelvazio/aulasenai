@@ -885,6 +885,7 @@ Uma pergunta por item; **um commit só no final** (pedido do usuário).
 | 73.12 | Registro do cursoprofessor (substituído) — escolha: apagar a seção | ✅ Concluído | 2026-10-08 07:49 | Seção apagada de `paginas-legadas.md` e do índice do `CLAUDE.md`; histórico fica em `docs/registro-vinculos-cursos-professor-2026-10-03.md` |
 | 73.13 | Versão das regras + commit único | ✅ Concluído | 2026-10-08 07:49 | Versão 2026-10-08 07:48 no CLAUDE.md e no histórico; reaplicado depois do merge da origin/main (feito por outra sessão); 12 itens conferidos por busca; 7 links do índice existem |
 | 73.14 | Aceite do usuário | ⬜ Pendente | — | — |
+| 73.15 | Tamanho da ementa: nova escolha do usuário (2026-10-09) = comando Python; versão vazia das regras preenchida | ✅ Concluído | 2026-10-09 10:48:00 | Python na ementa ITIC = 14.917 caracteres (wc -c = 15.579 bytes); versão 2026-10-09 10:47:05 no CLAUDE.md e no histórico; resumo com 5 linhas |
 
 ## Etapa 74 — Dashboard do Jev (JEV-AI de Testes de Frontend) (tarefa pequena, 2026-10-07)
 
