@@ -1,0 +1,148 @@
+/* Header sem login: card verde centralizado, piscando e trocando de cor, que leva ao login.
+   Carregado por js/header-usuario.js (criarBotaoEntrarDestaque). */
+:root {
+    --entrar-destaque-verde-escuro: #0f7a3a;
+    --entrar-destaque-verde: #1fae4b;
+    --entrar-destaque-verde-claro: #4be37a;
+    --entrar-destaque-ouro: #ffd700;
+    --entrar-destaque-texto: #ffffff;
+    --entrar-destaque-brilho: rgba(75, 227, 122, 0.85);
+    --entrar-destaque-brilho-fraco: rgba(75, 227, 122, 0.25);
+    --entrar-destaque-sombra: rgba(0, 0, 0, 0.35);
+    --entrar-destaque-duracao: 1.4s;
+}
+
+/* Barra sem login: HOME à esquerda e o card exatamente no centro. */
+.header-usuario__barra--sem-login {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.header-usuario__barra--sem-login .header-usuario__home {
+    justify-self: start;
+    margin-right: 0;
+}
+
+.header-entrar-destaque {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 22px;
+    border: 3px solid var(--entrar-destaque-ouro);
+    border-radius: 14px;
+    background: linear-gradient(
+        120deg,
+        var(--entrar-destaque-verde-escuro),
+        var(--entrar-destaque-verde),
+        var(--entrar-destaque-verde-claro),
+        var(--entrar-destaque-verde)
+    );
+    background-size: 300% 300%;
+    color: var(--entrar-destaque-texto);
+    text-decoration: none;
+    text-shadow: 0 1px 2px var(--entrar-destaque-sombra);
+    box-shadow: 0 4px 14px var(--entrar-destaque-sombra);
+    animation:
+        entrar-destaque-cores var(--entrar-destaque-duracao) ease-in-out infinite,
+        entrar-destaque-pulso var(--entrar-destaque-duracao) ease-in-out infinite;
+}
+
+.header-entrar-destaque:hover,
+.header-entrar-destaque:focus-visible {
+    transform: scale(1.04);
+    outline: 3px solid var(--entrar-destaque-texto);
+    outline-offset: 2px;
+}
+
+.header-entrar-destaque__icone {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.header-entrar-destaque__icone--fim {
+    animation: entrar-destaque-seta var(--entrar-destaque-duracao) ease-in-out infinite;
+}
+
+.header-entrar-destaque__texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.header-entrar-destaque__titulo {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+.header-entrar-destaque__acao {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--entrar-destaque-ouro);
+}
+
+/* Fundo que oscila entre os tons de verde. */
+@keyframes entrar-destaque-cores {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Brilho que acende e apaga: dá o efeito de piscar. */
+@keyframes entrar-destaque-pulso {
+    0%, 100% {
+        box-shadow: 0 0 6px var(--entrar-destaque-brilho-fraco),
+            0 4px 14px var(--entrar-destaque-sombra);
+        filter: brightness(1);
+    }
+    50% {
+        box-shadow: 0 0 26px 6px var(--entrar-destaque-brilho),
+            0 4px 14px var(--entrar-destaque-sombra);
+        filter: brightness(1.18);
+    }
+}
+
+/* Seta que "chama" para o clique. */
+@keyframes entrar-destaque-seta {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(6px); }
+}
+
+/* Quem pede menos movimento vê o card sem piscar. */
+@media (prefers-reduced-motion: reduce) {
+    .header-entrar-destaque,
+    .header-entrar-destaque__icone--fim {
+        animation: none;
+    }
+}
+
+/* Celular: card em linha própria, ocupando a largura. */
+@media (max-width: 600px) {
+    .header-usuario__barra--sem-login {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .header-usuario__barra--sem-login .header-usuario__home {
+        justify-self: start;
+    }
+
+    .header-entrar-destaque {
+        gap: 10px;
+        padding: 8px 14px;
+    }
+
+    .header-entrar-destaque__icone {
+        font-size: 22px;
+    }
+
+    .header-entrar-destaque__titulo {
+        font-size: 15px;
+    }
+
+    .header-entrar-destaque__acao {
+        font-size: 12px;
+    }
+}

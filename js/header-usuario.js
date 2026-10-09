@@ -34,9 +34,13 @@ const ROTA_REGRAS_JS = "../assets/js/regras-modal.js";
 const ROTA_CLAUDE_MD = "../CLAUDE.md";
 const PARAMETRO_VOLTAR_HEADER = "voltar";
 const TEXTO_HOME = "HOME";
-const TEXTO_ENTRAR = "ENTRAR";
 const TEXTO_SAIR = "SAIR";
-const TEXTO_SEM_LOGIN = "Você não está logado";
+// Sem login (2026-10-09): card verde piscando, centralizado na barra, que leva ao login.
+const ROTA_CSS_ENTRAR_DESTAQUE = "../assets/css/header-entrar-destaque.css";
+const TEXTO_ENTRAR_DESTAQUE_TITULO = "VOCÊ NÃO ESTÁ LOGADO!";
+const TEXTO_ENTRAR_DESTAQUE_ACAO = "CLIQUE AQUI PARA ENTRAR";
+const ICONE_ENTRAR_DESTAQUE_INICIO = "🔒";
+const ICONE_ENTRAR_DESTAQUE_FIM = "👉🔑";
 const ROTULO_PERFIL = { PROFESSOR: "Professor", ALUNO: "Aluno" };
 // Botão EQUIPES (global, 2026-10-08): professor e aluno líder, em toda página dentro de uma matéria
 // (/MATERIAIS/<CURSO>/<MATÉRIA>/...) e abre o modal de equipes daquela matéria.
@@ -74,10 +78,11 @@ function carregarScriptHeader(url) {
 }
 
 /**
- * Inclui o CSS do header, uma única vez.
+ * Inclui um CSS do header, uma única vez.
+ * @param {string} [rota] - Caminho relativo a js/ (padrão: o CSS do header).
  */
-function incluirCssHeader() {
-  const url = resolverRotaHeader(ROTA_CSS_HEADER);
+function incluirCssHeader(rota = ROTA_CSS_HEADER) {
+  const url = resolverRotaHeader(rota);
   if (document.querySelector(`link[href="${url}"]`)) return;
 
   const link = document.createElement("link");
@@ -262,14 +267,47 @@ async function incluirMenuAdministrador(cliente, menu) {
 }
 
 /**
- * Monta o botão ENTRAR, que volta para a página atual depois do login.
- * @returns {HTMLAnchorElement} Link com aparência de botão.
+ * Monta o endereço do login, que volta para a página atual depois de entrar.
+ * @returns {string} URL do login.html com o parâmetro de volta.
  */
-function criarBotaoEntrar() {
+function montarUrlEntrarHeader() {
   const login = new URL(resolverRotaHeader(ROTA_LOGIN));
   login.searchParams.set(PARAMETRO_VOLTAR_HEADER, location.pathname + location.search);
-  const botao = criarElementoHeader("a", "header-usuario__botao", TEXTO_ENTRAR);
-  botao.href = login.href;
+  return login.href;
+}
+
+/**
+ * Cria um ícone decorativo do botão de destaque (lido como enfeite pelo leitor de tela).
+ * @param {string} icone - Emoji do ícone.
+ * @param {string} modificador - Sufixo da classe (inicio ou fim).
+ * @returns {HTMLSpanElement} Ícone.
+ */
+function criarIconeEntrarDestaque(icone, modificador) {
+  const classe = "header-entrar-destaque__icone header-entrar-destaque__icone--" + modificador;
+  const elemento = criarElementoHeader("span", classe, icone);
+  elemento.setAttribute("aria-hidden", "true");
+  return elemento;
+}
+
+/**
+ * Monta o botão de destaque para quem não está logado: card verde, piscando, com ícones,
+ * "VOCÊ NÃO ESTÁ LOGADO! CLIQUE AQUI PARA ENTRAR"; leva ao login e volta para esta página.
+ * @returns {HTMLAnchorElement} Link em forma de card.
+ */
+function criarBotaoEntrarDestaque() {
+  incluirCssHeader(ROTA_CSS_ENTRAR_DESTAQUE);
+  const texto = criarElementoHeader("span", "header-entrar-destaque__texto", "");
+  texto.append(
+    criarElementoHeader("strong", "header-entrar-destaque__titulo", TEXTO_ENTRAR_DESTAQUE_TITULO),
+    criarElementoHeader("span", "header-entrar-destaque__acao", TEXTO_ENTRAR_DESTAQUE_ACAO),
+  );
+  const botao = criarElementoHeader("a", "header-entrar-destaque", "");
+  botao.href = montarUrlEntrarHeader();
+  botao.append(
+    criarIconeEntrarDestaque(ICONE_ENTRAR_DESTAQUE_INICIO, "inicio"),
+    texto,
+    criarIconeEntrarDestaque(ICONE_ENTRAR_DESTAQUE_FIM, "fim"),
+  );
   return botao;
 }
 
@@ -318,18 +356,23 @@ function aplicarVisibilidadePorPerfil(usuario) {
  */
 function desenharHeaderUsuario(destino, cliente, usuario) {
   const barra = criarElementoHeader("div", "header-usuario__barra", "");
-  const texto = usuario ? descreverUsuarioHeader(usuario) : TEXTO_SEM_LOGIN;
   barra.append(criarBotaoHome());
+  if (!usuario) {
+    barra.classList.add("header-usuario__barra--sem-login");
+    barra.append(criarBotaoEntrarDestaque());
+    destino.replaceChildren(barra);
+    return;
+  }
   const ehProfessor = usuario?.app_metadata?.perfil === PERFIL_PROFESSOR_HEADER;
   if (ehProfessor) {
     const menu = criarMenuProfessor();
     barra.append(menu);
     if (cliente) incluirMenuAdministrador(cliente, menu);
   }
-  const nome = criarElementoHeader("span", "header-usuario__nome", texto);
+  const nome = criarElementoHeader("span", "header-usuario__nome", descreverUsuarioHeader(usuario));
   barra.append(nome);
   if (cliente) incluirBotaoEquipesHeader({ cliente, usuario, referencia: nome });
-  barra.append(usuario ? criarBotaoSair(cliente) : criarBotaoEntrar());
+  barra.append(criarBotaoSair(cliente));
   destino.replaceChildren(barra);
 }
 
