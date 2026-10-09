@@ -1,8 +1,9 @@
-// Professor: botão "📈 Gráficos" do Progresso da turma — abre um modal com 5 gráficos montados
-// com os dados já lidos do banco pelo painel (assets/js/progresso-turma-discursiva.js):
-// 1) barras: progresso de cada aluno; 2) pizza: situação da turma; 3) barras: alunos que
-// completaram cada questão; 4) rosca: resultado da correção da IA (certa, meia certa, errada);
-// 5) barras horizontais: nota parcial da IA por aluno. Chart.js carregado sob demanda (CDN).
+// Professor: botão "📈 Gráficos" do Progresso da turma GLOBAL — abre um modal com 5 gráficos
+// montados com os dados já lidos do banco pelo painel (assets/js/progresso-turma-global.js),
+// em objetivas e discursivas: 1) barras: progresso de cada aluno; 2) pizza: situação da turma;
+// 3) barras: alunos que completaram cada questão; 4) rosca: resultado (objetiva: acertos e
+// erros; discursiva: correção da IA); 5) barras horizontais: nota parcial por aluno. Os títulos
+// vêm do tipo da atividade (textos da fonte). Chart.js carregado sob demanda (CDN).
 // Nada é gravado. Regra: docs/regras/atividades.md
 
 const URL_CHART_JS = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js';
@@ -71,13 +72,13 @@ function contarQuestoesCompletas(alunos, topicos) {
 }
 
 /**
- * Soma os resultados da correção da IA de toda a turma.
- * @param {Object[]} alunos - Alunos com indicadores (notaIa com certas, meias e erradas).
+ * Soma os resultados da correção de toda a turma (objetiva: acertos; discursiva: IA).
+ * @param {Object[]} alunos - Alunos com indicadores (correcao com certas, meias e erradas).
  * @returns {number[]} [certas, meias certas, erradas].
  */
-function somarResultadosDaIa(alunos) {
+function somarResultadosDaCorrecao(alunos) {
     return alunos.reduce((soma, aluno) => {
-        const nota = aluno.notaIa || {};
+        const nota = aluno.correcao || {};
         return [soma[0] + (nota.certas || 0), soma[1] + (nota.meias || 0),
             soma[2] + (nota.erradas || 0)];
     }, [0, 0, 0]);
@@ -86,13 +87,15 @@ function somarResultadosDaIa(alunos) {
 /**
  * Monta as configurações dos 5 gráficos.
  * @param {Object[]} alunos - Alunos com indicadores.
- * @param {{topicos: Map<number, number>}} opcoes - Estrutura da prova.
+ * @param {{topicos: Map<number, number>, textos: Object}} opcoes - Estrutura da prova e textos
+ *     do tipo da atividade (graficoCorrecao, rotulosCorrecao, graficoNota).
  * @returns {Object[]} Lista {titulo, config} para o Chart.js.
  */
 function montarConfiguracoesDosGraficos(alunos, opcoes) {
     const nomes = alunos.map((aluno) => nomeCurto(aluno.nome));
     const questoes = contarQuestoesCompletas(alunos, opcoes.topicos);
-    const comNota = alunos.filter((aluno) => aluno.notaIa);
+    const comNota = alunos.filter((aluno) => aluno.correcao);
+    const { textos } = opcoes;
     const eixoPercentual = { scales: { y: { min: 0, max: 100 } } };
     return [
         { titulo: '1. Progresso de cada aluno (% respondido)', config: { type: 'bar',
@@ -106,11 +109,11 @@ function montarConfiguracoesDosGraficos(alunos, opcoes) {
         { titulo: '3. Alunos que completaram cada questão', config: { type: 'bar',
             data: { labels: questoes.rotulos, datasets: [{ label: 'alunos', backgroundColor:
                 CORES_GRAFICOS.verde, data: questoes.valores }] } } },
-        { titulo: '4. Correção da IA (alternativas)', config: { type: 'doughnut',
-            data: { labels: ['Certas', 'Meias certas', 'Erradas'], datasets: [{
-                data: somarResultadosDaIa(alunos), backgroundColor: [CORES_GRAFICOS.verde,
+        { titulo: textos.graficoCorrecao, config: { type: 'doughnut',
+            data: { labels: textos.rotulosCorrecao, datasets: [{
+                data: somarResultadosDaCorrecao(alunos), backgroundColor: [CORES_GRAFICOS.verde,
                     CORES_GRAFICOS.amarelo, CORES_GRAFICOS.vermelho] }] } } },
-        { titulo: '5. Nota parcial da IA por aluno (a confirmar)', config: { type: 'bar',
+        { titulo: textos.graficoNota, config: { type: 'bar',
             data: { labels: comNota.map((aluno) => nomeCurto(aluno.nome)), datasets: [{
                 label: 'nota parcial', backgroundColor: CORES_GRAFICOS.roxo,
                 data: comNota.map((aluno) => Number(aluno.notaParcial.toFixed(2))) }] },
@@ -177,10 +180,11 @@ function montarModalGraficos() {
 
 /**
  * Abre o modal com os 5 gráficos do progresso da turma.
- * @param {Object[]} alunos - Alunos com indicadores (estado do painel).
- * @param {{topicos: Map<number, number>}} opcoes - Estrutura da prova.
+ * @param {{alunos: Object[], topicos: Map<number, number>, textos: Object}} dados - Alunos com
+ *     indicadores (estado do painel), estrutura da prova e textos do tipo da atividade.
  */
-async function abrirGraficosProgresso(alunos, opcoes) {
+async function abrirGraficosProgresso(dados) {
+    const { alunos, ...opcoes } = dados;
     fecharGraficos();
     if (!alunos.length) {
         await mostrarPopup('Ainda não há alunos com respostas para montar os gráficos.',
