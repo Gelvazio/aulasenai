@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+<script src="js/header-usuario.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>📚 Cursos — SENAI</title>
     <link rel="stylesheet" href="assets/css/indice-atividades.css">
@@ -9,7 +10,6 @@
     <link rel="stylesheet" href="assets/css/apresentacao-professor.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
     <script src="js/supabase.js" defer></script>
-    <script src="js/header-usuario.js" defer></script>
     <script src="assets/js/indice-cursos.js" defer></script>
 </head>
 <body>
@@ -22,6 +22,7 @@
         <div class="resumo" id="resumo-cursos" aria-live="polite">Carregando cursos…</div>
         <section class="apresentacao-professor" id="apresentacao-professor"
             aria-labelledby="titulo-apresentacao-professor" hidden>
+            <div class="apresentacao-professor__entrar" id="entrar-destaque" hidden></div>
             <div class="apresentacao-professor__topo">
                 <div class="apresentacao-professor__perfil">
                     <span class="apresentacao-professor__avatar" aria-hidden="true">GC</span>

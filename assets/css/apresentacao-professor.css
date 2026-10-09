@@ -23,6 +23,18 @@
     display: none;
 }
 
+/* Card "VOCÊ NÃO ESTÁ LOGADO!" (posto por js/header-usuario.js) logo acima do currículo,
+   centralizado e com folga para o currículo ficar um pouco mais abaixo. */
+.apresentacao-professor__entrar {
+    display: flex;
+    justify-content: center;
+    margin: 6px 0 14px;
+}
+
+.apresentacao-professor__entrar[hidden] {
+    display: none;
+}
+
 .apresentacao-professor__topo {
     display: flex;
     align-items: center;
@@ -137,7 +149,7 @@
 }
 
 /* Telas largas e altas: a apresentação cabe inteira, então a página não rola. */
-@media (min-width: 901px) and (min-height: 600px) {
+@media (min-width: 901px) and (min-height: 680px) {
     html:has(.apresentacao-professor:not([hidden])) {
         overflow: hidden;
     }

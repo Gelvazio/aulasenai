@@ -41,6 +41,8 @@ const TEXTO_ENTRAR_DESTAQUE_TITULO = "VOCÊ NÃO ESTÁ LOGADO!";
 const TEXTO_ENTRAR_DESTAQUE_ACAO = "CLIQUE AQUI PARA ENTRAR";
 const ICONE_ENTRAR_DESTAQUE_INICIO = "🔒";
 const ICONE_ENTRAR_DESTAQUE_FIM = "👉🔑";
+// Se a página tiver este espaço (ex.: index.html), o card vai para ele em vez da barra.
+const ID_ENTRAR_DESTAQUE_PAGINA = "entrar-destaque";
 const ROTULO_PERFIL = { PROFESSOR: "Professor", ALUNO: "Aluno" };
 // Botão EQUIPES (global, 2026-10-08): professor e aluno líder, em toda página dentro de uma matéria
 // (/MATERIAIS/<CURSO>/<MATÉRIA>/...) e abre o modal de equipes daquela matéria.
@@ -349,6 +351,25 @@ function aplicarVisibilidadePorPerfil(usuario) {
 }
 
 /**
+ * Sem login: põe o card de entrar no espaço #entrar-destaque da página (se existir) ou no centro
+ * da barra; a barra fica só com o HOME.
+ * @param {HTMLElement} destino - Elemento #header-usuario.
+ * @param {HTMLElement} barra - Barra já com o botão HOME.
+ */
+function desenharHeaderSemLogin(destino, barra) {
+  const botao = criarBotaoEntrarDestaque();
+  const espacoPagina = document.getElementById(ID_ENTRAR_DESTAQUE_PAGINA);
+  if (espacoPagina) {
+    espacoPagina.replaceChildren(botao);
+    espacoPagina.hidden = false;
+  } else {
+    barra.classList.add("header-usuario__barra--sem-login");
+    barra.append(botao);
+  }
+  destino.replaceChildren(barra);
+}
+
+/**
  * Desenha o header no elemento da página.
  * @param {HTMLElement} destino - Elemento #header-usuario.
  * @param {Object|null} cliente - Cliente do Supabase (null se indisponível).
@@ -358,9 +379,7 @@ function desenharHeaderUsuario(destino, cliente, usuario) {
   const barra = criarElementoHeader("div", "header-usuario__barra", "");
   barra.append(criarBotaoHome());
   if (!usuario) {
-    barra.classList.add("header-usuario__barra--sem-login");
-    barra.append(criarBotaoEntrarDestaque());
-    destino.replaceChildren(barra);
+    desenharHeaderSemLogin(destino, barra);
     return;
   }
   const ehProfessor = usuario?.app_metadata?.perfil === PERFIL_PROFESSOR_HEADER;
