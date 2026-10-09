@@ -596,4 +596,75 @@ begin
       (v_atividade, 48, 'Apagar Matrícula', 'B'),
       (v_atividade, 49, '3FN e Turma', 'C'),
       (v_atividade, 50, 'Normalização e Requisitos', 'D');
+
+  -- Aula 11: Padronização de Dados, Cronograma e Fluxograma
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Padronização de Dados, Cronograma e Fluxograma' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (11, 'Padronização de Dados, Cronograma e Fluxograma', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Padronização de Dados, Cronograma e Fluxograma', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Padronização de Dados, Cronograma e Fluxograma (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-11-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Por Que Padronizar', 'B'),
+      (v_atividade, 2, 'Nome de Tabela', 'A'),
+      (v_atividade, 3, 'Nome de Coluna', 'B'),
+      (v_atividade, 4, 'Singular', 'B'),
+      (v_atividade, 5, 'Chave Primária', 'A'),
+      (v_atividade, 6, 'Chave Estrangeira', 'A'),
+      (v_atividade, 7, 'Palavra Reservada', 'C'),
+      (v_atividade, 8, 'Espaços e Acentos', 'C'),
+      (v_atividade, 9, 'Coluna Verdadeiro ou Falso', 'C'),
+      (v_atividade, 10, 'Formato de Data', 'D'),
+      (v_atividade, 11, 'Data e a Tela', 'C'),
+      (v_atividade, 12, 'Data com Hora', 'D'),
+      (v_atividade, 13, 'CPF Como Texto', 'A'),
+      (v_atividade, 14, 'Telefone e CEP', 'A'),
+      (v_atividade, 15, 'Valores em Dinheiro', 'C'),
+      (v_atividade, 16, 'E-mail em Minúsculas', 'D'),
+      (v_atividade, 17, 'Nomes Sem Abreviação', 'D'),
+      (v_atividade, 18, 'Domínio', 'B'),
+      (v_atividade, 19, 'Domínio da Situação', 'D'),
+      (v_atividade, 20, 'Garantir o Domínio', 'A'),
+      (v_atividade, 21, 'Sem Domínio', 'A'),
+      (v_atividade, 22, 'Dicionário de Dados Final', 'C'),
+      (v_atividade, 23, 'Dicionário e SQL', 'C'),
+      (v_atividade, 24, 'O Que É Cronograma', 'A'),
+      (v_atividade, 25, 'Dependência no Cronograma', 'B'),
+      (v_atividade, 26, 'Marco', 'A'),
+      (v_atividade, 27, 'Folga', 'D'),
+      (v_atividade, 28, 'Scripts Depois do Modelo', 'B'),
+      (v_atividade, 29, 'Acompanhamento', 'B'),
+      (v_atividade, 30, 'Gantt', 'A'),
+      (v_atividade, 31, 'O Que É Fluxograma', 'A'),
+      (v_atividade, 32, 'Oval', 'C'),
+      (v_atividade, 33, 'Retângulo', 'A'),
+      (v_atividade, 34, 'Losango', 'D'),
+      (v_atividade, 35, 'Paralelogramo', 'D'),
+      (v_atividade, 36, 'Cilindro', 'B'),
+      (v_atividade, 37, 'Setas', 'B'),
+      (v_atividade, 38, 'Decisão da Vaga', 'C'),
+      (v_atividade, 39, 'Gravação no Fluxo', 'B'),
+      (v_atividade, 40, 'Decisão Esquecida', 'C'),
+      (v_atividade, 41, 'Fluxograma e Requisitos', 'C'),
+      (v_atividade, 42, 'Escola: Turno Padronizado', 'D'),
+      (v_atividade, 43, 'Escola: Valor', 'D'),
+      (v_atividade, 44, 'Escola: CPF', 'B'),
+      (v_atividade, 45, 'Dinâmica: Cilindro', 'D'),
+      (v_atividade, 46, 'Dinâmica: Ferramenta', 'C'),
+      (v_atividade, 47, 'Entrega da SA 1', 'B'),
+      (v_atividade, 48, 'Corrigir Nome', 'A'),
+      (v_atividade, 49, 'Responsável no Cronograma', 'B'),
+      (v_atividade, 50, 'Padrão e Back-End', 'D');
 end $$;

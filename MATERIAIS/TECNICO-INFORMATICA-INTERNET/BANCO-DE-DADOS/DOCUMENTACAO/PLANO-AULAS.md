@@ -18,7 +18,7 @@
 | 08 | Relacionamentos 1:1, 1:N e N:N | 4 | 5.2 | C2 | [AULA-08](../CONTEUDO/AULA-08-RELACIONAMENTOS-1-1-1-N-E-N-N.md) |
 | 09 | Diagrama entidade-relacionamento | 4 | 5.4 | C2, S1 | [AULA-09](../CONTEUDO/AULA-09-DIAGRAMA-ENTIDADE-RELACIONAMENTO.md) |
 | 10 | Normalização de dados (1FN, 2FN e 3FN) | 4 | 5.5 | C3, S2 | [AULA-10](../CONTEUDO/AULA-10-NORMALIZACAO-DE-DADOS-1FN-2FN-3FN.md) |
-| 11 | Padronização de dados, cronograma e fluxograma | 4 | 5.6 · 6.2 · 6.3 | C1, C3 | ⬜ |
+| 11 | Padronização de dados, cronograma e fluxograma | 4 | 5.6 · 6.2 · 6.3 | C1, C3 | [AULA-11](../CONTEUDO/AULA-11-PADRONIZACAO-DE-DADOS-CRONOGRAMA-E-FLUXOGRAMA.md) |
 | 12 | DDL: tabelas e campos | 4 | 3.1.1–3.1.2 | C7 | ⬜ |
 | 13 | DDL: relações, chaves e restrições | 4 | 3.1.3 | C7 | ⬜ |
 | 14 | DML: inserção, atualização e exclusão | 4 | 3.2.2–3.2.4 | C8 | ⬜ |

@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 11 — Padronização de Dados, Cronograma e Fluxograma (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="11" data-tema="Padronização de Dados, Cronograma e Fluxograma" data-total="50"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>📐 Aula 11: Padronização de Dados, Cronograma e Fluxograma</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-11-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C1 —</strong> Reconhecer as demandas do cliente</p>
+                    <p class="quadro-capacidades__linha"><strong>C3 —</strong> Aplicar os procedimentos de normalização e padronização de dados.</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Por Que Padronizar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que padronizar os dados e os nomes do banco?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para deixar cada pessoa escrever do seu jeito.</li>
+                        <li><span class="letra">B)</span>Para deixar o banco previsível, legível e fácil de integrar, evitando erros nas consultas.</li>
+                        <li><span class="letra">C)</span>Para dispensar a normalização.</li>
+                        <li><span class="letra">D)</span>Para aumentar o número de tabelas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Nome de Tabela</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual nome de tabela segue o padrão da UC?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>item_pedido</li>
+                        <li><span class="letra">B)</span>ITEMPEDIDOS</li>
+                        <li><span class="letra">C)</span>ítem-pedido</li>
+                        <li><span class="letra">D)</span>Itens Pedidos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Nome de Coluna</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual nome de coluna segue o padrão da UC?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>dtnsc</li>
+                        <li><span class="letra">B)</span>data_nascimento</li>
+                        <li><span class="letra">C)</span>DataDeNascimentoDoAluno</li>
+                        <li><span class="letra">D)</span>Data Nasc</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Singular</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Pelo padrão da UC, as tabelas são nomeadas:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No plural, como alunos.</li>
+                        <li><span class="letra">B)</span>No singular, como aluno.</li>
+                        <li><span class="letra">C)</span>Com acentos, como matrícula.</li>
+                        <li><span class="letra">D)</span>Com números, como tabela1.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Chave Primária</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o padrão para o nome da chave primária?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>id ou id_&lt;tabela&gt;, como id_aluno.</li>
+                        <li><span class="letra">B)</span>PK1.</li>
+                        <li><span class="letra">C)</span>codigo_principal_da_tabela_do_aluno.</li>
+                        <li><span class="letra">D)</span>numero.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Chave Estrangeira</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na tabela turma, como se chama a chave estrangeira para curso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>id_curso</li>
+                        <li><span class="letra">B)</span>c</li>
+                        <li><span class="letra">C)</span>Curso</li>
+                        <li><span class="letra">D)</span>curso_da_turma_fk_principal</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Palavra Reservada</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que não usar order como nome de tabela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o PostgreSQL não aceita tabelas de pedidos.</li>
+                        <li><span class="letra">B)</span>Porque é curta demais.</li>
+                        <li><span class="letra">C)</span>Porque é palavra reservada do SQL e causa erros ou exige tratamento especial.</li>
+                        <li><span class="letra">D)</span>Porque é uma palavra em inglês.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Espaços e Acentos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que evitar espaços e acentos nos nomes de tabelas e colunas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque são proibidos por lei.</li>
+                        <li><span class="letra">B)</span>Porque o banco fica mais bonito sem eles.</li>
+                        <li><span class="letra">C)</span>Porque exigem aspas no SQL e causam problemas de compatibilidade e digitação.</li>
+                        <li><span class="letra">D)</span>Porque o pgAdmin apaga os acentos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Coluna Verdadeiro ou Falso</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual nome é adequado para uma coluna verdadeiro/falso que indica se a parcela foi paga?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>valor</li>
+                        <li><span class="letra">B)</span>x</li>
+                        <li><span class="letra">C)</span>pago</li>
+                        <li><span class="letra">D)</span>data</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Formato de Data</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o formato padrão de data guardado no banco?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>mês por extenso.</li>
+                        <li><span class="letra">B)</span>Número de dias desde o nascimento.</li>
+                        <li><span class="letra">C)</span>dd/mm/aa como texto.</li>
+                        <li><span class="letra">D)</span>AAAA-MM-DD, no tipo data.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Data e a Tela</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Se o banco guarda AAAA-MM-DD, como o usuário vê a data?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O banco guarda os dois formatos em colunas diferentes.</li>
+                        <li><span class="letra">B)</span>A data não aparece na tela.</li>
+                        <li><span class="letra">C)</span>A tela mostra no formato dd/mm/aaaa, convertendo o valor guardado.</li>
+                        <li><span class="letra">D)</span>O usuário precisa ler AAAA-MM-DD sempre.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Data com Hora</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para registrar data e hora corretas no horário de Brasília, qual tipo é indicado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Número inteiro.</li>
+                        <li><span class="letra">B)</span>Texto livre.</li>
+                        <li><span class="letra">C)</span>Verdadeiro/falso.</li>
+                        <li><span class="letra">D)</span>Tipo de data e hora com fuso, como timestamptz.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">CPF Como Texto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o CPF é guardado como texto só com dígitos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para manter zeros à esquerda e deixar a máscara com pontos para a tela.</li>
+                        <li><span class="letra">B)</span>Para fazer contas com o CPF.</li>
+                        <li><span class="letra">C)</span>Porque CPF tem letras.</li>
+                        <li><span class="letra">D)</span>Para guardar o CPF com espaços.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Telefone e CEP</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como o padrão da UC guarda telefone e CEP?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Como texto, só com dígitos.</li>
+                        <li><span class="letra">B)</span>Com máscara e espaços.</li>
+                        <li><span class="letra">C)</span>Como número decimal.</li>
+                        <li><span class="letra">D)</span>Como data.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Valores em Dinheiro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual tipo é indicado para valores em dinheiro, como a mensalidade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Texto com o símbolo R$.</li>
+                        <li><span class="letra">B)</span>Inteiro sem centavos.</li>
+                        <li><span class="letra">C)</span>Decimal com 2 casas.</li>
+                        <li><span class="letra">D)</span>Verdadeiro/falso.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">E-mail em Minúsculas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que padronizar o e-mail em minúsculas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o banco não guarda letras maiúsculas.</li>
+                        <li><span class="letra">B)</span>Para ocupar menos espaço.</li>
+                        <li><span class="letra">C)</span>Porque e-mails não aceitam maiúsculas.</li>
+                        <li><span class="letra">D)</span>Para evitar duplicidade, como Ana@exemplo.com e ana@exemplo.com.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Nomes Sem Abreviação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que guardar nomes sem abreviação e sem espaços extras?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para esconder dados dos usuários.</li>
+                        <li><span class="letra">B)</span>Porque abreviações são proibidas por lei.</li>
+                        <li><span class="letra">C)</span>Para ocupar mais espaço.</li>
+                        <li><span class="letra">D)</span>Para que buscas e ordenações funcionem corretamente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Domínio</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um domínio de valores?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A senha do banco.</li>
+                        <li><span class="letra">B)</span>Uma lista fechada de valores possíveis para um atributo, como os turnos manha, tarde e noite.</li>
+                        <li><span class="letra">C)</span>O endereço do site.</li>
+                        <li><span class="letra">D)</span>O nome do servidor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Domínio da Situação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o domínio da situação da matrícula definido na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1 a 1000.</li>
+                        <li><span class="letra">B)</span>qualquer texto livre.</li>
+                        <li><span class="letra">C)</span>sim e não.</li>
+                        <li><span class="letra">D)</span>ativa, trancada, concluida e cancelada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Garantir o Domínio</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como o banco pode garantir um domínio de valores?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com restrição CHECK ou tabela de apoio.</li>
+                        <li><span class="letra">B)</span>Com a porta do servidor.</li>
+                        <li><span class="letra">C)</span>Com um aviso na tela.</li>
+                        <li><span class="letra">D)</span>Com backup.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Sem Domínio</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o problema de não ter domínio para a situação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Gravar &quot;Ativo&quot;, &quot;ATIVA&quot; e &quot;atv&quot; para a mesma coisa, atrapalhando consultas.</li>
+                        <li><span class="letra">B)</span>Nenhum problema.</li>
+                        <li><span class="letra">C)</span>A tabela perder a chave primária.</li>
+                        <li><span class="letra">D)</span>O banco ficar mais rápido.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Dicionário de Dados Final</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o dicionário de dados final passa a conter nesta aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Os comandos de backup.</li>
+                        <li><span class="letra">B)</span>Somente as senhas.</li>
+                        <li><span class="letra">C)</span>Os nomes padronizados, tipos, formatos e domínios de cada atributo.</li>
+                        <li><span class="letra">D)</span>Apenas o nome do cliente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Dicionário e SQL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que o dicionário de dados final é usado na aula 12?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para instalar o PostgreSQL.</li>
+                        <li><span class="letra">B)</span>Para configurar o pg_hba.conf.</li>
+                        <li><span class="letra">C)</span>Para guiar a escrita do SQL de criação das tabelas.</li>
+                        <li><span class="letra">D)</span>Para desenhar os slides.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">O Que É Cronograma</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é o cronograma do projeto?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A lista das etapas com duração, início e fim, dependências, responsáveis e marcos.</li>
+                        <li><span class="letra">B)</span>O fluxo de telas do sistema.</li>
+                        <li><span class="letra">C)</span>O desenho das tabelas.</li>
+                        <li><span class="letra">D)</span>A senha do banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Dependência no Cronograma</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é uma dependência no cronograma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma chave estrangeira.</li>
+                        <li><span class="letra">B)</span>Uma etapa que precisa estar pronta antes de outra começar.</li>
+                        <li><span class="letra">C)</span>O nome do responsável.</li>
+                        <li><span class="letra">D)</span>O custo do projeto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Marco</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um marco no cronograma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma entrega importante, como &quot;DER validado&quot; ou &quot;banco criado&quot;.</li>
+                        <li><span class="letra">B)</span>Um símbolo do fluxograma.</li>
+                        <li><span class="letra">C)</span>Uma porta de rede.</li>
+                        <li><span class="letra">D)</span>Um atributo da tabela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Folga</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que deixar folga antes dos marcos do cronograma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para aumentar o custo.</li>
+                        <li><span class="letra">B)</span>Para descansar o projeto inteiro.</li>
+                        <li><span class="letra">C)</span>Porque o cronograma exige espaços vazios.</li>
+                        <li><span class="letra">D)</span>Para absorver imprevistos sem atrasar a entrega.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Scripts Depois do Modelo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No cronograma da aula, por que os scripts DDL só começam depois do modelo final?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque não há relação entre eles.</li>
+                        <li><span class="letra">B)</span>Porque dependem do modelo normalizado e padronizado.</li>
+                        <li><span class="letra">C)</span>Porque o SQL é mais fácil que a modelagem.</li>
+                        <li><span class="letra">D)</span>Porque o PostgreSQL só instala no fim.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Acompanhamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como acompanhar o cronograma durante o projeto?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Olhando só no último dia.</li>
+                        <li><span class="letra">B)</span>Comparando, toda semana, o realizado com o planejado e ajustando quando houver atraso.</li>
+                        <li><span class="letra">C)</span>Nunca, pois o cronograma não muda.</li>
+                        <li><span class="letra">D)</span>Apagando as etapas atrasadas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Gantt</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um gráfico de Gantt?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um gráfico de barras que mostra as etapas no tempo, com início e fim.</li>
+                        <li><span class="letra">B)</span>Um tipo de backup.</li>
+                        <li><span class="letra">C)</span>Um diagrama de entidades.</li>
+                        <li><span class="letra">D)</span>Um comando SQL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">O Que É Fluxograma</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um fluxograma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um desenho dos passos de um processo e das decisões, na ordem em que acontecem.</li>
+                        <li><span class="letra">B)</span>Uma lista de senhas.</li>
+                        <li><span class="letra">C)</span>Um arquivo de configuração.</li>
+                        <li><span class="letra">D)</span>Uma tabela normalizada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Oval</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No fluxograma, o que representa a forma oval (terminal)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma decisão.</li>
+                        <li><span class="letra">B)</span>Um banco de dados.</li>
+                        <li><span class="letra">C)</span>Início ou fim do processo.</li>
+                        <li><span class="letra">D)</span>Uma entrada de dados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Retângulo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No fluxograma, o que representa o retângulo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um processo, ou seja, uma ação.</li>
+                        <li><span class="letra">B)</span>O início.</li>
+                        <li><span class="letra">C)</span>Um banco de dados.</li>
+                        <li><span class="letra">D)</span>Uma decisão.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Losango</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No fluxograma, o que representa o losango?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O fim.</li>
+                        <li><span class="letra">B)</span>Um processo.</li>
+                        <li><span class="letra">C)</span>Um documento.</li>
+                        <li><span class="letra">D)</span>Uma decisão, com caminhos sim e não.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Paralelogramo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No fluxograma, o que representa o paralelogramo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma chave estrangeira.</li>
+                        <li><span class="letra">B)</span>Uma decisão.</li>
+                        <li><span class="letra">C)</span>O início.</li>
+                        <li><span class="letra">D)</span>Entrada ou saída de dados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Cilindro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No fluxograma, o que representa o cilindro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um usuário.</li>
+                        <li><span class="letra">B)</span>O banco de dados, onde há consulta ou gravação.</li>
+                        <li><span class="letra">C)</span>O fim do processo.</li>
+                        <li><span class="letra">D)</span>Uma decisão.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Setas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No fluxograma, para que servem as setas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Indicar chaves primárias.</li>
+                        <li><span class="letra">B)</span>Indicar o sentido do fluxo, de um passo para o outro.</li>
+                        <li><span class="letra">C)</span>Indicar o tamanho do disco.</li>
+                        <li><span class="letra">D)</span>Indicar a senha.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Decisão da Vaga</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No fluxo da matrícula, onde aparece a pergunta &quot;a turma tem vaga?&quot;</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Num paralelogramo de saída.</li>
+                        <li><span class="letra">B)</span>Num oval de início.</li>
+                        <li><span class="letra">C)</span>Num losango de decisão, depois de consultar o banco.</li>
+                        <li><span class="letra">D)</span>Não aparece.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Gravação no Fluxo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No fluxo da matrícula, quando a matrícula e as parcelas são gravadas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nunca são gravadas.</li>
+                        <li><span class="letra">B)</span>Depois de confirmar que a turma tem vaga, num passo ligado ao cilindro do banco.</li>
+                        <li><span class="letra">C)</span>Antes de informar o CPF.</li>
+                        <li><span class="letra">D)</span>No início do fluxo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Decisão Esquecida</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No exemplo da escola, qual decisão o fluxograma revelou que estava faltando?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O curso tem nome?</li>
+                        <li><span class="letra">B)</span>O aluno gosta da cor azul?</li>
+                        <li><span class="letra">C)</span>O aluno é menor de idade? Se sim, cadastrar o responsável.</li>
+                        <li><span class="letra">D)</span>O servidor está ligado?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Fluxograma e Requisitos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o fluxograma ajuda a reconhecer as demandas do cliente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque gera o SQL automaticamente.</li>
+                        <li><span class="letra">B)</span>Porque elimina o cronograma.</li>
+                        <li><span class="letra">C)</span>Porque mostra o processo passo a passo e revela decisões e dados esquecidos no levantamento.</li>
+                        <li><span class="letra">D)</span>Porque substitui o banco de dados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Escola: Turno Padronizado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No exemplo da escola, como ficou o antigo campo Turma.Turno?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>turnos_das_turmas como número.</li>
+                        <li><span class="letra">B)</span>Foi apagado.</li>
+                        <li><span class="letra">C)</span>TURMA.TURNO em texto livre.</li>
+                        <li><span class="letra">D)</span>turma.turno, com domínio manha, tarde e noite.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Escola: Valor</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No exemplo da escola, como ficou o campo valor?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>valor em texto com R$.</li>
+                        <li><span class="letra">B)</span>ValorDaMensalidadeDoCurso.</li>
+                        <li><span class="letra">C)</span>v como inteiro.</li>
+                        <li><span class="letra">D)</span>valor_mensal, decimal com 2 casas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Escola: CPF</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No exemplo da escola, como ficou o CPF que tinha pontos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>cpf como número decimal.</li>
+                        <li><span class="letra">B)</span>cpf, só com dígitos, como texto.</li>
+                        <li><span class="letra">C)</span>CPF com pontos e traço.</li>
+                        <li><span class="letra">D)</span>Foi dividido em quatro colunas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Dinâmica: Cilindro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica &quot;Fluxo da matrícula&quot;, o que o grupo marca com o cilindro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O início e o fim.</li>
+                        <li><span class="letra">B)</span>As decisões do processo.</li>
+                        <li><span class="letra">C)</span>Os nomes dos integrantes.</li>
+                        <li><span class="letra">D)</span>Os pontos em que o banco é consultado ou gravado, dizendo qual tabela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Dinâmica: Ferramenta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois de montar o fluxo na mesa, para onde o grupo passa o fluxograma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para o backup.</li>
+                        <li><span class="letra">B)</span>Para o dicionário de senhas.</li>
+                        <li><span class="letra">C)</span>Para a ferramenta de diagramas, como o draw.io.</li>
+                        <li><span class="letra">D)</span>Para o pg_hba.conf.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Entrega da SA 1</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o grupo entrega no fechamento da SA 1?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente a lista de entidades.</li>
+                        <li><span class="letra">B)</span>Padrão aplicado com dicionário de dados final, domínios, cronograma com dependências e marcos e fluxograma da matrícula.</li>
+                        <li><span class="letra">C)</span>A instalação do PostgreSQL.</li>
+                        <li><span class="letra">D)</span>Somente o script de backup.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Corrigir Nome</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a correção do nome ValorMensal para o padrão da UC?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>valor_mensal</li>
+                        <li><span class="letra">B)</span>ValorMensal sem mudança</li>
+                        <li><span class="letra">C)</span>vm</li>
+                        <li><span class="letra">D)</span>VALOR MENSAL</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Responsável no Cronograma</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o cronograma indica o responsável de cada etapa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o SGBD exige.</li>
+                        <li><span class="letra">B)</span>Para que todos saibam quem cuida de cada entrega e a quem perguntar.</li>
+                        <li><span class="letra">C)</span>Para esconder o andamento.</li>
+                        <li><span class="letra">D)</span>Para dar notas aos integrantes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Padrão e Back-End</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como a padronização de nomes ajuda o desenvolvedor do back-end?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ele dispensa as chaves estrangeiras.</li>
+                        <li><span class="letra">B)</span>Ele passa a usar planilhas.</li>
+                        <li><span class="letra">C)</span>Ele não precisa mais escrever SQL.</li>
+                        <li><span class="letra">D)</span>Ele consegue prever os nomes de tabelas e colunas e escrever o SQL com menos erros.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Aula 11: Padronização de Dados, Cronograma e Fluxograma</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>
