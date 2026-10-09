@@ -1453,7 +1453,8 @@ Plano: [docs/atividades-testes-frontend-aulas-01-a-03.md](docs/atividades-testes
 | 110.6 | Visual do currículo melhorado: topo com degradê, avatar, destaques (15+ anos, PHP, Python, IA) e resumo com aspas; cartões coloridos (azul, verde, laranja) com selo de ícone; experiência em linha do tempo com ícone, instituição, período e etiqueta ATUAL; formação com marcadores ✅; idiomas com bandeira e barra de nível; competências em 3 grupos de etiquetas coloridas (classes `curriculo__*` em `assets/css/apresentacao-professor.css`). Sem rolagem só em telas ≥ 901×780 | ✅ Concluído | 2026-10-09 00:36:23 | Linhas novas ≤ 100; leitura do código (sem navegador) — teste na página fica com o usuário |
 | 110.7 | Removida da apresentação a faixa de contato (e-mail, LinkedIn, Portfólio) e "Entre no sistema… Entrar" (o card verde acima do currículo já leva ao login); sem rolagem em telas ≥ 901×720 | ✅ Concluído | 2026-10-09 00:39:31 | Leitura do código (sem navegador) |
 | 110.8 | Resumo do professor reescrito em 3 tópicos com ícone (👋 apresentação, 🏛️ projetos, 🎓 SENAI/SC), marca-texto dourado nos pontos principais e fonte maior (13 → 15,5 px); sem rolagem em telas ≥ 901×780 | ✅ Concluído | 2026-10-09 00:48:39 | Leitura do código (sem navegador) |
-| 110.9 | Aceite do usuário | ⬜ Pendente | — | — |
+| 110.9 | Responsividade da apresentação: tablet (601–900 px) com 2 colunas de cartões e Competências na largura toda; celular (≤ 600 px) com espaços menores, avatar e títulos menores, fonte do resumo 14,5 px e dos cartões 13,5 px, sem efeito de flutuar no toque e card "VOCÊ NÃO ESTÁ LOGADO!" na largura toda | ✅ Concluído | 2026-10-09 00:51:16 | Leitura do código (sem navegador) — teste no celular fica com o usuário |
+| 110.10 | Aceite do usuário | ⬜ Pendente | — | — |
 
 ## Etapa 111 — Sessão obrigatória em todas as páginas HTML (pedido em 2026-10-09 00:23; aprovada em 2026-10-09 00:28)
 
