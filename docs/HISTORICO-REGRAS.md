@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 15:08:47 | **Banco de questões do AVA (Moodle XML) removido:** regra de `docs/regras/atividades.md`, gerador `assets/gerador-banco-ava/`, pasta `BANCO-AVA/` da ITIC, planos em `docs/` e todas as citações (pedido do usuário) |
 | 2026-10-09 15:08:10 | **`BANCO-AVA/` coerente com a regra do gabarito:** tabela da ITIC no `CLAUDE.md`, `docs/regras/atividades.md` e `docs/regras/assets-e-geradores.md` dizem "no Git, fora do site" (apontado na revisão do PR) |
 | 2026-10-09 15:03:21 | **Registro da sessão em `SESSOES-CLAUDE/` removido** (regra, pergunta do fim da tarefa, leitura do `STATUS-SESSOES.md` e a pasta): o estado fica só no `STATUS.md`, onde já estavam todas as pendências dos logs |
 | 2026-10-09 15:00:25 | **Nuvem: sem a pergunta "Deseja atualizar o log da sessão atual?"** no fim da tarefa (só no ambiente local); a frase final continua |

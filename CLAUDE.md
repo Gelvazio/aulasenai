@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 15:08:10
+**Versão das regras:** 2026-10-09 15:08:47
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 15:08:47 | **Banco de questões do AVA (Moodle XML) removido:** regra de `docs/regras/atividades.md`, gerador `assets/gerador-banco-ava/`, pasta `BANCO-AVA/` da ITIC, planos em `docs/` e todas as citações (pedido do usuário) |
 | 2026-10-09 15:08:10 | **`BANCO-AVA/` coerente com a regra do gabarito:** tabela da ITIC no `CLAUDE.md`, `docs/regras/atividades.md` e `docs/regras/assets-e-geradores.md` dizem "no Git, fora do site" (apontado na revisão do PR) |
 | 2026-10-09 15:03:21 | **Registro da sessão em `SESSOES-CLAUDE/` removido** (regra, pergunta do fim da tarefa, leitura do `STATUS-SESSOES.md` e a pasta): o estado fica só no `STATUS.md`, onde já estavam todas as pendências dos logs |
 | 2026-10-09 15:00:25 | **Nuvem: sem a pergunta "Deseja atualizar o log da sessão atual?"** no fim da tarefa (só no ambiente local); a frase final continua |
 | 2026-10-09 14:58:46 | **Nuvem: cada arquivo criado = commit + push na hora** (seção "Pull Requests"), sem esperar o fim da tarefa; arquivo parcial vai como `wip(...)` com o que falta no `STATUS.md` |
-| 2026-10-09 14:09:46 | **Gabarito vai para o Git, mas não é publicado na Vercel:** `-GABARITO.md`, `*QUESTOES.md`, `PROVA-OBJETIVA-*.md`, seeds `database/*-seed-atividades.sql` e `BANCO-AVA/` versionados e listados no `.vercelignore` (saíram do `.gitignore`); regras atualizadas no `CLAUDE.md`, `docs/regras/atividades.md` e `docs/REGRAS-ATIVIDADE-PRATICA.md` |
 
 ---
 
@@ -300,7 +300,7 @@ Aqui ficam as regras de sempre, as de segurança e este índice.
 | Arquivo | Ler antes de… | Regras dentro |
 |---|---|---|
 | [docs/regras/ementas-e-cursos.md](docs/regras/ementas-e-cursos.md) | criar ou alterar ementas, pastas de curso/matéria, aulas em `CONTEUDO/`, STATUS-EMENTAS e dashboards | aulas extraídas da ementa; `EMENTA-CHALKIE-AI.md`; STATUS-EMENTAS; STATUS-PERMISSAO-EMENTA/MATERIA; `EMENTA-PRINCIPAL-<CURSO>.md`; pasta = UC; matérias semelhantes; `dashboard.html` |
-| [docs/regras/atividades.md](docs/regras/atividades.md) | mexer em atividades, avaliações, discursivas, respostas no banco, gabarito, exportação PDF, índices de atividades, Excel, banco do AVA ou Reforço de Linguagens | alternativas no banco (tentativas, horário, log, discursivas, correção); turma na exportação; gabarito; índices e bloqueio por turma; Excel; uma aula por vez; 50 questões; Reforço de Linguagens; banco do AVA |
+| [docs/regras/atividades.md](docs/regras/atividades.md) | mexer em atividades, avaliações, discursivas, respostas no banco, gabarito, exportação PDF, índices de atividades, Excel ou Reforço de Linguagens | alternativas no banco (tentativas, horário, log, discursivas, correção); turma na exportação; gabarito; índices e bloqueio por turma; Excel; uma aula por vez; 50 questões; Reforço de Linguagens |
 | [docs/regras/apostilas.md](docs/regras/apostilas.md) | gerar ou alterar apostilas (capítulos, Markdown completo, HTML, `materia.json`) | identificação; conferência 100% com a ementa; gerador; Markdown completo; `materia.json`; formato e ordem; páginas A4 |
 | [docs/regras/usuarios-turmas-paginas-professor.md](docs/regras/usuarios-turmas-paginas-professor.md) | mexer em contas/senhas, turmas, alunos, equipes, aulas (excluir/editar card), pendências ou índice de cursos | contas e senhas; excluir aula e card = 1 aula; pendências; índice de cursos; `turmaaluno`; equipes; página por turma; e-mail do aluno |
 | [docs/regras/assets-e-geradores.md](docs/regras/assets-e-geradores.md) | criar ou alterar CSS, JS, menus, header ou geradores (`assets/`), e avisos ao usuário | CSS e JS genéricos em `assets/`; menu; header; geradores; popup no lugar de `alert()` |
@@ -369,7 +369,6 @@ Registrada em 2026-10-03 a pedido do usuário.
 | Menu e índice das atividades | `ATIVIDADES/MENU-ATIVIDADES.js`, `ATIVIDADES/index.html` |
 | Controles | `AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` |
 | Apostila | `APOSTILA/` (`CONTEUDO/INTRODUCAO.md`, `CONTEUDO/CAPITULO-NN.md`, Markdown completo e HTML) — apostila única, versão 2.1, sem vídeos e exercícios (V1 removida em 2026-10-08) |
-| Banco de questões do AVA | `ATIVIDADES/BANCO-AVA/` (no Git, fora do site pelo `.vercelignore`) |
 
 - ✅ A ITIC é modelo de **estrutura e funcionamento**; o conteúdo de cada matéria vem da ementa
   **dela** (nunca copiar conteúdo da ITIC para outra UC).
@@ -749,7 +748,7 @@ versionado (inclusive `database/`).
 
 - ✅ **Gabarito vai para o Git, mas NUNCA é publicado na Vercel** (alterada em 2026-10-09 14:09:46, pedido do
   usuário): `-GABARITO.md`, fontes `*QUESTOES.md` e `PROVA-OBJETIVA-*.md`, seeds
-  `database/*-seed-atividades.sql` e `BANCO-AVA/` são **versionados** (na nuvem, o que não entra no
+  `database/*-seed-atividades.sql` são **versionados** (na nuvem, o que não entra no
   commit se perde) e ficam **fora do site** pelo **`.vercelignore`**. Arquivo novo com resposta certa:
   acrescentar o padrão ao `.vercelignore` **antes** do commit.
 - ❌ **Gabarito nunca em página de aluno** (HTML, PDF ou consulta), salvo a liberação do professor

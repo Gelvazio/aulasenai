@@ -11,7 +11,5 @@ RESOLUCAO/
 PROVA-OBJETIVA-*.md
 # Seeds das atividades (gravam o gabarito e o padrão de resposta no banco)
 database/*-seed-atividades.sql
-# Banco de questões do AVA (XML com as respostas certas)
-BANCO-AVA/
 # Atividade de raciocínio lógico com as respostas
 docs/atividade-raciocinio-logico.md
