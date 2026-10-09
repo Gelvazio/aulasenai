@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 01:12:55
+**Versão das regras:** 2026-10-09 11:03:21
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
-| 2026-10-09 01:12:55 | **Botões de atividade com a mesma largura** e **ON/OFF sempre ao lado** (texto menor e quebrando a linha para caber, também no celular) em todos os índices |
-| 2026-10-09 01:11:42 | **ID na frente de cada atividade** nos índices (professor): etiqueta "ID 07" no botão (menor que 10 com zero à esquerda; 10 em diante normal); a caixa "ID · nome" do card foi removida |
-| 2026-10-09 01:10:16 | **Aula bloqueada = nenhum acesso, nem para o professor:** no card só o botão de desbloquear responde (links, slides, ON/OFF das atividades, CADASTRAR ATIVIDADES e Editar aula travados) |
-| 2026-10-09 01:09:35 | **Bloquear a aula bloqueia todas as atividades dela** (trigger `aulas_bloqueio_propaga_atividades_trg`: `aulas.ativo` → false grava `atividade.ativo = false`); desbloquear a aula não mexe nas atividades |
-| 2026-10-09 01:07:02 | Bloqueio da AULA × bloqueio da ATIVIDADE **ligado em Testes de Front-End** (lista em `assets/js/indice-bloqueio-aula-config.js`; demais matérias seguem pendentes na tarefa #16); botão **🧾 LOG escondido** em todos os índices; **slides abrem em nova aba** |
+| 2026-10-09 11:03:21 | **Nova seção "Pull Requests" (só na nuvem):** todo commit feito na nuvem é enviado na hora (`git push`) e, se a branch não tiver PR aberto para a `main`, um **novo PR** é criado |
+| 2026-10-09 10:47:05 | **Tamanho da ementa medido com Python** (`docs/regras/ementas-e-cursos.md`): conta caracteres (acento = 1); `wc -c` (bytes) e `Get-Content` sem `-Raw` (linhas) deixam de ser usados; versão vazia da linha anterior preenchida com a hora do commit `6829542` |
+| 2026-10-09 10:43:11 | **Curso desativado some do índice** de alunos e professores (`cursos_do_usuario` filtra `curso.ativo = 0`; o administrador vê todos); abas da página de criar usuários mostram a **unidade do banco** (não o "local" da lista) |
+| 2026-10-09 13:33:10 | **Fase 2 da unidade:** colunas `turma.local` e `curso.unidade` apagadas; todas as telas mostram a unidade pela ligação (`unidade:unidade_id(nome)`, `assets/js/unidade.js`); criar usuários grava `unidade_id` (campo `unidadeId` da turma na lista) |
+| 2026-10-09 13:27:14 | **Unidade só na tabela `unidade`** (`id`, `nome`, `endereco`): `curso.unidade_id` e `turma.unidade_id` apontam para ela; CRUD no modal **🏢 Unidades** de `cursos.html`; os textos antigos `curso.unidade` e `turma.local` só até a fase 2 |
 
 ---
 
@@ -758,10 +758,23 @@ SQL: `database/2026-10-02-turmaprofessor-professor-administrador.sql` (aplicado 
   `assets/js/turmas-professor-repositorio.js` (dados) + `assets/js/turmas-professor-pagina.js`
   (tela) + `assets/css/turmas-professor.css`. Plano: `docs/menu-turmas-crud-turmaprofessor.md`.
 - ✅ **Menus do header só do administrador (2026-10-07, pedido do usuário):** USUARIOS,
-  RELATORIOS, ALUNOS, CORREÇÃO, TURMAS, PENDÊNCIAS e Regras aparecem **só** para o Professor
+  RELATORIOS, ALUNOS, CORREÇÃO, TURMAS, CURSO, PENDÊNCIAS e Regras aparecem **só** para o Professor
   Administrador (`MENU_ADMINISTRADOR_HEADER` em `js/header-usuario.js`, RPC
   `eh_professor_administrador()`); os demais professores não veem nenhum desses menus. Esconder
   é só visual: o acesso aos dados continua pelo RLS.
+- ✅ **Menu CURSO (2026-10-09, pedido do usuário):** abre `cursos.html` (raiz) — CRUD da tabela
+  `curso` (incluir, editar, desativar/ativar; **nunca apagar**: `aulas` e `cursomateria` caem em
+  cascata; curso desativado não aparece no índice de alunos e professores — `cursos_do_usuario`) e ação **🏫 Turmas** com modal para vincular/desvincular turmas ao curso pela função
+  `definir_curso_turma` (só o administrador grava `turma.curso_id`; sem ele os alunos da turma não
+  veem o curso). Código: `assets/js/cursos-repositorio.js` + `cursos-modais.js` + `cursos-pagina.js`
+  + `assets/css/cursos.css`. Plano: `docs/menu-curso-crud-cursos-turmas.md`.
+- ✅ **Unidade só na tabela `unidade` (2026-10-09, pedido do usuário):** a unidade (nome e
+  endereço) de cursos e turmas vem **sempre** da tabela `unidade` (`curso.unidade_id`,
+  `turma.unidade_id`; unidade em uso não se apaga). Cadastro no modal **🏢 Unidades** de
+  `cursos.html` (`assets/js/unidades-modal.js`). As colunas antigas `curso.unidade` e
+  `turma.local` foram **apagadas** (2026-10-09): consulta de turma pede `unidade:unidade_id(nome)`
+  e mostra com `montarUnidadeTurma` (`assets/js/unidade.js`); turma nova da página de criar
+  usuários precisa do campo `unidadeId` na lista de presença.
 - ✅ **Menu Regras (2026-10-03):** botão **Regras** no header, só para o Professor Administrador
   (mesmo RPC `eh_professor_administrador()`), abre um modal com este `CLAUDE.md` + os arquivos de
   `docs/regras/` e o `docs/HISTORICO-REGRAS.md` renderizados (Markdown → HTML com marked +
@@ -863,6 +876,25 @@ confirmação** do usuário — não perguntar "posso fazer push?". Tarefa que n
   nem mudança de remotos.
 - ✅ Antes do push, conferir `git diff --cached --name-only` contra a regra "O QUE NUNCA É
   PUBLICADO" (a `main` é publicada pela Vercel depois do merge).
+- ✅ **Cada commit na nuvem = push + PR** (2026-10-09): ver a seção "Pull Requests" logo abaixo.
+
+## 🔀 Pull Requests (SÓ NO AMBIENTE DE NUVEM)
+
+Registrada em 2026-10-09 11:03:21 a pedido do usuário. **Vale só na nuvem** (Claude Code na web /
+sessão remota); no ambiente **local** nada muda: só o commit, o push continua com o usuário.
+
+- ✅ **Todo commit feito na nuvem é enviado na hora:** depois de **cada** `git commit`, fazer
+  **`git push -u origin <branch>`** (a branch da sessão, nunca a `main`) — sem esperar o fim da
+  tarefa e sem perguntar ao usuário. Nenhum commit fica só no contêiner.
+- ✅ **Sem PR, cria um novo:** depois do push, conferir se a branch tem pull request **aberto** para
+  a `main`. Se **não tiver** (nunca teve, ou o anterior foi juntado ou fechado), **abrir um novo
+  PR** na hora, com título e descrição do que mudou. Se já tiver PR aberto, o push entra nele.
+- ✅ PR anterior **juntado ou fechado**: antes do commit novo, recomeçar a branch a partir da `main`
+  atualizada (regra "Sempre um PR novo" da seção do push) e abrir **outro** PR.
+- ✅ Antes do push: `git fetch origin main` (se a `main` andou, merge nela e conferir de novo) e
+  `git diff --cached --name-only` contra a regra "O QUE NUNCA É PUBLICADO".
+- ⛔ Nunca push na `main`, nunca push forçado e o Claude **nunca faz o merge** do PR (é do usuário).
+- ✅ Na resposta ao usuário, citar o link do PR criado ou atualizado.
 
 ## 💾 REGRA — COMMIT POR TAREFA (SEMPRE)
 

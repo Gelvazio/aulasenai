@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 108, item 108.7 — aceite do usuário das objetivas e práticas das aulas 01 a 03 de Testes de Front-End (liberar as práticas ids 99–101 no índice); depois, Etapa 105, item 105.1 — decisão do usuário sobre a opção R1 (cadastrar as 19 matérias do ITIC em `materia`) em [docs/somente-ensalado-materias.md](docs/somente-ensalado-materias.md); depois, Etapa 97, item 97.4 — aceite do usuário da quantidade mínima de questões; depois: Aceites do usuário: Etapas 84 e 85 (itens 84.5 e 85.3 — discursiva id 81 com 20 questões de 0,5 ponto, respostas no caderno, PDF em 3 páginas); Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Etapas 117–119 (sessão 2026-10-09 manhã) — aceites do usuário: 117.2 (lista T TIIN 2026/1 M1), 118.9 (menu CURSO) e 119.6 (unidades); criar/vincular os 12 alunos que faltam na turma 124519 pela página de criar usuários; informar o curso da turma 124403 (Roberto Machado, sem `curso_id`); escolher a unidade dos cursos 5, 6 e 7 e preencher os endereços em 🏢 Unidades. Depois: Etapa 108, item 108.7 — aceite do usuário das objetivas e práticas das aulas 01 a 03 de Testes de Front-End (liberar as práticas ids 99–101 no índice); depois, Etapa 105, item 105.1 — decisão do usuário sobre a opção R1 (cadastrar as 19 matérias do ITIC em `materia`) em [docs/somente-ensalado-materias.md](docs/somente-ensalado-materias.md); depois, Etapa 97, item 97.4 — aceite do usuário da quantidade mínima de questões; depois: Aceites do usuário: Etapas 84 e 85 (itens 84.5 e 85.3 — discursiva id 81 com 20 questões de 0,5 ponto, respostas no caderno, PDF em 3 páginas); Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -882,6 +882,7 @@ Uma pergunta por item; **um commit só no final** (pedido do usuário).
 | 73.12 | Registro do cursoprofessor (substituído) — escolha: apagar a seção | ✅ Concluído | 2026-10-08 07:49 | Seção apagada de `paginas-legadas.md` e do índice do `CLAUDE.md`; histórico fica em `docs/registro-vinculos-cursos-professor-2026-10-03.md` |
 | 73.13 | Versão das regras + commit único | ✅ Concluído | 2026-10-08 07:49 | Versão 2026-10-08 07:48 no CLAUDE.md e no histórico; reaplicado depois do merge da origin/main (feito por outra sessão); 12 itens conferidos por busca; 7 links do índice existem |
 | 73.14 | Aceite do usuário | ⬜ Pendente | — | — |
+| 73.15 | Tamanho da ementa: nova escolha do usuário (2026-10-09) = comando Python; versão vazia das regras preenchida | ✅ Concluído | 2026-10-09 10:48:00 | Python na ementa ITIC = 14.917 caracteres (wc -c = 15.579 bytes); versão 2026-10-09 10:47:05 no CLAUDE.md e no histórico; resumo com 5 linhas |
 
 ## Etapa 74 — Dashboard do Jev (JEV-AI de Testes de Frontend) (tarefa pequena, 2026-10-07)
 
@@ -1528,3 +1529,60 @@ Plano: [docs/trigger-bloqueio-aula-bloqueia-atividades.md](docs/trigger-bloqueio
 | 116.2 | Regra no `CLAUDE.md` (versão 2026-10-09 01:11:42), histórico e `docs/regras/atividades.md` | ✅ Concluído | 2026-10-09 01:12 | Leitura |
 | 116.4 | Botões de atividade com a mesma largura e ON/OFF sempre ao lado (texto menor e quebrando a linha, também no celular) — `assets/css/indice-atividades.css` + `indice-atividades-bloquear.css`; regra no `CLAUDE.md` (versão 2026-10-09 01:12:55) | ✅ Concluído | 2026-10-09 01:12 | Chaves do CSS balanceadas; leitura (sem navegador) |
 | 116.3 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 117 — Lista de alunos do Técnico em Informática (SENAI) Manhã em Testes de Front-End (tarefa pequena, pedido em 2026-10-09 12:35:18)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 117.1 | Lista da turma T TIIN 2026/1 M1 (124519), SN.RDS-LAB INFORMATICA 01 - SENAI/SC - Rio do Sul, com os 17 alunos (nome, menor, frequência, situação, sigla e login proposto) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/LISTA-ALUNOS/ALUNOS-TECNICO-INFORMATICA-MANHA.md` — só local (LGPD, `LISTA-ALUNOS/` no `.gitignore`); sem cadastro no banco | ✅ Concluído | 2026-10-09 12:36 | `git check-ignore` confirma fora do Git; logins sem repetição |
+| 117.3 | Turma T TIIN 2026/1 M1 (124519) na página `scripts/criarUsuariosBancoDados.html`: `scripts/LISTA-PRESENCA-TIIN-RIO-DO-SUL-MANHA.js` (17 alunos, senhas iniciais de 6 caracteres; fora do Git, LGPD) + tag no HTML; usuários ainda não criados no banco (o professor cria pela página) | ✅ Concluído | 2026-10-09 12:45 | `node --check`; `git check-ignore`; nenhum login repetido nas outras listas |
+| 117.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 118 — Menu Curso: CRUD de cursos e vínculo de turmas em `cursos.html` (tarefa grande, pedido em 2026-10-09 12:45; aprovada em 2026-10-09 12:50; plano [docs/menu-curso-crud-cursos-turmas.md](docs/menu-curso-crud-cursos-turmas.md))
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 118.0 | Plano criado e aprovado pelo usuário | ✅ Concluído | 2026-10-09 12:50 | Aprovação no chat |
+| 118.1 | SQL `database/2026-10-09-vincular-turma-curso.sql` (função `definir_curso_turma`, só o administrador) | ✅ Concluído | 2026-10-09 12:52 | Leitura |
+| 118.2 | SQL aplicado pelo conector do Supabase | ✅ Concluído | 2026-10-09 12:53 | `anon` sem execute; `authenticated` com execute; security definer |
+| 118.3 | `assets/js/cursos-repositorio.js` | ✅ Concluído | 2026-10-09 12:54 | `node --check` |
+| 118.4 | `assets/js/cursos-modais.js` (modal do curso e modal 🏫 Turmas) | ✅ Concluído | 2026-10-09 12:57 | `node --check` |
+| 118.5 | `cursos.html`, `assets/js/cursos-pagina.js`, `assets/css/cursos.css` (sem exclusão: desativar = `ativo 0`) | ✅ Concluído | 2026-10-09 12:58 | `node --check`; leitura |
+| 118.6 | Menu CURSO em `js/header-usuario.js` (só administrador) | ✅ Concluído | 2026-10-09 12:58 | `node --check` |
+| 118.7 | `docs/database.md`, relatório HTML, `CLAUDE.md` (versão 2026-10-09 12:59:06) e histórico | ✅ Concluído | 2026-10-09 13:00 | Leitura |
+| 118.8 | Commit | ✅ Concluído | 2026-10-09 13:01 | `git diff --cached --name-only` |
+| 118.10 | Ajuste pedido em 2026-10-09 13:15: ações (Editar, Turmas, Desativar/Ativar) na última coluna, à direita; página de consulta mais larga (1400px) e busca mais larga (420px) — `cursos.html`, `assets/js/cursos-pagina.js`, `assets/css/cursos.css` | ✅ Concluído | 2026-10-09 13:17 | `node --check`; leitura (sem navegador) |
+| 118.11 | Ajuste pedido em 2026-10-09 13:18: botões de ação lado a lado (nunca um embaixo do outro) — `.cu-grupo-acoes` (inline-flex, sem quebra) em `assets/css/cursos.css` + `assets/js/cursos-pagina.js` | ✅ Concluído | 2026-10-09 13:20 | `node --check`; leitura (sem navegador) |
+| 118.9 | Aceite do usuário: testar no navegador (menu CURSO → 🏫 Turmas → vincular a 124519 ao curso 4) | ⬜ Pendente | — | Usuário |
+
+## Etapa 119 — Unidade em um só lugar: tabela `unidade` ligada a `curso` e `turma` (tarefa grande, pedido em 2026-10-09 13:18; aprovada em 2026-10-09 13:23; plano [docs/tabela-unidade-curso-turma.md](docs/tabela-unidade-curso-turma.md))
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 119.0 | Plano criado; decisões (CEPLAS = AI CEPLAS; SN.RDS-LAB = SENAI Rio do Sul; demais uma cada; linha de teste reaproveitada) e aprovação do usuário | ✅ Concluído | 2026-10-09 13:23 | Respostas no chat |
+| 119.1 | SQL `database/2026-10-09-unidade-curso-turma.sql` (backup, `descricao`→`nome`, `unidade_id` em curso e turma, migração) | ✅ Concluído | 2026-10-09 13:24 | Leitura; nenhuma função/view usa a coluna antiga |
+| 119.2 | SQL aplicado pelo conector do Supabase | ✅ Concluído | 2026-10-09 13:24 | 5 unidades; 7/7 turmas e cursos 1–4 com `unidade_id`; backups 1/7/7 |
+| 119.3 | Tela de cursos: unidade em lista + modal 🏢 Unidades (`assets/js/unidades-modal.js`); `js/unidade.js` órfão ajustado para `nome` | ✅ Concluído | 2026-10-09 13:27 | `node --check` |
+| 119.4 | `docs/database.md`, relatório HTML, `CLAUDE.md` (versão 2026-10-09 13:27:14) e histórico | ✅ Concluído | 2026-10-09 13:29 | Leitura |
+| 119.5 | Commit | ✅ Concluído | 2026-10-09 13:30 | `git diff --cached --name-only` |
+| 119.9 | Unidade 5 renomeada para "AI TAIÓ TARDE" (era "APRENDIZAGEM INDUSTRIAL TAIÓ TARDE"), pedido em 2026-10-09 13:38 — update direto na tabela `unidade` | ✅ Concluído | 2026-10-09 13:39 | Consulta da tabela `unidade` |
+| 119.10 | Lista `scripts/LISTA-PRESENCA-AUTOMACAO-TAIO-TARDE.js` (fora do Git): turma AI OPIR 2026/1 V1 (122552), UC Fundamentos de Automação/Instrumentação, com `unidadeId: 5` (AI TAIÓ TARDE) e local "AI TAIÓ TARDE" — pedido em 2026-10-09 13:42 | ✅ Concluído | 2026-10-09 13:43 | `node --check`; `git check-ignore` |
+| 119.6 | Aceite do usuário (testar 🏢 Unidades e a unidade dos cursos 5, 6 e 7) | ⬜ Pendente | — | Usuário |
+| 119.7 | Fase 2 pedida pelo usuário — ver 119.8 | ✅ Concluído | 2026-10-09 13:35 | — |
+| 119.8 | Fase 2 (pedido em 2026-10-09 13:30): `unidade.js` pela ligação; 13 JS com `unidade:unidade_id(nome)`; criar usuários grava `unidade_id`; colunas `turma.local` e `curso.unidade` apagadas (`database/2026-10-09-unidade-fase2-apagar-textos.sql`); docs e `CLAUDE.md` (versão 2026-10-09 13:33:10) | ✅ Concluído | 2026-10-09 13:35 | `node --check` em todos os JS; consulta das colunas; backups com 7 locais e 4 unidades |
+
+## Etapa 120 — Curso desativado some do índice; unidade do banco nas abas de criar usuários (pedido em 2026-10-09 13:50)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 120.1 | `cursos_do_usuario()` sem curso desativado para aluno/professor (administrador vê todos) — `database/2026-10-09-cursos-do-usuario-sem-inativos.sql`, aplicado | ✅ Concluído |  | Definição com o filtro; `anon` sem execute; `authenticated` com execute |
+| 120.2 | Abas de `scripts/criarUsuariosBancoDados.html` com a unidade da tabela `unidade` (turma no banco ou `unidadeId` da lista), sem o "local" da lista — `assets/js/criar-usuarios-pagina.js` | ✅ Concluído |  | `node --check` |
+| 120.3 | `docs/database.md`, relatório, `CLAUDE.md` (versão ) e histórico | ✅ Concluído |  | Leitura |
+| 120.4 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 122 — Seção "Pull Requests" no `CLAUDE.md` (só na nuvem) (tarefa pequena, pedido em 2026-10-09 11:03:21)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 122.1 | Seção "🔀 Pull Requests" no `CLAUDE.md`: cada commit na nuvem = push na hora + PR novo se a branch não tiver PR aberto; versão 2026-10-09 11:03:21 + histórico (resumo e `docs/HISTORICO-REGRAS.md`) | ✅ Concluído | 2026-10-09 11:03:21 | Leitura; visualizador lê a linha de versão (`PADRAO_VERSAO_REGRAS`) e os títulos `##` |
+| 122.2 | Aceite do usuário | ⬜ Pendente | — | — |

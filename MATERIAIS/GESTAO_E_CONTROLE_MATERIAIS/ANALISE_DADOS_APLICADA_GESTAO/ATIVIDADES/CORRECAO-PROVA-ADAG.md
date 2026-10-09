@@ -212,4 +212,17 @@ Esperado: `com_nota_ia` = alternativas respondidas pelo aluno (60 depois da entr
 
 | Data e hora | Alunos corrigidos | Alternativas gravadas | Observação |
 |---|---|---|---|
+| 2026-10-08 15:14 | 15 | 129 | Correção parcial (itens 1 a 7); sem alerta de texto repetido além das duplas |
+| 2026-10-08 15:40:36 | 14 | 132 | Rodada parcial (correção antes/depois da entrega); respostas incompletas ficaram com nota 0 e serão corrigidas na entrega final. |
+| 2026-10-08 15:55 | 14 | 47 | Correção parcial (nota parcial IA); nenhum texto repetido além das duplas |
+| 2026-10-08 15:57:12 | 14 | 52 | Correção parcial (antes da entrega); alternativas ainda sem nota da IA |
+| 2026-10-08 16:06:28 | 13 | 29 | Correção parcial (provas ainda em andamento); nenhum texto repetido entre duplas |
+| 2026-10-08 16:14 | 13 | 30 | Correção parcial (maioria ainda sem entrega); 0 avisos de texto igual |
+| 2026-10-08 16:23:54 | 12 | 22 | Correção parcial (antes da entrega final); 1 aluno com texto sem sentido corrigido como errada |
+| 2026-10-08 16:42:53 | 12 | 70 | Correção parcial (nota_ia); nenhum texto igual em mais de uma dupla; 1 comentário com aviso de texto desorganizado |
+| 2026-10-08 16:47:37 | 12 | 25 | Correção parcial (alternativas ainda sem nota da IA); 4 recebidas em branco/incompletas ficaram com 0 |
+| 2026-10-08 16:54 | 12 | 31 | Correção parcial (nota da IA); 1 aviso de texto possivelmente copiado |
+| 2026-10-08 16:54 | 12 | 32 | Correção parcial antes da entrega; sem textos iguais conferidos nesta rodada |
+| 2026-10-08 18:55 | 11 | 72 | Correção parcial; sem textos iguais entre mais de 2 alunos. |
+| 2026-10-08 20:14 | 0 | 0 | Nenhuma alternativa pendente nesta rodada. |
 | 2026-10-09 02:55:18 | 0 | 0 | Nenhuma alternativa pendente nesta rodada. |

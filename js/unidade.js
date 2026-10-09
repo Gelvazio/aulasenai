@@ -6,9 +6,9 @@ const CRUD_UNIDADE = {
   label: "Unidades",
   table: "unidade",
   listHeaders: ["ID", "Descrição", "Cidade", "Bairro", "Endereço", "Ações"],
-  listCols: ["id", "descricao", "cidade", "bairro", "endereco", "id"],
+  listCols: ["id", "nome", "cidade", "bairro", "endereco", "id"],
   createFields: [
-    { key: "descricao", label: "Descrição", type: "text", required: true },
+    { key: "nome", label: "Nome", type: "text", required: true },
     { key: "cidade", label: "Cidade", type: "text" },
     { key: "bairro", label: "Bairro", type: "text" },
     { key: "endereco", label: "Endereço", type: "text" },
@@ -27,7 +27,7 @@ function fecharModalUnidades() {
 
 async function listarUnidades() {
   try {
-    cacheUnidade = await sbGet("unidade", "select=*&order=descricao");
+    cacheUnidade = await sbGet("unidade", "select=*&order=nome");
     const tbody = document.getElementById("unidadeTbody");
     const vazio = document.getElementById("unidadeVazio");
 
@@ -43,13 +43,13 @@ async function listarUnidades() {
         (u) => `
       <tr style="border-bottom:1px solid #eee">
         <td style="padding:8px 10px">${u.id}</td>
-        <td style="padding:8px 10px;font-weight:600">${u.descricao}</td>
+        <td style="padding:8px 10px;font-weight:600">${u.nome}</td>
         <td style="padding:8px 10px">${u.cidade || "—"}</td>
         <td style="padding:8px 10px">${u.bairro || "—"}</td>
         <td style="padding:8px 10px">${u.endereco || "—"}</td>
         <td style="padding:8px 10px;white-space:nowrap">
           <button onclick="editarUnidade(${u.id})" style="background:#e3f2fd;color:#1565c0;border:none;border-radius:5px;padding:4px 8px;font-size:12px;cursor:pointer;margin-right:4px">✏️</button>
-          <button onclick="excluirUnidade(${u.id},'${(u.descricao || "").replace(/'/g, "\\'")}')" style="background:#fce4ec;color:#c62828;border:none;border-radius:5px;padding:4px 8px;font-size:12px;cursor:pointer">🗑️</button>
+          <button onclick="excluirUnidade(${u.id},'${(u.nome || "").replace(/'/g, "\\'")}')" style="background:#fce4ec;color:#c62828;border:none;border-radius:5px;padding:4px 8px;font-size:12px;cursor:pointer">🗑️</button>
         </td>
       </tr>
     `
@@ -80,7 +80,7 @@ function editarUnidade(id) {
   const u = cacheUnidade.find((x) => x.id === id);
   if (!u) return;
   document.getElementById("unidadeEditId").value = u.id;
-  document.getElementById("unidadeDescricao").value = u.descricao || "";
+  document.getElementById("unidadeDescricao").value = u.nome || "";
   document.getElementById("unidadeCidade").value = u.cidade || "";
   document.getElementById("unidadeBairro").value = u.bairro || "";
   document.getElementById("unidadeEndereco").value = u.endereco || "";
@@ -103,7 +103,7 @@ async function salvarUnidade() {
 
   const id = document.getElementById("unidadeEditId").value;
   const dados = {
-    descricao: descricao,
+    nome: descricao,
     cidade: document.getElementById("unidadeCidade").value.trim() || null,
     bairro: document.getElementById("unidadeBairro").value.trim() || null,
     endereco: document.getElementById("unidadeEndereco").value.trim() || null,
