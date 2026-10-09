@@ -99,4 +99,75 @@ begin
       (v_atividade, 48, 'Detetive dos Dados', 'A'),
       (v_atividade, 49, 'Informação para Decisão', 'C'),
       (v_atividade, 50, 'Relacional ou Não Relacional', 'D');
+
+  -- Aula 2: Gerenciadores: Características, Requisitos e Níveis
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Gerenciadores: Características, Requisitos e Níveis' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (2, 'Gerenciadores: Características, Requisitos e Níveis', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Gerenciadores: Características, Requisitos e Níveis', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Gerenciadores: Características, Requisitos e Níveis (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-02-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Característica Modelo de Dados', 'B'),
+      (v_atividade, 2, 'Licença Livre', 'B'),
+      (v_atividade, 3, 'Licença Comercial', 'C'),
+      (v_atividade, 4, 'O Que É Transação', 'A'),
+      (v_atividade, 5, 'Atomicidade', 'B'),
+      (v_atividade, 6, 'Consistência', 'D'),
+      (v_atividade, 7, 'Isolamento', 'A'),
+      (v_atividade, 8, 'Durabilidade', 'B'),
+      (v_atividade, 9, 'COMMIT', 'B'),
+      (v_atividade, 10, 'ROLLBACK', 'B'),
+      (v_atividade, 11, 'Pedido sem Pagamento', 'A'),
+      (v_atividade, 12, 'Estoque Negativo', 'D'),
+      (v_atividade, 13, 'Escalabilidade Vertical', 'A'),
+      (v_atividade, 14, 'Escalabilidade Horizontal', 'D'),
+      (v_atividade, 15, 'Desempenho', 'C'),
+      (v_atividade, 16, 'Segurança do Gerenciador', 'C'),
+      (v_atividade, 17, 'Ferramentas e Comunidade', 'C'),
+      (v_atividade, 18, 'SQLite', 'B'),
+      (v_atividade, 19, 'MongoDB', 'A'),
+      (v_atividade, 20, 'MySQL e MariaDB', 'D'),
+      (v_atividade, 21, 'SQL Server', 'D'),
+      (v_atividade, 22, 'PostgreSQL e JSON', 'D'),
+      (v_atividade, 23, 'Requisito de Sistema Operacional', 'C'),
+      (v_atividade, 24, 'Requisito de Disco', 'A'),
+      (v_atividade, 25, 'Porta do PostgreSQL', 'B'),
+      (v_atividade, 26, 'Porta do MySQL', 'C'),
+      (v_atividade, 27, 'Porta do SQL Server', 'D'),
+      (v_atividade, 28, 'Requisito de Rede', 'C'),
+      (v_atividade, 29, 'Requisito de Pessoas', 'D'),
+      (v_atividade, 30, 'Requisito de Disponibilidade', 'B'),
+      (v_atividade, 31, 'Níveis de Gerenciamento', 'C'),
+      (v_atividade, 32, 'Nível Externo', 'C'),
+      (v_atividade, 33, 'Nível Conceitual', 'A'),
+      (v_atividade, 34, 'Nível Físico', 'B'),
+      (v_atividade, 35, 'Classificando o Nível 1', 'A'),
+      (v_atividade, 36, 'Classificando o Nível 2', 'D'),
+      (v_atividade, 37, 'Classificando o Nível 3', 'A'),
+      (v_atividade, 38, 'Independência Lógica', 'B'),
+      (v_atividade, 39, 'Independência Física', 'A'),
+      (v_atividade, 40, 'Papel do Usuário Final', 'C'),
+      (v_atividade, 41, 'Papel do Desenvolvedor', 'D'),
+      (v_atividade, 42, 'Papel do DBA', 'B'),
+      (v_atividade, 43, 'Primeiro Passo da Escolha', 'A'),
+      (v_atividade, 44, 'Critério de Escolha', 'A'),
+      (v_atividade, 45, 'Justificativa Registrada', 'B'),
+      (v_atividade, 46, 'Loja Ponto Web', 'C'),
+      (v_atividade, 47, 'App de Anotações', 'D'),
+      (v_atividade, 48, 'Leilão dos Gerenciadores', 'D'),
+      (v_atividade, 49, 'Requisito ou Característica', 'C'),
+      (v_atividade, 50, 'Visão para Cada Setor', 'A');
 end $$;

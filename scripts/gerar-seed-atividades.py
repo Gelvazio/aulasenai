@@ -194,6 +194,8 @@ PASTA_BANCO_DADOS = "MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVI
 ATIVIDADES_BANCO_DADOS = [
     (1, "Banco de Dados e SGBD: Conceitos e Usos", DATA_PROVISORIA,
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-01-50-QUESTOES.md"),
+    (2, "Gerenciadores: Características, Requisitos e Níveis", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-02-50-QUESTOES.md"),
 ]
 
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.

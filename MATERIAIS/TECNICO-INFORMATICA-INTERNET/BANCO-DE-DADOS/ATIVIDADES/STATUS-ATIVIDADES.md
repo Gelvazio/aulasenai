@@ -13,7 +13,7 @@
 | Aula | Tema | Página | Questões | Fonte (`.md`) | Banco | Status |
 |---|---|---|---|---|---|---|
 | 01 | Banco de dados e SGBD: conceitos e usos | ✅ `ATIVIDADES-AULA-01-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
-| 02 | Gerenciadores: características, requisitos e níveis | ⬜ `ATIVIDADES-AULA-02-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
+| 02 | Gerenciadores: características, requisitos e níveis | ✅ `ATIVIDADES-AULA-02-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 03 | Preparação do ambiente: instalação do PostgreSQL | ⬜ `ATIVIDADES-AULA-03-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 04 | Configuração do SGBD e infraestrutura do sistema | ⬜ `ATIVIDADES-AULA-04-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 05 | Demandas do cliente e escopo do projeto | ⬜ `ATIVIDADES-AULA-05-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
@@ -38,7 +38,7 @@
 | Aula | Página | Itens × tópicos | Fonte + padrão de resposta | Banco | Status |
 |---|---|---|---|---|---|
 | 01 | ✅ `ATIVIDADE-PRATICA-AULA-01.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
-| 02 | ⬜ `ATIVIDADE-PRATICA-AULA-02.html` | — | ⬜ | ⬜ | ⬜ Pendente |
+| 02 | ✅ `ATIVIDADE-PRATICA-AULA-02.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 03 | ⬜ `ATIVIDADE-PRATICA-AULA-03.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 04 | ⬜ `ATIVIDADE-PRATICA-AULA-04.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 05 | ⬜ `ATIVIDADE-PRATICA-AULA-05.html` | — | ⬜ | ⬜ | ⬜ Pendente |

@@ -11,7 +11,7 @@
 | Aula | Tema | Aula em `CONTEUDO/` | Slides | Atividade 50 questões | Prática | Banco |
 |---|---|---|---|---|---|---|
 | 01 | Banco de dados e SGBD: conceitos e usos | ✅ `CONTEUDO/AULA-01-BANCO-DE-DADOS-E-SGBD.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-01-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-01.html` | ⬜ seeds gerados, não aplicados |
-| 02 | Gerenciadores: características, requisitos e níveis | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 02 | Gerenciadores: características, requisitos e níveis | ✅ `CONTEUDO/AULA-02-GERENCIADORES-CARACTERISTICAS-REQUISITOS-E-NIVEIS.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-02-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-02.html` | ⬜ seeds gerados, não aplicados |
 | 03 | Preparação do ambiente: instalação do PostgreSQL | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 04 | Configuração do SGBD e infraestrutura do sistema | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 05 | Demandas do cliente e escopo do projeto | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
