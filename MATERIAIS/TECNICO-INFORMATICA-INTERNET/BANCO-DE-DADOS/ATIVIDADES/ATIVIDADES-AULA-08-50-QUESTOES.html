@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 08 — Relacionamentos 1:1, 1:N e N:N (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="08" data-tema="Relacionamentos 1:1, 1:N e N:N" data-total="50"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🔗 Aula 08: Relacionamentos 1:1, 1:N e N:N</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-08-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Definição de Relacionamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um relacionamento no MER?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A associação entre entidades que o sistema precisa registrar.</li>
+                        <li><span class="letra">B)</span>Uma ocorrência de entidade.</li>
+                        <li><span class="letra">C)</span>Um atributo composto.</li>
+                        <li><span class="letra">D)</span>Um usuário do banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Nome do Relacionamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como um relacionamento costuma ser nomeado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com uma cor.</li>
+                        <li><span class="letra">B)</span>Com o nome do servidor.</li>
+                        <li><span class="letra">C)</span>Com um número de porta.</li>
+                        <li><span class="letra">D)</span>Com um verbo, como &quot;faz&quot;, &quot;oferece&quot; ou &quot;realiza&quot;.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Notação do Relacionamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No DER usado na aula, como o relacionamento é desenhado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Como uma elipse solta.</li>
+                        <li><span class="letra">B)</span>Como um retângulo de linha dupla.</li>
+                        <li><span class="letra">C)</span>Como um triângulo.</li>
+                        <li><span class="letra">D)</span>Como um losango ligando as entidades.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Duas Perguntas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como descobrir a cardinalidade máxima de um relacionamento entre A e B?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Contando o número de atributos de A.</li>
+                        <li><span class="letra">B)</span>Perguntando quantos B um A tem no máximo e quantos A um B tem no máximo.</li>
+                        <li><span class="letra">C)</span>Olhando o tamanho do nome das entidades.</li>
+                        <li><span class="letra">D)</span>Perguntando só quantos B um A tem.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Leitura num Sentido Só</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o risco de ler a frase do relacionamento num sentido só?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A tabela perder os acentos.</li>
+                        <li><span class="letra">B)</span>O servidor mudar de porta.</li>
+                        <li><span class="letra">C)</span>O banco ficar sem senha.</li>
+                        <li><span class="letra">D)</span>Marcar 1:N quando, na verdade, o relacionamento é N:N.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Um para Um</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que caracteriza um relacionamento 1:1?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Várias de um lado se ligam a várias do outro.</li>
+                        <li><span class="letra">B)</span>Uma ocorrência de um lado se liga a várias do outro.</li>
+                        <li><span class="letra">C)</span>Cada ocorrência de um lado se liga a no máximo uma do outro lado.</li>
+                        <li><span class="letra">D)</span>Nenhuma ocorrência se liga.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Exemplo de 1:1</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual destes é um exemplo de relacionamento 1:1?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um cliente faz vários pedidos.</li>
+                        <li><span class="letra">B)</span>Um funcionário tem um crachá e um crachá pertence a um funcionário.</li>
+                        <li><span class="letra">C)</span>Um aluno faz várias turmas e uma turma tem vários alunos.</li>
+                        <li><span class="letra">D)</span>Um curso tem várias turmas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Implementação do 1:1</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como um relacionamento 1:1 costuma ser implementado nas tabelas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com chave estrangeira com UNIQUE num dos lados, ou juntando numa só tabela.</li>
+                        <li><span class="letra">B)</span>Sem nenhuma ligação entre as tabelas.</li>
+                        <li><span class="letra">C)</span>Com uma tabela associativa obrigatória.</li>
+                        <li><span class="letra">D)</span>Com a chave estrangeira repetida nos dois lados sem restrição.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Um para Muitos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que caracteriza um relacionamento 1:N?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma ocorrência de um lado se liga a várias do outro, e cada uma destas se liga a uma só.</li>
+                        <li><span class="letra">B)</span>Cada ocorrência se liga a uma só nos dois lados.</li>
+                        <li><span class="letra">C)</span>Nenhuma ocorrência se repete.</li>
+                        <li><span class="letra">D)</span>Várias se ligam a várias nos dois lados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Exemplo de 1:N</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">&quot;Um curso tem várias turmas; uma turma é de um curso.&quot; Qual é a cardinalidade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>0:0.</li>
+                        <li><span class="letra">B)</span>1:N.</li>
+                        <li><span class="letra">C)</span>N:N.</li>
+                        <li><span class="letra">D)</span>1:1.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Chave Estrangeira no 1:N</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num relacionamento 1:N entre CURSO e TURMA, onde fica a chave estrangeira?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Numa tabela associativa obrigatória.</li>
+                        <li><span class="letra">B)</span>Em CURSO, que guarda a lista de turmas.</li>
+                        <li><span class="letra">C)</span>Em TURMA, o lado N, que guarda o id do curso.</li>
+                        <li><span class="letra">D)</span>Em nenhuma das duas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Cliente e Pedido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">&quot;Um cliente faz vários pedidos; um pedido é de um cliente.&quot; Onde fica a chave estrangeira?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Em PEDIDO, com o id do cliente.</li>
+                        <li><span class="letra">B)</span>Em PRODUTO.</li>
+                        <li><span class="letra">C)</span>Em nenhuma tabela.</li>
+                        <li><span class="letra">D)</span>Em CLIENTE, com a lista de pedidos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Muitos para Muitos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que caracteriza um relacionamento N:N?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nenhuma ocorrência se liga.</li>
+                        <li><span class="letra">B)</span>Uma de um lado se liga a várias do outro, e não o contrário.</li>
+                        <li><span class="letra">C)</span>Várias ocorrências de um lado se ligam a várias do outro.</li>
+                        <li><span class="letra">D)</span>Uma de cada lado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Exemplo de N:N</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">&quot;Um aluno faz várias turmas; uma turma tem vários alunos.&quot; Qual é a cardinalidade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>N:N.</li>
+                        <li><span class="letra">B)</span>1:1.</li>
+                        <li><span class="letra">C)</span>0:1.</li>
+                        <li><span class="letra">D)</span>1:N.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Implementação do N:N</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como um relacionamento N:N é implementado nas tabelas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com uma tabela associativa no meio, contendo as duas chaves estrangeiras.</li>
+                        <li><span class="letra">B)</span>Com uma chave estrangeira em apenas um dos lados.</li>
+                        <li><span class="letra">C)</span>Juntando as duas entidades numa só tabela.</li>
+                        <li><span class="letra">D)</span>Sem nenhuma ligação.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Associativa do Pedido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O relacionamento N:N entre PEDIDO e PRODUTO é resolvido por qual tabela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>CATEGORIA.</li>
+                        <li><span class="letra">B)</span>FORNECEDOR.</li>
+                        <li><span class="letra">C)</span>CLIENTE.</li>
+                        <li><span class="letra">D)</span>ITEM_PEDIDO, com id do pedido, id do produto, quantidade e preço.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Associativa da Escola</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O relacionamento N:N entre ALUNO e TURMA é resolvido por qual tabela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>PROFESSOR.</li>
+                        <li><span class="letra">B)</span>CURSO.</li>
+                        <li><span class="letra">C)</span>PARCELA.</li>
+                        <li><span class="letra">D)</span>MATRÍCULA.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">N:N sem Associativa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o erro de deixar um relacionamento N:N sem tabela associativa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O banco fica mais rápido.</li>
+                        <li><span class="letra">B)</span>Nenhum erro, é o recomendado.</li>
+                        <li><span class="letra">C)</span>O relacionamento vira 1:1.</li>
+                        <li><span class="letra">D)</span>Não há onde guardar as ligações e os dados próprios de cada combinação.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">FK no Lado 1</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o erro de colocar a chave estrangeira no lado 1 de um 1:N, como em CURSO?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O curso perde o nome.</li>
+                        <li><span class="letra">B)</span>O curso teria de guardar uma lista de turmas num campo só, o que não funciona bem.</li>
+                        <li><span class="letra">C)</span>Nenhum erro.</li>
+                        <li><span class="letra">D)</span>A turma deixa de existir.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Cardinalidade Mínima</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a cardinalidade mínima indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O tamanho do texto do atributo.</li>
+                        <li><span class="letra">B)</span>Se a participação no relacionamento é obrigatória (1) ou opcional (0).</li>
+                        <li><span class="letra">C)</span>A porta do servidor.</li>
+                        <li><span class="letra">D)</span>O número máximo de ligações.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Participação Opcional</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">&quot;Um cliente pode estar cadastrado sem nenhum pedido.&quot; Qual é a cardinalidade mínima do lado do pedido para o cliente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>N, muitos obrigatórios.</li>
+                        <li><span class="letra">B)</span>1, participação obrigatória.</li>
+                        <li><span class="letra">C)</span>0, participação opcional.</li>
+                        <li><span class="letra">D)</span>Não existe mínima.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Participação Obrigatória</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">&quot;Todo pedido precisa ter um cliente.&quot; Qual é a cardinalidade mínima do pedido em relação ao cliente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1, participação obrigatória.</li>
+                        <li><span class="letra">B)</span>N.</li>
+                        <li><span class="letra">C)</span>0, participação opcional.</li>
+                        <li><span class="letra">D)</span>Indefinida.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Leitura da Notação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como se lê CLIENTE (1,1) —faz— (0,N) PEDIDO?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um pedido tem de 0 a N clientes.</li>
+                        <li><span class="letra">B)</span>Um cliente faz de 0 a N pedidos; um pedido é feito por exatamente 1 cliente.</li>
+                        <li><span class="letra">C)</span>Clientes e pedidos não se ligam.</li>
+                        <li><span class="letra">D)</span>Um cliente faz exatamente 1 pedido.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Pé de Galinha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na notação pé de galinha, o tridente indica:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Muitos.</li>
+                        <li><span class="letra">B)</span>Atributo composto.</li>
+                        <li><span class="letra">C)</span>Um.</li>
+                        <li><span class="letra">D)</span>Zero.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Círculo no Pé de Galinha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na notação pé de galinha, o círculo indica:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Chave primária.</li>
+                        <li><span class="letra">B)</span>Zero, participação opcional.</li>
+                        <li><span class="letra">C)</span>Entidade fraca.</li>
+                        <li><span class="letra">D)</span>Muitos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Traço no Pé de Galinha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na notação pé de galinha, o traço indica:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Zero.</li>
+                        <li><span class="letra">B)</span>Muitos.</li>
+                        <li><span class="letra">C)</span>Atributo opcional.</li>
+                        <li><span class="letra">D)</span>Um.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Autorrelacionamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um autorrelacionamento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Duas entidades com o mesmo nome.</li>
+                        <li><span class="letra">B)</span>Um relacionamento sem verbo.</li>
+                        <li><span class="letra">C)</span>Um relacionamento entre três entidades.</li>
+                        <li><span class="letra">D)</span>Uma entidade que se relaciona com ela mesma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Exemplo de Autorrelacionamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é um exemplo de autorrelacionamento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um cliente faz vários pedidos.</li>
+                        <li><span class="letra">B)</span>Um aluno faz várias turmas.</li>
+                        <li><span class="letra">C)</span>Um curso tem várias turmas.</li>
+                        <li><span class="letra">D)</span>Um funcionário supervisiona vários funcionários.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Implementação do Autorrelacionamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como é implementado o autorrelacionamento 1:N &quot;funcionário supervisiona funcionários&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com dois bancos de dados.</li>
+                        <li><span class="letra">B)</span>Com uma chave estrangeira id_supervisor que aponta para a própria tabela FUNCIONÁRIO.</li>
+                        <li><span class="letra">C)</span>Sem chave estrangeira.</li>
+                        <li><span class="letra">D)</span>Com uma tabela CLIENTE.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Pré-requisito</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">&quot;Um curso pode ser pré-requisito de vários cursos, e um curso pode ter vários pré-requisitos.&quot; Qual é o tipo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Atributo composto de CURSO.</li>
+                        <li><span class="letra">B)</span>Autorrelacionamento N:N em CURSO.</li>
+                        <li><span class="letra">C)</span>Relacionamento 1:1 entre CURSO e ALUNO.</li>
+                        <li><span class="letra">D)</span>Entidade fraca de TURMA.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Cupom e Pedido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">&quot;Cada pedido tem um só cupom, mas um cupom pode ser usado em vários pedidos.&quot; Qual é a cardinalidade entre CUPOM e PEDIDO?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>1:1, com UNIQUE.</li>
+                        <li><span class="letra">B)</span>1:N, com a chave estrangeira do cupom em PEDIDO.</li>
+                        <li><span class="letra">C)</span>N:N, com tabela associativa obrigatória.</li>
+                        <li><span class="letra">D)</span>Nenhum relacionamento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Aluno e Armário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">&quot;Um aluno tem um armário e um armário é de um aluno.&quot; Qual é a cardinalidade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Autorrelacionamento.</li>
+                        <li><span class="letra">B)</span>N:N.</li>
+                        <li><span class="letra">C)</span>1:N.</li>
+                        <li><span class="letra">D)</span>1:1.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Médico e Paciente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">&quot;Um médico atende vários pacientes e um paciente é atendido por vários médicos.&quot; Como implementar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com uma tabela associativa, como CONSULTA, entre MÉDICO e PACIENTE.</li>
+                        <li><span class="letra">B)</span>Com UNIQUE no paciente.</li>
+                        <li><span class="letra">C)</span>Com a chave do médico em PACIENTE apenas.</li>
+                        <li><span class="letra">D)</span>Juntando médico e paciente na mesma tabela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Matrícula e Parcela</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">&quot;Cada matrícula gera uma ou mais parcelas; cada parcela é de uma matrícula.&quot; Qual é a cardinalidade completa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>MATRÍCULA (1,1) — (1,1) PARCELA.</li>
+                        <li><span class="letra">B)</span>MATRÍCULA (0,N) — (0,N) PARCELA.</li>
+                        <li><span class="letra">C)</span>MATRÍCULA (1,1) — (1,N) PARCELA.</li>
+                        <li><span class="letra">D)</span>Não há relacionamento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Responsável e Aluno</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No exemplo da escola, RESPONSÁVEL (1,1) — (0,N) ALUNO significa:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Responsável e aluno não se ligam.</li>
+                        <li><span class="letra">B)</span>Um responsável responde por zero ou mais alunos, e cada aluno tem exatamente um responsável cadastrado.</li>
+                        <li><span class="letra">C)</span>Cada responsável tem exatamente um aluno.</li>
+                        <li><span class="letra">D)</span>Um aluno tem vários responsáveis obrigatórios.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Professor e Turma</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No exemplo da escola, por que PROFESSOR e TURMA são N:N?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque professor é atributo de turma.</li>
+                        <li><span class="letra">B)</span>Porque um professor dá aula em várias turmas e uma turma pode ter mais de um professor.</li>
+                        <li><span class="letra">C)</span>Porque turma é entidade fraca de professor.</li>
+                        <li><span class="letra">D)</span>Porque cada turma tem um único professor para sempre.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Curso e Turma na Escola</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No exemplo da escola, CURSO (1,1) — (0,N) TURMA indica que:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Curso e turma não se relacionam.</li>
+                        <li><span class="letra">B)</span>Cada curso tem exatamente uma turma.</li>
+                        <li><span class="letra">C)</span>Um curso pode ter nenhuma ou várias turmas, e cada turma pertence a exatamente um curso.</li>
+                        <li><span class="letra">D)</span>Uma turma pode ter vários cursos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Obrigatória sem Perguntar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o erro de marcar uma participação como obrigatória sem perguntar ao cliente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O banco pode passar a recusar cadastros que o cliente precisa fazer, como cliente sem pedido.</li>
+                        <li><span class="letra">B)</span>Nenhum erro.</li>
+                        <li><span class="letra">C)</span>O DER perde o losango.</li>
+                        <li><span class="letra">D)</span>O banco fica sem tabelas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">FK e Referencial</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A chave estrangeira do lado N de um 1:N corresponde a qual tipo de atributo da aula 7?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Atributo referencial.</li>
+                        <li><span class="letra">B)</span>Atributo composto de endereço.</li>
+                        <li><span class="letra">C)</span>Atributo descritivo de cor.</li>
+                        <li><span class="letra">D)</span>Atributo opcional sem uso.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Dados da Ligação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num N:N, onde ficam os dados próprios da ligação, como quantidade e preço de venda?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No nome do relacionamento.</li>
+                        <li><span class="letra">B)</span>Na tabela associativa.</li>
+                        <li><span class="letra">C)</span>No servidor de banco, fora das tabelas.</li>
+                        <li><span class="letra">D)</span>Na entidade do lado esquerdo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Dinâmica: Duas Perguntas em Voz Alta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica &quot;Quantos de cada lado?&quot;, por que a dupla faz as duas perguntas em voz alta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para decorar os comandos SQL.</li>
+                        <li><span class="letra">B)</span>Para treinar a pronúncia dos nomes.</li>
+                        <li><span class="letra">C)</span>Para não esquecer de analisar os dois sentidos do relacionamento.</li>
+                        <li><span class="letra">D)</span>Para descobrir a porta do servidor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Dinâmica: Divergência</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica, quando duas duplas divergem sobre a cardinalidade, o que fazem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cada uma justifica a partir da frase do cliente.</li>
+                        <li><span class="letra">B)</span>Escolhem a resposta da dupla mais rápida.</li>
+                        <li><span class="letra">C)</span>Apagam o cartão.</li>
+                        <li><span class="letra">D)</span>Sorteiam a cardinalidade.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Entrega da SA 1</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o grupo entrega nesta aula, na SA 1?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A lista dos relacionamentos com verbo, cardinalidades mínima e máxima, frase de leitura e forma de implementação.</li>
+                        <li><span class="letra">B)</span>Somente a lista de atributos.</li>
+                        <li><span class="letra">C)</span>A instalação do PostgreSQL.</li>
+                        <li><span class="letra">D)</span>O backup do banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Próximo Passo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Com entidades, atributos e relacionamentos definidos, o que se faz na aula 9?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A configuração do firewall.</li>
+                        <li><span class="letra">B)</span>A normalização até a 5FN.</li>
+                        <li><span class="letra">C)</span>O diagrama entidade-relacionamento (DER).</li>
+                        <li><span class="letra">D)</span>O backup do servidor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Turma e Sala</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">&quot;Uma turma usa uma sala por semestre, e uma sala é usada por várias turmas em horários diferentes.&quot; Qual é a cardinalidade entre SALA e TURMA?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nenhum relacionamento.</li>
+                        <li><span class="letra">B)</span>1:1.</li>
+                        <li><span class="letra">C)</span>1:N, com a sala referenciada em TURMA.</li>
+                        <li><span class="letra">D)</span>N:N obrigatório com associativa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Produto e Categoria</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">&quot;Cada produto pertence a uma categoria; uma categoria tem vários produtos.&quot; Onde fica a chave estrangeira?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Em CLIENTE.</li>
+                        <li><span class="letra">B)</span>Numa tabela associativa obrigatória.</li>
+                        <li><span class="letra">C)</span>Em PRODUTO, com o id da categoria.</li>
+                        <li><span class="letra">D)</span>Em CATEGORIA, com a lista de produtos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Autor e Livro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">&quot;Um livro pode ter vários autores e um autor escreve vários livros.&quot; Qual é a implementação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Juntar autor e livro numa só tabela.</li>
+                        <li><span class="letra">B)</span>Chave do autor dentro de LIVRO apenas.</li>
+                        <li><span class="letra">C)</span>Tabela associativa LIVRO_AUTOR com o id do livro e o id do autor.</li>
+                        <li><span class="letra">D)</span>UNIQUE no autor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Cardinalidade Máxima e Mínima</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a diferença entre cardinalidade máxima e mínima?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>São a mesma coisa.</li>
+                        <li><span class="letra">B)</span>A máxima é sempre zero.</li>
+                        <li><span class="letra">C)</span>A mínima define o tipo de dado.</li>
+                        <li><span class="letra">D)</span>A máxima diz quantos no máximo se ligam; a mínima diz se a ligação é obrigatória ou opcional.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Ligação com a Aula 6</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A tabela associativa que resolve um N:N corresponde a qual conceito da aula 6?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ocorrência.</li>
+                        <li><span class="letra">B)</span>Entidade fraca de linha dupla sem relação.</li>
+                        <li><span class="letra">C)</span>Entidade associativa.</li>
+                        <li><span class="letra">D)</span>Atributo simples.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Verbo nos Dois Sentidos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em CLIENTE —faz— PEDIDO, como fica a leitura no sentido contrário?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um pedido faz vários clientes.</li>
+                        <li><span class="letra">B)</span>O pedido não pode ser lido ao contrário.</li>
+                        <li><span class="letra">C)</span>Um cliente é feito por um pedido.</li>
+                        <li><span class="letra">D)</span>Um pedido é feito por um cliente.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Aula 08: Relacionamentos 1:1, 1:N e N:N</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

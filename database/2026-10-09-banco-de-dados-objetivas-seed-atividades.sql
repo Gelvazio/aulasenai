@@ -454,4 +454,75 @@ begin
       (v_atividade, 48, 'Tipos no PostgreSQL', 'B'),
       (v_atividade, 49, 'Atributo de Associativa', 'D'),
       (v_atividade, 50, 'Classificação em Duas Dimensões', 'A');
+
+  -- Aula 8: Relacionamentos 1:1, 1:N e N:N
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Relacionamentos 1:1, 1:N e N:N' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (8, 'Relacionamentos 1:1, 1:N e N:N', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Relacionamentos 1:1, 1:N e N:N', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Relacionamentos 1:1, 1:N e N:N (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-08-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Definição de Relacionamento', 'A'),
+      (v_atividade, 2, 'Nome do Relacionamento', 'D'),
+      (v_atividade, 3, 'Notação do Relacionamento', 'D'),
+      (v_atividade, 4, 'Duas Perguntas', 'B'),
+      (v_atividade, 5, 'Leitura num Sentido Só', 'D'),
+      (v_atividade, 6, 'Um para Um', 'C'),
+      (v_atividade, 7, 'Exemplo de 1:1', 'B'),
+      (v_atividade, 8, 'Implementação do 1:1', 'A'),
+      (v_atividade, 9, 'Um para Muitos', 'A'),
+      (v_atividade, 10, 'Exemplo de 1:N', 'B'),
+      (v_atividade, 11, 'Chave Estrangeira no 1:N', 'C'),
+      (v_atividade, 12, 'Cliente e Pedido', 'A'),
+      (v_atividade, 13, 'Muitos para Muitos', 'C'),
+      (v_atividade, 14, 'Exemplo de N:N', 'A'),
+      (v_atividade, 15, 'Implementação do N:N', 'A'),
+      (v_atividade, 16, 'Associativa do Pedido', 'D'),
+      (v_atividade, 17, 'Associativa da Escola', 'D'),
+      (v_atividade, 18, 'N:N sem Associativa', 'D'),
+      (v_atividade, 19, 'FK no Lado 1', 'B'),
+      (v_atividade, 20, 'Cardinalidade Mínima', 'B'),
+      (v_atividade, 21, 'Participação Opcional', 'C'),
+      (v_atividade, 22, 'Participação Obrigatória', 'A'),
+      (v_atividade, 23, 'Leitura da Notação', 'B'),
+      (v_atividade, 24, 'Pé de Galinha', 'A'),
+      (v_atividade, 25, 'Círculo no Pé de Galinha', 'B'),
+      (v_atividade, 26, 'Traço no Pé de Galinha', 'D'),
+      (v_atividade, 27, 'Autorrelacionamento', 'D'),
+      (v_atividade, 28, 'Exemplo de Autorrelacionamento', 'D'),
+      (v_atividade, 29, 'Implementação do Autorrelacionamento', 'B'),
+      (v_atividade, 30, 'Pré-requisito', 'B'),
+      (v_atividade, 31, 'Cupom e Pedido', 'B'),
+      (v_atividade, 32, 'Aluno e Armário', 'D'),
+      (v_atividade, 33, 'Médico e Paciente', 'A'),
+      (v_atividade, 34, 'Matrícula e Parcela', 'C'),
+      (v_atividade, 35, 'Responsável e Aluno', 'B'),
+      (v_atividade, 36, 'Professor e Turma', 'B'),
+      (v_atividade, 37, 'Curso e Turma na Escola', 'C'),
+      (v_atividade, 38, 'Obrigatória sem Perguntar', 'A'),
+      (v_atividade, 39, 'FK e Referencial', 'A'),
+      (v_atividade, 40, 'Dados da Ligação', 'B'),
+      (v_atividade, 41, 'Dinâmica: Duas Perguntas em Voz Alta', 'C'),
+      (v_atividade, 42, 'Dinâmica: Divergência', 'A'),
+      (v_atividade, 43, 'Entrega da SA 1', 'A'),
+      (v_atividade, 44, 'Próximo Passo', 'C'),
+      (v_atividade, 45, 'Turma e Sala', 'C'),
+      (v_atividade, 46, 'Produto e Categoria', 'C'),
+      (v_atividade, 47, 'Autor e Livro', 'C'),
+      (v_atividade, 48, 'Cardinalidade Máxima e Mínima', 'D'),
+      (v_atividade, 49, 'Ligação com a Aula 6', 'C'),
+      (v_atividade, 50, 'Verbo nos Dois Sentidos', 'D');
 end $$;

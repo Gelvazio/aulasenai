@@ -17,7 +17,7 @@
 | 05 | Demandas do cliente e escopo do projeto | ✅ `CONTEUDO/AULA-05-DEMANDAS-DO-CLIENTE-E-ESCOPO-DO-PROJETO.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-05-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-05.html` | ⬜ seeds gerados, não aplicados |
 | 06 | Entidades fortes, fracas e associativas | ✅ `CONTEUDO/AULA-06-ENTIDADES-FORTES-FRACAS-E-ASSOCIATIVAS.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-06-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-06.html` | ⬜ seeds gerados, não aplicados |
 | 07 | Atributos | ✅ `CONTEUDO/AULA-07-ATRIBUTOS.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-07-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-07.html` | ⬜ seeds gerados, não aplicados |
-| 08 | Relacionamentos 1:1, 1:N e N:N | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 08 | Relacionamentos 1:1, 1:N e N:N | ✅ `CONTEUDO/AULA-08-RELACIONAMENTOS-1-1-1-N-E-N-N.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-08-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-08.html` | ⬜ seeds gerados, não aplicados |
 | 09 | Diagrama entidade-relacionamento | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 10 | Normalização de dados (1FN, 2FN e 3FN) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 11 | Padronização de dados, cronograma e fluxograma | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
