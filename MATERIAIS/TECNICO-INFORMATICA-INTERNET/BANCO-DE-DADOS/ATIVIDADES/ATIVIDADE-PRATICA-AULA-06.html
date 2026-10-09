@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Prática — Aula 06 — Entidades Fortes, Fracas e Associativas (10 Questões Discursivas)</title>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/avaliacao-discursiva.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+
+</head>
+<body data-aula="AP-06" data-tema="Entidades Fortes, Fracas e Associativas" data-total="10" data-topicos="30"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados" data-docente="Gelvazio Camargo" data-bloquear-colar="sim" data-campo-tamanho-resposta="sim" data-progresso-professor="sim" data-ocultar-respostas-entregue="sim"
+      data-maximo-caracteres="3000" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🧩 Atividade Prática — Aula 06: Entidades Fortes, Fracas e Associativas</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 10 Questões Discursivas</p>
+        </header>
+
+        <main class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADE-PRATICA-AULA-06.md por gerar_avaliacao_discursiva.py -->
+            <section class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <h2 class="aula-title">Como Responder</h2>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Discursiva estruturada (o aluno digita a resposta de cada tópico no sistema)<br>
+                        <strong>Total de questões:</strong> 10 (30 tópicos)<br>
+                        <strong>Pontuação:</strong> 1,0 ponto por questão, dividido em 3 tópicos (0,2 + 0,4 + 0,4) — total: 10 pontos
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</p>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 SEU PAPEL EM TODAS AS QUESTÕES</div>
+                    <div class="content-text">Você, como aluno consultor, foi chamado para identificar e classificar as entidades dos bancos de dados de sistemas web, a partir dos requisitos levantados com os clientes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 COMO RESPONDER</div>
+                    <div class="content-text">Cada questão tem <strong>3 tópicos</strong>, e cada tópico tem o <strong>seu campo</strong>. Responda <strong>somente o que o tópico pede</strong>, com as suas palavras: <strong>(1)</strong> o conceito ou a classificação pedida; <strong>(2)</strong> a aplicação na situação; <strong>(3)</strong> uma frase curta de justificativa quando o tópico pedir &quot;explique&quot; ou &quot;justifique&quot;. Não precisa de texto longo, mas o raciocínio tem de aparecer. Respostas copiadas da internet ou de colegas recebem nota zero no tópico.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 COMO A CORREÇÃO FUNCIONA</div>
+                    <div class="content-text">cada tópico é comparado com o padrão de resposta do professor: conceito certo, aplicação certa na situação e justificativa com as palavras-chave do conteúdo. Classificações diferentes do padrão valem quando a justificativa for coerente com os requisitos. Erros de português não tiram nota se a ideia estiver clara.</div>
+                </div>
+            </section>
+
+            <section id="painel-discursivo" class="aula-card painel-discursivo" aria-live="polite">
+                <span class="aula-badge">IDENTIFICAÇÃO</span>
+                <p class="painel-discursivo__texto">Carregando...</p>
+            </section>
+
+            <section class="aula-card questao-discursiva" id="item-01" data-item="1">
+                <span class="aula-badge">ITEM 01</span>
+                <span class="questao-discursiva__aula">📚 Aula 06 · Entidades</span>
+                <h2 class="aula-title">Para Que Serve o MER</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, ouve um colega dizer: &quot;Vou pular o modelo entidade-relacionamento e já criar as tabelas no PostgreSQL, é mais rápido&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Oriente o colega sobre o MER.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="1" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-01-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Diga o que o MER descreve.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-a" class="topico-resposta__campo" data-item="1" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="1" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-01-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Explique em que nível de gerenciamento o MER fica e por que ele é independente do SGBD.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-b" class="topico-resposta__campo" data-item="1" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="1" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-01-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique o risco de pular o MER e ir direto às tabelas.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-c" class="topico-resposta__campo" data-item="1" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-02" data-item="2">
+                <span class="aula-badge">ITEM 02</span>
+                <span class="questao-discursiva__aula">📚 Aula 06 · Entidades</span>
+                <h2 class="aula-title">Entidade e Ocorrência</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, mostra à equipe de uma biblioteca a entidade LIVRO e os registros &quot;Dom Casmurro&quot; e &quot;O Cortiço&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Explique os conceitos com a biblioteca.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="2" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-02-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Diga o que é LIVRO e o que é &quot;Dom Casmurro&quot; nos termos do MER.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-a" class="topico-resposta__campo" data-item="2" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="2" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-02-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Explique a diferença entre entidade e ocorrência e dê outro exemplo da biblioteca.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-b" class="topico-resposta__campo" data-item="2" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="2" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-02-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Dê um exemplo de entidade abstrata da biblioteca e explique por que ela é uma entidade.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-c" class="topico-resposta__campo" data-item="2" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-03" data-item="3">
+                <span class="aula-badge">ITEM 03</span>
+                <span class="questao-discursiva__aula">📚 Aula 06 · Entidades</span>
+                <h2 class="aula-title">Entidade ou Atributo</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, recebe a lista de candidatos de um app de entregas: cliente, telefone, endereço (cada cliente cadastra vários, com apelido), pedido, cor da moto e entregador.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Separe entidades de atributos.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="3" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-03-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Escreva a pergunta que ajuda a decidir entre entidade e atributo.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-a" class="topico-resposta__campo" data-item="3" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="3" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-03-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Classifique os seis candidatos em entidade ou atributo.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-b" class="topico-resposta__campo" data-item="3" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="3" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-03-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique por que endereço é entidade nesse app, mas poderia ser atributo num sistema de escola.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-c" class="topico-resposta__campo" data-item="3" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-04" data-item="4">
+                <span class="aula-badge">ITEM 04</span>
+                <span class="questao-discursiva__aula">📚 Aula 06 · Entidades</span>
+                <h2 class="aula-title">Entidades Fortes</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, analisa o banco de uma loja virtual com CLIENTE, PRODUTO, PEDIDO, ITEM_PEDIDO e CATEGORIA.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Identifique as entidades fortes.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="4" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-04-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Diga o que caracteriza uma entidade forte.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-04-a" class="topico-resposta__campo" data-item="4" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="4" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-04-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Indique as entidades fortes da loja.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-04-b" class="topico-resposta__campo" data-item="4" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="4" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-04-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique por que ITEM_PEDIDO não é forte.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-04-c" class="topico-resposta__campo" data-item="4" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-05" data-item="5">
+                <span class="aula-badge">ITEM 05</span>
+                <span class="questao-discursiva__aula">📚 Aula 06 · Entidades</span>
+                <h2 class="aula-title">Entidade Fraca e Sua Dona</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, modela o sistema de RH de uma empresa: cada funcionário pode cadastrar dependentes (filhos e cônjuge) para o plano de saúde.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Analise a entidade DEPENDENTE.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="5" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-05-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Classifique DEPENDENTE e diga qual é a entidade dona.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-05-a" class="topico-resposta__campo" data-item="5" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="5" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-05-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Explique como uma ocorrência de DEPENDENTE é identificada.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-05-b" class="topico-resposta__campo" data-item="5" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="5" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-05-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique o que acontece com os dependentes quando o funcionário é excluído e por quê.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-05-c" class="topico-resposta__campo" data-item="5" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-06" data-item="6">
+                <span class="aula-badge">ITEM 06</span>
+                <span class="questao-discursiva__aula">📚 Aula 06 · Entidades</span>
+                <h2 class="aula-title">Parcelas da Matrícula</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, recebe o requisito da escola: &quot;cada matrícula gera parcelas mensais numeradas (1ª, 2ª, 3ª...), com vencimento e valor&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Classifique e explique PARCELA.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="6" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-06-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Classifique PARCELA e diga de quem ela depende.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-06-a" class="topico-resposta__campo" data-item="6" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="6" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-06-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Explique por que &quot;parcela 3&quot; sozinha não identifica uma parcela.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-06-b" class="topico-resposta__campo" data-item="6" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="6" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-06-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique como a entidade fraca é desenhada na notação da aula e o que o desenho comunica.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-06-c" class="topico-resposta__campo" data-item="6" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-07" data-item="7">
+                <span class="aula-badge">ITEM 07</span>
+                <span class="questao-discursiva__aula">📚 Aula 06 · Entidades</span>
+                <h2 class="aula-title">Matrícula como Entidade Associativa</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, analisa a escola: um aluno faz várias turmas, uma turma tem vários alunos, e a escola precisa saber a data da matrícula, a situação (ativa, trancada, concluída) e a nota final.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Explique a entidade associativa.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="7" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-07-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Diga qual entidade associativa surge e quais entidades ela liga.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-07-a" class="topico-resposta__campo" data-item="7" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="7" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-07-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Explique por que data, situação e nota final não podem ficar em ALUNO nem em TURMA.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-07-b" class="topico-resposta__campo" data-item="7" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="7" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-07-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique quando um relacionamento vira entidade associativa.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-07-c" class="topico-resposta__campo" data-item="7" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-08" data-item="8">
+                <span class="aula-badge">ITEM 08</span>
+                <span class="questao-discursiva__aula">📚 Aula 06 · Entidades</span>
+                <h2 class="aula-title">Consulta Médica</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, modela uma clínica: um paciente passa por vários médicos e um médico atende vários pacientes; cada atendimento tem data, hora, diagnóstico e valor.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Modele as entidades da clínica.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="8" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-08-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Indique as entidades fortes e a entidade associativa.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-08-a" class="topico-resposta__campo" data-item="8" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="8" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-08-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Explique por que o atendimento é uma entidade associativa e não um atributo.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-08-b" class="topico-resposta__campo" data-item="8" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="8" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-08-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique a diferença entre entidade fraca e entidade associativa usando a clínica e o exemplo das parcelas.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-08-c" class="topico-resposta__campo" data-item="8" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-09" data-item="9">
+                <span class="aula-badge">ITEM 09</span>
+                <span class="questao-discursiva__aula">📚 Aula 06 · Entidades</span>
+                <h2 class="aula-title">Dos Requisitos às Entidades</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, lê os requisitos de uma academia: &quot;O aluno (também chamado de cliente) tem nome, CPF e telefone. O aluno contrata um plano. Cada aluno tem fichas de treino numeradas. Os instrutores montam as fichas. A academia quer, no futuro, vender suplementos&quot; (fora do escopo).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Aplique o passo a passo.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="9" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-09-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Liste os substantivos importantes encontrados.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-09-a" class="topico-resposta__campo" data-item="9" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="9" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-09-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Diga o que deve ser descartado e por quê (sinônimos, atributos e fora do escopo).
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-09-b" class="topico-resposta__campo" data-item="9" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="9" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-09-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Classifique as entidades que sobraram em forte, fraca ou associativa, justificando a ficha de treino.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-09-c" class="topico-resposta__campo" data-item="9" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-10" data-item="10">
+                <span class="aula-badge">ITEM 10</span>
+                <span class="questao-discursiva__aula">📚 Aula 06 · Entidades</span>
+                <h2 class="aula-title">Entidades do Sistema de Matrículas</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, finaliza a lista de entidades da escola de cursos livres: alunos e responsáveis; cursos com turmas em turnos; matrícula do aluno na turma; parcelas mensais; professores que dão aulas nas turmas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Monte a lista final da SA 1.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="10" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-10-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Liste as entidades do sistema de matrículas.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-10-a" class="topico-resposta__campo" data-item="10" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="10" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-10-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Classifique cada entidade em forte, fraca ou associativa.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-10-b" class="topico-resposta__campo" data-item="10" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="10" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-10-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique por que &quot;turno&quot; e &quot;telefone&quot; ficaram fora da lista de entidades e por que registrar essas decisões.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-10-c" class="topico-resposta__campo" data-item="10" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aula-card entrega-discursiva">
+                <span class="aula-badge">ENTREGA</span>
+                <h2 class="aula-title">Finalizar a avaliação</h2>
+                <p class="entrega-discursiva__texto">Confira se todos os tópicos estão com
+                    ✅ Resposta gravada. Depois de finalizar, as respostas não podem mais ser
+                    alteradas.</p>
+                <button class="btn-export entrega-discursiva__botao" id="btnFinalizarDiscursiva"
+                        type="button" hidden>✅ Finalizar e entregar</button>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Atividade Prática — Aula 06: Entidades Fortes, Fracas e Associativas</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>10 Questões • Discursiva</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/popup.js"></script>
+    <script src="../../../../assets/js/termos-tentativa.js"></script>
+    <script src="../../../../assets/js/respostas-discursivas-banco.js"></script>
+    <script src="../../../../assets/js/avaliacao-discursiva.js"></script>
+    <script src="../../../../assets/js/bloqueio-colar-discursiva.js"></script>
+    <script src="../../../../assets/js/campo-tamanho-discursiva.js"></script>
+</body>
+</html>

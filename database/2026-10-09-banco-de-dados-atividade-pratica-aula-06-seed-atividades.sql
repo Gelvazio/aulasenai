@@ -1,0 +1,57 @@
+-- Seed gerado por assets/gerador-avaliacao-discursiva (não editar à mão; fora do Git).
+-- Rodar depois de database/2026-10-01-respostas-discursivas.sql. Idempotente.
+-- A avaliação nasce BLOQUEADA (ativo = false): o professor libera no índice de atividades.
+do $$
+declare
+  v_aula bigint;
+  v_atividade bigint;
+begin
+  select a.id into v_aula from public.aulas a join public.materia m on m.id = a.materia_id
+    where m.descricao = 'BANCO DE DADOS' and a.numero = 6
+    order by a.id limit 1;
+  if v_aula is null then
+    raise exception 'Aula 6 da matéria não encontrada';
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, descricao, pagina,
+      total_itens, ativo)
+    values ('Atividade Prática — Aula 06', 'PENDENTE', v_aula, 'Atividade — Atividade Prática — Aula 06 (10 questões discursivas)',
+      '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADE-PRATICA-AULA-06.html', 10, false)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      descricao = excluded.descricao, total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.topico_discursivo where atividade_id = v_atividade;
+  insert into public.topico_discursivo (atividade_id, item, topico, enunciado, pontos,
+      resposta_esperada, criterios) values
+      (v_atividade, 1, 1, 'Diga o que o MER descreve.', 0.2, 'Descreve os dados do sistema: **entidades**, seus **atributos** e os **relacionamentos** entre elas.', 'Nota cheia (0,2): três elementos. Metade (0,1): um ou dois. Zero (0): confunde com SQL ou instalação.'),
+      (v_atividade, 1, 2, 'Explique em que nível de gerenciamento o MER fica e por que ele é independente do SGBD.', 0.4, 'Fica no **nível conceitual**; é independente do SGBD porque descreve **o que** o sistema guarda, sem comandos nem detalhes de um gerenciador específico — o mesmo MER pode virar tabelas em PostgreSQL, MySQL etc.', 'Nota cheia (0,4): nível + motivo da independência. Metade (0,2): só um. Zero (0): nível físico.'),
+      (v_atividade, 1, 3, 'Explique o risco de pular o MER e ir direto às tabelas.', 0.4, 'Sem o MER, os dados não são **entendidos e validados** com o cliente: as tabelas saem com **redundância, entidades faltando ou relacionamentos errados**, e é preciso **refazer** o banco depois, com mais custo.', 'Nota cheia (0,4): risco concreto + retrabalho. Metade (0,2): "fica errado" sem detalhar. Zero (0): diz que não há risco.'),
+      (v_atividade, 2, 1, 'Diga o que é LIVRO e o que é "Dom Casmurro" nos termos do MER.', 0.2, 'LIVRO é a **entidade**; "Dom Casmurro" é uma **ocorrência (instância)** de LIVRO.', 'Nota cheia (0,2): os dois corretos. Zero (0): invertidos.'),
+      (v_atividade, 2, 2, 'Explique a diferença entre entidade e ocorrência e dê outro exemplo da biblioteca.', 0.4, 'A **entidade** é o **conjunto** (todos os livros); a **ocorrência** é **cada elemento** (um livro). Outro exemplo: LEITOR (entidade) e "Maria Silva" (ocorrência).', 'Nota cheia (0,4): diferença + outro exemplo. Metade (0,2): só um. Zero (0): conceito errado.'),
+      (v_atividade, 2, 3, 'Dê um exemplo de entidade abstrata da biblioteca e explique por que ela é uma entidade.', 0.4, '**EMPRÉSTIMO** (ou RESERVA, MULTA): não é objeto físico, mas tem **dados próprios** (data de retirada, data de devolução) e **várias ocorrências**, por isso é entidade.', 'Nota cheia (0,4): exemplo abstrato + justificativa. Metade (0,2): exemplo sem justificativa. Zero (0): exemplo concreto (livro, estante).'),
+      (v_atividade, 3, 1, 'Escreva a pergunta que ajuda a decidir entre entidade e atributo.', 0.2, '"**Isso tem dados próprios e várias ocorrências?**"', 'Nota cheia (0,2): pergunta com as duas ideias. Metade (0,1): só uma. Zero (0): sem relação.'),
+      (v_atividade, 3, 2, 'Classifique os seis candidatos em entidade ou atributo.', 0.4, 'Entidades: **cliente, endereço, pedido, entregador**. Atributos: **telefone** (de cliente), **cor da moto** (de entregador ou moto).', 'Nota cheia (0,4): seis corretos. Metade (0,2): quatro ou cinco. Zero (0): três ou menos.'),
+      (v_atividade, 3, 3, 'Explique por que endereço é entidade nesse app, mas poderia ser atributo num sistema de escola.', 0.4, 'No app, cada cliente tem **vários endereços** com **dados próprios** (apelido, rua, número, referência), então é entidade. Numa escola que guarda **um único endereço** por aluno, ele é só uma **característica** do aluno: atributo.', 'Nota cheia (0,4): os dois contextos explicados. Metade (0,2): só um. Zero (0): sem relação.'),
+      (v_atividade, 4, 1, 'Diga o que caracteriza uma entidade forte.', 0.2, '**Existe por si só** e tem **identificador próprio**.', 'Nota cheia (0,2): as duas ideias. Metade (0,1): uma. Zero (0): confunde com fraca.'),
+      (v_atividade, 4, 2, 'Indique as entidades fortes da loja.', 0.4, '**CLIENTE, PRODUTO, PEDIDO e CATEGORIA.**', 'Nota cheia (0,4): as quatro. Metade (0,2): três. Zero (0): inclui ITEM_PEDIDO e erra duas ou mais.'),
+      (v_atividade, 4, 3, 'Explique por que ITEM_PEDIDO não é forte.', 0.4, 'ITEM_PEDIDO **depende de PEDIDO** (o "item 2" só faz sentido dentro de um pedido) e é identificado junto com ele; também liga PEDIDO a PRODUTO com quantidade e preço — é **fraca/associativa**, não forte.', 'Nota cheia (0,4): dependência do pedido explicada. Metade (0,2): só "depende" sem explicar. Zero (0): diz que é forte.'),
+      (v_atividade, 5, 1, 'Classifique DEPENDENTE e diga qual é a entidade dona.', 0.2, '**Entidade fraca**; dona: **FUNCIONÁRIO**.', 'Nota cheia (0,2): as duas. Metade (0,1): uma. Zero (0): forte.'),
+      (v_atividade, 5, 2, 'Explique como uma ocorrência de DEPENDENTE é identificada.', 0.4, 'Pela **chave do funcionário** **mais** um **identificador parcial** do dependente (ex.: funcionário 120 + dependente 1, ou + nome).', 'Nota cheia (0,4): chave da dona + parcial. Metade (0,2): só a chave do dependente. Zero (0): sem relação.'),
+      (v_atividade, 5, 3, 'Explique o que acontece com os dependentes quando o funcionário é excluído e por quê.', 0.4, 'Os dependentes **deixam de existir** também, porque só existem **ligados ao funcionário**; sem ele, não fazem sentido no cadastro.', 'Nota cheia (0,4): consequência + motivo. Metade (0,2): só um. Zero (0): diz que continuam iguais.'),
+      (v_atividade, 6, 1, 'Classifique PARCELA e diga de quem ela depende.', 0.2, '**Fraca**, depende de **MATRÍCULA**.', 'Nota cheia (0,2): as duas. Metade (0,1): uma. Zero (0): forte.'),
+      (v_atividade, 6, 2, 'Explique por que "parcela 3" sozinha não identifica uma parcela.', 0.4, 'Toda matrícula tem uma "parcela 3"; só a **matrícula + o número** (ex.: matrícula 15, parcela 3) identifica uma parcela específica.', 'Nota cheia (0,4): explicação com a combinação. Metade (0,2): explicação vaga. Zero (0): sem relação.'),
+      (v_atividade, 6, 3, 'Explique como a entidade fraca é desenhada na notação da aula e o que o desenho comunica.', 0.4, '**Retângulo de linha dupla** (e o relacionamento identificador em losango duplo). Comunica que a entidade **depende da dona** para existir e ser identificada.', 'Nota cheia (0,4): notação + significado. Metade (0,2): só um. Zero (0): notação errada.'),
+      (v_atividade, 7, 1, 'Diga qual entidade associativa surge e quais entidades ela liga.', 0.2, '**MATRÍCULA**, ligando **ALUNO** e **TURMA**.', 'Nota cheia (0,2): entidade + as duas que liga. Metade (0,1): só o nome. Zero (0): outra entidade.'),
+      (v_atividade, 7, 2, 'Explique por que data, situação e nota final não podem ficar em ALUNO nem em TURMA.', 0.4, 'Esses dados são **da ligação** entre um aluno **e** uma turma: o mesmo aluno tem datas e notas diferentes em cada turma, e a mesma turma tem uma situação para cada aluno. Em ALUNO ou TURMA, eles se repetiriam ou se perderiam.', 'Nota cheia (0,4): dados pertencem à combinação + exemplo. Metade (0,2): explicação vaga. Zero (0): diz que podem ficar em ALUNO.'),
+      (v_atividade, 7, 3, 'Explique quando um relacionamento vira entidade associativa.', 0.4, 'Quando o relacionamento é **muitos-para-muitos** e **tem dados próprios**.', 'Nota cheia (0,4): as duas condições. Metade (0,2): uma. Zero (0): sem relação.'),
+      (v_atividade, 8, 1, 'Indique as entidades fortes e a entidade associativa.', 0.2, 'Fortes: **PACIENTE** e **MÉDICO**. Associativa: **CONSULTA** (atendimento).', 'Nota cheia (0,2): as três. Metade (0,1): duas. Zero (0): uma ou nenhuma.'),
+      (v_atividade, 8, 2, 'Explique por que o atendimento é uma entidade associativa e não um atributo.', 0.4, 'O atendimento liga **paciente e médico em relação N:N** e tem **dados próprios** (data, hora, diagnóstico, valor) com **várias ocorrências**; não é característica de um só paciente ou médico.', 'Nota cheia (0,4): N:N + dados próprios. Metade (0,2): só um. Zero (0): diz que é atributo.'),
+      (v_atividade, 8, 3, 'Explique a diferença entre entidade fraca e entidade associativa usando a clínica e o exemplo das parcelas.', 0.4, '**Fraca** depende de **uma dona** para existir (PARCELA só existe dentro da MATRÍCULA); **associativa** nasce de um **relacionamento N:N com dados próprios**, ligando duas entidades (CONSULTA liga PACIENTE e MÉDICO).', 'Nota cheia (0,4): diferença com os dois exemplos. Metade (0,2): diferença sem exemplos. Zero (0): conceitos trocados.'),
+      (v_atividade, 9, 1, 'Liste os substantivos importantes encontrados.', 0.2, '**aluno, cliente, nome, CPF, telefone, plano, ficha de treino, instrutor, suplementos**.', 'Nota cheia (0,2): a maioria dos substantivos. Metade (0,1): poucos. Zero (0): nenhum.'),
+      (v_atividade, 9, 2, 'Diga o que deve ser descartado e por quê (sinônimos, atributos e fora do escopo).', 0.4, '**cliente** é sinônimo de aluno; **nome, CPF e telefone** são atributos de aluno; **suplementos** estão fora do escopo.', 'Nota cheia (0,4): os três motivos. Metade (0,2): dois. Zero (0): um ou nenhum.'),
+      (v_atividade, 9, 3, 'Classifique as entidades que sobraram em forte, fraca ou associativa, justificando a ficha de treino.', 0.4, '**ALUNO, PLANO e INSTRUTOR**: fortes. **FICHA_TREINO**: **fraca**, depende de ALUNO (fichas numeradas por aluno: aluno 10, ficha 2). (Aceita-se o contrato do plano como associativa, se justificado.)', 'Nota cheia (0,4): classificação coerente + justificativa da ficha. Metade (0,2): classificação sem justificativa. Zero (0): classificações incoerentes.'),
+      (v_atividade, 10, 1, 'Liste as entidades do sistema de matrículas.', 0.2, '**ALUNO, RESPONSÁVEL, CURSO, TURMA, PROFESSOR, MATRÍCULA e PARCELA.**', 'Nota cheia (0,2): seis ou sete. Metade (0,1): quatro ou cinco. Zero (0): três ou menos.'),
+      (v_atividade, 10, 2, 'Classifique cada entidade em forte, fraca ou associativa.', 0.4, 'Fortes: **ALUNO, RESPONSÁVEL, CURSO, TURMA, PROFESSOR**. Associativa: **MATRÍCULA** (ALUNO–TURMA). Fraca: **PARCELA** (de MATRÍCULA).', 'Nota cheia (0,4): todas corretas. Metade (0,2): um erro. Zero (0): dois ou mais erros.'),
+      (v_atividade, 10, 3, 'Explique por que "turno" e "telefone" ficaram fora da lista de entidades e por que registrar essas decisões.', 0.4, 'São **características** (turno da turma, telefone do aluno), sem dados próprios nem várias ocorrências: **atributos**. Registrar as decisões permite **justificar** o modelo ao grupo e ao cliente e evita retrabalho.', 'Nota cheia (0,4): motivo + importância do registro. Metade (0,2): só um. Zero (0): diz que são entidades.');
+end $$;
