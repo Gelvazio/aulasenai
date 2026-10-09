@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 00:25:47 | **Dados do professor Gelvazio Camargo** em arquivo único [docs/PROFESSOR-GELVAZIO-CAMARGO.md](PROFESSOR-GELVAZIO-CAMARGO.md) (identificação, contato, experiência, formação, competências); seção no `CLAUDE.md`; página inicial sem login mostra a apresentação do professor |
 | 2026-10-09 00:24:10 | **Atividade prática no padrão da Prova Prática id 82** (10 questões × 3 tópicos, discursiva no banco, com Progresso, Gráficos, Cálculo Nota e correção): regra em [REGRAS-ATIVIDADE-PRATICA.md](REGRAS-ATIVIDADE-PRATICA.md) e seção no `CLAUDE.md` |
 | 2026-10-08 21:19:06 | Faixa de matérias: **botão do filtro em uso** (SOMENTE ENSALADO ou VER TODAS MATÉRIAS) **em fundo verde piscando levemente**; no índice do curso a **grade de matérias de baixo segue o mesmo filtro** — `assets/js/faixa-materias-ensalado.js` + `assets/css/indice-atividades.css` |
 | 2026-10-08 21:15:46 | **Faixa de matérias abre em SOMENTE ENSALADO** em todos os cursos (se nenhuma matéria estiver ensalada ou o banco falhar, mostra todas); VER TODAS MATÉRIAS volta à lista completa — `assets/js/faixa-materias-ensalado.js` |

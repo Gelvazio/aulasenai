@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 21:19:06
+**Versão das regras:** 2026-10-09 00:25:47
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,12 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 00:25:47 | **Dados do professor Gelvazio Camargo** em arquivo único [docs/PROFESSOR-GELVAZIO-CAMARGO.md](docs/PROFESSOR-GELVAZIO-CAMARGO.md) (identificação, contato, experiência, formação, competências); seção no `CLAUDE.md`; página inicial sem login mostra a apresentação do professor |
 | 2026-10-09 00:24:10 | **Atividade prática no padrão da Prova Prática id 82** (10 questões × 3 tópicos, discursiva no banco, com Progresso, Gráficos, Cálculo Nota e correção): regra em [docs/REGRAS-ATIVIDADE-PRATICA.md](docs/REGRAS-ATIVIDADE-PRATICA.md) e seção no `CLAUDE.md` |
 | 2026-10-08 21:19:06 | Faixa de matérias: **botão do filtro em uso** (SOMENTE ENSALADO ou VER TODAS MATÉRIAS) **em fundo verde piscando levemente**; no índice do curso a **grade de matérias de baixo segue o mesmo filtro** — `assets/js/faixa-materias-ensalado.js` + `assets/css/indice-atividades.css` |
 | 2026-10-08 21:15:46 | **Faixa de matérias abre em SOMENTE ENSALADO** em todos os cursos (se nenhuma matéria estiver ensalada ou o banco falhar, mostra todas); VER TODAS MATÉRIAS volta à lista completa — `assets/js/faixa-materias-ensalado.js` |
 | 2026-10-09 00:01:37 | Equipes: **professor sempre vê o botão 👥 EQUIPES** (todas as páginas; fora de uma matéria escolhe a matéria no modal); a regra do líder vale só para aluno — `docs/regras/usuarios-turmas-paginas-professor.md` |
-| 2026-10-08 23:59:44 | Aluno líder: **no máximo 1 líder por turma** (`definir_lider_usuario` recusa o segundo e diz quem é o atual); coluna Líder da tela ALUNOS como interruptor ON/OFF — `docs/regras/usuarios-turmas-paginas-professor.md` |
-| 2026-10-08 23:57:37 | **Aluno líder** (`usuario.lider` 1/0): professor marca na tela ALUNOS; o líder vê 👥 EQUIPES e cadastra/altera equipes da própria turma (não exclui); menu EQUIPES só para professor e líder; aviso do grant por coluna da `usuario` — `docs/regras/usuarios-turmas-paginas-professor.md` |
 
 ---
 
@@ -202,7 +201,6 @@ Registrada em 2026-10-03 a pedido do usuário. Todo `STATUS.md` segue estas regr
 | 17 | Comunicação | **Linguagem simples** — entendível por quem não é técnico | Todo o arquivo |
 | 18 | Continuidade | **Não depende de memória** — qualquer pessoa/IA retoma pelo arquivo | Próximo passo |
 | 19 | Continuidade | **Versionamento** — commit por item/tarefa concluída | Coluna/nota de commit |
-| 20 | Continuidade | **Histórico nunca é apagado** — só se acrescentam etapas | Etapas |
 | 21 | Encerramento | **Aceite formal** de quem pediu | Último item da etapa |
 | 22 | Encerramento | **Pendências documentadas** — o que ficou para depois e por quê | Seção Pendências |
 | 23 | Encerramento | **Lições aprendidas** — o que funcionou, o que não, o que vira regra | Seção Lições |
@@ -931,6 +929,19 @@ alterar qualquer atividade prática):** [docs/REGRAS-ATIVIDADE-PRATICA.md](docs/
   `Bloquear colar`, `Campo do tamanho da resposta`, `Botão gravar`, `Progresso para o professor` e
   `Ocultar respostas após entrega` = `sim`; padrão de resposta no `-GABARITO.md` (fora do Git).
 - ⛔ Sem empresa fictícia ("Você, como aluno consultor..."); sem padrão de resposta na página do aluno.
+
+## 👨‍🏫 DADOS DO PROFESSOR — `docs/PROFESSOR-GELVAZIO-CAMARGO.md` (2026-10-09)
+
+Registrada em 2026-10-09 a pedido do usuário. **Todos os dados do professor Gelvazio Camargo**
+(identificação, contato, conta no sistema, apresentação, experiência, formação, certificações,
+competências, idiomas, cursos que leciona e onde os dados aparecem) ficam em
+[docs/PROFESSOR-GELVAZIO-CAMARGO.md](docs/PROFESSOR-GELVAZIO-CAMARGO.md).
+
+- ✅ Toda peça que mostra dados do professor (apresentação, apostila, slides, PDF, página inicial)
+  usa **esse arquivo** como fonte; dado novo ou alterado é gravado lá primeiro.
+- ✅ A página inicial (`index.html`) sem login mostra a apresentação do professor
+  (`assets/css/apresentacao-professor.css`, exibida por `assets/js/indice-cursos.js`).
+- ⛔ O arquivo é publicado: nada de senha, chave, CPF/RG nem dados de alunos.
 
 ## 📝 Outras Regras
 
