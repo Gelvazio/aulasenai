@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 19:38:38 | **Regra de seeds só no `CLAUDE.md`:** seção nova "🌱 REGRA — SEEDS DO BANCO" (status, aplicar em partes pelo conector, conferência pelo md5, análise só dos APLICADO, CONCLUÍDO não é reverificado) referenciando `database/SEEDS-APLICADOS.md`; `docs/regras/atividades.md`, `docs/REGRAS-ATIVIDADE-PRATICA.md` e o registro só apontam para ela |
 | 2026-10-09 19:35:54 | **Análise dos seeds:** ao iniciar, seed APLICADO é conferido no banco pelo md5 e, se existir e bater, vira CONCLUÍDO; seed CONCLUÍDO não é verificado de novo (só se o arquivo mudar) — `CLAUDE.md` ("Seeds de atividades"), `docs/regras/atividades.md` e `database/SEEDS-APLICADOS.md` |
 | 2026-10-09 19:23:21 | **Status em todos os seeds:** cada `database/*-seed-atividades.sql` tem status **PENDENTE**, **APLICADO** ou **CONCLUÍDO** em `database/SEEDS-APLICADOS.md` (69 arquivos conferidos no banco: 26 pendentes, 3 aplicados, 40 concluídos); item da etapa acompanha o status |
 | 2026-10-09 19:19:18 | **Seeds aplicados:** registro único `database/SEEDS-APLICADOS.md`; toda tarefa que gera seed tem o item "Aplicar os seeds no Supabase" no arquivo da etapa (⬜ até o pedido, ✅ só depois de aplicado e conferido); autorização de 2026-10-03 vale só para o plano daquela data (`docs/regras/atividades.md`) |

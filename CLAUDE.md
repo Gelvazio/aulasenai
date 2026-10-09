@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 19:35:54
+**Versão das regras:** 2026-10-09 19:38:38
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 19:38:38 | **Regra de seeds só no `CLAUDE.md`:** seção nova "🌱 REGRA — SEEDS DO BANCO" (status, aplicar em partes pelo conector, conferência pelo md5, análise só dos APLICADO, CONCLUÍDO não é reverificado) referenciando `database/SEEDS-APLICADOS.md`; `docs/regras/atividades.md`, `docs/REGRAS-ATIVIDADE-PRATICA.md` e o registro só apontam para ela |
 | 2026-10-09 19:35:54 | **Análise dos seeds:** ao iniciar, seed APLICADO é conferido no banco pelo md5 e, se existir e bater, vira CONCLUÍDO; seed CONCLUÍDO não é verificado de novo (só se o arquivo mudar) — `CLAUDE.md` ("Seeds de atividades"), `docs/regras/atividades.md` e `database/SEEDS-APLICADOS.md` |
 | 2026-10-09 19:23:21 | **Status em todos os seeds:** cada `database/*-seed-atividades.sql` tem status **PENDENTE**, **APLICADO** ou **CONCLUÍDO** em `database/SEEDS-APLICADOS.md` (69 arquivos conferidos no banco: 26 pendentes, 3 aplicados, 40 concluídos); item da etapa acompanha o status |
 | 2026-10-09 19:19:18 | **Seeds aplicados:** registro único `database/SEEDS-APLICADOS.md`; toda tarefa que gera seed tem o item "Aplicar os seeds no Supabase" no arquivo da etapa (⬜ até o pedido, ✅ só depois de aplicado e conferido); autorização de 2026-10-03 vale só para o plano daquela data (`docs/regras/atividades.md`) |
 | 2026-10-09 15:24:44 | **Conversa entre sessões e licenças:** `tasks/STATUS.md` vira índice (etapas em `tasks/etapas/`, uma por arquivo), "🧭 Frentes de trabalho" (próximo passo por ambiente + branch), coluna "Em uso por" (reserva da tarefa), `tasks/RECADOS.md`, etapa nova com UUID, trazer a `main` no início e no fim, arquivo gerado em conflito = regerar |
-| 2026-10-09 18:06:19 | **Regra do `graphify update .` removida:** o grafo não é mais atualizado nem lido automaticamente (início de sessão, commits, `GRAPH_REPORT.md`); só roda quando o usuário pedir (`/graphify`) |
 
 ---
 
@@ -341,7 +341,7 @@ Aqui ficam as regras de sempre, as de segurança e este índice.
 | Arquivo | Ler antes de… | Regras dentro |
 |---|---|---|
 | [docs/regras/ementas-e-cursos.md](docs/regras/ementas-e-cursos.md) | criar ou alterar ementas, pastas de curso/matéria, aulas em `CONTEUDO/`, STATUS-EMENTAS e dashboards | aulas extraídas da ementa; `EMENTA-CHALKIE-AI.md`; STATUS-EMENTAS; STATUS-PERMISSAO-EMENTA/MATERIA; `EMENTA-PRINCIPAL-<CURSO>.md`; pasta = UC; matérias semelhantes; `dashboard.html` |
-| [docs/regras/atividades.md](docs/regras/atividades.md) | mexer em atividades, avaliações, discursivas, respostas no banco, gabarito, exportação PDF, índices de atividades, Excel ou Reforço de Linguagens | alternativas no banco (tentativas, horário, log, discursivas, correção); turma na exportação; gabarito; índices e bloqueio por turma; Excel; uma aula por vez; 50 questões; Reforço de Linguagens; seeds aplicados (`database/SEEDS-APLICADOS.md`) |
+| [docs/regras/atividades.md](docs/regras/atividades.md) | mexer em atividades, avaliações, discursivas, respostas no banco, gabarito, exportação PDF, índices de atividades, Excel ou Reforço de Linguagens | alternativas no banco (tentativas, horário, log, discursivas, correção); turma na exportação; gabarito; índices e bloqueio por turma; Excel; uma aula por vez; 50 questões; Reforço de Linguagens |
 | [docs/regras/apostilas.md](docs/regras/apostilas.md) | gerar ou alterar apostilas (capítulos, Markdown completo, HTML, `materia.json`) | identificação; conferência 100% com a ementa; gerador; Markdown completo; `materia.json`; formato e ordem; páginas A4 |
 | [docs/regras/usuarios-turmas-paginas-professor.md](docs/regras/usuarios-turmas-paginas-professor.md) | mexer em contas/senhas, turmas, alunos, equipes, aulas (excluir/editar card), pendências ou índice de cursos | contas e senhas; excluir aula e card = 1 aula; pendências; índice de cursos; `turmaaluno`; equipes; página por turma; e-mail do aluno |
 | [docs/regras/assets-e-geradores.md](docs/regras/assets-e-geradores.md) | criar ou alterar CSS, JS, menus, header ou geradores (`assets/`), e avisos ao usuário | CSS e JS genéricos em `assets/`; menu; header; geradores; popup no lugar de `alert()` |
@@ -818,17 +818,7 @@ Registrada em 2026-09-28.
   se a mudança apagar ou reorganizar dados, **copiar antes** para uma tabela de backup
   (ex.: `usuario_legado_20260930`, com RLS ligado e sem políticas). Depois de aplicar, **conferir o
   resultado** com consultas de leitura. Sem pedido do usuário, não alterar o banco.
-- ✅ **Seeds de atividades** (`database/*-seed-atividades.sql`, 2026-10-09 19:19:18): aplicar só com
-  pedido; **todo seed tem status PENDENTE, APLICADO ou CONCLUÍDO** em
-  **`database/SEEDS-APLICADOS.md`** (registro único, desde 2026-10-09 19:23:21); toda tarefa que gera seed
-  tem o item "Aplicar os seeds no Supabase" no arquivo da etapa, com o mesmo status (detalhe em
-  `docs/regras/atividades.md`).
-- ✅ **Análise dos seeds aplicados** (2026-10-09 19:35:54, pedido do usuário): ao iniciar a análise dos seeds
-  (`database/SEEDS-APLICADOS.md`), **todo seed com status APLICADO é conferido no banco pelo md5**
-  (texto do gabarito ou dos tópicos de cada página × o arquivo); **se existir e o md5 bater, passa
-  a CONCLUÍDO** (com a data e hora da conferência); se não bater, continua APLICADO com o motivo.
-  ⛔ **Seed CONCLUÍDO não é verificado de novo** (nem na análise, nem ao reabrir a matéria); só
-  volta a ser conferido se o arquivo do seed for alterado (aí ele volta a PENDENTE).
+- ✅ **Seeds de atividades:** regra única na seção "🌱 REGRA — SEEDS DO BANCO" logo abaixo.
 - ✅ **Estrutura dos cursos só o professor escreve** (2026-09-30,
   `database/2026-09-30-estrutura-curso-so-professor-escreve.sql`): `aulas`, `materia`, `curso`,
   `cursomateria` e `unidade` aceitam insert/update/delete só de usuário logado com perfil PROFESSOR;
@@ -836,6 +826,39 @@ Registrada em 2026-09-28.
   carregados por nenhuma página (órfãos).
 - ✅ **Tabela nova ou alterada = RLS ligado** e políticas explícitas; nunca deixar `anon` com
   acesso de escrita. Dados sensíveis (`senha_hash`, gabarito) não ficam legíveis pela API pública.
+
+## 🌱 REGRA — SEEDS DO BANCO (STATUS EM `database/SEEDS-APLICADOS.md`)
+
+Registrada em 2026-10-09 19:19:18 e consolidada em 2026-10-09 19:38:38 a pedido do usuário: **esta é a única
+regra de seeds do projeto** (os outros arquivos só apontam para cá). O registro dos seeds é
+**[`database/SEEDS-APLICADOS.md`](database/SEEDS-APLICADOS.md)**: uma linha por arquivo
+`database/*-seed-atividades.sql`, com o status, a data e hora da conferência e a observação.
+
+| Status | Quando usar |
+|---|---|
+| **PENDENTE** | Gerado (ou não encontrado no banco); ainda não rodado no Supabase |
+| **APLICADO** | Rodado no Supabase, mas ainda não conferido ou a conferência não bate (ex.: substituído por um seed mais novo, aplicado só em parte) |
+| **CONCLUÍDO** | Rodado **e conferido pelo md5**: a atividade de cada página está no banco com o mesmo conteúdo do arquivo |
+
+- ✅ **Seed novo entra no registro como PENDENTE** no mesmo commit em que é gerado.
+- ✅ **Aplicar só com pedido do usuário** (pelo conector do Supabase ou o próprio usuário no SQL
+  Editor), depois de conferir o banco real. Pelo conector, aplicar **em partes pequenas** (um
+  comando por atividade, sem `DO` nem `delete`: `insert ... returning` com a contagem), porque os
+  blocos grandes com `delete` voltam "cancelado". A autorização de 2026-10-03 ("aplicar o seed ao
+  finalizar cada matéria") vale só para as matérias do plano `docs/gerar-atividades-50-questoes-todas-materias.md`.
+- ✅ **Conferência pelo md5**, por página e na ordem de item e tópico: objetivas
+  `md5(string_agg(item||'|'||titulo||'|'||letra, E'\n' order by item))` da `gabarito`; discursivas
+  `md5(string_agg(item||'|'||topico||'|'||enunciado||'|'||resposta_esperada||'|'||criterios, E'\n'
+  order by item, topico))` da `topico_discursivo` — comparado com o mesmo texto montado do arquivo.
+  Bateu → **CONCLUÍDO** (com a data e hora); não bateu → continua **APLICADO** com o motivo.
+- ✅ **Ao iniciar a análise dos seeds** (2026-10-09 19:35:54): conferir pelo md5 **só os
+  seeds APLICADO**. ⛔ **Seed CONCLUÍDO não é verificado de novo**; só volta a ser conferido se o
+  arquivo do seed mudar (aí volta a **PENDENTE**).
+- ✅ **Toda tarefa que gera seed tem o item "Aplicar os seeds no Supabase"** no arquivo da etapa
+  (`tasks/etapas/`), com o mesmo status do registro (`⬜ PENDENTE` → `🔄 APLICADO` → `✅ CONCLUÍDO`);
+  a coluna **Banco** do `STATUS-ATIVIDADES.md` (e do `STATUS-AULAS.md`) da matéria acompanha.
+- ⛔ O registro não leva gabarito, padrão de resposta, senha nem dado de aluno (só nomes de arquivo,
+  contagens, status e md5).
 
 ## ⛔ REGRA — PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM (BRANCH PRÓPRIA + NOVO PR)
 

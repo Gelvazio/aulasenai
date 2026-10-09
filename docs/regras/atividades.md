@@ -15,7 +15,7 @@
   põe `data-login="sim"` e não embute o gabarito) e a atividade precisa estar cadastrada nas
   tabelas `atividade` + `gabarito`: acrescentar em `ATIVIDADES` de
   `scripts/gerar-seed-atividades.py`, gerar `database/*-seed-atividades.sql` e aplicar no Supabase
-  quando o usuário pedir (regra "Seeds: aplicar só com pedido e registrar aqui", registro em `database/SEEDS-APLICADOS.md`).
+  quando o usuário pedir (regra "🌱 SEEDS DO BANCO" do `CLAUDE.md`).
 - ❌ **Não existe mais localStorage para as alternativas** — somente banco de dados. Se o banco
   estiver indisponível ou a atividade não estiver cadastrada, a marcação fica **bloqueada com
   aviso** — nunca cai para o navegador. O nome do aluno vem do login (não é digitado).
@@ -489,25 +489,8 @@ Vale para **todas as aulas de todas as matérias**. Registrada em 2026-10-03 a p
   Se o arquivo não existir, criá-lo antes de gerar a primeira aula.
 - ✅ Ao retomar um trabalho interrompido, ler o `STATUS-AULAS.md` e continuar da primeira aula que
   não está ✅.
-- ✅ **Seeds: aplicar só com pedido e registrar aqui** (alterada em 2026-10-09 19:19:18, pedido do usuário):
-  - aplicar `database/*-seed-atividades.sql` no Supabase **só com pedido do usuário** (pelo
-    conector ou o próprio usuário no SQL Editor), depois de conferir o banco real;
-  - **todo seed tem um status** em **[`database/SEEDS-APLICADOS.md`](../../database/SEEDS-APLICADOS.md)**
-    (registro único, uma linha por arquivo; desde 2026-10-09 19:23:21): **PENDENTE** (gerado, ainda não rodado
-    no banco), **APLICADO** (rodado, falta conferir ou a conferência não bate) e **CONCLUÍDO**
-    (rodado e conferido: atividade de cada página no banco com a mesma quantidade de itens do
-    gabarito ou de tópicos do arquivo, com a data e hora da conferência);
-  - seed novo entra no registro como **PENDENTE** no mesmo commit em que é gerado;
-  - **toda tarefa que gera seed tem um item próprio no arquivo da etapa** (`tasks/etapas/`):
-    "Aplicar os seeds no Supabase", com o mesmo status do registro (`⬜ PENDENTE` → `🔄 APLICADO`
-    → `✅ CONCLUÍDO`), e a coluna **Banco** do `STATUS-ATIVIDADES.md` (e do `STATUS-AULAS.md`) da
-    matéria acompanha;
-  - **análise dos seeds** (2026-10-09 19:35:54, pedido do usuário): ao iniciar, conferir no banco **pelo md5**
-    (gabarito `item|titulo|letra` ou tópicos `item|topico|enunciado|resposta_esperada|criterios`,
-    por página, na ordem de item e tópico) **só os seeds com status APLICADO**; existindo e o md5
-    batendo com o arquivo → **CONCLUÍDO**; não batendo → continua **APLICADO** com o motivo.
-    ⛔ Seed **CONCLUÍDO não é verificado de novo**; só volta a ser conferido se o arquivo do seed
-    mudar (volta a **PENDENTE**).
+- ✅ **Seeds:** aplicar, registrar e conferir conforme a regra "🌱 SEEDS DO BANCO" do `CLAUDE.md` (registro em
+  `database/SEEDS-APLICADOS.md`).
 - ⚠️ Respeita `STATUS-PERMISSAO-EMENTA`, matérias semelhantes e a exceção de
   `QUALIFICACAO-PROFISSIONAL/`.
 
@@ -530,8 +513,7 @@ dessas atividades. Registrada em 2026-10-03 a pedido do usuário.
 - ✅ Gerar as que faltam seguindo a regra "UMA AULA POR VEZ, COMPLETA" (fonte → HTML → conferência
   de 50 itens e gabarito ausente → índice → seed), atualizando o `STATUS-ATIVIDADES.md` e o
   `AULAS/STATUS-AULAS.md` a cada aula. Gerar em massa continua exigindo plano em `docs/` e aprovação;
-  aplicar o seed no Supabase só com pedido do usuário e registrar em `database/SEEDS-APLICADOS.md`
-  (regra "Seeds: aplicar só com pedido e registrar aqui").
+  aplicar o seed no Supabase só com pedido do usuário (regra "🌱 SEEDS DO BANCO" do `CLAUDE.md`).
 - ✅ As questões seguem a aula em `<MATERIA>/CONTEUDO/AULA-NN-*.md` (regra "AULAS EXTRAÍDAS DA
   EMENTA EM `CONTEUDO/`") e o `EMENTA-CHALKIE-AI.md` (a ementa vence); gabarito com letras
   equilibradas (12–13 de cada) e posição sorteada.
@@ -545,7 +527,7 @@ dessas atividades. Registrada em 2026-10-03 a pedido do usuário.
 - ✅ **Banco na geração das pendentes** (plano `docs/gerar-atividades-50-questoes-todas-materias.md`,
   2026-10-03): o usuário autorizou **aplicar o seed no Supabase ao finalizar cada matéria** —
   vale **só** para as matérias desse plano de 2026-10-03. Fora dele (ex.: Banco de Dados, tarefa
-  #20), aplicar só com pedido, como diz a regra "Seeds: aplicar só com pedido e registrar aqui".
+  #20), aplicar só com pedido (regra "🌱 SEEDS DO BANCO" do `CLAUDE.md`).
 - ⏳ **Fila:** gerar **somente uma matéria por vez, na ordem que o usuário liberar**; as demais
   aguardam. Primeira liberada (2026-10-03): **Testes de Frontend**.
 

@@ -124,9 +124,8 @@ Cálculo da nota (o mesmo da id 82): soma das notas confirmadas ÷ pontos da ati
 5. Atualizar o índice (`assets/gerador-indices/gerar_indices.py`), o `ATIVIDADES/STATUS-ATIVIDADES.md`
    e o `AULAS/STATUS-AULAS.md`.
 6. Aplicar o seed no Supabase **só com pedido/aprovação do usuário**; a prática **nasce bloqueada**
-   e o professor libera no índice. A etapa da tarefa tem o item **"Aplicar os seeds no Supabase"**
-   e o seed tem status **PENDENTE → APLICADO → CONCLUÍDO** em `database/SEEDS-APLICADOS.md` (regra "Seeds: aplicar só com pedido e registrar aqui" de
-   `docs/regras/atividades.md`).
+   e o professor libera no índice. Status e conferência do seed: regra "🌱 SEEDS DO BANCO" do `CLAUDE.md`
+   (registro em `database/SEEDS-APLICADOS.md`).
 
 ### ⚠️ Cuidados aprendidos na primeira geração (Testes de Front-End, 2026-10-09)
 
