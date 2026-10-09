@@ -1,97 +1,103 @@
 # Progresso global da turma em todas as atividades
 
-**Criado em:** 2026-10-09 10:22:23 (horário de Brasília)
+**Criado em:** 2026-10-09 10:22:23 (horário de Brasília, relógio do contêiner)
+**Aprovado em:** 2026-10-09 10:31 (decisões D1 a D5 abaixo)
 **Concluído em:** — (pendente)
 **Tempo decorrido:** — (pendente)
-**Status do plano:** ⬜ Aguardando aprovação do usuário
+**Status do plano:** 🔄 Em execução — Etapa 119 do [`STATUS.md`](../STATUS.md); tarefa #17 do [`TASKS.md`](../TASKS.md)
 
 ## Objetivo
 
-Dar ao professor, em **toda** atividade (objetiva e discursiva) de **todas** as matérias, o mesmo
-painel de **Progresso da turma** que já existe na Prova Prática ADAG (id 82), aparecendo **logo
-que a página abre**, sem precisar de campo na fonte `.md`.
+Dar ao professor, em **toda** atividade (objetiva e discursiva) que grava no banco, de **todas**
+as matérias, o mesmo painel de **Progresso da turma** da Prova Prática ADAG (id 82), aparecendo
+**logo que a página abre**, sem campo na fonte `.md` e sem regerar as páginas.
 
 ## Escopo
 
 - **Entra:**
-  - Um gerador único de progresso global (módulo novo em `assets/js/`, com CSS próprio), que
-    funciona para atividade objetiva e discursiva.
-  - Primeira aplicação: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/ATIVIDADES/ATIVIDADES-AULA-01-50-QUESTOES.html`.
-  - Depois: todas as demais atividades das matérias (uma matéria por vez, conferindo cada uma).
-  - Regra nova no `CLAUDE.md` (e, se for o caso, em `docs/regras/atividades.md`) + versão, data e
-    hora e histórico, com o visualizador de regras conferido.
-  - Ajuste do gerador de atividades (`assets/gerador-atividades/`) para que páginas novas já
-    nasçam com o progresso.
+  - Um módulo global único (`assets/js/progresso-turma-global.js` + fontes de dados), que
+    **substitui** o `progresso-turma-discursiva.js` e serve objetivas e discursivas.
+  - O painel aparece pelos dois motores de página já usados por todas as atividades com banco:
+    `assets/js/avaliacao-discursiva.js` (discursivas) e `assets/js/respostas-atividade.js`
+    (objetivas). Toda página com esses motores ganha o painel sem ser regerada; páginas novas
+    também, porque os geradores já incluem esses motores.
+  - Tudo o que o painel da ADAG tem vem do global: questões por aluno, barra, situação e
+    "✅ Entregue", ordenação, resumo da turma, 📈 Gráficos, 🧮 Cálculo Nota e 🎯 Quantidade
+    Mínima de Questões.
+  - Objetiva: colunas **Acertos** e **Nota** (pela função `resumo_tentativas_atividade`, sem o
+    gabarito sair do banco); nota = acertos ÷ mínimo × 10, **máximo 10**.
+  - Mínimo de questões **também na objetiva**: SQL novo (entrega com o mínimo e nota sobre o
+    mínimo) e ajuste da página objetiva e do relatório do professor.
+  - Regra no `CLAUDE.md` e em `docs/regras/atividades.md`, com versão e histórico.
 - **Não entra:**
-  - Gráficos (o botão 📈 Gráficos fica só nas discursivas, como hoje).
-  - Mudança de regra de bloqueio, de gabarito ou de correção.
-  - Gravar qualquer dado novo: o progresso é só leitura.
-  - Testes automatizados (regra do projeto).
-  - Abrir navegador para validar (regra do projeto; o aceite é do usuário no próprio navegador).
-- **Critério de pronto:** o professor logado abre a atividade e vê o painel sem clicar em nada;
-  o aluno não vê o painel; a tabela mostra os alunos das turmas dele (RLS); a atualização
-  automática funciona; a página de cada matéria é conferida por leitura de código e `node --check`.
+  - Páginas sem banco (Excel, PDF, slides).
+  - Gravar dados novos pelo painel além do mínimo de questões (que já existe).
+  - Testes automatizados e navegador (regras do projeto; o aceite visual é do usuário).
+- **Critério de pronto:** o professor abre qualquer atividade com banco e vê o painel sem clicar
+  em nada; o aluno não vê o painel; o RLS limita aos alunos das turmas do professor; a objetiva
+  aceita entrega com o mínimo e a nota fica sobre o mínimo (máx. 10) depois que o SQL for aplicado.
 - **Premissas e restrições:**
-  - Dados: `resposta_atividade` (uma linha por aluno × atividade × item, com a letra),
-    `entrega_atividade` (entrega do aluno) e `aluno`/`turmaaluno` (quem está na turma).
-    Discursivas usam `resposta_discursiva` e `correcao_discursiva` (já existe painel).
-  - Sem `<style>`/`<script>` embutidos e sem `onclick` nos HTML; sem `alert()`.
-  - Até 1000 linhas por arquivo e 45 linhas por função (`docs/regras/codigo.md`).
-  - Só lê o banco; o RLS (`professor_pode_ver_aluno`) limita aos alunos do professor.
-
-## Partes interessadas
-
-- **Decide e aprova:** Gelvazio Camargo (professor administrador).
-- **Usa:** professor (vê o painel) e alunos (não veem o painel).
-
-## Arquivos previstos
-
-| Arquivo | Situação | Papel |
-|---|---|---|
-| `assets/js/progresso-turma-atividade.js` | novo | gerador global: lê o banco, monta a tabela e atualiza a cada 5 s |
-| `assets/css/progresso-turma-atividade.css` | novo | visual (reaproveita as classes de `progresso-turma-discursiva.css`) |
-| `assets/js/progresso-turma-discursiva.js` | existente | fica como está; o novo módulo reaproveita a lógica de leitura (a decidir no passo 2) |
-| `assets/js/respostas-atividade.js` | existente | ponto de ligação para as objetivas (ver passo 1) |
-| `assets/gerador-atividades/*` | existente | passa a incluir o módulo nas páginas novas |
-| `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/ATIVIDADES/ATIVIDADES-AULA-01-50-QUESTOES.html` | existente | primeira página a receber o painel |
-| `CLAUDE.md` (+ `docs/regras/atividades.md`) | existente | regra nova, versão e histórico |
-| `STATUS.md` | existente | etapa nova com os itens deste plano |
-
-## Riscos
-
-| Risco | Chance | Impacto | Plano B | Situação |
-|---|---|---|---|---|
-| Objetiva não tem "entrega": não dá para saber quando o aluno terminou | Média | Médio | Mostrar só "N/50 questões" e a barra; "Entregue" só se existir `entrega_atividade` | Aberto |
-| Muitas páginas (uma por aula × matéria) com scripts diferentes | Alta | Médio | Gerador único e script de inserção idempotente, em lote, uma matéria por vez | Aberto |
-| Painel duplicado nas discursivas (já existe um) | Alta | Baixo | Passo 2 decide: o módulo novo substitui ou convive com o atual | Aberto |
-| Página grande demais por causa do script (limite de 1000 linhas) | Baixa | Baixo | Separar em dois módulos (dados e tela) | Aberto |
-
-## Passos
-
-Um item por vez. Marcar `🔄` ao começar e `✅` ao terminar (com data e hora reais).
-
-| Passo | Ação | Caminho exato | Verificação (sem navegador nem teste automatizado) | Status |
-|---|---|---|---|---|
-| 1 | Conferir no banco real (leitura) as colunas e as políticas de `resposta_atividade`, `entrega_atividade`, `aluno` e `turmaaluno`; confirmar se a objetiva tem entrega e como são os itens (1 a 50) | banco (`mcp__Supabase__execute_sql`, só leitura) | consultas de leitura; registrar o resultado no próprio plano | ⬜ |
-| 2 | Decidir com o usuário: (a) painel novo nas objetivas e discursivas como um módulo só, ou (b) discursivas mantêm o painel atual | este plano | resposta registrada na seção "Decisões" | ⬜ |
-| 3 | Criar `assets/js/progresso-turma-atividade.js`: lê as respostas e entregas da atividade (`data-id` ou `data-atividade-id` da página), monta a tabela (uma linha por aluno, uma célula por questão, resumo e barra geral), atualiza a cada 5 s e só roda para o professor | `assets/js/progresso-turma-atividade.js` | `node --check`; nenhum `console` solto; funções até 45 linhas | ⬜ |
-| 4 | Criar `assets/css/progresso-turma-atividade.css` (classes do painel atual, até celular) | `assets/css/progresso-turma-atividade.css` | chaves balanceadas; sem largura fixa que quebre no celular | ⬜ |
-| 5 | Ligar o módulo à página de atividade objetiva: `<script>` e `<link>` no HTML e, se preciso, um hook no `respostas-atividade.js` | `ATIVIDADES-AULA-01-50-QUESTOES.html` e `assets/js/respostas-atividade.js` | `grep` mostra a ligação; `node --check` do JS alterado | ⬜ |
-| 6 | Ajustar o gerador de atividades para incluir o módulo em toda página nova | `assets/gerador-atividades/` | `ast.parse`/sintaxe do gerador; diff só nas linhas de ligação | ⬜ |
-| 7 | Regra no `CLAUDE.md` e em `docs/regras/atividades.md`: versão `AAAA-MM-DD HH:MM:SS`, linha no histórico (resumo de 5 e completo em `docs/HISTORICO-REGRAS.md`); conferir o visualizador de regras | `CLAUDE.md`, `docs/regras/atividades.md`, `docs/HISTORICO-REGRAS.md` | visualizador lê o arquivo sem erro (conferência por leitura) | ⬜ |
-| 8 | Commit da etapa 1 (só os arquivos do passo, sem fontes com gabarito) e atualizar `STATUS.md` | git (sem `git add .`) | `git diff --cached --name-only` conferido contra a regra "O que nunca é publicado" | ⬜ |
-| 9 | Aceite do usuário na página de Testes de Front-End (professor e aluno) | `ATIVIDADES-AULA-01-50-QUESTOES.html` | aceite registrado no `STATUS.md` | ⬜ |
-| 10 | Replicar nas demais atividades, uma matéria por vez (mesmo passo 5 em lote, com conferência de cada matéria) | pastas `ATIVIDADES/` de cada matéria | contagem de páginas com o script e `grep` de conferência | ⬜ |
+  - Sem `<style>`/`<script>` embutidos, sem `onclick`, sem `alert()`.
+  - Arquivos ≤ 1000 linhas, funções ≤ 45 linhas (`docs/regras/codigo.md`).
+  - SQL idempotente; **aplicar no Supabase só com pedido do usuário**.
+  - Enquanto o SQL não for aplicado, a objetiva continua exigindo todas as questões (a página lê o
+    mínimo do banco e, sem ele, usa o total).
 
 ## Decisões
 
 | Data | Decisão | Quem | Por quê |
 |---|---|---|---|
-| 2026-10-09 | Começar por Testes de Front-End, objetiva da aula 01 | Usuário | Pedido explícito |
+| 2026-10-09 10:22 | Começar por Testes de Front-End, objetiva da aula 01 (id 96) | Usuário | Pedido explícito |
+| 2026-10-09 10:31 | D1 — o painel global substitui o das discursivas; tudo vem do global | Usuário | Um só painel |
+| 2026-10-09 10:31 | D2 — objetiva: acertos e nota pelo banco no lugar das colunas da IA | Usuário | Sem IA na objetiva |
+| 2026-10-09 10:31 | D3 — mínimo de questões e Cálculo Nota também nas objetivas | Usuário | Mesma regra das discursivas |
+| 2026-10-09 10:31 | D4 — escopo: objetivas e discursivas que gravam no banco | Usuário | Sem banco não há progresso |
+| 2026-10-09 10:31 | D5 — data e hora pelo relógio do contêiner | Usuário | — |
+| 2026-10-09 10:33 | O painel é ligado pelos motores das páginas (não página a página) | Claude | Chega a todas as atividades sem regerar; "depois todas" fica atendido |
+
+## Arquivos previstos
+
+| Arquivo | Situação | Papel |
+|---|---|---|
+| `assets/js/progresso-turma-fontes.js` | novo | leitura dos dados: fonte objetiva e fonte discursiva (mesmo formato de aluno) |
+| `assets/js/progresso-turma-global.js` | novo | tela do painel (substitui `progresso-turma-discursiva.js`) |
+| `assets/css/progresso-turma-global.css` | novo (renomeado) | visual do painel (era `progresso-turma-discursiva.css`) |
+| `assets/js/progresso-turma-discursiva.js` + `.css` | removidos | substituídos pelo global |
+| `assets/js/avaliacao-discursiva.js` | alterado | carrega o global |
+| `assets/js/respostas-atividade.js` | alterado | carrega o global para o professor; entrega com o mínimo; nota sobre o mínimo |
+| `assets/js/respostas-atividade-banco.js` | alterado | lê o mínimo do aluno |
+| `assets/js/respostas-atividade-professor.js` | alterado | nota sobre o mínimo no relatório |
+| `assets/js/graficos-progresso-turma.js`, `calculo-nota-progresso.js`, `minimo-questoes-discursiva.js` | alterados se preciso | rótulos conforme o tipo |
+| `database/2026-10-09-minimo-questoes-objetivas.sql` | novo | mínimo na objetiva (não aplicado sem pedido) |
+| `CLAUDE.md`, `docs/regras/atividades.md`, `docs/HISTORICO-REGRAS.md` | alterados | regra nova |
+
+## Riscos
+
+| Risco | Chance | Impacto | Plano B | Situação |
+|---|---|---|---|---|
+| Painel quebrar a página objetiva | Baixa | Alto | Carregado em `try/catch`, sem bloquear o resto (como o relatório do professor) | Aberto |
+| Mínimo na objetiva antes do SQL aplicado | Média | Médio | Página usa o total quando o banco não devolve um mínimo válido | Aberto |
+| Constante global repetida entre scripts derrubar a página | Média | Alto | Nomes exclusivos; conferir com `grep` antes do commit (lição da Etapa 113) | Aberto |
+| Painel para todas as matérias de uma vez | Média | Médio | Uma constante liga/desliga o painel global | Aberto |
+
+## Passos
+
+| Passo | Ação | Caminho exato | Verificação | Status |
+|---|---|---|---|---|
+| 1 | Conferir o banco real (só leitura) | conector do Supabase | consultas de leitura | ✅ 2026-10-09 10:33 |
+| 2 | Módulo global (fontes + tela) substituindo o das discursivas | `assets/js/progresso-turma-fontes.js`, `assets/js/progresso-turma-global.js`, `assets/css/progresso-turma-global.css` | `node --check`; tamanhos | ⬜ |
+| 3 | Ligar nos motores das páginas | `assets/js/avaliacao-discursiva.js`, `assets/js/respostas-atividade.js` | `node --check`; `grep` | ⬜ |
+| 4 | Gráficos, Cálculo Nota e mínimo genéricos | `assets/js/graficos-progresso-turma.js`, `calculo-nota-progresso.js`, `minimo-questoes-discursiva.js` | `node --check` | ⬜ |
+| 5 | SQL do mínimo na objetiva | `database/2026-10-09-minimo-questoes-objetivas.sql` | leitura; idempotente | ⬜ |
+| 6 | Página objetiva: entrega com o mínimo e nota sobre o mínimo | `assets/js/respostas-atividade.js`, `assets/js/respostas-atividade-banco.js` | `node --check` | ⬜ |
+| 7 | Relatório do professor: nota sobre o mínimo | `assets/js/respostas-atividade-professor.js` | `node --check` | ⬜ |
+| 8 | Regras e visualizador | `CLAUDE.md`, `docs/regras/atividades.md`, `docs/HISTORICO-REGRAS.md` | leitura | ⬜ |
+| 9 | Commit, push e pull request | git | `git diff --cached --name-only` | ⬜ |
+| 10 | Aplicar o SQL (só com pedido do usuário) | conector do Supabase | consultas de leitura | ⬜ |
+| 11 | Aceite do usuário (Testes de Front-End, aula 01) | `ATIVIDADES-AULA-01-50-QUESTOES.html` | usuário | ⬜ |
 
 ## Pendências
 
 | Item | Motivo | Quando retomar |
 |---|---|---|
-| Decisão do passo 2 (painel único ou discursivas à parte) | Depende do usuário | Antes do passo 3 |
-| Entrega da objetiva (passo 1) | Pode não existir na objetiva | Durante o passo 1 |
+| Aplicar o SQL do passo 5 | Depende do pedido do usuário | Depois do passo 9 |

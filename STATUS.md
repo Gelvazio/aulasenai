@@ -4,7 +4,7 @@
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
 **Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 108, item 108.7 — aceite do usuário das objetivas e práticas das aulas 01 a 03 de Testes de Front-End (liberar as práticas ids 99–101 no índice); depois, Etapa 105, item 105.1 — decisão do usuário sobre a opção R1 (cadastrar as 19 matérias do ITIC em `materia`) em [docs/somente-ensalado-materias.md](docs/somente-ensalado-materias.md); depois, Etapa 97, item 97.4 — aceite do usuário da quantidade mínima de questões; depois: Aceites do usuário: Etapas 84 e 85 (itens 84.5 e 85.3 — discursiva id 81 com 20 questões de 0,5 ponto, respostas no caderno, PDF em 3 páginas); Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Próximo passo:** Etapa 119, item 119.2 — módulo global do Progresso da turma (plano [docs/progresso-global-atividades.md](docs/progresso-global-atividades.md)); depois, Etapa 108, item 108.7 — aceite do usuário das objetivas e práticas das aulas 01 a 03 de Testes de Front-End (liberar as práticas ids 99–101 no índice); depois, Etapa 105, item 105.1 — decisão do usuário sobre a opção R1 (cadastrar as 19 matérias do ITIC em `materia`) em [docs/somente-ensalado-materias.md](docs/somente-ensalado-materias.md); depois, Etapa 97, item 97.4 — aceite do usuário da quantidade mínima de questões; depois: Aceites do usuário: Etapas 84 e 85 (itens 84.5 e 85.3 — discursiva id 81 com 20 questões de 0,5 ponto, respostas no caderno, PDF em 3 páginas); Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
@@ -24,6 +24,7 @@ A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale 
 | #14 | Conferir a duração dos vídeos da apostila de Exploração de Carreiras | ⬜ Pendente (local) | Fazer na máquina local, com YouTube |
 | #15 | Apostila de ITIC versão 2 (até 40 páginas, sem vídeos e exercícios) — agora a apostila única (V1 removida) | 👀 Aguardando validação | Aceite do usuário (Etapas 79, 81 e 83) |
 | #16 | Bloqueio da AULA (card inteiro, `aulas.ativo`) × ON/OFF da atividade (nunca bloqueia o card) em todos os índices | 🔄 Ligada em Testes de Front-End (Etapa 114) | Demais matérias: acrescentar a pasta em `assets/js/indice-bloqueio-aula-config.js`, uma por vez, quando o usuário pedir |
+| #17 | Progresso da turma global em todas as atividades (objetivas e discursivas com banco) | 🔄 Em execução (Etapa 119) | Item 119.2 do `STATUS.md` |
 
 ## ⏳ Aguardando o usuário (aceites, aprovações e ações dele)
 
@@ -1553,3 +1554,22 @@ Plano: [docs/trigger-bloqueio-aula-bloqueia-atividades.md](docs/trigger-bloqueio
 | 118.10 | Ajuste pedido em 2026-10-09 13:15: ações (Editar, Turmas, Desativar/Ativar) na última coluna, à direita; página de consulta mais larga (1400px) e busca mais larga (420px) — `cursos.html`, `assets/js/cursos-pagina.js`, `assets/css/cursos.css` | ✅ Concluído | 2026-10-09 13:17 | `node --check`; leitura (sem navegador) |
 | 118.11 | Ajuste pedido em 2026-10-09 13:18: botões de ação lado a lado (nunca um embaixo do outro) — `.cu-grupo-acoes` (inline-flex, sem quebra) em `assets/css/cursos.css` + `assets/js/cursos-pagina.js` | ✅ Concluído | 2026-10-09 13:20 | `node --check`; leitura (sem navegador) |
 | 118.9 | Aceite do usuário: testar no navegador (menu CURSO → 🏫 Turmas → vincular a 124519 ao curso 4) | ⬜ Pendente | — | Usuário |
+
+## Etapa 119 — Progresso da turma GLOBAL em todas as atividades (tarefa grande, pedido em 2026-10-09 10:22:23; aprovada em 2026-10-09 10:31; plano [docs/progresso-global-atividades.md](docs/progresso-global-atividades.md))
+
+Decisões do usuário (2026-10-09 10:31): D1 o painel global **substitui** o das discursivas (tudo vem do global: gráficos, Cálculo Nota e mínimo); D2 na objetiva, a coluna da IA vira **acertos e nota** calculados pelo banco; D3 **mínimo de questões e Cálculo Nota também nas objetivas** (muda a entrega e a nota da objetiva no banco); D4 escopo = objetivas e discursivas que gravam no banco; D5 data e hora pelo relógio do contêiner.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 119.0 | Plano criado e aprovado (com as decisões D1 a D5) | ✅ Concluído | 2026-10-09 10:33 | Aprovação no chat |
+| 119.1 | Conferir o banco real (só leitura): `resposta_atividade`, `entrega_atividade` (a objetiva TEM entrega), `resumo_tentativas_atividade` (acertos sem expor gabarito), `atividade_completa`, `minimo_questoes_para_entregar`, `notas_media_final` | ✅ Concluído | 2026-10-09 10:33 | Consultas de leitura pelo conector |
+| 119.2 | Módulo global do painel (fontes objetiva × discursiva + tela), substituindo `progresso-turma-discursiva.js` | 🔄 Em progresso | — | `node --check`; funções ≤ 45 linhas; arquivos ≤ 1000 |
+| 119.3 | Ligar o painel no motor das discursivas (`avaliacao-discursiva.js`) e no das objetivas (`respostas-atividade.js`): aparece ao abrir a página, só professor | ⬜ Pendente | — | `node --check`; `grep` |
+| 119.4 | Gráficos, Cálculo Nota e mínimo genéricos (rótulos conforme o tipo de atividade) | ⬜ Pendente | — | `node --check` |
+| 119.5 | SQL `database/2026-10-09-minimo-questoes-objetivas.sql` (entrega e nota da objetiva sobre o mínimo, máximo 10) — escrito, **não aplicado** | ⬜ Pendente | — | Leitura; idempotente |
+| 119.6 | Página objetiva: entregar com o mínimo e nota sobre o mínimo (máx. 10), sem quebrar enquanto o SQL não for aplicado | ⬜ Pendente | — | `node --check`; leitura |
+| 119.7 | Relatório do professor da objetiva (`respostas-atividade-professor.js`): nota sobre o mínimo do aluno | ⬜ Pendente | — | `node --check` |
+| 119.8 | Regras: `CLAUDE.md` (versão + histórico), `docs/regras/atividades.md`, `docs/HISTORICO-REGRAS.md`; conferir o visualizador | ⬜ Pendente | — | Leitura |
+| 119.9 | Commit, push e pull request | ⬜ Pendente | — | `git diff --cached --name-only` |
+| 119.10 | Aplicar o SQL do item 119.5 no Supabase (**só com pedido do usuário**) | ⬜ Pendente | — | Consultas de leitura depois |
+| 119.11 | Aceite do usuário (Testes de Front-End, aula 01, como professor e como aluno) | ⬜ Pendente | — | Usuário |
