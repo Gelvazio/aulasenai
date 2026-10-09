@@ -174,6 +174,41 @@ RLS da `aulas` já deixa o professor alterá-la):
 - [ ] Atualizar `docs/regras/atividades.md`, tirar o "PENDENTE" da seção do `CLAUDE.md` (nova
   versão + histórico), commit e aceite do usuário (professor e aluno).
 
+### #17: Fechar a revisão das regras do CLAUDE.md (sessão de 2026-10-07/08) — registrada em 2026-10-09 01:14:48
+
+**Status:** ⏳ PENDENTE — continuar em **nova sessão** (pedido do usuário, 2026-10-09 01:14:48)
+**Prioridade:** 🟡 Média
+**STATUS:** `STATUS.md`, Etapas 70, 72 e 73 (itens 70.5, 72.8 e 73.14). Plano da divisão:
+`docs/reorganizar-claude-md-estrutura.md`. Tudo já está aplicado e commitado (último commit da
+sessão: `56abe5b`); falta só conferir e aceitar.
+
+O que falta:
+
+- [ ] **Aceite do usuário — divisão do `CLAUDE.md` (70.5):** conferir o núcleo do `CLAUDE.md`, os
+  arquivos de `docs/regras/`, o `docs/HISTORICO-REGRAS.md` e o menu **Regras** no site (o modal
+  carrega o `CLAUDE.md` + `docs/regras/` + histórico; não foi testado no navegador).
+- [ ] **Aceite do usuário — 7 contradições corrigidas (72.8):** frase final sem tabela; menu
+  ALUNOS só do administrador; regra do Word removida; "PDF com gabarito" fora da regra da Turma;
+  Reforço de Linguagens fora do exemplo das 50 questões; ementa na raiz da matéria; `git add .`
+  trocado no `CLAUDE.md` global.
+- [ ] **Aceite do usuário — revisão final de 12 itens (73.14):** pastas que não são curso numa
+  lista só; plano em `docs/` só em tarefa grande (projeto e global); global sem `git status` como
+  exemplo; título "Regras do projeto Aulas SENAI"; menu Regras e aviso de segredo; autenticação
+  com `login.html`/`header-usuario.js`; grafo sem data fixa; inicialização pelo `STATUS.md`;
+  comando da ementa com `-Raw`; STATUS-EMENTAS com caminho genérico; registro do `cursoprofessor`
+  removido.
+- [ ] **Conferir o commit `85a8531 ok` antes do push (decisão do usuário):** ele versionou
+  arquivos de gabarito (ex.: `GABARITO-AVALIACAO-OBJETIVA.md`,
+  `PROVA_OBJETIVA_UC1_TIC_COM_GABARITO.gs`, `GABARITO_CORRECAO_PROVA_SIMPLES_UC1_TIC.md`), a pasta
+  `RESOLUCAO/` e um `.gitignore copy`, e mexeu na `.gitignore` — contra a regra "O QUE NUNCA É
+  PUBLICADO". Decidir se tira do Git (`git rm --cached` + padrão no `.gitignore`) ou se mantém.
+- [ ] **Ementa fora do tamanho (avisar/decidir):** `RIO_DO_SUL_MAIS_TECH/INTRODUCAO_COMUNICACAO_ORAL_ESCRITA/EMENTA-CHALKIE-AI.md`
+  tem 15.657 caracteres (regra: 14.800 a 14.950). Ajustar só a pedido (respeitar
+  `STATUS-PERMISSAO-EMENTA`).
+- [ ] **Opcional, só se pedido:** generalizar `RIO_DO_SUL_MAIS_TECH/scripts/criar-status-ementas.py`
+  para todos os cursos (hoje só percorre Rio do Sul; a regra manda atualizar os outros à mão) —
+  é código: tarefa com plano próprio.
+
 ---
 
-**Última atualização:** 2026-10-08 (tarefa #15 adicionada)
+**Última atualização:** 2026-10-09 (tarefa #17 adicionada)

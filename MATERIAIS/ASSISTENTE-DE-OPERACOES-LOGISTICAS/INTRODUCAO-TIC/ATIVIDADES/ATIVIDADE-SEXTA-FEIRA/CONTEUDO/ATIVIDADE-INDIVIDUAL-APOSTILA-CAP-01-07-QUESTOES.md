@@ -9,7 +9,7 @@
 - **Total de questões:** 100
 - **Pontuação:** 1 ponto por questão correta (total: 100 pontos)
 - **Capacidade avaliada:** Empregar a comunicação oral e escrita, o hardware e o software, os recursos da Web, a segurança da informação, o editor de textos e a redação técnica, conforme os capítulos 01 a 07 da apostila.
-- **Conteúdo-base:** `../../../APOSTILA/APOSTILA-INTRODUCAO-TIC.md` (capítulos 01 a 07)
+- **Conteúdo-base:** `../../../APOSTILA/APOSTILA-INTRODUCAO-TIC.md` (apostila única, versão 2.1, capítulos 01 a 07)
 - **Slides:** —
 - **Folha de respostas:** sim
 - **Exportar PDF com gabarito:** sim
@@ -241,22 +241,22 @@ Que tipo de ruído aconteceu?
 
 ---
 
-## ITEM 12 — Estilo passivo
+## ITEM 12 — Hierarquia e autonomia
 
 - **Capacidade:** C1
-- **Fonte na apostila:** Cap. 01 — Comunicação assertiva e escuta ativa
+- **Fonte na apostila:** Cap. 01 — Comunicação em equipes (Hierarquias e autonomia — S2)
 
-**Contexto:**  
-Um conferente percebe um erro na contagem do colega, mas não avisa ninguém por medo de discutir.
+**Contexto:**
+Durante o carregamento, um conferente percebe um palete mal amarrado, com risco de queda.
 
-**Comando:**  
-Qual estilo de comunicação ele usou?
+**Comando:**
+Segundo a apostila, o que o conferente tem autonomia para fazer sozinho?
 
 **Alternativas:**
-- A) Técnico, usado entre profissionais da área.
-- B) Passivo, que deixa os problemas se acumularem.
-- C) Assertivo, que apresenta fatos e propõe solução.
-- D) Agressivo, que grita, interrompe e culpa.
+- A) Trocar a doca de saída do pedido para ganhar tempo.
+- B) Parar o carregamento por risco à segurança ou recontar a carga.
+- C) Mudar a ordem dos pedidos do turno sem avisar o supervisor.
+- D) Nada; até a decisão de segurança espera o supervisor chegar.
 
 **Gabarito:** B
 
@@ -280,22 +280,22 @@ Segundo a apostila, qual é a sequência para dar uma instrução sem ruídos?
 
 ---
 
-## ITEM 14 — Ética no trabalho
+## ITEM 14 — Gestão de conflitos
 
 - **Capacidade:** C1
-- **Fonte na apostila:** Cap. 01 — Trabalho em equipe, consenso e ética
+- **Fonte na apostila:** Cap. 01 — Comunicação em equipes
 
-**Contexto:**  
-Um assistente percebeu que lançou errado a quantidade de uma nota fiscal no sistema.
+**Contexto:**
+O conferente e o motorista discordam sobre o horário de uso da doca.
 
-**Comando:**  
-Qual é a conduta ética, segundo a apostila?
+**Comando:**
+Segundo a apostila, como os conflitos devem ser resolvidos?
 
 **Alternativas:**
-- A) Comunicar a falha cedo, pois incidente comunicado cedo custa menos.
-- B) Esperar o inventário do mês para ver se o erro desaparece.
-- C) Passar a própria senha a um colega para ele corrigir no seu lugar.
-- D) Esconder a falha para não ser advertido e corrigir só se alguém perceber depois do fechamento.
+- A) Com critérios objetivos (segurança, custo, prazo), nunca com ataques pessoais.
+- B) Pela opinião de quem fala mais alto na reunião.
+- C) Deixando o supervisor decidir sem ouvir nenhum dos dois.
+- D) Esperando o conflito passar sozinho, sem conversar, até a próxima troca de turno.
 
 **Gabarito:** A
 
@@ -511,19 +511,19 @@ Qual componente é o "cérebro" do computador, que faz os cálculos e executa as
 
 ---
 
-## ITEM 26 — Código aberto
+## ITEM 26 — Sistema operacional móvel
 
 - **Capacidade:** C4
-- **Fonte na apostila:** Cap. 02 — O sistema operacional (SO)
+- **Fonte na apostila:** Cap. 02 — Sistema operacional: tipos, fundamentos e funções
 
-**Comando:**  
-Qual exemplo da apostila é um sistema operacional de código aberto, geralmente gratuito?
+**Comando:**
+Segundo a apostila, que tipo de sistema operacional é usado em celulares e coletores de dados?
 
 **Alternativas:**
-- A) Linux.
-- B) Windows.
-- C) Sistema de estoque.
-- D) Windows Server.
+- A) Móvel, como Android ou iOS.
+- B) Servidor, como Windows Server.
+- C) Desktop, como Windows ou macOS.
+- D) Nenhum, porque o coletor de dados funciona sem sistema operacional.
 
 **Gabarito:** A
 
@@ -709,17 +709,17 @@ O que o colega deve fazer com esse anexo?
 
 ---
 
-## ITEM 36 — Referência da fonte
+## ITEM 36 — Referências no fim do texto
 
 - **Capacidade:** C5, C1
-- **Fonte na apostila:** Cap. 03 — Citação correta (ABNT)
+- **Fonte na apostila:** Cap. 03 — Políticas de uso, direitos autorais e citação de fontes
 
-**Comando:**  
-No fim do documento, o que deve constar na referência completa de uma fonte da internet?
+**Comando:**
+Segundo a apostila, depois de citar fontes no texto, o que deve aparecer no fim do documento?
 
 **Alternativas:**
 - A) Somente a frase "tirei da internet".
-- B) Autor, título, site e data de acesso.
+- B) As referências completas das fontes citadas.
 - C) Nada, basta copiar e colar o texto.
 - D) O nome do colega que achou o site.
 
@@ -802,16 +802,16 @@ Qual é um exemplo de citação indireta correta?
 ## ITEM 41 — Creative Commons
 
 - **Capacidade:** C5
-- **Fonte na apostila:** Cap. 03 — Direitos autorais e plágio
+- **Fonte na apostila:** Cap. 03 — Políticas de uso, direitos autorais e citação de fontes
 
-**Comando:**  
-Na licença Creative Commons, o que significa a sigla BY?
+**Comando:**
+Segundo a apostila, o que as licenças Creative Commons indicam?
 
 **Alternativas:**
-- A) Sem modificações.
-- B) Dar crédito ao autor.
-- C) Sem uso comercial.
-- D) Compartilhar com a mesma licença.
+- A) Que a obra pode ser copiada sem citar o autor.
+- B) O que o autor permite fazer com a obra.
+- C) Que o site é oficial do governo.
+- D) Que o arquivo foi verificado pelo antivírus e pode ser baixado sem risco.
 
 **Gabarito:** B
 
@@ -1018,16 +1018,16 @@ Qual encerramento é adequado para um e-mail profissional?
 ## ITEM 52 — Netiqueta
 
 - **Capacidade:** C1
-- **Fonte na apostila:** Cap. 04 — Anexos e boas maneiras (netiqueta)
+- **Fonte na apostila:** Cap. 04 — Correio eletrônico profissional (netiqueta)
 
-**Comando:**  
-Por que não escrever o e-mail inteiro em CAPS LOCK?
+**Comando:**
+Qual atitude segue a netiqueta, segundo a apostila?
 
 **Alternativas:**
-- A) Porque parece grito.
-- B) Porque a LGPD proíbe letras maiúsculas em e-mails.
-- C) Porque os servidores de e-mail recusam mensagens escritas só com letras maiúsculas.
-- D) Porque o anexo some quando o texto está em maiúsculas.
+- A) Evitar CAPS LOCK e o "responder a todos" sem necessidade.
+- B) Escrever o e-mail inteiro em letras maiúsculas para chamar atenção.
+- C) Encaminhar conversas confidenciais para manter todos informados.
+- D) Responder a todos sempre, mesmo quando a mensagem interessa a uma só pessoa.
 
 **Gabarito:** A
 
@@ -1051,19 +1051,19 @@ O que é a "nuvem", segundo a apostila?
 
 ---
 
-## ITEM 54 — Sincronização
+## ITEM 54 — Pastas na nuvem
 
 - **Capacidade:** C5
-- **Fonte na apostila:** Cap. 04 — Computação em nuvem
+- **Fonte na apostila:** Cap. 04 — Armazenamento e compartilhamento em nuvem
 
-**Comando:**  
-O que faz a sincronização de arquivos na nuvem?
+**Comando:**
+Segundo a apostila, como organizar as pastas na nuvem?
 
 **Alternativas:**
-- A) Mantém iguais a cópia da nuvem e a do computador.
-- B) Transforma o arquivo em PDF.
-- C) Apaga do computador tudo o que já foi enviado para a nuvem, para liberar espaço no disco.
-- D) Envia o arquivo por e-mail para todos os contatos.
+- A) Por ano e processo, como 2026 > Expedição > Romaneios.
+- B) Tudo numa só pasta, sem subpastas.
+- C) Pelo nome de quem enviou cada arquivo.
+- D) Pela cor do ícone, que muda conforme o tipo de arquivo enviado.
 
 **Gabarito:** A
 
@@ -1261,19 +1261,19 @@ O que diz a regra de backup 3-2-1?
 
 ---
 
-## ITEM 65 — Autenticação em dois fatores
+## ITEM 65 — Contas e senhas
 
 - **Capacidade:** C2
 - **Fonte na apostila:** Cap. 05 — Contas e senhas
 
-**Comando:**  
-O que é a autenticação em dois fatores (2FA)?
+**Comando:**
+Segundo a apostila, quais cuidados protegem as contas do sistema?
 
 **Alternativas:**
-- A) Além da senha, um código no celular ou a biometria para confirmar o acesso.
-- B) Digitar a mesma senha duas vezes seguidas.
-- C) Enviar a senha por e-mail para o suporte de TI sempre que entrar no sistema de outro computador.
-- D) Ter dois computadores com a mesma senha.
+- A) Não reutilizar nem compartilhar a senha, usar gerenciador e ativar a 2FA.
+- B) Usar a mesma senha em todos os sistemas para não esquecer.
+- C) Anotar a senha num post-it colado no monitor.
+- D) Compartilhar a senha só com os colegas de confiança do setor.
 
 **Gabarito:** A
 
@@ -1372,19 +1372,19 @@ O que a apostila recomenda?
 
 ---
 
-## ITEM 71 — Engenharia social
+## ITEM 71 — Sinais de phishing
 
 - **Capacidade:** C2
-- **Fonte na apostila:** Cap. 05 — Golpes na internet: phishing e engenharia social
+- **Fonte na apostila:** Cap. 05 — Golpes na internet
 
-**Comando:**  
-O que é engenharia social?
+**Comando:**
+Qual destes é um sinal de phishing citado na apostila?
 
 **Alternativas:**
-- A) Manipular emoções, como medo e pressa, para induzir a pessoa ao erro.
-- B) Um programa que cria senhas fortes.
-- C) Organizar a equipe do setor para trabalhar junto na mesma planilha da nuvem.
-- D) A cópia de segurança dos arquivos.
+- A) Urgência e ameaça, com pedido de senha ou código.
+- B) Mensagem com assinatura completa, setor e ramal de um colega conhecido.
+- C) E-mail do supervisor combinando o horário da reunião.
+- D) Aviso interno publicado no mural da empresa.
 
 **Gabarito:** A
 
@@ -1660,19 +1660,19 @@ O que fazer?
 
 ---
 
-## ITEM 86 — Modo de exibição
+## ITEM 86 — Zoom e exibição
 
 - **Capacidade:** C1
 - **Fonte na apostila:** Cap. 06 — Ortografia, dicionário e exibição
 
-**Comando:**  
-Qual modo de exibição mostra como o documento sairá no papel?
+**Comando:**
+Segundo a apostila, o que acontece ao aumentar o zoom do documento?
 
 **Alternativas:**
-- A) Zoom de 200%.
-- B) Layout de impressão.
-- C) Estrutura de tópicos.
-- D) Modo de leitura.
+- A) A fonte impressa fica maior no papel.
+- B) Só a visualização aumenta; o tamanho real da fonte não muda.
+- C) As margens mudam para o padrão ABNT.
+- D) O documento é salvo em PDF.
 
 **Gabarito:** B
 
@@ -1768,19 +1768,19 @@ Qual é a diferença entre memorando e ofício?
 
 ---
 
-## ITEM 92 — Resumo informativo
+## ITEM 92 — Resumo
 
 - **Capacidade:** C3
-- **Fonte na apostila:** Cap. 07
+- **Fonte na apostila:** Cap. 07 — Memorando e resumo
 
-**Comando:**  
-O que traz o resumo informativo (ABNT NBR 6028)?
+**Comando:**
+Segundo a apostila, o que faz um resumo?
 
 **Alternativas:**
-- A) A opinião do autor sobre o documento.
-- B) Todas as páginas do documento original, sem cortes, para o leitor não perder nenhum detalhe.
-- C) Apenas a lista dos tópicos do documento.
-- D) Objetivo, método, resultados e conclusão, sem opinião.
+- A) Apresenta a opinião do autor sobre o documento.
+- B) Copia todas as páginas do original, sem cortes, para o leitor não perder nenhum detalhe.
+- C) Lista só os nomes dos participantes da reunião.
+- D) Condensa as ideias principais, sem opinião.
 
 **Gabarito:** D
 
@@ -1822,19 +1822,19 @@ Para que serve uma ata?
 
 ---
 
-## ITEM 95 — Relatório — pessoa verbal
+## ITEM 95 — Fato e recomendação
 
 - **Capacidade:** C1
-- **Fonte na apostila:** Cap. 07 — O que é um texto técnico (impessoalidade)
+- **Fonte na apostila:** Cap. 07 — Identificação e interpretação; Relatório técnico
 
-**Comando:**  
-Em que pessoa o relatório deve ser escrito?
+**Comando:**
+No relatório técnico, qual frase é uma recomendação (e não um fato)?
 
 **Alternativas:**
-- A) Na primeira pessoa do plural informal ("a gente separou").
-- B) Na primeira pessoa do singular ("eu acho que separei").
-- C) Na segunda pessoa ("você separou").
-- D) Na terceira pessoa ("os pedidos foram separados").
+- A) "Constatou-se avaria em 4 das 40 caixas do lote 3381."
+- B) "Às 9h15, a carga chegou na doca 2."
+- C) "O lote 3381 tinha 40 caixas."
+- D) "Recomenda-se registrar a ressalva no canhoto."
 
 **Gabarito:** D
 
@@ -1894,22 +1894,22 @@ Qual norma internacional trata da gestão da qualidade?
 
 ---
 
-## ITEM 99 — Ficha de segurança
+## ITEM 99 — Interpretação de texto técnico
 
 - **Capacidade:** C3
-- **Fonte na apostila:** Cap. 07 — Identificação e interpretação de textos técnicos
+- **Fonte na apostila:** Cap. 07 — Identificação e interpretação
 
-**Contexto:**  
-Um produto químico vai ser armazenado no almoxarifado.
+**Contexto:**
+Uma ordem de serviço manda separar 2 t de um produto, mas o colega leu 2 kg.
 
-**Comando:**  
-O que ler antes, segundo a apostila?
+**Comando:**
+Segundo a apostila, o que conferir no texto técnico antes de executar?
 
 **Alternativas:**
-- A) A ata da última reunião.
-- B) O resumo indicativo do relatório.
-- C) A ficha com dados de segurança (FDS/FISPQ).
-- D) A nota fiscal do fornecedor, que traz o preço e a quantidade comprada do produto.
+- A) Só o nome de quem assinou o texto.
+- B) A cor do papel e a fonte usada no documento.
+- C) Unidades, códigos e siglas, como kg × t e o lote.
+- D) A data de impressão, porque o texto mais antigo da pasta sempre está certo.
 
 **Gabarito:** C
 

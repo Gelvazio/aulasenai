@@ -1,4 +1,4 @@
-# Padrão de Resposta — Comunicação Técnica no CD — 30 Discursivas (uso exclusivo do professor e da correção por IA)
+# Padrão de Resposta — Comunicação Técnica no CD — 20 Discursivas (uso exclusivo do professor e da correção por IA)
 
 > ⚠️ Arquivo fora do Git (`*gabarito*`). Não publicar. O conteúdo vai para a tabela
 > `topico_discursivo` (leitura só do professor) pelo seed gerado.
@@ -24,15 +24,15 @@
 **Critérios:** Nota cheia: conceito de consenso, como buscá-lo e justificativa dos papéis. Metade: dois desses três. Zero: um ou nenhum.
 
 ### ITEM 05-a
-**Resposta esperada:** Ex.: "Aos nove dias do mês de outubro de dois mil e vinte e seis, às treze horas e trinta minutos, na sala 12, reuniram-se Ana, Bruno, Carla e Davi para dividir as tarefas do Manual de Comunicação do CD. Ficou decidido que Ana será a líder e escreverá a ata; Bruno será o pesquisador e escreverá o relatório; Carla será a redatora e escreverá o memorando; Davi será o formatador e escreverá o e-mail. Nada mais havendo, encerrou-se a reunião, e eu, Ana, escrevi esta ata."
-**Critérios:** Nota cheia: texto corrido, abertura (data, hora, local, participantes), decisões, encerramento e verbos no passado. Metade: falta uma dessas partes ou usa tópicos. Zero: não tem forma de ata.
+**Resposta esperada:** Ex.: "Aos nove dias do mês de outubro de dois mil e vinte e seis, às treze horas e trinta minutos, na sala 12, reuniram-se Ana, Bruno, Carla e Davi para dividir as tarefas do Manual de Comunicação do CD. Ficou decidido que Ana será a líder e escreverá a ata; Bruno será o pesquisador e escreverá o relatório; Carla será a redatora e escreverá o memorando; Davi será o formatador e escreverá o e-mail. Encerrou-se a reunião, e a ata foi assinada por Ana, Bruno, Carla e Davi." (cap. 07 — ata: cabeçalho, decisões com responsável, encerramento e assinaturas; verbos no passado; texto corrido; datas por extenso)
+**Critérios:** Nota cheia: texto corrido, cabeçalho (data, hora, local, participantes), decisões, encerramento/assinaturas e verbos no passado. Metade: falta uma dessas partes ou usa tópicos. Zero: não tem forma de ata.
 
 ### ITEM 06-a
-**Resposta esperada:** 7h30 — Recebimento — 600 caixas guardadas no endereço errado; 8h às 11h — Separação — 38 de 150 pedidos errados; 11h — Armazenagem — 70 caixas de diferença; 13h — Armazenagem — 15 caixas vencidas; 15h — Expedição — 3 horas de atraso; 16h — e-mail falso (phishing).
-**Critérios:** Nota cheia: quatro ou mais linhas com horário, setor e problema corretos. Metade: duas ou três linhas corretas. Zero: uma ou nenhuma.
+**Resposta esperada:** Fatos em ordem de horário (cap. 07 — desenvolvimento: fatos, dados e evidências, sem opinião): 7h30 — Recebimento — 600 caixas guardadas no endereço errado; 8h às 11h — Separação — 38 de 150 pedidos errados; 11h — Armazenagem — 70 caixas de diferença; 13h — Armazenagem — 15 caixas vencidas; 15h — Expedição — 3 horas de atraso; 16h — e-mail falso (phishing).
+**Critérios:** Nota cheia: quatro ou mais fatos com horário, setor e números corretos, sem opinião. Metade: dois ou três fatos corretos, ou com opinião. Zero: um ou nenhum.
 
 ### ITEM 07-a
-**Resposta esperada:** Causas que aparecem no contexto: o endereço B-03-04 foi trocado por B-04-03 no recebimento; 2 dos 6 coletores de dados pararam de ler o código de barras por problema de driver; as caixas novas de amaciante ficaram na frente das antigas, que venceram; o e-mail falso pediu a senha do sistema. Texto na terceira pessoa, impessoal, com foco no fato e não em quem fez (cap. 07 — impessoalidade).
+**Resposta esperada:** Causas que aparecem no contexto: o endereço B-03-04 foi trocado por B-04-03 no recebimento; 2 dos 6 coletores de dados pararam de ler o código de barras por problema de driver; as caixas novas de amaciante ficaram na frente das antigas, que venceram; o e-mail falso pediu a senha do sistema. Texto na terceira pessoa, impessoal, com foco no fato e não em quem fez (cap. 07 — conclusão com a causa provável; impessoalidade).
 **Critérios:** Nota cheia: quatro causas do contexto, terceira pessoa, sem culpar pessoas. Metade: duas ou três causas, ou culpa pessoas. Zero: uma causa ou nenhuma.
 
 ### ITEM 08-a
@@ -44,19 +44,19 @@
 **Critérios:** Nota cheia: fato com número e recomendação, separados e impessoais. Metade: só um dos dois, ou mistura fato com recomendação. Zero: opinião pessoal ou jargão.
 
 ### ITEM 10-a
-**Resposta esperada:** Ex.: (1) conferir o endereço no coletor antes de guardar a carga — causa: endereço trocado; (2) instalar ou atualizar o driver dos coletores após cada atualização do sistema — causa: coletores parados; (3) conferir a validade e deixar à frente o que vence primeiro — causa: caixas vencidas; (4) não informar senha por e-mail e avisar o suporte de TI — causa: e-mail falso.
-**Critérios:** Nota cheia: duas sugestões viáveis, cada uma ligada a uma causa do contexto. Metade: uma sugestão ligada, ou duas sem ligação com a causa. Zero: nenhuma sugestão coerente.
+**Resposta esperada:** Ex. (cap. 07 — conclusão com recomendações; "Recomenda-se..."): (1) recomenda-se conferir o endereço no coletor antes de guardar a carga — causa: endereço trocado; (2) instalar ou atualizar o driver dos coletores após cada atualização do sistema — causa: coletores parados; (3) conferir a validade e deixar à frente o que vence primeiro — causa: caixas vencidas; (4) não informar senha por e-mail e avisar o suporte de TI — causa: e-mail falso.
+**Critérios:** Nota cheia: duas recomendações viáveis, cada uma ligada a uma causa do contexto. Metade: uma recomendação ligada, ou duas sem ligação com a causa. Zero: nenhuma recomendação coerente.
 
 ### ITEM 11-a
-**Resposta esperada:** Busca: usar aspas para a frase exata, ex.: "inventário rotativo" (pode somar site: ou filetype:). Fonte confiável: aplicar o teste CRAAP (atualidade, relevância, autoridade, precisão, propósito), preferir sites oficiais (.gov.br, .edu.br) e confirmar em pelo menos 3 fontes. Referência no fim: autor, título, site e data de acesso. Escrever com as próprias palavras, citando (cap. 03).
+**Resposta esperada:** Busca: usar aspas para a frase exata, ex.: "inventário rotativo" (pode somar site: ou filetype:). Fonte confiável: aplicar o teste CRAAP (atualidade, relevância, autoridade, precisão, propósito), preferir sites oficiais (.gov.br, .edu.br) e confirmar em pelo menos 3 fontes. Uso no texto: escrever com as próprias palavras (citação indireta) ou entre aspas (citação direta), com autor e ano, e listar as referências completas no fim, conforme a ABNT NBR 10520 — copiar sem citar é plágio (cap. 03).
 **Critérios:** Nota cheia: os três elementos corretos. Metade: dois. Zero: um ou nenhum, ou diz para copiar e colar.
 
 ### ITEM 12-a
-**Resposta esperada:** Ex.: "MEMORANDO Nº 01/2026 — Para: Gerente do CD — De: Setor de TI — Data: 09/10/2026 — Assunto: Pedido de coletores de dados para a separação. Prezado(a) Gerente, solicitamos a compra de 2 coletores de dados, porque 2 dos 6 equipamentos estão parados desde a atualização do sistema (problema de driver), o que fez 38 dos 150 pedidos saírem errados e atrasou a expedição em 3 horas. Pedimos a compra até 16/10/2026. Atenciosamente, [nome] — Técnico de TI."
-**Critérios:** Nota cheia: cabeçalho completo, saudação, pedido com dados, prazo e fecho. Metade: falta uma ou duas partes. Zero: não tem forma de memorando.
+**Resposta esperada:** Ex. (cap. 07 — memorando: número, Para, Assunto, solicitação, prazo): "MEMORANDO Nº 01/2026 — Para: Gerente do CD — Assunto: Pedido de coletores de dados para a separação. Solicitamos a compra de 2 coletores de dados, porque 2 dos 6 equipamentos estão parados desde a atualização do sistema (problema de driver), o que fez 38 dos 150 pedidos saírem errados e atrasou a expedição em 3 horas. Pedimos a compra até 16/10/2026." Aceitar também De, Data, saudação e fecho, se o aluno incluir.
+**Critérios:** Nota cheia: número, Para, Assunto, solicitação com os dados do caso e prazo. Metade: falta uma ou duas partes. Zero: não tem forma de memorando.
 
 ### ITEM 13-a
-**Resposta esperada:** Pela tabela da apostila (cap. 02): coletor de dados — entrada e saída (lê o código de barras e envia ao sistema, e também mostra informações na tela). Impressora de etiquetas — saída (entrega o resultado impresso). Cartão de memória — armazenamento (guarda os dados de forma permanente). Aceitar "entrada" para o coletor só se a justificativa citar a leitura do código de barras.
+**Resposta esperada:** Pela tabela da apostila (cap. 02): leitor de código de barras — entrada (envia ao computador o código lido). Impressora de etiquetas — saída (entrega o resultado impresso). Coletor de dados — entrada e saída (lê o código de barras e também mostra o pedido na tela).
 **Critérios:** Nota cheia: três classificações corretas e justificadas. Metade: três corretas sem justificativa, ou duas corretas justificadas. Zero: uma ou nenhuma correta.
 
 ### ITEM 14-a
@@ -76,8 +76,8 @@
 **Critérios:** Nota cheia: conceito, dois sinais e conduta correta. Metade: dois desses três. Zero: um ou nenhum, ou diz que passaria a senha.
 
 ### ITEM 18-a
-**Resposta esperada:** Ex.: 1. Crie senha forte, de 12 a 16 caracteres, com letras maiúsculas e minúsculas, números e símbolos, e não a repita em outros sistemas. 2. Ative a autenticação em dois fatores (2FA). 3. Bloqueie a tela ao sair da mesa (Windows + L). 4. Faça backup periódico na nuvem da empresa. ATENÇÃO: nunca informe sua senha por e-mail (cap. 05).
-**Critérios:** Nota cheia: quatro regras corretas, verbos de ordem, lista numerada e frase de atenção. Metade: três regras ou sem a frase de atenção. Zero: duas regras ou menos.
+**Resposta esperada:** Ex. (cap. 05): 1. Crie senha forte, de 12 a 16 caracteres, com letras maiúsculas e minúsculas, números e símbolos, e não a repita em outros sistemas. 2. Ative a autenticação em dois fatores (2FA). 3. Bloqueie a tela ao sair da mesa (Windows + L). 4. Faça backup periódico na nuvem da empresa. ATENÇÃO: nunca informe sua senha por e-mail (cap. 05).
+**Critérios:** Nota cheia: quatro regras corretas e explicadas, lista numerada e aviso de atenção. Metade: três regras ou sem o aviso de atenção. Zero: duas regras ou menos.
 
 ### ITEM 19-a
 **Resposta esperada:** Margens no padrão ABNT: 3 cm em cima e à esquerda, 2 cm embaixo e à direita (espaço entre o texto e a borda). Estilos Título 1 (seções) e Título 2 (subseções): padronizam os títulos e geram o sumário automático (menu Referências ou Inserir), que deve ser atualizado depois de editar. Quebra de página: começa o próximo texto numa página nova sem apertar vários Enter. Número da página no rodapé (cabeçalho e rodapé) (cap. 06).
@@ -86,44 +86,3 @@
 ### ITEM 20-a
 **Resposta esperada:** Ex.: "A Rota Certa Logística e Armazenagem (empresa fictícia) registrou, na segunda-feira, falhas em seu centro de distribuição: 38 dos 150 pedidos saíram errados, faltaram 70 caixas no inventário, 15 caixas venceram e a expedição atrasou 3 horas, com prejuízo de cerca de R$ 4.200. Este manual tem o objetivo de registrar o ocorrido e padronizar a comunicação do CD." Introdução = contexto e objetivo (cap. 07, ABNT NBR 10719), na terceira pessoa.
 **Critérios:** Nota cheia: empresa, problema com números e objetivo, na terceira pessoa. Metade: falta uma parte ou não usa números. Zero: falta mais de uma parte.
-
-### ITEM 21-a
-**Resposta esperada:** A contagem estava só na memória RAM, que guarda o que está em uso e é volátil: ao desligar (ou faltar energia), perde tudo. Quem guarda de forma permanente é o HDD ou o SSD. Ele deveria ter salvado o arquivo com frequência (cap. 02).
-**Critérios:** Nota cheia: RAM volátil, armazenamento permanente e conduta (salvar). Metade: dois desses três. Zero: um ou nenhum.
-
-### ITEM 22-a
-**Resposta esperada:** O SO gerencia processos (divide o tempo do processador entre os programas), a memória (reserva espaço da RAM para cada programa) e os arquivos (organiza e protege o que é gravado). Coletores de dados usam SO móvel, como Android ou iOS (cap. 02).
-**Critérios:** Nota cheia: três tarefas e tipo móvel com exemplo. Metade: duas tarefas e tipo correto, ou três tarefas sem o tipo. Zero: uma tarefa ou nenhuma.
-
-### ITEM 23-a
-**Resposta esperada:** A internet é a infraestrutura (cabos, roteadores, servidores, protocolos TCP/IP); a web é um serviço que funciona sobre ela, com páginas ligadas por links, criada por Tim Berners-Lee no CERN em 1989. A afirmação está errada: são coisas diferentes, e aplicativos de mensagem usam a internet, mas não são a web (cap. 03).
-**Critérios:** Nota cheia: diferença correta e afirmação avaliada como errada com justificativa. Metade: só um dos dois. Zero: diz que são a mesma coisa.
-
-### ITEM 24-a
-**Resposta esperada:** É plágio porque apresenta como seu o trabalho de outra pessoa, copiando sem citar. A Lei 9.610/98 protege os direitos autorais; estar na internet não libera a cópia. Citação direta: palavras exatas entre aspas, com autor, ano e página (SILVA, 2023, p. 15). Citação indireta: a ideia com as próprias palavras, sem aspas, com autor e ano (Para Silva (2023), ...). No fim, as referências completas (cap. 03).
-**Critérios:** Nota cheia: plágio, lei e as duas citações corretas. Metade: dois desses três. Zero: um ou nenhum.
-
-### ITEM 25-a
-**Resposta esperada:** Com todos em "Para", cada cliente vê o e-mail dos outros: expõe dados pessoais e pode violar a LGPD. Correto: os 40 clientes em CCO (cópia oculta); em "Para" o próprio remetente ou o setor, e em CC quem só precisa acompanhar (ex.: supervisor) (cap. 04).
-**Critérios:** Nota cheia: problema + LGPD e uso correto dos três campos. Metade: problema explicado e só o CCO indicado. Zero: mantém todos em Para ou CC.
-
-### ITEM 26-a
-**Resposta esperada:** Transportadora: leitor (só ver e baixar). Auditoria: comentador (ver e comentar). Colegas da expedição: editor (alterar). Link público de edição deixa qualquer pessoa com o link apagar ou alterar os arquivos; compartilhar com os e-mails das pessoas certas e revisar os acessos (cap. 04).
-**Critérios:** Nota cheia: três permissões e risco do link público. Metade: duas permissões e o risco, ou três sem o risco. Zero: uma ou nenhuma.
-
-### ITEM 27-a
-**Resposta esperada:** (a) Confidencialidade — só quem tem autorização acessa. (b) Integridade — a informação não é alterada indevidamente. (c) Disponibilidade — a informação está acessível quando precisa (cap. 05).
-**Critérios:** Nota cheia: três relações e o que cada pilar garante. Metade: três relações sem explicação, ou duas com explicação. Zero: uma ou nenhuma.
-
-### ITEM 28-a
-**Resposta esperada:** Ransomware criptografa os arquivos e pede resgate; pagar não garante a devolução. Backup 3-2-1: 3 cópias dos dados (a original + 2), em 2 tipos de mídia diferentes (ex.: servidor e disco externo) e 1 cópia fora da empresa (ex.: nuvem corporativa); testar a restauração de vez em quando (cap. 05).
-**Critérios:** Nota cheia: conceito, risco do pagamento e plano 3-2-1 completo. Metade: dois desses três. Zero: um ou nenhum.
-
-### ITEM 29-a
-**Resposta esperada:** Aplicar Título 1 às seções e Título 2 às subseções (permite o sumário automático); lista numerada nos passos do recebimento (têm ordem); marcadores na lista de EPIs (sem ordem); aviso de segurança em caixa com borda e sombreamento suave, legível em preto e branco (cap. 06).
-**Critérios:** Nota cheia: estilos, numeração, marcadores e destaque do aviso. Metade: dois ou três desses itens. Zero: um ou nenhum.
-
-### ITEM 30-a
-**Resposta esperada:** Aceitar ou rejeitar todas as alterações e apagar os comentários internos (são confidenciais); renomear no padrão, ex.: 2026-10-14_Relatorio_Avaria_v01; enviar em PDF, versão final sem edição; visualizar a impressão antes (cap. 06).
-**Critérios:** Nota cheia: alterações/comentários, nome padronizado e PDF, com justificativa. Metade: dois desses três. Zero: um ou nenhum.
-
