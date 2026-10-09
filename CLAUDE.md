@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 15:00:25
+**Versão das regras:** 2026-10-09 15:03:21
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 15:03:21 | **Registro da sessão em `SESSOES-CLAUDE/` removido** (regra, pergunta do fim da tarefa, leitura do `STATUS-SESSOES.md` e a pasta): o estado fica só no `STATUS.md`, onde já estavam todas as pendências dos logs |
 | 2026-10-09 15:00:25 | **Nuvem: sem a pergunta "Deseja atualizar o log da sessão atual?"** no fim da tarefa (só no ambiente local); a frase final continua |
 | 2026-10-09 14:58:46 | **Nuvem: cada arquivo criado = commit + push na hora** (seção "Pull Requests"), sem esperar o fim da tarefa; arquivo parcial vai como `wip(...)` com o que falta no `STATUS.md` |
 | 2026-10-09 14:09:46 | **Gabarito vai para o Git, mas não é publicado na Vercel:** `-GABARITO.md`, `*QUESTOES.md`, `PROVA-OBJETIVA-*.md`, seeds `database/*-seed-atividades.sql` e `BANCO-AVA/` versionados e listados no `.vercelignore` (saíram do `.gitignore`); regras atualizadas no `CLAUDE.md`, `docs/regras/atividades.md` e `docs/REGRAS-ATIVIDADE-PRATICA.md` |
 | 2026-10-09 14:04:30 | **Atividade prática de uma aula = 10 questões × 3 tópicos** (`docs/REGRAS-ATIVIDADE-PRATICA.md`); a prova id 82 é de várias aulas e serve **só como referência dos recursos compartilhados** (não do tamanho nem do formato das questões) |
-| 2026-10-09 13:20:11 | **Análise contínua das matérias (tarefa permanente #19-91cbac65-87ca-45a0):** `scripts/analise-materias.py` grava `tasks/ANALISE-MATERIAS-RELATORIO.json` no início de cada sessão e ao concluir tarefa em matéria; a tarefa **nunca fica CONCLUÍDA** enquanto houver matéria incompleta ou pendência |
 
 ---
 
@@ -48,9 +48,9 @@ Registrada em 2026-10-03 a pedido do usuário.
   usar o Chromium **sem janela** (headless) para gerá-lo — nunca para validar telas.
 - ✅ **Final de tarefa:** responder `TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?` (sem tabela
   nem resumo; os avisos que outra regra manda dar — matérias semelhantes, tabela de permissões,
-  pendências do usuário, commit/push — vêm **em poucas linhas antes** da frase) e, logo abaixo, perguntar **"Deseja atualizar o log da sessão atual?"** (ver a
-  regra "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`", 2026-10-08). ☁️ **Na sessão em nuvem essa
-  pergunta NÃO é feita** (2026-10-09 15:00:25, pedido do usuário): termina só com a frase final.
+  pendências do usuário, commit/push — vêm **em poucas linhas antes** da frase). Não há mais a
+  pergunta sobre o log da sessão: o registro da sessão em `SESSOES-CLAUDE/` foi **removido** em
+  2026-10-09 15:03:21 (pedido do usuário); o estado fica só no `STATUS.md`.
 - 🧭 **Arquivos de status são MUITO IMPORTANTES** (2026-10-08): `STATUS.md` é a fonte única do
   estado; ver a seção "MUITO IMPORTANTE — ARQUIVOS DE STATUS" logo abaixo.
 - ⛔ **Nunca escrever testes automatizados** (regra permanente do global): nada de `*.test.js`,
@@ -153,8 +153,6 @@ pasta. O `TASKS_COMPLETE.md` foi apagado em 2026-10-09: tarefa concluída sai do
 |---|---|---|
 | `tasks/STATUS.md` | Etapas e itens de **todas** as tarefas, "Próximo passo", "⏳ Aguardando o usuário", "📌 Tarefas do `TASKS.md`", decisões, riscos, bloqueios, pendências e lições | 🥇 **Fonte única do estado** — em conflito, **ele vence** |
 | `tasks/TASKS.md` | Só a **descrição longa** das tarefas pendentes (concluída ou cancelada = bloco removido) | Aponta para o `STATUS.md` (sem status próprio) |
-| `SESSOES-CLAUDE/STATUS-SESSOES.md` | Uma linha por sessão: status (`PENDENTE` · `CONCLUÍDO` · `🗑️ REMOVIDA`), data e próximo passo | Aponta para o `STATUS.md` |
-| `SESSOES-CLAUDE/SESSAO-AAAA-MM-DD-HHMM-*.md` | Mínimo para outra licença continuar: próximo passo, decisões, validação dos pedidos, pendências (com a etapa/item do `STATUS.md`) | Aponta para o `STATUS.md` |
 | `docs/<tarefa>.md` | Plano da tarefa grande com os passos e o status de cada passo | Detalha a etapa do `STATUS.md` |
 | `<MATERIA>/AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` | Peça por peça da matéria (aula, atividade, capítulo) | Detalha a etapa do `STATUS.md` |
 | `<MATERIA>/STATUS-EMENTAS.md`, `MATERIAIS/STATUS-EMENTAS-CURSOS.md` | Situação das ementas e permissões `VERIFICAR`/`IGNORAR` | Gerados pelos scripts (regras em `docs/regras/ementas-e-cursos.md`) |
@@ -162,8 +160,7 @@ pasta. O `TASKS_COMPLETE.md` foi apagado em 2026-10-09: tarefa concluída sai do
 ### Regras
 
 1. ✅ **Ler antes de agir:** no início de cada chat **e antes de cada tarefa nova**, ler o
-   `STATUS.md` e o `SESSOES-CLAUDE/STATUS-SESSOES.md` (ver "INICIALIZAÇÃO DE CADA CHAT E DE CADA
-   TAREFA").
+   `STATUS.md` (ver "INICIALIZAÇÃO DE CADA CHAT E DE CADA TAREFA").
 2. ✅ **Atualizar na hora:** marcar `🔄` ao começar e `✅` (com data e hora reais do relógio) ao
    terminar **cada item**, em todos os arquivos de status envolvidos — nunca acumular para o fim.
 3. ✅ **Legenda única:** `⬜ Pendente` · `🔄 Em progresso` · `👀 Aguardando validação` ·
@@ -176,8 +173,7 @@ pasta. O `TASKS_COMPLETE.md` foi apagado em 2026-10-09: tarefa concluída sai do
 6. ✅ **"Próximo passo" sempre atual:** é a primeira linha lida ao retomar e a última atualizada ao
    parar; deve dizer o item **exato** a fazer.
 7. ✅ **Histórico nunca é apagado** no `STATUS.md` (só se acrescentam etapas); o que sai das listas
-   de espera é marcado no item da etapa. A exceção é o log de sessão `CONCLUÍDO`, que é aproveitado
-   e removido (regra "REGISTRO DA SESSÃO").
+   de espera é marcado no item da etapa.
 8. ✅ **Commit junto:** os arquivos de status alterados entram no commit da tarefa.
 
 ### 📋 Gestão de projetos — regras aplicadas ao `STATUS.md` (do global)
@@ -382,7 +378,7 @@ Registrada em 2026-10-03 a pedido do usuário.
 
 ---
 
-## 🚨 INICIALIZAÇÃO DE CADA CHAT E DE CADA TAREFA — LER O `STATUS.md` E O `STATUS-SESSOES.md`
+## 🚨 INICIALIZAÇÃO DE CADA CHAT E DE CADA TAREFA — LER O `STATUS.md`
 
 ⚠️ **DE SUMA IMPORTÂNCIA — SEM EXCEÇÃO.** Alterada em 2026-10-07 (antes mandava ler o `TASKS.md`).
 
@@ -390,17 +386,12 @@ Registrada em 2026-10-03 a pedido do usuário.
 
 1. ✅ **LER `C:\fontes\aulasenai\tasks\STATUS.md`** — primeiro o **"Próximo passo"** e a tabela
    **"⏳ Aguardando o usuário"**
-2. ✅ **LER `C:\fontes\aulasenai\SESSOES-CLAUDE\STATUS-SESSOES.md`** (2026-10-08, pedido do
-   usuário) — **sempre antes de iniciar uma nova tarefa**, não só no início do chat: para cada
-   sessão `PENDENTE`, ler o log dela (próximo passo, decisões e pendências) para não repetir nem
-   contradizer o que outra licença/sessão já fez; sessão `CONCLUÍDO` passa antes pela limpeza da
-   regra "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`"
-3. ✅ **Verificar** se há item `🔄 Em progresso` ou `⬜ Pendente` de tarefa aprovada e conferir o que
+2. ✅ **Verificar** se há item `🔄 Em progresso` ou `⬜ Pendente` de tarefa aprovada e conferir o que
    já foi feito nos arquivos/commits
    - ☁️ **Na nuvem:** ler também `.claude/regras-globais/CLAUDE-GLOBAL.md` e
      `CLAUDE-DOCS-BEFORE-EVERY-TASK.md` (regras globais; ver "REGRAS E SKILLS GLOBAIS NO PROJETO")
-4. ✅ **Prosseguir de onde parou** (sem refazer itens `✅` nem pular itens)
-5. ✅ **Só então responder** ao usuário (ou iniciar a tarefa)
+3. ✅ **Prosseguir de onde parou** (sem refazer itens `✅` nem pular itens)
+4. ✅ **Só então responder** ao usuário (ou iniciar a tarefa)
 
 **Por quê?** O `STATUS.md` é a fonte única do estado do trabalho (regra global "`STATUS.md` EM TODA
 TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
@@ -431,80 +422,7 @@ TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
     fica numa linha da seção **"📌 Tarefas do `TASKS.md`"** do `STATUS.md` (tarefa nova no
     `TASKS.md` = linha nova lá, no mesmo commit; tarefa concluída = linha marcada ✅ e bloco
     removido do `TASKS.md`).
-  - **Logs de `SESSOES-CLAUDE/`:** citam a **etapa/item do `STATUS.md`** e o próximo passo; não
-    mantêm uma lista própria de pendências diferente da do `STATUS.md`.
   - **Em conflito, o `STATUS.md` vence:** corrigir o outro arquivo na mesma tarefa.
-
----
-
-## 🗒️ REGRA CRÍTICA — REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/` (POR DATA E HORA, STATUS PENDENTE)
-
-Registrada em 2026-10-08 a pedido do usuário. Vale para **toda sessão** (local ou nuvem), junto com
-o `STATUS.md`.
-
-**Por quê:** o usuário usa **2 licenças do Claude Code ao mesmo tempo** e, ao trocar de uma para a
-outra, o contexto da conversa se perde. O log da sessão tem de **bastar sozinho** para a outra
-licença (ou outra IA) continuar exatamente de onde parou, sem precisar da conversa anterior.
-
-- ✅ **Grava-se o MÍNIMO NECESSÁRIO PARA CONTINUAR em outra sessão** (2026-10-08, pedido do
-  usuário) — **não** é uma cópia completa da conversa. Só dados detalhados que permitam retomar:
-  o que está pronto, decisões do usuário (e por quê), arquivos e caminhos envolvidos, commits,
-  bloqueios, pendências e o **próximo passo exato**. Nada de transcrever perguntas, respostas,
-  análises já concluídas ou textos que já estão nos arquivos (citar o caminho em vez de copiar).
-- ✅ Arquivo próprio em `SESSOES-CLAUDE/SESSAO-AAAA-MM-DD-HHMM-ASSUNTO-CURTO.md` (data e hora do
-  início da sessão; assunto em MAIÚSCULAS, sem acentos, com hífen).
-- ✅ **Separado por data e hora:** uma seção curta `## AAAA-MM-DD HH:MM — <pedido> · <status>` por
-  pedido do usuário que ainda importa para continuar, com o resultado, as decisões e os commits.
-- ✅ **Cabeçalho do arquivo:** `**Status:** PENDENTE`, ambiente, modelo, branch, links para o plano
-  (`docs/`), o `STATUS.md` (etapa) e o entregável.
-- ✅ **Status = `PENDENTE`** enquanto houver qualquer item pendente ou sem aceite do usuário.
-- ⛔ **`CONCLUÍDO` só existe quando a tarefa COMPLETA já foi finalizada** (2026-10-08, pedido do
-  usuário). Antes de marcar, **validar SEMPRE tudo o que foi pedido**: listar no log a tabela
-  **"✅ Validação dos pedidos"** (`Pedido do usuário | Feito? | Como foi conferido | Aceite`), com
-  **todos** os pedidos da sessão, e conferir cada um nos arquivos, nos commits e no `STATUS.md`
-  (não pela memória). Se faltar qualquer pedido, etapa do plano, commit ou aceite do usuário, o
-  status continua **`PENDENTE`** — nunca marcar `CONCLUÍDO` por tarefa parcial. No fim do arquivo, a tabela **"⏳ Pendências"**
-  (o que falta e quem faz), **com a etapa/item do `STATUS.md`** de cada linha — é por ela que a
-  próxima sessão (ou outra IA) retoma; se divergir do `STATUS.md`, o `STATUS.md` vence.
-- ✅ **Índice:** acrescentar no topo de `SESSOES-CLAUDE/SESSAO-CLAUDE.md` uma seção curta da sessão
-  (ambiente, modelo, commits, pedido, status e link para o arquivo da sessão).
-- ✅ **O log da sessão só é gravado quando o usuário responde SIM** à pergunta do fim da tarefa
-  (2026-10-08, decisão do usuário) — não há gravação automática a cada pedido nem ao parar. O
-  `STATUS.md` continua **sempre** atualizado (fonte única). O commit do log entra no commit da
-  tarefa (ou num commit próprio, se a sessão não mudou outros arquivos).
-- ✅ **Pergunta ao final de cada tarefa (2026-10-08, pedido do usuário):** depois de
-  `TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?`, perguntar **"Deseja atualizar o log da sessão
-  atual?"** — ☁️ **só no ambiente local; na sessão em nuvem a pergunta não é feita** (2026-10-09 15:00:25, pedido
-  do usuário: na nuvem cada arquivo já vai para commit e push na hora). Se o usuário responder **SIM**:
-  1. gravar em `SESSOES-CLAUDE/` o mínimo necessário para continuar (arquivo da sessão, com data
-     e hora de cada pedido e **tudo o que falta fazer**, e a linha no índice `SESSAO-CLAUDE.md`),
-     seguindo esta regra;
-  2. definir o status: **`CONCLUÍDO`** só se a validação de **todos** os pedidos estiver completa
-     (tabela "✅ Validação dos pedidos" toda conferida e "⏳ Pendências" vazia); senão **`PENDENTE`**;
-  3. fazer o commit do log (regra "COMMIT POR TAREFA");
-  4. **ao final, limpar o contexto com `/clear`**: o `/clear` é um comando do Claude Code que só o
-     usuário digita (o Claude não consegue executá-lo) — então a última mensagem é
-     `Log da sessão gravado. Digite /clear para limpar o contexto da sessão atual.`
-  Se responder **NÃO**, não gravar e seguir normalmente.
-- ✅ **Status das sessões (2026-10-08, pedido do usuário):** `SESSOES-CLAUDE/STATUS-SESSOES.md`
-  tem uma linha por sessão (início, ambiente, assunto, arquivo, status, atualizada em, próximo
-  passo). Atualizar a linha sempre que o log da sessão for gravado. **Ler este arquivo no início de
-  cada sessão**, junto com o `STATUS.md`.
-- ✅ **Sessão com status `CONCLUÍDO` → aproveitar e remover** (2026-10-08, pedido do usuário). Logo
-  depois de marcar uma sessão como `CONCLUÍDO` (ou ao encontrar uma assim no início da sessão):
-  1. **ler** o arquivo da sessão (o que foi feito, decisões e lições);
-  2. **atualizar o `CLAUDE.md`** (ou o arquivo de `docs/regras/` do assunto) **se necessário**: só
-     decisões e lições que valem para o futuro e ainda não estão nas regras — com nova versão e
-     linha no histórico (regra do visualizador);
-  3. conferir que nada pendente se perde (o que sobrar vai para o `STATUS.md` ou o `TASKS.md`);
-  4. **remover os dados que não serão mais usados:** apagar o arquivo da sessão e a seção dela no
-     índice `SESSAO-CLAUDE.md` (o Git guarda o histórico);
-  5. no `STATUS-SESSOES.md`, trocar o status para `🗑️ REMOVIDA` com a data e o que foi aproveitado
-     (ex.: "regra X no CLAUDE.md" ou "nada a aproveitar");
-  6. fazer o commit (regra "COMMIT POR TAREFA").
-- ⛔ A pasta é versionada e publicada: **nunca** gravar senhas, chaves, gabaritos, respostas certas
-  nem dados pessoais de alunos.
-- ✅ Exemplo: `SESSOES-CLAUDE/SESSAO-2026-10-07-2110-COMUNICACAO-RIO-DO-SUL.md`.
 
 ---
 
@@ -522,7 +440,7 @@ Registrada em 2026-10-08 a pedido do usuário (ele usa 2 licenças do Claude Cod
   versionado para outra licença/máquina conferir ou restaurar.
 - ✅ **Sessão na NUVEM (2026-10-08, pedido do usuário):** no Claude Code na web/remoto o
   `C:\Users\gelva\.claude\CLAUDE.md` da máquina do usuário **não existe**. Por isso, no início de
-  toda sessão em nuvem (junto com o `STATUS.md` e o `STATUS-SESSOES.md`), **ler e aplicar** as
+  toda sessão em nuvem (junto com o `STATUS.md`), **ler e aplicar** as
   regras globais da cópia do projeto: `.claude/regras-globais/CLAUDE-GLOBAL.md` e
   `.claude/regras-globais/CLAUDE-DOCS-BEFORE-EVERY-TASK.md`, como se fossem o `CLAUDE.md` global.
   A ordem de precedência continua: **`CLAUDE.md` do projeto** (e `docs/regras/`) vence o global.

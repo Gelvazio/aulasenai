@@ -1685,3 +1685,12 @@ Matéria: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/` (renomeada em
 |------|-----------|--------|--------------|-------------|
 | 129.1 | `CLAUDE.md` (final de tarefa e regra do registro da sessão): pergunta "Deseja atualizar o log da sessão atual?" só no ambiente local; versão 2026-10-09 15:00:25 e histórico | ✅ Concluído | 2026-10-09 15:00 | Leitura das duas passagens |
 | 129.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 130 — Remover o registro da sessão em `SESSOES-CLAUDE/` (tarefa pequena, pedido em 2026-10-09 15:03:21)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 130.1 | Conferir que as pendências dos logs `PENDENTE` estão no `STATUS.md` (111.5, 74.5, 79.8, 81.5, 82.5, 83.7, 71.3, 76.7, 77.5, 78.8 e tarefa #2) | ✅ Concluído | 2026-10-09 15:03 | grep de cada item no `STATUS.md` |
+| 130.2 | `CLAUDE.md`: regra "REGISTRO DA SESSÃO", pergunta do fim da tarefa, leitura do `STATUS-SESSOES.md` e linhas do mapa removidas; versão 2026-10-09 15:03:21 e histórico | ✅ Concluído | 2026-10-09 15:03 | grep de SESSOES-CLAUDE no `CLAUDE.md` |
+| 130.3 | Pasta `SESSOES-CLAUDE/` apagada (o Git guarda o histórico) | ✅ Concluído | 2026-10-09 15:03 | git ls-files |
+| 130.4 | Aceite do usuário | ⬜ Pendente | — | — |
