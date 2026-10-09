@@ -2,14 +2,18 @@
 // Acesso ao Supabase para o CRUD da tabela curso e o vínculo turma × curso (turma.curso_id).
 // Quem grava é decidido pelo banco: RLS da curso (perfil PROFESSOR) e a função
 // definir_curso_turma (só o Professor Administrador). Curso nunca é apagado (DELETE apagaria as
-// aulas em cascata): desativar = ativo 0. Depende de js/supabase.js (obterClienteSupabase).
+// aulas em cascata): desativar = ativo 0. A unidade vem só da tabela unidade (curso.unidade_id e
+// turma.unidade_id); unidade em uso não é apagada (FK on delete restrict).
+// Depende de js/supabase.js (obterClienteSupabase).
 
 const TABELA_CURSO_REPOSITORIO = "curso";
 const TABELA_TURMA_CURSO_REPOSITORIO = "turma";
+const TABELA_UNIDADE_REPOSITORIO = "unidade";
 const RPC_ADMINISTRADOR_CURSO = "eh_professor_administrador";
 const RPC_DEFINIR_CURSO_TURMA = "definir_curso_turma";
-const COLUNAS_CURSO_REPOSITORIO = "id, nome_completo, descricao, unidade, ativo";
-const COLUNAS_TURMA_CURSO_REPOSITORIO = "codigo, nome, turno, horario, local, curso_id";
+const COLUNAS_CURSO_REPOSITORIO = "id, nome_completo, descricao, unidade_id, ativo";
+const COLUNAS_TURMA_CURSO_REPOSITORIO = "codigo, nome, turno, horario, curso_id, unidade_id";
+const COLUNAS_UNIDADE_REPOSITORIO = "id, nome, endereco";
 
 /**
  * Lança o erro do Supabase, se houver, e devolve os dados.
@@ -54,7 +58,7 @@ function criarRepositorioCursos(cliente) {
 
     /**
      * Inclui um curso.
-     * @param {{nome_completo: string, descricao: string, unidade: string}} curso - Dados.
+     * @param {{nome_completo: string, descricao: string, unidade_id: number}} curso - Dados.
      * @returns {Promise<void>}
      */
     async incluirCurso(curso) {
@@ -70,6 +74,40 @@ function criarRepositorioCursos(cliente) {
     async alterarCurso(id, campos) {
       const gravar = { ...campos, updated_at: new Date().toISOString() };
       dadosOuErroCursos(await cliente.from(TABELA_CURSO_REPOSITORIO).update(gravar).eq("id", id));
+    },
+
+    /** @returns {Promise<Object[]>} Unidades pelo nome. */
+    async listarUnidades() {
+      return dadosOuErroCursos(await cliente.from(TABELA_UNIDADE_REPOSITORIO)
+        .select(COLUNAS_UNIDADE_REPOSITORIO).order("nome"));
+    },
+
+    /**
+     * Inclui uma unidade.
+     * @param {{nome: string, endereco: string|null}} unidade - Dados.
+     * @returns {Promise<void>}
+     */
+    async incluirUnidade(unidade) {
+      dadosOuErroCursos(await cliente.from(TABELA_UNIDADE_REPOSITORIO).insert(unidade));
+    },
+
+    /**
+     * Altera uma unidade.
+     * @param {number} id - Id da unidade.
+     * @param {{nome: string, endereco: string|null}} unidade - Novos valores.
+     * @returns {Promise<void>}
+     */
+    async alterarUnidade(id, unidade) {
+      dadosOuErroCursos(await cliente.from(TABELA_UNIDADE_REPOSITORIO).update(unidade).eq("id", id));
+    },
+
+    /**
+     * Exclui uma unidade (o banco recusa se algum curso ou turma usa).
+     * @param {number} id - Id da unidade.
+     * @returns {Promise<void>}
+     */
+    async excluirUnidade(id) {
+      dadosOuErroCursos(await cliente.from(TABELA_UNIDADE_REPOSITORIO).delete().eq("id", id));
     },
 
     /**

@@ -1,17 +1,9 @@
-// Unidade de cada turma (arquivo global, pedido do usuário em 2026-10-08): código da turma no
-// banco (turma.codigo) → nome da unidade onde ela está, com o turno (ex.: "CEPLAS MANHÃ").
-// Usado em todas as listas de seleção de turma: "133933 — AI AIAC 2026/2 V1 · AIAC SALETE TARDE".
-// Turma nova: acrescentar uma linha em UNIDADES_POR_TURMA. Turma que não está aqui usa o local +
-// turno da tabela turma (o turno não se repete se o local já o traz).
+// Unidade de cada turma (arquivo global). Desde 2026-10-09 a unidade vem SÓ da tabela unidade,
+// pela ligação turma.unidade_id (cadastro no modal 🏢 Unidades de cursos.html). Toda consulta de
+// turma que mostra a unidade pede a coluna COLUNA_UNIDADE_TURMA, que traz { unidade: { nome } }.
+// Usado em todas as listas de seleção de turma: "133933 — AI AIAC 2026/2 V1 · AI SALETE TARDE".
 
-const UNIDADES_POR_TURMA = {
-    '122552': 'TAIÓ TARDE',
-    '124403': 'ROBERTO MACHADO TARDE',
-    '133933': 'AIAC SALETE TARDE',
-    '135080': 'CEPLAS MANHÃ',
-    '135081': 'CEPLAS TARDE',
-    'QA LBTSN 2026/1 M2': 'CEPLAS MANHÃ',
-};
+const COLUNA_UNIDADE_TURMA = 'unidade:unidade_id(nome)';
 
 /**
  * Normaliza um texto para comparar sem acentos e sem diferenciar maiúsculas.
@@ -23,34 +15,32 @@ function normalizarTextoUnidade(texto) {
 }
 
 /**
- * Monta a unidade pelo local + turno da tabela turma (turma fora de UNIDADES_POR_TURMA).
- * @param {{local?: string, turno?: string}} turma - Turma do banco ou da lista.
- * @returns {string} Unidade (vazio se a turma não tem local nem turno).
+ * Nome da unidade da turma, vindo da tabela unidade.
+ * @param {{unidade?: {nome?: string}}} turma - Turma consultada com COLUNA_UNIDADE_TURMA.
+ * @returns {string} Nome da unidade (vazio se a turma não tem unidade).
  */
-function montarUnidadePeloLocal(turma) {
-    const local = String(turma?.local || '').trim().toUpperCase();
-    const turno = String(turma?.turno || '').trim().toUpperCase();
-    const localJaTemTurno = turno && normalizarTextoUnidade(local).includes(
-        normalizarTextoUnidade(turno));
-    if (!turno || localJaTemTurno) return local;
-    return [local, turno].filter(Boolean).join(' ');
+function nomeUnidadeTurma(turma) {
+    return String(turma?.unidade?.nome || '').trim();
 }
 
 /**
- * Nome da unidade da turma: primeiro UNIDADES_POR_TURMA, depois local + turno do banco.
- * @param {{codigo?: string, local?: string, turno?: string}} turma - Turma.
+ * Unidade + turno da turma em maiúsculas (o turno não se repete se o nome já o traz).
+ * @param {{unidade?: {nome?: string}, turno?: string}} turma - Turma.
  * @returns {string} Unidade (vazio se não houver dado).
  */
 function montarUnidadeTurma(turma) {
-    const unidadeCadastrada = UNIDADES_POR_TURMA[String(turma?.codigo || '')];
-    if (unidadeCadastrada) return unidadeCadastrada;
-    return montarUnidadePeloLocal(turma);
+    const unidade = nomeUnidadeTurma(turma).toUpperCase();
+    const turno = String(turma?.turno || '').trim().toUpperCase();
+    const unidadeJaTemTurno = turno && normalizarTextoUnidade(unidade).includes(
+        normalizarTextoUnidade(turno));
+    if (!turno || unidadeJaTemTurno) return unidade;
+    return [unidade, turno].filter(Boolean).join(' ');
 }
 
 /**
  * Acrescenta a unidade ao texto de uma opção de turma ("texto · UNIDADE").
  * @param {string} texto - Texto já montado da turma.
- * @param {Object} turma - Turma (com codigo, local e turno).
+ * @param {Object} turma - Turma (com unidade e turno).
  * @returns {string} Texto com a unidade, ou o próprio texto se não houver unidade.
  */
 function acrescentarUnidadeTurma(texto, turma) {

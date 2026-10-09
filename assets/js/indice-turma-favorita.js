@@ -35,7 +35,7 @@ async function listarTurmasVisiveisFavorita(cliente, usuario) {
         await cliente.rpc(RPC_ADMINISTRADOR_FAVORITA);
     if (erroAdministrador) throw erroAdministrador;
 
-    let consulta = cliente.from('turma').select('codigo,nome,turno,local').order('nome');
+    let consulta = cliente.from('turma').select('codigo,nome,turno,unidade:unidade_id(nome)').order('nome');
     if (ehAdministrador !== true) {
         const { data: vinculos, error: erroVinculos } = await cliente
             .from('turmaprofessor').select('turma_codigo').eq('professor_id', usuario.id);
