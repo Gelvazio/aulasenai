@@ -201,6 +201,7 @@ Registrada em 2026-10-03 a pedido do usuário. Todo `STATUS.md` segue estas regr
 | 17 | Comunicação | **Linguagem simples** — entendível por quem não é técnico | Todo o arquivo |
 | 18 | Continuidade | **Não depende de memória** — qualquer pessoa/IA retoma pelo arquivo | Próximo passo |
 | 19 | Continuidade | **Versionamento** — commit por item/tarefa concluída | Coluna/nota de commit |
+| 20 | Continuidade | **Histórico nunca é apagado** — só se acrescentam etapas | Etapas |
 | 21 | Encerramento | **Aceite formal** de quem pediu | Último item da etapa |
 | 22 | Encerramento | **Pendências documentadas** — o que ficou para depois e por quê | Seção Pendências |
 | 23 | Encerramento | **Lições aprendidas** — o que funcionou, o que não, o que vira regra | Seção Lições |
