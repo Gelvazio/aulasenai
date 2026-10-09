@@ -1,0 +1,44 @@
+/* Página cursos.html — CRUD de cursos e vínculo de turmas (complementa turmas-professor.css) */
+:root {
+    --cu-espaco: 8px;
+    --cu-opacidade-inativo: 0.55;
+    --cu-fundo-turma: #f7f9fc;
+}
+
+.cu-ferramentas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: var(--cu-espaco);
+}
+
+.cu-acoes { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.cu-acoes .guia-botao + .guia-botao { margin-left: 0; }
+
+.cu-linha--inativa { opacity: var(--cu-opacidade-inativo); }
+
+.cu-etiqueta { padding-right: 10px; }
+
+.cu-descricao { resize: vertical; font-family: inherit; }
+
+/* Listas do modal 🏫 Turmas (cursos-modais.js) */
+.cu-lista-turmas {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cu-turma {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--cu-espaco);
+    padding: 6px 10px;
+    border: 1px solid var(--guia-borda);
+    border-radius: 8px;
+    background: var(--cu-fundo-turma);
+    font-size: 14px;
+}

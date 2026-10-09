@@ -3,7 +3,7 @@
 // usuário logado (Supabase Auth) e o botão SAIR; sem sessão, mostra o botão ENTRAR.
 // Sempre mostra o botão HOME (index.html da raiz) junto do usuário logado.
 // Só para o Professor Administrador (confirmado pelo banco), mostra o menu USUARIOS / RELATORIOS /
-// ALUNOS / CORREÇÃO / TURMAS / PENDÊNCIAS (nova aba) e o botão REGRAS (modal com o CLAUDE.md,
+// ALUNOS / CORREÇÃO / TURMAS / CURSO / PENDÊNCIAS (nova aba) e o botão REGRAS (modal com o CLAUDE.md,
 // assets/js/regras-modal.js). Os demais professores não veem esses menus.
 // Guarda de sessão (2026-10-09): em toda página, menos index.html e login.html da raiz, sem login
 // nada aparece (modal "Aguarde, carregando..." até confirmar) e vai para o index.html.
@@ -29,6 +29,7 @@ const MENU_ADMINISTRADOR_HEADER = [
   { rotulo: "ALUNOS", rota: "../alunos.html" },
   { rotulo: "CORREÇÃO", rota: "../correcao-discursiva.html" },
   { rotulo: "TURMAS", rota: "../turmas.html" },
+  { rotulo: "CURSO", rota: "../cursos.html" },
   { rotulo: "PENDÊNCIAS", rota: "../MATERIAIS/AGENDA_COLABORADOR/pendencias.html" },
 ];
 const RPC_ADMINISTRADOR_HEADER = "eh_professor_administrador";

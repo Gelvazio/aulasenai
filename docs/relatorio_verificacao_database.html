@@ -630,6 +630,23 @@
       </table>
     </div>
 
+    <h2>🎓 Atualização 2026-10-09 — vincular turma a curso (menu CURSO)</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-09-vincular-turma-curso.sql</code> (aplicado em 2026-10-09)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Mudança</th>
+        </tr>
+        <tr>
+          <td>definir_curso_turma(p_turma_codigo, p_curso_id)</td>
+          <td>Função</td>
+          <td>Security definer, só authenticated: grava turma.curso_id (null = desvincula); só o Professor Administrador. Curso nunca é apagado pela tela (aulas em cascata): desativar = ativo 0</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🔒 Atualização 2026-10-03 — professor só vê as turmas vinculadas</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-03-professor-so-turmas-vinculadas.sql</code> (aplicado em 2026-10-03)</p>

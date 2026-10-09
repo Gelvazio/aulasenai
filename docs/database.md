@@ -545,6 +545,18 @@ conector do Supabase). **Plano:** `docs/indice-cursos-do-usuario-logado.md`.
 A tabela `cursoprofessor` (plano `docs/cursoprofessor-design.md`) **não foi criada**: substituída por
 este vínculo.
 
+### Atualização 2026-10-09 — `definir_curso_turma` (menu CURSO, `cursos.html`)
+
+**Script:** `database/2026-10-09-vincular-turma-curso.sql` (aplicado em 2026-10-09 pelo conector do
+Supabase). **Plano:** `docs/menu-curso-crud-cursos-turmas.md`.
+
+| Objeto | Mudança |
+|--------|---------|
+| `definir_curso_turma(p_turma_codigo text, p_curso_id bigint)` | nova função (`security definer`, só `authenticated`; `anon` sem execute): grava `turma.curso_id` (null = desvincula); recusa quem não é `eh_professor_administrador()`, turma ou curso inexistente. A `turma` continua só com política de SELECT |
+
+⚠️ `curso` nunca é apagado pela tela: `aulas` e `cursomateria` têm `on delete cascade` para `curso`;
+a página desativa (`curso.ativo = 0`).
+
 ---
 
 ## 👥 Atualização 2026-10-05 — Equipes por turma + matéria

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+    <link rel="stylesheet" href="assets/css/criar-usuarios-comando.css">
+    <link rel="stylesheet" href="assets/css/header-usuario.css">
+    <link rel="stylesheet" href="assets/css/turmas-professor.css">
+    <link rel="stylesheet" href="assets/css/cursos.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js" defer></script>
+    <script src="assets/js/popup.js" defer></script>
+    <script src="assets/js/unidade.js" defer></script>
+    <script src="assets/js/cursos-repositorio.js" defer></script>
+    <script src="assets/js/cursos-modais.js" defer></script>
+    <script src="assets/js/cursos-pagina.js" defer></script>
+</head>
+<body>
+    <div id="header-usuario"></div>
+    <main class="guia">
+        <header class="guia-cabecalho">
+            <h1>🎓 Cursos</h1>
+            <p>Cadastre os cursos e vincule as turmas — uso exclusivo do Professor Administrador</p>
+        </header>
+
+        <section class="guia-cartao guia-erro" id="cuBloqueio" hidden></section>
+
+        <div id="cuConteudo" hidden>
+            <section class="guia-cartao">
+                <div class="tp-cabecalho-lista">
+                    <h2>Cursos cadastrados</h2>
+                    <div class="cu-ferramentas">
+                        <label class="tp-campo tp-campo--filtro">Buscar
+                            <input type="search" id="cuBusca" class="guia-filtro"
+                                placeholder="Curso, unidade ou turma">
+                        </label>
+                        <button type="button" class="guia-botao" id="cuNovoCurso">➕ Novo curso</button>
+                    </div>
+                </div>
+                <p id="cuResumo" class="tp-resumo"></p>
+                <div class="tp-tabela-rolagem">
+                    <table class="guia-tabela">
+                        <thead>
+                            <tr>
+                                <th>Ações</th>
+                                <th>Curso</th>
+                                <th>Unidade</th>
+                                <th>Situação</th>
+                                <th>Turmas vinculadas</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuLinhas"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <div id="cuModalCurso" class="tp-modal" hidden>
+            <form id="cuFormularioCurso" class="tp-modal__caixa" role="dialog" aria-modal="true"
+                aria-labelledby="cuTituloCurso">
+                <h2 id="cuTituloCurso">Novo curso</h2>
+                <label class="tp-campo">Nome do curso
+                    <input type="text" id="cuNome" class="guia-filtro" maxlength="200" required>
+                </label>
+                <label class="tp-campo">Unidade
+                    <input type="text" id="cuUnidade" class="guia-filtro" maxlength="200">
+                </label>
+                <label class="tp-campo">Descrição
+                    <textarea id="cuDescricao" class="guia-filtro cu-descricao" rows="4"></textarea>
+                </label>
+                <div class="tp-acoes">
+                    <button type="submit" class="guia-botao">Salvar</button>
+                    <button type="button" class="guia-botao tp-botao-secundario" data-fechar-modal>Cancelar</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="cuModalTurmas" class="tp-modal" hidden>
+            <div class="tp-modal__caixa" role="dialog" aria-modal="true" aria-labelledby="cuTituloTurmas">
+                <h2 id="cuTituloTurmas">Turmas do curso</h2>
+                <h3 class="tp-modal__subtitulo">Turmas vinculadas a este curso</h3>
+                <ul id="cuTurmasVinculadas" class="cu-lista-turmas"></ul>
+                <h3 class="tp-modal__subtitulo">Turmas disponíveis para vincular</h3>
+                <ul id="cuTurmasDisponiveis" class="cu-lista-turmas"></ul>
+                <div class="tp-acoes">
+                    <button type="button" class="guia-botao tp-botao-secundario" data-fechar-modal>Fechar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

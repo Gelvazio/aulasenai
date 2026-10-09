@@ -1536,3 +1536,18 @@ Plano: [docs/trigger-bloqueio-aula-bloqueia-atividades.md](docs/trigger-bloqueio
 | 117.1 | Lista da turma T TIIN 2026/1 M1 (124519), SN.RDS-LAB INFORMATICA 01 - SENAI/SC - Rio do Sul, com os 17 alunos (nome, menor, frequência, situação, sigla e login proposto) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/LISTA-ALUNOS/ALUNOS-TECNICO-INFORMATICA-MANHA.md` — só local (LGPD, `LISTA-ALUNOS/` no `.gitignore`); sem cadastro no banco | ✅ Concluído | 2026-10-09 12:36 | `git check-ignore` confirma fora do Git; logins sem repetição |
 | 117.3 | Turma T TIIN 2026/1 M1 (124519) na página `scripts/criarUsuariosBancoDados.html`: `scripts/LISTA-PRESENCA-TIIN-RIO-DO-SUL-MANHA.js` (17 alunos, senhas iniciais de 6 caracteres; fora do Git, LGPD) + tag no HTML; usuários ainda não criados no banco (o professor cria pela página) | ✅ Concluído | 2026-10-09 12:45 | `node --check`; `git check-ignore`; nenhum login repetido nas outras listas |
 | 117.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 118 — Menu Curso: CRUD de cursos e vínculo de turmas em `cursos.html` (tarefa grande, pedido em 2026-10-09 12:45; aprovada em 2026-10-09 12:50; plano [docs/menu-curso-crud-cursos-turmas.md](docs/menu-curso-crud-cursos-turmas.md))
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 118.0 | Plano criado e aprovado pelo usuário | ✅ Concluído | 2026-10-09 12:50 | Aprovação no chat |
+| 118.1 | SQL `database/2026-10-09-vincular-turma-curso.sql` (função `definir_curso_turma`, só o administrador) | ✅ Concluído | 2026-10-09 12:52 | Leitura |
+| 118.2 | SQL aplicado pelo conector do Supabase | ✅ Concluído | 2026-10-09 12:53 | `anon` sem execute; `authenticated` com execute; security definer |
+| 118.3 | `assets/js/cursos-repositorio.js` | ✅ Concluído | 2026-10-09 12:54 | `node --check` |
+| 118.4 | `assets/js/cursos-modais.js` (modal do curso e modal 🏫 Turmas) | ✅ Concluído | 2026-10-09 12:57 | `node --check` |
+| 118.5 | `cursos.html`, `assets/js/cursos-pagina.js`, `assets/css/cursos.css` (sem exclusão: desativar = `ativo 0`) | ✅ Concluído | 2026-10-09 12:58 | `node --check`; leitura |
+| 118.6 | Menu CURSO em `js/header-usuario.js` (só administrador) | ✅ Concluído | 2026-10-09 12:58 | `node --check` |
+| 118.7 | `docs/database.md`, relatório HTML, `CLAUDE.md` (versão 2026-10-09 12:59:06) e histórico | ✅ Concluído | 2026-10-09 13:00 | Leitura |
+| 118.8 | Commit | ✅ Concluído | 2026-10-09 13:01 | `git diff --cached --name-only` |
+| 118.9 | Aceite do usuário: testar no navegador (menu CURSO → 🏫 Turmas → vincular a 124519 ao curso 4) | ⬜ Pendente | — | Usuário |

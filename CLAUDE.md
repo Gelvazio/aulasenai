@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 01:12:55
+**Versão das regras:** 2026-10-09 12:59:06
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 12:59:06 | **Menu CURSO** (só o Professor Administrador) abre `cursos.html`: CRUD da tabela `curso` (sem exclusão: desativar = `ativo 0`, pois apagar levaria as aulas em cascata) e ação **🏫 Turmas** para vincular turmas ao curso (função `definir_curso_turma`) |
 | 2026-10-09 01:12:55 | **Botões de atividade com a mesma largura** e **ON/OFF sempre ao lado** (texto menor e quebrando a linha para caber, também no celular) em todos os índices |
 | 2026-10-09 01:11:42 | **ID na frente de cada atividade** nos índices (professor): etiqueta "ID 07" no botão (menor que 10 com zero à esquerda; 10 em diante normal); a caixa "ID · nome" do card foi removida |
 | 2026-10-09 01:10:16 | **Aula bloqueada = nenhum acesso, nem para o professor:** no card só o botão de desbloquear responde (links, slides, ON/OFF das atividades, CADASTRAR ATIVIDADES e Editar aula travados) |
 | 2026-10-09 01:09:35 | **Bloquear a aula bloqueia todas as atividades dela** (trigger `aulas_bloqueio_propaga_atividades_trg`: `aulas.ativo` → false grava `atividade.ativo = false`); desbloquear a aula não mexe nas atividades |
-| 2026-10-09 01:07:02 | Bloqueio da AULA × bloqueio da ATIVIDADE **ligado em Testes de Front-End** (lista em `assets/js/indice-bloqueio-aula-config.js`; demais matérias seguem pendentes na tarefa #16); botão **🧾 LOG escondido** em todos os índices; **slides abrem em nova aba** |
 
 ---
 
@@ -758,10 +758,16 @@ SQL: `database/2026-10-02-turmaprofessor-professor-administrador.sql` (aplicado 
   `assets/js/turmas-professor-repositorio.js` (dados) + `assets/js/turmas-professor-pagina.js`
   (tela) + `assets/css/turmas-professor.css`. Plano: `docs/menu-turmas-crud-turmaprofessor.md`.
 - ✅ **Menus do header só do administrador (2026-10-07, pedido do usuário):** USUARIOS,
-  RELATORIOS, ALUNOS, CORREÇÃO, TURMAS, PENDÊNCIAS e Regras aparecem **só** para o Professor
+  RELATORIOS, ALUNOS, CORREÇÃO, TURMAS, CURSO, PENDÊNCIAS e Regras aparecem **só** para o Professor
   Administrador (`MENU_ADMINISTRADOR_HEADER` em `js/header-usuario.js`, RPC
   `eh_professor_administrador()`); os demais professores não veem nenhum desses menus. Esconder
   é só visual: o acesso aos dados continua pelo RLS.
+- ✅ **Menu CURSO (2026-10-09, pedido do usuário):** abre `cursos.html` (raiz) — CRUD da tabela
+  `curso` (incluir, editar, desativar/ativar; **nunca apagar**: `aulas` e `cursomateria` caem em
+  cascata) e ação **🏫 Turmas** com modal para vincular/desvincular turmas ao curso pela função
+  `definir_curso_turma` (só o administrador grava `turma.curso_id`; sem ele os alunos da turma não
+  veem o curso). Código: `assets/js/cursos-repositorio.js` + `cursos-modais.js` + `cursos-pagina.js`
+  + `assets/css/cursos.css`. Plano: `docs/menu-curso-crud-cursos-turmas.md`.
 - ✅ **Menu Regras (2026-10-03):** botão **Regras** no header, só para o Professor Administrador
   (mesmo RPC `eh_professor_administrador()`), abre um modal com este `CLAUDE.md` + os arquivos de
   `docs/regras/` e o `docs/HISTORICO-REGRAS.md` renderizados (Markdown → HTML com marked +
