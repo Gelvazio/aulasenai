@@ -80,7 +80,7 @@ O que o aluno deve fazer.
   `CONTEUDO/AULA-NN-*.md` (a ementa vence); nunca PDF.
 - ✅ Capacidades com os códigos do `materia.json` da matéria (C1…, S1…).
 
-## 4. Padrão de resposta (`ATIVIDADE-PRATICA-AULA-NN-GABARITO.md`, fora do Git)
+## 4. Padrão de resposta (`ATIVIDADE-PRATICA-AULA-NN-GABARITO.md`, no Git e fora do site)
 
 - ✅ Abre com as **"Instruções para a IA corretora"** (mesmas da id 82): corrigir cada tópico
   isoladamente; só **nota cheia, metade ou zero**; equivalências aceitas; erros de português não
@@ -116,7 +116,7 @@ Cálculo da nota (o mesmo da id 82): soma das notas confirmadas ÷ pontos da ati
 2. Escrever a fonte e o `-GABARITO.md`.
 3. Gerar: `C:\Python314\python.exe assets\gerador-avaliacao-discursiva\gerar_avaliacao_discursiva.py
    <pasta ATIVIDADES> ATIVIDADE-PRATICA-AULA-NN.md` → página `ATIVIDADE-PRATICA-AULA-NN.html` e
-   `database/<data>-atividade-pratica-aula-NN-seed-atividades.sql` (fora do Git).
+   `database/<data>-atividade-pratica-aula-NN-seed-atividades.sql` (no Git e fora do site).
 4. Conferir: 10 itens × 3 tópicos, soma 10, padrão de resposta em todos os tópicos, atributos
    `data-bloquear-colar`, `data-campo-tamanho-resposta`, `data-progresso-professor`,
    `data-ocultar-respostas-entregue` e `data-login` no `<body>`, botão gravar nos tópicos e
@@ -147,7 +147,7 @@ Cálculo da nota (o mesmo da id 82): soma das notas confirmadas ÷ pontos da ati
 
 ## 7. Proibições
 
-- ⛔ Nunca publicar o `-GABARITO.md`, as fontes `*QUESTOES.md` nem os seeds (`.gitignore`).
+- ⛔ Nunca publicar na Vercel o `-GABARITO.md`, as fontes `*QUESTOES.md` nem os seeds: eles vão para o Git, mas ficam no `.vercelignore` (decisão do usuário, 2026-10-09).
 - ⛔ Nunca pôr o padrão de resposta na página do aluno (só pela liberação do professor por turma).
 - ⛔ Nunca criar `<style>`/`<script>` embutidos nem `onclick` na página (o gerador já segue isso).
 - ⛔ Não converter as práticas antigas de outras matérias para este padrão sem pedido do usuário.

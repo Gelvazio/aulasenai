@@ -114,10 +114,10 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
 
 - ✅ Fonte: `ATIVIDADES/CONTEUDO/<NOME>.md` com `## ITEM NN — Título`, `- **Aula:**`, `**Contexto:**`,
   `**Comando:**` e `**Tópicos:**` (`- a) enunciado (0,5)`); os tópicos de cada questão somam 1 ponto.
-  Padrão de resposta e critérios para a IA em `<NOME>-GABARITO.md` (fora do Git).
+  Padrão de resposta e critérios para a IA em `<NOME>-GABARITO.md` (no Git, fora do site).
 - ✅ Gerador: `C:\Python314\python.exe assets\gerador-avaliacao-discursiva\gerar_avaliacao_discursiva.py
   <pasta ATIVIDADES> [<NOME>.md]` → página `<NOME>.html` (um campo por tópico) e seed
-  `database/<data>-<nome>-seed-atividades.sql` (fora do Git; a avaliação nasce bloqueada).
+  `database/<data>-<nome>-seed-atividades.sql` (no Git, fora do site; a avaliação nasce bloqueada).
 - ✅ **Campos opcionais da fonte (2026-10-08, pedido do usuário):** `- **PDF compacto:** sim`
   (PDF com fonte e espaços menores, sem a linha "Aula" e a caixa de capacidade de cada questão),
   `- **PDF sem respostas:** sim` (PDF sem as caixas de resposta e com a instrução de responder no
@@ -500,7 +500,7 @@ dessas atividades. Registrada em 2026-10-03 a pedido do usuário.
 
 - ✅ **Atividade objetiva da aula** = `ATIVIDADES/ATIVIDADES-AULA-NN-50-QUESTOES.html` (nomes antigos
   já publicados, como `ATIVIDADES-N-TEMA-50-QUESTOES.html` ou com data, continuam valendo), com
-  **exatamente 50 questões**, fonte em `ATIVIDADES/CONTEUDO/*-50-QUESTOES.md` (fora do Git, tem
+  **exatamente 50 questões**, fonte em `ATIVIDADES/CONTEUDO/*-50-QUESTOES.md` (no Git e fora do site, tem
   gabarito), gerada por `assets/gerador-atividades/gerar_atividades.py`, com folha de respostas no
   banco (`- **Folha de respostas:** sim`) e cadastro em `atividade` + `gabarito` (seed).
 - ❌ Página com menos de 50 questões **não conta** como a atividade objetiva da aula (fica ⚠️ no
@@ -539,7 +539,7 @@ demais matérias continuam com a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES".
 - ✅ **Cada questão discursiva tem Contexto, Comando e um campo para o aluno digitar** a resposta
   (gravada no banco, sem localStorage, como nas avaliações discursivas).
 - ✅ **Correção das 5 discursivas em duas etapas:** conferência com **IA** (a partir do padrão de
-  resposta e dos critérios no `-GABARITO.md`, fora do Git) **e análise do professor**, que
+  resposta e dos critérios no `-GABARITO.md`, no Git e fora do site) **e análise do professor**, que
   confirma ou ajusta a nota sugerida. A nota da discursiva só vale depois da análise do
   professor.
 - ✅ **10 aulas, uma por apresentação de `AULAS-CHALKIE-AI/`** (2026-10-06, decisão do usuário;
@@ -566,7 +566,7 @@ demais matérias continuam com a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES".
   `AULAS-CHALKIE-AI/CONTEUDO/`).
 - ✅ **Duas páginas por aula** (decisão do usuário em 2026-10-06, sem mudar o banco):
   - **objetivas:** `ATIVIDADES/ATIVIDADES-AULA-NN-20-QUESTOES.html`, fonte
-    `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-20-QUESTOES.md` (fora do Git, tem gabarito), gerada por
+    `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-20-QUESTOES.md` (no Git e fora do site, tem gabarito), gerada por
     `assets/gerador-atividades/gerar_atividades.py --so=` e cadastrada pelo
     `scripts/gerar-seed-atividades.py` (grupo da matéria);
   - **discursivas:** `ATIVIDADES/ATIVIDADE-DISCURSIVA-AULA-NN.html`, fonte

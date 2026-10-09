@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 14:04:30
+**Versão das regras:** 2026-10-09 14:09:46
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 14:09:46 | **Gabarito vai para o Git, mas não é publicado na Vercel:** `-GABARITO.md`, `*QUESTOES.md`, `PROVA-OBJETIVA-*.md`, seeds `database/*-seed-atividades.sql` e `BANCO-AVA/` versionados e listados no `.vercelignore` (saíram do `.gitignore`); regras atualizadas no `CLAUDE.md`, `docs/regras/atividades.md` e `docs/REGRAS-ATIVIDADE-PRATICA.md` |
 | 2026-10-09 14:04:30 | **Atividade prática de uma aula = 10 questões × 3 tópicos** (`docs/REGRAS-ATIVIDADE-PRATICA.md`); a prova id 82 é de várias aulas e serve **só como referência dos recursos compartilhados** (não do tamanho nem do formato das questões) |
 | 2026-10-09 13:20:11 | **Análise contínua das matérias (tarefa permanente #19-91cbac65-87ca-45a0):** `scripts/analise-materias.py` grava `tasks/ANALISE-MATERIAS-RELATORIO.json` no início de cada sessão e ao concluir tarefa em matéria; a tarefa **nunca fica CONCLUÍDA** enquanto houver matéria incompleta ou pendência |
 | 2026-10-09 12:58:34 | **`TASKS_COMPLETE.md` apagado:** tarefa concluída ou cancelada tem o bloco **removido** do `TASKS.md` (o registro fica no `STATUS.md` e no Git) |
 | 2026-10-09 12:36:43 | **Id de tarefa nova = número + UUID** (ex.: `#19-3f9a2c7e-8b1d-4e2a`), para duas licenças/branches não gerarem o mesmo número; as antigas (até #18) não mudam |
-| 2026-10-09 12:33:04 | **Arquivos de tarefas em `tasks/`:** `STATUS.md`, `TASKS.md` e `TASKS_COMPLETE.md` saíram da raiz e ficam em `C:\fontes\aulasenai\tasks\` (ler e atualizar lá; na nuvem, `tasks/` da raiz do repositório) |
 
 ---
 
@@ -367,7 +367,7 @@ Registrada em 2026-10-03 a pedido do usuário.
 | Aulas em Markdown | `CONTEUDO/` (regra "AULAS EXTRAÍDAS DA EMENTA EM `CONTEUDO/`") |
 | Slides (só apresentação, nunca fonte) | `AULAS/` |
 | Atividade objetiva de cada aula | `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-50-QUESTOES.md` → `ATIVIDADES/ATIVIDADES-AULA-NN-50-QUESTOES.html` |
-| Atividade prática de cada aula | `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-NN.md` (+ `-GABARITO.md`, fora do Git) → `ATIVIDADES/ATIVIDADE-PRATICA-AULA-NN.html` |
+| Atividade prática de cada aula | `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-NN.md` (+ `-GABARITO.md`, no Git e fora do site) → `ATIVIDADES/ATIVIDADE-PRATICA-AULA-NN.html` |
 | Avaliações e média final | `ATIVIDADES/AVALIACAO-OBJETIVA-NN.html`, `AVALIACAO-PRATICA.html`, `AVALIACAO-MEDIA-FINAL.html` (+ `media-final.json`) |
 | Menu e índice das atividades | `ATIVIDADES/MENU-ATIVIDADES.js`, `ATIVIDADES/index.html` |
 | Controles | `AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` |
@@ -827,9 +827,13 @@ SQL: `database/2026-10-02-turmaprofessor-professor-administrador.sql` (aplicado 
 Registrada em 2026-09-28. O repositório vai para o GitHub e a Vercel publica **todo** o conteúdo
 versionado (inclusive `database/`).
 
-- ❌ **Gabarito:** nem em páginas de aluno, nem em arquivos versionados. O seed
-  `database/*-seed-atividades.sql` fica no `.gitignore` (é gerado na máquina e rodado no SQL
-  Editor). Cópias antigas de atividades com gabarito embutido não entram no commit.
+- ✅ **Gabarito vai para o Git, mas NUNCA é publicado na Vercel** (alterada em 2026-10-09 14:09:46, pedido do
+  usuário): `-GABARITO.md`, fontes `*QUESTOES.md` e `PROVA-OBJETIVA-*.md`, seeds
+  `database/*-seed-atividades.sql` e `BANCO-AVA/` são **versionados** (na nuvem, o que não entra no
+  commit se perde) e ficam **fora do site** pelo **`.vercelignore`**. Arquivo novo com resposta certa:
+  acrescentar o padrão ao `.vercelignore` **antes** do commit.
+- ❌ **Gabarito nunca em página de aluno** (HTML, PDF ou consulta), salvo a liberação do professor
+  por turma (`docs/regras/atividades.md`).
 - ❌ **Dados pessoais de alunos (LGPD):** `LISTA-PRESENCA.js` no `.gitignore`; listas `.docx`
   continuam fora (regra `*.docx`). A página `LISTA-PRESENCA.html` não contém dados (lê o `.js`
   local).
@@ -842,11 +846,10 @@ versionado (inclusive `database/`).
   publicação na Vercel todo arquivo com "gabarito" no nome. Assim
   `GERADOR-AULAS/.../GABARITO_PROVA_OBJETIVA_UC1_TIC.html` fica versionado, mas os alunos não o
   acessam pelo site. ⚠️ Se o repositório do GitHub for público, o arquivo continua visível lá.
-- ✅ **`*.md` e `*.py` são versionados** (liberados em 2026-09-30), **exceto**: `*gabarito*` (qualquer
-  arquivo), `*QUESTOES.md` (as fontes das atividades têm a linha `**Gabarito:**` com a resposta
-  certa) e `docs/atividade-raciocinio-logico.md`. Novo `.md` com resposta certa, senha, e-mail real
-  de aluno ou chave secreta **não entra**: acrescentar o padrão ao `.gitignore` **antes** do
-  commit. Conferir `git diff --cached --name-only` sempre.
+- ✅ **`*.md` e `*.py` são versionados** (liberados em 2026-09-30). Os que têm resposta certa
+  (`*gabarito*`, `*QUESTOES.md`, `docs/atividade-raciocinio-logico.md`) também vão para o Git, mas
+  ficam no **`.vercelignore`** (não publicados). Senha, chave secreta e dados pessoais de aluno
+  continuam **fora do Git** (`.gitignore`). Conferir `git diff --cached --name-only` sempre.
 
 ## 🗄️ REGRA — BANCO REAL ANTES DE ALTERAR O SCHEMA
 
@@ -1027,7 +1030,7 @@ alterar qualquer atividade prática):** [docs/REGRAS-ATIVIDADE-PRATICA.md](docs/
   Atividade, prova corrigida para o aluno, liberação do gabarito por turma e PDF SENAI.
 - ✅ Gerada por `assets/gerador-avaliacao-discursiva/gerar_avaliacao_discursiva.py`, com os campos
   `Bloquear colar`, `Campo do tamanho da resposta`, `Botão gravar`, `Progresso para o professor` e
-  `Ocultar respostas após entrega` = `sim`; padrão de resposta no `-GABARITO.md` (fora do Git).
+  `Ocultar respostas após entrega` = `sim`; padrão de resposta no `-GABARITO.md` (no Git, fora do site pelo `.vercelignore`).
 - ⛔ Sem empresa fictícia ("Você, como aluno consultor..."); sem padrão de resposta na página do aluno.
 
 ## 👨‍🏫 DADOS DO PROFESSOR — `docs/PROFESSOR-GELVAZIO-CAMARGO.md` (2026-10-09)

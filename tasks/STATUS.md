@@ -399,6 +399,7 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 ## Registro de decisões
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-09 14:09 | Gabarito (fontes, padrões de resposta, seeds) vai para o Git e fica fora da Vercel (`.vercelignore`); prova prática de várias aulas segue a regra nova (20 × 3) mesmo divergindo da ITIC | Usuário | Não perder fontes na nuvem e não publicar respostas no site |
 | 2026-10-09 13:58 | Fontes das atividades de Banco de Dados (`*QUESTOES.md`, `-GABARITO.md`) entram no Git e ficam fora do site (`*QUESTOES.md` no `.vercelignore`); seeds em `database/` não entram no commit | Usuário | Na nuvem, o que não entra no commit se perde ao fim da sessão |
 | 2026-10-09 13:40 | Banco de Dados: 80 h / 20 aulas, pasta `BANCO-DE-DADOS`, PostgreSQL, apagar os arquivos antigos | Usuário | Plano da tarefa #20 |
 | 2026-10-08 20:00 | Aulas de Testes de Front-End sem empresa fictícia ("você como aluno consultor"), mesmo com a regra 4 da Seção IX da ementa da matéria pedindo empresas fictícias | Claude, pela regra global de 2026-10-08 | A regra global é mais nova; a divergência fica avisada ao usuário |
@@ -1662,3 +1663,11 @@ Matéria: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/` (renomeada em
 |------|-----------|--------|--------------|-------------|
 | 126.1 | Regra no `CLAUDE.md` (seção "ATIVIDADE PRÁTICA: PADRÃO DA PROVA PRÁTICA ID 82"), versão 2026-10-09 14:04:30 e histórico (resumo + `docs/HISTORICO-REGRAS.md`) | ✅ Concluído | 2026-10-09 14:05 | Leitura; linha de versão no formato lido pelo `regras-modal.js` |
 | 126.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 127 — Gabarito no Git e fora da Vercel; prova prática segue a regra nova (tarefa pequena, pedido em 2026-10-09 14:09)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 127.1 | Divergência 1: prova/avaliação prática segue `docs/REGRAS-ATIVIDADE-PRATICA.md` (20 × 3, 10 pontos, aluno consultor), mesmo com a ITIC antiga em 30 questões | ✅ Concluído | 2026-10-09 14:09 | Decisão do usuário registrada; vale para a `AVALIACAO-PRATICA` do Banco de Dados (item 125.5) |
+| 127.2 | Divergência 2: regras atualizadas (`CLAUDE.md` v2026-10-09 14:09:46, `docs/regras/atividades.md`, `docs/REGRAS-ATIVIDADE-PRATICA.md`, histórico); `PROVA-OBJETIVA-*.md` e seeds saíram do `.gitignore`; `.vercelignore` com `*QUESTOES.md`, `PROVA-OBJETIVA-*.md`, `database/*-seed-atividades.sql`, `BANCO-AVA/` e `docs/atividade-raciocinio-logico.md`; seeds do Banco de Dados commitados | ✅ Concluído | 2026-10-09 14:11 | `git diff --cached --name-only` |
+| 127.3 | Aceite do usuário | ⬜ Pendente | — | — |
