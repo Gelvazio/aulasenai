@@ -76,7 +76,7 @@ assets/
 │                        atividade de 50 questões e o index.html de qualquer pasta ATIVIDADES/
 ├─ gerador-banco-ava/  → gerar_banco_ava.py + moodle_xml.py: banco de questões do AVA SENAI
 │                        (Moodle XML) a partir de ATIVIDADES/CONTEUDO/*QUESTOES.md → pasta
-│                        ATIVIDADES/BANCO-AVA/ (fora do Git; ver "BANCO DE QUESTÕES DO AVA SENAI")
+│                        ATIVIDADES/BANCO-AVA/ (no Git, fora do site; ver "BANCO DE QUESTÕES DO AVA SENAI")
 ├─ gerador-atividade-excel/ → gerar_atividade_excel.py (+ desenho_excel.py, tela_excel.py,
 │                        sobreposicoes_excel.py, graficos_excel.py, base_excel.py): gera capa,
 │                        questões e telas do Excel em SVG (inclui tabela dinâmica, gráficos,

@@ -593,8 +593,9 @@ importação no AVA pelo professor; as demais matérias só quando o usuário li
   (iguais nos dois); questão de resposta única, 1 ponto, sem penalidade, ID
   `<PASTA>-<RÓTULO>-QNN`, tags = capacidades + rótulo; alternativas embaralhadas, exceto quando
   alguma cita as outras ("Todas as anteriores").
-- ❌ **O XML contém as respostas certas:** `BANCO-AVA/` fica no `.gitignore`; nunca publicar,
-  nunca versionar, nunca colocar link em página de aluno.
+- ❌ **O XML contém as respostas certas:** `BANCO-AVA/` vai para o Git, mas fica no
+  `.vercelignore` (nunca publicado no site; decisão do usuário em 2026-10-09); nunca colocar link em
+  página de aluno.
 - ✅ **Importar no AVA:** Banco de questões → Importar → **Moodle XML**, com **"Obter categoria do
   arquivo"** marcado. Importar **ou** os arquivos por atividade **ou** o arquivo único (os dois
   juntos duplicam as questões).

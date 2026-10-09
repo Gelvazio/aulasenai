@@ -1695,3 +1695,11 @@ Matéria: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/` (renomeada em
 | 130.3 | Pasta `SESSOES-CLAUDE/` apagada (o Git guarda o histórico) | ✅ Concluído | 2026-10-09 15:03 | git ls-files |
 | 130.5 | Cópia das regras globais (`.claude/regras-globais/CLAUDE-GLOBAL.md`): removidas as duas exceções da pergunta do log da sessão | ✅ Concluído | 2026-10-09 15:04 | grep sem ocorrências |
 | 130.4 | Aceite do usuário (e, na máquina local, tirar as mesmas duas exceções de `~/.claude/CLAUDE.md`) | ⬜ Pendente | — | — |
+
+## Etapa 131 — Revisão do PR #14 (CodeRabbit): resumo do STATUS-EMENTAS e BANCO-AVA (tarefa pequena, 2026-10-09 15:08:10)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 131.1 | `MATERIAIS/STATUS-EMENTAS-CURSOS.md` regerado com `criar-status-cursos.py` (resumo e TOTAL corretos; 16 matérias valendo) | ✅ Concluído | 2026-10-09 15:08 | Script; linha TII = 1 conforme, 18 fora, 1 genérica |
+| 131.2 | `BANCO-AVA/` "no Git, fora do site" no `CLAUDE.md`, `docs/regras/atividades.md` e `docs/regras/assets-e-geradores.md` | ✅ Concluído | 2026-10-09 15:08 | grep |
+| 131.3 | ⚠️ Achado do script: a ementa de Testes de Front-End está com 14.955 caracteres (limite 14.950) — não corrigida (outra matéria; só com pedido do usuário) | ⛔ Aguardando o usuário | — | Contagem em Python |
