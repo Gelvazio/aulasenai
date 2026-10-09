@@ -43,6 +43,10 @@ PADRAO_AULA_NOME = re.compile(r"AULA-(\d{2})(?!-\d{2}-\d{4})(?=-|$)", re.IGNOREC
 SEM_DATA = (9999, 99, 99)
 PREFIXOS_IGNORADOS = ("~$", "GABARITO", "index.")
 TITULO_SITE = "SENAI — Índice de Atividades"
+# Slides da aula ligados no card (2026-10-09): <MATÉRIA>/AULAS/AULA-NN-SLIDES.pdf.
+PASTA_AULAS = "AULAS"
+MODELO_SLIDES_AULA = "AULA-{numero}-SLIDES.pdf"
+TEXTO_BOTAO_SLIDES = "📕 Slides (PDF)"
 
 escapar = html.escape
 
@@ -223,7 +227,8 @@ def card_atividade(atividade, pasta_indice, materia):
         "arquivo": atividade.name,
         "titulo": nome_legivel(Path(atividade.stem)),
         "meta": f"{tipo.split(maxsplit=1)[1]} · {atividade.name}",
-        "botoes": [("Abrir", link_relativo(atividade, pasta_indice), "principal")],
+        "botoes": [("Abrir", link_relativo(atividade, pasta_indice), "principal")]
+        + botoes_slides_aula(numero_aula_do_arquivo(atividade), materia / NOME_PASTA_ATIVIDADES),
     })
 
 
@@ -254,6 +259,24 @@ def agrupar_por_aula(atividades):
     return list(grupos.values())
 
 
+def botoes_slides_aula(numero, pasta_indice):
+    """Botão "📕 Slides (PDF)" da aula, se existir <MATÉRIA>/AULAS/AULA-NN-SLIDES.pdf.
+
+    Args:
+        numero: Número da aula com 2 dígitos (ou None).
+        pasta_indice: Pasta ATIVIDADES da matéria (a matéria é a pasta-mãe).
+
+    Returns:
+        Lista com o botão (texto, href, classe) ou lista vazia.
+    """
+    if not numero:
+        return []
+    slides = pasta_indice.parent / PASTA_AULAS / MODELO_SLIDES_AULA.format(numero=numero)
+    if not slides.is_file():
+        return []
+    return [(TEXTO_BOTAO_SLIDES, link_relativo(slides, pasta_indice), "")]
+
+
 def card_aula_agrupada(paginas, pasta_indice):
     """Card de uma aula com várias páginas (um botão por página; discursivas por último)."""
     paginas = sorted(paginas, key=lambda p: ("DISCURSIVA" in p.name.upper(), p.name.lower()))
@@ -267,7 +290,7 @@ def card_aula_agrupada(paginas, pasta_indice):
         "botoes": [
             (nome_legivel(Path(p.stem)), link_relativo(p, pasta_indice), "principal")
             for p in paginas
-        ],
+        ] + botoes_slides_aula(numero, pasta_indice),
     })
 
 

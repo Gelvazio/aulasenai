@@ -1484,3 +1484,12 @@ Plano: [docs/validacao-sessao-todas-paginas.md](docs/validacao-sessao-todas-pagi
 | 113.2 | `assets/css/indice-atividades-bloquear.css`: estilo do botão (verde ON / vermelho OFF), acima do véu do card e com área de toque maior no celular | ✅ Concluído | 2026-10-09 00:55 | Leitura do CSS |
 | 113.3 | Regra global no `CLAUDE.md` (seção "BOTÃO ON/OFF AO LADO DE CADA ATIVIDADE", versão 2026-10-09 00:56:07 + histórico) e em `docs/regras/atividades.md` (substitui a regra do interruptor por card) | ✅ Concluído | 2026-10-09 00:56 | Leitura dos arquivos; link de `docs/regras/atividades.md` já lido pelo visualizador |
 | 113.4 | Aceite do usuário (abrir um índice de atividades como professor e como aluno) | ⬜ Pendente | — | — |
+
+## Etapa 114 — Testes de Front-End: links dos slides nos cards e PDFs das aulas versionados (tarefa pequena, pedido em 2026-10-09 00:45)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 114.1 | Botão **📕 Slides (PDF)** nos cards das aulas 01 a 03 de `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/ATIVIDADES/index.html`, apontando para `../AULAS/AULA-NN-SLIDES.pdf` (editado direto para não perder a faixa SOMENTE ENSALADO) | ✅ Concluído | 2026-10-09 00:58 | `git diff` com os 3 links |
+| 114.2 | `assets/gerador-indices/gerar_indices.py`: card de aula ganha o botão de slides quando existe `<MATÉRIA>/AULAS/AULA-NN-SLIDES.pdf` (vale para todas as matérias ao regenerar) | ✅ Concluído | 2026-10-09 00:58 | `py_compile` + geração em memória mostrou o botão |
+| 114.3 | Os 10 PDFs `TESTES-DE-FRONTEND/AULAS/AULA-NN-SLIDES.pdf` versionados (exceção no `.gitignore`) | ✅ Concluído | 2026-10-09 00:58 | `git check-ignore` mostra a exceção |
+| 114.4 | Aceite do usuário | ⬜ Pendente | — | — |

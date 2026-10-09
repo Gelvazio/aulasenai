@@ -22,3 +22,6 @@ PROVA-OBJETIVA-*.md
 
 # Listas de alunos (nomes, CPF): dados pessoais (LGPD), só local
 LISTA-ALUNOS/
+
+# Slides das aulas de Testes de Front-End: versionados e publicados (pedido do usuário em 2026-10-09)
+!MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/AULAS/*.pdf
