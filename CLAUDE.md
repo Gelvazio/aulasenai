@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 10:54:45
+**Versão das regras:** 2026-10-09 11:02:12
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 11:02:12 | **Mínimo de questões nas objetivas aplicado no banco** (`database/2026-10-09-minimo-questoes-objetivas.sql`, pelo conector do Supabase): entrega e nota da objetiva sobre o mínimo valem também no banco |
 | 2026-10-09 10:54:45 | **Progresso da turma GLOBAL** em toda atividade com banco (objetivas e discursivas), aberto junto com a página para o professor (`progresso-turma-global.js` substitui o das discursivas); objetiva com acertos e nota pelo banco; **mínimo de questões também nas objetivas** (SQL `database/2026-10-09-minimo-questoes-objetivas.sql`) |
 | 2026-10-09 10:47:05 | **Tamanho da ementa medido com Python** (`docs/regras/ementas-e-cursos.md`): conta caracteres (acento = 1); `wc -c` (bytes) e `Get-Content` sem `-Raw` (linhas) deixam de ser usados; versão vazia da linha anterior preenchida com a hora do commit `6829542` |
 | 2026-10-09 10:43:11 | **Curso desativado some do índice** de alunos e professores (`cursos_do_usuario` filtra `curso.ativo = 0`; o administrador vê todos); abas da página de criar usuários mostram a **unidade do banco** (não o "local" da lista) |
 | 2026-10-09 13:33:10 | **Fase 2 da unidade:** colunas `turma.local` e `curso.unidade` apagadas; todas as telas mostram a unidade pela ligação (`unidade:unidade_id(nome)`, `assets/js/unidade.js`); criar usuários grava `unidade_id` (campo `unidadeId` da turma na lista) |
-| 2026-10-09 13:27:14 | **Unidade só na tabela `unidade`** (`id`, `nome`, `endereco`): `curso.unidade_id` e `turma.unidade_id` apontam para ela; CRUD no modal **🏢 Unidades** de `cursos.html`; os textos antigos `curso.unidade` e `turma.local` só até a fase 2 |
 
 ---
 
@@ -70,7 +70,7 @@ Registrada em 2026-10-03 a pedido do usuário.
 - ✅ **Quantidade mínima de questões e nota proporcional nas discursivas** (2026-10-08, pedido
   do usuário) — **também nas objetivas desde 2026-10-09** (entrega com o mínimo de questões
   respondidas e nota = acertos ÷ mínimo × 10, máximo 10; SQL
-  `database/2026-10-09-minimo-questoes-objetivas.sql`, vale no banco depois de aplicado):
+  `database/2026-10-09-minimo-questoes-objetivas.sql`, aplicado no banco em 2026-10-09):
   - cada avaliação discursiva tem um **mínimo de questões para entregar**; o padrão é o
     **total** de questões, e o professor pode mudar **por aluno** (botão "Quantidade Mínima de
     Questões" ao lado do nome no Progresso da turma);
@@ -1051,9 +1051,9 @@ Detalhe em [docs/regras/atividades.md](docs/regras/atividades.md).
   banco (`resumo_tentativas_atividade`; **o gabarito nunca sai do banco**). **Discursiva:** "Nota
   parcial IA" e "Nota IA (a confirmar)", como antes.
 - ✅ **Mínimo de questões também na objetiva:** entrega com o mínimo de questões respondidas e
-  nota = acertos ÷ mínimo × 10, **máximo 10** (página, relatório do professor e banco). No banco,
-  vale depois de aplicar `database/2026-10-09-minimo-questoes-objetivas.sql`; antes disso a
-  objetiva continua exigindo todas as questões.
+  nota = acertos ÷ mínimo × 10, **máximo 10** (página, relatório do professor e banco — SQL
+  `database/2026-10-09-minimo-questoes-objetivas.sql`, aplicado em 2026-10-09). Sem mínimo
+  definido, o mínimo é o total (todas as questões), como antes.
 - ✅ O painel lê o banco de 1000 em 1000 linhas (turmas grandes não ficam cortadas) e só lê; o
   RLS limita aos alunos das turmas do professor.
 - ⛔ Não criar painel de progresso por matéria nem por página, e não voltar ao antigo

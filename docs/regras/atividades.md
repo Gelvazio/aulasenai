@@ -259,8 +259,8 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   nota é acertos ÷ mínimo × 10, máximo 10, na página (`respostas-atividade.js`), no relatório do
   professor (`respostas-atividade-professor.js`), na média final (`notas_media_final`) e na regra
   "nota ≥ 7" das tentativas (`liberar_nova_tentativa`). SQL
-  `database/2026-10-09-minimo-questoes-objetivas.sql` (até ser aplicado, a objetiva continua
-  exigindo todas). **Nota proporcional ao mínimo:** cada questão vale 10 ÷ mínimo e a
+  `database/2026-10-09-minimo-questoes-objetivas.sql` (aplicado em 2026-10-09; sem mínimo
+  definido, o mínimo é o total). **Nota proporcional ao mínimo:** cada questão vale 10 ÷ mínimo e a
   **nota máxima é 10** (`notas_media_final`, Nota parcial IA e Nota IA no painel). Código:
   `assets/js/minimo-questoes-discursiva.js` + CSS. Plano:
   `docs/quantidade-minima-questoes-discursiva.md`. SQL:

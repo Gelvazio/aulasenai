@@ -560,6 +560,22 @@ Supabase). **Plano:** `docs/menu-curso-crud-cursos-turmas.md`.
 ⚠️ `curso` nunca é apagado pela tela: `aulas` e `cursomateria` têm `on delete cascade` para `curso`;
 a página desativa (`curso.ativo = 0`).
 
+### Atualização 2026-10-09 — mínimo de questões também nas objetivas
+
+**Script:** `database/2026-10-09-minimo-questoes-objetivas.sql` (aplicado em 2026-10-09 pelo
+conector do Supabase, a pedido do usuário). **Plano:** `docs/progresso-global-atividades.md`
+(Etapa 121 do `STATUS.md`). Nenhuma tabela nem dado mudou; só funções.
+
+| Objeto | Mudança |
+|--------|---------|
+| `total_questoes_atividade(p_atividade bigint)` | **nova** (`security definer`, só `authenticated`): total de questões de qualquer atividade — discursiva = `total_questoes_discursiva`; objetiva = `atividade.total_itens`, senão as linhas do `gabarito` |
+| `minimo_questoes_para_entregar(p_atividade, p_aluno)` | usa `total_questoes_atividade`: o mínimo passa a valer também na objetiva (o do aluno, senão o da atividade, senão o total) |
+| `atividade_completa` (RLS da `entrega_atividade`) | objetiva: respostas gravadas ≥ mínimo (antes: = total); discursiva igual |
+| `notas_media_final` | objetiva: acertos ÷ mínimo × 10, **máximo 10** (antes: ÷ total) |
+| `liberar_nova_tentativa` | a nota da regra "≥ 7 = só 2 tentativas" também fica sobre o mínimo, máximo 10 |
+
+Sem mínimo definido (aluno ou atividade), o mínimo é o total: tudo fica como antes.
+
 ### Atualização 2026-10-09 — unidade em um só lugar (tabela `unidade`)
 
 **Script:** `database/2026-10-09-unidade-curso-turma.sql` (aplicado em 2026-10-09 pelo conector do

@@ -93,11 +93,11 @@ as matérias, o mesmo painel de **Progresso da turma** da Prova Prática ADAG (i
 | 7 | Relatório do professor: nota sobre o mínimo | `assets/js/respostas-atividade-professor.js` | `node --check` | ✅ 2026-10-09 10:53 |
 | 8 | Regras e visualizador | `CLAUDE.md`, `docs/regras/atividades.md`, `docs/HISTORICO-REGRAS.md` | leitura | ✅ 2026-10-09 10:56 |
 | 9 | Commit, push e pull request | git | `git diff --cached --name-only` | ✅ 2026-10-09 10:57 |
-| 10 | Aplicar o SQL (só com pedido do usuário) | conector do Supabase | consultas de leitura | ⬜ |
+| 10 | Aplicar o SQL (só com pedido do usuário) | conector do Supabase | consultas de leitura | ✅ 2026-10-09 11:02 |
 | 11 | Aceite do usuário (Testes de Front-End, aula 01) | `ATIVIDADES-AULA-01-50-QUESTOES.html` | usuário | ⬜ |
 
 ## Pendências
 
 | Item | Motivo | Quando retomar |
 |---|---|---|
-| Aplicar o SQL do passo 5 | Depende do pedido do usuário | Depois do passo 9 |
+| Aplicar o SQL do passo 5 | ✅ aplicado em 2026-10-09 11:02 a pedido do usuário | — |
