@@ -118,7 +118,7 @@ function mensagemErroCu(erro) {
  * @returns {HTMLTableCellElement} Célula.
  */
 function criarCelulaAcoesCu(curso) {
-  const celula = criarElementoCu("td", "tp-celula-acoes cu-acoes");
+  const celula = criarElementoCu("td", "cu-celula-acoes");
   const textoSituacao = cursoEstaAtivoCu(curso) ? "⛔ Desativar" : "✅ Ativar";
   celula.append(
     criarBotaoCu({ texto: "✏️ Editar", classe: "guia-botao tp-botao-pequeno",
@@ -150,7 +150,7 @@ function criarCelulaTurmasCu(cursoId) {
 }
 
 /**
- * Monta a linha de um curso: Ações | Curso | Unidade | Situação | Turmas.
+ * Monta a linha de um curso: Curso | Unidade | Situação | Turmas | Ações (à direita).
  * @param {Object} curso - Linha da tabela curso.
  * @returns {HTMLTableRowElement} Linha.
  */
@@ -159,9 +159,8 @@ function criarLinhaCursoCu(curso) {
   const celulaCurso = criarElementoCu("td", "", curso.nome_completo || "");
   celulaCurso.append(criarElementoCu("span", "tp-detalhe", curso.descricao || ""));
   const situacao = cursoEstaAtivoCu(curso) ? "Ativo" : "Inativo";
-  linha.append(criarCelulaAcoesCu(curso), celulaCurso,
-    criarElementoCu("td", "", curso.unidade || ""), criarElementoCu("td", "", situacao),
-    criarCelulaTurmasCu(curso.id));
+  linha.append(celulaCurso, criarElementoCu("td", "", curso.unidade || ""),
+    criarElementoCu("td", "", situacao), criarCelulaTurmasCu(curso.id), criarCelulaAcoesCu(curso));
   return linha;
 }
 

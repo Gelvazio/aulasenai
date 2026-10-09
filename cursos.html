@@ -19,7 +19,7 @@
 </head>
 <body>
     <div id="header-usuario"></div>
-    <main class="guia">
+    <main class="guia cu-pagina">
         <header class="guia-cabecalho">
             <h1>🎓 Cursos</h1>
             <p>Cadastre os cursos e vincule as turmas — uso exclusivo do Professor Administrador</p>
@@ -32,7 +32,7 @@
                 <div class="tp-cabecalho-lista">
                     <h2>Cursos cadastrados</h2>
                     <div class="cu-ferramentas">
-                        <label class="tp-campo tp-campo--filtro">Buscar
+                        <label class="tp-campo tp-campo--filtro cu-busca">Buscar
                             <input type="search" id="cuBusca" class="guia-filtro"
                                 placeholder="Curso, unidade ou turma">
                         </label>
@@ -44,11 +44,11 @@
                     <table class="guia-tabela">
                         <thead>
                             <tr>
-                                <th>Ações</th>
                                 <th>Curso</th>
                                 <th>Unidade</th>
                                 <th>Situação</th>
                                 <th>Turmas vinculadas</th>
+                                <th class="cu-coluna-acoes">Ações</th>
                             </tr>
                         </thead>
                         <tbody id="cuLinhas"></tbody>

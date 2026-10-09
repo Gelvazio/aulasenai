@@ -3,6 +3,8 @@
     --cu-espaco: 8px;
     --cu-opacidade-inativo: 0.55;
     --cu-fundo-turma: #f7f9fc;
+    --cu-largura-pagina: 1400px;
+    --cu-largura-busca: 420px;
 }
 
 .cu-ferramentas {
@@ -12,9 +14,21 @@
     gap: var(--cu-espaco);
 }
 
-.cu-acoes { display: flex; flex-wrap: wrap; gap: 6px; }
+/* Página mais larga que o padrão .guia (900px) para caber a consulta e as ações */
+.cu-pagina { max-width: var(--cu-largura-pagina); }
 
-.cu-acoes .guia-botao + .guia-botao { margin-left: 0; }
+.cu-busca { min-width: var(--cu-largura-busca); }
+
+/* Ações sempre na última coluna, à direita */
+.cu-coluna-acoes { text-align: right; }
+
+.cu-celula-acoes { white-space: nowrap; text-align: right; }
+
+.cu-celula-acoes .guia-botao + .guia-botao { margin-left: 6px; }
+
+@media (max-width: 760px) {
+    .cu-busca { min-width: 0; width: 100%; }
+}
 
 .cu-linha--inativa { opacity: var(--cu-opacidade-inativo); }
 
