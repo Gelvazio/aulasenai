@@ -372,7 +372,10 @@
     }
 }
 
-/* Telas estreitas: tudo em uma coluna (aqui a rolagem é necessária). */
+/* ── Responsividade ── */
+
+/* Tablet (601 a 900 px): topo empilhado; dois cartões lado a lado e Competências abaixo,
+   na linha inteira. Aqui a página rola. */
 @media (max-width: 900px) {
     .apresentacao-professor__topo {
         flex-direction: column;
@@ -381,19 +384,23 @@
     }
 
     .apresentacao-professor__grade {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-}
 
-/* Tablet: Competências (o 3º cartão) ocupa a linha inteira abaixo dos outros dois. */
-@media (min-width: 601px) and (max-width: 900px) {
     .curriculo__cartao--laranja {
         grid-column: 1 / -1;
     }
 }
 
-/* Celular (complemento): card de entrar na largura toda e fontes dos cartões legíveis. */
+/* Celular (até 600 px): uma coluna, espaços menores, fontes legíveis, textos longos quebrando
+   sem estourar a tela, sem efeito de "flutuar" no toque e card de entrar na largura toda. */
 @media (max-width: 600px) {
+    .apresentacao-professor {
+        gap: 10px;
+        padding: 12px 10px;
+        overflow-wrap: anywhere;
+    }
+
     .apresentacao-professor__entrar {
         margin: 2px 0 8px;
     }
@@ -403,8 +410,56 @@
         width: 100%;
     }
 
+    .apresentacao-professor__topo {
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .apresentacao-professor__perfil {
+        flex-shrink: 1;
+        min-width: 0;
+        gap: 10px;
+    }
+
+    .apresentacao-professor__avatar {
+        width: 56px;
+        height: 56px;
+        font-size: 20px;
+    }
+
+    .apresentacao-professor h2 {
+        font-size: 19px;
+    }
+
     .apresentacao-professor__cargo {
         font-size: 12.5px;
+    }
+
+    .apresentacao-professor__boas-vindas {
+        padding-left: 10px;
+        font-size: 14.5px;
+    }
+
+    .apresentacao-professor__boas-vindas li {
+        gap: 8px;
+    }
+
+    .curriculo__resumo-icone {
+        width: 26px;
+        height: 26px;
+        font-size: 14px;
+    }
+
+    .apresentacao-professor__grade {
+        grid-template-columns: 1fr;
+    }
+
+    .curriculo__cartao {
+        padding: 12px;
+    }
+
+    .curriculo__cartao:hover {
+        transform: none;
     }
 
     .curriculo__cartao h3 {
@@ -420,5 +475,10 @@
     .curriculo__etiquetas li,
     .curriculo__destaques li {
         font-size: 12.5px;
+    }
+
+    .curriculo__idiomas li {
+        grid-template-columns: 88px 1fr auto;
+        gap: 6px;
     }
 }
