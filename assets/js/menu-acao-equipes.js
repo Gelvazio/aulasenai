@@ -96,7 +96,7 @@ async function executarAcaoEquipes(contexto) {
   const cliente = obterClienteSupabase();
   abrirModalEquipes({
     repositorio: criarRepositorioEquipes(cliente),
-    prefixoPasta: obterPrefixoPastaEquipes(contexto.urlBase),
+    prefixoPasta: contexto.item.semMateria ? '' : obterPrefixoPastaEquipes(contexto.urlBase),
     papeis: Array.isArray(contexto.item.papeis) ? contexto.item.papeis : [],
   });
 }

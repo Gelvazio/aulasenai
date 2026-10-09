@@ -9,6 +9,7 @@ const CODIGO_DUPLICADO_EQUIPES = '23505';
 const MSG_SEM_LOGIN_EQUIPES = 'Entre no sistema para ver as equipes.';
 const MSG_SEM_MATERIA_EQUIPES = 'Não foi possível identificar a matéria desta pasta ' +
   '(nenhuma atividade dela está cadastrada no banco).';
+const MSG_ESCOLHA_MATERIA_EQUIPES = 'Selecione a matéria para ver e montar as equipes.';
 const MSG_SEM_TURMA_EQUIPES = 'Nenhuma turma vinculada a você. Peça o vínculo ao administrador.';
 const MSG_ESCOLHA_TURMA_EQUIPES = 'Selecione a turma para ver e montar as equipes.';
 const MSG_SEM_EQUIPE_ALUNO = 'Você ainda não está em nenhuma equipe desta matéria.';
@@ -20,7 +21,7 @@ const MSG_MEMBRO_OBRIGATORIO = 'Escolha a equipe e o aluno.';
 
 const estadoEquipes = {
   repositorio: null, prefixoPasta: '', papeis: [], materia: null, usuario: null,
-  turmaCodigo: '', alunos: [], equipes: [], membros: [], ehLider: false,
+  turmaCodigo: '', alunos: [], equipes: [], membros: [], ehLider: false, materias: [],
   editandoEquipeId: null, editandoMembroId: null,
 };
 let elementosEquipes = null;
@@ -226,11 +227,14 @@ function montarModalEquipes(papeis) {
   const cabecalho = criarElementoEquipes('div', 'equipes-cabecalho');
   cabecalho.append(titulo, criarBotaoEquipes({ texto: '✕ Fechar', acao: 'fechar' }));
   const turma = criarControleEquipes('select', 'turma');
+  const materia = criarControleEquipes('select', 'materia');
+  const campoMateria = criarCampoEquipes('Matéria', materia);
+  campoMateria.hidden = true;
   const barra = criarElementoEquipes('div', 'equipes-barra');
-  barra.append(criarCampoEquipes('Turma', turma),
+  barra.append(campoMateria, criarCampoEquipes('Turma', turma),
     criarBotaoEquipes({ texto: '📄 Exportar Equipes', acao: 'exportar-equipes' }));
   const elementos = {
-    fundo, titulo, turma, barra,
+    fundo, titulo, turma, barra, materia, campoMateria,
     mensagem: criarElementoEquipes('p', 'equipes-mensagem'),
     resumo: criarElementoEquipes('p', 'equipes-resumo'),
     lista: criarElementoEquipes('div', 'equipes-lista'),
@@ -504,19 +508,85 @@ async function carregarInicialEquipes() {
   estadoEquipes.usuario = await repositorio.usuarioLogado();
   if (!estadoEquipes.usuario) return mostrarMensagemEquipes(MSG_SEM_LOGIN_EQUIPES);
 
-  estadoEquipes.materia = await repositorio.buscarMateriaDaPasta(estadoEquipes.prefixoPasta);
-  if (!estadoEquipes.materia) return mostrarMensagemEquipes(MSG_SEM_MATERIA_EQUIPES);
-
-  elementosEquipes.titulo.textContent = TITULO_MODAL_EQUIPES + ' — ' +
-    estadoEquipes.materia.descricao;
   const ehProfessor = repositorio.ehProfessor(estadoEquipes.usuario);
   // Aluno líder (usuario.lider = 1) também cadastra e altera as equipes da própria turma.
   estadoEquipes.ehLider = !ehProfessor && await repositorio.ehLider(estadoEquipes.usuario);
   const podeGerir = ehProfessor || estadoEquipes.ehLider;
+  estadoEquipes.materia = await resolverMateriaEquipes(ehProfessor);
+  const escolheMateria = !elementosEquipes.campoMateria.hidden;
+  if (!estadoEquipes.materia && !escolheMateria) {
+    return mostrarMensagemEquipes(MSG_SEM_MATERIA_EQUIPES);
+  }
   alternarModoProfessor(podeGerir);
+  if (!estadoEquipes.materia) return mostrarSemMateriaEquipes();
+
+  atualizarTituloEquipes();
   mostrarMensagemEquipes('');
   if (podeGerir) return iniciarModoProfessor();
   return iniciarModoAluno();
+}
+
+/**
+ * Matéria das equipes: a da página (atividade.pagina); para o professor, se a página não define
+ * a matéria (fora de uma matéria ou matéria sem atividade no banco), mostra a lista "Matéria".
+ * @param {boolean} ehProfessor - Se o usuário é professor.
+ * @returns {Promise<Object|null>} Matéria escolhida ou null.
+ */
+async function resolverMateriaEquipes(ehProfessor) {
+  const repositorio = estadoEquipes.repositorio;
+  elementosEquipes.campoMateria.hidden = true;
+  const prefixo = estadoEquipes.prefixoPasta;
+  const daPasta = prefixo ? await repositorio.buscarMateriaDaPasta(prefixo) : null;
+  if (daPasta || !ehProfessor) return daPasta;
+
+  estadoEquipes.materias = await repositorio.listarMaterias();
+  const opcoes = [{ valor: '', texto: 'Selecione a matéria…' }].concat(
+    estadoEquipes.materias.map((materia) => (
+      { valor: String(materia.id), texto: materia.descricao })));
+  const atual = estadoEquipes.materia ? String(estadoEquipes.materia.id) : '';
+  preencherSelectEquipes(elementosEquipes.materia, opcoes, atual);
+  elementosEquipes.campoMateria.hidden = false;
+  const escolhida = Number(elementosEquipes.materia.value);
+  return estadoEquipes.materias.find((materia) => materia.id === escolhida) || null;
+}
+
+/**
+ * Título do modal com a matéria atual.
+ * @returns {void}
+ */
+function atualizarTituloEquipes() {
+  const materia = estadoEquipes.materia;
+  elementosEquipes.titulo.textContent = materia
+    ? TITULO_MODAL_EQUIPES + ' — ' + materia.descricao : TITULO_MODAL_EQUIPES;
+}
+
+/**
+ * Estado "sem matéria escolhida": limpa a tela e pede a matéria.
+ * @returns {void}
+ */
+function mostrarSemMateriaEquipes() {
+  atualizarTituloEquipes();
+  elementosEquipes.formularios.hidden = true;
+  elementosEquipes.lista.replaceChildren();
+  elementosEquipes.semEquipe.replaceChildren();
+  elementosEquipes.resumo.textContent = '';
+  mostrarMensagemEquipes(MSG_ESCOLHA_MATERIA_EQUIPES);
+}
+
+/**
+ * Professor trocou a matéria na lista: recarrega turmas e equipes da matéria escolhida.
+ * @returns {Promise<void>}
+ */
+async function aoMudarMateriaEquipes() {
+  const escolhida = Number(elementosEquipes.materia.value);
+  estadoEquipes.materia = estadoEquipes.materias.find((materia) => materia.id === escolhida) || null;
+  limparFormularioEquipe();
+  limparFormularioMembro();
+  if (!estadoEquipes.materia) return mostrarSemMateriaEquipes();
+
+  atualizarTituloEquipes();
+  mostrarMensagemEquipes('');
+  await iniciarModoProfessor();
 }
 
 /**
@@ -718,6 +788,9 @@ function ligarEventosEquipes() {
   elementosEquipes.formularioMembro.addEventListener('submit', (evento) => {
     evento.preventDefault();
     salvarMembro();
+  });
+  elementosEquipes.materia.addEventListener('change', () => {
+    aoMudarMateriaEquipes().catch((erro) => mostrarMensagemEquipes(traduzirErroEquipes(erro)));
   });
   elementosEquipes.turma.addEventListener('change', () => {
     estadoEquipes.turmaCodigo = elementosEquipes.turma.value;

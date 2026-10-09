@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-08 23:59:44
+**Versão das regras:** 2026-10-09 00:01:37
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 00:01:37 | Equipes: **professor sempre vê o botão 👥 EQUIPES** (todas as páginas; fora de uma matéria escolhe a matéria no modal); a regra do líder vale só para aluno — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 23:59:44 | Aluno líder: **no máximo 1 líder por turma** (`definir_lider_usuario` recusa o segundo e diz quem é o atual); coluna Líder da tela ALUNOS como interruptor ON/OFF — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 23:57:37 | **Aluno líder** (`usuario.lider` 1/0): professor marca na tela ALUNOS; o líder vê 👥 EQUIPES e cadastra/altera equipes da própria turma (não exclui); menu EQUIPES só para professor e líder; aviso do grant por coluna da `usuario` — `docs/regras/usuarios-turmas-paginas-professor.md` |
 | 2026-10-08 23:45:55 | **Faixa de matérias**: botões **SOMENTE ENSALADO** e **VER TODAS MATÉRIAS** ao lado do título, e **ON/OFF** por matéria (coluna `materia.ensalado`, só PROFESSOR grava) em todos os `index.html` dos cursos (`docs/regras`: seção "FAIXA DE MATÉRIAS") |
 | 2026-10-08 20:33:13 | **Menu das atividades desligado** em todas as páginas (barra com o nome da matéria e "Equipes"): tudo já está no menu base do header; `MENU_ATIVIDADES_LIGADO = false` em `js/menu.js` (`docs/regras/assets-e-geradores.md`) |
-| 2026-10-08 20:24:44 | Discursivas: **aluno vê a prova corrigida** depois da entrega e da liberação do gabarito — respostas, **nota**, resultado de cada alternativa (✅/🟡/❌) e a **observação da IA** do porquê, mais o padrão de resposta (`assets/js/resultado-aluno-discursiva.js`; `aluno_pode_ver_gabarito` liberada para `authenticated`) |
 
 ---
 

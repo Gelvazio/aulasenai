@@ -205,7 +205,9 @@ SQL: `database/2026-10-05-equipes-turma-materia.sql` (✅ aplicado no Supabase e
   `grant select (<coluna>) on public.usuario to authenticated`, senão a leitura dá
   "permission denied for table usuario" (aconteceu com `lider` em 2026-10-08).
 - ✅ **Botão 👥 EQUIPES global no header** (2026-10-08, pedido do usuário): `js/header-usuario.js`
-  mostra o botão ao **professor e ao aluno líder** em qualquer página dentro de uma matéria
+  mostra o botão ao **professor em qualquer página** (fora de uma matéria, ou em matéria sem
+  atividade no banco, o modal mostra a lista **Matéria** para ele escolher; a regra do líder **não**
+  se aplica ao professor — 2026-10-08) e ao **aluno líder** em qualquer página dentro de uma matéria
   (`/MATERIAIS/<CURSO>/<MATÉRIA>/...`, exceto `MATERIAS-GERAIS` e `AGENDA_COLABORADOR`) e abre o
   mesmo modal (`assets/js/menu-acao-equipes.js`) com a pasta da matéria. ⚠️ A matéria é achada
   pelo `atividade.pagina` no banco: matéria sem atividade cadastrada mostra "Não foi possível

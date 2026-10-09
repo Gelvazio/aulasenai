@@ -182,7 +182,8 @@ function obterPastaMateriaHeader() {
 
 /**
  * Cria o botão EQUIPES: carrega a ação de equipes sob demanda e abre o modal da matéria.
- * @param {string} pastaMateria - URL da pasta da matéria.
+ * @param {string|null} pastaMateria - URL da pasta da matéria (null = o professor escolhe a
+ *   matéria no modal).
  * @returns {HTMLButtonElement} Botão do header.
  */
 function criarBotaoEquipesHeader(pastaMateria) {
@@ -195,8 +196,8 @@ function criarBotaoEquipesHeader(pastaMateria) {
       }
       // urlBase = um arquivo dentro da pasta da matéria (a ação usa a pasta dele).
       await window.ACOES_MENU_ATIVIDADES.equipes({
-        item: { papeis: PAPEIS_EQUIPES_HEADER },
-        urlBase: pastaMateria + "index.html",
+        item: { papeis: PAPEIS_EQUIPES_HEADER, semMateria: !pastaMateria },
+        urlBase: pastaMateria ? pastaMateria + "index.html" : location.href,
       });
     } catch (erro) {
       console.error("Não foi possível abrir as equipes:", erro);
@@ -231,12 +232,16 @@ async function ehAlunoLiderHeader(cliente, usuario) {
  */
 async function incluirBotaoEquipesHeader(contexto) {
   const { cliente, usuario, referencia } = contexto;
-  const pastaMateria = obterPastaMateriaHeader();
-  if (!usuario || !pastaMateria) return;
+  if (!usuario) return;
 
+  const pastaMateria = obterPastaMateriaHeader();
+  // Professor: sempre (fora de uma matéria, escolhe a matéria no modal). Líder: só na matéria.
   const ehProfessor = usuario.app_metadata?.perfil === PERFIL_PROFESSOR_HEADER;
-  const podeVer = ehProfessor || await ehAlunoLiderHeader(cliente, usuario);
-  if (podeVer) referencia.before(criarBotaoEquipesHeader(pastaMateria));
+  if (ehProfessor) return void referencia.before(criarBotaoEquipesHeader(pastaMateria));
+  if (!pastaMateria) return;
+  if (await ehAlunoLiderHeader(cliente, usuario)) {
+    referencia.before(criarBotaoEquipesHeader(pastaMateria));
+  }
 }
 
 /**

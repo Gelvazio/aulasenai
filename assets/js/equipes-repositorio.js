@@ -11,6 +11,7 @@ const TABELA_TURMAPROFESSOR_EQUIPES = 'turmaprofessor';
 const TABELA_TURMAALUNO_EQUIPES = 'turmaaluno';
 const TABELA_USUARIO_EQUIPES = 'usuario';
 const TABELA_ATIVIDADE_EQUIPES = 'atividade';
+const TABELA_MATERIA_EQUIPES = 'materia';
 const RPC_ADMINISTRADOR_EQUIPES = 'eh_professor_administrador';
 const RPC_MINHAS_EQUIPES = 'minhas_equipes';
 const RPC_ALUNOS_TURMA_LIDER = 'alunos_da_turma_lider';
@@ -88,6 +89,15 @@ function criarLeiturasContextoEquipes(cliente) {
         { p_turma_codigo: turmaCodigo }));
       return linhas.map((linha) => ({ id: linha.id, nome: linha.nome || 'Aluno sem nome' }))
         .sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+    },
+
+    /**
+     * Todas as matérias (o professor escolhe quando abre as equipes fora de uma matéria).
+     * @returns {Promise<{id: number, descricao: string}[]>} Matérias pela descrição.
+     */
+    async listarMaterias() {
+      return dadosOuErroEquipes(await cliente.from(TABELA_MATERIA_EQUIPES)
+        .select('id, descricao').order('descricao'));
     },
 
     /**
