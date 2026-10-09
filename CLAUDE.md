@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 17:25:12
+**Versão das regras:** 2026-10-09 18:10:00
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 18:10:00 | **Lista de presença única:** todas as listas em `scripts/LISTAPRESENCA.js` (versionado, fora do site); páginas e `criar-usuarios-supabase-auth.js --turma=CODIGO` leem só dele (`docs/regras/usuarios-turmas-paginas-professor.md`) |
 | 2026-10-09 17:25:12 | **`.gitignore` mínimo:** só `__pycache__/`, graphify, `variaveis.js` e `.env`; binários, gabaritos, listas de presença e `LISTA-ALUNOS/` saem do site pelo `.vercelignore` (regra "O QUE NUNCA É PUBLICADO" reescrita) |
 | 2026-10-09 13:20:11 | **Análise contínua das matérias (tarefa permanente #19-91cbac65-87ca-45a0):** `scripts/analise-materias.py` grava `tasks/ANALISE-MATERIAS-RELATORIO.json` no início de cada sessão e ao concluir tarefa em matéria; a tarefa **nunca fica CONCLUÍDA** enquanto houver matéria incompleta ou pendência |
 | 2026-10-09 12:58:34 | **`TASKS_COMPLETE.md` apagado:** tarefa concluída ou cancelada tem o bloco **removido** do `TASKS.md` (o registro fica no `STATUS.md` e no Git) |
 | 2026-10-09 12:36:43 | **Id de tarefa nova = número + UUID** (ex.: `#19-3f9a2c7e-8b1d-4e2a`), para duas licenças/branches não gerarem o mesmo número; as antigas (até #18) não mudam |
-| 2026-10-09 12:33:04 | **Arquivos de tarefas em `tasks/`:** `STATUS.md`, `TASKS.md` e `TASKS_COMPLETE.md` saíram da raiz e ficam em `C:\fontes\aulasenai\tasks\` (ler e atualizar lá; na nuvem, `tasks/` da raiz do repositório) |
 
 ---
 
@@ -837,7 +837,7 @@ O que **não pode ir ao site** fica no **`.vercelignore`**:
 |---|---|
 | `*[Gg][Aa][Bb][Aa][Rr][Ii][Tt][Oo]*`, `RESOLUCAO/`, `PROVA-OBJETIVA-*.md` | Respostas certas (só o professor) |
 | `*.pdf`, `*.png`, `*.docx`, `*.pptx`, `*.xlsx`, `*.jpg`, `*.jpeg` | Binários; exceção: `!MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/AULAS/*.pdf` (slides publicados) |
-| `LISTA-PRESENCA*.js`, `LISTA-ALUNOS/` | Dados pessoais de alunos (LGPD) |
+| `LISTAPRESENCA*.js`, `LISTA-PRESENCA*.js`, `LISTA-ALUNOS/` | Dados pessoais de alunos (LGPD); a lista única `scripts/LISTAPRESENCA.js` é versionada (decisão do usuário, 2026-10-09) |
 
 - ⚠️ **Sem o `.gitignore`, o Git não barra mais nada disso:** gabaritos, listas de presença
   (nomes, e-mails, senhas iniciais, CPF), documentos pessoais e binários aparecem como arquivos
@@ -848,7 +848,7 @@ O que **não pode ir ao site** fica no **`.vercelignore`**:
   pessoal que não case com os padrões acima: acrescentar o padrão ao `.vercelignore` **antes** do
   commit (senão vai ao ar).
 - ⛔ **Gabarito nunca em página de aluno** (HTML, JS ou PDF do aluno) — continua valendo.
-- ✅ A página `LISTA-PRESENCA.html` não contém dados (lê o `.js` local).
+- ✅ A página `LISTA-PRESENCA.html` não contém dados (lê o `scripts/LISTAPRESENCA.js`, lista única de presença — regra em `docs/regras/usuarios-turmas-paginas-professor.md`).
 
 ## 🗄️ REGRA — BANCO REAL ANTES DE ALTERAR O SCHEMA
 

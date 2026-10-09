@@ -20,7 +20,8 @@ RESOLUCAO/
 # Slides das aulas de Testes de Front-End: publicados (pedido do usuário em 2026-10-09)
 !MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/AULAS/*.pdf
 
-# Dados pessoais de alunos (LGPD) — nunca publicar
+# Dados pessoais de alunos (LGPD) — nunca publicar (lista única: scripts/LISTAPRESENCA.js)
+LISTAPRESENCA*.js
 LISTA-PRESENCA*.js
 # Listas de alunos (nomes, CPF): dados pessoais (LGPD)
 LISTA-ALUNOS/

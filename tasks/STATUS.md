@@ -1663,3 +1663,10 @@ Matéria: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO_DE_DADOS/` · Plano: `do
 | 125.1 | `.gitignore` só com `__pycache__/`, graphify, `variaveis.js` (e `.env`, acrescentado pelo usuário); demais padrões movidos para o `.vercelignore` | ✅ Concluído | 2026-10-09 17:40 | Leitura dos dois arquivos |
 | 125.2 | Regra "O QUE NUNCA É PUBLICADO" do `CLAUDE.md` reescrita + versão 2026-10-09 17:25:12 + histórico | ✅ Concluído | 2026-10-09 17:40 | Leitura do `CLAUDE.md` e do `docs/HISTORICO-REGRAS.md` |
 | 125.3 | Aceite do usuário (alertado: sem `.gitignore`, listas de presença, gabaritos e documentos pessoais podem ir ao GitHub num `git add` amplo) | ⬜ Pendente | — | — |
+
+## Etapa 126 — Lista de presença em um arquivo único `scripts/LISTAPRESENCA.js` (tarefa grande, pedido em 2026-10-09 17:45; plano [docs/lista-presenca-arquivo-unico.md](../docs/lista-presenca-arquivo-unico.md))
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 126.0 | Plano aprovado; decisões: alunos M1/V1 eram pessoas diferentes (ambos mantidos), antigos apagados, `LISTAPRESENCA.js` versionado | ✅ Concluído | 2026-10-09 17:55 | Respostas do usuário no chat |
+| 126.1–126.9 | Passos 1 a 9 do plano: arquivo único (157 pessoas), 3 páginas + script Node (`--turma=`), `.vercelignore`, regras/docs, 10 antigos apagados | ✅ Concluído | 2026-10-09 18:00 | `node --check`, contagens por turma, simulação do script Node |
+| 126.10 | Aceite do usuário (testar criarUsuariosBancoDados.html, relatorioAtividades.html e LISTA-PRESENCA.html da ITIC) | ⬜ Pendente | — | — |
