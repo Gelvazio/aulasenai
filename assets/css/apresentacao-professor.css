@@ -120,23 +120,46 @@
 }
 
 .apresentacao-professor__boas-vindas {
-    position: relative;
-    padding-left: 30px;
-    border-left: 3px solid var(--apresentacao-cor-ouro);
-    font-size: 13px;
-    line-height: 1.55;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 4px 0 4px 16px;
+    border-left: 4px solid var(--apresentacao-cor-ouro);
+    font-size: 15.5px;
+    line-height: 1.5;
+    list-style: none;
+}
+
+.apresentacao-professor__boas-vindas li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 .apresentacao-professor__boas-vindas strong {
     color: var(--apresentacao-cor-roxo);
 }
 
-.curriculo__aspas {
-    position: absolute;
-    top: -6px;
-    left: 8px;
-    font-size: 26px;
-    color: var(--apresentacao-cor-ouro);
+/* Marca-texto dourado nos pontos principais. */
+.apresentacao-professor__boas-vindas mark {
+    padding: 0 4px;
+    border-radius: 4px;
+    background: linear-gradient(transparent 45%, var(--apresentacao-cor-ouro) 45%);
+    color: var(--apresentacao-cor-texto);
+    font-weight: 700;
+}
+
+.curriculo__resumo-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 1px 4px var(--apresentacao-sombra);
+    font-size: 16px;
 }
 
 /* ── Cartões: cada um com a sua cor ── */
@@ -339,7 +362,7 @@
 }
 
 /* Telas largas e altas: a apresentação cabe inteira, então a página não rola. */
-@media (min-width: 901px) and (min-height: 720px) {
+@media (min-width: 901px) and (min-height: 780px) {
     html:has(.apresentacao-professor:not([hidden])) {
         overflow: hidden;
     }
