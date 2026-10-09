@@ -1528,3 +1528,10 @@ Plano: [docs/trigger-bloqueio-aula-bloqueia-atividades.md](docs/trigger-bloqueio
 | 116.2 | Regra no `CLAUDE.md` (versão 2026-10-09 01:11:42), histórico e `docs/regras/atividades.md` | ✅ Concluído | 2026-10-09 01:12 | Leitura |
 | 116.4 | Botões de atividade com a mesma largura e ON/OFF sempre ao lado (texto menor e quebrando a linha, também no celular) — `assets/css/indice-atividades.css` + `indice-atividades-bloquear.css`; regra no `CLAUDE.md` (versão 2026-10-09 01:12:55) | ✅ Concluído | 2026-10-09 01:12 | Chaves do CSS balanceadas; leitura (sem navegador) |
 | 116.3 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 117 — Lista de alunos do Técnico em Informática (SENAI) Manhã em Testes de Front-End (tarefa pequena, pedido em 2026-10-09 12:35:18)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 117.1 | Lista com os 17 alunos (nome, menor, frequência, situação, sigla e login proposto) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/LISTA-ALUNOS/ALUNOS-TECNICO-INFORMATICA-MANHA.md` — só local (LGPD, `LISTA-ALUNOS/` no `.gitignore`); sem cadastro no banco | ✅ Concluído | 2026-10-09 12:36 | `git check-ignore` confirma fora do Git; logins sem repetição |
+| 117.2 | Aceite do usuário | ⬜ Pendente | — | — |
