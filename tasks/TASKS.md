@@ -278,4 +278,22 @@ primeiro passo (pedido do usuário).
 
 ---
 
-**Última atualização:** 2026-10-09 (tarefas #17 e #18 adicionadas)
+### #21-eeefc710-3e74-4928: Colaboração entre sessões e licenças pelo STATUS.md — pedida em 2026-10-09 15:22:41
+
+**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 135-eeefc710 (fonte única).
+**Prioridade:** 🟠 Alta · **Tarefa grande:** plano [docs/colaboracao-entre-sessoes.md](../docs/colaboracao-entre-sessoes.md).
+
+Pedido: "execute todas as suas sugestões" — as 7 sugestões para sessões de contas diferentes do
+Claude (que só se falam pelo repositório) colaborarem sem se atrapalhar:
+
+- [x] (4) `tasks/RECADOS.md`: recados entre sessões, só se acrescentam linhas.
+- [x] (7) Uma etapa por arquivo em `tasks/etapas/`; o `STATUS.md` vira o índice.
+- [x] (3) "🧭 Frentes de trabalho": próximo passo por ambiente + branch.
+- [x] (2) Coluna "Em uso por" no "📌 Tarefas": reserva da tarefa.
+- [ ] (1, 5, 6) Regras no `CLAUDE.md`: etapa nova com UUID; trazer a `main` no início e no fim;
+  arquivo gerado em conflito = regerar com o script.
+- [ ] Aceite do usuário (ele vai juntar o PR na `main`).
+
+---
+
+**Última atualização:** 2026-10-09 15:30 (tarefa #21 adicionada)
