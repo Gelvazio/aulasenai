@@ -226,6 +226,8 @@ ATIVIDADES_BANCO_DADOS = [
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-16-50-QUESTOES.md"),
     (17, "Procedimentos Armazenados", DATA_PROVISORIA,
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-17-50-QUESTOES.md"),
+    (18, "Triggers (Disparadores)", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-18-50-QUESTOES.md"),
 ]
 
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.

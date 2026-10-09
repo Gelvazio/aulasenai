@@ -1235,4 +1235,75 @@ begin
       (v_atividade, 48, 'Parâmetro smallint', 'A'),
       (v_atividade, 49, 'Testar os Erros', 'C'),
       (v_atividade, 50, 'Dois Lugares', 'D');
+
+  -- Aula 18: Triggers (Disparadores)
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Triggers (Disparadores)' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (18, 'Triggers (Disparadores)', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Triggers (Disparadores)', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Triggers (Disparadores) (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-18-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'O que É', 'A'),
+      (v_atividade, 2, 'Quem Executa', 'B'),
+      (v_atividade, 3, 'Trigger × Procedimento', 'B'),
+      (v_atividade, 4, 'Vale para Todos', 'C'),
+      (v_atividade, 5, 'Eventos', 'A'),
+      (v_atividade, 6, 'UPDATE OF', 'A'),
+      (v_atividade, 7, 'Momento BEFORE', 'B'),
+      (v_atividade, 8, 'Momento AFTER', 'D'),
+      (v_atividade, 9, 'FOR EACH ROW', 'D'),
+      (v_atividade, 10, 'FOR EACH STATEMENT', 'B'),
+      (v_atividade, 11, 'Duas Peças', 'B'),
+      (v_atividade, 12, 'Tipo de Retorno', 'D'),
+      (v_atividade, 13, 'Parâmetros', 'B'),
+      (v_atividade, 14, 'Ligar a Função', 'D'),
+      (v_atividade, 15, 'Variável NEW', 'D'),
+      (v_atividade, 16, 'Variável OLD', 'C'),
+      (v_atividade, 17, 'NEW no DELETE', 'A'),
+      (v_atividade, 18, 'OLD no INSERT', 'D'),
+      (v_atividade, 19, 'TG_OP', 'A'),
+      (v_atividade, 20, 'TG_TABLE_NAME', 'A'),
+      (v_atividade, 21, 'Tabela de Histórico', 'D'),
+      (v_atividade, 22, 'Valores Gravados', 'C'),
+      (v_atividade, 23, 'Retorno no AFTER', 'C'),
+      (v_atividade, 24, 'Cláusula WHEN', 'A'),
+      (v_atividade, 25, 'IS DISTINCT FROM', 'D'),
+      (v_atividade, 26, 'Mesmo Valor', 'D'),
+      (v_atividade, 27, 'Base da Auditoria', 'B'),
+      (v_atividade, 28, 'Validação BEFORE', 'D'),
+      (v_atividade, 29, 'RAISE EXCEPTION', 'A'),
+      (v_atividade, 30, 'RETURN NEW no BEFORE', 'B'),
+      (v_atividade, 31, 'RETURN NULL no BEFORE', 'B'),
+      (v_atividade, 32, 'RETURN OLD no DELETE', 'A'),
+      (v_atividade, 33, 'Ajustar a Linha', 'C'),
+      (v_atividade, 34, 'Evento Duplo', 'C'),
+      (v_atividade, 35, 'Restrição Primeiro', 'C'),
+      (v_atividade, 36, 'Quando é Trigger', 'D'),
+      (v_atividade, 37, 'Quando é Procedimento', 'C'),
+      (v_atividade, 38, 'Banco Mágico', 'B'),
+      (v_atividade, 39, 'Listar no psql', 'B'),
+      (v_atividade, 40, 'Desligar', 'A'),
+      (v_atividade, 41, 'Remover', 'C'),
+      (v_atividade, 42, 'Função Continua', 'C'),
+      (v_atividade, 43, 'CREATE OR REPLACE TRIGGER', 'D'),
+      (v_atividade, 44, 'Erro: RETURNS void', 'B'),
+      (v_atividade, 45, 'Erro: sem RETURN NEW', 'A'),
+      (v_atividade, 46, 'Erro: Laço', 'A'),
+      (v_atividade, 47, 'Corrigir o Laço', 'C'),
+      (v_atividade, 48, 'Erro: Sem WHEN', 'C'),
+      (v_atividade, 49, 'Caso da Escola', 'B'),
+      (v_atividade, 50, 'Testes da SA 2', 'A');
 end $$;
