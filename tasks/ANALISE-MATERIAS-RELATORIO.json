@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-10-09 17:37:14",
+  "gerado_em": "2026-10-09 17:39:43",
   "padrao": "Matéria modelo: Introdução à TIC (CLAUDE.md, 2026-10-03)",
   "pastas_que_nao_sao_curso": [
     "AGENDA_COLABORADOR",
@@ -539,10 +539,10 @@
         "status_apostila": false
       },
       "contagem": {
-        "aulas_conteudo": 6,
-        "fontes_atividades": 18,
-        "atividades_50_questoes": 6,
-        "atividades_praticas": 6,
+        "aulas_conteudo": 7,
+        "fontes_atividades": 21,
+        "atividades_50_questoes": 7,
+        "atividades_praticas": 7,
         "apostila_html": 0
       },
       "ementa": {

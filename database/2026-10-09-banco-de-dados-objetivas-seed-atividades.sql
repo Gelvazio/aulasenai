@@ -383,4 +383,75 @@ begin
       (v_atividade, 48, 'Produto', 'C'),
       (v_atividade, 49, 'Ordem da Modelagem', 'A'),
       (v_atividade, 50, 'Identificador Próprio', 'B');
+
+  -- Aula 7: Atributos
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Atributos' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (7, 'Atributos', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Atributos', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Atributos (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-07-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Definição de Atributo', 'D'),
+      (v_atividade, 2, 'Valor do Atributo', 'A'),
+      (v_atividade, 3, 'Notação do Atributo', 'B'),
+      (v_atividade, 4, 'Atributo Simples', 'D'),
+      (v_atividade, 5, 'Exemplo de Simples', 'C'),
+      (v_atividade, 6, 'Atributo Composto', 'C'),
+      (v_atividade, 7, 'Exemplo de Composto', 'B'),
+      (v_atividade, 8, 'Quando Dividir o Composto', 'C'),
+      (v_atividade, 9, 'Composto Vira Colunas', 'B'),
+      (v_atividade, 10, 'Atributo Descritivo', 'A'),
+      (v_atividade, 11, 'Exemplo de Descritivo', 'C'),
+      (v_atividade, 12, 'Atributo Nominativo', 'A'),
+      (v_atividade, 13, 'Exemplo de Nominativo', 'C'),
+      (v_atividade, 14, 'Atributo Referencial', 'D'),
+      (v_atividade, 15, 'Exemplo de Referencial', 'A'),
+      (v_atividade, 16, 'Referencial e Chave Estrangeira', 'D'),
+      (v_atividade, 17, 'Nominativo e Identificador', 'A'),
+      (v_atividade, 18, 'Referencial Mostra Relacionamento', 'D'),
+      (v_atividade, 19, 'Definição de Identificador', 'A'),
+      (v_atividade, 20, 'Regras do Identificador', 'A'),
+      (v_atividade, 21, 'Identificador da Fraca', 'A'),
+      (v_atividade, 22, 'Código Próprio', 'B'),
+      (v_atividade, 23, 'CPF de Criança', 'C'),
+      (v_atividade, 24, 'Nome como Identificador', 'D'),
+      (v_atividade, 25, 'Idade ou Data de Nascimento', 'B'),
+      (v_atividade, 26, 'Vários Telefones num Campo', 'D'),
+      (v_atividade, 27, 'Referencial sem Entidade', 'A'),
+      (v_atividade, 28, 'Dicionário de Atributos', 'C'),
+      (v_atividade, 29, 'Coluna Obrigatório', 'B'),
+      (v_atividade, 30, 'Tipo do Atributo', 'B'),
+      (v_atividade, 31, 'Tamanho do Texto', 'B'),
+      (v_atividade, 32, 'Exemplo no Dicionário', 'D'),
+      (v_atividade, 33, 'Escola: Nome', 'A'),
+      (v_atividade, 34, 'Escola: CPF', 'A'),
+      (v_atividade, 35, 'Escola: Endereço', 'C'),
+      (v_atividade, 36, 'Escola: Curso na Ficha', 'C'),
+      (v_atividade, 37, 'Escola: Data da Matrícula', 'C'),
+      (v_atividade, 38, 'Escola: Turno', 'B'),
+      (v_atividade, 39, 'Nome Descritivo ou Nominativo', 'D'),
+      (v_atividade, 40, 'Preço do Produto', 'D'),
+      (v_atividade, 41, 'Código do Cliente no Pedido', 'B'),
+      (v_atividade, 42, 'Telefone com DDD', 'D'),
+      (v_atividade, 43, 'Situação da Matrícula', 'B'),
+      (v_atividade, 44, 'Dinâmica: Campo Idade', 'C'),
+      (v_atividade, 45, 'Dinâmica: Identificador', 'A'),
+      (v_atividade, 46, 'Entrega da SA 1', 'C'),
+      (v_atividade, 47, 'Próxima Etapa', 'B'),
+      (v_atividade, 48, 'Tipos no PostgreSQL', 'B'),
+      (v_atividade, 49, 'Atributo de Associativa', 'D'),
+      (v_atividade, 50, 'Classificação em Duas Dimensões', 'A');
 end $$;

@@ -14,7 +14,7 @@
 | 04 | Configuração do SGBD e infraestrutura do sistema | 4 | 4.2.2 | C5, C10, C11 | [AULA-04](../CONTEUDO/AULA-04-CONFIGURACAO-DO-SGBD-E-INFRAESTRUTURA.md) |
 | 05 | Demandas do cliente e escopo do projeto | 4 | 6.1 · 1.1 | C1, S2 | [AULA-05](../CONTEUDO/AULA-05-DEMANDAS-DO-CLIENTE-E-ESCOPO-DO-PROJETO.md) |
 | 06 | Entidades fortes, fracas e associativas | 4 | 5.1 | C2 | [AULA-06](../CONTEUDO/AULA-06-ENTIDADES-FORTES-FRACAS-E-ASSOCIATIVAS.md) |
-| 07 | Atributos | 4 | 5.3 | C2 | ⬜ |
+| 07 | Atributos | 4 | 5.3 | C2 | [AULA-07](../CONTEUDO/AULA-07-ATRIBUTOS.md) |
 | 08 | Relacionamentos 1:1, 1:N e N:N | 4 | 5.2 | C2 | ⬜ |
 | 09 | Diagrama entidade-relacionamento | 4 | 5.4 | C2, S1 | ⬜ |
 | 10 | Normalização de dados (1FN, 2FN e 3FN) | 4 | 5.5 | C3, S2 | ⬜ |
