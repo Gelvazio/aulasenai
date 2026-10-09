@@ -1164,4 +1164,75 @@ begin
       (v_atividade, 48, 'Organização do Script', 'C'),
       (v_atividade, 49, 'Leitura de Consulta', 'A'),
       (v_atividade, 50, 'Próxima Aula', 'B');
+
+  -- Aula 17: Procedimentos Armazenados
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Procedimentos Armazenados' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (17, 'Procedimentos Armazenados', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Procedimentos Armazenados', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Procedimentos Armazenados (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-17-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'O que É', 'D'),
+      (v_atividade, 2, 'Onde Fica', 'C'),
+      (v_atividade, 3, 'Regra num Lugar Só', 'D'),
+      (v_atividade, 4, 'Menos Idas e Voltas', 'D'),
+      (v_atividade, 5, 'Regra do Banco ou da Tela', 'D'),
+      (v_atividade, 6, 'Chamar uma Função', 'D'),
+      (v_atividade, 7, 'Chamar um Procedimento', 'B'),
+      (v_atividade, 8, 'Função Devolve Valor', 'A'),
+      (v_atividade, 9, 'RETURNS', 'A'),
+      (v_atividade, 10, 'Controle de Transação', 'A'),
+      (v_atividade, 11, 'Linguagem', 'B'),
+      (v_atividade, 12, 'Delimitador', 'D'),
+      (v_atividade, 13, 'DECLARE', 'A'),
+      (v_atividade, 14, 'SELECT INTO', 'D'),
+      (v_atividade, 15, 'Sem INTO', 'A'),
+      (v_atividade, 16, 'RETURN', 'B'),
+      (v_atividade, 17, 'Parâmetro', 'C'),
+      (v_atividade, 18, 'Prefixo p_', 'A'),
+      (v_atividade, 19, 'Nome Ambíguo', 'A'),
+      (v_atividade, 20, 'IF', 'C'),
+      (v_atividade, 21, 'ELSIF', 'B'),
+      (v_atividade, 22, 'RAISE EXCEPTION', 'A'),
+      (v_atividade, 23, 'RAISE NOTICE', 'C'),
+      (v_atividade, 24, 'Marcador %', 'A'),
+      (v_atividade, 25, 'Nada pela Metade', 'B'),
+      (v_atividade, 26, 'FOUND', 'C'),
+      (v_atividade, 27, 'IF NOT FOUND', 'C'),
+      (v_atividade, 28, 'Parcela Já Paga', 'B'),
+      (v_atividade, 29, 'FOR UPDATE', 'B'),
+      (v_atividade, 30, 'Duas Atendentes', 'B'),
+      (v_atividade, 31, 'Turma Inexistente', 'C'),
+      (v_atividade, 32, 'Restrições Continuam', 'C'),
+      (v_atividade, 33, 'Contar Ativos', 'B'),
+      (v_atividade, 34, 'Limite de 25', 'C'),
+      (v_atividade, 35, 'Função com coalesce', 'B'),
+      (v_atividade, 36, 'CREATE OR REPLACE', 'B'),
+      (v_atividade, 37, 'DROP PROCEDURE', 'C'),
+      (v_atividade, 38, 'Tipos no DROP', 'A'),
+      (v_atividade, 39, 'Listar Rotinas', 'A'),
+      (v_atividade, 40, 'SELECT em Procedimento', 'D'),
+      (v_atividade, 41, 'CALL em Função', 'D'),
+      (v_atividade, 42, 'Ponto e Vírgula', 'C'),
+      (v_atividade, 43, 'NOTICE no Lugar Errado', 'B'),
+      (v_atividade, 44, 'Back-end Chama', 'D'),
+      (v_atividade, 45, 'Mensagem para o Usuário', 'D'),
+      (v_atividade, 46, 'Segurança', 'A'),
+      (v_atividade, 47, 'Função Útil', 'B'),
+      (v_atividade, 48, 'Parâmetro smallint', 'A'),
+      (v_atividade, 49, 'Testar os Erros', 'C'),
+      (v_atividade, 50, 'Dois Lugares', 'D');
 end $$;

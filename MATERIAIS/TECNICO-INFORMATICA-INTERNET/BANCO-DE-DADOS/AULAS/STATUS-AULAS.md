@@ -26,7 +26,7 @@
 | 14 | DML: inserção, atualização e exclusão | ✅ `CONTEUDO/AULA-14-DML-INSERCAO-ATUALIZACAO-E-EXCLUSAO.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-14-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-14.html` | ⬜ seeds gerados, não aplicados |
 | 15 | DML: consultas com filtros e ordenação | ✅ `CONTEUDO/AULA-15-DML-CONSULTAS-COM-FILTROS-E-ORDENACAO.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-15-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-15.html` | ⬜ seeds gerados, não aplicados |
 | 16 | Consultas com junções, agrupamentos e subconsultas | ✅ `CONTEUDO/AULA-16-CONSULTAS-COM-JUNCOES-AGRUPAMENTOS-E-SUBCONSULTAS.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-16-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-16.html` | ⬜ seeds gerados, não aplicados |
-| 17 | Procedimentos armazenados | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 17 | Procedimentos armazenados | ✅ `CONTEUDO/AULA-17-PROCEDIMENTOS-ARMAZENADOS.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-17-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-17.html` | ⬜ seeds gerados, não aplicados |
 | 18 | Triggers (disparadores) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 19 | Segurança da informação: pilares, acesso e auditoria | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 20 | Projeto integrador: banco documentado para o back-end | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |

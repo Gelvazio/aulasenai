@@ -24,7 +24,7 @@
 | 14 | DML: inserção, atualização e exclusão | 4 | 3.2.2–3.2.4 | C8 | [AULA-14](../CONTEUDO/AULA-14-DML-INSERCAO-ATUALIZACAO-E-EXCLUSAO.md) |
 | 15 | DML: consultas com filtros e ordenação | 4 | 3.2.1 | C8 | [AULA-15](../CONTEUDO/AULA-15-DML-CONSULTAS-COM-FILTROS-E-ORDENACAO.md) |
 | 16 | Consultas com junções, agrupamentos e subconsultas | 4 | 3.2.1 | C8 | [AULA-16](../CONTEUDO/AULA-16-CONSULTAS-COM-JUNCOES-AGRUPAMENTOS-E-SUBCONSULTAS.md) |
-| 17 | Procedimentos armazenados | 4 | 3.2.5 | C8 | ⬜ |
+| 17 | Procedimentos armazenados | 4 | 3.2.5 | C8 | [AULA-17](../CONTEUDO/AULA-17-PROCEDIMENTOS-ARMAZENADOS.md) |
 | 18 | Triggers (disparadores) | 4 | 3.2.6 | C8 | ⬜ |
 | 19 | Segurança da informação: pilares, acesso e auditoria | 4 | 2 · 2.1–2.3 | C12, C13, C14 | ⬜ |
 | 20 | Projeto integrador: banco documentado para o back-end | 4 | 6 · 3 · 5 | C1, C2, C3, C7, C8, C14, S1, S2 | ⬜ |
