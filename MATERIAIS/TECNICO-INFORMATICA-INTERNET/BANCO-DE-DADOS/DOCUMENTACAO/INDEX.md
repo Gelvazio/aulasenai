@@ -1,4 +1,4 @@
-﻿# 📚 Índice — BANCO_DE_DADOS
+﻿# 📚 Índice — BANCO-DE-DADOS
 
 Guia para navegar todos os materiais desta disciplina.
 

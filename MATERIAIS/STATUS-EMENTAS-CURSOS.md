@@ -155,7 +155,7 @@
 | Matéria | Caracteres | Situação | Permissão |
 |---|---|---|---|
 | ARQUITETURA-DE-HARDWARE-E-SOFTWARE | 4.923 | ❌ Fora do tamanho | IGNORAR |
-| BANCO_DE_DADOS | 14.802 | ⚠️ Genérica (modelo, sem conteúdo próprio) | IGNORAR |
+| BANCO-DE-DADOS | 14.802 | ⚠️ Genérica (modelo, sem conteúdo próprio) | VERIFICAR |
 | CODIFICACAO-PARA-BACK-END | 4.269 | ❌ Fora do tamanho | IGNORAR |
 | CODIFICACAO-PARA-FRONT-END | 5.809 | ❌ Fora do tamanho | IGNORAR |
 | DESENVOLVIMENTO-DE-APIS | 5.047 | ❌ Fora do tamanho | IGNORAR |
