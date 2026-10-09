@@ -24,7 +24,7 @@
 | 12 | DDL: tabelas e campos | ✅ `CONTEUDO/AULA-12-DDL-TABELAS-E-CAMPOS.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-12-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-12.html` | ⬜ seeds gerados, não aplicados |
 | 13 | DDL: relações, chaves e restrições | ✅ `CONTEUDO/AULA-13-DDL-RELACOES-CHAVES-E-RESTRICOES.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-13-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-13.html` | ⬜ seeds gerados, não aplicados |
 | 14 | DML: inserção, atualização e exclusão | ✅ `CONTEUDO/AULA-14-DML-INSERCAO-ATUALIZACAO-E-EXCLUSAO.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-14-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-14.html` | ⬜ seeds gerados, não aplicados |
-| 15 | DML: consultas com filtros e ordenação | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 15 | DML: consultas com filtros e ordenação | ✅ `CONTEUDO/AULA-15-DML-CONSULTAS-COM-FILTROS-E-ORDENACAO.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-15-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-15.html` | ⬜ seeds gerados, não aplicados |
 | 16 | Consultas com junções, agrupamentos e subconsultas | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 17 | Procedimentos armazenados | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 18 | Triggers (disparadores) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |

@@ -22,7 +22,7 @@
 | 12 | DDL: tabelas e campos | 4 | 3.1.1–3.1.2 | C7 | [AULA-12](../CONTEUDO/AULA-12-DDL-TABELAS-E-CAMPOS.md) |
 | 13 | DDL: relações, chaves e restrições | 4 | 3.1.3 | C7 | [AULA-13](../CONTEUDO/AULA-13-DDL-RELACOES-CHAVES-E-RESTRICOES.md) |
 | 14 | DML: inserção, atualização e exclusão | 4 | 3.2.2–3.2.4 | C8 | [AULA-14](../CONTEUDO/AULA-14-DML-INSERCAO-ATUALIZACAO-E-EXCLUSAO.md) |
-| 15 | DML: consultas com filtros e ordenação | 4 | 3.2.1 | C8 | ⬜ |
+| 15 | DML: consultas com filtros e ordenação | 4 | 3.2.1 | C8 | [AULA-15](../CONTEUDO/AULA-15-DML-CONSULTAS-COM-FILTROS-E-ORDENACAO.md) |
 | 16 | Consultas com junções, agrupamentos e subconsultas | 4 | 3.2.1 | C8 | ⬜ |
 | 17 | Procedimentos armazenados | 4 | 3.2.5 | C8 | ⬜ |
 | 18 | Triggers (disparadores) | 4 | 3.2.6 | C8 | ⬜ |
