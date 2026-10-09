@@ -1602,3 +1602,10 @@ Decisões do usuário (2026-10-09 10:31): D1 o painel global **substitui** o das
 | 121.9 | Commit, push e pull request | ✅ Concluído | 2026-10-09 10:57 | `git diff --cached --name-only`; `main` juntada (merge `ffa00d2`, conflitos só em `CLAUDE.md`, histórico e `STATUS.md`, resolvidos mantendo as duas sessões); `node --check` em todo JS dos dois lados; sem nomes globais repetidos; PR aberto para a `main` |
 | 121.10 | Aplicar o SQL do item 121.5 no Supabase (**só com pedido do usuário**) | ✅ Concluído | 2026-10-09 11:02 | Pedido do usuário; banco conferido antes (funções iguais às lidas); migração `minimo_questoes_objetivas_20261009`; depois: 5 funções com `security definer`, volatilidade igual, `total_questoes_atividade` só `authenticated`; total/mínimo padrão: id 96 = 50/50, id 82 = 20/20, id 99 = 10/10 (sem mínimo nada muda); `docs/database.md` e relatório HTML atualizados; regras com versão 2026-10-09 11:02:12 |
 | 121.11 | Aceite do usuário (Testes de Front-End, aula 01, como professor e como aluno) | ⬜ Pendente | — | Usuário |
+
+## Etapa 122 — Seção "Pull Requests" no `CLAUDE.md` (só na nuvem) (tarefa pequena, pedido em 2026-10-09 11:03:21)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 122.1 | Seção "🔀 Pull Requests" no `CLAUDE.md`: cada commit na nuvem = push na hora + PR novo se a branch não tiver PR aberto; versão 2026-10-09 11:03:21 + histórico (resumo e `docs/HISTORICO-REGRAS.md`) | ✅ Concluído | 2026-10-09 11:03:21 | Leitura; visualizador lê a linha de versão (`PADRAO_VERSAO_REGRAS`) e os títulos `##` |
+| 122.2 | Aceite do usuário | ⬜ Pendente | — | — |
