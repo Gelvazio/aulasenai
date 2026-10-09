@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-10-09 13:19:54",
+  "gerado_em": "2026-10-09 16:50:55",
   "padrao": "Matéria modelo: Introdução à TIC (CLAUDE.md, 2026-10-03)",
   "pastas_que_nao_sao_curso": [
     "AGENDA_COLABORADOR",
@@ -92,7 +92,7 @@
       },
       "contagem": {
         "aulas_conteudo": 0,
-        "fontes_atividades": 21,
+        "fontes_atividades": 20,
         "atividades_50_questoes": 14,
         "atividades_praticas": 0,
         "apostila_html": 0
@@ -527,12 +527,12 @@
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
-      "materia": "BANCO_DE_DADOS",
-      "caminho": "MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO_DE_DADOS",
+      "materia": "BANCO-DE-DADOS",
+      "caminho": "MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS",
       "completa": false,
       "pecas": {
         "ementa": true,
-        "materia_json": false,
+        "materia_json": true,
         "status_aulas": false,
         "indice_atividades": true,
         "status_atividades": false,
@@ -546,11 +546,10 @@
         "apostila_html": 0
       },
       "ementa": {
-        "caracteres": 14802,
+        "caracteres": 14923,
         "dentro_da_faixa": true
       },
       "pendencias": [
-        "Criar materia.json (copiado da ementa)",
         "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
@@ -1066,41 +1065,6 @@
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
-      "materia": "Testes de Sistemas-EXISTENTES",
-      "caminho": "MATERIAIS/TECNICO-INFORMATICA-INTERNET/Testes de Sistemas-EXISTENTES",
-      "completa": false,
-      "pecas": {
-        "ementa": true,
-        "materia_json": false,
-        "status_aulas": false,
-        "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
-      },
-      "contagem": {
-        "aulas_conteudo": 0,
-        "fontes_atividades": 0,
-        "atividades_50_questoes": 0,
-        "atividades_praticas": 0,
-        "apostila_html": 0
-      },
-      "ementa": {
-        "caracteres": 14800,
-        "dentro_da_faixa": true
-      },
-      "pendencias": [
-        "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
-        "Extrair as aulas da ementa para CONTEUDO/",
-        "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
-        "Gerar a atividade objetiva de 50 questões de cada aula",
-        "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
-      ]
-    },
-    {
-      "curso": "TECNICO-INFORMATICA-INTERNET",
       "materia": "TESTES-DE-BACK-END",
       "caminho": "MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-BACK-END",
       "completa": false,
@@ -1165,6 +1129,41 @@
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
+      "materia": "Testes de Sistemas-EXISTENTES",
+      "caminho": "MATERIAIS/TECNICO-INFORMATICA-INTERNET/Testes de Sistemas-EXISTENTES",
+      "completa": false,
+      "pecas": {
+        "ementa": true,
+        "materia_json": false,
+        "status_aulas": false,
+        "indice_atividades": true,
+        "status_atividades": false,
+        "status_apostila": false
+      },
+      "contagem": {
+        "aulas_conteudo": 0,
+        "fontes_atividades": 0,
+        "atividades_50_questoes": 0,
+        "atividades_praticas": 0,
+        "apostila_html": 0
+      },
+      "ementa": {
+        "caracteres": 14800,
+        "dentro_da_faixa": true
+      },
+      "pendencias": [
+        "Criar materia.json (copiado da ementa)",
+        "Criar AULAS/STATUS-AULAS.md",
+        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
+        "Criar APOSTILA/STATUS-APOSTILA.md",
+        "Extrair as aulas da ementa para CONTEUDO/",
+        "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
+        "Gerar a atividade objetiva de 50 questões de cada aula",
+        "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
+      ]
+    },
+    {
+      "curso": "TECNICO-INFORMATICA-INTERNET",
       "materia": "VERSIONAMENTO-E-COLABORACAO",
       "caminho": "MATERIAIS/TECNICO-INFORMATICA-INTERNET/VERSIONAMENTO-E-COLABORACAO",
       "completa": false,
@@ -1202,12 +1201,8 @@
   ],
   "pastas_ignoradas_sem_ementa_nem_materia_json": [
     "MATERIAIS/GESTAO_E_CONTROLE_MATERIAIS/docs",
-    "MATERIAIS/QUALIFICACAO-PROFISSIONAL/.claude",
-    "MATERIAIS/RIO_DO_SUL_MAIS_TECH/.claude",
     "MATERIAIS/RIO_DO_SUL_MAIS_TECH/docs",
     "MATERIAIS/RIO_DO_SUL_MAIS_TECH/scripts",
-    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/.claude",
-    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/docs",
-    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/graphify-out"
+    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/docs"
   ]
 }

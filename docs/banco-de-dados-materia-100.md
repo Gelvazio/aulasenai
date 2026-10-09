@@ -3,7 +3,7 @@
 **Tarefa:** #20-2ac1a8ec-911b-466f (`tasks/TASKS.md`) · **Status oficial:** `tasks/STATUS.md`, Etapa 125
 **Criado em:** 2026-10-09 13:30:18 · **Concluído em:** — · **Tempo decorrido:** —
 **Matéria:** `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO_DE_DADOS/` · **Modelo:** `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/` (estrutura e funcionamento; nunca o conteúdo)
-**Situação do plano:** 👀 Aguardando aprovação do usuário
+**Situação do plano:** ✅ Aprovado pelo usuário em 2026-10-09 13:40 (D1 80 h/20 aulas · D2 renomear · D3 PostgreSQL · D4 apagar os antigos · D5 padrão)
 
 ## 1. Objetivo
 
@@ -48,7 +48,7 @@ aulas em `CONTEUDO/`, atividades objetivas e práticas por aula, avaliações, �
 | D1 | Carga horária | **80 h / 20 aulas** (ementa do curso vence a genérica de 40 h) |
 | D2 | Nome da pasta | Renomear para `BANCO-DE-DADOS` e corrigir os links (regra "pasta = UC") |
 | D3 | SGBD usado nos exemplos | **PostgreSQL** (é o do Supabase que os alunos já veem no sistema); alternativa: MySQL, como no `exemplo-biblioteca` |
-| D4 | Arquivos antigos (A6–A8) | Mover para `BANCO_DE_DADOS/LEGADO/` (ou apagar), e tirar a pasta de gabarito do Git (`git rm --cached` + `.gitignore`), mantendo-a na máquina |
+| D4 | Arquivos antigos (A6–A8) | ✅ Escolha do usuário: **apagar** (o Git guarda o histórico). Recomendação era mover para `BANCO_DE_DADOS/LEGADO/` (ou apagar), e tirar a pasta de gabarito do Git (`git rm --cached` + `.gitignore`), mantendo-a na máquina |
 | D5 | Ritmo | Aula por aula; atividades em blocos de 3 aulas (como Testes de Front-End), um commit por peça |
 
 ## 5. Sequência proposta das 20 aulas (conhecimentos da UC)
@@ -83,11 +83,11 @@ Todas as capacidades básicas e as 2 socioemocionais ficam distribuídas nas aul
 
 | Passo | Ação | Caminho | Verificação | Status |
 |-------|------|---------|-------------|--------|
-| 1 | Plano e aprovação (D1–D5) | este arquivo | Resposta do usuário | 👀 |
-| 2 | Permissão `IGNORAR` → `VERIFICAR` (+ renomear a pasta, se D2) | `MATERIAIS/STATUS-EMENTAS-CURSOS.md` | `grep` da linha | ⬜ |
-| 3 | Arquivos antigos conforme D4 | pasta da matéria, `.gitignore` | `git ls-files` sem gabarito | ⬜ |
-| 4 | Reescrever `EMENTA-CHALKIE-AI.md` da UC (80 h, capacidades e conhecimentos literais) + STATUS-EMENTAS | matéria, `STATUS-EMENTAS.md` | Comparar com a linha 1693 da ementa do curso; regra de tamanho | ⬜ |
-| 5 | `materia.json` no formato da ITIC/Testes de Front-End | `materia.json` | `python -m json.tool` | ⬜ |
+| 1 | Plano e aprovação (D1–D5) | este arquivo | Resposta do usuário | ✅ 2026-10-09 13:40 |
+| 2 | Permissão `IGNORAR` → `VERIFICAR` (+ renomear a pasta, se D2) | `MATERIAIS/STATUS-EMENTAS-CURSOS.md` | `grep` da linha | ✅ 2026-10-09 13:48 — `VERIFICAR`, pasta `BANCO-DE-DADOS`, links dos 21 `index.html` trocados |
+| 3 | Arquivos antigos conforme D4 | pasta da matéria, `.gitignore` | `git ls-files` sem gabarito | ✅ 2026-10-09 13:48 — apagados gabarito, exemplo-biblioteca, avaliação de outro curso, INDEX.md e recado |
+| 4 | Reescrever `EMENTA-CHALKIE-AI.md` da UC (80 h, capacidades e conhecimentos literais) + STATUS-EMENTAS | matéria, `STATUS-EMENTAS.md` | Comparar com a linha 1693 da ementa do curso; regra de tamanho | ✅ 2026-10-09 13:50 — 14.923 caracteres |
+| 5 | `materia.json` no formato da ITIC/Testes de Front-End | `materia.json` | `python -m json.tool` | ✅ 2026-10-09 13:50 — 20 aulas, 14 indicadores, 80 h |
 | 6 | Aulas 01 a 20 em `CONTEUDO/`, uma por vez, + `AULAS/STATUS-AULAS.md` + `DOCUMENTACAO/PLANO-AULAS.md` | `CONTEUDO/AULA-NN-*.md` | Soma das horas = 80; cada aula com dinâmica | ⬜ |
 | 7 | Objetiva de 50 questões por aula (gerador da ITIC) | `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-50-QUESTOES.md` → `.html` | Gerador sem erro; sem gabarito no HTML | ⬜ |
 | 8 | Prática por aula no padrão da id 82 (`docs/REGRAS-ATIVIDADE-PRATICA.md`) | `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-NN.md` (+ `-GABARITO.md` fora do Git) → `.html` | Gerador discursivo sem erro | ⬜ |

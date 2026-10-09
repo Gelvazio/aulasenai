@@ -254,7 +254,7 @@ O que fazer, sempre:
 
 **Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 125 (fonte única).
 **Prioridade:** 🟠 Alta · **Tarefa grande:** plano em `docs/` e aprovação antes de executar.
-**Matéria:** `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO_DE_DADOS/` (modelo: Introdução à TIC).
+**Matéria:** `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/` (renomeada em 2026-10-09) (modelo: Introdução à TIC).
 **Etapa 1 (esta):** tudo **menos a apostila** (pedido do usuário). A apostila fica para uma etapa 2.
 
 Situação em 2026-10-09 (`tasks/ANALISE-MATERIAS-RELATORIO.json`): ementa OK (14.802 caracteres) e
@@ -263,11 +263,11 @@ fontes em `ATIVIDADES/CONTEUDO/`, `ATIVIDADES/STATUS-ATIVIDADES.md` e as objetiv
 ⚠️ A matéria está em **`IGNORAR`** no `STATUS-PERMISSAO-MATERIA` — passar para `VERIFICAR` é o
 primeiro passo (pedido do usuário).
 
-- [ ] Plano `docs/banco-de-dados-materia-100.md` com as decisões: permissão `VERIFICAR`; nome da
+- [x] Plano `docs/banco-de-dados-materia-100.md` com as decisões: permissão `VERIFICAR`; nome da
   pasta (hoje `BANCO_DE_DADOS`, fora do padrão — renomear só se o usuário quiser); destino das pastas
   e arquivos antigos (`DOCUMENTACAO/`, `SLIDES/`, `AVALIACOES/`, `exemplo-biblioteca/`, PDF e
   `.docx`); quantidade de aulas (1 a cada 4 h da ementa). Aprovação do usuário.
-- [ ] `materia.json` copiado da ementa (capacidades e conhecimentos, sem conteúdo de outra UC).
+- [x] `materia.json` copiado da ementa (capacidades e conhecimentos, sem conteúdo de outra UC).
 - [ ] Aulas em `CONTEUDO/AULA-NN-DESCRICAO-CURTA.md` (uma por vez) e `AULAS/STATUS-AULAS.md`.
 - [ ] Atividades por aula: objetiva de 50 questões e prática no padrão da id 82
   (`docs/REGRAS-ATIVIDADE-PRATICA.md`), fontes em `ATIVIDADES/CONTEUDO/`, sem empresa fictícia;
