@@ -14,6 +14,7 @@
     <script src="../../assets/js/popup.js" defer></script>
     <script src="../../assets/js/pendencias-repositorio.js" defer></script>
     <script src="../../assets/js/pendencias-pagina.js" defer></script>
+    <script src="../../assets/js/pendencias-modal.js" defer></script>
 </head>
 <body>
     <div id="header-usuario"></div>
@@ -27,28 +28,6 @@
 
         <div id="pdConteudo" hidden>
             <section class="guia-cartao">
-                <h2 id="pdTituloFormulario">Nova pendência</h2>
-                <form id="pdFormulario" class="tp-formulario">
-                    <label class="tp-campo pd-campo--largo">Nome
-                        <input id="pdNome" class="guia-filtro" type="text" maxlength="300" required>
-                    </label>
-                    <label class="tp-campo">Responsável
-                        <input id="pdResponsavel" class="guia-filtro" type="text" maxlength="120" required>
-                    </label>
-                    <label class="tp-campo">Data de início
-                        <input id="pdDataInicio" class="guia-filtro" type="date" required>
-                    </label>
-                    <label class="tp-campo">Status
-                        <select id="pdStatus" class="guia-filtro" required></select>
-                    </label>
-                    <div class="tp-acoes">
-                        <button type="submit" class="guia-botao" id="pdSalvar">Cadastrar</button>
-                        <button type="button" class="guia-botao tp-botao-secundario" id="pdCancelar" hidden>Cancelar edição</button>
-                    </div>
-                </form>
-            </section>
-
-            <section class="guia-cartao">
                 <h2>Filtros</h2>
                 <form id="pdFiltros" class="pd-filtros">
                     <label class="tp-campo">ID
@@ -56,6 +35,9 @@
                     </label>
                     <label class="tp-campo">Nome contém
                         <input id="pdFiltroNome" class="guia-filtro" type="search">
+                    </label>
+                    <label class="tp-campo">Descrição contém
+                        <input id="pdFiltroDescricao" class="guia-filtro" type="search">
                     </label>
                     <label class="tp-campo">Responsável contém
                         <input id="pdFiltroResponsavel" class="guia-filtro" type="search">
@@ -79,7 +61,10 @@
             </section>
 
             <section class="guia-cartao">
-                <h2>Pendências cadastradas</h2>
+                <div class="pd-cabecalho-lista">
+                    <h2>Pendências cadastradas</h2>
+                    <button type="button" class="guia-botao" id="pdNovaPendencia">➕ Nova Pendência</button>
+                </div>
                 <p id="pdResumo" class="tp-resumo"></p>
                 <div class="tp-tabela-rolagem">
                     <table class="guia-tabela">
@@ -87,6 +72,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Nome</th>
+                                <th>Descrição</th>
                                 <th>Responsável</th>
                                 <th>Data de início</th>
                                 <th>Status</th>
@@ -98,6 +84,37 @@
                     </table>
                 </div>
             </section>
+        </div>
+
+        <div id="pdModal" class="tp-modal" hidden>
+            <form id="pdFormulario" class="tp-modal__caixa pd-modal__caixa" role="dialog" aria-modal="true"
+                aria-labelledby="pdTituloFormulario">
+                <div class="pd-modal__topo">
+                    <h2 id="pdTituloFormulario">Nova pendência</h2>
+                    <button type="button" class="tp-botao-icone" data-fechar-modal aria-label="Fechar">✖</button>
+                </div>
+                <label class="tp-campo">Nome
+                    <input id="pdNome" class="guia-filtro" type="text" maxlength="300" required>
+                </label>
+                <label class="tp-campo">Descrição
+                    <textarea id="pdDescricao" class="guia-filtro pd-descricao-campo" rows="4" maxlength="2000"></textarea>
+                </label>
+                <label class="tp-campo">Responsável
+                    <input id="pdResponsavel" class="guia-filtro" type="text" maxlength="120" required>
+                </label>
+                <div class="pd-modal__linha">
+                    <label class="tp-campo">Data de início
+                        <input id="pdDataInicio" class="guia-filtro" type="date" required>
+                    </label>
+                    <label class="tp-campo">Status
+                        <select id="pdStatus" class="guia-filtro" required></select>
+                    </label>
+                </div>
+                <div class="tp-acoes">
+                    <button type="submit" class="guia-botao" id="pdSalvar">Cadastrar</button>
+                    <button type="button" class="guia-botao tp-botao-secundario" data-fechar-modal>Cancelar</button>
+                </div>
+            </form>
         </div>
     </main>
 </body>

@@ -533,6 +533,23 @@
       </table>
     </div>
 
+    <h2>📌 Atualização 2026-10-09 — pendências: coluna descricao</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-09-pendencias-descricao.sql</code> (✅ aplicado em 2026-10-09) · Plano: <code>docs/pendencias-coluna-descricao.md</code></p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>pendencias.descricao</td>
+          <td>Coluna (text, opcional)</td>
+          <td>Descrição da pendência, até 2000 caracteres (check pendencias_descricao_tamanho); RLS da tabela sem mudança</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>📌 Atualização 2026-10-06 — pendências de aulas (Professor Administrador)</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-06-pendencias.sql</code> (✅ aplicado em 2026-10-06) · Tela: <code>MATERIAIS/AGENDA_COLABORADOR/pendencias.html</code> (menu PENDÊNCIAS)</p>
@@ -545,7 +562,7 @@
         <tr>
           <td>pendencias</td>
           <td>Tabela</td>
-          <td>id (identity), nome (1–300), responsavel (1–120), datainicio (date, padrão hoje), status (PENDENTE / EM_ANDAMENTO / CONCLUIDA), excluido (0/1, padrão 0)</td>
+          <td>id (identity), nome (1–300), descricao (opcional, até 2000 — desde 2026-10-09), responsavel (1–120), datainicio (date, padrão hoje), status (PENDENTE / EM_ANDAMENTO / CONCLUIDA), excluido (0/1, padrão 0)</td>
         </tr>
         <tr>
           <td>pendencias_select/insert/update_administrador</td>

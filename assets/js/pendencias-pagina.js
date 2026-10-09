@@ -1,6 +1,7 @@
 // ── Página pendencias.html (MATERIAIS/AGENDA_COLABORADOR): CRUD da tabela pendencias ──
 // Tela do Professor Administrador para cadastrar as pendências de aulas. Dados em
-// assets/js/pendencias-repositorio.js; avisos e confirmações em assets/js/popup.js.
+// assets/js/pendencias-repositorio.js; avisos e confirmações em assets/js/popup.js; formulário
+// de cadastro e edição no modal (assets/js/pendencias-modal.js).
 // Segurança no banco (RLS + eh_professor_administrador). Filtros na própria página, combinados.
 
 const STATUS_PENDENCIA = {
@@ -116,6 +117,7 @@ function lerFiltrosPd() {
   return {
     id: elementoPd("pdFiltroId").value.trim(),
     nome: elementoPd("pdFiltroNome").value.trim().toLowerCase(),
+    descricao: elementoPd("pdFiltroDescricao").value.trim().toLowerCase(),
     responsavel: elementoPd("pdFiltroResponsavel").value.trim().toLowerCase(),
     dataDe: elementoPd("pdFiltroDataDe").value,
     dataAte: elementoPd("pdFiltroDataAte").value,
@@ -145,6 +147,8 @@ function passaFiltroExcluidoPd(pendencia, filtro) {
 function atendeFiltrosPd(pendencia, filtros) {
   if (filtros.id && String(pendencia.id) !== filtros.id) return false;
   if (filtros.nome && !pendencia.nome.toLowerCase().includes(filtros.nome)) return false;
+  const descricao = (pendencia.descricao || "").toLowerCase();
+  if (filtros.descricao && !descricao.includes(filtros.descricao)) return false;
   const responsavel = pendencia.responsavel.toLowerCase();
   if (filtros.responsavel && !responsavel.includes(filtros.responsavel)) return false;
   if (filtros.dataDe && pendencia.datainicio < filtros.dataDe) return false;
@@ -215,6 +219,7 @@ function criarLinhaPd(pendencia) {
   linha.append(
     criarElementoPd("td", "", String(pendencia.id)),
     criarElementoPd("td", "", pendencia.nome),
+    criarElementoPd("td", "pd-descricao", pendencia.descricao || ""),
     criarElementoPd("td", "", pendencia.responsavel),
     criarElementoPd("td", "", formatarDataPd(pendencia.datainicio)),
     criarCelulaStatusPd(pendencia),
@@ -230,7 +235,7 @@ function desenharPendenciasPd() {
   const corpo = elementoPd("pdLinhas");
   if (!visiveis.length) {
     const vazio = criarElementoPd("td", "tp-vazio", "Nenhuma pendência encontrada.");
-    vazio.colSpan = 7;
+    vazio.colSpan = 8;
     const linha = criarElementoPd("tr");
     linha.append(vazio);
     corpo.replaceChildren(linha);
@@ -255,25 +260,24 @@ function limparFormularioPd() {
   elementoPd("pdStatus").value = STATUS_PADRAO_PENDENCIA;
   elementoPd("pdTituloFormulario").textContent = TITULO_NOVA_PD;
   elementoPd("pdSalvar").textContent = TEXTO_BOTAO_CADASTRAR_PD;
-  elementoPd("pdCancelar").hidden = true;
   desenharPendenciasPd();
 }
 
 /**
- * Carrega uma pendência no formulário para edição.
+ * Carrega uma pendência no formulário do modal para edição e abre o modal.
  * @param {Object} pendencia - Linha da tabela.
  */
 function editarPendenciaPd(pendencia) {
   estadoPd.editandoId = pendencia.id;
   elementoPd("pdNome").value = pendencia.nome;
+  elementoPd("pdDescricao").value = pendencia.descricao || "";
   elementoPd("pdResponsavel").value = pendencia.responsavel;
   elementoPd("pdDataInicio").value = pendencia.datainicio;
   elementoPd("pdStatus").value = pendencia.status;
   elementoPd("pdTituloFormulario").textContent = TITULO_EDITAR_PD + " #" + pendencia.id;
   elementoPd("pdSalvar").textContent = TEXTO_BOTAO_SALVAR_PD;
-  elementoPd("pdCancelar").hidden = false;
   desenharPendenciasPd();
-  elementoPd("pdFormulario").scrollIntoView({ behavior: "smooth", block: "start" });
+  abrirModalPendenciaPd();
 }
 
 /**
@@ -283,6 +287,7 @@ function editarPendenciaPd(pendencia) {
 function lerFormularioPd() {
   const dados = {
     nome: elementoPd("pdNome").value.trim(),
+    descricao: elementoPd("pdDescricao").value.trim() || null,
     responsavel: elementoPd("pdResponsavel").value.trim(),
     datainicio: elementoPd("pdDataInicio").value,
     status: elementoPd("pdStatus").value,
@@ -311,7 +316,7 @@ async function salvarPendenciaPd(evento) {
     return;
   }
   await recarregarPendenciasPd();
-  limparFormularioPd();
+  fecharModalPendenciaPd();
   await mostrarPopup(editando ? "Pendência alterada." : "Pendência cadastrada.",
     { tipo: "sucesso" });
 }
@@ -350,7 +355,7 @@ async function excluirPendenciaPd(pendencia) {
     await mostrarPopup(mensagemErroPd(erro), { tipo: "erro", titulo: "Pendência não excluída" });
     return;
   }
-  if (estadoPd.editandoId === pendencia.id) limparFormularioPd();
+  if (estadoPd.editandoId === pendencia.id) fecharModalPendenciaPd();
   await recarregarPendenciasPd();
   await mostrarPopup("Pendência excluída.", { tipo: "sucesso" });
 }
@@ -387,7 +392,7 @@ function prepararCamposPd() {
 /** Liga os eventos do formulário e dos filtros. */
 function ligarEventosPd() {
   elementoPd("pdFormulario").addEventListener("submit", salvarPendenciaPd);
-  elementoPd("pdCancelar").addEventListener("click", limparFormularioPd);
+  ligarModalPendenciaPd();
   const filtros = elementoPd("pdFiltros");
   filtros.addEventListener("input", desenharPendenciasPd);
   filtros.addEventListener("submit", (evento) => evento.preventDefault());

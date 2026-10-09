@@ -348,6 +348,8 @@ const aulasMateria = await sbGet("aulas", "select=*&materia_id=eq.5&order=numero
 `MATERIAIS/AGENDA_COLABORADOR/pendencias.html`, menu PENDÊNCIAS).
 **Script:** `database/2026-10-06-pendencias.sql` (✅ aplicado em 2026-10-06 pelo conector do
 Supabase). **Plano:** `docs/pendencias-aulas-professor-administrador.md`.
+**Coluna `descricao`:** `database/2026-10-09-pendencias-descricao.sql` (✅ aplicado em 2026-10-09;
+plano `docs/pendencias-coluna-descricao.md`).
 
 > ⚠️ A descrição anterior desta seção (colunas `data`, `descricao`, `materia_id`...) não
 > correspondia ao banco: em 2026-10-06 a tabela não existia e foi criada com a estrutura abaixo.
@@ -355,7 +357,8 @@ Supabase). **Plano:** `docs/pendencias-aulas-professor-administrador.md`.
 | Campo | Tipo | Restrição | Padrão | Uso |
 |-------|------|-----------|--------|-----|
 | **id** | BIGINT | PK, identity | gerado | Identificador |
-| **nome** | TEXT | NOT NULL, 1–300 caracteres | — | Descrição da pendência |
+| **nome** | TEXT | NOT NULL, 1–300 caracteres | — | Nome (título) da pendência |
+| **descricao** | TEXT | opcional, até 2000 caracteres (`pendencias_descricao_tamanho`) | `NULL` | Descrição da pendência (desde 2026-10-09) |
 | **responsavel** | TEXT | NOT NULL, 1–120 caracteres | — | Quem resolve |
 | **datainicio** | DATE | NOT NULL | `CURRENT_DATE` | Data de início |
 | **status** | TEXT | CHECK `PENDENTE`, `EM_ANDAMENTO`, `CONCLUIDA` | `'PENDENTE'` | Situação |

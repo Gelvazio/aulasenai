@@ -5,7 +5,7 @@
 
 const TABELA_PENDENCIAS = "pendencias";
 const RPC_ADMINISTRADOR_PENDENCIAS = "eh_professor_administrador";
-const COLUNAS_PENDENCIAS = "id, nome, responsavel, datainicio, status, excluido";
+const COLUNAS_PENDENCIAS = "id, nome, descricao, responsavel, datainicio, status, excluido";
 const EXCLUIDO_SIM = 1;
 const EXCLUIDO_NAO = 0;
 
@@ -47,8 +47,8 @@ function criarRepositorioPendencias(cliente) {
 
     /**
      * Cria uma pendência.
-     * @param {{nome: string, responsavel: string, datainicio: string, status: string}} dados -
-     *   Campos da pendência.
+     * @param {{nome: string, descricao: string|null, responsavel: string, datainicio: string,
+     *   status: string}} dados - Campos da pendência.
      * @returns {Promise<void>}
      */
     async criar(dados) {

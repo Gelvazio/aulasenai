@@ -4,9 +4,9 @@
     --pd-espaco: 12px;
     --pd-fundo-excluida: #f4f4f5;
     --pd-texto-excluida: #71717a;
+    --pd-largura-modal: 640px;
+    --pd-largura-descricao: 360px;
 }
-
-.pd-campo--largo { grid-column: span 2; }
 
 .pd-filtros {
     display: grid;
@@ -21,6 +21,41 @@
 
 .pd-linha--excluida td:nth-child(2) { text-decoration: line-through; }
 
+
+/* Botão "Nova Pendência" ao lado do título da lista */
+.pd-cabecalho-lista {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--pd-espaco);
+}
+
+/* Modal do formulário (base .tp-modal em turmas-professor.css) */
+.pd-modal__caixa { width: min(var(--pd-largura-modal), 100%); }
+
+.pd-modal__topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--pd-espaco);
+}
+
+.pd-modal__linha {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--pd-espaco);
+}
+
+.pd-descricao-campo { resize: vertical; min-height: 96px; font-family: inherit; }
+
+/* Coluna Descrição: quebra o texto longo */
+.pd-descricao {
+    max-width: var(--pd-largura-descricao);
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
 @media (max-width: 600px) {
-    .pd-campo--largo { grid-column: auto; }
+    .pd-modal__linha { grid-template-columns: minmax(0, 1fr); }
 }
