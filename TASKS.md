@@ -139,4 +139,38 @@ rodapé "Página N de T" e PDF sem a faixa azul da esquerda em todas as apostila
 
 ---
 
+### #16: Bloqueio da AULA (card inteiro) × bloqueio da ATIVIDADE em todos os índices — pedida em 2026-10-09 01:00
+
+**Status:** ⏳ PENDENTE — fazer em **outra sessão** (decisão do usuário, 2026-10-09 01:02)
+**Prioridade:** 🟠 Alta
+**Regra:** `CLAUDE.md`, seção "⏳ REGRA PENDENTE — BLOQUEIO DA AULA × BLOQUEIO DA ATIVIDADE".
+**STATUS:** `STATUS.md`, Etapa 113, item 113.6. Vale para **todas as atividades de todas as matérias**.
+
+O que fazer (tarefa pequena: só JS/CSS, sem mudar o banco — a coluna `aulas.ativo` já existe e o
+RLS da `aulas` já deixa o professor alterá-la):
+
+- [ ] **O ON/OFF de cada atividade NUNCA bloqueia o card inteiro** (os alunos sempre veem a aula,
+  os slides e as outras atividades): em `assets/js/indice-atividades-bloqueio.js`, tirar o
+  bloqueio do card quando todas as atividades estão OFF (aluno: só 🔒 no link de cada atividade
+  bloqueada; professor: sem escurecer o card) — remover `bloquearCardAtividade`,
+  `desativarLinkBloqueado` e a classe `bloqueada-professor` desse script.
+- [ ] **Botão de bloqueio da AULA**, embaixo no card, **logo antes de "✏️ Editar aula"** (só
+  professor): ON/OFF "Aula liberada / Aula bloqueada", gravando em **`aulas.ativo`** (false =
+  bloqueada) com `gravarAulaCard` (`assets/js/indice-aula-repositorio.js`). **Só este botão bloqueia
+  o card inteiro:** aluno vê o card escurecido com cadeado, links desativados e "Aula Bloqueada!"
+  ao clicar (classe `bloqueada`, CSS já existe em `indice-atividades.css`); professor vê o card
+  escurecido, mas os links continuam abrindo.
+- [ ] Código sugerido: módulo novo `assets/js/indice-aula-bloqueio.js` (`aplicarBloqueioAulaNoCard`,
+  `criarBotaoBloqueioAula`), chamado por `assets/js/indice-aula-data.js` em `desenharCardAula` e
+  antes de `adicionarBotaoEditarAula`; carregar o módulo em `carregarDataAulasIndice`
+  (`assets/js/atividades-crud-modal.js`) antes do `indice-aula-data.js`. ⚠️ Usar nomes de
+  constantes exclusivos (constante global repetida derruba o script inteiro — lição da Etapa 113).
+  O "Ativa" do modal "Editar aula" é a mesma coluna: ao gravar no modal, atualizar o botão.
+- [ ] Estilo em `assets/css/indice-atividades-bloquear.css` (mesmo visual do ON/OFF das atividades,
+  com o texto ao lado).
+- [ ] Atualizar `docs/regras/atividades.md`, tirar o "PENDENTE" da seção do `CLAUDE.md` (nova
+  versão + histórico), commit e aceite do usuário (professor e aluno).
+
+---
+
 **Última atualização:** 2026-10-08 (tarefa #15 adicionada)

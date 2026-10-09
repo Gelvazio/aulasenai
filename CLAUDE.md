@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 00:56:07
+**Versão das regras:** 2026-10-09 01:03:11
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 01:03:11 | **Regra pendente (tarefa #16 do TASKS.md, outra sessão):** o ON/OFF da atividade nunca bloqueia o card; botão de bloqueio da AULA (`aulas.ativo`) antes de "Editar aula" é o único que bloqueia o card |
 | 2026-10-09 00:56:07 | **Botão ON/OFF ao lado de cada atividade** em todos os índices de atividades de todas as matérias (ON = liberada, OFF = bloqueada para a turma favorita; substitui o interruptor por card) — `docs/regras/atividades.md` |
 | 2026-10-09 00:33:19 | **Sessão obrigatória em todo HTML:** sem login **nada da página é carregado nem mostrado** e o usuário vai direto para o `index.html` da raiz; exceções só o `index.html` (apresentação do professor + botão Entrar) e o `login.html` — regra "SESSÃO OBRIGATÓRIA EM TODAS AS PÁGINAS" no `CLAUDE.md`; plano [docs/validacao-sessao-todas-paginas.md](docs/validacao-sessao-todas-paginas.md) |
 | 2026-10-09 00:25:47 | **Dados do professor Gelvazio Camargo** em arquivo único [docs/PROFESSOR-GELVAZIO-CAMARGO.md](docs/PROFESSOR-GELVAZIO-CAMARGO.md) (identificação, contato, experiência, formação, competências); seção no `CLAUDE.md`; página inicial sem login mostra a apresentação do professor |
 | 2026-10-09 00:24:10 | **Atividade prática no padrão da Prova Prática id 82** (10 questões × 3 tópicos, discursiva no banco, com Progresso, Gráficos, Cálculo Nota e correção): regra em [docs/REGRAS-ATIVIDADE-PRATICA.md](docs/REGRAS-ATIVIDADE-PRATICA.md) e seção no `CLAUDE.md` |
-| 2026-10-08 21:19:06 | Faixa de matérias: **botão do filtro em uso** (SOMENTE ENSALADO ou VER TODAS MATÉRIAS) **em fundo verde piscando levemente**; no índice do curso a **grade de matérias de baixo segue o mesmo filtro** — `assets/js/faixa-materias-ensalado.js` + `assets/css/indice-atividades.css` |
 
 ---
 
@@ -984,6 +984,20 @@ de todos os cursos (todo `ATIVIDADES/index.html`). Detalhe em
 - ✅ Código único para todos os índices: `assets/js/indice-atividades-bloqueio.js` +
   `assets/css/indice-atividades-bloquear.css` (carregados pelo `atividades-crud-modal.js`).
   ⛔ Não criar botão de bloqueio por matéria nem por página, e não voltar ao interruptor por card.
+
+## ⏳ REGRA PENDENTE — BLOQUEIO DA AULA × BLOQUEIO DA ATIVIDADE (2026-10-09, FAZER EM OUTRA SESSÃO)
+
+Registrada em 2026-10-09 a pedido do usuário. **Ainda NÃO implementada** — fica na fila: tarefa
+**#16** do [TASKS.md](TASKS.md) (status no `STATUS.md`, Etapa 113, item 113.6). Vale para **todas as
+atividades de todas as matérias** (todo `ATIVIDADES/index.html`).
+
+- ⛔ **O ON/OFF de cada atividade nunca bloqueia o card inteiro:** os alunos sempre veem a aula
+  (slides e demais atividades); só a atividade bloqueada fica com 🔒.
+- ✅ **Bloqueio da AULA:** botão ON/OFF embaixo no card, **logo antes de "✏️ Editar aula"** (só
+  professor), gravando na tabela **`aulas`** (coluna `aulas.ativo`; false = bloqueada). **Só este
+  botão bloqueia o card inteiro** para os alunos ("Aula Bloqueada!").
+- ⏳ Até a tarefa #16 ser feita, continua valendo o comportamento atual da seção "BOTÃO ON/OFF AO
+  LADO DE CADA ATIVIDADE" (card escurecido quando todas as atividades estão OFF).
 
 ## 📝 Outras Regras
 

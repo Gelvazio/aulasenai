@@ -23,6 +23,7 @@ A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale 
 | #12 | Conferir a duração dos vídeos da apostila de Fundamentos da Tecnologia | ⬜ Pendente (local) | Fazer na máquina local, com YouTube |
 | #14 | Conferir a duração dos vídeos da apostila de Exploração de Carreiras | ⬜ Pendente (local) | Fazer na máquina local, com YouTube |
 | #15 | Apostila de ITIC versão 2 (até 40 páginas, sem vídeos e exercícios) — agora a apostila única (V1 removida) | 👀 Aguardando validação | Aceite do usuário (Etapas 79, 81 e 83) |
+| #16 | Bloqueio da AULA (card inteiro, `aulas.ativo`) × ON/OFF da atividade (nunca bloqueia o card) em todos os índices | ⬜ Pendente (outra sessão) | Fazer em outra sessão, pela descrição no `TASKS.md` (Etapa 113, item 113.6) |
 
 ## ⏳ Aguardando o usuário (aceites, aprovações e ações dele)
 
@@ -1485,6 +1486,7 @@ Plano: [docs/validacao-sessao-todas-paginas.md](docs/validacao-sessao-todas-pagi
 | 113.3 | Regra global no `CLAUDE.md` (seção "BOTÃO ON/OFF AO LADO DE CADA ATIVIDADE", versão 2026-10-09 00:56:07 + histórico) e em `docs/regras/atividades.md` (substitui a regra do interruptor por card) | ✅ Concluído | 2026-10-09 00:56 | Leitura dos arquivos; link de `docs/regras/atividades.md` já lido pelo visualizador |
 | 113.5 | Correção relatada pelo usuário (botão não aparecia): a constante `SELETOR_LINK_ATIVIDADE` já existia no `atividades-crud-modal.js` e o navegador recusava o script inteiro ("já declarado"); renomeada para `SELETOR_LINK_ATIVIDADE_BLOQUEIO` | ✅ Concluído | 2026-10-09 01:03 | `node --check`; nenhum outro nome global repetido entre os 16 scripts carregados nos índices |
 | 113.4 | Aceite do usuário (abrir um índice de atividades como professor e como aluno) | ⬜ Pendente | — | — |
+| 113.6 | Pedido do usuário (2026-10-09 01:00): ON/OFF da atividade nunca bloqueia o card; botão de bloqueio da AULA (`aulas.ativo`) antes de "Editar aula", único que bloqueia o card — **adiado para outra sessão** (decisão do usuário, 01:02): tarefa #16 do `TASKS.md` + regra pendente no `CLAUDE.md`. O módulo `indice-aula-bloqueio.js` começado nesta sessão foi apagado (desenho anotado na tarefa) | ⬜ Pendente (outra sessão) | — | Regra e tarefa registradas (versão 2026-10-09 01:03:11) |
 
 ## Etapa 114 — Testes de Front-End: links dos slides nos cards e PDFs das aulas versionados (tarefa pequena, pedido em 2026-10-09 00:45)
 
