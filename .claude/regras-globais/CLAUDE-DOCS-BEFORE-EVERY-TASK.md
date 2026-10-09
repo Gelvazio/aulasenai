@@ -96,7 +96,6 @@ docs/<nome-descritivo-em-kebab-case>.md
 - [ ] Alterações foram conferidas (leitura, `node --check`, banco ou terminal — nunca navegador nem teste automatizado)
 - [ ] Documentação atualizada
 - [ ] Commit realizado
-- [ ] Graphify atualizado (se em projeto raiz)
 ```
 
 ---

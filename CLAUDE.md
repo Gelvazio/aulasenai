@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 18:10:00
+**Versão das regras:** 2026-10-09 18:06:19
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
-| 2026-10-09 18:10:00 | **Lista de presença única:** todas as listas em `scripts/LISTAPRESENCA.js` (versionado, fora do site); páginas e `criar-usuarios-supabase-auth.js --turma=CODIGO` leem só dele (`docs/regras/usuarios-turmas-paginas-professor.md`) |
+| 2026-10-09 18:06:19 | **Regra do `graphify update .` removida:** o grafo não é mais atualizado nem lido automaticamente (início de sessão, commits, `GRAPH_REPORT.md`); só roda quando o usuário pedir (`/graphify`) |
+| 2026-10-09 18:00:00 | **Lista de presença única:** todas as listas em `scripts/LISTAPRESENCA.js` (versionado, fora do site); páginas e `criar-usuarios-supabase-auth.js --turma=CODIGO` leem só dele (`docs/regras/usuarios-turmas-paginas-professor.md`) |
 | 2026-10-09 17:25:12 | **`.gitignore` mínimo:** só `__pycache__/`, graphify, `variaveis.js` e `.env`; binários, gabaritos, listas de presença e `LISTA-ALUNOS/` saem do site pelo `.vercelignore` (regra "O QUE NUNCA É PUBLICADO" reescrita) |
 | 2026-10-09 13:20:11 | **Análise contínua das matérias (tarefa permanente #19-91cbac65-87ca-45a0):** `scripts/analise-materias.py` grava `tasks/ANALISE-MATERIAS-RELATORIO.json` no início de cada sessão e ao concluir tarefa em matéria; a tarefa **nunca fica CONCLUÍDA** enquanto houver matéria incompleta ou pendência |
 | 2026-10-09 12:58:34 | **`TASKS_COMPLETE.md` apagado:** tarefa concluída ou cancelada tem o bloco **removido** do `TASKS.md` (o registro fica no `STATUS.md` e no Git) |
-| 2026-10-09 12:36:43 | **Id de tarefa nova = número + UUID** (ex.: `#19-3f9a2c7e-8b1d-4e2a`), para duas licenças/branches não gerarem o mesmo número; as antigas (até #18) não mudam |
 
 ---
 
@@ -273,7 +273,7 @@ Registrada em 2026-10-09 13:20:11 a pedido do usuário.
   `MATERIAIS/` (menos `MATERIAS-GERAIS` e `AGENDA_COLABORADOR`), confere cada matéria no padrão da
   matéria modelo (ITIC) e grava **o que falta e o que está OK** em
   **`tasks/ANALISE-MATERIAS-RELATORIO.json`**. Só lê as matérias; não altera nada nelas.
-- ✅ **Rodar SEMPRE:** no início de cada sessão (junto com o graphify) e ao concluir qualquer tarefa
+- ✅ **Rodar SEMPRE:** no início de cada sessão e ao concluir qualquer tarefa
   que mexa numa matéria; o JSON atualizado entra no commit da tarefa e a linha da tarefa #19 no
   `STATUS.md` recebe os números (cursos, matérias, completas, incompletas) e a data e hora da rodada.
 - ⛔ **A tarefa #19 NUNCA fica com status CONCLUÍDO** (nem ✅ no `STATUS.md`, nem removida do
@@ -689,25 +689,14 @@ USING (id = auth.uid());
 
 ---
 
-## 🚀 LEIA PRIMEIRO — Grafo de Conhecimento do Projeto
+## 🕸️ GRAFO (graphify) — SÓ QUANDO O USUÁRIO PEDIR
 
-⚠️ **ANTES DE QUALQUER COISA, leia o relatório do grafo de conhecimento para entender a arquitetura completa:**
+Alterada em 2026-10-09 18:06:19 a pedido do usuário.
 
-📄 **Arquivo:** `graphify-out/GRAPH_REPORT.md`  
-📍 **Localização:** `C:\fontes\aulasenai\graphify-out\GRAPH_REPORT.md`  
-🔄 **Atualização:** a cada sessão (`graphify update .`); a data e os números (nós, arestas,
-comunidades) ficam no topo do próprio `GRAPH_REPORT.md` — não copiar para cá (ficam velhos).
-⚡ **Comando (sem perguntar):** `C:\Python314\python.exe -m graphify update .` na raiz do projeto, **no início de cada conversa** e **depois de cada sessão/commit de tarefa** (Python sempre `C:\Python314\python.exe`). Antes de responder, ler o `graphify-out/GRAPH_REPORT.md`.
-
-Este relatório contém:
-- ✅ Visão geral da estrutura do projeto (nós e arestas)
-- ✅ Comunidades de código (clusters)
-- ✅ Dependências entre arquivos
-- ✅ Padrões de arquitetura
-- ✅ Hot spots (arquivos críticos)
-- ✅ Mapa completo de navegação
-
-**Por quê?** O GRAPH_REPORT fornece uma análise automática de toda a codebase, enquanto este CLAUDE.md e `docs/regras/` trazem as regras do projeto. Juntos, oferecem visão 360° do projeto.
+- ⛔ **Não rodar `graphify update .` automaticamente** (nem no início da conversa, nem depois de
+  sessões ou commits) e **não ler o `graphify-out/GRAPH_REPORT.md` antes de responder**.
+- ✅ O graphify só roda quando o usuário pedir (ex.: `/graphify`); a skill continua em
+  `.claude/skills/graphify/`.
 
 ---
 
@@ -1140,7 +1129,6 @@ Registrada em 2026-10-09 a pedido do usuário.
 
 ✅ Tudo conforme `C:\Users\gelva\.claude\CLAUDE.md` (global)  
 ✅ **Fonte única de regras:** este `CLAUDE.md` + os arquivos de `docs/regras/` listados no "ÍNDICE DAS REGRAS DETALHADAS" (desde 2026-10-07). O `AGENTS.md` (Codex e outros agentes) contém apenas a instrução de ler e seguir este arquivo — o conteúdo que existia nele foi mesclado aqui em 2026-09-23. Novas regras são escritas **somente aqui ou em `docs/regras/`**.  
-✅ Grafo: `graphify update .` após cada sessão  
 ✅ Documentação: `docs/<tarefa>.md` antes de implementar nas **tarefas grandes** (as pequenas dispensam o plano — ver "REGRAS DO USUÁRIO QUE VALEM SEMPRE"); `STATUS.md` em todas  
 ✅ **Fluxo da documentação padrão (tarefas grandes, skill `documentacao-padrao` em `.claude/skills/`):** se não houver `docs/`, pedir autorização para criar; o plano `docs/<nome-em-kebab-case>.md` traz objetivo, escopo, arquivos, riscos e dependências, **data e hora de criação, de conclusão e o tempo decorrido**, e passos numerados (ação, caminho exato, verificação sem navegador nem teste automatizado) com ⬜/🔄/✅/⛔; mostrar o resumo e pedir aprovação; executar só o aprovado; no fim registrar resultado, pendências e commit.  
 

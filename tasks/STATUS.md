@@ -1670,3 +1670,8 @@ Matéria: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO_DE_DADOS/` · Plano: `do
 | 126.0 | Plano aprovado; decisões: alunos M1/V1 eram pessoas diferentes (ambos mantidos), antigos apagados, `LISTAPRESENCA.js` versionado | ✅ Concluído | 2026-10-09 17:55 | Respostas do usuário no chat |
 | 126.1–126.9 | Passos 1 a 9 do plano: arquivo único (157 pessoas), 3 páginas + script Node (`--turma=`), `.vercelignore`, regras/docs, 10 antigos apagados | ✅ Concluído | 2026-10-09 18:00 | `node --check`, contagens por turma, simulação do script Node |
 | 126.10 | Aceite do usuário (testar criarUsuariosBancoDados.html, relatorioAtividades.html e LISTA-PRESENCA.html da ITIC) | ⬜ Pendente | — | — |
+
+## Etapa 127 — Regra do `graphify update .` removida (tarefa pequena, pedido em 2026-10-09 18:05)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 127.1 | Regra removida do `CLAUDE.md` do projeto (seção "LEIA PRIMEIRO — Grafo" vira "GRAFO só quando o usuário pedir"), do `~/.claude/CLAUDE.md`, do `CLAUDE-DOCS-BEFORE-EVERY-TASK.md` e das cópias em `.claude/regras-globais/`; a skill `/graphify` continua | ✅ Concluído | 2026-10-09 18:08 | `grep graphify` nos arquivos de regras; cópias iguais às globais |
