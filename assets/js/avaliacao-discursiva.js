@@ -16,7 +16,7 @@ const ID_BOTAO_FINALIZAR = 'btnFinalizarDiscursiva';
 const ARQUIVO_LIBERACAO_DISCURSIVA = 'liberacao-respostas-discursiva.js';
 const ARQUIVO_PDF_DISCURSIVA = 'exportar-pdf-discursiva.js';
 const ARQUIVO_RESPOSTAS_ALUNO = 'respostas-aluno-professor.js';
-const ARQUIVO_PROGRESSO_TURMA = 'progresso-turma-discursiva.js';
+const ARQUIVO_PROGRESSO_TURMA = 'progresso-turma-global.js';
 const ARQUIVO_NOTA_IA_RESPOSTAS = 'nota-ia-respostas-discursiva.js';
 const ARQUIVO_CONFIRMAR_PROFESSOR = 'confirmar-nota-professor-discursiva.js';
 const ARQUIVO_FINALIZAR_PROFESSOR = 'finalizar-atividade-professor.js';
@@ -346,9 +346,9 @@ async function abrirRespostasDoAluno(painel, dados) {
 }
 
 /**
- * Professor: progresso da turma (com o botão "📈 Gráficos") no topo de TODA avaliação
- * discursiva, por aluno e por questão, atualizado a cada 5 s (global desde 2026-10-08).
- * Uma falha aqui não atrapalha a avaliação.
+ * Professor: Progresso da turma GLOBAL (assets/js/progresso-turma-global.js, o mesmo das
+ * objetivas) no topo de TODA avaliação discursiva, por aluno e por questão, atualizado a cada
+ * 5 s. Uma falha aqui não atrapalha a avaliação.
  * @param {Object} dados - Estado carregado do banco.
  */
 async function abrirProgressoDaTurma(dados) {
@@ -358,7 +358,7 @@ async function abrirProgressoDaTurma(dados) {
         if (typeof window.montarProgressoDaTurma !== 'function') {
             await carregarModuloDiscursiva(ARQUIVO_PROGRESSO_TURMA);
         }
-        await window.montarProgressoDaTurma(dados.atividadeId);
+        await window.montarProgressoDaTurma(dados.atividadeId, 'discursiva');
     } catch (erro) {
         console.warn('Progresso da turma:', erro.message);
     }

@@ -31,6 +31,8 @@ const MSG_ERRO_SALVAR = 'Não foi possível salvar a resposta. ' +
     'Verifique a conexão e tente de novo.';
 const MSG_ERRO_CONFERIR = 'Não foi possível conferir as respostas gravadas no banco. ' +
     'Verifique a conexão e tente finalizar de novo.';
+const ARQUIVO_PROGRESSO_GLOBAL_OBJETIVA = 'progresso-turma-global.js';
+const TIPO_PROGRESSO_GLOBAL_OBJETIVA = 'objetiva';
 
 /**
  * Vocabulário das tentativas da página (assets/js/termos-tentativa.js): "tentativa" nas
@@ -583,6 +585,23 @@ async function abrirRelatorioProfessor(secao, atividadeId, maximo) {
 }
 
 /**
+ * Perfil professor: Progresso da turma GLOBAL (o mesmo das discursivas) logo abaixo do
+ * cabeçalho, aberto junto com a página e atualizado a cada 5 s. Uma falha aqui não pode
+ * impedir o resto da página.
+ * @param {number} atividadeId - Id da atividade no banco.
+ */
+async function abrirProgressoDaTurmaObjetiva(atividadeId) {
+    try {
+        if (typeof window.montarProgressoDaTurma !== 'function') {
+            await carregarScript(ARQUIVO_PROGRESSO_GLOBAL_OBJETIVA);
+        }
+        await window.montarProgressoDaTurma(atividadeId, TIPO_PROGRESSO_GLOBAL_OBJETIVA);
+    } catch (erro) {
+        console.warn('Progresso da turma indisponível:', erro.message);
+    }
+}
+
+/**
  * Converte linhas {item, letra} do banco no mapa número do item ("01") → letra.
  * @param {Object[]} linhas - Linhas de resposta_atividade.
  * @returns {Object<string, string>} Respostas por item.
@@ -652,6 +671,7 @@ async function iniciarRespostasAtividade() {
     if (estado.entregue) marcarEntregue(estado, carregado.entregueEm);
     if (estado.entregue) mostrarResultadoNoInicio(estado, carregado.resultado);
     if (carregado.ehProfessor) {
+        await abrirProgressoDaTurmaObjetiva(carregado.atividadeId);
         await abrirRespostasDoAlunoProfessor(estado, identificacao, carregado.atividadeId);
         await abrirRelatorioProfessor(secao, carregado.atividadeId, carregado.maximoTentativas);
     }
