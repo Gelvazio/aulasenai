@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 10:47:05
+**Versão das regras:** 2026-10-09 11:03:21
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 11:03:21 | **Nova seção "Pull Requests" (só na nuvem):** todo commit feito na nuvem é enviado na hora (`git push`) e, se a branch não tiver PR aberto para a `main`, um **novo PR** é criado |
 | 2026-10-09 10:47:05 | **Tamanho da ementa medido com Python** (`docs/regras/ementas-e-cursos.md`): conta caracteres (acento = 1); `wc -c` (bytes) e `Get-Content` sem `-Raw` (linhas) deixam de ser usados; versão vazia da linha anterior preenchida com a hora do commit `6829542` |
 | 2026-10-09 10:43:11 | **Curso desativado some do índice** de alunos e professores (`cursos_do_usuario` filtra `curso.ativo = 0`; o administrador vê todos); abas da página de criar usuários mostram a **unidade do banco** (não o "local" da lista) |
 | 2026-10-09 13:33:10 | **Fase 2 da unidade:** colunas `turma.local` e `curso.unidade` apagadas; todas as telas mostram a unidade pela ligação (`unidade:unidade_id(nome)`, `assets/js/unidade.js`); criar usuários grava `unidade_id` (campo `unidadeId` da turma na lista) |
 | 2026-10-09 13:27:14 | **Unidade só na tabela `unidade`** (`id`, `nome`, `endereco`): `curso.unidade_id` e `turma.unidade_id` apontam para ela; CRUD no modal **🏢 Unidades** de `cursos.html`; os textos antigos `curso.unidade` e `turma.local` só até a fase 2 |
-| 2026-10-09 12:59:06 | **Menu CURSO** (só o Professor Administrador) abre `cursos.html`: CRUD da tabela `curso` (sem exclusão: desativar = `ativo 0`, pois apagar levaria as aulas em cascata) e ação **🏫 Turmas** para vincular turmas ao curso (função `definir_curso_turma`) |
 
 ---
 
@@ -876,6 +876,25 @@ confirmação** do usuário — não perguntar "posso fazer push?". Tarefa que n
   nem mudança de remotos.
 - ✅ Antes do push, conferir `git diff --cached --name-only` contra a regra "O QUE NUNCA É
   PUBLICADO" (a `main` é publicada pela Vercel depois do merge).
+- ✅ **Cada commit na nuvem = push + PR** (2026-10-09): ver a seção "Pull Requests" logo abaixo.
+
+## 🔀 Pull Requests (SÓ NO AMBIENTE DE NUVEM)
+
+Registrada em 2026-10-09 11:03:21 a pedido do usuário. **Vale só na nuvem** (Claude Code na web /
+sessão remota); no ambiente **local** nada muda: só o commit, o push continua com o usuário.
+
+- ✅ **Todo commit feito na nuvem é enviado na hora:** depois de **cada** `git commit`, fazer
+  **`git push -u origin <branch>`** (a branch da sessão, nunca a `main`) — sem esperar o fim da
+  tarefa e sem perguntar ao usuário. Nenhum commit fica só no contêiner.
+- ✅ **Sem PR, cria um novo:** depois do push, conferir se a branch tem pull request **aberto** para
+  a `main`. Se **não tiver** (nunca teve, ou o anterior foi juntado ou fechado), **abrir um novo
+  PR** na hora, com título e descrição do que mudou. Se já tiver PR aberto, o push entra nele.
+- ✅ PR anterior **juntado ou fechado**: antes do commit novo, recomeçar a branch a partir da `main`
+  atualizada (regra "Sempre um PR novo" da seção do push) e abrir **outro** PR.
+- ✅ Antes do push: `git fetch origin main` (se a `main` andou, merge nela e conferir de novo) e
+  `git diff --cached --name-only` contra a regra "O QUE NUNCA É PUBLICADO".
+- ⛔ Nunca push na `main`, nunca push forçado e o Claude **nunca faz o merge** do PR (é do usuário).
+- ✅ Na resposta ao usuário, citar o link do PR criado ou atualizado.
 
 ## 💾 REGRA — COMMIT POR TAREFA (SEMPRE)
 
