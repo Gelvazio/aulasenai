@@ -1451,3 +1451,15 @@ Plano: [docs/atividades-testes-frontend-aulas-01-a-03.md](docs/atividades-testes
 | 110.4 | Header sem login: no lugar de "Você não está logado" + ENTRAR, **card verde centralizado piscando** "🔒 VOCÊ NÃO ESTÁ LOGADO! CLIQUE AQUI PARA ENTRAR 👉🔑" (cores oscilando, brilho pulsando; sem animação com `prefers-reduced-motion`) — `js/header-usuario.js` (`criarBotaoEntrarDestaque`) + `assets/css/header-entrar-destaque.css` | ✅ Concluído | 2026-10-09 00:31:30 | `node --check`; leitura do código (sem navegador) — teste na página fica com o usuário |
 | 110.5 | Card "VOCÊ NÃO ESTÁ LOGADO!" sai da barra e fica **logo acima do currículo do professor**, centralizado, com o currículo um pouco mais abaixo (espaço `#entrar-destaque` no `index.html`; `desenharHeaderSemLogin` em `js/header-usuario.js`; nas páginas sem esse espaço continua no centro da barra). Sem rolagem só em telas ≥ 901×680 | ✅ Concluído | 2026-10-09 00:33:43 | `node --check`; leitura do código (sem navegador) — teste na página fica com o usuário |
 | 110.6 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 111 — Sessão obrigatória em todas as páginas HTML (pedido em 2026-10-09 00:23; aprovada em 2026-10-09 00:28)
+
+Plano: [docs/validacao-sessao-todas-paginas.md](docs/validacao-sessao-todas-paginas.md). Regra: `CLAUDE.md` → "SESSÃO OBRIGATÓRIA EM TODAS AS PÁGINAS".
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 111.1 | Regra no `CLAUDE.md` e no `docs/HISTORICO-REGRAS.md`: sem login nada carrega e vai para o `index.html` (exceções: `index.html` e `login.html` da raiz) | ✅ Concluído | 2026-10-09 00:27 | Leitura |
+| 111.2 | Guarda de sessão no `js/header-usuario.js` (página oculta + modal "Aguarde, carregando..." com `assets/img/carregando.gif`; sem sessão → `window.stop()` e `index.html`) + CSS em `assets/css/header-usuario.css` | ✅ Concluído | 2026-10-09 00:33 | `node --check` |
+| 111.3 | `assets/gerador-menu/tags_header.py`: tag do header como primeiro script do `<head>`, sem `defer`, em todos os `.html` (menos `login.html`, `.claude/`, templates e app do WhatsApp) | ✅ Concluído | 2026-10-09 00:33 | 2ª execução = 0 alteradas |
+| 111.4 | Aplicado nas 257 páginas | ✅ Concluído | 2026-10-09 00:33 | Nenhum `header-usuario.js" defer` restante |
+| 111.5 | Aceite do usuário (abrir uma página sem login → modal e `index.html`; com login → página normal) | ⬜ Pendente | — | — |

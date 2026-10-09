@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 00:33:19 | **Sessão obrigatória em todo HTML:** sem login **nada da página é carregado nem mostrado** e o usuário vai direto para o `index.html` da raiz; exceções só o `index.html` (apresentação do professor + botão Entrar) e o `login.html` — regra "SESSÃO OBRIGATÓRIA EM TODAS AS PÁGINAS" no `CLAUDE.md`; plano [docs/validacao-sessao-todas-paginas.md](validacao-sessao-todas-paginas.md) |
 | 2026-10-09 00:25:47 | **Dados do professor Gelvazio Camargo** em arquivo único [docs/PROFESSOR-GELVAZIO-CAMARGO.md](PROFESSOR-GELVAZIO-CAMARGO.md) (identificação, contato, experiência, formação, competências); seção no `CLAUDE.md`; página inicial sem login mostra a apresentação do professor |
 | 2026-10-09 00:24:10 | **Atividade prática no padrão da Prova Prática id 82** (10 questões × 3 tópicos, discursiva no banco, com Progresso, Gráficos, Cálculo Nota e correção): regra em [REGRAS-ATIVIDADE-PRATICA.md](REGRAS-ATIVIDADE-PRATICA.md) e seção no `CLAUDE.md` |
 | 2026-10-08 21:19:06 | Faixa de matérias: **botão do filtro em uso** (SOMENTE ENSALADO ou VER TODAS MATÉRIAS) **em fundo verde piscando levemente**; no índice do curso a **grade de matérias de baixo segue o mesmo filtro** — `assets/js/faixa-materias-ensalado.js` + `assets/css/indice-atividades.css` |

@@ -5,7 +5,10 @@
 // Só para o Professor Administrador (confirmado pelo banco), mostra o menu USUARIOS / RELATORIOS /
 // ALUNOS / CORREÇÃO / TURMAS / PENDÊNCIAS (nova aba) e o botão REGRAS (modal com o CLAUDE.md,
 // assets/js/regras-modal.js). Os demais professores não veem esses menus.
-// Uso na página: <script src=".../js/header-usuario.js" defer></script> + o div acima.
+// Guarda de sessão (2026-10-09): em toda página, menos index.html e login.html da raiz, sem login
+// nada aparece (modal "Aguarde, carregando..." até confirmar) e vai para o index.html.
+// Uso na página: <script src=".../js/header-usuario.js"></script> como PRIMEIRO script do <head>
+// (sem defer) + o div acima. A tag é posta por assets/gerador-menu/tags_header.py.
 // Em páginas de matéria (/MATERIAIS/<CURSO>/<MATÉRIA>/), o botão 👥 EQUIPES aparece só para o
 // professor e para o aluno líder (usuario.lider = 1), que cadastram e alteram as equipes.
 // Qualquer elemento com data-somente-perfil="PROFESSOR" (e hidden) só aparece para esse perfil.
@@ -52,6 +55,16 @@ const MARCADOR_MATERIAIS_HEADER = "/MATERIAIS/";
 const PASTAS_SEM_MATERIA_HEADER = ["MATERIAS-GERAIS", "AGENDA_COLABORADOR"];
 const PAPEIS_EQUIPES_HEADER = ["Líder (coordenador)", "Integrante"];
 const TABELA_USUARIO_HEADER = "usuario";
+
+// Guarda de sessão (2026-10-09): sem login nada da página aparece e vai para o index.html.
+// Páginas públicas (relativas à raiz do site): só o index.html e o login.html.
+const PAGINAS_PUBLICAS_HEADER = ["", "index.html", "index", "login.html", "login"];
+const ROTA_RAIZ_HEADER = "../";
+const ROTA_GIF_CARREGANDO = "../assets/img/carregando.gif";
+const TEXTO_CARREGANDO = "Aguarde, carregando...";
+const ID_MODAL_CARREGANDO = "sessao-carregando";
+const CHAVE_SESSAO_SUPABASE = "sb-hxlvonriearllcmfqeri-auth-token";
+const MILISSEGUNDOS_POR_SEGUNDO = 1000;
 
 const urlScriptHeader = document.currentScript?.src || "";
 
@@ -396,26 +409,128 @@ function desenharHeaderUsuario(destino, cliente, usuario) {
 }
 
 /**
- * Inicia o header: lê a sessão e desenha o usuário logado ou o botão ENTRAR.
+ * Diz se a página atual é pública (index.html ou login.html da raiz do site).
+ * @returns {boolean} Verdadeiro se a página pode abrir sem login.
+ */
+function ehPaginaPublicaHeader() {
+  const raiz = decodeURIComponent(new URL(resolverRotaHeader(ROTA_RAIZ_HEADER)).pathname);
+  const caminho = decodeURIComponent(location.pathname);
+  if (!caminho.startsWith(raiz)) return false;
+  return PAGINAS_PUBLICAS_HEADER.includes(caminho.slice(raiz.length));
+}
+
+/**
+ * Lê a sessão gravada pelo Supabase Auth, sem esperar a biblioteca carregar.
+ * @returns {Object|null} Sessão gravada ou null se não houver ou não puder ser lida.
+ */
+function lerSessaoGravadaHeader() {
+  try {
+    return JSON.parse(localStorage.getItem(CHAVE_SESSAO_SUPABASE) || "null");
+  } catch (erro) {
+    return null;
+  }
+}
+
+/**
+ * Diz se a sessão gravada ainda serve: token válido ou renovável pelo refresh_token.
+ * @param {Object|null} sessao - Sessão gravada.
+ * @returns {boolean} Verdadeiro se vale a pena confirmar a sessão no Supabase.
+ */
+function sessaoGravadaServe(sessao) {
+  if (!sessao?.access_token) return false;
+  const tokenValido = sessao.expires_at * MILISSEGUNDOS_POR_SEGUNDO > Date.now();
+  return tokenValido || Boolean(sessao.refresh_token);
+}
+
+/**
+ * Sai da página sem login: para o carregamento e vai para o index.html da raiz.
+ */
+function redirecionarSemSessao() {
+  window.stop();
+  location.replace(resolverRotaHeader(ROTA_HOME));
+}
+
+/**
+ * Esconde a página e mostra o modal "Aguarde, carregando..." enquanto a sessão é conferida.
+ * O modal fica fora do <body> e com visibility própria, por isso aparece com a página oculta.
+ */
+function mostrarModalCarregando() {
+  document.documentElement.style.visibility = "hidden";
+  const modal = criarElementoHeader("div", "sessao-carregando", "");
+  modal.id = ID_MODAL_CARREGANDO;
+  modal.style.visibility = "visible";
+  const caixa = criarElementoHeader("div", "sessao-carregando__caixa", "");
+  const gif = document.createElement("img");
+  gif.className = "sessao-carregando__gif";
+  gif.src = resolverRotaHeader(ROTA_GIF_CARREGANDO);
+  gif.alt = "";
+  caixa.append(gif, criarElementoHeader("p", "sessao-carregando__texto", TEXTO_CARREGANDO));
+  modal.append(caixa);
+  document.documentElement.append(modal);
+}
+
+/**
+ * Tira o modal de carregamento e mostra a página (sessão confirmada).
+ */
+function liberarPaginaHeader() {
+  document.getElementById(ID_MODAL_CARREGANDO)?.remove();
+  document.documentElement.style.visibility = "";
+}
+
+/**
+ * Guarda de sessão: roda assim que o script é lido (primeiro script do <head>). Página
+ * pública passa direto; sem sessão gravada sai na hora; com sessão, mostra o modal até
+ * o Supabase confirmar em iniciarHeaderUsuario.
+ * @returns {boolean} Verdadeiro se a página precisa de login.
+ */
+function protegerPaginaHeader() {
+  if (ehPaginaPublicaHeader()) return false;
+
+  incluirCssHeader();
+  mostrarModalCarregando();
+  if (!sessaoGravadaServe(lerSessaoGravadaHeader())) redirecionarSemSessao();
+  return true;
+}
+
+/**
+ * Confirma a sessão no Supabase Auth (renova o token se preciso).
+ * @returns {Promise<{cliente: Object|null, usuario: Object|null}>} Cliente e usuário logado.
+ */
+async function confirmarSessaoHeader() {
+  try {
+    const cliente = await obterClienteHeader();
+    const { data } = await cliente.auth.getSession();
+    return { cliente, usuario: data?.session?.user || null };
+  } catch (erro) {
+    console.warn("Não foi possível confirmar a sessão:", erro);
+    return { cliente: null, usuario: null };
+  }
+}
+
+/**
+ * Inicia o header: confirma a sessão (sem login, página protegida vai para o index.html),
+ * libera a página e desenha o usuário logado ou o botão ENTRAR.
  */
 async function iniciarHeaderUsuario() {
+  const { cliente, usuario } = await confirmarSessaoHeader();
+  if (paginaPrecisaLogin && !usuario) return redirecionarSemSessao();
+
+  liberarPaginaHeader();
+  aplicarVisibilidadePorPerfil(usuario);
   const destino = document.getElementById(ID_HEADER_USUARIO);
   if (!destino) return;
 
   // Sai do <body> para não herdar o padding/margem da página: a barra fica colada no topo.
   document.documentElement.insertBefore(destino, document.body);
   incluirCssHeader();
-  try {
-    const cliente = await obterClienteHeader();
-    const { data } = await cliente.auth.getSession();
-    const usuario = data?.session?.user || null;
-    desenharHeaderUsuario(destino, cliente, usuario);
-    aplicarVisibilidadePorPerfil(usuario);
-  } catch (erro) {
-    desenharHeaderUsuario(destino, null, null);
-    aplicarVisibilidadePorPerfil(null);
-  }
+  desenharHeaderUsuario(destino, cliente, usuario);
 }
 
-// Espera o "load" para que os scripts da própria página (js/supabase.js) já tenham rodado.
-window.addEventListener("load", iniciarHeaderUsuario);
+const paginaPrecisaLogin = protegerPaginaHeader();
+// DOMContentLoaded: os scripts da própria página (js/supabase.js, defer ou no fim do <body>)
+// já rodaram (vale também para página antiga que ainda carrega este script com defer).
+if (document.readyState === "complete") {
+  iniciarHeaderUsuario();
+} else {
+  document.addEventListener("DOMContentLoaded", iniciarHeaderUsuario);
+}
