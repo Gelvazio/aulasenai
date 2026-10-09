@@ -1407,3 +1407,11 @@ Plano: [docs/aluno-lider-cadastra-equipes.md](docs/aluno-lider-cadastra-equipes.
 | 106.11 | Pedido do usuário (2026-10-08 23:59:44): **1 líder por turma** — `definir_lider_usuario` recusa ligar o líder se alguma turma do aluno já tem outro (SQL `database/2026-10-09-lider-unico-por-turma.sql`, aplicado pelo conector); regra, `docs/database.md` e relatório HTML | ✅ Concluído | 2026-10-08 23:59:44 | trava conferida no código da função; 0 turmas com mais de 1 líder; anon sem execução |
 | 106.12 | Correção relatada pelo usuário (2026-10-09 00:01:37): "menu de equipes sumiu, mesmo sendo professor" — o botão só aparecia em página de matéria (e a barra de menu das atividades foi desligada na Etapa 104). Agora o **professor sempre vê 👥 EQUIPES** (header em todas as páginas); fora de uma matéria (ou matéria sem atividade no banco) o modal mostra a lista **Matéria**; o líder continua só em página de matéria (`js/header-usuario.js`, `menu-acao-equipes.js`, `equipes-modal.js`, `equipes-repositorio.js`; regra e histórico) | ✅ Concluído | 2026-10-09 00:01:37 | `node --check` nos 4 JS; leitura do código (sem navegador) |
 | 106.9 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 107 — Tela TURMAS como consulta (CRUD) com modais (pedido em 2026-10-09 00:06:32)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 107.1 | `turmas.html` vira consulta das turmas: botão **➕ Vincular Professor** à esquerda de cada turma, professores vinculados em etiquetas (✏️/🗑️), busca; modal da turma (só professores que ainda não estão nela) e modal de edição do vínculo (`turmas-professor-pagina.js` reescrito, `turmas-professor-modais.js` novo, CSS) — sem mudança no banco | ✅ Concluído | 2026-10-09 00:06:32 | `node --check` nos 2 JS; leitura do código (sem navegador) |
+| 107.2 | Modal com os **dados da tabela `turma`** (CRUD: cadastrar, editar e excluir turma) — precisa de políticas novas no banco (hoje a `turma` só tem leitura no RLS): plano `docs/crud-turmas-administrador.md` aguardando aprovação | ⬜ Pendente | — | — |
+| 107.3 | Aceite do usuário | ⬜ Pendente | — | — |

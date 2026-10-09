@@ -13,6 +13,7 @@
     <script src="assets/js/popup.js" defer></script>
     <script src="assets/js/turmas-professor-repositorio.js" defer></script>
     <script src="assets/js/unidade.js" defer></script>
+    <script src="assets/js/turmas-professor-modais.js" defer></script>
     <script src="assets/js/turmas-professor-pagina.js" defer></script>
 </head>
 <body>
@@ -27,26 +28,11 @@
 
         <div id="tpConteudo" hidden>
             <section class="guia-cartao">
-                <h2 id="tpTituloFormulario">Novo vínculo</h2>
-                <form id="tpFormulario" class="tp-formulario">
-                    <label class="tp-campo">Turma
-                        <select id="tpTurma" class="guia-filtro" required></select>
-                    </label>
-                    <label class="tp-campo">Professor
-                        <select id="tpProfessor" class="guia-filtro" required></select>
-                    </label>
-                    <div class="tp-acoes">
-                        <button type="submit" class="guia-botao" id="tpSalvar">Vincular</button>
-                        <button type="button" class="guia-botao tp-botao-secundario" id="tpCancelar" hidden>Cancelar edição</button>
-                    </div>
-                </form>
-            </section>
-
-            <section class="guia-cartao">
                 <div class="tp-cabecalho-lista">
-                    <h2>Vínculos cadastrados</h2>
-                    <label class="tp-campo tp-campo--filtro">Filtrar por turma
-                        <select id="tpFiltroTurma" class="guia-filtro"></select>
+                    <h2>Turmas e professores</h2>
+                    <label class="tp-campo tp-campo--filtro">Buscar
+                        <input type="search" id="tpBusca" class="guia-filtro"
+                            placeholder="Turma, unidade ou professor">
                     </label>
                 </div>
                 <p id="tpResumo" class="tp-resumo"></p>
@@ -54,17 +40,49 @@
                     <table class="guia-tabela">
                         <thead>
                             <tr>
+                                <th>Vincular</th>
                                 <th>Turma</th>
                                 <th>Turno / horário</th>
-                                <th>Professor</th>
-                                <th>Vinculado em</th>
-                                <th>Ações</th>
+                                <th>Professores vinculados</th>
                             </tr>
                         </thead>
                         <tbody id="tpLinhas"></tbody>
                     </table>
                 </div>
             </section>
+        </div>
+
+        <div id="tpModalTurma" class="tp-modal" hidden>
+            <form id="tpFormularioTurma" class="tp-modal__caixa" role="dialog" aria-modal="true"
+                aria-labelledby="tpTituloTurma">
+                <h2 id="tpTituloTurma">Vincular professor</h2>
+                <h3 class="tp-modal__subtitulo">Professores desta turma</h3>
+                <ul id="tpProfessoresTurma" class="tp-lista-professores"></ul>
+                <label class="tp-campo">Professor (só quem ainda não está nesta turma)
+                    <select id="tpNovoProfessor" class="guia-filtro"></select>
+                </label>
+                <div class="tp-acoes">
+                    <button type="submit" class="guia-botao" id="tpVincular">Vincular</button>
+                    <button type="button" class="guia-botao tp-botao-secundario" data-fechar-modal>Fechar</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="tpModalVinculo" class="tp-modal" hidden>
+            <form id="tpFormularioVinculo" class="tp-modal__caixa" role="dialog" aria-modal="true"
+                aria-labelledby="tpTituloVinculo">
+                <h2 id="tpTituloVinculo">Editar vínculo</h2>
+                <label class="tp-campo">Turma
+                    <select id="tpTurmaVinculo" class="guia-filtro" required></select>
+                </label>
+                <label class="tp-campo">Professor
+                    <select id="tpProfessorVinculo" class="guia-filtro" required></select>
+                </label>
+                <div class="tp-acoes">
+                    <button type="submit" class="guia-botao">Salvar alteração</button>
+                    <button type="button" class="guia-botao tp-botao-secundario" data-fechar-modal>Cancelar</button>
+                </div>
+            </form>
         </div>
     </main>
 </body>
