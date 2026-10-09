@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 15:00:25 | **Nuvem: sem a pergunta "Deseja atualizar o log da sessão atual?"** no fim da tarefa (só no ambiente local); a frase final continua |
 | 2026-10-09 14:58:46 | **Nuvem: cada arquivo criado = commit + push na hora** (seção "Pull Requests"), sem esperar o fim da tarefa; arquivo parcial vai como `wip(...)` com o que falta no `STATUS.md` |
 | 2026-10-09 14:09:46 | **Gabarito vai para o Git, mas não é publicado na Vercel:** `-GABARITO.md`, `*QUESTOES.md`, `PROVA-OBJETIVA-*.md`, seeds `database/*-seed-atividades.sql` e `BANCO-AVA/` versionados e listados no `.vercelignore` (saíram do `.gitignore`); regras atualizadas no `CLAUDE.md`, `docs/regras/atividades.md` e `docs/REGRAS-ATIVIDADE-PRATICA.md` |
 | 2026-10-09 14:04:30 | **Atividade prática de uma aula = 10 questões × 3 tópicos** (`docs/REGRAS-ATIVIDADE-PRATICA.md`); a prova id 82 é de várias aulas e serve **só como referência dos recursos compartilhados** (não do tamanho nem do formato das questões) |

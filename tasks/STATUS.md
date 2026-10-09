@@ -1678,3 +1678,10 @@ Matéria: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/` (renomeada em
 |------|-----------|--------|--------------|-------------|
 | 128.1 | Regra na seção "Pull Requests" do `CLAUDE.md`, versão 2026-10-09 14:58:46 e histórico (resumo + `docs/HISTORICO-REGRAS.md`) | ✅ Concluído | 2026-10-09 14:58 | Leitura; linha de versão no formato do `regras-modal.js` |
 | 128.2 | Aceite do usuário | ⬜ Pendente | — | — |
+
+## Etapa 129 — Regra: na nuvem, sem a pergunta do log da sessão (tarefa pequena, pedido em 2026-10-09 15:00:25)
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 129.1 | `CLAUDE.md` (final de tarefa e regra do registro da sessão): pergunta "Deseja atualizar o log da sessão atual?" só no ambiente local; versão 2026-10-09 15:00:25 e histórico | ✅ Concluído | 2026-10-09 15:00 | Leitura das duas passagens |
+| 129.2 | Aceite do usuário | ⬜ Pendente | — | — |

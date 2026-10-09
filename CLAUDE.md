@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 14:58:46
+**Versão das regras:** 2026-10-09 15:00:25
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 15:00:25 | **Nuvem: sem a pergunta "Deseja atualizar o log da sessão atual?"** no fim da tarefa (só no ambiente local); a frase final continua |
 | 2026-10-09 14:58:46 | **Nuvem: cada arquivo criado = commit + push na hora** (seção "Pull Requests"), sem esperar o fim da tarefa; arquivo parcial vai como `wip(...)` com o que falta no `STATUS.md` |
 | 2026-10-09 14:09:46 | **Gabarito vai para o Git, mas não é publicado na Vercel:** `-GABARITO.md`, `*QUESTOES.md`, `PROVA-OBJETIVA-*.md`, seeds `database/*-seed-atividades.sql` e `BANCO-AVA/` versionados e listados no `.vercelignore` (saíram do `.gitignore`); regras atualizadas no `CLAUDE.md`, `docs/regras/atividades.md` e `docs/REGRAS-ATIVIDADE-PRATICA.md` |
 | 2026-10-09 14:04:30 | **Atividade prática de uma aula = 10 questões × 3 tópicos** (`docs/REGRAS-ATIVIDADE-PRATICA.md`); a prova id 82 é de várias aulas e serve **só como referência dos recursos compartilhados** (não do tamanho nem do formato das questões) |
 | 2026-10-09 13:20:11 | **Análise contínua das matérias (tarefa permanente #19-91cbac65-87ca-45a0):** `scripts/analise-materias.py` grava `tasks/ANALISE-MATERIAS-RELATORIO.json` no início de cada sessão e ao concluir tarefa em matéria; a tarefa **nunca fica CONCLUÍDA** enquanto houver matéria incompleta ou pendência |
-| 2026-10-09 12:58:34 | **`TASKS_COMPLETE.md` apagado:** tarefa concluída ou cancelada tem o bloco **removido** do `TASKS.md` (o registro fica no `STATUS.md` e no Git) |
 
 ---
 
@@ -49,7 +49,8 @@ Registrada em 2026-10-03 a pedido do usuário.
 - ✅ **Final de tarefa:** responder `TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?` (sem tabela
   nem resumo; os avisos que outra regra manda dar — matérias semelhantes, tabela de permissões,
   pendências do usuário, commit/push — vêm **em poucas linhas antes** da frase) e, logo abaixo, perguntar **"Deseja atualizar o log da sessão atual?"** (ver a
-  regra "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`", 2026-10-08).
+  regra "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`", 2026-10-08). ☁️ **Na sessão em nuvem essa
+  pergunta NÃO é feita** (2026-10-09 15:00:25, pedido do usuário): termina só com a frase final.
 - 🧭 **Arquivos de status são MUITO IMPORTANTES** (2026-10-08): `STATUS.md` é a fonte única do
   estado; ver a seção "MUITO IMPORTANTE — ARQUIVOS DE STATUS" logo abaixo.
 - ⛔ **Nunca escrever testes automatizados** (regra permanente do global): nada de `*.test.js`,
@@ -473,7 +474,8 @@ licença (ou outra IA) continuar exatamente de onde parou, sem precisar da conve
   tarefa (ou num commit próprio, se a sessão não mudou outros arquivos).
 - ✅ **Pergunta ao final de cada tarefa (2026-10-08, pedido do usuário):** depois de
   `TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?`, perguntar **"Deseja atualizar o log da sessão
-  atual?"**. Se o usuário responder **SIM**:
+  atual?"** — ☁️ **só no ambiente local; na sessão em nuvem a pergunta não é feita** (2026-10-09 15:00:25, pedido
+  do usuário: na nuvem cada arquivo já vai para commit e push na hora). Se o usuário responder **SIM**:
   1. gravar em `SESSOES-CLAUDE/` o mínimo necessário para continuar (arquivo da sessão, com data
      e hora de cada pedido e **tudo o que falta fazer**, e a linha no índice `SESSAO-CLAUDE.md`),
      seguindo esta regra;
