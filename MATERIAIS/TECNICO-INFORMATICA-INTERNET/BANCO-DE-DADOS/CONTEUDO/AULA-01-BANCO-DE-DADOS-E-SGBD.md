@@ -126,8 +126,9 @@ modelagem (aulas 5 a 11) atrasa toda a construção do banco (aulas 12 a 20).
 ## Exemplo no contexto do curso
 Uma loja virtual fictícia, a "Loja Ponto Web", guarda clientes, produtos, pedidos e pagamentos. Ao
 clicar em "Finalizar compra", o front-end envia o carrinho; o back-end confere o estoque e grava o
-pedido; o SGBD garante que dois clientes não comprem o mesmo último produto e que o pedido só fique
-salvo se o pagamento também ficar. Se a loja usasse uma planilha compartilhada, duas vendas ao
+pedido. O back-end aplica as regras de estoque e usa uma **transação** para não vender além do
+disponível, e o SGBD mantém consistentes os registros de pedido e de pagamento quando os dois são
+gravados no mesmo banco (um pagamento externo, como o do cartão, não entra sozinho nessa transação). Se a loja usasse uma planilha compartilhada, duas vendas ao
 mesmo tempo poderiam apagar uma à outra.
 
 ## Dinâmica — Detetive dos dados (30 min, grupos de 4)

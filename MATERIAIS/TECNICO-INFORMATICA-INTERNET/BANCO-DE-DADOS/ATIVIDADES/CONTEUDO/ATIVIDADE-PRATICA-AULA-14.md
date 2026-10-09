@@ -22,7 +22,7 @@
 
 **Seu papel em todas as questões:** Você, como aluno consultor, foi chamado para carregar e manter os dados do banco do sistema de matrículas da escola de cursos livres, usando as tabelas curso, turma, aluno, matricula e parcela criadas nas aulas 12 e 13. Use apenas dados fictícios.
 
-**Como responder:** Cada questão tem **3 tópicos**, e cada tópico tem o **seu campo**. Responda **somente o que o tópico pede**: **(1)** o conceito ou o comando pedido; **(2)** o comando aplicado à situação; **(3)** uma frase curta de justificativa quando o tópico pedir "explique" ou "justifique". Respostas copiadas da internet ou de colegas recebem nota zero no tópico.
+**Como responder:** Cada questão tem **3 tópicos**, e cada tópico tem o **seu campo**. Responda **somente o que o tópico pede**: **(1)** o conceito ou o comando pedido; **(2)** o comando aplicado à situação; **(3)** uma frase curta de justificativa quando o tópico pedir "explique" ou "justifique". Respostas iguais às de colegas ou copiadas da internet são sinalizadas ao professor, que analisa e decide a nota do tópico.
 
 **Como a correção funciona:** cada tópico é comparado com o padrão de resposta do professor: comando que funciona no PostgreSQL, com o WHERE correto e na ordem certa, e justificativa com as palavras-chave do conteúdo. Comandos equivalentes que produzam o mesmo resultado valem.
 

@@ -22,7 +22,7 @@
 
 **Seu papel em todas as questões:** Você, como aluno consultor, foi chamado para escrever e revisar os comandos DDL que criam as tabelas do banco de sistemas web no PostgreSQL. Escreva os comandos SQL completos quando o tópico pedir.
 
-**Como responder:** Cada questão tem **3 tópicos**, e cada tópico tem o **seu campo**. Responda **somente o que o tópico pede**: **(1)** o conceito, o tipo ou o comando pedido; **(2)** o comando aplicado à situação; **(3)** uma frase curta de justificativa quando o tópico pedir "explique" ou "justifique". Respostas copiadas da internet ou de colegas recebem nota zero no tópico.
+**Como responder:** Cada questão tem **3 tópicos**, e cada tópico tem o **seu campo**. Responda **somente o que o tópico pede**: **(1)** o conceito, o tipo ou o comando pedido; **(2)** o comando aplicado à situação; **(3)** uma frase curta de justificativa quando o tópico pedir "explique" ou "justifique". Respostas iguais às de colegas ou copiadas da internet são sinalizadas ao professor, que analisa e decide a nota do tópico.
 
 **Como a correção funciona:** cada tópico é comparado com o padrão de resposta do professor: comando que funciona no PostgreSQL, tipos e restrições adequados à situação e justificativa com as palavras-chave do conteúdo. Comandos equivalentes que produzam o mesmo resultado valem. Pequenos erros de digitação que não mudam o sentido descontam metade só quando o comando não funcionaria.
 

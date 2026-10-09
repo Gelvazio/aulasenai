@@ -22,7 +22,7 @@
 
 **Seu papel em todas as questões:** Você, como aluno consultor, foi chamado para transformar planilhas e tabelas mal organizadas de sistemas web em tabelas normalizadas até a terceira forma normal. Escreva as tabelas no formato NOME (coluna1, coluna2, ...), indicando a chave primária.
 
-**Como responder:** Cada questão tem **3 tópicos**, e cada tópico tem o **seu campo**. Responda **somente o que o tópico pede**, com as suas palavras: **(1)** a anomalia, a dependência ou a forma normal pedida; **(2)** as tabelas resultantes; **(3)** uma frase curta de justificativa quando o tópico pedir "explique" ou "justifique". Não precisa de texto longo, mas o raciocínio tem de aparecer. Respostas copiadas da internet ou de colegas recebem nota zero no tópico.
+**Como responder:** Cada questão tem **3 tópicos**, e cada tópico tem o **seu campo**. Responda **somente o que o tópico pede**, com as suas palavras: **(1)** a anomalia, a dependência ou a forma normal pedida; **(2)** as tabelas resultantes; **(3)** uma frase curta de justificativa quando o tópico pedir "explique" ou "justifique". Não precisa de texto longo, mas o raciocínio tem de aparecer. Respostas iguais às de colegas ou copiadas da internet são sinalizadas ao professor, que analisa e decide a nota do tópico.
 
 **Como a correção funciona:** cada tópico é comparado com o padrão de resposta do professor: forma normal certa, tabelas resultantes coerentes e justificativa pela dependência funcional. Nomes de tabelas e colunas diferentes do padrão valem, desde que a estrutura esteja correta. Erros de português não tiram nota se a ideia estiver clara.
 

@@ -22,7 +22,7 @@
 
 **Seu papel em todas as questões:** Você, como aluno consultor, foi chamado para definir os relacionamentos e as cardinalidades dos bancos de dados de sistemas web, a partir das frases dos clientes.
 
-**Como responder:** Cada questão tem **3 tópicos**, e cada tópico tem o **seu campo**. Responda **somente o que o tópico pede**, com as suas palavras: **(1)** a cardinalidade ou o conceito pedido; **(2)** a leitura ou a aplicação na situação; **(3)** uma frase curta de justificativa quando o tópico pedir "explique" ou "justifique". Não precisa de texto longo, mas o raciocínio tem de aparecer. Respostas copiadas da internet ou de colegas recebem nota zero no tópico.
+**Como responder:** Cada questão tem **3 tópicos**, e cada tópico tem o **seu campo**. Responda **somente o que o tópico pede**, com as suas palavras: **(1)** a cardinalidade ou o conceito pedido; **(2)** a leitura ou a aplicação na situação; **(3)** uma frase curta de justificativa quando o tópico pedir "explique" ou "justifique". Não precisa de texto longo, mas o raciocínio tem de aparecer. Respostas iguais às de colegas ou copiadas da internet são sinalizadas ao professor, que analisa e decide a nota do tópico.
 
 **Como a correção funciona:** cada tópico é comparado com o padrão de resposta do professor: cardinalidade certa, leitura nos dois sentidos e justificativa com as palavras-chave do conteúdo. Cardinalidades diferentes do padrão valem quando a justificativa interpreta a frase de forma coerente. Erros de português não tiram nota se a ideia estiver clara.
 

@@ -2,7 +2,7 @@
 
 **Tarefa:** #20-2ac1a8ec-911b-466f (`tasks/TASKS.md`) · **Status oficial:** `tasks/STATUS.md`, Etapa 125
 **Criado em:** 2026-10-09 13:30:18 · **Concluído em:** — · **Tempo decorrido:** —
-**Matéria:** `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO_DE_DADOS/` · **Modelo:** `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/` (estrutura e funcionamento; nunca o conteúdo)
+**Matéria:** `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/` (renomeada de `BANCO_DE_DADOS` em 2026-10-09) · **Modelo:** `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/` (estrutura e funcionamento; nunca o conteúdo)
 **Situação do plano:** ✅ Aprovado pelo usuário em 2026-10-09 13:40 (D1 80 h/20 aulas · D2 renomear · D3 PostgreSQL · D4 apagar os antigos · D5 padrão)
 
 ## 1. Objetivo
@@ -28,8 +28,9 @@ aulas em `CONTEUDO/`, atividades objetivas e práticas por aula, avaliações, �
 
 - **Entra:** permissão `VERIFICAR`; ementa da matéria reescrita da UC (80 h); `materia.json`;
   20 aulas em `CONTEUDO/` + `AULAS/STATUS-AULAS.md` + `DOCUMENTACAO/PLANO-AULAS.md` (resumo);
-  por aula, objetiva de 50 questões e prática no padrão da id 82 (fontes em
-  `ATIVIDADES/CONTEUDO/`, gabaritos fora do Git), `ATIVIDADES/STATUS-ATIVIDADES.md`,
+  por aula, objetiva de 50 questões e prática de **10 questões × 3 tópicos** (`docs/REGRAS-ATIVIDADE-PRATICA.md`;
+  a prova id 82 só como referência dos recursos compartilhados), fontes em `ATIVIDADES/CONTEUDO/`,
+  gabaritos no Git e fora do site (`.vercelignore`), `ATIVIDADES/STATUS-ATIVIDADES.md`,
   `ATIVIDADES/index.html` regerado; avaliações (objetivas, prática, média final) no modelo da ITIC;
   rodada do `scripts/analise-materias.py`.
 - **Não entra:** apostila (etapa 2); slides (`AULAS/AULA-NN-SLIDES.pdf` são feitos pelo professor);
@@ -37,8 +38,8 @@ aulas em `CONTEUDO/`, atividades objetivas e práticas por aula, avaliações, �
   cursos.
 - **Critério de pronto:** `analise-materias.py` sem pendências para a matéria, exceto as da
   apostila; cada peça registrada nos STATUS; aceite do usuário.
-- **Premissas e restrições:** conteúdo só da UC (nada de outra UC); só Markdown como fonte; sem
-  gabarito no Git nem nas páginas; uma aula por vez, completa; práticas sem empresa fictícia; sem
+- **Premissas e restrições:** conteúdo só da UC (nada de outra UC); só Markdown como fonte; gabarito no Git, mas
+  nunca nas páginas nem no site; uma aula por vez, completa; práticas sem empresa fictícia; sem
   navegador e sem testes automatizados; um commit por item + push + PR (nuvem).
 
 ## 4. Decisões que dependem do usuário

@@ -571,8 +571,8 @@ demais matérias continuam com a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES".
     `scripts/gerar-seed-atividades.py` (grupo da matéria);
   - **discursivas:** `ATIVIDADES/ATIVIDADE-DISCURSIVA-AULA-NN.html`, fonte
     `ATIVIDADES/CONTEUDO/ATIVIDADE-DISCURSIVA-AULA-NN.md` (cada item com Contexto, Comando e um
-    tópico `- a) ... (1,0)`) + `-GABARITO.md` (padrão de resposta e critérios para a IA, fora do
-    Git), gerada por `assets/gerador-avaliacao-discursiva/gerar_avaliacao_discursiva.py`
+    tópico `- a) ... (1,0)`) + `-GABARITO.md` (padrão de resposta e critérios para a IA, no Git e
+    fora do site), gerada por `assets/gerador-avaliacao-discursiva/gerar_avaliacao_discursiva.py`
     (nasce bloqueada; o professor libera no índice).
 - ✅ O seed das objetivas roda **antes** do das discursivas (ele cria a aula no banco). O
   `STATUS-ATIVIDADES.md` da matéria controla as duas páginas (20 + 5) de cada aula.
