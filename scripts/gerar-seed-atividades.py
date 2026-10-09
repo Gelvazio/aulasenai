@@ -187,6 +187,15 @@ ATIVIDADES_TESTES_FRONTEND = [
      f"{PASTA_TESTES_FRONTEND}/ATIVIDADES-AULA-03-50-QUESTOES.md"),
 ]
 
+PASTA_BANCO_DADOS = "MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES"
+
+# Banco de Dados (Técnico em Informática para Internet), tarefa #20: aulas de CONTEUDO/AULA-NN-*.md.
+# Sem calendário ainda: data provisória. As práticas (ATIVIDADE-PRATICA-AULA-NN) têm seed próprio.
+ATIVIDADES_BANCO_DADOS = [
+    (1, "Banco de Dados e SGBD: Conceitos e Usos", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-01-50-QUESTOES.md"),
+]
+
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.
 GRUPOS = [
     (CURSO, MATERIA, ATIVIDADES),
@@ -197,6 +206,7 @@ GRUPOS = [
      ATIVIDADES_AUTOMACAO),
     ("Rio do Sul Mais Tech", "Reforço de Linguagens", ATIVIDADES_REFORCO_LINGUAGENS),
     ("Técnico em Informática para Internet", "TESTES DE FRONTEND", ATIVIDADES_TESTES_FRONTEND),
+    ("Técnico em Informática para Internet", "BANCO DE DADOS", ATIVIDADES_BANCO_DADOS),
 ]
 
 PADRAO_ITEM = re.compile(r"^## ITEM (\d+) — (.+)$", re.M)

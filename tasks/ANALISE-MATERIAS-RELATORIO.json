@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-10-09 16:50:55",
+  "gerado_em": "2026-10-09 17:05:16",
   "padrao": "Matéria modelo: Introdução à TIC (CLAUDE.md, 2026-10-03)",
   "pastas_que_nao_sao_curso": [
     "AGENDA_COLABORADOR",
@@ -533,16 +533,16 @@
       "pecas": {
         "ementa": true,
         "materia_json": true,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
+        "status_atividades": true,
         "status_apostila": false
       },
       "contagem": {
-        "aulas_conteudo": 0,
-        "fontes_atividades": 0,
-        "atividades_50_questoes": 0,
-        "atividades_praticas": 0,
+        "aulas_conteudo": 1,
+        "fontes_atividades": 3,
+        "atividades_50_questoes": 1,
+        "atividades_praticas": 1,
         "apostila_html": 0
       },
       "ementa": {
@@ -550,12 +550,7 @@
         "dentro_da_faixa": true
       },
       "pendencias": [
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
-        "Extrair as aulas da ementa para CONTEUDO/",
-        "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
-        "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
       ]
     },
