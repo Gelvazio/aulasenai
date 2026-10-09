@@ -1,27 +1,6 @@
+__pycache__/
 graphify-output/cache/
 graphify-out/
-*.pdf
-*.png
-*.docx
-*.pptx
-*.xlsx
-*.jpg
-*.jpeg
-
-# Dados pessoais de alunos (LGPD) — nunca publicar
-LISTA-PRESENCA*.js
-
-# Arquivos gerados pelo Python
-__pycache__/
-
-# Segredos locais (chave service_role) — nunca publicar
 variaveis.js
 
-# Fontes de provas objetivas (com a linha Gabarito): nunca publicar
-PROVA-OBJETIVA-*.md
-
-# Listas de alunos (nomes, CPF): dados pessoais (LGPD), só local
-LISTA-ALUNOS/
-
-# Slides das aulas de Testes de Front-End: versionados e publicados (pedido do usuário em 2026-10-09)
-!MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/AULAS/*.pdf
+.env

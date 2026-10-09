@@ -1,6 +1,29 @@
-# Arquivos versionados no Git que NÃO podem ser publicados no site (Vercel).
+# Arquivos que NÃO podem ser publicados no site (Vercel).
+# Desde 2026-10-09 o .gitignore só ignora __pycache__/, graphify e variaveis.js;
+# todo o resto que não pode ir ao ar fica aqui.
+
 # Gabaritos (respostas certas) ficam no repositório para o professor, mas nunca vão ao ar
 # para os alunos (regra "GABARITO COM AS RESPOSTAS CERTAS: SÓ O PROFESSOR" do CLAUDE.md).
 *[Gg][Aa][Bb][Aa][Rr][Ii][Tt][Oo]*
 # Resoluções modelo das atividades (respostas do professor)
 RESOLUCAO/
+
+# Binários (vindos do .gitignore em 2026-10-09)
+*.pdf
+*.png
+*.docx
+*.pptx
+*.xlsx
+*.jpg
+*.jpeg
+
+# Slides das aulas de Testes de Front-End: publicados (pedido do usuário em 2026-10-09)
+!MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/AULAS/*.pdf
+
+# Dados pessoais de alunos (LGPD) — nunca publicar
+LISTA-PRESENCA*.js
+# Listas de alunos (nomes, CPF): dados pessoais (LGPD)
+LISTA-ALUNOS/
+
+# Fontes de provas objetivas (com a linha Gabarito): nunca publicar
+PROVA-OBJETIVA-*.md
