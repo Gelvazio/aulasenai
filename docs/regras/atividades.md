@@ -183,14 +183,22 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   `- **Botão gravar:** sim` → cada tópico ganha o botão, que grava na hora (`gravarPeloBotao` em
   `assets/js/avaliacao-discursiva.js`). **As duas opções valem juntas:** a gravação automática
   (1,5 s depois de parar de digitar e ao sair do campo) continua. 1º uso: Prova Prática ADAG (id 82).
-- ✅ **Progresso da turma para o professor (2026-10-08, pedido do usuário):** no **topo da
-  atividade** (logo abaixo do cabeçalho), só para o professor, montado em tempo de execução e
-  **atualizado a cada 5 segundos**: uma linha por aluno com uma célula por questão (cinza = sem
-  resposta, amarela = em andamento, verde = completa), barra do aluno, "N/20 questões · %" ou
-  "✅ Entregue", e no alto o resumo e a barra geral da turma. Campo opcional
-  `- **Progresso para o professor:** sim` → `data-progresso-professor="sim"`; código
-  `assets/js/progresso-turma-discursiva.js` + `assets/css/progresso-turma-discursiva.css`
-  (carregado pelo `avaliacao-discursiva.js` só para o professor; o RLS limita às turmas dele).
+- ✅ **Progresso da turma para o professor (2026-10-08, pedido do usuário; GLOBAL em objetivas e
+  discursivas desde 2026-10-09):** no **topo da atividade** (logo abaixo do cabeçalho), só para
+  o professor, **aberto junto com a página** e **atualizado a cada 5 segundos**: uma linha por
+  aluno com uma célula por questão (cinza = sem resposta, amarela = em andamento, verde =
+  completa), barra do aluno, "N/20 questões · mín. M" ou "✅ Entregue", e no alto o resumo e a
+  barra geral da turma. **Sem campo na fonte** (o antigo `Progresso para o professor` não é mais
+  necessário). Código único: `assets/js/progresso-turma-global.js` (tela) +
+  `assets/js/progresso-turma-fontes.js` (dados: objetiva × discursiva, no mesmo formato) +
+  `assets/css/progresso-turma-global.css`, carregado pelo `avaliacao-discursiva.js`
+  (discursivas) e pelo `respostas-atividade.js` (objetivas) só para o professor; o RLS limita
+  às turmas dele; a leitura é paginada de 1000 em 1000 linhas. Plano:
+  `docs/progresso-global-atividades.md`.
+  - **Objetiva (2026-10-09):** colunas **"Nota parcial (acertos)"** (nota sobre o mínimo até
+    agora, % de acerto nas questões respondidas e "(N/50)") e **"Nota final"** (só com a entrega),
+    pelos acertos da função `resumo_tentativas_atividade` (o gabarito não sai do banco). As
+    colunas abaixo, da IA, valem para as discursivas.
   - **Correção parcial pela IA** (2026-10-08): a IA corrige as alternativas já respondidas **antes
     da entrega** (cada alternativa uma vez) e **recorrige só após a entrega final** o que o aluno
     mudou depois da nota parcial (`correcao_discursiva.nota_ia_em`, SQL
@@ -223,18 +231,17 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     e o trigger `correcao_discursiva_validar` recusa qualquer mudança da `nota_professor` já
     gravada, **nem o professor altera** (SQL
     `database/2026-10-08-correcao-discursiva-nota-professor-travada.sql`, aplicado).
-  - **Global nas discursivas (2026-10-08, pedido do usuário):** o painel aparece para o
-    professor em **todas** as avaliações discursivas (o campo `Progresso para o professor` da
-    fonte não é mais necessário).
+  - **Global (2026-10-08 nas discursivas; 2026-10-09 também nas objetivas):** o painel aparece
+    para o professor em **todas** as atividades com banco, sem campo na fonte.
   - **Botão "📈 Gráficos"** ao lado do título: modal com 5 gráficos dos dados de agora — barras
     (% respondido por aluno), pizza (situação da turma), barras (alunos que completaram cada
-    questão), rosca (correção da IA: certas, meias certas, erradas) e barras horizontais (nota
-    parcial da IA por aluno). `assets/js/graficos-progresso-turma.js` + CSS, Chart.js 4.4.1
+    questão), rosca (discursiva: correção da IA — certas, meias certas, erradas; objetiva:
+    acertos e erros) e barras horizontais (nota parcial por aluno). `assets/js/graficos-progresso-turma.js` + CSS, Chart.js 4.4.1
     carregado sob demanda; fecha com ✕, Esc ou clique fora.
   - **1º uso:** Prova Prática ADAG (id 82).
-  - ⏳ **Regra para o futuro:** o progresso deve aparecer em **todas as atividades** (discursivas
-    e objetivas — estas usam `assets/js/respostas-atividade.js` e precisam de módulo equivalente);
-    ligar uma por vez quando o usuário pedir (pendência no `STATUS.md`).
+  - ✅ **Feito em 2026-10-09:** o progresso aparece em **todas as atividades** com banco
+    (discursivas e objetivas), pelo módulo global; ⛔ não voltar ao antigo
+    `progresso-turma-discursiva.js` nem criar painel por matéria ou por página.
 - ✅ **Ocultar as respostas depois da entrega (2026-10-08, pedido do usuário):** campo opcional
   `- **Ocultar respostas após entrega:** sim` → `data-ocultar-respostas-entregue="sim"`. O aluno que
   já entregou **não vê** as próprias respostas: a página **nem as lê do banco**
@@ -247,7 +254,13 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   da turma (botão "🎯 Quantidade Mínima de Questões: N/20" sob o nome → janela com o número, de
   1 ao total, ou "Voltar ao padrão"; tabela `minimo_questoes_aluno`, vale para todas as
   tentativas). "Finalizar e entregar" confere o mínimo na página e no banco
-  (`atividade_completa`). **Nota proporcional ao mínimo:** cada questão vale 10 ÷ mínimo e a
+  (`atividade_completa`). **Também nas objetivas (2026-10-09, pedido do usuário):** a objetiva
+  entrega com o mínimo de **questões respondidas** (as em branco contam como não acertadas) e a
+  nota é acertos ÷ mínimo × 10, máximo 10, na página (`respostas-atividade.js`), no relatório do
+  professor (`respostas-atividade-professor.js`), na média final (`notas_media_final`) e na regra
+  "nota ≥ 7" das tentativas (`liberar_nova_tentativa`). SQL
+  `database/2026-10-09-minimo-questoes-objetivas.sql` (até ser aplicado, a objetiva continua
+  exigindo todas). **Nota proporcional ao mínimo:** cada questão vale 10 ÷ mínimo e a
   **nota máxima é 10** (`notas_media_final`, Nota parcial IA e Nota IA no painel). Código:
   `assets/js/minimo-questoes-discursiva.js` + CSS. Plano:
   `docs/quantidade-minima-questoes-discursiva.md`. SQL:

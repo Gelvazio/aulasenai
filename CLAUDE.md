@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 12:59:06
+**Versão das regras:** 2026-10-09 10:54:45
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 10:54:45 | **Progresso da turma GLOBAL** em toda atividade com banco (objetivas e discursivas), aberto junto com a página para o professor (`progresso-turma-global.js` substitui o das discursivas); objetiva com acertos e nota pelo banco; **mínimo de questões também nas objetivas** (SQL `database/2026-10-09-minimo-questoes-objetivas.sql`) |
 | 2026-10-09 12:59:06 | **Menu CURSO** (só o Professor Administrador) abre `cursos.html`: CRUD da tabela `curso` (sem exclusão: desativar = `ativo 0`, pois apagar levaria as aulas em cascata) e ação **🏫 Turmas** para vincular turmas ao curso (função `definir_curso_turma`) |
 | 2026-10-09 01:12:55 | **Botões de atividade com a mesma largura** e **ON/OFF sempre ao lado** (texto menor e quebrando a linha para caber, também no celular) em todos os índices |
 | 2026-10-09 01:11:42 | **ID na frente de cada atividade** nos índices (professor): etiqueta "ID 07" no botão (menor que 10 com zero à esquerda; 10 em diante normal); a caixa "ID · nome" do card foi removida |
 | 2026-10-09 01:10:16 | **Aula bloqueada = nenhum acesso, nem para o professor:** no card só o botão de desbloquear responde (links, slides, ON/OFF das atividades, CADASTRAR ATIVIDADES e Editar aula travados) |
-| 2026-10-09 01:09:35 | **Bloquear a aula bloqueia todas as atividades dela** (trigger `aulas_bloqueio_propaga_atividades_trg`: `aulas.ativo` → false grava `atividade.ativo = false`); desbloquear a aula não mexe nas atividades |
 
 ---
 
@@ -68,7 +68,9 @@ Registrada em 2026-10-03 a pedido do usuário.
   (id 82); **ligar nas outras discursivas depois**, quando o usuário pedir (ver
   `docs/regras/atividades.md`).
 - ✅ **Quantidade mínima de questões e nota proporcional nas discursivas** (2026-10-08, pedido
-  do usuário):
+  do usuário) — **também nas objetivas desde 2026-10-09** (entrega com o mínimo de questões
+  respondidas e nota = acertos ÷ mínimo × 10, máximo 10; SQL
+  `database/2026-10-09-minimo-questoes-objetivas.sql`, vale no banco depois de aplicado):
   - cada avaliação discursiva tem um **mínimo de questões para entregar**; o padrão é o
     **total** de questões, e o professor pode mudar **por aluno** (botão "Quantidade Mínima de
     Questões" ao lado do nome no Progresso da turma);
@@ -110,12 +112,11 @@ Registrada em 2026-10-03 a pedido do usuário.
   a nota do professor em CORREÇÃO. Já funciona em toda discursiva do gerador (lê a
   `correcao_discursiva`); toda avaliação discursiva nova ou alterada deve mantê-lo. Detalhe em
   `docs/regras/atividades.md`.
-- ✅ **Progresso da turma para o professor em todas as atividades** (2026-10-08): no topo da
-  atividade, só para o professor, por aluno e por questão, atualizado a cada 5 s, com o botão
-  **📈 Gráficos** (modal com 5 gráficos: barras, pizza, barras por questão, rosca da correção da
-  IA e barras horizontais da nota parcial). **Nas avaliações discursivas já é global** (todas,
-  sem campo na fonte); **nas objetivas ainda falta** — fazer quando o usuário pedir (ver
-  `docs/regras/atividades.md`).
+- ✅ **Progresso da turma GLOBAL em todas as atividades** (2026-10-08; global nas objetivas e
+  discursivas desde 2026-10-09): no topo da atividade, só para o professor, **aberto junto com a
+  página**, por aluno e por questão, atualizado a cada 5 s, com **📈 Gráficos**, **🧮 Cálculo
+  Nota** e **🎯 Quantidade Mínima de Questões**. Um só módulo para todas as atividades com banco
+  (ver a regra "PROGRESSO DA TURMA GLOBAL" abaixo e `docs/regras/atividades.md`).
 - ✅ **1 atividade objetiva de 50 questões por aula** (2026-10-03), controlada em
   `<MATERIA>/ATIVIDADES/STATUS-ATIVIDADES.md` (ver a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES").
 - ⛔ **Push depende do ambiente** (2026-10-07): **local** (máquina do usuário) = **nunca fazer
@@ -1022,6 +1023,34 @@ atividades de todas as matérias** (todo `ATIVIDADES/index.html`).
 - ⏳ **Demais matérias: pendentes** (tarefa #16 do `TASKS.md`) — ligar uma por vez, só quando o
   usuário pedir, acrescentando a pasta na lista. Nelas continua valendo o comportamento da seção
   "BOTÃO ON/OFF AO LADO DE CADA ATIVIDADE" (card escurecido quando todas as atividades estão OFF).
+
+## 📊 REGRA GLOBAL — PROGRESSO DA TURMA EM TODAS AS ATIVIDADES (2026-10-09)
+
+Registrada em 2026-10-09 a pedido do usuário ("gerador de progresso global, semelhante ao da turma
+de ADAG, para todas as matérias"). Plano: [docs/progresso-global-atividades.md](docs/progresso-global-atividades.md).
+Detalhe em [docs/regras/atividades.md](docs/regras/atividades.md).
+
+- ✅ **Toda atividade que grava no banco** (objetiva e discursiva), de todas as matérias e
+  cursos, mostra ao **professor** o painel **"📊 Progresso da turma" logo ao abrir a página**,
+  igual ao da Prova Prática ADAG (id 82): uma linha por aluno, uma célula por questão, barra,
+  situação ("✅ Entregue"), 🎯 mínimo por aluno, nota parcial e nota final, ordenação, resumo da
+  turma, **📈 Gráficos** e **🧮 Cálculo Nota**, atualizado a cada 5 s. O aluno não vê o painel.
+- ✅ **Um só módulo global** (tudo vem dele): `assets/js/progresso-turma-global.js` (tela) +
+  `assets/js/progresso-turma-fontes.js` (dados) + `assets/css/progresso-turma-global.css`. Ligado
+  pelos motores das páginas — `assets/js/respostas-atividade.js` (objetivas) e
+  `assets/js/avaliacao-discursiva.js` (discursivas) —, então **toda página com banco, já
+  existente ou nova, ganha o painel sem regerar** e sem campo na fonte `.md`.
+- ✅ **Objetiva:** colunas "Nota parcial (acertos)" e "Nota final", com os acertos calculados no
+  banco (`resumo_tentativas_atividade`; **o gabarito nunca sai do banco**). **Discursiva:** "Nota
+  parcial IA" e "Nota IA (a confirmar)", como antes.
+- ✅ **Mínimo de questões também na objetiva:** entrega com o mínimo de questões respondidas e
+  nota = acertos ÷ mínimo × 10, **máximo 10** (página, relatório do professor e banco). No banco,
+  vale depois de aplicar `database/2026-10-09-minimo-questoes-objetivas.sql`; antes disso a
+  objetiva continua exigindo todas as questões.
+- ✅ O painel lê o banco de 1000 em 1000 linhas (turmas grandes não ficam cortadas) e só lê; o
+  RLS limita aos alunos das turmas do professor.
+- ⛔ Não criar painel de progresso por matéria nem por página, e não voltar ao antigo
+  `progresso-turma-discursiva.js` (removido em 2026-10-09).
 
 ## 🆔 REGRA — ID NA FRENTE DE CADA ATIVIDADE NOS ÍNDICES (2026-10-09)
 

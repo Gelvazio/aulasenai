@@ -85,14 +85,14 @@ as matérias, o mesmo painel de **Progresso da turma** da Prova Prática ADAG (i
 | Passo | Ação | Caminho exato | Verificação | Status |
 |---|---|---|---|---|
 | 1 | Conferir o banco real (só leitura) | conector do Supabase | consultas de leitura | ✅ 2026-10-09 10:33 |
-| 2 | Módulo global (fontes + tela) substituindo o das discursivas | `assets/js/progresso-turma-fontes.js`, `assets/js/progresso-turma-global.js`, `assets/css/progresso-turma-global.css` | `node --check`; tamanhos | ⬜ |
-| 3 | Ligar nos motores das páginas | `assets/js/avaliacao-discursiva.js`, `assets/js/respostas-atividade.js` | `node --check`; `grep` | ⬜ |
-| 4 | Gráficos, Cálculo Nota e mínimo genéricos | `assets/js/graficos-progresso-turma.js`, `calculo-nota-progresso.js`, `minimo-questoes-discursiva.js` | `node --check` | ⬜ |
-| 5 | SQL do mínimo na objetiva | `database/2026-10-09-minimo-questoes-objetivas.sql` | leitura; idempotente | ⬜ |
-| 6 | Página objetiva: entrega com o mínimo e nota sobre o mínimo | `assets/js/respostas-atividade.js`, `assets/js/respostas-atividade-banco.js` | `node --check` | ⬜ |
-| 7 | Relatório do professor: nota sobre o mínimo | `assets/js/respostas-atividade-professor.js` | `node --check` | ⬜ |
-| 8 | Regras e visualizador | `CLAUDE.md`, `docs/regras/atividades.md`, `docs/HISTORICO-REGRAS.md` | leitura | ⬜ |
-| 9 | Commit, push e pull request | git | `git diff --cached --name-only` | ⬜ |
+| 2 | Módulo global (fontes + tela) substituindo o das discursivas | `assets/js/progresso-turma-fontes.js`, `assets/js/progresso-turma-global.js`, `assets/css/progresso-turma-global.css` | `node --check`; tamanhos | ✅ 2026-10-09 10:45 |
+| 3 | Ligar nos motores das páginas | `assets/js/avaliacao-discursiva.js`, `assets/js/respostas-atividade.js` | `node --check`; `grep` | ✅ 2026-10-09 10:45 |
+| 4 | Gráficos, Cálculo Nota e mínimo genéricos | `assets/js/graficos-progresso-turma.js`, `calculo-nota-progresso.js`, `minimo-questoes-discursiva.js` | `node --check` | ✅ 2026-10-09 10:45 |
+| 5 | SQL do mínimo na objetiva | `database/2026-10-09-minimo-questoes-objetivas.sql` | leitura; idempotente | ✅ 2026-10-09 10:49 |
+| 6 | Página objetiva: entrega com o mínimo e nota sobre o mínimo | `assets/js/respostas-atividade.js`, `assets/js/respostas-atividade-banco.js` | `node --check` | ✅ 2026-10-09 10:52 |
+| 7 | Relatório do professor: nota sobre o mínimo | `assets/js/respostas-atividade-professor.js` | `node --check` | ✅ 2026-10-09 10:53 |
+| 8 | Regras e visualizador | `CLAUDE.md`, `docs/regras/atividades.md`, `docs/HISTORICO-REGRAS.md` | leitura | ✅ 2026-10-09 10:56 |
+| 9 | Commit, push e pull request | git | `git diff --cached --name-only` | 🔄 |
 | 10 | Aplicar o SQL (só com pedido do usuário) | conector do Supabase | consultas de leitura | ⬜ |
 | 11 | Aceite do usuário (Testes de Front-End, aula 01) | `ATIVIDADES-AULA-01-50-QUESTOES.html` | usuário | ⬜ |
 
