@@ -25,3 +25,6 @@ LISTA-ALUNOS/
 
 # Slides das aulas de Testes de Front-End: versionados e publicados (pedido do usuário em 2026-10-09)
 !MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/AULAS/*.pdf
+
+# Seeds de atividades (têm o gabarito): gerados na máquina, nunca publicados (regra "O QUE NUNCA É PUBLICADO")
+database/*-seed-atividades.sql
