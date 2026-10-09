@@ -1472,4 +1472,5 @@ Plano: [docs/validacao-sessao-todas-paginas.md](docs/validacao-sessao-todas-pagi
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 112.1 | "mais de 15 anos de experiência" e "professor do SENAI/SC" sem o marca-texto amarelo: mesmo estilo dos outros destaques (roxo, negrito) — `assets/css/apresentacao-professor.css` (`mark`) | ✅ Concluído | 2026-10-09 00:49 | Leitura do CSS (sem navegador) |
-| 112.2 | Aceite do usuário (ver a página inicial sem login) | ⬜ Pendente | — | — |
+| 112.3 | Responsividade da apresentação do professor: tablet (até 900 px) com cartões em 2 colunas; celular (até 600 px) com 1 coluna, espaços, fontes e avatar menores, perfil que quebra linha, idiomas mais estreitos e textos longos quebrando — `assets/css/apresentacao-professor.css` | ✅ Concluído | 2026-10-09 00:53 | Leitura do CSS (sem navegador); card de entrar e viewport já tinham ajuste para celular |
+| 112.2 | Aceite do usuário (ver a página inicial sem login, no computador e no celular) | ⬜ Pendente | — | — |
