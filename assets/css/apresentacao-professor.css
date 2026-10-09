@@ -1,13 +1,22 @@
 /* Página inicial (index.html): apresentação do professor para quem não está logado.
-   Compacta para caber numa tela sem barra de rolagem. */
+   Currículo com ícones, cores por cartão, linha do tempo, barras de idioma e etiquetas. */
 :root {
     --apresentacao-cor-texto: #2d3748;
     --apresentacao-cor-suave: #4a5568;
     --apresentacao-cor-destaque: #667eea;
+    --apresentacao-cor-roxo: #764ba2;
     --apresentacao-cor-ouro: #ffd700;
+    --apresentacao-cor-azul: #2b6cb0;
+    --apresentacao-cor-verde: #2f855a;
+    --apresentacao-cor-laranja: #dd6b20;
     --apresentacao-fundo-cartao: #f9fafb;
     --apresentacao-fundo-etiqueta: #eef0fd;
     --apresentacao-fundo-acesso: #fffbea;
+    --apresentacao-fundo-azul: #ebf4ff;
+    --apresentacao-fundo-verde: #f0fff4;
+    --apresentacao-fundo-laranja: #fffaf0;
+    --apresentacao-trilha-nivel: #e2e8f0;
+    --apresentacao-sombra: rgba(45, 55, 72, 0.12);
     --apresentacao-espaco: 12px;
 }
 
@@ -35,10 +44,18 @@
     display: none;
 }
 
+/* ── Topo: avatar, nome, destaques e resumo ── */
 .apresentacao-professor__topo {
     display: flex;
     align-items: center;
     gap: 20px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: linear-gradient(
+        135deg,
+        var(--apresentacao-fundo-etiqueta),
+        var(--apresentacao-fundo-acesso)
+    );
 }
 
 .apresentacao-professor__perfil {
@@ -53,13 +70,18 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
+    width: 72px;
+    height: 72px;
     border: 3px solid var(--apresentacao-cor-ouro);
-    background: var(--apresentacao-cor-destaque);
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        var(--apresentacao-cor-destaque),
+        var(--apresentacao-cor-roxo)
+    );
+    box-shadow: 0 0 0 4px white;
     color: white;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
 }
 
@@ -80,52 +102,243 @@
     color: var(--apresentacao-cor-suave);
 }
 
-.apresentacao-professor__boas-vindas {
-    font-size: 13px;
-    line-height: 1.5;
+.curriculo__destaques {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 6px;
+    list-style: none;
 }
 
+.curriculo__destaques li {
+    padding: 2px 9px;
+    border: 1px solid var(--apresentacao-cor-ouro);
+    border-radius: 12px;
+    background: white;
+    font-size: 11.5px;
+    font-weight: 700;
+}
+
+.apresentacao-professor__boas-vindas {
+    position: relative;
+    padding-left: 30px;
+    border-left: 3px solid var(--apresentacao-cor-ouro);
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.apresentacao-professor__boas-vindas strong {
+    color: var(--apresentacao-cor-roxo);
+}
+
+.curriculo__aspas {
+    position: absolute;
+    top: -6px;
+    left: 8px;
+    font-size: 26px;
+    color: var(--apresentacao-cor-ouro);
+}
+
+/* ── Cartões: cada um com a sua cor ── */
 .apresentacao-professor__grade {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--apresentacao-espaco);
 }
 
-.apresentacao-professor__cartao {
+.curriculo__cartao {
+    --cor-cartao: var(--apresentacao-cor-destaque);
+    --fundo-cartao: var(--apresentacao-fundo-cartao);
     display: flex;
     flex-direction: column;
     gap: 6px;
     padding: 12px 14px;
-    border-left: 5px solid var(--apresentacao-cor-destaque);
-    border-radius: 8px;
-    background: var(--apresentacao-fundo-cartao);
+    border-top: 4px solid var(--cor-cartao);
+    border-radius: 10px;
+    background: var(--fundo-cartao);
+    box-shadow: 0 2px 8px var(--apresentacao-sombra);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.apresentacao-professor__cartao h3 {
-    font-size: 14px;
+.curriculo__cartao:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px var(--apresentacao-sombra);
 }
 
-.apresentacao-professor__cartao ul {
-    margin-left: 16px;
-    font-size: 12.5px;
-    line-height: 1.4;
+.curriculo__cartao--azul {
+    --cor-cartao: var(--apresentacao-cor-azul);
+    --fundo-cartao: var(--apresentacao-fundo-azul);
 }
 
-.apresentacao-professor__cartao .apresentacao-professor__etiquetas {
+.curriculo__cartao--verde {
+    --cor-cartao: var(--apresentacao-cor-verde);
+    --fundo-cartao: var(--apresentacao-fundo-verde);
+}
+
+.curriculo__cartao--laranja {
+    --cor-cartao: var(--apresentacao-cor-laranja);
+    --fundo-cartao: var(--apresentacao-fundo-laranja);
+}
+
+.curriculo__cartao h3 {
     display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-left: 0;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--cor-cartao);
+}
+
+.curriculo__selo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--cor-cartao);
+    font-size: 15px;
+}
+
+.curriculo__cartao ul,
+.curriculo__cartao ol {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12.5px;
+    line-height: 1.35;
     list-style: none;
 }
 
-.apresentacao-professor__etiquetas li {
-    padding: 2px 9px;
-    border-radius: 12px;
-    background: var(--apresentacao-fundo-etiqueta);
-    font-size: 12px;
+/* ── Experiência em linha do tempo e formação com marcadores ── */
+.curriculo__linha-tempo li,
+.curriculo__marcados li {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
 }
 
+.curriculo__linha-tempo li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 26px;
+    bottom: -6px;
+    left: 12px;
+    border-left: 2px dashed var(--cor-cartao);
+}
+
+.curriculo__item-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border: 2px solid var(--cor-cartao);
+    border-radius: 50%;
+    background: white;
+    font-size: 13px;
+}
+
+.curriculo__linha-tempo strong,
+.curriculo__marcados strong {
+    display: block;
+}
+
+.curriculo__instituicao {
+    font-weight: 700;
+    color: var(--cor-cartao);
+}
+
+.curriculo__instituicao::after {
+    content: " · ";
+    color: var(--apresentacao-cor-suave);
+}
+
+.curriculo__periodo {
+    font-size: 12px;
+    color: var(--apresentacao-cor-suave);
+}
+
+.curriculo__atual {
+    margin-left: 4px;
+    padding: 0 6px;
+    border-radius: 8px;
+    background: var(--apresentacao-cor-verde);
+    color: white;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+/* ── Idiomas com barra de nível ── */
+.curriculo__idiomas li {
+    display: grid;
+    grid-template-columns: 96px 1fr auto;
+    align-items: center;
+    gap: 8px;
+}
+
+.curriculo__idiomas em {
+    font-size: 11.5px;
+    font-style: normal;
+    color: var(--apresentacao-cor-suave);
+}
+
+.curriculo__nivel {
+    height: 8px;
+    border-radius: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--cor-cartao) var(--nivel),
+        var(--apresentacao-trilha-nivel) var(--nivel)
+    );
+}
+
+.curriculo__nivel--nativo {
+    --nivel: 100%;
+}
+
+.curriculo__nivel--profissional {
+    --nivel: 75%;
+}
+
+/* ── Competências em grupos de etiquetas coloridas ── */
+.curriculo__grupo {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--apresentacao-cor-suave);
+}
+
+.curriculo__cartao .curriculo__etiquetas {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.curriculo__etiquetas li {
+    padding: 2px 9px;
+    border: 1px solid var(--cor-etiqueta);
+    border-radius: 12px;
+    background: white;
+    color: var(--cor-etiqueta);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.curriculo__etiquetas--azul {
+    --cor-etiqueta: var(--apresentacao-cor-azul);
+}
+
+.curriculo__etiquetas--verde {
+    --cor-etiqueta: var(--apresentacao-cor-verde);
+}
+
+.curriculo__etiquetas--laranja {
+    --cor-etiqueta: var(--apresentacao-cor-laranja);
+}
+
+/* ── Contato e acesso ── */
 .apresentacao-professor__acesso {
     display: flex;
     flex-wrap: wrap;
@@ -149,9 +362,15 @@
 }
 
 /* Telas largas e altas: a apresentação cabe inteira, então a página não rola. */
-@media (min-width: 901px) and (min-height: 680px) {
+@media (min-width: 901px) and (min-height: 780px) {
     html:has(.apresentacao-professor:not([hidden])) {
         overflow: hidden;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .curriculo__cartao {
+        transition: none;
     }
 }
 
