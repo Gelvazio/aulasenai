@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 12 — DDL: Tabelas e Campos (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="12" data-tema="DDL: Tabelas e Campos" data-total="50"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🏗️ Aula 12: DDL: Tabelas e Campos</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-12-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C7 —</strong> Aplicar linguagem de definição de dados</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">O Que É SQL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é SQL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um sistema operacional.</li>
+                        <li><span class="letra">B)</span>A linguagem padrão usada para definir e manipular dados em bancos relacionais.</li>
+                        <li><span class="letra">C)</span>Um editor de planilhas.</li>
+                        <li><span class="letra">D)</span>Um banco de dados não relacional.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">O Que É DDL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz a DDL (linguagem de definição de dados)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Consulta os dados das tabelas.</li>
+                        <li><span class="letra">B)</span>Apaga linhas de clientes.</li>
+                        <li><span class="letra">C)</span>Cria e altera a estrutura do banco, como tabelas e colunas.</li>
+                        <li><span class="letra">D)</span>Faz backup do servidor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Comandos DDL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais são comandos da DDL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>BEGIN e COMMIT.</li>
+                        <li><span class="letra">B)</span>GRANT e REVOKE apenas.</li>
+                        <li><span class="letra">C)</span>CREATE, ALTER e DROP.</li>
+                        <li><span class="letra">D)</span>SELECT, INSERT e UPDATE.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Comandos DML</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais são comandos da DML?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>INSERT, UPDATE, DELETE e SELECT.</li>
+                        <li><span class="letra">B)</span>SHOW e SET.</li>
+                        <li><span class="letra">C)</span>CREATE, ALTER e DROP.</li>
+                        <li><span class="letra">D)</span>\l e \q.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Tipo para Inteiros</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual tipo do PostgreSQL guarda números inteiros, como a quantidade em estoque?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>integer.</li>
+                        <li><span class="letra">B)</span>varchar.</li>
+                        <li><span class="letra">C)</span>boolean.</li>
+                        <li><span class="letra">D)</span>date.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Tipo para Dinheiro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual tipo é indicado para o valor da mensalidade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>integer.</li>
+                        <li><span class="letra">B)</span>numeric(10,2).</li>
+                        <li><span class="letra">C)</span>text.</li>
+                        <li><span class="letra">D)</span>boolean.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">numeric(10,2)</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa numeric(10,2)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Texto com 10 letras e 2 espaços.</li>
+                        <li><span class="letra">B)</span>Número decimal com até 10 dígitos, sendo 2 depois da vírgula.</li>
+                        <li><span class="letra">C)</span>Data com 10 dias e 2 meses.</li>
+                        <li><span class="letra">D)</span>Inteiro entre 10 e 2.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">varchar(n)</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é varchar(100)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Data com 100 dias.</li>
+                        <li><span class="letra">B)</span>Verdadeiro ou falso repetido 100 vezes.</li>
+                        <li><span class="letra">C)</span>Texto com limite de 100 caracteres.</li>
+                        <li><span class="letra">D)</span>Número com 100 casas decimais.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">text</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando usar o tipo text?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para verdadeiro ou falso.</li>
+                        <li><span class="letra">B)</span>Para datas.</li>
+                        <li><span class="letra">C)</span>Para guardar valores em dinheiro.</li>
+                        <li><span class="letra">D)</span>Para textos sem limite definido, como observações.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">char(2)</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual atributo combina com o tipo char(2)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A sigla do estado (UF), sempre com 2 letras.</li>
+                        <li><span class="letra">B)</span>O nome completo do aluno.</li>
+                        <li><span class="letra">C)</span>A data de nascimento.</li>
+                        <li><span class="letra">D)</span>O valor da mensalidade.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">boolean</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual coluna combina com o tipo boolean?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ativo, que indica verdadeiro ou falso.</li>
+                        <li><span class="letra">B)</span>valor_mensal.</li>
+                        <li><span class="letra">C)</span>data_nascimento.</li>
+                        <li><span class="letra">D)</span>nome.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">date</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual tipo guarda a data de nascimento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>boolean.</li>
+                        <li><span class="letra">B)</span>numeric(10,2).</li>
+                        <li><span class="letra">C)</span>integer.</li>
+                        <li><span class="letra">D)</span>date.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">timestamptz</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual tipo guarda a data e a hora de criação de um registro com fuso horário?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>timestamptz.</li>
+                        <li><span class="letra">B)</span>char(2).</li>
+                        <li><span class="letra">C)</span>boolean.</li>
+                        <li><span class="letra">D)</span>integer.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">CPF no CREATE TABLE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Segundo o dicionário de dados da UC, qual tipo é adequado para o CPF?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>varchar(11), só com dígitos.</li>
+                        <li><span class="letra">B)</span>boolean.</li>
+                        <li><span class="letra">C)</span>numeric(11,2).</li>
+                        <li><span class="letra">D)</span>integer.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">CREATE TABLE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz o comando CREATE TABLE curso (...);?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cria a tabela curso com as colunas definidas entre parênteses.</li>
+                        <li><span class="letra">B)</span>Insere um curso novo na tabela.</li>
+                        <li><span class="letra">C)</span>Apaga a tabela curso.</li>
+                        <li><span class="letra">D)</span>Consulta os cursos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Identificador Automático</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz GENERATED ALWAYS AS IDENTITY numa coluna id?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Transforma o id em texto.</li>
+                        <li><span class="letra">B)</span>O banco gera automaticamente o número do identificador, como 1, 2, 3.</li>
+                        <li><span class="letra">C)</span>Apaga o id depois de inserir.</li>
+                        <li><span class="letra">D)</span>Obriga o usuário a digitar o id.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">NOT NULL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa NOT NULL numa coluna?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que o campo é obrigatório e não pode ficar vazio.</li>
+                        <li><span class="letra">B)</span>Que o campo é texto.</li>
+                        <li><span class="letra">C)</span>Que o campo é opcional.</li>
+                        <li><span class="letra">D)</span>Que o campo só aceita zero.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">DEFAULT</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz DEFAULT true na coluna ativo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Transforma a coluna em chave primária.</li>
+                        <li><span class="letra">B)</span>Impede que a coluna receba true.</li>
+                        <li><span class="letra">C)</span>Usa true quando nenhum valor for informado na inserção.</li>
+                        <li><span class="letra">D)</span>Apaga a coluna.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">DEFAULT now()</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz criado_em timestamptz DEFAULT now()?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Grava automaticamente a data e a hora do momento da inserção.</li>
+                        <li><span class="letra">B)</span>Grava o nome do usuário.</li>
+                        <li><span class="letra">C)</span>Grava sempre a mesma data fixa.</li>
+                        <li><span class="letra">D)</span>Impede inserções.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Comando \dt</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No psql, o que faz o comando \dt?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mostra a versão do servidor.</li>
+                        <li><span class="letra">B)</span>Apaga as tabelas.</li>
+                        <li><span class="letra">C)</span>Sai do psql.</li>
+                        <li><span class="letra">D)</span>Lista as tabelas do banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Comando \d aluno</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No psql, o que mostra \d aluno?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Todos os dados dos alunos.</li>
+                        <li><span class="letra">B)</span>As colunas, os tipos e as restrições da tabela aluno.</li>
+                        <li><span class="letra">C)</span>O backup da tabela.</li>
+                        <li><span class="letra">D)</span>A senha do usuário aluno.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">ADD COLUMN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando acrescenta a coluna email à tabela aluno?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>UPDATE aluno ADD email;</li>
+                        <li><span class="letra">B)</span>ALTER TABLE aluno ADD COLUMN email varchar(120);</li>
+                        <li><span class="letra">C)</span>INSERT INTO aluno COLUMN email;</li>
+                        <li><span class="letra">D)</span>CREATE COLUMN email IN aluno;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">RENAME COLUMN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando renomeia a coluna telefone para celular?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>UPDATE aluno SET telefone = celular;</li>
+                        <li><span class="letra">B)</span>RENAME aluno.telefone celular;</li>
+                        <li><span class="letra">C)</span>ALTER TABLE aluno RENAME COLUMN telefone TO celular;</li>
+                        <li><span class="letra">D)</span>DROP COLUMN telefone celular;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">ALTER TYPE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando muda o tipo da coluna email para varchar(150)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>DROP email varchar(150);</li>
+                        <li><span class="letra">B)</span>ALTER TABLE aluno ALTER COLUMN email TYPE varchar(150);</li>
+                        <li><span class="letra">C)</span>CREATE TYPE email varchar(150);</li>
+                        <li><span class="letra">D)</span>UPDATE aluno SET email TYPE varchar(150);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">SET NOT NULL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando torna a coluna email obrigatória?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ALTER TABLE aluno DROP NOT NULL;</li>
+                        <li><span class="letra">B)</span>INSERT NOT NULL INTO aluno;</li>
+                        <li><span class="letra">C)</span>ALTER TABLE aluno ALTER COLUMN email SET NOT NULL;</li>
+                        <li><span class="letra">D)</span>UPDATE aluno SET email NOT NULL;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Falha do SET NOT NULL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o comando SET NOT NULL pode falhar numa tabela que já tem dados?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o banco está em UTF8.</li>
+                        <li><span class="letra">B)</span>Porque a tabela tem chave primária.</li>
+                        <li><span class="letra">C)</span>Porque o nome da coluna é curto.</li>
+                        <li><span class="letra">D)</span>Porque já existem linhas com o campo vazio.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">DROP COLUMN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando apaga a coluna data_cadastro da tabela aluno?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ALTER TABLE aluno DROP COLUMN data_cadastro;</li>
+                        <li><span class="letra">B)</span>DELETE data_cadastro FROM aluno;</li>
+                        <li><span class="letra">C)</span>DROP TABLE data_cadastro;</li>
+                        <li><span class="letra">D)</span>UPDATE aluno DROP data_cadastro;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">RENAME TO</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando renomeia a tabela aluno para estudante?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ALTER TABLE aluno RENAME TO estudante;</li>
+                        <li><span class="letra">B)</span>CREATE TABLE estudante FROM aluno;</li>
+                        <li><span class="letra">C)</span>RENAME DATABASE aluno estudante;</li>
+                        <li><span class="letra">D)</span>UPDATE aluno SET nome = estudante;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">DROP TABLE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz DROP TABLE tabela_teste;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Esvazia uma coluna.</li>
+                        <li><span class="letra">B)</span>Apaga só os dados, mantendo a tabela.</li>
+                        <li><span class="letra">C)</span>Apaga a tabela e todos os seus dados.</li>
+                        <li><span class="letra">D)</span>Faz backup da tabela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">IF EXISTS</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve IF EXISTS em DROP TABLE IF EXISTS tabela_teste;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga todas as tabelas do banco.</li>
+                        <li><span class="letra">B)</span>Cria a tabela se ela não existir.</li>
+                        <li><span class="letra">C)</span>Evita erro quando a tabela não existe.</li>
+                        <li><span class="letra">D)</span>Faz backup antes de apagar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Cuidado com DROP</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual cuidado tomar antes de um DROP TABLE no banco de produção?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nenhum, o DROP pode ser desfeito sempre.</li>
+                        <li><span class="letra">B)</span>Trocar a senha do postgres.</li>
+                        <li><span class="letra">C)</span>Desligar o servidor.</li>
+                        <li><span class="letra">D)</span>Fazer backup e confirmar que a tabela realmente deve ser apagada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Erro Already Exists</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O psql mostra &quot;relation curso already exists&quot; ao rodar o script. O que isso significa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que a senha está errada.</li>
+                        <li><span class="letra">B)</span>Que a tabela curso já existe no banco.</li>
+                        <li><span class="letra">C)</span>Que o servidor está parado.</li>
+                        <li><span class="letra">D)</span>Que a tabela curso foi apagada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Script DDL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um script DDL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um arquivo de configuração do servidor.</li>
+                        <li><span class="letra">B)</span>Um backup automático.</li>
+                        <li><span class="letra">C)</span>Um arquivo .sql com os comandos de criação da estrutura, em ordem e com comentários.</li>
+                        <li><span class="letra">D)</span>Uma planilha de dados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Executar Script</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando executa o arquivo 01-ddl-escola.sql no banco escola_db?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>psql --apagar 01-ddl-escola.sql</li>
+                        <li><span class="letra">B)</span>SELECT * FROM 01-ddl-escola.sql;</li>
+                        <li><span class="letra">C)</span>psql -U postgres -d escola_db -f 01-ddl-escola.sql</li>
+                        <li><span class="letra">D)</span>systemctl start 01-ddl-escola.sql</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Versionar o Script</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que versionar o script DDL no Git?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o PostgreSQL exige o Git.</li>
+                        <li><span class="letra">B)</span>Para guardar o histórico das mudanças e permitir recriar o banco igual em qualquer máquina.</li>
+                        <li><span class="letra">C)</span>Para guardar as senhas.</li>
+                        <li><span class="letra">D)</span>Para esconder o script da equipe.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Dinheiro como Float</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que não usar tipos de ponto flutuante para valores em dinheiro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o float ocupa zero bytes.</li>
+                        <li><span class="letra">B)</span>Porque podem gerar erros de arredondamento; o numeric é exato.</li>
+                        <li><span class="letra">C)</span>Porque o float é texto.</li>
+                        <li><span class="letra">D)</span>Porque o float não aceita números.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">CPF como Integer</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o problema de guardar o CPF como integer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O CPF fica com letras.</li>
+                        <li><span class="letra">B)</span>Os zeros à esquerda se perdem, e CPF não é usado em contas.</li>
+                        <li><span class="letra">C)</span>O integer não aceita números.</li>
+                        <li><span class="letra">D)</span>Nenhum problema.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Ordem no Script</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num script, por que criar a tabela curso antes da tabela turma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A ordem nunca importa.</li>
+                        <li><span class="letra">B)</span>Porque a ordem alfabética é obrigatória.</li>
+                        <li><span class="letra">C)</span>Porque curso tem menos colunas.</li>
+                        <li><span class="letra">D)</span>Porque turma vai referenciar curso, e a tabela referenciada precisa existir antes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Dicionário e Tipo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">De onde vêm os tipos usados no CREATE TABLE da escola?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Do instalador do PostgreSQL.</li>
+                        <li><span class="letra">B)</span>Do arquivo pg_hba.conf.</li>
+                        <li><span class="letra">C)</span>Do dicionário de dados final, montado na aula 11.</li>
+                        <li><span class="letra">D)</span>Da escolha aleatória do programador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Coluna Opcional</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na tabela aluno do exemplo, a coluna cpf foi criada sem NOT NULL. Por quê?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque CPF nunca é usado.</li>
+                        <li><span class="letra">B)</span>Porque NOT NULL só vale para datas.</li>
+                        <li><span class="letra">C)</span>Por esquecimento proposital.</li>
+                        <li><span class="letra">D)</span>Porque algumas crianças podem não ter CPF, então o campo é opcional.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Tabelas da Escola</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais tabelas fazem parte do script DDL da escola?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>clientes, produtos e pedidos.</li>
+                        <li><span class="letra">B)</span>curso, turma, aluno, responsavel, professor, matricula, parcela e aula_turma.</li>
+                        <li><span class="letra">C)</span>apenas aluno.</li>
+                        <li><span class="letra">D)</span>usuarios e senhas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Tabela no pgAdmin</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No pgAdmin, onde se veem as colunas da tabela aluno?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No menu Ajuda.</li>
+                        <li><span class="letra">B)</span>No Painel de Controle do Windows.</li>
+                        <li><span class="letra">C)</span>Em Servidores, Senhas.</li>
+                        <li><span class="letra">D)</span>Em Schemas, public, Tables, aluno, Columns.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">current_date</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz DEFAULT current_date na coluna data_cadastro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga a data.</li>
+                        <li><span class="letra">B)</span>Preenche com a data de nascimento.</li>
+                        <li><span class="letra">C)</span>Gera um número aleatório.</li>
+                        <li><span class="letra">D)</span>Preenche com a data de hoje quando nenhum valor é informado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Dinâmica: Tradutor</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica &quot;Tradutor do dicionário&quot;, a linha &quot;valor_mensal — decimal, 2 casas, obrigatório&quot; vira:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>valor_mensal numeric(10,2) NOT NULL</li>
+                        <li><span class="letra">B)</span>valor_mensal text DEFAULT true</li>
+                        <li><span class="letra">C)</span>valor_mensal integer</li>
+                        <li><span class="letra">D)</span>valor_mensal boolean NOT NULL</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Dinâmica: Observação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica, a linha &quot;observacao — texto longo, opcional&quot; vira:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>observacao char(2) NOT NULL</li>
+                        <li><span class="letra">B)</span>observacao boolean</li>
+                        <li><span class="letra">C)</span>observacao integer NOT NULL</li>
+                        <li><span class="letra">D)</span>observacao text</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Entrega da SA 2</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é entregue nesta aula, na SA 2?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O DER desenhado à mão.</li>
+                        <li><span class="letra">B)</span>O script 01-ddl-escola.sql com o CREATE TABLE de todas as tabelas, executado, com print do \d de duas tabelas.</li>
+                        <li><span class="letra">C)</span>O pg_hba.conf.</li>
+                        <li><span class="letra">D)</span>O documento de escopo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">SA 2</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o objetivo da SA 2, iniciada nesta aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Levantar as demandas do cliente.</li>
+                        <li><span class="letra">B)</span>Desenhar os slides da UC.</li>
+                        <li><span class="letra">C)</span>Deixar o banco do sistema de matrículas pronto para o back-end no PostgreSQL.</li>
+                        <li><span class="letra">D)</span>Instalar o sistema operacional.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Próxima Aula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que será aprofundado na aula 13?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Instalação do PostgreSQL.</li>
+                        <li><span class="letra">B)</span>Fluxogramas.</li>
+                        <li><span class="letra">C)</span>Levantamento de requisitos.</li>
+                        <li><span class="letra">D)</span>Relações: chaves primárias, chaves estrangeiras e restrições.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Nome Padronizado no SQL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No CREATE TABLE, os nomes de tabelas e colunas devem seguir:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Qualquer nome, sem padrão.</li>
+                        <li><span class="letra">B)</span>Nomes com espaços e acentos.</li>
+                        <li><span class="letra">C)</span>Nomes em maiúsculas com hífen.</li>
+                        <li><span class="letra">D)</span>O padrão da UC: minúsculas, singular, sem acento e com sublinhado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Estrutura e Dados</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual afirmação é correta sobre o ALTER TABLE?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ele altera a estrutura da tabela, não os valores das linhas.</li>
+                        <li><span class="letra">B)</span>Ele apaga o banco inteiro.</li>
+                        <li><span class="letra">C)</span>Ele altera somente os valores das linhas.</li>
+                        <li><span class="letra">D)</span>Ele consulta os dados.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Aula 12: DDL: Tabelas e Campos</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

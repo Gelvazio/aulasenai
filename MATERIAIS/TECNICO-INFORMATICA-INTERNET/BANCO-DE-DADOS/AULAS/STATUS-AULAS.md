@@ -21,7 +21,7 @@
 | 09 | Diagrama entidade-relacionamento | ✅ `CONTEUDO/AULA-09-DIAGRAMA-ENTIDADE-RELACIONAMENTO.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-09-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-09.html` | ⬜ seeds gerados, não aplicados |
 | 10 | Normalização de dados (1FN, 2FN e 3FN) | ✅ `CONTEUDO/AULA-10-NORMALIZACAO-DE-DADOS-1FN-2FN-3FN.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-10-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-10.html` | ⬜ seeds gerados, não aplicados |
 | 11 | Padronização de dados, cronograma e fluxograma | ✅ `CONTEUDO/AULA-11-PADRONIZACAO-DE-DADOS-CRONOGRAMA-E-FLUXOGRAMA.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-11-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-11.html` | ⬜ seeds gerados, não aplicados |
-| 12 | DDL: tabelas e campos | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 12 | DDL: tabelas e campos | ✅ `CONTEUDO/AULA-12-DDL-TABELAS-E-CAMPOS.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-12-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-12.html` | ⬜ seeds gerados, não aplicados |
 | 13 | DDL: relações, chaves e restrições | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 14 | DML: inserção, atualização e exclusão | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 15 | DML: consultas com filtros e ordenação | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |

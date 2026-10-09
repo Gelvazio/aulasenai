@@ -667,4 +667,75 @@ begin
       (v_atividade, 48, 'Corrigir Nome', 'A'),
       (v_atividade, 49, 'Responsável no Cronograma', 'B'),
       (v_atividade, 50, 'Padrão e Back-End', 'D');
+
+  -- Aula 12: DDL: Tabelas e Campos
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'DDL: Tabelas e Campos' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (12, 'DDL: Tabelas e Campos', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('DDL: Tabelas e Campos', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — DDL: Tabelas e Campos (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-12-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'O Que É SQL', 'B'),
+      (v_atividade, 2, 'O Que É DDL', 'C'),
+      (v_atividade, 3, 'Comandos DDL', 'C'),
+      (v_atividade, 4, 'Comandos DML', 'A'),
+      (v_atividade, 5, 'Tipo para Inteiros', 'A'),
+      (v_atividade, 6, 'Tipo para Dinheiro', 'B'),
+      (v_atividade, 7, 'numeric(10,2)', 'B'),
+      (v_atividade, 8, 'varchar(n)', 'C'),
+      (v_atividade, 9, 'text', 'D'),
+      (v_atividade, 10, 'char(2)', 'A'),
+      (v_atividade, 11, 'boolean', 'A'),
+      (v_atividade, 12, 'date', 'D'),
+      (v_atividade, 13, 'timestamptz', 'A'),
+      (v_atividade, 14, 'CPF no CREATE TABLE', 'A'),
+      (v_atividade, 15, 'CREATE TABLE', 'A'),
+      (v_atividade, 16, 'Identificador Automático', 'B'),
+      (v_atividade, 17, 'NOT NULL', 'A'),
+      (v_atividade, 18, 'DEFAULT', 'C'),
+      (v_atividade, 19, 'DEFAULT now()', 'A'),
+      (v_atividade, 20, 'Comando \dt', 'D'),
+      (v_atividade, 21, 'Comando \d aluno', 'B'),
+      (v_atividade, 22, 'ADD COLUMN', 'B'),
+      (v_atividade, 23, 'RENAME COLUMN', 'C'),
+      (v_atividade, 24, 'ALTER TYPE', 'B'),
+      (v_atividade, 25, 'SET NOT NULL', 'C'),
+      (v_atividade, 26, 'Falha do SET NOT NULL', 'D'),
+      (v_atividade, 27, 'DROP COLUMN', 'A'),
+      (v_atividade, 28, 'RENAME TO', 'A'),
+      (v_atividade, 29, 'DROP TABLE', 'C'),
+      (v_atividade, 30, 'IF EXISTS', 'C'),
+      (v_atividade, 31, 'Cuidado com DROP', 'D'),
+      (v_atividade, 32, 'Erro Already Exists', 'B'),
+      (v_atividade, 33, 'Script DDL', 'C'),
+      (v_atividade, 34, 'Executar Script', 'C'),
+      (v_atividade, 35, 'Versionar o Script', 'B'),
+      (v_atividade, 36, 'Dinheiro como Float', 'B'),
+      (v_atividade, 37, 'CPF como Integer', 'B'),
+      (v_atividade, 38, 'Ordem no Script', 'D'),
+      (v_atividade, 39, 'Dicionário e Tipo', 'C'),
+      (v_atividade, 40, 'Coluna Opcional', 'D'),
+      (v_atividade, 41, 'Tabelas da Escola', 'B'),
+      (v_atividade, 42, 'Tabela no pgAdmin', 'D'),
+      (v_atividade, 43, 'current_date', 'D'),
+      (v_atividade, 44, 'Dinâmica: Tradutor', 'A'),
+      (v_atividade, 45, 'Dinâmica: Observação', 'D'),
+      (v_atividade, 46, 'Entrega da SA 2', 'B'),
+      (v_atividade, 47, 'SA 2', 'C'),
+      (v_atividade, 48, 'Próxima Aula', 'D'),
+      (v_atividade, 49, 'Nome Padronizado no SQL', 'D'),
+      (v_atividade, 50, 'Estrutura e Dados', 'A');
 end $$;
