@@ -1553,3 +1553,16 @@ Plano: [docs/trigger-bloqueio-aula-bloqueia-atividades.md](docs/trigger-bloqueio
 | 118.10 | Ajuste pedido em 2026-10-09 13:15: ações (Editar, Turmas, Desativar/Ativar) na última coluna, à direita; página de consulta mais larga (1400px) e busca mais larga (420px) — `cursos.html`, `assets/js/cursos-pagina.js`, `assets/css/cursos.css` | ✅ Concluído | 2026-10-09 13:17 | `node --check`; leitura (sem navegador) |
 | 118.11 | Ajuste pedido em 2026-10-09 13:18: botões de ação lado a lado (nunca um embaixo do outro) — `.cu-grupo-acoes` (inline-flex, sem quebra) em `assets/css/cursos.css` + `assets/js/cursos-pagina.js` | ✅ Concluído | 2026-10-09 13:20 | `node --check`; leitura (sem navegador) |
 | 118.9 | Aceite do usuário: testar no navegador (menu CURSO → 🏫 Turmas → vincular a 124519 ao curso 4) | ⬜ Pendente | — | Usuário |
+
+## Etapa 119 — Unidade em um só lugar: tabela `unidade` ligada a `curso` e `turma` (tarefa grande, pedido em 2026-10-09 13:18; aprovada em 2026-10-09 13:23; plano [docs/tabela-unidade-curso-turma.md](docs/tabela-unidade-curso-turma.md))
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 119.0 | Plano criado; decisões (CEPLAS = AI CEPLAS; SN.RDS-LAB = SENAI Rio do Sul; demais uma cada; linha de teste reaproveitada) e aprovação do usuário | ✅ Concluído | 2026-10-09 13:23 | Respostas no chat |
+| 119.1 | SQL `database/2026-10-09-unidade-curso-turma.sql` (backup, `descricao`→`nome`, `unidade_id` em curso e turma, migração) | ✅ Concluído | 2026-10-09 13:24 | Leitura; nenhuma função/view usa a coluna antiga |
+| 119.2 | SQL aplicado pelo conector do Supabase | ✅ Concluído | 2026-10-09 13:24 | 5 unidades; 7/7 turmas e cursos 1–4 com `unidade_id`; backups 1/7/7 |
+| 119.3 | Tela de cursos: unidade em lista + modal 🏢 Unidades (`assets/js/unidades-modal.js`); `js/unidade.js` órfão ajustado para `nome` | ✅ Concluído | 2026-10-09 13:27 | `node --check` |
+| 119.4 | `docs/database.md`, relatório HTML, `CLAUDE.md` (versão 2026-10-09 13:27:14) e histórico | ✅ Concluído | 2026-10-09 13:29 | Leitura |
+| 119.5 | Commit | ✅ Concluído | 2026-10-09 13:30 | `git diff --cached --name-only` |
+| 119.6 | Aceite do usuário (testar 🏢 Unidades e a unidade dos cursos 5, 6 e 7) | ⬜ Pendente | — | Usuário |
+| 119.7 | Fase 2: 11 arquivos que leem `turma.local` + criar usuários gravando `unidade_id`; depois apagar os textos antigos | ⬜ Pendente — só com pedido do usuário | — | — |

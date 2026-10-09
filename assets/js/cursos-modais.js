@@ -19,6 +19,7 @@ function fecharModaisCu() {
   modais.forEach((modal) => { modal.hidden = true; });
   estadoModaisCu.cursoEditando = null;
   estadoModaisCu.cursoTurmas = null;
+  limparFormularioUnidadeCu();
   return haviaAberto;
 }
 
@@ -30,20 +31,37 @@ function abrirModalCursoCu(curso) {
   estadoModaisCu.cursoEditando = curso;
   elementoCu("cuTituloCurso").textContent = curso ? "Editar curso" : "Novo curso";
   elementoCu("cuNome").value = curso?.nome_completo || "";
-  elementoCu("cuUnidade").value = curso?.unidade || "";
+  preencherUnidadesCursoCu(curso?.unidade_id ?? null);
   elementoCu("cuDescricao").value = curso?.descricao || "";
   elementoCu("cuModalCurso").hidden = false;
   elementoCu("cuNome").focus();
 }
 
 /**
+ * Preenche a lista de unidades do formulário do curso (tabela unidade).
+ * @param {number|null} unidadeId - Unidade escolhida (null = nenhuma).
+ */
+function preencherUnidadesCursoCu(unidadeId) {
+  const select = elementoCu("cuUnidade");
+  const vazio = criarElementoCu("option", "", "— Sem unidade —");
+  vazio.value = "";
+  select.replaceChildren(vazio, ...estadoCu.unidades.map((unidade) => {
+    const opcao = criarElementoCu("option", "", unidade.nome);
+    opcao.value = String(unidade.id);
+    return opcao;
+  }));
+  select.value = unidadeId === null ? "" : String(unidadeId);
+}
+
+/**
  * Lê os campos do formulário do curso.
- * @returns {{nome_completo: string, unidade: string|null, descricao: string|null}} Dados.
+ * @returns {{nome_completo: string, unidade_id: number|null, descricao: string|null}} Dados.
  */
 function lerFormularioCursoCu() {
+  const unidadeEscolhida = elementoCu("cuUnidade").value;
   return {
     nome_completo: elementoCu("cuNome").value.trim(),
-    unidade: elementoCu("cuUnidade").value.trim() || null,
+    unidade_id: unidadeEscolhida ? Number(unidadeEscolhida) : null,
     descricao: elementoCu("cuDescricao").value.trim() || null,
   };
 }
