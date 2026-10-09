@@ -1551,4 +1551,5 @@ Plano: [docs/trigger-bloqueio-aula-bloqueia-atividades.md](docs/trigger-bloqueio
 | 118.7 | `docs/database.md`, relatório HTML, `CLAUDE.md` (versão 2026-10-09 12:59:06) e histórico | ✅ Concluído | 2026-10-09 13:00 | Leitura |
 | 118.8 | Commit | ✅ Concluído | 2026-10-09 13:01 | `git diff --cached --name-only` |
 | 118.10 | Ajuste pedido em 2026-10-09 13:15: ações (Editar, Turmas, Desativar/Ativar) na última coluna, à direita; página de consulta mais larga (1400px) e busca mais larga (420px) — `cursos.html`, `assets/js/cursos-pagina.js`, `assets/css/cursos.css` | ✅ Concluído | 2026-10-09 13:17 | `node --check`; leitura (sem navegador) |
+| 118.11 | Ajuste pedido em 2026-10-09 13:18: botões de ação lado a lado (nunca um embaixo do outro) — `.cu-grupo-acoes` (inline-flex, sem quebra) em `assets/css/cursos.css` + `assets/js/cursos-pagina.js` | ✅ Concluído | 2026-10-09 13:20 | `node --check`; leitura (sem navegador) |
 | 118.9 | Aceite do usuário: testar no navegador (menu CURSO → 🏫 Turmas → vincular a 124519 ao curso 4) | ⬜ Pendente | — | Usuário |

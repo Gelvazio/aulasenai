@@ -119,8 +119,10 @@ function mensagemErroCu(erro) {
  */
 function criarCelulaAcoesCu(curso) {
   const celula = criarElementoCu("td", "cu-celula-acoes");
+  const grupo = criarElementoCu("div", "cu-grupo-acoes");
   const textoSituacao = cursoEstaAtivoCu(curso) ? "⛔ Desativar" : "✅ Ativar";
-  celula.append(
+  celula.append(grupo);
+  grupo.append(
     criarBotaoCu({ texto: "✏️ Editar", classe: "guia-botao tp-botao-pequeno",
       aoClicar: () => abrirModalCursoCu(curso) }),
     criarBotaoCu({ texto: "🏫 Turmas", classe: "guia-botao tp-botao-pequeno",

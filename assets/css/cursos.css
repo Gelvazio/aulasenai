@@ -24,7 +24,14 @@
 
 .cu-celula-acoes { white-space: nowrap; text-align: right; }
 
-.cu-celula-acoes .guia-botao + .guia-botao { margin-left: 6px; }
+/* Botões de ação lado a lado, nunca um embaixo do outro */
+.cu-grupo-acoes {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+}
+
+.cu-grupo-acoes .guia-botao { white-space: nowrap; }
 
 @media (max-width: 760px) {
     .cu-busca { min-width: 0; width: 100%; }
