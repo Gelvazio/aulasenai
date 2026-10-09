@@ -10,7 +10,7 @@
 |---|---|---|---|---|---|
 | 01 | Banco de dados e SGBD: conceitos e usos | 4 | 4 · 4.1 · 1.1 | C4, C9 | [AULA-01](../CONTEUDO/AULA-01-BANCO-DE-DADOS-E-SGBD.md) |
 | 02 | Gerenciadores: características, requisitos e níveis | 4 | 4.1.1–4.1.2 | C4, C6, C9 | [AULA-02](../CONTEUDO/AULA-02-GERENCIADORES-CARACTERISTICAS-REQUISITOS-E-NIVEIS.md) |
-| 03 | Preparação do ambiente: instalação do PostgreSQL | 4 | 4.2.1 | C10, C11 | ⬜ |
+| 03 | Preparação do ambiente: instalação do PostgreSQL | 4 | 4.2.1 | C10, C11 | [AULA-03](../CONTEUDO/AULA-03-PREPARACAO-DO-AMBIENTE-INSTALACAO-DO-POSTGRESQL.md) |
 | 04 | Configuração do SGBD e infraestrutura do sistema | 4 | 4.2.2 | C5, C10, C11 | ⬜ |
 | 05 | Demandas do cliente e escopo do projeto | 4 | 6.1 · 1.1 | C1, S2 | ⬜ |
 | 06 | Entidades fortes, fracas e associativas | 4 | 5.1 | C2 | ⬜ |
