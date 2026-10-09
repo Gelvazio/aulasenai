@@ -738,4 +738,75 @@ begin
       (v_atividade, 48, 'Próxima Aula', 'D'),
       (v_atividade, 49, 'Nome Padronizado no SQL', 'D'),
       (v_atividade, 50, 'Estrutura e Dados', 'A');
+
+  -- Aula 13: DDL: Relações, Chaves e Restrições
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'DDL: Relações, Chaves e Restrições' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (13, 'DDL: Relações, Chaves e Restrições', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('DDL: Relações, Chaves e Restrições', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — DDL: Relações, Chaves e Restrições (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-13-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Chave Primária', 'A'),
+      (v_atividade, 2, 'Chave Primária Composta', 'D'),
+      (v_atividade, 3, 'PK da Parcela', 'B'),
+      (v_atividade, 4, 'Chave Estrangeira', 'D'),
+      (v_atividade, 5, 'REFERENCES', 'B'),
+      (v_atividade, 6, 'Integridade Referencial', 'A'),
+      (v_atividade, 7, 'Erro de Chave Estrangeira', 'D'),
+      (v_atividade, 8, 'Associativa com Duas FKs', 'A'),
+      (v_atividade, 9, 'UNIQUE na Matrícula', 'A'),
+      (v_atividade, 10, 'ON DELETE Padrão', 'C'),
+      (v_atividade, 11, 'RESTRICT', 'C'),
+      (v_atividade, 12, 'CASCADE', 'B'),
+      (v_atividade, 13, 'SET NULL', 'B'),
+      (v_atividade, 14, 'CASCADE na Parcela', 'D'),
+      (v_atividade, 15, 'Curso com Turmas', 'B'),
+      (v_atividade, 16, 'Supervisor que Saiu', 'B'),
+      (v_atividade, 17, 'Risco do CASCADE', 'B'),
+      (v_atividade, 18, 'UNIQUE', 'C'),
+      (v_atividade, 19, 'UNIQUE e Vazio', 'B'),
+      (v_atividade, 20, 'CHECK', 'A'),
+      (v_atividade, 21, 'CHECK do Valor', 'A'),
+      (v_atividade, 22, 'CHECK do Turno', 'D'),
+      (v_atividade, 23, 'Erro de CHECK', 'B'),
+      (v_atividade, 24, 'Erro de UNIQUE', 'C'),
+      (v_atividade, 25, 'Erro de NOT NULL', 'D'),
+      (v_atividade, 26, 'ADD CONSTRAINT UNIQUE', 'D'),
+      (v_atividade, 27, 'ADD FOREIGN KEY', 'A'),
+      (v_atividade, 28, 'DROP CONSTRAINT', 'C'),
+      (v_atividade, 29, 'Nomear Restrições', 'C'),
+      (v_atividade, 30, 'Regra: CPF', 'C'),
+      (v_atividade, 31, 'Regra: Limite de Alunos', 'A'),
+      (v_atividade, 32, 'FK Obrigatória', 'B'),
+      (v_atividade, 33, 'FK Opcional', 'C'),
+      (v_atividade, 34, 'Ordem de Criação', 'A'),
+      (v_atividade, 35, 'Ordem de Exclusão', 'C'),
+      (v_atividade, 36, 'Código Único da Turma', 'B'),
+      (v_atividade, 37, 'Escola: Apagar Curso', 'D'),
+      (v_atividade, 38, 'Escola: Apagar Matrícula', 'D'),
+      (v_atividade, 39, 'Dinâmica: Tentativa Proibida', 'C'),
+      (v_atividade, 40, 'Dinâmica: Tentativa que Passa', 'B'),
+      (v_atividade, 41, 'Entrega da SA 2', 'A'),
+      (v_atividade, 42, 'Restrição no Banco', 'C'),
+      (v_atividade, 43, 'PK e Identidade', 'A'),
+      (v_atividade, 44, 'FK e Índice', 'A'),
+      (v_atividade, 45, 'Chave Estrangeira e DER', 'D'),
+      (v_atividade, 46, 'CHECK com Datas', 'D'),
+      (v_atividade, 47, 'Mensagem Clara', 'A'),
+      (v_atividade, 48, 'Restrição Esquecida', 'C'),
+      (v_atividade, 49, 'Conferir com o DER', 'B'),
+      (v_atividade, 50, 'Próxima Aula', 'D');
 end $$;
