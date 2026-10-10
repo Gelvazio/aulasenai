@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 17 — Procedimentos Armazenados (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="17" data-tema="Procedimentos Armazenados" data-total="50"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>⚙️ Aula 17: Procedimentos Armazenados</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-17-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C8 —</strong> Aplicar linguagem de manipulação de dados</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">O que É</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um procedimento armazenado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um arquivo de texto salvo no computador do aluno.</li>
+                        <li><span class="letra">B)</span>Uma cópia de segurança das tabelas.</li>
+                        <li><span class="letra">C)</span>Uma tabela que guarda os comandos executados.</li>
+                        <li><span class="letra">D)</span>Um conjunto de comandos SQL guardado no banco, com nome e parâmetros, chamado quando o sistema precisa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Onde Fica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde fica guardado um procedimento armazenado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente no código do back-end.</li>
+                        <li><span class="letra">B)</span>Na pasta de instalação do VS Code.</li>
+                        <li><span class="letra">C)</span>Dentro do próprio banco de dados.</li>
+                        <li><span class="letra">D)</span>No navegador do usuário.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Regra num Lugar Só</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é uma vantagem de colocar a regra &quot;turma tem até 25 alunos&quot; num procedimento do banco?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A regra deixa de precisar de teste.</li>
+                        <li><span class="letra">B)</span>O banco passa a aceitar qualquer quantidade de alunos.</li>
+                        <li><span class="letra">C)</span>As tabelas ficam sem chave primária.</li>
+                        <li><span class="letra">D)</span>Todo sistema que usa o banco segue a mesma regra.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Menos Idas e Voltas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que um procedimento pode deixar o sistema mais rápido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque ele dispensa o uso de índices e chaves.</li>
+                        <li><span class="letra">B)</span>Porque ele desliga as restrições do banco.</li>
+                        <li><span class="letra">C)</span>Porque ele apaga as linhas antigas da tabela.</li>
+                        <li><span class="letra">D)</span>Porque uma única chamada substitui vários comandos enviados pela rede.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Regra do Banco ou da Tela</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual regra é melhor deixar no back-end, e não num procedimento do banco?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O valor da parcela deve ser maior que zero.</li>
+                        <li><span class="letra">B)</span>Uma parcela paga não pode ser paga de novo.</li>
+                        <li><span class="letra">C)</span>A turma tem no máximo 25 alunos ativos.</li>
+                        <li><span class="letra">D)</span>Mostrar os valores em reais com vírgula na tela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Chamar uma Função</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como se chama a função valor_pago no PostgreSQL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>RUN valor_pago(10);</li>
+                        <li><span class="letra">B)</span>EXECUTE TABLE valor_pago(10);</li>
+                        <li><span class="letra">C)</span>CALL valor_pago(10);</li>
+                        <li><span class="letra">D)</span>SELECT valor_pago(10);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Chamar um Procedimento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como se chama o procedimento matricular no PostgreSQL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>INSERT matricular(3, 2);</li>
+                        <li><span class="letra">B)</span>CALL matricular(3, 2);</li>
+                        <li><span class="letra">C)</span>OPEN matricular(3, 2);</li>
+                        <li><span class="letra">D)</span>SELECT * FROM matricular;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Função Devolve Valor</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a principal diferença entre função e procedimento no PostgreSQL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A função devolve um valor; o procedimento executa uma ação e é chamado com CALL.</li>
+                        <li><span class="letra">B)</span>Os dois são iguais e chamados do mesmo jeito.</li>
+                        <li><span class="letra">C)</span>A função não aceita parâmetros.</li>
+                        <li><span class="letra">D)</span>O procedimento só funciona no pgAdmin.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">RETURNS</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na criação de uma função, o que indica RETURNS numeric?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O tipo do valor que a função devolve.</li>
+                        <li><span class="letra">B)</span>O nome da tabela que será alterada.</li>
+                        <li><span class="letra">C)</span>O usuário que pode chamar a função.</li>
+                        <li><span class="letra">D)</span>A quantidade de parâmetros da função.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Controle de Transação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual rotina pode usar COMMIT dentro do corpo, quando chamada fora de um bloco de transação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O procedimento (CREATE PROCEDURE).</li>
+                        <li><span class="letra">B)</span>A função (CREATE FUNCTION).</li>
+                        <li><span class="letra">C)</span>A visão (CREATE VIEW).</li>
+                        <li><span class="letra">D)</span>O índice (CREATE INDEX).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Linguagem</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em LANGUAGE plpgsql, o que é PL/pgSQL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um tipo de dado para textos longos.</li>
+                        <li><span class="letra">B)</span>A linguagem de programação do PostgreSQL para escrever funções e procedimentos.</li>
+                        <li><span class="letra">C)</span>Um programa para desenhar o DER.</li>
+                        <li><span class="letra">D)</span>O nome do usuário administrador do banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Delimitador</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que servem os $$ no começo e no fim do corpo da rotina?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para indicar valores em dinheiro.</li>
+                        <li><span class="letra">B)</span>Para comentar o código.</li>
+                        <li><span class="letra">C)</span>Para criar uma variável global.</li>
+                        <li><span class="letra">D)</span>Para delimitar o corpo da função ou do procedimento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">DECLARE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve a seção DECLARE num bloco PL/pgSQL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para criar as variáveis locais usadas no bloco.</li>
+                        <li><span class="letra">B)</span>Para apagar a rotina antiga.</li>
+                        <li><span class="letra">C)</span>Para criar uma tabela nova no banco.</li>
+                        <li><span class="letra">D)</span>Para dar permissão aos usuários.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">SELECT INTO</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz SELECT count(*) INTO v_ativos FROM matricula WHERE id_turma = p_turma;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mostra o resultado na tela e descarta o valor.</li>
+                        <li><span class="letra">B)</span>Insere uma matrícula na turma.</li>
+                        <li><span class="letra">C)</span>Cria uma tabela chamada v_ativos.</li>
+                        <li><span class="letra">D)</span>Guarda na variável v_ativos o número de matrículas da turma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Sem INTO</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece com um SELECT sem INTO dentro de uma função PL/pgSQL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dá erro, porque o resultado da consulta não tem para onde ir.</li>
+                        <li><span class="letra">B)</span>O PostgreSQL ignora o comando sem avisar.</li>
+                        <li><span class="letra">C)</span>O resultado é devolvido automaticamente pela função.</li>
+                        <li><span class="letra">D)</span>O resultado é gravado numa tabela nova.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">RETURN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz RETURN v_total; dentro de uma função?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Grava v_total na tabela parcela.</li>
+                        <li><span class="letra">B)</span>Devolve o valor de v_total para quem chamou a função.</li>
+                        <li><span class="letra">C)</span>Apaga a variável v_total.</li>
+                        <li><span class="letra">D)</span>Volta para o começo da função.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Parâmetro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em matricular(p_aluno integer, p_turma integer), o que são p_aluno e p_turma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Tabelas temporárias.</li>
+                        <li><span class="letra">B)</span>Colunas novas da tabela matricula.</li>
+                        <li><span class="letra">C)</span>Parâmetros: valores informados na chamada do procedimento.</li>
+                        <li><span class="letra">D)</span>Nomes de usuários do banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Prefixo p_</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que usar o prefixo p_ nos parâmetros, como p_turma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para não confundir o parâmetro com a coluna de mesmo nome, como id_turma.</li>
+                        <li><span class="letra">B)</span>Para deixar o parâmetro opcional.</li>
+                        <li><span class="letra">C)</span>Para que o parâmetro seja gravado automaticamente na tabela.</li>
+                        <li><span class="letra">D)</span>Porque o PostgreSQL exige que todo parâmetro comece com p.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Nome Ambíguo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um procedimento tem o parâmetro id_turma e faz WHERE id_turma = id_turma. Qual é o problema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O nome fica ambíguo entre o parâmetro e a coluna, gerando erro ou resultado errado.</li>
+                        <li><span class="letra">B)</span>Nenhum problema: é a forma recomendada.</li>
+                        <li><span class="letra">C)</span>O filtro passa a ficar mais rápido.</li>
+                        <li><span class="letra">D)</span>O PostgreSQL renomeia a coluna sozinho.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">IF</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz o bloco IF v_ativos &gt;= 25 THEN ... END IF;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Repete os comandos 25 vezes.</li>
+                        <li><span class="letra">B)</span>Cria 25 matrículas de uma vez.</li>
+                        <li><span class="letra">C)</span>Executa os comandos internos só quando a turma já tem 25 ou mais alunos ativos.</li>
+                        <li><span class="letra">D)</span>Apaga as matrículas acima de 25.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">ELSIF</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve o ELSIF num bloco IF?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para repetir o bloco até dar erro.</li>
+                        <li><span class="letra">B)</span>Para testar outra condição quando a anterior for falsa.</li>
+                        <li><span class="letra">C)</span>Para encerrar o procedimento.</li>
+                        <li><span class="letra">D)</span>Para criar uma variável nova.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">RAISE EXCEPTION</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz RAISE EXCEPTION &#x27;Turma % sem vaga&#x27;, p_turma;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Interrompe a rotina com uma mensagem de erro e desfaz o que a chamada já tinha feito.</li>
+                        <li><span class="letra">B)</span>Mostra um aviso e continua a matrícula.</li>
+                        <li><span class="letra">C)</span>Grava a mensagem na tabela turma.</li>
+                        <li><span class="letra">D)</span>Cria uma vaga extra na turma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">RAISE NOTICE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a diferença entre RAISE NOTICE e RAISE EXCEPTION?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>NOTICE apaga a tabela; EXCEPTION só avisa.</li>
+                        <li><span class="letra">B)</span>Os dois param a rotina da mesma forma.</li>
+                        <li><span class="letra">C)</span>NOTICE só mostra uma mensagem e continua; EXCEPTION para e desfaz a operação.</li>
+                        <li><span class="letra">D)</span>NOTICE só funciona em funções e EXCEPTION só em tabelas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Marcador %</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em RAISE EXCEPTION &#x27;Turma % sem vaga&#x27;, p_turma;, o que faz o %?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>É substituído pelo valor de p_turma na mensagem.</li>
+                        <li><span class="letra">B)</span>Indica qualquer texto, como no LIKE.</li>
+                        <li><span class="letra">C)</span>Calcula a porcentagem de vagas.</li>
+                        <li><span class="letra">D)</span>Comenta o resto da linha.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Nada pela Metade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O procedimento insere a matrícula e, depois, chega a um RAISE EXCEPTION. O que acontece com o INSERT?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>É gravado em outra tabela.</li>
+                        <li><span class="letra">B)</span>É desfeito: nada da chamada fica gravado.</li>
+                        <li><span class="letra">C)</span>Fica gravado pela metade.</li>
+                        <li><span class="letra">D)</span>Fica gravado, só a mensagem aparece.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">FOUND</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois de um UPDATE dentro do PL/pgSQL, quando FOUND fica verdadeiro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quando a tabela tem mais de 25 linhas.</li>
+                        <li><span class="letra">B)</span>Quando o procedimento termina sem erro.</li>
+                        <li><span class="letra">C)</span>Quando o UPDATE alterou pelo menos uma linha.</li>
+                        <li><span class="letra">D)</span>Sempre, depois de qualquer comando.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">IF NOT FOUND</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No procedimento registrar_pagamento, para que serve IF NOT FOUND THEN RAISE EXCEPTION ...?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para apagar a matrícula sem parcelas.</li>
+                        <li><span class="letra">B)</span>Para criar a parcela que não existe.</li>
+                        <li><span class="letra">C)</span>Para avisar com erro quando nenhuma parcela foi atualizada (inexistente ou já paga).</li>
+                        <li><span class="letra">D)</span>Para pagar todas as parcelas da matrícula.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Parcela Já Paga</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o UPDATE de registrar_pagamento tem AND data_pagamento IS NULL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para apagar as parcelas pagas.</li>
+                        <li><span class="letra">B)</span>Para não registrar de novo o pagamento de uma parcela que já foi paga.</li>
+                        <li><span class="letra">C)</span>Para pagar só as parcelas vencidas.</li>
+                        <li><span class="letra">D)</span>Para deixar o campo data_pagamento obrigatório.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">FOR UPDATE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve PERFORM 1 FROM turma WHERE id_turma = p_turma FOR UPDATE; no procedimento matricular?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para liberar todas as vagas da turma.</li>
+                        <li><span class="letra">B)</span>Para trancar a turma e impedir que duas matrículas ao mesmo tempo passem do limite.</li>
+                        <li><span class="letra">C)</span>Para atualizar o nome da turma.</li>
+                        <li><span class="letra">D)</span>Para apagar a turma e criar outra.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Duas Atendentes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Duas atendentes chamam matricular na mesma turma, com 24 alunos, ao mesmo tempo. Com o FOR UPDATE, o que acontece?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As duas matrículas entram e a turma fica com 26 alunos.</li>
+                        <li><span class="letra">B)</span>A segunda chamada espera a primeira terminar e, ao contar, encontra 25 alunos e recebe o erro de sem vaga.</li>
+                        <li><span class="letra">C)</span>O banco apaga a turma.</li>
+                        <li><span class="letra">D)</span>As duas chamadas recebem erro.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Turma Inexistente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o procedimento matricular faz quando p_turma não existe?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ignora a chamada sem avisar.</li>
+                        <li><span class="letra">B)</span>Matricula o aluno numa turma qualquer.</li>
+                        <li><span class="letra">C)</span>Barra a chamada com RAISE EXCEPTION &#x27;Turma % não existe&#x27;.</li>
+                        <li><span class="letra">D)</span>Cria a turma automaticamente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Restrições Continuam</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um procedimento faz INSERT de uma matrícula repetida (mesmo aluno e mesma turma). O que acontece?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A matrícula antiga é apagada.</li>
+                        <li><span class="letra">B)</span>O procedimento ignora as restrições da tabela.</li>
+                        <li><span class="letra">C)</span>O UNIQUE (id_aluno, id_turma) continua valendo e o INSERT dá erro.</li>
+                        <li><span class="letra">D)</span>A matrícula repetida é aceita porque veio de um procedimento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Contar Ativos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o procedimento conta só as matrículas com situacao = &#x27;ativa&#x27;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque as outras situações são apagadas.</li>
+                        <li><span class="letra">B)</span>Porque matrículas trancadas, concluídas ou canceladas não ocupam vaga.</li>
+                        <li><span class="letra">C)</span>Porque só a situação ativa tem chave primária.</li>
+                        <li><span class="letra">D)</span>Porque o COUNT não funciona com outras situações.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Limite de 25</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual condição barra a matrícula quando a turma já está cheia (25 alunos)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>IF v_ativos &lt; 25 THEN RAISE EXCEPTION ...</li>
+                        <li><span class="letra">B)</span>IF v_ativos = 0 THEN RAISE EXCEPTION ...</li>
+                        <li><span class="letra">C)</span>IF v_ativos &gt;= 25 THEN RAISE EXCEPTION ...</li>
+                        <li><span class="letra">D)</span>IF v_ativos &gt; 25 THEN RAISE NOTICE ...</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Função com coalesce</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na função valor_pago, por que usar coalesce(sum(valor), 0)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para arredondar o valor pago.</li>
+                        <li><span class="letra">B)</span>Para devolver 0 em vez de NULL quando a matrícula não tem parcela paga.</li>
+                        <li><span class="letra">C)</span>Para contar quantas parcelas existem.</li>
+                        <li><span class="letra">D)</span>Para somar só as parcelas atrasadas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">CREATE OR REPLACE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz CREATE OR REPLACE PROCEDURE matricular(...)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cria uma cópia com outro nome.</li>
+                        <li><span class="letra">B)</span>Cria o procedimento ou troca o corpo do que já existe com o mesmo nome e parâmetros.</li>
+                        <li><span class="letra">C)</span>Apaga todas as matrículas e cria o procedimento.</li>
+                        <li><span class="letra">D)</span>Só funciona se o procedimento ainda não existir.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">DROP PROCEDURE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando remove o procedimento matricular com dois parâmetros inteiros?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>DELETE PROCEDURE matricular;</li>
+                        <li><span class="letra">B)</span>DROP TABLE matricular;</li>
+                        <li><span class="letra">C)</span>DROP PROCEDURE matricular(integer, integer);</li>
+                        <li><span class="letra">D)</span>REMOVE matricular(3, 2);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Tipos no DROP</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o DROP FUNCTION valor_pago(integer); informa o tipo do parâmetro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque pode haver rotinas com o mesmo nome e parâmetros diferentes.</li>
+                        <li><span class="letra">B)</span>Porque o PostgreSQL não aceita nomes de rotina.</li>
+                        <li><span class="letra">C)</span>Porque o tipo define quem pode apagar.</li>
+                        <li><span class="letra">D)</span>Porque o tipo apaga também a coluna.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Listar Rotinas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando do psql lista as funções e procedimentos do banco?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>\df</li>
+                        <li><span class="letra">B)</span>\q</li>
+                        <li><span class="letra">C)</span>\dt</li>
+                        <li><span class="letra">D)</span>\l</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">SELECT em Procedimento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece ao executar SELECT matricular(3, 2); sendo matricular um procedimento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mostra a lista de matrículas.</li>
+                        <li><span class="letra">B)</span>Matricula o aluno normalmente.</li>
+                        <li><span class="letra">C)</span>Cria uma função com o mesmo nome.</li>
+                        <li><span class="letra">D)</span>Dá erro: procedimento é chamado com CALL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">CALL em Função</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece ao executar CALL valor_pago(10); sendo valor_pago uma função?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Devolve o valor pago normalmente.</li>
+                        <li><span class="letra">B)</span>Apaga a função.</li>
+                        <li><span class="letra">C)</span>Paga as parcelas da matrícula 10.</li>
+                        <li><span class="letra">D)</span>Dá erro: função é chamada dentro de um SELECT.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Ponto e Vírgula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um procedimento dá erro de sintaxe perto do END. Qual é uma causa comum?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O parâmetro tem o prefixo p_.</li>
+                        <li><span class="letra">B)</span>O banco tem mais de 25 alunos.</li>
+                        <li><span class="letra">C)</span>Faltou o ; depois de END IF ou faltou o $$ do fim.</li>
+                        <li><span class="letra">D)</span>A tabela não tem chave primária.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">NOTICE no Lugar Errado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O colega usou RAISE NOTICE &#x27;Turma sem vaga&#x27;; em vez de RAISE EXCEPTION. Qual é o efeito?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O procedimento não compila.</li>
+                        <li><span class="letra">B)</span>A mensagem aparece, mas a matrícula entra mesmo sem vaga.</li>
+                        <li><span class="letra">C)</span>A turma é apagada.</li>
+                        <li><span class="letra">D)</span>A matrícula é barrada do mesmo jeito.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Back-end Chama</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois de criado o procedimento matricular, o que o back-end passa a fazer para matricular um aluno?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Copiar o procedimento para o código do site.</li>
+                        <li><span class="letra">B)</span>Contar os alunos na tela e inserir direto na tabela.</li>
+                        <li><span class="letra">C)</span>Desligar a chave estrangeira antes de inserir.</li>
+                        <li><span class="letra">D)</span>Chamar CALL matricular(id_do_aluno, id_da_turma) e mostrar a mensagem de erro se houver.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Mensagem para o Usuário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como o back-end sabe que a turma estava cheia?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O banco envia um e-mail para a secretaria.</li>
+                        <li><span class="letra">B)</span>O back-end precisa ler o arquivo de log do sistema.</li>
+                        <li><span class="letra">C)</span>A matrícula aparece com situação &quot;cheia&quot;.</li>
+                        <li><span class="letra">D)</span>Recebe o erro com a mensagem do RAISE EXCEPTION e pode mostrá-la ao usuário.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Segurança</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como um procedimento ajuda na segurança do banco (assunto da aula 19)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O usuário pode receber permissão só para chamar a rotina, sem mexer direto nas tabelas.</li>
+                        <li><span class="letra">B)</span>Ele impede qualquer consulta ao banco.</li>
+                        <li><span class="letra">C)</span>Ele troca a senha do administrador.</li>
+                        <li><span class="letra">D)</span>Ele criptografa todas as tabelas automaticamente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Função Útil</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual rotina é mais adequada como função (e não procedimento)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Trancar a matrícula de um aluno.</li>
+                        <li><span class="letra">B)</span>Calcular e devolver quanto uma matrícula já pagou.</li>
+                        <li><span class="letra">C)</span>Matricular um aluno numa turma.</li>
+                        <li><span class="letra">D)</span>Registrar o pagamento de uma parcela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Parâmetro smallint</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O procedimento registrar_pagamento recebe p_numero smallint. Por que a chamada usa 2::smallint?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para converter o número 2 para o tipo smallint do parâmetro.</li>
+                        <li><span class="letra">B)</span>Para comentar o número da parcela.</li>
+                        <li><span class="letra">C)</span>Para indicar que a parcela é a segunda mais cara.</li>
+                        <li><span class="letra">D)</span>Para pagar duas parcelas de uma vez.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Testar os Erros</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na entrega da SA 2, por que o script deve ter chamadas de teste dos casos de erro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para apagar as rotinas no fim.</li>
+                        <li><span class="letra">B)</span>Porque o PostgreSQL exige testes para criar procedimentos.</li>
+                        <li><span class="letra">C)</span>Para mostrar que a rotina barra os casos inválidos, como turma cheia ou inexistente.</li>
+                        <li><span class="letra">D)</span>Para encher o banco com dados falsos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Dois Lugares</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A tela do sistema já avisa que a turma está cheia. Por que manter o procedimento no banco?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o aviso da tela apaga os dados.</li>
+                        <li><span class="letra">B)</span>Porque o banco não aceita regras na tela.</li>
+                        <li><span class="letra">C)</span>Não precisa: a tela sozinha garante a regra.</li>
+                        <li><span class="letra">D)</span>Porque a tela avisa, mas é o banco que garante a regra para qualquer sistema e para acessos simultâneos.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Aula 17: Procedimentos Armazenados</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

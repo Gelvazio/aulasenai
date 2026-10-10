@@ -14,7 +14,8 @@
   inclui supabase-js, `js/supabase.js`, `js/login.js`, `assets/js/respostas-atividade-banco.js`,
   põe `data-login="sim"` e não embute o gabarito) e a atividade precisa estar cadastrada nas
   tabelas `atividade` + `gabarito`: acrescentar em `ATIVIDADES` de
-  `scripts/gerar-seed-atividades.py`, gerar `database/*-seed-atividades.sql` e rodar no Supabase.
+  `scripts/gerar-seed-atividades.py`, gerar `database/*-seed-atividades.sql` e aplicar no Supabase
+  quando o usuário pedir (regra "🌱 SEEDS DO BANCO" do `CLAUDE.md`).
 - ❌ **Não existe mais localStorage para as alternativas** — somente banco de dados. Se o banco
   estiver indisponível ou a atividade não estiver cadastrada, a marcação fica **bloqueada com
   aviso** — nunca cai para o navegador. O nome do aluno vem do login (não é digitado).
@@ -488,7 +489,8 @@ Vale para **todas as aulas de todas as matérias**. Registrada em 2026-10-03 a p
   Se o arquivo não existir, criá-lo antes de gerar a primeira aula.
 - ✅ Ao retomar um trabalho interrompido, ler o `STATUS-AULAS.md` e continuar da primeira aula que
   não está ✅.
-- ✅ Aplicar o seed no Supabase continua dependendo de pedido do usuário (registrar no status).
+- ✅ **Seeds:** aplicar, registrar e conferir conforme a regra "🌱 SEEDS DO BANCO" do `CLAUDE.md` (registro em
+  `database/SEEDS-APLICADOS.md`).
 - ⚠️ Respeita `STATUS-PERMISSAO-EMENTA`, matérias semelhantes e a exceção de
   `QUALIFICACAO-PROFISSIONAL/`.
 
@@ -511,7 +513,7 @@ dessas atividades. Registrada em 2026-10-03 a pedido do usuário.
 - ✅ Gerar as que faltam seguindo a regra "UMA AULA POR VEZ, COMPLETA" (fonte → HTML → conferência
   de 50 itens e gabarito ausente → índice → seed), atualizando o `STATUS-ATIVIDADES.md` e o
   `AULAS/STATUS-AULAS.md` a cada aula. Gerar em massa continua exigindo plano em `docs/` e aprovação;
-  aplicar o seed no Supabase só com pedido do usuário.
+  aplicar o seed no Supabase só com pedido do usuário (regra "🌱 SEEDS DO BANCO" do `CLAUDE.md`).
 - ✅ As questões seguem a aula em `<MATERIA>/CONTEUDO/AULA-NN-*.md` (regra "AULAS EXTRAÍDAS DA
   EMENTA EM `CONTEUDO/`") e o `EMENTA-CHALKIE-AI.md` (a ementa vence); gabarito com letras
   equilibradas (12–13 de cada) e posição sorteada.
@@ -523,7 +525,9 @@ dessas atividades. Registrada em 2026-10-03 a pedido do usuário.
   as demais aulas de avaliação (ex.: Eletricidade aula 09) seguem com **50 questões**; Reforço
   de Linguagens segue a regra exclusiva dela (25 questões).
 - ✅ **Banco na geração das pendentes** (plano `docs/gerar-atividades-50-questoes-todas-materias.md`,
-  2026-10-03): o usuário autorizou **aplicar o seed no Supabase ao finalizar cada matéria**.
+  2026-10-03): o usuário autorizou **aplicar o seed no Supabase ao finalizar cada matéria** —
+  vale **só** para as matérias desse plano de 2026-10-03. Fora dele (ex.: Banco de Dados, tarefa
+  #20), aplicar só com pedido (regra "🌱 SEEDS DO BANCO" do `CLAUDE.md`).
 - ⏳ **Fila:** gerar **somente uma matéria por vez, na ordem que o usuário liberar**; as demais
   aguardam. Primeira liberada (2026-10-03): **Testes de Frontend**.
 

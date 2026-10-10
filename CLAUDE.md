@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 15:24:44
+**Versão das regras:** 2026-10-09 21:42:18
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
-| 2026-10-09 15:24:44 | **Conversa entre sessões e licenças:** `tasks/STATUS.md` vira índice (etapas em `tasks/etapas/`, uma por arquivo), "🧭 Frentes de trabalho" (próximo passo por ambiente + branch), coluna "Em uso por" (reserva da tarefa), `tasks/RECADOS.md`, etapa nova com UUID, trazer a `main` no início e no fim, arquivo gerado em conflito = regerar |
-| 2026-10-09 18:06:19 | **Regra do `graphify update .` removida:** o grafo não é mais atualizado nem lido automaticamente (início de sessão, commits, `GRAPH_REPORT.md`); só roda quando o usuário pedir (`/graphify`) |
-| 2026-10-09 18:00:00 | **Lista de presença única:** todas as listas em `scripts/LISTAPRESENCA.js` (versionado, fora do site); páginas e `criar-usuarios-supabase-auth.js --turma=CODIGO` leem só dele (`docs/regras/usuarios-turmas-paginas-professor.md`) |
-| 2026-10-09 17:25:12 | **`.gitignore` mínimo:** só `__pycache__/`, graphify, `variaveis.js` e `.env`; binários, gabaritos, listas de presença e `LISTA-ALUNOS/` saem do site pelo `.vercelignore` (regra "O QUE NUNCA É PUBLICADO" reescrita) |
-| 2026-10-09 15:09:56 | `docs/regras/atividades.md` (Reforço de Linguagens): `-GABARITO.md` "no Git e fora do site", como a regra geral (revisão do PR) |
+| 2026-10-09 21:42:18 | **Status SUBSTITUÍDO nos seeds:** seed trocado por outro já no banco, que **por decisão do usuário** não é aplicado, fica **SUBSTITUÍDO** (conta como resolvido na regra "seeds antes de qualquer tarefa"); `scripts/seeds/registrar_seed.py` e o resumo do registro ganham a coluna — "🌱 REGRA — SEEDS DO BANCO" |
+| 2026-10-09 21:37:17 | **Scripts dos seeds e dos status no repositório, uso obrigatório:** `scripts/seeds/` (`dividir_seed.py`, `comparar_md5.py`, `registrar_seed.py` + `README.md`), `scripts/status-materias/` e `scripts/banco-de-dados/` — "🌱 REGRA — SEEDS DO BANCO" |
+| 2026-10-09 21:25:58 | **Primeiro só os status das aulas:** o primeiro passo em toda matéria (e em todas as matérias, de uma vez) é criar **apenas** o `AULAS/STATUS-AULAS.md` com todas as aulas (1 a cada 4 h da ementa) em ⬜; conteúdo, atividades e seeds vêm depois, aula por aula — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" |
+| 2026-10-09 21:21:41 | **Status por aula em toda matéria e push depois de cada commit na nuvem:** toda matéria tem `AULAS/STATUS-AULAS.md` com uma linha por aula (conteúdo, slides, objetiva, prática e banco), criado junto com a pasta da matéria; na nuvem, **todo** `git commit` é seguido na hora do `git push` — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" |
+| 2026-10-09 21:19:39 | **Cada aula finalizada = status gravado + commit:** ao terminar uma aula (gerar o material ou aplicar os seeds dela), gravar na hora o status em todos os arquivos (registro de seeds, `STATUS-AULAS.md`, `STATUS-ATIVIDADES.md`, item da etapa) e fazer o commit (e push na nuvem) antes de passar à próxima — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" e "🌱 REGRA — SEEDS DO BANCO" |
 
 ---
 
@@ -56,6 +56,28 @@ Registrada em 2026-10-03 a pedido do usuário.
 - ⛔ **Nunca escrever testes automatizados** (regra permanente do global): nada de `*.test.js`,
   `*.spec.js`, `test_*.py` nem passo de teste em plano; a **única exceção** é corrigir um bug.
   Vale mesmo que haja suíte de testes no repositório ou que uma skill (TDD etc.) mande.
+- ⛔ **Seeds concluídos antes de qualquer tarefa** (2026-10-09, pedido do usuário): antes de
+  começar ou continuar qualquer tarefa, concluir todos os seeds de `database/SEEDS-APLICADOS.md`
+  (ver a regra "🌱 REGRA — SEEDS DO BANCO").
+- ✅ **Cada aula finalizada = status gravado + commit** (2026-10-09, pedido do usuário): sempre que
+  terminar **uma aula** (gerar o material dela ou aplicar e conferir os seeds dela), **gravar o status
+  na hora** em todos os arquivos envolvidos (`database/SEEDS-APLICADOS.md`, `STATUS-AULAS.md`,
+  `STATUS-ATIVIDADES.md` da matéria e o item da etapa em `tasks/etapas/`) e **fazer o commit** (na
+  nuvem, também o push) **antes de passar à próxima aula** — nunca acumular várias aulas.
+- ✅ **Toda matéria tem status por aula** (2026-10-09, pedido do usuário): cada matéria tem o
+  **`AULAS/STATUS-AULAS.md`** (modelo da ITIC) com **uma linha por aula** e as colunas da aula em
+  `CONTEUDO/`, slides, atividade objetiva, atividade prática e **Banco** (seeds aplicados e conferidos).
+  Matéria nova já nasce com ele e a análise contínua (tarefa #19) aponta as que faltam.
+- ✅ **Primeiro, só os status das aulas** (2026-10-09, pedido do usuário): **inicialmente, criar
+  apenas o `AULAS/STATUS-AULAS.md` de todas as matérias**, com **todas as aulas** (1 aula a cada
+  4 h da carga horária da ementa, arredondando para cima; tema da ementa ou "a definir") e todas as
+  colunas em ⬜. Nesse primeiro passo **não** se gera conteúdo, atividade, página nem seed; o
+  restante vem depois, **uma aula por vez**, atualizando o status de cada aula. O status de cada aula é
+  atualizado na hora (regra "Cada aula finalizada = status gravado + commit").
+- ⛔ **Na nuvem, todo commit é seguido de push** (2026-10-09, pedido do usuário): numa sessão de nuvem,
+  **logo depois de cada `git commit`**, fazer o `git push -u origin <branch>` da sessão — sem
+  esperar outro commit, o fim da tarefa ou a ordem do usuário (detalhe em "Pull Requests"). No
+  ambiente local continua proibido o push.
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
 - ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, numa branch própria + novo PR para a `main`).
@@ -434,6 +456,9 @@ Registrada em 2026-10-03 a pedido do usuário.
    já foi feito nos arquivos/commits
    - ☁️ **Na nuvem:** ler também `.claude/regras-globais/CLAUDE-GLOBAL.md` e
      `CLAUDE-DOCS-BEFORE-EVERY-TASK.md` (regras globais; ver "REGRAS E SKILLS GLOBAIS NO PROJETO")
+2.5. 🌱 **Concluir todos os seeds** (2026-10-09, pedido do usuário): ler o
+   `database/SEEDS-APLICADOS.md` e, antes de começar ou continuar qualquer tarefa, deixar todos os
+   seeds em **CONCLUÍDO** (regra "🌱 REGRA — SEEDS DO BANCO")
 3. ✅ **Prosseguir de onde parou** (sem refazer itens `✅` nem pular itens)
 4. ✅ **Só então responder** ao usuário (ou iniciar a tarefa)
 
@@ -818,6 +843,7 @@ Registrada em 2026-09-28.
   se a mudança apagar ou reorganizar dados, **copiar antes** para uma tabela de backup
   (ex.: `usuario_legado_20260930`, com RLS ligado e sem políticas). Depois de aplicar, **conferir o
   resultado** com consultas de leitura. Sem pedido do usuário, não alterar o banco.
+- ✅ **Seeds de atividades:** regra única na seção "🌱 REGRA — SEEDS DO BANCO" logo abaixo.
 - ✅ **Estrutura dos cursos só o professor escreve** (2026-09-30,
   `database/2026-09-30-estrutura-curso-so-professor-escreve.sql`): `aulas`, `materia`, `curso`,
   `cursomateria` e `unidade` aceitam insert/update/delete só de usuário logado com perfil PROFESSOR;
@@ -825,6 +851,62 @@ Registrada em 2026-09-28.
   carregados por nenhuma página (órfãos).
 - ✅ **Tabela nova ou alterada = RLS ligado** e políticas explícitas; nunca deixar `anon` com
   acesso de escrita. Dados sensíveis (`senha_hash`, gabarito) não ficam legíveis pela API pública.
+
+## 🌱 REGRA — SEEDS DO BANCO (STATUS EM `database/SEEDS-APLICADOS.md`)
+
+Registrada em 2026-10-09 19:19:18 e consolidada em 2026-10-09 19:38:38 a pedido do usuário: **esta é a única
+regra de seeds do projeto** (os outros arquivos só apontam para cá). O registro dos seeds é
+**[`database/SEEDS-APLICADOS.md`](database/SEEDS-APLICADOS.md)**: uma linha por arquivo
+`database/*-seed-atividades.sql`, com o status, a data e hora da conferência e a observação.
+
+| Status | Quando usar |
+|---|---|
+| **PENDENTE** | Gerado (ou não encontrado no banco); ainda não rodado no Supabase |
+| **APLICADO** | Rodado no Supabase, mas ainda não conferido ou a conferência não bate (ex.: substituído por um seed mais novo, aplicado só em parte) |
+| **CONCLUÍDO** | Rodado **e conferido pelo md5**: a atividade de cada página está no banco com o mesmo conteúdo do arquivo |
+| **SUBSTITUÍDO** | **Só por decisão do usuário:** o seed foi trocado por outro (já CONCLUÍDO) ou a página dele foi substituída por outra no banco, e o usuário decidiu **não aplicá-lo**; a observação diz por qual foi substituído. Conta como resolvido (não trava tarefa) e não é conferido de novo |
+
+- ✅ **Seed novo entra no registro como PENDENTE** no mesmo commit em que é gerado.
+- ✅ **Aplicar só com pedido do usuário** (pelo conector do Supabase ou o próprio usuário no SQL
+  Editor), depois de conferir o banco real. Pelo conector, aplicar **em partes pequenas** (um
+  comando por atividade, sem `DO` nem `delete`: `insert ... returning` com a contagem), porque os
+  blocos grandes com `delete` voltam "cancelado". A autorização de 2026-10-03 ("aplicar o seed ao
+  finalizar cada matéria") vale só para as matérias do plano `docs/gerar-atividades-50-questoes-todas-materias.md`.
+- ✅ **Conferência pelo md5**, por página e na ordem de item e tópico: objetivas
+  `md5(string_agg(item||'|'||titulo||'|'||letra, E'\n' order by item))` da `gabarito`; discursivas
+  `md5(string_agg(item||'|'||topico||'|'||enunciado||'|'||resposta_esperada||'|'||criterios, E'\n'
+  order by item, topico))` da `topico_discursivo` — comparado com o mesmo texto montado do arquivo.
+  Bateu → **CONCLUÍDO** (com a data e hora); não bateu → continua **APLICADO** com o motivo.
+- ⛔ **Todos os seeds CONCLUÍDO antes de qualquer tarefa** (2026-10-09 20:59:55, pedido do usuário): antes de
+  **começar uma tarefa nova ou continuar uma tarefa** (inclusive ao retomar a sessão), ler o
+  registro e **concluir todos os seeds**: aplicar os **PENDENTE** pelo conector (em partes, como
+  acima), conferir pelo md5 os **APLICADO** e marcar **CONCLUÍDO** os que baterem, gravando o
+  registro e fazendo commit (e push na nuvem) **antes** de seguir para a tarefa. Esta regra é a
+  autorização permanente do usuário para aplicar os seeds do registro (não precisa pedir de novo).
+  - ✅ Seed que **não pode** ser concluído sem decisão do usuário (matéria ou aula inexistente no
+    banco, página substituída por outra, conteúdo do arquivo diferente do banco por ter sido
+    trocado por um seed mais novo) fica com o status e o motivo no registro, entra em **"⏳
+    Aguardando o usuário"** do `STATUS.md` e é **perguntado** ao usuário; só ele não trava a tarefa.
+  - ⛔ Sem conector do Supabase (ou no ambiente local sem acesso ao banco): avisar o usuário quais
+    seeds faltam antes de começar a tarefa.
+- ⛔ **Usar SEMPRE os scripts do repositório** (2026-10-09, pedido do usuário; passo a passo em
+  [`scripts/seeds/README.md`](scripts/seeds/README.md)): `scripts/seeds/dividir_seed.py` (seed →
+  um lote por atividade + `esperado.json` + `conferir-md5.sql`), `scripts/seeds/comparar_md5.py`
+  (banco × esperado) e `scripts/seeds/registrar_seed.py` (status e resumo no registro). Para os
+  status das matérias, `scripts/status-materias/`; para as aulas de Banco de Dados,
+  `scripts/banco-de-dados/`. Não montar lote, md5 nem registro à mão; se um script não servir,
+  corrigir o script na mesma tarefa.
+- ✅ **Uma aula por vez** (pedido do usuário): aplicou os seeds de uma aula (objetiva + prática) →
+  conferir pelo md5 → gravar o status (registro, `STATUS-AULAS.md`, `STATUS-ATIVIDADES.md`, item da
+  etapa) → commit (e push na nuvem) → só então a próxima aula.
+- ✅ **Ao iniciar a análise dos seeds** (2026-10-09 19:35:54): conferir pelo md5 **só os
+  seeds APLICADO**. ⛔ **Seed CONCLUÍDO não é verificado de novo**; só volta a ser conferido se o
+  arquivo do seed mudar (aí volta a **PENDENTE**).
+- ✅ **Toda tarefa que gera seed tem o item "Aplicar os seeds no Supabase"** no arquivo da etapa
+  (`tasks/etapas/`), com o mesmo status do registro (`⬜ PENDENTE` → `🔄 APLICADO` → `✅ CONCLUÍDO`);
+  a coluna **Banco** do `STATUS-ATIVIDADES.md` (e do `STATUS-AULAS.md`) da matéria acompanha.
+- ⛔ O registro não leva gabarito, padrão de resposta, senha nem dado de aluno (só nomes de arquivo,
+  contagens, status e md5).
 
 ## ⛔ REGRA — PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM (BRANCH PRÓPRIA + NOVO PR)
 

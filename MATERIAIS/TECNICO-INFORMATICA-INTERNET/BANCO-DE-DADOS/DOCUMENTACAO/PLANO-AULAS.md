@@ -23,9 +23,9 @@
 | 13 | DDL: relações, chaves e restrições | 4 | 3.1.3 | C7 | [AULA-13](../CONTEUDO/AULA-13-DDL-RELACOES-CHAVES-E-RESTRICOES.md) |
 | 14 | DML: inserção, atualização e exclusão | 4 | 3.2.2–3.2.4 | C8 | [AULA-14](../CONTEUDO/AULA-14-DML-INSERCAO-ATUALIZACAO-E-EXCLUSAO.md) |
 | 15 | DML: consultas com filtros e ordenação | 4 | 3.2.1 | C8 | [AULA-15](../CONTEUDO/AULA-15-DML-CONSULTAS-COM-FILTROS-E-ORDENACAO.md) |
-| 16 | Consultas com junções, agrupamentos e subconsultas | 4 | 3.2.1 | C8 | ⬜ |
-| 17 | Procedimentos armazenados | 4 | 3.2.5 | C8 | ⬜ |
-| 18 | Triggers (disparadores) | 4 | 3.2.6 | C8 | ⬜ |
+| 16 | Consultas com junções, agrupamentos e subconsultas | 4 | 3.2.1 | C8 | [AULA-16](../CONTEUDO/AULA-16-CONSULTAS-COM-JUNCOES-AGRUPAMENTOS-E-SUBCONSULTAS.md) |
+| 17 | Procedimentos armazenados | 4 | 3.2.5 | C8 | [AULA-17](../CONTEUDO/AULA-17-PROCEDIMENTOS-ARMAZENADOS.md) |
+| 18 | Triggers (disparadores) | 4 | 3.2.6 | C8 | [AULA-18](../CONTEUDO/AULA-18-TRIGGERS-DISPARADORES.md) |
 | 19 | Segurança da informação: pilares, acesso e auditoria | 4 | 2 · 2.1–2.3 | C12, C13, C14 | ⬜ |
 | 20 | Projeto integrador: banco documentado para o back-end | 4 | 6 · 3 · 5 | C1, C2, C3, C7, C8, C14, S1, S2 | ⬜ |
 | **Total** | | **80** | | | |

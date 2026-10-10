@@ -37,7 +37,7 @@
 | `ATIVIDADE-PRATICA-AULA-03.html` | discursiva/prática/composição | ✅ bloqueada |
 | `ATIVIDADE-PRATICA-AULA-04.html` | discursiva/prática/composição | ✅ bloqueada |
 | `ATIVIDADE-PRATICA-AULA-05.html` | discursiva/prática/composição | ✅ bloqueada |
-| `ATIVIDADE-PRATICA-AULA-06.html` | discursiva/prática/composição | 🔄 seed gerado, falta aplicar no banco |
+| `ATIVIDADE-PRATICA-AULA-06.html` | discursiva/prática/composição | ✅ no banco (id 102, nasce bloqueada; seed aplicado e conferido em 2026-10-09 19:30) |
 | `AVALIACAO-MEDIA-FINAL.html` | discursiva/prática/composição | ⬜ sem cadastro |
 | `AVALIACAO-OBJETIVA-01.html` | 50 questões objetivas | ✅ bloqueada |
 | `AVALIACAO-OBJETIVA-02.html` | 50 questões objetivas | ✅ bloqueada |

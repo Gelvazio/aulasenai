@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 18 — Triggers (Disparadores) (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="18" data-tema="Triggers (Disparadores)" data-total="50"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>⚡ Aula 18: Triggers (Disparadores)</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-18-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C8 —</strong> Aplicar linguagem de manipulação de dados</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">O que É</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é um trigger (disparador) no banco de dados?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma rotina que o banco executa sozinho quando acontece um evento numa tabela.</li>
+                        <li><span class="letra">B)</span>Uma cópia de segurança automática da tabela.</li>
+                        <li><span class="letra">C)</span>Um índice que acelera as consultas.</li>
+                        <li><span class="letra">D)</span>Um usuário especial do PostgreSQL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Quem Executa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quem executa um trigger?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O navegador do usuário.</li>
+                        <li><span class="letra">B)</span>O próprio banco, quando o evento acontece.</li>
+                        <li><span class="letra">C)</span>O aluno, clicando num botão do pgAdmin.</li>
+                        <li><span class="letra">D)</span>O back-end, com o comando CALL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Trigger × Procedimento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a principal diferença entre um trigger e um procedimento da aula 17?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O trigger é chamado com SELECT e o procedimento com CALL.</li>
+                        <li><span class="letra">B)</span>O procedimento é chamado pelo sistema (CALL); o trigger dispara sozinho com o evento na tabela.</li>
+                        <li><span class="letra">C)</span>O trigger só funciona no MySQL.</li>
+                        <li><span class="letra">D)</span>O procedimento não pode ter parâmetros.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Vale para Todos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o trigger protege a regra mesmo quando alguém altera a tabela direto pelo pgAdmin?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o trigger bloqueia o pgAdmin.</li>
+                        <li><span class="letra">B)</span>Porque o pgAdmin chama os procedimentos sozinho.</li>
+                        <li><span class="letra">C)</span>Porque dispara para qualquer comando na tabela, venha de onde vier.</li>
+                        <li><span class="letra">D)</span>Porque o pgAdmin não consegue alterar tabelas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Eventos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais comandos podem ser o evento de um trigger de linha numa tabela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>INSERT, UPDATE e DELETE.</li>
+                        <li><span class="letra">B)</span>Somente SELECT.</li>
+                        <li><span class="letra">C)</span>SELECT, CREATE e DROP.</li>
+                        <li><span class="letra">D)</span>GRANT e REVOKE.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">UPDATE OF</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa AFTER UPDATE OF nota_final ON matricula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O trigger dispara depois de um UPDATE que mexe na coluna nota_final.</li>
+                        <li><span class="letra">B)</span>O trigger dispara em qualquer UPDATE do banco.</li>
+                        <li><span class="letra">C)</span>O trigger apaga a coluna nota_final.</li>
+                        <li><span class="letra">D)</span>O trigger dispara antes de cada SELECT na nota_final.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Momento BEFORE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que um trigger BEFORE pode fazer que um AFTER não pode?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ler a linha nova.</li>
+                        <li><span class="letra">B)</span>Mudar ou barrar a linha antes de ela ser gravada.</li>
+                        <li><span class="letra">C)</span>Gravar em outra tabela.</li>
+                        <li><span class="letra">D)</span>Usar RAISE NOTICE.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Momento AFTER</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para gravar o histórico de uma alteração já feita, qual momento é o mais indicado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nenhum: histórico só é feito no back-end.</li>
+                        <li><span class="letra">B)</span>BEFORE, porque a linha ainda não existe.</li>
+                        <li><span class="letra">C)</span>INSTEAD OF, porque substitui a tabela.</li>
+                        <li><span class="letra">D)</span>AFTER, porque a linha já foi gravada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">FOR EACH ROW</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um UPDATE muda 30 linhas. Quantas vezes dispara um trigger FOR EACH ROW?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma vez só.</li>
+                        <li><span class="letra">B)</span>Duas vezes, antes e depois.</li>
+                        <li><span class="letra">C)</span>Nenhuma vez.</li>
+                        <li><span class="letra">D)</span>30 vezes, uma por linha afetada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">FOR EACH STATEMENT</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O mesmo UPDATE de 30 linhas dispara quantas vezes um trigger FOR EACH STATEMENT?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nenhuma vez, pois só dispara em INSERT.</li>
+                        <li><span class="letra">B)</span>Uma vez, por comando.</li>
+                        <li><span class="letra">C)</span>60 vezes.</li>
+                        <li><span class="letra">D)</span>30 vezes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Duas Peças</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No PostgreSQL, quais são as duas peças de um trigger?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma tabela e uma visão.</li>
+                        <li><span class="letra">B)</span>Uma função de trigger e o comando CREATE TRIGGER que a liga à tabela.</li>
+                        <li><span class="letra">C)</span>Um procedimento e um CALL.</li>
+                        <li><span class="letra">D)</span>Um índice e uma chave estrangeira.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Tipo de Retorno</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual tipo de retorno a função de trigger deve declarar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>RETURNS void.</li>
+                        <li><span class="letra">B)</span>RETURNS integer.</li>
+                        <li><span class="letra">C)</span>RETURNS table.</li>
+                        <li><span class="letra">D)</span>RETURNS trigger.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Parâmetros</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quantos parâmetros declarados uma função de trigger pode ter?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dois, NEW e OLD.</li>
+                        <li><span class="letra">B)</span>Nenhum: ela não recebe parâmetros declarados.</li>
+                        <li><span class="letra">C)</span>Quantos o programador quiser.</li>
+                        <li><span class="letra">D)</span>Exatamente um, a linha nova.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Ligar a Função</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual trecho liga a função ao trigger no CREATE TRIGGER?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>RETURN registrar_historico_nota;</li>
+                        <li><span class="letra">B)</span>CALL registrar_historico_nota();</li>
+                        <li><span class="letra">C)</span>SELECT registrar_historico_nota();</li>
+                        <li><span class="letra">D)</span>EXECUTE FUNCTION registrar_historico_nota();</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Variável NEW</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que guarda a variável NEW dentro da função de trigger?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O nome da tabela.</li>
+                        <li><span class="letra">B)</span>O usuário que está logado.</li>
+                        <li><span class="letra">C)</span>A linha antiga, como estava.</li>
+                        <li><span class="letra">D)</span>A linha nova, como vai ficar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Variável OLD</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que guarda a variável OLD dentro da função de trigger?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A linha nova.</li>
+                        <li><span class="letra">B)</span>O total de linhas da tabela.</li>
+                        <li><span class="letra">C)</span>A linha antiga, como estava antes do comando.</li>
+                        <li><span class="letra">D)</span>A data de criação da tabela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">NEW no DELETE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num trigger de DELETE, o que vale NEW?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Vem vazio (NULL), porque não existe linha nova.</li>
+                        <li><span class="letra">B)</span>O mesmo que TG_OP.</li>
+                        <li><span class="letra">C)</span>A linha que foi apagada.</li>
+                        <li><span class="letra">D)</span>A próxima linha da tabela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">OLD no INSERT</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num trigger de INSERT, o que vale OLD?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O valor DEFAULT da coluna.</li>
+                        <li><span class="letra">B)</span>A linha inserida.</li>
+                        <li><span class="letra">C)</span>A última linha da tabela.</li>
+                        <li><span class="letra">D)</span>Vem vazio (NULL), porque não existia linha antes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">TG_OP</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a variável TG_OP informa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A operação que disparou: &#x27;INSERT&#x27;, &#x27;UPDATE&#x27; ou &#x27;DELETE&#x27;.</li>
+                        <li><span class="letra">B)</span>O usuário do banco.</li>
+                        <li><span class="letra">C)</span>A hora do disparo.</li>
+                        <li><span class="letra">D)</span>O número de linhas afetadas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">TG_TABLE_NAME</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a variável TG_TABLE_NAME guarda?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O nome da tabela que disparou o trigger.</li>
+                        <li><span class="letra">B)</span>O nome do banco.</li>
+                        <li><span class="letra">C)</span>O nome da coluna alterada.</li>
+                        <li><span class="letra">D)</span>O nome da função.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Tabela de Histórico</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na tabela historico_nota, por que as colunas alterado_por e alterado_em usam DEFAULT current_user e now()?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para apagar o histórico antigo.</li>
+                        <li><span class="letra">B)</span>Para trocar o usuário do banco.</li>
+                        <li><span class="letra">C)</span>Para impedir alterações na nota.</li>
+                        <li><span class="letra">D)</span>Para gravar automaticamente quem alterou e quando.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Valores Gravados</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No histórico de nota, de onde vêm nota_anterior e nota_nova?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>De NEW.nota_final e de NEW.nota_final de novo.</li>
+                        <li><span class="letra">B)</span>De TG_OP e TG_TABLE_NAME.</li>
+                        <li><span class="letra">C)</span>De OLD.nota_final e NEW.nota_final.</li>
+                        <li><span class="letra">D)</span>Do back-end, que manda os dois valores.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Retorno no AFTER</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece com o valor devolvido pela função num trigger AFTER ... FOR EACH ROW?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga a linha gravada.</li>
+                        <li><span class="letra">B)</span>É gravado na tabela de histórico.</li>
+                        <li><span class="letra">C)</span>É ignorado, mas a função ainda precisa devolver algo (ex.: RETURN NEW).</li>
+                        <li><span class="letra">D)</span>Substitui a linha gravada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Cláusula WHEN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve WHEN (OLD.nota_final IS DISTINCT FROM NEW.nota_final)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para gravar o histórico só quando a nota realmente mudou.</li>
+                        <li><span class="letra">B)</span>Para barrar qualquer alteração de nota.</li>
+                        <li><span class="letra">C)</span>Para gravar o histórico só quando a nota é nula.</li>
+                        <li><span class="letra">D)</span>Para disparar o trigger em todo SELECT.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">IS DISTINCT FROM</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que usar IS DISTINCT FROM em vez de &lt;&gt; para comparar a nota antiga com a nova?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque &lt;&gt; só compara textos.</li>
+                        <li><span class="letra">B)</span>Porque &lt;&gt; não existe no PostgreSQL.</li>
+                        <li><span class="letra">C)</span>Porque IS DISTINCT FROM é mais curto.</li>
+                        <li><span class="letra">D)</span>Porque trata corretamente o NULL: de NULL para 8,5 conta como mudança.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Mesmo Valor</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Com o trigger de histórico usando WHEN, um UPDATE que grava a mesma nota 8,5 que já estava salva faz o quê?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Grava duas linhas no histórico.</li>
+                        <li><span class="letra">B)</span>Dá erro e desfaz o UPDATE.</li>
+                        <li><span class="letra">C)</span>Apaga o histórico anterior.</li>
+                        <li><span class="letra">D)</span>Não grava linha no histórico.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Base da Auditoria</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Registrar quem mudou o quê e quando prepara qual assunto da aula 19?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A instalação do SGBD.</li>
+                        <li><span class="letra">B)</span>A auditoria dos dados.</li>
+                        <li><span class="letra">C)</span>O diagrama entidade-relacionamento.</li>
+                        <li><span class="letra">D)</span>A normalização.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Validação BEFORE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para barrar a alteração do valor de uma parcela já paga, qual trigger usar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um trigger sem função.</li>
+                        <li><span class="letra">B)</span>BEFORE SELECT ... FOR EACH ROW.</li>
+                        <li><span class="letra">C)</span>AFTER INSERT ... FOR EACH STATEMENT.</li>
+                        <li><span class="letra">D)</span>BEFORE UPDATE ... FOR EACH ROW, com RAISE EXCEPTION.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">RAISE EXCEPTION</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No trigger de validação, o que acontece quando a função chega a um RAISE EXCEPTION?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O comando inteiro para e é desfeito, com a mensagem de erro.</li>
+                        <li><span class="letra">B)</span>O trigger é apagado.</li>
+                        <li><span class="letra">C)</span>A linha é gravada e aparece um aviso.</li>
+                        <li><span class="letra">D)</span>Só a próxima linha é barrada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">RETURN NEW no BEFORE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num trigger BEFORE UPDATE, o que faz RETURN NEW?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Grava a linha antiga.</li>
+                        <li><span class="letra">B)</span>Deixa a alteração seguir com a linha nova (que pode ter sido ajustada).</li>
+                        <li><span class="letra">C)</span>Apaga a linha.</li>
+                        <li><span class="letra">D)</span>Cancela a alteração.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">RETURN NULL no BEFORE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num trigger BEFORE ... FOR EACH ROW, o que acontece se a função devolver NULL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A linha é gravada com todos os campos nulos.</li>
+                        <li><span class="letra">B)</span>A linha é pulada em silêncio: nada é gravado e não aparece erro.</li>
+                        <li><span class="letra">C)</span>Aparece um erro de chave estrangeira.</li>
+                        <li><span class="letra">D)</span>O banco reinicia.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">RETURN OLD no DELETE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num trigger BEFORE DELETE, o que se devolve para a exclusão seguir?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>RETURN OLD.</li>
+                        <li><span class="letra">B)</span>RETURN NEW.</li>
+                        <li><span class="letra">C)</span>RETURN TG_OP.</li>
+                        <li><span class="letra">D)</span>RETURN NULL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Ajustar a Linha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual trecho, num trigger BEFORE INSERT em aluno, grava o e-mail sempre em minúsculas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>OLD.email := lower(OLD.email); RETURN OLD;</li>
+                        <li><span class="letra">B)</span>UPDATE aluno SET email = lower(email);</li>
+                        <li><span class="letra">C)</span>NEW.email := lower(NEW.email); RETURN NEW;</li>
+                        <li><span class="letra">D)</span>RETURN NULL;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Evento Duplo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa BEFORE UPDATE OR DELETE ON parcela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga as parcelas atualizadas.</li>
+                        <li><span class="letra">B)</span>Dispara só quando os dois comandos vêm juntos.</li>
+                        <li><span class="letra">C)</span>O mesmo trigger dispara antes de UPDATE e antes de DELETE na tabela parcela.</li>
+                        <li><span class="letra">D)</span>Dispara depois de qualquer comando no banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Restrição Primeiro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A regra &quot;valor da parcela maior que zero&quot; olha só a própria linha. Qual é a primeira escolha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma tabela de histórico.</li>
+                        <li><span class="letra">B)</span>Um procedimento chamado pelo back-end.</li>
+                        <li><span class="letra">C)</span>Uma restrição CHECK (valor &gt; 0).</li>
+                        <li><span class="letra">D)</span>Um trigger AFTER DELETE.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Quando é Trigger</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em qual situação o trigger é a melhor escolha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quando é a cor do botão na tela.</li>
+                        <li><span class="letra">B)</span>Quando é a ação de matricular pedida pelo sistema.</li>
+                        <li><span class="letra">C)</span>Quando a regra só olha um campo da linha, como valor &gt; 0.</li>
+                        <li><span class="letra">D)</span>Quando a regra compara antes e depois (OLD × NEW) ou grava em outra tabela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Quando é Procedimento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para a ação &quot;matricular aluno só se houver vaga&quot;, pedida pelo sistema, o que se usa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um índice.</li>
+                        <li><span class="letra">B)</span>Uma restrição UNIQUE.</li>
+                        <li><span class="letra">C)</span>Um procedimento chamado com CALL.</li>
+                        <li><span class="letra">D)</span>Um trigger AFTER DELETE.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Banco Mágico</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que trigger demais pode atrapalhar a equipe?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque triggers apagam as tabelas.</li>
+                        <li><span class="letra">B)</span>Porque quem lê o comando não vê o que mais acontece; por isso cada trigger deve ser documentado.</li>
+                        <li><span class="letra">C)</span>Porque o PostgreSQL aceita só um trigger.</li>
+                        <li><span class="letra">D)</span>Porque triggers impedem consultas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Listar no psql</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como ver os triggers da tabela matricula no psql?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>\dt triggers</li>
+                        <li><span class="letra">B)</span>\d matricula (eles aparecem no fim).</li>
+                        <li><span class="letra">C)</span>\l matricula</li>
+                        <li><span class="letra">D)</span>SELECT * FROM matricula;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Desligar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando desliga um trigger sem apagá-lo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ALTER TABLE parcela DISABLE TRIGGER trg_proteger_parcela_paga;</li>
+                        <li><span class="letra">B)</span>STOP TRIGGER trg_proteger_parcela_paga;</li>
+                        <li><span class="letra">C)</span>DROP TABLE parcela;</li>
+                        <li><span class="letra">D)</span>DELETE TRIGGER trg_proteger_parcela_paga;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Remover</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando remove o trigger de histórico?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>DELETE FROM trg_historico_nota;</li>
+                        <li><span class="letra">B)</span>DROP TRIGGER trg_historico_nota;</li>
+                        <li><span class="letra">C)</span>DROP TRIGGER trg_historico_nota ON matricula;</li>
+                        <li><span class="letra">D)</span>DROP TABLE trg_historico_nota;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Função Continua</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois de DROP TRIGGER trg_historico_nota ON matricula, o que acontece com a função registrar_historico_nota?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>É apagada junto, sempre.</li>
+                        <li><span class="letra">B)</span>Passa a disparar em todas as tabelas.</li>
+                        <li><span class="letra">C)</span>Continua existindo; é removida com DROP FUNCTION.</li>
+                        <li><span class="letra">D)</span>Vira um procedimento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">CREATE OR REPLACE TRIGGER</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz CREATE OR REPLACE TRIGGER (PostgreSQL 14 ou mais novo)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Desliga o trigger.</li>
+                        <li><span class="letra">B)</span>Apaga todas as funções.</li>
+                        <li><span class="letra">C)</span>Cria uma cópia da tabela.</li>
+                        <li><span class="letra">D)</span>Troca a definição do trigger sem precisar apagá-lo antes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Erro: RETURNS void</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um colega criou a função de trigger com RETURNS void. O que acontece?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O trigger dispara duas vezes.</li>
+                        <li><span class="letra">B)</span>Dá erro ao criar o trigger: a função deve ser RETURNS trigger.</li>
+                        <li><span class="letra">C)</span>Funciona normalmente.</li>
+                        <li><span class="letra">D)</span>A tabela é apagada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Erro: sem RETURN NEW</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um trigger BEFORE UPDATE devolve NULL por engano. O que o colega vê?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O UPDATE diz &quot;UPDATE 0&quot; e a linha não muda, sem mensagem de erro.</li>
+                        <li><span class="letra">B)</span>A tabela fica vazia.</li>
+                        <li><span class="letra">C)</span>Um erro de sintaxe.</li>
+                        <li><span class="letra">D)</span>A linha muda normalmente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Erro: Laço</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um trigger AFTER UPDATE em matricula faz UPDATE matricula dentro da função. O que pode acontecer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ele dispara de novo, em laço, até dar erro de profundidade.</li>
+                        <li><span class="letra">B)</span>Nada: triggers nunca disparam outros.</li>
+                        <li><span class="letra">C)</span>O banco grava só a primeira vez e para sozinho sem erro.</li>
+                        <li><span class="letra">D)</span>A tabela é duplicada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Corrigir o Laço</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como mudar um campo da própria linha sem provocar laço?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Usar um trigger AFTER com outro UPDATE.</li>
+                        <li><span class="letra">B)</span>Usar FOR EACH STATEMENT com DELETE.</li>
+                        <li><span class="letra">C)</span>Usar um trigger BEFORE e alterar NEW antes de gravar.</li>
+                        <li><span class="letra">D)</span>Usar DROP TABLE.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Erro: Sem WHEN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O trigger de histórico foi criado sem WHEN e sem UPDATE OF. Qual é o problema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Impede qualquer UPDATE em matricula.</li>
+                        <li><span class="letra">B)</span>Apaga as notas.</li>
+                        <li><span class="letra">C)</span>Grava linha no histórico mesmo quando a nota não mudou.</li>
+                        <li><span class="letra">D)</span>Não grava nada nunca.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Caso da Escola</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A nota de um aluno &quot;caiu&quot; de 8,0 para 6,0 e ninguém sabe quem mudou. O que resolve daqui em diante?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um índice na coluna nota_final.</li>
+                        <li><span class="letra">B)</span>Tabela historico_nota com trigger que grava nota antiga, nova, usuário e data.</li>
+                        <li><span class="letra">C)</span>Pedir que os professores anotem num caderno.</li>
+                        <li><span class="letra">D)</span>Apagar a coluna nota_final.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Testes da SA 2</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na entrega da SA 2, quais testes o script 06-triggers.sql deve trazer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Alteração que grava histórico, alteração sem mudança (não grava) e tentativa barrada na parcela paga.</li>
+                        <li><span class="letra">B)</span>Só a criação das tabelas, sem testes.</li>
+                        <li><span class="letra">C)</span>Apenas um SELECT * de cada tabela.</li>
+                        <li><span class="letra">D)</span>A exclusão de todos os triggers.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Aula 18: Triggers (Disparadores)</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>
