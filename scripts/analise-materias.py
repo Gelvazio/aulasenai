@@ -8,8 +8,13 @@ relatório em tasks/ANALISE-MATERIAS-RELATORIO.json. Só lê arquivos; não alte
 """
 
 import json
+import sys
 from datetime import datetime
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "status-materias"))
+
+from ordem_materias import montar_ordem  # noqa: E402
 
 RAIZ_PROJETO = Path(__file__).resolve().parent.parent
 PASTA_MATERIAIS = RAIZ_PROJETO / "MATERIAIS"
@@ -27,6 +32,7 @@ PECAS_ARQUIVO = {
     "indice_atividades": "ATIVIDADES/index.html",
     "status_atividades": "ATIVIDADES/STATUS-ATIVIDADES.md",
     "status_apostila": "APOSTILA/STATUS-APOSTILA.md",
+    "status_materia": "STATUS_MATERIA.md",
 }
 
 CONTAGENS = {
@@ -44,6 +50,7 @@ PENDENCIA_POR_PECA = {
     "indice_atividades": "Gerar ATIVIDADES/index.html",
     "status_atividades": "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
     "status_apostila": "Criar APOSTILA/STATUS-APOSTILA.md",
+    "status_materia": "Gerar STATUS_MATERIA.md (scripts/status-materias/gerar_status_materia.py)",
     "aulas_conteudo": "Extrair as aulas da ementa para CONTEUDO/",
     "fontes_atividades": "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
     "atividades_50_questoes": "Gerar a atividade objetiva de 50 questões de cada aula",
@@ -182,6 +189,22 @@ def analisar_curso(pasta_curso):
     return materias, ignoradas
 
 
+def ordenar_pela_ordem_oficial(materias):
+    """Ordena as matérias pela ordem de tasks/ORDEM-MATERIAS.md (regra do CLAUDE.md).
+
+    Args:
+        materias: resultados de analisar_materia.
+
+    Returns:
+        list[dict]: as mesmas matérias, na ordem oficial, cada uma com o campo "ordem".
+    """
+    ordem = montar_ordem([materia["caminho"] for materia in materias])
+    posicao = {caminho: indice for indice, caminho in enumerate(ordem, start=1)}
+    for materia in materias:
+        materia["ordem"] = posicao[materia["caminho"]]
+    return sorted(materias, key=lambda materia: materia["ordem"])
+
+
 def montar_relatorio():
     """Percorre todos os cursos e monta o relatório completo.
 
@@ -194,6 +217,7 @@ def montar_relatorio():
         materias_curso, ignoradas_curso = analisar_curso(pasta_curso)
         materias += materias_curso
         ignoradas += ignoradas_curso
+    materias = ordenar_pela_ordem_oficial(materias)
     completas = sum(1 for materia in materias if materia["completa"])
     return {
         "gerado_em": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
