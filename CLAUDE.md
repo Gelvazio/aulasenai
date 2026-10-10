@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 20:59:55
+**Versão das regras:** 2026-10-09 21:19:39
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 21:19:39 | **Cada aula finalizada = status gravado + commit:** ao terminar uma aula (gerar o material ou aplicar os seeds dela), gravar na hora o status em todos os arquivos (registro de seeds, `STATUS-AULAS.md`, `STATUS-ATIVIDADES.md`, item da etapa) e fazer o commit (e push na nuvem) antes de passar à próxima — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" e "🌱 REGRA — SEEDS DO BANCO" |
 | 2026-10-09 20:59:55 | **Seeds antes de qualquer tarefa:** antes de começar uma tarefa nova ou continuar uma tarefa, concluir todos os seeds de `database/SEEDS-APLICADOS.md` (aplicar os PENDENTE, conferir pelo md5 os APLICADO e marcar CONCLUÍDO); os que dependem de decisão do usuário vão para "⏳ Aguardando o usuário" e são perguntados — seção "🌱 REGRA — SEEDS DO BANCO", passo novo na "INICIALIZAÇÃO" e linha nas "REGRAS DO USUÁRIO QUE VALEM SEMPRE" |
 | 2026-10-09 19:38:38 | **Regra de seeds só no `CLAUDE.md`:** seção nova "🌱 REGRA — SEEDS DO BANCO" (status, aplicar em partes pelo conector, conferência pelo md5, análise só dos APLICADO, CONCLUÍDO não é reverificado) referenciando `database/SEEDS-APLICADOS.md`; `docs/regras/atividades.md`, `docs/REGRAS-ATIVIDADE-PRATICA.md` e o registro só apontam para ela |
 | 2026-10-09 19:35:54 | **Análise dos seeds:** ao iniciar, seed APLICADO é conferido no banco pelo md5 e, se existir e bater, vira CONCLUÍDO; seed CONCLUÍDO não é verificado de novo (só se o arquivo mudar) — `CLAUDE.md` ("Seeds de atividades"), `docs/regras/atividades.md` e `database/SEEDS-APLICADOS.md` |
 | 2026-10-09 19:23:21 | **Status em todos os seeds:** cada `database/*-seed-atividades.sql` tem status **PENDENTE**, **APLICADO** ou **CONCLUÍDO** em `database/SEEDS-APLICADOS.md` (69 arquivos conferidos no banco: 26 pendentes, 3 aplicados, 40 concluídos); item da etapa acompanha o status |
-| 2026-10-09 19:19:18 | **Seeds aplicados:** registro único `database/SEEDS-APLICADOS.md`; toda tarefa que gera seed tem o item "Aplicar os seeds no Supabase" no arquivo da etapa (⬜ até o pedido, ✅ só depois de aplicado e conferido); autorização de 2026-10-03 vale só para o plano daquela data (`docs/regras/atividades.md`) |
 
 ---
 
@@ -59,6 +59,11 @@ Registrada em 2026-10-03 a pedido do usuário.
 - ⛔ **Seeds concluídos antes de qualquer tarefa** (2026-10-09, pedido do usuário): antes de
   começar ou continuar qualquer tarefa, concluir todos os seeds de `database/SEEDS-APLICADOS.md`
   (ver a regra "🌱 REGRA — SEEDS DO BANCO").
+- ✅ **Cada aula finalizada = status gravado + commit** (2026-10-09, pedido do usuário): sempre que
+  terminar **uma aula** (gerar o material dela ou aplicar e conferir os seeds dela), **gravar o status
+  na hora** em todos os arquivos envolvidos (`database/SEEDS-APLICADOS.md`, `STATUS-AULAS.md`,
+  `STATUS-ATIVIDADES.md` da matéria e o item da etapa em `tasks/etapas/`) e **fazer o commit** (na
+  nuvem, também o push) **antes de passar à próxima aula** — nunca acumular várias aulas.
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
 - ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, numa branch própria + novo PR para a `main`).
@@ -869,6 +874,9 @@ regra de seeds do projeto** (os outros arquivos só apontam para cá). O registr
     Aguardando o usuário"** do `STATUS.md` e é **perguntado** ao usuário; só ele não trava a tarefa.
   - ⛔ Sem conector do Supabase (ou no ambiente local sem acesso ao banco): avisar o usuário quais
     seeds faltam antes de começar a tarefa.
+- ✅ **Uma aula por vez** (pedido do usuário): aplicou os seeds de uma aula (objetiva + prática) →
+  conferir pelo md5 → gravar o status (registro, `STATUS-AULAS.md`, `STATUS-ATIVIDADES.md`, item da
+  etapa) → commit (e push na nuvem) → só então a próxima aula.
 - ✅ **Ao iniciar a análise dos seeds** (2026-10-09 19:35:54): conferir pelo md5 **só os
   seeds APLICADO**. ⛔ **Seed CONCLUÍDO não é verificado de novo**; só volta a ser conferido se o
   arquivo do seed mudar (aí volta a **PENDENTE**).
