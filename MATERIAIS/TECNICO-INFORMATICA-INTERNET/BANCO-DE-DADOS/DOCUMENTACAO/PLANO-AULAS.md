@@ -26,6 +26,6 @@
 | 16 | Consultas com junções, agrupamentos e subconsultas | 4 | 3.2.1 | C8 | [AULA-16](../CONTEUDO/AULA-16-CONSULTAS-COM-JUNCOES-AGRUPAMENTOS-E-SUBCONSULTAS.md) |
 | 17 | Procedimentos armazenados | 4 | 3.2.5 | C8 | [AULA-17](../CONTEUDO/AULA-17-PROCEDIMENTOS-ARMAZENADOS.md) |
 | 18 | Triggers (disparadores) | 4 | 3.2.6 | C8 | [AULA-18](../CONTEUDO/AULA-18-TRIGGERS-DISPARADORES.md) |
-| 19 | Segurança da informação: pilares, acesso e auditoria | 4 | 2 · 2.1–2.3 | C12, C13, C14 | ⬜ |
+| 19 | Segurança da informação: pilares, acesso e auditoria | 4 | 2 · 2.1–2.3 | C12, C13, C14 | [AULA-19](../CONTEUDO/AULA-19-SEGURANCA-DA-INFORMACAO-PILARES-ACESSO-E-AUDITORIA.md) |
 | 20 | Projeto integrador: banco documentado para o back-end | 4 | 6 · 3 · 5 | C1, C2, C3, C7, C8, C14, S1, S2 | ⬜ |
 | **Total** | | **80** | | | |
