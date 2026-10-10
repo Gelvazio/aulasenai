@@ -230,6 +230,8 @@ ATIVIDADES_BANCO_DADOS = [
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-18-50-QUESTOES.md"),
     (19, "Segurança da Informação: Pilares, Acesso e Auditoria", DATA_PROVISORIA,
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-19-50-QUESTOES.md"),
+    (20, "Projeto Integrador: Banco Documentado para o Back-end", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-20-50-QUESTOES.md"),
 ]
 
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.

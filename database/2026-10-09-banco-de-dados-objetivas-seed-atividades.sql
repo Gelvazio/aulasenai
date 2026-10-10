@@ -1377,4 +1377,75 @@ begin
       (v_atividade, 48, 'LGPD', 'A'),
       (v_atividade, 49, 'Backup Testado', 'A'),
       (v_atividade, 50, 'Senha da Aplicação', 'B');
+
+  -- Aula 20: Projeto Integrador: Banco Documentado para o Back-end
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Projeto Integrador: Banco Documentado para o Back-end' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (20, 'Projeto Integrador: Banco Documentado para o Back-end', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Projeto Integrador: Banco Documentado para o Back-end', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Projeto Integrador: Banco Documentado para o Back-end (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-20-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Banco Pronto', 'D'),
+      (v_atividade, 2, 'Documentação Técnica', 'A'),
+      (v_atividade, 3, 'Documento de Escopo', 'D'),
+      (v_atividade, 4, 'Referência da Entrega', 'B'),
+      (v_atividade, 5, 'Requisito sem Tabela', 'D'),
+      (v_atividade, 6, 'Tabela sem Requisito', 'A'),
+      (v_atividade, 7, 'Dicionário de Dados', 'B'),
+      (v_atividade, 8, 'Dicionário Desatualizado', 'A'),
+      (v_atividade, 9, 'DER na Entrega', 'D'),
+      (v_atividade, 10, 'Cronograma Fechado', 'A'),
+      (v_atividade, 11, 'Fluxograma', 'D'),
+      (v_atividade, 12, 'Símbolo do Banco', 'A'),
+      (v_atividade, 13, 'Guia de Instalação', 'A'),
+      (v_atividade, 14, 'Por que Numerar', 'B'),
+      (v_atividade, 15, 'Ordem dos Scripts', 'D'),
+      (v_atividade, 16, 'Script de Segurança', 'B'),
+      (v_atividade, 17, 'Script de Estrutura', 'C'),
+      (v_atividade, 18, 'Idempotente', 'B'),
+      (v_atividade, 19, 'CREATE OR REPLACE', 'B'),
+      (v_atividade, 20, 'Transação nos Scripts', 'A'),
+      (v_atividade, 21, 'Senha no Script', 'C'),
+      (v_atividade, 22, 'Recriar do Zero', 'A'),
+      (v_atividade, 23, 'ON_ERROR_STOP', 'C'),
+      (v_atividade, 24, 'Executar Arquivo', 'B'),
+      (v_atividade, 25, 'Rastreabilidade', 'B'),
+      (v_atividade, 26, 'Limite de Vagas', 'D'),
+      (v_atividade, 27, 'Parcela Paga', 'D'),
+      (v_atividade, 28, 'CPF Único', 'A'),
+      (v_atividade, 29, 'Financeiro sem CPF', 'A'),
+      (v_atividade, 30, 'Conferir Tabelas', 'D'),
+      (v_atividade, 31, 'Conferir Colunas', 'D'),
+      (v_atividade, 32, 'Teste de Restrição', 'A'),
+      (v_atividade, 33, 'Erro Esperado', 'B'),
+      (v_atividade, 34, 'Relatório de Testes', 'B'),
+      (v_atividade, 35, 'Contagem de Dados', 'A'),
+      (v_atividade, 36, 'Backup da Entrega', 'D'),
+      (v_atividade, 37, 'Teste de Restauração', 'C'),
+      (v_atividade, 38, 'Arquivo de Backup', 'D'),
+      (v_atividade, 39, 'Login do Back-end', 'C'),
+      (v_atividade, 40, 'String de Conexão', 'B'),
+      (v_atividade, 41, 'Contrato do Banco', 'C'),
+      (v_atividade, 42, 'Chamar a Rotina', 'C'),
+      (v_atividade, 43, 'Regras no Banco', 'C'),
+      (v_atividade, 44, 'Revisor', 'B'),
+      (v_atividade, 45, 'Autor da Entrega', 'C'),
+      (v_atividade, 46, 'Registro da Revisão', 'B'),
+      (v_atividade, 47, 'Justificativa Técnica', 'C'),
+      (v_atividade, 48, 'Chave Composta', 'C'),
+      (v_atividade, 49, 'Limite no Procedimento', 'C'),
+      (v_atividade, 50, 'Lições Aprendidas', 'A');
 end $$;
