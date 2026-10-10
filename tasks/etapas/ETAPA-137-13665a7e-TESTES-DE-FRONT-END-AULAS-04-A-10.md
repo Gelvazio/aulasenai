@@ -7,7 +7,7 @@ D2: roteiros de laboratório substituídos pelo formato discursivo; D3: seeds ap
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 137.1 | Aula 04 — objetiva 50 questões + prática discursiva + seeds aplicados e conferidos pelo md5 | ⬜ Pendente | — | 50 itens (A13 B13 C12 D12), sem gabarito no HTML; prática 10 × 3 = 10 pontos, 30/30 padrões; md5 banco = arquivo |
+| 137.1 | Aula 04 — objetiva 50 questões + prática discursiva + seeds aplicados e conferidos pelo md5 | ✅ Concluído | 2026-10-10 16:21 | Objetiva id 143 e prática id 144 (aula id 124); md5 do banco = arquivo; 50 itens e 30 tópicos (10 pontos) |
 | 137.2 | Aula 05 — idem | ⬜ Pendente | — | idem |
 | 137.3 | Aula 06 — idem | ⬜ Pendente | — | idem |
 | 137.4 | Aula 07 — idem | ⬜ Pendente | — | idem |
