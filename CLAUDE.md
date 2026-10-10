@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 22:21:17
+**Versão das regras:** 2026-10-10 16:37:58
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-10 16:37:58 | **STATUS_MATERIA e ordem das matérias:** toda matéria tem o `STATUS_MATERIA.md`, gerado por `scripts/status-materias/gerar_status_materia.py` a partir de todos os arquivos da pasta (peças do padrão da ITIC, aulas e coluna Banco lida do `database/SEEDS-APLICADOS.md`), com a situação ⬜ NÃO INICIADA / 🔄 PENDENTE / ✅ CONCLUÍDA; ordem oficial em `tasks/ORDEM-MATERIAS.md` (Banco de Dados 1, Testes de Front-End 2, ITIC 3, demais em seguida), seguida sempre que se lê status de tarefas ou matérias — "🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS" |
 | 2026-10-09 22:21:17 | **Recados lidos a cada merge:** todo merge (trazer a `main` para a branch ou juntar um PR) é seguido da leitura do `tasks/RECADOS.md` (recados das outras sessões e IAs para a sua frente ou para `todas`) — "CONVERSA ENTRE SESSÕES E LICENÇAS" (regra 4) e "PUSH" |
 | 2026-10-09 22:19:14 | **Branch apagada depois do merge:** PR juntado na `main` = a branch dele é excluída do GitHub na hora (fica só o histórico na `main` e no PR); vale para as branches de PRs juntados que ainda existirem — "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM" |
 | 2026-10-09 22:17:26 | **Claude faz o merge dos PRs na nuvem:** depois do push e do PR, o próprio Claude junta o PR na `main` (merge commit, sem push direto nem forçado); havendo conflito de merge, ele mesmo traz a `main` para a branch, resolve, confere e junta — "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM" e "Pull Requests" |
 | 2026-10-09 21:42:18 | **Status SUBSTITUÍDO nos seeds:** seed trocado por outro já no banco, que **por decisão do usuário** não é aplicado, fica **SUBSTITUÍDO** (conta como resolvido na regra "seeds antes de qualquer tarefa"); `scripts/seeds/registrar_seed.py` e o resumo do registro ganham a coluna — "🌱 REGRA — SEEDS DO BANCO" |
-| 2026-10-09 21:37:17 | **Scripts dos seeds e dos status no repositório, uso obrigatório:** `scripts/seeds/` (`dividir_seed.py`, `comparar_md5.py`, `registrar_seed.py` + `README.md`), `scripts/status-materias/` e `scripts/banco-de-dados/` — "🌱 REGRA — SEEDS DO BANCO" |
 
 ---
 
@@ -78,6 +78,9 @@ Registrada em 2026-10-03 a pedido do usuário.
   **logo depois de cada `git commit`**, fazer o `git push -u origin <branch>` da sessão — sem
   esperar outro commit, o fim da tarefa ou a ordem do usuário (detalhe em "Pull Requests"). No
   ambiente local continua proibido o push.
+- ✅ **`STATUS_MATERIA.md` e ordem das matérias** (2026-10-10, pedido do usuário): status de cada
+  matéria gerado dos arquivos dela; ordem Banco de Dados 1, Testes de Front-End 2, ITIC 3… seguida
+  sempre que se lê status de tarefas ou matérias (regra "🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS").
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
 - ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, numa branch própria + novo PR para a `main`).
@@ -175,6 +178,7 @@ pasta. O `TASKS_COMPLETE.md` foi apagado em 2026-10-09: tarefa concluída sai do
 |---|---|---|
 | `tasks/STATUS.md` | **Índice do estado:** "🧭 Frentes de trabalho" (próximo passo de cada sessão), "📌 Tarefas do `TASKS.md`" (com "Em uso por"), "⏳ Aguardando o usuário", tabela "🗂️ Etapas", decisões, riscos, bloqueios, pendências e lições | 🥇 **Fonte única do estado** (junto com `tasks/etapas/`) — em conflito, **ele vence** |
 | `tasks/etapas/ETAPA-NNN[-uuid8]-ASSUNTO.md` | **Uma etapa por arquivo** (itens, status, verificação) — desde 2026-10-09 | Faz parte da fonte única; listado na tabela "🗂️ Etapas" do `STATUS.md` |
+| `<MATERIA>/STATUS_MATERIA.md` | Status de todos os arquivos da matéria e a situação dela (gerado por script) | Detalha a matéria; ordem em `tasks/ORDEM-MATERIAS.md` |
 | `tasks/RECADOS.md` | Recados entre sessões e licenças (só se acrescentam linhas) | Aviso, não estado: o que virar trabalho vai para o `STATUS.md` |
 | `tasks/TASKS.md` | Só a **descrição longa** das tarefas pendentes (concluída ou cancelada = bloco removido) | Aponta para o `STATUS.md` (sem status próprio) |
 | `docs/<tarefa>.md` | Plano da tarefa grande com os passos e o status de cada passo | Detalha a etapa do `STATUS.md` |
@@ -284,6 +288,37 @@ Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 - ✅ Seções sem conteúdo ficam com a tabela vazia (não apagar o cabeçalho).
 - ✅ **"Próximo passo"** é a primeira coisa a ler ao retomar e a última a atualizar ao parar.
 - ✅ Projetos com `STATUS.md` antigo: **migrar para o modelo** sem apagar o histórico já registrado.
+
+---
+
+## 🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS
+
+Registrada em 2026-10-10 16:37:58 a pedido do usuário.
+
+- ✅ **Toda matéria tem o `STATUS_MATERIA.md`** na raiz da pasta dela, com o status de **todos os
+  arquivos da pasta**: (1) peças gerais do padrão da ITIC (ementa, `materia.json`, os 4 status,
+  índice e menu das atividades, avaliações, média final e apostila); (2) uma linha por aula do
+  `AULAS/STATUS-AULAS.md` (aula em `CONTEUDO/`, objetiva página e fonte, prática página, fonte e
+  padrão de resposta, **Banco**); (3) a lista de todos os arquivos (✅ peça do padrão, 📎 outro
+  arquivo, ⚠️ vazio).
+- ✅ **A situação da matéria sai desses arquivos:** **✅ CONCLUÍDA** (todas as peças ✅), **🔄
+  PENDENTE** (parte feita) ou **⬜ NÃO INICIADA** (nenhuma aula com conteúdo ou atividade).
+- ✅ **Coluna Banco:** ✅ só quando os seeds da objetiva **e** da prática da aula estão
+  **CONCLUÍDO** ou **SUBSTITUÍDO** no `database/SEEDS-APLICADOS.md` (o seed mais novo que cadastra
+  a página vence; página sem seed = ⬜).
+- ⛔ **Não editar à mão:** gerar com `python3 scripts/status-materias/gerar_status_materia.py` (na
+  raiz; módulos `ordem_materias.py`, `pecas_materia.py` e `seeds_materia.py`). Rodar **no início de
+  cada sessão** (junto com a análise contínua, tarefa #19) e **ao concluir qualquer tarefa que mexa
+  numa matéria**; os arquivos gerados entram no commit da tarefa.
+- ✅ **Ordem oficial das matérias** em **`tasks/ORDEM-MATERIAS.md`** (gerado pelo mesmo script):
+  **1 = Banco de Dados** (Técnico em Informática para Internet), **2 = Testes de Front-End**,
+  **3 = Introdução à TIC** (matéria modelo) e as demais em seguida, curso por curso. A ordem gravada
+  não muda; matéria nova entra no fim; mudar a ordem só a pedido do usuário.
+- ✅ **Sempre seguir a ordem:** ao ler status de tarefas (`tasks/STATUS.md`, `TASKS.md`, etapas) ou
+  de matérias (relatório da análise, `STATUS_MATERIA.md`, status das aulas e atividades), ao
+  listar matérias para o usuário e ao escolher a próxima matéria a trabalhar, seguir a ordem do
+  `tasks/ORDEM-MATERIAS.md`. O `tasks/ANALISE-MATERIAS-RELATORIO.json` já sai nessa ordem (campo
+  `"ordem"`).
 
 ---
 

@@ -20,8 +20,9 @@ from ordem_materias import (  # noqa: E402
 )
 from pecas_materia import (  # noqa: E402
     NOME_STATUS_MATERIA, conferir_aula, conferir_pecas_da_materia,
-    inventariar_arquivos, ler_linhas_das_aulas,
+    inventariar_arquivos, ler_numeros_das_aulas,
 )
+from seeds_materia import mapear_status_por_pagina  # noqa: E402
 
 COMANDO_DATA = ["bash", "-c", 'TZ=America/Sao_Paulo date "+%Y-%m-%d %H:%M:%S"']
 SITUACAO_CONCLUIDA = "✅ CONCLUÍDA"
@@ -32,7 +33,8 @@ MARCA_FALTA = "⬜"
 PECAS_QUE_MOSTRAM_INICIO = ("Aula em CONTEUDO/", "Objetiva (página)", "Prática (página)")
 LEGENDA = (
     "> Legenda: `✅` peça presente · `⬜` peça pendente · `📎` outro arquivo (fora do padrão) · "
-    "`⚠️` arquivo vazio.\n> Situação: **✅ CONCLUÍDA** (todas as peças ✅) · **🔄 PENDENTE** "
+    "`⚠️` arquivo vazio. **Banco (seeds)** = seeds da objetiva e da prática da aula "
+    "CONCLUÍDO ou SUBSTITUÍDO em `database/SEEDS-APLICADOS.md`.\n> Situação: **✅ CONCLUÍDA** (todas as peças ✅) · **🔄 PENDENTE** "
     "(parte feita) · **⬜ NÃO INICIADA** (nenhuma aula com conteúdo ou atividade)."
 )
 
@@ -58,18 +60,19 @@ def marca(ok):
     return MARCA_OK if ok else MARCA_FALTA
 
 
-def analisar_materia(pasta_materia):
+def analisar_materia(pasta_materia, por_pagina):
     """Confere peças gerais, aulas e arquivos de uma matéria e calcula a situação.
 
     Args:
         pasta_materia: Path da matéria.
+        por_pagina: status do seed por página (registro dos seeds).
 
     Returns:
         dict: peças, aulas, inventário, contagens e situação.
     """
     pecas_gerais = conferir_pecas_da_materia(pasta_materia)
-    aulas = [conferir_aula(pasta_materia, numero, celula)
-             for numero, celula in ler_linhas_das_aulas(pasta_materia)]
+    aulas = [conferir_aula(pasta_materia, numero, por_pagina)
+             for numero in ler_numeros_das_aulas(pasta_materia)]
     resultados = [arquivo is not None for _, _, arquivo in pecas_gerais]
     resultados += [ok for aula in aulas for _, _, ok in aula["pecas"]]
     iniciada = any(ok for aula in aulas for nome, _, ok in aula["pecas"]
@@ -227,9 +230,10 @@ def main():
     """Gera os STATUS_MATERIA.md (na ordem oficial) e o tasks/ORDEM-MATERIAS.md."""
     data_hora = agora()
     ordem = montar_ordem(listar_materias())
+    por_pagina = mapear_status_por_pagina()
     linhas_resumo = []
     for posicao, caminho in enumerate(ordem, start=1):
-        analise = analisar_materia(RAIZ_PROJETO / caminho)
+        analise = analisar_materia(RAIZ_PROJETO / caminho, por_pagina)
         texto = montar_status_materia(caminho, posicao, analise, data_hora)
         (RAIZ_PROJETO / caminho / NOME_STATUS_MATERIA).write_text(texto, encoding="utf-8")
         linhas_resumo.append((posicao, caminho, analise))

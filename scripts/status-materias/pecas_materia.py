@@ -7,11 +7,13 @@ Só lê arquivos. Usado por gerar_status_materia.py para montar o STATUS_MATERIA
 
 import re
 
+from seeds_materia import RAIZ_PROJETO, pagina_resolvida
+
 ARQUIVO_STATUS_AULAS = "AULAS/STATUS-AULAS.md"
 NOME_STATUS_MATERIA = "STATUS_MATERIA.md"
 PASTAS_RESUMIDAS = {"_assets", "node_modules", "__pycache__", ".git"}
 PADRAO_LINHA_AULA = re.compile(r"^\|\s*(?:Aula\s+)?0*(\d+)\s*\|")
-SIMBOLOS_BANCO_OK = ("✅", "⛔")
+PECAS_COM_SEED = ("Objetiva (página)", "Prática (página)")
 
 PECAS_DA_MATERIA = (
     ("Ementa", "EMENTA-CHALKIE-AI.md"),
@@ -41,85 +43,45 @@ PECAS_DA_AULA = (
 )
 
 
-def separar_celulas(linha_da_tabela):
-    """Separa as células de uma linha de tabela Markdown.
-
-    Args:
-        linha_da_tabela: linha que começa com "|".
-
-    Returns:
-        list[str]: células sem espaços nas pontas.
-    """
-    return [celula.strip() for celula in linha_da_tabela.strip().strip("|").split("|")]
-
-
-def achar_coluna_banco(linha_cabecalho):
-    """Acha a posição da coluna "Banco" no cabeçalho da tabela de aulas.
-
-    Args:
-        linha_cabecalho: linha "| Aula | ... |".
-
-    Returns:
-        int | None: índice da coluna ou None (aí vale a última célula preenchida).
-    """
-    celulas = separar_celulas(linha_cabecalho)
-    return next((indice for indice, celula in enumerate(celulas)
-                 if celula.lower().startswith("banco")), None)
-
-
-def celula_do_banco(linha_da_tabela, coluna_banco):
-    """Devolve o texto da célula Banco de uma linha de aula.
-
-    Args:
-        linha_da_tabela: linha da aula.
-        coluna_banco: índice da coluna Banco ou None.
-
-    Returns:
-        str: texto da célula (vazio se não houver).
-    """
-    celulas = separar_celulas(linha_da_tabela)
-    coluna_existe = coluna_banco is not None and coluna_banco < len(celulas)
-    if coluna_existe:
-        return celulas[coluna_banco]
-    return next((celula for celula in reversed(celulas) if celula), "")
-
-
-def ler_linhas_das_aulas(pasta_materia):
-    """Lê a primeira tabela de aulas do AULAS/STATUS-AULAS.md.
+def ler_numeros_das_aulas(pasta_materia):
+    """Lê os números das aulas da primeira tabela do AULAS/STATUS-AULAS.md.
 
     Args:
         pasta_materia: Path da matéria.
 
     Returns:
-        list[tuple[int, str]]: (número da aula, texto da célula Banco), na ordem do arquivo.
+        list[int]: números das aulas, na ordem do arquivo.
     """
     caminho = pasta_materia / ARQUIVO_STATUS_AULAS
     if not caminho.is_file():
         return []
-    linhas, coluna_banco = [], None
+    numeros = []
     for linha in caminho.read_text(encoding="utf-8").splitlines():
-        if linha.startswith("| Aula") and not linhas:
-            coluna_banco = achar_coluna_banco(linha)
         encontrado = PADRAO_LINHA_AULA.match(linha)
         if encontrado:
-            linhas.append((int(encontrado.group(1)), celula_do_banco(linha, coluna_banco)))
+            numeros.append(int(encontrado.group(1)))
             continue
-        tabela_acabou = bool(linhas) and not linha.startswith("|")
+        tabela_acabou = bool(numeros) and not linha.startswith("|")
         if tabela_acabou:
             break
-    return linhas
+    return numeros
 
 
-def banco_da_aula_ok(celula_banco):
-    """Diz se a célula Banco da aula está ✅ ou ⛔ (não se aplica).
+def banco_da_aula_ok(pecas, por_pagina):
+    """Diz se os seeds da objetiva e da prática da aula estão CONCLUÍDO ou SUBSTITUÍDO.
 
     Args:
-        celula_banco: texto da célula Banco.
+        pecas: lista de (nome, arquivo, ok) da aula.
+        por_pagina: status do seed por página (seeds_materia.mapear_status_por_pagina).
 
     Returns:
-        bool: True se o banco da aula estiver resolvido.
+        bool: True só se as duas páginas existirem e estiverem resolvidas no registro.
     """
-    return celula_banco.startswith(SIMBOLOS_BANCO_OK)
+    paginas = [arquivo for nome, arquivo, _ in pecas if nome in PECAS_COM_SEED]
+    faltou_pagina = len(paginas) < len(PECAS_COM_SEED) or None in paginas
+    if faltou_pagina:
+        return False
+    return all(pagina_resolvida(por_pagina, caminho_da_raiz(pagina)) for pagina in paginas)
 
 
 def procurar_arquivo(pasta, padrao):
@@ -139,13 +101,25 @@ def procurar_arquivo(pasta, padrao):
                  if item.is_file() and regra.match(item.name)), None)
 
 
-def conferir_aula(pasta_materia, numero, celula_banco):
+def caminho_da_raiz(arquivo):
+    """Devolve o caminho do arquivo a partir da raiz do projeto, com barras normais.
+
+    Args:
+        arquivo: Path dentro do projeto.
+
+    Returns:
+        str: caminho relativo (ex.: MATERIAIS/CURSO/MATERIA/ATIVIDADES/x.html).
+    """
+    return arquivo.relative_to(RAIZ_PROJETO).as_posix()
+
+
+def conferir_aula(pasta_materia, numero, por_pagina):
     """Confere as peças de uma aula (conteúdo, objetiva, prática e banco).
 
     Args:
         pasta_materia: Path da matéria.
         numero: número da aula.
-        celula_banco: texto da célula Banco da aula no STATUS-AULAS.md.
+        por_pagina: status do seed por página (registro database/SEEDS-APLICADOS.md).
 
     Returns:
         dict: número e lista de (nome da peça, Path encontrado ou None, ok).
@@ -155,7 +129,7 @@ def conferir_aula(pasta_materia, numero, celula_banco):
         padrao = modelo.format(n=numero, nn=f"{numero:02d}")
         arquivo = procurar_arquivo(pasta_materia / subpasta, padrao)
         pecas.append((nome, arquivo, arquivo is not None))
-    pecas.append(("Banco (seeds)", None, banco_da_aula_ok(celula_banco)))
+    pecas.append(("Banco (seeds)", None, banco_da_aula_ok(pecas, por_pagina)))
     return {"numero": numero, "pecas": pecas}
 
 

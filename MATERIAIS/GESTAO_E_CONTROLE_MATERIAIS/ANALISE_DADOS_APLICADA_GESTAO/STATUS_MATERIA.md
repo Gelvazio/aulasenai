@@ -2,10 +2,10 @@
 
 **Ordem:** 4 (lista em [`tasks/ORDEM-MATERIAS.md`](../../../tasks/ORDEM-MATERIAS.md))  
 **Curso:** GESTAO_E_CONTROLE_MATERIAIS  
-**Situação:** **🔄 PENDENTE** — 30 de 70 peças (43%)  
-**Gerado em:** 2026-10-10 16:35:10 por `scripts/status-materias/gerar_status_materia.py` (não editar à mão: rodar o script de novo)
+**Situação:** **🔄 PENDENTE** — 23 de 70 peças (33%)  
+**Gerado em:** 2026-10-10 16:38:59 por `scripts/status-materias/gerar_status_materia.py` (não editar à mão: rodar o script de novo)
 
-> Legenda: `✅` peça presente · `⬜` peça pendente · `📎` outro arquivo (fora do padrão) · `⚠️` arquivo vazio.
+> Legenda: `✅` peça presente · `⬜` peça pendente · `📎` outro arquivo (fora do padrão) · `⚠️` arquivo vazio. **Banco (seeds)** = seeds da objetiva e da prática da aula CONCLUÍDO ou SUBSTITUÍDO em `database/SEEDS-APLICADOS.md`.
 > Situação: **✅ CONCLUÍDA** (todas as peças ✅) · **🔄 PENDENTE** (parte feita) · **⬜ NÃO INICIADA** (nenhuma aula com conteúdo ou atividade).
 
 ## 1. Peças da matéria (padrão da ITIC)
@@ -31,13 +31,13 @@
 
 | Aula | Aula em CONTEUDO/ | Objetiva (página) | Objetiva (fonte) | Prática (página) | Prática (fonte) | Prática (padrão de resposta) | Banco (seeds) | Aula pronta |
 |---|---|---|---|---|---|---|---|---|
-| 01 | ✅ | ⬜ | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ⬜ |
-| 02 | ✅ | ⬜ | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ⬜ |
-| 03 | ✅ | ⬜ | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ⬜ |
-| 04 | ✅ | ⬜ | ✅ | ⬜ | ⬜ | ⬜ | ✅ | ⬜ |
-| 05 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ✅ | ⬜ |
-| 06 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ✅ | ⬜ |
-| 07 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ✅ | ⬜ |
+| 01 | ✅ | ⬜ | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 02 | ✅ | ⬜ | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 03 | ✅ | ⬜ | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 04 | ✅ | ⬜ | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 05 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 06 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 07 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 08 | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
 ## 3. Todos os arquivos da pasta (224)
