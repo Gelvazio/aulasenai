@@ -16,7 +16,7 @@
 | 01 | Fundamentos de Testes de Software | ✅ `ATIVIDADES-AULA-01-50-QUESTOES.html` | 50 | ✅ | ✅ id 96 | ✅ Concluída |
 | 02 | Planejamento, Verificação, Validação e Casos de Teste | ✅ `ATIVIDADES-AULA-02-50-QUESTOES.html` | 50 | ✅ | ✅ id 97 | ✅ Concluída |
 | 03 | Testes Unitários no Front-End com Vitest | ✅ `ATIVIDADES-AULA-03-50-QUESTOES.html` | 50 | ✅ | ✅ id 98 | ✅ Concluída |
-| 04 | Testes de Integração com DOM usando Testing Library | ⬜ `ATIVIDADES-AULA-04-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
+| 04 | Testes de Integração com DOM usando Testing Library | ✅ `ATIVIDADES-AULA-04-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 05 | Testes de Integração Avançados e Mock de APIs | ⬜ `ATIVIDADES-AULA-05-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 06 | Testes End to End com Cypress e Playwright | ⬜ `ATIVIDADES-AULA-06-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 | 07 | Métricas e Cobertura de Testes | ⬜ `ATIVIDADES-AULA-07-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
@@ -31,7 +31,7 @@
 | `ATIVIDADE-PRATICA-AULA-01.html` | ✅ Prática discursiva no padrão da prova id 82 (10 questões × 3 tópicos, 10 pontos; fonte `CONTEUDO/ATIVIDADE-PRATICA-AULA-01.md` + `-GABARITO.md`, regra `docs/REGRAS-ATIVIDADE-PRATICA.md`) | ✅ id 99 (bloqueada; o professor libera no índice) |
 | `ATIVIDADE-PRATICA-AULA-02.html` | ✅ Prática discursiva no padrão da prova id 82 (10 questões × 3 tópicos, 10 pontos; fonte `CONTEUDO/ATIVIDADE-PRATICA-AULA-02.md` + `-GABARITO.md`, regra `docs/REGRAS-ATIVIDADE-PRATICA.md`) | ✅ id 100 (bloqueada; o professor libera no índice) |
 | `ATIVIDADE-PRATICA-AULA-03.html` | ✅ Prática discursiva no padrão da prova id 82 (10 questões × 3 tópicos, 10 pontos; fonte `CONTEUDO/ATIVIDADE-PRATICA-AULA-03.md` + `-GABARITO.md`, regra `docs/REGRAS-ATIVIDADE-PRATICA.md`) | ✅ id 101 (bloqueada; o professor libera no índice) |
-| `CONTEUDO/ATIVIDADE-PRATICA-AULA-04.md` | Roteiro da prática da aula 04 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-04-*.md`) | — |
+| `ATIVIDADE-PRATICA-AULA-04.html` | ✅ Prática discursiva no padrão da prova id 82 (10 questões × 3 tópicos, 10 pontos; fonte `CONTEUDO/ATIVIDADE-PRATICA-AULA-04.md` + `-GABARITO.md`, regra `docs/REGRAS-ATIVIDADE-PRATICA.md`) | ⬜ seed gerado, não aplicado |
 | `CONTEUDO/ATIVIDADE-PRATICA-AULA-05.md` | Roteiro da prática da aula 05 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-05-*.md`) | — |
 | `CONTEUDO/ATIVIDADE-PRATICA-AULA-06.md` | Roteiro da prática da aula 06 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-06-*.md`) | — |
 | `CONTEUDO/ATIVIDADE-PRATICA-AULA-07.md` | Roteiro da prática da aula 07 (Markdown, sem página HTML; liga-se a `../CONTEUDO/AULA-07-*.md`) | — |
