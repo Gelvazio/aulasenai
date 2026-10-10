@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-10-09 21:43:38",
+  "gerado_em": "2026-10-10 00:27:01",
   "padrao": "Matéria modelo: Introdução à TIC (CLAUDE.md, 2026-10-03)",
   "pastas_que_nao_sao_curso": [
     "AGENDA_COLABORADOR",
@@ -115,7 +115,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
         "status_apostila": false
@@ -133,7 +133,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
@@ -149,7 +148,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
         "status_apostila": false
@@ -167,7 +166,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
@@ -183,7 +181,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
         "status_apostila": false
@@ -201,7 +199,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
@@ -462,7 +459,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -480,7 +477,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
@@ -527,7 +523,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -545,7 +541,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
@@ -563,7 +558,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -581,7 +576,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
@@ -599,7 +593,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -617,7 +611,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
@@ -635,7 +628,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -653,7 +646,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
@@ -671,7 +663,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -689,7 +681,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
@@ -707,7 +698,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -725,7 +716,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
@@ -743,7 +733,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -761,7 +751,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
@@ -779,7 +768,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -797,7 +786,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
@@ -815,7 +803,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -833,7 +821,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
@@ -851,7 +838,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -869,7 +856,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
@@ -887,7 +873,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -905,7 +891,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
@@ -923,7 +908,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -941,7 +926,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
@@ -959,7 +943,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -977,7 +961,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
@@ -995,7 +978,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -1013,7 +996,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
@@ -1031,7 +1013,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -1049,7 +1031,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
@@ -1095,7 +1076,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -1113,7 +1094,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
@@ -1130,7 +1110,7 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": false,
         "status_apostila": false
@@ -1148,7 +1128,6 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
         "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
         "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
