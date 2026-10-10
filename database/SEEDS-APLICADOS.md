@@ -81,6 +81,8 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-10-banco-de-dados-atividade-pratica-aula-19-seed-atividades.sql` | Banco de Dados (TII) | 1 | **APLICADO** | 2026-10-09 22:46 | Aplicado em partes pelo conector (atividade id 142, aula id 123, bloqueada): 29 de 30 tópicos. Falta o tópico 6c: o texto cita DELETE FROM parcela e o conector pede confirmação do usuário (comando voltou cancelado) |
 | `2026-10-10-testes-frontend-objetiva-aula-04-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-10 16:21 | Atividade id 143 (aula id 124), 50 itens; md5 conferido — Etapa 137-13665a7e |
 | `2026-10-10-testes-frontend-atividade-pratica-aula-04-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-10 16:21 | Atividade id 144 (aula id 124, bloqueada), 30 tópicos, 10 pontos; md5 conferido — Etapa 137-13665a7e |
+| `2026-10-10-testes-frontend-objetiva-aula-05-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **PENDENTE** | — | Ainda não aplicado; Etapa 137-13665a7e, item 137.8 |
+| `2026-10-10-testes-frontend-atividade-pratica-aula-05-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **PENDENTE** | — | Ainda não aplicado; Etapa 137-13665a7e, item 137.8 |
 
 ## Seeds excluídos (não podiam ser concluídos)
 
