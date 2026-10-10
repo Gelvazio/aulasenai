@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 21:25:58 | **Primeiro só os status das aulas:** o primeiro passo em toda matéria (e em todas as matérias, de uma vez) é criar **apenas** o `AULAS/STATUS-AULAS.md` com todas as aulas (1 a cada 4 h da ementa) em ⬜; conteúdo, atividades e seeds vêm depois, aula por aula — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" |
 | 2026-10-09 21:21:41 | **Status por aula em toda matéria e push depois de cada commit na nuvem:** toda matéria tem `AULAS/STATUS-AULAS.md` com uma linha por aula (conteúdo, slides, objetiva, prática e banco), criado junto com a pasta da matéria; na nuvem, **todo** `git commit` é seguido na hora do `git push` — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" |
 | 2026-10-09 21:19:39 | **Cada aula finalizada = status gravado + commit:** ao terminar uma aula (gerar o material ou aplicar os seeds dela), gravar na hora o status em todos os arquivos (registro de seeds, `STATUS-AULAS.md`, `STATUS-ATIVIDADES.md`, item da etapa) e fazer o commit (e push na nuvem) antes de passar à próxima — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" e "🌱 REGRA — SEEDS DO BANCO" |
 | 2026-10-09 20:59:55 | **Seeds antes de qualquer tarefa:** antes de começar uma tarefa nova ou continuar uma tarefa, concluir todos os seeds de `database/SEEDS-APLICADOS.md` (aplicar os PENDENTE, conferir pelo md5 os APLICADO e marcar CONCLUÍDO); os que dependem de decisão do usuário vão para "⏳ Aguardando o usuário" e são perguntados — seção "🌱 REGRA — SEEDS DO BANCO", passo novo na "INICIALIZAÇÃO" e linha nas "REGRAS DO USUÁRIO QUE VALEM SEMPRE" |
