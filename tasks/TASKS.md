@@ -297,3 +297,16 @@ Claude (que só se falam pelo repositório) colaborarem sem se atrapalhar:
 ---
 
 **Última atualização:** 2026-10-09 15:26 (tarefa #21 adicionada)
+
+---
+
+### #22-f79be83e-0418-43e8: Testes de Front-End — objetivas e práticas das aulas 04 a 10 — pedida em 2026-10-09 23:04:01
+
+**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 137-13665a7e (fonte única).
+**Matéria:** `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/` · **Plano:** `docs/testes-frontend-aulas-04-a-10.md`.
+
+- [ ] Aulas 04 a 10: objetiva de 50 questões + prática 10 × 3 (padrão id 82), uma por vez.
+- [ ] Seeds aplicados e conferidos pelo md5 (`database/SEEDS-APLICADOS.md`).
+- [ ] Ementa em 14.800–14.950 caracteres.
+- [ ] Análise das matérias sem pendências em Testes de Front-End.
+- [ ] Aceite do usuário.

@@ -17,6 +17,7 @@ pendente) muda para `⏹️ Encerrada`.
 | Frente (ambiente · branch) | Tarefa/etapa | Próximo passo | Situação | Atualizado em |
 |---|---|---|---|---|
 | nuvem · claude/festive-maxwell-25jnhl | #20 (Etapa 125) e #21 (Etapa 135-eeefc710) | Aula 19 de Banco de Dados pronta (conteúdo, objetiva, prática); seeds: objetiva id 141 CONCLUÍDO, prática id 142 com 29 de 30 tópicos (falta o 6c, que precisa da confirmação do usuário no conector). Próximo: tópico 6c da aula 19 (com a confirmação do usuário) e depois a aula 20 (conteúdo + objetiva + prática), plano [docs/banco-de-dados-materia-100.md](../docs/banco-de-dados-materia-100.md) | 🔄 Ativa | 2026-10-09 21:27 |
+| nuvem · claude/ola-zlzh8z | #22-f79be83e-0418-43e8 (Etapa 137-13665a7e) | Item 137.1 — aula 04 de Testes de Front-End (objetiva + prática + seeds). ⛔ Não mexer em Banco de Dados nesta sessão | 🔄 Ativa | 2026-10-09 23:04 |
 | local · main | — | Ao iniciar: ler este arquivo e o `RECADOS.md` e preencher esta linha | ⬜ Sem registro | — |
 
 ## 📌 Tarefas do `TASKS.md` (o status oficial fica aqui)
@@ -40,6 +41,7 @@ A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale 
 | #19-91cbac65-87ca-45a0 | Análise contínua das matérias (`scripts/analise-materias.py` → `tasks/ANALISE-MATERIAS-RELATORIO.json`) — ⛔ permanente: nunca CONCLUÍDA enquanto houver matéria incompleta ou pendência | 🔄 Em andamento — última rodada 2026-10-09 22:35: 6 cursos, 34 matérias, 2 completas, 32 incompletas | Rodar a rotina no início de cada sessão e ao concluir tarefa em matéria; resolver pendências só a pedido do usuário | — |
 | #20-2ac1a8ec-911b-466f | Banco de Dados (Técnico em Informática para Internet) 100% no padrão da ITIC — etapa 1 sem a apostila | 🔄 Em execução (Etapa 125) | Item 125.3 — aulas 01 a 19 prontas; próxima: aula 20 | nuvem · claude/festive-maxwell-25jnhl (desde 2026-10-09 13:26) |
 | #21-eeefc710-3e74-4928 | Colaboração entre sessões/licenças: etapa com UUID, reserva da tarefa, frentes de trabalho, `RECADOS.md`, merge da `main`, arquivos gerados, uma etapa por arquivo | 👀 Aguardando validação (Etapa 135-eeefc710) | Item 135.6 — aceite do usuário (ele junta o PR na `main`) | nuvem · claude/festive-maxwell-25jnhl (desde 2026-10-09 15:22) |
+| #22-f79be83e-0418-43e8 | Testes de Front-End: objetivas e práticas das aulas 04 a 10 (+ ajuste da ementa) | 🔄 Em execução (Etapa 137-13665a7e) | Item 137.1 — aula 04 | nuvem · claude/ola-zlzh8z (desde 2026-10-09 23:04) |
 
 ## ⏳ Aguardando o usuário (aceites, aprovações e ações dele)
 
@@ -49,6 +51,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 |-------|------|-------------|------|
 | 125 | 125.8 | confirmar no conector do Supabase o insert do tópico 6c da prática da aula 19 de Banco de Dados (atividade id 142): o texto cita `DELETE FROM parcela;` e o comando volta "cancelado" sem a confirmação | Ação |
 | 136-f0a07de9 | 136.5 | aceite do registro `database/SEEDS-APLICADOS.md` e da regra dos seeds | Aceite |
+| 137-13665a7e | Testes de Front-End: objetivas e práticas das aulas 04 a 10 (pedido em 2026-10-09 23:04:01; plano [docs/testes-frontend-aulas-04-a-10.md](../docs/testes-frontend-aulas-04-a-10.md)) | [ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md) |
 | 124 | 124.4 | testar o modal "➕ Nova Pendência" e a coluna Descrição em `pendencias.html` | Aceite |
 | 121 | 121.11 | testar o Progresso da turma global na objetiva da aula 01 de Testes de Front-End (professor vê ao abrir; aluno não vê) e numa discursiva | Aceite |
 | 103 | 103.6 | conferir as 10 práticas de Testes de Front-End, agora em `ATIVIDADES/CONTEUDO/` e sem empresa fictícia | Aceite |
