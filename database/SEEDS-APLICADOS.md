@@ -5,11 +5,11 @@ Registro de **todos** os arquivos `database/*-seed-atividades.sql` e do status d
 CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 [`CLAUDE.md`](../CLAUDE.md), seção "🌱 REGRA — SEEDS DO BANCO".** Aqui ficam só os dados.
 
-## Resumo (atualizado em 2026-10-09 22:46)
+## Resumo (atualizado em 2026-10-09 23:46)
 
 | PENDENTE | APLICADO | CONCLUÍDO | SUBSTITUÍDO | Total |
 |---|---|---|---|---|
-| 0 | 1 | 63 | 0 | 64 |
+| 1 | 1 | 64 | 0 | 66 |
 
 ## Todos os seeds
 
@@ -79,7 +79,7 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-09-testes-frontend-atividade-pratica-aula-03-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-09-testes-frontend-objetivas-seed-atividades.sql` | Testes de Front-End (TII) | 3 | **CONCLUÍDO** | 2026-10-09 19:23 | 3 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-10-banco-de-dados-atividade-pratica-aula-19-seed-atividades.sql` | Banco de Dados (TII) | 1 | **APLICADO** | 2026-10-09 22:46 | Aplicado em partes pelo conector (atividade id 142, aula id 123, bloqueada): 29 de 30 tópicos. Falta o tópico 6c: o texto cita DELETE FROM parcela e o conector pede confirmação do usuário (comando voltou cancelado) |
-| `2026-10-10-testes-frontend-objetiva-aula-04-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **PENDENTE** | — | Ainda não aplicado; Etapa 137-13665a7e, item 137.8 |
+| `2026-10-10-testes-frontend-objetiva-aula-04-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-09 23:46 | Atividade id 143 (aula id 124), 50 itens; md5 conferido — Etapa 137-13665a7e |
 | `2026-10-10-testes-frontend-atividade-pratica-aula-04-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **PENDENTE** | — | Ainda não aplicado; Etapa 137-13665a7e, item 137.8 |
 
 ## Seeds excluídos (não podiam ser concluídos)
