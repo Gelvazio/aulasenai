@@ -1,7 +1,7 @@
 """Grava o status de seeds no `database/SEEDS-APLICADOS.md` e recalcula o resumo.
 
 Uso (rodar na raiz do repositório):
-    python3 scripts/seeds/registrar_seed.py <arquivo.sql> <PENDENTE|APLICADO|CONCLUÍDO> "<observação>" [...]
+    python3 scripts/seeds/registrar_seed.py <arquivo.sql> <PENDENTE|APLICADO|CONCLUÍDO|SUBSTITUÍDO> "<observação>" [...]
 
 Aceita vários trios (arquivo, status, observação) de uma vez. A data e hora da conferência é a do
 relógio, no horário de Brasília. Regra: seção "🌱 REGRA — SEEDS DO BANCO" do `CLAUDE.md`.
@@ -12,7 +12,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 REGISTRO = "database/SEEDS-APLICADOS.md"
-STATUS_VALIDOS = ("PENDENTE", "APLICADO", "CONCLUÍDO")
+STATUS_VALIDOS = ("PENDENTE", "APLICADO", "CONCLUÍDO", "SUBSTITUÍDO")
 
 
 def atualizar_linha(linhas, arquivo, status, observacao, agora):
@@ -32,8 +32,9 @@ def recalcular_resumo(texto, agora):
     for status in re.findall(r"^\| `[^`]*-seed-atividades\.sql` \|.*?\| \*\*(\w+)\*\* \|", texto, re.M):
         contagem[status] += 1
     texto = re.sub(r"## Resumo \(atualizado em [^)]*\)", f"## Resumo (atualizado em {agora})", texto)
-    nova = f"| {contagem['PENDENTE']} | {contagem['APLICADO']} | {contagem['CONCLUÍDO']} | {sum(contagem.values())} |"
-    return re.sub(r"^\| \d+ \| \d+ \| \d+ \| \d+ \|$", nova, texto, count=1, flags=re.M), contagem
+    nova = " | ".join(str(contagem[s]) for s in STATUS_VALIDOS)
+    nova = f"| {nova} | {sum(contagem.values())} |"
+    return re.sub(r"^\| \d+ \| \d+ \| \d+ \|(?: \d+ \|)? \d+ \|$", nova, texto, count=1, flags=re.M), contagem
 
 
 def main():

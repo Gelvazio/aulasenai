@@ -2,14 +2,14 @@
 
 Registro de **todos** os arquivos `database/*-seed-atividades.sql` e do status de cada um no banco
 (projeto `AULAS SENAI`, ref `hxlvonriearllcmfqeri`). **A regra (status PENDENTE / APLICADO /
-CONCLUÍDO, como aplicar e como conferir pelo md5) fica só no
+CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 [`CLAUDE.md`](../CLAUDE.md), seção "🌱 REGRA — SEEDS DO BANCO".** Aqui ficam só os dados.
 
-## Resumo (atualizado em 2026-10-09 21:24)
+## Resumo (atualizado em 2026-10-09 21:42)
 
-| PENDENTE | APLICADO | CONCLUÍDO | Total |
-|---|---|---|---|
-| 4 | 2 | 63 | 69 |
+| PENDENTE | APLICADO | CONCLUÍDO | SUBSTITUÍDO | Total |
+|---|---|---|---|---|
+| 0 | 0 | 63 | 6 | 69 |
 
 ## Todos os seeds
 
@@ -20,7 +20,7 @@ CONCLUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-01-analise-dados-objetiva-01-60-seed-atividades.sql` | Análise de Dados (GCM) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-01-analise-dados-objetiva-02-60-seed-atividades.sql` | Análise de Dados (GCM) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-01-avaliacao-pratica-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
-| `2026-10-01-prova-pratica-seed-atividades.sql` | Análise de Dados (GCM) | 1 | **PENDENTE** | 2026-10-09 19:23 | Página `PROVA-PRATICA.html` não está no banco (a prova prática da matéria está como `PROVA-PRATICA-01.html`, id 82): conferir com o usuário se foi substituído |
+| `2026-10-01-prova-pratica-seed-atividades.sql` | Análise de Dados (GCM) | 1 | **SUBSTITUÍDO** | 2026-10-09 21:42 | Decisão do usuário em 2026-10-09: não aplicar — substituído pela PROVA-PRATICA-01.html (id 82), que é a prova prática da matéria no banco |
 | `2026-10-02-atividade-pratica-aula-02-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-02-atividade-pratica-aula-03-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-02-atividade-pratica-aula-04-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
@@ -28,7 +28,7 @@ CONCLUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-02-automacao-instrumentacao-seed-atividades.sql` | Automação e Instrumentação (OPI) | 6 | **CONCLUÍDO** | 2026-10-09 19:23 | 6 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-02-avaliacao-pratica-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-02-prova-objetiva-prof-rafael-seed-atividades.sql` | Automação e Instrumentação (OPI) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
-| `2026-10-02-prova-pratica-seed-atividades.sql` | Análise de Dados (GCM) | 1 | **PENDENTE** | 2026-10-09 19:23 | Página `PROVA-PRATICA.html` não está no banco (a prova prática da matéria está como `PROVA-PRATICA-01.html`, id 82): conferir com o usuário se foi substituído |
+| `2026-10-02-prova-pratica-seed-atividades.sql` | Análise de Dados (GCM) | 1 | **SUBSTITUÍDO** | 2026-10-09 21:42 | Decisão do usuário em 2026-10-09: não aplicar — substituído pela PROVA-PRATICA-01.html (id 82), que é a prova prática da matéria no banco |
 | `2026-10-03-automacao-instrumentacao-aulas-07-14-seed-atividades.sql` | Automação e Instrumentação (OPI) | 8 | **CONCLUÍDO** | 2026-10-09 19:23 | 8 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-06-atividade-discursiva-aula-01-seed-atividades.sql` | Reforço de Linguagens (RSL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-06-atividade-discursiva-aula-02-seed-atividades.sql` | Reforço de Linguagens (RSL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
@@ -42,7 +42,7 @@ CONCLUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-06-atividade-discursiva-aula-10-seed-atividades.sql` | Reforço de Linguagens (RSL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-06-atividade-individual-comunicacao-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-06-atividade-individual-comunicacao-tecnica-discursiva-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
-| `2026-10-06-prova-pratica-06-10-2026-seed-atividades.sql` | Análise de Dados (GCM) | 1 | **PENDENTE** | 2026-10-09 19:23 | Página `PROVA-PRATICA-06-10-2026.html` não está no banco (a prova id 82 está como `PROVA-PRATICA-01.html`): conferir com o usuário se foi substituído |
+| `2026-10-06-prova-pratica-06-10-2026-seed-atividades.sql` | Análise de Dados (GCM) | 1 | **SUBSTITUÍDO** | 2026-10-09 21:42 | Decisão do usuário em 2026-10-09: não aplicar — substituído pela PROVA-PRATICA-01.html (id 82), que é a prova prática da matéria no banco |
 | `2026-10-06-reforco-linguagens-aula-01-seed-atividades.sql` | Reforço de Linguagens (RSL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-06-reforco-linguagens-aula-02-seed-atividades.sql` | Reforço de Linguagens (RSL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-06-reforco-linguagens-aula-03-seed-atividades.sql` | Reforço de Linguagens (RSL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
@@ -54,13 +54,13 @@ CONCLUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-06-reforco-linguagens-aula-09-seed-atividades.sql` | Reforço de Linguagens (RSL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-06-reforco-linguagens-aula-10-seed-atividades.sql` | Reforço de Linguagens (RSL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-07-atividade-individual-100-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | Atualiza a atividade id 85 para 100 questões; banco com 100 itens no gabarito |
-| `2026-10-07-atividade-individual-apostila-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **APLICADO** | 2026-10-09 19:40 | Análise de 2026-10-09 19:40: não bate (arquivo com 50 itens, banco com 100) — substituído por `2026-10-07-atividade-individual-100-seed-atividades.sql`, que está CONCLUÍDO |
-| `2026-10-07-atividade-individual-comunicacao-tecnica-discursiva-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **APLICADO** | 2026-10-09 19:40 | Análise de 2026-10-09 19:40: não bate (arquivo com 30 tópicos, banco com 20) — substituído por `2026-10-08-atividade-individual-comunicacao-tecnica-discursiva-seed-atividades.sql`, que está CONCLUÍDO |
+| `2026-10-07-atividade-individual-apostila-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **SUBSTITUÍDO** | 2026-10-09 21:42 | Decisão do usuário em 2026-10-09: não reaplicar — substituído por `2026-10-07-atividade-individual-100-seed-atividades.sql` (CONCLUÍDO) |
+| `2026-10-07-atividade-individual-comunicacao-tecnica-discursiva-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **SUBSTITUÍDO** | 2026-10-09 21:42 | Decisão do usuário em 2026-10-09: não reaplicar — substituído por `2026-10-08-atividade-individual-comunicacao-tecnica-discursiva-seed-atividades.sql` (CONCLUÍDO) |
 | `2026-10-07-atividade-pratica-aula-06-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **CONCLUÍDO** | 2026-10-09 19:30 | Aplicado em 2026-10-09 19:28 a pedido do usuário, em 3 partes pelo conector (atividade id 102, bloqueada; 20 tópicos, 10 pontos); conferido por md5 do texto dos tópicos igual ao do arquivo. Antes: nunca entrou porque procurava a matéria pelo nome antigo (corrigido para `INTRODUCAO TIC`) |
 | `2026-10-08-atividade-individual-comunicacao-tecnica-discursiva-seed-atividades.sql` | Introdução à TIC (AOPL) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-08-atividade-pratica-aula-01-seed-atividades.sql` | Comunicação Oral e Escrita (RSL) | 1 | **CONCLUÍDO** | 2026-10-09 20:57 | Matéria (id 50) e 9 aulas criadas em 2026-10-09 pelo `database/2026-10-09-materia-comunicacao-oral-escrita-aulas.sql`; aplicado em partes pelo conector (atividade id 118, aula id 104, bloqueada, 20 tópicos); md5 dos tópicos igual ao do arquivo |
 | `2026-10-08-atividade-pratica-aula-02-seed-atividades.sql` | Comunicação Oral e Escrita (RSL) | 1 | **CONCLUÍDO** | 2026-10-09 20:57 | Matéria (id 50) e 9 aulas criadas em 2026-10-09 pelo `database/2026-10-09-materia-comunicacao-oral-escrita-aulas.sql`; aplicado em partes pelo conector (atividade id 119, aula id 105, bloqueada, 20 tópicos); md5 dos tópicos igual ao do arquivo |
-| `2026-10-08-prova-pratica-06-10-2026-seed-atividades.sql` | Análise de Dados (GCM) | 1 | **PENDENTE** | 2026-10-09 19:23 | Página `PROVA-PRATICA-06-10-2026.html` não está no banco (a prova id 82 está como `PROVA-PRATICA-01.html`): conferir com o usuário se foi substituído |
+| `2026-10-08-prova-pratica-06-10-2026-seed-atividades.sql` | Análise de Dados (GCM) | 1 | **SUBSTITUÍDO** | 2026-10-09 21:42 | Decisão do usuário em 2026-10-09: não aplicar — substituído pela PROVA-PRATICA-01.html (id 82), que é a prova prática da matéria no banco |
 | `2026-10-09-banco-de-dados-atividade-pratica-aula-01-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-09 19:38 | Aplicado em partes pelo conector (atividade id 104, aula id 96, bloqueada, 30 tópicos); md5 dos tópicos igual ao do arquivo |
 | `2026-10-09-banco-de-dados-atividade-pratica-aula-02-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-09 20:37 | Aplicado em partes pelo conector (atividade id 106, bloqueada, 30 tópicos); md5 dos tópicos igual ao do arquivo |
 | `2026-10-09-banco-de-dados-atividade-pratica-aula-03-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-09 20:37 | Aplicado em partes pelo conector (atividade id 108, bloqueada, 30 tópicos); md5 dos tópicos igual ao do arquivo |

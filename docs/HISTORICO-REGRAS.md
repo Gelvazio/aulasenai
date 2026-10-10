@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 21:42:18 | **Status SUBSTITUÍDO nos seeds:** seed trocado por outro já no banco, que **por decisão do usuário** não é aplicado, fica **SUBSTITUÍDO** (conta como resolvido na regra "seeds antes de qualquer tarefa"); `scripts/seeds/registrar_seed.py` e o resumo do registro ganham a coluna — "🌱 REGRA — SEEDS DO BANCO" |
 | 2026-10-09 21:37:17 | **Scripts dos seeds e dos status no repositório, uso obrigatório:** `scripts/seeds/` (`dividir_seed.py`, `comparar_md5.py`, `registrar_seed.py` + `README.md`), `scripts/status-materias/` e `scripts/banco-de-dados/` — "🌱 REGRA — SEEDS DO BANCO" |
 | 2026-10-09 21:25:58 | **Primeiro só os status das aulas:** o primeiro passo em toda matéria (e em todas as matérias, de uma vez) é criar **apenas** o `AULAS/STATUS-AULAS.md` com todas as aulas (1 a cada 4 h da ementa) em ⬜; conteúdo, atividades e seeds vêm depois, aula por aula — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" |
 | 2026-10-09 21:21:41 | **Status por aula em toda matéria e push depois de cada commit na nuvem:** toda matéria tem `AULAS/STATUS-AULAS.md` com uma linha por aula (conteúdo, slides, objetiva, prática e banco), criado junto com a pasta da matéria; na nuvem, **todo** `git commit` é seguido na hora do `git push` — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" |

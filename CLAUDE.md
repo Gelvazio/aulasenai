@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 21:37:17
+**Versão das regras:** 2026-10-09 21:42:18
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 21:42:18 | **Status SUBSTITUÍDO nos seeds:** seed trocado por outro já no banco, que **por decisão do usuário** não é aplicado, fica **SUBSTITUÍDO** (conta como resolvido na regra "seeds antes de qualquer tarefa"); `scripts/seeds/registrar_seed.py` e o resumo do registro ganham a coluna — "🌱 REGRA — SEEDS DO BANCO" |
 | 2026-10-09 21:37:17 | **Scripts dos seeds e dos status no repositório, uso obrigatório:** `scripts/seeds/` (`dividir_seed.py`, `comparar_md5.py`, `registrar_seed.py` + `README.md`), `scripts/status-materias/` e `scripts/banco-de-dados/` — "🌱 REGRA — SEEDS DO BANCO" |
 | 2026-10-09 21:25:58 | **Primeiro só os status das aulas:** o primeiro passo em toda matéria (e em todas as matérias, de uma vez) é criar **apenas** o `AULAS/STATUS-AULAS.md` com todas as aulas (1 a cada 4 h da ementa) em ⬜; conteúdo, atividades e seeds vêm depois, aula por aula — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" |
 | 2026-10-09 21:21:41 | **Status por aula em toda matéria e push depois de cada commit na nuvem:** toda matéria tem `AULAS/STATUS-AULAS.md` com uma linha por aula (conteúdo, slides, objetiva, prática e banco), criado junto com a pasta da matéria; na nuvem, **todo** `git commit` é seguido na hora do `git push` — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" |
 | 2026-10-09 21:19:39 | **Cada aula finalizada = status gravado + commit:** ao terminar uma aula (gerar o material ou aplicar os seeds dela), gravar na hora o status em todos os arquivos (registro de seeds, `STATUS-AULAS.md`, `STATUS-ATIVIDADES.md`, item da etapa) e fazer o commit (e push na nuvem) antes de passar à próxima — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" e "🌱 REGRA — SEEDS DO BANCO" |
-| 2026-10-09 20:59:55 | **Seeds antes de qualquer tarefa:** antes de começar uma tarefa nova ou continuar uma tarefa, concluir todos os seeds de `database/SEEDS-APLICADOS.md` (aplicar os PENDENTE, conferir pelo md5 os APLICADO e marcar CONCLUÍDO); os que dependem de decisão do usuário vão para "⏳ Aguardando o usuário" e são perguntados — seção "🌱 REGRA — SEEDS DO BANCO", passo novo na "INICIALIZAÇÃO" e linha nas "REGRAS DO USUÁRIO QUE VALEM SEMPRE" |
 
 ---
 
@@ -864,6 +864,7 @@ regra de seeds do projeto** (os outros arquivos só apontam para cá). O registr
 | **PENDENTE** | Gerado (ou não encontrado no banco); ainda não rodado no Supabase |
 | **APLICADO** | Rodado no Supabase, mas ainda não conferido ou a conferência não bate (ex.: substituído por um seed mais novo, aplicado só em parte) |
 | **CONCLUÍDO** | Rodado **e conferido pelo md5**: a atividade de cada página está no banco com o mesmo conteúdo do arquivo |
+| **SUBSTITUÍDO** | **Só por decisão do usuário:** o seed foi trocado por outro (já CONCLUÍDO) ou a página dele foi substituída por outra no banco, e o usuário decidiu **não aplicá-lo**; a observação diz por qual foi substituído. Conta como resolvido (não trava tarefa) e não é conferido de novo |
 
 - ✅ **Seed novo entra no registro como PENDENTE** no mesmo commit em que é gerado.
 - ✅ **Aplicar só com pedido do usuário** (pelo conector do Supabase ou o próprio usuário no SQL

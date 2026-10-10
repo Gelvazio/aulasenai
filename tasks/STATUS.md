@@ -16,7 +16,7 @@ pendente) muda para `⏹️ Encerrada`.
 
 | Frente (ambiente · branch) | Tarefa/etapa | Próximo passo | Situação | Atualizado em |
 |---|---|---|---|---|
-| nuvem · claude/festive-maxwell-25jnhl | #20 (Etapa 125) e #21 (Etapa 135-eeefc710) | Seeds: todos CONCLUÍDOS menos os 6 que dependem do usuário (136.4b). Status por aula criado nas 21 matérias que faltavam. Próximo: Etapa 125, item 125.3 — Banco de Dados: aula 19 (conteúdo + objetiva + prática), depois a 20, uma por vez (plano [docs/banco-de-dados-materia-100.md](../docs/banco-de-dados-materia-100.md)); depois, Etapa 124 | 🔄 Ativa | 2026-10-09 21:27 |
+| nuvem · claude/festive-maxwell-25jnhl | #20 (Etapa 125) e #21 (Etapa 135-eeefc710) | Seeds: 63 CONCLUÍDO e 6 SUBSTITUÍDO (decisão do usuário, 136.4f). Status por aula criado nas 21 matérias que faltavam. Próximo: Etapa 125, item 125.3 — Banco de Dados: aula 19 (conteúdo + objetiva + prática), depois a 20, uma por vez (plano [docs/banco-de-dados-materia-100.md](../docs/banco-de-dados-materia-100.md)); depois, Etapa 124 | 🔄 Ativa | 2026-10-09 21:27 |
 | local · main | — | Ao iniciar: ler este arquivo e o `RECADOS.md` e preencher esta linha | ⬜ Sem registro | — |
 
 ## 📌 Tarefas do `TASKS.md` (o status oficial fica aqui)
@@ -48,7 +48,6 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
 | 136-f0a07de9 | 136.5 | aceite do registro `database/SEEDS-APLICADOS.md` e da regra dos seeds | Aceite |
-| 136-f0a07de9 | 136.4b | decidir os 6 seeds que dependem do usuário (`database/SEEDS-APLICADOS.md`): 4 PENDENTE de prova prática de Análise de Dados (páginas `PROVA-PRATICA.html` e `PROVA-PRATICA-06-10-2026.html`, que não estão no banco — substituídas pela `PROVA-PRATICA-01.html`, id 82?) e 2 APLICADO da ITIC (apostila e comunicação técnica de 2026-10-07, trocados por seeds mais novos já CONCLUÍDOS) | Decisão do usuário |
 | 124 | 124.4 | testar o modal "➕ Nova Pendência" e a coluna Descrição em `pendencias.html` | Aceite |
 | 121 | 121.11 | testar o Progresso da turma global na objetiva da aula 01 de Testes de Front-End (professor vê ao abrir; aluno não vê) e numa discursiva | Aceite |
 | 103 | 103.6 | conferir as 10 práticas de Testes de Front-End, agora em `ATIVIDADES/CONTEUDO/` e sem empresa fictícia | Aceite |
