@@ -227,3 +227,4 @@ Esperado: `com_nota_ia` = alternativas respondidas pelo aluno (60 depois da entr
 | 2026-10-08 20:14 | 0 | 0 | Nenhuma alternativa pendente nesta rodada. |
 | 2026-10-09 02:55:18 | 0 | 0 | Nenhuma alternativa pendente nesta rodada. |
 | 2026-10-09 15:54:03 | 0 | 0 | Nenhuma alternativa pendente (consulta 4.1 vazia) |
+| 2026-10-09 17:54:36 | 0 | 0 | Nenhuma alternativa pendente (consulta 4.1 vazia). |
