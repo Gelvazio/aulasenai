@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 22:17:26
+**Versão das regras:** 2026-10-09 22:19:14
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 22:19:14 | **Branch apagada depois do merge:** PR juntado na `main` = a branch dele é excluída do GitHub na hora (fica só o histórico na `main` e no PR); vale para as branches de PRs juntados que ainda existirem — "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM" |
 | 2026-10-09 22:17:26 | **Claude faz o merge dos PRs na nuvem:** depois do push e do PR, o próprio Claude junta o PR na `main` (merge commit, sem push direto nem forçado); havendo conflito de merge, ele mesmo traz a `main` para a branch, resolve, confere e junta — "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM" e "Pull Requests" |
 | 2026-10-09 21:42:18 | **Status SUBSTITUÍDO nos seeds:** seed trocado por outro já no banco, que **por decisão do usuário** não é aplicado, fica **SUBSTITUÍDO** (conta como resolvido na regra "seeds antes de qualquer tarefa"); `scripts/seeds/registrar_seed.py` e o resumo do registro ganham a coluna — "🌱 REGRA — SEEDS DO BANCO" |
 | 2026-10-09 21:37:17 | **Scripts dos seeds e dos status no repositório, uso obrigatório:** `scripts/seeds/` (`dividir_seed.py`, `comparar_md5.py`, `registrar_seed.py` + `README.md`), `scripts/status-materias/` e `scripts/banco-de-dados/` — "🌱 REGRA — SEEDS DO BANCO" |
 | 2026-10-09 21:25:58 | **Primeiro só os status das aulas:** o primeiro passo em toda matéria (e em todas as matérias, de uma vez) é criar **apenas** o `AULAS/STATUS-AULAS.md` com todas as aulas (1 a cada 4 h da ementa) em ⬜; conteúdo, atividades e seeds vêm depois, aula por aula — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" |
-| 2026-10-09 21:21:41 | **Status por aula em toda matéria e push depois de cada commit na nuvem:** toda matéria tem `AULAS/STATUS-AULAS.md` com uma linha por aula (conteúdo, slides, objetiva, prática e banco), criado junto com a pasta da matéria; na nuvem, **todo** `git commit` é seguido na hora do `git push` — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" |
 
 ---
 
@@ -951,6 +951,11 @@ confirmação** do usuário — não perguntar "posso fazer push?". Tarefa que n
   "CONVERSA ENTRE SESSÕES"), confere que não sobrou marca `<<<<<<<`, faz commit + push e só então
   junta o PR. Só pergunta ao usuário quando os dois lados mudaram a mesma lógica e escolher um
   perderia comportamento. Vale também para PRs de outras sessões/licenças quando o usuário pedir.
+- ✅ **PR juntado = branch apagada** (2026-10-09 22:19:14, pedido do usuário): logo depois de juntar um PR
+  na `main`, o Claude **exclui a branch dele no GitHub** (`git push origin --delete <branch>`); fica só
+  o histórico (os commits na `main` e a página do PR). Branch de PR juntado que ainda existir também
+  é apagada. ⛔ Nunca apagar a `main`, branch de PR **aberto** nem branch sem PR que não foi juntada.
+  Na tarefa seguinte, a branch da sessão é recriada a partir da `main` atualizada.
 - ✅ **Sempre um PR novo:** se o PR da branch já foi juntado (merged) ou fechado, a tarefa seguinte
   recomeça a branch a partir da `main` atualizada e abre **outro** PR — nunca reaproveitar PR
   juntado. Enquanto o PR da branch ainda estiver aberto, os commits novos da mesma sessão entram
