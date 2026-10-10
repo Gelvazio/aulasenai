@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 21:42:18
+**Versão das regras:** 2026-10-09 22:17:26
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 22:17:26 | **Claude faz o merge dos PRs na nuvem:** depois do push e do PR, o próprio Claude junta o PR na `main` (merge commit, sem push direto nem forçado); havendo conflito de merge, ele mesmo traz a `main` para a branch, resolve, confere e junta — "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM" e "Pull Requests" |
 | 2026-10-09 21:42:18 | **Status SUBSTITUÍDO nos seeds:** seed trocado por outro já no banco, que **por decisão do usuário** não é aplicado, fica **SUBSTITUÍDO** (conta como resolvido na regra "seeds antes de qualquer tarefa"); `scripts/seeds/registrar_seed.py` e o resumo do registro ganham a coluna — "🌱 REGRA — SEEDS DO BANCO" |
 | 2026-10-09 21:37:17 | **Scripts dos seeds e dos status no repositório, uso obrigatório:** `scripts/seeds/` (`dividir_seed.py`, `comparar_md5.py`, `registrar_seed.py` + `README.md`), `scripts/status-materias/` e `scripts/banco-de-dados/` — "🌱 REGRA — SEEDS DO BANCO" |
 | 2026-10-09 21:25:58 | **Primeiro só os status das aulas:** o primeiro passo em toda matéria (e em todas as matérias, de uma vez) é criar **apenas** o `AULAS/STATUS-AULAS.md` com todas as aulas (1 a cada 4 h da ementa) em ⬜; conteúdo, atividades e seeds vêm depois, aula por aula — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" |
 | 2026-10-09 21:21:41 | **Status por aula em toda matéria e push depois de cada commit na nuvem:** toda matéria tem `AULAS/STATUS-AULAS.md` com uma linha por aula (conteúdo, slides, objetiva, prática e banco), criado junto com a pasta da matéria; na nuvem, **todo** `git commit` é seguido na hora do `git push` — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" |
-| 2026-10-09 21:19:39 | **Cada aula finalizada = status gravado + commit:** ao terminar uma aula (gerar o material ou aplicar os seeds dela), gravar na hora o status em todos os arquivos (registro de seeds, `STATUS-AULAS.md`, `STATUS-ATIVIDADES.md`, item da etapa) e fazer o commit (e push na nuvem) antes de passar à próxima — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" e "🌱 REGRA — SEEDS DO BANCO" |
 
 ---
 
@@ -145,7 +145,7 @@ Registrada em 2026-10-03 a pedido do usuário.
 - ⛔ **Push depende do ambiente** (2026-10-07): **local** (máquina do usuário) = **nunca fazer
   push**, mesmo que ele peça — avisar que o commit está pronto para ele enviar; **nuvem** (Claude
   Code na web/remoto) = **sempre fazer push numa branch própria e abrir um NOVO pull request
-  para a `main`**, nunca push direto na `main` (2026-10-08; ver a regra "PUSH: NUNCA NO AMBIENTE
+  para a `main`**, que o próprio Claude junta (resolvendo os conflitos de merge; 2026-10-09 22:17), nunca push direto na `main` (2026-10-08; ver a regra "PUSH: NUNCA NO AMBIENTE
   LOCAL, SEMPRE NA NUVEM").
 - ⛔ **Conteúdo só pelos Markdowns, nunca de PDF** (2026-10-03): para conferir ou gerar conteúdo,
   ler os `.md` da matéria — em primeiro lugar o `EMENTA-CHALKIE-AI.md` (ver a regra "CONTEÚDO SÓ
@@ -927,7 +927,8 @@ usuário: na nuvem, **sempre um novo pull request**, para evitar sobrescrever al
 
 ✅ **O Claude SEMPRE faz o push numa branch própria e abre um NOVO pull request para a `main`.**
 No contêiner da nuvem o commit se perde quando a sessão acaba, por isso o push é obrigatório; o
-pull request garante que **nada na `main` é sobrescrito** sem o usuário revisar e fazer o merge.
+pull request deixa registrado o que entrou na `main`; **desde 2026-10-09 22:17 o próprio Claude faz o
+merge** (ver o item "Claude faz o merge" abaixo).
 
 ✅ **Push sempre permitido e automático na nuvem** (2026-10-08 11:10, pedido do usuário): ao final
 de **toda** tarefa que mudar arquivos, o Claude faz commit + push + PR **sem esperar pedido nem
@@ -937,8 +938,19 @@ confirmação** do usuário — não perguntar "posso fazer push?". Tarefa que n
 - ✅ Ao concluir cada tarefa: commit (regra "COMMIT POR TAREFA"), **`git push -u origin <branch>`**
   (a branch de trabalho da sessão, nunca a `main`) e **abrir um novo pull request** da branch para
   a `main`, com título e descrição do que mudou.
-- ⛔ **Nunca push direto na `main`** (`git push origin HEAD:main` está proibido) e o Claude
-  **não faz o merge** do pull request: quem revisa e junta na `main` é o usuário.
+- ⛔ **Nunca push direto na `main`** (`git push origin HEAD:main` está proibido): a mudança entra
+  na `main` sempre pelo pull request.
+- ✅ **Claude faz o merge do PR** (2026-10-09 22:17:26, pedido do usuário — antes o merge era só do
+  usuário): depois do push e de abrir (ou atualizar) o PR, o próprio Claude **junta o PR na `main`**
+  (merge commit), sem esperar o usuário. Antes de juntar: `git fetch origin main`, merge da `main` na
+  branch e conferência do `git diff --cached --name-only` contra "O QUE NUNCA É PUBLICADO".
+- ✅ **Conflito de merge = o Claude resolve** (2026-10-09 22:17:26, pedido do usuário): se o PR
+  tiver conflito com a `main`, o Claude traz a `main` para a branch (`git merge origin/main`, nunca
+  rebase nem push forçado), resolve cada conflito mantendo as mudanças dos dois lados (registros e
+  tabelas de status: todas as linhas, em ordem; arquivo gerado por script: regerar — regra 6 de
+  "CONVERSA ENTRE SESSÕES"), confere que não sobrou marca `<<<<<<<`, faz commit + push e só então
+  junta o PR. Só pergunta ao usuário quando os dois lados mudaram a mesma lógica e escolher um
+  perderia comportamento. Vale também para PRs de outras sessões/licenças quando o usuário pedir.
 - ✅ **Sempre um PR novo:** se o PR da branch já foi juntado (merged) ou fechado, a tarefa seguinte
   recomeça a branch a partir da `main` atualizada e abre **outro** PR — nunca reaproveitar PR
   juntado. Enquanto o PR da branch ainda estiver aberto, os commits novos da mesma sessão entram
@@ -973,7 +985,9 @@ sessão remota); no ambiente **local** nada muda: só o commit, o push continua 
   atualizada (regra "Sempre um PR novo" da seção do push) e abrir **outro** PR.
 - ✅ Antes do push: `git fetch origin main` (se a `main` andou, merge nela e conferir de novo) e
   `git diff --cached --name-only` contra a regra "O QUE NUNCA É PUBLICADO".
-- ⛔ Nunca push na `main`, nunca push forçado e o Claude **nunca faz o merge** do PR (é do usuário).
+- ⛔ Nunca push direto na `main` e nunca push forçado.
+- ✅ **Depois do push, o Claude junta o PR na `main`** e, se houver conflito de merge, resolve antes
+  (ver "Claude faz o merge do PR" e "Conflito de merge = o Claude resolve" na seção do push).
 - ✅ Na resposta ao usuário, citar o link do PR criado ou atualizado.
 
 ## 💾 REGRA — COMMIT POR TAREFA (SEMPRE)
