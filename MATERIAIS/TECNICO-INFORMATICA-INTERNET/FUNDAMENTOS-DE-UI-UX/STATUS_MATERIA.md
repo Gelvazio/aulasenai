@@ -3,7 +3,7 @@
 **Ordem:** 21 (lista em [`tasks/ORDEM-MATERIAS.md`](../../../tasks/ORDEM-MATERIAS.md))  
 **Curso:** TECNICO-INFORMATICA-INTERNET  
 **Situação:** **⬜ NÃO INICIADA** — 6 de 147 peças (4%)  
-**Gerado em:** 2026-10-10 16:38:59 por `scripts/status-materias/gerar_status_materia.py` (não editar à mão: rodar o script de novo)
+**Gerado em:** 2026-10-10 16:41:03 por `scripts/status-materias/gerar_status_materia.py` (não editar à mão: rodar o script de novo)
 
 > Legenda: `✅` peça presente · `⬜` peça pendente · `📎` outro arquivo (fora do padrão) · `⚠️` arquivo vazio. **Banco (seeds)** = seeds da objetiva e da prática da aula CONCLUÍDO ou SUBSTITUÍDO em `database/SEEDS-APLICADOS.md`.
 > Situação: **✅ CONCLUÍDA** (todas as peças ✅) · **🔄 PENDENTE** (parte feita) · **⬜ NÃO INICIADA** (nenhuma aula com conteúdo ou atividade).

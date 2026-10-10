@@ -9,6 +9,7 @@ peças do padrão da ITIC. Só lê as matérias e grava os dois tipos de arquivo
 Uso (na raiz do repositório): python3 scripts/status-materias/gerar_status_materia.py
 """
 
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -24,6 +25,8 @@ from pecas_materia import (  # noqa: E402
 )
 from seeds_materia import mapear_status_por_pagina  # noqa: E402
 
+PASTA_SCRIPTS = Path(__file__).resolve().parent
+SCRIPTS_QUE_CRIAM_STATUS = ("criar_status_aulas.py", "criar_status_faltantes.py")
 COMANDO_DATA = ["bash", "-c", 'TZ=America/Sao_Paulo date "+%Y-%m-%d %H:%M:%S"']
 SITUACAO_CONCLUIDA = "✅ CONCLUÍDA"
 SITUACAO_PENDENTE = "🔄 PENDENTE"
@@ -46,6 +49,21 @@ def agora():
         str: AAAA-MM-DD HH:MM:SS.
     """
     return subprocess.check_output(COMANDO_DATA).decode().strip()
+
+
+def criar_status_que_faltam():
+    """Cria os arquivos de status que faltam em qualquer matéria (inclusive em IGNORAR).
+
+    Roda os scripts criar_status_aulas.py e criar_status_faltantes.py, que só criam o que não
+    existe (nunca sobrescrevem).
+
+    Raises:
+        subprocess.CalledProcessError: se um dos scripts falhar.
+    """
+    ambiente = {**os.environ, "SAIDA_LISTA": os.devnull}
+    for nome in SCRIPTS_QUE_CRIAM_STATUS:
+        subprocess.run([sys.executable, str(PASTA_SCRIPTS / nome)], cwd=RAIZ_PROJETO,
+                       check=True, stdout=subprocess.DEVNULL, env=ambiente)
 
 
 def marca(ok):
@@ -227,7 +245,8 @@ def montar_ordem_md(linhas_resumo, data_hora):
 
 
 def main():
-    """Gera os STATUS_MATERIA.md (na ordem oficial) e o tasks/ORDEM-MATERIAS.md."""
+    """Cria os status que faltam e gera os STATUS_MATERIA.md e o tasks/ORDEM-MATERIAS.md."""
+    criar_status_que_faltam()
     data_hora = agora()
     ordem = montar_ordem(listar_materias())
     por_pagina = mapear_status_por_pagina()
