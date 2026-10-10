@@ -12,22 +12,22 @@
 
 | Aula | Tema | Página | Questões | Fonte (`.md`) | Banco | Status |
 |---|---|---|---|---|---|---|
-| 01 | Banco de dados e SGBD: conceitos e usos | ✅ `ATIVIDADES-AULA-01-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 96, atividade id 103; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 02 | Gerenciadores: características, requisitos e níveis | ✅ `ATIVIDADES-AULA-02-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 97, atividade id 105; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 03 | Preparação do ambiente: instalação do PostgreSQL | ✅ `ATIVIDADES-AULA-03-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 98, atividade id 107; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 04 | Configuração do SGBD e infraestrutura do sistema | ✅ `ATIVIDADES-AULA-04-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 99, atividade id 109; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 05 | Demandas do cliente e escopo do projeto | ✅ `ATIVIDADES-AULA-05-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 100, atividade id 111; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 06 | Entidades fortes, fracas e associativas | ✅ `ATIVIDADES-AULA-06-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 101, atividade id 113; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 07 | Atributos | ✅ `ATIVIDADES-AULA-07-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 102, atividade id 115; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 08 | Relacionamentos 1:1, 1:N e N:N | ✅ `ATIVIDADES-AULA-08-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 103, atividade id 117; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 09 | Diagrama entidade-relacionamento | ✅ `ATIVIDADES-AULA-09-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 113, atividade id 121; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 10 | Normalização de dados (1FN, 2FN e 3FN) | ✅ `ATIVIDADES-AULA-10-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 114, atividade id 123; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 11 | Padronização de dados, cronograma e fluxograma | ✅ `ATIVIDADES-AULA-11-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 115, atividade id 125; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 12 | DDL: tabelas e campos | ✅ `ATIVIDADES-AULA-12-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 116, atividade id 127; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 13 | DDL: relações, chaves e restrições | ✅ `ATIVIDADES-AULA-13-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 117, atividade id 129; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 14 | DML: inserção, atualização e exclusão | ✅ `ATIVIDADES-AULA-14-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 118, atividade id 131; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 15 | DML: consultas com filtros e ordenação | ✅ `ATIVIDADES-AULA-15-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 119, atividade id 133; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 16 | Consultas com junções, agrupamentos e subconsultas | ✅ `ATIVIDADES-AULA-16-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
+| 01 | Banco de dados e SGBD: conceitos e usos | ✅ `ATIVIDADES-AULA-01-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 96, atividade id 103; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 02 | Gerenciadores: características, requisitos e níveis | ✅ `ATIVIDADES-AULA-02-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 97, atividade id 105; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 03 | Preparação do ambiente: instalação do PostgreSQL | ✅ `ATIVIDADES-AULA-03-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 98, atividade id 107; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 04 | Configuração do SGBD e infraestrutura do sistema | ✅ `ATIVIDADES-AULA-04-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 99, atividade id 109; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 05 | Demandas do cliente e escopo do projeto | ✅ `ATIVIDADES-AULA-05-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 100, atividade id 111; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 06 | Entidades fortes, fracas e associativas | ✅ `ATIVIDADES-AULA-06-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 101, atividade id 113; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 07 | Atributos | ✅ `ATIVIDADES-AULA-07-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 102, atividade id 115; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 08 | Relacionamentos 1:1, 1:N e N:N | ✅ `ATIVIDADES-AULA-08-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 103, atividade id 117; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 09 | Diagrama entidade-relacionamento | ✅ `ATIVIDADES-AULA-09-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 113, atividade id 121; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 10 | Normalização de dados (1FN, 2FN e 3FN) | ✅ `ATIVIDADES-AULA-10-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 114, atividade id 123; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 11 | Padronização de dados, cronograma e fluxograma | ✅ `ATIVIDADES-AULA-11-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 115, atividade id 125; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 12 | DDL: tabelas e campos | ✅ `ATIVIDADES-AULA-12-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 116, atividade id 127; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 13 | DDL: relações, chaves e restrições | ✅ `ATIVIDADES-AULA-13-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 117, atividade id 129; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 14 | DML: inserção, atualização e exclusão | ✅ `ATIVIDADES-AULA-14-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 118, atividade id 131; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 15 | DML: consultas com filtros e ordenação | ✅ `ATIVIDADES-AULA-15-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 119, atividade id 133; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 16 | Consultas com junções, agrupamentos e subconsultas | ✅ `ATIVIDADES-AULA-16-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 120, atividade id 135; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
 | 17 | Procedimentos armazenados | ✅ `ATIVIDADES-AULA-17-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 18 | Triggers (disparadores) | ✅ `ATIVIDADES-AULA-18-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 19 | Segurança da informação: pilares, acesso e auditoria | ⬜ `ATIVIDADES-AULA-19-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
@@ -37,22 +37,22 @@
 
 | Aula | Página | Itens × tópicos | Fonte + padrão de resposta | Banco | Status |
 |---|---|---|---|---|---|
-| 01 | ✅ `ATIVIDADE-PRATICA-AULA-01.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 104, bloqueada; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 02 | ✅ `ATIVIDADE-PRATICA-AULA-02.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 106, bloqueada; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 03 | ✅ `ATIVIDADE-PRATICA-AULA-03.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 108, bloqueada; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 04 | ✅ `ATIVIDADE-PRATICA-AULA-04.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 110, bloqueada; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 05 | ✅ `ATIVIDADE-PRATICA-AULA-05.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 112, bloqueada; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 06 | ✅ `ATIVIDADE-PRATICA-AULA-06.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 114, bloqueada; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 07 | ✅ `ATIVIDADE-PRATICA-AULA-07.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 116, bloqueada; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 08 | ✅ `ATIVIDADE-PRATICA-AULA-08.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 120, bloqueada; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 09 | ✅ `ATIVIDADE-PRATICA-AULA-09.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 122, bloqueada; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 10 | ✅ `ATIVIDADE-PRATICA-AULA-10.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 124, bloqueada; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 11 | ✅ `ATIVIDADE-PRATICA-AULA-11.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 126, bloqueada; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 12 | ✅ `ATIVIDADE-PRATICA-AULA-12.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 128, bloqueada; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 13 | ✅ `ATIVIDADE-PRATICA-AULA-13.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 130, bloqueada; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 14 | ✅ `ATIVIDADE-PRATICA-AULA-14.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 132, bloqueada; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 15 | ✅ `ATIVIDADE-PRATICA-AULA-15.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 134, bloqueada; conferido por md5 em 2026-10-09 21:18) | ✅ Concluída |
-| 16 | ✅ `ATIVIDADE-PRATICA-AULA-16.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
+| 01 | ✅ `ATIVIDADE-PRATICA-AULA-01.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 104, bloqueada; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 02 | ✅ `ATIVIDADE-PRATICA-AULA-02.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 106, bloqueada; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 03 | ✅ `ATIVIDADE-PRATICA-AULA-03.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 108, bloqueada; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 04 | ✅ `ATIVIDADE-PRATICA-AULA-04.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 110, bloqueada; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 05 | ✅ `ATIVIDADE-PRATICA-AULA-05.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 112, bloqueada; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 06 | ✅ `ATIVIDADE-PRATICA-AULA-06.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 114, bloqueada; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 07 | ✅ `ATIVIDADE-PRATICA-AULA-07.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 116, bloqueada; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 08 | ✅ `ATIVIDADE-PRATICA-AULA-08.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 120, bloqueada; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 09 | ✅ `ATIVIDADE-PRATICA-AULA-09.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 122, bloqueada; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 10 | ✅ `ATIVIDADE-PRATICA-AULA-10.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 124, bloqueada; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 11 | ✅ `ATIVIDADE-PRATICA-AULA-11.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 126, bloqueada; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 12 | ✅ `ATIVIDADE-PRATICA-AULA-12.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 128, bloqueada; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 13 | ✅ `ATIVIDADE-PRATICA-AULA-13.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 130, bloqueada; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 14 | ✅ `ATIVIDADE-PRATICA-AULA-14.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 132, bloqueada; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 15 | ✅ `ATIVIDADE-PRATICA-AULA-15.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 134, bloqueada; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
+| 16 | ✅ `ATIVIDADE-PRATICA-AULA-16.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 136, bloqueada; conferido por md5 em 2026-10-09 21:21) | ✅ Concluída |
 | 17 | ✅ `ATIVIDADE-PRATICA-AULA-17.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 18 | ✅ `ATIVIDADE-PRATICA-AULA-18.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 19 | ⬜ `ATIVIDADE-PRATICA-AULA-19.html` | — | ⬜ | ⬜ | ⬜ Pendente |
