@@ -283,6 +283,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (regra "CONVERSA ENTRE SESSÕES 
 ## Registro de decisões
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-09 20:59 | Antes de começar ou continuar qualquer tarefa, concluir todos os seeds de `database/SEEDS-APLICADOS.md` (regra "🌱 REGRA — SEEDS DO BANCO" do `CLAUDE.md`); os que dependem de decisão vão para "⏳ Aguardando o usuário" | Usuário | Banco sempre em dia com os arquivos antes do trabalho seguir |
 | 2026-10-09 14:09 | Gabarito (fontes, padrões de resposta, seeds) vai para o Git e fica fora da Vercel (`.vercelignore`); prova prática de várias aulas segue a regra nova (20 × 3) mesmo divergindo da ITIC | Usuário | Não perder fontes na nuvem e não publicar respostas no site |
 | 2026-10-09 13:58 | Fontes das atividades de Banco de Dados (`*QUESTOES.md`, `-GABARITO.md`) entram no Git e ficam fora do site (`*QUESTOES.md` no `.vercelignore`); seeds em `database/` não entram no commit | Usuário | Na nuvem, o que não entra no commit se perde ao fim da sessão |
 | 2026-10-09 13:40 | Banco de Dados: 80 h / 20 aulas, pasta `BANCO-DE-DADOS`, PostgreSQL, apagar os arquivos antigos | Usuário | Plano da tarefa #20 |

@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 19:38:38
+**Versão das regras:** 2026-10-09 20:59:55
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 20:59:55 | **Seeds antes de qualquer tarefa:** antes de começar uma tarefa nova ou continuar uma tarefa, concluir todos os seeds de `database/SEEDS-APLICADOS.md` (aplicar os PENDENTE, conferir pelo md5 os APLICADO e marcar CONCLUÍDO); os que dependem de decisão do usuário vão para "⏳ Aguardando o usuário" e são perguntados — seção "🌱 REGRA — SEEDS DO BANCO", passo novo na "INICIALIZAÇÃO" e linha nas "REGRAS DO USUÁRIO QUE VALEM SEMPRE" |
 | 2026-10-09 19:38:38 | **Regra de seeds só no `CLAUDE.md`:** seção nova "🌱 REGRA — SEEDS DO BANCO" (status, aplicar em partes pelo conector, conferência pelo md5, análise só dos APLICADO, CONCLUÍDO não é reverificado) referenciando `database/SEEDS-APLICADOS.md`; `docs/regras/atividades.md`, `docs/REGRAS-ATIVIDADE-PRATICA.md` e o registro só apontam para ela |
 | 2026-10-09 19:35:54 | **Análise dos seeds:** ao iniciar, seed APLICADO é conferido no banco pelo md5 e, se existir e bater, vira CONCLUÍDO; seed CONCLUÍDO não é verificado de novo (só se o arquivo mudar) — `CLAUDE.md` ("Seeds de atividades"), `docs/regras/atividades.md` e `database/SEEDS-APLICADOS.md` |
 | 2026-10-09 19:23:21 | **Status em todos os seeds:** cada `database/*-seed-atividades.sql` tem status **PENDENTE**, **APLICADO** ou **CONCLUÍDO** em `database/SEEDS-APLICADOS.md` (69 arquivos conferidos no banco: 26 pendentes, 3 aplicados, 40 concluídos); item da etapa acompanha o status |
 | 2026-10-09 19:19:18 | **Seeds aplicados:** registro único `database/SEEDS-APLICADOS.md`; toda tarefa que gera seed tem o item "Aplicar os seeds no Supabase" no arquivo da etapa (⬜ até o pedido, ✅ só depois de aplicado e conferido); autorização de 2026-10-03 vale só para o plano daquela data (`docs/regras/atividades.md`) |
-| 2026-10-09 15:24:44 | **Conversa entre sessões e licenças:** `tasks/STATUS.md` vira índice (etapas em `tasks/etapas/`, uma por arquivo), "🧭 Frentes de trabalho" (próximo passo por ambiente + branch), coluna "Em uso por" (reserva da tarefa), `tasks/RECADOS.md`, etapa nova com UUID, trazer a `main` no início e no fim, arquivo gerado em conflito = regerar |
 
 ---
 
@@ -56,6 +56,9 @@ Registrada em 2026-10-03 a pedido do usuário.
 - ⛔ **Nunca escrever testes automatizados** (regra permanente do global): nada de `*.test.js`,
   `*.spec.js`, `test_*.py` nem passo de teste em plano; a **única exceção** é corrigir um bug.
   Vale mesmo que haja suíte de testes no repositório ou que uma skill (TDD etc.) mande.
+- ⛔ **Seeds concluídos antes de qualquer tarefa** (2026-10-09, pedido do usuário): antes de
+  começar ou continuar qualquer tarefa, concluir todos os seeds de `database/SEEDS-APLICADOS.md`
+  (ver a regra "🌱 REGRA — SEEDS DO BANCO").
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
 - ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, numa branch própria + novo PR para a `main`).
@@ -434,6 +437,9 @@ Registrada em 2026-10-03 a pedido do usuário.
    já foi feito nos arquivos/commits
    - ☁️ **Na nuvem:** ler também `.claude/regras-globais/CLAUDE-GLOBAL.md` e
      `CLAUDE-DOCS-BEFORE-EVERY-TASK.md` (regras globais; ver "REGRAS E SKILLS GLOBAIS NO PROJETO")
+2.5. 🌱 **Concluir todos os seeds** (2026-10-09, pedido do usuário): ler o
+   `database/SEEDS-APLICADOS.md` e, antes de começar ou continuar qualquer tarefa, deixar todos os
+   seeds em **CONCLUÍDO** (regra "🌱 REGRA — SEEDS DO BANCO")
 3. ✅ **Prosseguir de onde parou** (sem refazer itens `✅` nem pular itens)
 4. ✅ **Só então responder** ao usuário (ou iniciar a tarefa)
 
@@ -851,6 +857,18 @@ regra de seeds do projeto** (os outros arquivos só apontam para cá). O registr
   `md5(string_agg(item||'|'||topico||'|'||enunciado||'|'||resposta_esperada||'|'||criterios, E'\n'
   order by item, topico))` da `topico_discursivo` — comparado com o mesmo texto montado do arquivo.
   Bateu → **CONCLUÍDO** (com a data e hora); não bateu → continua **APLICADO** com o motivo.
+- ⛔ **Todos os seeds CONCLUÍDO antes de qualquer tarefa** (2026-10-09 20:59:55, pedido do usuário): antes de
+  **começar uma tarefa nova ou continuar uma tarefa** (inclusive ao retomar a sessão), ler o
+  registro e **concluir todos os seeds**: aplicar os **PENDENTE** pelo conector (em partes, como
+  acima), conferir pelo md5 os **APLICADO** e marcar **CONCLUÍDO** os que baterem, gravando o
+  registro e fazendo commit (e push na nuvem) **antes** de seguir para a tarefa. Esta regra é a
+  autorização permanente do usuário para aplicar os seeds do registro (não precisa pedir de novo).
+  - ✅ Seed que **não pode** ser concluído sem decisão do usuário (matéria ou aula inexistente no
+    banco, página substituída por outra, conteúdo do arquivo diferente do banco por ter sido
+    trocado por um seed mais novo) fica com o status e o motivo no registro, entra em **"⏳
+    Aguardando o usuário"** do `STATUS.md` e é **perguntado** ao usuário; só ele não trava a tarefa.
+  - ⛔ Sem conector do Supabase (ou no ambiente local sem acesso ao banco): avisar o usuário quais
+    seeds faltam antes de começar a tarefa.
 - ✅ **Ao iniciar a análise dos seeds** (2026-10-09 19:35:54): conferir pelo md5 **só os
   seeds APLICADO**. ⛔ **Seed CONCLUÍDO não é verificado de novo**; só volta a ser conferido se o
   arquivo do seed mudar (aí volta a **PENDENTE**).
