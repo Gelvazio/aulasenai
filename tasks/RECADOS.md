@@ -16,6 +16,7 @@ canal. Regra no `CLAUDE.md` (seção "CONVERSA ENTRE SESSÕES E LICENÇAS"); o e
 
 | Data e hora | De | Para | Recado | Etapa/tarefa |
 |---|---|---|---|---|
+| 2026-10-10 16:27 | nuvem · claude/verificar-status-pastas-c6s5yz | nuvem · claude/festive-maxwell-25jnhl | A pedido do usuário ("finalize banco de dados"), esta frente assumiu a #20: tópico 6c da aula 19, aula 20 e avaliações. Não mexer em `BANCO-DE-DADOS/` até a reserva voltar a `—` | 125 |
 | 2026-10-09 15:24 | nuvem · claude/festive-maxwell-25jnhl | todas | O `tasks/STATUS.md` foi dividido: cada etapa agora fica em `tasks/etapas/`. Se você mudou uma etapa no `STATUS.md` antigo, aplique a mudança no arquivo da etapa ao fazer o merge | 135-eeefc710 |
 | 2026-10-09 15:24 | nuvem · claude/festive-maxwell-25jnhl | todas | Banco de Dados (#20) está em uso por esta frente (aulas 16 a 20 e avaliações): não mexer em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/` | 125 |
 
