@@ -30,7 +30,7 @@
 | 16 | Consultas com junções, agrupamentos e subconsultas | ✅ `ATIVIDADES-AULA-16-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 120, atividade id 135; conferido por md5 em 2026-10-09 21:24) | ✅ Concluída |
 | 17 | Procedimentos armazenados | ✅ `ATIVIDADES-AULA-17-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 121, atividade id 137; conferido por md5 em 2026-10-09 21:24) | ✅ Concluída |
 | 18 | Triggers (disparadores) | ✅ `ATIVIDADES-AULA-18-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 122, atividade id 139; conferido por md5 em 2026-10-09 21:24) | ✅ Concluída |
-| 19 | Segurança da informação: pilares, acesso e auditoria | ⬜ `ATIVIDADES-AULA-19-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
+| 19 | Segurança da informação: pilares, acesso e auditoria | ✅ `ATIVIDADES-AULA-19-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 20 | Projeto integrador: banco documentado para o back-end | ⬜ `ATIVIDADES-AULA-20-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 
 ## Atividade prática por aula (padrão da prova id 82)
@@ -55,7 +55,7 @@
 | 16 | ✅ `ATIVIDADE-PRATICA-AULA-16.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 136, bloqueada; conferido por md5 em 2026-10-09 21:24) | ✅ Concluída |
 | 17 | ✅ `ATIVIDADE-PRATICA-AULA-17.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 138, bloqueada; conferido por md5 em 2026-10-09 21:24) | ✅ Concluída |
 | 18 | ✅ `ATIVIDADE-PRATICA-AULA-18.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 140, bloqueada; conferido por md5 em 2026-10-09 21:24) | ✅ Concluída |
-| 19 | ⬜ `ATIVIDADE-PRATICA-AULA-19.html` | — | ⬜ | ⬜ | ⬜ Pendente |
+| 19 | ✅ `ATIVIDADE-PRATICA-AULA-19.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
 | 20 | ⬜ `ATIVIDADE-PRATICA-AULA-20.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 
 ## Avaliações (modelo da ITIC)

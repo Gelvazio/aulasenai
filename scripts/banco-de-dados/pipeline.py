@@ -70,6 +70,8 @@ for nome, ativ in ((novo.name, 1), ("2026-10-09-banco-de-dados-objetivas-seed-at
     if f"| `{nome}` |" in r:
         r = re.sub(rf"\| `{re.escape(nome)}` \| Banco de Dados \(TII\) \| \d+ \|", f"| `{nome}` | Banco de Dados (TII) | {ativ} |", r)
     else:
-        r = r.rstrip("\n") + "\n" + linha + "\n"
+        fim = r.find("\n## Seeds excluídos")  # linha nova vai no fim da tabela "Todos os seeds"
+        fim = len(r) if fim < 0 else fim
+        r = r[:fim].rstrip("\n") + "\n" + linha + "\n" + r[fim:]
 R.write_text(r, encoding="utf-8")
 print(f"Aula {nn} fechada: {arq_aula} · gabarito {dist}")
