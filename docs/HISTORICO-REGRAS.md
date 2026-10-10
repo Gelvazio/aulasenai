@@ -6,6 +6,18 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 15:24:44 | **Conversa entre sessões e licenças:** `tasks/STATUS.md` vira índice (etapas em `tasks/etapas/`, uma por arquivo), "🧭 Frentes de trabalho" (próximo passo por ambiente + branch), coluna "Em uso por" (reserva da tarefa), `tasks/RECADOS.md`, etapa nova com UUID, trazer a `main` no início e no fim, arquivo gerado em conflito = regerar |
+| 2026-10-09 18:06:19 | **Regra do `graphify update .` removida:** o grafo não é mais atualizado nem lido automaticamente (início de sessão, commits, `GRAPH_REPORT.md`); só roda quando o usuário pedir (`/graphify`) |
+| 2026-10-09 18:00:00 | **Lista de presença única:** todas as listas em `scripts/LISTAPRESENCA.js` (versionado, fora do site); páginas e `criar-usuarios-supabase-auth.js --turma=CODIGO` leem só dele (`docs/regras/usuarios-turmas-paginas-professor.md`) |
+| 2026-10-09 17:25:12 | **`.gitignore` mínimo:** só `__pycache__/`, graphify, `variaveis.js` e `.env`; binários, gabaritos, listas de presença e `LISTA-ALUNOS/` saem do site pelo `.vercelignore` (regra "O QUE NUNCA É PUBLICADO" reescrita) |
+| 2026-10-09 15:09:56 | `docs/regras/atividades.md` (Reforço de Linguagens): `-GABARITO.md` "no Git e fora do site", como a regra geral (revisão do PR) |
+| 2026-10-09 15:08:47 | **Banco de questões do AVA (Moodle XML) removido:** regra de `docs/regras/atividades.md`, gerador `assets/gerador-banco-ava/`, pasta `BANCO-AVA/` da ITIC, planos em `docs/` e todas as citações (pedido do usuário) |
+| 2026-10-09 15:08:10 | **`BANCO-AVA/` coerente com a regra do gabarito:** tabela da ITIC no `CLAUDE.md`, `docs/regras/atividades.md` e `docs/regras/assets-e-geradores.md` dizem "no Git, fora do site" (apontado na revisão do PR) |
+| 2026-10-09 15:03:21 | **Registro da sessão em `SESSOES-CLAUDE/` removido** (regra, pergunta do fim da tarefa, leitura do `STATUS-SESSOES.md` e a pasta): o estado fica só no `STATUS.md`, onde já estavam todas as pendências dos logs |
+| 2026-10-09 15:00:25 | **Nuvem: sem a pergunta "Deseja atualizar o log da sessão atual?"** no fim da tarefa (só no ambiente local); a frase final continua |
+| 2026-10-09 14:58:46 | **Nuvem: cada arquivo criado = commit + push na hora** (seção "Pull Requests"), sem esperar o fim da tarefa; arquivo parcial vai como `wip(...)` com o que falta no `STATUS.md` |
+| 2026-10-09 14:09:46 | **Gabarito vai para o Git, mas não é publicado na Vercel:** `-GABARITO.md`, `*QUESTOES.md`, `PROVA-OBJETIVA-*.md`, seeds `database/*-seed-atividades.sql` e `BANCO-AVA/` versionados e listados no `.vercelignore` (saíram do `.gitignore`); regras atualizadas no `CLAUDE.md`, `docs/regras/atividades.md` e `docs/REGRAS-ATIVIDADE-PRATICA.md` |
+| 2026-10-09 14:04:30 | **Atividade prática de uma aula = 10 questões × 3 tópicos** (`docs/REGRAS-ATIVIDADE-PRATICA.md`); a prova id 82 é de várias aulas e serve **só como referência dos recursos compartilhados** (não do tamanho nem do formato das questões) |
 | 2026-10-09 13:20:11 | **Análise contínua das matérias (tarefa permanente #19-91cbac65-87ca-45a0):** `scripts/analise-materias.py` grava `tasks/ANALISE-MATERIAS-RELATORIO.json` no início de cada sessão e ao concluir tarefa em matéria; a tarefa **nunca fica CONCLUÍDA** enquanto houver matéria incompleta ou pendência |
 | 2026-10-09 12:58:34 | **`TASKS_COMPLETE.md` apagado:** tarefa concluída ou cancelada tem o bloco **removido** do `TASKS.md` (o registro fica no `STATUS.md` e no Git) |
 | 2026-10-09 12:36:43 | **Id de tarefa nova = número + UUID** (ex.: `#19-3f9a2c7e-8b1d-4e2a`), para duas licenças/branches não gerarem o mesmo número; as antigas (até #18) não mudam |

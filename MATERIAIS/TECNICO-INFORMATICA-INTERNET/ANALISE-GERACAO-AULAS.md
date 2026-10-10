@@ -19,7 +19,7 @@ STATUS-PERMISSAO-MATERIA)
 | Matérias em **VERIFICAR** | **1** — `TESTES-DE-FRONTEND` (todas as outras estão em `IGNORAR`) |
 | Ementas de matéria conformes (14.800–14.950 caracteres) | **1** (`TESTES-DE-FRONTEND`) |
 | Ementas fora do tamanho | **17** |
-| Ementas genéricas (modelo, sem conteúdo próprio) | **2** (`BANCO_DE_DADOS`, `Testes de Sistemas-EXISTENTES`) |
+| Ementas genéricas (modelo, sem conteúdo próprio) | **2** (`BANCO-DE-DADOS`, `Testes de Sistemas-EXISTENTES`) |
 | Matérias com `materia.json` | **1** (`TESTES-DE-FRONTEND`) |
 | Matérias com `DOCUMENTACAO/PLANO-AULAS.md` | **0** |
 | Atividades objetivas de 50 questões geradas | **0** |
@@ -53,7 +53,7 @@ Legenda: ✅ existe/conforme · ⚠️ parcial/genérica · ❌ falta · ⛔ nã
 | **3º Semestre (382 h)** | | | | | | | | | | |
 | 14 | Codificação para Back-End | 100 | 100 | 0 | `CODIFICACAO-PARA-BACK-END` | ❌ fora do tamanho (4.269) | ❌ | ❌ | só `index.html` | IGNORAR |
 | 15 | Desenvolvimento de APIs | 60 | 60 | 0 | `DESENVOLVIMENTO-DE-APIS` | ❌ fora do tamanho (5.047) | ❌ | ❌ | só `index.html` | IGNORAR |
-| 16 | Banco de Dados | 80 | 80 | 0 | `BANCO_DE_DADOS` | ⚠️ genérica (14.802) | ❌ | ❌ | só `index.html` | IGNORAR |
+| 16 | Banco de Dados | 80 | 80 | 0 | `BANCO-DE-DADOS` | ⚠️ genérica (14.802) | ❌ | ❌ | só `index.html` | VERIFICAR |
 | 17 | Testes de Back-End | 40 | 20 | 20 | `TESTES-DE-BACK-END` | ❌ fora do tamanho (4.427) | ❌ | ❌ | só `index.html` | IGNORAR |
 | 18 | Projeto de Back-End | 90 | 70 | 20 | `PROJETO-DE-BACK-END` | ❌ fora do tamanho (9.889) | ❌ | ❌ | só `index.html` | IGNORAR |
 | 19 | Saúde e Segurança no Trabalho | 12 | 0 | 12 | `SAUDE-E-SEGURANCA-NO-TRABALHO` | ❌ fora do tamanho (4.586) | ❌ | ❌ | só `index.html` | IGNORAR |

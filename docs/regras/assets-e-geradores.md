@@ -39,7 +39,7 @@ assets/
 │                        SOMENTE no banco (sem localStorage); ativado com
 │                        `- **Folha de respostas:** sim` no .md;
 │                        lista-presenca.js + css/lista-presenca.css — página LISTA-PRESENCA.html
-│                        da matéria, uma tabela por turma a partir de ATIVIDADES/LISTA-PRESENCA.js;
+│                        da matéria, uma tabela por turma (UC em data-uc) a partir de scripts/LISTAPRESENCA.js;
 │                        css/login.css — página login.html da raiz, com js/login.js (Supabase Auth,
 │                        orientação em docs/ORIENTACAO_JS_LOGIN.md);
 │                        respostas-atividade-banco.js — grava alternativas/entrega no Supabase
@@ -74,9 +74,6 @@ assets/
 │                        da apostila (css/apostila.css, js/apostila.js, img/logo-sesi-senai.png)
 ├─ gerador-atividades/ → gerar_atividades.py + template_atividade.html: gera as páginas de
 │                        atividade de 50 questões e o index.html de qualquer pasta ATIVIDADES/
-├─ gerador-banco-ava/  → gerar_banco_ava.py + moodle_xml.py: banco de questões do AVA SENAI
-│                        (Moodle XML) a partir de ATIVIDADES/CONTEUDO/*QUESTOES.md → pasta
-│                        ATIVIDADES/BANCO-AVA/ (fora do Git; ver "BANCO DE QUESTÕES DO AVA SENAI")
 ├─ gerador-atividade-excel/ → gerar_atividade_excel.py (+ desenho_excel.py, tela_excel.py,
 │                        sobreposicoes_excel.py, graficos_excel.py, base_excel.py): gera capa,
 │                        questões e telas do Excel em SVG (inclui tabela dinâmica, gráficos,

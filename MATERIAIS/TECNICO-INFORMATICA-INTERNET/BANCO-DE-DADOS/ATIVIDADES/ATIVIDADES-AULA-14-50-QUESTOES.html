@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 14 — DML: Inserção, Atualização e Exclusão (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="14" data-tema="DML: Inserção, Atualização e Exclusão" data-total="50"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>✏️ Aula 14: DML: Inserção, Atualização e Exclusão</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-14-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C8 —</strong> Aplicar linguagem de manipulação de dados</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">INSERT</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando insere uma nova linha numa tabela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>CREATE TABLE.</li>
+                        <li><span class="letra">B)</span>DELETE.</li>
+                        <li><span class="letra">C)</span>UPDATE.</li>
+                        <li><span class="letra">D)</span>INSERT INTO.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">INSERT com Colunas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando insere um curso informando as colunas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>INSERT curso = &#x27;Excel Básico&#x27;;</li>
+                        <li><span class="letra">B)</span>INSERT INTO curso (nome, carga_horaria, valor_mensal) VALUES (&#x27;Excel Básico&#x27;, 40, 180.00);</li>
+                        <li><span class="letra">C)</span>CREATE curso (&#x27;Excel Básico&#x27;, 40, 180.00);</li>
+                        <li><span class="letra">D)</span>UPDATE curso VALUES (&#x27;Excel Básico&#x27;);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Por Que Listar as Colunas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que listar as colunas no INSERT?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o banco não aceita INSERT sem colunas em nenhum caso.</li>
+                        <li><span class="letra">B)</span>Para apagar as colunas não listadas.</li>
+                        <li><span class="letra">C)</span>Para inserir mais rápido no disco.</li>
+                        <li><span class="letra">D)</span>Para o comando continuar certo mesmo se a tabela ganhar colunas novas, e para deixar claro qual valor vai em qual coluna.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Várias Linhas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como inserir dois cursos num único comando?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com INSERT INTO curso (...) VALUES (...), (...); com os grupos separados por vírgula.</li>
+                        <li><span class="letra">B)</span>Não é possível.</li>
+                        <li><span class="letra">C)</span>Com dois CREATE TABLE.</li>
+                        <li><span class="letra">D)</span>Com UPDATE curso SET dois cursos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Id Gerado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que não é preciso informar o id_curso no INSERT?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o id é texto.</li>
+                        <li><span class="letra">B)</span>Porque a coluna usa identidade e o banco gera o número sozinho.</li>
+                        <li><span class="letra">C)</span>Porque o id é apagado depois.</li>
+                        <li><span class="letra">D)</span>Porque o id é sempre zero.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">RETURNING</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz RETURNING id_aluno no fim de um INSERT?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga o aluno inserido.</li>
+                        <li><span class="letra">B)</span>Devolve o id gerado para a linha inserida.</li>
+                        <li><span class="letra">C)</span>Lista todos os alunos.</li>
+                        <li><span class="letra">D)</span>Desfaz a inserção.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Colunas com DEFAULT</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No INSERT de uma matrícula, por que data_matricula pode ser omitida?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque a coluna tem DEFAULT current_date e recebe a data de hoje.</li>
+                        <li><span class="letra">B)</span>Porque datas nunca são gravadas.</li>
+                        <li><span class="letra">C)</span>Porque matrícula não tem data.</li>
+                        <li><span class="letra">D)</span>Porque o banco apaga datas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Aspas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como os textos e as datas são escritos no INSERT?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Entre colchetes.</li>
+                        <li><span class="letra">B)</span>Entre aspas duplas obrigatórias.</li>
+                        <li><span class="letra">C)</span>Sem aspas.</li>
+                        <li><span class="letra">D)</span>Entre aspas simples, como &#x27;Ana Souza&#x27; e &#x27;2008-03-21&#x27;.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Decimal com Ponto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como escrever o valor cento e oitenta reais no INSERT?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>180,00</li>
+                        <li><span class="letra">B)</span>180.00</li>
+                        <li><span class="letra">C)</span>cento e oitenta</li>
+                        <li><span class="letra">D)</span>&#x27;R$ 180&#x27;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Ordem de Inserção</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem correta para inserir os dados da escola?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>curso, turma, aluno, matricula e parcela.</li>
+                        <li><span class="letra">B)</span>matricula antes de aluno.</li>
+                        <li><span class="letra">C)</span>parcela, matricula, turma e curso.</li>
+                        <li><span class="letra">D)</span>A ordem não importa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Turma sem Curso</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece ao inserir uma turma com id_curso de um curso que não existe?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O banco apaga outra turma.</li>
+                        <li><span class="letra">B)</span>A turma é gravada sem curso.</li>
+                        <li><span class="letra">C)</span>Erro de chave estrangeira; a turma não é gravada.</li>
+                        <li><span class="letra">D)</span>O curso é criado automaticamente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">UPDATE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz o comando UPDATE?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga a tabela.</li>
+                        <li><span class="letra">B)</span>Cria colunas.</li>
+                        <li><span class="letra">C)</span>Altera valores de linhas existentes.</li>
+                        <li><span class="letra">D)</span>Insere novas linhas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">SET e WHERE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No comando UPDATE curso SET valor_mensal = 195.00 WHERE id_curso = 1;, o que faz o WHERE?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Altera todos os cursos.</li>
+                        <li><span class="letra">B)</span>Cria o curso 1.</li>
+                        <li><span class="letra">C)</span>Limita a alteração ao curso de id 1.</li>
+                        <li><span class="letra">D)</span>Apaga o curso 1.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Trancar Matrícula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando tranca a matrícula do aluno 5 na turma 2?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>UPDATE matricula SET situacao = &#x27;trancada&#x27; WHERE id_aluno = 5 AND id_turma = 2;</li>
+                        <li><span class="letra">B)</span>UPDATE matricula SET situacao = &#x27;trancada&#x27;;</li>
+                        <li><span class="letra">C)</span>INSERT INTO matricula VALUES (&#x27;trancada&#x27;);</li>
+                        <li><span class="letra">D)</span>DELETE FROM matricula WHERE situacao = &#x27;trancada&#x27;;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Reajuste</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando dá reajuste de 10% em todos os cursos ativos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>UPDATE curso SET valor_mensal = valor_mensal * 1.10 WHERE ativo = true;</li>
+                        <li><span class="letra">B)</span>UPDATE curso SET valor_mensal = 10;</li>
+                        <li><span class="letra">C)</span>INSERT INTO curso valor_mensal * 1.10;</li>
+                        <li><span class="letra">D)</span>DELETE FROM curso WHERE ativo = true;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">DELETE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz DELETE FROM matricula WHERE id_matricula = 12;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga a tabela matrícula.</li>
+                        <li><span class="letra">B)</span>Apaga a matrícula de id 12.</li>
+                        <li><span class="letra">C)</span>Apaga todas as matrículas.</li>
+                        <li><span class="letra">D)</span>Cria a matrícula 12.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">DELETE e RESTRICT</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece ao tentar apagar um curso que tem turmas, com a chave em RESTRICT?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O banco recusa a exclusão.</li>
+                        <li><span class="letra">B)</span>As turmas ficam sem curso.</li>
+                        <li><span class="letra">C)</span>O banco apaga só o nome do curso.</li>
+                        <li><span class="letra">D)</span>O curso e as turmas são apagados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">DELETE e CASCADE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao apagar uma matrícula, o que acontece com as parcelas, que têm ON DELETE CASCADE?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>São copiadas para outra matrícula.</li>
+                        <li><span class="letra">B)</span>Ficam sem matrícula.</li>
+                        <li><span class="letra">C)</span>Impedem a exclusão.</li>
+                        <li><span class="letra">D)</span>São apagadas junto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Exclusão Lógica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é exclusão lógica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Fazer backup do registro.</li>
+                        <li><span class="letra">B)</span>Apagar a linha definitivamente.</li>
+                        <li><span class="letra">C)</span>Marcar o registro como inativo, por exemplo com UPDATE ... SET ativo = false, sem apagar a linha.</li>
+                        <li><span class="letra">D)</span>Apagar a tabela inteira.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Vantagem da Exclusão Lógica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a vantagem da exclusão lógica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ocupar menos espaço sempre.</li>
+                        <li><span class="letra">B)</span>Apagar mais rápido.</li>
+                        <li><span class="letra">C)</span>Manter o histórico, sem perder os dados.</li>
+                        <li><span class="letra">D)</span>Dispensar o WHERE.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">UPDATE sem WHERE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz UPDATE curso SET valor_mensal = 0; sem WHERE?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dá erro sempre.</li>
+                        <li><span class="letra">B)</span>Zera o valor de todos os cursos.</li>
+                        <li><span class="letra">C)</span>Não altera nada.</li>
+                        <li><span class="letra">D)</span>Zera só o primeiro curso.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">DELETE sem WHERE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz DELETE FROM aluno; sem WHERE, se as restrições permitirem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga a tabela e a estrutura.</li>
+                        <li><span class="letra">B)</span>Apaga só o último aluno.</li>
+                        <li><span class="letra">C)</span>Apaga todos os alunos.</li>
+                        <li><span class="letra">D)</span>Não faz nada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">SELECT Antes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que escrever primeiro um SELECT com o mesmo WHERE do UPDATE ou DELETE?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o UPDATE só funciona depois de um SELECT.</li>
+                        <li><span class="letra">B)</span>Para conferir quais linhas serão afetadas antes de alterar ou apagar.</li>
+                        <li><span class="letra">C)</span>Para deixar o comando mais rápido.</li>
+                        <li><span class="letra">D)</span>Para criar uma cópia da tabela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">BEGIN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz o comando BEGIN?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga a tabela.</li>
+                        <li><span class="letra">B)</span>Confirma a transação.</li>
+                        <li><span class="letra">C)</span>Desfaz a transação.</li>
+                        <li><span class="letra">D)</span>Inicia uma transação.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">COMMIT</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz o COMMIT depois de um UPDATE dentro da transação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Desfaz as alterações.</li>
+                        <li><span class="letra">B)</span>Apaga as linhas.</li>
+                        <li><span class="letra">C)</span>Confirma as alterações.</li>
+                        <li><span class="letra">D)</span>Inicia uma nova tabela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">ROLLBACK</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz o ROLLBACK?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Reinicia o servidor.</li>
+                        <li><span class="letra">B)</span>Confirma as alterações.</li>
+                        <li><span class="letra">C)</span>Apaga o banco.</li>
+                        <li><span class="letra">D)</span>Desfaz as alterações feitas desde o BEGIN.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Linhas Afetadas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois de um UPDATE, o psql mostra &quot;UPDATE 6&quot;. O que isso indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que o comando falhou 6 vezes.</li>
+                        <li><span class="letra">B)</span>Que há 6 transações abertas.</li>
+                        <li><span class="letra">C)</span>Que 6 linhas foram alteradas.</li>
+                        <li><span class="letra">D)</span>Que a tabela tem 6 colunas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Desconfiar do Número</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Esperava-se alterar 5 cursos, mas o psql mostra &quot;UPDATE 6&quot; dentro de uma transação. O que fazer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Desligar o servidor.</li>
+                        <li><span class="letra">B)</span>Apagar a tabela de cursos.</li>
+                        <li><span class="letra">C)</span>Executar ROLLBACK, conferir o WHERE e refazer o comando.</li>
+                        <li><span class="letra">D)</span>Executar COMMIT mesmo assim.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">TRUNCATE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz TRUNCATE TABLE tabela_teste;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Altera o tipo das colunas.</li>
+                        <li><span class="letra">B)</span>Apaga só a primeira linha.</li>
+                        <li><span class="letra">C)</span>Cria a tabela de teste.</li>
+                        <li><span class="letra">D)</span>Esvazia a tabela inteira de uma vez.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Uso do TRUNCATE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando usar TRUNCATE?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Em bancos de teste, para esvaziar tabelas; nunca em produção sem backup.</li>
+                        <li><span class="letra">B)</span>Sempre em produção, para limpar o banco.</li>
+                        <li><span class="letra">C)</span>Para inserir dados.</li>
+                        <li><span class="letra">D)</span>Para alterar um único valor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Dados de Teste</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Que tipo de dado deve ser usado na carga de teste do sistema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>CPFs reais de colegas.</li>
+                        <li><span class="letra">B)</span>Dados copiados de outra empresa.</li>
+                        <li><span class="letra">C)</span>Telefones reais de clientes.</li>
+                        <li><span class="letra">D)</span>Dados fictícios, nunca dados reais de pessoas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Script de Carga</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve o script 02-dados-teste.sql?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Configurar o servidor.</li>
+                        <li><span class="letra">B)</span>Carregar dados fictícios para testar as consultas das próximas aulas.</li>
+                        <li><span class="letra">C)</span>Criar as tabelas do banco.</li>
+                        <li><span class="letra">D)</span>Fazer backup da produção.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Alterar E-mail</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando corrige o e-mail da aluna de id 7?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>UPDATE aluno SET email = &#x27;novo@exemplo.com&#x27;;</li>
+                        <li><span class="letra">B)</span>UPDATE aluno SET email = &#x27;novo@exemplo.com&#x27; WHERE id_aluno = 7;</li>
+                        <li><span class="letra">C)</span>INSERT INTO aluno email = &#x27;novo@exemplo.com&#x27;;</li>
+                        <li><span class="letra">D)</span>DELETE FROM aluno WHERE email = &#x27;novo@exemplo.com&#x27;;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Apagar Turma de Teste</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando apaga a turma de teste com código T99?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>DROP TABLE turma;</li>
+                        <li><span class="letra">B)</span>DELETE FROM turma;</li>
+                        <li><span class="letra">C)</span>UPDATE turma SET codigo = NULL;</li>
+                        <li><span class="letra">D)</span>DELETE FROM turma WHERE codigo = &#x27;T99&#x27;;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Várias Condições</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No WHERE, para que serve o AND em WHERE id_aluno = 5 AND id_turma = 2?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Exige que as duas condições sejam verdadeiras.</li>
+                        <li><span class="letra">B)</span>Aceita qualquer uma das condições.</li>
+                        <li><span class="letra">C)</span>Ignora a segunda condição.</li>
+                        <li><span class="letra">D)</span>Apaga as duas linhas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Inserir Parcela</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Antes de inserir a parcela de uma matrícula, o que precisa existir?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nada.</li>
+                        <li><span class="letra">B)</span>Uma tabela de backup.</li>
+                        <li><span class="letra">C)</span>Somente o professor.</li>
+                        <li><span class="letra">D)</span>A matrícula a que a parcela pertence.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">INSERT Violando CHECK</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece ao inserir uma parcela com valor -10, se existe CHECK (valor &gt; 0)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A matrícula é apagada.</li>
+                        <li><span class="letra">B)</span>O banco recusa com erro de check constraint.</li>
+                        <li><span class="letra">C)</span>A parcela é gravada com valor -10.</li>
+                        <li><span class="letra">D)</span>O valor vira 10 automaticamente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">INSERT Violando UNIQUE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece ao inserir um aluno com um CPF já cadastrado, se há UNIQUE no CPF?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O aluno antigo é apagado.</li>
+                        <li><span class="letra">B)</span>O CPF é alterado automaticamente.</li>
+                        <li><span class="letra">C)</span>O banco recusa com erro de chave duplicada.</li>
+                        <li><span class="letra">D)</span>Os dois ficam gravados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Escola: Erro do Reajuste</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No exemplo da escola, por que o reajuste afetou um curso a mais?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o integrante esqueceu o WHERE ativo = true e reajustou também um curso desativado.</li>
+                        <li><span class="letra">B)</span>Porque o COMMIT foi feito duas vezes.</li>
+                        <li><span class="letra">C)</span>Porque o valor era texto.</li>
+                        <li><span class="letra">D)</span>Porque o banco duplicou os cursos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Escola: O Que Salvou</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No exemplo, o que permitiu corrigir o erro do reajuste sem prejuízo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Estar dentro de uma transação e executar ROLLBACK.</li>
+                        <li><span class="letra">B)</span>Fazer outro reajuste negativo sem conferir.</li>
+                        <li><span class="letra">C)</span>Apagar a tabela curso.</li>
+                        <li><span class="letra">D)</span>Desligar o computador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Dinâmica: Primeiro Passo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica &quot;Rede de segurança&quot;, qual é o primeiro passo da dupla?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Escrever o SELECT do alvo.</li>
+                        <li><span class="letra">B)</span>Fazer o COMMIT.</li>
+                        <li><span class="letra">C)</span>Executar o DELETE direto.</li>
+                        <li><span class="letra">D)</span>Apagar a tabela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Dinâmica: Decisão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica, depois de executar o comando dentro da transação, o que a dupla faz?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Fecha o psql sem decidir.</li>
+                        <li><span class="letra">B)</span>Confere o número de linhas e decide entre COMMIT e ROLLBACK.</li>
+                        <li><span class="letra">C)</span>Executa TRUNCATE.</li>
+                        <li><span class="letra">D)</span>Apaga o banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Entrega da SA 2</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é entregue nesta aula, na SA 2?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O documento de escopo.</li>
+                        <li><span class="letra">B)</span>O DER desenhado.</li>
+                        <li><span class="letra">C)</span>O pg_hba.conf.</li>
+                        <li><span class="letra">D)</span>O script de carga de dados fictícios e 5 UPDATE e 3 DELETE com SELECT de conferência e transação.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">DML e DDL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">INSERT, UPDATE e DELETE pertencem a qual parte do SQL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>DML, linguagem de manipulação de dados.</li>
+                        <li><span class="letra">B)</span>DCL, controle de acesso.</li>
+                        <li><span class="letra">C)</span>DDL, linguagem de definição de dados.</li>
+                        <li><span class="letra">D)</span>Nenhuma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">UPDATE com Cálculo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando aumenta em 5 unidades o estoque do produto 3?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>INSERT INTO produto estoque + 5;</li>
+                        <li><span class="letra">B)</span>UPDATE produto SET estoque = estoque + 5 WHERE id_produto = 3;</li>
+                        <li><span class="letra">C)</span>DELETE FROM produto WHERE estoque = 5;</li>
+                        <li><span class="letra">D)</span>UPDATE produto SET estoque = 5;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Atualizar Várias Colunas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como alterar o turno e a sala da turma 4 num só comando?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com dois DELETE.</li>
+                        <li><span class="letra">B)</span>Não é possível.</li>
+                        <li><span class="letra">C)</span>UPDATE turma SET turno = &#x27;noite&#x27; AND sala = &#x27;B2&#x27;;</li>
+                        <li><span class="letra">D)</span>UPDATE turma SET turno = &#x27;noite&#x27;, sala = &#x27;B2&#x27; WHERE id_turma = 4;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Inserção Inválida por NULL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao inserir um aluno sem nome, numa coluna NOT NULL, o que acontece?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O aluno é gravado sem problemas.</li>
+                        <li><span class="letra">B)</span>O banco cria um nome aleatório.</li>
+                        <li><span class="letra">C)</span>O banco recusa com erro de not-null constraint.</li>
+                        <li><span class="letra">D)</span>O nome fica em branco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Uso do RETURNING pelo Back-End</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o RETURNING é útil para o back-end?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque ele dispensa o WHERE.</li>
+                        <li><span class="letra">B)</span>Porque ele recebe o id gerado logo após o INSERT e pode usá-lo, por exemplo, para criar a matrícula.</li>
+                        <li><span class="letra">C)</span>Porque ele apaga dados antigos.</li>
+                        <li><span class="letra">D)</span>Porque ele cria a tabela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Desfazer Depois do COMMIT</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois do COMMIT, o ROLLBACK desfaz a alteração?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não; depois de confirmada, a alteração só pode ser corrigida com outro comando ou com backup.</li>
+                        <li><span class="letra">B)</span>Sim, se a tabela for pequena.</li>
+                        <li><span class="letra">C)</span>Sim, mas só no dia seguinte.</li>
+                        <li><span class="letra">D)</span>Sim, sempre.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Próxima Aula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que será estudado na aula 15?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Fluxograma.</li>
+                        <li><span class="letra">B)</span>Normalização.</li>
+                        <li><span class="letra">C)</span>Consultas com SELECT, filtros e ordenação.</li>
+                        <li><span class="letra">D)</span>Instalação do PostgreSQL.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Aula 14: DML: Inserção, Atualização e Exclusão</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

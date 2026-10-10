@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 15 — DML: Consultas com Filtros e Ordenação (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="15" data-tema="DML: Consultas com Filtros e Ordenação" data-total="50"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🔍 Aula 15: DML: Consultas com Filtros e Ordenação</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-15-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C8 —</strong> Aplicar linguagem de manipulação de dados</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">SELECT e FROM</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na consulta SELECT nome FROM curso;, o que indica o FROM?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A tabela de onde os dados são lidos.</li>
+                        <li><span class="letra">B)</span>A condição de filtro.</li>
+                        <li><span class="letra">C)</span>A coluna que será mostrada.</li>
+                        <li><span class="letra">D)</span>A ordem do resultado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">SELECT Asterisco</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz SELECT * FROM aluno;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mostra só a primeira coluna.</li>
+                        <li><span class="letra">B)</span>Mostra todas as colunas de todas as linhas da tabela aluno.</li>
+                        <li><span class="letra">C)</span>Conta quantos alunos existem.</li>
+                        <li><span class="letra">D)</span>Apaga todos os alunos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Listar Colunas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que, no sistema, é melhor listar as colunas em vez de usar SELECT *?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o asterisco altera os dados.</li>
+                        <li><span class="letra">B)</span>Porque o SELECT * não funciona no PostgreSQL.</li>
+                        <li><span class="letra">C)</span>Porque a consulta fica mais clara e traz só os dados necessários.</li>
+                        <li><span class="letra">D)</span>Porque listar colunas apaga as outras.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Ordem das Cláusulas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem correta das cláusulas numa consulta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SELECT, FROM, WHERE, ORDER BY, LIMIT.</li>
+                        <li><span class="letra">B)</span>FROM, SELECT, LIMIT, WHERE.</li>
+                        <li><span class="letra">C)</span>ORDER BY, WHERE, FROM, SELECT.</li>
+                        <li><span class="letra">D)</span>WHERE, SELECT, FROM, ORDER BY.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Apelido AS</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz valor_mensal * 12 AS valor_anual?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Calcula o valor anual e mostra a coluna com o nome valor_anual.</li>
+                        <li><span class="letra">B)</span>Cria uma nova coluna na tabela.</li>
+                        <li><span class="letra">C)</span>Apaga o valor mensal.</li>
+                        <li><span class="letra">D)</span>Altera o valor guardado na tabela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Expressão Não Altera</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Uma expressão calculada no SELECT altera os dados da tabela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Sim, apaga o valor antigo.</li>
+                        <li><span class="letra">B)</span>Sim, grava o novo valor.</li>
+                        <li><span class="letra">C)</span>Não, ela só calcula o valor no resultado da consulta.</li>
+                        <li><span class="letra">D)</span>Só se tiver AS.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Igual a Texto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual WHERE traz as turmas do turno da noite?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE turno = noite</li>
+                        <li><span class="letra">B)</span>WHERE &#x27;turno&#x27; = noite</li>
+                        <li><span class="letra">C)</span>WHERE turno = &#x27;noite&#x27;</li>
+                        <li><span class="letra">D)</span>WHERE turno LIKE noite</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Diferente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual operador significa &quot;diferente de&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>==</li>
+                        <li><span class="letra">B)</span>&lt;&gt;</li>
+                        <li><span class="letra">C)</span>&gt;&lt;</li>
+                        <li><span class="letra">D)</span>=&lt;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Maior ou Igual</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual consulta traz os cursos com valor a partir de R$ 200?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SELECT nome FROM curso WHERE valor_mensal = &#x27;&gt;200&#x27;;</li>
+                        <li><span class="letra">B)</span>SELECT nome FROM curso ORDER BY 200;</li>
+                        <li><span class="letra">C)</span>SELECT nome FROM curso WHERE valor_mensal &gt;= 200;</li>
+                        <li><span class="letra">D)</span>SELECT nome FROM curso WHERE valor_mensal &lt;= 200;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">BETWEEN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz WHERE valor_mensal BETWEEN 200 AND 250?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Traz só os valores 200 e 250.</li>
+                        <li><span class="letra">B)</span>Altera os valores para 200 e 250.</li>
+                        <li><span class="letra">C)</span>Traz os valores entre 200 e 250, sem as pontas.</li>
+                        <li><span class="letra">D)</span>Traz os valores de 200 a 250, incluindo as duas pontas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">BETWEEN com Datas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual filtro traz as matrículas de fevereiro de 2026?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE data_matricula = &#x27;fevereiro&#x27;</li>
+                        <li><span class="letra">B)</span>WHERE data_matricula LIKE 02</li>
+                        <li><span class="letra">C)</span>WHERE data_matricula IN 2026</li>
+                        <li><span class="letra">D)</span>WHERE data_matricula BETWEEN &#x27;2026-02-01&#x27; AND &#x27;2026-02-28&#x27;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">IN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz WHERE situacao IN (&#x27;trancada&#x27;, &#x27;cancelada&#x27;)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga as matrículas canceladas.</li>
+                        <li><span class="letra">B)</span>Traz as linhas cuja situação é trancada ou cancelada.</li>
+                        <li><span class="letra">C)</span>Altera a situação para trancada.</li>
+                        <li><span class="letra">D)</span>Traz as linhas com as duas situações ao mesmo tempo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">IN e OR</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">WHERE id_curso IN (1, 3) é equivalente a:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE id_curso = 1 AND id_curso = 3</li>
+                        <li><span class="letra">B)</span>WHERE id_curso BETWEEN 1 AND 3</li>
+                        <li><span class="letra">C)</span>WHERE id_curso = 1 OR id_curso = 3</li>
+                        <li><span class="letra">D)</span>WHERE id_curso &lt;&gt; 1</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">LIKE com Porcentagem</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz WHERE nome LIKE &#x27;Ana%&#x27;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Traz os nomes que terminam com Ana.</li>
+                        <li><span class="letra">B)</span>Traz somente o nome exato Ana.</li>
+                        <li><span class="letra">C)</span>Traz os nomes que começam com Ana.</li>
+                        <li><span class="letra">D)</span>Traz os nomes sem Ana.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">LIKE no Meio</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual filtro traz os nomes que contêm Silva em qualquer posição?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE nome IN (&#x27;Silva&#x27;)</li>
+                        <li><span class="letra">B)</span>WHERE nome LIKE &#x27;%Silva%&#x27;</li>
+                        <li><span class="letra">C)</span>WHERE nome LIKE &#x27;Silva&#x27;</li>
+                        <li><span class="letra">D)</span>WHERE nome = &#x27;%Silva%&#x27;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Sublinhado no LIKE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No LIKE, o que representa o caractere _ (sublinhado)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Exatamente um caractere qualquer.</li>
+                        <li><span class="letra">B)</span>Qualquer quantidade de caracteres.</li>
+                        <li><span class="letra">C)</span>Um espaço obrigatório.</li>
+                        <li><span class="letra">D)</span>O fim do texto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">ILIKE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a diferença entre LIKE e ILIKE no PostgreSQL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O ILIKE só funciona com números.</li>
+                        <li><span class="letra">B)</span>Não há diferença.</li>
+                        <li><span class="letra">C)</span>O ILIKE apaga as linhas encontradas.</li>
+                        <li><span class="letra">D)</span>O ILIKE não diferencia maiúsculas de minúsculas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">IS NULL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual filtro traz os alunos sem e-mail cadastrado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE email = NULL</li>
+                        <li><span class="letra">B)</span>WHERE email IS NULL</li>
+                        <li><span class="letra">C)</span>WHERE email LIKE NULL</li>
+                        <li><span class="letra">D)</span>WHERE email = &#x27;&#x27;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Por Que Não = NULL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que WHERE cpf = NULL não traz nenhuma linha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque falta o ORDER BY.</li>
+                        <li><span class="letra">B)</span>Porque NULL representa ausência de valor e não pode ser comparado com =; usa-se IS NULL.</li>
+                        <li><span class="letra">C)</span>Porque o CPF nunca é vazio.</li>
+                        <li><span class="letra">D)</span>Porque o PostgreSQL não guarda NULL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">IS NOT NULL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual filtro traz os alunos que têm CPF cadastrado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE NOT cpf</li>
+                        <li><span class="letra">B)</span>WHERE cpf IS NOT NULL</li>
+                        <li><span class="letra">C)</span>WHERE cpf = NOT NULL</li>
+                        <li><span class="letra">D)</span>WHERE cpf &lt;&gt; NULL</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">AND</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em WHERE turno = &#x27;noite&#x27; AND id_curso = 2, quais turmas aparecem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Só as turmas do curso 1.</li>
+                        <li><span class="letra">B)</span>Todas as turmas da noite e todas do curso 2.</li>
+                        <li><span class="letra">C)</span>Nenhuma turma.</li>
+                        <li><span class="letra">D)</span>As turmas da noite que são do curso 2.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">OR</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em WHERE turno = &#x27;manha&#x27; OR turno = &#x27;tarde&#x27;, quais turmas aparecem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente as turmas que são de manhã e de tarde ao mesmo tempo.</li>
+                        <li><span class="letra">B)</span>Somente as turmas da noite.</li>
+                        <li><span class="letra">C)</span>As turmas da manhã e as da tarde.</li>
+                        <li><span class="letra">D)</span>Nenhuma turma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">NOT</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz WHERE NOT situacao = &#x27;ativa&#x27;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga as ativas.</li>
+                        <li><span class="letra">B)</span>Dá erro sempre.</li>
+                        <li><span class="letra">C)</span>Traz só as ativas.</li>
+                        <li><span class="letra">D)</span>Traz as matrículas cuja situação não é ativa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Parênteses</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que usar parênteses em WHERE turno = &#x27;noite&#x27; AND (id_curso = 1 OR id_curso = 3)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o PostgreSQL exige parênteses em todo WHERE.</li>
+                        <li><span class="letra">B)</span>Para deixar a consulta mais lenta.</li>
+                        <li><span class="letra">C)</span>Porque, sem eles, o AND é avaliado antes do OR e o resultado muda.</li>
+                        <li><span class="letra">D)</span>Os parênteses não fazem diferença.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Erro sem Parênteses</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o risco de misturar AND e OR sem parênteses?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O comando nunca executar.</li>
+                        <li><span class="letra">B)</span>Receber um resultado errado sem nenhuma mensagem de erro.</li>
+                        <li><span class="letra">C)</span>O banco apagar a tabela.</li>
+                        <li><span class="letra">D)</span>O servidor parar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">ORDER BY</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz ORDER BY nome?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ordena o resultado pelo nome, em ordem crescente (A a Z).</li>
+                        <li><span class="letra">B)</span>Agrupa os nomes repetidos.</li>
+                        <li><span class="letra">C)</span>Altera os nomes na tabela.</li>
+                        <li><span class="letra">D)</span>Filtra os nomes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">DESC</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual consulta lista os cursos do mais caro para o mais barato?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SELECT nome FROM curso WHERE DESC;</li>
+                        <li><span class="letra">B)</span>SELECT nome FROM curso LIMIT DESC;</li>
+                        <li><span class="letra">C)</span>SELECT nome, valor_mensal FROM curso ORDER BY valor_mensal DESC;</li>
+                        <li><span class="letra">D)</span>SELECT nome, valor_mensal FROM curso ORDER BY valor_mensal ASC;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Desempate</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em ORDER BY valor_mensal DESC, nome ASC, para que serve nome ASC?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para desempatar, em ordem alfabética, os cursos com o mesmo valor.</li>
+                        <li><span class="letra">B)</span>Para inverter a ordem do valor.</li>
+                        <li><span class="letra">C)</span>Para filtrar os nomes.</li>
+                        <li><span class="letra">D)</span>Não tem efeito.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">LIMIT</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz LIMIT 3 no fim da consulta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga 3 linhas.</li>
+                        <li><span class="letra">B)</span>Traz a terceira linha apenas.</li>
+                        <li><span class="letra">C)</span>Traz no máximo as 3 primeiras linhas do resultado.</li>
+                        <li><span class="letra">D)</span>Limita a 3 colunas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Os 5 Mais Caros</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual consulta traz os 5 cursos mais caros?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SELECT 5 FROM curso;</li>
+                        <li><span class="letra">B)</span>SELECT nome FROM curso WHERE valor_mensal = 5;</li>
+                        <li><span class="letra">C)</span>SELECT nome FROM curso ORDER BY valor_mensal DESC LIMIT 5;</li>
+                        <li><span class="letra">D)</span>SELECT nome FROM curso LIMIT 5 ORDER BY valor_mensal;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">OFFSET</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para mostrar a segunda página de alunos, de 10 em 10, em ordem alfabética, qual consulta usar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SELECT nome FROM aluno WHERE pagina = 2;</li>
+                        <li><span class="letra">B)</span>SELECT nome FROM aluno OFFSET 2 LIMIT 2;</li>
+                        <li><span class="letra">C)</span>SELECT nome FROM aluno LIMIT 2;</li>
+                        <li><span class="letra">D)</span>SELECT nome FROM aluno ORDER BY nome LIMIT 10 OFFSET 10;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">DISTINCT</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz SELECT DISTINCT turno FROM turma;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga turnos repetidos da tabela.</li>
+                        <li><span class="letra">B)</span>Conta os turnos.</li>
+                        <li><span class="letra">C)</span>Mostra cada turno uma única vez.</li>
+                        <li><span class="letra">D)</span>Mostra todos os turnos repetidos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">upper</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz a função upper(nome)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Remove os espaços do nome.</li>
+                        <li><span class="letra">B)</span>Altera o nome na tabela para maiúsculas.</li>
+                        <li><span class="letra">C)</span>Conta as letras do nome.</li>
+                        <li><span class="letra">D)</span>Mostra o nome em letras maiúsculas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">length</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que devolve length(nome)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A quantidade de caracteres do nome.</li>
+                        <li><span class="letra">B)</span>O nome em minúsculas.</li>
+                        <li><span class="letra">C)</span>A data de nascimento.</li>
+                        <li><span class="letra">D)</span>O número de alunos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">current_date</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que devolve current_date?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A data da última consulta.</li>
+                        <li><span class="letra">B)</span>A data de hoje.</li>
+                        <li><span class="letra">C)</span>A data de nascimento do aluno.</li>
+                        <li><span class="letra">D)</span>A hora atual com fuso.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">age e extract</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para calcular a idade em anos a partir da data de nascimento, qual expressão é adequada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>data_nascimento - &#x27;anos&#x27;</li>
+                        <li><span class="letra">B)</span>extract(year FROM age(current_date, data_nascimento))</li>
+                        <li><span class="letra">C)</span>length(data_nascimento)</li>
+                        <li><span class="letra">D)</span>upper(data_nascimento)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Aniversariantes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual filtro traz os aniversariantes de outubro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE extract(month FROM data_nascimento) = 10</li>
+                        <li><span class="letra">B)</span>WHERE data_nascimento = &#x27;outubro&#x27;</li>
+                        <li><span class="letra">C)</span>WHERE month = 10</li>
+                        <li><span class="letra">D)</span>WHERE data_nascimento LIKE &#x27;10&#x27;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">coalesce</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz coalesce(email, &#x27;sem e-mail&#x27;)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Junta dois e-mails.</li>
+                        <li><span class="letra">B)</span>Mostra &#x27;sem e-mail&#x27; quando o e-mail está vazio (NULL).</li>
+                        <li><span class="letra">C)</span>Cria um e-mail novo.</li>
+                        <li><span class="letra">D)</span>Apaga os e-mails vazios.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Texto sem Aspas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o erro de WHERE turno = noite?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O banco apaga a turma.</li>
+                        <li><span class="letra">B)</span>Sem aspas, noite é lido como nome de coluna, e o banco acusa coluna inexistente.</li>
+                        <li><span class="letra">C)</span>Nenhum, está correto.</li>
+                        <li><span class="letra">D)</span>O turno vira número.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">LIKE sem Porcentagem</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece com WHERE nome LIKE &#x27;Silva&#x27;, sem o %?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Procura somente o nome exatamente igual a Silva.</li>
+                        <li><span class="letra">B)</span>Dá erro de sintaxe.</li>
+                        <li><span class="letra">C)</span>Procura qualquer nome com Silva.</li>
+                        <li><span class="letra">D)</span>Traz todos os nomes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Escola: Trancadas ou Canceladas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual consulta responde &quot;matrículas trancadas ou canceladas, da mais antiga para a mais nova&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SELECT id_aluno, id_turma, data_matricula, situacao FROM matricula WHERE situacao IN (&#x27;trancada&#x27;, &#x27;cancelada&#x27;) ORDER BY data_matricula;</li>
+                        <li><span class="letra">B)</span>SELECT situacao FROM matricula LIMIT 1;</li>
+                        <li><span class="letra">C)</span>DELETE FROM matricula WHERE situacao IN (&#x27;trancada&#x27;, &#x27;cancelada&#x27;);</li>
+                        <li><span class="letra">D)</span>SELECT * FROM matricula WHERE situacao = &#x27;ativa&#x27; ORDER BY data_matricula DESC;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Escola: Sem E-mail</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A secretaria quer completar o cadastro dos alunos sem e-mail. Qual filtro usar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE email = &#x27;sem e-mail&#x27;</li>
+                        <li><span class="letra">B)</span>WHERE email IS NULL</li>
+                        <li><span class="letra">C)</span>WHERE email &gt; 0</li>
+                        <li><span class="letra">D)</span>WHERE email LIKE &#x27;%&#x27;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Faixa de Preço</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual consulta responde &quot;cursos que custam entre R$ 200 e R$ 250&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SELECT nome FROM curso ORDER BY 200, 250;</li>
+                        <li><span class="letra">B)</span>SELECT nome FROM curso WHERE valor_mensal &gt; 250;</li>
+                        <li><span class="letra">C)</span>SELECT nome FROM curso WHERE valor_mensal IN (200, 250) ORDER BY nome LIMIT 2;</li>
+                        <li><span class="letra">D)</span>SELECT nome FROM curso WHERE valor_mensal BETWEEN 200 AND 250;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Turmas da Noite do Curso 2</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual consulta responde &quot;turmas da noite do curso 2&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SELECT codigo FROM turma WHERE turno = &#x27;noite&#x27; OR id_curso = 2;</li>
+                        <li><span class="letra">B)</span>SELECT codigo FROM turma WHERE id_curso = &#x27;noite&#x27;;</li>
+                        <li><span class="letra">C)</span>SELECT codigo FROM curso WHERE turno = 2;</li>
+                        <li><span class="letra">D)</span>SELECT codigo FROM turma WHERE turno = &#x27;noite&#x27; AND id_curso = 2;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Nome com Silva sem Distinguir</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual filtro encontra &quot;Silva&quot;, &quot;silva&quot; e &quot;SILVA&quot; no nome?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE nome = &#x27;Silva&#x27;</li>
+                        <li><span class="letra">B)</span>WHERE nome LIKE &#x27;silva&#x27;</li>
+                        <li><span class="letra">C)</span>WHERE upper(nome) = &#x27;silva&#x27;</li>
+                        <li><span class="letra">D)</span>WHERE nome ILIKE &#x27;%silva%&#x27;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Dinâmica: Conferência</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica &quot;Pergunta do cliente&quot;, o que a dupla vizinha confere?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Se a consulta usa SELECT *.</li>
+                        <li><span class="letra">B)</span>Se a consulta tem mais de dez linhas.</li>
+                        <li><span class="letra">C)</span>A velocidade de digitação.</li>
+                        <li><span class="letra">D)</span>Se o resultado da consulta responde de fato à pergunta.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Entrega da SA 2</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é entregue nesta aula, na SA 2?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O script com 15 consultas comentadas, cada uma com a pergunta do cliente que responde.</li>
+                        <li><span class="letra">B)</span>O DER.</li>
+                        <li><span class="letra">C)</span>A configuração do servidor.</li>
+                        <li><span class="letra">D)</span>O script de criação das tabelas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Consulta Não Altera</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O SELECT altera os dados das tabelas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não, ele só lê e mostra os dados.</li>
+                        <li><span class="letra">B)</span>Só com WHERE.</li>
+                        <li><span class="letra">C)</span>Só com ORDER BY.</li>
+                        <li><span class="letra">D)</span>Sim, sempre.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Número de Linhas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Uma consulta com WHERE que não encontra nenhuma linha:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga a tabela.</li>
+                        <li><span class="letra">B)</span>Dá erro de sintaxe.</li>
+                        <li><span class="letra">C)</span>Devolve todas as linhas.</li>
+                        <li><span class="letra">D)</span>Executa sem erro e devolve zero linhas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Próxima Aula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que será estudado na aula 16?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Consultas com junções, agrupamentos e subconsultas.</li>
+                        <li><span class="letra">B)</span>Normalização.</li>
+                        <li><span class="letra">C)</span>Fluxograma.</li>
+                        <li><span class="letra">D)</span>Instalação do PostgreSQL.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Aula 15: DML: Consultas com Filtros e Ordenação</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

@@ -10,8 +10,8 @@ Registrada em 2026-09-28.
 
 - ✅ **Login:** página `login.html` (raiz) + `js/login.js` com `signInWithPassword`. O aluno digita
   `nome.sobrenome` e o script completa `@senai.local`. `?voltar=` só aceita páginas do próprio site.
-- ✅ **Contas só pelo professor:** `scripts/criar-usuarios-supabase-auth.js` (lê o
-  `LISTA-PRESENCA.js`; simula por padrão, grava com `--executar`; conta do professor com
+- ✅ **Contas só pelo professor:** `scripts/criar-usuarios-supabase-auth.js` (lê a
+  turma `--turma=CODIGO` do `scripts/LISTAPRESENCA.js`; simula por padrão, grava com `--executar`; conta do professor com
   `--professor=gelvazio.camargo@senai.local` e `$env:PROFESSOR_SENHA`). Sem cadastro pela página:
   no painel do Supabase, "Allow new users to sign up" e "Confirm email" ficam desligados.
 - ✅ **Senha inicial:** 6 caracteres (mínimo do Supabase), com maiúscula + minúscula + número em
@@ -259,5 +259,11 @@ Registrada em 2026-09-28.
   Auth fica desligada.
 - ✅ Se dois alunos gerarem o mesmo e-mail, usar o segundo nome no lugar do primeiro
   (ex.: `gabriel.henrique.schneider` → `henrique.schneider`) e avisar o usuário.
-- ✅ Lista das turmas com os e-mails: `ATIVIDADES/LISTA-PRESENCA.js` de cada matéria.
-  ⚠️ Dados pessoais de menores (LGPD): arquivo no `.gitignore`, nunca publicar.
+- ✅ **Lista de presença única** (2026-10-09, pedido do usuário): todas as turmas, de todas as
+  matérias, com os e-mails e senhas iniciais ficam em **um só arquivo, `scripts/LISTAPRESENCA.js`**
+  (`window.LISTAS_PRESENCA`, uma entrada por UC; a lista de professores tem `professores: true`).
+  Não criar outros `LISTA-PRESENCA*.js`: turma nova entra nesse arquivo. Leem dele:
+  `scripts/criarUsuariosBancoDados.html`, `relatorioAtividades.html`, a `LISTA-PRESENCA.html` da
+  matéria (filtra pela UC em `data-uc`) e `scripts/criar-usuarios-supabase-auth.js`.
+  ⚠️ Dados pessoais de menores (LGPD): versionado no Git (decisão do usuário), mas **nunca no
+  site** (`LISTAPRESENCA*.js` no `.vercelignore`).

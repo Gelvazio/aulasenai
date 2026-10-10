@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06 — Entidades Fortes, Fracas e Associativas (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="06" data-tema="Entidades Fortes, Fracas e Associativas" data-total="50"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🧩 Aula 06: Entidades Fortes, Fracas e Associativas</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-06-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">O Que É o MER</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é o modelo entidade-relacionamento (MER)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um comando SQL que cria tabelas.</li>
+                        <li><span class="letra">B)</span>Um programa de instalação do banco.</li>
+                        <li><span class="letra">C)</span>Uma forma de descrever os dados do sistema, suas entidades, atributos e relacionamentos, independente do SGBD.</li>
+                        <li><span class="letra">D)</span>Um tipo de backup do servidor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">MER e Nível Conceitual</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em qual nível de gerenciamento de dados o MER se encaixa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nível conceitual.</li>
+                        <li><span class="letra">B)</span>Nível de rede.</li>
+                        <li><span class="letra">C)</span>Nível físico.</li>
+                        <li><span class="letra">D)</span>Nível de hardware.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">MER Antes das Tabelas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o MER é feito antes de criar as tabelas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o MER substitui o banco.</li>
+                        <li><span class="letra">B)</span>Porque as tabelas não usam o MER.</li>
+                        <li><span class="letra">C)</span>Porque o SGBD só instala depois do MER.</li>
+                        <li><span class="letra">D)</span>Para entender e validar os dados com o cliente antes de escrever SQL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Definição de Entidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é uma entidade no MER?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma coluna de uma tabela.</li>
+                        <li><span class="letra">B)</span>Um conjunto de objetos do mundo real, concretos ou abstratos, sobre os quais o sistema guarda dados.</li>
+                        <li><span class="letra">C)</span>Uma senha de acesso.</li>
+                        <li><span class="letra">D)</span>Um valor digitado pelo usuário.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Ocorrência</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é uma ocorrência (instância) de uma entidade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cada elemento da entidade, como a aluna Ana na entidade ALUNO.</li>
+                        <li><span class="letra">B)</span>O nome da entidade em maiúsculas.</li>
+                        <li><span class="letra">C)</span>Um relacionamento entre duas entidades.</li>
+                        <li><span class="letra">D)</span>O desenho do retângulo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Entidade Abstrata</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual destas é uma entidade abstrata, que não é um objeto físico?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>CADEIRA.</li>
+                        <li><span class="letra">B)</span>LIVRO impresso.</li>
+                        <li><span class="letra">C)</span>COMPUTADOR.</li>
+                        <li><span class="letra">D)</span>MATRÍCULA.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Nome da Entidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como o nome de uma entidade é escrito na notação usada na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Em minúsculas, dentro de um losango.</li>
+                        <li><span class="letra">B)</span>No plural, dentro de um círculo.</li>
+                        <li><span class="letra">C)</span>Com números, sem forma geométrica.</li>
+                        <li><span class="letra">D)</span>No singular e em maiúsculas, dentro de um retângulo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Entidade ou Atributo 1</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">&quot;Curso&quot; tem nome, carga horária e valor, e há vários cursos. Ele é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma entidade.</li>
+                        <li><span class="letra">B)</span>Um atributo de ALUNO.</li>
+                        <li><span class="letra">C)</span>Uma ocorrência de MATRÍCULA.</li>
+                        <li><span class="letra">D)</span>Um relacionamento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Entidade ou Atributo 2</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num sistema de escola, &quot;telefone do aluno&quot; é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma entidade associativa.</li>
+                        <li><span class="letra">B)</span>Um relacionamento muitos-para-muitos.</li>
+                        <li><span class="letra">C)</span>Uma entidade forte.</li>
+                        <li><span class="letra">D)</span>Um atributo de ALUNO.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Pergunta Entidade ou Atributo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual pergunta ajuda a decidir se algo é entidade ou atributo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Isso tem dados próprios e várias ocorrências?</li>
+                        <li><span class="letra">B)</span>Isso começa com vogal?</li>
+                        <li><span class="letra">C)</span>Isso tem nome curto?</li>
+                        <li><span class="letra">D)</span>Isso aparece na tela inicial?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Entidade Forte</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que caracteriza uma entidade forte?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Depende de outra entidade para existir.</li>
+                        <li><span class="letra">B)</span>Só existe dentro de um relacionamento muitos-para-muitos.</li>
+                        <li><span class="letra">C)</span>Existe por si só e tem identificador próprio.</li>
+                        <li><span class="letra">D)</span>Não tem atributos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Exemplo de Forte</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual destas é tipicamente uma entidade forte?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ITEM_PEDIDO.</li>
+                        <li><span class="letra">B)</span>DEPENDENTE de um funcionário.</li>
+                        <li><span class="letra">C)</span>PARCELA de uma matrícula.</li>
+                        <li><span class="letra">D)</span>CLIENTE.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Entidade Fraca</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que caracteriza uma entidade fraca?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Fica guardada em outro servidor.</li>
+                        <li><span class="letra">B)</span>É pouco usada pelo sistema.</li>
+                        <li><span class="letra">C)</span>Tem poucos atributos.</li>
+                        <li><span class="letra">D)</span>Depende de outra entidade, a dona, para existir e ser identificada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Entidade Dona</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na entidade fraca ITEM_PEDIDO, qual é a entidade dona?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>PEDIDO.</li>
+                        <li><span class="letra">B)</span>FORNECEDOR.</li>
+                        <li><span class="letra">C)</span>CLIENTE do vizinho.</li>
+                        <li><span class="letra">D)</span>PRODUTO apenas como cor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Identificação da Fraca</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como é identificada uma ocorrência de entidade fraca, como a parcela 3 de uma matrícula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Pela chave da entidade dona mais um identificador parcial, como matrícula 15 e parcela 3.</li>
+                        <li><span class="letra">B)</span>Pelo nome do aluno em maiúsculas.</li>
+                        <li><span class="letra">C)</span>Somente pelo número 3.</li>
+                        <li><span class="letra">D)</span>Pela data de hoje.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Exclusão da Dona</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece com as ocorrências de uma entidade fraca quando a dona é excluída?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Elas também deixam de existir, pois dependem da dona.</li>
+                        <li><span class="letra">B)</span>Elas passam para outra dona aleatória.</li>
+                        <li><span class="letra">C)</span>Nada, continuam iguais.</li>
+                        <li><span class="letra">D)</span>Elas viram entidades fortes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Notação da Fraca</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como a entidade fraca é desenhada na notação usada na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com círculo pontilhado.</li>
+                        <li><span class="letra">B)</span>Com seta vermelha.</li>
+                        <li><span class="letra">C)</span>Com retângulo de linha dupla.</li>
+                        <li><span class="letra">D)</span>Com triângulo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Dependente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num sistema de RH, DEPENDENTE só existe ligado a um FUNCIONÁRIO. DEPENDENTE é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Entidade fraca.</li>
+                        <li><span class="letra">B)</span>Relacionamento um-para-um obrigatório entre duas fortes.</li>
+                        <li><span class="letra">C)</span>Atributo do sistema operacional.</li>
+                        <li><span class="letra">D)</span>Entidade forte.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Parcela</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No sistema da escola, cada matrícula gera parcelas mensais. PARCELA é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Entidade forte, sem relação com matrícula.</li>
+                        <li><span class="letra">B)</span>Entidade associativa entre PROFESSOR e CURSO.</li>
+                        <li><span class="letra">C)</span>Entidade fraca, dependente de MATRÍCULA.</li>
+                        <li><span class="letra">D)</span>Atributo de CURSO.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Entidade Associativa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando surge uma entidade associativa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quando uma entidade tem só um atributo.</li>
+                        <li><span class="letra">B)</span>Quando um relacionamento muitos-para-muitos tem dados próprios.</li>
+                        <li><span class="letra">C)</span>Quando a entidade é forte.</li>
+                        <li><span class="letra">D)</span>Quando o banco tem mais de dez tabelas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Matrícula Associativa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um aluno faz várias turmas e uma turma tem vários alunos; a ligação tem data e situação. Qual entidade associativa surge?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>CORES.</li>
+                        <li><span class="letra">B)</span>ENDEREÇO.</li>
+                        <li><span class="letra">C)</span>TELEFONE.</li>
+                        <li><span class="letra">D)</span>MATRÍCULA.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Dados da Associativa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual dado pertence à entidade associativa MATRÍCULA, e não ao aluno nem à turma sozinhos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O CPF do aluno.</li>
+                        <li><span class="letra">B)</span>A sala da turma.</li>
+                        <li><span class="letra">C)</span>A data em que aquele aluno se matriculou naquela turma.</li>
+                        <li><span class="letra">D)</span>O nome do curso.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Item do Pedido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um pedido tem vários produtos e um produto aparece em vários pedidos. Quantidade e preço na venda ficam em:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>CLIENTE.</li>
+                        <li><span class="letra">B)</span>PRODUTO apenas.</li>
+                        <li><span class="letra">C)</span>ITEM_PEDIDO, que liga PEDIDO e PRODUTO.</li>
+                        <li><span class="letra">D)</span>CATEGORIA.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Notação da Associativa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como a entidade associativa é desenhada na notação usada na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com duas setas cruzadas.</li>
+                        <li><span class="letra">B)</span>Com um retângulo envolvendo o losango do relacionamento.</li>
+                        <li><span class="letra">C)</span>Com um círculo vazio.</li>
+                        <li><span class="letra">D)</span>Com linha tracejada sem forma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Passo 1</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No passo a passo dos requisitos às entidades, qual é o primeiro passo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Escrever o CREATE TABLE.</li>
+                        <li><span class="letra">B)</span>Escolher as cores do DER.</li>
+                        <li><span class="letra">C)</span>Ler os requisitos e sublinhar os substantivos importantes.</li>
+                        <li><span class="letra">D)</span>Instalar o pgAdmin.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Passo 2</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois de sublinhar os substantivos, o que se descarta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As entidades fortes.</li>
+                        <li><span class="letra">B)</span>As palavras do cliente.</li>
+                        <li><span class="letra">C)</span>Todas as palavras com acento.</li>
+                        <li><span class="letra">D)</span>Sinônimos, atributos e o que está fora do escopo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Sinônimos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Nos requisitos aparecem &quot;aluno&quot; e &quot;estudante&quot; com o mesmo sentido. O que fazer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Considerar uma só entidade, ALUNO, pois são sinônimos.</li>
+                        <li><span class="letra">B)</span>Criar uma associativa entre elas.</li>
+                        <li><span class="letra">C)</span>Excluir as duas.</li>
+                        <li><span class="letra">D)</span>Criar duas entidades diferentes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Fora do Escopo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Nos requisitos da escola aparece &quot;cantina&quot;, que ficou fora do escopo. O que fazer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Criar uma entidade fraca de CANTINA.</li>
+                        <li><span class="letra">B)</span>Não incluir como entidade na versão atual.</li>
+                        <li><span class="letra">C)</span>Criar a entidade mesmo assim.</li>
+                        <li><span class="letra">D)</span>Transformar em atributo de ALUNO.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Justificativa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que registrar a justificativa de cada classificação de entidade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para explicar e defender a decisão de modelagem diante do grupo e do cliente.</li>
+                        <li><span class="letra">B)</span>Porque o SGBD exige justificativa para criar tabelas.</li>
+                        <li><span class="letra">C)</span>Porque a justificativa substitui o DER.</li>
+                        <li><span class="letra">D)</span>Para aumentar o número de páginas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Turma</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No exemplo da escola, TURMA tem código próprio, embora pertença a um curso. Como ela foi classificada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Entidade associativa entre aluno e responsável.</li>
+                        <li><span class="letra">B)</span>Atributo de ALUNO.</li>
+                        <li><span class="letra">C)</span>Entidade fraca obrigatória.</li>
+                        <li><span class="letra">D)</span>Entidade forte.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Responsável</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No exemplo da escola, RESPONSÁVEL foi classificado como:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Entidade associativa.</li>
+                        <li><span class="letra">B)</span>Atributo de TURMA.</li>
+                        <li><span class="letra">C)</span>Relacionamento.</li>
+                        <li><span class="letra">D)</span>Entidade forte.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Turno</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No exemplo da escola, &quot;turno&quot; foi classificado como:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Entidade associativa.</li>
+                        <li><span class="letra">B)</span>Entidade forte.</li>
+                        <li><span class="letra">C)</span>Atributo de TURMA.</li>
+                        <li><span class="letra">D)</span>Entidade fraca.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Professor</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No exemplo da escola, PROFESSOR é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Atributo de PARCELA.</li>
+                        <li><span class="letra">B)</span>Entidade fraca de ALUNO.</li>
+                        <li><span class="letra">C)</span>Ocorrência de CURSO.</li>
+                        <li><span class="letra">D)</span>Entidade forte.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Endereço na Escola</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num sistema de escola em que só se guarda um endereço por aluno, &quot;endereço&quot; tende a ser:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Atributo de ALUNO.</li>
+                        <li><span class="letra">B)</span>Relacionamento N:N.</li>
+                        <li><span class="letra">C)</span>Entidade associativa.</li>
+                        <li><span class="letra">D)</span>Entidade fraca de CURSO.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Endereço nas Entregas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num app de entregas em que cada cliente cadastra vários endereços com apelido (casa, trabalho), &quot;endereço&quot; tende a ser:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um relacionamento sem dados.</li>
+                        <li><span class="letra">B)</span>Atributo simples sem importância.</li>
+                        <li><span class="letra">C)</span>Entidade, pois tem dados próprios e várias ocorrências por cliente.</li>
+                        <li><span class="letra">D)</span>Uma ocorrência de PRODUTO.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Nota Fiscal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num sistema de loja, NOTA_FISCAL tem número, data e valor e há várias. É:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um atributo de cor.</li>
+                        <li><span class="letra">B)</span>Uma entidade.</li>
+                        <li><span class="letra">C)</span>Uma ocorrência de CLIENTE.</li>
+                        <li><span class="letra">D)</span>Um nível físico.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">CPF</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No sistema de clientes, o CPF é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma entidade fraca.</li>
+                        <li><span class="letra">B)</span>Uma entidade associativa.</li>
+                        <li><span class="letra">C)</span>Uma entidade forte.</li>
+                        <li><span class="letra">D)</span>Um atributo de CLIENTE.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Item 2 do Pedido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que &quot;item 2&quot; só faz sentido dentro de um pedido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque todos os pedidos têm só dois itens.</li>
+                        <li><span class="letra">B)</span>Porque o item é uma entidade forte.</li>
+                        <li><span class="letra">C)</span>Porque o item é identificado junto com o pedido a que pertence, sendo entidade fraca.</li>
+                        <li><span class="letra">D)</span>Porque o número 2 é muito pequeno.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Associativa e Relacionamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A entidade associativa liga quantas entidades no exemplo de MATRÍCULA?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Todas as entidades do banco.</li>
+                        <li><span class="letra">B)</span>Duas: ALUNO e TURMA.</li>
+                        <li><span class="letra">C)</span>Apenas ALUNO.</li>
+                        <li><span class="letra">D)</span>Nenhuma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Diferença Fraca e Associativa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a diferença entre entidade fraca e associativa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não há diferença.</li>
+                        <li><span class="letra">B)</span>A fraca depende de uma dona para existir; a associativa nasce de um relacionamento N:N com dados próprios.</li>
+                        <li><span class="letra">C)</span>A fraca tem mais atributos que a associativa.</li>
+                        <li><span class="letra">D)</span>A associativa sempre é física e a fraca sempre é abstrata.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Dinâmica: Pilha de Atributos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica &quot;Separa e classifica&quot;, em qual pilha vai o cartão &quot;cor&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>FRACA.</li>
+                        <li><span class="letra">B)</span>É ATRIBUTO.</li>
+                        <li><span class="letra">C)</span>ASSOCIATIVA.</li>
+                        <li><span class="letra">D)</span>FORTE.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Dinâmica: Dependente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica, o cartão &quot;dependente&quot; vai para qual caixa, e qual é a dona escrita?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>FRACA, com a dona FUNCIONÁRIO.</li>
+                        <li><span class="letra">B)</span>É ATRIBUTO de cor.</li>
+                        <li><span class="letra">C)</span>FORTE, sem dona.</li>
+                        <li><span class="letra">D)</span>ASSOCIATIVA entre cliente e produto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Dinâmica: Matrícula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica, o cartão &quot;matrícula&quot; vai para qual caixa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>FORTE sem relação com aluno.</li>
+                        <li><span class="letra">B)</span>ASSOCIATIVA, ligando ALUNO e TURMA.</li>
+                        <li><span class="letra">C)</span>É ATRIBUTO de CPF.</li>
+                        <li><span class="letra">D)</span>FRACA de PRODUTO.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Entrega da SA 1</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o grupo entrega nesta aula, na SA 1?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O script SQL completo do banco.</li>
+                        <li><span class="letra">B)</span>A lista de entidades do sistema de matrículas, classificadas e justificadas, com as palavras descartadas.</li>
+                        <li><span class="letra">C)</span>A configuração do pg_hba.conf.</li>
+                        <li><span class="letra">D)</span>O backup do servidor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Próximo Passo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois das entidades, o que se define na próxima aula da modelagem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O backup diário.</li>
+                        <li><span class="letra">B)</span>Os atributos de cada entidade.</li>
+                        <li><span class="letra">C)</span>O cronograma final.</li>
+                        <li><span class="letra">D)</span>A porta do servidor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Entidade Sem Ocorrências</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Uma &quot;entidade&quot; que sempre terá uma única ocorrência e nenhum dado próprio, como &quot;Escola Única&quot;, provavelmente:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Deve ser entidade fraca de todas.</li>
+                        <li><span class="letra">B)</span>É obrigatória em todo MER.</li>
+                        <li><span class="letra">C)</span>Não precisa ser entidade no modelo, podendo virar configuração ou ser descartada.</li>
+                        <li><span class="letra">D)</span>Deve ser associativa entre todas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Paciente e Consulta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num sistema de clínica, PACIENTE e MÉDICO se ligam por consultas com data, hora e diagnóstico. CONSULTA é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Atributo de PACIENTE.</li>
+                        <li><span class="letra">B)</span>Entidade associativa entre PACIENTE e MÉDICO.</li>
+                        <li><span class="letra">C)</span>Entidade fraca de DIAGNÓSTICO.</li>
+                        <li><span class="letra">D)</span>Um nível físico.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Produto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Numa loja, PRODUTO com nome, preço e estoque é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Atributo de CLIENTE.</li>
+                        <li><span class="letra">B)</span>Associativa entre preço e estoque.</li>
+                        <li><span class="letra">C)</span>Entidade forte.</li>
+                        <li><span class="letra">D)</span>Entidade fraca de ITEM_PEDIDO.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Ordem da Modelagem</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem da modelagem conceitual seguida na UC?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Entidades, atributos, relacionamentos e DER.</li>
+                        <li><span class="letra">B)</span>DER, tabelas, entidades e requisitos.</li>
+                        <li><span class="letra">C)</span>Backup, entidades, instalação e DER.</li>
+                        <li><span class="letra">D)</span>Atributos, senha, porta e entidades.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Identificador Próprio</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que ALUNO é considerada forte?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque é a primeira entidade criada.</li>
+                        <li><span class="letra">B)</span>Porque existe sozinha e é identificada pelo seu próprio identificador, como id ou CPF.</li>
+                        <li><span class="letra">C)</span>Porque depende de TURMA.</li>
+                        <li><span class="letra">D)</span>Porque tem muitos alunos.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Aula 06: Entidades Fortes, Fracas e Associativas</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

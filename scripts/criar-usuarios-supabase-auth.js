@@ -1,13 +1,15 @@
 /**
- * Cria/atualiza no Supabase Auth os alunos de um LISTA-PRESENCA.js e grava as tabelas turma/aluno.
- * Opcionalmente cria/atualiza a conta do professor.
+ * Cria/atualiza no Supabase Auth os alunos de UMA turma da lista única scripts/LISTAPRESENCA.js
+ * e grava as tabelas turma/aluno. Opcionalmente cria/atualiza a conta do professor.
  *
  * Uso (PowerShell, na raiz do projeto):
  *   $env:SUPABASE_SERVICE_ROLE_KEY = "<chave service_role>"
- *   node scripts/criar-usuarios-supabase-auth.js <LISTA-PRESENCA.js>              (simulação)
- *   node scripts/criar-usuarios-supabase-auth.js <LISTA-PRESENCA.js> --executar   (grava)
+ *   node scripts/criar-usuarios-supabase-auth.js --turma=135080              (simulação)
+ *   node scripts/criar-usuarios-supabase-auth.js --turma=135080 --executar   (grava)
  *
  * Opções:
+ *   --turma=CODIGO                 Obrigatória: código da turma no LISTAPRESENCA.js.
+ *   [arquivo]                      Outro arquivo de lista (padrão: scripts/LISTAPRESENCA.js).
  *   --executar                     Grava de verdade. Sem ela, só mostra o que seria feito.
  *   --prefixo-senha=XX             Texto antes de cada senha (mínimo do Supabase: 6 caracteres).
  *   --professor=email@senai.local  Cria/atualiza o professor; senha em $env:PROFESSOR_SENHA.
@@ -18,7 +20,7 @@
  *
  * ⚠️ A chave service_role ignora o RLS: use só nesta máquina,
  *    nunca em páginas nem no repositório.
- * ⚠️ O LISTA-PRESENCA.js tem dados pessoais de alunos (LGPD) e fica fora do Git.
+ * ⚠️ O LISTAPRESENCA.js tem dados pessoais de alunos (LGPD) e fica fora do site (.vercelignore).
  * Requer as tabelas de database/2026-09-28-atividades-gabarito.sql.
  */
 
@@ -39,6 +41,8 @@ const OPCAO_EXECUTAR = '--executar';
 const OPCAO_REDEFINIR = '--redefinir-senhas';
 const OPCAO_PREFIXO = '--prefixo-senha=';
 const OPCAO_PROFESSOR = '--professor=';
+const OPCAO_TURMA = '--turma=';
+const ARQUIVO_LISTA_PADRAO = path.join(__dirname, 'LISTAPRESENCA.js');
 
 /**
  * Lê o valor de uma opção no formato --nome=valor.
@@ -54,14 +58,16 @@ function lerValorOpcao(argumentos, prefixo) {
 /**
  * Lê as opções da linha de comando.
  * @param {string[]} argumentos - Argumentos após o nome do script.
- * @returns {Object} Opções: arquivo, executar, redefinirSenhas, prefixoSenha, emailProfessor.
- * @throws {Error} Se o caminho do LISTA-PRESENCA.js não for informado.
+ * @returns {Object} Opções: arquivo, turma, executar, redefinirSenhas, prefixoSenha, emailProfessor.
+ * @throws {Error} Se a turma (--turma=CODIGO) não for informada.
  */
 function lerOpcoes(argumentos) {
   const arquivo = argumentos.find((argumento) => !argumento.startsWith('--'));
-  if (!arquivo) throw new Error('Informe o caminho do LISTA-PRESENCA.js.');
+  const turma = lerValorOpcao(argumentos, OPCAO_TURMA);
+  if (!turma) throw new Error('Informe a turma: --turma=CODIGO (código no LISTAPRESENCA.js).');
   return {
-    arquivo: path.resolve(arquivo),
+    arquivo: arquivo ? path.resolve(arquivo) : ARQUIVO_LISTA_PADRAO,
+    turma,
     executar: argumentos.includes(OPCAO_EXECUTAR),
     redefinirSenhas: argumentos.includes(OPCAO_REDEFINIR),
     prefixoSenha: lerValorOpcao(argumentos, OPCAO_PREFIXO),
@@ -70,18 +76,34 @@ function lerOpcoes(argumentos) {
 }
 
 /**
- * Carrega o objeto window.LISTA_PRESENCA de um arquivo, sem executar mais nada dele.
- * @param {string} arquivo - Caminho absoluto do LISTA-PRESENCA.js.
- * @returns {{turmas: Object[]}} Dados da lista de presença.
- * @throws {Error} Se o arquivo não existir ou não definir window.LISTA_PRESENCA.
+ * Carrega window.LISTAS_PRESENCA de um arquivo, sem executar mais nada dele.
+ * @param {string} arquivo - Caminho absoluto do LISTAPRESENCA.js.
+ * @returns {Object[]} Listas de presença (uma por UC).
+ * @throws {Error} Se o arquivo não existir ou não definir window.LISTAS_PRESENCA.
  */
-function carregarListaPresenca(arquivo) {
+function carregarListasPresenca(arquivo) {
   if (!fs.existsSync(arquivo)) throw new Error('Arquivo não encontrado: ' + arquivo);
   const contexto = { window: {} };
   vm.runInNewContext(fs.readFileSync(arquivo, 'utf-8'), contexto, { timeout: 1000 });
-  const lista = contexto.window.LISTA_PRESENCA;
-  if (!lista?.turmas?.length) throw new Error('O arquivo não define window.LISTA_PRESENCA.');
-  return lista;
+  const listas = contexto.window.LISTAS_PRESENCA;
+  if (!listas?.length) throw new Error('O arquivo não define window.LISTAS_PRESENCA.');
+  return listas;
+}
+
+/**
+ * Separa, das listas de alunos, só a turma pedida (a lista de professores é ignorada).
+ * @param {string} arquivo - Caminho absoluto do LISTAPRESENCA.js.
+ * @param {string} codigoTurma - Código da turma (--turma=CODIGO).
+ * @returns {{uc: string, professor: string, turmas: Object[]}} Lista só com a turma pedida.
+ * @throws {Error} Se a turma não existir no arquivo.
+ */
+function carregarListaPresenca(arquivo, codigoTurma) {
+  const listas = carregarListasPresenca(arquivo).filter((lista) => lista.professores !== true);
+  for (const lista of listas) {
+    const turma = (lista.turmas || []).find((item) => String(item.codigo) === codigoTurma);
+    if (turma) return { ...lista, turmas: [turma] };
+  }
+  throw new Error('Turma ' + codigoTurma + ' não encontrada no arquivo ' + arquivo + '.');
 }
 
 /**
@@ -298,7 +320,7 @@ function simular(usuarios) {
  */
 async function principal() {
   const opcoes = lerOpcoes(process.argv.slice(2));
-  const lista = carregarListaPresenca(opcoes.arquivo);
+  const lista = carregarListaPresenca(opcoes.arquivo, opcoes.turma);
   const usuarios = montarUsuarios(lista, opcoes.prefixoSenha);
   const professor = montarProfessor(opcoes.emailProfessor, lista.professor);
   if (professor) usuarios.push(professor);

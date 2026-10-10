@@ -33,9 +33,8 @@
 | VERIFICAR | RIO_DO_SUL_MAIS_TECH | OFICINAS_IMPRESSAO_3D_ROBOTICA |
 | VERIFICAR | RIO_DO_SUL_MAIS_TECH | REFORCO_LINGUAGENS |
 | VERIFICAR | RIO_DO_SUL_MAIS_TECH | REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO |
-| IGNORAR | RIO_DO_SUL_MAIS_TECH | Scripts-Comunicacao |
 | IGNORAR | TECNICO-INFORMATICA-INTERNET | ARQUITETURA-DE-HARDWARE-E-SOFTWARE |
-| IGNORAR | TECNICO-INFORMATICA-INTERNET | BANCO_DE_DADOS |
+| VERIFICAR | TECNICO-INFORMATICA-INTERNET | BANCO-DE-DADOS |
 | IGNORAR | TECNICO-INFORMATICA-INTERNET | CODIFICACAO-PARA-BACK-END |
 | IGNORAR | TECNICO-INFORMATICA-INTERNET | CODIFICACAO-PARA-FRONT-END |
 | IGNORAR | TECNICO-INFORMATICA-INTERNET | DESENVOLVIMENTO-DE-APIS |
@@ -50,12 +49,12 @@
 | IGNORAR | TECNICO-INFORMATICA-INTERNET | PROJETO-DE-FRONT-END |
 | IGNORAR | TECNICO-INFORMATICA-INTERNET | SAUDE-E-SEGURANCA-NO-TRABALHO |
 | IGNORAR | TECNICO-INFORMATICA-INTERNET | SUSTENTABILIDADE-NOS-PROCESSOS-INDUSTRIAIS |
-| IGNORAR | TECNICO-INFORMATICA-INTERNET | Testes de Sistemas-EXISTENTES |
 | IGNORAR | TECNICO-INFORMATICA-INTERNET | TESTES-DE-BACK-END |
 | VERIFICAR | TECNICO-INFORMATICA-INTERNET | TESTES-DE-FRONTEND |
+| IGNORAR | TECNICO-INFORMATICA-INTERNET | Testes de Sistemas-EXISTENTES |
 | IGNORAR | TECNICO-INFORMATICA-INTERNET | VERSIONAMENTO-E-COLABORACAO |
 
-**Matérias valendo (curso e matéria em VERIFICAR):** 15 de 35
+**Matérias valendo (curso e matéria em VERIFICAR):** 16 de 34
 
 > Vale por matéria, dentro do curso. A matéria só é processada quando o **curso** e a **matéria**
 > estão em `VERIFICAR`; matéria em `IGNORAR` fica fora de pendências, ajustes
@@ -66,7 +65,7 @@
 
 # STATUS-EMENTAS-CURSOS — Consolidado
 
-**Última atualização:** 2026-10-07 21:32:16
+**Última atualização:** 2026-10-09 15:16:58
 **Escopo:** todos os cursos em `MATERIAIS/` (exceto `MATERIAS-GERAIS/`)
 **Fonte:** tamanho medido direto em cada `EMENTA-CHALKIE-AI.md`
 **Padrão de tamanho:** 14.800–14.950 caracteres
@@ -83,17 +82,17 @@
 | GESTAO_E_CONTROLE_MATERIAIS | 1 | 1 | 0 | 0 | 0 |
 | OPERADOR_PRODUCAO_INDUSTRIAL | 1 | 1 | 0 | 0 | 0 |
 | QUALIFICACAO-PROFISSIONAL | 3 | 1 | 0 | 2 | 0 |
-| RIO_DO_SUL_MAIS_TECH | 9 | 8 | 0 | 1 | 0 |
-| TECNICO-INFORMATICA-INTERNET | 20 | 1 | 17 | 2 | 0 |
-| **TOTAL** | **35** | **13** | **17** | **5** | **0** |
+| RIO_DO_SUL_MAIS_TECH | 8 | 8 | 0 | 0 | 0 |
+| TECNICO-INFORMATICA-INTERNET | 20 | 1 | 18 | 1 | 0 |
+| **TOTAL** | **34** | **13** | **18** | **3** | **0** |
 
 ---
 
 ## 📌 Pendências (só ementas em VERIFICAR)
 
-### ❌ Fora do tamanho (0)
+### ❌ Fora do tamanho (1)
 
-- nenhuma
+- TECNICO-INFORMATICA-INTERNET / TESTES-DE-FRONTEND
 
 ### ⚠️ Genérica (modelo, sem conteúdo próprio) (2)
 
@@ -148,14 +147,13 @@
 | OFICINAS_IMPRESSAO_3D_ROBOTICA | 14.885 | ✅ Conforme | VERIFICAR |
 | REFORCO_LINGUAGENS | 14.929 | ✅ Conforme | VERIFICAR |
 | REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO | 14.887 | ✅ Conforme | VERIFICAR |
-| Scripts-Comunicacao | 14.918 | ⚠️ Genérica (modelo, sem conteúdo próprio) | IGNORAR |
 
 ## 🎓 TECNICO-INFORMATICA-INTERNET
 
 | Matéria | Caracteres | Situação | Permissão |
 |---|---|---|---|
 | ARQUITETURA-DE-HARDWARE-E-SOFTWARE | 4.923 | ❌ Fora do tamanho | IGNORAR |
-| BANCO_DE_DADOS | 14.802 | ⚠️ Genérica (modelo, sem conteúdo próprio) | IGNORAR |
+| BANCO-DE-DADOS | 14.923 | ✅ Conforme | VERIFICAR |
 | CODIFICACAO-PARA-BACK-END | 4.269 | ❌ Fora do tamanho | IGNORAR |
 | CODIFICACAO-PARA-FRONT-END | 5.809 | ❌ Fora do tamanho | IGNORAR |
 | DESENVOLVIMENTO-DE-APIS | 5.047 | ❌ Fora do tamanho | IGNORAR |
@@ -170,9 +168,9 @@
 | PROJETO-DE-FRONT-END | 6.632 | ❌ Fora do tamanho | IGNORAR |
 | SAUDE-E-SEGURANCA-NO-TRABALHO | 4.586 | ❌ Fora do tamanho | IGNORAR |
 | SUSTENTABILIDADE-NOS-PROCESSOS-INDUSTRIAIS | 5.016 | ❌ Fora do tamanho | IGNORAR |
-| Testes de Sistemas-EXISTENTES | 14.800 | ⚠️ Genérica (modelo, sem conteúdo próprio) | IGNORAR |
 | TESTES-DE-BACK-END | 4.427 | ❌ Fora do tamanho | IGNORAR |
-| TESTES-DE-FRONTEND | 14.818 | ✅ Conforme | VERIFICAR |
+| TESTES-DE-FRONTEND | 14.955 | ❌ Fora do tamanho | VERIFICAR |
+| Testes de Sistemas-EXISTENTES | 14.800 | ⚠️ Genérica (modelo, sem conteúdo próprio) | IGNORAR |
 | VERSIONAMENTO-E-COLABORACAO | 4.644 | ❌ Fora do tamanho | IGNORAR |
 
 ---

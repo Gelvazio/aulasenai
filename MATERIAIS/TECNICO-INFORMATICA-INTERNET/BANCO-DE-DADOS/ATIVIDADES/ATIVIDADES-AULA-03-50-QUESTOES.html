@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03 — Preparação do Ambiente: Instalação do PostgreSQL (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="03" data-tema="Preparação do Ambiente: Instalação do PostgreSQL" data-total="50"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>💿 Aula 03: Preparação do Ambiente: Instalação do PostgreSQL</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-03-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C10 —</strong> Instalar gerenciadores de bancos de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C11 —</strong> Configurar gerenciadores de bancos de dados</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Checklist: Sistema de 64 Bits</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Antes de instalar o PostgreSQL, por que conferir se o sistema operacional é de 64 bits?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque as versões atuais do PostgreSQL são feitas para sistemas de 64 bits suportados.</li>
+                        <li><span class="letra">B)</span>Porque o PostgreSQL só funciona em celulares.</li>
+                        <li><span class="letra">C)</span>Porque o sistema de 64 bits dispensa senha.</li>
+                        <li><span class="letra">D)</span>Porque o número de bits define a porta do banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Checklist: Porta Livre</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que conferir se a porta 5432 está livre antes de instalar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque a porta 5432 é a do navegador.</li>
+                        <li><span class="letra">B)</span>Porque outro PostgreSQL já instalado pode estar usando a mesma porta.</li>
+                        <li><span class="letra">C)</span>Porque a porta define a senha do superusuário.</li>
+                        <li><span class="letra">D)</span>Porque sem porta livre o computador não liga.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Checklist: Mesma Versão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a equipe deve instalar a mesma versão principal do PostgreSQL em todas as máquinas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque versões diferentes não guardam dados.</li>
+                        <li><span class="letra">B)</span>Porque só existe uma versão do PostgreSQL.</li>
+                        <li><span class="letra">C)</span>Para evitar diferenças de comportamento e de comandos entre os ambientes da equipe.</li>
+                        <li><span class="letra">D)</span>Porque a versão define o nome das tabelas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Permissão de Administrador</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a instalação do PostgreSQL no Windows pede permissão de administrador?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque instala um serviço e grava arquivos em pastas do sistema.</li>
+                        <li><span class="letra">B)</span>Porque o pgAdmin só abre como administrador do domínio.</li>
+                        <li><span class="letra">C)</span>Porque o administrador é quem cria as tabelas.</li>
+                        <li><span class="letra">D)</span>Porque sem ela a porta muda sozinha.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Componente Server</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O componente PostgreSQL Server é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um navegador de internet.</li>
+                        <li><span class="letra">B)</span>O cliente gráfico de administração.</li>
+                        <li><span class="letra">C)</span>O SGBD em si, que roda como serviço e guarda os dados.</li>
+                        <li><span class="letra">D)</span>Um editor de planilhas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Componente psql</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é o psql?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um antivírus do servidor.</li>
+                        <li><span class="letra">B)</span>A pasta onde ficam os dados.</li>
+                        <li><span class="letra">C)</span>Um cliente de terminal para executar comandos SQL no PostgreSQL.</li>
+                        <li><span class="letra">D)</span>Um cliente gráfico com janelas e menus.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Componente pgAdmin</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é o pgAdmin?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O serviço que guarda os dados.</li>
+                        <li><span class="letra">B)</span>Uma extensão obrigatória do navegador.</li>
+                        <li><span class="letra">C)</span>Um compilador de linguagem C.</li>
+                        <li><span class="letra">D)</span>Um cliente gráfico para administrar e consultar o PostgreSQL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Stack Builder</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O Stack Builder serve para:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Definir a senha do superusuário.</li>
+                        <li><span class="letra">B)</span>Iniciar o serviço a cada consulta.</li>
+                        <li><span class="letra">C)</span>Criar as tabelas automaticamente.</li>
+                        <li><span class="letra">D)</span>Instalar extensões e ferramentas extras, sendo opcional.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Pasta de Dados</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A pasta de dados (data directory) do PostgreSQL guarda:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Os arquivos do banco, ligados ao nível físico.</li>
+                        <li><span class="letra">B)</span>As senhas dos usuários do Windows.</li>
+                        <li><span class="letra">C)</span>As telas do sistema web.</li>
+                        <li><span class="letra">D)</span>Somente o instalador baixado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Onde Baixar o Instalador</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">De onde o instalador do PostgreSQL deve ser baixado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Do site oficial do PostgreSQL.</li>
+                        <li><span class="letra">B)</span>De qualquer site que aparecer primeiro na busca.</li>
+                        <li><span class="letra">C)</span>De um anexo de e-mail desconhecido.</li>
+                        <li><span class="letra">D)</span>De um pendrive encontrado no laboratório.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Senha do Superusuário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como deve ser a senha do superusuário postgres?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Igual a &quot;postgres&quot;, para não esquecer.</li>
+                        <li><span class="letra">B)</span>Publicada no README do projeto.</li>
+                        <li><span class="letra">C)</span>Forte e guardada em local seguro, nunca no código do sistema nem em arquivo público.</li>
+                        <li><span class="letra">D)</span>Escrita num comentário do código-fonte.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Superusuário na Aplicação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O sistema web deve se conectar ao banco com o superusuário postgres?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Sim, desde que a senha fique no navegador.</li>
+                        <li><span class="letra">B)</span>Sim, porque é o único usuário que existe.</li>
+                        <li><span class="letra">C)</span>Sim, porque é mais rápido.</li>
+                        <li><span class="letra">D)</span>Não; a aplicação usa um usuário próprio com só as permissões necessárias.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Locale</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é escolhido na opção locale durante a instalação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A porta do servidor.</li>
+                        <li><span class="letra">B)</span>O idioma e a região, que influenciam ordenação de textos e formatos.</li>
+                        <li><span class="letra">C)</span>O número de tabelas do banco.</li>
+                        <li><span class="letra">D)</span>O antivírus usado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Codificação UTF8</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que usar a codificação UTF8?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para trocar a porta para 3306.</li>
+                        <li><span class="letra">B)</span>Para deixar o banco sem senha.</li>
+                        <li><span class="letra">C)</span>Para impedir backups.</li>
+                        <li><span class="letra">D)</span>Para guardar corretamente acentos e caracteres especiais.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Componentes Necessários</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na instalação no Windows, quais componentes são marcados para esta UC?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Server, pgAdmin e Command Line Tools, sendo o Stack Builder opcional.</li>
+                        <li><span class="letra">B)</span>Nenhum componente, pois tudo vem na nuvem.</li>
+                        <li><span class="letra">C)</span>Somente o pgAdmin, sem o servidor.</li>
+                        <li><span class="letra">D)</span>Apenas o Stack Builder.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Instalação no Linux</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando instala o PostgreSQL em distribuições baseadas em Debian, como o Ubuntu?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>pip install servidor-banco</li>
+                        <li><span class="letra">B)</span>sudo apt install postgresql postgresql-contrib</li>
+                        <li><span class="letra">C)</span>npm install postgresql</li>
+                        <li><span class="letra">D)</span>sudo apt install pgadmin-windows</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Status do Serviço no Linux</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando mostra se o serviço do PostgreSQL está ativo no Linux?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>sudo systemctl status postgresql</li>
+                        <li><span class="letra">B)</span>ls postgresql</li>
+                        <li><span class="letra">C)</span>sudo systemctl delete postgresql</li>
+                        <li><span class="letra">D)</span>psql --apagar</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Entrar como postgres no Linux</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No Linux, como se entra no psql como o usuário postgres logo após instalar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>sudo -u postgres psql</li>
+                        <li><span class="letra">B)</span>sudo rm postgres</li>
+                        <li><span class="letra">C)</span>postgres --navegador</li>
+                        <li><span class="letra">D)</span>psql --sem-senha-root</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Versão do Cliente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando, no terminal, mostra a versão do cliente psql instalado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>systemctl version-banco</li>
+                        <li><span class="letra">B)</span>psql --version</li>
+                        <li><span class="letra">C)</span>psql --apagar-tudo</li>
+                        <li><span class="letra">D)</span>SELECT nome FROM versao;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Conectando pelo psql</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O comando psql -U postgres -h localhost -p 5432 faz o quê?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga o usuário postgres.</li>
+                        <li><span class="letra">B)</span>Cria um banco chamado localhost.</li>
+                        <li><span class="letra">C)</span>Conecta ao servidor local, na porta 5432, com o usuário postgres.</li>
+                        <li><span class="letra">D)</span>Instala o PostgreSQL na porta 5432.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">SELECT version()</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que mostra o comando SELECT version(); dentro do psql?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O espaço livre no disco.</li>
+                        <li><span class="letra">B)</span>A versão do servidor PostgreSQL ao qual você está conectado.</li>
+                        <li><span class="letra">C)</span>A senha do superusuário.</li>
+                        <li><span class="letra">D)</span>A lista de usuários do Windows.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Comando \l</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No psql, o comando \l serve para:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Limpar todas as tabelas.</li>
+                        <li><span class="letra">B)</span>Listar os bancos de dados do servidor.</li>
+                        <li><span class="letra">C)</span>Desligar o servidor.</li>
+                        <li><span class="letra">D)</span>Trocar a senha.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Comando \conninfo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No psql, o comando \conninfo mostra:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Os erros do instalador.</li>
+                        <li><span class="letra">B)</span>O usuário, o banco, o servidor e a porta da conexão atual.</li>
+                        <li><span class="letra">C)</span>A lista de serviços do Windows.</li>
+                        <li><span class="letra">D)</span>O conteúdo de todas as tabelas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Comando \q</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando sai do psql?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>\l</li>
+                        <li><span class="letra">B)</span>\conninfo</li>
+                        <li><span class="letra">C)</span>SELECT sair;</li>
+                        <li><span class="letra">D)</span>\q</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Registrando no pgAdmin</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para conectar o pgAdmin ao servidor local, o que se informa ao registrar o servidor?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A versão do Windows e o número de série.</li>
+                        <li><span class="letra">B)</span>Somente o nome do computador do professor.</li>
+                        <li><span class="letra">C)</span>Host localhost, porta 5432, usuário postgres e a senha.</li>
+                        <li><span class="letra">D)</span>O endereço do site da escola.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Bancos Iniciais</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quais bancos aparecem logo após uma instalação nova do PostgreSQL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>postgres, template0 e template1.</li>
+                        <li><span class="letra">B)</span>loja, escola e clinica.</li>
+                        <li><span class="letra">C)</span>master, model e msdb.</li>
+                        <li><span class="letra">D)</span>Nenhum banco aparece.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">O Que É um Serviço</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O servidor PostgreSQL roda como serviço. Isso significa que:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ele só funciona com o pgAdmin aberto.</li>
+                        <li><span class="letra">B)</span>Ele roda apenas dentro do navegador.</li>
+                        <li><span class="letra">C)</span>Ele fica em segundo plano esperando conexões, mesmo sem janela aberta.</li>
+                        <li><span class="letra">D)</span>Ele precisa ser reinstalado a cada uso.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Serviço Parado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Se o serviço do PostgreSQL estiver parado, o que acontece?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O banco continua aceitando conexões normalmente.</li>
+                        <li><span class="letra">B)</span>A porta muda para 3306.</li>
+                        <li><span class="letra">C)</span>Nenhum sistema ou cliente consegue conectar ao banco.</li>
+                        <li><span class="letra">D)</span>Os dados são apagados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Iniciar o Serviço no Windows</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No Windows, onde se inicia o serviço do PostgreSQL parado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No navegador, digitando a senha.</li>
+                        <li><span class="letra">B)</span>No Painel de Controle de impressoras.</li>
+                        <li><span class="letra">C)</span>No aplicativo Serviços, no item postgresql-x64 da versão instalada.</li>
+                        <li><span class="letra">D)</span>No Bloco de Notas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Iniciar com o Sistema no Linux</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando faz o PostgreSQL iniciar junto com o sistema no Linux?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>psql --boot</li>
+                        <li><span class="letra">B)</span>sudo systemctl enable postgresql</li>
+                        <li><span class="letra">C)</span>sudo apt remove postgresql</li>
+                        <li><span class="letra">D)</span>sudo systemctl disable postgresql</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Connection Refused</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O erro &quot;connection refused&quot; ao conectar na porta 5432 indica, provavelmente:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Senha forte demais.</li>
+                        <li><span class="letra">B)</span>Codificação UTF8 ativada.</li>
+                        <li><span class="letra">C)</span>Serviço parado ou porta errada.</li>
+                        <li><span class="letra">D)</span>Tabela sem chave primária.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Password Authentication Failed</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O erro &quot;password authentication failed&quot; indica:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Disco cheio.</li>
+                        <li><span class="letra">B)</span>Senha errada para o usuário informado.</li>
+                        <li><span class="letra">C)</span>Porta em uso por outro programa.</li>
+                        <li><span class="letra">D)</span>Serviço do banco parado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Porta em Uso na Instalação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O instalador avisa que a porta 5432 está em uso. Qual solução é adequada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Desligar o firewall de todos os computadores da escola.</li>
+                        <li><span class="letra">B)</span>Instalar mesmo assim sobre a porta ocupada.</li>
+                        <li><span class="letra">C)</span>Trocar a codificação para LATIN1.</li>
+                        <li><span class="letra">D)</span>Usar outra porta livre ou remover a instalação antiga que ocupa a 5432.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">psql Não Reconhecido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No Windows, o terminal diz que psql não é reconhecido como comando. Qual é a causa provável?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A porta 5432 está livre.</li>
+                        <li><span class="letra">B)</span>A pasta bin do PostgreSQL não está no PATH.</li>
+                        <li><span class="letra">C)</span>A senha do postgres está errada.</li>
+                        <li><span class="letra">D)</span>O banco não tem tabelas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Acentos Errados</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Os nomes com acento aparecem com símbolos estranhos no banco. O que conferir?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A porta do servidor.</li>
+                        <li><span class="letra">B)</span>A codificação do banco, que deve ser UTF8.</li>
+                        <li><span class="letra">C)</span>O número de bancos de template.</li>
+                        <li><span class="letra">D)</span>A versão do navegador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Roteiro de Instalação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que deve ser registrado no roteiro de instalação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As notas dos alunos.</li>
+                        <li><span class="letra">B)</span>Versão, porta, pasta de dados, locale, data e quem instalou.</li>
+                        <li><span class="letra">C)</span>Apenas o nome do computador.</li>
+                        <li><span class="letra">D)</span>A senha do postgres em texto aberto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Menos Componentes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a boa prática é instalar só os componentes necessários?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o pgAdmin é proibido.</li>
+                        <li><span class="letra">B)</span>Porque menos componentes significam menos riscos e menos coisas para manter.</li>
+                        <li><span class="letra">C)</span>Porque componentes extras apagam o banco.</li>
+                        <li><span class="letra">D)</span>Porque o instalador não permite escolher.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Ordem da Preparação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem correta da preparação do ambiente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Criar as tabelas, instalar e depois conferir os requisitos.</li>
+                        <li><span class="letra">B)</span>Testar a conexão antes de instalar.</li>
+                        <li><span class="letra">C)</span>Instalar sem conferir nada e criar o banco no navegador.</li>
+                        <li><span class="letra">D)</span>Conferir os requisitos, instalar, conferir o serviço e testar a conexão.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Psql ou pgAdmin</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a diferença entre o psql e o pgAdmin?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O psql é um cliente de terminal e o pgAdmin é um cliente gráfico; os dois conectam ao mesmo servidor.</li>
+                        <li><span class="letra">B)</span>O pgAdmin só funciona sem servidor.</li>
+                        <li><span class="letra">C)</span>O psql guarda os dados e o pgAdmin é o servidor.</li>
+                        <li><span class="letra">D)</span>Não há diferença, são o mesmo programa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Escola de Cursos Livres</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na escola de cursos livres, uma máquina mostrou &quot;connection refused&quot; logo no primeiro teste. Qual foi a causa encontrada na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A tabela de alunos não existia.</li>
+                        <li><span class="letra">B)</span>O monitor estava desligado.</li>
+                        <li><span class="letra">C)</span>O aluno digitou o e-mail errado no sistema.</li>
+                        <li><span class="letra">D)</span>O serviço do PostgreSQL estava parado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Ambiente Igual na Equipe</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que todos os desenvolvedores da escola instalaram o PostgreSQL com a mesma versão, UTF8 e porta 5432?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque é proibido mudar a porta.</li>
+                        <li><span class="letra">B)</span>Para que só um computador funcione.</li>
+                        <li><span class="letra">C)</span>Para economizar energia elétrica.</li>
+                        <li><span class="letra">D)</span>Para que o banco se comporte igual em todas as máquinas e os scripts funcionem para todos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Pane: Porta Ocupada</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica &quot;Pane no laboratório&quot;, o cartão diz: &quot;instalador avisa porta 5432 em uso&quot;. Qual é a causa provável?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Já existe outro PostgreSQL instalado usando a porta.</li>
+                        <li><span class="letra">B)</span>A codificação é UTF8.</li>
+                        <li><span class="letra">C)</span>O pgAdmin está em inglês.</li>
+                        <li><span class="letra">D)</span>O cabo de rede está desconectado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Pane: Serviço</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica, o cartão diz: &quot;pgAdmin não conecta e o serviço aparece como parado&quot;. Qual é a solução?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Iniciar o serviço do PostgreSQL e tentar conectar de novo.</li>
+                        <li><span class="letra">B)</span>Apagar a pasta de dados.</li>
+                        <li><span class="letra">C)</span>Trocar a senha do Wi-Fi.</li>
+                        <li><span class="letra">D)</span>Reinstalar o Windows.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Firewall</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando o banco está em outro servidor da rede, o que deve ser conferido além do serviço?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Se o firewall libera a porta do banco para o servidor da aplicação.</li>
+                        <li><span class="letra">B)</span>Se o firewall libera a porta para qualquer computador da internet.</li>
+                        <li><span class="letra">C)</span>Se o monitor do servidor está ligado.</li>
+                        <li><span class="letra">D)</span>Se o navegador está atualizado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Senha em Local Seguro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual opção é um local adequado para guardar a senha do superusuário?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O código-fonte do front-end.</li>
+                        <li><span class="letra">B)</span>Um grupo aberto de mensagens.</li>
+                        <li><span class="letra">C)</span>Um gerenciador de senhas ou cofre da equipe com acesso restrito.</li>
+                        <li><span class="letra">D)</span>Um bilhete colado no monitor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Pasta de Dados e Backup</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a localização da pasta de dados é registrada no roteiro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque ela define a senha do banco.</li>
+                        <li><span class="letra">B)</span>Porque o navegador abre os dados por ela.</li>
+                        <li><span class="letra">C)</span>Porque é lá que fica o pgAdmin.</li>
+                        <li><span class="letra">D)</span>Porque ela indica onde estão os arquivos do banco, importantes para backup e para o espaço em disco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Primeiro Uso do Ambiente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O ambiente instalado nesta aula será usado principalmente em quais aulas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Somente na aula 1.</li>
+                        <li><span class="letra">B)</span>Apenas na entrega da apostila.</li>
+                        <li><span class="letra">C)</span>Em nenhuma aula, pois a UC é só teórica.</li>
+                        <li><span class="letra">D)</span>Nas aulas de construção do banco, com DDL, DML, procedimentos e triggers.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Codificação na Criação do Banco</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao criar bancos para sistemas web brasileiros, qual codificação é recomendada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Código Morse.</li>
+                        <li><span class="letra">B)</span>Binária pura.</li>
+                        <li><span class="letra">C)</span>ASCII sem acentos.</li>
+                        <li><span class="letra">D)</span>UTF8.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Instalação Concluída</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual situação mostra que a instalação está pronta para uso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O serviço está ativo, o SELECT version() responde e o pgAdmin mostra os bancos iniciais.</li>
+                        <li><span class="letra">B)</span>O instalador foi baixado, mas não executado.</li>
+                        <li><span class="letra">C)</span>O psql não é reconhecido no terminal.</li>
+                        <li><span class="letra">D)</span>O serviço aparece como parado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Erro Comum de Segurança</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Durante a instalação, qual decisão é um erro de segurança?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Instalar apenas os componentes necessários.</li>
+                        <li><span class="letra">B)</span>Baixar o instalador do site oficial.</li>
+                        <li><span class="letra">C)</span>Definir a senha do postgres como &quot;123&quot; e anotá-la no código do sistema.</li>
+                        <li><span class="letra">D)</span>Guardar a senha num cofre de senhas da equipe.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Aula 03: Preparação do Ambiente: Instalação do PostgreSQL</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

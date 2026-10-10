@@ -187,6 +187,37 @@ ATIVIDADES_TESTES_FRONTEND = [
      f"{PASTA_TESTES_FRONTEND}/ATIVIDADES-AULA-03-50-QUESTOES.md"),
 ]
 
+PASTA_BANCO_DADOS = "MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES"
+
+# Banco de Dados (Técnico em Informática para Internet), tarefa #20: aulas de CONTEUDO/AULA-NN-*.md.
+# Sem calendário ainda: data provisória. As práticas (ATIVIDADE-PRATICA-AULA-NN) têm seed próprio.
+ATIVIDADES_BANCO_DADOS = [
+    (1, "Banco de Dados e SGBD: Conceitos e Usos", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-01-50-QUESTOES.md"),
+    (2, "Gerenciadores: Características, Requisitos e Níveis", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-02-50-QUESTOES.md"),
+    (4, "Configuração do SGBD e Infraestrutura do Sistema", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-04-50-QUESTOES.md"),
+    (5, "Demandas do Cliente e Escopo do Projeto", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-05-50-QUESTOES.md"),
+    (6, "Entidades Fortes, Fracas e Associativas", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-06-50-QUESTOES.md"),
+    (7, "Atributos", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-07-50-QUESTOES.md"),
+    (8, "Relacionamentos 1:1, 1:N e N:N", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-08-50-QUESTOES.md"),
+    (10, "Normalização de Dados (1FN, 2FN e 3FN)", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-10-50-QUESTOES.md"),
+    (11, "Padronização de Dados, Cronograma e Fluxograma", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-11-50-QUESTOES.md"),
+    (12, "DDL: Tabelas e Campos", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-12-50-QUESTOES.md"),
+    (13, "DDL: Relações, Chaves e Restrições", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-13-50-QUESTOES.md"),
+    (15, "DML: Consultas com Filtros e Ordenação", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-15-50-QUESTOES.md"),
+]
+
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.
 GRUPOS = [
     (CURSO, MATERIA, ATIVIDADES),
@@ -197,6 +228,7 @@ GRUPOS = [
      ATIVIDADES_AUTOMACAO),
     ("Rio do Sul Mais Tech", "Reforço de Linguagens", ATIVIDADES_REFORCO_LINGUAGENS),
     ("Técnico em Informática para Internet", "TESTES DE FRONTEND", ATIVIDADES_TESTES_FRONTEND),
+    ("Técnico em Informática para Internet", "BANCO DE DADOS", ATIVIDADES_BANCO_DADOS),
 ]
 
 PADRAO_ITEM = re.compile(r"^## ITEM (\d+) — (.+)$", re.M)
