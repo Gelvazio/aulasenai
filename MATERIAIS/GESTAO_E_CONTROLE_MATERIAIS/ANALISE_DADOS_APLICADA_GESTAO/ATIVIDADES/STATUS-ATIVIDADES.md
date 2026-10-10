@@ -7,7 +7,7 @@
 > Legenda: `⬜ Pendente` · `🔄 Em progresso / falta banco` · `⚠️ Incompleta` · `✅ Concluída`.
 
 **Levantamento:** 2026-10-03 (páginas da pasta, contagem de questões no HTML e atividades do banco).
-**Aulas:** 7 · **✅ Concluídas:** 7 · **Pendentes/incompletas:** 0
+**Aulas:** 8 (32 h da ementa; aula 08 acrescentada em 2026-10-10 16:22) · **✅ Concluídas:** 7 · **Pendentes/incompletas:** 1
 
 ## Atividade objetiva de 50 questões por aula
 
@@ -20,6 +20,7 @@
 | 05 | Excel Avançado Funções Complexas e Busca | `ATIVIDADES-5-EXCEL-AVANCADO-FUNCOES-COMPLEXAS-E-BUSCA-50-QUESTOES.html` | 50 | ✅ `CONTEUDO/ATIVIDADES-5-EXCEL-AVANCADO-FUNCOES-COMPLEXAS-E-BUSCA-50-QUESTOES.md` | ✅ liberada | ✅ Concluída |
 | 06 | Excel Avançado Tabelas Dinâmicas e Gráficos | `ATIVIDADES-6-EXCEL-AVANCADO-TABELAS-DINAMICAS-E-GRAFICOS-50-QUESTOES.html` | 50 | ✅ `CONTEUDO/ATIVIDADES-6-EXCEL-AVANCADO-TABELAS-DINAMICAS-E-GRAFICOS-50-QUESTOES.md` | ✅ bloqueada | ✅ Concluída |
 | 07 | Dashboards Interativos e Integração de Dados | `ATIVIDADES-7-DASHBOARDS-INTERATIVOS-E-INTEGRACAO-DE-DADOS-50-QUESTOES.html` | 50 | ✅ `CONTEUDO/ATIVIDADES-7-DASHBOARDS-INTERATIVOS-E-INTEGRACAO-DE-DADOS-50-QUESTOES.md` | ✅ bloqueada | ✅ Concluída |
+| 08 | Dashboards Executivos e Projeto Final | ⬜ `ATIVIDADES-AULA-08-50-QUESTOES.html` | — | ⬜ | ⬜ | ⬜ Pendente |
 
 ## Demais atividades da pasta (adicionais)
 

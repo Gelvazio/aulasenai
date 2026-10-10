@@ -17,6 +17,7 @@ pendente) muda para `⏹️ Encerrada`.
 | Frente (ambiente · branch) | Tarefa/etapa | Próximo passo | Situação | Atualizado em |
 |---|---|---|---|---|
 | nuvem · claude/festive-maxwell-25jnhl | #20 (Etapa 125) e #21 (Etapa 135-eeefc710) | Aula 19 de Banco de Dados pronta (conteúdo, objetiva, prática); seeds: objetiva id 141 CONCLUÍDO, prática id 142 com 29 de 30 tópicos (falta o 6c, que precisa da confirmação do usuário no conector). Próximo: tópico 6c da aula 19 (com a confirmação do usuário) e depois a aula 20 (conteúdo + objetiva + prática), plano [docs/banco-de-dados-materia-100.md](../docs/banco-de-dados-materia-100.md) | 🔄 Ativa | 2026-10-09 21:27 |
+| nuvem · claude/verificar-status-pastas-c6s5yz | Etapa 137-b214e26b | Status corrigidos; próximo: aceite do usuário (137.5) e o pedido "finalizar Banco de Dados" | 🔄 Ativa | 2026-10-10 16:40 |
 | local · main | — | Ao iniciar: ler este arquivo e o `RECADOS.md` e preencher esta linha | ⬜ Sem registro | — |
 
 ## 📌 Tarefas do `TASKS.md` (o status oficial fica aqui)
@@ -37,7 +38,7 @@ A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale 
 | #16 | Bloqueio da AULA (card inteiro, `aulas.ativo`) × ON/OFF da atividade (nunca bloqueia o card) em todos os índices | 🔄 Ligada em Testes de Front-End (Etapa 114) | Demais matérias: acrescentar a pasta em `assets/js/indice-bloqueio-aula-config.js`, uma por vez, quando o usuário pedir | — |
 | #17 | Fechar a revisão das regras do `CLAUDE.md` (aceites 70.5, 72.8, 73.14; commit `85a8531` com gabarito; ementa fora do tamanho) | ⬜ Pendente — nova sessão | Usuário confere e dá os aceites; decide sobre os gabaritos do commit `85a8531` antes do push | — |
 | #18 | Progresso da turma global em todas as atividades (objetivas e discursivas com banco) | 👀 Aguardando validação (Etapa 121) | Item 121.11 (teste e aceite do usuário) | — |
-| #19-91cbac65-87ca-45a0 | Análise contínua das matérias (`scripts/analise-materias.py` → `tasks/ANALISE-MATERIAS-RELATORIO.json`) — ⛔ permanente: nunca CONCLUÍDA enquanto houver matéria incompleta ou pendência | 🔄 Em andamento — última rodada 2026-10-09 22:35: 6 cursos, 34 matérias, 2 completas, 32 incompletas | Rodar a rotina no início de cada sessão e ao concluir tarefa em matéria; resolver pendências só a pedido do usuário | — |
+| #19-91cbac65-87ca-45a0 | Análise contínua das matérias (`scripts/analise-materias.py` → `tasks/ANALISE-MATERIAS-RELATORIO.json`) — ⛔ permanente: nunca CONCLUÍDA enquanto houver matéria incompleta ou pendência | 🔄 Em andamento — última rodada 2026-10-10 16:25: 6 cursos, 34 matérias, 2 completas, 32 incompletas | Rodar a rotina no início de cada sessão e ao concluir tarefa em matéria; resolver pendências só a pedido do usuário | — |
 | #20-2ac1a8ec-911b-466f | Banco de Dados (Técnico em Informática para Internet) 100% no padrão da ITIC — etapa 1 sem a apostila | 🔄 Em execução (Etapa 125) | Item 125.3 — aulas 01 a 19 prontas; próxima: aula 20 | nuvem · claude/festive-maxwell-25jnhl (desde 2026-10-09 13:26) |
 | #21-eeefc710-3e74-4928 | Colaboração entre sessões/licenças: etapa com UUID, reserva da tarefa, frentes de trabalho, `RECADOS.md`, merge da `main`, arquivos gerados, uma etapa por arquivo | 👀 Aguardando validação (Etapa 135-eeefc710) | Item 135.6 — aceite do usuário (ele junta o PR na `main`) | nuvem · claude/festive-maxwell-25jnhl (desde 2026-10-09 15:22) |
 
@@ -48,6 +49,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
 | 125 | 125.8 | confirmar no conector do Supabase o insert do tópico 6c da prática da aula 19 de Banco de Dados (atividade id 142): o texto cita `DELETE FROM parcela;` e o comando volta "cancelado" sem a confirmação | Ação |
+| 137-b214e26b | 137.5 | conferir os status corrigidos de Fundamentos da Tecnologia (9 aulas), Reforço de Matemática (16) e Análise de Dados (8) | Aceite |
 | 136-f0a07de9 | 136.5 | aceite do registro `database/SEEDS-APLICADOS.md` e da regra dos seeds | Aceite |
 | 124 | 124.4 | testar o modal "➕ Nova Pendência" e a coluna Descrição em `pendencias.html` | Aceite |
 | 121 | 121.11 | testar o Progresso da turma global na objetiva da aula 01 de Testes de Front-End (professor vê ao abrir; aluno não vê) e numa discursiva | Aceite |
@@ -267,6 +269,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (regra "CONVERSA ENTRE SESSÕES 
 | 134 | Regra do `graphify update .` removida (tarefa pequena, pedido em 2026-10-09 18:05) | [ETAPA-134-REGRA-DO-GRAPHIFY-UPDATE-REMOVIDA.md](etapas/ETAPA-134-REGRA-DO-GRAPHIFY-UPDATE-REMOVIDA.md) |
 | 135-eeefc710 | Colaboração entre sessões e licenças pelo `STATUS.md` | [ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md) |
 | 136-f0a07de9 | Registro dos seeds aplicados e item próprio em cada tarefa | [ETAPA-136-f0a07de9-REGISTRO-DOS-SEEDS-APLICADOS.md](etapas/ETAPA-136-f0a07de9-REGISTRO-DOS-SEEDS-APLICADOS.md) |
+| 137-b214e26b | Status das aulas conferidos pela carga horária da ementa (FTP, Reforço de Matemática, Análise de Dados) | [ETAPA-137-b214e26b-STATUS-DAS-AULAS-PELA-CARGA-HORARIA.md](etapas/ETAPA-137-b214e26b-STATUS-DAS-AULAS-PELA-CARGA-HORARIA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
