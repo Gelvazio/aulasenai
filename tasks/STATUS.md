@@ -16,7 +16,7 @@ pendente) muda para `⏹️ Encerrada`.
 
 | Frente (ambiente · branch) | Tarefa/etapa | Próximo passo | Situação | Atualizado em |
 |---|---|---|---|---|
-| nuvem · claude/festive-maxwell-25jnhl | #20 (Etapa 125) e #21 (Etapa 135-eeefc710) | Seeds: 63 CONCLUÍDO e 6 SUBSTITUÍDO (decisão do usuário, 136.4f). Status por aula criado nas 21 matérias que faltavam. Próximo: Etapa 125, item 125.3 — Banco de Dados: aula 19 (conteúdo + objetiva + prática), depois a 20, uma por vez (plano [docs/banco-de-dados-materia-100.md](../docs/banco-de-dados-materia-100.md)); depois, Etapa 124 | 🔄 Ativa | 2026-10-09 21:27 |
+| nuvem · claude/festive-maxwell-25jnhl | #20 (Etapa 125) e #21 (Etapa 135-eeefc710) | Aula 19 de Banco de Dados pronta (conteúdo, objetiva, prática); seeds: objetiva id 141 CONCLUÍDO, prática id 142 com 29 de 30 tópicos (falta o 6c, que precisa da confirmação do usuário no conector). Próximo: tópico 6c da aula 19 (com a confirmação do usuário) e depois a aula 20 (conteúdo + objetiva + prática), plano [docs/banco-de-dados-materia-100.md](../docs/banco-de-dados-materia-100.md) | 🔄 Ativa | 2026-10-09 21:27 |
 | local · main | — | Ao iniciar: ler este arquivo e o `RECADOS.md` e preencher esta linha | ⬜ Sem registro | — |
 
 ## 📌 Tarefas do `TASKS.md` (o status oficial fica aqui)
@@ -47,6 +47,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 125 | 125.8 | confirmar no conector do Supabase o insert do tópico 6c da prática da aula 19 de Banco de Dados (atividade id 142): o texto cita `DELETE FROM parcela;` e o comando volta "cancelado" sem a confirmação | Ação |
 | 136-f0a07de9 | 136.5 | aceite do registro `database/SEEDS-APLICADOS.md` e da regra dos seeds | Aceite |
 | 124 | 124.4 | testar o modal "➕ Nova Pendência" e a coluna Descrição em `pendencias.html` | Aceite |
 | 121 | 121.11 | testar o Progresso da turma global na objetiva da aula 01 de Testes de Front-End (professor vê ao abrir; aluno não vê) e numa discursiva | Aceite |
