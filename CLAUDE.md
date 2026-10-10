@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-10 16:37:58
+**Versão das regras:** 2026-10-10 16:40:55
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-10 16:40:55 | **Todos os arquivos de status existem sempre, em todas as matérias (inclusive IGNORAR):** `STATUS_MATERIA.md`, `AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` e `STATUS-EMENTAS.md`; o `gerar_status_materia.py` cria os que faltam antes de gerar — "🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS" |
 | 2026-10-10 16:37:58 | **STATUS_MATERIA e ordem das matérias:** toda matéria tem o `STATUS_MATERIA.md`, gerado por `scripts/status-materias/gerar_status_materia.py` a partir de todos os arquivos da pasta (peças do padrão da ITIC, aulas e coluna Banco lida do `database/SEEDS-APLICADOS.md`), com a situação ⬜ NÃO INICIADA / 🔄 PENDENTE / ✅ CONCLUÍDA; ordem oficial em `tasks/ORDEM-MATERIAS.md` (Banco de Dados 1, Testes de Front-End 2, ITIC 3, demais em seguida), seguida sempre que se lê status de tarefas ou matérias — "🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS" |
 | 2026-10-09 22:21:17 | **Recados lidos a cada merge:** todo merge (trazer a `main` para a branch ou juntar um PR) é seguido da leitura do `tasks/RECADOS.md` (recados das outras sessões e IAs para a sua frente ou para `todas`) — "CONVERSA ENTRE SESSÕES E LICENÇAS" (regra 4) e "PUSH" |
 | 2026-10-09 22:19:14 | **Branch apagada depois do merge:** PR juntado na `main` = a branch dele é excluída do GitHub na hora (fica só o histórico na `main` e no PR); vale para as branches de PRs juntados que ainda existirem — "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM" |
 | 2026-10-09 22:17:26 | **Claude faz o merge dos PRs na nuvem:** depois do push e do PR, o próprio Claude junta o PR na `main` (merge commit, sem push direto nem forçado); havendo conflito de merge, ele mesmo traz a `main` para a branch, resolve, confere e junta — "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM" e "Pull Requests" |
-| 2026-10-09 21:42:18 | **Status SUBSTITUÍDO nos seeds:** seed trocado por outro já no banco, que **por decisão do usuário** não é aplicado, fica **SUBSTITUÍDO** (conta como resolvido na regra "seeds antes de qualquer tarefa"); `scripts/seeds/registrar_seed.py` e o resumo do registro ganham a coluna — "🌱 REGRA — SEEDS DO BANCO" |
 
 ---
 
@@ -80,7 +80,8 @@ Registrada em 2026-10-03 a pedido do usuário.
   ambiente local continua proibido o push.
 - ✅ **`STATUS_MATERIA.md` e ordem das matérias** (2026-10-10, pedido do usuário): status de cada
   matéria gerado dos arquivos dela; ordem Banco de Dados 1, Testes de Front-End 2, ITIC 3… seguida
-  sempre que se lê status de tarefas ou matérias (regra "🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS").
+  sempre que se lê status de tarefas ou matérias; os 5 arquivos de status existem sempre em todas
+  as matérias, inclusive em `IGNORAR` (regra "🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS").
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
 - ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, numa branch própria + novo PR para a `main`).
@@ -310,6 +311,14 @@ Registrada em 2026-10-10 16:37:58 a pedido do usuário.
   raiz; módulos `ordem_materias.py`, `pecas_materia.py` e `seeds_materia.py`). Rodar **no início de
   cada sessão** (junto com a análise contínua, tarefa #19) e **ao concluir qualquer tarefa que mexa
   numa matéria**; os arquivos gerados entram no commit da tarefa.
+- ⛔ **Todos os arquivos de status existem SEMPRE, em TODAS as matérias** (2026-10-10, pedido do
+  usuário) — **inclusive as que estão em `IGNORAR`** nas ementas: `STATUS_MATERIA.md`,
+  `AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` e
+  `STATUS-EMENTAS.md`. O `IGNORAR` só tira a matéria de pendências, ajustes e geração de conteúdo;
+  **nunca** dispensa os status. O `gerar_status_materia.py` roda antes `criar_status_aulas.py` e
+  `criar_status_faltantes.py` (só criam o que falta, nunca sobrescrevem); matéria nova já nasce
+  com os 5 arquivos. Ao ler os status, conferir que os 5 existem em todas as matérias; faltando
+  algum, rodar o gerador na hora.
 - ✅ **Ordem oficial das matérias** em **`tasks/ORDEM-MATERIAS.md`** (gerado pelo mesmo script):
   **1 = Banco de Dados** (Técnico em Informática para Internet), **2 = Testes de Front-End**,
   **3 = Introdução à TIC** (matéria modelo) e as demais em seguida, curso por curso. A ordem gravada

@@ -13,4 +13,4 @@ Frente: nuvem · claude/verificar-status-pastas-c6s5yz.
 
 Observação: a ementa de Análise de Dados diz "4 aulas × 8 h"; a contagem segue a regra de 4 h sem mudar a ementa. Reforço de Linguagens (10 aulas) segue a exceção própria da matéria.
 
-Correção (2026-10-10 16:40): horários de conclusão acertados pelo commit `b386bac` (16:25); antes estavam 16:30–16:38, à frente do relógio.
+Correção (2026-10-10 16:38): horários de conclusão acertados pelo commit `b386bac` (16:25); antes estavam 16:30–16:38, à frente do relógio.
