@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 22:19:14
+**Versão das regras:** 2026-10-09 22:21:17
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 22:21:17 | **Recados lidos a cada merge:** todo merge (trazer a `main` para a branch ou juntar um PR) é seguido da leitura do `tasks/RECADOS.md` (recados das outras sessões e IAs para a sua frente ou para `todas`) — "CONVERSA ENTRE SESSÕES E LICENÇAS" (regra 4) e "PUSH" |
 | 2026-10-09 22:19:14 | **Branch apagada depois do merge:** PR juntado na `main` = a branch dele é excluída do GitHub na hora (fica só o histórico na `main` e no PR); vale para as branches de PRs juntados que ainda existirem — "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM" |
 | 2026-10-09 22:17:26 | **Claude faz o merge dos PRs na nuvem:** depois do push e do PR, o próprio Claude junta o PR na `main` (merge commit, sem push direto nem forçado); havendo conflito de merge, ele mesmo traz a `main` para a branch, resolve, confere e junta — "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM" e "Pull Requests" |
 | 2026-10-09 21:42:18 | **Status SUBSTITUÍDO nos seeds:** seed trocado por outro já no banco, que **por decisão do usuário** não é aplicado, fica **SUBSTITUÍDO** (conta como resolvido na regra "seeds antes de qualquer tarefa"); `scripts/seeds/registrar_seed.py` e o resumo do registro ganham a coluna — "🌱 REGRA — SEEDS DO BANCO" |
 | 2026-10-09 21:37:17 | **Scripts dos seeds e dos status no repositório, uso obrigatório:** `scripts/seeds/` (`dividir_seed.py`, `comparar_md5.py`, `registrar_seed.py` + `README.md`), `scripts/status-materias/` e `scripts/banco-de-dados/` — "🌱 REGRA — SEEDS DO BANCO" |
-| 2026-10-09 21:25:58 | **Primeiro só os status das aulas:** o primeiro passo em toda matéria (e em todas as matérias, de uma vez) é criar **apenas** o `AULAS/STATUS-AULAS.md` com todas as aulas (1 a cada 4 h da ementa) em ⬜; conteúdo, atividades e seeds vêm depois, aula por aula — "REGRAS DO USUÁRIO QUE VALEM SEMPRE" |
 
 ---
 
@@ -308,7 +308,10 @@ regras evitam trabalho repetido, tarefa pega em dobro e conflito de merge.
   atualiza **só a dela** (ao começar e ao parar); nunca sobrescrever a linha de outra frente.
 - ✅ **4. Recados em `tasks/RECADOS.md`:** aviso para outra frente (ex.: "não mexer em X", "mudei a
   regra Y") vai como linha nova em "Abertos" (data e hora, De, Para, recado, etapa). **Ler ao
-  iniciar**; ao cumprir, mover para "Cumpridos". Só acrescentar, nunca apagar recado de outra frente.
+  iniciar** e **a cada merge** (2026-10-09 22:21:17, pedido do usuário: sempre que trazer a `main` para a
+  branch ou juntar um PR, ler os recados abertos das outras sessões/IAs para a sua frente ou para
+  `todas` e cumprir o que couber antes de seguir); ao cumprir, mover para "Cumpridos". Só
+  acrescentar, nunca apagar recado de outra frente.
 - ✅ **5. Trazer a `main` no início e no fim:** ao iniciar a sessão e cada tarefa, `git fetch origin
   main` e merge na branch (no local, o usuário faz o pull); de novo **antes de cada push**. PR
   pequeno e juntado logo deixa a outra frente ver o trabalho mais cedo.
@@ -956,6 +959,9 @@ confirmação** do usuário — não perguntar "posso fazer push?". Tarefa que n
   o histórico (os commits na `main` e a página do PR). Branch de PR juntado que ainda existir também
   é apagada. ⛔ Nunca apagar a `main`, branch de PR **aberto** nem branch sem PR que não foi juntada.
   Na tarefa seguinte, a branch da sessão é recriada a partir da `main` atualizada.
+- ✅ **A cada merge, ler os recados** (2026-10-09 22:21:17, pedido do usuário): depois de trazer a `main` para a
+  branch ou de juntar um PR, ler o `tasks/RECADOS.md` (regra 4 de "CONVERSA ENTRE SESSÕES E
+  LICENÇAS") e cumprir os recados abertos para a sua frente ou para `todas`.
 - ✅ **Sempre um PR novo:** se o PR da branch já foi juntado (merged) ou fechado, a tarefa seguinte
   recomeça a branch a partir da `main` atualizada e abre **outro** PR — nunca reaproveitar PR
   juntado. Enquanto o PR da branch ainda estiver aberto, os commits novos da mesma sessão entram

@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-09 22:21:17 | **Recados lidos a cada merge:** todo merge (trazer a `main` para a branch ou juntar um PR) é seguido da leitura do `tasks/RECADOS.md` (recados das outras sessões e IAs para a sua frente ou para `todas`) — "CONVERSA ENTRE SESSÕES E LICENÇAS" (regra 4) e "PUSH" |
 | 2026-10-09 22:19:14 | **Branch apagada depois do merge:** PR juntado na `main` = a branch dele é excluída do GitHub na hora (fica só o histórico na `main` e no PR); vale para as branches de PRs juntados que ainda existirem — "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM" |
 | 2026-10-09 22:17:26 | **Claude faz o merge dos PRs na nuvem:** depois do push e do PR, o próprio Claude junta o PR na `main` (merge commit, sem push direto nem forçado); havendo conflito de merge, ele mesmo traz a `main` para a branch, resolve, confere e junta — "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM" e "Pull Requests" |
 | 2026-10-09 21:42:18 | **Status SUBSTITUÍDO nos seeds:** seed trocado por outro já no banco, que **por decisão do usuário** não é aplicado, fica **SUBSTITUÍDO** (conta como resolvido na regra "seeds antes de qualquer tarefa"); `scripts/seeds/registrar_seed.py` e o resumo do registro ganham a coluna — "🌱 REGRA — SEEDS DO BANCO" |
