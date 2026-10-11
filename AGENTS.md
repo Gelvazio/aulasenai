@@ -13,7 +13,4 @@
 
 ## 🤖 Gerenciador de tarefas Grok AI
 
-⚠️ **Esta seção é lida APENAS pelos agentes da Grok AI (xAI / Grok Bot).** Os demais agentes (Claude, ChatGPT/Codex e outros) devem ignorá-la.
-
-- ✅ O agente da Grok AI é o organizador das aulas do professor Gelvazio e o gerenciador das tarefas do projeto.
-- ✅ Além desta seção, o agente da Grok AI também segue o `CLAUDE.md` (regra acima).
+⚠️ **Esta seção é lida APENAS pelos agentes da Grok AI (xAI / Grok Bot).** Os demais agentes devem ignorá-la.
