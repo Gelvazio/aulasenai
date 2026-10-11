@@ -5,11 +5,11 @@ Registro de **todos** os arquivos `database/*-seed-atividades.sql` e do status d
 CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 [`CLAUDE.md`](../CLAUDE.md), seção "🌱 REGRA — SEEDS DO BANCO".** Aqui ficam só os dados.
 
-## Resumo (atualizado em 2026-10-11 04:36)
+## Resumo (atualizado em 2026-10-11 05:07)
 
 | PENDENTE | APLICADO | CONCLUÍDO | SUBSTITUÍDO | Total |
 |---|---|---|---|---|
-| 1 | 2 | 65 | 0 | 68 |
+| 0 | 3 | 65 | 0 | 68 |
 
 ## Todos os seeds
 
@@ -82,7 +82,7 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-10-testes-frontend-objetiva-aula-04-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-10 16:21 | Atividade id 143 (aula id 124), 50 itens; md5 conferido — Etapa 137-13665a7e |
 | `2026-10-10-testes-frontend-atividade-pratica-aula-04-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-10 16:21 | Atividade id 144 (aula id 124, bloqueada), 30 tópicos, 10 pontos; md5 conferido — Etapa 137-13665a7e |
 | `2026-10-10-testes-frontend-objetiva-aula-05-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **APLICADO** | 2026-10-11 04:36 | Aplicado pelo conector (atividade id 150, aula id 126, 50 itens); falta conferir o md5 — Etapa 137-13665a7e |
-| `2026-10-10-testes-frontend-atividade-pratica-aula-05-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **PENDENTE** | — | Ainda não aplicado; Etapa 137-13665a7e, item 137.8 |
+| `2026-10-10-testes-frontend-atividade-pratica-aula-05-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **APLICADO** | 2026-10-11 05:07 | Parte 1 aplicada pelo conector (atividade id 151, aula id 126, bloqueada): 15 de 30 tópicos; falta a parte 2 — Etapa 137-13665a7e |
 
 ## Seeds excluídos (não podiam ser concluídos)
 
