@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-11 06:09:22
+**Versão das regras:** 2026-10-11 06:24:07
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-11 06:24:07 | **Regras no banco:** cópia do `CLAUDE.md` e dos arquivos de regras (origem = repositório) nas tabelas `regra_documento` (arquivo inteiro) e `regra_secao` (uma linha por `##`/`###`), só leitura do administrador; script `scripts/regras/sincronizar_regras.py` (`importar`, `consulta`, `conferir` pelo md5); sincronizar a cada mudança de regra e em toda execução da rotina — "🗄️ REGRAS NO BANCO" |
 | 2026-10-11 06:09:22 | **Todas as regras da fila `tasks` no `CLAUDE.md`:** a seção "⏰ TAREFAS AGENDADAS E FILA `tasks`" passa a trazer as regras completas (agendador único; tabela, status, RLS e funções; ordem, dependências e sub-tasks; toda task na tabela e no GitHub com `sincronizar_tasks.py`; passo a passo e decisão executar/recusar/erro; página `tasks.html` e log), com itens em "valem sempre" e na inicialização (tarefa do `TASKS.md` também na tabela) |
 | 2026-10-11 06:07:25 | **Ordem e dependências na fila `tasks`:** colunas `ordem` e `task_dependente` (ids das tasks de que ela depende); a `pegar_proxima_task` só pega uma task com **todas as dependentes concluídas** (prioridade → ordem → criação); tarefa grande vira **sub-tasks pequenas em cadeia** (`#NN.MM`), uma por vez; etapas do usuário (`👤`) ficam desligadas e o professor as conclui na `tasks.html` (✅ Concluir); a #25 foi dividida em 22 sub-tasks (TASK-0019 a TASK-0040) — [`docs/regras/tarefas-agendadas.md`](docs/regras/tarefas-agendadas.md) |
 | 2026-10-11 06:01:03 | **Atividades só no banco, layout global e pasta da matéria só com conteúdo:** as questões da objetiva e da prática (enunciado, alternativas, gabarito, tópicos e padrão de resposta) ficam **só no banco**; objetiva e prática usam **um layout global** (nada de página criada do zero em cada aula); as pastas das matérias/aulas têm **só conteúdo (Markdown), nenhum HTML** — tudo vem do global; migração das matérias existentes na tarefa #25-b3e29764-940b-4a82 (plano e aprovação) — "🗃️ REGRA — ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA SÓ COM CONTEÚDO" |
 | 2026-10-11 05:57:00 | **Agendador único lendo a fila `tasks`:** as tarefas agendadas viram **1 rotina por hora** que pega no máximo 1 task da tabela `tasks` do Supabase (`pegar_proxima_task`), decide se executa (ou recusa com o motivo) e grava o resultado (`finalizar_task`); fila vazia = não faz nada; cadastro na página `tasks.html` (menu TASKS, só o administrador); **toda task existe na tabela e no GitHub** (`tasks/TASKS.md` ou `tasks/fila/TASK-NNNN.md`, script `scripts/tasks/sincronizar_tasks.py`); substitui as 6 rotinas paralelas e a escolha automática de aula (#24; #22 e #23 canceladas) — "⏰ TAREFAS AGENDADAS" e [`docs/regras/tarefas-agendadas.md`](docs/regras/tarefas-agendadas.md) |
-| 2026-10-10 16:40:55 | **Todos os arquivos de status existem sempre, em todas as matérias (inclusive IGNORAR):** `STATUS_MATERIA.md`, `AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` e `STATUS-EMENTAS.md`; o `gerar_status_materia.py` cria os que faltam antes de gerar — "🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS" |
 
 ---
 
@@ -599,7 +599,8 @@ arquivo em 2026-10-11 06:09:22** (pedido do usuário: "armazene todas estas regr
 2. ✅ Inicialização deste `CLAUDE.md` (trazer a `main`, `STATUS.md`, `RECADOS.md`, regras globais,
    seeds).
 3. ✅ **Sincronizar** (`consulta` → JSON → `conferir`; havendo diferença, `importar`/`exportar` e
-   commit + push + PR + merge só desses arquivos).
+   commit + push + PR + merge só desses arquivos); também as **regras**
+   (`scripts/regras/sincronizar_regras.py`, seção "🗄️ REGRAS NO BANCO").
 4. ✅ `select * from pegar_proxima_task('<frente>');`
 5. ✅ **Nada veio:** encerrar sem alterar mais nada; log `sem_tarefa`.
 6. ✅ **Veio uma task:** ler a `instrucao` e **decidir**:
@@ -629,6 +630,29 @@ arquivo em 2026-10-11 06:09:22** (pedido do usuário: "armazene todas estas regr
   instruções); o id do log vai para `tasks.log_id`.
 - ⛔ Nada de senha, chave, gabarito nem dado de aluno nas tasks, nos arquivos de `tasks/fila/`, nos
   recados, no `STATUS.md` ou no log.
+
+---
+
+## 🗄️ REGRAS NO BANCO — CÓPIA DO REPOSITÓRIO EM `regra_documento` E `regra_secao`
+
+Registrada em 2026-10-11 06:24:07 a pedido do usuário (tarefa #26-55a91111-02ce-4cb1; plano
+[docs/regras-no-banco.md](docs/regras-no-banco.md)).
+
+- ✅ **Origem = repositório:** este `CLAUDE.md` e os arquivos de regras citados nele (os mesmos do
+  menu Regras: `docs/regras/*.md`, `docs/HISTORICO-REGRAS.md`, `docs/REGRAS-ATIVIDADE-PRATICA.md`)
+  são **copiados** para o Supabase: **`regra_documento`** (arquivo inteiro, versão das regras, md5 e
+  commit) e **`regra_secao`** (uma linha por seção `##` e `###`, com a seção pai; o texto antes do
+  primeiro `##` é a seção de nível 1). ⛔ Nunca editar as regras no banco: muda o `.md`, depois copia.
+- ✅ **Script único:** `scripts/regras/sincronizar_regras.py` — `importar <pasta>` (um SQL por
+  arquivo, rodado pelo conector, um por vez), `consulta` (md5 do banco em JSON) e `conferir
+  <json>` (sai com erro se algum md5 do banco não bater com o do repositório). SQL das tabelas em
+  `database/2026-10-11-regras-no-banco.sql`.
+- ✅ **Quando sincronizar:** em toda tarefa que mudar a "Versão das regras" (depois do merge na
+  `main`, para o commit gravado ser o da `main`) e em toda execução da rotina agendada (passo 3 de
+  `docs/regras/tarefas-agendadas.md`). Seção que some fica `ativo = false` (nada é apagado).
+- ✅ Leitura só do Professor Administrador (RLS); gravação só pelo conector. Sem conector (local ou
+  outra IA): avisar o usuário que a cópia ficou para a próxima sessão com banco.
+- ⛔ Os arquivos de regras são publicados: nada de senha, chave, gabarito nem dado de aluno neles.
 
 ---
 

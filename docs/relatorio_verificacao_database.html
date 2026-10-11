@@ -817,6 +817,28 @@
       </table>
     </div>
 
+    <h2>🗄️ Atualização 2026-10-11 — Regras no banco (cópia do repositório)</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-11-regras-no-banco.sql</code> (aplicado em 2026-10-11) · Cópia: <code>scripts/regras/sincronizar_regras.py</code></p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>regra_documento</td>
+          <td>Tabela (RLS)</td>
+          <td>Cada arquivo de regras inteiro (CLAUDE.md, docs/regras/, histórico): versão, conteúdo, md5 e commit; leitura só do Professor Administrador; gravação só pelo conector</td>
+        </tr>
+        <tr>
+          <td>regra_secao</td>
+          <td>Tabela (RLS)</td>
+          <td>Uma linha por seção (## e ###) de cada arquivo, com nível, título, seção pai, conteúdo e md5; seção que sumiu fica inativa</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🗂️ Atualização 2026-10-11 — Fila tasks do agendador único</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-11-tasks-fila-agendador.sql</code> (aplicado em 2026-10-11)</p>

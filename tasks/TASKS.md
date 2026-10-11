@@ -339,4 +339,19 @@ do usuário, na página `tasks.html`.
 
 ---
 
-**Última atualização:** 2026-10-11 06:07 (#25 dividida em 22 sub-tasks)
+### #26-55a91111-02ce-4cb1: Regras no banco (regra_documento e regra_secao) — pedida em 2026-10-11 06:21:48
+
+**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 144-aff33423 (fonte única).
+**Prioridade:** 🟠 Alta · **Plano:** [docs/regras-no-banco.md](../docs/regras-no-banco.md).
+
+Pedido: "Faça os 2, inclusive o regra por seção" — cópia das regras do repositório (`CLAUDE.md` e
+arquivos de regras) no Supabase, inteiras (`regra_documento`) e por seção (`regra_secao`),
+conferidas pelo md5 com `scripts/regras/sincronizar_regras.py`.
+
+- [x] Tabelas, script, regra no `CLAUDE.md` e passo na rotina.
+- [ ] Primeira cópia e `conferir` sem diferenças.
+- [ ] Aceite do usuário.
+
+---
+
+**Última atualização:** 2026-10-11 06:28 (tarefa #26 adicionada)
