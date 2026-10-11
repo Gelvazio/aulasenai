@@ -32,6 +32,14 @@ que escolhiam sozinhas a próxima aula (e o `TAREFA_AGENDADA.md` na raiz, que nu
 - ✅ **`finalizar_task(id, status, resultado, pr_url, commit_sha)`** fecha a task com `concluida`,
   `recusada` ou `erro` (`erro` com tentativas sobrando volta a `pendente` e é tentada na hora
   seguinte).
+- ✅ **Ordem e dependências** (2026-10-11 06:07:25, pedido do usuário): cada task tem **`ordem`** (posição na
+  fila) e **`task_dependente`** (ids das tasks de que ela depende). A `pegar_proxima_task` só pega
+  uma task quando **todas as dependentes estão `concluida`**, na ordem prioridade → `ordem` →
+  criação. Dependência inexistente ou da própria task é recusada pelo banco.
+- ✅ **Tarefa grande = várias sub-tasks pequenas**, uma por vez e em ordem: cada sub-task depende da
+  anterior (cadeia) e a tarefa-mãe depende de todas. Título `#NN.MM — …` (ex.: `#25.01`).
+- ✅ **Etapa do usuário** (aprovação, aceite, teste): sub-task com título `👤 …`, **desligada**
+  (`executar = false`); o professor a marca concluída na página (`✅ Concluir`) e a fila segue.
 - ⛔ As duas funções não ficam na API (só o conector do Supabase as chama); a página nunca põe nem
   tira uma task de `em_execucao`.
 

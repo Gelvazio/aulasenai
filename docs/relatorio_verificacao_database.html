@@ -832,6 +832,16 @@
           <td>Fila do agendador único: código, origem, título, instrução, prioridade, ON/OFF, executar após, status, tentativas, trava, resultado, PR; só o Professor Administrador lê e grava; sem DELETE</td>
         </tr>
         <tr>
+          <td>tasks.ordem / tasks.task_dependente</td>
+          <td>Colunas</td>
+          <td>Posição na fila e ids das tasks de que ela depende (só começa com todas concluídas)</td>
+        </tr>
+        <tr>
+          <td>tasks_validar_dependencias_trg</td>
+          <td>Trigger</td>
+          <td>Dependências sem repetição, existentes e diferentes da própria task</td>
+        </tr>
+        <tr>
           <td>tasks_preencher_trg</td>
           <td>Trigger</td>
           <td>Código TASK-NNNN, arquivo em tasks/fila/, datas e auth.uid()</td>
@@ -844,7 +854,7 @@
         <tr>
           <td>pegar_proxima_task(text)</td>
           <td>Função (security definer)</td>
-          <td>Pega 1 task ligada (skip locked) e trava por 90 min; sem execução pela API</td>
+          <td>Pega 1 task ligada com as dependentes concluídas (prioridade, ordem, criação; skip locked) e trava por 90 min; sem execução pela API</td>
         </tr>
         <tr>
           <td>finalizar_task(bigint, text, text, text, text)</td>

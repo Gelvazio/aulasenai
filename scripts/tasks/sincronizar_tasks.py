@@ -33,15 +33,20 @@ PASTA_FILA = Path("tasks/fila")
 PADRAO_TITULO = re.compile(r"^### (#\d+(?:-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4})?):\s*(.+)$")
 STATUS_ABERTOS = ("pendente", "recusada", "erro")
 SEPARADOR_COMANDOS = "\n-- ----- comando -----\n"
+# Datas no horário de Brasília e no formato do arquivo (o `conferir` compara o texto exato).
 CONSULTA_LINHAS = (
-    "select coalesce(json_agg(t order by t.id), '[]'::json) as linhas from public.tasks t;"
+    "select coalesce(json_agg(to_jsonb(t) || jsonb_build_object("
+    "'criado_em', to_char(t.criado_em at time zone 'America/Sao_Paulo', 'YYYY-MM-DD HH24:MI'), "
+    "'executar_apos', to_char(t.executar_apos at time zone 'America/Sao_Paulo', "
+    "'YYYY-MM-DD HH24:MI')) order by t.id), '[]'::json) as linhas from public.tasks t;"
 )
 CAMPOS_ARQUIVO = (
-    ("Código", "codigo"), ("Status", "status"), ("Prioridade", "prioridade"),
+    ("Código", "codigo"), ("Status", "status"), ("Ordem", "ordem"),
+    ("Depende das tasks (ids)", "task_dependente"), ("Prioridade", "prioridade"),
     ("Executar (ON/OFF)", "executar"), ("Executar após", "executar_apos"),
     ("Tentativas", "tentativas"), ("Máximo de tentativas", "max_tentativas"),
     ("Excluída", "excluido"), ("PR", "pr_url"), ("Commit", "commit_sha"),
-    ("Criada em", "criado_em"), ("Atualizada em", "atualizado_em"),
+    ("Criada em", "criado_em"),
 )
 
 
@@ -132,6 +137,8 @@ def formatar_valor(valor):
     """Formata um campo da tabela para o Markdown (vazio = "—", booleano = Sim/Não)."""
     if isinstance(valor, bool):
         return "Sim" if valor else "Não"
+    if isinstance(valor, list):
+        return ", ".join(str(item) for item in valor) or "—"
     return "—" if valor in (None, "") else str(valor)
 
 

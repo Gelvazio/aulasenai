@@ -8,7 +8,7 @@
 const TEXTO_SEM_LOGIN_TK = "Entre com a conta do Professor Administrador para gerenciar as tasks.";
 const TEXTO_SEM_ADMIN_TK = "Acesso restrito ao Professor Administrador.";
 const ROTA_LOGIN_TK = "login.html";
-const COLUNAS_TABELA_TK = 7;
+const COLUNAS_TABELA_TK = 8;
 const TAMANHO_RESUMO_TK = 140;
 const STATUS_EM_EXECUCAO_TK = "em_execucao";
 const STATUS_REABRIR_TK = ["recusada", "erro", "cancelada", "concluida"];
@@ -105,6 +105,39 @@ function faltaSincronizarTk(task) {
 }
 
 /**
+ * Lista as dependências da task que ainda não estão concluídas.
+ * @param {Object} task - Linha da tabela tasks.
+ * @returns {number[]} Ids das tasks que ainda bloqueiam esta.
+ */
+function dependenciasAbertasTk(task) {
+  return (task.task_dependente || []).map(Number).filter((id) => {
+    const dependente = estadoTk.tasks.find((outra) => outra.id === id);
+    return dependente?.status !== "concluida";
+  });
+}
+
+/**
+ * Cria a célula "Depende de": ids das dependências, com ⛓️ nas que ainda não terminaram.
+ * @param {Object} task - Linha da tabela tasks.
+ * @returns {HTMLTableCellElement} Célula.
+ */
+function criarCelulaDependenciasTk(task) {
+  const celula = criarElementoTk("td");
+  const ids = (task.task_dependente || []).map(Number);
+  if (!ids.length) {
+    celula.append(criarElementoTk("span", "tp-detalhe", "—"));
+    return celula;
+  }
+  const abertas = dependenciasAbertasTk(task);
+  celula.append(criarElementoTk("span", "tk-dependencias", ids.map((id) =>
+    (abertas.includes(id) ? "⛓️ " : "✅ ") + id).join(", ")));
+  if (abertas.length) {
+    celula.append(criarElementoTk("span", "tp-detalhe", "Aguardando " + abertas.length + " task(s)"));
+  }
+  return celula;
+}
+
+/**
  * Traduz o erro do banco em mensagem para o professor.
  * @param {Object} erro - Erro do Supabase.
  * @returns {string} Mensagem.
@@ -169,6 +202,10 @@ function criarBotoesAcaoTk(task) {
   if (task.status === STATUS_EM_EXECUCAO_TK) return botoes;
   botoes.push(criarBotaoTk({ texto: "✏️ Editar", classe, aoClicar: () => abrirModalTaskTk(task) }));
   if (task.status === "pendente") {
+    botoes.push(criarBotaoTk({ texto: "✅ Concluir", classe,
+      titulo: "Marca como concluída (ex.: aprovação ou aceite feito pelo professor)",
+      aoClicar: () => confirmarEGravarTk(task, { pergunta: "Marcar esta task como concluída?",
+        titulo: "Concluir task", campos: { status: "concluida" } }) }));
     botoes.push(criarBotaoTk({ texto: "🚫 Cancelar", classe: classe + " tp-botao-secundario",
       aoClicar: () => confirmarEGravarTk(task, { pergunta: "Cancelar esta task?",
         titulo: "Cancelar task", campos: { status: "cancelada" } }) }));
@@ -251,7 +288,9 @@ function criarLinhaTk(task) {
   const grupo = criarElementoTk("div", "tk-grupo-acoes");
   grupo.append(...criarBotoesAcaoTk(task));
   acoes.append(grupo);
-  linha.append(criarCelulaTaskTk(task), criarElementoTk("td", "", String(task.prioridade)), onOff,
+  const ordem = (task.ordem ?? "—") + " / P" + task.prioridade;
+  linha.append(criarCelulaTaskTk(task), criarElementoTk("td", "", ordem),
+    criarCelulaDependenciasTk(task), onOff,
     criarCelulaStatusTk(task), criarElementoTk("td", "tk-resultado", resumirTextoTk(task.resultado)),
     criarCelulaGithubTk(task), acoes);
   return linha;
@@ -283,9 +322,10 @@ function desenharTasksTk() {
   } else {
     corpo.replaceChildren(...visiveis.map(criarLinhaTk));
   }
-  const naFila = estadoTk.tasks.filter((t) => t.status === "pendente" && t.executar).length;
+  const naFila = estadoTk.tasks.filter((t) => t.status === "pendente" && t.executar);
+  const prontas = naFila.filter((t) => !dependenciasAbertasTk(t).length).length;
   elementoTk("tkResumo").textContent = visiveis.length + " de " + estadoTk.tasks.length +
-    " task(s) · " + naFila + " ligada(s) na fila";
+    " task(s) · " + naFila.length + " ligada(s) na fila · " + prontas + " pronta(s) para a IA";
 }
 
 /** Recarrega as tasks do banco e redesenha a tabela. */

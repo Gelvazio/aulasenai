@@ -50,10 +50,23 @@ function abrirModalTaskTk(task) {
   elementoTk("tkInstrucao").readOnly = doRepositorio;
   elementoTk("tkPrioridade").value = String(task?.prioridade ?? PRIORIDADE_PADRAO_TK);
   elementoTk("tkExecutarApos").value = dataParaCampoTk(task?.executar_apos);
+  elementoTk("tkOrdem").value = task?.ordem ?? "";
+  elementoTk("tkDependentes").value = (task?.task_dependente || []).join(", ");
   elementoTk("tkMaxTentativas").value = String(task?.max_tentativas ?? MAX_TENTATIVAS_PADRAO_TK);
   elementoTk("tkExecutar").checked = task ? task.executar : true;
   elementoTk("tkModalTask").hidden = false;
   elementoTk(doRepositorio ? "tkPrioridade" : "tkTitulo").focus();
+}
+
+/**
+ * Lê os ids digitados em "Depende das tasks" (números separados por vírgula ou espaço).
+ * @returns {number[]|null} Ids, ou null se algum valor não for um número inteiro positivo.
+ */
+function lerDependentesTk() {
+  const partes = elementoTk("tkDependentes").value.split(/[\s,;]+/).filter(Boolean);
+  const ids = partes.map(Number);
+  if (ids.some((id) => !Number.isInteger(id) || id < 1)) return null;
+  return [...new Set(ids)];
 }
 
 /**
@@ -63,7 +76,10 @@ function abrirModalTaskTk(task) {
  */
 function lerFormularioTaskTk(comTexto) {
   const executarApos = elementoTk("tkExecutarApos").value;
+  const ordem = elementoTk("tkOrdem").value;
   const campos = {
+    ordem: ordem === "" ? null : Number(ordem),
+    task_dependente: lerDependentesTk(),
     prioridade: Number(elementoTk("tkPrioridade").value),
     executar_apos: executarApos ? new Date(executarApos).toISOString() : null,
     max_tentativas: Number(elementoTk("tkMaxTentativas").value) || MAX_TENTATIVAS_PADRAO_TK,
@@ -82,6 +98,11 @@ async function salvarTaskTk(evento) {
   evento.preventDefault();
   const task = estadoModaisTk.taskEditando;
   const campos = lerFormularioTaskTk(task?.origem !== "repositorio");
+  if (campos.task_dependente === null) {
+    await mostrarPopup("Em \"Depende das tasks\", use só ids (números) separados por vírgula.",
+      { tipo: "aviso", titulo: "Task" });
+    return;
+  }
   if (campos.titulo === "" || campos.instrucao === "") {
     await mostrarPopup("Preencha o título e a instrução.", { tipo: "aviso", titulo: "Task" });
     return;
@@ -119,6 +140,8 @@ function abrirDetalheTk(task) {
   adicionarDetalheTk(lista, "Status", ROTULOS_STATUS_TK[task.status] || task.status);
   adicionarDetalheTk(lista, "Ligada", task.executar ? "Sim (ON)" : "Não (OFF)");
   adicionarDetalheTk(lista, "Prioridade", String(task.prioridade));
+  adicionarDetalheTk(lista, "Ordem", task.ordem == null ? "" : String(task.ordem));
+  adicionarDetalheTk(lista, "Depende de", (task.task_dependente || []).join(", "));
   adicionarDetalheTk(lista, "Executar após", formatarDataTk(task.executar_apos));
   adicionarDetalheTk(lista, "Tentativas", task.tentativas + "/" + task.max_tentativas);
   adicionarDetalheTk(lista, "Origem", task.origem === "repositorio" ? "tasks/TASKS.md" : "Página");

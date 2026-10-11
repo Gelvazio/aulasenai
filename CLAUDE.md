@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-11 06:01:03
+**Versão das regras:** 2026-10-11 06:07:25
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,10 +8,10 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-11 06:07:25 | **Ordem e dependências na fila `tasks`:** colunas `ordem` e `task_dependente` (ids das tasks de que ela depende); a `pegar_proxima_task` só pega uma task com **todas as dependentes concluídas** (prioridade → ordem → criação); tarefa grande vira **sub-tasks pequenas em cadeia** (`#NN.MM`), uma por vez; etapas do usuário (`👤`) ficam desligadas e o professor as conclui na `tasks.html` (✅ Concluir); a #25 foi dividida em 22 sub-tasks (TASK-0019 a TASK-0040) — [`docs/regras/tarefas-agendadas.md`](docs/regras/tarefas-agendadas.md) |
 | 2026-10-11 06:01:03 | **Atividades só no banco, layout global e pasta da matéria só com conteúdo:** as questões da objetiva e da prática (enunciado, alternativas, gabarito, tópicos e padrão de resposta) ficam **só no banco**; objetiva e prática usam **um layout global** (nada de página criada do zero em cada aula); as pastas das matérias/aulas têm **só conteúdo (Markdown), nenhum HTML** — tudo vem do global; migração das matérias existentes na tarefa #25-b3e29764-940b-4a82 (plano e aprovação) — "🗃️ REGRA — ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA SÓ COM CONTEÚDO" |
 | 2026-10-11 05:57:00 | **Agendador único lendo a fila `tasks`:** as tarefas agendadas viram **1 rotina por hora** que pega no máximo 1 task da tabela `tasks` do Supabase (`pegar_proxima_task`), decide se executa (ou recusa com o motivo) e grava o resultado (`finalizar_task`); fila vazia = não faz nada; cadastro na página `tasks.html` (menu TASKS, só o administrador); **toda task existe na tabela e no GitHub** (`tasks/TASKS.md` ou `tasks/fila/TASK-NNNN.md`, script `scripts/tasks/sincronizar_tasks.py`); substitui as 6 rotinas paralelas e a escolha automática de aula (#24; #22 e #23 canceladas) — "⏰ TAREFAS AGENDADAS" e [`docs/regras/tarefas-agendadas.md`](docs/regras/tarefas-agendadas.md) |
 | 2026-10-11 05:12:00 | **Tarefas agendadas:** regra nova [`docs/regras/tarefas-agendadas.md`](docs/regras/tarefas-agendadas.md) — as rotinas que geram aulas sozinhas seguem as regras do projeto (branch própria + PR, nunca push direto na `main`; aula escolhida pelo `STATUS-AULAS.md` na ordem do `tasks/ORDEM-MATERIAS.md`; trava em `tasks/RECADOS.md`; log em `agendamento_tarefa_logs`); o `TAREFA_AGENDADA.md` na raiz não é usado — "⏰ TAREFAS AGENDADAS" |
-| 2026-10-10 22:19:46 | **Regra global de matérias:** tudo o que define como a ITIC é feita virou a regra única [`docs/regras/materias.md`](docs/regras/materias.md) (estrutura, ementa e `materia.json`, aulas, objetiva, prática, avaliações e média final, índice e menu, apostila, 5 status, banco e seeds, ordem de construção, critério de pronto, exceções); em vez de consultar a ITIC como modelo, consultar a regra — "🧱 REGRA GLOBAL DE MATÉRIAS" (substitui "MATÉRIA MODELO") |
 | 2026-10-10 16:40:55 | **Todos os arquivos de status existem sempre, em todas as matérias (inclusive IGNORAR):** `STATUS_MATERIA.md`, `AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` e `STATUS-EMENTAS.md`; o `gerar_status_materia.py` cria os que faltam antes de gerar — "🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS" |
 
 ---
@@ -536,6 +536,9 @@ e decidir se executa algo ou não" e "toda task deve existir na tabela e no GitH
   com `scripts/tasks/sincronizar_tasks.py` em toda execução da rotina e ao criar, concluir ou
   cancelar tarefa do `TASKS.md` (no mesmo commit). Texto da tarefa: vale o GitHub; status e
   ON/OFF: vale a tabela; estado do projeto: continua no `tasks/STATUS.md`.
+- ✅ **Ordem e dependências** (2026-10-11 06:07:25): `tasks.ordem` e `tasks.task_dependente` (ids); só começa a
+  task com todas as dependentes concluídas. Tarefa grande = sub-tasks pequenas em cadeia
+  (`#NN.MM`), uma por vez; etapa do usuário (`👤`) fica desligada e ele conclui na página.
 - ⛔ **Nunca push direto na `main`**: branch da sessão + PR juntado pela própria execução.
 - ✅ Regras das rotinas só em `docs/regras/` (o `TAREFA_AGENDADA.md` na raiz não é usado); o prompt
   da rotina só aponta para elas. Log de cada execução em `agendamento_tarefa_logs`.
