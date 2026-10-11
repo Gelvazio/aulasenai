@@ -235,6 +235,9 @@ ATIVIDADES_BANCO_DADOS = [
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-19-50-QUESTOES.md"),
     (20, "Projeto Integrador: Banco Documentado para o Back-End", DATA_PROVISORIA,
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-20-50-QUESTOES.md"),
+    # Avaliação Objetiva 02 (aulas 11 a 20), aplicada na aula 20; seed próprio das avaliações.
+    (20, "Projeto Integrador: Banco Documentado para o Back-End", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/AVALIACAO-OBJETIVA-02-QUESTOES.md"),
 ]
 
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.
