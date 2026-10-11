@@ -1675,3 +1675,9 @@ Matéria: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO_DE_DADOS/` · Plano: `do
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 127.1 | Regra removida do `CLAUDE.md` do projeto (seção "LEIA PRIMEIRO — Grafo" vira "GRAFO só quando o usuário pedir"), do `~/.claude/CLAUDE.md`, do `CLAUDE-DOCS-BEFORE-EVERY-TASK.md` e das cópias em `.claude/regras-globais/`; a skill `/graphify` continua | ✅ Concluído | 2026-10-09 18:08 | `grep graphify` nos arquivos de regras; cópias iguais às globais |
+
+## Etapa 128 — Corrigir referências ao caminho antigo do projeto (pedido em 2026-10-11)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 128.1 | Atualizar `C:\fontes\aulas-senai` para `C:\fontes\aulasenai` nos arquivos do projeto; corrigir o destino do atalho `INTRODUCAO-ITIC.lnk` | ✅ Concluído | 2026-10-11 12:10 | Busca literal sem ocorrências do caminho antigo nos arquivos, fora deste registro de status; destino do atalho aponta para a pasta existente `GERADOR-AULAS\MATERIAS-GERAIS\INTRODUCAO-ITIC`; sem testes executados |
+

@@ -24,12 +24,12 @@
 ## 🔍 Análise da Situação
 
 ### Arquivo Existente
-- **Localização:** `C:\fontes\aulas-senai\MATERIAIS\TECNICO-INFORMATICA-INTERNET\TESTES DE FRONTEND\EMENTA-CHALKIE-AI.md`
+- **Localização:** `C:\fontes\aulasenai\MATERIAIS\TECNICO-INFORMATICA-INTERNET\TESTES DE FRONTEND\EMENTA-CHALKIE-AI.md`
 - **Tamanho Atual:** 31.786 caracteres (226% do mínimo solicitado)
 - **Status:** ✅ Já atende ao requisito
 
 ### Arquivo Solicitado (Raiz do Projeto)
-- **Localização Desejada:** `C:\fontes\aulas-senai\EMENTA-CHALKIE-AI.md` (raiz)
+- **Localização Desejada:** `C:\fontes\aulasenai\EMENTA-CHALKIE-AI.md` (raiz)
 - **Status:** ❓ Não existe na raiz do projeto
 - **Ação Necessária:** Criar cópia expandida na raiz
 

@@ -27,13 +27,13 @@
 
 **Status:** ⬜ Pendente
 
-**Arquivo:** Ler `C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\SlidesDigitalSkills.md`
+**Arquivo:** Ler `C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\SlidesDigitalSkills.md`
 
 **Ação:** Extrair conteúdo de todos os 49 slides para análise
 
 **Verificação:**
 ```powershell
-Test-Path "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\SlidesDigitalSkills.md"
+Test-Path "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\SlidesDigitalSkills.md"
 ```
 
 Esperado: `True`
@@ -44,13 +44,13 @@ Esperado: `True`
 
 **Status:** ⬜ Pendente
 
-**Arquivo:** Ler `C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\EMENTA-DIGITAL-SKILLS.md`
+**Arquivo:** Ler `C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\EMENTA-DIGITAL-SKILLS.md`
 
 **Ação:** Extrair conteúdos programáticos esperados
 
 **Verificação:**
 ```powershell
-Test-Path "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\EMENTA-DIGITAL-SKILLS.md"
+Test-Path "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\EMENTA-DIGITAL-SKILLS.md"
 ```
 
 Esperado: `True`
@@ -106,7 +106,7 @@ Criar matriz de cobertura com:
 
 **Status:** ⬜ Pendente
 
-**Arquivo:** Criar `C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\RELATORIO-VALIDACAO-SLIDES.md`
+**Arquivo:** Criar `C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\RELATORIO-VALIDACAO-SLIDES.md`
 
 **Ação:** Documentar análise com:
 - Resumo executivo
@@ -123,7 +123,7 @@ Criar matriz de cobertura com:
 **Ação:** Adicionar arquivo ao git
 
 ```powershell
-cd "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS"
+cd "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS"
 git add RELATORIO-VALIDACAO-SLIDES.md docs/validar-slides-vs-ementa.md
 git commit -m "docs: validar cobertura de conteúdos — slides vs ementa
 

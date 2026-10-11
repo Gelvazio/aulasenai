@@ -4,7 +4,7 @@
 Centralizar configuração e funções de comunicação com a API REST do Supabase (banco de dados PostgreSQL).
 
 ## Localização
-`C:\fontes\aulas-senai\sistema\js\supabase.js`
+`C:\fontes\aulasenai\sistema\js\supabase.js`
 
 ## Responsabilidades
 - ✅ Armazenar credenciais de conexão (URL, API Key)

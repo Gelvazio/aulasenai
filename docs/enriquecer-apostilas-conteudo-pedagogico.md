@@ -439,7 +439,7 @@ function criarQuizComparativo() {
 
 ```powershell
 # Navegar até o diretório
-cd C:\fontes\aulas-senai
+cd C:\fontes\aulasenai
 
 # Stage todas as alterações
 git add .

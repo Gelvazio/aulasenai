@@ -13,7 +13,7 @@ Ao editar uma matéria, a relação entre matéria e curso **NÃO é salva** na 
 ## Análise
 
 ### Arquivo Afetado
-- **Localização:** `C:\fontes\aulas-senai\js\materia.js`
+- **Localização:** `C:\fontes\aulasenai\js\materia.js`
 - **Funções afetadas:**
   - `editarMateria()` (linha 78-102)
   - `salvarMateria()` (linha 108-139)
@@ -78,7 +78,7 @@ async function salvarMateria() {
   - Campo: `cursoid` (PK) ✅
   - Campo: `materiaid` (PK) ✅
   - Sem campo `ordem` ✅
-**Arquivo:** `C:\fontes\aulas-senai\docs\database.md:90-113`
+**Arquivo:** `C:\fontes\aulasenai\docs\database.md:90-113`
 **Resultado:** ✅ Schema confirmado
 
 ### ✅ Passo 2: Corrigir Query em `editarMateria()` (Linha 90)
@@ -99,7 +99,7 @@ if (cursosMateria && cursosMateria.length > 0) {
 ```
 
 **Verificação:** Query retorna curso correto ao editar
-**Arquivo:** `C:\fontes\aulas-senai\js\materia.js:90-92`
+**Arquivo:** `C:\fontes\aulasenai\js\materia.js:90-92`
 **Resultado:** ✅ Query corrigida
 
 ### ✅ Passo 3: Adicionar Salvamento em `cursomateria()`
@@ -138,7 +138,7 @@ if (cursoId && materiaId) {
 **Verificação:** 
 - Tabela `cursomateria` recebe novo registro ✅
 - Relação persiste após refresh ✅
-**Arquivo:** `C:\fontes\aulas-senai\js\materia.js:131-155`
+**Arquivo:** `C:\fontes\aulasenai\js\materia.js:131-155`
 **Resultado:** ✅ Salvamento adicionado com tratamento de erro
 
 ### ⬜ Passo 4: Testar Cenários

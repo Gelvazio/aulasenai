@@ -6,7 +6,7 @@ import os
 import re
 from pathlib import Path
 
-PROJECT_ROOT = Path("C:/fontes/aulas-senai")
+PROJECT_ROOT = Path("C:/fontes/aulasenai")
 MATERIAIS_DIR = PROJECT_ROOT / "MATERIAIS"
 TEMPLATE_PATH = PROJECT_ROOT / "TEMPLATE-EMENTA-CHALKIE-AI.md"
 

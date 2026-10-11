@@ -215,9 +215,9 @@ dashboard-resolucoes.html
 
 ## 📝 Notas
 
-- Planilha: `C:\fontes\aulas-senai\DISPONIBILIDADES\Resoluções_Cursos Técnico.xlsx`
+- Planilha: `C:\fontes\aulasenai\DISPONIBILIDADES\Resoluções_Cursos Técnico.xlsx`
 - 51 cursos + 1 aba índice
-- Dados vão para: `C:\fontes\aulas-senai\DISPONIBILIDADES\`
+- Dados vão para: `C:\fontes\aulasenai\DISPONIBILIDADES\`
 - Dashboard será standalone (sem dependências externas além de HTML5/CSS3/JS)
 
 ---

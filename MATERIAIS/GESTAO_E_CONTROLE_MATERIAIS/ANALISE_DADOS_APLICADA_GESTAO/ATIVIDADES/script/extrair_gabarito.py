@@ -7,7 +7,7 @@ Identifica questoes, alternativas e resposta correta
 from docx import Document
 import re
 
-PASTA = r"C:\fontes\aulas-senai\MATERIAIS\GESTAO_E_CONTROLE_MATERIAIS\ANALISE_DADOS_APLICADA_GESTAO\ATIVIDADES"
+PASTA = r"C:\fontes\aulasenai\MATERIAIS\GESTAO_E_CONTROLE_MATERIAIS\ANALISE_DADOS_APLICADA_GESTAO\ATIVIDADES"
 
 def extrair_gabarito(docx_path):
     """Extrai questoes e respostas do DOCX"""

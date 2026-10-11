@@ -4,7 +4,7 @@
 Gerenciar operações CRUD (Create, Read, Update, Delete) de **Matérias** no sistema.
 
 ## Localização
-`C:\fontes\aulas-senai\sistema\js\materia.js`
+`C:\fontes\aulasenai\sistema\js\materia.js`
 
 ## Responsabilidades
 - ✅ Listar matérias (tabela, filtros, ordenação)

@@ -9,7 +9,7 @@ Quando usuário seleciona um curso no modal de aulas, aparece mensagem:
 ## Análise Esperada
 
 ### Arquivo Afetado
-- **Localização:** `C:\fontes\aulas-senai\js\aulas.js`
+- **Localização:** `C:\fontes\aulasenai\js\aulas.js`
 - **Função:** `atualizarMateriasParaAula()`
 - **Evento:** `onchange` do select `#aulaCurso`
 
@@ -39,7 +39,7 @@ Quando usuário seleciona um curso no modal de aulas, aparece mensagem:
 **Status:** Concluído  
 **Ação:** Ler linhas 102-134 de `js/aulas.js`  
 **Verificação:** Query, campos, tratamento de erro  
-**Arquivo:** `C:\fontes\aulas-senai\js\aulas.js:102-134`
+**Arquivo:** `C:\fontes\aulasenai\js\aulas.js:102-134`
 **Resultado:** ✅ Função encontrada, query investigada
 
 ### ✅ Passo 3: Verificar Nomes de Colunas
@@ -50,7 +50,7 @@ Quando usuário seleciona um curso no modal de aulas, aparece mensagem:
   - `cursomateria.materiaid` ✅ (NÃO `materia_id`)
   - Join com `materia(id, descricao)` ✅
   - **⚠️ PROBLEMA ENCONTRADO:** Campo `ordem` não existe na tabela!
-**Arquivo:** `C:\fontes\aulas-senai\docs\database.md`
+**Arquivo:** `C:\fontes\aulasenai\docs\database.md`
 **Resultado:** 🔴 Query tenta `ORDER BY ordem` que não existe
 
 ### ⬜ Passo 4: Verificar RLS e JWT
@@ -59,19 +59,19 @@ Quando usuário seleciona um curso no modal de aulas, aparece mensagem:
 **Verificação:** 
   - Tabela `cursomateria` tem RLS habilitado?
   - JWT sendo passado no header?  
-**Arquivo:** `C:\fontes\aulas-senai\docs\ORIENTACAO_JS_SUPABASE.md`
+**Arquivo:** `C:\fontes\aulasenai\docs\ORIENTACAO_JS_SUPABASE.md`
 
 ### ⬜ Passo 5: Validar HTML
 **Status:** Pendente  
 **Ação:** Buscar select `#aulaMateria` em `dashboard.html` ou `uc.html`  
 **Verificação:** Elemento existe e está visível?  
-**Arquivo:** `C:\fontes\aulas-senai\dashboard.html` ou `uc.html`
+**Arquivo:** `C:\fontes\aulasenai\dashboard.html` ou `uc.html`
 
 ### ✅ Passo 6: Corrigir Bug
 **Status:** Concluído  
 **Ação:** Editar `js/aulas.js` conforme causa identificada  
 **Verificação:** Remover `&order=ordem` da query (linha 115)
-**Arquivo:** `C:\fontes\aulas-senai\js\aulas.js`
+**Arquivo:** `C:\fontes\aulasenai\js\aulas.js`
 **Resultado:** ✅ Query corrigida
 - **Antes:** `...&cursoid=eq.${cursoId}&order=ordem`
 - **Depois:** `...&cursoid=eq.${cursoId}`

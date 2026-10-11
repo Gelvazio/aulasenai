@@ -41,7 +41,7 @@ Baixar o livro disponível no link `https://estantedelivros.senai.br/view/1s88eC
   - Procurar botão "Baixar", "Download", "Exportar" ou similar
   - Se houver opções de formato, escolher a melhor (preferência: PDF)
   - Salvar o arquivo na pasta apropriada do projeto
-- **Arquivo:** `C:\fontes\aulas-senai\MATERIAIS\` (ou subpasta apropriada)
+- **Arquivo:** `C:\fontes\aulasenai\MATERIAIS\` (ou subpasta apropriada)
 - **Verificação:** Arquivo foi salvo com sucesso e tamanho > 0 KB
 
 ### Etapa 3: Documentar o Download
@@ -52,7 +52,7 @@ Baixar o livro disponível no link `https://estantedelivros.senai.br/view/1s88eC
   - Local salvo
   - Tamanho
   - Uso/propósito no projeto
-- **Arquivo:** `C:\fontes\aulas-senai\docs\` (novo ou existente índice)
+- **Arquivo:** `C:\fontes\aulasenai\docs\` (novo ou existente índice)
 - **Verificação:** Documentação atualizada e link acessível
 
 ---

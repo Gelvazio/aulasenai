@@ -449,7 +449,7 @@ Este sistema monitora e gera aulas para os seguintes cursos:
 Cada curso segue padrão de pastas:
 
 ```
-C:\fontes\aulas-senai\MATERIAIS\
+C:\fontes\aulasenai\MATERIAIS\
 ├── GESTAO_E_CONTROLE_MATERIAIS/
 │   ├── EMENTA-*.md
 │   ├── AULAS/
@@ -676,7 +676,7 @@ Para dúvidas ou problemas:
 O grafo de conhecimento do projeto existe em **um único lugar**:
 
 ```
-C:\fontes\aulas-senai/graphify-out/
+C:\fontes\aulasenai/graphify-out/
 ```
 
 ### Onde buscar as informações
@@ -696,7 +696,7 @@ A atualização **também acontece apenas na raiz**. Rodar o graphify dentro de
 uma subpasta cria um segundo grafo, parcial e desatualizado:
 
 ```bash
-cd C:\fontes\aulas-senai
+cd C:\fontes\aulasenai
 C:\Users\gelva\.local\bin\graphify.exe update .
 ```
 

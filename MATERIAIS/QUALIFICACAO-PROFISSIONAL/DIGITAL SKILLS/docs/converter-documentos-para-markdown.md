@@ -25,14 +25,14 @@
 
 **Status:** ⬜ Pendente
 
-**Arquivo:** Ler `C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\DIGITAL-SKILLS.docx`
+**Arquivo:** Ler `C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\DIGITAL-SKILLS.docx`
 
 **Ação:** Extrair o conteúdo completo do documento DOCX usando Python (python-docx)
 
 **Verificação:**
 ```powershell
 # Verificar que o arquivo DOCX existe
-Test-Path "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\DIGITAL-SKILLS.docx"
+Test-Path "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\DIGITAL-SKILLS.docx"
 ```
 
 Esperado: `True`
@@ -43,7 +43,7 @@ Esperado: `True`
 
 **Status:** ⬜ Pendente
 
-**Arquivo:** Criar `C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\DIGITAL-SKILLS.md`
+**Arquivo:** Criar `C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\DIGITAL-SKILLS.md`
 
 **Ação:** Converter conteúdo extraído para Markdown com:
 - Títulos (# ## ### conforme hierarquia)
@@ -55,7 +55,7 @@ Esperado: `True`
 
 **Verificação:**
 ```powershell
-Test-Path "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\DIGITAL-SKILLS.md"
+Test-Path "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\DIGITAL-SKILLS.md"
 ```
 
 Esperado: Arquivo criado com conteúdo completo
@@ -66,13 +66,13 @@ Esperado: Arquivo criado com conteúdo completo
 
 **Status:** ⬜ Pendente
 
-**Arquivo:** Ler `C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\Ficha de Produto Digital Skills.pdf`
+**Arquivo:** Ler `C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\Ficha de Produto Digital Skills.pdf`
 
 **Ação:** Extrair texto e estrutura do PDF
 
 **Verificação:**
 ```powershell
-Test-Path "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\Ficha de Produto Digital Skills.pdf"
+Test-Path "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\Ficha de Produto Digital Skills.pdf"
 ```
 
 Esperado: `True`
@@ -83,13 +83,13 @@ Esperado: `True`
 
 **Status:** ⬜ Pendente
 
-**Arquivo:** Criar `C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\Ficha de Produto Digital Skills.md`
+**Arquivo:** Criar `C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\Ficha de Produto Digital Skills.md`
 
 **Ação:** Converter conteúdo PDF para Markdown com estrutura clara
 
 **Verificação:**
 ```powershell
-Test-Path "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\Ficha de Produto Digital Skills.md"
+Test-Path "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\Ficha de Produto Digital Skills.md"
 ```
 
 Esperado: Arquivo criado com conteúdo completo
@@ -103,7 +103,7 @@ Esperado: Arquivo criado com conteúdo completo
 **Ação:** Adicionar ambos os arquivos .md ao versionamento com git
 
 ```powershell
-cd "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS"
+cd "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS"
 git add DIGITAL-SKILLS.md "Ficha de Produto Digital Skills.md"
 git commit -m "docs: converter DIGITAL-SKILLS.docx e Ficha de Produto para Markdown"
 ```

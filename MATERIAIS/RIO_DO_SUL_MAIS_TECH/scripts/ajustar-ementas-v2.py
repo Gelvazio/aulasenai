@@ -16,8 +16,8 @@ MATERIAS = {
     "REFORCO_MATEMATICA_E_RACIOCINIO_LOGICO": 644,
 }
 
-BASE_PATH = r"C:\fontes\aulas-senai\MATERIAIS\RIO_DO_SUL_MAIS_TECH"
-BACKUP_PATH = r"C:\fontes\aulas-senai\MATERIAIS\RIO_DO_SUL_MAIS_TECH"
+BASE_PATH = r"C:\fontes\aulasenai\MATERIAIS\RIO_DO_SUL_MAIS_TECH"
+BACKUP_PATH = r"C:\fontes\aulasenai\MATERIAIS\RIO_DO_SUL_MAIS_TECH"
 
 def restaurar_original(materia):
     """Restaura versão original do GitHub/git."""

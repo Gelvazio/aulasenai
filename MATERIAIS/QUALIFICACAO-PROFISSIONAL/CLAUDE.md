@@ -1,6 +1,6 @@
 # 📚 QUALIFICACAO-PROFISSIONAL — Programa SENAI
 
-**Localização:** `C:\fontes\aulas-senai\sistema\QUALIFICACAO-PROFISSIONAL\`
+**Localização:** `C:\fontes\aulasenai\sistema\QUALIFICACAO-PROFISSIONAL\`
 
 ---
 

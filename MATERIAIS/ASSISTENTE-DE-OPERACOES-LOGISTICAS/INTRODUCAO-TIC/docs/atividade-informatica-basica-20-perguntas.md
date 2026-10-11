@@ -58,7 +58,7 @@ Tipos: múltipla escolha, verdadeiro/falso, associação, ordenação e discursi
 **Verificação:**
 
 ```powershell
-(Select-String -Path "C:\fontes\aulas-senai\MATERIAIS\ASSISTENTE-DE-OPERACOES-LOGISTICAS\INTRODUCAO-TIC\ATIVIDADES\ATIVIDADES-INFORMATICA-BASICA.html" -Pattern 'class="aula-badge">QUESTÃO').Count
+(Select-String -Path "C:\fontes\aulasenai\MATERIAIS\ASSISTENTE-DE-OPERACOES-LOGISTICAS\INTRODUCAO-TIC\ATIVIDADES\ATIVIDADES-INFORMATICA-BASICA.html" -Pattern 'class="aula-badge">QUESTÃO').Count
 ```
 
 Esperado: `20`.

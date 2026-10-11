@@ -6,7 +6,7 @@ import os
 import shutil
 from pathlib import Path
 
-PROJECT_ROOT = Path("C:/fontes/aulas-senai")
+PROJECT_ROOT = Path("C:/fontes/aulasenai")
 MATERIAIS_DIR = PROJECT_ROOT / "MATERIAIS"
 
 def find_all_ementas():

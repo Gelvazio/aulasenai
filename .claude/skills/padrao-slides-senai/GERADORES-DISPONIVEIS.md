@@ -61,7 +61,7 @@ python gerar_slides_com_fundo.py
 ```
 
 **Requisitos:**
-- Arquivo de imagem deve existir: `C:\fontes\aulas-senai\GERADOR-AULAS\TEMA-SENAI.png`
+- Arquivo de imagem deve existir: `C:\fontes\aulasenai\GERADOR-AULAS\TEMA-SENAI.png`
 - Tamanho recomendado: 1920×1440px (ou proporcional)
 
 **Estrutura de Slide:**
@@ -157,7 +157,7 @@ Conteúdo...
 
 **Arquivo:** `SlidesDigitalSkillsGemini.pptx`
 
-- Localização: `C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\`
+- Localização: `C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\`
 - Tamanho típico: 0.10 – 0.15 MB
 - Compatível com: PowerPoint 2010+, LibreOffice Impress, Google Slides
 
@@ -255,7 +255,7 @@ Gerador: gerar_slides_com_fundo.py
 **Solução:**
 ```bash
 # Verificar se o arquivo existe
-ls C:\fontes\aulas-senai\GERADOR-AULAS\TEMA-SENAI.png
+ls C:\fontes\aulasenai\GERADOR-AULAS\TEMA-SENAI.png
 
 # Se não existir, usar gerador simples
 python gerar_slides_simples.py

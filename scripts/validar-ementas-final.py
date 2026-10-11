@@ -5,7 +5,7 @@
 import os
 from pathlib import Path
 
-PROJECT_ROOT = Path("C:/fontes/aulas-senai")
+PROJECT_ROOT = Path("C:/fontes/aulasenai")
 MATERIAIS_DIR = PROJECT_ROOT / "MATERIAIS"
 
 PADRAO_MIN = 14800

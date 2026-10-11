@@ -2,7 +2,7 @@
 
 **Objetivo:** Criar arquivo `EMENTA-CHALKIE-AI.md` com mínimo 15.000 caracteres sobre ementa de Análise de Dados Aplicada à Gestão de Materiais
 
-**Localização:** `C:\fontes\aulas-senai\MATERIAIS\GESTAO_E_CONTROLE_MATERIAIS\ANALISE_DADOS_APLICADA_GESTAO\EMENTA-CHALKIE-AI.md`
+**Localização:** `C:\fontes\aulasenai\MATERIAIS\GESTAO_E_CONTROLE_MATERIAIS\ANALISE_DADOS_APLICADA_GESTAO\EMENTA-CHALKIE-AI.md`
 
 **Tech Stack:** Markdown, estrutura educacional, IA pedagógica
 
@@ -145,7 +145,7 @@
 
 **Caminho Completo:** 
 ```
-C:\fontes\aulas-senai\MATERIAIS\GESTAO_E_CONTROLE_MATERIAIS\ANALISE_DADOS_APLICADA_GESTAO\EMENTA-CHALKIE-AI.md
+C:\fontes\aulasenai\MATERIAIS\GESTAO_E_CONTROLE_MATERIAIS\ANALISE_DADOS_APLICADA_GESTAO\EMENTA-CHALKIE-AI.md
 ```
 
 **Pré-requisitos:**

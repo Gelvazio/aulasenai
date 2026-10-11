@@ -28,7 +28,7 @@
 
 **Status:** ⬜ Pendente
 
-**Arquivo:** Modificar `C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\SlidesDigitalSkills.md`
+**Arquivo:** Modificar `C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\SlidesDigitalSkills.md`
 
 **Ação:** Inserir novo slide (SLIDE 37A) sobre Claude Code após SLIDE 37 (Resultado Gemini):
 
@@ -143,7 +143,7 @@
 **Ação:** Adicionar todos os arquivos ao git
 
 ```powershell
-cd "C:\fontes\aulas-senai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS"
+cd "C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS"
 git add SlidesDigitalSkills.md EMENTA-DIGITAL-SKILLS.md RELATORIO-VALIDACAO-SLIDES.md docs/melhorar-slides-para-100-porcento.md
 git commit -m "feat: melhorar slides para 100% de cobertura da ementa
 

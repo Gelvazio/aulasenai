@@ -4,7 +4,7 @@
 Gerenciar operações CRUD (Create, Read, Update, Delete) de **Cursos** no sistema.
 
 ## Localização
-`C:\fontes\aulas-senai\sistema\js\curso.js`
+`C:\fontes\aulasenai\sistema\js\curso.js`
 
 ## Responsabilidades
 - ✅ Listar cursos (tabela, filtros, ordenação)
