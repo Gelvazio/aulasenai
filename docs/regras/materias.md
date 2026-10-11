@@ -108,6 +108,11 @@ MATERIAIS/<CURSO>/<MATERIA>/
 - ✅ Slides em `AULAS/` são **só apresentação** (o professor publica); nunca fonte de conteúdo.
 - Regra completa: [`ementas-e-cursos.md`](ementas-e-cursos.md), seção "AULAS DA MATÉRIA".
 
+> ⚠️ **Regra nova (2026-10-11 06:01:03, `CLAUDE.md` "🗃️ REGRA — ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA
+> SÓ COM CONTEÚDO"):** questões da objetiva e da prática só no banco, layout global e nenhum HTML na
+> pasta da matéria. O que está descrito aqui sobre páginas e fontes por aula é o jeito **atual**,
+> que vale só até a migração da tarefa #25-b3e29764-940b-4a82; não criar página nova por aula sem o plano dela.
+
 ## 4. Atividade objetiva de cada aula (50 questões)
 
 - ✅ **Uma por aula:** fonte `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-50-QUESTOES.md` → página

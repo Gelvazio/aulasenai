@@ -314,4 +314,23 @@ executa algo ou não". Decisões: substitui a #23; fila vazia = não faz nada; c
 
 ---
 
-**Última atualização:** 2026-10-11 06:00 (#22 e #23 canceladas, substituídas pela #24)
+### #25-b3e29764-940b-4a82: Atividades só no banco, layout global e pasta da matéria sem HTML — pedida em 2026-10-11 06:01:03
+
+**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 143-d30a9c4d (fonte única).
+**Prioridade:** 🟠 Alta · **Tarefa grande:** plano em `docs/` e aprovação antes de executar.
+**Regra:** `CLAUDE.md`, "🗃️ REGRA — ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA SÓ COM CONTEÚDO".
+
+Pedido: questões da objetiva e da prática só no banco; objetiva e prática com layout global (sem
+página criada do zero por aula); pastas das matérias/aulas só com conteúdo, sem HTML (tudo do global).
+
+- [ ] Plano: páginas globais (objetiva e prática) que abrem a atividade pelo id; como as questões
+  chegam ao banco sem arquivo de questões (seeds, fontes `.md` de `ATIVIDADES/CONTEUDO/` e
+  `-GABARITO.md`); índice, avaliações, média final e apostila vindos do global; o que fazer com os
+  HTML das matérias (redirecionar ou apagar); mudanças nas regras e nos scripts de conferência.
+- [ ] Aprovação do usuário.
+- [ ] Migrar uma matéria por vez (ordem do `tasks/ORDEM-MATERIAS.md`), conferindo pelo md5.
+- [ ] Aceite do usuário.
+
+---
+
+**Última atualização:** 2026-10-11 06:01 (tarefa #25-b3e29764-940b-4a82 adicionada)

@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-11 05:57:00
+**Versão das regras:** 2026-10-11 06:01:03
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-11 06:01:03 | **Atividades só no banco, layout global e pasta da matéria só com conteúdo:** as questões da objetiva e da prática (enunciado, alternativas, gabarito, tópicos e padrão de resposta) ficam **só no banco**; objetiva e prática usam **um layout global** (nada de página criada do zero em cada aula); as pastas das matérias/aulas têm **só conteúdo (Markdown), nenhum HTML** — tudo vem do global; migração das matérias existentes na tarefa #25-b3e29764-940b-4a82 (plano e aprovação) — "🗃️ REGRA — ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA SÓ COM CONTEÚDO" |
 | 2026-10-11 05:57:00 | **Agendador único lendo a fila `tasks`:** as tarefas agendadas viram **1 rotina por hora** que pega no máximo 1 task da tabela `tasks` do Supabase (`pegar_proxima_task`), decide se executa (ou recusa com o motivo) e grava o resultado (`finalizar_task`); fila vazia = não faz nada; cadastro na página `tasks.html` (menu TASKS, só o administrador); **toda task existe na tabela e no GitHub** (`tasks/TASKS.md` ou `tasks/fila/TASK-NNNN.md`, script `scripts/tasks/sincronizar_tasks.py`); substitui as 6 rotinas paralelas e a escolha automática de aula (#24; #22 e #23 canceladas) — "⏰ TAREFAS AGENDADAS" e [`docs/regras/tarefas-agendadas.md`](docs/regras/tarefas-agendadas.md) |
 | 2026-10-11 05:12:00 | **Tarefas agendadas:** regra nova [`docs/regras/tarefas-agendadas.md`](docs/regras/tarefas-agendadas.md) — as rotinas que geram aulas sozinhas seguem as regras do projeto (branch própria + PR, nunca push direto na `main`; aula escolhida pelo `STATUS-AULAS.md` na ordem do `tasks/ORDEM-MATERIAS.md`; trava em `tasks/RECADOS.md`; log em `agendamento_tarefa_logs`); o `TAREFA_AGENDADA.md` na raiz não é usado — "⏰ TAREFAS AGENDADAS" |
 | 2026-10-10 22:19:46 | **Regra global de matérias:** tudo o que define como a ITIC é feita virou a regra única [`docs/regras/materias.md`](docs/regras/materias.md) (estrutura, ementa e `materia.json`, aulas, objetiva, prática, avaliações e média final, índice e menu, apostila, 5 status, banco e seeds, ordem de construção, critério de pronto, exceções); em vez de consultar a ITIC como modelo, consultar a regra — "🧱 REGRA GLOBAL DE MATÉRIAS" (substitui "MATÉRIA MODELO") |
 | 2026-10-10 16:40:55 | **Todos os arquivos de status existem sempre, em todas as matérias (inclusive IGNORAR):** `STATUS_MATERIA.md`, `AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` e `STATUS-EMENTAS.md`; o `gerar_status_materia.py` cria os que faltam antes de gerar — "🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS" |
-| 2026-10-10 16:37:58 | **STATUS_MATERIA e ordem das matérias:** toda matéria tem o `STATUS_MATERIA.md`, gerado por `scripts/status-materias/gerar_status_materia.py` a partir de todos os arquivos da pasta (peças do padrão da ITIC, aulas e coluna Banco lida do `database/SEEDS-APLICADOS.md`), com a situação ⬜ NÃO INICIADA / 🔄 PENDENTE / ✅ CONCLUÍDA; ordem oficial em `tasks/ORDEM-MATERIAS.md` (Banco de Dados 1, Testes de Front-End 2, ITIC 3, demais em seguida), seguida sempre que se lê status de tarefas ou matérias — "🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS" |
 
 ---
 
@@ -82,6 +82,10 @@ Registrada em 2026-10-03 a pedido do usuário.
   matéria gerado dos arquivos dela; ordem Banco de Dados 1, Testes de Front-End 2, ITIC 3… seguida
   sempre que se lê status de tarefas ou matérias; os 5 arquivos de status existem sempre em todas
   as matérias, inclusive em `IGNORAR` (regra "🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS").
+- ⛔ **Questões só no banco, layout global, pasta da matéria só com conteúdo** (2026-10-11, pedido do
+  usuário): perguntas da objetiva e da prática **só no banco**; as duas usam **um layout global**;
+  nas pastas das matérias e aulas, **só conteúdo** (Markdown), **nenhum HTML** (regra "🗃️ REGRA —
+  ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA SÓ COM CONTEÚDO").
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
 - ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, numa branch própria + novo PR para a `main`).
@@ -480,6 +484,39 @@ global de matérias; em vez de consultar o modelo ITIC, consulta a regra global"
 - ✅ Mudou o jeito de fazer uma peça de matéria → atualizar `docs/regras/materias.md` **na mesma
   tarefa** (e a rotina `scripts/analise-materias.py` e os scripts de `scripts/status-materias/`,
   que conferem as matérias por esta regra).
+
+---
+
+## 🗃️ REGRA — ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA SÓ COM CONTEÚDO
+
+Registrada em 2026-10-11 06:01:03 a pedido do usuário: "As perguntas das atividades prática e objetiva devem
+ficar apenas no banco de dados"; "Atividade prática e objetiva deve usar layout global e não ficar
+criando do zero em cada aula"; "Nas pastas de aulas deve ter apenas conteúdos, e nada de HTML, deve
+vir tudo do global". Migração das matérias existentes: tarefa **#25-b3e29764-940b-4a82** (Etapa
+143-d30a9c4d; plano em `docs/` e aprovação antes de executar).
+
+- ⛔ **Questões só no banco:** as perguntas da **atividade objetiva** (enunciado, alternativas e
+  gabarito) e da **atividade prática** (questões, tópicos, pontos e padrão de resposta) ficam
+  **apenas no banco de dados** (Supabase). Nenhuma página HTML nem arquivo da pasta da matéria
+  guarda o texto das questões; a página busca as questões no banco ao abrir (o gabarito e o padrão
+  de resposta continuam nunca chegando ao aluno antes da liberação — regras de `atividades.md`).
+- ⛔ **Layout global:** objetiva e prática usam **uma página/layout global** (um para a objetiva,
+  um para a prática, com os recursos de sempre: login, gravação no banco, Progresso da turma,
+  Gráficos, Cálculo Nota, mínimo de questões, correção, gabarito por turma, PDF), que recebe qual
+  atividade abrir (id do banco). ⛔ **Nunca criar página de atividade do zero em cada aula.**
+- ⛔ **Pasta da matéria/aula só com conteúdo:** em `MATERIAIS/<CURSO>/<MATERIA>/` ficam **só
+  conteúdos** (Markdown: ementa, aulas em `CONTEUDO/`, documentação, `materia.json` e os arquivos de
+  status) — **nenhum HTML**. Índice de atividades, páginas de atividade, avaliação, média final e
+  apostila em HTML vêm **do global** (páginas e geradores na raiz e em `assets/`), lendo o conteúdo
+  da matéria e o banco.
+- ✅ **Transição:** até a tarefa #25-b3e29764-940b-4a82 ser aprovada e executada, as páginas e geradores atuais
+  continuam funcionando; ⛔ **não gerar página de atividade nova por aula nem questão nova em
+  arquivo** sem antes passar pelo plano dessa tarefa (perguntar ao usuário se for preciso). A
+  migração é feita **uma matéria por vez**, na ordem do `tasks/ORDEM-MATERIAS.md`, conferindo pelo
+  md5 que as questões no banco são as mesmas das páginas antigas antes de apagar qualquer HTML.
+- ✅ Quando a migração mudar o jeito de fazer uma peça, atualizar na mesma tarefa
+  `docs/regras/materias.md`, `docs/regras/atividades.md`, `docs/REGRAS-ATIVIDADE-PRATICA.md`, a
+  rotina `scripts/analise-materias.py` e os scripts de `scripts/status-materias/`.
 
 ---
 
@@ -1142,6 +1179,9 @@ Registrada em 2026-10-09 00:33:19 a pedido do usuário. Plano:
 Registrada em 2026-10-09 a pedido do usuário. **Regra completa (leitura obrigatória antes de criar ou
 alterar qualquer atividade prática):** [docs/REGRAS-ATIVIDADE-PRATICA.md](docs/REGRAS-ATIVIDADE-PRATICA.md).
 
+- ⚠️ **Regra nova (2026-10-11 06:01:03):** questões só no banco, layout global e nenhum HTML na pasta
+  da matéria (seção "🗃️ REGRA — ATIVIDADES SÓ NO BANCO…"); o formato por aula abaixo vale até a
+  migração da tarefa #25-b3e29764-940b-4a82.
 - ✅ Toda **atividade prática de aula** (`ATIVIDADES/ATIVIDADE-PRATICA-AULA-NN.html`) segue a lógica da
   **Prova Prática id 82** (`PROVA-PRATICA-01.html` de Análise de Dados, turma de Salete): discursiva,
   resposta digitada em cada tópico e gravada no banco.
