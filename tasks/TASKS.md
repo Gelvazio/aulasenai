@@ -308,22 +308,6 @@ e gravando o log com o próprio `tipo_assinatura`.
 
 ---
 
-### #23-79fc30a3-c4c9-4a40: Agendamentos — CRUD e espelho dos controles no banco — pedida em 2026-10-11 05:30:00
-
-**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 141-a7e81c26 (fonte única).
-**Prioridade:** 🟠 Alta · **Tarefa grande:** plano [docs/agendamentos-crud-e-espelho-banco.md](../docs/agendamentos-crud-e-espelho-banco.md).
-
-Pedido: CRUD completo das tarefas agendadas em `agendamentos.html` (só o Professor Administrador,
-com o login atual) e os controles do projeto (travas, status, tarefas, recados, seeds e cópia dos
-Markdowns) também no Supabase, de forma redundante; a origem dos Markdowns é sempre o repositório.
-
-- [ ] Fase 1: `agendamento`, `trava_aula`, leitura do log, página com abas Agendamentos, Execuções e Travas.
-- [ ] Fase 2: tarefas, etapas, frentes e recados no banco + exportação para `.md`.
-- [ ] Fase 3: seeds e status das aulas no banco.
-- [ ] Fase 4: `documento_markdown` (cópia do Git) e regras de "fonte única" no `CLAUDE.md`.
-
----
-
 ### #24-9fb25086-5b51-44cb: Fila `tasks` no banco + 1 agendador — pedida em 2026-10-11 05:42:00
 
 **Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 142-2a52ee2f (fonte única).
@@ -336,8 +320,8 @@ executa algo ou não". Decisões: substitui a #23; fila vazia = não faz nada; c
 - [ ] Tabela `tasks` + `pegar_proxima_task` / `finalizar_task` (RLS, só administrador).
 - [ ] Página `tasks.html` + menu TASKS.
 - [ ] Regra das tarefas agendadas e prompt da rotina para a fila.
-- [ ] #23 cancelada.
+- [x] #23 cancelada (2026-10-11 05:58).
 
 ---
 
-**Última atualização:** 2026-10-11 05:46 (tarefa #24 adicionada)
+**Última atualização:** 2026-10-11 05:58 (#23 cancelada, substituída pela #24)

@@ -44,7 +44,7 @@ A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale 
 | #20-2ac1a8ec-911b-466f | Banco de Dados (Técnico em Informática para Internet) 100% no padrão da ITIC — etapa 1 sem a apostila | 🔄 Em execução (Etapa 125) | Aulas 01 a 20 prontas (125.3 e 125.4 ✅); próximo: item 125.5 — avaliações e média final no modelo da ITIC | nuvem · claude/verificar-status-pastas-c6s5yz (desde 2026-10-10 16:27; pedido do usuário "finalize banco de dados", assumida da frente festive-maxwell) |
 | #21-eeefc710-3e74-4928 | Colaboração entre sessões/licenças: etapa com UUID, reserva da tarefa, frentes de trabalho, `RECADOS.md`, merge da `main`, arquivos gerados, uma etapa por arquivo | 👀 Aguardando validação (Etapa 135-eeefc710) | Item 135.6 — aceite do usuário (ele junta o PR na `main`) | nuvem · claude/festive-maxwell-25jnhl (desde 2026-10-09 15:22) |
 | #22-816fd3fd-ffe8-41e7 | Outras contas e IAs criam as tarefas agendadas 2 a 6 (regra `docs/regras/tarefas-agendadas.md`) | ⬜ Pendente — para outras contas/IAs | Cada conta/IA cria no próprio agendador as tarefas que faltam (minutos :13 a :53) | — |
-| #23-79fc30a3-c4c9-4a40 | Agendamentos: CRUD em `agendamentos.html` (só administrador) e espelho dos controles no banco (fases 1 a 4) | 🔄 Plano aguardando aprovação (Etapa 141-a7e81c26) | Usuário aprova o plano; depois, fase 1 | nuvem · ccr-00f69e8a-6qcla9 (desde 2026-10-11 05:36) |
+| #23-79fc30a3-c4c9-4a40 | Agendamentos: CRUD em `agendamentos.html` e espelho dos controles no banco | ⛔ Cancelada em 2026-10-11 05:58 — substituída pela #24 (decisão do usuário, 05:44) | — | — |
 | #24-9fb25086-5b51-44cb | Fila `tasks` no banco + 1 agendador que lê a fila e decide; página `tasks.html` (substitui a #23) | 🔄 Plano aguardando aprovação (Etapa 142-2a52ee2f) | Usuário aprova o plano; depois, passo 2 | nuvem · ccr-be208aef-c6h8oe (desde 2026-10-11 05:44) |
 
 ## ⏳ Aguardando o usuário (aceites, aprovações e ações dele)
@@ -54,8 +54,6 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
 | 125 | 125.8 | rodar no Supabase → SQL Editor o insert do tópico 6c da prática da aula 19 de Banco de Dados (atividade id 142): o conector da nuvem cancela o comando porque o texto cita `DELETE FROM parcela;` (o pedido de aprovação não chega ao usuário) | Ação |
-| 142-2a52ee2f | 142.2 | aprovar o plano `docs/fila-tasks-agendador-unico.md` (fila `tasks` + 1 agendador; substitui a #23) | Aprovação |
-| 141-a7e81c26 | 141.2 | aprovar o plano `docs/agendamentos-crud-e-espelho-banco.md` (fase 1) | Aprovação |
 | 140-8554d88e | 140.6 e 140.7 | liberar o acesso do GitHub ao `Gelvazio/aulasenai` para as tarefas agendadas e conferir a regra `docs/regras/tarefas-agendadas.md` | Ação e aceite |
 | 139-b5ab1a00 | 139.4 | conferir a regra global de matérias (`docs/regras/materias.md`) e a troca no `CLAUDE.md` | Aceite |
 | 138-77338471 | 138.6 | conferir o `STATUS_MATERIA.md` das matérias, a ordem em `tasks/ORDEM-MATERIAS.md` e a regra nova do `CLAUDE.md` | Aceite |
