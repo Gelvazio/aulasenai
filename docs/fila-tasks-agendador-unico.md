@@ -7,6 +7,8 @@ que a IA vai ler e decidir se executa algo ou não".
 **Decisões do usuário (2026-10-11 05:44):** (1) a fila `tasks` **substitui a tarefa #23**
 (`agendamentos.html`, `agendamento`, `trava_aula`); (2) **fila vazia = não faz nada** (só o log);
 (3) cadastro por uma **página de CRUD** (`tasks.html`, só o Professor Administrador).
+**Regra nova do usuário (2026-10-11 05:45):** "toda task.md deve existir na tabela e no GitHub" —
+ver a seção "Regra: toda task na tabela e no GitHub".
 
 ## Objetivo
 
@@ -36,6 +38,11 @@ professor controla tudo cadastrando, ligando e desligando linhas na página `tas
 | Coluna | Tipo | Observação |
 |---|---|---|
 | `id` | bigint identity | chave |
+| `codigo` | text unique not null | id da tarefa, igual no Git: `#NN-uuid` (as do `TASKS.md`) ou `TASK-NNNN` (criadas na página) |
+| `origem` | text | `repositorio` (veio do `TASKS.md`) ou `pagina` |
+| `arquivo_md` | text | caminho do `.md` no Git (`tasks/TASKS.md#…` ou `tasks/fila/TASK-NNNN.md`) |
+| `md5_md` | text | md5 do bloco/arquivo no Git na última sincronização |
+| `sincronizado_em` | timestamptz | última vez que tabela e Git foram conferidos iguais |
 | `titulo` | text not null | resumo curto |
 | `instrucao` | text not null | o que a IA deve fazer (texto livre) |
 | `prioridade` | smallint default 3 | 1 = mais alta … 5 = mais baixa |
@@ -63,19 +70,45 @@ professor controla tudo cadastrando, ligando e desligando linhas na página `tas
 - **Log:** `agendamento_tarefa_logs` continua; status novos `sem_tarefa` e `recusada` (a coluna
   não tem check).
 
+## Regra: toda task na tabela e no GitHub
+
+- ⛔ **Nenhuma task existe só num lado.** Toda tarefa do `tasks/TASKS.md` tem a linha dela na
+  tabela `tasks` (mesmo `codigo`) e toda linha da tabela tem o `.md` dela no GitHub.
+- ✅ **Tarefa do `TASKS.md` → tabela:** entra com `origem = 'repositorio'`, o `codigo` do título
+  (`#24-9fb25086-5b51-44cb`) e **`executar = false`** (a rotina só a executa se o professor ligar
+  o ON/OFF na página). Carga inicial: as 18 tarefas pendentes de hoje.
+- ✅ **Linha criada na página → GitHub:** ganha o arquivo `tasks/fila/TASK-NNNN.md` (título,
+  instrução, prioridade, status, resultado, PR), gerado pelo script, e entra no Git por commit +
+  PR juntado.
+- ✅ **Script único:** `scripts/tasks/sincronizar_tasks.py` (sem chave do banco no repositório):
+  `importar` lê o `TASKS.md` e gera o SQL idempotente das linhas que faltam; `exportar` lê o JSON da
+  tabela (consulta pelo conector) e escreve/atualiza os `.md` de `tasks/fila/`; `conferir` compara
+  os dois lados pelo md5 e lista o que falta em cada um. O SQL e o JSON são aplicados/lidos pelo
+  conector do Supabase.
+- ✅ **Quando sincronizar:** em **toda execução da rotina** (antes de pegar a task; a sincronização
+  é a única coisa que roda com a fila vazia, e só gera commit se houver diferença), ao criar ou
+  concluir tarefa numa sessão do Claude e ao mudar o status de uma task.
+- ✅ **Em conflito, quem vence:** texto da tarefa (descrição longa) = **GitHub**; status, ON/OFF,
+  prioridade e resultado da execução = **tabela**. Status oficial do projeto continua no
+  `tasks/STATUS.md` (fonte única), atualizado junto.
+- ✅ A rotina e o `scripts/analise-materias.py` não mudam por isso; o `CLAUDE.md` ganha esta regra
+  no passo 8.
+
 ## Fluxo da rotina (1 por hora)
 
 1. Inicialização do `CLAUDE.md` (trazer a `main`, `STATUS.md`, `RECADOS.md`, seeds).
-2. `select * from pegar_proxima_task('<frente>')` pelo conector.
-3. **Nada veio:** não altera nenhum arquivo; grava o log `sem_tarefa` e encerra.
-4. **Veio uma tarefa:** a IA lê a `instrucao` e decide:
+2. **Sincronizar** tabela × GitHub (`scripts/tasks/sincronizar_tasks.py conferir`; faltando algo,
+   importar/exportar, commit + PR + merge).
+3. `select * from pegar_proxima_task('<frente>')` pelo conector.
+4. **Nada veio:** não altera mais nada; grava o log `sem_tarefa` e encerra.
+5. **Veio uma tarefa:** a IA lê a `instrucao` e decide:
    - **Executa** se cabe nas regras (sem push na `main`, sem segredo, sem afrouxar RLS, sem gabarito
      publicado…): branch própria, commit + push + PR + merge, `finalizar_task(... 'concluida' ...)`.
    - **Recusa** se fere uma regra, é ambígua ou precisa de decisão do usuário:
      `finalizar_task(... 'recusada', '<motivo>')`, sem mexer no repositório.
    - **Erro** técnico: `finalizar_task(... 'erro', '<mensagem>')` (tenta de novo na próxima hora
      até `max_tentativas`).
-5. Grava o log da execução (com `log_id` na linha da task).
+6. Grava o `.md` da task (`exportar`) e o log da execução (com `log_id` na linha da task).
 
 ## Página `tasks.html`
 
@@ -96,6 +129,7 @@ professor controla tudo cadastrando, ligando e desligando linhas na página `tas
 | 1 | Conferir o banco real (`tasks` não existe; `eh_professor_administrador`; log) | Supabase | consultas de leitura | ✅ 2026-10-11 05:43 |
 | 2 | SQL idempotente: tabela, check, índices, trigger, funções, RLS | `database/2026-10-11-tasks-fila-agendador.sql` | leitura do SQL | ⬜ |
 | 3 | Aplicar pelo conector e conferir (2 chamadas de `pegar_proxima_task` com 1 linha de teste: a 2ª volta vazia; `finalizar_task`; linha de teste marcada `excluido`) | Supabase | `information_schema`, `pg_policies` | ⬜ |
+| 3.1 | Script `importar`/`exportar`/`conferir` + carga das 18 tarefas do `TASKS.md` (OFF) + `tasks/fila/` | `scripts/tasks/sincronizar_tasks.py`, `tasks/fila/` | `python3 … conferir` sem diferenças | ⬜ |
 | 4 | `docs/database.md` + `docs/relatorio_verificacao_database.html` | `docs/` | leitura | ⬜ |
 | 5 | Repositório JS | `assets/js/tasks-repositorio.js` | `node --check` | ⬜ |
 | 6 | Página, modais e CSS | `tasks.html`, `assets/js/tasks-*.js`, `assets/css/tasks.css` | `node --check`, `tags_header.py` idempotente, sem `onclick`/`<style>` | ⬜ |
@@ -113,6 +147,7 @@ professor controla tudo cadastrando, ligando e desligando linhas na página `tas
 | Instrução perigosa ou contra as regras cadastrada na fila | A IA recusa (`recusada` com o motivo); a página é só do administrador (RLS) |
 | Execução cai no meio e a linha fica `em_execucao` | `expira_em` de 90 min: a próxima chamada devolve a linha para `pendente` |
 | Tarefa grande demais para 1 execução | A IA entrega a parte que fechar (PR juntado), grava `recusada` com o que falta e o professor divide em tasks menores |
+| Tabela e GitHub divergem (edição na página sem rotina rodando) | `conferir` em toda execução e coluna `sincronizado_em` na página ("⚠️ não sincronizado") |
 | Rotina sem acesso ao GitHub | Log `erro`; item 140.6 continua com o usuário |
 
 ## Resultado
