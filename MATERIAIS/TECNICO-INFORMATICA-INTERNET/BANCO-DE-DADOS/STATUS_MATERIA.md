@@ -2,8 +2,8 @@
 
 **Ordem:** 1 (lista em [`tasks/ORDEM-MATERIAS.md`](../../../tasks/ORDEM-MATERIAS.md))  
 **Curso:** TECNICO-INFORMATICA-INTERNET  
-**Situação:** **🔄 PENDENTE** — 139 de 154 peças (90%)  
-**Gerado em:** 2026-10-10 16:41:03 por `scripts/status-materias/gerar_status_materia.py` (não editar à mão: rodar o script de novo)
+**Situação:** **🔄 PENDENTE** — 146 de 154 peças (95%)  
+**Gerado em:** 2026-10-10 22:14:09 por `scripts/status-materias/gerar_status_materia.py` (não editar à mão: rodar o script de novo)
 
 > Legenda: `✅` peça presente · `⬜` peça pendente · `📎` outro arquivo (fora do padrão) · `⚠️` arquivo vazio. **Banco (seeds)** = seeds da objetiva e da prática da aula CONCLUÍDO ou SUBSTITUÍDO em `database/SEEDS-APLICADOS.md`.
 > Situação: **✅ CONCLUÍDA** (todas as peças ✅) · **🔄 PENDENTE** (parte feita) · **⬜ NÃO INICIADA** (nenhuma aula com conteúdo ou atividade).
@@ -50,9 +50,9 @@
 | 17 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 18 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 19 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ⬜ |
-| 20 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 20 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 
-## 3. Todos os arquivos da pasta (122)
+## 3. Todos os arquivos da pasta (128)
 
 | Arquivo | Tamanho (bytes) | Status |
 |---|---|---|
@@ -76,6 +76,7 @@
 | `ATIVIDADES/ATIVIDADE-PRATICA-AULA-17.html` | 50796 | ✅ peça do padrão |
 | `ATIVIDADES/ATIVIDADE-PRATICA-AULA-18.html` | 51100 | ✅ peça do padrão |
 | `ATIVIDADES/ATIVIDADE-PRATICA-AULA-19.html` | 52646 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADE-PRATICA-AULA-20.html` | 54137 | ✅ peça do padrão |
 | `ATIVIDADES/ATIVIDADES-AULA-01-50-QUESTOES.html` | 69485 | ✅ peça do padrão |
 | `ATIVIDADES/ATIVIDADES-AULA-02-50-QUESTOES.html` | 68393 | ✅ peça do padrão |
 | `ATIVIDADES/ATIVIDADES-AULA-03-50-QUESTOES.html` | 67949 | ✅ peça do padrão |
@@ -95,6 +96,7 @@
 | `ATIVIDADES/ATIVIDADES-AULA-17-50-QUESTOES.html` | 68548 | ✅ peça do padrão |
 | `ATIVIDADES/ATIVIDADES-AULA-18-50-QUESTOES.html` | 66903 | ✅ peça do padrão |
 | `ATIVIDADES/ATIVIDADES-AULA-19-50-QUESTOES.html` | 68918 | ✅ peça do padrão |
+| `ATIVIDADES/ATIVIDADES-AULA-20-50-QUESTOES.html` | 71861 | ✅ peça do padrão |
 | `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-01-GABARITO.md` | 15988 | ✅ peça do padrão |
 | `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-01.md` | 9762 | ✅ peça do padrão |
 | `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-02-GABARITO.md` | 13394 | ✅ peça do padrão |
@@ -133,6 +135,8 @@
 | `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-18.md` | 9142 | ✅ peça do padrão |
 | `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-19-GABARITO.md` | 15148 | ✅ peça do padrão |
 | `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-19.md` | 10272 | ✅ peça do padrão |
+| `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-20-GABARITO.md` | 15106 | ✅ peça do padrão |
+| `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-20.md` | 10969 | ✅ peça do padrão |
 | `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-01-50-QUESTOES.md` | 19577 | ✅ peça do padrão |
 | `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-02-50-QUESTOES.md` | 18625 | ✅ peça do padrão |
 | `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-03-50-QUESTOES.md` | 19161 | ✅ peça do padrão |
@@ -152,9 +156,10 @@
 | `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-17-50-QUESTOES.md` | 19872 | ✅ peça do padrão |
 | `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-18-50-QUESTOES.md` | 18233 | ✅ peça do padrão |
 | `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-19-50-QUESTOES.md` | 19497 | ✅ peça do padrão |
-| `ATIVIDADES/STATUS-ATIVIDADES.md` | 9625 | ✅ peça do padrão |
-| `ATIVIDADES/index.html` | 17330 | ✅ peça do padrão |
-| `AULAS/STATUS-AULAS.md` | 7018 | ✅ peça do padrão |
+| `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-20-50-QUESTOES.md` | 22485 | ✅ peça do padrão |
+| `ATIVIDADES/STATUS-ATIVIDADES.md` | 9855 | ✅ peça do padrão |
+| `ATIVIDADES/index.html` | 18019 | ✅ peça do padrão |
+| `AULAS/STATUS-AULAS.md` | 7268 | ✅ peça do padrão |
 | `CONTEUDO/AULA-01-BANCO-DE-DADOS-E-SGBD.md` | 8825 | ✅ peça do padrão |
 | `CONTEUDO/AULA-02-GERENCIADORES-CARACTERISTICAS-REQUISITOS-E-NIVEIS.md` | 8992 | ✅ peça do padrão |
 | `CONTEUDO/AULA-03-PREPARACAO-DO-AMBIENTE-INSTALACAO-DO-POSTGRESQL.md` | 7819 | ✅ peça do padrão |
@@ -174,7 +179,8 @@
 | `CONTEUDO/AULA-17-PROCEDIMENTOS-ARMAZENADOS.md` | 9274 | ✅ peça do padrão |
 | `CONTEUDO/AULA-18-TRIGGERS-DISPARADORES.md` | 11688 | ✅ peça do padrão |
 | `CONTEUDO/AULA-19-SEGURANCA-DA-INFORMACAO-PILARES-ACESSO-E-AUDITORIA.md` | 18433 | ✅ peça do padrão |
-| `DOCUMENTACAO/PLANO-AULAS.md` | 3333 | 📎 outro arquivo |
+| `CONTEUDO/AULA-20-PROJETO-INTEGRADOR-BANCO-DOCUMENTADO-PARA-O-BACK-END.md` | 19672 | ✅ peça do padrão |
+| `DOCUMENTACAO/PLANO-AULAS.md` | 3416 | 📎 outro arquivo |
 | `EMENTA-CHALKIE-AI.md` | 15530 | ✅ peça do padrão |
 | `STATUS-EMENTAS.md` | 1250 | ✅ peça do padrão |
 | `materia.json` | 41893 | ✅ peça do padrão |
