@@ -324,4 +324,20 @@ Markdowns) também no Supabase, de forma redundante; a origem dos Markdowns é s
 
 ---
 
-**Última atualização:** 2026-10-11 05:40 (tarefa #23 adicionada)
+### #24-9fb25086-5b51-44cb: Fila `tasks` no banco + 1 agendador — pedida em 2026-10-11 05:42:00
+
+**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 142-2a52ee2f (fonte única).
+**Prioridade:** 🟠 Alta · **Tarefa grande:** plano [docs/fila-tasks-agendador-unico.md](../docs/fila-tasks-agendador-unico.md).
+
+Pedido: "1 agendador que apenas controle 1 tabela de nome tasks, que a IA vai ler e decidir se
+executa algo ou não". Decisões: substitui a #23; fila vazia = não faz nada; cadastro pela página
+`tasks.html` (só o Professor Administrador).
+
+- [ ] Tabela `tasks` + `pegar_proxima_task` / `finalizar_task` (RLS, só administrador).
+- [ ] Página `tasks.html` + menu TASKS.
+- [ ] Regra das tarefas agendadas e prompt da rotina para a fila.
+- [ ] #23 cancelada.
+
+---
+
+**Última atualização:** 2026-10-11 05:46 (tarefa #24 adicionada)
