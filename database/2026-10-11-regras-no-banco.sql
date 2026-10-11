@@ -23,7 +23,7 @@ create table if not exists public.regra_secao (
   documento_id bigint not null references public.regra_documento (id),
   caminho text not null,
   ordem integer not null,
-  nivel smallint not null check (nivel in (2, 3)),
+  nivel smallint not null,
   titulo text not null,
   secao_pai text,
   conteudo text not null,
@@ -35,6 +35,10 @@ create table if not exists public.regra_secao (
 
 comment on table public.regra_secao is
   'Uma linha por seção (## e ###) de cada arquivo de regras; seção que deixou de existir fica ativo = false.';
+
+-- nível 1 = texto antes do primeiro "##" (título do arquivo); 2 = "##"; 3 = "###".
+alter table public.regra_secao drop constraint if exists regra_secao_nivel_check;
+alter table public.regra_secao add constraint regra_secao_nivel_check check (nivel in (1, 2, 3));
 
 create index if not exists regra_secao_titulo_idx on public.regra_secao (titulo);
 
