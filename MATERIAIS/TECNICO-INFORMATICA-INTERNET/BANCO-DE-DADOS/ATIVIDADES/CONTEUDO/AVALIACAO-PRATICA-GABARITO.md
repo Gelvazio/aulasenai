@@ -46,13 +46,7 @@
 **Critérios:** Nota cheia (0,1): pelo menos duas vantagens ligadas ao caso. Metade (0,05): uma vantagem, ou vantagens genéricas sem o caso. Zero (0): sem relação.
 
 ### ITEM 02-b
-**Resposta esperada:**
-```sql
-CREATE DATABASE biblioteca_db ENCODING 'UTF8';
-CREATE ROLE app_biblioteca LOGIN PASSWORD 'senha-forte-definida-pela-equipe';
-GRANT CONNECT ON DATABASE biblioteca_db TO app_biblioteca;
-```
-Linha do pg_hba.conf: `host  biblioteca_db  app_biblioteca  10.0.0.20/32  scram-sha-256`. Recarregar: `SELECT pg_reload_conf();` (aceitar `pg_ctl reload` ou `systemctl reload postgresql`; aceitar a menção a `listen_addresses` no postgresql.conf, que exige reiniciar).
+**Resposta esperada:** CREATE DATABASE biblioteca_db ENCODING 'UTF8'; CREATE ROLE app_biblioteca LOGIN PASSWORD 'senha-forte-definida-pela-equipe'; GRANT CONNECT ON DATABASE biblioteca_db TO app_biblioteca; Linha do pg_hba.conf: `host  biblioteca_db  app_biblioteca  10.0.0.20/32  scram-sha-256`. Recarregar: `SELECT pg_reload_conf();` (aceitar `pg_ctl reload` ou `systemctl reload postgresql`; aceitar a menção a `listen_addresses` no postgresql.conf, que exige reiniciar).
 **Critérios:** Nota cheia (0,2): banco + usuário com LOGIN e senha + CONNECT + linha do pg_hba com o IP 10.0.0.20 e scram-sha-256 (ou md5) + recarga. Metade (0,1): falta a linha do pg_hba ou o banco/usuário, ou usa `trust`/`0.0.0.0/0`. Zero (0): usa o superusuário postgres na aplicação ou comandos sem relação.
 
 ### ITEM 02-c
@@ -104,18 +98,7 @@ Linha do pg_hba.conf: `host  biblioteca_db  app_biblioteca  10.0.0.20/32  scram-
 **Critérios:** Nota cheia (0,2): todas as tabelas principais com PK e FK certas e ligações com cardinalidade (aceitar sem historico_exemplar). Metade (0,1): falta uma tabela, as FKs ou as cardinalidades. Zero (0): sem chaves ou sem relação com o caso.
 
 ### ITEM 06-c
-**Resposta esperada:**
-
-| Coluna | Tipo | Obrigatório | Restrição / descrição |
-|---|---|---|---|
-| id_emprestimo | serial | sim | PK |
-| id_exemplar | integer | sim | FK → exemplar; só um empréstimo aberto por exemplar |
-| id_leitor | integer | sim | FK → leitor |
-| data_emprestimo | date | sim | padrão CURRENT_DATE |
-| data_prevista | date | sim | data_emprestimo + 14; não antes do empréstimo |
-| data_devolucao | date | não | nula = empréstimo em aberto; não antes do empréstimo |
-| valor_multa | numeric(8,2) | sim | padrão 0; ≥ 0; R$ 1,00 por dia de atraso |
-
+**Resposta esperada:** id_emprestimo (tipo: serial, obrigatório: sim, restrição / descrição: PK); id_exemplar (tipo: integer, obrigatório: sim, restrição / descrição: FK → exemplar; só um empréstimo aberto por exemplar); id_leitor (tipo: integer, obrigatório: sim, restrição / descrição: FK → leitor); data_emprestimo (tipo: date, obrigatório: sim, restrição / descrição: padrão CURRENT_DATE); data_prevista (tipo: date, obrigatório: sim, restrição / descrição: data_emprestimo + 14; não antes do empréstimo); data_devolucao (tipo: date, obrigatório: não, restrição / descrição: nula = empréstimo em aberto; não antes do empréstimo); valor_multa (tipo: numeric(8,2), obrigatório: sim, restrição / descrição: padrão 0; ≥ 0; R$ 1,00 por dia de atraso);
 **Critérios:** Nota cheia (0,2): todas as colunas com tipo, obrigatoriedade e restrição/descrição coerentes, com PK, FKs e data_devolucao opcional. Metade (0,1): falta uma ou duas colunas ou as restrições. Zero (0): sem chaves ou tabela errada.
 
 ### ITEM 07-a
@@ -147,43 +130,11 @@ Linha do pg_hba.conf: `host  biblioteca_db  app_biblioteca  10.0.0.20/32  scram-
 **Critérios:** Nota cheia (0,1): pelo menos cinco tipos com uso certo no caso. Metade (0,05): três ou quatro certos. Zero (0): dois ou menos, ou usa texto para datas e dinheiro.
 
 ### ITEM 09-b
-**Resposta esperada:**
-```sql
-CREATE TABLE editora (
-  id_editora serial PRIMARY KEY,
-  nome       varchar(100) NOT NULL UNIQUE,
-  cidade     varchar(80)  NOT NULL
-);
-CREATE TABLE categoria (
-  id_categoria serial PRIMARY KEY,
-  nome         varchar(60) NOT NULL UNIQUE
-);
-CREATE TABLE autor (
-  id_autor serial PRIMARY KEY,
-  nome     varchar(120) NOT NULL
-);
-```
+**Resposta esperada:** CREATE TABLE editora ( id_editora serial PRIMARY KEY, nome       varchar(100) NOT NULL UNIQUE, cidade     varchar(80)  NOT NULL ); CREATE TABLE categoria ( id_categoria serial PRIMARY KEY, nome         varchar(60) NOT NULL UNIQUE ); CREATE TABLE autor ( id_autor serial PRIMARY KEY, nome     varchar(120) NOT NULL );
 **Critérios:** Nota cheia (0,2): as três tabelas com PK, tipos coerentes e NOT NULL nos nomes (cidade na editora). Metade (0,1): falta uma tabela, a PK ou os NOT NULL. Zero (0): sintaxe que não roda no PostgreSQL ou sem relação.
 
 ### ITEM 09-c
-**Resposta esperada:**
-```sql
-CREATE TABLE leitor (
-  id_leitor     serial PRIMARY KEY,
-  nome          varchar(120) NOT NULL,
-  cpf           char(11)     NOT NULL UNIQUE CHECK (cpf ~ '^[0-9]{11}$'),
-  email         varchar(150) NOT NULL UNIQUE,
-  data_cadastro date         NOT NULL DEFAULT CURRENT_DATE,
-  ativo         boolean      NOT NULL DEFAULT true
-);
-CREATE TABLE telefone_leitor (
-  id_telefone serial PRIMARY KEY,
-  id_leitor   integer NOT NULL REFERENCES leitor (id_leitor),
-  numero      varchar(11) NOT NULL CHECK (numero ~ '^[0-9]{10,11}$'),
-  UNIQUE (id_leitor, numero)
-);
-```
-CPF é **texto**: não se faz conta com ele, tem **zero à esquerda** (01234567890) que um número perderia, e tem **tamanho fixo** de 11 dígitos (a máscara é da tela).
+**Resposta esperada:** CREATE TABLE leitor ( id_leitor     serial PRIMARY KEY, nome          varchar(120) NOT NULL, cpf           char(11)     NOT NULL UNIQUE CHECK (cpf ~ '^[0-9]{11}$'), email         varchar(150) NOT NULL UNIQUE, data_cadastro date         NOT NULL DEFAULT CURRENT_DATE, ativo         boolean      NOT NULL DEFAULT true ); CREATE TABLE telefone_leitor ( id_telefone serial PRIMARY KEY, id_leitor   integer NOT NULL REFERENCES leitor (id_leitor), numero      varchar(11) NOT NULL CHECK (numero ~ '^[0-9]{10,11}$'), UNIQUE (id_leitor, numero) ); CPF é **texto**: não se faz conta com ele, tem **zero à esquerda** (01234567890) que um número perderia, e tem **tamanho fixo** de 11 dígitos (a máscara é da tela).
 **Critérios:** Nota cheia (0,2): as duas tabelas com PK, UNIQUE em cpf e email, FK do telefone para o leitor + justificativa do CPF (zero à esquerda ou não é usado em cálculo). Metade (0,1): tabelas certas sem a justificativa, ou justificativa com tabela sem FK/UNIQUE. Zero (0): CPF numérico sem justificativa e sem FK, ou sem relação.
 
 ### ITEM 10-a
@@ -191,50 +142,11 @@ CPF é **texto**: não se faz conta com ele, tem **zero à esquerda** (012345678
 **Critérios:** Nota cheia (0,1): as cinco restrições certas. Metade (0,05): três ou quatro certas. Zero (0): duas ou menos.
 
 ### ITEM 10-b
-**Resposta esperada:**
-```sql
-CREATE TABLE livro (
-  id_livro       serial PRIMARY KEY,
-  titulo         varchar(200) NOT NULL,
-  isbn           char(13) NOT NULL UNIQUE CHECK (isbn ~ '^[0-9]{13}$'),
-  ano_publicacao smallint CHECK (ano_publicacao BETWEEN 1450 AND 2100),
-  id_editora     integer NOT NULL REFERENCES editora (id_editora),
-  id_categoria   integer NOT NULL REFERENCES categoria (id_categoria)
-);
-CREATE TABLE livro_autor (
-  id_livro integer NOT NULL REFERENCES livro (id_livro),
-  id_autor integer NOT NULL REFERENCES autor (id_autor),
-  PRIMARY KEY (id_livro, id_autor)
-);
-CREATE TABLE exemplar (
-  id_exemplar  serial PRIMARY KEY,
-  id_livro     integer NOT NULL REFERENCES livro (id_livro),
-  codigo_tombo varchar(20) NOT NULL UNIQUE,
-  situacao     varchar(12) NOT NULL DEFAULT 'disponivel'
-               CHECK (situacao IN ('disponivel', 'emprestado', 'baixado'))
-);
-```
+**Resposta esperada:** CREATE TABLE livro ( id_livro       serial PRIMARY KEY, titulo         varchar(200) NOT NULL, isbn           char(13) NOT NULL UNIQUE CHECK (isbn ~ '^[0-9]{13}$'), ano_publicacao smallint CHECK (ano_publicacao BETWEEN 1450 AND 2100), id_editora     integer NOT NULL REFERENCES editora (id_editora), id_categoria   integer NOT NULL REFERENCES categoria (id_categoria) ); CREATE TABLE livro_autor ( id_livro integer NOT NULL REFERENCES livro (id_livro), id_autor integer NOT NULL REFERENCES autor (id_autor), PRIMARY KEY (id_livro, id_autor) ); CREATE TABLE exemplar ( id_exemplar  serial PRIMARY KEY, id_livro     integer NOT NULL REFERENCES livro (id_livro), codigo_tombo varchar(20) NOT NULL UNIQUE, situacao     varchar(12) NOT NULL DEFAULT 'disponivel' CHECK (situacao IN ('disponivel', 'emprestado', 'baixado')) );
 **Critérios:** Nota cheia (0,2): as três tabelas com PK (composta na livro_autor), FKs, UNIQUE do ISBN e do tombo e CHECK da situação. Metade (0,1): falta a PK composta, uma FK ou o CHECK/UNIQUE. Zero (0): sem FKs ou sintaxe que não roda.
 
 ### ITEM 10-c
-**Resposta esperada:**
-```sql
-CREATE TABLE emprestimo (
-  id_emprestimo   serial PRIMARY KEY,
-  id_exemplar     integer NOT NULL REFERENCES exemplar (id_exemplar) ON DELETE RESTRICT,
-  id_leitor       integer NOT NULL REFERENCES leitor (id_leitor) ON DELETE RESTRICT,
-  data_emprestimo date NOT NULL DEFAULT CURRENT_DATE,
-  data_prevista   date NOT NULL,
-  data_devolucao  date,
-  valor_multa     numeric(8,2) NOT NULL DEFAULT 0 CHECK (valor_multa >= 0),
-  CHECK (data_prevista >= data_emprestimo),
-  CHECK (data_devolucao IS NULL OR data_devolucao >= data_emprestimo)
-);
-CREATE UNIQUE INDEX ux_emprestimo_exemplar_aberto
-  ON emprestimo (id_exemplar)
-  WHERE data_devolucao IS NULL;
-```
-**ON DELETE RESTRICT** impede excluir um leitor ou exemplar que tem empréstimos: o histórico não fica com linhas "órfãs" e o SGBD devolve erro (aceitar NO ACTION, o padrão, com a mesma explicação).
+**Resposta esperada:** CREATE TABLE emprestimo ( id_emprestimo   serial PRIMARY KEY, id_exemplar     integer NOT NULL REFERENCES exemplar (id_exemplar) ON DELETE RESTRICT, id_leitor       integer NOT NULL REFERENCES leitor (id_leitor) ON DELETE RESTRICT, data_emprestimo date NOT NULL DEFAULT CURRENT_DATE, data_prevista   date NOT NULL, data_devolucao  date, valor_multa     numeric(8,2) NOT NULL DEFAULT 0 CHECK (valor_multa >= 0), CHECK (data_prevista >= data_emprestimo), CHECK (data_devolucao IS NULL OR data_devolucao >= data_emprestimo) ); CREATE UNIQUE INDEX ux_emprestimo_exemplar_aberto ON emprestimo (id_exemplar) WHERE data_devolucao IS NULL; **ON DELETE RESTRICT** impede excluir um leitor ou exemplar que tem empréstimos: o histórico não fica com linhas "órfãs" e o SGBD devolve erro (aceitar NO ACTION, o padrão, com a mesma explicação).
 **Critérios:** Nota cheia (0,2): tabela com FKs, CHECK das datas e da multa + índice único parcial (ou outra garantia equivalente no banco) + explicação do RESTRICT. Metade (0,1): falta o índice parcial ou a explicação, ou faltam os CHECK. Zero (0): sem FKs ou usa CASCADE dizendo que preserva o histórico.
 
 ### ITEM 11-a
@@ -242,39 +154,11 @@ CREATE UNIQUE INDEX ux_emprestimo_exemplar_aberto
 **Critérios:** Nota cheia (0,1): os três comandos + motivo de inativar (FK/histórico). Metade (0,05): só os comandos, ou só o motivo. Zero (0): sem relação.
 
 ### ITEM 11-b
-**Resposta esperada:**
-```sql
-INSERT INTO editora (nome, cidade) VALUES ('Editora Aurora', 'Blumenau');
-INSERT INTO categoria (nome) VALUES ('Literatura brasileira');
-INSERT INTO autor (nome) VALUES ('Ana Prado');
-INSERT INTO livro (titulo, isbn, ano_publicacao, id_editora, id_categoria)
-VALUES ('Contos do Vale', '9788500000011', 2015, 1, 1);
-INSERT INTO livro_autor (id_livro, id_autor) VALUES (1, 1);
-INSERT INTO exemplar (id_livro, codigo_tombo) VALUES (1, 'T-0001'), (1, 'T-0002');
-INSERT INTO leitor (nome, cpf, email)
-VALUES ('Marina Souza', '01234567890', 'marina.souza@exemplo.com');
-INSERT INTO telefone_leitor (id_leitor, numero) VALUES (1, '47999990001');
-```
-(aceitar subconsultas ou RETURNING no lugar dos ids fixos e dados fictícios diferentes)
+**Resposta esperada:** INSERT INTO editora (nome, cidade) VALUES ('Editora Aurora', 'Blumenau'); INSERT INTO categoria (nome) VALUES ('Literatura brasileira'); INSERT INTO autor (nome) VALUES ('Ana Prado'); INSERT INTO livro (titulo, isbn, ano_publicacao, id_editora, id_categoria) VALUES ('Contos do Vale', '9788500000011', 2015, 1, 1); INSERT INTO livro_autor (id_livro, id_autor) VALUES (1, 1); INSERT INTO exemplar (id_livro, codigo_tombo) VALUES (1, 'T-0001'), (1, 'T-0002'); INSERT INTO leitor (nome, cpf, email) VALUES ('Marina Souza', '01234567890', 'marina.souza@exemplo.com'); INSERT INTO telefone_leitor (id_leitor, numero) VALUES (1, '47999990001'); (aceitar subconsultas ou RETURNING no lugar dos ids fixos e dados fictícios diferentes)
 **Critérios:** Nota cheia (0,2): todos os INSERT na ordem das dependências (pai antes do filho), com as colunas citadas e a ligação livro_autor. Metade (0,1): falta um ou dois INSERT ou ordem que quebra uma FK. Zero (0): INSERT sem relação com as tabelas do caso ou dados pessoais reais.
 
 ### ITEM 11-c
-**Resposta esperada:**
-```sql
-BEGIN;
-UPDATE emprestimo
-   SET data_devolucao = CURRENT_DATE,
-       valor_multa    = GREATEST(CURRENT_DATE - data_prevista, 0) * 1.00
- WHERE id_emprestimo = 1
-   AND data_devolucao IS NULL;
-UPDATE exemplar
-   SET situacao = 'disponivel'
- WHERE id_exemplar = (SELECT id_exemplar FROM emprestimo WHERE id_emprestimo = 1);
-COMMIT;
-
-UPDATE leitor SET ativo = false WHERE id_leitor = 1;
-```
-Com 5 dias de atraso, valor_multa = 5,00 (aceitar o valor fixo 5.00 escrito direto).
+**Resposta esperada:** BEGIN; UPDATE emprestimo SET data_devolucao = CURRENT_DATE, valor_multa    = GREATEST(CURRENT_DATE - data_prevista, 0) * 1.00 WHERE id_emprestimo = 1 AND data_devolucao IS NULL; UPDATE exemplar SET situacao = 'disponivel' WHERE id_exemplar = (SELECT id_exemplar FROM emprestimo WHERE id_emprestimo = 1); COMMIT; UPDATE leitor SET ativo = false WHERE id_leitor = 1; Com 5 dias de atraso, valor_multa = 5,00 (aceitar o valor fixo 5.00 escrito direto).
 **Critérios:** Nota cheia (0,2): BEGIN/COMMIT com as duas atualizações (devolução com multa e exemplar disponível) com WHERE + UPDATE que inativa o leitor. Metade (0,1): sem transação, ou falta uma das atualizações, ou falta a inativação. Zero (0): UPDATE sem WHERE ou exclusão do leitor.
 
 ### ITEM 12-a
@@ -282,35 +166,11 @@ Com 5 dias de atraso, valor_multa = 5,00 (aceitar o valor fixo 5.00 escrito dire
 **Critérios:** Nota cheia (0,1): os cinco certos. Metade (0,05): três ou quatro certos. Zero (0): dois ou menos.
 
 ### ITEM 12-b
-**Resposta esperada:**
-```sql
--- Consulta 1
-SELECT titulo, ano_publicacao
-  FROM livro
- WHERE ano_publicacao BETWEEN 2000 AND 2020
- ORDER BY ano_publicacao DESC, titulo;
-
--- Consulta 2
-SELECT nome, email
-  FROM leitor
- WHERE ativo = true
-   AND nome ILIKE 'mar%'
- ORDER BY nome;
-```
+**Resposta esperada:** /* Consulta 1 */ SELECT titulo, ano_publicacao FROM livro WHERE ano_publicacao BETWEEN 2000 AND 2020 ORDER BY ano_publicacao DESC, titulo; /* Consulta 2 */ SELECT nome, email FROM leitor WHERE ativo = true AND nome ILIKE 'mar%' ORDER BY nome;
 **Critérios:** Nota cheia (0,2): as duas consultas com filtro e ordenação certos (DESC no ano e desempate por título; ILIKE ou lower(...) LIKE e só nome e e-mail). Metade (0,1): uma consulta certa, ou as duas sem a ordenação pedida. Zero (0): nenhuma roda ou filtros errados.
 
 ### ITEM 12-c
-**Resposta esperada:**
-```sql
--- Consulta 3
-SELECT id_emprestimo, id_leitor, id_exemplar, data_prevista,
-       CURRENT_DATE - data_prevista AS dias_atraso
-  FROM emprestimo
- WHERE data_devolucao IS NULL
-   AND data_prevista < CURRENT_DATE
- ORDER BY dias_atraso DESC;
-```
-Usa-se **IS NULL** porque NULL significa "valor desconhecido": a comparação `= NULL` nunca dá verdadeiro (resulta em nulo) e a consulta voltaria **vazia**.
+**Resposta esperada:** /* Consulta 3 */ SELECT id_emprestimo, id_leitor, id_exemplar, data_prevista, CURRENT_DATE - data_prevista AS dias_atraso FROM emprestimo WHERE data_devolucao IS NULL AND data_prevista < CURRENT_DATE ORDER BY dias_atraso DESC; Usa-se **IS NULL** porque NULL significa "valor desconhecido": a comparação `= NULL` nunca dá verdadeiro (resulta em nulo) e a consulta voltaria **vazia**.
 **Critérios:** Nota cheia (0,2): filtro de em aberto + atrasado, dias calculados, ordem decrescente + explicação do IS NULL. Metade (0,1): consulta certa sem a explicação, ou explicação com a consulta sem o cálculo/ordem. Zero (0): usa `= NULL` ou sem relação.
 
 ### ITEM 13-a
@@ -318,30 +178,11 @@ Usa-se **IS NULL** porque NULL significa "valor desconhecido": a comparação `=
 **Critérios:** Nota cheia (0,1): as duas definições certas. Metade (0,05): só uma certa. Zero (0): trocadas ou sem relação.
 
 ### ITEM 13-b
-**Resposta esperada:**
-```sql
--- Consulta 4
-SELECT le.nome AS leitor, l.titulo, ex.codigo_tombo, em.data_prevista
-  FROM emprestimo em
-  JOIN leitor   le ON le.id_leitor   = em.id_leitor
-  JOIN exemplar ex ON ex.id_exemplar = em.id_exemplar
-  JOIN livro    l  ON l.id_livro     = ex.id_livro
- WHERE em.data_devolucao IS NULL
- ORDER BY em.data_prevista;
-```
+**Resposta esperada:** /* Consulta 4 */ SELECT le.nome AS leitor, l.titulo, ex.codigo_tombo, em.data_prevista FROM emprestimo em JOIN leitor   le ON le.id_leitor   = em.id_leitor JOIN exemplar ex ON ex.id_exemplar = em.id_exemplar JOIN livro    l  ON l.id_livro     = ex.id_livro WHERE em.data_devolucao IS NULL ORDER BY em.data_prevista;
 **Critérios:** Nota cheia (0,2): as quatro tabelas ligadas pelas chaves certas (livro pelo exemplar), filtro de em aberto e ordenação. Metade (0,1): falta uma junção ou o filtro/ordem. Zero (0): junção sem condição (produto cartesiano) ou sem relação.
 
 ### ITEM 13-c
-**Resposta esperada:**
-```sql
--- Consulta 5
-SELECT l.titulo
-  FROM livro l
-  LEFT JOIN exemplar ex ON ex.id_livro = l.id_livro
- WHERE ex.id_exemplar IS NULL
- ORDER BY l.titulo;
-```
-O INNER JOIN **descarta** os livros sem exemplar, que são justamente os procurados; o LEFT JOIN mantém todos os livros e os sem exemplar aparecem com as colunas de exemplar **nulas**, filtradas pelo IS NULL. (Aceitar NOT EXISTS ou NOT IN com a explicação do LEFT JOIN.)
+**Resposta esperada:** /* Consulta 5 */ SELECT l.titulo FROM livro l LEFT JOIN exemplar ex ON ex.id_livro = l.id_livro WHERE ex.id_exemplar IS NULL ORDER BY l.titulo; O INNER JOIN **descarta** os livros sem exemplar, que são justamente os procurados; o LEFT JOIN mantém todos os livros e os sem exemplar aparecem com as colunas de exemplar **nulas**, filtradas pelo IS NULL. (Aceitar NOT EXISTS ou NOT IN com a explicação do LEFT JOIN.)
 **Critérios:** Nota cheia (0,2): consulta certa com LEFT JOIN + IS NULL + explicação. Metade (0,1): consulta certa sem explicação, ou explicação certa com consulta incompleta. Zero (0): INNER JOIN ou sem relação.
 
 ### ITEM 14-a
@@ -349,34 +190,11 @@ O INNER JOIN **descarta** os livros sem exemplar, que são justamente os procura
 **Critérios:** Nota cheia (0,1): GROUP BY + diferença WHERE × HAVING. Metade (0,05): só uma das partes. Zero (0): sem relação.
 
 ### ITEM 14-b
-**Resposta esperada:**
-```sql
--- Consulta 6
-SELECT c.nome AS categoria, count(em.id_emprestimo) AS total_emprestimos
-  FROM categoria c
-  JOIN livro      l  ON l.id_categoria = c.id_categoria
-  JOIN exemplar   ex ON ex.id_livro    = l.id_livro
-  JOIN emprestimo em ON em.id_exemplar = ex.id_exemplar
- GROUP BY c.nome
- ORDER BY total_emprestimos DESC;
-```
-(aceitar LEFT JOIN para mostrar categorias com zero)
+**Resposta esperada:** /* Consulta 6 */ SELECT c.nome AS categoria, count(em.id_emprestimo) AS total_emprestimos FROM categoria c JOIN livro      l  ON l.id_categoria = c.id_categoria JOIN exemplar   ex ON ex.id_livro    = l.id_livro JOIN emprestimo em ON em.id_exemplar = ex.id_exemplar GROUP BY c.nome ORDER BY total_emprestimos DESC; (aceitar LEFT JOIN para mostrar categorias com zero)
 **Critérios:** Nota cheia (0,2): junções até o empréstimo, count, GROUP BY da categoria e ordem decrescente. Metade (0,1): falta uma junção ou a ordem. Zero (0): sem GROUP BY ou sem relação.
 
 ### ITEM 14-c
-**Resposta esperada:**
-```sql
--- Consulta 7
-SELECT le.nome, count(*) AS qtd_emprestimos, sum(em.valor_multa) AS total_multas
-  FROM leitor le
-  JOIN emprestimo em ON em.id_leitor = le.id_leitor
- WHERE em.data_emprestimo >= DATE '2026-01-01'
-   AND em.data_emprestimo <  DATE '2027-01-01'
- GROUP BY le.id_leitor, le.nome
-HAVING count(*) > 2
- ORDER BY qtd_emprestimos DESC;
-```
-O ano filtra **linhas** (cada empréstimo), então fica no WHERE, antes de agrupar; "mais de 2" é uma condição sobre a **contagem do grupo**, que só existe depois do GROUP BY, então fica no HAVING. (Aceitar `EXTRACT(YEAR FROM data_emprestimo) = 2026`.)
+**Resposta esperada:** /* Consulta 7 */ SELECT le.nome, count(*) AS qtd_emprestimos, sum(em.valor_multa) AS total_multas FROM leitor le JOIN emprestimo em ON em.id_leitor = le.id_leitor WHERE em.data_emprestimo >= DATE '2026-01-01' AND em.data_emprestimo <  DATE '2027-01-01' GROUP BY le.id_leitor, le.nome HAVING count(*) > 2 ORDER BY qtd_emprestimos DESC; O ano filtra **linhas** (cada empréstimo), então fica no WHERE, antes de agrupar; "mais de 2" é uma condição sobre a **contagem do grupo**, que só existe depois do GROUP BY, então fica no HAVING. (Aceitar `EXTRACT(YEAR FROM data_emprestimo) = 2026`.)
 **Critérios:** Nota cheia (0,2): consulta com WHERE do ano, GROUP BY, HAVING count > 2 e soma das multas + explicação. Metade (0,1): consulta certa sem explicação, ou com o ano no HAVING. Zero (0): count no WHERE ou sem relação.
 
 ### ITEM 15-a
@@ -384,45 +202,11 @@ O ano filtra **linhas** (cada empréstimo), então fica no WHERE, antes de agrup
 **Critérios:** Nota cheia (0,1): definição + diferença IN × EXISTS. Metade (0,05): só uma das partes. Zero (0): sem relação.
 
 ### ITEM 15-b
-**Resposta esperada:**
-```sql
--- Consulta 8
-SELECT l.titulo
-  FROM livro l
- WHERE NOT EXISTS (
-         SELECT 1
-           FROM exemplar ex
-           JOIN emprestimo em ON em.id_exemplar = ex.id_exemplar
-          WHERE ex.id_livro = l.id_livro)
- ORDER BY l.titulo;
-
--- Consulta 9
-SELECT id_emprestimo, id_leitor, valor_multa
-  FROM emprestimo
- WHERE valor_multa > (SELECT avg(valor_multa)
-                        FROM emprestimo
-                       WHERE valor_multa > 0)
- ORDER BY valor_multa DESC;
-```
+**Resposta esperada:** /* Consulta 8 */ SELECT l.titulo FROM livro l WHERE NOT EXISTS ( SELECT 1 FROM exemplar ex JOIN emprestimo em ON em.id_exemplar = ex.id_exemplar WHERE ex.id_livro = l.id_livro) ORDER BY l.titulo; /* Consulta 9 */ SELECT id_emprestimo, id_leitor, valor_multa FROM emprestimo WHERE valor_multa > (SELECT avg(valor_multa) FROM emprestimo WHERE valor_multa > 0) ORDER BY valor_multa DESC;
 **Critérios:** Nota cheia (0,2): consulta 8 com NOT EXISTS correlacionado pelo livro passando pelo exemplar + consulta 9 com a média só das multas > 0. Metade (0,1): uma das duas certa, ou a 9 com a média de todos os empréstimos. Zero (0): nenhuma certa.
 
 ### ITEM 15-c
-**Resposta esperada:**
-```sql
--- Consulta 10
-SELECT l.titulo, count(*) AS qtd_emprestimos
-  FROM livro l
-  JOIN exemplar   ex ON ex.id_livro    = l.id_livro
-  JOIN emprestimo em ON em.id_exemplar = ex.id_exemplar
- GROUP BY l.id_livro, l.titulo
-HAVING count(*) = (
-         SELECT max(qtd)
-           FROM (SELECT count(*) AS qtd
-                   FROM emprestimo em2
-                   JOIN exemplar ex2 ON ex2.id_exemplar = em2.id_exemplar
-                  GROUP BY ex2.id_livro) AS t);
-```
-Com **empate** (dois títulos com a mesma quantidade máxima), ORDER BY ... LIMIT 1 mostra **só um** e esconde o outro de forma arbitrária; a subconsulta com o máximo traz **todos** os empatados.
+**Resposta esperada:** /* Consulta 10 */ SELECT l.titulo, count(*) AS qtd_emprestimos FROM livro l JOIN exemplar   ex ON ex.id_livro    = l.id_livro JOIN emprestimo em ON em.id_exemplar = ex.id_exemplar GROUP BY l.id_livro, l.titulo HAVING count(*) = ( SELECT max(qtd) FROM (SELECT count(*) AS qtd FROM emprestimo em2 JOIN exemplar ex2 ON ex2.id_exemplar = em2.id_exemplar GROUP BY ex2.id_livro) AS t); Com **empate** (dois títulos com a mesma quantidade máxima), ORDER BY ... LIMIT 1 mostra **só um** e esconde o outro de forma arbitrária; a subconsulta com o máximo traz **todos** os empatados.
 **Critérios:** Nota cheia (0,2): agrupamento por livro + HAVING comparando com o máximo da subconsulta + explicação do empate. Metade (0,1): consulta certa sem a explicação, ou só ORDER BY/LIMIT com a explicação do empate. Zero (0): sem relação.
 
 ### ITEM 16-a
@@ -430,53 +214,7 @@ Com **empate** (dois títulos com a mesma quantidade máxima), ORDER BY ... LIMI
 **Critérios:** Nota cheia (0,1): diferença (retorno × ação; SELECT × CALL) + motivo no caso. Metade (0,05): só a diferença ou só o motivo. Zero (0): sem relação.
 
 ### ITEM 16-b
-**Resposta esperada:**
-```sql
-CREATE OR REPLACE PROCEDURE emprestar(p_id_leitor integer, p_id_exemplar integer)
-LANGUAGE plpgsql
-SECURITY DEFINER
-SET search_path = public
-AS $$
-DECLARE
-  v_ativo     boolean;
-  v_situacao  varchar(12);
-  v_abertos   integer;
-  v_atrasados integer;
-BEGIN
-  SELECT ativo INTO v_ativo
-    FROM leitor WHERE id_leitor = p_id_leitor
-     FOR UPDATE;
-  IF NOT FOUND OR NOT v_ativo THEN
-    RAISE EXCEPTION 'Leitor % não existe ou está inativo', p_id_leitor;
-  END IF;
-
-  SELECT situacao INTO v_situacao
-    FROM exemplar WHERE id_exemplar = p_id_exemplar
-     FOR UPDATE;
-  IF NOT FOUND OR v_situacao <> 'disponivel' THEN
-    RAISE EXCEPTION 'Exemplar % não está disponível', p_id_exemplar;
-  END IF;
-
-  SELECT count(*), count(*) FILTER (WHERE data_prevista < CURRENT_DATE)
-    INTO v_abertos, v_atrasados
-    FROM emprestimo
-   WHERE id_leitor = p_id_leitor
-     AND data_devolucao IS NULL;
-  IF v_atrasados > 0 THEN
-    RAISE EXCEPTION 'Leitor % tem empréstimo em atraso', p_id_leitor;
-  END IF;
-  IF v_abertos >= 3 THEN
-    RAISE EXCEPTION 'Leitor % já tem 3 empréstimos em aberto', p_id_leitor;
-  END IF;
-
-  INSERT INTO emprestimo (id_exemplar, id_leitor, data_emprestimo, data_prevista)
-  VALUES (p_id_exemplar, p_id_leitor, CURRENT_DATE, CURRENT_DATE + 14);
-
-  UPDATE exemplar SET situacao = 'emprestado' WHERE id_exemplar = p_id_exemplar;
-END;
-$$;
-```
-(SECURITY DEFINER e search_path são boa prática para a aula 19, mas não obrigatórios; aceitar IF EXISTS no lugar das contagens.)
+**Resposta esperada:** CREATE OR REPLACE PROCEDURE emprestar(p_id_leitor integer, p_id_exemplar integer) LANGUAGE plpgsql SECURITY DEFINER SET search_path = public AS $$ DECLARE v_ativo     boolean; v_situacao  varchar(12); v_abertos   integer; v_atrasados integer; BEGIN SELECT ativo INTO v_ativo FROM leitor WHERE id_leitor = p_id_leitor FOR UPDATE; IF NOT FOUND OR NOT v_ativo THEN RAISE EXCEPTION 'Leitor % não existe ou está inativo', p_id_leitor; END IF; SELECT situacao INTO v_situacao FROM exemplar WHERE id_exemplar = p_id_exemplar FOR UPDATE; IF NOT FOUND OR v_situacao <> 'disponivel' THEN RAISE EXCEPTION 'Exemplar % não está disponível', p_id_exemplar; END IF; SELECT count(*), count(*) FILTER (WHERE data_prevista < CURRENT_DATE) INTO v_abertos, v_atrasados FROM emprestimo WHERE id_leitor = p_id_leitor AND data_devolucao IS NULL; IF v_atrasados > 0 THEN RAISE EXCEPTION 'Leitor % tem empréstimo em atraso', p_id_leitor; END IF; IF v_abertos >= 3 THEN RAISE EXCEPTION 'Leitor % já tem 3 empréstimos em aberto', p_id_leitor; END IF; INSERT INTO emprestimo (id_exemplar, id_leitor, data_emprestimo, data_prevista) VALUES (p_id_exemplar, p_id_leitor, CURRENT_DATE, CURRENT_DATE + 14); UPDATE exemplar SET situacao = 'emprestado' WHERE id_exemplar = p_id_exemplar; END; $$; (SECURITY DEFINER e search_path são boa prática para a aula 19, mas não obrigatórios; aceitar IF EXISTS no lugar das contagens.)
 **Critérios:** Nota cheia (0,2): confere exemplar disponível, leitor ativo, atraso e limite de 3 com RAISE EXCEPTION + INSERT com data prevista de 14 dias + UPDATE do exemplar. Metade (0,1): falta uma das regras de R5 ou o UPDATE do exemplar. Zero (0): sem as regras, sintaxe que não é PL/pgSQL ou função que não grava.
 
 ### ITEM 16-c
@@ -488,37 +226,7 @@ $$;
 **Critérios:** Nota cheia (0,1): definição + AFTER, FOR EACH ROW, OLD e NEW. Metade (0,05): definição com só parte dos termos. Zero (0): confunde com procedimento chamado por CALL ou sem relação.
 
 ### ITEM 17-b
-**Resposta esperada:**
-```sql
-CREATE TABLE historico_exemplar (
-  id_historico      serial PRIMARY KEY,
-  id_exemplar       integer NOT NULL REFERENCES exemplar (id_exemplar),
-  situacao_anterior varchar(12),
-  situacao_nova     varchar(12) NOT NULL,
-  usuario           text NOT NULL DEFAULT session_user,
-  alterado_em       timestamptz NOT NULL DEFAULT now()
-);
-
-CREATE OR REPLACE FUNCTION registrar_historico_exemplar()
-RETURNS trigger
-LANGUAGE plpgsql
-SECURITY DEFINER
-SET search_path = public
-AS $$
-BEGIN
-  INSERT INTO historico_exemplar (id_exemplar, situacao_anterior, situacao_nova, usuario, alterado_em)
-  VALUES (NEW.id_exemplar, OLD.situacao, NEW.situacao, session_user, now());
-  RETURN NEW;
-END;
-$$;
-
-CREATE TRIGGER trg_historico_exemplar
-AFTER UPDATE OF situacao ON exemplar
-FOR EACH ROW
-WHEN (OLD.situacao IS DISTINCT FROM NEW.situacao)
-EXECUTE FUNCTION registrar_historico_exemplar();
-```
-(aceitar `current_user` sem SECURITY DEFINER e o IF dentro da função no lugar do WHEN)
+**Resposta esperada:** CREATE TABLE historico_exemplar ( id_historico      serial PRIMARY KEY, id_exemplar       integer NOT NULL REFERENCES exemplar (id_exemplar), situacao_anterior varchar(12), situacao_nova     varchar(12) NOT NULL, usuario           text NOT NULL DEFAULT session_user, alterado_em       timestamptz NOT NULL DEFAULT now() ); CREATE OR REPLACE FUNCTION registrar_historico_exemplar() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path = public AS $$ BEGIN INSERT INTO historico_exemplar (id_exemplar, situacao_anterior, situacao_nova, usuario, alterado_em) VALUES (NEW.id_exemplar, OLD.situacao, NEW.situacao, session_user, now()); RETURN NEW; END; $$; CREATE TRIGGER trg_historico_exemplar AFTER UPDATE OF situacao ON exemplar FOR EACH ROW WHEN (OLD.situacao IS DISTINCT FROM NEW.situacao) EXECUTE FUNCTION registrar_historico_exemplar(); (aceitar `current_user` sem SECURITY DEFINER e o IF dentro da função no lugar do WHEN)
 **Critérios:** Nota cheia (0,2): tabela de histórico + função RETURNS trigger que grava OLD e NEW da situação, usuário e data e hora + CREATE TRIGGER AFTER UPDATE FOR EACH ROW com a condição de mudança. Metade (0,1): falta a condição de mudança, o usuário/data ou a tabela. Zero (0): sem a função ou sem o CREATE TRIGGER.
 
 ### ITEM 17-c
@@ -542,51 +250,11 @@ EXECUTE FUNCTION registrar_historico_exemplar();
 **Critérios:** Nota cheia (0,1): menor privilégio + diferença grupo × login. Metade (0,05): só uma das partes. Zero (0): sem relação.
 
 ### ITEM 19-b
-**Resposta esperada:**
-```sql
-REVOKE ALL ON DATABASE biblioteca_db FROM PUBLIC;
-REVOKE ALL ON SCHEMA public FROM PUBLIC;
-
-CREATE ROLE grupo_balcao NOLOGIN;
-CREATE ROLE lucas_balcao LOGIN PASSWORD 'troque-esta-senha' IN ROLE grupo_balcao;
-
-GRANT CONNECT ON DATABASE biblioteca_db TO grupo_balcao;
-GRANT USAGE ON SCHEMA public TO grupo_balcao;
-GRANT SELECT (id_leitor, nome, email, ativo) ON leitor TO grupo_balcao;
-GRANT SELECT ON livro, autor, livro_autor, editora, categoria, exemplar, emprestimo TO grupo_balcao;
-GRANT UPDATE (data_devolucao, valor_multa) ON emprestimo TO grupo_balcao;
-GRANT UPDATE (situacao) ON exemplar TO grupo_balcao;
-
-REVOKE EXECUTE ON PROCEDURE emprestar(integer, integer) FROM PUBLIC;
-GRANT EXECUTE ON PROCEDURE emprestar(integer, integer) TO grupo_balcao, app_biblioteca;
-```
-(aceitar `GRANT grupo_balcao TO app_biblioteca`; nenhum GRANT de CREATE, ALTER, DROP nem do comando de exclusão)
+**Resposta esperada:** REVOKE ALL ON DATABASE biblioteca_db FROM PUBLIC; REVOKE ALL ON SCHEMA public FROM PUBLIC; CREATE ROLE grupo_balcao NOLOGIN; CREATE ROLE lucas_balcao LOGIN PASSWORD 'troque-esta-senha' IN ROLE grupo_balcao; GRANT CONNECT ON DATABASE biblioteca_db TO grupo_balcao; GRANT USAGE ON SCHEMA public TO grupo_balcao; GRANT SELECT (id_leitor, nome, email, ativo) ON leitor TO grupo_balcao; GRANT SELECT ON livro, autor, livro_autor, editora, categoria, exemplar, emprestimo TO grupo_balcao; GRANT UPDATE (data_devolucao, valor_multa) ON emprestimo TO grupo_balcao; GRANT UPDATE (situacao) ON exemplar TO grupo_balcao; REVOKE EXECUTE ON PROCEDURE emprestar(integer, integer) FROM PUBLIC; GRANT EXECUTE ON PROCEDURE emprestar(integer, integer) TO grupo_balcao, app_biblioteca; (aceitar `GRANT grupo_balcao TO app_biblioteca`; nenhum GRANT de CREATE, ALTER, DROP nem do comando de exclusão)
 **Critérios:** Nota cheia (0,2): REVOKE de PUBLIC + grupo NOLOGIN e login no grupo + SELECT por coluna no leitor sem o CPF + EXECUTE no procedimento, sem privilégio a mais. Metade (0,1): falta o REVOKE de PUBLIC ou o EXECUTE, ou o SELECT do leitor é na tabela inteira. Zero (0): GRANT ALL, superusuário ou sem relação.
 
 ### ITEM 19-c
-**Resposta esperada:**
-```sql
-CREATE VIEW vw_emprestimos_categoria AS
-SELECT c.nome AS categoria, count(em.id_emprestimo) AS total_emprestimos
-  FROM categoria c
-  JOIN livro      l  ON l.id_categoria = c.id_categoria
-  JOIN exemplar   ex ON ex.id_livro    = l.id_livro
-  JOIN emprestimo em ON em.id_exemplar = ex.id_exemplar
- GROUP BY c.nome;
-
-CREATE ROLE grupo_coordenacao NOLOGIN;
-CREATE ROLE helena_coordenacao LOGIN PASSWORD 'troque-esta-senha' IN ROLE grupo_coordenacao;
-GRANT CONNECT ON DATABASE biblioteca_db TO grupo_coordenacao;
-GRANT USAGE ON SCHEMA public TO grupo_coordenacao;
-GRANT SELECT ON vw_emprestimos_categoria TO grupo_coordenacao;
-
--- teste (como postgres)
-SET ROLE lucas_balcao;
-SELECT nome, email FROM leitor;   -- funciona
-SELECT cpf FROM leitor;           -- ERROR: permission denied for table leitor
-RESET ROLE;
-```
-(aceitar outra visão de relatório e o teste entrando com `psql -U lucas_balcao -d biblioteca_db`)
+**Resposta esperada:** CREATE VIEW vw_emprestimos_categoria AS SELECT c.nome AS categoria, count(em.id_emprestimo) AS total_emprestimos FROM categoria c JOIN livro      l  ON l.id_categoria = c.id_categoria JOIN exemplar   ex ON ex.id_livro    = l.id_livro JOIN emprestimo em ON em.id_exemplar = ex.id_exemplar GROUP BY c.nome; CREATE ROLE grupo_coordenacao NOLOGIN; CREATE ROLE helena_coordenacao LOGIN PASSWORD 'troque-esta-senha' IN ROLE grupo_coordenacao; GRANT CONNECT ON DATABASE biblioteca_db TO grupo_coordenacao; GRANT USAGE ON SCHEMA public TO grupo_coordenacao; GRANT SELECT ON vw_emprestimos_categoria TO grupo_coordenacao; /* teste (como postgres) */ SET ROLE lucas_balcao; SELECT nome, email FROM leitor; /* funciona */ SELECT cpf FROM leitor; /* ERROR: permission denied for table leitor */ RESET ROLE; (aceitar outra visão de relatório e o teste entrando com `psql -U lucas_balcao -d biblioteca_db`)
 **Critérios:** Nota cheia (0,2): coordenação só com SELECT na visão + teste do balcão com o erro de permissão no CPF. Metade (0,1): só a coordenação ou só o teste, ou coordenação com SELECT nas tabelas. Zero (0): sem relação.
 
 ### ITEM 20-a
@@ -594,18 +262,7 @@ RESET ROLE;
 **Critérios:** Nota cheia (0,1): pelo menos três documentos com a função de cada. Metade (0,05): documentos citados sem a função, ou só um ou dois. Zero (0): sem relação.
 
 ### ITEM 20-b
-**Resposta esperada:**
-```
-\set ON_ERROR_STOP on
-\i 01-ddl-biblioteca.sql
-\i 02-dados-teste.sql
-\i 03-consultas.sql
-\i 04-procedimentos.sql
-\i 05-triggers.sql
-\i 06-visoes.sql
-\i 07-seguranca.sql
-```
-Num banco limpo: `dropdb -U postgres --if-exists biblioteca_teste`, `createdb -U postgres biblioteca_teste` e `psql -U postgres -d biblioteca_teste -f sql/00-instalar.sql` (aceitar DROP DATABASE / CREATE DATABASE no psql e `\ir`).
+**Resposta esperada:** \set ON_ERROR_STOP on \i 01-ddl-biblioteca.sql \i 02-dados-teste.sql \i 03-consultas.sql \i 04-procedimentos.sql \i 05-triggers.sql \i 06-visoes.sql \i 07-seguranca.sql Num banco limpo: `dropdb -U postgres --if-exists biblioteca_teste`, `createdb -U postgres biblioteca_teste` e `psql -U postgres -d biblioteca_teste -f sql/00-instalar.sql` (aceitar DROP DATABASE / CREATE DATABASE no psql e `\ir`).
 **Critérios:** Nota cheia (0,2): ON_ERROR_STOP + os sete scripts na ordem das dependências + banco limpo de teste + psql -f. Metade (0,1): falta o ON_ERROR_STOP ou o banco limpo, ou ordem com um script fora do lugar. Zero (0): roda no banco de produção sem teste ou ordem que quebra (segurança antes das tabelas).
 
 ### ITEM 20-c
