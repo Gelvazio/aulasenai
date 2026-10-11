@@ -52,6 +52,8 @@
     word-break: break-all;
 }
 
+.tk-dependencias { display: block; font-family: monospace; font-size: 13px; }
+
 .tk-link-pr { display: inline-block; margin-top: 4px; font-size: 13px; }
 
 .tk-linha--off { opacity: var(--tk-opacidade-off); }

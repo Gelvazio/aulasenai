@@ -197,3 +197,79 @@ revoke execute on function public.finalizar_task(bigint, text, text, text, text)
 
 comment on table public.tasks is
   'Fila lida pelo agendador único (#24). Toda task existe aqui e no GitHub (TASKS.md ou tasks/fila/).';
+
+-- ── 2026-10-11: ordem e dependências (pedido do usuário: "crie ordem na tabela task e campo
+-- task_dependente com o id das tasks de que ela depende; só inicia com as dependentes concluídas").
+alter table public.tasks add column if not exists ordem integer;
+alter table public.tasks add column if not exists task_dependente bigint[] not null default '{}';
+
+create index if not exists tasks_ordem_idx on public.tasks (ordem);
+
+-- Dependências válidas: ids existentes, sem a própria task e sem repetição.
+create or replace function public.tasks_validar_dependencias()
+returns trigger
+language plpgsql
+set search_path = public
+as $$
+declare
+  v_faltando bigint;
+begin
+  new.task_dependente := coalesce(
+    (select array_agg(distinct d order by d) from unnest(new.task_dependente) d), '{}');
+  if new.id = any(new.task_dependente) then
+    raise exception 'Uma task não pode depender dela mesma.';
+  end if;
+  select d into v_faltando from unnest(new.task_dependente) d
+   where not exists (select 1 from public.tasks t where t.id = d) limit 1;
+  if v_faltando is not null then
+    raise exception 'Task dependente % não existe.', v_faltando;
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists tasks_validar_dependencias_trg on public.tasks;
+create trigger tasks_validar_dependencias_trg before insert or update on public.tasks
+  for each row execute function public.tasks_validar_dependencias();
+
+-- Só pega task cujas dependências estão todas concluídas; ordem: prioridade, ordem, criação.
+create or replace function public.pegar_proxima_task(p_frente text)
+returns setof public.tasks
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_id bigint;
+begin
+  update public.tasks
+     set status = 'pendente', trava_frente = null, trava_em = null, expira_em = null,
+         resultado = coalesce(resultado || E'\n', '') || 'Trava expirada em ' || now()
+   where status = 'em_execucao' and expira_em < now();
+
+  select t.id into v_id from public.tasks t
+   where t.status = 'pendente' and t.executar and not t.excluido
+     and (t.executar_apos is null or t.executar_apos <= now())
+     and t.tentativas < t.max_tentativas
+     and not exists (
+       select 1 from unnest(t.task_dependente) d
+         left join public.tasks x on x.id = d
+        where x.status is distinct from 'concluida')
+   order by t.prioridade, t.ordem nulls last, t.criado_em
+   limit 1
+   for update of t skip locked;
+
+  if v_id is null then
+    return;
+  end if;
+
+  return query
+  update public.tasks
+     set status = 'em_execucao', trava_frente = p_frente, trava_em = now(),
+         expira_em = now() + interval '90 minutes', tentativas = tentativas + 1
+   where id = v_id
+  returning *;
+end;
+$$;
+
+revoke execute on function public.pegar_proxima_task(text) from public, anon, authenticated;

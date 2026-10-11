@@ -323,14 +323,20 @@ executa algo ou não". Decisões: substitui a #23; fila vazia = não faz nada; c
 Pedido: questões da objetiva e da prática só no banco; objetiva e prática com layout global (sem
 página criada do zero por aula); pastas das matérias/aulas só com conteúdo, sem HTML (tudo do global).
 
-- [ ] Plano: páginas globais (objetiva e prática) que abrem a atividade pelo id; como as questões
-  chegam ao banco sem arquivo de questões (seeds, fontes `.md` de `ATIVIDADES/CONTEUDO/` e
-  `-GABARITO.md`); índice, avaliações, média final e apostila vindos do global; o que fazer com os
-  HTML das matérias (redirecionar ou apagar); mudanças nas regras e nos scripts de conferência.
-- [ ] Aprovação do usuário.
-- [ ] Migrar uma matéria por vez (ordem do `tasks/ORDEM-MATERIAS.md`), conferindo pelo md5.
-- [ ] Aceite do usuário.
+**Dividida em 22 sub-tasks** (2026-10-11 06:07, pedido do usuário) na tabela `tasks` (ids 19 a 40, arquivos
+`tasks/fila/TASK-0019.md` a `TASK-0040.md`), em cadeia: cada uma só começa com a anterior
+concluída; as etapas 👤 (25.03 aprovação do plano, 25.11 aceite do piloto, 25.22 aceite final) são
+do usuário, na página `tasks.html`.
+
+- [ ] 25.01 Levantamento · 25.02 Plano · 25.03 👤 Aprovação
+- [ ] 25.04 Banco das objetivas · 25.05 Script de carga · 25.06 Banco da prática
+- [ ] 25.07 Página global objetiva · 25.08 Página global prática · 25.09 Índice global
+- [ ] 25.10 Piloto Testes de Front-End · 25.11 👤 Aceite do piloto
+- [ ] 25.12 a 25.18 Migrar Banco de Dados, ITIC, ADAG, Automação, Fundamentos da Tecnologia,
+  Comunicação Oral e Escrita, Reforço de Linguagens (uma por vez)
+- [ ] 25.19 Avaliações e média final · 25.20 Apostila · 25.21 Remover HTML, regras e scripts
+- [ ] 25.22 👤 Aceite final
 
 ---
 
-**Última atualização:** 2026-10-11 06:01 (tarefa #25-b3e29764-940b-4a82 adicionada)
+**Última atualização:** 2026-10-11 06:07 (#25 dividida em 22 sub-tasks)

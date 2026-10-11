@@ -56,7 +56,8 @@
                         <thead>
                             <tr>
                                 <th>Task</th>
-                                <th>Prioridade</th>
+                                <th>Ordem / prioridade</th>
+                                <th>Depende de</th>
                                 <th>ON/OFF</th>
                                 <th>Status</th>
                                 <th>Resultado</th>
@@ -91,6 +92,9 @@
                             <option value="5">5 — mais baixa</option>
                         </select>
                     </label>
+                    <label class="tp-campo">Ordem
+                        <input type="number" id="tkOrdem" class="guia-filtro" min="1" step="1">
+                    </label>
                     <label class="tp-campo">Executar após
                         <input type="datetime-local" id="tkExecutarApos" class="guia-filtro">
                     </label>
@@ -101,6 +105,10 @@
                         <input type="checkbox" id="tkExecutar" checked> Ligada (a IA pode pegar)
                     </label>
                 </div>
+                <label class="tp-campo">Depende das tasks (ids separados por vírgula; só começa com todas concluídas)
+                    <input type="text" id="tkDependentes" class="guia-filtro" inputmode="numeric"
+                        placeholder="Ex.: 19, 20">
+                </label>
                 <div class="tp-acoes">
                     <button type="submit" class="guia-botao">Salvar</button>
                     <button type="button" class="guia-botao tp-botao-secundario" data-fechar-modal>Cancelar</button>

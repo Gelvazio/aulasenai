@@ -9,7 +9,8 @@ const TABELA_TASKS_REPOSITORIO = "tasks";
 const RPC_ADMINISTRADOR_TASKS = "eh_professor_administrador";
 const COLUNAS_TASKS_REPOSITORIO = "id, codigo, origem, arquivo_md, sincronizado_em, titulo, " +
   "instrucao, prioridade, executar, executar_apos, status, tentativas, max_tentativas, " +
-  "trava_frente, expira_em, resultado, pr_url, commit_sha, excluido, criado_em, atualizado_em";
+  "trava_frente, expira_em, resultado, pr_url, commit_sha, excluido, criado_em, atualizado_em, " +
+  "ordem, task_dependente";
 
 /**
  * Lança o erro do Supabase, se houver, e devolve os dados.
@@ -40,11 +41,11 @@ function criarRepositorioTasks(cliente) {
       return dadosOuErroTasks(await cliente.rpc(RPC_ADMINISTRADOR_TASKS)) === true;
     },
 
-    /** @returns {Promise<Object[]>} Tasks não excluídas, pela ordem da fila. */
+    /** @returns {Promise<Object[]>} Tasks não excluídas, na ordem da fila (prioridade, ordem, criação). */
     async listarTasks() {
       return dadosOuErroTasks(await cliente.from(TABELA_TASKS_REPOSITORIO)
         .select(COLUNAS_TASKS_REPOSITORIO).eq("excluido", false)
-        .order("prioridade").order("criado_em"));
+        .order("prioridade").order("ordem", { nullsFirst: false }).order("criado_em"));
     },
 
     /**
