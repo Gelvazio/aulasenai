@@ -12,5 +12,5 @@ Frente: nuvem · ccr-00f69e8a-6qcla9.
 | 140.3 | `database/2026-10-11-agendamento-tarefa-logs.sql` (tabela já existente no banco, conferida: 21 colunas, CHECK com 5 valores, RLS ligado, sem políticas) | ✅ Concluído | 2026-10-11 05:14 | Consulta ao `information_schema` e `pg_constraint` |
 | 140.4 | Tarefa #22-816fd3fd-ffe8-41e7 (outras contas/IAs criam as tarefas 2 a 6) no `TASKS.md` e no `STATUS.md` | ✅ Concluído | 2026-10-11 05:15 | Linha no "📌 Tarefas" |
 | 140.5 | Prompt da rotina "Tarefa Aulas Senai" reescrito para seguir a regra (sem push na `main`, sem `TAREFA_AGENDADA.md`) | ✅ Concluído | 2026-10-11 05:17 | `update_trigger` + `get_trigger` |
-| 140.6 | Liberar o acesso do GitHub ao repositório para as tarefas agendadas | ⬜ Pendente | — | Ação do usuário na página de configurações |
-| 140.7 | Aceite do usuário | ⬜ Pendente | — | — |
+| 140.6 | Liberar o acesso do GitHub ao repositório para as tarefas agendadas | ⬜ Pendente | — | Ação do usuário (vincular o repositório na rotina); na fila como TASK-0042 (desligada) |
+| 140.7 | Aceite do usuário | ⬜ Pendente | — | Na fila como TASK-0043 (desligada, depende da TASK-0042) |
