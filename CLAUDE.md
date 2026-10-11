@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-10 22:19:46
+**Versão das regras:** 2026-10-11 05:12:00
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-11 05:12:00 | **Tarefas agendadas:** regra nova [`docs/regras/tarefas-agendadas.md`](docs/regras/tarefas-agendadas.md) — as rotinas que geram aulas sozinhas seguem as regras do projeto (branch própria + PR, nunca push direto na `main`; aula escolhida pelo `STATUS-AULAS.md` na ordem do `tasks/ORDEM-MATERIAS.md`; trava em `tasks/RECADOS.md`; log em `agendamento_tarefa_logs`); o `TAREFA_AGENDADA.md` na raiz não é usado — "⏰ TAREFAS AGENDADAS" |
 | 2026-10-10 22:19:46 | **Regra global de matérias:** tudo o que define como a ITIC é feita virou a regra única [`docs/regras/materias.md`](docs/regras/materias.md) (estrutura, ementa e `materia.json`, aulas, objetiva, prática, avaliações e média final, índice e menu, apostila, 5 status, banco e seeds, ordem de construção, critério de pronto, exceções); em vez de consultar a ITIC como modelo, consultar a regra — "🧱 REGRA GLOBAL DE MATÉRIAS" (substitui "MATÉRIA MODELO") |
 | 2026-10-10 16:40:55 | **Todos os arquivos de status existem sempre, em todas as matérias (inclusive IGNORAR):** `STATUS_MATERIA.md`, `AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` e `STATUS-EMENTAS.md`; o `gerar_status_materia.py` cria os que faltam antes de gerar — "🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS" |
 | 2026-10-10 16:37:58 | **STATUS_MATERIA e ordem das matérias:** toda matéria tem o `STATUS_MATERIA.md`, gerado por `scripts/status-materias/gerar_status_materia.py` a partir de todos os arquivos da pasta (peças do padrão da ITIC, aulas e coluna Banco lida do `database/SEEDS-APLICADOS.md`), com a situação ⬜ NÃO INICIADA / 🔄 PENDENTE / ✅ CONCLUÍDA; ordem oficial em `tasks/ORDEM-MATERIAS.md` (Banco de Dados 1, Testes de Front-End 2, ITIC 3, demais em seguida), seguida sempre que se lê status de tarefas ou matérias — "🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS" |
 | 2026-10-09 22:21:17 | **Recados lidos a cada merge:** todo merge (trazer a `main` para a branch ou juntar um PR) é seguido da leitura do `tasks/RECADOS.md` (recados das outras sessões e IAs para a sua frente ou para `todas`) — "CONVERSA ENTRE SESSÕES E LICENÇAS" (regra 4) e "PUSH" |
-| 2026-10-09 22:19:14 | **Branch apagada depois do merge:** PR juntado na `main` = a branch dele é excluída do GitHub na hora (fica só o histórico na `main` e no PR); vale para as branches de PRs juntados que ainda existirem — "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM" |
 
 ---
 
@@ -418,6 +418,7 @@ Aqui ficam as regras de sempre, as de segurança e este índice.
 | [docs/regras/paginas-legadas.md](docs/regras/paginas-legadas.md) | mexer nas páginas antigas (`dashboard.html`, `uc.html`, `questionarios.html`, `validacao.html`) ou na apostila de Reforço de Matemática | descrição das páginas antigas; fluxo de navegação; exercícios da apostila de Reforço de Matemática |
 | [docs/regras/codigo.md](docs/regras/codigo.md) | criar ou alterar qualquer código (JS, Python, HTML, CSS) | princípios SOLID; até 1000 linhas por arquivo e 45 por função; JSDoc/docstring; return early; constantes; nomes em português sem acento; até 3 parâmetros; até 2 níveis; Prettier/ESLint e Black/Ruff |
 | [docs/regras/infograficos.md](docs/regras/infograficos.md) | criar infográficos | cabeçalho, no mínimo 6 seções numeradas e coloridas, fundo escuro, exemplos, regra de ouro no rodapé, cores por tema |
+| [docs/regras/tarefas-agendadas.md](docs/regras/tarefas-agendadas.md) | criar, alterar ou executar uma **tarefa agendada** (rotina) que gera aulas | frente e branch da execução; escolha da aula; trava em `RECADOS.md`; produzir a aula; encerrar; log em `agendamento_tarefa_logs`; outras contas e IAs |
 
 ### ⛔ Proibições das regras detalhadas (resumo — o detalhe está nos arquivos acima)
 
@@ -479,6 +480,26 @@ global de matérias; em vez de consultar o modelo ITIC, consulta a regra global"
 - ✅ Mudou o jeito de fazer uma peça de matéria → atualizar `docs/regras/materias.md` **na mesma
   tarefa** (e a rotina `scripts/analise-materias.py` e os scripts de `scripts/status-materias/`,
   que conferem as matérias por esta regra).
+
+---
+
+## ⏰ TAREFAS AGENDADAS — [docs/regras/tarefas-agendadas.md](docs/regras/tarefas-agendadas.md)
+
+Registrada em 2026-10-11 05:12:00 a pedido do usuário ("corrija todas as regras conflitantes" da
+rotina "Tarefa Aulas Senai").
+
+- ✅ Toda tarefa agendada (rotina do Claude ou de outra IA) que gera aulas **segue este
+  `CLAUDE.md`** como qualquer sessão de nuvem e a regra detalhada
+  [`docs/regras/tarefas-agendadas.md`](docs/regras/tarefas-agendadas.md).
+- ⛔ **Nunca push direto na `main`**, mesmo para travar a aula: branch própria
+  (`agendada/tarefa-N-AAAAMMDD-HHMM`) + PR juntado pela própria execução.
+- ✅ Aula escolhida pelo `AULAS/STATUS-AULAS.md` das matérias, **na ordem do
+  `tasks/ORDEM-MATERIAS.md`**, respeitando `IGNORAR`, "Em uso por" e os recados; trava em
+  `tasks/RECADOS.md`; status nos arquivos de status do projeto (nunca num `tasks.md` na raiz).
+- ✅ Regras das rotinas ficam só em `docs/regras/` (o `TAREFA_AGENDADA.md` na raiz não é usado);
+  o prompt da rotina só aponta para elas.
+- ✅ Log de cada execução na tabela `agendamento_tarefa_logs` (SQL
+  `database/2026-10-11-agendamento-tarefa-logs.sql`).
 
 ---
 

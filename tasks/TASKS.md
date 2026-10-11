@@ -296,4 +296,16 @@ Claude (que só se falam pelo repositório) colaborarem sem se atrapalhar:
 
 ---
 
-**Última atualização:** 2026-10-09 15:26 (tarefa #21 adicionada)
+### #22-816fd3fd-ffe8-41e7: Criar as tarefas agendadas 2 a 6 (outras contas e IAs) — pedida em 2026-10-11 05:15:00
+
+**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" (fonte única).
+**Para:** outras contas do Claude, gemini, codex e grok (a tarefa 1 já existe na conta do usuário).
+
+Cada conta/IA cria no **próprio agendador** as tarefas que ainda não existem (tarefa 2 no minuto
+:13, 3 no :23, 4 no :33, 5 no :43, 6 no :53, de hora em hora das 01 às 23 h de Brasília), com o
+prompt apontando para [`docs/regras/tarefas-agendadas.md`](../docs/regras/tarefas-agendadas.md)
+e gravando o log com o próprio `tipo_assinatura`.
+
+---
+
+**Última atualização:** 2026-10-11 05:15 (tarefa #22 adicionada)
