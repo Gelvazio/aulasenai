@@ -29,7 +29,7 @@
 | 17 | Procedimentos armazenados | ✅ `CONTEUDO/AULA-17-PROCEDIMENTOS-ARMAZENADOS.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-17-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-17.html` | ✅ no banco (aula id 121; objetiva id 137, prática id 138; md5 conferido em 2026-10-09 21:24) |
 | 18 | Triggers (disparadores) | ✅ `CONTEUDO/AULA-18-TRIGGERS-DISPARADORES.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-18-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-18.html` | ✅ no banco (aula id 122; objetiva id 139, prática id 140; md5 conferido em 2026-10-09 21:24) |
 | 19 | Segurança da informação: pilares, acesso e auditoria | ✅ `CONTEUDO/AULA-19-SEGURANCA-DA-INFORMACAO-PILARES-ACESSO-E-AUDITORIA.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-19-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-19.html` | 🔄 no banco (aula id 123; objetiva id 141 conferida por md5 em 2026-10-09 22:46; prática id 142 com 29 de 30 tópicos — falta o 6c) |
-| 20 | Projeto integrador: banco documentado para o back-end | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 20 | Projeto integrador: banco documentado para o back-end | ✅ `CONTEUDO/AULA-20-PROJETO-INTEGRADOR-BANCO-DOCUMENTADO-PARA-O-BACK-END.md` | ⬜ (professor) | ✅ `ATIVIDADES-AULA-20-50-QUESTOES.html` | ✅ `ATIVIDADE-PRATICA-AULA-20.html` | ✅ no banco (aula id 125; objetiva id 145, prática id 146; md5 conferido em 2026-10-10 22:13) |
 
 ## Observações
 

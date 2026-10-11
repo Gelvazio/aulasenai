@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 20 — Projeto Integrador: Banco Documentado para o Back-End (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="20" data-tema="Projeto Integrador: Banco Documentado para o Back-End" data-total="50"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🧩 Aula 20: Projeto Integrador: Banco Documentado para o Back-End</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-20-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C1 —</strong> Reconhecer as demandas do cliente</p>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</p>
+                    <p class="quadro-capacidades__linha"><strong>C3 —</strong> Aplicar os procedimentos de normalização e padronização de dados.</p>
+                    <p class="quadro-capacidades__linha"><strong>C7 —</strong> Aplicar linguagem de definição de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C8 —</strong> Aplicar linguagem de manipulação de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C14 —</strong> Aplicar boas práticas de segurança da informação</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">As Duas Situações de Aprendizagem</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O projeto integrador junta quais entregas da UC?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Só o DER da aula 9, sem os scripts nem a documentação.</li>
+                        <li><span class="letra">B)</span>Só as consultas da aula 15, sem a modelagem nem a segurança.</li>
+                        <li><span class="letra">C)</span>Só a instalação do PostgreSQL das aulas 3 e 4.</li>
+                        <li><span class="letra">D)</span>A modelagem da SA 1 (aulas 5 a 11) e o banco funcionando da SA 2 (aulas 12 a 19).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Rastreabilidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa rastreabilidade no projeto do banco?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cada tabela, coluna importante e regra aponta para um requisito do escopo.</li>
+                        <li><span class="letra">B)</span>Cada aluno da escola pode consultar o próprio histórico.</li>
+                        <li><span class="letra">C)</span>Cada consulta registra o tempo que levou para responder.</li>
+                        <li><span class="letra">D)</span>Cada script mostra a data e a hora em que foi executado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Tabela sem Requisito</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na conferência de rastreabilidade, uma tabela que não atende a nenhum requisito indica:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que ela é a mais importante e deve ganhar mais colunas.</li>
+                        <li><span class="letra">B)</span>Que o banco está pronto e pode ser entregue sem revisão.</li>
+                        <li><span class="letra">C)</span>Que o requisito precisa ser apagado do escopo na hora.</li>
+                        <li><span class="letra">D)</span>Que ela sobra no modelo e precisa ser justificada ou retirada.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Requisito sem Regra</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um requisito do escopo que não tem tabela, restrição ou procedimento correspondente indica:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que o requisito já está atendido pelo PostgreSQL sozinho.</li>
+                        <li><span class="letra">B)</span>Que falta implementar algo no banco para atender ao cliente.</li>
+                        <li><span class="letra">C)</span>Que a tabela mais parecida pode ser usada sem mudança.</li>
+                        <li><span class="letra">D)</span>Que o back-end deve ignorar esse requisito.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Matrícula Repetida</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual recurso do banco atende ao requisito &quot;um aluno não se matricula duas vezes na mesma turma&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ORDER BY id_aluno na consulta de matrículas.</li>
+                        <li><span class="letra">B)</span>Um índice na coluna nome da tabela aluno.</li>
+                        <li><span class="letra">C)</span>Uma visão com as matrículas de cada turma.</li>
+                        <li><span class="letra">D)</span>UNIQUE (id_aluno, id_turma) na tabela matricula.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Limite de Vagas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No projeto, onde fica a regra &quot;a turma tem no máximo 25 alunos ativos&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No procedimento matricular, que conta as matrículas ativas antes do INSERT.</li>
+                        <li><span class="letra">B)</span>Numa coluna CHECK (vagas = 25) da tabela aluno.</li>
+                        <li><span class="letra">C)</span>No README, para o usuário lembrar de conferir.</li>
+                        <li><span class="letra">D)</span>No comentário do script 01-ddl-escola.sql.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Ordem dos Scripts</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que os scripts do projeto têm uma ordem de execução?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque cada script só pode ser executado uma vez por dia.</li>
+                        <li><span class="letra">B)</span>Porque um objeto depende de outro: turma precisa de curso, o trigger precisa da função e o GRANT precisa das tabelas.</li>
+                        <li><span class="letra">C)</span>Porque a ordem deixa as consultas mais rápidas depois da instalação.</li>
+                        <li><span class="letra">D)</span>Porque o PostgreSQL só aceita arquivos com número no nome, em qualquer ordem.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Script Mestre</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é o script mestre 00-instalar.sql?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um script que chama os outros na ordem certa para instalar o banco inteiro.</li>
+                        <li><span class="letra">B)</span>O script que apaga todos os dados antes de cada aula.</li>
+                        <li><span class="letra">C)</span>A cópia do DER desenhada em SQL para o professor.</li>
+                        <li><span class="letra">D)</span>O script com a senha do postgres para a equipe compartilhar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Comando \i</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No psql, o comando \i 01-ddl-escola.sql:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Instala uma extensão nova no PostgreSQL.</li>
+                        <li><span class="letra">B)</span>Mostra as informações da tabela indicada.</li>
+                        <li><span class="letra">C)</span>Importa uma planilha para a tabela aluno.</li>
+                        <li><span class="letra">D)</span>Executa os comandos do arquivo indicado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">ON_ERROR_STOP</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve \set ON_ERROR_STOP on no início do script mestre?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para o psql parar no primeiro erro, sem deixar o banco instalado pela metade.</li>
+                        <li><span class="letra">B)</span>Para o psql esconder os erros e terminar a instalação.</li>
+                        <li><span class="letra">C)</span>Para gravar os erros na tabela de auditoria da aula 19.</li>
+                        <li><span class="letra">D)</span>Para o PostgreSQL desligar o servidor quando houver erro.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Sem ON_ERROR_STOP</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Sem \set ON_ERROR_STOP on, o que acontece quando um script do mestre dá erro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O psql reinicia a instalação desde o primeiro script.</li>
+                        <li><span class="letra">B)</span>O psql desfaz sozinho todos os scripts já executados.</li>
+                        <li><span class="letra">C)</span>O psql pede a senha do administrador antes de continuar.</li>
+                        <li><span class="letra">D)</span>O psql mostra o erro e continua, e o banco pode ficar incompleto sem ninguém perceber.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Banco Limpo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o teste final da instalação é feito num banco limpo, como escola_teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o banco de desenvolvimento pode ter objetos criados à mão que não estão nos scripts.</li>
+                        <li><span class="letra">B)</span>Porque o banco limpo dispensa o README e a documentação.</li>
+                        <li><span class="letra">C)</span>Porque o banco limpo é mais rápido para gravar as parcelas.</li>
+                        <li><span class="letra">D)</span>Porque o PostgreSQL só aceita o script mestre em bancos vazios de produção.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Script que Roda de Novo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando evita o erro &quot;já existe&quot; quando o script de procedimentos é executado uma segunda vez?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>CREATE OR REPLACE PROCEDURE.</li>
+                        <li><span class="letra">B)</span>INSERT INTO PROCEDURE.</li>
+                        <li><span class="letra">C)</span>ALTER TABLE PROCEDURE.</li>
+                        <li><span class="letra">D)</span>CREATE PROCEDURE ONLY ONCE.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Trigger que Roda de Novo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando, antes do CREATE TRIGGER, permite rodar o script 06 de novo sem erro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>DELETE FROM trg_historico_nota;</li>
+                        <li><span class="letra">B)</span>DROP TRIGGER IF EXISTS trg_historico_nota ON matricula;</li>
+                        <li><span class="letra">C)</span>TRUNCATE TRIGGER trg_historico_nota;</li>
+                        <li><span class="letra">D)</span>UPDATE TRIGGER trg_historico_nota SET ativo = false;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Comentário no Topo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o comentário no topo de cada script do projeto deve informar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A senha do login que vai executar o script.</li>
+                        <li><span class="letra">B)</span>Só a data em que o arquivo foi salvo pela última vez.</li>
+                        <li><span class="letra">C)</span>O nome e o CPF de quem escreveu o script.</li>
+                        <li><span class="letra">D)</span>O que o script faz, de que aula veio e de que script depende.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Para que Documentar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o principal objetivo da documentação técnica do banco?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Guardar as senhas dos logins num lugar só.</li>
+                        <li><span class="letra">B)</span>Deixar outra pessoa entender, instalar e usar o banco sem perguntar para quem fez.</li>
+                        <li><span class="letra">C)</span>Substituir os scripts SQL na instalação do banco.</li>
+                        <li><span class="letra">D)</span>Aumentar o número de páginas entregues ao professor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Escopo Atualizado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O escopo atualizado (6.1) da documentação deve trazer:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Só a lista de tabelas com os tipos de cada coluna.</li>
+                        <li><span class="letra">B)</span>Os comandos de backup e restauração do banco.</li>
+                        <li><span class="letra">C)</span>O objetivo do sistema, os requisitos, o que entra, o que não entra e as mudanças aceitas.</li>
+                        <li><span class="letra">D)</span>Só o nome dos integrantes da equipe e as notas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Dicionário de Dados</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No dicionário de dados, cada coluna é descrita com:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A senha necessária para alterar a coluna.</li>
+                        <li><span class="letra">B)</span>Nome, tipo, tamanho, se aceita nulo, chave, regra e exemplo.</li>
+                        <li><span class="letra">C)</span>Só o nome da coluna e a quantidade de linhas da tabela.</li>
+                        <li><span class="letra">D)</span>O nome do aluno que mais usa a coluna no sistema.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Cronograma da Entrega</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na entrega final, o cronograma (6.2) deve mostrar:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As tarefas sem responsável, para ninguém ser cobrado.</li>
+                        <li><span class="letra">B)</span>O previsto e o realizado de cada tarefa, com o responsável e o motivo dos atrasos.</li>
+                        <li><span class="letra">C)</span>Só as datas previstas, porque o realizado não interessa ao cliente.</li>
+                        <li><span class="letra">D)</span>Só a data da apresentação final da equipe.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Atraso no Cronograma</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Os procedimentos ficaram prontos na aula 18, e não na 17, porque a regra de vagas mudou. Como registrar no cronograma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Anotar o realizado (aula 18) e o motivo: mudança de escopo aceita.</li>
+                        <li><span class="letra">B)</span>Deixar o realizado em branco até a próxima UC.</li>
+                        <li><span class="letra">C)</span>Trocar o previsto para aula 18, para não aparecer o atraso.</li>
+                        <li><span class="letra">D)</span>Apagar a tarefa do cronograma, porque já foi feita.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Fluxograma Ligado ao Banco</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No fluxograma da matrícula (6.3), a decisão &quot;Aluno já matriculado na turma?&quot; aponta para:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A visão vw_matriculas_por_turma da coordenação.</li>
+                        <li><span class="letra">B)</span>O papel grupo_financeiro da aula 19.</li>
+                        <li><span class="letra">C)</span>O UNIQUE (id_aluno, id_turma) da tabela matricula.</li>
+                        <li><span class="letra">D)</span>O backup escola.dump da entrega final.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Decisão &quot;Parcela Já Paga?&quot;</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No fluxograma do pagamento, a decisão &quot;Parcela já paga?&quot; é executada no banco por:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O trigger trg_proteger_parcela_paga e a condição data_pagamento IS NULL do procedimento.</li>
+                        <li><span class="letra">B)</span>O comando \du do psql, que lista os papéis.</li>
+                        <li><span class="letra">C)</span>A coluna criado_em da tabela curso.</li>
+                        <li><span class="letra">D)</span>A consulta ORDER BY vencimento do relatório de parcelas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Matriz de Acesso na Documentação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que a matriz de acesso documenta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A ordem em que as tabelas aparecem no DER.</li>
+                        <li><span class="letra">B)</span>A quantidade de alunos por turma em cada semestre.</li>
+                        <li><span class="letra">C)</span>Quem pode SELECT, INSERT, UPDATE e DELETE em cada tabela, visão e procedimento.</li>
+                        <li><span class="letra">D)</span>O tamanho em disco de cada tabela do banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">README</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual informação o README do projeto precisa ter?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A senha do postgres e do app_escola, para facilitar a instalação.</li>
+                        <li><span class="letra">B)</span>A versão do PostgreSQL, como criar o banco, o comando do script mestre, os logins necessários e como testar.</li>
+                        <li><span class="letra">C)</span>Somente o nome do projeto e a data da entrega.</li>
+                        <li><span class="letra">D)</span>A lista de todos os alunos cadastrados nos dados de teste com CPF.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Registro de Decisões</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O registro de decisões do projeto deve ter:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As consultas mais lentas e o tempo de cada uma.</li>
+                        <li><span class="letra">B)</span>A decisão, o motivo ligado ao requisito e a alternativa descartada.</li>
+                        <li><span class="letra">C)</span>Só a decisão, sem o motivo, para o texto ficar curto.</li>
+                        <li><span class="letra">D)</span>O nome de quem errou em cada parte do projeto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Cancelar em Vez de Apagar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual justificativa sustenta a decisão &quot;matrícula é cancelada, não apagada&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Deixar o banco menor e mais rápido.</li>
+                        <li><span class="letra">B)</span>Permitir que qualquer usuário apague matrículas.</li>
+                        <li><span class="letra">C)</span>Evitar que o aluno veja a própria matrícula.</li>
+                        <li><span class="letra">D)</span>Guardar o histórico e as parcelas, protegendo a integridade.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Checklist do DER</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na revisão do modelo, o que se confere entre o DER e o banco?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que o DER foi desenhado antes da aula 5.</li>
+                        <li><span class="letra">B)</span>Que as cores do DER combinam com o pgAdmin.</li>
+                        <li><span class="letra">C)</span>Que o DER tem mais entidades do que o banco tem tabelas.</li>
+                        <li><span class="letra">D)</span>Que toda entidade virou tabela e toda tabela aparece no DER.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Relacionamento N:N</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na revisão do modelo, um relacionamento N:N entre aluno e turma deve aparecer no banco como:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A tabela associativa matricula, com as chaves estrangeiras das duas tabelas.</li>
+                        <li><span class="letra">B)</span>Uma coluna com a lista de alunos dentro da tabela turma.</li>
+                        <li><span class="letra">C)</span>Duas tabelas iguais, uma para cada lado.</li>
+                        <li><span class="letra">D)</span>Uma coluna com a lista de turmas dentro da tabela aluno.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Chave Estrangeira no 1:N</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No relacionamento 1:N entre curso e turma, a chave estrangeira fica:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Na tabela turma (lado N), com o id_curso.</li>
+                        <li><span class="letra">B)</span>Nas duas tabelas, uma apontando para a outra.</li>
+                        <li><span class="letra">C)</span>Na tabela curso (lado 1), com o id_turma.</li>
+                        <li><span class="letra">D)</span>Em nenhuma das duas, só no DER.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Primeira Forma Normal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual situação fere a 1FN e deve ser corrigida na revisão?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma tabela curso com a coluna valor_mensal.</li>
+                        <li><span class="letra">B)</span>Uma coluna email do tipo varchar(120).</li>
+                        <li><span class="letra">C)</span>Uma tabela parcela com chave primária composta.</li>
+                        <li><span class="letra">D)</span>Uma coluna telefone com &quot;4799990000;4798880000&quot;.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Terceira Forma Normal</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Repetir o nome do curso na tabela turma, além do id_curso, fere qual forma normal?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nenhuma, porque repetir dados sempre deixa o banco mais seguro.</li>
+                        <li><span class="letra">B)</span>A 1FN, porque o nome do curso tem mais de uma palavra.</li>
+                        <li><span class="letra">C)</span>A 2FN, porque turma tem chave primária simples.</li>
+                        <li><span class="letra">D)</span>A 3FN, porque o nome depende do curso e não da chave da turma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Padrão de Nomes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual nome de coluna segue o padrão adotado na UC (aula 11)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>id_matricula</li>
+                        <li><span class="letra">B)</span>IdMatrícula</li>
+                        <li><span class="letra">C)</span>ID-MATRICULA</li>
+                        <li><span class="letra">D)</span>matriculaId</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Consulta de Parcelas Vencidas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual condição lista as parcelas vencidas e não pagas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE data_pagamento = current_date</li>
+                        <li><span class="letra">B)</span>WHERE vencimento &lt; current_date AND data_pagamento IS NULL</li>
+                        <li><span class="letra">C)</span>WHERE valor IS NULL ORDER BY vencimento</li>
+                        <li><span class="letra">D)</span>WHERE vencimento &gt; current_date OR data_pagamento IS NOT NULL</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Turmas sem Matrícula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual recurso encontra as turmas que não têm nenhuma matrícula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>GROUP BY turma com HAVING COUNT(*) &gt; 0.</li>
+                        <li><span class="letra">B)</span>LEFT JOIN de turma com matricula e a condição m.id_matricula IS NULL.</li>
+                        <li><span class="letra">C)</span>ORDER BY codigo DESC LIMIT 1.</li>
+                        <li><span class="letra">D)</span>INNER JOIN de turma com matricula e a condição m.id_matricula IS NOT NULL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Turmas Cheias</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para listar só as turmas com mais de 20 matrículas, depois do GROUP BY usa-se:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>HAVING COUNT(*) &gt; 20</li>
+                        <li><span class="letra">B)</span>LIMIT 20</li>
+                        <li><span class="letra">C)</span>ORDER BY COUNT(*) &gt; 20</li>
+                        <li><span class="letra">D)</span>WHERE COUNT(*) &gt; 20</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Consulta sem Uso</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na revisão do script 04, uma consulta que nenhuma tela ou relatório do back-end usa deve:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ser executada pelo back-end toda vez que o sistema abre.</li>
+                        <li><span class="letra">B)</span>Ser copiada para todos os outros scripts do projeto.</li>
+                        <li><span class="letra">C)</span>Ficar no script e ganhar mais junções para parecer completa.</li>
+                        <li><span class="letra">D)</span>Sair do script, porque cada consulta precisa ter um uso no sistema.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Contrato com o Back-End</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é o contrato entre o banco e o back-end?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O arquivo de backup que o back-end restaura todo dia.</li>
+                        <li><span class="letra">B)</span>O documento que o cliente assina para pagar o projeto.</li>
+                        <li><span class="letra">C)</span>A lista do que a aplicação pode chamar no banco e com quais permissões.</li>
+                        <li><span class="letra">D)</span>A senha do postgres entregue ao programador do back-end.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Login do Back-End</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Com qual login o back-end deve se conectar ao banco?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>postgres, para nunca receber erro de permissão.</li>
+                        <li><span class="letra">B)</span>ana_secretaria, porque a secretaria usa o sistema.</li>
+                        <li><span class="letra">C)</span>Um login compartilhado por todos os programadores.</li>
+                        <li><span class="letra">D)</span>app_escola, com só as permissões que a aplicação usa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">EXECUTE no Procedimento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando deixa o back-end chamar o procedimento de matrícula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>CALL matricular TO app_escola;</li>
+                        <li><span class="letra">B)</span>GRANT ALL ON DATABASE escola_db TO app_escola;</li>
+                        <li><span class="letra">C)</span>GRANT EXECUTE ON PROCEDURE matricular(integer, integer) TO app_escola;</li>
+                        <li><span class="letra">D)</span>GRANT SELECT ON matricula TO app_escola WITH GRANT OPTION;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Sem DELETE para a Aplicação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o app_escola não recebe DELETE na tabela matricula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o DELETE só funciona no pgAdmin, não no back-end.</li>
+                        <li><span class="letra">B)</span>Porque a matrícula é cancelada (situacao = &#x27;cancelada&#x27;), e o menor privilégio não dá o que não é usado.</li>
+                        <li><span class="letra">C)</span>Porque o PostgreSQL não permite DELETE em tabelas com chave estrangeira.</li>
+                        <li><span class="letra">D)</span>Porque o back-end apaga as matrículas pelo backup.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Consultas com Parâmetros</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o back-end deve usar consultas com parâmetros ($1, $2) em vez de colar o texto digitado no SQL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para o banco aceitar nomes com acento.</li>
+                        <li><span class="letra">B)</span>Para dispensar o GRANT nas tabelas.</li>
+                        <li><span class="letra">C)</span>Para evitar SQL injection, porque o texto do usuário nunca vira comando.</li>
+                        <li><span class="letra">D)</span>Para a consulta ficar mais curta no código do back-end.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Regra no Banco</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que as regras importantes ficam no banco (chave, CHECK, procedimento, trigger), e não só no back-end?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque regra no banco dispensa o teste de ponta a ponta.</li>
+                        <li><span class="letra">B)</span>Porque o PostgreSQL apaga as regras que ficam no back-end.</li>
+                        <li><span class="letra">C)</span>Porque, mesmo que o back-end tenha um erro, o banco não aceita dado errado.</li>
+                        <li><span class="letra">D)</span>Porque o back-end não consegue ler regras escritas em SQL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Senha do app_escola</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde deve ficar a senha do app_escola usada pelo back-end?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No README do projeto, para quem for instalar.</li>
+                        <li><span class="letra">B)</span>No código JavaScript da página de login.</li>
+                        <li><span class="letra">C)</span>Numa variável de ambiente do servidor, fora do Git e do JavaScript do site.</li>
+                        <li><span class="letra">D)</span>No comentário do script 07-seguranca.sql.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Teste de Ponta a Ponta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No teste de ponta a ponta, repetir CALL matricular(1, 2) deve resultar em:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Criação de uma turma nova com o mesmo código.</li>
+                        <li><span class="letra">B)</span>Erro do UNIQUE (id_aluno, id_turma), mostrando que a regra funciona.</li>
+                        <li><span class="letra">C)</span>Exclusão da primeira matrícula, sem aviso.</li>
+                        <li><span class="letra">D)</span>Uma segunda matrícula igual, mostrando que o banco aceita tudo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Conferindo os Objetos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual sequência do psql confere tabelas, visões, funções e procedimentos e papéis depois da instalação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>\set, \unset, \timing e \x</li>
+                        <li><span class="letra">B)</span>\q, \c, \i e \echo</li>
+                        <li><span class="letra">C)</span>\dt, \dv, \df e \du</li>
+                        <li><span class="letra">D)</span>SELECT, INSERT, UPDATE e DELETE</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Teste do Financeiro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No teste final, o login do financeiro executa SELECT cpf FROM aluno. O resultado esperado é:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O CPF só dos alunos com parcela vencida.</li>
+                        <li><span class="letra">B)</span>permission denied, mostrando que a matriz de acesso foi respeitada.</li>
+                        <li><span class="letra">C)</span>Uma tabela vazia, porque os dados de teste não têm CPF.</li>
+                        <li><span class="letra">D)</span>A lista de CPFs, porque o financeiro precisa cobrar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Backup de Entrega</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando gera o arquivo de backup de entrega do banco no formato personalizado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>pg_restore -d escola_teste escola.dump</li>
+                        <li><span class="letra">B)</span>createdb escola.dump</li>
+                        <li><span class="letra">C)</span>pg_dump -U postgres -d escola_teste -F c -f escola.dump</li>
+                        <li><span class="letra">D)</span>psql -f escola.dump escola_teste</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Provar o Backup</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como a equipe prova que o backup de entrega funciona?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Fazendo um segundo pg_dump logo depois do primeiro.</li>
+                        <li><span class="letra">B)</span>Abrindo o escola.dump no bloco de notas.</li>
+                        <li><span class="letra">C)</span>Restaurando o escola.dump com pg_restore num banco novo e conferindo os dados.</li>
+                        <li><span class="letra">D)</span>Conferindo se o arquivo escola.dump tem mais de 1 MB.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Sugestão na Revisão em Pares</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual sugestão segue o formato &quot;o quê, onde, efeito&quot; da revisão cruzada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>&quot;Quem fez essa parte não sabe SQL.&quot;</li>
+                        <li><span class="letra">B)</span>&quot;O script de vocês está ruim, refaçam tudo.&quot;</li>
+                        <li><span class="letra">C)</span>&quot;O 06-triggers.sql cria o trigger antes da função, e a instalação para com erro no passo 6.&quot;</li>
+                        <li><span class="letra">D)</span>&quot;Não gostei, mas não sei explicar o motivo.&quot;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Receber a Sugestão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao receber uma sugestão do colega na revisão cruzada, a equipe deve:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Anotar no registro, decidir se aceita e responder com o motivo.</li>
+                        <li><span class="letra">B)</span>Apagar a parte do projeto que recebeu a crítica.</li>
+                        <li><span class="letra">C)</span>Ignorar a sugestão, porque o projeto já foi testado.</li>
+                        <li><span class="letra">D)</span>Pedir ao professor para não considerar a revisão.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Aula 20: Projeto Integrador: Banco Documentado para o Back-End</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

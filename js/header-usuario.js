@@ -30,6 +30,7 @@ const MENU_ADMINISTRADOR_HEADER = [
   { rotulo: "CORREÇÃO", rota: "../correcao-discursiva.html" },
   { rotulo: "TURMAS", rota: "../turmas.html" },
   { rotulo: "CURSO", rota: "../cursos.html" },
+  { rotulo: "TASKS", rota: "../tasks.html" },
   { rotulo: "PENDÊNCIAS", rota: "../MATERIAIS/AGENDA_COLABORADOR/pendencias.html" },
 ];
 const RPC_ADMINISTRADOR_HEADER = "eh_professor_administrador";

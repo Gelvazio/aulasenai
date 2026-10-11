@@ -272,7 +272,7 @@ primeiro passo (pedido do usuário).
 - [ ] Atividades por aula: objetiva de 50 questões e prática no padrão da id 82
   (`docs/REGRAS-ATIVIDADE-PRATICA.md`), fontes em `ATIVIDADES/CONTEUDO/`, sem empresa fictícia;
   `ATIVIDADES/STATUS-ATIVIDADES.md` e `ATIVIDADES/index.html` regerado; seeds no banco só com pedido.
-- [ ] Avaliações e média final no modelo da ITIC (se a ementa pedir).
+- [ ] Avaliações e média final pela regra global de matérias (`docs/regras/materias.md`, seção 6).
 - [ ] Rodar `scripts/analise-materias.py`: Banco de Dados sem pendências, exceto as da apostila.
 - [ ] Aceite do usuário.
 
@@ -296,10 +296,6 @@ Claude (que só se falam pelo repositório) colaborarem sem se atrapalhar:
 
 ---
 
-**Última atualização:** 2026-10-09 15:26 (tarefa #21 adicionada)
-
----
-
 ### #22-f79be83e-0418-43e8: Testes de Front-End — objetivas e práticas das aulas 04 a 10 — pedida em 2026-10-09 23:04:01
 
 **Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 137-13665a7e (fonte única).
@@ -310,3 +306,65 @@ Claude (que só se falam pelo repositório) colaborarem sem se atrapalhar:
 - [ ] Ementa em 14.800–14.950 caracteres.
 - [ ] Análise das matérias sem pendências em Testes de Front-End.
 - [ ] Aceite do usuário.
+
+---
+
+### #24-9fb25086-5b51-44cb: Fila `tasks` no banco + 1 agendador — pedida em 2026-10-11 05:42:00
+
+**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 142-2a52ee2f (fonte única).
+**Prioridade:** 🟠 Alta · **Tarefa grande:** plano [docs/fila-tasks-agendador-unico.md](../docs/fila-tasks-agendador-unico.md).
+
+Pedido: "1 agendador que apenas controle 1 tabela de nome tasks, que a IA vai ler e decidir se
+executa algo ou não". Decisões: substitui a #23; fila vazia = não faz nada; cadastro pela página
+`tasks.html` (só o Professor Administrador).
+
+- [x] Tabela `tasks` + `pegar_proxima_task` / `finalizar_task` (RLS, só administrador).
+- [x] Página `tasks.html` + menu TASKS.
+- [x] Regra das tarefas agendadas e prompt da rotina para a fila.
+- [x] Tarefas do `TASKS.md` na tabela e `tasks/fila/` (script `scripts/tasks/sincronizar_tasks.py`).
+- [ ] Teste do usuário na página e aceite; depois liberar o GitHub (item 140.6) e ligar a rotina.
+- [x] #23 cancelada (2026-10-11 05:58).
+
+---
+
+### #25-b3e29764-940b-4a82: Atividades só no banco, layout global e pasta da matéria sem HTML — pedida em 2026-10-11 06:01:03
+
+**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 143-d30a9c4d (fonte única).
+**Prioridade:** 🟠 Alta · **Tarefa grande:** plano em `docs/` e aprovação antes de executar.
+**Regra:** `CLAUDE.md`, "🗃️ REGRA — ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA SÓ COM CONTEÚDO".
+
+Pedido: questões da objetiva e da prática só no banco; objetiva e prática com layout global (sem
+página criada do zero por aula); pastas das matérias/aulas só com conteúdo, sem HTML (tudo do global).
+
+**Dividida em 22 sub-tasks** (2026-10-11 06:07, pedido do usuário) na tabela `tasks` (ids 19 a 40, arquivos
+`tasks/fila/TASK-0019.md` a `TASK-0040.md`), em cadeia: cada uma só começa com a anterior
+concluída; as etapas 👤 (25.03 aprovação do plano, 25.11 aceite do piloto, 25.22 aceite final) são
+do usuário, na página `tasks.html`.
+
+- [ ] 25.01 Levantamento · 25.02 Plano · 25.03 👤 Aprovação
+- [ ] 25.04 Banco das objetivas · 25.05 Script de carga · 25.06 Banco da prática
+- [ ] 25.07 Página global objetiva · 25.08 Página global prática · 25.09 Índice global
+- [ ] 25.10 Piloto Testes de Front-End · 25.11 👤 Aceite do piloto
+- [ ] 25.12 a 25.18 Migrar Banco de Dados, ITIC, ADAG, Automação, Fundamentos da Tecnologia,
+  Comunicação Oral e Escrita, Reforço de Linguagens (uma por vez)
+- [ ] 25.19 Avaliações e média final · 25.20 Apostila · 25.21 Remover HTML, regras e scripts
+- [ ] 25.22 👤 Aceite final
+
+---
+
+### #26-55a91111-02ce-4cb1: Regras no banco (regra_documento e regra_secao) — pedida em 2026-10-11 06:21:48
+
+**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 144-aff33423 (fonte única).
+**Prioridade:** 🟠 Alta · **Plano:** [docs/regras-no-banco.md](../docs/regras-no-banco.md).
+
+Pedido: "Faça os 2, inclusive o regra por seção" — cópia das regras do repositório (`CLAUDE.md` e
+arquivos de regras) no Supabase, inteiras (`regra_documento`) e por seção (`regra_secao`),
+conferidas pelo md5 com `scripts/regras/sincronizar_regras.py`.
+
+- [x] Tabelas, script, regra no `CLAUDE.md` e passo na rotina.
+- [ ] Primeira cópia e `conferir` sem diferenças.
+- [ ] Aceite do usuário.
+
+---
+
+**Última atualização:** 2026-10-11 06:28 (tarefa #26 adicionada)

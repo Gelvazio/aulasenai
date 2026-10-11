@@ -1377,4 +1377,75 @@ begin
       (v_atividade, 48, 'LGPD', 'A'),
       (v_atividade, 49, 'Backup Testado', 'A'),
       (v_atividade, 50, 'Senha da Aplicação', 'B');
+
+  -- Aula 20: Projeto Integrador: Banco Documentado para o Back-End
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Projeto Integrador: Banco Documentado para o Back-End' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (20, 'Projeto Integrador: Banco Documentado para o Back-End', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Projeto Integrador: Banco Documentado para o Back-End', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Projeto Integrador: Banco Documentado para o Back-End (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-20-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'As Duas Situações de Aprendizagem', 'D'),
+      (v_atividade, 2, 'Rastreabilidade', 'A'),
+      (v_atividade, 3, 'Tabela sem Requisito', 'D'),
+      (v_atividade, 4, 'Requisito sem Regra', 'B'),
+      (v_atividade, 5, 'Matrícula Repetida', 'D'),
+      (v_atividade, 6, 'Limite de Vagas', 'A'),
+      (v_atividade, 7, 'Ordem dos Scripts', 'B'),
+      (v_atividade, 8, 'Script Mestre', 'A'),
+      (v_atividade, 9, 'Comando \i', 'D'),
+      (v_atividade, 10, 'ON_ERROR_STOP', 'A'),
+      (v_atividade, 11, 'Sem ON_ERROR_STOP', 'D'),
+      (v_atividade, 12, 'Banco Limpo', 'A'),
+      (v_atividade, 13, 'Script que Roda de Novo', 'A'),
+      (v_atividade, 14, 'Trigger que Roda de Novo', 'B'),
+      (v_atividade, 15, 'Comentário no Topo', 'D'),
+      (v_atividade, 16, 'Para que Documentar', 'B'),
+      (v_atividade, 17, 'Escopo Atualizado', 'C'),
+      (v_atividade, 18, 'Dicionário de Dados', 'B'),
+      (v_atividade, 19, 'Cronograma da Entrega', 'B'),
+      (v_atividade, 20, 'Atraso no Cronograma', 'A'),
+      (v_atividade, 21, 'Fluxograma Ligado ao Banco', 'C'),
+      (v_atividade, 22, 'Decisão "Parcela Já Paga?"', 'A'),
+      (v_atividade, 23, 'Matriz de Acesso na Documentação', 'C'),
+      (v_atividade, 24, 'README', 'B'),
+      (v_atividade, 25, 'Registro de Decisões', 'B'),
+      (v_atividade, 26, 'Cancelar em Vez de Apagar', 'D'),
+      (v_atividade, 27, 'Checklist do DER', 'D'),
+      (v_atividade, 28, 'Relacionamento N:N', 'A'),
+      (v_atividade, 29, 'Chave Estrangeira no 1:N', 'A'),
+      (v_atividade, 30, 'Primeira Forma Normal', 'D'),
+      (v_atividade, 31, 'Terceira Forma Normal', 'D'),
+      (v_atividade, 32, 'Padrão de Nomes', 'A'),
+      (v_atividade, 33, 'Consulta de Parcelas Vencidas', 'B'),
+      (v_atividade, 34, 'Turmas sem Matrícula', 'B'),
+      (v_atividade, 35, 'Turmas Cheias', 'A'),
+      (v_atividade, 36, 'Consulta sem Uso', 'D'),
+      (v_atividade, 37, 'Contrato com o Back-End', 'C'),
+      (v_atividade, 38, 'Login do Back-End', 'D'),
+      (v_atividade, 39, 'EXECUTE no Procedimento', 'C'),
+      (v_atividade, 40, 'Sem DELETE para a Aplicação', 'B'),
+      (v_atividade, 41, 'Consultas com Parâmetros', 'C'),
+      (v_atividade, 42, 'Regra no Banco', 'C'),
+      (v_atividade, 43, 'Senha do app_escola', 'C'),
+      (v_atividade, 44, 'Teste de Ponta a Ponta', 'B'),
+      (v_atividade, 45, 'Conferindo os Objetos', 'C'),
+      (v_atividade, 46, 'Teste do Financeiro', 'B'),
+      (v_atividade, 47, 'Backup de Entrega', 'C'),
+      (v_atividade, 48, 'Provar o Backup', 'C'),
+      (v_atividade, 49, 'Sugestão na Revisão em Pares', 'C'),
+      (v_atividade, 50, 'Receber a Sugestão', 'A');
 end $$;

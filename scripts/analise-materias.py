@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Análise das matérias no padrão da matéria modelo (Introdução à TIC).
+"""Análise das matérias pela regra global de matérias (docs/regras/materias.md).
 
 Percorre todos os cursos de MATERIAIS/ (menos as pastas que não são curso), confere em cada
 matéria as peças da ITIC (ementa, materia.json, aulas, atividades e apostila) e grava o
@@ -8,8 +8,13 @@ relatório em tasks/ANALISE-MATERIAS-RELATORIO.json. Só lê arquivos; não alte
 """
 
 import json
+import sys
 from datetime import datetime
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "status-materias"))
+
+from ordem_materias import montar_ordem  # noqa: E402
 
 RAIZ_PROJETO = Path(__file__).resolve().parent.parent
 PASTA_MATERIAIS = RAIZ_PROJETO / "MATERIAIS"
@@ -18,7 +23,7 @@ PASTAS_QUE_NAO_SAO_CURSO = {"MATERIAS-GERAIS", "AGENDA_COLABORADOR"}
 ARQUIVOS_QUE_MARCAM_MATERIA = ("EMENTA-CHALKIE-AI.md", "materia.json")
 TAMANHO_MINIMO_EMENTA = 14800
 TAMANHO_MAXIMO_EMENTA = 14950
-VERSAO_PADRAO = "Matéria modelo: Introdução à TIC (CLAUDE.md, 2026-10-03)"
+VERSAO_PADRAO = "Regra global de matérias: docs/regras/materias.md (CLAUDE.md, 2026-10-10)"
 
 PECAS_ARQUIVO = {
     "ementa": "EMENTA-CHALKIE-AI.md",
@@ -27,6 +32,7 @@ PECAS_ARQUIVO = {
     "indice_atividades": "ATIVIDADES/index.html",
     "status_atividades": "ATIVIDADES/STATUS-ATIVIDADES.md",
     "status_apostila": "APOSTILA/STATUS-APOSTILA.md",
+    "status_materia": "STATUS_MATERIA.md",
 }
 
 CONTAGENS = {
@@ -44,6 +50,7 @@ PENDENCIA_POR_PECA = {
     "indice_atividades": "Gerar ATIVIDADES/index.html",
     "status_atividades": "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
     "status_apostila": "Criar APOSTILA/STATUS-APOSTILA.md",
+    "status_materia": "Gerar STATUS_MATERIA.md (scripts/status-materias/gerar_status_materia.py)",
     "aulas_conteudo": "Extrair as aulas da ementa para CONTEUDO/",
     "fontes_atividades": "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
     "atividades_50_questoes": "Gerar a atividade objetiva de 50 questões de cada aula",
@@ -137,7 +144,7 @@ def listar_pendencias(pecas, contagem, ementa):
 
 
 def analisar_materia(curso, pasta_materia):
-    """Confere uma matéria no padrão da ITIC.
+    """Confere uma matéria pela regra global de matérias.
 
     Args:
         curso: nome da pasta do curso.
@@ -182,6 +189,22 @@ def analisar_curso(pasta_curso):
     return materias, ignoradas
 
 
+def ordenar_pela_ordem_oficial(materias):
+    """Ordena as matérias pela ordem de tasks/ORDEM-MATERIAS.md (regra do CLAUDE.md).
+
+    Args:
+        materias: resultados de analisar_materia.
+
+    Returns:
+        list[dict]: as mesmas matérias, na ordem oficial, cada uma com o campo "ordem".
+    """
+    ordem = montar_ordem([materia["caminho"] for materia in materias])
+    posicao = {caminho: indice for indice, caminho in enumerate(ordem, start=1)}
+    for materia in materias:
+        materia["ordem"] = posicao[materia["caminho"]]
+    return sorted(materias, key=lambda materia: materia["ordem"])
+
+
 def montar_relatorio():
     """Percorre todos os cursos e monta o relatório completo.
 
@@ -194,6 +217,7 @@ def montar_relatorio():
         materias_curso, ignoradas_curso = analisar_curso(pasta_curso)
         materias += materias_curso
         ignoradas += ignoradas_curso
+    materias = ordenar_pela_ordem_oficial(materias)
     completas = sum(1 for materia in materias if materia["completa"])
     return {
         "gerado_em": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),

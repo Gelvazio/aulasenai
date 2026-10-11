@@ -5,11 +5,11 @@ Registro de **todos** os arquivos `database/*-seed-atividades.sql` e do status d
 CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 [`CLAUDE.md`](../CLAUDE.md), seção "🌱 REGRA — SEEDS DO BANCO".** Aqui ficam só os dados.
 
-## Resumo (atualizado em 2026-10-11 05:07)
+## Resumo (atualizado em 2026-10-11 11:52)
 
 | PENDENTE | APLICADO | CONCLUÍDO | SUBSTITUÍDO | Total |
 |---|---|---|---|---|
-| 0 | 3 | 65 | 0 | 68 |
+| 0 | 3 | 66 | 0 | 69 |
 
 ## Todos os seeds
 
@@ -73,7 +73,7 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-09-banco-de-dados-atividade-pratica-aula-16-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-09 21:21 | Aplicado em partes pelo conector (atividade id 136, aula id 120, bloqueada, 30 tópicos); md5 dos tópicos igual ao do arquivo |
 | `2026-10-09-banco-de-dados-atividade-pratica-aula-17-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-09 21:22 | Aplicado em partes pelo conector (atividade id 138, aula id 121, bloqueada, 30 tópicos); md5 dos tópicos igual ao do arquivo |
 | `2026-10-09-banco-de-dados-atividade-pratica-aula-18-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-09 21:24 | Aplicado em partes pelo conector (atividade id 140, aula id 122, bloqueada, 30 tópicos); md5 dos tópicos igual ao do arquivo |
-| `2026-10-09-banco-de-dados-objetivas-seed-atividades.sql` | Banco de Dados (TII) | 19 | **CONCLUÍDO** | 2026-10-09 22:46 | Aplicado em partes pelo conector, uma aula por comando: as 19 aulas conferidas pelo md5 (atividades 103, 105, 107, 109, 111, 113, 115, 117, 121, 123, 125, 127, 129, 131, 133, 135, 137, 139, 141) |
+| `2026-10-09-banco-de-dados-objetivas-seed-atividades.sql` | Banco de Dados (TII) | 20 | **CONCLUÍDO** | 2026-10-10 22:13 | Aplicado em partes pelo conector, uma aula por comando: as 20 aulas conferidas pelo md5 (aulas 01 a 19 em 2026-10-09 22:46; aula 20 = atividade 145, aula id 125, em 2026-10-10 22:13) |
 | `2026-10-09-testes-frontend-atividade-pratica-aula-01-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-09-testes-frontend-atividade-pratica-aula-02-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
 | `2026-10-09-testes-frontend-atividade-pratica-aula-03-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-09 19:23 | 1 atividade(s) no banco com a mesma quantidade de itens do arquivo |
@@ -83,6 +83,7 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-10-testes-frontend-atividade-pratica-aula-04-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **CONCLUÍDO** | 2026-10-10 16:21 | Atividade id 144 (aula id 124, bloqueada), 30 tópicos, 10 pontos; md5 conferido — Etapa 137-13665a7e |
 | `2026-10-10-testes-frontend-objetiva-aula-05-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **APLICADO** | 2026-10-11 04:36 | Aplicado pelo conector (atividade id 150, aula id 126, 50 itens); falta conferir o md5 — Etapa 137-13665a7e |
 | `2026-10-10-testes-frontend-atividade-pratica-aula-05-seed-atividades.sql` | Testes de Front-End (TII) | 1 | **APLICADO** | 2026-10-11 05:07 | Parte 1 aplicada pelo conector (atividade id 151, aula id 126, bloqueada): 15 de 30 tópicos; falta a parte 2 — Etapa 137-13665a7e |
+| `2026-10-11-banco-de-dados-atividade-pratica-aula-20-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-10 22:13 | Aplicado pelo conector em um comando (atividade id 146, aula id 125, bloqueada): 30 tópicos, md5 igual ao do arquivo (2026-10-10 22:13) |
 
 ## Seeds excluídos (não podiam ser concluídos)
 
