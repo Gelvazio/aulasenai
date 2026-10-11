@@ -272,7 +272,7 @@ primeiro passo (pedido do usuário).
 - [ ] Atividades por aula: objetiva de 50 questões e prática no padrão da id 82
   (`docs/REGRAS-ATIVIDADE-PRATICA.md`), fontes em `ATIVIDADES/CONTEUDO/`, sem empresa fictícia;
   `ATIVIDADES/STATUS-ATIVIDADES.md` e `ATIVIDADES/index.html` regerado; seeds no banco só com pedido.
-- [ ] Avaliações e média final no modelo da ITIC (se a ementa pedir).
+- [ ] Avaliações e média final pela regra global de matérias (`docs/regras/materias.md`, seção 6).
 - [ ] Rodar `scripts/analise-materias.py`: Banco de Dados sem pendências, exceto as da apostila.
 - [ ] Aceite do usuário.
 

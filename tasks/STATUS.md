@@ -17,7 +17,7 @@ pendente) muda para `⏹️ Encerrada`.
 | Frente (ambiente · branch) | Tarefa/etapa | Próximo passo | Situação | Atualizado em |
 |---|---|---|---|---|
 | nuvem · claude/festive-maxwell-25jnhl | #21 (Etapa 135-eeefc710); #20 assumida em 2026-10-10 16:27 pela frente verificar-status-pastas, a pedido do usuário. Antes: #20 (Etapa 125) e #21 (Etapa 135-eeefc710) | Aula 19 de Banco de Dados pronta (conteúdo, objetiva, prática); seeds: objetiva id 141 CONCLUÍDO, prática id 142 com 29 de 30 tópicos (falta o 6c, que precisa da confirmação do usuário no conector). Próximo: tópico 6c da aula 19 (com a confirmação do usuário) e depois a aula 20 (conteúdo + objetiva + prática), plano [docs/banco-de-dados-materia-100.md](../docs/banco-de-dados-materia-100.md) | 🔄 Ativa | 2026-10-09 21:27 |
-| nuvem · claude/verificar-status-pastas-c6s5yz | Etapas 137-b214e26b e 138-77338471; #20 (Etapa 125) | Aula 20 de Banco de Dados pronta e no banco (objetiva id 145, prática id 146). Próximo: item 125.5 — avaliações objetivas, prática e média final no modelo da ITIC; o tópico 6c da aula 19 espera o usuário rodar no SQL Editor | 🔄 Ativa | 2026-10-10 22:13 |
+| nuvem · claude/verificar-status-pastas-c6s5yz | Etapas 137-b214e26b e 138-77338471; #20 (Etapa 125) | Aula 20 de Banco de Dados pronta e no banco (objetiva id 145, prática id 146). Regra global de matérias criada (Etapa 139). Próximo: item 125.5 — avaliações objetivas, prática e média final pela regra global (seção 6); o tópico 6c da aula 19 espera o usuário rodar no SQL Editor | 🔄 Ativa | 2026-10-10 22:13 |
 | local · main | — | Ao iniciar: ler este arquivo e o `RECADOS.md` e preencher esta linha | ⬜ Sem registro | — |
 
 ## 📌 Tarefas do `TASKS.md` (o status oficial fica aqui)
@@ -49,6 +49,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
 | 125 | 125.8 | rodar no Supabase → SQL Editor o insert do tópico 6c da prática da aula 19 de Banco de Dados (atividade id 142): o conector da nuvem cancela o comando porque o texto cita `DELETE FROM parcela;` (o pedido de aprovação não chega ao usuário) | Ação |
+| 139-b5ab1a00 | 139.4 | conferir a regra global de matérias (`docs/regras/materias.md`) e a troca no `CLAUDE.md` | Aceite |
 | 138-77338471 | 138.6 | conferir o `STATUS_MATERIA.md` das matérias, a ordem em `tasks/ORDEM-MATERIAS.md` e a regra nova do `CLAUDE.md` | Aceite |
 | 137-b214e26b | 137.5 | conferir os status corrigidos de Fundamentos da Tecnologia (9 aulas), Reforço de Matemática (16) e Análise de Dados (8) | Aceite |
 | 136-f0a07de9 | 136.5 | aceite do registro `database/SEEDS-APLICADOS.md` e da regra dos seeds | Aceite |
@@ -272,6 +273,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (regra "CONVERSA ENTRE SESSÕES 
 | 136-f0a07de9 | Registro dos seeds aplicados e item próprio em cada tarefa | [ETAPA-136-f0a07de9-REGISTRO-DOS-SEEDS-APLICADOS.md](etapas/ETAPA-136-f0a07de9-REGISTRO-DOS-SEEDS-APLICADOS.md) |
 | 137-b214e26b | Status das aulas conferidos pela carga horária da ementa (FTP, Reforço de Matemática, Análise de Dados) | [ETAPA-137-b214e26b-STATUS-DAS-AULAS-PELA-CARGA-HORARIA.md](etapas/ETAPA-137-b214e26b-STATUS-DAS-AULAS-PELA-CARGA-HORARIA.md) |
 | 138-77338471 | `STATUS_MATERIA.md` em cada matéria e ordem das matérias (`tasks/ORDEM-MATERIAS.md`) | [ETAPA-138-77338471-STATUS-MATERIA-E-ORDEM-DAS-MATERIAS.md](etapas/ETAPA-138-77338471-STATUS-MATERIA-E-ORDEM-DAS-MATERIAS.md) |
+| 139-b5ab1a00 | Regra global de matérias (`docs/regras/materias.md`) no lugar da "matéria modelo ITIC" | [ETAPA-139-b5ab1a00-REGRA-GLOBAL-DE-MATERIAS.md](etapas/ETAPA-139-b5ab1a00-REGRA-GLOBAL-DE-MATERIAS.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |

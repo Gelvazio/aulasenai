@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Análise das matérias no padrão da matéria modelo (Introdução à TIC).
+"""Análise das matérias pela regra global de matérias (docs/regras/materias.md).
 
 Percorre todos os cursos de MATERIAIS/ (menos as pastas que não são curso), confere em cada
 matéria as peças da ITIC (ementa, materia.json, aulas, atividades e apostila) e grava o
@@ -23,7 +23,7 @@ PASTAS_QUE_NAO_SAO_CURSO = {"MATERIAS-GERAIS", "AGENDA_COLABORADOR"}
 ARQUIVOS_QUE_MARCAM_MATERIA = ("EMENTA-CHALKIE-AI.md", "materia.json")
 TAMANHO_MINIMO_EMENTA = 14800
 TAMANHO_MAXIMO_EMENTA = 14950
-VERSAO_PADRAO = "Matéria modelo: Introdução à TIC (CLAUDE.md, 2026-10-03)"
+VERSAO_PADRAO = "Regra global de matérias: docs/regras/materias.md (CLAUDE.md, 2026-10-10)"
 
 PECAS_ARQUIVO = {
     "ementa": "EMENTA-CHALKIE-AI.md",
@@ -144,7 +144,7 @@ def listar_pendencias(pecas, contagem, ementa):
 
 
 def analisar_materia(curso, pasta_materia):
-    """Confere uma matéria no padrão da ITIC.
+    """Confere uma matéria pela regra global de matérias.
 
     Args:
         curso: nome da pasta do curso.

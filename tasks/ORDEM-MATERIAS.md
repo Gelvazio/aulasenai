@@ -2,7 +2,7 @@
 
 Regra "STATUS_MATERIA E ORDEM DAS MATÉRIAS" do `CLAUDE.md`: ao ler o status de tarefas ou de matérias, seguir **esta ordem**. A ordem gravada não muda; matéria nova entra no fim. Gerado por `scripts/status-materias/gerar_status_materia.py` (não editar à mão; para mudar a ordem, mudar as linhas e rodar o script de novo).
 
-**Gerado em:** 2026-10-10 22:14:09
+**Gerado em:** 2026-10-10 22:20:19
 
 | Ordem | Matéria | Curso | Situação | Peças | Caminho |
 |---|---|---|---|---|---|

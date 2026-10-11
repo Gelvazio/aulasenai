@@ -4,7 +4,7 @@
 
 Regra "STATUS_MATERIA E ORDEM DAS MATÉRIAS" do CLAUDE.md: o status de cada matéria
 (⬜ NÃO INICIADA, 🔄 PENDENTE ou ✅ CONCLUÍDA) sai dos arquivos da pasta, conferidos contra as
-peças do padrão da ITIC. Só lê as matérias e grava os dois tipos de arquivo de status.
+peças da regra global de matérias (docs/regras/materias.md). Só lê as matérias e grava os dois tipos de arquivo de status.
 
 Uso (na raiz do repositório): python3 scripts/status-materias/gerar_status_materia.py
 """
@@ -132,7 +132,7 @@ def montar_secao_pecas_gerais(analise, pasta_materia):
     Returns:
         list[str]: linhas Markdown.
     """
-    linhas = ["## 1. Peças da matéria (padrão da ITIC)", "",
+    linhas = ["## 1. Peças da matéria (regra global de matérias)", "",
               "| Peça | Arquivo esperado | Status |", "|---|---|---|"]
     for nome, caminho, arquivo in analise["pecas_gerais"]:
         encontrado = arquivo.relative_to(pasta_materia).as_posix() if arquivo else caminho
