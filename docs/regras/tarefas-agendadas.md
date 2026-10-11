@@ -1,5 +1,8 @@
 # ⏰ Regras — Tarefas agendadas (1 agendador que lê a fila `tasks`)
 
+> ℹ️ Desde 2026-10-11 06:09:22 as regras completas da fila também estão no `CLAUDE.md` (seção "⏰ TAREFAS
+> AGENDADAS E FILA `tasks`"), que vence em caso de conflito; este arquivo detalha.
+
 Registrada em 2026-10-11 05:12:00 a pedido do usuário ("corrija todas as regras conflitantes" da
 rotina "Tarefa Aulas Senai"). **Reescrita em 2026-10-11 05:57:00** (tarefa #24-9fb25086-5b51-44cb,
 plano [docs/fila-tasks-agendador-unico.md](../fila-tasks-agendador-unico.md)), a pedido do usuário:

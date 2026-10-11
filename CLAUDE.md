@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-11 06:07:25
+**Versão das regras:** 2026-10-11 06:09:22
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,10 +8,10 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-11 06:09:22 | **Todas as regras da fila `tasks` no `CLAUDE.md`:** a seção "⏰ TAREFAS AGENDADAS E FILA `tasks`" passa a trazer as regras completas (agendador único; tabela, status, RLS e funções; ordem, dependências e sub-tasks; toda task na tabela e no GitHub com `sincronizar_tasks.py`; passo a passo e decisão executar/recusar/erro; página `tasks.html` e log), com itens em "valem sempre" e na inicialização (tarefa do `TASKS.md` também na tabela) |
 | 2026-10-11 06:07:25 | **Ordem e dependências na fila `tasks`:** colunas `ordem` e `task_dependente` (ids das tasks de que ela depende); a `pegar_proxima_task` só pega uma task com **todas as dependentes concluídas** (prioridade → ordem → criação); tarefa grande vira **sub-tasks pequenas em cadeia** (`#NN.MM`), uma por vez; etapas do usuário (`👤`) ficam desligadas e o professor as conclui na `tasks.html` (✅ Concluir); a #25 foi dividida em 22 sub-tasks (TASK-0019 a TASK-0040) — [`docs/regras/tarefas-agendadas.md`](docs/regras/tarefas-agendadas.md) |
 | 2026-10-11 06:01:03 | **Atividades só no banco, layout global e pasta da matéria só com conteúdo:** as questões da objetiva e da prática (enunciado, alternativas, gabarito, tópicos e padrão de resposta) ficam **só no banco**; objetiva e prática usam **um layout global** (nada de página criada do zero em cada aula); as pastas das matérias/aulas têm **só conteúdo (Markdown), nenhum HTML** — tudo vem do global; migração das matérias existentes na tarefa #25-b3e29764-940b-4a82 (plano e aprovação) — "🗃️ REGRA — ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA SÓ COM CONTEÚDO" |
 | 2026-10-11 05:57:00 | **Agendador único lendo a fila `tasks`:** as tarefas agendadas viram **1 rotina por hora** que pega no máximo 1 task da tabela `tasks` do Supabase (`pegar_proxima_task`), decide se executa (ou recusa com o motivo) e grava o resultado (`finalizar_task`); fila vazia = não faz nada; cadastro na página `tasks.html` (menu TASKS, só o administrador); **toda task existe na tabela e no GitHub** (`tasks/TASKS.md` ou `tasks/fila/TASK-NNNN.md`, script `scripts/tasks/sincronizar_tasks.py`); substitui as 6 rotinas paralelas e a escolha automática de aula (#24; #22 e #23 canceladas) — "⏰ TAREFAS AGENDADAS" e [`docs/regras/tarefas-agendadas.md`](docs/regras/tarefas-agendadas.md) |
-| 2026-10-11 05:12:00 | **Tarefas agendadas:** regra nova [`docs/regras/tarefas-agendadas.md`](docs/regras/tarefas-agendadas.md) — as rotinas que geram aulas sozinhas seguem as regras do projeto (branch própria + PR, nunca push direto na `main`; aula escolhida pelo `STATUS-AULAS.md` na ordem do `tasks/ORDEM-MATERIAS.md`; trava em `tasks/RECADOS.md`; log em `agendamento_tarefa_logs`); o `TAREFA_AGENDADA.md` na raiz não é usado — "⏰ TAREFAS AGENDADAS" |
 | 2026-10-10 16:40:55 | **Todos os arquivos de status existem sempre, em todas as matérias (inclusive IGNORAR):** `STATUS_MATERIA.md`, `AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` e `STATUS-EMENTAS.md`; o `gerar_status_materia.py` cria os que faltam antes de gerar — "🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS" |
 
 ---
@@ -86,6 +86,10 @@ Registrada em 2026-10-03 a pedido do usuário.
   usuário): perguntas da objetiva e da prática **só no banco**; as duas usam **um layout global**;
   nas pastas das matérias e aulas, **só conteúdo** (Markdown), **nenhum HTML** (regra "🗃️ REGRA —
   ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA SÓ COM CONTEÚDO").
+- ✅ **Fila `tasks` e agendador único** (2026-10-11, pedido do usuário): uma rotina por hora lê a
+  tabela `tasks`, pega no máximo 1 task (só com as dependentes concluídas, na ordem), decide se
+  executa ou recusa e grava o resultado; toda task existe na tabela e no GitHub; tarefa grande vira
+  sub-tasks pequenas em cadeia (seção "⏰ TAREFAS AGENDADAS E FILA `tasks`").
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
 - ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, numa branch própria + novo PR para a `main`).
@@ -422,7 +426,7 @@ Aqui ficam as regras de sempre, as de segurança e este índice.
 | [docs/regras/paginas-legadas.md](docs/regras/paginas-legadas.md) | mexer nas páginas antigas (`dashboard.html`, `uc.html`, `questionarios.html`, `validacao.html`) ou na apostila de Reforço de Matemática | descrição das páginas antigas; fluxo de navegação; exercícios da apostila de Reforço de Matemática |
 | [docs/regras/codigo.md](docs/regras/codigo.md) | criar ou alterar qualquer código (JS, Python, HTML, CSS) | princípios SOLID; até 1000 linhas por arquivo e 45 por função; JSDoc/docstring; return early; constantes; nomes em português sem acento; até 3 parâmetros; até 2 níveis; Prettier/ESLint e Black/Ruff |
 | [docs/regras/infograficos.md](docs/regras/infograficos.md) | criar infográficos | cabeçalho, no mínimo 6 seções numeradas e coloridas, fundo escuro, exemplos, regra de ouro no rodapé, cores por tema |
-| [docs/regras/tarefas-agendadas.md](docs/regras/tarefas-agendadas.md) | criar, alterar ou executar a **tarefa agendada** ou mexer na fila `tasks` / `tasks.html` | 1 rotina por hora; tabela `tasks` e funções; toda task na tabela e no GitHub (`sincronizar_tasks.py`); passo a passo de cada execução; log em `agendamento_tarefa_logs`; outras contas e IAs |
+| [docs/regras/tarefas-agendadas.md](docs/regras/tarefas-agendadas.md) | criar, alterar ou executar a **tarefa agendada** ou mexer na fila `tasks` / `tasks.html` (as regras completas também estão no `CLAUDE.md`, que vence) | 1 rotina por hora; tabela `tasks` e funções; toda task na tabela e no GitHub (`sincronizar_tasks.py`); passo a passo de cada execução; log em `agendamento_tarefa_logs`; outras contas e IAs |
 
 ### ⛔ Proibições das regras detalhadas (resumo — o detalhe está nos arquivos acima)
 
@@ -520,28 +524,111 @@ vir tudo do global". Migração das matérias existentes: tarefa **#25-b3e29764-
 
 ---
 
-## ⏰ TAREFAS AGENDADAS — [docs/regras/tarefas-agendadas.md](docs/regras/tarefas-agendadas.md)
+## ⏰ TAREFAS AGENDADAS E FILA `tasks` — [docs/regras/tarefas-agendadas.md](docs/regras/tarefas-agendadas.md)
 
-Registrada em 2026-10-11 05:12:00 a pedido do usuário; **reescrita em 2026-10-11 05:57:00** (tarefa
-#24-9fb25086-5b51-44cb): "1 agendador que apenas controle 1 tabela de nome tasks, que a IA vai ler
-e decidir se executa algo ou não" e "toda task deve existir na tabela e no GitHub".
+Registrada em 2026-10-11 05:12:00 a pedido do usuário; reescrita em 2026-10-11 05:57:00 (tarefa
+#24-9fb25086-5b51-44cb: "1 agendador que apenas controle 1 tabela de nome tasks, que a IA vai ler
+e decidir se executa algo ou não"; "toda task deve existir na tabela e no GitHub"); ordem e
+dependências em 2026-10-11 06:07:25 ("crie ordem na tabela task e campo task_dependente... só deve
+iniciar se as tasks dependentes estiverem concluídas"); **todas as regras trazidas para este
+arquivo em 2026-10-11 06:09:22** (pedido do usuário: "armazene todas estas regras no claude.md"). O arquivo
+`docs/regras/tarefas-agendadas.md` repete e detalha; em conflito, vale este `CLAUDE.md`.
 
-- ✅ **Uma rotina só, de hora em hora**, que pega **no máximo 1 task** da tabela **`tasks`** do
-  Supabase (`pegar_proxima_task`), **decide** se executa (dentro destas regras) ou recusa com o
-  motivo, e grava o resultado (`finalizar_task`). **Fila vazia = não faz nada** (só o log).
-- ✅ O professor controla a fila na página **`tasks.html`** (menu **TASKS**, só o Professor
-  Administrador): cadastrar, editar, ON/OFF, "executar após", cancelar, reabrir, excluir (lógico).
-- ⛔ **Toda task existe na tabela e no GitHub:** tarefa do `tasks/TASKS.md` tem a linha dela na
-  tabela (entra desligada) e linha criada na página tem o `tasks/fila/TASK-NNNN.md`; sincronizar
-  com `scripts/tasks/sincronizar_tasks.py` em toda execução da rotina e ao criar, concluir ou
-  cancelar tarefa do `TASKS.md` (no mesmo commit). Texto da tarefa: vale o GitHub; status e
-  ON/OFF: vale a tabela; estado do projeto: continua no `tasks/STATUS.md`.
-- ✅ **Ordem e dependências** (2026-10-11 06:07:25): `tasks.ordem` e `tasks.task_dependente` (ids); só começa a
-  task com todas as dependentes concluídas. Tarefa grande = sub-tasks pequenas em cadeia
-  (`#NN.MM`), uma por vez; etapa do usuário (`👤`) fica desligada e ele conclui na página.
-- ⛔ **Nunca push direto na `main`**: branch da sessão + PR juntado pela própria execução.
-- ✅ Regras das rotinas só em `docs/regras/` (o `TAREFA_AGENDADA.md` na raiz não é usado); o prompt
-  da rotina só aponta para elas. Log de cada execução em `agendamento_tarefa_logs`.
+### 1. Um agendador só
+
+- ✅ **Uma rotina só** ("Tarefa Aulas Senai", conta do usuário), **de hora em hora** (o agendador
+  aceita no máximo 1 execução por hora por rotina), das 01:03 às 23:03 de Brasília. Cada execução
+  é uma sessão nova na nuvem e segue tudo deste `CLAUDE.md`.
+- ✅ A rotina **só faz o que está na tabela `tasks`** do Supabase: pega **no máximo 1 task** por
+  execução, **decide** se a executa e grava o resultado. **Fila vazia = não faz nada** (só
+  sincroniza e grava o log).
+- ⛔ **Sem outras rotinas:** não criar as antigas tarefas agendadas 2 a 6 (#22 cancelada); outra
+  conta do Claude ou outra IA só pega trabalho pela mesma função `pegar_proxima_task`.
+- ✅ O prompt da rotina só aponta para estas regras; o `TAREFA_AGENDADA.md` na raiz nunca é usado.
+  A rotina fica **desligada** até o acesso do GitHub ser liberado (item 140.6) e o usuário pedir.
+
+### 2. Tabela `tasks` (Supabase)
+
+- ✅ SQL em `database/2026-10-11-tasks-fila-agendador.sql` (aplicado). Colunas principais: `codigo`
+  (`#NN-uuid` do `TASKS.md` ou `TASK-NNNN`), `origem` (`repositorio`/`pagina`), `titulo`,
+  `instrucao`, `prioridade` (1 = mais alta … 5), **`ordem`**, **`task_dependente`** (ids),
+  `executar` (ON/OFF), `executar_apos`, `status`, `tentativas`/`max_tentativas` (3), trava
+  (`trava_frente`, `expira_em`), `resultado`, `pr_url`, `commit_sha`, `log_id`, `excluido`,
+  `arquivo_md`, `md5_md`, `sincronizado_em`.
+- ✅ **Status:** `pendente` · `em_execucao` · `concluida` · `recusada` · `erro` · `cancelada`.
+- ✅ **RLS:** só o Professor Administrador lê e grava pela API; **sem DELETE** (excluir = `excluido`);
+  `anon` sem acesso. A página nunca põe nem tira uma task de `em_execucao`.
+- ✅ **`pegar_proxima_task('<frente>')`** (só pelo conector): devolve para a fila as travas vencidas
+  e pega **1** task `pendente`, ligada, não excluída, com "executar após" vencido, tentativas
+  sobrando e **todas as dependentes `concluida`**, na ordem **prioridade → `ordem` → criação**;
+  marca `em_execucao` e trava por **90 minutos** (duas execuções nunca pegam a mesma).
+- ✅ **`finalizar_task(id, status, resultado, pr_url, commit_sha)`** (só pelo conector): fecha com
+  `concluida`, `recusada` ou `erro`; `erro` com tentativas sobrando volta a `pendente`.
+
+### 3. Ordem, dependências e sub-tasks
+
+- ✅ **`ordem`** = posição na fila; **`task_dependente`** = ids das tasks de que ela depende. Uma task
+  **só inicia quando todas as dependentes estão concluídas**. O banco recusa dependência
+  inexistente ou da própria task e junta ids repetidos.
+- ✅ **Tarefa grande = várias sub-tasks pequenas**, feitas **uma por vez e em ordem**: título
+  `#NN.MM — …`, cada sub-task depende da anterior (cadeia) e a tarefa-mãe depende de todas.
+  Exemplo: a #25 tem 22 sub-tasks (ids 19 a 40, `tasks/fila/TASK-0019.md` a `TASK-0040.md`).
+- ✅ **Etapa do usuário** (aprovação, aceite, teste): sub-task com título `👤 …`, **desligada**
+  (`executar = false`); o professor marca concluída na página (**✅ Concluir**) e a fila segue.
+
+### 4. Toda task na tabela e no GitHub
+
+- ⛔ **Nenhuma task existe só num lado.** Toda tarefa do `tasks/TASKS.md` tem a linha dela na
+  tabela (mesmo `codigo`, `origem = 'repositorio'`, entra **desligada**) e toda linha criada na
+  página (ou sub-task) tem o arquivo **`tasks/fila/TASK-NNNN.md`** no GitHub.
+- ✅ **Em conflito:** título e instrução valem os do **GitHub** (`TASKS.md`); status, ON/OFF,
+  prioridade, ordem, dependências e resultado valem os da **tabela**; o estado do projeto continua
+  no `tasks/STATUS.md` (fonte única), atualizado junto.
+- ✅ **Script único** `scripts/tasks/sincronizar_tasks.py` (o banco só pelo conector; nenhuma chave
+  no repositório): `consulta` (SQL das linhas em JSON, datas de Brasília), `importar` (SQL do
+  `TASKS.md` → tabela; md5 calculado pelo banco; fecha as que saíram do `TASKS.md`, como
+  `cancelada` quando o `STATUS.md` diz "⛔ Cancelada"), `exportar <linhas.json>` (escreve
+  `tasks/fila/` e o SQL do md5) e `conferir <linhas.json>` (lista diferenças; erro se houver).
+- ✅ **Quando sincronizar:** em toda execução da rotina; **ao criar, concluir ou cancelar tarefa
+  do `TASKS.md` em qualquer sessão (no mesmo commit)**; ao criar ou fechar task ou sub-task.
+- ✅ Ao copiar dados do banco para um arquivo (JSON), conferir pelo md5 que a cópia é igual ao banco.
+
+### 5. Passo a passo de cada execução da rotina
+
+1. ✅ Anotar a hora de início (Brasília) e a frente `nuvem · <branch da sessão>`.
+2. ✅ Inicialização deste `CLAUDE.md` (trazer a `main`, `STATUS.md`, `RECADOS.md`, regras globais,
+   seeds).
+3. ✅ **Sincronizar** (`consulta` → JSON → `conferir`; havendo diferença, `importar`/`exportar` e
+   commit + push + PR + merge só desses arquivos).
+4. ✅ `select * from pegar_proxima_task('<frente>');`
+5. ✅ **Nada veio:** encerrar sem alterar mais nada; log `sem_tarefa`.
+6. ✅ **Veio uma task:** ler a `instrucao` e **decidir**:
+   - **Executar** quando cabe nestas regras e está clara: trabalho na branch da sessão, arquivos de
+     status, commit + push + PR + merge; `finalizar_task(id, 'concluida', '<o que foi feito>',
+     '<PR>', '<sha>')`.
+   - **Recusar** quando fere uma regra (push na `main`, segredo, gabarito publicado, afrouxar RLS,
+     apagar dados, mexer em tarefa reservada por outra frente…), é ambígua ou precisa de decisão do
+     usuário: `finalizar_task(id, 'recusada', '<motivo>')`, sem mexer no repositório.
+   - **Erro** técnico: `finalizar_task(id, 'erro', '<mensagem>')`.
+   - Grande demais para uma execução: entregar a parte que fechar e `recusada` com o que falta,
+     para o professor dividir em sub-tasks.
+7. ✅ `exportar` de novo (o arquivo da task muda com o status) e commit + push + PR + merge.
+8. ✅ Gravar o log e apagar a branch do PR juntado.
+- ⛔ Nunca marcar `concluida` o que não foi feito; **nunca push direto na `main`** nem push forçado.
+
+### 6. Página `tasks.html` e log
+
+- ✅ **`tasks.html`** (raiz; menu **TASKS**, só o Professor Administrador): lista com código, título,
+  ordem/prioridade, **Depende de** (⛓️ = ainda não concluída), ON/OFF, status, resultado e GitHub
+  (arquivo, "⚠️ não sincronizado", PR); botões 🔍 Ver, ✏️ Editar (título e instrução só nas tasks
+  da página; as do `TASKS.md` se editam no GitHub), ✅ Concluir, 🚫 Cancelar, 🔁 Reabrir e 🗑️
+  Excluir (lógico). Código: `assets/js/tasks-repositorio.js`, `tasks-pagina.js`, `tasks-modais.js`
+  e `assets/css/tasks.css`.
+- ✅ **Log** de toda execução em `agendamento_tarefa_logs` (status `concluida`, `recusada`, `erro`
+  ou `sem_tarefa`; `aula` = código da task; status da task antes e depois; texto completo das
+  instruções); o id do log vai para `tasks.log_id`.
+- ⛔ Nada de senha, chave, gabarito nem dado de aluno nas tasks, nos arquivos de `tasks/fila/`, nos
+  recados, no `STATUS.md` ou no log.
 
 ---
 
@@ -583,6 +670,10 @@ TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
   commit e plano ficam registrados no `STATUS.md`). Perguntas sem trabalho não entram. Caminho
   (2026-10-09): **`C:\fontes\aulasenai\tasks\TASKS.md`** (na nuvem, `tasks/TASKS.md` da raiz do
   repositório); o `STATUS.md` fica na mesma pasta `tasks/`.
+- ✅ **Tarefa do `TASKS.md` também na tabela `tasks`** (2026-10-11 06:09:22, pedido do usuário): tarefa nova,
+  alterada, concluída ou cancelada no `TASKS.md` é sincronizada na tabela `tasks` no mesmo commit
+  (`scripts/tasks/sincronizar_tasks.py importar` pelo conector); tarefa grande ganha as sub-tasks
+  em cadeia na tabela (seção "⏰ TAREFAS AGENDADAS E FILA `tasks`").
 - ✅ **Id de tarefa nova = número + UUID** (2026-10-09 12:36:43, pedido do usuário, para duas
   licenças/branches não criarem a mesma "#17"): toda tarefa nova do `TASKS.md` recebe o próximo
   número **seguido de um UUID gerado na hora**, ex.: **`#19-3f9a2c7e-8b1d-4e2a`** (número + os 3
