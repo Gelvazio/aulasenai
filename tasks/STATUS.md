@@ -18,7 +18,7 @@ pendente) muda para `⏹️ Encerrada`.
 |---|---|---|---|---|
 | nuvem · claude/festive-maxwell-25jnhl | #21 (Etapa 135-eeefc710); #20 assumida em 2026-10-10 16:27 pela frente verificar-status-pastas, a pedido do usuário. Antes: #20 (Etapa 125) e #21 (Etapa 135-eeefc710) | Aula 19 de Banco de Dados pronta (conteúdo, objetiva, prática); seeds: objetiva id 141 CONCLUÍDO, prática id 142 com 29 de 30 tópicos (falta o 6c, que precisa da confirmação do usuário no conector). Próximo: tópico 6c da aula 19 (com a confirmação do usuário) e depois a aula 20 (conteúdo + objetiva + prática), plano [docs/banco-de-dados-materia-100.md](../docs/banco-de-dados-materia-100.md) | 🔄 Ativa | 2026-10-09 21:27 |
 | nuvem · claude/verificar-status-pastas-c6s5yz | Etapas 137-b214e26b e 138-77338471; #20 (Etapa 125) | Aula 20 de Banco de Dados pronta e no banco (objetiva id 145, prática id 146). Regra global de matérias criada (Etapa 139). Próximo: item 125.5 — avaliações objetivas, prática e média final pela regra global (seção 6); o tópico 6c da aula 19 espera o usuário rodar no SQL Editor | 🔄 Ativa | 2026-10-10 22:13 |
-| nuvem · ccr-00f69e8a-6qcla9 | Etapa 140-8554d88e (tarefas agendadas); #23 cancelada (substituída pela #24 de outra frente) | Nada desta frente: a #23 foi cancelada e a rotina segue pela #24; pendências da Etapa 140 (140.6 e 140.7) estão em "⏳ Aguardando o usuário" | ⏹️ Encerrada | 2026-10-11 06:15 |
+| nuvem · ccr-00f69e8a-6qcla9 | #26 (Etapa 144-aff33423); Etapa 140-8554d88e | #26: item 144.5 — primeira cópia das regras no banco e `conferir`; depois aceite (144.6) | 🔄 Ativa | 2026-10-11 06:28 |
 | nuvem · ccr-be208aef-c6h8oe | #24 (Etapa 142-2a52ee2f) | Fila `tasks` pronta (tabela, funções, `tasks.html`, regra, prompt da rotina, 17 tarefas do `TASKS.md` na tabela). Próximo: item 142.5 — teste e aceite do usuário; a rotina continua desligada até liberar o GitHub (140.6) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | local · main | — | Ao iniciar: ler este arquivo e o `RECADOS.md` e preencher esta linha | ⬜ Sem registro | — |
 
@@ -47,6 +47,7 @@ A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale 
 | #23-79fc30a3-c4c9-4a40 | Agendamentos: CRUD em `agendamentos.html` e espelho dos controles no banco | ⛔ Cancelada em 2026-10-11 05:58 — substituída pela #24 (decisão do usuário, 05:44) | — | — |
 | #24-9fb25086-5b51-44cb | Fila `tasks` no banco + 1 agendador que lê a fila e decide; página `tasks.html` (substitui a #23) | 👀 Aguardando validação (Etapa 142-2a52ee2f) | Item 142.5 — teste do usuário em `tasks.html` e aceite; depois liberar o GitHub (140.6) e ligar a rotina | — |
 | #25-b3e29764-940b-4a82 | Questões da objetiva e da prática só no banco, layout global, pasta da matéria sem HTML (migração) | ⬜ Pendente — dividida em 22 sub-tasks na tabela `tasks` (ids 19 a 40, em cadeia; Etapa 143-d30a9c4d) | 25.01 (TASK-0019) — levantamento; a rotina pega quando for ligada | — |
+| #26-55a91111-02ce-4cb1 | Regras no banco: `regra_documento` e `regra_secao` (cópia do repositório) | 🔄 Em execução (Etapa 144-aff33423) | Item 144.5 — primeira cópia e `conferir`; depois aceite | nuvem · ccr-00f69e8a-6qcla9 (desde 2026-10-11 06:21) |
 
 ## ⏳ Aguardando o usuário (aceites, aprovações e ações dele)
 
@@ -55,6 +56,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
 | 125 | 125.8 | rodar no Supabase → SQL Editor o insert do tópico 6c da prática da aula 19 de Banco de Dados (atividade id 142): o conector da nuvem cancela o comando porque o texto cita `DELETE FROM parcela;` (o pedido de aprovação não chega ao usuário) | Ação |
+| 144-aff33423 | 144.6 | conferir as regras no banco (`regra_documento`, `regra_secao`) e a regra "🗄️ REGRAS NO BANCO" do `CLAUDE.md` | Aceite |
 | 140-8554d88e | 140.6 e 140.7 | liberar o acesso do GitHub ao `Gelvazio/aulasenai` para as tarefas agendadas e conferir a regra `docs/regras/tarefas-agendadas.md` — na fila como TASK-0042 e TASK-0043 (`tasks.html`, marcar ✅ Concluir) | Ação e aceite |
 | 139-b5ab1a00 | 139.4 | conferir a regra global de matérias (`docs/regras/materias.md`) e a troca no `CLAUDE.md` | Aceite |
 | 138-77338471 | 138.6 | conferir o `STATUS_MATERIA.md` das matérias, a ordem em `tasks/ORDEM-MATERIAS.md` e a regra nova do `CLAUDE.md` | Aceite |
@@ -285,6 +287,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (regra "CONVERSA ENTRE SESSÕES 
 | 141-a7e81c26 | Agendamentos: CRUD e espelho dos controles no banco (#23) | [ETAPA-141-a7e81c26-AGENDAMENTOS-CRUD-E-BANCO.md](etapas/ETAPA-141-a7e81c26-AGENDAMENTOS-CRUD-E-BANCO.md) |
 | 142-2a52ee2f | Fila `tasks` no banco + 1 agendador (#24) | [ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md) |
 | 143-d30a9c4d | Atividades só no banco, layout global e pasta sem HTML (#25) | [ETAPA-143-d30a9c4d-ATIVIDADES-SO-NO-BANCO-LAYOUT-GLOBAL.md](etapas/ETAPA-143-d30a9c4d-ATIVIDADES-SO-NO-BANCO-LAYOUT-GLOBAL.md) |
+| 144-aff33423 | Regras no banco: `regra_documento` e `regra_secao` (#26) | [ETAPA-144-aff33423-REGRAS-NO-BANCO.md](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |

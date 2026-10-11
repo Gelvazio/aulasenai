@@ -644,6 +644,16 @@ Plano: `docs/quantidade-minima-questoes-discursiva.md`.
 | `atividade_completa` (RLS da `entrega_atividade`) | Discursiva: questões completas ≥ mínimo; objetiva sem mudança |
 | `notas_media_final` | Discursiva: só tópicos respondidos (todos com `nota_professor`); nota = soma × (total ÷ mínimo), **máximo 10**; com mínimo = total, igual a antes |
 
+## 🗄️ Atualização 2026-10-11 — Regras no banco (cópia do repositório)
+
+SQL: `database/2026-10-11-regras-no-banco.sql` (✅ aplicado no Supabase em 2026-10-11).
+Plano: `docs/regras-no-banco.md` (tarefa #26). Script: `scripts/regras/sincronizar_regras.py`.
+
+| Tabela / objeto | Campos / regra |
+|--------|---------|
+| `regra_documento` | `id` (identity), `caminho` (único: `CLAUDE.md`, `docs/regras/*.md`…), `versao_regras`, `conteudo`, `md5`, `commit_sha`, `ativo`, `sincronizado_em`. RLS: select só `eh_professor_administrador()`; sem insert/update/delete pela API (só o conector grava) |
+| `regra_secao` | `id`, `documento_id` (FK), `caminho`, `ordem` (único com `caminho`), `nivel` (1 = antes do primeiro `##`, 2 = `##`, 3 = `###`), `titulo`, `secao_pai`, `conteudo`, `md5`, `ativo` (seção que sumiu = false), `sincronizado_em`. Mesmo RLS |
+
 ## 🗂️ Atualização 2026-10-11 — Fila `tasks` do agendador único
 
 SQL: `database/2026-10-11-tasks-fila-agendador.sql` (✅ aplicado no Supabase em 2026-10-11).

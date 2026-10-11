@@ -71,6 +71,9 @@ que escolhiam sozinhas a próxima aula (e o `TAREFA_AGENDADA.md` na raiz, que nu
 3. ✅ **Sincronizar:** `consulta` pelo conector → salvar o JSON → `conferir`; havendo diferença, rodar
    o SQL do `importar` pelo conector e o `exportar`, e fazer commit + push + PR + merge só desses
    arquivos.
+   Também as **regras** (seção "🗄️ REGRAS NO BANCO" do `CLAUDE.md`):
+   `scripts/regras/sincronizar_regras.py consulta` pelo conector → `conferir`; havendo diferença,
+   rodar pelo conector os SQL do `importar <pasta>` (um por vez) e conferir de novo.
 4. ✅ `select * from pegar_proxima_task('<frente>');` pelo conector.
 5. ✅ **Nada veio:** encerrar sem alterar mais nada; log com status `sem_tarefa`.
 6. ✅ **Veio uma task:** ler a `instrucao` e **decidir**:
