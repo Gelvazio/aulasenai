@@ -1,5 +1,8 @@
 # Agendamentos: CRUD em `agendamentos.html` e espelho dos controles no banco
 
+> ⛔ **Cancelado em 2026-10-11 05:58:** substituído pela fila `tasks` + 1 agendador (tarefa #24, plano
+> [docs/fila-tasks-agendador-unico.md](fila-tasks-agendador-unico.md)), decisão do usuário. Nada deste plano foi implementado.
+
 **Tarefa:** #23-79fc30a3-c4c9-4a40 · **Etapa:** 141-a7e81c26
 **Criado em:** 2026-10-11 05:36:04 · **Concluído em:** — · **Tempo decorrido:** —
 **Pedido (2026-10-11 05:30):** "Crie um CRUD completo destas tarefas de nome agendamentos.html, com

@@ -19,7 +19,7 @@ pendente) muda para `⏹️ Encerrada`.
 | nuvem · claude/festive-maxwell-25jnhl | #21 (Etapa 135-eeefc710); #20 assumida em 2026-10-10 16:27 pela frente verificar-status-pastas, a pedido do usuário. Antes: #20 (Etapa 125) e #21 (Etapa 135-eeefc710) | Aula 19 de Banco de Dados pronta (conteúdo, objetiva, prática); seeds: objetiva id 141 CONCLUÍDO, prática id 142 com 29 de 30 tópicos (falta o 6c, que precisa da confirmação do usuário no conector). Próximo: tópico 6c da aula 19 (com a confirmação do usuário) e depois a aula 20 (conteúdo + objetiva + prática), plano [docs/banco-de-dados-materia-100.md](../docs/banco-de-dados-materia-100.md) | 🔄 Ativa | 2026-10-09 21:27 |
 | nuvem · claude/verificar-status-pastas-c6s5yz | Etapas 137-b214e26b e 138-77338471; #20 (Etapa 125) | Aula 20 de Banco de Dados pronta e no banco (objetiva id 145, prática id 146). Regra global de matérias criada (Etapa 139). Próximo: item 125.5 — avaliações objetivas, prática e média final pela regra global (seção 6); o tópico 6c da aula 19 espera o usuário rodar no SQL Editor | 🔄 Ativa | 2026-10-10 22:13 |
 | nuvem · ccr-00f69e8a-6qcla9 | Etapa 140-8554d88e (tarefas agendadas); #23 (Etapa 141-a7e81c26) | #23: usuário aprova o plano `docs/agendamentos-crud-e-espelho-banco.md` (141.2); depois, fase 1 passo 1. Etapa 140: liberar o GitHub na rotina (140.6) e aceite (140.7) | 👀 Aguardando o usuário | 2026-10-11 05:40 |
-| nuvem · ccr-be208aef-c6h8oe | #24 (Etapa 142-2a52ee2f) | Usuário aprova o plano `docs/fila-tasks-agendador-unico.md` (142.2); depois, passo 2 (SQL da `tasks`) | 👀 Aguardando o usuário | 2026-10-11 05:46 |
+| nuvem · ccr-be208aef-c6h8oe | #24 (Etapa 142-2a52ee2f) | Fila `tasks` pronta (tabela, funções, `tasks.html`, regra, prompt da rotina, 17 tarefas do `TASKS.md` na tabela). Próximo: item 142.5 — teste e aceite do usuário; a rotina continua desligada até liberar o GitHub (140.6) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | local · main | — | Ao iniciar: ler este arquivo e o `RECADOS.md` e preencher esta linha | ⬜ Sem registro | — |
 
 ## 📌 Tarefas do `TASKS.md` (o status oficial fica aqui)
@@ -43,9 +43,9 @@ A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale 
 | #19-91cbac65-87ca-45a0 | Análise contínua das matérias (`scripts/analise-materias.py` → `tasks/ANALISE-MATERIAS-RELATORIO.json`) — ⛔ permanente: nunca CONCLUÍDA enquanto houver matéria incompleta ou pendência | 🔄 Em andamento — última rodada 2026-10-10 22:13: 6 cursos, 34 matérias, 2 completas, 32 incompletas | Rodar a rotina no início de cada sessão e ao concluir tarefa em matéria; resolver pendências só a pedido do usuário | — |
 | #20-2ac1a8ec-911b-466f | Banco de Dados (Técnico em Informática para Internet) 100% no padrão da ITIC — etapa 1 sem a apostila | 🔄 Em execução (Etapa 125) | Aulas 01 a 20 prontas (125.3 e 125.4 ✅); próximo: item 125.5 — avaliações e média final no modelo da ITIC | nuvem · claude/verificar-status-pastas-c6s5yz (desde 2026-10-10 16:27; pedido do usuário "finalize banco de dados", assumida da frente festive-maxwell) |
 | #21-eeefc710-3e74-4928 | Colaboração entre sessões/licenças: etapa com UUID, reserva da tarefa, frentes de trabalho, `RECADOS.md`, merge da `main`, arquivos gerados, uma etapa por arquivo | 👀 Aguardando validação (Etapa 135-eeefc710) | Item 135.6 — aceite do usuário (ele junta o PR na `main`) | nuvem · claude/festive-maxwell-25jnhl (desde 2026-10-09 15:22) |
-| #22-816fd3fd-ffe8-41e7 | Outras contas e IAs criam as tarefas agendadas 2 a 6 (regra `docs/regras/tarefas-agendadas.md`) | ⬜ Pendente — para outras contas/IAs | Cada conta/IA cria no próprio agendador as tarefas que faltam (minutos :13 a :53) | — |
-| #23-79fc30a3-c4c9-4a40 | Agendamentos: CRUD em `agendamentos.html` (só administrador) e espelho dos controles no banco (fases 1 a 4) | 🔄 Plano aguardando aprovação (Etapa 141-a7e81c26) | Usuário aprova o plano; depois, fase 1 | nuvem · ccr-00f69e8a-6qcla9 (desde 2026-10-11 05:36) |
-| #24-9fb25086-5b51-44cb | Fila `tasks` no banco + 1 agendador que lê a fila e decide; página `tasks.html` (substitui a #23) | 🔄 Plano aguardando aprovação (Etapa 142-2a52ee2f) | Usuário aprova o plano; depois, passo 2 | nuvem · ccr-be208aef-c6h8oe (desde 2026-10-11 05:44) |
+| #22-816fd3fd-ffe8-41e7 | Outras contas e IAs criam as tarefas agendadas 2 a 6 | ⛔ Cancelada em 2026-10-11 06:00 — com o agendador único da #24 não há rotinas 2 a 6 (outras contas/IAs só pegam tasks pela `pegar_proxima_task`) | — | — |
+| #23-79fc30a3-c4c9-4a40 | Agendamentos: CRUD em `agendamentos.html` e espelho dos controles no banco | ⛔ Cancelada em 2026-10-11 05:58 — substituída pela #24 (decisão do usuário, 05:44) | — | — |
+| #24-9fb25086-5b51-44cb | Fila `tasks` no banco + 1 agendador que lê a fila e decide; página `tasks.html` (substitui a #23) | 👀 Aguardando validação (Etapa 142-2a52ee2f) | Item 142.5 — teste do usuário em `tasks.html` e aceite; depois liberar o GitHub (140.6) e ligar a rotina | — |
 
 ## ⏳ Aguardando o usuário (aceites, aprovações e ações dele)
 
@@ -54,8 +54,6 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
 | 125 | 125.8 | rodar no Supabase → SQL Editor o insert do tópico 6c da prática da aula 19 de Banco de Dados (atividade id 142): o conector da nuvem cancela o comando porque o texto cita `DELETE FROM parcela;` (o pedido de aprovação não chega ao usuário) | Ação |
-| 142-2a52ee2f | 142.2 | aprovar o plano `docs/fila-tasks-agendador-unico.md` (fila `tasks` + 1 agendador; substitui a #23) | Aprovação |
-| 141-a7e81c26 | 141.2 | aprovar o plano `docs/agendamentos-crud-e-espelho-banco.md` (fase 1) | Aprovação |
 | 140-8554d88e | 140.6 e 140.7 | liberar o acesso do GitHub ao `Gelvazio/aulasenai` para as tarefas agendadas e conferir a regra `docs/regras/tarefas-agendadas.md` | Ação e aceite |
 | 139-b5ab1a00 | 139.4 | conferir a regra global de matérias (`docs/regras/materias.md`) e a troca no `CLAUDE.md` | Aceite |
 | 138-77338471 | 138.6 | conferir o `STATUS_MATERIA.md` das matérias, a ordem em `tasks/ORDEM-MATERIAS.md` e a regra nova do `CLAUDE.md` | Aceite |

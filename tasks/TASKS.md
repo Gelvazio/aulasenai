@@ -296,34 +296,6 @@ Claude (que só se falam pelo repositório) colaborarem sem se atrapalhar:
 
 ---
 
-### #22-816fd3fd-ffe8-41e7: Criar as tarefas agendadas 2 a 6 (outras contas e IAs) — pedida em 2026-10-11 05:15:00
-
-**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" (fonte única).
-**Para:** outras contas do Claude, gemini, codex e grok (a tarefa 1 já existe na conta do usuário).
-
-Cada conta/IA cria no **próprio agendador** as tarefas que ainda não existem (tarefa 2 no minuto
-:13, 3 no :23, 4 no :33, 5 no :43, 6 no :53, de hora em hora das 01 às 23 h de Brasília), com o
-prompt apontando para [`docs/regras/tarefas-agendadas.md`](../docs/regras/tarefas-agendadas.md)
-e gravando o log com o próprio `tipo_assinatura`.
-
----
-
-### #23-79fc30a3-c4c9-4a40: Agendamentos — CRUD e espelho dos controles no banco — pedida em 2026-10-11 05:30:00
-
-**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 141-a7e81c26 (fonte única).
-**Prioridade:** 🟠 Alta · **Tarefa grande:** plano [docs/agendamentos-crud-e-espelho-banco.md](../docs/agendamentos-crud-e-espelho-banco.md).
-
-Pedido: CRUD completo das tarefas agendadas em `agendamentos.html` (só o Professor Administrador,
-com o login atual) e os controles do projeto (travas, status, tarefas, recados, seeds e cópia dos
-Markdowns) também no Supabase, de forma redundante; a origem dos Markdowns é sempre o repositório.
-
-- [ ] Fase 1: `agendamento`, `trava_aula`, leitura do log, página com abas Agendamentos, Execuções e Travas.
-- [ ] Fase 2: tarefas, etapas, frentes e recados no banco + exportação para `.md`.
-- [ ] Fase 3: seeds e status das aulas no banco.
-- [ ] Fase 4: `documento_markdown` (cópia do Git) e regras de "fonte única" no `CLAUDE.md`.
-
----
-
 ### #24-9fb25086-5b51-44cb: Fila `tasks` no banco + 1 agendador — pedida em 2026-10-11 05:42:00
 
 **Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 142-2a52ee2f (fonte única).
@@ -333,11 +305,13 @@ Pedido: "1 agendador que apenas controle 1 tabela de nome tasks, que a IA vai le
 executa algo ou não". Decisões: substitui a #23; fila vazia = não faz nada; cadastro pela página
 `tasks.html` (só o Professor Administrador).
 
-- [ ] Tabela `tasks` + `pegar_proxima_task` / `finalizar_task` (RLS, só administrador).
-- [ ] Página `tasks.html` + menu TASKS.
-- [ ] Regra das tarefas agendadas e prompt da rotina para a fila.
-- [ ] #23 cancelada.
+- [x] Tabela `tasks` + `pegar_proxima_task` / `finalizar_task` (RLS, só administrador).
+- [x] Página `tasks.html` + menu TASKS.
+- [x] Regra das tarefas agendadas e prompt da rotina para a fila.
+- [x] Tarefas do `TASKS.md` na tabela e `tasks/fila/` (script `scripts/tasks/sincronizar_tasks.py`).
+- [ ] Teste do usuário na página e aceite; depois liberar o GitHub (item 140.6) e ligar a rotina.
+- [x] #23 cancelada (2026-10-11 05:58).
 
 ---
 
-**Última atualização:** 2026-10-11 05:46 (tarefa #24 adicionada)
+**Última atualização:** 2026-10-11 06:00 (#22 e #23 canceladas, substituídas pela #24)

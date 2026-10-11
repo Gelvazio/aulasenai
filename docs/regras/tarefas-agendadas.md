@@ -1,89 +1,100 @@
-# ⏰ Regras — Tarefas agendadas (rotinas que geram as aulas sozinhas)
+# ⏰ Regras — Tarefas agendadas (1 agendador que lê a fila `tasks`)
 
 Registrada em 2026-10-11 05:12:00 a pedido do usuário ("corrija todas as regras conflitantes" da
-rotina "Tarefa Aulas Senai"). Substitui o `TAREFA_AGENDADA.md` na raiz que a rotina mandava criar:
-as regras do projeto ficam só no `CLAUDE.md` e em `docs/regras/`.
+rotina "Tarefa Aulas Senai"). **Reescrita em 2026-10-11 05:57:00** (tarefa #24-9fb25086-5b51-44cb,
+plano [docs/fila-tasks-agendador-unico.md](../fila-tasks-agendador-unico.md)), a pedido do usuário:
+"1 agendador que apenas controle 1 tabela de nome tasks, que a IA vai ler e decidir se executa algo
+ou não" e "toda task deve existir na tabela e no GitHub". Substitui a versão das 6 rotinas paralelas
+que escolhiam sozinhas a próxima aula (e o `TAREFA_AGENDADA.md` na raiz, que nunca é usado).
 
-## 1. O que são
+## 1. O que é
 
-- ✅ Até **6 tarefas agendadas paralelas** (tarefa 1 a 6) rodam **de hora em hora, das 01:00 às
-  23:00 (Brasília)**, escalonadas de 10 em 10 minutos: tarefa 1 no minuto :03, tarefa 2 no :13,
-  3 no :23, 4 no :33, 5 no :43 e 6 no :53.
-- ✅ Podem vir de contas diferentes do Claude e de outras IAs (gemini, codex, grok): só se falam
-  pelo repositório (regra "CONVERSA ENTRE SESSÕES E LICENÇAS" do `CLAUDE.md`).
-- ✅ Cada execução cuida de **exatamente 1 aula pendente** (regra "Aulas: uma por vez, completa").
+- ✅ **Uma rotina só** ("Tarefa Aulas Senai", conta do usuário), **de hora em hora** (o agendador
+  aceita no máximo 1 execução por hora por rotina), das 01:03 às 23:03 de Brasília.
+- ✅ A rotina **só faz o que está na tabela `tasks`** do Supabase (projeto `AULAS SENAI`): cada
+  execução pega **no máximo 1 task**, decide se a executa e grava o resultado na própria linha.
+- ✅ **Fila vazia = não faz nada** (só sincroniza a tabela com o GitHub e grava o log).
+- ✅ O professor controla a fila na página **`tasks.html`** (menu **TASKS**, só o Professor
+  Administrador): cadastrar, editar, ligar/desligar (ON/OFF), "executar após", cancelar, reabrir,
+  excluir (lógico) e ver o resultado e o PR.
 - ✅ Cada execução é uma **sessão nova na nuvem**: vale tudo do `CLAUDE.md` para a nuvem
-  (inicialização, seeds, branch própria + PR, commit + push na hora).
+  (inicialização, seeds, branch própria + PR juntado, commit + push na hora).
 
-## 2. Frente de trabalho da execução
+## 2. A tabela `tasks`
 
-- ✅ Frente = `nuvem · agendada/tarefa-N-AAAAMMDD-HHMM` (N = número da tarefa; data e hora de
-  Brasília do início). É a branch da execução, criada a partir da `main` atualizada.
-- ⛔ **Nunca push direto na `main`** nem push forçado: tudo entra pela branch da execução e por PR,
-  que a própria execução junta (regra "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM").
+- ✅ Estrutura em `database/2026-10-11-tasks-fila-agendador.sql` (aplicada; RLS só do
+  administrador; sem DELETE). Status: `pendente`, `em_execucao`, `concluida`, `recusada`, `erro`,
+  `cancelada`.
+- ✅ **`pegar_proxima_task('<frente>')`** é a única forma de pegar uma task: devolve a de maior
+  prioridade (1 = mais alta) que esteja `pendente`, ligada, não excluída, com "executar após" vencido
+  e tentativas sobrando; marca `em_execucao` e trava por **90 minutos** (duas execuções nunca pegam
+  a mesma; trava vencida volta para a fila).
+- ✅ **`finalizar_task(id, status, resultado, pr_url, commit_sha)`** fecha a task com `concluida`,
+  `recusada` ou `erro` (`erro` com tentativas sobrando volta a `pendente` e é tentada na hora
+  seguinte).
+- ⛔ As duas funções não ficam na API (só o conector do Supabase as chama); a página nunca põe nem
+  tira uma task de `em_execucao`.
 
-## 3. Qual aula escolher
+## 3. Toda task na tabela e no GitHub
 
-1. ✅ Fazer a inicialização do `CLAUDE.md` (trazer a `main`, ler `tasks/STATUS.md`, a etapa,
-   `tasks/RECADOS.md`, as regras globais em `.claude/regras-globais/` e o
-   `database/SEEDS-APLICADOS.md`).
-2. ✅ Percorrer as matérias **na ordem do `tasks/ORDEM-MATERIAS.md`** e, em cada uma, o
-   `AULAS/STATUS-AULAS.md`: aula pendente = linha com alguma coluna ⬜ ou 🔄.
-3. ⛔ **Pular:** matéria ou curso em `IGNORAR` nas ementas; ementas de
-   `QUALIFICACAO-PROFISSIONAL/` (só leitura); matéria cuja tarefa está reservada por outra frente
-   (coluna "Em uso por" do "📌 Tarefas" ou recado aberto "não mexer"); aula com trava aberta de
-   outra execução em `tasks/RECADOS.md`; aula cujo item espera ação do usuário em
-   "⏳ Aguardando o usuário".
-4. ✅ **Trava abandonada:** trava aberta há **mais de 90 minutos** sem conclusão pode ser
-   reassumida; registrar isso no recado novo.
+- ⛔ **Nenhuma task existe só num lado.** Toda tarefa do `tasks/TASKS.md` tem a linha dela na
+  tabela (mesmo `codigo`, `origem = 'repositorio'`) e toda linha criada na página tem o arquivo
+  **`tasks/fila/TASK-NNNN.md`** no GitHub.
+- ✅ Tarefa do `TASKS.md` entra na tabela **desligada** (`executar = false`): a rotina só a executa
+  se o professor ligar o ON/OFF. Ao sair do `TASKS.md` (concluída ou cancelada), a linha é fechada.
+- ✅ **Em conflito:** o texto da tarefa (título e instrução) vale o do **GitHub** (`TASKS.md`); status,
+  ON/OFF, prioridade e resultado valem os da **tabela**. O estado oficial do projeto continua no
+  `tasks/STATUS.md` (fonte única), atualizado junto.
+- ✅ **Script único:** `scripts/tasks/sincronizar_tasks.py` (o banco é acessado só pelo conector):
+  `consulta` (SQL que devolve as linhas em JSON), `importar` (SQL do `TASKS.md` → tabela; o md5 é
+  calculado pelo banco), `exportar <linhas.json>` (escreve `tasks/fila/` e imprime o SQL do md5) e
+  `conferir <linhas.json>` (lista as diferenças; sai com erro se houver).
+- ✅ **Quando sincronizar:** em toda execução da rotina (antes de pegar a task), ao criar, concluir ou
+  cancelar tarefa do `TASKS.md` em qualquer sessão (no mesmo commit) e ao fechar uma task.
 
-## 4. Trava da aula (primeira coisa, antes de qualquer outra alteração)
+## 4. Passo a passo de cada execução
 
-- ✅ Acrescentar no topo de "Abertos" do `tasks/RECADOS.md` a linha
-  `| <data e hora> | <frente> | todas | TRAVA tarefa N: <matéria> aula NN em andamento | <etapa> |`
-  e, na tabela "🧭 Frentes de trabalho" do `tasks/STATUS.md`, a linha da frente com a aula.
-- ✅ Commit só dessas mudanças, push da branch, PR para a `main` e **merge do PR na hora** (o
-  merge é o que trava). Conflito: `git merge origin/main`, manter as linhas dos dois lados, reler
-  os recados; se a aula já foi travada por outra, escolher a próxima livre e repetir.
-- ✅ Só depois da trava na `main` a aula é produzida.
+1. ✅ Anotar a hora de início (Brasília) e a frente: `nuvem · <branch da sessão>`.
+2. ✅ Inicialização do `CLAUDE.md` (trazer a `main`, `tasks/STATUS.md`, `tasks/RECADOS.md`, regras
+   globais em `.claude/regras-globais/`, `database/SEEDS-APLICADOS.md`).
+3. ✅ **Sincronizar:** `consulta` pelo conector → salvar o JSON → `conferir`; havendo diferença, rodar
+   o SQL do `importar` pelo conector e o `exportar`, e fazer commit + push + PR + merge só desses
+   arquivos.
+4. ✅ `select * from pegar_proxima_task('<frente>');` pelo conector.
+5. ✅ **Nada veio:** encerrar sem alterar mais nada; log com status `sem_tarefa`.
+6. ✅ **Veio uma task:** ler a `instrucao` e **decidir**:
+   - **Executar** quando ela cabe nas regras do `CLAUDE.md` e de `docs/regras/` e é clara o bastante:
+     fazer o trabalho na branch da sessão, com os arquivos de status, commit + push + PR + merge;
+     depois `finalizar_task(id, 'concluida', '<o que foi feito>', '<url do PR>', '<sha>')`.
+   - **Recusar** quando fere uma regra (push na `main`, segredo, gabarito publicado, afrouxar RLS,
+     apagar dados, mexer em tarefa reservada por outra frente…), é ambígua ou precisa de decisão do
+     usuário: `finalizar_task(id, 'recusada', '<motivo e o que o professor precisa decidir>')`, sem
+     mexer no repositório.
+   - **Erro** técnico (falha de rede, conector, merge impossível): `finalizar_task(id, 'erro',
+     '<mensagem>')`.
+   - Task grande demais para uma execução: entregar a parte que fechar (PR juntado) e `recusada`
+     com o que falta, para o professor dividir em tasks menores.
+7. ✅ `exportar` de novo (o arquivo da task muda com o status) e commit + push + PR + merge.
+8. ✅ Gravar o log (seção 5) e apagar a branch do PR juntado.
+- ⛔ Nunca marcar `concluida` o que não foi feito; nunca push direto na `main` nem push forçado.
 
-## 5. Produzir a aula
+## 5. Log de cada execução (Supabase)
 
-- ✅ Seguir [`docs/regras/materias.md`](materias.md) (aula em `CONTEUDO/`, objetiva de 50,
-  prática 10 × 3, seeds) e as demais regras de `docs/regras/`.
-- ✅ Seed gerado: registrar como PENDENTE, aplicar pelo conector do Supabase em partes, conferir
-  pelo md5 com `scripts/seeds/` e marcar CONCLUÍDO (autorização permanente da regra dos seeds).
-- ✅ Ao terminar a aula: gravar o status em `STATUS-AULAS.md`, `STATUS-ATIVIDADES.md`,
-  `database/SEEDS-APLICADOS.md` e no item da etapa; rodar
-  `python3 scripts/status-materias/gerar_status_materia.py` e `python3 scripts/analise-materias.py`;
-  commit + push + PR + merge.
-- ⛔ Nunca marcar ✅ o que não foi feito; aula incompleta fica 🔄 com o que falta escrito.
+- ✅ Toda execução grava uma linha em **`agendamento_tarefa_logs`** (SQL
+  `database/2026-10-11-agendamento-tarefa-logs.sql`; RLS ligado e sem políticas: só o conector
+  grava e lê), com: `descricao`, `data_hora`, `status` (`concluida`, `recusada`, `erro` ou
+  `sem_tarefa`), `nome_tarefa_agendamento` ("Tarefa Aulas Senai"), `tipo_assinatura`, `aula` (o
+  `codigo` da task, ou vazio), `commit_sha`, `duracao_segundos`, `erro_mensagem`, `repositorio`
+  (`Gelvazio/aulasenai`), `inicio_em`, `fim_em`, `sessao_url`, `branch`, `tentativas_push`,
+  `arquivos_alterados`, `segundos_ate_trava` (até pegar a task), `aula_status_anterior` /
+  `aula_status_novo` (status da task antes e depois) e `conteudo_tarefa` (texto completo das
+  instruções recebidas). O `id` do log vai para `tasks.log_id`.
+- ✅ Sem acesso ao repositório (GitHub pede usuário e senha): não alterar nada, devolver a task com
+  `finalizar_task(id, 'erro', ...)`, gravar o log com `erro` e avisar o usuário.
 
-## 6. Encerrar a execução
+## 6. Outras contas e IAs
 
-- ✅ Mover a trava para "Cumpridos" do `tasks/RECADOS.md` (concluída ou liberada, com o que foi
-  feito), atualizar a linha da frente para `⏹️ Encerrada`, commit + push + PR + merge e apagar a
-  branch da execução no GitHub.
-- ✅ Sem aula pendente livre: não alterar nenhum arquivo; só registrar o log com
-  `sem_aula_pendente`.
-
-## 7. Log de cada execução (Supabase)
-
-- ✅ Toda execução grava uma linha em **`agendamento_tarefa_logs`** (projeto `AULAS SENAI`), com:
-  `descricao`, `data_hora`, `status` (`concluida`, `liberada`, `sem_aula_pendente` ou `erro`),
-  `nome_tarefa_agendamento` (ex.: "Update aulas do SENAI (1)"), `tipo_assinatura`, `aula`,
-  `commit_sha`, `duracao_segundos`, `erro_mensagem`, `repositorio` (`Gelvazio/aulasenai`),
-  `inicio_em`, `fim_em`, `sessao_url`, `branch` (a branch da execução), `tentativas_push`,
-  `arquivos_alterados`, `segundos_ate_trava`, `aula_status_anterior`, `aula_status_novo` e
-  `conteudo_tarefa` (texto completo das instruções recebidas).
-- ✅ Estrutura da tabela em `database/2026-10-11-agendamento-tarefa-logs.sql` (já aplicada; RLS
-  ligado e sem políticas: só o conector grava e lê).
-- ✅ Sem acesso ao repositório (GitHub pede usuário e senha): não alterar nada, gravar o log com
-  `erro` e a mensagem e avisar o usuário.
-
-## 8. Para outras contas e IAs
-
-- ✅ As tarefas 2 a 6 são criadas por outras contas do Claude e outras IAs no agendador delas
-  (tarefa #22 do `tasks/TASKS.md`), seguindo **esta** regra e gravando o log com o próprio
-  `tipo_assinatura`.
-- ⛔ Nada de senha, chave, gabarito nem dado de aluno nos recados, no `STATUS.md` ou no log.
+- ✅ Outra conta do Claude ou outra IA (gemini, codex, grok) **não cria rotina própria**: ela só
+  pode pegar tasks pela mesma função `pegar_proxima_task` (que impede pegar a mesma em dobro),
+  seguindo esta regra e gravando o log com o próprio `tipo_assinatura`.
+- ⛔ Nada de senha, chave, gabarito nem dado de aluno nas tasks, nos recados, no `STATUS.md` ou no log.

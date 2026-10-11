@@ -1,7 +1,7 @@
 # Fila `tasks` no banco + 1 agendador que lê a fila e decide
 
 **Tarefa:** #24-9fb25086-5b51-44cb · **Etapa:** 142-2a52ee2f
-**Criado em:** 2026-10-11 05:44:00 · **Concluído em:** — · **Tempo decorrido:** —
+**Criado em:** 2026-10-11 05:44:00 · **Concluído em:** 2026-10-11 06:00 (falta o aceite) · **Tempo decorrido:** 16 min
 **Pedido (2026-10-11 05:42):** "Quero criar 1 agendador que apenas controle 1 tabela de nome tasks,
 que a IA vai ler e decidir se executa algo ou não".
 **Decisões do usuário (2026-10-11 05:44):** (1) a fila `tasks` **substitui a tarefa #23**
@@ -127,17 +127,17 @@ professor controla tudo cadastrando, ligando e desligando linhas na página `tas
 | # | Ação | Caminho | Verificação | Status |
 |---|---|---|---|---|
 | 1 | Conferir o banco real (`tasks` não existe; `eh_professor_administrador`; log) | Supabase | consultas de leitura | ✅ 2026-10-11 05:43 |
-| 2 | SQL idempotente: tabela, check, índices, trigger, funções, RLS | `database/2026-10-11-tasks-fila-agendador.sql` | leitura do SQL | ⬜ |
-| 3 | Aplicar pelo conector e conferir (2 chamadas de `pegar_proxima_task` com 1 linha de teste: a 2ª volta vazia; `finalizar_task`; linha de teste marcada `excluido`) | Supabase | `information_schema`, `pg_policies` | ⬜ |
-| 3.1 | Script `importar`/`exportar`/`conferir` + carga das 18 tarefas do `TASKS.md` (OFF) + `tasks/fila/` | `scripts/tasks/sincronizar_tasks.py`, `tasks/fila/` | `python3 … conferir` sem diferenças | ⬜ |
-| 4 | `docs/database.md` + `docs/relatorio_verificacao_database.html` | `docs/` | leitura | ⬜ |
-| 5 | Repositório JS | `assets/js/tasks-repositorio.js` | `node --check` | ⬜ |
-| 6 | Página, modais e CSS | `tasks.html`, `assets/js/tasks-*.js`, `assets/css/tasks.css` | `node --check`, `tags_header.py` idempotente, sem `onclick`/`<style>` | ⬜ |
-| 7 | Menu TASKS | `js/header-usuario.js` | `node --check` | ⬜ |
-| 8 | Regra `docs/regras/tarefas-agendadas.md` reescrita para a fila + `CLAUDE.md` (seção, versão, histórico) + visualizador conferido | `docs/regras/`, `CLAUDE.md`, `docs/HISTORICO-REGRAS.md` | leitura; `node` no padrão do `regras-modal.js` | ⬜ |
-| 9 | Prompt novo da rotina "Tarefa Aulas Senai" (continua desligada) | rotina `trig_01TWTtS63BUBzE46KMQ3t3PW` | `get_trigger` | ⬜ |
-| 10 | #23 cancelada (STATUS, TASKS, etapa 141, plano marcado como substituído) | `tasks/`, `docs/` | leitura | ⬜ |
-| 11 | Status, commit, push, PR e merge | `tasks/` | PR juntado | ⬜ |
+| 2 | SQL idempotente: tabela, check, índices, trigger, funções, RLS | `database/2026-10-11-tasks-fila-agendador.sql` | leitura do SQL | ✅ 2026-10-11 06:00 |
+| 3 | Aplicar pelo conector e conferir (2 chamadas de `pegar_proxima_task` com 1 linha de teste: a 2ª volta vazia; `finalizar_task`; linha de teste marcada `excluido`) | Supabase | `information_schema`, `pg_policies` | ✅ 2026-10-11 06:00 |
+| 3.1 | Script `importar`/`exportar`/`conferir` + carga das 18 tarefas do `TASKS.md` (OFF) + `tasks/fila/` | `scripts/tasks/sincronizar_tasks.py`, `tasks/fila/` | `python3 … conferir` sem diferenças | ✅ 2026-10-11 06:00 |
+| 4 | `docs/database.md` + `docs/relatorio_verificacao_database.html` | `docs/` | leitura | ✅ 2026-10-11 06:00 |
+| 5 | Repositório JS | `assets/js/tasks-repositorio.js` | `node --check` | ✅ 2026-10-11 06:00 |
+| 6 | Página, modais e CSS | `tasks.html`, `assets/js/tasks-*.js`, `assets/css/tasks.css` | `node --check`, `tags_header.py` idempotente, sem `onclick`/`<style>` | ✅ 2026-10-11 06:00 |
+| 7 | Menu TASKS | `js/header-usuario.js` | `node --check` | ✅ 2026-10-11 06:00 |
+| 8 | Regra `docs/regras/tarefas-agendadas.md` reescrita para a fila + `CLAUDE.md` (seção, versão, histórico) + visualizador conferido | `docs/regras/`, `CLAUDE.md`, `docs/HISTORICO-REGRAS.md` | leitura; `node` no padrão do `regras-modal.js` | ✅ 2026-10-11 06:00 |
+| 9 | Prompt novo da rotina "Tarefa Aulas Senai" (continua desligada) | rotina `trig_01TWTtS63BUBzE46KMQ3t3PW` | `get_trigger` | ✅ 2026-10-11 06:00 |
+| 10 | #23 cancelada (STATUS, TASKS, etapa 141, plano marcado como substituído) | `tasks/`, `docs/` | leitura | ✅ 2026-10-11 06:00 |
+| 11 | Status, commit, push, PR e merge | `tasks/` | PR juntado | ✅ 2026-10-11 06:00 |
 | 12 | Teste do usuário (cadastrar 1 task) e aceite; depois ligar a rotina (com o GitHub liberado, item 140.6) | — | — | ⬜ |
 
 ## Riscos
@@ -152,4 +152,11 @@ professor controla tudo cadastrando, ligando e desligando linhas na página `tas
 
 ## Resultado
 
-— (preencher ao concluir)
+- Tabela `tasks` e funções `pegar_proxima_task` / `finalizar_task` aplicadas (o bloco único voltou
+  "cancelled" no conector; aplicado em 5 partes). Teste numa transação desfeita: 2ª chamada vazia
+  com a 1ª travada, linha OFF não pega, trava vencida retomada, `erro` volta a `pendente`.
+- 17 tarefas do `TASKS.md` na tabela, desligadas, com o md5 calculado pelo banco igual ao do Git.
+- `tasks.html` (menu TASKS), regra `docs/regras/tarefas-agendadas.md` reescrita, `CLAUDE.md`
+  2026-10-11 05:57:00, prompt da rotina atualizado (continua desligada).
+- #22 (rotinas 2 a 6) e #23 (`agendamentos.html`) canceladas.
+- **Pendente:** teste e aceite do usuário (142.5); liberar o GitHub para a rotina (140.6) e ligá-la.

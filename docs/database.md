@@ -644,6 +644,19 @@ Plano: `docs/quantidade-minima-questoes-discursiva.md`.
 | `atividade_completa` (RLS da `entrega_atividade`) | Discursiva: questões completas ≥ mínimo; objetiva sem mudança |
 | `notas_media_final` | Discursiva: só tópicos respondidos (todos com `nota_professor`); nota = soma × (total ÷ mínimo), **máximo 10**; com mínimo = total, igual a antes |
 
+## 🗂️ Atualização 2026-10-11 — Fila `tasks` do agendador único
+
+SQL: `database/2026-10-11-tasks-fila-agendador.sql` (✅ aplicado no Supabase em 2026-10-11).
+Plano: `docs/fila-tasks-agendador-unico.md` (tarefa #24). Tela: `tasks.html` (menu TASKS).
+
+| Tabela / objeto | Campos / regra |
+|--------|---------|
+| `tasks` | `id` (identity), `codigo` (único: `#NN-uuid` do `TASKS.md` ou `TASK-NNNN`), `origem` (`pagina`/`repositorio`), `arquivo_md`, `md5_md`, `sincronizado_em`, `titulo`, `instrucao`, `prioridade` (1–5), `executar` (ON/OFF), `executar_apos`, `status` (`pendente`, `em_execucao`, `concluida`, `recusada`, `erro`, `cancelada`), `tentativas`/`max_tentativas`, `trava_frente`, `trava_em`, `expira_em`, `resultado`, `pr_url`, `commit_sha`, `log_id`, `excluido`, `criado_em`, `atualizado_em`, `criado_por`, `atualizado_por`. RLS: select/insert/update só `eh_professor_administrador()`; sem DELETE nem `anon` |
+| `tasks_preencher_trg` | código `TASK-NNNN`, `arquivo_md` em `tasks/fila/`, datas e `auth.uid()` |
+| `tasks_validar_pagina_trg` | usuário logado não põe nem tira task de `em_execucao` |
+| `pegar_proxima_task(text)` | `security definer`, sem execução pela API: devolve a task vencida para a fila, pega 1 ligada (`for update skip locked`), trava por 90 min |
+| `finalizar_task(bigint, text, text, text, text)` | `security definer`, sem execução pela API: `concluida`, `recusada` ou `erro` (erro com tentativas sobrando volta a `pendente`) |
+
 ## 🔓 Atualização 2026-10-06 — Liberar gabaritos por atividade e turma
 
 SQL: `database/2026-10-06-liberacao-respostas-turma.sql` (✅ aplicado no Supabase em 2026-10-06).

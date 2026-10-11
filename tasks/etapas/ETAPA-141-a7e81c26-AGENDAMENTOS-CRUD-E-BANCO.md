@@ -8,7 +8,7 @@ Frente: nuvem · ccr-00f69e8a-6qcla9.
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 141.1 | Plano da fase 1 (e resumo das fases 2 a 4) | ✅ Concluído | 2026-10-11 05:40 | `docs/agendamentos-crud-e-espelho-banco.md` |
-| 141.2 | Aprovação do plano pelo usuário | ⬜ Pendente | — | — |
-| 141.3 | Fase 1, passos 1 a 9 do plano | ⬜ Pendente | — | — |
-| 141.4 | Aplicar o SQL no Supabase (`database/2026-10-11-agendamentos-travas.sql`) | ⬜ Pendente | — | — |
-| 141.5 | Teste do usuário e aceite da fase 1 | ⬜ Pendente | — | — |
+| 141.2 | Aprovação do plano pelo usuário | ⛔ Não se aplica | 2026-10-11 05:58 | Tarefa #23 cancelada: substituída pela #24 (fila `tasks`, Etapa 142-2a52ee2f), decisão do usuário em 2026-10-11 05:44 |
+| 141.3 | Fase 1, passos 1 a 9 do plano | ⛔ Não se aplica | 2026-10-11 05:58 | Tarefa #23 cancelada: substituída pela #24 (fila `tasks`, Etapa 142-2a52ee2f), decisão do usuário em 2026-10-11 05:44 |
+| 141.4 | Aplicar o SQL no Supabase (`database/2026-10-11-agendamentos-travas.sql`) | ⛔ Não se aplica | 2026-10-11 05:58 | Tarefa #23 cancelada: substituída pela #24 (fila `tasks`, Etapa 142-2a52ee2f), decisão do usuário em 2026-10-11 05:44 |
+| 141.5 | Teste do usuário e aceite da fase 1 | ⛔ Não se aplica | 2026-10-11 05:58 | Tarefa #23 cancelada: substituída pela #24 (fila `tasks`, Etapa 142-2a52ee2f), decisão do usuário em 2026-10-11 05:44 |
