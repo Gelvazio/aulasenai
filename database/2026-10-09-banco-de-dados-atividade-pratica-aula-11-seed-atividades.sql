@@ -1,0 +1,57 @@
+-- Seed gerado por assets/gerador-avaliacao-discursiva (não editar à mão; fora do Git).
+-- Rodar depois de database/2026-10-01-respostas-discursivas.sql. Idempotente.
+-- A avaliação nasce BLOQUEADA (ativo = false): o professor libera no índice de atividades.
+do $$
+declare
+  v_aula bigint;
+  v_atividade bigint;
+begin
+  select a.id into v_aula from public.aulas a join public.materia m on m.id = a.materia_id
+    where m.descricao = 'BANCO DE DADOS' and a.numero = 11
+    order by a.id limit 1;
+  if v_aula is null then
+    raise exception 'Aula 11 da matéria não encontrada';
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, descricao, pagina,
+      total_itens, ativo)
+    values ('Atividade Prática — Aula 11', 'PENDENTE', v_aula, 'Atividade — Atividade Prática — Aula 11 (10 questões discursivas)',
+      '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADE-PRATICA-AULA-11.html', 10, false)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      descricao = excluded.descricao, total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.topico_discursivo where atividade_id = v_atividade;
+  insert into public.topico_discursivo (atividade_id, item, topico, enunciado, pontos,
+      resposta_esperada, criterios) values
+      (v_atividade, 1, 1, 'Escreva o nome padronizado da tabela.', 0.2, '**cliente_ativo** (minúsculas, singular, sem espaço; ou **cliente** com a coluna ativo).', 'Nota cheia (0,2): nome no padrão. Metade (0,1): só parte das regras. Zero (0): mantém espaços ou plural com maiúsculas.'),
+      (v_atividade, 1, 2, 'Escreva os nomes padronizados das quatro colunas.', 0.4, '**data_nascimento**, **valor_compra**, **pedido** (ou numero_pedido, em vez de order), **data_cadastro**.', 'Nota cheia (0,4): quatro corretos. Metade (0,2): dois ou três. Zero (0): um ou nenhum.'),
+      (v_atividade, 1, 3, 'Explique por que espaços, acentos e palavras reservadas devem ser evitados.', 0.4, 'Espaços e acentos **exigem aspas** no SQL e causam erros de digitação e de compatibilidade; **palavras reservadas** (order, select) conflitam com comandos do SQL e geram erros.', 'Nota cheia (0,4): os dois motivos. Metade (0,2): um. Zero (0): sem relação.'),
+      (v_atividade, 2, 1, 'Escreva o padrão da UC para chaves primárias.', 0.2, '**id** ou **id_<tabela>**.', 'Nota cheia (0,2): padrão correto. Zero (0): outro.'),
+      (v_atividade, 2, 2, 'Escreva os nomes padronizados da chave primária de produto, da chave primária de categoria e da chave estrangeira em produto.', 0.4, '**id_produto**, **id_categoria** e, em produto, a FK **id_categoria**.', 'Nota cheia (0,4): os três. Metade (0,2): dois. Zero (0): um ou nenhum.'),
+      (v_atividade, 2, 3, 'Explique como o padrão de nomes ajuda o desenvolvedor do back-end.', 0.4, 'O desenvolvedor **prevê os nomes** (a FK de categoria é sempre id_categoria) e escreve o SQL **com menos erros e mais rápido**; o código fica mais legível para toda a equipe.', 'Nota cheia (0,4): previsibilidade + menos erros. Metade (0,2): explicação vaga. Zero (0): sem relação.'),
+      (v_atividade, 3, 1, 'Diga o formato padrão de data guardado no banco.', 0.2, '**AAAA-MM-DD** (tipo data).', 'Nota cheia (0,2): formato correto. Zero (0): dd/mm/aa.'),
+      (v_atividade, 3, 2, 'Explique o padrão para CPF e telefone e o problema do CPF "1234567890".', 0.4, 'CPF e telefone: **texto, só com dígitos**, sem pontos, traços ou parênteses. O CPF "1234567890" tem **10 dígitos**: provavelmente **perdeu o zero à esquerda** por ter sido guardado como número.', 'Nota cheia (0,4): padrão + problema do zero à esquerda. Metade (0,2): só um. Zero (0): recomenda guardar como número.'),
+      (v_atividade, 3, 3, 'Explique como o usuário vê a data e o CPF formatados na tela, se o banco guarda no padrão.', 0.4, 'A **tela formata**: mostra a data como **dd/mm/aaaa** e o CPF com a **máscara** 000.000.000-00, a partir do valor padronizado guardado no banco.', 'Nota cheia (0,4): a tela formata os dois. Metade (0,2): só um. Zero (0): diz que o banco guarda os dois formatos.'),
+      (v_atividade, 4, 1, 'Diga o tipo indicado para valores em dinheiro.', 0.2, '**Decimal com 2 casas** (ex.: numeric(10,2)).', 'Nota cheia (0,2): decimal. Zero (0): texto ou inteiro.'),
+      (v_atividade, 4, 2, 'Explique o problema de guardar o preço como texto e o problema dos e-mails misturados.', 0.4, 'Preço em texto **não permite contas** nem ordenação correta (somar vendas, calcular desconto). E-mails misturados geram **duplicidade** (Ana@ × ana@) e falhas na busca; padronizar em **minúsculas**.', 'Nota cheia (0,4): os dois problemas. Metade (0,2): um. Zero (0): nenhum.'),
+      (v_atividade, 4, 3, 'Explique o tipo indicado para data e hora dos pedidos e por quê.', 0.4, 'Tipo de **data e hora com fuso** (**timestamptz**), para registrar o **horário correto** (de Brasília) mesmo que servidor e usuários estejam em fusos diferentes.', 'Nota cheia (0,4): tipo + motivo. Metade (0,2): só um. Zero (0): texto.'),
+      (v_atividade, 5, 1, 'Explique o que é um domínio de valores.', 0.2, '**Lista fechada** de valores possíveis para um atributo.', 'Nota cheia (0,2): definição. Zero (0): sem relação.'),
+      (v_atividade, 5, 2, 'Escreva o domínio da situação da matrícula e explique o problema dos valores atuais.', 0.4, '**ativa, trancada, concluida, cancelada**. Os valores atuais escrevem a **mesma situação de jeitos diferentes**, então as consultas (ex.: contar matrículas ativas) **erram**.', 'Nota cheia (0,4): domínio + problema. Metade (0,2): só um. Zero (0): sem relação.'),
+      (v_atividade, 5, 3, 'Explique duas formas de o banco garantir o domínio.', 0.4, '(1) restrição **CHECK** (situacao IN (''ativa'', ''trancada'', ''concluida'', ''cancelada'')); (2) **tabela de apoio** com as situações e **chave estrangeira** para ela.', 'Nota cheia (0,4): as duas formas. Metade (0,2): uma. Zero (0): só aviso na tela.'),
+      (v_atividade, 6, 1, 'Liste o que o dicionário de dados final passa a ter nesta aula.', 0.2, '**Nomes padronizados**, **tipos**, **formatos** e **domínios** de cada atributo (além de descrição e obrigatoriedade).', 'Nota cheia (0,2): três ou quatro itens. Metade (0,1): dois. Zero (0): um ou nenhum.'),
+      (v_atividade, 6, 2, 'Escreva as linhas de turno e curso com nome padronizado, tipo, formato ou domínio e obrigatoriedade.', 0.4, '**turno** — texto; domínio manha, tarde, noite; obrigatório. **id_curso** — inteiro; chave estrangeira para curso; obrigatório.', 'Nota cheia (0,4): as duas linhas coerentes. Metade (0,2): uma. Zero (0): nenhuma.'),
+      (v_atividade, 6, 3, 'Explique para que o dicionário de dados final será usado na próxima aula.', 0.4, 'Para **guiar a escrita do SQL** de criação das tabelas (DDL, aula 12): nomes, tipos, restrições e domínios saem do dicionário.', 'Nota cheia (0,4): uso no SQL. Metade (0,2): explicação vaga. Zero (0): sem relação.'),
+      (v_atividade, 7, 1, 'Diga o que o cronograma deve conter para cada etapa.', 0.2, '**Duração**, **início e fim**, **dependências**, **responsável** e **marcos**.', 'Nota cheia (0,2): quatro ou cinco itens. Metade (0,1): dois ou três. Zero (0): um ou nenhum.'),
+      (v_atividade, 7, 2, 'Escreva as etapas na ordem, com a dependência de cada uma.', 0.4, '**Escopo** (nenhuma) → **modelagem** (depende do escopo) → **DER** (da modelagem) → **normalização** (do DER) → **scripts** (da normalização/modelo final) → **documentação** (de tudo).', 'Nota cheia (0,4): ordem com dependências. Metade (0,2): ordem certa sem dependências. Zero (0): ordem errada.'),
+      (v_atividade, 7, 3, 'Indique dois marcos do projeto e explique por que deixar folga antes deles.', 0.4, 'Marcos: **escopo aprovado**, **DER validado**, **banco criado**, **entrega final** (dois deles). A folga **absorve imprevistos** sem atrasar a entrega combinada.', 'Nota cheia (0,4): dois marcos + motivo da folga. Metade (0,2): só um dos dois. Zero (0): sem relação.'),
+      (v_atividade, 8, 1, 'Diga qual etapa é afetada diretamente pelo atraso e por quê.', 0.2, 'Os **scripts**, porque **dependem** do modelo normalizado; sem a normalização, não podem começar.', 'Nota cheia (0,2): etapa + dependência. Zero (0): outra etapa.'),
+      (v_atividade, 8, 2, 'Explique como o grupo deveria ter acompanhado o cronograma para perceber o atraso antes.', 0.4, 'Comparando **toda semana** o **realizado × planejado** (quadro de tarefas, reunião rápida), registrando o andamento de cada etapa.', 'Nota cheia (0,4): acompanhamento periódico + comparação. Metade (0,2): explicação vaga. Zero (0): "olhar no fim".'),
+      (v_atividade, 8, 3, 'Proponha duas ações para recuperar o prazo sem prejudicar a qualidade do modelo.', 0.4, 'Ex.: **redistribuir tarefas** (mais pessoas na normalização), **adiantar partes independentes** dos scripts (como o padrão de nomes e a criação do banco), **usar a folga** e **avisar** o professor/cliente para ajustar o cronograma.', 'Nota cheia (0,4): duas ações coerentes. Metade (0,2): uma. Zero (0): pular a normalização.'),
+      (v_atividade, 9, 1, 'Diga o significado da oval, do retângulo e do losango.', 0.2, '**Oval**: início/fim; **retângulo**: processo (ação); **losango**: decisão.', 'Nota cheia (0,2): os três. Metade (0,1): dois. Zero (0): um ou nenhum.'),
+      (v_atividade, 9, 2, 'Diga o significado do paralelogramo e do cilindro, com um exemplo de cada no empréstimo.', 0.4, '**Paralelogramo**: entrada ou saída de dados (ex.: digitar o código do leitor; imprimir o comprovante). **Cilindro**: banco de dados (ex.: consultar se o livro está disponível; gravar o empréstimo).', 'Nota cheia (0,4): os dois com exemplos. Metade (0,2): um. Zero (0): nenhum.'),
+      (v_atividade, 9, 3, 'Explique por que marcar no fluxograma os pontos em que o banco é consultado ou gravado.', 0.4, 'Para mostrar **quais tabelas** o processo usa e **quando**, confirmando que o modelo de dados atende ao processo e revelando dados ou consultas que faltam.', 'Nota cheia (0,4): ligação processo–tabelas + utilidade. Metade (0,2): explicação vaga. Zero (0): sem relação.'),
+      (v_atividade, 10, 1, 'Escreva o primeiro e o último passo, com o símbolo de cada um.', 0.2, 'Primeiro: **Início** (oval). Último: **Fim** (oval) — antes dele, **emitir comprovante** (paralelogramo).', 'Nota cheia (0,2): início e fim com oval. Zero (0): símbolos errados.'),
+      (v_atividade, 10, 2, 'Descreva os passos e as duas decisões do fluxo na ordem, com o símbolo de cada um.', 0.4, 'Informar CPF (**paralelogramo**) → consultar aluno (**cilindro**) → **aluno existe?** (**losango**): não → cadastrar aluno (**retângulo**, grava no cilindro) → escolher turma (**retângulo**) → consultar vagas (**cilindro**) → **tem vaga?** (**losango**): não → oferecer outra turma (volta) ; sim → gravar matrícula e parcelas (**retângulo** + **cilindro**) → emitir comprovante (**paralelogramo**).', 'Nota cheia (0,4): ordem + duas decisões + símbolos. Metade (0,2): ordem certa com símbolos faltando, ou só uma decisão. Zero (0): sem decisões.'),
+      (v_atividade, 10, 3, 'Indique uma decisão que estava faltando no processo (pense em alunos menores de idade) e onde ela entra.', 0.4, '"**O aluno é menor de idade?**" (losango), logo **depois do cadastro/consulta do aluno**: se sim, **cadastrar o responsável** (retângulo + cilindro) antes de escolher a turma.', 'Nota cheia (0,4): decisão + posição + ação. Metade (0,2): só a decisão. Zero (0): decisão sem relação.');
+end $$;

@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-09 18:06:19
+**Versão das regras:** 2026-10-11 11:18:37
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,23 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
-| 2026-10-09 18:06:19 | **Regra do `graphify update .` removida:** o grafo não é mais atualizado nem lido automaticamente (início de sessão, commits, `GRAPH_REPORT.md`); só roda quando o usuário pedir (`/graphify`) |
-| 2026-10-09 18:00:00 | **Lista de presença única:** todas as listas em `scripts/LISTAPRESENCA.js` (versionado, fora do site); páginas e `criar-usuarios-supabase-auth.js --turma=CODIGO` leem só dele (`docs/regras/usuarios-turmas-paginas-professor.md`) |
-| 2026-10-09 17:25:12 | **`.gitignore` mínimo:** só `__pycache__/`, graphify, `variaveis.js` e `.env`; binários, gabaritos, listas de presença e `LISTA-ALUNOS/` saem do site pelo `.vercelignore` (regra "O QUE NUNCA É PUBLICADO" reescrita) |
-| 2026-10-09 13:20:11 | **Análise contínua das matérias (tarefa permanente #19-91cbac65-87ca-45a0):** `scripts/analise-materias.py` grava `tasks/ANALISE-MATERIAS-RELATORIO.json` no início de cada sessão e ao concluir tarefa em matéria; a tarefa **nunca fica CONCLUÍDA** enquanto houver matéria incompleta ou pendência |
-| 2026-10-09 12:58:34 | **`TASKS_COMPLETE.md` apagado:** tarefa concluída ou cancelada tem o bloco **removido** do `TASKS.md` (o registro fica no `STATUS.md` e no Git) |
+| 2026-10-11 11:18:37 | **Agentes da Grok AI seguem o `AGENTS.md`:** os agentes da Grok AI (xAI / Grok Bot) devem sempre, antes de qualquer coisa, buscar as informações do arquivo `AGENTS.md` e seguir o que ele orientar — "🤖 REGRA — AGENTES DA GROK AI SEMPRE SEGUEM O AGENTS.md" |
+| 2026-10-11 06:24:07 | **Regras no banco:** cópia do `CLAUDE.md` e dos arquivos de regras (origem = repositório) nas tabelas `regra_documento` (arquivo inteiro) e `regra_secao` (uma linha por `##`/`###`), só leitura do administrador; script `scripts/regras/sincronizar_regras.py` (`importar`, `consulta`, `conferir` pelo md5); sincronizar a cada mudança de regra e em toda execução da rotina — "🗄️ REGRAS NO BANCO" |
+| 2026-10-11 06:09:22 | **Todas as regras da fila `tasks` no `CLAUDE.md`:** a seção "⏰ TAREFAS AGENDADAS E FILA `tasks`" passa a trazer as regras completas (agendador único; tabela, status, RLS e funções; ordem, dependências e sub-tasks; toda task na tabela e no GitHub com `sincronizar_tasks.py`; passo a passo e decisão executar/recusar/erro; página `tasks.html` e log), com itens em "valem sempre" e na inicialização (tarefa do `TASKS.md` também na tabela) |
+| 2026-10-11 06:07:25 | **Ordem e dependências na fila `tasks`:** colunas `ordem` e `task_dependente` (ids das tasks de que ela depende); a `pegar_proxima_task` só pega uma task com **todas as dependentes concluídas** (prioridade → ordem → criação); tarefa grande vira **sub-tasks pequenas em cadeia** (`#NN.MM`), uma por vez; etapas do usuário (`👤`) ficam desligadas e o professor as conclui na `tasks.html` (✅ Concluir); a #25 foi dividida em 22 sub-tasks (TASK-0019 a TASK-0040) — [`docs/regras/tarefas-agendadas.md`](docs/regras/tarefas-agendadas.md) |
+| 2026-10-11 06:01:03 | **Atividades só no banco, layout global e pasta da matéria só com conteúdo:** as questões da objetiva e da prática (enunciado, alternativas, gabarito, tópicos e padrão de resposta) ficam **só no banco**; objetiva e prática usam **um layout global** (nada de página criada do zero em cada aula); as pastas das matérias/aulas têm **só conteúdo (Markdown), nenhum HTML** — tudo vem do global; migração das matérias existentes na tarefa #25-b3e29764-940b-4a82 (plano e aprovação) — "🗃️ REGRA — ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA SÓ COM CONTEÚDO" |
+
+---
+
+## 🤖 REGRA — AGENTES DA GROK AI SEMPRE SEGUEM O AGENTS.md
+
+⚠️ **Os agentes da Grok AI (xAI / Grok Bot) devem sempre buscar as informações do arquivo
+[`AGENTS.md`](AGENTS.md) e seguir o que ele orientar.** Registrada em 2026-10-11 11:18:37 a pedido do usuário.
+
+- ✅ **Antes de qualquer coisa**, em toda conversa e em toda tarefa, o agente da Grok AI lê o
+  `AGENTS.md` da raiz do repositório.
+- ✅ O que o `AGENTS.md` orientar vale para os agentes da Grok AI (hoje ele manda ler e seguir
+  este `CLAUDE.md` por completo).
 
 ---
 
@@ -48,13 +60,48 @@ Registrada em 2026-10-03 a pedido do usuário.
   usar o Chromium **sem janela** (headless) para gerá-lo — nunca para validar telas.
 - ✅ **Final de tarefa:** responder `TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?` (sem tabela
   nem resumo; os avisos que outra regra manda dar — matérias semelhantes, tabela de permissões,
-  pendências do usuário, commit/push — vêm **em poucas linhas antes** da frase) e, logo abaixo, perguntar **"Deseja atualizar o log da sessão atual?"** (ver a
-  regra "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`", 2026-10-08).
+  pendências do usuário, commit/push — vêm **em poucas linhas antes** da frase). Não há mais a
+  pergunta sobre o log da sessão: o registro da sessão em `SESSOES-CLAUDE/` foi **removido** em
+  2026-10-09 15:03:21 (pedido do usuário); o estado fica só no `STATUS.md`.
 - 🧭 **Arquivos de status são MUITO IMPORTANTES** (2026-10-08): `STATUS.md` é a fonte única do
   estado; ver a seção "MUITO IMPORTANTE — ARQUIVOS DE STATUS" logo abaixo.
 - ⛔ **Nunca escrever testes automatizados** (regra permanente do global): nada de `*.test.js`,
   `*.spec.js`, `test_*.py` nem passo de teste em plano; a **única exceção** é corrigir um bug.
   Vale mesmo que haja suíte de testes no repositório ou que uma skill (TDD etc.) mande.
+- ⛔ **Seeds concluídos antes de qualquer tarefa** (2026-10-09, pedido do usuário): antes de
+  começar ou continuar qualquer tarefa, concluir todos os seeds de `database/SEEDS-APLICADOS.md`
+  (ver a regra "🌱 REGRA — SEEDS DO BANCO").
+- ✅ **Cada aula finalizada = status gravado + commit** (2026-10-09, pedido do usuário): sempre que
+  terminar **uma aula** (gerar o material dela ou aplicar e conferir os seeds dela), **gravar o status
+  na hora** em todos os arquivos envolvidos (`database/SEEDS-APLICADOS.md`, `STATUS-AULAS.md`,
+  `STATUS-ATIVIDADES.md` da matéria e o item da etapa em `tasks/etapas/`) e **fazer o commit** (na
+  nuvem, também o push) **antes de passar à próxima aula** — nunca acumular várias aulas.
+- ✅ **Toda matéria tem status por aula** (2026-10-09, pedido do usuário): cada matéria tem o
+  **`AULAS/STATUS-AULAS.md`** (regra global de matérias) com **uma linha por aula** e as colunas da aula em
+  `CONTEUDO/`, slides, atividade objetiva, atividade prática e **Banco** (seeds aplicados e conferidos).
+  Matéria nova já nasce com ele e a análise contínua (tarefa #19) aponta as que faltam.
+- ✅ **Primeiro, só os status das aulas** (2026-10-09, pedido do usuário): **inicialmente, criar
+  apenas o `AULAS/STATUS-AULAS.md` de todas as matérias**, com **todas as aulas** (1 aula a cada
+  4 h da carga horária da ementa, arredondando para cima; tema da ementa ou "a definir") e todas as
+  colunas em ⬜. Nesse primeiro passo **não** se gera conteúdo, atividade, página nem seed; o
+  restante vem depois, **uma aula por vez**, atualizando o status de cada aula. O status de cada aula é
+  atualizado na hora (regra "Cada aula finalizada = status gravado + commit").
+- ⛔ **Na nuvem, todo commit é seguido de push** (2026-10-09, pedido do usuário): numa sessão de nuvem,
+  **logo depois de cada `git commit`**, fazer o `git push -u origin <branch>` da sessão — sem
+  esperar outro commit, o fim da tarefa ou a ordem do usuário (detalhe em "Pull Requests"). No
+  ambiente local continua proibido o push.
+- ✅ **`STATUS_MATERIA.md` e ordem das matérias** (2026-10-10, pedido do usuário): status de cada
+  matéria gerado dos arquivos dela; ordem Banco de Dados 1, Testes de Front-End 2, ITIC 3… seguida
+  sempre que se lê status de tarefas ou matérias; os 5 arquivos de status existem sempre em todas
+  as matérias, inclusive em `IGNORAR` (regra "🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS").
+- ⛔ **Questões só no banco, layout global, pasta da matéria só com conteúdo** (2026-10-11, pedido do
+  usuário): perguntas da objetiva e da prática **só no banco**; as duas usam **um layout global**;
+  nas pastas das matérias e aulas, **só conteúdo** (Markdown), **nenhum HTML** (regra "🗃️ REGRA —
+  ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA SÓ COM CONTEÚDO").
+- ✅ **Fila `tasks` e agendador único** (2026-10-11, pedido do usuário): uma rotina por hora lê a
+  tabela `tasks`, pega no máximo 1 task (só com as dependentes concluídas, na ordem), decide se
+  executa ou recusa e grava o resultado; toda task existe na tabela e no GitHub; tarefa grande vira
+  sub-tasks pequenas em cadeia (seção "⏰ TAREFAS AGENDADAS E FILA `tasks`").
 - ✅ **Tarefas pequenas** (ajuste pontual, sem banco/segurança/estrutura nova) **não precisam** de
   plano em `docs/` nem de aprovação prévia; tarefas grandes continuam precisando.
 - ✅ **Um commit por tarefa** (push conforme o ambiente: local = não; nuvem = sim, numa branch própria + novo PR para a `main`).
@@ -122,14 +169,14 @@ Registrada em 2026-10-03 a pedido do usuário.
 - ⛔ **Push depende do ambiente** (2026-10-07): **local** (máquina do usuário) = **nunca fazer
   push**, mesmo que ele peça — avisar que o commit está pronto para ele enviar; **nuvem** (Claude
   Code na web/remoto) = **sempre fazer push numa branch própria e abrir um NOVO pull request
-  para a `main`**, nunca push direto na `main` (2026-10-08; ver a regra "PUSH: NUNCA NO AMBIENTE
+  para a `main`**, que o próprio Claude junta (resolvendo os conflitos de merge; 2026-10-09 22:17), nunca push direto na `main` (2026-10-08; ver a regra "PUSH: NUNCA NO AMBIENTE
   LOCAL, SEMPRE NA NUVEM").
 - ⛔ **Conteúdo só pelos Markdowns, nunca de PDF** (2026-10-03): para conferir ou gerar conteúdo,
   ler os `.md` da matéria — em primeiro lugar o `EMENTA-CHALKIE-AI.md` (ver a regra "CONTEÚDO SÓ
   PELOS MARKDOWNS").
-- ✅ **Matéria modelo = Introdução à TIC** (2026-10-03): toda peça de outra matéria segue a
-  estrutura que funciona em `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/` (ver a
-  regra "MATÉRIA MODELO").
+- ✅ **Regra global de matérias** (2026-10-10, substitui a "matéria modelo ITIC"): toda matéria
+  segue [`docs/regras/materias.md`](docs/regras/materias.md); consultar a regra, não a ITIC (ver
+  "🧱 REGRA GLOBAL DE MATÉRIAS").
 - ✅ **Aulas extraídas da ementa em `CONTEUDO/`** (2026-10-03): 1 aula a cada 4 h da ementa
   (arredondando para cima), arquivo `AULA-NN-DESCRICAO-CURTA.md`; atividades e, no final, a
   apostila são feitas a partir dessas aulas (ver a regra "AULAS EXTRAÍDAS DA EMENTA").
@@ -150,10 +197,11 @@ pasta. O `TASKS_COMPLETE.md` foi apagado em 2026-10-09: tarefa concluída sai do
 
 | Arquivo | Guarda | Quem manda |
 |---|---|---|
-| `tasks/STATUS.md` | Etapas e itens de **todas** as tarefas, "Próximo passo", "⏳ Aguardando o usuário", "📌 Tarefas do `TASKS.md`", decisões, riscos, bloqueios, pendências e lições | 🥇 **Fonte única do estado** — em conflito, **ele vence** |
+| `tasks/STATUS.md` | **Índice do estado:** "🧭 Frentes de trabalho" (próximo passo de cada sessão), "📌 Tarefas do `TASKS.md`" (com "Em uso por"), "⏳ Aguardando o usuário", tabela "🗂️ Etapas", decisões, riscos, bloqueios, pendências e lições | 🥇 **Fonte única do estado** (junto com `tasks/etapas/`) — em conflito, **ele vence** |
+| `tasks/etapas/ETAPA-NNN[-uuid8]-ASSUNTO.md` | **Uma etapa por arquivo** (itens, status, verificação) — desde 2026-10-09 | Faz parte da fonte única; listado na tabela "🗂️ Etapas" do `STATUS.md` |
+| `<MATERIA>/STATUS_MATERIA.md` | Status de todos os arquivos da matéria e a situação dela (gerado por script) | Detalha a matéria; ordem em `tasks/ORDEM-MATERIAS.md` |
+| `tasks/RECADOS.md` | Recados entre sessões e licenças (só se acrescentam linhas) | Aviso, não estado: o que virar trabalho vai para o `STATUS.md` |
 | `tasks/TASKS.md` | Só a **descrição longa** das tarefas pendentes (concluída ou cancelada = bloco removido) | Aponta para o `STATUS.md` (sem status próprio) |
-| `SESSOES-CLAUDE/STATUS-SESSOES.md` | Uma linha por sessão: status (`PENDENTE` · `CONCLUÍDO` · `🗑️ REMOVIDA`), data e próximo passo | Aponta para o `STATUS.md` |
-| `SESSOES-CLAUDE/SESSAO-AAAA-MM-DD-HHMM-*.md` | Mínimo para outra licença continuar: próximo passo, decisões, validação dos pedidos, pendências (com a etapa/item do `STATUS.md`) | Aponta para o `STATUS.md` |
 | `docs/<tarefa>.md` | Plano da tarefa grande com os passos e o status de cada passo | Detalha a etapa do `STATUS.md` |
 | `<MATERIA>/AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` | Peça por peça da matéria (aula, atividade, capítulo) | Detalha a etapa do `STATUS.md` |
 | `<MATERIA>/STATUS-EMENTAS.md`, `MATERIAIS/STATUS-EMENTAS-CURSOS.md` | Situação das ementas e permissões `VERIFICAR`/`IGNORAR` | Gerados pelos scripts (regras em `docs/regras/ementas-e-cursos.md`) |
@@ -161,8 +209,7 @@ pasta. O `TASKS_COMPLETE.md` foi apagado em 2026-10-09: tarefa concluída sai do
 ### Regras
 
 1. ✅ **Ler antes de agir:** no início de cada chat **e antes de cada tarefa nova**, ler o
-   `STATUS.md` e o `SESSOES-CLAUDE/STATUS-SESSOES.md` (ver "INICIALIZAÇÃO DE CADA CHAT E DE CADA
-   TAREFA").
+   `STATUS.md` (ver "INICIALIZAÇÃO DE CADA CHAT E DE CADA TAREFA").
 2. ✅ **Atualizar na hora:** marcar `🔄` ao começar e `✅` (com data e hora reais do relógio) ao
    terminar **cada item**, em todos os arquivos de status envolvidos — nunca acumular para o fim.
 3. ✅ **Legenda única:** `⬜ Pendente` · `🔄 Em progresso` · `👀 Aguardando validação` ·
@@ -172,11 +219,11 @@ pasta. O `TASKS_COMPLETE.md` foi apagado em 2026-10-09: tarefa concluída sai do
 5. ⛔ **`✅`/`CONCLUÍDO` só com tudo validado:** conferir **cada** pedido do usuário nos arquivos,
    nos commits e no `STATUS.md` (não pela memória). Faltando item, commit ou aceite → continua
    pendente. Nunca marcar concluída uma tarefa parcial.
-6. ✅ **"Próximo passo" sempre atual:** é a primeira linha lida ao retomar e a última atualizada ao
-   parar; deve dizer o item **exato** a fazer.
-7. ✅ **Histórico nunca é apagado** no `STATUS.md` (só se acrescentam etapas); o que sai das listas
-   de espera é marcado no item da etapa. A exceção é o log de sessão `CONCLUÍDO`, que é aproveitado
-   e removido (regra "REGISTRO DA SESSÃO").
+6. ✅ **"Próximo passo" sempre atual:** fica na linha **da sua frente** em "🧭 Frentes de trabalho"
+   do `STATUS.md`; é a primeira coisa lida ao retomar e a última atualizada ao parar; deve dizer o
+   item **exato** a fazer.
+7. ✅ **Histórico nunca é apagado** (só se acrescentam etapas, cada uma num arquivo de
+   `tasks/etapas/`); o que sai das listas de espera é marcado no item da etapa.
 8. ✅ **Commit junto:** os arquivos de status alterados entram no commit da tarefa.
 
 ### 📋 Gestão de projetos — regras aplicadas ao `STATUS.md` (do global)
@@ -265,13 +312,93 @@ Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
 ---
 
+## 🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS
+
+Registrada em 2026-10-10 16:37:58 a pedido do usuário.
+
+- ✅ **Toda matéria tem o `STATUS_MATERIA.md`** na raiz da pasta dela, com o status de **todos os
+  arquivos da pasta**: (1) peças gerais da regra global de matérias (ementa, `materia.json`, os 4 status,
+  índice e menu das atividades, avaliações, média final e apostila); (2) uma linha por aula do
+  `AULAS/STATUS-AULAS.md` (aula em `CONTEUDO/`, objetiva página e fonte, prática página, fonte e
+  padrão de resposta, **Banco**); (3) a lista de todos os arquivos (✅ peça do padrão, 📎 outro
+  arquivo, ⚠️ vazio).
+- ✅ **A situação da matéria sai desses arquivos:** **✅ CONCLUÍDA** (todas as peças ✅), **🔄
+  PENDENTE** (parte feita) ou **⬜ NÃO INICIADA** (nenhuma aula com conteúdo ou atividade).
+- ✅ **Coluna Banco:** ✅ só quando os seeds da objetiva **e** da prática da aula estão
+  **CONCLUÍDO** ou **SUBSTITUÍDO** no `database/SEEDS-APLICADOS.md` (o seed mais novo que cadastra
+  a página vence; página sem seed = ⬜).
+- ⛔ **Não editar à mão:** gerar com `python3 scripts/status-materias/gerar_status_materia.py` (na
+  raiz; módulos `ordem_materias.py`, `pecas_materia.py` e `seeds_materia.py`). Rodar **no início de
+  cada sessão** (junto com a análise contínua, tarefa #19) e **ao concluir qualquer tarefa que mexa
+  numa matéria**; os arquivos gerados entram no commit da tarefa.
+- ⛔ **Todos os arquivos de status existem SEMPRE, em TODAS as matérias** (2026-10-10, pedido do
+  usuário) — **inclusive as que estão em `IGNORAR`** nas ementas: `STATUS_MATERIA.md`,
+  `AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` e
+  `STATUS-EMENTAS.md`. O `IGNORAR` só tira a matéria de pendências, ajustes e geração de conteúdo;
+  **nunca** dispensa os status. O `gerar_status_materia.py` roda antes `criar_status_aulas.py` e
+  `criar_status_faltantes.py` (só criam o que falta, nunca sobrescrevem); matéria nova já nasce
+  com os 5 arquivos. Ao ler os status, conferir que os 5 existem em todas as matérias; faltando
+  algum, rodar o gerador na hora.
+- ✅ **Ordem oficial das matérias** em **`tasks/ORDEM-MATERIAS.md`** (gerado pelo mesmo script):
+  **1 = Banco de Dados** (Técnico em Informática para Internet), **2 = Testes de Front-End**,
+  **3 = Introdução à TIC** e as demais em seguida, curso por curso. A ordem gravada
+  não muda; matéria nova entra no fim; mudar a ordem só a pedido do usuário.
+- ✅ **Sempre seguir a ordem:** ao ler status de tarefas (`tasks/STATUS.md`, `TASKS.md`, etapas) ou
+  de matérias (relatório da análise, `STATUS_MATERIA.md`, status das aulas e atividades), ao
+  listar matérias para o usuário e ao escolher a próxima matéria a trabalhar, seguir a ordem do
+  `tasks/ORDEM-MATERIAS.md`. O `tasks/ANALISE-MATERIAS-RELATORIO.json` já sai nessa ordem (campo
+  `"ordem"`).
+
+---
+
+## 🤝 REGRA CRÍTICA — CONVERSA ENTRE SESSÕES E LICENÇAS (PELO REPOSITÓRIO)
+
+Registrada em 2026-10-09 15:24:44 a pedido do usuário (tarefa #21-eeefc710-3e74-4928; plano
+[docs/colaboracao-entre-sessoes.md](docs/colaboracao-entre-sessoes.md)). Sessões de **contas
+diferentes** do Claude (e outras IAs) não conversam diretamente: só se falam pelo **Git**. Estas
+regras evitam trabalho repetido, tarefa pega em dobro e conflito de merge.
+
+- ✅ **Frente de trabalho = ambiente + branch** (ex.: `nuvem · claude/festive-maxwell-25jnhl`,
+  `local · main`). É como cada sessão se identifica no `STATUS.md` e nos recados (nunca e-mail ou
+  nome de conta: os arquivos são publicados).
+- ✅ **1. Etapa nova com UUID:** toda etapa nova recebe o próximo número **+ o 1º bloco de um UUID
+  v4** (ex.: **`Etapa 136-3f9a2c7e`**, itens `136.1`, `136.2`…), igual às tarefas do `TASKS.md`;
+  assim duas frentes nunca criam a mesma "Etapa 136". As antigas (até a 135) não mudam.
+- ✅ **2. Reserva da tarefa ("Em uso por"):** antes de começar uma tarefa, a frente preenche a coluna
+  **"Em uso por"** do "📌 Tarefas" (`<frente> (desde AAAA-MM-DD HH:MM)`) e faz commit + push na
+  hora; ao terminar ou parar, volta a `—`. ⛔ Tarefa reservada por outra frente **não é mexida** —
+  se precisar, deixar recado e perguntar ao usuário.
+- ✅ **3. Próximo passo por frente:** cada frente tem a **sua linha** em "🧭 Frentes de trabalho" e
+  atualiza **só a dela** (ao começar e ao parar); nunca sobrescrever a linha de outra frente.
+- ✅ **4. Recados em `tasks/RECADOS.md`:** aviso para outra frente (ex.: "não mexer em X", "mudei a
+  regra Y") vai como linha nova em "Abertos" (data e hora, De, Para, recado, etapa). **Ler ao
+  iniciar** e **a cada merge** (2026-10-09 22:21:17, pedido do usuário: sempre que trazer a `main` para a
+  branch ou juntar um PR, ler os recados abertos das outras sessões/IAs para a sua frente ou para
+  `todas` e cumprir o que couber antes de seguir); ao cumprir, mover para "Cumpridos". Só
+  acrescentar, nunca apagar recado de outra frente.
+- ✅ **5. Trazer a `main` no início e no fim:** ao iniciar a sessão e cada tarefa, `git fetch origin
+  main` e merge na branch (no local, o usuário faz o pull); de novo **antes de cada push**. PR
+  pequeno e juntado logo deixa a outra frente ver o trabalho mais cedo.
+- ✅ **6. Arquivo gerado em conflito = regerar:** em conflito de merge em arquivo gerado por script
+  (`tasks/ANALISE-MATERIAS-RELATORIO.json`, `MATERIAIS/STATUS-EMENTAS-CURSOS.md`, `STATUS-EMENTAS.md`,
+  páginas HTML dos geradores, seeds), **não mesclar à mão**: aceitar um dos lados e **rodar o script
+  de novo**.
+- ✅ **7. Uma etapa por arquivo:** cada etapa fica em **`tasks/etapas/ETAPA-NNN[-uuid8]-ASSUNTO.md`**
+  e ganha uma linha na tabela **"🗂️ Etapas"** do `STATUS.md` no mesmo commit; o `STATUS.md` guarda só
+  o índice. Duas frentes em tarefas diferentes deixam de editar o mesmo arquivo. Se o merge trouxer
+  mudança de etapa feita no `STATUS.md` antigo (antes de 2026-10-09 15:24), aplicá-la no arquivo da
+  etapa.
+- ⛔ Nada de senha, chave, gabarito nem dado de aluno no `STATUS.md`, nas etapas ou nos recados.
+
+---
+
 ## 🔁 REGRA CRÍTICA — ANÁLISE CONTÍNUA DAS MATÉRIAS (TAREFA PERMANENTE #19-91cbac65-87ca-45a0)
 
 Registrada em 2026-10-09 13:20:11 a pedido do usuário.
 
 - ✅ **Rotina:** `C:\Python314\python.exe scripts/analise-materias.py` — percorre todos os cursos de
-  `MATERIAIS/` (menos `MATERIAS-GERAIS` e `AGENDA_COLABORADOR`), confere cada matéria no padrão da
-  matéria modelo (ITIC) e grava **o que falta e o que está OK** em
+  `MATERIAIS/` (menos `MATERIAS-GERAIS` e `AGENDA_COLABORADOR`), confere cada matéria pela regra global
+  de matérias (`docs/regras/materias.md`) e grava **o que falta e o que está OK** em
   **`tasks/ANALISE-MATERIAS-RELATORIO.json`**. Só lê as matérias; não altera nada nelas.
 - ✅ **Rodar SEMPRE:** no início de cada sessão e ao concluir qualquer tarefa
   que mexa numa matéria; o JSON atualizado entra no commit da tarefa e a linha da tarefa #19 no
@@ -282,8 +409,8 @@ Registrada em 2026-10-09 13:20:11 a pedido do usuário.
   nenhuma pendência, **e** o usuário der o aceite, ela pode ser concluída.
 - ✅ As pendências do relatório são resolvidas **só quando o usuário pedir**, uma matéria por vez
   (cada uma vira etapa própria no `STATUS.md`), respeitando `IGNORAR`/`VERIFICAR` das ementas.
-- ⛔ Não mudar o padrão conferido pela rotina sem pedido do usuário; se a ITIC mudar, atualizar a
-  rotina na mesma tarefa.
+- ⛔ Não mudar o padrão conferido pela rotina sem pedido do usuário; se a regra global de matérias
+  mudar, atualizar a rotina na mesma tarefa.
 
 ---
 
@@ -302,14 +429,16 @@ Aqui ficam as regras de sempre, as de segurança e este índice.
 
 | Arquivo | Ler antes de… | Regras dentro |
 |---|---|---|
+| [docs/regras/materias.md](docs/regras/materias.md) | criar, completar ou conferir **qualquer** matéria (substitui a consulta à ITIC) | estrutura da pasta; ementa e `materia.json`; aulas em `CONTEUDO/`; objetiva de 50; prática 10 × 3; avaliações e média final; índice e menu; apostila; 5 status; banco e seeds; ordem de construção; critério de pronto; exceções |
 | [docs/regras/ementas-e-cursos.md](docs/regras/ementas-e-cursos.md) | criar ou alterar ementas, pastas de curso/matéria, aulas em `CONTEUDO/`, STATUS-EMENTAS e dashboards | aulas extraídas da ementa; `EMENTA-CHALKIE-AI.md`; STATUS-EMENTAS; STATUS-PERMISSAO-EMENTA/MATERIA; `EMENTA-PRINCIPAL-<CURSO>.md`; pasta = UC; matérias semelhantes; `dashboard.html` |
-| [docs/regras/atividades.md](docs/regras/atividades.md) | mexer em atividades, avaliações, discursivas, respostas no banco, gabarito, exportação PDF, índices de atividades, Excel, banco do AVA ou Reforço de Linguagens | alternativas no banco (tentativas, horário, log, discursivas, correção); turma na exportação; gabarito; índices e bloqueio por turma; Excel; uma aula por vez; 50 questões; Reforço de Linguagens; banco do AVA |
+| [docs/regras/atividades.md](docs/regras/atividades.md) | mexer em atividades, avaliações, discursivas, respostas no banco, gabarito, exportação PDF, índices de atividades, Excel ou Reforço de Linguagens | alternativas no banco (tentativas, horário, log, discursivas, correção); turma na exportação; gabarito; índices e bloqueio por turma; Excel; uma aula por vez; 50 questões; Reforço de Linguagens |
 | [docs/regras/apostilas.md](docs/regras/apostilas.md) | gerar ou alterar apostilas (capítulos, Markdown completo, HTML, `materia.json`) | identificação; conferência 100% com a ementa; gerador; Markdown completo; `materia.json`; formato e ordem; páginas A4 |
 | [docs/regras/usuarios-turmas-paginas-professor.md](docs/regras/usuarios-turmas-paginas-professor.md) | mexer em contas/senhas, turmas, alunos, equipes, aulas (excluir/editar card), pendências ou índice de cursos | contas e senhas; excluir aula e card = 1 aula; pendências; índice de cursos; `turmaaluno`; equipes; página por turma; e-mail do aluno |
 | [docs/regras/assets-e-geradores.md](docs/regras/assets-e-geradores.md) | criar ou alterar CSS, JS, menus, header ou geradores (`assets/`), e avisos ao usuário | CSS e JS genéricos em `assets/`; menu; header; geradores; popup no lugar de `alert()` |
 | [docs/regras/paginas-legadas.md](docs/regras/paginas-legadas.md) | mexer nas páginas antigas (`dashboard.html`, `uc.html`, `questionarios.html`, `validacao.html`) ou na apostila de Reforço de Matemática | descrição das páginas antigas; fluxo de navegação; exercícios da apostila de Reforço de Matemática |
 | [docs/regras/codigo.md](docs/regras/codigo.md) | criar ou alterar qualquer código (JS, Python, HTML, CSS) | princípios SOLID; até 1000 linhas por arquivo e 45 por função; JSDoc/docstring; return early; constantes; nomes em português sem acento; até 3 parâmetros; até 2 níveis; Prettier/ESLint e Black/Ruff |
 | [docs/regras/infograficos.md](docs/regras/infograficos.md) | criar infográficos | cabeçalho, no mínimo 6 seções numeradas e coloridas, fundo escuro, exemplos, regra de ouro no rodapé, cores por tema |
+| [docs/regras/tarefas-agendadas.md](docs/regras/tarefas-agendadas.md) | criar, alterar ou executar a **tarefa agendada** ou mexer na fila `tasks` / `tasks.html` (as regras completas também estão no `CLAUDE.md`, que vence) | 1 rotina por hora; tabela `tasks` e funções; toda task na tabela e no GitHub (`sincronizar_tasks.py`); passo a passo de cada execução; log em `agendamento_tarefa_logs`; outras contas e IAs |
 
 ### ⛔ Proibições das regras detalhadas (resumo — o detalhe está nos arquivos acima)
 
@@ -352,54 +481,214 @@ avaliações, apostilas, planos, slides e conferências).
 
 ---
 
-## 🏅 REGRA CRÍTICA — MATÉRIA MODELO: INTRODUÇÃO À TIC
+## 🧱 REGRA GLOBAL DE MATÉRIAS — [docs/regras/materias.md](docs/regras/materias.md) (SUBSTITUI A "MATÉRIA MODELO")
 
-⚠️ **Usar SEMPRE como exemplo padrão a matéria
-`MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/` — nela tudo está funcionando.**
-Registrada em 2026-10-03 a pedido do usuário.
+Registrada em 2026-10-10 22:19:46 a pedido do usuário ("pegue tudo como a matéria ITIC é feita e torne 1 regra
+global de matérias; em vez de consultar o modelo ITIC, consulta a regra global"). Antes (desde
+2026-10-03) a regra mandava abrir a ITIC como matéria modelo.
 
-- ✅ Antes de criar ou completar qualquer peça de outra matéria, **abrir a peça equivalente da
-  ITIC** e seguir a mesma estrutura de pastas, nomes de arquivo, campos, geradores e fluxo:
-
-| Peça | Onde fica na ITIC (modelo) |
-|---|---|
-| Dados e ementa da matéria | `materia.json`, `EMENTA-CHALKIE-AI.md` |
-| Aulas em Markdown | `CONTEUDO/` (regra "AULAS EXTRAÍDAS DA EMENTA EM `CONTEUDO/`") |
-| Slides (só apresentação, nunca fonte) | `AULAS/` |
-| Atividade objetiva de cada aula | `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-50-QUESTOES.md` → `ATIVIDADES/ATIVIDADES-AULA-NN-50-QUESTOES.html` |
-| Atividade prática de cada aula | `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-NN.md` (+ `-GABARITO.md`, fora do site) → `ATIVIDADES/ATIVIDADE-PRATICA-AULA-NN.html` |
-| Avaliações e média final | `ATIVIDADES/AVALIACAO-OBJETIVA-NN.html`, `AVALIACAO-PRATICA.html`, `AVALIACAO-MEDIA-FINAL.html` (+ `media-final.json`) |
-| Menu e índice das atividades | `ATIVIDADES/MENU-ATIVIDADES.js`, `ATIVIDADES/index.html` |
-| Controles | `AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` |
-| Apostila | `APOSTILA/` (`CONTEUDO/INTRODUCAO.md`, `CONTEUDO/CAPITULO-NN.md`, Markdown completo e HTML) — apostila única, versão 2.1, sem vídeos e exercícios (V1 removida em 2026-10-08) |
-| Banco de questões do AVA | `ATIVIDADES/BANCO-AVA/` |
-
-- ✅ A ITIC é modelo de **estrutura e funcionamento**; o conteúdo de cada matéria vem da ementa
-  **dela** (nunca copiar conteúdo da ITIC para outra UC).
-- ✅ Se uma regra deste arquivo e a ITIC divergirem, **avisar o usuário**; a ITIC só é alterada a
-  pedido dele (ela é a referência).
+- ✅ **Para criar, completar ou conferir qualquer matéria, consultar a regra global
+  [`docs/regras/materias.md`](docs/regras/materias.md)** — não abrir mais a ITIC como modelo. Ela
+  traz, numa regra só: estrutura de pastas e nomes de arquivo, ementa e `materia.json`, aulas em
+  `CONTEUDO/` (partes da aula), objetiva de 50 questões, prática 10 × 3 (padrão id 82), avaliações e
+  média final, índice e menu das atividades, apostila, os 5 arquivos de status, banco e seeds, a
+  ordem de construção, o critério de pronto e as exceções.
+- ✅ A ITIC (`MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/`) continua como **exemplo
+  real** da regra; se ela (ou outra matéria pronta) divergir da regra global, **vale a regra**:
+  avisar o usuário e só alterar a matéria pronta a pedido dele.
+- ✅ O conteúdo de cada matéria vem da ementa **dela** (nunca copiar conteúdo de outra UC).
+- ✅ Mudou o jeito de fazer uma peça de matéria → atualizar `docs/regras/materias.md` **na mesma
+  tarefa** (e a rotina `scripts/analise-materias.py` e os scripts de `scripts/status-materias/`,
+  que conferem as matérias por esta regra).
 
 ---
 
-## 🚨 INICIALIZAÇÃO DE CADA CHAT E DE CADA TAREFA — LER O `STATUS.md` E O `STATUS-SESSOES.md`
+## 🗃️ REGRA — ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA SÓ COM CONTEÚDO
+
+Registrada em 2026-10-11 06:01:03 a pedido do usuário: "As perguntas das atividades prática e objetiva devem
+ficar apenas no banco de dados"; "Atividade prática e objetiva deve usar layout global e não ficar
+criando do zero em cada aula"; "Nas pastas de aulas deve ter apenas conteúdos, e nada de HTML, deve
+vir tudo do global". Migração das matérias existentes: tarefa **#25-b3e29764-940b-4a82** (Etapa
+143-d30a9c4d; plano em `docs/` e aprovação antes de executar).
+
+- ⛔ **Questões só no banco:** as perguntas da **atividade objetiva** (enunciado, alternativas e
+  gabarito) e da **atividade prática** (questões, tópicos, pontos e padrão de resposta) ficam
+  **apenas no banco de dados** (Supabase). Nenhuma página HTML nem arquivo da pasta da matéria
+  guarda o texto das questões; a página busca as questões no banco ao abrir (o gabarito e o padrão
+  de resposta continuam nunca chegando ao aluno antes da liberação — regras de `atividades.md`).
+- ⛔ **Layout global:** objetiva e prática usam **uma página/layout global** (um para a objetiva,
+  um para a prática, com os recursos de sempre: login, gravação no banco, Progresso da turma,
+  Gráficos, Cálculo Nota, mínimo de questões, correção, gabarito por turma, PDF), que recebe qual
+  atividade abrir (id do banco). ⛔ **Nunca criar página de atividade do zero em cada aula.**
+- ⛔ **Pasta da matéria/aula só com conteúdo:** em `MATERIAIS/<CURSO>/<MATERIA>/` ficam **só
+  conteúdos** (Markdown: ementa, aulas em `CONTEUDO/`, documentação, `materia.json` e os arquivos de
+  status) — **nenhum HTML**. Índice de atividades, páginas de atividade, avaliação, média final e
+  apostila em HTML vêm **do global** (páginas e geradores na raiz e em `assets/`), lendo o conteúdo
+  da matéria e o banco.
+- ✅ **Transição:** até a tarefa #25-b3e29764-940b-4a82 ser aprovada e executada, as páginas e geradores atuais
+  continuam funcionando; ⛔ **não gerar página de atividade nova por aula nem questão nova em
+  arquivo** sem antes passar pelo plano dessa tarefa (perguntar ao usuário se for preciso). A
+  migração é feita **uma matéria por vez**, na ordem do `tasks/ORDEM-MATERIAS.md`, conferindo pelo
+  md5 que as questões no banco são as mesmas das páginas antigas antes de apagar qualquer HTML.
+- ✅ Quando a migração mudar o jeito de fazer uma peça, atualizar na mesma tarefa
+  `docs/regras/materias.md`, `docs/regras/atividades.md`, `docs/REGRAS-ATIVIDADE-PRATICA.md`, a
+  rotina `scripts/analise-materias.py` e os scripts de `scripts/status-materias/`.
+
+---
+
+## ⏰ TAREFAS AGENDADAS E FILA `tasks` — [docs/regras/tarefas-agendadas.md](docs/regras/tarefas-agendadas.md)
+
+Registrada em 2026-10-11 05:12:00 a pedido do usuário; reescrita em 2026-10-11 05:57:00 (tarefa
+#24-9fb25086-5b51-44cb: "1 agendador que apenas controle 1 tabela de nome tasks, que a IA vai ler
+e decidir se executa algo ou não"; "toda task deve existir na tabela e no GitHub"); ordem e
+dependências em 2026-10-11 06:07:25 ("crie ordem na tabela task e campo task_dependente... só deve
+iniciar se as tasks dependentes estiverem concluídas"); **todas as regras trazidas para este
+arquivo em 2026-10-11 06:09:22** (pedido do usuário: "armazene todas estas regras no claude.md"). O arquivo
+`docs/regras/tarefas-agendadas.md` repete e detalha; em conflito, vale este `CLAUDE.md`.
+
+### 1. Um agendador só
+
+- ✅ **Uma rotina só** ("Tarefa Aulas Senai", conta do usuário), **de hora em hora** (o agendador
+  aceita no máximo 1 execução por hora por rotina), das 01:03 às 23:03 de Brasília. Cada execução
+  é uma sessão nova na nuvem e segue tudo deste `CLAUDE.md`.
+- ✅ A rotina **só faz o que está na tabela `tasks`** do Supabase: pega **no máximo 1 task** por
+  execução, **decide** se a executa e grava o resultado. **Fila vazia = não faz nada** (só
+  sincroniza e grava o log).
+- ⛔ **Sem outras rotinas:** não criar as antigas tarefas agendadas 2 a 6 (#22 cancelada); outra
+  conta do Claude ou outra IA só pega trabalho pela mesma função `pegar_proxima_task`.
+- ✅ O prompt da rotina só aponta para estas regras; o `TAREFA_AGENDADA.md` na raiz nunca é usado.
+  A rotina fica **desligada** até o acesso do GitHub ser liberado (item 140.6) e o usuário pedir.
+
+### 2. Tabela `tasks` (Supabase)
+
+- ✅ SQL em `database/2026-10-11-tasks-fila-agendador.sql` (aplicado). Colunas principais: `codigo`
+  (`#NN-uuid` do `TASKS.md` ou `TASK-NNNN`), `origem` (`repositorio`/`pagina`), `titulo`,
+  `instrucao`, `prioridade` (1 = mais alta … 5), **`ordem`**, **`task_dependente`** (ids),
+  `executar` (ON/OFF), `executar_apos`, `status`, `tentativas`/`max_tentativas` (3), trava
+  (`trava_frente`, `expira_em`), `resultado`, `pr_url`, `commit_sha`, `log_id`, `excluido`,
+  `arquivo_md`, `md5_md`, `sincronizado_em`.
+- ✅ **Status:** `pendente` · `em_execucao` · `concluida` · `recusada` · `erro` · `cancelada`.
+- ✅ **RLS:** só o Professor Administrador lê e grava pela API; **sem DELETE** (excluir = `excluido`);
+  `anon` sem acesso. A página nunca põe nem tira uma task de `em_execucao`.
+- ✅ **`pegar_proxima_task('<frente>')`** (só pelo conector): devolve para a fila as travas vencidas
+  e pega **1** task `pendente`, ligada, não excluída, com "executar após" vencido, tentativas
+  sobrando e **todas as dependentes `concluida`**, na ordem **prioridade → `ordem` → criação**;
+  marca `em_execucao` e trava por **90 minutos** (duas execuções nunca pegam a mesma).
+- ✅ **`finalizar_task(id, status, resultado, pr_url, commit_sha)`** (só pelo conector): fecha com
+  `concluida`, `recusada` ou `erro`; `erro` com tentativas sobrando volta a `pendente`.
+
+### 3. Ordem, dependências e sub-tasks
+
+- ✅ **`ordem`** = posição na fila; **`task_dependente`** = ids das tasks de que ela depende. Uma task
+  **só inicia quando todas as dependentes estão concluídas**. O banco recusa dependência
+  inexistente ou da própria task e junta ids repetidos.
+- ✅ **Tarefa grande = várias sub-tasks pequenas**, feitas **uma por vez e em ordem**: título
+  `#NN.MM — …`, cada sub-task depende da anterior (cadeia) e a tarefa-mãe depende de todas.
+  Exemplo: a #25 tem 22 sub-tasks (ids 19 a 40, `tasks/fila/TASK-0019.md` a `TASK-0040.md`).
+- ✅ **Etapa do usuário** (aprovação, aceite, teste): sub-task com título `👤 …`, **desligada**
+  (`executar = false`); o professor marca concluída na página (**✅ Concluir**) e a fila segue.
+
+### 4. Toda task na tabela e no GitHub
+
+- ⛔ **Nenhuma task existe só num lado.** Toda tarefa do `tasks/TASKS.md` tem a linha dela na
+  tabela (mesmo `codigo`, `origem = 'repositorio'`, entra **desligada**) e toda linha criada na
+  página (ou sub-task) tem o arquivo **`tasks/fila/TASK-NNNN.md`** no GitHub.
+- ✅ **Em conflito:** título e instrução valem os do **GitHub** (`TASKS.md`); status, ON/OFF,
+  prioridade, ordem, dependências e resultado valem os da **tabela**; o estado do projeto continua
+  no `tasks/STATUS.md` (fonte única), atualizado junto.
+- ✅ **Script único** `scripts/tasks/sincronizar_tasks.py` (o banco só pelo conector; nenhuma chave
+  no repositório): `consulta` (SQL das linhas em JSON, datas de Brasília), `importar` (SQL do
+  `TASKS.md` → tabela; md5 calculado pelo banco; fecha as que saíram do `TASKS.md`, como
+  `cancelada` quando o `STATUS.md` diz "⛔ Cancelada"), `exportar <linhas.json>` (escreve
+  `tasks/fila/` e o SQL do md5) e `conferir <linhas.json>` (lista diferenças; erro se houver).
+- ✅ **Quando sincronizar:** em toda execução da rotina; **ao criar, concluir ou cancelar tarefa
+  do `TASKS.md` em qualquer sessão (no mesmo commit)**; ao criar ou fechar task ou sub-task.
+- ✅ Ao copiar dados do banco para um arquivo (JSON), conferir pelo md5 que a cópia é igual ao banco.
+
+### 5. Passo a passo de cada execução da rotina
+
+1. ✅ Anotar a hora de início (Brasília) e a frente `nuvem · <branch da sessão>`.
+2. ✅ Inicialização deste `CLAUDE.md` (trazer a `main`, `STATUS.md`, `RECADOS.md`, regras globais,
+   seeds).
+3. ✅ **Sincronizar** (`consulta` → JSON → `conferir`; havendo diferença, `importar`/`exportar` e
+   commit + push + PR + merge só desses arquivos); também as **regras**
+   (`scripts/regras/sincronizar_regras.py`, seção "🗄️ REGRAS NO BANCO").
+4. ✅ `select * from pegar_proxima_task('<frente>');`
+5. ✅ **Nada veio:** encerrar sem alterar mais nada; log `sem_tarefa`.
+6. ✅ **Veio uma task:** ler a `instrucao` e **decidir**:
+   - **Executar** quando cabe nestas regras e está clara: trabalho na branch da sessão, arquivos de
+     status, commit + push + PR + merge; `finalizar_task(id, 'concluida', '<o que foi feito>',
+     '<PR>', '<sha>')`.
+   - **Recusar** quando fere uma regra (push na `main`, segredo, gabarito publicado, afrouxar RLS,
+     apagar dados, mexer em tarefa reservada por outra frente…), é ambígua ou precisa de decisão do
+     usuário: `finalizar_task(id, 'recusada', '<motivo>')`, sem mexer no repositório.
+   - **Erro** técnico: `finalizar_task(id, 'erro', '<mensagem>')`.
+   - Grande demais para uma execução: entregar a parte que fechar e `recusada` com o que falta,
+     para o professor dividir em sub-tasks.
+7. ✅ `exportar` de novo (o arquivo da task muda com o status) e commit + push + PR + merge.
+8. ✅ Gravar o log e apagar a branch do PR juntado.
+- ⛔ Nunca marcar `concluida` o que não foi feito; **nunca push direto na `main`** nem push forçado.
+
+### 6. Página `tasks.html` e log
+
+- ✅ **`tasks.html`** (raiz; menu **TASKS**, só o Professor Administrador): lista com código, título,
+  ordem/prioridade, **Depende de** (⛓️ = ainda não concluída), ON/OFF, status, resultado e GitHub
+  (arquivo, "⚠️ não sincronizado", PR); botões 🔍 Ver, ✏️ Editar (título e instrução só nas tasks
+  da página; as do `TASKS.md` se editam no GitHub), ✅ Concluir, 🚫 Cancelar, 🔁 Reabrir e 🗑️
+  Excluir (lógico). Código: `assets/js/tasks-repositorio.js`, `tasks-pagina.js`, `tasks-modais.js`
+  e `assets/css/tasks.css`.
+- ✅ **Log** de toda execução em `agendamento_tarefa_logs` (status `concluida`, `recusada`, `erro`
+  ou `sem_tarefa`; `aula` = código da task; status da task antes e depois; texto completo das
+  instruções); o id do log vai para `tasks.log_id`.
+- ⛔ Nada de senha, chave, gabarito nem dado de aluno nas tasks, nos arquivos de `tasks/fila/`, nos
+  recados, no `STATUS.md` ou no log.
+
+---
+
+## 🗄️ REGRAS NO BANCO — CÓPIA DO REPOSITÓRIO EM `regra_documento` E `regra_secao`
+
+Registrada em 2026-10-11 06:24:07 a pedido do usuário (tarefa #26-55a91111-02ce-4cb1; plano
+[docs/regras-no-banco.md](docs/regras-no-banco.md)).
+
+- ✅ **Origem = repositório:** este `CLAUDE.md` e os arquivos de regras citados nele (os mesmos do
+  menu Regras: `docs/regras/*.md`, `docs/HISTORICO-REGRAS.md`, `docs/REGRAS-ATIVIDADE-PRATICA.md`)
+  são **copiados** para o Supabase: **`regra_documento`** (arquivo inteiro, versão das regras, md5 e
+  commit) e **`regra_secao`** (uma linha por seção `##` e `###`, com a seção pai; o texto antes do
+  primeiro `##` é a seção de nível 1). ⛔ Nunca editar as regras no banco: muda o `.md`, depois copia.
+- ✅ **Script único:** `scripts/regras/sincronizar_regras.py` — `importar <pasta>` (um SQL por
+  arquivo, rodado pelo conector, um por vez), `consulta` (md5 do banco em JSON) e `conferir
+  <json>` (sai com erro se algum md5 do banco não bater com o do repositório). SQL das tabelas em
+  `database/2026-10-11-regras-no-banco.sql`.
+- ✅ **Quando sincronizar:** em toda tarefa que mudar a "Versão das regras" (depois do merge na
+  `main`, para o commit gravado ser o da `main`) e em toda execução da rotina agendada (passo 3 de
+  `docs/regras/tarefas-agendadas.md`). Seção que some fica `ativo = false` (nada é apagado).
+- ✅ Leitura só do Professor Administrador (RLS); gravação só pelo conector. Sem conector (local ou
+  outra IA): avisar o usuário que a cópia ficou para a próxima sessão com banco.
+- ⛔ Os arquivos de regras são publicados: nada de senha, chave, gabarito nem dado de aluno neles.
+
+---
+
+## 🚨 INICIALIZAÇÃO DE CADA CHAT E DE CADA TAREFA — LER O `STATUS.md`
 
 ⚠️ **DE SUMA IMPORTÂNCIA — SEM EXCEÇÃO.** Alterada em 2026-10-07 (antes mandava ler o `TASKS.md`).
 
 **ANTES DE RESPONDER QUALQUER COISA**, você DEVE:
 
-1. ✅ **LER `C:\fontes\aulasenai\tasks\STATUS.md`** — primeiro o **"Próximo passo"** e a tabela
-   **"⏳ Aguardando o usuário"**
-2. ✅ **LER `C:\fontes\aulasenai\SESSOES-CLAUDE\STATUS-SESSOES.md`** (2026-10-08, pedido do
-   usuário) — **sempre antes de iniciar uma nova tarefa**, não só no início do chat: para cada
-   sessão `PENDENTE`, ler o log dela (próximo passo, decisões e pendências) para não repetir nem
-   contradizer o que outra licença/sessão já fez; sessão `CONCLUÍDO` passa antes pela limpeza da
-   regra "REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/`"
-3. ✅ **Verificar** se há item `🔄 Em progresso` ou `⬜ Pendente` de tarefa aprovada e conferir o que
+0. ✅ **Trazer a `main`** (`git fetch origin main` + merge na branch; no local, o usuário faz o pull)
+   — regra "CONVERSA ENTRE SESSÕES E LICENÇAS"
+1. ✅ **LER `C:\fontes\aulasenai\tasks\STATUS.md`** — primeiro a linha da sua frente em
+   **"🧭 Frentes de trabalho"**, a coluna **"Em uso por"** do "📌 Tarefas" e a tabela
+   **"⏳ Aguardando o usuário"**; depois o arquivo da etapa em `tasks/etapas/` — e o
+   **`tasks/RECADOS.md`** (recados abertos para a sua frente ou para `todas`)
+2. ✅ **Verificar** se há item `🔄 Em progresso` ou `⬜ Pendente` de tarefa aprovada e conferir o que
    já foi feito nos arquivos/commits
    - ☁️ **Na nuvem:** ler também `.claude/regras-globais/CLAUDE-GLOBAL.md` e
      `CLAUDE-DOCS-BEFORE-EVERY-TASK.md` (regras globais; ver "REGRAS E SKILLS GLOBAIS NO PROJETO")
-4. ✅ **Prosseguir de onde parou** (sem refazer itens `✅` nem pular itens)
-5. ✅ **Só então responder** ao usuário (ou iniciar a tarefa)
+2.5. 🌱 **Concluir todos os seeds** (2026-10-09, pedido do usuário): ler o
+   `database/SEEDS-APLICADOS.md` e, antes de começar ou continuar qualquer tarefa, deixar todos os
+   seeds em **CONCLUÍDO** (regra "🌱 REGRA — SEEDS DO BANCO")
+3. ✅ **Prosseguir de onde parou** (sem refazer itens `✅` nem pular itens)
+4. ✅ **Só então responder** ao usuário (ou iniciar a tarefa)
 
 **Por quê?** O `STATUS.md` é a fonte única do estado do trabalho (regra global "`STATUS.md` EM TODA
 TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
@@ -417,6 +706,10 @@ TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
   commit e plano ficam registrados no `STATUS.md`). Perguntas sem trabalho não entram. Caminho
   (2026-10-09): **`C:\fontes\aulasenai\tasks\TASKS.md`** (na nuvem, `tasks/TASKS.md` da raiz do
   repositório); o `STATUS.md` fica na mesma pasta `tasks/`.
+- ✅ **Tarefa do `TASKS.md` também na tabela `tasks`** (2026-10-11 06:09:22, pedido do usuário): tarefa nova,
+  alterada, concluída ou cancelada no `TASKS.md` é sincronizada na tabela `tasks` no mesmo commit
+  (`scripts/tasks/sincronizar_tasks.py importar` pelo conector); tarefa grande ganha as sub-tasks
+  em cadeia na tabela (seção "⏰ TAREFAS AGENDADAS E FILA `tasks`").
 - ✅ **Id de tarefa nova = número + UUID** (2026-10-09 12:36:43, pedido do usuário, para duas
   licenças/branches não criarem a mesma "#17"): toda tarefa nova do `TASKS.md` recebe o próximo
   número **seguido de um UUID gerado na hora**, ex.: **`#19-3f9a2c7e-8b1d-4e2a`** (número + os 3
@@ -430,79 +723,7 @@ TAREFA"). Sem ler, você pode executar tarefas fora de ordem ou duplicadas.
     fica numa linha da seção **"📌 Tarefas do `TASKS.md`"** do `STATUS.md` (tarefa nova no
     `TASKS.md` = linha nova lá, no mesmo commit; tarefa concluída = linha marcada ✅ e bloco
     removido do `TASKS.md`).
-  - **Logs de `SESSOES-CLAUDE/`:** citam a **etapa/item do `STATUS.md`** e o próximo passo; não
-    mantêm uma lista própria de pendências diferente da do `STATUS.md`.
   - **Em conflito, o `STATUS.md` vence:** corrigir o outro arquivo na mesma tarefa.
-
----
-
-## 🗒️ REGRA CRÍTICA — REGISTRO DA SESSÃO EM `SESSOES-CLAUDE/` (POR DATA E HORA, STATUS PENDENTE)
-
-Registrada em 2026-10-08 a pedido do usuário. Vale para **toda sessão** (local ou nuvem), junto com
-o `STATUS.md`.
-
-**Por quê:** o usuário usa **2 licenças do Claude Code ao mesmo tempo** e, ao trocar de uma para a
-outra, o contexto da conversa se perde. O log da sessão tem de **bastar sozinho** para a outra
-licença (ou outra IA) continuar exatamente de onde parou, sem precisar da conversa anterior.
-
-- ✅ **Grava-se o MÍNIMO NECESSÁRIO PARA CONTINUAR em outra sessão** (2026-10-08, pedido do
-  usuário) — **não** é uma cópia completa da conversa. Só dados detalhados que permitam retomar:
-  o que está pronto, decisões do usuário (e por quê), arquivos e caminhos envolvidos, commits,
-  bloqueios, pendências e o **próximo passo exato**. Nada de transcrever perguntas, respostas,
-  análises já concluídas ou textos que já estão nos arquivos (citar o caminho em vez de copiar).
-- ✅ Arquivo próprio em `SESSOES-CLAUDE/SESSAO-AAAA-MM-DD-HHMM-ASSUNTO-CURTO.md` (data e hora do
-  início da sessão; assunto em MAIÚSCULAS, sem acentos, com hífen).
-- ✅ **Separado por data e hora:** uma seção curta `## AAAA-MM-DD HH:MM — <pedido> · <status>` por
-  pedido do usuário que ainda importa para continuar, com o resultado, as decisões e os commits.
-- ✅ **Cabeçalho do arquivo:** `**Status:** PENDENTE`, ambiente, modelo, branch, links para o plano
-  (`docs/`), o `STATUS.md` (etapa) e o entregável.
-- ✅ **Status = `PENDENTE`** enquanto houver qualquer item pendente ou sem aceite do usuário.
-- ⛔ **`CONCLUÍDO` só existe quando a tarefa COMPLETA já foi finalizada** (2026-10-08, pedido do
-  usuário). Antes de marcar, **validar SEMPRE tudo o que foi pedido**: listar no log a tabela
-  **"✅ Validação dos pedidos"** (`Pedido do usuário | Feito? | Como foi conferido | Aceite`), com
-  **todos** os pedidos da sessão, e conferir cada um nos arquivos, nos commits e no `STATUS.md`
-  (não pela memória). Se faltar qualquer pedido, etapa do plano, commit ou aceite do usuário, o
-  status continua **`PENDENTE`** — nunca marcar `CONCLUÍDO` por tarefa parcial. No fim do arquivo, a tabela **"⏳ Pendências"**
-  (o que falta e quem faz), **com a etapa/item do `STATUS.md`** de cada linha — é por ela que a
-  próxima sessão (ou outra IA) retoma; se divergir do `STATUS.md`, o `STATUS.md` vence.
-- ✅ **Índice:** acrescentar no topo de `SESSOES-CLAUDE/SESSAO-CLAUDE.md` uma seção curta da sessão
-  (ambiente, modelo, commits, pedido, status e link para o arquivo da sessão).
-- ✅ **O log da sessão só é gravado quando o usuário responde SIM** à pergunta do fim da tarefa
-  (2026-10-08, decisão do usuário) — não há gravação automática a cada pedido nem ao parar. O
-  `STATUS.md` continua **sempre** atualizado (fonte única). O commit do log entra no commit da
-  tarefa (ou num commit próprio, se a sessão não mudou outros arquivos).
-- ✅ **Pergunta ao final de cada tarefa (2026-10-08, pedido do usuário):** depois de
-  `TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?`, perguntar **"Deseja atualizar o log da sessão
-  atual?"**. Se o usuário responder **SIM**:
-  1. gravar em `SESSOES-CLAUDE/` o mínimo necessário para continuar (arquivo da sessão, com data
-     e hora de cada pedido e **tudo o que falta fazer**, e a linha no índice `SESSAO-CLAUDE.md`),
-     seguindo esta regra;
-  2. definir o status: **`CONCLUÍDO`** só se a validação de **todos** os pedidos estiver completa
-     (tabela "✅ Validação dos pedidos" toda conferida e "⏳ Pendências" vazia); senão **`PENDENTE`**;
-  3. fazer o commit do log (regra "COMMIT POR TAREFA");
-  4. **ao final, limpar o contexto com `/clear`**: o `/clear` é um comando do Claude Code que só o
-     usuário digita (o Claude não consegue executá-lo) — então a última mensagem é
-     `Log da sessão gravado. Digite /clear para limpar o contexto da sessão atual.`
-  Se responder **NÃO**, não gravar e seguir normalmente.
-- ✅ **Status das sessões (2026-10-08, pedido do usuário):** `SESSOES-CLAUDE/STATUS-SESSOES.md`
-  tem uma linha por sessão (início, ambiente, assunto, arquivo, status, atualizada em, próximo
-  passo). Atualizar a linha sempre que o log da sessão for gravado. **Ler este arquivo no início de
-  cada sessão**, junto com o `STATUS.md`.
-- ✅ **Sessão com status `CONCLUÍDO` → aproveitar e remover** (2026-10-08, pedido do usuário). Logo
-  depois de marcar uma sessão como `CONCLUÍDO` (ou ao encontrar uma assim no início da sessão):
-  1. **ler** o arquivo da sessão (o que foi feito, decisões e lições);
-  2. **atualizar o `CLAUDE.md`** (ou o arquivo de `docs/regras/` do assunto) **se necessário**: só
-     decisões e lições que valem para o futuro e ainda não estão nas regras — com nova versão e
-     linha no histórico (regra do visualizador);
-  3. conferir que nada pendente se perde (o que sobrar vai para o `STATUS.md` ou o `TASKS.md`);
-  4. **remover os dados que não serão mais usados:** apagar o arquivo da sessão e a seção dela no
-     índice `SESSAO-CLAUDE.md` (o Git guarda o histórico);
-  5. no `STATUS-SESSOES.md`, trocar o status para `🗑️ REMOVIDA` com a data e o que foi aproveitado
-     (ex.: "regra X no CLAUDE.md" ou "nada a aproveitar");
-  6. fazer o commit (regra "COMMIT POR TAREFA").
-- ⛔ A pasta é versionada e publicada: **nunca** gravar senhas, chaves, gabaritos, respostas certas
-  nem dados pessoais de alunos.
-- ✅ Exemplo: `SESSOES-CLAUDE/SESSAO-2026-10-07-2110-COMUNICACAO-RIO-DO-SUL.md`.
 
 ---
 
@@ -520,7 +741,7 @@ Registrada em 2026-10-08 a pedido do usuário (ele usa 2 licenças do Claude Cod
   versionado para outra licença/máquina conferir ou restaurar.
 - ✅ **Sessão na NUVEM (2026-10-08, pedido do usuário):** no Claude Code na web/remoto o
   `C:\Users\gelva\.claude\CLAUDE.md` da máquina do usuário **não existe**. Por isso, no início de
-  toda sessão em nuvem (junto com o `STATUS.md` e o `STATUS-SESSOES.md`), **ler e aplicar** as
+  toda sessão em nuvem (junto com o `STATUS.md`), **ler e aplicar** as
   regras globais da cópia do projeto: `.claude/regras-globais/CLAUDE-GLOBAL.md` e
   `.claude/regras-globais/CLAUDE-DOCS-BEFORE-EVERY-TASK.md`, como se fossem o `CLAUDE.md` global.
   A ordem de precedência continua: **`CLAUDE.md` do projeto** (e `docs/regras/`) vence o global.
@@ -824,7 +1045,7 @@ O que **não pode ir ao site** fica no **`.vercelignore`**:
 
 | Padrão no `.vercelignore` | Por quê |
 |---|---|
-| `*[Gg][Aa][Bb][Aa][Rr][Ii][Tt][Oo]*`, `RESOLUCAO/`, `PROVA-OBJETIVA-*.md` | Respostas certas (só o professor) |
+| `*[Gg][Aa][Bb][Aa][Rr][Ii][Tt][Oo]*`, `RESOLUCAO/`, `*QUESTOES.md`, `PROVA-OBJETIVA-*.md`, `database/*-seed-atividades.sql`, `docs/atividade-raciocinio-logico.md` | Respostas certas (só o professor) |
 | `*.pdf`, `*.png`, `*.docx`, `*.pptx`, `*.xlsx`, `*.jpg`, `*.jpeg` | Binários; exceção: `!MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/AULAS/*.pdf` (slides publicados) |
 | `LISTAPRESENCA*.js`, `LISTA-PRESENCA*.js`, `LISTA-ALUNOS/` | Dados pessoais de alunos (LGPD); a lista única `scripts/LISTAPRESENCA.js` é versionada (decisão do usuário, 2026-10-09) |
 
@@ -854,6 +1075,7 @@ Registrada em 2026-09-28.
   se a mudança apagar ou reorganizar dados, **copiar antes** para uma tabela de backup
   (ex.: `usuario_legado_20260930`, com RLS ligado e sem políticas). Depois de aplicar, **conferir o
   resultado** com consultas de leitura. Sem pedido do usuário, não alterar o banco.
+- ✅ **Seeds de atividades:** regra única na seção "🌱 REGRA — SEEDS DO BANCO" logo abaixo.
 - ✅ **Estrutura dos cursos só o professor escreve** (2026-09-30,
   `database/2026-09-30-estrutura-curso-so-professor-escreve.sql`): `aulas`, `materia`, `curso`,
   `cursomateria` e `unidade` aceitam insert/update/delete só de usuário logado com perfil PROFESSOR;
@@ -861,6 +1083,62 @@ Registrada em 2026-09-28.
   carregados por nenhuma página (órfãos).
 - ✅ **Tabela nova ou alterada = RLS ligado** e políticas explícitas; nunca deixar `anon` com
   acesso de escrita. Dados sensíveis (`senha_hash`, gabarito) não ficam legíveis pela API pública.
+
+## 🌱 REGRA — SEEDS DO BANCO (STATUS EM `database/SEEDS-APLICADOS.md`)
+
+Registrada em 2026-10-09 19:19:18 e consolidada em 2026-10-09 19:38:38 a pedido do usuário: **esta é a única
+regra de seeds do projeto** (os outros arquivos só apontam para cá). O registro dos seeds é
+**[`database/SEEDS-APLICADOS.md`](database/SEEDS-APLICADOS.md)**: uma linha por arquivo
+`database/*-seed-atividades.sql`, com o status, a data e hora da conferência e a observação.
+
+| Status | Quando usar |
+|---|---|
+| **PENDENTE** | Gerado (ou não encontrado no banco); ainda não rodado no Supabase |
+| **APLICADO** | Rodado no Supabase, mas ainda não conferido ou a conferência não bate (ex.: substituído por um seed mais novo, aplicado só em parte) |
+| **CONCLUÍDO** | Rodado **e conferido pelo md5**: a atividade de cada página está no banco com o mesmo conteúdo do arquivo |
+| **SUBSTITUÍDO** | **Só por decisão do usuário:** o seed foi trocado por outro (já CONCLUÍDO) ou a página dele foi substituída por outra no banco, e o usuário decidiu **não aplicá-lo**; a observação diz por qual foi substituído. Conta como resolvido (não trava tarefa) e não é conferido de novo |
+
+- ✅ **Seed novo entra no registro como PENDENTE** no mesmo commit em que é gerado.
+- ✅ **Aplicar só com pedido do usuário** (pelo conector do Supabase ou o próprio usuário no SQL
+  Editor), depois de conferir o banco real. Pelo conector, aplicar **em partes pequenas** (um
+  comando por atividade, sem `DO` nem `delete`: `insert ... returning` com a contagem), porque os
+  blocos grandes com `delete` voltam "cancelado". A autorização de 2026-10-03 ("aplicar o seed ao
+  finalizar cada matéria") vale só para as matérias do plano `docs/gerar-atividades-50-questoes-todas-materias.md`.
+- ✅ **Conferência pelo md5**, por página e na ordem de item e tópico: objetivas
+  `md5(string_agg(item||'|'||titulo||'|'||letra, E'\n' order by item))` da `gabarito`; discursivas
+  `md5(string_agg(item||'|'||topico||'|'||enunciado||'|'||resposta_esperada||'|'||criterios, E'\n'
+  order by item, topico))` da `topico_discursivo` — comparado com o mesmo texto montado do arquivo.
+  Bateu → **CONCLUÍDO** (com a data e hora); não bateu → continua **APLICADO** com o motivo.
+- ⛔ **Todos os seeds CONCLUÍDO antes de qualquer tarefa** (2026-10-09 20:59:55, pedido do usuário): antes de
+  **começar uma tarefa nova ou continuar uma tarefa** (inclusive ao retomar a sessão), ler o
+  registro e **concluir todos os seeds**: aplicar os **PENDENTE** pelo conector (em partes, como
+  acima), conferir pelo md5 os **APLICADO** e marcar **CONCLUÍDO** os que baterem, gravando o
+  registro e fazendo commit (e push na nuvem) **antes** de seguir para a tarefa. Esta regra é a
+  autorização permanente do usuário para aplicar os seeds do registro (não precisa pedir de novo).
+  - ✅ Seed que **não pode** ser concluído sem decisão do usuário (matéria ou aula inexistente no
+    banco, página substituída por outra, conteúdo do arquivo diferente do banco por ter sido
+    trocado por um seed mais novo) fica com o status e o motivo no registro, entra em **"⏳
+    Aguardando o usuário"** do `STATUS.md` e é **perguntado** ao usuário; só ele não trava a tarefa.
+  - ⛔ Sem conector do Supabase (ou no ambiente local sem acesso ao banco): avisar o usuário quais
+    seeds faltam antes de começar a tarefa.
+- ⛔ **Usar SEMPRE os scripts do repositório** (2026-10-09, pedido do usuário; passo a passo em
+  [`scripts/seeds/README.md`](scripts/seeds/README.md)): `scripts/seeds/dividir_seed.py` (seed →
+  um lote por atividade + `esperado.json` + `conferir-md5.sql`), `scripts/seeds/comparar_md5.py`
+  (banco × esperado) e `scripts/seeds/registrar_seed.py` (status e resumo no registro). Para os
+  status das matérias, `scripts/status-materias/`; para as aulas de Banco de Dados,
+  `scripts/banco-de-dados/`. Não montar lote, md5 nem registro à mão; se um script não servir,
+  corrigir o script na mesma tarefa.
+- ✅ **Uma aula por vez** (pedido do usuário): aplicou os seeds de uma aula (objetiva + prática) →
+  conferir pelo md5 → gravar o status (registro, `STATUS-AULAS.md`, `STATUS-ATIVIDADES.md`, item da
+  etapa) → commit (e push na nuvem) → só então a próxima aula.
+- ✅ **Ao iniciar a análise dos seeds** (2026-10-09 19:35:54): conferir pelo md5 **só os
+  seeds APLICADO**. ⛔ **Seed CONCLUÍDO não é verificado de novo**; só volta a ser conferido se o
+  arquivo do seed mudar (aí volta a **PENDENTE**).
+- ✅ **Toda tarefa que gera seed tem o item "Aplicar os seeds no Supabase"** no arquivo da etapa
+  (`tasks/etapas/`), com o mesmo status do registro (`⬜ PENDENTE` → `🔄 APLICADO` → `✅ CONCLUÍDO`);
+  a coluna **Banco** do `STATUS-ATIVIDADES.md` (e do `STATUS-AULAS.md`) da matéria acompanha.
+- ⛔ O registro não leva gabarito, padrão de resposta, senha nem dado de aluno (só nomes de arquivo,
+  contagens, status e md5).
 
 ## ⛔ REGRA — PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM (BRANCH PRÓPRIA + NOVO PR)
 
@@ -881,7 +1159,8 @@ usuário: na nuvem, **sempre um novo pull request**, para evitar sobrescrever al
 
 ✅ **O Claude SEMPRE faz o push numa branch própria e abre um NOVO pull request para a `main`.**
 No contêiner da nuvem o commit se perde quando a sessão acaba, por isso o push é obrigatório; o
-pull request garante que **nada na `main` é sobrescrito** sem o usuário revisar e fazer o merge.
+pull request deixa registrado o que entrou na `main`; **desde 2026-10-09 22:17 o próprio Claude faz o
+merge** (ver o item "Claude faz o merge" abaixo).
 
 ✅ **Push sempre permitido e automático na nuvem** (2026-10-08 11:10, pedido do usuário): ao final
 de **toda** tarefa que mudar arquivos, o Claude faz commit + push + PR **sem esperar pedido nem
@@ -891,8 +1170,27 @@ confirmação** do usuário — não perguntar "posso fazer push?". Tarefa que n
 - ✅ Ao concluir cada tarefa: commit (regra "COMMIT POR TAREFA"), **`git push -u origin <branch>`**
   (a branch de trabalho da sessão, nunca a `main`) e **abrir um novo pull request** da branch para
   a `main`, com título e descrição do que mudou.
-- ⛔ **Nunca push direto na `main`** (`git push origin HEAD:main` está proibido) e o Claude
-  **não faz o merge** do pull request: quem revisa e junta na `main` é o usuário.
+- ⛔ **Nunca push direto na `main`** (`git push origin HEAD:main` está proibido): a mudança entra
+  na `main` sempre pelo pull request.
+- ✅ **Claude faz o merge do PR** (2026-10-09 22:17:26, pedido do usuário — antes o merge era só do
+  usuário): depois do push e de abrir (ou atualizar) o PR, o próprio Claude **junta o PR na `main`**
+  (merge commit), sem esperar o usuário. Antes de juntar: `git fetch origin main`, merge da `main` na
+  branch e conferência do `git diff --cached --name-only` contra "O QUE NUNCA É PUBLICADO".
+- ✅ **Conflito de merge = o Claude resolve** (2026-10-09 22:17:26, pedido do usuário): se o PR
+  tiver conflito com a `main`, o Claude traz a `main` para a branch (`git merge origin/main`, nunca
+  rebase nem push forçado), resolve cada conflito mantendo as mudanças dos dois lados (registros e
+  tabelas de status: todas as linhas, em ordem; arquivo gerado por script: regerar — regra 6 de
+  "CONVERSA ENTRE SESSÕES"), confere que não sobrou marca `<<<<<<<`, faz commit + push e só então
+  junta o PR. Só pergunta ao usuário quando os dois lados mudaram a mesma lógica e escolher um
+  perderia comportamento. Vale também para PRs de outras sessões/licenças quando o usuário pedir.
+- ✅ **PR juntado = branch apagada** (2026-10-09 22:19:14, pedido do usuário): logo depois de juntar um PR
+  na `main`, o Claude **exclui a branch dele no GitHub** (`git push origin --delete <branch>`); fica só
+  o histórico (os commits na `main` e a página do PR). Branch de PR juntado que ainda existir também
+  é apagada. ⛔ Nunca apagar a `main`, branch de PR **aberto** nem branch sem PR que não foi juntada.
+  Na tarefa seguinte, a branch da sessão é recriada a partir da `main` atualizada.
+- ✅ **A cada merge, ler os recados** (2026-10-09 22:21:17, pedido do usuário): depois de trazer a `main` para a
+  branch ou de juntar um PR, ler o `tasks/RECADOS.md` (regra 4 de "CONVERSA ENTRE SESSÕES E
+  LICENÇAS") e cumprir os recados abertos para a sua frente ou para `todas`.
 - ✅ **Sempre um PR novo:** se o PR da branch já foi juntado (merged) ou fechado, a tarefa seguinte
   recomeça a branch a partir da `main` atualizada e abre **outro** PR — nunca reaproveitar PR
   juntado. Enquanto o PR da branch ainda estiver aberto, os commits novos da mesma sessão entram
@@ -910,6 +1208,13 @@ confirmação** do usuário — não perguntar "posso fazer push?". Tarefa que n
 Registrada em 2026-10-09 11:03:21 a pedido do usuário. **Vale só na nuvem** (Claude Code na web /
 sessão remota); no ambiente **local** nada muda: só o commit, o push continua com o usuário.
 
+- ✅ **Cada arquivo criado na nuvem = commit + push na hora** (2026-10-09 14:58:46, pedido do usuário): ao
+  **criar** qualquer arquivo numa sessão de nuvem (aula, fonte de atividade, página gerada, plano,
+  status), fazer **logo em seguida** o `git commit` dele e o `git push -u origin <branch>`, sem
+  esperar o fim da tarefa nem juntar vários arquivos — assim nada se perde se a sessão parar ou o
+  contêiner for reciclado. Vale também para arquivo parcial (commit marcado como `wip(...)` e o
+  `STATUS.md` dizendo o que falta). Rascunhos de trabalho no scratchpad (fora do repositório) não
+  entram nesta regra. Continuam valendo "O QUE NUNCA É PUBLICADO" e o `git diff --cached --name-only`.
 - ✅ **Todo commit feito na nuvem é enviado na hora:** depois de **cada** `git commit`, fazer
   **`git push -u origin <branch>`** (a branch da sessão, nunca a `main`) — sem esperar o fim da
   tarefa e sem perguntar ao usuário. Nenhum commit fica só no contêiner.
@@ -920,7 +1225,9 @@ sessão remota); no ambiente **local** nada muda: só o commit, o push continua 
   atualizada (regra "Sempre um PR novo" da seção do push) e abrir **outro** PR.
 - ✅ Antes do push: `git fetch origin main` (se a `main` andou, merge nela e conferir de novo) e
   `git diff --cached --name-only` contra a regra "O QUE NUNCA É PUBLICADO".
-- ⛔ Nunca push na `main`, nunca push forçado e o Claude **nunca faz o merge** do PR (é do usuário).
+- ⛔ Nunca push direto na `main` e nunca push forçado.
+- ✅ **Depois do push, o Claude junta o PR na `main`** e, se houver conflito de merge, resolve antes
+  (ver "Claude faz o merge do PR" e "Conflito de merge = o Claude resolve" na seção do push).
 - ✅ Na resposta ao usuário, citar o link do PR criado ou atualizado.
 
 ## 💾 REGRA — COMMIT POR TAREFA (SEMPRE)
@@ -1002,17 +1309,26 @@ Registrada em 2026-10-09 00:33:19 a pedido do usuário. Plano:
 Registrada em 2026-10-09 a pedido do usuário. **Regra completa (leitura obrigatória antes de criar ou
 alterar qualquer atividade prática):** [docs/REGRAS-ATIVIDADE-PRATICA.md](docs/REGRAS-ATIVIDADE-PRATICA.md).
 
+- ⚠️ **Regra nova (2026-10-11 06:01:03):** questões só no banco, layout global e nenhum HTML na pasta
+  da matéria (seção "🗃️ REGRA — ATIVIDADES SÓ NO BANCO…"); o formato por aula abaixo vale até a
+  migração da tarefa #25-b3e29764-940b-4a82.
 - ✅ Toda **atividade prática de aula** (`ATIVIDADES/ATIVIDADE-PRATICA-AULA-NN.html`) segue a lógica da
   **Prova Prática id 82** (`PROVA-PRATICA-01.html` de Análise de Dados, turma de Salete): discursiva,
   resposta digitada em cada tópico e gravada no banco.
 - ✅ Tamanho: **10 questões × 3 tópicos (0,2 + 0,4 + 0,4)**, total 10 pontos; prova de várias aulas,
   20 questões × 3 tópicos.
+- ⚠️ **Ao gerar prova ou atividade prática** (2026-10-09 14:04:30, pedido do usuário): o
+  `docs/REGRAS-ATIVIDADE-PRATICA.md` define a **prática de uma aula como 10 questões × 3 tópicos**.
+  A **prova id 82 é de várias aulas** (20 questões) e deve ser usada **apenas como referência para
+  os recursos compartilhados** (Progresso da turma, Gráficos, Cálculo Nota, mínimo por aluno,
+  correção pela IA, botões do professor, Finalizar Atividade, gabarito por turma, PDF) — nunca
+  como modelo de tamanho, pontuação ou formato das questões da prática de uma aula.
 - ✅ Além das perguntas, tem **tudo** o que a id 82 tem: Progresso da turma, 📈 Gráficos, 🧮 Cálculo
   Nota, quantidade mínima por aluno, correção pela IA, botões Certa / Meia certa / Errada, Finalizar
   Atividade, prova corrigida para o aluno, liberação do gabarito por turma e PDF SENAI.
 - ✅ Gerada por `assets/gerador-avaliacao-discursiva/gerar_avaliacao_discursiva.py`, com os campos
   `Bloquear colar`, `Campo do tamanho da resposta`, `Botão gravar`, `Progresso para o professor` e
-  `Ocultar respostas após entrega` = `sim`; padrão de resposta no `-GABARITO.md` (fora do site).
+  `Ocultar respostas após entrega` = `sim`; padrão de resposta no `-GABARITO.md` (no Git, fora do site pelo `.vercelignore`).
 - ⛔ Sem empresa fictícia ("Você, como aluno consultor..."); sem padrão de resposta na página do aluno.
 
 ## 👨‍🏫 DADOS DO PROFESSOR — `docs/PROFESSOR-GELVAZIO-CAMARGO.md` (2026-10-09)

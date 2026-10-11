@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 16 — Consultas com Junções, Agrupamentos e Subconsultas (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="16" data-tema="Consultas com Junções, Agrupamentos e Subconsultas" data-total="50"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🔗 Aula 16: Consultas com Junções, Agrupamentos e Subconsultas</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-16-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C8 —</strong> Aplicar linguagem de manipulação de dados</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Por Que Juntar Tabelas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que, depois da normalização, é preciso juntar tabelas para mostrar o nome do curso de cada turma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque a turma guarda só o id_curso, e o nome fica na tabela curso.</li>
+                        <li><span class="letra">B)</span>Porque o PostgreSQL não aceita consultas em uma tabela só.</li>
+                        <li><span class="letra">C)</span>Porque o nome do curso fica repetido em todas as turmas.</li>
+                        <li><span class="letra">D)</span>Porque a tabela turma não tem chave primária.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Cláusula ON</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No INNER JOIN, para que serve a cláusula ON?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ordenar o resultado.</li>
+                        <li><span class="letra">B)</span>Dizer quais colunas ligam as duas tabelas, normalmente FK = PK.</li>
+                        <li><span class="letra">C)</span>Filtrar grupos depois do GROUP BY.</li>
+                        <li><span class="letra">D)</span>Limitar a quantidade de linhas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">INNER JOIN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual linha o INNER JOIN entre turma e curso traz no resultado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Todas as linhas de curso, mesmo sem turma.</li>
+                        <li><span class="letra">B)</span>Todas as linhas de turma, mesmo sem curso.</li>
+                        <li><span class="letra">C)</span>Só as linhas que têm par nas duas tabelas.</li>
+                        <li><span class="letra">D)</span>Todas as combinações possíveis entre as tabelas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">JOIN Sozinho</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Escrever apenas JOIN, sem a palavra INNER, no PostgreSQL:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Equivale a LEFT JOIN.</li>
+                        <li><span class="letra">B)</span>Gera erro de sintaxe.</li>
+                        <li><span class="letra">C)</span>Equivale a RIGHT JOIN.</li>
+                        <li><span class="letra">D)</span>Equivale a INNER JOIN.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Apelido de Tabela</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em FROM turma t JOIN curso c ON c.id_curso = t.id_curso, o que são t e c?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Novas tabelas criadas pela consulta.</li>
+                        <li><span class="letra">B)</span>Apelidos das tabelas, que encurtam a consulta e evitam ambiguidade.</li>
+                        <li><span class="letra">C)</span>Colunas calculadas.</li>
+                        <li><span class="letra">D)</span>Índices das tabelas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Ambiguidade de Coluna</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Turma e curso têm a coluna id_curso. O que acontece em SELECT id_curso FROM turma JOIN curso ON curso.id_curso = turma.id_curso;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Erro de coluna ambígua: é preciso indicar a tabela, como turma.id_curso.</li>
+                        <li><span class="letra">B)</span>O PostgreSQL escolhe a coluna de curso.</li>
+                        <li><span class="letra">C)</span>Volta zero linhas.</li>
+                        <li><span class="letra">D)</span>As duas colunas são somadas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Produto Cartesiano</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece quando se juntam duas tabelas sem condição de ligação (ou com a ligação errada)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O PostgreSQL liga as tabelas sozinho pela chave.</li>
+                        <li><span class="letra">B)</span>Volta só a primeira linha de cada tabela.</li>
+                        <li><span class="letra">C)</span>As tabelas são apagadas.</li>
+                        <li><span class="letra">D)</span>Produto cartesiano: cada linha de uma combinada com todas as da outra.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Três Tabelas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para listar aluno, turma e curso de cada matrícula, quantos JOIN são necessários a partir de matricula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um só, que liga tudo.</li>
+                        <li><span class="letra">B)</span>Nenhum: basta listar as tabelas no SELECT.</li>
+                        <li><span class="letra">C)</span>Três: aluno, turma e curso, cada um com o seu ON.</li>
+                        <li><span class="letra">D)</span>Dois, porque curso não se liga à turma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Tabela Ponte</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na consulta de alunos por turma, qual tabela faz a ponte entre aluno e turma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>curso.</li>
+                        <li><span class="letra">B)</span>parcela.</li>
+                        <li><span class="letra">C)</span>matricula, a tabela associativa.</li>
+                        <li><span class="letra">D)</span>aluno.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Ligação Correta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ligação correta entre matricula (m) e turma (t)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ON t.id_turma = m.id_turma</li>
+                        <li><span class="letra">B)</span>ON t.id_curso = m.id_matricula</li>
+                        <li><span class="letra">C)</span>ON t.codigo = m.situacao</li>
+                        <li><span class="letra">D)</span>ON t.id_turma = m.id_aluno</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">LEFT JOIN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o LEFT JOIN de curso (esquerda) com turma (direita) traz?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Só os cursos que têm turma.</li>
+                        <li><span class="letra">B)</span>Só as turmas sem curso.</li>
+                        <li><span class="letra">C)</span>Todas as turmas, com ou sem curso.</li>
+                        <li><span class="letra">D)</span>Todos os cursos, com ou sem turma; sem turma, as colunas de turma vêm NULL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Cursos sem Turma</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como completar FROM curso c LEFT JOIN turma t ON t.id_curso = c.id_curso para achar os cursos sem nenhuma turma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE t.id_turma = 0</li>
+                        <li><span class="letra">B)</span>WHERE t.id_turma IS NULL</li>
+                        <li><span class="letra">C)</span>WHERE c.id_curso IS NULL</li>
+                        <li><span class="letra">D)</span>HAVING t.id_turma = NULL</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">RIGHT JOIN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz o RIGHT JOIN?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Traz só as linhas sem par.</li>
+                        <li><span class="letra">B)</span>Junta as tabelas pela direita e apaga as da esquerda.</li>
+                        <li><span class="letra">C)</span>É o mesmo que INNER JOIN.</li>
+                        <li><span class="letra">D)</span>Traz todas as linhas da tabela da direita, com ou sem par.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Escolha do JOIN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A diretora pede &quot;todos os alunos, inclusive os que nunca se matricularam&quot;. Qual junção usar entre aluno e matricula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>aluno INNER JOIN matricula.</li>
+                        <li><span class="letra">B)</span>aluno LEFT JOIN matricula.</li>
+                        <li><span class="letra">C)</span>Nenhuma: basta SELECT * FROM matricula.</li>
+                        <li><span class="letra">D)</span>matricula INNER JOIN turma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">COUNT(*)</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que devolve SELECT count(*) FROM aluno;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A quantidade de linhas da tabela aluno.</li>
+                        <li><span class="letra">B)</span>A soma dos id_aluno.</li>
+                        <li><span class="letra">C)</span>O maior id_aluno.</li>
+                        <li><span class="letra">D)</span>Todas as colunas de aluno.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">COUNT(coluna)</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual a diferença entre count(*) e count(email) na tabela aluno?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não há diferença.</li>
+                        <li><span class="letra">B)</span>count(email) conta os e-mails repetidos duas vezes.</li>
+                        <li><span class="letra">C)</span>count(email) conta só os alunos com e-mail preenchido (não nulo).</li>
+                        <li><span class="letra">D)</span>count(*) ignora as linhas com NULL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">SUM</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual função soma o valor de todas as parcelas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SUM(valor)</li>
+                        <li><span class="letra">B)</span>COUNT(valor)</li>
+                        <li><span class="letra">C)</span>AVG(valor)</li>
+                        <li><span class="letra">D)</span>MAX(valor)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">AVG</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual consulta mostra a média do valor mensal dos cursos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SELECT sum(valor_mensal) FROM curso;</li>
+                        <li><span class="letra">B)</span>SELECT avg(valor_mensal) FROM curso;</li>
+                        <li><span class="letra">C)</span>SELECT valor_mensal FROM curso ORDER BY avg;</li>
+                        <li><span class="letra">D)</span>SELECT count(valor_mensal) FROM curso;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">MIN e MAX</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para saber a data da matrícula mais recente, usa-se:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>min(data_matricula)</li>
+                        <li><span class="letra">B)</span>count(data_matricula)</li>
+                        <li><span class="letra">C)</span>sum(data_matricula)</li>
+                        <li><span class="letra">D)</span>max(data_matricula)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Agregação e NULL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como as funções SUM e AVG tratam os valores NULL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Contam os NULL como zero na média.</li>
+                        <li><span class="letra">B)</span>Dão erro quando encontram NULL.</li>
+                        <li><span class="letra">C)</span>Ignoram os NULL no cálculo.</li>
+                        <li><span class="letra">D)</span>Trocam o NULL pelo maior valor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">GROUP BY</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve o GROUP BY?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ordenar o resultado.</li>
+                        <li><span class="letra">B)</span>Juntar as linhas com o mesmo valor e calcular a agregação por grupo.</li>
+                        <li><span class="letra">C)</span>Ligar duas tabelas.</li>
+                        <li><span class="letra">D)</span>Remover colunas repetidas da tabela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Regra do GROUP BY</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na consulta SELECT c.nome, count(*) FROM ... GROUP BY ?, o que deve ir no GROUP BY?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>count(*).</li>
+                        <li><span class="letra">B)</span>Nada: o GROUP BY é opcional nesse caso.</li>
+                        <li><span class="letra">C)</span>c.nome, porque toda coluna sem agregação no SELECT precisa estar no GROUP BY.</li>
+                        <li><span class="letra">D)</span>Todas as colunas da tabela curso, sempre.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Erro do GROUP BY</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O erro &quot;must appear in the GROUP BY clause&quot; indica que:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Há coluna no SELECT sem agregação que não está no GROUP BY.</li>
+                        <li><span class="letra">B)</span>A tabela não existe.</li>
+                        <li><span class="letra">C)</span>Falta o ON no JOIN.</li>
+                        <li><span class="letra">D)</span>O HAVING está antes do WHERE.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Matrículas por Curso</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual consulta conta as matrículas de cada curso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SELECT count(*) FROM curso;</li>
+                        <li><span class="letra">B)</span>SELECT nome FROM curso ORDER BY matriculas;</li>
+                        <li><span class="letra">C)</span>SELECT DISTINCT id_turma FROM matricula;</li>
+                        <li><span class="letra">D)</span>JOIN de curso, turma e matricula com count(m.id_matricula) e GROUP BY c.nome.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">HAVING</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve o HAVING?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Filtrar linhas antes do agrupamento.</li>
+                        <li><span class="letra">B)</span>Ligar tabelas.</li>
+                        <li><span class="letra">C)</span>Dar apelidos às colunas.</li>
+                        <li><span class="letra">D)</span>Filtrar os grupos depois do GROUP BY, aceitando funções de agregação.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">WHERE × HAVING</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual a diferença entre WHERE e HAVING?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE filtra linhas antes de agrupar; HAVING filtra grupos depois.</li>
+                        <li><span class="letra">B)</span>São iguais e podem ser trocados.</li>
+                        <li><span class="letra">C)</span>HAVING filtra linhas e WHERE filtra grupos.</li>
+                        <li><span class="letra">D)</span>WHERE só funciona com JOIN.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Agregação no WHERE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece com WHERE count(*) &gt; 3?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Funciona igual ao HAVING.</li>
+                        <li><span class="letra">B)</span>Devolve as linhas com id maior que 3.</li>
+                        <li><span class="letra">C)</span>Erro: função de agregação não é aceita no WHERE; usar HAVING.</li>
+                        <li><span class="letra">D)</span>Ignora a condição.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Turmas com Poucos Alunos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual trecho filtra as turmas com menos de 5 matrículas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE count(*) &lt; 5 GROUP BY t.codigo</li>
+                        <li><span class="letra">B)</span>GROUP BY t.codigo HAVING count(*) &lt; 5</li>
+                        <li><span class="letra">C)</span>ORDER BY count(*) &lt; 5</li>
+                        <li><span class="letra">D)</span>LIMIT 5</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Ordem de Execução</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a ordem lógica de execução das cláusulas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SELECT, FROM, WHERE, ORDER BY, GROUP BY.</li>
+                        <li><span class="letra">B)</span>FROM/JOIN, WHERE, GROUP BY, HAVING, SELECT, ORDER BY, LIMIT.</li>
+                        <li><span class="letra">C)</span>WHERE, SELECT, FROM, HAVING, GROUP BY.</li>
+                        <li><span class="letra">D)</span>ORDER BY, SELECT, FROM, WHERE, HAVING.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Apelido no ORDER BY</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em SELECT c.nome, count(*) AS matriculas ... GROUP BY c.nome ORDER BY matriculas DESC;, o ORDER BY:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dá erro, porque o apelido não existe.</li>
+                        <li><span class="letra">B)</span>Ordena pelo nome do curso.</li>
+                        <li><span class="letra">C)</span>Agrupa de novo pela contagem.</li>
+                        <li><span class="letra">D)</span>Ordena pelo apelido da contagem, do maior para o menor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Faturamento por Curso</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para o faturamento previsto por curso, juntam-se curso, turma, matricula e parcela e usa-se:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>sum(p.valor) com GROUP BY c.nome.</li>
+                        <li><span class="letra">B)</span>count(p.valor) sem GROUP BY.</li>
+                        <li><span class="letra">C)</span>max(p.valor) com ORDER BY.</li>
+                        <li><span class="letra">D)</span>avg(c.id_curso) com HAVING.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Subconsulta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é uma subconsulta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma tabela temporária gravada no disco.</li>
+                        <li><span class="letra">B)</span>Um índice da tabela.</li>
+                        <li><span class="letra">C)</span>Uma consulta dentro de outra, escrita entre parênteses.</li>
+                        <li><span class="letra">D)</span>Um JOIN sem ON.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Subconsulta com Um Valor</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em WHERE valor_mensal &gt; (SELECT avg(valor_mensal) FROM curso), a subconsulta devolve:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Uma lista de cursos.</li>
+                        <li><span class="letra">B)</span>Todas as colunas de curso.</li>
+                        <li><span class="letra">C)</span>Um só valor: a média do valor mensal.</li>
+                        <li><span class="letra">D)</span>Nenhum valor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Cursos Acima da Média</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A consulta WHERE valor_mensal &gt; (SELECT avg(valor_mensal) FROM curso) mostra:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Os cursos mais caros que a média.</li>
+                        <li><span class="letra">B)</span>Os cursos mais baratos que a média.</li>
+                        <li><span class="letra">C)</span>A média de todos os cursos.</li>
+                        <li><span class="letra">D)</span>Só o curso mais caro.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Subconsulta com IN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando a subconsulta devolve vários valores, qual operador usar no WHERE?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>=</li>
+                        <li><span class="letra">B)</span>IN</li>
+                        <li><span class="letra">C)</span>LIKE</li>
+                        <li><span class="letra">D)</span>BETWEEN</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Erro com Igual</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que acontece com WHERE id_aluno = (SELECT id_aluno FROM matricula) quando há várias matrículas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Funciona e compara com a primeira linha.</li>
+                        <li><span class="letra">B)</span>Devolve todos os alunos.</li>
+                        <li><span class="letra">C)</span>Devolve zero linhas sem erro.</li>
+                        <li><span class="letra">D)</span>Erro: a subconsulta devolve mais de uma linha; usar IN.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">EXISTS</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o EXISTS verifica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Se a subconsulta devolve pelo menos uma linha.</li>
+                        <li><span class="letra">B)</span>Se a tabela existe no banco.</li>
+                        <li><span class="letra">C)</span>Se a coluna aceita NULL.</li>
+                        <li><span class="letra">D)</span>Se o valor é o maior da tabela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">NOT EXISTS</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A consulta SELECT c.nome FROM curso c WHERE NOT EXISTS (SELECT 1 FROM turma t WHERE t.id_curso = c.id_curso); mostra:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Os cursos que têm turma.</li>
+                        <li><span class="letra">B)</span>As turmas sem curso.</li>
+                        <li><span class="letra">C)</span>Todos os cursos e turmas.</li>
+                        <li><span class="letra">D)</span>Os cursos que não têm nenhuma turma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Subconsulta no FROM</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é obrigatório numa subconsulta usada no FROM?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Usar LEFT JOIN.</li>
+                        <li><span class="letra">B)</span>Dar um apelido a ela (ex.: AS por_turma).</li>
+                        <li><span class="letra">C)</span>Ter ORDER BY.</li>
+                        <li><span class="letra">D)</span>Devolver um só valor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">JOIN × Subconsulta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando a mesma pergunta pode ser respondida por JOIN ou por subconsulta, o que fazer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Usar sempre subconsulta.</li>
+                        <li><span class="letra">B)</span>Usar sempre produto cartesiano.</li>
+                        <li><span class="letra">C)</span>Escolher a forma mais clara para quem vai ler a consulta.</li>
+                        <li><span class="letra">D)</span>Escrever as duas na mesma consulta.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Alunos com Parcela em Atraso</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual filtro identifica parcela vencida e não paga?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>p.data_pagamento IS NULL AND p.vencimento &lt; current_date</li>
+                        <li><span class="letra">B)</span>p.data_pagamento = NULL OR p.vencimento &gt; current_date</li>
+                        <li><span class="letra">C)</span>p.valor &lt; 0</li>
+                        <li><span class="letra">D)</span>p.vencimento IS NULL</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Alunos sem Matrícula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual consulta lista os alunos que nunca se matricularam?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>aluno INNER JOIN matricula.</li>
+                        <li><span class="letra">B)</span>aluno LEFT JOIN matricula com WHERE m.id_matricula IS NULL.</li>
+                        <li><span class="letra">C)</span>SELECT * FROM matricula WHERE id_aluno IS NULL.</li>
+                        <li><span class="letra">D)</span>SELECT count(*) FROM aluno.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">COUNT depois do LEFT JOIN</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois de curso LEFT JOIN turma, como contar só as turmas reais de cada curso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>count(*), que ignora os NULL.</li>
+                        <li><span class="letra">B)</span>sum(t.id_turma).</li>
+                        <li><span class="letra">C)</span>count(t.id_turma), que não conta o NULL dos cursos sem turma.</li>
+                        <li><span class="letra">D)</span>max(*).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Média por Curso</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para a média de idade dos alunos por curso, a consulta precisa de:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Só a tabela curso.</li>
+                        <li><span class="letra">B)</span>HAVING sem GROUP BY.</li>
+                        <li><span class="letra">C)</span>LIMIT 1.</li>
+                        <li><span class="letra">D)</span>JOIN até curso, avg da idade e GROUP BY c.nome.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Maior Faturamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Como mostrar só o curso de maior faturamento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE sum(p.valor) = max.</li>
+                        <li><span class="letra">B)</span>GROUP BY c.nome, ORDER BY sum(p.valor) DESC e LIMIT 1.</li>
+                        <li><span class="letra">C)</span>SELECT max(c.nome).</li>
+                        <li><span class="letra">D)</span>GROUP BY p.valor LIMIT 1.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Relatório no Back-end</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que os relatórios em SQL são importantes para o back-end do sistema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O back-end chama essas consultas para montar telas e painéis com dados do banco.</li>
+                        <li><span class="letra">B)</span>Porque substituem o banco de dados.</li>
+                        <li><span class="letra">C)</span>Porque apagam os dados antigos.</li>
+                        <li><span class="letra">D)</span>Porque criam as tabelas automaticamente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Erro de INNER no Lugar de LEFT</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um relatório de &quot;todos os cursos com a quantidade de turmas&quot; usou INNER JOIN. Qual o problema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Os cursos aparecem duplicados para sempre.</li>
+                        <li><span class="letra">B)</span>Dá erro de sintaxe.</li>
+                        <li><span class="letra">C)</span>A contagem vira soma.</li>
+                        <li><span class="letra">D)</span>Os cursos sem turma somem do relatório.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Organização do Script</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o script 04-relatorios.sql da SA 2 deve trazer em cada relatório?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Só o resultado copiado da tela.</li>
+                        <li><span class="letra">B)</span>Os comandos CREATE TABLE.</li>
+                        <li><span class="letra">C)</span>A consulta comentada com a pergunta do cliente que ela responde.</li>
+                        <li><span class="letra">D)</span>As senhas do banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Leitura de Consulta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">SELECT t.codigo, count(m.id_matricula) FROM turma t LEFT JOIN matricula m ON m.id_turma = t.id_turma GROUP BY t.codigo; mostra:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cada turma com a quantidade de matrículas, inclusive as turmas com zero.</li>
+                        <li><span class="letra">B)</span>Só as turmas com matrícula.</li>
+                        <li><span class="letra">C)</span>O total de matrículas da escola em uma linha.</li>
+                        <li><span class="letra">D)</span>As matrículas sem turma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Próxima Aula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que será estudado na aula 17?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Normalização.</li>
+                        <li><span class="letra">B)</span>Procedimentos armazenados.</li>
+                        <li><span class="letra">C)</span>Instalação do PostgreSQL.</li>
+                        <li><span class="letra">D)</span>Entidades fortes e fracas.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Aula 16: Consultas com Junções, Agrupamentos e Subconsultas</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Prática — Aula 19 — Segurança da Informação: Pilares, Acesso e Auditoria (10 Questões Discursivas)</title>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/avaliacao-discursiva.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+
+</head>
+<body data-aula="AP-19" data-tema="Segurança da Informação: Pilares, Acesso e Auditoria" data-total="10" data-topicos="30"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados" data-docente="Gelvazio Camargo" data-bloquear-colar="sim" data-campo-tamanho-resposta="sim" data-progresso-professor="sim" data-ocultar-respostas-entregue="sim"
+      data-maximo-caracteres="3000" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🔐 Atividade Prática — Aula 19: Segurança da Informação: Pilares, Acesso e Auditoria</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 10 Questões Discursivas</p>
+        </header>
+
+        <main class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADE-PRATICA-AULA-19.md por gerar_avaliacao_discursiva.py -->
+            <section class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <h2 class="aula-title">Como Responder</h2>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Discursiva estruturada (o aluno digita a resposta de cada tópico no sistema)<br>
+                        <strong>Total de questões:</strong> 10 (30 tópicos)<br>
+                        <strong>Pontuação:</strong> 1,0 ponto por questão, dividido em 3 tópicos (0,2 + 0,4 + 0,4) — total: 10 pontos
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C12 —</strong> Reconhecer os pilares da segurança da informação</p>
+                    <p class="quadro-capacidades__linha"><strong>C13 —</strong> Reconhecer os níveis hierárquicos de segurança da informação</p>
+                    <p class="quadro-capacidades__linha"><strong>C14 —</strong> Aplicar boas práticas de segurança da informação</p>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 SEU PAPEL EM TODAS AS QUESTÕES</div>
+                    <div class="content-text">Você, como aluno consultor, foi chamado para proteger o banco escola_db da escola de cursos livres (tabelas curso, turma, aluno, matricula e parcela das aulas 12 a 18) depois que uma planilha com o CPF dos alunos vazou e ninguém soube quem a exportou.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 COMO RESPONDER</div>
+                    <div class="content-text">Cada questão tem <strong>3 tópicos</strong>, e cada tópico tem o <strong>seu campo</strong>. Responda <strong>somente o que o tópico pede</strong>: <strong>(1)</strong> o conceito ou o trecho pedido; <strong>(2)</strong> o código ou a aplicação na situação; <strong>(3)</strong> uma frase curta de justificativa quando o tópico pedir &quot;explique&quot; ou &quot;justifique&quot;. Respostas iguais às de colegas ou copiadas da internet são sinalizadas ao professor, que analisa e decide a nota do tópico.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 COMO A CORREÇÃO FUNCIONA</div>
+                    <div class="content-text">cada tópico é comparado com o padrão de resposta do professor: comandos que funcionam no PostgreSQL e respeitam a matriz de acesso, e justificativa com as palavras-chave do conteúdo. Comandos equivalentes que produzam o mesmo resultado valem.</div>
+                </div>
+            </section>
+
+            <section id="painel-discursivo" class="aula-card painel-discursivo" aria-live="polite">
+                <span class="aula-badge">IDENTIFICAÇÃO</span>
+                <p class="painel-discursivo__texto">Carregando...</p>
+            </section>
+
+            <section class="aula-card questao-discursiva" id="item-01" data-item="1">
+                <span class="aula-badge">ITEM 01</span>
+                <span class="questao-discursiva__aula">📚 Aula 19 · Segurança da Informação</span>
+                <h2 class="aula-title">Os Pilares em Casos Reais</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C12 — Reconhecer os pilares da segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, apresenta à direção três incidentes do último ano: (1) a planilha com o CPF dos alunos vazou; (2) a nota de um aluno foi alterada sem autorização; (3) o disco do servidor queimou e o sistema ficou um dia fora do ar.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Relacione os incidentes aos pilares da segurança da informação.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="1" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-01-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Cite os três pilares da segurança da informação.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-a" class="topico-resposta__campo" data-item="1" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="1" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-01-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Diga qual pilar foi atingido em cada um dos três incidentes e cite uma proteção do banco para cada um.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-b" class="topico-resposta__campo" data-item="1" data-topico="2"
+                              maxlength="3000" rows="8" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="1" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-01-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique por que um backup guardado sem senha num pendrive ajuda um pilar e fere outro.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-c" class="topico-resposta__campo" data-item="1" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-02" data-item="2">
+                <span class="aula-badge">ITEM 02</span>
+                <span class="questao-discursiva__aula">📚 Aula 19 · Segurança da Informação</span>
+                <h2 class="aula-title">Classificação da Informação</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C13 — Reconhecer os níveis hierárquicos de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa classificar os dados da escola antes de definir quem acessa o quê: nome do curso, quantidade de matrículas por turma, e-mail do aluno e CPF do aluno.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Classifique os dados e explique a hierarquia de acesso.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="2" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-02-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Cite os quatro níveis de classificação da informação usados na aula.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-a" class="topico-resposta__campo" data-item="2" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="2" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-02-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Classifique cada um dos quatro dados do contexto num desses níveis.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-b" class="topico-resposta__campo" data-item="2" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="2" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-02-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique por que a aplicação (back-end) não deve se conectar com o login postgres.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-c" class="topico-resposta__campo" data-item="2" data-topico="3"
+                              maxlength="3000" rows="6" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-03" data-item="3">
+                <span class="aula-badge">ITEM 03</span>
+                <span class="questao-discursiva__aula">📚 Aula 19 · Segurança da Informação</span>
+                <h2 class="aula-title">Menor Privilégio e Matriz de Acesso</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C13 — Reconhecer os níveis hierárquicos de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, ouve do diretor: &quot;dá acesso total para todo mundo, assim ninguém reclama de erro&quot;. O financeiro só registra o pagamento das parcelas e precisa saber o nome do aluno de cada parcela.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Aplique o menor privilégio na matriz de acesso.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="3" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-03-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique o princípio do menor privilégio.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-a" class="topico-resposta__campo" data-item="3" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="3" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-03-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva a linha da matriz de acesso do financeiro para as tabelas parcela e aluno, usando S, I, U e D (e as colunas, quando for o caso).
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-b" class="topico-resposta__campo" data-item="3" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="3" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-03-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Justifique por que ninguém recebe DELETE na tabela matricula.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-c" class="topico-resposta__campo" data-item="3" data-topico="3"
+                              maxlength="3000" rows="6" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-04" data-item="4">
+                <span class="aula-badge">ITEM 04</span>
+                <span class="questao-discursiva__aula">📚 Aula 19 · Segurança da Informação</span>
+                <h2 class="aula-title">Papéis de Grupo e de Login</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, descobre que toda a secretaria usa um único login &quot;secretaria&quot;, com a senha num post-it, e que a escola vai contratar mais duas secretárias.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Organize os papéis no PostgreSQL.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="4" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-04-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique a diferença entre um papel de grupo e um papel de login no PostgreSQL.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-04-a" class="topico-resposta__campo" data-item="4" data-topico="1"
+                              maxlength="3000" rows="6" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="4" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-04-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva os comandos que criam os grupos grupo_secretaria, grupo_financeiro e grupo_consulta e o login ana_secretaria dentro do grupo da secretaria.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-04-b" class="topico-resposta__campo" data-item="4" data-topico="2"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="4" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-04-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique por que as permissões ficam no grupo e por que o login compartilhado prejudica a auditoria.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-04-c" class="topico-resposta__campo" data-item="4" data-topico="3"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-05" data-item="5">
+                <span class="aula-badge">ITEM 05</span>
+                <span class="questao-discursiva__aula">📚 Aula 19 · Segurança da Informação</span>
+                <h2 class="aula-title">GRANT e REVOKE</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, começa o script 07-seguranca.sql. Pela matriz, a secretaria lê, inclui e altera aluno e matricula e só lê curso e turma.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Escreva as permissões da secretaria.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="5" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-05-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique para que servem os comandos REVOKE ALL ... FROM PUBLIC no início do script.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-05-a" class="topico-resposta__campo" data-item="5" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="5" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-05-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva os GRANT que deixam a secretaria entrar no banco, enxergar o esquema e ter as permissões da matriz.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-05-b" class="topico-resposta__campo" data-item="5" data-topico="2"
+                              maxlength="3000" rows="6" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="5" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-05-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        A coordenação decidiu que a secretaria não altera mais matrículas. Escreva o comando e explique o que muda para as secretárias.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-05-c" class="topico-resposta__campo" data-item="5" data-topico="3"
+                              maxlength="3000" rows="6" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-06" data-item="6">
+                <span class="aula-badge">ITEM 06</span>
+                <span class="questao-discursiva__aula">📚 Aula 19 · Segurança da Informação</span>
+                <h2 class="aula-title">Permissão por Coluna</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa deixar o financeiro marcar o pagamento das parcelas sem ver o CPF nem o telefone dos alunos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Use permissões por coluna e teste com o login bruno_financeiro.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="6" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-06-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique quando usar permissão por coluna em vez de permissão na tabela inteira.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-06-a" class="topico-resposta__campo" data-item="6" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="6" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-06-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva os GRANT do financeiro na parcela (ler e alterar só data_pagamento) e no aluno (ler só id_aluno e nome).
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-06-b" class="topico-resposta__campo" data-item="6" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="6" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-06-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Diga o resultado de cada comando no login do financeiro e explique o que ele indica: SELECT cpf FROM aluno; UPDATE parcela SET data_pagamento = current_date WHERE id_matricula = 10 AND numero = 1; DELETE FROM parcela;
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-06-c" class="topico-resposta__campo" data-item="6" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-07" data-item="7">
+                <span class="aula-badge">ITEM 07</span>
+                <span class="questao-discursiva__aula">📚 Aula 19 · Segurança da Informação</span>
+                <h2 class="aula-title">Visão para a Coordenação</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, recebe o pedido da coordenação: ver quantas matrículas cada turma tem, com o nome do curso, sem acesso a nenhum dado pessoal de aluno.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Atenda ao pedido com uma visão.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="7" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-07-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Diga o que é uma visão (VIEW).
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-07-a" class="topico-resposta__campo" data-item="7" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="7" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-07-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva a visão vw_matriculas_por_turma (código da turma, nome do curso e total de matrículas) e o GRANT para o grupo_consulta.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-07-b" class="topico-resposta__campo" data-item="7" data-topico="2"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="7" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-07-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique o que acontece quando o login da coordenação executa SELECT * FROM matricula e por que isso é desejado.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-07-c" class="topico-resposta__campo" data-item="7" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-08" data-item="8">
+                <span class="aula-badge">ITEM 08</span>
+                <span class="questao-discursiva__aula">📚 Aula 19 · Segurança da Informação</span>
+                <h2 class="aula-title">Conferência e Ciclo de Vida dos Logins</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, revisa as permissões no fim do semestre: um funcionário saiu da escola e um estagiário entrou com contrato até 31/12/2026.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Confira as permissões e ajuste os logins.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="8" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-08-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Diga qual comando do psql lista os papéis, os atributos e os grupos de cada um.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-08-a" class="topico-resposta__campo" data-item="8" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="8" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-08-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva duas formas de conferir as permissões da tabela parcela: o comando do psql e a consulta no information_schema.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-08-b" class="topico-resposta__campo" data-item="8" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="8" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-08-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva o comando que bloqueia o login do funcionário que saiu e o que faz o login do estagiário expirar, e explique por que as permissões do grupo não precisam ser refeitas.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-08-c" class="topico-resposta__campo" data-item="8" data-topico="3"
+                              maxlength="3000" rows="6" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-09" data-item="9">
+                <span class="aula-badge">ITEM 09</span>
+                <span class="questao-discursiva__aula">📚 Aula 19 · Segurança da Informação</span>
+                <h2 class="aula-title">Auditoria com Trigger</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, precisa garantir que, no próximo incidente, a escola saiba quem alterou a parcela, quando e o que mudou.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Monte a auditoria da tabela parcela.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="9" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-09-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique o que é auditoria de acesso e cite as duas camadas usadas no PostgreSQL.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-09-a" class="topico-resposta__campo" data-item="9" data-topico="1"
+                              maxlength="3000" rows="6" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="9" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-09-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva a tabela auditoria, a função registrar_auditoria (com TG_TABLE_NAME, TG_OP, OLD e NEW) e o trigger AFTER na tabela parcela.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-09-b" class="topico-resposta__campo" data-item="9" data-topico="2"
+                              maxlength="3000" rows="16" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="9" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-09-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique por que a função usa SECURITY DEFINER e por que grava session_user e não current_user.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-09-c" class="topico-resposta__campo" data-item="9" data-topico="3"
+                              maxlength="3000" rows="8" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-10" data-item="10">
+                <span class="aula-badge">ITEM 10</span>
+                <span class="questao-discursiva__aula">📚 Aula 19 · Segurança da Informação</span>
+                <h2 class="aula-title">Boas Práticas e Erros Comuns</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, revisa três trechos de um estagiário: (1) o back-end conecta com o login postgres e a senha está no JavaScript do site; (2) GRANT ALL ON parcela TO grupo_financeiro WITH GRANT OPTION; (3) o backup com pg_dump roda toda noite no mesmo disco do servidor e nunca foi restaurado.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Aponte e corrija os erros.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="10" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-10-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique o erro do trecho 1 e corrija.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-10-a" class="topico-resposta__campo" data-item="10" data-topico="1"
+                              maxlength="3000" rows="6" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="10" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-10-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Explique o problema do trecho 2 e corrija.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-10-b" class="topico-resposta__campo" data-item="10" data-topico="2"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="10" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-10-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique o problema do trecho 3 e corrija.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-10-c" class="topico-resposta__campo" data-item="10" data-topico="3"
+                              maxlength="3000" rows="6" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aula-card entrega-discursiva">
+                <span class="aula-badge">ENTREGA</span>
+                <h2 class="aula-title">Finalizar a avaliação</h2>
+                <p class="entrega-discursiva__texto">Confira se todos os tópicos estão com
+                    ✅ Resposta gravada. Depois de finalizar, as respostas não podem mais ser
+                    alteradas.</p>
+                <button class="btn-export entrega-discursiva__botao" id="btnFinalizarDiscursiva"
+                        type="button" hidden>✅ Finalizar e entregar</button>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Atividade Prática — Aula 19: Segurança da Informação: Pilares, Acesso e Auditoria</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>10 Questões • Discursiva</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/popup.js"></script>
+    <script src="../../../../assets/js/termos-tentativa.js"></script>
+    <script src="../../../../assets/js/respostas-discursivas-banco.js"></script>
+    <script src="../../../../assets/js/avaliacao-discursiva.js"></script>
+    <script src="../../../../assets/js/bloqueio-colar-discursiva.js"></script>
+    <script src="../../../../assets/js/campo-tamanho-discursiva.js"></script>
+</body>
+</html>

@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Prática — Aula 08 — Relacionamentos 1:1, 1:N e N:N (10 Questões Discursivas)</title>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/avaliacao-discursiva.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+
+</head>
+<body data-aula="AP-08" data-tema="Relacionamentos 1:1, 1:N e N:N" data-total="10" data-topicos="30"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados" data-docente="Gelvazio Camargo" data-bloquear-colar="sim" data-campo-tamanho-resposta="sim" data-progresso-professor="sim" data-ocultar-respostas-entregue="sim"
+      data-maximo-caracteres="3000" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🔗 Atividade Prática — Aula 08: Relacionamentos 1:1, 1:N e N:N</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 10 Questões Discursivas</p>
+        </header>
+
+        <main class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADE-PRATICA-AULA-08.md por gerar_avaliacao_discursiva.py -->
+            <section class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <h2 class="aula-title">Como Responder</h2>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Discursiva estruturada (o aluno digita a resposta de cada tópico no sistema)<br>
+                        <strong>Total de questões:</strong> 10 (30 tópicos)<br>
+                        <strong>Pontuação:</strong> 1,0 ponto por questão, dividido em 3 tópicos (0,2 + 0,4 + 0,4) — total: 10 pontos
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</p>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 SEU PAPEL EM TODAS AS QUESTÕES</div>
+                    <div class="content-text">Você, como aluno consultor, foi chamado para definir os relacionamentos e as cardinalidades dos bancos de dados de sistemas web, a partir das frases dos clientes.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 COMO RESPONDER</div>
+                    <div class="content-text">Cada questão tem <strong>3 tópicos</strong>, e cada tópico tem o <strong>seu campo</strong>. Responda <strong>somente o que o tópico pede</strong>, com as suas palavras: <strong>(1)</strong> a cardinalidade ou o conceito pedido; <strong>(2)</strong> a leitura ou a aplicação na situação; <strong>(3)</strong> uma frase curta de justificativa quando o tópico pedir &quot;explique&quot; ou &quot;justifique&quot;. Não precisa de texto longo, mas o raciocínio tem de aparecer. Respostas iguais às de colegas ou copiadas da internet são sinalizadas ao professor, que analisa e decide a nota do tópico.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 COMO A CORREÇÃO FUNCIONA</div>
+                    <div class="content-text">cada tópico é comparado com o padrão de resposta do professor: cardinalidade certa, leitura nos dois sentidos e justificativa com as palavras-chave do conteúdo. Cardinalidades diferentes do padrão valem quando a justificativa interpreta a frase de forma coerente. Erros de português não tiram nota se a ideia estiver clara.</div>
+                </div>
+            </section>
+
+            <section id="painel-discursivo" class="aula-card painel-discursivo" aria-live="polite">
+                <span class="aula-badge">IDENTIFICAÇÃO</span>
+                <p class="painel-discursivo__texto">Carregando...</p>
+            </section>
+
+            <section class="aula-card questao-discursiva" id="item-01" data-item="1">
+                <span class="aula-badge">ITEM 01</span>
+                <span class="questao-discursiva__aula">📚 Aula 08 · Relacionamentos</span>
+                <h2 class="aula-title">Relacionamento e Leitura nos Dois Sentidos</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, ouve do dono de uma pizzaria: &quot;o cliente faz pedidos pelo site&quot;. Um colega já marcou 1:1 entre CLIENTE e PEDIDO.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Analise o relacionamento.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="1" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-01-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Diga o que é um relacionamento e qual verbo pode nomear este.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-a" class="topico-resposta__campo" data-item="1" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="1" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-01-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Faça as duas perguntas da cardinalidade máxima para CLIENTE e PEDIDO e responda cada uma.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-b" class="topico-resposta__campo" data-item="1" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="1" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-01-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Diga a cardinalidade correta e explique o erro do colega.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-c" class="topico-resposta__campo" data-item="1" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-02" data-item="2">
+                <span class="aula-badge">ITEM 02</span>
+                <span class="questao-discursiva__aula">📚 Aula 08 · Relacionamentos</span>
+                <h2 class="aula-title">Um para Um</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, analisa uma empresa em que cada funcionário recebe um único crachá e cada crachá pertence a um único funcionário.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Modele o relacionamento.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="2" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-02-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Diga a cardinalidade entre FUNCIONÁRIO e CRACHÁ.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-a" class="topico-resposta__campo" data-item="2" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="2" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-02-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Explique o que caracteriza um relacionamento 1:1 usando o exemplo.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-b" class="topico-resposta__campo" data-item="2" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="2" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-02-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique duas formas de implementar esse 1:1 nas tabelas.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-c" class="topico-resposta__campo" data-item="2" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-03" data-item="3">
+                <span class="aula-badge">ITEM 03</span>
+                <span class="questao-discursiva__aula">📚 Aula 08 · Relacionamentos</span>
+                <h2 class="aula-title">Um para Muitos</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, recebe da loja a frase: &quot;cada produto pertence a uma categoria; uma categoria tem vários produtos&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Modele e implemente o relacionamento.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="3" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-03-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Diga a cardinalidade entre CATEGORIA e PRODUTO.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-a" class="topico-resposta__campo" data-item="3" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="3" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-03-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Explique em qual tabela fica a chave estrangeira e qual atributo ela guarda.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-b" class="topico-resposta__campo" data-item="3" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="3" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-03-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique por que a chave estrangeira não deve ficar em CATEGORIA.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-c" class="topico-resposta__campo" data-item="3" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-04" data-item="4">
+                <span class="aula-badge">ITEM 04</span>
+                <span class="questao-discursiva__aula">📚 Aula 08 · Relacionamentos</span>
+                <h2 class="aula-title">1:N na Escola</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, recebe da escola: &quot;um curso pode ter várias turmas ou nenhuma ainda; cada turma é de um único curso&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Escreva a cardinalidade completa.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="4" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-04-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Escreva o relacionamento na notação (mín, máx) dos dois lados.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-04-a" class="topico-resposta__campo" data-item="4" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="4" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-04-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Leia a notação em voz alta, em frases, nos dois sentidos.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-04-b" class="topico-resposta__campo" data-item="4" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="4" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-04-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique como a cardinalidade mínima 0 do lado da turma afeta o cadastro de um curso novo.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-04-c" class="topico-resposta__campo" data-item="4" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-05" data-item="5">
+                <span class="aula-badge">ITEM 05</span>
+                <span class="questao-discursiva__aula">📚 Aula 08 · Relacionamentos</span>
+                <h2 class="aula-title">Muitos para Muitos</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, recebe de uma livraria: &quot;um livro pode ter vários autores e um autor pode escrever vários livros; queremos saber a ordem dos autores na capa&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Modele e implemente o relacionamento.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="5" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-05-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Diga a cardinalidade entre LIVRO e AUTOR.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-05-a" class="topico-resposta__campo" data-item="5" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="5" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-05-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Explique como implementar esse relacionamento nas tabelas, indicando as colunas da tabela do meio.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-05-b" class="topico-resposta__campo" data-item="5" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="5" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-05-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique onde fica a &quot;ordem dos autores na capa&quot; e por quê.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-05-c" class="topico-resposta__campo" data-item="5" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-06" data-item="6">
+                <span class="aula-badge">ITEM 06</span>
+                <span class="questao-discursiva__aula">📚 Aula 08 · Relacionamentos</span>
+                <h2 class="aula-title">Pedido e Produto</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, revisa o modelo de uma loja em que PEDIDO tem os campos produto1, produto2 e produto3 para guardar os produtos comprados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Corrija o modelo.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="6" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-06-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Diga a cardinalidade real entre PEDIDO e PRODUTO.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-06-a" class="topico-resposta__campo" data-item="6" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="6" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-06-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Explique os problemas dos campos produto1, produto2 e produto3.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-06-b" class="topico-resposta__campo" data-item="6" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="6" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-06-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Proponha a tabela que resolve o relacionamento e explique onde ficam quantidade e preço de venda.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-06-c" class="topico-resposta__campo" data-item="6" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-07" data-item="7">
+                <span class="aula-badge">ITEM 07</span>
+                <span class="questao-discursiva__aula">📚 Aula 08 · Relacionamentos</span>
+                <h2 class="aula-title">Cardinalidade Mínima e Notação</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, recebe de uma academia: &quot;o aluno pode se cadastrar antes de contratar um plano; todo contrato precisa ser de um aluno&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Defina as participações.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="7" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-07-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Diga o que indica a cardinalidade mínima.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-07-a" class="topico-resposta__campo" data-item="7" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="7" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-07-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva a cardinalidade (mín, máx) de ALUNO e CONTRATO, considerando que um aluno pode ter vários contratos ao longo do tempo.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-07-b" class="topico-resposta__campo" data-item="7" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="7" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-07-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique como essas cardinalidades ficariam na notação pé de galinha (traço, círculo e tridente).
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-07-c" class="topico-resposta__campo" data-item="7" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-08" data-item="8">
+                <span class="aula-badge">ITEM 08</span>
+                <span class="questao-discursiva__aula">📚 Aula 08 · Relacionamentos</span>
+                <h2 class="aula-title">Autorrelacionamento</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, ouve da empresa: &quot;cada funcionário tem um supervisor, que também é funcionário; um supervisor cuida de vários funcionários; o diretor não tem supervisor&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Modele o autorrelacionamento.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="8" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-08-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Diga o que é autorrelacionamento.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-08-a" class="topico-resposta__campo" data-item="8" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="8" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-08-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Diga a cardinalidade do relacionamento &quot;supervisiona&quot; e explique a participação mínima, considerando o diretor.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-08-b" class="topico-resposta__campo" data-item="8" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="8" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-08-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique como implementar esse autorrelacionamento na tabela FUNCIONÁRIO.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-08-c" class="topico-resposta__campo" data-item="8" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-09" data-item="9">
+                <span class="aula-badge">ITEM 09</span>
+                <span class="questao-discursiva__aula">📚 Aula 08 · Relacionamentos</span>
+                <h2 class="aula-title">Erros Comuns de Relacionamento</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, revisa o modelo de um colega e encontra: (1) ALUNO N:N TURMA sem nenhuma tabela no meio; (2) a chave estrangeira das turmas guardada em CURSO; (3) participação obrigatória de PEDIDO para CLIENTE marcada sem perguntar à loja.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Aponte e corrija os erros.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="9" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-09-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Diga qual é o problema do erro 1.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-09-a" class="topico-resposta__campo" data-item="9" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="9" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-09-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Explique o problema do erro 2 e onde a chave estrangeira deveria ficar.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-09-b" class="topico-resposta__campo" data-item="9" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="9" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-09-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique o risco do erro 3 para o cadastro de clientes e como evitá-lo.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-09-c" class="topico-resposta__campo" data-item="9" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-10" data-item="10">
+                <span class="aula-badge">ITEM 10</span>
+                <span class="questao-discursiva__aula">📚 Aula 08 · Relacionamentos</span>
+                <h2 class="aula-title">Relacionamentos do Sistema de Matrículas</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, finaliza os relacionamentos da escola: alunos fazem matrículas em turmas; matrículas geram parcelas; responsáveis respondem por alunos; professores dão aulas nas turmas (um professor em várias turmas e uma turma com mais de um professor).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Monte a lista de relacionamentos da SA 1.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="10" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-10-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Diga a cardinalidade de ALUNO–TURMA, MATRÍCULA–PARCELA, RESPONSÁVEL–ALUNO e PROFESSOR–TURMA.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-10-a" class="topico-resposta__campo" data-item="10" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="10" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-10-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Explique como ALUNO–TURMA e PROFESSOR–TURMA serão implementados.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-10-b" class="topico-resposta__campo" data-item="10" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="10" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-10-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique como MATRÍCULA–PARCELA e RESPONSÁVEL–ALUNO serão implementados.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-10-c" class="topico-resposta__campo" data-item="10" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aula-card entrega-discursiva">
+                <span class="aula-badge">ENTREGA</span>
+                <h2 class="aula-title">Finalizar a avaliação</h2>
+                <p class="entrega-discursiva__texto">Confira se todos os tópicos estão com
+                    ✅ Resposta gravada. Depois de finalizar, as respostas não podem mais ser
+                    alteradas.</p>
+                <button class="btn-export entrega-discursiva__botao" id="btnFinalizarDiscursiva"
+                        type="button" hidden>✅ Finalizar e entregar</button>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Atividade Prática — Aula 08: Relacionamentos 1:1, 1:N e N:N</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>10 Questões • Discursiva</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/popup.js"></script>
+    <script src="../../../../assets/js/termos-tentativa.js"></script>
+    <script src="../../../../assets/js/respostas-discursivas-banco.js"></script>
+    <script src="../../../../assets/js/avaliacao-discursiva.js"></script>
+    <script src="../../../../assets/js/bloqueio-colar-discursiva.js"></script>
+    <script src="../../../../assets/js/campo-tamanho-discursiva.js"></script>
+</body>
+</html>

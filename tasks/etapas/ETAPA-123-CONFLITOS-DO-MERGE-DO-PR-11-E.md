@@ -1,0 +1,17 @@
+> Etapa movida do `tasks/STATUS.md` em 2026-10-09 (texto sem alteração; links relativos ajustados à pasta). Índice e estado geral: [../STATUS.md](../STATUS.md).
+
+## Etapa 123 — Conflitos do merge do PR #11 e `CLAUDE.md` apontando para `tasks/` (tarefa pequena, pedido em 2026-10-09 12:20)
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 123.1 | Resolver conflitos de `STATUS.md`/`TASKS.md` (duas tarefas #17: mantida a da revisão das regras; a do progresso global virou #18) e concluir o merge | ✅ Concluído | 2026-10-09 12:30 | Sem marcas de conflito; commit `5619910` |
+| 123.2 | Registrar no Git a mudança de `STATUS.md`, `TASKS.md`, `TASKS_COMPLETE.md` e relatórios da raiz para `tasks/` | ✅ Concluído | 2026-10-09 12:35 | `git diff --cached -M` = renomeações R100 |
+| 123.3 | `CLAUDE.md` (versão 2026-10-09 12:33:04 + histórico) lê e grava as tarefas em `C:\fontes\aulasenai\tasks\` | ✅ Concluído | 2026-10-09 12:35 | Leitura das linhas alteradas |
+| 123.4 | Links relativos dentro de `tasks/STATUS.md` e `tasks/TASKS.md` (ex.: `docs/...`) passam a precisar de `../` | ⬜ Pendente | — | Corrigir quando o usuário pedir |
+| 123.5 | Regra no `CLAUDE.md`: id de tarefa nova = número + UUID (ex.: `#19-3f9a2c7e-8b1d-4e2a`) | ✅ Concluído | 2026-10-09 12:37 | Leitura da regra e do histórico |
+| 123.6 | `TASKS_COMPLETE.md` apagado; regra: tarefa concluída ou cancelada tem o bloco removido do `TASKS.md` (`CLAUDE.md` versão 2026-10-09 12:58:34 + histórico) | ✅ Concluído | 2026-10-09 13:00 | `grep` sem `TASKS_COMPLETE` no `CLAUDE.md` (fora do histórico) e no `TASKS.md` |
+| 123.7 | Apagados `tasks/ANALISE-EMENTAS-COMPLETA.md` (`git rm`) e `tasks/GUIA-MAESTRO-EMENTAS-CHALKIE-AI.md` (fora do Git; enviado para a Lixeira do Windows) — pedido do usuário | ✅ Concluído | 2026-10-09 13:05 | `Test-Path` = falso nos dois; nenhum arquivo citava os dois |
+| 123.8 | `tasks/CALENDARIO-COMPLETO-2026.md` refeito pela Google Agenda `gelvazio.c@edu.sc.senai.br` (194 eventos de 22/09 a 20/12, conector): 50 blocos, 180 aulas, coluna Horário e turma; notebooks/projetor mantidos do calendário anterior; link em `docs/PROFESSOR-GELVAZIO-CAMARGO.md` corrigido para `tasks/` | ✅ Concluído | 2026-10-09 13:18 | Leitura do arquivo gerado; 194 eventos lidos (sem próxima página) |
+| 123.9 | `scripts/analise-materias.py` reescrito no padrão da matéria modelo (ITIC): todos os cursos (menos MATERIAS-GERAIS e AGENDA_COLABORADOR), matéria = pasta com ementa ou `materia.json`, confere ementa (tamanho), `materia.json`, `CONTEUDO/`, STATUS-AULAS, índice/STATUS/fontes das atividades, objetivas de 50 e apostila; grava `tasks/ANALISE-MATERIAS-RELATORIO.json` (6 cursos, 35 matérias, 2 completas) | ✅ Concluído | 2026-10-09 13:25 | `py_compile`; linhas ≤ 100; relatório gerado e lido |
+| 123.10 | Tarefa permanente #19-91cbac65-87ca-45a0 no `TASKS.md` e no "📌 Tarefas" + regra "ANÁLISE CONTÍNUA DAS MATÉRIAS" no `CLAUDE.md` (versão 2026-10-09 13:20:11 + histórico): rodar a rotina sempre; nunca CONCLUÍDA enquanto o relatório tiver pendência | ✅ Concluído | 2026-10-09 13:22 | Leitura da seção; resumo do histórico com 5 linhas |
+| 123.11 | `GUIA-MAESTRO-EMENTAS-CHALKIE-AI.md` recuperado pelo Git (versão da raiz, 836 linhas) e movido para `tasks/` (pedido do usuário; desfaz parte do item 123.7) | ✅ Concluído | 2026-10-09 13:40 | `git diff --cached -M` = R100 |
+| 123.12 | Aceite do usuário | ⬜ Pendente | — | — |

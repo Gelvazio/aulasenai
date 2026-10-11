@@ -1,6 +1,6 @@
 {
-  "gerado_em": "2026-10-09 14:11:36",
-  "padrao": "Matéria modelo: Introdução à TIC (CLAUDE.md, 2026-10-03)",
+  "gerado_em": "2026-10-11 01:20:19",
+  "padrao": "Regra global de matérias: docs/regras/materias.md (CLAUDE.md, 2026-10-10)",
   "pastas_que_nao_sao_curso": [
     "AGENDA_COLABORADOR",
     "MATERIAS-GERAIS"
@@ -22,6 +22,66 @@
   "incompletas": 32,
   "materias": [
     {
+      "curso": "TECNICO-INFORMATICA-INTERNET",
+      "materia": "BANCO-DE-DADOS",
+      "caminho": "MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS",
+      "completa": false,
+      "pecas": {
+        "ementa": true,
+        "materia_json": true,
+        "status_aulas": true,
+        "indice_atividades": true,
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
+      },
+      "contagem": {
+        "aulas_conteudo": 20,
+        "fontes_atividades": 60,
+        "atividades_50_questoes": 20,
+        "atividades_praticas": 20,
+        "apostila_html": 0
+      },
+      "ementa": {
+        "caracteres": 14923,
+        "dentro_da_faixa": true
+      },
+      "pendencias": [
+        "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
+      ],
+      "ordem": 1
+    },
+    {
+      "curso": "TECNICO-INFORMATICA-INTERNET",
+      "materia": "TESTES-DE-FRONTEND",
+      "caminho": "MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND",
+      "completa": false,
+      "pecas": {
+        "ementa": true,
+        "materia_json": true,
+        "status_aulas": true,
+        "indice_atividades": true,
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
+      },
+      "contagem": {
+        "aulas_conteudo": 10,
+        "fontes_atividades": 16,
+        "atividades_50_questoes": 3,
+        "atividades_praticas": 3,
+        "apostila_html": 1
+      },
+      "ementa": {
+        "caracteres": 14955,
+        "dentro_da_faixa": false
+      },
+      "pendencias": [
+        "Ajustar a ementa para 14800–14950 caracteres (hoje 14955)"
+      ],
+      "ordem": 2
+    },
+    {
       "curso": "ASSISTENTE-DE-OPERACOES-LOGISTICAS",
       "materia": "INTRODUCAO-TIC",
       "caminho": "MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC",
@@ -32,7 +92,8 @@
         "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
-        "status_apostila": true
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 12,
@@ -45,7 +106,8 @@
         "caracteres": 14917,
         "dentro_da_faixa": true
       },
-      "pendencias": []
+      "pendencias": [],
+      "ordem": 3
     },
     {
       "curso": "GESTAO_E_CONTROLE_MATERIAIS",
@@ -58,7 +120,8 @@
         "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
-        "status_apostila": false
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 8,
@@ -72,10 +135,10 @@
         "dentro_da_faixa": true
       },
       "pendencias": [
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
-      ]
+      ],
+      "ordem": 4
     },
     {
       "curso": "OPERADOR_PRODUCAO_INDUSTRIAL",
@@ -88,11 +151,12 @@
         "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
-        "status_apostila": false
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
-        "fontes_atividades": 21,
+        "fontes_atividades": 20,
         "atividades_50_questoes": 14,
         "atividades_praticas": 0,
         "apostila_html": 0
@@ -102,10 +166,10 @@
         "dentro_da_faixa": true
       },
       "pendencias": [
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
-      ]
+      ],
+      "ordem": 5
     },
     {
       "curso": "QUALIFICACAO-PROFISSIONAL",
@@ -115,10 +179,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
-        "status_apostila": false
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -133,13 +198,12 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
-      ]
+      ],
+      "ordem": 6
     },
     {
       "curso": "QUALIFICACAO-PROFISSIONAL",
@@ -149,10 +213,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
-        "status_apostila": false
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -167,13 +232,12 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
-      ]
+      ],
+      "ordem": 7
     },
     {
       "curso": "QUALIFICACAO-PROFISSIONAL",
@@ -183,10 +247,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
-        "status_apostila": false
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -201,13 +266,12 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
-      ]
+      ],
+      "ordem": 8
     },
     {
       "curso": "RIO_DO_SUL_MAIS_TECH",
@@ -220,7 +284,8 @@
         "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
-        "status_apostila": false
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -235,12 +300,12 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
-      ]
+      ],
+      "ordem": 9
     },
     {
       "curso": "RIO_DO_SUL_MAIS_TECH",
@@ -253,7 +318,8 @@
         "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
-        "status_apostila": true
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -270,7 +336,8 @@
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula"
-      ]
+      ],
+      "ordem": 10
     },
     {
       "curso": "RIO_DO_SUL_MAIS_TECH",
@@ -283,7 +350,8 @@
         "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
-        "status_apostila": true
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 11,
@@ -296,7 +364,8 @@
         "caracteres": 14928,
         "dentro_da_faixa": true
       },
-      "pendencias": []
+      "pendencias": [],
+      "ordem": 11
     },
     {
       "curso": "RIO_DO_SUL_MAIS_TECH",
@@ -309,7 +378,8 @@
         "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
-        "status_apostila": false
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 9,
@@ -323,9 +393,9 @@
         "dentro_da_faixa": true
       },
       "pendencias": [
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
-      ]
+      ],
+      "ordem": 12
     },
     {
       "curso": "RIO_DO_SUL_MAIS_TECH",
@@ -338,7 +408,8 @@
         "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
-        "status_apostila": false
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -353,12 +424,12 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
-      ]
+      ],
+      "ordem": 13
     },
     {
       "curso": "RIO_DO_SUL_MAIS_TECH",
@@ -371,7 +442,8 @@
         "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
-        "status_apostila": false
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -386,12 +458,12 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
-      ]
+      ],
+      "ordem": 14
     },
     {
       "curso": "RIO_DO_SUL_MAIS_TECH",
@@ -404,7 +476,8 @@
         "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
-        "status_apostila": true
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 10,
@@ -419,7 +492,8 @@
       },
       "pendencias": [
         "Gerar a atividade objetiva de 50 questões de cada aula"
-      ]
+      ],
+      "ordem": 15
     },
     {
       "curso": "RIO_DO_SUL_MAIS_TECH",
@@ -432,7 +506,8 @@
         "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
-        "status_apostila": false
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -447,12 +522,12 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
-      ]
+      ],
+      "ordem": 16
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -462,10 +537,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -480,50 +556,13 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 4923)"
-      ]
-    },
-    {
-      "curso": "TECNICO-INFORMATICA-INTERNET",
-      "materia": "BANCO-DE-DADOS",
-      "caminho": "MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS",
-      "completa": false,
-      "pecas": {
-        "ementa": true,
-        "materia_json": false,
-        "status_aulas": false,
-        "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
-      },
-      "contagem": {
-        "aulas_conteudo": 0,
-        "fontes_atividades": 0,
-        "atividades_50_questoes": 0,
-        "atividades_praticas": 0,
-        "apostila_html": 0
-      },
-      "ementa": {
-        "caracteres": 14802,
-        "dentro_da_faixa": true
-      },
-      "pendencias": [
-        "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
-        "Extrair as aulas da ementa para CONTEUDO/",
-        "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
-        "Gerar a atividade objetiva de 50 questões de cada aula",
-        "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
-      ]
+      ],
+      "ordem": 17
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -533,10 +572,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -551,15 +591,13 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 4269)"
-      ]
+      ],
+      "ordem": 18
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -569,10 +607,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -587,15 +626,13 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 5809)"
-      ]
+      ],
+      "ordem": 19
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -605,10 +642,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -623,15 +661,13 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 5047)"
-      ]
+      ],
+      "ordem": 20
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -641,10 +677,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -659,15 +696,13 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 5581)"
-      ]
+      ],
+      "ordem": 21
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -677,10 +712,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -695,15 +731,13 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 4454)"
-      ]
+      ],
+      "ordem": 22
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -713,10 +747,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -731,15 +766,13 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 3463)"
-      ]
+      ],
+      "ordem": 23
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -749,10 +782,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -767,15 +801,13 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 4896)"
-      ]
+      ],
+      "ordem": 24
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -785,10 +817,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -803,15 +836,13 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 7179)"
-      ]
+      ],
+      "ordem": 25
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -821,10 +852,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -839,15 +871,13 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 3993)"
-      ]
+      ],
+      "ordem": 26
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -857,10 +887,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -875,15 +906,13 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 5913)"
-      ]
+      ],
+      "ordem": 27
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -893,10 +922,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -911,15 +941,13 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 9889)"
-      ]
+      ],
+      "ordem": 28
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -929,10 +957,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -947,15 +976,13 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 6632)"
-      ]
+      ],
+      "ordem": 29
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -965,10 +992,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -983,15 +1011,13 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 4586)"
-      ]
+      ],
+      "ordem": 30
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -1001,10 +1027,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -1019,50 +1046,13 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 5016)"
-      ]
-    },
-    {
-      "curso": "TECNICO-INFORMATICA-INTERNET",
-      "materia": "Testes de Sistemas-EXISTENTES",
-      "caminho": "MATERIAIS/TECNICO-INFORMATICA-INTERNET/Testes de Sistemas-EXISTENTES",
-      "completa": false,
-      "pecas": {
-        "ementa": true,
-        "materia_json": false,
-        "status_aulas": false,
-        "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
-      },
-      "contagem": {
-        "aulas_conteudo": 0,
-        "fontes_atividades": 0,
-        "atividades_50_questoes": 0,
-        "atividades_praticas": 0,
-        "apostila_html": 0
-      },
-      "ementa": {
-        "caracteres": 14800,
-        "dentro_da_faixa": true
-      },
-      "pendencias": [
-        "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
-        "Extrair as aulas da ementa para CONTEUDO/",
-        "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
-        "Gerar a atividade objetiva de 50 questões de cada aula",
-        "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
-      ]
+      ],
+      "ordem": 31
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -1072,10 +1062,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -1090,43 +1081,47 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 4427)"
-      ]
+      ],
+      "ordem": 32
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
-      "materia": "TESTES-DE-FRONTEND",
-      "caminho": "MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND",
+      "materia": "Testes de Sistemas-EXISTENTES",
+      "caminho": "MATERIAIS/TECNICO-INFORMATICA-INTERNET/Testes de Sistemas-EXISTENTES",
       "completa": false,
       "pecas": {
         "ementa": true,
-        "materia_json": true,
+        "materia_json": false,
         "status_aulas": true,
         "indice_atividades": true,
         "status_atividades": true,
-        "status_apostila": true
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
-        "aulas_conteudo": 10,
-        "fontes_atividades": 16,
-        "atividades_50_questoes": 3,
-        "atividades_praticas": 3,
-        "apostila_html": 1
+        "aulas_conteudo": 0,
+        "fontes_atividades": 0,
+        "atividades_50_questoes": 0,
+        "atividades_praticas": 0,
+        "apostila_html": 0
       },
       "ementa": {
-        "caracteres": 14955,
-        "dentro_da_faixa": false
+        "caracteres": 14800,
+        "dentro_da_faixa": true
       },
       "pendencias": [
-        "Ajustar a ementa para 14800–14950 caracteres (hoje 14955)"
-      ]
+        "Criar materia.json (copiado da ementa)",
+        "Extrair as aulas da ementa para CONTEUDO/",
+        "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
+        "Gerar a atividade objetiva de 50 questões de cada aula",
+        "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)"
+      ],
+      "ordem": 33
     },
     {
       "curso": "TECNICO-INFORMATICA-INTERNET",
@@ -1136,10 +1131,11 @@
       "pecas": {
         "ementa": true,
         "materia_json": false,
-        "status_aulas": false,
+        "status_aulas": true,
         "indice_atividades": true,
-        "status_atividades": false,
-        "status_apostila": false
+        "status_atividades": true,
+        "status_apostila": true,
+        "status_materia": true
       },
       "contagem": {
         "aulas_conteudo": 0,
@@ -1154,25 +1150,19 @@
       },
       "pendencias": [
         "Criar materia.json (copiado da ementa)",
-        "Criar AULAS/STATUS-AULAS.md",
-        "Criar ATIVIDADES/STATUS-ATIVIDADES.md",
-        "Criar APOSTILA/STATUS-APOSTILA.md",
         "Extrair as aulas da ementa para CONTEUDO/",
         "Criar as fontes das atividades em ATIVIDADES/CONTEUDO/",
         "Gerar a atividade objetiva de 50 questões de cada aula",
         "Gerar a apostila (APOSTILA/APOSTILA-<MATERIA>.html)",
         "Ajustar a ementa para 14800–14950 caracteres (hoje 4644)"
-      ]
+      ],
+      "ordem": 34
     }
   ],
   "pastas_ignoradas_sem_ementa_nem_materia_json": [
     "MATERIAIS/GESTAO_E_CONTROLE_MATERIAIS/docs",
-    "MATERIAIS/QUALIFICACAO-PROFISSIONAL/.claude",
-    "MATERIAIS/RIO_DO_SUL_MAIS_TECH/.claude",
     "MATERIAIS/RIO_DO_SUL_MAIS_TECH/docs",
     "MATERIAIS/RIO_DO_SUL_MAIS_TECH/scripts",
-    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/.claude",
-    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/docs",
-    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/graphify-out"
+    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/docs"
   ]
 }

@@ -4,6 +4,11 @@
 
 ---
 
+> ⚠️ **Regra nova (2026-10-11 06:01:03, `CLAUDE.md` "🗃️ REGRA — ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA
+> SÓ COM CONTEÚDO"):** questões da objetiva e da prática só no banco, layout global e nenhum HTML na
+> pasta da matéria. O que está descrito aqui sobre páginas e fontes por aula é o jeito **atual**,
+> que vale só até a migração da tarefa #25-b3e29764-940b-4a82; não criar página nova por aula sem o plano dela.
+
 ## 💾 REGRA CRÍTICA — ALTERNATIVAS SEMPRE SALVAS NO BANCO DE DADOS
 
 ⚠️ **Toda alternativa marcada pelo aluno em uma atividade DEVE ser salva no banco de dados
@@ -14,7 +19,8 @@
   inclui supabase-js, `js/supabase.js`, `js/login.js`, `assets/js/respostas-atividade-banco.js`,
   põe `data-login="sim"` e não embute o gabarito) e a atividade precisa estar cadastrada nas
   tabelas `atividade` + `gabarito`: acrescentar em `ATIVIDADES` de
-  `scripts/gerar-seed-atividades.py`, gerar `database/*-seed-atividades.sql` e rodar no Supabase.
+  `scripts/gerar-seed-atividades.py`, gerar `database/*-seed-atividades.sql` e aplicar no Supabase
+  quando o usuário pedir (regra "🌱 SEEDS DO BANCO" do `CLAUDE.md`).
 - ❌ **Não existe mais localStorage para as alternativas** — somente banco de dados. Se o banco
   estiver indisponível ou a atividade não estiver cadastrada, a marcação fica **bloqueada com
   aviso** — nunca cai para o navegador. O nome do aluno vem do login (não é digitado).
@@ -114,10 +120,10 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
 
 - ✅ Fonte: `ATIVIDADES/CONTEUDO/<NOME>.md` com `## ITEM NN — Título`, `- **Aula:**`, `**Contexto:**`,
   `**Comando:**` e `**Tópicos:**` (`- a) enunciado (0,5)`); os tópicos de cada questão somam 1 ponto.
-  Padrão de resposta e critérios para a IA em `<NOME>-GABARITO.md` (fora do Git).
+  Padrão de resposta e critérios para a IA em `<NOME>-GABARITO.md` (no Git, fora do site).
 - ✅ Gerador: `C:\Python314\python.exe assets\gerador-avaliacao-discursiva\gerar_avaliacao_discursiva.py
   <pasta ATIVIDADES> [<NOME>.md]` → página `<NOME>.html` (um campo por tópico) e seed
-  `database/<data>-<nome>-seed-atividades.sql` (fora do Git; a avaliação nasce bloqueada).
+  `database/<data>-<nome>-seed-atividades.sql` (no Git, fora do site; a avaliação nasce bloqueada).
 - ✅ **Campos opcionais da fonte (2026-10-08, pedido do usuário):** `- **PDF compacto:** sim`
   (PDF com fonte e espaços menores, sem a linha "Aula" e a caixa de capacidade de cada questão),
   `- **PDF sem respostas:** sim` (PDF sem as caixas de resposta e com a instrução de responder no
@@ -488,7 +494,8 @@ Vale para **todas as aulas de todas as matérias**. Registrada em 2026-10-03 a p
   Se o arquivo não existir, criá-lo antes de gerar a primeira aula.
 - ✅ Ao retomar um trabalho interrompido, ler o `STATUS-AULAS.md` e continuar da primeira aula que
   não está ✅.
-- ✅ Aplicar o seed no Supabase continua dependendo de pedido do usuário (registrar no status).
+- ✅ **Seeds:** aplicar, registrar e conferir conforme a regra "🌱 SEEDS DO BANCO" do `CLAUDE.md` (registro em
+  `database/SEEDS-APLICADOS.md`).
 - ⚠️ Respeita `STATUS-PERMISSAO-EMENTA`, matérias semelhantes e a exceção de
   `QUALIFICACAO-PROFISSIONAL/`.
 
@@ -500,7 +507,7 @@ dessas atividades. Registrada em 2026-10-03 a pedido do usuário.
 
 - ✅ **Atividade objetiva da aula** = `ATIVIDADES/ATIVIDADES-AULA-NN-50-QUESTOES.html` (nomes antigos
   já publicados, como `ATIVIDADES-N-TEMA-50-QUESTOES.html` ou com data, continuam valendo), com
-  **exatamente 50 questões**, fonte em `ATIVIDADES/CONTEUDO/*-50-QUESTOES.md` (fora do Git, tem
+  **exatamente 50 questões**, fonte em `ATIVIDADES/CONTEUDO/*-50-QUESTOES.md` (no Git e fora do site, tem
   gabarito), gerada por `assets/gerador-atividades/gerar_atividades.py`, com folha de respostas no
   banco (`- **Folha de respostas:** sim`) e cadastro em `atividade` + `gabarito` (seed).
 - ❌ Página com menos de 50 questões **não conta** como a atividade objetiva da aula (fica ⚠️ no
@@ -511,7 +518,7 @@ dessas atividades. Registrada em 2026-10-03 a pedido do usuário.
 - ✅ Gerar as que faltam seguindo a regra "UMA AULA POR VEZ, COMPLETA" (fonte → HTML → conferência
   de 50 itens e gabarito ausente → índice → seed), atualizando o `STATUS-ATIVIDADES.md` e o
   `AULAS/STATUS-AULAS.md` a cada aula. Gerar em massa continua exigindo plano em `docs/` e aprovação;
-  aplicar o seed no Supabase só com pedido do usuário.
+  aplicar o seed no Supabase só com pedido do usuário (regra "🌱 SEEDS DO BANCO" do `CLAUDE.md`).
 - ✅ As questões seguem a aula em `<MATERIA>/CONTEUDO/AULA-NN-*.md` (regra "AULAS EXTRAÍDAS DA
   EMENTA EM `CONTEUDO/`") e o `EMENTA-CHALKIE-AI.md` (a ementa vence); gabarito com letras
   equilibradas (12–13 de cada) e posição sorteada.
@@ -523,7 +530,9 @@ dessas atividades. Registrada em 2026-10-03 a pedido do usuário.
   as demais aulas de avaliação (ex.: Eletricidade aula 09) seguem com **50 questões**; Reforço
   de Linguagens segue a regra exclusiva dela (25 questões).
 - ✅ **Banco na geração das pendentes** (plano `docs/gerar-atividades-50-questoes-todas-materias.md`,
-  2026-10-03): o usuário autorizou **aplicar o seed no Supabase ao finalizar cada matéria**.
+  2026-10-03): o usuário autorizou **aplicar o seed no Supabase ao finalizar cada matéria** —
+  vale **só** para as matérias desse plano de 2026-10-03. Fora dele (ex.: Banco de Dados, tarefa
+  #20), aplicar só com pedido (regra "🌱 SEEDS DO BANCO" do `CLAUDE.md`).
 - ⏳ **Fila:** gerar **somente uma matéria por vez, na ordem que o usuário liberar**; as demais
   aguardam. Primeira liberada (2026-10-03): **Testes de Frontend**.
 
@@ -539,7 +548,7 @@ demais matérias continuam com a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES".
 - ✅ **Cada questão discursiva tem Contexto, Comando e um campo para o aluno digitar** a resposta
   (gravada no banco, sem localStorage, como nas avaliações discursivas).
 - ✅ **Correção das 5 discursivas em duas etapas:** conferência com **IA** (a partir do padrão de
-  resposta e dos critérios no `-GABARITO.md`, fora do Git) **e análise do professor**, que
+  resposta e dos critérios no `-GABARITO.md`, no Git e fora do site) **e análise do professor**, que
   confirma ou ajusta a nota sugerida. A nota da discursiva só vale depois da análise do
   professor.
 - ✅ **10 aulas, uma por apresentação de `AULAS-CHALKIE-AI/`** (2026-10-06, decisão do usuário;
@@ -566,43 +575,14 @@ demais matérias continuam com a regra "1 ATIVIDADE OBJETIVA DE 50 QUESTÕES".
   `AULAS-CHALKIE-AI/CONTEUDO/`).
 - ✅ **Duas páginas por aula** (decisão do usuário em 2026-10-06, sem mudar o banco):
   - **objetivas:** `ATIVIDADES/ATIVIDADES-AULA-NN-20-QUESTOES.html`, fonte
-    `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-20-QUESTOES.md` (fora do Git, tem gabarito), gerada por
+    `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-20-QUESTOES.md` (no Git e fora do site, tem gabarito), gerada por
     `assets/gerador-atividades/gerar_atividades.py --so=` e cadastrada pelo
     `scripts/gerar-seed-atividades.py` (grupo da matéria);
   - **discursivas:** `ATIVIDADES/ATIVIDADE-DISCURSIVA-AULA-NN.html`, fonte
     `ATIVIDADES/CONTEUDO/ATIVIDADE-DISCURSIVA-AULA-NN.md` (cada item com Contexto, Comando e um
-    tópico `- a) ... (1,0)`) + `-GABARITO.md` (padrão de resposta e critérios para a IA, fora do
-    Git), gerada por `assets/gerador-avaliacao-discursiva/gerar_avaliacao_discursiva.py`
+    tópico `- a) ... (1,0)`) + `-GABARITO.md` (padrão de resposta e critérios para a IA, no Git e
+    fora do site), gerada por `assets/gerador-avaliacao-discursiva/gerar_avaliacao_discursiva.py`
     (nasce bloqueada; o professor libera no índice).
 - ✅ O seed das objetivas roda **antes** do das discursivas (ele cria a aula no banco). O
   `STATUS-ATIVIDADES.md` da matéria controla as duas páginas (20 + 5) de cada aula.
 - ❌ Não aplicar esta regra a outras matérias, nem às matérias semelhantes, sem pedido do usuário.
-
-## 🏦 REGRA — BANCO DE QUESTÕES DO AVA SENAI (MOODLE XML)
-
-Registrada em 2026-10-03 a pedido do usuário. Plano: `docs/banco-questoes-ava-senai-moodle-xml.md`.
-**Status:** ✅ piloto **Introdução à TIC** gerado (13 atividades, 600 questões), aguardando a
-importação no AVA pelo professor; as demais matérias só quando o usuário liberar, **uma por vez**.
-
-- ✅ **Gerador único:** `C:\Python314\python.exe assets\gerador-banco-ava\gerar_banco_ava.py
-  <pasta ATIVIDADES>` (`--so=ARQ.md` gera uma fonte só). Fonte = as mesmas
-  `ATIVIDADES/CONTEUDO/*QUESTOES.md` das páginas (lidas por `ler_questoes()` do gerador de
-  atividades); nada é digitado à mão no XML.
-- ✅ **Saída em `ATIVIDADES/BANCO-AVA/`:** um `.xml` por atividade (mesmo nome da fonte) e o
-  arquivo único `BANCO-AVA-<PASTA-DA-MATERIA>.xml`. Categorias `top/<uc_curta>/<rótulo> — <tema>`
-  (iguais nos dois); questão de resposta única, 1 ponto, sem penalidade, ID
-  `<PASTA>-<RÓTULO>-QNN`, tags = capacidades + rótulo; alternativas embaralhadas, exceto quando
-  alguma cita as outras ("Todas as anteriores").
-- ❌ **O XML contém as respostas certas:** `BANCO-AVA/` fica no `.gitignore`; nunca publicar,
-  nunca versionar, nunca colocar link em página de aluno.
-- ✅ **Importar no AVA:** Banco de questões → Importar → **Moodle XML**, com **"Obter categoria do
-  arquivo"** marcado. Importar **ou** os arquivos por atividade **ou** o arquivo único (os dois
-  juntos duplicam as questões).
-- ✅ Depois de alterar uma fonte de questões, gerar o banco de novo e registrar no
-  `STATUS-ATIVIDADES.md` da matéria.
-- ⛔ **Sem botão "📥 Banco Moodle (AVA SENAI)" nas atividades** (removido de **todas** as
-  atividades em 2026-10-06, a pedido do usuário; antes: plano
-  `docs/botao-exportar-banco-moodle-atividade.md`). Os scripts `exportar-banco-moodle.js` e
-  `banco-moodle-xml.js` foram apagados e o `atividade.js` não carrega mais nada do Moodle. O banco
-  do AVA é gerado **só** pelo `assets/gerador-banco-ava/gerar_banco_ava.py`. Não recolocar sem
-  pedido.

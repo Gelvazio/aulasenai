@@ -1,0 +1,1210 @@
+{
+  "uc": "Banco de Dados",
+  "uc_curta": "Banco de Dados",
+  "curso": "Técnico em Informática para Internet",
+  "docente": "Gelvazio Camargo",
+  "autor_apostila": "Gelvazio Camargo",
+  "versao_apostila": "1.0",
+  "modulo": "ESPECÍFICO II",
+  "modalidade": "Presencial",
+  "carga_horaria_uc": 80,
+  "fontes": [
+    "MATERIAIS/TECNICO-INFORMATICA-INTERNET/EMENTA-PRINCIPAL-TECNICO-INFORMATICA-INTERNET.md (fonte da verdade: objetivo, capacidades, conhecimentos e recursos da UC 16)",
+    "EMENTA-CHALKIE-AI.md v2.0 (sequência de aulas, indicadores, avaliação e parte didática)"
+  ],
+  "versao_ementa": "EMENTA-CHALKIE-AI.md v2.0 — reescrita a partir da ementa oficial (2026-10-09)",
+  "proveniencia": "Capacidades, conhecimentos, objetivo e recursos copiados literalmente da ementa do curso; a função é a do módulo Específico II (o bloco da UC não traz a linha Função); o resto vem da ementa da matéria e é didático.",
+  "sgbd": "PostgreSQL",
+  "funcao": "● 2 - Desenvolver sistemas para internet, de acordo com metodologia e padrões de qualidade, usabilidade, interatividade, robustez, acessibilidade e segurança da informação.",
+  "justificativa": "Toda aplicação para internet guarda dados: cadastros, pedidos, mensagens, notas. A UC ensina o estudante a entender o pedido do cliente, modelar os dados (entidade-relacionamento e normalização), preparar o gerenciador, criar e consultar o banco com SQL, automatizar regras com procedimentos e triggers e proteger os dados com controle de acesso e auditoria. Prepara para Codificação para Back-End, Desenvolvimento de APIs e Projeto de Back-End, que consomem o banco criado aqui.",
+  "objetivo_geral": {
+    "texto": "Propiciar o desenvolvimento de capacidade básicas e socioemocionais que permitem realizar a interação entre a aplicação Back-End e um Banco de Dados, de acordo com a metodologia e padrão de qualidade, usabilidade, ergonomia, acessibilidade e segurança"
+  },
+  "capacidades": {
+    "C1": "Reconhecer as demandas do cliente",
+    "C2": "Aplicar os procedimentos do modelo de modelagem entidade-relacionamento",
+    "C3": "Aplicar os procedimentos de normalização e padronização de dados.",
+    "C4": "Reconhecer as características e funcionalidades do banco de dados",
+    "C5": "Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema",
+    "C6": "Reconhecer os diferentes níveis de gerenciamento de dados",
+    "C7": "Aplicar linguagem de definição de dados",
+    "C8": "Aplicar linguagem de manipulação de dados",
+    "C9": "Reconhecer os diferentes gerenciadores de bancos de dados",
+    "C10": "Instalar gerenciadores de bancos de dados",
+    "C11": "Configurar gerenciadores de bancos de dados",
+    "C12": "Reconhecer os pilares da segurança da informação",
+    "C13": "Reconhecer os níveis hierárquicos de segurança da informação",
+    "C14": "Aplicar boas práticas de segurança da informação"
+  },
+  "capacidades_socioemocionais": {
+    "S1": "Valorizar novos fatos, ideias e opiniões diferentes para resolução de problemas pertinentes as atividades sob a sua responsabilidade",
+    "S2": "Fundamentar escolhas e decisões no exame de fatos, contextos, possibilidades, desafios e problemáticas de diferentes naturezas à luz de referenciais técnicos, legais, normativos e institucionais"
+  },
+  "observacao_capacidades": "A ementa do curso tem o título 'Capacidades Técnicas' sem itens: esta UC não tem capacidades técnicas (regra IX.3 da ementa).",
+  "conhecimentos": [
+    {
+      "dominio": 1,
+      "titulo": "Autogestão",
+      "conteudos": [
+        "1.1 Gestão do tempo"
+      ]
+    },
+    {
+      "dominio": 2,
+      "titulo": "Segurança da informação",
+      "conteudos": [
+        "2.1 Pilares (2.1.1 Integridade",
+        "2.1.2 Disponibilidade",
+        "2.1.3 Confidencialidade)",
+        "2.2 Controle de acesso",
+        "2.3 Auditoria de acesso"
+      ]
+    },
+    {
+      "dominio": 3,
+      "titulo": "Linguagem de consulta de banco de dados",
+      "conteudos": [
+        "3.1 Linguagem de definição de dados (3.1.1 Tabelas",
+        "3.1.2 Campos",
+        "3.1.3 Relações)",
+        "3.2 Linguagem de manipulação de dados (3.2.1 Consulta",
+        "3.2.2 Atualização",
+        "3.2.3 Inserção",
+        "3.2.4 Exclusão",
+        "3.2.5 Procedimentos armazenados",
+        "3.2.6 Triggers (disparadores))"
+      ]
+    },
+    {
+      "dominio": 4,
+      "titulo": "Banco de dados",
+      "conteudos": [
+        "4.1 Gerenciadores (4.1.1 Características",
+        "4.1.2 Requisitos)",
+        "4.2 Preparação de ambiente de banco de dados (4.2.1 Instalação",
+        "4.2.2 Configuração)"
+      ]
+    },
+    {
+      "dominio": 5,
+      "titulo": "Modelo entidade-relacionamento",
+      "conteudos": [
+        "5.1 Entidades (5.1.1 Fracas",
+        "5.1.2 Fortes",
+        "5.1.3 Associativas)",
+        "5.2 Relacionamento (5.2.1 Um para um",
+        "5.2.2 Um para muitos",
+        "5.2.3 Muitos para muitos)",
+        "5.3 Atributos (5.3.1 Simples",
+        "5.3.2 Composto",
+        "5.3.3 Descritivo",
+        "5.3.4 Nominativo",
+        "5.3.5 Referencial)",
+        "5.4 Diagrama entidade-relacionamento",
+        "5.5 Normalização de dados",
+        "5.6 Padronização de dados"
+      ]
+    },
+    {
+      "dominio": 6,
+      "titulo": "Documentação técnica",
+      "conteudos": [
+        "6.1 Escopo do projeto",
+        "6.2 Cronograma",
+        "6.3 Fluxograma"
+      ]
+    }
+  ],
+  "capacidades_x_conhecimentos": {
+    "C1": [
+      6
+    ],
+    "C2": [
+      5
+    ],
+    "C3": [
+      5
+    ],
+    "C4": [
+      4
+    ],
+    "C5": [
+      4
+    ],
+    "C6": [
+      4
+    ],
+    "C7": [
+      3
+    ],
+    "C8": [
+      3
+    ],
+    "C9": [
+      4
+    ],
+    "C10": [
+      4
+    ],
+    "C11": [
+      4
+    ],
+    "C12": [
+      2
+    ],
+    "C13": [
+      2
+    ],
+    "C14": [
+      2
+    ],
+    "S1": [
+      1,
+      6
+    ],
+    "S2": [
+      1,
+      6
+    ]
+  },
+  "capacidades_x_conhecimentos_ementa": "C1 Demandas do cliente → 6.1 · C2 Modelagem ER → 5.1–5.4 · C3 Normalização e padronização → 5.5–5.6 · C4–C6 Características, infraestrutura e níveis → 4.1 · C7 DDL → 3.1 · C8 DML → 3.2 · C9 Gerenciadores → 4.1 · C10–C11 Instalar e configurar → 4.2 · C12–C14 Segurança → 2 · S1/S2 → 1.1, 6.",
+  "horas_por_aula": 4,
+  "aulas": [
+    {
+      "numero": "01",
+      "aula": 1,
+      "tema": "Banco de dados e SGBD: conceitos e usos",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        1,
+        4
+      ],
+      "dominios_texto": "4 · 4.1 · 1.1",
+      "capacidades": [
+        "C4",
+        "C9"
+      ],
+      "conteudos_oficiais": [
+        "4 Banco de dados",
+        "4.1 Gerenciadores",
+        "1.1 Gestão do tempo"
+      ],
+      "indicadores": [
+        "Explica o que é banco de dados e SGBD com exemplo de um sistema web"
+      ],
+      "indicadores_numeros": [
+        1
+      ],
+      "atividade": "Mapa dos dados de um sistema web",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-01.md",
+      "slides": "AULAS/AULA-01-SLIDES.pdf",
+      "bncc": [
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": ""
+    },
+    {
+      "numero": "02",
+      "aula": 2,
+      "tema": "Gerenciadores: características, requisitos e níveis",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        4
+      ],
+      "dominios_texto": "4.1.1–4.1.2",
+      "capacidades": [
+        "C4",
+        "C6",
+        "C9"
+      ],
+      "conteudos_oficiais": [
+        "4.1.1 Características",
+        "4.1.2 Requisitos"
+      ],
+      "indicadores": [
+        "Compara gerenciadores (relacional e não relacional) por características e requisitos"
+      ],
+      "indicadores_numeros": [
+        2
+      ],
+      "atividade": "Quadro comparativo de SGBDs",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-02.md",
+      "slides": "AULAS/AULA-02-SLIDES.pdf",
+      "bncc": [
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": ""
+    },
+    {
+      "numero": "03",
+      "aula": 3,
+      "tema": "Preparação do ambiente: instalação do PostgreSQL",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        4
+      ],
+      "dominios_texto": "4.2.1",
+      "capacidades": [
+        "C10",
+        "C11"
+      ],
+      "conteudos_oficiais": [
+        "4.2 Preparação de ambiente de banco de dados",
+        "4.2.1 Instalação"
+      ],
+      "indicadores": [
+        "Instala e configura o PostgreSQL e conecta por cliente gráfico e terminal"
+      ],
+      "indicadores_numeros": [
+        3
+      ],
+      "atividade": "PostgreSQL instalado e testado",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-03.md",
+      "slides": "AULAS/AULA-03-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": ""
+    },
+    {
+      "numero": "04",
+      "aula": 4,
+      "tema": "Configuração do SGBD e infraestrutura do sistema",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        4
+      ],
+      "dominios_texto": "4.2.2",
+      "capacidades": [
+        "C5",
+        "C10",
+        "C11"
+      ],
+      "conteudos_oficiais": [
+        "4.2.2 Configuração"
+      ],
+      "indicadores": [
+        "Instala e configura o PostgreSQL e conecta por cliente gráfico e terminal",
+        "Liga o banco à infraestrutura do sistema (servidor, porta, usuário, back-end)"
+      ],
+      "indicadores_numeros": [
+        3,
+        4
+      ],
+      "atividade": "Banco, usuário e conexão configurados",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-04.md",
+      "slides": "AULAS/AULA-04-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": ""
+    },
+    {
+      "numero": "05",
+      "aula": 5,
+      "tema": "Demandas do cliente e escopo do projeto",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        1,
+        6
+      ],
+      "dominios_texto": "6.1 · 1.1",
+      "capacidades": [
+        "C1",
+        "S2"
+      ],
+      "conteudos_oficiais": [
+        "6.1 Escopo do projeto",
+        "1.1 Gestão do tempo"
+      ],
+      "indicadores": [
+        "Transforma o pedido do cliente em requisitos de dados e escopo",
+        "Justifica escolhas de modelagem e de segurança com base nos requisitos"
+      ],
+      "indicadores_numeros": [
+        5,
+        13
+      ],
+      "atividade": "Documento de escopo e requisitos de dados",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-05.md",
+      "slides": "AULAS/AULA-05-SLIDES.pdf",
+      "bncc": [
+        "CG2 Pensamento científico e crítico",
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 1 — Modelagem do banco de um sistema web (aulas 5–11). Uma escola de cursos livres fictícia quer trocar planilhas por um sistema web de matrículas. O estudante levanta as demandas, define escopo, desenha o DER, normaliza até a 3FN, padroniza nomes e entrega cronograma e fluxograma do processo de matrícula."
+    },
+    {
+      "numero": "06",
+      "aula": 6,
+      "tema": "Entidades fortes, fracas e associativas",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        5
+      ],
+      "dominios_texto": "5.1",
+      "capacidades": [
+        "C2"
+      ],
+      "conteudos_oficiais": [
+        "5.1 Entidades: 5.1.1 Fracas · 5.1.2 Fortes · 5.1.3 Associativas"
+      ],
+      "indicadores": [
+        "Identifica entidades fortes, fracas e associativas e seus atributos"
+      ],
+      "indicadores_numeros": [
+        6
+      ],
+      "atividade": "Lista de entidades do caso",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-06.md",
+      "slides": "AULAS/AULA-06-SLIDES.pdf",
+      "bncc": [
+        "CG2 Pensamento científico e crítico",
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 1 — Modelagem do banco de um sistema web (aulas 5–11). Uma escola de cursos livres fictícia quer trocar planilhas por um sistema web de matrículas. O estudante levanta as demandas, define escopo, desenha o DER, normaliza até a 3FN, padroniza nomes e entrega cronograma e fluxograma do processo de matrícula."
+    },
+    {
+      "numero": "07",
+      "aula": 7,
+      "tema": "Atributos",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        5
+      ],
+      "dominios_texto": "5.3",
+      "capacidades": [
+        "C2"
+      ],
+      "conteudos_oficiais": [
+        "5.3 Atributos: 5.3.1 Simples · 5.3.2 Composto · 5.3.3 Descritivo · 5.3.4 Nominativo · 5.3.5 Referencial"
+      ],
+      "indicadores": [
+        "Identifica entidades fortes, fracas e associativas e seus atributos"
+      ],
+      "indicadores_numeros": [
+        6
+      ],
+      "atividade": "Dicionário de atributos",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-07.md",
+      "slides": "AULAS/AULA-07-SLIDES.pdf",
+      "bncc": [
+        "CG2 Pensamento científico e crítico",
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 1 — Modelagem do banco de um sistema web (aulas 5–11). Uma escola de cursos livres fictícia quer trocar planilhas por um sistema web de matrículas. O estudante levanta as demandas, define escopo, desenha o DER, normaliza até a 3FN, padroniza nomes e entrega cronograma e fluxograma do processo de matrícula."
+    },
+    {
+      "numero": "08",
+      "aula": 8,
+      "tema": "Relacionamentos 1:1, 1:N e N:N",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        5
+      ],
+      "dominios_texto": "5.2",
+      "capacidades": [
+        "C2"
+      ],
+      "conteudos_oficiais": [
+        "5.2 Relacionamento: 5.2.1 Um para um · 5.2.2 Um para muitos · 5.2.3 Muitos para muitos"
+      ],
+      "indicadores": [
+        "Define cardinalidades 1:1, 1:N e N:N e desenha o DER"
+      ],
+      "indicadores_numeros": [
+        7
+      ],
+      "atividade": "Cardinalidades justificadas",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-08.md",
+      "slides": "AULAS/AULA-08-SLIDES.pdf",
+      "bncc": [
+        "CG2 Pensamento científico e crítico",
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 1 — Modelagem do banco de um sistema web (aulas 5–11). Uma escola de cursos livres fictícia quer trocar planilhas por um sistema web de matrículas. O estudante levanta as demandas, define escopo, desenha o DER, normaliza até a 3FN, padroniza nomes e entrega cronograma e fluxograma do processo de matrícula."
+    },
+    {
+      "numero": "09",
+      "aula": 9,
+      "tema": "Diagrama entidade-relacionamento",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        5
+      ],
+      "dominios_texto": "5.4",
+      "capacidades": [
+        "C2",
+        "S1"
+      ],
+      "conteudos_oficiais": [
+        "5.4 Diagrama entidade-relacionamento"
+      ],
+      "indicadores": [
+        "Define cardinalidades 1:1, 1:N e N:N e desenha o DER",
+        "Acolhe sugestões do colega na revisão do modelo e do script"
+      ],
+      "indicadores_numeros": [
+        7,
+        14
+      ],
+      "atividade": "DER do caso revisado em dupla",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-09.md",
+      "slides": "AULAS/AULA-09-SLIDES.pdf",
+      "bncc": [
+        "CG2 Pensamento científico e crítico",
+        "CG5 Cultura digital",
+        "CG4 Comunicação",
+        "CG9 Empatia e cooperação",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 1 — Modelagem do banco de um sistema web (aulas 5–11). Uma escola de cursos livres fictícia quer trocar planilhas por um sistema web de matrículas. O estudante levanta as demandas, define escopo, desenha o DER, normaliza até a 3FN, padroniza nomes e entrega cronograma e fluxograma do processo de matrícula."
+    },
+    {
+      "numero": "10",
+      "aula": 10,
+      "tema": "Normalização de dados (1FN, 2FN e 3FN)",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        5
+      ],
+      "dominios_texto": "5.5",
+      "capacidades": [
+        "C3",
+        "S2"
+      ],
+      "conteudos_oficiais": [
+        "5.5 Normalização de dados"
+      ],
+      "indicadores": [
+        "Normaliza tabelas até a 3FN e padroniza nomes e tipos",
+        "Justifica escolhas de modelagem e de segurança com base nos requisitos"
+      ],
+      "indicadores_numeros": [
+        8,
+        13
+      ],
+      "atividade": "Tabelas na 3FN",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-10.md",
+      "slides": "AULAS/AULA-10-SLIDES.pdf",
+      "bncc": [
+        "CG2 Pensamento científico e crítico",
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 1 — Modelagem do banco de um sistema web (aulas 5–11). Uma escola de cursos livres fictícia quer trocar planilhas por um sistema web de matrículas. O estudante levanta as demandas, define escopo, desenha o DER, normaliza até a 3FN, padroniza nomes e entrega cronograma e fluxograma do processo de matrícula."
+    },
+    {
+      "numero": "11",
+      "aula": 11,
+      "tema": "Padronização de dados, cronograma e fluxograma",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        5,
+        6
+      ],
+      "dominios_texto": "5.6 · 6.2 · 6.3",
+      "capacidades": [
+        "C1",
+        "C3"
+      ],
+      "conteudos_oficiais": [
+        "5.6 Padronização de dados",
+        "6.2 Cronograma",
+        "6.3 Fluxograma"
+      ],
+      "indicadores": [
+        "Normaliza tabelas até a 3FN e padroniza nomes e tipos"
+      ],
+      "indicadores_numeros": [
+        8
+      ],
+      "atividade": "Padrão de nomes + cronograma + fluxograma",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-11.md",
+      "slides": "AULAS/AULA-11-SLIDES.pdf",
+      "bncc": [
+        "CG2 Pensamento científico e crítico",
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 1 — Modelagem do banco de um sistema web (aulas 5–11). Uma escola de cursos livres fictícia quer trocar planilhas por um sistema web de matrículas. O estudante levanta as demandas, define escopo, desenha o DER, normaliza até a 3FN, padroniza nomes e entrega cronograma e fluxograma do processo de matrícula."
+    },
+    {
+      "numero": "12",
+      "aula": 12,
+      "tema": "DDL: tabelas e campos",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        3
+      ],
+      "dominios_texto": "3.1.1–3.1.2",
+      "capacidades": [
+        "C7"
+      ],
+      "conteudos_oficiais": [
+        "3.1 Linguagem de definição de dados: 3.1.1 Tabelas · 3.1.2 Campos"
+      ],
+      "indicadores": [
+        "Cria tabelas, campos, chaves e restrições com DDL"
+      ],
+      "indicadores_numeros": [
+        9
+      ],
+      "atividade": "Script CREATE TABLE",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-12.md",
+      "slides": "AULAS/AULA-12-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 2 — Banco pronto para o back-end (aulas 12–20). O mesmo sistema precisa do banco funcionando. O estudante cria o banco no PostgreSQL (DDL), carrega e consulta dados (DML), automatiza regras com procedimento e trigger, cria papéis com permissões mínimas e auditoria, e entrega a documentação técnica."
+    },
+    {
+      "numero": "13",
+      "aula": 13,
+      "tema": "DDL: relações, chaves e restrições",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        3
+      ],
+      "dominios_texto": "3.1.3",
+      "capacidades": [
+        "C7"
+      ],
+      "conteudos_oficiais": [
+        "3.1.3 Relações"
+      ],
+      "indicadores": [
+        "Cria tabelas, campos, chaves e restrições com DDL"
+      ],
+      "indicadores_numeros": [
+        9
+      ],
+      "atividade": "Script com PK, FK e restrições",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-13.md",
+      "slides": "AULAS/AULA-13-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 2 — Banco pronto para o back-end (aulas 12–20). O mesmo sistema precisa do banco funcionando. O estudante cria o banco no PostgreSQL (DDL), carrega e consulta dados (DML), automatiza regras com procedimento e trigger, cria papéis com permissões mínimas e auditoria, e entrega a documentação técnica."
+    },
+    {
+      "numero": "14",
+      "aula": 14,
+      "tema": "DML: inserção, atualização e exclusão",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        3
+      ],
+      "dominios_texto": "3.2.2–3.2.4",
+      "capacidades": [
+        "C8"
+      ],
+      "conteudos_oficiais": [
+        "3.2 Linguagem de manipulação de dados: 3.2.2 Atualização · 3.2.3 Inserção · 3.2.4 Exclusão"
+      ],
+      "indicadores": [
+        "Insere, atualiza, exclui e consulta dados com DML"
+      ],
+      "indicadores_numeros": [
+        10
+      ],
+      "atividade": "Carga de dados de teste",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-14.md",
+      "slides": "AULAS/AULA-14-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 2 — Banco pronto para o back-end (aulas 12–20). O mesmo sistema precisa do banco funcionando. O estudante cria o banco no PostgreSQL (DDL), carrega e consulta dados (DML), automatiza regras com procedimento e trigger, cria papéis com permissões mínimas e auditoria, e entrega a documentação técnica."
+    },
+    {
+      "numero": "15",
+      "aula": 15,
+      "tema": "DML: consultas com filtros e ordenação",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        3
+      ],
+      "dominios_texto": "3.2.1",
+      "capacidades": [
+        "C8"
+      ],
+      "conteudos_oficiais": [
+        "3.2.1 Consulta"
+      ],
+      "indicadores": [
+        "Insere, atualiza, exclui e consulta dados com DML"
+      ],
+      "indicadores_numeros": [
+        10
+      ],
+      "atividade": "15 consultas resolvidas",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-15.md",
+      "slides": "AULAS/AULA-15-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 2 — Banco pronto para o back-end (aulas 12–20). O mesmo sistema precisa do banco funcionando. O estudante cria o banco no PostgreSQL (DDL), carrega e consulta dados (DML), automatiza regras com procedimento e trigger, cria papéis com permissões mínimas e auditoria, e entrega a documentação técnica."
+    },
+    {
+      "numero": "16",
+      "aula": 16,
+      "tema": "Consultas com junções, agrupamentos e subconsultas",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        3
+      ],
+      "dominios_texto": "3.2.1",
+      "capacidades": [
+        "C8"
+      ],
+      "conteudos_oficiais": [
+        "3.2.1 Consulta"
+      ],
+      "indicadores": [
+        "Insere, atualiza, exclui e consulta dados com DML"
+      ],
+      "indicadores_numeros": [
+        10
+      ],
+      "atividade": "Relatórios em SQL",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-16.md",
+      "slides": "AULAS/AULA-16-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 2 — Banco pronto para o back-end (aulas 12–20). O mesmo sistema precisa do banco funcionando. O estudante cria o banco no PostgreSQL (DDL), carrega e consulta dados (DML), automatiza regras com procedimento e trigger, cria papéis com permissões mínimas e auditoria, e entrega a documentação técnica."
+    },
+    {
+      "numero": "17",
+      "aula": 17,
+      "tema": "Procedimentos armazenados",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        3
+      ],
+      "dominios_texto": "3.2.5",
+      "capacidades": [
+        "C8"
+      ],
+      "conteudos_oficiais": [
+        "3.2.5 Procedimentos armazenados"
+      ],
+      "indicadores": [
+        "Cria procedimento armazenado e trigger para uma regra do negócio"
+      ],
+      "indicadores_numeros": [
+        11
+      ],
+      "atividade": "Procedimento de uma regra do negócio",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-17.md",
+      "slides": "AULAS/AULA-17-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 2 — Banco pronto para o back-end (aulas 12–20). O mesmo sistema precisa do banco funcionando. O estudante cria o banco no PostgreSQL (DDL), carrega e consulta dados (DML), automatiza regras com procedimento e trigger, cria papéis com permissões mínimas e auditoria, e entrega a documentação técnica."
+    },
+    {
+      "numero": "18",
+      "aula": 18,
+      "tema": "Triggers (disparadores)",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        3
+      ],
+      "dominios_texto": "3.2.6",
+      "capacidades": [
+        "C8"
+      ],
+      "conteudos_oficiais": [
+        "3.2.6 Triggers (disparadores)"
+      ],
+      "indicadores": [
+        "Cria procedimento armazenado e trigger para uma regra do negócio"
+      ],
+      "indicadores_numeros": [
+        11
+      ],
+      "atividade": "Trigger de histórico e validação",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-18.md",
+      "slides": "AULAS/AULA-18-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 2 — Banco pronto para o back-end (aulas 12–20). O mesmo sistema precisa do banco funcionando. O estudante cria o banco no PostgreSQL (DDL), carrega e consulta dados (DML), automatiza regras com procedimento e trigger, cria papéis com permissões mínimas e auditoria, e entrega a documentação técnica."
+    },
+    {
+      "numero": "19",
+      "aula": 19,
+      "tema": "Segurança da informação: pilares, acesso e auditoria",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        2
+      ],
+      "dominios_texto": "2 · 2.1–2.3",
+      "capacidades": [
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "conteudos_oficiais": [
+        "2 Segurança da informação: 2.1 Pilares (2.1.1 Integridade · 2.1.2 Disponibilidade · 2.1.3 Confidencialidade) · 2.2 Controle de acesso · 2.3 Auditoria de acesso"
+      ],
+      "indicadores": [
+        "Aplica pilares, níveis de acesso e auditoria com papéis e permissões"
+      ],
+      "indicadores_numeros": [
+        12
+      ],
+      "atividade": "Papéis, permissões e log de auditoria",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-19.md",
+      "slides": "AULAS/AULA-19-SLIDES.pdf",
+      "bncc": [
+        "CG5 Cultura digital",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 2 — Banco pronto para o back-end (aulas 12–20). O mesmo sistema precisa do banco funcionando. O estudante cria o banco no PostgreSQL (DDL), carrega e consulta dados (DML), automatiza regras com procedimento e trigger, cria papéis com permissões mínimas e auditoria, e entrega a documentação técnica."
+    },
+    {
+      "numero": "20",
+      "aula": 20,
+      "tema": "Projeto integrador: banco documentado para o back-end",
+      "carga_horaria": 4,
+      "data_prevista": "",
+      "dominios": [
+        3,
+        5,
+        6
+      ],
+      "dominios_texto": "6 · 3 · 5",
+      "capacidades": [
+        "C1",
+        "C2",
+        "C3",
+        "C7",
+        "C8",
+        "C14",
+        "S1",
+        "S2"
+      ],
+      "conteudos_oficiais": [
+        "6 Documentação técnica: 6.1 Escopo do projeto · 6.2 Cronograma · 6.3 Fluxograma",
+        "3 Linguagem de consulta de banco de dados (revisão)",
+        "5 Modelo entidade-relacionamento (revisão)"
+      ],
+      "indicadores": [
+        "Justifica escolhas de modelagem e de segurança com base nos requisitos",
+        "Acolhe sugestões do colega na revisão do modelo e do script"
+      ],
+      "indicadores_numeros": [
+        13,
+        14
+      ],
+      "atividade": "Documentação técnica + banco completo",
+      "pratica": "ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-20.md",
+      "slides": "AULAS/AULA-20-SLIDES.pdf",
+      "bncc": [
+        "CG4 Comunicação",
+        "CG9 Empatia e cooperação",
+        "CG10 Responsabilidade"
+      ],
+      "termos_glossario_ementa": [],
+      "ideias_ementa": [],
+      "situacao_problema": "SA 2 — Banco pronto para o back-end (aulas 12–20). O mesmo sistema precisa do banco funcionando. O estudante cria o banco no PostgreSQL (DDL), carrega e consulta dados (DML), automatiza regras com procedimento e trigger, cria papéis com permissões mínimas e auditoria, e entrega a documentação técnica."
+    }
+  ],
+  "indicadores_desempenho": [
+    {
+      "numero": 1,
+      "indicador": "Explica o que é banco de dados e SGBD com exemplo de um sistema web",
+      "capacidades": [
+        "C4"
+      ],
+      "aulas": [
+        1
+      ]
+    },
+    {
+      "numero": 2,
+      "indicador": "Compara gerenciadores (relacional e não relacional) por características e requisitos",
+      "capacidades": [
+        "C6",
+        "C9"
+      ],
+      "aulas": [
+        2
+      ]
+    },
+    {
+      "numero": 3,
+      "indicador": "Instala e configura o PostgreSQL e conecta por cliente gráfico e terminal",
+      "capacidades": [
+        "C10",
+        "C11"
+      ],
+      "aulas": [
+        3,
+        4
+      ]
+    },
+    {
+      "numero": 4,
+      "indicador": "Liga o banco à infraestrutura do sistema (servidor, porta, usuário, back-end)",
+      "capacidades": [
+        "C5"
+      ],
+      "aulas": [
+        4
+      ]
+    },
+    {
+      "numero": 5,
+      "indicador": "Transforma o pedido do cliente em requisitos de dados e escopo",
+      "capacidades": [
+        "C1"
+      ],
+      "aulas": [
+        5
+      ]
+    },
+    {
+      "numero": 6,
+      "indicador": "Identifica entidades fortes, fracas e associativas e seus atributos",
+      "capacidades": [
+        "C2"
+      ],
+      "aulas": [
+        6,
+        7
+      ]
+    },
+    {
+      "numero": 7,
+      "indicador": "Define cardinalidades 1:1, 1:N e N:N e desenha o DER",
+      "capacidades": [
+        "C2"
+      ],
+      "aulas": [
+        8,
+        9
+      ]
+    },
+    {
+      "numero": 8,
+      "indicador": "Normaliza tabelas até a 3FN e padroniza nomes e tipos",
+      "capacidades": [
+        "C3"
+      ],
+      "aulas": [
+        10,
+        11
+      ]
+    },
+    {
+      "numero": 9,
+      "indicador": "Cria tabelas, campos, chaves e restrições com DDL",
+      "capacidades": [
+        "C7"
+      ],
+      "aulas": [
+        12,
+        13
+      ]
+    },
+    {
+      "numero": 10,
+      "indicador": "Insere, atualiza, exclui e consulta dados com DML",
+      "capacidades": [
+        "C8"
+      ],
+      "aulas": [
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "numero": 11,
+      "indicador": "Cria procedimento armazenado e trigger para uma regra do negócio",
+      "capacidades": [
+        "C8"
+      ],
+      "aulas": [
+        17,
+        18
+      ]
+    },
+    {
+      "numero": 12,
+      "indicador": "Aplica pilares, níveis de acesso e auditoria com papéis e permissões",
+      "capacidades": [
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "aulas": [
+        19
+      ]
+    },
+    {
+      "numero": 13,
+      "indicador": "Justifica escolhas de modelagem e de segurança com base nos requisitos",
+      "capacidades": [
+        "S2"
+      ],
+      "aulas": [
+        5,
+        10,
+        20
+      ]
+    },
+    {
+      "numero": 14,
+      "indicador": "Acolhe sugestões do colega na revisão do modelo e do script",
+      "capacidades": [
+        "S1"
+      ],
+      "aulas": [
+        9,
+        20
+      ]
+    }
+  ],
+  "situacoes_aprendizagem": [
+    "SA 1 — Modelagem do banco de um sistema web (aulas 5–11). Uma escola de cursos livres fictícia quer trocar planilhas por um sistema web de matrículas. O estudante levanta as demandas, define escopo, desenha o DER, normaliza até a 3FN, padroniza nomes e entrega cronograma e fluxograma do processo de matrícula.",
+    "SA 2 — Banco pronto para o back-end (aulas 12–20). O mesmo sistema precisa do banco funcionando. O estudante cria o banco no PostgreSQL (DDL), carrega e consulta dados (DML), automatiza regras com procedimento e trigger, cria papéis com permissões mínimas e auditoria, e entrega a documentação técnica."
+  ],
+  "dificuldades_comuns": [
+    "**Confundir entidade com atributo** → perguntar \"isso tem dados próprios e se repete?\"; se sim, é entidade.",
+    "**N:N sem tabela associativa** → desenhar a tabela do meio com as duas chaves estrangeiras.",
+    "**Normalizar por decoreba** → partir de uma planilha real com repetição e mostrar a anomalia.",
+    "**UPDATE/DELETE sem WHERE** → rodar antes o SELECT com o mesmo filtro e usar transação.",
+    "**Instalação travada (porta, senha, serviço)** → roteiro da aula 3 e conferência com `psql --version`.",
+    "**Usar o superusuário na aplicação** → papel próprio só com as permissões necessárias."
+  ],
+  "regra_de_bolso": "se um dado precisa ser corrigido em mais de um lugar, o modelo ainda não está normalizado.",
+  "avaliacao": {
+    "instrumentos": [
+      {
+        "instrumento": "Avaliação contínua: atividades das aulas 1–19 e SAs 1 e 2",
+        "momento": "Aulas 1–19",
+        "peso": "60%",
+        "criterios": "Correção, completude, organização dos scripts, prazo"
+      },
+      {
+        "instrumento": "Avaliação prática: banco completo de um caso fornecido",
+        "momento": "Aula 20",
+        "peso": "25%",
+        "criterios": "DER · 3FN · DDL com chaves · 10 consultas · 1 procedimento · 1 trigger · permissões"
+      },
+      {
+        "instrumento": "Avaliação objetiva: modelagem, SQL, gerenciadores e segurança",
+        "momento": "Aulas 11 e 20",
+        "peso": "15%",
+        "criterios": "Acertos; questões capacidade → contexto → comando"
+      }
+    ],
+    "nota_final": "60% contínua + 25% prática + 15% objetiva",
+    "aprovacao": "Nota final ≥ 7,0 e presença mínima de 75%",
+    "rubrica": [
+      {
+        "nivel": "Excelente",
+        "nota": "9–10",
+        "descricao": "Modelo normalizado e rastreável ao requisito, scripts que rodam sem erro, segurança aplicada e decisões justificadas"
+      },
+      {
+        "nivel": "Bom",
+        "nota": "7–8",
+        "descricao": "Banco correto e funcionando, com pequenas falhas de padrão, consulta ou documentação"
+      },
+      {
+        "nivel": "Aceitável",
+        "nota": "5–6",
+        "descricao": "Cumpre o essencial com orientação; redundâncias ou restrições faltando"
+      },
+      {
+        "nivel": "Insuficiente",
+        "nota": "0–4",
+        "descricao": "Scripts que não rodam, modelo sem chaves ou sem relação com o pedido"
+      }
+    ]
+  },
+  "mapeamento_bncc": [
+    "**CG2 Pensamento científico e crítico** — aulas 5 a 11: análise do pedido, hipótese de modelo e verificação de anomalias",
+    "**CG5 Cultura digital** — aulas 3 a 19: SGBD, SQL e ferramentas de modelagem",
+    "**CG4 Comunicação** — aulas 9 e 20: DER, dicionário de dados e documentação técnica",
+    "**CG9 Empatia e cooperação** — aulas 9 e 20: revisão do modelo em dupla",
+    "**CG10 Responsabilidade** — aula 19 e todas: cuidado com dados pessoais (LGPD) e gestão do tempo (1.1)"
+  ],
+  "recursos": {
+    "ambientes": [
+      "biblioteca",
+      "sala de aula",
+      "laboratório de informática",
+      "AVA com recursos de interatividade"
+    ],
+    "equipamentos": [
+      "computador com a configuração adequada para a execução das atividades e acesso à internet",
+      "kit multimídia",
+      "IDE para desenvolvimento de sistemas",
+      "sistemas operacionais",
+      "pacote de aplicativos de escritório",
+      "sistema de gerenciamento de banco de dados"
+    ],
+    "recursos_didaticos": [
+      "livros, apostilas e revistas especializadas",
+      "manuais, normas e catálogos técnicos"
+    ],
+    "ferramentas_didaticas": [
+      "PostgreSQL (SGBD da UC)",
+      "psql e pgAdmin ou DBeaver",
+      "VS Code",
+      "ferramenta de DER (brModelo ou draw.io)",
+      "planilha para o cronograma"
+    ]
+  },
+  "acessibilidade": {
+    "oficial": "Serão asseguradas as condições de acessibilidade, reconhecendo a especificidade e a peculiaridade do aluno com impedimentos de longo prazo, de natureza física, mental, intelectual e sensorial, levando-se em conta a(s) Norma(s) Regulamentadora(s) da ocupação, a Lei nº 13.146/2015, os Decretos nº 3298/2009 e 6949/2009, a LDB nº 9394/96 e a legislação específica em vigência da deficiência em questão.",
+    "didatico": "Zoom e alto contraste no cliente SQL, leitor de tela, scripts prontos para conferência, tempo estendido e duplas."
+  },
+  "glossario_ementa": [
+    {
+      "termo": "SGBD",
+      "definicao": "programa que guarda e gerencia os dados"
+    },
+    {
+      "termo": "Entidade",
+      "definicao": "objeto do mundo real com dados próprios"
+    },
+    {
+      "termo": "Atributo",
+      "definicao": "característica de uma entidade"
+    },
+    {
+      "termo": "Cardinalidade",
+      "definicao": "quantos de um lado se ligam ao outro"
+    },
+    {
+      "termo": "Chave primária (PK)",
+      "definicao": "identifica cada linha"
+    },
+    {
+      "termo": "Chave estrangeira (FK)",
+      "definicao": "liga uma tabela a outra"
+    },
+    {
+      "termo": "Normalização",
+      "definicao": "retirar repetições e dependências erradas"
+    },
+    {
+      "termo": "DDL",
+      "definicao": "comandos que criam a estrutura"
+    },
+    {
+      "termo": "DML",
+      "definicao": "comandos que mexem nos dados"
+    },
+    {
+      "termo": "Procedimento armazenado",
+      "definicao": "rotina guardada no banco"
+    },
+    {
+      "termo": "Trigger",
+      "definicao": "rotina disparada por um evento"
+    },
+    {
+      "termo": "Auditoria",
+      "definicao": "registro de quem acessou ou alterou o quê."
+    }
+  ],
+  "prompts_chalkie": [
+    "A partir do pedido de uma escola fictícia de cursos livres, liste as entidades, os atributos e os relacionamentos com cardinalidade.",
+    "Mostre uma planilha de matrículas com repetição e normalize passo a passo até a 3FN, explicando cada anomalia.",
+    "Compare PostgreSQL, MySQL, SQLite e MongoDB em características e requisitos, em tabela.",
+    "Escreva o roteiro de instalação do PostgreSQL no Windows e no Linux, com a conferência no psql.",
+    "Crie o script DDL de alunos, cursos e matrículas com chaves primária e estrangeira, NOT NULL, UNIQUE e CHECK.",
+    "Gere 15 consultas SQL em níveis crescentes (filtro, ordenação, junção, agrupamento, subconsulta) com o resultado esperado.",
+    "Escreva um procedimento armazenado em PL/pgSQL que matricula um aluno só se houver vaga.",
+    "Crie um trigger que grava em tabela de histórico toda alteração de nota, com usuário e data.",
+    "Monte papéis e GRANT/REVOKE com o mínimo de permissões para a aplicação, a secretaria e o professor."
+  ],
+  "regras_ia": [
+    "Capacidades e conhecimentos **[oficial]** não podem ser alterados, ampliados nem reduzidos.",
+    "Carga horária é 80h em 20 aulas de 4h; não criar aulas nem pesos além das Seções IV e V.",
+    "O título \"Capacidades Técnicas\" da ementa do curso aparece sem itens: esta UC não tem capacidades técnicas.",
+    "SGBD padrão: PostgreSQL; SQL deve rodar nele, com o resultado esperado informado.",
+    "Contextualizar em sistemas web reais (escola, loja, clínica); empresas sempre fictícias; nunca dados pessoais reais.",
+    "Integrar S1 e S2 na revisão do modelo em dupla e na justificativa das escolhas."
+  ],
+  "metricas": "80%+ dos estudantes com nota ≥ 7,0 · 100% entregam o banco do projeto integrador rodando.",
+  "referencias": []
+}

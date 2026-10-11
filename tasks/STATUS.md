@@ -3,31 +3,53 @@
 **Objetivo:** registrar, item por item, cada tarefa do projeto para que qualquer pessoa ou IA
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
-**Links:** [Regras](CLAUDE.md) · [Planos](docs/) · [Tarefas](TASKS.md)
-**Próximo passo:** Etapa 124, item 124.4 — aceite do usuário da tela de pendências (modal "Nova Pendência" e coluna Descrição); depois, Etapa 121, item 121.11 — aceite do progresso global na objetiva da aula 01 de Testes de Front-End (plano [docs/progresso-global-atividades.md](docs/progresso-global-atividades.md)); depois, etapas 117–119 (sessão 2026-10-09 manhã) — aceites do usuário: 117.2 (lista T TIIN 2026/1 M1), 118.9 (menu CURSO) e 119.6 (unidades); criar/vincular os 12 alunos que faltam na turma 124519 pela página de criar usuários; informar o curso da turma 124403 (Roberto Machado, sem `curso_id`); escolher a unidade dos cursos 5, 6 e 7 e preencher os endereços em 🏢 Unidades. Depois: Etapa 108, item 108.7 — aceite do usuário das objetivas e práticas das aulas 01 a 03 de Testes de Front-End (liberar as práticas ids 99–101 no índice); depois, Etapa 105, item 105.1 — decisão do usuário sobre a opção R1 (cadastrar as 19 matérias do ITIC em `materia`) em [docs/somente-ensalado-materias.md](docs/somente-ensalado-materias.md); depois, Etapa 97, item 97.4 — aceite do usuário da quantidade mínima de questões; depois: Aceites do usuário: Etapas 84 e 85 (itens 84.5 e 85.3 — discursiva id 81 com 20 questões de 0,5 ponto, respostas no caderno, PDF em 3 páginas); Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo; depois, Etapa 108, item 108.7 — aceite do usuário das objetivas e práticas das aulas 01 a 03 de Testes de Front-End (liberar as práticas ids 99–101 no índice); depois, Etapa 105, item 105.1 — decisão do usuário sobre a opção R1 (cadastrar as 19 matérias do ITIC em `materia`) em [docs/somente-ensalado-materias.md](docs/somente-ensalado-materias.md); depois, Etapa 97, item 97.4 — aceite do usuário da quantidade mínima de questões; depois: Aceites do usuário: Etapas 84 e 85 (itens 84.5 e 85.3 — discursiva id 81 com 20 questões de 0,5 ponto, respostas no caderno, PDF em 3 páginas); Etapa 84 (item 84.3 — testar o botão "Exportar Usuários em PDF"), Etapa 83 (item 83.7 — V1 removida, apostila única 2.1 e objetiva id 85 ajustada) e Etapa 82 (item 82.5); depois Etapas 79 (item 79.8) e 81 (item 81.5) — aceite do usuário da apostila ITIC V2 (agora versão 2.1). Depois: Etapa 71, item 71.3 — Etapa D de Comunicação Oral e Escrita (Rio do Sul): gerar as atividades das aulas 03 a 07 (01 e 02 prontas); as fontes com gabarito NÃO entram em commit até o usuário ajustar o `.gitignore` (decisão dele). Depois, se o usuário pedir: os 6 trechos desatualizados do CLAUDE.md (login antigo, data do grafo, registro do cursoprofessor, comando de tamanho da ementa, TASKS.md parado, caminho do STATUS-EMENTAS), um de cada vez. Demais pendências do usuário: ver "⏳ Aguardando o usuário" abaixo.
+**Links:** [Regras](../CLAUDE.md) · [Planos](../docs/) · [Tarefas](TASKS.md) · [Recados entre sessões](RECADOS.md) · [Etapas](etapas/)
+**Próximo passo:** cada frente de trabalho tem o seu — ver a tabela **"🧭 Frentes de trabalho"** logo abaixo (atualizar a linha da sua frente ao parar).
 
 Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 
+## 🧭 Frentes de trabalho (próximo passo de cada sessão/licença)
+
+Uma linha por frente = **ambiente + branch** (regra "CONVERSA ENTRE SESSÕES E LICENÇAS" do `CLAUDE.md`).
+Cada sessão atualiza **só a linha dela** ao começar e ao parar; frente encerrada (PR juntado e nada
+pendente) muda para `⏹️ Encerrada`.
+
+| Frente (ambiente · branch) | Tarefa/etapa | Próximo passo | Situação | Atualizado em |
+|---|---|---|---|---|
+| nuvem · claude/festive-maxwell-25jnhl | #21 (Etapa 135-eeefc710); #20 assumida em 2026-10-10 16:27 pela frente verificar-status-pastas, a pedido do usuário. Antes: #20 (Etapa 125) e #21 (Etapa 135-eeefc710) | Aula 19 de Banco de Dados pronta (conteúdo, objetiva, prática); seeds: objetiva id 141 CONCLUÍDO, prática id 142 com 29 de 30 tópicos (falta o 6c, que precisa da confirmação do usuário no conector). Próximo: tópico 6c da aula 19 (com a confirmação do usuário) e depois a aula 20 (conteúdo + objetiva + prática), plano [docs/banco-de-dados-materia-100.md](../docs/banco-de-dados-materia-100.md) | 🔄 Ativa | 2026-10-09 21:27 |
+| nuvem · claude/verificar-status-pastas-c6s5yz | Etapas 137-b214e26b e 138-77338471; #20 (Etapa 125) | Aula 20 de Banco de Dados pronta e no banco (objetiva id 145, prática id 146). Regra global de matérias criada (Etapa 139). Próximo: item 125.5 — avaliações objetivas, prática e média final pela regra global (seção 6); o tópico 6c da aula 19 espera o usuário rodar no SQL Editor | 🔄 Ativa | 2026-10-10 22:13 |
+| nuvem · ccr-00f69e8a-6qcla9 | #26 (Etapa 144-aff33423); Etapa 140-8554d88e | #26: item 144.5 — primeira cópia das regras no banco e `conferir`; depois aceite (144.6) | 🔄 Ativa | 2026-10-11 06:28 |
+| nuvem · ccr-be208aef-c6h8oe | #24 (Etapa 142-2a52ee2f) | Fila `tasks` pronta (tabela, funções, `tasks.html`, regra, prompt da rotina, 17 tarefas do `TASKS.md` na tabela). Próximo: item 142.5 — teste e aceite do usuário; a rotina continua desligada até liberar o GitHub (140.6) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
+| nuvem · claude/ola-zlzh8z | #22-f79be83e-0418-43e8 (Etapa 137-13665a7e) | Item 137.2 — aula 05 de Testes de Front-End (objetiva + prática + seeds); aulas 04 a 04 ✅. ⛔ Não mexer em Banco de Dados nesta sessão | 🔄 Ativa | 2026-10-10 16:21 |
+| local · main | Etapa 145-ae3cea8d | Merge de origin/main concluído; commit local d88a095 preservado | ⏹️ Encerrada | 2026-10-11 17:35 |
+
 ## 📌 Tarefas do `TASKS.md` (o status oficial fica aqui)
 
-A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale **só** nesta tabela.
+A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale **só** nesta tabela. **Em uso por** = frente que reservou a tarefa (ninguém mais mexe nela até ser liberada com `—`).
 
-| Tarefa | Descrição curta | Status | Próximo passo |
-|--------|-----------------|--------|---------------|
-| #2 | Apostilas só em Markdown (.md) | 🔄 Plano aguardando aprovação | Usuário aprova os itens A–E de `docs/tarefa-02-apostilas-em-markdown.md` |
-| #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | ⬜ Planejada | Aguardando liberação do usuário |
-| #5 | Organizar atividades em `ATIVIDADES/` | ⬜ Planejada | Aguardando liberação do usuário |
-| #6 | Preencher `AVALIACOES/` | ⬜ Planejada | Aguardando liberação do usuário |
-| #7 | Executar análise final | ⬜ Planejada | Aguardando liberação do usuário |
-| #11 | Conferir a duração dos vídeos da apostila de Reforço de Linguagens | ⬜ Pendente (local) | Fazer na máquina local, com YouTube |
-| #12 | Conferir a duração dos vídeos da apostila de Fundamentos da Tecnologia | ⬜ Pendente (local) | Fazer na máquina local, com YouTube |
-| #14 | Conferir a duração dos vídeos da apostila de Exploração de Carreiras | ⬜ Pendente (local) | Fazer na máquina local, com YouTube |
-| #15 | Apostila de ITIC versão 2 (até 40 páginas, sem vídeos e exercícios) — agora a apostila única (V1 removida) | 👀 Aguardando validação | Aceite do usuário (Etapas 79, 81 e 83) |
-| #16 | Bloqueio da AULA (card inteiro, `aulas.ativo`) × ON/OFF da atividade (nunca bloqueia o card) em todos os índices | 🔄 Ligada em Testes de Front-End (Etapa 114) | Demais matérias: acrescentar a pasta em `assets/js/indice-bloqueio-aula-config.js`, uma por vez, quando o usuário pedir |
-| #17 | Fechar a revisão das regras do `CLAUDE.md` (aceites 70.5, 72.8, 73.14; commit `85a8531` com gabarito; ementa fora do tamanho) | ⬜ Pendente — nova sessão | Usuário confere e dá os aceites; decide sobre os gabaritos do commit `85a8531` antes do push |
-| #18 | Progresso da turma global em todas as atividades (objetivas e discursivas com banco) | 👀 Aguardando validação (Etapa 121) | Item 121.11 (teste e aceite do usuário) |
-| #19-91cbac65-87ca-45a0 | Análise contínua das matérias (`scripts/analise-materias.py` → `tasks/ANALISE-MATERIAS-RELATORIO.json`) — ⛔ permanente: nunca CONCLUÍDA enquanto houver matéria incompleta ou pendência | 🔄 Em andamento — última rodada 2026-10-09 14:11: 6 cursos, 34 matérias, 2 completas, 32 incompletas | Rodar a rotina no início de cada sessão e ao concluir tarefa em matéria; resolver pendências só a pedido do usuário |
-| #20-2ac1a8ec-911b-466f | Banco de Dados (Técnico em Informática para Internet) 100% no padrão da ITIC — etapa 1 sem a apostila | ⬜ Planejada (Etapa 124) | Item 124.1 — plano em `docs/banco-de-dados-materia-100.md` e aprovação do usuário |
+| Tarefa | Descrição curta | Status | Próximo passo | Em uso por |
+|--------|-----------------|--------|---------------|------------|
+| #2 | Apostilas só em Markdown (.md) | 🔄 Plano aguardando aprovação | Usuário aprova os itens A–E de `docs/tarefa-02-apostilas-em-markdown.md` | — |
+| #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | ⬜ Planejada | Aguardando liberação do usuário | — |
+| #5 | Organizar atividades em `ATIVIDADES/` | ⬜ Planejada | Aguardando liberação do usuário | — |
+| #6 | Preencher `AVALIACOES/` | ⬜ Planejada | Aguardando liberação do usuário | — |
+| #7 | Executar análise final | ⬜ Planejada | Aguardando liberação do usuário | — |
+| #11 | Conferir a duração dos vídeos da apostila de Reforço de Linguagens | ⬜ Pendente (local) | Fazer na máquina local, com YouTube | — |
+| #12 | Conferir a duração dos vídeos da apostila de Fundamentos da Tecnologia | ⬜ Pendente (local) | Fazer na máquina local, com YouTube | — |
+| #14 | Conferir a duração dos vídeos da apostila de Exploração de Carreiras | ⬜ Pendente (local) | Fazer na máquina local, com YouTube | — |
+| #15 | Apostila de ITIC versão 2 (até 40 páginas, sem vídeos e exercícios) — agora a apostila única (V1 removida) | 👀 Aguardando validação | Aceite do usuário (Etapas 79, 81 e 83) | — |
+| #16 | Bloqueio da AULA (card inteiro, `aulas.ativo`) × ON/OFF da atividade (nunca bloqueia o card) em todos os índices | 🔄 Ligada em Testes de Front-End (Etapa 114) | Demais matérias: acrescentar a pasta em `assets/js/indice-bloqueio-aula-config.js`, uma por vez, quando o usuário pedir | — |
+| #17 | Fechar a revisão das regras do `CLAUDE.md` (aceites 70.5, 72.8, 73.14; commit `85a8531` com gabarito; ementa fora do tamanho) | ⬜ Pendente — nova sessão | Usuário confere e dá os aceites; decide sobre os gabaritos do commit `85a8531` antes do push | — |
+| #18 | Progresso da turma global em todas as atividades (objetivas e discursivas com banco) | 👀 Aguardando validação (Etapa 121) | Item 121.11 (teste e aceite do usuário) | — |
+| #19-91cbac65-87ca-45a0 | Análise contínua das matérias (`scripts/analise-materias.py` → `tasks/ANALISE-MATERIAS-RELATORIO.json`) — ⛔ permanente: nunca CONCLUÍDA enquanto houver matéria incompleta ou pendência | 🔄 Em andamento — última rodada 2026-10-10 22:13: 6 cursos, 34 matérias, 2 completas, 32 incompletas | Rodar a rotina no início de cada sessão e ao concluir tarefa em matéria; resolver pendências só a pedido do usuário | — |
+| #20-2ac1a8ec-911b-466f | Banco de Dados (Técnico em Informática para Internet) 100% no padrão da ITIC — etapa 1 sem a apostila | 🔄 Em execução (Etapa 125) | Aulas 01 a 20 prontas (125.3 e 125.4 ✅); próximo: item 125.5 — avaliações e média final no modelo da ITIC | nuvem · claude/verificar-status-pastas-c6s5yz (desde 2026-10-10 16:27; pedido do usuário "finalize banco de dados", assumida da frente festive-maxwell) |
+| #21-eeefc710-3e74-4928 | Colaboração entre sessões/licenças: etapa com UUID, reserva da tarefa, frentes de trabalho, `RECADOS.md`, merge da `main`, arquivos gerados, uma etapa por arquivo | 👀 Aguardando validação (Etapa 135-eeefc710) | Item 135.6 — aceite do usuário (ele junta o PR na `main`) | nuvem · claude/festive-maxwell-25jnhl (desde 2026-10-09 15:22) |
+| #22-f79be83e-0418-43e8 | Testes de Front-End: objetivas e práticas das aulas 04 a 10 (+ ajuste da ementa) | 🔄 Em execução (Etapa 137-13665a7e) | Item 137.2 — aula 05 | nuvem · claude/ola-zlzh8z (desde 2026-10-09 23:04) |
+| #22-816fd3fd-ffe8-41e7 | Outras contas e IAs criam as tarefas agendadas 2 a 6 | ⛔ Cancelada em 2026-10-11 06:00 — com o agendador único da #24 não há rotinas 2 a 6 (outras contas/IAs só pegam tasks pela `pegar_proxima_task`) | — | — |
+| #23-79fc30a3-c4c9-4a40 | Agendamentos: CRUD em `agendamentos.html` e espelho dos controles no banco | ⛔ Cancelada em 2026-10-11 05:58 — substituída pela #24 (decisão do usuário, 05:44) | — | — |
+| #24-9fb25086-5b51-44cb | Fila `tasks` no banco + 1 agendador que lê a fila e decide; página `tasks.html` (substitui a #23) | 👀 Aguardando validação (Etapa 142-2a52ee2f) | Item 142.5 — teste do usuário em `tasks.html` e aceite; depois liberar o GitHub (140.6) e ligar a rotina | — |
+| #25-b3e29764-940b-4a82 | Questões da objetiva e da prática só no banco, layout global, pasta da matéria sem HTML (migração) | ⬜ Pendente — dividida em 22 sub-tasks na tabela `tasks` (ids 19 a 40, em cadeia; Etapa 143-d30a9c4d) | 25.01 (TASK-0019) — levantamento; a rotina pega quando for ligada | — |
+| #26-55a91111-02ce-4cb1 | Regras no banco: `regra_documento` e `regra_secao` (cópia do repositório) | 🔄 Em execução (Etapa 144-aff33423) | Item 144.5 — primeira cópia e `conferir`; depois aceite | nuvem · ccr-00f69e8a-6qcla9 (desde 2026-10-11 06:21) |
 
 ## ⏳ Aguardando o usuário (aceites, aprovações e ações dele)
 
@@ -35,6 +57,14 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 125 | 125.8 | rodar no Supabase → SQL Editor o insert do tópico 6c da prática da aula 19 de Banco de Dados (atividade id 142): o conector da nuvem cancela o comando porque o texto cita `DELETE FROM parcela;` (o pedido de aprovação não chega ao usuário) | Ação |
+| 144-aff33423 | 144.6 | conferir as regras no banco (`regra_documento`, `regra_secao`) e a regra "🗄️ REGRAS NO BANCO" do `CLAUDE.md` | Aceite |
+| 140-8554d88e | 140.6 e 140.7 | liberar o acesso do GitHub ao `Gelvazio/aulasenai` para as tarefas agendadas e conferir a regra `docs/regras/tarefas-agendadas.md` — na fila como TASK-0042 e TASK-0043 (`tasks.html`, marcar ✅ Concluir) | Ação e aceite |
+| 139-b5ab1a00 | 139.4 | conferir a regra global de matérias (`docs/regras/materias.md`) e a troca no `CLAUDE.md` | Aceite |
+| 138-77338471 | 138.6 | conferir o `STATUS_MATERIA.md` das matérias, a ordem em `tasks/ORDEM-MATERIAS.md` e a regra nova do `CLAUDE.md` | Aceite |
+| 137-b214e26b | 137.5 | conferir os status corrigidos de Fundamentos da Tecnologia (9 aulas), Reforço de Matemática (16) e Análise de Dados (8) | Aceite |
+| 136-f0a07de9 | 136.5 | aceite do registro `database/SEEDS-APLICADOS.md` e da regra dos seeds | Aceite |
+| 137-13665a7e | Testes de Front-End: objetivas e práticas das aulas 04 a 10 (pedido em 2026-10-09 23:04:01; plano [docs/testes-frontend-aulas-04-a-10.md](../docs/testes-frontend-aulas-04-a-10.md)) | [ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md) |
 | 124 | 124.4 | testar o modal "➕ Nova Pendência" e a coluna Descrição em `pendencias.html` | Aceite |
 | 121 | 121.11 | testar o Progresso da turma global na objetiva da aula 01 de Testes de Front-End (professor vê ao abrir; aluno não vê) e numa discursiva | Aceite |
 | 103 | 103.6 | conferir as 10 práticas de Testes de Front-End, agora em `ATIVIDADES/CONTEUDO/` e sem empresa fictícia | Aceite |
@@ -89,301 +119,179 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 - **Critério de pronto:** item verificado, commit local feito e aceite do usuário.
 - **Premissas e restrições:** regras do `CLAUDE.md` (sem navegador, push só na nuvem — direto na `main` —, um commit por tarefa).
 
-## Etapa 1 — Atualizar `ANALISE-GERACAO-AULAS.md` do Técnico em Informática para Internet (pedida em 2026-10-03)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 1.1 | Levantar situação real das 20 pastas (ementa, `materia.json`, aulas, atividades, permissão) | ✅ Concluído | 2026-10-03 18:30 | Listagem das pastas + `STATUS-EMENTAS-CURSOS.md` |
-| 1.2 | Reescrever `MATERIAIS/TECNICO-INFORMATICA-INTERNET/ANALISE-GERACAO-AULAS.md` conforme a ementa do curso | ✅ Concluído | 2026-10-03 18:30 | CH por UC conferida com a seção 5 da ementa (soma 1000 h) |
-| 1.3 | Commit local | ✅ Concluído | 2026-10-03 18:31 | `git commit` |
-| 1.4 | Aceite do usuário | ⬜ Pendente | — | — |
+## 🗂️ Etapas (uma por arquivo em `tasks/etapas/`)
 
-## Etapa 2 — Apostila da ITIC (capítulos 02 a 10) e apostila de Testes de Frontend (pedida em 2026-10-03)
+Desde 2026-10-09 cada etapa fica no seu arquivo (regra "CONVERSA ENTRE SESSÕES E LICENÇAS" do `CLAUDE.md`). Etapa nova = arquivo novo `ETAPA-NNN-uuid8-ASSUNTO.md` + linha nesta tabela.
 
-Plano: [docs/gerador-apostilas.md](docs/gerador-apostilas.md) · Regras: `CLAUDE.md` → REGRAS APOSTILAS ·
-Status por capítulo: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/APOSTILA/STATUS-APOSTILA.md`
-e `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/APOSTILA/STATUS-APOSTILA.md`.
-Cada capítulo: fonte `CAPITULO-NN.md` → `--markdown` (conferência 100%) → HTML → status → commit.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 2.1 | ITIC — capítulo 02 (Hardware, Periféricos e SO) | ✅ Concluído | 2026-10-03 | Conferência 201/201 · commit `6919907` |
-| 2.2 | ITIC — capítulo 03 (Navegação na Web e Pesquisa) | ✅ Concluído | 2026-10-03 | Conferência 201/201 · commit `c5abef5` |
-| 2.3 | ITIC — capítulo 04 (Comunicação Digital e Nuvem) | ✅ Concluído | 2026-10-03 | Conferência 201/201 · commit `31572b0` |
-| 2.4 | ITIC — capítulo 05 (Segurança da Informação) | ✅ Concluído | 2026-10-03 | Conferência 201/201 · commit `8845c55` |
-| 2.5 | ITIC — capítulo 06 (Editor de Textos) | ✅ Concluído | 2026-10-03 | Conferência 201/201 · commit `6ed60df` |
-| 2.6 | ITIC — capítulo 07 (Textos Técnicos) | ✅ Concluído | 2026-10-03 | Conferência 201/201 · commit `ffcd0f7` |
-| 2.7 | ITIC — capítulo 08 (Planilhas: Organização e Fórmulas) | ✅ Concluído | 2026-10-03 | Conferência 201/201 · commit `0b55ea4` |
-| 2.8 | ITIC — capítulo 09 (Planilhas: Análise Visual e Gráficos) | ✅ Concluído | 2026-10-03 18:54 | Conferência 201/201 · sem avisos · HTML gerado |
-| 2.9 | ITIC — capítulo 10 (Editor de Apresentações e TIC + Avaliação) | ✅ Concluído | 2026-10-03 18:56 | Conferência 201/201 · sem avisos · 10/10 capítulos no plano |
-| 2.10 | Testes de Frontend — ler a ementa da matéria e a UC na ementa do curso; `materia.json` completo e literal | ✅ Concluído | 2026-10-03 19:05 | UC na ementa do curso = ementa da matéria; acessibilidade (resumo) e recuperação ajustadas |
-| 2.11 | Testes de Frontend — `INTRODUCAO.md`, Markdown completo e conferência 100% | ✅ Concluído | 2026-10-03 19:05 | Conferência 185/185 (100%) · conferidor generalizado; ITIC continua 278/278 |
-| 2.12 | Testes de Frontend — capítulos 01 a 10 (um por vez, com commit e status a cada um) | ✅ Concluído | 2026-10-03 19:30 | Capítulos 01 a 10 gravados (commit por capítulo); conferência 185/185 mantida |
-| 2.13 | Testes de Frontend — item "Apostila" no menu, status final | ✅ Concluído | 2026-10-03 19:31 | Link "📘 Apostila" na página da matéria (sem MENU-ATIVIDADES.js na pasta); STATUS-APOSTILA com os 10 capítulos 👀 |
-| 2.14 | Aceite do usuário (as duas apostilas) | ⬜ Pendente | — | — |
-
-## Etapa 3 — Regra "conteúdo só pelos Markdowns, nunca de PDF" no `CLAUDE.md` (pedida em 2026-10-03 20:47)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 3.1 | Acrescentar a regra (seção própria + item em "regras que valem sempre"), versão 2026-10-03 20:47 e linha no histórico | ✅ Concluído | 2026-10-03 20:49 | `node`: versão lida pelo regex do visualizador; nova seção `##` entra no índice (h2) |
-| 3.2 | Tirar "slides" da fonte da atividade prática de Excel (só Markdown + ementa) | ✅ Concluído | 2026-10-03 20:49 | Leitura do trecho alterado |
-| 3.3 | Commit local | ✅ Concluído | 2026-10-03 20:50 | `git commit` só com `CLAUDE.md` e `STATUS.md` |
-| 3.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 4 — Regras "matéria modelo: Introdução à TIC" e "aulas extraídas da ementa em `CONTEUDO/`" (pedidas em 2026-10-03 20:52 e 20:55)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 4.1 | Registrar a regra "MATÉRIA MODELO: INTRODUÇÃO À TIC" (tabela das peças da ITIC) | ✅ Concluído | 2026-10-03 20:57 | Estrutura conferida na pasta da ITIC (listagem e `git ls-files`) |
-| 4.2 | Registrar a regra "AULAS EXTRAÍDAS DA EMENTA EM `CONTEUDO/`" (1 aula/4 h, arredondar para cima, `AULA-NN-DESCRICAO-CURTA.md`, ordem aulas → atividades → apostila) | ✅ Concluído | 2026-10-03 20:57 | Leitura da seção; `node`: versão 20:55 e 3 seções novas no índice do visualizador |
-| 4.3 | Apontar as fontes das 50 questões e da apostila para `CONTEUDO/`; nota de conflito na regra da pasta `AULAS/` | ✅ Concluído | 2026-10-03 20:57 | Leitura dos trechos alterados |
-| 4.4 | Commit local | ✅ Concluído | 2026-10-03 20:58 | `git commit` só com `CLAUDE.md` e `STATUS.md` |
-| 4.5 | Tirar as dúvidas da regra com o usuário e ajustar o texto conforme as respostas | 🔄 Em progresso | — | — |
-| 4.6 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 6 — Equipes por turma + matéria: menu 👥 Equipes com CRUD nas atividades (pedida em 2026-10-05)
-
-Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade da ITIC:
-`MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-GRANDE/ATIVIDADE-COMUNICACAO-E-PRODUCAO-TEXTUAL.md`
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 6.1 | Plano em `docs/equipes-sala-de-aula.md` (escopo revisto: turma + matéria, menu nas atividades) | ✅ Concluído | 2026-10-05 07:40 | Arquivo |
-| 6.2 | Plano completo da atividade em equipe com a seção Brainstorming (papéis definidos pelo líder e entregues ao professor) | ✅ Concluído | 2026-10-05 07:30 | Leitura do `.md` |
-| 6.3 | SQL `database/2026-10-05-equipes-turma-materia.sql` | ✅ Concluído | 2026-10-05 07:35 | Leitura (idempotente, RLS) |
-| 6.4 | Repositório, modal, CSS, ação do menu e `js/menu.js` com itens de ação | ✅ Concluído | 2026-10-05 07:38 | `node --check` + linhas ≤ 100 |
-| 6.5 | ITIC: item 👥 Equipes no menu; menu aplicado na página do trabalho em equipe | ✅ Concluído | 2026-10-05 07:38 | `tags_menu.py` + `node --check` |
-| 6.6 | `database.md`, relatório HTML e regra no `CLAUDE.md` (versão 2026-10-05 07:39) | ✅ Concluído | 2026-10-05 07:40 | Leitura; visualizador lê a mesma linha de versão |
-| 6.7 | Commit local | ✅ Concluído | 2026-10-05 07:41 | `git commit` |
-| 6.7a | Página `ATIVIDADE-GRANDE/brainstorming.html` (o que é, participantes, regras, etapas, técnicas, exemplo, uso na atividade, checklist) + item 🧠 Brainstorming no menu | ✅ Concluído | 2026-10-05 | Classes conferidas no CSS; `node --check` do menu |
-| 6.7b | Conteúdo do brainstorming em Markdown (`ATIVIDADE-GRANDE/brainstorming.md`), igual à página HTML | ✅ Concluído | 2026-10-05 | Leitura: 8 seções + regra de ouro |
-| 6.7c | `brainstorming.md` ampliado para o padrão Chalkie AI (objetivos, capacidades, avaliação, glossário, verificação, instruções e prompts para IA) | ✅ Concluído | 2026-10-05 | 14.167 caracteres (faixa 14.000–15.000) |
-| 6.7d | `ATIVIDADE-GRANDE/ATIVIDADE-COMUNICACAO-SIMPLES.md`: explicação detalhada das páginas completa e simples do trabalho em equipe (comparação e pontos de atenção) | ✅ Concluído | 2026-10-05 | Conferido com a leitura dos dois HTML |
-| 6.7e | Plano `ATIVIDADE-COMUNICACAO-E-PRODUCAO-TEXTUAL.md` sincronizado com a página do aluno (brainstorming 15 min, líder escolhido pela equipe, ficha + Apêndice A, roteiro de 8 etapas, 15 partes, seções 1–8); corrigido "18 → 19 itens" no `ATIVIDADE-COMUNICACAO-SIMPLES.md` | ✅ Concluído | 2026-10-05 | Comparação seção a seção com o HTML |
-| 6.7f | Versão 2 simplificada do trabalho em equipe (`TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-v2.html`: 5 textos, 8 regras de formatação com onde clicar, rubrica simples) visível só para a turma 135081 (`assets/js/restricao-turma.js` lendo a `turmaaluno`) + item no menu + regra no `CLAUDE.md` | ✅ Concluído | 2026-10-05 13:17 | `node --check`; teste na tela fica com o professor |
-| 6.7g | v2: nova história de logística (Rota Certa — endereço trocado, coletores sem driver, 38 pedidos errados, 70 caixas de diferença, FEFO, phishing), missão em 8 passos e textos 2–5 e rubrica adaptados | ✅ Concluído | 2026-10-05 | Nenhuma menção à história antiga (ERP/backup) na página |
-| 6.8 | Aplicar o SQL no Supabase (pedido em 2026-10-05) | ✅ Concluído | 2026-10-05 | Leitura: 2 tabelas com RLS, 8 políticas, 2 triggers, 3 funções; anon sem acesso; matéria ITIC (id 25) identificada pelas atividades; 135080 (33 alunos) e 135081 (35) com vínculo e professor |
-| 6.8a | Layout de celular das atividades (todas as matérias): menos margens, letras de 16 px, alternativas com 44 px de toque, botões de largura total, barra do usuário quebrando linha, tabelas roláveis, folha de respostas em 1 coluna, campos sem zoom, modal de equipes em tela cheia — só em `@media` (computador e impressão inalterados) | ✅ Concluído | 2026-10-05 | Chaves balanceadas nos 8 CSS; teste no celular fica com o professor |
-| 6.8b | Layout de celular do índice de atividades (todas as matérias): cards em 1 coluna sem margens, botões de 44 px (principal na linha inteira), cadeado menor, barra da turma favorita, filtro "Fez atividade?", interruptor Bloquear e modal CADASTRAR ATIVIDADES — só em `@media` | ✅ Concluído | 2026-10-05 | Chaves balanceadas; teste no celular fica com o professor |
-| 6.8c | Layout de celular da apostila (ITIC e Testes de Frontend): páginas montadas em A4 como no PDF e, depois (`body.apostila--paginada`), exibidas em modo leitura — largura da tela, altura livre, letra 16 px, tabelas roláveis, vídeo empilhado, botões largos; impressão inalterada | ✅ Concluído | 2026-10-05 | `node --check` + chaves balanceadas; teste no celular fica com o professor |
-| 6.9 | Teste na tela pelo professor e aceite (equipes da turma 135080) | ⬜ Pendente | — | — |
-
-## Etapa 10 — Detalhar a "Missão da equipe" do trabalho em equipe da ITIC (pedida em 2026-10-05)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 10.1 | "Como a equipe executa a missão" (7 passos) e tabela com tudo o que o relatório técnico deve ter, em ordem (15 partes) | ✅ Concluído | 2026-10-05 | Leitura |
-| 10.2 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
-| 10.3 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 11 — Pasta na nuvem é tarefa do líder; demais atividades decididas em equipe (pedida em 2026-10-05)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 11.1 | Ajustar "Como a equipe executa a missão", papel do líder e roteiro | ✅ Concluído | 2026-10-05 | Leitura |
-| 11.2 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
-| 11.3 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 12 — Link "Slide Brainstorming" no trabalho em equipe da ITIC (pedida em 2026-10-05)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 12.1 | Link para `Brainstorming-Em-Equipe.pdf` (nova aba) na seção Brainstorming + estilo `.link-slide` | ✅ Concluído | 2026-10-05 | Arquivo PDF existe na pasta; leitura |
-| 12.2 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
-| 12.3 | Correção do usuário: o link vai no **card** do índice (depois de "Trabalho em Equipe"), não na página — link movido e estilo `.link-slide` removido | ✅ Concluído | 2026-10-05 | Leitura |
-| 12.4 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
-| 12.5 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 13 — Autorização dos responsáveis para uso do celular na aula (ITIC, trabalho em equipe) (pedida em 2026-10-05)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 13.1 | Gerar `ATIVIDADES/ATIVIDADE-GRANDE/AUTORIZACAO-USO-CELULAR-RESPONSAVEIS.docx` (Word, fora do Git pela regra `*.docx`) | ✅ Concluído | 2026-10-05 10:05 | Aberto no Word (somente leitura): 1 página A4 |
-| 13.2 | Commit local (só o `STATUS.md`; o `.docx` é ignorado pelo Git) | ✅ Concluído | 2026-10-05 10:06 | `git commit` |
-| 13.3 | Aceite do usuário | ⬜ Pendente | — | — |
-| 13.4 | Nova seção pedida: celular usado só nas aulas e recolhido assim que o aluno retornar da escola | ✅ Concluído | 2026-10-05 10:20 | Aberto no Word |
-| 13.5 | Um termo por aluno, com o nome preenchido (Muriel Machado, Carol Machado, Ariane do Nascimento, Ana Gabrieli Alves) | ✅ Concluído | 2026-10-05 10:20 | Aberto no Word: 4 páginas, 1 por aluno |
-| 13.6 | Commit local (só o `STATUS.md`) | ✅ Concluído | 2026-10-05 10:21 | `git commit` |
-| 13.7 | Documento vira pedido de liberação e entrega do celular à instituição de acolhimento; turma 135080 (AI AOPL 2026/2 M1) preenchida; campo do celular (marca, modelo, cor); recolhimento pelo responsável da instituição; assinaturas da instituição, professor e aluno | ✅ Concluído | 2026-10-05 10:40 | Aberto no Word: 4 páginas, 1 por aluno |
-| 13.8 | Acrescentar Adriel Toresani Steffens, Josiel de Nascimento e Ederson de Souza Fausto (turma 135081 — AI AOPL 2026/2 V1, tarde) | ✅ Concluído | 2026-10-05 10:50 | Aberto no Word: 7 páginas, 1 por aluno |
-| 13.9 | Documento único: lista dos 7 alunos no início (nº, nome, turma, celular, liberado Sim/Não) e depois o pedido uma vez só; gravado como `PEDIDO-CELULAR-INSTITUICAO-ACOLHIMENTO.docx` (o arquivo antigo estava aberto no Word) | ✅ Concluído | 2026-10-05 11:05 | Aberto no Word: 1 página A4 |
-
-## Etapa 13 — Versão resumida do trabalho em equipe da ITIC (pedida em 2026-10-05)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 13.1 | `ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-SIMPLES.html` (resumo em até 2 páginas A4) + estilos `.pagina-simples` | ✅ Concluído | 2026-10-05 | Leitura; sem link no card nem no menu, a pedido do usuário |
-| 13.2 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
-| 13.3 | Aceite do usuário (confere se cabe em 2 páginas na impressão) | ⬜ Pendente | — | — |
-
-## Etapa 14 — Botão "Exportar em Word" ao lado de cada exportar PDF (regra global) (pedida em 2026-10-05)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 14.1 | `assets/js/documento-word.js` (documento .doc MHTML, A4, rodapé com páginas, imagens embutidas) | ✅ Concluído | 2026-10-05 12:19 | `node --check` |
-| 14.2 | `assets/js/exportar-word.js`: Word com o layout do PDF ao lado de `btnExportarPDF`, `btnExportarPDFGabarito` e `btnExportarGabarito` (42 páginas que usam o `atividade.js`); `avaliacao-pdf-professor.js` aceita o formato PDF/Word | ✅ Concluído | 2026-10-05 12:19 | `node --check`; sem nomes globais repetidos |
-| 14.3 | `assets/js/exportar-word-pratica.js`: Word ao lado de cada "Imprimir / PDF" das práticas de Excel (capa + todas as questões, telas em PNG); `atividade-pratica-excel.js` reaproveita `montarImpressaoCompleta()` | ✅ Concluído | 2026-10-05 12:19 | `node --check` |
-| 14.4 | Regra global "EXPORTAR EM WORD" no `CLAUDE.md` (versão 2026-10-05 12:19) + lista de `assets/` | ✅ Concluído | 2026-10-05 12:19 | Visualizador de regras lê a mesma linha de versão |
-| 14.5 | Commit local | ✅ Concluído | 2026-10-05 12:19 | `git commit` |
-| 14.6 | Aceite do usuário (testar no navegador: botão ao lado do PDF e abrir o .doc no Word) | ⬜ Pendente | — | Sem navegador nesta sessão (regra do usuário) |
-
-## Etapa 15 — Sugestão de alunos por turma com botão "Confirmar" na `alunos.html` (pedida em 2026-10-05; plano `docs/sugestao-alunos-por-turma-confirmar.md`, aprovado em 2026-10-05; escopo ampliado com o filtro **Turma OK**)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 15.0 | Plano em `docs/` e aprovação do usuário | ✅ Concluído | 2026-10-05 13:22 | Resposta "PODE EXECUTAR" |
-| 15.1 | Conferir funções e trigger usados (`eh_professor`, `professor_tem_turma`, `turmaaluno_exige_aluno`) | ✅ Concluído | 2026-10-05 13:22 | Leitura do SQL (`professor_tem_turma`, políticas da `turmaaluno`) |
-| 15.2 | SQL `database/2026-10-05-sugestoes-turmaaluno.sql` (função `sugestoes_turmaaluno()`) | ✅ Concluído | 2026-10-05 13:22 | Leitura |
-| 15.3 | `listarSugestoes()` no `turmas-aluno-repositorio.js` | ✅ Concluído | 2026-10-05 13:22 | `node --check` |
-| 15.4 | Módulo `assets/js/turmas-aluno-sugestoes.js` (alunos sem turma + ✅ Confirmar) | ✅ Concluído | 2026-10-05 13:22 | `node --check` (linhas da tabela com Turma OK = Não) |
-| 15.5 | Integração na `alunos.html`, `turmas-aluno-pagina.js` e CSS + filtro/coluna **Turma OK** (Sim/Não) | ✅ Concluído | 2026-10-05 13:22 | `node --check` + leitura; filtro e coluna Turma OK |
-| 15.6 | `docs/database.md` + `relatorio_verificacao_database.html` | ✅ Concluído | 2026-10-05 13:22 | Leitura |
-| 15.7 | Commit local | ✅ Concluído | 2026-10-05 13:22 | `git diff --cached --name-only` |
-| 15.8 | Aplicar SQL no Supabase (só com pedido) e aceite do usuário | 🔄 Em progresso | — | SQL aplicado em 2026-10-05 13:36 pelo conector (0 alunos sem turma hoje); falta o aceite |
-
-## Etapa 16 — Card do trabalho em equipe v2 no índice de atividades da ITIC (pedida em 2026-10-05)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 16.1 | Novo card "TRABALHO EM EQUIPE v2" em `INTRODUCAO-TIC/ATIVIDADES/index.html`, apontando para `ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-v2.html` | ✅ Concluído | 2026-10-05 | Leitura do HTML (link relativo existente) |
-| 16.2 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
-| 16.3 | Professor cadastrar a página v2 (e a v1) pelo CADASTRAR ATIVIDADES para aparecer o interruptor Bloquear | ⬜ Pendente | — | — |
-| 16.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 16 — Card do trabalho em equipe v2 com bloqueio/liberação no índice da ITIC (pedida em 2026-10-05)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 16.1 | Novo card "TRABALHO EM EQUIPE v2" em `INTRODUCAO-TIC/ATIVIDADES/index.html` (link para `ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-v2.html`) | ✅ Concluído | 2026-10-05 | Leitura do HTML |
-| 16.2 | SQL `database/2026-10-05-trabalho-equipe-itic-atividade.sql` cadastrando v1 e v2 na `atividade` (aula 07, ativo) para aparecer o interruptor Bloquear | ✅ Concluído | 2026-10-05 | Mesmo modelo dos seeds das práticas (`on conflict (pagina)`) |
-| 16.3 | Commit local | ✅ Concluído | 2026-10-05 | `git commit` |
-| 16.4 | Aplicar o SQL no Supabase (conector, a pedido do usuário) | ✅ Concluído | 2026-10-05 | Consulta: atividade ids 58 (v1) e 59 (v2), aula_id 27, ativo = true |
-| 16.5 | Bloquear a v1 e deixar só a v2 liberada (pedido do usuário) | ✅ Concluído | 2026-10-05 | Consulta: id 58 (v1) ativo = false; id 59 (v2) ativo = true |
-| 16.6 | Tirar `data-sem-bloqueio` do card da v1 (o atributo escondia o interruptor Bloquear) | ✅ Concluído | 2026-10-05 | Leitura do HTML: card v1 sem o atributo; página id 58 no banco |
-| 16.7 | Nome "v1" no título do card do trabalho em equipe original | ✅ Concluído | 2026-10-05 | Leitura do HTML |
-| 16.8 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 16 — Bloqueio de atividade por turma (turma favorita) (pedida em 2026-10-05; plano `docs/bloqueio-atividade-por-turma-favorita.md`, aprovado: "SIM, PODE EXECUTAR")
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 16.1 | SQL `database/2026-10-05-bloqueio-atividade-por-turma.sql` (coluna `atividade.bloqueio`, política, `definir_bloqueio_turma`) | ✅ Concluído | 2026-10-05 13:36 | Leitura + banco real conferido antes |
-| 16.2 | Interruptor da turma favorita em `assets/js/indice-atividades-bloqueio.js` + evento em `indice-turma-favorita.js` | ✅ Concluído | 2026-10-05 13:36 | `node --check` |
-| 16.3 | `docs/database.md` + `relatorio_verificacao_database.html` | ✅ Concluído | 2026-10-05 13:36 | Leitura |
-| 16.4 | Regra no `CLAUDE.md` | ✅ Concluído | 2026-10-05 13:38 | Pedido do usuário; versão 2026-10-05 13:37; visualizador lê a mesma linha de versão |
-| 16.5 | Aplicar o SQL no Supabase (pedido do usuário) | ✅ Concluído | 2026-10-05 13:36 | Conector Supabase; coluna, política e permissões conferidas |
-| 16.6 | Commit local | ✅ Concluído | 2026-10-05 13:36 | `git diff --cached --name-only` |
-| 16.7 | Aceite do usuário (bloquear/liberar uma atividade para a favorita e conferir com um aluno de outra turma) | ⬜ Pendente | — | Sem navegador nesta sessão |
-
-## Etapa 17 — Relatórios com o bloqueio por turma (pedida em 2026-10-05; tarefa pequena)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 17.1 | `relatorio-atividades-dados.js`: lê `bloqueio`; média, total e conferência só com atividades liberadas para a turma | ✅ Concluído | 2026-10-05 13:37 | `node --check` |
-| 17.2 | `relatorio-atividades-pagina.js`: contagem e conferência pela turma da aba | ✅ Concluído | 2026-10-05 13:37 | `node --check` |
-| 17.3 | Commit local | ✅ Concluído | 2026-10-05 13:37 | `git diff --cached --name-only` |
-| 17.4 | Aceite do usuário (bloquear uma atividade para uma turma e ver a média só dela mudar) | ⬜ Pendente | — | Sem navegador nesta sessão |
-
-## Etapa 18 — Vínculo curso × turma e alunos da turma na `turmas.html` (pedida em 2026-10-06; plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`, aguardando aprovação)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 18.1 | Conferir o banco real (turma.curso_id, RLS, grants) | ✅ Concluído | 2026-10-06 | Consultas de leitura no Supabase |
-| 18.2 | Plano em `docs/` e aprovação do usuário | 🔄 Em progresso | — | — |
-| 18.3 | SQL `definir_curso_turma` (aplicar só com pedido) | ⬜ Pendente | — | — |
-| 18.4 | Repositório + tela (seção Curso × Turma e alunos da turma) | ⬜ Pendente | — | — |
-| 18.5 | `database.md`, relatório, `CLAUDE.md`, commit | ⬜ Pendente | — | — |
-| 18.6 | Teste e aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 19 — Editar o card da aula com a data da aula (pedida em 2026-10-06; tarefa pequena, sem mudança no banco)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 19.1 | Conferir no banco onde gravar a data (`aulas.data_planejada`, RLS: só professor altera) | ✅ Concluído | 2026-10-06 | Consulta de leitura no Supabase |
-| 19.2 | Criar `assets/js/indice-aula-data.js` + `assets/css/indice-aula-data.css` (data no card + botão ✏️ Editar aula, só professor) e carregar pelo `atividades-crud-modal.js` | ✅ Concluído | 2026-10-06 | `node --check` OK; navegador não aberto (regra) |
-| 19.3 | Commit local | ✅ Concluído | 2026-10-06 | `git commit` |
-| 19.4 | Aceite do usuário (testar no navegador) | ⬜ Pendente | — | — |
-
-## Etapa 20 — Aluna Bianca Pamela na turma QA LBTSN 2026/1 M2 (CEPLAS Manhã) (pedida em 2026-10-06; tarefa pequena)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 20.1 | Acrescentar a aluna (nº 12, `bianca.pamela@senai.local`, senha inicial gerada) em `scripts/LISTA-PRESENCA-CEPLAS-MANHA.js` (fora do Git, LGPD) | ✅ Concluído | 2026-10-06 | `node --check` OK; e-mail sem repetição nas listas |
-| 20.2 | Criar a conta no Supabase Auth pela página `scripts/criarUsuariosBancoDados.html` | ⬜ Pendente | — | Feito pelo professor na página local |
-| 20.3 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 21 — Filtro "Só alunos da turma selecionada acima" na `alunos.html` (pedida em 2026-10-06; tarefa pequena)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 21.1 | Caixa de marcar na tabela "Alunos por turma" que filtra pela turma escolhida no formulário (`alunos.html`, `assets/js/turmas-aluno-pagina.js`, `assets/css/turmas-aluno.css`) | ✅ Concluído | 2026-10-06 | `node --check` OK; navegador não aberto (regra) |
-| 21.2 | Commit local | ✅ Concluído | 2026-10-06 | `git commit` |
-| 21.3 | Aceite do usuário (testar no navegador) | ⬜ Pendente | — | — |
-
-## Etapa 22 — Botão de olho para mostrar a senha no `login.html` (pedida em 2026-10-06; tarefa pequena)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 22.1 | Botão 👁 dentro do campo senha que mostra/oculta a senha digitada (`login.html`, `assets/css/login.css`, `js/login.js`, `docs/ORIENTACAO_JS_LOGIN.md`) | ✅ Concluído | 2026-10-06 | `node --check` OK; navegador não aberto (regra) |
-| 22.2 | Commit local | ✅ Concluído | 2026-10-06 | `git commit` |
-| 22.3 | Ícone muda conforme o estado: olho riscado com a senha oculta, olho aberto com a senha visível (SVG no `login.html`, troca pelo CSS via `aria-pressed`) | ✅ Concluído | 2026-10-06 | Leitura do código; navegador não aberto (regra) |
-| 22.4 | Aceite do usuário (testar no navegador) | ⬜ Pendente | — | — |
-
-## Etapa 22 — Data da aula também para os alunos no índice de atividades (pedida em 2026-10-06; tarefa pequena)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 22.1 | Conferir no banco a leitura como aluno (RLS de `atividade` e `aulas`) | ✅ Concluído | 2026-10-06 | Consulta simulando aluno da turma QA LBTSN: 5 aulas com data |
-| 22.2 | `assets/js/indice-aula-data.js`: falha na checagem de professor não esconde mais as datas; card sem atividade legível busca a aula pelo número ("AULA NN") na mesma matéria | ✅ Concluído | 2026-10-06 | `node --check` OK; navegador não aberto (regra) |
-| 22.3 | Commit local | ✅ Concluído | 2026-10-06 | `git commit` |
-| 22.4 | Aceite do usuário (testar logado como aluno) | ⬜ Pendente | — | — |
-
-## Etapa 23 — Mostrar as questões que faltam quando a atividade não está completa (pedida em 2026-10-06; tarefa pequena)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 23.1 | Recusa da entrega pelo banco passa a listar as questões sem alternativa gravada (1..`total_itens` × `resposta_atividade` da tentativa) em vez da mensagem genérica; aviso da página com a lista em linha própria (`assets/js/respostas-atividade-banco.js`, `assets/js/respostas-atividade.js`) | ✅ Concluído | 2026-10-06 | `node --check` OK; navegador não aberto (regra) |
-| 23.2 | Commit local | ✅ Concluído | 2026-10-06 | `git commit` |
-| 23.3 | Aceite do usuário (testar no navegador) | ⬜ Pendente | — | — |
-
-## Etapa 24 — Reforço de Linguagens: regra de 25 questões e atividade da Aula 01 (pedida em 2026-10-06; tarefa média)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 24.1 | Regra exclusiva no `CLAUDE.md`: 25 questões por atividade (20 objetivas + 5 discursivas com Contexto, Comando e campo para digitar; correção com IA + análise do professor) | ✅ Concluído | 2026-10-06 09:21 | Versão e histórico atualizados; visualizador lê o mesmo formato |
-| 24.2 | Decisão do formato: duas páginas por aula, sem mudar o banco | ✅ Concluído | 2026-10-06 | Resposta do usuário |
-| 24.3 | `materia.json` da matéria (capacidades C1–C6 da UC 7 na ementa do curso) | ✅ Concluído | 2026-10-06 | Gerador leu sem erro |
-| 24.4 | Aula 01: `ATIVIDADES-AULA-01-20-QUESTOES.html` (gabarito 5 de cada letra) + `ATIVIDADE-DISCURSIVA-AULA-01.html` (5 campos) + padrão de resposta; índice da matéria; seed do grupo no `scripts/gerar-seed-atividades.py` | ✅ Concluído | 2026-10-06 | 20 itens e 5 `textarea`; nenhum gabarito nos HTML |
-| 24.5 | Aplicar os seeds no Supabase (objetivas primeiro, depois discursivas) | ✅ Concluído | 2026-10-06 | Consulta: atividade 60 (20 no gabarito, ativa) e 61 (5 tópicos, bloqueada), matéria no curso 6 |
-| 24.6 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 25 — Pendências de aulas (tabela `pendencias` + `AGENDA_COLABORADOR/pendencias.html` + menu do administrador) (pedida em 2026-10-06; plano `docs/pendencias-aulas-professor-administrador.md`)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 25.1 | Plano em `docs/pendencias-aulas-professor-administrador.md` | ✅ Concluído | 2026-10-06 | Arquivo criado |
-| 25.2 | Aprovação do plano pelo usuário (com filtros por todos os campos e CRUD completo) | ✅ Concluído | 2026-10-06 | Resposta do usuário |
-| 25.3 | Executar os passos 1 a 7 do plano (SQL aplicado no Supabase) | ✅ Concluído | 2026-10-06 09:50 | Consulta: 6 colunas, RLS, 3 políticas, sem anon/delete; `node --check` OK |
-| 25.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 26 — Reforço de Linguagens: 10 aulas (uma por slide) e atividades das aulas 02 a 10 (aprovada em 2026-10-06; plano `docs/reforco-linguagens-10-aulas-e-atividades.md`)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 26.1 | Plano e decisões D1–D7 aprovados | ✅ Concluído | 2026-10-06 10:18 | Resposta do usuário |
-| 26.2 | Regra no `CLAUDE.md` (10 aulas; fonte das atividades = `AULAS-CHALKIE-AI/CONTEUDO`) | ✅ Concluído | 2026-10-06 10:22 | Seção da matéria + versão 10:22; regras-modal lê o formato |
-| 26.3 | Ementa da matéria (seção VI, tamanho) + status das ementas | ✅ Concluído | 2026-10-06 10:22 | Seção VI com 10 aulas; 14.866 caracteres |
-| 26.4 | `materia.json` com as 10 aulas | ✅ Concluído | 2026-10-06 10:22 | 10 aulas, soma 63 h |
-| 26.5 | Aulas antigas movidas para `AULAS/LEGADO-16-AULAS/` | ✅ Concluído | 2026-10-06 10:22 | 17 arquivos em LEGADO-16-AULAS (git mv) |
-| 26.6 | 10 aulas em `REFORCO_LINGUAGENS/CONTEUDO/` com link dos slides | ✅ Concluído | 2026-10-06 10:46 | 10 aulas em CONTEUDO (6 h × 7 + 7 h × 3 = 63 h), cada uma com link do slide e dinâmica |
-| 26.7 | `.gitignore` libera os PDFs de `AULAS-CHALKIE-AI/` | ✅ Concluído | 2026-10-06 10:22 | git check-ignore: PDFs liberados |
-| 26.8 | `STATUS-AULAS.md` e `STATUS-ATIVIDADES.md` com 10 aulas | ✅ Concluído | 2026-10-06 10:28 | Os dois arquivos reescritos com 10 aulas |
-| 26.9 | Aula 01: `Conteúdo-base` aponta para `AULAS-CHALKIE-AI/CONTEUDO` | ✅ Concluído | 2026-10-06 10:22 | Fontes e páginas da Aula 01 com Conteúdo-base e Slides novos |
-| 26.10 | Atividades Aula 02 (20 + 5, seed aplicado) | ✅ Concluído | 2026-10-06 10:28 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 62 (20 no gabarito) e 63 (5 tópicos, bloqueada) |
-| 26.11 | Atividades Aula 03 | ✅ Concluído | 2026-10-06 10:31 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 64 (20 no gabarito) e 65 (5 tópicos, bloqueada) |
-| 26.12 | Atividades Aula 04 | ✅ Concluído | 2026-10-06 10:33 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 66 (20 no gabarito) e 67 (5 tópicos, bloqueada) |
-| 26.13 | Atividades Aula 05 | ✅ Concluído | 2026-10-06 10:35 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 68 (20 no gabarito) e 69 (5 tópicos, bloqueada) |
-| 26.14 | Atividades Aula 06 | ✅ Concluído | 2026-10-06 10:37 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 70 (20 no gabarito) e 71 (5 tópicos, bloqueada) |
-| 26.15 | Atividades Aula 07 | ✅ Concluído | 2026-10-06 10:39 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 72 (20 no gabarito) e 73 (5 tópicos, bloqueada) |
-| 26.16 | Atividades Aula 08 | ✅ Concluído | 2026-10-06 10:42 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 74 (20 no gabarito) e 75 (5 tópicos, bloqueada) |
-| 26.17 | Atividades Aula 09 | ✅ Concluído | 2026-10-06 10:44 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 76 (20 no gabarito) e 77 (5 tópicos, bloqueada) |
-| 26.18 | Atividades Aula 10 | ✅ Concluído | 2026-10-06 10:46 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 78 (20 no gabarito) e 79 (5 tópicos, bloqueada) |
-| 26.19 | Índice da matéria | ✅ Concluído | 2026-10-06 10:46 | Índice da matéria e do curso regerados só no Rio do Sul Mais Tech (21 páginas) |
-| 26.20 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 27 — Pendências só pelo menu do Professor Administrador (pedida em 2026-10-06; tarefa pequena)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 27.1 | Regra no `CLAUDE.md` (sem índice/link público para `AGENDA_COLABORADOR`) | ✅ Concluído | 2026-10-06 10:53 | Versão das regras 2026-10-06 10:53 |
-| 27.2 | Gerador de índices ignora `AGENDA_COLABORADOR` | ✅ Concluído | 2026-10-06 10:53 | `py_compile` OK |
-| 27.3 | Remover os 2 índices gerados por engano em `AGENDA_COLABORADOR/` | ✅ Concluído | 2026-10-06 10:53 | `git status` da pasta limpo |
-| 27.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-
+| Etapa | Assunto | Arquivo |
+|---|---|---|
+| 1 | Atualizar `ANALISE-GERACAO-AULAS.md` do Técnico em Informática para Internet (pedida em 2026-10-03) | [ETAPA-001-ATUALIZAR-ANALISE-GERACAO-AULAS-MD-DO-TECNICO.md](etapas/ETAPA-001-ATUALIZAR-ANALISE-GERACAO-AULAS-MD-DO-TECNICO.md) |
+| 2 | Apostila da ITIC (capítulos 02 a 10) e apostila de Testes de Frontend (pedida em 2026-10-03) | [ETAPA-002-APOSTILA-DA-ITIC-E-APOSTILA-DE-TESTES.md](etapas/ETAPA-002-APOSTILA-DA-ITIC-E-APOSTILA-DE-TESTES.md) |
+| 3 | Regra "conteúdo só pelos Markdowns, nunca de PDF" no `CLAUDE.md` (pedida em 2026-10-03 20:47) | [ETAPA-003-REGRA-CONTEUDO-SO-PELOS-MARKDOWNS-NUNCA-DE.md](etapas/ETAPA-003-REGRA-CONTEUDO-SO-PELOS-MARKDOWNS-NUNCA-DE.md) |
+| 4 | Regras "matéria modelo: Introdução à TIC" e "aulas extraídas da ementa em `CONTEUDO/`" (pedidas em 2026-10-03 20:52 e 20:55) | [ETAPA-004-REGRAS-MATERIA-MODELO-INTRODUCAO-A-TIC-E.md](etapas/ETAPA-004-REGRAS-MATERIA-MODELO-INTRODUCAO-A-TIC-E.md) |
+| 6 | Equipes por turma + matéria: menu 👥 Equipes com CRUD nas atividades (pedida em 2026-10-05) | [ETAPA-006-EQUIPES-POR-TURMA-MATERIA-MENU-EQUIPES-COM.md](etapas/ETAPA-006-EQUIPES-POR-TURMA-MATERIA-MENU-EQUIPES-COM.md) |
+| 10 | Detalhar a "Missão da equipe" do trabalho em equipe da ITIC (pedida em 2026-10-05) | [ETAPA-010-DETALHAR-A-MISSAO-DA-EQUIPE-DO-TRABALHO.md](etapas/ETAPA-010-DETALHAR-A-MISSAO-DA-EQUIPE-DO-TRABALHO.md) |
+| 11 | Pasta na nuvem é tarefa do líder; demais atividades decididas em equipe (pedida em 2026-10-05) | [ETAPA-011-PASTA-NA-NUVEM-E-TAREFA-DO-LIDER.md](etapas/ETAPA-011-PASTA-NA-NUVEM-E-TAREFA-DO-LIDER.md) |
+| 12 | Link "Slide Brainstorming" no trabalho em equipe da ITIC (pedida em 2026-10-05) | [ETAPA-012-LINK-SLIDE-BRAINSTORMING-NO-TRABALHO-EM-EQUIPE.md](etapas/ETAPA-012-LINK-SLIDE-BRAINSTORMING-NO-TRABALHO-EM-EQUIPE.md) |
+| 13 | Autorização dos responsáveis para uso do celular na aula (ITIC, trabalho em equipe) (pedida em 2026-10-05) | [ETAPA-013-AUTORIZACAO-DOS-RESPONSAVEIS-PARA-USO-DO-CELULAR.md](etapas/ETAPA-013-AUTORIZACAO-DOS-RESPONSAVEIS-PARA-USO-DO-CELULAR.md) |
+| 13 | Versão resumida do trabalho em equipe da ITIC (pedida em 2026-10-05) | [ETAPA-013-VERSAO-RESUMIDA-DO-TRABALHO-EM-EQUIPE-DA.md](etapas/ETAPA-013-VERSAO-RESUMIDA-DO-TRABALHO-EM-EQUIPE-DA.md) |
+| 14 | Botão "Exportar em Word" ao lado de cada exportar PDF (regra global) (pedida em 2026-10-05) | [ETAPA-014-BOTAO-EXPORTAR-EM-WORD-AO-LADO-DE.md](etapas/ETAPA-014-BOTAO-EXPORTAR-EM-WORD-AO-LADO-DE.md) |
+| 15 | Sugestão de alunos por turma com botão "Confirmar" na `alunos.html` (pedida em 2026-10-05; plano `docs/sugestao-alunos-por-turma-confirmar.md`, aprovado em 2026-10-05; escopo ampliado com o filtro **Turma OK**) | [ETAPA-015-SUGESTAO-DE-ALUNOS-POR-TURMA-COM-BOTAO.md](etapas/ETAPA-015-SUGESTAO-DE-ALUNOS-POR-TURMA-COM-BOTAO.md) |
+| 16 | Card do trabalho em equipe v2 no índice de atividades da ITIC (pedida em 2026-10-05) | [ETAPA-016-CARD-DO-TRABALHO-EM-EQUIPE-V2-NO.md](etapas/ETAPA-016-CARD-DO-TRABALHO-EM-EQUIPE-V2-NO.md) |
+| 16 | Card do trabalho em equipe v2 com bloqueio/liberação no índice da ITIC (pedida em 2026-10-05) | [ETAPA-016-CARD-DO-TRABALHO-EM-EQUIPE-V2-COM.md](etapas/ETAPA-016-CARD-DO-TRABALHO-EM-EQUIPE-V2-COM.md) |
+| 16 | Bloqueio de atividade por turma (turma favorita) (pedida em 2026-10-05; plano `docs/bloqueio-atividade-por-turma-favorita.md`, aprovado: "SIM, PODE EXECUTAR") | [ETAPA-016-BLOQUEIO-DE-ATIVIDADE-POR-TURMA.md](etapas/ETAPA-016-BLOQUEIO-DE-ATIVIDADE-POR-TURMA.md) |
+| 17 | Relatórios com o bloqueio por turma (pedida em 2026-10-05; tarefa pequena) | [ETAPA-017-RELATORIOS-COM-O-BLOQUEIO-POR-TURMA.md](etapas/ETAPA-017-RELATORIOS-COM-O-BLOQUEIO-POR-TURMA.md) |
+| 18 | Vínculo curso × turma e alunos da turma na `turmas.html` (pedida em 2026-10-06; plano `docs/vinculo-curso-turma-e-alunos-da-turma.md`, aguardando aprovação) | [ETAPA-018-VINCULO-CURSO-TURMA-E-ALUNOS-DA-TURMA.md](etapas/ETAPA-018-VINCULO-CURSO-TURMA-E-ALUNOS-DA-TURMA.md) |
+| 19 | Editar o card da aula com a data da aula (pedida em 2026-10-06; tarefa pequena, sem mudança no banco) | [ETAPA-019-EDITAR-O-CARD-DA-AULA-COM-A.md](etapas/ETAPA-019-EDITAR-O-CARD-DA-AULA-COM-A.md) |
+| 20 | Aluna Bianca Pamela na turma QA LBTSN 2026/1 M2 (CEPLAS Manhã) (pedida em 2026-10-06; tarefa pequena) | [ETAPA-020-ALUNA-BIANCA-PAMELA-NA-TURMA-QA-LBTSN.md](etapas/ETAPA-020-ALUNA-BIANCA-PAMELA-NA-TURMA-QA-LBTSN.md) |
+| 21 | Filtro "Só alunos da turma selecionada acima" na `alunos.html` (pedida em 2026-10-06; tarefa pequena) | [ETAPA-021-FILTRO-SO-ALUNOS-DA-TURMA-SELECIONADA-ACIMA.md](etapas/ETAPA-021-FILTRO-SO-ALUNOS-DA-TURMA-SELECIONADA-ACIMA.md) |
+| 22 | Botão de olho para mostrar a senha no `login.html` (pedida em 2026-10-06; tarefa pequena) | [ETAPA-022-BOTAO-DE-OLHO-PARA-MOSTRAR-A-SENHA.md](etapas/ETAPA-022-BOTAO-DE-OLHO-PARA-MOSTRAR-A-SENHA.md) |
+| 22 | Data da aula também para os alunos no índice de atividades (pedida em 2026-10-06; tarefa pequena) | [ETAPA-022-DATA-DA-AULA-TAMBEM-PARA-OS-ALUNOS.md](etapas/ETAPA-022-DATA-DA-AULA-TAMBEM-PARA-OS-ALUNOS.md) |
+| 23 | Mostrar as questões que faltam quando a atividade não está completa (pedida em 2026-10-06; tarefa pequena) | [ETAPA-023-MOSTRAR-AS-QUESTOES-QUE-FALTAM-QUANDO-A.md](etapas/ETAPA-023-MOSTRAR-AS-QUESTOES-QUE-FALTAM-QUANDO-A.md) |
+| 24 | Reforço de Linguagens: regra de 25 questões e atividade da Aula 01 (pedida em 2026-10-06; tarefa média) | [ETAPA-024-REFORCO-DE-LINGUAGENS-REGRA-DE-25-QUESTOES.md](etapas/ETAPA-024-REFORCO-DE-LINGUAGENS-REGRA-DE-25-QUESTOES.md) |
+| 25 | Pendências de aulas (tabela `pendencias` + `AGENDA_COLABORADOR/pendencias.html` + menu do administrador) (pedida em 2026-10-06; plano `docs/pendencias-aulas-professor-administrador.md`) | [ETAPA-025-PENDENCIAS-DE-AULAS.md](etapas/ETAPA-025-PENDENCIAS-DE-AULAS.md) |
+| 26 | Reforço de Linguagens: 10 aulas (uma por slide) e atividades das aulas 02 a 10 (aprovada em 2026-10-06; plano `docs/reforco-linguagens-10-aulas-e-atividades.md`) | [ETAPA-026-REFORCO-DE-LINGUAGENS-10-AULAS-E-ATIVIDADES.md](etapas/ETAPA-026-REFORCO-DE-LINGUAGENS-10-AULAS-E-ATIVIDADES.md) |
+| 27 | Pendências só pelo menu do Professor Administrador (pedida em 2026-10-06; tarefa pequena) | [ETAPA-027-PENDENCIAS-SO-PELO-MENU-DO-PROFESSOR-ADMINISTRADOR.md](etapas/ETAPA-027-PENDENCIAS-SO-PELO-MENU-DO-PROFESSOR-ADMINISTRADOR.md) |
+| 27 | ITIC: atividade individual de sexta à tarde (40 objetivas) (pedida em 2026-10-06; tarefa pequena) | [ETAPA-027-ITIC-ATIVIDADE-INDIVIDUAL-DE-SEXTA-A-TARDE.md](etapas/ETAPA-027-ITIC-ATIVIDADE-INDIVIDUAL-DE-SEXTA-A-TARDE.md) |
+| 28 | Quadro de respostas no início da atividade e na exportação (pedida em 2026-10-06; plano `docs/quadro-respostas-atividade.md`) | [ETAPA-028-QUADRO-DE-RESPOSTAS-NO-INICIO-DA-ATIVIDADE.md](etapas/ETAPA-028-QUADRO-DE-RESPOSTAS-NO-INICIO-DA-ATIVIDADE.md) |
+| 29 | ITIC: atividade individual de sexta — 20 discursivas (pedida em 2026-10-06; tarefa pequena) | [ETAPA-029-ITIC-ATIVIDADE-INDIVIDUAL-DE-SEXTA-20-DISCURSIVAS.md](etapas/ETAPA-029-ITIC-ATIVIDADE-INDIVIDUAL-DE-SEXTA-20-DISCURSIVAS.md) |
+| 30 | Curso de Gestão de Materiais no índice de cursos (tarefa pequena, 2026-10-06) | [ETAPA-030-CURSO-DE-GESTAO-DE-MATERIAIS-NO-INDICE.md](etapas/ETAPA-030-CURSO-DE-GESTAO-DE-MATERIAIS-NO-INDICE.md) |
+| 31 | Prova Prática 06-10-2026 de Análise de Dados (Aulas 01 a 05) — plano: [docs/prova-pratica-06-10-2026-analise-dados.md](docs/prova-pratica-06-10-2026-analise-dados.md) | [ETAPA-031-PROVA-PRATICA-06-10-2026-DE-ANALISE.md](etapas/ETAPA-031-PROVA-PRATICA-06-10-2026-DE-ANALISE.md) |
+| 32 | Excluir aula (exclusão lógica, só Professor Administrador) — plano: [docs/excluir-aula-professor-administrador.md](docs/excluir-aula-professor-administrador.md) | [ETAPA-032-EXCLUIR-AULA-PLANO-DOCS-EXCLUIR-AULA-PROFESSOR.md](etapas/ETAPA-032-EXCLUIR-AULA-PLANO-DOCS-EXCLUIR-AULA-PROFESSOR.md) |
+| 33 | Média final de Análise de Dados: Aulas 01–03 = 10-LIVRE; Aulas 04–07 pelo banco (tarefa pequena, 2026-10-06) | [ETAPA-033-MEDIA-FINAL-DE-ANALISE-DE-DADOS-AULAS.md](etapas/ETAPA-033-MEDIA-FINAL-DE-ANALISE-DE-DADOS-AULAS.md) |
+| 34 | Média final: aluno vê as próprias notas (Aulas 04–07, Objetiva, Prova Prática) — plano: [docs/media-final-notas-do-aluno.md](docs/media-final-notas-do-aluno.md) | [ETAPA-034-MEDIA-FINAL-ALUNO-VE-AS-PROPRIAS-NOTAS.md](etapas/ETAPA-034-MEDIA-FINAL-ALUNO-VE-AS-PROPRIAS-NOTAS.md) |
+| 35 | Tabela "Notas dos alunos" (só professor) com exportar PDF na Avaliação Objetiva 01 de Análise de Dados (tarefa pequena, 2026-10-06) | [ETAPA-035-TABELA-NOTAS-DOS-ALUNOS-COM-EXPORTAR-PDF.md](etapas/ETAPA-035-TABELA-NOTAS-DOS-ALUNOS-COM-EXPORTAR-PDF.md) |
+| 36 | Gabarito fora do alcance dos alunos, botões de Word e card bloqueado (tarefas pequenas, 2026-10-06) | [ETAPA-036-GABARITO-FORA-DO-ALCANCE-DOS-ALUNOS-BOTOES.md](etapas/ETAPA-036-GABARITO-FORA-DO-ALCANCE-DOS-ALUNOS-BOTOES.md) |
+| 36 | Tabela "Notas dos alunos" (nome e nota, Exportar PDF) em todas as atividades (tarefa pequena, 2026-10-06) | [ETAPA-036-TABELA-NOTAS-DOS-ALUNOS-EM-TODAS-AS.md](etapas/ETAPA-036-TABELA-NOTAS-DOS-ALUNOS-EM-TODAS-AS.md) |
+| 37 | Liberar gabaritos por atividade e turma (botão do professor) — plano: [docs/liberacao-respostas-por-turma.md](docs/liberacao-respostas-por-turma.md) | [ETAPA-037-LIBERAR-GABARITOS-POR-ATIVIDADE-E-TURMA-PLANO.md](etapas/ETAPA-037-LIBERAR-GABARITOS-POR-ATIVIDADE-E-TURMA-PLANO.md) |
+| 38 | Regra do gabarito também nas discursivas (pedida em 2026-10-06; extensão do plano [docs/liberacao-respostas-por-turma.md](docs/liberacao-respostas-por-turma.md)) | [ETAPA-038-REGRA-DO-GABARITO-TAMBEM-NAS-DISCURSIVAS.md](etapas/ETAPA-038-REGRA-DO-GABARITO-TAMBEM-NAS-DISCURSIVAS.md) |
+| 39 | ID da atividade bloqueado no "Editar" do CADASTRAR ATIVIDADES (tarefa pequena, 2026-10-06) | [ETAPA-039-ID-DA-ATIVIDADE-BLOQUEADO-NO-EDITAR-DO.md](etapas/ETAPA-039-ID-DA-ATIVIDADE-BLOQUEADO-NO-EDITAR-DO.md) |
+| 40 | ID da atividade no card do índice e nome da atividade editável (tarefa pequena, 2026-10-06) | [ETAPA-040-ID-DA-ATIVIDADE-NO-CARD-DO-INDICE.md](etapas/ETAPA-040-ID-DA-ATIVIDADE-NO-CARD-DO-INDICE.md) |
+| 41 | Remover o botão "Banco Moodle (AVA SENAI)" de todas as atividades (tarefa pequena, 2026-10-06) | [ETAPA-041-REMOVER-O-BOTAO-BANCO-MOODLE-DE-TODAS.md](etapas/ETAPA-041-REMOVER-O-BOTAO-BANCO-MOODLE-DE-TODAS.md) |
+| 42 | Remover o botão "Exportar PDF com gabarito" (tarefa pequena, 2026-10-06) | [ETAPA-042-REMOVER-O-BOTAO-EXPORTAR-PDF-COM-GABARITO.md](etapas/ETAPA-042-REMOVER-O-BOTAO-EXPORTAR-PDF-COM-GABARITO.md) |
+| 43 | Análise das Provas Práticas id 37 × id 82 de Análise de Dados (tarefa pequena, 2026-10-06) | [ETAPA-043-ANALISE-DAS-PROVAS-PRATICAS-ID-37-ID.md](etapas/ETAPA-043-ANALISE-DAS-PROVAS-PRATICAS-ID-37-ID.md) |
+| 44 | Prova Prática ADAG unificada (id 82, 20 discursivas, 100% das aulas) e exclusão da id 37 — plano: [docs/prova-pratica-adag-unificada-id82.md](docs/prova-pratica-adag-unificada-id82.md) | [ETAPA-044-PROVA-PRATICA-ADAG-UNIFICADA-E-EXCLUSAO-DA.md](etapas/ETAPA-044-PROVA-PRATICA-ADAG-UNIFICADA-E-EXCLUSAO-DA.md) |
+| 45 | Log de gravação das alternativas em qualquer atividade (pedida em 2026-10-06) — plano: [docs/log-resposta-atividade.md](docs/log-resposta-atividade.md) | [ETAPA-045-LOG-DE-GRAVACAO-DAS-ALTERNATIVAS-EM-QUALQUER.md](etapas/ETAPA-045-LOG-DE-GRAVACAO-DAS-ALTERNATIVAS-EM-QUALQUER.md) |
+| 46 | Link "🧾 LOG" nos cards das atividades com o log das alternativas por aluno (tarefa pequena, 2026-10-06) | [ETAPA-046-LINK-LOG-NOS-CARDS-DAS-ATIVIDADES-COM.md](etapas/ETAPA-046-LINK-LOG-NOS-CARDS-DAS-ATIVIDADES-COM.md) |
+| 47 | Trocar o rótulo e o nome do card no modal "✏️ Editar aula", além da data (tarefa pequena, 2026-10-06) | [ETAPA-047-TROCAR-O-ROTULO-E-O-NOME-DO.md](etapas/ETAPA-047-TROCAR-O-ROTULO-E-O-NOME-DO.md) |
+| 47 | Exportar PDF no padrão SENAI nas discursivas (tarefa pequena, 2026-10-06) | [ETAPA-047-EXPORTAR-PDF-NO-PADRAO-SENAI-NAS-DISCURSIVAS.md](etapas/ETAPA-047-EXPORTAR-PDF-NO-PADRAO-SENAI-NAS-DISCURSIVAS.md) |
+| 48 | Card com 100% dos dados da tabela aulas + modal CRUD da aula (2026-10-06) — plano: [docs/card-dados-100-tabela-aulas.md](docs/card-dados-100-tabela-aulas.md) | [ETAPA-048-CARD-COM-100-DOS-DADOS-DA-TABELA.md](etapas/ETAPA-048-CARD-COM-100-DOS-DADOS-DA-TABELA.md) |
+| 49 | Professora Cintia Simone Grimm no LISTA-PRESENCA-PROFESSOR.js (tarefa pequena, 2026-10-07) | [ETAPA-049-PROFESSORA-CINTIA-SIMONE-GRIMM-NO-LISTA-PRESENCA.md](etapas/ETAPA-049-PROFESSORA-CINTIA-SIMONE-GRIMM-NO-LISTA-PRESENCA.md) |
+| 49 | Professora Cintia Simone Grimm no LISTA-PRESENCA-PROFESSOR.js (tarefa pequena, 2026-10-07) | [ETAPA-049-PROFESSORA-CINTIA-SIMONE-GRIMM-NO-LISTA-PRESENCA-B.md](etapas/ETAPA-049-PROFESSORA-CINTIA-SIMONE-GRIMM-NO-LISTA-PRESENCA-B.md) |
+| 50 | Menus USUARIOS/RELATORIOS/ALUNOS/CORREÇÃO só para o Professor Administrador (tarefa pequena, 2026-10-07) | [ETAPA-050-MENUS-USUARIOS-RELATORIOS-ALUNOS-CORRECAO-SO-PARA.md](etapas/ETAPA-050-MENUS-USUARIOS-RELATORIOS-ALUNOS-CORRECAO-SO-PARA.md) |
+| 51 | Resolução modelo do Trabalho em Equipe v2 (Grupo 04) em .doc para Google Docs (tarefa pequena, 2026-10-07) | [ETAPA-051-RESOLUCAO-MODELO-DO-TRABALHO-EM-EQUIPE-V2.md](etapas/ETAPA-051-RESOLUCAO-MODELO-DO-TRABALHO-EM-EQUIPE-V2.md) |
+| 52 | ITIC: nova atividade de sexta — 50 objetivas a partir da apostila (capítulos 01 a 07) (tarefa pequena, 2026-10-07) | [ETAPA-052-ITIC-NOVA-ATIVIDADE-DE-SEXTA-50-OBJETIVAS.md](etapas/ETAPA-052-ITIC-NOVA-ATIVIDADE-DE-SEXTA-50-OBJETIVAS.md) |
+| 53 | Bug: professor via respostas dos alunos nos campos da atividade (tarefa pequena — correção de bug, 2026-10-07) | [ETAPA-053-BUG-PROFESSOR-VIA-RESPOSTAS-DOS-ALUNOS-NOS.md](etapas/ETAPA-053-BUG-PROFESSOR-VIA-RESPOSTAS-DOS-ALUNOS-NOS.md) |
+| 54 | Combo "Aluno" do professor nas discursivas (tarefa pequena, 2026-10-07) | [ETAPA-054-COMBO-ALUNO-DO-PROFESSOR-NAS-DISCURSIVAS.md](etapas/ETAPA-054-COMBO-ALUNO-DO-PROFESSOR-NAS-DISCURSIVAS.md) |
+| 55 | ITIC sexta: alternativas reescritas para a correta não ser sempre a mais longa (tarefa pequena, 2026-10-07) | [ETAPA-055-ITIC-SEXTA-ALTERNATIVAS-REESCRITAS-PARA-A-CORRETA.md](etapas/ETAPA-055-ITIC-SEXTA-ALTERNATIVAS-REESCRITAS-PARA-A-CORRETA.md) |
+| 55 | Combo "Aluno" do professor também nas objetivas (tarefa pequena, 2026-10-07) | [ETAPA-055-COMBO-ALUNO-DO-PROFESSOR-TAMBEM-NAS-OBJETIVAS.md](etapas/ETAPA-055-COMBO-ALUNO-DO-PROFESSOR-TAMBEM-NAS-OBJETIVAS.md) |
+| 56 | ITIC sexta: atividade objetiva única de 100 questões (Aulas 01 a 07) — plano: [docs/itic-sexta-atividade-unica-100-questoes.md](docs/itic-sexta-atividade-unica-100-questoes.md) | [ETAPA-056-ITIC-SEXTA-ATIVIDADE-OBJETIVA-UNICA-DE-100.md](etapas/ETAPA-056-ITIC-SEXTA-ATIVIDADE-OBJETIVA-UNICA-DE-100.md) |
+| 57 | Aviso "sem computador/celular, só a apostila" na discursiva de sexta (tarefa pequena, 2026-10-07) | [ETAPA-057-AVISO-SEM-COMPUTADOR-CELULAR-SO-A-APOSTILA.md](etapas/ETAPA-057-AVISO-SEM-COMPUTADOR-CELULAR-SO-A-APOSTILA.md) |
+| 58 | Discursiva de sexta reduzida para 30 questões (cabe em 4 h) (tarefa pequena, 2026-10-07) | [ETAPA-058-DISCURSIVA-DE-SEXTA-REDUZIDA-PARA-30-QUESTOES.md](etapas/ETAPA-058-DISCURSIVA-DE-SEXTA-REDUZIDA-PARA-30-QUESTOES.md) |
+| 59 | Turma 135081 responde até 17h15 (tarefa pequena, 2026-10-07) | [ETAPA-059-TURMA-135081-RESPONDE-ATE-17H15.md](etapas/ETAPA-059-TURMA-135081-RESPONDE-ATE-17H15.md) |
+| 60 | Atividades de sexta liberadas para a manhã (tarefa pequena, 2026-10-07) | [ETAPA-060-ATIVIDADES-DE-SEXTA-LIBERADAS-PARA-A-MANHA.md](etapas/ETAPA-060-ATIVIDADES-DE-SEXTA-LIBERADAS-PARA-A-MANHA.md) |
+| 61 | Data, hora, autor e versão nas apostilas (regra global; começa pela ITIC) (tarefa pequena, 2026-10-07) | [ETAPA-061-DATA-HORA-AUTOR-E-VERSAO-NAS-APOSTILAS.md](etapas/ETAPA-061-DATA-HORA-AUTOR-E-VERSAO-NAS-APOSTILAS.md) |
+| 62 | Autor, versão, data e hora na apostila de Testes de Frontend (tarefa pequena, 2026-10-07) | [ETAPA-062-AUTOR-VERSAO-DATA-E-HORA-NA-APOSTILA.md](etapas/ETAPA-062-AUTOR-VERSAO-DATA-E-HORA-NA-APOSTILA.md) |
+| 63 | Link do curso "Técnico em Desenvolvimento de Sistemas" no índice de cursos (tarefa pequena, 2026-10-07) | [ETAPA-063-LINK-DO-CURSO-TECNICO-EM-DESENVOLVIMENTO-DE.md](etapas/ETAPA-063-LINK-DO-CURSO-TECNICO-EM-DESENVOLVIMENTO-DE.md) |
+| 64 | Apostila de Reforço de Linguagens (pedida em 2026-10-07) | [ETAPA-064-APOSTILA-DE-REFORCO-DE-LINGUAGENS.md](etapas/ETAPA-064-APOSTILA-DE-REFORCO-DE-LINGUAGENS.md) |
+| 65 | Regra do push por ambiente (tarefa pequena, 2026-10-07) | [ETAPA-065-REGRA-DO-PUSH-POR-AMBIENTE.md](etapas/ETAPA-065-REGRA-DO-PUSH-POR-AMBIENTE.md) |
+| 66 | Apostila no menu de atividades de Reforço de Linguagens (tarefa pequena, 2026-10-07) | [ETAPA-066-APOSTILA-NO-MENU-DE-ATIVIDADES-DE-REFORCO.md](etapas/ETAPA-066-APOSTILA-NO-MENU-DE-ATIVIDADES-DE-REFORCO.md) |
+| 67 | Vídeos na apostila de Reforço de Linguagens + identificação (tarefa pequena, 2026-10-07) | [ETAPA-067-VIDEOS-NA-APOSTILA-DE-REFORCO-DE-LINGUAGENS.md](etapas/ETAPA-067-VIDEOS-NA-APOSTILA-DE-REFORCO-DE-LINGUAGENS.md) |
+| 68 | Autor e versão em todas as apostilas + regra no CLAUDE.md (tarefa pequena, 2026-10-07) | [ETAPA-068-AUTOR-E-VERSAO-EM-TODAS-AS-APOSTILAS.md](etapas/ETAPA-068-AUTOR-E-VERSAO-EM-TODAS-AS-APOSTILAS.md) |
+| 69 | Bloquear de novo 81 e 85 até sexta; conferir capa de Reforço (tarefa pequena, 2026-10-07) | [ETAPA-069-BLOQUEAR-DE-NOVO-81-E-85-ATE.md](etapas/ETAPA-069-BLOQUEAR-DE-NOVO-81-E-85-ATE.md) |
+| 70 | Reorganizar o CLAUDE.md: estrutura e manutenção (pedida em 2026-10-07) | [ETAPA-070-REORGANIZAR-O-CLAUDE-MD-ESTRUTURA-E-MANUTENCAO.md](etapas/ETAPA-070-REORGANIZAR-O-CLAUDE-MD-ESTRUTURA-E-MANUTENCAO.md) |
+| 71 | Recriar Comunicação Oral e Escrita (Rio do Sul) no padrão da ITIC (pedida em 2026-10-07) | [ETAPA-071-RECRIAR-COMUNICACAO-ORAL-E-ESCRITA-NO-PADRAO.md](etapas/ETAPA-071-RECRIAR-COMUNICACAO-ORAL-E-ESCRITA-NO-PADRAO.md) |
+| 72 | Corrigir as contradições do CLAUDE.md, uma de cada vez (pedida em 2026-10-07) | [ETAPA-072-CORRIGIR-AS-CONTRADICOES-DO-CLAUDE-MD-UMA.md](etapas/ETAPA-072-CORRIGIR-AS-CONTRADICOES-DO-CLAUDE-MD-UMA.md) |
+| 73 | Revisão final das regras: problemas novos + desatualizados (pedida em 2026-10-07) | [ETAPA-073-REVISAO-FINAL-DAS-REGRAS-PROBLEMAS-NOVOS-DESATUALIZADOS.md](etapas/ETAPA-073-REVISAO-FINAL-DAS-REGRAS-PROBLEMAS-NOVOS-DESATUALIZADOS.md) |
+| 74 | Dashboard do Jev (JEV-AI de Testes de Frontend) (tarefa pequena, 2026-10-07) | [ETAPA-074-DASHBOARD-DO-JEV.md](etapas/ETAPA-074-DASHBOARD-DO-JEV.md) |
+| 75 | Atividades práticas das Aulas 06 a 10 da ITIC (pedida em 2026-10-07) | [ETAPA-075-ATIVIDADES-PRATICAS-DAS-AULAS-06-A-10.md](etapas/ETAPA-075-ATIVIDADES-PRATICAS-DAS-AULAS-06-A-10.md) |
+| 75 | Capacidades nas 2 últimas pendências (tarefa pequena, 2026-10-07) | [ETAPA-075-CAPACIDADES-NAS-2-ULTIMAS-PENDENCIAS.md](etapas/ETAPA-075-CAPACIDADES-NAS-2-ULTIMAS-PENDENCIAS.md) |
+| 76 | Conflitos entre as regras de TASKS.md, documentação e sessões (pedida em 2026-10-08) | [ETAPA-076-CONFLITOS-ENTRE-AS-REGRAS-DE-TASKS-MD.md](etapas/ETAPA-076-CONFLITOS-ENTRE-AS-REGRAS-DE-TASKS-MD.md) |
+| 77 | Skills globais copiadas para `.claude/skills/` do projeto (tarefa pequena, 2026-10-08) | [ETAPA-077-SKILLS-GLOBAIS-COPIADAS-PARA-CLAUDE-SKILLS-DO.md](etapas/ETAPA-077-SKILLS-GLOBAIS-COPIADAS-PARA-CLAUDE-SKILLS-DO.md) |
+| 78 | Regras do CLAUDE.md global trazidas para o projeto (pedida em 2026-10-08) | [ETAPA-078-REGRAS-DO-CLAUDE-MD-GLOBAL-TRAZIDAS-PARA.md](etapas/ETAPA-078-REGRAS-DO-CLAUDE-MD-GLOBAL-TRAZIDAS-PARA.md) |
+| 79 | Apostila da ITIC versão 2 (até 40 páginas) (pedida em 2026-10-08 08:36:51) | [ETAPA-079-APOSTILA-DA-ITIC-VERSAO-2.md](etapas/ETAPA-079-APOSTILA-DA-ITIC-VERSAO-2.md) |
+| 80 | Remover o arquivo `.gitignore copy` (tarefa pequena, 2026-10-08 12:00:28) | [ETAPA-080-REMOVER-O-ARQUIVO-GITIGNORE-COPY.md](etapas/ETAPA-080-REMOVER-O-ARQUIVO-GITIGNORE-COPY.md) |
+| 81 | Apostila ITIC V2: correções da conferência com a ementa (tarefa pequena, 2026-10-08 09:03:16) | [ETAPA-081-APOSTILA-ITIC-V2-CORRECOES-DA-CONFERENCIA-COM.md](etapas/ETAPA-081-APOSTILA-ITIC-V2-CORRECOES-DA-CONFERENCIA-COM.md) |
+| 82 | Discursiva de sexta (id 81) ajustada à apostila V2 (tarefa pequena, 2026-10-08 09:33:18) | [ETAPA-082-DISCURSIVA-DE-SEXTA-AJUSTADA-A-APOSTILA-V2.md](etapas/ETAPA-082-DISCURSIVA-DE-SEXTA-AJUSTADA-A-APOSTILA-V2.md) |
+| 83 | Remover a apostila V1 da ITIC (tarefa grande, pedida em 2026-10-08 09:36) | [ETAPA-083-REMOVER-A-APOSTILA-V1-DA-ITIC.md](etapas/ETAPA-083-REMOVER-A-APOSTILA-V1-DA-ITIC.md) |
+| 84 | Botão "Exportar Usuários em PDF" na página de usuários (tarefa pequena, 2026-10-08 13:17:15) | [ETAPA-084-BOTAO-EXPORTAR-USUARIOS-EM-PDF-NA-PAGINA.md](etapas/ETAPA-084-BOTAO-EXPORTAR-USUARIOS-EM-PDF-NA-PAGINA.md) |
+| 84 | Discursiva de sexta (id 81) com 20 questões e PDF de até 2 folhas (tarefa pequena, 2026-10-08 10:41:37) | [ETAPA-084-DISCURSIVA-DE-SEXTA-COM-20-QUESTOES-E.md](etapas/ETAPA-084-DISCURSIVA-DE-SEXTA-COM-20-QUESTOES-E.md) |
+| 85 | Discursiva de sexta (id 81): 0,5 ponto por questão (tarefa pequena, 2026-10-08 10:59:06) | [ETAPA-085-DISCURSIVA-DE-SEXTA-0-5-PONTO-POR.md](etapas/ETAPA-085-DISCURSIVA-DE-SEXTA-0-5-PONTO-POR.md) |
+| 85 | Regra: atividades sem empresa fictícia, "Você como aluno consultor" (tarefa pequena, 2026-10-08 14:19:41) | [ETAPA-085-REGRA-ATIVIDADES-SEM-EMPRESA-FICTICIA-VOCE-COMO.md](etapas/ETAPA-085-REGRA-ATIVIDADES-SEM-EMPRESA-FICTICIA-VOCE-COMO.md) |
+| 86 | Professora Grazi Ferreira na lista de professores (tarefa pequena, 2026-10-08) | [ETAPA-086-PROFESSORA-GRAZI-FERREIRA-NA-LISTA-DE-PROFESSORES.md](etapas/ETAPA-086-PROFESSORA-GRAZI-FERREIRA-NA-LISTA-DE-PROFESSORES.md) |
+| 86 | PDF "Orientação à professora" da atividade de sexta (tarefa pequena, 2026-10-08 11:33:33) | [ETAPA-086-PDF-ORIENTACAO-A-PROFESSORA-DA-ATIVIDADE-DE.md](etapas/ETAPA-086-PDF-ORIENTACAO-A-PROFESSORA-DA-ATIVIDADE-DE.md) |
+| 87 | Nova turma Roberto Machado (QA LBTSN 2026/1 V1, código 124403) e usuários dos alunos (tarefa pequena, 2026-10-08) | [ETAPA-087-NOVA-TURMA-ROBERTO-MACHADO-E-USUARIOS-DOS.md](etapas/ETAPA-087-NOVA-TURMA-ROBERTO-MACHADO-E-USUARIOS-DOS.md) |
+| 88 | Bloquear colar na Prova Prática ADAG (id 82) e regra para as outras discursivas (tarefa pequena, 2026-10-08 13:46:24) | [ETAPA-088-BLOQUEAR-COLAR-NA-PROVA-PRATICA-ADAG-E.md](etapas/ETAPA-088-BLOQUEAR-COLAR-NA-PROVA-PRATICA-ADAG-E.md) |
+| 88 | Menu 👥 Equipes em Análise de Dados Aplicada à Gestão (duplas da prova) (tarefa pequena, 2026-10-08 17:11:10) | [ETAPA-088-MENU-EQUIPES-EM-ANALISE-DE-DADOS-APLICADA.md](etapas/ETAPA-088-MENU-EQUIPES-EM-ANALISE-DE-DADOS-APLICADA.md) |
+| 89 | Banco: nome de equipe único na turma + matéria sem diferenciar maiúsculas (pedido em 2026-10-08 17:17:38) | [ETAPA-089-BANCO-NOME-DE-EQUIPE-UNICO-NA-TURMA.md](etapas/ETAPA-089-BANCO-NOME-DE-EQUIPE-UNICO-NA-TURMA.md) |
+| 89 | Progresso da turma para o professor e nome da prova 08-10-2026 (Prova Prática ADAG id 82, tarefa pequena, 2026-10-08 14:34:44) | [ETAPA-089-PROGRESSO-DA-TURMA-PARA-O-PROFESSOR-E.md](etapas/ETAPA-089-PROGRESSO-DA-TURMA-PARA-O-PROFESSOR-E.md) |
+| 90 | Botão +Integrante no card de cada equipe (tarefa pequena, 2026-10-08 17:18:19) | [ETAPA-090-BOTAO-INTEGRANTE-NO-CARD-DE-CADA-EQUIPE.md](etapas/ETAPA-090-BOTAO-INTEGRANTE-NO-CARD-DE-CADA-EQUIPE.md) |
+| 90 | Orientação para a IA corrigir a Prova Prática ADAG (id 82) (tarefa pequena, 2026-10-08 14:48:26) | [ETAPA-090-ORIENTACAO-PARA-A-IA-CORRIGIR-A-PROVA.md](etapas/ETAPA-090-ORIENTACAO-PARA-A-IA-CORRIGIR-A-PROVA.md) |
+| 91 | Menu das atividades só com 👥 Equipes em todas as matérias (pedido em 2026-10-08 17:20:14) | [ETAPA-091-MENU-DAS-ATIVIDADES-SO-COM-EQUIPES-EM.md](etapas/ETAPA-091-MENU-DAS-ATIVIDADES-SO-COM-EQUIPES-EM.md) |
+| 91 | Coluna "Nota IA" no progresso da turma (Prova Prática ADAG id 82, tarefa pequena, 2026-10-08 14:52:04) | [ETAPA-091-COLUNA-NOTA-IA-NO-PROGRESSO-DA-TURMA.md](etapas/ETAPA-091-COLUNA-NOTA-IA-NO-PROGRESSO-DA-TURMA.md) |
+| 92 | Botão 👥 EQUIPES global no header (pedido em 2026-10-08 17:22:44) | [ETAPA-092-BOTAO-EQUIPES-GLOBAL-NO-HEADER.md](etapas/ETAPA-092-BOTAO-EQUIPES-GLOBAL-NO-HEADER.md) |
+| 92 | Correção parcial pela IA e coluna "Nota parcial IA" (Prova Prática ADAG id 82, 2026-10-08 15:07:27) | [ETAPA-092-CORRECAO-PARCIAL-PELA-IA-E-COLUNA-NOTA.md](etapas/ETAPA-092-CORRECAO-PARCIAL-PELA-IA-E-COLUNA-NOTA.md) |
+| 93 | +Integrante ao lado direito do nome da equipe (tarefa pequena, 2026-10-08 17:23:35) | [ETAPA-093-INTEGRANTE-AO-LADO-DIREITO-DO-NOME-DA.md](etapas/ETAPA-093-INTEGRANTE-AO-LADO-DIREITO-DO-NOME-DA.md) |
+| 93 | Regra: nota parcial da IA em todas as avaliações discursivas (tarefa pequena, 2026-10-08 15:54:25) | [ETAPA-093-REGRA-NOTA-PARCIAL-DA-IA-EM-TODAS.md](etapas/ETAPA-093-REGRA-NOTA-PARCIAL-DA-IA-EM-TODAS.md) |
+| 94 | Unidade (local + turno) em toda lista de turmas (pedido em 2026-10-08 17:26:54) | [ETAPA-094-UNIDADE-EM-TODA-LISTA-DE-TURMAS.md](etapas/ETAPA-094-UNIDADE-EM-TODA-LISTA-DE-TURMAS.md) |
+| 94 | Prova Prática ADAG (id 82): aluno que entregou não vê as respostas (tarefa pequena, 2026-10-08 15:59:36) | [ETAPA-094-PROVA-PRATICA-ADAG-ALUNO-QUE-ENTREGOU-NAO.md](etapas/ETAPA-094-PROVA-PRATICA-ADAG-ALUNO-QUE-ENTREGOU-NAO.md) |
+| 95 | Modal de equipes em tabela + alunos sem equipe no início (tarefa pequena, 2026-10-08 17:39:22) | [ETAPA-095-MODAL-DE-EQUIPES-EM-TABELA-ALUNOS-SEM.md](etapas/ETAPA-095-MODAL-DE-EQUIPES-EM-TABELA-ALUNOS-SEM.md) |
+| 95 | Botões do professor Certa / Meia certa / Errada e nota confirmada travada (tarefa pequena, 2026-10-08 16:10:08) | [ETAPA-095-BOTOES-DO-PROFESSOR-CERTA-MEIA-CERTA-ERRADA.md](etapas/ETAPA-095-BOTOES-DO-PROFESSOR-CERTA-MEIA-CERTA-ERRADA.md) |
+| 96 | Botão Gráficos no Progresso da turma e progresso global nas discursivas (tarefa pequena, 2026-10-08 16:20:56) | [ETAPA-096-BOTAO-GRAFICOS-NO-PROGRESSO-DA-TURMA-E.md](etapas/ETAPA-096-BOTAO-GRAFICOS-NO-PROGRESSO-DA-TURMA-E.md) |
+| 97 | Quantidade mínima de questões para entregar a discursiva (tarefa grande; plano: [docs/quantidade-minima-questoes-discursiva.md](docs/quantidade-minima-questoes-discursiva.md); pedido em 2026-10-08 16:30:59) | [ETAPA-097-QUANTIDADE-MINIMA-DE-QUESTOES-PARA-ENTREGAR-A.md](etapas/ETAPA-097-QUANTIDADE-MINIMA-DE-QUESTOES-PARA-ENTREGAR-A.md) |
+| 98 | Balão grande com o porquê da nota da IA (tarefa pequena, 2026-10-08 16:50:05) | [ETAPA-098-BALAO-GRANDE-COM-O-PORQUE-DA-NOTA.md](etapas/ETAPA-098-BALAO-GRANDE-COM-O-PORQUE-DA-NOTA.md) |
+| 99 | Botão Cálculo Nota no Progresso da turma (tarefa pequena, 2026-10-08 16:57:30) | [ETAPA-099-BOTAO-CALCULO-NOTA-NO-PROGRESSO-DA-TURMA.md](etapas/ETAPA-099-BOTAO-CALCULO-NOTA-NO-PROGRESSO-DA-TURMA.md) |
+| 100 | Excluir as respostas de uma aluna na atividade id 82 (tarefa pequena, pedido em 2026-10-08 22:55:39) | [ETAPA-100-EXCLUIR-AS-RESPOSTAS-DE-UMA-ALUNA-NA.md](etapas/ETAPA-100-EXCLUIR-AS-RESPOSTAS-DE-UMA-ALUNA-NA.md) |
+| 100 | Respostas escondidas para o professor até escolher um aluno (tarefa pequena, 2026-10-08 20:16:56) | [ETAPA-100-RESPOSTAS-ESCONDIDAS-PARA-O-PROFESSOR-ATE-ESCOLHER.md](etapas/ETAPA-100-RESPOSTAS-ESCONDIDAS-PARA-O-PROFESSOR-ATE-ESCOLHER.md) |
+| 101 | Registro da sessão 4 e CLAUDE.md da pasta `SESSOES-CLAUDE/` (tarefa pequena, pedido em 2026-10-08 19:56) | [ETAPA-101-REGISTRO-DA-SESSAO-4-E-CLAUDE-MD.md](etapas/ETAPA-101-REGISTRO-DA-SESSAO-4-E-CLAUDE-MD.md) |
+| 101 | Botão Finalizar Atividade do professor (tarefa pequena, 2026-10-08 20:21:56) | [ETAPA-101-BOTAO-FINALIZAR-ATIVIDADE-DO-PROFESSOR.md](etapas/ETAPA-101-BOTAO-FINALIZAR-ATIVIDADE-DO-PROFESSOR.md) |
+| 102 | Aulas de Testes de Front-End em Markdown (`CONTEUDO/`) (pedido e aprovação em 2026-10-08 20:00:46) | [ETAPA-102-AULAS-DE-TESTES-DE-FRONT-END-EM.md](etapas/ETAPA-102-AULAS-DE-TESTES-DE-FRONT-END-EM.md) |
+| 102 | Aluno vê a prova corrigida depois da liberação do gabarito (tarefa pequena, 2026-10-08 20:24:44) | [ETAPA-102-ALUNO-VE-A-PROVA-CORRIGIDA-DEPOIS-DA.md](etapas/ETAPA-102-ALUNO-VE-A-PROVA-CORRIGIDA-DEPOIS-DA.md) |
+| 103 | Prova Prática ADAG renomeada para PROVA-PRATICA-01.html (tarefa pequena, 2026-10-08 20:26:16) | [ETAPA-103-PROVA-PRATICA-ADAG-RENOMEADA-PARA-PROVA-PRATICA.md](etapas/ETAPA-103-PROVA-PRATICA-ADAG-RENOMEADA-PARA-PROVA-PRATICA.md) |
+| 103 | Práticas de Testes de Front-End em `ATIVIDADES/CONTEUDO/` e sem empresa fictícia (pedido em 2026-10-08 20:29:54) | [ETAPA-103-PRATICAS-DE-TESTES-DE-FRONT-END-EM.md](etapas/ETAPA-103-PRATICAS-DE-TESTES-DE-FRONT-END-EM.md) |
+| 104 | Menu das atividades desligado em todas as páginas (tarefa pequena, 2026-10-08 20:33:13) | [ETAPA-104-MENU-DAS-ATIVIDADES-DESLIGADO-EM-TODAS-AS.md](etapas/ETAPA-104-MENU-DAS-ATIVIDADES-DESLIGADO-EM-TODAS-AS.md) |
+| 105 | Botões SOMENTE ENSALADO e VER TODAS MATÉRIAS na faixa de matérias (pedido em 2026-10-08 23:42:02) | [ETAPA-105-BOTOES-SOMENTE-ENSALADO-E-VER-TODAS-MATERIAS.md](etapas/ETAPA-105-BOTOES-SOMENTE-ENSALADO-E-VER-TODAS-MATERIAS.md) |
+| 106 | Aluno líder (`usuario.lider` 1/0) cadastra e altera equipes (tarefa grande, aprovada em 2026-10-08 23:53) | [ETAPA-106-ALUNO-LIDER-CADASTRA-E-ALTERA-EQUIPES.md](etapas/ETAPA-106-ALUNO-LIDER-CADASTRA-E-ALTERA-EQUIPES.md) |
+| 107 | Tela TURMAS como consulta (CRUD) com modais (pedido em 2026-10-09 00:06:32) | [ETAPA-107-TELA-TURMAS-COMO-CONSULTA-COM-MODAIS.md](etapas/ETAPA-107-TELA-TURMAS-COMO-CONSULTA-COM-MODAIS.md) |
+| 108 | Testes de Front-End: objetivas e práticas das aulas 01 a 03 + `docs/REGRAS-ATIVIDADE-PRATICA.md` (pedido em 2026-10-09 00:13:29) | [ETAPA-108-TESTES-DE-FRONT-END-OBJETIVAS-E-PRATICAS.md](etapas/ETAPA-108-TESTES-DE-FRONT-END-OBJETIVAS-E-PRATICAS.md) |
+| 109 | Faixa de matérias de todos os cursos abre em SOMENTE ENSALADO (tarefa pequena, pedido em 2026-10-08 21:15:15) | [ETAPA-109-FAIXA-DE-MATERIAS-DE-TODOS-OS-CURSOS.md](etapas/ETAPA-109-FAIXA-DE-MATERIAS-DE-TODOS-OS-CURSOS.md) |
+| 110 | Apresentação do professor Gelvazio Camargo na página inicial sem login (tarefa pequena, pedido em 2026-10-09 00:20:57) | [ETAPA-110-APRESENTACAO-DO-PROFESSOR-GELVAZIO-CAMARGO-NA-PAGINA.md](etapas/ETAPA-110-APRESENTACAO-DO-PROFESSOR-GELVAZIO-CAMARGO-NA-PAGINA.md) |
+| 111 | Sessão obrigatória em todas as páginas HTML (pedido em 2026-10-09 00:23; aprovada em 2026-10-09 00:28) | [ETAPA-111-SESSAO-OBRIGATORIA-EM-TODAS-AS-PAGINAS-HTML.md](etapas/ETAPA-111-SESSAO-OBRIGATORIA-EM-TODAS-AS-PAGINAS-HTML.md) |
+| 112 | Estilo dos destaques na apresentação do professor (tarefa pequena, pedido em 2026-10-09 00:48) | [ETAPA-112-ESTILO-DOS-DESTAQUES-NA-APRESENTACAO-DO-PROFESSOR.md](etapas/ETAPA-112-ESTILO-DOS-DESTAQUES-NA-APRESENTACAO-DO-PROFESSOR.md) |
+| 113 | Botão ON/OFF ao lado de cada atividade em todos os índices (tarefa pequena, pedido em 2026-10-09 00:51) | [ETAPA-113-BOTAO-ON-OFF-AO-LADO-DE-CADA.md](etapas/ETAPA-113-BOTAO-ON-OFF-AO-LADO-DE-CADA.md) |
+| 114 | Testes de Front-End: links dos slides nos cards e PDFs das aulas versionados (tarefa pequena, pedido em 2026-10-09 00:45) | [ETAPA-114-TESTES-DE-FRONT-END-LINKS-DOS-SLIDES.md](etapas/ETAPA-114-TESTES-DE-FRONT-END-LINKS-DOS-SLIDES.md) |
+| 114 | Testes de Front-End: bloqueio da aula e das atividades; LOG escondido; slides em nova aba (tarefa pequena, pedido em 2026-10-09 01:04) | [ETAPA-114-TESTES-DE-FRONT-END-BLOQUEIO-DA-AULA.md](etapas/ETAPA-114-TESTES-DE-FRONT-END-BLOQUEIO-DA-AULA.md) |
+| 115 | Trigger: bloquear a aula bloqueia todas as atividades dela (tarefa de banco, pedido em 2026-10-09 01:09) | [ETAPA-115-TRIGGER-BLOQUEAR-A-AULA-BLOQUEIA-TODAS-AS.md](etapas/ETAPA-115-TRIGGER-BLOQUEAR-A-AULA-BLOQUEIA-TODAS-AS.md) |
+| 116 | ID na frente de cada atividade nos índices (tarefa pequena, pedido em 2026-10-09 01:11) | [ETAPA-116-ID-NA-FRENTE-DE-CADA-ATIVIDADE-NOS.md](etapas/ETAPA-116-ID-NA-FRENTE-DE-CADA-ATIVIDADE-NOS.md) |
+| 117 | Lista de alunos do Técnico em Informática (SENAI) Manhã em Testes de Front-End (tarefa pequena, pedido em 2026-10-09 12:35:18) | [ETAPA-117-LISTA-DE-ALUNOS-DO-TECNICO-EM-INFORMATICA.md](etapas/ETAPA-117-LISTA-DE-ALUNOS-DO-TECNICO-EM-INFORMATICA.md) |
+| 118 | Menu Curso: CRUD de cursos e vínculo de turmas em `cursos.html` (tarefa grande, pedido em 2026-10-09 12:45; aprovada em 2026-10-09 12:50; plano [docs/menu-curso-crud-cursos-turmas.md](docs/menu-curso-crud-cursos-turmas.md)) | [ETAPA-118-MENU-CURSO-CRUD-DE-CURSOS-E-VINCULO.md](etapas/ETAPA-118-MENU-CURSO-CRUD-DE-CURSOS-E-VINCULO.md) |
+| 119 | Unidade em um só lugar: tabela `unidade` ligada a `curso` e `turma` (tarefa grande, pedido em 2026-10-09 13:18; aprovada em 2026-10-09 13:23; plano [docs/tabela-unidade-curso-turma.md](docs/tabela-unidade-curso-turma.md)) | [ETAPA-119-UNIDADE-EM-UM-SO-LUGAR-TABELA-UNIDADE.md](etapas/ETAPA-119-UNIDADE-EM-UM-SO-LUGAR-TABELA-UNIDADE.md) |
+| 120 | Curso desativado some do índice; unidade do banco nas abas de criar usuários (pedido em 2026-10-09 13:50) | [ETAPA-120-CURSO-DESATIVADO-SOME-DO-INDICE-UNIDADE-DO.md](etapas/ETAPA-120-CURSO-DESATIVADO-SOME-DO-INDICE-UNIDADE-DO.md) |
+| 121 | Progresso da turma GLOBAL em todas as atividades (tarefa grande, pedido em 2026-10-09 10:22:23; aprovada em 2026-10-09 10:31; plano [docs/progresso-global-atividades.md](docs/progresso-global-atividades.md)) | [ETAPA-121-PROGRESSO-DA-TURMA-GLOBAL-EM-TODAS-AS.md](etapas/ETAPA-121-PROGRESSO-DA-TURMA-GLOBAL-EM-TODAS-AS.md) |
+| 122 | Seção "Pull Requests" no `CLAUDE.md` (só na nuvem) (tarefa pequena, pedido em 2026-10-09 11:03:21) | [ETAPA-122-SECAO-PULL-REQUESTS-NO-CLAUDE-MD.md](etapas/ETAPA-122-SECAO-PULL-REQUESTS-NO-CLAUDE-MD.md) |
+| 123 | Conflitos do merge do PR #11 e `CLAUDE.md` apontando para `tasks/` (tarefa pequena, pedido em 2026-10-09 12:20) | [ETAPA-123-CONFLITOS-DO-MERGE-DO-PR-11-E.md](etapas/ETAPA-123-CONFLITOS-DO-MERGE-DO-PR-11-E.md) |
+| 124 | Pendências: coluna "Descrição" (tarefa grande — banco, pedido em 2026-10-09 12:51:22; plano [docs/pendencias-coluna-descricao.md](../docs/pendencias-coluna-descricao.md)) | [ETAPA-124-PENDENCIAS-COLUNA-DESCRICAO.md](etapas/ETAPA-124-PENDENCIAS-COLUNA-DESCRICAO.md) |
+| 125 | Banco de Dados 100% no padrão da ITIC, etapa 1 sem a apostila (tarefa grande #20-2ac1a8ec-911b-466f, pedida em 2026-10-09 13:26:40) | [ETAPA-125-BANCO-DE-DADOS-100-NO-PADRAO-DA.md](etapas/ETAPA-125-BANCO-DE-DADOS-100-NO-PADRAO-DA.md) |
+| 126 | Regra: prática de uma aula = 10 × 3; prova id 82 só como referência dos recursos (tarefa pequena, pedido em 2026-10-09 14:04:30) | [ETAPA-126-REGRA-PRATICA-DE-UMA-AULA-10-3.md](etapas/ETAPA-126-REGRA-PRATICA-DE-UMA-AULA-10-3.md) |
+| 127 | Gabarito no Git e fora da Vercel; prova prática segue a regra nova (tarefa pequena, pedido em 2026-10-09 14:09) | [ETAPA-127-GABARITO-NO-GIT-E-FORA-DA-VERCEL.md](etapas/ETAPA-127-GABARITO-NO-GIT-E-FORA-DA-VERCEL.md) |
+| 128 | Regra: na nuvem, cada arquivo criado = commit + push na hora (tarefa pequena, pedido em 2026-10-09 14:58:46) | [ETAPA-128-REGRA-NA-NUVEM-CADA-ARQUIVO-CRIADO-COMMIT.md](etapas/ETAPA-128-REGRA-NA-NUVEM-CADA-ARQUIVO-CRIADO-COMMIT.md) |
+| 129 | Regra: na nuvem, sem a pergunta do log da sessão (tarefa pequena, pedido em 2026-10-09 15:00:25) | [ETAPA-129-REGRA-NA-NUVEM-SEM-A-PERGUNTA-DO.md](etapas/ETAPA-129-REGRA-NA-NUVEM-SEM-A-PERGUNTA-DO.md) |
+| 130 | Remover o registro da sessão em `SESSOES-CLAUDE/` (tarefa pequena, pedido em 2026-10-09 15:03:21) | [ETAPA-130-REMOVER-O-REGISTRO-DA-SESSAO-EM-SESSOES.md](etapas/ETAPA-130-REMOVER-O-REGISTRO-DA-SESSAO-EM-SESSOES.md) |
+| 131 | Revisão do PR #14 (CodeRabbit): resumo do STATUS-EMENTAS e BANCO-AVA (tarefa pequena, 2026-10-09 15:08:10) | [ETAPA-131-REVISAO-DO-PR-14-RESUMO-DO-STATUS.md](etapas/ETAPA-131-REVISAO-DO-PR-14-RESUMO-DO-STATUS.md) |
+| 132 | `.gitignore` mínimo e `.vercelignore` (tarefa pequena, pedido em 2026-10-09 17:20) | [ETAPA-132-GITIGNORE-MINIMO-E-VERCELIGNORE.md](etapas/ETAPA-132-GITIGNORE-MINIMO-E-VERCELIGNORE.md) |
+| 133 | Lista de presença em um arquivo único `scripts/LISTAPRESENCA.js` (tarefa grande, pedido em 2026-10-09 17:45; plano [docs/lista-presenca-arquivo-unico.md](../docs/lista-presenca-arquivo-unico.md)) | [ETAPA-133-LISTA-DE-PRESENCA-EM-UM-ARQUIVO-UNICO.md](etapas/ETAPA-133-LISTA-DE-PRESENCA-EM-UM-ARQUIVO-UNICO.md) |
+| 134 | Regra do `graphify update .` removida (tarefa pequena, pedido em 2026-10-09 18:05) | [ETAPA-134-REGRA-DO-GRAPHIFY-UPDATE-REMOVIDA.md](etapas/ETAPA-134-REGRA-DO-GRAPHIFY-UPDATE-REMOVIDA.md) |
+| 135-eeefc710 | Colaboração entre sessões e licenças pelo `STATUS.md` | [ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md) |
+| 136-f0a07de9 | Registro dos seeds aplicados e item próprio em cada tarefa | [ETAPA-136-f0a07de9-REGISTRO-DOS-SEEDS-APLICADOS.md](etapas/ETAPA-136-f0a07de9-REGISTRO-DOS-SEEDS-APLICADOS.md) |
+| 137-b214e26b | Status das aulas conferidos pela carga horária da ementa (FTP, Reforço de Matemática, Análise de Dados) | [ETAPA-137-b214e26b-STATUS-DAS-AULAS-PELA-CARGA-HORARIA.md](etapas/ETAPA-137-b214e26b-STATUS-DAS-AULAS-PELA-CARGA-HORARIA.md) |
+| 138-77338471 | `STATUS_MATERIA.md` em cada matéria e ordem das matérias (`tasks/ORDEM-MATERIAS.md`) | [ETAPA-138-77338471-STATUS-MATERIA-E-ORDEM-DAS-MATERIAS.md](etapas/ETAPA-138-77338471-STATUS-MATERIA-E-ORDEM-DAS-MATERIAS.md) |
+| 139-b5ab1a00 | Regra global de matérias (`docs/regras/materias.md`) no lugar da "matéria modelo ITIC" | [ETAPA-139-b5ab1a00-REGRA-GLOBAL-DE-MATERIAS.md](etapas/ETAPA-139-b5ab1a00-REGRA-GLOBAL-DE-MATERIAS.md) |
+| 140-8554d88e | Tarefas agendadas seguindo as regras do projeto (`docs/regras/tarefas-agendadas.md`) | [ETAPA-140-8554d88e-TAREFAS-AGENDADAS-NAS-REGRAS.md](etapas/ETAPA-140-8554d88e-TAREFAS-AGENDADAS-NAS-REGRAS.md) |
+| 141-a7e81c26 | Agendamentos: CRUD e espelho dos controles no banco (#23) | [ETAPA-141-a7e81c26-AGENDAMENTOS-CRUD-E-BANCO.md](etapas/ETAPA-141-a7e81c26-AGENDAMENTOS-CRUD-E-BANCO.md) |
+| 142-2a52ee2f | Fila `tasks` no banco + 1 agendador (#24) | [ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md) |
+| 143-d30a9c4d | Atividades só no banco, layout global e pasta sem HTML (#25) | [ETAPA-143-d30a9c4d-ATIVIDADES-SO-NO-BANCO-LAYOUT-GLOBAL.md](etapas/ETAPA-143-d30a9c4d-ATIVIDADES-SO-NO-BANCO-LAYOUT-GLOBAL.md) |
+| 144-aff33423 | Regras no banco: `regra_documento` e `regra_secao` (#26) | [ETAPA-144-aff33423-REGRAS-NO-BANCO.md](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md) |
+| 145-ae3cea8d | Resolver o conflito de tasks/STATUS.md e preservar os caminhos corrigidos (commit d88a095) | [ETAPA-145-ae3cea8d-MERGE-STATUS-LOCAL.md](etapas/ETAPA-145-ae3cea8d-MERGE-STATUS-LOCAL.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
@@ -399,6 +307,11 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 ## Registro de decisões
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-09 21:30 | Toda matéria tem os 4 status (`STATUS-EMENTAS.md`, `AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md`); criados só com a estrutura (tudo ⬜) nas que faltavam — 34 matérias completas (commits até `bfd7fb2`) | Usuário | Primeiro passo de toda matéria é ter o status de todas as aulas |
+| 2026-10-09 20:59 | Antes de começar ou continuar qualquer tarefa, concluir todos os seeds de `database/SEEDS-APLICADOS.md` (regra "🌱 REGRA — SEEDS DO BANCO" do `CLAUDE.md`); os que dependem de decisão vão para "⏳ Aguardando o usuário" | Usuário | Banco sempre em dia com os arquivos antes do trabalho seguir |
+| 2026-10-09 14:09 | Gabarito (fontes, padrões de resposta, seeds) vai para o Git e fica fora da Vercel (`.vercelignore`); prova prática de várias aulas segue a regra nova (20 × 3) mesmo divergindo da ITIC | Usuário | Não perder fontes na nuvem e não publicar respostas no site |
+| 2026-10-09 13:58 | Fontes das atividades de Banco de Dados (`*QUESTOES.md`, `-GABARITO.md`) entram no Git e ficam fora do site (`*QUESTOES.md` no `.vercelignore`); seeds em `database/` não entram no commit | Usuário | Na nuvem, o que não entra no commit se perde ao fim da sessão |
+| 2026-10-09 13:40 | Banco de Dados: 80 h / 20 aulas, pasta `BANCO-DE-DADOS`, PostgreSQL, apagar os arquivos antigos | Usuário | Plano da tarefa #20 |
 | 2026-10-08 20:00 | Aulas de Testes de Front-End sem empresa fictícia ("você como aluno consultor"), mesmo com a regra 4 da Seção IX da ementa da matéria pedindo empresas fictícias | Claude, pela regra global de 2026-10-08 | A regra global é mais nova; a divergência fica avisada ao usuário |
 | 2026-10-08 | Comunicação Oral e Escrita (Rio do Sul): atividade de 50 questões só nas aulas 01 a 07; aula 08 = Avaliação Prática e aula 09 = Avaliação Objetiva (30 questões). Fontes com gabarito não entram em commit até o usuário ajustar o `.gitignore` | Usuário | Aulas 08 e 09 são de avaliação; o usuário cuida do `.gitignore` |
 | 2026-10-07 | Comunicação Oral e Escrita (Rio do Sul): 9 aulas (8 × 4h + 1 × 1h), só C1–C4 oficiais, empresa fictícia Vale Tech, avaliação prática 6,0 (aula 8) + objetiva 4,0 (aula 9) | Usuário | Aceite B.4 do plano, perguntas uma por vez |
@@ -433,1251 +346,4 @@ Plano: [docs/equipes-sala-de-aula.md](docs/equipes-sala-de-aula.md) · Atividade
 | 2026-10-08 20:15 | No Git Bash local, `TZ=America/Sao_Paulo date` mostrou a hora em UTC (3 h a mais) | Na máquina local, pegar a hora com `Get-Date -Format "yyyy-MM-dd HH:mm:ss"` (PowerShell), como manda o CLAUDE.md |
 | 2026-10-03 | A análise de 2026-09-08 dizia ITIC presencial e Banco de Dados "completo" | Conferir sempre a ementa do curso e as pastas reais antes de afirmar situação |
 | 2026-10-03 | Abri os slides em PDF da aula 01 para montar a aula | PDF nunca é fonte: conteúdo e conferência só pelos `.md` (ementa primeiro) — regra no `CLAUDE.md` |
-
-## Etapa 27 — ITIC: atividade individual de sexta à tarde (40 objetivas) (pedida em 2026-10-06; tarefa pequena)
-
-Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA.html`
-(fonte em `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/`, fora do Git). Conteúdo: trabalho em equipe v2 (`ATIVIDADE-GRANDE/`) e Aulas 01 a 07.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 27.1 | Fonte com 40 questões objetivas (gabarito 10 de cada letra, posição sorteada) | ✅ Concluído | 2026-10-06 | Fonte lida pelo gerador; `.gitignore` (`*QUESTOES.md`) |
-| 27.2 | Página HTML pelo gerador (exportar PDF, PDF com gabarito do professor, Word, folha no banco) | ✅ Concluído | 2026-10-06 | 40 itens no HTML; sem gabarito embutido |
-| 27.3 | Item no `MENU-ATIVIDADES.js`, `STATUS-ATIVIDADES.md` e seed (`database/2026-10-06-atividade-individual-comunicacao-seed-atividades.sql`, fora do Git) | ✅ Concluído | 2026-10-06 | `node` leu o menu; seed com 40 linhas de gabarito |
-| 27.4 | Aplicar o seed no Supabase (sem ele a marcação das respostas fica bloqueada) | ✅ Concluído | 2026-10-06 | Atividade id 80 (aula 27), ativa e liberada para todas as turmas; 40 itens no gabarito (10 de cada letra) |
-| 27.5 | Bloquear para a turma da manhã (135080) pela função `definir_bloqueio_turma`, como o Professor Administrador | ✅ Concluído | 2026-10-06 | `atividade.bloqueio` = ["135080"], `ativo` = true |
-| 27.6 | Card da atividade no índice de atividades da ITIC (`ATIVIDADES/index.html`, feito à mão) | ✅ Concluído | 2026-10-06 | Card após o trabalho v2; só o link `.html` da atividade (o bloqueio por turma acha o card) |
-| 27.7 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 28 — Quadro de respostas no início da atividade e na exportação (pedida em 2026-10-06; plano `docs/quadro-respostas-atividade.md`)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 28.1 | Plano em `docs/quadro-respostas-atividade.md` | ✅ Concluído | 2026-10-06 | — |
-| 28.2 | Aprovação do plano pelo usuário | ⬜ Pendente | — | — |
-| 28.3 | Execução dos passos 1 a 6 do plano | ⬜ Pendente | — | — |
-| 28.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 29 — ITIC: atividade individual de sexta — 20 discursivas (pedida em 2026-10-06; tarefa pequena)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 29.1 | Fonte com 20 discursivas (Contexto, Comando, 1 tópico de 1,0) + padrão de resposta (`-GABARITO.md`, fora do Git), a partir das 40 objetivas | ✅ Concluído | 2026-10-06 | Gerador validou 20 questões, 20 tópicos, 20 pontos, 20 padrões |
-| 29.2 | Página `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-DISCURSIVA.html` pelo gerador de discursivas | ✅ Concluído | 2026-10-06 | 20 itens; sem padrão de resposta no HTML |
-| 29.3 | Card no índice da ITIC e item no `MENU-ATIVIDADES.js` | ✅ Concluído | 2026-10-06 | `node` leu o menu |
-| 29.4 | Seed aplicado no Supabase e liberação só para a tarde (135081) pela função `definir_bloqueio_turma` — também na objetiva (id 80) | ✅ Concluído | 2026-10-06 | id 81: 20 tópicos, `bloqueio` = todas as turmas exceto 135081; id 80 igual |
-| 29.5 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 30 — Curso de Gestão de Materiais no índice de cursos (tarefa pequena, 2026-10-06)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 30.1 | Rota do curso "Assistente em Processos de Gestão e Controle de Materiais" (nome no banco, id 7) para `MATERIAIS/GESTAO_E_CONTROLE_MATERIAIS/` no `index.html` da raiz | ✅ Concluído | 2026-10-06 | Banco: turma 133933 → curso 7, vinculada ao professor |
-| 30.2 | `index.html` da raiz restaurado (o gerador de índices o tinha trocado pela versão estática) e gerador corrigido para nunca sobrescrevê-lo | ✅ Concluído | 2026-10-06 | `py_compile` ok |
-| 30.3 | Aceite do usuário | ✅ Concluído | 2026-10-06 | Usuário confirmou que o curso apareceu |
-
-## Etapa 31 — Prova Prática 06-10-2026 de Análise de Dados (Aulas 01 a 05) — plano: [docs/prova-pratica-06-10-2026-analise-dados.md](docs/prova-pratica-06-10-2026-analise-dados.md)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 31.1 | Plano em `docs/` e aprovação do usuário | ✅ Concluído | 2026-10-06 | Aprovado; seed autorizado; fora da média final |
-| 31.2 | Fonte com 10 questões discursivas (2 por aula) | ✅ Concluído | 2026-10-06 | 10 itens, 30 tópicos |
-| 31.3 | Padrão de resposta detalhado para correção por IA (fora do Git) | ✅ Concluído | 2026-10-06 | 30 tópicos com resposta e critérios |
-| 31.4 | Página HTML e seed pelo gerador | ✅ Concluído | 2026-10-06 | 10 questões, 30 tópicos, 10 pontos; padrão de resposta ausente do HTML |
-| 31.5 | Card novo no índice, menu e `STATUS-ATIVIDADES.md` | ✅ Concluído | 2026-10-06 | `node` leu o menu |
-| 31.6 | Seed no Supabase (só se autorizado) | ✅ Concluído | 2026-10-06 | Atividade id 82, bloqueada, 30 tópicos com padrão |
-| 31.7 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 32 — Excluir aula (exclusão lógica, só Professor Administrador) — plano: [docs/excluir-aula-professor-administrador.md](docs/excluir-aula-professor-administrador.md)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 32.1 | Plano em `docs/` e aprovação do usuário | ✅ Concluído | 2026-10-06 | Aprovado com aplicação do SQL |
-| 32.2 | SQL: coluna `aulas.excluido`, função `excluir_aula`, trigger | ✅ Concluído | 2026-10-06 | Idempotente, sem apagar dados |
-| 32.3 | Aplicar no Supabase | ✅ Concluído | 2026-10-06 | 46 aulas com excluido = 0; trigger ativo; anon sem execução |
-| 32.4 | Botão no modal, cards escondidos, filtro no CRUD | ✅ Concluído | 2026-10-06 | `node --check`; teste no navegador fica com o usuário |
-| 32.5 | database.md, relatório HTML e CLAUDE.md | ✅ Concluído | 2026-10-06 | Versão 2026-10-06 14:29 |
-| 32.6 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 33 — Média final de Análise de Dados: Aulas 01–03 = 10-LIVRE; Aulas 04–07 pelo banco (tarefa pequena, 2026-10-06)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 33.1 | `media-final.json` (Aulas 01–03 nota fixa 10 para todos com rótulo "10-LIVRE"; 06 e 07 sem nota fixa), gerador e JS da média com o rótulo, `notas-fixas-turma.js` sem 06/07 | ✅ Concluído | 2026-10-06 | Página regenerada: 01–03 = 10-LIVRE, 04–07 = "—" até o banco; `node --check` |
-| 33.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 34 — Média final: aluno vê as próprias notas (Aulas 04–07, Objetiva, Prova Prática) — plano: [docs/media-final-notas-do-aluno.md](docs/media-final-notas-do-aluno.md)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 34.1 | Diagnóstico no banco e plano em `docs/`; aprovação do usuário | ✅ Concluído | 2026-10-06 | Aprovado, com SQL e com a tela de correção |
-| 34.2 | SQL: `correcao_discursiva` + função `notas_media_final` | ✅ Concluído | 2026-10-06 | Idempotente |
-| 34.3 | Aplicar no Supabase | ✅ Concluído | 2026-10-06 | Função conferida com um aluno real: Aulas 04/05/06 e Objetiva iguais ao cálculo direto; RLS ligado, 3 políticas, `anon` sem execução |
-| 34.4 | JS do aluno na média final | ✅ Concluído | 2026-10-06 | `node --check` |
-| 34.4b | Tela de correção da Prova Prática (professor) — escopo acrescentado na aprovação | ✅ Concluído | 2026-10-06 | `node --check`; teste no navegador fica com o usuário |
-| 34.5 | Documentação (database.md, relatório, CLAUDE.md) | ✅ Concluído | 2026-10-06 | Versão das regras atualizada |
-| 34.6 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 35 — Tabela "Notas dos alunos" (só professor) com exportar PDF na Avaliação Objetiva 01 de Análise de Dados (tarefa pequena, 2026-10-06)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 35.1 | `assets/js/tabela-notas-professor.js` + `assets/css/tabela-notas-professor.css`: nome e nota (melhor tentativa entregue) em ordem alfabética, da turma da aba do relatório, botão "📥 Exportar PDF (notas)" ao lado do título; ligado por `data-tabela-notas="sim"` (campo `- **Tabela de notas:** sim` no gerador de atividades) | ✅ Concluído | 2026-10-06 | `node --check` e `py_compile`; teste no navegador fica com o usuário |
-| 35.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-
-## Etapa 36 — Gabarito fora do alcance dos alunos, botões de Word e card bloqueado (tarefas pequenas, 2026-10-06)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 36.1 | Conferir gabarito nas páginas e no banco; gabarito UC1 TIC no Git, fora do site (`.vercelignore`) | ✅ Concluído | 2026-10-06 | grep nas páginas; RLS de `gabarito` lido no banco; commits `3ba2927`, `5e4894f`, `cc2a88f` |
-| 36.2 | Remover os botões "Exportar em Word", "(respostas)" e "(gabarito)" | ✅ Concluído | 2026-10-06 | `node --check`; commits `87a4ecc`, `84b3061` |
-| 36.3 | Card bloqueado inteiro inacessível (aluno e professor) | ✅ Concluído | 2026-10-06 | `node --check`; commits `1f3b819`, `21c36e7`; teste no navegador com o usuário |
-| 36.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 37 — Liberar gabaritos por atividade e turma (botão do professor) — plano: [docs/liberacao-respostas-por-turma.md](docs/liberacao-respostas-por-turma.md)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 37.1 | Plano criado e apresentado | ✅ Concluído | 2026-10-06 | Plano em `docs/` |
-| 37.2 | Aprovação do plano pelo usuário (recuperação bloqueada após liberar; aplicar SQL autorizado) | ✅ Concluído | 2026-10-06 | Resposta do usuário no chat |
-| 37.3 | Executar os passos 1 a 7 do plano (+ aviso "Aguarde professor liberar os gabaritos", tabela `tentativaacessogabarito` e regra também nas atividades) | ✅ Concluído | 2026-10-06 | SQL aplicado e conferido por consultas de leitura; `node --check` nos JS; teste no navegador com o usuário |
-| 37.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 38 — Regra do gabarito também nas discursivas (pedida em 2026-10-06; extensão do plano [docs/liberacao-respostas-por-turma.md](docs/liberacao-respostas-por-turma.md))
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 38.1 | SQL `solicitar_gabarito_discursivo` + funções internas, aplicado no Supabase | ✅ Concluído | 2026-10-06 | Permissões conferidas (anon sem execução; internas sem execução pela API) |
-| 38.2 | Painel da discursiva: professor libera por turma; aluno "🔑 Ver Gabarito" (aviso + registro antes da liberação) | ✅ Concluído | 2026-10-06 | `node --check`; teste no navegador com o usuário |
-| 38.3 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 39 — ID da atividade bloqueado no "Editar" do CADASTRAR ATIVIDADES (tarefa pequena, 2026-10-06)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 39.1 | Campo "ID da atividade" somente leitura no formulário (`assets/js/atividades-crud-modal.js`), preenchido ao clicar em ✏️ Editar; em branco na atividade nova | ✅ Concluído | 2026-10-06 | `node --check`; teste no navegador com o usuário |
-| 39.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 40 — ID da atividade no card do índice e nome da atividade editável (tarefa pequena, 2026-10-06)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 40.1 | Professor vê "🆔 ID N · nome" em cada card do índice; campo "Nome da atividade" (`atividade.nome_atividade`) editável no CADASTRAR ATIVIDADES; lista do modal mostra ID e nome (`atividades-crud-modal.js`, `atividades-crud-repositorio.js`, `atividades-crud-modal.css`) | ✅ Concluído | 2026-10-06 | `node --check`; coluna `nome_atividade` aceita nulo (conferido no banco); teste no navegador com o usuário |
-| 40.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 41 — Remover o botão "Banco Moodle (AVA SENAI)" de todas as atividades (tarefa pequena, 2026-10-06)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 41.1 | `atividade.js` deixa de carregar o botão; `exportar-banco-moodle.js` e `banco-moodle-xml.js` apagados; regra no `CLAUDE.md` | ✅ Concluído | 2026-10-06 | `node --check`; grep sem referências restantes nas páginas |
-| 41.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 42 — Remover o botão "Exportar PDF com gabarito" (tarefa pequena, 2026-10-06)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 42.1 | Botão retirado das 12 páginas e do `gerar_atividades.py` (fica o "Exportar Gabarito" e a variante "📥 Gabarito") | ✅ Concluído | 2026-10-06 | grep: 0 páginas com o botão; `py_compile` e saída do gerador conferida; `node --check` |
-| 42.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 43 — Análise das Provas Práticas id 37 × id 82 de Análise de Dados (tarefa pequena, 2026-10-06)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 43.1 | `ANALISE-PROVA-PRATICA.md` na pasta ATIVIDADES da matéria: comparação questão a questão, conteúdos exclusivos e observações (sem gabarito) | ✅ Concluído | 2026-10-06 | Perguntas lidas das 2 páginas e ids conferidos no banco |
-| 43.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 44 — Prova Prática ADAG unificada (id 82, 20 discursivas, 100% das aulas) e exclusão da id 37 — plano: [docs/prova-pratica-adag-unificada-id82.md](docs/prova-pratica-adag-unificada-id82.md)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 44.1 | `PROVA-PRATICA-ADAG-SALETE.md` (20 questões, 60 tópicos, 10 pontos), padrão de resposta por tópico (fora do Git) e batimento com as 7 aulas | ✅ Concluído | 2026-10-06 | 20 itens/60 tópicos/10 pontos/60 padrões; batimento slide a slide com 6 lacunas fechadas |
-| 44.2 | Aprovação do usuário para gerar a página, aplicar no banco e excluir a id 37 | ✅ Concluído | 2026-10-06 | "SIM, FAÇA ISSO" no chat |
-| 44.3 | Passos 2 a 5 do plano (gerador com pontos configuráveis, página e banco da id 82, média final/índice/menu, exclusão da id 37 com backup) | ✅ Concluído | 2026-10-06 | id 82: 20 itens/60 tópicos/10 pontos no banco; id 37 = 0 linhas; backups conferidos; grep sem links para PROVA-PRATICA.html |
-| 44.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 36 — Tabela "Notas dos alunos" (nome e nota, Exportar PDF) em todas as atividades (tarefa pequena, 2026-10-06)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 36.1 | `respostas-atividade-professor.js`: tabela ligada por padrão em toda atividade com relatório do professor (53 páginas de atividade em `MATERIAIS/`); `data-tabela-notas="nao"` desliga; CLAUDE.md atualizado | ✅ Concluído | 2026-10-06 | `node --check`; teste no navegador fica com o usuário |
-| 36.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 45 — Log de gravação das alternativas em qualquer atividade (pedida em 2026-10-06) — plano: [docs/log-resposta-atividade.md](docs/log-resposta-atividade.md)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 45.1 | Tabela `log_resposta_atividade` + gatilho em `resposta_atividade`, aplicados no Supabase; carga inicial retirada (só registros novos, pedido do usuário) | ✅ Concluído | 2026-10-06 | 20 cliques novos registrados (MARCOU); 0 CARGA_INICIAL; RLS ligado; anon sem leitura |
-| 45.2 | Documentação (`database.md`, relatório HTML, `CLAUDE.md`) | ✅ Concluído | 2026-10-06 | Leitura |
-| 45.3 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 46 — Link "🧾 LOG" nos cards das atividades com o log das alternativas por aluno (tarefa pequena, 2026-10-06)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 46.1 | `assets/js/indice-log-alternativas.js` + `assets/css/indice-log-alternativas.css` (carregados pelo `atividades-crud-modal.js`): link pequeno "🧾 LOG" ao lado do link da atividade, só professor; modal com a lista de alunos (com nº de registros) e a tabela do log do aluno escolhido | ✅ Concluído | 2026-10-06 | `node --check`; 33 índices carregam o módulo; teste no navegador com o usuário |
-| 46.2 | LOG bloqueado junto com a atividade bloqueada (pedido do usuário) | ✅ Concluído | 2026-10-06 | `node --check`; CSS sem clique no card bloqueado + checagem no clique |
-| 46.3 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 47 — Trocar o rótulo e o nome do card no modal "✏️ Editar aula", além da data (tarefa pequena, 2026-10-06)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 47.1 | Coluna `aulas.nome_card` (`database/2026-10-06-aulas-nome-card.sql`, aplicada no Supabase a pedido do usuário) | ✅ Concluído | 2026-10-06 | Consulta em `information_schema.columns` |
-| 47.2 | `assets/js/indice-aula-data.js`: campo "Nome do card" no modal, grava junto com a data e mostra o nome no `h2` do card (vazio = título do HTML) | ✅ Concluído | 2026-10-06 | `node --check`; teste no navegador com o usuário |
-| 47.3 | Documentação (`CLAUDE.md`, `database.md`, relatório HTML) | ✅ Concluído | 2026-10-06 | Leitura |
-| 47.4 | Campo "Rótulo do card" (o "AULA 01" do topo): coluna `aulas.rotulo_card` (aplicada no Supabase) + modal + documentação | ✅ Concluído | 2026-10-06 | `node --check`; consulta da coluna; teste no navegador com o usuário |
-| 47.5 | Bug: cards que dividem a mesma aula mudavam juntos (35 × 82, aula 40). Regra "cada card ligado a apenas 1 aula" no `CLAUDE.md`; aula 40 só com a atividade 82 (33 → aula 67, 35 → aula 68; `database/2026-10-06-um-card-uma-aula-aula-40.sql`); aviso no modal quando a aula é compartilhada | ✅ Concluído | 2026-10-06 | Consulta no banco; `node --check`; levantamento dos cards × aulas de todos os índices |
-| 47.6 | Separar as outras aulas compartilhadas | ✅ Concluído | 2026-10-06 | Feito na Etapa 48 |
-| 47.7 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 47 — Exportar PDF no padrão SENAI nas discursivas (tarefa pequena, 2026-10-06)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 47.1 | `assets/js/exportar-pdf-discursiva.js` (carregado pelo `avaliacao-discursiva.js`): barra com "📥 Exportar PDF" + lista "Turma"; PDF com cabeçalho SENAI, capacidades, questões, tópicos e espaço de resposta; vale para todas as discursivas (ex.: Prova Prática 06-10-2026) | ✅ Concluído | 2026-10-06 | `node --check`; teste no navegador com o usuário |
-| 47.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 48 — Card com 100% dos dados da tabela aulas + modal CRUD da aula (2026-10-06) — plano: [docs/card-dados-100-tabela-aulas.md](docs/card-dados-100-tabela-aulas.md)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 48.1 | Gerador de índices junta páginas da mesma aula num card (Reforço de Linguagens: 20 → 10 cards) | ✅ Concluído | 2026-10-06 | Índice regerado; demais índices sem mudança |
-| 48.2 | Separar aulas compartilhadas (12 aulas novas, atividade 13 → aula 23) + backup `atividade_aula_backup_20261006` | ✅ Concluído | 2026-10-06 | Consulta: nenhuma aula em 2 cards |
-| 48.3 | Copiar rótulo e nome atuais dos cards para `aulas.rotulo_card`/`nome_card` | ✅ Concluído | 2026-10-06 | Consulta: 0 aulas com atividade sem rótulo |
-| 48.4 | Card lê só da `aulas` (`indice-aula-repositorio.js`, `indice-aula-data.js`) | ✅ Concluído | 2026-10-06 | `node --check` |
-| 48.5 | Modal CRUD da aula com lista de atividades (Editar / Excluir / Nova) (`indice-aula-modal.js`, `atividades-crud-modal.js`) | ✅ Concluído | 2026-10-06 | `node --check`; teste no navegador com o usuário |
-| 48.6 | Regras no `CLAUDE.md` (card 100% `aulas`, modal CRUD, rótulo "AULA NN", 1 card = 1 aula) | ✅ Concluído | 2026-10-06 | Leitura |
-| 48.7 | Rótulos fora do padrão "AULA NN" (28 aulas) — decisão do usuário | ⬜ Pendente | — | Lista para o usuário preencher: `docs/rotulos-aulas-ajustar.md` |
-| 48.8 | Aceite do usuário | ⬜ Pendente | — | — |
-
-
-## Etapa 49 — Professora Cintia Simone Grimm no LISTA-PRESENCA-PROFESSOR.js (tarefa pequena, 2026-10-07)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 49.1 | Acrescentar `cintia.grimm@senai.local` (perfil PROFESSOR, senha inicial de 6 caracteres sem ambíguos) em `scripts/LISTA-PRESENCA-PROFESSOR.js` (fora do Git) | ✅ Concluído | 2026-10-07 | `node --check`; e-mail sem duplicidade nas listas |
-| 49.2 | Professor criar a conta na aba Professores de `scripts/criarUsuariosBancoDados.html` | ⬜ Pendente | — | Coluna "Cadastrado" |
-
-## Etapa 49 — Professora Cintia Simone Grimm no LISTA-PRESENCA-PROFESSOR.js (tarefa pequena, 2026-10-07)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 49.1 | Acrescentar `cintia.grimm@senai.local` (perfil PROFESSOR, senha inicial de 6 caracteres sem ambíguos) em `scripts/LISTA-PRESENCA-PROFESSOR.js` (fora do Git) | ✅ Concluído | 2026-10-07 | `node --check`; e-mail sem duplicidade nas listas |
-| 49.2 | Professor criar a conta na aba Professores de `scripts/criarUsuariosBancoDados.html` | ⬜ Pendente | — | Coluna "Cadastrado" |
-
-## Etapa 50 — Menus USUARIOS/RELATORIOS/ALUNOS/CORREÇÃO só para o Professor Administrador (tarefa pequena, 2026-10-07)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 50.1 | Mover os 4 itens para `MENU_ADMINISTRADOR_HEADER` (`js/header-usuario.js`); `<nav>` vazio escondido (`assets/css/header-usuario.css`) | ✅ Concluído | 2026-10-07 | `node --check` |
-| 50.2 | Regras no `CLAUDE.md` (versão 2026-10-07 09:00) | ✅ Concluído | 2026-10-07 | Leitura; formato da versão aceito pelo `regras-modal.js` |
-| 50.3 | Aceite do usuário (entrar como professor comum e como administrador) | ⬜ Pendente | — | — |
-
-## Etapa 51 — Resolução modelo do Trabalho em Equipe v2 (Grupo 04) em .doc para Google Docs (tarefa pequena, 2026-10-07)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 51.1 | `RESOLUCAO/` no `.gitignore` e no `.vercelignore` (é a resposta modelo, só do professor) | ✅ Concluído | 2026-10-07 14:45 | `git check-ignore` |
-| 51.2 | Gerar `ATIVIDADE-GRANDE/RESOLUCAO/RESOLUCAO-ATIVIDADE-GRUPO-04.doc` (Word 97-2003, abre no Google Docs): capa, sumário, introdução, Textos 1 a 5, referência, 8 regras de formatação | ✅ Concluído | 2026-10-07 14:50 | Word (COM): 10 páginas, sumário com 13 títulos; arquivo fora do Git |
-| 51.2a | Nomes reais do Grupo 04 (4 integrantes: líder também revisora, introdução pela equipe) no `.doc` | ✅ Concluído | 2026-10-07 15:10 | Word (COM): 10 páginas, nenhum nome fictício restante |
-| 51.2b | Papéis do Grupo 04 conforme o usuário (Lousclarita líder e revisora, Stephanie formatadora, Vitória pesquisadora, Yusbelis redatora) em todo o `.doc` | ✅ Concluído | 2026-10-07 15:25 | Word (COM): tabela de integrantes conferida, 10 páginas |
-| 51.3 | Aceite do usuário (importar no Google Docs) | ⬜ Pendente | — | — |
-
-## Etapa 52 — ITIC: nova atividade de sexta — 50 objetivas a partir da apostila (capítulos 01 a 07) (tarefa pequena, 2026-10-07)
-
-Entregável: `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-APOSTILA-CAP-01-07.html`
-(fonte `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/ATIVIDADE-INDIVIDUAL-APOSTILA-CAP-01-07-QUESTOES.md`, fora do Git). Conteúdo: `APOSTILA/APOSTILA-INTRODUCAO-TIC.md`, capítulos 01 a 07. Decisões do usuário: nova atividade (as atuais ficam), 50 objetivas, seed aplicado e liberada para todas as turmas.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 52.1 | Ler a apostila (capítulos 01 a 07) | ✅ Concluído | 2026-10-07 | Capítulos 01 a 07 lidos |
-| 52.2 | Fonte com 50 objetivas (gabarito 12–13 de cada letra, posição sorteada) | ✅ Concluído | 2026-10-07 | A 13, B 13, C 12, D 12; fora do Git (`*QUESTOES.md`) |
-| 52.3 | Página HTML pelo gerador | ✅ Concluído | 2026-10-07 | 50 itens; sem gabarito no HTML |
-| 52.4 | Seed (`scripts/gerar-seed-atividades.py`, aula 20; `database/2026-10-07-atividade-individual-apostila-seed-atividades.sql`, fora do Git), menu e card no índice | ✅ Concluído | 2026-10-07 | `node` leu o menu (11 itens); card após a discursiva |
-| 52.5 | Aplicar o seed no Supabase e, a pedido do usuário, bloquear até sexta as 3 atividades (80, 81 e a nova) para todas as turmas pela `definir_bloqueio_turma` | ✅ Concluído | 2026-10-07 | id 85: 50 itens no gabarito (A13 B13 C12 D12); 80, 81 e 85 com as 5 turmas em `bloqueio`. Liberar na sexta pelo interruptor do índice |
-| 52.6 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 53 — Bug: professor via respostas dos alunos nos campos da atividade (tarefa pequena — correção de bug, 2026-10-07)
-
-Causa: as leituras de `resposta_discursiva`, `resposta_atividade`, `entrega_atividade` e `liberacao_atividade` filtravam só atividade e tentativa; como o RLS deixa o professor ler os alunos das turmas dele, as respostas dos alunos (ex.: 2 entregas na discursiva id 81) caíam nos campos da página do professor.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 53.1 | Filtrar por `aluno_id` do usuário logado em `assets/js/respostas-discursivas-banco.js` (tentativa, respostas, entrega, conferência) | ✅ Concluído | 2026-10-07 | `node --check` ok |
-| 53.2 | Mesmo filtro em `assets/js/respostas-atividade-banco.js` (objetivas) | ✅ Concluído | 2026-10-07 | `node --check` ok; grep sem leituras sem `aluno_id` (o índice "Fez atividade?" só roda para aluno) |
-| 53.3 | Aceite do usuário (abrir como professor e ver os campos vazios) | ⬜ Pendente | — | — |
-
-## Etapa 54 — Combo "Aluno" do professor nas discursivas (tarefa pequena, 2026-10-07)
-
-Pedido: na discursiva de sexta, um combo de alunos para o professor carregar as respostas de cada um. Feito de forma genérica: vale para **todas** as discursivas, sem regerar páginas.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 54.1 | `assets/js/respostas-aluno-discursiva.js` + `assets/css/respostas-aluno-discursiva.css`: combo com quem respondeu (nome, tentativa, entregue ou não); ao escolher, carrega as respostas nos campos (somente leitura) | ✅ Concluído | 2026-10-07 | `node --check` ok; consulta com RLS do professor devolveu Juan e Vitor (20 tópicos cada) |
-| 54.2 | `assets/js/avaliacao-discursiva.js` carrega o módulo só para o professor | ✅ Concluído | 2026-10-07 | `node --check` ok |
-| 54.3 | Aceite do usuário (abrir a discursiva como professor e escolher um aluno) | ⬜ Pendente | — | — |
-
-## Etapa 55 — ITIC sexta: alternativas reescritas para a correta não ser sempre a mais longa (tarefa pequena, 2026-10-07)
-
-Fontes (fora do Git): `ATIVIDADE-SEXTA-FEIRA/CONTEUDO/ATIVIDADE-INDIVIDUAL-APOSTILA-CAP-01-07-QUESTOES.md` (id 85) e `ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-QUESTOES.md` (id 80). Só o texto das alternativas muda; as letras do gabarito ficam iguais (banco não muda).
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 55.1 | Reescrever alternativas da atividade da apostila (50) e os 3 comandos repetidos "Qual é a conduta correta?" | ✅ Concluído | 2026-10-07 | Correta = mais longa: 33 → 11 de 50; sem comando repetido |
-| 55.2 | Reescrever alternativas da atividade de Comunicação Técnica (40) | ✅ Concluído | 2026-10-07 | Correta = mais longa: 26 → 9 de 40 |
-| 55.3 | Regerar as 2 páginas HTML pelo gerador | ⛔ Bloqueado | — | Substituído pelo pedido de juntar tudo em 100 questões (Etapa 56) |
-| 55.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 56 — ITIC sexta: atividade objetiva única de 100 questões (Aulas 01 a 07) — plano: [docs/itic-sexta-atividade-unica-100-questoes.md](docs/itic-sexta-atividade-unica-100-questoes.md)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 56.1 | Plano em `docs/` | ✅ Concluído | 2026-10-07 | Banco consultado: id 80 tem 3 entregas; id 85 sem respostas |
-| 56.2 | Aprovação do plano pelo usuário | ✅ Concluído | 2026-10-07 | Aprovado com a ampliação da discursiva id 81 no lugar (manter respostas dos 2 alunos) e reabertura das 2 entregas |
-| 56.3 | Execução dos passos 1 a 12 do plano | ✅ Concluído | 2026-10-07 | Objetiva id 85: 100 itens (50 da apostila + 12 das 40 + 38 novas), 25 de cada letra, todas com resposta localizada na apostila; gabarito aplicado (backup `gabarito_backup_20261007`). Discursiva id 81: 40 tópicos (ITEM 04, 09, 13, 14, 18, 19 e 20 ajustados à apostila; 21–40 novos), backup `topico_discursivo_backup_20261007` e `entrega_atividade_backup_20261007`, 2 entregas reabertas, 40 respostas mantidas. Índice e menu só com as 2; id 80 fora do índice |
-| 56.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 57 — Aviso "sem computador/celular, só a apostila" na discursiva de sexta (tarefa pequena, 2026-10-07)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 57.1 | Campo opcional `- **Aviso:**` no gerador de discursivas (caixa `.aviso-atividade` no início da página, `assets/css/avaliacao-discursiva.css`) e o mesmo aviso no PDF (`assets/js/exportar-pdf-discursiva.js`) | ✅ Concluído | 2026-10-07 | `py_compile` e `node --check` ok |
-| 57.2 | Aviso na fonte da discursiva id 81 e página regerada (tópicos sem mudança, banco não alterado) | ✅ Concluído | 2026-10-07 | Aviso na linha 29 do HTML, antes das instruções |
-| 57.3 | Aceite do usuário (abrir a página e exportar o PDF) | ⬜ Pendente | — | — |
-
-## Etapa 58 — Discursiva de sexta reduzida para 30 questões (cabe em 4 h) (tarefa pequena, 2026-10-07)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 58.1 | Fonte e padrão de resposta: ITEM 01 a 20 iguais; dos novos ficaram 10 (antigos 25, 27, 28, 30, 32, 33, 35, 36, 38, 39 → 21 a 30); duração 195–225 min | ✅ Concluído | 2026-10-07 | Gerador: 30 questões, 30 tópicos, 30 pontos |
-| 58.2 | Banco (id 81): backup `topico_discursivo_backup_20261007_40`, 10 tópicos removidos, 10 renumerados, `total_itens` = 30 | ✅ Concluído | 2026-10-07 | 30 tópicos, 30 pontos; as 40 respostas dos 2 alunos (itens 01–20) mantidas; nenhuma resposta nos itens removidos |
-| 58.3 | Página regerada, card do índice, menu e `STATUS-ATIVIDADES.md` | ✅ Concluído | 2026-10-07 | `node` lê o menu |
-| 58.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 59 — Turma 135081 responde até 17h15 (tarefa pequena, 2026-10-07)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 59.1 | `turma.hora_fim` da 135081 (AI AOPL 2026/2 V1 · Tarde) de 17:00 para 17:15, a pedido do usuário; vale para todas as atividades e avaliações da turma. Fora do horário continua bloqueado (nenhum aluno em `atividade_liberada_fora_horario` nas ids 81 e 85) | ✅ Concluído | 2026-10-07 | Consulta: 13:00–17:15 |
-| 59.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 60 — Atividades de sexta liberadas para a manhã (tarefa pequena, 2026-10-07)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 60.1 | Turma 135080 (AI AOPL 2026/2 M1) retirada de `atividade.bloqueio` nas ids 85 (objetiva de 100) e 81 (discursiva de 30), a pedido do usuário; continuam bloqueadas para 122552, 133933 e QA LBTSN 2026/1 M2. A manhã responde só no horário dela (07:15–11:15) | ✅ Concluído | 2026-10-07 | Consulta: manhã e tarde liberadas nas duas |
-| 60.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 55 — Combo "Aluno" do professor também nas objetivas (tarefa pequena, 2026-10-07)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 55.1 | Módulo da Etapa 54 tornado genérico: `respostas-aluno-discursiva.js/.css` → `assets/js/respostas-aluno-professor.js` + `assets/css/respostas-aluno-professor.css` (tabela, colunas e conversão vêm de quem chama) | ✅ Concluído | 2026-10-07 | `node --check` ok |
-| 55.2 | Discursivas usam o módulo genérico (`avaliacao-discursiva.js`) | ✅ Concluído | 2026-10-07 | `node --check` ok |
-| 55.3 | Objetivas: combo abaixo da identificação; ao escolher o aluno, destaca as alternativas dele (`respostas-atividade.js`) | ✅ Concluído | 2026-10-07 | `node --check` ok |
-| 55.4 | Aceite do usuário (abrir uma objetiva como professor e escolher um aluno) | ⬜ Pendente | — | — |
-
-## Etapa 61 — Data, hora, autor e versão nas apostilas (regra global; começa pela ITIC) (tarefa pequena, 2026-10-07)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 61.1 | Gerador: campos `autor_apostila` e `versao_apostila` obrigatórios no `materia.json`; capa e rodapé do HTML e cabeçalho do Markdown completo com autor, versão, data e hora | ✅ Concluído | 2026-10-07 20:15 | Gerador rodou sem erro; conferência 100% |
-| 61.2 | ITIC: `autor_apostila` = Gelvazio Camargo, `versao_apostila` = 1.0; cabeçalho do Markdown completo atualizado; HTML regerado | ✅ Concluído | 2026-10-07 20:15 | HTML: quadro na capa (Gelvazio Camargo · 1.0 · 07/10/2026 às 20:12) e rodapé "Versão 1.0"; linha igual no Markdown. O `APOSTILA-INTRODUCAO-TIC.pdf` antigo não tem os dados (reexportar pelo botão) |
-| 61.3 | Regra registrada no `CLAUDE.md` do projeto (REGRAS APOSTILAS, versão 2026-10-07 20:15) e no global | ✅ Concluído | 2026-10-07 20:15 | Leitura das seções; visualizador lê a versão no mesmo formato |
-| 61.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 62 — Autor, versão, data e hora na apostila de Testes de Frontend (tarefa pequena, 2026-10-07)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 62.1 | `materia.json`: `autor_apostila` = Gelvazio Camargo, `versao_apostila` = 1.0; HTML regerado (capa, rodapé e Markdown). Corrigido no gerador: comentário `# ...` dentro de bloco de código (YAML do cap. 09) era lido como título de capítulo no Markdown completo | ✅ Concluído | 2026-10-07 20:20 | Conferência 100%; 10 capítulos lidos; capa e rodapé com Gelvazio Camargo · 1.0 |
-| 62.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 63 — Link do curso "Técnico em Desenvolvimento de Sistemas" no índice de cursos (tarefa pequena, 2026-10-07)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 63.1 | A rota apontava para `MATERIAIS/TECNICO-DESENVOLVIMENTO-SISTEMAS/` (pasta movida para `C:\fontes\BACKUP-CURSOS-SENAI`). A pedido do usuário ("novo nome do curso: TECNICO-INFORMATICA-INTERNET"), as duas rotas do curso no `index.html` da raiz passam a abrir `MATERIAIS/TECNICO-INFORMATICA-INTERNET/index.html`. Banco não alterado (curso id 3 sem turmas) | ✅ Concluído | 2026-10-07 20:25 | `node`: JSON de rotas válido; pasta de destino existe |
-| 63.2 | Aceite do usuário (abrir o card no índice) | ⬜ Pendente | — | — |
-
-## Etapa 64 — Apostila de Reforço de Linguagens (pedida em 2026-10-07)
-
-Plano: [docs/apostila-reforco-linguagens.md](docs/apostila-reforco-linguagens.md) · Status por capítulo:
-`MATERIAIS/RIO_DO_SUL_MAIS_TECH/REFORCO_LINGUAGENS/APOSTILA/STATUS-APOSTILA.md`.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 64.1 | Ementa da matéria com as 6 capacidades da UC 7 da ementa do curso (decisão do usuário); `STATUS-EMENTAS.md` e `STATUS-EMENTAS-CURSOS.md` | ✅ Concluído | 2026-10-07 20:20 | 14.929 caracteres (dentro de 14.800–14.950) |
-| 64.2 | `materia.json` completo e literal (objetivo, justificativa, conhecimentos, 7 módulos, textos da ementa, avaliação, BNCC, prompts, indicadores) | ✅ Concluído | 2026-10-07 20:20 | Conferência 138/138 (100%) |
-| 64.3 | Gerador: carga horária por aula (6 h/7 h), ementa em listas, vídeos pendentes; ITIC e Testes de Frontend sem mudança | ✅ Concluído | 2026-10-07 20:20 | ITIC 278/278 e TF 185/185; Markdown completo das duas idêntico antes e depois |
-| 64.4 | Introdução + capítulos 01 a 10 (6 exercícios ITEM e 10 termos cada), Markdown completo e HTML | ✅ Concluído | 2026-10-07 20:20 | Gerador sem avisos de tema/capacidades · commit `da167c7` |
-| 64.5 | Push (branch e `main`) | ✅ Concluído | 2026-10-07 20:30 | `main` em `72901c7` |
-| 64.6 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 65 — Regra do push por ambiente (tarefa pequena, 2026-10-07)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 65.1 | `CLAUDE.md`: local = nunca fazer push; nuvem = sempre push direto na `main`, sem pull request e sem push forçado | ✅ Concluído | 2026-10-07 20:30 | Commit `72901c7` na `main` |
-| 65.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 66 — Apostila no menu de atividades de Reforço de Linguagens (tarefa pequena, 2026-10-07)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 66.1 | `ATIVIDADES/MENU-ATIVIDADES.js` (Índice, 📘 Apostila, atividades por aula 20 + 5) e tags do menu no índice, nas 20 atividades e na apostila | ✅ Concluído | 2026-10-07 20:40 | `node`: 3 itens e 20 subitens; todas as páginas têm `<header>` · commit `bffa74a` |
-| 66.2 | Aceite do usuário (abrir o menu numa atividade e clicar em Apostila) | ⬜ Pendente | — | — |
-
-## Etapa 67 — Vídeos na apostila de Reforço de Linguagens + identificação (tarefa pequena, 2026-10-07)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 67.1 | 29 vídeos reais (busca na web; 2 a 3 por capítulo) com duração "a conferir" (YouTube bloqueado na nuvem; decisão do usuário) | ✅ Concluído | 2026-10-07 20:50 | HTML com 29 caixas de vídeo e o aviso "duração a conferir pelo professor" |
-| 67.2 | Gerador aceita `a conferir` e não junta mais a linha seguinte ao canal de vídeo sem canal | ✅ Concluído | 2026-10-07 20:50 | ITIC e TF continuam lendo os mesmos vídeos |
-| 67.3 | Merge da `main` (sem conflitos) e identificação da apostila: Gelvazio Camargo · versão 1.0 · data e hora | ✅ Concluído | 2026-10-07 20:50 | Conferência 100% · `main` em `e5972a9` |
-| 67.4 | Aceite do usuário: conferir a duração de cada vídeo (trocar `a conferir` por `mm:ss` até 15 min ou apagar a linha) | ⬜ Pendente | — | — |
-| 67.5 | Anotação "⏳ CONFERIR LOCALMENTE" nas seções de vídeos (capítulos e Markdown completo, fora do HTML) e tarefa #11 no `TASKS.md` para conferir a duração no ambiente local | ✅ Concluído | 2026-10-08 | Conferência 138/138; HTML sem a anotação |
-
-## Etapa 68 — Autor e versão em todas as apostilas + regra no CLAUDE.md (tarefa pequena, 2026-10-07)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 68.1 | Conferir as apostilas existentes: ITIC e Testes de Frontend já tinham `autor_apostila`/`versao_apostila`; faltava Reforço de Linguagens | ✅ Concluído | 2026-10-07 | grep nos 3 `materia.json` |
-| 68.2 | Reforço de Linguagens: autor Gelvazio Camargo, versão 1.0 no `materia.json` e apostila HTML gerada de novo | ✅ Concluído | 2026-10-07 | Markdown com a linha "Autor · Versão · Data e hora"; HTML com o quadro na capa |
-| 68.3 | Regra "IDENTIFICAÇÃO DA APOSTILA" (seção REGRAS APOSTILAS do `CLAUDE.md`): obrigatória em todas, preenchida antes da 1ª geração, padrão Gelvazio Camargo / 1.0; versão e histórico do CLAUDE.md | ✅ Concluído | 2026-10-07 | Linha de versão no formato lido pelo `regras-modal.js` |
-| 68.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 69 — Bloquear de novo 81 e 85 até sexta; conferir capa de Reforço (tarefa pequena, 2026-10-07)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 69.1 | Atividades 81 e 85 bloqueadas de novo para as 5 turmas pela `definir_bloqueio_turma` (outra sessão as tinha liberado para 135080 e 135081). Liberar na sexta pelo interruptor do índice | ✅ Concluído | 2026-10-07 | Função devolveu `bloqueada = true` para as 5 turmas nas duas |
-| 69.2 | Atividade 80: respostas e entregas mantidas (decisão do usuário) | ✅ Concluído | 2026-10-07 | Nada alterado (3 entregas) |
-| 69.3 | Capa da apostila de Reforço de Linguagens com Autor Gelvazio Camargo, Versão 1.0 e Data e hora 07/10/2026 às 20:49 (versão do merge, com os 29 vídeos); rodapé "Versão 1.0" | ✅ Concluído | 2026-10-07 | Lido no HTML gerado (`capa-apostila__identificacao`, `data-rodape`) |
-
-## Etapa 70 — Reorganizar o CLAUDE.md: estrutura e manutenção (pedida em 2026-10-07)
-
-Plano: [docs/reorganizar-claude-md-estrutura.md](docs/reorganizar-claude-md-estrutura.md). Uma alteração por vez, perguntando ao usuário.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 70.1 | Dividir as regras em `docs/regras/` — escolha do usuário: "Núcleo + docs/regras". `CLAUDE.md` 2.748 → 640 linhas; 36 seções movidas para 6 arquivos; índice + proibições no `CLAUDE.md`; `regras-modal.js` carrega os arquivos do índice | ✅ Concluído | 2026-10-07 21:15 | Comparação linha a linha antes × depois: nenhum texto perdido; `node --check`; os 6 links do índice existem |
-| 70.2 | Histórico de versões para `docs/HISTORICO-REGRAS.md` — escolha do usuário: "Mover para docs/". Completo (53 linhas) no arquivo novo; no `CLAUDE.md` o resumo das 5 mais recentes + link; regra do visualizador manda registrar nos dois; modal carrega o histórico | ✅ Concluído | 2026-10-07 21:18 | Todas as linhas do histórico antigo presentes no novo; `node --check`; links do modal existem |
-| 70.3 | "Próximo passo" do `STATUS.md` em tabela — escolha do usuário: "Linha curta + tabela". Seção "⏳ Aguardando o usuário" com 28 linhas (Etapa · Item · O que falta · Tipo), 49.2 sem repetição | ✅ Concluído | 2026-10-07 21:25 | Todas as pendências da linha antiga presentes na tabela |
-| 70.4 | Versão das regras + commit | ✅ Concluído | 2026-10-07 21:25 | Versões 21:10 e 21:15 no histórico; commits b4148c0, afec916 e o desta etapa |
-| 70.5 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 71 — Recriar Comunicação Oral e Escrita (Rio do Sul) no padrão da ITIC (pedida em 2026-10-07)
-
-Plano: [docs/reorganizar-comunicacao-oral-escrita-rio-do-sul.md](docs/reorganizar-comunicacao-oral-escrita-rio-do-sul.md). Tarefa grande: só executar depois da aprovação.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 71.1 | Levantar a pasta `Scripts-Comunicacao` e escrever o plano em `docs/` | ✅ Concluído | 2026-10-07 21:25 | Plano com etapas A a F, riscos e lista dos binários fora do Git |
-| 71.2 | Aprovação do plano pelo usuário — aprovado: pasta `INTRODUCAO_COMUNICACAO_ORAL_ESCRITA`, backup dos binários fora do repositório | ✅ Concluído | 2026-10-07 21:27 | Resposta do usuário no chat |
-| 71.3 | Executar as etapas A a F do plano, um item por vez (andamento detalhado no plano) | 🔄 Em progresso | — | — |
-| 71.3a | Pedido do usuário (2026-10-09): pasta antiga `Scripts-Comunicacao` apagada (passos F.1 e F.2 adiantados; backup conferido) e `INTRODUCAO_COMUNICACAO_ORAL_ESCRITA/ATIVIDADES/index.html` gerado (D.11 parcial), com card no índice do curso Rio do Sul e na faixa das matérias. Links quebrados no projeto: 85 → 11 (só o app do WhatsApp e os templates dos geradores, que não são erro) | ✅ Concluído | 2026-10-09 14:12 | Varredura dos 235 HTML; `git diff` dos índices regravados só com o card/faixa novos |
-| 71.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 72 — Corrigir as contradições do CLAUDE.md, uma de cada vez (pedida em 2026-10-07)
-
-Tarefa pequena por item (só texto das regras). Cada item: mostrar a contradição exata, perguntar e aplicar a escolha do usuário.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 72.1 | "Tabelas de resultado ao finalizar tarefas" × frase final — escolha: apagar a linha de "Outras Regras" | ✅ Concluído | 2026-10-07 21:36 | Linha removida; versão 2026-10-07 21:36 no CLAUDE.md e no histórico |
-| 72.2 | Menu ALUNOS: todo professor × só administrador — escolha: corrigir a lista de assets | ✅ Concluído | 2026-10-07 21:37 | Linha 58 de `assets-e-geradores.md` = "só Professor Administrador"; confere com `MENU_ADMINISTRADOR_HEADER` |
-| 72.3 | Título da regra do Word × botões removidos — escolha: remover a regra do Word | ✅ Concluído | 2026-10-07 21:38 | Seção apagada de `atividades.md`; lista de `assets` e índice do `CLAUDE.md` sem a regra; scripts mantidos |
-| 72.4 | "PDF com gabarito" na regra da Turma × botão removido — escolha: tirar a menção | ✅ Concluído | 2026-10-07 21:39 | Linha 162 de `atividades.md` sem "PDF com gabarito" |
-| 72.5 | Reforço de Linguagens "aula 16 com 50 questões" × 10 aulas de 25 — escolha: tirar do exemplo | ✅ Concluído | 2026-10-07 21:40 | Linhas 377–378 de `atividades.md` remetem à regra exclusiva |
-| 72.6 | Local da ementa: raiz da matéria × `DOCUMENTACAO/` — escolha: raiz da matéria | ✅ Concluído | 2026-10-07 21:43 | Estrutura recomendada, comandos e exemplo de `ementas-e-cursos.md` apontam para a raiz; 35 ementas já estão lá |
-| 72.7 | `git add .` (global) × proibido (projeto) — escolha: mudar a regra global | ✅ Concluído | 2026-10-07 21:44 | CLAUDE.md global: 4 trechos com `git add <arquivos da tarefa>` e "nunca `git add .`" (arquivo fora do Git; cópia anterior no scratchpad da sessão) |
-| 72.8 | Aceite do usuário (7 contradições corrigidas) | ⬜ Pendente | — | — |
-
-## Etapa 73 — Revisão final das regras: problemas novos + desatualizados (pedida em 2026-10-07)
-
-Uma pergunta por item; **um commit só no final** (pedido do usuário).
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 73.1 | Pastas a ignorar: só MATERIAS-GERAIS × AGENDA_COLABORADOR — escolha: lista única | ✅ Concluído | 2026-10-07 21:46 | "Estrutura de pastas" lista as 2 pastas; seção solta do fim apagada |
-| 73.2 | "docs/<tarefa>.md antes de implementar" × tarefas pequenas — escolha: acrescentar a exceção | ✅ Concluído | 2026-10-07 21:46 | Linha de "Outras Regras" com a exceção e o STATUS.md |
-| 73.3 | Global: DOCUMENTAR / documentacao-padrao "sem exceção" × tarefas pequenas — escolha: valer a exceção | ✅ Concluído | 2026-10-07 21:50 | CLAUDE.md global, linhas 162 e 292 (fora do Git) |
-| 73.4 | Global: "NUNCA git status" × "Executar git status" — escolha: trocar o exemplo | ✅ Concluído | 2026-10-07 21:50 | CLAUDE.md global, linha 720 (fora do Git) |
-| 73.5 | Título e linha 387 "6 arquivos HTML" — escolha: novo título e texto | ✅ Concluído | 2026-10-07 21:51 | Título "Regras do projeto Aulas SENAI"; seção do grafo cita docs/regras |
-| 73.6 | Menu Regras descrito só como CLAUDE.md — escolha: atualizar a descrição | ✅ Concluído | 2026-10-07 21:51 | Descrição e aviso de segredo cobrem docs/regras e o histórico |
-| 73.7 | Autenticação cita `index.html` (login é `login.html`) — escolha: trocar por login.html + header | ✅ Concluído | 2026-10-07 21:52 | Linha da regra de autenticação lista login.html, login.js, header-usuario.js e supabase.js |
-| 73.8 | Data do grafo desatualizada — escolha: tirar data e números | ✅ Concluído | 2026-10-07 21:55 | Seção do grafo remete ao topo do GRAPH_REPORT.md; sem números fixos |
-| 73.9 | TASKS.md parado × STATUS.md — escolha: trocar por STATUS.md | ✅ Concluído | 2026-10-07 21:58 | As 2 seções do TASKS.md viraram "Inicialização de cada chat — ler o STATUS.md"; TASKS.md citado só como histórico |
-| 73.10 | Comando de tamanho da ementa conta linhas — escolha: corrigir comando e exemplo | ✅ Concluído | 2026-10-08 07:37 | Comando com -Raw (testado: 219 linhas × 15.657 caracteres); exemplo sem número fixo |
-| 73.11 | Caminho do STATUS-EMENTAS só Rio do Sul — escolha: caminho genérico + aviso | ✅ Concluído | 2026-10-08 07:40 | Linhas 182, 201 e 202 de `ementas-e-cursos.md` |
-| 73.12 | Registro do cursoprofessor (substituído) — escolha: apagar a seção | ✅ Concluído | 2026-10-08 07:49 | Seção apagada de `paginas-legadas.md` e do índice do `CLAUDE.md`; histórico fica em `docs/registro-vinculos-cursos-professor-2026-10-03.md` |
-| 73.13 | Versão das regras + commit único | ✅ Concluído | 2026-10-08 07:49 | Versão 2026-10-08 07:48 no CLAUDE.md e no histórico; reaplicado depois do merge da origin/main (feito por outra sessão); 12 itens conferidos por busca; 7 links do índice existem |
-| 73.14 | Aceite do usuário | ⬜ Pendente | — | — |
-| 73.15 | Tamanho da ementa: nova escolha do usuário (2026-10-09) = comando Python; versão vazia das regras preenchida | ✅ Concluído | 2026-10-09 10:48:00 | Python na ementa ITIC = 14.917 caracteres (wc -c = 15.579 bytes); versão 2026-10-09 10:47:05 no CLAUDE.md e no histórico; resumo com 5 linhas |
-
-## Etapa 74 — Dashboard do Jev (JEV-AI de Testes de Frontend) (tarefa pequena, 2026-10-07)
-
-Página visual que lê `JEV-AI/CLAUDE.md` e `JEV-AI/documentacao.md`. Sem banco, sem segurança.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 74.1 | `assets/js/dashboard-jev.js` (já no Git em `fefde8f`): ajustar 2 linhas > 100 caracteres | ✅ Concluído | 2026-10-07 22:20 | `node --check` ok; nenhuma linha > 100; leitura das seções conferida no Node com os 2 arquivos reais |
-| 74.2 | `assets/css/dashboard-jev.css` (tokens em `:root`, claro/escuro) | ✅ Concluído | 2026-10-07 22:20 | Todas as classes usadas pelo JS existem no CSS |
-| 74.3 | `JEV-AI/dashboard.html` só com dados (`data-claude`, `data-documentacao`) e header | ✅ Concluído | 2026-10-07 22:20 | Sem `<style>`, `onclick` nem script embutido; 13 IDs usados pelo JS presentes |
-| 74.4 | Commit local | ✅ Concluído | 2026-10-07 22:20 | `git diff --cached --name-only` (4 arquivos) |
-| 74.5 | Aceite do usuário (abrir no navegador e testar) | ⬜ Pendente | — | — |
-
-## Etapa 75 — Atividades práticas das Aulas 06 a 10 da ITIC (pedida em 2026-10-07)
-
-Mesmo padrão das práticas 01–05: discursiva (10 questões, 20 tópicos, 10 pontos), fonte em
-`ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-NN.md` (+ `-GABARITO.md`, fora do Git), página gerada por
-`assets/gerador-avaliacao-discursiva`, link no card da aula e no menu, seed em `database/` (fora do
-Git). Uma aula por vez. Aplicar o seed só com pedido do usuário.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 75.1 | Prática da Aula 06 (Editor de Textos) | ✅ Concluído | 2026-10-07 22:11 | 10 questões, 20 tópicos, 10 pontos; padrão de resposta fora do HTML; links no índice e no menu |
-| 75.2 | Prática da Aula 07 (Textos Técnicos) | ⬜ Pendente | — | — |
-| 75.3 | Prática da Aula 08 (Planilhas: Fórmulas) | ⬜ Pendente | — | — |
-| 75.4 | Prática da Aula 09 (Planilhas: Gráficos) | ⬜ Pendente | — | — |
-| 75.5 | Prática da Aula 10 (Apresentações e TIC) | ⬜ Pendente | — | — |
-| 75.6 | STATUS-AULAS, STATUS-ATIVIDADES e commit local | ⬜ Pendente | — | — |
-| 75.7 | Aceite do usuário (aplicar os seeds no banco, se pedir) | ⬜ Pendente | — | — |
-
-
-## Etapa 75 — Capacidades nas 2 últimas pendências (tarefa pequena, 2026-10-07)
-
-Plano: [docs/capacidade-por-questao-avaliacoes.md](docs/capacidade-por-questao-avaliacoes.md). Sem banco, sem mexer em questões ou alternativas.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 75.1 | ITIC `ATIVIDADES-AULA-28-09-2026-25-QUESTOES`: `- **Capacidade:** C1` nas 25 questões (todas sobre feedback/comunicação) e página regenerada | ✅ Concluído | 2026-10-07 22:45 | 25 caixas + quadro no início; diff só com capacidades e o link dos slides que o gerador já põe |
-| 75.2 | `gerar_atividade_excel.py`: caixa "🎯 Capacidade" em cada questão e quadro "CAPACIDADES" na capa, lendo o `materia.json` (código inexistente = erro) | ✅ Concluído | 2026-10-07 22:45 | `py_compile` ok |
-| 75.3 | `atividade.json` das práticas de Excel 29/09 e 01/10 com `capacidades` por questão (C1; C1 e C2 nas de cálculo: 29/09 Q4, Q5, Q9; 01/10 Q5) e regeneradas | ✅ Concluído | 2026-10-07 22:45 | 16 questões com a caixa, 2 capas com o quadro; a regeneração também corrigiu os caminhos de CSS/JS que estavam com um `../` a mais |
-| 75.4 | Commit local | ✅ Concluído | 2026-10-07 22:45 | `git diff --cached --name-only` sem gabaritos nem fontes `*QUESTOES.md` |
-| 75.5 | Aceite do usuário (abrir as 3 atividades) | ⬜ Pendente | — | — |
-
-## Etapa 76 — Conflitos entre as regras de TASKS.md, documentação e sessões (pedida em 2026-10-08)
-
-Levantamento feito no chat (6 conflitos); correção **um por vez, com confirmação do usuário**.
-Arquivos globais (`C:\Users\gelva\.claude\...`, skill `documentacao-padrao`) ficam fora do Git do projeto.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 76.1 | Exceção das tarefas pequenas também no `CLAUDE-DOCS-BEFORE-EVERY-TASK.md` e na skill `documentacao-padrao` (antes: "sem exceção") | ✅ Concluído | 2026-10-08 08:09 | `grep` mostra "TAREFA GRANDE" e a exceção nos dois arquivos |
-| 76.2 | Testes e navegador nas regras de documentação → verificação por leitura/`node`/banco/terminal | ✅ Concluído | 2026-10-08 08:10 | `grep` sem "Testar no navegador" nem "testadas"; skill sem "como testar" |
-| 76.3 | Fonte única: `STATUS.md` × `TASKS.md` × `SESSOES-CLAUDE/` — escolha do usuário: "STATUS.md manda; os outros apontam" | ✅ Concluído | 2026-10-08 08:11 | Regra no CLAUDE.md, seção "📌 Tarefas do TASKS.md" no STATUS.md com as 8 tarefas, aviso no topo do TASKS.md |
-| 76.4 | Log da sessão: obrigatório × só com SIM — escolha do usuário: "Só com SIM" | ✅ Concluído | 2026-10-08 08:14 | CLAUDE.md sem a obrigação de gravar a cada pedido |
-| 76.5 | Frase final da tarefa (global) × pergunta do log (projeto) | ✅ Concluído | 2026-10-08 08:14 | CLAUDE.md global com a exceção nas 2 seções (fora do Git) |
-| 76.6 | Confirmação antes de comando mutável × Git sem perguntar | ✅ Concluído | 2026-10-08 08:14 | Item 9 do CLAUDE.md global com a exceção (fora do Git) |
-| 76.7 | Aceite do usuário | 👀 Aguardando validação | — | — |
-
-## Etapa 77 — Skills globais copiadas para `.claude/skills/` do projeto (tarefa pequena, 2026-10-08)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 77.1 | Copiar as 4 skills do usuário (`EXERCICIOS`, `documentacao-padrao`, `graphify`, `padrao-slides-senai`) de `~/.agents/skills/` (versão mais nova) para `.claude/skills/`; a pasta `synced/` (skills do claude.ai, 8,7 MB, geridas pelo app) não foi copiada | ✅ Concluído | 2026-10-08 08:15 | `diff -rq` igual nas 4 |
-| 77.2 | `~/.claude/skills/documentacao-padrao` estava desatualizada (sem a exceção do item 76.1): sincronizada com a de `~/.agents/skills` | ✅ Concluído | 2026-10-08 08:15 | `diff` igual |
-| 77.3 | Regras globais (`~/.claude/CLAUDE.md` e `CLAUDE-DOCS-BEFORE-EVERY-TASK.md`) no projeto: decisão do usuário — escolha: "Cópia de referência, sem carregar" (`.claude/regras-globais/` + regra no CLAUDE.md) | ✅ Concluído | 2026-10-08 08:16 | `diff` das cópias com os originais |
-| 77.4 | Regra no CLAUDE.md: sessão na nuvem lê e aplica `.claude/regras-globais/` (pedido do usuário) | ✅ Concluído | 2026-10-08 08:18 | `grep` mostra a regra na seção de globais e na inicialização |
-| 77.5 | Aceite do usuário | 👀 Aguardando validação | — | — |
-
-## Etapa 78 — Regras do CLAUDE.md global trazidas para o projeto (pedida em 2026-10-08)
-
-Comparação do global com o `CLAUDE.md` + `docs/regras/`: 7 regras faltavam; o usuário aprovou cada uma.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 78.1 | Nunca escrever testes automatizados (regras de sempre) | ✅ Concluído | 2026-10-08 08:20 | `grep` no CLAUDE.md |
-| 78.2 | `docs/regras/codigo.md` (SOLID e regras de código) + linha no índice | ✅ Concluído | 2026-10-08 08:20 | Visualizador acha o arquivo pelo link do índice |
-| 78.3 | Gestão de projetos (23 regras) + modelo do `STATUS.md` na seção de status | ✅ Concluído | 2026-10-08 08:20 | `grep` no CLAUDE.md |
-| 78.4 | `docs/regras/infograficos.md` + linha no índice | ✅ Concluído | 2026-10-08 08:20 | Visualizador acha o arquivo pelo link do índice |
-| 78.5 | Git: sem perguntar, sem `git status` repetido, sem worktree | ✅ Concluído | 2026-10-08 08:20 | `grep` no CLAUDE.md |
-| 78.6 | Graphify: comando completo no início de cada conversa | ✅ Concluído | 2026-10-08 08:20 | `grep` no CLAUDE.md |
-| 78.7 | Fluxo da documentação padrão em "Outras Regras" | ✅ Concluído | 2026-10-08 08:20 | `grep` no CLAUDE.md |
-| 78.8 | Aceite do usuário | 👀 Aguardando validação | — | — |
-
-## Etapa 79 — Apostila da ITIC versão 2 (até 40 páginas) (pedida em 2026-10-08 08:36:51)
-
-Plano: [docs/apostila-itic-v2-40-paginas.md](docs/apostila-itic-v2-40-paginas.md). A V1 (84 páginas) não muda.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 79.0 | Plano criado e aprovação do usuário (aprovado: os 10 capítulos de uma vez; PDF headless para contar páginas) | ✅ Concluído | 2026-10-08 08:45 | Resposta do usuário no chat |
-| 79.1 | Opção `--edicao=V2` no gerador (módulo novo `assets/gerador-apostilas/edicao_apostila.py`) + `edicoes_apostila` no `materia.json` | ✅ Concluído | 2026-10-08 11:40 | `py_compile` OK; `--conferir` da V1 continua 100% |
-| 79.2 | `CONTEUDO-V2/INTRODUCAO.md` condensada | ✅ Concluído | 2026-10-08 08:48 | Conferência 277/277 (100%) |
-| 79.3 | Capítulos 01 a 10 condensados em `CONTEUDO-V2/` (teoria + resumo + glossário; todos os conteúdos oficiais e termos oficiais mantidos) | ✅ Concluído | 2026-10-08 08:52 | Gerador sem ⚠️ |
-| 79.3a | **Mudança de escopo (pedido do usuário, 2026-10-08 08:48):** a V2 sai **sem vídeos e sem exercícios** (ele fará à parte); gerador aceita capítulo só com Teoria/Resumo/Glossário quando a edição tem `sem_videos_e_exercicios` | ✅ Concluído | 2026-10-08 08:48 | Teste: cap. 01 sem vídeos/exercícios gerou o HTML; V1 continua exigindo as duas seções |
-| 79.3b | **Pedido novo (2026-10-08 08:48):** paginação "Página N de T" ao exportar PDF em **todas** as apostilas (`assets/js/apostila.js`) + regra no `CLAUDE.md` global (cópia em `.claude/regras-globais/` sincronizada) | ✅ Concluído | 2026-10-08 08:48 | `node --check` OK; `diff` global × cópia igual |
-| 79.4 | Markdown completo V2 + conferência 100% | ✅ Concluído | 2026-10-08 08:52 | `--conferir`: 277/277 |
-| 79.5 | HTML V2 (versão 2.0) | ✅ Concluído | 2026-10-08 08:52 | Versão 2.0 na capa e no rodapé |
-| 79.6 | Contagem de páginas ≤ 40 | ✅ Concluído | 2026-10-08 08:52 | PDF headless: 28 páginas; rodapé "Página N de 28" |
-| 79.7 | Regra, status e commit (+ pedido do usuário: PDF **sem a faixa azul da esquerda** em todas as apostilas, `assets/css/apostila.css`, regra no global e no projeto) | ✅ Concluído | 2026-10-08 08:52 | Imagem da página 6 do PDF sem a faixa |
-| 79.8 | Aceite do usuário | 👀 Aguardando validação | — | — |
-
-## Etapa 80 — Remover o arquivo `.gitignore copy` (tarefa pequena, 2026-10-08 12:00:28)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 80.1 | Conferência do "conflito de merge": nenhum merge em andamento nem marcador de conflito; `main` 45 commits à frente da `origin/main`, sem atraso | ✅ Concluído | 2026-10-08 11:58 | `git status`, `git grep` dos marcadores, `git rev-list` |
-| 80.2 | `git rm ".gitignore copy"` (cópia antiga deixada pelo commit `85a8531`) | ✅ Concluído | 2026-10-08 12:00 | Commit `eb8e8f0` |
-
-## Etapa 81 — Apostila ITIC V2: correções da conferência com a ementa (tarefa pequena, 2026-10-08 09:03:16)
-
-Pedido: corrigir os 4 pontos achados na conferência da V2 com o `EMENTA-CHALKIE-AI.md` e gerar de novo a V2 (versão 2.0 → 2.1).
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 81.1 | S2 (hierarquias e autonomia) no cap. 01 e S3 (abertura à mudança) no cap. 04 de `CONTEUDO-V2/` | ✅ Concluído | 2026-10-08 12:03 | Trechos conferidos nos arquivos |
-| 81.2 | Cap. 03: citação declara a ABNT NBR 10520; cap. 06: margens declaram a ABNT NBR 14724 | ✅ Concluído | 2026-10-08 12:03 | Trechos conferidos nos arquivos |
-| 81.3 | Referências complementares (NBR 10520, NBR 14724, NBR 6028, Lei 12.737/2012) só na V2 (`referencias_complementares` da edição no `materia.json` + gerador) | ✅ Concluído | 2026-10-08 09:05 | `py_compile` OK; seção "Referências complementares" no Markdown e no HTML V2; V1 sem mudança (`--conferir` 100%) |
-| 81.4 | V2 versão 2.1: Markdown completo (`--forcar`), conferência 100% e HTML | ✅ Concluído | 2026-10-08 09:05 | `--conferir` V2 277/277; HTML e PDF headless 2.1 (28 páginas, "Página N de 28") |
-| 81.5 | Aceite do usuário | 👀 Aguardando validação | — | — |
-
-## Etapa 82 — Discursiva de sexta (id 81) ajustada à apostila V2 (tarefa pequena, 2026-10-08 09:33:18)
-
-Pedido (opção B): a prova `ATIVIDADE-SEXTA-FEIRA/ATIVIDADE-INDIVIDUAL-COMUNICACAO-TECNICA-DISCURSIVA` passa a cobrar só o que está na apostila ITIC V2. Itens ajustados: 05, 06, 07, 10, 11, 12, 13, 18, 23 e 28 (+ capacidade do 09 de C5 para C1, C3; conteúdo-base = V2).
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 82.1 | Fonte `.md` da prova: 10 comandos/tópicos ajustados à V2, capacidade do item 09, conteúdo-base V2 | ✅ Concluído | 2026-10-08 09:35 | Trocas conferidas uma a uma pelo script (cada trecho achado 1 vez) |
-| 82.2 | Padrão de resposta (`-GABARITO.md`, local; não entra no commit) dos 10 itens | ✅ Concluído | 2026-10-08 09:35 | Gerador: 30 tópicos com padrão (0 sem padrão) |
-| 82.3 | Página HTML e seed regerados (`gerar_avaliacao_discursiva.py`; seed fora do Git) | ✅ Concluído | 2026-10-08 09:35 | 30 questões, 30 tópicos, 30 pontos; HTML sem padrão de resposta; seed `database/2026-10-08-atividade-individual-comunicacao-tecnica-discursiva-seed-atividades.sql` |
-| 82.4 | Banco (id 81, `topico_discursivo`): aplicar o seed só se o usuário pedir | ✅ Concluído | 2026-10-08 09:48 | A pedido do usuário: backup `topico_discursivo_backup_20261008_81` (30 linhas, RLS ligado); seed aplicado pelo conector; conferido: 30 tópicos, 30 pontos, 40 respostas mantidas, mudaram só os itens 5, 6, 7, 10, 11, 12, 13, 18, 23 e 28 |
-| 82.5 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 83 — Remover a apostila V1 da ITIC (tarefa grande, pedida em 2026-10-08 09:36)
-
-Plano: [docs/remover-apostila-itic-v1.md](docs/remover-apostila-itic-v1.md).
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 83.1 | Plano criado; aprovação do usuário e decisões D1 (nome da V2) e D2 (objetiva id 85) | ✅ Concluído | 2026-10-08 09:37 | Usuário aprovou; D1 = V2 vira a principal; D2 = conferir a id 85 com a V2 |
-| 83.2 | Apagar os arquivos da V1 | ✅ Concluído | 2026-10-08 09:38 | `git rm` de 13 arquivos; PDF (14 MB) e pastas vazias apagados do disco |
-| 83.3 | Aplicar a D1 e gerar a apostila de novo (conferência 100%) | ✅ Concluído | 2026-10-08 09:39 | `CONTEUDO-V2/` → `CONTEUDO/` e arquivos sem "-V2" (`git mv`); `materia.json` versão 2.1 com `apostila_sem_videos_e_exercicios` e `referencias_complementares` (sem `edicoes_apostila`); gerador lê essas opções sem edição; conferência 277/277; PDF 28 páginas "Página N de 28" |
-| 83.4 | Menu, fonte da id 85 e `STATUS-APOSTILA.md` sem link para a V1 | ✅ Concluído | 2026-10-08 09:42 | Menu já aponta para `APOSTILA-INTRODUCAO-TIC.html` (nome padrão); conteúdo-base da discursiva id 81 corrigido (página sem mudança); id 85 já aponta para o nome padrão; `STATUS-APOSTILA.md` reescrito com histórico |
-| 83.5 | Aplicar a D2 (se aprovada) | ✅ Concluído | 2026-10-08 09:42 | 100 questões conferidas com a V2: 87 com resposta; 13 reescritas (12, 14, 26, 36, 41, 52, 54, 65, 71, 86, 92, 95, 99) com a MESMA letra do gabarito (banco id 85 sem mudança); página regerada sem gabarito |
-| 83.6 | Regras (`docs/regras/apostilas.md`, `CLAUDE.md`, histórico) | ✅ Concluído | 2026-10-08 09:43 | Versão das regras 2026-10-08 09:42:37 (resumo e histórico completo); visualizador lê o mesmo formato |
-| 83.7 | Aceite do usuário | 👀 Aguardando validação | — | — |
-
-## Etapa 84 — Botão "Exportar Usuários em PDF" na página de usuários (tarefa pequena, 2026-10-08 13:17:15)
-
-Pedido: em `scripts/criarUsuariosBancoDados.html`, botão que exporta em PDF os usuários selecionados da tabela de consulta, só em ambiente local.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 84.1 | `assets/js/criar-usuarios-exportar-pdf.js` (novo): folha com as linhas marcadas e visíveis (Nº, Aluno, Aluno anotou?, E-mail, Senha como exibida, Cadastrado) + impressão do navegador; bloqueado fora de 127.0.0.1/localhost | ✅ Concluído | 2026-10-08 13:20 | `node --check` sem erros |
-| 84.2 | PDF compacto só nesta atividade (campo opcional `PDF compacto` no gerador e no exportador): fonte e espaços menores, sem a linha "Aula" e sem a caixa de capacidade de cada questão (fica no quadro do topo) | ✅ Concluído | 2026-10-08 10:48 | `py_compile` e `node --check` OK; sem o campo, o PDF continua igual |
-| 84.3 | Medição do PDF (larguras da Helvetica, sem navegador): até 4 páginas | ✅ Concluído | 2026-10-08 10:48 | Sem caixas de resposta: **3 páginas** (2 folhas frente e verso) |
-
-## Etapa 84 — Discursiva de sexta (id 81) com 20 questões e PDF de até 2 folhas (tarefa pequena, 2026-10-08 10:41:37)
-
-Pedido: deixar só 20 questões e o PDF de cada aluno em no máximo 2 folhas. Decisões do usuário: ficam os **itens 01 a 20** (as respostas dos 2 alunos são desses itens); **2 folhas = frente e verso** (até 4 páginas A4). Mesmo caminho da Etapa 58 (redução de 40 para 30).
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 84.1 | Fonte e padrão de resposta: itens 21 a 30 removidos; caso da segunda-feira escrito uma vez (itens 07, 10 e 20 remetem ao 06); duração e pontuação | ✅ Concluído | 2026-10-08 10:45 | Gerador: 20 questões, 20 tópicos, 20 pontos, 0 sem padrão; caso escrito 1 vez |
-| 84.2 | PDF compacto só nesta atividade (campos opcionais `PDF compacto` e `Máximo de caracteres` no gerador e no exportador) | ✅ Concluído | 2026-10-08 10:45 | `py_compile` e `node --check` OK; sem os campos, o gerador e o PDF continuam iguais (padrão 3000 caracteres, layout normal); no compacto sai a caixa de capacidade de cada questão (fica no quadro do topo); limite 500 caracteres |
-| 84.3 | Medição do PDF (larguras da Helvetica, sem navegador): até 4 páginas | ✅ Concluído | 2026-10-08 10:45 | Simulação com larguras da Helvetica (reportlab): em branco = 4 páginas; todas as 20 respostas com 500 caracteres = 4 páginas (sobra ~55 mm na 4ª) |
-| 84.4 | Página e seed regerados; banco id 81: backup e 20 tópicos | ✅ Concluído | 2026-10-08 10:48 | Backup `topico_discursivo_backup_20261008_81_20q` (30 linhas, RLS); tópicos 21–30 apagados (nenhuma resposta neles); `total_itens` = 20; conferido: 20 tópicos, 20 pontos, 40 respostas mantidas; índice e menu com 20 questões |
-| 84.4a | **Pedido novo (durante a tarefa):** respostas no caderno — PDF sem as caixas de resposta (campo opcional `PDF sem respostas`; instrução "Responda no caderno" no PDF); a página continua com os campos; limite de 500 caracteres retirado (padrão 3000) | ✅ Concluído | 2026-10-08 10:48 | `node --check` OK; página com `data-pdf-sem-respostas`; simulação: 3 páginas |
-| 84.5 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 85 — Discursiva de sexta (id 81): 0,5 ponto por questão (tarefa pequena, 2026-10-08 10:59:06)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 85.1 | Fonte: `Pontos por questão: 0,5`, tópicos (0,5) e pontuação total 10; página e seed regerados | ✅ Concluído | 2026-10-08 10:59 | Gerador: 20 questões, 20 tópicos, 10 pontos; página mostra "0,5 ponto" em cada tópico |
-| 85.2 | Banco id 81: `topico_discursivo.pontos` = 0,5 (backup antes) | ✅ Concluído | 2026-10-08 10:59 | Backup `topico_discursivo_backup_20261008_81_pontos` (20 linhas, RLS); conferido: 20 tópicos de 0,5 = 10 pontos; 0 correções; 40 respostas mantidas |
-| 85.3 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 85 — Regra: atividades sem empresa fictícia, "Você como aluno consultor" (tarefa pequena, 2026-10-08 14:19:41)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 85.1 | Regra nova no `~/.claude/CLAUDE.md` e na cópia `.claude/regras-globais/CLAUDE-GLOBAL.md`; `docs/regras/atividades.md` ajustado (tirava "empresa fictícia"); versão e histórico do `CLAUDE.md` | ✅ Concluído | 2026-10-08 14:21 | `diff` global × cópia sem diferenças; resumo do histórico com 5 linhas |
-| 85.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 86 — Professora Grazi Ferreira na lista de professores (tarefa pequena, 2026-10-08)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 86.1 | Linha nº 4 em `scripts/LISTA-PRESENCA-PROFESSOR.js` (fora do Git): perfil PROFESSOR, e-mail `grazi.ferreira@senai.local`, senha inicial de 6 caracteres no padrão da lista | ✅ Concluído | 2026-10-08 | `node --check` sem erros |
-| 86.2 | Usuário grava a conta no Auth pela página `scripts/criarUsuariosBancoDados.html` (aba Professores → marcar → Gravar) | ⬜ Pendente | — | — |
-
-## Etapa 86 — PDF "Orientação à professora" da atividade de sexta (tarefa pequena, 2026-10-08 11:33:33)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 86.1 | `ATIVIDADES/ATIVIDADE-SEXTA-FEIRA/ORIENTACAO-PROFESSORA.pdf` (1 página A4, texto centralizado, gerado com reportlab, sem navegador). Fora do Git (`*.pdf` no `.gitignore`) | ✅ Concluído | 2026-10-08 11:33 | Texto lido do PDF (pypdf): título + 4 orientações |
-| 86.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 87 — Nova turma Roberto Machado (QA LBTSN 2026/1 V1, código 124403) e usuários dos alunos (tarefa pequena, 2026-10-08)
-
-Fonte: `MATERIAL-PADRAO-PROVAS-SENAI/Turma Roberto Machado - T5 Vespertino.pdf` (lista de presença, pedido do usuário). CPFs não copiados.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 87.1 | `scripts/LISTA-PRESENCA-ROBERTO-MACHADO-T5-TARDE.js` (fora do Git, LGPD): 10 alunos, e-mail `nome.sobrenome@senai.local`, senha inicial de 6 caracteres; local ROBERTO MACHADO, turno Tarde | ✅ Concluído | 2026-10-08 | `node --check`; `git check-ignore` confirma fora do Git; e-mails sem repetição nas outras listas e no `auth.users` (consulta de leitura); turma 124403 ainda não existe no banco |
-| 87.2 | Lista carregada em `scripts/criarUsuariosBancoDados.html` | ✅ Concluído | 2026-10-08 | Leitura do HTML |
-| 87.3 | Usuário grava no banco pela página (aba QA LBTSN 2026/1 V1 → Marcar todos → Gravar): cria turma, contas no Auth, `usuario`, `aluno` e `turmaaluno` | ⬜ Pendente | — | — |
-
-## Etapa 88 — Bloquear colar na Prova Prática ADAG (id 82) e regra para as outras discursivas (tarefa pequena, 2026-10-08 13:46:24)
-
-Pedido do usuário: bloquear copiar e colar (obrigar a digitar cada resposta) **só nesta prova** e anotar a regra no `CLAUDE.md` para fazer nas outras depois.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 88.1 | `assets/js/bloqueio-colar-discursiva.js`: cancela colar, arrastar, copiar e recortar nos campos de resposta e avisa com popup; só age com `data-bloquear-colar="sim"` no `<body>` | ✅ Concluído | 2026-10-08 13:50:19 | `node --check` |
-| 88.2 | Gerador discursivo: campo opcional `- **Bloquear colar:** sim` (`ATRIBUTOS_BODY`) e o template inclui o script | ✅ Concluído | 2026-10-08 13:50:19 | `py_compile` |
-| 88.3 | Campo ligado em `PROVA-PRATICA-ADAG-SALETE.md` e `PROVA-PRATICA-06-10-2026.html` regerada | ✅ Concluído | 2026-10-08 13:50:19 | `git diff`: só o atributo no `<body>` e o `<script>` novo; 20 questões, 60 tópicos, 10 pontos |
-| 88.4 | Regra em `docs/regras/atividades.md` e no `CLAUDE.md` (versão + histórico) | ✅ Concluído | 2026-10-08 13:50:19 | Leitura dos arquivos |
-| 88.5 | Campo do tamanho da resposta: gerador calcula as linhas de cada campo pelo padrão de resposta (5 a 16 linhas) e `assets/js/campo-tamanho-discursiva.js` faz o campo crescer ao digitar; ligado na prova id 82 | ✅ Concluído | 2026-10-08 13:52:33 | `py_compile`, `node --check`; página regerada: 22 campos com 5 linhas, 38 maiores (até 13) |
-| 88.6 | Validação de todos os tópicos preenchidos na entrega | ✅ Concluído | 2026-10-08 13:52:33 | Já existia: `conferirTudoGravado` (espaços = vazio) + RLS da entrega; regra anotada em `docs/regras/atividades.md` |
-| 88.7 | Botão "💾 Gravar" em cada tópico (campo `Botão gravar: sim`), mantendo a gravação automática — as duas opções juntas, pedido do usuário; ligado na prova id 82 | ✅ Concluído | 2026-10-08 13:53:51 | `py_compile`, `node --check`; página regerada com 60 botões |
-| 88.8 | Aceite do usuário (testar no navegador: Ctrl+V bloqueado, campo cresce ao digitar, botão Gravar, entrega recusa tópico vazio) | ⬜ Pendente | — | — |
-
-## Etapa 88 — Menu 👥 Equipes em Análise de Dados Aplicada à Gestão (duplas da prova) (tarefa pequena, 2026-10-08 17:11:10)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 88.1 | Item `{ rotulo: '👥 Equipes', acao: 'equipes', papeis }` no `MATERIAIS/GESTAO_E_CONTROLE_MATERIAIS/ANALISE_DADOS_APLICADA_GESTAO/ATIVIDADES/MENU-ATIVIDADES.js`; regra das matérias com o menu atualizada (versão das regras + histórico) | ✅ Concluído | 2026-10-08 17:11:10 | `node --check`; mesmo formato do menu da ITIC |
-| 88.2 | Usuário cadastra as duplas da turma 133933 pelo menu (professor vinculado à turma em `turmaprofessor`) e dá o aceite | ⬜ Pendente | — | — |
-| 88.3 | Botão **📄 Exportar Equipes** no modal de equipes (pedido do usuário, 2026-10-08 17:12:16): `assets/js/equipes-exportar-pdf.js` (novo), `equipes-modal.js`, `menu-acao-equipes.js`, `assets/css/equipes-modal.css`; regra e histórico atualizados | ✅ Concluído | 2026-10-08 17:12:16 | `node --check` nos 3 JS; leitura do código (sem navegador) |
-
-## Etapa 89 — Banco: nome de equipe único na turma + matéria sem diferenciar maiúsculas (pedido em 2026-10-08 17:17:38)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 89.1 | Conferir o banco real: já havia `UNIQUE (turma_codigo, materia_id, nome)` (nome exato); 0 duplicados ignorando maiúsculas/espaços | ✅ Concluído | 2026-10-08 17:17:38 | Consultas de leitura pelo conector |
-| 89.2 | Usuário escolheu o escopo turma + matéria (outra turma pode repetir o nome) | ✅ Concluído | 2026-10-08 17:17:38 | Resposta do usuário no chat |
-| 89.3 | Índice único `equipe_turma_materia_nome_normalizado_uk` em `(turma_codigo, materia_id, lower(btrim(nome)))` aplicado pelo conector; SQL em `database/2026-10-08-equipe-nome-unico-sem-maiusculas.sql`; `docs/database.md` + relatório HTML | ✅ Concluído | 2026-10-08 17:17:38 | `pg_indexes` mostra o índice; 15 equipes mantidas |
-| 89.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 90 — Botão +Integrante no card de cada equipe (tarefa pequena, 2026-10-08 17:18:19)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 90.1 | `assets/js/equipes-modal.js`: botão **+Integrante** no card abre uma seleção só com os alunos sem equipe (Adicionar/Cancelar) e grava o integrante (sem papel, sem líder); `assets/css/equipes-modal.css` | ✅ Concluído | 2026-10-08 17:18:19 | `node --check`; leitura do código (sem navegador) |
-| 90.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 91 — Menu das atividades só com 👥 Equipes em todas as matérias (pedido em 2026-10-08 17:20:14)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 91.1 | Os 3 `MENU-ATIVIDADES.js` (ITIC, Análise de Dados, Reforço de Linguagens) ficam só com o item 👥 Equipes (papéis mantidos; Reforço ganhou papéis genéricos); regra e histórico atualizados | ✅ Concluído | 2026-10-08 17:20:14 | `node --check` nos 3 arquivos; confirmação do usuário no chat ("isso em todas as matérias") |
-| 91.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 92 — Botão 👥 EQUIPES global no header (pedido em 2026-10-08 17:22:44)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 92.1 | `js/header-usuario.js`: botão 👥 EQUIPES para todo usuário logado em página de matéria (`/MATERIAIS/<CURSO>/<MATÉRIA>/`), abre o modal de equipes da matéria; regra e histórico atualizados | ✅ Concluído | 2026-10-08 17:22:44 | `node --check`; header presente em 203 de 238 páginas de `MATERIAIS/` |
-| 92.2 | Matérias sem atividade no banco (só 5 resolvem hoje: ITIC, Análise de Dados, Fundamentos de Automação, Fundamentos da Tecnologia, Reforço de Linguagens) — cadastrar as demais exige mudança no banco: só com plano e aprovação | ⬜ Pendente | — | Consulta de leitura em `atividade`/`materia` |
-| 92.3 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 93 — +Integrante ao lado direito do nome da equipe (tarefa pequena, 2026-10-08 17:23:35)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 93.1 | Card da equipe: nome + **+Integrante** na mesma linha, botão alinhado à direita; Editar/Excluir na linha de baixo, à direita (`equipes-modal.js`, `equipes-modal.css`) | ✅ Concluído | 2026-10-08 17:23:35 | `node --check`; leitura do código (sem navegador) |
-| 93.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 94 — Unidade (local + turno) em toda lista de turmas (pedido em 2026-10-08 17:26:54)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 94.1 | `assets/js/turma-unidade.js` (novo) e uso em: equipes, `turmas.html`, `alunos.html`, `turma-exportacao.js` (+ carregamento em `atividade.js` e `exportar-pdf-discursiva.js`), `indice-turma-favorita.js` (+ `atividades-crud-modal.js`), média final (2 páginas + template do gerador) e liberação do gabarito das discursivas; regra nova e histórico | ✅ Concluído | 2026-10-08 17:26:54 | `node --check` nos 13 JS; leitura do código (sem navegador) |
-| 94.2 | Dados: o `local` vem da tabela `turma` (hoje: AI SALETE, AI CEPLAS, CEPLAS, APRENDIZAGEM INDUSTRIAL TAIÓ TARDE); a turma Roberto Machado ganha o local ao ser gravada pela página de usuários | ⬜ Pendente | — | Consulta de leitura em `turma` |
-| 94.3 | Aceite do usuário | ⬜ Pendente | — | — |
-| 94.4 | Pedido do usuário (2026-10-08 17:27:53): unidades vindas do arquivo global **`assets/js/unidade.js`** (código da turma → unidade: 122552 TAIÓ TARDE, 124403 ROBERTO MACHADO TARDE, 133933 AIAC SALETE TARDE, 135080 CEPLAS MANHÃ, 135081 CEPLAS TARDE, QA LBTSN 2026/1 M2 CEPLAS MANHÃ); `turma-unidade.js` renomeado e as 12 referências trocadas; regra e histórico | ✅ Concluído | 2026-10-08 17:27:53 | `node --check`; `grep` sem "turma-unidade" no código |
-
-## Etapa 89 — Progresso da turma para o professor e nome da prova 08-10-2026 (Prova Prática ADAG id 82, tarefa pequena, 2026-10-08 14:34:44)
-
-Pedido do usuário: barra de progresso por aluno e por questão, só para o professor, no topo da atividade, atualizada a cada 5 s — só nesta prova por enquanto, com a regra anotada no `CLAUDE.md` para todas as atividades; e corrigir **só no HTML** o nome da prova para 08-10-2026.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 89.1 | `assets/js/progresso-turma-discursiva.js` + `assets/css/progresso-turma-discursiva.css`: linha por aluno, célula por questão (sem resposta / em andamento / completa), barra do aluno e geral, entrega; atualiza a cada 5 s; carregado pelo `avaliacao-discursiva.js` só para o professor | ✅ Concluído | 2026-10-08 14:34:44 | `node --check` |
-| 89.2 | Gerador: campo `Progresso para o professor: sim` → `data-progresso-professor`; ligado na prova e página regerada | ✅ Concluído | 2026-10-08 14:34:44 | `py_compile`; `git diff` só com o atributo novo no `<body>` |
-| 89.3 | Nome da prova no HTML: "Prova Prática 06-10-2026" → "08-10-2026" (título, h1 e rodapé; nome do arquivo e banco sem mudança) | ✅ Concluído | 2026-10-08 14:34:44 | 3 trocas conferidas com `grep` |
-| 89.4 | Regra no `CLAUDE.md` (versão + histórico) e em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-08 14:34:44 | Leitura dos arquivos |
-| 89.5 | Aceite do usuário (testar logado como professor: painel no topo, atualização a cada 5 s) | ⬜ Pendente | — | — |
-
-## Etapa 95 — Modal de equipes em tabela + alunos sem equipe no início (tarefa pequena, 2026-10-08 17:39:22)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 95.1 | `assets/js/equipes-tabela.js` (novo): tabela com um grupo por equipe (linha da equipe com +Integrante/Editar/Excluir, linhas dos integrantes com papel, tarefas, líder e ✏️/🗑️, linha "+ Adicionar integrante" que abre a seleção dos alunos sem equipe); `equipes-modal.js` sem os cards antigos do professor; alunos sem equipe no início do modal (refeitos a cada gravação); `menu-acao-equipes.js` e `equipes-modal.css` | ✅ Concluído | 2026-10-08 17:39:22 | `node --check` nos 3 JS; leitura do código (sem navegador) |
-| 95.2 | Aceite do usuário | ⬜ Pendente | — | — |
-| 95.3 | Pedido do usuário (2026-10-08 17:42:16): tabela mais simples (colunas Equipe / Integrante · Papel · ações; botões ✏️/🗑️ só com ícone, "+ Integrante" em texto; sem colunas Tarefas e Líder — líder pelo 👑, tarefas e descrição no title; sem a linha "+ Adicionar integrante"; linhas finas sem fundo) e modal mais largo (até 1280 px / 96% da tela) | ✅ Concluído | 2026-10-08 17:42:16 | `node --check`; leitura do código (sem navegador) |
-
-## Etapa 90 — Orientação para a IA corrigir a Prova Prática ADAG (id 82) (tarefa pequena, 2026-10-08 14:48:26)
-
-Pedido do usuário: arquivo `CORRECAO-PROVA-ADAG.md` com a orientação para a IA corrigir, de tempos em tempos, a prova prática da Salete: nota sugerida e comentário do porquê por alternativa (certa / meia certa / errada; 0,5 ponto por questão dividido entre as alternativas).
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 90.1 | `MATERIAIS/GESTAO_E_CONTROLE_MATERIAIS/ANALISE_DADOS_APLICADA_GESTAO/ATIVIDADES/CORRECAO-PROVA-ADAG.md`: regras de nota (0,1/0,05/0 e 0,2/0,1/0), comentário `[IA] ...`, SQL de cada rodada (pendentes, leitura, textos iguais, gravação em `correcao_discursiva.nota_ia` e `comentario` só sem `nota_professor`, conferência) e registro das rodadas | ✅ Concluído | 2026-10-08 14:48:26 | Colunas, trigger, restrições e RLS da `correcao_discursiva` conferidos no banco (só leitura); arquivo sem respostas esperadas nem dados de alunos |
-| 90.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 91 — Coluna "Nota IA" no progresso da turma (Prova Prática ADAG id 82, tarefa pequena, 2026-10-08 14:52:04)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 91.1 | `assets/js/progresso-turma-discursiva.js` + CSS: coluna "Nota IA (a confirmar)" por aluno (soma da `nota_ia` da `correcao_discursiva`, tentativa mais recente, "(N/60)" se incompleta) e linha de títulos das colunas; regra em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-08 14:52:04 | `node --check`; colunas da `correcao_discursiva` e RLS de leitura do professor conferidos no banco |
-| 91.3 | Coluna Progresso mais estreita (`minmax(40px, 0.5fr)`) e `min-width: 0` nas células, para não dar barra de rolagem (commit `a40fa9f`) | ✅ Concluído | 2026-10-08 14:53:06 | Leitura do CSS |
-| 91.4 | Colunas com largura fixa (Aluno 180px, Progresso 70px, Situação 150px, Nota IA 130px; só Questões flexível) para a coluna Progresso ficar reta em todas as linhas | ✅ Concluído | 2026-10-08 14:53:47 | Leitura do CSS |
-| 91.2 | Aceite do usuário (testar logado como professor) | ⬜ Pendente | — | — |
-
-## Etapa 92 — Correção parcial pela IA e coluna "Nota parcial IA" (Prova Prática ADAG id 82, 2026-10-08 15:07:27)
-
-Pedido do usuário: a rodada da IA não gravou nada (0 entregas; a orientação só corrigia entregues). Gerar correção parcial numa nova coluna, dando a nota parcial, e ajustar o arquivo de orientação.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 92.1 | Coluna `correcao_discursiva.nota_ia_em` (`database/2026-10-08-correcao-discursiva-nota-ia-em.sql`, idempotente, sem apagar dados) aplicada no Supabase a pedido do usuário | ✅ Concluído | 2026-10-08 15:07:27 | Consulta ao `information_schema`: coluna `timestamptz` existe |
-| 92.2 | `CORRECAO-PROVA-ADAG.md`: correção parcial (todos os alunos com resposta, antes da entrega), recorrige o que mudou (`atualizado_em > nota_ia_em`), resposta apagada volta a 0, grava `nota_ia_em = now()` | ✅ Concluído | 2026-10-08 15:07:27 | Consulta 4.1 executada no banco (só leitura): 15 alunos, 128 alternativas pendentes |
-| 92.3 | Painel: coluna "Nota parcial IA" (soma com "(N/60)") e "Nota IA (a confirmar)" só com entrega e 60/60 | ✅ Concluído | 2026-10-08 15:07:27 | `node --check` |
-| 92.4 | `docs/database.md`, `docs/relatorio_verificacao_database.html` e `docs/regras/atividades.md` atualizados | ✅ Concluído | 2026-10-08 15:07:27 | Leitura |
-| 92.6 | Pedido do usuário: **recorrigir só após a entrega final** — antes da entrega cada alternativa é corrigida uma vez; mudanças posteriores só são recorrigidas depois da entrega (`CORRECAO-PROVA-ADAG.md`, consulta 4.1) | ✅ Concluído | 2026-10-08 15:08:02 | Consulta 4.1 nova executada no banco (só leitura): 15 alunos, 128 alternativas pendentes |
-| 92.7 | "Nota parcial IA" com o **% de acerto** nas alternativas já corrigidas (nota da IA ÷ pontos delas, lidos uma vez da `topico_discursivo`), ex.: "🤖 3,20 · 80% (40/60)" | ✅ Concluído | 2026-10-08 15:28:59 | `node --check` |
-| 92.8 | Percentual escrito em cima de cada barra de progresso (alunos e barra geral da turma) | ✅ Concluído | 2026-10-08 15:32:14 | `node --check` |
-| 92.9 | Ordenação clicável (seta ↕ ▲ ▼) nos títulos Aluno (alfabética), Progresso, Situação, Nota parcial IA e Nota IA (numéricas); mesma coluna inverte; empate pelo nome; mantida nas atualizações de 5 s | ✅ Concluído | 2026-10-08 15:34:55 | `node --check` |
-| 92.10 | Respostas dos alunos: ícone da nota parcial da IA ao lado de cada alternativa (✅ certa / 🟡 meia certa / ❌ errada / ⏳ sem correção) com o comentário no título; `nota-ia-respostas-discursiva.js` + CSS e callback `aoMostrarAluno` | ✅ Concluído | 2026-10-08 15:53:30 | `node --check` nos 3 JS |
-| 92.5 | Aceite do usuário (rodar a tarefa da IA e ver a nota parcial no painel) | ⬜ Pendente | — | — |
-| 95.4 | Pedido do usuário (2026-10-08 18:42:56): ao lado do nome da equipe, os primeiros nomes dos integrantes — "Equipe 1 (Ana, João)"; vazia = "(sem integrantes)" (`equipes-tabela.js`, `equipes-modal.css`) | ✅ Concluído | 2026-10-08 18:42:56 | `node --check`; leitura do código |
-| 95.5 | Formulários de equipe e de integrante em janelas próprias (modal sobre o modal): botões "+ Nova equipe" e "+ Novo integrante" no modal; ✏️ da equipe/integrante abre a janela já preenchida; "Cancelar", clique fora ou Esc fecham; salvar fecha a janela (adiado e retomado a pedido do usuário) | ✅ Concluído | 2026-10-08 18:48:42 | `node --check`; leitura do código (sem navegador) |
-
-## Etapa 93 — Regra: nota parcial da IA em todas as avaliações discursivas (tarefa pequena, 2026-10-08 15:54:25)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 93.1 | Regra no `CLAUDE.md` (versão, histórico resumido e completo) e em `docs/regras/atividades.md`: ícone da nota parcial da IA por alternativa em "Respostas dos alunos" vale para todas as avaliações discursivas | ✅ Concluído | 2026-10-08 15:54:25 | Leitura dos arquivos; o código já é comum a todas as discursivas (`avaliacao-discursiva.js`) |
-| 93.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 94 — Prova Prática ADAG (id 82): aluno que entregou não vê as respostas (tarefa pequena, 2026-10-08 15:59:36)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 94.1 | Campo `Ocultar respostas após entrega: sim` (gerador → `data-ocultar-respostas-entregue`); `carregarDiscursiva` nem lê as respostas do banco para aluno que entregou; campos vazios, sem barra do aluno, aviso no painel e tela limpa logo após entregar; professor sem mudança | ✅ Concluído | 2026-10-08 15:59:36 | `node --check`, `py_compile`; página regerada só com o atributo novo |
-| 94.2 | Nome "Prova Prática 08-10-2026" reaplicado no HTML depois de regerar (3 trocas) | ✅ Concluído | 2026-10-08 15:59:36 | `grep` |
-| 94.3 | Aceite do usuário (aluno que entregou abre a prova e não vê as respostas) | ⬜ Pendente | — | — |
-
-## Etapa 95 — Botões do professor Certa / Meia certa / Errada e nota confirmada travada (tarefa pequena, 2026-10-08 16:10:08)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 95.1 | `assets/js/confirmar-nota-professor-discursiva.js` + CSS: em "Respostas dos alunos", 3 botões antes do "💾 Gravar" em cada alternativa; gravam `nota_professor` (pontos, metade, 0) com confirmação; ligados em `avaliacao-discursiva.js` (`aoMostrarAluno`) | ✅ Concluído | 2026-10-08 16:10:08 | `node --check` |
-| 95.2 | Trava no banco: trigger `correcao_discursiva_validar` recusa alterar `nota_professor` já confirmada (SQL `database/2026-10-08-correcao-discursiva-nota-professor-travada.sql`, aplicado pelo conector) | ✅ Concluído | 2026-10-08 16:10:08 | Função conferida (trava presente); 0 notas confirmadas no banco no momento |
-| 95.3 | Regra no `CLAUDE.md` (versão + históricos), `docs/regras/atividades.md`, `docs/database.md` e relatório HTML | ✅ Concluído | 2026-10-08 16:10:08 | Leitura |
-| 95.4 | Aceite do usuário (escolher aluno, confirmar uma alternativa e ver o botão travar) | ⬜ Pendente | — | — |
-
-## Etapa 96 — Botão Gráficos no Progresso da turma e progresso global nas discursivas (tarefa pequena, 2026-10-08 16:20:56)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 96.1 | `assets/js/graficos-progresso-turma.js` + CSS: modal com 5 gráficos (barras, pizza, barras por questão, rosca da IA, barras horizontais da nota parcial), Chart.js sob demanda; botão "📈 Gráficos" no cabeçalho do painel; contagem de certas/meias/erradas da IA | ✅ Concluído | 2026-10-08 16:20:56 | `node --check` |
-| 96.2 | Progresso da turma global em todas as avaliações discursivas (sem depender do campo da fonte) — pedido do usuário | ✅ Concluído | 2026-10-08 16:20:56 | Leitura de `abrirProgressoDaTurma` |
-| 96.3 | Regra no `CLAUDE.md` (versão + históricos) e em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-08 16:20:56 | Leitura |
-| 96.4 | Aceite do usuário (abrir os gráficos logado como professor) | ⬜ Pendente | — | — |
-
-## Etapa 97 — Quantidade mínima de questões para entregar a discursiva (tarefa grande; plano: [docs/quantidade-minima-questoes-discursiva.md](docs/quantidade-minima-questoes-discursiva.md); pedido em 2026-10-08 16:30:59)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 97.1 | Plano com decisões D1–D6 em `docs/` e conferência do banco real | ✅ Concluído | 2026-10-08 16:30:59 | Consultas de leitura (`entrega_atividade`, `atividade_completa`, `atividade`) |
-| 97.1b | Regra (mínimo, nota proporcional ao mínimo e máximo 10) anotada no `CLAUDE.md` da raiz e no histórico, a pedido do usuário | ✅ Concluído | 2026-10-08 16:34:56 | Leitura |
-| 97.2 | Aprovação do plano pelo usuário (D1–D8): "sim, aprovado, pode executar" | ✅ Concluído | 2026-10-08 16:36:42 | Mensagem do usuário |
-| 97.3 | Execução dos passos 2 a 7 do plano: SQL aplicado (coluna, tabela com RLS, funções, entrega e média final), botão e janela no Progresso da turma, entrega conferindo o mínimo, notas proporcionais (máx. 10), documentação e regras | ✅ Concluído | 2026-10-08 16:42:10 | Consultas de leitura no banco; `node --check` nos JS |
-| 97.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 98 — Balão grande com o porquê da nota da IA (tarefa pequena, 2026-10-08 16:50:05)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 98.1 | Em "Respostas dos alunos", o porquê da nota da IA sai num balão grande (até 560px, fonte 17px, título com o resultado) ao passar o mouse ou focar o ícone, no lugar do balão pequeno do navegador (`nota-ia-respostas-discursiva.js` + CSS) | ✅ Concluído | 2026-10-08 16:50:05 | `node --check` |
-| 98.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 99 — Botão Cálculo Nota no Progresso da turma (tarefa pequena, 2026-10-08 16:57:30)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 99.1 | Botão "🧮 Cálculo Nota" ao lado de "📈 Gráficos": modal com o mínimo que 85% da turma já completou, resumo, tabela dos alunos e botão "🎯 Quantidade Mínima de Questões" que grava o mínimo só para quem ainda está com o total (`minimo_questoes_aluno`); nota segue o mínimo de cada aluno | ✅ Concluído | 2026-10-08 16:57:30 | `node --check`; sem mudança no banco (tabela e RLS já existentes) |
-| 99.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 100 — Excluir as respostas de uma aluna na atividade id 82 (tarefa pequena, pedido em 2026-10-08 22:55:39)
-
-Motivo: a outra integrante da dupla é quem está fazendo a atividade.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 100.1 | Backup (RLS ligado, sem políticas) em `resposta_discursiva_backup_20261008_82_thais` e `correcao_discursiva_backup_20261008_82_thais`; exclusão das 6 respostas discursivas e das 6 correções da IA da aluna na atividade 82 (nenhuma nota confirmada pelo professor; sem entrega) | ✅ Concluído | 2026-10-08 22:55:39 | Consulta: 6 linhas em cada backup e 0 restantes nas tabelas originais |
-| 100.3 | Pedido do usuário: a **prova inteira** (instruções, questões e entrega) fica escondida para o professor até escolher um aluno; painel e Progresso da turma continuam visíveis | ✅ Concluído | 2026-10-08 20:17:35 | `node --check`; seletor conferido no HTML da prova (`.content-section > .aula-card`) |
-| 100.4 | Pedido do usuário (print): também escondidos o link "← Índice" e o menu da matéria (`.menu-atividades`) enquanto a prova está escondida para o professor | ✅ Concluído | 2026-10-08 20:18:10 | Classes conferidas em `js/menu.js` e no HTML da prova |
-| 100.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 101 — Registro da sessão 4 e CLAUDE.md da pasta `SESSOES-CLAUDE/` (tarefa pequena, pedido em 2026-10-08 19:56)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 101.1 | `SESSOES-CLAUDE/sessao-claude-4.md` (ID incremental, status PENDENTE) com tudo desta sessão | ✅ Concluído | 2026-10-08 19:58 | Seções por pedido, validação e pendências; sem segredos |
-| 101.2 | `SESSOES-CLAUDE/CLAUDE.md`: ler todas as sessões PENDENTE e verificar conflitos | ✅ Concluído | 2026-10-08 19:58 | Regra 1 do arquivo |
-| 101.3 | Linha no `STATUS-SESSOES.md` e seção no `SESSAO-CLAUDE.md` | ✅ Concluído | 2026-10-08 19:58 | `grep sessao-claude-4` nos dois |
-| 101.4 | Commit local | ✅ Concluído | 2026-10-08 19:58 | `git diff --cached --name-only` |
-| 101.5 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 102 — Aulas de Testes de Front-End em Markdown (`CONTEUDO/`) (pedido e aprovação em 2026-10-08 20:00:46)
-
-Plano: [docs/aulas-conteudo-testes-de-frontend.md](docs/aulas-conteudo-testes-de-frontend.md) ·
-Pasta: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/CONTEUDO/` · Controle por aula:
-`TESTES-DE-FRONTEND/AULAS/STATUS-AULAS.md`.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 102.1 | Plano em `docs/`, esta etapa e coluna "Aula em `CONTEUDO/`" no `STATUS-AULAS.md` | ✅ Concluído | 2026-10-08 20:02 | Arquivos criados |
-| 102.2 | Aula 01 — Fundamentos de Testes de Software | ✅ Concluído | 2026-10-08 20:03:56 | Seções do modelo; roteiro = 240 min |
-| 102.3 | Aula 02 — Planejamento, Verificação, Validação e Casos de Teste | ✅ Concluído | 2026-10-08 20:05:02 | Seções do modelo; roteiro = 240 min |
-| 102.4 | Aula 03 — Testes Unitários com Vitest | ✅ Concluído | 2026-10-08 20:06:15 | Seções do modelo; roteiro = 240 min; código conferido por leitura |
-| 102.5 | Aula 04 — Integração com DOM (Testing Library) | ✅ Concluído | 2026-10-08 20:07:15 | Seções do modelo; roteiro = 240 min; código conferido por leitura |
-| 102.6 | Aula 05 — Integração Avançada e Mock de APIs | ✅ Concluído | 2026-10-08 20:08:32 | Seções do modelo; roteiro = 240 min; código conferido por leitura |
-| 102.7 | Aula 06 — End-to-End com Cypress e Playwright | ✅ Concluído | 2026-10-08 20:09:35 | Seções do modelo; roteiro = 240 min; código conferido por leitura |
-| 102.8 | Aula 07 — Métricas e Cobertura de Testes | ✅ Concluído | 2026-10-08 20:10:47 | Seções do modelo; roteiro = 240 min; código conferido por leitura |
-| 102.9 | Aula 08 — TDD e Debugging no Front-End | ✅ Concluído | 2026-10-08 20:12:09 | Seções do modelo; roteiro = 240 min; CPFs de exemplo calculados |
-| 102.10 | Aula 09 — Qualidade, Performance, Acessibilidade e CI/CD | ✅ Concluído | 2026-10-08 20:13:12 | Seções do modelo; roteiro = 240 min; YAML conferido por leitura |
-| 102.11 | Aula 10 — Projeto Integrador: Suíte de Testes | ✅ Concluído | 2026-10-08 20:14:19 | Seções do modelo; roteiro = 240 min |
-| 102.12 | `DOCUMENTACAO/PLANO-AULAS.md` (resumo) | ✅ Concluído | 2026-10-08 20:14:54 | 10 linhas, total 40 h |
-| 102.13 | Conferência das 10 aulas (seções, 240 min, conhecimentos) | ✅ Concluído | 2026-10-08 20:15:40 | Script: 9 seções em todas, roteiro 240 min, conhecimentos e capacidades = materia.json, sem empresa fictícia |
-| 102.14 | Commit local + graphify | ✅ Concluído | 2026-10-08 20:16:25 | git diff --cached --name-only conferido; push fica com o usuário |
-| 102.15 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 100 — Respostas escondidas para o professor até escolher um aluno (tarefa pequena, 2026-10-08 20:16:56)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 100.1 | Professor: campos de resposta e rodapés das alternativas escondidos por padrão; aparecem ao escolher um aluno em "Respostas dos alunos" e somem ao limpar; aviso no painel (todas as discursivas) | ✅ Concluído | 2026-10-08 20:16:56 | `node --check` |
-| 100.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 101 — Botão Finalizar Atividade do professor (tarefa pequena, 2026-10-08 20:21:56)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 101.1 | Botão "✅ Finalizar Atividade" embaixo da prova ao escolher o aluno (professor): confere entrega e alternativas confirmadas e lança a nota (proporcional ao mínimo, máx. 10), com contagem de certas/meias/erradas/em branco; regra no `CLAUDE.md` (versão + históricos) e em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-08 20:21:56 | `node --check`; mesma conta da `notas_media_final` |
-| 101.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 102 — Aluno vê a prova corrigida depois da liberação do gabarito (tarefa pequena, 2026-10-08 20:24:44)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 102.1 | Banco: execução de `aluno_pode_ver_gabarito` liberada para `authenticated` (SQL `database/2026-10-08-aluno-pode-ver-gabarito-execute.sql`, aplicado pelo conector) | ✅ Concluído | 2026-10-08 20:24:44 | `has_function_privilege`: authenticated = sim, anon = não |
-| 102.2 | `respostas-discursivas-banco.js` (gabarito liberado volta a carregar as respostas) e `resultado-aluno-discursiva.js` + CSS: nota, selo por alternativa, observação da IA em balão grande e padrão de resposta; ligado em `avaliacao-discursiva.js` | ✅ Concluído | 2026-10-08 20:24:44 | `node --check` |
-| 102.3 | Regra no `CLAUDE.md` (versão + históricos) e em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-08 20:24:44 | Leitura |
-| 102.4 | Aceite do usuário (aluno com entrega e gabarito liberado abre a prova) | ⬜ Pendente | — | — |
-
-## Etapa 103 — Prova Prática ADAG renomeada para PROVA-PRATICA-01.html (tarefa pequena, 2026-10-08 20:26:16)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 103.1 | `git mv` de `PROVA-PRATICA-06-10-2026.html` para `PROVA-PRATICA-01.html`; referências trocadas em `index.html` (card), `media-final.json`, `AVALIACAO-MEDIA-FINAL.html`, fonte `PROVA-PRATICA-ADAG-SALETE.md` (campo Página), `CORRECAO-PROVA-ADAG.md` e `STATUS-ATIVIDADES.md` (planos antigos em `docs/` e seeds mantidos como histórico) | ✅ Concluído | 2026-10-08 20:26:16 | `grep` sem o nome antigo fora do histórico |
-| 103.2 | Banco: `atividade.pagina` do id 82 atualizada para o nome novo (SQL `database/2026-10-08-prova-pratica-01-renomear-pagina.sql`, valor antigo no comentário) | ✅ Concluído | 2026-10-08 20:26:16 | Consulta: id 82 com a página nova, 60 tópicos e 586 respostas intactos |
-| 103.4 | Texto do card no índice das atividades: "PROVA PRÁTICA 01" / "Prova Prática 01 — Aulas 01 a 07" (o link já apontava para o arquivo novo) | ✅ Concluído | 2026-10-08 20:28:06 | Leitura do `index.html` |
-| 103.5 | Banco: `nome_atividade` = "Prova Prática 01" e descrição ajustada (id 82; valores antigos no SQL); `Rótulo da aula` da fonte `.md` também | ✅ Concluído | 2026-10-08 20:29:43 | Consulta com `returning` |
-| 103.6 | Título da página `PROVA-PRATICA-01.html` = "Prova Prática 01" (título da aba, cabeçalho e rodapé) | ✅ Concluído | 2026-10-08 20:30:08 | `grep` |
-| 103.3 | Aceite do usuário (abrir pelo card do índice) | ✅ Concluído | 2026-10-08 20:30:36 | Linha Aula/Conteúdo-base nas 10 práticas |
-
-## Etapa 103 — Práticas de Testes de Front-End em `ATIVIDADES/CONTEUDO/` e sem empresa fictícia (pedido em 2026-10-08 20:29:54)
-
-Pedido do usuário: "corrija isso" (pendência da Etapa 102). Plano: seção "Etapa 103" em
-[docs/aulas-conteudo-testes-de-frontend.md](docs/aulas-conteudo-testes-de-frontend.md).
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 103.1 | Mover as 10 práticas para `ATIVIDADES/CONTEUDO/` (`git mv`) e corrigir os caminhos relativos | ✅ Concluído | 2026-10-08 20:30:16 | 10 arquivos em ATIVIDADES/CONTEUDO/ (git mv); slides com ../../AULAS/ |
-| 103.2 | Trocar a "Loja Vale Digital" por "você como aluno consultor" (aulas 02 e 10) | ✅ Concluído | 2026-10-08 20:30:35 | grep sem 'Vale Digital', 'fictícia' ou 'Ltda' |
-| 103.3 | Ligar cada prática à aula (`- **Aula:**` e `- **Conteúdo-base:**`) | ⬜ Pendente | — | — |
-| 103.4 | Atualizar as referências (aulas, `materia.json`, STATUS-ATIVIDADES, STATUS-APOSTILA, INDEX, ementa) | ✅ Concluído | 2026-10-08 20:31:12 | grep: nenhuma referência ao caminho antigo; materia.json válido |
-| 103.5 | Conferência (sem link quebrado, sem empresa fictícia) + commit local | ✅ Concluído | 2026-10-08 20:31:40 | 52 links, 0 quebrados; sem 'Vale Digital'; commit local |
-| 103.6 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 104 — Menu das atividades desligado em todas as páginas (tarefa pequena, 2026-10-08 20:33:13)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 104.1 | `js/menu.js`: `MENU_ATIVIDADES_LIGADO = false` (a barra com o nome da matéria e "Equipes" some das 81 páginas que carregam o script); seletor do menu tirado do CSS da discursiva; regra em `docs/regras/assets-e-geradores.md` e versão do `CLAUDE.md` | ✅ Concluído | 2026-10-08 20:33:13 | `node --check`; `grep`: 81 páginas com `js/menu.js` |
-| 104.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 105 — Botões SOMENTE ENSALADO e VER TODAS MATÉRIAS na faixa de matérias (pedido em 2026-10-08 23:42:02)
-
-Plano: [docs/somente-ensalado-materias.md](docs/somente-ensalado-materias.md) · Regra: `CLAUDE.md` global (seção "Faixa de matérias").
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 105.1 | Decisão do usuário: cadastrar as 20 matérias do curso 4 (Técnico em Informática para Internet) em `materia` | ✅ Concluído | 2026-10-08 23:44:57 | Usuário pediu a inserção via Supabase MCP |
-| 105.2 | Ler `docs/ORIENTACAO_JS_SUPABASE.md` (feito; `ORIENTACAO_USUARIO.md` não lido) | ✅ Concluído | 2026-10-08 23:47:19 | sbGet/sbPatch conforme a orientação |
-| 105.3 | `assets/js/faixa-materias-ensalado.js` (filtro + ON/OFF) | ✅ Concluído | 2026-10-08 23:47:19 | `node --check` OK |
-| 105.4 | 25 `index.html` (ITIC 21, Operador 2, Logística 1, Gestão 1) com `data-curso-id` e scripts; Rio do Sul e Qualificação pendentes (ver 105.10) | ✅ Concluído | 2026-10-08 23:47:19 | grep: 25 páginas ligadas |
-| 105.5 | Estilo dos botões em `assets/css/indice-atividades.css` | ✅ Concluído | 2026-10-08 23:47:19 | Leitura do CSS |
-| 105.6 | Banco: 20 matérias inseridas em `materia` (curso_id 4, ensalado false) e ligadas em `cursomateria` (cursoid 4) | ✅ Concluído | 2026-10-08 23:44:57 | select: curso 4 = 20 matérias, 0 ensaladas |
-| 105.7 | Regra salva no `CLAUDE.md` global | ✅ Concluído | 2026-10-08 23:42 | Leitura da seção "Faixa de matérias" |
-| 105.8 | Commit local (sem push) | ⬜ Pendente | — | — |
-| 105.9 | Aceite do usuário (testar na tela) | ⬜ Pendente | — | — |
-| 105.10 | Pendente: ligar Rio do Sul Mais Tech (curso 1 ou 6? ambíguo) e Qualificação Profissional (sem curso no banco) — decisão do usuário | ⬜ Pendente | — | — |
-| 105.11 | Descrições das matérias 25 (Logística), 27 (Gestão) e 28 (Operador) no banco ajustadas para os nomes dos cartões (já existiam; sem duplicatas). Valores antigos: 25 "Introdução à Tecnologia da Informação e Comunicação", 27 "Análise de Dados Aplicada à Gestão", 28 "Fundamentos de Automação/Instrumentação" | ✅ Concluído | 2026-10-08 23:51:12 | select: 3 linhas atualizadas |
-
-## Etapa 106 — Aluno líder (`usuario.lider` 1/0) cadastra e altera equipes (tarefa grande, aprovada em 2026-10-08 23:53)
-
-Plano: [docs/aluno-lider-cadastra-equipes.md](docs/aluno-lider-cadastra-equipes.md). Decisões D1–D3 aprovadas como propostas.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 106.1 | SQL versionado `database/2026-10-08-usuario-lider-equipes.sql` | ✅ Concluído | 2026-10-08 23:53 | 7 políticas no arquivo |
-| 106.2 | Aplicar pelo conector e conferir | ✅ Concluído | 2026-10-08 23:54 | 132 usuários com lider = 0; 7 políticas *_lider; 3 funções sem execução para anon |
-| 106.3 | `docs/database.md` + relatório HTML | ✅ Concluído | 2026-10-08 23:54 | grep "lider" nos dois arquivos |
-| 106.4 | Tela ALUNOS: coluna Líder (1/0) (`turmas-aluno-lider.js` novo, repositório, página, sugestões, `alunos.html`, CSS) + correção do CSS do formulário que se sobrepunha (`turmas-professor.css`, pedido do usuário) + `grant select (lider)` que faltava (erro "permission denied for table usuario" relatado pelo usuário) | ✅ Concluído | 2026-10-08 23:58:03 | `node --check`; grant conferido em `column_privileges` |
-| 106.5 | Header: menu 👥 EQUIPES só para professor e aluno líder | ✅ Concluído | 2026-10-08 23:58:03 | `node --check js/header-usuario.js` |
-| 106.6 | Modal/repositório de equipes no modo líder (turmas do aluno, alunos pelo RPC, sem 🗑️ de equipe) | ✅ Concluído | 2026-10-08 23:58:03 | `node --check` nos 3 JS; trigger `equipe_membro_preparar` é security definer |
-| 106.7 | Regra no `CLAUDE.md` do projeto (`docs/regras/usuarios-turmas-paginas-professor.md`, versão + históricos) | ✅ Concluído | 2026-10-08 23:58:03 | grep "lider" na regra |
-| 106.8 | Commits d3f40b5 (código, banco e regra) + complementar (SQL do grant, STATUS e plano) | ✅ Concluído | 2026-10-08 23:58:03 | git log |
-| 106.10 | Pedido do usuário (2026-10-08 23:58:54): coluna Líder da tela ALUNOS vira interruptor ON/OFF (`.guia-interruptor` + texto ON/OFF) no lugar da lista 1/0 | ✅ Concluído | 2026-10-08 23:58:54 | `node --check`; leitura do código |
-| 106.11 | Pedido do usuário (2026-10-08 23:59:44): **1 líder por turma** — `definir_lider_usuario` recusa ligar o líder se alguma turma do aluno já tem outro (SQL `database/2026-10-09-lider-unico-por-turma.sql`, aplicado pelo conector); regra, `docs/database.md` e relatório HTML | ✅ Concluído | 2026-10-08 23:59:44 | trava conferida no código da função; 0 turmas com mais de 1 líder; anon sem execução |
-| 106.12 | Correção relatada pelo usuário (2026-10-09 00:01:37): "menu de equipes sumiu, mesmo sendo professor" — o botão só aparecia em página de matéria (e a barra de menu das atividades foi desligada na Etapa 104). Agora o **professor sempre vê 👥 EQUIPES** (header em todas as páginas); fora de uma matéria (ou matéria sem atividade no banco) o modal mostra a lista **Matéria**; o líder continua só em página de matéria (`js/header-usuario.js`, `menu-acao-equipes.js`, `equipes-modal.js`, `equipes-repositorio.js`; regra e histórico) | ✅ Concluído | 2026-10-09 00:01:37 | `node --check` nos 4 JS; leitura do código (sem navegador) |
-| 106.9 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 107 — Tela TURMAS como consulta (CRUD) com modais (pedido em 2026-10-09 00:06:32)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 107.1 | `turmas.html` vira consulta das turmas: botão **➕ Vincular Professor** à esquerda de cada turma, professores vinculados em etiquetas (✏️/🗑️), busca; modal da turma (só professores que ainda não estão nela) e modal de edição do vínculo (`turmas-professor-pagina.js` reescrito, `turmas-professor-modais.js` novo, CSS) — sem mudança no banco | ✅ Concluído | 2026-10-09 00:06:32 | `node --check` nos 2 JS; leitura do código (sem navegador) |
-| 107.2 | Modal com os **dados da tabela `turma`** (CRUD: cadastrar, editar e excluir turma) — precisa de políticas novas no banco (hoje a `turma` só tem leitura no RLS): plano `docs/crud-turmas-administrador.md` aguardando aprovação | ⬜ Pendente | — | — |
-| 107.3 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 108 — Testes de Front-End: objetivas e práticas das aulas 01 a 03 + `docs/REGRAS-ATIVIDADE-PRATICA.md` (pedido em 2026-10-09 00:13:29)
-
-Plano: [docs/atividades-testes-frontend-aulas-01-a-03.md](docs/atividades-testes-frontend-aulas-01-a-03.md) — **aprovado em 2026-10-09 00:20** (D1: 10 questões × 3 tópicos 0,2+0,4+0,4; D2: substituir os roteiros; D3: aplicar os seeds e conferir).
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 108.1 | Regra da atividade prática (`docs/REGRAS-ATIVIDADE-PRATICA.md`, seção no `CLAUDE.md`, visualizador) | ✅ Concluído | 2026-10-09 00:27 | `node --check`; regex do visualizador lista `docs/REGRAS-ATIVIDADE-PRATICA.md` (node); versão 2026-10-09 00:24:10 + histórico |
-| 108.2 | Aula 01 — objetiva 50 questões + prática discursiva (padrão id 82) | ✅ Concluído | 2026-10-09 00:30 | 50 itens (A13 B13 C12 D12), sem gabarito no HTML; prática 10×3 = 10 pontos, 30/30 padrões, atributos iguais aos da id 82; índice e card do curso atualizados sem apagar a faixa ensalado |
-| 108.3 | Aula 02 — objetiva 50 questões + prática discursiva | ✅ Concluído | 2026-10-09 00:33 | 50 itens (A13 B13 C12 D12), sem gabarito no HTML; prática 10×3 = 10 pontos, 30/30 padrões; seed de Comunicação com o mesmo nome preservado; índice atualizado |
-| 108.4 | Aula 03 — objetiva 50 questões + prática discursiva | ✅ Concluído | 2026-10-09 00:36 | 50 itens (A13 B13 C12 D12), sem gabarito no HTML; prática 10×3 = 10 pontos, 30/30 padrões; práticas 01 e 02 regeradas sem crases; SQL das práticas com a matéria "TESTES DE FRONTEND" do banco; índices alheios (Etapa 111) reconstruídos com a faixa ensalado |
-| 108.5 | Seeds no Supabase e conferência | ✅ Concluído | 2026-10-09 00:38 | Matéria 48: aulas 1–3 criadas; objetivas ids 96, 97, 98 (50 gabaritos cada, letras iguais às fontes); práticas ids 99, 100, 101 (30 tópicos, 10 pontos, 30 padrões, bloqueadas) |
-| 108.6 | Commit e graphify | ✅ Concluído | 2026-10-09 00:39 | Commit só dos arquivos da tarefa (sem fontes com gabarito, seeds, `CLAUDE.md` e os 46 índices da Etapa 111 da outra sessão) |
-| 108.7 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 109 — Faixa de matérias de todos os cursos abre em SOMENTE ENSALADO (tarefa pequena, pedido em 2026-10-08 21:15:15)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 109.1 | **Todos os cursos**: a faixa de matérias abre em SOMENTE ENSALADO (`assets/js/faixa-materias-ensalado.js`, `aplicarFiltroInicialEnsalado`); sem matéria ensalada ou sem banco mostra todas; VER TODAS MATÉRIAS continua. Regra no `CLAUDE.md` (seção FAIXA DE MATÉRIAS), histórico e regra global | ✅ Concluído | 2026-10-08 21:15:46 | `node --check`; leitura do código (sem navegador) — teste na página fica com o usuário |
-| 109.2 | Botão do filtro em uso (SOMENTE ENSALADO ou VER TODAS MATÉRIAS) em fundo verde piscando levemente (`faixa-materias__filtro--ativo`, sem animação com `prefers-reduced-motion`) | ✅ Concluído | 2026-10-08 21:19:06 | `node --check`; leitura do código |
-| 109.3 | Índice do curso: a grade de matérias de baixo segue o filtro de cima (cartões casados pelo link da matéria; nas páginas de matéria nada muda) | ✅ Concluído | 2026-10-08 21:19:06 | `node --check`; linhas ≤ 100; leitura do código — teste na página fica com o usuário |
-| 109.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 110 — Apresentação do professor Gelvazio Camargo na página inicial sem login (tarefa pequena, pedido em 2026-10-09 00:20:57)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 110.1 | `index.html` sem login mostra a apresentação do professor Gelvazio Camargo (seção `#apresentacao-professor`, CSS `assets/css/apresentacao-professor.css`, exibida por `assets/js/indice-cursos.js`); logado continua com os cursos. Dados tirados de `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/AULAS/apresentacao-professor.html` (perfil, experiência, formação, competências, idiomas, e-mail, LinkedIn e portfólio; telefone fora por ser página pública). O PDF `APRESENTAÇÃO-PROFESSOR-GELVAZIO-CAMARGO.pdf` não foi lido (regra: nunca extrair de PDF) | ✅ Concluído | 2026-10-09 00:22:31 | `node --check`; linhas ≤ 100; leitura do código (sem navegador) — teste na página fica com o usuário |
-| 110.2 | `docs/PROFESSOR-GELVAZIO-CAMARGO.md` com todos os dados do professor (identificação, contato, conta, experiência, formação, certificações, competências, idiomas, cursos) + seção "DADOS DO PROFESSOR" no `CLAUDE.md`, versão 2026-10-09 00:25:47 e histórico | ✅ Concluído | 2026-10-09 00:25:47 | Leitura dos arquivos; dados conferidos com `INTRODUCAO-TIC/AULAS/apresentacao-professor.html` |
-| 110.3 | Página inicial sem login **sem barra de rolagem** (apresentação compacta em 3 colunas; `html` sem rolagem em telas ≥ 901×600; no celular continua rolando) e **cabeçalho "📚 Cursos" escondido** sem login (`#cabecalho-cursos`) | ✅ Concluído | 2026-10-09 00:29:18 | `node --check`; estimativa de altura ≈ 520 px; leitura do código (sem navegador) — teste na página fica com o usuário |
-| 110.4 | Header sem login: no lugar de "Você não está logado" + ENTRAR, **card verde centralizado piscando** "🔒 VOCÊ NÃO ESTÁ LOGADO! CLIQUE AQUI PARA ENTRAR 👉🔑" (cores oscilando, brilho pulsando; sem animação com `prefers-reduced-motion`) — `js/header-usuario.js` (`criarBotaoEntrarDestaque`) + `assets/css/header-entrar-destaque.css` | ✅ Concluído | 2026-10-09 00:31:30 | `node --check`; leitura do código (sem navegador) — teste na página fica com o usuário |
-| 110.5 | Card "VOCÊ NÃO ESTÁ LOGADO!" sai da barra e fica **logo acima do currículo do professor**, centralizado, com o currículo um pouco mais abaixo (espaço `#entrar-destaque` no `index.html`; `desenharHeaderSemLogin` em `js/header-usuario.js`; nas páginas sem esse espaço continua no centro da barra). Sem rolagem só em telas ≥ 901×680 | ✅ Concluído | 2026-10-09 00:33:43 | `node --check`; leitura do código (sem navegador) — teste na página fica com o usuário |
-| 110.6 | Visual do currículo melhorado: topo com degradê, avatar, destaques (15+ anos, PHP, Python, IA) e resumo com aspas; cartões coloridos (azul, verde, laranja) com selo de ícone; experiência em linha do tempo com ícone, instituição, período e etiqueta ATUAL; formação com marcadores ✅; idiomas com bandeira e barra de nível; competências em 3 grupos de etiquetas coloridas (classes `curriculo__*` em `assets/css/apresentacao-professor.css`). Sem rolagem só em telas ≥ 901×780 | ✅ Concluído | 2026-10-09 00:36:23 | Linhas novas ≤ 100; leitura do código (sem navegador) — teste na página fica com o usuário |
-| 110.7 | Removida da apresentação a faixa de contato (e-mail, LinkedIn, Portfólio) e "Entre no sistema… Entrar" (o card verde acima do currículo já leva ao login); sem rolagem em telas ≥ 901×720 | ✅ Concluído | 2026-10-09 00:39:31 | Leitura do código (sem navegador) |
-| 110.8 | Resumo do professor reescrito em 3 tópicos com ícone (👋 apresentação, 🏛️ projetos, 🎓 SENAI/SC), marca-texto dourado nos pontos principais e fonte maior (13 → 15,5 px); sem rolagem em telas ≥ 901×780 | ✅ Concluído | 2026-10-09 00:48:39 | Leitura do código (sem navegador) |
-| 110.9 | Responsividade da apresentação (complemento ao commit `d4ad46b` de outra sessão, sem regras repetidas): tablet com Competências na largura toda; celular com o card "VOCÊ NÃO ESTÁ LOGADO!" na largura toda e fontes dos cartões maiores (títulos 15 px, textos 13,5 px, etiquetas 12,5 px) | ✅ Concluído | 2026-10-09 00:51:16 | Leitura do código (sem navegador) — teste no celular fica com o usuário |
-| 110.10 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 111 — Sessão obrigatória em todas as páginas HTML (pedido em 2026-10-09 00:23; aprovada em 2026-10-09 00:28)
-
-Plano: [docs/validacao-sessao-todas-paginas.md](docs/validacao-sessao-todas-paginas.md). Regra: `CLAUDE.md` → "SESSÃO OBRIGATÓRIA EM TODAS AS PÁGINAS".
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 111.1 | Regra no `CLAUDE.md` e no `docs/HISTORICO-REGRAS.md`: sem login nada carrega e vai para o `index.html` (exceções: `index.html` e `login.html` da raiz) | ✅ Concluído | 2026-10-09 00:27 | Leitura |
-| 111.2 | Guarda de sessão no `js/header-usuario.js` (página oculta + modal "Aguarde, carregando..." com `assets/img/carregando.gif`; sem sessão → `window.stop()` e `index.html`) + CSS em `assets/css/header-usuario.css` | ✅ Concluído | 2026-10-09 00:33 | `node --check` |
-| 111.3 | `assets/gerador-menu/tags_header.py`: tag do header como primeiro script do `<head>`, sem `defer`, em todos os `.html` (menos `login.html`, `.claude/`, templates e app do WhatsApp) | ✅ Concluído | 2026-10-09 00:33 | 2ª execução = 0 alteradas |
-| 111.4 | Aplicado nas 257 páginas | ✅ Concluído | 2026-10-09 00:33 | Nenhum `header-usuario.js" defer` restante |
-| 111.5 | Aceite do usuário (abrir uma página sem login → modal e `index.html`; com login → página normal) | ⬜ Pendente | — | — |
-
-## Etapa 112 — Estilo dos destaques na apresentação do professor (tarefa pequena, pedido em 2026-10-09 00:48)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 112.1 | "mais de 15 anos de experiência" e "professor do SENAI/SC" sem o marca-texto amarelo: mesmo estilo dos outros destaques (roxo, negrito) — `assets/css/apresentacao-professor.css` (`mark`) | ✅ Concluído | 2026-10-09 00:49 | Leitura do CSS (sem navegador) |
-| 112.3 | Responsividade da apresentação do professor: tablet (até 900 px) com cartões em 2 colunas; celular (até 600 px) com 1 coluna, espaços, fontes e avatar menores, perfil que quebra linha, idiomas mais estreitos e textos longos quebrando — `assets/css/apresentacao-professor.css` | ✅ Concluído | 2026-10-09 00:56 | Leitura do CSS (sem navegador), chaves balanceadas; a outra sessão fez o mesmo ajuste ao mesmo tempo: blocos unidos num só (tablet 601–900 px e celular até 600 px), sem regras repetidas |
-| 112.2 | Aceite do usuário (ver a página inicial sem login, no computador e no celular) | ⬜ Pendente | — | — |
-
-## Etapa 113 — Botão ON/OFF ao lado de cada atividade em todos os índices (tarefa pequena, pedido em 2026-10-09 00:51)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 113.1 | `assets/js/indice-atividades-bloqueio.js`: um botão ON/OFF logo depois de cada atividade cadastrada (ON = liberada, OFF = bloqueada para a turma favorita), no lugar do interruptor por card; aluno vê 🔒 só na atividade bloqueada (card inteiro só trava com todas bloqueadas) | ✅ Concluído | 2026-10-09 00:55 | `node --check`; linhas ≤ 100; leitura do código (sem navegador) |
-| 113.2 | `assets/css/indice-atividades-bloquear.css`: estilo do botão (verde ON / vermelho OFF), acima do véu do card e com área de toque maior no celular | ✅ Concluído | 2026-10-09 00:55 | Leitura do CSS |
-| 113.3 | Regra global no `CLAUDE.md` (seção "BOTÃO ON/OFF AO LADO DE CADA ATIVIDADE", versão 2026-10-09 00:56:07 + histórico) e em `docs/regras/atividades.md` (substitui a regra do interruptor por card) | ✅ Concluído | 2026-10-09 00:56 | Leitura dos arquivos; link de `docs/regras/atividades.md` já lido pelo visualizador |
-| 113.5 | Correção relatada pelo usuário (botão não aparecia): a constante `SELETOR_LINK_ATIVIDADE` já existia no `atividades-crud-modal.js` e o navegador recusava o script inteiro ("já declarado"); renomeada para `SELETOR_LINK_ATIVIDADE_BLOQUEIO` | ✅ Concluído | 2026-10-09 01:03 | `node --check`; nenhum outro nome global repetido entre os 16 scripts carregados nos índices |
-| 113.4 | Aceite do usuário (abrir um índice de atividades como professor e como aluno) | ⬜ Pendente | — | — |
-| 113.6 | Pedido do usuário (2026-10-09 01:00): ON/OFF da atividade nunca bloqueia o card; botão de bloqueio da AULA (`aulas.ativo`) antes de "Editar aula", único que bloqueia o card — **adiado para outra sessão** (decisão do usuário, 01:02): tarefa #16 do `TASKS.md` + regra pendente no `CLAUDE.md`. O módulo `indice-aula-bloqueio.js` começado nesta sessão foi apagado (desenho anotado na tarefa) | ⬜ Pendente (outra sessão) | — | Regra e tarefa registradas (versão 2026-10-09 01:03:11) |
-
-## Etapa 114 — Testes de Front-End: links dos slides nos cards e PDFs das aulas versionados (tarefa pequena, pedido em 2026-10-09 00:45)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 114.1 | Botão **📕 Slides (PDF)** nos cards das aulas 01 a 03 de `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/ATIVIDADES/index.html`, apontando para `../AULAS/AULA-NN-SLIDES.pdf` (editado direto para não perder a faixa SOMENTE ENSALADO) | ✅ Concluído | 2026-10-09 00:58 | `git diff` com os 3 links |
-| 114.2 | `assets/gerador-indices/gerar_indices.py`: card de aula ganha o botão de slides quando existe `<MATÉRIA>/AULAS/AULA-NN-SLIDES.pdf` (vale para todas as matérias ao regenerar) | ✅ Concluído | 2026-10-09 00:58 | `py_compile` + geração em memória mostrou o botão |
-| 114.3 | Os 10 PDFs `TESTES-DE-FRONTEND/AULAS/AULA-NN-SLIDES.pdf` versionados (exceção no `.gitignore`) | ✅ Concluído | 2026-10-09 00:58 | `git check-ignore` mostra a exceção |
-| 114.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 114 — Testes de Front-End: bloqueio da aula e das atividades; LOG escondido; slides em nova aba (tarefa pequena, pedido em 2026-10-09 01:04)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 114.1 | Tarefa #16 ligada **só em Testes de Front-End**: lista `assets/js/indice-bloqueio-aula-config.js`; botão "Aula liberada / Aula bloqueada" (`aulas.ativo`) antes de "Editar aula" (`assets/js/indice-aula-bloqueio.js` + `indice-aula-data.js`); aula bloqueada = card inteiro bloqueado para o aluno; nela o ON/OFF das atividades nunca bloqueia o card (`indice-atividades-bloqueio.js`); CSS em `indice-atividades-bloquear.css` e `indice-atividades.css`; carregamento em ordem no `atividades-crud-modal.js` | ✅ Concluído | 2026-10-09 01:06 | `node --check` nos 5 JS; nenhum nome global repetido entre os 19 scripts dos índices; chaves do CSS balanceadas; sem navegador |
-| 114.2 | Botão "🧾 LOG" escondido em todos os índices (`LOG_ALTERNATIVAS_LIGADO = false`) | ✅ Concluído | 2026-10-09 01:06 | `node --check`; único botão de log do projeto |
-| 114.3 | "📕 Slides" dos cards abrem em nova aba: 18 botões em 3 índices (ITIC, Fundamentos da Tecnologia, Testes de Front-End) + gerador de índices (`atributos_nova_aba`) | ✅ Concluído | 2026-10-09 01:07 | `grep`: nenhum botão de slides sem `target="_blank"`; `ast.parse` do gerador |
-| 114.4 | Regras: `CLAUDE.md` (versão 2026-10-09 01:07:02), histórico, `TASKS.md` (#16), `docs/regras/atividades.md` | ✅ Concluído | 2026-10-09 01:07 | Leitura dos arquivos |
-| 114.5 | Aceite do usuário (índice de Testes de Front-End como professor e como aluno) | ⬜ Pendente | — | — |
-
-## Etapa 115 — Trigger: bloquear a aula bloqueia todas as atividades dela (tarefa de banco, pedido em 2026-10-09 01:09)
-
-Plano: [docs/trigger-bloqueio-aula-bloqueia-atividades.md](docs/trigger-bloqueio-aula-bloqueia-atividades.md) — decisão D1 do usuário: desbloquear a aula não mexe nas atividades.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 115.1 | SQL `database/2026-10-09-trigger-bloqueio-aula-atividades.sql` e aplicação pelo MCP (trigger `aulas_bloqueio_propaga_atividades_trg` + função security definer) | ✅ Concluído | 2026-10-09 01:07 | `pg_trigger` com a definição; `authenticated` sem execução da função |
-| 115.2 | Teste no banco em bloco desfeito (aula 93): bloquear → atividade 96 false; desbloquear → nada muda; estado final igual ao anterior | ✅ Concluído | 2026-10-09 01:08 | Consulta antes/depois |
-| 115.3 | Tela: botão da aula avisa o script das atividades (`aula-bloqueio-alterado`) para reler os ON/OFF | ✅ Concluído | 2026-10-09 01:09 | `node --check` |
-| 115.4 | `docs/database.md` + `relatorio_verificacao_database.html`, `docs/regras/atividades.md`, `CLAUDE.md` (versão 2026-10-09 01:09:35) e histórico | ✅ Concluído | 2026-10-09 01:09 | Leitura |
-| 115.6 | Pedido do usuário: aula bloqueada sem nenhum acesso, nem para o professor; só o botão de desbloquear clica (`travarCardAulaProfessor`, CSS `pointer-events`, ON/OFF das atividades nascem travados) + regra no `CLAUDE.md` (versão 2026-10-09 01:10:16) e em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-09 01:10 | `node --check` nos 2 JS; leitura do CSS (sem navegador) |
-| 115.5 | Aceite do usuário (bloquear uma aula no índice e ver as atividades OFF) | ⬜ Pendente | — | — |
-
-## Etapa 116 — ID na frente de cada atividade nos índices (tarefa pequena, pedido em 2026-10-09 01:11)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 116.1 | Etiqueta "ID 07" no começo de cada botão de atividade cadastrada (zero à esquerda abaixo de 10), no lugar da caixa "🆔 ID · nome" do card — `assets/js/atividades-crud-modal.js` + `assets/css/atividades-crud-modal.css`; vale em todos os índices (só professor) | ✅ Concluído | 2026-10-09 01:11 | `node --check`; nenhum outro script lê o texto dos botões |
-| 116.2 | Regra no `CLAUDE.md` (versão 2026-10-09 01:11:42), histórico e `docs/regras/atividades.md` | ✅ Concluído | 2026-10-09 01:12 | Leitura |
-| 116.4 | Botões de atividade com a mesma largura e ON/OFF sempre ao lado (texto menor e quebrando a linha, também no celular) — `assets/css/indice-atividades.css` + `indice-atividades-bloquear.css`; regra no `CLAUDE.md` (versão 2026-10-09 01:12:55) | ✅ Concluído | 2026-10-09 01:12 | Chaves do CSS balanceadas; leitura (sem navegador) |
-| 116.3 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 117 — Lista de alunos do Técnico em Informática (SENAI) Manhã em Testes de Front-End (tarefa pequena, pedido em 2026-10-09 12:35:18)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 117.1 | Lista da turma T TIIN 2026/1 M1 (124519), SN.RDS-LAB INFORMATICA 01 - SENAI/SC - Rio do Sul, com os 17 alunos (nome, menor, frequência, situação, sigla e login proposto) em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/LISTA-ALUNOS/ALUNOS-TECNICO-INFORMATICA-MANHA.md` — só local (LGPD, `LISTA-ALUNOS/` no `.gitignore`); sem cadastro no banco | ✅ Concluído | 2026-10-09 12:36 | `git check-ignore` confirma fora do Git; logins sem repetição |
-| 117.3 | Turma T TIIN 2026/1 M1 (124519) na página `scripts/criarUsuariosBancoDados.html`: `scripts/LISTA-PRESENCA-TIIN-RIO-DO-SUL-MANHA.js` (17 alunos, senhas iniciais de 6 caracteres; fora do Git, LGPD) + tag no HTML; usuários ainda não criados no banco (o professor cria pela página) | ✅ Concluído | 2026-10-09 12:45 | `node --check`; `git check-ignore`; nenhum login repetido nas outras listas |
-| 117.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 118 — Menu Curso: CRUD de cursos e vínculo de turmas em `cursos.html` (tarefa grande, pedido em 2026-10-09 12:45; aprovada em 2026-10-09 12:50; plano [docs/menu-curso-crud-cursos-turmas.md](docs/menu-curso-crud-cursos-turmas.md))
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 118.0 | Plano criado e aprovado pelo usuário | ✅ Concluído | 2026-10-09 12:50 | Aprovação no chat |
-| 118.1 | SQL `database/2026-10-09-vincular-turma-curso.sql` (função `definir_curso_turma`, só o administrador) | ✅ Concluído | 2026-10-09 12:52 | Leitura |
-| 118.2 | SQL aplicado pelo conector do Supabase | ✅ Concluído | 2026-10-09 12:53 | `anon` sem execute; `authenticated` com execute; security definer |
-| 118.3 | `assets/js/cursos-repositorio.js` | ✅ Concluído | 2026-10-09 12:54 | `node --check` |
-| 118.4 | `assets/js/cursos-modais.js` (modal do curso e modal 🏫 Turmas) | ✅ Concluído | 2026-10-09 12:57 | `node --check` |
-| 118.5 | `cursos.html`, `assets/js/cursos-pagina.js`, `assets/css/cursos.css` (sem exclusão: desativar = `ativo 0`) | ✅ Concluído | 2026-10-09 12:58 | `node --check`; leitura |
-| 118.6 | Menu CURSO em `js/header-usuario.js` (só administrador) | ✅ Concluído | 2026-10-09 12:58 | `node --check` |
-| 118.7 | `docs/database.md`, relatório HTML, `CLAUDE.md` (versão 2026-10-09 12:59:06) e histórico | ✅ Concluído | 2026-10-09 13:00 | Leitura |
-| 118.8 | Commit | ✅ Concluído | 2026-10-09 13:01 | `git diff --cached --name-only` |
-| 118.10 | Ajuste pedido em 2026-10-09 13:15: ações (Editar, Turmas, Desativar/Ativar) na última coluna, à direita; página de consulta mais larga (1400px) e busca mais larga (420px) — `cursos.html`, `assets/js/cursos-pagina.js`, `assets/css/cursos.css` | ✅ Concluído | 2026-10-09 13:17 | `node --check`; leitura (sem navegador) |
-| 118.11 | Ajuste pedido em 2026-10-09 13:18: botões de ação lado a lado (nunca um embaixo do outro) — `.cu-grupo-acoes` (inline-flex, sem quebra) em `assets/css/cursos.css` + `assets/js/cursos-pagina.js` | ✅ Concluído | 2026-10-09 13:20 | `node --check`; leitura (sem navegador) |
-| 118.9 | Aceite do usuário: testar no navegador (menu CURSO → 🏫 Turmas → vincular a 124519 ao curso 4) | ⬜ Pendente | — | Usuário |
-
-## Etapa 119 — Unidade em um só lugar: tabela `unidade` ligada a `curso` e `turma` (tarefa grande, pedido em 2026-10-09 13:18; aprovada em 2026-10-09 13:23; plano [docs/tabela-unidade-curso-turma.md](docs/tabela-unidade-curso-turma.md))
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 119.0 | Plano criado; decisões (CEPLAS = AI CEPLAS; SN.RDS-LAB = SENAI Rio do Sul; demais uma cada; linha de teste reaproveitada) e aprovação do usuário | ✅ Concluído | 2026-10-09 13:23 | Respostas no chat |
-| 119.1 | SQL `database/2026-10-09-unidade-curso-turma.sql` (backup, `descricao`→`nome`, `unidade_id` em curso e turma, migração) | ✅ Concluído | 2026-10-09 13:24 | Leitura; nenhuma função/view usa a coluna antiga |
-| 119.2 | SQL aplicado pelo conector do Supabase | ✅ Concluído | 2026-10-09 13:24 | 5 unidades; 7/7 turmas e cursos 1–4 com `unidade_id`; backups 1/7/7 |
-| 119.3 | Tela de cursos: unidade em lista + modal 🏢 Unidades (`assets/js/unidades-modal.js`); `js/unidade.js` órfão ajustado para `nome` | ✅ Concluído | 2026-10-09 13:27 | `node --check` |
-| 119.4 | `docs/database.md`, relatório HTML, `CLAUDE.md` (versão 2026-10-09 13:27:14) e histórico | ✅ Concluído | 2026-10-09 13:29 | Leitura |
-| 119.5 | Commit | ✅ Concluído | 2026-10-09 13:30 | `git diff --cached --name-only` |
-| 119.9 | Unidade 5 renomeada para "AI TAIÓ TARDE" (era "APRENDIZAGEM INDUSTRIAL TAIÓ TARDE"), pedido em 2026-10-09 13:38 — update direto na tabela `unidade` | ✅ Concluído | 2026-10-09 13:39 | Consulta da tabela `unidade` |
-| 119.10 | Lista `scripts/LISTA-PRESENCA-AUTOMACAO-TAIO-TARDE.js` (fora do Git): turma AI OPIR 2026/1 V1 (122552), UC Fundamentos de Automação/Instrumentação, com `unidadeId: 5` (AI TAIÓ TARDE) e local "AI TAIÓ TARDE" — pedido em 2026-10-09 13:42 | ✅ Concluído | 2026-10-09 13:43 | `node --check`; `git check-ignore` |
-| 119.6 | Aceite do usuário (testar 🏢 Unidades e a unidade dos cursos 5, 6 e 7) | ⬜ Pendente | — | Usuário |
-| 119.7 | Fase 2 pedida pelo usuário — ver 119.8 | ✅ Concluído | 2026-10-09 13:35 | — |
-| 119.8 | Fase 2 (pedido em 2026-10-09 13:30): `unidade.js` pela ligação; 13 JS com `unidade:unidade_id(nome)`; criar usuários grava `unidade_id`; colunas `turma.local` e `curso.unidade` apagadas (`database/2026-10-09-unidade-fase2-apagar-textos.sql`); docs e `CLAUDE.md` (versão 2026-10-09 13:33:10) | ✅ Concluído | 2026-10-09 13:35 | `node --check` em todos os JS; consulta das colunas; backups com 7 locais e 4 unidades |
-
-## Etapa 120 — Curso desativado some do índice; unidade do banco nas abas de criar usuários (pedido em 2026-10-09 13:50)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 120.1 | `cursos_do_usuario()` sem curso desativado para aluno/professor (administrador vê todos) — `database/2026-10-09-cursos-do-usuario-sem-inativos.sql`, aplicado | ✅ Concluído |  | Definição com o filtro; `anon` sem execute; `authenticated` com execute |
-| 120.2 | Abas de `scripts/criarUsuariosBancoDados.html` com a unidade da tabela `unidade` (turma no banco ou `unidadeId` da lista), sem o "local" da lista — `assets/js/criar-usuarios-pagina.js` | ✅ Concluído |  | `node --check` |
-| 120.3 | `docs/database.md`, relatório, `CLAUDE.md` (versão ) e histórico | ✅ Concluído |  | Leitura |
-| 120.4 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 121 — Progresso da turma GLOBAL em todas as atividades (tarefa grande, pedido em 2026-10-09 10:22:23; aprovada em 2026-10-09 10:31; plano [docs/progresso-global-atividades.md](docs/progresso-global-atividades.md))
-
-Numeração: esta etapa nasceu como "Etapa 119" e virou **121** ao juntar a `main` (outra sessão usou 119 e 120 ao mesmo tempo); os commits `99e8c9b`, `b2df7af`, `426999e` e `7ba666f` citam os itens como "119.x" = 121.x.
-
-Decisões do usuário (2026-10-09 10:31): D1 o painel global **substitui** o das discursivas (tudo vem do global: gráficos, Cálculo Nota e mínimo); D2 na objetiva, a coluna da IA vira **acertos e nota** calculados pelo banco; D3 **mínimo de questões e Cálculo Nota também nas objetivas** (muda a entrega e a nota da objetiva no banco); D4 escopo = objetivas e discursivas que gravam no banco; D5 data e hora pelo relógio do contêiner.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 121.0 | Plano criado e aprovado (com as decisões D1 a D5) | ✅ Concluído | 2026-10-09 10:33 | Aprovação no chat |
-| 121.1 | Conferir o banco real (só leitura): `resposta_atividade`, `entrega_atividade` (a objetiva TEM entrega), `resumo_tentativas_atividade` (acertos sem expor gabarito), `atividade_completa`, `minimo_questoes_para_entregar`, `notas_media_final` | ✅ Concluído | 2026-10-09 10:33 | Consultas de leitura pelo conector |
-| 121.2 | Módulo global do painel (fontes objetiva × discursiva + tela), substituindo `progresso-turma-discursiva.js` | ✅ Concluído | 2026-10-09 10:45 | `assets/js/progresso-turma-global.js` (538 linhas) + `assets/js/progresso-turma-fontes.js` (322) + `assets/css/progresso-turma-global.css` (renomeado); leitura paginada de 1000 em 1000; `node --check`; nenhum nome global repetido |
-| 121.3 | Ligar o painel no motor das discursivas (`avaliacao-discursiva.js`) e no das objetivas (`respostas-atividade.js`): aparece ao abrir a página, só professor | ✅ Concluído | 2026-10-09 10:45 | `node --check`; as 68 páginas objetivas com o motor têm o `.container > header` onde o painel entra |
-| 121.4 | Gráficos, Cálculo Nota e mínimo genéricos (rótulos conforme o tipo de atividade) | ✅ Concluído | 2026-10-09 10:45 | Gráficos com títulos do tipo (`correcao` no lugar de `notaIa`); Cálculo Nota e mínimo já eram genéricos; `node --check` |
-| 121.5 | SQL `database/2026-10-09-minimo-questoes-objetivas.sql` (entrega e nota da objetiva sobre o mínimo, máximo 10) — escrito, **não aplicado** | ✅ Concluído | 2026-10-09 10:52 | 5 funções (`total_questoes_atividade` nova; `minimo_questoes_para_entregar`, `atividade_completa`, `notas_media_final`, `liberar_nova_tentativa`); cabeçalhos conferidos no banco real (retorno, volatilidade, security definer); `create or replace`, sem apagar dados |
-| 121.6 | Página objetiva: entregar com o mínimo e nota sobre o mínimo (máx. 10), sem quebrar enquanto o SQL não for aplicado | ✅ Concluído | 2026-10-09 10:54 | `respostas-atividade-banco.js` lê o mínimo (`minimo_questoes_para_entregar`; valor fora de 1 ao total = todas, como antes); `respostas-atividade.js`: entrega com o mínimo, aviso de questões em branco, nota = acertos ÷ mínimo × 10 (máx. 10); `node --check`; funções novas ≤ 45 linhas |
-| 121.7 | Relatório do professor da objetiva (`respostas-atividade-professor.js`): nota sobre o mínimo do aluno | ✅ Concluído | 2026-10-09 10:54 | `acrescentarMinimos` (mínimo do aluno, senão da atividade, senão o total); `node --check` (pegou um nome repetido, corrigido) |
-| 121.8 | Regras: `CLAUDE.md` (versão + histórico), `docs/regras/atividades.md`, `docs/HISTORICO-REGRAS.md`; conferir o visualizador | ✅ Concluído | 2026-10-09 10:55 | Versão 2026-10-09 10:54:45 (relógio do contêiner, decisão D5); resumo com 5 linhas; seção "PROGRESSO DA TURMA EM TODAS AS ATIVIDADES"; `docs/regras/atividades.md` e `docs/REGRAS-ATIVIDADE-PRATICA.md` sem o arquivo antigo; visualizador lê a versão pela mesma linha `**Versão das regras:**` (regex em `assets/js/regras-modal.js`) e nenhum arquivo de regra novo |
-| 121.9 | Commit, push e pull request | ✅ Concluído | 2026-10-09 10:57 | `git diff --cached --name-only`; `main` juntada (merge `ffa00d2`, conflitos só em `CLAUDE.md`, histórico e `STATUS.md`, resolvidos mantendo as duas sessões); `node --check` em todo JS dos dois lados; sem nomes globais repetidos; PR aberto para a `main` |
-| 121.10 | Aplicar o SQL do item 121.5 no Supabase (**só com pedido do usuário**) | ✅ Concluído | 2026-10-09 11:02 | Pedido do usuário; banco conferido antes (funções iguais às lidas); migração `minimo_questoes_objetivas_20261009`; depois: 5 funções com `security definer`, volatilidade igual, `total_questoes_atividade` só `authenticated`; total/mínimo padrão: id 96 = 50/50, id 82 = 20/20, id 99 = 10/10 (sem mínimo nada muda); `docs/database.md` e relatório HTML atualizados; regras com versão 2026-10-09 11:02:12 |
-| 121.11 | Aceite do usuário (Testes de Front-End, aula 01, como professor e como aluno) | ⬜ Pendente | — | Usuário |
-
-## Etapa 122 — Seção "Pull Requests" no `CLAUDE.md` (só na nuvem) (tarefa pequena, pedido em 2026-10-09 11:03:21)
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 122.1 | Seção "🔀 Pull Requests" no `CLAUDE.md`: cada commit na nuvem = push na hora + PR novo se a branch não tiver PR aberto; versão 2026-10-09 11:03:21 + histórico (resumo e `docs/HISTORICO-REGRAS.md`) | ✅ Concluído | 2026-10-09 11:03:21 | Leitura; visualizador lê a linha de versão (`PADRAO_VERSAO_REGRAS`) e os títulos `##` |
-| 122.2 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 123 — Conflitos do merge do PR #11 e `CLAUDE.md` apontando para `tasks/` (tarefa pequena, pedido em 2026-10-09 12:20)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 123.1 | Resolver conflitos de `STATUS.md`/`TASKS.md` (duas tarefas #17: mantida a da revisão das regras; a do progresso global virou #18) e concluir o merge | ✅ Concluído | 2026-10-09 12:30 | Sem marcas de conflito; commit `5619910` |
-| 123.2 | Registrar no Git a mudança de `STATUS.md`, `TASKS.md`, `TASKS_COMPLETE.md` e relatórios da raiz para `tasks/` | ✅ Concluído | 2026-10-09 12:35 | `git diff --cached -M` = renomeações R100 |
-| 123.3 | `CLAUDE.md` (versão 2026-10-09 12:33:04 + histórico) lê e grava as tarefas em `C:\fontes\aulasenai\tasks\` | ✅ Concluído | 2026-10-09 12:35 | Leitura das linhas alteradas |
-| 123.4 | Links relativos dentro de `tasks/STATUS.md` e `tasks/TASKS.md` (ex.: `docs/...`) passam a precisar de `../` | ⬜ Pendente | — | Corrigir quando o usuário pedir |
-| 123.5 | Regra no `CLAUDE.md`: id de tarefa nova = número + UUID (ex.: `#19-3f9a2c7e-8b1d-4e2a`) | ✅ Concluído | 2026-10-09 12:37 | Leitura da regra e do histórico |
-| 123.6 | `TASKS_COMPLETE.md` apagado; regra: tarefa concluída ou cancelada tem o bloco removido do `TASKS.md` (`CLAUDE.md` versão 2026-10-09 12:58:34 + histórico) | ✅ Concluído | 2026-10-09 13:00 | `grep` sem `TASKS_COMPLETE` no `CLAUDE.md` (fora do histórico) e no `TASKS.md` |
-| 123.7 | Apagados `tasks/ANALISE-EMENTAS-COMPLETA.md` (`git rm`) e `tasks/GUIA-MAESTRO-EMENTAS-CHALKIE-AI.md` (fora do Git; enviado para a Lixeira do Windows) — pedido do usuário | ✅ Concluído | 2026-10-09 13:05 | `Test-Path` = falso nos dois; nenhum arquivo citava os dois |
-| 123.8 | `tasks/CALENDARIO-COMPLETO-2026.md` refeito pela Google Agenda `gelvazio.c@edu.sc.senai.br` (194 eventos de 22/09 a 20/12, conector): 50 blocos, 180 aulas, coluna Horário e turma; notebooks/projetor mantidos do calendário anterior; link em `docs/PROFESSOR-GELVAZIO-CAMARGO.md` corrigido para `tasks/` | ✅ Concluído | 2026-10-09 13:18 | Leitura do arquivo gerado; 194 eventos lidos (sem próxima página) |
-| 123.9 | `scripts/analise-materias.py` reescrito no padrão da matéria modelo (ITIC): todos os cursos (menos MATERIAS-GERAIS e AGENDA_COLABORADOR), matéria = pasta com ementa ou `materia.json`, confere ementa (tamanho), `materia.json`, `CONTEUDO/`, STATUS-AULAS, índice/STATUS/fontes das atividades, objetivas de 50 e apostila; grava `tasks/ANALISE-MATERIAS-RELATORIO.json` (6 cursos, 35 matérias, 2 completas) | ✅ Concluído | 2026-10-09 13:25 | `py_compile`; linhas ≤ 100; relatório gerado e lido |
-| 123.10 | Tarefa permanente #19-91cbac65-87ca-45a0 no `TASKS.md` e no "📌 Tarefas" + regra "ANÁLISE CONTÍNUA DAS MATÉRIAS" no `CLAUDE.md` (versão 2026-10-09 13:20:11 + histórico): rodar a rotina sempre; nunca CONCLUÍDA enquanto o relatório tiver pendência | ✅ Concluído | 2026-10-09 13:22 | Leitura da seção; resumo do histórico com 5 linhas |
-| 123.11 | `GUIA-MAESTRO-EMENTAS-CHALKIE-AI.md` recuperado pelo Git (versão da raiz, 836 linhas) e movido para `tasks/` (pedido do usuário; desfaz parte do item 123.7) | ✅ Concluído | 2026-10-09 13:40 | `git diff --cached -M` = R100 |
-| 123.12 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 124 — Pendências: coluna "Descrição" (tarefa grande — banco, pedido em 2026-10-09 12:51:22; plano [docs/pendencias-coluna-descricao.md](../docs/pendencias-coluna-descricao.md))
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 124.1 | Plano com decisões D1–D7 (D6–D7: formulário em modal pelo botão "Nova Pendência", pedido 12:53) | ✅ Concluído | 2026-10-09 12:53 | Arquivo criado; banco conferido (sem `descricao`) |
-| 124.2 | Aprovação do plano pelo usuário | ✅ Concluído | 2026-10-09 12:54 | Resposta "aprovo" |
-| 124.3 | Executar os passos 1 a 6 do plano (SQL aplicado no Supabase) | ✅ Concluído | 2026-10-09 12:54:31 | Coluna e check conferidos no banco; `node --check` OK |
-| 124.4 | Aceite do usuário (testar o modal "Nova Pendência" e a coluna Descrição no navegador) | ⬜ Pendente | — | — |
-
-## Etapa 124 — Banco de Dados 100% no padrão da ITIC, etapa 1 sem a apostila (tarefa grande #20-2ac1a8ec-911b-466f, pedida em 2026-10-09 13:26:40)
-
-Matéria: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO_DE_DADOS/` · Plano: `docs/banco-de-dados-materia-100.md` (a criar) · Descrição: `TASKS.md` #20.
-
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 124.0 | Tarefa registrada no `TASKS.md` e no "📌 Tarefas" | ✅ Concluído | 2026-10-09 13:27 | Leitura |
-| 124.1 | Plano em `docs/` (permissão IGNORAR → VERIFICAR, nome da pasta, destino dos arquivos antigos, nº de aulas) e aprovação do usuário. **Decidido e feito pelo usuário (2026-10-09):** permissão `VERIFICAR` (linha 36 do `MATERIAIS/STATUS-EMENTAS-CURSOS.md`) e pasta renomeada para `BANCO-DE-DADOS` (ainda sem commit). Falta no plano: corrigir as 31 referências ao nome antigo (faixa de matérias de 20 índices do curso, `index.html` do curso, linha 158 do STATUS-EMENTAS-CURSOS, docs e scripts), conferir `atividade.pagina` no banco, ementa genérica a refazer pela UC do curso | 🔄 Em progresso | — | `git grep BANCO_DE_DADOS`: 31 arquivos |
-| 124.1a | Links quebrados pela troca de nome corrigidos (pedido do usuário, Supabase MCP): banco conferido em todas as colunas de texto — nenhuma referência ao caminho antigo; 22 `index.html` do curso apontam para `BANCO-DE-DADOS`; textos em `STATUS-EMENTAS-CURSOS.md` (linha 158 → VERIFICAR), `ANALISE-GERACAO-AULAS.md`, `INDEX.md` da matéria e `docs/regra-pasta-materia-vinculo-uc.md` | ✅ Concluído | 2026-10-09 14:08 | `git grep` sem o caminho antigo nos HTML; varredura de links de todos os 265 HTML |
-| 124.1b | Varredura de links quebrados em todos os HTML (pedido do usuário): corrigidos "← Índice" das 3 atividades de sexta da ITIC (`../index.html`), link da apresentação do professor em Fundamentos da Tecnologia e removidos 12 botões "📄 Questões (.md)" do índice da ITIC (apontavam para fontes com gabarito, fora do Git). Restam 85 links em 34 páginas, todos explicados: `Scripts-Comunicacao` (25 páginas antigas), app do WhatsApp (servidor próprio), 4 atividades de Comunicação Oral sem `ATIVIDADES/index.html` (Etapa 71) e 4 templates dos geradores | ✅ Concluído | 2026-10-09 14:08 | Varredura: 101 → 85 links |
-| 124.2 | `materia.json` copiado da ementa | ⬜ Pendente | — | — |
-| 124.3 | Aulas em `CONTEUDO/` (uma por vez) + `AULAS/STATUS-AULAS.md` | ⬜ Pendente | — | — |
-| 124.4 | Atividades por aula (objetiva de 50 + prática padrão id 82), fontes em `ATIVIDADES/CONTEUDO/`, `STATUS-ATIVIDADES.md`, índice regerado; seeds só com pedido | ⬜ Pendente | — | — |
-| 124.5 | Avaliações e média final no modelo da ITIC (se a ementa pedir) | ⬜ Pendente | — | — |
-| 124.6 | `scripts/analise-materias.py`: sem pendências, exceto as da apostila | ⬜ Pendente | — | — |
-| 124.7 | Aceite do usuário | ⬜ Pendente | — | — |
-
-## Etapa 125 — `.gitignore` mínimo e `.vercelignore` (tarefa pequena, pedido em 2026-10-09 17:20)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 125.1 | `.gitignore` só com `__pycache__/`, graphify, `variaveis.js` (e `.env`, acrescentado pelo usuário); demais padrões movidos para o `.vercelignore` | ✅ Concluído | 2026-10-09 17:40 | Leitura dos dois arquivos |
-| 125.2 | Regra "O QUE NUNCA É PUBLICADO" do `CLAUDE.md` reescrita + versão 2026-10-09 17:25:12 + histórico | ✅ Concluído | 2026-10-09 17:40 | Leitura do `CLAUDE.md` e do `docs/HISTORICO-REGRAS.md` |
-| 125.3 | Aceite do usuário (alertado: sem `.gitignore`, listas de presença, gabaritos e documentos pessoais podem ir ao GitHub num `git add` amplo) | ⬜ Pendente | — | — |
-
-## Etapa 126 — Lista de presença em um arquivo único `scripts/LISTAPRESENCA.js` (tarefa grande, pedido em 2026-10-09 17:45; plano [docs/lista-presenca-arquivo-unico.md](../docs/lista-presenca-arquivo-unico.md))
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 126.0 | Plano aprovado; decisões: alunos M1/V1 eram pessoas diferentes (ambos mantidos), antigos apagados, `LISTAPRESENCA.js` versionado | ✅ Concluído | 2026-10-09 17:55 | Respostas do usuário no chat |
-| 126.1–126.9 | Passos 1 a 9 do plano: arquivo único (157 pessoas), 3 páginas + script Node (`--turma=`), `.vercelignore`, regras/docs, 10 antigos apagados | ✅ Concluído | 2026-10-09 18:00 | `node --check`, contagens por turma, simulação do script Node |
-| 126.10 | Aceite do usuário (testar criarUsuariosBancoDados.html, relatorioAtividades.html e LISTA-PRESENCA.html da ITIC) | ⬜ Pendente | — | — |
-
-## Etapa 127 — Regra do `graphify update .` removida (tarefa pequena, pedido em 2026-10-09 18:05)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 127.1 | Regra removida do `CLAUDE.md` do projeto (seção "LEIA PRIMEIRO — Grafo" vira "GRAFO só quando o usuário pedir"), do `~/.claude/CLAUDE.md`, do `CLAUDE-DOCS-BEFORE-EVERY-TASK.md` e das cópias em `.claude/regras-globais/`; a skill `/graphify` continua | ✅ Concluído | 2026-10-09 18:08 | `grep graphify` nos arquivos de regras; cópias iguais às globais |
-
-## Etapa 128 — Corrigir referências ao caminho antigo do projeto (pedido em 2026-10-11)
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| 128.1 | Atualizar `C:\fontes\aulas-senai` para `C:\fontes\aulasenai` nos arquivos do projeto; corrigir o destino do atalho `INTRODUCAO-ITIC.lnk` | ✅ Concluído | 2026-10-11 12:10 | Busca literal sem ocorrências do caminho antigo nos arquivos, fora deste registro de status; destino do atalho aponta para a pasta existente `GERADOR-AULAS\MATERIAS-GERAIS\INTRODUCAO-ITIC`; sem testes executados |
 

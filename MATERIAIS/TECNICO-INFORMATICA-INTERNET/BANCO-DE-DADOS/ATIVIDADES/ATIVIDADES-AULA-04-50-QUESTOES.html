@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 04 — Configuração do SGBD e Infraestrutura do Sistema (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="04" data-tema="Configuração do SGBD e Infraestrutura do Sistema" data-total="50"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🛠️ Aula 04: Configuração do SGBD e Infraestrutura do Sistema</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-04-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C5 —</strong> Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</p>
+                    <p class="quadro-capacidades__linha"><strong>C11 —</strong> Configurar gerenciadores de bancos de dados</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Arquivo postgresql.conf</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o arquivo postgresql.conf controla?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O conteúdo das tabelas do sistema.</li>
+                        <li><span class="letra">B)</span>Como o servidor funciona: endereços, porta, conexões, memória, fuso horário e registros.</li>
+                        <li><span class="letra">C)</span>Quais usuários podem entrar e de onde.</li>
+                        <li><span class="letra">D)</span>As telas do front-end.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Arquivo pg_hba.conf</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que o arquivo pg_hba.conf controla?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quem pode conectar, de onde, a qual banco e com qual método de autenticação.</li>
+                        <li><span class="letra">B)</span>O fuso horário das datas.</li>
+                        <li><span class="letra">C)</span>O nome das colunas das tabelas.</li>
+                        <li><span class="letra">D)</span>A quantidade de memória do servidor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Localizar a Configuração</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando mostra onde está o arquivo postgresql.conf em uso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SHOW config_file;</li>
+                        <li><span class="letra">B)</span>SHOW tables;</li>
+                        <li><span class="letra">C)</span>SELECT * FROM postgresql.conf;</li>
+                        <li><span class="letra">D)</span>DROP config_file;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Localizar o pg_hba.conf</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando mostra onde está o arquivo pg_hba.conf em uso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>CREATE hba_file;</li>
+                        <li><span class="letra">B)</span>SHOW users;</li>
+                        <li><span class="letra">C)</span>SELECT hba FROM pg_admin;</li>
+                        <li><span class="letra">D)</span>SHOW hba_file;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">listen_addresses</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que serve o parâmetro listen_addresses?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Definir a senha do superusuário.</li>
+                        <li><span class="letra">B)</span>Definir o idioma das mensagens.</li>
+                        <li><span class="letra">C)</span>Listar os bancos de dados.</li>
+                        <li><span class="letra">D)</span>Definir em quais endereços de rede o servidor aceita conexões.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">listen_addresses = &#x27;localhost&#x27;</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Com listen_addresses = &#x27;localhost&#x27;, quem consegue conectar ao servidor?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ninguém, nem a própria máquina.</li>
+                        <li><span class="letra">B)</span>Somente o pgAdmin de outra cidade.</li>
+                        <li><span class="letra">C)</span>Apenas programas na própria máquina do servidor.</li>
+                        <li><span class="letra">D)</span>Qualquer computador da internet.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Parâmetro port</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O parâmetro port do postgresql.conf define:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A porta em que o servidor escuta as conexões.</li>
+                        <li><span class="letra">B)</span>A versão do PostgreSQL.</li>
+                        <li><span class="letra">C)</span>O número de tabelas permitido.</li>
+                        <li><span class="letra">D)</span>A quantidade de discos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">max_connections</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O parâmetro max_connections define:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O número máximo de linhas de uma tabela.</li>
+                        <li><span class="letra">B)</span>O número de bancos de template.</li>
+                        <li><span class="letra">C)</span>A velocidade da rede.</li>
+                        <li><span class="letra">D)</span>O número máximo de conexões ao mesmo tempo no servidor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">shared_buffers</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O parâmetro shared_buffers está ligado a:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Cor do tema do pgAdmin.</li>
+                        <li><span class="letra">B)</span>Memória reservada para guardar dados em cache e acelerar o acesso.</li>
+                        <li><span class="letra">C)</span>Porta do firewall.</li>
+                        <li><span class="letra">D)</span>Quantidade de usuários do sistema operacional.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">timezone</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que ajustar o parâmetro timezone para &#x27;America/Sao_Paulo&#x27; num sistema brasileiro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para aumentar o número de conexões.</li>
+                        <li><span class="letra">B)</span>Para liberar a porta 5432.</li>
+                        <li><span class="letra">C)</span>Para que datas e horas sejam gravadas e mostradas no fuso correto.</li>
+                        <li><span class="letra">D)</span>Para que o banco aceite acentos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">log_connections</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ligar log_connections ajuda em quê?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Trocar a senha a cada conexão.</li>
+                        <li><span class="letra">B)</span>Apagar conexões antigas automaticamente.</li>
+                        <li><span class="letra">C)</span>Registrar cada conexão no log, o que apoia a auditoria de acesso.</li>
+                        <li><span class="letra">D)</span>Desligar o firewall.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">ALTER SYSTEM</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz ALTER SYSTEM SET timezone = &#x27;America/Sao_Paulo&#x27;;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga o fuso horário do sistema operacional.</li>
+                        <li><span class="letra">B)</span>Troca a senha do usuário postgres.</li>
+                        <li><span class="letra">C)</span>Cria uma tabela chamada timezone.</li>
+                        <li><span class="letra">D)</span>Grava o novo valor do parâmetro na configuração do servidor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">pg_reload_conf</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz SELECT pg_reload_conf();?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Reinstala o PostgreSQL.</li>
+                        <li><span class="letra">B)</span>Desliga o servidor imediatamente.</li>
+                        <li><span class="letra">C)</span>Recarrega a configuração e aplica parâmetros que não exigem reinício, sem derrubar conexões.</li>
+                        <li><span class="letra">D)</span>Apaga todas as tabelas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Parâmetro que Exige Restart</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual destes parâmetros só vale depois de reiniciar o serviço?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nenhum parâmetro exige reinício.</li>
+                        <li><span class="letra">B)</span>timezone.</li>
+                        <li><span class="letra">C)</span>port.</li>
+                        <li><span class="letra">D)</span>log_connections.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Reload ou Restart</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a diferença entre reload e restart do PostgreSQL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O reload apaga os dados e o restart os recupera.</li>
+                        <li><span class="letra">B)</span>O reload aplica mudanças simples sem derrubar conexões; o restart é necessário para porta, endereços e memória e derruba as conexões.</li>
+                        <li><span class="letra">C)</span>O restart só funciona no Linux.</li>
+                        <li><span class="letra">D)</span>Não há diferença entre os dois.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Quando Fazer Restart</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando deve ser feito o restart do servidor de banco em produção?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A cada consulta executada.</li>
+                        <li><span class="letra">B)</span>Fora do horário de uso, porque derruba as conexões abertas.</li>
+                        <li><span class="letra">C)</span>No horário de maior movimento, para testar.</li>
+                        <li><span class="letra">D)</span>Nunca, mesmo ao mudar a porta.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Linha do pg_hba.conf</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na linha &quot;host escola_db app_escola 10.0.0.20/32 scram-sha-256&quot;, o que significa 10.0.0.20/32?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O tamanho máximo do banco.</li>
+                        <li><span class="letra">B)</span>A porta do servidor.</li>
+                        <li><span class="letra">C)</span>O endereço de onde a conexão é permitida, no caso apenas o servidor 10.0.0.20.</li>
+                        <li><span class="letra">D)</span>A senha do usuário.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Método scram-sha-256</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O método de autenticação scram-sha-256 no pg_hba.conf:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Bloqueia todos os usuários.</li>
+                        <li><span class="letra">B)</span>Só funciona sem rede.</li>
+                        <li><span class="letra">C)</span>Exige senha protegida e é o método recomendado.</li>
+                        <li><span class="letra">D)</span>Deixa entrar sem senha.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Método trust</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o método trust não deve ser usado num servidor real?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque deixa entrar sem senha quem combinar com a linha.</li>
+                        <li><span class="letra">B)</span>Porque não funciona com UTF8.</li>
+                        <li><span class="letra">C)</span>Porque apaga o banco ao conectar.</li>
+                        <li><span class="letra">D)</span>Porque é lento demais.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Ordem das Linhas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Sobre a ordem das linhas do pg_hba.conf, é correto afirmar:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A ordem das linhas não faz diferença.</li>
+                        <li><span class="letra">B)</span>Todas as linhas são aplicadas ao mesmo tempo.</li>
+                        <li><span class="letra">C)</span>Vale sempre a última linha do arquivo.</li>
+                        <li><span class="letra">D)</span>Vale a primeira linha que combinar com a conexão.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Depois de Alterar o pg_hba.conf</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois de alterar o pg_hba.conf, o que é preciso fazer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Recarregar a configuração, por exemplo com SELECT pg_reload_conf();</li>
+                        <li><span class="letra">B)</span>Criar um novo superusuário.</li>
+                        <li><span class="letra">C)</span>Apagar a pasta de dados.</li>
+                        <li><span class="letra">D)</span>Reinstalar o PostgreSQL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Erro no pg_hba.conf</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um estagiário tenta conectar do próprio notebook e recebe &quot;no pg_hba.conf entry&quot;. O que isso indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que a codificação está errada.</li>
+                        <li><span class="letra">B)</span>Que não há linha no pg_hba.conf permitindo aquele usuário, banco e endereço.</li>
+                        <li><span class="letra">C)</span>Que o banco foi apagado.</li>
+                        <li><span class="letra">D)</span>Que o disco está cheio.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Criar o Banco</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando cria o banco escola_db com codificação UTF8?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>NEW DATABASE escola_db;</li>
+                        <li><span class="letra">B)</span>INSERT DATABASE escola_db;</li>
+                        <li><span class="letra">C)</span>CREATE DATABASE escola_db ENCODING &#x27;UTF8&#x27;;</li>
+                        <li><span class="letra">D)</span>CREATE TABLE escola_db;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Criar o Usuário da Aplicação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando cria o usuário app_escola com permissão de login e senha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SELECT app_escola FROM usuarios;</li>
+                        <li><span class="letra">B)</span>CREATE ROLE app_escola LOGIN PASSWORD &#x27;senha-forte&#x27;;</li>
+                        <li><span class="letra">C)</span>DROP ROLE app_escola;</li>
+                        <li><span class="letra">D)</span>CREATE TABLE app_escola;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">GRANT CONNECT</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz GRANT CONNECT ON DATABASE escola_db TO app_escola;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dá ao app_escola todos os poderes de superusuário.</li>
+                        <li><span class="letra">B)</span>Permite que o usuário app_escola se conecte ao banco escola_db.</li>
+                        <li><span class="letra">C)</span>Apaga o banco escola_db.</li>
+                        <li><span class="letra">D)</span>Cria uma tabela de conexões.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Por Que um Usuário Próprio</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a aplicação deve usar um usuário próprio, como app_escola, em vez do postgres?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque assim ela tem só as permissões necessárias e um invasor não ganha poder total sobre o servidor.</li>
+                        <li><span class="letra">B)</span>Porque o postgres não consegue ler tabelas.</li>
+                        <li><span class="letra">C)</span>Porque o postgres só funciona no Linux.</li>
+                        <li><span class="letra">D)</span>Porque o usuário próprio dispensa senha.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Testar o Usuário Novo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando testa a conexão com o novo usuário no banco escola_db?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>CREATE ROLE teste;</li>
+                        <li><span class="letra">B)</span>psql --apagar app_escola</li>
+                        <li><span class="letra">C)</span>psql -U app_escola -h localhost -d escola_db</li>
+                        <li><span class="letra">D)</span>systemctl delete escola_db</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">String de Conexão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na string postgresql://app_escola:SENHA@10.0.0.30:5432/escola_db, o que é 10.0.0.30?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O endereço do servidor de banco.</li>
+                        <li><span class="letra">B)</span>O nome do banco.</li>
+                        <li><span class="letra">C)</span>O usuário da aplicação.</li>
+                        <li><span class="letra">D)</span>A versão do PostgreSQL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Partes da String</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na mesma string de conexão, o que indicam 5432 e escola_db?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A porta do servidor e o nome do banco.</li>
+                        <li><span class="letra">B)</span>O número de tabelas e o nome do usuário.</li>
+                        <li><span class="letra">C)</span>O máximo de conexões e a codificação.</li>
+                        <li><span class="letra">D)</span>A senha e o fuso horário.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Variável de Ambiente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Onde deve ficar a senha usada pelo back-end para conectar ao banco?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Escrita diretamente no código-fonte.</li>
+                        <li><span class="letra">B)</span>Num comentário do README.</li>
+                        <li><span class="letra">C)</span>No arquivo HTML da página de login.</li>
+                        <li><span class="letra">D)</span>Numa variável de ambiente configurada no servidor, como DATABASE_URL, fora do código.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Arquivo .env</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O arquivo .env com a string de conexão deve:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ser colado no chat da turma.</li>
+                        <li><span class="letra">B)</span>Ser publicado no site junto com as páginas.</li>
+                        <li><span class="letra">C)</span>Ser enviado por e-mail para todos os alunos.</li>
+                        <li><span class="letra">D)</span>Ficar fora do repositório, sem ser enviado ao Git.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Caminho da Requisição</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na infraestrutura da aula, qual é o caminho de uma requisição?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Navegador para o back-end, e o back-end para o servidor de banco pela rede interna.</li>
+                        <li><span class="letra">B)</span>Back-end para o navegador, que grava no disco do servidor.</li>
+                        <li><span class="letra">C)</span>Navegador direto para o banco, sem back-end.</li>
+                        <li><span class="letra">D)</span>Banco para o navegador, sem passar pela rede.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Banco em Rede Interna</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que o servidor de banco deve ficar numa rede interna?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para dispensar o backup.</li>
+                        <li><span class="letra">B)</span>Para que só o back-end e os administradores consigam alcançá-lo, protegendo os dados.</li>
+                        <li><span class="letra">C)</span>Para que o banco funcione sem energia.</li>
+                        <li><span class="letra">D)</span>Para que o banco aceite mais acentos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Firewall do Banco</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual regra de firewall é adequada para o servidor de banco da escola?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Bloquear também o back-end.</li>
+                        <li><span class="letra">B)</span>Liberar a porta 5432 apenas para o servidor do back-end.</li>
+                        <li><span class="letra">C)</span>Liberar a porta 5432 para toda a internet.</li>
+                        <li><span class="letra">D)</span>Desligar o firewall para facilitar.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Muitos Acessos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O sistema terá muitos acessos simultâneos. Qual decisão de infraestrutura ajuda?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Usar o método trust para ganhar velocidade.</li>
+                        <li><span class="letra">B)</span>Desligar o log do servidor.</li>
+                        <li><span class="letra">C)</span>Ajustar max_connections e usar um pool de conexões no back-end.</li>
+                        <li><span class="letra">D)</span>Diminuir max_connections para 1.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Pool de Conexões</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz um pool de conexões no back-end?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apaga as conexões antigas do banco.</li>
+                        <li><span class="letra">B)</span>Guarda as senhas dos usuários no navegador.</li>
+                        <li><span class="letra">C)</span>Cria um banco novo para cada usuário.</li>
+                        <li><span class="letra">D)</span>Reaproveita um conjunto de conexões abertas com o banco, em vez de abrir uma nova a cada pedido.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Disponibilidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que o sistema esteja sempre disponível e recuperável, qual decisão de infraestrutura é adequada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Backup automático em outro disco e monitoramento do servidor.</li>
+                        <li><span class="letra">B)</span>Não fazer backup para economizar espaço.</li>
+                        <li><span class="letra">C)</span>Desligar o servidor à noite sem aviso.</li>
+                        <li><span class="letra">D)</span>Guardar o único backup no mesmo disco do banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Desempenho e Infraestrutura</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual decisão de infraestrutura melhora o desempenho do banco?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Memória suficiente para o shared_buffers e disco rápido.</li>
+                        <li><span class="letra">B)</span>Senha mais curta.</li>
+                        <li><span class="letra">C)</span>Tela maior no servidor.</li>
+                        <li><span class="letra">D)</span>Teclado sem fio no servidor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Datas Erradas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">As matrículas aparecem com três horas de diferença. O que conferir primeiro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Se o timezone do banco é o mesmo da aplicação.</li>
+                        <li><span class="letra">B)</span>Se a porta é 5432.</li>
+                        <li><span class="letra">C)</span>Se o pgAdmin está atualizado.</li>
+                        <li><span class="letra">D)</span>Se o método é scram-sha-256.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Correlação Característica e Infraestrutura</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Correlacionar características do banco com a infraestrutura significa:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Escolher configurações e recursos de servidor e rede de acordo com o que o sistema precisa.</li>
+                        <li><span class="letra">B)</span>Usar a mesma senha em todos os servidores.</li>
+                        <li><span class="letra">C)</span>Desligar recursos de segurança para ganhar tempo.</li>
+                        <li><span class="letra">D)</span>Instalar o banco no mesmo computador do aluno.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Escola: Endereços</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na escola de cursos livres, o back-end está em 10.0.0.20 e o banco em 10.0.0.30. Qual configuração do pg_hba.conf é coerente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não ter nenhuma linha para o back-end.</li>
+                        <li><span class="letra">B)</span>Liberar só o notebook do estagiário.</li>
+                        <li><span class="letra">C)</span>Liberar todos os usuários de qualquer endereço com trust.</li>
+                        <li><span class="letra">D)</span>Liberar o usuário app_escola no banco escola_db apenas a partir de 10.0.0.20.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Escola: listen_addresses</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para que o banco da escola aceite conexões do back-end pela rede, qual configuração é coerente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>listen_addresses com o endereço do navegador do aluno.</li>
+                        <li><span class="letra">B)</span>listen_addresses = &#x27;localhost&#x27; apenas.</li>
+                        <li><span class="letra">C)</span>Apagar o parâmetro listen_addresses.</li>
+                        <li><span class="letra">D)</span>listen_addresses = &#x27;10.0.0.30&#x27;, o endereço do servidor de banco na rede interna.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Dados de Configuração</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando mostra o valor atual de max_connections?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SET max_connections TO nada;</li>
+                        <li><span class="letra">B)</span>SHOW max_connections;</li>
+                        <li><span class="letra">C)</span>DROP max_connections;</li>
+                        <li><span class="letra">D)</span>SELECT max_connections FROM alunos;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Pasta da Configuração no Linux</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No Linux (Debian/Ubuntu), onde normalmente ficam os arquivos de configuração do PostgreSQL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Na pasta do pgAdmin no Windows.</li>
+                        <li><span class="letra">B)</span>Em /etc/postgresql/versão/main/.</li>
+                        <li><span class="letra">C)</span>Em /home/aluno/Downloads/.</li>
+                        <li><span class="letra">D)</span>Dentro do navegador.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Ficha de Configuração</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que deve constar na ficha de configuração entregue na aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As notas da turma.</li>
+                        <li><span class="letra">B)</span>O print da tela inicial do Windows.</li>
+                        <li><span class="letra">C)</span>Parâmetros ajustados, linhas do pg_hba.conf, banco e usuário criados, string de conexão sem a senha real e desenho da infraestrutura.</li>
+                        <li><span class="letra">D)</span>Somente a senha do postgres.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Permissões nas Tabelas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois do GRANT CONNECT, o usuário app_escola já pode ler todas as tabelas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não, o usuário nunca poderá acessar tabelas.</li>
+                        <li><span class="letra">B)</span>Sim, e também apaga tabelas.</li>
+                        <li><span class="letra">C)</span>Sim, o CONNECT dá acesso total.</li>
+                        <li><span class="letra">D)</span>Não; as permissões em cada tabela são dadas depois, com GRANT SELECT, INSERT e outras.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Erro Típico de Infraestrutura</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual situação é um erro de infraestrutura?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O back-end conectar ao banco pela rede interna.</li>
+                        <li><span class="letra">B)</span>O banco ficar acessível pela internet com a porta aberta para qualquer endereço.</li>
+                        <li><span class="letra">C)</span>O backup ficar em outro disco.</li>
+                        <li><span class="letra">D)</span>A senha ficar numa variável de ambiente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Parâmetro de Memória</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Em geral, qual é uma referência comum para o shared_buffers de um servidor dedicado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Toda a memória RAM, sem sobrar nada.</li>
+                        <li><span class="letra">B)</span>Zero, para não usar memória.</li>
+                        <li><span class="letra">C)</span>Cerca de 25% da memória RAM do servidor.</li>
+                        <li><span class="letra">D)</span>O mesmo valor da porta.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Mudança Sem Derrubar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual mudança pode ser aplicada com reload, sem derrubar as conexões?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O aumento do shared_buffers.</li>
+                        <li><span class="letra">B)</span>Uma nova linha no pg_hba.conf.</li>
+                        <li><span class="letra">C)</span>A troca da porta de 5432 para 5433.</li>
+                        <li><span class="letra">D)</span>A mudança de listen_addresses.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Monte a Arquitetura</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica &quot;Monte a arquitetura&quot;, para a necessidade &quot;só o back-end pode acessar o banco&quot;, qual peça é a resposta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um backup em pendrive.</li>
+                        <li><span class="letra">B)</span>Uma senha no código do front-end.</li>
+                        <li><span class="letra">C)</span>Um navegador conectado direto ao banco.</li>
+                        <li><span class="letra">D)</span>Firewall liberando a porta 5432 apenas para o servidor do back-end, com a linha correspondente no pg_hba.conf.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Aula 04: Configuração do SGBD e Infraestrutura do Sistema</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

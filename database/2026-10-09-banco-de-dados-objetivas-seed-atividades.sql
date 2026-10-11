@@ -1,0 +1,1451 @@
+-- Seed gerado por scripts/gerar-seed-atividades.py — não editar à mão.
+-- Rodar depois de 2026-09-28-atividades-gabarito.sql. Idempotente.
+
+insert into public.turma (codigo, nome, turno, horario) values
+  ('135080', 'AI AOPL 2026/2 M1', 'Manhã', '07:15 às 11:15'),
+  ('135081', 'AI AOPL 2026/2 V1', 'Tarde', '13:15 às 17:15')
+on conflict (codigo) do update set nome = excluded.nome, turno = excluded.turno, horario = excluded.horario;
+
+do $$
+declare
+  v_curso bigint;
+  v_materia bigint;
+  v_aula bigint;
+  v_atividade bigint;
+begin
+  select id into v_curso from public.curso where nome_completo = 'Técnico em Informática para Internet' limit 1;
+  if v_curso is null then
+    insert into public.curso (nome_completo) values ('Técnico em Informática para Internet') returning id into v_curso;
+  end if;
+
+  select id into v_materia from public.materia where descricao = 'BANCO DE DADOS' limit 1;
+  if v_materia is null then
+    insert into public.materia (descricao, curso_id) values ('BANCO DE DADOS', v_curso)
+      returning id into v_materia;
+  else
+    update public.materia set curso_id = v_curso where id = v_materia and curso_id is null;
+  end if;
+
+  insert into public.cursomateria (cursoid, materiaid) values (v_curso, v_materia)
+    on conflict do nothing;
+
+  -- Aula 1: Banco de Dados e SGBD: Conceitos e Usos
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Banco de Dados e SGBD: Conceitos e Usos' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (1, 'Banco de Dados e SGBD: Conceitos e Usos', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Banco de Dados e SGBD: Conceitos e Usos', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Banco de Dados e SGBD: Conceitos e Usos (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-01-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'O Que É um Dado', 'A'),
+      (v_atividade, 2, 'Dado × Informação', 'C'),
+      (v_atividade, 3, 'Definição de Banco de Dados', 'C'),
+      (v_atividade, 4, 'Definição de SGBD', 'D'),
+      (v_atividade, 5, 'Quem Acessa o Arquivo do Banco', 'D'),
+      (v_atividade, 6, 'Funcionalidade de Armazenamento', 'C'),
+      (v_atividade, 7, 'Funcionalidade de Integridade', 'D'),
+      (v_atividade, 8, 'Controle de Acesso', 'A'),
+      (v_atividade, 9, 'Concorrência', 'B'),
+      (v_atividade, 10, 'Recuperação de Falhas', 'C'),
+      (v_atividade, 11, 'Consulta', 'C'),
+      (v_atividade, 12, 'Planilha com Vários Usuários', 'D'),
+      (v_atividade, 13, 'Planilha com Muitos Registros', 'A'),
+      (v_atividade, 14, 'Regra de E-mail Único', 'D'),
+      (v_atividade, 15, 'Redundância', 'A'),
+      (v_atividade, 16, 'Inconsistência', 'B'),
+      (v_atividade, 17, 'Papel do Front-End', 'D'),
+      (v_atividade, 18, 'Papel do Back-End', 'B'),
+      (v_atividade, 19, 'Papel do SGBD na Arquitetura', 'A'),
+      (v_atividade, 20, 'Banco Aberto ao Navegador', 'A'),
+      (v_atividade, 21, 'Linguagem de Conversa com o Banco', 'C'),
+      (v_atividade, 22, 'Banco Relacional', 'A'),
+      (v_atividade, 23, 'Banco Não Relacional', 'B'),
+      (v_atividade, 24, 'Exemplo de SGBD Relacional', 'D'),
+      (v_atividade, 25, 'Exemplo de SGBD Não Relacional', 'D'),
+      (v_atividade, 26, 'SQLite', 'B'),
+      (v_atividade, 27, 'SGBD da UC', 'D'),
+      (v_atividade, 28, 'Motivos do PostgreSQL', 'D'),
+      (v_atividade, 29, 'Tabela', 'A'),
+      (v_atividade, 30, 'Coluna', 'B'),
+      (v_atividade, 31, 'Linha', 'C'),
+      (v_atividade, 32, 'Identificador da Linha', 'B'),
+      (v_atividade, 33, 'Leitura de uma Consulta', 'A'),
+      (v_atividade, 34, 'Cláusula FROM', 'B'),
+      (v_atividade, 35, 'Cláusula WHERE', 'B'),
+      (v_atividade, 36, 'Exemplo de Sistema com Banco', 'A'),
+      (v_atividade, 37, 'Dados de uma Loja Virtual', 'D'),
+      (v_atividade, 38, 'Finalizar Compra', 'B'),
+      (v_atividade, 39, 'Pedido e Pagamento Juntos', 'C'),
+      (v_atividade, 40, 'Banco Bem Modelado', 'C'),
+      (v_atividade, 41, 'Sistema da Escola', 'B'),
+      (v_atividade, 42, 'App de Entregas', 'B'),
+      (v_atividade, 43, 'Usuário do Banco para a Aplicação', 'A'),
+      (v_atividade, 44, 'Dado Pessoal', 'A'),
+      (v_atividade, 45, 'Gestão do Tempo na UC', 'C'),
+      (v_atividade, 46, 'Plano de Estudos', 'C'),
+      (v_atividade, 47, 'Ordem das Etapas da UC', 'B'),
+      (v_atividade, 48, 'Detetive dos Dados', 'A'),
+      (v_atividade, 49, 'Informação para Decisão', 'C'),
+      (v_atividade, 50, 'Relacional ou Não Relacional', 'D');
+
+  -- Aula 2: Gerenciadores: Características, Requisitos e Níveis
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Gerenciadores: Características, Requisitos e Níveis' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (2, 'Gerenciadores: Características, Requisitos e Níveis', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Gerenciadores: Características, Requisitos e Níveis', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Gerenciadores: Características, Requisitos e Níveis (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-02-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Característica Modelo de Dados', 'B'),
+      (v_atividade, 2, 'Licença Livre', 'B'),
+      (v_atividade, 3, 'Licença Comercial', 'C'),
+      (v_atividade, 4, 'O Que É Transação', 'A'),
+      (v_atividade, 5, 'Atomicidade', 'B'),
+      (v_atividade, 6, 'Consistência', 'D'),
+      (v_atividade, 7, 'Isolamento', 'A'),
+      (v_atividade, 8, 'Durabilidade', 'B'),
+      (v_atividade, 9, 'COMMIT', 'B'),
+      (v_atividade, 10, 'ROLLBACK', 'B'),
+      (v_atividade, 11, 'Pedido sem Pagamento', 'A'),
+      (v_atividade, 12, 'Estoque Negativo', 'D'),
+      (v_atividade, 13, 'Escalabilidade Vertical', 'A'),
+      (v_atividade, 14, 'Escalabilidade Horizontal', 'D'),
+      (v_atividade, 15, 'Desempenho', 'C'),
+      (v_atividade, 16, 'Segurança do Gerenciador', 'C'),
+      (v_atividade, 17, 'Ferramentas e Comunidade', 'C'),
+      (v_atividade, 18, 'SQLite', 'B'),
+      (v_atividade, 19, 'MongoDB', 'A'),
+      (v_atividade, 20, 'MySQL e MariaDB', 'D'),
+      (v_atividade, 21, 'SQL Server', 'D'),
+      (v_atividade, 22, 'PostgreSQL e JSON', 'D'),
+      (v_atividade, 23, 'Requisito de Sistema Operacional', 'C'),
+      (v_atividade, 24, 'Requisito de Disco', 'A'),
+      (v_atividade, 25, 'Porta do PostgreSQL', 'B'),
+      (v_atividade, 26, 'Porta do MySQL', 'C'),
+      (v_atividade, 27, 'Porta do SQL Server', 'D'),
+      (v_atividade, 28, 'Requisito de Rede', 'C'),
+      (v_atividade, 29, 'Requisito de Pessoas', 'D'),
+      (v_atividade, 30, 'Requisito de Disponibilidade', 'B'),
+      (v_atividade, 31, 'Níveis de Gerenciamento', 'C'),
+      (v_atividade, 32, 'Nível Externo', 'C'),
+      (v_atividade, 33, 'Nível Conceitual', 'A'),
+      (v_atividade, 34, 'Nível Físico', 'B'),
+      (v_atividade, 35, 'Classificando o Nível 1', 'A'),
+      (v_atividade, 36, 'Classificando o Nível 2', 'D'),
+      (v_atividade, 37, 'Classificando o Nível 3', 'A'),
+      (v_atividade, 38, 'Independência Lógica', 'B'),
+      (v_atividade, 39, 'Independência Física', 'A'),
+      (v_atividade, 40, 'Papel do Usuário Final', 'C'),
+      (v_atividade, 41, 'Papel do Desenvolvedor', 'D'),
+      (v_atividade, 42, 'Papel do DBA', 'B'),
+      (v_atividade, 43, 'Primeiro Passo da Escolha', 'A'),
+      (v_atividade, 44, 'Critério de Escolha', 'A'),
+      (v_atividade, 45, 'Justificativa Registrada', 'B'),
+      (v_atividade, 46, 'Loja Ponto Web', 'C'),
+      (v_atividade, 47, 'App de Anotações', 'D'),
+      (v_atividade, 48, 'Leilão dos Gerenciadores', 'D'),
+      (v_atividade, 49, 'Requisito ou Característica', 'C'),
+      (v_atividade, 50, 'Visão para Cada Setor', 'A');
+
+  -- Aula 3: Preparação do Ambiente: Instalação do PostgreSQL
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Preparação do Ambiente: Instalação do PostgreSQL' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (3, 'Preparação do Ambiente: Instalação do PostgreSQL', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Preparação do Ambiente: Instalação do PostgreSQL', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Preparação do Ambiente: Instalação do PostgreSQL (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-03-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Checklist: Sistema de 64 Bits', 'A'),
+      (v_atividade, 2, 'Checklist: Porta Livre', 'B'),
+      (v_atividade, 3, 'Checklist: Mesma Versão', 'C'),
+      (v_atividade, 4, 'Permissão de Administrador', 'A'),
+      (v_atividade, 5, 'Componente Server', 'C'),
+      (v_atividade, 6, 'Componente psql', 'C'),
+      (v_atividade, 7, 'Componente pgAdmin', 'D'),
+      (v_atividade, 8, 'Stack Builder', 'D'),
+      (v_atividade, 9, 'Pasta de Dados', 'A'),
+      (v_atividade, 10, 'Onde Baixar o Instalador', 'A'),
+      (v_atividade, 11, 'Senha do Superusuário', 'C'),
+      (v_atividade, 12, 'Superusuário na Aplicação', 'D'),
+      (v_atividade, 13, 'Locale', 'B'),
+      (v_atividade, 14, 'Codificação UTF8', 'D'),
+      (v_atividade, 15, 'Componentes Necessários', 'A'),
+      (v_atividade, 16, 'Instalação no Linux', 'B'),
+      (v_atividade, 17, 'Status do Serviço no Linux', 'A'),
+      (v_atividade, 18, 'Entrar como postgres no Linux', 'A'),
+      (v_atividade, 19, 'Versão do Cliente', 'B'),
+      (v_atividade, 20, 'Conectando pelo psql', 'C'),
+      (v_atividade, 21, 'SELECT version()', 'B'),
+      (v_atividade, 22, 'Comando \l', 'B'),
+      (v_atividade, 23, 'Comando \conninfo', 'B'),
+      (v_atividade, 24, 'Comando \q', 'D'),
+      (v_atividade, 25, 'Registrando no pgAdmin', 'C'),
+      (v_atividade, 26, 'Bancos Iniciais', 'A'),
+      (v_atividade, 27, 'O Que É um Serviço', 'C'),
+      (v_atividade, 28, 'Serviço Parado', 'C'),
+      (v_atividade, 29, 'Iniciar o Serviço no Windows', 'C'),
+      (v_atividade, 30, 'Iniciar com o Sistema no Linux', 'B'),
+      (v_atividade, 31, 'Connection Refused', 'C'),
+      (v_atividade, 32, 'Password Authentication Failed', 'B'),
+      (v_atividade, 33, 'Porta em Uso na Instalação', 'D'),
+      (v_atividade, 34, 'psql Não Reconhecido', 'B'),
+      (v_atividade, 35, 'Acentos Errados', 'B'),
+      (v_atividade, 36, 'Roteiro de Instalação', 'B'),
+      (v_atividade, 37, 'Menos Componentes', 'B'),
+      (v_atividade, 38, 'Ordem da Preparação', 'D'),
+      (v_atividade, 39, 'Psql ou pgAdmin', 'A'),
+      (v_atividade, 40, 'Escola de Cursos Livres', 'D'),
+      (v_atividade, 41, 'Ambiente Igual na Equipe', 'D'),
+      (v_atividade, 42, 'Pane: Porta Ocupada', 'A'),
+      (v_atividade, 43, 'Pane: Serviço', 'A'),
+      (v_atividade, 44, 'Firewall', 'A'),
+      (v_atividade, 45, 'Senha em Local Seguro', 'C'),
+      (v_atividade, 46, 'Pasta de Dados e Backup', 'D'),
+      (v_atividade, 47, 'Primeiro Uso do Ambiente', 'D'),
+      (v_atividade, 48, 'Codificação na Criação do Banco', 'D'),
+      (v_atividade, 49, 'Instalação Concluída', 'A'),
+      (v_atividade, 50, 'Erro Comum de Segurança', 'C');
+
+  -- Aula 4: Configuração do SGBD e Infraestrutura do Sistema
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Configuração do SGBD e Infraestrutura do Sistema' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (4, 'Configuração do SGBD e Infraestrutura do Sistema', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Configuração do SGBD e Infraestrutura do Sistema', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Configuração do SGBD e Infraestrutura do Sistema (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-04-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Arquivo postgresql.conf', 'B'),
+      (v_atividade, 2, 'Arquivo pg_hba.conf', 'A'),
+      (v_atividade, 3, 'Localizar a Configuração', 'A'),
+      (v_atividade, 4, 'Localizar o pg_hba.conf', 'D'),
+      (v_atividade, 5, 'listen_addresses', 'D'),
+      (v_atividade, 6, 'listen_addresses = ''localhost''', 'C'),
+      (v_atividade, 7, 'Parâmetro port', 'A'),
+      (v_atividade, 8, 'max_connections', 'D'),
+      (v_atividade, 9, 'shared_buffers', 'B'),
+      (v_atividade, 10, 'timezone', 'C'),
+      (v_atividade, 11, 'log_connections', 'C'),
+      (v_atividade, 12, 'ALTER SYSTEM', 'D'),
+      (v_atividade, 13, 'pg_reload_conf', 'C'),
+      (v_atividade, 14, 'Parâmetro que Exige Restart', 'C'),
+      (v_atividade, 15, 'Reload ou Restart', 'B'),
+      (v_atividade, 16, 'Quando Fazer Restart', 'B'),
+      (v_atividade, 17, 'Linha do pg_hba.conf', 'C'),
+      (v_atividade, 18, 'Método scram-sha-256', 'C'),
+      (v_atividade, 19, 'Método trust', 'A'),
+      (v_atividade, 20, 'Ordem das Linhas', 'D'),
+      (v_atividade, 21, 'Depois de Alterar o pg_hba.conf', 'A'),
+      (v_atividade, 22, 'Erro no pg_hba.conf', 'B'),
+      (v_atividade, 23, 'Criar o Banco', 'C'),
+      (v_atividade, 24, 'Criar o Usuário da Aplicação', 'B'),
+      (v_atividade, 25, 'GRANT CONNECT', 'B'),
+      (v_atividade, 26, 'Por Que um Usuário Próprio', 'A'),
+      (v_atividade, 27, 'Testar o Usuário Novo', 'C'),
+      (v_atividade, 28, 'String de Conexão', 'A'),
+      (v_atividade, 29, 'Partes da String', 'A'),
+      (v_atividade, 30, 'Variável de Ambiente', 'D'),
+      (v_atividade, 31, 'Arquivo .env', 'D'),
+      (v_atividade, 32, 'Caminho da Requisição', 'A'),
+      (v_atividade, 33, 'Banco em Rede Interna', 'B'),
+      (v_atividade, 34, 'Firewall do Banco', 'B'),
+      (v_atividade, 35, 'Muitos Acessos', 'C'),
+      (v_atividade, 36, 'Pool de Conexões', 'D'),
+      (v_atividade, 37, 'Disponibilidade', 'A'),
+      (v_atividade, 38, 'Desempenho e Infraestrutura', 'A'),
+      (v_atividade, 39, 'Datas Erradas', 'A'),
+      (v_atividade, 40, 'Correlação Característica e Infraestrutura', 'A'),
+      (v_atividade, 41, 'Escola: Endereços', 'D'),
+      (v_atividade, 42, 'Escola: listen_addresses', 'D'),
+      (v_atividade, 43, 'Dados de Configuração', 'B'),
+      (v_atividade, 44, 'Pasta da Configuração no Linux', 'B'),
+      (v_atividade, 45, 'Ficha de Configuração', 'C'),
+      (v_atividade, 46, 'Permissões nas Tabelas', 'D'),
+      (v_atividade, 47, 'Erro Típico de Infraestrutura', 'B'),
+      (v_atividade, 48, 'Parâmetro de Memória', 'C'),
+      (v_atividade, 49, 'Mudança Sem Derrubar', 'B'),
+      (v_atividade, 50, 'Monte a Arquitetura', 'D');
+
+  -- Aula 5: Demandas do Cliente e Escopo do Projeto
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Demandas do Cliente e Escopo do Projeto' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (5, 'Demandas do Cliente e Escopo do Projeto', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Demandas do Cliente e Escopo do Projeto', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Demandas do Cliente e Escopo do Projeto (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-05-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Demanda e Necessidade', 'A'),
+      (v_atividade, 2, 'Para Quem o Banco É Modelado', 'D'),
+      (v_atividade, 3, 'Entrevista', 'A'),
+      (v_atividade, 4, 'Questionário', 'B'),
+      (v_atividade, 5, 'Observação', 'D'),
+      (v_atividade, 6, 'Análise de Documentos', 'B'),
+      (v_atividade, 7, 'Pergunta Aberta', 'A'),
+      (v_atividade, 8, 'Pergunta sobre Regras', 'A'),
+      (v_atividade, 9, 'Pergunta sobre Acesso', 'D'),
+      (v_atividade, 10, 'Requisito de Dados', 'B'),
+      (v_atividade, 11, 'Dados a Guardar', 'C'),
+      (v_atividade, 12, 'Consultas e Relatórios', 'A'),
+      (v_atividade, 13, 'Regra de Negócio', 'D'),
+      (v_atividade, 14, 'Requisito de Acesso', 'D'),
+      (v_atividade, 15, 'Volume e Histórico', 'C'),
+      (v_atividade, 16, 'Qualidade dos Dados', 'B'),
+      (v_atividade, 17, 'Requisito Verificável', 'A'),
+      (v_atividade, 18, 'Substantivos do Pedido', 'C'),
+      (v_atividade, 19, 'Características do Pedido', 'C'),
+      (v_atividade, 20, 'CPF Não se Repete', 'A'),
+      (v_atividade, 21, 'Matrícula com Aluno e Turma', 'A'),
+      (v_atividade, 22, 'Valor Maior que Zero', 'C'),
+      (v_atividade, 23, 'Limite de Alunos', 'C'),
+      (v_atividade, 24, 'Registrar Quem Alterou', 'B'),
+      (v_atividade, 25, 'Objetivo do Escopo', 'C'),
+      (v_atividade, 26, 'Partes Interessadas', 'B'),
+      (v_atividade, 27, 'Entra no Escopo', 'D'),
+      (v_atividade, 28, 'Não Entra no Escopo', 'B'),
+      (v_atividade, 29, 'Entregas e Prazos', 'A'),
+      (v_atividade, 30, 'Premissas e Riscos', 'B'),
+      (v_atividade, 31, 'Risco do Projeto', 'C'),
+      (v_atividade, 32, 'Mudança de Escopo', 'D'),
+      (v_atividade, 33, 'Projeto sem Controle', 'A'),
+      (v_atividade, 34, 'Requisito Esquecido', 'A'),
+      (v_atividade, 35, 'Gestão do Tempo na SA 1', 'C'),
+      (v_atividade, 36, 'Escola: Necessidade Real', 'D'),
+      (v_atividade, 37, 'Escola: Fora do Escopo', 'B'),
+      (v_atividade, 38, 'Aluno Menor de Idade', 'B'),
+      (v_atividade, 39, 'Dados Pessoais', 'D'),
+      (v_atividade, 40, 'Dinâmica: Pedido Novo', 'C'),
+      (v_atividade, 41, 'Dinâmica: Irmãos com CPF', 'D'),
+      (v_atividade, 42, 'Inadimplentes', 'A'),
+      (v_atividade, 43, 'Justificar Decisões', 'D'),
+      (v_atividade, 44, 'Registro da Entrevista', 'C'),
+      (v_atividade, 45, 'Quem Executa', 'D'),
+      (v_atividade, 46, 'Escopo Mínimo', 'B'),
+      (v_atividade, 47, 'Requisito ou Solução', 'B'),
+      (v_atividade, 48, 'Histórico de 5 Anos', 'A'),
+      (v_atividade, 49, 'Entrega da SA 1', 'B'),
+      (v_atividade, 50, 'Do Escopo ao Modelo', 'C');
+
+  -- Aula 6: Entidades Fortes, Fracas e Associativas
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Entidades Fortes, Fracas e Associativas' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (6, 'Entidades Fortes, Fracas e Associativas', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Entidades Fortes, Fracas e Associativas', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Entidades Fortes, Fracas e Associativas (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-06-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'O Que É o MER', 'C'),
+      (v_atividade, 2, 'MER e Nível Conceitual', 'A'),
+      (v_atividade, 3, 'MER Antes das Tabelas', 'D'),
+      (v_atividade, 4, 'Definição de Entidade', 'B'),
+      (v_atividade, 5, 'Ocorrência', 'A'),
+      (v_atividade, 6, 'Entidade Abstrata', 'D'),
+      (v_atividade, 7, 'Nome da Entidade', 'D'),
+      (v_atividade, 8, 'Entidade ou Atributo 1', 'A'),
+      (v_atividade, 9, 'Entidade ou Atributo 2', 'D'),
+      (v_atividade, 10, 'Pergunta Entidade ou Atributo', 'A'),
+      (v_atividade, 11, 'Entidade Forte', 'C'),
+      (v_atividade, 12, 'Exemplo de Forte', 'D'),
+      (v_atividade, 13, 'Entidade Fraca', 'D'),
+      (v_atividade, 14, 'Entidade Dona', 'A'),
+      (v_atividade, 15, 'Identificação da Fraca', 'A'),
+      (v_atividade, 16, 'Exclusão da Dona', 'A'),
+      (v_atividade, 17, 'Notação da Fraca', 'C'),
+      (v_atividade, 18, 'Dependente', 'A'),
+      (v_atividade, 19, 'Parcela', 'C'),
+      (v_atividade, 20, 'Entidade Associativa', 'B'),
+      (v_atividade, 21, 'Matrícula Associativa', 'D'),
+      (v_atividade, 22, 'Dados da Associativa', 'C'),
+      (v_atividade, 23, 'Item do Pedido', 'C'),
+      (v_atividade, 24, 'Notação da Associativa', 'B'),
+      (v_atividade, 25, 'Passo 1', 'C'),
+      (v_atividade, 26, 'Passo 2', 'D'),
+      (v_atividade, 27, 'Sinônimos', 'A'),
+      (v_atividade, 28, 'Fora do Escopo', 'B'),
+      (v_atividade, 29, 'Justificativa', 'A'),
+      (v_atividade, 30, 'Turma', 'D'),
+      (v_atividade, 31, 'Responsável', 'D'),
+      (v_atividade, 32, 'Turno', 'C'),
+      (v_atividade, 33, 'Professor', 'D'),
+      (v_atividade, 34, 'Endereço na Escola', 'A'),
+      (v_atividade, 35, 'Endereço nas Entregas', 'C'),
+      (v_atividade, 36, 'Nota Fiscal', 'B'),
+      (v_atividade, 37, 'CPF', 'D'),
+      (v_atividade, 38, 'Item 2 do Pedido', 'C'),
+      (v_atividade, 39, 'Associativa e Relacionamento', 'B'),
+      (v_atividade, 40, 'Diferença Fraca e Associativa', 'B'),
+      (v_atividade, 41, 'Dinâmica: Pilha de Atributos', 'B'),
+      (v_atividade, 42, 'Dinâmica: Dependente', 'A'),
+      (v_atividade, 43, 'Dinâmica: Matrícula', 'B'),
+      (v_atividade, 44, 'Entrega da SA 1', 'B'),
+      (v_atividade, 45, 'Próximo Passo', 'B'),
+      (v_atividade, 46, 'Entidade Sem Ocorrências', 'C'),
+      (v_atividade, 47, 'Paciente e Consulta', 'B'),
+      (v_atividade, 48, 'Produto', 'C'),
+      (v_atividade, 49, 'Ordem da Modelagem', 'A'),
+      (v_atividade, 50, 'Identificador Próprio', 'B');
+
+  -- Aula 7: Atributos
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Atributos' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (7, 'Atributos', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Atributos', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Atributos (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-07-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Definição de Atributo', 'D'),
+      (v_atividade, 2, 'Valor do Atributo', 'A'),
+      (v_atividade, 3, 'Notação do Atributo', 'B'),
+      (v_atividade, 4, 'Atributo Simples', 'D'),
+      (v_atividade, 5, 'Exemplo de Simples', 'C'),
+      (v_atividade, 6, 'Atributo Composto', 'C'),
+      (v_atividade, 7, 'Exemplo de Composto', 'B'),
+      (v_atividade, 8, 'Quando Dividir o Composto', 'C'),
+      (v_atividade, 9, 'Composto Vira Colunas', 'B'),
+      (v_atividade, 10, 'Atributo Descritivo', 'A'),
+      (v_atividade, 11, 'Exemplo de Descritivo', 'C'),
+      (v_atividade, 12, 'Atributo Nominativo', 'A'),
+      (v_atividade, 13, 'Exemplo de Nominativo', 'C'),
+      (v_atividade, 14, 'Atributo Referencial', 'D'),
+      (v_atividade, 15, 'Exemplo de Referencial', 'A'),
+      (v_atividade, 16, 'Referencial e Chave Estrangeira', 'D'),
+      (v_atividade, 17, 'Nominativo e Identificador', 'A'),
+      (v_atividade, 18, 'Referencial Mostra Relacionamento', 'D'),
+      (v_atividade, 19, 'Definição de Identificador', 'A'),
+      (v_atividade, 20, 'Regras do Identificador', 'A'),
+      (v_atividade, 21, 'Identificador da Fraca', 'A'),
+      (v_atividade, 22, 'Código Próprio', 'B'),
+      (v_atividade, 23, 'CPF de Criança', 'C'),
+      (v_atividade, 24, 'Nome como Identificador', 'D'),
+      (v_atividade, 25, 'Idade ou Data de Nascimento', 'B'),
+      (v_atividade, 26, 'Vários Telefones num Campo', 'D'),
+      (v_atividade, 27, 'Referencial sem Entidade', 'A'),
+      (v_atividade, 28, 'Dicionário de Atributos', 'C'),
+      (v_atividade, 29, 'Coluna Obrigatório', 'B'),
+      (v_atividade, 30, 'Tipo do Atributo', 'B'),
+      (v_atividade, 31, 'Tamanho do Texto', 'B'),
+      (v_atividade, 32, 'Exemplo no Dicionário', 'D'),
+      (v_atividade, 33, 'Escola: Nome', 'A'),
+      (v_atividade, 34, 'Escola: CPF', 'A'),
+      (v_atividade, 35, 'Escola: Endereço', 'C'),
+      (v_atividade, 36, 'Escola: Curso na Ficha', 'C'),
+      (v_atividade, 37, 'Escola: Data da Matrícula', 'C'),
+      (v_atividade, 38, 'Escola: Turno', 'B'),
+      (v_atividade, 39, 'Nome Descritivo ou Nominativo', 'D'),
+      (v_atividade, 40, 'Preço do Produto', 'D'),
+      (v_atividade, 41, 'Código do Cliente no Pedido', 'B'),
+      (v_atividade, 42, 'Telefone com DDD', 'D'),
+      (v_atividade, 43, 'Situação da Matrícula', 'B'),
+      (v_atividade, 44, 'Dinâmica: Campo Idade', 'C'),
+      (v_atividade, 45, 'Dinâmica: Identificador', 'A'),
+      (v_atividade, 46, 'Entrega da SA 1', 'C'),
+      (v_atividade, 47, 'Próxima Etapa', 'B'),
+      (v_atividade, 48, 'Tipos no PostgreSQL', 'B'),
+      (v_atividade, 49, 'Atributo de Associativa', 'D'),
+      (v_atividade, 50, 'Classificação em Duas Dimensões', 'A');
+
+  -- Aula 8: Relacionamentos 1:1, 1:N e N:N
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Relacionamentos 1:1, 1:N e N:N' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (8, 'Relacionamentos 1:1, 1:N e N:N', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Relacionamentos 1:1, 1:N e N:N', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Relacionamentos 1:1, 1:N e N:N (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-08-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Definição de Relacionamento', 'A'),
+      (v_atividade, 2, 'Nome do Relacionamento', 'D'),
+      (v_atividade, 3, 'Notação do Relacionamento', 'D'),
+      (v_atividade, 4, 'Duas Perguntas', 'B'),
+      (v_atividade, 5, 'Leitura num Sentido Só', 'D'),
+      (v_atividade, 6, 'Um para Um', 'C'),
+      (v_atividade, 7, 'Exemplo de 1:1', 'B'),
+      (v_atividade, 8, 'Implementação do 1:1', 'A'),
+      (v_atividade, 9, 'Um para Muitos', 'A'),
+      (v_atividade, 10, 'Exemplo de 1:N', 'B'),
+      (v_atividade, 11, 'Chave Estrangeira no 1:N', 'C'),
+      (v_atividade, 12, 'Cliente e Pedido', 'A'),
+      (v_atividade, 13, 'Muitos para Muitos', 'C'),
+      (v_atividade, 14, 'Exemplo de N:N', 'A'),
+      (v_atividade, 15, 'Implementação do N:N', 'A'),
+      (v_atividade, 16, 'Associativa do Pedido', 'D'),
+      (v_atividade, 17, 'Associativa da Escola', 'D'),
+      (v_atividade, 18, 'N:N sem Associativa', 'D'),
+      (v_atividade, 19, 'FK no Lado 1', 'B'),
+      (v_atividade, 20, 'Cardinalidade Mínima', 'B'),
+      (v_atividade, 21, 'Participação Opcional', 'C'),
+      (v_atividade, 22, 'Participação Obrigatória', 'A'),
+      (v_atividade, 23, 'Leitura da Notação', 'B'),
+      (v_atividade, 24, 'Pé de Galinha', 'A'),
+      (v_atividade, 25, 'Círculo no Pé de Galinha', 'B'),
+      (v_atividade, 26, 'Traço no Pé de Galinha', 'D'),
+      (v_atividade, 27, 'Autorrelacionamento', 'D'),
+      (v_atividade, 28, 'Exemplo de Autorrelacionamento', 'D'),
+      (v_atividade, 29, 'Implementação do Autorrelacionamento', 'B'),
+      (v_atividade, 30, 'Pré-requisito', 'B'),
+      (v_atividade, 31, 'Cupom e Pedido', 'B'),
+      (v_atividade, 32, 'Aluno e Armário', 'D'),
+      (v_atividade, 33, 'Médico e Paciente', 'A'),
+      (v_atividade, 34, 'Matrícula e Parcela', 'C'),
+      (v_atividade, 35, 'Responsável e Aluno', 'B'),
+      (v_atividade, 36, 'Professor e Turma', 'B'),
+      (v_atividade, 37, 'Curso e Turma na Escola', 'C'),
+      (v_atividade, 38, 'Obrigatória sem Perguntar', 'A'),
+      (v_atividade, 39, 'FK e Referencial', 'A'),
+      (v_atividade, 40, 'Dados da Ligação', 'B'),
+      (v_atividade, 41, 'Dinâmica: Duas Perguntas em Voz Alta', 'C'),
+      (v_atividade, 42, 'Dinâmica: Divergência', 'A'),
+      (v_atividade, 43, 'Entrega da SA 1', 'A'),
+      (v_atividade, 44, 'Próximo Passo', 'C'),
+      (v_atividade, 45, 'Turma e Sala', 'C'),
+      (v_atividade, 46, 'Produto e Categoria', 'C'),
+      (v_atividade, 47, 'Autor e Livro', 'C'),
+      (v_atividade, 48, 'Cardinalidade Máxima e Mínima', 'D'),
+      (v_atividade, 49, 'Ligação com a Aula 6', 'C'),
+      (v_atividade, 50, 'Verbo nos Dois Sentidos', 'D');
+
+  -- Aula 9: Diagrama Entidade-Relacionamento (DER)
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Diagrama Entidade-Relacionamento (DER)' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (9, 'Diagrama Entidade-Relacionamento (DER)', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Diagrama Entidade-Relacionamento (DER)', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Diagrama Entidade-Relacionamento (DER) (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-09-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'O Que É o DER', 'D'),
+      (v_atividade, 2, 'Forma da Entidade', 'C'),
+      (v_atividade, 3, 'Forma do Relacionamento', 'A'),
+      (v_atividade, 4, 'Forma do Atributo', 'A'),
+      (v_atividade, 5, 'Identificador no DER', 'A'),
+      (v_atividade, 6, 'Entidade Fraca no DER', 'C'),
+      (v_atividade, 7, 'Atributo Composto no DER', 'C'),
+      (v_atividade, 8, 'Associativa no DER', 'D'),
+      (v_atividade, 9, 'Cardinalidade no DER', 'A'),
+      (v_atividade, 10, 'Notação Pé de Galinha', 'A'),
+      (v_atividade, 11, 'Caixa no Pé de Galinha', 'A'),
+      (v_atividade, 12, 'Tridente', 'A'),
+      (v_atividade, 13, 'N:N no Pé de Galinha', 'C'),
+      (v_atividade, 14, 'Conversão para Pé de Galinha', 'D'),
+      (v_atividade, 15, 'Conceitual e Lógico', 'A'),
+      (v_atividade, 16, 'Para Que Serve o Lógico', 'D'),
+      (v_atividade, 17, 'Passo 1 do Desenho', 'A'),
+      (v_atividade, 18, 'Passo do Verbo', 'B'),
+      (v_atividade, 19, 'Linhas Cruzadas', 'A'),
+      (v_atividade, 20, 'Nomes no DER', 'C'),
+      (v_atividade, 21, 'brModelo', 'C'),
+      (v_atividade, 22, 'draw.io', 'B'),
+      (v_atividade, 23, 'pgAdmin ERD Tool', 'B'),
+      (v_atividade, 24, 'Checklist: Requisitos', 'D'),
+      (v_atividade, 25, 'Checklist: Identificador', 'D'),
+      (v_atividade, 26, 'Checklist: Relacionamentos', 'D'),
+      (v_atividade, 27, 'Checklist: Atributo Repetido', 'A'),
+      (v_atividade, 28, 'Checklist: Legibilidade', 'C'),
+      (v_atividade, 29, 'Checklist: Fraca e Dona', 'B'),
+      (v_atividade, 30, 'Revisão em Dupla', 'B'),
+      (v_atividade, 31, 'Atitude do Revisor', 'D'),
+      (v_atividade, 32, 'Atitude do Autor', 'C'),
+      (v_atividade, 33, 'Registro das Mudanças', 'C'),
+      (v_atividade, 34, 'Escola: Associativa MATRÍCULA', 'C'),
+      (v_atividade, 35, 'Escola: PARCELA', 'A'),
+      (v_atividade, 36, 'Escola: Professor e Turma', 'B'),
+      (v_atividade, 37, 'Escola: Sugestão da Revisão', 'D'),
+      (v_atividade, 38, 'Escola: Curso e Turma', 'B'),
+      (v_atividade, 39, 'Escola: Responsável', 'B'),
+      (v_atividade, 40, 'Dinâmica: Revisão Cruzada', 'B'),
+      (v_atividade, 41, 'Dinâmica: O Que o Autor Registra', 'C'),
+      (v_atividade, 42, 'Entrega da SA 1', 'D'),
+      (v_atividade, 43, 'DER Incompleto', 'C'),
+      (v_atividade, 44, 'N:N no Conceitual', 'D'),
+      (v_atividade, 45, 'DER e Requisitos', 'B'),
+      (v_atividade, 46, 'Erro: Cardinalidade num Lado Só', 'B'),
+      (v_atividade, 47, 'Erro: Associativa sem Chaves', 'A'),
+      (v_atividade, 48, 'Por Que Desenhar', 'B'),
+      (v_atividade, 49, 'Próxima Etapa', 'B'),
+      (v_atividade, 50, 'Legenda do Diagrama', 'D');
+
+  -- Aula 10: Normalização de Dados (1FN, 2FN e 3FN)
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Normalização de Dados (1FN, 2FN e 3FN)' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (10, 'Normalização de Dados (1FN, 2FN e 3FN)', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Normalização de Dados (1FN, 2FN e 3FN)', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Normalização de Dados (1FN, 2FN e 3FN) (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-10-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Objetivo da Normalização', 'B'),
+      (v_atividade, 2, 'Benefício da Normalização', 'D'),
+      (v_atividade, 3, 'Anomalia de Inserção', 'A'),
+      (v_atividade, 4, 'Anomalia de Atualização', 'D'),
+      (v_atividade, 5, 'Anomalia de Exclusão', 'B'),
+      (v_atividade, 6, 'Dependência Funcional', 'B'),
+      (v_atividade, 7, 'Exemplo de Dependência', 'C'),
+      (v_atividade, 8, 'Curso e Carga', 'A'),
+      (v_atividade, 9, 'Definição de 1FN', 'C'),
+      (v_atividade, 10, 'Valor Atômico', 'C'),
+      (v_atividade, 11, 'Telefones na Mesma Célula', 'C'),
+      (v_atividade, 12, 'Grupos Repetidos', 'D'),
+      (v_atividade, 13, 'Solução para a 1FN', 'A'),
+      (v_atividade, 14, 'Definição de 2FN', 'D'),
+      (v_atividade, 15, 'Dependência Parcial', 'C'),
+      (v_atividade, 16, '2FN e Chave Simples', 'C'),
+      (v_atividade, 17, 'Nome do Aluno na Matrícula', 'A'),
+      (v_atividade, 18, 'Turno na Matrícula', 'B'),
+      (v_atividade, 19, 'Data da Matrícula', 'A'),
+      (v_atividade, 20, 'Definição de 3FN', 'C'),
+      (v_atividade, 21, 'Dependência Transitiva', 'A'),
+      (v_atividade, 22, 'Carga do Curso na Turma', 'A'),
+      (v_atividade, 23, 'Correção da 3FN', 'D'),
+      (v_atividade, 24, 'Regra de Bolso', 'D'),
+      (v_atividade, 25, 'Ordem das Formas Normais', 'D'),
+      (v_atividade, 26, 'Resultado da Escola', 'A'),
+      (v_atividade, 27, 'Normalização e DER', 'B'),
+      (v_atividade, 28, 'Mudança da Carga', 'B'),
+      (v_atividade, 29, 'Pedido com Dados do Cliente', 'C'),
+      (v_atividade, 30, 'Correção do Pedido', 'B'),
+      (v_atividade, 31, 'Item do Pedido', 'B'),
+      (v_atividade, 32, 'Preço no Item', 'D'),
+      (v_atividade, 33, 'Desnormalização', 'D'),
+      (v_atividade, 34, 'Justificar a Separação', 'A'),
+      (v_atividade, 35, 'Biblioteca', 'C'),
+      (v_atividade, 36, 'Clínica', 'A'),
+      (v_atividade, 37, 'Endereço em Várias Partes', 'C'),
+      (v_atividade, 38, 'Tabela sem Chave', 'B'),
+      (v_atividade, 39, 'Redundância e Normalização', 'C'),
+      (v_atividade, 40, 'Anomalia e Consequência', 'A'),
+      (v_atividade, 41, 'Dinâmica: Primeiro Passo', 'B'),
+      (v_atividade, 42, 'Dinâmica: Justificativa', 'D'),
+      (v_atividade, 43, 'Entrega da SA 1', 'B'),
+      (v_atividade, 44, 'Chave da Associativa', 'D'),
+      (v_atividade, 45, 'FK Depois da 3FN', 'A'),
+      (v_atividade, 46, 'Dados Contraditórios', 'A'),
+      (v_atividade, 47, 'Curso Novo Sem Aluno', 'B'),
+      (v_atividade, 48, 'Apagar Matrícula', 'B'),
+      (v_atividade, 49, '3FN e Turma', 'C'),
+      (v_atividade, 50, 'Normalização e Requisitos', 'D');
+
+  -- Aula 11: Padronização de Dados, Cronograma e Fluxograma
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Padronização de Dados, Cronograma e Fluxograma' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (11, 'Padronização de Dados, Cronograma e Fluxograma', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Padronização de Dados, Cronograma e Fluxograma', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Padronização de Dados, Cronograma e Fluxograma (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-11-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Por Que Padronizar', 'B'),
+      (v_atividade, 2, 'Nome de Tabela', 'A'),
+      (v_atividade, 3, 'Nome de Coluna', 'B'),
+      (v_atividade, 4, 'Singular', 'B'),
+      (v_atividade, 5, 'Chave Primária', 'A'),
+      (v_atividade, 6, 'Chave Estrangeira', 'A'),
+      (v_atividade, 7, 'Palavra Reservada', 'C'),
+      (v_atividade, 8, 'Espaços e Acentos', 'C'),
+      (v_atividade, 9, 'Coluna Verdadeiro ou Falso', 'C'),
+      (v_atividade, 10, 'Formato de Data', 'D'),
+      (v_atividade, 11, 'Data e a Tela', 'C'),
+      (v_atividade, 12, 'Data com Hora', 'D'),
+      (v_atividade, 13, 'CPF Como Texto', 'A'),
+      (v_atividade, 14, 'Telefone e CEP', 'A'),
+      (v_atividade, 15, 'Valores em Dinheiro', 'C'),
+      (v_atividade, 16, 'E-mail em Minúsculas', 'D'),
+      (v_atividade, 17, 'Nomes Sem Abreviação', 'D'),
+      (v_atividade, 18, 'Domínio', 'B'),
+      (v_atividade, 19, 'Domínio da Situação', 'D'),
+      (v_atividade, 20, 'Garantir o Domínio', 'A'),
+      (v_atividade, 21, 'Sem Domínio', 'A'),
+      (v_atividade, 22, 'Dicionário de Dados Final', 'C'),
+      (v_atividade, 23, 'Dicionário e SQL', 'C'),
+      (v_atividade, 24, 'O Que É Cronograma', 'A'),
+      (v_atividade, 25, 'Dependência no Cronograma', 'B'),
+      (v_atividade, 26, 'Marco', 'A'),
+      (v_atividade, 27, 'Folga', 'D'),
+      (v_atividade, 28, 'Scripts Depois do Modelo', 'B'),
+      (v_atividade, 29, 'Acompanhamento', 'B'),
+      (v_atividade, 30, 'Gantt', 'A'),
+      (v_atividade, 31, 'O Que É Fluxograma', 'A'),
+      (v_atividade, 32, 'Oval', 'C'),
+      (v_atividade, 33, 'Retângulo', 'A'),
+      (v_atividade, 34, 'Losango', 'D'),
+      (v_atividade, 35, 'Paralelogramo', 'D'),
+      (v_atividade, 36, 'Cilindro', 'B'),
+      (v_atividade, 37, 'Setas', 'B'),
+      (v_atividade, 38, 'Decisão da Vaga', 'C'),
+      (v_atividade, 39, 'Gravação no Fluxo', 'B'),
+      (v_atividade, 40, 'Decisão Esquecida', 'C'),
+      (v_atividade, 41, 'Fluxograma e Requisitos', 'C'),
+      (v_atividade, 42, 'Escola: Turno Padronizado', 'D'),
+      (v_atividade, 43, 'Escola: Valor', 'D'),
+      (v_atividade, 44, 'Escola: CPF', 'B'),
+      (v_atividade, 45, 'Dinâmica: Cilindro', 'D'),
+      (v_atividade, 46, 'Dinâmica: Ferramenta', 'C'),
+      (v_atividade, 47, 'Entrega da SA 1', 'B'),
+      (v_atividade, 48, 'Corrigir Nome', 'A'),
+      (v_atividade, 49, 'Responsável no Cronograma', 'B'),
+      (v_atividade, 50, 'Padrão e Back-End', 'D');
+
+  -- Aula 12: DDL: Tabelas e Campos
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'DDL: Tabelas e Campos' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (12, 'DDL: Tabelas e Campos', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('DDL: Tabelas e Campos', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — DDL: Tabelas e Campos (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-12-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'O Que É SQL', 'B'),
+      (v_atividade, 2, 'O Que É DDL', 'C'),
+      (v_atividade, 3, 'Comandos DDL', 'C'),
+      (v_atividade, 4, 'Comandos DML', 'A'),
+      (v_atividade, 5, 'Tipo para Inteiros', 'A'),
+      (v_atividade, 6, 'Tipo para Dinheiro', 'B'),
+      (v_atividade, 7, 'numeric(10,2)', 'B'),
+      (v_atividade, 8, 'varchar(n)', 'C'),
+      (v_atividade, 9, 'text', 'D'),
+      (v_atividade, 10, 'char(2)', 'A'),
+      (v_atividade, 11, 'boolean', 'A'),
+      (v_atividade, 12, 'date', 'D'),
+      (v_atividade, 13, 'timestamptz', 'A'),
+      (v_atividade, 14, 'CPF no CREATE TABLE', 'A'),
+      (v_atividade, 15, 'CREATE TABLE', 'A'),
+      (v_atividade, 16, 'Identificador Automático', 'B'),
+      (v_atividade, 17, 'NOT NULL', 'A'),
+      (v_atividade, 18, 'DEFAULT', 'C'),
+      (v_atividade, 19, 'DEFAULT now()', 'A'),
+      (v_atividade, 20, 'Comando \dt', 'D'),
+      (v_atividade, 21, 'Comando \d aluno', 'B'),
+      (v_atividade, 22, 'ADD COLUMN', 'B'),
+      (v_atividade, 23, 'RENAME COLUMN', 'C'),
+      (v_atividade, 24, 'ALTER TYPE', 'B'),
+      (v_atividade, 25, 'SET NOT NULL', 'C'),
+      (v_atividade, 26, 'Falha do SET NOT NULL', 'D'),
+      (v_atividade, 27, 'DROP COLUMN', 'A'),
+      (v_atividade, 28, 'RENAME TO', 'A'),
+      (v_atividade, 29, 'DROP TABLE', 'C'),
+      (v_atividade, 30, 'IF EXISTS', 'C'),
+      (v_atividade, 31, 'Cuidado com DROP', 'D'),
+      (v_atividade, 32, 'Erro Already Exists', 'B'),
+      (v_atividade, 33, 'Script DDL', 'C'),
+      (v_atividade, 34, 'Executar Script', 'C'),
+      (v_atividade, 35, 'Versionar o Script', 'B'),
+      (v_atividade, 36, 'Dinheiro como Float', 'B'),
+      (v_atividade, 37, 'CPF como Integer', 'B'),
+      (v_atividade, 38, 'Ordem no Script', 'D'),
+      (v_atividade, 39, 'Dicionário e Tipo', 'C'),
+      (v_atividade, 40, 'Coluna Opcional', 'D'),
+      (v_atividade, 41, 'Tabelas da Escola', 'B'),
+      (v_atividade, 42, 'Tabela no pgAdmin', 'D'),
+      (v_atividade, 43, 'current_date', 'D'),
+      (v_atividade, 44, 'Dinâmica: Tradutor', 'A'),
+      (v_atividade, 45, 'Dinâmica: Observação', 'D'),
+      (v_atividade, 46, 'Entrega da SA 2', 'B'),
+      (v_atividade, 47, 'SA 2', 'C'),
+      (v_atividade, 48, 'Próxima Aula', 'D'),
+      (v_atividade, 49, 'Nome Padronizado no SQL', 'D'),
+      (v_atividade, 50, 'Estrutura e Dados', 'A');
+
+  -- Aula 13: DDL: Relações, Chaves e Restrições
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'DDL: Relações, Chaves e Restrições' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (13, 'DDL: Relações, Chaves e Restrições', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('DDL: Relações, Chaves e Restrições', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — DDL: Relações, Chaves e Restrições (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-13-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Chave Primária', 'A'),
+      (v_atividade, 2, 'Chave Primária Composta', 'D'),
+      (v_atividade, 3, 'PK da Parcela', 'B'),
+      (v_atividade, 4, 'Chave Estrangeira', 'D'),
+      (v_atividade, 5, 'REFERENCES', 'B'),
+      (v_atividade, 6, 'Integridade Referencial', 'A'),
+      (v_atividade, 7, 'Erro de Chave Estrangeira', 'D'),
+      (v_atividade, 8, 'Associativa com Duas FKs', 'A'),
+      (v_atividade, 9, 'UNIQUE na Matrícula', 'A'),
+      (v_atividade, 10, 'ON DELETE Padrão', 'C'),
+      (v_atividade, 11, 'RESTRICT', 'C'),
+      (v_atividade, 12, 'CASCADE', 'B'),
+      (v_atividade, 13, 'SET NULL', 'B'),
+      (v_atividade, 14, 'CASCADE na Parcela', 'D'),
+      (v_atividade, 15, 'Curso com Turmas', 'B'),
+      (v_atividade, 16, 'Supervisor que Saiu', 'B'),
+      (v_atividade, 17, 'Risco do CASCADE', 'B'),
+      (v_atividade, 18, 'UNIQUE', 'C'),
+      (v_atividade, 19, 'UNIQUE e Vazio', 'B'),
+      (v_atividade, 20, 'CHECK', 'A'),
+      (v_atividade, 21, 'CHECK do Valor', 'A'),
+      (v_atividade, 22, 'CHECK do Turno', 'D'),
+      (v_atividade, 23, 'Erro de CHECK', 'B'),
+      (v_atividade, 24, 'Erro de UNIQUE', 'C'),
+      (v_atividade, 25, 'Erro de NOT NULL', 'D'),
+      (v_atividade, 26, 'ADD CONSTRAINT UNIQUE', 'D'),
+      (v_atividade, 27, 'ADD FOREIGN KEY', 'A'),
+      (v_atividade, 28, 'DROP CONSTRAINT', 'C'),
+      (v_atividade, 29, 'Nomear Restrições', 'C'),
+      (v_atividade, 30, 'Regra: CPF', 'C'),
+      (v_atividade, 31, 'Regra: Limite de Alunos', 'A'),
+      (v_atividade, 32, 'FK Obrigatória', 'B'),
+      (v_atividade, 33, 'FK Opcional', 'C'),
+      (v_atividade, 34, 'Ordem de Criação', 'A'),
+      (v_atividade, 35, 'Ordem de Exclusão', 'C'),
+      (v_atividade, 36, 'Código Único da Turma', 'B'),
+      (v_atividade, 37, 'Escola: Apagar Curso', 'D'),
+      (v_atividade, 38, 'Escola: Apagar Matrícula', 'D'),
+      (v_atividade, 39, 'Dinâmica: Tentativa Proibida', 'C'),
+      (v_atividade, 40, 'Dinâmica: Tentativa que Passa', 'B'),
+      (v_atividade, 41, 'Entrega da SA 2', 'A'),
+      (v_atividade, 42, 'Restrição no Banco', 'C'),
+      (v_atividade, 43, 'PK e Identidade', 'A'),
+      (v_atividade, 44, 'FK e Índice', 'A'),
+      (v_atividade, 45, 'Chave Estrangeira e DER', 'D'),
+      (v_atividade, 46, 'CHECK com Datas', 'D'),
+      (v_atividade, 47, 'Mensagem Clara', 'A'),
+      (v_atividade, 48, 'Restrição Esquecida', 'C'),
+      (v_atividade, 49, 'Conferir com o DER', 'B'),
+      (v_atividade, 50, 'Próxima Aula', 'D');
+
+  -- Aula 14: DML: Inserção, Atualização e Exclusão
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'DML: Inserção, Atualização e Exclusão' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (14, 'DML: Inserção, Atualização e Exclusão', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('DML: Inserção, Atualização e Exclusão', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — DML: Inserção, Atualização e Exclusão (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-14-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'INSERT', 'D'),
+      (v_atividade, 2, 'INSERT com Colunas', 'B'),
+      (v_atividade, 3, 'Por Que Listar as Colunas', 'D'),
+      (v_atividade, 4, 'Várias Linhas', 'A'),
+      (v_atividade, 5, 'Id Gerado', 'B'),
+      (v_atividade, 6, 'RETURNING', 'B'),
+      (v_atividade, 7, 'Colunas com DEFAULT', 'A'),
+      (v_atividade, 8, 'Aspas', 'D'),
+      (v_atividade, 9, 'Decimal com Ponto', 'B'),
+      (v_atividade, 10, 'Ordem de Inserção', 'A'),
+      (v_atividade, 11, 'Turma sem Curso', 'C'),
+      (v_atividade, 12, 'UPDATE', 'C'),
+      (v_atividade, 13, 'SET e WHERE', 'C'),
+      (v_atividade, 14, 'Trancar Matrícula', 'A'),
+      (v_atividade, 15, 'Reajuste', 'A'),
+      (v_atividade, 16, 'DELETE', 'B'),
+      (v_atividade, 17, 'DELETE e RESTRICT', 'A'),
+      (v_atividade, 18, 'DELETE e CASCADE', 'D'),
+      (v_atividade, 19, 'Exclusão Lógica', 'C'),
+      (v_atividade, 20, 'Vantagem da Exclusão Lógica', 'C'),
+      (v_atividade, 21, 'UPDATE sem WHERE', 'B'),
+      (v_atividade, 22, 'DELETE sem WHERE', 'C'),
+      (v_atividade, 23, 'SELECT Antes', 'B'),
+      (v_atividade, 24, 'BEGIN', 'D'),
+      (v_atividade, 25, 'COMMIT', 'C'),
+      (v_atividade, 26, 'ROLLBACK', 'D'),
+      (v_atividade, 27, 'Linhas Afetadas', 'C'),
+      (v_atividade, 28, 'Desconfiar do Número', 'C'),
+      (v_atividade, 29, 'TRUNCATE', 'D'),
+      (v_atividade, 30, 'Uso do TRUNCATE', 'A'),
+      (v_atividade, 31, 'Dados de Teste', 'D'),
+      (v_atividade, 32, 'Script de Carga', 'B'),
+      (v_atividade, 33, 'Alterar E-mail', 'B'),
+      (v_atividade, 34, 'Apagar Turma de Teste', 'D'),
+      (v_atividade, 35, 'Várias Condições', 'A'),
+      (v_atividade, 36, 'Inserir Parcela', 'D'),
+      (v_atividade, 37, 'INSERT Violando CHECK', 'B'),
+      (v_atividade, 38, 'INSERT Violando UNIQUE', 'C'),
+      (v_atividade, 39, 'Escola: Erro do Reajuste', 'A'),
+      (v_atividade, 40, 'Escola: O Que Salvou', 'A'),
+      (v_atividade, 41, 'Dinâmica: Primeiro Passo', 'A'),
+      (v_atividade, 42, 'Dinâmica: Decisão', 'B'),
+      (v_atividade, 43, 'Entrega da SA 2', 'D'),
+      (v_atividade, 44, 'DML e DDL', 'A'),
+      (v_atividade, 45, 'UPDATE com Cálculo', 'B'),
+      (v_atividade, 46, 'Atualizar Várias Colunas', 'D'),
+      (v_atividade, 47, 'Inserção Inválida por NULL', 'C'),
+      (v_atividade, 48, 'Uso do RETURNING pelo Back-End', 'B'),
+      (v_atividade, 49, 'Desfazer Depois do COMMIT', 'A'),
+      (v_atividade, 50, 'Próxima Aula', 'C');
+
+  -- Aula 15: DML: Consultas com Filtros e Ordenação
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'DML: Consultas com Filtros e Ordenação' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (15, 'DML: Consultas com Filtros e Ordenação', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('DML: Consultas com Filtros e Ordenação', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — DML: Consultas com Filtros e Ordenação (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-15-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'SELECT e FROM', 'A'),
+      (v_atividade, 2, 'SELECT Asterisco', 'B'),
+      (v_atividade, 3, 'Listar Colunas', 'C'),
+      (v_atividade, 4, 'Ordem das Cláusulas', 'A'),
+      (v_atividade, 5, 'Apelido AS', 'A'),
+      (v_atividade, 6, 'Expressão Não Altera', 'C'),
+      (v_atividade, 7, 'Igual a Texto', 'C'),
+      (v_atividade, 8, 'Diferente', 'B'),
+      (v_atividade, 9, 'Maior ou Igual', 'C'),
+      (v_atividade, 10, 'BETWEEN', 'D'),
+      (v_atividade, 11, 'BETWEEN com Datas', 'D'),
+      (v_atividade, 12, 'IN', 'B'),
+      (v_atividade, 13, 'IN e OR', 'C'),
+      (v_atividade, 14, 'LIKE com Porcentagem', 'C'),
+      (v_atividade, 15, 'LIKE no Meio', 'B'),
+      (v_atividade, 16, 'Sublinhado no LIKE', 'A'),
+      (v_atividade, 17, 'ILIKE', 'D'),
+      (v_atividade, 18, 'IS NULL', 'B'),
+      (v_atividade, 19, 'Por Que Não = NULL', 'B'),
+      (v_atividade, 20, 'IS NOT NULL', 'B'),
+      (v_atividade, 21, 'AND', 'D'),
+      (v_atividade, 22, 'OR', 'C'),
+      (v_atividade, 23, 'NOT', 'D'),
+      (v_atividade, 24, 'Parênteses', 'C'),
+      (v_atividade, 25, 'Erro sem Parênteses', 'B'),
+      (v_atividade, 26, 'ORDER BY', 'A'),
+      (v_atividade, 27, 'DESC', 'C'),
+      (v_atividade, 28, 'Desempate', 'A'),
+      (v_atividade, 29, 'LIMIT', 'C'),
+      (v_atividade, 30, 'Os 5 Mais Caros', 'C'),
+      (v_atividade, 31, 'OFFSET', 'D'),
+      (v_atividade, 32, 'DISTINCT', 'C'),
+      (v_atividade, 33, 'upper', 'D'),
+      (v_atividade, 34, 'length', 'A'),
+      (v_atividade, 35, 'current_date', 'B'),
+      (v_atividade, 36, 'age e extract', 'B'),
+      (v_atividade, 37, 'Aniversariantes', 'A'),
+      (v_atividade, 38, 'coalesce', 'B'),
+      (v_atividade, 39, 'Texto sem Aspas', 'B'),
+      (v_atividade, 40, 'LIKE sem Porcentagem', 'A'),
+      (v_atividade, 41, 'Escola: Trancadas ou Canceladas', 'A'),
+      (v_atividade, 42, 'Escola: Sem E-mail', 'B'),
+      (v_atividade, 43, 'Faixa de Preço', 'D'),
+      (v_atividade, 44, 'Turmas da Noite do Curso 2', 'D'),
+      (v_atividade, 45, 'Nome com Silva sem Distinguir', 'D'),
+      (v_atividade, 46, 'Dinâmica: Conferência', 'D'),
+      (v_atividade, 47, 'Entrega da SA 2', 'A'),
+      (v_atividade, 48, 'Consulta Não Altera', 'A'),
+      (v_atividade, 49, 'Número de Linhas', 'D'),
+      (v_atividade, 50, 'Próxima Aula', 'A');
+
+  -- Aula 16: Consultas com Junções, Agrupamentos e Subconsultas
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Consultas com Junções, Agrupamentos e Subconsultas' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (16, 'Consultas com Junções, Agrupamentos e Subconsultas', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Consultas com Junções, Agrupamentos e Subconsultas', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Consultas com Junções, Agrupamentos e Subconsultas (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-16-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Por Que Juntar Tabelas', 'A'),
+      (v_atividade, 2, 'Cláusula ON', 'B'),
+      (v_atividade, 3, 'INNER JOIN', 'C'),
+      (v_atividade, 4, 'JOIN Sozinho', 'D'),
+      (v_atividade, 5, 'Apelido de Tabela', 'B'),
+      (v_atividade, 6, 'Ambiguidade de Coluna', 'A'),
+      (v_atividade, 7, 'Produto Cartesiano', 'D'),
+      (v_atividade, 8, 'Três Tabelas', 'C'),
+      (v_atividade, 9, 'Tabela Ponte', 'C'),
+      (v_atividade, 10, 'Ligação Correta', 'A'),
+      (v_atividade, 11, 'LEFT JOIN', 'D'),
+      (v_atividade, 12, 'Cursos sem Turma', 'B'),
+      (v_atividade, 13, 'RIGHT JOIN', 'D'),
+      (v_atividade, 14, 'Escolha do JOIN', 'B'),
+      (v_atividade, 15, 'COUNT(*)', 'A'),
+      (v_atividade, 16, 'COUNT(coluna)', 'C'),
+      (v_atividade, 17, 'SUM', 'A'),
+      (v_atividade, 18, 'AVG', 'B'),
+      (v_atividade, 19, 'MIN e MAX', 'D'),
+      (v_atividade, 20, 'Agregação e NULL', 'C'),
+      (v_atividade, 21, 'GROUP BY', 'B'),
+      (v_atividade, 22, 'Regra do GROUP BY', 'C'),
+      (v_atividade, 23, 'Erro do GROUP BY', 'A'),
+      (v_atividade, 24, 'Matrículas por Curso', 'D'),
+      (v_atividade, 25, 'HAVING', 'D'),
+      (v_atividade, 26, 'WHERE × HAVING', 'A'),
+      (v_atividade, 27, 'Agregação no WHERE', 'C'),
+      (v_atividade, 28, 'Turmas com Poucos Alunos', 'B'),
+      (v_atividade, 29, 'Ordem de Execução', 'B'),
+      (v_atividade, 30, 'Apelido no ORDER BY', 'D'),
+      (v_atividade, 31, 'Faturamento por Curso', 'A'),
+      (v_atividade, 32, 'Subconsulta', 'C'),
+      (v_atividade, 33, 'Subconsulta com Um Valor', 'C'),
+      (v_atividade, 34, 'Cursos Acima da Média', 'A'),
+      (v_atividade, 35, 'Subconsulta com IN', 'B'),
+      (v_atividade, 36, 'Erro com Igual', 'D'),
+      (v_atividade, 37, 'EXISTS', 'A'),
+      (v_atividade, 38, 'NOT EXISTS', 'D'),
+      (v_atividade, 39, 'Subconsulta no FROM', 'B'),
+      (v_atividade, 40, 'JOIN × Subconsulta', 'C'),
+      (v_atividade, 41, 'Alunos com Parcela em Atraso', 'A'),
+      (v_atividade, 42, 'Alunos sem Matrícula', 'B'),
+      (v_atividade, 43, 'COUNT depois do LEFT JOIN', 'C'),
+      (v_atividade, 44, 'Média por Curso', 'D'),
+      (v_atividade, 45, 'Maior Faturamento', 'B'),
+      (v_atividade, 46, 'Relatório no Back-end', 'A'),
+      (v_atividade, 47, 'Erro de INNER no Lugar de LEFT', 'D'),
+      (v_atividade, 48, 'Organização do Script', 'C'),
+      (v_atividade, 49, 'Leitura de Consulta', 'A'),
+      (v_atividade, 50, 'Próxima Aula', 'B');
+
+  -- Aula 17: Procedimentos Armazenados
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Procedimentos Armazenados' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (17, 'Procedimentos Armazenados', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Procedimentos Armazenados', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Procedimentos Armazenados (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-17-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'O que É', 'D'),
+      (v_atividade, 2, 'Onde Fica', 'C'),
+      (v_atividade, 3, 'Regra num Lugar Só', 'D'),
+      (v_atividade, 4, 'Menos Idas e Voltas', 'D'),
+      (v_atividade, 5, 'Regra do Banco ou da Tela', 'D'),
+      (v_atividade, 6, 'Chamar uma Função', 'D'),
+      (v_atividade, 7, 'Chamar um Procedimento', 'B'),
+      (v_atividade, 8, 'Função Devolve Valor', 'A'),
+      (v_atividade, 9, 'RETURNS', 'A'),
+      (v_atividade, 10, 'Controle de Transação', 'A'),
+      (v_atividade, 11, 'Linguagem', 'B'),
+      (v_atividade, 12, 'Delimitador', 'D'),
+      (v_atividade, 13, 'DECLARE', 'A'),
+      (v_atividade, 14, 'SELECT INTO', 'D'),
+      (v_atividade, 15, 'Sem INTO', 'A'),
+      (v_atividade, 16, 'RETURN', 'B'),
+      (v_atividade, 17, 'Parâmetro', 'C'),
+      (v_atividade, 18, 'Prefixo p_', 'A'),
+      (v_atividade, 19, 'Nome Ambíguo', 'A'),
+      (v_atividade, 20, 'IF', 'C'),
+      (v_atividade, 21, 'ELSIF', 'B'),
+      (v_atividade, 22, 'RAISE EXCEPTION', 'A'),
+      (v_atividade, 23, 'RAISE NOTICE', 'C'),
+      (v_atividade, 24, 'Marcador %', 'A'),
+      (v_atividade, 25, 'Nada pela Metade', 'B'),
+      (v_atividade, 26, 'FOUND', 'C'),
+      (v_atividade, 27, 'IF NOT FOUND', 'C'),
+      (v_atividade, 28, 'Parcela Já Paga', 'B'),
+      (v_atividade, 29, 'FOR UPDATE', 'B'),
+      (v_atividade, 30, 'Duas Atendentes', 'B'),
+      (v_atividade, 31, 'Turma Inexistente', 'C'),
+      (v_atividade, 32, 'Restrições Continuam', 'C'),
+      (v_atividade, 33, 'Contar Ativos', 'B'),
+      (v_atividade, 34, 'Limite de 25', 'C'),
+      (v_atividade, 35, 'Função com coalesce', 'B'),
+      (v_atividade, 36, 'CREATE OR REPLACE', 'B'),
+      (v_atividade, 37, 'DROP PROCEDURE', 'C'),
+      (v_atividade, 38, 'Tipos no DROP', 'A'),
+      (v_atividade, 39, 'Listar Rotinas', 'A'),
+      (v_atividade, 40, 'SELECT em Procedimento', 'D'),
+      (v_atividade, 41, 'CALL em Função', 'D'),
+      (v_atividade, 42, 'Ponto e Vírgula', 'C'),
+      (v_atividade, 43, 'NOTICE no Lugar Errado', 'B'),
+      (v_atividade, 44, 'Back-end Chama', 'D'),
+      (v_atividade, 45, 'Mensagem para o Usuário', 'D'),
+      (v_atividade, 46, 'Segurança', 'A'),
+      (v_atividade, 47, 'Função Útil', 'B'),
+      (v_atividade, 48, 'Parâmetro smallint', 'A'),
+      (v_atividade, 49, 'Testar os Erros', 'C'),
+      (v_atividade, 50, 'Dois Lugares', 'D');
+
+  -- Aula 18: Triggers (Disparadores)
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Triggers (Disparadores)' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (18, 'Triggers (Disparadores)', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Triggers (Disparadores)', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Triggers (Disparadores) (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-18-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'O que É', 'A'),
+      (v_atividade, 2, 'Quem Executa', 'B'),
+      (v_atividade, 3, 'Trigger × Procedimento', 'B'),
+      (v_atividade, 4, 'Vale para Todos', 'C'),
+      (v_atividade, 5, 'Eventos', 'A'),
+      (v_atividade, 6, 'UPDATE OF', 'A'),
+      (v_atividade, 7, 'Momento BEFORE', 'B'),
+      (v_atividade, 8, 'Momento AFTER', 'D'),
+      (v_atividade, 9, 'FOR EACH ROW', 'D'),
+      (v_atividade, 10, 'FOR EACH STATEMENT', 'B'),
+      (v_atividade, 11, 'Duas Peças', 'B'),
+      (v_atividade, 12, 'Tipo de Retorno', 'D'),
+      (v_atividade, 13, 'Parâmetros', 'B'),
+      (v_atividade, 14, 'Ligar a Função', 'D'),
+      (v_atividade, 15, 'Variável NEW', 'D'),
+      (v_atividade, 16, 'Variável OLD', 'C'),
+      (v_atividade, 17, 'NEW no DELETE', 'A'),
+      (v_atividade, 18, 'OLD no INSERT', 'D'),
+      (v_atividade, 19, 'TG_OP', 'A'),
+      (v_atividade, 20, 'TG_TABLE_NAME', 'A'),
+      (v_atividade, 21, 'Tabela de Histórico', 'D'),
+      (v_atividade, 22, 'Valores Gravados', 'C'),
+      (v_atividade, 23, 'Retorno no AFTER', 'C'),
+      (v_atividade, 24, 'Cláusula WHEN', 'A'),
+      (v_atividade, 25, 'IS DISTINCT FROM', 'D'),
+      (v_atividade, 26, 'Mesmo Valor', 'D'),
+      (v_atividade, 27, 'Base da Auditoria', 'B'),
+      (v_atividade, 28, 'Validação BEFORE', 'D'),
+      (v_atividade, 29, 'RAISE EXCEPTION', 'A'),
+      (v_atividade, 30, 'RETURN NEW no BEFORE', 'B'),
+      (v_atividade, 31, 'RETURN NULL no BEFORE', 'B'),
+      (v_atividade, 32, 'RETURN OLD no DELETE', 'A'),
+      (v_atividade, 33, 'Ajustar a Linha', 'C'),
+      (v_atividade, 34, 'Evento Duplo', 'C'),
+      (v_atividade, 35, 'Restrição Primeiro', 'C'),
+      (v_atividade, 36, 'Quando é Trigger', 'D'),
+      (v_atividade, 37, 'Quando é Procedimento', 'C'),
+      (v_atividade, 38, 'Banco Mágico', 'B'),
+      (v_atividade, 39, 'Listar no psql', 'B'),
+      (v_atividade, 40, 'Desligar', 'A'),
+      (v_atividade, 41, 'Remover', 'C'),
+      (v_atividade, 42, 'Função Continua', 'C'),
+      (v_atividade, 43, 'CREATE OR REPLACE TRIGGER', 'D'),
+      (v_atividade, 44, 'Erro: RETURNS void', 'B'),
+      (v_atividade, 45, 'Erro: sem RETURN NEW', 'A'),
+      (v_atividade, 46, 'Erro: Laço', 'A'),
+      (v_atividade, 47, 'Corrigir o Laço', 'C'),
+      (v_atividade, 48, 'Erro: Sem WHEN', 'C'),
+      (v_atividade, 49, 'Caso da Escola', 'B'),
+      (v_atividade, 50, 'Testes da SA 2', 'A');
+
+  -- Aula 19: Segurança da Informação: Pilares, Acesso e Auditoria
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Segurança da Informação: Pilares, Acesso e Auditoria' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (19, 'Segurança da Informação: Pilares, Acesso e Auditoria', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Segurança da Informação: Pilares, Acesso e Auditoria', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Segurança da Informação: Pilares, Acesso e Auditoria (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-19-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'Os Três Pilares', 'D'),
+      (v_atividade, 2, 'Confidencialidade', 'B'),
+      (v_atividade, 3, 'Integridade', 'D'),
+      (v_atividade, 4, 'Disponibilidade', 'C'),
+      (v_atividade, 5, 'Vazamento de CPF', 'D'),
+      (v_atividade, 6, 'Nota Alterada', 'C'),
+      (v_atividade, 7, 'Disco Queimado', 'C'),
+      (v_atividade, 8, 'Sigla CID', 'B'),
+      (v_atividade, 9, 'Backup sem Senha', 'A'),
+      (v_atividade, 10, 'Proteção da Integridade', 'A'),
+      (v_atividade, 11, 'Autenticidade e Não Repúdio', 'B'),
+      (v_atividade, 12, 'Informação Pública', 'B'),
+      (v_atividade, 13, 'Informação Confidencial', 'A'),
+      (v_atividade, 14, 'Menor Privilégio', 'A'),
+      (v_atividade, 15, 'Senha Vazada', 'B'),
+      (v_atividade, 16, 'Usuário postgres', 'A'),
+      (v_atividade, 17, 'Nível da Aplicação', 'C'),
+      (v_atividade, 18, 'Matriz de Acesso', 'C'),
+      (v_atividade, 19, 'Letras da Matriz', 'A'),
+      (v_atividade, 20, 'Ninguém com DELETE', 'D'),
+      (v_atividade, 21, 'Papel (Role)', 'B'),
+      (v_atividade, 22, 'Papel de Grupo', 'C'),
+      (v_atividade, 23, 'Papel de Login', 'D'),
+      (v_atividade, 24, 'Pôr no Grupo', 'C'),
+      (v_atividade, 25, 'Permissão no Grupo', 'D'),
+      (v_atividade, 26, 'Login Compartilhado', 'C'),
+      (v_atividade, 27, 'Funcionário que Saiu', 'A'),
+      (v_atividade, 28, 'Login com Validade', 'D'),
+      (v_atividade, 29, 'REVOKE de PUBLIC', 'A'),
+      (v_atividade, 30, 'GRANT', 'D'),
+      (v_atividade, 31, 'REVOKE', 'D'),
+      (v_atividade, 32, 'Sintaxe do GRANT', 'D'),
+      (v_atividade, 33, 'Permissão por Coluna', 'B'),
+      (v_atividade, 34, 'Esconder o CPF', 'D'),
+      (v_atividade, 35, 'CONNECT e USAGE', 'B'),
+      (v_atividade, 36, 'WITH GRANT OPTION', 'C'),
+      (v_atividade, 37, 'Permission Denied', 'B'),
+      (v_atividade, 38, 'EXECUTE', 'A'),
+      (v_atividade, 39, 'Visão (VIEW)', 'B'),
+      (v_atividade, 40, 'Conferir os Papéis', 'D'),
+      (v_atividade, 41, 'Conferir as Permissões', 'A'),
+      (v_atividade, 42, 'Auditoria de Acesso', 'C'),
+      (v_atividade, 43, 'Log do Servidor', 'C'),
+      (v_atividade, 44, 'Função de Auditoria', 'C'),
+      (v_atividade, 45, 'Antes e Depois', 'B'),
+      (v_atividade, 46, 'SECURITY DEFINER', 'B'),
+      (v_atividade, 47, 'session_user', 'A'),
+      (v_atividade, 48, 'LGPD', 'A'),
+      (v_atividade, 49, 'Backup Testado', 'A'),
+      (v_atividade, 50, 'Senha da Aplicação', 'B');
+
+  -- Aula 20: Projeto Integrador: Banco Documentado para o Back-End
+  select id into v_aula from public.aulas
+    where materia_id = v_materia and titulo = 'Projeto Integrador: Banco Documentado para o Back-End' limit 1;
+  if v_aula is null then
+    insert into public.aulas (numero, titulo, materia_id, curso_id, data_planejada)
+      values (20, 'Projeto Integrador: Banco Documentado para o Back-End', v_materia, v_curso, '2026-09-28')
+      returning id into v_aula;
+  end if;
+
+  insert into public.atividade (nome_atividade, status, aula_id, data_atividade, descricao,
+      pagina, total_itens)
+    values ('Projeto Integrador: Banco Documentado para o Back-End', 'PENDENTE', v_aula, '2026-09-28',
+      'Atividade — Projeto Integrador: Banco Documentado para o Back-End (50 questões)', '/MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/ATIVIDADES/ATIVIDADES-AULA-20-50-QUESTOES.html', 50)
+    on conflict (pagina) do update set aula_id = excluded.aula_id,
+      data_atividade = excluded.data_atividade, descricao = excluded.descricao,
+      total_itens = excluded.total_itens
+    returning id into v_atividade;
+
+  delete from public.gabarito where atividade_id = v_atividade;
+  insert into public.gabarito (atividade_id, item, titulo, letra) values
+      (v_atividade, 1, 'As Duas Situações de Aprendizagem', 'D'),
+      (v_atividade, 2, 'Rastreabilidade', 'A'),
+      (v_atividade, 3, 'Tabela sem Requisito', 'D'),
+      (v_atividade, 4, 'Requisito sem Regra', 'B'),
+      (v_atividade, 5, 'Matrícula Repetida', 'D'),
+      (v_atividade, 6, 'Limite de Vagas', 'A'),
+      (v_atividade, 7, 'Ordem dos Scripts', 'B'),
+      (v_atividade, 8, 'Script Mestre', 'A'),
+      (v_atividade, 9, 'Comando \i', 'D'),
+      (v_atividade, 10, 'ON_ERROR_STOP', 'A'),
+      (v_atividade, 11, 'Sem ON_ERROR_STOP', 'D'),
+      (v_atividade, 12, 'Banco Limpo', 'A'),
+      (v_atividade, 13, 'Script que Roda de Novo', 'A'),
+      (v_atividade, 14, 'Trigger que Roda de Novo', 'B'),
+      (v_atividade, 15, 'Comentário no Topo', 'D'),
+      (v_atividade, 16, 'Para que Documentar', 'B'),
+      (v_atividade, 17, 'Escopo Atualizado', 'C'),
+      (v_atividade, 18, 'Dicionário de Dados', 'B'),
+      (v_atividade, 19, 'Cronograma da Entrega', 'B'),
+      (v_atividade, 20, 'Atraso no Cronograma', 'A'),
+      (v_atividade, 21, 'Fluxograma Ligado ao Banco', 'C'),
+      (v_atividade, 22, 'Decisão "Parcela Já Paga?"', 'A'),
+      (v_atividade, 23, 'Matriz de Acesso na Documentação', 'C'),
+      (v_atividade, 24, 'README', 'B'),
+      (v_atividade, 25, 'Registro de Decisões', 'B'),
+      (v_atividade, 26, 'Cancelar em Vez de Apagar', 'D'),
+      (v_atividade, 27, 'Checklist do DER', 'D'),
+      (v_atividade, 28, 'Relacionamento N:N', 'A'),
+      (v_atividade, 29, 'Chave Estrangeira no 1:N', 'A'),
+      (v_atividade, 30, 'Primeira Forma Normal', 'D'),
+      (v_atividade, 31, 'Terceira Forma Normal', 'D'),
+      (v_atividade, 32, 'Padrão de Nomes', 'A'),
+      (v_atividade, 33, 'Consulta de Parcelas Vencidas', 'B'),
+      (v_atividade, 34, 'Turmas sem Matrícula', 'B'),
+      (v_atividade, 35, 'Turmas Cheias', 'A'),
+      (v_atividade, 36, 'Consulta sem Uso', 'D'),
+      (v_atividade, 37, 'Contrato com o Back-End', 'C'),
+      (v_atividade, 38, 'Login do Back-End', 'D'),
+      (v_atividade, 39, 'EXECUTE no Procedimento', 'C'),
+      (v_atividade, 40, 'Sem DELETE para a Aplicação', 'B'),
+      (v_atividade, 41, 'Consultas com Parâmetros', 'C'),
+      (v_atividade, 42, 'Regra no Banco', 'C'),
+      (v_atividade, 43, 'Senha do app_escola', 'C'),
+      (v_atividade, 44, 'Teste de Ponta a Ponta', 'B'),
+      (v_atividade, 45, 'Conferindo os Objetos', 'C'),
+      (v_atividade, 46, 'Teste do Financeiro', 'B'),
+      (v_atividade, 47, 'Backup de Entrega', 'C'),
+      (v_atividade, 48, 'Provar o Backup', 'C'),
+      (v_atividade, 49, 'Sugestão na Revisão em Pares', 'C'),
+      (v_atividade, 50, 'Receber a Sugestão', 'A');
+end $$;

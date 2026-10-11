@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 13 — DDL: Relações, Chaves e Restrições (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="13" data-tema="DDL: Relações, Chaves e Restrições" data-total="50"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🔐 Aula 13: DDL: Relações, Chaves e Restrições</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADES-AULA-13-50-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C7 —</strong> Aplicar linguagem de definição de dados</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Chave Primária</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que garante a chave primária (PRIMARY KEY)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que cada linha seja identificada por um valor único e não nulo.</li>
+                        <li><span class="letra">B)</span>Que a tabela não tenha relações.</li>
+                        <li><span class="letra">C)</span>Que os dados fiquem criptografados.</li>
+                        <li><span class="letra">D)</span>Que a tabela tenha só uma coluna.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Chave Primária Composta</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando usar uma chave primária composta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Só em tabelas sem dados.</li>
+                        <li><span class="letra">B)</span>Sempre, em todas as tabelas.</li>
+                        <li><span class="letra">C)</span>Nunca, ela é proibida.</li>
+                        <li><span class="letra">D)</span>Quando a identificação precisa de mais de uma coluna, como matrícula e número da parcela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">PK da Parcela</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a chave primária da tabela parcela no exemplo da aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>PRIMARY KEY (vencimento)</li>
+                        <li><span class="letra">B)</span>PRIMARY KEY (id_matricula, numero)</li>
+                        <li><span class="letra">C)</span>Nenhuma.</li>
+                        <li><span class="letra">D)</span>PRIMARY KEY (valor)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Chave Estrangeira</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz uma chave estrangeira (FOREIGN KEY)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Gera números automáticos.</li>
+                        <li><span class="letra">B)</span>Apaga dados repetidos.</li>
+                        <li><span class="letra">C)</span>Torna o campo opcional.</li>
+                        <li><span class="letra">D)</span>Garante que o valor exista na tabela referenciada, implementando o relacionamento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">REFERENCES</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que significa id_curso integer NOT NULL REFERENCES curso (id_curso)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que id_curso pode ter qualquer valor.</li>
+                        <li><span class="letra">B)</span>Que id_curso é chave estrangeira obrigatória que aponta para curso.</li>
+                        <li><span class="letra">C)</span>Que id_curso é a chave primária de turma.</li>
+                        <li><span class="letra">D)</span>Que curso será apagado.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Integridade Referencial</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é integridade referencial?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A garantia de que toda chave estrangeira aponta para uma linha que existe.</li>
+                        <li><span class="letra">B)</span>A ordem alfabética das tabelas.</li>
+                        <li><span class="letra">C)</span>O backup diário do banco.</li>
+                        <li><span class="letra">D)</span>A garantia de que a senha é forte.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Erro de Chave Estrangeira</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Gravar uma turma com id_curso = 99, que não existe, gera qual erro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>duplicate key value.</li>
+                        <li><span class="letra">B)</span>violates check constraint.</li>
+                        <li><span class="letra">C)</span>connection refused.</li>
+                        <li><span class="letra">D)</span>violates foreign key constraint.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Associativa com Duas FKs</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na tabela matricula, quais chaves estrangeiras existem?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>id_aluno, que aponta para aluno, e id_turma, que aponta para turma.</li>
+                        <li><span class="letra">B)</span>Apenas data_matricula.</li>
+                        <li><span class="letra">C)</span>Apenas id_matricula.</li>
+                        <li><span class="letra">D)</span>Nenhuma chave estrangeira.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">UNIQUE na Matrícula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que garante UNIQUE (id_aluno, id_turma) na tabela matricula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que o mesmo aluno não se matricule duas vezes na mesma turma.</li>
+                        <li><span class="letra">B)</span>Que a data não se repita.</li>
+                        <li><span class="letra">C)</span>Que cada turma tenha um aluno só.</li>
+                        <li><span class="letra">D)</span>Que cada aluno tenha uma matrícula só na vida.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">ON DELETE Padrão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Sem nenhuma opção ON DELETE, o que acontece ao tentar apagar um curso que tem turmas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O banco apaga só a primeira turma.</li>
+                        <li><span class="letra">B)</span>As turmas ficam com id_curso vazio.</li>
+                        <li><span class="letra">C)</span>O banco impede a exclusão, pois há linhas filhas apontando para ele.</li>
+                        <li><span class="letra">D)</span>O curso e as turmas são apagados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">RESTRICT</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz ON DELETE RESTRICT?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Deixa as filhas com chave vazia.</li>
+                        <li><span class="letra">B)</span>Apaga as filhas junto.</li>
+                        <li><span class="letra">C)</span>Impede apagar a linha pai se houver linhas filhas.</li>
+                        <li><span class="letra">D)</span>Desliga a chave estrangeira.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">CASCADE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz ON DELETE CASCADE?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Duplica as linhas filhas.</li>
+                        <li><span class="letra">B)</span>Apaga também as linhas filhas quando a linha pai é apagada.</li>
+                        <li><span class="letra">C)</span>Impede a exclusão.</li>
+                        <li><span class="letra">D)</span>Deixa a chave das filhas vazia.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">SET NULL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz ON DELETE SET NULL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Impede a exclusão.</li>
+                        <li><span class="letra">B)</span>Deixa vazia a chave estrangeira das linhas filhas quando o pai é apagado.</li>
+                        <li><span class="letra">C)</span>Apaga as linhas filhas.</li>
+                        <li><span class="letra">D)</span>Troca o pai por outro aleatório.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">CASCADE na Parcela</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que usar ON DELETE CASCADE na chave de parcela para matricula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o CASCADE impede a exclusão.</li>
+                        <li><span class="letra">B)</span>Porque parcelas devem sobrar sem dono.</li>
+                        <li><span class="letra">C)</span>Porque matrícula é atributo de parcela.</li>
+                        <li><span class="letra">D)</span>Porque parcela é entidade fraca e não faz sentido sem a matrícula.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Curso com Turmas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A diretora não quer que um curso com turmas seja apagado por engano. Qual opção usar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>CASCADE.</li>
+                        <li><span class="letra">B)</span>RESTRICT, ou o padrão sem ação.</li>
+                        <li><span class="letra">C)</span>SET NULL.</li>
+                        <li><span class="letra">D)</span>Nenhuma chave estrangeira.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Supervisor que Saiu</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um supervisor deixa a empresa e os funcionários dele devem continuar cadastrados sem supervisor. Qual opção usar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ON DELETE CASCADE.</li>
+                        <li><span class="letra">B)</span>ON DELETE SET NULL na chave id_supervisor.</li>
+                        <li><span class="letra">C)</span>RESTRICT obrigatório.</li>
+                        <li><span class="letra">D)</span>Apagar todos os funcionários.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Risco do CASCADE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é o cuidado com o CASCADE?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ele troca a senha do banco.</li>
+                        <li><span class="letra">B)</span>Ele pode apagar muitos dados de uma vez, então só deve ser usado quando as filhas não fazem sentido sem o pai.</li>
+                        <li><span class="letra">C)</span>Ele nunca apaga nada.</li>
+                        <li><span class="letra">D)</span>Ele deixa o banco mais lento sempre.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">UNIQUE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz a restrição UNIQUE na coluna cpf?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Gera CPFs automaticamente.</li>
+                        <li><span class="letra">B)</span>Torna o CPF obrigatório.</li>
+                        <li><span class="letra">C)</span>Impede que o mesmo CPF seja gravado em duas linhas.</li>
+                        <li><span class="letra">D)</span>Criptografa o CPF.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">UNIQUE e Vazio</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Com cpf varchar(11) UNIQUE, dois alunos sem CPF (NULL) podem ser cadastrados?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Só se forem irmãos.</li>
+                        <li><span class="letra">B)</span>Sim, os vazios (NULL) não contam como valores repetidos.</li>
+                        <li><span class="letra">C)</span>Não, o banco recusa o segundo.</li>
+                        <li><span class="letra">D)</span>Só no Linux.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">CHECK</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que faz a restrição CHECK?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Exige que toda linha cumpra uma condição, como valor maior que zero.</li>
+                        <li><span class="letra">B)</span>Confere a senha do usuário.</li>
+                        <li><span class="letra">C)</span>Faz backup antes de gravar.</li>
+                        <li><span class="letra">D)</span>Cria uma nova tabela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">CHECK do Valor</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual restrição garante que a mensalidade seja maior que zero?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>CHECK (valor &gt; 0)</li>
+                        <li><span class="letra">B)</span>REFERENCES valor</li>
+                        <li><span class="letra">C)</span>DEFAULT 0</li>
+                        <li><span class="letra">D)</span>UNIQUE (valor)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">CHECK do Turno</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual restrição implementa o domínio do turno?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>PRIMARY KEY (turno)</li>
+                        <li><span class="letra">B)</span>UNIQUE (turno)</li>
+                        <li><span class="letra">C)</span>REFERENCES turno</li>
+                        <li><span class="letra">D)</span>CHECK (turno IN (&#x27;manha&#x27;, &#x27;tarde&#x27;, &#x27;noite&#x27;))</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Erro de CHECK</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Gravar o turno &quot;madrugada&quot; gera qual erro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>violates foreign key constraint.</li>
+                        <li><span class="letra">B)</span>violates check constraint.</li>
+                        <li><span class="letra">C)</span>relation already exists.</li>
+                        <li><span class="letra">D)</span>duplicate key value.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Erro de UNIQUE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Gravar um segundo aluno com o mesmo CPF gera qual erro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>violates check constraint.</li>
+                        <li><span class="letra">B)</span>connection refused.</li>
+                        <li><span class="letra">C)</span>duplicate key value violates unique constraint.</li>
+                        <li><span class="letra">D)</span>syntax error at end of input.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Erro de NOT NULL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A mensagem &quot;null value in column nome violates not-null constraint&quot; significa:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que a tabela não existe.</li>
+                        <li><span class="letra">B)</span>Que o nome é muito longo.</li>
+                        <li><span class="letra">C)</span>Que o nome é repetido.</li>
+                        <li><span class="letra">D)</span>Que o campo obrigatório nome ficou vazio.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">ADD CONSTRAINT UNIQUE</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando acrescenta uma restrição UNIQUE nomeada no CPF de uma tabela existente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>CREATE UNIQUE aluno.cpf;</li>
+                        <li><span class="letra">B)</span>UPDATE aluno SET cpf UNIQUE;</li>
+                        <li><span class="letra">C)</span>INSERT CONSTRAINT INTO aluno;</li>
+                        <li><span class="letra">D)</span>ALTER TABLE aluno ADD CONSTRAINT aluno_cpf_unico UNIQUE (cpf);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">ADD FOREIGN KEY</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando acrescenta a chave estrangeira de aluno para responsavel?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ALTER TABLE aluno ADD CONSTRAINT aluno_responsavel_fk FOREIGN KEY (id_responsavel) REFERENCES responsavel (id_responsavel);</li>
+                        <li><span class="letra">B)</span>CREATE FOREIGN aluno responsavel;</li>
+                        <li><span class="letra">C)</span>SELECT FOREIGN KEY FROM aluno;</li>
+                        <li><span class="letra">D)</span>ALTER TABLE responsavel DROP aluno;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">DROP CONSTRAINT</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual comando remove a restrição aluno_cpf_unico?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>DROP TABLE aluno_cpf_unico;</li>
+                        <li><span class="letra">B)</span>UPDATE aluno DROP UNIQUE;</li>
+                        <li><span class="letra">C)</span>ALTER TABLE aluno DROP CONSTRAINT aluno_cpf_unico;</li>
+                        <li><span class="letra">D)</span>DELETE CONSTRAINT aluno_cpf_unico;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Nomear Restrições</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que dar nome às restrições?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para esconder a restrição.</li>
+                        <li><span class="letra">B)</span>Porque sem nome a restrição não funciona.</li>
+                        <li><span class="letra">C)</span>Para deixar as mensagens de erro claras e facilitar alterar ou remover a restrição.</li>
+                        <li><span class="letra">D)</span>Para aumentar o tamanho do banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Regra: CPF</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A regra de negócio &quot;o CPF não se repete&quot; vira qual restrição?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ON DELETE CASCADE.</li>
+                        <li><span class="letra">B)</span>CHECK (cpf &gt; 0).</li>
+                        <li><span class="letra">C)</span>UNIQUE (cpf).</li>
+                        <li><span class="letra">D)</span>DEFAULT now().</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Regra: Limite de Alunos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A regra &quot;turma com no máximo 25 alunos&quot; pode ser garantida com um CHECK simples?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Não, porque depende de contar outras linhas; ela será feita com trigger na aula 18.</li>
+                        <li><span class="letra">B)</span>Sim, com CHECK (alunos &lt;= 25) na matrícula.</li>
+                        <li><span class="letra">C)</span>Sim, com UNIQUE na turma.</li>
+                        <li><span class="letra">D)</span>Sim, com DEFAULT 25.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">FK Obrigatória</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a chave estrangeira id_curso em turma também tem NOT NULL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para permitir turmas sem curso.</li>
+                        <li><span class="letra">B)</span>Porque toda turma precisa pertencer a um curso (participação obrigatória).</li>
+                        <li><span class="letra">C)</span>Porque o curso não tem chave primária.</li>
+                        <li><span class="letra">D)</span>Porque NOT NULL é exigido em toda chave estrangeira.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">FK Opcional</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Quando uma chave estrangeira deve permitir vazio (sem NOT NULL)?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Sempre, em todas as chaves.</li>
+                        <li><span class="letra">B)</span>Nunca.</li>
+                        <li><span class="letra">C)</span>Quando a participação é opcional, como o funcionário que não tem supervisor.</li>
+                        <li><span class="letra">D)</span>Só quando a tabela é pequena.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Ordem de Criação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que a tabela curso precisa ser criada antes da tabela turma?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque o REFERENCES curso só funciona se a tabela curso já existir.</li>
+                        <li><span class="letra">B)</span>Porque curso tem nome mais curto.</li>
+                        <li><span class="letra">C)</span>A ordem não importa.</li>
+                        <li><span class="letra">D)</span>Porque turma não tem colunas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Ordem de Exclusão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num script que apaga as tabelas de teste, qual ordem evita erros de chave estrangeira?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apagar primeiro as pais.</li>
+                        <li><span class="letra">B)</span>A ordem não importa.</li>
+                        <li><span class="letra">C)</span>Apagar primeiro as tabelas filhas, como parcela, e depois as pais, como matricula e curso.</li>
+                        <li><span class="letra">D)</span>Apagar todas ao mesmo tempo sempre funciona.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Código Único da Turma</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na tabela turma, o que garante codigo varchar(10) NOT NULL UNIQUE?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que o código aponte para curso.</li>
+                        <li><span class="letra">B)</span>Que toda turma tenha código e que ele não se repita.</li>
+                        <li><span class="letra">C)</span>Que o código possa ficar vazio.</li>
+                        <li><span class="letra">D)</span>Que o código seja gerado automaticamente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Escola: Apagar Curso</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No exemplo da escola, o que aconteceu ao tentar apagar o curso Excel, que tem turmas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O curso e as turmas foram apagados.</li>
+                        <li><span class="letra">B)</span>Nada aconteceu e o curso sumiu.</li>
+                        <li><span class="letra">C)</span>As turmas ficaram sem curso.</li>
+                        <li><span class="letra">D)</span>O banco recusou, protegendo as turmas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Escola: Apagar Matrícula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No exemplo, o que aconteceu ao apagar uma matrícula de teste?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O aluno foi apagado junto.</li>
+                        <li><span class="letra">B)</span>O banco recusou a exclusão.</li>
+                        <li><span class="letra">C)</span>As parcelas ficaram órfãs.</li>
+                        <li><span class="letra">D)</span>As parcelas dela foram apagadas junto, por causa do CASCADE.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Dinâmica: Tentativa Proibida</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica &quot;Quebra-regra&quot;, o que a dupla anota a cada tentativa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A nota da dupla vizinha.</li>
+                        <li><span class="letra">B)</span>A senha do banco.</li>
+                        <li><span class="letra">C)</span>A mensagem de erro e a restrição que barrou a tentativa.</li>
+                        <li><span class="letra">D)</span>O tempo de execução apenas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Dinâmica: Tentativa que Passa</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na dinâmica, a dupla descobre que consegue gravar uma parcela com vencimento antes da matrícula. O que deve fazer?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ignorar o problema.</li>
+                        <li><span class="letra">B)</span>Propor uma restrição (como CHECK ou trigger) para barrar o caso.</li>
+                        <li><span class="letra">C)</span>Apagar a tabela parcela.</li>
+                        <li><span class="letra">D)</span>Desligar todas as restrições.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Entrega da SA 2</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que é entregue nesta aula, na SA 2?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O script DDL atualizado com chaves primárias, estrangeiras com ON DELETE justificado, UNIQUE e CHECK, mais o registro das tentativas.</li>
+                        <li><span class="letra">B)</span>O documento de escopo.</li>
+                        <li><span class="letra">C)</span>Somente o DER.</li>
+                        <li><span class="letra">D)</span>O cronograma.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Restrição no Banco</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que garantir as regras no banco, e não só na tela do sistema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque a tela não pode validar nada.</li>
+                        <li><span class="letra">B)</span>Porque o banco fica mais bonito.</li>
+                        <li><span class="letra">C)</span>Porque o banco protege os dados mesmo que outro sistema ou um comando direto tente gravar algo errado.</li>
+                        <li><span class="letra">D)</span>Porque as regras na tela são proibidas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">PK e Identidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual é a relação entre GENERATED ALWAYS AS IDENTITY e PRIMARY KEY no exemplo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A identidade gera o número automaticamente e a PRIMARY KEY garante que ele seja único e não nulo.</li>
+                        <li><span class="letra">B)</span>A identidade apaga a chave primária.</li>
+                        <li><span class="letra">C)</span>São a mesma coisa.</li>
+                        <li><span class="letra">D)</span>A PRIMARY KEY gera números aleatórios.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">FK e Índice</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que é comum criar índice nas colunas de chave estrangeira?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para acelerar as consultas que juntam as tabelas e as verificações de exclusão.</li>
+                        <li><span class="letra">B)</span>Para criptografar os dados.</li>
+                        <li><span class="letra">C)</span>Porque a chave estrangeira não funciona sem índice.</li>
+                        <li><span class="letra">D)</span>Para impedir inserções.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Chave Estrangeira e DER</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">De onde vêm as chaves estrangeiras do script?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Da lista de senhas.</li>
+                        <li><span class="letra">B)</span>Da ordem alfabética das tabelas.</li>
+                        <li><span class="letra">C)</span>Do arquivo pg_hba.conf.</li>
+                        <li><span class="letra">D)</span>Dos relacionamentos do DER e dos atributos referenciais.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">CHECK com Datas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Qual restrição impede que a data de pagamento seja anterior ao vencimento menos 30 dias?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>DEFAULT current_date</li>
+                        <li><span class="letra">B)</span>REFERENCES vencimento</li>
+                        <li><span class="letra">C)</span>UNIQUE (data_pagamento)</li>
+                        <li><span class="letra">D)</span>CHECK (data_pagamento &gt;= vencimento - 30)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Mensagem Clara</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Com a restrição nomeada aluno_cpf_unico, a mensagem de erro passa a:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Mostrar o nome da restrição, deixando claro qual regra foi violada.</li>
+                        <li><span class="letra">B)</span>Esconder qualquer erro.</li>
+                        <li><span class="letra">C)</span>Mostrar a senha do banco.</li>
+                        <li><span class="letra">D)</span>Apagar o aluno repetido.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Restrição Esquecida</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O script não tem CHECK no valor da parcela, e alguém grava valor zero. O que isso mostra?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Que valor zero é sempre correto.</li>
+                        <li><span class="letra">B)</span>Que a chave primária falhou.</li>
+                        <li><span class="letra">C)</span>Que faltou transformar a regra de negócio em restrição.</li>
+                        <li><span class="letra">D)</span>Que o banco está com defeito.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Conferir com o DER</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Por que conferir o script de restrições com o DER no fim da aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para apagar o DER.</li>
+                        <li><span class="letra">B)</span>Para garantir que todo relacionamento virou chave estrangeira com a cardinalidade certa.</li>
+                        <li><span class="letra">C)</span>Para trocar as cores do DER.</li>
+                        <li><span class="letra">D)</span>Para gerar o backup.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Próxima Aula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O que será estudado na aula 14?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Levantamento de requisitos.</li>
+                        <li><span class="letra">B)</span>Fluxograma.</li>
+                        <li><span class="letra">C)</span>Instalação do PostgreSQL.</li>
+                        <li><span class="letra">D)</span>DML: inserção, atualização e exclusão de dados.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Aula 13: DDL: Relações, Chaves e Restrições</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+</body>
+</html>

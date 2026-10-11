@@ -11,6 +11,11 @@
 
 ---
 
+> ⚠️ **Regra nova (2026-10-11 06:01:03, `CLAUDE.md` "🗃️ REGRA — ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA
+> SÓ COM CONTEÚDO"):** questões da objetiva e da prática só no banco, layout global e nenhum HTML na
+> pasta da matéria. O que está descrito aqui sobre páginas e fontes por aula é o jeito **atual**,
+> que vale só até a migração da tarefa #25-b3e29764-940b-4a82; não criar página nova por aula sem o plano dela.
+
 ## 1. O que é a atividade prática
 
 - ✅ Toda **atividade prática de aula** (`ATIVIDADES/ATIVIDADE-PRATICA-AULA-NN.html`) é uma
@@ -80,7 +85,7 @@ O que o aluno deve fazer.
   `CONTEUDO/AULA-NN-*.md` (a ementa vence); nunca PDF.
 - ✅ Capacidades com os códigos do `materia.json` da matéria (C1…, S1…).
 
-## 4. Padrão de resposta (`ATIVIDADE-PRATICA-AULA-NN-GABARITO.md`, fora do Git)
+## 4. Padrão de resposta (`ATIVIDADE-PRATICA-AULA-NN-GABARITO.md`, no Git e fora do site)
 
 - ✅ Abre com as **"Instruções para a IA corretora"** (mesmas da id 82): corrigir cada tópico
   isoladamente; só **nota cheia, metade ou zero**; equivalências aceitas; erros de português não
@@ -116,7 +121,7 @@ Cálculo da nota (o mesmo da id 82): soma das notas confirmadas ÷ pontos da ati
 2. Escrever a fonte e o `-GABARITO.md`.
 3. Gerar: `C:\Python314\python.exe assets\gerador-avaliacao-discursiva\gerar_avaliacao_discursiva.py
    <pasta ATIVIDADES> ATIVIDADE-PRATICA-AULA-NN.md` → página `ATIVIDADE-PRATICA-AULA-NN.html` e
-   `database/<data>-atividade-pratica-aula-NN-seed-atividades.sql` (fora do Git).
+   `database/<data>-atividade-pratica-aula-NN-seed-atividades.sql` (no Git e fora do site).
 4. Conferir: 10 itens × 3 tópicos, soma 10, padrão de resposta em todos os tópicos, atributos
    `data-bloquear-colar`, `data-campo-tamanho-resposta`, `data-progresso-professor`,
    `data-ocultar-respostas-entregue` e `data-login` no `<body>`, botão gravar nos tópicos e
@@ -124,7 +129,8 @@ Cálculo da nota (o mesmo da id 82): soma das notas confirmadas ÷ pontos da ati
 5. Atualizar o índice (`assets/gerador-indices/gerar_indices.py`), o `ATIVIDADES/STATUS-ATIVIDADES.md`
    e o `AULAS/STATUS-AULAS.md`.
 6. Aplicar o seed no Supabase **só com pedido/aprovação do usuário**; a prática **nasce bloqueada**
-   e o professor libera no índice.
+   e o professor libera no índice. Status e conferência do seed: regra "🌱 SEEDS DO BANCO" do `CLAUDE.md`
+   (registro em `database/SEEDS-APLICADOS.md`).
 
 ### ⚠️ Cuidados aprendidos na primeira geração (Testes de Front-End, 2026-10-09)
 
@@ -147,7 +153,7 @@ Cálculo da nota (o mesmo da id 82): soma das notas confirmadas ÷ pontos da ati
 
 ## 7. Proibições
 
-- ⛔ Nunca publicar o `-GABARITO.md`, as fontes `*QUESTOES.md` nem os seeds (`.gitignore`).
+- ⛔ Nunca publicar na Vercel o `-GABARITO.md`, as fontes `*QUESTOES.md` nem os seeds: eles vão para o Git, mas ficam no `.vercelignore` (decisão do usuário, 2026-10-09).
 - ⛔ Nunca pôr o padrão de resposta na página do aluno (só pela liberação do professor por turma).
 - ⛔ Nunca criar `<style>`/`<script>` embutidos nem `onclick` na página (o gerador já segue isso).
 - ⛔ Não converter as práticas antigas de outras matérias para este padrão sem pedido do usuário.

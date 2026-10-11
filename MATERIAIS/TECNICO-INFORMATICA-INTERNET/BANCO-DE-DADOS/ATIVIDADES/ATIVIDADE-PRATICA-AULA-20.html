@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Prática — Aula 20 — Projeto Integrador: Banco Documentado para o Back-End (10 Questões Discursivas)</title>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/avaliacao-discursiva.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+
+</head>
+<body data-aula="AP-20" data-tema="Projeto Integrador: Banco Documentado para o Back-End" data-total="10" data-topicos="30"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados" data-docente="Gelvazio Camargo" data-bloquear-colar="sim" data-campo-tamanho-resposta="sim" data-progresso-professor="sim" data-ocultar-respostas-entregue="sim"
+      data-maximo-caracteres="3000" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>🧩 Atividade Prática — Aula 20: Projeto Integrador: Banco Documentado para o Back-End</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 10 Questões Discursivas</p>
+        </header>
+
+        <main class="content-section">
+            <!-- Conteúdo gerado a partir de ATIVIDADE-PRATICA-AULA-20.md por gerar_avaliacao_discursiva.py -->
+            <section class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <h2 class="aula-title">Como Responder</h2>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Discursiva estruturada (o aluno digita a resposta de cada tópico no sistema)<br>
+                        <strong>Total de questões:</strong> 10 (30 tópicos)<br>
+                        <strong>Pontuação:</strong> 1,0 ponto por questão, dividido em 3 tópicos (0,2 + 0,4 + 0,4) — total: 10 pontos
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C1 —</strong> Reconhecer as demandas do cliente</p>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</p>
+                    <p class="quadro-capacidades__linha"><strong>C3 —</strong> Aplicar os procedimentos de normalização e padronização de dados.</p>
+                    <p class="quadro-capacidades__linha"><strong>C7 —</strong> Aplicar linguagem de definição de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C8 —</strong> Aplicar linguagem de manipulação de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C14 —</strong> Aplicar boas práticas de segurança da informação</p>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 SEU PAPEL EM TODAS AS QUESTÕES</div>
+                    <div class="content-text">Você, como aluno consultor, fecha o projeto integrador do banco escola_db da escola de cursos livres (scripts 01-ddl-escola.sql a 07-seguranca.sql das aulas 12 a 19) e entrega o banco documentado para a equipe do back-end.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 COMO RESPONDER</div>
+                    <div class="content-text">Cada questão tem <strong>3 tópicos</strong>, e cada tópico tem o <strong>seu campo</strong>. Responda <strong>somente o que o tópico pede</strong>: <strong>(1)</strong> o conceito ou o trecho pedido; <strong>(2)</strong> o código ou a aplicação na situação; <strong>(3)</strong> uma frase curta de justificativa quando o tópico pedir &quot;explique&quot; ou &quot;justifique&quot;. Respostas iguais às de colegas ou copiadas da internet são sinalizadas ao professor, que analisa e decide a nota do tópico.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 COMO A CORREÇÃO FUNCIONA</div>
+                    <div class="content-text">cada tópico é comparado com o padrão de resposta do professor: comandos que funcionam no PostgreSQL e no psql, documentação que outra pessoa consiga seguir, e justificativa com as palavras-chave do conteúdo. Comandos e textos equivalentes que produzam o mesmo resultado valem.</div>
+                </div>
+            </section>
+
+            <section id="painel-discursivo" class="aula-card painel-discursivo" aria-live="polite">
+                <span class="aula-badge">IDENTIFICAÇÃO</span>
+                <p class="painel-discursivo__texto">Carregando...</p>
+            </section>
+
+            <section class="aula-card questao-discursiva" id="item-01" data-item="1">
+                <span class="aula-badge">ITEM 01</span>
+                <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
+                <h2 class="aula-title">Do Requisito ao Banco</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente<br>C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, apresenta o banco à direção da escola, que pergunta: &quot;como eu sei que tudo o que pedimos está no banco?&quot;. O escopo tem, entre outros, os requisitos R2 (o aluno não se matricula duas vezes na mesma turma), R3 (a turma tem no máximo 25 alunos ativos) e R6 (o financeiro não vê o CPF).</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Mostre a rastreabilidade entre o escopo e o banco.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="1" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-01-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique o que é rastreabilidade no projeto do banco.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-a" class="topico-resposta__campo" data-item="1" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="1" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-01-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Diga onde cada um dos requisitos R2, R3 e R6 está atendido no banco (tabela, restrição, procedimento ou permissão).
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-b" class="topico-resposta__campo" data-item="1" data-topico="2"
+                              maxlength="3000" rows="6" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="1" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-01-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique o que indicam, na conferência, uma tabela que não atende a nenhum requisito e um requisito sem nada no banco.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-c" class="topico-resposta__campo" data-item="1" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-02" data-item="2">
+                <span class="aula-badge">ITEM 02</span>
+                <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
+                <h2 class="aula-title">O Script Mestre</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, junta os sete scripts da SA 2 na pasta sql/ do projeto. O colega do back-end precisa instalar o banco inteiro com um único comando.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Monte o script mestre 00-instalar.sql.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="2" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-02-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique por que os scripts precisam rodar numa ordem, com um exemplo de dependência.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-a" class="topico-resposta__campo" data-item="2" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="2" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-02-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva o 00-instalar.sql que chama os scripts 01 a 07 na ordem certa e para no primeiro erro, e o comando psql que o executa.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-b" class="topico-resposta__campo" data-item="2" data-topico="2"
+                              maxlength="3000" rows="8" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="2" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-02-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique o que acontece se o script mestre não tiver \set ON_ERROR_STOP on e um dos scripts der erro.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-c" class="topico-resposta__campo" data-item="2" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-03" data-item="3">
+                <span class="aula-badge">ITEM 03</span>
+                <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
+                <h2 class="aula-title">Banco Limpo e Scripts que Rodam de Novo</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados<br>C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, ouve do colega: &quot;na minha máquina funciona&quot;. Na máquina do professor, o script 06 para com &quot;function registrar_historico_nota() does not exist&quot;, e uma segunda execução do script 05 dá &quot;procedure matricular already exists&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Prepare o teste num banco limpo e deixe os scripts prontos para rodar de novo.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="3" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-03-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique por que o teste da instalação deve ser feito num banco limpo e em qual banco ele nunca deve ser feito.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-a" class="topico-resposta__campo" data-item="3" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="3" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-03-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva os comandos que criam um banco limpo escola_teste e instalam o projeto nele com o script mestre.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-b" class="topico-resposta__campo" data-item="3" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="3" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-03-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Diga como corrigir os dois erros do contexto (o da função e o do procedimento) para os scripts rodarem do zero e também uma segunda vez.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-c" class="topico-resposta__campo" data-item="3" data-topico="3"
+                              maxlength="3000" rows="9" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-04" data-item="4">
+                <span class="aula-badge">ITEM 04</span>
+                <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
+                <h2 class="aula-title">Escopo, README e Dicionário</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente<br>C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, revisa a documentação antes da entrega. O README só diz &quot;rode os scripts&quot;, o escopo é o mesmo da aula 5 e o dicionário de dados lista só o nome das colunas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Complete a documentação técnica.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="4" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-04-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique para que serve a documentação técnica do banco.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-04-a" class="topico-resposta__campo" data-item="4" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="4" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-04-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Liste o que o README e o escopo atualizado precisam ter para outra pessoa instalar e entender o banco.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-04-b" class="topico-resposta__campo" data-item="4" data-topico="2"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="4" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-04-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva a linha do dicionário de dados da coluna valor da tabela parcela, com todos os campos que o dicionário pede.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-04-c" class="topico-resposta__campo" data-item="4" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-05" data-item="5">
+                <span class="aula-badge">ITEM 05</span>
+                <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
+                <h2 class="aula-title">Cronograma e Fluxograma</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente<br>C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento<br>C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, atualiza o cronograma e o fluxograma da aula 11. Os procedimentos estavam previstos para a aula 17, mas ficaram prontos na aula 18 porque a regra de vagas mudou. O fluxograma da matrícula tem as decisões &quot;Aluno já matriculado na turma?&quot; e &quot;Há vagas?&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Atualize o cronograma e ligue o fluxograma às regras do banco.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="5" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-05-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Diga quais colunas o cronograma da entrega final precisa ter.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-05-a" class="topico-resposta__campo" data-item="5" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="5" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-05-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva a linha do cronograma da tarefa dos procedimentos com o previsto, o realizado e a observação.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-05-b" class="topico-resposta__campo" data-item="5" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="5" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-05-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Diga qual recurso do banco executa cada uma das duas decisões do fluxograma e explique por que ligar o fluxograma ao banco melhora a documentação.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-05-c" class="topico-resposta__campo" data-item="5" data-topico="3"
+                              maxlength="3000" rows="8" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-06" data-item="6">
+                <span class="aula-badge">ITEM 06</span>
+                <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
+                <h2 class="aula-title">Revisão do Modelo</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento<br>C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, revisa o DDL de outra equipe e encontra: a tabela turma com as colunas id_curso e nome_curso; a tabela aluno com a coluna telefones = &#x27;4799990000;4798880000&#x27;; e a coluna IdMatrícula na tabela matricula.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Revise o modelo pelo checklist da aula.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="6" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-06-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Cite dois itens do checklist do modelo que conferem o DER com o banco.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-06-a" class="topico-resposta__campo" data-item="6" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="6" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-06-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Diga qual regra cada um dos três problemas do contexto fere (forma normal ou padrão de nomes).
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-06-b" class="topico-resposta__campo" data-item="6" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="6" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-06-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique como corrigir cada um dos três problemas.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-06-c" class="topico-resposta__campo" data-item="6" data-topico="3"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-07" data-item="7">
+                <span class="aula-badge">ITEM 07</span>
+                <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
+                <h2 class="aula-title">As Consultas do Back-End</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, fecha o script 04-relatorios.sql com as consultas que as telas do back-end vão usar: a tela de cobrança e o painel da coordenação.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Escreva as consultas e justifique cada uma.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="7" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-07-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique por que cada consulta do script deve ter um comentário dizendo qual tela ou relatório a usa.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-07-a" class="topico-resposta__campo" data-item="7" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="7" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-07-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva a consulta das parcelas vencidas e não pagas, com o nome do aluno, para a tela de cobrança.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-07-b" class="topico-resposta__campo" data-item="7" data-topico="2"
+                              maxlength="3000" rows="6" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="7" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-07-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva a consulta das turmas sem nenhuma matrícula para o painel da coordenação e explique o recurso que encontra essas turmas.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-07-c" class="topico-resposta__campo" data-item="7" data-topico="3"
+                              maxlength="3000" rows="6" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-08" data-item="8">
+                <span class="aula-badge">ITEM 08</span>
+                <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
+                <h2 class="aula-title">O Contrato com o Back-End</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, recebe o pedido do programador do back-end: &quot;me passa a senha do postgres que eu faço o resto&quot;. A aplicação precisa matricular alunos, registrar pagamentos e editar nome, e-mail e telefone do aluno.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Defina o contrato entre o banco e o back-end.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="8" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-08-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique o que é o contrato com o back-end e por que o pedido do programador deve ser recusado.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-08-a" class="topico-resposta__campo" data-item="8" data-topico="1"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="8" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-08-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva os GRANT do app_escola para matricular, registrar pagamento e editar só nome, e-mail e telefone do aluno.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-08-b" class="topico-resposta__campo" data-item="8" data-topico="2"
+                              maxlength="3000" rows="8" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="8" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-08-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique por que o back-end deve usar consultas com parâmetros e onde deve ficar a senha do app_escola.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-08-c" class="topico-resposta__campo" data-item="8" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-09" data-item="9">
+                <span class="aula-badge">ITEM 09</span>
+                <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
+                <h2 class="aula-title">Teste de Ponta a Ponta e Backup</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados<br>C8 — Aplicar linguagem de manipulação de dados<br>C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, roda o roteiro final no banco escola_teste antes da entrega e precisa entregar também um backup que o professor consiga restaurar.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Execute o teste final e prepare o backup de entrega.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="9" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-09-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Cite os comandos do psql que conferem, depois da instalação, as tabelas, as visões, as funções e procedimentos e os papéis.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-09-a" class="topico-resposta__campo" data-item="9" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="9" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-09-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva dois testes do roteiro com o resultado esperado: uma matrícula repetida e o login do financeiro tentando ver o CPF.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-09-b" class="topico-resposta__campo" data-item="9" data-topico="2"
+                              maxlength="3000" rows="6" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="9" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-09-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva o comando do backup de entrega e os comandos que provam que ele funciona, e explique por que essa prova é necessária.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-09-c" class="topico-resposta__campo" data-item="9" data-topico="3"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-10" data-item="10">
+                <span class="aula-badge">ITEM 10</span>
+                <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador</span>
+                <h2 class="aula-title">Revisão em Pares e Decisões</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Você, como aluno consultor, participa da revisão cruzada. Sua equipe recebeu do colega a sugestão &quot;o script de vocês está ruim&quot; e precisa registrar no projeto por que decidiu cancelar matrículas em vez de apagá-las.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Melhore a sugestão recebida e registre a decisão.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="10" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-10-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Diga como a revisão cruzada testa o projeto de outra equipe.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-10-a" class="topico-resposta__campo" data-item="10" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="10" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-10-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Reescreva a sugestão no formato &quot;o quê, onde, efeito&quot; com um problema real de instalação e diga como a equipe deve receber a sugestão.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-10-b" class="topico-resposta__campo" data-item="10" data-topico="2"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="10" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-10-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva a linha do registro de decisões para &quot;matrícula é cancelada, não apagada&quot;, com o motivo e a alternativa descartada.
+                        <span class="topico-resposta__pontos">0,4 ponto</span>
+                    </label>
+                    <textarea id="resposta-10-c" class="topico-resposta__campo" data-item="10" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aula-card entrega-discursiva">
+                <span class="aula-badge">ENTREGA</span>
+                <h2 class="aula-title">Finalizar a avaliação</h2>
+                <p class="entrega-discursiva__texto">Confira se todos os tópicos estão com
+                    ✅ Resposta gravada. Depois de finalizar, as respostas não podem mais ser
+                    alteradas.</p>
+                <button class="btn-export entrega-discursiva__botao" id="btnFinalizarDiscursiva"
+                        type="button" hidden>✅ Finalizar e entregar</button>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Atividade Prática — Aula 20: Projeto Integrador: Banco Documentado para o Back-End</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>10 Questões • Discursiva</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/popup.js"></script>
+    <script src="../../../../assets/js/termos-tentativa.js"></script>
+    <script src="../../../../assets/js/respostas-discursivas-banco.js"></script>
+    <script src="../../../../assets/js/avaliacao-discursiva.js"></script>
+    <script src="../../../../assets/js/bloqueio-colar-discursiva.js"></script>
+    <script src="../../../../assets/js/campo-tamanho-discursiva.js"></script>
+</body>
+</html>
