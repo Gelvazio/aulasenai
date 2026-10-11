@@ -817,6 +817,43 @@
       </table>
     </div>
 
+    <h2>🗂️ Atualização 2026-10-11 — Fila tasks do agendador único</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-11-tasks-fila-agendador.sql</code> (aplicado em 2026-10-11)</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>tasks</td>
+          <td>Tabela (RLS)</td>
+          <td>Fila do agendador único: código, origem, título, instrução, prioridade, ON/OFF, executar após, status, tentativas, trava, resultado, PR; só o Professor Administrador lê e grava; sem DELETE</td>
+        </tr>
+        <tr>
+          <td>tasks_preencher_trg</td>
+          <td>Trigger</td>
+          <td>Código TASK-NNNN, arquivo em tasks/fila/, datas e auth.uid()</td>
+        </tr>
+        <tr>
+          <td>tasks_validar_pagina_trg</td>
+          <td>Trigger</td>
+          <td>Usuário logado não põe nem tira task de em_execucao</td>
+        </tr>
+        <tr>
+          <td>pegar_proxima_task(text)</td>
+          <td>Função (security definer)</td>
+          <td>Pega 1 task ligada (skip locked) e trava por 90 min; sem execução pela API</td>
+        </tr>
+        <tr>
+          <td>finalizar_task(bigint, text, text, text, text)</td>
+          <td>Função (security definer)</td>
+          <td>Fecha a task: concluida, recusada ou erro (erro com tentativas sobrando volta à fila)</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🔓 Atualização 2026-10-06 — Liberar gabaritos por atividade e turma</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-06-liberacao-respostas-turma.sql</code> (aplicado em 2026-10-06) · Telas: quadro "Respostas dos alunos" (professor) e "Exportar Gabarito" (aluno)</p>
