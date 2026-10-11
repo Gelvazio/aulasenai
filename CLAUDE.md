@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-11 06:24:07
+**Versão das regras:** 2026-10-11 11:18:37
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,23 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-11 11:18:37 | **Agentes da Grok AI seguem o `AGENTS.md`:** os agentes da Grok AI (xAI / Grok Bot) devem sempre, antes de qualquer coisa, buscar as informações do arquivo `AGENTS.md` e seguir o que ele orientar — "🤖 REGRA — AGENTES DA GROK AI SEMPRE SEGUEM O AGENTS.md" |
 | 2026-10-11 06:24:07 | **Regras no banco:** cópia do `CLAUDE.md` e dos arquivos de regras (origem = repositório) nas tabelas `regra_documento` (arquivo inteiro) e `regra_secao` (uma linha por `##`/`###`), só leitura do administrador; script `scripts/regras/sincronizar_regras.py` (`importar`, `consulta`, `conferir` pelo md5); sincronizar a cada mudança de regra e em toda execução da rotina — "🗄️ REGRAS NO BANCO" |
 | 2026-10-11 06:09:22 | **Todas as regras da fila `tasks` no `CLAUDE.md`:** a seção "⏰ TAREFAS AGENDADAS E FILA `tasks`" passa a trazer as regras completas (agendador único; tabela, status, RLS e funções; ordem, dependências e sub-tasks; toda task na tabela e no GitHub com `sincronizar_tasks.py`; passo a passo e decisão executar/recusar/erro; página `tasks.html` e log), com itens em "valem sempre" e na inicialização (tarefa do `TASKS.md` também na tabela) |
 | 2026-10-11 06:07:25 | **Ordem e dependências na fila `tasks`:** colunas `ordem` e `task_dependente` (ids das tasks de que ela depende); a `pegar_proxima_task` só pega uma task com **todas as dependentes concluídas** (prioridade → ordem → criação); tarefa grande vira **sub-tasks pequenas em cadeia** (`#NN.MM`), uma por vez; etapas do usuário (`👤`) ficam desligadas e o professor as conclui na `tasks.html` (✅ Concluir); a #25 foi dividida em 22 sub-tasks (TASK-0019 a TASK-0040) — [`docs/regras/tarefas-agendadas.md`](docs/regras/tarefas-agendadas.md) |
 | 2026-10-11 06:01:03 | **Atividades só no banco, layout global e pasta da matéria só com conteúdo:** as questões da objetiva e da prática (enunciado, alternativas, gabarito, tópicos e padrão de resposta) ficam **só no banco**; objetiva e prática usam **um layout global** (nada de página criada do zero em cada aula); as pastas das matérias/aulas têm **só conteúdo (Markdown), nenhum HTML** — tudo vem do global; migração das matérias existentes na tarefa #25-b3e29764-940b-4a82 (plano e aprovação) — "🗃️ REGRA — ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA SÓ COM CONTEÚDO" |
-| 2026-10-11 05:57:00 | **Agendador único lendo a fila `tasks`:** as tarefas agendadas viram **1 rotina por hora** que pega no máximo 1 task da tabela `tasks` do Supabase (`pegar_proxima_task`), decide se executa (ou recusa com o motivo) e grava o resultado (`finalizar_task`); fila vazia = não faz nada; cadastro na página `tasks.html` (menu TASKS, só o administrador); **toda task existe na tabela e no GitHub** (`tasks/TASKS.md` ou `tasks/fila/TASK-NNNN.md`, script `scripts/tasks/sincronizar_tasks.py`); substitui as 6 rotinas paralelas e a escolha automática de aula (#24; #22 e #23 canceladas) — "⏰ TAREFAS AGENDADAS" e [`docs/regras/tarefas-agendadas.md`](docs/regras/tarefas-agendadas.md) |
+
+---
+
+## 🤖 REGRA — AGENTES DA GROK AI SEMPRE SEGUEM O AGENTS.md
+
+⚠️ **Os agentes da Grok AI (xAI / Grok Bot) devem sempre buscar as informações do arquivo
+[`AGENTS.md`](AGENTS.md) e seguir o que ele orientar.** Registrada em 2026-10-11 11:18:37 a pedido do usuário.
+
+- ✅ **Antes de qualquer coisa**, em toda conversa e em toda tarefa, o agente da Grok AI lê o
+  `AGENTS.md` da raiz do repositório.
+- ✅ O que o `AGENTS.md` orientar vale para os agentes da Grok AI (hoje ele manda ler e seguir
+  este `CLAUDE.md` por completo).
 
 ---
 
