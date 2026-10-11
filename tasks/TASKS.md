@@ -308,4 +308,20 @@ e gravando o log com o próprio `tipo_assinatura`.
 
 ---
 
-**Última atualização:** 2026-10-11 05:15 (tarefa #22 adicionada)
+### #23-79fc30a3-c4c9-4a40: Agendamentos — CRUD e espelho dos controles no banco — pedida em 2026-10-11 05:30:00
+
+**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 141-a7e81c26 (fonte única).
+**Prioridade:** 🟠 Alta · **Tarefa grande:** plano [docs/agendamentos-crud-e-espelho-banco.md](../docs/agendamentos-crud-e-espelho-banco.md).
+
+Pedido: CRUD completo das tarefas agendadas em `agendamentos.html` (só o Professor Administrador,
+com o login atual) e os controles do projeto (travas, status, tarefas, recados, seeds e cópia dos
+Markdowns) também no Supabase, de forma redundante; a origem dos Markdowns é sempre o repositório.
+
+- [ ] Fase 1: `agendamento`, `trava_aula`, leitura do log, página com abas Agendamentos, Execuções e Travas.
+- [ ] Fase 2: tarefas, etapas, frentes e recados no banco + exportação para `.md`.
+- [ ] Fase 3: seeds e status das aulas no banco.
+- [ ] Fase 4: `documento_markdown` (cópia do Git) e regras de "fonte única" no `CLAUDE.md`.
+
+---
+
+**Última atualização:** 2026-10-11 05:40 (tarefa #23 adicionada)
