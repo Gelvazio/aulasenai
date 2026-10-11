@@ -1,6 +1,6 @@
 # 📚 CLAUDE.md — Regras do projeto Aulas SENAI
 
-**Versão das regras:** 2026-10-10 16:40:55
+**Versão das regras:** 2026-10-10 22:19:46
 
 ## 🕒 HISTÓRICO DE VERSÕES DAS REGRAS
 
@@ -8,11 +8,11 @@ Resumo — as 5 mudanças mais recentes. **Histórico completo:** [docs/HISTORIC
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-10 22:19:46 | **Regra global de matérias:** tudo o que define como a ITIC é feita virou a regra única [`docs/regras/materias.md`](docs/regras/materias.md) (estrutura, ementa e `materia.json`, aulas, objetiva, prática, avaliações e média final, índice e menu, apostila, 5 status, banco e seeds, ordem de construção, critério de pronto, exceções); em vez de consultar a ITIC como modelo, consultar a regra — "🧱 REGRA GLOBAL DE MATÉRIAS" (substitui "MATÉRIA MODELO") |
 | 2026-10-10 16:40:55 | **Todos os arquivos de status existem sempre, em todas as matérias (inclusive IGNORAR):** `STATUS_MATERIA.md`, `AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` e `STATUS-EMENTAS.md`; o `gerar_status_materia.py` cria os que faltam antes de gerar — "🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS" |
 | 2026-10-10 16:37:58 | **STATUS_MATERIA e ordem das matérias:** toda matéria tem o `STATUS_MATERIA.md`, gerado por `scripts/status-materias/gerar_status_materia.py` a partir de todos os arquivos da pasta (peças do padrão da ITIC, aulas e coluna Banco lida do `database/SEEDS-APLICADOS.md`), com a situação ⬜ NÃO INICIADA / 🔄 PENDENTE / ✅ CONCLUÍDA; ordem oficial em `tasks/ORDEM-MATERIAS.md` (Banco de Dados 1, Testes de Front-End 2, ITIC 3, demais em seguida), seguida sempre que se lê status de tarefas ou matérias — "🔢 REGRA — STATUS_MATERIA E ORDEM DAS MATÉRIAS" |
 | 2026-10-09 22:21:17 | **Recados lidos a cada merge:** todo merge (trazer a `main` para a branch ou juntar um PR) é seguido da leitura do `tasks/RECADOS.md` (recados das outras sessões e IAs para a sua frente ou para `todas`) — "CONVERSA ENTRE SESSÕES E LICENÇAS" (regra 4) e "PUSH" |
 | 2026-10-09 22:19:14 | **Branch apagada depois do merge:** PR juntado na `main` = a branch dele é excluída do GitHub na hora (fica só o histórico na `main` e no PR); vale para as branches de PRs juntados que ainda existirem — "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM" |
-| 2026-10-09 22:17:26 | **Claude faz o merge dos PRs na nuvem:** depois do push e do PR, o próprio Claude junta o PR na `main` (merge commit, sem push direto nem forçado); havendo conflito de merge, ele mesmo traz a `main` para a branch, resolve, confere e junta — "PUSH: NUNCA NO AMBIENTE LOCAL, SEMPRE NA NUVEM" e "Pull Requests" |
 
 ---
 
@@ -65,7 +65,7 @@ Registrada em 2026-10-03 a pedido do usuário.
   `STATUS-ATIVIDADES.md` da matéria e o item da etapa em `tasks/etapas/`) e **fazer o commit** (na
   nuvem, também o push) **antes de passar à próxima aula** — nunca acumular várias aulas.
 - ✅ **Toda matéria tem status por aula** (2026-10-09, pedido do usuário): cada matéria tem o
-  **`AULAS/STATUS-AULAS.md`** (modelo da ITIC) com **uma linha por aula** e as colunas da aula em
+  **`AULAS/STATUS-AULAS.md`** (regra global de matérias) com **uma linha por aula** e as colunas da aula em
   `CONTEUDO/`, slides, atividade objetiva, atividade prática e **Banco** (seeds aplicados e conferidos).
   Matéria nova já nasce com ele e a análise contínua (tarefa #19) aponta as que faltam.
 - ✅ **Primeiro, só os status das aulas** (2026-10-09, pedido do usuário): **inicialmente, criar
@@ -154,9 +154,9 @@ Registrada em 2026-10-03 a pedido do usuário.
 - ⛔ **Conteúdo só pelos Markdowns, nunca de PDF** (2026-10-03): para conferir ou gerar conteúdo,
   ler os `.md` da matéria — em primeiro lugar o `EMENTA-CHALKIE-AI.md` (ver a regra "CONTEÚDO SÓ
   PELOS MARKDOWNS").
-- ✅ **Matéria modelo = Introdução à TIC** (2026-10-03): toda peça de outra matéria segue a
-  estrutura que funciona em `MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/` (ver a
-  regra "MATÉRIA MODELO").
+- ✅ **Regra global de matérias** (2026-10-10, substitui a "matéria modelo ITIC"): toda matéria
+  segue [`docs/regras/materias.md`](docs/regras/materias.md); consultar a regra, não a ITIC (ver
+  "🧱 REGRA GLOBAL DE MATÉRIAS").
 - ✅ **Aulas extraídas da ementa em `CONTEUDO/`** (2026-10-03): 1 aula a cada 4 h da ementa
   (arredondando para cima), arquivo `AULA-NN-DESCRICAO-CURTA.md`; atividades e, no final, a
   apostila são feitas a partir dessas aulas (ver a regra "AULAS EXTRAÍDAS DA EMENTA").
@@ -297,7 +297,7 @@ Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 Registrada em 2026-10-10 16:37:58 a pedido do usuário.
 
 - ✅ **Toda matéria tem o `STATUS_MATERIA.md`** na raiz da pasta dela, com o status de **todos os
-  arquivos da pasta**: (1) peças gerais do padrão da ITIC (ementa, `materia.json`, os 4 status,
+  arquivos da pasta**: (1) peças gerais da regra global de matérias (ementa, `materia.json`, os 4 status,
   índice e menu das atividades, avaliações, média final e apostila); (2) uma linha por aula do
   `AULAS/STATUS-AULAS.md` (aula em `CONTEUDO/`, objetiva página e fonte, prática página, fonte e
   padrão de resposta, **Banco**); (3) a lista de todos os arquivos (✅ peça do padrão, 📎 outro
@@ -321,7 +321,7 @@ Registrada em 2026-10-10 16:37:58 a pedido do usuário.
   algum, rodar o gerador na hora.
 - ✅ **Ordem oficial das matérias** em **`tasks/ORDEM-MATERIAS.md`** (gerado pelo mesmo script):
   **1 = Banco de Dados** (Técnico em Informática para Internet), **2 = Testes de Front-End**,
-  **3 = Introdução à TIC** (matéria modelo) e as demais em seguida, curso por curso. A ordem gravada
+  **3 = Introdução à TIC** e as demais em seguida, curso por curso. A ordem gravada
   não muda; matéria nova entra no fim; mudar a ordem só a pedido do usuário.
 - ✅ **Sempre seguir a ordem:** ao ler status de tarefas (`tasks/STATUS.md`, `TASKS.md`, etapas) ou
   de matérias (relatório da análise, `STATUS_MATERIA.md`, status das aulas e atividades), ao
@@ -377,8 +377,8 @@ regras evitam trabalho repetido, tarefa pega em dobro e conflito de merge.
 Registrada em 2026-10-09 13:20:11 a pedido do usuário.
 
 - ✅ **Rotina:** `C:\Python314\python.exe scripts/analise-materias.py` — percorre todos os cursos de
-  `MATERIAIS/` (menos `MATERIAS-GERAIS` e `AGENDA_COLABORADOR`), confere cada matéria no padrão da
-  matéria modelo (ITIC) e grava **o que falta e o que está OK** em
+  `MATERIAIS/` (menos `MATERIAS-GERAIS` e `AGENDA_COLABORADOR`), confere cada matéria pela regra global
+  de matérias (`docs/regras/materias.md`) e grava **o que falta e o que está OK** em
   **`tasks/ANALISE-MATERIAS-RELATORIO.json`**. Só lê as matérias; não altera nada nelas.
 - ✅ **Rodar SEMPRE:** no início de cada sessão e ao concluir qualquer tarefa
   que mexa numa matéria; o JSON atualizado entra no commit da tarefa e a linha da tarefa #19 no
@@ -389,8 +389,8 @@ Registrada em 2026-10-09 13:20:11 a pedido do usuário.
   nenhuma pendência, **e** o usuário der o aceite, ela pode ser concluída.
 - ✅ As pendências do relatório são resolvidas **só quando o usuário pedir**, uma matéria por vez
   (cada uma vira etapa própria no `STATUS.md`), respeitando `IGNORAR`/`VERIFICAR` das ementas.
-- ⛔ Não mudar o padrão conferido pela rotina sem pedido do usuário; se a ITIC mudar, atualizar a
-  rotina na mesma tarefa.
+- ⛔ Não mudar o padrão conferido pela rotina sem pedido do usuário; se a regra global de matérias
+  mudar, atualizar a rotina na mesma tarefa.
 
 ---
 
@@ -409,6 +409,7 @@ Aqui ficam as regras de sempre, as de segurança e este índice.
 
 | Arquivo | Ler antes de… | Regras dentro |
 |---|---|---|
+| [docs/regras/materias.md](docs/regras/materias.md) | criar, completar ou conferir **qualquer** matéria (substitui a consulta à ITIC) | estrutura da pasta; ementa e `materia.json`; aulas em `CONTEUDO/`; objetiva de 50; prática 10 × 3; avaliações e média final; índice e menu; apostila; 5 status; banco e seeds; ordem de construção; critério de pronto; exceções |
 | [docs/regras/ementas-e-cursos.md](docs/regras/ementas-e-cursos.md) | criar ou alterar ementas, pastas de curso/matéria, aulas em `CONTEUDO/`, STATUS-EMENTAS e dashboards | aulas extraídas da ementa; `EMENTA-CHALKIE-AI.md`; STATUS-EMENTAS; STATUS-PERMISSAO-EMENTA/MATERIA; `EMENTA-PRINCIPAL-<CURSO>.md`; pasta = UC; matérias semelhantes; `dashboard.html` |
 | [docs/regras/atividades.md](docs/regras/atividades.md) | mexer em atividades, avaliações, discursivas, respostas no banco, gabarito, exportação PDF, índices de atividades, Excel ou Reforço de Linguagens | alternativas no banco (tentativas, horário, log, discursivas, correção); turma na exportação; gabarito; índices e bloqueio por turma; Excel; uma aula por vez; 50 questões; Reforço de Linguagens |
 | [docs/regras/apostilas.md](docs/regras/apostilas.md) | gerar ou alterar apostilas (capítulos, Markdown completo, HTML, `materia.json`) | identificação; conferência 100% com a ementa; gerador; Markdown completo; `materia.json`; formato e ordem; páginas A4 |
@@ -459,31 +460,25 @@ avaliações, apostilas, planos, slides e conferências).
 
 ---
 
-## 🏅 REGRA CRÍTICA — MATÉRIA MODELO: INTRODUÇÃO À TIC
+## 🧱 REGRA GLOBAL DE MATÉRIAS — [docs/regras/materias.md](docs/regras/materias.md) (SUBSTITUI A "MATÉRIA MODELO")
 
-⚠️ **Usar SEMPRE como exemplo padrão a matéria
-`MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/` — nela tudo está funcionando.**
-Registrada em 2026-10-03 a pedido do usuário.
+Registrada em 2026-10-10 22:19:46 a pedido do usuário ("pegue tudo como a matéria ITIC é feita e torne 1 regra
+global de matérias; em vez de consultar o modelo ITIC, consulta a regra global"). Antes (desde
+2026-10-03) a regra mandava abrir a ITIC como matéria modelo.
 
-- ✅ Antes de criar ou completar qualquer peça de outra matéria, **abrir a peça equivalente da
-  ITIC** e seguir a mesma estrutura de pastas, nomes de arquivo, campos, geradores e fluxo:
-
-| Peça | Onde fica na ITIC (modelo) |
-|---|---|
-| Dados e ementa da matéria | `materia.json`, `EMENTA-CHALKIE-AI.md` |
-| Aulas em Markdown | `CONTEUDO/` (regra "AULAS EXTRAÍDAS DA EMENTA EM `CONTEUDO/`") |
-| Slides (só apresentação, nunca fonte) | `AULAS/` |
-| Atividade objetiva de cada aula | `ATIVIDADES/CONTEUDO/ATIVIDADES-AULA-NN-50-QUESTOES.md` → `ATIVIDADES/ATIVIDADES-AULA-NN-50-QUESTOES.html` |
-| Atividade prática de cada aula | `ATIVIDADES/CONTEUDO/ATIVIDADE-PRATICA-AULA-NN.md` (+ `-GABARITO.md`, no Git e fora do site) → `ATIVIDADES/ATIVIDADE-PRATICA-AULA-NN.html` |
-| Avaliações e média final | `ATIVIDADES/AVALIACAO-OBJETIVA-NN.html`, `AVALIACAO-PRATICA.html`, `AVALIACAO-MEDIA-FINAL.html` (+ `media-final.json`) |
-| Menu e índice das atividades | `ATIVIDADES/MENU-ATIVIDADES.js`, `ATIVIDADES/index.html` |
-| Controles | `AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md` |
-| Apostila | `APOSTILA/` (`CONTEUDO/INTRODUCAO.md`, `CONTEUDO/CAPITULO-NN.md`, Markdown completo e HTML) — apostila única, versão 2.1, sem vídeos e exercícios (V1 removida em 2026-10-08) |
-
-- ✅ A ITIC é modelo de **estrutura e funcionamento**; o conteúdo de cada matéria vem da ementa
-  **dela** (nunca copiar conteúdo da ITIC para outra UC).
-- ✅ Se uma regra deste arquivo e a ITIC divergirem, **avisar o usuário**; a ITIC só é alterada a
-  pedido dele (ela é a referência).
+- ✅ **Para criar, completar ou conferir qualquer matéria, consultar a regra global
+  [`docs/regras/materias.md`](docs/regras/materias.md)** — não abrir mais a ITIC como modelo. Ela
+  traz, numa regra só: estrutura de pastas e nomes de arquivo, ementa e `materia.json`, aulas em
+  `CONTEUDO/` (partes da aula), objetiva de 50 questões, prática 10 × 3 (padrão id 82), avaliações e
+  média final, índice e menu das atividades, apostila, os 5 arquivos de status, banco e seeds, a
+  ordem de construção, o critério de pronto e as exceções.
+- ✅ A ITIC (`MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/`) continua como **exemplo
+  real** da regra; se ela (ou outra matéria pronta) divergir da regra global, **vale a regra**:
+  avisar o usuário e só alterar a matéria pronta a pedido dele.
+- ✅ O conteúdo de cada matéria vem da ementa **dela** (nunca copiar conteúdo de outra UC).
+- ✅ Mudou o jeito de fazer uma peça de matéria → atualizar `docs/regras/materias.md` **na mesma
+  tarefa** (e a rotina `scripts/analise-materias.py` e os scripts de `scripts/status-materias/`,
+  que conferem as matérias por esta regra).
 
 ---
 

@@ -44,7 +44,7 @@ def st_atividades(m,A):
 |---|---|---|---|---|---|
 {pr}
 
-## Avaliações (modelo da ITIC)
+## Avaliações (regra global de matérias)
 
 | Página | Tipo | Status |
 |---|---|---|

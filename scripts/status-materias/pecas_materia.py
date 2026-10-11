@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Peças esperadas de uma matéria (padrão da ITIC) e inventário dos arquivos da pasta.
+"""Peças esperadas de uma matéria (regra global de matérias, docs/regras/materias.md) e inventário dos arquivos da pasta.
 
 Só lê arquivos. Usado por gerar_status_materia.py para montar o STATUS_MATERIA.md.
 """
