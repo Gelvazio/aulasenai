@@ -27,6 +27,8 @@ import sys
 from pathlib import Path
 
 ARQUIVO_TASKS = Path("tasks/TASKS.md")
+ARQUIVO_STATUS = Path("tasks/STATUS.md")
+PADRAO_CANCELADA = re.compile(r"^\| (#[0-9a-f-]+) \|[^\n]*⛔ Cancelada", re.M)
 PASTA_FILA = Path("tasks/fila")
 PADRAO_TITULO = re.compile(r"^### (#\d+(?:-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4})?):\s*(.+)$")
 STATUS_ABERTOS = ("pendente", "recusada", "erro")
@@ -97,6 +99,11 @@ def sql_importar_tarefa(tarefa):
         f"where tasks.md5_md is distinct from {literal_sql(tarefa['md5'])};")
 
 
+def ler_canceladas_status():
+    """Códigos das tarefas marcadas "⛔ Cancelada" no "📌 Tarefas" do tasks/STATUS.md."""
+    return PADRAO_CANCELADA.findall(ARQUIVO_STATUS.read_text(encoding="utf-8"))
+
+
 def sql_importar(tarefas):
     """Monta o SQL que leva as tarefas do TASKS.md para a tabela e fecha as que saíram dele."""
     comandos = [sql_importar_tarefa(tarefa) for tarefa in tarefas]
@@ -107,12 +114,25 @@ def sql_importar(tarefas):
         "where origem = 'repositorio' and md5_md is distinct from md5(titulo || chr(10) || instrucao);")
     codigos = ", ".join(literal_sql(t["codigo"]) for t in tarefas) or "''"
     abertos = ", ".join(literal_sql(s) for s in STATUS_ABERTOS)
+    canceladas = ", ".join(literal_sql(c) for c in ler_canceladas_status()) or "''"
+    comandos.append(
+        "update public.tasks set status = 'cancelada', executar = false, sincronizado_em = now(), "
+        "resultado = coalesce(resultado || E'\\n', '') || 'Cancelada no tasks/STATUS.md'\n"
+        f"where origem = 'repositorio' and codigo in ({canceladas}) and codigo not in ({codigos}) "
+        f"and status in ({abertos});")
     comandos.append(
         "update public.tasks set status = 'concluida', executar = false, sincronizado_em = now(), "
         "resultado = coalesce(resultado || E'\\n', '') || 'Bloco removido do tasks/TASKS.md "
         "(concluída ou cancelada; ver tasks/STATUS.md)'\n"
         f"where origem = 'repositorio' and codigo not in ({codigos}) and status in ({abertos});")
     return SEPARADOR_COMANDOS.join(comandos)
+
+
+def formatar_valor(valor):
+    """Formata um campo da tabela para o Markdown (vazio = "—", booleano = Sim/Não)."""
+    if isinstance(valor, bool):
+        return "Sim" if valor else "Não"
+    return "—" if valor in (None, "") else str(valor)
 
 
 def montar_arquivo_task(linha):
@@ -122,8 +142,7 @@ def montar_arquivo_task(linha):
               "`tasks` (não editar à mão; editar na página `tasks.html`).", "",
               "| Campo | Valor |", "|---|---|"]
     for rotulo, chave in CAMPOS_ARQUIVO:
-        valor = linha.get(chave)
-        partes.append(f"| {rotulo} | {'—' if valor in (None, '') else valor} |")
+        partes.append(f"| {rotulo} | {formatar_valor(linha.get(chave))} |")
     partes += ["", "## Instrução", "", linha["instrucao"].strip(), "",
                "## Resultado", "", (linha.get("resultado") or "—").strip(), ""]
     return "\n".join(partes)
