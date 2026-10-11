@@ -31,7 +31,7 @@
 | 17 | Procedimentos armazenados | ✅ `ATIVIDADES-AULA-17-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 121, atividade id 137; conferido por md5 em 2026-10-09 21:24) | ✅ Concluída |
 | 18 | Triggers (disparadores) | ✅ `ATIVIDADES-AULA-18-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 122, atividade id 139; conferido por md5 em 2026-10-09 21:24) | ✅ Concluída |
 | 19 | Segurança da informação: pilares, acesso e auditoria | ✅ `ATIVIDADES-AULA-19-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 123, atividade id 141; conferido por md5 em 2026-10-09 22:46) | ✅ Concluída |
-| 20 | Projeto integrador: banco documentado para o back-end | ✅ `ATIVIDADES-AULA-20-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ⬜ seed gerado, não aplicado | 🔄 falta banco |
+| 20 | Projeto integrador: banco documentado para o back-end | ✅ `ATIVIDADES-AULA-20-50-QUESTOES.html` | 50 (A13 B13 C12 D12) | ✅ | ✅ no banco (aula id 125, atividade id 145; conferido por md5 em 2026-10-10 22:13) | ✅ Concluída |
 
 ## Atividade prática por aula (padrão da prova id 82)
 
@@ -56,7 +56,7 @@
 | 17 | ✅ `ATIVIDADE-PRATICA-AULA-17.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 138, bloqueada; conferido por md5 em 2026-10-09 21:24) | ✅ Concluída |
 | 18 | ✅ `ATIVIDADE-PRATICA-AULA-18.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 140, bloqueada; conferido por md5 em 2026-10-09 21:24) | ✅ Concluída |
 | 19 | ✅ `ATIVIDADE-PRATICA-AULA-19.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | 🔄 APLICADO (atividade id 142, bloqueada; 29 de 30 tópicos — falta o 6c, que precisa da confirmação do usuário no conector) | 🔄 falta 1 tópico no banco |
-| 20 | ✅ `ATIVIDADE-PRATICA-AULA-20.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ⬜ seed gerado, não aplicado | 🔄 falta banco |
+| 20 | ✅ `ATIVIDADE-PRATICA-AULA-20.html` | 10 × 3 (10 pontos) | ✅ (30 tópicos com padrão) | ✅ no banco (atividade id 146, bloqueada; 30 tópicos, md5 conferido em 2026-10-10 22:13) | ✅ Concluída |
 
 ## Avaliações (modelo da ITIC)
 
