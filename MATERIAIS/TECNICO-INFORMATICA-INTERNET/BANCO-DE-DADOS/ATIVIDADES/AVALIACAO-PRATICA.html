@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Prática — Aulas 01 a 20 — banco completo de um caso fornecido (20 Questões Discursivas)</title>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/avaliacao-discursiva.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+
+</head>
+<body data-aula="AV-PR" data-tema="Aulas 01 a 20 — banco completo de um caso fornecido" data-total="20" data-topicos="60"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados" data-docente="Gelvazio Camargo" data-bloquear-colar="sim" data-campo-tamanho-resposta="sim" data-progresso-professor="sim" data-ocultar-respostas-entregue="sim"
+      data-maximo-caracteres="3000" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>✍️ Avaliação Prática: Aulas 01 a 20 — banco completo de um caso fornecido</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 20 Questões Discursivas</p>
+        </header>
+
+        <main class="content-section">
+            <!-- Conteúdo gerado a partir de AVALIACAO-PRATICA.md por gerar_avaliacao_discursiva.py -->
+            <section class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <h2 class="aula-title">Como Responder</h2>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 150–180 minutos<br>
+                        <strong>Formato:</strong> Discursiva estruturada (o aluno digita a resposta de cada tópico no sistema)<br>
+                        <strong>Total de questões:</strong> 20 (60 tópicos)<br>
+                        <strong>Pontuação:</strong> 0,5 ponto por questão, dividido em 3 tópicos (0,1 + 0,2 + 0,2) — total: 10 pontos
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C1 —</strong> Reconhecer as demandas do cliente</p>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</p>
+                    <p class="quadro-capacidades__linha"><strong>C3 —</strong> Aplicar os procedimentos de normalização e padronização de dados.</p>
+                    <p class="quadro-capacidades__linha"><strong>C4 —</strong> Reconhecer as características e funcionalidades do banco de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C5 —</strong> Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</p>
+                    <p class="quadro-capacidades__linha"><strong>C6 —</strong> Reconhecer os diferentes níveis de gerenciamento de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C7 —</strong> Aplicar linguagem de definição de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C8 —</strong> Aplicar linguagem de manipulação de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C9 —</strong> Reconhecer os diferentes gerenciadores de bancos de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C10 —</strong> Instalar gerenciadores de bancos de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C11 —</strong> Configurar gerenciadores de bancos de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C12 —</strong> Reconhecer os pilares da segurança da informação</p>
+                    <p class="quadro-capacidades__linha"><strong>C13 —</strong> Reconhecer os níveis hierárquicos de segurança da informação</p>
+                    <p class="quadro-capacidades__linha"><strong>C14 —</strong> Aplicar boas práticas de segurança da informação</p>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 CASO FORNECIDO EM TODAS AS QUESTÕES</div>
+                    <div class="content-text">a Biblioteca Comunitária Ler Mais (fictícia) vai trocar o caderno de empréstimos por um sistema web. O back-end usará o banco <strong>biblioteca_db</strong> no PostgreSQL, que é construído do pedido até a entrega ao longo das 20 questões. Os requisitos do escopo são:</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 COMO RESPONDER</div>
+                    <div class="content-text">Cada questão tem <strong>3 tópicos</strong>, e cada tópico tem o <strong>seu campo</strong>. Responda <strong>somente o que o tópico pede</strong>: <strong>(1)</strong> o conceito ou o trecho pedido; <strong>(2)</strong> o código ou a aplicação no caso da biblioteca; <strong>(3)</strong> uma frase curta de justificativa quando o tópico pedir &quot;explique&quot; ou &quot;justifique&quot;. Use os nomes de tabelas e colunas que você definiu nas questões anteriores (nomes equivalentes valem). Respostas iguais às de colegas ou copiadas da internet são sinalizadas ao professor, que analisa e decide a nota do tópico.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">💡 COMO A CORREÇÃO FUNCIONA</div>
+                    <div class="content-text">cada tópico é comparado com o padrão de resposta do professor: modelo rastreável aos requisitos R1 a R8, comandos que funcionam no PostgreSQL e no psql e justificativa com as palavras-chave do conteúdo. Comandos e textos equivalentes que produzam o mesmo resultado valem.</div>
+                </div>
+            </section>
+
+            <section id="painel-discursivo" class="aula-card painel-discursivo" aria-live="polite">
+                <span class="aula-badge">IDENTIFICAÇÃO</span>
+                <p class="painel-discursivo__texto">Carregando...</p>
+            </section>
+
+            <section class="aula-card questao-discursiva" id="item-01" data-item="1">
+                <span class="aula-badge">ITEM 01</span>
+                <span class="questao-discursiva__aula">📚 Aula 05 · Demandas do Cliente e Escopo do Projeto</span>
+                <h2 class="aula-title">Requisitos e Escopo do Caso</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">A coordenação da biblioteca aprovou os requisitos R1 a R8. Na reunião seguinte, a diretora pede para incluir também &quot;reserva de livros pelo celular e aviso por SMS quando o livro voltar&quot;, sem mudar o prazo de entrega do banco.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Organize os requisitos do caso e trate o novo pedido.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="1" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-01-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique a diferença entre requisito de dados e regra de negócio, com um exemplo de cada tirado de R1 a R8.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-a" class="topico-resposta__campo" data-item="1" data-topico="1"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="1" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-01-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Diga como cada um dos requisitos R4, R5, R7 e R8 será atendido no banco (tabela ou coluna, restrição, procedimento, trigger ou permissão).
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-b" class="topico-resposta__campo" data-item="1" data-topico="2"
+                              maxlength="3000" rows="10" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="1" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-01-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique como a equipe deve tratar o pedido de reserva e SMS e o que precisa ser registrado no documento de escopo.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-01-c" class="topico-resposta__campo" data-item="1" data-topico="3"
+                              maxlength="3000" rows="9" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-02" data-item="2">
+                <span class="aula-badge">ITEM 02</span>
+                <span class="questao-discursiva__aula">📚 Aula 01 a 04 · Banco de Dados e SGBD; Gerenciadores, Características, Requisitos e Níveis; Instalação do PostgreSQL; Configuração do SGBD e Infraestrutura</span>
+                <h2 class="aula-title">SGBD, Níveis e Configuração</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Reconhecer as características e funcionalidades do banco de dados<br>C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema<br>C6 — Reconhecer os diferentes níveis de gerenciamento de dados<br>C9 — Reconhecer os diferentes gerenciadores de bancos de dados<br>C10 — Instalar gerenciadores de bancos de dados<br>C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Hoje os empréstimos ficam num caderno e numa planilha compartilhada. O sistema web vai rodar num servidor de aplicação (10.0.0.20) e o PostgreSQL já está instalado em outro servidor da biblioteca, na porta padrão.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Justifique o SGBD e prepare o banco e o acesso da aplicação.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="2" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-02-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique por que um SGBD relacional como o PostgreSQL atende melhor a este caso do que a planilha compartilhada.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-a" class="topico-resposta__campo" data-item="2" data-topico="1"
+                              maxlength="3000" rows="8" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="2" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-02-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva os comandos que criam o banco biblioteca_db, o usuário app_biblioteca da aplicação com permissão de conexão, a linha do pg_hba.conf que libera só o servidor de aplicação com senha e o comando que recarrega a configuração.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-b" class="topico-resposta__campo" data-item="2" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="2" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-02-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique os três níveis de gerenciamento de dados (externo, conceitual e físico) com um exemplo de cada no banco da biblioteca.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-02-c" class="topico-resposta__campo" data-item="2" data-topico="3"
+                              maxlength="3000" rows="10" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-03" data-item="3">
+                <span class="aula-badge">ITEM 03</span>
+                <span class="questao-discursiva__aula">📚 Aula 06 · Entidades Fortes, Fracas e Associativas</span>
+                <h2 class="aula-title">Entidades do Caso</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Ao ler R1 a R7, um colega propõe guardar tudo numa única entidade LIVRO, com as colunas &quot;quantidade_disponivel&quot;, &quot;leitor_que_pegou&quot; e &quot;data_devolucao&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Identifique as entidades do caso.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="3" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-03-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique o que são entidade forte, entidade fraca e entidade associativa.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-a" class="topico-resposta__campo" data-item="3" data-topico="1"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="3" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-03-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Liste as entidades do caso e classifique cada uma em forte, fraca ou associativa.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-b" class="topico-resposta__campo" data-item="3" data-topico="2"
+                              maxlength="3000" rows="8" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="3" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-03-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique por que EXEMPLAR precisa ser uma entidade separada de LIVRO e por que a proposta do colega não atende a R3, R4 e R7.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-03-c" class="topico-resposta__campo" data-item="3" data-topico="3"
+                              maxlength="3000" rows="11" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-04" data-item="4">
+                <span class="aula-badge">ITEM 04</span>
+                <span class="questao-discursiva__aula">📚 Aula 07 · Atributos</span>
+                <h2 class="aula-title">Atributos</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">A equipe vai detalhar os atributos de LEITOR e de EMPRÉSTIMO. Na tela do balcão aparecem também &quot;dias de atraso&quot; e &quot;valor da multa&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Classifique e decida os atributos.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="4" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-04-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique o que são atributo simples, composto, multivalorado, derivado e identificador.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-04-a" class="topico-resposta__campo" data-item="4" data-topico="1"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="4" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-04-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Liste os atributos de LEITOR e classifique cada um, dizendo qual é o identificador e qual é a chave candidata.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-04-b" class="topico-resposta__campo" data-item="4" data-topico="2"
+                              maxlength="3000" rows="6" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="4" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-04-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Diga como o atributo multivalorado telefones vira estrutura no banco e explique por que &quot;dias de atraso&quot; não é gravado, mas o valor da multa é.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-04-c" class="topico-resposta__campo" data-item="4" data-topico="3"
+                              maxlength="3000" rows="10" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-05" data-item="5">
+                <span class="aula-badge">ITEM 05</span>
+                <span class="questao-discursiva__aula">📚 Aula 08 · Relacionamentos 1:1, 1:N e N:N</span>
+                <h2 class="aula-title">Relacionamentos e Cardinalidades</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Com as entidades definidas, falta dizer como elas se ligam. Um livro pode ter vários autores e um autor escreve vários livros; um leitor faz vários empréstimos ao longo do tempo.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Defina os relacionamentos com cardinalidade.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="5" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-05-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique o que significam as cardinalidades 1:1, 1:N e N:N.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-05-a" class="topico-resposta__campo" data-item="5" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="5" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-05-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva a cardinalidade de: editora–livro, categoria–livro, livro–autor, livro–exemplar, leitor–telefone e leitor–empréstimo.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-05-b" class="topico-resposta__campo" data-item="5" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="5" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-05-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Explique como os relacionamentos N:N livro–autor e leitor–exemplar são resolvidos em tabelas, dizendo as chaves de cada tabela criada.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-05-c" class="topico-resposta__campo" data-item="5" data-topico="3"
+                              maxlength="3000" rows="12" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-06" data-item="6">
+                <span class="aula-badge">ITEM 06</span>
+                <span class="questao-discursiva__aula">📚 Aula 09 · Diagrama Entidade-Relacionamento</span>
+                <h2 class="aula-title">DER e Dicionário de Dados</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">A equipe do back-end precisa do DER lógico e do dicionário de dados antes de escrever as telas. O DER pode ser descrito em texto, uma tabela por linha.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Documente o modelo lógico.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="6" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-06-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique o que representam no DER: o retângulo, o losango (ou a linha de ligação), o atributo sublinhado e a marcação de cardinalidade.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-06-a" class="topico-resposta__campo" data-item="6" data-topico="1"
+                              maxlength="3000" rows="6" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="6" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-06-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Descreva em texto o DER lógico do caso: cada tabela com a chave primária, as chaves estrangeiras e as ligações com cardinalidade.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-06-b" class="topico-resposta__campo" data-item="6" data-topico="2"
+                              maxlength="3000" rows="16" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="6" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-06-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva o dicionário de dados da tabela emprestimo (coluna, tipo, obrigatório e restrição ou descrição).
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-06-c" class="topico-resposta__campo" data-item="6" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-07" data-item="7">
+                <span class="aula-badge">ITEM 07</span>
+                <span class="questao-discursiva__aula">📚 Aula 10 · Normalização de Dados: 1FN, 2FN e 3FN</span>
+                <h2 class="aula-title">Normalização até a 3FN</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">A planilha antiga tem uma linha por empréstimo com as colunas: num_emprestimo, cpf_leitor, nome_leitor, telefones_leitor, isbn, titulo, autores, editora, cidade_editora, tombo, data_emprestimo, data_prevista. Exemplo de linha (fictícia): 1001 | 01234567890 | Marina Souza | 47999990001, 47999990002 | 9788500000011 | Contos do Vale | Ana Prado, Rui Lima | Editora Aurora | Blumenau | T-0001 | 2026-03-02 | 2026-03-16.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Normalize a planilha até a 3FN.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="7" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-07-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique a regra de cada forma normal: 1FN, 2FN e 3FN.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-07-a" class="topico-resposta__campo" data-item="7" data-topico="1"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="7" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-07-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Aponte o que viola a 1FN na planilha e a dependência parcial (2FN) que aparece quando cada autor vira uma linha com chave (num_emprestimo, autor).
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-07-b" class="topico-resposta__campo" data-item="7" data-topico="2"
+                              maxlength="3000" rows="8" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="7" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-07-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Aponte as dependências transitivas (3FN) e escreva as tabelas finais normalizadas, com as chaves.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-07-c" class="topico-resposta__campo" data-item="7" data-topico="3"
+                              maxlength="3000" rows="12" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-08" data-item="8">
+                <span class="aula-badge">ITEM 08</span>
+                <span class="questao-discursiva__aula">📚 Aula 11 · Padronização de Dados, Cronograma e Fluxograma</span>
+                <h2 class="aula-title">Padronização e Fluxograma</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">O rascunho de um colega tem os nomes &quot;Leitores&quot;, &quot;DataEmp&quot;, &quot;dt prev&quot;, &quot;Situação&quot;, &quot;tel1&quot; e &quot;tel2&quot;, &quot;valorMulta&quot; e &quot;user&quot;, e na coluna de situação aparecem os valores &quot;Disponível&quot;, &quot;DISP&quot; e &quot;disponivel&quot;.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Padronize o modelo e desenhe o processo do empréstimo.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="8" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-08-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique por que padronizar nomes, tipos e domínios antes de escrever o DDL.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-08-a" class="topico-resposta__campo" data-item="8" data-topico="1"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="8" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-08-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Reescreva os nomes do rascunho no padrão adotado na UC e diga como garantir no banco os valores da situação do exemplar.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-08-b" class="topico-resposta__campo" data-item="8" data-topico="2"
+                              maxlength="3000" rows="9" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="8" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-08-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Descreva o fluxograma do empréstimo no balcão (início, decisões de R5, ações e fim), dizendo em cada passo a tabela consultada ou alterada.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-08-c" class="topico-resposta__campo" data-item="8" data-topico="3"
+                              maxlength="3000" rows="10" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-09" data-item="9">
+                <span class="aula-badge">ITEM 09</span>
+                <span class="questao-discursiva__aula">📚 Aula 12 · DDL: Tabelas e Campos</span>
+                <h2 class="aula-title">DDL: Tabelas e Tipos</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">O banco biblioteca_db está criado e vazio. A equipe começa o script 01-ddl-biblioteca.sql pelas tabelas que não dependem de outras.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Crie as primeiras tabelas.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="9" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-09-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique a escolha dos tipos serial, varchar, char, date, boolean e numeric no caso da biblioteca.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-09-a" class="topico-resposta__campo" data-item="9" data-topico="1"
+                              maxlength="3000" rows="8" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="9" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-09-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva o CREATE TABLE de editora, categoria e autor, com chave primária e colunas obrigatórias.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-09-b" class="topico-resposta__campo" data-item="9" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="9" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-09-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva o CREATE TABLE de leitor e de telefone_leitor (R1) e justifique por que o CPF é texto de 11 caracteres e não número.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-09-c" class="topico-resposta__campo" data-item="9" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-10" data-item="10">
+                <span class="aula-badge">ITEM 10</span>
+                <span class="questao-discursiva__aula">📚 Aula 13 · DDL: Relações, Chaves e Restrições</span>
+                <h2 class="aula-title">DDL: Chaves e Restrições</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Faltam as tabelas que dependem das primeiras. As regras R2, R3 e R4 devem ser garantidas pelo próprio banco, mesmo que o back-end erre.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Crie as tabelas com chaves e restrições.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="10" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-10-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique a função de PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL e CHECK.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-10-a" class="topico-resposta__campo" data-item="10" data-topico="1"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="10" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-10-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva o CREATE TABLE de livro, livro_autor e exemplar com chaves primárias, chaves estrangeiras, UNIQUE do ISBN e do tombo e CHECK da situação.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-10-b" class="topico-resposta__campo" data-item="10" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="10" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-10-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva o CREATE TABLE de emprestimo com as restrições de datas e de multa e o índice que impede dois empréstimos em aberto do mesmo exemplar (R4), e explique o efeito de ON DELETE RESTRICT nas chaves estrangeiras.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-10-c" class="topico-resposta__campo" data-item="10" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-11" data-item="11">
+                <span class="aula-badge">ITEM 11</span>
+                <span class="questao-discursiva__aula">📚 Aula 14 · DML: Inserção, Atualização e Exclusão</span>
+                <h2 class="aula-title">DML: Inserção, Atualização e Exclusão</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">O banco precisa de dados de teste para as consultas. Depois, um leitor devolve com 5 dias de atraso o exemplar do empréstimo 1, e a secretaria pede para &quot;apagar&quot; um leitor que se mudou de cidade, mas que tem empréstimos no histórico.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Escreva os comandos de manipulação de dados.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="11" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-11-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique a diferença entre INSERT, UPDATE e o comando de exclusão e por que, neste caso, o leitor que se mudou é inativado em vez de excluído.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-11-a" class="topico-resposta__campo" data-item="11" data-topico="1"
+                              maxlength="3000" rows="8" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="11" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-11-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva os INSERT de uma editora, uma categoria, um autor, um livro com o seu autor, dois exemplares e um leitor com telefone.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-11-b" class="topico-resposta__campo" data-item="11" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="11" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-11-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva, numa transação, a devolução do empréstimo 1 com a multa de R6 e o exemplar de volta a disponível, e o UPDATE que inativa o leitor.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-11-c" class="topico-resposta__campo" data-item="11" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-12" data-item="12">
+                <span class="aula-badge">ITEM 12</span>
+                <span class="questao-discursiva__aula">📚 Aula 15 · DML: Consultas com Filtros e Ordenação</span>
+                <h2 class="aula-title">Consultas 1 a 3: Filtros e Ordenação</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">O back-end precisa das três primeiras consultas do sistema: o catálogo por período, a busca de leitor no balcão e a lista de cobrança de atrasos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Escreva as consultas 1 a 3.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="12" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-12-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique a função de WHERE, ORDER BY, BETWEEN, ILIKE e IS NULL.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-12-a" class="topico-resposta__campo" data-item="12" data-topico="1"
+                              maxlength="3000" rows="6" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="12" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-12-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva a consulta 1 (livros publicados entre 2000 e 2020, do mais novo para o mais antigo e, no mesmo ano, por título) e a consulta 2 (leitores ativos cujo nome começa com &quot;mar&quot;, sem diferença de maiúsculas, em ordem alfabética, só nome e e-mail).
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-12-b" class="topico-resposta__campo" data-item="12" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="12" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-12-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva a consulta 3: empréstimos em aberto e atrasados, com os dias de atraso calculados, do mais atrasado para o menos atrasado, e explique por que se usa IS NULL e não &quot;= NULL&quot;.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-12-c" class="topico-resposta__campo" data-item="12" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-13" data-item="13">
+                <span class="aula-badge">ITEM 13</span>
+                <span class="questao-discursiva__aula">📚 Aula 16 · Consultas com Junções, Agrupamentos e Subconsultas</span>
+                <h2 class="aula-title">Consultas 4 e 5: Junções</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">O balcão quer ver os empréstimos em aberto com nomes, e não com números. A coordenação quer saber quais livros do catálogo ainda não têm nenhum exemplar físico.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Escreva as consultas 4 e 5.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="13" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-13-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique a diferença entre INNER JOIN e LEFT JOIN.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-13-a" class="topico-resposta__campo" data-item="13" data-topico="1"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="13" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-13-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva a consulta 4: empréstimos em aberto com o nome do leitor, o título do livro, o código de tombo e a data prevista, ordenados pela data prevista.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-13-b" class="topico-resposta__campo" data-item="13" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="13" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-13-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva a consulta 5: livros sem nenhum exemplar, e explique por que ela precisa de LEFT JOIN e não de INNER JOIN.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-13-c" class="topico-resposta__campo" data-item="13" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-14" data-item="14">
+                <span class="aula-badge">ITEM 14</span>
+                <span class="questao-discursiva__aula">📚 Aula 16 · Consultas com Junções, Agrupamentos e Subconsultas</span>
+                <h2 class="aula-title">Consultas 6 e 7: Agrupamentos</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">O relatório mensal da coordenação mostra quantos empréstimos cada categoria teve e quais leitores mais usam a biblioteca no ano.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Escreva as consultas 6 e 7.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="14" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-14-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique a função de GROUP BY e a diferença entre WHERE e HAVING.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-14-a" class="topico-resposta__campo" data-item="14" data-topico="1"
+                              maxlength="3000" rows="6" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="14" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-14-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva a consulta 6: total de empréstimos por categoria, da categoria mais emprestada para a menos emprestada.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-14-b" class="topico-resposta__campo" data-item="14" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="14" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-14-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva a consulta 7: leitores com mais de 2 empréstimos em 2026, com a quantidade e a soma das multas, e explique por que o filtro do ano fica no WHERE e o &quot;mais de 2&quot; no HAVING.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-14-c" class="topico-resposta__campo" data-item="14" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-15" data-item="15">
+                <span class="aula-badge">ITEM 15</span>
+                <span class="questao-discursiva__aula">📚 Aula 16 · Consultas com Junções, Agrupamentos e Subconsultas</span>
+                <h2 class="aula-title">Consultas 8 a 10: Subconsultas</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Para planejar compras e campanhas, a coordenação pede: os livros que nunca foram emprestados, os empréstimos com multa acima da média e o título mais emprestado de todos.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Escreva as consultas 8 a 10.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="15" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-15-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique o que é uma subconsulta e a diferença de uso entre IN e EXISTS.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-15-a" class="topico-resposta__campo" data-item="15" data-topico="1"
+                              maxlength="3000" rows="8" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="15" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-15-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva a consulta 8 (livros que nunca foram emprestados, com NOT EXISTS) e a consulta 9 (empréstimos cuja multa é maior que a média das multas cobradas, só multas acima de zero).
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-15-b" class="topico-resposta__campo" data-item="15" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="15" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-15-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva a consulta 10: o título ou os títulos mais emprestados, com a quantidade, usando subconsulta, e explique por que ela é mais segura que ORDER BY ... LIMIT 1.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-15-c" class="topico-resposta__campo" data-item="15" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-16" data-item="16">
+                <span class="aula-badge">ITEM 16</span>
+                <span class="questao-discursiva__aula">📚 Aula 17 · Procedimentos Armazenados</span>
+                <h2 class="aula-title">Procedimento Armazenado</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados<br>C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">Dois atendentes do balcão podem tentar emprestar o mesmo exemplar ao mesmo tempo, e o back-end não deve repetir as regras de R5 em cada tela. A regra de empréstimo vai ficar dentro do banco.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Crie o procedimento que faz o empréstimo.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="16" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-16-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique a diferença entre função e procedimento no PostgreSQL e por que o empréstimo é um procedimento.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-16-a" class="topico-resposta__campo" data-item="16" data-topico="1"
+                              maxlength="3000" rows="8" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="16" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-16-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva o procedimento emprestar(p_id_leitor, p_id_exemplar) em PL/pgSQL que confere o exemplar disponível e as regras de R5, grava o empréstimo com a data prevista de 14 dias e muda o exemplar para emprestado.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-16-b" class="topico-resposta__campo" data-item="16" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="16" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-16-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva duas chamadas de teste com o resultado esperado (uma que funciona e uma barrada pelo limite de 3) e explique o papel do FOR UPDATE quando dois atendentes emprestam o mesmo exemplar.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-16-c" class="topico-resposta__campo" data-item="16" data-topico="3"
+                              maxlength="3000" rows="12" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-17" data-item="17">
+                <span class="aula-badge">ITEM 17</span>
+                <span class="questao-discursiva__aula">📚 Aula 18 · Triggers (Disparadores)</span>
+                <h2 class="aula-title">Trigger</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados<br>C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">O requisito R7 exige o histórico de toda mudança de situação do exemplar, venha ela do procedimento, da devolução ou de um UPDATE feito por alguém da equipe técnica.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Crie o trigger do histórico do exemplar.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="17" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-17-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique o que é um trigger e o que são AFTER, FOR EACH ROW, OLD e NEW.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-17-a" class="topico-resposta__campo" data-item="17" data-topico="1"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="17" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-17-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva a tabela historico_exemplar, a função do trigger e o CREATE TRIGGER que grava a situação anterior, a nova, o usuário e a data e hora só quando a situação muda.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-17-b" class="topico-resposta__campo" data-item="17" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="17" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-17-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva um teste que mostra o trigger funcionando, com o resultado esperado, e explique por que o histórico fica num trigger e não no código do back-end.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-17-c" class="topico-resposta__campo" data-item="17" data-topico="3"
+                              maxlength="3000" rows="13" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-18" data-item="18">
+                <span class="aula-badge">ITEM 18</span>
+                <span class="questao-discursiva__aula">📚 Aula 19 · Segurança da Informação: Pilares, Acesso e Auditoria</span>
+                <h2 class="aula-title">Segurança: Pilares, Níveis e LGPD</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C12 — Reconhecer os pilares da segurança da informação<br>C13 — Reconhecer os níveis hierárquicos de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">A biblioteca guarda CPF, e-mail e telefone de leitores, inclusive de adolescentes. A coordenação pergunta quem pode ver o quê e o que protege os dados se um disco queimar ou alguém alterar um empréstimo sem autorização.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Analise a segurança do banco.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="18" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-18-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique os três pilares da segurança da informação com um risco de cada no caso da biblioteca.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-18-a" class="topico-resposta__campo" data-item="18" data-topico="1"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="18" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-18-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Classifique os dados da biblioteca nos níveis pública, interna, restrita e confidencial e diga quem acessa cada nível, do DBA ao somente leitura.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-18-b" class="topico-resposta__campo" data-item="18" data-topico="2"
+                              maxlength="3000" rows="13" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="18" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-18-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Diga qual pilar cada medida protege: o histórico do exemplar (R7), o backup diário testado e a permissão por coluna que esconde o CPF, e explique o cuidado com o CPF segundo a LGPD.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-18-c" class="topico-resposta__campo" data-item="18" data-topico="3"
+                              maxlength="3000" rows="11" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-19" data-item="19">
+                <span class="aula-badge">ITEM 19</span>
+                <span class="questao-discursiva__aula">📚 Aula 19 · Segurança da Informação: Pilares, Acesso e Auditoria</span>
+                <h2 class="aula-title">Permissões: Papéis, GRANT e REVOKE</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">O requisito R8 define os perfis: balcão (atendente Lucas), coordenação (Helena) e a aplicação web (app_biblioteca). Nenhum deles cria ou altera tabelas.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Escreva o script de segurança 07-seguranca.sql.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="19" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-19-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Explique o princípio do menor privilégio e a diferença entre papel de grupo (NOLOGIN) e papel de login.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-19-a" class="topico-resposta__campo" data-item="19" data-topico="1"
+                              maxlength="3000" rows="7" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="19" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-19-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva os comandos que tiram o acesso de PUBLIC, criam o grupo do balcão e o login do Lucas e dão ao grupo só o necessário para R8, sem acesso ao CPF e com permissão para executar o procedimento emprestar.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-19-b" class="topico-resposta__campo" data-item="19" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="19" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-19-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva os comandos da coordenação (só leitura por uma visão de relatório) e um teste que prova que o balcão não vê o CPF, com o resultado esperado.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-19-c" class="topico-resposta__campo" data-item="19" data-topico="3"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+            <section class="aula-card questao-discursiva" id="item-20" data-item="20">
+                <span class="aula-badge">ITEM 20</span>
+                <span class="questao-discursiva__aula">📚 Aula 20 · Projeto Integrador: Banco Documentado para o Back-End</span>
+                <h2 class="aula-title">Script Mestre, Backup e Documentação</h2>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente<br>C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 CONTEXTO</div>
+                    <div class="content-text">O banco será entregue à equipe do back-end com os scripts 01-ddl-biblioteca.sql, 02-dados-teste.sql, 03-consultas.sql, 04-procedimentos.sql, 05-triggers.sql e 06-visoes.sql, além do 07-seguranca.sql, e um backup que comprove que tudo funciona.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎯 COMANDO</div>
+                    <div class="content-text">Prepare a entrega do banco.</div>
+                </div>
+                <div class="content-label questao-discursiva__rotulo-topicos">✍️ RESPONDA CADA TÓPICO</div>
+                <div class="topico-resposta" data-item="20" data-topico="1">
+                    <label class="topico-resposta__rotulo" for="resposta-20-a">
+                        <span class="topico-resposta__letra">a)</span>
+                        Cite os documentos que acompanham a entrega do banco e para que serve cada um.
+                        <span class="topico-resposta__pontos">0,1 ponto</span>
+                    </label>
+                    <textarea id="resposta-20-a" class="topico-resposta__campo" data-item="20" data-topico="1"
+                              maxlength="3000" rows="9" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico a)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="20" data-topico="2">
+                    <label class="topico-resposta__rotulo" for="resposta-20-b">
+                        <span class="topico-resposta__letra">b)</span>
+                        Escreva o script mestre 00-instalar.sql que roda os scripts na ordem e para no primeiro erro, e os comandos que o executam num banco de teste limpo.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-20-b" class="topico-resposta__campo" data-item="20" data-topico="2"
+                              maxlength="3000" rows="5" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico b)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+                <div class="topico-resposta" data-item="20" data-topico="3">
+                    <label class="topico-resposta__rotulo" for="resposta-20-c">
+                        <span class="topico-resposta__letra">c)</span>
+                        Escreva o comando do backup de entrega, os comandos que provam que ele restaura, e explique por que essa prova é necessária.
+                        <span class="topico-resposta__pontos">0,2 ponto</span>
+                    </label>
+                    <textarea id="resposta-20-c" class="topico-resposta__campo" data-item="20" data-topico="3"
+                              maxlength="3000" rows="11" readonly
+                              placeholder="Escreva aqui a sua resposta do tópico c)..."></textarea>
+                    <div class="topico-resposta__rodape">
+                        <span class="topico-resposta__situacao" aria-live="polite"></span>
+                        <span class="topico-resposta__contador">0/3000</span>
+                        <button type="button" class="topico-resposta__gravar">💾 Gravar</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="aula-card entrega-discursiva">
+                <span class="aula-badge">ENTREGA</span>
+                <h2 class="aula-title">Finalizar a avaliação</h2>
+                <p class="entrega-discursiva__texto">Confira se todos os tópicos estão com
+                    ✅ Resposta gravada. Depois de finalizar, as respostas não podem mais ser
+                    alteradas.</p>
+                <button class="btn-export entrega-discursiva__botao" id="btnFinalizarDiscursiva"
+                        type="button" hidden>✅ Finalizar e entregar</button>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Avaliação Prática: Aulas 01 a 20 — banco completo de um caso fornecido</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>20 Questões • Discursiva</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/popup.js"></script>
+    <script src="../../../../assets/js/termos-tentativa.js"></script>
+    <script src="../../../../assets/js/respostas-discursivas-banco.js"></script>
+    <script src="../../../../assets/js/avaliacao-discursiva.js"></script>
+    <script src="../../../../assets/js/bloqueio-colar-discursiva.js"></script>
+    <script src="../../../../assets/js/campo-tamanho-discursiva.js"></script>
+</body>
+</html>

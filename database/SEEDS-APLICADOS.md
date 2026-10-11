@@ -5,11 +5,11 @@ Registro de **todos** os arquivos `database/*-seed-atividades.sql` e do status d
 CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 [`CLAUDE.md`](../CLAUDE.md), seção "🌱 REGRA — SEEDS DO BANCO".** Aqui ficam só os dados.
 
-## Resumo (atualizado em 2026-10-10 22:36)
+## Resumo (atualizado em 2026-10-10 22:37)
 
 | PENDENTE | APLICADO | CONCLUÍDO | SUBSTITUÍDO | Total |
 |---|---|---|---|---|
-| 0 | 1 | 65 | 0 | 66 |
+| 1 | 1 | 65 | 0 | 67 |
 
 ## Todos os seeds
 
@@ -81,6 +81,7 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-10-banco-de-dados-atividade-pratica-aula-19-seed-atividades.sql` | Banco de Dados (TII) | 1 | **APLICADO** | 2026-10-09 22:46 | Aplicado em partes pelo conector (atividade id 142, aula id 123, bloqueada): 29 de 30 tópicos. Falta o tópico 6c: o texto cita DELETE FROM parcela e o conector pede confirmação do usuário (comando voltou cancelado) |
 | `2026-10-11-banco-de-dados-atividade-pratica-aula-20-seed-atividades.sql` | Banco de Dados (TII) | 1 | **CONCLUÍDO** | 2026-10-10 22:13 | Aplicado pelo conector em um comando (atividade id 146, aula id 125, bloqueada): 30 tópicos, md5 igual ao do arquivo (2026-10-10 22:13) |
 | `2026-10-10-banco-de-dados-avaliacoes-objetivas-seed-atividades.sql` | Banco de Dados (TII) | 2 | **CONCLUÍDO** | 2026-10-10 22:36 | Aplicado pelo conector em 2 comandos: Avaliação Objetiva 01 (atividade id 147, aula 11 id 115) e 02 (id 148, aula 20 id 125), 50 itens cada, md5 igual ao do arquivo (2026-10-10 22:36) |
+| `2026-10-11-banco-de-dados-avaliacao-pratica-seed-atividades.sql` | Banco de Dados (TII) | 1 | **PENDENTE** | 2026-10-10 22:37 | Avaliação Prática (20 questões × 3 tópicos, aula 20); gerado, ainda não aplicado |
 
 ## Seeds excluídos (não podiam ser concluídos)
 
