@@ -7,3 +7,9 @@ variaveis.js
 
 # PDFs pesados do Office Fácil (> 100MB)
 GERADOR-AULAS/OFFICE FACIL/*.pdf
+
+# Arquivos grandes (slides e PDFs) ficam so na pasta local, fora do Git
+*.pptx
+*.PPTX
+*.pdf
+*.PDF
