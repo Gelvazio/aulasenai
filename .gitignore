@@ -4,3 +4,6 @@ graphify-out/
 variaveis.js
 
 .env
+
+# PDFs pesados do Office Fácil (> 100MB)
+GERADOR-AULAS/OFFICE FACIL/*.pdf
