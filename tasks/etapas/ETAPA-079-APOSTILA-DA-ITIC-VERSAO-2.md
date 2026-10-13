@@ -16,4 +16,4 @@ Plano: [docs/apostila-itic-v2-40-paginas.md](docs/apostila-itic-v2-40-paginas.md
 | 79.5 | HTML V2 (versão 2.0) | ✅ Concluído | 2026-10-08 08:52 | Versão 2.0 na capa e no rodapé |
 | 79.6 | Contagem de páginas ≤ 40 | ✅ Concluído | 2026-10-08 08:52 | PDF headless: 28 páginas; rodapé "Página N de 28" |
 | 79.7 | Regra, status e commit (+ pedido do usuário: PDF **sem a faixa azul da esquerda** em todas as apostilas, `assets/css/apostila.css`, regra no global e no projeto) | ✅ Concluído | 2026-10-08 08:52 | Imagem da página 6 do PDF sem a faixa |
-| 79.8 | Aceite do usuário | 👀 Aguardando validação | — | — |
+| 79.8 | Aceite do usuário | ✅ Concluído | 2026-10-13 12:26 | "15-ok" |
