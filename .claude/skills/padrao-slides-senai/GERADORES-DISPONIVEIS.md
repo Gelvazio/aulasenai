@@ -61,7 +61,7 @@ python gerar_slides_com_fundo.py
 ```
 
 **Requisitos:**
-- Arquivo de imagem deve existir: `C:\fontes\aulasenai\GERADOR-AULAS\TEMA-SENAI.png`
+- Arquivo de imagem deve existir: `GERADOR-AULAS\TEMA-SENAI.png`
 - Tamanho recomendado: 1920×1440px (ou proporcional)
 
 **Estrutura de Slide:**
@@ -135,7 +135,7 @@ python gerar_slides_gemini_v3.py
 
 Todos os geradores devem estar em:
 ```
-C:\Users\gelva\AppData\Local\Temp\claude\...\scratchpad\
+<pasta de trabalho temporária da sessão (scratchpad), dentro do projeto>
 ```
 
 ### Entrada (Markdown)
@@ -157,7 +157,7 @@ Conteúdo...
 
 **Arquivo:** `SlidesDigitalSkillsGemini.pptx`
 
-- Localização: `C:\fontes\aulasenai\MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\`
+- Localização: `MATERIAIS\QUALIFICACAO-PROFISSIONAL\DIGITAL SKILLS\`
 - Tamanho típico: 0.10 – 0.15 MB
 - Compatível com: PowerPoint 2010+, LibreOffice Impress, Google Slides
 
@@ -199,14 +199,14 @@ p.font.size = Pt(16)
 ### Alterar Caminho de Saída
 
 ```python
-output_pptx = r"C:\seu\caminho\arquivo.pptx"
+output_pptx = "caminho/relativo/arquivo.pptx"
 ```
 
 ### Adicionar Logo SENAI
 
 ```python
 # Adicionar logo no canto superior direito
-logo_path = r"C:\caminho\logo-senai.png"
+logo_path = "GERADOR-AULAS/logo-senai.png"
 pic = slide.shapes.add_picture(
     logo_path,
     Inches(8.5),  # x
@@ -255,7 +255,7 @@ Gerador: gerar_slides_com_fundo.py
 **Solução:**
 ```bash
 # Verificar se o arquivo existe
-ls C:\fontes\aulasenai\GERADOR-AULAS\TEMA-SENAI.png
+ls GERADOR-AULAS\TEMA-SENAI.png
 
 # Se não existir, usar gerador simples
 python gerar_slides_simples.py

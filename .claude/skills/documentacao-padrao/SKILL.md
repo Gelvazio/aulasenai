@@ -9,7 +9,7 @@ description: Use when starting ANY new task in any project — ensures a docs/ f
 
 Toda tarefa **grande** deve ser documentada em `docs/` com passos numerados e status rastreável **antes** de iniciar a implementação. O status de cada passo é atualizado conforme o progresso.
 
-> **Exceção — tarefas PEQUENAS (igual ao `AGENTS.md` global e do projeto, desde 2026-09-30):**
+> **Exceção — tarefas PEQUENAS (igual ao `AGENTS.md` do projeto, desde 2026-09-30):**
 > tarefa pequena = ajuste pontual (até ~3 arquivos) que **não** mexe em banco de dados/segurança/RLS,
 > **não** cria estrutura ou gerador novo e **não** faz mudança em massa. Ela **não precisa** de
 > `docs/<tarefa>.md` nem de aprovação prévia: executar direto, registrar no `STATUS.md` e fazer o
