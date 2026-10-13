@@ -29,6 +29,20 @@
 - `CLAUDE-GLOBAL.md` — Cópia de `~/.claude/CLAUDE.md`
 - `CLAUDE-DOCS-BEFORE-EVERY-TASK.md` — Cópia de `~/.claude/CLAUDE-DOCS-BEFORE-EVERY-TASK.md`
 
+## 🧩 Protocolo de Agentes (dividido do AGENTS.md)
+
+- `agents-avisos-gerais.md` — Avisos gerais: fonte única, branch main, fetch antes do pull, tarefa concluída, scripts temporários
+- `agents-protocolo-captura-tarefa.md` — Protocolo de captura de tarefa (lock em 3 partes)
+- `agents-concorrencia.md` — Regras complementares de concorrência (seção 1.1)
+- `agents-prioridade.md` — Prioridade das tarefas (seção 1.2)
+- `agents-hooks-sincronizacao.md` — Hooks de sincronização (seção 1.3)
+- `agents-subtarefas-dependencias.md` — Subdivisão em subtarefas e dependências (seção 2)
+- `agents-identificacao-ia.md` — Identificação obrigatória da IA executora (seção 3)
+- `agents-reporte-progresso.md` — Reporte de progresso ao monitor (seção 4, opcional)
+- `agents-confirmacao-status.md` — Confirmação de status das tarefas (seção 5)
+- `agents-plano-docs.md` — Plano em docs/ para tarefas grandes (seção 6)
+- `agents-cerebro-memoria-mcp.md` — Plano do Cérebro de Memória Persistente (MCP + Supabase)
+
 ## 🔗 Referência
 
 - `docs-index.md` — Onde está cada coisa em `docs/`
