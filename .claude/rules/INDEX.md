@@ -1,6 +1,7 @@
 # 📖 Índice de regras — `.claude/rules/`
 
 Cada arquivo trata de **um assunto** e tem no máximo 5 KB. Abra só o que a tarefa pedir.
+Para ler em cards: `index.html` desta pasta (gerado — ver `visualizador-regras.md`).
 Regras detalhadas, com exemplos: `docs/regras/`. Histórico de mudanças: `docs/HISTORICO-REGRAS.md`.
 
 ## 🔴 Sempre (início de sessão)
@@ -50,6 +51,7 @@ Regras detalhadas, com exemplos: `docs/regras/`. Histórico de mudanças: `docs/
 | Arquivo | Assunto |
 |---------|---------|
 | `graphify.md` | Graphify só quando o usuário pedir |
+| `visualizador-regras.md` | `index.html` desta pasta: só visualizador; regenerar a cada mudança aqui ou em `tasks/` |
 
 ## Onde mais procurar
 
@@ -62,6 +64,7 @@ Regras detalhadas, com exemplos: `docs/regras/`. Histórico de mudanças: `docs/
 1. Ache o arquivo do assunto acima; se nenhum servir, crie um novo (≤ 5 KB) e liste aqui.
 2. Não repita a regra em outro arquivo — aponte para ele.
 3. Registre a mudança em `docs/HISTORICO-REGRAS.md`.
+4. Rode `python scripts/regras/gerar_visualizador_regras.py` e commite o `index.html` junto.
 
 ---
 

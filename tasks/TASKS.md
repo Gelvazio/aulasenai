@@ -355,7 +355,7 @@ conferidas pelo md5 com `scripts/regras/sincronizar_regras.py`.
 
 ---
 
-### #27-042b2fe8-a9f7-4726: Reestruturar `.claude/rules/` — pedida em 2026-10-13 12:44:03
+### #27-042b2fe8-a9f7-4726: Reestruturar `.claude/rules/` — pedida em 2026-10-13 09:44:03
 
 **Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 146-042b2fe8 (fonte única).
 **Prioridade:** 🟡 Média · **Plano:** [docs/reestruturar-claude-rules.md](../docs/reestruturar-claude-rules.md).
@@ -366,6 +366,21 @@ estruturado, nenhum arquivo acima de 5 KB (criar arquivos novos quando preciso).
 - [x] Diagnóstico e plano.
 - [x] Aprovação do usuário.
 - [x] Reestruturação, commit e push (infográficos removidos a pedido).
+- [ ] Aceite do usuário.
+
+---
+
+### #28-9201b27b-7630-41cb: Visualizador de regras e tarefas (`.claude/rules/index.html`) — pedida em 2026-10-13 09:51:45
+
+**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 147-9201b27b (fonte única).
+**Prioridade:** 🟡 Média · **Plano:** [docs/visualizador-regras-index-html.md](../docs/visualizador-regras-index-html.md).
+
+Pedido: `index.html` em `.claude/rules/` com as regras em cards clicáveis (modal) por categoria e
+tipo, aba TASKS com todas as tarefas e status, regra de atualizar o `index.html` a cada mudança e
+anotação no `AGENTS.md` de que é só visualizador. Depois: menu **Regras** do site abre essa página
+em nova aba.
+
+- [x] Gerador, página, regra, `AGENTS.md` e menu.
 - [ ] Aceite do usuário.
 
 ---

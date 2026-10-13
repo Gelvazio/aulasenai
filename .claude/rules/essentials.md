@@ -46,4 +46,5 @@ Se houver item `🔄`/`⬜` de tarefa aprovada da sua frente: conferir o que já
 
 ---
 
-**Data e hora:** sempre de Brasília (`TZ=America/Sao_Paulo date "+%Y-%m-%d %H:%M:%S"`).
+**Data e hora:** sempre de Brasília. No Windows local use `date` (o relógio já está em Brasília) —
+`TZ=America/Sao_Paulo date` no Git Bash sai em GMT (3 h a mais). Na nuvem: `TZ=America/Sao_Paulo date`.

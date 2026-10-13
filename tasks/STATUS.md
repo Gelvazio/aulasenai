@@ -21,7 +21,7 @@ pendente) muda para `⏹️ Encerrada`.
 | nuvem · ccr-00f69e8a-6qcla9 | #26 (Etapa 144-aff33423); Etapa 140-8554d88e | #26: item 144.5 — primeira cópia das regras no banco e `conferir`; depois aceite (144.6) | 🔄 Ativa | 2026-10-11 06:28 |
 | nuvem · ccr-be208aef-c6h8oe | #24 (Etapa 142-2a52ee2f) | Fila `tasks` pronta (tabela, funções, `tasks.html`, regra, prompt da rotina, 17 tarefas do `TASKS.md` na tabela). Próximo: item 142.5 — teste e aceite do usuário; a rotina continua desligada até liberar o GitHub (140.6) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | nuvem · claude/ola-zlzh8z | #22-f79be83e-0418-43e8 (Etapa 137-13665a7e) | Item 137.2 — aula 05 de Testes de Front-End (objetiva + prática + seeds); aulas 04 a 04 ✅. ⛔ Não mexer em Banco de Dados nesta sessão | 🔄 Ativa | 2026-10-10 16:21 |
-| local · main | #27 (Etapa 146-042b2fe8) — reestruturar `.claude/rules/` | Item 146.7 — aceite do usuário | 👀 Aguardando o usuário | 2026-10-13 12:49 |
+| local · main | #27 (Etapa 146-042b2fe8) e #28 (Etapa 147-9201b27b) | Itens 146.7 e 147.8 — aceites do usuário | 👀 Aguardando o usuário | 2026-10-13 09:57 |
 
 ## 📌 Tarefas do `TASKS.md` (o status oficial fica aqui)
 
@@ -51,6 +51,7 @@ A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale 
 | #25-b3e29764-940b-4a82 | Questões da objetiva e da prática só no banco, layout global, pasta da matéria sem HTML (migração) | ⬜ Pendente — dividida em 22 sub-tasks na tabela `tasks` (ids 19 a 40, em cadeia; Etapa 143-d30a9c4d) | 25.01 (TASK-0019) — levantamento; a rotina pega quando for ligada | — |
 | #26-55a91111-02ce-4cb1 | Regras no banco: `regra_documento` e `regra_secao` (cópia do repositório) | 🔄 Em execução (Etapa 144-aff33423) | Item 144.5 — primeira cópia e `conferir`; depois aceite | nuvem · ccr-00f69e8a-6qcla9 (desde 2026-10-11 06:21) |
 | #27-042b2fe8-a9f7-4726 | Reestruturar `.claude/rules/` (sem duplicação, ≤ 5 KB) | 👀 Aguardando aceite (Etapa 146-042b2fe8) | Item 146.7 — aceite do usuário | — |
+| #28-9201b27b-7630-41cb | Visualizador `.claude/rules/index.html`: regras em cards por categoria + aba TASKS | 👀 Aguardando aceite (Etapa 147-9201b27b) | Item 147.8 — usuário abre `.claude/rules/index.html` (ou menu Regras) e confere | — |
 
 ## ⏳ Aguardando o usuário (aceites, aprovações e ações dele)
 
@@ -294,6 +295,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (regra "CONVERSA ENTRE SESSÕES 
 | 144-aff33423 | Regras no banco: `regra_documento` e `regra_secao` (#26) | [ETAPA-144-aff33423-REGRAS-NO-BANCO.md](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md) |
 | 145-ae3cea8d | Resolver o conflito de tasks/STATUS.md e preservar os caminhos corrigidos (commit d88a095) | [ETAPA-145-ae3cea8d-MERGE-STATUS-LOCAL.md](etapas/ETAPA-145-ae3cea8d-MERGE-STATUS-LOCAL.md) |
 | 146-042b2fe8 | Reestruturar `.claude/rules/` (sem duplicação, ≤ 5 KB por arquivo) | [ETAPA-146-042b2fe8-REESTRUTURAR-CLAUDE-RULES.md](etapas/ETAPA-146-042b2fe8-REESTRUTURAR-CLAUDE-RULES.md) |
+| 147-9201b27b | Visualizador de regras e tarefas em `.claude/rules/index.html` | [ETAPA-147-9201b27b-VISUALIZADOR-REGRAS-E-TASKS.md](etapas/ETAPA-147-9201b27b-VISUALIZADOR-REGRAS-E-TASKS.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |

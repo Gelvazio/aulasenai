@@ -1,8 +1,8 @@
 # Reestruturar `.claude/rules/` (sem duplicações, nada acima de 5 KB)
 
-**Data de criação:** 2026-10-13 12:44 · **Executor:** Claude Code (local · main)
+**Data de criação:** 2026-10-13 09:44 · **Executor:** Claude Code (local · main)
 **Tarefa:** #27-042b2fe8-a9f7-4726 · **Etapa:** 146-042b2fe8
-**Status geral:** ✅ Concluído em 2026-10-13 12:49 (aguardando aceite)
+**Status geral:** ✅ Concluído em 2026-10-13 09:49 (aguardando aceite)
 
 ## Objetivo
 Deixar as regras de `.claude/rules/` sem repetição, sem contradição, sem referências a arquivos
@@ -88,10 +88,10 @@ conforme decisão do usuário.
 | Outras frentes leem `agents-*`/`regras-gerais` | `INDEX.md` e `AGENTS.md` passam a apontar os novos nomes |
 
 ## Conclusão
-- Aprovado em 2026-10-13 12:50 (agents-* adaptar; nuvem só main; ajustar AGENTS.md e CLAUDE.md).
+- Aprovado em 2026-10-13 09:50 (agents-* adaptar; nuvem só main; ajustar AGENTS.md e CLAUDE.md).
 - Mudança de escopo aprovada pelo usuário durante a execução: **remover a regra de infográficos de
   tudo** (`.claude/rules/infograficos.md` não criado e `docs/regras/infograficos.md` apagado).
 - Resultado: 22 → 19 arquivos; total 101 KB → 35 KB; maior arquivo 3,3 KB.
 - Pendência: a tarefa #26 precisa rodar de novo `scripts/regras/sincronizar_regras.py` para a cópia
   das regras no banco refletir os novos arquivos.
-- Concluído em 2026-10-13 12:49 (≈ 25 min).
+- Concluído em 2026-10-13 09:49 (≈ 25 min).
