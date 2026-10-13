@@ -1,52 +1,48 @@
-# 🔀 Git Quick — Commit, Push, PR
+# 🔀 Git Quick — Commit e push
 
-## 💻 Local (máquina do usuário) — regra de 2026-10-13: commit + push + quadro
+**Regra (2026-10-13):** ao concluir **cada tarefa** = **1 commit + push + quadro atualizado**
+(`tasks/STATUS.md` e `tasks/TASKS.md`). Vale para **local e nuvem**, sempre na **`main`**
+(`multiplas-ias.md`).
+
+## Fluxo
 
 ```bash
-git add <caminho1> <caminho2>
+git fetch --all --prune
+git pull --rebase origin main
+git add <caminho1> <caminho2>        # só os arquivos da tarefa + quadro
+git diff --cached --name-only        # conferir o que vai no commit
 git commit -m "feat(tema): descrição
 
-Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>"
+Co-Authored-By: <modelo em uso> <noreply@anthropic.com>"
 git push origin main
-# Depois: atualizar o quadro de tarefas (tasks/STATUS.md e tasks/TASKS.md)
 ```
 
-**Proibições:**
-- ✅ Ao concluir cada tarefa: commit + push + atualizar o quadro de tarefas
-- ⛔ Nunca `git add .`
-- ⛔ Nunca `--force`
-- ⛔ Nunca push de tarefa incompleta ou falhando
+- Push recusado porque o remoto andou → `fetch` + `pull --rebase` + reler o quadro + push de novo.
+- Usuário pede "faça commit agora" → commitar na hora, mesmo no meio da tarefa.
+- Usuário diz "só commit, sem push" → respeitar.
+- Executar os comandos de git **direto, sem perguntar**.
 
----
+## Proibido
 
-## ☁️ Nuvem (Claude Code web)
+- ⛔ `git add .` (arrasta `__pycache__`, gabaritos, listas de alunos)
+- ⛔ `git push --force`
+- ⛔ `git pull` sem `--rebase` (gera merge) e `git merge`
+- ⛔ `git worktree` e branches paralelas
+- ⛔ `git status` repetido entre comandos ou depois do commit (o git já avisa erros)
+- ⛔ Várias tarefas num commit só, ou tarefa concluída sem commit
+- ⛔ Commit/push de tarefa incompleta ou falhando
 
-Claude faz automaticamente:
-- `git push -u origin <branch>`
-- Cria/atualiza PR para main
-- Faz merge (resolve conflitos)
-- Deleta a branch
+## Nunca publicar
 
----
+- ❌ Gabarito e questões de atividade (ficam só no banco)
+- ❌ Listas de alunos e dados pessoais
+- ❌ `.env`, chaves e tokens
+- ✅ Markdown, JavaScript, schema SQL — respeitando o `.gitignore`
 
-## ✅ Exemplos
+## Mensagens
 
 ```
 feat(materias): gerar atividades de ITIC
 fix(banco): corrigir RLS de professor
-docs(regras): atualizar CLAUDE.md
+docs(regras): reestruturar .claude/rules
 ```
-
----
-
-## ⚠️ O Que Nunca Publica
-
-**Antes de add:**
-- ❌ Gabarito, questões
-- ❌ Listas de alunos, dados pessoais
-- ❌ `.env`, chaves
-- ✅ Markdown, JavaScript, SQL schema
-
----
-
-**Mais detalhes:** `.claude/rules/INDEX.md`

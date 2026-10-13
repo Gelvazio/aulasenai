@@ -1,67 +1,68 @@
-# 📖 Índice de Regras — .claude/rules/
+# 📖 Índice de regras — `.claude/rules/`
 
-**Carga rápida em contexto mínimo.** Cada arquivo é uma regra específica — abra conforme necessário.
+Cada arquivo trata de **um assunto** e tem no máximo 5 KB. Abra só o que a tarefa pedir.
+Regras detalhadas, com exemplos: `docs/regras/`. Histórico de mudanças: `docs/HISTORICO-REGRAS.md`.
 
-## 🔴 Crítico — Sempre
+## 🔴 Sempre (início de sessão)
 
-- `essentials.md` — Checklist de início de sessão (30 segundos)
-- `git-quick.md` — Commit, push, PR (resumido)
-- `status-flow.md` — Ler STATUS.md, workflow de tarefas
-- `toda-tarefa-e-task.md` — Toda tarefa vira TASK; a IA pede detalhes ao solicitante
+| Arquivo | Assunto |
+|---------|---------|
+| `essentials.md` | Checklist de início: sincronizar, o que ler, regras que valem sempre |
+| `status-flow.md` | Ciclo da TASK em `tasks/` (frentes, reserva, encerramento, frase final) |
+| `toda-tarefa-e-task.md` | Toda tarefa vira TASK; pedir detalhes ao solicitante |
+| `git-quick.md` | Commit + push por tarefa na `main`; o que é proibido |
 
-## 🟠 Muito Comum
+## 🟠 Planejar e coordenar
 
-- `security-banco.md` — RLS, JWT, gabarito, o que não publica
-- `seeds.md` — SEEDS-APLICADOS.md, conferência, aplicação
-- `materias-global.md` — Regra global de matérias (substitui ITIC)
-- `atividades-banco.md` — Questões só no banco, layout global
+| Arquivo | Assunto |
+|---------|---------|
+| `plano-docs.md` | Tarefa pequena × grande; plano em `docs/` e aprovação |
+| `status-modelo.md` | Modelo do `STATUS.md` e regras de gestão |
+| `docs-antes-de-editar.md` | Ler `docs/ORIENTACAO_*` antes de mexer em um arquivo |
+| `multiplas-ias.md` | Várias IAs/frentes: fonte única, só `main`, reserva, prioridade, banco só local |
 
-## 🟡 Por Funcionalidade
+## 🟡 Código e validação
 
-- `professor-admin.md` — Somente gelvazio.camargo@senai.local
-- `colaboracao-sessoes.md` — Conversa entre licenças, RECADOS.md
-- `codigo-solid.md` — SOLID, 1000 linhas, 45 por função, nomes PT
-- `tarefas-agendadas.md` — Fila `tasks`, agendador
+| Arquivo | Assunto |
+|---------|---------|
+| `codigo-solid.md` | SOLID e aplicação em JS, Python, HTML e CSS |
+| `codigo-limites-nomes.md` | Limites (arquivo, função, linha), nomes em português, legibilidade |
+| `testes-validacao.md` | Nunca abrir navegador; nunca escrever testes (exceto bug) |
 
-## 📘 Regras Gerais do Projeto
+## 🟢 Banco e segurança
 
-- `regras-gerais.md` — Regras gerais (STATUS.md, SOLID, commits, testes, infográficos)
-- `documentar-antes-de-cada-tarefa.md` — Plano em `docs/` antes de tarefa grande
+| Arquivo | Assunto |
+|---------|---------|
+| `security-banco.md` | RLS + JWT, gabarito só no banco, SQL idempotente |
+| `seeds.md` | Ciclo dos seeds e `database/SEEDS-APLICADOS.md` |
 
-## 🧩 Protocolo de Agentes (dividido do AGENTS.md)
+## 🔵 Conteúdo das matérias
 
-- `agents-avisos-gerais.md` — Avisos gerais: fonte única, branch main, fetch antes do pull, tarefa concluída, scripts temporários
-- `agents-protocolo-captura-tarefa.md` — Protocolo de captura de tarefa (lock em 3 partes)
-- `agents-concorrencia.md` — Regras complementares de concorrência (seção 1.1)
-- `agents-prioridade.md` — Prioridade das tarefas (seção 1.2)
-- `agents-hooks-sincronizacao.md` — Hooks de sincronização (seção 1.3)
-- `agents-subtarefas-dependencias.md` — Subdivisão em subtarefas e dependências (seção 2)
-- `agents-identificacao-ia.md` — Identificação obrigatória da IA executora (seção 3)
-- `agents-reporte-progresso.md` — Reporte de progresso ao monitor (seção 4, opcional)
-- `agents-confirmacao-status.md` — Confirmação de status das tarefas (seção 5)
-- `agents-plano-docs.md` — Plano em docs/ para tarefas grandes (seção 6)
-- `agents-cerebro-memoria-mcp.md` — Plano do Cérebro de Memória Persistente (MCP + Supabase)
+| Arquivo | Assunto |
+|---------|---------|
+| `materias-global.md` | Estrutura de pasta, 1 aula = 4 h, status, critério de pronto |
+| `apostilas.md` | `materia.json`, fluxo da apostila, identificação, PDF |
+| `atividades-banco.md` | Questões só no banco, layout global, "você como aluno consultor" |
+| `faixa-materias-ensalado.md` | Botões SOMENTE ENSALADO / VER TODAS e ON/OFF |
 
-## 🔗 Referência
+## ⚪ Ferramentas
 
-- `docs-index.md` — Onde está cada coisa em `docs/`
-- `tabelas-banco.md` — Schema das principais tabelas
+| Arquivo | Assunto |
+|---------|---------|
+| `graphify.md` | Graphify só quando o usuário pedir |
+
+## Onde mais procurar
+
+- Schema do banco: `docs/database.md`
+- Fila `tasks` e agendador: `docs/regras/tarefas-agendadas.md`
+- Usuários, turmas e professor: `docs/regras/usuarios-turmas-paginas-professor.md`
+
+## Como criar ou mudar uma regra
+
+1. Ache o arquivo do assunto acima; se nenhum servir, crie um novo (≤ 5 KB) e liste aqui.
+2. Não repita a regra em outro arquivo — aponte para ele.
+3. Registre a mudança em `docs/HISTORICO-REGRAS.md`.
 
 ---
 
-## Como Usar
-
-**Ao iniciar sessão:** leia `essentials.md`
-
-**Ao trabalhar:** procure a regra pelo tema e abra
-
-Exemplo:
-```
-Vou gerar uma atividade prática → abre atividades-banco.md
-Tenho dúvida sobre gabarito → abre security-banco.md
-Preciso fazer PR → abre git-quick.md
-```
-
----
-
-Última atualização: 2026-10-13
+Última atualização: 2026-10-13 (reestruturação, tarefa #27)

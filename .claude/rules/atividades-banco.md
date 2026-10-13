@@ -1,71 +1,48 @@
-# 🗃️ Atividades — Banco, Layout Global, Sem HTML
+# 🗃️ Atividades — Banco, layout global, sem HTML
 
-**Desde 2026-10-11. Migração em tarefa #25.**
+**Desde 2026-10-11** (migração na tarefa #25). Detalhes: `docs/regras/atividades.md`.
 
-## A Regra
+## Questões só no banco
 
-| Antes | Agora |
-|-------|-------|
-| Questões em `.md` | **Só no banco** |
-| HTML para cada aula | **Layout global** |
-| Pasta com muitos `.html` | Pasta tem **só Markdown** |
+Enunciado, alternativas, gabarito e tópicos ficam **só no banco**. A página busca pelo id da
+atividade e monta tudo na hora.
 
----
+- ❌ Questão em arquivo (`.md`, `.html`, `.json`)
+- ❌ `localStorage`
+- ❌ Gabarito visível para o aluno (`security-banco.md`)
 
-## Questões Só no Banco
+## Layout global
 
-Enunciado, alternativas, gabarito, tópicos = banco.
-
-Página busca pelo id e monta dinamicamente.
-
-**NUNCA:**
-- ❌ Questão em arquivo
-- ❌ localStorage
-- ❌ Gabarito pro aluno
-
----
-
-## Layout Global
-
-Uma página para todas as atividades de um tipo:
+Uma página por tipo, para todas as matérias — recebe o **id da atividade**:
 - `atividade-objetiva.html`
 - `atividade-pratica.html`
 
-Recebe o **id da atividade** e faz o resto.
+Recursos que toda atividade já tem (não replicar por matéria): progresso da turma, gráficos,
+cálculo de nota, mínimo de questões, correção por IA (discursiva), gabarito por turma, PDF SENAI.
 
----
-
-## Pasta da Matéria — Só Markdown
+## Pasta da matéria — só Markdown
 
 ```
-MATERIAIS/<CURSO>/<MATERIA>/
-├── CONTEUDO/
-│   └── AULA-*.md
-├── ATIVIDADES/
-│   ├── STATUS-ATIVIDADES.md
-│   └── (sem HTML)
-└── APOSTILA/
-    ├── APOSTILA-*.md
-    └── (sem HTML)
+MATERIAIS/<CURSO>/<MATERIA>/ATIVIDADES/
+└── STATUS-ATIVIDADES.md      (sem HTML; índice gerado por script a partir do banco)
 ```
 
-Índice gerado por script do banco.
+## Tamanho padrão
 
----
+| Tipo | Tamanho |
+|------|---------|
+| Objetiva | 50 questões |
+| Prática | 10 × 3 tópicos |
+| Avaliação | Conforme a ementa |
 
-## Recursos Automáticos
+## Contexto: "Você como aluno consultor" (2026-10-08)
 
-Toda atividade tem:
-- ✅ Progresso da turma
-- ✅ Gráficos
-- ✅ Cálculo nota
-- ✅ Mínimo de questões
-- ✅ Correção IA (discursiva)
-- ✅ Gabarito por turma
-- ✅ PDF SENAI
+Vale para **toda atividade** (objetiva, prática, discursiva, avaliação, situação-problema, Excel,
+Word…).
 
-**Sem replicar em cada matéria.**
-
----
-
-**Ver também:** `docs/regras/atividades.md`
+- ⛔ **Não criar empresa fictícia** ("a empresa X Ltda.", "a Distribuidora Y"…).
+- ✅ O enunciado coloca o aluno como **consultor** que analisa a situação e resolve o problema:
+  "Você, como aluno consultor, foi chamado para organizar o controle de estoque de um
+  almoxarifado…".
+- ✅ O contexto profissional do curso continua (almoxarifado, logística, escritório…), sem nome de
+  empresa inventada.

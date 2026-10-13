@@ -1,4 +1,4 @@
-# CLAUDE.md — Dashboard AI
+# CLAUDE.md — Aulas SENAI
 
 **Única função deste arquivo:** mandar para o [`AGENTS.md`](AGENTS.md), que guarda as regras de
 **todas as IAs**.

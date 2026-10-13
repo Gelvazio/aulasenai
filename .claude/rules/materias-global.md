@@ -7,7 +7,7 @@
 ```
 MATERIAIS/<CURSO>/<MATERIA>/
 ├── EMENTA-CHALKIE-AI.md     ← Principal
-├── materia.json              ← Dados
+├── materia.json              ← Dados (`apostilas.md`)
 ├── STATUS_MATERIA.md
 ├── AULAS/
 │   └── CONTEUDO/
@@ -31,13 +31,10 @@ MATERIAIS/<CURSO>/<MATERIA>/
 
 ---
 
-## Atividades Padrão
+## Atividades e apostila
 
-| Tipo | Tamanho | Banco |
-|------|---------|-------|
-| Objetiva | 50 questões | Sim |
-| Prática | 10 × 3 tópicos | Sim |
-| Avaliação | Conforme ementa | Sim |
+- Atividades (objetiva 50 questões, prática 10 × 3 tópicos, avaliação): `atividades-banco.md`
+- Apostila e `materia.json`: `apostilas.md`
 
 ---
 
@@ -70,7 +67,7 @@ MATERIAIS/<CURSO>/<MATERIA>/
 **NUNCA:**
 - ❌ Ler de PDF
 - ❌ Copiar de outra UC
-- ❌ Sem pedir matéria semelhante
+- ❌ Usar matéria semelhante como base sem pedir ao usuário
 
 ---
 

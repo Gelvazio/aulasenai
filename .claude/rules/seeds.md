@@ -1,77 +1,37 @@
-# 🌱 Seeds — Banco de Dados
+# 🌱 Seeds — Banco de dados
 
-**Rastreamento:** `database/SEEDS-APLICADOS.md` (fonte única)
+**Registro único:** `database/SEEDS-APLICADOS.md`. Passo a passo completo: `scripts/seeds/README.md`.
+Tarefa de banco = só o **Claude Code local** (`multiplas-ias.md`).
 
 ## Ciclo
 
-| Passo | Status | Ação |
-|------|--------|------|
-| 1. Gerado | PENDENTE | Gerar `.sql` |
-| 2. Aplicado | APLICADO | Rodar no Supabase |
-| 3. Conferido | CONCLUÍDO | Verificar md5 |
-| — | SUBSTITUÍDO | Não usa (outro seed já CONCLUÍDO) |
+| Status | Significado | Próxima ação |
+|--------|-------------|--------------|
+| **PENDENTE** | `.sql` gerado, nunca rodado | Aplicar no Supabase |
+| **APLICADO** | Rodado, ainda não conferido (ou md5 não bateu) | Conferir md5 |
+| **CONCLUÍDO** | Rodado e conferido ✅ | — |
+| **SUBSTITUÍDO** | Não será usado (outro seed já CONCLUÍDO) ✅ | — |
 
----
+## Antes de QUALQUER tarefa nova
 
-## Antes de QUALQUER Tarefa
+Todo seed precisa estar **CONCLUÍDO** ou **SUBSTITUÍDO**. Se houver PENDENTE ou APLICADO:
+aplicar → conferir md5 → registrar CONCLUÍDO → só então a tarefa nova.
 
-⚠️ **Todos CONCLUÍDO:**
+## Scripts (nunca montar à mão)
 
-```bash
-# Ler o registro
-cat database/SEEDS-APLICADOS.md
-
-# Se houver PENDENTE ou APLICADO:
-# 1. Aplicar (PENDENTE)
-# 2. Conferir md5 (APLICADO)
-# 3. Gravar CONCLUÍDO
-
-# Só então tarefa nova
-```
-
----
-
-## Registro — Colunas
-
-| Arquivo | Data Aplicado | Data Conferido | Status | Observação |
-|---------|---------------|---|--------|---|
-| 2026-10-01-seed-itic.sql | 2026-10-01 | 2026-10-02 | CONCLUÍDO | — |
-| 2026-10-13-seed-adag.sql | — | — | PENDENTE | Gerado |
-| 2026-10-10-seed-banco.sql | 2026-10-10 | — | APLICADO | Sem conector |
-
----
-
-## Status
-
-- **PENDENTE** = Gerado, nunca rodado
-- **APLICADO** = Rodado, não conferido (ou não bateu md5)
-- **CONCLUÍDO** = Rodado e conferido ✅
-- **SUBSTITUÍDO** = Não usa (outro já OK) ✅
-
----
-
-## Scripts do Repositório
-
-**Nunca montar à mão!**
+Rodar na raiz do repositório. Python no Windows: `C:\Python314\python.exe`; na nuvem: `python3`.
+Rascunhos (lotes, JSON) ficam na pasta temporária da sessão, nunca no repositório.
 
 ```bash
-python3 scripts/seeds/dividir_seed.py database/meu-seed.sql
-python3 scripts/seeds/comparar_md5.py database/esperado.json
-python3 scripts/seeds/registrar_seed.py --status CONCLUÍDO --arquivo 2026-10-13.sql
+python scripts/seeds/dividir_seed.py database/<seed>.sql <pasta-lotes>
+python scripts/seeds/comparar_md5.py <pasta-lotes>/esperado.json <pasta-lotes>/resultado.json
+python scripts/seeds/registrar_seed.py <seed>.sql CONCLUÍDO "<observação com ids>"
 ```
 
----
+- O lote só **acrescenta** itens. Se a atividade já tiver itens diferentes no banco, avisar o
+  usuário (apagar exige pedido e backup).
 
-## Autorização Permanente
+## Autorização permanente (desde 2026-10-09)
 
-Desde 2026-10-09, você está autorizado a:
-- ✅ Aplicar PENDENTE
-- ✅ Conferir APLICADO
-- ✅ Marcar CONCLUÍDO
-- ✅ Gravar + commit + push
-
-Sem perguntar de novo.
-
----
-
-**Ver também:** `docs/regras/tarefas-agendadas.md`
+Sem perguntar de novo: aplicar PENDENTE, conferir APLICADO, marcar CONCLUÍDO, registrar e fazer
+commit + push. Qualquer outra mudança no banco de produção continua exigindo autorização.

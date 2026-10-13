@@ -1,39 +1,49 @@
-# ⚡ Essentials — Checklist de 30 segundos
+# ⚡ Essentials — Checklist de início de sessão
 
-**Abra SEMPRE ao iniciar sessão.** Depois siga para `status-flow.md`.
+**Abra SEMPRE ao iniciar.** Depois siga para `status-flow.md`. Índice completo: `INDEX.md`.
 
-## Primeiro
+## 1. Sincronizar
 
 ```bash
-git fetch origin main    # Trazer atualizações de outras frentes
+git fetch --all --prune          # atualiza origin/main (sem isso o git status mente)
+git pull --rebase origin main    # nunca pull sem --rebase (gera merge)
 ```
 
-## Segundo — Ler Estes Arquivos
+## 2. Ler, nesta ordem
 
-| Arquivo | O quê | Onde |
-|---------|-------|------|
-| `tasks/STATUS.md` | **Fonte única:** próximo passo, tarefas em uso, aguardando | Seções: "🧭 Frentes", "📌 Tarefas", "⏳ Aguardando" |
-| `tasks/RECADOS.md` | Recados de outras frentes | Recados abertos para sua frente ou `todas` |
-| `database/SEEDS-APLICADOS.md` | Status dos seeds | Marcar CONCLUÍDO antes de nova tarefa |
+| Arquivo | Para quê |
+|---------|----------|
+| `CLAUDE.md` → `AGENTS.md` | Regras do projeto (precedência máxima) |
+| `tasks/STATUS.md` | Fonte única: frentes, tarefas em uso, próximo passo |
+| `tasks/RECADOS.md` | Recados de outras frentes para você ou `todas` |
+| `database/SEEDS-APLICADOS.md` | Todo seed CONCLUÍDO antes de tarefa nova (`seeds.md`) |
+| `docs/` e `bugs/` | Orientação do módulo antes de editar (`docs-antes-de-editar.md`) |
 
-## Regras Que Valem SEMPRE
+Se houver item `🔄`/`⬜` de tarefa aprovada da sua frente: conferir o que já foi feito
+(arquivos e commits) e **continuar de onde parou** — sem refazer `✅` nem pular itens.
 
-| Regra | O que fazer |
-|-------|------------|
-| **1 commit por tarefa** | Concluir → commit (Com Co-Authored-By) |
-| **Fim de tarefa** | Commit + push + atualizar o quadro (`tasks/STATUS.md`, `tasks/TASKS.md`). Local e nuvem (nuvem: branch + PR) |
-| **STATUS.md é verdade** | O que não está lá não aconteceu |
-| **Seeds CONCLUÍDO antes** | Todos os seeds devem estar CONCLUÍDO antes de tarefa nova |
-| **Toda tarefa é uma TASK** | Abrir a TASK e pedir detalhes ao solicitante antes de executar (`toda-tarefa-e-task.md`) |
-| **Sem `git status` repetido** | Só `git diff --cached --name-only` antes de commitar |
-| **Sem navegador para validar** | Ler código, `node`, banco — nunca preview |
-| **RLS + JWT sempre** | Sem esses, não há segurança |
+## 3. Regras que valem SEMPRE
 
-## Próximo?
+| Regra | Arquivo |
+|-------|---------|
+| Toda tarefa vira TASK; pedir detalhes antes de executar | `toda-tarefa-e-task.md` |
+| Tarefa grande = plano em `docs/` + aprovação | `plano-docs.md` |
+| Fim de tarefa = commit + push + quadro atualizado, tudo na `main` | `git-quick.md` |
+| STATUS.md é verdade: o que não está lá não aconteceu | `status-flow.md` |
+| Sem navegador e sem testes automatizados | `testes-validacao.md` |
+| RLS + JWT em toda página e tabela; gabarito nunca sai do banco | `security-banco.md` |
+| Código: SOLID, ≤ 1000 linhas/arquivo, ≤ 45 linhas/função, nomes em PT | `codigo-*.md` |
 
-→ Abra `status-flow.md` para entender o workflow de tarefas
-→ Procure a regra no INDEX.md conforme precisar
+## 4. Checklist
+
+```
+☐ Fiz fetch + pull --rebase?
+☐ Li tasks/STATUS.md e retomei de onde parou?
+☐ Seeds todos CONCLUÍDO?
+☐ Li a orientação em docs/ do que vou mexer?
+☐ Sei se a tarefa é pequena ou grande?
+```
 
 ---
 
-**Data e hora:** Horário de Brasília (`TZ=America/Sao_Paulo date "+%Y-%m-%d %H:%M:%S"` na nuvem)
+**Data e hora:** sempre de Brasília (`TZ=America/Sao_Paulo date "+%Y-%m-%d %H:%M:%S"`).

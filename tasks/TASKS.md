@@ -355,4 +355,19 @@ conferidas pelo md5 com `scripts/regras/sincronizar_regras.py`.
 
 ---
 
+### #27-042b2fe8-a9f7-4726: Reestruturar `.claude/rules/` — pedida em 2026-10-13 12:44:03
+
+**Status:** ver `STATUS.md`, seção "📌 Tarefas do `TASKS.md`" e Etapa 146-042b2fe8 (fonte única).
+**Prioridade:** 🟡 Média · **Plano:** [docs/reestruturar-claude-rules.md](../docs/reestruturar-claude-rules.md).
+
+Pedido: ler todo `.claude/rules/`, tirar regras duplicadas ou sem sentido, deixar melhor
+estruturado, nenhum arquivo acima de 5 KB (criar arquivos novos quando preciso).
+
+- [x] Diagnóstico e plano.
+- [x] Aprovação do usuário.
+- [x] Reestruturação, commit e push (infográficos removidos a pedido).
+- [ ] Aceite do usuário.
+
+---
+
 **Última atualização:** 2026-10-11 06:28 (tarefa #26 adicionada)
