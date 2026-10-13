@@ -21,7 +21,7 @@ pendente) muda para `⏹️ Encerrada`.
 | nuvem · ccr-00f69e8a-6qcla9 | #26 (Etapa 144-aff33423); Etapa 140-8554d88e | #26: item 144.5 — primeira cópia das regras no banco e `conferir`; depois aceite (144.6) | 🔄 Ativa | 2026-10-11 06:28 |
 | nuvem · ccr-be208aef-c6h8oe | #24 (Etapa 142-2a52ee2f) | Fila `tasks` pronta (tabela, funções, `tasks.html`, regra, prompt da rotina, 17 tarefas do `TASKS.md` na tabela). Próximo: item 142.5 — teste e aceite do usuário; a rotina continua desligada até liberar o GitHub (140.6) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | nuvem · claude/ola-zlzh8z | #22-f79be83e-0418-43e8 (Etapa 137-13665a7e) | Item 137.2 — aula 05 de Testes de Front-End (objetiva + prática + seeds); aulas 04 a 04 ✅. ⛔ Não mexer em Banco de Dados nesta sessão | 🔄 Ativa | 2026-10-10 16:21 |
-| local · main | #27 (Etapa 146-042b2fe8) e #28 (Etapa 147-9201b27b) | Itens 146.7 e 147.8 — aceites do usuário | 👀 Aguardando o usuário | 2026-10-13 09:57 |
+| local · main | #29 (Etapa 148-6932a263); #27 e #28 aguardam aceite | Item 148.2 — decisões D1 a D4 do usuário; depois 146.7 e 147.8 (aceites) | 👀 Aguardando o usuário | 2026-10-13 10:11 |
 
 ## 📌 Tarefas do `TASKS.md` (o status oficial fica aqui)
 
@@ -52,6 +52,7 @@ A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale 
 | #26-55a91111-02ce-4cb1 | Regras no banco: `regra_documento` e `regra_secao` (cópia do repositório) | 🔄 Em execução (Etapa 144-aff33423) | Item 144.5 — primeira cópia e `conferir`; depois aceite | nuvem · ccr-00f69e8a-6qcla9 (desde 2026-10-11 06:21) |
 | #27-042b2fe8-a9f7-4726 | Reestruturar `.claude/rules/` (sem duplicação, ≤ 5 KB) | 👀 Aguardando aceite (Etapa 146-042b2fe8) | Item 146.7 — aceite do usuário | — |
 | #28-9201b27b-7630-41cb | Visualizador `.claude/rules/index.html`: regras em cards por categoria + aba TASKS | 👀 Aguardando aceite (Etapa 147-9201b27b) | Item 147.8 — usuário abre `.claude/rules/index.html` (ou menu Regras) e confere | — |
+| #29-6ee02521-4f6a-4944 | Revisão das regras + quadro com fonte única nos arquivos (regras de tarefas em `.claude/rules/tasks/`) | 👀 Aguardando decisões (Etapa 148-6932a263) | Item 148.2 — decisões D1 a D4 do usuário | local · main (desde 2026-10-13 10:11) |
 
 ## ⏳ Aguardando o usuário (aceites, aprovações e ações dele)
 
@@ -59,6 +60,7 @@ Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etap
 
 | Etapa | Item | O que falta | Tipo |
 |-------|------|-------------|------|
+| 148-6932a263 | 148.2 | decidir D1 a D4 (fila do banco, constantes, seeds de outras frentes, migração das reservas) | Decisão |
 | 125 | 125.8 | rodar no Supabase → SQL Editor o insert do tópico 6c da prática da aula 19 de Banco de Dados (atividade id 142): o conector da nuvem cancela o comando porque o texto cita `DELETE FROM parcela;` (o pedido de aprovação não chega ao usuário) | Ação |
 | 144-aff33423 | 144.6 | conferir as regras no banco (`regra_documento`, `regra_secao`) e a regra "🗄️ REGRAS NO BANCO" do `CLAUDE.md` | Aceite |
 | 140-8554d88e | 140.6 e 140.7 | liberar o acesso do GitHub ao `Gelvazio/aulasenai` para as tarefas agendadas e conferir a regra `docs/regras/tarefas-agendadas.md` — na fila como TASK-0042 e TASK-0043 (`tasks.html`, marcar ✅ Concluir) | Ação e aceite |
@@ -296,6 +298,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (regra "CONVERSA ENTRE SESSÕES 
 | 145-ae3cea8d | Resolver o conflito de tasks/STATUS.md e preservar os caminhos corrigidos (commit d88a095) | [ETAPA-145-ae3cea8d-MERGE-STATUS-LOCAL.md](etapas/ETAPA-145-ae3cea8d-MERGE-STATUS-LOCAL.md) |
 | 146-042b2fe8 | Reestruturar `.claude/rules/` (sem duplicação, ≤ 5 KB por arquivo) | [ETAPA-146-042b2fe8-REESTRUTURAR-CLAUDE-RULES.md](etapas/ETAPA-146-042b2fe8-REESTRUTURAR-CLAUDE-RULES.md) |
 | 147-9201b27b | Visualizador de regras e tarefas em `.claude/rules/index.html` | [ETAPA-147-9201b27b-VISUALIZADOR-REGRAS-E-TASKS.md](etapas/ETAPA-147-9201b27b-VISUALIZADOR-REGRAS-E-TASKS.md) |
+| 148-6932a263 | Revisão das regras e quadro de tarefas com fonte única nos arquivos (#29) | [ETAPA-148-6932a263-REGRAS-E-QUADRO-FONTE-UNICA.md](etapas/ETAPA-148-6932a263-REGRAS-E-QUADRO-FONTE-UNICA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
@@ -311,6 +314,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (regra "CONVERSA ENTRE SESSÕES 
 ## Registro de decisões
 | Data | Decisão | Quem | Por quê |
 |------|---------|------|---------|
+| 2026-10-13 10:11 | Quadro com fonte única nos arquivos (sem `TASKS.md`; fila do banco deixa de ser fonte); plano de tarefa grande fica na própria etapa (sem `docs/`); regras de tarefas reutilizáveis em `.claude/rules/tasks/` | Usuário | Mesma informação anotada em 3 ou 4 lugares |
 | 2026-10-09 21:30 | Toda matéria tem os 4 status (`STATUS-EMENTAS.md`, `AULAS/STATUS-AULAS.md`, `ATIVIDADES/STATUS-ATIVIDADES.md`, `APOSTILA/STATUS-APOSTILA.md`); criados só com a estrutura (tudo ⬜) nas que faltavam — 34 matérias completas (commits até `bfd7fb2`) | Usuário | Primeiro passo de toda matéria é ter o status de todas as aulas |
 | 2026-10-09 20:59 | Antes de começar ou continuar qualquer tarefa, concluir todos os seeds de `database/SEEDS-APLICADOS.md` (regra "🌱 REGRA — SEEDS DO BANCO" do `CLAUDE.md`); os que dependem de decisão vão para "⏳ Aguardando o usuário" | Usuário | Banco sempre em dia com os arquivos antes do trabalho seguir |
 | 2026-10-09 14:09 | Gabarito (fontes, padrões de resposta, seeds) vai para o Git e fica fora da Vercel (`.vercelignore`); prova prática de várias aulas segue a regra nova (20 × 3) mesmo divergindo da ITIC | Usuário | Não perder fontes na nuvem e não publicar respostas no site |
