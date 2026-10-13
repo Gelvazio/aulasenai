@@ -63,7 +63,7 @@ Regras extensas com exemplos e passo a passo.
 ## ✅ Regras Que Valem SEMPRE
 
 1. **1 commit por tarefa** — Com `Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>`
-2. **Push por ambiente:** Local = nunca. Nuvem = sempre (branch + PR)
+2. **Ao concluir cada tarefa: commit + push + atualizar o quadro de tarefas** (`tasks/STATUS.md` e `tasks/TASKS.md`) — vale local e nuvem (nuvem: branch + PR)
 3. **STATUS.md é verdade** — O que não está lá não aconteceu
 4. **Seeds CONCLUÍDO antes** — Todos antes de tarefa nova
 5. **Sem navegador** — Ler código, `node`, banco — nunca preview

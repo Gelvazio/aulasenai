@@ -37,9 +37,9 @@ exato.
 - Não commitar tarefa incompleta nem proibidos: gabaritos, `*QUESTOES.md`, listas/dados de alunos,
   `__pycache__` (não usar `-f` em ignorados; `*QUESTOES.md` no Windows pega nomes terminados em
   "questoes.md"). `*.md` e `*.py` são versionados.
-- **Push:** em 2026-10-01 o professor mandou "NUNCA FAZER PUSH, EU FAREI O PUSH LOCALMENTE"; local =
-  nunca, nuvem = sempre (branch + PR). ⚠️ Em 2026-10-13 ele pediu "faça commit e push" e o push foi
-  feito — a regra de "nunca push" local está em conflito; confirmar com o usuário qual vale.
+- **Push (decisão do usuário em 2026-10-13, vale local e nuvem):** ao finalizar 1 tarefa = commit +
+  push + atualizar o quadro de tarefas (`tasks/STATUS.md` e `tasks/TASKS.md`). Substitui a antiga
+  regra de 2026-10-01 "nunca push". Nunca `--force`.
 
 ## 4. Validação e banco
 

@@ -21,7 +21,7 @@ git fetch origin main    # Trazer atualizações de outras frentes
 | Regra | O que fazer |
 |-------|------------|
 | **1 commit por tarefa** | Concluir → commit (Com Co-Authored-By) |
-| **Push por ambiente** | Local: nunca. Nuvem: sempre (branch + PR) |
+| **Fim de tarefa** | Commit + push + atualizar o quadro (`tasks/STATUS.md`, `tasks/TASKS.md`). Local e nuvem (nuvem: branch + PR) |
 | **STATUS.md é verdade** | O que não está lá não aconteceu |
 | **Seeds CONCLUÍDO antes** | Todos os seeds devem estar CONCLUÍDO antes de tarefa nova |
 | **Toda tarefa é uma TASK** | Abrir a TASK e pedir detalhes ao solicitante antes de executar (`toda-tarefa-e-task.md`) |

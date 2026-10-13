@@ -30,10 +30,10 @@ Coluna **"Em uso por":**
 - Mudar status → ✅ (data)
 - Commit + push
 
-### 3️⃣ Tarefa Termina
-- STATUS.md: linha → ✅ Concluído
+### 3️⃣ Tarefa Termina (sempre, local e nuvem)
+- STATUS.md: linha → ✅ Concluído e atualizar a linha da sua frente
 - TASKS.md: **REMOVER O BLOCO INTEIRO**
-- Commit + push
+- Commit + **push** (regra de 2026-10-13: ao finalizar 1 tarefa = commit + push + quadro atualizado)
 - Responder: TAREFA FINALIZADA!
 
 ---

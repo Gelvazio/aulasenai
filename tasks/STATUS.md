@@ -21,7 +21,7 @@ pendente) muda para `⏹️ Encerrada`.
 | nuvem · ccr-00f69e8a-6qcla9 | #26 (Etapa 144-aff33423); Etapa 140-8554d88e | #26: item 144.5 — primeira cópia das regras no banco e `conferir`; depois aceite (144.6) | 🔄 Ativa | 2026-10-11 06:28 |
 | nuvem · ccr-be208aef-c6h8oe | #24 (Etapa 142-2a52ee2f) | Fila `tasks` pronta (tabela, funções, `tasks.html`, regra, prompt da rotina, 17 tarefas do `TASKS.md` na tabela). Próximo: item 142.5 — teste e aceite do usuário; a rotina continua desligada até liberar o GitHub (140.6) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | nuvem · claude/ola-zlzh8z | #22-f79be83e-0418-43e8 (Etapa 137-13665a7e) | Item 137.2 — aula 05 de Testes de Front-End (objetiva + prática + seeds); aulas 04 a 04 ✅. ⛔ Não mexer em Banco de Dados nesta sessão | 🔄 Ativa | 2026-10-10 16:21 |
-| local · main | Etapa 145-ae3cea8d | Merge de origin/main concluído; commit local d88a095 preservado | ⏹️ Encerrada | 2026-10-11 17:35 |
+| local · main | Regras em `.claude/rules/` (mesclar regras-globais, TASK, push) | Regra de 2026-10-13: ao finalizar 1 tarefa = commit + push + quadro atualizado (CLAUDE.md, essentials, git-quick, status-flow, memória) | ✅ Concluída | 2026-10-13 |
 
 ## 📌 Tarefas do `TASKS.md` (o status oficial fica aqui)
 
