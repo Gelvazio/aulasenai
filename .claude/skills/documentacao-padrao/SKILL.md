@@ -9,7 +9,7 @@ description: Use when starting ANY new task in any project — ensures a docs/ f
 
 Toda tarefa **grande** deve ser documentada em `docs/` com passos numerados e status rastreável **antes** de iniciar a implementação. O status de cada passo é atualizado conforme o progresso.
 
-> **Exceção — tarefas PEQUENAS (igual ao `CLAUDE.md` global e do projeto, desde 2026-09-30):**
+> **Exceção — tarefas PEQUENAS (igual ao `AGENTS.md` global e do projeto, desde 2026-09-30):**
 > tarefa pequena = ajuste pontual (até ~3 arquivos) que **não** mexe em banco de dados/segurança/RLS,
 > **não** cria estrutura ou gerador novo e **não** faz mudança em massa. Ela **não precisa** de
 > `docs/<tarefa>.md` nem de aprovação prévia: executar direto, registrar no `STATUS.md` e fazer o
@@ -114,7 +114,7 @@ Esperado: [resultado esperado]
 
 | Pensamento | Realidade |
 |------------|-----------|
-| "É tarefa simples, não precisa documentar" | Toda tarefa GRANDE segue o padrão; tarefa pequena segue a exceção do `CLAUDE.md` (sem plano, mas com `STATUS.md` e commit). Na dúvida, documente. |
+| "É tarefa simples, não precisa documentar" | Toda tarefa GRANDE segue o padrão; tarefa pequena segue a exceção do `AGENTS.md` (sem plano, mas com `STATUS.md` e commit). Na dúvida, documente. |
 | "Vou documentar depois" | Documentação vem ANTES da implementação. |
 | "Só vou colocar os passos sem código" | Código completo é obrigatório em cada passo. |
 | "Não precisa de verificação" | Todo passo com código tem verificação. |
