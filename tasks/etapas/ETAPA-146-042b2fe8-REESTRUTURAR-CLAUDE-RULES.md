@@ -11,4 +11,5 @@
 | 146.4 | Tratar `agents-*` e corrigir contradições | ✅ Concluído | 2026-10-13 12:49 | 11 `agents-*` → `multiplas-ias.md`; push/nuvem/Co-Authored-By/worktree unificados; infográficos removidos a pedido |
 | 146.5 | Refazer INDEX, apontar AGENTS/CLAUDE, apagar substituídos | ✅ Concluído | 2026-10-13 12:49 | grep: nenhuma referência a arquivo apagado |
 | 146.6 | Commit + push + quadro | ✅ Concluído | 2026-10-13 12:49 | — |
+| 146.8 | Remover a regra de infográficos também do `CLAUDE.md` global (`C:Usersgelva.claudeCLAUDE.md`), a pedido do usuário | ✅ Concluído | 2026-10-13 12:50 | grep "infogr" = 0 no arquivo global; backup em %TEMP% |
 | 146.7 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
