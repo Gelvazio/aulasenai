@@ -541,7 +541,7 @@ claude mcp add --transport http dashboard-ai-brain https://<seu-projeto>.vercel.
 
 ---
 
-# 📚 REGRAS DO PROJETO AULAS SENAI (movidas do antigo `CLAUDE.md` da raiz)
+# 📚 Regras de Projeto
 
 **Versão das regras:** 2026-10-13 ⚡ *Sistema de memória ativa — regras em `.claude/rules/` para carga rápida*
 
