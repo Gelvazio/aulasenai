@@ -24,6 +24,7 @@ git fetch origin main    # Trazer atualizações de outras frentes
 | **Push por ambiente** | Local: nunca. Nuvem: sempre (branch + PR) |
 | **STATUS.md é verdade** | O que não está lá não aconteceu |
 | **Seeds CONCLUÍDO antes** | Todos os seeds devem estar CONCLUÍDO antes de tarefa nova |
+| **Toda tarefa é uma TASK** | Abrir a TASK e pedir detalhes ao solicitante antes de executar (`toda-tarefa-e-task.md`) |
 | **Sem `git status` repetido** | Só `git diff --cached --name-only` antes de commitar |
 | **Sem navegador para validar** | Ler código, `node`, banco — nunca preview |
 | **RLS + JWT sempre** | Sem esses, não há segurança |

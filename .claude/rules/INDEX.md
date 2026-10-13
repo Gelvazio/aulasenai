@@ -7,6 +7,7 @@
 - `essentials.md` — Checklist de início de sessão (30 segundos)
 - `git-quick.md` — Commit, push, PR (resumido)
 - `status-flow.md` — Ler STATUS.md, workflow de tarefas
+- `toda-tarefa-e-task.md` — Toda tarefa vira TASK; a IA pede detalhes ao solicitante
 
 ## 🟠 Muito Comum
 
