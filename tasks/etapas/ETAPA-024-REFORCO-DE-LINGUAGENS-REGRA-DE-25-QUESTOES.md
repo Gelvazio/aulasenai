@@ -8,4 +8,4 @@
 | 24.3 | `materia.json` da matéria (capacidades C1–C6 da UC 7 na ementa do curso) | ✅ Concluído | 2026-10-06 | Gerador leu sem erro |
 | 24.4 | Aula 01: `ATIVIDADES-AULA-01-20-QUESTOES.html` (gabarito 5 de cada letra) + `ATIVIDADE-DISCURSIVA-AULA-01.html` (5 campos) + padrão de resposta; índice da matéria; seed do grupo no `scripts/gerar-seed-atividades.py` | ✅ Concluído | 2026-10-06 | 20 itens e 5 `textarea`; nenhum gabarito nos HTML |
 | 24.5 | Aplicar os seeds no Supabase (objetivas primeiro, depois discursivas) | ✅ Concluído | 2026-10-06 | Consulta: atividade 60 (20 no gabarito, ativa) e 61 (5 tópicos, bloqueada), matéria no curso 6 |
-| 24.6 | Aceite do usuário | ⬜ Pendente | — | — |
+| 24.6 | Aceite do usuário: liberar a discursiva no índice e testar | 👀 Aguardando o usuário | — | — |

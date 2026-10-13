@@ -1,5 +1,8 @@
 ## Etapa 137-13665a7e — Testes de Front-End: objetivas e práticas das aulas 04 a 10 (tarefa #22-f79be83e-0418-43e8, pedida em 2026-10-09 23:04:01)
 
+**Tarefa:** #22-f79be83e-0418-43e8
+**Próximo passo:** 137.2 — aula 05 de Testes de Front-End (objetiva + prática + seeds); aula 04 ✅.
+
 Pedido do usuário: "Continue testes de frontend". Plano: [docs/testes-frontend-aulas-04-a-10.md](../../docs/testes-frontend-aulas-04-a-10.md)
 — segue as decisões já aprovadas na Etapa 108 (D1: prática 10 questões × 3 tópicos 0,2 + 0,4 + 0,4;
 D2: roteiros de laboratório substituídos pelo formato discursivo; D3: seeds aplicados e conferidos).
@@ -18,3 +21,13 @@ D2: roteiros de laboratório substituídos pelo formato discursivo; D3: seeds ap
 | 137.9 | Ementa ajustada para 14.800–14.950 caracteres (hoje 14.955) | ⬜ Pendente | — | `scripts/analise-materias.py` sem pendência de ementa |
 | 137.10 | `scripts/analise-materias.py` e `tasks/ANALISE-MATERIAS-RELATORIO.json` | ⬜ Pendente | — | Testes de Front-End sem pendências |
 | 137.11 | Aceite do usuário | ⬜ Pendente | — | — |
+
+### Pedido e descrição (vindos do `TASKS.md` em 2026-10-13, sem alteração)
+
+**Matéria:** `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/` · **Plano:** `docs/testes-frontend-aulas-04-a-10.md`.
+
+- [ ] Aulas 04 a 10: objetiva de 50 questões + prática 10 × 3 (padrão id 82), uma por vez.
+- [ ] Seeds aplicados e conferidos pelo md5 (`database/SEEDS-APLICADOS.md`).
+- [ ] Ementa em 14.800–14.950 caracteres.
+- [ ] Análise das matérias sem pendências em Testes de Front-End.
+- [ ] Aceite do usuário.

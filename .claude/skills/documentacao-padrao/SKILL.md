@@ -5,6 +5,10 @@ description: Use when starting ANY new task in any project — ensures a docs/ f
 
 # Documentação Padrão
 
+> **Exceção — projetos com quadro de tarefas (desde 2026-10-13):** se o projeto tiver
+> `.claude/rules/tasks/`, **não use esta skill**: o plano da tarefa grande é a própria etapa em
+> `tasks/etapas/` (sem `docs/<tarefa>.md`), conforme `.claude/rules/tasks/ciclo-da-task.md`.
+
 ## Overview
 
 Toda tarefa **grande** deve ser documentada em `docs/` com passos numerados e status rastreável **antes** de iniciar a implementação. O status de cada passo é atualizado conforme o progresso.

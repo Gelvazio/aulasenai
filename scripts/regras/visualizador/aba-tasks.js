@@ -1,21 +1,22 @@
-// Aba TASKS: tarefas do tasks/STATUS.md (com bloco do TASKS.md e etapas), frentes e pendências.
+// Aba TASKS: tarefas do tasks/STATUS.md (com a etapa de cada uma), frentes e itens 👀 das etapas.
 
 /**
  * Monta o Markdown completo de uma tarefa para o modal.
- * @param {Object} tarefa - Linha da tabela de tarefas com bloco e etapas.
+ * @param {Object} tarefa - Linha da tabela de tarefas com as etapas e o próximo passo.
  * @returns {string} Markdown do detalhamento.
  */
 function montarMarkdownTarefa(tarefa) {
   const resumo = [
     "| Campo | Valor |", "|---|---|",
     `| Status | ${tarefa["Status"] || "—"} |`,
-    `| Próximo passo | ${tarefa["Próximo passo"] || "—"} |`,
+    `| Prioridade | ${tarefa["Prioridade"] || "—"} |`,
+    `| Depende de | ${tarefa["Depende de"] || "—"} |`,
+    `| Próximo passo (da etapa) | ${tarefa.proximo || "—"} |`,
     `| Em uso por | ${tarefa["Em uso por"] || "—"} |`,
   ].join("\n");
   const partes = ["## Situação no quadro", resumo];
-  if (tarefa.bloco) partes.push("## Descrição (TASKS.md)", tarefa.bloco);
   tarefa.etapas.forEach((etapa) => partes.push("---", etapa.texto));
-  if (!tarefa.bloco && !tarefa.etapas.length) partes.push("*Sem bloco no TASKS.md nem etapa citada.*");
+  if (!tarefa.etapas.length) partes.push("*Sem etapa ligada a esta tarefa.*");
   return partes.join("\n\n");
 }
 
@@ -26,7 +27,7 @@ function montarMarkdownTarefa(tarefa) {
 function abrirTarefa(tarefa) {
   const classe = "situacao--" + paraClasse(tarefa.situacao);
   abrirModal({
-    titulo: `${tarefa["Tarefa"]} — ${tarefa["Descrição curta"]}`,
+    titulo: `${tarefa["Tarefa"]} — ${tarefa["Título"]}`,
     etiquetas: [criarEtiqueta(tarefa.situacao, classe),
       ...tarefa.etapas.map((etapa) => criarEtiqueta(etapa.arquivo.replace(/\.md$/, "")))],
     markdown: montarMarkdownTarefa(tarefa),
@@ -45,8 +46,8 @@ function criarCartaoTarefa(tarefa) {
   const emUso = tarefa["Em uso por"];
   if (emUso && emUso !== "—") etiquetas.push(criarEtiqueta("🔒 " + emUso.split(" (")[0]));
   return criarCartao({
-    titulo: tarefa["Descrição curta"],
-    texto: resumirTexto(tarefa["Status"] + " · Próximo: " + (tarefa["Próximo passo"] || "—")),
+    titulo: tarefa["Título"],
+    texto: resumirTexto(tarefa["Status"] + " · Próximo: " + (tarefa.proximo || "—")),
     classe,
     etiquetas,
   }, () => abrirTarefa(tarefa));
@@ -92,10 +93,12 @@ function desenharTarefas() {
 function desenharFrentes() {
   const cartoes = DADOS.tasks.frentes.map((frente) => {
     const situacao = frente[COLUNAS_FRENTE.situacao] || "";
-    const markdown = Object.entries(frente).map(([campo, valor]) => `### ${campo}\n\n${valor || "—"}`).join("\n\n");
+    const { proximo, ...colunas } = frente;
+    const campos = [...Object.entries(colunas), ["Próximo passo (da etapa)", proximo]];
+    const markdown = campos.map(([campo, valor]) => `### ${campo}\n\n${valor || "—"}`).join("\n\n");
     return criarCartao({
       titulo: frente[COLUNAS_FRENTE.titulo] || "Frente",
-      texto: resumirTexto(frente["Próximo passo"] || ""),
+      texto: resumirTexto(proximo || ""),
       classe: "situacao--" + paraClasse(situacao.includes("✅") ? "Concluída" : "Em andamento"),
       etiquetas: [criarEtiqueta(situacao), criarEtiqueta(frente["Atualizado em"] || "")],
     }, () => abrirModal({ titulo: frente[COLUNAS_FRENTE.titulo], etiquetas: [criarEtiqueta(situacao)], markdown }));
@@ -105,7 +108,7 @@ function desenharFrentes() {
 }
 
 /**
- * Desenha a tabela "Aguardando o usuário".
+ * Desenha a tabela "Aguardando o usuário" (itens 👀 das etapas, calculados pelo gerador).
  */
 function desenharAguardando() {
   const linhas = DADOS.tasks.aguardando;

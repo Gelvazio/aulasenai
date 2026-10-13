@@ -2,7 +2,10 @@
 
 ## Etapa 125 — Banco de Dados 100% no padrão da ITIC, etapa 1 sem a apostila (tarefa grande #20-2ac1a8ec-911b-466f, pedida em 2026-10-09 13:26:40)
 
-Matéria: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/` (renomeada em 2026-10-09) · Plano: [docs/banco-de-dados-materia-100.md](../../docs/banco-de-dados-materia-100.md) · Descrição: `TASKS.md` #20.
+**Tarefa:** #20-2ac1a8ec-911b-466f
+**Próximo passo:** 125.5 — avaliações objetivas, prática e média final pela regra global (`docs/regras/materias.md` §6); o tópico 6c da aula 19 (125.8) espera o usuário rodar no SQL Editor.
+
+Matéria: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/` (renomeada em 2026-10-09) · Plano: [docs/banco-de-dados-materia-100.md](../../docs/banco-de-dados-materia-100.md) · Descrição: seção "Pedido e descrição" no fim desta etapa.
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
@@ -15,5 +18,29 @@ Matéria: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/` (renomeada em
 | 125.4 | Atividades por aula (objetiva de 50 + prática padrão id 82), fontes em `ATIVIDADES/CONTEUDO/`, `STATUS-ATIVIDADES.md`, índice regerado; seeds só com pedido | ✅ Concluído — feito junto com o 125.3 (objetiva + prática de cada aula, índice e status) | 2026-10-10 22:13 | 20 objetivas de 50 questões e 20 práticas 10 × 3 no repositório e no banco (aula 19 falta o tópico 6c) |
 | 125.5 | Avaliações e média final pela regra global de matérias (`docs/regras/materias.md`, seção 6) | ⬜ Pendente | — | — |
 | 125.6 | `scripts/analise-materias.py`: sem pendências, exceto as da apostila | ⬜ Pendente | — | — |
-| 125.8 | Aplicar os seeds no Supabase (objetivas + práticas das aulas prontas) e registrar em `database/SEEDS-APLICADOS.md` | 🔄 APLICADO — aulas 01 a 18 e 20 completas e conferidas pelo md5 (aula 20: objetiva id 145 e prática id 146 em 2026-10-10 22:13); aula 19: objetiva id 141 conferida, prática id 142 com 29 de 30 tópicos — falta o 6c (o conector cancela porque o texto cita DELETE FROM; o usuário vai rodar no SQL Editor) | — | Conferir no banco: 1 aula + 2 atividades por aula pronta, 50 itens no gabarito de cada objetiva e 30 tópicos de cada prática |
+| 125.8 | Aplicar os seeds no Supabase (objetivas + práticas das aulas prontas) e registrar em `database/SEEDS-APLICADOS.md` — falta: rodar no Supabase → SQL Editor o insert do tópico 6c da prática da aula 19 de Banco de Dados (atividade id 142): o conector da nuvem cancela o comando porque o texto cita `DELETE FROM parcela;` (o pedido de aprovação não chega ao usuário) | 👀 Aguardando o usuário | — | Conferir no banco: 1 aula + 2 atividades por aula pronta, 50 itens no gabarito de cada objetiva e 30 tópicos de cada prática |
 | 125.7 | Aceite do usuário | ⬜ Pendente | — | — |
+
+### Pedido e descrição (vindos do `TASKS.md` em 2026-10-13, sem alteração)
+
+**Matéria:** `MATERIAIS/TECNICO-INFORMATICA-INTERNET/BANCO-DE-DADOS/` (renomeada em 2026-10-09) (modelo: Introdução à TIC).
+**Etapa 1 (esta):** tudo **menos a apostila** (pedido do usuário). A apostila fica para uma etapa 2.
+
+Situação em 2026-10-09 (`tasks/ANALISE-MATERIAS-RELATORIO.json`): ementa OK (14.802 caracteres) e
+`ATIVIDADES/index.html` existe; faltam `materia.json`, aulas em `CONTEUDO/`, `AULAS/STATUS-AULAS.md`,
+fontes em `ATIVIDADES/CONTEUDO/`, `ATIVIDADES/STATUS-ATIVIDADES.md` e as objetivas de 50 questões.
+⚠️ A matéria está em **`IGNORAR`** no `STATUS-PERMISSAO-MATERIA` — passar para `VERIFICAR` é o
+primeiro passo (pedido do usuário).
+
+- [x] Plano `docs/banco-de-dados-materia-100.md` com as decisões: permissão `VERIFICAR`; nome da
+  pasta (hoje `BANCO_DE_DADOS`, fora do padrão — renomear só se o usuário quiser); destino das pastas
+  e arquivos antigos (`DOCUMENTACAO/`, `SLIDES/`, `AVALIACOES/`, `exemplo-biblioteca/`, PDF e
+  `.docx`); quantidade de aulas (1 a cada 4 h da ementa). Aprovação do usuário.
+- [x] `materia.json` copiado da ementa (capacidades e conhecimentos, sem conteúdo de outra UC).
+- [ ] Aulas em `CONTEUDO/AULA-NN-DESCRICAO-CURTA.md` (uma por vez) e `AULAS/STATUS-AULAS.md`.
+- [ ] Atividades por aula: objetiva de 50 questões e prática no padrão da id 82
+  (`docs/REGRAS-ATIVIDADE-PRATICA.md`), fontes em `ATIVIDADES/CONTEUDO/`, sem empresa fictícia;
+  `ATIVIDADES/STATUS-ATIVIDADES.md` e `ATIVIDADES/index.html` regerado; seeds no banco só com pedido.
+- [ ] Avaliações e média final pela regra global de matérias (`docs/regras/materias.md`, seção 6).
+- [ ] Rodar `scripts/analise-materias.py`: Banco de Dados sem pendências, exceto as da apostila.
+- [ ] Aceite do usuário.

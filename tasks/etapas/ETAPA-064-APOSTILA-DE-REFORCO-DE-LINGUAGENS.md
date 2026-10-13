@@ -12,4 +12,4 @@ Plano: [docs/apostila-reforco-linguagens.md](docs/apostila-reforco-linguagens.md
 | 64.3 | Gerador: carga horária por aula (6 h/7 h), ementa em listas, vídeos pendentes; ITIC e Testes de Frontend sem mudança | ✅ Concluído | 2026-10-07 20:20 | ITIC 278/278 e TF 185/185; Markdown completo das duas idêntico antes e depois |
 | 64.4 | Introdução + capítulos 01 a 10 (6 exercícios ITEM e 10 termos cada), Markdown completo e HTML | ✅ Concluído | 2026-10-07 20:20 | Gerador sem avisos de tema/capacidades · commit `da167c7` |
 | 64.5 | Push (branch e `main`) | ✅ Concluído | 2026-10-07 20:30 | `main` em `72901c7` |
-| 64.6 | Aceite do usuário | ⬜ Pendente | — | — |
+| 64.6 | Aceite do usuário: apostila de Reforço de Linguagens | 👀 Aguardando o usuário | — | — |

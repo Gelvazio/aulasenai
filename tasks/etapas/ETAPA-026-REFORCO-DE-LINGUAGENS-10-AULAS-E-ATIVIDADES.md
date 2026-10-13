@@ -22,4 +22,4 @@
 | 26.17 | Atividades Aula 09 | ✅ Concluído | 2026-10-06 10:44 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 76 (20 no gabarito) e 77 (5 tópicos, bloqueada) |
 | 26.18 | Atividades Aula 10 | ✅ Concluído | 2026-10-06 10:46 | Aula em CONTEUDO; 20 itens (5 por letra) e 5 discursivas; link dos slides; banco: atividades 78 (20 no gabarito) e 79 (5 tópicos, bloqueada) |
 | 26.19 | Índice da matéria | ✅ Concluído | 2026-10-06 10:46 | Índice da matéria e do curso regerados só no Rio do Sul Mais Tech (21 páginas) |
-| 26.20 | Aceite do usuário | ⬜ Pendente | — | — |
+| 26.20 | Aceite do usuário: continuar do primeiro item não ✅ quando o usuário liberar | 👀 Aguardando o usuário | — | — |

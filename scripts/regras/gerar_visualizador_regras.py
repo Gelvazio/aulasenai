@@ -1,8 +1,8 @@
 """Gera `.claude/rules/index.html`: visualizador das regras e do quadro de tarefas.
 
-Regra: `.claude/rules/visualizador-regras.md` — rodar este script sempre que mudar algum arquivo de
-`.claude/rules/` ou do quadro (`tasks/STATUS.md`, `tasks/TASKS.md`, `tasks/etapas/`) e commitar o
-`index.html` junto. A página é só um visualizador (não é página do projeto).
+Regra: `.claude/rules/visualizador-regras.md` — rodar este script quando mudar algum arquivo de
+`.claude/rules/` (inclusive `tasks/`) e ao encerrar uma tarefa (o quadro `tasks/STATUS.md` +
+`tasks/etapas/` mudou), e commitar o `index.html` junto. A página é só um visualizador.
 
 O conteúdo vai embutido no HTML para a página abrir também por duplo clique (`file://`), onde o
 navegador não deixa a página ler os arquivos `.md`.

@@ -4,7 +4,7 @@
 > GLOBAL DE MATÉRIAS"). Registrada em 2026-10-10 22:19:46 a pedido do usuário: **tudo o que define como a
 > matéria Introdução à TIC (ITIC) é feita virou esta regra única**. Para criar, completar ou conferir
 > **qualquer** matéria, **consultar este arquivo** — não é mais preciso abrir a ITIC como modelo. Ao
-> alterar este arquivo, atualizar a **Versão das regras** e o histórico no `CLAUDE.md`.
+> alterar este arquivo, registrar a mudança em `docs/HISTORICO-REGRAS.md`.
 
 ---
 

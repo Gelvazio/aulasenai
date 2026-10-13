@@ -12,8 +12,8 @@ Complementa `codigo-solid.md`. Vale para todas as linguagens.
 | Aninhamento | Máx. **2 níveis** de `if`/`for`/`while` — usar return early ou extrair função |
 | Linha | Máx. **100 caracteres** |
 | Documentação | **Toda função** com JSDoc/docstring: objetivo, parâmetros, retorno, exceções |
-| Constantes | Valores fixos (URLs, tabelas, mensagens, limites, chaves, cores) no **arquivo único de constantes** (`constants.js`, `constants.py`, `:root` no CSS) |
-| Formatação | JS/HTML/CSS: Prettier + ESLint · Python: Black + Ruff (seguir a config do projeto) |
+| Constantes | Valores fixos (URLs, tabelas, mensagens, limites, chaves, cores) viram **constantes nomeadas**: no bloco do topo do arquivo, ou no arquivo de constantes/configuração do módulo quando ele existir; cores e medidas em `:root` no CSS. Proibido número/string mágica no meio do código |
+| Formatação | Prettier + ESLint (JS/HTML/CSS) e Black + Ruff (Python) **onde houver configuração**; sem configuração (caso atual do projeto), seguir o estilo do próprio arquivo e o limite de 100 caracteres |
 
 ## Legibilidade
 
@@ -65,7 +65,7 @@ function obterSituacao(aluno) {
 ☐ Arquivo ≤ 1000 linhas, função ≤ 45, linha ≤ 100?
 ☐ Toda função documentada?
 ☐ Return early, ≤ 3 parâmetros, ≤ 2 níveis de aninhamento?
-☐ Sem número/string mágica fora do arquivo de constantes?
+☐ Sem número/string mágica (tudo em constante nomeada)?
 ☐ Nomes em português, sem abreviação e sem ternário aninhado?
-☐ const/let, async/await, formatado pelo Prettier/ESLint ou Black/Ruff?
+☐ const/let, async/await, no estilo do arquivo (ou formatador, onde houver configuração)?
 ```

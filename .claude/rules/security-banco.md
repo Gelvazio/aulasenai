@@ -22,15 +22,17 @@ USING (id = auth.uid());
 
 ---
 
-## Gabarito — Nunca Sai do Banco
+## Gabarito — o aluno nunca vê
 
 | Local | Gabarito? | Por quê |
 |-------|-----------|---------|
-| Banco (tabela) | ✅ SIM | RLS controla |
-| Página HTML | ❌ NÃO | Aluno vê code |
-| PDF aluno | ❌ NÃO | Publicado |
-| localStorage | ❌ NÃO | Console expõe |
-| Arquivo .md | ❌ NÃO | Publicado |
+| Banco (tabela) | ✅ SIM | RLS controla quem lê |
+| Fontes `.md` e seeds com resposta | ✅ Só no Git | Fora do site pelo `.vercelignore` (`git-quick.md`) |
+| Página HTML / site | ❌ NÃO | Aluno vê o código |
+| PDF do aluno | ❌ NÃO | Vai para o aluno |
+| `localStorage` | ❌ NÃO | Console expõe |
+
+Depois da migração #25 (`atividades-banco.md`), as questões e o gabarito ficam **só no banco**.
 
 ---
 
@@ -42,21 +44,16 @@ CREATE TABLE IF NOT EXISTS "usuario" (...)
 DROP POLICY IF EXISTS "nome" ON "usuario";
 ALTER TABLE "usuario" ENABLE ROW LEVEL SECURITY;
 
--- ❌ ERRADO — Apaga dados
+-- ❌ ERRADO — Apaga dados (só com pedido do usuário e backup)
 DELETE FROM usuario WHERE ...;
 DROP TABLE usuario;
 ```
 
----
-
-## Hierarquia
-
-```
-curso → materia → aulas → atividade → resposta
-```
-
-Matéria semelhante = **outra linha** de materia (não reuse)
+Apagar linhas, tabelas ou colunas em massa (com pedido do usuário): preparar o SQL e deixar o
+professor executar no SQL Editor — o classificador do Claude Code bloqueia esse comando pelo
+conector. O que não apaga dados pode ir pelo conector.
 
 ---
 
-**Ver também:** `docs/regras/usuarios-turmas-paginas-professor.md`
+**Ver também:** `docs/regras/usuarios-turmas-paginas-professor.md` · hierarquia das tabelas:
+`materias-global.md`

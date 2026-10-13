@@ -21,7 +21,8 @@ TIPOS_DE_REGRA = [
 TIPO_PADRAO = "Obrigatória"
 
 PADRAO_GRUPO = re.compile(r"^##\s+(.+)$")
-PADRAO_ARQUIVO_TABELA = re.compile(r"^\|\s*`([\w.-]+\.md)`\s*\|\s*(.+?)\s*\|")
+PADRAO_ARQUIVO_TABELA = re.compile(r"^\|\s*`([\w./-]+\.md)`\s*\|\s*(.+?)\s*\|")
+SUBPASTAS_DE_REGRAS = ["tasks"]
 PADRAO_TITULO_ARQUIVO = re.compile(r"^#\s+(.+)$", re.MULTILINE)
 
 
@@ -135,6 +136,21 @@ def obter_categoria(nome_arquivo: str, categorias: dict) -> dict:
     return categorias.get(nome_arquivo, sem_indice)
 
 
+def listar_arquivos_de_regras(pasta_regras: Path) -> list:
+    """Lista os `.md` da pasta de regras e das subpastas de regras (ex.: `tasks/`).
+
+    Args:
+        pasta_regras: Pasta `.claude/rules/`.
+
+    Returns:
+        Caminhos dos arquivos, os da raiz primeiro.
+    """
+    arquivos = sorted(pasta_regras.glob("*.md"))
+    for subpasta in SUBPASTAS_DE_REGRAS:
+        arquivos += sorted((pasta_regras / subpasta).glob("*.md"))
+    return arquivos
+
+
 def ler_regras(pasta_regras: Path) -> list:
     """Monta a lista de seções de todos os arquivos `.md` da pasta de regras.
 
@@ -146,14 +162,15 @@ def ler_regras(pasta_regras: Path) -> list:
     """
     categorias = ler_categorias(pasta_regras)
     secoes = []
-    for caminho in sorted(pasta_regras.glob("*.md")):
-        info = obter_categoria(caminho.name, categorias)
+    for caminho in listar_arquivos_de_regras(pasta_regras):
+        nome = caminho.relative_to(pasta_regras).as_posix()
+        info = obter_categoria(nome, categorias)
         texto = caminho.read_text(encoding="utf-8")
         achou_titulo = PADRAO_TITULO_ARQUIVO.search(texto)
         titulo_arquivo = achou_titulo.group(1).strip() if achou_titulo else caminho.stem
         for secao in dividir_em_secoes(texto):
             secoes.append({
-                "arquivo": caminho.name,
+                "arquivo": nome,
                 "tituloArquivo": titulo_arquivo,
                 "categoria": info["categoria"],
                 "assunto": info["assunto"],

@@ -1,5 +1,8 @@
 ## Etapa 135-eeefc710 — Colaboração entre sessões e licenças pelo `STATUS.md` (tarefa grande #21-eeefc710-3e74-4928, pedida em 2026-10-09 15:22:41; plano [docs/colaboracao-entre-sessoes.md](../../docs/colaboracao-entre-sessoes.md))
 
+**Tarefa:** #21-eeefc710-3e74-4928
+**Próximo passo:** 135.6 — aceite do usuário.
+
 Pedido: "execute todas as suas sugestões" (7 sugestões para a "conversa" entre sessões de contas diferentes).
 
 | Item | Descrição | Status | Concluído em | Verificação |

@@ -21,7 +21,7 @@ Limites, nomes e legibilidade: `codigo-limites-nomes.md`.
 - ✅ Separar regra de negócio, acesso a dados (repository/service) e UI/DOM
 - ✅ Injetar dependências por construtor ou parâmetro (cliente Supabase, `fetch`, repositório)
 - ✅ Trocar cadeias de `if/switch` por tipo por mapas de estratégia ou polimorfismo
-- ✅ Um arquivo por responsabilidade (`aula.service.js`, `aula.repository.js`, `aula.view.js`)
+- ✅ Um arquivo por responsabilidade (`aula.servico.js`, `aula.repositorio.js`, `aula.tela.js`)
 - ✅ Python: `abc.ABC`/`Protocol` quando houver mais de uma implementação
 - ❌ Arquivo "faz-tudo" (validação + banco + DOM + formatação juntos)
 

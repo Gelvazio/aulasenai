@@ -1,14 +1,17 @@
-"""Lê o quadro de tarefas (`tasks/STATUS.md`, `tasks/TASKS.md`, `tasks/etapas/`) para o visualizador.
+"""Lê o quadro de tarefas (`tasks/STATUS.md` e `tasks/etapas/`) para o visualizador.
 
-O status oficial de cada tarefa vem da tabela "📌 Tarefas" do `STATUS.md`; o `TASKS.md` dá a
-descrição longa e as etapas citadas no status dão os itens.
+Fonte única (`.claude/rules/tasks/quadro.md`): o `STATUS.md` é o índice (frentes e "📌 Tarefas",
+com o link da etapa de cada tarefa); pedido, itens e próximo passo vêm só da etapa. "Aguardando o
+usuário" não é copiado à mão: são os itens 👀 das etapas.
 """
 import re
 from pathlib import Path
 
 MARCA_TAREFAS = "📌 Tarefas"
 MARCA_FRENTES = "🧭 Frentes"
-MARCA_AGUARDANDO = "⏳ Aguardando"
+COLUNA_ETAPA = "Etapa"
+COLUNA_ETAPA_FRENTE = "Tarefa (etapa)"
+EMOJI_AGUARDANDO = "👀"
 
 SITUACOES = [
     ("Concluída", "✅"),
@@ -19,8 +22,10 @@ SITUACOES = [
 ]
 SITUACAO_PADRAO = "Pendente"
 
-PADRAO_ETAPA = re.compile(r"Etapas?\s+(\d{1,3})(?:-([0-9a-f]{8}))?")
-PADRAO_BLOCO_TAREFA = re.compile(r"^###\s+(#[\w-]+):", re.MULTILINE)
+PADRAO_LINK_ETAPA = re.compile(r"\]\(etapas/([^)]+\.md)\)")
+PADRAO_PROXIMO = re.compile(r"^\*\*Próximo passo:\*\*\s*(.+)$", re.MULTILINE)
+PADRAO_NUMERO_ETAPA = re.compile(r"^ETAPA-0*(\d+(?:-[0-9a-f]{8})?)-")
+PADRAO_CODIGO_ITEM = re.compile(r"^\d{1,3}\.\d+[a-z]?$")
 
 
 def ler_secao(texto: str, marca: str) -> str:
@@ -100,48 +105,68 @@ def classificar_situacao(status: str) -> str:
     return SITUACAO_PADRAO
 
 
-def ler_blocos_tasks(caminho_tasks: Path) -> dict:
-    """Separa o `TASKS.md` em blocos `### #NN...: título`.
+def ler_etapas_do_link(celula: str, pasta_etapas: Path) -> list:
+    """Lê as etapas apontadas pelos links `[...](etapas/ARQUIVO.md)` de uma célula.
 
     Args:
-        caminho_tasks: Caminho do `TASKS.md`.
-
-    Returns:
-        Dicionário `{codigo_da_tarefa: texto_do_bloco}`.
-    """
-    if not caminho_tasks.exists():
-        return {}
-
-    texto = caminho_tasks.read_text(encoding="utf-8")
-    marcas = list(PADRAO_BLOCO_TAREFA.finditer(texto))
-    blocos = {}
-    for posicao, marca in enumerate(marcas):
-        fim = marcas[posicao + 1].start() if posicao + 1 < len(marcas) else len(texto)
-        bloco = texto[marca.start():fim].strip()
-        blocos[marca.group(1)] = re.sub(r"\n---\s*(\n\*\*Última.*)?$", "", bloco, flags=re.S)
-    return blocos
-
-
-def ler_etapas_citadas(texto: str, pasta_etapas: Path) -> list:
-    """Acha os arquivos das etapas citadas ("Etapa 146-042b2fe8", "Etapa 125") num texto.
-
-    Args:
-        texto: Status e próximo passo da tarefa.
+        celula: Texto da coluna Etapa (ou "Tarefa (etapa)" das frentes).
         pasta_etapas: Pasta `tasks/etapas/`.
 
     Returns:
-        Lista de `{"arquivo": str, "texto": str}` sem repetição.
+        Lista de `{"arquivo", "texto", "proximo"}`, sem arquivos inexistentes.
     """
-    etapas, vistos = [], set()
-    for numero, sufixo in PADRAO_ETAPA.findall(texto):
-        prefixo = f"ETAPA-{int(numero):03d}-" + (f"{sufixo}-" if sufixo else "")
-        for caminho in sorted(pasta_etapas.glob(prefixo + "*.md"))[:1]:
-            if caminho.name in vistos:
-                continue
-            vistos.add(caminho.name)
-            etapas.append({"arquivo": caminho.name,
-                           "texto": caminho.read_text(encoding="utf-8").strip()})
+    etapas = []
+    for nome in PADRAO_LINK_ETAPA.findall(celula):
+        caminho = pasta_etapas / nome
+        if not caminho.exists():
+            continue
+        texto = caminho.read_text(encoding="utf-8").strip()
+        achou_proximo = PADRAO_PROXIMO.search(texto)
+        etapas.append({"arquivo": nome, "texto": texto,
+                       "proximo": achou_proximo.group(1).strip() if achou_proximo else ""})
     return etapas
+
+
+def ler_itens_aguardando(caminho: Path) -> list:
+    """Lista os itens 👀 (aguardando o usuário) de uma etapa.
+
+    Args:
+        caminho: Arquivo da etapa.
+
+    Returns:
+        Lista de `{"Etapa", "Item", "O que falta"}`.
+    """
+    numero = PADRAO_NUMERO_ETAPA.match(caminho.name)
+    rotulo = numero.group(1) if numero else caminho.stem
+    itens = []
+    for linha in caminho.read_text(encoding="utf-8").splitlines():
+        if not linha.startswith("| "):
+            continue
+        celulas = dividir_celulas(linha)
+        e_item_aguardando = (len(celulas) >= 3 and PADRAO_CODIGO_ITEM.match(celulas[0])
+                             and EMOJI_AGUARDANDO in celulas[2])
+        if e_item_aguardando:
+            itens.append({"Etapa": rotulo, "Item": celulas[0], "O que falta": celulas[1]})
+    return itens
+
+
+def ler_aguardando(pasta_etapas: Path) -> list:
+    """Junta os itens 👀 de todas as etapas, da etapa mais recente para a mais antiga.
+
+    Args:
+        pasta_etapas: Pasta `tasks/etapas/`.
+
+    Returns:
+        Lista de `{"Etapa", "Item", "O que falta"}`.
+    """
+    itens = []
+    for caminho in sorted(pasta_etapas.glob("ETAPA-*.md")):
+        itens.extend(ler_itens_aguardando(caminho))
+
+    def numero_da_etapa(item: dict) -> int:
+        return int(re.match(r"\d+", item["Etapa"]).group(0))
+
+    return sorted(itens, key=numero_da_etapa, reverse=True)
 
 
 def ler_tarefas(pasta_tasks: Path) -> dict:
@@ -154,24 +179,22 @@ def ler_tarefas(pasta_tasks: Path) -> dict:
         `{"tarefas": [...], "frentes": [...], "aguardando": [...]}`.
     """
     caminho_status = pasta_tasks / "STATUS.md"
+    pasta_etapas = pasta_tasks / "etapas"
     if not caminho_status.exists():
         return {"tarefas": [], "frentes": [], "aguardando": []}
 
     texto = caminho_status.read_text(encoding="utf-8")
-    blocos = ler_blocos_tasks(pasta_tasks / "TASKS.md")
     tarefas = []
     for linha in ler_tabela(ler_secao(texto, MARCA_TAREFAS)):
-        codigo = linha.get("Tarefa", "")
-        status = linha.get("Status", "")
-        proximo = linha.get("Próximo passo", "")
+        etapas = ler_etapas_do_link(linha.get(COLUNA_ETAPA, ""), pasta_etapas)
         tarefas.append({
             **linha,
-            "situacao": classificar_situacao(status),
-            "bloco": blocos.get(codigo, ""),
-            "etapas": ler_etapas_citadas(f"{status} {proximo}", pasta_tasks / "etapas"),
+            "situacao": classificar_situacao(linha.get("Status", "")),
+            "etapas": etapas,
+            "proximo": etapas[0]["proximo"] if etapas else "",
         })
-    return {
-        "tarefas": tarefas,
-        "frentes": ler_tabela(ler_secao(texto, MARCA_FRENTES)),
-        "aguardando": ler_tabela(ler_secao(texto, MARCA_AGUARDANDO)),
-    }
+    frentes = []
+    for linha in ler_tabela(ler_secao(texto, MARCA_FRENTES)):
+        etapas = ler_etapas_do_link(linha.get(COLUNA_ETAPA_FRENTE, ""), pasta_etapas)
+        frentes.append({**linha, "proximo": etapas[0]["proximo"] if etapas else ""})
+    return {"tarefas": tarefas, "frentes": frentes, "aguardando": ler_aguardando(pasta_etapas)}

@@ -1,6 +1,6 @@
 # 🧱 Regras do projeto — Código (SOLID, tamanho, nomes e legibilidade)
 
-> Parte das regras do projeto aulasenai. **Vale como se estivesse no `CLAUDE.md`** (índice e regras de sempre no [`CLAUDE.md`](../../CLAUDE.md)). Ao alterar este arquivo, atualizar a **Versão das regras** e o histórico no `CLAUDE.md`. Origem: `CLAUDE.md` global (trazido em 2026-10-08 a pedido do usuário).
+> Parte das regras do projeto aulasenai (índice e regras de sempre no [`AGENTS.md`](../../AGENTS.md) e em `.claude/rules/`). Ao alterar este arquivo, registrar a mudança em [`docs/HISTORICO-REGRAS.md`](../HISTORICO-REGRAS.md). Origem: `CLAUDE.md` global (trazido em 2026-10-08 a pedido do usuário).
 
 ---
 

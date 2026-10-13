@@ -1,6 +1,6 @@
 # 📚 Regras do projeto — Apostilas
 
-> Parte das regras do projeto aulasenai. **Vale como se estivesse no `CLAUDE.md`** (índice e regras de sempre no [`CLAUDE.md`](../../CLAUDE.md)). Ao alterar este arquivo, atualizar a **Versão das regras** e o histórico no `CLAUDE.md`.
+> Parte das regras do projeto aulasenai (índice e regras de sempre no [`AGENTS.md`](../../AGENTS.md) e em `.claude/rules/`). Ao alterar este arquivo, registrar a mudança em [`docs/HISTORICO-REGRAS.md`](../HISTORICO-REGRAS.md).
 
 ---
 
@@ -351,7 +351,7 @@ faltava. Vale para **todas as matérias**.
    título + duração + canal + link (funciona na tela e no papel). O gerador **recusa** vídeo com
    mais de 15:00. **Exceção (2026-10-08, pedido do usuário):** quando a duração não pôde ser
    conferida (ex.: sessão em nuvem sem acesso ao YouTube), escrever `a conferir` no lugar de
-   `mm:ss` (ver "Vídeo com duração 'a conferir'") e registrar uma tarefa no `TASKS.md` para
+   `mm:ss` (ver "Vídeo com duração 'a conferir'") e abrir uma tarefa no quadro (`tasks/STATUS.md` + etapa) para
    conferir depois. O canal é opcional. A duração é conferida nos metadados do YouTube (`curl`, sem
    navegador) e o professor confere o conteúdo;
 4. **Resumo**;

@@ -1,50 +1,36 @@
 # ⚡ Essentials — Checklist de início de sessão
 
-**Abra SEMPRE ao iniciar.** Depois siga para `status-flow.md`. Índice completo: `INDEX.md`.
+**Abra SEMPRE ao iniciar.** As regras que valem sempre estão listadas no `AGENTS.md`; índice
+completo: `INDEX.md`.
 
 ## 1. Sincronizar
 
-```bash
-git fetch --all --prune          # atualiza origin/main (sem isso o git status mente)
-git pull --rebase origin main    # nunca pull sem --rebase (gera merge)
-```
+Trazer a `main` antes de ler qualquer coisa: `git fetch --all --prune` + `git pull --rebase origin
+main` (comandos e proibições: `git-quick.md`).
 
 ## 2. Ler, nesta ordem
 
 | Arquivo | Para quê |
 |---------|----------|
 | `CLAUDE.md` → `AGENTS.md` | Regras do projeto (precedência máxima) |
-| `tasks/STATUS.md` | Fonte única: frentes, tarefas em uso, próximo passo |
+| `tasks/STATUS.md` | Quadro: frentes, tarefas e reservas (`tasks/quadro.md`) |
+| Etapa da tarefa da sua frente | Próximo passo — retomar de onde parou (`tasks/ciclo-da-task.md`) |
 | `tasks/RECADOS.md` | Recados de outras frentes para você ou `todas` |
-| `database/SEEDS-APLICADOS.md` | Todo seed CONCLUÍDO antes de tarefa nova (`seeds.md`) |
-| `docs/` e `bugs/` | Orientação do módulo antes de editar (`docs-antes-de-editar.md`) |
+| `database/SEEDS-APLICADOS.md` | Seeds em dia antes de tarefa nova (`seeds.md`) |
+| `docs/` e `bugs/` | Orientação do que vai editar (`docs-antes-de-editar.md`) |
 
-Se houver item `🔄`/`⬜` de tarefa aprovada da sua frente: conferir o que já foi feito
-(arquivos e commits) e **continuar de onde parou** — sem refazer `✅` nem pular itens.
-
-## 3. Regras que valem SEMPRE
-
-| Regra | Arquivo |
-|-------|---------|
-| Toda tarefa vira TASK; pedir detalhes antes de executar | `toda-tarefa-e-task.md` |
-| Tarefa grande = plano em `docs/` + aprovação | `plano-docs.md` |
-| Fim de tarefa = commit + push + quadro atualizado, tudo na `main` | `git-quick.md` |
-| STATUS.md é verdade: o que não está lá não aconteceu | `status-flow.md` |
-| Sem navegador e sem testes automatizados | `testes-validacao.md` |
-| RLS + JWT em toda página e tabela; gabarito nunca sai do banco | `security-banco.md` |
-| Código: SOLID, ≤ 1000 linhas/arquivo, ≤ 45 linhas/função, nomes em PT | `codigo-*.md` |
-
-## 4. Checklist
+## 3. Checklist
 
 ```
-☐ Fiz fetch + pull --rebase?
-☐ Li tasks/STATUS.md e retomei de onde parou?
-☐ Seeds todos CONCLUÍDO?
+☐ Trouxe a main (fetch + pull --rebase)?
+☐ Li o STATUS.md, a etapa da minha frente e os recados?
+☐ Seeds em dia (ou exceção de seeds.md)?
 ☐ Li a orientação em docs/ do que vou mexer?
-☐ Sei se a tarefa é pequena ou grande?
+☐ Sei se a tarefa é pequena ou grande (tasks/ciclo-da-task.md)?
 ```
 
 ---
 
-**Data e hora:** sempre de Brasília. No Windows local use `date` (o relógio já está em Brasília) —
-`TZ=America/Sao_Paulo date` no Git Bash sai em GMT (3 h a mais). Na nuvem: `TZ=America/Sao_Paulo date`.
+**Data e hora:** sempre de Brasília. No Windows local, `date` ou `Get-Date` (o relógio já está em
+Brasília) — `TZ=America/Sao_Paulo date` no Git Bash sai em UTC (3 h a mais). Na nuvem:
+`TZ=America/Sao_Paulo date`.

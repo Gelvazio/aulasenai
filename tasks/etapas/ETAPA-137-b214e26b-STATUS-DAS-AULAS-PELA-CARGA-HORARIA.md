@@ -9,7 +9,7 @@ Frente: nuvem · claude/verificar-status-pastas-c6s5yz.
 | 137.2 | Fundamentos da Tecnologia e Programação (33 h → 9 aulas): tabela principal = 9 aulas da ementa em `CONTEUDO/`; 16 aulas antigas de `AULAS/` em seção própria (colunas corrigidas; antigas 06–16 ⛔ substituídas, também no `STATUS-ATIVIDADES.md`) | ✅ Concluído | 2026-10-10 16:25 | Leitura das duas tabelas |
 | 137.3 | Reforço de Matemática (63 h → 16 aulas: 15 × 4 h + 1 × 3 h): 16 aulas pelos 7 módulos de 9 h, em sequência; os 7 módulos de `AULAS/` como material de apoio; `STATUS-ATIVIDADES.md` com 16 linhas | ✅ Concluído | 2026-10-10 16:25 | 16 linhas nos dois arquivos |
 | 137.4 | Análise de Dados Aplicada à Gestão (32 h → 8 aulas): cada encontro de 8 h = 2 aulas; acrescentada a aula 08 (Projeto Final) nos dois status | ✅ Concluído | 2026-10-10 16:25 | 8 linhas nos dois arquivos |
-| 137.5 | Aceite do usuário | ⬜ Pendente | — | — |
+| 137.5 | Aceite do usuário: conferir os status corrigidos de Fundamentos da Tecnologia (9 aulas), Reforço de Matemática (16) e Análise de Dados (8) | 👀 Aguardando o usuário | — | — |
 
 Observação: a ementa de Análise de Dados diz "4 aulas × 8 h"; a contagem segue a regra de 4 h sem mudar a ementa. Reforço de Linguagens (10 aulas) segue a exceção própria da matéria.
 

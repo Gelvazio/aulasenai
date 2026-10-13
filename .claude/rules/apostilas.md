@@ -4,8 +4,8 @@ Estrutura de pastas da matéria: `materias-global.md`. Detalhes: `docs/regras/ap
 
 ## Antes de gerar
 
-- Ler a **ementa da matéria** (`EMENTA-CHALKIE-AI.md`) e a da **UC no curso** — a do curso vence.
-- ❌ Nunca usar conteúdo, bibliografia ou capacidade de outra UC.
+- Ler a **ementa da matéria** e a da **UC no curso** (a do curso vence). Fontes permitidas e
+  proibidas: `materias-global.md` ("Fontes do conteúdo").
 
 ## `materia.json` — arquivo único de dados da matéria
 

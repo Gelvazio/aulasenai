@@ -656,6 +656,8 @@ Plano: `docs/regras-no-banco.md` (tarefa #26). Script: `scripts/regras/sincroniz
 
 ## 🗂️ Atualização 2026-10-11 — Fila `tasks` do agendador único
 
+> ⛔ **Sem uso desde 2026-10-13** (tarefa #29, decisão D1): o quadro de tarefas tem fonte única nos arquivos (`tasks/STATUS.md` + etapas). A tabela e as funções continuam no banco (nada foi apagado); `tasks.html`, `tasks/fila/` e `scripts/tasks/sincronizar_tasks.py` saíram do repositório.
+
 SQL: `database/2026-10-11-tasks-fila-agendador.sql` (✅ aplicado no Supabase em 2026-10-11).
 Plano: `docs/fila-tasks-agendador-unico.md` (tarefa #24). Tela: `tasks.html` (menu TASKS).
 

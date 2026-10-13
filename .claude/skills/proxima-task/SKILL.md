@@ -1,13 +1,13 @@
 ---
 name: proxima-task
-description: Mostra a próxima tarefa a fazer de cada frente de trabalho ativa. Use quando você quer saber qual é o próximo passo da sessão atual ou de outra frente. Lê o STATUS.md do projeto e extrai as frentes ativas (não encerradas) com seu próximo passo, tentando detectar qual é a frente atual pela branch em uso.
+description: Mostra a próxima tarefa a fazer de cada frente de trabalho ativa. Use quando você quer saber qual é o próximo passo da sessão atual ou de outra frente. Lê o tasks/STATUS.md do projeto (frentes ativas, não encerradas) e o próximo passo na etapa de cada frente, tentando detectar qual é a frente atual pela branch em uso.
 ---
 
 # Próxima Tarefa (proxima-task)
 
 ## O que faz
 
-Lê o arquivo `tasks/STATUS.md` do projeto e mostra:
+Lê o arquivo `tasks/STATUS.md` do projeto e a etapa de cada frente (`tasks/etapas/`) e mostra:
 - **Todas as frentes de trabalho ativas** (status 🔄 ou 👀, não encerradas)
 - O **próximo passo** de cada uma
 - Qual é a **frente atual** (detectada pela branch de trabalho, se possível)
@@ -32,7 +32,9 @@ Ou em uma pergunta:
 4. ✅ Para cada frente, extrair:
    - Nome da frente (ambiente · branch)
    - Tarefa/etapa atual
-   - Próximo passo (coluna "Próximo passo")
+   - Próximo passo: abrir a etapa do link da coluna "Tarefa (etapa)" e ler a linha
+     `**Próximo passo:**` (fonte única — `.claude/rules/tasks/quadro.md`; o `STATUS.md` não
+     repete o próximo passo)
    - Status
 5. ✅ Tentar detectar a frente **atual**:
    - Rodar `git branch --show-current` para pegar a branch atual

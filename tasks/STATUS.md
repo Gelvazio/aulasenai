@@ -3,129 +3,69 @@
 **Objetivo:** registrar, item por item, cada tarefa do projeto para que qualquer pessoa ou IA
 retome o trabalho de onde parou.
 **Partes interessadas:** Professor Gelvazio (decide, aprova e usa) · alunos (usam os materiais)
-**Links:** [Regras](../CLAUDE.md) · [Planos](../docs/) · [Tarefas](TASKS.md) · [Recados entre sessões](RECADOS.md) · [Etapas](etapas/)
-**Próximo passo:** cada frente de trabalho tem o seu — ver a tabela **"🧭 Frentes de trabalho"** logo abaixo (atualizar a linha da sua frente ao parar).
+**Links:** [Regras](../AGENTS.md) · [Modelo do quadro](../.claude/rules/tasks/quadro.md) · [Etapas](etapas/) · [Recados entre sessões](RECADOS.md)
 
-Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
+Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado · 👀 Aguardando o usuário
 
-## 🧭 Frentes de trabalho (próximo passo de cada sessão/licença)
+> **Cada informação em um lugar só** (`.claude/rules/tasks/quadro.md`): pedido, itens e **próximo
+> passo** de cada tarefa ficam só na etapa dela (coluna Etapa); aqui fica o índice. O que o usuário
+> precisa fazer = itens 👀 das etapas (aba TASKS do visualizador `.claude/rules/index.html`).
 
-Uma linha por frente = **ambiente + branch** (regra "CONVERSA ENTRE SESSÕES E LICENÇAS" do `CLAUDE.md`).
-Cada sessão atualiza **só a linha dela** ao começar e ao parar; frente encerrada (PR juntado e nada
-pendente) muda para `⏹️ Encerrada`.
+## 🧭 Frentes de trabalho
 
-| Frente (ambiente · branch) | Tarefa/etapa | Próximo passo | Situação | Atualizado em |
-|---|---|---|---|---|
-| nuvem · claude/festive-maxwell-25jnhl | #21 (Etapa 135-eeefc710); #20 assumida em 2026-10-10 16:27 pela frente verificar-status-pastas, a pedido do usuário. Antes: #20 (Etapa 125) e #21 (Etapa 135-eeefc710) | Aula 19 de Banco de Dados pronta (conteúdo, objetiva, prática); seeds: objetiva id 141 CONCLUÍDO, prática id 142 com 29 de 30 tópicos (falta o 6c, que precisa da confirmação do usuário no conector). Próximo: tópico 6c da aula 19 (com a confirmação do usuário) e depois a aula 20 (conteúdo + objetiva + prática), plano [docs/banco-de-dados-materia-100.md](../docs/banco-de-dados-materia-100.md) | 🔄 Ativa | 2026-10-09 21:27 |
-| nuvem · claude/verificar-status-pastas-c6s5yz | Etapas 137-b214e26b e 138-77338471; #20 (Etapa 125) | Aula 20 de Banco de Dados pronta e no banco (objetiva id 145, prática id 146). Regra global de matérias criada (Etapa 139). Próximo: item 125.5 — avaliações objetivas, prática e média final pela regra global (seção 6); o tópico 6c da aula 19 espera o usuário rodar no SQL Editor | 🔄 Ativa | 2026-10-10 22:13 |
-| nuvem · ccr-00f69e8a-6qcla9 | #26 (Etapa 144-aff33423); Etapa 140-8554d88e | #26: item 144.5 — primeira cópia das regras no banco e `conferir`; depois aceite (144.6) | 🔄 Ativa | 2026-10-11 06:28 |
-| nuvem · ccr-be208aef-c6h8oe | #24 (Etapa 142-2a52ee2f) | Fila `tasks` pronta (tabela, funções, `tasks.html`, regra, prompt da rotina, 17 tarefas do `TASKS.md` na tabela). Próximo: item 142.5 — teste e aceite do usuário; a rotina continua desligada até liberar o GitHub (140.6) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
-| nuvem · claude/ola-zlzh8z | #22-f79be83e-0418-43e8 (Etapa 137-13665a7e) | Item 137.2 — aula 05 de Testes de Front-End (objetiva + prática + seeds); aulas 04 a 04 ✅. ⛔ Não mexer em Banco de Dados nesta sessão | 🔄 Ativa | 2026-10-10 16:21 |
-| local · main | #29 (Etapa 148-6932a263); #27 e #28 aguardam aceite | Item 148.2 — decisões D1 a D4 do usuário; depois 146.7 e 147.8 (aceites) | 👀 Aguardando o usuário | 2026-10-13 10:11 |
+Uma linha por frente (ambiente · branch). Cada sessão atualiza **só a linha dela** ao começar e ao
+parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada frente é o da etapa dela.
 
-## 📌 Tarefas do `TASKS.md` (o status oficial fica aqui)
+| Frente | Tarefa (etapa) | Situação | Atualizado em |
+|---|---|---|---|
+| nuvem · claude/festive-maxwell-25jnhl | #21 ([135-eeefc710](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md)); a #20 passou para a frente verificar-status-pastas em 2026-10-10 16:27 | 🔄 Ativa | 2026-10-09 21:27 |
+| nuvem · claude/verificar-status-pastas-c6s5yz | #20 ([125](etapas/ETAPA-125-BANCO-DE-DADOS-100-NO-PADRAO-DA.md)); etapas 137-b214e26b e 138-77338471 aguardam aceite | 🔄 Ativa | 2026-10-10 22:13 |
+| nuvem · ccr-00f69e8a-6qcla9 | #26 ([144-aff33423](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md)); etapa 140-8554d88e aguarda o usuário | 🔄 Ativa | 2026-10-11 06:28 |
+| nuvem · ccr-be208aef-c6h8oe | #24 ([142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md)) — cancelada em 2026-10-13 (fila do banco desativada, decisão D1 da #29) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
+| nuvem · claude/ola-zlzh8z | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)); ⛔ não mexer em Banco de Dados | 🔄 Ativa | 2026-10-10 16:21 |
+| local · main | #29 ([148-6932a263](etapas/ETAPA-148-6932a263-REGRAS-E-QUADRO-FONTE-UNICA.md)), #27 e #28 aguardam aceite | 👀 Aguardando o usuário | 2026-10-13 10:39 |
 
-A descrição longa de cada tarefa está no [TASKS.md](TASKS.md); o status vale **só** nesta tabela. **Em uso por** = frente que reservou a tarefa (ninguém mais mexe nela até ser liberada com `—`).
+## 📌 Tarefas
 
-| Tarefa | Descrição curta | Status | Próximo passo | Em uso por |
-|--------|-----------------|--------|---------------|------------|
-| #2 | Apostilas só em Markdown (.md) | 🔄 Plano aguardando aprovação | Usuário aprova os itens A–E de `docs/tarefa-02-apostilas-em-markdown.md` | — |
-| #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | ⬜ Planejada | Aguardando liberação do usuário | — |
-| #5 | Organizar atividades em `ATIVIDADES/` | ⬜ Planejada | Aguardando liberação do usuário | — |
-| #6 | Preencher `AVALIACOES/` | ⬜ Planejada | Aguardando liberação do usuário | — |
-| #7 | Executar análise final | ⬜ Planejada | Aguardando liberação do usuário | — |
-| #11 | Conferir a duração dos vídeos da apostila de Reforço de Linguagens | ⬜ Pendente (local) | Fazer na máquina local, com YouTube | — |
-| #12 | Conferir a duração dos vídeos da apostila de Fundamentos da Tecnologia | ⬜ Pendente (local) | Fazer na máquina local, com YouTube | — |
-| #14 | Conferir a duração dos vídeos da apostila de Exploração de Carreiras | ⬜ Pendente (local) | Fazer na máquina local, com YouTube | — |
-| #15 | Apostila de ITIC versão 2 (até 40 páginas, sem vídeos e exercícios) — agora a apostila única (V1 removida) | ✅ Concluído em 2026-10-13 12:26 (aceite do usuário: "15-ok") | — | — |
-| #16 | Bloqueio da AULA (card inteiro, `aulas.ativo`) × ON/OFF da atividade (nunca bloqueia o card) em todos os índices | 🔄 Ligada em Testes de Front-End (Etapa 114) | Demais matérias: acrescentar a pasta em `assets/js/indice-bloqueio-aula-config.js`, uma por vez, quando o usuário pedir | — |
-| #17 | Fechar a revisão das regras do `CLAUDE.md` (aceites 70.5, 72.8, 73.14; commit `85a8531` com gabarito; ementa fora do tamanho) | ⬜ Pendente — nova sessão | Usuário confere e dá os aceites; decide sobre os gabaritos do commit `85a8531` antes do push | — |
-| #18 | Progresso da turma global em todas as atividades (objetivas e discursivas com banco) | ✅ Concluído em 2026-10-13 12:27 (aceite: "18-ok") | — | — |
-| #19-91cbac65-87ca-45a0 | Análise contínua das matérias (`scripts/analise-materias.py` → `tasks/ANALISE-MATERIAS-RELATORIO.json`) — ⛔ permanente: nunca CONCLUÍDA enquanto houver matéria incompleta ou pendência | 🔄 Em andamento — última rodada 2026-10-10 22:13: 6 cursos, 34 matérias, 2 completas, 32 incompletas | Rodar a rotina no início de cada sessão e ao concluir tarefa em matéria; resolver pendências só a pedido do usuário | — |
-| #20-2ac1a8ec-911b-466f | Banco de Dados (Técnico em Informática para Internet) 100% no padrão da ITIC — etapa 1 sem a apostila | 🔄 Em execução (Etapa 125) | Aulas 01 a 20 prontas (125.3 e 125.4 ✅); próximo: item 125.5 — avaliações e média final no modelo da ITIC | nuvem · claude/verificar-status-pastas-c6s5yz (desde 2026-10-10 16:27; pedido do usuário "finalize banco de dados", assumida da frente festive-maxwell) |
-| #21-eeefc710-3e74-4928 | Colaboração entre sessões/licenças: etapa com UUID, reserva da tarefa, frentes de trabalho, `RECADOS.md`, merge da `main`, arquivos gerados, uma etapa por arquivo | 👀 Aguardando validação (Etapa 135-eeefc710) | Item 135.6 — aceite do usuário (ele junta o PR na `main`) | nuvem · claude/festive-maxwell-25jnhl (desde 2026-10-09 15:22) |
-| #22-f79be83e-0418-43e8 | Testes de Front-End: objetivas e práticas das aulas 04 a 10 (+ ajuste da ementa) | 🔄 Em execução (Etapa 137-13665a7e) | Item 137.2 — aula 05 | nuvem · claude/ola-zlzh8z (desde 2026-10-09 23:04) |
-| #22-816fd3fd-ffe8-41e7 | Outras contas e IAs criam as tarefas agendadas 2 a 6 | ⛔ Cancelada em 2026-10-11 06:00 — com o agendador único da #24 não há rotinas 2 a 6 (outras contas/IAs só pegam tasks pela `pegar_proxima_task`) | — | — |
-| #23-79fc30a3-c4c9-4a40 | Agendamentos: CRUD em `agendamentos.html` e espelho dos controles no banco | ⛔ Cancelada em 2026-10-11 05:58 — substituída pela #24 (decisão do usuário, 05:44) | — | — |
-| #24-9fb25086-5b51-44cb | Fila `tasks` no banco + 1 agendador que lê a fila e decide; página `tasks.html` (substitui a #23) | 👀 Aguardando validação (Etapa 142-2a52ee2f) | Item 142.5 — teste do usuário em `tasks.html` e aceite; depois liberar o GitHub (140.6) e ligar a rotina | — |
-| #25-b3e29764-940b-4a82 | Questões da objetiva e da prática só no banco, layout global, pasta da matéria sem HTML (migração) | ⬜ Pendente — dividida em 22 sub-tasks na tabela `tasks` (ids 19 a 40, em cadeia; Etapa 143-d30a9c4d) | 25.01 (TASK-0019) — levantamento; a rotina pega quando for ligada | — |
-| #26-55a91111-02ce-4cb1 | Regras no banco: `regra_documento` e `regra_secao` (cópia do repositório) | 🔄 Em execução (Etapa 144-aff33423) | Item 144.5 — primeira cópia e `conferir`; depois aceite | nuvem · ccr-00f69e8a-6qcla9 (desde 2026-10-11 06:21) |
-| #27-042b2fe8-a9f7-4726 | Reestruturar `.claude/rules/` (sem duplicação, ≤ 5 KB) | 👀 Aguardando aceite (Etapa 146-042b2fe8) | Item 146.7 — aceite do usuário | — |
-| #28-9201b27b-7630-41cb | Visualizador `.claude/rules/index.html`: regras em cards por categoria + aba TASKS | 👀 Aguardando aceite (Etapa 147-9201b27b) | Item 147.8 — usuário abre `.claude/rules/index.html` (ou menu Regras) e confere | — |
-| #29-6ee02521-4f6a-4944 | Revisão das regras + quadro com fonte única nos arquivos (regras de tarefas em `.claude/rules/tasks/`) | 👀 Aguardando decisões (Etapa 148-6932a263) | Item 148.2 — decisões D1 a D4 do usuário | local · main (desde 2026-10-13 10:11) |
+Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que reservou a tarefa
+(ninguém mais mexe nela até voltar a `—`). Prioridade e dependências são definidas pelo usuário.
 
-## ⏳ Aguardando o usuário (aceites, aprovações e ações dele)
-
-Da mais recente para a mais antiga. Ao concluir uma linha, marcar o item na etapa e **remover a linha daqui**.
-
-| Etapa | Item | O que falta | Tipo |
-|-------|------|-------------|------|
-| 148-6932a263 | 148.2 | decidir D1 a D4 (fila do banco, constantes, seeds de outras frentes, migração das reservas) | Decisão |
-| 125 | 125.8 | rodar no Supabase → SQL Editor o insert do tópico 6c da prática da aula 19 de Banco de Dados (atividade id 142): o conector da nuvem cancela o comando porque o texto cita `DELETE FROM parcela;` (o pedido de aprovação não chega ao usuário) | Ação |
-| 144-aff33423 | 144.6 | conferir as regras no banco (`regra_documento`, `regra_secao`) e a regra "🗄️ REGRAS NO BANCO" do `CLAUDE.md` | Aceite |
-| 140-8554d88e | 140.6 e 140.7 | liberar o acesso do GitHub ao `Gelvazio/aulasenai` para as tarefas agendadas e conferir a regra `docs/regras/tarefas-agendadas.md` — na fila como TASK-0042 e TASK-0043 (`tasks.html`, marcar ✅ Concluir) | Ação e aceite |
-| 139-b5ab1a00 | 139.4 | conferir a regra global de matérias (`docs/regras/materias.md`) e a troca no `CLAUDE.md` | Aceite |
-| 138-77338471 | 138.6 | conferir o `STATUS_MATERIA.md` das matérias, a ordem em `tasks/ORDEM-MATERIAS.md` e a regra nova do `CLAUDE.md` | Aceite |
-| 137-b214e26b | 137.5 | conferir os status corrigidos de Fundamentos da Tecnologia (9 aulas), Reforço de Matemática (16) e Análise de Dados (8) | Aceite |
-| 136-f0a07de9 | 136.5 | aceite do registro `database/SEEDS-APLICADOS.md` e da regra dos seeds | Aceite |
-| 137-13665a7e | Testes de Front-End: objetivas e práticas das aulas 04 a 10 (pedido em 2026-10-09 23:04:01; plano [docs/testes-frontend-aulas-04-a-10.md](../docs/testes-frontend-aulas-04-a-10.md)) | [ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md) |
-| 124 | 124.4 | testar o modal "➕ Nova Pendência" e a coluna Descrição em `pendencias.html` | Aceite |
-| 121 | 121.11 | testar o Progresso da turma global na objetiva da aula 01 de Testes de Front-End (professor vê ao abrir; aluno não vê) e numa discursiva | Aceite |
-| 103 | 103.6 | conferir as 10 práticas de Testes de Front-End, agora em `ATIVIDADES/CONTEUDO/` e sem empresa fictícia | Aceite |
-| 102 | 102.15 | revisar as 10 aulas de Testes de Front-End em `CONTEUDO/` e o `DOCUMENTACAO/PLANO-AULAS.md` | Aceite |
-| 97 | 97.4 | testar a quantidade mínima de questões (botão no Progresso da turma, entrega com o mínimo e nota proporcional) | Aceite |
-| 96 | 96.4 | botão Gráficos e progresso global nas discursivas | Aceite |
-| 95 | 95.4 | botões Certa / Meia certa / Errada do professor e nota travada (prova id 82) | Aceite |
-| 94 | 94.3 | aluno que entregou a Prova Prática ADAG (id 82) não vê as próprias respostas | Aceite |
-| 92 | 92.5 | rodar a correção parcial da IA e ver a "Nota parcial IA" no Progresso da turma (prova id 82) | Aceite |
-| 91 | 91.2 | coluna "Nota IA" no progresso da turma da Prova Prática ADAG (id 82) | Aceite |
-| 90 | 90.2 | orientação da correção por IA da Prova Prática ADAG (`CORRECAO-PROVA-ADAG.md`) | Aceite |
-| 89 | 89.5 | testar o progresso da turma (logado como professor) na Prova Prática ADAG (id 82) | Aceite |
-| 88 | 88.8 | testar na Prova Prática ADAG (id 82): bloqueio de colar, campo do tamanho da resposta, botão Gravar e entrega só com tudo preenchido | Aceite |
-| 82 e 83 | 82.5 e 83.7 | aceite da remoção da V1 (apostila única 2.1), da discursiva id 81 (já aplicada no banco) e das 13 questões novas da objetiva id 85 | Aceite |
-| 79 e 81 | 79.8 e 81.5 | validar a apostila ITIC V2 versão 2.1 (28 páginas, sem vídeos e exercícios; S2, S3, normas declaradas e referências complementares) e a paginação/faixa do PDF | Aceite |
-| 71 | 71.3 (C) | revisar as 9 aulas de Comunicação Oral e Escrita (Rio do Sul) em `CONTEUDO/` | Aceite |
-| 73 | 73.14 | Revisão final das regras (12 itens) aplicada — ver tarefa #17 do `TASKS.md` | Aceite |
-| 72 | 72.8 | 7 contradições do CLAUDE.md corrigidas (uma por commit) | Aceite |
-| 70 | 70.5 | CLAUDE.md dividido em núcleo + `docs/regras/`, histórico em `docs/HISTORICO-REGRAS.md` e esta tabela; depois, as correções das contradições do CLAUDE.md, uma de cada vez | Aceite |
-| 67 | 67.4 | conferir a duração dos 29 vídeos da apostila de Reforço de Linguagens | Aceite |
-| 64 | 64.6 | apostila de Reforço de Linguagens | Aceite |
-| 66 | 66.2 | menu da matéria | Aceite |
-| 63 | 63.2 | link do curso no índice | Aceite |
-| 62 | 62.2 | apostila de Testes de Frontend | Aceite |
-| 61 | 61.4 | autor, versão, data e hora na apostila da ITIC | Aceite |
-| 56 | 56.4 | atividades de sexta: objetiva de 100 e discursiva de 40 | Aceite |
-| 51 | 51.3 | importar o .doc no Google Docs | Aceite |
-| 50 | 50.3 | header de professor comum sem os menus | Aceite |
-| 49 | 49.2 | criar a conta da professora Cintia em `criarUsuariosBancoDados.html` | Ação do usuário/professor |
-| 48 | 48.7 | o usuário preenche `docs/rotulos-aulas-ajustar.md` (rótulos "AULA NN") e pede para aplicar; depois 48.8 — aceite | Ação do usuário/professor |
-| 44 | 44.4 | liberar e testar a Prova Prática 06-10-2026 | Aceite |
-| 38 | 38.3 | gabarito nas discursivas | Aceite |
-| 37 | 37.4 | testar Liberar gabaritos como professor e Exportar Gabarito como aluno | Aceite |
-| 35 | 35.2 | testar a tabela de notas logado como professor | Aceite |
-| 29 | 29.5 | discursivas de sexta | Aceite |
-| 28 | 28.2 | aprovação do plano do quadro de respostas | Aprovação |
-| 27 | 27.7 | atividade individual da ITIC, sexta à tarde | Aceite |
-| 26 | — | Reforço de Linguagens, 10 aulas — continuar do primeiro item não ✅ (quando o usuário liberar) | Continuar (IA) |
-| 25 | 25.4 | testar a página de pendências | Aceite |
-| 24 | 24.6 | liberar a discursiva no índice e testar | Aceite |
-| 23 | 23.3 | conferir e aceitar a etapa | Aceite |
-| 22 | 22.4 | conferir e aceitar a etapa | Aceite |
-| 21 | 21.3 | conferir e aceitar a etapa | Aceite |
-| 20 | 20.2 | professor criar a conta na página local | Ação do usuário/professor |
-| 19 | 19.4 | conferir e aceitar a etapa | Aceite |
-| 18 | 18.2 | aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md` | Aprovação |
-| — | 6.9 e 4.5 | itens anteriores pendentes (ver as etapas) | Ação do usuário/professor |
+| Tarefa | Título | Prioridade | Depende de | Status | Em uso por | Etapa |
+|---|---|---|---|---|---|---|
+| #2 | Apostilas só em Markdown (.md) | 🟠 Alta | — | 👀 Plano aguardando aprovação | — | [149-b8f5e662](etapas/ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md) |
+| #4 | Preencher `PLANO-AULAS.md` em 8 disciplinas | 🟠 Alta | — | 👀 Aguardando liberação | — | [150-2ecf082a](etapas/ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md) |
+| #5 | Organizar atividades em `ATIVIDADES/` | 🟡 Média | — | 👀 Aguardando liberação | — | [151-132192cf](etapas/ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md) |
+| #6 | Preencher `AVALIACOES/` | 🟡 Média | — | 👀 Aguardando liberação | — | [152-5b8be7d5](etapas/ETAPA-152-5b8be7d5-PREENCHER-AVALIACOES.md) |
+| #7 | Executar análise final | 🟢 Baixa | — | 👀 Aguardando liberação | — | [153-d69eef66](etapas/ETAPA-153-d69eef66-EXECUTAR-ANALISE-FINAL.md) |
+| #11 | Duração dos vídeos da apostila de Reforço de Linguagens (local) | 🟠 Alta | — | ⬜ Pendente (local) | — | [67](etapas/ETAPA-067-VIDEOS-NA-APOSTILA-DE-REFORCO-DE-LINGUAGENS.md) |
+| #12 | Duração dos vídeos da apostila de Fundamentos da Tecnologia (local) | 🟡 Média | — | ⬜ Pendente (local) | — | [154-58b81f3e](etapas/ETAPA-154-58b81f3e-DURACAO-DOS-VIDEOS-DA-APOSTILA-DE-FUNDAMENTOS-DA.md) |
+| #14 | Duração dos vídeos da apostila de Exploração de Carreiras (local) | 🟡 Média | — | ⬜ Pendente (local) | — | [155-e3d89d81](etapas/ETAPA-155-e3d89d81-DURACAO-DOS-VIDEOS-DA-APOSTILA-DE-EXPLORACAO-DE.md) |
+| #15 | Apostila de ITIC versão 2 (até 40 páginas) — apostila única (V1 removida) | — | — | ✅ Concluído (aceite "15-ok") | — | [79](etapas/ETAPA-079-APOSTILA-DA-ITIC-VERSAO-2.md) |
+| #16 | Bloqueio da AULA (`aulas.ativo`) × ON/OFF da atividade em todos os índices | 🟠 Alta | — | 🔄 Em andamento (matéria a matéria) | — | [114](etapas/ETAPA-114-TESTES-DE-FRONT-END-BLOQUEIO-DA-AULA.md) |
+| #17 | Fechar a revisão das regras do `CLAUDE.md` (aceites 70.5, 72.8, 73.14 e decisões) | 🟡 Média | — | 👀 Aguardando aceites | — | [73](etapas/ETAPA-073-REVISAO-FINAL-DAS-REGRAS-PROBLEMAS-NOVOS-DESATUALIZADOS.md) · [70](etapas/ETAPA-070-REORGANIZAR-O-CLAUDE-MD-ESTRUTURA-E-MANUTENCAO.md) · [72](etapas/ETAPA-072-CORRIGIR-AS-CONTRADICOES-DO-CLAUDE-MD-UMA.md) |
+| #18 | Progresso da turma global em todas as atividades | 🟠 Alta | — | ✅ Concluído (aceite "18-ok") | — | [121](etapas/ETAPA-121-PROGRESSO-DA-TURMA-GLOBAL-EM-TODAS-AS.md) |
+| #19-91cbac65-87ca-45a0 | Análise contínua das matérias — ⛔ permanente | 🟠 Alta | — | 🔄 Permanente | — | [156-2221f1f9](etapas/ETAPA-156-2221f1f9-ANALISE-CONTINUA-DAS-MATERIAS.md) |
+| #20-2ac1a8ec-911b-466f | Banco de Dados (Técnico em Informática para Internet) 100% no padrão da ITIC — etapa 1 sem a apostila | 🟠 Alta | — | 🔄 Em execução | nuvem · claude/verificar-status-pastas-c6s5yz (desde 2026-10-10 16:27; pedido do usuário "finalize banco de dados") | [125](etapas/ETAPA-125-BANCO-DE-DADOS-100-NO-PADRAO-DA.md) |
+| #21-eeefc710-3e74-4928 | Colaboração entre sessões/licenças (etapa com UUID, reserva, frentes, `RECADOS.md`) | 🟠 Alta | — | 👀 Aguardando aceite | nuvem · claude/festive-maxwell-25jnhl (desde 2026-10-09 15:22) | [135-eeefc710](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md) |
+| #22-f79be83e-0418-43e8 | Testes de Front-End: objetivas e práticas das aulas 04 a 10 | — | — | 🔄 Em execução | nuvem · claude/ola-zlzh8z (desde 2026-10-09 23:04) | [137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md) |
+| #22-816fd3fd-ffe8-41e7 | Outras contas e IAs criam as tarefas agendadas 2 a 6 | — | — | ⛔ Cancelada em 2026-10-11 06:00 | — | — |
+| #23-79fc30a3-c4c9-4a40 | Agendamentos: CRUD em `agendamentos.html` e espelho no banco | — | — | ⛔ Cancelada em 2026-10-11 05:58 (substituída pela #24) | — | [141-a7e81c26](etapas/ETAPA-141-a7e81c26-AGENDAMENTOS-CRUD-E-BANCO.md) |
+| #24-9fb25086-5b51-44cb | Fila `tasks` no banco + 1 agendador; página `tasks.html` | 🟠 Alta | — | ⛔ Cancelada em 2026-10-13 (fila desativada, D1 da #29) | — | [142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md) |
+| #25-b3e29764-940b-4a82 | Questões da objetiva e da prática só no banco, layout global, pasta da matéria sem HTML (migração) | 🟠 Alta | — | ⬜ Pendente | — | [143-d30a9c4d](etapas/ETAPA-143-d30a9c4d-ATIVIDADES-SO-NO-BANCO-LAYOUT-GLOBAL.md) |
+| #26-55a91111-02ce-4cb1 | Regras no banco: `regra_documento` e `regra_secao` (cópia do repositório) | 🟠 Alta | — | 🔄 Em execução | nuvem · ccr-00f69e8a-6qcla9 (desde 2026-10-11 06:21) | [144-aff33423](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md) |
+| #27-042b2fe8-a9f7-4726 | Reestruturar `.claude/rules/` (sem duplicação, ≤ 5 KB) | 🟡 Média | — | 👀 Aguardando aceite | — | [146-042b2fe8](etapas/ETAPA-146-042b2fe8-REESTRUTURAR-CLAUDE-RULES.md) |
+| #28-9201b27b-7630-41cb | Visualizador `.claude/rules/index.html`: regras em cards + aba TASKS | 🟡 Média | — | 👀 Aguardando aceite | — | [147-9201b27b](etapas/ETAPA-147-9201b27b-VISUALIZADOR-REGRAS-E-TASKS.md) |
+| #29-6ee02521-4f6a-4944 | Revisão das regras + quadro com fonte única nos arquivos (regras de tarefas em `.claude/rules/tasks/`) | 🟡 Média | — | 👀 Aguardando aceite | — | [148-6932a263](etapas/ETAPA-148-6932a263-REGRAS-E-QUADRO-FONTE-UNICA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
-- **Não entra:** histórico anterior (está no Git, em `TASKS.md` e em `docs/`).
-- **Critério de pronto:** item verificado, commit local feito e aceite do usuário.
-- **Premissas e restrições:** regras do `CLAUDE.md` (sem navegador, push só na nuvem — direto na `main` —, um commit por tarefa).
+- **Não entra:** histórico anterior (está no Git e em `docs/`).
+- **Critério de pronto:** item verificado, commit + push feitos e aceite do usuário.
+- **Premissas e restrições:** regras do `AGENTS.md` (sem navegador, tudo na `main`, um commit + push por tarefa).
 
 ## 🗂️ Etapas (uma por arquivo em `tasks/etapas/`)
 
-Desde 2026-10-09 cada etapa fica no seu arquivo (regra "CONVERSA ENTRE SESSÕES E LICENÇAS" do `CLAUDE.md`). Etapa nova = arquivo novo `ETAPA-NNN-uuid8-ASSUNTO.md` + linha nesta tabela.
+Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`). Etapa nova = arquivo novo `ETAPA-NNN-uuid8-ASSUNTO.md` + linha nesta tabela.
 
 | Etapa | Assunto | Arquivo |
 |---|---|---|
@@ -288,6 +228,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (regra "CONVERSA ENTRE SESSÕES 
 | 135-eeefc710 | Colaboração entre sessões e licenças pelo `STATUS.md` | [ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md) |
 | 136-f0a07de9 | Registro dos seeds aplicados e item próprio em cada tarefa | [ETAPA-136-f0a07de9-REGISTRO-DOS-SEEDS-APLICADOS.md](etapas/ETAPA-136-f0a07de9-REGISTRO-DOS-SEEDS-APLICADOS.md) |
 | 137-b214e26b | Status das aulas conferidos pela carga horária da ementa (FTP, Reforço de Matemática, Análise de Dados) | [ETAPA-137-b214e26b-STATUS-DAS-AULAS-PELA-CARGA-HORARIA.md](etapas/ETAPA-137-b214e26b-STATUS-DAS-AULAS-PELA-CARGA-HORARIA.md) |
+| 137-13665a7e | Testes de Front-End: objetivas e práticas das aulas 04 a 10 (pedido em 2026-10-09 23:04:01; plano [docs/testes-frontend-aulas-04-a-10.md](../docs/testes-frontend-aulas-04-a-10.md)) | [ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md) |
 | 138-77338471 | `STATUS_MATERIA.md` em cada matéria e ordem das matérias (`tasks/ORDEM-MATERIAS.md`) | [ETAPA-138-77338471-STATUS-MATERIA-E-ORDEM-DAS-MATERIAS.md](etapas/ETAPA-138-77338471-STATUS-MATERIA-E-ORDEM-DAS-MATERIAS.md) |
 | 139-b5ab1a00 | Regra global de matérias (`docs/regras/materias.md`) no lugar da "matéria modelo ITIC" | [ETAPA-139-b5ab1a00-REGRA-GLOBAL-DE-MATERIAS.md](etapas/ETAPA-139-b5ab1a00-REGRA-GLOBAL-DE-MATERIAS.md) |
 | 140-8554d88e | Tarefas agendadas seguindo as regras do projeto (`docs/regras/tarefas-agendadas.md`) | [ETAPA-140-8554d88e-TAREFAS-AGENDADAS-NAS-REGRAS.md](etapas/ETAPA-140-8554d88e-TAREFAS-AGENDADAS-NAS-REGRAS.md) |
@@ -299,6 +240,14 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (regra "CONVERSA ENTRE SESSÕES 
 | 146-042b2fe8 | Reestruturar `.claude/rules/` (sem duplicação, ≤ 5 KB por arquivo) | [ETAPA-146-042b2fe8-REESTRUTURAR-CLAUDE-RULES.md](etapas/ETAPA-146-042b2fe8-REESTRUTURAR-CLAUDE-RULES.md) |
 | 147-9201b27b | Visualizador de regras e tarefas em `.claude/rules/index.html` | [ETAPA-147-9201b27b-VISUALIZADOR-REGRAS-E-TASKS.md](etapas/ETAPA-147-9201b27b-VISUALIZADOR-REGRAS-E-TASKS.md) |
 | 148-6932a263 | Revisão das regras e quadro de tarefas com fonte única nos arquivos (#29) | [ETAPA-148-6932a263-REGRAS-E-QUADRO-FONTE-UNICA.md](etapas/ETAPA-148-6932a263-REGRAS-E-QUADRO-FONTE-UNICA.md) |
+| 149-b8f5e662 | Apostilas só em Markdown (.md) (#2; criada na migração do quadro) | [ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md](etapas/ETAPA-149-b8f5e662-APOSTILAS-SO-EM-MARKDOWN-MD.md) |
+| 150-2ecf082a | Preencher PLANO-AULAS.md em 8 disciplinas (#4; criada na migração do quadro) | [ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md](etapas/ETAPA-150-2ecf082a-PREENCHER-PLANO-AULAS-MD-EM-8-DISCIPLINAS.md) |
+| 151-132192cf | Organizar atividades em ATIVIDADES/ (#5; criada na migração do quadro) | [ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md](etapas/ETAPA-151-132192cf-ORGANIZAR-ATIVIDADES-EM-ATIVIDADES.md) |
+| 152-5b8be7d5 | Preencher AVALIACOES/ (#6; criada na migração do quadro) | [ETAPA-152-5b8be7d5-PREENCHER-AVALIACOES.md](etapas/ETAPA-152-5b8be7d5-PREENCHER-AVALIACOES.md) |
+| 153-d69eef66 | Executar análise final (#7; criada na migração do quadro) | [ETAPA-153-d69eef66-EXECUTAR-ANALISE-FINAL.md](etapas/ETAPA-153-d69eef66-EXECUTAR-ANALISE-FINAL.md) |
+| 154-58b81f3e | Duração dos vídeos da apostila de Fundamentos da Tecnologia (local) (#12; criada na migração do quadro) | [ETAPA-154-58b81f3e-DURACAO-DOS-VIDEOS-DA-APOSTILA-DE-FUNDAMENTOS-DA.md](etapas/ETAPA-154-58b81f3e-DURACAO-DOS-VIDEOS-DA-APOSTILA-DE-FUNDAMENTOS-DA.md) |
+| 155-e3d89d81 | Duração dos vídeos da apostila de Exploração de Carreiras (local) (#14; criada na migração do quadro) | [ETAPA-155-e3d89d81-DURACAO-DOS-VIDEOS-DA-APOSTILA-DE-EXPLORACAO-DE.md](etapas/ETAPA-155-e3d89d81-DURACAO-DOS-VIDEOS-DA-APOSTILA-DE-EXPLORACAO-DE.md) |
+| 156-2221f1f9 | Análise contínua das matérias (#19; criada na migração do quadro) | [ETAPA-156-2221f1f9-ANALISE-CONTINUA-DAS-MATERIAS.md](etapas/ETAPA-156-2221f1f9-ANALISE-CONTINUA-DAS-MATERIAS.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
@@ -340,6 +289,13 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (regra "CONVERSA ENTRE SESSÕES 
 ## Pendências (ficou para depois)
 | Item | Motivo | Quando retomar |
 |------|--------|----------------|
+| #29: prompt da rotina "Tarefa Aulas Senai" no claude.ai ainda fala da fila `tasks` do banco | A rotina está desligada e o prompt fica fora do repositório | Antes de ligar a rotina (item 140.6) |
+| #29: rotina de nuvem × "banco só pelo Claude Code local" (log em `agendamento_tarefa_logs` e cópia das regras da #26) | Decisão do usuário (`docs/regras/tarefas-agendadas.md` §3) | Antes de ligar a rotina |
+| #29: a #26 (regras no banco) é uma cópia das regras — decidir se continua com a fonte única nos arquivos | Tarefa reservada por outra frente | Quando o usuário decidir |
+| #29: duas etapas com o número 114 (BLOQUEIO e LINKS) | Histórico; o quadro agora usa o link do arquivo | Só se o usuário pedir |
+| #29: horários 12:26/12:27 de 2026-10-13 nas tarefas #15 e #18 parecem UTC (3 h a mais) | Escritos por outra frente | Só se o usuário pedir |
+| #29: skill `proxima-task` com `evals` e `test_output.md` no formato antigo | Não mexer em testes sem pedido | Só se o usuário pedir |
+| #29: cópia `~/.agents/skills/documentacao-padrao` sem a exceção do quadro | Fora do repositório; só é usada em projeto sem quadro | Se o usuário quiser |
 | Progresso da turma para o professor em **todas** as atividades (discursivas: ligar o campo; objetivas: módulo equivalente em `respostas-atividade.js`) | Começou só pela prova ADAG id 82 (pedido do usuário) | Quando o usuário pedir |
 | Nome "08-10-2026" da prova id 82 está **só no HTML**: regerar a página pelo `.md` volta para "06-10-2026" | Usuário pediu a correção apenas no HTML | Antes de regerar, trocar o `Rótulo da aula` no `.md` (se o usuário quiser) |
 | Ligar `Bloquear colar: sim` nas outras avaliações discursivas (e, opcional, registrar no banco as tentativas de colar) | Usuário sem tempo em 2026-10-08; começou só pela prova ADAG id 82 | Quando o usuário pedir (regra em `docs/regras/atividades.md`) |
@@ -351,6 +307,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (regra "CONVERSA ENTRE SESSÕES 
 ## Lições aprendidas
 | Data | O que aconteceu | Lição / nova regra |
 |------|-----------------|--------------------|
+| 2026-10-13 10:40 | `git add -A --pathspec-from-file` parou num arquivo já removido com `git rm`, e o commit da #29 saiu só com as exclusões (corrigido com um 2º commit, sem force) | Conferir o `git diff --cached --name-only` **antes** do commit e parar se o `git add` der erro (como manda o `git-quick.md`) |
 | 2026-10-08 20:15 | No Git Bash local, `TZ=America/Sao_Paulo date` mostrou a hora em UTC (3 h a mais) | Na máquina local, pegar a hora com `Get-Date -Format "yyyy-MM-dd HH:mm:ss"` (PowerShell), como manda o CLAUDE.md |
 | 2026-10-03 | A análise de 2026-09-08 dizia ITIC presencial e Banco de Dados "completo" | Conferir sempre a ementa do curso e as pastas reais antes de afirmar situação |
 | 2026-10-03 | Abri os slides em PDF da aula 01 para montar a aula | PDF nunca é fonte: conteúdo e conferência só pelos `.md` (ementa primeiro) — regra no `CLAUDE.md` |

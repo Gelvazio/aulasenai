@@ -1,6 +1,6 @@
 # 📚 Regras do projeto — Atividades, avaliações, respostas e gabarito
 
-> Parte das regras do projeto aulasenai. **Vale como se estivesse no `CLAUDE.md`** (índice e regras de sempre no [`CLAUDE.md`](../../CLAUDE.md)). Ao alterar este arquivo, atualizar a **Versão das regras** e o histórico no `CLAUDE.md`.
+> Parte das regras do projeto aulasenai (índice e regras de sempre no [`AGENTS.md`](../../AGENTS.md) e em `.claude/rules/`). Ao alterar este arquivo, registrar a mudança em [`docs/HISTORICO-REGRAS.md`](../HISTORICO-REGRAS.md).
 
 ---
 
@@ -517,7 +517,7 @@ dessas atividades. Registrada em 2026-10-03 a pedido do usuário.
   for criada, alterada, cadastrada no banco ou liberada/bloqueada; criar o arquivo se não existir.
 - ✅ Gerar as que faltam seguindo a regra "UMA AULA POR VEZ, COMPLETA" (fonte → HTML → conferência
   de 50 itens e gabarito ausente → índice → seed), atualizando o `STATUS-ATIVIDADES.md` e o
-  `AULAS/STATUS-AULAS.md` a cada aula. Gerar em massa continua exigindo plano em `docs/` e aprovação;
+  `AULAS/STATUS-AULAS.md` a cada aula. Gerar em massa continua exigindo plano (na etapa) e aprovação;
   aplicar o seed no Supabase só com pedido do usuário (regra "🌱 SEEDS DO BANCO" do `CLAUDE.md`).
 - ✅ As questões seguem a aula em `<MATERIA>/CONTEUDO/AULA-NN-*.md` (regra "AULAS EXTRAÍDAS DA
   EMENTA EM `CONTEUDO/`") e o `EMENTA-CHALKIE-AI.md` (a ementa vence); gabarito com letras

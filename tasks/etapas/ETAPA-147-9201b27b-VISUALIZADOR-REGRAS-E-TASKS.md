@@ -1,5 +1,8 @@
 ## Etapa 147-9201b27b — Visualizador de regras e tarefas em `.claude/rules/index.html` (pedido em 2026-10-13 09:51)
 
+**Tarefa:** #28-9201b27b-7630-41cb
+**Próximo passo:** 147.8 — aceite do usuário.
+
 **Objetivo:** página com cards clicáveis (modal) das regras por categoria e aba TASKS com todas as tarefas.
 **Plano:** [docs/visualizador-regras-index-html.md](../../docs/visualizador-regras-index-html.md)
 

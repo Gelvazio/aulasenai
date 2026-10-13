@@ -5,6 +5,6 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 28.1 | Plano em `docs/quadro-respostas-atividade.md` | ✅ Concluído | 2026-10-06 | — |
-| 28.2 | Aprovação do plano pelo usuário | ⬜ Pendente | — | — |
+| 28.2 | Aprovação do plano pelo usuário — falta: aprovação do plano do quadro de respostas | 👀 Aguardando o usuário | — | — |
 | 28.3 | Execução dos passos 1 a 6 do plano | ⬜ Pendente | — | — |
 | 28.4 | Aceite do usuário | ⬜ Pendente | — | — |

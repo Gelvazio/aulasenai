@@ -4,4 +4,4 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 35.1 | `assets/js/tabela-notas-professor.js` + `assets/css/tabela-notas-professor.css`: nome e nota (melhor tentativa entregue) em ordem alfabética, da turma da aba do relatório, botão "📥 Exportar PDF (notas)" ao lado do título; ligado por `data-tabela-notas="sim"` (campo `- **Tabela de notas:** sim` no gerador de atividades) | ✅ Concluído | 2026-10-06 | `node --check` e `py_compile`; teste no navegador fica com o usuário |
-| 35.2 | Aceite do usuário | ⬜ Pendente | — | — |
+| 35.2 | Aceite do usuário: testar a tabela de notas logado como professor | 👀 Aguardando o usuário | — | — |

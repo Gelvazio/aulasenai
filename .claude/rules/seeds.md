@@ -15,7 +15,17 @@ Tarefa de banco = só o **Claude Code local** (`multiplas-ias.md`).
 ## Antes de QUALQUER tarefa nova
 
 Todo seed precisa estar **CONCLUÍDO** ou **SUBSTITUÍDO**. Se houver PENDENTE ou APLICADO:
-aplicar → conferir md5 → registrar CONCLUÍDO → só então a tarefa nova.
+aplicar → conferir md5 → registrar CONCLUÍDO → só então a tarefa nova. Exceções (decididas em
+2026-10-13), em que se segue sem travar:
+
+| Situação | O que fazer |
+|----------|-------------|
+| Frente **sem banco** (nuvem, outras IAs — `multiplas-ias.md`) | Não aplica; deixa recado em `tasks/RECADOS.md` para a frente local e segue com tarefa sem banco |
+| Seed de tarefa **reservada por outra frente** | Fica com a frente dona (item da etapa dela) |
+| Seed que depende de **ação ou decisão do usuário** | Item 👀 na etapa da tarefa dona |
+
+O ciclo de seeds **não é tarefa grande**: não precisa de plano nem de aprovação (autorização
+permanente abaixo).
 
 ## Scripts (nunca montar à mão)
 

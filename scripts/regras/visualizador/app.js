@@ -4,7 +4,7 @@
 const TODOS = "Todos";
 const TAMANHO_RESUMO_CARTAO = 170;
 const ORDEM_SITUACOES = ["Em andamento", "Aguardando", "Pendente", "Cancelada/Bloqueada", "Concluída"];
-const COLUNAS_FRENTE = { titulo: "Frente (ambiente · branch)", situacao: "Situação" };
+const COLUNAS_FRENTE = { titulo: "Frente", situacao: "Situação" };
 const DADOS = JSON.parse(document.getElementById("dados").textContent);
 const estadoFiltros = { categoria: TODOS, tipo: TODOS, situacao: TODOS, buscaRegras: "", buscaTasks: "" };
 

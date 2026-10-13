@@ -1,5 +1,8 @@
 ## Etapa 146-042b2fe8 — Reestruturar `.claude/rules/` (pedido em 2026-10-13 09:44)
 
+**Tarefa:** #27-042b2fe8-a9f7-4726
+**Próximo passo:** 146.7 — aceite do usuário.
+
 **Objetivo:** regras sem duplicação nem contradição, todo arquivo ≤ 5 KB.
 **Plano:** [docs/reestruturar-claude-rules.md](../../docs/reestruturar-claude-rules.md)
 

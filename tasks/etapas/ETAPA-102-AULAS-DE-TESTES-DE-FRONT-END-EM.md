@@ -22,4 +22,4 @@ Pasta: `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/CONTEUDO/` · 
 | 102.12 | `DOCUMENTACAO/PLANO-AULAS.md` (resumo) | ✅ Concluído | 2026-10-08 20:14:54 | 10 linhas, total 40 h |
 | 102.13 | Conferência das 10 aulas (seções, 240 min, conhecimentos) | ✅ Concluído | 2026-10-08 20:15:40 | Script: 9 seções em todas, roteiro 240 min, conhecimentos e capacidades = materia.json, sem empresa fictícia |
 | 102.14 | Commit local + graphify | ✅ Concluído | 2026-10-08 20:16:25 | git diff --cached --name-only conferido; push fica com o usuário |
-| 102.15 | Aceite do usuário | ⬜ Pendente | — | — |
+| 102.15 | Aceite do usuário: revisar as 10 aulas de Testes de Front-End em `CONTEUDO/` e o `DOCUMENTACAO/PLANO-AULAS.md` | 👀 Aguardando o usuário | — | — |

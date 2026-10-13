@@ -1,5 +1,8 @@
 ## Etapa 144-aff33423 — Regras no banco: `regra_documento` e `regra_secao` (pedida em 2026-10-11 06:21)
 
+**Tarefa:** #26-55a91111-02ce-4cb1
+**Próximo passo:** 144.5 — primeira cópia das regras no banco e `conferir`; depois 144.6 (aceite).
+
 Tarefa #26-55a91111-02ce-4cb1. Plano: [docs/regras-no-banco.md](../../docs/regras-no-banco.md).
 Pedido: "Faça os 2, inclusive o regra por seção". Frente: nuvem · ccr-00f69e8a-6qcla9.
 

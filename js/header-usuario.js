@@ -30,7 +30,6 @@ const MENU_ADMINISTRADOR_HEADER = [
   { rotulo: "CORREÇÃO", rota: "../correcao-discursiva.html" },
   { rotulo: "TURMAS", rota: "../turmas.html" },
   { rotulo: "CURSO", rota: "../cursos.html" },
-  { rotulo: "TASKS", rota: "../tasks.html" },
   { rotulo: "PENDÊNCIAS", rota: "../MATERIAIS/AGENDA_COLABORADOR/pendencias.html" },
   // Só visualizador das regras e do quadro (gerado por scripts/regras/gerar_visualizador_regras.py).
   { rotulo: "Regras", rota: "../.claude/rules/index.html" },

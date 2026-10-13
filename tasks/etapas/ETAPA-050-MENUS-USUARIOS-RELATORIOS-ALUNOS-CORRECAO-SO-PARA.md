@@ -5,4 +5,4 @@
 |------|-----------|--------|--------------|-------------|
 | 50.1 | Mover os 4 itens para `MENU_ADMINISTRADOR_HEADER` (`js/header-usuario.js`); `<nav>` vazio escondido (`assets/css/header-usuario.css`) | ✅ Concluído | 2026-10-07 | `node --check` |
 | 50.2 | Regras no `CLAUDE.md` (versão 2026-10-07 09:00) | ✅ Concluído | 2026-10-07 | Leitura; formato da versão aceito pelo `regras-modal.js` |
-| 50.3 | Aceite do usuário (entrar como professor comum e como administrador) | ⬜ Pendente | — | — |
+| 50.3 | Aceite do usuário (entrar como professor comum e como administrador) | 👀 Aguardando o usuário | — | — |

@@ -4,7 +4,7 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 18.1 | Conferir o banco real (turma.curso_id, RLS, grants) | ✅ Concluído | 2026-10-06 | Consultas de leitura no Supabase |
-| 18.2 | Plano em `docs/` e aprovação do usuário | 🔄 Em progresso | — | — |
+| 18.2 | Plano em `docs/` e aprovação do usuário — falta: aprovação do plano `docs/vinculo-curso-turma-e-alunos-da-turma.md` | 👀 Aguardando o usuário | — | — |
 | 18.3 | SQL `definir_curso_turma` (aplicar só com pedido) | ⬜ Pendente | — | — |
 | 18.4 | Repositório + tela (seção Curso × Turma e alunos da turma) | ⬜ Pendente | — | — |
 | 18.5 | `database.md`, relatório, `CLAUDE.md`, commit | ⬜ Pendente | — | — |
