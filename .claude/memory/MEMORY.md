@@ -1,4 +1,4 @@
-# 📚 Índice de Memória — Projeto aulasenai
+# 📚 Índice de Memória — `.claude/memory/`
 
 **Última atualização:** 2026-10-13
 
@@ -7,7 +7,7 @@ Consolidação opcional por tema. As regras estão em `.claude/rules/` (carga r�
 ## 📍 Localização
 
 - **Regras rápidas:** `.claude/rules/` (use diariamente)
-- **Memória persistente:** `memory/` (consolidação por tema)
+- **Memória persistente:** `.claude/memory/` (consolidação por tema)
 - **Referência completa:** `docs/regras/`
 
 ---
