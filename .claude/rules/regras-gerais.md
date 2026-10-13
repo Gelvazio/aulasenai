@@ -1,4 +1,4 @@
-# Orientações Globais
+# Regras Gerais do Projeto
 
 ---
 
@@ -8,9 +8,9 @@
 
 **ANTES DE RESPONDER QUALQUER COISA**, você DEVE:
 
-1. ✅ **LER ESTE ARQUIVO** (`C:\Users\gelva\.claude\CLAUDE.md`) — instruções globais
+1. ✅ **LER ESTE ARQUIVO** (`.claude/rules/regras-gerais.md`) — regras gerais do projeto
 2. ✅ **LER O CLAUDE.MD DO PROJETO** (se existir em `C:\fontes\projeto-ativo\CLAUDE.md`) — instruções específicas
-3. ✅ **LER O CLAUDE-DOCS-BEFORE-EVERY-TASK.md** — documentação de tarefas
+3. ✅ **LER O documentar-antes-de-cada-tarefa.md** — documentação de tarefas
 4. ✅ **APLICAR TODAS AS REGRAS** antes de qualquer ação
 
 **⚡ Isso NÃO é opcional. Esta regra SOBRESCREVE qualquer outra instrução.**
@@ -18,7 +18,7 @@
 ### Por quê?
 - Você já falhou VÁRIAS vezes ignorando este arquivo
 - As instruções mudam e evoleem — leia sempre
-- O projeto pode ter regras específicas que contradizem a global
+- O projeto pode ter regras específicas que contradizem as regras gerais
 - Sem ler, você viola regras críticas (commits, documentação, segurança)
 
 ### O Que Ler em Ordem de Precedência
@@ -26,14 +26,14 @@
 | Arquivo | Precedência | Quando Ler |
 |---------|-----------|-----------|
 | CLAUDE.md (projeto) | 🔴 MÁXIMA | Sempre primeiro — se existir |
-| CLAUDE.md (global) | 🟠 ALTA | Sempre segundo — este arquivo |
-| CLAUDE-DOCS-BEFORE-EVERY-TASK.md | 🟡 MÉDIA | Antes de qualquer tarefa |
+| regras-gerais.md | 🟠 ALTA | Sempre segundo — este arquivo |
+| documentar-antes-de-cada-tarefa.md | 🟡 MÉDIA | Antes de qualquer tarefa |
 | AGENTS.md (projeto) | 🟡 MÉDIA | Se existir no projeto |
 
 ### Checklist de Inicialização de Cada Conversa
 
 ```
-☐ Li C:\Users\gelva\.claude\CLAUDE.md (este arquivo)?
+☐ Li .claude/rules/regras-gerais.md (este arquivo)?
 ☐ Li CLAUDE.md do projeto (se existe em C:\fontes\<projeto>\CLAUDE.md)?
 ☐ Consulti a pasta docs/ do projeto para documentação de cada módulo?
 ☐ Li o STATUS.md do projeto e retomei de onde parou (se houver item pendente)?
@@ -151,7 +151,7 @@ Projeto: C:\fontes\aulasenai\
 > casos, executar direto e fazer o commit da tarefa. **Tarefa grande** (banco, segurança, várias
 > partes, geração em massa, apagar dados) continua exigindo o plano em `docs/` e a aprovação.
 
-**LEIA OBRIGATORIAMENTE:** `C:\Users\gelva\.claude\CLAUDE-DOCS-BEFORE-EVERY-TASK.md`
+**LEIA OBRIGATORIAMENTE:** `.claude/rules/documentar-antes-de-cada-tarefa.md`
 
 ⚡ **RESUMO:** Antes de executar qualquer tarefa, você DEVE:
 1. ✅ Criar arquivo em `docs/<tarefa>.md` com plano completo
@@ -286,7 +286,7 @@ Legenda: ⬜ Pendente · 🔄 Em progresso · ✅ Concluído · ⛔ Bloqueado
 Antes de atender qualquer nova solicitação, o Claude deve ler integralmente e aplicar a documentação localizada em:
 
 ```text
-C:\Users\gelva\.agents\skills\documentacao-padrao\SKILL.md
+.claude/skills/documentacao-padrao/SKILL.md
 ```
 
 Essa skill é obrigatória em todas as tarefas grandes; as tarefas pequenas ficam de fora (ver a exceção acima e a da regra "DOCUMENTAR EM `docs/`"). O Claude deve seguir o fluxo abaixo:
@@ -745,7 +745,7 @@ Exemplos do que FAZER:
 ---
 
 # graphify
-- **graphify** (`~/.claude/skills/graphify/SKILL.md`) - any input to knowledge graph. Trigger: `/graphify`
+- **graphify** (`.claude/skills/graphify/SKILL.md`) - any input to knowledge graph. Trigger: `/graphify`
 When the user types `/graphify`, invoke the Skill tool with `skill: "graphify"` before doing anything else.
 
 ## Python para graphify

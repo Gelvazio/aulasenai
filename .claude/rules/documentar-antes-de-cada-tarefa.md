@@ -16,7 +16,7 @@
 4. ✅ **Perguntar se está correto** — aguardar aprovação EXPLÍCITA
 5. ✅ **Só então executar** após aprovação do usuário
 
-> **Exceção — tarefas PEQUENAS (igual ao `CLAUDE.md` global e do projeto, desde 2026-09-30):**
+> **Exceção — tarefas PEQUENAS (igual ao `AGENTS.md` do projeto, desde 2026-09-30):**
 > tarefa pequena = ajuste pontual (até ~3 arquivos) que **não** mexe em banco de dados/segurança/RLS,
 > **não** cria estrutura ou gerador novo e **não** faz mudança em massa. Ela **não precisa** de
 > `docs/<tarefa>.md` nem de aprovação prévia: executar direto, registrar no `STATUS.md` e fazer o
