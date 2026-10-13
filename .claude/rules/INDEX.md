@@ -22,6 +22,12 @@
 - `codigo-solid.md` — SOLID, 1000 linhas, 45 por função, nomes PT
 - `tarefas-agendadas.md` — Fila `tasks`, agendador
 
+## 🌐 Regras Globais do Usuário (cópia de referência)
+
+- `LEIA-ME-GLOBAIS.md` — O que são estas cópias (não são carregadas pelo Claude)
+- `CLAUDE-GLOBAL.md` — Cópia de `~/.claude/CLAUDE.md`
+- `CLAUDE-DOCS-BEFORE-EVERY-TASK.md` — Cópia de `~/.claude/CLAUDE-DOCS-BEFORE-EVERY-TASK.md`
+
 ## 🔗 Referência
 
 - `docs-index.md` — Onde está cada coisa em `docs/`

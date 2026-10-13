@@ -67,7 +67,7 @@ que escolhiam sozinhas a próxima aula (e o `TAREFA_AGENDADA.md` na raiz, que nu
 
 1. ✅ Anotar a hora de início (Brasília) e a frente: `nuvem · <branch da sessão>`.
 2. ✅ Inicialização do `CLAUDE.md` (trazer a `main`, `tasks/STATUS.md`, `tasks/RECADOS.md`, regras
-   globais em `.claude/regras-globais/`, `database/SEEDS-APLICADOS.md`).
+   globais em `.claude/rules/`, `database/SEEDS-APLICADOS.md`).
 3. ✅ **Sincronizar:** `consulta` pelo conector → salvar o JSON → `conferir`; havendo diferença, rodar
    o SQL do `importar` pelo conector e o `exportar`, e fazer commit + push + PR + merge só desses
    arquivos.
