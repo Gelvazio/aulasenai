@@ -2,29 +2,10 @@
 
 **Última atualização:** 2026-10-13
 
-Consolidação opcional por tema. As regras estão em `.claude/rules/` (carga rápida).
+Regras rápidas em `.claude/rules/`; referência completa em `docs/regras/`.
 
-## 📍 Localização
-
-- **Regras rápidas:** `.claude/rules/` (use diariamente)
-- **Memória persistente:** `.claude/memory/` (consolidação por tema)
-- **Referência completa:** `docs/regras/`
-
----
-
-## 🔴 CRÍTICO
-
-- [essentials-aulasenai](essentials-aulasenai.md) — Checklist de 30 seg
-
-## 🟠 Workflow
-
-- [workflow-status-tarefa](workflow-status-tarefa.md) — STATUS.md, etapas, tarefas
-- [collaboration-sessions](collaboration-sessions.md) — Entre licenças, RECADOS.md
-
-## 🟡 Referência
-
-- [docs-index](docs-index.md) — Onde está cada coisa em `docs/`
-
----
-
-**Regra:** Use `.claude/rules/` no dia a dia. Memory é para consolidação opcional.
+- [essentials-aulasenai](essentials-aulasenai.md) — checklist de 30 segundos ao iniciar sessão
+- [Commit por tarefa](commit-por-tarefa.md) — um commit local por tarefa; push só quando o usuário pedir/fizer
+- [Regras de trabalho](regras-de-trabalho.md) — final só com a frase, tarefa pequena sem plano, nunca abrir navegador, banco só por pedido
+- [Sem sugestões](sem-sugestoes.md) — responder só o pedido, sem ofertas nem "quer que eu...?"
+- [Toda tarefa é uma TASK](toda-tarefa-e-task.md) — abrir TASK e pedir detalhes ao solicitante antes de executar
