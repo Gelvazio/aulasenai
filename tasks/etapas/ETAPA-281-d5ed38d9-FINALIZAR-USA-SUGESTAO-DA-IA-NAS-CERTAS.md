@@ -1,3 +1,5 @@
+> ⛔ **Cancelada em 2026-10-14 19:32:** registro duplicado da #154-c4f12058 (Etapa 281-c4f12058), que foi a executada.
+
 ## Etapa 281-d5ed38d9 — Finalizar Atividade: usar a sugestão da IA só nas questões certas
 
 **Tarefa:** #154-d5ed38d9-40d7-4611-801b · **Pedido em:** 2026-10-14 19:27 · **Executor:** — (ninguém assumiu ainda; #153 em execução na frente local)
