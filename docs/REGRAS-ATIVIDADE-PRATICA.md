@@ -9,6 +9,12 @@
 **Primeiro uso deste padrão em atividade de aula:** Testes de Front-End, aulas 01 a 03 (Etapa 108 do
 `STATUS.md`, plano `docs/atividades-testes-frontend-aulas-01-a-03.md`).
 
+## 🔒 Regra global (2026-10-14, #160): depois de entregar, o aluno não vê as respostas
+
+Em **toda** atividade prática, o aluno que já **entregou** deixa de ver as próprias respostas e só
+volta a vê-las quando o professor **liberar o gabarito** da turma (prova corrigida). Não depende de
+campo na fonte. Detalhes e código: `docs/regras/atividades.md` ("Regra global das práticas").
+
 ---
 
 > ⚠️ **Regra nova (2026-10-11 06:01:03, `CLAUDE.md` "🗃️ REGRA — ATIVIDADES SÓ NO BANCO, LAYOUT GLOBAL E PASTA
@@ -56,7 +62,7 @@ Cabeçalho (campos `- **Campo:** valor`), **todos obrigatórios** neste padrão:
 | **Campo do tamanho da resposta** | `sim` |
 | **Botão gravar** | `sim` |
 | **Progresso para o professor** | `sim` |
-| **Ocultar respostas após entrega** | `sim` |
+| **Ocultar respostas após entrega** | `sim` (opcional: a regra já vale para toda prática, #160) |
 
 Depois do cabeçalho: **"Como responder"**, **"Como a correção funciona"** e a tabela
 **"Cobertura da aula"** (questões × conteúdos). Cada questão:

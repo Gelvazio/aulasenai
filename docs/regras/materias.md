@@ -135,7 +135,7 @@ MATERIAIS/<CURSO>/<MATERIA>/
   resposta, no Git e fora do site) → `ATIVIDADES/ATIVIDADE-PRATICA-AULA-NN.html`.
 - ✅ **10 questões × 3 tópicos** (0,2 + 0,4 + 0,4) = 10 pontos; contexto "Você, como aluno
   consultor..."; campos `Bloquear colar`, `Campo do tamanho da resposta`, `Botão gravar`,
-  `Progresso para o professor` e `Ocultar respostas após entrega` = `sim`; `Aula no banco` = NN.
+  `Progresso para o professor` e `Ocultar respostas após entrega` = `sim` (este último é opcional: a regra vale para toda prática, #160); `Aula no banco` = NN.
 - ✅ **Gerar:** `python assets/gerador-avaliacao-discursiva/gerar_avaliacao_discursiva.py <pasta
   ATIVIDADES> ATIVIDADE-PRATICA-AULA-NN.md` (gera a página e o seed dos tópicos; conferir "10
   questões, 30 tópicos, 10 pontos" e "0 sem padrão").

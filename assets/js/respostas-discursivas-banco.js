@@ -199,15 +199,6 @@ async function lerGabaritoLiberadoDiscursiva(sessao) {
 }
 
 /**
- * Indica se a página esconde do aluno as próprias respostas depois da entrega
- * (data-ocultar-respostas-entregue="sim" no <body>; campo da fonte .md).
- * @returns {boolean} true quando o bloqueio está ligado.
- */
-function ocultaRespostasEntregues() {
-    return document.body?.dataset.ocultarRespostasEntregue === 'sim';
-}
-
-/**
  * Carrega sessão, atividade, tentativa, respostas e entrega do usuário logado.
  * @param {Object} sessao - Estado do repositório (preenchido aqui).
  * @returns {Promise<Object>} Dados iniciais da página (disponivel=false sem banco ou cadastro).
@@ -234,10 +225,9 @@ async function carregarDiscursiva(sessao) {
     // Gabarito liberado para a turma do aluno que entregou: a prova volta com respostas e nota.
     const gabaritoLiberado = Boolean(!ehProfessor && entregueEm &&
         await lerGabaritoLiberadoDiscursiva(sessao));
-    // Aluno que já entregou, em página com o bloqueio ligado: as respostas nem são lidas do banco
-    // (exceto com o gabarito liberado).
-    const respostasOcultas = Boolean(!ehProfessor && entregueEm && !gabaritoLiberado &&
-        ocultaRespostasEntregues());
+    // Regra global das práticas (#160): o aluno que já entregou não vê mais as próprias respostas
+    // até o professor liberar o gabarito; elas nem são lidas do banco.
+    const respostasOcultas = Boolean(!ehProfessor && entregueEm && !gabaritoLiberado);
     const respostas = respostasOcultas ? {} : await lerRespostasDiscursivas(sessao);
     const deveRegistrarAbertura = !ehProfessor && !entregueEm && sessao.atividade.ativo;
     if (deveRegistrarAbertura) {

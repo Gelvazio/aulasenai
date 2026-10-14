@@ -49,3 +49,9 @@ Word…).
   almoxarifado…".
 - ✅ O contexto profissional do curso continua (almoxarifado, logística, escritório…), sem nome de
   empresa inventada.
+
+## Prática: sem ver as respostas depois de entregar (2026-10-14, vale já)
+
+Em **toda** atividade prática/discursiva, o aluno que entregou **não vê mais as próprias
+respostas** até o professor **liberar o gabarito** (sem campo na fonte). Detalhes:
+`docs/regras/atividades.md` ("Regra global das práticas").

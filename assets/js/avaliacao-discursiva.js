@@ -62,7 +62,8 @@ const MSG_BLOQUEADA_DISCURSIVA = '🔒 Avaliação bloqueada pelo professor. Agu
     'para escrever as respostas.';
 const NOTA_MAXIMA_DISCURSIVA = 10;
 const MSG_RESPOSTAS_OCULTAS ='🔒 Depois da entrega, as respostas não ficam mais visíveis nesta ' +
-    'página. Elas estão gravadas no banco para a correção do professor.';
+    'página até o professor liberar o gabarito. Elas estão gravadas no banco para a correção ' +
+    'do professor.';
 const MSG_AUTOMATICO ='Cada resposta é gravada sozinha no banco quando você para de digitar.';
 const MSG_SAIDA_PENDENTE = 'Há respostas ainda não gravadas.';
 
@@ -873,12 +874,10 @@ async function gravarPeloBotao(evento) {
 }
 
 /**
- * Depois da entrega, limpa as respostas da tela quando a página pede (campo "Ocultar respostas
- * após entrega" da fonte .md). Nada é apagado do banco.
+ * Depois da entrega, limpa as respostas da tela (regra global das práticas, #160: o aluno só as
+ * revê depois que o professor liberar o gabarito). Nada é apagado do banco.
  */
 function esconderRespostasDepoisDaEntrega() {
-    if (!ocultaRespostasEntregues()) return;
-
     estadoDiscursivo.dados.respostasOcultas = true;
     preencherCampos({});
 }

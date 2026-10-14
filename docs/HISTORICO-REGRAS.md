@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-14 20:13 | **Regra global das práticas (tarefa #160):** depois de entregar, o aluno não vê mais as próprias respostas até o professor liberar o gabarito, em toda prática/discursiva, sem campo na fonte (antes só nas páginas com "Ocultar respostas após entrega"). Em `docs/regras/atividades.md`, `docs/REGRAS-ATIVIDADE-PRATICA.md` e `.claude/rules/atividades-banco.md`. |
 | 2026-10-14 20:11 | **Filtros de categoria (tarefa #159):** "Mostrar Certas", "Mostrar Meia Certas" e "Mostrar Erradas" no painel do professor e na prova corrigida do aluno; todos desmarcados mostra todas, marcados combinam; escolhas no localStorage; substitui o "Mostrar Certas" sozinho (que escondia as certas por padrão). Regra em `docs/regras/atividades.md`. |
 | 2026-10-14 19:56 | **Mudar a nota com justificativa, histórico e explicação ao aluno (tarefa #156):** a nota confirmada da discursiva só muda com justificativa (modal), cada confirmação/mudança vira evento na tabela `correcao_discursiva_historico` e o botão "Histórico" mostra a linha do tempo ao professor e ao aluno; o aluno vê a explicação abaixo da alternativa errada/meia certa, sem citar IA. Regra em `docs/regras/atividades.md`; banco em `docs/database.md`. |
 | 2026-10-14 19:22 | **Frase final (tarefa #151):** ao concluir uma tarefa a IA responde só **TAREFA FINALIZADA E SINCRONIZADA!** (antes: "TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?"); trocada em `tasks/ciclo-da-task.md` e no `CLAUDE.md` global. |

@@ -374,12 +374,15 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   - ✅ **Feito em 2026-10-09:** o progresso aparece em **todas as atividades** com banco
     (discursivas e objetivas), pelo módulo global; ⛔ não voltar ao antigo
     `progresso-turma-discursiva.js` nem criar painel por matéria ou por página.
-- ✅ **Ocultar as respostas depois da entrega (2026-10-08, pedido do usuário):** campo opcional
-  `- **Ocultar respostas após entrega:** sim` → `data-ocultar-respostas-entregue="sim"`. O aluno que
-  já entregou **não vê** as próprias respostas: a página **nem as lê do banco**
-  (`carregarDiscursiva` em `assets/js/respostas-discursivas-banco.js`), os campos ficam vazios, a
-  barra do aluno some e o painel avisa. Logo após entregar, a tela também é limpa. O professor
-  continua vendo tudo; nada é apagado do banco. 1º uso: Prova Prática ADAG (id 82).
+- ✅ **Regra global das práticas — depois de entregar, o aluno não vê mais as próprias respostas
+  até o professor liberar o gabarito (2026-10-08, pedido do usuário; global em 2026-10-14,
+  #160):** vale para **toda** atividade prática/discursiva, sem campo na fonte `.md` (o antigo
+  `- **Ocultar respostas após entrega:** sim` deixou de ser necessário). O aluno que já entregou
+  **não vê** as próprias respostas: a página **nem as lê do banco** (`carregarDiscursiva` em
+  `assets/js/respostas-discursivas-banco.js`), os campos ficam vazios, a barra do aluno some e o
+  painel avisa; logo após entregar, a tela também é limpa. Com o **gabarito liberado** para a
+  turma, a prova corrigida volta com as respostas dele. O professor continua vendo tudo; nada é
+  apagado do banco. É regra de tela (o aluno tecnicamente ainda lê a própria linha pelo RLS).
 - ✅ **Quantidade mínima de questões para entregar (2026-10-08, pedido do usuário):** toda
   discursiva tem um mínimo de **questões completas** (todas as alternativas com texto); padrão =
   todas (`atividade.minimo_questoes_entrega` vazio). O professor muda **por aluno** no Progresso
@@ -412,8 +415,8 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
 - ✅ **Prova corrigida para o aluno (2026-10-08, pedido do usuário):** aluno que entregou e com o
   gabarito liberado para a turma (`aluno_pode_ver_gabarito`, sem registrar pedido; execução
   liberada para `authenticated` em `database/2026-10-08-aluno-pode-ver-gabarito-execute.sql`,
-  aplicado) vê a prova com as respostas dele (o "Ocultar respostas após entrega" deixa de
-  valer), o quadro **"🎓 Sua nota"** (`notas_media_final`), o selo de cada alternativa pela
+  aplicado) vê a prova com as respostas dele (a regra de ocultar as respostas após a entrega deixa
+  de valer), o quadro **"🎓 Sua nota"** (`notas_media_final`), o selo de cada alternativa pela
   nota do professor (✅ Certa / 🟡 Meia certa / ❌ Errada / ⏳ aguardando) com a **observação da
   IA** num balão grande, e o padrão de resposta (mesma caixa do "Ver Gabarito"). O aluno só lê
   as próprias correções confirmadas (RLS da `correcao_discursiva`).
