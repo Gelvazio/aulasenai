@@ -10,6 +10,8 @@ const TEXTO_BOTAO_CRUD = '🗂️ CADASTRAR ATIVIDADES';
 const SELETOR_CARD = 'article.aula';
 const SELETOR_LINK_ATIVIDADE = 'a.btn.principal';
 const SELETOR_ACOES = '.acoes';
+const ALVO_NOVA_ABA_CRUD = '_blank';
+const REL_NOVA_ABA_CRUD = 'noopener';
 const MSG_SEM_ATIVIDADES_CRUD = 'Nenhuma atividade cadastrada para as páginas desta pasta.';
 const MSG_ERRO_CRUD = 'Não foi possível concluir. Confira o login de professor e o banco.';
 const MSG_CAMPOS_CRUD = 'Informe descrição, data, total de itens, aula e link da atividade.';
@@ -620,6 +622,17 @@ function carregarMarcacaoFeitas() {
 }
 
 /**
+ * Links das atividades dos cards (botões principais) abrem em nova aba, para todos os perfis.
+ * O bloqueio só troca o href (data-href-bloqueado), então o target continua valendo.
+ */
+function abrirAtividadesEmNovaAba() {
+    document.querySelectorAll(SELETOR_CARD + ' ' + SELETOR_LINK_ATIVIDADE).forEach((link) => {
+        link.target = ALVO_NOVA_ABA_CRUD;
+        link.rel = REL_NOVA_ABA_CRUD;
+    });
+}
+
+/**
  * Carrega o link "🧾 LOG" dos cards (professor): log das alternativas marcadas pelos alunos.
  */
 function carregarLogAlternativasIndice() {
@@ -675,5 +688,6 @@ function carregarTurmaFavoritaIndice() {
     document.head.append(estilo, ...scripts);
 }
 
+abrirAtividadesEmNovaAba();
 carregarMarcacaoFeitas();
 iniciarCrudAtividades();
