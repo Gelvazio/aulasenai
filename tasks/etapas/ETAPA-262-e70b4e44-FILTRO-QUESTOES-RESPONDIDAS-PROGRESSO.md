@@ -11,5 +11,5 @@ Decisão (Claude, 2026-10-14 15:40): "questão respondida" = questão **completa
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 262.1 | Detalhes com o usuário (faixas do combobox; só esta página ou todas as atividades) | ✅ Concluído | 2026-10-14 15:37 | Respostas registradas acima |
-| 262.2 | Combobox de filtro no Progresso da Turma (`assets/js/filtro-respondidas-progresso.js` + `progresso-turma-global.js` + CSS + regra em `docs/regras/atividades.md`) | ✅ Concluído | 2026-10-14 15:45 | `node --check` nos 2 JS; leitura: filtro só na lista (`desenharListaDeAlunosGlobal`), resumo inalterado, falha ao carregar o módulo não derruba o painel |
+| 262.2 | Combobox de filtro no Progresso da Turma (`assets/js/filtro-respondidas-progresso.js` + `progresso-turma-global.js` + CSS + regra em `docs/regras/atividades.md`) | ✅ Concluído | 2026-10-14 15:40 | `node --check` nos 2 JS; leitura: filtro só na lista (`desenharListaDeAlunosGlobal`), resumo inalterado, falha ao carregar o módulo não derruba o painel |
 | 262.3 | Aceite do usuário (testar logado como professor) | 👀 Aguardando o usuário | — | — |
