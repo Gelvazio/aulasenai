@@ -1,11 +1,12 @@
 // Professor: ON/OFF "Tarefa Entregue?" em cima da lista do Progresso da turma GLOBAL
 // (progresso-turma-global.js), em toda atividade. OFF (padrão): a lista mostra só quem NÃO
-// entregou; ON: mostra também quem entregou. Só filtra a lista na tela (nada é lido nem gravado
-// no banco); o resumo, os Gráficos e o Cálculo Nota seguem com a turma escolhida inteira.
+// entregou; ON: só quem entregou (revisão de 2026-10-14, tarefa #146). Só filtra a lista na
+// tela (nada é lido nem gravado no banco); o resumo, os Gráficos e o Cálculo Nota seguem com
+// a turma escolhida inteira.
 // Pedido do usuário em 2026-10-14 (tarefa #140). Regra: docs/regras/atividades.md
 
 const TEXTO_FILTRO_ENTREGUE = 'Tarefa Entregue?';
-const DICA_FILTRO_ENTREGUE = 'Desligado: só quem ainda não entregou. Ligado: também quem ' +
+const DICA_FILTRO_ENTREGUE = 'Desligado: só quem ainda não entregou. Ligado: só quem ' +
     'entregou.';
 const CLASSE_INTERRUPTOR_ENTREGUE = 'progresso-turma__interruptor';
 const CHAVE_PREFERENCIA_ENTREGUE = 'tarefa-entregue';
@@ -18,7 +19,7 @@ const VALOR_DESLIGADO_PREFERENCIA_ENTREGUE = 'nao';
  * @param {Function} aoMudar - Redesenha a lista quando o ON/OFF muda.
  * @param {{ler: Function, gravar: Function}} [preferencias] - Escolhas guardadas no navegador.
  * @returns {{elemento: HTMLElement, filtrar: Function}} Interruptor e a função que devolve os
- *   alunos visíveis (sem os que entregaram, quando desligado).
+ *   alunos visíveis (ligado: só quem entregou; desligado: só quem não entregou).
  */
 function criarFiltroEntregue(aoMudar, preferencias) {
     const elemento = document.createElement('label');
@@ -41,7 +42,7 @@ function criarFiltroEntregue(aoMudar, preferencias) {
 
     return {
         elemento,
-        filtrar: (alunos) => (caixa.checked ? alunos : alunos.filter((aluno) => !aluno.entregue)),
+        filtrar: (alunos) => alunos.filter((aluno) => aluno.entregue === caixa.checked),
     };
 }
 

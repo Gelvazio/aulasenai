@@ -166,7 +166,9 @@
     font-size: 13px;
 }
 
-.progresso-turma__filtro-contagem {
+/* "Mostrando N de T alunos": a lista depois de todos os filtros. */
+.progresso-turma__contagem {
+    font-size: 13px;
     color: var(--progresso-turma-texto-suave);
 }
 

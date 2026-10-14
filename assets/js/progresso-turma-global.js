@@ -12,7 +12,8 @@
 // do aluno (marcar-entregue-professor.js) e a lista dos alunos sem nenhuma resposta
 // (alunos-sem-inicio-entrega.js).
 // Combobox "Questões respondidas" filtra a lista por faixa (filtro-respondidas-progresso.js);
-// ON/OFF "Tarefa Entregue?" (desligado: só quem não entregou; filtro-entregue-progresso.js).
+// ON/OFF "Tarefa Entregue?" (desligado: só quem não entregou; ligado: só quem entregou;
+// filtro-entregue-progresso.js). "Mostrando N de T alunos" conta a lista com todos os filtros.
 // ON/OFF "RECUPERAÇÃO" pela nota final (desligado < 7, ligado >= 7;
 // filtro-recuperacao-progresso.js). Combo "Aluno" ao lado do "Turma" deixa só a linha do aluno
 // escolhido (filtro-aluno-progresso.js).
@@ -332,8 +333,8 @@ function montarTitulosDasColunasGlobal(aoOrdenar) {
 }
 
 /**
- * Redesenha os títulos e as linhas dos alunos da faixa do filtro, na ordem escolhida (sem ler
- * o banco de novo).
+ * Redesenha os títulos e as linhas dos alunos que passam em todos os filtros, na ordem
+ * escolhida, e a contagem "Mostrando N de T alunos" (sem ler o banco de novo).
  * @param {{lista: HTMLElement}} tela - Elementos da área.
  * @param {Object} medida - estrutura (Map) e totalPartes.
  */
@@ -342,6 +343,10 @@ function desenharListaDeAlunosGlobal(tela, medida) {
     const visiveis = filtrosDaLista.reduce((lista, filtro) => filtro.filtrar(lista),
         ultimosAlunos);
     const alunos = [...visiveis].sort(compararAlunosGlobal);
+    if (tela.contagem) {
+        tela.contagem.textContent = 'Mostrando ' + alunos.length + ' de ' +
+            ultimosAlunos.length + ' alunos (com os filtros acima)';
+    }
     tela.lista.replaceChildren(
         montarTitulosDasColunasGlobal(() => desenharListaDeAlunosGlobal(tela, medida)),
         ...alunos.map((aluno) => montarLinhaDoAlunoGlobal(aluno, medida)));
@@ -867,6 +872,8 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
     await prepararFiltroEntregueGlobal(area, redesenhar);
     await prepararFaltasGlobal(area, redesenhar);
     await prepararFiltroRecuperacaoGlobal(area, redesenhar);
+    tela.contagem = criarElementoProgressoGlobal('span', CLASSE_PROGRESSO_GLOBAL + '__contagem');
+    area.appendChild(tela.contagem);
     await prepararFiltroAlunoGlobal(area, redesenhar);
     await prepararComboTurmaGlobal(area);
     area.append(tela.resumo, tela.lista);

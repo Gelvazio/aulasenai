@@ -1,8 +1,9 @@
 // Professor: combobox "Questões respondidas" no Progresso da turma GLOBAL
 // (progresso-turma-global.js), em toda atividade (objetiva, prática e discursiva). Mostra só os
 // alunos cuja quantidade de questões respondidas (questões completas, o mesmo número da coluna
-// Situação) cai na faixa escolhida: Todas, 5 ou menos, 6 a 10, 11 a 15 ou 16 a 20. Ao lado,
-// "N de T alunos". Só filtra a lista na tela: nada é lido nem gravado no banco.
+// Situação) cai na faixa escolhida: Todas, 5 ou menos, 6 a 10, 11 a 15 ou 16 a 20. Já
+// a contagem "Mostrando N de T alunos" fica no painel (conta a lista com todos os filtros).
+// Só filtra a lista na tela: nada é lido nem gravado no banco.
 // A faixa escolhida fica no localStorage do navegador (preferências injetadas pelo painel).
 // Pedido do usuário em 2026-10-14 (tarefa #135).
 
@@ -51,7 +52,7 @@ function montarComboboxFiltroRespondidas(aoMudar) {
  * @param {Function} aoMudar - Redesenha a lista quando a faixa muda.
  * @param {{ler: Function, gravar: Function}} [preferencias] - Escolhas guardadas no navegador.
  * @returns {{elemento: HTMLElement, filtrar: Function}} Área do filtro e a função que devolve
- *   só os alunos da faixa escolhida (e atualiza o "N de T alunos").
+ *   só os alunos da faixa escolhida.
  */
 function criarFiltroRespondidas(aoMudar, preferencias) {
     const elemento = document.createElement('div');
@@ -65,21 +66,17 @@ function criarFiltroRespondidas(aoMudar, preferencias) {
     });
     combobox.value = obterFaixaFiltroRespondidas(
         preferencias?.ler(CHAVE_PREFERENCIA_RESPONDIDAS)).valor;
-    const contagem = document.createElement('span');
-    contagem.className = CLASSE_FILTRO_RESPONDIDAS + '-contagem';
-    elemento.append(rotulo, combobox, contagem);
+    elemento.append(rotulo, combobox);
 
     /**
-     * Devolve só os alunos da faixa escolhida e mostra quantos ficaram.
+     * Devolve só os alunos da faixa escolhida.
      * @param {Object[]} alunos - Alunos com indicadores (campo completas).
      * @returns {Object[]} Alunos da faixa.
      */
     function filtrar(alunos) {
         const faixa = obterFaixaFiltroRespondidas(combobox.value);
-        const daFaixa = alunos.filter((aluno) =>
+        return alunos.filter((aluno) =>
             aluno.completas >= faixa.minimo && aluno.completas <= faixa.maximo);
-        contagem.textContent = daFaixa.length + ' de ' + alunos.length + ' alunos';
-        return daFaixa;
     }
 
     return { elemento, filtrar };
