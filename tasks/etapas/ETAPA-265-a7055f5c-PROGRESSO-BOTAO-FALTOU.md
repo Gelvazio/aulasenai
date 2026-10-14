@@ -7,10 +7,43 @@
 **Respostas (2026-10-14 15:59):** "Faltou" vale **por dia de aula** (a falta na data aparece em todas as atividades daquele dia); o ON/OFF de cima abre em **OFF (esconde quem faltou)**; quem faltou **entra nas contas** (resumo, Gráficos e Cálculo Nota seguem com a turma toda).
 **Levantamento:** data do dia = `atividade.data_atividade` (atividade 81 = 2026-10-09); 49 de 147 atividades estão sem essa data (decidir no plano: usar `aulas.data_planejada`). RLS no padrão da `minimo_questoes_aluno` (`eh_professor()` + `professor_pode_ver_aluno(aluno_id)`).
 **Pausada (2026-10-14 15:59, pedido do usuário):** "REGISTRE A TAREFA APENAS AGORA E DEPOIS PEGUE ELA" — reserva liberada.
-**Próximo passo:** 265.2 — escrever o plano na etapa (tabela nova de falta por aluno e data, RLS, ON/OFF no Progresso) e pedir aprovação.
+**Retomada (2026-10-14 16:04):** reservada de novo pela frente local · main ("faça a tarefa 138").
+**Próximo passo:** 265.2 — aguardar a aprovação do plano abaixo.
+
+### Escopo
+
+- **Entra:** tabela nova `falta_aluno` (aluno + dia) com RLS; no Progresso da Turma (objetiva,
+  prática e discursiva): ON/OFF **"Faltou?"** ao lado do nome de cada aluno e ON/OFF
+  **"Mostrar quem faltou"** em cima (abre em OFF = esconde quem faltou); regra em
+  `docs/regras/atividades.md` e `docs/database.md` (+ relatório HTML).
+- **Não entra:** lista de presença (`lista-presenca.js`), notas e contas (resumo, Gráficos e
+  Cálculo Nota seguem com a turma toda), página do aluno.
+
+### Plano
+
+1. **Banco** (`database/2026-10-14-falta-aluno.sql`, idempotente, pelo ciclo de seeds):
+   `falta_aluno (aluno_id uuid → aluno.id on delete cascade, data date, marcada_em timestamptz
+   default now(), marcada_por uuid default auth.uid(), primary key (aluno_id, data))`; RLS igual à
+   `minimo_questoes_aluno`: ler = o próprio aluno ou `professor_pode_ver_aluno(aluno_id)`;
+   gravar/apagar = `eh_professor()` e `professor_pode_ver_aluno(aluno_id)`.
+2. **Dia da atividade:** `atividade.data_atividade`; sem ela, `aulas.data_planejada` da aula
+   (hoje: 98 com data, 47 só com a da aula, 2 sem nenhuma → nessas 2 os botões ficam desligados
+   com o aviso "atividade sem data").
+3. **Front:** módulo novo `assets/js/falta-aluno-progresso.js` (ler as faltas do dia, ON/OFF do
+   aluno grava/apaga a linha, ON/OFF de cima filtra a lista) + CSS; `progresso-turma-global.js`
+   só liga o módulo (como o filtro "Questões respondidas"); falha no módulo não derruba o painel.
+
+### Riscos
+
+- Atividade com data errada → a falta cai no dia errado. Plano B: corrigir a data da atividade
+  (a falta segue o dia, não a atividade).
+- Leitura a cada 5 s fica um pouco maior (1 consulta a mais, só as faltas do dia).
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 265.1 | Levantar no banco onde gravar "faltou" + detalhes com o usuário | ✅ Concluído | 2026-10-14 15:59 | Consulta ao banco (sem tabela de falta) + respostas acima |
-| 265.2 | Plano (mexe no banco = tarefa grande) + aprovação | ⬜ Pendente | — | — |
-| 265.3 | Aceite do usuário | ⬜ Pendente | — | — |
+| 265.2 | Plano (mexe no banco = tarefa grande) + aprovação | 👀 Aguardando o usuário | — | Plano escrito nesta etapa |
+| 265.3 | SQL `falta_aluno` + RLS aplicado e conferido | ⬜ Pendente | — | Consulta às policies |
+| 265.4 | Módulo `falta-aluno-progresso.js` + CSS + ligação no `progresso-turma-global.js` | ⬜ Pendente | — | `node --check` |
+| 265.5 | Regras e `docs/database.md` atualizados | ⬜ Pendente | — | Leitura |
+| 265.6 | Aceite do usuário | ⬜ Pendente | — | — |
