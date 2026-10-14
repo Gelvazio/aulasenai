@@ -2,6 +2,8 @@
 // das atividades cadastradas no banco e o CRUD (cadastrar, editar, excluir).
 // Só o professor logado vê o botão. O link da atividade é escolhido entre as páginas HTML desta
 // pasta (os links dos cards do índice).
+// Ao lado de cada atividade cadastrada, o professor também vê o botão ✏️, que abre a edição
+// dela (nome, data, aula, ativa...) direto no formulário.
 // Depende de: supabase-js, js/supabase.js e assets/js/atividades-crud-repositorio.js.
 
 const TEXTO_BOTAO_CRUD = '🗂️ CADASTRAR ATIVIDADES';
@@ -18,6 +20,9 @@ const MSG_CONFIRMAR_EXCLUSAO = 'Excluir esta atividade? O gabarito, as respostas
 const BASE_ASSETS_CRUD = document.currentScript?.src.replace(/js\/[^/]*$/, '') || '';
 const TEXTO_ID_NOVA_ATIVIDADE = '(nova atividade — o banco gera o id)';
 const CLASSE_ID_CARD = 'crud-id-atividade';
+const CLASSE_EDITAR_CARD = 'crud-editar-atividade';
+const TEXTO_EDITAR_CARD = '✏️';
+const TITULO_EDITAR_CARD = 'Editar esta atividade no banco (nome, data, aula, ativa...)';
 // IDs menores que 10 com zero à esquerda (7 → 07); de 10 em diante, normal.
 const DIGITOS_ID_ATIVIDADE = 2;
 // Botão "🧾 LOG" dos cards escondido em todos os índices (pedido do usuário, 2026-10-09); o banco
@@ -475,7 +480,8 @@ function formatarIdAtividadeCrud(id) {
  * @param {Object[]} atividades - Atividades cadastradas das páginas do índice.
  */
 function mostrarIdNoCard(card, atividades) {
-    card.querySelectorAll('.' + CLASSE_ID_CARD).forEach((etiqueta) => etiqueta.remove());
+    const seletorAntigos = '.' + CLASSE_ID_CARD + ', .' + CLASSE_EDITAR_CARD;
+    card.querySelectorAll(seletorAntigos).forEach((elemento) => elemento.remove());
     card.querySelectorAll('a.btn').forEach((link) => {
         const pagina = obterCaminhoHtml(lerHrefCrud(link));
         const atividade = atividades.find((linha) => linha.pagina === pagina);
@@ -484,7 +490,23 @@ function mostrarIdNoCard(card, atividades) {
         const etiqueta = criarElementoCrud('span', CLASSE_ID_CARD,
             'ID ' + formatarIdAtividadeCrud(atividade.id));
         link.prepend(etiqueta);
+        link.after(criarBotaoEditarAtividade(atividade));
     });
+}
+
+/**
+ * Cria o botão ✏️ que fica ao lado do link da atividade e abre a edição dela no banco.
+ * @param {{id: number, aula_id: number, pagina: string}} atividade - Atividade cadastrada.
+ * @returns {HTMLButtonElement} Botão de edição.
+ */
+function criarBotaoEditarAtividade(atividade) {
+    const botao = criarElementoCrud('button', 'btn ' + CLASSE_EDITAR_CARD, TEXTO_EDITAR_CARD);
+    botao.type = 'button';
+    botao.title = TITULO_EDITAR_CARD;
+    botao.setAttribute('aria-label', TITULO_EDITAR_CARD);
+    botao.addEventListener('click', () => abrirEdicaoAtividadeCrud({ idAtividade: atividade.id,
+        idAula: atividade.aula_id, pagina: atividade.pagina }));
+    return botao;
 }
 
 /**

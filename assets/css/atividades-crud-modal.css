@@ -11,6 +11,14 @@
 
 .crud-botao-card { background: #fff7e6; border: 1px solid #f0c36d; cursor: pointer; }
 
+/* Botão ✏️ ao lado de cada atividade do card (só professor): abre a edição no banco. */
+.crud-editar-atividade {
+    background: #fff7e6;
+    border: 1px solid #f0c36d;
+    cursor: pointer;
+    padding-inline: 10px;
+}
+
 .crud-fundo {
     position: fixed;
     inset: 0;
