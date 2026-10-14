@@ -13,7 +13,8 @@
 // (alunos-sem-inicio-entrega.js).
 // Combobox "Questões respondidas" filtra a lista por faixa (filtro-respondidas-progresso.js).
 // A lista tem TODOS os alunos das turmas do curso, também quem não respondeu nada
-// (alunos-da-turma-progresso.js).
+// (alunos-da-turma-progresso.js). ON/OFF "Faltou?" por aluno e "Mostrar quem faltou" em cima
+// (falta-aluno-progresso.js; a falta vale para o dia da atividade).
 // Plano: docs/progresso-global-atividades.md · Regra: docs/regras/atividades.md
 
 const CLASSE_PROGRESSO_GLOBAL = 'progresso-turma';
@@ -28,6 +29,7 @@ const ARQUIVO_ENTREGA_PROGRESSO_GLOBAL = 'marcar-entregue-professor.js';
 const ARQUIVO_SEM_INICIO_PROGRESSO_GLOBAL = 'alunos-sem-inicio-entrega.js';
 const ARQUIVO_FILTRO_PROGRESSO_GLOBAL = 'filtro-respondidas-progresso.js';
 const ARQUIVO_ALUNOS_TURMA_PROGRESSO_GLOBAL = 'alunos-da-turma-progresso.js';
+const ARQUIVO_FALTAS_PROGRESSO_GLOBAL = 'falta-aluno-progresso.js';
 // Colunas extras por tipo de atividade: arquivo do módulo e a função que cria a coluna
 // ({titulo, classeArea, atualizar(atividadeId), montarCelula(aluno), aoMudar}); o painel
 // preenche aoMudar para a coluna pedir uma atualização depois de um botão dela.
@@ -56,7 +58,7 @@ const estadoProgressoGlobal = {
     temporizador: null, lendo: false, ultimosAlunos: [], atualizarAgora: null,
     ordenacao: { chave: CHAVE_ORDEM_ALFABETICA_GLOBAL, crescente: true },
     atividadeId: null, fonte: null, memoria: { nomes: new Map() }, colunasExtras: [],
-    botoesNome: [], filtro: null,
+    botoesNome: [], filtro: null, faltas: null,
 };
 
 /**
@@ -323,9 +325,10 @@ function montarTitulosDasColunasGlobal(aoOrdenar) {
  * @param {Object} medida - estrutura (Map) e totalPartes.
  */
 function desenharListaDeAlunosGlobal(tela, medida) {
-    const { ultimosAlunos, filtro } = estadoProgressoGlobal;
+    const { ultimosAlunos, filtro, faltas } = estadoProgressoGlobal;
     const daFaixa = filtro ? filtro.filtrar(ultimosAlunos) : ultimosAlunos;
-    const alunos = [...daFaixa].sort(compararAlunosGlobal);
+    const visiveis = faltas ? faltas.filtrar(daFaixa) : daFaixa;
+    const alunos = [...visiveis].sort(compararAlunosGlobal);
     tela.lista.replaceChildren(
         montarTitulosDasColunasGlobal(() => desenharListaDeAlunosGlobal(tela, medida)),
         ...alunos.map((aluno) => montarLinhaDoAlunoGlobal(aluno, medida)));
@@ -349,7 +352,8 @@ function montarCelulaNomeDoAlunoGlobal(aluno) {
     const extras = estadoProgressoGlobal.botoesNome.map((criarBotao) => criarBotao({
         atividadeId: estadoProgressoGlobal.atividadeId, aluno,
         aoMudar: estadoProgressoGlobal.atualizarAgora }));
-    celula.append(nome, botao, ...extras);
+    const faltou = estadoProgressoGlobal.faltas?.criarBotao(aluno);
+    celula.append(nome, botao, ...extras, ...(faltou ? [faltou] : []));
     return celula;
 }
 
@@ -548,6 +552,7 @@ async function atualizarProgressoGlobal(tela, medida) {
             calcularIndicadoresDoAlunoGlobal(aluno, medida));
         await atualizarSemInicioGlobal(tela);
         await atualizarColunasExtrasGlobal();
+        await atualizarFaltasGlobal();
         if (!alunos.length) {
             tela.resumo.replaceChildren('Nenhum aluno nas turmas do curso · ' +
                 'atualizado às ' + new Date().toLocaleTimeString('pt-BR'));
@@ -676,6 +681,36 @@ async function prepararFiltroGlobal(area, aoMudar) {
 }
 
 /**
+ * Cria o ON/OFF "Mostrar quem faltou" (e o "Faltou?" de cada aluno) e o põe na área. Uma falha
+ * aqui não derruba o painel (a lista sai sem as faltas).
+ * @param {HTMLElement} area - Área do painel.
+ * @param {Function} aoMudar - Redesenha a lista quando uma falta ou o ON/OFF muda.
+ */
+async function prepararFaltasGlobal(area, aoMudar) {
+    try {
+        if (typeof window.criarControleFaltas !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_FALTAS_PROGRESSO_GLOBAL);
+        }
+        estadoProgressoGlobal.faltas = await window.criarControleFaltas({
+            atividadeId: estadoProgressoGlobal.atividadeId, aoMudar });
+        area.appendChild(estadoProgressoGlobal.faltas.elemento);
+    } catch (erro) {
+        console.warn('Faltas do progresso:', erro.message);
+    }
+}
+
+/**
+ * Lê as faltas do dia da atividade (uma falha mantém as últimas lidas).
+ */
+async function atualizarFaltasGlobal() {
+    try {
+        await estadoProgressoGlobal.faltas?.atualizar();
+    } catch (erro) {
+        console.warn('Faltas do progresso:', erro.message);
+    }
+}
+
+/**
  * Monta a área "Progresso da turma" logo abaixo do cabeçalho da atividade e a atualiza a cada
  * 5 segundos. Só deve ser chamada para o professor (quem chama confere o perfil).
  * @param {number} atividadeId - Id da atividade no banco.
@@ -700,9 +735,11 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
         lista: criarElementoProgressoGlobal('div', CLASSE_PROGRESSO_GLOBAL + '__lista'),
     };
     area.append(montarCabecalhoProgressoGlobal(medida), montarLegendaProgressoGlobal());
-    await prepararFiltroGlobal(area, () => {
+    const redesenhar = () => {
         if (estadoProgressoGlobal.ultimosAlunos.length) desenharListaDeAlunosGlobal(tela, medida);
-    });
+    };
+    await prepararFiltroGlobal(area, redesenhar);
+    await prepararFaltasGlobal(area, redesenhar);
     area.append(tela.resumo, tela.lista);
     cabecalho.after(area);
     await prepararColunasExtrasGlobal(tipo, area);

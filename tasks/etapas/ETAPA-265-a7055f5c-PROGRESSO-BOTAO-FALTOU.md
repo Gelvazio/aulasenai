@@ -8,7 +8,7 @@
 **Levantamento:** data do dia = `atividade.data_atividade` (atividade 81 = 2026-10-09); 49 de 147 atividades estão sem essa data (decidir no plano: usar `aulas.data_planejada`). RLS no padrão da `minimo_questoes_aluno` (`eh_professor()` + `professor_pode_ver_aluno(aluno_id)`).
 **Pausada (2026-10-14 15:59, pedido do usuário):** "REGISTRE A TAREFA APENAS AGORA E DEPOIS PEGUE ELA" — reserva liberada.
 **Retomada (2026-10-14 16:04):** reservada de novo pela frente local · main ("faça a tarefa 138").
-**Próximo passo:** 265.2 — aguardar a aprovação do plano abaixo.
+**Próximo passo:** 265.6 — usuário abrir o Progresso da Turma de uma atividade como professor, marcar "Faltou?" e ligar/desligar "Mostrar quem faltou".
 
 ### Escopo
 
@@ -42,8 +42,8 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 265.1 | Levantar no banco onde gravar "faltou" + detalhes com o usuário | ✅ Concluído | 2026-10-14 15:59 | Consulta ao banco (sem tabela de falta) + respostas acima |
-| 265.2 | Plano (mexe no banco = tarefa grande) + aprovação | 👀 Aguardando o usuário | — | Plano escrito nesta etapa |
-| 265.3 | SQL `falta_aluno` + RLS aplicado e conferido | ⬜ Pendente | — | Consulta às policies |
-| 265.4 | Módulo `falta-aluno-progresso.js` + CSS + ligação no `progresso-turma-global.js` | ⬜ Pendente | — | `node --check` |
-| 265.5 | Regras e `docs/database.md` atualizados | ⬜ Pendente | — | Leitura |
-| 265.6 | Aceite do usuário | ⬜ Pendente | — | — |
+| 265.2 | Plano (mexe no banco = tarefa grande) + aprovação | ✅ Concluído | 2026-10-14 16:20 | Usuário aprovou no chat ("sim") |
+| 265.3 | SQL `falta_aluno` + RLS aplicado e conferido | ✅ Concluído | 2026-10-14 16:35 | Aplicado pelo conector; policies select/insert/delete + RLS ligado, `anon` sem acesso; teste em transação desfeita: professor da turma grava e lê 1 falta, aluno não grava (0) |
+| 265.4 | Módulo `falta-aluno-progresso.js` + CSS + ligação no `progresso-turma-global.js` | ✅ Concluído | 2026-10-14 16:35 | `node --check` nos 2 JS; linhas ≤ 100; falha no módulo não derruba o painel |
+| 265.5 | Regras e `docs/database.md` atualizados | ✅ Concluído | 2026-10-14 16:35 | `docs/regras/atividades.md`, `docs/database.md` e relatório HTML |
+| 265.6 | Aceite do usuário (testar no navegador como professor) | 👀 Aguardando o usuário | — | — |

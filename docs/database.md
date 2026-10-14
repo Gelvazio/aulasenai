@@ -641,6 +641,7 @@ tarefa #129). Procedimento da IA: `docs/regras/suspeita-copia-discursiva.md`.
 | `validar_suspeita_copia(p_atividade, p_aluno, p_tentativa, p_item, p_topico, p_e_copia)` | `security definer`, só professor do aluno: grava `situacao`, `validado_por/em`; **É cópia** grava `nota_professor = 0` no tópico em `correcao_discursiva` (recusa se a nota do professor já foi confirmada com outro valor) |
 | `pg_trgm` | extensão (schema `extensions`): `similarity()` para achar os pares parecidos |
 | `aluno_liberado_copia` | (#133, `database/2026-10-14-aluno-liberado-copia.sql`) PK (`atividade_id`, `aluno_id`); `liberado_por`, `liberado_em`: aluno marcado pelo professor como **"Não é cópia"** na atividade — fora da comparação da IA. RLS: só professor do aluno lê; ninguém grava direto pelo site |
+| `falta_aluno` | (#138, `database/2026-10-14-falta-aluno.sql`) PK (`aluno_id`, `data`); `marcada_por`, `marcada_em`: falta do aluno **no dia** marcada pelo professor no Progresso da Turma ("Faltou?"). RLS: aluno lê a própria; professor lê, grava e apaga só alunos de `professor_pode_ver_aluno`; `anon` sem acesso |
 | `liberar_aluno_copia(p_atividade, p_aluno, p_liberar)` | `security definer`, só professor do aluno: liberar grava a linha e muda para `nao_copia` todas as suspeitas **pendentes** da atividade em que o aluno aparece (dele e dos colegas que apontam para ele); desfazer tira a linha. Nenhuma nota muda |
 
 ## 🎯 Atualização 2026-10-08 — Quantidade mínima de questões nas discursivas

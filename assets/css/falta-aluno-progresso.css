@@ -1,0 +1,84 @@
+/* Professor: ON/OFF "Faltou?" e "Mostrar quem faltou" no Progresso da turma
+   (assets/js/falta-aluno-progresso.js). */
+
+:root {
+    --falta-aluno-chave-fundo: #cbd5e0;
+    --falta-aluno-chave-ligada: #c53030;
+    --falta-aluno-chave-bolinha: #ffffff;
+    --falta-aluno-texto-suave: #4a5568;
+    --falta-aluno-chave-largura: 30px;
+    --falta-aluno-chave-altura: 16px;
+    --falta-aluno-bolinha: 12px;
+}
+
+.falta-aluno {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.falta-aluno__contagem {
+    color: var(--falta-aluno-texto-suave);
+}
+
+.falta-aluno__interruptor {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.falta-aluno__interruptor--aluno {
+    font-size: 11px;
+}
+
+/* A caixa fica invisível: quem aparece é a chave ao lado. */
+.falta-aluno__interruptor input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.falta-aluno__chave {
+    position: relative;
+    flex: none;
+    width: var(--falta-aluno-chave-largura);
+    height: var(--falta-aluno-chave-altura);
+    border-radius: var(--falta-aluno-chave-altura);
+    background: var(--falta-aluno-chave-fundo);
+    transition: background 0.2s;
+}
+
+.falta-aluno__chave::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: var(--falta-aluno-bolinha);
+    height: var(--falta-aluno-bolinha);
+    border-radius: 50%;
+    background: var(--falta-aluno-chave-bolinha);
+    transition: transform 0.2s;
+}
+
+.falta-aluno__interruptor input:checked + .falta-aluno__chave {
+    background: var(--falta-aluno-chave-ligada);
+}
+
+.falta-aluno__interruptor input:checked + .falta-aluno__chave::after {
+    transform: translateX(
+        calc(var(--falta-aluno-chave-largura) - var(--falta-aluno-bolinha) - 4px));
+}
+
+.falta-aluno__interruptor input:disabled + .falta-aluno__chave {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.falta-aluno__interruptor input:focus-visible + .falta-aluno__chave {
+    outline: 2px solid var(--falta-aluno-chave-ligada);
+    outline-offset: 2px;
+}

@@ -489,6 +489,11 @@
           <td>Aluno marcado pelo professor como "Não é cópia" na atividade (2026-10-14): PK atividade + aluno; fora da comparação de cópia da IA; só o professor lê</td>
         </tr>
         <tr>
+          <td>falta_aluno</td>
+          <td>Tabela (RLS)</td>
+          <td>Falta do aluno por dia (2026-10-14, #138): PK aluno + data; marcada pelo professor no Progresso da Turma ("Faltou?"); aluno lê a própria; professor marca e apaga só alunos das turmas dele</td>
+        </tr>
+        <tr>
           <td>liberar_aluno_copia(...)</td>
           <td>Função (security definer)</td>
           <td>Professor do aluno libera (suspeitas pendentes dele e dos colegas que apontam para ele viram nao_copia) ou volta a comparar; nenhuma nota muda</td>
