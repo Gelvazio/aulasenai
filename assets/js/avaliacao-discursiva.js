@@ -547,7 +547,7 @@ async function mostrarSuspeitasDoAluno(aluno, atividadeId) {
 }
 
 /**
- * Professor: ao carregar um aluno, mostra embaixo da prova o botão "Finalizar Atividade", que
+ * Professor: ao carregar um aluno, mostra embaixo da prova o botão "Confirmar Correção" (só do professor), que
  * lança a nota com base nas alternativas confirmadas. Uma falha aqui não atrapalha a avaliação.
  * @param {Object|null} aluno - Aluno mostrado no combo (null ao limpar).
  * @param {number} atividadeId - Id da atividade.
@@ -559,7 +559,7 @@ async function mostrarFinalizarDoProfessor(aluno, atividadeId) {
         }
         window.mostrarFinalizarAtividade(aluno, atividadeId);
     } catch (erro) {
-        console.warn('Finalizar Atividade:', erro.message);
+        console.warn('Confirmar Correção:', erro.message);
     }
 }
 
