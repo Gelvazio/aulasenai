@@ -1,0 +1,13 @@
+## Etapa 207-4fc4d9dd — Botão "📘 Apostila" no card da matéria (índice do curso)
+
+**Tarefa:** #80-4fc4d9dd-d362-4b7c · **Pedido em:** 2026-10-14 10:20 · **Executor:** Claude Code (local · main)
+**Pedido:** "O BOTÃO NÃO APARECE NA PÁGINA E ELE DEVE FICAR NESTE CARD AQUI: MATERIAIS/TECNICO-INFORMATICA-INTERNET/index.html" — "NO CARD DA MATERIA QUE ESTA NESTA PAGINA"
+**Objetivo:** abrir a apostila de Testes de Front-End direto pelo card da matéria na página do curso.
+**Próximo passo:** 207-4fc4d9dd.4 — aceite do usuário.
+
+| Item | Descrição | Status | Concluído em | Verificação |
+|------|-----------|--------|--------------|-------------|
+| 207-4fc4d9dd.1 | Botão "📘 Apostila" no card de TESTES DE FRONTEND em `MATERIAIS/TECNICO-INFORMATICA-INTERNET/index.html` (editado à mão) | ✅ Concluído | 2026-10-14 10:27 | `git diff`: só a linha do card mudou; link `TESTES-DE-FRONTEND/APOSTILA/APOSTILA-TESTES-DE-FRONTEND.html` existe |
+| 207-4fc4d9dd.2 | `assets/gerador-indices/gerar_indices.py`: card da matéria ganha o botão quando houver `APOSTILA/APOSTILA-*.html` (`botoes_apostila`) | ✅ Concluído | 2026-10-14 10:27 | Sintaxe conferida com `ast.parse`; rodada de teste gerou o mesmo botão |
+| 207-4fc4d9dd.3 | Não regravar os índices pelo gerador | ✅ Concluído | 2026-10-14 10:27 | O gerador está atrás das páginas (não põe `popup.js`, `faixa-materias-ensalado.js` nem `data-curso-id`, que vêm de `scripts/*/indice_*.sh`); a rodada de teste foi desfeita (pendência registrada no STATUS) |
+| 207-4fc4d9dd.4 | Aceite do usuário | 👀 Aguardando o usuário | — | Usuário confere o botão no navegador (sem navegador pela IA) |

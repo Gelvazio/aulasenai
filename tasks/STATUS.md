@@ -23,7 +23,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | nuvem · ccr-00f69e8a-6qcla9 | #26 ([144-aff33423](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md)); etapa 140-8554d88e aguarda o usuário | 🔄 Ativa | 2026-10-11 06:28 |
 | nuvem · ccr-be208aef-c6h8oe | #24 ([142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md)) — cancelada em 2026-10-13 (fila do banco desativada, decisão D1 da #29) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | nuvem · claude/ola-zlzh8z | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)); ⛔ não mexer em Banco de Dados | 🔄 Ativa | 2026-10-10 16:21 |
-| local · main | #45 ([172-0ef7953a](etapas/ETAPA-172-0ef7953a-PROFESSOR-MARCA-ENTREGUE-TESTES-FRONTEND.md)) aguarda respostas do usuário; #33, #34, #35, #44 e #27 a #31 aguardam aceite; #36 a #43 e #46 a #79 livres para outras IAs; #32 cancelada | 👀 Aguardando o usuário | 2026-10-14 10:09 |
+| local · main | #45 ([172-0ef7953a](etapas/ETAPA-172-0ef7953a-PROFESSOR-MARCA-ENTREGUE-TESTES-FRONTEND.md)) aguarda respostas do usuário; #33, #34, #35, #44 e #27 a #31 aguardam aceite; #80 aguarda aceite; #36 a #43 e #46 a #79 livres para outras IAs; #32 cancelada | 👀 Aguardando o usuário | 2026-10-14 10:27 |
 
 ## 📌 Tarefas
 
@@ -106,6 +106,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #77-17aa16aa-b193-4562 | Professor marca entregue: Testes de Sistemas Existentes (Tecnico Informatica Internet, 0 páginas) | 🟡 Média | #45 | ⬜ Pendente | — | [204-17aa16aa](etapas/ETAPA-204-17aa16aa-PROFESSOR-MARCA-ENTREGUE-TESTES-DE-SISTEMAS-EXISTENTES.md) |
 | #78-1178b4ef-02fb-47b2 | Professor marca entregue: Testes de Back End (Tecnico Informatica Internet, 0 páginas) | 🟡 Média | #45 | ⬜ Pendente | — | [205-1178b4ef](etapas/ETAPA-205-1178b4ef-PROFESSOR-MARCA-ENTREGUE-TESTES-DE-BACK-END.md) |
 | #79-376adfe2-9eb6-4646 | Professor marca entregue: Versionamento e Colaboracao (Tecnico Informatica Internet, 0 páginas) | 🟡 Média | #45 | ⬜ Pendente | — | [206-376adfe2](etapas/ETAPA-206-376adfe2-PROFESSOR-MARCA-ENTREGUE-VERSIONAMENTO-E-COLABORACAO.md) |
+| #80-4fc4d9dd-d362-4b7c | Botão "📘 Apostila" no card da matéria (Testes de Front-End, índice do curso) | 🟡 Média | — | 👀 Aguardando aceite | — | [207-4fc4d9dd](etapas/ETAPA-207-4fc4d9dd-BOTAO-APOSTILA-NO-CARD-DA-MATERIA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -348,6 +349,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 204-17aa16aa | Professor marca entregue: Testes de Sistemas Existentes (#77, criada pela #45 em 2026-10-14) | [ETAPA-204-17aa16aa-PROFESSOR-MARCA-ENTREGUE-TESTES-DE-SISTEMAS-EXISTENTES.md](etapas/ETAPA-204-17aa16aa-PROFESSOR-MARCA-ENTREGUE-TESTES-DE-SISTEMAS-EXISTENTES.md) |
 | 205-1178b4ef | Professor marca entregue: Testes de Back End (#78, criada pela #45 em 2026-10-14) | [ETAPA-205-1178b4ef-PROFESSOR-MARCA-ENTREGUE-TESTES-DE-BACK-END.md](etapas/ETAPA-205-1178b4ef-PROFESSOR-MARCA-ENTREGUE-TESTES-DE-BACK-END.md) |
 | 206-376adfe2 | Professor marca entregue: Versionamento e Colaboracao (#79, criada pela #45 em 2026-10-14) | [ETAPA-206-376adfe2-PROFESSOR-MARCA-ENTREGUE-VERSIONAMENTO-E-COLABORACAO.md](etapas/ETAPA-206-376adfe2-PROFESSOR-MARCA-ENTREGUE-VERSIONAMENTO-E-COLABORACAO.md) |
+| 207-4fc4d9dd | Botão "📘 Apostila" no card da matéria (#80, tarefa pequena, 2026-10-14) | [ETAPA-207-4fc4d9dd-BOTAO-APOSTILA-NO-CARD-DA-MATERIA.md](etapas/ETAPA-207-4fc4d9dd-BOTAO-APOSTILA-NO-CARD-DA-MATERIA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
@@ -397,6 +399,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | #29: horários 12:26/12:27 de 2026-10-13 nas tarefas #15 e #18 parecem UTC (3 h a mais) | Escritos por outra frente | Só se o usuário pedir |
 | #29: skill `proxima-task` com `evals` e `test_output.md` no formato antigo | Não mexer em testes sem pedido | Só se o usuário pedir |
 | #29: cópia `~/.agents/skills/documentacao-padrao` sem a exceção do quadro | Fora do repositório; só é usada em projeto sem quadro | Se o usuário quiser |
+| #80: `gerar_indices.py` está atrás das páginas de índice (não põe `popup.js`, `faixa-materias-ensalado.js` nem `data-curso-id`; isso vem de `scripts/*/indice_*.sh`) — rodar o gerador apaga a faixa ENSALADO | Fora do pedido | Só se o usuário pedir |
 | Progresso da turma para o professor em **todas** as atividades (discursivas: ligar o campo; objetivas: módulo equivalente em `respostas-atividade.js`) | Começou só pela prova ADAG id 82 (pedido do usuário) | Quando o usuário pedir |
 | Nome "08-10-2026" da prova id 82 está **só no HTML**: regerar a página pelo `.md` volta para "06-10-2026" | Usuário pediu a correção apenas no HTML | Antes de regerar, trocar o `Rótulo da aula` no `.md` (se o usuário quiser) |
 | Ligar `Bloquear colar: sim` nas outras avaliações discursivas (e, opcional, registrar no banco as tentativas de colar) | Usuário sem tempo em 2026-10-08; começou só pela prova ADAG id 82 | Quando o usuário pedir (regra em `docs/regras/atividades.md`) |

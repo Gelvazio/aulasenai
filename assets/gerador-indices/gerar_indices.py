@@ -49,6 +49,10 @@ MODELO_SLIDES_AULA = "AULA-{numero}-SLIDES.pdf"
 TEXTO_BOTAO_SLIDES = "📕 Slides (PDF)"
 # Slides e documentos abrem em nova aba (pedido do usuário, 2026-10-09).
 EXTENSOES_NOVA_ABA = (".pdf", ".pptx")
+# Apostila ligada no card da matéria (2026-10-14): <MATÉRIA>/APOSTILA/APOSTILA-*.html.
+PASTA_APOSTILA = "APOSTILA"
+PADRAO_APOSTILA = "APOSTILA-*.html"
+TEXTO_BOTAO_APOSTILA = "📘 Apostila"
 
 escapar = html.escape
 
@@ -125,7 +129,7 @@ def atributos_nova_aba(href):
 def montar_card(dados):
     """Monta um card (article.aula) a partir de rótulo, título, meta e botões."""
     botoes = "".join(
-        f'<a class="btn {classe}" href="{href}"{atributos_nova_aba(href)}>{escapar(texto)}</a>'
+        f'<a class="{f"btn {classe}".strip()}" href="{href}"{atributos_nova_aba(href)}>{escapar(texto)}</a>'
         for texto, href, classe in dados["botoes"]
     )
     atributo_arquivo = ""
@@ -341,6 +345,22 @@ def gerar_indice_materia(materia, curso, forcar):
     return atividades, gravar_indice(pasta_indice / NOME_INDICE, pagina, forcar)
 
 
+def botoes_apostila(materia, curso):
+    """Botão da apostila HTML da matéria, quando ela existir.
+
+    Args:
+        materia: Pasta da matéria.
+        curso: Pasta do curso (origem do link).
+
+    Returns:
+        Lista com o botão (texto, href, classe), ou vazia se não houver apostila.
+    """
+    apostilas = sorted((materia / PASTA_APOSTILA).glob(PADRAO_APOSTILA))
+    if not apostilas:
+        return []
+    return [(TEXTO_BOTAO_APOSTILA, link_relativo(apostilas[0], curso), "")]
+
+
 def card_materia(materia, curso, quantidade):
     """Card de uma matéria no índice do curso."""
     href = link_relativo(materia / NOME_PASTA_ATIVIDADES / NOME_INDICE, curso)
@@ -352,7 +372,7 @@ def card_materia(materia, curso, quantidade):
         meta = "Nenhuma atividade cadastrada"
     return montar_card({
         "icone": "📘", "rotulo": "MATÉRIA", "titulo": nome_legivel(materia),
-        "meta": meta, "botoes": [botao],
+        "meta": meta, "botoes": [botao, *botoes_apostila(materia, curso)],
     })
 
 
