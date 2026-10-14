@@ -180,6 +180,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #151-a1dc738b-25af-4405-b7fc | Frase final: "TAREFA FINALIZADA E SINCRONIZADA!" (troca da frase de encerramento) | 🟡 Média | — | 👀 Aguardando aceite | — | [278-a1dc738b](etapas/ETAPA-278-a1dc738b-FRASE-FINAL-TAREFA-FINALIZADA-E-SINCRONIZADA.md) |
 | #152-70a5b4d1-6484-482f-a945 | Corrigir o filtro "Mostrar Certas" (certa do professor ou da IA) | 🟠 Alta | — | 👀 Aguardando aceite | — | [279-70a5b4d1](etapas/ETAPA-279-70a5b4d1-CORRIGIR-FILTRO-MOSTRAR-CERTAS.md) |
 | #153-85290af1-912c-46c0-8bad | ON/OFF "Pendente Correcao" ao lado do combo de aluno (só quem ainda não foi corrigido) | 🟡 Média | — | 🔄 Em execução | local · main (desde 2026-10-14 19:26) | [280-85290af1](etapas/ETAPA-280-85290af1-FILTRO-PENDENTE-CORRECAO-NO-COMBO-DE-ALUNO.md) |
+| #154-d5ed38d9-40d7-4611-801b | Finalizar Atividade: usar a sugestão da IA só nas questões certas (demais o professor corrige) | 🟠 Alta | — | ⬜ Pendente | — | [281-d5ed38d9](etapas/ETAPA-281-d5ed38d9-FINALIZAR-USA-SUGESTAO-DA-IA-NAS-CERTAS.md) |
 | #131-c3af51c5-bfbc-4247 | Link da apostila no card da matéria ITIC (índice de Assistente de Operações Logísticas) | 🟡 Média | — | 👀 Aguardando aceite | — | [258-c3af51c5](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Escopo
@@ -497,6 +498,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 278-a1dc738b | Frase final TAREFA FINALIZADA E SINCRONIZADA! (#151, pedida em 2026-10-14) | [ETAPA-278-a1dc738b-FRASE-FINAL-TAREFA-FINALIZADA-E-SINCRONIZADA.md](etapas/ETAPA-278-a1dc738b-FRASE-FINAL-TAREFA-FINALIZADA-E-SINCRONIZADA.md) |
 | 279-70a5b4d1 | Corrigir filtro Mostrar Certas (#152, pedida em 2026-10-14) | [ETAPA-279-70a5b4d1-CORRIGIR-FILTRO-MOSTRAR-CERTAS.md](etapas/ETAPA-279-70a5b4d1-CORRIGIR-FILTRO-MOSTRAR-CERTAS.md) |
 | 280-85290af1 | Filtro Pendente Correcao no combo de aluno (#153, pedida em 2026-10-14) | [ETAPA-280-85290af1-FILTRO-PENDENTE-CORRECAO-NO-COMBO-DE-ALUNO.md](etapas/ETAPA-280-85290af1-FILTRO-PENDENTE-CORRECAO-NO-COMBO-DE-ALUNO.md) |
+| 281-d5ed38d9 | Finalizar usa sugestão da IA nas certas (#154, pedida em 2026-10-14) | [ETAPA-281-d5ed38d9-FINALIZAR-USA-SUGESTAO-DA-IA-NAS-CERTAS.md](etapas/ETAPA-281-d5ed38d9-FINALIZAR-USA-SUGESTAO-DA-IA-NAS-CERTAS.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
