@@ -173,6 +173,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #144-dfbe3f7b-e926-45cc-93d9 | Atividade 81: notas da IA não aparecem | 🟠 Alta | — | 👀 Aguardando aceite | — | [271-dfbe3f7b](etapas/ETAPA-271-dfbe3f7b-ATIVIDADE-81-SEM-NOTAS-DA-IA.md) |
 | #145-f2f0b579-4fd4-4a40-996f | Progresso da Turma: ON/OFF "RECUPERAÇÃO" (nota menor que 7) | 🟡 Média | — | 👀 Aguardando aceite | — | [272-f2f0b579](etapas/ETAPA-272-f2f0b579-PROGRESSO-FILTRO-RECUPERACAO.md) |
 | #146-bf74c55c-7cc1-48c5-810a | Revisar os filtros do Progresso da Turma (nem todos funcionam) | 🟠 Alta | — | 👀 Aguardando aceite | — | [273-bf74c55c](etapas/ETAPA-273-bf74c55c-REVISAR-FILTROS-DO-PROGRESSO.md) |
+| #147-7cd5eb0b-0a1a-48d8-9125 | Progresso da Turma: ON/OFF "Prova Corrigida" (padrão: não corrigidas) | 🟡 Média | — | ⬜ Pendente | — | [274-7cd5eb0b](etapas/ETAPA-274-7cd5eb0b-PROGRESSO-FILTRO-PROVA-CORRIGIDA.md) |
 | #131-c3af51c5-bfbc-4247 | Link da apostila no card da matéria ITIC (índice de Assistente de Operações Logísticas) | 🟡 Média | — | 👀 Aguardando aceite | — | [258-c3af51c5](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Escopo
@@ -483,6 +484,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 271-dfbe3f7b | Atividade 81 sem notas da IA (#144, pedida em 2026-10-14) | [ETAPA-271-dfbe3f7b-ATIVIDADE-81-SEM-NOTAS-DA-IA.md](etapas/ETAPA-271-dfbe3f7b-ATIVIDADE-81-SEM-NOTAS-DA-IA.md) |
 | 272-f2f0b579 | Filtro RECUPERAÇÃO no Progresso (#145, pedida em 2026-10-14) | [ETAPA-272-f2f0b579-PROGRESSO-FILTRO-RECUPERACAO.md](etapas/ETAPA-272-f2f0b579-PROGRESSO-FILTRO-RECUPERACAO.md) |
 | 273-bf74c55c | Revisar filtros do Progresso (#146, pedida em 2026-10-14) | [ETAPA-273-bf74c55c-REVISAR-FILTROS-DO-PROGRESSO.md](etapas/ETAPA-273-bf74c55c-REVISAR-FILTROS-DO-PROGRESSO.md) |
+| 274-7cd5eb0b | Filtro Prova Corrigida no Progresso (#147, pedida em 2026-10-14) | [ETAPA-274-7cd5eb0b-PROGRESSO-FILTRO-PROVA-CORRIGIDA.md](etapas/ETAPA-274-7cd5eb0b-PROGRESSO-FILTRO-PROVA-CORRIGIDA.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
