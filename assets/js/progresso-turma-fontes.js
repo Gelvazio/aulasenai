@@ -5,7 +5,8 @@
 //     e entrega; a conta é feita no banco e o gabarito não sai de lá);
 //   - discursiva: resposta_discursiva (tópicos com texto) + correcao_discursiva (nota da IA).
 // Formato do aluno: { alunoId, nome, porQuestao: Map(item → partes respondidas), entregue,
-//   minimoDoAluno, correcao: {nota, possivel, corrigidos, certas, meias, erradas} | null }.
+//   entreguePorProfessor, minimoDoAluno,
+//   correcao: {nota, possivel, corrigidos, certas, meias, erradas} | null }.
 // A "nota" da correção está na escala da prova inteira (0 a 10); o painel a torna proporcional
 // ao mínimo do aluno. Só leitura; o RLS limita aos alunos das turmas do professor.
 // Depende de js/supabase.js (obterClienteSupabase, sbGet). Regra: docs/regras/atividades.md
@@ -106,7 +107,8 @@ async function carregarNomesDosAlunos(ids, nomes) {
 /**
  * Monta a lista final de alunos no formato comum, em ordem alfabética.
  * @param {Map<string, Object>} progresso - Saída de contarPartesPorAluno.
- * @param {Object} extras - nomes, minimos, entregues (Set "aluno|tentativa") e correcoes (Map).
+ * @param {Object} extras - nomes, minimos, entregues e peloProfessor (Set "aluno|tentativa") e
+ *     correcoes (Map).
  * @returns {Object[]} Alunos no formato comum.
  */
 function montarAlunosDoProgresso(progresso, extras) {
@@ -118,6 +120,7 @@ function montarAlunosDoProgresso(progresso, extras) {
             nome: extras.nomes.get(id) || 'Aluno sem nome',
             porQuestao,
             entregue: extras.entregues.has(chave),
+            entreguePorProfessor: extras.peloProfessor.has(chave),
             minimoDoAluno: extras.minimos.get(id) || null,
             correcao: extras.correcoes.get(chave) || null,
         };
@@ -185,16 +188,18 @@ async function lerAlunosObjetiva(atividadeId, memoria) {
     ]);
     const correcoes = new Map();
     const entregues = new Set();
+    const peloProfessor = new Set();
     resumo.forEach((linha) => {
         const chave = linha.aluno_id + '|' + linha.tentativa;
         correcoes.set(chave, converterAcertosEmCorrecao(linha));
         if (linha.entregue_em) entregues.add(chave);
+        if (linha.entregue_por) peloProfessor.add(chave);
         if (linha.nome) memoria.nomes.set(linha.aluno_id, linha.nome);
     });
     const progresso = contarPartesPorAluno(respostas);
     await carregarNomesDosAlunos([...progresso.keys()], memoria.nomes);
     return montarAlunosDoProgresso(progresso, { nomes: memoria.nomes, minimos, entregues,
-        correcoes });
+        peloProfessor, correcoes });
 }
 
 /**
@@ -266,7 +271,8 @@ async function lerAlunosDiscursiva(atividadeId, memoria) {
         lerTodasAsLinhasProgresso({ tabela: 'resposta_discursiva',
             colunas: 'aluno_id,tentativa,item,texto', atividadeId,
             ordem: COLUNAS_CHAVE_DISCURSIVA }),
-        sbGet('entrega_atividade', 'select=aluno_id,tentativa&atividade_id=eq.' + atividadeId),
+        sbGet('entrega_atividade',
+            'select=aluno_id,tentativa,entregue_por&atividade_id=eq.' + atividadeId),
         lerTodasAsLinhasProgresso({ tabela: 'correcao_discursiva',
             colunas: 'aluno_id,tentativa,item,topico,nota_ia', atividadeId,
             ordem: COLUNAS_CHAVE_DISCURSIVA }),
@@ -280,6 +286,8 @@ async function lerAlunosDiscursiva(atividadeId, memoria) {
     return montarAlunosDoProgresso(progresso, {
         nomes: memoria.nomes, minimos, correcoes: somarCorrecoesDaIa(linhasIa, pontos),
         entregues: new Set(entregas.map((entrega) => entrega.aluno_id + '|' + entrega.tentativa)),
+        peloProfessor: new Set(entregas.filter((entrega) => entrega.entregue_por)
+            .map((entrega) => entrega.aluno_id + '|' + entrega.tentativa)),
     });
 }
 

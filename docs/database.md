@@ -644,6 +644,20 @@ Plano: `docs/quantidade-minima-questoes-discursiva.md`.
 | `atividade_completa` (RLS da `entrega_atividade`) | Discursiva: questões completas ≥ mínimo; objetiva sem mudança |
 | `notas_media_final` | Discursiva: só tópicos respondidos (todos com `nota_professor`); nota = soma × (total ÷ mínimo), **máximo 10**; com mínimo = total, igual a antes |
 
+## 📨 Atualização 2026-10-14 — Professor marca a atividade do aluno como entregue
+
+SQL: `database/2026-10-14-professor-marca-entregue.sql` (✅ aplicado no Supabase em 2026-10-14).
+Tarefa #45 (etapa 172-0ef7953a). Telas: "Respostas dos alunos" e "Progresso da turma", só nas
+páginas com `<body data-marcar-entregue="sim">` (`assets/js/marcar-entregue-professor.js`).
+
+| Tabela / objeto | Campos / regra |
+|--------|---------|
+| `entrega_atividade.entregue_por` | `uuid` → `auth.users`, nula = o próprio aluno entregou; preenchida = professor que marcou. A política de INSERT do aluno não muda |
+| `tentativa_atual_do_aluno(uuid, bigint)` | interna (`security definer`, sem execução pela API): maior tentativa liberada do aluno, ou 1 |
+| `professor_marcar_entregue(uuid, bigint)` | `security definer`, só `authenticated`: só professor e só aluno de `professor_pode_ver_aluno`; grava a entrega da tentativa atual **sem exigir o mínimo nem o horário** (em branco = errada; sem resposta = nota 0); recusa se já entregue |
+| `professor_desmarcar_entregue(uuid, bigint)` | `security definer`, só `authenticated`: apaga só a entrega da tentativa atual feita pelo professor; recusa entrega do próprio aluno e tentativa com `nota_professor` lançada (discursiva) |
+| `resumo_tentativas_atividade(bigint)` | recriada (drop + create): traz também o aluno entregue sem nenhuma resposta (0 acertos) e a coluna `entregue_por`; `anon` sem acesso |
+
 ## 🗄️ Atualização 2026-10-11 — Regras no banco (cópia do repositório)
 
 SQL: `database/2026-10-11-regras-no-banco.sql` (✅ aplicado no Supabase em 2026-10-11).

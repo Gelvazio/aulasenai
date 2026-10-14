@@ -23,7 +23,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | nuvem · ccr-00f69e8a-6qcla9 | #26 ([144-aff33423](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md)); etapa 140-8554d88e aguarda o usuário | 🔄 Ativa | 2026-10-11 06:28 |
 | nuvem · ccr-be208aef-c6h8oe | #24 ([142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md)) — cancelada em 2026-10-13 (fila do banco desativada, decisão D1 da #29) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | nuvem · claude/ola-zlzh8z | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)); ⛔ não mexer em Banco de Dados | 🔄 Ativa | 2026-10-10 16:21 |
-| local · main | #45 ([172-0ef7953a](etapas/ETAPA-172-0ef7953a-PROFESSOR-MARCA-ENTREGUE-TESTES-FRONTEND.md)) aguarda respostas do usuário; #33, #34, #35, #44 e #27 a #31 aguardam aceite; #80 aguarda aceite; #36 a #43 e #46 a #79 livres para outras IAs; #32 cancelada | 👀 Aguardando o usuário | 2026-10-14 10:29 |
+| local · main | #45 ([172-0ef7953a](etapas/ETAPA-172-0ef7953a-PROFESSOR-MARCA-ENTREGUE-TESTES-FRONTEND.md)), #33, #34, #35, #44 e #27 a #31 aguardam aceite; #36 a #43 e #46 a #79 livres para outras IAs; #32 cancelada | 👀 Aguardando o usuário | 2026-10-14 10:31 |
 
 ## 📌 Tarefas
 
@@ -71,7 +71,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #42-b4cc900a-b520-4867 | Questões até o mínimo: Introdução à Comunicação Oral e Escrita (Rio do Sul Mais Tech, 2 páginas) | 🟠 Alta | #33 | ⬜ Pendente | — | [169-b4cc900a](etapas/ETAPA-169-b4cc900a-QUESTOES-ATE-O-MINIMO-COMUNICACAO-ORAL-ESCRITA.md) |
 | #43-25be3d4d-8aba-409a | Questões até o mínimo: Reforço de Linguagens (Rio do Sul Mais Tech, 10 páginas) | 🟠 Alta | #33 | ⬜ Pendente | — | [170-25be3d4d](etapas/ETAPA-170-25be3d4d-QUESTOES-ATE-O-MINIMO-REFORCO-LINGUAGENS.md) |
 | #44-ee2de431-6821-41c3 | Slides das aulas de Testes de Front-End em Markdown (`AULAS/CONTEUDO-AULAS/`) | 🟡 Média | — | 👀 Aguardando aceite | — | [171-ee2de431](etapas/ETAPA-171-ee2de431-SLIDES-TESTES-FRONTEND-EM-MARKDOWN.md) |
-| #45-0ef7953a-721d-49d0 | Professor marca a atividade do aluno como entregue: Testes de Front-End (10 páginas: objetivas e práticas) | 🟡 Média | — | 👀 Aguardando respostas | local · main (desde 2026-10-14 10:09) | [172-0ef7953a](etapas/ETAPA-172-0ef7953a-PROFESSOR-MARCA-ENTREGUE-TESTES-FRONTEND.md) |
+| #45-0ef7953a-721d-49d0 | Professor marca a atividade do aluno como entregue: Testes de Front-End (10 páginas: objetivas e práticas) | 🟡 Média | — | 👀 Aguardando aceite | — | [172-0ef7953a](etapas/ETAPA-172-0ef7953a-PROFESSOR-MARCA-ENTREGUE-TESTES-FRONTEND.md) |
 | #46-20a501cc-ff7f-48b0 | Professor marca entregue: Banco de Dados (Técnico em Informática para Internet, 40 páginas) | 🟡 Média | #45 | ⬜ Pendente | — | [173-20a501cc](etapas/ETAPA-173-20a501cc-PROFESSOR-MARCA-ENTREGUE-BANCO-DE-DADOS.md) |
 | #47-94f1b629-001e-4942 | Professor marca entregue: Introdução às TIC (Assistente de Operações Logísticas, 23 páginas) | 🟡 Média | #45 | ⬜ Pendente | — | [174-94f1b629](etapas/ETAPA-174-94f1b629-PROFESSOR-MARCA-ENTREGUE-INTRODUCAO-TIC.md) |
 | #48-a0c946b1-815b-49a4 | Professor marca entregue: Análise de Dados Aplicada à Gestão (Gestão e Controle de Materiais, 10 páginas) | 🟡 Média | #45 | ⬜ Pendente | — | [175-a0c946b1](etapas/ETAPA-175-a0c946b1-PROFESSOR-MARCA-ENTREGUE-ANALISE-DADOS-GESTAO.md) |

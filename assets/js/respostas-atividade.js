@@ -616,6 +616,9 @@ async function abrirRelatorioProfessor(secao, atividadeId, maximo) {
     try {
         await carregarScript('turma-favorita.js');
         await carregarScript('turma-horario.js');
+        const faltaModuloEntrega = document.body.dataset.marcarEntregue === 'sim' &&
+            typeof window.acrescentarControleEntrega !== 'function';
+        if (faltaModuloEntrega) await carregarScript('marcar-entregue-professor.js');
         await carregarScript('respostas-atividade-professor.js');
         await montarRelatorioProfessor(secao, atividadeId, maximo);
     } catch (erro) {

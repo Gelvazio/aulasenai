@@ -1,0 +1,58 @@
+/* Professor: "Marcar como entregue" / "Desfazer entrega" (marcar-entregue-professor.js) e a
+   lista de alunos que não começaram (alunos-sem-inicio-entrega.js). */
+
+:root {
+    --entrega-professor-destaque: #2f855a;
+    --entrega-professor-aviso: #2b6cb0;
+    --entrega-professor-borda: #e2e8f0;
+    --entrega-professor-suave: #4a5568;
+    --entrega-professor-espaco: 6px;
+}
+
+.entrega-professor {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--entrega-professor-espaco);
+    margin-left: var(--entrega-professor-espaco);
+}
+
+.entrega-professor__botao {
+    padding: 4px 10px;
+    font-size: 13px;
+}
+
+.entrega-professor__aviso {
+    color: var(--entrega-professor-aviso);
+    font-weight: 600;
+}
+
+.sem-inicio-entrega {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--entrega-professor-borda);
+}
+
+.sem-inicio-entrega__titulo {
+    margin: 0 0 8px;
+    font-size: 15px;
+    color: var(--entrega-professor-suave);
+}
+
+.sem-inicio-entrega__linha {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--entrega-professor-espaco);
+    padding: 4px 0;
+    border-bottom: 1px solid var(--entrega-professor-borda);
+}
+
+.sem-inicio-entrega__nome {
+    min-width: 220px;
+    font-weight: 600;
+}
+
+.sem-inicio-entrega__situacao {
+    color: var(--entrega-professor-suave);
+}

@@ -817,6 +817,43 @@
       </table>
     </div>
 
+    <h2>📨 Atualização 2026-10-14 — Professor marca a atividade do aluno como entregue</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-14-professor-marca-entregue.sql</code> (aplicado em 2026-10-14) · Tela: <code>assets/js/marcar-entregue-professor.js</code></p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>entrega_atividade.entregue_por</td>
+          <td>Coluna</td>
+          <td>Professor que marcou a entrega (nula = o próprio aluno entregou)</td>
+        </tr>
+        <tr>
+          <td>tentativa_atual_do_aluno(uuid, bigint)</td>
+          <td>Função interna</td>
+          <td>Maior tentativa liberada do aluno, ou 1; sem execução pela API</td>
+        </tr>
+        <tr>
+          <td>professor_marcar_entregue(uuid, bigint)</td>
+          <td>Função</td>
+          <td>Professor marca a tentativa atual do aluno como entregue, sem exigir mínimo nem horário; só alunos das turmas dele</td>
+        </tr>
+        <tr>
+          <td>professor_desmarcar_entregue(uuid, bigint)</td>
+          <td>Função</td>
+          <td>Desfaz só a entrega feita pelo professor; recusa se a nota já foi lançada</td>
+        </tr>
+        <tr>
+          <td>resumo_tentativas_atividade(bigint)</td>
+          <td>Função (recriada)</td>
+          <td>Inclui o aluno entregue sem resposta e a coluna entregue_por</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🗄️ Atualização 2026-10-11 — Regras no banco (cópia do repositório)</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-11-regras-no-banco.sql</code> (aplicado em 2026-10-11) · Cópia: <code>scripts/regras/sincronizar_regras.py</code></p>
@@ -1192,8 +1229,8 @@
         <tr>
           <td>entrega_atividade</td>
           <td>Nova</td>
-          <td><code>aluno_id</code>, <code>atividade_id</code>, <code>entregue_em</code></td>
-          <td>Aluno entrega 1 vez, só completa · Professor: todas</td>
+          <td><code>aluno_id</code>, <code>atividade_id</code>, <code>entregue_em</code>, <code>entregue_por</code> (2026-10-14)</td>
+          <td>Aluno entrega 1 vez, só completa · Professor: todas; marca/desfaz pela função</td>
         </tr>
         <tr>
           <td>turma</td>

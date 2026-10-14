@@ -76,6 +76,20 @@ escolha, as questões ficam sem marcação (as leituras filtram pelo `aluno_id` 
 Código: `assets/js/respostas-aluno-professor.js` (o mesmo das discursivas), carregado pelo
 `respostas-atividade.js`.
 
+**Professor marca como entregue (2026-10-14, tarefa #45):** nas páginas com
+`<body data-marcar-entregue="sim">` (objetivas e práticas), o professor tem
+**"📨 Marcar como entregue"** na tentativa atual do aluno que não entregou e
+**"↩️ Desfazer entrega"** na entrega que ele mesmo marcou (os dois com popup de confirmação).
+- Não exige o mínimo de questões nem o horário: em branco conta como errada; quem nunca abriu
+  fica com nota 0. Depois de marcada, o aluno não responde mais aquela tentativa.
+- Desfazer só vale para entrega feita pelo professor, sem tentativa nova liberada e sem nota
+  lançada (discursiva). A situação mostra **"📨 Entregue pelo professor"**.
+- Onde aparece: "Respostas dos alunos" (objetivas, inclusive alunos sem resposta) e
+  "Progresso da turma" (objetivas e práticas), que ganha a lista **"Alunos sem nenhuma resposta"**.
+- Código: `assets/js/marcar-entregue-professor.js`, `assets/js/alunos-sem-inicio-entrega.js`;
+  banco: `database/2026-10-14-professor-marca-entregue.sql` (`docs/database.md`).
+- Ligado em Testes de Front-End; as demais matérias recebem o atributo nas tarefas #46 a #79.
+
 ### 🕒 Horário da turma e liberação fora do horário
 
 Registrada em 2026-10-01. O aluno só grava alternativas e entrega **dentro do horário da turma**

@@ -8,6 +8,9 @@
 // professor. Ligado por assets/js/respostas-atividade.js (objetivas) e
 // assets/js/avaliacao-discursiva.js (discursivas). Substitui o antigo
 // progresso-turma-discursiva.js (2026-10-09). Depende de js/supabase.js e assets/js/popup.js.
+// Com <body data-marcar-entregue="sim">: "Marcar como entregue" / "Desfazer entrega" na situação
+// do aluno (marcar-entregue-professor.js) e a lista dos alunos sem nenhuma resposta
+// (alunos-sem-inicio-entrega.js).
 // Plano: docs/progresso-global-atividades.md · Regra: docs/regras/atividades.md
 
 const CLASSE_PROGRESSO_GLOBAL = 'progresso-turma';
@@ -18,6 +21,9 @@ const ARQUIVO_GRAFICOS_PROGRESSO_GLOBAL = 'graficos-progresso-turma.js';
 const ARQUIVO_MINIMO_PROGRESSO_GLOBAL = 'minimo-questoes-discursiva.js';
 const ARQUIVO_CALCULO_PROGRESSO_GLOBAL = 'calculo-nota-progresso.js';
 const ARQUIVO_CSS_PROGRESSO_GLOBAL = '../css/progresso-turma-global.css';
+const ARQUIVO_ENTREGA_PROGRESSO_GLOBAL = 'marcar-entregue-professor.js';
+const ARQUIVO_SEM_INICIO_PROGRESSO_GLOBAL = 'alunos-sem-inicio-entrega.js';
+const VALOR_LIGADO_ENTREGA_GLOBAL = 'sim';
 const SELETOR_CABECALHO_PROGRESSO_GLOBAL = '.container > header';
 const TIPO_PADRAO_PROGRESSO_GLOBAL = 'discursiva';
 const SEM_NOTA_PROGRESSO_GLOBAL = -1;
@@ -356,21 +362,39 @@ function abrirMinimoDoAlunoGlobal(aluno) {
 }
 
 /**
+ * Monta a situação do aluno ("✅ Entregue" ou questões feitas) com o "Marcar como entregue" /
+ * "Desfazer entrega" do professor (marcar-entregue-professor.js), se a página o ligar.
+ * @param {Object} aluno - Aluno com indicadores.
+ * @returns {HTMLElement} Situação pronta.
+ */
+function montarSituacaoDoAlunoGlobal(aluno) {
+    const controle = window.criarControleEntregaProfessor?.({ alunoId: aluno.alunoId,
+        atividadeId: estadoProgressoGlobal.atividadeId, nome: aluno.nome,
+        entregue: aluno.entregue, entreguePorProfessor: aluno.entreguePorProfessor,
+        aoMudar: estadoProgressoGlobal.atualizarAgora });
+    const texto = aluno.entregue
+        ? '✅ Entregue'
+        : aluno.completas + '/' + aluno.totalQuestoes + ' questões · mín. ' + aluno.minimo;
+    const avisoNoControle = Boolean(controle) && aluno.entreguePorProfessor;
+    const situacao = criarElementoProgressoGlobal('span', CLASSE_PROGRESSO_GLOBAL + '__situacao',
+        avisoNoControle ? '' : texto);
+    if (controle) situacao.appendChild(controle);
+    return situacao;
+}
+
+/**
  * Monta a linha de um aluno: nome, questões, barra, situação, nota parcial e nota final.
  * @param {Object} aluno - Aluno com indicadores.
  * @param {{estrutura: Map<number, number>, totalPartes: number}} medida - Estrutura da prova.
  * @returns {HTMLElement} Linha pronta.
  */
 function montarLinhaDoAlunoGlobal(aluno, medida) {
-    const situacao = aluno.entregue
-        ? '✅ Entregue'
-        : aluno.completas + '/' + aluno.totalQuestoes + ' questões · mín. ' + aluno.minimo;
     const linha = criarElementoProgressoGlobal('div', CLASSE_PROGRESSO_GLOBAL + '__linha');
     linha.append(
         montarCelulaNomeDoAlunoGlobal(aluno),
         montarCelulasDasQuestoesGlobal(aluno.porQuestao, medida.estrutura),
         montarBarraGlobal(aluno.percentual, aluno.entregue ? 'entregue' : ''),
-        criarElementoProgressoGlobal('span', CLASSE_PROGRESSO_GLOBAL + '__situacao', situacao),
+        montarSituacaoDoAlunoGlobal(aluno),
         montarCelulaNotaParcialGlobal(aluno, medida.totalPartes),
         montarCelulaNotaFinalGlobal(aluno));
     return linha;
@@ -394,6 +418,21 @@ function montarResumoDaTurmaGlobal(alunos, totalPartes) {
 }
 
 /**
+ * Redesenha a lista dos alunos sem nenhuma resposta (alunos-sem-inicio-entrega.js), se a
+ * página ligar a entrega pelo professor.
+ * @param {{semInicio: HTMLElement|undefined}} tela - Elementos da área.
+ */
+async function atualizarSemInicioGlobal(tela) {
+    if (!tela.semInicio || typeof window.atualizarAlunosSemInicio !== 'function') return;
+
+    await window.atualizarAlunosSemInicio(tela.semInicio, {
+        atividadeId: estadoProgressoGlobal.atividadeId,
+        idsQueComecaram: new Set(estadoProgressoGlobal.ultimosAlunos.map((aluno) => aluno.alunoId)),
+        aoMudar: estadoProgressoGlobal.atualizarAgora,
+    });
+}
+
+/**
  * Lê o banco e redesenha o resumo e as linhas dos alunos (sem leituras sobrepostas).
  * @param {{resumo: HTMLElement, lista: HTMLElement}} tela - Elementos da área.
  * @param {Object} medida - estrutura (Map) e totalPartes.
@@ -407,6 +446,7 @@ async function atualizarProgressoGlobal(tela, medida) {
         const alunos = await fonte.lerAlunos(atividadeId, memoria);
         estadoProgressoGlobal.ultimosAlunos = alunos.map((aluno) =>
             calcularIndicadoresDoAlunoGlobal(aluno, medida));
+        await atualizarSemInicioGlobal(tela);
         if (!alunos.length) {
             tela.resumo.replaceChildren('Nenhum aluno das suas turmas começou ainda · ' +
                 'atualizado às ' + new Date().toLocaleTimeString('pt-BR'));
@@ -494,6 +534,29 @@ async function obterFonteProgressoGlobal(tipo) {
 }
 
 /**
+ * Liga a entrega pelo professor no painel (só com <body data-marcar-entregue="sim">): carrega
+ * os módulos e cria a área dos alunos sem nenhuma resposta. Uma falha aqui não derruba o painel.
+ * @param {HTMLElement} area - Área do painel.
+ * @param {Object} tela - Elementos da área (recebe semInicio).
+ */
+async function prepararEntregaProfessorGlobal(area, tela) {
+    if (document.body.dataset.marcarEntregue !== VALOR_LIGADO_ENTREGA_GLOBAL) return;
+
+    try {
+        if (typeof window.acrescentarControleEntrega !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_ENTREGA_PROGRESSO_GLOBAL);
+        }
+        if (typeof window.atualizarAlunosSemInicio !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_SEM_INICIO_PROGRESSO_GLOBAL);
+        }
+        tela.semInicio = criarElementoProgressoGlobal('div', 'sem-inicio-entrega');
+        area.appendChild(tela.semInicio);
+    } catch (erro) {
+        console.warn('Entrega pelo professor indisponível:', erro.message);
+    }
+}
+
+/**
  * Monta a área "Progresso da turma" logo abaixo do cabeçalho da atividade e a atualiza a cada
  * 5 segundos. Só deve ser chamada para o professor (quem chama confere o perfil).
  * @param {number} atividadeId - Id da atividade no banco.
@@ -520,6 +583,7 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
     area.append(montarCabecalhoProgressoGlobal(medida), montarLegendaProgressoGlobal(),
         tela.resumo, tela.lista);
     cabecalho.after(area);
+    await prepararEntregaProfessorGlobal(area, tela);
 
     estadoProgressoGlobal.atualizarAgora = () => atualizarProgressoGlobal(tela, medida);
     await atualizarProgressoGlobal(tela, medida);
