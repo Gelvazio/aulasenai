@@ -19,7 +19,7 @@ prática já faz) — recurso global no `atividade.js`, vale para todas as objet
   selo de cada tópico (`assets/js/resultado-aluno-discursiva.js`); antes da correção, "⏳ Sua nota
   ainda está aguardando a correção do professor".
 - O PDF do "Exportar Meu Gabarito" deve levar a nota também.
-**Próximo passo:** 209.2 — escrever o plano na etapa (escopo, riscos, banco/RLS) e pedir aprovação.
+**Próximo passo:** 209.2 — aguardar a aprovação do plano (Escopo/Riscos acima).
 
 ### Respostas do usuário (2026-10-14)
 
@@ -59,10 +59,59 @@ ERROU,NAO TEM COMO ELE FICAR COM NOTA MENOR QUE A TENTATIVA ANTERIOR"
 - `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/ATIVIDADES/ATIVIDADES-AULA-04-50-QUESTOES.html`
 - `MATERIAIS/TECNICO-INFORMATICA-INTERNET/TESTES-DE-FRONTEND/ATIVIDADES/ATIVIDADES-AULA-05-50-QUESTOES.html`
 
+### Escopo
+
+- **Entra:**
+  - Módulo global `assets/js/exportar-meu-gabarito.js` (botão + regra de habilitar) e
+    `assets/js/exportar-meu-gabarito-pdf.js` (monta o PDF, padrão SENAI com jsPDF), + CSS. Ligado
+    pelo atributo `data-exportar-meu-gabarito="sim"` no `<body>`, carregado por
+    `respostas-atividade.js` (objetivas/avaliações objetivas) e `avaliacao-discursiva.js`
+    (práticas/discursivas/avaliação prática), como o `marcar-entregue-professor.js`.
+  - Botão **"📄 Exportar Meu Gabarito"** só para o **aluno**; desabilitado ("Disponível depois de
+    entregar") até a **última tentativa liberada** estar entregue (`entrega_atividade`).
+  - PDF: cabeçalho (nome, turma, matéria, atividade, tentativa, data e hora da entrega), **nota**
+    (objetiva: `nota_da_tentativa` sobre o mínimo, máx. 10; prática/discursiva: `notas_media_final`
+    ou "aguardando a correção do professor") e as **respostas do aluno** da última tentativa
+    entregue (objetiva: questão + alternativa marcada, inclusive as herdadas; discursiva: tópico +
+    texto). ⛔ Sem a resposta certa.
+  - Objetiva depois da liberação dos gabaritos (`aluno_pode_ver_gabarito` → `solicitar_gabarito`):
+    ✅/❌ em cada questão e a alternativa certa nas erradas, **global** em `respostas-atividade.js`
+    (todas as objetivas), mantendo o cartão "RESULTADO — Sua nota".
+  - Testes de Front-End: atributo nas 10 páginas (5 objetivas + 5 práticas).
+  - Docs: `docs/regras/atividades.md` e `docs/HISTORICO-REGRAS.md`.
+- **Não entra:** mudança no banco (tudo já existe, ver abaixo); as demais matérias (#83 a #116);
+  o "Exportar Gabarito" atual (pedido de gabarito real).
+
+### Banco (consultado em 2026-10-14, sem mudança)
+
+| Precisa | Já existe (RLS: aluno lê só o próprio) |
+|---|---|
+| Respostas por tentativa | `resposta_atividade` (tentativa, herdada) e `resposta_discursiva` (tentativa) |
+| Entregue? | `entrega_atividade` (tentativa, entregue_em) + `tentativa_atual(p_atividade)` |
+| Nota | `nota_da_tentativa(p_atividade, p_tentativa)` e `notas_media_final(p_paginas)` |
+| Gabarito liberado | `aluno_pode_ver_gabarito` (não registra pedido) e `solicitar_gabarito` |
+| Turma | `turmaaluno` + `turma` |
+
+### Riscos
+
+| Risco | Plano B |
+|---|---|
+| PDF levar a resposta certa | O PDF só lê tabelas do próprio aluno; não chama `solicitar_gabarito` |
+| Chamar `solicitar_gabarito` antes da liberação grava pedido em `tentativaacessogabarito` | Checar antes com `aluno_pode_ver_gabarito` |
+| Páginas práticas sem jsPDF | Carregar o jsPDF do cdnjs (mesma versão 2.5.1) só ao clicar |
+| Sem navegador para validar | `node --check` + leitura; teste na tela fica no aceite (209.6) |
+
+### Decisões
+
+| Quando | Decisão | Quem | Por quê |
+|---|---|---|---|
+| 2026-10-14 | Respostas 1–5 (tabela acima) | Usuário | Mensagens do usuário |
+| 2026-10-14 | Sem mudança no banco | Claude Code | Consulta: tabelas, RLS e funções já cobrem |
+
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 209.1 | Respostas do usuário às perguntas acima | ✅ Concluído | 2026-10-14 10:47 | Respostas registradas acima (4 corrigida pelo usuário: última tentativa) |
-| 209.2 | Plano na etapa (escopo, riscos, banco/RLS) + aprovação do usuário | ⬜ Pendente | — | — |
+| 209.2 | Plano na etapa (escopo, riscos, banco/RLS) + aprovação do usuário | 👀 Aguardando o usuário | — | — |
 | 209.3 | Recurso global (módulo JS + CSS + o que o banco precisar), ligado por atributo no `<body>` | ⬜ Pendente | — | `node --check`; consultas ao banco |
 | 209.4 | Ligar nas páginas de Testes de Front-End | ⬜ Pendente | — | Busca no código |
 | 209.4b | Objetiva após liberar gabaritos: marcar acerto/erro de cada questão na página do aluno (global, como a prática), mantendo o cartão da nota | ⬜ Pendente | — | `node --check`; consulta ao banco |
