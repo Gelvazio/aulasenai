@@ -68,6 +68,27 @@
     gap: 6px;
 }
 
+/* Filtro "Questões respondidas" (filtro-respondidas-progresso.js). */
+.progresso-turma__filtro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.progresso-turma__filtro-opcoes {
+    padding: 4px 8px;
+    border: 1px solid var(--progresso-turma-borda);
+    border-radius: var(--progresso-turma-raio);
+    background: var(--progresso-turma-fundo);
+    font-size: 13px;
+}
+
+.progresso-turma__filtro-contagem {
+    color: var(--progresso-turma-texto-suave);
+}
+
 .progresso-turma__geral {
     display: flex;
     flex-direction: column;

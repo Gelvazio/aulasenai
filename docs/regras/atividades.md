@@ -215,6 +215,10 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   (discursivas) e pelo `respostas-atividade.js` (objetivas) só para o professor; o RLS limita
   às turmas dele; a leitura é paginada de 1000 em 1000 linhas. Plano:
   `docs/progresso-global-atividades.md`.
+  - **Filtro "Questões respondidas" (2026-10-14, #135):** combobox acima do resumo, em toda
+    atividade: **Todas**, **5 ou menos**, **6 a 10**, **11 a 15** e **16 a 20** questões completas
+    (o número da coluna Situação), com "N de T alunos" ao lado. Só filtra a lista na tela (o
+    resumo continua com a turma toda). Código: `assets/js/filtro-respondidas-progresso.js`.
   - **Objetiva (2026-10-09):** colunas **"Nota parcial (acertos)"** (nota sobre o mínimo até
     agora, % de acerto nas questões respondidas e "(N/50)") e **"Nota final"** (só com a entrega),
     pelos acertos da função `resumo_tentativas_atividade` (o gabarito não sai do banco). As

@@ -11,6 +11,7 @@
 // Com <body data-marcar-entregue="sim">: "Marcar como entregue" / "Desfazer entrega" na situação
 // do aluno (marcar-entregue-professor.js) e a lista dos alunos sem nenhuma resposta
 // (alunos-sem-inicio-entrega.js).
+// Combobox "Questões respondidas" filtra a lista por faixa (filtro-respondidas-progresso.js).
 // Plano: docs/progresso-global-atividades.md · Regra: docs/regras/atividades.md
 
 const CLASSE_PROGRESSO_GLOBAL = 'progresso-turma';
@@ -23,6 +24,7 @@ const ARQUIVO_CALCULO_PROGRESSO_GLOBAL = 'calculo-nota-progresso.js';
 const ARQUIVO_CSS_PROGRESSO_GLOBAL = '../css/progresso-turma-global.css';
 const ARQUIVO_ENTREGA_PROGRESSO_GLOBAL = 'marcar-entregue-professor.js';
 const ARQUIVO_SEM_INICIO_PROGRESSO_GLOBAL = 'alunos-sem-inicio-entrega.js';
+const ARQUIVO_FILTRO_PROGRESSO_GLOBAL = 'filtro-respondidas-progresso.js';
 // Colunas extras por tipo de atividade: arquivo do módulo e a função que cria a coluna
 // ({titulo, classeArea, atualizar(atividadeId), montarCelula(aluno), aoMudar}); o painel
 // preenche aoMudar para a coluna pedir uma atualização depois de um botão dela.
@@ -51,7 +53,7 @@ const estadoProgressoGlobal = {
     temporizador: null, lendo: false, ultimosAlunos: [], atualizarAgora: null,
     ordenacao: { chave: CHAVE_ORDEM_ALFABETICA_GLOBAL, crescente: true },
     atividadeId: null, fonte: null, memoria: { nomes: new Map() }, colunasExtras: [],
-    botoesNome: [],
+    botoesNome: [], filtro: null,
 };
 
 /**
@@ -312,12 +314,15 @@ function montarTitulosDasColunasGlobal(aoOrdenar) {
 }
 
 /**
- * Redesenha os títulos e as linhas dos alunos na ordem escolhida (sem ler o banco de novo).
+ * Redesenha os títulos e as linhas dos alunos da faixa do filtro, na ordem escolhida (sem ler
+ * o banco de novo).
  * @param {{lista: HTMLElement}} tela - Elementos da área.
  * @param {Object} medida - estrutura (Map) e totalPartes.
  */
 function desenharListaDeAlunosGlobal(tela, medida) {
-    const alunos = [...estadoProgressoGlobal.ultimosAlunos].sort(compararAlunosGlobal);
+    const { ultimosAlunos, filtro } = estadoProgressoGlobal;
+    const daFaixa = filtro ? filtro.filtrar(ultimosAlunos) : ultimosAlunos;
+    const alunos = [...daFaixa].sort(compararAlunosGlobal);
     tela.lista.replaceChildren(
         montarTitulosDasColunasGlobal(() => desenharListaDeAlunosGlobal(tela, medida)),
         ...alunos.map((aluno) => montarLinhaDoAlunoGlobal(aluno, medida)));
@@ -630,6 +635,24 @@ async function prepararEntregaProfessorGlobal(area, tela) {
 }
 
 /**
+ * Cria o combobox "Questões respondidas" e o põe na área. Uma falha aqui não derruba o painel
+ * (a lista sai sem filtro).
+ * @param {HTMLElement} area - Área do painel.
+ * @param {Function} aoMudar - Redesenha a lista quando a faixa muda.
+ */
+async function prepararFiltroGlobal(area, aoMudar) {
+    try {
+        if (typeof window.criarFiltroRespondidas !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_FILTRO_PROGRESSO_GLOBAL);
+        }
+        estadoProgressoGlobal.filtro = window.criarFiltroRespondidas(aoMudar);
+        area.appendChild(estadoProgressoGlobal.filtro.elemento);
+    } catch (erro) {
+        console.warn('Filtro do progresso:', erro.message);
+    }
+}
+
+/**
  * Monta a área "Progresso da turma" logo abaixo do cabeçalho da atividade e a atualiza a cada
  * 5 segundos. Só deve ser chamada para o professor (quem chama confere o perfil).
  * @param {number} atividadeId - Id da atividade no banco.
@@ -653,8 +676,11 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
             'Lendo...'),
         lista: criarElementoProgressoGlobal('div', CLASSE_PROGRESSO_GLOBAL + '__lista'),
     };
-    area.append(montarCabecalhoProgressoGlobal(medida), montarLegendaProgressoGlobal(),
-        tela.resumo, tela.lista);
+    area.append(montarCabecalhoProgressoGlobal(medida), montarLegendaProgressoGlobal());
+    await prepararFiltroGlobal(area, () => {
+        if (estadoProgressoGlobal.ultimosAlunos.length) desenharListaDeAlunosGlobal(tela, medida);
+    });
+    area.append(tela.resumo, tela.lista);
     cabecalho.after(area);
     await prepararColunasExtrasGlobal(tipo, area);
     await prepararBotoesNomeGlobal(tipo);
