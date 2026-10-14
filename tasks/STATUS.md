@@ -155,7 +155,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #126-a11022b6-78f3-4896 | Banco: nome_card e rotulo_card da aula 82 (card ATIVIDADE SEXTA FEIRA) | 🟡 Média | #117 | 👀 Aguardando aceite | — | [253-a11022b6](etapas/ETAPA-253-a11022b6-NOME-CARD-AULA-82-ATIVIDADE-SEXTA-FEIRA.md) |
 | #127-e846ddd4-84ea-4362 | Modal "Editar aula" fecha depois de salvar | 🟡 Média | — | 👀 Aguardando aceite | — | [254-e846ddd4](etapas/ETAPA-254-e846ddd4-FECHAR-MODAL-AULA-AO-SALVAR.md) |
 | #128-27723ef7-353d-4479 | Índices de atividades: link da atividade abre em nova aba | 🟡 Média | — | 👀 Aguardando aceite | — | [255-27723ef7](etapas/ETAPA-255-27723ef7-ATIVIDADE-ABRE-EM-NOVA-ABA.md) |
-| #129-5db69b64-150d-40d9 | Discursivas: "Suspeita de Cópia" pela IA (coluna no Progresso + alerta piscando na questão) | 🟡 Média | — | 👀 Aguardando detalhes | — | [256-5db69b64](etapas/ETAPA-256-5db69b64-SUSPEITA-DE-COPIA-DISCURSIVAS.md) |
+| #129-5db69b64-150d-40d9 | Discursivas: "Suspeita de Cópia" pela IA (coluna no Progresso + alerta piscando na questão) | 🟡 Média | — | 👀 Plano aguardando aprovação | local · main (desde 2026-10-14 14:06) | [256-5db69b64](etapas/ETAPA-256-5db69b64-SUSPEITA-DE-COPIA-DISCURSIVAS.md) |
 | #130-bddd56f9-a423-4f34 | Correção pela IA agendada da atividade 81 (a cada 30 min) | 🟡 Média | — | 👀 Aguardando aceite | — | [257-bddd56f9](etapas/ETAPA-257-bddd56f9-CORRECAO-IA-AGENDADA-ATIVIDADE-81.md) |
 
 ## Escopo
