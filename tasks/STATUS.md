@@ -23,7 +23,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | nuvem · ccr-00f69e8a-6qcla9 | #26 ([144-aff33423](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md)); etapa 140-8554d88e aguarda o usuário | 🔄 Ativa | 2026-10-11 06:28 |
 | nuvem · ccr-be208aef-c6h8oe | #24 ([142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md)) — cancelada em 2026-10-13 (fila do banco desativada, decisão D1 da #29) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | nuvem · claude/ola-zlzh8z | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)); ⛔ não mexer em Banco de Dados | 🔄 Ativa | 2026-10-10 16:21 |
-| local · main | #33 ([160-d7ade403](etapas/ETAPA-160-d7ade403-QUESTOES-ATE-O-MINIMO-TESTES-FRONTEND.md)) e #27 a #31 aguardam aceite; #34 livre para outras IAs; #32 cancelada | 👀 Aguardando o usuário | 2026-10-14 10:05 |
+| local · main | #33 ([160-d7ade403](etapas/ETAPA-160-d7ade403-QUESTOES-ATE-O-MINIMO-TESTES-FRONTEND.md)), #35 e #27 a #31 aguardam aceite; #34 livre para outras IAs; #32 cancelada | 👀 Aguardando o usuário | 2026-10-14 10:15 |
 
 ## 📌 Tarefas
 
@@ -61,6 +61,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #32-a45aa9a6-f4ec-4787 | Desafio 1 de Testes de Front-End: 3 casos de teste do Login (página SENAI + banco) | 🟠 Alta | — | ⛔ Cancelada em 2026-10-14 08:35 (pasta errada: vai para C:/fontes/gerador-atividades) | — | [159-a45aa9a6](etapas/ETAPA-159-a45aa9a6-DESAFIO-01-CASOS-DE-TESTE-LOGIN.md) |
 | #33-d7ade403-0783-49be | Tela e PDF só com as questões 1 até o mínimo (Cálculo Nota) — Testes de Front-End, Aula 02 | 🟠 Alta | — | 👀 Aguardando aceite | — | [160-d7ade403](etapas/ETAPA-160-d7ade403-QUESTOES-ATE-O-MINIMO-TESTES-FRONTEND.md) |
 | #34-7aee2d7e-1445-47ed | Criar as tarefas "questões até o mínimo" das demais matérias (uma por matéria) | 🟠 Alta | #33 | ⬜ Pendente | — | [161-7aee2d7e](etapas/ETAPA-161-7aee2d7e-CRIAR-TASKS-QUESTOES-ATE-O-MINIMO.md) |
+| #35-e7fa7621-26e1-40e0 | Exportar PDF: lista "Turma" já com a turma favorita | 🟠 Alta | — | 👀 Aguardando aceite | — | [162-e7fa7621](etapas/ETAPA-162-e7fa7621-TURMA-FAVORITA-NA-EXPORTACAO.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -258,6 +259,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 159-a45aa9a6 | Desafio 1: 3 casos de teste do Login (#32, pedida em 2026-10-14) | [ETAPA-159-a45aa9a6-DESAFIO-01-CASOS-DE-TESTE-LOGIN.md](etapas/ETAPA-159-a45aa9a6-DESAFIO-01-CASOS-DE-TESTE-LOGIN.md) |
 | 160-d7ade403 | Tela e PDF só até o mínimo de questões (#33, pedida em 2026-10-14) | [ETAPA-160-d7ade403-QUESTOES-ATE-O-MINIMO-TESTES-FRONTEND.md](etapas/ETAPA-160-d7ade403-QUESTOES-ATE-O-MINIMO-TESTES-FRONTEND.md) |
 | 161-7aee2d7e | Criar as tarefas das demais matérias (#34, pedida em 2026-10-14) | [ETAPA-161-7aee2d7e-CRIAR-TASKS-QUESTOES-ATE-O-MINIMO.md](etapas/ETAPA-161-7aee2d7e-CRIAR-TASKS-QUESTOES-ATE-O-MINIMO.md) |
+| 162-e7fa7621 | Turma favorita na exportação (#35, pedida em 2026-10-14) | [ETAPA-162-e7fa7621-TURMA-FAVORITA-NA-EXPORTACAO.md](etapas/ETAPA-162-e7fa7621-TURMA-FAVORITA-NA-EXPORTACAO.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
