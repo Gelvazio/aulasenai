@@ -5,9 +5,9 @@
 assuma ela, salve esta regra no agents.md e nas regras de IA pra todas"
 **Objetivo:** todas as IAs, a cada pedido: 1) criar a TASK, 2) publicar no quadro (commit + push),
 3) assumir (reservar, commit + push) e só então trabalhar.
-**Próximo passo:** 276.1 — gravar a regra.
+**Próximo passo:** 276.2 — aceite do usuário.
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 276.1 | Regra no `AGENTS.md` (regra 1) e em `.claude/rules/tasks/ciclo-da-task.md` (vale para todas as IAs) + `docs/HISTORICO-REGRAS.md` + visualizador | 🔄 Em progresso | — | — |
-| 276.2 | Aceite do usuário | ⬜ Pendente | — | — |
+| 276.1 | Regra no `AGENTS.md` (regra 1) e em `.claude/rules/tasks/ciclo-da-task.md` (vale para todas as IAs) + `docs/HISTORICO-REGRAS.md` + visualizador | ✅ Concluído | 2026-10-14 20:20 | `grep` das regras; visualizador regenerado |
+| 276.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |

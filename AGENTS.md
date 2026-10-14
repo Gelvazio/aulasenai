@@ -27,6 +27,9 @@ As regras ficam divididas por assunto em [`.claude/rules/`](.claude/rules/INDEX.
    - **Primeiro passo, sempre** (2026-10-14): criar a TASK **reservada para a sessão atual** e
      já gravar no quadro (commit + push da reserva) **antes** de ler código, explorar arquivos ou
      pedir detalhes.
+   - **Todo pedido, nesta ordem** (2026-10-14, #149; vale para todas as IAs): **1) criar** a TASK
+     (etapa + linhas do `STATUS.md`), **2) publicar** no quadro (commit + push) e **3) assumir**
+     (reservar em "Em uso por" e na linha da frente, commit + push) — só então trabalhar.
 2. **Tarefa grande = plano na própria etapa + aprovação** (sem plano separado em `docs/`).
 3. **Cada informação em um lugar só:** etapa = detalhes; `tasks/STATUS.md` = índice
    ([`tasks/quadro.md`](.claude/rules/tasks/quadro.md)). O que não está no quadro não aconteceu.

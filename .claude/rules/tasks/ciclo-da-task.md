@@ -10,6 +10,9 @@ Reutilizável em qualquer projeto. Onde fica cada informação: `quadro.md`.
 
 ## 1. Abrir
 
+**Todo pedido, nesta ordem:** **criar** a TASK → **publicar** no quadro (commit + push) →
+**assumir** (reserva, commit + push) → só então trabalhar. Vale para todas as IAs.
+
 1. Sincronizar com o remoto (regras de git do projeto) e ler o `tasks/STATUS.md`.
 2. Criar a etapa (`quadro.md`), a linha em "📌 Tarefas" e a linha em "🗂️ Etapas".
 3. Reservar a tarefa (`frentes-e-reserva.md`).
