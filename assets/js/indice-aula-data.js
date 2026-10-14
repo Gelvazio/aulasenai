@@ -21,6 +21,8 @@ const TEXTO_AULA_SEM_CADASTRO = '📅 Aula não cadastrada no banco (use CADASTR
 const CLASSE_CARD_AULA_EXCLUIDA = 'aula--excluida';
 const AULA_EXCLUIDA = 1;
 const DIGITOS_NUMERO_AULA = 2;
+const PASTA_ATIVIDADES_AULA = 'ATIVIDADES';
+const SELETOR_CURSO_DO_INDICE = '[data-curso-id]';
 
 const estadoCardsAula = { cards: [], ehProfessor: false, ehAdministrador: false };
 
@@ -94,13 +96,57 @@ function encontrarAulaPeloRotulo(item, aulas) {
 }
 
 /**
+ * Nome da pasta da matéria pelo endereço (.../<MATERIA>/ATIVIDADES/index.html), com espaços no
+ * lugar dos hífens, como na coluna materia.descricao.
+ * @returns {string} Nome da matéria ou texto vazio.
+ */
+function lerNomeMateriaDaPasta() {
+    const partes = decodeURIComponent(location.pathname).split('/').filter(Boolean);
+    const posicao = partes.map((parte) => parte.toUpperCase()).lastIndexOf(PASTA_ATIVIDADES_AULA);
+    if (posicao < 1) return '';
+
+    return partes[posicao - 1].replace(/-/g, ' ');
+}
+
+/**
+ * Id da matéria do índice: pela aula de um card já encontrada ou, se nenhuma veio (o aluno não
+ * lê atividades bloqueadas), pelo nome da pasta e pelo curso da faixa de matérias.
+ * @param {Object[]} itens - Cards e aulas.
+ * @returns {Promise<number|null>} Id da matéria ou null.
+ */
+async function descobrirMateriaDoIndice(itens) {
+    const materia = itens.find((item) => item.aula?.materia_id)?.aula.materia_id;
+    if (materia) return materia;
+
+    const nome = lerNomeMateriaDaPasta();
+    if (!nome) return null;
+
+    const curso = document.querySelector(SELETOR_CURSO_DO_INDICE)?.dataset.cursoId || '';
+    return buscarMateriaPeloNomeCard(nome, curso);
+}
+
+/**
+ * Aula do card: a da primeira página do card que o usuário consegue ler no banco (o aluno não
+ * lê as atividades bloqueadas, então a primeira página pode não vir).
+ * @param {{paginas: string[]}} item - Card com as páginas dos links principais.
+ * @param {Map<string, Object>} aulas - Aula de cada página lida.
+ * @returns {Object|null} Aula do card ou null.
+ */
+function encontrarAulaPelasPaginas(item, aulas) {
+    const pagina = item.paginas.find((caminho) => aulas.has(caminho));
+    return pagina ? aulas.get(pagina) : null;
+}
+
+/**
  * Completa os cards sem aula (atividade não lida) buscando a aula na mesma matéria.
  * @param {Object[]} itens - Cards e aulas.
  */
 async function completarAulasPeloRotulo(itens) {
     const faltando = itens.filter((item) => !item.aula);
-    const materia = itens.find((item) => item.aula?.materia_id)?.aula.materia_id;
-    if (!faltando.length || !materia) return;
+    if (!faltando.length) return;
+
+    const materia = await descobrirMateriaDoIndice(itens);
+    if (!materia) return;
 
     const aulas = await listarAulasDaMateriaCard(materia);
     faltando.forEach((item) => { item.aula = encontrarAulaPeloRotulo(item, aulas); });
@@ -211,30 +257,27 @@ async function verificarProfessorCardAula() {
 }
 
 /**
- * Caminho da página do link principal do card (lerHrefCrud também lê o link guardado do card
- * bloqueado, em data-href-bloqueado).
+ * Caminhos das páginas dos links principais do card (lerHrefCrud também lê o link guardado do
+ * card bloqueado, em data-href-bloqueado).
  * @param {HTMLElement} card - Card do índice.
- * @returns {string|null} Caminho da página ou null.
+ * @returns {string[]} Caminhos das páginas, na ordem do card.
  */
-function lerPaginaPrincipalDoCard(card) {
-    const link = card.querySelector(SELETOR_LINK_PRINCIPAL_AULA);
-    if (!link) return null;
-
-    return obterCaminhoHtml(lerHrefCrud(link));
+function lerPaginasPrincipaisDoCard(card) {
+    const links = [...card.querySelectorAll(SELETOR_LINK_PRINCIPAL_AULA)];
+    return links.map((link) => obterCaminhoHtml(lerHrefCrud(link))).filter(Boolean);
 }
 
 /**
  * Monta a lista de cards com os textos do HTML (usados só para achar a aula).
- * @returns {Object[]} Itens { card, pagina, rotuloHtml, nomeHtml, aula }.
+ * @returns {Object[]} Itens { card, paginas, pagina, rotuloHtml, nomeHtml, aula }.
  */
 function lerCardsDoIndice() {
-    return [...document.querySelectorAll(SELETOR_CARD_AULA)].map((card) => ({
-        card,
-        pagina: lerPaginaPrincipalDoCard(card),
-        rotuloHtml: lerTextoDoCard(card, SELETOR_ROTULO_CARD_AULA),
-        nomeHtml: lerTextoDoCard(card, SELETOR_NOME_CARD_AULA),
-        aula: null,
-    }));
+    return [...document.querySelectorAll(SELETOR_CARD_AULA)].map((card) => {
+        const paginas = lerPaginasPrincipaisDoCard(card);
+        return { card, paginas, pagina: paginas[0] || null,
+            rotuloHtml: lerTextoDoCard(card, SELETOR_ROTULO_CARD_AULA),
+            nomeHtml: lerTextoDoCard(card, SELETOR_NOME_CARD_AULA), aula: null };
+    });
 }
 
 /**
@@ -261,9 +304,9 @@ async function desenharCardsDoIndice() {
         estadoCardsAula.ehAdministrador = await verificarAdministradorCard().catch(() => false);
     }
     try {
-        const paginas = [...new Set(itens.map((item) => item.pagina).filter(Boolean))];
+        const paginas = [...new Set(itens.flatMap((item) => item.paginas))];
         const aulas = await buscarAulasDasPaginasCard(paginas);
-        itens.forEach((item) => { item.aula = aulas.get(item.pagina) || null; });
+        itens.forEach((item) => { item.aula = encontrarAulaPelasPaginas(item, aulas); });
         await completarAulasPeloRotulo(itens);
     } catch (erro) {
         console.warn('Aulas dos cards indisponíveis:', erro.message);

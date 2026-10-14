@@ -63,7 +63,8 @@ async function atividadeDaPaginaLiberada() {
  * Mostra o aviso de bloqueio no lugar do conteúdo e tira os links dos slides da página.
  */
 function mostrarAvisoBloqueioPagina() {
-    document.querySelectorAll(SELETOR_LINKS_SLIDES_PAGINA_BLOQUEIO).forEach((link) => link.remove());
+    const linksDosSlides = document.querySelectorAll(SELETOR_LINKS_SLIDES_PAGINA_BLOQUEIO);
+    linksDosSlides.forEach((link) => link.remove());
     const container = document.querySelector(SELETOR_CONTAINER_PAGINA_BLOQUEIO);
     if (!container) return;
 

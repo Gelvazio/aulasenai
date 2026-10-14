@@ -4,6 +4,7 @@
 
 const TABELA_AULAS_CARD = 'aulas';
 const TABELA_ATIVIDADE_AULA = 'atividade';
+const TABELA_MATERIA_CARD = 'materia';
 const CAMPOS_AULA_CARD = 'id,numero,titulo,descricao,materia_id,curso_id,duracao_minutos,' +
     'data_planejada,sequencia,ativo,visivel_alunos,conteudo,rotulo_card,nome_card,excluido,' +
     'materia(descricao),curso(nome_completo)';
@@ -37,6 +38,19 @@ async function buscarAulasDasPaginasCard(paginas) {
 async function listarAulasDaMateriaCard(idMateria) {
     return sbGet(TABELA_AULAS_CARD,
         'select=' + CAMPOS_AULA_CARD + '&materia_id=eq.' + encodeURIComponent(idMateria));
+}
+
+/**
+ * Busca o id da matéria pelo nome (materia.descricao, sem diferenciar maiúsculas) e pelo curso.
+ * @param {string} nome - Nome da matéria (nome da pasta com espaços).
+ * @param {string} curso - Id do curso (vazio = qualquer curso).
+ * @returns {Promise<number|null>} Id da matéria, ou null se não houver exatamente uma.
+ */
+async function buscarMateriaPeloNomeCard(nome, curso) {
+    const filtroCurso = curso ? '&curso_id=eq.' + encodeURIComponent(curso) : '';
+    const linhas = await sbGet(TABELA_MATERIA_CARD,
+        'select=id&descricao=ilike.' + encodeURIComponent(nome) + filtroCurso);
+    return linhas.length === 1 ? linhas[0].id : null;
 }
 
 /**

@@ -145,6 +145,9 @@ function bloquearCardAtividade(card) {
  * @param {HTMLAnchorElement} link - Link da atividade bloqueada.
  */
 function bloquearLinkAluno(link) {
+    // Guarda o endereço: o indice-aula-data.js ainda precisa dele para achar a aula do card.
+    const endereco = link.getAttribute('href');
+    if (endereco) link.setAttribute(ATRIBUTO_HREF_GUARDADO, endereco);
     link.removeAttribute('href');
     link.setAttribute('aria-disabled', 'true');
     link.setAttribute('tabindex', '-1');
