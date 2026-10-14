@@ -107,6 +107,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #78-1178b4ef-02fb-47b2 | Professor marca entregue: Testes de Back End (Tecnico Informatica Internet, 0 páginas) | 🟡 Média | #45 | ⬜ Pendente | — | [205-1178b4ef](etapas/ETAPA-205-1178b4ef-PROFESSOR-MARCA-ENTREGUE-TESTES-DE-BACK-END.md) |
 | #79-376adfe2-9eb6-4646 | Professor marca entregue: Versionamento e Colaboracao (Tecnico Informatica Internet, 0 páginas) | 🟡 Média | #45 | ⬜ Pendente | — | [206-376adfe2](etapas/ETAPA-206-376adfe2-PROFESSOR-MARCA-ENTREGUE-VERSIONAMENTO-E-COLABORACAO.md) |
 | #80-4fc4d9dd-d362-4b7c | Botão "📘 Apostila" no card da matéria (Testes de Front-End, índice do curso) | 🟡 Média | — | 👀 Aguardando aceite | — | [207-4fc4d9dd](etapas/ETAPA-207-4fc4d9dd-BOTAO-APOSTILA-NO-CARD-DA-MATERIA.md) |
+| #81-9cf63981-df1e-4f36 | Apostilas sem atividades ou perguntas (regra no gerador) + Testes de Front-End sem exercícios e vídeos | 🟠 Alta | — | 🔄 Em execução | local · main (desde 2026-10-14 10:45) | [208-9cf63981](etapas/ETAPA-208-9cf63981-APOSTILAS-SEM-ATIVIDADES-OU-PERGUNTAS.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -350,6 +351,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 205-1178b4ef | Professor marca entregue: Testes de Back End (#78, criada pela #45 em 2026-10-14) | [ETAPA-205-1178b4ef-PROFESSOR-MARCA-ENTREGUE-TESTES-DE-BACK-END.md](etapas/ETAPA-205-1178b4ef-PROFESSOR-MARCA-ENTREGUE-TESTES-DE-BACK-END.md) |
 | 206-376adfe2 | Professor marca entregue: Versionamento e Colaboracao (#79, criada pela #45 em 2026-10-14) | [ETAPA-206-376adfe2-PROFESSOR-MARCA-ENTREGUE-VERSIONAMENTO-E-COLABORACAO.md](etapas/ETAPA-206-376adfe2-PROFESSOR-MARCA-ENTREGUE-VERSIONAMENTO-E-COLABORACAO.md) |
 | 207-4fc4d9dd | Botão "📘 Apostila" no card da matéria (#80, tarefa pequena, 2026-10-14) | [ETAPA-207-4fc4d9dd-BOTAO-APOSTILA-NO-CARD-DA-MATERIA.md](etapas/ETAPA-207-4fc4d9dd-BOTAO-APOSTILA-NO-CARD-DA-MATERIA.md) |
+| 208-9cf63981 | Apostilas sem atividades ou perguntas + Testes de Front-End sem exercícios e vídeos (#81, tarefa grande, 2026-10-14) | [ETAPA-208-9cf63981-APOSTILAS-SEM-ATIVIDADES-OU-PERGUNTAS.md](etapas/ETAPA-208-9cf63981-APOSTILAS-SEM-ATIVIDADES-OU-PERGUNTAS.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
