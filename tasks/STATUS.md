@@ -155,6 +155,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #126-a11022b6-78f3-4896 | Banco: nome_card e rotulo_card da aula 82 (card ATIVIDADE SEXTA FEIRA) | 🟡 Média | #117 | 👀 Aguardando aceite | — | [253-a11022b6](etapas/ETAPA-253-a11022b6-NOME-CARD-AULA-82-ATIVIDADE-SEXTA-FEIRA.md) |
 | #127-e846ddd4-84ea-4362 | Modal "Editar aula" fecha depois de salvar | 🟡 Média | — | 👀 Aguardando aceite | — | [254-e846ddd4](etapas/ETAPA-254-e846ddd4-FECHAR-MODAL-AULA-AO-SALVAR.md) |
 | #128-27723ef7-353d-4479 | Índices de atividades: link da atividade abre em nova aba | 🟡 Média | — | 👀 Aguardando aceite | — | [255-27723ef7](etapas/ETAPA-255-27723ef7-ATIVIDADE-ABRE-EM-NOVA-ABA.md) |
+| #129-5db69b64-150d-40d9 | Discursivas: "Suspeita de Cópia" pela IA (coluna no Progresso + alerta piscando na questão) | 🟡 Média | — | 👀 Aguardando detalhes | — | [256-5db69b64](etapas/ETAPA-256-5db69b64-SUSPEITA-DE-COPIA-DISCURSIVAS.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -446,6 +447,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 253-a11022b6 | Banco: nome_card e rotulo_card da aula 82 (#126, 2026-10-14) | [ETAPA-253-a11022b6-NOME-CARD-AULA-82-ATIVIDADE-SEXTA-FEIRA.md](etapas/ETAPA-253-a11022b6-NOME-CARD-AULA-82-ATIVIDADE-SEXTA-FEIRA.md) |
 | 254-e846ddd4 | Modal "Editar aula" fecha ao salvar (#127, 2026-10-14) | [ETAPA-254-e846ddd4-FECHAR-MODAL-AULA-AO-SALVAR.md](etapas/ETAPA-254-e846ddd4-FECHAR-MODAL-AULA-AO-SALVAR.md) |
 | 255-27723ef7 | Atividade abre em nova aba (#128, 2026-10-14) | [ETAPA-255-27723ef7-ATIVIDADE-ABRE-EM-NOVA-ABA.md](etapas/ETAPA-255-27723ef7-ATIVIDADE-ABRE-EM-NOVA-ABA.md) |
+| 256-5db69b64 | Discursivas: Suspeita de Cópia (#129, 2026-10-14) | [ETAPA-256-5db69b64-SUSPEITA-DE-COPIA-DISCURSIVAS.md](etapas/ETAPA-256-5db69b64-SUSPEITA-DE-COPIA-DISCURSIVAS.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
