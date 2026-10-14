@@ -1,6 +1,12 @@
 /* Combo "Aluno" do professor nas atividades (objetivas e discursivas) (respostas-aluno-professor.js). */
 :root {
     --respostas-aluno-aviso: #1a4f8b;
+    --respostas-aluno-chave-fundo: #cbd5e0;
+    --respostas-aluno-chave-ligada: #2f855a;
+    --respostas-aluno-bolinha-cor: #ffffff;
+    --respostas-aluno-chave-largura: 30px;
+    --respostas-aluno-chave-altura: 16px;
+    --respostas-aluno-bolinha: 12px;
 }
 
 .respostas-aluno-professor {
@@ -24,4 +30,56 @@
 .respostas-aluno-professor__aviso {
     color: var(--respostas-aluno-aviso);
     font-size: 14px;
+}
+
+/* ON/OFF "Pendente Correcao": a caixa fica invisível e a chave ao lado mostra o estado. */
+.respostas-aluno-professor__pendente {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.respostas-aluno-professor__pendente input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.respostas-aluno-professor__chave {
+    position: relative;
+    flex: none;
+    width: var(--respostas-aluno-chave-largura);
+    height: var(--respostas-aluno-chave-altura);
+    border-radius: var(--respostas-aluno-chave-altura);
+    background: var(--respostas-aluno-chave-fundo);
+    transition: background 0.2s;
+}
+
+.respostas-aluno-professor__chave::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: var(--respostas-aluno-bolinha);
+    height: var(--respostas-aluno-bolinha);
+    border-radius: 50%;
+    background: var(--respostas-aluno-bolinha-cor);
+    transition: transform 0.2s;
+}
+
+.respostas-aluno-professor__pendente input:checked + .respostas-aluno-professor__chave {
+    background: var(--respostas-aluno-chave-ligada);
+}
+
+.respostas-aluno-professor__pendente input:checked + .respostas-aluno-professor__chave::after {
+    transform: translateX(
+        calc(var(--respostas-aluno-chave-largura) - var(--respostas-aluno-bolinha) - 4px));
+}
+
+.respostas-aluno-professor__pendente input:focus-visible + .respostas-aluno-professor__chave {
+    outline: 2px solid var(--respostas-aluno-chave-ligada);
+    outline-offset: 2px;
 }

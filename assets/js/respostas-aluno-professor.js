@@ -1,11 +1,17 @@
 // Professor: combo "Aluno" nas páginas de atividade (objetivas e discursivas) para carregar na
 // tela as respostas gravadas de um aluno (somente leitura). Só aparece para o professor; o RLS
 // limita aos alunos das turmas dele. Nada é gravado.
+// ON/OFF "Pendente Correcao" ao lado do combo (desligado ao abrir): ligado, o combo lista só os
+// alunos que o professor ainda não corrigiu. Corrigido: a página informa em opcoes.lerCorrigidos
+// (discursiva); sem ela, na objetiva, corrigido = entregue. Tarefa #153.
 // Carregado por assets/js/avaliacao-discursiva.js e assets/js/respostas-atividade.js, que
 // informam a tabela, as colunas e como mostrar as respostas. Depende de js/supabase.js (sbGet).
 
 const CLASSE_RESPOSTAS_ALUNO = 'respostas-aluno-professor';
 const TEXTO_OPCAO_VAZIA = '— Selecione o aluno —';
+const TEXTO_PENDENTE_CORRECAO = 'Pendente Correcao';
+const DICA_PENDENTE_CORRECAO = 'Ligado: o combo lista só os alunos que o professor ainda não ' +
+    'corrigiu. Desligado: todos os alunos.';
 const BASE_SCRIPTS_RESPOSTAS_ALUNO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 
 /**
@@ -107,10 +113,68 @@ async function lerRespostasDoAlunoEscolhido(aluno, opcoes) {
  */
 function criarComboAlunos(alunos) {
     const combo = document.createElement('select');
-    combo.appendChild(new Option(TEXTO_OPCAO_VAZIA, ''));
+    preencherComboAlunos(combo, alunos);
+    return combo;
+}
+
+/**
+ * Preenche o combo com a opção vazia e os alunos da lista.
+ * @param {HTMLSelectElement} combo - Combo a preencher (é esvaziado antes).
+ * @param {Object[]} alunos - Alunos que aparecem no combo.
+ */
+function preencherComboAlunos(combo, alunos) {
+    combo.replaceChildren(new Option(TEXTO_OPCAO_VAZIA, ''));
     alunos.forEach((aluno, indice) => combo.appendChild(new Option(rotuloOpcaoAluno(aluno),
         String(indice))));
-    return combo;
+}
+
+/**
+ * Cria o ON/OFF "Pendente Correcao" (desligado ao abrir) com o visual de chave.
+ * @param {function(boolean): void} aoMudar - Chamada com o novo estado ao clicar.
+ * @returns {HTMLLabelElement} Etiqueta pronta para entrar na tela.
+ */
+function criarChavePendenteCorrecao(aoMudar) {
+    const etiqueta = criarElementoRespostasAluno('label', CLASSE_RESPOSTAS_ALUNO + '__pendente');
+    etiqueta.title = DICA_PENDENTE_CORRECAO;
+    const caixa = document.createElement('input');
+    caixa.type = 'checkbox';
+    caixa.addEventListener('change', () => aoMudar(caixa.checked));
+    const chave = criarElementoRespostasAluno('span', CLASSE_RESPOSTAS_ALUNO + '__chave');
+    const texto = criarElementoRespostasAluno('span', '', TEXTO_PENDENTE_CORRECAO);
+    etiqueta.append(caixa, chave, texto);
+    return etiqueta;
+}
+
+/**
+ * Descobre quem o professor já corrigiu (discursiva: pela página; objetiva: entregue).
+ * @param {Object[]} alunos - Lista de listarAlunosQueResponderam.
+ * @param {Object} opcoes - Opções de montarRespostasDoAluno (lerCorrigidos opcional).
+ * @returns {Promise<Set<string>>} Chaves "alunoId|tentativa" dos alunos corrigidos.
+ */
+async function lerAlunosCorrigidos(alunos, opcoes) {
+    if (opcoes.lerCorrigidos) return opcoes.lerCorrigidos(opcoes.atividadeId);
+    return new Set(alunos.filter((aluno) => aluno.entregueEm)
+        .map((aluno) => aluno.alunoId + '|' + aluno.tentativa));
+}
+
+/**
+ * Refaz a lista do combo conforme o "Pendente Correcao"; se o aluno escolhido sair da lista,
+ * limpa a tela.
+ * @param {{combo: HTMLSelectElement, alunos: Object[], aviso: HTMLElement, todos: Object[]}} tela
+ *     Elementos da tela (alunos = os visíveis, todos = a lista completa).
+ * @param {{somentePendentes: boolean, corrigidos: Set<string>}} filtro - Estado do filtro.
+ * @param {Object} opcoes - Opções de montarRespostasDoAluno.
+ */
+async function aplicarPendenteCorrecao(tela, filtro, opcoes) {
+    const escolhido = tela.alunos[Number(tela.combo.value)];
+    tela.alunos = filtro.somentePendentes
+        ? tela.todos.filter((aluno) =>
+            !filtro.corrigidos.has(aluno.alunoId + '|' + aluno.tentativa))
+        : tela.todos;
+    preencherComboAlunos(tela.combo, tela.alunos);
+    const indice = tela.alunos.indexOf(escolhido);
+    tela.combo.value = indice >= 0 ? String(indice) : '';
+    if (escolhido && indice < 0) await carregarAlunoEscolhido(tela, opcoes);
 }
 
 /**
@@ -164,9 +228,19 @@ async function montarRespostasDoAluno(destino, opcoes) {
     const combo = criarComboAlunos(alunos);
     const aviso = criarElementoRespostasAluno('span', CLASSE_RESPOSTAS_ALUNO + '__aviso');
     etiqueta.appendChild(combo);
-    area.append(etiqueta, aviso);
-    combo.addEventListener('change', () => carregarAlunoEscolhido({ combo, alunos, aviso },
-        opcoes));
+    const tela = { combo, alunos, aviso, todos: alunos };
+    const filtro = { somentePendentes: false, corrigidos: new Set() };
+    const pendente = criarChavePendenteCorrecao(async (ligado) => {
+        try {
+            if (ligado) filtro.corrigidos = await lerAlunosCorrigidos(alunos, opcoes);
+            filtro.somentePendentes = ligado;
+            await aplicarPendenteCorrecao(tela, filtro, opcoes);
+        } catch (erro) {
+            aviso.textContent = '❌ Não foi possível filtrar os pendentes: ' + erro.message;
+        }
+    });
+    area.append(etiqueta, pendente, aviso);
+    combo.addEventListener('change', () => carregarAlunoEscolhido(tela, opcoes));
 }
 
 (function incluirEstiloRespostasAluno() {

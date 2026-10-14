@@ -263,6 +263,12 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     **não corrigiu** (algum tópico sem nota do professor) ; desligado,
     mostra também as já corrigidas. Os dois filtros valem **juntos** (um não anula o outro). Só
     muda a tela. Mesmo arquivo do "Mostrar Certas".
+  - **Combo "Aluno" — ON/OFF "Pendente Correcao" (2026-10-14, #153):** ao lado do combo
+    "Aluno:" de "Respostas dos alunos" (objetiva e discursiva). Desligado (padrão): lista todos;
+    ligado: lista só os alunos que o professor **ainda não corrigiu**. Discursiva: corrigido =
+    entregou e tem nota do professor em todas as questões respondidas
+    (`assets/js/corrigidos-discursiva.js`); objetiva: corrigido = entregue. Só muda a tela.
+    Código: `assets/js/respostas-aluno-professor.js` + CSS.
   - **Filtros lembrados (2026-10-14, #142):** "Questões respondidas", "Tarefa Entregue?" e
     "Mostrar quem faltou" guardam a escolha no **localStorage** do navegador (chaves
     `progresso-turma:*`, só preferência de tela) e voltam ao abrir a página; sem escolha

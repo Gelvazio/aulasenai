@@ -20,6 +20,7 @@ const ARQUIVO_PROGRESSO_TURMA = 'progresso-turma-global.js';
 const ARQUIVO_MEU_PROGRESSO_DISCURSIVA = 'progresso-do-aluno.js';
 const ARQUIVO_NOTA_IA_RESPOSTAS = 'nota-ia-respostas-discursiva.js';
 const ARQUIVO_MOSTRAR_CERTAS = 'mostrar-certas-discursiva.js';
+const ARQUIVO_CORRIGIDOS = 'corrigidos-discursiva.js';
 const ARQUIVO_CONFIRMAR_PROFESSOR = 'confirmar-nota-professor-discursiva.js';
 const ARQUIVO_FINALIZAR_PROFESSOR = 'finalizar-atividade-professor.js';
 const ARQUIVO_RESULTADO_ALUNO = 'resultado-aluno-discursiva.js';
@@ -367,6 +368,7 @@ async function abrirRespostasDoAluno(painel, dados) {
             colunas: 'item,topico,texto',
             converter: converterRespostasDiscursivas,
             preencher: preencherCampos,
+            lerCorrigidos: lerCorrigidosDaDiscursiva,
             aoMostrarAluno: (aluno) => Promise.all([
                 alternarRespostasDoProfessor(Boolean(aluno)),
                 mostrarNotasIaDasRespostas(aluno, dados.atividadeId),
@@ -476,6 +478,20 @@ async function mostrarNotasIaDasRespostas(aluno, atividadeId) {
     } catch (erro) {
         console.warn('Nota da IA nas respostas:', erro.message);
     }
+}
+
+/**
+ * Professor: quem já foi corrigido (para o ON/OFF "Pendente Correcao" do combo de aluno,
+ * assets/js/corrigidos-discursiva.js).
+ * @param {number} atividadeId - Id da atividade.
+ * @returns {Promise<Set<string>>} Chaves "alunoId|tentativa" dos alunos corrigidos.
+ * @throws {Error} Se o módulo ou o banco falhar.
+ */
+async function lerCorrigidosDaDiscursiva(atividadeId) {
+    if (typeof window.lerCorrigidosDiscursiva !== 'function') {
+        await carregarModuloDiscursiva(ARQUIVO_CORRIGIDOS);
+    }
+    return window.lerCorrigidosDiscursiva(atividadeId);
 }
 
 /**
