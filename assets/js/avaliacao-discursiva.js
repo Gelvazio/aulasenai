@@ -21,6 +21,8 @@ const ARQUIVO_MEU_PROGRESSO_DISCURSIVA = 'progresso-do-aluno.js';
 const ARQUIVO_NOTA_IA_RESPOSTAS = 'nota-ia-respostas-discursiva.js';
 const ARQUIVO_MOSTRAR_CERTAS = 'mostrar-certas-discursiva.js';
 const ARQUIVO_CORRIGIDOS = 'corrigidos-discursiva.js';
+const ARQUIVOS_MODAIS_NOTA = ['modal-nota-discursiva.js', 'historico-nota-discursiva.js',
+    'justificativa-mudanca-nota.js'];
 const ARQUIVO_CONFIRMAR_PROFESSOR = 'confirmar-nota-professor-discursiva.js';
 const ARQUIVO_FINALIZAR_PROFESSOR = 'finalizar-atividade-professor.js';
 const ARQUIVO_RESULTADO_ALUNO = 'resultado-aluno-discursiva.js';
@@ -433,6 +435,7 @@ async function abrirResultadoDoAluno(dados) {
         if (typeof window.mostrarResultadoDoAluno !== 'function') {
             await carregarModuloDiscursiva(ARQUIVO_RESULTADO_ALUNO);
         }
+        await carregarModaisDaNota();
         await window.mostrarResultadoDoAluno(dados.atividadeId);
     } catch (erro) {
         console.warn('Resultado do aluno:', erro.message);
@@ -572,12 +575,24 @@ async function mostrarFinalizarDoProfessor(aluno, atividadeId) {
  */
 async function mostrarConfirmacaoDoProfessor(aluno, atividadeId) {
     try {
+        await carregarModaisDaNota();
         if (typeof window.mostrarConfirmacaoProfessor !== 'function') {
             await carregarModuloDiscursiva(ARQUIVO_CONFIRMAR_PROFESSOR);
         }
         await window.mostrarConfirmacaoProfessor(aluno, atividadeId);
     } catch (erro) {
         console.warn('Confirmação do professor:', erro.message);
+    }
+}
+
+/**
+ * Carrega (uma vez) o modal, o histórico e a justificativa de mudança da nota, em ordem.
+ * @returns {Promise<void>} Resolve quando os três scripts carregaram.
+ */
+async function carregarModaisDaNota() {
+    if (typeof window.pedirJustificativaMudanca === 'function') return;
+    for (const arquivo of ARQUIVOS_MODAIS_NOTA) {
+        await carregarModuloDiscursiva(arquivo);
     }
 }
 

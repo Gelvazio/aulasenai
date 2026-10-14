@@ -189,7 +189,7 @@ async function aceitarCertasDaIa(certas, dados, tela) {
 
     const aceitou = await confirmarPopup(certas.length + ' alternativa(s) sem a sua correção ' +
         'estão certas pela IA e serão confirmadas com a nota da IA. Depois de confirmada, a ' +
-        'nota não pode mais ser alterada, nem pelo professor. Confirmar?',
+        'nota só pode ser mudada com uma justificativa, que fica no histórico. Confirmar?',
     { titulo: TITULO_POPUP_CONFIRMAR_CORRECAO, textoConfirmar: 'Confirmar' });
     if (!aceitou) return false;
 

@@ -1,7 +1,9 @@
 // Aluno: quando a avaliação discursiva já foi entregue e o professor liberou os gabaritos da turma,
 // a página volta com as respostas do aluno e mostra: a nota (função notas_media_final), o
 // resultado de cada alternativa corrigida pelo professor (✅ Certa / 🟡 Meia certa / ❌ Errada,
-// ⏳ se ainda não corrigida), a observação da IA do porquê (balão grande) e o padrão de resposta.
+// ⏳ se ainda não corrigida), ABAIXO da alternativa errada ou meia certa a explicação do porquê
+// (sem dizer que foi a IA) e, se o professor mudou a nota, a justificativa da mudança; o botão
+// "🕒 Histórico" abre a linha do tempo. Mostra também o padrão de resposta (tarefa #156).
 // Só lê o que o RLS deixa o aluno ver (as próprias notas confirmadas). Nada é gravado.
 // Carregado por assets/js/avaliacao-discursiva.js. Depende de js/supabase.js.
 // Regra: docs/regras/atividades.md
@@ -15,6 +17,7 @@ const SELETOR_DESTINO_RESULTADO = '.content-section';
 const SELETOR_PAINEL_RESULTADO = '#painel-discursivo';
 const TOLERANCIA_RESULTADO = 0.001;
 const PREFIXO_COMENTARIO_IA = /^\[IA\]\s*/;
+const TABELA_HISTORICO_RESULTADO = 'correcao_discursiva_historico';
 const BASE_SCRIPTS_RESULTADO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const RESULTADOS_ALUNO = {
     certa: { icone: '✅', texto: 'Certa', modificador: 'certa' },
@@ -53,18 +56,23 @@ async function chamarFuncaoResultado(rota, corpo) {
 }
 
 /**
- * Lê a nota, as correções confirmadas e o gabarito (pontos e padrão de resposta) do aluno.
+ * Lê a nota, as correções confirmadas, o histórico de mudanças e o gabarito (pontos e padrão de
+ * resposta) do aluno.
  * @param {number} atividadeId - Id da atividade.
- * @returns {Promise<{nota: Object|null, correcoes: Object[], gabarito: Object[]}>} Dados.
+ * @returns {Promise<{nota: Object|null, correcoes: Object[], gabarito: Object[],
+ *     historico: Object[]}>} Dados.
  */
 async function lerResultadoDoAluno(atividadeId) {
-    const [notas, correcoes, gabarito] = await Promise.all([
+    const [notas, correcoes, gabarito, historico] = await Promise.all([
         chamarFuncaoResultado(ROTA_NOTA_RESULTADO, { p_paginas: [location.pathname] }),
         sbGet('correcao_discursiva', 'select=item,topico,nota_professor,comentario' +
             '&atividade_id=eq.' + atividadeId),
         chamarFuncaoResultado(ROTA_GABARITO_RESULTADO, { p_atividade: atividadeId }),
+        sbGet(TABELA_HISTORICO_RESULTADO, 'select=item,topico,tipo,nota_anterior,nota_nova,' +
+            'justificativa,feito_em&atividade_id=eq.' + atividadeId +
+            '&order=feito_em.asc,id.asc').catch(() => []),
     ]);
-    return { nota: notas[0] || null, correcoes, gabarito: gabarito || [] };
+    return { nota: notas[0] || null, correcoes, gabarito: gabarito || [], historico };
 }
 
 /**
@@ -84,7 +92,7 @@ function classificarResultadoAluno(correcao, pontos) {
 }
 
 /**
- * Cria o selo da alternativa com o balão da observação da IA.
+ * Cria o selo do resultado da alternativa (✅ Certa, 🟡 Meia certa, ❌ Errada ou ⏳).
  * @param {Object|undefined} correcao - Linha {nota_professor, comentario}.
  * @param {Object} linhaGabarito - Linha {pontos, resposta_esperada}.
  * @returns {HTMLElement} Selo pronto.
@@ -94,44 +102,112 @@ function criarSeloResultado(correcao, linhaGabarito) {
     const resultado = classificarResultadoAluno(correcao, pontos);
     const selo = criarElementoResultado('span', CLASSE_RESULTADO_ALUNO + '__selo ' +
         CLASSE_RESULTADO_ALUNO + '__selo--' + resultado.modificador);
-    selo.tabIndex = 0;
     const nota = correcao?.nota_professor === null || correcao?.nota_professor === undefined
         ? '' : ' · ' + String(Number(correcao.nota_professor)).replace('.', ',') + '/' +
             String(pontos).replace('.', ',');
     selo.textContent = resultado.icone + ' ' + resultado.texto + nota;
-    const comentario = (correcao?.comentario || '').replace(PREFIXO_COMENTARIO_IA, '');
-    if (!comentario) return selo;
-
-    const balao = criarElementoResultado('span', CLASSE_RESULTADO_ALUNO + '__balao');
-    balao.setAttribute('role', 'tooltip');
-    balao.append(criarElementoResultado('strong', CLASSE_RESULTADO_ALUNO + '__balao-titulo',
-        resultado.icone + ' ' + resultado.texto + ' — por quê:'),
-    criarElementoResultado('span', '', comentario));
-    selo.appendChild(balao);
     return selo;
 }
 
 /**
- * Mostra em cada alternativa o selo do resultado e o padrão de resposta.
- * @param {Object[]} correcoes - Correções confirmadas do aluno.
- * @param {Object[]} gabarito - Linhas {item, topico, pontos, resposta_esperada}.
+ * Monta o texto abaixo da alternativa: a explicação do porquê (errada ou meia certa, ou quando a
+ * nota mudou) e, se o professor mudou a nota, "estava X e foi considerada Y pelo motivo: ...".
+ * Nunca diz que a explicação veio da IA.
+ * @param {{correcao: Object|undefined, pontos: number, mudanca: Object|undefined}} dados -
+ *     Correção, pontos e a última mudança de nota (se houver).
+ * @returns {HTMLElement|null} Bloco de explicação, ou null se não houver o que mostrar.
  */
-function mostrarResultadoNasAlternativas(correcoes, gabarito) {
+function criarExplicacaoResultado(dados) {
+    const resultado = classificarResultadoAluno(dados.correcao, dados.pontos);
+    if (resultado === RESULTADOS_ALUNO.pendente) return null;
+
+    const ehErradaOuMeia = resultado === RESULTADOS_ALUNO.errada ||
+        resultado === RESULTADOS_ALUNO.meia;
+    const comentario = (dados.correcao?.comentario || '').replace(PREFIXO_COMENTARIO_IA, '');
+    const mostrarComentario = Boolean(comentario) && (ehErradaOuMeia || Boolean(dados.mudanca));
+    if (!mostrarComentario && !dados.mudanca) return null;
+
+    const bloco = criarElementoResultado('div', CLASSE_RESULTADO_ALUNO + '__explicacao');
+    if (mostrarComentario) {
+        bloco.append(criarElementoResultado('strong', '', '💬 Explicação: '),
+            document.createTextNode(comentario));
+    }
+    if (dados.mudanca) bloco.appendChild(criarJustificativaResultado(dados.mudanca, dados.pontos));
+    return bloco;
+}
+
+/**
+ * Cria o texto "Esta alternativa estava X, e foi considerada Y pelo motivo: ...".
+ * @param {Object} mudanca - Evento {nota_anterior, nota_nova, justificativa}.
+ * @param {number} pontos - Pontos da alternativa.
+ * @returns {HTMLElement} Parágrafo pronto.
+ */
+function criarJustificativaResultado(mudanca, pontos) {
+    const nome = (nota) => window.rotuloDaNotaHistorico(nota, pontos).replace(/^\S+\s/, '')
+        .toLowerCase();
+    return criarElementoResultado('p', CLASSE_RESULTADO_ALUNO + '__justificativa',
+        'Esta alternativa estava ' + nome(mudanca.nota_anterior) + ', e foi considerada ' +
+        nome(mudanca.nota_nova) + ' pelo motivo: ' + mudanca.justificativa);
+}
+
+/**
+ * Agrupa o histórico por alternativa.
+ * @param {Object[]} historico - Eventos do aluno, do mais antigo ao mais novo.
+ * @returns {Map<string, Object[]>} Eventos por "item|topico".
+ */
+function agruparHistoricoResultado(historico) {
+    const grupos = new Map();
+    historico.forEach((evento) => {
+        const chave = evento.item + '|' + evento.topico;
+        grupos.set(chave, (grupos.get(chave) || []).concat(evento));
+    });
+    return grupos;
+}
+
+/**
+ * Mostra em cada alternativa o selo, o botão "Histórico" (se houver eventos), a explicação, a
+ * justificativa da mudança e o padrão de resposta.
+ * @param {{atividadeId: number, correcoes: Object[], gabarito: Object[], historico: Object[]}}
+ *     dados - Atividade e dados lidos.
+ */
+function mostrarResultadoNasAlternativas(dados) {
     const chave = (linha) => linha.item + '|' + linha.topico;
-    const notas = new Map(correcoes.map((linha) => [chave(linha), linha]));
-    gabarito.forEach((linha) => {
+    const notas = new Map(dados.correcoes.map((linha) => [chave(linha), linha]));
+    const eventos = agruparHistoricoResultado(dados.historico);
+    dados.gabarito.forEach((linha) => {
         const bloco = document.querySelector(SELETOR_TOPICO_RESULTADO + '[data-item="' +
             linha.item + '"][data-topico="' + linha.topico + '"]');
         const rodape = bloco?.querySelector(SELETOR_RODAPE_RESULTADO);
         if (!rodape) return;
-        rodape.prepend(criarSeloResultado(notas.get(chave(linha)), linha));
-        // Mesma classe do botão "Ver Gabarito" (resposta-esperada): não duplica a caixa.
-        const esperada = criarElementoResultado('div', 'resposta-esperada ' +
-            CLASSE_RESULTADO_ALUNO + '__esperada');
-        esperada.append(criarElementoResultado('strong', '', '✅ Resposta esperada: '),
-            document.createTextNode(linha.resposta_esperada || '—'));
-        bloco.appendChild(esperada);
+        montarResultadoDaAlternativa({ bloco, rodape, linha, atividadeId: dados.atividadeId,
+            correcao: notas.get(chave(linha)), eventos: eventos.get(chave(linha)) || [] });
     });
+}
+
+/**
+ * Monta o resultado de uma alternativa na tela.
+ * @param {{bloco: HTMLElement, rodape: HTMLElement, linha: Object, atividadeId: number,
+ *     correcao: Object|undefined, eventos: Object[]}} dados - Elementos, gabarito, correção e
+ *     eventos do histórico da alternativa.
+ */
+function montarResultadoDaAlternativa(dados) {
+    const { bloco, rodape, linha, correcao, eventos } = dados;
+    const pontos = Number(linha.pontos);
+    rodape.prepend(criarSeloResultado(correcao, linha));
+    if (eventos.length) {
+        rodape.appendChild(window.criarBotaoHistoricoNota({ pontos, temEventos: true,
+            alternativa: { atividade_id: dados.atividadeId, item: linha.item,
+                topico: linha.topico } }));
+    }
+    const mudanca = eventos.filter((evento) => evento.tipo === 'mudanca').pop();
+    const explicacao = criarExplicacaoResultado({ correcao, pontos, mudanca });
+    if (explicacao) bloco.appendChild(explicacao);
+    // Mesma classe do botão "Ver Gabarito" (resposta-esperada): não duplica a caixa.
+    const esperada = criarElementoResultado('div', 'resposta-esperada ' +
+        CLASSE_RESULTADO_ALUNO + '__esperada');
+    esperada.append(criarElementoResultado('strong', '', '✅ Resposta esperada: '),
+        document.createTextNode(linha.resposta_esperada || '—'));
+    bloco.appendChild(esperada);
 }
 
 /**
@@ -147,14 +223,14 @@ function montarQuadroNota(nota) {
             { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' (máximo 10)'
         : '⏳ Sua nota ainda está aguardando a correção do professor.';
     quadro.append(criarElementoResultado('h2', CLASSE_RESULTADO_ALUNO + '__nota', texto),
-        criarElementoResultado('p', CLASSE_RESULTADO_ALUNO + '__dica', 'Passe o mouse (ou toque) ' +
-            'no resultado de cada alternativa para ver a observação da IA do porquê ela está ' +
-            'certa, meia certa ou errada.'));
+        criarElementoResultado('p', CLASSE_RESULTADO_ALUNO + '__dica', 'Clique ' +
+            'no botão Histórico de cada alternativa para ver as mudanças da nota; abaixo das ' +
+            'alternativas erradas ou meia certas está a explicação do porquê.'));
     return quadro;
 }
 
 /**
- * Mostra ao aluno a prova corrigida: nota, resultado por alternativa, observação da IA e
+ * Mostra ao aluno a prova corrigida: nota, resultado por alternativa, explicação, histórico e
  * padrão de resposta (só com a entrega feita e o gabarito liberado).
  * @param {number} atividadeId - Id da atividade.
  */
@@ -162,10 +238,10 @@ async function mostrarResultadoDoAluno(atividadeId) {
     const destino = document.querySelector(SELETOR_DESTINO_RESULTADO);
     if (!destino || document.querySelector('.' + CLASSE_RESULTADO_ALUNO)) return;
 
-    const { nota, correcoes, gabarito } = await lerResultadoDoAluno(atividadeId);
+    const { nota, correcoes, gabarito, historico } = await lerResultadoDoAluno(atividadeId);
     const painel = destino.querySelector(SELETOR_PAINEL_RESULTADO);
     destino.insertBefore(montarQuadroNota(nota), painel ? painel.nextSibling : destino.firstChild);
-    mostrarResultadoNasAlternativas(correcoes, gabarito);
+    mostrarResultadoNasAlternativas({ atividadeId, correcoes, gabarito, historico });
 }
 
 (function incluirEstiloResultadoAluno() {

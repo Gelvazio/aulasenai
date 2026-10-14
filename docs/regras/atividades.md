@@ -330,10 +330,22 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     professor é **obrigado a corrigir**. Então lança a nota (soma ÷ pontos × 10 × total ÷ mínimo, máximo 10)
     e mostra a contagem de certas, meias certas, erradas e em branco. A nota entra na média
     final pela `notas_media_final`. `assets/js/finalizar-atividade-professor.js` + CSS.
-  - ⛔ **Nota confirmada é definitiva:** pede confirmação antes de gravar; depois os botões travam
-    e o trigger `correcao_discursiva_validar` recusa qualquer mudança da `nota_professor` já
-    gravada, **nem o professor altera** (SQL
-    `database/2026-10-08-correcao-discursiva-nota-professor-travada.sql`, aplicado).
+  - **Nota confirmada só muda com justificativa (2026-10-14, #156):** o professor pode clicar em
+    outra opção (Certa / Meia certa / Errada) numa alternativa já confirmada — para cima ou para
+    baixo; abre o modal **"Justificativa de mudança da nota na Pergunta"** (texto obrigatório, a
+    justificativa apresentada pelo aluno; `justificativa-mudanca-nota.js`). O trigger
+    `correcao_discursiva_validar` recusa sem justificativa nova e nunca deixa apagar a nota (SQL
+    `database/2026-10-14-historico-mudanca-nota-discursiva.sql`, aplicado).
+  - **Histórico em linha do tempo (2026-10-14, #156):** cada confirmação e cada mudança vira um
+    evento da tabela `correcao_discursiva_historico` (gravada só pelo trigger). Botão
+    **"🕒 Histórico"** logo depois de "Errada" (professor) e ao lado do resultado (aluno) abre o
+    modal "Histórico" (`historico-nota-discursiva.js` + `modal-nota-discursiva.js` + CSS): data e
+    hora, "Meia certa → Certa", motivo e "Por: Professor" (nunca IA). **Habilitado só se houver
+    eventos**; sem eventos fica desabilitado no professor e nem aparece no aluno.
+  - **Aluno vê a explicação abaixo da alternativa (2026-10-14, #156):** só depois de entregar, de
+    o professor confirmar a nota e do gabarito liberado, **abaixo da alternativa errada ou meia
+    certa** aparece "💬 Explicação: …" (o comentário, **sem dizer que foi a IA**) e, se a nota
+    mudou, "Esta alternativa estava X, e foi considerada Y pelo motivo: …".
   - **Global (2026-10-08 nas discursivas; 2026-10-09 também nas objetivas):** o painel aparece
     para o professor em **todas** as atividades com banco, sem campo na fonte.
   - **Botão "📈 Gráficos"** ao lado do título: modal com 5 gráficos dos dados de agora — barras

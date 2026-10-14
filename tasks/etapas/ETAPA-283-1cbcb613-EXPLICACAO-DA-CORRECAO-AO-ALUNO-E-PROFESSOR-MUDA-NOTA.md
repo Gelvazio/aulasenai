@@ -3,7 +3,7 @@
 **Tarefa:** #156-1cbcb613-1423-4389-a6fa · **Pedido em:** 2026-10-14 19:39 · **Executor:** Claude Code (local · main)
 **Pedido:** "se a pergunta for marcada como errada ou meia certa, deixe abaixo dela a explicação de IA do por que disso, visivel ao aluno, permita ao professor tambem poder mudar de opção, apos analise, pode ser que mude de errada pra meia certa, ou de meia certa pra certa" + "mas ao aluno, nao mostre que foi IA que corrigiu"
 **Objetivo:** pergunta errada ou meia certa mostra abaixo a explicação do porquê (visível ao aluno, sem dizer que foi a IA); o professor pode trocar a opção depois de analisar (errada → meia certa, meia certa → certa).
-**Próximo passo:** 283.5 — modal de justificativa em `confirmar-nota-professor-discursiva.js`.
+**Próximo passo:** 283.9 — usuário testar: mudar uma nota com justificativa, abrir o "Histórico" e ver a tela do aluno.
 
 ### Escopo (revisado em 2026-10-14 19:48 — inclui a tabela de histórico e o modal "Histórico")
 
@@ -34,8 +34,8 @@
 | 283.2 | Aprovação do plano revisado pelo usuário | ✅ Concluído | 2026-10-14 19:49 | usuário: "O botão Histórico do professor também só deve aparecer se tiver eventos, senão mostre desabilitado. No mais, tudo certo" |
 | 283.3 | SQL idempotente `database/2026-10-14-historico-mudanca-nota-discursiva.sql` (coluna `justificativa_mudanca`, tabela `correcao_discursiva_historico`, trigger de validação com justificativa, trigger do histórico, RLS, seed dos eventos de hoje) | ✅ Concluído | 2026-10-14 19:51 | arquivo criado |
 | 283.4 | Aplicado no Supabase (projeto AULAS SENAI) e conferido | ✅ Concluído | 2026-10-14 19:51 | consulta: 33 eventos = 33 notas confirmadas; coluna 1; trigger 1; RLS ligado; 1 política de select; só `SELECT` para `authenticated` |
-| 283.5 | Professor: modal "Justificativa de mudança da nota na Pergunta" em `confirmar-nota-professor-discursiva.js` + CSS | 🔄 Em progresso | — | `node --check` |
-| 283.6 | Modal "Histórico" (linha do tempo) + botão depois de "Errada" (professor) e junto ao resultado (aluno): módulo novo + CSS | ⬜ Pendente | — | `node --check` |
-| 283.7 | Aluno: explicação visível abaixo da pergunta (sem citar IA) + justificativa em `resultado-aluno-discursiva.js` + CSS | ⬜ Pendente | — | `node --check` |
-| 283.8 | `docs/database.md`, `relatorio_verificacao_database.html`, `docs/regras/atividades.md`, histórico de regras e visualizador | ⬜ Pendente | — | — |
-| 283.9 | Aceite do usuário | ⬜ Pendente | — | — |
+| 283.5 | Professor: modal "Justificativa de mudança da nota na Pergunta" (`justificativa-mudanca-nota.js`, `modal-nota-discursiva.js` + CSS) ligado em `confirmar-nota-professor-discursiva.js` (opções livres; mudar exige justificativa) | ✅ Concluído | 2026-10-14 19:56 | `node --check` |
+| 283.6 | Modal "Histórico" em linha do tempo + botão "🕒 Histórico" depois de "Errada" (professor; desabilitado sem eventos) e junto ao resultado (aluno; só com eventos): `historico-nota-discursiva.js` + `modal-nota-discursiva.css` | ✅ Concluído | 2026-10-14 19:56 | `node --check` |
+| 283.7 | Aluno: explicação abaixo da alternativa errada/meia certa (sem citar IA) + justificativa da mudança em `resultado-aluno-discursiva.js` + CSS (balão removido) | ✅ Concluído | 2026-10-14 19:56 | `node --check`; sem "IA" nos textos do aluno |
+| 283.8 | `docs/database.md`, `relatorio_verificacao_database.html`, `docs/regras/atividades.md`, histórico de regras e visualizador | ✅ Concluído | 2026-10-14 19:56 | arquivos atualizados |
+| 283.9 | Aceite do usuário | 👀 Aguardando o usuário | — | — |

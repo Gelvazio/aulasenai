@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-14 19:56 | **Mudar a nota com justificativa, histórico e explicação ao aluno (tarefa #156):** a nota confirmada da discursiva só muda com justificativa (modal), cada confirmação/mudança vira evento na tabela `correcao_discursiva_historico` e o botão "Histórico" mostra a linha do tempo ao professor e ao aluno; o aluno vê a explicação abaixo da alternativa errada/meia certa, sem citar IA. Regra em `docs/regras/atividades.md`; banco em `docs/database.md`. |
 | 2026-10-14 19:22 | **Frase final (tarefa #151):** ao concluir uma tarefa a IA responde só **TAREFA FINALIZADA E SINCRONIZADA!** (antes: "TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?"); trocada em `tasks/ciclo-da-task.md` e no `CLAUDE.md` global. |
 | 2026-10-14 15:38 | **Reservar a TASK antes de tudo (tarefa #136):** o primeiro passo de todo pedido de mudança é criar a TASK reservada para a sessão atual e gravar no quadro (commit + push da reserva), antes de ler código, explorar arquivos ou pedir detalhes — `AGENTS.md` (regra 1) |
 | 2026-10-14 10:55 | **Exportar Meu Gabarito e correção da objetiva (tarefa #82):** botão "📄 Exportar Meu Gabarito" do aluno (só depois de entregar; PDF com as respostas dele e a nota, sem a resposta certa) e ✅/❌ com a alternativa certa nas objetivas depois da liberação dos gabaritos — `docs/regras/atividades.md` |

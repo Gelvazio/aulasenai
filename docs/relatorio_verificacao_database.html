@@ -456,12 +456,17 @@
         <tr>
           <td>correcao_discursiva</td>
           <td>Tabela</td>
-          <td>PK aluno + atividade + tentativa + item + tópico; nota_ia, nota_ia_em (correção parcial, 2026-10-08) (sugestão), nota_professor (vale), comentario, corrigido_por, corrigido_em</td>
+          <td>PK aluno + atividade + tentativa + item + tópico; nota_ia, nota_ia_em (correção parcial, 2026-10-08) (sugestão), nota_professor (vale), comentario, corrigido_por, corrigido_em, justificativa_mudanca (#156)</td>
         </tr>
         <tr>
           <td>correcao_discursiva_validar_trg</td>
           <td>Trigger</td>
-          <td>Nota até os pontos do tópico; registra quem confirmou a nota do professor; recusa alterar nota_professor já confirmada (2026-10-08)</td>
+          <td>Nota até os pontos do tópico; registra quem confirmou a nota do professor; a nota_professor já confirmada só muda com justificativa_mudanca nova e nunca é apagada (#156, 2026-10-14)</td>
+        </tr>
+        <tr>
+          <td>correcao_discursiva_historico</td>
+          <td>Tabela</td>
+          <td>Eventos da nota (confirmacao/mudanca): chave da alternativa, tipo, nota_anterior, nota_nova, justificativa, feito_por, feito_em; gravada só pelo trigger correcao_discursiva_historico_trg; RLS só leitura (professor das turmas dele; aluno só os próprios com gabarito liberado) (#156, 2026-10-14)</td>
         </tr>
         <tr>
           <td>correcao_discursiva_select/insert/update</td>
