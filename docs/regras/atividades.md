@@ -270,6 +270,12 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     entregou e tem nota do professor em todas as questões respondidas
     (`assets/js/corrigidos-discursiva.js`); objetiva: corrigido = entregue. Só muda a tela.
     Código: `assets/js/respostas-aluno-professor.js` + CSS.
+  - **Combo "Aluno" lembrado (2026-10-14, #157):** o aluno escolhido (por atividade) e os três
+    filtros de "Respostas dos alunos" — **Pendente Correcao**, **Falta Corrigir?** e **Mostrar
+    Certas** — ficam no **localStorage** do navegador (chaves `respostas-aluno:*`, só preferência
+    de tela) e voltam ao abrir; sem escolha guardada, ou se o aluno não estiver mais na lista,
+    fica "— Selecione o aluno —". Padrões sem escolha: Falta Corrigir? ligado; os outros dois
+    desligados. Código: `assets/js/respostas-aluno-professor.js` e `mostrar-certas-discursiva.js`.
   - **Filtros lembrados (2026-10-14, #142):** "Questões respondidas", "Tarefa Entregue?" e
     "Mostrar quem faltou" guardam a escolha no **localStorage** do navegador (chaves
     `progresso-turma:*`, só preferência de tela) e voltam ao abrir a página; sem escolha

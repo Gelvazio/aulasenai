@@ -4,15 +4,48 @@
 // ON/OFF "Pendente Correcao" ao lado do combo (desligado ao abrir): ligado, o combo lista só os
 // alunos que o professor ainda não corrigiu. Corrigido: a página informa em opcoes.lerCorrigidos
 // (discursiva); sem ela, na objetiva, corrigido = entregue. Tarefa #153.
+// O aluno escolhido (por atividade) e os filtros (Pendente Correcao, Falta Corrigir?, Mostrar
+// Certas) ficam no localStorage do navegador (chaves respostas-aluno:*, só preferência de tela)
+// e voltam ao abrir; sem escolha guardada, fica "— Selecione o aluno —". Tarefa #157.
 // Carregado por assets/js/avaliacao-discursiva.js e assets/js/respostas-atividade.js, que
 // informam a tabela, as colunas e como mostrar as respostas. Depende de js/supabase.js (sbGet).
 
 const CLASSE_RESPOSTAS_ALUNO = 'respostas-aluno-professor';
 const TEXTO_OPCAO_VAZIA = '— Selecione o aluno —';
+const PREFIXO_MEMORIA_RESPOSTAS = 'respostas-aluno:';
+const VALOR_LIGADO_MEMORIA = 'sim';
+const VALOR_DESLIGADO_MEMORIA = 'nao';
 const TEXTO_PENDENTE_CORRECAO = 'Pendente Correcao';
 const DICA_PENDENTE_CORRECAO = 'Ligado: o combo lista só os alunos que o professor ainda não ' +
     'corrigiu. Desligado: todos os alunos.';
 const BASE_SCRIPTS_RESPOSTAS_ALUNO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
+
+/**
+ * Lê uma preferência de tela guardada no navegador (sem localStorage ou com erro, devolve null).
+ * @param {string} chave - Nome da preferência (sem o prefixo).
+ * @returns {string|null} Valor guardado ou null.
+ */
+function lerMemoriaRespostasAluno(chave) {
+    try {
+        return window.localStorage.getItem(PREFIXO_MEMORIA_RESPOSTAS + chave);
+    } catch (erro) {
+        return null;
+    }
+}
+
+/**
+ * Guarda (ou apaga, com valor null) uma preferência de tela no navegador. Falha em silêncio.
+ * @param {string} chave - Nome da preferência (sem o prefixo).
+ * @param {string|null} valor - Valor a guardar; null apaga.
+ */
+function gravarMemoriaRespostasAluno(chave, valor) {
+    try {
+        if (valor === null) window.localStorage.removeItem(PREFIXO_MEMORIA_RESPOSTAS + chave);
+        else window.localStorage.setItem(PREFIXO_MEMORIA_RESPOSTAS + chave, valor);
+    } catch (erro) {
+        // Sem localStorage (janela privada, dados bloqueados): a tela segue sem lembrar.
+    }
+}
 
 /**
  * Cria um elemento com classe e texto.
@@ -129,15 +162,17 @@ function preencherComboAlunos(combo, alunos) {
 }
 
 /**
- * Cria o ON/OFF "Pendente Correcao" (desligado ao abrir) com o visual de chave.
+ * Cria o ON/OFF "Pendente Correcao" com o visual de chave.
+ * @param {boolean} ligadoInicial - Estado ao abrir (o que ficou guardado no navegador).
  * @param {function(boolean): void} aoMudar - Chamada com o novo estado ao clicar.
  * @returns {HTMLLabelElement} Etiqueta pronta para entrar na tela.
  */
-function criarChavePendenteCorrecao(aoMudar) {
+function criarChavePendenteCorrecao(ligadoInicial, aoMudar) {
     const etiqueta = criarElementoRespostasAluno('label', CLASSE_RESPOSTAS_ALUNO + '__pendente');
     etiqueta.title = DICA_PENDENTE_CORRECAO;
     const caixa = document.createElement('input');
     caixa.type = 'checkbox';
+    caixa.checked = ligadoInicial;
     caixa.addEventListener('change', () => aoMudar(caixa.checked));
     const chave = criarElementoRespostasAluno('span', CLASSE_RESPOSTAS_ALUNO + '__chave');
     const texto = criarElementoRespostasAluno('span', '', TEXTO_PENDENTE_CORRECAO);
@@ -184,6 +219,8 @@ async function aplicarPendenteCorrecao(tela, filtro, opcoes) {
  */
 async function carregarAlunoEscolhido(tela, opcoes) {
     const aluno = tela.alunos[Number(tela.combo.value)];
+    gravarMemoriaRespostasAluno('aluno:' + opcoes.atividadeId,
+        tela.combo.value && aluno ? aluno.alunoId + '|' + aluno.tentativa : null);
     if (!tela.combo.value || !aluno) {
         opcoes.preencher({});
         opcoes.aoMostrarAluno?.(null);
@@ -200,6 +237,32 @@ async function carregarAlunoEscolhido(tela, opcoes) {
         tela.aviso.textContent = '❌ Não foi possível carregar as respostas: ' + erro.message;
     } finally {
         tela.combo.disabled = false;
+    }
+}
+
+/**
+ * Volta ao que ficou guardado no navegador: filtro "Pendente Correcao" ligado e aluno escolhido
+ * (se ele ainda estiver na lista; senão fica "— Selecione o aluno —").
+ * @param {{tela: Object, filtro: Object, pendenteLigado: boolean}} estado - Tela, filtro e o
+ *     estado guardado do "Pendente Correcao".
+ * @param {Object} opcoes - Opções de montarRespostasDoAluno.
+ */
+async function restaurarEscolhasSalvas(estado, opcoes) {
+    const { tela, filtro } = estado;
+    try {
+        if (estado.pendenteLigado) {
+            filtro.corrigidos = await lerAlunosCorrigidos(tela.todos, opcoes);
+            filtro.somentePendentes = true;
+            await aplicarPendenteCorrecao(tela, filtro, opcoes);
+        }
+        const guardado = lerMemoriaRespostasAluno('aluno:' + opcoes.atividadeId);
+        const indice = tela.alunos.findIndex((aluno) =>
+            aluno.alunoId + '|' + aluno.tentativa === guardado);
+        if (indice < 0) return;
+        tela.combo.value = String(indice);
+        await carregarAlunoEscolhido(tela, opcoes);
+    } catch (erro) {
+        tela.aviso.textContent = '❌ Não foi possível voltar à escolha anterior: ' + erro.message;
     }
 }
 
@@ -230,7 +293,10 @@ async function montarRespostasDoAluno(destino, opcoes) {
     etiqueta.appendChild(combo);
     const tela = { combo, alunos, aviso, todos: alunos };
     const filtro = { somentePendentes: false, corrigidos: new Set() };
-    const pendente = criarChavePendenteCorrecao(async (ligado) => {
+    const pendenteLigado = lerMemoriaRespostasAluno('pendente-correcao') === VALOR_LIGADO_MEMORIA;
+    const pendente = criarChavePendenteCorrecao(pendenteLigado, async (ligado) => {
+        gravarMemoriaRespostasAluno('pendente-correcao',
+            ligado ? VALOR_LIGADO_MEMORIA : VALOR_DESLIGADO_MEMORIA);
         try {
             if (ligado) filtro.corrigidos = await lerAlunosCorrigidos(alunos, opcoes);
             filtro.somentePendentes = ligado;
@@ -241,6 +307,7 @@ async function montarRespostasDoAluno(destino, opcoes) {
     });
     area.append(etiqueta, pendente, aviso);
     combo.addEventListener('change', () => carregarAlunoEscolhido(tela, opcoes));
+    await restaurarEscolhasSalvas({ tela, filtro, pendenteLigado }, opcoes);
 }
 
 (function incluirEstiloRespostasAluno() {
@@ -252,3 +319,5 @@ async function montarRespostasDoAluno(destino, opcoes) {
 })();
 
 window.montarRespostasDoAluno = montarRespostasDoAluno;
+window.lerMemoriaRespostasAluno = lerMemoriaRespostasAluno;
+window.gravarMemoriaRespostasAluno = gravarMemoriaRespostasAluno;

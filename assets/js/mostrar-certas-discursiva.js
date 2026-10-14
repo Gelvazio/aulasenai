@@ -6,6 +6,8 @@
 // Também traz o ON/OFF "Falta Corrigir?" (ligado ao abrir): ligado, ao escolher um aluno, a prova
 // mostra só as questões que o professor ainda não corrigiu (algum tópico sem nota do professor);
 // os dois filtros valem juntos. Tarefa #150.
+// Os dois ON/OFF ficam guardados no navegador (respostas-aluno:falta-corrigir e
+// respostas-aluno:mostrar-certas, via respostas-aluno-professor.js) e voltam ao abrir (#157).
 // Pedido do usuário em 2026-10-14 (tarefa #148). Carregado por assets/js/avaliacao-discursiva.js.
 // Depende de js/supabase.js (sbGet). Regra: docs/regras/atividades.md
 
@@ -16,6 +18,8 @@ const CLASSE_QUESTAO_CORRIGIDA_OCULTA = 'questao-discursiva--corrigida-oculta';
 const SELETOR_QUESTAO_MOSTRAR_CERTAS = '.questao-discursiva[data-item]';
 const SELETOR_TITULO_RESPOSTAS_ALUNO = '.respostas-aluno-professor__titulo';
 const TEXTO_MOSTRAR_CERTAS = 'Mostrar Certas';
+const MEMORIA_FALTA_CORRIGIR = 'falta-corrigir';
+const MEMORIA_MOSTRAR_CERTAS = 'mostrar-certas';
 const TEXTO_FALTA_CORRIGIR = 'Falta Corrigir?';
 const DICA_FALTA_CORRIGIR = 'Ligado: só as questões do aluno escolhido que o professor ainda ' +
     'não corrigiu. Desligado: também as já corrigidas.';
@@ -150,8 +154,28 @@ function criarChaveOnOff(dados, aoMudar) {
 }
 
 /**
+ * Volta os dois ON/OFF ao que ficou guardado no navegador (padrão: Falta Corrigir? ligado e
+ * Mostrar Certas desligado).
+ */
+function restaurarEscolhasMostrarCertas() {
+    const ler = window.lerMemoriaRespostasAluno;
+    if (!ler) return;
+    estadoMostrarCertas.faltaCorrigir = ler(MEMORIA_FALTA_CORRIGIR) !== 'nao';
+    estadoMostrarCertas.ligado = ler(MEMORIA_MOSTRAR_CERTAS) === 'sim';
+}
+
+/**
+ * Guarda no navegador a escolha de um dos ON/OFF.
+ * @param {string} chave - Nome da preferência.
+ * @param {boolean} ligado - Estado escolhido.
+ */
+function guardarEscolhaMostrarCertas(chave, ligado) {
+    window.gravarMemoriaRespostasAluno?.(chave, ligado ? 'sim' : 'nao');
+}
+
+/**
  * Põe os ON/OFF "Falta Corrigir?" (ligado) e "Mostrar Certas" (desligado) ao lado do título
- * "Respostas dos alunos".
+ * "Respostas dos alunos" (com a escolha que ficou guardada no navegador).
  * @param {HTMLElement} painel - Painel do professor (com a área "Respostas dos alunos").
  */
 function ligarMostrarCertas(painel) {
@@ -159,6 +183,7 @@ function ligarMostrarCertas(painel) {
     const jaExiste = painel.querySelector('.' + CLASSE_MOSTRAR_CERTAS);
     if (!titulo || jaExiste) return;
 
+    restaurarEscolhasMostrarCertas();
     const cabecalho = document.createElement('div');
     cabecalho.className = CLASSE_MOSTRAR_CERTAS + '__cabecalho';
     const faltaCorrigir = criarChaveOnOff({
@@ -166,6 +191,7 @@ function ligarMostrarCertas(painel) {
         ligado: estadoMostrarCertas.faltaCorrigir,
     }, (ligado) => {
         estadoMostrarCertas.faltaCorrigir = ligado;
+        guardarEscolhaMostrarCertas(MEMORIA_FALTA_CORRIGIR, ligado);
         aplicarMostrarCertas();
     });
     const mostrarCertas = criarChaveOnOff({
@@ -173,10 +199,12 @@ function ligarMostrarCertas(painel) {
         ligado: estadoMostrarCertas.ligado,
     }, (ligado) => {
         estadoMostrarCertas.ligado = ligado;
+        guardarEscolhaMostrarCertas(MEMORIA_MOSTRAR_CERTAS, ligado);
         aplicarMostrarCertas();
     });
     titulo.replaceWith(cabecalho);
     cabecalho.append(titulo, faltaCorrigir, mostrarCertas);
+    aplicarMostrarCertas();
 }
 
 (function incluirEstiloMostrarCertas() {
