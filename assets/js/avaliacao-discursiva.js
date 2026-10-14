@@ -43,9 +43,12 @@ const MSG_LEITURA_LIVRE_DISCURSIVA = 'Você pode ler a avaliação à vontade. P
 const MSG_ENTRAR_DISCURSIVA = 'Para responder, entre com o seu usuário e senha.\n\n' +
     'Ir para a página de login agora?';
 const MSG_PROFESSOR_DISCURSIVA = 'O professor não responde a avaliação: só os alunos escrevem. ' +
-    'A prova fica escondida: ela aparece, com as respostas do aluno, só quando você escolhe um ' +
-    'aluno em "Respostas dos alunos".';
+    'A prova fica escondida: ela aparece, com as respostas do aluno, quando você escolhe um ' +
+    'aluno em "Respostas dos alunos", ou sem respostas no botão "Mostrar questões".';
 const CLASSE_RESPOSTAS_OCULTAS_PROFESSOR = 'discursiva--respostas-ocultas';
+const ID_BOTAO_QUESTOES_PROFESSOR = 'btnMostrarQuestoesProfessor';
+const ROTULO_MOSTRAR_QUESTOES = '👁️ Mostrar questões';
+const ROTULO_ESCONDER_QUESTOES = '🙈 Esconder questões';
 const MSG_BLOQUEADA_DISCURSIVA = '🔒 Avaliação bloqueada pelo professor. Aguarde a liberação ' +
     'para escrever as respostas.';
 const NOTA_MAXIMA_DISCURSIVA = 10;
@@ -300,6 +303,7 @@ function montarPainel(dados) {
     painel.appendChild(criarBotaoDiscursivo('btn-export btn-export--secundario', '🚪 Sair',
         fazerLogout));
     atualizarProgresso();
+    if (dados.ehProfessor) painel.appendChild(criarBotaoQuestoesProfessor());
     if (dados.ehProfessor) abrirRespostasDoAluno(painel, dados);
     if (dados.ehProfessor) abrirProgressoDaTurma(dados);
     if (!dados.ehProfessor) abrirMeuGabaritoDiscursiva(painel, dados);
@@ -415,6 +419,21 @@ async function abrirResultadoDoAluno(dados) {
  */
 function alternarRespostasDoProfessor(mostrar) {
     document.body.classList.toggle(CLASSE_RESPOSTAS_OCULTAS_PROFESSOR, !mostrar);
+    const botao = document.getElementById(ID_BOTAO_QUESTOES_PROFESSOR);
+    if (botao) botao.textContent = mostrar ? ROTULO_ESCONDER_QUESTOES : ROTULO_MOSTRAR_QUESTOES;
+}
+
+/**
+ * Professor: botão que mostra ou esconde a prova (instruções e questões) sem escolher aluno.
+ * @returns {HTMLButtonElement} Botão "Mostrar questões" / "Esconder questões".
+ */
+function criarBotaoQuestoesProfessor() {
+    const estaoOcultas = () => document.body.classList.contains(CLASSE_RESPOSTAS_OCULTAS_PROFESSOR);
+    const rotulo = estaoOcultas() ? ROTULO_MOSTRAR_QUESTOES : ROTULO_ESCONDER_QUESTOES;
+    const botao = criarBotaoDiscursivo('btn-export btn-export--secundario', rotulo,
+        () => alternarRespostasDoProfessor(estaoOcultas()));
+    botao.id = ID_BOTAO_QUESTOES_PROFESSOR;
+    return botao;
 }
 
 /**

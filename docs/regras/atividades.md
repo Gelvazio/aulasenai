@@ -237,7 +237,8 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     professor; só o painel e o
     Progresso da turma aparecem. A prova, com as respostas do aluno, aparece ao escolher um aluno
     no combo e some ao limpar a escolha (classe `discursiva--respostas-ocultas` no `<body>`,
-    `avaliacao-discursiva.js` + CSS).
+    `avaliacao-discursiva.js` + CSS). Desde 2026-10-14 o painel do professor tem também o botão
+    **👁️ Mostrar questões / 🙈 Esconder questões**, que mostra a prova sem escolher aluno (#119).
   - **Botões do professor (2026-10-08):** ao escolher o aluno, cada alternativa ganha, antes do
     "💾 Gravar", os botões ✅ Certa (pontos) / 🟡 Meia certa (metade) / ❌ Errada (0), que gravam a
     `nota_professor` (upsert só dessa coluna; `nota_ia` e comentário ficam). Código
