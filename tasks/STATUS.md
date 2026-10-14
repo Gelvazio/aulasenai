@@ -152,7 +152,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #123-a29cde9a-3791-49e1 | Modal de atividades sem barra horizontal (2 colunas) | 🟡 Média | #122 | 👀 Aguardando aceite | — | [250-a29cde9a](etapas/ETAPA-250-a29cde9a-MODAL-ATIVIDADE-SEM-BARRA-HORIZONTAL.md) |
 | #124-78176209-1d87-4c8b | Índices de atividades: texto do botão = nome da atividade no banco | 🟡 Média | — | 👀 Aguardando aceite | — | [251-78176209](etapas/ETAPA-251-78176209-NOME-DA-ATIVIDADE-DO-BANCO-NOS-LINKS.md) |
 | #125-afc692ef-b3ac-4454 | Modal de atividade fecha depois de salvar | 🟡 Média | — | 👀 Aguardando aceite | — | [252-afc692ef](etapas/ETAPA-252-afc692ef-FECHAR-MODAL-ATIVIDADE-AO-SALVAR.md) |
-| #126-a11022b6-78f3-4896 | Banco: nome_card da aula 82 = ATIVIDADE SEXTA FEIRA | 🟡 Média | #117 | 👀 Aguardando aceite | — | [253-a11022b6](etapas/ETAPA-253-a11022b6-NOME-CARD-AULA-82-ATIVIDADE-SEXTA-FEIRA.md) |
+| #126-a11022b6-78f3-4896 | Banco: nome_card e rotulo_card da aula 82 (card ATIVIDADE SEXTA FEIRA) | 🟡 Média | #117 | 👀 Aguardando aceite | — | [253-a11022b6](etapas/ETAPA-253-a11022b6-NOME-CARD-AULA-82-ATIVIDADE-SEXTA-FEIRA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -441,7 +441,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 250-a29cde9a | Modal de atividades sem barra horizontal (#123, 2026-10-14) | [ETAPA-250-a29cde9a-MODAL-ATIVIDADE-SEM-BARRA-HORIZONTAL.md](etapas/ETAPA-250-a29cde9a-MODAL-ATIVIDADE-SEM-BARRA-HORIZONTAL.md) |
 | 251-78176209 | Índices de atividades: nome da atividade do banco nos botões (#124, 2026-10-14) | [ETAPA-251-78176209-NOME-DA-ATIVIDADE-DO-BANCO-NOS-LINKS.md](etapas/ETAPA-251-78176209-NOME-DA-ATIVIDADE-DO-BANCO-NOS-LINKS.md) |
 | 252-afc692ef | Modal de atividade fecha ao salvar (#125, 2026-10-14) | [ETAPA-252-afc692ef-FECHAR-MODAL-ATIVIDADE-AO-SALVAR.md](etapas/ETAPA-252-afc692ef-FECHAR-MODAL-ATIVIDADE-AO-SALVAR.md) |
-| 253-a11022b6 | Banco: nome_card da aula 82 (#126, 2026-10-14) | [ETAPA-253-a11022b6-NOME-CARD-AULA-82-ATIVIDADE-SEXTA-FEIRA.md](etapas/ETAPA-253-a11022b6-NOME-CARD-AULA-82-ATIVIDADE-SEXTA-FEIRA.md) |
+| 253-a11022b6 | Banco: nome_card e rotulo_card da aula 82 (#126, 2026-10-14) | [ETAPA-253-a11022b6-NOME-CARD-AULA-82-ATIVIDADE-SEXTA-FEIRA.md](etapas/ETAPA-253-a11022b6-NOME-CARD-AULA-82-ATIVIDADE-SEXTA-FEIRA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
