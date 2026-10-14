@@ -19,7 +19,7 @@ prática já faz) — recurso global no `atividade.js`, vale para todas as objet
   selo de cada tópico (`assets/js/resultado-aluno-discursiva.js`); antes da correção, "⏳ Sua nota
   ainda está aguardando a correção do professor".
 - O PDF do "Exportar Meu Gabarito" deve levar a nota também.
-**Próximo passo:** 209.6 — aceite do usuário (testar como aluno).
+**Próximo passo:** — (tarefa concluída; demais matérias nas tarefas #83 a #116)
 
 ### Respostas do usuário (2026-10-14)
 
@@ -117,4 +117,4 @@ ERROU,NAO TEM COMO ELE FICAR COM NOTA MENOR QUE A TENTATIVA ANTERIOR"
 | 209.4b | Objetiva após liberar gabaritos: marcar acerto/erro de cada questão na página do aluno (global, como a prática), mantendo o cartão da nota | ✅ Concluído | 2026-10-14 10:55 | `node --check` ok em correcao-objetiva-aluno.js; consulta: aluno_pode_ver_gabarito e solicitar_gabarito executáveis por authenticated; CSS em respostas-atividade.css |
 | 209.5 | Documentação (`docs/regras/atividades.md`, `docs/database.md` se mudar o banco) | ✅ Concluído | 2026-10-14 10:55 | Leitura: 2 tópicos novos em docs/regras/atividades.md (seção do gabarito) + linha no docs/HISTORICO-REGRAS.md; banco sem mudança (database.md igual) |
 | 209.7 | Correção: botão não aparecia no site ("N ESTA APARECENDO O BOTAO NA AULA 01") — o `.vercelignore` tira do ar todo arquivo com "gabarito" no nome; arquivos renomeados para `botao-minhas-respostas.js`, `pdf-minhas-respostas.js`, `minhas-respostas-objetiva.js`, `minhas-respostas-discursiva.js` e `css/minhas-respostas.css` | ✅ Concluído | 2026-10-14 11:00 | curl no site: os arquivos antigos davam 404; `node --check` ok nos renomeados; nenhuma referência ao nome antigo |
-| 209.6 | Aceite do usuário (testar como aluno: antes e depois de entregar; objetiva antes e depois da liberação) | 👀 Aguardando o usuário | — | Testar na tela como aluno (sem navegador nesta sessão) |
+| 209.6 | Aceite do usuário (testar como aluno: antes e depois de entregar; objetiva antes e depois da liberação) | ✅ Concluído | 2026-10-14 11:10 | Aceite do usuário: "AGORA APARECEU, OK" |
