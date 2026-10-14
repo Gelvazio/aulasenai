@@ -22,6 +22,7 @@ const TEXTO_ID_NOVA_ATIVIDADE = '(nova atividade — o banco gera o id)';
 const CLASSE_ID_CARD = 'crud-id-atividade';
 const CLASSE_EDITAR_CARD = 'crud-editar-atividade';
 const TEXTO_EDITAR_CARD = '✏️';
+const SELETOR_INTERRUPTOR_CARD = '.interruptor-atividade';
 const TITULO_EDITAR_CARD = 'Editar esta atividade no banco (nome, data, aula, ativa...)';
 // IDs menores que 10 com zero à esquerda (7 → 07); de 10 em diante, normal.
 const DIGITOS_ID_ATIVIDADE = 2;
@@ -490,8 +491,21 @@ function mostrarIdNoCard(card, atividades) {
         const etiqueta = criarElementoCrud('span', CLASSE_ID_CARD,
             'ID ' + formatarIdAtividadeCrud(atividade.id));
         link.prepend(etiqueta);
-        link.after(criarBotaoEditarAtividade(atividade));
+        posicionarBotaoEditar(link, criarBotaoEditarAtividade(atividade));
     });
+}
+
+/**
+ * Põe o ✏️ na mesma linha do link, sempre depois do ON/OFF (quando ele já estiver lá). Se o
+ * ON/OFF chegar depois, ele entra logo após o link: a ordem fica link → ON/OFF → ✏️.
+ * @param {HTMLElement} link - Link da atividade.
+ * @param {HTMLButtonElement} botao - Botão ✏️.
+ */
+function posicionarBotaoEditar(link, botao) {
+    const vizinho = link.nextElementSibling;
+    const temInterruptor = vizinho?.matches(SELETOR_INTERRUPTOR_CARD);
+    if (temInterruptor) return vizinho.after(botao);
+    link.after(botao);
 }
 
 /**
