@@ -3,7 +3,8 @@
 // resultado de cada alternativa corrigida pelo professor (✅ Certa / 🟡 Meia certa / ❌ Errada,
 // ⏳ se ainda não corrigida), ABAIXO da alternativa errada ou meia certa a explicação do porquê
 // (sem dizer que foi a IA) e, se o professor mudou a nota, a justificativa da mudança; o botão
-// "🕒 Histórico" abre a linha do tempo. Mostra também o padrão de resposta (tarefa #156).
+// "🕒 Histórico" abre a linha do tempo. Mostra também o padrão de resposta (tarefa #156) e o
+// ON/OFF "Mostrar Certas" (mostrar-certas-aluno-discursiva.js, tarefa #158).
 // Só lê o que o RLS deixa o aluno ver (as próprias notas confirmadas). Nada é gravado.
 // Carregado por assets/js/avaliacao-discursiva.js. Depende de js/supabase.js.
 // Regra: docs/regras/atividades.md
@@ -240,8 +241,10 @@ async function mostrarResultadoDoAluno(atividadeId) {
 
     const { nota, correcoes, gabarito, historico } = await lerResultadoDoAluno(atividadeId);
     const painel = destino.querySelector(SELETOR_PAINEL_RESULTADO);
-    destino.insertBefore(montarQuadroNota(nota), painel ? painel.nextSibling : destino.firstChild);
+    const quadro = montarQuadroNota(nota);
+    destino.insertBefore(quadro, painel ? painel.nextSibling : destino.firstChild);
     mostrarResultadoNasAlternativas({ atividadeId, correcoes, gabarito, historico });
+    window.ligarMostrarCertasAluno?.(quadro, { correcoes, gabarito });
 }
 
 (function incluirEstiloResultadoAluno() {

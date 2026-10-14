@@ -270,6 +270,11 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     entregou e tem nota do professor em todas as questões respondidas
     (`assets/js/corrigidos-discursiva.js`); objetiva: corrigido = entregue. Só muda a tela.
     Código: `assets/js/respostas-aluno-professor.js` + CSS.
+  - **Aluno — ON/OFF "Mostrar Certas" (2026-10-14, #158):** no quadro da nota da prova corrigida
+    (discursiva). Desligado (padrão): esconde as perguntas em que o aluno acertou tudo (todos os
+    tópicos com a nota cheia do professor); ligado: mostra todas. Pergunta sem nota nunca some. A
+    escolha fica no localStorage (`resultado-aluno:mostrar-certas`). Código:
+    `assets/js/mostrar-certas-aluno-discursiva.js`.
   - **Combo "Aluno" lembrado (2026-10-14, #157):** o aluno escolhido (por atividade) e os três
     filtros de "Respostas dos alunos" — **Pendente Correcao**, **Falta Corrigir?** e **Mostrar
     Certas** — ficam no **localStorage** do navegador (chaves `respostas-aluno:*`, só preferência

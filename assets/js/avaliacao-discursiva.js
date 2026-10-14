@@ -21,6 +21,7 @@ const ARQUIVO_MEU_PROGRESSO_DISCURSIVA = 'progresso-do-aluno.js';
 const ARQUIVO_NOTA_IA_RESPOSTAS = 'nota-ia-respostas-discursiva.js';
 const ARQUIVO_MOSTRAR_CERTAS = 'mostrar-certas-discursiva.js';
 const ARQUIVO_CORRIGIDOS = 'corrigidos-discursiva.js';
+const ARQUIVO_MOSTRAR_CERTAS_ALUNO = 'mostrar-certas-aluno-discursiva.js';
 const ARQUIVOS_MODAIS_NOTA = ['modal-nota-discursiva.js', 'historico-nota-discursiva.js',
     'justificativa-mudanca-nota.js'];
 const ARQUIVO_CONFIRMAR_PROFESSOR = 'confirmar-nota-professor-discursiva.js';
@@ -436,6 +437,9 @@ async function abrirResultadoDoAluno(dados) {
             await carregarModuloDiscursiva(ARQUIVO_RESULTADO_ALUNO);
         }
         await carregarModaisDaNota();
+        if (typeof window.ligarMostrarCertasAluno !== 'function') {
+            await carregarModuloDiscursiva(ARQUIVO_MOSTRAR_CERTAS_ALUNO);
+        }
         await window.mostrarResultadoDoAluno(dados.atividadeId);
     } catch (erro) {
         console.warn('Resultado do aluno:', erro.message);
