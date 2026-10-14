@@ -19,7 +19,21 @@ prática já faz) — recurso global no `atividade.js`, vale para todas as objet
   selo de cada tópico (`assets/js/resultado-aluno-discursiva.js`); antes da correção, "⏳ Sua nota
   ainda está aguardando a correção do professor".
 - O PDF do "Exportar Meu Gabarito" deve levar a nota também.
-**Próximo passo:** 209.1 — respostas do usuário às perguntas abaixo (o que o PDF mostra).
+**Próximo passo:** 209.2 — escrever o plano na etapa (escopo, riscos, banco/RLS) e pedir aprovação.
+
+### Respostas do usuário (2026-10-14)
+
+"1-SÓ RESPOSTAS DO ALUNO, 2-SIM, 3-SIM, 4-SAI COM A MAIOR NOTA,PODE NAO SER A ULTIMA, 5-SIM" ·
+correção da 4: "NA VERDADE, NA OPCAO 4-SAI COM A ULTIMA,POIS COMO NA LIBERACAO SO LIBERA O QUE ELE
+ERROU,NAO TEM COMO ELE FICAR COM NOTA MENOR QUE A TENTATIVA ANTERIOR"
+
+| Pergunta | Decisão |
+|---|---|
+| 1. O que o PDF leva | Só as respostas do aluno (sem a resposta certa) |
+| 2. Nota e cabeçalho | Sim: nota + nome, turma, matéria, atividade, data e hora da entrega |
+| 3. Tipos | Todos: objetivas, práticas, discursivas e avaliações |
+| 4. Tentativa | A **última entregue** (a nova tentativa só reabre o que ele errou; a nota não cai) |
+| 5. Objetiva após a liberação | Sim: ✅/❌ em cada questão e a alternativa certa nas que ele errou |
 
 ### Perguntas ao usuário (antes do plano)
 
@@ -47,7 +61,7 @@ prática já faz) — recurso global no `atividade.js`, vale para todas as objet
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 209.1 | Respostas do usuário às perguntas acima | 👀 Aguardando o usuário | — | — |
+| 209.1 | Respostas do usuário às perguntas acima | ✅ Concluído | 2026-10-14 10:47 | Respostas registradas acima (4 corrigida pelo usuário: última tentativa) |
 | 209.2 | Plano na etapa (escopo, riscos, banco/RLS) + aprovação do usuário | ⬜ Pendente | — | — |
 | 209.3 | Recurso global (módulo JS + CSS + o que o banco precisar), ligado por atributo no `<body>` | ⬜ Pendente | — | `node --check`; consultas ao banco |
 | 209.4 | Ligar nas páginas de Testes de Front-End | ⬜ Pendente | — | Busca no código |
