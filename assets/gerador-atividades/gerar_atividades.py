@@ -85,7 +85,8 @@ def campo_opcional(texto, nome):
 def tags_folha_respostas(ativada, assets, raiz):
     """Tags da folha de respostas com gravação no banco (regra: alternativas só no banco).
 
-    Inclui supabase-js (CDN), js/supabase.js, js/login.js, o provedor do banco e o script da folha.
+    Inclui supabase-js (CDN), js/supabase.js, js/login.js, o bloqueio da aula
+    (assets/js/atividade-bloqueio-aula.js), o provedor do banco e o script da folha.
     """
     if not ativada:
         return "", ""
@@ -94,6 +95,8 @@ def tags_folha_respostas(ativada, assets, raiz):
         URL_SUPABASE_JS,
         f"{raiz}/js/supabase.js",
         f"{raiz}/js/login.js",
+        f"{assets}/js/indice-bloqueio-aula-config.js",
+        f"{assets}/js/atividade-bloqueio-aula.js",
         f"{assets}/js/respostas-atividade-banco.js",
         f"{assets}/js/respostas-atividade.js",
     ]

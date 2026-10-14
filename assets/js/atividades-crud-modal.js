@@ -23,6 +23,9 @@ const DIGITOS_ID_ATIVIDADE = 2;
 // Botão "🧾 LOG" dos cards escondido em todos os índices (pedido do usuário, 2026-10-09); o banco
 // continua gravando o log_resposta_atividade. Para mostrar de novo, trocar para true.
 const LOG_ALTERNATIVAS_LIGADO = false;
+// Links dos cards travados até o indice-aula-data.js conferir o bloqueio da aula (sem isso, o
+// aluno abria os slides da aula bloqueada enquanto a página consultava o banco).
+const CLASSE_INDICE_CONFERINDO_AULA = 'indice--conferindo-aula';
 
 const estadoCrud = { paginas: [], atividades: [], aulas: [], editandoId: null };
 let elementosCrud = null;
@@ -513,6 +516,8 @@ async function iniciarCrudAtividades() {
 function carregarMarcacaoFeitas() {
     if (!BASE_ASSETS_CRUD) return;
 
+    document.body.classList.add(CLASSE_INDICE_CONFERINDO_AULA);
+
     const estilo = criarElementoCrud('link');
     estilo.rel = 'stylesheet';
     estilo.href = BASE_ASSETS_CRUD + 'css/indice-atividades-feitas.css';
@@ -549,6 +554,13 @@ function carregarLogAlternativasIndice() {
 }
 
 /**
+ * Destrava os links dos cards (fim da conferência do bloqueio da aula).
+ */
+function liberarLinksDosCardsIndice() {
+    document.body.classList.remove(CLASSE_INDICE_CONFERINDO_AULA);
+}
+
+/**
  * Carrega a data da aula nos cards e o botão "Editar aula" (professor).
  */
 function carregarDataAulasIndice() {
@@ -560,6 +572,8 @@ function carregarDataAulasIndice() {
         const script = criarElementoCrud('script');
         script.src = BASE_ASSETS_CRUD + caminho;
         script.async = false;
+        // Script que não carrega não pode deixar os links travados para sempre.
+        script.addEventListener('error', liberarLinksDosCardsIndice);
         return script;
     });
     document.head.append(estilo, ...scripts);

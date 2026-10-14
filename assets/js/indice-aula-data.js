@@ -238,9 +238,21 @@ function lerCardsDoIndice() {
 }
 
 /**
- * Lê a aula de cada card, desenha os cards e, para o professor, o botão de edição.
+ * Inicia os cards e, no fim (mesmo com erro), destrava os links travados pelo
+ * atividades-crud-modal.js enquanto o bloqueio da aula era conferido.
  */
 async function iniciarCardsAula() {
+    try {
+        await desenharCardsDoIndice();
+    } finally {
+        if (typeof liberarLinksDosCardsIndice === 'function') liberarLinksDosCardsIndice();
+    }
+}
+
+/**
+ * Lê a aula de cada card, desenha os cards e, para o professor, o botão de edição.
+ */
+async function desenharCardsDoIndice() {
     const itens = lerCardsDoIndice();
     if (!itens.length) return;
 

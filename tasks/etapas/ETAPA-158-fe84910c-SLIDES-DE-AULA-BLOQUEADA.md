@@ -5,7 +5,7 @@
 exemplo de testes de frontend"
 **Objetivo:** quando a aula está bloqueada (`aulas.ativo = false`), o aluno não deve chegar aos
 slides dela por nenhum caminho do site.
-**Próximo passo:** 158.1 — aguardar a aprovação do plano pelo usuário.
+**Próximo passo:** 158.5 — usuário testar como aluno o índice e as páginas da Aula 03 de Testes de Front-End.
 
 ### Diagnóstico (2026-10-14 08:23, leitura do código + consulta ao banco)
 
@@ -38,8 +38,8 @@ slides dela por nenhum caminho do site.
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 158.1 | Aprovação do plano pelo usuário | 👀 Aguardando o usuário | — | — |
-| 158.2 | Índice: links dos cards ficam travados (classe no `body`) até o bloqueio da aula ser conferido (`atividades-crud-modal.js`, `indice-aula-data.js`, `indice-atividades.css`) | ⬜ Pendente | — | `node --check`; leitura do fluxo |
-| 158.3 | Página da atividade: script novo `assets/js/atividade-bloqueio-aula.js` — aluno que não consegue ler a atividade da página (bloqueada ou aula bloqueada) vê "Aula Bloqueada!" e o conteúdo e o link dos slides somem; carregado pelas 10 páginas de Testes de Front-End e pelo gerador | ⬜ Pendente | — | `node --check`; `grep` nas 10 páginas |
-| 158.4 | Documentação: `docs/regras/atividades.md` e cabeçalhos dos scripts | ⬜ Pendente | — | Leitura |
-| 158.5 | Aceite do usuário (testar como aluno no navegador: índice e página da Aula 03) | ⬜ Pendente | — | — |
+| 158.1 | Aprovação do plano pelo usuário | ✅ Concluído | 2026-10-14 08:31 | Usuário respondeu "sim" no chat (2026-10-14 08:31) |
+| 158.2 | Índice: links dos cards ficam travados (classe no `body`) até o bloqueio da aula ser conferido (`atividades-crud-modal.js`, `indice-aula-data.js`, `indice-atividades.css`) | ✅ Concluído | 2026-10-14 08:40 | `node --check` nos 2 JS; nomes globais únicos (`grep`); trava retirada no `finally` e no erro de carga do script |
+| 158.3 | Página da atividade: script novo `assets/js/atividade-bloqueio-aula.js` — aluno que não consegue ler a atividade da página (bloqueada ou aula bloqueada) vê "Aula Bloqueada!" e o conteúdo e o link dos slides somem; carregado pelas 10 páginas de Testes de Front-End e pelo gerador | ✅ Concluído | 2026-10-14 08:45 | `node --check`; `grep`: script nas 10 páginas, no gerador da objetiva e no template da prática; `ast.parse` do gerador; nomes globais únicos |
+| 158.4 | Documentação: `docs/regras/atividades.md` e cabeçalhos dos scripts | ✅ Concluído | 2026-10-14 08:47 | Leitura de `docs/regras/atividades.md` e dos cabeçalhos |
+| 158.5 | Aceite do usuário (testar como aluno no navegador: índice e página da Aula 03) | 👀 Aguardando o usuário | — | — |

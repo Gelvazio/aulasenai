@@ -406,6 +406,12 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
   - **bloquear a aula (`aulas.ativo = false`) bloqueia todas as atividades dela** (trigger
     `aulas_bloqueio_propaga_atividades_trg`, 2026-10-09: grava `atividade.ativo = false`);
     desbloquear a aula não mexe nas atividades;
+  - **slides da aula bloqueada fechados para o aluno** (2026-10-14, tarefa #31; matérias de
+    `assets/js/indice-bloqueio-aula-config.js`): no índice, os links dos cards ficam travados
+    (classe `indice--conferindo-aula`) até o `indice-aula-data.js` conferir o bloqueio; na página
+    da atividade (objetiva e prática), `assets/js/atividade-bloqueio-aula.js` esconde o conteúdo
+    e tira os links dos slides (PDF) quando o aluno não consegue ler a atividade (RLS). O PDF
+    aberto pelo endereço direto continua acessível (arquivo estático do site);
   - aluno: vê a atividade se **alguma** turma dele (`turmaaluno`) estiver liberada; aluno sem
     turma e visitante, liberado. Garantido no banco pela política `atividade_select` e por
     `item_valido`/`topico_valido` (função `atividade_liberada_para_usuario`);
