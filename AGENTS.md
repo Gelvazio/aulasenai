@@ -24,6 +24,9 @@ As regras ficam divididas por assunto em [`.claude/rules/`](.claude/rules/INDEX.
 1. **Toda tarefa que muda algo vira TASK** (etapa em `tasks/etapas/` + linha no
    `tasks/STATUS.md`) e a IA pede detalhes antes de executar; pergunta sem mudança não vira TASK
    ([`tasks/ciclo-da-task.md`](.claude/rules/tasks/ciclo-da-task.md)).
+   - **Primeiro passo, sempre** (2026-10-14): criar a TASK **reservada para a sessão atual** e
+     já gravar no quadro (commit + push da reserva) **antes** de ler código, explorar arquivos ou
+     pedir detalhes.
 2. **Tarefa grande = plano na própria etapa + aprovação** (sem plano separado em `docs/`).
 3. **Cada informação em um lugar só:** etapa = detalhes; `tasks/STATUS.md` = índice
    ([`tasks/quadro.md`](.claude/rules/tasks/quadro.md)). O que não está no quadro não aconteceu.
