@@ -175,6 +175,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #146-bf74c55c-7cc1-48c5-810a | Revisar os filtros do Progresso da Turma (nem todos funcionam) | 🟠 Alta | — | 👀 Aguardando aceite | — | [273-bf74c55c](etapas/ETAPA-273-bf74c55c-REVISAR-FILTROS-DO-PROGRESSO.md) |
 | #147-7cd5eb0b-0a1a-48d8-9125 | Progresso da Turma: ON/OFF "Prova Corrigida" (padrão: não corrigidas) | 🟡 Média | — | 👀 Aguardando aceite | — | [274-7cd5eb0b](etapas/ETAPA-274-7cd5eb0b-PROGRESSO-FILTRO-PROVA-CORRIGIDA.md) |
 | #148-97de4323-6629-4374-b362 | Respostas dos alunos (discursiva): ON/OFF "Mostrar Certas" (padrão: só meia certa e errada) | 🟡 Média | — | 👀 Aguardando aceite | — | [275-97de4323](etapas/ETAPA-275-97de4323-RESPOSTAS-DO-ALUNO-MOSTRAR-CERTAS.md) |
+| #149-96ca6b9f-2394-472b-b232 | Regra: todo pedido vira TASK publicada no quadro e depois assumida (todas as IAs) | 🟠 Alta | — | ⬜ Pendente | — | [276-96ca6b9f](etapas/ETAPA-276-96ca6b9f-REGRA-CRIAR-PUBLICAR-E-ASSUMIR-TASK.md) |
 | #131-c3af51c5-bfbc-4247 | Link da apostila no card da matéria ITIC (índice de Assistente de Operações Logísticas) | 🟡 Média | — | 👀 Aguardando aceite | — | [258-c3af51c5](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Escopo
@@ -487,6 +488,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 273-bf74c55c | Revisar filtros do Progresso (#146, pedida em 2026-10-14) | [ETAPA-273-bf74c55c-REVISAR-FILTROS-DO-PROGRESSO.md](etapas/ETAPA-273-bf74c55c-REVISAR-FILTROS-DO-PROGRESSO.md) |
 | 274-7cd5eb0b | Filtro Prova Corrigida no Progresso (#147, pedida em 2026-10-14) | [ETAPA-274-7cd5eb0b-PROGRESSO-FILTRO-PROVA-CORRIGIDA.md](etapas/ETAPA-274-7cd5eb0b-PROGRESSO-FILTRO-PROVA-CORRIGIDA.md) |
 | 275-97de4323 | Mostrar Certas nas respostas do aluno (#148, pedida em 2026-10-14) | [ETAPA-275-97de4323-RESPOSTAS-DO-ALUNO-MOSTRAR-CERTAS.md](etapas/ETAPA-275-97de4323-RESPOSTAS-DO-ALUNO-MOSTRAR-CERTAS.md) |
+| 276-96ca6b9f | Regra criar, publicar e assumir TASK (#149, pedida em 2026-10-14) | [ETAPA-276-96ca6b9f-REGRA-CRIAR-PUBLICAR-E-ASSUMIR-TASK.md](etapas/ETAPA-276-96ca6b9f-REGRA-CRIAR-PUBLICAR-E-ASSUMIR-TASK.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
