@@ -214,8 +214,9 @@ async function aoSalvarModalAula(evento) {
     try {
         if (!await gravarAulaCard(aula.id, valores)) throw new Error('Nenhuma linha alterada');
         estadoModalAula.contexto.aoGravar({ ...aula, ...valores });
-        atualizarTituloModalAula();
-        mostrarMensagemModalAula(MSG_AULA_GRAVADA);
+        fecharModalAula();
+        await garantirPopupModalAula();
+        window.mostrarPopup?.(MSG_AULA_GRAVADA, { tipo: 'sucesso', titulo: 'Editar aula' });
     } catch (erro) {
         mostrarMensagemModalAula(MSG_AULA_ERRO, true);
     }
