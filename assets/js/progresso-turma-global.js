@@ -12,6 +12,8 @@
 // do aluno (marcar-entregue-professor.js) e a lista dos alunos sem nenhuma resposta
 // (alunos-sem-inicio-entrega.js).
 // Combobox "Questões respondidas" filtra a lista por faixa (filtro-respondidas-progresso.js).
+// A lista tem TODOS os alunos das turmas do curso, também quem não respondeu nada
+// (alunos-da-turma-progresso.js).
 // Plano: docs/progresso-global-atividades.md · Regra: docs/regras/atividades.md
 
 const CLASSE_PROGRESSO_GLOBAL = 'progresso-turma';
@@ -25,6 +27,7 @@ const ARQUIVO_CSS_PROGRESSO_GLOBAL = '../css/progresso-turma-global.css';
 const ARQUIVO_ENTREGA_PROGRESSO_GLOBAL = 'marcar-entregue-professor.js';
 const ARQUIVO_SEM_INICIO_PROGRESSO_GLOBAL = 'alunos-sem-inicio-entrega.js';
 const ARQUIVO_FILTRO_PROGRESSO_GLOBAL = 'filtro-respondidas-progresso.js';
+const ARQUIVO_ALUNOS_TURMA_PROGRESSO_GLOBAL = 'alunos-da-turma-progresso.js';
 // Colunas extras por tipo de atividade: arquivo do módulo e a função que cria a coluna
 // ({titulo, classeArea, atualizar(atividadeId), montarCelula(aluno), aoMudar}); o painel
 // preenche aoMudar para a coluna pedir uma atualização depois de um botão dela.
@@ -510,6 +513,25 @@ async function prepararBotoesNomeGlobal(tipo) {
 }
 
 /**
+ * Acrescenta os alunos das turmas do curso que ainda não responderam nada (carrega o módulo na
+ * primeira vez). Se a leitura falhar, segue só com quem respondeu (o painel não cai).
+ * @param {Object[]} alunos - Alunos com resposta (formato comum).
+ * @param {number} atividadeId - Id da atividade.
+ * @returns {Promise<Object[]>} Todos os alunos.
+ */
+async function completarAlunosDaTurmaGlobal(alunos, atividadeId) {
+    try {
+        if (typeof window.completarComAlunosDaTurma !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_ALUNOS_TURMA_PROGRESSO_GLOBAL);
+        }
+        return await window.completarComAlunosDaTurma(alunos, atividadeId);
+    } catch (erro) {
+        console.warn('Alunos da turma no progresso:', erro.message);
+        return alunos;
+    }
+}
+
+/**
  * Lê o banco e redesenha o resumo e as linhas dos alunos (sem leituras sobrepostas).
  * @param {{resumo: HTMLElement, lista: HTMLElement}} tela - Elementos da área.
  * @param {Object} medida - estrutura (Map) e totalPartes.
@@ -520,13 +542,14 @@ async function atualizarProgressoGlobal(tela, medida) {
     estadoProgressoGlobal.lendo = true;
     try {
         const { fonte, memoria, atividadeId } = estadoProgressoGlobal;
-        const alunos = await fonte.lerAlunos(atividadeId, memoria);
+        const alunos = await completarAlunosDaTurmaGlobal(
+            await fonte.lerAlunos(atividadeId, memoria), atividadeId);
         estadoProgressoGlobal.ultimosAlunos = alunos.map((aluno) =>
             calcularIndicadoresDoAlunoGlobal(aluno, medida));
         await atualizarSemInicioGlobal(tela);
         await atualizarColunasExtrasGlobal();
         if (!alunos.length) {
-            tela.resumo.replaceChildren('Nenhum aluno das suas turmas começou ainda · ' +
+            tela.resumo.replaceChildren('Nenhum aluno nas turmas do curso · ' +
                 'atualizado às ' + new Date().toLocaleTimeString('pt-BR'));
             tela.lista.replaceChildren();
             return;
