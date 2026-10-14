@@ -2,12 +2,12 @@
 // discursivas e avaliações). Fica desativado até a última tentativa liberada estar entregue e
 // gera um PDF só com as respostas do próprio aluno (sem a resposta certa), para postar no
 // Ambiente Virtual. Ligado por <body data-exportar-meu-gabarito="sim">; carregado pelos
-// adaptadores assets/js/meu-gabarito-objetiva.js e assets/js/meu-gabarito-discursiva.js.
-// O PDF é montado por assets/js/exportar-meu-gabarito-pdf.js. Regra: docs/regras/atividades.md
+// adaptadores assets/js/minhas-respostas-objetiva.js e assets/js/minhas-respostas-discursiva.js.
+// O PDF é montado por assets/js/pdf-minhas-respostas.js. Regra: docs/regras/atividades.md
 
 const BASE_SCRIPTS_MEU_GABARITO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
-const ARQUIVO_PDF_MEU_GABARITO = 'exportar-meu-gabarito-pdf.js';
-const ARQUIVO_CSS_MEU_GABARITO = '../css/exportar-meu-gabarito.css';
+const ARQUIVO_PDF_MEU_GABARITO = 'pdf-minhas-respostas.js';
+const ARQUIVO_CSS_MEU_GABARITO = '../css/minhas-respostas.css';
 const TEXTO_BOTAO_MEU_GABARITO = '📄 Exportar Meu Gabarito';
 const TEXTO_GERANDO_MEU_GABARITO = '⏳ Gerando o PDF...';
 const DICA_NAO_ENTREGUE_MEU_GABARITO = 'Disponível depois de entregar a atividade.';

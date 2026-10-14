@@ -2,10 +2,10 @@
 // carrega este arquivo quando a página tem <body data-exportar-meu-gabarito="sim"> e o aluno está
 // logado). Monta os dados do PDF com a alternativa que o aluno marcou em cada questão na última
 // tentativa liberada (respostas do banco, inclusive as herdadas). ⛔ Sem a resposta certa.
-// Botão e PDF: assets/js/exportar-meu-gabarito.js e assets/js/exportar-meu-gabarito-pdf.js.
+// Botão e PDF: assets/js/botao-minhas-respostas.js e assets/js/pdf-minhas-respostas.js.
 
 const BASE_SCRIPTS_MEU_GABARITO_OBJETIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
-const ARQUIVO_BOTAO_MEU_GABARITO_OBJETIVA = 'exportar-meu-gabarito.js';
+const ARQUIVO_BOTAO_MEU_GABARITO_OBJETIVA = 'botao-minhas-respostas.js';
 const TEXTO_EM_BRANCO_OBJETIVA = '(em branco)';
 
 /**

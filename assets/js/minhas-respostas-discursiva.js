@@ -3,11 +3,11 @@
 // <body data-exportar-meu-gabarito="sim"> e o aluno está logado). Monta os dados do PDF com o
 // texto que o aluno escreveu em cada tópico na última tentativa liberada e a nota
 // (notas_media_final; sem correção, "aguardando"). ⛔ Sem o padrão de resposta.
-// Botão e PDF: assets/js/exportar-meu-gabarito.js e assets/js/exportar-meu-gabarito-pdf.js.
+// Botão e PDF: assets/js/botao-minhas-respostas.js e assets/js/pdf-minhas-respostas.js.
 
 const BASE_SCRIPTS_MEU_GABARITO_DISCURSIVA =
     document.currentScript?.src.replace(/[^/]*$/, '') || '';
-const ARQUIVO_BOTAO_MEU_GABARITO_DISCURSIVA = 'exportar-meu-gabarito.js';
+const ARQUIVO_BOTAO_MEU_GABARITO_DISCURSIVA = 'botao-minhas-respostas.js';
 const ROTA_NOTA_MEU_GABARITO = '/rest/v1/rpc/notas_media_final';
 const SITUACAO_COM_NOTA = 'NOTA';
 const TEXTO_NOTA_PENDENTE = 'Aguardando a correção do professor';

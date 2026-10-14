@@ -21,7 +21,7 @@ const ARQUIVO_NOTA_IA_RESPOSTAS = 'nota-ia-respostas-discursiva.js';
 const ARQUIVO_CONFIRMAR_PROFESSOR = 'confirmar-nota-professor-discursiva.js';
 const ARQUIVO_FINALIZAR_PROFESSOR = 'finalizar-atividade-professor.js';
 const ARQUIVO_RESULTADO_ALUNO = 'resultado-aluno-discursiva.js';
-const ARQUIVO_MEU_GABARITO_DISCURSIVA = 'meu-gabarito-discursiva.js';
+const ARQUIVO_MEU_GABARITO_DISCURSIVA = 'minhas-respostas-discursiva.js';
 const VALOR_ATIVO_MEU_GABARITO_DISCURSIVA = 'sim';
 const BASE_SCRIPTS_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const CLASSE_BLOCO = 'topico-resposta';
@@ -308,7 +308,7 @@ function montarPainel(dados) {
 
 /**
  * Aluno: botão "Exportar Meu Gabarito" no painel quando a página pede
- * (body data-exportar-meu-gabarito="sim"; assets/js/meu-gabarito-discursiva.js).
+ * (body data-exportar-meu-gabarito="sim"; assets/js/minhas-respostas-discursiva.js).
  * Uma falha aqui não atrapalha a avaliação.
  * @param {HTMLElement} painel - Painel de identificação.
  * @param {Object} dados - Estado carregado do banco.

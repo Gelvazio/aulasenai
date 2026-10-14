@@ -387,10 +387,10 @@ usuário):** a liberação pelo professor, por atividade e turma, depois que tod
   atividade, docente, tentativa, data e hora da entrega), a **nota** (objetiva: acertos sobre o
   mínimo; prática/discursiva: `notas_media_final` ou "aguardando a correção") e **só as
   respostas do aluno** daquela tentativa. ⛔ Nunca leva a resposta certa nem o padrão de
-  resposta. Código: `assets/js/exportar-meu-gabarito.js` (botão) e
-  `exportar-meu-gabarito-pdf.js` (PDF), adaptadores `meu-gabarito-objetiva.js` (carregado por
-  `respostas-atividade.js`) e `meu-gabarito-discursiva.js` (carregado por
-  `avaliacao-discursiva.js`); CSS `assets/css/exportar-meu-gabarito.css`. Sem mudança no banco.
+  resposta. Código: `assets/js/botao-minhas-respostas.js` (botão) e
+  `pdf-minhas-respostas.js` (PDF), adaptadores `minhas-respostas-objetiva.js` (carregado por
+  `respostas-atividade.js`) e `minhas-respostas-discursiva.js` (carregado por
+  `avaliacao-discursiva.js`); CSS `assets/css/minhas-respostas.css`. Sem mudança no banco.
   Ligado em Testes de Front-End; as demais matérias entram pelas tarefas #83 a #116.
 
 ## 📑 REGRA CRÍTICA — ÍNDICES DE ATIVIDADES: SÓ HTML, EM ORDEM DE DATA

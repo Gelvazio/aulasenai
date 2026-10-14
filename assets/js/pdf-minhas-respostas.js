@@ -1,4 +1,4 @@
-// PDF do "Exportar Meu Gabarito" (assets/js/exportar-meu-gabarito.js): cabeçalho SENAI, quadro
+// PDF do "Exportar Meu Gabarito" (assets/js/botao-minhas-respostas.js): cabeçalho SENAI, quadro
 // de identificação (estudante, turma, unidade curricular, atividade, tentativa, entrega e nota) e
 // a tabela com as respostas do aluno. ⛔ Nunca leva a resposta certa: recebe só o que o
 // adaptador da página leu das tabelas do próprio aluno. jsPDF e autoTable vêm do cdnjs se a

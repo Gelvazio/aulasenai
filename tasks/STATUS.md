@@ -483,6 +483,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 ## Lições aprendidas
 | Data | O que aconteceu | Lição / nova regra |
 |------|-----------------|--------------------|
+| 2026-10-14 11:00 | Os arquivos do "Exportar Meu Gabarito" (#82) tinham "gabarito" no nome e o `.vercelignore` (`*[Gg][Aa][Bb][Aa][Rr][Ii][Tt][Oo]*`) os tirou do site: o botão não apareceu | Arquivo que precisa ir ao ar (JS, CSS, página) **nunca** leva "gabarito" no nome; conferir com `curl` no site depois do push |
 | 2026-10-13 10:40 | `git add -A --pathspec-from-file` parou num arquivo já removido com `git rm`, e o commit da #29 saiu só com as exclusões (corrigido com um 2º commit, sem force) | Conferir o `git diff --cached --name-only` **antes** do commit e parar se o `git add` der erro (como manda o `git-quick.md`) |
 | 2026-10-08 20:15 | No Git Bash local, `TZ=America/Sao_Paulo date` mostrou a hora em UTC (3 h a mais) | Na máquina local, pegar a hora com `Get-Date -Format "yyyy-MM-dd HH:mm:ss"` (PowerShell), como manda o CLAUDE.md |
 | 2026-10-03 | A análise de 2026-09-08 dizia ITIC presencial e Banco de Dados "completo" | Conferir sempre a ementa do curso e as pastas reais antes de afirmar situação |

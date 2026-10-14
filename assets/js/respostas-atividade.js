@@ -35,7 +35,7 @@ const ARQUIVO_PROGRESSO_GLOBAL_OBJETIVA = 'progresso-turma-global.js';
 const TIPO_PROGRESSO_GLOBAL_OBJETIVA = 'objetiva';
 const ARQUIVO_QUESTOES_ATE_MINIMO = 'questoes-ate-minimo.js';
 const VALOR_ATIVO_QUESTOES_ATE_MINIMO_PAGINA = 'sim';
-const ARQUIVO_MEU_GABARITO_OBJETIVA = 'meu-gabarito-objetiva.js';
+const ARQUIVO_MEU_GABARITO_OBJETIVA = 'minhas-respostas-objetiva.js';
 const ARQUIVO_CORRECAO_OBJETIVA_ALUNO = 'correcao-objetiva-aluno.js';
 const VALOR_ATIVO_MEU_GABARITO = 'sim';
 
@@ -741,7 +741,7 @@ function descreverNotaObjetiva(estado, resultado) {
 
 /**
  * Aluno: botão "Exportar Meu Gabarito" na folha de respostas quando a página pede
- * (body data-exportar-meu-gabarito="sim"; assets/js/meu-gabarito-objetiva.js).
+ * (body data-exportar-meu-gabarito="sim"; assets/js/minhas-respostas-objetiva.js).
  * Uma falha aqui não pode impedir o resto da página.
  * @param {Object} estado - Estado da página.
  * @param {Object} carregado - Dados do provedor.
