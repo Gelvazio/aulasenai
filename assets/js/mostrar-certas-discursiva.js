@@ -1,11 +1,11 @@
 // Professor: ON/OFF "Mostrar Certas" ao lado de "🧑‍🎓 Respostas dos alunos" da avaliação
 // discursiva. Desligado (padrão): ao escolher um aluno, a prova mostra só as questões MEIA CERTA ou
 // ERRADA; ligado: mostra também as certas. Certa = todos os tópicos da questão com a nota cheia
-// (vale a nota do professor; sem ela, a da IA). Questão ainda sem nota nunca é escondida. Sem
+// do professor OU da IA (qualquer das duas). Questão ainda sem nota nunca é escondida. Sem
 // aluno escolhido, nenhuma questão é escondida. Só muda a tela: nada é gravado.
 // Também traz o ON/OFF "Falta Corrigir?" (ligado ao abrir): ligado, ao escolher um aluno, a prova
-// mostra só as questões que o professor ainda não corrigiu (algum tópico sem nota do professor) e
-// o "Mostrar Certas" fica sem efeito; desligado, vale o "Mostrar Certas". Tarefa #150.
+// mostra só as questões que o professor ainda não corrigiu (algum tópico sem nota do professor);
+// os dois filtros valem juntos. Tarefa #150.
 // Pedido do usuário em 2026-10-14 (tarefa #148). Carregado por assets/js/avaliacao-discursiva.js.
 // Depende de js/supabase.js (sbGet). Regra: docs/regras/atividades.md
 
@@ -17,7 +17,7 @@ const SELETOR_TITULO_RESPOSTAS_ALUNO = '.respostas-aluno-professor__titulo';
 const TEXTO_MOSTRAR_CERTAS = 'Mostrar Certas';
 const TEXTO_FALTA_CORRIGIR = 'Falta Corrigir?';
 const DICA_FALTA_CORRIGIR = 'Ligado: só as questões do aluno escolhido que o professor ainda ' +
-    'não corrigiu. Desligado: vale o "Mostrar Certas".';
+    'não corrigiu. Desligado: também as já corrigidas.';
 const DICA_MOSTRAR_CERTAS = 'Desligado: só as questões meia certa ou errada do aluno ' +
     'escolhido. Ligado: também as certas.';
 const BASE_SCRIPTS_MOSTRAR_CERTAS = document.currentScript?.src.replace(/[^/]*$/, '') || '';
@@ -30,16 +30,14 @@ const estadoMostrarCertas = {
 };
 
 /**
- * Nota que vale no tópico: a do professor; sem ela, a da IA.
- * @param {{nota_professor: number|null, nota_ia: number|null}} linha - Correção do tópico.
- * @returns {number|null} Nota ou null se ainda não houver.
+ * Diz se a nota atinge a pontuação cheia do tópico.
+ * @param {number|null|undefined} nota - Nota dada (professor ou IA).
+ * @param {number} pontos - Pontuação cheia do tópico.
+ * @returns {boolean} true se a nota existe e é cheia.
  */
-function notaQueValeMostrarCertas(linha) {
-    if (linha.nota_professor !== null && linha.nota_professor !== undefined) {
-        return Number(linha.nota_professor);
-    }
-    if (linha.nota_ia !== null && linha.nota_ia !== undefined) return Number(linha.nota_ia);
-    return null;
+function notaEhCheia(nota, pontos) {
+    if (nota === null || nota === undefined) return false;
+    return Number(nota) >= Number(pontos);
 }
 
 /**
@@ -62,8 +60,8 @@ async function lerQuestoesDoAluno(aluno, atividadeId) {
     const naoCorrigidas = new Set();
     topicos.forEach((topico) => {
         const linha = porTopico.get(topico.item + '|' + topico.topico);
-        const nota = linha ? notaQueValeMostrarCertas(linha) : null;
-        const estaCerta = nota !== null && nota >= Number(topico.pontos);
+        const estaCerta = notaEhCheia(linha?.nota_professor, topico.pontos) ||
+            notaEhCheia(linha?.nota_ia, topico.pontos);
         const temNotaDoProfessor = linha?.nota_professor !== null &&
             linha?.nota_professor !== undefined;
         if (!estaCerta) naoCertas.add(topico.item);
@@ -77,16 +75,15 @@ async function lerQuestoesDoAluno(aluno, atividadeId) {
 }
 
 /**
- * Diz se a questão deve ficar escondida: "Falta Corrigir?" ligado esconde as já corrigidas; com
- * ele desligado, "Mostrar Certas" desligado esconde as certas.
+ * Diz quais regras escondem a questão: "Falta Corrigir?" ligado esconde as já corrigidas pelo
+ * professor; "Mostrar Certas" desligado esconde as certas (nota cheia do professor ou da IA).
  * @param {number} item - Número da questão.
  * @returns {{certa: boolean, corrigida: boolean}} Qual regra esconde a questão.
  */
 function regrasQueEscondem(item) {
     const corrigida = estadoMostrarCertas.faltaCorrigir &&
         estadoMostrarCertas.questoesCorrigidas.has(item);
-    const certa = !estadoMostrarCertas.faltaCorrigir && !estadoMostrarCertas.ligado &&
-        estadoMostrarCertas.questoesCertas.has(item);
+    const certa = !estadoMostrarCertas.ligado && estadoMostrarCertas.questoesCertas.has(item);
     return { certa, corrigida };
 }
 
