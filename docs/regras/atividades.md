@@ -287,6 +287,11 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     o alerta vira **"Atividade Corrigida, veja sua nota no início!"**. Código:
     `mostrarAlertaDeEntrega` em `assets/js/avaliacao-discursiva.js` (chamada também pelo
     `resultado-aluno-discursiva.js`) + CSS `entrega-discursiva__alerta`.
+  - **Progresso da turma — "Nota final" mostra a nota do professor (2026-10-14, #163):** na
+    discursiva, a coluna **Nota final** mostra a **🎓 nota confirmada pelo professor** quando a
+    prova está corrigida (entregue e com nota do professor em todas as questões respondidas);
+    antes disso continua a **🤖 nota sugerida pela IA** (a confirmar). Antes só aparecia a da IA.
+    Código: `progresso-turma-fontes.js` (`somarNotasDoProfessor`) e `progresso-turma-global.js`.
   - **Combo "Aluno" lembrado (2026-10-14, #157):** o aluno escolhido (por atividade) e os três
     filtros de "Respostas dos alunos" — **Pendente Correcao**, **Falta Corrigir?** e **Mostrar
     Certas** — ficam no **localStorage** do navegador (chaves `respostas-aluno:*`, só preferência

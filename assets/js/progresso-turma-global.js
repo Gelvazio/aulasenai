@@ -212,7 +212,8 @@ function montarCelulaNotaParcialGlobal(aluno, totalPartes) {
 }
 
 /**
- * Monta a célula da nota final: só com a entrega feita e tudo o que foi respondido corrigido.
+ * Monta a célula da nota final: a nota confirmada pelo professor (🎓) quando a prova está
+ * corrigida; senão a sugerida pela IA (🤖), só com a entrega feita e tudo corrigido pela IA.
  * @param {Object} aluno - Aluno com indicadores.
  * @returns {HTMLElement} Célula pronta.
  */
@@ -221,6 +222,14 @@ function montarCelulaNotaFinalGlobal(aluno) {
     const { textos } = estadoProgressoGlobal.fonte;
     if (aluno.valorNotaFinal === SEM_NOTA_PROGRESSO_GLOBAL) {
         return criarElementoProgressoGlobal('span', classe + ' ' + classe + '--vazia', '—');
+    }
+    if (aluno.notaDoProfessor !== null && aluno.notaDoProfessor !== undefined) {
+        const confirmada = criarElementoProgressoGlobal('span', classe + ' ' + classe +
+            '--professor', textos.iconeProfessor + ' ' +
+            formatarNotaProgressoGlobal(aluno.notaDoProfessor));
+        confirmada.title = textos.dicaProfessor + ' Mínimo do aluno: ' + aluno.minimo +
+            ' questões.';
+        return confirmada;
     }
 
     const celula = criarElementoProgressoGlobal('span', classe,
@@ -257,11 +266,15 @@ function calcularIndicadoresDoAlunoGlobal(aluno, medida) {
         ? notaProporcionalGlobal(aluno.correcao.nota, { totalQuestoes, minimo }) : null;
     const temNotaFinal = aluno.entregue && respondidos > 0 &&
         aluno.correcao?.corrigidos >= respondidos;
+    const notaDoProfessor = aluno.provaCorrigida && aluno.notaProfessor !== undefined
+        ? notaProporcionalGlobal(aluno.notaProfessor, { totalQuestoes, minimo }) : null;
+    const valorNotaFinal = temNotaFinal ? notaParcial : SEM_NOTA_PROGRESSO_GLOBAL;
     return {
         ...aluno, respondidos, percentual, completas, totalQuestoes, minimo, notaParcial,
+        notaDoProfessor,
         valorSituacao: aluno.entregue ? totalQuestoes + 1 : completas,
         valorNotaParcial: notaParcial === null ? SEM_NOTA_PROGRESSO_GLOBAL : notaParcial,
-        valorNotaFinal: temNotaFinal ? notaParcial : SEM_NOTA_PROGRESSO_GLOBAL,
+        valorNotaFinal: notaDoProfessor === null ? valorNotaFinal : notaDoProfessor,
     };
 }
 
