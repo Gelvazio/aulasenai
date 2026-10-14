@@ -23,7 +23,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | nuvem · ccr-00f69e8a-6qcla9 | #26 ([144-aff33423](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md)); etapa 140-8554d88e aguarda o usuário | 🔄 Ativa | 2026-10-11 06:28 |
 | nuvem · ccr-be208aef-c6h8oe | #24 ([142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md)) — cancelada em 2026-10-13 (fila do banco desativada, decisão D1 da #29) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | nuvem · claude/ola-zlzh8z | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)); ⛔ não mexer em Banco de Dados | 🔄 Ativa | 2026-10-10 16:21 |
-| local · main | #33 ([160-d7ade403](etapas/ETAPA-160-d7ade403-QUESTOES-ATE-O-MINIMO-TESTES-FRONTEND.md)), #33, #34, #35, #44 e #27 a #31 aguardam aceite; #36 a #43 livres para outras IAs; #32 cancelada | 👀 Aguardando o usuário | 2026-10-14 10:08 |
+| local · main | #45 ([172-0ef7953a](etapas/ETAPA-172-0ef7953a-PROFESSOR-MARCA-ENTREGUE-TESTES-FRONTEND.md)) aguarda respostas do usuário; #33, #34, #35, #44 e #27 a #31 aguardam aceite; #36 a #43 e #46 a #52 livres para outras IAs; #32 cancelada | 👀 Aguardando o usuário | 2026-10-14 10:09 |
 
 ## 📌 Tarefas
 
@@ -71,6 +71,14 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #42-b4cc900a-b520-4867 | Questões até o mínimo: Introdução à Comunicação Oral e Escrita (Rio do Sul Mais Tech, 2 páginas) | 🟠 Alta | #33 | ⬜ Pendente | — | [169-b4cc900a](etapas/ETAPA-169-b4cc900a-QUESTOES-ATE-O-MINIMO-COMUNICACAO-ORAL-ESCRITA.md) |
 | #43-25be3d4d-8aba-409a | Questões até o mínimo: Reforço de Linguagens (Rio do Sul Mais Tech, 10 páginas) | 🟠 Alta | #33 | ⬜ Pendente | — | [170-25be3d4d](etapas/ETAPA-170-25be3d4d-QUESTOES-ATE-O-MINIMO-REFORCO-LINGUAGENS.md) |
 | #44-ee2de431-6821-41c3 | Slides das aulas de Testes de Front-End em Markdown (`AULAS/CONTEUDO-AULAS/`) | 🟡 Média | — | 👀 Aguardando aceite | — | [171-ee2de431](etapas/ETAPA-171-ee2de431-SLIDES-TESTES-FRONTEND-EM-MARKDOWN.md) |
+| #45-0ef7953a-721d-49d0 | Professor marca a atividade do aluno como entregue: Testes de Front-End (5 páginas) | 🟡 Média | — | 👀 Aguardando respostas | local · main (desde 2026-10-14 10:09) | [172-0ef7953a](etapas/ETAPA-172-0ef7953a-PROFESSOR-MARCA-ENTREGUE-TESTES-FRONTEND.md) |
+| #46-20a501cc-ff7f-48b0 | Professor marca entregue: Banco de Dados (Técnico em Informática para Internet, 20 páginas) | 🟡 Média | #45 | ⬜ Pendente | — | [173-20a501cc](etapas/ETAPA-173-20a501cc-PROFESSOR-MARCA-ENTREGUE-BANCO-DE-DADOS.md) |
+| #47-94f1b629-001e-4942 | Professor marca entregue: Introdução às TIC (Assistente de Operações Logísticas, 15 páginas) | 🟡 Média | #45 | ⬜ Pendente | — | [174-94f1b629](etapas/ETAPA-174-94f1b629-PROFESSOR-MARCA-ENTREGUE-INTRODUCAO-TIC.md) |
+| #48-a0c946b1-815b-49a4 | Professor marca entregue: Análise de Dados Aplicada à Gestão (Gestão e Controle de Materiais, 9 páginas) | 🟡 Média | #45 | ⬜ Pendente | — | [175-a0c946b1](etapas/ETAPA-175-a0c946b1-PROFESSOR-MARCA-ENTREGUE-ANALISE-DADOS-GESTAO.md) |
+| #49-18326931-2a29-4d36 | Professor marca entregue: Fundamentos de Automação e Instrumentação (Operador de Produção Industrial, 15 páginas) | 🟡 Média | #45 | ⬜ Pendente | — | [176-18326931](etapas/ETAPA-176-18326931-PROFESSOR-MARCA-ENTREGUE-FUNDAMENTOS-AUTOMACAO.md) |
+| #50-281a62ff-a024-432f | Professor marca entregue: Fundamentos da Tecnologia e Programação (Rio do Sul Mais Tech, 14 páginas) | 🟡 Média | #45 | ⬜ Pendente | — | [177-281a62ff](etapas/ETAPA-177-281a62ff-PROFESSOR-MARCA-ENTREGUE-FUNDAMENTOS-TECNOLOGIA-PROGRAMACAO.md) |
+| #51-4e3e4f10-71a8-4fbe | Professor marca entregue: Introdução à Comunicação Oral e Escrita (Rio do Sul Mais Tech, 2 páginas) | 🟡 Média | #45 | ⬜ Pendente | — | [178-4e3e4f10](etapas/ETAPA-178-4e3e4f10-PROFESSOR-MARCA-ENTREGUE-COMUNICACAO-ORAL-ESCRITA.md) |
+| #52-584c1f64-f4cd-4013 | Professor marca entregue: Reforço de Linguagens (Rio do Sul Mais Tech, 10 páginas) | 🟡 Média | #45 | ⬜ Pendente | — | [179-584c1f64](etapas/ETAPA-179-584c1f64-PROFESSOR-MARCA-ENTREGUE-REFORCO-LINGUAGENS.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -278,6 +286,14 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 169-b4cc900a | Questões até o mínimo: Introdução à Comunicação Oral e Escrita (#42, criada pela #34 em 2026-10-14) | [ETAPA-169-b4cc900a-QUESTOES-ATE-O-MINIMO-COMUNICACAO-ORAL-ESCRITA.md](etapas/ETAPA-169-b4cc900a-QUESTOES-ATE-O-MINIMO-COMUNICACAO-ORAL-ESCRITA.md) |
 | 170-25be3d4d | Questões até o mínimo: Reforço de Linguagens (#43, criada pela #34 em 2026-10-14) | [ETAPA-170-25be3d4d-QUESTOES-ATE-O-MINIMO-REFORCO-LINGUAGENS.md](etapas/ETAPA-170-25be3d4d-QUESTOES-ATE-O-MINIMO-REFORCO-LINGUAGENS.md) |
 | 171-ee2de431 | Slides das aulas de Testes de Front-End em Markdown (#44, pedida em 2026-10-14) | [ETAPA-171-ee2de431-SLIDES-TESTES-FRONTEND-EM-MARKDOWN.md](etapas/ETAPA-171-ee2de431-SLIDES-TESTES-FRONTEND-EM-MARKDOWN.md) |
+| 172-0ef7953a | Professor marca a atividade do aluno como entregue: Testes de Front-End (#45, pedida em 2026-10-14) | [ETAPA-172-0ef7953a-PROFESSOR-MARCA-ENTREGUE-TESTES-FRONTEND.md](etapas/ETAPA-172-0ef7953a-PROFESSOR-MARCA-ENTREGUE-TESTES-FRONTEND.md) |
+| 173-20a501cc | Professor marca entregue: Banco de Dados (#46, criada pela #45 em 2026-10-14) | [ETAPA-173-20a501cc-PROFESSOR-MARCA-ENTREGUE-BANCO-DE-DADOS.md](etapas/ETAPA-173-20a501cc-PROFESSOR-MARCA-ENTREGUE-BANCO-DE-DADOS.md) |
+| 174-94f1b629 | Professor marca entregue: Introdução às TIC (#47, criada pela #45 em 2026-10-14) | [ETAPA-174-94f1b629-PROFESSOR-MARCA-ENTREGUE-INTRODUCAO-TIC.md](etapas/ETAPA-174-94f1b629-PROFESSOR-MARCA-ENTREGUE-INTRODUCAO-TIC.md) |
+| 175-a0c946b1 | Professor marca entregue: Análise de Dados Aplicada à Gestão (#48, criada pela #45 em 2026-10-14) | [ETAPA-175-a0c946b1-PROFESSOR-MARCA-ENTREGUE-ANALISE-DADOS-GESTAO.md](etapas/ETAPA-175-a0c946b1-PROFESSOR-MARCA-ENTREGUE-ANALISE-DADOS-GESTAO.md) |
+| 176-18326931 | Professor marca entregue: Fundamentos de Automação e Instrumentação (#49, criada pela #45 em 2026-10-14) | [ETAPA-176-18326931-PROFESSOR-MARCA-ENTREGUE-FUNDAMENTOS-AUTOMACAO.md](etapas/ETAPA-176-18326931-PROFESSOR-MARCA-ENTREGUE-FUNDAMENTOS-AUTOMACAO.md) |
+| 177-281a62ff | Professor marca entregue: Fundamentos da Tecnologia e Programação (#50, criada pela #45 em 2026-10-14) | [ETAPA-177-281a62ff-PROFESSOR-MARCA-ENTREGUE-FUNDAMENTOS-TECNOLOGIA-PROGRAMACAO.md](etapas/ETAPA-177-281a62ff-PROFESSOR-MARCA-ENTREGUE-FUNDAMENTOS-TECNOLOGIA-PROGRAMACAO.md) |
+| 178-4e3e4f10 | Professor marca entregue: Introdução à Comunicação Oral e Escrita (#51, criada pela #45 em 2026-10-14) | [ETAPA-178-4e3e4f10-PROFESSOR-MARCA-ENTREGUE-COMUNICACAO-ORAL-ESCRITA.md](etapas/ETAPA-178-4e3e4f10-PROFESSOR-MARCA-ENTREGUE-COMUNICACAO-ORAL-ESCRITA.md) |
+| 179-584c1f64 | Professor marca entregue: Reforço de Linguagens (#52, criada pela #45 em 2026-10-14) | [ETAPA-179-584c1f64-PROFESSOR-MARCA-ENTREGUE-REFORCO-LINGUAGENS.md](etapas/ETAPA-179-584c1f64-PROFESSOR-MARCA-ENTREGUE-REFORCO-LINGUAGENS.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
