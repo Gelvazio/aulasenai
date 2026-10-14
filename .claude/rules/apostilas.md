@@ -19,7 +19,9 @@ Estrutura de pastas da matéria: `materias-global.md`. Detalhes: `docs/regras/ap
 ## Fluxo da apostila
 
 1. Capítulos em Markdown — **um por vez, com validação do usuário**.
-2. Mínimo de **5 exercícios por capítulo**.
+2. **Sem atividades nem perguntas** (2026-10-14, todas as apostilas): nenhum capítulo tem
+   exercícios, questões ou atividades — o gerador recusa `## Exercícios`. Atividades ficam só
+   no banco (`atividades-banco.md`). Vídeos: opcionais só com `apostila_sem_videos_e_exercicios`.
 3. **Markdown completo** em `<MATERIA>/APOSTILA/APOSTILA-<MATERIA>.md` (o usuário compara e
    acrescenta dados).
 4. Só no final o **HTML**, gerado a partir do Markdown completo.
@@ -35,7 +37,7 @@ Estrutura de pastas da matéria: `materias-global.md`. Detalhes: `docs/regras/ap
 ## PDF (2026-10-08, todas as apostilas)
 
 - Rodapé de toda folha: **"Página N de T"** — apostila completa usa a numeração da apostila;
-  exportação parcial (ex.: só exercícios) numera as folhas exportadas ("Página 1 de 2").
+  exportação parcial (só nas apostilas antigas com exercícios) numera as folhas exportadas.
   Código: `assets/js/apostila.js` (`numerarPaginas`, `numerarPaginasExportadas`).
 - A **faixa azul vertical** da esquerda aparece só na tela; no PDF não sai (`@media print` em
   `assets/css/apostila.css`), mantendo as margens para a paginação não mudar.
