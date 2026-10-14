@@ -24,7 +24,9 @@ with r as (
   select r.aluno_id, r.tentativa, r.item, r.topico, al.turma_codigo,
          lower(regexp_replace(trim(r.texto), '\s+', ' ', 'g')) as texto
   from resposta_discursiva r join aluno al on al.id = r.aluno_id
-  where r.atividade_id = <ID> and length(trim(r.texto)) >= 40),
+  where r.atividade_id = <ID> and length(trim(r.texto)) >= 40
+    and not exists (select 1 from aluno_liberado_copia l
+      where l.atividade_id = <ID> and l.aluno_id = r.aluno_id)),
 pares as (
   select a.aluno_id, a.tentativa, a.item, a.topico, b.aluno_id as aluno_parecido_id,
          round(extensions.similarity(a.texto, b.texto)::numeric, 3) as semelhanca,
@@ -45,6 +47,8 @@ order by p.item, p.topico, p.semelhanca desc;
 - Só é suspeita com **90% ou mais** de semelhança (pedido do usuário, 2026-10-14); a tela mostra
   só essas, com o **%** de cada uma. Texto com menos de **40 caracteres** não entra.
 - Linha que já existe (inclusive validada pelo professor) **não é refeita**.
+- Aluno marcado pelo professor como **"Não é cópia"** na atividade (`aluno_liberado_copia`,
+  botão 🛡️ do Progresso, #133) **não é comparado**, nem como aluno nem como parecido.
 
 ### 2. Decidir (a IA lê os dois textos)
 

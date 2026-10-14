@@ -244,6 +244,9 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     **Suspeita de Cópia** no Progresso da turma (mouse: nome e resposta do outro aluno) e, ao
     escolher o aluno, a questão vermelha piscando com **✅ Não é cópia / ❌ É cópia** (É cópia zera
     a nota da questão). Código: `assets/js/suspeita-copia-discursiva.js` + `assets/css/suspeita-copia.css`.
+    Só conta com **90% ou mais** e mostra o % (#131). Botão **🛡️ Não é cópia** no aluno (#133):
+    tira o aluno da comparação **naquela atividade** (as suspeitas dele e as que apontam para ele
+    viram "não é cópia"); **↩️ Voltar a comparar** desfaz.
   - **Botões do professor (2026-10-08):** ao escolher o aluno, cada alternativa ganha, antes do
     "💾 Gravar", os botões ✅ Certa (pontos) / 🟡 Meia certa (metade) / ❌ Errada (0), que gravam a
     `nota_professor` (upsert só dessa coluna; `nota_ia` e comentário ficam). Código

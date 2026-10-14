@@ -24,7 +24,8 @@ const ARQUIVO_CSS_PROGRESSO_GLOBAL = '../css/progresso-turma-global.css';
 const ARQUIVO_ENTREGA_PROGRESSO_GLOBAL = 'marcar-entregue-professor.js';
 const ARQUIVO_SEM_INICIO_PROGRESSO_GLOBAL = 'alunos-sem-inicio-entrega.js';
 // Colunas extras por tipo de atividade: arquivo do módulo e a função que cria a coluna
-// ({titulo, classeArea, atualizar(atividadeId), montarCelula(aluno)}).
+// ({titulo, classeArea, atualizar(atividadeId), montarCelula(aluno), aoMudar}); o painel
+// preenche aoMudar para a coluna pedir uma atualização depois de um botão dela.
 const COLUNAS_EXTRAS_POR_TIPO_GLOBAL = {
     discursiva: [{ arquivo: 'suspeita-copia-discursiva.js', funcao: 'criarColunaSuspeitaCopia' }],
 };
@@ -632,6 +633,9 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
     await prepararEntregaProfessorGlobal(area, tela);
 
     estadoProgressoGlobal.atualizarAgora = () => atualizarProgressoGlobal(tela, medida);
+    estadoProgressoGlobal.colunasExtras.forEach((coluna) => {
+        coluna.aoMudar = estadoProgressoGlobal.atualizarAgora;
+    });
     await atualizarProgressoGlobal(tela, medida);
     estadoProgressoGlobal.temporizador = setInterval(
         () => atualizarProgressoGlobal(tela, medida), INTERVALO_PROGRESSO_GLOBAL_MS);

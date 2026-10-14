@@ -484,6 +484,16 @@
           <td>Professor do aluno valida: "não é cópia" ou "é cópia" (grava nota_professor = 0 no tópico; recusa se a nota já foi confirmada com outro valor)</td>
         </tr>
         <tr>
+          <td>aluno_liberado_copia</td>
+          <td>Tabela (RLS)</td>
+          <td>Aluno marcado pelo professor como "Não é cópia" na atividade (2026-10-14): PK atividade + aluno; fora da comparação de cópia da IA; só o professor lê</td>
+        </tr>
+        <tr>
+          <td>liberar_aluno_copia(...)</td>
+          <td>Função (security definer)</td>
+          <td>Professor do aluno libera (suspeitas pendentes dele e dos colegas que apontam para ele viram nao_copia) ou volta a comparar; nenhuma nota muda</td>
+        </tr>
+        <tr>
           <td>minimo_questoes_aluno</td>
           <td>Tabela (RLS)</td>
           <td>PK atividade + aluno; minimo (≥ 1), definido_por, definido_em; aluno lê o próprio, professor grava só alunos das turmas dele (2026-10-08)</td>

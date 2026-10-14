@@ -3,6 +3,7 @@
 // docs/regras/suspeita-copia-discursiva.md); só o professor lê (RLS). Este módulo:
 //   1. coluna "Suspeita de Cópia" do Progresso da turma (progresso-turma-global.js), com quem a
 //      resposta parece; ao passar o mouse, o nome e a resposta do outro aluno;
+//      e o botão "🛡️ Não é cópia" do aluno (tira o aluno da comparação na atividade, #133);
 //   2. alerta vermelho piscando na questão do aluno escolhido no combo (avaliacao-discursiva.js),
 //      com os botões "Não é cópia" / "É cópia" (função validar_suspeita_copia: "É cópia" grava
 //      nota_professor = 0 naquele tópico).
@@ -33,7 +34,20 @@ const CEM_POR_CENTO = 100;
 const ARQUIVO_CSS_SUSPEITA = '../css/suspeita-copia.css';
 const BASE_SCRIPTS_SUSPEITA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 
-const estadoSuspeitaCopia = { porAluno: new Map(), nomes: new Map() };
+const TABELA_ALUNO_LIBERADO_COPIA = 'aluno_liberado_copia';
+const RPC_LIBERAR_ALUNO_COPIA = 'liberar_aluno_copia';
+const TEXTO_BOTAO_LIBERAR_ALUNO = '🛡️ Não é cópia';
+const TEXTO_ALUNO_LIBERADO = '🛡️ Liberado';
+const TEXTO_BOTAO_VOLTAR_COMPARAR = '↩️ Voltar a comparar';
+const MSG_CONFIRMAR_LIBERAR_ALUNO = 'Marcar este aluno como "NÃO É CÓPIA" nesta atividade? ' +
+    'Todas as suspeitas dele (e as dos colegas que apontam para ele) viram "não é cópia" e a IA ' +
+    'deixa de comparar as respostas dele. Nenhuma nota muda.';
+const MSG_CONFIRMAR_VOLTAR_COMPARAR = 'Voltar a comparar as respostas deste aluno com as dos ' +
+    'colegas nas próximas correções da IA?';
+
+const estadoSuspeitaCopia = {
+    porAluno: new Map(), nomes: new Map(), liberados: new Set(), atividadeId: null, coluna: null,
+};
 
 /**
  * Cria um elemento com classe e texto.
@@ -102,6 +116,17 @@ async function lerRespostasParecidas(atividadeId, ids) {
 }
 
 /**
+ * Lê os alunos que o professor marcou como "Não é cópia" na atividade.
+ * @param {number} atividadeId - Id da atividade.
+ */
+async function lerAlunosLiberados(atividadeId) {
+    const linhas = await sbGet(TABELA_ALUNO_LIBERADO_COPIA,
+        'select=aluno_id&atividade_id=eq.' + atividadeId);
+    estadoSuspeitaCopia.atividadeId = atividadeId;
+    estadoSuspeitaCopia.liberados = new Set(linhas.map((linha) => linha.aluno_id));
+}
+
+/**
  * Lê do banco as suspeitas da atividade e as agrupa por aluno (com nome e resposta do outro).
  * @param {number} atividadeId - Id da atividade.
  * @returns {Promise<Map<string, Object[]>>} Suspeitas por "aluno|tentativa".
@@ -110,7 +135,7 @@ async function lerSuspeitasDeCopia(atividadeId) {
     const linhas = await lerLinhasSuspeita(atividadeId);
     const parecidos = linhas.map((linha) => linha.aluno_parecido_id);
     const [textos] = await Promise.all([lerRespostasParecidas(atividadeId, parecidos),
-        carregarNomesSuspeita(parecidos)]);
+        carregarNomesSuspeita(parecidos), lerAlunosLiberados(atividadeId)]);
     const porAluno = new Map();
     linhas.forEach((linha) => {
         const chave = linha.aluno_id + '|' + linha.tentativa;
@@ -170,21 +195,65 @@ function criarEtiquetaSuspeita(suspeita) {
 function montarCelulaSuspeitaCopia(aluno) {
     const celula = criarElementoSuspeita('div', CLASSE_CELULA_SUSPEITA);
     const lista = estadoSuspeitaCopia.porAluno.get(aluno.alunoId + '|' + aluno.tentativa) || [];
-    if (!lista.length) {
-        celula.textContent = TEXTO_SEM_SUSPEITA;
+    if (estadoSuspeitaCopia.liberados.has(aluno.alunoId)) {
+        celula.append(criarElementoSuspeita('span', 'suspeita-copia__liberado',
+            TEXTO_ALUNO_LIBERADO), criarBotaoLiberarAluno(aluno, false));
         return celula;
     }
-    celula.append(...lista.map(criarEtiquetaSuspeita));
+    const etiquetas = lista.length ? lista.map(criarEtiquetaSuspeita)
+        : [criarElementoSuspeita('span', '', TEXTO_SEM_SUSPEITA)];
+    celula.append(...etiquetas, criarBotaoLiberarAluno(aluno, true));
     return celula;
 }
 
 /**
+ * Botão do aluno na coluna: "🛡️ Não é cópia" (liberar) ou "↩️ Voltar a comparar".
+ * @param {{alunoId: string}} aluno - Aluno do painel.
+ * @param {boolean} liberar - true cria o "Não é cópia"; false desfaz.
+ * @returns {HTMLButtonElement} Botão.
+ */
+function criarBotaoLiberarAluno(aluno, liberar) {
+    const botao = criarElementoSuspeita('button', 'suspeita-copia__aluno-botao',
+        liberar ? TEXTO_BOTAO_LIBERAR_ALUNO : TEXTO_BOTAO_VOLTAR_COMPARAR);
+    botao.type = 'button';
+    botao.addEventListener('click', () => aoLiberarAluno(aluno, liberar));
+    return botao;
+}
+
+/**
+ * Confirma e grava o "Não é cópia" do aluno (ou o desfaz) e atualiza o painel.
+ * @param {{alunoId: string}} aluno - Aluno do painel.
+ * @param {boolean} liberar - true libera; false volta a comparar.
+ */
+async function aoLiberarAluno(aluno, liberar) {
+    const mensagem = liberar ? MSG_CONFIRMAR_LIBERAR_ALUNO : MSG_CONFIRMAR_VOLTAR_COMPARAR;
+    const confirmou = await confirmarPopup(mensagem, { tipo: 'aviso',
+        titulo: TITULO_POPUP_SUSPEITA, textoConfirmar: liberar ? 'Não é cópia' : 'Voltar' });
+    if (!confirmou) return;
+
+    try {
+        const { error } = await obterClienteSupabase().rpc(RPC_LIBERAR_ALUNO_COPIA, {
+            p_atividade: estadoSuspeitaCopia.atividadeId, p_aluno: aluno.alunoId,
+            p_liberar: liberar });
+        if (error) throw new Error(error.message);
+        await estadoSuspeitaCopia.coluna?.aoMudar?.();
+    } catch (erro) {
+        await mostrarPopup('Não foi possível gravar: ' + erro.message,
+            { tipo: 'erro', titulo: TITULO_POPUP_SUSPEITA });
+    }
+}
+
+/**
  * Coluna extra do Progresso da turma (contrato de progresso-turma-global.js).
- * @returns {{titulo: string, classeArea: string, atualizar: Function, montarCelula: Function}}
+ * O painel preenche aoMudar (atualiza o painel depois de um botão da coluna).
+ * @returns {{titulo: string, classeArea: string, atualizar: Function, montarCelula: Function,
+ *     aoMudar: Function|null}}
  */
 function criarColunaSuspeitaCopia() {
-    return { titulo: TITULO_COLUNA_SUSPEITA, classeArea: CLASSE_AREA_SUSPEITA,
-        atualizar: lerSuspeitasDeCopia, montarCelula: montarCelulaSuspeitaCopia };
+    estadoSuspeitaCopia.coluna = { titulo: TITULO_COLUNA_SUSPEITA,
+        classeArea: CLASSE_AREA_SUSPEITA, atualizar: lerSuspeitasDeCopia,
+        montarCelula: montarCelulaSuspeitaCopia, aoMudar: null };
+    return estadoSuspeitaCopia.coluna;
 }
 
 /**
