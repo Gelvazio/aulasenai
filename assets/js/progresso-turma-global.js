@@ -14,7 +14,7 @@
 // Combobox "Questões respondidas" filtra a lista por faixa (filtro-respondidas-progresso.js);
 // ON/OFF "Tarefa Entregue?" (desligado: só quem não entregou; ligado: só quem entregou;
 // filtro-entregue-progresso.js). "Mostrando N de T alunos" conta a lista com todos os filtros.
-// ON/OFF "RECUPERAÇÃO" pela nota final (desligado < 7, ligado >= 7;
+// ON/OFF "RECUPERAÇÃO" pela nota final (ligado < 7 = recuperação, desligado >= 7;
 // filtro-recuperacao-progresso.js). Combo "Aluno" ao lado do "Turma" deixa só a linha do aluno
 // escolhido (filtro-aluno-progresso.js).
 // As escolhas desses filtros (e do "Mostrar quem faltou") ficam no localStorage do navegador
@@ -772,7 +772,7 @@ async function prepararFiltroEntregueGlobal(area, aoMudar) {
 }
 
 /**
- * Cria o ON/OFF "RECUPERAÇÃO" (pela nota final: desligado < 7, ligado >= 7) e o põe na área,
+ * Cria o ON/OFF "RECUPERAÇÃO" (pela nota final: ligado < 7, desligado >= 7) e o põe na área,
  * depois do "Mostrar quem faltou". Uma falha aqui não derruba o painel.
  * @param {HTMLElement} area - Área do painel.
  * @param {Function} aoMudar - Redesenha a lista quando o ON/OFF muda.

@@ -1,14 +1,15 @@
 // Professor: ON/OFF "RECUPERAÇÃO" no Progresso da turma GLOBAL (progresso-turma-global.js), logo
 // depois do "Mostrar quem faltou", em toda atividade. Vale só a NOTA FINAL (coluna "Nota final"):
-// desligado (padrão) mostra quem tem nota final MENOR que 7; ligado, quem tem nota final 7 ou
-// mais. Aluno sem nota final (não entregou ou a IA ainda corrige) não é escondido por este filtro.
+// LIGADO mostra quem pegou recuperação (nota final MENOR que 7); desligado (padrão), quem tem
+// nota final 7 ou mais (invertido a pedido do usuário em 2026-10-14, tarefa #146). Aluno sem
+// nota final (não entregou ou a IA ainda corrige) não é escondido por este filtro.
 // A escolha fica no localStorage do navegador (preferências injetadas pelo painel). Só filtra a
 // lista na tela: nada é gravado no banco.
 // Pedido do usuário em 2026-10-14 (tarefa #145). Regra: docs/regras/atividades.md
 
 const TEXTO_FILTRO_RECUPERACAO = 'RECUPERAÇÃO';
-const DICA_FILTRO_RECUPERACAO = 'Pela nota final. Desligado: nota menor que 7. Ligado: nota 7 ' +
-    'ou mais. Quem ainda não tem nota final continua na lista.';
+const DICA_FILTRO_RECUPERACAO = 'Pela nota final. Ligado: quem pegou recuperação (nota menor ' +
+    'que 7). Desligado: nota 7 ou mais. Quem ainda não tem nota final continua na lista.';
 const CLASSE_INTERRUPTOR_RECUPERACAO = 'progresso-turma__interruptor';
 const NOTA_MINIMA_RECUPERACAO = 7;
 const CHAVE_PREFERENCIA_RECUPERACAO = 'recuperacao';
@@ -26,7 +27,7 @@ function alunoPassaNaRecuperacao(aluno, ligado) {
     if (!temNotaFinal) return true;
 
     const atingiu = aluno.valorNotaFinal >= NOTA_MINIMA_RECUPERACAO;
-    return ligado ? atingiu : !atingiu;
+    return ligado ? !atingiu : atingiu;
 }
 
 /**
