@@ -13,6 +13,7 @@ const SELETOR_ACOES = '.acoes';
 const MSG_SEM_ATIVIDADES_CRUD = 'Nenhuma atividade cadastrada para as páginas desta pasta.';
 const MSG_ERRO_CRUD = 'Não foi possível concluir. Confira o login de professor e o banco.';
 const MSG_CAMPOS_CRUD = 'Informe descrição, data, total de itens, aula e link da atividade.';
+const MSG_ATIVIDADE_SALVA_CRUD = '✅ Atividade salva.';
 const MSG_LINK_EM_USO = 'Já existe uma atividade cadastrada para este link.';
 const MSG_CONFIRMAR_EXCLUSAO = 'Excluir esta atividade? O gabarito, as respostas e as entregas ' +
     'dos alunos dela também serão apagados.';
@@ -326,10 +327,23 @@ async function aoSalvarCrud(evento) {
     try {
         await gravarAtividadeCrud(dados);
         await recarregarListaCrud();
-        preencherFormularioCrud(obterAtividadeUnicaCrud());
-        mostrarMensagemCrud('✅ Atividade salva.');
+        fecharModalCrud();
+        avisarAtividadeSalvaCrud();
     } catch (erro) {
         mostrarMensagemCrud(MSG_ERRO_CRUD, true);
+    }
+}
+
+/**
+ * Depois de salvar (modal já fechado): atualiza o nome das atividades nos cards e avisa.
+ */
+async function avisarAtividadeSalvaCrud() {
+    if (typeof atualizarNomesDasAtividadesDoIndice === 'function') {
+        atualizarNomesDasAtividadesDoIndice();
+    }
+    await garantirPopupCrud();
+    if (typeof window.mostrarPopup === 'function') {
+        window.mostrarPopup(MSG_ATIVIDADE_SALVA_CRUD, { tipo: 'sucesso' });
     }
 }
 

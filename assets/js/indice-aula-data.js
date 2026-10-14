@@ -294,6 +294,13 @@ async function renderizarNomesDasAtividades(itens) {
 }
 
 /**
+ * Reescreve o nome das atividades nos cards já desenhados (chamado depois de salvar no modal).
+ */
+function atualizarNomesDasAtividadesDoIndice() {
+    renderizarNomesDasAtividades(estadoCardsAula.cards);
+}
+
+/**
  * Caminhos das páginas dos links principais do card (lerHrefCrud também lê o link guardado do
  * card bloqueado, em data-href-bloqueado).
  * @param {HTMLElement} card - Card do índice.
