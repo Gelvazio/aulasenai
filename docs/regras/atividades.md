@@ -383,6 +383,10 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
   painel avisa; logo após entregar, a tela também é limpa. Com o **gabarito liberado** para a
   turma, a prova corrigida volta com as respostas dele. O professor continua vendo tudo; nada é
   apagado do banco. É regra de tela (o aluno tecnicamente ainda lê a própria linha pelo RLS).
+  Página que ficou aberta (#161): ao voltar para a aba, a página confere no banco se a tentativa
+  já foi entregue (em outra aba ou aparelho) e recarrega; voltar/avançar do navegador também
+  recarrega (`pageshow`), como na objetiva. Aba aberta **antes** da publicação do #160 só se
+  corrige ao recarregar (F5).
 - ✅ **Quantidade mínima de questões para entregar (2026-10-08, pedido do usuário):** toda
   discursiva tem um mínimo de **questões completas** (todas as alternativas com texto); padrão =
   todas (`atividade.minimo_questoes_entrega` vazio). O professor muda **por aluno** no Progresso

@@ -895,6 +895,32 @@ function avisarSaidaComPendencia(evento) {
 }
 
 /**
+ * Aluno com a página aberta: ao voltar para a aba, confere no banco se a tentativa já foi
+ * entregue (em outra aba ou aparelho). Entregue → recarrega a página, que esconde as respostas
+ * até o professor liberar o gabarito (regra global das práticas, #160 e #161).
+ */
+async function conferirEntregaAoVoltar() {
+    const dados = estadoDiscursivo.dados;
+    const deveConferir = document.visibilityState === 'visible' && dados?.logado &&
+        !dados.ehProfessor && !dados.entregueEm;
+    if (!deveConferir) return;
+    try {
+        if (await estadoDiscursivo.repositorio.lerEntrega()) window.location.reload();
+    } catch (erro) {
+        console.warn('Entrega não conferida:', erro.message);
+    }
+}
+
+/**
+ * Voltar/avançar pode restaurar a página do cache do navegador com respostas antigas na tela:
+ * recarrega para que tudo venha do banco (mesmo cuidado de assets/js/respostas-atividade.js).
+ * @param {PageTransitionEvent} evento - Evento pageshow.
+ */
+function recarregarSeVeioDoCache(evento) {
+    if (evento.persisted) window.location.reload();
+}
+
+/**
  * Inicializa a página: carrega o banco, preenche os campos e liga os eventos.
  */
 async function iniciarAvaliacaoDiscursiva() {
@@ -914,7 +940,9 @@ async function iniciarAvaliacaoDiscursiva() {
     document.getElementById(ID_BOTAO_FINALIZAR).addEventListener('click', finalizarDiscursiva);
     document.addEventListener('click', gravarPeloBotao);
     window.addEventListener('beforeunload', avisarSaidaComPendencia);
+    document.addEventListener('visibilitychange', conferirEntregaAoVoltar);
 }
 
 document.addEventListener('DOMContentLoaded', iniciarAvaliacaoDiscursiva);
+window.addEventListener('pageshow', recarregarSeVeioDoCache);
 document.addEventListener('DOMContentLoaded', abrirExportacaoPdfDiscursiva);

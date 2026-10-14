@@ -286,7 +286,7 @@ async function entregarDiscursiva(sessao) {
 /**
  * Cria o repositório das respostas discursivas desta página.
  * @returns {{carregar: Function, gravarTopico: Function, lerGravadas: Function,
- *     entregar: Function, chaveTopico: Function}} Operações de dados.
+ *     lerEntrega: Function, entregar: Function, chaveTopico: Function}} Operações de dados.
  */
 function criarRepositorioDiscursivo() {
     const sessao = { usuario: null, atividade: null, tentativa: 1 };
@@ -294,6 +294,7 @@ function criarRepositorioDiscursivo() {
         carregar: () => carregarDiscursiva(sessao),
         gravarTopico: (resposta) => gravarTopicoDiscursivo(sessao, resposta),
         lerGravadas: () => lerRespostasDiscursivas(sessao),
+        lerEntrega: () => lerEntregaDiscursiva(sessao),
         entregar: () => entregarDiscursiva(sessao),
         chaveTopico,
     };
