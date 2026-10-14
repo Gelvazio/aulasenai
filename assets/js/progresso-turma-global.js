@@ -13,6 +13,8 @@
 // (alunos-sem-inicio-entrega.js).
 // Combobox "Questões respondidas" filtra a lista por faixa (filtro-respondidas-progresso.js);
 // ON/OFF "Tarefa Entregue?" (desligado: só quem não entregou; filtro-entregue-progresso.js).
+// As escolhas desses filtros (e do "Mostrar quem faltou") ficam no localStorage do navegador
+// e voltam ao abrir a página; sem escolha guardada, vale o padrão.
 // A lista tem TODOS os alunos da turma escolhida no combo "Turma" ao lado do título (abre na
 // turma favorita), também quem não respondeu nada (alunos-da-turma-progresso.js).
 // ON/OFF "Faltou?" por aluno e "Mostrar quem faltou" em cima (falta-aluno-progresso.js; a falta
@@ -33,6 +35,9 @@ const ARQUIVO_FILTRO_PROGRESSO_GLOBAL = 'filtro-respondidas-progresso.js';
 const ARQUIVO_ALUNOS_TURMA_PROGRESSO_GLOBAL = 'alunos-da-turma-progresso.js';
 const ARQUIVO_FALTAS_PROGRESSO_GLOBAL = 'falta-aluno-progresso.js';
 const ARQUIVO_FILTRO_ENTREGUE_PROGRESSO_GLOBAL = 'filtro-entregue-progresso.js';
+// Prefixo das escolhas dos filtros guardadas no navegador (só preferência de tela, sem dado
+// de aluno nem gabarito).
+const PREFIXO_PREFERENCIA_PROGRESSO_GLOBAL = 'progresso-turma:';
 // Colunas extras por tipo de atividade: arquivo do módulo e a função que cria a coluna
 // ({titulo, classeArea, atualizar(atividadeId), montarCelula(aluno), aoMudar}); o painel
 // preenche aoMudar para a coluna pedir uma atualização depois de um botão dela.
@@ -666,6 +671,37 @@ async function prepararEntregaProfessorGlobal(area, tela) {
 }
 
 /**
+ * Preferências dos filtros do painel no localStorage do navegador. Sem armazenamento (bloqueado
+ * ou modo privado), lê null e não grava: os filtros usam o padrão.
+ */
+const preferenciasProgressoGlobal = {
+    /**
+     * Lê uma escolha guardada.
+     * @param {string} chave - Nome do filtro.
+     * @returns {string|null} Valor guardado ou null.
+     */
+    ler(chave) {
+        try {
+            return window.localStorage.getItem(PREFIXO_PREFERENCIA_PROGRESSO_GLOBAL + chave);
+        } catch (erro) {
+            return null;
+        }
+    },
+    /**
+     * Guarda uma escolha.
+     * @param {string} chave - Nome do filtro.
+     * @param {string} valor - Valor escolhido.
+     */
+    gravar(chave, valor) {
+        try {
+            window.localStorage.setItem(PREFIXO_PREFERENCIA_PROGRESSO_GLOBAL + chave, valor);
+        } catch (erro) {
+            // Sem armazenamento, a escolha vale só enquanto a página estiver aberta.
+        }
+    },
+};
+
+/**
  * Cria o combobox "Questões respondidas" e o põe na área. Uma falha aqui não derruba o painel
  * (a lista sai sem filtro).
  * @param {HTMLElement} area - Área do painel.
@@ -676,7 +712,8 @@ async function prepararFiltroGlobal(area, aoMudar) {
         if (typeof window.criarFiltroRespondidas !== 'function') {
             await carregarScriptProgressoGlobal(ARQUIVO_FILTRO_PROGRESSO_GLOBAL);
         }
-        estadoProgressoGlobal.filtro = window.criarFiltroRespondidas(aoMudar);
+        estadoProgressoGlobal.filtro = window.criarFiltroRespondidas(aoMudar,
+            preferenciasProgressoGlobal);
         estadoProgressoGlobal.filtrosDaLista.push(estadoProgressoGlobal.filtro);
         area.appendChild(estadoProgressoGlobal.filtro.elemento);
     } catch (erro) {
@@ -696,7 +733,8 @@ async function prepararFaltasGlobal(area, aoMudar) {
             await carregarScriptProgressoGlobal(ARQUIVO_FALTAS_PROGRESSO_GLOBAL);
         }
         estadoProgressoGlobal.faltas = await window.criarControleFaltas({
-            atividadeId: estadoProgressoGlobal.atividadeId, aoMudar });
+            atividadeId: estadoProgressoGlobal.atividadeId, aoMudar,
+            preferencias: preferenciasProgressoGlobal });
         estadoProgressoGlobal.filtrosDaLista.push(estadoProgressoGlobal.faltas);
         area.appendChild(estadoProgressoGlobal.faltas.elemento);
     } catch (erro) {
@@ -715,7 +753,7 @@ async function prepararFiltroEntregueGlobal(area, aoMudar) {
         if (typeof window.criarFiltroEntregue !== 'function') {
             await carregarScriptProgressoGlobal(ARQUIVO_FILTRO_ENTREGUE_PROGRESSO_GLOBAL);
         }
-        const filtro = window.criarFiltroEntregue(aoMudar);
+        const filtro = window.criarFiltroEntregue(aoMudar, preferenciasProgressoGlobal);
         estadoProgressoGlobal.filtrosDaLista.push(filtro);
         area.appendChild(filtro.elemento);
     } catch (erro) {

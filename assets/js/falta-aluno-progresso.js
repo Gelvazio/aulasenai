@@ -15,6 +15,9 @@ const TEXTO_MOSTRAR_FALTOU = 'Mostrar quem faltou';
 const TEXTO_BOTAO_FALTOU = 'Faltou?';
 const MSG_SEM_DATA_FALTA = 'Atividade sem data: não dá para marcar faltas.';
 const MSG_ERRO_FALTA = 'Não foi possível gravar a falta: ';
+const CHAVE_PREFERENCIA_FALTOU = 'mostrar-quem-faltou';
+const VALOR_LIGADO_PREFERENCIA_FALTOU = 'sim';
+const VALOR_DESLIGADO_PREFERENCIA_FALTOU = 'nao';
 const BASE_SCRIPTS_FALTA_ALUNO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 
 /**
@@ -123,19 +126,24 @@ async function mudarFaltaDoAluno(estado, dados) {
 }
 
 /**
- * Cria o controle de faltas do Progresso da turma.
- * @param {{atividadeId: number, aoMudar: Function}} dados - Atividade e redesenho da lista.
+ * Cria o controle de faltas do Progresso da turma ("Mostrar quem faltou" abre na escolha
+ * guardada no navegador; sem ela, desligado).
+ * @param {{atividadeId: number, aoMudar: Function, preferencias: Object}} dados - Atividade,
+ *     redesenho da lista e escolhas guardadas no navegador ({ler, gravar}, opcional).
  * @returns {Promise<{elemento: HTMLElement, atualizar: Function, filtrar: Function,
  *     criarBotao: Function}>} Área de cima, leitura das faltas, filtro e botão do aluno.
  */
 async function criarControleFaltas(dados) {
     const estado = { dia: await lerDiaDaAtividadeFalta(dados.atividadeId), faltas: new Set(),
-        mostrar: false, aoMudar: dados.aoMudar };
+        mostrar: dados.preferencias?.ler(CHAVE_PREFERENCIA_FALTOU) ===
+            VALOR_LIGADO_PREFERENCIA_FALTOU, aoMudar: dados.aoMudar };
     const elemento = criarElementoFalta('div', CLASSE_FALTA_ALUNO);
     const contagem = criarElementoFalta('span', CLASSE_FALTA_ALUNO + '__contagem');
     const { etiqueta, caixa } = criarInterruptorFalta({ texto: TEXTO_MOSTRAR_FALTOU,
-        ligado: false, aoMudar: (elementoCaixa) => {
+        ligado: estado.mostrar, aoMudar: (elementoCaixa) => {
             estado.mostrar = elementoCaixa.checked;
+            dados.preferencias?.gravar(CHAVE_PREFERENCIA_FALTOU, estado.mostrar
+                ? VALOR_LIGADO_PREFERENCIA_FALTOU : VALOR_DESLIGADO_PREFERENCIA_FALTOU);
             estado.aoMudar();
         } });
     caixa.disabled = !estado.dia;

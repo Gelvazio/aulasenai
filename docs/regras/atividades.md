@@ -236,6 +236,10 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     **desligado = só quem não entregou**; ligado = também quem entregou. Só filtra a lista na
     tela. Código: `assets/js/filtro-entregue-progresso.js` (chave ON/OFF comum
     `.progresso-turma__interruptor` em `progresso-turma-global.css`).
+  - **Filtros lembrados (2026-10-14, #142):** "Questões respondidas", "Tarefa Entregue?" e
+    "Mostrar quem faltou" guardam a escolha no **localStorage** do navegador (chaves
+    `progresso-turma:*`, só preferência de tela) e voltam ao abrir a página; sem escolha
+    guardada, o padrão (Todas · desligado · desligado).
   - **Faltas (2026-10-14, #138):** ON/OFF **"Faltou?"** ao lado do nome de cada aluno grava a
     falta do aluno **no dia** da atividade (`falta_aluno`; vale para todas as atividades do dia);
     ON/OFF **"Mostrar quem faltou"** acima do resumo abre em **OFF** (esconde quem faltou). Dia =
