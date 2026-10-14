@@ -60,7 +60,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #31-fe84910c-d9e1-49dd | Aula bloqueada: aluno não abre os slides (Testes de Front-End) | 🟠 Alta | — | 👀 Aguardando aceite | — | [158-fe84910c](etapas/ETAPA-158-fe84910c-SLIDES-DE-AULA-BLOQUEADA.md) |
 | #32-a45aa9a6-f4ec-4787 | Desafio 1 de Testes de Front-End: 3 casos de teste do Login (página SENAI + banco) | 🟠 Alta | — | ⛔ Cancelada em 2026-10-14 08:35 (pasta errada: vai para C:/fontes/gerador-atividades) | — | [159-a45aa9a6](etapas/ETAPA-159-a45aa9a6-DESAFIO-01-CASOS-DE-TESTE-LOGIN.md) |
 | #33-d7ade403-0783-49be | Tela e PDF só com as questões 1 até o mínimo (Cálculo Nota) — Testes de Front-End, Aula 02 | 🟠 Alta | — | 👀 Aguardando aceite | — | [160-d7ade403](etapas/ETAPA-160-d7ade403-QUESTOES-ATE-O-MINIMO-TESTES-FRONTEND.md) |
-| #34-7aee2d7e-1445-47ed | Criar as tarefas "questões até o mínimo" das demais matérias (uma por matéria) | 🟠 Alta | #33 | ⬜ Pendente | — | [161-7aee2d7e](etapas/ETAPA-161-7aee2d7e-CRIAR-TASKS-QUESTOES-ATE-O-MINIMO.md) |
+| #34-7aee2d7e-1445-47ed | Criar as tarefas "questões até o mínimo" das demais matérias (uma por matéria) | 🟠 Alta | #33 | 🔄 Em execução | local · main (desde 2026-10-14 09:53) | [161-7aee2d7e](etapas/ETAPA-161-7aee2d7e-CRIAR-TASKS-QUESTOES-ATE-O-MINIMO.md) |
 | #35-e7fa7621-26e1-40e0 | Exportar PDF: lista "Turma" já com a turma favorita | 🟠 Alta | — | 👀 Aguardando aceite | — | [162-e7fa7621](etapas/ETAPA-162-e7fa7621-TURMA-FAVORITA-NA-EXPORTACAO.md) |
 
 ## Escopo
