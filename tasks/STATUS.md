@@ -193,6 +193,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #162-71eb6c9b-0a10-4b3a-8837 | Bug: "Confirmar Todas" do aluno Adriel diz que não há questão para confirmar | 🟠 Alta | — | 👀 Aguardando aceite | — | [289-71eb6c9b](etapas/ETAPA-289-71eb6c9b-CONFIRMAR-TODAS-ADRIEL-SEM-QUESTAO.md) |
 | #163-aa83b55c-cc25-49ad-9ded | Bug: a nota do Adriel não aparece na atividade 81 | 🟠 Alta | — | 👀 Aguardando aceite | — | [290-aa83b55c](etapas/ETAPA-290-aa83b55c-NOTA-DO-ADRIEL-NAO-APARECE-ATIVIDADE-81.md) |
 | #164-b665765c-7549-418f-8c74 | Card "Finalizar a avaliação": sem botão e com alerta se já entregue ou corrigida | 🟠 Alta | — | 👀 Aguardando aceite | — | [291-b665765c](etapas/ETAPA-291-b665765c-CARD-ENTREGA-ALERTA-SE-ENTREGUE-OU-CORRIGIDA.md) |
+| #165-7b3725ef-40f4-45f2-be76 | Cancelar a tarefa #26 (regras no banco) | 🟡 Média | — | ⬜ Pendente | — | [292-7b3725ef](etapas/ETAPA-292-7b3725ef-CANCELAR-TAREFA-26-REGRAS-NO-BANCO.md) |
 | #131-c3af51c5-bfbc-4247 | Link da apostila no card da matéria ITIC (índice de Assistente de Operações Logísticas) | 🟡 Média | — | 👀 Aguardando aceite | — | [258-c3af51c5](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Escopo
@@ -522,6 +523,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 289-71eb6c9b | Confirmar Todas do Adriel (#162, pedida em 2026-10-14) | [ETAPA-289-71eb6c9b-CONFIRMAR-TODAS-ADRIEL-SEM-QUESTAO.md](etapas/ETAPA-289-71eb6c9b-CONFIRMAR-TODAS-ADRIEL-SEM-QUESTAO.md) |
 | 290-aa83b55c | Nota do Adriel não aparece na atividade 81 (#163, pedida em 2026-10-14) | [ETAPA-290-aa83b55c-NOTA-DO-ADRIEL-NAO-APARECE-ATIVIDADE-81.md](etapas/ETAPA-290-aa83b55c-NOTA-DO-ADRIEL-NAO-APARECE-ATIVIDADE-81.md) |
 | 291-b665765c | Card de entrega com alerta se entregue ou corrigida (#164, pedida em 2026-10-14) | [ETAPA-291-b665765c-CARD-ENTREGA-ALERTA-SE-ENTREGUE-OU-CORRIGIDA.md](etapas/ETAPA-291-b665765c-CARD-ENTREGA-ALERTA-SE-ENTREGUE-OU-CORRIGIDA.md) |
+| 292-7b3725ef | Cancelar a tarefa #26 (#165, pedida em 2026-10-14) | [ETAPA-292-7b3725ef-CANCELAR-TAREFA-26-REGRAS-NO-BANCO.md](etapas/ETAPA-292-7b3725ef-CANCELAR-TAREFA-26-REGRAS-NO-BANCO.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
