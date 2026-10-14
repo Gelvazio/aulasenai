@@ -29,6 +29,11 @@ const ARQUIVO_SEM_INICIO_PROGRESSO_GLOBAL = 'alunos-sem-inicio-entrega.js';
 const COLUNAS_EXTRAS_POR_TIPO_GLOBAL = {
     discursiva: [{ arquivo: 'suspeita-copia-discursiva.js', funcao: 'criarColunaSuspeitaCopia' }],
 };
+// Botões extras ao lado do nome do aluno, por tipo: a função recebe {atividadeId, aluno, aoMudar}
+// e devolve o botão (ex.: "✅ Confirmar Todas" das discursivas).
+const BOTOES_NOME_POR_TIPO_GLOBAL = {
+    discursiva: [{ arquivo: 'confirmar-todas-professor.js', funcao: 'criarBotaoConfirmarTodas' }],
+};
 const VALOR_LIGADO_ENTREGA_GLOBAL = 'sim';
 const SELETOR_CABECALHO_PROGRESSO_GLOBAL = '.container > header';
 const TIPO_PADRAO_PROGRESSO_GLOBAL = 'discursiva';
@@ -46,6 +51,7 @@ const estadoProgressoGlobal = {
     temporizador: null, lendo: false, ultimosAlunos: [], atualizarAgora: null,
     ordenacao: { chave: CHAVE_ORDEM_ALFABETICA_GLOBAL, crescente: true },
     atividadeId: null, fonte: null, memoria: { nomes: new Map() }, colunasExtras: [],
+    botoesNome: [],
 };
 
 /**
@@ -332,7 +338,10 @@ function montarCelulaNomeDoAlunoGlobal(aluno) {
     botao.type = 'button';
     if (aluno.minimoDoAluno) botao.classList.add(CLASSE_PROGRESSO_GLOBAL + '__minimo--proprio');
     botao.addEventListener('click', () => abrirMinimoDoAlunoGlobal(aluno));
-    celula.append(nome, botao);
+    const extras = estadoProgressoGlobal.botoesNome.map((criarBotao) => criarBotao({
+        atividadeId: estadoProgressoGlobal.atividadeId, aluno,
+        aoMudar: estadoProgressoGlobal.atualizarAgora }));
+    celula.append(nome, botao, ...extras);
     return celula;
 }
 
@@ -473,6 +482,24 @@ async function prepararColunasExtrasGlobal(tipo, area) {
             area.classList.add(coluna.classeArea);
         } catch (erro) {
             console.warn('Coluna extra do progresso:', erro.message);
+        }
+    }
+}
+
+/**
+ * Carrega os botões extras do nome do aluno do tipo da atividade (falha não derruba o painel).
+ * @param {string} tipo - 'objetiva' ou 'discursiva'.
+ */
+async function prepararBotoesNomeGlobal(tipo) {
+    const modulos = BOTOES_NOME_POR_TIPO_GLOBAL[tipo] || [];
+    for (const modulo of modulos) {
+        try {
+            if (typeof window[modulo.funcao] !== 'function') {
+                await carregarScriptProgressoGlobal(modulo.arquivo);
+            }
+            estadoProgressoGlobal.botoesNome.push(window[modulo.funcao]);
+        } catch (erro) {
+            console.warn('Botão do aluno no progresso:', erro.message);
         }
     }
 }
@@ -630,6 +657,7 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
         tela.resumo, tela.lista);
     cabecalho.after(area);
     await prepararColunasExtrasGlobal(tipo, area);
+    await prepararBotoesNomeGlobal(tipo);
     await prepararEntregaProfessorGlobal(area, tela);
 
     estadoProgressoGlobal.atualizarAgora = () => atualizarProgressoGlobal(tela, medida);

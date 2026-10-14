@@ -16,6 +16,9 @@
     --progresso-turma-completa-texto: #22543d;
     --progresso-turma-nota-ia: #6b46c1;
     --progresso-turma-raio: 8px;
+    --progresso-turma-confirmar: #2f855a;
+    --progresso-turma-confirmar-fundo: #f0fff4;
+    --progresso-turma-confirmar-texto: #276749;
 }
 
 .progresso-turma {
@@ -147,6 +150,26 @@
     font: inherit;
     font-size: 11px;
     cursor: pointer;
+}
+
+/* Discursivas: "✅ Confirmar Todas" (confirmar-todas-professor.js); desativado sem entrega. */
+.progresso-turma__confirmar-todas {
+    padding: 2px 6px;
+    border: 1px solid var(--progresso-turma-confirmar);
+    border-radius: var(--progresso-turma-raio);
+    background: var(--progresso-turma-confirmar-fundo);
+    color: var(--progresso-turma-confirmar-texto);
+    font: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.progresso-turma__confirmar-todas:disabled {
+    border-color: var(--progresso-turma-borda);
+    background: var(--progresso-turma-fundo);
+    color: var(--progresso-turma-texto-suave);
+    cursor: not-allowed;
 }
 
 .progresso-turma__minimo--proprio {

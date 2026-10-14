@@ -239,6 +239,11 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     no combo e some ao limpar a escolha (classe `discursiva--respostas-ocultas` no `<body>`,
     `avaliacao-discursiva.js` + CSS). Desde 2026-10-14 o painel do professor tem também o botão
     **👁️ Mostrar questões / 🙈 Esconder questões**, que mostra a prova sem escolher aluno (#119).
+  - **✅ Confirmar Todas (2026-10-14, #134):** botão ao lado do nome do aluno no Progresso da
+    turma (só depois da entrega): grava a nota da IA como nota do professor (travada) em todas as
+    questões dele; pula as com suspeita de cópia pendente; se faltar nota da IA em alguma, mostra
+    **"QUESTÕES SEM NOTA! GERE A CORREÇÃO DE IA DE NOVO!"** e não grava nada. Para isso, depois
+    da entrega a IA dá 0 às questões em branco. Código: `assets/js/confirmar-todas-professor.js`.
   - **Suspeita de Cópia (2026-10-14, #129):** a IA compara as respostas dos alunos da mesma turma
     e grava as suspeitas (`docs/regras/suspeita-copia-discursiva.md`); só o professor vê a coluna
     **Suspeita de Cópia** no Progresso da turma (mouse: nome e resposta do outro aluno) e, ao
