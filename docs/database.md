@@ -629,6 +629,18 @@ SQL: `database/2026-10-06-notas-media-final-correcao-discursiva.sql` (✅ aplica
 | RLS | professor lê e grava só alunos de `professor_pode_ver_aluno` (administrador todos); aluno lê só as próprias linhas com `nota_professor` preenchida; sem delete; `anon` sem acesso; TRUNCATE revogado |
 | `notas_media_final(p_paginas text[])` | `security definer`, só `authenticated`: para o aluno logado (`auth.uid()`), a melhor nota (0–10) entregue de cada página — objetiva = acertos ÷ total; discursiva = soma de `nota_professor` ÷ soma dos pontos, só com todos os tópicos corrigidos (senão `situacao = 'AGUARDANDO_CORRECAO'`). Não depende do bloqueio da atividade e não devolve gabarito |
 
+## 🕵️ Atualização 2026-10-14 — Suspeita de Cópia nas discursivas
+
+SQL: `database/2026-10-14-suspeita-copia-discursiva.sql` (✅ aplicado no Supabase em 2026-10-14,
+tarefa #129). Procedimento da IA: `docs/regras/suspeita-copia-discursiva.md`.
+
+| Tabela / objeto | Campos / regra |
+|--------|---------|
+| `suspeita_copia_discursiva` | PK (`atividade_id`, `aluno_id`, `tentativa`, `item`, `topico`); `aluno_parecido_id` (aluno da mesma turma com a resposta mais parecida), `semelhanca` (0–1), `motivo` (IA, sem nomes), `situacao` (`pendente` · `nao_copia` · `copia`), `detectado_em`, `validado_por`, `validado_em` |
+| RLS | só **professor** lê (`eh_professor()` + `professor_pode_ver_aluno`); aluno e `anon` sem acesso; ninguém grava pelo site (insert/update/delete/truncate revogados) — a IA grava pelo conector |
+| `validar_suspeita_copia(p_atividade, p_aluno, p_tentativa, p_item, p_topico, p_e_copia)` | `security definer`, só professor do aluno: grava `situacao`, `validado_por/em`; **É cópia** grava `nota_professor = 0` no tópico em `correcao_discursiva` (recusa se a nota do professor já foi confirmada com outro valor) |
+| `pg_trgm` | extensão (schema `extensions`): `similarity()` para achar os pares parecidos |
+
 ## 🎯 Atualização 2026-10-08 — Quantidade mínima de questões nas discursivas
 
 SQL: `database/2026-10-08-minimo-questoes-entrega.sql` (✅ aplicado no Supabase em 2026-10-08).

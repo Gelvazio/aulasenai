@@ -117,6 +117,7 @@ function montarAlunosDoProgresso(progresso, extras) {
         const chave = id + '|' + tentativa;
         return {
             alunoId: id,
+            tentativa,
             nome: extras.nomes.get(id) || 'Aluno sem nome',
             porQuestao,
             entregue: extras.entregues.has(chave),

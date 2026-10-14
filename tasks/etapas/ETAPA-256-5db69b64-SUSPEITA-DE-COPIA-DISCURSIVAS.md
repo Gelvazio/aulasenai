@@ -3,7 +3,7 @@
 **Tarefa:** #129-5db69b64-150d-40d9 · **Pedido em:** 2026-10-14 13:55 · **Executor:** Claude Code (local · main)
 **Pedido:** "Em progresso da Turma, adicione 1 coluna de nome Suspeita de Copia, onde que a IA, ao corrigir deve comparar com todas as outras respostas dos demais alunos para a mesma resposta e verificar se foi copiado ou nao, assinale la embaixo na questao tambem, com um alerta vermelho na questao toda, piscando e chamando a atencao *SUSPEITA DE COPIA!PROFESSOR PRECISA VALIDAR!*"
 **Objetivo:** na correção por IA das discursivas, cada resposta é comparada com as dos outros alunos no mesmo item/tópico; a suspeita fica gravada e aparece (1) numa coluna nova **Suspeita de Cópia** no Progresso da Turma e (2) na questão do aluno, com a questão inteira em vermelho piscando: **SUSPEITA DE CÓPIA! PROFESSOR PRECISA VALIDAR!**
-**Próximo passo:** 256.2 — aguardar a aprovação do plano abaixo.
+**Próximo passo:** 256.7 — aceite do usuário.
 **Executor (desde 2026-10-14 14:06):** Claude Code (local · main)
 
 **Tarefa grande** (banco + correção por IA + várias partes): plano nesta etapa + aprovação antes de executar.
@@ -64,9 +64,9 @@ Objetivas e práticas; o aluno ver a suspeita; zerar sem o professor validar.
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 256.1 | Respostas do usuário às perguntas acima | ✅ Concluído | 2026-10-14 14:06 | Registradas em "Respostas do usuário" |
-| 256.2 | Plano completo nesta etapa (banco, IA, Progresso, alerta na questão) + aprovação do usuário | 👀 Aguardando o usuário | — | Aprovação registrada aqui |
-| 256.3 | Banco: coluna(s) da suspeita + RLS (SQL idempotente) | ⬜ Pendente | — | Consulta ao banco |
-| 256.4 | IA: procedimento + SQL dos candidatos; rotina #130 atualizada para rodar a verificação | ⬜ Pendente | — | — |
-| 256.5 | Progresso da Turma: coluna "Suspeita de Cópia" | ⬜ Pendente | — | `node --check` + leitura |
-| 256.6 | Questão: alerta vermelho piscando "SUSPEITA DE CÓPIA! PROFESSOR PRECISA VALIDAR!" | ⬜ Pendente | — | `node --check` + leitura |
-| 256.7 | Aceite do usuário | ⬜ Pendente | — | — |
+| 256.2 | Plano completo nesta etapa (banco, IA, Progresso, alerta na questão) + aprovação do usuário | ✅ Concluído | 2026-10-14 14:13 | Aprovado pelo usuário: "SIM, PODE EXECUTAR" (2026-10-14 14:13) |
+| 256.3 | Banco: tabela `suspeita_copia_discursiva` + RLS (só professor lê) + função `validar_suspeita_copia` + `pg_trgm` (`database/2026-10-14-suspeita-copia-discursiva.sql`, aplicado pelo conector); `docs/database.md` e relatório HTML | ✅ Concluído | 2026-10-14 14:20 | Consulta: RLS ligado, 1 política, anon sem acesso; teste em transação desfeita: professor vê 2, "é cópia" zera a nota (0.00), "não é cópia" só marca, aluno vê 0; depois do teste, 0 linhas sobrando |
+| 256.4 | IA: `docs/regras/suspeita-copia-discursiva.md` (SQL dos candidatos + como decidir + como gravar); tarefa agendada `correcao-ia-atividade-81` (#130) com a Parte 2 (suspeita); 1ª rodada na 81 | ✅ Concluído | 2026-10-14 14:20 | 119 candidatos (75 com ≥ 90%); a IA leu os 44 abaixo de 90% e descartou os iguais só por dados do enunciado/modelo de ata; **109 suspeitas gravadas** (17 alunos, 20 questões, todas `pendente`) |
+| 256.5 | Progresso da Turma: coluna "Suspeita de Cópia" (`progresso-turma-global.js` com colunas extras por tipo; `progresso-turma-fontes.js` passa a `tentativa`; módulo `assets/js/suspeita-copia-discursiva.js` + `assets/css/suspeita-copia.css`) | ✅ Concluído | 2026-10-14 14:20 | `node --check` nos 4 JS; leitura: só discursiva carrega a coluna; dica do mouse com nome e resposta do outro aluno |
+| 256.6 | Questão: alerta vermelho piscando "SUSPEITA DE CÓPIA! PROFESSOR PRECISA VALIDAR!" + "Parece com" (mouse: resposta) + ✅ Não é cópia / ❌ É cópia (confirmação no popup), ligado no `aoMostrarAluno` de `avaliacao-discursiva.js` | ✅ Concluído | 2026-10-14 14:20 | `node --check`; leitura: sem aluno limpa; depois de validar redesenha e atualiza os botões de nota |
+| 256.7 | Aceite do usuário (abrir a 81 como professor, ver a coluna e validar algumas suspeitas) | 👀 Aguardando o usuário | — | — |

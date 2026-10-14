@@ -21,6 +21,7 @@ const ARQUIVO_NOTA_IA_RESPOSTAS = 'nota-ia-respostas-discursiva.js';
 const ARQUIVO_CONFIRMAR_PROFESSOR = 'confirmar-nota-professor-discursiva.js';
 const ARQUIVO_FINALIZAR_PROFESSOR = 'finalizar-atividade-professor.js';
 const ARQUIVO_RESULTADO_ALUNO = 'resultado-aluno-discursiva.js';
+const ARQUIVO_SUSPEITA_COPIA_DISCURSIVA = 'suspeita-copia-discursiva.js';
 const ARQUIVO_MEU_GABARITO_DISCURSIVA = 'minhas-respostas-discursiva.js';
 const VALOR_ATIVO_MEU_GABARITO_DISCURSIVA = 'sim';
 const BASE_SCRIPTS_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
@@ -368,6 +369,7 @@ async function abrirRespostasDoAluno(painel, dados) {
                 mostrarNotasIaDasRespostas(aluno, dados.atividadeId),
                 mostrarConfirmacaoDoProfessor(aluno, dados.atividadeId),
                 mostrarFinalizarDoProfessor(aluno, dados.atividadeId),
+                mostrarSuspeitasDoAluno(aluno, dados.atividadeId),
             ]),
         });
     } catch (erro) {
@@ -450,6 +452,25 @@ async function mostrarNotasIaDasRespostas(aluno, atividadeId) {
         await window.mostrarNotasIaDoAluno(aluno, atividadeId);
     } catch (erro) {
         console.warn('Nota da IA nas respostas:', erro.message);
+    }
+}
+
+/**
+ * Professor: alerta vermelho piscando nas questões com suspeita de cópia do aluno escolhido, com
+ * "Não é cópia" / "É cópia" (assets/js/suspeita-copia-discursiva.js). Sem aluno, limpa os
+ * alertas. Uma falha aqui não atrapalha a avaliação.
+ * @param {Object|null} aluno - Aluno escolhido no combo (null = nenhum).
+ * @param {number} atividadeId - Id da atividade.
+ */
+async function mostrarSuspeitasDoAluno(aluno, atividadeId) {
+    try {
+        if (typeof window.mostrarSuspeitasNaProva !== 'function') {
+            await carregarModuloDiscursiva(ARQUIVO_SUSPEITA_COPIA_DISCURSIVA);
+        }
+        await window.mostrarSuspeitasNaProva(aluno, atividadeId,
+            () => mostrarConfirmacaoDoProfessor(aluno, atividadeId));
+    } catch (erro) {
+        console.warn('Suspeita de cópia:', erro.message);
     }
 }
 

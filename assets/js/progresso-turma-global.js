@@ -23,6 +23,11 @@ const ARQUIVO_CALCULO_PROGRESSO_GLOBAL = 'calculo-nota-progresso.js';
 const ARQUIVO_CSS_PROGRESSO_GLOBAL = '../css/progresso-turma-global.css';
 const ARQUIVO_ENTREGA_PROGRESSO_GLOBAL = 'marcar-entregue-professor.js';
 const ARQUIVO_SEM_INICIO_PROGRESSO_GLOBAL = 'alunos-sem-inicio-entrega.js';
+// Colunas extras por tipo de atividade: arquivo do módulo e a função que cria a coluna
+// ({titulo, classeArea, atualizar(atividadeId), montarCelula(aluno)}).
+const COLUNAS_EXTRAS_POR_TIPO_GLOBAL = {
+    discursiva: [{ arquivo: 'suspeita-copia-discursiva.js', funcao: 'criarColunaSuspeitaCopia' }],
+};
 const VALOR_LIGADO_ENTREGA_GLOBAL = 'sim';
 const SELETOR_CABECALHO_PROGRESSO_GLOBAL = '.container > header';
 const TIPO_PADRAO_PROGRESSO_GLOBAL = 'discursiva';
@@ -39,7 +44,7 @@ const SITUACOES_QUESTAO_GLOBAL = {
 const estadoProgressoGlobal = {
     temporizador: null, lendo: false, ultimosAlunos: [], atualizarAgora: null,
     ordenacao: { chave: CHAVE_ORDEM_ALFABETICA_GLOBAL, crescente: true },
-    atividadeId: null, fonte: null, memoria: { nomes: new Map() },
+    atividadeId: null, fonte: null, memoria: { nomes: new Map() }, colunasExtras: [],
 };
 
 /**
@@ -85,6 +90,8 @@ function colunasDoProgressoGlobal() {
         { titulo: 'Situação', chave: 'valorSituacao' },
         { titulo: textos.colunaParcial, chave: 'valorNotaParcial' },
         { titulo: textos.colunaFinal, chave: 'valorNotaFinal' },
+        ...estadoProgressoGlobal.colunasExtras.map((coluna) => ({ titulo: coluna.titulo,
+            chave: '' })),
     ];
 }
 
@@ -396,7 +403,8 @@ function montarLinhaDoAlunoGlobal(aluno, medida) {
         montarBarraGlobal(aluno.percentual, aluno.entregue ? 'entregue' : ''),
         montarSituacaoDoAlunoGlobal(aluno),
         montarCelulaNotaParcialGlobal(aluno, medida.totalPartes),
-        montarCelulaNotaFinalGlobal(aluno));
+        montarCelulaNotaFinalGlobal(aluno),
+        ...estadoProgressoGlobal.colunasExtras.map((coluna) => coluna.montarCelula(aluno)));
     return linha;
 }
 
@@ -433,6 +441,42 @@ async function atualizarSemInicioGlobal(tela) {
 }
 
 /**
+ * Lê os dados das colunas extras; a falha de uma coluna não derruba o painel.
+ */
+async function atualizarColunasExtrasGlobal() {
+    const { colunasExtras, atividadeId } = estadoProgressoGlobal;
+    await Promise.all(colunasExtras.map(async (coluna) => {
+        try {
+            await coluna.atualizar(atividadeId);
+        } catch (erro) {
+            console.warn(coluna.titulo + ':', erro.message);
+        }
+    }));
+}
+
+/**
+ * Carrega as colunas extras do tipo da atividade (ex.: "Suspeita de Cópia" nas discursivas) e
+ * marca a área com a classe de cada uma (o CSS da coluna ajusta a grade).
+ * @param {string} tipo - 'objetiva' ou 'discursiva'.
+ * @param {HTMLElement} area - Área do painel.
+ */
+async function prepararColunasExtrasGlobal(tipo, area) {
+    const modulos = COLUNAS_EXTRAS_POR_TIPO_GLOBAL[tipo] || [];
+    for (const modulo of modulos) {
+        try {
+            if (typeof window[modulo.funcao] !== 'function') {
+                await carregarScriptProgressoGlobal(modulo.arquivo);
+            }
+            const coluna = window[modulo.funcao]();
+            estadoProgressoGlobal.colunasExtras.push(coluna);
+            area.classList.add(coluna.classeArea);
+        } catch (erro) {
+            console.warn('Coluna extra do progresso:', erro.message);
+        }
+    }
+}
+
+/**
  * Lê o banco e redesenha o resumo e as linhas dos alunos (sem leituras sobrepostas).
  * @param {{resumo: HTMLElement, lista: HTMLElement}} tela - Elementos da área.
  * @param {Object} medida - estrutura (Map) e totalPartes.
@@ -447,6 +491,7 @@ async function atualizarProgressoGlobal(tela, medida) {
         estadoProgressoGlobal.ultimosAlunos = alunos.map((aluno) =>
             calcularIndicadoresDoAlunoGlobal(aluno, medida));
         await atualizarSemInicioGlobal(tela);
+        await atualizarColunasExtrasGlobal();
         if (!alunos.length) {
             tela.resumo.replaceChildren('Nenhum aluno das suas turmas começou ainda · ' +
                 'atualizado às ' + new Date().toLocaleTimeString('pt-BR'));
@@ -583,6 +628,7 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
     area.append(montarCabecalhoProgressoGlobal(medida), montarLegendaProgressoGlobal(),
         tela.resumo, tela.lista);
     cabecalho.after(area);
+    await prepararColunasExtrasGlobal(tipo, area);
     await prepararEntregaProfessorGlobal(area, tela);
 
     estadoProgressoGlobal.atualizarAgora = () => atualizarProgressoGlobal(tela, medida);

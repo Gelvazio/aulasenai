@@ -239,6 +239,11 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     no combo e some ao limpar a escolha (classe `discursiva--respostas-ocultas` no `<body>`,
     `avaliacao-discursiva.js` + CSS). Desde 2026-10-14 o painel do professor tem também o botão
     **👁️ Mostrar questões / 🙈 Esconder questões**, que mostra a prova sem escolher aluno (#119).
+  - **Suspeita de Cópia (2026-10-14, #129):** a IA compara as respostas dos alunos da mesma turma
+    e grava as suspeitas (`docs/regras/suspeita-copia-discursiva.md`); só o professor vê a coluna
+    **Suspeita de Cópia** no Progresso da turma (mouse: nome e resposta do outro aluno) e, ao
+    escolher o aluno, a questão vermelha piscando com **✅ Não é cópia / ❌ É cópia** (É cópia zera
+    a nota da questão). Código: `assets/js/suspeita-copia-discursiva.js` + `assets/css/suspeita-copia.css`.
   - **Botões do professor (2026-10-08):** ao escolher o aluno, cada alternativa ganha, antes do
     "💾 Gravar", os botões ✅ Certa (pontos) / 🟡 Meia certa (metade) / ❌ Errada (0), que gravam a
     `nota_professor` (upsert só dessa coluna; `nota_ia` e comentário ficam). Código

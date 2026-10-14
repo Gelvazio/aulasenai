@@ -474,6 +474,16 @@
           <td>Melhor nota do aluno logado por página (objetiva ou discursiva corrigida); AGUARDANDO_CORRECAO quando faltam notas; independe do bloqueio; sem gabarito</td>
         </tr>
         <tr>
+          <td>suspeita_copia_discursiva</td>
+          <td>Tabela (RLS)</td>
+          <td>Suspeita de cópia nas discursivas (2026-10-14): PK atividade + aluno + tentativa + item + tópico; aluno_parecido_id (mesma turma), semelhanca, motivo, situacao (pendente/nao_copia/copia), validado_por/em; só o professor lê; a IA grava pelo conector</td>
+        </tr>
+        <tr>
+          <td>validar_suspeita_copia(...)</td>
+          <td>Função (security definer)</td>
+          <td>Professor do aluno valida: "não é cópia" ou "é cópia" (grava nota_professor = 0 no tópico; recusa se a nota já foi confirmada com outro valor)</td>
+        </tr>
+        <tr>
           <td>minimo_questoes_aluno</td>
           <td>Tabela (RLS)</td>
           <td>PK atividade + aluno; minimo (≥ 1), definido_por, definido_em; aluno lê o próprio, professor grava só alunos das turmas dele (2026-10-08)</td>
