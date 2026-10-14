@@ -23,7 +23,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | nuvem · ccr-00f69e8a-6qcla9 | #26 ([144-aff33423](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md)); etapa 140-8554d88e aguarda o usuário | 🔄 Ativa | 2026-10-11 06:28 |
 | nuvem · ccr-be208aef-c6h8oe | #24 ([142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md)) — cancelada em 2026-10-13 (fila do banco desativada, decisão D1 da #29) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | nuvem · claude/ola-zlzh8z | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)); ⛔ não mexer em Banco de Dados | 🔄 Ativa | 2026-10-10 16:21 |
-| local · main | #121 aguarda aceite ([248-e1eae7f7](etapas/ETAPA-248-e1eae7f7-LAYOUT-LINHA-ATIVIDADE-ONOFF-EDITAR.md)); #120 aguarda aceite ([247-5d41993f](etapas/ETAPA-247-5d41993f-BOTAO-EDITAR-ATIVIDADE-NO-CARD.md)); #119 aguarda aceite ([246-2d91de80](etapas/ETAPA-246-2d91de80-BOTAO-MOSTRAR-QUESTOES-PROFESSOR-DISCURSIVA.md)); #118 aguarda aceite ([245-0af6f282](etapas/ETAPA-245-0af6f282-PASTA-SEXTA-FEIRA-SO-COM-AS-3-PAGINAS-ITIC.md)); #117 aguarda aceite ([244-87879b23](etapas/ETAPA-244-87879b23-CARD-UNICO-ATIVIDADE-SEXTA-FEIRA-ITIC.md)); #82 concluída ([209](etapas/ETAPA-209-70a67f33-EXPORTAR-MEU-GABARITO-TESTES-FRONTEND.md)); #81 ([208-9cf63981](etapas/ETAPA-208-9cf63981-APOSTILAS-SEM-ATIVIDADES-OU-PERGUNTAS.md)) em execução; #45, #33, #34, #35, #44 e #27 a #31 aguardam aceite; #36 a #43, #46 a #79 e #83 a #116 livres para outras IAs | 🔄 Ativa | 2026-10-14 12:55 |
+| local · main | #122 aguarda aceite ([249-49bde0a7](etapas/ETAPA-249-49bde0a7-MODAL-EDITAR-SO-A-ATIVIDADE-SELECIONADA.md)); #121 aguarda aceite ([248-e1eae7f7](etapas/ETAPA-248-e1eae7f7-LAYOUT-LINHA-ATIVIDADE-ONOFF-EDITAR.md)); #120 aguarda aceite ([247-5d41993f](etapas/ETAPA-247-5d41993f-BOTAO-EDITAR-ATIVIDADE-NO-CARD.md)); #119 aguarda aceite ([246-2d91de80](etapas/ETAPA-246-2d91de80-BOTAO-MOSTRAR-QUESTOES-PROFESSOR-DISCURSIVA.md)); #118 aguarda aceite ([245-0af6f282](etapas/ETAPA-245-0af6f282-PASTA-SEXTA-FEIRA-SO-COM-AS-3-PAGINAS-ITIC.md)); #117 aguarda aceite ([244-87879b23](etapas/ETAPA-244-87879b23-CARD-UNICO-ATIVIDADE-SEXTA-FEIRA-ITIC.md)); #82 concluída ([209](etapas/ETAPA-209-70a67f33-EXPORTAR-MEU-GABARITO-TESTES-FRONTEND.md)); #81 ([208-9cf63981](etapas/ETAPA-208-9cf63981-APOSTILAS-SEM-ATIVIDADES-OU-PERGUNTAS.md)) em execução; #45, #33, #34, #35, #44 e #27 a #31 aguardam aceite; #36 a #43, #46 a #79 e #83 a #116 livres para outras IAs | 🔄 Ativa | 2026-10-14 12:55 |
 
 ## 📌 Tarefas
 
@@ -148,6 +148,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #119-2d91de80-ccc7-4c9d | Discursivas: botão "Mostrar questões" para o professor | 🟡 Média | — | 👀 Aguardando aceite | — | [246-2d91de80](etapas/ETAPA-246-2d91de80-BOTAO-MOSTRAR-QUESTOES-PROFESSOR-DISCURSIVA.md) |
 | #120-5d41993f-8c50-4918 | Índices de atividades: botão ✏️ para o professor editar cada atividade | 🟡 Média | — | 👀 Aguardando aceite | — | [247-5d41993f](etapas/ETAPA-247-5d41993f-BOTAO-EDITAR-ATIVIDADE-NO-CARD.md) |
 | #121-e1eae7f7-ce64-4c4b | Índices de atividades: layout da linha link + ON/OFF + ✏️ | 🟡 Média | #120 | 👀 Aguardando aceite | — | [248-e1eae7f7](etapas/ETAPA-248-e1eae7f7-LAYOUT-LINHA-ATIVIDADE-ONOFF-EDITAR.md) |
+| #122-49bde0a7-1e59-4f95 | Índices de atividades: ✏️ abre o modal só com a atividade selecionada | 🟡 Média | #120 | 👀 Aguardando aceite | — | [249-49bde0a7](etapas/ETAPA-249-49bde0a7-MODAL-EDITAR-SO-A-ATIVIDADE-SELECIONADA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -432,6 +433,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 246-2d91de80 | Discursivas: botão "Mostrar questões" do professor (#119, 2026-10-14) | [ETAPA-246-2d91de80-BOTAO-MOSTRAR-QUESTOES-PROFESSOR-DISCURSIVA.md](etapas/ETAPA-246-2d91de80-BOTAO-MOSTRAR-QUESTOES-PROFESSOR-DISCURSIVA.md) |
 | 247-5d41993f | Índices de atividades: botão ✏️ editar atividade (#120, 2026-10-14) | [ETAPA-247-5d41993f-BOTAO-EDITAR-ATIVIDADE-NO-CARD.md](etapas/ETAPA-247-5d41993f-BOTAO-EDITAR-ATIVIDADE-NO-CARD.md) |
 | 248-e1eae7f7 | Índices de atividades: layout link + ON/OFF + ✏️ (#121, 2026-10-14) | [ETAPA-248-e1eae7f7-LAYOUT-LINHA-ATIVIDADE-ONOFF-EDITAR.md](etapas/ETAPA-248-e1eae7f7-LAYOUT-LINHA-ATIVIDADE-ONOFF-EDITAR.md) |
+| 249-49bde0a7 | Índices de atividades: modal do ✏️ só com a atividade (#122, 2026-10-14) | [ETAPA-249-49bde0a7-MODAL-EDITAR-SO-A-ATIVIDADE-SELECIONADA.md](etapas/ETAPA-249-49bde0a7-MODAL-EDITAR-SO-A-ATIVIDADE-SELECIONADA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |

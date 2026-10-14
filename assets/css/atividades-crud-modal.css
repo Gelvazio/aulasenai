@@ -67,6 +67,13 @@
 .crud-caixa h3 { margin: 18px 0 8px; font-size: 16px; }
 
 .crud-lista { margin-top: 12px; display: grid; gap: 8px; }
+
+/* Modal aberto pelo ✏️ de uma atividade: só o formulário dela (sem lista nem "Nova / limpar"). */
+.crud-caixa--unica .crud-lista,
+.crud-caixa--unica .crud-subtitulo,
+.crud-caixa--unica [data-acao="limpar"] {
+    display: none;
+}
 .crud-linha {
     display: flex;
     align-items: center;

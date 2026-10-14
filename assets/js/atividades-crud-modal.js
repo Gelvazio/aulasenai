@@ -33,7 +33,12 @@ const LOG_ALTERNATIVAS_LIGADO = false;
 // aluno abria os slides da aula bloqueada enquanto a página consultava o banco).
 const CLASSE_INDICE_CONFERINDO_AULA = 'indice--conferindo-aula';
 
-const estadoCrud = { paginas: [], atividades: [], aulas: [], editandoId: null };
+const TITULO_MODAL_COMPLETO_CRUD = 'Atividades cadastradas';
+const TITULO_MODAL_UNICA_CRUD = '✏️ Editar atividade ID ';
+// Modal aberto pelo ✏️ de uma atividade: só o formulário dela, sem a lista das outras.
+const CLASSE_MODAL_UNICA_CRUD = 'crud-caixa--unica';
+
+const estadoCrud = { paginas: [], atividades: [], aulas: [], editandoId: null, idUnica: null };
 let elementosCrud = null;
 
 /**
@@ -156,8 +161,8 @@ function montarFormularioCrud() {
 
 /**
  * Monta o modal (fundo, caixa, lista, formulário e mensagem) e o anexa à página.
- * @returns {{fundo: HTMLElement, lista: HTMLElement, formulario: HTMLFormElement,
- *   mensagem: HTMLElement}} Referências dos elementos.
+ * @returns {{fundo: HTMLElement, caixa: HTMLElement, titulo: HTMLElement, lista: HTMLElement,
+ *   formulario: HTMLFormElement, mensagem: HTMLElement}} Referências dos elementos.
  */
 function montarModalCrud() {
     const fundo = criarElementoCrud('div', 'crud-fundo');
@@ -165,16 +170,16 @@ function montarModalCrud() {
     caixa.setAttribute('role', 'dialog');
     caixa.setAttribute('aria-modal', 'true');
     const cabecalho = criarElementoCrud('div', 'crud-cabecalho');
-    cabecalho.append(criarElementoCrud('h2', '', 'Atividades cadastradas'),
-        criarBotaoCrud('✕ Fechar', '', 'fechar'));
+    const titulo = criarElementoCrud('h2', '', TITULO_MODAL_COMPLETO_CRUD);
+    cabecalho.append(titulo, criarBotaoCrud('✕ Fechar', '', 'fechar'));
     const lista = criarElementoCrud('div', 'crud-lista');
     const mensagem = criarElementoCrud('p', 'crud-mensagem');
     const formulario = montarFormularioCrud();
-    caixa.append(cabecalho, lista, criarElementoCrud('h3', '', 'Cadastrar / editar'),
+    caixa.append(cabecalho, lista, criarElementoCrud('h3', 'crud-subtitulo', 'Cadastrar / editar'),
         formulario, mensagem);
     fundo.append(caixa);
     document.body.append(fundo);
-    return { fundo, lista, formulario, mensagem };
+    return { fundo, caixa, titulo, lista, formulario, mensagem };
 }
 
 /**
@@ -321,7 +326,7 @@ async function aoSalvarCrud(evento) {
     try {
         await gravarAtividadeCrud(dados);
         await recarregarListaCrud();
-        preencherFormularioCrud(null);
+        preencherFormularioCrud(obterAtividadeUnicaCrud());
         mostrarMensagemCrud('✅ Atividade salva.');
     } catch (erro) {
         mostrarMensagemCrud(MSG_ERRO_CRUD, true);
@@ -385,7 +390,7 @@ function garantirOpcaoPaginaCrud(pagina) {
  * @param {{idAtividade: number|null, idAula: number, pagina: string|null}} pedido - O que abrir.
  */
 async function abrirEdicaoAtividadeCrud({ idAtividade, idAula, pagina }) {
-    await abrirModalCrud(pagina);
+    await abrirModalCrud(pagina, idAtividade);
     if (!idAtividade) {
         elementosCrud.formulario.elements.aula_id.value = String(idAula);
         return;
@@ -430,15 +435,40 @@ function aoClicarModalCrud(evento) {
 }
 
 /**
+ * Atividade do modal aberto pelo ✏️ (modo de uma atividade só), já recarregada do banco.
+ * @returns {Object|null} Atividade em edição, ou null no modo completo.
+ */
+function obterAtividadeUnicaCrud() {
+    if (!estadoCrud.idUnica) return null;
+    return estadoCrud.atividades.find((item) => item.id === estadoCrud.idUnica) || null;
+}
+
+/**
+ * Liga o modo do modal: completo (lista + cadastro) ou de uma atividade só (sem a lista).
+ * @param {number|null} idUnica - Id da atividade do ✏️; null = modo completo.
+ */
+function definirModoModalCrud(idUnica) {
+    estadoCrud.idUnica = idUnica || null;
+    const { caixa, titulo } = elementosCrud;
+    caixa.classList.toggle(CLASSE_MODAL_UNICA_CRUD, Boolean(estadoCrud.idUnica));
+    titulo.textContent = estadoCrud.idUnica
+        ? TITULO_MODAL_UNICA_CRUD + formatarIdAtividadeCrud(estadoCrud.idUnica)
+        : TITULO_MODAL_COMPLETO_CRUD;
+}
+
+/**
  * Abre o modal, carrega aulas e atividades e prepara o formulário para uma nova atividade.
  * @param {string} paginaDoCard - Link da atividade do card clicado.
+ * @param {number|null} [idUnica] - Id da atividade do ✏️ (mostra só ela, sem a lista).
  */
-async function abrirModalCrud(paginaDoCard) {
+async function abrirModalCrud(paginaDoCard, idUnica = null) {
     if (!elementosCrud) {
         elementosCrud = montarModalCrud();
         elementosCrud.fundo.addEventListener('click', aoClicarModalCrud);
         elementosCrud.formulario.addEventListener('submit', aoSalvarCrud);
     }
+    definirModoModalCrud(idUnica);
+    mostrarMensagemCrud('');
     elementosCrud.fundo.hidden = false;
     try {
         estadoCrud.aulas = await listarAulasCrud();
