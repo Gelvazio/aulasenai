@@ -5,7 +5,8 @@
 //     e entrega; a conta é feita no banco e o gabarito não sai de lá);
 //   - discursiva: resposta_discursiva (tópicos com texto) + correcao_discursiva (nota da IA).
 // Formato do aluno: { alunoId, nome, porQuestao: Map(item → partes respondidas), entregue,
-//   entreguePorProfessor, minimoDoAluno,
+//   entreguePorProfessor, minimoDoAluno, provaCorrigida (objetiva: entregue; discursiva:
+//   entregue e com nota do professor em todas as questões respondidas — tarefa #147),
 //   correcao: {nota, possivel, corrigidos, certas, meias, erradas} | null }.
 // A "nota" da correção está na escala da prova inteira (0 a 10); o painel a torna proporcional
 // ao mínimo do aluno. Só leitura; o RLS limita aos alunos das turmas do professor.
@@ -199,8 +200,9 @@ async function lerAlunosObjetiva(atividadeId, memoria) {
     });
     const progresso = contarPartesPorAluno(respostas);
     await carregarNomesDosAlunos([...progresso.keys()], memoria.nomes);
+    // A objetiva é corrigida pelo banco: entregue = corrigida.
     return montarAlunosDoProgresso(progresso, { nomes: memoria.nomes, minimos, entregues,
-        peloProfessor, correcoes });
+        peloProfessor, correcoes }).map((aluno) => ({ ...aluno, provaCorrigida: aluno.entregue }));
 }
 
 /**
@@ -262,6 +264,35 @@ function somarCorrecoesDaIa(linhas, pontos) {
 }
 
 /**
+ * Discursiva: conta, por aluno e tentativa, os tópicos com a nota do professor.
+ * @param {Object[]} linhas - Linhas de correcao_discursiva (nota_professor).
+ * @returns {Map<string, number>} Chave "aluno|tentativa" → tópicos com nota do professor.
+ */
+function contarNotasDoProfessor(linhas) {
+    const contagem = new Map();
+    linhas.forEach((linha) => {
+        const temNota = linha.nota_professor !== null && linha.nota_professor !== undefined;
+        if (!temNota) return;
+        const chave = linha.aluno_id + '|' + linha.tentativa;
+        contagem.set(chave, (contagem.get(chave) || 0) + 1);
+    });
+    return contagem;
+}
+
+/**
+ * Discursiva: prova corrigida = entregue e com a nota do professor em todas as questões
+ * respondidas (pelo menos uma).
+ * @param {Object} aluno - Aluno no formato comum.
+ * @param {Map<string, number>} notasDoProfessor - Tópicos com nota do professor por tentativa.
+ * @returns {boolean} true se o professor já corrigiu a prova.
+ */
+function discursivaFoiCorrigida(aluno, notasDoProfessor) {
+    const respondidos = [...aluno.porQuestao.values()].reduce((soma, valor) => soma + valor, 0);
+    const doProfessor = notasDoProfessor.get(aluno.alunoId + '|' + aluno.tentativa) || 0;
+    return aluno.entregue && doProfessor > 0 && doProfessor >= respondidos;
+}
+
+/**
  * Discursiva: lê o progresso de cada aluno.
  * @param {number} atividadeId - Id da atividade.
  * @param {Object} memoria - Memória da fonte entre as leituras.
@@ -275,7 +306,7 @@ async function lerAlunosDiscursiva(atividadeId, memoria) {
         sbGet('entrega_atividade',
             'select=aluno_id,tentativa,entregue_por&atividade_id=eq.' + atividadeId),
         lerTodasAsLinhasProgresso({ tabela: 'correcao_discursiva',
-            colunas: 'aluno_id,tentativa,item,topico,nota_ia', atividadeId,
+            colunas: 'aluno_id,tentativa,item,topico,nota_ia,nota_professor', atividadeId,
             ordem: COLUNAS_CHAVE_DISCURSIVA }),
         lerPontosDosTopicos(atividadeId, memoria),
         lerMinimosDosAlunos(atividadeId),
@@ -284,12 +315,15 @@ async function lerAlunosDiscursiva(atividadeId, memoria) {
     const progresso = contarPartesPorAluno(respostas,
         (linha) => (linha.texto || '').trim() !== '');
     await carregarNomesDosAlunos([...progresso.keys()], memoria.nomes);
-    return montarAlunosDoProgresso(progresso, {
+    const notasDoProfessor = contarNotasDoProfessor(linhasIa);
+    const alunos = montarAlunosDoProgresso(progresso, {
         nomes: memoria.nomes, minimos, correcoes: somarCorrecoesDaIa(linhasIa, pontos),
         entregues: new Set(entregas.map((entrega) => entrega.aluno_id + '|' + entrega.tentativa)),
         peloProfessor: new Set(entregas.filter((entrega) => entrega.entregue_por)
             .map((entrega) => entrega.aluno_id + '|' + entrega.tentativa)),
     });
+    return alunos.map((aluno) => ({ ...aluno,
+        provaCorrigida: discursivaFoiCorrigida(aluno, notasDoProfessor) }));
 }
 
 // Textos de cada tipo: a coluna "parcial" vale também antes da entrega; a "final" só com a

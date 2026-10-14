@@ -246,6 +246,12 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     **nota final**: **ligado** mostra quem pegou recuperação (nota final **menor que 7**);
     desligado (padrão), **7 ou mais** (invertido em 2026-10-14, #146). Aluno sem nota final continua na lista. Lembrado no localStorage
     (`progresso-turma:recuperacao`). Código: `assets/js/filtro-recuperacao-progresso.js`.
+  - **ON/OFF "Prova Corrigida" (2026-10-14, #147):** depois do "RECUPERAÇÃO". Desligado
+    (padrão) lista só as provas **não corrigidas**; ligado, só as **corrigidas**. Objetiva:
+    **entregue = corrigida** (correção automática). Discursiva: entregue e com a **nota do
+    professor** em todas as questões respondidas. Lembrado no localStorage
+    (`progresso-turma:prova-corrigida`). Código: `assets/js/filtro-corrigida-progresso.js` e
+    `provaCorrigida` em `progresso-turma-fontes.js`.
   - **Filtros lembrados (2026-10-14, #142):** "Questões respondidas", "Tarefa Entregue?" e
     "Mostrar quem faltou" guardam a escolha no **localStorage** do navegador (chaves
     `progresso-turma:*`, só preferência de tela) e voltam ao abrir a página; sem escolha

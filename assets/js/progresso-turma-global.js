@@ -15,7 +15,8 @@
 // ON/OFF "Tarefa Entregue?" (desligado: só quem não entregou; ligado: só quem entregou;
 // filtro-entregue-progresso.js). "Mostrando N de T alunos" conta a lista com todos os filtros.
 // ON/OFF "RECUPERAÇÃO" pela nota final (ligado < 7 = recuperação, desligado >= 7;
-// filtro-recuperacao-progresso.js). Combo "Aluno" ao lado do "Turma" deixa só a linha do aluno
+// filtro-recuperacao-progresso.js). ON/OFF "Prova Corrigida" (desligado: não corrigidas;
+// filtro-corrigida-progresso.js). Combo "Aluno" ao lado do "Turma" deixa só a linha do aluno
 // escolhido (filtro-aluno-progresso.js).
 // As escolhas desses filtros (e do "Mostrar quem faltou") ficam no localStorage do navegador
 // e voltam ao abrir a página; sem escolha guardada, vale o padrão.
@@ -41,6 +42,7 @@ const ARQUIVO_FALTAS_PROGRESSO_GLOBAL = 'falta-aluno-progresso.js';
 const ARQUIVO_FILTRO_ENTREGUE_PROGRESSO_GLOBAL = 'filtro-entregue-progresso.js';
 const ARQUIVO_FILTRO_ALUNO_PROGRESSO_GLOBAL = 'filtro-aluno-progresso.js';
 const ARQUIVO_FILTRO_RECUPERACAO_PROGRESSO_GLOBAL = 'filtro-recuperacao-progresso.js';
+const ARQUIVO_FILTRO_CORRIGIDA_PROGRESSO_GLOBAL = 'filtro-corrigida-progresso.js';
 // Prefixo das escolhas dos filtros guardadas no navegador (só preferência de tela, sem dado
 // de aluno nem gabarito).
 const PREFIXO_PREFERENCIA_PROGRESSO_GLOBAL = 'progresso-turma:';
@@ -791,6 +793,25 @@ async function prepararFiltroRecuperacaoGlobal(area, aoMudar) {
 }
 
 /**
+ * Cria o ON/OFF "Prova Corrigida" (desligado: não corrigidas; ligado: corrigidas) e o põe na
+ * área, depois do "RECUPERAÇÃO". Uma falha aqui não derruba o painel.
+ * @param {HTMLElement} area - Área do painel.
+ * @param {Function} aoMudar - Redesenha a lista quando o ON/OFF muda.
+ */
+async function prepararFiltroCorrigidaGlobal(area, aoMudar) {
+    try {
+        if (typeof window.criarFiltroCorrigida !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_FILTRO_CORRIGIDA_PROGRESSO_GLOBAL);
+        }
+        const filtro = window.criarFiltroCorrigida(aoMudar, preferenciasProgressoGlobal);
+        estadoProgressoGlobal.filtrosDaLista.push(filtro);
+        area.appendChild(filtro.elemento);
+    } catch (erro) {
+        console.warn('Filtro "Prova Corrigida" do progresso:', erro.message);
+    }
+}
+
+/**
  * Põe o combo "Aluno" ao lado do título (filtro-aluno-progresso.js; a escolha fica no
  * navegador). Ele é o primeiro filtro da lista, para as opções terem todos os alunos da turma.
  * Uma falha aqui não derruba o painel.
@@ -872,6 +893,7 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
     await prepararFiltroEntregueGlobal(area, redesenhar);
     await prepararFaltasGlobal(area, redesenhar);
     await prepararFiltroRecuperacaoGlobal(area, redesenhar);
+    await prepararFiltroCorrigidaGlobal(area, redesenhar);
     tela.contagem = criarElementoProgressoGlobal('span', CLASSE_PROGRESSO_GLOBAL + '__contagem');
     area.appendChild(tela.contagem);
     await prepararFiltroAlunoGlobal(area, redesenhar);
