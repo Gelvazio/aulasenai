@@ -29,7 +29,7 @@ por aula, na pasta `AULAS/CONTEUDO-AULAS/`.
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 171.1 | Aprovação do plano e respostas do usuário (PDFs ficam ou vão para a pasta nova) | ✅ Concluído | 2026-10-14 10:02 | Usuário: "sim, pdfs ficam onde estão, pode seguir" (Markdowns vão para o Git e o site, sem pedido em contrário) |
-| 171.2 | Extrair o texto dos 10 PDFs para `AULAS/CONTEUDO-AULAS/AULA-NN-SLIDES.md` | ✅ Concluído | 2026-10-14 10:20 | 10 arquivos; seções `## Slide` = páginas do PDF em todos (42, 42, 41, 38, 41, 41, 39, 41, 42, 41); slide 12 da Aula 05 renderizado: os termos de código que faltam (ex.: "com .") já faltam no próprio PDF |
-| 171.3 | Atualizar `AULAS/STATUS-AULAS.md` com a pasta nova | ✅ Concluído | 2026-10-14 10:20 | Linha nova em "Observações" |
+| 171.1 | Aprovação do plano e respostas do usuário (PDFs ficam ou vão para a pasta nova) | ✅ Concluído | 2026-10-14 10:00 | Usuário: "sim, pdfs ficam onde estão, pode seguir" (Markdowns vão para o Git e o site, sem pedido em contrário) |
+| 171.2 | Extrair o texto dos 10 PDFs para `AULAS/CONTEUDO-AULAS/AULA-NN-SLIDES.md` | ✅ Concluído | 2026-10-14 10:08 | 10 arquivos; seções `## Slide` = páginas do PDF em todos (42, 42, 41, 38, 41, 41, 39, 41, 42, 41); slide 12 da Aula 05 renderizado: os termos de código que faltam (ex.: "com .") já faltam no próprio PDF |
+| 171.3 | Atualizar `AULAS/STATUS-AULAS.md` com a pasta nova | ✅ Concluído | 2026-10-14 10:08 | Linha nova em "Observações" |
 | 171.4 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
