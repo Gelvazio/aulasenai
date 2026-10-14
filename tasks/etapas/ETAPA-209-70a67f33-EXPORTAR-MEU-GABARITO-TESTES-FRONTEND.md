@@ -19,7 +19,7 @@ prática já faz) — recurso global no `atividade.js`, vale para todas as objet
   selo de cada tópico (`assets/js/resultado-aluno-discursiva.js`); antes da correção, "⏳ Sua nota
   ainda está aguardando a correção do professor".
 - O PDF do "Exportar Meu Gabarito" deve levar a nota também.
-**Próximo passo:** 209.2 — aguardar a aprovação do plano (Escopo/Riscos acima).
+**Próximo passo:** 209.6 — aceite do usuário (testar como aluno).
 
 ### Respostas do usuário (2026-10-14)
 
@@ -111,9 +111,9 @@ ERROU,NAO TEM COMO ELE FICAR COM NOTA MENOR QUE A TENTATIVA ANTERIOR"
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 209.1 | Respostas do usuário às perguntas acima | ✅ Concluído | 2026-10-14 10:47 | Respostas registradas acima (4 corrigida pelo usuário: última tentativa) |
-| 209.2 | Plano na etapa (escopo, riscos, banco/RLS) + aprovação do usuário | 👀 Aguardando o usuário | — | — |
-| 209.3 | Recurso global (módulo JS + CSS + o que o banco precisar), ligado por atributo no `<body>` | ⬜ Pendente | — | `node --check`; consultas ao banco |
-| 209.4 | Ligar nas páginas de Testes de Front-End | ⬜ Pendente | — | Busca no código |
-| 209.4b | Objetiva após liberar gabaritos: marcar acerto/erro de cada questão na página do aluno (global, como a prática), mantendo o cartão da nota | ⬜ Pendente | — | `node --check`; consulta ao banco |
-| 209.5 | Documentação (`docs/regras/atividades.md`, `docs/database.md` se mudar o banco) | ⬜ Pendente | — | Leitura |
-| 209.6 | Aceite do usuário (testar como aluno: antes e depois de entregar; objetiva antes e depois da liberação) | ⬜ Pendente | — | — |
+| 209.2 | Plano na etapa (escopo, riscos, banco/RLS) + aprovação do usuário | ✅ Concluído | 2026-10-14 10:49 | Aprovação: "SIM, PODE SEGUIR" |
+| 209.3 | Recurso global (módulo JS + CSS + o que o banco precisar), ligado por atributo no `<body>` | ✅ Concluído | 2026-10-14 10:55 | `node --check` ok em exportar-meu-gabarito.js, exportar-meu-gabarito-pdf.js, meu-gabarito-objetiva.js, meu-gabarito-discursiva.js, respostas-atividade.js (824 linhas) e avaliacao-discursiva.js (784); linhas novas ≤ 100; funções ≤ 45 e documentadas; banco consultado: tabelas, RLS e funções já cobrem (sem SQL) |
+| 209.4 | Ligar nas páginas de Testes de Front-End | ✅ Concluído | 2026-10-14 10:55 | Busca no código: 10 páginas com data-exportar-meu-gabarito="sim" (5 objetivas + 5 práticas) |
+| 209.4b | Objetiva após liberar gabaritos: marcar acerto/erro de cada questão na página do aluno (global, como a prática), mantendo o cartão da nota | ✅ Concluído | 2026-10-14 10:55 | `node --check` ok em correcao-objetiva-aluno.js; consulta: aluno_pode_ver_gabarito e solicitar_gabarito executáveis por authenticated; CSS em respostas-atividade.css |
+| 209.5 | Documentação (`docs/regras/atividades.md`, `docs/database.md` se mudar o banco) | ✅ Concluído | 2026-10-14 10:55 | Leitura: 2 tópicos novos em docs/regras/atividades.md (seção do gabarito) + linha no docs/HISTORICO-REGRAS.md; banco sem mudança (database.md igual) |
+| 209.6 | Aceite do usuário (testar como aluno: antes e depois de entregar; objetiva antes e depois da liberação) | 👀 Aguardando o usuário | — | Testar na tela como aluno (sem navegador nesta sessão) |

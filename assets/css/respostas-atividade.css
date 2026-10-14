@@ -359,3 +359,37 @@
 .conferencia-resposta { margin-top: 10px; font-size: 14px; font-weight: 700; }
 .relatorio-professor__carregar-respostas { margin-left: 10px; }
 .relatorio-professor__linha-aluno { display: flex; align-items: center; flex-wrap: wrap; }
+
+/* Aluno: correção depois que o professor libera os gabaritos (correcao-objetiva-aluno.js) */
+:root {
+  --correcao-acertou-fundo: #e6f6ec;
+  --correcao-acertou-borda: #38a169;
+  --correcao-acertou-texto: #1b7f3b;
+  --correcao-errou-fundo: #fde8e8;
+  --correcao-errou-borda: #e53e3e;
+  --correcao-errou-texto: #b42318;
+}
+.aula-card.questao .alternativas li.alternativa--acertou {
+  background: var(--correcao-acertou-fundo); border: 2px solid var(--correcao-acertou-borda);
+  font-weight: 700;
+}
+.aula-card.questao .alternativas li.alternativa--errou {
+  background: var(--correcao-errou-fundo); border: 2px solid var(--correcao-errou-borda);
+  font-weight: 700;
+}
+.aula-card.questao .alternativas li.alternativa--certa {
+  border: 2px dashed var(--correcao-acertou-borda);
+}
+.alternativa--acertou::after { content: "  ✅"; }
+.alternativa--errou::after { content: "  ❌"; }
+.correcao-objetiva {
+  margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; font-weight: 700;
+}
+.correcao-objetiva--acertou {
+  background: var(--correcao-acertou-fundo); border: 1px solid var(--correcao-acertou-borda);
+  color: var(--correcao-acertou-texto);
+}
+.correcao-objetiva--errou {
+  background: var(--correcao-errou-fundo); border: 1px solid var(--correcao-errou-borda);
+  color: var(--correcao-errou-texto);
+}

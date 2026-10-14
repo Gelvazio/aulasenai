@@ -1,0 +1,29 @@
+/* Aluno: botão "Exportar Meu Gabarito" (assets/js/exportar-meu-gabarito.js) */
+
+:root {
+    --meu-gabarito-destaque: #0b3d91;
+    --meu-gabarito-dica: #4a5568;
+    --meu-gabarito-espaco: 8px;
+}
+
+.meu-gabarito {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--meu-gabarito-espaco);
+    margin-top: var(--meu-gabarito-espaco);
+}
+
+.meu-gabarito__botao {
+    background: var(--meu-gabarito-destaque);
+}
+
+.meu-gabarito__botao:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.meu-gabarito__dica {
+    color: var(--meu-gabarito-dica);
+    font-size: 13px;
+}

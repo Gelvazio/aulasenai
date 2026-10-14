@@ -23,7 +23,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | nuvem · ccr-00f69e8a-6qcla9 | #26 ([144-aff33423](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md)); etapa 140-8554d88e aguarda o usuário | 🔄 Ativa | 2026-10-11 06:28 |
 | nuvem · ccr-be208aef-c6h8oe | #24 ([142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md)) — cancelada em 2026-10-13 (fila do banco desativada, decisão D1 da #29) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | nuvem · claude/ola-zlzh8z | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)); ⛔ não mexer em Banco de Dados | 🔄 Ativa | 2026-10-10 16:21 |
-| local · main | #82 ([209](etapas/ETAPA-209-70a67f33-EXPORTAR-MEU-GABARITO-TESTES-FRONTEND.md)) aguardando respostas do usuário; #81 ([208-9cf63981](etapas/ETAPA-208-9cf63981-APOSTILAS-SEM-ATIVIDADES-OU-PERGUNTAS.md)) em execução; #45, #33, #34, #35, #44 e #27 a #31 aguardam aceite; #36 a #43, #46 a #79 e #83 a #116 livres para outras IAs | 🔄 Ativa | 2026-10-14 10:45 |
+| local · main | #82 aguarda aceite ([209](etapas/ETAPA-209-70a67f33-EXPORTAR-MEU-GABARITO-TESTES-FRONTEND.md)); #81 ([208-9cf63981](etapas/ETAPA-208-9cf63981-APOSTILAS-SEM-ATIVIDADES-OU-PERGUNTAS.md)) em execução; #45, #33, #34, #35, #44 e #27 a #31 aguardam aceite; #36 a #43, #46 a #79 e #83 a #116 livres para outras IAs | 🔄 Ativa | 2026-10-14 10:55 |
 
 ## 📌 Tarefas
 
@@ -108,7 +108,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #79-376adfe2-9eb6-4646 | Professor marca entregue: Versionamento e Colaboracao (Tecnico Informatica Internet, 0 páginas) | 🟡 Média | #45 | ⬜ Pendente | — | [206-376adfe2](etapas/ETAPA-206-376adfe2-PROFESSOR-MARCA-ENTREGUE-VERSIONAMENTO-E-COLABORACAO.md) |
 | #80-4fc4d9dd-d362-4b7c | Botão "📘 Apostila" no card da matéria (Testes de Front-End, índice do curso) | 🟡 Média | — | 👀 Aguardando aceite | — | [207-4fc4d9dd](etapas/ETAPA-207-4fc4d9dd-BOTAO-APOSTILA-NO-CARD-DA-MATERIA.md) |
 | #81-9cf63981-df1e-4f36 | Apostilas sem atividades ou perguntas (regra no gerador) + Testes de Front-End sem exercícios e vídeos | 🟠 Alta | — | 🔄 Em execução | local · main (desde 2026-10-14 10:45) | [208-9cf63981](etapas/ETAPA-208-9cf63981-APOSTILAS-SEM-ATIVIDADES-OU-PERGUNTAS.md) |
-| #82-70a67f33-08c9-45e6 | Botão "Exportar Meu Gabarito" (aluno, só após entregar): recurso global + Testes de Front-End | 🟠 Alta | — | 👀 Plano aguardando aprovação | local · main (desde 2026-10-14 10:44) | [209-70a67f33](etapas/ETAPA-209-70a67f33-EXPORTAR-MEU-GABARITO-TESTES-FRONTEND.md) |
+| #82-70a67f33-08c9-45e6 | Botão "Exportar Meu Gabarito" (aluno, só após entregar): recurso global + Testes de Front-End | 🟠 Alta | — | 👀 Aguardando aceite | — | [209-70a67f33](etapas/ETAPA-209-70a67f33-EXPORTAR-MEU-GABARITO-TESTES-FRONTEND.md) |
 | #83-1bc21389-e01d-476d | Exportar Meu Gabarito: Banco de Dados (Técnico em Informática para Internet, 40 páginas) | 🟡 Média | #82 | ⬜ Pendente | — | [210-1bc21389](etapas/ETAPA-210-1bc21389-EXPORTAR-MEU-GABARITO-BANCO-DE-DADOS.md) |
 | #84-3810ae94-7fa5-4124 | Exportar Meu Gabarito: Introdução às TIC (Assistente de Operações Logísticas, 23 páginas) | 🟡 Média | #82 | ⬜ Pendente | — | [211-3810ae94](etapas/ETAPA-211-3810ae94-EXPORTAR-MEU-GABARITO-INTRODUCAO-TIC.md) |
 | #85-8e527e6a-e392-417a | Exportar Meu Gabarito: Análise de Dados Aplicada à Gestão (Gestão e Controle de Materiais, 10 páginas) | 🟡 Média | #82 | ⬜ Pendente | — | [212-8e527e6a](etapas/ETAPA-212-8e527e6a-EXPORTAR-MEU-GABARITO-ANALISE-DADOS-GESTAO.md) |

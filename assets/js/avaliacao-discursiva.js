@@ -21,6 +21,8 @@ const ARQUIVO_NOTA_IA_RESPOSTAS = 'nota-ia-respostas-discursiva.js';
 const ARQUIVO_CONFIRMAR_PROFESSOR = 'confirmar-nota-professor-discursiva.js';
 const ARQUIVO_FINALIZAR_PROFESSOR = 'finalizar-atividade-professor.js';
 const ARQUIVO_RESULTADO_ALUNO = 'resultado-aluno-discursiva.js';
+const ARQUIVO_MEU_GABARITO_DISCURSIVA = 'meu-gabarito-discursiva.js';
+const VALOR_ATIVO_MEU_GABARITO_DISCURSIVA = 'sim';
 const BASE_SCRIPTS_DISCURSIVA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const CLASSE_BLOCO = 'topico-resposta';
 const CLASSE_FALTANDO = 'topico-resposta--faltando';
@@ -300,7 +302,31 @@ function montarPainel(dados) {
     atualizarProgresso();
     if (dados.ehProfessor) abrirRespostasDoAluno(painel, dados);
     if (dados.ehProfessor) abrirProgressoDaTurma(dados);
+    if (!dados.ehProfessor) abrirMeuGabaritoDiscursiva(painel, dados);
     abrirLiberacaoRespostas(painel, dados);
+}
+
+/**
+ * Aluno: botão "Exportar Meu Gabarito" no painel quando a página pede
+ * (body data-exportar-meu-gabarito="sim"; assets/js/meu-gabarito-discursiva.js).
+ * Uma falha aqui não atrapalha a avaliação.
+ * @param {HTMLElement} painel - Painel de identificação.
+ * @param {Object} dados - Estado carregado do banco.
+ */
+async function abrirMeuGabaritoDiscursiva(painel, dados) {
+    const estaAtivo = document.body.dataset.exportarMeuGabarito ===
+        VALOR_ATIVO_MEU_GABARITO_DISCURSIVA;
+    if (!estaAtivo) return;
+    try {
+        if (typeof window.iniciarMeuGabaritoDiscursiva !== 'function') {
+            await carregarModuloDiscursiva(ARQUIVO_MEU_GABARITO_DISCURSIVA);
+        }
+        const { repositorio } = estadoDiscursivo;
+        await window.iniciarMeuGabaritoDiscursiva({ dados, destino: painel,
+            chaveTopico: (item, topico) => repositorio.chaveTopico(item, topico) });
+    } catch (erro) {
+        console.warn('Exportar Meu Gabarito:', erro.message);
+    }
 }
 
 /**
