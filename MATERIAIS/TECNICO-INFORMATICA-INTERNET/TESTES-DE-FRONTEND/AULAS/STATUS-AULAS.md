@@ -24,6 +24,7 @@ cadastradas no banco). **Aulas encontradas:** 10 (slides `AULAS/AULA-NN-SLIDES.p
 ## Observações
 
 - Aulas só em PDF (`AULA-NN-SLIDES.pdf`); nenhuma atividade HTML nem cadastro no banco.
+- Texto dos slides em Markdown: `AULAS/CONTEUDO-AULAS/AULA-NN-SLIDES.md` (uma seção `## Slide N` por slide, sem imagens; gerado em 2026-10-14, tarefa #44). Os PDFs continuam em `AULAS/`. Alguns termos de código já faltam no próprio PDF.
 - Apoio da Aula 01 nesta pasta: `AULA-01-GUIA-LABORATORIO.md`, `AULA-01-EXERCICIO-01.md`, `AULA-01-EXERCICIO-02.md` (gabarito em `AULA-01-GABARITO-EXERCICIOS.md`, fora do Git).
 - Aulas a gerar ou completar seguem a regra: uma por vez, completa, atualizando esta tabela.
 - "Banco" = atividade cadastrada na tabela `atividade` (liberada/bloqueada pelo professor no índice).
