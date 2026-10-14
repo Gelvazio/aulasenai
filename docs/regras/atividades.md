@@ -260,7 +260,8 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     `assets/js/mostrar-certas-discursiva.js` + CSS.
   - **Discursiva — ON/OFF "Falta Corrigir?" (2026-10-14, #150):** ao lado de "Mostrar Certas".
     **Ligado (padrão)**: ao escolher um aluno, a prova mostra só as questões que o professor ainda
-    **não corrigiu** (algum tópico sem nota do professor) ; desligado,
+    **não marcou** (algum tópico **respondido** sem nota do professor; tópico em branco não
+    conta; a lista se refaz quando o professor marca Certa/Meia/Errada — #155) ; desligado,
     mostra também as já corrigidas. Os dois filtros valem **juntos** (um não anula o outro). Só
     muda a tela. Mesmo arquivo do "Mostrar Certas".
   - **Combo "Aluno" — ON/OFF "Pendente Correcao" (2026-10-14, #153):** ao lado do combo

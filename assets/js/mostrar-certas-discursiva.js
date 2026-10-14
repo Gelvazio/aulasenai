@@ -10,6 +10,7 @@
 // Depende de js/supabase.js (sbGet). Regra: docs/regras/atividades.md
 
 const CLASSE_MOSTRAR_CERTAS = 'mostrar-certas';
+const EVENTO_NOTA_CONFIRMADA_ESCUTADO = 'nota-professor-confirmada';
 const CLASSE_QUESTAO_CERTA_OCULTA = 'questao-discursiva--certa-oculta';
 const CLASSE_QUESTAO_CORRIGIDA_OCULTA = 'questao-discursiva--corrigida-oculta';
 const SELETOR_QUESTAO_MOSTRAR_CERTAS = '.questao-discursiva[data-item]';
@@ -23,6 +24,8 @@ const DICA_MOSTRAR_CERTAS = 'Desligado: só as questões meia certa ou errada do
 const BASE_SCRIPTS_MOSTRAR_CERTAS = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 
 const estadoMostrarCertas = {
+    aluno: null,
+    atividadeId: 0,
     ligado: false,
     faltaCorrigir: true,
     questoesCertas: new Set(),
@@ -42,7 +45,7 @@ function notaEhCheia(nota, pontos) {
 
 /**
  * Lê as questões certas (todos os tópicos com nota cheia) e as já corrigidas pelo professor
- * (todos os tópicos com nota do professor) do aluno.
+ * (todos os tópicos RESPONDIDOS com nota do professor; tópico em branco não conta) do aluno.
  * @param {{alunoId: string, tentativa: number}} aluno - Aluno escolhido.
  * @param {number} atividadeId - Id da atividade.
  * @returns {Promise<{certas: Set<number>, corrigidas: Set<number>}>} Números das questões.
@@ -50,11 +53,15 @@ function notaEhCheia(nota, pontos) {
  */
 async function lerQuestoesDoAluno(aluno, atividadeId) {
     const filtro = 'atividade_id=eq.' + atividadeId;
-    const [correcoes, topicos] = await Promise.all([
-        sbGet('correcao_discursiva', 'select=item,topico,nota_ia,nota_professor&' + filtro +
-            '&aluno_id=eq.' + aluno.alunoId + '&tentativa=eq.' + aluno.tentativa),
+    const doAluno = '&aluno_id=eq.' + aluno.alunoId + '&tentativa=eq.' + aluno.tentativa;
+    const [correcoes, topicos, respostas] = await Promise.all([
+        sbGet('correcao_discursiva',
+            'select=item,topico,nota_ia,nota_professor&' + filtro + doAluno),
         sbGet('topico_discursivo', 'select=item,topico,pontos&' + filtro),
+        sbGet('resposta_discursiva', 'select=item,topico,texto&' + filtro + doAluno),
     ]);
+    const respondidos = new Set(respostas.filter((linha) => (linha.texto || '').trim() !== '')
+        .map((linha) => linha.item + '|' + linha.topico));
     const porTopico = new Map(correcoes.map((linha) => [linha.item + '|' + linha.topico, linha]));
     const naoCertas = new Set();
     const naoCorrigidas = new Set();
@@ -65,7 +72,8 @@ async function lerQuestoesDoAluno(aluno, atividadeId) {
         const temNotaDoProfessor = linha?.nota_professor !== null &&
             linha?.nota_professor !== undefined;
         if (!estaCerta) naoCertas.add(topico.item);
-        if (!temNotaDoProfessor) naoCorrigidas.add(topico.item);
+        const estaRespondido = respondidos.has(topico.item + '|' + topico.topico);
+        if (estaRespondido && !temNotaDoProfessor) naoCorrigidas.add(topico.item);
     });
     const itens = topicos.map((topico) => topico.item);
     return {
@@ -104,6 +112,8 @@ function aplicarMostrarCertas() {
  * @param {number} atividadeId - Id da atividade.
  */
 async function mostrarCertasDoAluno(aluno, atividadeId) {
+    estadoMostrarCertas.aluno = aluno;
+    estadoMostrarCertas.atividadeId = atividadeId;
     estadoMostrarCertas.questoesCertas = new Set();
     estadoMostrarCertas.questoesCorrigidas = new Set();
     try {
@@ -176,6 +186,12 @@ function ligarMostrarCertas(painel) {
     link.href = BASE_SCRIPTS_MOSTRAR_CERTAS + '../css/mostrar-certas-discursiva.css';
     document.head.appendChild(link);
 })();
+
+// Quando o professor marca Certa / Meia certa / Errada, a lista do aluno escolhido é refeita.
+document.addEventListener(EVENTO_NOTA_CONFIRMADA_ESCUTADO, () => {
+    const { aluno, atividadeId } = estadoMostrarCertas;
+    if (aluno) mostrarCertasDoAluno(aluno, atividadeId);
+});
 
 window.ligarMostrarCertas = ligarMostrarCertas;
 window.mostrarCertasDoAluno = mostrarCertasDoAluno;

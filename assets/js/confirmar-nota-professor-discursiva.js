@@ -9,6 +9,7 @@
 // Regra: docs/regras/atividades.md
 
 const CLASSE_CONFIRMAR_PROFESSOR = 'confirmar-professor';
+const EVENTO_NOTA_PROFESSOR_CONFIRMADA = 'nota-professor-confirmada';
 const TABELA_CONFIRMAR_PROFESSOR = 'correcao_discursiva';
 const CHAVE_CONFIRMAR_PROFESSOR = 'aluno_id,atividade_id,tentativa,item,topico';
 const SELETOR_BLOCO_CONFIRMAR = '.topico-resposta';
@@ -115,6 +116,7 @@ async function confirmarOpcao(contexto) {
     try {
         await gravarNotaDoProfessor({ ...linhaBase, nota_professor: nota });
         marcarOpcaoConfirmada(grupo, opcao.chave);
+        document.dispatchEvent(new CustomEvent(EVENTO_NOTA_PROFESSOR_CONFIRMADA));
     } catch (erro) {
         await mostrarPopup('Nota não gravada: ' + erro.message, { tipo: 'erro', titulo: 'Erro' });
     } finally {
