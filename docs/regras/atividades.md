@@ -252,6 +252,11 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     professor** em todas as questões respondidas. Lembrado no localStorage
     (`progresso-turma:prova-corrigida`). Código: `assets/js/filtro-corrigida-progresso.js` e
     `provaCorrigida` em `progresso-turma-fontes.js`.
+  - **Discursiva — ON/OFF "Mostrar Certas" (2026-10-14, #148):** ao lado de "🧑‍🎓 Respostas
+    dos alunos". Desligado (padrão): ao escolher um aluno, a prova mostra só as questões **meia
+    certa ou errada**; ligado, também as **certas** (todos os tópicos com nota cheia — nota do
+    professor; sem ela, a da IA). Questão sem nota nunca some. Código:
+    `assets/js/mostrar-certas-discursiva.js` + CSS.
   - **Filtros lembrados (2026-10-14, #142):** "Questões respondidas", "Tarefa Entregue?" e
     "Mostrar quem faltou" guardam a escolha no **localStorage** do navegador (chaves
     `progresso-turma:*`, só preferência de tela) e voltam ao abrir a página; sem escolha

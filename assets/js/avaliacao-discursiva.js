@@ -19,6 +19,7 @@ const ARQUIVO_RESPOSTAS_ALUNO = 'respostas-aluno-professor.js';
 const ARQUIVO_PROGRESSO_TURMA = 'progresso-turma-global.js';
 const ARQUIVO_MEU_PROGRESSO_DISCURSIVA = 'progresso-do-aluno.js';
 const ARQUIVO_NOTA_IA_RESPOSTAS = 'nota-ia-respostas-discursiva.js';
+const ARQUIVO_MOSTRAR_CERTAS = 'mostrar-certas-discursiva.js';
 const ARQUIVO_CONFIRMAR_PROFESSOR = 'confirmar-nota-professor-discursiva.js';
 const ARQUIVO_FINALIZAR_PROFESSOR = 'finalizar-atividade-professor.js';
 const ARQUIVO_RESULTADO_ALUNO = 'resultado-aluno-discursiva.js';
@@ -372,8 +373,10 @@ async function abrirRespostasDoAluno(painel, dados) {
                 mostrarConfirmacaoDoProfessor(aluno, dados.atividadeId),
                 mostrarFinalizarDoProfessor(aluno, dados.atividadeId),
                 mostrarSuspeitasDoAluno(aluno, dados.atividadeId),
+                mostrarCertasDasRespostas(aluno, dados.atividadeId),
             ]),
         });
+        await prepararMostrarCertas(painel);
     } catch (erro) {
         console.warn('Respostas dos alunos:', erro.message);
     }
@@ -472,6 +475,39 @@ async function mostrarNotasIaDasRespostas(aluno, atividadeId) {
         await window.mostrarNotasIaDoAluno(aluno, atividadeId);
     } catch (erro) {
         console.warn('Nota da IA nas respostas:', erro.message);
+    }
+}
+
+/**
+ * Professor: ON/OFF "Mostrar Certas" ao lado de "Respostas dos alunos"
+ * (assets/js/mostrar-certas-discursiva.js). Uma falha aqui não atrapalha a avaliação.
+ * @param {HTMLElement} painel - Painel do professor.
+ */
+async function prepararMostrarCertas(painel) {
+    try {
+        if (typeof window.ligarMostrarCertas !== 'function') {
+            await carregarModuloDiscursiva(ARQUIVO_MOSTRAR_CERTAS);
+        }
+        window.ligarMostrarCertas(painel);
+    } catch (erro) {
+        console.warn('Mostrar Certas:', erro.message);
+    }
+}
+
+/**
+ * Professor: com "Mostrar Certas" desligado, esconde as questões certas do aluno escolhido
+ * (sem aluno, mostra todas). Uma falha aqui não atrapalha a avaliação.
+ * @param {Object|null} aluno - Aluno escolhido no combo (null = nenhum).
+ * @param {number} atividadeId - Id da atividade.
+ */
+async function mostrarCertasDasRespostas(aluno, atividadeId) {
+    try {
+        if (typeof window.mostrarCertasDoAluno !== 'function') {
+            await carregarModuloDiscursiva(ARQUIVO_MOSTRAR_CERTAS);
+        }
+        await window.mostrarCertasDoAluno(aluno, atividadeId);
+    } catch (erro) {
+        console.warn('Mostrar Certas:', erro.message);
     }
 }
 

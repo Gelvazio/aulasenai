@@ -6,9 +6,9 @@ on/off, por default desligado, ao clicar nele mostre as certas tambem, alem das 
 ao selecionar o aluno liste apenas perguntas meia certa ou errada"
 **Objetivo:** ao conferir as respostas de um aluno na discursiva, o professor ver por padrão só as
 questões meia certa ou errada; ligando "Mostrar Certas", vê também as certas.
-**Próximo passo:** 275.1 — criar o ON/OFF.
+**Próximo passo:** 275.2 — usuário escolher um aluno na discursiva e ligar/desligar "Mostrar Certas".
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 275.1 | ON/OFF "Mostrar Certas" ao lado de "Respostas dos alunos" (padrão desligado: só meia certa e errada) | 🔄 Em progresso | — | — |
-| 275.2 | Aceite do usuário | ⬜ Pendente | — | — |
+| 275.1 | ON/OFF "Mostrar Certas" ao lado de "Respostas dos alunos" (padrão desligado: só meia certa e errada; certa = nota cheia em todos os tópicos, nota do professor ou, sem ela, da IA; sem nota nunca some): `mostrar-certas-discursiva.js` + CSS, ligado em `avaliacao-discursiva.js`; regra em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 19:09 | `node --check` nos 2 JS; linhas novas ≤ 100 |
+| 275.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
