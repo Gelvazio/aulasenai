@@ -49,7 +49,7 @@ MODELO_SLIDES_AULA = "AULA-{numero}-SLIDES.pdf"
 TEXTO_BOTAO_SLIDES = "📕 Slides (PDF)"
 # Slides e documentos abrem em nova aba (pedido do usuário, 2026-10-09).
 EXTENSOES_NOVA_ABA = (".pdf", ".pptx")
-# Apostila ligada no card da matéria (2026-10-14): <MATÉRIA>/APOSTILA/APOSTILA-*.html.
+# Apostila no card da matéria, abaixo do nome (2026-10-14): <MATÉRIA>/APOSTILA/APOSTILA-*.html.
 PASTA_APOSTILA = "APOSTILA"
 PADRAO_APOSTILA = "APOSTILA-*.html"
 TEXTO_BOTAO_APOSTILA = "📘 Apostila"
@@ -126,12 +126,29 @@ def atributos_nova_aba(href):
     return ' target="_blank" rel="noopener"'
 
 
-def montar_card(dados):
-    """Monta um card (article.aula) a partir de rótulo, título, meta e botões."""
-    botoes = "".join(
-        f'<a class="{f"btn {classe}".strip()}" href="{href}"{atributos_nova_aba(href)}>{escapar(texto)}</a>'
-        for texto, href, classe in dados["botoes"]
+def montar_botoes(botoes):
+    """Monta os links (a.btn) de uma lista de botões (texto, href, classe)."""
+    return "".join(
+        f'<a class="{f"btn {classe}".strip()}" href="{href}"{atributos_nova_aba(href)}>'
+        f"{escapar(texto)}</a>"
+        for texto, href, classe in botoes
     )
+
+
+def montar_botoes_titulo(botoes):
+    """Linha de botões logo abaixo do nome do card (ex.: apostila), ou vazio se não houver."""
+    if not botoes:
+        return ""
+    return f'\n            <div class="acoes">{montar_botoes(botoes)}</div>'
+
+
+def montar_card(dados):
+    """Monta um card (article.aula) a partir de rótulo, título, meta e botões.
+
+    "botoes_titulo" (opcional) fica abaixo do nome; "botoes", no fim do card.
+    """
+    botoes = montar_botoes(dados["botoes"])
+    botoes_titulo = montar_botoes_titulo(dados.get("botoes_titulo"))
     atributo_arquivo = ""
     if dados.get("arquivo"):
         atributo_arquivo = f' data-arquivo="{escapar(dados["arquivo"])}"'
@@ -142,7 +159,7 @@ def montar_card(dados):
                     <div class="num">{escapar(dados["rotulo"])}</div>
                     <h2>{escapar(dados["titulo"])}</h2>
                 </div>
-            </div>
+            </div>{botoes_titulo}
             <p class="meta">{escapar(dados["meta"])}</p>
             <div class="acoes">{botoes}</div>
         </article>"""
@@ -372,7 +389,8 @@ def card_materia(materia, curso, quantidade):
         meta = "Nenhuma atividade cadastrada"
     return montar_card({
         "icone": "📘", "rotulo": "MATÉRIA", "titulo": nome_legivel(materia),
-        "meta": meta, "botoes": [botao, *botoes_apostila(materia, curso)],
+        "meta": meta, "botoes": [botao],
+        "botoes_titulo": botoes_apostila(materia, curso),
     })
 
 

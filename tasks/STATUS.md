@@ -23,7 +23,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | nuvem · ccr-00f69e8a-6qcla9 | #26 ([144-aff33423](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md)); etapa 140-8554d88e aguarda o usuário | 🔄 Ativa | 2026-10-11 06:28 |
 | nuvem · ccr-be208aef-c6h8oe | #24 ([142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md)) — cancelada em 2026-10-13 (fila do banco desativada, decisão D1 da #29) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | nuvem · claude/ola-zlzh8z | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)); ⛔ não mexer em Banco de Dados | 🔄 Ativa | 2026-10-10 16:21 |
-| local · main | #45 ([172-0ef7953a](etapas/ETAPA-172-0ef7953a-PROFESSOR-MARCA-ENTREGUE-TESTES-FRONTEND.md)) aguarda respostas do usuário; #33, #34, #35, #44 e #27 a #31 aguardam aceite; #80 aguarda aceite; #36 a #43 e #46 a #79 livres para outras IAs; #32 cancelada | 👀 Aguardando o usuário | 2026-10-14 10:27 |
+| local · main | #45 ([172-0ef7953a](etapas/ETAPA-172-0ef7953a-PROFESSOR-MARCA-ENTREGUE-TESTES-FRONTEND.md)) aguarda respostas do usuário; #33, #34, #35, #44 e #27 a #31 aguardam aceite; #80 aguarda aceite; #36 a #43 e #46 a #79 livres para outras IAs; #32 cancelada | 👀 Aguardando o usuário | 2026-10-14 10:29 |
 
 ## 📌 Tarefas
 
