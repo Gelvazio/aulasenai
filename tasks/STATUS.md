@@ -23,7 +23,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | nuvem · ccr-00f69e8a-6qcla9 | #26 ([144-aff33423](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md)); etapa 140-8554d88e aguarda o usuário | 🔄 Ativa | 2026-10-11 06:28 |
 | nuvem · ccr-be208aef-c6h8oe | #24 ([142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md)) — cancelada em 2026-10-13 (fila do banco desativada, decisão D1 da #29) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | nuvem · claude/ola-zlzh8z | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)); ⛔ não mexer em Banco de Dados | 🔄 Ativa | 2026-10-10 16:21 |
-| local · main | #33 ([160-d7ade403](etapas/ETAPA-160-d7ade403-QUESTOES-ATE-O-MINIMO-TESTES-FRONTEND.md)), #34, #35 e #27 a #31 aguardam aceite; #36 a #43 livres para outras IAs; #32 cancelada | 👀 Aguardando o usuário | 2026-10-14 09:58 |
+| local · main | #33 ([160-d7ade403](etapas/ETAPA-160-d7ade403-QUESTOES-ATE-O-MINIMO-TESTES-FRONTEND.md)), #44 ([171-ee2de431](etapas/ETAPA-171-ee2de431-SLIDES-TESTES-FRONTEND-EM-MARKDOWN.md)) aguarda aprovação do plano; #33, #34, #35 e #27 a #31 aguardam aceite; #36 a #43 livres para outras IAs; #32 cancelada | 👀 Aguardando o usuário | 2026-10-14 09:59 |
 
 ## 📌 Tarefas
 
@@ -70,6 +70,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #41-a04e0049-a6ab-4be4 | Questões até o mínimo: Fundamentos da Tecnologia e Programação (Rio do Sul Mais Tech, 14 páginas) | 🟠 Alta | #33 | ⬜ Pendente | — | [168-a04e0049](etapas/ETAPA-168-a04e0049-QUESTOES-ATE-O-MINIMO-FUNDAMENTOS-TECNOLOGIA-PROGRAMACAO.md) |
 | #42-b4cc900a-b520-4867 | Questões até o mínimo: Introdução à Comunicação Oral e Escrita (Rio do Sul Mais Tech, 2 páginas) | 🟠 Alta | #33 | ⬜ Pendente | — | [169-b4cc900a](etapas/ETAPA-169-b4cc900a-QUESTOES-ATE-O-MINIMO-COMUNICACAO-ORAL-ESCRITA.md) |
 | #43-25be3d4d-8aba-409a | Questões até o mínimo: Reforço de Linguagens (Rio do Sul Mais Tech, 10 páginas) | 🟠 Alta | #33 | ⬜ Pendente | — | [170-25be3d4d](etapas/ETAPA-170-25be3d4d-QUESTOES-ATE-O-MINIMO-REFORCO-LINGUAGENS.md) |
+| #44-ee2de431-6821-41c3 | Slides das aulas de Testes de Front-End em Markdown (`AULAS/CONTEUDO-AULAS/`) | 🟡 Média | — | 👀 Plano aguardando aprovação | local · main (desde 2026-10-14 09:59) | [171-ee2de431](etapas/ETAPA-171-ee2de431-SLIDES-TESTES-FRONTEND-EM-MARKDOWN.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -276,6 +277,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 168-a04e0049 | Questões até o mínimo: Fundamentos da Tecnologia e Programação (#41, criada pela #34 em 2026-10-14) | [ETAPA-168-a04e0049-QUESTOES-ATE-O-MINIMO-FUNDAMENTOS-TECNOLOGIA-PROGRAMACAO.md](etapas/ETAPA-168-a04e0049-QUESTOES-ATE-O-MINIMO-FUNDAMENTOS-TECNOLOGIA-PROGRAMACAO.md) |
 | 169-b4cc900a | Questões até o mínimo: Introdução à Comunicação Oral e Escrita (#42, criada pela #34 em 2026-10-14) | [ETAPA-169-b4cc900a-QUESTOES-ATE-O-MINIMO-COMUNICACAO-ORAL-ESCRITA.md](etapas/ETAPA-169-b4cc900a-QUESTOES-ATE-O-MINIMO-COMUNICACAO-ORAL-ESCRITA.md) |
 | 170-25be3d4d | Questões até o mínimo: Reforço de Linguagens (#43, criada pela #34 em 2026-10-14) | [ETAPA-170-25be3d4d-QUESTOES-ATE-O-MINIMO-REFORCO-LINGUAGENS.md](etapas/ETAPA-170-25be3d4d-QUESTOES-ATE-O-MINIMO-REFORCO-LINGUAGENS.md) |
+| 171-ee2de431 | Slides das aulas de Testes de Front-End em Markdown (#44, pedida em 2026-10-14) | [ETAPA-171-ee2de431-SLIDES-TESTES-FRONTEND-EM-MARKDOWN.md](etapas/ETAPA-171-ee2de431-SLIDES-TESTES-FRONTEND-EM-MARKDOWN.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
