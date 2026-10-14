@@ -23,7 +23,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | nuvem · ccr-00f69e8a-6qcla9 | #26 ([144-aff33423](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md)); etapa 140-8554d88e aguarda o usuário | 🔄 Ativa | 2026-10-11 06:28 |
 | nuvem · ccr-be208aef-c6h8oe | #24 ([142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md)) — cancelada em 2026-10-13 (fila do banco desativada, decisão D1 da #29) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | nuvem · claude/ola-zlzh8z | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)); ⛔ não mexer em Banco de Dados | 🔄 Ativa | 2026-10-10 16:21 |
-| local · main | #33 ([160-d7ade403](etapas/ETAPA-160-d7ade403-QUESTOES-ATE-O-MINIMO-TESTES-FRONTEND.md)), #35 e #27 a #31 aguardam aceite; #34 livre para outras IAs; #32 cancelada | 👀 Aguardando o usuário | 2026-10-14 10:15 |
+| local · main | #33 ([160-d7ade403](etapas/ETAPA-160-d7ade403-QUESTOES-ATE-O-MINIMO-TESTES-FRONTEND.md)), #34, #35 e #27 a #31 aguardam aceite; #36 a #43 livres para outras IAs; #32 cancelada | 👀 Aguardando o usuário | 2026-10-14 09:58 |
 
 ## 📌 Tarefas
 
@@ -60,8 +60,16 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #31-fe84910c-d9e1-49dd | Aula bloqueada: aluno não abre os slides (Testes de Front-End) | 🟠 Alta | — | 👀 Aguardando aceite | — | [158-fe84910c](etapas/ETAPA-158-fe84910c-SLIDES-DE-AULA-BLOQUEADA.md) |
 | #32-a45aa9a6-f4ec-4787 | Desafio 1 de Testes de Front-End: 3 casos de teste do Login (página SENAI + banco) | 🟠 Alta | — | ⛔ Cancelada em 2026-10-14 08:35 (pasta errada: vai para C:/fontes/gerador-atividades) | — | [159-a45aa9a6](etapas/ETAPA-159-a45aa9a6-DESAFIO-01-CASOS-DE-TESTE-LOGIN.md) |
 | #33-d7ade403-0783-49be | Tela e PDF só com as questões 1 até o mínimo (Cálculo Nota) — Testes de Front-End, Aula 02 | 🟠 Alta | — | 👀 Aguardando aceite | — | [160-d7ade403](etapas/ETAPA-160-d7ade403-QUESTOES-ATE-O-MINIMO-TESTES-FRONTEND.md) |
-| #34-7aee2d7e-1445-47ed | Criar as tarefas "questões até o mínimo" das demais matérias (uma por matéria) | 🟠 Alta | #33 | 🔄 Em execução | local · main (desde 2026-10-14 09:53) | [161-7aee2d7e](etapas/ETAPA-161-7aee2d7e-CRIAR-TASKS-QUESTOES-ATE-O-MINIMO.md) |
+| #34-7aee2d7e-1445-47ed | Criar as tarefas "questões até o mínimo" das demais matérias (uma por matéria) | 🟠 Alta | #33 | 👀 Aguardando aceite | — | [161-7aee2d7e](etapas/ETAPA-161-7aee2d7e-CRIAR-TASKS-QUESTOES-ATE-O-MINIMO.md) |
 | #35-e7fa7621-26e1-40e0 | Exportar PDF: lista "Turma" já com a turma favorita | 🟠 Alta | — | 👀 Aguardando aceite | — | [162-e7fa7621](etapas/ETAPA-162-e7fa7621-TURMA-FAVORITA-NA-EXPORTACAO.md) |
+| #36-6b8cbe04-258d-4a30 | Questões até o mínimo: Testes de Front-End — demais aulas (Técnico em Informática para Internet, 4 páginas) | 🟠 Alta | #33 | ⬜ Pendente | — | [163-6b8cbe04](etapas/ETAPA-163-6b8cbe04-QUESTOES-ATE-O-MINIMO-TESTES-FRONTEND-DEMAIS-AULAS.md) |
+| #37-3086760c-07b2-4f27 | Questões até o mínimo: Banco de Dados (Técnico em Informática para Internet, 20 páginas) | 🟠 Alta | #33 | ⬜ Pendente | — | [164-3086760c](etapas/ETAPA-164-3086760c-QUESTOES-ATE-O-MINIMO-BANCO-DE-DADOS.md) |
+| #38-27872376-f89f-47d7 | Questões até o mínimo: Introdução às TIC (Assistente de Operações Logísticas, 15 páginas) | 🟠 Alta | #33 | ⬜ Pendente | — | [165-27872376](etapas/ETAPA-165-27872376-QUESTOES-ATE-O-MINIMO-INTRODUCAO-TIC.md) |
+| #39-22e38c34-11b0-4b5d | Questões até o mínimo: Análise de Dados Aplicada à Gestão (Gestão e Controle de Materiais, 9 páginas) | 🟠 Alta | #33 | ⬜ Pendente | — | [166-22e38c34](etapas/ETAPA-166-22e38c34-QUESTOES-ATE-O-MINIMO-ANALISE-DADOS-GESTAO.md) |
+| #40-c614c1e9-7df6-4e16 | Questões até o mínimo: Fundamentos de Automação e Instrumentação (Operador de Produção Industrial, 15 páginas) | 🟠 Alta | #33 | ⬜ Pendente | — | [167-c614c1e9](etapas/ETAPA-167-c614c1e9-QUESTOES-ATE-O-MINIMO-FUNDAMENTOS-AUTOMACAO.md) |
+| #41-a04e0049-a6ab-4be4 | Questões até o mínimo: Fundamentos da Tecnologia e Programação (Rio do Sul Mais Tech, 14 páginas) | 🟠 Alta | #33 | ⬜ Pendente | — | [168-a04e0049](etapas/ETAPA-168-a04e0049-QUESTOES-ATE-O-MINIMO-FUNDAMENTOS-TECNOLOGIA-PROGRAMACAO.md) |
+| #42-b4cc900a-b520-4867 | Questões até o mínimo: Introdução à Comunicação Oral e Escrita (Rio do Sul Mais Tech, 2 páginas) | 🟠 Alta | #33 | ⬜ Pendente | — | [169-b4cc900a](etapas/ETAPA-169-b4cc900a-QUESTOES-ATE-O-MINIMO-COMUNICACAO-ORAL-ESCRITA.md) |
+| #43-25be3d4d-8aba-409a | Questões até o mínimo: Reforço de Linguagens (Rio do Sul Mais Tech, 10 páginas) | 🟠 Alta | #33 | ⬜ Pendente | — | [170-25be3d4d](etapas/ETAPA-170-25be3d4d-QUESTOES-ATE-O-MINIMO-REFORCO-LINGUAGENS.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -260,6 +268,14 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 160-d7ade403 | Tela e PDF só até o mínimo de questões (#33, pedida em 2026-10-14) | [ETAPA-160-d7ade403-QUESTOES-ATE-O-MINIMO-TESTES-FRONTEND.md](etapas/ETAPA-160-d7ade403-QUESTOES-ATE-O-MINIMO-TESTES-FRONTEND.md) |
 | 161-7aee2d7e | Criar as tarefas das demais matérias (#34, pedida em 2026-10-14) | [ETAPA-161-7aee2d7e-CRIAR-TASKS-QUESTOES-ATE-O-MINIMO.md](etapas/ETAPA-161-7aee2d7e-CRIAR-TASKS-QUESTOES-ATE-O-MINIMO.md) |
 | 162-e7fa7621 | Turma favorita na exportação (#35, pedida em 2026-10-14) | [ETAPA-162-e7fa7621-TURMA-FAVORITA-NA-EXPORTACAO.md](etapas/ETAPA-162-e7fa7621-TURMA-FAVORITA-NA-EXPORTACAO.md) |
+| 163-6b8cbe04 | Questões até o mínimo: Testes de Front-End — demais aulas (#36, criada pela #34 em 2026-10-14) | [ETAPA-163-6b8cbe04-QUESTOES-ATE-O-MINIMO-TESTES-FRONTEND-DEMAIS-AULAS.md](etapas/ETAPA-163-6b8cbe04-QUESTOES-ATE-O-MINIMO-TESTES-FRONTEND-DEMAIS-AULAS.md) |
+| 164-3086760c | Questões até o mínimo: Banco de Dados (#37, criada pela #34 em 2026-10-14) | [ETAPA-164-3086760c-QUESTOES-ATE-O-MINIMO-BANCO-DE-DADOS.md](etapas/ETAPA-164-3086760c-QUESTOES-ATE-O-MINIMO-BANCO-DE-DADOS.md) |
+| 165-27872376 | Questões até o mínimo: Introdução às TIC (#38, criada pela #34 em 2026-10-14) | [ETAPA-165-27872376-QUESTOES-ATE-O-MINIMO-INTRODUCAO-TIC.md](etapas/ETAPA-165-27872376-QUESTOES-ATE-O-MINIMO-INTRODUCAO-TIC.md) |
+| 166-22e38c34 | Questões até o mínimo: Análise de Dados Aplicada à Gestão (#39, criada pela #34 em 2026-10-14) | [ETAPA-166-22e38c34-QUESTOES-ATE-O-MINIMO-ANALISE-DADOS-GESTAO.md](etapas/ETAPA-166-22e38c34-QUESTOES-ATE-O-MINIMO-ANALISE-DADOS-GESTAO.md) |
+| 167-c614c1e9 | Questões até o mínimo: Fundamentos de Automação e Instrumentação (#40, criada pela #34 em 2026-10-14) | [ETAPA-167-c614c1e9-QUESTOES-ATE-O-MINIMO-FUNDAMENTOS-AUTOMACAO.md](etapas/ETAPA-167-c614c1e9-QUESTOES-ATE-O-MINIMO-FUNDAMENTOS-AUTOMACAO.md) |
+| 168-a04e0049 | Questões até o mínimo: Fundamentos da Tecnologia e Programação (#41, criada pela #34 em 2026-10-14) | [ETAPA-168-a04e0049-QUESTOES-ATE-O-MINIMO-FUNDAMENTOS-TECNOLOGIA-PROGRAMACAO.md](etapas/ETAPA-168-a04e0049-QUESTOES-ATE-O-MINIMO-FUNDAMENTOS-TECNOLOGIA-PROGRAMACAO.md) |
+| 169-b4cc900a | Questões até o mínimo: Introdução à Comunicação Oral e Escrita (#42, criada pela #34 em 2026-10-14) | [ETAPA-169-b4cc900a-QUESTOES-ATE-O-MINIMO-COMUNICACAO-ORAL-ESCRITA.md](etapas/ETAPA-169-b4cc900a-QUESTOES-ATE-O-MINIMO-COMUNICACAO-ORAL-ESCRITA.md) |
+| 170-25be3d4d | Questões até o mínimo: Reforço de Linguagens (#43, criada pela #34 em 2026-10-14) | [ETAPA-170-25be3d4d-QUESTOES-ATE-O-MINIMO-REFORCO-LINGUAGENS.md](etapas/ETAPA-170-25be3d4d-QUESTOES-ATE-O-MINIMO-REFORCO-LINGUAGENS.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
