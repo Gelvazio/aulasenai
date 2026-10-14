@@ -241,6 +241,10 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     Cálculo Nota seguem com a turma inteira). A escolha fica no localStorage (`progresso-turma:
     aluno`); aluno guardado fora da turma escolhida vale como "Todos os alunos". Código:
     `assets/js/filtro-aluno-progresso.js`.
+  - **ON/OFF "RECUPERAÇÃO" (2026-10-14, #145):** depois do "Mostrar quem faltou". Vale só a
+    **nota final**: desligado (padrão) mostra quem tem nota final **menor que 7**; ligado, **7 ou
+    mais**. Aluno sem nota final continua na lista. Lembrado no localStorage
+    (`progresso-turma:recuperacao`). Código: `assets/js/filtro-recuperacao-progresso.js`.
   - **Filtros lembrados (2026-10-14, #142):** "Questões respondidas", "Tarefa Entregue?" e
     "Mostrar quem faltou" guardam a escolha no **localStorage** do navegador (chaves
     `progresso-turma:*`, só preferência de tela) e voltam ao abrir a página; sem escolha
