@@ -55,7 +55,7 @@ Na dúvida, é grande. O projeto pode definir exceções (rotinas já autorizada
 3. Lição aprendida que vira regra → "Lições aprendidas" do `STATUS.md` (e a regra no lugar certo).
 4. `STATUS.md`: status da tarefa atualizado, "Em uso por" = `—`, linha da frente atualizada.
 5. **Um commit por tarefa** com o quadro no mesmo commit (e push, conforme a regra do projeto).
-6. Responder **apenas**: **TAREFA FINALIZADA!, AJUDO EM ALGO MAIS?** — sem resumo nem tabela
+6. Responder **apenas**: **TAREFA FINALIZADA E SINCRONIZADA!** — sem resumo nem tabela
    (perguntas e bloqueios são respondidos normalmente).
 
 ## Retomar (sessão nova ou que caiu)
