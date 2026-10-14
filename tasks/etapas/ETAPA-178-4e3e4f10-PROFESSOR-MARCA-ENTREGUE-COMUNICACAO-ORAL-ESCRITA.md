@@ -8,8 +8,10 @@ como na #45 (etapa 172-0ef7953a), que já traz a função do banco e o botão.
 **Próximo passo:** 178.1 — pôr `data-marcar-entregue="sim"` no `<body>` das páginas abaixo
 (confirmar antes o nome do atributo na etapa 172-0ef7953a).
 
-### Páginas (2, carregam `respostas-atividade.js` em 2026-10-14)
+### Páginas (4, objetivas e práticas, em 2026-10-14)
 
+- `MATERIAIS/RIO_DO_SUL_MAIS_TECH/INTRODUCAO_COMUNICACAO_ORAL_ESCRITA/ATIVIDADES/ATIVIDADE-PRATICA-AULA-01.html`
+- `MATERIAIS/RIO_DO_SUL_MAIS_TECH/INTRODUCAO_COMUNICACAO_ORAL_ESCRITA/ATIVIDADES/ATIVIDADE-PRATICA-AULA-02.html`
 - `MATERIAIS/RIO_DO_SUL_MAIS_TECH/INTRODUCAO_COMUNICACAO_ORAL_ESCRITA/ATIVIDADES/ATIVIDADES-AULA-01-50-QUESTOES.html`
 - `MATERIAIS/RIO_DO_SUL_MAIS_TECH/INTRODUCAO_COMUNICACAO_ORAL_ESCRITA/ATIVIDADES/ATIVIDADES-AULA-02-50-QUESTOES.html`
 
