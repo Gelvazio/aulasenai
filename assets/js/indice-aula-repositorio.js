@@ -31,6 +31,23 @@ async function buscarAulasDasPaginasCard(paginas) {
 }
 
 /**
+ * Lê o nome (atividade.nome_atividade) das atividades das páginas dos cards.
+ * @param {string[]} paginas - Caminhos (pathname) das páginas de atividade.
+ * @returns {Promise<Map<string, string>>} Nome da atividade de cada página (só as com nome).
+ */
+async function buscarNomesDasAtividadesCard(paginas) {
+    const mapa = new Map();
+    if (!paginas.length) return mapa;
+
+    const valores = paginas.map((pagina) => '"' + pagina.replace(/"/g, '') + '"').join(',');
+    const filtro = 'pagina=in.(' + encodeURIComponent(valores) + ')';
+    const linhas = await sbGet(TABELA_ATIVIDADE_AULA, 'select=pagina,nome_atividade&' + filtro);
+    linhas.filter((linha) => linha.nome_atividade?.trim())
+        .forEach((linha) => mapa.set(linha.pagina, linha.nome_atividade.trim()));
+    return mapa;
+}
+
+/**
  * Lista as aulas de uma matéria (para achar a aula de um card cuja atividade não foi lida).
  * @param {number} idMateria - Id da matéria.
  * @returns {Promise<Object[]>} Aulas da matéria.

@@ -15,6 +15,8 @@ const SELETOR_CARD_AULA = 'article.aula';
 const SELETOR_LINK_PRINCIPAL_AULA = 'a.btn.principal';
 const SELETOR_ROTULO_CARD_AULA = '.num';
 const SELETOR_NOME_CARD_AULA = '.topo h2';
+// Começo do texto do link que não é letra nem número (emoji e "🔒 "): fica antes do nome do banco.
+const REGEX_PREFIXO_LINK_ATIVIDADE = /^[^\p{L}\p{N}]*/u;
 const TEXTO_BOTAO_EDITAR_AULA = '✏️ Editar aula';
 const TEXTO_SEM_DATA_AULA = '📅 Data da aula: não informada';
 const TEXTO_AULA_SEM_CADASTRO = '📅 Aula não cadastrada no banco (use CADASTRAR ATIVIDADES)';
@@ -257,6 +259,41 @@ async function verificarProfessorCardAula() {
 }
 
 /**
+ * Troca o texto do link da atividade pelo nome do banco, mantendo o emoji do começo e os
+ * elementos de dentro do link (ex.: etiqueta "ID NN" do professor).
+ * @param {HTMLAnchorElement} link - Link principal da atividade.
+ * @param {string} nome - atividade.nome_atividade.
+ */
+function escreverNomeNoLink(link, nome) {
+    const textos = [...link.childNodes].filter((no) => no.nodeType === Node.TEXT_NODE);
+    if (!textos.length) return;
+
+    const prefixo = textos.map((no) => no.textContent).join('').trimStart()
+        .match(REGEX_PREFIXO_LINK_ATIVIDADE)[0];
+    textos[0].textContent = ' ' + prefixo + nome;
+    textos.slice(1).forEach((no) => no.remove());
+}
+
+/**
+ * Escreve nos links principais de todos os cards o nome da atividade cadastrado no banco
+ * (sem nome no banco, ou atividade que o usuário não lê, o link fica como no HTML).
+ * @param {Object[]} itens - Cards do índice.
+ */
+async function renderizarNomesDasAtividades(itens) {
+    try {
+        const paginas = [...new Set(itens.flatMap((item) => item.paginas))];
+        const nomes = await buscarNomesDasAtividadesCard(paginas);
+        document.querySelectorAll(SELETOR_CARD_AULA + ' ' + SELETOR_LINK_PRINCIPAL_AULA)
+            .forEach((link) => {
+                const nome = nomes.get(obterCaminhoHtml(lerHrefCrud(link)));
+                if (nome) escreverNomeNoLink(link, nome);
+            });
+    } catch (erro) {
+        console.warn('Nomes das atividades indisponíveis:', erro.message);
+    }
+}
+
+/**
  * Caminhos das páginas dos links principais do card (lerHrefCrud também lê o link guardado do
  * card bloqueado, em data-href-bloqueado).
  * @param {HTMLElement} card - Card do índice.
@@ -314,6 +351,7 @@ async function desenharCardsDoIndice() {
     estadoCardsAula.cards = itens;
     if (estadoCardsAula.ehProfessor) itens.forEach(adicionarBotaoEditarAula);
     itens.forEach(desenharCardAula);
+    await renderizarNomesDasAtividades(itens);
 }
 
 iniciarCardsAula();
