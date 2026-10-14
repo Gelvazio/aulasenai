@@ -23,7 +23,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | nuvem · ccr-00f69e8a-6qcla9 | #26 ([144-aff33423](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md)); etapa 140-8554d88e aguarda o usuário | 🔄 Ativa | 2026-10-11 06:28 |
 | nuvem · ccr-be208aef-c6h8oe | #24 ([142-2a52ee2f](etapas/ETAPA-142-2a52ee2f-FILA-TASKS-AGENDADOR-UNICO.md)) — cancelada em 2026-10-13 (fila do banco desativada, decisão D1 da #29) | 👀 Aguardando o usuário | 2026-10-11 06:00 |
 | nuvem · claude/ola-zlzh8z | #22-f79be83e ([137-13665a7e](etapas/ETAPA-137-13665a7e-TESTES-DE-FRONT-END-AULAS-04-A-10.md)); ⛔ não mexer em Banco de Dados | 🔄 Ativa | 2026-10-10 16:21 |
-| local · main | #30 ([157-376bafe4](etapas/ETAPA-157-376bafe4-CORRECAO-PROVAS-DISCURSIVAS.md)); #27, #28 e #29 aguardam aceite | 👀 Aguardando o usuário | 2026-10-14 07:31 |
+| local · main | #31 ([158-fe84910c](etapas/ETAPA-158-fe84910c-SLIDES-DE-AULA-BLOQUEADA.md)), plano aguardando aprovação; #27, #28, #29 e #30 aguardam aceite | 👀 Aguardando o usuário | 2026-10-14 08:23 |
 
 ## 📌 Tarefas
 
@@ -57,6 +57,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #28-9201b27b-7630-41cb | Visualizador `.claude/rules/index.html`: regras em cards + aba TASKS | 🟡 Média | — | 👀 Aguardando aceite | — | [147-9201b27b](etapas/ETAPA-147-9201b27b-VISUALIZADOR-REGRAS-E-TASKS.md) |
 | #29-6ee02521-4f6a-4944 | Revisão das regras + quadro com fonte única nos arquivos (regras de tarefas em `.claude/rules/tasks/`) | 🟡 Média | — | 👀 Aguardando aceite | — | [148-6932a263](etapas/ETAPA-148-6932a263-REGRAS-E-QUADRO-FONTE-UNICA.md) |
 | #30-376bafe4-a3b7-4809 | Correção das provas discursivas pela IA (todas com respostas) | 🟠 Alta | — | 👀 Aguardando aceite | — | [157-376bafe4](etapas/ETAPA-157-376bafe4-CORRECAO-PROVAS-DISCURSIVAS.md) |
+| #31-fe84910c-d9e1-49dd | Aula bloqueada: aluno não abre os slides (Testes de Front-End) | 🟠 Alta | — | 👀 Plano aguardando aprovação | local · main (desde 2026-10-14 08:23) | [158-fe84910c](etapas/ETAPA-158-fe84910c-SLIDES-DE-AULA-BLOQUEADA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -250,6 +251,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 155-e3d89d81 | Duração dos vídeos da apostila de Exploração de Carreiras (local) (#14; criada na migração do quadro) | [ETAPA-155-e3d89d81-DURACAO-DOS-VIDEOS-DA-APOSTILA-DE-EXPLORACAO-DE.md](etapas/ETAPA-155-e3d89d81-DURACAO-DOS-VIDEOS-DA-APOSTILA-DE-EXPLORACAO-DE.md) |
 | 156-2221f1f9 | Análise contínua das matérias (#19; criada na migração do quadro) | [ETAPA-156-2221f1f9-ANALISE-CONTINUA-DAS-MATERIAS.md](etapas/ETAPA-156-2221f1f9-ANALISE-CONTINUA-DAS-MATERIAS.md) |
 | 157-376bafe4 | Correção das provas discursivas pela IA (#30, pedida em 2026-10-14) | [ETAPA-157-376bafe4-CORRECAO-PROVAS-DISCURSIVAS.md](etapas/ETAPA-157-376bafe4-CORRECAO-PROVAS-DISCURSIVAS.md) |
+| 158-fe84910c | Aula bloqueada: aluno não abre os slides (#31, pedida em 2026-10-14) | [ETAPA-158-fe84910c-SLIDES-DE-AULA-BLOQUEADA.md](etapas/ETAPA-158-fe84910c-SLIDES-DE-AULA-BLOQUEADA.md) |
 
 ## Riscos
 | Risco | Chance | Impacto | Plano B | Situação |
