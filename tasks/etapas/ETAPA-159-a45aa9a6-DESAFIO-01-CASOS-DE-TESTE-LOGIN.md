@@ -6,7 +6,7 @@ PASTA TESTES-DE-FRONTEND" (slide "Desafio 1: Escrever 3 Casos de Teste" — logi
 senha incorreta, e-mail em branco; ID, Título, Pré-requisito, Passos e Resultado esperado).
 **Objetivo:** publicar o Desafio 1 como atividade discursiva no padrão SENAI (página + banco) na
 matéria Testes de Front-End, aula 02.
-**Próximo passo:** — (cancelada em 2026-10-14 08:35: o usuário disse que a pasta certa é `C:ontes\gerador-atividades`; arquivos criados aqui foram removidos e nada foi aplicado no banco).
+**Próximo passo:** — (cancelada em 2026-10-14 08:35: o usuário disse que a pasta certa é `C:/fontes/gerador-atividades`; arquivos criados aqui foram removidos e nada foi aplicado no banco).
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|

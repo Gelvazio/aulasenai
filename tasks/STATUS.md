@@ -58,7 +58,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #29-6ee02521-4f6a-4944 | Revisão das regras + quadro com fonte única nos arquivos (regras de tarefas em `.claude/rules/tasks/`) | 🟡 Média | — | 👀 Aguardando aceite | — | [148-6932a263](etapas/ETAPA-148-6932a263-REGRAS-E-QUADRO-FONTE-UNICA.md) |
 | #30-376bafe4-a3b7-4809 | Correção das provas discursivas pela IA (todas com respostas) | 🟠 Alta | — | 👀 Aguardando aceite | — | [157-376bafe4](etapas/ETAPA-157-376bafe4-CORRECAO-PROVAS-DISCURSIVAS.md) |
 | #31-fe84910c-d9e1-49dd | Aula bloqueada: aluno não abre os slides (Testes de Front-End) | 🟠 Alta | — | 👀 Aguardando aceite | — | [158-fe84910c](etapas/ETAPA-158-fe84910c-SLIDES-DE-AULA-BLOQUEADA.md) |
-| #32-a45aa9a6-f4ec-4787 | Desafio 1 de Testes de Front-End: 3 casos de teste do Login (página SENAI + banco) | 🟠 Alta | — | ⛔ Cancelada em 2026-10-14 08:35 (pasta errada: vai para C:ontes\gerador-atividades) | — | [159-a45aa9a6](etapas/ETAPA-159-a45aa9a6-DESAFIO-01-CASOS-DE-TESTE-LOGIN.md) |
+| #32-a45aa9a6-f4ec-4787 | Desafio 1 de Testes de Front-End: 3 casos de teste do Login (página SENAI + banco) | 🟠 Alta | — | ⛔ Cancelada em 2026-10-14 08:35 (pasta errada: vai para C:/fontes/gerador-atividades) | — | [159-a45aa9a6](etapas/ETAPA-159-a45aa9a6-DESAFIO-01-CASOS-DE-TESTE-LOGIN.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
