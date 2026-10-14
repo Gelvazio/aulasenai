@@ -74,8 +74,9 @@
     outline-offset: 2px;
 }
 
-/* Questão certa do aluno escolhido, escondida com "Mostrar Certas" desligado. */
-.questao-discursiva.questao-discursiva--certa-oculta {
+/* Questão de uma categoria não marcada (Certas / Meia Certas / Erradas), escondida quando há
+   algum filtro de categoria marcado. */
+.questao-discursiva.questao-discursiva--categoria-oculta {
     display: none;
 }
 

@@ -20,6 +20,8 @@ const ARQUIVO_PROGRESSO_TURMA = 'progresso-turma-global.js';
 const ARQUIVO_MEU_PROGRESSO_DISCURSIVA = 'progresso-do-aluno.js';
 const ARQUIVO_NOTA_IA_RESPOSTAS = 'nota-ia-respostas-discursiva.js';
 const ARQUIVO_MOSTRAR_CERTAS = 'mostrar-certas-discursiva.js';
+const ARQUIVO_CATEGORIAS_PERGUNTA = 'categorias-pergunta-discursiva.js';
+const scriptsCarregadosDiscursiva = new Map();
 const ARQUIVO_CORRIGIDOS = 'corrigidos-discursiva.js';
 const ARQUIVO_MOSTRAR_CERTAS_ALUNO = 'mostrar-certas-aluno-discursiva.js';
 const ARQUIVOS_MODAIS_NOTA = ['modal-nota-discursiva.js', 'historico-nota-discursiva.js',
@@ -437,9 +439,8 @@ async function abrirResultadoDoAluno(dados) {
             await carregarModuloDiscursiva(ARQUIVO_RESULTADO_ALUNO);
         }
         await carregarModaisDaNota();
-        if (typeof window.ligarMostrarCertasAluno !== 'function') {
-            await carregarModuloDiscursiva(ARQUIVO_MOSTRAR_CERTAS_ALUNO);
-        }
+        await carregarModuloDiscursiva(ARQUIVO_CATEGORIAS_PERGUNTA);
+        await carregarModuloDiscursiva(ARQUIVO_MOSTRAR_CERTAS_ALUNO);
         await window.mostrarResultadoDoAluno(dados.atividadeId);
     } catch (erro) {
         console.warn('Resultado do aluno:', erro.message);
@@ -508,9 +509,8 @@ async function lerCorrigidosDaDiscursiva(atividadeId) {
  */
 async function prepararMostrarCertas(painel) {
     try {
-        if (typeof window.ligarMostrarCertas !== 'function') {
-            await carregarModuloDiscursiva(ARQUIVO_MOSTRAR_CERTAS);
-        }
+        await carregarModuloDiscursiva(ARQUIVO_CATEGORIAS_PERGUNTA);
+        await carregarModuloDiscursiva(ARQUIVO_MOSTRAR_CERTAS);
         window.ligarMostrarCertas(painel);
     } catch (erro) {
         console.warn('Mostrar Certas:', erro.message);
@@ -525,9 +525,8 @@ async function prepararMostrarCertas(painel) {
  */
 async function mostrarCertasDasRespostas(aluno, atividadeId) {
     try {
-        if (typeof window.mostrarCertasDoAluno !== 'function') {
-            await carregarModuloDiscursiva(ARQUIVO_MOSTRAR_CERTAS);
-        }
+        await carregarModuloDiscursiva(ARQUIVO_CATEGORIAS_PERGUNTA);
+        await carregarModuloDiscursiva(ARQUIVO_MOSTRAR_CERTAS);
         await window.mostrarCertasDoAluno(aluno, atividadeId);
     } catch (erro) {
         console.warn('Mostrar Certas:', erro.message);
@@ -601,18 +600,25 @@ async function carregarModaisDaNota() {
 }
 
 /**
- * Carrega um script de assets/js/ (ao lado deste).
+ * Carrega um script de assets/js/ (ao lado deste), uma única vez por arquivo.
  * @param {string} arquivo - Nome do script.
  * @returns {Promise<void>} Resolve quando carregou.
  */
 function carregarModuloDiscursiva(arquivo) {
-    return new Promise((resolver, rejeitar) => {
+    if (scriptsCarregadosDiscursiva.has(arquivo)) return scriptsCarregadosDiscursiva.get(arquivo);
+
+    const promessa = new Promise((resolver, rejeitar) => {
         const script = document.createElement('script');
         script.src = BASE_SCRIPTS_DISCURSIVA + arquivo;
         script.onload = () => resolver();
-        script.onerror = () => rejeitar(new Error('Não foi possível carregar ' + arquivo));
+        script.onerror = () => {
+            scriptsCarregadosDiscursiva.delete(arquivo);
+            rejeitar(new Error('Não foi possível carregar ' + arquivo));
+        };
         document.head.appendChild(script);
     });
+    scriptsCarregadosDiscursiva.set(arquivo, promessa);
+    return promessa;
 }
 
 /**

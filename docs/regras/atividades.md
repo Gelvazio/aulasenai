@@ -252,7 +252,7 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     professor** em todas as questões respondidas. Lembrado no localStorage
     (`progresso-turma:prova-corrigida`). Código: `assets/js/filtro-corrigida-progresso.js` e
     `provaCorrigida` em `progresso-turma-fontes.js`.
-  - **Discursiva — ON/OFF "Mostrar Certas" (2026-10-14, #148):** ao lado de "🧑‍🎓 Respostas
+  - **(substituído pelos filtros de categoria da #159) Discursiva — ON/OFF "Mostrar Certas" (2026-10-14, #148):** ao lado de "🧑‍🎓 Respostas
     dos alunos". Desligado (padrão): ao escolher um aluno, a prova mostra só as questões **meia
     certa ou errada**; ligado, também as **certas** (todos os tópicos com nota cheia do
     **professor ou da IA** — qualquer das duas vale; corrigido na #152). Questão sem nota nunca
@@ -270,11 +270,17 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     entregou e tem nota do professor em todas as questões respondidas
     (`assets/js/corrigidos-discursiva.js`); objetiva: corrigido = entregue. Só muda a tela.
     Código: `assets/js/respostas-aluno-professor.js` + CSS.
-  - **Aluno — ON/OFF "Mostrar Certas" (2026-10-14, #158):** no quadro da nota da prova corrigida
-    (discursiva). Desligado (padrão): esconde as perguntas em que o aluno acertou tudo (todos os
-    tópicos com a nota cheia do professor); ligado: mostra todas. Pergunta sem nota nunca some. A
-    escolha fica no localStorage (`resultado-aluno:mostrar-certas`). Código:
-    `assets/js/mostrar-certas-aluno-discursiva.js`.
+  - **Filtros de categoria — Mostrar Certas / Mostrar Meia Certas / Mostrar Erradas (2026-10-14,
+    #159; substitui o "Mostrar Certas" sozinho das #148/#152/#158):** três ON/OFF no painel do
+    professor (ao lado de "Falta Corrigir?") e, **liberados aos alunos**, no quadro da nota da prova
+    corrigida. **Todos desmarcados: mostra todas as perguntas**; marcados **combinam** (mostra as
+    de qualquer categoria marcada). Categoria da pergunta: **certa** = todos os tópicos com nota
+    cheia; **errada** = todos com nota zero; **meia certa** = o resto (só tópicos respondidos).
+    Nota que vale: a do professor; sem ela, a da IA (aluno: só a confirmada do professor).
+    Pergunta ainda sem nota nunca some. No professor combinam também com "Falta Corrigir?". As
+    escolhas ficam no **localStorage** (`respostas-aluno:categoria-*` e `resultado-aluno:categoria-*`).
+    Código: `assets/js/categorias-pergunta-discursiva.js` (compartilhado),
+    `mostrar-certas-discursiva.js` (professor) e `mostrar-certas-aluno-discursiva.js` (aluno).
   - **Combo "Aluno" lembrado (2026-10-14, #157):** o aluno escolhido (por atividade) e os três
     filtros de "Respostas dos alunos" — **Pendente Correcao**, **Falta Corrigir?** e **Mostrar
     Certas** — ficam no **localStorage** do navegador (chaves `respostas-aluno:*`, só preferência
