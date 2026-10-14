@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-14 20:45 | **Card de entrega com alerta (tarefa #164):** aluno que já entregou a discursiva vê "Atividade já entregue! Aguarde a correção!" (ou "Atividade Corrigida, veja sua nota no início!" com a nota visível) no lugar do botão. Em `docs/regras/atividades.md`. |
 | 2026-10-14 20:20 | **Todo pedido vira TASK publicada e assumida (tarefa #149):** a ordem é criar a TASK, publicar no quadro (commit + push) e assumir (reserva, commit + push) antes de trabalhar; vale para todas as IAs. Em `AGENTS.md` (regra 1) e `.claude/rules/tasks/ciclo-da-task.md`. |
 | 2026-10-14 20:13 | **Regra global das práticas (tarefa #160):** depois de entregar, o aluno não vê mais as próprias respostas até o professor liberar o gabarito, em toda prática/discursiva, sem campo na fonte (antes só nas páginas com "Ocultar respostas após entrega"). Em `docs/regras/atividades.md`, `docs/REGRAS-ATIVIDADE-PRATICA.md` e `.claude/rules/atividades-banco.md`. |
 | 2026-10-14 20:11 | **Filtros de categoria (tarefa #159):** "Mostrar Certas", "Mostrar Meia Certas" e "Mostrar Erradas" no painel do professor e na prova corrigida do aluno; todos desmarcados mostra todas, marcados combinam; escolhas no localStorage; substitui o "Mostrar Certas" sozinho (que escondia as certas por padrão). Regra em `docs/regras/atividades.md`. |

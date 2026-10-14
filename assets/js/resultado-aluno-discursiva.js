@@ -19,6 +19,7 @@ const SELETOR_PAINEL_RESULTADO = '#painel-discursivo';
 const TOLERANCIA_RESULTADO = 0.001;
 const PREFIXO_COMENTARIO_IA = /^\[IA\]\s*/;
 const TABELA_HISTORICO_RESULTADO = 'correcao_discursiva_historico';
+const MSG_CORRIGIDA_RESULTADO = 'Atividade Corrigida, veja sua nota no início!';
 const BASE_SCRIPTS_RESULTADO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 const RESULTADOS_ALUNO = {
     certa: { icone: '✅', texto: 'Certa', modificador: 'certa' },
@@ -245,6 +246,9 @@ async function mostrarResultadoDoAluno(atividadeId) {
     destino.insertBefore(quadro, painel ? painel.nextSibling : destino.firstChild);
     mostrarResultadoNasAlternativas({ atividadeId, correcoes, gabarito, historico });
     window.ligarMostrarCertasAluno?.(quadro, { correcoes, gabarito });
+    if (nota?.situacao === 'NOTA') {
+        window.mostrarAlertaDeEntrega?.(MSG_CORRIGIDA_RESULTADO, 'corrigida');
+    }
 }
 
 (function incluirEstiloResultadoAluno() {

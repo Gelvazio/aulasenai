@@ -13,6 +13,11 @@ const SELETOR_CAMPO = '.topico-resposta__campo';
 const SELETOR_BLOCO_TOPICO = '.topico-resposta';
 const ID_PAINEL = 'painel-discursivo';
 const ID_BOTAO_FINALIZAR = 'btnFinalizarDiscursiva';
+const SELETOR_CARD_ENTREGA = '.entrega-discursiva';
+const SELETOR_TEXTO_ENTREGA = '.entrega-discursiva__texto';
+const SELETOR_TITULO_ENTREGA = '.aula-title';
+const TITULO_ENTREGA_FEITA = 'Avaliação entregue';
+const MSG_ENTREGUE_AGUARDE = 'Atividade já entregue! Aguarde a correção!';
 const ARQUIVO_LIBERACAO_DISCURSIVA = 'liberacao-respostas-discursiva.js';
 const ARQUIVO_PDF_DISCURSIVA = 'exportar-pdf-discursiva.js';
 const ARQUIVO_RESPOSTAS_ALUNO = 'respostas-aluno-professor.js';
@@ -174,6 +179,30 @@ function aplicarPermissaoDeEscrita() {
     const liberado = podeEscrever();
     obterCamposDiscursivos().forEach((campo) => { campo.readOnly = !liberado; });
     document.getElementById(ID_BOTAO_FINALIZAR).hidden = !liberado;
+    mostrarAlertaDeEntrega();
+}
+
+/**
+ * No card "ENTREGA" do aluno que já entregou, troca a explicação e o botão por um alerta:
+ * "Atividade já entregue! Aguarde a correção!" (o resultado do aluno troca por "Atividade
+ * Corrigida..." quando a nota já puder ser vista). Tarefa #164.
+ * @param {string} [texto] - Texto do alerta (padrão: aguardando a correção).
+ * @param {string} [situacao] - 'entregue' (amarelo) ou 'corrigida' (verde).
+ */
+function mostrarAlertaDeEntrega(texto = MSG_ENTREGUE_AGUARDE, situacao = 'entregue') {
+    const dados = estadoDiscursivo.dados;
+    const ehAluno = Boolean(dados?.disponivel && dados.logado && !dados.ehProfessor);
+    const card = document.querySelector(SELETOR_CARD_ENTREGA);
+    if (!card || !ehAluno || !dados.entregueEm) return;
+
+    const alerta = card.querySelector(SELETOR_TEXTO_ENTREGA);
+    if (!alerta) return;
+    alerta.textContent = texto;
+    alerta.className = 'entrega-discursiva__texto entrega-discursiva__alerta ' +
+        'entrega-discursiva__alerta--' + situacao;
+    alerta.setAttribute('role', 'alert');
+    const titulo = card.querySelector(SELETOR_TITULO_ENTREGA);
+    if (titulo) titulo.textContent = TITULO_ENTREGA_FEITA;
 }
 
 /**
@@ -942,6 +971,8 @@ async function iniciarAvaliacaoDiscursiva() {
     window.addEventListener('beforeunload', avisarSaidaComPendencia);
     document.addEventListener('visibilitychange', conferirEntregaAoVoltar);
 }
+
+window.mostrarAlertaDeEntrega = mostrarAlertaDeEntrega;
 
 document.addEventListener('DOMContentLoaded', iniciarAvaliacaoDiscursiva);
 window.addEventListener('pageshow', recarregarSeVeioDoCache);

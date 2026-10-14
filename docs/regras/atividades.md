@@ -281,6 +281,12 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     escolhas ficam no **localStorage** (`respostas-aluno:categoria-*` e `resultado-aluno:categoria-*`).
     Código: `assets/js/categorias-pergunta-discursiva.js` (compartilhado),
     `mostrar-certas-discursiva.js` (professor) e `mostrar-certas-aluno-discursiva.js` (aluno).
+  - **Card de entrega com alerta (2026-10-14, #164):** no card "ENTREGA" do aluno que **já
+    entregou** a discursiva, o botão some e aparece o alerta **"Atividade já entregue! Aguarde a
+    correção!"**; quando a prova já está corrigida e a nota já pode ser vista (gabarito liberado),
+    o alerta vira **"Atividade Corrigida, veja sua nota no início!"**. Código:
+    `mostrarAlertaDeEntrega` em `assets/js/avaliacao-discursiva.js` (chamada também pelo
+    `resultado-aluno-discursiva.js`) + CSS `entrega-discursiva__alerta`.
   - **Combo "Aluno" lembrado (2026-10-14, #157):** o aluno escolhido (por atividade) e os três
     filtros de "Respostas dos alunos" — **Pendente Correcao**, **Falta Corrigir?** e **Mostrar
     Certas** — ficam no **localStorage** do navegador (chaves `respostas-aluno:*`, só preferência
