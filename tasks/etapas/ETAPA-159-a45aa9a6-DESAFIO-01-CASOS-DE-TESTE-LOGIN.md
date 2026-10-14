@@ -6,12 +6,12 @@ PASTA TESTES-DE-FRONTEND" (slide "Desafio 1: Escrever 3 Casos de Teste" — logi
 senha incorreta, e-mail em branco; ID, Título, Pré-requisito, Passos e Resultado esperado).
 **Objetivo:** publicar o Desafio 1 como atividade discursiva no padrão SENAI (página + banco) na
 matéria Testes de Front-End, aula 02.
-**Próximo passo:** 159.1 — escrever a fonte `.md` e o padrão de resposta.
+**Próximo passo:** — (cancelada em 2026-10-14 08:35: o usuário disse que a pasta certa é `C:ontes\gerador-atividades`; arquivos criados aqui foram removidos e nada foi aplicado no banco).
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 159.1 | Fonte `ATIVIDADES/CONTEUDO/DESAFIO-01-CASOS-DE-TESTE-LOGIN.md` + `-GABARITO.md` (3 questões × 3 tópicos, aula 02) | 🔄 Em progresso | — | Leitura |
-| 159.2 | Gerar página e seed com `assets/gerador-avaliacao-discursiva` | ⬜ Pendente | — | Saída do gerador |
-| 159.3 | Aplicar o seed no Supabase e registrar CONCLUÍDO (`seeds.md`) | ⬜ Pendente | — | Consulta ao banco |
-| 159.4 | Índice de atividades da matéria (`gerar_indices.py`) | ⬜ Pendente | — | Link no `index.html` |
-| 159.5 | Aceite do usuário | ⬜ Pendente | — | — |
+| 159.1 | Fonte `ATIVIDADES/CONTEUDO/DESAFIO-01-CASOS-DE-TESTE-LOGIN.md` + `-GABARITO.md` (3 questões × 3 tópicos, aula 02) | ⛔ Cancelado | 2026-10-14 08:35 | Feito e removido (pasta errada); trabalho segue no repositório gerador-atividades |
+| 159.2 | Gerar página e seed com `assets/gerador-avaliacao-discursiva` | ⛔ Cancelado | — | Saída do gerador |
+| 159.3 | Aplicar o seed no Supabase e registrar CONCLUÍDO (`seeds.md`) | ⛔ Cancelado | — | Consulta ao banco |
+| 159.4 | Índice de atividades da matéria (`gerar_indices.py`) | ⛔ Cancelado | — | Link no `index.html` |
+| 159.5 | Aceite do usuário | ⛔ Cancelado | — | — |
