@@ -78,3 +78,8 @@
 .questao-discursiva.questao-discursiva--certa-oculta {
     display: none;
 }
+
+/* Questão já corrigida pelo professor, escondida com "Falta Corrigir?" ligado. */
+.questao-discursiva.questao-discursiva--corrigida-oculta {
+    display: none;
+}

@@ -5,10 +5,10 @@
 so o que falta corrigir ao selecionar aluno"
 **Objetivo:** ao selecionar um aluno, o professor ver por padrão só o que falta corrigir; desligando
 "Falta Corrigir?", vê tudo.
-**Próximo passo:** 277.1 — localizar onde o aluno é selecionado (Progresso da Turma / respostas do aluno) e confirmar o local do botão.
+**Próximo passo:** 277.3 — usuário escolher um aluno na discursiva e conferir o "Falta Corrigir?".
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 277.1 | Confirmar com o usuário onde fica o botão e o que é "falta corrigir" | ⬜ Pendente | — | — |
-| 277.2 | Botão ON/OFF "Falta Corrigir?" (padrão ligado) filtrando a lista ao selecionar aluno | ⬜ Pendente | — | — |
-| 277.3 | Aceite do usuário | ⬜ Pendente | — | — |
+| 277.1 | Local e regra decididos sem perguntar (pedido claro, mesmo padrão do #148): ao lado de "Respostas dos alunos" da discursiva; "falta corrigir" = questão com algum tópico sem nota do professor | ✅ Concluído | 2026-10-14 19:24 | `mostrar-certas-discursiva.js` lido |
+| 277.2 | ON/OFF "Falta Corrigir?" (ligado ao abrir): só as questões não corrigidas do aluno escolhido; "Mostrar Certas" vale só com ele desligado. `mostrar-certas-discursiva.js` + CSS + `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 19:24 | `node --check` ok; revisão do código (sem navegador) |
+| 277.3 | Aceite do usuário | 👀 Aguardando o usuário | — | — |

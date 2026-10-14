@@ -257,6 +257,10 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     certa ou errada**; ligado, também as **certas** (todos os tópicos com nota cheia — nota do
     professor; sem ela, a da IA). Questão sem nota nunca some. Código:
     `assets/js/mostrar-certas-discursiva.js` + CSS.
+  - **Discursiva — ON/OFF "Falta Corrigir?" (2026-10-14, #150):** ao lado de "Mostrar Certas".
+    **Ligado (padrão)**: ao escolher um aluno, a prova mostra só as questões que o professor ainda
+    **não corrigiu** (algum tópico sem nota do professor) e o "Mostrar Certas" fica sem efeito;
+    desligado, vale o "Mostrar Certas". Só muda a tela. Mesmo arquivo do "Mostrar Certas".
   - **Filtros lembrados (2026-10-14, #142):** "Questões respondidas", "Tarefa Entregue?" e
     "Mostrar quem faltou" guardam a escolha no **localStorage** do navegador (chaves
     `progresso-turma:*`, só preferência de tela) e voltam ao abrir a página; sem escolha
