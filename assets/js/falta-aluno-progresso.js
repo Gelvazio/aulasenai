@@ -9,6 +9,7 @@
 
 const TABELA_FALTA_ALUNO = 'falta_aluno';
 const CLASSE_FALTA_ALUNO = 'falta-aluno';
+const CLASSE_INTERRUPTOR_FALTA = 'progresso-turma__interruptor';
 const ARQUIVO_CSS_FALTA_ALUNO = '../css/falta-aluno-progresso.css';
 const TEXTO_MOSTRAR_FALTOU = 'Mostrar quem faltou';
 const TEXTO_BOTAO_FALTOU = 'Faltou?';
@@ -36,13 +37,13 @@ function criarElementoFalta(tag, classe, texto = '') {
  * @returns {{etiqueta: HTMLLabelElement, caixa: HTMLInputElement}} Interruptor.
  */
 function criarInterruptorFalta(dados) {
-    const etiqueta = criarElementoFalta('label', CLASSE_FALTA_ALUNO + '__interruptor');
+    const etiqueta = criarElementoFalta('label', CLASSE_INTERRUPTOR_FALTA);
     const caixa = document.createElement('input');
     caixa.type = 'checkbox';
     caixa.checked = dados.ligado;
     caixa.addEventListener('change', () => dados.aoMudar(caixa));
-    etiqueta.append(caixa, criarElementoFalta('span', CLASSE_FALTA_ALUNO + '__chave'),
-        criarElementoFalta('span', CLASSE_FALTA_ALUNO + '__texto', dados.texto));
+    etiqueta.append(caixa, criarElementoFalta('span', CLASSE_INTERRUPTOR_FALTA + '-chave'),
+        criarElementoFalta('span', '', dados.texto));
     return { etiqueta, caixa };
 }
 

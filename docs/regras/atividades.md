@@ -227,6 +227,10 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     atividade: **Todas**, **5 ou menos**, **6 a 10**, **11 a 15** e **16 a 20** questões completas
     (o número da coluna Situação), com "N de T alunos" ao lado. Só filtra a lista na tela (o
     resumo continua com a turma toda). Código: `assets/js/filtro-respondidas-progresso.js`.
+  - **ON/OFF "Tarefa Entregue?" (2026-10-14, #140):** acima do resumo, em toda atividade. Abre
+    **desligado = só quem não entregou**; ligado = também quem entregou. Só filtra a lista na
+    tela. Código: `assets/js/filtro-entregue-progresso.js` (chave ON/OFF comum
+    `.progresso-turma__interruptor` em `progresso-turma-global.css`).
   - **Faltas (2026-10-14, #138):** ON/OFF **"Faltou?"** ao lado do nome de cada aluno grava a
     falta do aluno **no dia** da atividade (`falta_aluno`; vale para todas as atividades do dia);
     ON/OFF **"Mostrar quem faltou"** acima do resumo abre em **OFF** (esconde quem faltou). Dia =

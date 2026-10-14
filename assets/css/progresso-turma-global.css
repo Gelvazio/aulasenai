@@ -19,6 +19,12 @@
     --progresso-turma-confirmar: #2f855a;
     --progresso-turma-confirmar-fundo: #f0fff4;
     --progresso-turma-confirmar-texto: #276749;
+    --progresso-turma-chave-fundo: #cbd5e0;
+    --progresso-turma-chave-ligada: #2b6cb0;
+    --progresso-turma-chave-bolinha: #ffffff;
+    --progresso-turma-chave-largura: 30px;
+    --progresso-turma-chave-altura: 16px;
+    --progresso-turma-bolinha: 12px;
 }
 
 .progresso-turma {
@@ -83,6 +89,64 @@
     border-radius: var(--progresso-turma-raio);
     background: var(--progresso-turma-fundo);
     font-size: 13px;
+}
+
+/* Chave ON/OFF dos filtros e botões do painel ("Tarefa Entregue?", "Faltou?"...). */
+.progresso-turma__interruptor {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* A caixa fica invisível: quem aparece é a chave ao lado. */
+.progresso-turma__interruptor input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.progresso-turma__interruptor-chave {
+    position: relative;
+    flex: none;
+    width: var(--progresso-turma-chave-largura);
+    height: var(--progresso-turma-chave-altura);
+    border-radius: var(--progresso-turma-chave-altura);
+    background: var(--progresso-turma-chave-fundo);
+    transition: background 0.2s;
+}
+
+.progresso-turma__interruptor-chave::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: var(--progresso-turma-bolinha);
+    height: var(--progresso-turma-bolinha);
+    border-radius: 50%;
+    background: var(--progresso-turma-chave-bolinha);
+    transition: transform 0.2s;
+}
+
+.progresso-turma__interruptor input:checked + .progresso-turma__interruptor-chave {
+    background: var(--progresso-turma-chave-ligada);
+}
+
+.progresso-turma__interruptor input:checked + .progresso-turma__interruptor-chave::after {
+    transform: translateX(
+        calc(var(--progresso-turma-chave-largura) - var(--progresso-turma-bolinha) - 4px));
+}
+
+.progresso-turma__interruptor input:disabled + .progresso-turma__interruptor-chave {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.progresso-turma__interruptor input:focus-visible + .progresso-turma__interruptor-chave {
+    outline: 2px solid var(--progresso-turma-chave-ligada);
+    outline-offset: 2px;
 }
 
 /* Filtro "Questões respondidas" (filtro-respondidas-progresso.js). */

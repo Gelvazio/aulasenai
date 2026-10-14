@@ -11,7 +11,8 @@
 // Com <body data-marcar-entregue="sim">: "Marcar como entregue" / "Desfazer entrega" na situação
 // do aluno (marcar-entregue-professor.js) e a lista dos alunos sem nenhuma resposta
 // (alunos-sem-inicio-entrega.js).
-// Combobox "Questões respondidas" filtra a lista por faixa (filtro-respondidas-progresso.js).
+// Combobox "Questões respondidas" filtra a lista por faixa (filtro-respondidas-progresso.js);
+// ON/OFF "Tarefa Entregue?" (desligado: só quem não entregou; filtro-entregue-progresso.js).
 // A lista tem TODOS os alunos da turma escolhida no combo "Turma" ao lado do título (abre na
 // turma favorita), também quem não respondeu nada (alunos-da-turma-progresso.js).
 // ON/OFF "Faltou?" por aluno e "Mostrar quem faltou" em cima (falta-aluno-progresso.js; a falta
@@ -31,6 +32,7 @@ const ARQUIVO_SEM_INICIO_PROGRESSO_GLOBAL = 'alunos-sem-inicio-entrega.js';
 const ARQUIVO_FILTRO_PROGRESSO_GLOBAL = 'filtro-respondidas-progresso.js';
 const ARQUIVO_ALUNOS_TURMA_PROGRESSO_GLOBAL = 'alunos-da-turma-progresso.js';
 const ARQUIVO_FALTAS_PROGRESSO_GLOBAL = 'falta-aluno-progresso.js';
+const ARQUIVO_FILTRO_ENTREGUE_PROGRESSO_GLOBAL = 'filtro-entregue-progresso.js';
 // Colunas extras por tipo de atividade: arquivo do módulo e a função que cria a coluna
 // ({titulo, classeArea, atualizar(atividadeId), montarCelula(aluno), aoMudar}); o painel
 // preenche aoMudar para a coluna pedir uma atualização depois de um botão dela.
@@ -59,7 +61,7 @@ const estadoProgressoGlobal = {
     temporizador: null, lendo: false, ultimosAlunos: [], atualizarAgora: null,
     ordenacao: { chave: CHAVE_ORDEM_ALFABETICA_GLOBAL, crescente: true },
     atividadeId: null, fonte: null, memoria: { nomes: new Map() }, colunasExtras: [],
-    botoesNome: [], filtro: null, faltas: null,
+    botoesNome: [], filtro: null, faltas: null, filtrosDaLista: [],
 };
 
 /**
@@ -326,9 +328,9 @@ function montarTitulosDasColunasGlobal(aoOrdenar) {
  * @param {Object} medida - estrutura (Map) e totalPartes.
  */
 function desenharListaDeAlunosGlobal(tela, medida) {
-    const { ultimosAlunos, filtro, faltas } = estadoProgressoGlobal;
-    const daFaixa = filtro ? filtro.filtrar(ultimosAlunos) : ultimosAlunos;
-    const visiveis = faltas ? faltas.filtrar(daFaixa) : daFaixa;
+    const { ultimosAlunos, filtrosDaLista } = estadoProgressoGlobal;
+    const visiveis = filtrosDaLista.reduce((lista, filtro) => filtro.filtrar(lista),
+        ultimosAlunos);
     const alunos = [...visiveis].sort(compararAlunosGlobal);
     tela.lista.replaceChildren(
         montarTitulosDasColunasGlobal(() => desenharListaDeAlunosGlobal(tela, medida)),
@@ -675,6 +677,7 @@ async function prepararFiltroGlobal(area, aoMudar) {
             await carregarScriptProgressoGlobal(ARQUIVO_FILTRO_PROGRESSO_GLOBAL);
         }
         estadoProgressoGlobal.filtro = window.criarFiltroRespondidas(aoMudar);
+        estadoProgressoGlobal.filtrosDaLista.push(estadoProgressoGlobal.filtro);
         area.appendChild(estadoProgressoGlobal.filtro.elemento);
     } catch (erro) {
         console.warn('Filtro do progresso:', erro.message);
@@ -694,9 +697,29 @@ async function prepararFaltasGlobal(area, aoMudar) {
         }
         estadoProgressoGlobal.faltas = await window.criarControleFaltas({
             atividadeId: estadoProgressoGlobal.atividadeId, aoMudar });
+        estadoProgressoGlobal.filtrosDaLista.push(estadoProgressoGlobal.faltas);
         area.appendChild(estadoProgressoGlobal.faltas.elemento);
     } catch (erro) {
         console.warn('Faltas do progresso:', erro.message);
+    }
+}
+
+/**
+ * Cria o ON/OFF "Tarefa Entregue?" (desligado: só quem não entregou) e o põe na área. Uma falha
+ * aqui não derruba o painel (a lista sai sem esse filtro).
+ * @param {HTMLElement} area - Área do painel.
+ * @param {Function} aoMudar - Redesenha a lista quando o ON/OFF muda.
+ */
+async function prepararFiltroEntregueGlobal(area, aoMudar) {
+    try {
+        if (typeof window.criarFiltroEntregue !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_FILTRO_ENTREGUE_PROGRESSO_GLOBAL);
+        }
+        const filtro = window.criarFiltroEntregue(aoMudar);
+        estadoProgressoGlobal.filtrosDaLista.push(filtro);
+        area.appendChild(filtro.elemento);
+    } catch (erro) {
+        console.warn('Filtro "Tarefa Entregue?" do progresso:', erro.message);
     }
 }
 
@@ -759,6 +782,7 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
         if (estadoProgressoGlobal.ultimosAlunos.length) desenharListaDeAlunosGlobal(tela, medida);
     };
     await prepararFiltroGlobal(area, redesenhar);
+    await prepararFiltroEntregueGlobal(area, redesenhar);
     await prepararFaltasGlobal(area, redesenhar);
     await prepararComboTurmaGlobal(area);
     area.append(tela.resumo, tela.lista);
