@@ -68,6 +68,23 @@
     gap: 6px;
 }
 
+/* Combo "Turma" ao lado do título (alunos-da-turma-progresso.js). */
+.progresso-turma__turma {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.progresso-turma__turma-opcoes {
+    padding: 4px 8px;
+    border: 1px solid var(--progresso-turma-borda);
+    border-radius: var(--progresso-turma-raio);
+    background: var(--progresso-turma-fundo);
+    font-size: 13px;
+}
+
 /* Filtro "Questões respondidas" (filtro-respondidas-progresso.js). */
 .progresso-turma__filtro {
     display: flex;

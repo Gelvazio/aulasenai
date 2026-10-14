@@ -219,6 +219,10 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     curso da atividade** (curso da aula, ou da matéria), também quem não respondeu nada (linha com
     0 questões). Vale em toda atividade com Progresso, as de hoje e as futuras. Código:
     `assets/js/alunos-da-turma-progresso.js`.
+  - **Combo "Turma" (2026-10-14, #139):** ao lado do título "Progresso da turma", com as turmas
+    do curso da atividade e "Todas as turmas"; abre na **turma favorita** (`turma.favorito`, com
+    ⭐) quando ela é do curso. A lista (e o resumo, Gráficos e Cálculo Nota) fica **só com os
+    alunos da turma escolhida**.
   - **Filtro "Questões respondidas" (2026-10-14, #135):** combobox acima do resumo, em toda
     atividade: **Todas**, **5 ou menos**, **6 a 10**, **11 a 15** e **16 a 20** questões completas
     (o número da coluna Situação), com "N de T alunos" ao lado. Só filtra a lista na tela (o

@@ -12,9 +12,10 @@
 // do aluno (marcar-entregue-professor.js) e a lista dos alunos sem nenhuma resposta
 // (alunos-sem-inicio-entrega.js).
 // Combobox "Questões respondidas" filtra a lista por faixa (filtro-respondidas-progresso.js).
-// A lista tem TODOS os alunos das turmas do curso, também quem não respondeu nada
-// (alunos-da-turma-progresso.js). ON/OFF "Faltou?" por aluno e "Mostrar quem faltou" em cima
-// (falta-aluno-progresso.js; a falta vale para o dia da atividade).
+// A lista tem TODOS os alunos da turma escolhida no combo "Turma" ao lado do título (abre na
+// turma favorita), também quem não respondeu nada (alunos-da-turma-progresso.js).
+// ON/OFF "Faltou?" por aluno e "Mostrar quem faltou" em cima (falta-aluno-progresso.js; a falta
+// vale para o dia da atividade).
 // Plano: docs/progresso-global-atividades.md · Regra: docs/regras/atividades.md
 
 const CLASSE_PROGRESSO_GLOBAL = 'progresso-turma';
@@ -700,6 +701,25 @@ async function prepararFaltasGlobal(area, aoMudar) {
 }
 
 /**
+ * Põe o combo "Turma" ao lado do título (abre na turma favorita; alunos-da-turma-progresso.js).
+ * Trocar a turma lê a lista de novo. Uma falha aqui não derruba o painel.
+ * @param {HTMLElement} area - Área do painel (com o título).
+ */
+async function prepararComboTurmaGlobal(area) {
+    try {
+        if (typeof window.criarComboTurmaProgresso !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_ALUNOS_TURMA_PROGRESSO_GLOBAL);
+        }
+        const combo = await window.criarComboTurmaProgresso({
+            atividadeId: estadoProgressoGlobal.atividadeId,
+            aoMudar: () => estadoProgressoGlobal.atualizarAgora?.() });
+        area.querySelector('.' + CLASSE_PROGRESSO_GLOBAL + '__titulo')?.after(combo);
+    } catch (erro) {
+        console.warn('Combo de turma do progresso:', erro.message);
+    }
+}
+
+/**
  * Lê as faltas do dia da atividade (uma falha mantém as últimas lidas).
  */
 async function atualizarFaltasGlobal() {
@@ -740,6 +760,7 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
     };
     await prepararFiltroGlobal(area, redesenhar);
     await prepararFaltasGlobal(area, redesenhar);
+    await prepararComboTurmaGlobal(area);
     area.append(tela.resumo, tela.lista);
     cabecalho.after(area);
     await prepararColunasExtrasGlobal(tipo, area);
