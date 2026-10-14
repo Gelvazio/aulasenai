@@ -33,6 +33,7 @@ const MSG_ERRO_CONFERIR = 'Não foi possível conferir as respostas gravadas no 
     'Verifique a conexão e tente finalizar de novo.';
 const ARQUIVO_PROGRESSO_GLOBAL_OBJETIVA = 'progresso-turma-global.js';
 const TIPO_PROGRESSO_GLOBAL_OBJETIVA = 'objetiva';
+const ARQUIVO_MEU_PROGRESSO_OBJETIVA = 'progresso-do-aluno.js';
 const ARQUIVO_QUESTOES_ATE_MINIMO = 'questoes-ate-minimo.js';
 const VALOR_ATIVO_QUESTOES_ATE_MINIMO_PAGINA = 'sim';
 const ARQUIVO_MEU_GABARITO_OBJETIVA = 'minhas-respostas-objetiva.js';
@@ -764,13 +765,31 @@ async function abrirMeuGabaritoObjetiva(estado, carregado) {
 }
 
 /**
- * Recursos só do aluno logado: correção depois da liberação e o "Exportar Meu Gabarito".
+ * Aluno: quadro "📊 Meu progresso" (só a linha dele, sem notas; progresso-do-aluno.js). Uma
+ * falha aqui não atrapalha a atividade.
+ * @param {number} atividadeId - Id da atividade no banco.
+ */
+async function abrirMeuProgressoObjetiva(atividadeId) {
+    try {
+        if (typeof window.montarMeuProgresso !== 'function') {
+            await carregarScript(ARQUIVO_MEU_PROGRESSO_OBJETIVA);
+        }
+        await window.montarMeuProgresso(atividadeId, TIPO_PROGRESSO_GLOBAL_OBJETIVA);
+    } catch (erro) {
+        console.warn('Meu progresso indisponível:', erro.message);
+    }
+}
+
+/**
+ * Recursos só do aluno logado: meu progresso, correção depois da liberação e o "Exportar Meu
+ * Gabarito".
  * @param {Object} estado - Estado da página.
  * @param {Object} carregado - Dados do provedor (logado, ehProfessor).
  */
 async function abrirRecursosDoAluno(estado, carregado) {
     const ehAlunoLogado = Boolean(carregado.logado && !carregado.ehProfessor);
     if (!ehAlunoLogado) return;
+    await abrirMeuProgressoObjetiva(carregado.atividadeId);
     await abrirCorrecaoDoAluno(estado, carregado);
     await abrirMeuGabaritoObjetiva(estado, carregado);
 }

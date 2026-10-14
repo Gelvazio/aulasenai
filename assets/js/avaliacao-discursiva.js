@@ -17,6 +17,7 @@ const ARQUIVO_LIBERACAO_DISCURSIVA = 'liberacao-respostas-discursiva.js';
 const ARQUIVO_PDF_DISCURSIVA = 'exportar-pdf-discursiva.js';
 const ARQUIVO_RESPOSTAS_ALUNO = 'respostas-aluno-professor.js';
 const ARQUIVO_PROGRESSO_TURMA = 'progresso-turma-global.js';
+const ARQUIVO_MEU_PROGRESSO_DISCURSIVA = 'progresso-do-aluno.js';
 const ARQUIVO_NOTA_IA_RESPOSTAS = 'nota-ia-respostas-discursiva.js';
 const ARQUIVO_CONFIRMAR_PROFESSOR = 'confirmar-nota-professor-discursiva.js';
 const ARQUIVO_FINALIZAR_PROFESSOR = 'finalizar-atividade-professor.js';
@@ -307,6 +308,7 @@ function montarPainel(dados) {
     if (dados.ehProfessor) painel.appendChild(criarBotaoQuestoesProfessor());
     if (dados.ehProfessor) abrirRespostasDoAluno(painel, dados);
     if (dados.ehProfessor) abrirProgressoDaTurma(dados);
+    if (!dados.ehProfessor) abrirMeuProgressoDiscursiva(dados);
     if (!dados.ehProfessor) abrirMeuGabaritoDiscursiva(painel, dados);
     abrirLiberacaoRespostas(painel, dados);
 }
@@ -393,6 +395,24 @@ async function abrirProgressoDaTurma(dados) {
         await window.montarProgressoDaTurma(dados.atividadeId, 'discursiva');
     } catch (erro) {
         console.warn('Progresso da turma:', erro.message);
+    }
+}
+
+/**
+ * Aluno: quadro "📊 Meu progresso" (só a linha dele, sem notas; progresso-do-aluno.js). Uma
+ * falha aqui não atrapalha a avaliação.
+ * @param {Object} dados - Estado carregado do banco.
+ */
+async function abrirMeuProgressoDiscursiva(dados) {
+    if (!dados.atividadeId) return;
+
+    try {
+        if (typeof window.montarMeuProgresso !== 'function') {
+            await carregarModuloDiscursiva(ARQUIVO_MEU_PROGRESSO_DISCURSIVA);
+        }
+        await window.montarMeuProgresso(dados.atividadeId, 'discursiva');
+    } catch (erro) {
+        console.warn('Meu progresso:', erro.message);
     }
 }
 
