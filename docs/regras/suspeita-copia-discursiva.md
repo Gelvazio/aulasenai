@@ -33,7 +33,7 @@ pares as (
   from r a join r b
     on a.item = b.item and a.topico = b.topico and a.turma_codigo = b.turma_codigo
    and a.aluno_id <> b.aluno_id
-  where extensions.similarity(a.texto, b.texto) >= 0.6)
+  where extensions.similarity(a.texto, b.texto) >= 0.9)
 select p.* from pares p
 where p.ordem = 1
   and not exists (select 1 from suspeita_copia_discursiva s
@@ -42,17 +42,15 @@ where p.ordem = 1
 order by p.item, p.topico, p.semelhanca desc;
 ```
 
-- Texto com menos de **40 caracteres** não entra (resposta curta igual é normal).
+- Só é suspeita com **90% ou mais** de semelhança (pedido do usuário, 2026-10-14); a tela mostra
+  só essas, com o **%** de cada uma. Texto com menos de **40 caracteres** não entra.
 - Linha que já existe (inclusive validada pelo professor) **não é refeita**.
 
 ### 2. Decidir (a IA lê os dois textos)
 
-- **Suspeita** quando os textos têm as **mesmas frases na mesma ordem**, os mesmos erros de
-  digitação ou de português, ou a mesma frase incomum. Semelhança ≥ 0,9 com texto de 40+
-  caracteres é suspeita quase sempre.
-- **Não é suspeita** quando a parte igual é só a definição da apostila ou do enunciado (termos
-  técnicos que todos usam) e o resto é diferente.
-- Na dúvida, grave a suspeita: quem decide é o professor.
+- Com **90% ou mais** de semelhança, grave a suspeita. Só não grave quando a resposta inteira
+  é a cópia literal do enunciado ou da apostila (todos escreveriam igual).
+- Na dúvida, grave: quem decide é o professor.
 
 ### 3. Gravar as suspeitas
 

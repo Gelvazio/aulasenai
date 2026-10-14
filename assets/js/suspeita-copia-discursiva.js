@@ -27,6 +27,9 @@ const TITULO_POPUP_SUSPEITA = 'Suspeita de cópia';
 const MSG_CONFIRMAR_COPIA = 'Confirmar que a questão foi COPIADA? A nota desta questão será ' +
     'zerada (nota do professor = 0) e não poderá mais ser alterada.';
 const DIGITOS_QUESTAO_SUSPEITA = 2;
+// Só é suspeita de cópia com 90% ou mais de semelhança (pedido do usuário, 2026-10-14).
+const SEMELHANCA_MINIMA_COPIA = 0.9;
+const CEM_POR_CENTO = 100;
 const ARQUIVO_CSS_SUSPEITA = '../css/suspeita-copia.css';
 const BASE_SCRIPTS_SUSPEITA = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 
@@ -56,14 +59,15 @@ function rotularQuestaoSuspeita(item) {
 }
 
 /**
- * Lê as suspeitas ainda válidas (pendentes ou confirmadas) da atividade.
+ * Lê as suspeitas ainda válidas (pendentes ou confirmadas, com 90% ou mais) da atividade.
  * @param {number} atividadeId - Id da atividade.
  * @returns {Promise<Object[]>} Linhas de suspeita_copia_discursiva.
  */
 async function lerLinhasSuspeita(atividadeId) {
     return sbGet(TABELA_SUSPEITA_COPIA, 'select=aluno_id,tentativa,item,topico,' +
         'aluno_parecido_id,semelhanca,motivo,situacao&atividade_id=eq.' + atividadeId +
-        '&situacao=neq.' + SITUACAO_NAO_COPIA + '&order=item,topico');
+        '&situacao=neq.' + SITUACAO_NAO_COPIA + '&semelhanca=gte.' + SEMELHANCA_MINIMA_COPIA +
+        '&order=item,topico');
 }
 
 /**
@@ -122,13 +126,22 @@ async function lerSuspeitasDeCopia(atividadeId) {
 }
 
 /**
+ * Percentual de semelhança da suspeita ("98%").
+ * @param {Object} suspeita - Suspeita com semelhanca (0 a 1).
+ * @returns {string} Percentual.
+ */
+function formatarPercentualCopia(suspeita) {
+    return Math.round(Number(suspeita.semelhanca) * CEM_POR_CENTO) + '%';
+}
+
+/**
  * Texto de dica (mouse) com o nome e a resposta do outro aluno.
  * @param {Object} suspeita - Suspeita com nomeParecido, respostaParecida, semelhanca e motivo.
  * @returns {string} Dica.
  */
 function montarDicaSuspeita(suspeita) {
-    const percentual = Math.round(Number(suspeita.semelhanca) * 100);
-    return 'Parece com: ' + suspeita.nomeParecido + ' (' + percentual + '% igual)\n\n' +
+    return 'Parece com: ' + suspeita.nomeParecido + ' (' + formatarPercentualCopia(suspeita) +
+        ' igual)\n\n' +
         'Resposta de ' + suspeita.nomeParecido + ':\n' + (suspeita.respostaParecida || '(vazia)') +
         (suspeita.motivo ? '\n\nIA: ' + suspeita.motivo : '');
 }
@@ -140,7 +153,8 @@ function montarDicaSuspeita(suspeita) {
  */
 function criarEtiquetaSuspeita(suspeita) {
     const confirmada = suspeita.situacao === SITUACAO_COPIA;
-    const texto = (confirmada ? '❌ ' : '⚠️ ') + rotularQuestaoSuspeita(suspeita.item) +
+    const texto = (confirmada ? '❌ ' : '⚠️ ') + rotularQuestaoSuspeita(suspeita.item) + ' ' +
+        formatarPercentualCopia(suspeita) +
         (confirmada ? ' cópia' : ' ≈ ' + suspeita.nomeParecido);
     const etiqueta = criarElementoSuspeita('span', CLASSE_ITEM_SUSPEITA + (confirmada
         ? ' ' + CLASSE_ITEM_SUSPEITA + '--confirmada' : ''), texto);
@@ -233,7 +247,8 @@ function montarAlertaSuspeita(suspeita, contexto) {
     alerta.appendChild(criarElementoSuspeita('strong', 'suspeita-copia__titulo',
         confirmada ? TEXTO_COPIA_CONFIRMADA : TEXTO_ALERTA_SUSPEITA));
     const parecido = criarElementoSuspeita('span', 'suspeita-copia__parecido',
-        'Parece com: ' + suspeita.nomeParecido + ' (passe o mouse para ver a resposta)');
+        'Parece com: ' + suspeita.nomeParecido + ' — ' + formatarPercentualCopia(suspeita) +
+        ' igual (passe o mouse para ver a resposta)');
     parecido.title = montarDicaSuspeita(suspeita);
     alerta.appendChild(parecido);
     if (confirmada) return alerta;
