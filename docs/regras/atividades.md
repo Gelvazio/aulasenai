@@ -236,6 +236,11 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     **desligado = só quem não entregou**; ligado = também quem entregou. Só filtra a lista na
     tela. Código: `assets/js/filtro-entregue-progresso.js` (chave ON/OFF comum
     `.progresso-turma__interruptor` em `progresso-turma-global.css`).
+  - **Combo "Aluno" (2026-10-14, #143):** ao lado do combo "Turma", com "Todos os alunos" e os
+    alunos da lista; escolhido um aluno, a lista mostra só a linha dele (resumo, Gráficos e
+    Cálculo Nota seguem com a turma inteira). A escolha fica no localStorage (`progresso-turma:
+    aluno`); aluno guardado fora da turma escolhida vale como "Todos os alunos". Código:
+    `assets/js/filtro-aluno-progresso.js`.
   - **Filtros lembrados (2026-10-14, #142):** "Questões respondidas", "Tarefa Entregue?" e
     "Mostrar quem faltou" guardam a escolha no **localStorage** do navegador (chaves
     `progresso-turma:*`, só preferência de tela) e voltam ao abrir a página; sem escolha

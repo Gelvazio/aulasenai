@@ -13,6 +13,7 @@
 // (alunos-sem-inicio-entrega.js).
 // Combobox "Questões respondidas" filtra a lista por faixa (filtro-respondidas-progresso.js);
 // ON/OFF "Tarefa Entregue?" (desligado: só quem não entregou; filtro-entregue-progresso.js).
+// Combo "Aluno" ao lado do "Turma" deixa só a linha do aluno escolhido (filtro-aluno-progresso.js).
 // As escolhas desses filtros (e do "Mostrar quem faltou") ficam no localStorage do navegador
 // e voltam ao abrir a página; sem escolha guardada, vale o padrão.
 // A lista tem TODOS os alunos da turma escolhida no combo "Turma" ao lado do título (abre na
@@ -35,6 +36,7 @@ const ARQUIVO_FILTRO_PROGRESSO_GLOBAL = 'filtro-respondidas-progresso.js';
 const ARQUIVO_ALUNOS_TURMA_PROGRESSO_GLOBAL = 'alunos-da-turma-progresso.js';
 const ARQUIVO_FALTAS_PROGRESSO_GLOBAL = 'falta-aluno-progresso.js';
 const ARQUIVO_FILTRO_ENTREGUE_PROGRESSO_GLOBAL = 'filtro-entregue-progresso.js';
+const ARQUIVO_FILTRO_ALUNO_PROGRESSO_GLOBAL = 'filtro-aluno-progresso.js';
 // Prefixo das escolhas dos filtros guardadas no navegador (só preferência de tela, sem dado
 // de aluno nem gabarito).
 const PREFIXO_PREFERENCIA_PROGRESSO_GLOBAL = 'progresso-turma:';
@@ -762,6 +764,26 @@ async function prepararFiltroEntregueGlobal(area, aoMudar) {
 }
 
 /**
+ * Põe o combo "Aluno" ao lado do título (filtro-aluno-progresso.js; a escolha fica no
+ * navegador). Ele é o primeiro filtro da lista, para as opções terem todos os alunos da turma.
+ * Uma falha aqui não derruba o painel.
+ * @param {HTMLElement} area - Área do painel (com o título).
+ * @param {Function} aoMudar - Redesenha a lista quando o aluno muda.
+ */
+async function prepararFiltroAlunoGlobal(area, aoMudar) {
+    try {
+        if (typeof window.criarFiltroAluno !== 'function') {
+            await carregarScriptProgressoGlobal(ARQUIVO_FILTRO_ALUNO_PROGRESSO_GLOBAL);
+        }
+        const filtro = window.criarFiltroAluno(aoMudar, preferenciasProgressoGlobal);
+        estadoProgressoGlobal.filtrosDaLista.unshift(filtro);
+        area.querySelector('.' + CLASSE_PROGRESSO_GLOBAL + '__titulo')?.after(filtro.elemento);
+    } catch (erro) {
+        console.warn('Combo de aluno do progresso:', erro.message);
+    }
+}
+
+/**
  * Põe o combo "Turma" ao lado do título (abre na turma favorita; alunos-da-turma-progresso.js).
  * Trocar a turma lê a lista de novo. Uma falha aqui não derruba o painel.
  * @param {HTMLElement} area - Área do painel (com o título).
@@ -822,6 +844,7 @@ async function montarProgressoDaTurma(atividadeId, tipo = TIPO_PADRAO_PROGRESSO_
     await prepararFiltroGlobal(area, redesenhar);
     await prepararFiltroEntregueGlobal(area, redesenhar);
     await prepararFaltasGlobal(area, redesenhar);
+    await prepararFiltroAlunoGlobal(area, redesenhar);
     await prepararComboTurmaGlobal(area);
     area.append(tela.resumo, tela.lista);
     cabecalho.after(area);
