@@ -123,6 +123,9 @@ footer {
     .content-section { padding: 20px; }
 }
 
+/* Questões depois da quantidade mínima (assets/js/questoes-ate-minimo.js): fora da tela e do PDF */
+.aula-card.questao--fora-do-minimo { display: none; }
+
 /* Celular: menos margens aninhadas (mais largura para o texto), letras maiores e
    alternativas com área de toque confortável (mínimo de 44 px de altura). */
 @media (max-width: 600px) {

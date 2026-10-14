@@ -32,8 +32,8 @@ COMPLETO, TAMBEM DEVE EXPORTAR APENAS DA QUESTAO 1 ATE A QUANTIDADE MINIMO. COME
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 160.1 | Aprovação do usuário ("AGORA SO CRIE E FAÇA ESTA DAQUI") | ✅ Concluído | 2026-10-14 09:45 | Pedido do usuário no chat |
-| 160.2 | Módulo `assets/js/questoes-ate-minimo.js` (esconder questões depois do mínimo, texto da barra de exportação, evento do Cálculo Nota) + CSS | ⬜ Pendente | — | `node --check` |
-| 160.3 | `calculo-nota-progresso.js` avisa a página ao gravar o mínimo; `respostas-atividade.js` liga o módulo | ⬜ Pendente | — | `node --check` |
-| 160.4 | PDF completo (`atividade.js`): só as questões visíveis, total e gabarito até o mínimo | ⬜ Pendente | — | `node --check` + leitura |
-| 160.5 | Ligar a página da Aula 02 (`data-questoes-ate-minimo="sim"`) e registrar a regra em `docs/regras/atividades.md` | ⬜ Pendente | — | Leitura |
-| 160.6 | Aceite do usuário (testar no navegador como professor e aluno) | ⬜ Pendente | — | — |
+| 160.2 | Módulo `assets/js/questoes-ate-minimo.js` (esconder questões depois do mínimo, texto da barra de exportação, evento do Cálculo Nota) + CSS | ✅ Concluído | 2026-10-14 10:05 | `node --check` ok; linhas ≤ 100 |
+| 160.3 | `calculo-nota-progresso.js` avisa a página ao gravar o mínimo; `respostas-atividade.js` liga o módulo | ✅ Concluído | 2026-10-14 10:05 | `node --check` ok nos dois |
+| 160.4 | PDF completo (`atividade.js`): só as questões visíveis, total e gabarito até o mínimo | ✅ Concluído | 2026-10-14 10:05 | `node --check` ok; `coletarQuestoes` pula `.questao--fora-do-minimo` e `limitarPDFAoMinimo` corta total e gabarito |
+| 160.5 | Ligar a página da Aula 02 (`data-questoes-ate-minimo="sim"`) e registrar a regra em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 10:05 | Atributo no `<body>` da página; regra em `docs/regras/atividades.md` |
+| 160.6 | Aceite do usuário (testar no navegador como professor e aluno) | 👀 Aguardando o usuário | — | — |

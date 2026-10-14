@@ -7,6 +7,8 @@
 // aqui): professor com 1 turma já vem escolhida; com várias, ele escolhe antes de exportar.
 // E o assets/js/documento-word.js + assets/js/exportar-word.js (hoje sem botões de Word).
 // Toda atividade com folha de respostas no banco (body data-login="sim") ganha o botão
+// Questões escondidas por passarem da quantidade mínima (assets/js/questoes-ate-minimo.js)
+// não vão para o PDF completo.
 // "🔑 Exportar Gabarito" (assets/js/avaliacao-pdf-professor.js): o aluno só recebe o gabarito
 // depois que o professor liberar para a turma (plano docs/liberacao-respostas-por-turma.md).
 
@@ -257,9 +259,27 @@ function ganchosRotuloNegritoPDF(doc, margin) {
     };
 }
 
+const CLASSE_FORA_DO_MINIMO_PDF = 'questao--fora-do-minimo';
+
+/**
+ * Limita o PDF às questões da tela quando a página esconde as que passam da quantidade mínima
+ * (assets/js/questoes-ate-minimo.js): o total do cabeçalho e o gabarito vão só até o mínimo.
+ * @param {Object} pagina - Dados da página (total e gabarito; alterados aqui).
+ * @param {number} quantidade - Questões que vão para o PDF.
+ */
+function limitarPDFAoMinimo(pagina, quantidade) {
+    const temQuestaoEscondida = Boolean(document.querySelector('.' + CLASSE_FORA_DO_MINIMO_PDF));
+    if (!temQuestaoEscondida) return;
+
+    pagina.total = String(quantidade);
+    pagina.gabarito = pagina.gabarito.filter((linha) =>
+        Number((String(linha[0]).match(/\d+/) || [0])[0]) <= quantidade);
+}
+
 function coletarQuestoes() {
     const questoes = [];
-    document.querySelectorAll('.aula-card.questao').forEach(card => {
+    const seletor = '.aula-card.questao:not(.' + CLASSE_FORA_DO_MINIMO_PDF + ')';
+    document.querySelectorAll(seletor).forEach(card => {
         const linhas = [];
         card.querySelectorAll('.content-box').forEach(box => {
             const rotulo = textoPDF(box.querySelector('.content-label')?.textContent);
@@ -308,6 +328,7 @@ async function exportarPDFAtividade(gabaritoExterno) {
     const pagina = await dadosDaPaginaParaPDF();
     const questoes = coletarQuestoes();
     if (gabaritoExterno) pagina.gabarito = gabaritoExterno;
+    limitarPDFAoMinimo(pagina, questoes.length);
     const incluirGabarito = Boolean(gabaritoExterno) || document.getElementById('incluirGabarito')?.checked;
     const doc = new jsPDF('p', 'mm', 'a4');
     const margin = 15;

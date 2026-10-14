@@ -2,7 +2,8 @@
 // quantidade de questões completas que 85% da turma já atingiu e sugere esse número como mínimo
 // para todos. No modal, o botão "Quantidade Mínima de Questões" grava o mínimo informado só para
 // os alunos que ainda estão com o total de questões (quem já tem mínimo próprio menor não muda).
-// A nota segue o mínimo de cada aluno (10 ÷ mínimo por questão, máximo 10).
+// A nota segue o mínimo de cada aluno (10 ÷ mínimo por questão, máximo 10). Ao gravar, avisa a
+// página (evento "minimo-questoes-aplicado", usado por assets/js/questoes-ate-minimo.js).
 // Grava em minimo_questoes_aluno (RLS: professor só alunos das turmas dele).
 // Depende de js/supabase.js e assets/js/popup.js. Regra: docs/regras/atividades.md
 
@@ -11,6 +12,7 @@ const PERCENTUAL_TURMA_CALCULO = 0.85;
 const TABELA_MINIMO_CALCULO = 'minimo_questoes_aluno';
 const CHAVE_MINIMO_CALCULO = 'atividade_id,aluno_id';
 const NOTA_MAXIMA_CALCULO = 10;
+const EVENTO_MINIMO_APLICADO_CALCULO = 'minimo-questoes-aplicado';
 const BASE_SCRIPTS_CALCULO = document.currentScript?.src.replace(/[^/]*$/, '') || '';
 
 /**
@@ -167,6 +169,15 @@ function atualizarResumoCalculo(tela, alunos) {
 }
 
 /**
+ * Avisa a página que o mínimo foi aplicado (a tela pode mostrar só as questões até ele:
+ * assets/js/questoes-ate-minimo.js).
+ * @param {{atividadeId: number, minimo: number}} dados - Atividade e mínimo aplicado.
+ */
+function avisarMinimoAplicado(dados) {
+    document.dispatchEvent(new CustomEvent(EVENTO_MINIMO_APLICADO_CALCULO, { detail: dados }));
+}
+
+/**
  * Aplica o mínimo aos alunos que ainda estão com o total (com confirmação).
  * @param {Object} tela - Elementos do modal.
  * @param {{alunos: Object[], atividadeId: number}} dados - Alunos e atividade.
@@ -184,6 +195,7 @@ async function aplicarMinimoDaTurma(tela, dados, fechar) {
     tela.aplicar.disabled = true;
     try {
         await gravarMinimoDaTurma(alvo, { atividadeId: dados.atividadeId, minimo });
+        avisarMinimoAplicado({ atividadeId: dados.atividadeId, minimo });
         fechar(true);
     } catch (erro) {
         tela.aviso.textContent = '❌ Não foi possível gravar: ' + erro.message;

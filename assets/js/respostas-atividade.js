@@ -33,6 +33,8 @@ const MSG_ERRO_CONFERIR = 'Não foi possível conferir as respostas gravadas no 
     'Verifique a conexão e tente finalizar de novo.';
 const ARQUIVO_PROGRESSO_GLOBAL_OBJETIVA = 'progresso-turma-global.js';
 const TIPO_PROGRESSO_GLOBAL_OBJETIVA = 'objetiva';
+const ARQUIVO_QUESTOES_ATE_MINIMO = 'questoes-ate-minimo.js';
+const VALOR_ATIVO_QUESTOES_ATE_MINIMO_PAGINA = 'sim';
 
 /**
  * Vocabulário das tentativas da página (assets/js/termos-tentativa.js): "tentativa" nas
@@ -678,6 +680,27 @@ async function abrirRespostasDoAlunoProfessor(estado, identificacao, atividadeId
 }
 
 /**
+ * Mostra só as questões 1 até o mínimo quando a página pede (body data-questoes-ate-minimo="sim";
+ * assets/js/questoes-ate-minimo.js). Sem login ou com falha ao carregar, mostra todas.
+ * @param {Object} estado - Estado da página (minimo).
+ * @param {Object} carregado - Dados do provedor (logado, ehProfessor, atividadeId).
+ */
+async function mostrarSoAteOMinimo(estado, carregado) {
+    const estaAtivo = document.body.dataset.questoesAteMinimo ===
+        VALOR_ATIVO_QUESTOES_ATE_MINIMO_PAGINA;
+    if (!estaAtivo || !carregado.logado) return;
+    try {
+        if (typeof window.iniciarQuestoesAteMinimo !== 'function') {
+            await carregarScript(ARQUIVO_QUESTOES_ATE_MINIMO);
+        }
+        await window.iniciarQuestoesAteMinimo({ minimo: estado.minimo,
+            ehProfessor: Boolean(carregado.ehProfessor), atividadeId: carregado.atividadeId });
+    } catch (erro) {
+        console.warn(erro.message);
+    }
+}
+
+/**
  * Inicia a página: identificação no início, folha no fim e alternativas clicáveis.
  */
 async function iniciarRespostasAtividade() {
@@ -706,6 +729,7 @@ async function iniciarRespostasAtividade() {
     ligarAlternativas(estado);
     if (!estado.entregue) esconderQuestoesHerdadas(estado, carregado.herdadas || []);
     estado.atualizarFolha();
+    await mostrarSoAteOMinimo(estado, carregado);
     if (estado.entregue) marcarEntregue(estado, carregado.entregueEm);
     if (estado.entregue) mostrarResultadoNoInicio(estado, carregado.resultado);
     if (carregado.ehProfessor) {
