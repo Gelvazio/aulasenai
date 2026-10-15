@@ -3,7 +3,7 @@
 **Tarefa:** #167-9e7fb399-80b2-4fe2-8a49-c45941337d1e · **Pedido em:** 2026-10-14 21:07 · **Executor:** nuvem · relaxed-lovelace-sgtq7z
 **Pedido:** "faça isso em todas as tarefas, usando esta mesma lógica" (itens `166.1`, `166.2`… em vez de `293.1`…)
 **Objetivo:** os itens das etapas ligadas a uma tarefa passam a usar o número da tarefa (`N.x`), e não o número da etapa.
-**Próximo passo:** 167.8 — renumeração das 5 etapas gravada (usuário: "Sim, gravar como está"); falta aplicar os achados da auditoria independente (workflow em andamento), regenerar o visualizador e o commit final; depois 167.7 (aceite).
+**Próximo passo:** 167.7 — aceite do usuário.
 
 ### Escopo
 - **Entra:** as 159 etapas com cabeçalho `**Tarefa:** #N`; as tarefas #131 e #154, que têm duas etapas cada, seguem numeração contínua (131.1 a 131.4; 154.1 a 154.7); `.claude/rules/tasks/quadro.md` (modelo `N.x`); `docs/HISTORICO-REGRAS.md`; referências internas aos itens dentro dessas etapas.
@@ -32,5 +32,5 @@
 | 167.4 | Conferir: sem código repetido dentro de uma tarefa; referências internas corretas | ✅ Concluído | 2026-10-14 21:11 | script e amostra lida à mão |
 | 167.5 | Auditoria independente da renumeração (workflow de revisão) | ✅ Concluído | 2026-10-14 21:34 | workflow: 3 auditores (integridade, referências, regras e scripts) + 1 verificador cético por auditor; 12 achados confirmados (11 corrigidos, 1 vai para o 167.8), 9 descartados |
 | 167.6 | Regenerar o visualizador `.claude/rules/index.html` e fazer commit + push | ✅ Concluído | 2026-10-14 21:34 | `git log`: 8fa31ad (renumeração) e o commit das correções da auditoria |
-| 167.8 | Decidir as 5 etapas ligadas a tarefa no quadro sem o cabeçalho `**Tarefa:**` (079 #15; 070 e 072 #17; 121 #18; 141-a7e81c26 #23; 41 itens): renumerar ou deixar como estão — decidido: renumerar | 🔄 Em progresso | — | — |
+| 167.8 | Decidir as 5 etapas ligadas a tarefa no quadro sem o cabeçalho `**Tarefa:**` (079 #15; 070 e 072 #17; 121 #18; 141-a7e81c26 #23; 41 itens): renumerar ou deixar como estão — decidido: renumerar (41 itens, cabeçalho **Tarefa:** nas 5 etapas, citações no `STATUS.md`, na 073 e na 121) | ✅ Concluído | 2026-10-14 21:49 | quadro mostrado e aprovado ("Sim, gravar como está"); commit bf866a0; auditoria independente (workflow: 3 auditores — integridade, referências, ferramentas — + verificador cético por achado): 0 achados |
 | 167.7 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
