@@ -228,6 +228,9 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #183.1 | Preencher os cálculos e os motivos (LEVE) | 🟡 Média | — | ✅ Concluído | — | [310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md) |
 | #183.2 | Calcular os sábados 03-10, 10-10 e 16-10 (LEVE) | 🟡 Média | #183.1 | ✅ Concluído | — | [310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md) |
 | #183.3 | Calcular 22-09, 24-09 e o sábado 26-09 e rever os sábados (LEVE) | 🟡 Média | #183.2 | ✅ Concluído | — | [310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md) |
+| #184-85eb3106-14de-4016-8864-ad21ca69c5d3 | Página `index.html` do banco de horas: accordion por semana e "Lançado?" ON/OFF no `localStorage` | 🟡 Média | — | ⬜ Pendente | — (não reservável) | [311-85eb3106](etapas/ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md) |
+| #184.1 | Criar o `index.html` do banco de horas (MEDIO) | 🟡 Média | — | ⬜ Pendente | — | [311-85eb3106](etapas/ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md) |
+| #184.2 | Aceite do usuário | 🟡 Média | #184.1 | ⬜ Pendente | — | [311-85eb3106](etapas/ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -573,6 +576,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 308-2ce35ab9 | Validar todas as tarefas pendentes (#181, pedida em 2026-10-15) | [ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md](etapas/ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md) |
 | 309-784ccaeb | Sistema de níveis de tarefa (#182, pedida em 2026-10-15) | [ETAPA-309-784ccaeb-NIVEIS-DE-TAREFA.md](etapas/ETAPA-309-784ccaeb-NIVEIS-DE-TAREFA.md) |
 | 310-66fcd57a | Calcular o banco de horas (#183, pedida em 2026-10-15) | [ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md) |
+| 311-85eb3106 | Página do banco de horas (#184, pedida em 2026-10-15) | [ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md](etapas/ETAPA-311-85eb3106-PAGINA-BANCO-DE-HORAS.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
