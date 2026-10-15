@@ -7,10 +7,13 @@
 
 ### #183.1 — Preencher os cálculos e os motivos
 
-**Próximo passo:** —
+**Próximo passo:** 👀 o usuário confere as contas e os motivos no arquivo.
 
 - **Nível:** LEVE — só um `.txt`, contas de horário, sem código nem banco.
 - **Descrição:** regra tirada dos modelos 22-09 e 24-09: total do dia = horas trabalhadas − 8 h;
   hora extra do dia = até 2 h; o que passa de 2 h vai para o sábado.
 - **Critérios de aceitação:** nenhum `[IA DEVE ...]` sobrando no arquivo.
-- **Entrega:** commit desta tarefa · **Verificação:** contas conferidas uma a uma; `grep "IA DEVE"` vazio.
+- **Premissa:** os dias que saem às 12:00/12:15 e voltam às 19:00 ou depois (29-09, 01-10, 08-10)
+  foram escritos como aula em Salete, como nos modelos; os outros têm motivo só com os horários.
+- **Entrega:** commit `feat(banco-horas)` desta tarefa (10 dias + sábado do 24-09) ·
+  **Verificação:** script recalculou todos os dias e bateu com o arquivo; `grep "IA DEVE"` = 0.
