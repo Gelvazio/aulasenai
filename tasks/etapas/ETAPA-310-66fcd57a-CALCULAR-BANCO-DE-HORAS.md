@@ -29,7 +29,8 @@ o usuário acrescentou os blocos de sábado 03-10, 10-10 e 16-10 com `[IA DEVE .
 - **Descrição:** sábado = soma das "HORAS EXTRA SABADO" da semana anterior a ele.
 - **Critérios de aceitação:** nenhum `[IA DEVE ...]` sobrando no arquivo.
 - **Premissas:** início do sábado às 08:00 (o arquivo não diz o horário); 29-09 entra no sábado
-  03-10 mesmo marcado "LANCADO?-SIM" (as horas do sábado ainda não foram lançadas); o bloco
+  03-10 mesmo marcado "LANCADO?-SIM" — **confirmado pelo usuário em 2026-10-15**: "LANCADO?-SIM" = dia
+  lançado no sistema; as horas do sábado desse dia continuam pendentes e somam no sábado da semana; o bloco
   "16-10-2026-SABADO" ficou como está, mas 16-10-2026 é sexta (o sábado é 17-10).
 - **Entrega:** 03-10 = 3:30 (08:00–11:30); 10-10 = 1:00 (08:00–09:00); 16-10 = 0:00 ·
   **Verificação:** somas conferidas com as "HORAS EXTRA SABADO" de cada semana; `grep "IA DEVE"` = 0.
