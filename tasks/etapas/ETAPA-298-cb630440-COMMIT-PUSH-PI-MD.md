@@ -9,8 +9,8 @@
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 171.1 | Criar a TASK e a etapa no quadro (commit + push) | 🔄 Em progresso | — | `git log` mostra o commit de criação no remoto |
-| 171.2 | Reservar a tarefa para a frente nuvem · session_01Lj9hrzuAcEdZXxnJuSRn2f (commit + push) | ⬜ Pendente | — | "Em uso por" preenchido no `STATUS.md` do remoto |
-| 171.3 | Copiar `pi.md` para a raiz do repositório | ⬜ Pendente | — | `ls pi.md` na raiz |
-| 171.4 | Commit com o pi.md + quadro (Fim de tarefa) e push na `main` | ⬜ Pendente | — | `git push` sem erro e `git status` limpo |
+| 171.1 | Criar a TASK e a etapa no quadro (commit + push) | ✅ Concluído | 2026-10-14 23:32 | commit 1631334 no remoto |
+| 171.2 | Reservar a tarefa para a frente nuvem · session_01Lj9hrzuAcEdZXxnJuSRn2f (commit + push) | ✅ Concluído | 2026-10-14 23:32 | "Em uso por" preenchido no commit 1631334 |
+| 171.3 | Copiar `pi.md` para a raiz do repositório | ✅ Concluído | 2026-10-14 23:32 | `ls -la pi.md` na raiz |
+| 171.4 | Commit com o pi.md + quadro e push na `main` | 🔄 Em progresso | — | `git push` sem erro |
 | 171.5 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
