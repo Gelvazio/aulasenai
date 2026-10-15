@@ -358,6 +358,11 @@ Registrada em 2026-10-01. Plano: `docs/avaliacao-pratica-discursiva-itic.md`.
     professor é **obrigado a corrigir**. Então lança a nota (soma ÷ pontos × 10 × total ÷ mínimo, máximo 10)
     e mostra a contagem de certas, meias certas, erradas e em branco. A nota entra na média
     final pela `notas_media_final`. `assets/js/finalizar-atividade-professor.js` + CSS.
+    **Prova já corrigida (2026-10-14, #169):** se o aluno entregou e todas as respondidas têm
+    `nota_professor`, no lugar do botão aparece só a mensagem **"Prova Já Corrigida!"** (também
+    logo depois de confirmar). Depois de confirmar, com o "Pendente Correcao" ligado, o aluno
+    sai do combo e a prova dele fica na tela (`window.atualizarPendenteCorrecao`, de
+    `respostas-aluno-professor.js`). O aluno continua com a mensagem dele.
   - **Nota confirmada só muda com justificativa (2026-10-14, #156):** o professor pode clicar em
     outra opção (Certa / Meia certa / Errada) numa alternativa já confirmada — para cima ou para
     baixo; abre o modal **"Justificativa de mudança da nota na Pergunta"** (texto obrigatório, a

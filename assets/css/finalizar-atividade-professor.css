@@ -43,3 +43,10 @@
         display: none;
     }
 }
+
+.finalizar-atividade__corrigida {
+    margin: 0;
+    color: var(--finalizar-destaque);
+    font-size: 18px;
+    font-weight: 700;
+}

@@ -7,6 +7,9 @@
 // O aluno escolhido (por atividade) e os filtros (Pendente Correcao, Falta Corrigir?, Mostrar
 // Certas) ficam no localStorage do navegador (chaves respostas-aluno:*, só preferência de tela)
 // e voltam ao abrir; sem escolha guardada, fica "— Selecione o aluno —". Tarefa #157.
+// Depois do "Confirmar Correção", a página chama window.atualizarPendenteCorrecao: com o
+// "Pendente Correcao" ligado, o aluno corrigido sai do combo e a prova dele continua na tela
+// (com "Prova Já Corrigida!"). Tarefa #169.
 // Carregado por assets/js/avaliacao-discursiva.js e assets/js/respostas-atividade.js, que
 // informam a tabela, as colunas e como mostrar as respostas. Depende de js/supabase.js (sbGet).
 
@@ -202,6 +205,18 @@ async function lerAlunosCorrigidos(alunos, opcoes) {
  */
 async function aplicarPendenteCorrecao(tela, filtro, opcoes) {
     const escolhido = tela.alunos[Number(tela.combo.value)];
+    filtrarComboPendentes(tela, filtro, escolhido);
+    if (escolhido && !tela.combo.value) await carregarAlunoEscolhido(tela, opcoes);
+}
+
+/**
+ * Refaz a lista do combo conforme o "Pendente Correcao" e volta a escolher o aluno, se ele ainda
+ * estiver na lista (senão o combo fica em "— Selecione o aluno —").
+ * @param {{combo: HTMLSelectElement, alunos: Object[], todos: Object[]}} tela - Elementos.
+ * @param {{somentePendentes: boolean, corrigidos: Set<string>}} filtro - Estado do filtro.
+ * @param {Object|undefined} escolhido - Aluno escolhido antes de refazer a lista.
+ */
+function filtrarComboPendentes(tela, filtro, escolhido) {
     tela.alunos = filtro.somentePendentes
         ? tela.todos.filter((aluno) =>
             !filtro.corrigidos.has(aluno.alunoId + '|' + aluno.tentativa))
@@ -209,7 +224,28 @@ async function aplicarPendenteCorrecao(tela, filtro, opcoes) {
     preencherComboAlunos(tela.combo, tela.alunos);
     const indice = tela.alunos.indexOf(escolhido);
     tela.combo.value = indice >= 0 ? String(indice) : '';
-    if (escolhido && indice < 0) await carregarAlunoEscolhido(tela, opcoes);
+}
+
+/**
+ * Cria a função que a página chama depois de confirmar a correção de um aluno: relê quem já foi
+ * corrigido e, com o "Pendente Correcao" ligado, tira o aluno do combo sem limpar a prova dele
+ * da tela.
+ * @param {{tela: Object, filtro: Object}} estado - Tela e filtro do combo.
+ * @param {Object} opcoes - Opções de montarRespostasDoAluno.
+ * @returns {function(): Promise<void>} Atualização do combo.
+ */
+function criarAtualizacaoPendentes(estado, opcoes) {
+    return async () => {
+        const { tela, filtro } = estado;
+        try {
+            filtro.corrigidos = await lerAlunosCorrigidos(tela.todos, opcoes);
+            if (!filtro.somentePendentes) return;
+            filtrarComboPendentes(tela, filtro, tela.alunos[Number(tela.combo.value)]);
+            if (!tela.combo.value) gravarMemoriaRespostasAluno('aluno:' + opcoes.atividadeId, null);
+        } catch (erro) {
+            tela.aviso.textContent = '❌ Não foi possível atualizar os pendentes: ' + erro.message;
+        }
+    };
 }
 
 /**
@@ -307,6 +343,7 @@ async function montarRespostasDoAluno(destino, opcoes) {
     });
     area.append(etiqueta, pendente, aviso);
     combo.addEventListener('change', () => carregarAlunoEscolhido(tela, opcoes));
+    window.atualizarPendenteCorrecao = criarAtualizacaoPendentes({ tela, filtro }, opcoes);
     await restaurarEscolhasSalvas({ tela, filtro, pendenteLigado }, opcoes);
 }
 
