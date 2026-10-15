@@ -17,3 +17,14 @@
   foram escritos como aula em Salete, como nos modelos; os outros têm motivo só com os horários.
 - **Entrega:** commit `feat(banco-horas)` desta tarefa (10 dias + sábado do 24-09) ·
   **Verificação:** script recalculou todos os dias e bateu com o arquivo; `grep "IA DEVE"` = 0.
+
+### #183.2 — Calcular os sábados
+
+**Pedido:** "LEIA DE NOVO E REFAÇA OS CALCULOS E O TEXTO DE IA COMO PEDIDO" (2026-10-15 20:20) —
+o usuário acrescentou os blocos de sábado 03-10, 10-10 e 16-10 com `[IA DEVE ...]`.
+
+**Próximo passo:** preencher total, início, fim e motivo de cada sábado.
+
+- **Nível:** LEVE — só um `.txt`, contas de horário.
+- **Descrição:** sábado = soma das "HORAS EXTRA SABADO" da semana anterior a ele.
+- **Critérios de aceitação:** nenhum `[IA DEVE ...]` sobrando no arquivo.
