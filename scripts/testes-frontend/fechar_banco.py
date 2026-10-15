@@ -2,7 +2,7 @@
 
 Uso: python3 scripts/testes-frontend/fechar_banco.py NN AULA_ID OBJ_ID PRA_ID
 Marca CONCLUÍDO os dois seeds da aula no registro, a coluna Banco do STATUS-AULAS.md e do
-STATUS-ATIVIDADES.md, o item 137.x da etapa e o próximo passo da frente no STATUS.md.
+STATUS-ATIVIDADES.md, o item 22.x da etapa (tarefa #22) e o próximo passo da frente no STATUS.md.
 """
 import glob
 import re
@@ -11,6 +11,8 @@ import sys
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
+
+TAREFA = 22  # os itens da etapa 137-13665a7e usam o número da tarefa #22 (N.x)
 
 nn, aula_id, obj, pra = sys.argv[1:5]
 n = int(nn)
@@ -45,17 +47,17 @@ t = re.sub(r"\*\*✅ Concluídas:\*\* \d+ \([^)]*\) · \*\*Pendentes/incompletas
 SA.write_text(t, encoding="utf-8")
 E = glob.glob("tasks/etapas/ETAPA-137-13665a7e-*.md")[0]
 item = n - 3
-trocar(E, f"| 137.{item} | Aula {nn} — ", f"| 137.{item} | Aula {nn} — ")
+trocar(E, f"| {TAREFA}.{item} | Aula {nn} — ", f"| {TAREFA}.{item} | Aula {nn} — ")
 t = Path(E).read_text(encoding="utf-8")
-t = re.sub(rf"(\| 137\.{item} \| Aula {nn} — [^|]*\| )⬜ Pendente \| — \| [^|]*\|",
+t = re.sub(rf"(\| {TAREFA}\.{item} \| Aula {nn} — [^|]*\| )⬜ Pendente \| — \| [^|]*\|",
            rf"\g<1>✅ Concluído | {agora} | Objetiva id {obj} e prática id {pra} (aula id {aula_id}); md5 do banco = arquivo; 50 itens e 30 tópicos (10 pontos) |", t)
 Path(E).write_text(t, encoding="utf-8")
 prox = f"{n + 1:02d}"
 S = Path("tasks/STATUS.md")
 t = S.read_text(encoding="utf-8")
-t = re.sub(r"Item 137\.\d+ — aula \d\d de Testes de Front-End \(objetiva \+ prática \+ seeds\)",
-           f"Item 137.{item + 1} — aula {prox} de Testes de Front-End (objetiva + prática + seeds); aulas 04 a {nn} ✅", t)
+t = re.sub(rf"Item (?:137|{TAREFA})\.\d+ — aula \d\d de Testes de Front-End \(objetiva \+ prática \+ seeds\)",
+           f"Item {TAREFA}.{item + 1} — aula {prox} de Testes de Front-End (objetiva + prática + seeds); aulas 04 a {nn} ✅", t)
 t = re.sub(r"(\| nuvem · claude/ola-zlzh8z \|[^\n]*\| 🔄 Ativa \| )[0-9-]+ [0-9:]+ \|", rf"\g<1>{agora} |", t)
-t = re.sub(r"Item 137\.\d+ — aula \d\d \|", f"Item 137.{item + 1} — aula {prox} |", t)
+t = re.sub(rf"Item (?:137|{TAREFA})\.\d+ — aula \d\d \|", f"Item {TAREFA}.{item + 1} — aula {prox} |", t)
 S.write_text(t, encoding="utf-8")
 print("ok", nn, agora)

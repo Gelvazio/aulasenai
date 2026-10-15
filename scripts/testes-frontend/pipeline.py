@@ -119,7 +119,7 @@ r = R.read_text(encoding="utf-8")
 for nome in (Path(seed_obj).name, seed_pratica.name):
     if f"| `{nome}` |" in r:
         continue
-    lin = f"| `{nome}` | Testes de Front-End (TII) | 1 | **PENDENTE** | — | Ainda não aplicado; Etapa 137-13665a7e, item 137.8 |"
+    lin = f"| `{nome}` | Testes de Front-End (TII) | 1 | **PENDENTE** | — | Ainda não aplicado; Etapa 137-13665a7e, item 22.8 |"
     fim = r.find("\n## Seeds excluídos")
     fim = len(r) if fim < 0 else fim
     r = r[:fim].rstrip("\n") + "\n" + lin + "\n" + r[fim:]

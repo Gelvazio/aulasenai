@@ -3,7 +3,7 @@
 ## Etapa 73 — Revisão final das regras: problemas novos + desatualizados (pedida em 2026-10-07)
 
 **Tarefa:** #17 (também os itens 70.5 e 72.8 das etapas 70 e 72)
-**Próximo passo:** aceites 70.5, 72.8 e 17.14; decisões 17.15 e 17.16.
+**Próximo passo:** aceites 70.5, 72.8 e 17.14; decisões 17.15b e 17.16.
 
 Uma pergunta por item; **um commit só no final** (pedido do usuário).
 

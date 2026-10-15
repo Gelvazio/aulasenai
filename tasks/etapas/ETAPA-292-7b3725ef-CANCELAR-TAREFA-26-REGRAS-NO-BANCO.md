@@ -7,5 +7,5 @@
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 165.1 | #26 cancelada: status no `STATUS.md`, reserva liberada, itens 144.5/144.6 da etapa 144-aff33423 e decisão registrada. Não entra: apagar as tabelas `regra_documento`/`regra_secao` ou o script (não pedido; banco só pela frente local) | ✅ Concluído | 2026-10-14 20:50 | leitura da linha #26, da etapa 144 e do Registro de decisões |
+| 165.1 | #26 cancelada: status no `STATUS.md`, reserva liberada, itens 26.5/26.6 da etapa 144-aff33423 e decisão registrada. Não entra: apagar as tabelas `regra_documento`/`regra_secao` ou o script (não pedido; banco só pela frente local) | ✅ Concluído | 2026-10-14 20:50 | leitura da linha #26, da etapa 144 e do Registro de decisões |
 | 165.2 | Aceite do usuário | 👀 Aguardando o usuário | — | — |

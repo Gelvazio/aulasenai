@@ -70,5 +70,5 @@ modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `frente
 ```
 
 - Arquivo da etapa: número sequencial da etapa + 8 caracteres de um UUID (evita número repetido entre sessões).
-- Itens numerados pelo **número da tarefa** (`N.x`, em que N é o número da tarefa, ex.: `166.1`). Se a tarefa tiver mais de uma etapa, a numeração segue entre elas (ex.: `131.1`, `131.2` na 1ª; `131.3`, `131.4` na 2ª). Os códigos só são únicos dentro da tarefa: ao citar um item de etapa antiga sem tarefa, citar também a etapa.
+- Itens numerados pelo **número da tarefa** (`N.x`, em que N é o número da tarefa, ex.: `166.1`). Se a tarefa tiver mais de uma etapa, ou se duas tarefas repetirem o número, a numeração segue entre as etapas (ex.: as duas #131: `131.1`, `131.2` na 1ª; `131.3`, `131.4` na 2ª). Os códigos só são únicos dentro da tarefa: ao citar um item de etapa antiga sem tarefa, citar também a etapa.
 - Itens pequenos (horas, não semanas), na ordem de execução.
