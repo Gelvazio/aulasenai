@@ -27,3 +27,8 @@
     color: var(--meu-gabarito-dica);
     font-size: 13px;
 }
+
+/* No topo (data-meu-gabarito-no-topo="sim"): alinhado ao lado do "Exportar PDF" */
+.export-bar > .meu-gabarito {
+    margin-top: 0;
+}

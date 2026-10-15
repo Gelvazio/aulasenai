@@ -537,6 +537,9 @@ com alunos sem entrega: liberar encerra o preenchimento da turma).
   `avaliacao-discursiva.js`); CSS `assets/css/minhas-respostas.css`. Sem mudança no banco.
   Ligado em Testes de Front-End e em Introdução às TIC (23 páginas, #84, 2026-10-15); as demais
   matérias entram pelas tarefas #83 e #85 a #116.
+  **No topo (2026-10-15, #180):** com `<body data-meu-gabarito-no-topo="sim">`, a objetiva põe
+  o botão na `.export-bar`, ao lado do "📥 Exportar PDF (atividade completa)", em vez da folha
+  de respostas (`respostas-atividade.js`). Ligado nas 15 objetivas de Introdução às TIC.
 
 ## 📑 REGRA CRÍTICA — ÍNDICES DE ATIVIDADES: SÓ HTML, EM ORDEM DE DATA
 

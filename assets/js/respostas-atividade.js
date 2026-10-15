@@ -39,6 +39,8 @@ const VALOR_ATIVO_QUESTOES_ATE_MINIMO_PAGINA = 'sim';
 const ARQUIVO_MEU_GABARITO_OBJETIVA = 'minhas-respostas-objetiva.js';
 const ARQUIVO_CORRECAO_OBJETIVA_ALUNO = 'correcao-objetiva-aluno.js';
 const VALOR_ATIVO_MEU_GABARITO = 'sim';
+const SELETOR_MEU_GABARITO_PADRAO = '.folha-respostas';
+const SELETOR_MEU_GABARITO_TOPO = '.export-bar';
 
 /**
  * Vocabulário das tentativas da página (assets/js/termos-tentativa.js): "tentativa" nas
@@ -741,7 +743,19 @@ function descreverNotaObjetiva(estado, resultado) {
 }
 
 /**
- * Aluno: botão "Exportar Meu Gabarito" na folha de respostas quando a página pede
+ * Onde fica o "Exportar Meu Gabarito": na folha de respostas ou, com
+ * <body data-meu-gabarito-no-topo="sim">, na barra do topo, ao lado do "Exportar PDF".
+ * @returns {HTMLElement|null} Destino do botão.
+ */
+function obterDestinoMeuGabarito() {
+    const pedeNoTopo = document.body.dataset.meuGabaritoNoTopo === VALOR_ATIVO_MEU_GABARITO;
+    const barraDoTopo = document.querySelector(SELETOR_MEU_GABARITO_TOPO);
+    if (pedeNoTopo && barraDoTopo) return barraDoTopo;
+    return document.querySelector(SELETOR_MEU_GABARITO_PADRAO);
+}
+
+/**
+ * Aluno: botão "Exportar Meu Gabarito" na folha de respostas (ou no topo) quando a página pede
  * (body data-exportar-meu-gabarito="sim"; assets/js/minhas-respostas-objetiva.js).
  * Uma falha aqui não pode impedir o resto da página.
  * @param {Object} estado - Estado da página.
@@ -758,7 +772,7 @@ async function abrirMeuGabaritoObjetiva(estado, carregado) {
             notaTexto: descreverNotaObjetiva(estado, carregado.resultado),
             rotuloTentativa: maiusculaInicial(termosTentativa().rotulo(estado.tentativa,
                 estado.maximoTentativas)),
-            destino: document.querySelector('.folha-respostas') });
+            destino: obterDestinoMeuGabarito() });
     } catch (erro) {
         console.warn('Exportar Meu Gabarito:', erro.message);
     }
