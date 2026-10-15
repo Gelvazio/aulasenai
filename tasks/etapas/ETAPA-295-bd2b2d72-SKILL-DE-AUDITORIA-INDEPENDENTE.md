@@ -3,7 +3,7 @@
 **Tarefa:** #168-bd2b2d72-ee8a-4ae4-b1e7-a24d82a1d289 · **Pedido em:** 2026-10-14 21:16 · **Executor:** — (assumida por nuvem · relaxed-lovelace-sgtq7z depois da #167)
 **Pedido:** "esta auditoria, pode ser gravada numa skill e informar qual modelo usou e regras?"
 **Objetivo:** guardar como skill a auditoria independente usada no item 167.5 (auditores com focos diferentes + verificador cético), para repetir em outras mudanças, informando o modelo usado e as regras seguidas.
-**Próximo passo:** 168.2 — usuário aprovar o plano abaixo (responder "sim"); execução depois que a #167 terminar (1 reserva por frente).
+**Próximo passo:** 168.3 — criar a skill, assim que a #167 terminar e esta frente assumir a #168 (1 reserva por frente).
 
 ### Detalhes do usuário (2026-10-14 21:18)
 - **Escopo:** qualquer mudança em massa (renumeração, migração, troca de texto em muitos arquivos…).
@@ -24,7 +24,7 @@
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 168.1 | Detalhes do usuário (escopo, nome, regras, quando usar) | ✅ Concluído | 2026-10-14 21:18 | respostas do usuário no chat |
-| 168.2 | Plano nesta etapa + aprovação do usuário (estrutura nova = tarefa grande) | 👀 Aguardando o usuário | — | — |
+| 168.2 | Plano nesta etapa + aprovação do usuário (estrutura nova = tarefa grande) | ✅ Concluído | 2026-10-14 21:19 | usuário: "sim, aprovado" |
 | 168.3 | Criar a skill em `.claude/skills/<nome>/SKILL.md` | ⬜ Pendente | — | leitura do arquivo |
 | 168.4 | Registrar no `docs/HISTORICO-REGRAS.md` e regenerar o visualizador | ⬜ Pendente | — | — |
 | 168.5 | Aceite do usuário | ⬜ Pendente | — | — |
