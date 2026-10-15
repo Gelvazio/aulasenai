@@ -205,6 +205,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #170-d2466a5b-e5bb-4668-a23d-08ec57222049 | Aplicar a estrutura de projeto do Claude Code (infográfico) no aulasenai | 🟡 Média | — | 👀 Aguardando aceite | — | [297-d2466a5b](etapas/ETAPA-297-d2466a5b-ESTRUTURA-CLAUDE-CODE-DO-INFOGRAFICO.md) |
 | #171-cb630440-b79b-44da-99b0-8978675de82a | Commit e push do pi.md (guia do Pi Desktop) na raiz do aulasenai | 🟡 Média | — | 🔄 Em execução | nuvem · session_01Lj9hrzuAcEdZXxnJuSRn2f (desde 2026-10-14 23:31) | [298-cb630440](etapas/ETAPA-298-cb630440-COMMIT-PUSH-PI-MD.md) |
 | #172-7f59e8e1-1b47-4910-b956-e082e7e5e05d | Nome do conteúdo de cada aula (maiúsculas) no calendário da ITIC | 🟡 Média | — | 👀 Aguardando aceite | — | [299-7f59e8e1](etapas/ETAPA-299-7f59e8e1-CALENDARIO-ITIC-NOME-DAS-AULAS.md) |
+| #173-036ea1c3-6ccf-47a1-bb3a-54af7e6fccf3 | Esconder o card "Avaliação — Média Final" (só ocultar) | 🟡 Média | — | ⬜ Pendente | — | [300-036ea1c3](etapas/ETAPA-300-036ea1c3-ESCONDER-CARD-MEDIA-FINAL.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -539,6 +540,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 297-d2466a5b | Estrutura do Claude Code do infográfico (#170, pedida em 2026-10-14) | [ETAPA-297-d2466a5b-ESTRUTURA-CLAUDE-CODE-DO-INFOGRAFICO.md](etapas/ETAPA-297-d2466a5b-ESTRUTURA-CLAUDE-CODE-DO-INFOGRAFICO.md) |
 | 298-cb630440 | Commit e push do pi.md na raiz (#171, pedida em 2026-10-14) | [ETAPA-298-cb630440-COMMIT-PUSH-PI-MD.md](etapas/ETAPA-298-cb630440-COMMIT-PUSH-PI-MD.md) |
 | 299-7f59e8e1 | Nome das aulas no calendário da ITIC (#172, pedida em 2026-10-15) | [ETAPA-299-7f59e8e1-CALENDARIO-ITIC-NOME-DAS-AULAS.md](etapas/ETAPA-299-7f59e8e1-CALENDARIO-ITIC-NOME-DAS-AULAS.md) |
+| 300-036ea1c3 | Esconder o card da Média Final (#173, pedida em 2026-10-15) | [ETAPA-300-036ea1c3-ESCONDER-CARD-MEDIA-FINAL.md](etapas/ETAPA-300-036ea1c3-ESCONDER-CARD-MEDIA-FINAL.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
