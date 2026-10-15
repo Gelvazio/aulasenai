@@ -34,3 +34,13 @@ o usuário acrescentou os blocos de sábado 03-10, 10-10 e 16-10 com `[IA DEVE .
   "16-10-2026-SABADO" ficou como está, mas 16-10-2026 é sexta (o sábado é 17-10).
 - **Entrega:** 03-10 = 3:30 (08:00–11:30); 10-10 = 1:00 (08:00–09:00); 16-10 = 0:00 ·
   **Verificação:** somas conferidas com as "HORAS EXTRA SABADO" de cada semana; `grep "IA DEVE"` = 0.
+
+### #183.3 — Calcular 22-09, 24-09 e o sábado 26-09
+
+**Pedido:** "REVEJA OS CALCULOS DE NOVO" (2026-10-15) — o usuário trocou os modelos 22-09 e
+24-09 por dias com horários e `[IA DEVE ...]` e acrescentou o sábado 26-09.
+
+**Próximo passo:** preencher 22-09, 24-09 e 26-09 e reconferir todos os sábados.
+
+- **Nível:** LEVE — só um `.txt`, contas de horário.
+- **Critérios de aceitação:** nenhum `[IA DEVE ...]` sobrando; sábados batendo com a soma da semana.
