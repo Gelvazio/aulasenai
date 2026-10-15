@@ -223,6 +223,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #181.5 | Relatório final: prontas, parciais e não feitas (MEDIO) | 🔴 Máxima | #181.2, #181.3, #181.4 | ⬜ Pendente | — | [308-2ce35ab9](etapas/ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md) |
 | #181.6 | Aceite do usuário | 🔴 Máxima | #181.5 | ⬜ Pendente | — | [308-2ce35ab9](etapas/ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md) |
 | #182-784ccaeb-1fc0-4b37-88ef-7a1642792d84 | Sistema de níveis (LEVE/MEDIO/PESADO) e subtarefas com reserva própria, trazido do testes-de-frontend | 🟡 Média | — | 👀 Aguardando aceite | — | [309-784ccaeb](etapas/ETAPA-309-784ccaeb-NIVEIS-DE-TAREFA.md) |
+| #183-66fcd57a-6a72-4dbb-b1e6-9b87bb946622 | Calcular o banco de horas em `CONTROLE-HORARIOS.txt` | 🟡 Média | — | ⬜ Pendente | — (não reservável) | [310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md) |
+| #183.1 | Preencher os cálculos e os motivos (LEVE) | 🟡 Média | — | ⬜ Pendente | — | [310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -567,6 +569,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 307-cd79916d | Exportar Meu Gabarito no topo em Introdução às TIC (#180, pedida em 2026-10-15) | [ETAPA-307-cd79916d-ITIC-MEU-GABARITO-NO-TOPO.md](etapas/ETAPA-307-cd79916d-ITIC-MEU-GABARITO-NO-TOPO.md) |
 | 308-2ce35ab9 | Validar todas as tarefas pendentes (#181, pedida em 2026-10-15) | [ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md](etapas/ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md) |
 | 309-784ccaeb | Sistema de níveis de tarefa (#182, pedida em 2026-10-15) | [ETAPA-309-784ccaeb-NIVEIS-DE-TAREFA.md](etapas/ETAPA-309-784ccaeb-NIVEIS-DE-TAREFA.md) |
+| 310-66fcd57a | Calcular o banco de horas (#183, pedida em 2026-10-15) | [ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
