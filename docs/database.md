@@ -701,6 +701,17 @@ Plano: `docs/fila-tasks-agendador-unico.md` (tarefa #24). Tela: `tasks.html` (me
 | `pegar_proxima_task(text)` | `security definer`, sem execução pela API: devolve a task vencida para a fila, pega 1 ligada com **todas as dependentes concluídas**, na ordem prioridade → `ordem` → criação (`for update skip locked`), trava por 90 min |
 | `finalizar_task(bigint, text, text, text, text)` | `security definer`, sem execução pela API: `concluida`, `recusada` ou `erro` (erro com tentativas sobrando volta a `pendente`) |
 
+## 🔓 Atualização 2026-10-15 — Liberar o gabarito encerra o preenchimento da turma
+
+SQL: `database/2026-10-15-liberar-gabarito-encerra-preenchimento.sql` (⏳ a aplicar no Supabase). Tarefa #175 (etapa 302-cfc044e9).
+Tela: botão "🔓 Liberar gabaritos (turma X)" (`assets/js/liberacao-respostas-professor.js`).
+
+| Tabela / objeto | Campos / regra |
+|--------|---------|
+| `preenchimento_encerrado_para_usuario(jsonb)` | `security definer`, só `authenticated`: verdadeiro para o aluno logado com alguma turma (`turmaaluno`) em `atividade.gabarito_liberado`; professor e visitante nunca |
+| `item_valido(bigint, smallint)` / `topico_valido(bigint, smallint, smallint)` | definição de 2026-10-05 + recusam resposta quando `preenchimento_encerrado_para_usuario(gabarito_liberado)` (a atividade continua visível) |
+| `liberar_gabarito_turma(bigint, text, boolean)` | não exige mais todos os alunos com entrega; continua só para o professor da turma; recolher reabre o preenchimento |
+
 ## 🔓 Atualização 2026-10-06 — Liberar gabaritos por atividade e turma
 
 SQL: `database/2026-10-06-liberacao-respostas-turma.sql` (✅ aplicado no Supabase em 2026-10-06).
@@ -712,7 +723,7 @@ Plano: `docs/liberacao-respostas-por-turma.md`. Telas: quadro "Respostas dos alu
 | `atividade.gabarito_liberado` | `jsonb not null default '[]'`: códigos das turmas que já podem ver o gabarito real |
 | `tentativaacessogabarito` | `id` (identity), `atividade_id` → `atividade`, `aluno_id` → `auth.users`, `data_hora` (padrão `now()`): cada pedido de gabarito feito pelo aluno antes da liberação. RLS: professor lê só alunos de `professor_pode_ver_aluno`; ninguém grava pela API (só a função); `anon` sem acesso |
 | `alunos_sem_entrega_turma(bigint, text)` | `security definer`: quantos alunos da turma (`turmaaluno`) não entregaram a última tentativa liberada; só o professor da turma recebe a contagem (demais: 0) |
-| `liberar_gabarito_turma(bigint, text, boolean)` | `security definer`, só `authenticated`: professor da turma (administrador em todas) libera — **só com todos os alunos da turma com entrega** — ou recolhe o gabarito |
+| `liberar_gabarito_turma(bigint, text, boolean)` | `security definer`, só `authenticated`: professor da turma (administrador em todas) libera ou recolhe o gabarito (até 2026-10-15 só com todos os alunos da turma com entrega; ver a atualização de 2026-10-15) |
 | `solicitar_gabarito(bigint)` | `security definer`, só `authenticated`: devolve o gabarito real ao aluno logado só se a turma dele estiver em `gabarito_liberado` e ele tiver entrega; senão grava o pedido em `tentativaacessogabarito` e devolve vazio |
 | `liberacao_gabarito_liberado_trg` | trigger em `liberacao_atividade`: recusa nova tentativa/recuperação quando o gabarito já foi liberado para a turma do aluno |
 | `gabarito` | sem mudança: RLS só do professor |

@@ -5,7 +5,7 @@
 // Vocabulário avaliação/recuperação: assets/js/termos-tentativa.js.
 // Plano: docs/avaliacao-pratica-discursiva-itic.md
 // Gabarito (padrão de resposta): assets/js/liberacao-respostas-discursiva.js, carregado aqui —
-// professor libera por turma (só com todos entregues); aluno vê depois da liberação.
+// professor libera por turma (encerra o preenchimento da turma); aluno vê depois da liberação.
 // PDF no padrão SENAI: assets/js/exportar-pdf-discursiva.js (botão "📥 Exportar PDF"), carregado aqui.
 
 const ATRASO_GRAVACAO_MS = 1500;

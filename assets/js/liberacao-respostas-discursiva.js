@@ -1,6 +1,7 @@
 // Regra do gabarito nas DISCURSIVAS (carregado pelo assets/js/avaliacao-discursiva.js).
 //  • PROFESSOR: no painel de identificação, lista "Turma" + botão "🔓 Liberar gabaritos (turma X)"
-//    (liberacao-respostas-professor.js): só libera com todos os alunos da turma com entrega.
+//    (liberacao-respostas-professor.js): libera mesmo com alunos sem entrega e encerra o
+//    preenchimento da turma (2026-10-15, #175).
 //  • ALUNO: botão "🔑 Ver Gabarito". Antes da liberação, aviso "Aguarde professor liberar os
 //    gabaritos" (o banco grava o pedido em tentativaacessogabarito); depois, o padrão de resposta
 //    de cada tópico aparece abaixo da resposta do aluno (função solicitar_gabarito_discursivo).

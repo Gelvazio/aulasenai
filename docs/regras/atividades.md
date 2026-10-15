@@ -471,7 +471,8 @@ Registrada em 2026-10-03. Vale para **todas** as atividades e avaliações de **
 ## 🔑 REGRA CRÍTICA — GABARITO COM AS RESPOSTAS CERTAS: SÓ O PROFESSOR
 
 Registrada em 2026-09-30. Vale para **todos os alunos**. **Única exceção (2026-10-06, pedido do
-usuário):** a liberação pelo professor, por atividade e turma, depois que todos entregaram.
+usuário):** a liberação pelo professor, por atividade e turma (desde 2026-10-15, #175, mesmo
+com alunos sem entrega: liberar encerra o preenchimento da turma).
 
 - ✅ O gabarito real (alternativas certas) só o **professor** lê: tabela `gabarito` com RLS de professor;
   nunca embutido nas páginas.
@@ -483,16 +484,20 @@ usuário):** a liberação pelo professor, por atividade e turma, depois que tod
   os cursos** (2026-10-06, pedido do usuário; hoje 53 páginas objetivas): toda atividade com
   folha de respostas no banco (`data-login="sim"`) ganha o botão "🔑 Exportar Gabarito" (inserido
   pelo `assets/js/atividade.js`, que carrega o `avaliacao-pdf-professor.js`), e o gabarito só é
-  liberado **depois que todos os alunos da turma entregaram**.
+  liberado pelo professor; liberar **encerra o preenchimento da turma** (2026-10-15, #175; até
+  então só depois que todos os alunos da turma entregaram).
 - ✅ **Liberar gabaritos (2026-10-06)** — plano `docs/liberacao-respostas-por-turma.md`, SQL
   `database/2026-10-06-liberacao-respostas-turma.sql` (✅ aplicado):
   - no quadro "Respostas dos alunos nesta atividade", o professor tem o botão
-    **"🔓 Liberar gabaritos (turma X)"** (turma da aba), que **só funciona quando todos os alunos
-    da turma entregaram** (senão fica desativado com "Faltam N aluno(s) entregar"); depois vira
+    **"🔓 Liberar gabaritos (turma X)"** (turma da aba), **sempre ativo** desde 2026-10-15 (#175,
+    pedido do usuário: "tem aluno que não fez a atividade"); com alunos sem entrega, o aviso e a
+    confirmação dizem "Faltam N aluno(s) entregar: eles não poderão mais responder"; depois vira
     "🔒 Recolher gabarito". Código: `assets/js/liberacao-respostas-professor.js` (+ css);
   - grava o código da turma em `atividade.gabarito_liberado` (função `liberar_gabarito_turma`);
   - **depois da liberação, nenhuma nova tentativa nem recuperação** para os alunos da turma
-    (trigger em `liberacao_atividade`);
+    (trigger em `liberacao_atividade`) **e nenhuma resposta nova** (preenchimento encerrado:
+    `item_valido`/`topico_valido`, SQL `database/2026-10-15-liberar-gabarito-encerra-preenchimento.sql`); a atividade continua visível
+    para quem entregou ver nota e gabarito; "Recolher gabarito" reabre o preenchimento;
   - **aluno** clica em "Exportar Gabarito": se a turma dele foi liberada e ele entregou, recebe o
     gabarito real (função `solicitar_gabarito`); senão vê **"Aguarde professor liberar os
     gabaritos"** e o pedido é gravado na tabela **`tentativaacessogabarito`** (atividade, aluno,
@@ -500,8 +505,8 @@ usuário):** a liberação pelo professor, por atividade e turma, depois que tod
 - ✅ **Também nas DISCURSIVAS** (2026-10-06, pedido do usuário; 19 páginas): o "gabarito" é o
   padrão de resposta (`topico_discursivo.resposta_esperada`, só do professor). No painel da página
   (`assets/js/liberacao-respostas-discursiva.js`, carregado pelo `avaliacao-discursiva.js`):
-  professor escolhe a turma e usa o mesmo **"🔓 Liberar gabaritos (turma X)"** (só com todos
-  entregues); aluno clica em **"🔑 Ver Gabarito"** — antes da liberação, "Aguarde professor
+  professor escolhe a turma e usa o mesmo **"🔓 Liberar gabaritos (turma X)"** (encerra o
+  preenchimento da turma, 2026-10-15); aluno clica em **"🔑 Ver Gabarito"** — antes da liberação, "Aguarde professor
   liberar os gabaritos" + registro em `tentativaacessogabarito`; depois, a resposta esperada de
   cada tópico aparece abaixo da resposta dele (função `solicitar_gabarito_discursivo`; SQL
   `database/2026-10-06-liberacao-respostas-discursiva.sql`, ✅ aplicado).

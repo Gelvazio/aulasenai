@@ -954,6 +954,33 @@
       </table>
     </div>
 
+    <h2>🔓 Atualização 2026-10-15 — Liberar o gabarito encerra o preenchimento da turma</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-15-liberar-gabarito-encerra-preenchimento.sql</code> (a aplicar) · Tela: botão "Liberar gabaritos" (professor) · Tarefa #175</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>preenchimento_encerrado_para_usuario(jsonb)</td>
+          <td>Função (security definer)</td>
+          <td>Verdadeiro para o aluno logado com alguma turma em gabarito_liberado; professor e visitante nunca</td>
+        </tr>
+        <tr>
+          <td>item_valido / topico_valido</td>
+          <td>Funções (security definer)</td>
+          <td>Recusam resposta do aluno da turma com o gabarito liberado; a atividade continua visível</td>
+        </tr>
+        <tr>
+          <td>liberar_gabarito_turma(bigint, text, boolean)</td>
+          <td>Função (security definer)</td>
+          <td>Libera mesmo com alunos sem entrega (encerra o preenchimento da turma); recolher reabre</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🔓 Atualização 2026-10-06 — Liberar gabaritos por atividade e turma</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-06-liberacao-respostas-turma.sql</code> (aplicado em 2026-10-06) · Telas: quadro "Respostas dos alunos" (professor) e "Exportar Gabarito" (aluno)</p>
@@ -981,7 +1008,7 @@
         <tr>
           <td>liberar_gabarito_turma(bigint, text, boolean)</td>
           <td>Função (security definer)</td>
-          <td>Libera (só com todos os alunos com entrega) ou recolhe o gabarito para uma turma</td>
+          <td>Libera ou recolhe o gabarito para uma turma (até 2026-10-15 só com todos os alunos com entrega)</td>
         </tr>
         <tr>
           <td>solicitar_gabarito(bigint)</td>
