@@ -535,7 +535,8 @@ com alunos sem entrega: liberar encerra o preenchimento da turma).
   `pdf-minhas-respostas.js` (PDF), adaptadores `minhas-respostas-objetiva.js` (carregado por
   `respostas-atividade.js`) e `minhas-respostas-discursiva.js` (carregado por
   `avaliacao-discursiva.js`); CSS `assets/css/minhas-respostas.css`. Sem mudança no banco.
-  Ligado em Testes de Front-End; as demais matérias entram pelas tarefas #83 a #116.
+  Ligado em Testes de Front-End e em Introdução às TIC (23 páginas, #84, 2026-10-15); as demais
+  matérias entram pelas tarefas #83 e #85 a #116.
 
 ## 📑 REGRA CRÍTICA — ÍNDICES DE ATIVIDADES: SÓ HTML, EM ORDEM DE DATA
 
