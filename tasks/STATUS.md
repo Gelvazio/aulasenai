@@ -211,6 +211,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #175-cfc044e9-2127-46f1-ad59-9c4733419417 | Bloquear o preenchimento das atividades 02, 03 e 05 e liberar o botão "Liberar gabaritos" | 🟡 Média | — | 👀 Aguardando aceite | — | [302-cfc044e9](etapas/ETAPA-302-cfc044e9-BLOQUEAR-ATIVIDADES-02-03-05-E-LIBERAR-GABARITOS.md) |
 | #176-5d996631-9f67-481f-b988-c36c9f88350d | Botão "🔑 Exportar Gabarito" só para o professor | 🟡 Média | — | 👀 Aguardando aceite | — | [303-5d996631](etapas/ETAPA-303-5d996631-EXPORTAR-GABARITO-SO-PROFESSOR.md) |
 | #177-1b24c2a1-00ee-47b0-8b77-3c6611bad346 | "📄 Exportar Meu Gabarito" em todas as matérias da turma 135081 (CEPLAS TARDE) | 🟡 Média | — | 👀 Aguardando aceite | — | [304-1b24c2a1](etapas/ETAPA-304-1b24c2a1-EXPORTAR-MEU-GABARITO-MATERIAS-TURMA-135081.md) |
+| #178-06fcbd1b-609f-4a6b-a51f-9252bb179ad9 | "📄 Exportar Meu Gabarito" nas matérias que já têm questões respondidas (Análise de Dados, Fundamentos da Tecnologia e Programação, Reforço de Linguagens; 44 páginas) | 🟡 Média | — | ⬜ Pendente | — | [305-06fcbd1b](etapas/ETAPA-305-06fcbd1b-EXPORTAR-MEU-GABARITO-MATERIAS-COM-RESPOSTAS.md) |
+| #179-e7b513ce-ae56-41a4-bf20-43bf40b98435 | "📄 Exportar Meu Gabarito" em todas as matérias de todos os cursos (59 páginas restantes + geradores) | 🟡 Média | #178 | ⬜ Pendente | — | [306-e7b513ce](etapas/ETAPA-306-e7b513ce-EXPORTAR-MEU-GABARITO-TODAS-AS-MATERIAS.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -550,6 +552,8 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 302-cfc044e9 | Bloquear atividades 02, 03 e 05 e liberar gabaritos (#175, pedida em 2026-10-15) | [ETAPA-302-cfc044e9-BLOQUEAR-ATIVIDADES-02-03-05-E-LIBERAR-GABARITOS.md](etapas/ETAPA-302-cfc044e9-BLOQUEAR-ATIVIDADES-02-03-05-E-LIBERAR-GABARITOS.md) |
 | 303-5d996631 | Exportar Gabarito só para o professor (#176, pedida em 2026-10-15) | [ETAPA-303-5d996631-EXPORTAR-GABARITO-SO-PROFESSOR.md](etapas/ETAPA-303-5d996631-EXPORTAR-GABARITO-SO-PROFESSOR.md) |
 | 304-1b24c2a1 | Exportar Meu Gabarito nas matérias da turma 135081 (#177, pedida em 2026-10-15) | [ETAPA-304-1b24c2a1-EXPORTAR-MEU-GABARITO-MATERIAS-TURMA-135081.md](etapas/ETAPA-304-1b24c2a1-EXPORTAR-MEU-GABARITO-MATERIAS-TURMA-135081.md) |
+| 305-06fcbd1b | Exportar Meu Gabarito nas matérias com questões respondidas (#178, pedida em 2026-10-15) | [ETAPA-305-06fcbd1b-EXPORTAR-MEU-GABARITO-MATERIAS-COM-RESPOSTAS.md](etapas/ETAPA-305-06fcbd1b-EXPORTAR-MEU-GABARITO-MATERIAS-COM-RESPOSTAS.md) |
+| 306-e7b513ce | Exportar Meu Gabarito em todas as matérias de todos os cursos (#179, pedida em 2026-10-15) | [ETAPA-306-e7b513ce-EXPORTAR-MEU-GABARITO-TODAS-AS-MATERIAS.md](etapas/ETAPA-306-e7b513ce-EXPORTAR-MEU-GABARITO-TODAS-AS-MATERIAS.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
