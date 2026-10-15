@@ -17,7 +17,7 @@ libere o botão Liberar gabaritos". Aprovado em 2026-10-15 14:28 para **todas as
   liberada (função `preenchimento_encerrado_para_usuario`): o preenchimento fica encerrado, mas
   a atividade continua visível (nota e gabarito de quem entregou); "Recolher gabarito" reabre.
 
-SQL: `database/2026-10-15-liberar-gabarito-encerra-preenchimento.sql`. A regra "só com todos entregues" abaixo vale até 2026-10-15.
+SQL: `database/2026-10-15-liberar-gabarito-encerra-preenchimento.sql` (✅ aplicado em 2026-10-15 15:06). A regra "só com todos entregues" abaixo vale até 2026-10-15.
 
 ## Objetivo
 

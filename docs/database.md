@@ -703,7 +703,7 @@ Plano: `docs/fila-tasks-agendador-unico.md` (tarefa #24). Tela: `tasks.html` (me
 
 ## 🔓 Atualização 2026-10-15 — Liberar o gabarito encerra o preenchimento da turma
 
-SQL: `database/2026-10-15-liberar-gabarito-encerra-preenchimento.sql` (⏳ a aplicar no Supabase). Tarefa #175 (etapa 302-cfc044e9).
+SQL: `database/2026-10-15-liberar-gabarito-encerra-preenchimento.sql` (✅ aplicado no Supabase em 2026-10-15 15:06 pelo conector; md5 53bbd05fcd3b66a3b6fffce9c79ebe96). Tarefa #175 (etapa 302-cfc044e9).
 Tela: botão "🔓 Liberar gabaritos (turma X)" (`assets/js/liberacao-respostas-professor.js`).
 
 | Tabela / objeto | Campos / regra |
