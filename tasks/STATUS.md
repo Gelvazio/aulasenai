@@ -208,7 +208,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #172-7f59e8e1-1b47-4910-b956-e082e7e5e05d | Nome do conteúdo de cada aula (maiúsculas) no calendário da ITIC | 🟡 Média | — | 👀 Aguardando aceite | — | [299-7f59e8e1](etapas/ETAPA-299-7f59e8e1-CALENDARIO-ITIC-NOME-DAS-AULAS.md) |
 | #173-036ea1c3-6ccf-47a1-bb3a-54af7e6fccf3 | Esconder o card "Avaliação — Média Final" (só ocultar) | 🟡 Média | — | 👀 Aguardando aceite | — | [300-036ea1c3](etapas/ETAPA-300-036ea1c3-ESCONDER-CARD-MEDIA-FINAL.md) |
 | #174-d2d802b4-a2cc-4b1b-bd6a-b96b0161e0b5 | Remover "Atividade Comunicação" e "Slide Comunicação" do card da Aula 03 (ITIC) | 🟡 Média | — | 👀 Aguardando aceite | — | [301-d2d802b4](etapas/ETAPA-301-d2d802b4-REMOVER-ATIVIDADE-COMUNICACAO-AULA-03.md) |
-| #175-cfc044e9-2127-46f1-ad59-9c4733419417 | Bloquear o preenchimento das atividades 02, 03 e 05 e liberar o botão "Liberar gabaritos" | 🟡 Média | — | 🔄 Em execução | local · main (desde 2026-10-15 14:13) | [302-cfc044e9](etapas/ETAPA-302-cfc044e9-BLOQUEAR-ATIVIDADES-02-03-05-E-LIBERAR-GABARITOS.md) |
+| #175-cfc044e9-2127-46f1-ad59-9c4733419417 | Bloquear o preenchimento das atividades 02, 03 e 05 e liberar o botão "Liberar gabaritos" | 🟡 Média | — | 👀 Plano aguardando aprovação | local · main (desde 2026-10-15 14:13) | [302-cfc044e9](etapas/ETAPA-302-cfc044e9-BLOQUEAR-ATIVIDADES-02-03-05-E-LIBERAR-GABARITOS.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
