@@ -227,6 +227,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #183-66fcd57a-6a72-4dbb-b1e6-9b87bb946622 | Calcular o banco de horas em `CONTROLE-HORARIOS.txt` | 🟡 Média | — | 👀 Aguardando aceite | — (não reservável) | [310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md) |
 | #183.1 | Preencher os cálculos e os motivos (LEVE) | 🟡 Média | — | ✅ Concluído | — | [310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md) |
 | #183.2 | Calcular os sábados 03-10, 10-10 e 16-10 (LEVE) | 🟡 Média | #183.1 | ✅ Concluído | — | [310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md) |
+| #183.3 | Calcular 22-09, 24-09 e o sábado 26-09 e rever os sábados (LEVE) | 🟡 Média | #183.2 | ⬜ Pendente | — | [310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
