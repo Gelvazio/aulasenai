@@ -197,7 +197,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #165-7b3725ef-40f4-45f2-be76 | Cancelar a tarefa #26 (regras no banco) | 🟡 Média | — | 👀 Aguardando aceite | — | [292-7b3725ef](etapas/ETAPA-292-7b3725ef-CANCELAR-TAREFA-26-REGRAS-NO-BANCO.md) |
 | #131-c3af51c5-bfbc-4247 | Link da apostila no card da matéria ITIC (índice de Assistente de Operações Logísticas) | 🟡 Média | — | 👀 Aguardando aceite | — | [258-c3af51c5](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 | #167-9e7fb399-80b2-4fe2-8a49-c45941337d1e | Renumerar os itens das etapas pelo número da tarefa (N.x) | 🟡 Média | — | 🔄 Em execução | nuvem · relaxed-lovelace-sgtq7z (desde 2026-10-14 21:07) | [294-9e7fb399](etapas/ETAPA-294-9e7fb399-RENUMERAR-ITENS-PELO-NUMERO-DA-TAREFA.md) |
-| #168-bd2b2d72-ee8a-4ae4-b1e7-a24d82a1d289 | Skill de auditoria independente (com modelo e regras) | 🟡 Média | #167 | 👀 Aguardando detalhes | — | [295-bd2b2d72](etapas/ETAPA-295-bd2b2d72-SKILL-DE-AUDITORIA-INDEPENDENTE.md) |
+| #168-bd2b2d72-ee8a-4ae4-b1e7-a24d82a1d289 | Skill de auditoria independente (com modelo e regras) | 🟡 Média | #167 | 👀 Plano aguardando aprovação | — | [295-bd2b2d72](etapas/ETAPA-295-bd2b2d72-SKILL-DE-AUDITORIA-INDEPENDENTE.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
