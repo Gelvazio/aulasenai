@@ -24,6 +24,7 @@ Regras detalhadas, com exemplos: `docs/regras/`. Histórico de mudanças: `docs/
 | Arquivo | Assunto |
 |---------|---------|
 | `multiplas-ias.md` | Nome das frentes; banco só pelo Claude Code local |
+| `niveis.md` | Nível de cada subtarefa (LEVE/MEDIO/PESADO), qual IA e modelo pega cada um, equipe de agentes |
 | `docs-antes-de-editar.md` | Ler a orientação em `docs/` antes de mexer em um arquivo |
 
 ## 🟡 Código e validação

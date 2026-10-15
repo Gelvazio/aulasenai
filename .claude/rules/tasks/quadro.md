@@ -4,21 +4,32 @@ Esta pasta (`.claude/rules/tasks/`) serve para **qualquer projeto**: não tem na
 projeto. Para usar em outro, copie a pasta e crie `tasks/STATUS.md` e `tasks/etapas/` pelos
 modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `frentes-e-reserva.md`.
 
+## Tarefa e subtarefa
+
+- Toda tarefa-mãe tem **no mínimo 1 subtarefa** (`#N.1`, `#N.2`…), cada uma com **linha própria**
+  em "📌 Tarefas", logo abaixo da mãe, e **nível** (`LEVE`/`MEDIO`/`PESADO`, regra de níveis do
+  projeto).
+- O trabalho e a reserva são sempre numa **subtarefa**; a mãe é `— (não reservável)` e fecha
+  quando todas as subtarefas estiverem ✅. Cada subtarefa pode ser pega por **qualquer IA** do
+  nível, independente das outras da mesma mãe (respeitando dependências e reservas).
+- **Tarefas criadas antes deste modelo** (linha única + tabela de itens na etapa) continuam como
+  estão; podem ser divididas em subtarefas quando alguém for pegá-las.
+
 ## Cada informação em um lugar só
 
 | Informação | Lugar único |
 |------------|-------------|
-| Pedido, objetivo, próximo passo, escopo, riscos, itens e status de cada item | **Etapa** da tarefa: `tasks/etapas/ETAPA-NNN-<uuid8>-ASSUNTO.md` |
-| Status geral, prioridade, dependências e reserva | Linha da tarefa em "📌 Tarefas" do `tasks/STATUS.md` |
+| Pedido, objetivo, escopo, riscos, decisões | **Etapa** da mãe: `tasks/etapas/ETAPA-NNN-<uuid8>-ASSUNTO.md` |
+| Status, prioridade, dependências e reserva de cada subtarefa (e da mãe) | Linha própria em "📌 Tarefas" do `tasks/STATUS.md` |
+| Nível, descrição, critérios, próximo passo, entrega e verificação de cada subtarefa | Seção da subtarefa na etapa da mãe |
 | Tarefa que cada sessão está fazendo | Linha da frente em "🧭 Frentes" do `tasks/STATUS.md` |
 | Decisões, riscos, pendências e lições do projeto | Seções do `tasks/STATUS.md` |
 | Recados entre sessões | `tasks/RECADOS.md` (só se acrescentam linhas) |
 
 - ⛔ Não copiar para outro lugar: sem `TASKS.md`, sem plano separado em `docs/`, sem lista de
   pendências do usuário montada à mão, sem cópia da fila em tabela de banco.
-- O que o usuário precisa fazer = itens **👀** das etapas (filtrar; não copiar).
+- O que o usuário precisa fazer = linhas e itens **👀** (filtrar; não copiar).
 - O que não está no quadro não aconteceu. Histórico nunca é apagado: só se acrescentam etapas.
-- Quadro em formato antigo → migrar para este modelo levando o conteúdo, sem perder histórico.
 - Linguagem simples, que quem não é técnico entende.
 
 ## Legenda
@@ -37,7 +48,7 @@ modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `frente
 ## 🧭 Frentes de trabalho
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 
-## 📌 Tarefas
+## 📌 Tarefas            (mãe + uma linha por subtarefa logo abaixo)
 | Tarefa | Título | Prioridade | Depende de | Status | Em uso por | Etapa |
 
 ## Escopo do projeto
@@ -47,28 +58,34 @@ modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `frente
 ## Pendências (ficou para depois) · ## Lições aprendidas
 ```
 
-- **Status** na linha da tarefa: só o emoji e 1–3 palavras (`🔄 Em execução`); o detalhe fica na
-  etapa. **Prioridade:** 🔴 Máxima · 🟠 Alta · 🟡 Média · 🟢 Baixa (definida pelo usuário).
+- **Status** na linha: só o emoji e 1–3 palavras (`🔄 Em execução`); o detalhe fica na etapa.
+  **Prioridade:** 🔴 Máxima · 🟠 Alta · 🟡 Média · 🟢 Baixa (do usuário; a subtarefa herda a da mãe).
+- **Em uso por:** `<IA (modelo)> (<frente>) (desde <data hora>)`, `—` (livre) ou
+  `— (não reservável)` na mãe.
 - Seção sem conteúdo fica com a tabela vazia (não apagar o cabeçalho).
 
-## Modelo da etapa
+## Modelo da etapa (uma por tarefa-mãe)
 
 ```markdown
 ## Etapa NNN-<uuid8> — <título>
 
-**Tarefa:** #NN-<uuid> · **Pedido em:** AAAA-MM-DD HH:MM · **Executor:** <IA (frente)>
+**Tarefa:** #NN-<uuid> · **Pedido em:** AAAA-MM-DD HH:MM · **Criada por:** <IA (frente)>
 **Pedido:** <palavras de quem pediu>
 **Objetivo:** <1 frase: o que e por quê>
-**Próximo passo:** N.x — <ação exata>
 
 ### Escopo · ### Riscos · ### Decisões     ← só em tarefa grande (o plano é a etapa)
 
-| Item | Descrição | Status | Concluído em | Verificação |
-|------|-----------|--------|--------------|-------------|
-| N.1 | … | ⬜ Pendente | — | <como foi conferido> |
-| N.x | Aceite do usuário | ⬜ Pendente | — | — |
+### #NN.1 — <título da subtarefa>
+
+**Próximo passo:** <ação exata>
+
+- **Nível:** MEDIO — <sinal que decidiu>
+- **Descrição:** … · **Critérios de aceitação:** …
+- **Entrega:** <commit(s)> · **Verificação:** <como foi conferido>
 ```
 
-- Arquivo da etapa: número sequencial da etapa + 8 caracteres de um UUID (evita número repetido entre sessões).
-- Itens numerados pelo **número da tarefa** (`N.x`, em que N é o número da tarefa, ex.: `166.1`). Se a tarefa tiver mais de uma etapa, ou se duas tarefas repetirem o número, a numeração segue entre as etapas (ex.: as duas #131: `131.1`, `131.2` na 1ª; `131.3`, `131.4` na 2ª). Os códigos só são únicos dentro da tarefa: ao citar um item de etapa antiga sem tarefa, citar também a etapa.
-- Itens pequenos (horas, não semanas), na ordem de execução.
+- Arquivo da etapa: número sequencial da etapa + 8 caracteres de um UUID (evita número repetido).
+- Subtarefas numeradas pelo **número da tarefa** (`N.x`, ex.: `166.1`), pequenas (minutos ou
+  horas) e na ordem de execução; em tarefa grande, a última é o **aceite** do usuário.
+- Tarefa com mais de uma etapa (ou duas tarefas com o mesmo número): a numeração segue entre
+  as etapas (ex.: as duas #131: `131.1`, `131.2` na 1ª; `131.3`, `131.4` na 2ª).

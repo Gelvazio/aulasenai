@@ -6,7 +6,7 @@ testes-de-frontend a regra de nível, a skill classificar-tarefa com a matriz e 
 linha e reserva próprias, para modelos fracos fazerem as tarefas simples)
 **Objetivo:** cada parte de uma tarefa ter nível e só ser pega pelo modelo certo, para que modelos
 fracos façam as tarefas simples e o modelo forte fique com as difíceis.
-**Próximo passo:** 182.2 — 👀 o usuário aprova (ou corrige) o plano abaixo.
+**Próximo passo:** 182.9 — 👀 o usuário confere a regra `.claude/rules/niveis.md` e a #181 dividida no quadro.
 
 ### Escopo
 
@@ -50,15 +50,16 @@ fracos façam as tarefas simples e o modelo forte fique com as difíceis.
 | Data | Decisão | Quem |
 |---|---|---|
 | 2026-10-15 | Opção 2: trazer o sistema de níveis completo do testes-de-frontend | Gelvazio |
+| 2026-10-15 18:55 | Plano aprovado ("sim, aprovado") | Gelvazio |
 
 | Item | Descrição | Nível | Status | Concluído em | Verificação |
 |------|-----------|-------|--------|--------------|-------------|
 | 182.1 | Comparar os dois projetos e escrever o plano nesta etapa | MEDIO | ✅ Concluído | 2026-10-15 | Lidos: regras de tarefas e `multiplas-ias.md` dos dois projetos, skills/agentes do testes-de-frontend, leitor do visualizador |
-| 182.2 | Aprovação do plano pelo usuário | — | 👀 Aguardando o usuário | — | — |
-| 182.3 | Regra `.claude/rules/niveis.md` + `AGENTS.md` + `INDEX.md` | MEDIO | ⬜ Pendente | — | — |
-| 182.4 | Subtarefa com linha e reserva próprias em `quadro.md`, `frentes-e-reserva.md` e `ciclo-da-task.md` | MEDIO | ⬜ Pendente | — | — |
-| 182.5 | Skill `classificar-tarefa` + agente `classificador-tarefas` | LEVE | ⬜ Pendente | — | — |
-| 182.6 | Skill `liderar-equipe` + agentes `executor-leve`, `executor-medio`, `executor-pesado` | MEDIO | ⬜ Pendente | — | — |
-| 182.7 | Piloto: dividir a #181 em subtarefas com nível | LEVE | ⬜ Pendente | — | — |
-| 182.8 | `HISTORICO-REGRAS.md`, Registro de decisões e visualizador | LEVE | ⬜ Pendente | — | — |
-| 182.9 | Aceite do usuário | — | ⬜ Pendente | — | — |
+| 182.2 | Aprovação do plano pelo usuário | — | ✅ Concluído | 2026-10-15 18:55 | "sim, aprovado" no chat |
+| 182.3 | Regra `.claude/rules/niveis.md` + `AGENTS.md` + `INDEX.md` | MEDIO | ✅ Concluído | 2026-10-15 18:57 | `niveis.md` com 3,1 KB; item novo na regra 8 do `AGENTS.md`; linha no `INDEX.md`; `multiplas-ias.md`: reserva com IA + modelo |
+| 182.4 | Subtarefa com linha e reserva próprias em `quadro.md`, `frentes-e-reserva.md` e `ciclo-da-task.md` | MEDIO | ✅ Concluído | 2026-10-15 18:57 | Os 3 arquivos ≤ 5 KB (4,6 / 2,7 / 4,3 KB); tarefas antigas continuam no formato de tabela de itens |
+| 182.5 | Skill `classificar-tarefa` + agente `classificador-tarefas` | LEVE | ✅ Concluído | 2026-10-15 19:02 | `.claude/skills/classificar-tarefa/SKILL.md` (aponta para o `niveis.md`, sem repetir a tabela) e `.claude/agents/classificador-tarefas.md` (Haiku) |
+| 182.6 | Skill `liderar-equipe` + agentes `executor-leve`, `executor-medio`, `executor-pesado` | MEDIO | ✅ Concluído | 2026-10-15 19:02 | Adaptados ao aulasenai: sem `task_complete.md`, banco só pelo líder local, gabarito/RLS pela `security-banco.md`, `/validar`; `claude-code.md` lista a equipe |
+| 182.7 | Piloto: dividir a #181 em subtarefas com nível | LEVE | ✅ Concluído | 2026-10-15 19:02 | Mãe `— (não reservável)` + #181.1 a #181.6 no `STATUS.md` (LEVE, LEVE, MEDIO, PESADO, MEDIO, aceite); etapa 308 com uma seção por subtarefa |
+| 182.8 | `HISTORICO-REGRAS.md`, Registro de decisões e visualizador | LEVE | ✅ Concluído | 2026-10-15 19:02 | Linha no histórico e no Registro de decisões; visualizador gerado: 104 seções, 185 tarefas |
+| 182.9 | Aceite do usuário | — | 👀 Aguardando o usuário | — | — |

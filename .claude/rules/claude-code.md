@@ -30,6 +30,8 @@ Structure"). Vale para o Claude Code local e de nuvem; as outras IAs seguem as m
 
 Subagentes: `revisor-codigo`, `auditor-seguranca`, `auditor-quadro`. Skills novas:
 `revisao-codigo`, `auditoria-seguranca` (a auditoria de tarefa é da #168).
+Equipe por nível (#182, `niveis.md`): skills `classificar-tarefa` e `liderar-equipe`; subagentes
+`classificador-tarefas`, `executor-leve` (Haiku), `executor-medio` (Sonnet), `executor-pesado` (Opus).
 
 ## Hooks (em `.claude/settings.json`)
 

@@ -9,6 +9,8 @@ o que é **deste projeto**.
 - **Local:** `local · main` (máquina do usuário).
 - **Nuvem:** `nuvem · <nome-da-sessão>` — também trabalha na `main` (`git-quick.md`), mesmo que a
   ferramenta indique outra branch.
+- Na reserva ("Em uso por") vai também a IA e o modelo, para saber o nível de quem pegou
+  (`niveis.md`).
 
 ## 2. Banco de dados: só o Claude Code local
 

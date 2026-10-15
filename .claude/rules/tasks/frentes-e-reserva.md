@@ -12,24 +12,27 @@ trabalham no mesmo repositório e só se falam pelos arquivos. Quadro: `quadro.m
 - O nome da IA/frente aparece na reserva, na linha da frente, no Executor da etapa e na mensagem
   de commit (ex.: `feat(x): ... por Claude Code (local · main)`).
 
-## Pegar uma tarefa
+## Pegar uma subtarefa
 
 1. Sincronizar com o remoto; **só então** ler o `STATUS.md` (sem sincronizar, o quadro mente).
-2. Escolher uma tarefa com **"Em uso por" = `—`** e **todas as dependências ✅**.
+2. Escolher uma **subtarefa** (nunca a linha da mãe) com **"Em uso por" = `—`**, **todas as
+   dependências ✅** e **nível até o máximo do seu modelo** (regra de níveis do projeto). Sem
+   nível → classificar antes. Tarefa antiga sem subtarefas: vale a linha dela.
 3. Entre as livres, a de **maior prioridade** (🔴 → 🟠 → 🟡 → 🟢); empate = ordem do quadro.
-   🟢 Baixa só com orientação explícita do usuário.
-4. Gravar `<frente> (desde <data hora>)` em "Em uso por", fazer **commit + push imediatos** e só
-   então começar o trabalho.
-5. Push da reserva recusado → sincronizar, **reler** o quadro; se outra frente pegou a mesma tarefa,
-   desfazer a sua reserva e escolher outra.
+   🟢 Baixa só com orientação explícita do usuário. Modelo forte só pega nível mais leve se não
+   houver nenhuma livre do seu nível.
+4. Gravar `<IA (modelo)> (<frente>) (desde <data hora>)` em "Em uso por", fazer **commit + push
+   imediatos** e só então começar o trabalho.
+5. Push da reserva recusado → sincronizar, **reler** o quadro; se outra frente pegou a mesma
+   subtarefa, desfazer a sua reserva e escolher outra.
 
 ## Limites
 
-- **1 tarefa reservada por frente.** Só pega a próxima depois de entregar ou liberar a atual.
+- **1 subtarefa reservada por frente.** Só pega a próxima depois de entregar ou liberar a atual.
 - ⛔ Nunca mexer na reserva, na linha de frente ou na etapa de outra frente. Reserva "parada" não é
   abandonada: quem libera é **o usuário** (ou quem ele autorizar).
-- Tarefa grande demais → dividir em tarefas menores antes de começar, cada uma com prioridade
-  (herda a da mãe, ou 🟡) e dependências declaradas.
+- Subtarefa grande demais (ou acima do seu nível) → dividir em subtarefas menores antes de
+  começar, cada uma com linha própria, nível, prioridade (herda a da mãe) e dependências.
 - A prioridade é **do usuário**; a IA não muda a de tarefas existentes sem pedido.
 - Scripts e rascunhos temporários na **pasta da própria sessão**, nunca em pasta compartilhada
   nem no repositório.
