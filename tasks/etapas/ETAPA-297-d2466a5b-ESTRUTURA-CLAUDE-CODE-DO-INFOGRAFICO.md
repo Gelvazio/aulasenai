@@ -2,11 +2,61 @@
 
 **Tarefa:** #170-d2466a5b-e5bb-4668-a23d-08ec57222049 · **Pedido em:** 2026-10-14 22:41 · **Executor:** Claude Code (nuvem · session_01TWwZ3R)
 **Pedido:** "Aplique tudo dele no aulasenai" — "ele" = infográfico "Claude Code Project Structure" (Brij Kishore Pandey), enviado como print do Instagram.
-**Objetivo:** levar para o repositório as partes do infográfico que ainda faltam (comandos, subagentes, hooks, MCP, settings local, `.env.example`), adaptadas às regras do projeto.
-**Próximo passo:** 170.1 — escrever o plano nesta etapa e pedir aprovação.
+**Objetivo:** levar para o repositório as partes do infográfico que ainda faltam (comandos, subagentes, hooks, settings local, modelo de variáveis), adaptadas às regras do projeto.
+**Próximo passo:** 170.2 — aguardar o "sim" do usuário ao plano.
+
+### Escopo
+
+**O projeto já tem** (do infográfico): `CLAUDE.md` curto (aponta para o `AGENTS.md`, com stack,
+convenções, git, segurança e validação), `.claude/settings.json` com permissões, `.claude/skills/`
+(5 skills), `docs/` com orientações. Ficam como estão.
+
+**Entra** (adaptado):
+
+| Parte do infográfico | Como fica no aulasenai |
+|---|---|
+| `.claude/commands/` | `/revisar` (diff contra SOLID, limites, RLS/JWT, gabarito), `/entregar` (encerrar a TASK: quadro, visualizador, 1 commit + push na `main`), `/validar` (no lugar de `/test-all`: `node --check` dos JS alterados), `/nova-materia` (no lugar de `/bootstrap`: pastas e 5 status de `materias-global.md`), `/documentar` (atualizar `docs/ORIENTACAO_JS_*.md` do módulo alterado), `/refatorar` (aplicar `codigo-limites-nomes.md` no arquivo indicado) |
+| `.claude/agents/` | Subagentes `revisor-codigo`, `auditor-seguranca` (RLS, JWT, gabarito, chaves) e `auditor-quadro` (STATUS × etapas). Formato real do Claude Code: `.md` com cabeçalho, não `.yml` como no infográfico |
+| `.claude/skills/` | Skills `revisao-codigo` e `auditoria-seguranca` (com `SKILL.md`, `references/` apontando para as regras) |
+| Hooks (`settings.json`) | **PreToolUse:** bloquear `git add .`/`-A`, criar `*.test.js`/`*.spec.js`/`test_*.py`, editar à mão `.claude/rules/index.html`, abrir navegador. **PostToolUse:** `node --check` em `.js` gravado. **SessionStart:** mostrar o checklist de `essentials.md`. **Antes do commit:** procurar chave (`service_role`, `sk-`, JWT) no que vai ser commitado e bloquear |
+| Scripts dos hooks | `scripts/claude-hooks/*.js` em Node (funciona no Windows local e na nuvem), com JSDoc e limites do projeto |
+| `settings.local.json` | Entra no `.gitignore` (configuração pessoal, fora do Git) |
+| `.env.example` | `scripts/variaveis.example.js` — modelo vazio do `variaveis.js` (conferir `.vercelignore`) |
+| Documentação | Regra nova `.claude/rules/claude-code.md` (comandos, subagentes, hooks, contexto: `/compact`, `/clear`, `/cost`), `INDEX.md`, `docs/HISTORICO-REGRAS.md`, visualizador regenerado |
+
+**Não entra** (conflita com regra do projeto ou não existe aqui):
+
+| Parte | Motivo |
+|---|---|
+| `test-writer`, `/test-all`, pasta `tests/` | Regra 6: nunca escrever testes automatizados |
+| `.mcp.json` com Supabase/Postgres | Regra 8: banco só pelo Claude Code local (com o conector da máquina); no repositório, toda sessão de nuvem teria acesso |
+| MCP Playwright, hook que abre navegador | Regra 6: sem navegador |
+| `src/`, `package.json`, `tsconfig.json`, `Dockerfile` | Site estático HTML/JS + Supabase, sem build |
+| `/deploy` para staging, agente `devops-sre` | Deploy é o push na `main` (Vercel); vira o `/entregar` |
+| Agent Teams, `plugins/` com `manifest.json` | Coordenação já é pelo quadro; plugin serve para distribuir a outros projetos |
+| Hook Notification (Slack/webhook) e SessionEnd | Sem Slack nem webhook configurado |
+
+### Critério de pronto
+
+Arquivos criados, `node --check` nos scripts dos hooks, JSON do `settings.json` válido, hooks
+conferidos rodando cada script com entrada de exemplo no terminal, visualizador regenerado,
+1 commit + push na `main`.
+
+### Riscos
+
+| Risco | Plano B |
+|---|---|
+| Hook bloquear trabalho legítimo de outra frente (ex.: teste de bug, permitido pela regra 6) | Bloqueio com mensagem clara; arquivo de teste liberado se a etapa for de bug — senão, remover só aquele bloqueio |
+| `node` fora do PATH em alguma máquina | Hook sai sem bloquear (avisa e deixa passar) |
+| Sobreposição com a #168 (skill de auditoria independente, reservada por outra frente) | `auditoria-seguranca` só cobre RLS/JWT/gabarito/chaves; a #168 segue com a auditoria de tarefa |
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 170.1 | Plano nesta etapa (tarefa grande: estrutura nova + configuração) | 🔄 Em progresso | — | — |
-| 170.2 | Aprovação do usuário | ⬜ Pendente | — | — |
-| 170.3 | Aceite do usuário | ⬜ Pendente | — | — |
+| 170.1 | Plano nesta etapa (tarefa grande: estrutura nova + configuração de segurança) | ✅ Concluído | 2026-10-14 22:46 | leitura das regras e do repositório |
+| 170.2 | Aprovação do usuário | 👀 Aguardando o usuário | — | — |
+| 170.3 | Scripts dos hooks em `scripts/claude-hooks/` + hooks no `settings.json` | ⬜ Pendente | — | `node --check`; rodar cada script com entrada de exemplo |
+| 170.4 | `.claude/commands/` (6 comandos) | ⬜ Pendente | — | leitura |
+| 170.5 | `.claude/agents/` (3 subagentes) e `.claude/skills/` (2 skills) | ⬜ Pendente | — | leitura do cabeçalho de cada arquivo |
+| 170.6 | `.gitignore` (`settings.local.json`) e `scripts/variaveis.example.js` (+ `.vercelignore`) | ⬜ Pendente | — | `git check-ignore` |
+| 170.7 | Regra `claude-code.md`, `INDEX.md`, histórico e visualizador | ⬜ Pendente | — | gerador sem erro |
+| 170.8 | Aceite do usuário | ⬜ Pendente | — | — |
