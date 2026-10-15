@@ -13,3 +13,6 @@ GERADOR-AULAS/OFFICE FACIL/*.pdf
 *.PPTX
 *.pdf
 *.PDF
+
+# Configuração pessoal do Claude Code (permissões e preferências de cada máquina)
+.claude/settings.local.json

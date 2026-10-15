@@ -55,6 +55,7 @@ Regras detalhadas, com exemplos: `docs/regras/`. Histórico de mudanças: `docs/
 | Arquivo | Assunto |
 |---------|---------|
 | `graphify.md` | Graphify só quando o usuário pedir |
+| `claude-code.md` | Comandos, subagentes, skills e hooks do Claude Code (estrutura do infográfico, #170) |
 | `visualizador-regras.md` | `index.html` desta pasta: só visualizador; quando regenerar |
 
 ## Onde mais procurar
@@ -73,4 +74,4 @@ Regras detalhadas, com exemplos: `docs/regras/`. Histórico de mudanças: `docs/
 
 ---
 
-Última atualização: 2026-10-13 (revisão e quadro com fonte única, tarefa #29)
+Última atualização: 2026-10-14 (estrutura do Claude Code, tarefa #170)

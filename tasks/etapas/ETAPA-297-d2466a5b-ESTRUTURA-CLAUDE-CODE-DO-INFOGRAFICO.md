@@ -3,7 +3,7 @@
 **Tarefa:** #170-d2466a5b-e5bb-4668-a23d-08ec57222049 · **Pedido em:** 2026-10-14 22:41 · **Executor:** Claude Code (nuvem · session_01TWwZ3R)
 **Pedido:** "Aplique tudo dele no aulasenai" — "ele" = infográfico "Claude Code Project Structure" (Brij Kishore Pandey), enviado como print do Instagram.
 **Objetivo:** levar para o repositório as partes do infográfico que ainda faltam (comandos, subagentes, hooks, settings local, modelo de variáveis), adaptadas às regras do projeto.
-**Próximo passo:** 170.2 — aguardar o "sim" do usuário ao plano.
+**Próximo passo:** 170.8 — aceite do usuário (abrir uma sessão do Claude Code no repositório e ver os comandos `/revisar`, `/entregar`… e o checklist do início).
 
 ### Escopo
 
@@ -50,13 +50,20 @@ conferidos rodando cada script com entrada de exemplo no terminal, visualizador 
 | `node` fora do PATH em alguma máquina | Hook sai sem bloquear (avisa e deixa passar) |
 | Sobreposição com a #168 (skill de auditoria independente, reservada por outra frente) | `auditoria-seguranca` só cobre RLS/JWT/gabarito/chaves; a #168 segue com a auditoria de tarefa |
 
+### Decisões
+
+- 2026-10-14 23:00 (Claude Code): o hook bloqueou um comando desta própria tarefa porque o texto do
+  histórico citava "Playwright". As regras de `git add` e de navegador passaram a valer só no
+  **início de um comando** (começo de linha ou depois de `;`, `&&`, `|`); palavra dentro de texto
+  (heredoc, mensagem de commit) não bloqueia mais. Conferido com 10 casos de exemplo.
+
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
 | 170.1 | Plano nesta etapa (tarefa grande: estrutura nova + configuração de segurança) | ✅ Concluído | 2026-10-14 22:46 | leitura das regras e do repositório |
-| 170.2 | Aprovação do usuário | 👀 Aguardando o usuário | — | — |
-| 170.3 | Scripts dos hooks em `scripts/claude-hooks/` + hooks no `settings.json` | ⬜ Pendente | — | `node --check`; rodar cada script com entrada de exemplo |
-| 170.4 | `.claude/commands/` (6 comandos) | ⬜ Pendente | — | leitura |
-| 170.5 | `.claude/agents/` (3 subagentes) e `.claude/skills/` (2 skills) | ⬜ Pendente | — | leitura do cabeçalho de cada arquivo |
-| 170.6 | `.gitignore` (`settings.local.json`) e `scripts/variaveis.example.js` (+ `.vercelignore`) | ⬜ Pendente | — | `git check-ignore` |
-| 170.7 | Regra `claude-code.md`, `INDEX.md`, histórico e visualizador | ⬜ Pendente | — | gerador sem erro |
-| 170.8 | Aceite do usuário | ⬜ Pendente | — | — |
+| 170.2 | Aprovação do usuário | ✅ Concluído | 2026-10-14 22:46 | "Sim" do usuário (Gelvazio) no chat, 2026-10-14 22:46 |
+| 170.3 | Scripts dos hooks em `scripts/claude-hooks/` + hooks no `settings.json` | ✅ Concluído | 2026-10-14 22:47 | `node --check` nos 6 scripts; JSON do settings válido; 14 entradas de exemplo (bloqueia git add ., teste, index.html, navegador, JS quebrado, JWT service_role, sk-; libera anon, teste de bug, git add de arquivos) |
+| 170.4 | `.claude/commands/` (6 comandos) | ✅ Concluído | 2026-10-14 22:48 | leitura dos 6 arquivos (cabeçalho `description` em cada um; `/revisar`, `/entregar`, `/validar`, `/nova-materia`, `/documentar`, `/refatorar`) |
+| 170.5 | `.claude/agents/` (3 subagentes) e `.claude/skills/` (2 skills) | ✅ Concluído | 2026-10-14 22:49 | leitura do cabeçalho (`name`, `description`, `tools` só de leitura) dos 3 subagentes e das 2 skills; `references/` só aponta para as regras |
+| 170.6 | `.gitignore` (`settings.local.json`) e `scripts/variaveis.example.js` (+ `.vercelignore`) | ✅ Concluído | 2026-10-14 22:49 | `git check-ignore`: `settings.local.json` e `variaveis.js` ignorados, `variaveis.example.js` não; modelo sem chave (vazio), pode ir ao site sem risco — `.vercelignore` sem mudança |
+| 170.7 | Regra `claude-code.md`, `INDEX.md`, histórico e visualizador | ✅ Concluído | 2026-10-14 23:04 | `claude-code.md` com 3 KB (≤ 5 KB); listado no `INDEX.md`; histórico com a linha; gerador sem erro (98 seções, regra aparece no `index.html`) |
+| 170.8 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
