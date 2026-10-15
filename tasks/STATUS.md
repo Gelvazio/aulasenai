@@ -206,6 +206,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #171-cb630440-b79b-44da-99b0-8978675de82a | Commit e push do pi.md (guia do Pi Desktop) na raiz do aulasenai | 🟡 Média | — | 🔄 Em execução | nuvem · session_01Lj9hrzuAcEdZXxnJuSRn2f (desde 2026-10-14 23:31) | [298-cb630440](etapas/ETAPA-298-cb630440-COMMIT-PUSH-PI-MD.md) |
 | #172-7f59e8e1-1b47-4910-b956-e082e7e5e05d | Nome do conteúdo de cada aula (maiúsculas) no calendário da ITIC | 🟡 Média | — | 👀 Aguardando aceite | — | [299-7f59e8e1](etapas/ETAPA-299-7f59e8e1-CALENDARIO-ITIC-NOME-DAS-AULAS.md) |
 | #173-036ea1c3-6ccf-47a1-bb3a-54af7e6fccf3 | Esconder o card "Avaliação — Média Final" (só ocultar) | 🟡 Média | — | 👀 Aguardando aceite | — | [300-036ea1c3](etapas/ETAPA-300-036ea1c3-ESCONDER-CARD-MEDIA-FINAL.md) |
+| #174-d2d802b4-a2cc-4b1b-bd6a-b96b0161e0b5 | Remover "Atividade Comunicação" do card da Aula 03 (ITIC) | 🟡 Média | — | ⬜ Pendente | — | [301-d2d802b4](etapas/ETAPA-301-d2d802b4-REMOVER-ATIVIDADE-COMUNICACAO-AULA-03.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -541,6 +542,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 298-cb630440 | Commit e push do pi.md na raiz (#171, pedida em 2026-10-14) | [ETAPA-298-cb630440-COMMIT-PUSH-PI-MD.md](etapas/ETAPA-298-cb630440-COMMIT-PUSH-PI-MD.md) |
 | 299-7f59e8e1 | Nome das aulas no calendário da ITIC (#172, pedida em 2026-10-15) | [ETAPA-299-7f59e8e1-CALENDARIO-ITIC-NOME-DAS-AULAS.md](etapas/ETAPA-299-7f59e8e1-CALENDARIO-ITIC-NOME-DAS-AULAS.md) |
 | 300-036ea1c3 | Esconder o card da Média Final (#173, pedida em 2026-10-15) | [ETAPA-300-036ea1c3-ESCONDER-CARD-MEDIA-FINAL.md](etapas/ETAPA-300-036ea1c3-ESCONDER-CARD-MEDIA-FINAL.md) |
+| 301-d2d802b4 | Remover Atividade Comunicação da Aula 03 da ITIC (#174, pedida em 2026-10-15) | [ETAPA-301-d2d802b4-REMOVER-ATIVIDADE-COMUNICACAO-AULA-03.md](etapas/ETAPA-301-d2d802b4-REMOVER-ATIVIDADE-COMUNICACAO-AULA-03.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
