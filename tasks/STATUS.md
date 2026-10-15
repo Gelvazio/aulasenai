@@ -210,7 +210,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #174-d2d802b4-a2cc-4b1b-bd6a-b96b0161e0b5 | Remover "Atividade Comunicação" e "Slide Comunicação" do card da Aula 03 (ITIC) | 🟡 Média | — | 👀 Aguardando aceite | — | [301-d2d802b4](etapas/ETAPA-301-d2d802b4-REMOVER-ATIVIDADE-COMUNICACAO-AULA-03.md) |
 | #175-cfc044e9-2127-46f1-ad59-9c4733419417 | Bloquear o preenchimento das atividades 02, 03 e 05 e liberar o botão "Liberar gabaritos" | 🟡 Média | — | 👀 Aguardando aceite | — | [302-cfc044e9](etapas/ETAPA-302-cfc044e9-BLOQUEAR-ATIVIDADES-02-03-05-E-LIBERAR-GABARITOS.md) |
 | #176-5d996631-9f67-481f-b988-c36c9f88350d | Botão "🔑 Exportar Gabarito" só para o professor | 🟡 Média | — | 👀 Aguardando aceite | — | [303-5d996631](etapas/ETAPA-303-5d996631-EXPORTAR-GABARITO-SO-PROFESSOR.md) |
-| #177-1b24c2a1-00ee-47b0-8b77-3c6611bad346 | "📄 Exportar Meu Gabarito" em todas as matérias da turma 135081 (CEPLAS TARDE) | 🟡 Média | — | 🔄 Em execução | local · main (desde 2026-10-15 15:42) | [304-1b24c2a1](etapas/ETAPA-304-1b24c2a1-EXPORTAR-MEU-GABARITO-MATERIAS-TURMA-135081.md) |
+| #177-1b24c2a1-00ee-47b0-8b77-3c6611bad346 | "📄 Exportar Meu Gabarito" em todas as matérias da turma 135081 (CEPLAS TARDE) | 🟡 Média | — | 👀 Aguardando o usuário | local · main (desde 2026-10-15 15:42) | [304-1b24c2a1](etapas/ETAPA-304-1b24c2a1-EXPORTAR-MEU-GABARITO-MATERIAS-TURMA-135081.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
