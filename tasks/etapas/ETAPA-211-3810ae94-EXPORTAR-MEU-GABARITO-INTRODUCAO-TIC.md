@@ -1,6 +1,6 @@
 ## Etapa 211-3810ae94 — Botão "Exportar Meu Gabarito" (aluno): Introdução às TIC (Assistente de Operações Logísticas)
 
-**Tarefa:** #84-3810ae94-7fa5-4124 · **Pedido em:** 2026-10-14 10:44 · **Executor:** — (livre para qualquer IA, depois da #82)
+**Tarefa:** #84-3810ae94-7fa5-4124 · **Pedido em:** 2026-10-14 10:44 · **Executor:** Claude Code (local · main), desde 2026-10-15 15:39 a pedido do usuário ("faça a tarefa #84")
 **Pedido:** "DEVE TER UM BOTAO EM TODAS AS ATIVIDADES DE NOME *Exportar Meu Gabarito*, que so habilita quando a atividade ja esta com status=entregue, e este botao deve exportar o gabarito com as respostas do aluno,pra ser postada no Ambiente Virtual dele" · "crie 1 task ja em andamento aqui nesta sessao pra materia *TESTES-DE-FRONTEND* , e crie task pra todas as outras materias pra outras IA fazer" (criada pela #82, etapa 209-70a67f33)
 **Objetivo:** o aluno exporta as próprias respostas ("Exportar Meu Gabarito", só depois de
 entregar) nas páginas desta matéria, como na #82 (etapa 209-70a67f33), que traz o recurso global.
@@ -37,5 +37,6 @@ Conferir a lista de novo ao começar (página nova ou removida desde então).
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 84.1 | Ligar o botão (atributo da #82) em cada página de atividade da matéria (sem página → ⛔ até existir) | ⬜ Pendente | — | Atributo presente em todas (busca no código) |
-| 84.2 | Aceite do usuário (testar como aluno) | ⬜ Pendente | — | — |
+| 84.1 | Ligar o botão (atributo da #82) em cada página de atividade da matéria (sem página → ⛔ até existir) | 🔄 Em progresso | — | Atributo presente em todas (busca no código) |
+| 84.2 | Encerrar: quadro, visualizador, 1 commit + push na `main` | ⬜ Pendente | — | `git push` sem erro |
+| 84.3 | Aceite do usuário (testar como aluno) | ⬜ Pendente | — | — |
