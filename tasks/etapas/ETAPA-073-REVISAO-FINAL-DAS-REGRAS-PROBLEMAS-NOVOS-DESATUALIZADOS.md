@@ -2,8 +2,8 @@
 
 ## Etapa 73 — Revisão final das regras: problemas novos + desatualizados (pedida em 2026-10-07)
 
-**Tarefa:** #17 (também os itens 70.5 e 72.8 das etapas 70 e 72)
-**Próximo passo:** aceites 70.5, 72.8 e 17.14; decisões 17.15b e 17.16.
+**Tarefa:** #17 (também os itens 17.22 e 17.30 das etapas 70 e 72)
+**Próximo passo:** aceites 17.22, 17.30 e 17.14; decisões 17.15b e 17.16.
 
 Uma pergunta por item; **um commit só no final** (pedido do usuário).
 
@@ -35,10 +35,10 @@ sessão: `56abe5b`); falta só conferir e aceitar.
 
 O que falta:
 
-- [ ] **Aceite do usuário — divisão do `CLAUDE.md` (70.5):** conferir o núcleo do `CLAUDE.md`, os
+- [ ] **Aceite do usuário — divisão do `CLAUDE.md` (17.22):** conferir o núcleo do `CLAUDE.md`, os
   arquivos de `docs/regras/`, o `docs/HISTORICO-REGRAS.md` e o menu **Regras** no site (o modal
   carrega o `CLAUDE.md` + `docs/regras/` + histórico; não foi testado no navegador).
-- [ ] **Aceite do usuário — 7 contradições corrigidas (72.8):** frase final sem tabela; menu
+- [ ] **Aceite do usuário — 7 contradições corrigidas (17.30):** frase final sem tabela; menu
   ALUNOS só do administrador; regra do Word removida; "PDF com gabarito" fora da regra da Turma;
   Reforço de Linguagens fora do exemplo das 50 questões; ementa na raiz da matéria; `git add .`
   trocado no `CLAUDE.md` global.
