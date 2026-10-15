@@ -215,6 +215,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #178-06fcbd1b-609f-4a6b-a51f-9252bb179ad9 | "📄 Exportar Meu Gabarito" nas matérias que já têm questões respondidas (Análise de Dados, Fundamentos da Tecnologia e Programação, Reforço de Linguagens; 44 páginas) | 🟡 Média | — | ⬜ Pendente | — | [305-06fcbd1b](etapas/ETAPA-305-06fcbd1b-EXPORTAR-MEU-GABARITO-MATERIAS-COM-RESPOSTAS.md) |
 | #179-e7b513ce-ae56-41a4-bf20-43bf40b98435 | "📄 Exportar Meu Gabarito" em todas as matérias de todos os cursos (59 páginas restantes + geradores) | 🟡 Média | #178 | ⬜ Pendente | — | [306-e7b513ce](etapas/ETAPA-306-e7b513ce-EXPORTAR-MEU-GABARITO-TODAS-AS-MATERIAS.md) |
 | #180-cd79916d-539d-4dfc-a519-7f0cde9029cb | "📄 Exportar Meu Gabarito" no topo, ao lado de "Exportar PDF da Atividade" (Introdução às TIC) | 🟡 Média | — | 👀 Aguardando aceite | — | [307-cd79916d](etapas/ETAPA-307-cd79916d-ITIC-MEU-GABARITO-NO-TOPO.md) |
+| #181-2ce35ab9-f9b4-4e04-a831-fc611a9ccff7 | Validar todas as tarefas pendentes do quadro (status, etapa, commits e reservas) | 🔴 Máxima | — | ⬜ Pendente | — | [308-2ce35ab9](etapas/ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -557,6 +558,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 305-06fcbd1b | Exportar Meu Gabarito nas matérias com questões respondidas (#178, pedida em 2026-10-15) | [ETAPA-305-06fcbd1b-EXPORTAR-MEU-GABARITO-MATERIAS-COM-RESPOSTAS.md](etapas/ETAPA-305-06fcbd1b-EXPORTAR-MEU-GABARITO-MATERIAS-COM-RESPOSTAS.md) |
 | 306-e7b513ce | Exportar Meu Gabarito em todas as matérias de todos os cursos (#179, pedida em 2026-10-15) | [ETAPA-306-e7b513ce-EXPORTAR-MEU-GABARITO-TODAS-AS-MATERIAS.md](etapas/ETAPA-306-e7b513ce-EXPORTAR-MEU-GABARITO-TODAS-AS-MATERIAS.md) |
 | 307-cd79916d | Exportar Meu Gabarito no topo em Introdução às TIC (#180, pedida em 2026-10-15) | [ETAPA-307-cd79916d-ITIC-MEU-GABARITO-NO-TOPO.md](etapas/ETAPA-307-cd79916d-ITIC-MEU-GABARITO-NO-TOPO.md) |
+| 308-2ce35ab9 | Validar todas as tarefas pendentes (#181, pedida em 2026-10-15) | [ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md](etapas/ETAPA-308-2ce35ab9-VALIDAR-TAREFAS-PENDENTES.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
