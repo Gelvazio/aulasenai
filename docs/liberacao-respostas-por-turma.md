@@ -5,6 +5,13 @@
 - **Tempo decorrido:** —
 - **Status:** ✅ Implementado e SQL aplicado (aprovado em 2026-10-06: bloquear recuperação após liberar e aplicar o SQL)
 
+## Atualização 2026-10-15 (tarefa #176, etapa 303-5d996631)
+
+Pedido do usuário: "este botão 🔑 Exportar Gabarito só deve aparecer para o professor". O botão
+fica visível e ativo só para o perfil PROFESSOR (`assets/js/avaliacao-pdf-professor.js`); o
+aluno vê a correção na própria página depois da liberação (`correcao-objetiva-aluno.js`). As
+menções abaixo ao botão do aluno valem até 2026-10-15.
+
 ## Atualização 2026-10-15 (tarefa #175, etapa 302-cfc044e9)
 
 Pedido do usuário: "tem aluno que não fez a atividade, bloqueie o preenchimento de todos (...) e

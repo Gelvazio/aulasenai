@@ -476,14 +476,16 @@ com alunos sem entrega: liberar encerra o preenchimento da turma).
 
 - ✅ O gabarito real (alternativas certas) só o **professor** lê: tabela `gabarito` com RLS de professor;
   nunca embutido nas páginas.
-- ✅ Nas avaliações e atividades, no fim da página: **Exportar Gabarito** (professor = gabarito
-  real; aluno = ver a liberação abaixo). ⛔ O botão **"📥 Exportar PDF com gabarito"** foi
+- ✅ Nas avaliações e atividades, no fim da página: **Exportar Gabarito**, **só para o
+  professor** (gabarito real; 2026-10-15, #176, pedido do usuário: "só deve aparecer para o
+  professor"). ⛔ O botão **"📥 Exportar PDF com gabarito"** foi
   **removido** de todas as páginas e do gerador em 2026-10-06 (pedido do usuário); fica só a
   variante "📥 Gabarito" (`data-modo="gabarito"`, só professor) onde já existia.
 - ✅ **REGRA GLOBAL: vale para todas as avaliações e atividades de todas as matérias e de todos
   os cursos** (2026-10-06, pedido do usuário; hoje 53 páginas objetivas): toda atividade com
   folha de respostas no banco (`data-login="sim"`) ganha o botão "🔑 Exportar Gabarito" (inserido
-  pelo `assets/js/atividade.js`, que carrega o `avaliacao-pdf-professor.js`), e o gabarito só é
+  pelo `assets/js/atividade.js`, que carrega o `avaliacao-pdf-professor.js`; visível e ativo
+  só para o perfil PROFESSOR desde 2026-10-15, #176), e o gabarito só é
   liberado pelo professor; liberar **encerra o preenchimento da turma** (2026-10-15, #175; até
   então só depois que todos os alunos da turma entregaram).
 - ✅ **Liberar gabaritos (2026-10-06)** — plano `docs/liberacao-respostas-por-turma.md`, SQL
@@ -498,10 +500,12 @@ com alunos sem entrega: liberar encerra o preenchimento da turma).
     (trigger em `liberacao_atividade`) **e nenhuma resposta nova** (preenchimento encerrado:
     `item_valido`/`topico_valido`, SQL `database/2026-10-15-liberar-gabarito-encerra-preenchimento.sql`); a atividade continua visível
     para quem entregou ver nota e gabarito; "Recolher gabarito" reabre o preenchimento;
-  - **aluno** clica em "Exportar Gabarito": se a turma dele foi liberada e ele entregou, recebe o
-    gabarito real (função `solicitar_gabarito`); senão vê **"Aguarde professor liberar os
-    gabaritos"** e o pedido é gravado na tabela **`tentativaacessogabarito`** (atividade, aluno,
-    data e hora; só o professor lê).
+  - **aluno** não tem mais o botão "Exportar Gabarito" (2026-10-15, #176): com a turma liberada
+    e a atividade entregue, vê a correção na própria página (✅/❌ e a alternativa certa,
+    `correcao-objetiva-aluno.js`, função `solicitar_gabarito`). Até 2026-10-15 o aluno também
+    exportava o gabarito real por esse botão (antes da liberação via "Aguarde professor liberar
+    os gabaritos" e o pedido ia para a tabela **`tentativaacessogabarito`**, que segue
+    recebendo os pedidos do "🔑 Ver Gabarito" das discursivas).
 - ✅ **Também nas DISCURSIVAS** (2026-10-06, pedido do usuário; 19 páginas): o "gabarito" é o
   padrão de resposta (`topico_discursivo.resposta_esperada`, só do professor). No painel da página
   (`assets/js/liberacao-respostas-discursiva.js`, carregado pelo `avaliacao-discursiva.js`):

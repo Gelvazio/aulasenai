@@ -45,7 +45,7 @@ carregarModuloExportacao(ARQUIVO_EXPORTAR_WORD, typeof exportarWordAtividade ===
 
 /**
  * Acrescenta o botão "Exportar Gabarito" às atividades com folha de respostas no banco que ainda
- * não o têm e carrega o script que o liga (a liberação para o aluno é decidida no banco).
+ * não o têm e carrega o script que o liga (o botão só aparece para o perfil PROFESSOR).
  */
 function incluirBotaoExportarGabarito() {
     const barra = document.querySelector('.export-bar');
@@ -60,7 +60,7 @@ function incluirBotaoExportarGabarito() {
     botao.textContent = TEXTO_BOTAO_EXPORTAR_GABARITO;
     barra.append(botao);
     carregarModuloExportacao(ARQUIVO_EXPORTAR_GABARITO,
-        typeof exportarGabaritoPorPerfil === 'function');
+        typeof exportarGabaritoProfessor === 'function');
 }
 
 if (document.readyState === 'loading') {

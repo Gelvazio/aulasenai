@@ -6,7 +6,7 @@
 // a mesma visibilidade (hidden e data-somente-perfil acompanham o botão de PDF).
 // Depende de: atividade.js (dadosDaPaginaParaPDF, coletarQuestoes, turmaDoPDF, rotuloDaAula,
 // lerLinhasCapacidadesPDF), documento-word.js e, nos botões de gabarito,
-// avaliacao-pdf-professor.js (exportarPdfCompletoProfessor, exportarGabaritoPorPerfil).
+// avaliacao-pdf-professor.js (exportarPdfCompletoProfessor, exportarGabaritoProfessor).
 
 const COR_SENAI_WORD = '#003399';
 const COR_CINZA_CABECALHO_WORD = '#f0f0f0';
