@@ -59,15 +59,16 @@ modelos abaixo. Ciclo da tarefa: `ciclo-da-task.md` · várias sessões: `frente
 **Tarefa:** #NN-<uuid> · **Pedido em:** AAAA-MM-DD HH:MM · **Executor:** <IA (frente)>
 **Pedido:** <palavras de quem pediu>
 **Objetivo:** <1 frase: o que e por quê>
-**Próximo passo:** NNN.x — <ação exata>
+**Próximo passo:** N.x — <ação exata>
 
 ### Escopo · ### Riscos · ### Decisões     ← só em tarefa grande (o plano é a etapa)
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| NNN.1 | … | ⬜ Pendente | — | <como foi conferido> |
-| NNN.x | Aceite do usuário | ⬜ Pendente | — | — |
+| N.1 | … | ⬜ Pendente | — | <como foi conferido> |
+| N.x | Aceite do usuário | ⬜ Pendente | — | — |
 ```
 
-- Número da etapa sequencial + 8 caracteres de um UUID (evita número repetido entre sessões).
+- Arquivo da etapa: número sequencial da etapa + 8 caracteres de um UUID (evita número repetido entre sessões).
+- Itens numerados pelo **número da tarefa** (`N.x`, em que N é o número da tarefa, ex.: `166.1`). Se a tarefa tiver mais de uma etapa, a numeração segue entre elas (ex.: `131.1`, `131.2` na 1ª; `131.3`, `131.4` na 2ª). Os códigos só são únicos dentro da tarefa: ao citar um item de etapa antiga sem tarefa, citar também a etapa.
 - Itens pequenos (horas, não semanas), na ordem de execução.

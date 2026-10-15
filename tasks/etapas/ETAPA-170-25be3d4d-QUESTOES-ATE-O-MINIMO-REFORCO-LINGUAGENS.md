@@ -6,7 +6,7 @@
 **Objetivo:** depois do Cálculo Nota, a tela e o "Exportar PDF (atividade completa)" das
 atividades objetivas desta matéria mostram só as questões 1 até o mínimo, como na #33
 (etapa 160-d7ade403).
-**Próximo passo:** 170.1 — pôr `data-questoes-ate-minimo="sim"` no `<body>` das páginas abaixo.
+**Próximo passo:** 43.1 — pôr `data-questoes-ate-minimo="sim"` no `<body>` das páginas abaixo.
 
 ### Páginas (10, carregam `respostas-atividade-banco.js` em 2026-10-14)
 
@@ -25,6 +25,6 @@ Conferir a lista de novo ao começar (página nova ou removida desde então).
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 170.1 | Pôr `data-questoes-ate-minimo="sim"` no `<body>` de cada página da lista | ⬜ Pendente | — | Atributo presente em todas (busca no código) |
-| 170.2 | Conferir que cada página usa `.aula-card.questao` em ordem (ITEM 01, 02...) e o botão `#btnExportarPDF`; fora do padrão → ajustar ou ⛔ com motivo | ⬜ Pendente | — | Leitura do HTML de cada página |
-| 170.3 | Aceite do usuário (testar como professor e aluno) | ⬜ Pendente | — | — |
+| 43.1 | Pôr `data-questoes-ate-minimo="sim"` no `<body>` de cada página da lista | ⬜ Pendente | — | Atributo presente em todas (busca no código) |
+| 43.2 | Conferir que cada página usa `.aula-card.questao` em ordem (ITEM 01, 02...) e o botão `#btnExportarPDF`; fora do padrão → ajustar ou ⛔ com motivo | ⬜ Pendente | — | Leitura do HTML de cada página |
+| 43.3 | Aceite do usuário (testar como professor e aluno) | ⬜ Pendente | — | — |

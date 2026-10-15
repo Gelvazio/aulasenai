@@ -10,8 +10,8 @@ matéria Testes de Front-End, aula 02.
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 159.1 | Fonte `ATIVIDADES/CONTEUDO/DESAFIO-01-CASOS-DE-TESTE-LOGIN.md` + `-GABARITO.md` (3 questões × 3 tópicos, aula 02) | ⛔ Cancelado | 2026-10-14 08:35 | Feito e removido (pasta errada); trabalho segue no repositório gerador-atividades |
-| 159.2 | Gerar página e seed com `assets/gerador-avaliacao-discursiva` | ⛔ Cancelado | — | Saída do gerador |
-| 159.3 | Aplicar o seed no Supabase e registrar CONCLUÍDO (`seeds.md`) | ⛔ Cancelado | — | Consulta ao banco |
-| 159.4 | Índice de atividades da matéria (`gerar_indices.py`) | ⛔ Cancelado | — | Link no `index.html` |
-| 159.5 | Aceite do usuário | ⛔ Cancelado | — | — |
+| 32.1 | Fonte `ATIVIDADES/CONTEUDO/DESAFIO-01-CASOS-DE-TESTE-LOGIN.md` + `-GABARITO.md` (3 questões × 3 tópicos, aula 02) | ⛔ Cancelado | 2026-10-14 08:35 | Feito e removido (pasta errada); trabalho segue no repositório gerador-atividades |
+| 32.2 | Gerar página e seed com `assets/gerador-avaliacao-discursiva` | ⛔ Cancelado | — | Saída do gerador |
+| 32.3 | Aplicar o seed no Supabase e registrar CONCLUÍDO (`seeds.md`) | ⛔ Cancelado | — | Consulta ao banco |
+| 32.4 | Índice de atividades da matéria (`gerar_indices.py`) | ⛔ Cancelado | — | Link no `index.html` |
+| 32.5 | Aceite do usuário | ⛔ Cancelado | — | — |

@@ -5,7 +5,7 @@
 172-0ef7953a)
 **Objetivo:** o professor marca como entregue a atividade de um aluno nas páginas desta matéria,
 como na #45 (etapa 172-0ef7953a), que já traz a função do banco e o botão.
-**Próximo passo:** 177.1 — pôr `data-marcar-entregue="sim"` no `<body>` das páginas abaixo
+**Próximo passo:** 50.1 — pôr `data-marcar-entregue="sim"` no `<body>` das páginas abaixo
 (confirmar antes o nome do atributo na etapa 172-0ef7953a).
 
 ### Páginas (14, objetivas e práticas, em 2026-10-14)
@@ -29,5 +29,5 @@ Conferir a lista de novo ao começar (página nova ou removida desde então).
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 177.1 | Pôr `data-marcar-entregue="sim"` no `<body>` de cada página da lista | ⬜ Pendente | — | Atributo presente em todas (busca no código) |
-| 177.2 | Aceite do usuário (testar como professor) | ⬜ Pendente | — | — |
+| 50.1 | Pôr `data-marcar-entregue="sim"` no `<body>` de cada página da lista | ⬜ Pendente | — | Atributo presente em todas (busca no código) |
+| 50.2 | Aceite do usuário (testar como professor) | ⬜ Pendente | — | — |

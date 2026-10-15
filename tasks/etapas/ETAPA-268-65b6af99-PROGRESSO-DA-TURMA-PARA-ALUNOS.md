@@ -5,7 +5,7 @@
 copia, e me pergunte se tem algo a mais que nao pode mostrar"
 **Objetivo:** o aluno ver o próprio progresso na página da atividade, sem notas, sem suspeita de
 cópia e sem dados de colegas.
-**Próximo passo:** 268.5 — usuário entrar como aluno numa objetiva e numa discursiva e conferir o "📊 Meu progresso".
+**Próximo passo:** 141.5 — usuário entrar como aluno numa objetiva e numa discursiva e conferir o "📊 Meu progresso".
 
 **Respostas (2026-10-14 16:25):** além de notas e suspeita de cópia, **não mostrar** faltas,
 quantidade mínima, Gráficos e Cálculo Nota, nem quem entregou; o aluno vê **só a própria linha**
@@ -39,8 +39,8 @@ quantidade mínima, Gráficos e Cálculo Nota, nem quem entregou; o aluno vê **
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 268.1 | Detalhes com o usuário (o que mais esconder) | ✅ Concluído | 2026-10-14 16:25 | Respostas acima |
-| 268.2 | Plano + aprovação | ✅ Concluído | 2026-10-14 16:27 | Usuário aprovou no chat ("sim") |
-| 268.3 | Módulo `progresso-do-aluno.js` (usa o CSS do painel) + ligação em `respostas-atividade.js` e `avaliacao-discursiva.js` | ✅ Concluído | 2026-10-14 16:26 | `node --check` nos 3 JS; linhas novas ≤ 100; lê só `resposta_atividade`/`resposta_discursiva` do próprio aluno (sem `resumo_tentativas_atividade`) |
-| 268.4 | Regra em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 16:26 | Leitura |
-| 268.5 | Aceite do usuário (testar como aluno no navegador) | 👀 Aguardando o usuário | — | — |
+| 141.1 | Detalhes com o usuário (o que mais esconder) | ✅ Concluído | 2026-10-14 16:25 | Respostas acima |
+| 141.2 | Plano + aprovação | ✅ Concluído | 2026-10-14 16:27 | Usuário aprovou no chat ("sim") |
+| 141.3 | Módulo `progresso-do-aluno.js` (usa o CSS do painel) + ligação em `respostas-atividade.js` e `avaliacao-discursiva.js` | ✅ Concluído | 2026-10-14 16:26 | `node --check` nos 3 JS; linhas novas ≤ 100; lê só `resposta_atividade`/`resposta_discursiva` do próprio aluno (sem `resumo_tentativas_atividade`) |
+| 141.4 | Regra em `docs/regras/atividades.md` | ✅ Concluído | 2026-10-14 16:26 | Leitura |
+| 141.5 | Aceite do usuário (testar como aluno no navegador) | 👀 Aguardando o usuário | — | — |

@@ -4,7 +4,7 @@
 **Pedido:** "coloque um botao ao lado de cada aluno, pra marcar o aluno mesmo como NAO E COPIA, assim todas as respostas dele nao devem ser comparadas com outros alunos"
 **Respostas:** só **esta atividade**; some **dos dois lados** (as dele e as dos outros que apontam para ele); as suspeitas pendentes já existentes **viram "não é cópia"** (validadas, nada apagado).
 **Objetivo:** o professor libera um aluno da comparação de cópia numa atividade discursiva, com um botão na linha dele no Progresso da Turma.
-**Próximo passo:** 260.5 — aceite do usuário.
+**Próximo passo:** 133.5 — aceite do usuário.
 
 **Tarefa grande** (banco + segurança): plano nesta etapa + aprovação.
 
@@ -26,8 +26,8 @@
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 260.1 | Aprovação do plano | ✅ Concluído | 2026-10-14 14:41 | Aprovado pelo usuário: "sim, pode executar" |
-| 260.2 | Banco: tabela `aluno_liberado_copia` + RLS + função `liberar_aluno_copia` (`database/2026-10-14-aluno-liberado-copia.sql`, aplicado pelo conector); `docs/database.md` + relatório HTML | ✅ Concluído | 2026-10-14 14:41 | Teste em transação desfeita (aluno com 40 suspeitas pendentes): liberar validou 40, professor vê 1 liberado, desfazer volta a 0, aluno não consegue chamar; depois: 0 liberados, 75 pendentes |
-| 260.3 | IA: SQL dos candidatos ignora os alunos liberados (`docs/regras/suspeita-copia-discursiva.md`, seguido pela rotina #130) | ✅ Concluído | 2026-10-14 14:41 | SQL rodado na 81 sem erro |
-| 260.4 | Tela: botão 🛡️ Não é cópia / 🛡️ Liberado + ↩️ Voltar a comparar na coluna "Suspeita de Cópia" (`suspeita-copia-discursiva.js`, `suspeita-copia.css`; o painel passa `aoMudar` para a coluna em `progresso-turma-global.js`) | ✅ Concluído | 2026-10-14 14:41 | `node --check` nos 2 JS; confirmação no popup antes de gravar |
-| 260.5 | Aceite do usuário (testar o botão logado como professor) | 👀 Aguardando o usuário | — | — |
+| 133.1 | Aprovação do plano | ✅ Concluído | 2026-10-14 14:41 | Aprovado pelo usuário: "sim, pode executar" |
+| 133.2 | Banco: tabela `aluno_liberado_copia` + RLS + função `liberar_aluno_copia` (`database/2026-10-14-aluno-liberado-copia.sql`, aplicado pelo conector); `docs/database.md` + relatório HTML | ✅ Concluído | 2026-10-14 14:41 | Teste em transação desfeita (aluno com 40 suspeitas pendentes): liberar validou 40, professor vê 1 liberado, desfazer volta a 0, aluno não consegue chamar; depois: 0 liberados, 75 pendentes |
+| 133.3 | IA: SQL dos candidatos ignora os alunos liberados (`docs/regras/suspeita-copia-discursiva.md`, seguido pela rotina #130) | ✅ Concluído | 2026-10-14 14:41 | SQL rodado na 81 sem erro |
+| 133.4 | Tela: botão 🛡️ Não é cópia / 🛡️ Liberado + ↩️ Voltar a comparar na coluna "Suspeita de Cópia" (`suspeita-copia-discursiva.js`, `suspeita-copia.css`; o painel passa `aoMudar` para a coluna em `progresso-turma-global.js`) | ✅ Concluído | 2026-10-14 14:41 | `node --check` nos 2 JS; confirmação no popup antes de gravar |
+| 133.5 | Aceite do usuário (testar o botão logado como professor) | 👀 Aguardando o usuário | — | — |

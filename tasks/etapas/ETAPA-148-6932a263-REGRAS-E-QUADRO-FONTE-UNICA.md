@@ -8,7 +8,7 @@ sentido ou duplicada" → "todos, incluindo o CLAUDE.md global" → "B, fonte ú
 coloque nesta pasta: `.claude/rules/tasks`".
 **Objetivo:** regras sem contradição nem repetição, e cada informação de uma tarefa anotada em um
 lugar só (arquivos do repositório), com as regras de tarefas reutilizáveis em `.claude/rules/tasks/`.
-**Próximo passo:** 148.13 — aceite do usuário.
+**Próximo passo:** 29.13 — aceite do usuário.
 
 > Plano desta tarefa grande = esta etapa (decisão do usuário: sem plano separado em `docs/`).
 
@@ -53,7 +53,7 @@ regras (`AGENTS.md` × `docs/HISTORICO-REGRAS.md`); skill `proxima-task` em 2 c�
 `STATUS.md` na raiz × `tasks/STATUS.md`; pergunta do log citando o `aulasenai`; regras só deste
 projeto (faixa ENSALADO, caminhos do `apostila.js`); plano em `docs/` × plano na etapa.
 
-### Decisões do usuário (148.2 — todas pela opção recomendada, 2026-10-13 10:19)
+### Decisões do usuário (29.2 — todas pela opção recomendada, 2026-10-13 10:19)
 
 | # | Pergunta | Decidido |
 |---|----------|----------|
@@ -66,19 +66,19 @@ projeto (faixa ENSALADO, caminhos do `apostila.js`); plano em `docs/` × plano n
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 148.1 | Revisão das 20 regras, diagnóstico e plano (esta etapa) | ✅ Concluído | 2026-10-13 10:11 | Caminhos citados conferidos no repositório |
-| 148.2 | Decisões D1 a D4 do usuário | ✅ Concluído | 2026-10-13 10:19 | Respostas no chat: as 4 recomendadas |
-| 148.3 | Criar `.claude/rules/tasks/` (quadro, ciclo da task, frentes e reserva, gestão) e tirar de `.claude/rules/` o que foi para lá | ✅ Concluído | 2026-10-13 10:21 | 3 arquivos em tasks/ (3,7 KB, 2,3 KB, 3,4 KB); 4 removidos; multiplas-ias 1,1 KB |
-| 148.4 | Corrigir os itens 1 a 12 e as duplicações nas demais regras, `INDEX.md` e `AGENTS.md` | ✅ Concluído | 2026-10-13 10:23 | grep: nenhuma referência a arquivo apagado; maior regra 3,7 KB; extra: gabarito no Git×site (git-quick, security-banco) e GEMINI.md → AGENTS.md |
-| 148.5 | Migrar o quadro: `STATUS.md` como índice; blocos do `TASKS.md` para o cabeçalho das etapas (etapa nova para tarefa sem etapa); apagar `TASKS.md`; recado em `RECADOS.md` | ✅ Concluído | 2026-10-13 10:30 | STATUS.md índice (frentes 4 colunas, tarefas 7 colunas, sem ⏳); 8 etapas novas (149–156); cabeçalho/pedido em 10 etapas; 51 itens 👀; TASKS.md apagado; recado em RECADOS.md |
-| 148.6 | Fila do banco conforme D1 (página, menu, `tasks/fila/`, script, `docs/regras/tarefas-agendadas.md`, sub-tasks da #25 como itens da Etapa 143) | ✅ Concluído | 2026-10-13 10:32 | 22 sub-tasks → itens 143.3–143.24 com o texto; #24 cancelada (142.5 ⛔); 140.6/140.7 sem fila; página, 3 JS, CSS, script e tasks/fila/ apagados; menu sem TASKS (node --check ok); tarefas-agendadas.md reescrita; database.md e relatório com aviso |
-| 148.7 | Visualizador: ler `.claude/rules/tasks/`, quadro sem `TASKS.md`, pendências do usuário pelos itens 👀 das etapas; regenerar | ✅ Concluído | 2026-10-13 10:34 | py_compile e node --check ok; gerado: 91 seções, 24 tarefas, 6 frentes, 64 itens 👀; tasks/ na categoria certa; nenhuma regra em 'Outros' |
-| 148.8 | Skill `proxima-task` (projeto e global) lendo o próximo passo da etapa | ✅ Concluído | 2026-10-13 10:34 | SKILL.md lê o próximo passo da etapa (link da coluna Tarefa (etapa)); cópia global igual (diff) |
-| 148.9 | `docs/regras/*.md`, `docs/HISTORICO-REGRAS.md`, `.claude/memory/MEMORY.md` sem referências antigas | ✅ Concluído | 2026-10-13 10:35 | 8 cabeçalhos de docs/regras → AGENTS.md + HISTORICO; menções a TASKS.md e plano em docs/ trocadas; HISTORICO com cabeçalho único e entrada nova; MEMORY.md só aponta (regras 'sem sugestões' → AGENTS.md e 'apagar em massa' → security-banco.md); grep sem referência aos 4 arquivos apagados |
-| 148.10 | `CLAUDE.md` global (backup antes) | ✅ Concluído | 2026-10-13 10:37 | Backup em scratchpad; global 688 → 531 linhas: quadro com/sem tasks/, plano na etapa, push e worktree conforme o projeto, constantes/formatador, apostilas e ENSALADO só no projeto, log sem exemplo; CLAUDE-DOCS-BEFORE-EVERY-TASK.md com exceção; grep das contradições = 0 |
-| 148.11 | Conferência final | ✅ Concluído | 2026-10-13 10:39 | Nenhuma regra > 5 KB; grep sem referência antiga em regra viva; py_compile e node --check ok; linhas novas ≤ 100 caracteres; skill documentacao-padrao com a exceção do quadro; 7 pendências no STATUS.md |
-| 148.12 | Commit + push + quadro | ✅ Concluído | 2026-10-13 10:39 | 2 commits na `main`: `d55965a` (só as 36 exclusões: o `git add --pathspec-from-file` parou num arquivo já apagado) + o commit com o restante |
-| 148.13 | Aceite do usuário: conferir `.claude/rules/` (inclusive `tasks/`), o quadro novo (`tasks/STATUS.md` + etapas, sem `TASKS.md`), a fila desativada e o `CLAUDE.md` global | 👀 Aguardando o usuário | — | — |
+| 29.1 | Revisão das 20 regras, diagnóstico e plano (esta etapa) | ✅ Concluído | 2026-10-13 10:11 | Caminhos citados conferidos no repositório |
+| 29.2 | Decisões D1 a D4 do usuário | ✅ Concluído | 2026-10-13 10:19 | Respostas no chat: as 4 recomendadas |
+| 29.3 | Criar `.claude/rules/tasks/` (quadro, ciclo da task, frentes e reserva, gestão) e tirar de `.claude/rules/` o que foi para lá | ✅ Concluído | 2026-10-13 10:21 | 3 arquivos em tasks/ (3,7 KB, 2,3 KB, 3,4 KB); 4 removidos; multiplas-ias 1,1 KB |
+| 29.4 | Corrigir os itens 1 a 12 e as duplicações nas demais regras, `INDEX.md` e `AGENTS.md` | ✅ Concluído | 2026-10-13 10:23 | grep: nenhuma referência a arquivo apagado; maior regra 3,7 KB; extra: gabarito no Git×site (git-quick, security-banco) e GEMINI.md → AGENTS.md |
+| 29.5 | Migrar o quadro: `STATUS.md` como índice; blocos do `TASKS.md` para o cabeçalho das etapas (etapa nova para tarefa sem etapa); apagar `TASKS.md`; recado em `RECADOS.md` | ✅ Concluído | 2026-10-13 10:30 | STATUS.md índice (frentes 4 colunas, tarefas 7 colunas, sem ⏳); 8 etapas novas (149–156); cabeçalho/pedido em 10 etapas; 51 itens 👀; TASKS.md apagado; recado em RECADOS.md |
+| 29.6 | Fila do banco conforme D1 (página, menu, `tasks/fila/`, script, `docs/regras/tarefas-agendadas.md`, sub-tasks da #25 como itens da Etapa 143) | ✅ Concluído | 2026-10-13 10:32 | 22 sub-tasks → itens 143.3–143.24 com o texto; #24 cancelada (142.5 ⛔); 140.6/140.7 sem fila; página, 3 JS, CSS, script e tasks/fila/ apagados; menu sem TASKS (node --check ok); tarefas-agendadas.md reescrita; database.md e relatório com aviso |
+| 29.7 | Visualizador: ler `.claude/rules/tasks/`, quadro sem `TASKS.md`, pendências do usuário pelos itens 👀 das etapas; regenerar | ✅ Concluído | 2026-10-13 10:34 | py_compile e node --check ok; gerado: 91 seções, 24 tarefas, 6 frentes, 64 itens 👀; tasks/ na categoria certa; nenhuma regra em 'Outros' |
+| 29.8 | Skill `proxima-task` (projeto e global) lendo o próximo passo da etapa | ✅ Concluído | 2026-10-13 10:34 | SKILL.md lê o próximo passo da etapa (link da coluna Tarefa (etapa)); cópia global igual (diff) |
+| 29.9 | `docs/regras/*.md`, `docs/HISTORICO-REGRAS.md`, `.claude/memory/MEMORY.md` sem referências antigas | ✅ Concluído | 2026-10-13 10:35 | 8 cabeçalhos de docs/regras → AGENTS.md + HISTORICO; menções a TASKS.md e plano em docs/ trocadas; HISTORICO com cabeçalho único e entrada nova; MEMORY.md só aponta (regras 'sem sugestões' → AGENTS.md e 'apagar em massa' → security-banco.md); grep sem referência aos 4 arquivos apagados |
+| 29.10 | `CLAUDE.md` global (backup antes) | ✅ Concluído | 2026-10-13 10:37 | Backup em scratchpad; global 688 → 531 linhas: quadro com/sem tasks/, plano na etapa, push e worktree conforme o projeto, constantes/formatador, apostilas e ENSALADO só no projeto, log sem exemplo; CLAUDE-DOCS-BEFORE-EVERY-TASK.md com exceção; grep das contradições = 0 |
+| 29.11 | Conferência final | ✅ Concluído | 2026-10-13 10:39 | Nenhuma regra > 5 KB; grep sem referência antiga em regra viva; py_compile e node --check ok; linhas novas ≤ 100 caracteres; skill documentacao-padrao com a exceção do quadro; 7 pendências no STATUS.md |
+| 29.12 | Commit + push + quadro | ✅ Concluído | 2026-10-13 10:39 | 2 commits na `main`: `d55965a` (só as 36 exclusões: o `git add --pathspec-from-file` parou num arquivo já apagado) + o commit com o restante |
+| 29.13 | Aceite do usuário: conferir `.claude/rules/` (inclusive `tasks/`), o quadro novo (`tasks/STATUS.md` + etapas, sem `TASKS.md`), a fila desativada e o `CLAUDE.md` global | 👀 Aguardando o usuário | — | — |
 
 ### Riscos
 

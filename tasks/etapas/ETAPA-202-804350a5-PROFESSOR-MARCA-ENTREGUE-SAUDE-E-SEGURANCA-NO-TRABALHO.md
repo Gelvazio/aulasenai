@@ -5,7 +5,7 @@
 direito, somente a pasta AGENDA_COLABORADOR nao e curso" (criada pela #45, etapa 172-0ef7953a)
 **Objetivo:** o professor marca como entregue a atividade de um aluno nas páginas desta matéria,
 como na #45 (etapa 172-0ef7953a), que já traz a função do banco e o botão.
-**Próximo passo:** 202.1 — conferir as páginas de atividade da matéria (`MATERIAIS/TECNICO-INFORMATICA-INTERNET/SAUDE-E-SEGURANCA-NO-TRABALHO/ATIVIDADES/`)
+**Próximo passo:** 75.1 — conferir as páginas de atividade da matéria (`MATERIAIS/TECNICO-INFORMATICA-INTERNET/SAUDE-E-SEGURANCA-NO-TRABALHO/ATIVIDADES/`)
 e o nome do atributo na etapa 172-0ef7953a.
 
 ### Páginas
@@ -16,5 +16,5 @@ Conferir a lista de novo ao começar (página nova ou removida desde então).
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 202.1 | Pôr `data-marcar-entregue="sim"` no `<body>` de cada página de atividade da matéria (sem página → ⛔ até existir) | ⬜ Pendente | — | Atributo presente em todas (busca no código) |
-| 202.2 | Aceite do usuário (testar como professor) | ⬜ Pendente | — | — |
+| 75.1 | Pôr `data-marcar-entregue="sim"` no `<body>` de cada página de atividade da matéria (sem página → ⛔ até existir) | ⬜ Pendente | — | Atributo presente em todas (busca no código) |
+| 75.2 | Aceite do usuário (testar como professor) | ⬜ Pendente | — | — |

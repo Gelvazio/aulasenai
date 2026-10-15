@@ -9,7 +9,7 @@ acima"
 "Entregar", nas atividades objetivas e práticas. Agora só nas páginas de Testes de Front-End; as
 demais matérias de todos os cursos de `MATERIAIS/` (menos `AGENDA_COLABORADOR`, que não é curso)
 ficam nas tarefas #46 a #79 (etapas 173 a 206), uma por matéria.
-**Próximo passo:** 172.8 — aguardar o aceite do usuário (testar como professor).
+**Próximo passo:** 45.8 — aguardar o aceite do usuário (testar como professor).
 
 ### Respostas do usuário (2026-10-14)
 
@@ -59,12 +59,12 @@ ficam nas tarefas #46 a #79 (etapas 173 a 206), uma por matéria.
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 172.1 | Respostas do usuário e aprovação do plano | ✅ Concluído | 2026-10-14 10:20 | Respostas 1–7 acima; plano aprovado: "sim, pode seguir" |
-| 172.2 | Seed do banco: coluna `entregue_por`, `professor_marcar_entregue`, `professor_desmarcar_entregue`, `resumo_tentativas_atividade` | ✅ Concluído | 2026-10-14 10:25 | Migração aplicada pelo conector; consultas: coluna entregue_por (uuid, nula), 3 funções com EXECUTE só para authenticated (anon revogado), tentativa_atual_do_aluno sem acesso pela API; resumo com entregue_por. Esquema não entra no SEEDS-APLICADOS.md (registro só dos seeds de atividades) |
-| 172.3 | Módulo `marcar-entregue-professor.js` + CSS | ✅ Concluído | 2026-10-14 10:27 | `node --check` ok; linhas ≤ 100; funções ≤ 45 linhas, documentadas |
-| 172.4 | Ligar o módulo na tabela "Respostas dos alunos" (objetivas) | ✅ Concluído | 2026-10-14 10:28 | `node --check` ok; respostas-atividade-professor.js com 988 linhas; módulo carregado por respostas-atividade.js só com o atributo |
-| 172.5 | Ligar o módulo no "Progresso da turma" (práticas), com os alunos que não começaram | ✅ Concluído | 2026-10-14 10:30 | `node --check` ok (progresso-turma-global.js 602 linhas, progresso-turma-fontes.js, alunos-sem-inicio-entrega.js novo); funções ≤ 45 linhas; linhas novas ≤ 100 |
-| 172.6 | `data-marcar-entregue="sim"` nas 10 páginas de Testes de Front-End | ✅ Concluído | 2026-10-14 10:30 | Busca no código: 10 páginas com data-marcar-entregue="sim" (5 ATIVIDADES-AULA-NN-50-QUESTOES + 5 ATIVIDADE-PRATICA-AULA-NN); index.html fora (não é atividade) |
-| 172.7 | Documentação (`database.md`, relatório HTML, `regras/atividades.md`) | ✅ Concluído | 2026-10-14 10:31 | Leitura: docs/database.md (seção 2026-10-14), relatorio_verificacao_database.html (seção + linha da entrega_atividade), docs/regras/atividades.md (Professor dentro da atividade) |
-| 172.8 | Aceite do usuário (testar como professor: marcar, desfazer, aluno que nunca abriu, prática) | 👀 Aguardando o usuário | — | Testar como professor: marcar, desfazer, aluno que nunca abriu, prática |
-| 172.9 | Ajuste pedido no aceite: coluna Ações sem barra de rolagem ("ESTA COM BARRA DE ROLAGEM, AJUSTE") — botões quebram linha dentro da coluna | ✅ Concluído | 2026-10-14 10:38 | Leitura do CSS: `.relatorio-professor__acoes` com `flex-wrap: wrap` e `__acao` com quebra; teste na tela fica no aceite 172.8 |
+| 45.1 | Respostas do usuário e aprovação do plano | ✅ Concluído | 2026-10-14 10:20 | Respostas 1–7 acima; plano aprovado: "sim, pode seguir" |
+| 45.2 | Seed do banco: coluna `entregue_por`, `professor_marcar_entregue`, `professor_desmarcar_entregue`, `resumo_tentativas_atividade` | ✅ Concluído | 2026-10-14 10:25 | Migração aplicada pelo conector; consultas: coluna entregue_por (uuid, nula), 3 funções com EXECUTE só para authenticated (anon revogado), tentativa_atual_do_aluno sem acesso pela API; resumo com entregue_por. Esquema não entra no SEEDS-APLICADOS.md (registro só dos seeds de atividades) |
+| 45.3 | Módulo `marcar-entregue-professor.js` + CSS | ✅ Concluído | 2026-10-14 10:27 | `node --check` ok; linhas ≤ 100; funções ≤ 45 linhas, documentadas |
+| 45.4 | Ligar o módulo na tabela "Respostas dos alunos" (objetivas) | ✅ Concluído | 2026-10-14 10:28 | `node --check` ok; respostas-atividade-professor.js com 988 linhas; módulo carregado por respostas-atividade.js só com o atributo |
+| 45.5 | Ligar o módulo no "Progresso da turma" (práticas), com os alunos que não começaram | ✅ Concluído | 2026-10-14 10:30 | `node --check` ok (progresso-turma-global.js 602 linhas, progresso-turma-fontes.js, alunos-sem-inicio-entrega.js novo); funções ≤ 45 linhas; linhas novas ≤ 100 |
+| 45.6 | `data-marcar-entregue="sim"` nas 10 páginas de Testes de Front-End | ✅ Concluído | 2026-10-14 10:30 | Busca no código: 10 páginas com data-marcar-entregue="sim" (5 ATIVIDADES-AULA-NN-50-QUESTOES + 5 ATIVIDADE-PRATICA-AULA-NN); index.html fora (não é atividade) |
+| 45.7 | Documentação (`database.md`, relatório HTML, `regras/atividades.md`) | ✅ Concluído | 2026-10-14 10:31 | Leitura: docs/database.md (seção 2026-10-14), relatorio_verificacao_database.html (seção + linha da entrega_atividade), docs/regras/atividades.md (Professor dentro da atividade) |
+| 45.8 | Aceite do usuário (testar como professor: marcar, desfazer, aluno que nunca abriu, prática) | 👀 Aguardando o usuário | — | Testar como professor: marcar, desfazer, aluno que nunca abriu, prática |
+| 45.9 | Ajuste pedido no aceite: coluna Ações sem barra de rolagem ("ESTA COM BARRA DE ROLAGEM, AJUSTE") — botões quebram linha dentro da coluna | ✅ Concluído | 2026-10-14 10:38 | Leitura do CSS: `.relatorio-professor__acoes` com `flex-wrap: wrap` e `__acao` com quebra; teste na tela fica no aceite 45.8 |

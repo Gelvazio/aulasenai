@@ -6,6 +6,7 @@
 
 | Versão (data e hora) | O que mudou |
 |---|---|
+| 2026-10-14 21:11 | **Itens numerados pela tarefa (tarefa #167):** os itens das etapas passam de `NNN.x` (número da etapa) para `N.x` (número da tarefa). Renumeradas 157 etapas com tarefa; tarefas com duas etapas (#131, #154) seguem numeração contínua. Etapas antigas sem tarefa ficam como estão. `quadro.md` atualizado. |
 | 2026-10-14 20:48 | **Nota do professor no Progresso (tarefa #163):** na discursiva, a coluna "Nota final" do Progresso da turma mostra a nota confirmada pelo professor (🎓) quando a prova está corrigida; antes mostrava só a sugestão da IA. Em `docs/regras/atividades.md`. |
 | 2026-10-14 20:45 | **Card de entrega com alerta (tarefa #164):** aluno que já entregou a discursiva vê "Atividade já entregue! Aguarde a correção!" (ou "Atividade Corrigida, veja sua nota no início!" com a nota visível) no lugar do botão. Em `docs/regras/atividades.md`. |
 | 2026-10-14 20:20 | **Todo pedido vira TASK publicada e assumida (tarefa #149):** a ordem é criar a TASK, publicar no quadro (commit + push) e assumir (reserva, commit + push) antes de trabalhar; vale para todas as IAs. Em `AGENTS.md` (regra 1) e `.claude/rules/tasks/ciclo-da-task.md`. |

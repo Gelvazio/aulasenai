@@ -14,7 +14,7 @@ prática já faz) — recurso global no `atividade.js`, vale para todas as objet
 - **Objetiva:** a nota já aparece. Depois de entregar, o topo da página mostra o cartão
   **"RESULTADO — Sua nota: X (Nª tentativa)"** com "N acertos em M questões" e se atingiu o 7
   (`mostrarResultadoNoInicio` em `assets/js/respostas-atividade.js`; também no aviso da entrega).
-  Não depende da liberação do gabarito. Falta só o ✅/❌ por questão depois da liberação (209.4b).
+  Não depende da liberação do gabarito. Falta só o ✅/❌ por questão depois da liberação (82.4b).
 - **Prática/discursiva:** depois da liberação, mostra **"🎓 Sua nota"** (`notas_media_final`) e o
   selo de cada tópico (`assets/js/resultado-aluno-discursiva.js`); antes da correção, "⏳ Sua nota
   ainda está aguardando a correção do professor".
@@ -99,7 +99,7 @@ ERROU,NAO TEM COMO ELE FICAR COM NOTA MENOR QUE A TENTATIVA ANTERIOR"
 | PDF levar a resposta certa | O PDF só lê tabelas do próprio aluno; não chama `solicitar_gabarito` |
 | Chamar `solicitar_gabarito` antes da liberação grava pedido em `tentativaacessogabarito` | Checar antes com `aluno_pode_ver_gabarito` |
 | Páginas práticas sem jsPDF | Carregar o jsPDF do cdnjs (mesma versão 2.5.1) só ao clicar |
-| Sem navegador para validar | `node --check` + leitura; teste na tela fica no aceite (209.6) |
+| Sem navegador para validar | `node --check` + leitura; teste na tela fica no aceite (82.6) |
 
 ### Decisões
 
@@ -110,11 +110,11 @@ ERROU,NAO TEM COMO ELE FICAR COM NOTA MENOR QUE A TENTATIVA ANTERIOR"
 
 | Item | Descrição | Status | Concluído em | Verificação |
 |------|-----------|--------|--------------|-------------|
-| 209.1 | Respostas do usuário às perguntas acima | ✅ Concluído | 2026-10-14 10:47 | Respostas registradas acima (4 corrigida pelo usuário: última tentativa) |
-| 209.2 | Plano na etapa (escopo, riscos, banco/RLS) + aprovação do usuário | ✅ Concluído | 2026-10-14 10:49 | Aprovação: "SIM, PODE SEGUIR" |
-| 209.3 | Recurso global (módulo JS + CSS + o que o banco precisar), ligado por atributo no `<body>` | ✅ Concluído | 2026-10-14 10:55 | `node --check` ok em exportar-meu-gabarito.js, exportar-meu-gabarito-pdf.js, meu-gabarito-objetiva.js, meu-gabarito-discursiva.js, respostas-atividade.js (824 linhas) e avaliacao-discursiva.js (784); linhas novas ≤ 100; funções ≤ 45 e documentadas; banco consultado: tabelas, RLS e funções já cobrem (sem SQL) |
-| 209.4 | Ligar nas páginas de Testes de Front-End | ✅ Concluído | 2026-10-14 10:55 | Busca no código: 10 páginas com data-exportar-meu-gabarito="sim" (5 objetivas + 5 práticas) |
-| 209.4b | Objetiva após liberar gabaritos: marcar acerto/erro de cada questão na página do aluno (global, como a prática), mantendo o cartão da nota | ✅ Concluído | 2026-10-14 10:55 | `node --check` ok em correcao-objetiva-aluno.js; consulta: aluno_pode_ver_gabarito e solicitar_gabarito executáveis por authenticated; CSS em respostas-atividade.css |
-| 209.5 | Documentação (`docs/regras/atividades.md`, `docs/database.md` se mudar o banco) | ✅ Concluído | 2026-10-14 10:55 | Leitura: 2 tópicos novos em docs/regras/atividades.md (seção do gabarito) + linha no docs/HISTORICO-REGRAS.md; banco sem mudança (database.md igual) |
-| 209.7 | Correção: botão não aparecia no site ("N ESTA APARECENDO O BOTAO NA AULA 01") — o `.vercelignore` tira do ar todo arquivo com "gabarito" no nome; arquivos renomeados para `botao-minhas-respostas.js`, `pdf-minhas-respostas.js`, `minhas-respostas-objetiva.js`, `minhas-respostas-discursiva.js` e `css/minhas-respostas.css` | ✅ Concluído | 2026-10-14 11:00 | curl no site: os arquivos antigos davam 404; `node --check` ok nos renomeados; nenhuma referência ao nome antigo |
-| 209.6 | Aceite do usuário (testar como aluno: antes e depois de entregar; objetiva antes e depois da liberação) | ✅ Concluído | 2026-10-14 11:10 | Aceite do usuário: "AGORA APARECEU, OK" |
+| 82.1 | Respostas do usuário às perguntas acima | ✅ Concluído | 2026-10-14 10:47 | Respostas registradas acima (4 corrigida pelo usuário: última tentativa) |
+| 82.2 | Plano na etapa (escopo, riscos, banco/RLS) + aprovação do usuário | ✅ Concluído | 2026-10-14 10:49 | Aprovação: "SIM, PODE SEGUIR" |
+| 82.3 | Recurso global (módulo JS + CSS + o que o banco precisar), ligado por atributo no `<body>` | ✅ Concluído | 2026-10-14 10:55 | `node --check` ok em exportar-meu-gabarito.js, exportar-meu-gabarito-pdf.js, meu-gabarito-objetiva.js, meu-gabarito-discursiva.js, respostas-atividade.js (824 linhas) e avaliacao-discursiva.js (784); linhas novas ≤ 100; funções ≤ 45 e documentadas; banco consultado: tabelas, RLS e funções já cobrem (sem SQL) |
+| 82.4 | Ligar nas páginas de Testes de Front-End | ✅ Concluído | 2026-10-14 10:55 | Busca no código: 10 páginas com data-exportar-meu-gabarito="sim" (5 objetivas + 5 práticas) |
+| 82.4b | Objetiva após liberar gabaritos: marcar acerto/erro de cada questão na página do aluno (global, como a prática), mantendo o cartão da nota | ✅ Concluído | 2026-10-14 10:55 | `node --check` ok em correcao-objetiva-aluno.js; consulta: aluno_pode_ver_gabarito e solicitar_gabarito executáveis por authenticated; CSS em respostas-atividade.css |
+| 82.5 | Documentação (`docs/regras/atividades.md`, `docs/database.md` se mudar o banco) | ✅ Concluído | 2026-10-14 10:55 | Leitura: 2 tópicos novos em docs/regras/atividades.md (seção do gabarito) + linha no docs/HISTORICO-REGRAS.md; banco sem mudança (database.md igual) |
+| 82.7 | Correção: botão não aparecia no site ("N ESTA APARECENDO O BOTAO NA AULA 01") — o `.vercelignore` tira do ar todo arquivo com "gabarito" no nome; arquivos renomeados para `botao-minhas-respostas.js`, `pdf-minhas-respostas.js`, `minhas-respostas-objetiva.js`, `minhas-respostas-discursiva.js` e `css/minhas-respostas.css` | ✅ Concluído | 2026-10-14 11:00 | curl no site: os arquivos antigos davam 404; `node --check` ok nos renomeados; nenhuma referência ao nome antigo |
+| 82.6 | Aceite do usuário (testar como aluno: antes e depois de entregar; objetiva antes e depois da liberação) | ✅ Concluído | 2026-10-14 11:10 | Aceite do usuário: "AGORA APARECEU, OK" |
