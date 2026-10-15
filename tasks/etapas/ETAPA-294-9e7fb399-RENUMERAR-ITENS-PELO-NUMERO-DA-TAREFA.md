@@ -27,6 +27,6 @@
 | 167.2 | Renumerar os itens das 157 etapas com tarefa (N.x) e as duas tarefas repetidas | ✅ Concluído | 2026-10-14 21:11 | conferir por script: nenhum `NNN.x` com número de etapa restante nas etapas com tarefa |
 | 167.3 | Atualizar `quadro.md` (modelo `N.x`) e `docs/HISTORICO-REGRAS.md` | ✅ Concluído | 2026-10-14 21:11 | leitura do arquivo |
 | 167.4 | Conferir: sem código repetido dentro de uma tarefa; referências internas corretas | ✅ Concluído | 2026-10-14 21:11 | script e amostra lida à mão |
-| 167.5 | Auditoria independente da renumeração (workflow de revisão) | ⬜ Pendente | — | relatório da auditoria |
+| 167.5 | Auditoria independente da renumeração (workflow de revisão) | 🔄 Em progresso | — | relatório da auditoria |
 | 167.6 | Regenerar o visualizador `.claude/rules/index.html` e fazer commit + push | ⬜ Pendente | — | `git log` |
 | 167.7 | Aceite do usuário | 👀 Aguardando o usuário | — | — |
