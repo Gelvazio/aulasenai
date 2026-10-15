@@ -40,7 +40,10 @@ o usuário acrescentou os blocos de sábado 03-10, 10-10 e 16-10 com `[IA DEVE .
 **Pedido:** "REVEJA OS CALCULOS DE NOVO" (2026-10-15) — o usuário trocou os modelos 22-09 e
 24-09 por dias com horários e `[IA DEVE ...]` e acrescentou o sábado 26-09.
 
-**Próximo passo:** preencher 22-09, 24-09 e 26-09 e reconferir todos os sábados.
+**Próximo passo:** 👀 o usuário confere 22-09, 24-09 e o sábado 26-09.
 
 - **Nível:** LEVE — só um `.txt`, contas de horário.
 - **Critérios de aceitação:** nenhum `[IA DEVE ...]` sobrando; sábados batendo com a soma da semana.
+- **Entrega:** 22-09 e 24-09 = 4:10 (2:00 no dia + 2:10 no sábado); sábado 26-09 = 4:20
+  (08:00–12:20). Demais sábados reconferidos sem mudança (03-10 3:30, 10-10 1:00, 16-10 0:00) ·
+  **Verificação:** script recalculou todos os dias e somas semanais; `grep "IA DEVE"` = 0.
