@@ -52,6 +52,12 @@ página avulsa sai.
 - 2026-10-16 09:38 — usuário: página avulsa sai; **1 atividade discursiva** com correção por IA;
   as objetivas viram discursivas.
 
+### #191.1 — Plano na etapa e aprovação do usuário
+
+**Próximo passo:** 👀 o usuário aprova (ou corrige) o plano acima (Escopo, Riscos e subtarefas).
+
+- **Nível:** PESADO — banco (atividade, tópicos, seed) e gabarito/padrão de resposta.
+
 ### #191.2 — Fonte e gabarito em Markdown (20 questões)
 
 **Próximo passo:** aguardando a aprovação do plano (#191.1).
@@ -81,9 +87,3 @@ página avulsa sai.
 **Próximo passo:** 👀 o usuário libera a atividade no card da Aula 04 e confere a página.
 
 - **Nível:** LEVE — conferência do usuário.
-
-### #191.1 — Plano na etapa e aprovação do usuário
-
-**Próximo passo:** 👀 o usuário aprova (ou corrige) o plano abaixo.
-
-- **Nível:** PESADO — banco (atividade, tópicos, seed) e gabarito/padrão de resposta.
