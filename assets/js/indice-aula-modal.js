@@ -127,8 +127,9 @@ function montarFormularioModalAula() {
 
 /**
  * Monta a barra de botões do topo do modal (pedido de 2026-10-16, #214), nesta ordem: Salvar,
- * Fechar, Excluir aula (só administrador), Gerenciar atividades e Nova atividade nesta aula.
- * O Salvar fica fora do formulário e o envia pelo atributo form.
+ * Excluir aula (só administrador), Gerenciar atividades, Nova atividade nesta aula e, encostado
+ * à direita e vermelho, Fechar (#216). O Salvar fica fora do formulário e o envia pelo atributo
+ * form.
  * @returns {{barra: HTMLElement, botaoExcluir: HTMLElement}} Barra e o botão de excluir.
  */
 function montarBarraModalAula() {
@@ -137,9 +138,10 @@ function montarBarraModalAula() {
     salvar.setAttribute('form', ID_FORMULARIO_MODAL_AULA);
     const botaoExcluir = criarBotaoModalAula('🗑️ Excluir aula', 'aula-excluir-botao',
         'excluir-aula');
-    barra.append(salvar, criarBotaoModalAula('✕ Fechar', '', 'fechar'), botaoExcluir,
+    barra.append(salvar, botaoExcluir,
         criarBotaoModalAula('🔗 Gerenciar atividades', '', 'gerenciar-atividades'),
-        criarBotaoModalAula('➕ Nova atividade nesta aula', '', 'nova-atividade'));
+        criarBotaoModalAula('➕ Nova atividade nesta aula', '', 'nova-atividade'),
+        criarBotaoModalAula('✕ Fechar', 'aula-modal-fechar', 'fechar'));
     return { barra, botaoExcluir };
 }
 

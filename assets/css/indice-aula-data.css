@@ -8,6 +8,8 @@
     --aula-excluir-fundo: #fdecec;
     --aula-excluir-borda: #c53030;
     --aula-excluir-texto: #9b2c2c;
+    --aula-fechar-fundo: #c53030;
+    --aula-fechar-texto: #ffffff;
 }
 
 .aula-data-botao {
@@ -56,6 +58,14 @@
 /* Barra de botões no topo do "Editar aula" (#214): Salvar, Fechar, Excluir aula, Gerenciar
    atividades e Nova atividade nesta aula. */
 .aula-modal-barra { margin: 8px 0 4px; }
+
+/* "✕ Fechar" do "Editar aula": vermelho e encostado à direita da barra (#216). */
+.crud-btn.aula-modal-fechar {
+    margin-left: auto;
+    background: var(--aula-fechar-fundo);
+    border-color: var(--aula-fechar-fundo);
+    color: var(--aula-fechar-texto);
+}
 
 /* Exclusão lógica da aula (só Professor Administrador): card escondido para todos. */
 .aula.aula--excluida { display: none; }

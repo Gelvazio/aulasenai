@@ -20,7 +20,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 |---|---|---|---|
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
 | local · main · s15 | #212.4 ([339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md)) e #211.5 ([338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md)) aguardam o seu aceite | 👀 Aguardando o usuário | 2026-10-16 20:00 |
-| local · main · s14 | #216.1 ([343-f3fd9792](etapas/ETAPA-343-f3fd9792-FECHAR-VERMELHO-A-DIREITA-NO-EDITAR-AULA.md)) em execução; #215.2, #214.2, #213.2 e #210.3 aguardam o seu aceite; #209.7 aguarda o usuário apagar o bucket vazio | 🔄 Ativa | 2026-10-16 19:59 |
+| local · main · s14 | #216.2 ([343-f3fd9792](etapas/ETAPA-343-f3fd9792-FECHAR-VERMELHO-A-DIREITA-NO-EDITAR-AULA.md)), #215.2, #214.2, #213.2 e #210.3 aguardam o seu aceite; #209.7 aguarda o usuário apagar o bucket vazio | 👀 Aguardando o usuário | 2026-10-16 19:59 |
 | local · main · s12 | #206.4 passou para a frente s14 a pedido do usuário | ⏹️ Encerrada | 2026-10-16 18:11 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
 | nuvem · claude/festive-maxwell-25jnhl | #21 ([135-eeefc710](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md)); a #20 passou para a frente verificar-status-pastas em 2026-10-10 16:27 | 🔄 Ativa | 2026-10-09 21:27 |
@@ -290,9 +290,8 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #214.2 | Aceite do usuário | 🟠 Alta | #214.1 | 👀 Aguardando o usuário | — | [341-084973bf](etapas/ETAPA-341-084973bf-BOTOES-DO-EDITAR-AULA-NO-TOPO.md) |
 | #215-50bf759c-296e-4d85-b6c8-e847615e12e2 | **"Editar aula" sem barra de rolagem na caixa** | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [342-50bf759c](etapas/ETAPA-342-50bf759c-EDITAR-AULA-SEM-ROLAGEM-NA-CAIXA.md) |
 | #215.2 | Aceite do usuário | 🟠 Alta | #215.1 | 👀 Aguardando o usuário | — | [342-50bf759c](etapas/ETAPA-342-50bf759c-EDITAR-AULA-SEM-ROLAGEM-NA-CAIXA.md) |
-| #216-f3fd9792-556c-48bc-9853-f3129d18157f | **"Fechar" vermelho e à direita no "Editar aula"** | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [343-f3fd9792](etapas/ETAPA-343-f3fd9792-FECHAR-VERMELHO-A-DIREITA-NO-EDITAR-AULA.md) |
-| #216.1 | Fechar vermelho à direita (LEVE) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s14) (desde 2026-10-16 19:59) | [343-f3fd9792](etapas/ETAPA-343-f3fd9792-FECHAR-VERMELHO-A-DIREITA-NO-EDITAR-AULA.md) |
-| #216.2 | Aceite do usuário | 🟠 Alta | #216.1 | ⬜ Pendente | — | [343-f3fd9792](etapas/ETAPA-343-f3fd9792-FECHAR-VERMELHO-A-DIREITA-NO-EDITAR-AULA.md) |
+| #216-f3fd9792-556c-48bc-9853-f3129d18157f | **"Fechar" vermelho e à direita no "Editar aula"** | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [343-f3fd9792](etapas/ETAPA-343-f3fd9792-FECHAR-VERMELHO-A-DIREITA-NO-EDITAR-AULA.md) |
+| #216.2 | Aceite do usuário | 🟠 Alta | #216.1 | 👀 Aguardando o usuário | — | [343-f3fd9792](etapas/ETAPA-343-f3fd9792-FECHAR-VERMELHO-A-DIREITA-NO-EDITAR-AULA.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.

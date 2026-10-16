@@ -7,12 +7,17 @@ direita, com fundo vermelho.
 
 ### #216.1 — Fechar vermelho à direita
 
-**Próximo passo:** ajustar `assets/js/indice-aula-modal.js` (ordem) e `assets/css/indice-aula-data.css`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** LEVE — ordem de botão e CSS, sem lógica.
+- **Entrega (2026-10-16 19:59, Opus 5.5, s14):** `indice-aula-modal.js`: barra = Salvar, Excluir aula, Gerenciar
+  atividades, Nova atividade nesta aula e, por último, ✕ Fechar (classe `aula-modal-fechar`);
+  `indice-aula-data.css`: Fechar com `margin-left: auto` (à direita) e fundo vermelho (tokens
+  `--aula-fechar-fundo` e `--aula-fechar-texto`).
+- **Verificação:** `node --check`; leitura do CSS. Sem navegador: o teste na tela é o aceite.
 
 ### #216.2 — Aceite do usuário
 
-**Próximo passo:** depende da #216.1.
+**Próximo passo:** 👀 o usuário abre o "✏️ Editar aula" e confere o Fechar vermelho à direita.
 
 - **Nível:** LEVE — conferência do usuário.

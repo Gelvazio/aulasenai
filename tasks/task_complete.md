@@ -84,3 +84,6 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #213.1 | Modal "Gerenciar atividades" (vincular / desvincular) (MEDIO) | 🟠 Alta | — | ✅ Concluído | — | [340-14f758bd](etapas/ETAPA-340-14f758bd-GERENCIAR-ATIVIDADES-DA-AULA.md) |
 | #214.1 | Barra de botões no topo do "Editar aula" (MEDIO) | 🟠 Alta | — | ✅ Concluído | — | [341-084973bf](etapas/ETAPA-341-084973bf-BOTOES-DO-EDITAR-AULA-NO-TOPO.md) |
 | #215.1 | Ajustar o CSS dos modais da aula (LEVE) | 🟠 Alta | — | ✅ Concluído | — | [342-50bf759c](etapas/ETAPA-342-50bf759c-EDITAR-AULA-SEM-ROLAGEM-NA-CAIXA.md) |
+| #212.2 | Banco: SQL do DELETE + aulas 70/71 excluídas (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md) |
+| #212.3 | Cards, arquivos e links (MEDIO) | 🟠 Alta | — | ✅ Concluído | — | [339-12542c62](etapas/ETAPA-339-12542c62-EXCLUIR-TRABALHO-EQUIPE-MANUAL-V2.md) |
+| #216.1 | Fechar vermelho à direita (LEVE) | 🟠 Alta | — | ✅ Concluído | — | [343-f3fd9792](etapas/ETAPA-343-f3fd9792-FECHAR-VERMELHO-A-DIREITA-NO-EDITAR-AULA.md) |
