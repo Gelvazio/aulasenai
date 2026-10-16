@@ -104,7 +104,11 @@ liberada, abre normalmente; o professor abre sempre; o usuário aceita.
 
 ### #209.7 — Remover o armazenamento `slides` do Supabase
 
-**Próximo passo:** aplicar `database/2026-10-16-remover-slides-storage.sql` e conferir.
+**Próximo passo:** 👀 o usuário apaga o bucket vazio no painel (Storage → slides → Delete bucket); depois a IA confere por consulta.
 
 - **Nível:** PESADO — banco e políticas do Storage.
 - **Pedido (2026-10-16 18:44):** "remova esse armazenamento do supabase", depois de o usuário perguntar quem tinha pedido o armazenamento (a forma era proposta da IA). As subtarefas #209.3 a #209.6 ficam canceladas; os PDFs continuam no site como antes.
+- **Entrega (2026-10-16 18:46):** `database/2026-10-16-remover-slides-storage.sql` aplicado pelo conector: as 4
+  políticas e a função saíram. O `delete from storage.buckets` foi recusado pelo Supabase
+  (`storage.protect_delete`: só pela API do Storage), então o bucket vazio fica para o painel.
+- **Verificação:** consulta: 0 políticas `slides_*`, 0 funções, bucket 1 (vazio, 0 arquivos).

@@ -19,7 +19,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
 | local · main · s13 | #209 concluída (#209.1; [336-c41e9a05](etapas/ETAPA-336-c41e9a05-ESTRATEGIA-ENSINO-DESAFIADORA-BANCO-DE-DADOS.md)) em execução | ⏹️ Encerrada | 2026-10-16 18:31 |
-| local · main · s14 | #209.7 ([336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md)) em execução | 🔄 Ativa | 2026-10-16 18:44 |
+| local · main · s14 | #209.7 ([336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md)) aguarda o usuário apagar o bucket vazio no painel | 👀 Aguardando o usuário | 2026-10-16 18:46 |
 | local · main · s12 | #206.4 passou para a frente s14 a pedido do usuário | ⏹️ Encerrada | 2026-10-16 18:11 |
 | local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) concluída (#202.1 a #202.5, aceite do usuário em 2026-10-16) | ⏹️ Encerrada | 2026-10-16 15:10 |
 | nuvem · claude/festive-maxwell-25jnhl | #21 ([135-eeefc710](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md)); a #20 passou para a frente verificar-status-pastas em 2026-10-10 16:27 | 🔄 Ativa | 2026-10-09 21:27 |
@@ -272,7 +272,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #205-6808b7d3-2460-47de-8321-a28e1930ce2c | **Tirar a linha "50 questões · múltipla escolha · 90–120 minutos" e o botão "Conteúdo (.md)" dos cards** | 🟡 Média | — | 👀 Aguardando aceite | — (não reservável) | [332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md) |
 | #205.2 | Aceite do usuário | 🟡 Média | #205.1 | 👀 Aguardando o usuário | — | [332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md) |
 | #209-77564f72-9786-4bff-b0e7-13af8a43abe7 | **Slides bloqueados junto com a aula (também pelo endereço do PDF)** | 🟠 Alta | — | ⛔ Cancelada pelo usuário | — (não reservável) | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
-| #209.7 | Remover do Supabase o armazenamento `slides`, a função e as políticas (PESADO) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s14) (desde 2026-10-16 18:44) | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
+| #209.7 | Remover do Supabase o armazenamento `slides`, a função e as políticas (PESADO) | 🟠 Alta | — | 👀 Aguardando o usuário | Claude Code (Opus 5.5) (local · main · s14) (desde 2026-10-16 18:44) | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
 | #209.3 | Enviar os 10 PDFs ao bucket (LEVE) | 🟠 Alta | #209.2 | ⛔ Cancelada pelo usuário | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
 | #209.4 | Links dos slides pelo link temporário e PDFs fora do site (PESADO) | 🟠 Alta | #209.3 | ⛔ Cancelada pelo usuário | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
 | #209.5 | Documentação (LEVE) | 🟠 Alta | #209.4 | ⛔ Cancelada pelo usuário | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |

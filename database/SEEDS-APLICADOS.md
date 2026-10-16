@@ -5,7 +5,7 @@ Registro de **todos** os arquivos `database/*-seed-atividades.sql` e do status d
 CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 [`CLAUDE.md`](../CLAUDE.md), seção "🌱 REGRA — SEEDS DO BANCO".** Aqui ficam só os dados.
 
-## Resumo (atualizado em 2026-10-16 18:40)
+## Resumo (atualizado em 2026-10-16 18:46)
 
 | PENDENTE | APLICADO | CONCLUÍDO | SUBSTITUÍDO | Total |
 |---|---|---|---|---|
@@ -91,7 +91,8 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-16-aula-turma-calendario-itic.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 08:15 | 20 datas do calendário gravadas em `aula_turma` (10 por turma, 135080 e 135081); conferido pelo retorno do `returning` — Etapa 314-d7f180ea |
 | `2026-10-16-remover-aula-turma.sql` | Introdução às TIC (ITIC) | 0 | **SUBSTITUÍDO** | 2026-10-16 15:25 | NUNCA aplicado e não será mais: o usuário desistiu da remoção (o erro era outro); a aula_turma continua no banco com 38 linhas (conferido 2026-10-16 15:30) — Etapa 333-e75bddc3 (#206) |
 | `2026-10-16-aula-turma-materia.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 15:54 | Aplicado pelo conector: aula_turma com materia_id not null, FK para materia.id, gatilho da matéria da aula e índice; 38 linhas, 0 sem matéria, 0 diferentes da aula; gatilho testado em transação desfeita (matéria errada vira a da aula) — Etapa 333-e75bddc3 (#206.3) |
-| `2026-10-16-slides-storage.sql` | Testes de Front-End | 0 | **CONCLUÍDO** | 2026-10-16 18:40 | Aplicado pelo conector (#209.2): bucket slides privado (PDF, 20 MB), slide_liberado_para_usuario (sem anon) e 4 políticas em storage.objects; simulação desfeita: aluno com aula bloqueada na turma=false, liberada=true, aula ativo=false=false, aula não cadastrada=true, professor=true, anon=false |
+| `2026-10-16-slides-storage.sql` | Testes de Front-End | 0 | **SUBSTITUÍDO** | 2026-10-16 18:46 | Desfeito pelo 2026-10-16-remover-slides-storage.sql a pedido do usuário (#209.7) |
+| `2026-10-16-remover-slides-storage.sql` | Testes de Front-End | 0 | **CONCLUÍDO** | 2026-10-16 18:46 | Aplicado pelo conector (#209.7): 0 políticas slides_* e função slide_liberado_para_usuario removida; o bucket slides (vazio) só sai pelo painel (o Supabase recusa delete por SQL) |
 
 ## Seeds excluídos (não podiam ser concluídos)
 
