@@ -1,7 +1,8 @@
 // ── Página turmas.html: CRUD da tabela turma + professores de cada turma (#201) ──
 // Tela do Professor Administrador. Consulta das turmas com busca e ➕ Nova turma; cada linha tem
 // ✏️ Editar e 🗑️ Excluir (modal dos dados: assets/js/turmas-dados-modal.js) e 👥 Professores
-// (vincular/desvincular na turmaprofessor: assets/js/turmas-professor-modais.js).
+// (vincular/desvincular na turmaprofessor: assets/js/turmas-professor-modais.js). O botão
+// 📚 Matérias do cabeçalho vincula turmas às matérias (assets/js/turmas-materias-modal.js, #211).
 // Dados: assets/js/turmas-professor-repositorio.js; avisos: assets/js/popup.js.
 // A segurança fica no banco (RLS + eh_professor_administrador + trigger de perfil PROFESSOR).
 
@@ -16,6 +17,7 @@ const ROTA_LOGIN_TP = "login.html";
 
 const estadoTp = {
   repositorio: null, turmas: [], professores: [], vinculos: [], unidades: [], cursos: [],
+  materias: [], turmasMaterias: [],
 };
 
 /**
@@ -265,15 +267,17 @@ async function excluirVinculoTp(vinculo) {
   await mostrarPopup("Professor desvinculado da turma.", { tipo: "sucesso" });
 }
 
-/** Carrega turmas, professores, vínculos, unidades e cursos e mostra a tela. */
+/** Carrega turmas, professores, vínculos, unidades, cursos e matérias e mostra a tela. */
 async function carregarDadosTp() {
   const repositorio = estadoTp.repositorio;
   [estadoTp.turmas, estadoTp.professores, estadoTp.vinculos, estadoTp.unidades,
-    estadoTp.cursos] = await Promise.all([repositorio.listarTurmas(),
-    repositorio.listarProfessores(), repositorio.listarVinculos(), repositorio.listarUnidades(),
-    repositorio.listarCursos()]);
+    estadoTp.cursos, estadoTp.materias, estadoTp.turmasMaterias] = await Promise.all([
+    repositorio.listarTurmas(), repositorio.listarProfessores(), repositorio.listarVinculos(),
+    repositorio.listarUnidades(), repositorio.listarCursos(), repositorio.listarMaterias(),
+    repositorio.listarTurmasMaterias()]);
   desenharTurmasTp();
   elementoTp("tpConteudo").hidden = false;
+  elementoTp("tpMaterias").hidden = false;
 }
 
 /** Inicia a página: confere login e Professor Administrador e carrega os dados. */
@@ -292,6 +296,7 @@ async function iniciarPaginaTp() {
     elementoTp("tpBusca").addEventListener("input", desenharTurmasTp);
     ligarEventosModaisTp();
     ligarEventosDadosTurmaTp();
+    ligarEventosMateriasTp();
     await carregarDadosTp();
   } catch (erro) {
     bloquearPaginaTp("Erro ao carregar as turmas: " + (erro?.message || erro), false);

@@ -1,11 +1,16 @@
 // ── Repositório da página turmas.html ────────────────────────────
-// Acesso ao Supabase para o CRUD da turma e da turmaprofessor (vínculo professor × turma).
+// Acesso ao Supabase para o CRUD da turma, da turmaprofessor (vínculo professor × turma) e da
+// turma_materia (vínculo turma × matéria, #211; RLS: só o administrador grava).
 // Quem pode gravar é decidido pelo banco: RLS da turma e da turmaprofessor +
 // eh_professor_administrador(); a turma só é excluída se estiver vazia (turma_esta_vazia, #201)
 // (só gelvazio.camargo@senai.local). O trigger turmaprofessor_exige_professor recusa quem não é
 // PROFESSOR. Depende de js/supabase.js (obterClienteSupabase).
 
 const TABELA_TURMAPROFESSOR = "turmaprofessor";
+const TABELA_TURMA_MATERIA = "turma_materia";
+const TABELA_MATERIA_REPOSITORIO = "materia";
+const COLUNAS_MATERIA_REPOSITORIO = "id, descricao, curso:curso_id(nome_completo)";
+const COLUNAS_TURMA_MATERIA_REPOSITORIO = "id, turma_codigo, materia_id";
 const TABELA_TURMA_REPOSITORIO = "turma";
 const TABELA_USUARIO_REPOSITORIO = "usuario";
 const RPC_ADMINISTRADOR_REPOSITORIO = "eh_professor_administrador";
@@ -126,6 +131,36 @@ function criarRepositorioTurmasProfessor(cliente) {
      */
     async excluirVinculo(id) {
       dadosOuErroTurmas(await cliente.from(TABELA_TURMAPROFESSOR).delete().eq("id", id));
+    },
+
+    /** @returns {Promise<Object[]>} Matérias pela descrição, com o curso. */
+    async listarMaterias() {
+      return dadosOuErroTurmas(await cliente.from(TABELA_MATERIA_REPOSITORIO)
+        .select(COLUNAS_MATERIA_REPOSITORIO).order("descricao"));
+    },
+
+    /** @returns {Promise<Object[]>} Vínculos turma × matéria. */
+    async listarTurmasMaterias() {
+      return dadosOuErroTurmas(await cliente.from(TABELA_TURMA_MATERIA)
+        .select(COLUNAS_TURMA_MATERIA_REPOSITORIO).order("turma_codigo"));
+    },
+
+    /**
+     * Vincula uma turma a uma matéria.
+     * @param {{turma_codigo: string, materia_id: number}} vinculo - Turma e matéria.
+     * @returns {Promise<void>}
+     */
+    async criarTurmaMateria(vinculo) {
+      dadosOuErroTurmas(await cliente.from(TABELA_TURMA_MATERIA).insert(vinculo));
+    },
+
+    /**
+     * Desvincula uma turma de uma matéria.
+     * @param {number} id - Id do vínculo turma × matéria.
+     * @returns {Promise<void>}
+     */
+    async excluirTurmaMateria(id) {
+      dadosOuErroTurmas(await cliente.from(TABELA_TURMA_MATERIA).delete().eq("id", id));
     },
   };
 }

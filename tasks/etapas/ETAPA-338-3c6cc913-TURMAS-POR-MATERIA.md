@@ -73,13 +73,20 @@ cadastrado pelo professor administrador em `turmas.html`.
 
 ### #211.3 — Botão e modal "Matérias" em `turmas.html`
 
-**Próximo passo:** criar o botão no cabeçalho, o modal e o JS do vínculo.
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — tela (HTML + JS), até 3 arquivos
+- **Entrega:** `turmas.html` (botão 📚 Matérias no cabeçalho + modal), novo
+  `assets/js/turmas-materias-modal.js`, `assets/js/turmas-professor-repositorio.js` (listar,
+  vincular e desvincular na `turma_materia`), `assets/js/turmas-professor-pagina.js` (carrega
+  matérias e vínculos, mostra o botão só ao administrador) e `assets/css/turmas-professor.css`.
+- **Verificação:** `node --check` nos 3 JS; linhas novas ≤ 100 caracteres; consulta no banco:
+  `materia_select` libera a leitura e `materia.curso_id` tem FK para o `curso` (join do nome).
+  Visual no navegador: fica para o aceite do usuário (sem navegador por regra).
 
 ### #211.4 — Combo "Turma:" filtrado pela matéria
 
-**Próximo passo:** começar depois da #211.2.
+**Próximo passo:** filtrar `listarTurmasVisiveisFavorita` pela `turma_materia` da matéria da pasta.
 
 - **Nível:** MEDIO — JS de 1 arquivo (`assets/js/indice-turma-favorita.js`)
 

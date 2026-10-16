@@ -139,3 +139,20 @@
 @media (max-width: 760px) {
     .tp-grade-campos { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Cabeçalho azul com o menu de cadastros à direita (botão 📚 Matérias, #211) */
+.tp-cabecalho-pagina {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--tp-espaco);
+}
+
+.tp-menu-cabecalho { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.tp-botao-cabecalho {
+    background: #fff;
+    color: var(--guia-azul);
+    font-weight: 700;
+}

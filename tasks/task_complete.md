@@ -78,3 +78,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #210.2 | Ligar o bloqueio da aula em todas as matérias (PESADO) | 🟠 Alta | #210.1 | ✅ Concluído | — | [337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md) |
 | #211.1 | Levantamento e plano (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
 | #211.2 | Tabela `turma_materia` + RLS + vínculo ITIC (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |
+| #211.3 | Botão e modal "Matérias" em turmas.html (MEDIO) | 🟠 Alta | #211.2 | ✅ Concluído | — | [338-3c6cc913](etapas/ETAPA-338-3c6cc913-TURMAS-POR-MATERIA.md) |

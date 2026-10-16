@@ -15,15 +15,22 @@
     <script src="assets/js/unidade.js" defer></script>
     <script src="assets/js/turmas-professor-modais.js" defer></script>
     <script src="assets/js/turmas-dados-modal.js" defer></script>
+    <script src="assets/js/turmas-materias-modal.js" defer></script>
     <script src="assets/js/turmas-professor-pagina.js" defer></script>
 </head>
 <body>
     <div id="header-usuario"></div>
     <main class="guia guia--larga">
-        <header class="guia-cabecalho">
-            <h1>🏫 Turmas</h1>
-            <p>Cadastro das turmas e dos professores de cada turma — uso exclusivo do
-                Professor Administrador</p>
+        <header class="guia-cabecalho tp-cabecalho-pagina">
+            <div>
+                <h1>🏫 Turmas</h1>
+                <p>Cadastro das turmas e dos professores de cada turma — uso exclusivo do
+                    Professor Administrador</p>
+            </div>
+            <nav class="tp-menu-cabecalho" aria-label="Cadastros da turma">
+                <button type="button" class="guia-botao tp-botao-cabecalho" id="tpMaterias"
+                    hidden>📚 Matérias</button>
+            </nav>
         </header>
 
         <section class="guia-cartao guia-erro" id="tpBloqueio" hidden></section>
@@ -120,6 +127,26 @@
                 </label>
                 <div class="tp-acoes">
                     <button type="submit" class="guia-botao" id="tpVincular">Vincular</button>
+                    <button type="button" class="guia-botao tp-botao-secundario"
+                        data-fechar-modal>Fechar</button>
+                </div>
+            </form>
+        </div>
+        <div id="tpModalMaterias" class="tp-modal" hidden>
+            <form id="tpFormularioMaterias" class="tp-modal__caixa" role="dialog"
+                aria-modal="true" aria-labelledby="tpTituloMaterias">
+                <h2 id="tpTituloMaterias">📚 Matérias × turmas</h2>
+                <label class="tp-campo">Matéria
+                    <select id="tpMateriaEscolhida" class="guia-filtro"></select>
+                </label>
+                <h3 class="tp-modal__subtitulo">Turmas vinculadas a esta matéria</h3>
+                <ul id="tpTurmasMateria" class="tp-lista-professores"></ul>
+                <label class="tp-campo">Vincular turma (só as que ainda não estão nesta matéria)
+                    <select id="tpNovaTurmaMateria" class="guia-filtro"></select>
+                </label>
+                <div class="tp-acoes">
+                    <button type="submit" class="guia-botao"
+                        id="tpVincularMateria">Vincular</button>
                     <button type="button" class="guia-botao tp-botao-secundario"
                         data-fechar-modal>Fechar</button>
                 </div>
