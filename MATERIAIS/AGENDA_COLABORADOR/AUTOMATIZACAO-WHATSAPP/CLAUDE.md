@@ -211,7 +211,7 @@ AUTOMATIZACAO-WHATSAPP/
 - ❌ **Nunca abrir navegador** (preview, Playwright, screenshot) para validar. Validar com
   `node --check`, `curl`, consultas SQL e leitura do código. O que só der para ver no navegador →
   pedir ao usuário para conferir e registrar no Diário de Bordo.
-- ❌ Nunca usar git worktree. ❌ Nunca `push` sem o usuário pedir. ❌ Nunca `--force`.
+- ❌ Nunca usar git worktree. ✅ Ao finalizar a tarefa, fazer commit + `git push` (regra global C13). ❌ Nunca `--force`.
 
 ---
 
