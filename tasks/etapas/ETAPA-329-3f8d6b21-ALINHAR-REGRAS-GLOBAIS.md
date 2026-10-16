@@ -20,13 +20,11 @@
 
 ### 202.1 — `graphify.md` segue o global (C11)
 
-**Próximo passo:** reescrever `.claude/rules/graphify.md` (hoje "só quando o usuário pedir") para:
-rodar o graphify uma vez no início de cada conversa e analisar o `GRAPH_REPORT.md`; ajustar
-`INDEX.md` e a linha de graphify do `AGENTS.md`/`CLAUDE.md`/`GEMINI.md`/`pi.md` se existir.
+**Próximo passo:** nenhum — concluída.
 
 - **Nível:** LEVE — textos em até 3 `.md` · **Modelo:** só Claude Code Haiku 5.5
 - **Critérios de Aceitação:** nenhum arquivo do projeto ainda diz "graphify só quando o usuário pedir".
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit `feat(#202.1)` · **Verificação:** busca em `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `pi.md` e `.claude/rules/`: nenhum "só quando o usuário pedir"; `graphify.md` e a linha do `INDEX.md` seguem a regra global C11. Feita por Claude Code (Sonnet 5.5) (local · main), com IA_SEM_TRAVA=1 a pedido do usuário ("SIM"), 2026-10-16.
 
 ### 202.2 — Exceção do navegador (C5)
 

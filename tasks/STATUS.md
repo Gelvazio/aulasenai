@@ -305,7 +305,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #201.4 | Coluna Ações no lado direito da tabela de turmas (MEDIO) | 🟠 Alta | #201.2 | ✅ Concluído | — | [328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md) |
 | #201.5 | Página de turmas mais larga (LEVE) | 🟠 Alta | #201.4 | ✅ Concluído | — | [328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md) |
 | #202-3f8d6b21 | **Alinhar as regras do aulasenai às regras globais (`rules-ai`)** | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
-| #202.1 | `graphify.md` segue o global (C11) — LEVE, só Haiku | 🟠 Alta | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-16 15:45) | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
+| #202.1 | `graphify.md` segue o global (C11) — LEVE, só Haiku | 🟠 Alta | — | ✅ Concluído | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #202.2 | Exceção do navegador com liberação do usuário (C5) — LEVE, só Haiku | 🟠 Alta | — | ⬜ Pendente | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #202.3 | Ordem criar → publicar → assumir (C9) — LEVE, só Haiku | 🟠 Alta | — | ⬜ Pendente | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #202.4 | ✅ movidas para `tasks/task_complete.md` (C4) — PESADO, só Opus | 🟠 Alta | — | ⬜ Pendente | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
