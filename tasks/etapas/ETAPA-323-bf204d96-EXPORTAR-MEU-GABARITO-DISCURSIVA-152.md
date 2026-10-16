@@ -120,3 +120,13 @@ que o painel IDENTIFICAÇÃO sai de "Carregando..." e o botão aparece.
 - **Verificação:** `node --check` nos 2 JS; arquivo com 986 linhas (≤ 1000). Sem navegador: o
   usuário confere no aceite #196.2.
 
+### #196.5 — "Exportar Meu Gabarito" ao lado do "Gabarito da Atividade-Respostas"
+
+**Próximo passo:** achar o botão "Ver Gabarito", renomear para "Gabarito da Atividade-Respostas"
+e pôr o "📄 Exportar Meu Gabarito" ao lado dele.
+
+- **Nível:** PESADO — gabarito (o que o aluno pode ver), código da discursiva.
+- **Pedido (2026-10-16 14:50):** "EXPORTAR MEU GABARITO DEVE FICAR AO LADO DE *VER GABARITO*, E
+  RENOMEI *VER GABARITO* PARA *GABARITO DA ATIVIDADE-RESPOSTAS*"
+- **Executor:** Claude Code (Opus 5.5) (local · main · s9) desde 2026-10-16 14:50.
+
