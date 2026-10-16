@@ -65,14 +65,24 @@ excluir) e o vínculo turma × professor vira o botão **Professores** na linha 
 
 ### #201.2 — Banco e tela do CRUD de turmas com o botão Professores
 
-**Próximo passo:** banco aplicado e conferido; fazer a tela (`turmas.html` e JS).
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — banco (RLS) e permissões do administrador
 - **Descrição:** escopo acima (SQL, tela, modal, botão Professores, docs).
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** SQL `database/2026-10-16-turma-crud-administrador.sql` (migração
+  `turma_crud_administrador_201`, aplicada pelo conector); `turmas.html`,
+  `assets/js/turmas-dados-modal.js` (novo), `turmas-professor-pagina.js`, `-modais.js`,
+  `-repositorio.js`, `assets/css/turmas-professor.css`; `docs/database.md`,
+  `docs/relatorio_verificacao_database.html`, `docs/crud-turmas-administrador.md`,
+  `docs/regras/usuarios-turmas-paginas-professor.md`, `docs/HISTORICO-REGRAS.md` (commit da entrega).
+- **Verificação:** `pg_policies` com as 4 políticas da `turma`; privilégios: `anon` sem nada e
+  `authenticated` sem TRUNCATE; simulação em transação desfeita (outro professor: insert
+  recusado, update 0 linhas; administrador: insert ok, update 1, delete de turma com alunos 0,
+  delete de turma vazia 1; TRUNCATE recusado); `node --check` nos 4 JS. Sem navegador: o
+  professor testa a tela (2026-10-16 12:54).
 
 ### #201.3 — Aceite do usuário
 
-**Próximo passo:** o professor testar a tela `turmas.html`.
+**Próximo passo:** o professor testar a tela `turmas.html` e dar o aceite.
 
 - **Nível:** LEVE — conferência do usuário

@@ -1,19 +1,22 @@
-// ── Página turmas.html: consulta das turmas com os professores vinculados (turmaprofessor) ──
-// Tela do Professor Administrador. Cada turma tem, à esquerda, o botão "Vincular Professor", que
-// abre o modal da turma (assets/js/turmas-professor-modais.js) com os professores dela e a lista
-// só de quem ainda não está nela; cada vínculo tem ✏️ (modal de edição) e 🗑️ (excluir).
+// ── Página turmas.html: CRUD da tabela turma + professores de cada turma (#201) ──
+// Tela do Professor Administrador. Consulta das turmas com busca e ➕ Nova turma; cada linha tem
+// ✏️ Editar e 🗑️ Excluir (modal dos dados: assets/js/turmas-dados-modal.js) e 👥 Professores
+// (vincular/desvincular na turmaprofessor: assets/js/turmas-professor-modais.js).
 // Dados: assets/js/turmas-professor-repositorio.js; avisos: assets/js/popup.js.
 // A segurança fica no banco (RLS + eh_professor_administrador + trigger de perfil PROFESSOR).
 
 const CODIGO_VINCULO_REPETIDO = "23505";
 const TEXTO_SEM_LOGIN_TP = "Entre com a conta do Professor Administrador para gerenciar as turmas.";
 const TEXTO_SEM_ADMIN_TP = "Acesso restrito ao Professor Administrador.";
-const TEXTO_VINCULAR_PROFESSOR_TP = "➕ Vincular Professor";
 const TEXTO_SEM_PROFESSOR_TP = "Nenhum professor vinculado.";
-const COLUNAS_TABELA_TP = 4;
+const TEXTO_BLOQUEIO_LIGADO_TP = "🔒 Ligado";
+const TEXTO_BLOQUEIO_DESLIGADO_TP = "🔓 Desligado";
+const COLUNAS_TABELA_TP = 6;
 const ROTA_LOGIN_TP = "login.html";
 
-const estadoTp = { repositorio: null, turmas: [], professores: [], vinculos: [] };
+const estadoTp = {
+  repositorio: null, turmas: [], professores: [], vinculos: [], unidades: [], cursos: [],
+};
 
 /**
  * Atalho para document.getElementById.
@@ -138,51 +141,61 @@ function mensagemErroTp(erro) {
 }
 
 /**
- * Cria a etiqueta de um professor vinculado, com ✏️ (editar vínculo) e 🗑️ (excluir).
- * @param {Object} vinculo - Linha da turmaprofessor.
- * @returns {HTMLLIElement} Etiqueta.
- */
-function criarEtiquetaVinculoTp(vinculo) {
-  const item = criarElementoTp("li", "tp-professor");
-  item.append(criarElementoTp("span", "", nomeDoProfessorTp(vinculo.professor_id)),
-    criarBotaoTp({ texto: "✏️", classe: "tp-botao-icone", titulo: "Editar vínculo",
-      aoClicar: () => abrirModalVinculoTp(vinculo) }),
-    criarBotaoTp({ texto: "🗑️", classe: "tp-botao-icone", titulo: "Excluir vínculo",
-      aoClicar: () => excluirVinculoTp(vinculo) }));
-  return item;
-}
-
-/**
- * Cria a lista de professores vinculados (etiquetas) de uma turma.
+ * Texto dos professores vinculados à turma ("Nome 1, Nome 2").
  * @param {string} turmaCodigo - Código da turma.
- * @returns {HTMLElement} Lista ou aviso de turma sem professor.
+ * @returns {string} Nomes, ou o aviso de turma sem professor.
  */
-function criarListaVinculosTp(turmaCodigo) {
-  const vinculos = vinculosDaTurmaTp(turmaCodigo);
-  if (!vinculos.length) return criarElementoTp("span", "tp-detalhe", TEXTO_SEM_PROFESSOR_TP);
-
-  const lista = criarElementoTp("ul", "tp-lista-professores");
-  lista.append(...vinculos.map(criarEtiquetaVinculoTp));
-  return lista;
+function textoProfessoresTp(turmaCodigo) {
+  const nomes = vinculosDaTurmaTp(turmaCodigo).map((v) => nomeDoProfessorTp(v.professor_id));
+  return nomes.length ? nomes.join(", ") : TEXTO_SEM_PROFESSOR_TP;
 }
 
 /**
- * Monta a linha de uma turma: Vincular Professor | Turma | Turno / horário | Professores.
+ * Cria a célula das ações da linha: ✏️ Editar, 👥 Professores e 🗑️ Excluir.
+ * @param {Object} turma - Linha da tabela turma.
+ * @returns {HTMLTableCellElement} Célula.
+ */
+function criarCelulaAcoesTp(turma) {
+  const celula = criarElementoTp("td", "tp-celula-acoes");
+  const quantidade = vinculosDaTurmaTp(turma.codigo).length;
+  celula.append(
+    criarBotaoTp({ texto: "✏️ Editar", classe: "guia-botao tp-botao-pequeno",
+      aoClicar: () => abrirModalDadosTurmaTp(turma) }),
+    criarBotaoTp({ texto: "👥 Professores (" + quantidade + ")",
+      classe: "guia-botao tp-botao-pequeno tp-botao-secundario",
+      aoClicar: () => abrirModalTurmaTp(turma.codigo) }),
+    criarBotaoTp({ texto: "🗑️ Excluir", classe: "guia-botao tp-botao-pequeno tp-botao-perigo",
+      aoClicar: () => excluirTurmaTp(turma) }));
+  return celula;
+}
+
+/**
+ * Cria uma célula com texto principal e um detalhe embaixo.
+ * @param {string} texto - Texto principal.
+ * @param {string} detalhe - Texto menor (pode ser vazio).
+ * @returns {HTMLTableCellElement} Célula.
+ */
+function criarCelulaComDetalheTp(texto, detalhe) {
+  const celula = criarElementoTp("td", "", texto);
+  if (detalhe) celula.append(criarElementoTp("span", "tp-detalhe", detalhe));
+  return celula;
+}
+
+/**
+ * Monta a linha de uma turma: Ações | Turma | Curso | Turno / horário | Bloqueio | Professores.
  * @param {Object} turma - Linha da tabela turma.
  * @returns {HTMLTableRowElement} Linha.
  */
 function criarLinhaTurmaTp(turma) {
   const linha = criarElementoTp("tr");
-  const celulaBotao = criarElementoTp("td", "tp-celula-acoes");
-  celulaBotao.append(criarBotaoTp({ texto: TEXTO_VINCULAR_PROFESSOR_TP,
-    classe: "guia-botao tp-botao-pequeno", aoClicar: () => abrirModalTurmaTp(turma.codigo) }));
-  const celulaTurma = criarElementoTp("td", "", turma.codigo + " — " + (turma.nome || ""));
-  celulaTurma.append(criarElementoTp("span", "tp-detalhe", montarUnidadeTurma(turma)));
-  const celulaTurno = criarElementoTp("td", "", turma.turno || "");
-  celulaTurno.append(criarElementoTp("span", "tp-detalhe", turma.horario || ""));
-  const celulaProfessores = criarElementoTp("td");
-  celulaProfessores.append(criarListaVinculosTp(turma.codigo));
-  linha.append(celulaBotao, celulaTurma, celulaTurno, celulaProfessores);
+  const bloqueio = turma.bloquear_horario === false
+    ? TEXTO_BLOQUEIO_DESLIGADO_TP : TEXTO_BLOQUEIO_LIGADO_TP;
+  linha.append(criarCelulaAcoesTp(turma),
+    criarCelulaComDetalheTp(turma.codigo + " — " + (turma.nome || ""), montarUnidadeTurma(turma)),
+    criarCelulaComDetalheTp(turma.curso?.nome_completo || "", turma.uc || ""),
+    criarCelulaComDetalheTp(turma.turno || "", turma.horario || ""),
+    criarElementoTp("td", "", bloqueio),
+    criarElementoTp("td", "", textoProfessoresTp(turma.codigo)));
   return linha;
 }
 
@@ -195,7 +208,8 @@ function criarLinhaTurmaTp(turma) {
 function turmaVisivelTp(turma, busca) {
   if (!busca) return true;
   const professores = vinculosDaTurmaTp(turma.codigo).map((v) => nomeDoProfessorTp(v.professor_id));
-  const texto = [descreverTurmaTp(turma), turma.turno, ...professores].join(" ").toLowerCase();
+  const texto = [descreverTurmaTp(turma), turma.turno, turma.curso?.nome_completo, ...professores]
+    .join(" ").toLowerCase();
   return texto.includes(busca);
 }
 
@@ -223,31 +237,40 @@ async function recarregarVinculosTp() {
   atualizarModalTurmaTp();
 }
 
+/** Recarrega turmas e vínculos do banco (depois de criar, editar ou excluir turma). */
+async function recarregarTurmasTp() {
+  [estadoTp.turmas, estadoTp.vinculos] = await Promise.all([
+    estadoTp.repositorio.listarTurmas(), estadoTp.repositorio.listarVinculos()]);
+  desenharTurmasTp();
+}
+
 /**
- * Exclui um vínculo depois da confirmação.
+ * Exclui (desvincula) um vínculo depois da confirmação.
  * @param {Object} vinculo - Linha da turmaprofessor.
  */
 async function excluirVinculoTp(vinculo) {
   const nome = nomeDoProfessorTp(vinculo.professor_id);
   const confirmou = await confirmarPopup(
     "Remover o acesso de " + nome + " à turma " + vinculo.turma_codigo + "?",
-    { tipo: "pergunta", titulo: "Excluir vínculo" });
+    { tipo: "pergunta", titulo: "Desvincular professor" });
   if (!confirmou) return;
   try {
     await estadoTp.repositorio.excluirVinculo(vinculo.id);
   } catch (erro) {
-    await mostrarPopup(mensagemErroTp(erro), { tipo: "erro", titulo: "Vínculo não excluído" });
+    await mostrarPopup(mensagemErroTp(erro), { tipo: "erro", titulo: "Vínculo não removido" });
     return;
   }
   await recarregarVinculosTp();
-  await mostrarPopup("Vínculo excluído.", { tipo: "sucesso" });
+  await mostrarPopup("Professor desvinculado da turma.", { tipo: "sucesso" });
 }
 
-/** Carrega turmas, professores e vínculos e mostra a tela. */
+/** Carrega turmas, professores, vínculos, unidades e cursos e mostra a tela. */
 async function carregarDadosTp() {
   const repositorio = estadoTp.repositorio;
-  [estadoTp.turmas, estadoTp.professores, estadoTp.vinculos] = await Promise.all([
-    repositorio.listarTurmas(), repositorio.listarProfessores(), repositorio.listarVinculos()]);
+  [estadoTp.turmas, estadoTp.professores, estadoTp.vinculos, estadoTp.unidades,
+    estadoTp.cursos] = await Promise.all([repositorio.listarTurmas(),
+    repositorio.listarProfessores(), repositorio.listarVinculos(), repositorio.listarUnidades(),
+    repositorio.listarCursos()]);
   desenharTurmasTp();
   elementoTp("tpConteudo").hidden = false;
 }
@@ -267,6 +290,7 @@ async function iniciarPaginaTp() {
     }
     elementoTp("tpBusca").addEventListener("input", desenharTurmasTp);
     ligarEventosModaisTp();
+    ligarEventosDadosTurmaTp();
     await carregarDadosTp();
   } catch (erro) {
     bloquearPaginaTp("Erro ao carregar as turmas: " + (erro?.message || erro), false);

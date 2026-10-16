@@ -874,6 +874,23 @@ conector do Supabase). **Plano:** etapa `tasks/etapas/ETAPA-327-c87b8754-LIGA-DE
 Tela: botão **🔒 Bloquear horário: ON / 🔓 OFF** ao lado do horário da turma, no relatório do
 professor das atividades (`assets/js/turma-horario.js`).
 
+## 🏫 Atualização 2026-10-16 — CRUD da `turma` pelo Professor Administrador (#201)
+
+**Script:** `database/2026-10-16-turma-crud-administrador.sql` (aplicado em 2026-10-16 pelo
+conector do Supabase). **Plano:** etapa `tasks/etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md`.
+
+| Objeto | Tipo | Descrição |
+|--------|------|-----------|
+| `turma_insert_admin` / `turma_update_admin` | políticas RLS | criar e editar turma só com `eh_professor_administrador()` |
+| `turma_delete_admin` | política RLS | excluir só com `eh_professor_administrador()` **e** `turma_esta_vazia(codigo)`; os vínculos da `turmaprofessor` saem em cascata |
+| `turma_esta_vazia(codigo)` | função (security definer, só `authenticated`) | verdadeiro se a turma não tem `turmaaluno`, `aluno.turma_codigo` nem `equipe` (evita apagar alunos e equipes em cascata) |
+| Privilégios da `turma` | `revoke` | `anon` sem nenhum privilégio; `TRUNCATE` revogado de `authenticated` (TRUNCATE ignora o RLS) |
+
+A leitura continua pela `turma_select` (todo usuário logado). Conferido por simulação em transação
+desfeita: outro professor tem insert recusado e update sem efeito; o administrador cria, edita e
+exclui turma vazia; turma com alunos não sai; `TRUNCATE` recusado. Tela: `turmas.html` (consulta,
+➕ Nova turma, ✏️ Editar no modal, 🗑️ Excluir e 👥 Professores = vínculos da `turmaprofessor`).
+
 ## ✅ Checklist de Conformidade
 
 - [x] Todas as 11 tabelas documentadas

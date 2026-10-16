@@ -954,6 +954,38 @@
       </table>
     </div>
 
+    <h2>🏫 Atualização 2026-10-16 — CRUD da turma pelo Professor Administrador</h2>
+    <div class="section">
+      <p>Script: <code>database/2026-10-16-turma-crud-administrador.sql</code> (aplicado em 2026-10-16) · Tela: <code>turmas.html</code> (consulta, modal de edição, excluir e botão Professores) · Tarefa #201</p>
+      <table>
+        <tr>
+          <th>Objeto</th>
+          <th>Tipo</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>turma_insert_admin / turma_update_admin</td>
+          <td>Políticas RLS</td>
+          <td>Criar e editar turma só com eh_professor_administrador()</td>
+        </tr>
+        <tr>
+          <td>turma_delete_admin</td>
+          <td>Política RLS</td>
+          <td>Excluir só o administrador e só turma vazia (turma_esta_vazia); vínculos de professor saem em cascata</td>
+        </tr>
+        <tr>
+          <td>turma_esta_vazia(text)</td>
+          <td>Função (security definer)</td>
+          <td>Sem turmaaluno, sem aluno.turma_codigo e sem equipe; só authenticated</td>
+        </tr>
+        <tr>
+          <td>Privilégios da turma</td>
+          <td>revoke</td>
+          <td>anon sem privilégios; TRUNCATE revogado de authenticated</td>
+        </tr>
+      </table>
+    </div>
+
     <h2>🔒 Atualização 2026-10-16 — ON/OFF "Bloquear horário" por turma</h2>
     <div class="section">
       <p>Script: <code>database/2026-10-16-turma-bloquear-horario.sql</code> (aplicado em 2026-10-16) · Tela: botão "Bloquear horário" ao lado do horário da turma (professor) · Tarefa #200</p>

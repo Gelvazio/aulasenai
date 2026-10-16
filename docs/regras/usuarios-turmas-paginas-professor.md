@@ -128,6 +128,23 @@ SQL: `database/2026-10-06-pendencias.sql` (✅ aplicado no Supabase em 2026-10-0
   gera `index.html` dentro dela nem card dela no índice raiz. Índice gerado ali por engano deve ser
   removido.
 
+## 🏫 REGRA — MENU TURMAS: CRUD DA `turma` + BOTÃO PROFESSORES (SÓ PROFESSOR ADMINISTRADOR)
+
+Registrada em 2026-10-16 (tarefa #201, etapa `tasks/etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md`).
+
+- ✅ **`turmas.html`** começa pela **consulta** das turmas (busca por código, nome, unidade, curso
+  ou professor) e tem **➕ Nova turma**. Cada linha: **✏️ Editar** (modal com código — só no
+  cadastro —, nome, turno, horário, hora início/fim, UC, unidade, curso e "Bloquear horário"),
+  **👥 Professores** (vincular / desvincular na `turmaprofessor`) e **🗑️ Excluir**.
+- ✅ **Só o Professor Administrador** grava (RLS `turma_insert_admin`, `turma_update_admin`,
+  `turma_delete_admin` + `eh_professor_administrador()`); o menu escondido é só visual.
+- ✅ **Excluir só turma vazia** (`turma_esta_vazia`: sem alunos e sem equipes); com alunos, tirar
+  os alunos antes (menu ALUNOS). ❌ Nunca liberar a exclusão em cascata de alunos ou equipes.
+- ✅ Trocar o professor de uma turma = desvincular e vincular no botão Professores.
+- Arquivos: `assets/js/turmas-professor-pagina.js` (tabela), `assets/js/turmas-dados-modal.js`
+  (modal da turma), `assets/js/turmas-professor-modais.js` (Professores),
+  `assets/js/turmas-professor-repositorio.js` (dados), `assets/css/turmas-professor.css`.
+
 ## 🎓 REGRA — ÍNDICE DE CURSOS: SÓ OS CURSOS DO USUÁRIO LOGADO
 
 Registrada em 2026-10-03. Plano: `docs/indice-cursos-do-usuario-logado.md`;
