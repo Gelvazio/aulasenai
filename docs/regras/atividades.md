@@ -484,6 +484,14 @@ com alunos sem entrega: liberar encerra o preenchimento da turma).
   professor"). ⛔ O botão **"📥 Exportar PDF com gabarito"** foi
   **removido** de todas as páginas e do gerador em 2026-10-06 (pedido do usuário); fica só a
   variante "📥 Gabarito" (`data-modo="gabarito"`, só professor) onde já existia.
+- ✅ **"📥 Exportar PDF" só para o professor (2026-10-16, #198, pedido do usuário: "deve aparecer
+  apenas para o professor"):** em **todas as atividades** (objetivas/geradas e práticas/
+  discursivas) o botão nasce escondido e só aparece para o perfil **PROFESSOR** logado; aluno e
+  visitante não o veem. Objetivas: `assets/js/atividade.js` marca o botão e a dica com
+  `data-somente-perfil="PROFESSOR"` (o `js/header-usuario.js` mostra). Discursivas:
+  `assets/js/exportar-pdf-discursiva.js` confere o perfil na sessão. A `.export-bar` sem nenhum
+  item visível some (`assets/css/atividade.css`); o "📄 Exportar Meu Gabarito" do aluno continua
+  na barra. Apostilas não mudam.
 - ✅ **REGRA GLOBAL: vale para todas as avaliações e atividades de todas as matérias e de todos
   os cursos** (2026-10-06, pedido do usuário; hoje 53 páginas objetivas): toda atividade com
   folha de respostas no banco (`data-login="sim"`) ganha o botão "🔑 Exportar Gabarito" (inserido
