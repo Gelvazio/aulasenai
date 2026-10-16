@@ -18,7 +18,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| local · main · s10 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) em execução (Claude Code (Sonnet 5.5)) | 🔄 Ativa | 2026-10-16 15:45 |
+| local · main · s11 | #202 ([329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md)) em execução (Claude Code (Sonnet 5.5)) | 🔄 Ativa | 2026-10-16 15:45 |
 | nuvem · claude/festive-maxwell-25jnhl | #21 ([135-eeefc710](etapas/ETAPA-135-eeefc710-COLABORACAO-ENTRE-SESSOES.md)); a #20 passou para a frente verificar-status-pastas em 2026-10-10 16:27 | 🔄 Ativa | 2026-10-09 21:27 |
 | nuvem · claude/verificar-status-pastas-c6s5yz | #20 ([125](etapas/ETAPA-125-BANCO-DE-DADOS-100-NO-PADRAO-DA.md)); etapas 137-b214e26b e 138-77338471 aguardam aceite | 🔄 Ativa | 2026-10-10 22:13 |
 | nuvem · ccr-00f69e8a-6qcla9 | #26 ([144-aff33423](etapas/ETAPA-144-aff33423-REGRAS-NO-BANCO.md)); etapa 140-8554d88e aguarda o usuário | 🔄 Ativa | 2026-10-11 06:28 |
@@ -306,7 +306,7 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #201.5 | Página de turmas mais larga (LEVE) | 🟠 Alta | #201.4 | ✅ Concluído | — | [328-d0739bde](etapas/ETAPA-328-d0739bde-CRUD-TURMAS-E-BOTAO-PROFESSORES.md) |
 | #202-3f8d6b21 | **Alinhar as regras do aulasenai às regras globais (`rules-ai`)** | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #202.1 | `graphify.md` segue o global (C11) — LEVE, só Haiku | 🟠 Alta | — | ✅ Concluído | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
-| #202.2 | Exceção do navegador com liberação do usuário (C5) — LEVE, só Haiku | 🟠 Alta | — | ⬜ Pendente | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
+| #202.2 | Exceção do navegador com liberação do usuário (C5) — LEVE, só Haiku | 🟠 Alta | — | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main · s11) (desde 2026-10-16 14:58) | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #202.3 | Ordem criar → publicar → assumir (C9) — LEVE, só Haiku | 🟠 Alta | — | ⬜ Pendente | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #202.4 | ✅ movidas para `tasks/task_complete.md` (C4) — PESADO, só Opus | 🟠 Alta | — | ⬜ Pendente | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #202.5 | Aceite do usuário | 🟠 Alta | #202.1 a #202.4 | 👀 Aguardando o usuário | — | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
