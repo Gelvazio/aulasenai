@@ -5,10 +5,10 @@
 // "Atividade Bloqueada!" (o card inteiro só trava quando todas as atividades dele estão
 // bloqueadas). Só age em pastas gerenciadas pelo banco (pelo menos uma atividade ativa).
 // Para o professor, CADA atividade do card ganha, logo depois do link, o botão ON/OFF
-// (ON = liberada, OFF = bloqueada) que vale SÓ para a turma favorita (função
-// definir_bloqueio_turma; as outras turmas não mudam). Regra global de todas as matérias
-// (CLAUDE.md, 2026-10-09). Trocar a favorita na barra do índice (evento
-// turma-favorita-alterada) remonta os botões.
+// (ON = liberada, OFF = bloqueada) que vale SÓ para a turma escolhida no combo
+// "Turma:" do índice (sem combo, a favorita) (função definir_bloqueio_turma; as outras turmas
+// não mudam). Regra global de todas as matérias (CLAUDE.md, 2026-10-09). Trocar a turma no combo
+// (evento turma-indice-alterada, #190) ou a favorita (turma-favorita-alterada) remonta os botões.
 // Nas matérias com o bloqueio da AULA ligado (assets/js/indice-bloqueio-aula-config.js), o ON/OFF
 // das atividades NUNCA bloqueia o card inteiro: só o botão da aula faz isso
 // (assets/js/indice-aula-bloqueio.js).
@@ -30,6 +30,9 @@ const MSG_ATIVIDADE_BLOQUEADA = 'Atividade Bloqueada!';
 const PERFIL_PROFESSOR_BLOQUEIO = 'PROFESSOR';
 const ROTA_DEFINIR_BLOQUEIO_TURMA = '/rest/v1/rpc/definir_bloqueio_turma';
 const EVENTO_FAVORITA_ALTERADA = 'turma-favorita-alterada';
+// Disparado pelo combo "Turma:" da barra do índice (indice-turma-favorita.js).
+const EVENTO_TURMA_INDICE_BLOQUEIO = 'turma-indice-alterada';
+const SELETOR_COMBO_TURMA_BLOQUEIO = '.barra-turma-favorita__lista';
 // Disparado pelo botão da aula (indice-aula-bloqueio.js): o trigger do banco bloqueia as
 // atividades da aula bloqueada.
 const EVENTO_AULA_ALTERADA_BLOQUEIO = 'aula-bloqueio-alterado';
@@ -37,8 +40,8 @@ const SELETOR_INTERRUPTOR_ATIVIDADE = '.interruptor-atividade';
 // Card de aula bloqueada (indice-aula-bloqueio.js): os botões das atividades nascem travados.
 const CLASSE_AULA_TRAVADA_BLOQUEIO = 'aula--bloqueada-professor';
 const ATRIBUTO_HREF_GUARDADO = 'data-href-bloqueado';
-const MSG_SEM_FAVORITA_BLOQUEIO = 'Marque a turma favorita na barra "Turma" do índice: o ' +
-    'bloqueio vale só para a turma favorita.';
+const MSG_SEM_FAVORITA_BLOQUEIO = 'Escolha a turma na barra "Turma" do índice: o ' +
+    'bloqueio vale só para a turma escolhida.';
 const URL_POPUP_BLOQUEIO = document.currentScript?.src.replace(/[^/]*$/, 'popup.js') || '';
 
 /**
@@ -195,10 +198,14 @@ function listarPaginasDoCard(card) {
 }
 
 /**
- * Busca o código da turma favorita (turma.favorito).
- * @returns {Promise<string>} Código da favorita ou vazio.
+ * Busca o código da turma do bloqueio: a escolhida no combo "Turma:" do índice; sem combo, a
+ * favorita (turma.favorito).
+ * @returns {Promise<string>} Código da turma ou vazio.
  */
 async function buscarFavoritaBloqueio() {
+    const turmaDoCombo = document.querySelector(SELETOR_COMBO_TURMA_BLOQUEIO)?.value;
+    if (turmaDoCombo) return turmaDoCombo;
+
     const linhas = await sbGet('turma', 'select=codigo&favorito=eq.true');
     return linhas[0]?.codigo || '';
 }
@@ -364,7 +371,6 @@ function montarInterruptoresCard(card, linhas, turma) {
  * Acrescenta (ou refaz) os botões ON/OFF das atividades nos cards do índice (perfil professor).
  */
 async function montarInterruptoresBloquear() {
-    document.querySelectorAll(SELETOR_INTERRUPTOR_ATIVIDADE).forEach((item) => item.remove());
     const cards = [...document.querySelectorAll(SELETOR_CARD_BLOQUEIO)];
     const todas = [...new Set(cards.flatMap(listarPaginasDoCard))];
     if (!todas.length) return;
@@ -375,6 +381,8 @@ async function montarInterruptoresBloquear() {
             'select=id,pagina,ativo,bloqueio&pagina=in.(' + encodeURIComponent(valores) + ')'),
         buscarFavoritaBloqueio(),
     ]);
+    // Remove só aqui (depois de ler): remontagens seguidas não duplicam os botões.
+    document.querySelectorAll(SELETOR_INTERRUPTOR_ATIVIDADE).forEach((item) => item.remove());
     cards.forEach((card) => montarInterruptoresCard(card, linhas, turma));
 }
 
@@ -385,6 +393,7 @@ function ouvirTrocaFavoritaBloqueio() {
     const remontar = () => montarInterruptoresBloquear().catch((erro) =>
         console.warn('Bloqueio de atividades indisponível:', erro.message));
     document.addEventListener(EVENTO_FAVORITA_ALTERADA, remontar);
+    document.addEventListener(EVENTO_TURMA_INDICE_BLOQUEIO, remontar);
     document.addEventListener(EVENTO_AULA_ALTERADA_BLOQUEIO, remontar);
 }
 
