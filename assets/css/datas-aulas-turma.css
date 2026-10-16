@@ -1,0 +1,39 @@
+/* Datas das aulas por turma, abaixo do combo "Turma" do Progresso da turma
+   (assets/js/datas-aulas-turma.js, tarefa #185). */
+.datas-aulas-turma {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 8px 12px;
+    border: 1px solid var(--cor-borda, #d0d7e2);
+    border-radius: 8px;
+    background: var(--cor-fundo-suave, #f6f8fb);
+}
+
+.datas-aulas-turma > summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.datas-aulas-turma__lista {
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.datas-aulas-turma__item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+}
+
+.datas-aulas-turma__item > span:first-child {
+    flex: 1 1 280px;
+}
+
+.datas-aulas-turma__aviso {
+    min-width: 90px;
+    font-size: 0.85em;
+}

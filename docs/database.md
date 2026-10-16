@@ -851,6 +851,25 @@ Este arquivo deve ser referenciado em:
 
 ---
 
+## 📅 Atualização 2026-10-16 — Tabela `aula_turma` (datas das aulas por turma)
+
+**Script:** `database/2026-10-16-aula-turma.sql` (aplicado em 2026-10-16, tarefa #185). Cada turma tem
+dias de aula diferentes, então a data da aula fica numa tabela própria.
+
+| Coluna | Tipo | Regra |
+|--------|------|-------|
+| **id** | BIGINT | PK, identity |
+| aula_id | BIGINT | NOT NULL, → `aulas.id` (on delete cascade) |
+| turma_codigo | TEXT | NOT NULL, → `turma.codigo` (on update/delete cascade) |
+| data_aula | DATE | NOT NULL |
+| created_at / updated_at | TIMESTAMPTZ | default `now()` |
+
+- Único: `(aula_id, turma_codigo)`. Índice `(turma_codigo, data_aula)`.
+- **RLS:** `aula_turma_select` (authenticated, `true`); insert/update/delete só `eh_professor()`.
+  `anon` sem acesso.
+- **Seed inicial:** todas as aulas de ITIC (materia 25) × turmas 135080 e 135081, com a menor
+  `atividade.data_atividade` da aula (ou `aulas.data_planejada`); aula sem data fica de fora.
+
 ## ✅ Checklist de Conformidade
 
 - [x] Todas as 11 tabelas documentadas
