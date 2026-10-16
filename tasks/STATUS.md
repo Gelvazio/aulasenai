@@ -280,6 +280,9 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #197-25203735-ba0e-4629-b6d4-27073640d497 | "Exportar Meu Gabarito" nas demais atividades discursivas (livre para outras IAs) | 🟠 Alta | #196 | ⬜ Pendente | — (não reservável) | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
 | #197.1 | Exportar Meu Gabarito nas demais discursivas (PESADO) | 🟠 Alta | #196.1 | ⬜ Pendente | — | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
 | #197.2 | Aceite do usuário | 🟠 Alta | #197.1 | ⬜ Pendente | — | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
+| #198-86c5c42e-b65b-46f0-aade-11f2de5b9145 | Botão "Exportar PDF" aparece só para o professor | 🟠 Alta | — | ⬜ Pendente | — (não reservável) | [325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md) |
+| #198.1 | Mostrar o "Exportar PDF" só para o professor (PESADO) | 🟠 Alta | — | ⬜ Pendente | — | [325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md) |
+| #198.2 | Aceite do usuário | 🟠 Alta | #198.1 | ⬜ Pendente | — | [325-86c5c42e](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -639,6 +642,7 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 322-5d136360 | Tarefa agendada manual "CORRECAO ATIVIDADE ID=152" (#195, pedida em 2026-10-16) | [ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md](etapas/ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md) |
 | 323-bf204d96 | Botão "Exportar Meu Gabarito" na discursiva id 152 (#196, pedida em 2026-10-16) | [ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
 | 324-25203735 | "Exportar Meu Gabarito" nas demais discursivas (#197, pedida em 2026-10-16) | [ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
+| 325-86c5c42e | Botão "Exportar PDF" só para o professor (#198, pedida em 2026-10-16) | [ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md](etapas/ETAPA-325-86c5c42e-EXPORTAR-PDF-SO-PROFESSOR.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos
