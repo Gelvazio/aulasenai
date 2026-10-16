@@ -78,6 +78,7 @@ os SQLs antigos ainda existem em `database/`. Reaproveitar ou refazer só o nece
   esse SQL em produção e estende a exceção de nível à #206.3). Registrado por Claude Code
   (Sonnet 5.5) (local · main · s12).
 - 2026-10-16 15:58 — **#206.4:** o usuário mandou assumir e disse "A exceção de nível vale para ela". Registrado por Claude Code (Sonnet 5.5) (local · main · s12).
+- 2026-10-16 18:11 — **#206.4 a #206.6 passam para a frente s14:** o usuário pediu "termine a tarefa 206". A s12 não tinha commit nem arquivo alterado desde a reserva (15:58). Registrado por Claude Code (Opus 5.5) (local · main · s14).
 
 ### #206.1 — Aprovação do plano pelo usuário
 
