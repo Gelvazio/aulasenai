@@ -61,14 +61,20 @@ Outras páginas que apontam para a v1: `TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNI
 
 ### #212.2 — Banco: SQL do DELETE + aulas 70/71 excluídas
 
-**Próximo passo:** escrever o SQL, marcar as aulas 70/71 `excluido = 1` e pedir ao usuário para
-rodar o DELETE no SQL Editor.
+**Próximo passo:** 👀 usuário rodar a PARTE 2 de
+`database/2026-10-16-excluir-trabalho-equipe-manual-itic.sql` no SQL Editor do Supabase; depois,
+conferir pelo conector que as atividades 58 e 59 sumiram e fechar a subtarefa.
 
 - **Nível:** PESADO — apagar dados do banco
+- **Entrega:** `database/2026-10-16-excluir-trabalho-equipe-manual-itic.sql`; PARTE 1 aplicada
+  pelo conector em 2026-10-16 19:47 (aulas 70 e 71 com `excluido = 1`).
+- **Verificação:** o `update ... returning` devolveu as aulas 70 (nº 13) e 71 (nº 14) com
+  `excluido = 1`. DELETE: pendente do usuário.
 
 ### #212.3 — Cards, arquivos e links
 
-**Próximo passo:** tirar os 2 cards, apagar os 2 HTML e ajustar os links e o `STATUS_MATERIA.md`.
+**Próximo passo:** tirar os 2 cards, apagar os 2 HTML e ajustar os links e o `STATUS_MATERIA.md`
+(em execução).
 
 - **Nível:** MEDIO — HTML de até 3 arquivos + remoção de 2 arquivos
 
