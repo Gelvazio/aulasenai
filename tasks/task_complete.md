@@ -55,3 +55,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #202-3f8d6b21 | **Alinhar as regras do aulasenai às regras globais (`rules-ai`)** | 🟠 Alta | — | ✅ Concluído | — (não reservável) | [329-3f8d6b21](etapas/ETAPA-329-3f8d6b21-ALINHAR-REGRAS-GLOBAIS.md) |
 | #204.1 | Tirar a linha "Data da aula" dos cards (MEDIO) | 🟡 Média | — | ✅ Concluído | — | [331-23c1d3e3](etapas/ETAPA-331-23c1d3e3-TIRAR-DATA-DA-AULA-DOS-CARDS.md) |
 | #205.1 | Tirar a linha de resumo e o botão Conteúdo (.md) dos cards (MEDIO) | 🟡 Média | — | ✅ Concluído | — | [332-6808b7d3](etapas/ETAPA-332-6808b7d3-TIRAR-LINHA-QUESTOES-DOS-CARDS.md) |
+| #206.1 | Aprovação do plano pelo usuário (LEVE) | 🟠 Alta | — | ✅ Concluído | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |

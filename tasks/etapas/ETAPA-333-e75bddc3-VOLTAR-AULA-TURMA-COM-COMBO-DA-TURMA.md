@@ -63,14 +63,21 @@ os SQLs antigos ainda existem em `database/`. Reaproveitar ou refazer só o nece
 ### Decisões
 
 - 2026-10-16 15:25 — **Pedido:** o usuário mandou voltar a regra e pediu, por ora, **só criar a
-  tarefa e publicar no quadro**. Aprovação do plano: **pendente** (#206.1).
+  tarefa e publicar no quadro**.
+- 2026-10-16 15:20 — **Aprovação do plano:** o usuário respondeu "Sim, aprovo o plano da #206".
+  Escopo aprovado como está acima. Registrado por Claude Code (Sonnet 5.5) (local · main).
+- 2026-10-16 15:20 — **#206.2 não foi assumida por esta frente:** é nível PESADO (banco) e esta
+  sessão é Sonnet 5.5; `niveis.md` reserva PESADO a Opus 5.5+ ou Fable. Aguarda o usuário decidir
+  (abrir a sessão com Opus/Fable ou autorizar expressamente esta).
 
 ### #206.1 — Aprovação do plano pelo usuário
 
-**Próximo passo:** 👀 o usuário lê o escopo acima, corrige o que quiser e responde "sim".
+**Próximo passo:** — (entregue).
 
 - **Nível:** LEVE — conferência do usuário (a aprovação é do usuário, não de IA).
 - **Critérios de aceitação:** "sim" claro registrado em Decisões, com data e hora.
+- **Entrega:** aprovação de 2026-10-16 15:20 registrada em Decisões. **Verificação:** resposta do
+  usuário no chat.
 
 ### #206.2 — SQL: recriar a `aula_turma` com as 3 chaves, data, bloqueio da aula e RLS
 
