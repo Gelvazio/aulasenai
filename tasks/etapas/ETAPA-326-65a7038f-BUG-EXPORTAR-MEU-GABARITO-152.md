@@ -7,8 +7,8 @@ discursiva id 152 para o aluno que já finalizou.
 
 ### #199.1 — Diagnosticar e corrigir o botão
 
-**Próximo passo:** 👀 o usuário diz se conferiu logado como **professor** ou como **aluno**
-(e, se como aluno, qual); com isso, corrigir ou ligar o botão também para o professor.
+**Próximo passo:** 👀 o usuário escolhe como seguir: simular a página no Node (jsdom na pasta
+temporária, sem navegador) ou mandar o aviso do console (F12) da página logado como aluno.
 
 - **Diagnóstico (2026-10-16 11:15):** a página da 152 tem `data-exportar-meu-gabarito="sim"`,
   a atividade existe no banco com a mesma `pagina`, os 3 JS passam no `node --check` e nenhum
