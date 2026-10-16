@@ -218,6 +218,9 @@ ATIVIDADES_BANCO_DADOS = [
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-10-50-QUESTOES.md"),
     (11, "Padronização de Dados, Cronograma e Fluxograma", DATA_PROVISORIA,
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-11-50-QUESTOES.md"),
+    # Avaliação Objetiva 01 (aulas 01 a 10), aplicada na aula 11; seed próprio das avaliações.
+    (11, "Padronização de Dados, Cronograma e Fluxograma", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/AVALIACAO-OBJETIVA-01-QUESTOES.md"),
     (12, "DDL: Tabelas e Campos", DATA_PROVISORIA,
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-12-50-QUESTOES.md"),
     (13, "DDL: Relações, Chaves e Restrições", DATA_PROVISORIA,
@@ -236,6 +239,9 @@ ATIVIDADES_BANCO_DADOS = [
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-19-50-QUESTOES.md"),
     (20, "Projeto Integrador: Banco Documentado para o Back-End", DATA_PROVISORIA,
      f"{PASTA_BANCO_DADOS}/ATIVIDADES-AULA-20-50-QUESTOES.md"),
+    # Avaliação Objetiva 02 (aulas 11 a 20), aplicada na aula 20; seed próprio das avaliações.
+    (20, "Projeto Integrador: Banco Documentado para o Back-End", DATA_PROVISORIA,
+     f"{PASTA_BANCO_DADOS}/AVALIACAO-OBJETIVA-02-QUESTOES.md"),
 ]
 
 # Um grupo por matéria: (curso, matéria, atividades). Para outro curso, acrescentar um grupo.

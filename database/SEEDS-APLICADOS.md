@@ -5,11 +5,11 @@ Registro de **todos** os arquivos `database/*-seed-atividades.sql` e do status d
 CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 [`CLAUDE.md`](../CLAUDE.md), seção "🌱 REGRA — SEEDS DO BANCO".** Aqui ficam só os dados.
 
-## Resumo (atualizado em 2026-10-16 18:56)
+## Resumo (atualizado em 2026-10-16 20:51)
 
 | PENDENTE | APLICADO | CONCLUÍDO | SUBSTITUÍDO | Total |
 |---|---|---|---|---|
-| 0 | 3 | 67 | 0 | 70 |
+| 1 | 3 | 68 | 0 | 72 |
 
 ## Todos os seeds
 
@@ -94,6 +94,8 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-16-slides-storage.sql` | Testes de Front-End | 0 | **SUBSTITUÍDO** | 2026-10-16 18:46 | Desfeito pelo 2026-10-16-remover-slides-storage.sql a pedido do usuário (#209.7) |
 | `2026-10-16-remover-slides-storage.sql` | Testes de Front-End | 0 | **CONCLUÍDO** | 2026-10-16 18:46 | Aplicado pelo conector (#209.7): 0 políticas slides_* e função slide_liberado_para_usuario removida; o bucket slides (vazio) só sai pelo painel (o Supabase recusa delete por SQL) |
 | `2026-10-16-aula-turma-bloqueio-cards-fechados.sql` | Várias matérias | 0 | **CONCLUÍDO** | 2026-10-16 18:56 | Aplicado pelo conector (#210.2): 26 pares aula x turma com bloqueio = true (ITIC 16, Automacao 6, Analise de Dados 2, Comunicacao 2); md5 das 148 atividades igual antes e depois (89f9302b...); 38 datas mantidas |
+| `2026-10-10-banco-de-dados-avaliacoes-objetivas-seed-atividades.sql` | Banco de Dados (TII) | 2 | **CONCLUÍDO** | 2026-10-10 22:36 | Aplicado pelo conector em 2 comandos: Avaliação Objetiva 01 (atividade id 147, aula 11 id 115) e 02 (id 148, aula 20 id 125), 50 itens cada, md5 igual ao do arquivo (2026-10-10 22:36) |
+| `2026-10-11-banco-de-dados-avaliacao-pratica-seed-atividades.sql` | Banco de Dados (TII) | 1 | **PENDENTE** | 2026-10-10 22:37 | Avaliação Prática (20 questões × 3 tópicos, aula 20); gerado, ainda não aplicado |
 
 ## Seeds excluídos (não podiam ser concluídos)
 

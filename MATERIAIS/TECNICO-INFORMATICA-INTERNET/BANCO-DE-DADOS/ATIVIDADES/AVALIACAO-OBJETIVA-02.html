@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Objetiva 02 — Aulas 11 a 20 (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="AV-02" data-tema="Aulas 11 a 20" data-total="50"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>📝 Avaliação Objetiva 02: Aulas 11 a 20</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <button class="btn-export" id="btnExportarGabarito" type="button" hidden title="Professor: gabarito real. Aluno: suas respostas da tentativa de maior nota.">🔑 Exportar Gabarito</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de AVALIACAO-OBJETIVA-02-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C1 —</strong> Reconhecer as demandas do cliente</p>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</p>
+                    <p class="quadro-capacidades__linha"><strong>C3 —</strong> Aplicar os procedimentos de normalização e padronização de dados.</p>
+                    <p class="quadro-capacidades__linha"><strong>C7 —</strong> Aplicar linguagem de definição de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C8 —</strong> Aplicar linguagem de manipulação de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C12 —</strong> Reconhecer os pilares da segurança da informação</p>
+                    <p class="quadro-capacidades__linha"><strong>C13 —</strong> Reconhecer os níveis hierárquicos de segurança da informação</p>
+                    <p class="quadro-capacidades__linha"><strong>C14 —</strong> Aplicar boas práticas de segurança da informação</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Padrão de Nomes da Biblioteca</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A equipe que modela o banco de uma biblioteca escolar recebeu um rascunho do dicionário de dados com as colunas &quot;DataEmprestimo&quot;, &quot;Valor Multa&quot; e &quot;user&quot; e precisa ajustá-las ao padrão de nomes adotado na UC (minúsculas, sem acento, palavras separadas por _, sem espaços nem palavras reservadas do SQL). Qual conjunto de nomes segue esse padrão?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>data_emprestimo, valor_multa e usuario</li>
+                        <li><span class="letra">B)</span>dt_emp, vlr_mlt e usr</li>
+                        <li><span class="letra">C)</span>data_emprestimo, valorMulta e user</li>
+                        <li><span class="letra">D)</span>DataEmprestimo, valor multa e user</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Telefone e CEP Padronizados</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No cadastro de clientes de uma loja de informática, os telefones chegam como &quot;(47) 99999-0000&quot; e &quot;4799999 0000&quot; e os CEPs como &quot;89.160-000&quot; e &quot;89160000&quot;, o que atrapalha buscas e comparações. Seguindo o padrão de tipos e formatos da UC, como esses dados devem ser guardados no banco?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Como integer, porque ocupa menos espaço e facilita as contas</li>
+                        <li><span class="letra">B)</span>Como numeric(11,0), para manter o padrão dos valores numéricos</li>
+                        <li><span class="letra">C)</span>Como texto exatamente do jeito que o usuário digitou na tela</li>
+                        <li><span class="letra">D)</span>Como texto contendo só os dígitos, deixando a máscara para a tela</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Domínio do Status do Pedido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao conferir a tabela pedido de uma loja virtual, a equipe encontrou na coluna status_pedido os valores &#x27;Pago&#x27;, &#x27;PAGO&#x27;, &#x27;pg&#x27; e &#x27;pago&#x27; para a mesma situação. A equipe decidiu que os únicos valores válidos serão pendente, pago e cancelado. Qual recurso garante esse domínio no próprio banco?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>NOT NULL na coluna status_pedido para impedir valores vazios</li>
+                        <li><span class="letra">B)</span>UNIQUE (status_pedido) para impedir valores repetidos</li>
+                        <li><span class="letra">C)</span>CHECK (status_pedido IN (&#x27;pendente&#x27;, &#x27;pago&#x27;, &#x27;cancelado&#x27;))</li>
+                        <li><span class="letra">D)</span>DEFAULT &#x27;pago&#x27; na coluna status_pedido para valores novos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Atraso e Dependência no Cronograma</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente<br>C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No cronograma do projeto do banco de uma clínica, a etapa &quot;Scripts DDL e DML&quot; depende da etapa &quot;Normalização e padrão&quot;, que terminou uma semana depois do previsto. O cronograma não tinha folga antes do marco &quot;Banco criado&quot;. Qual é a consequência direta desse atraso no planejamento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O marco &quot;Banco criado&quot; não muda, porque marcos não têm dependências</li>
+                        <li><span class="letra">B)</span>Somente a documentação técnica atrasa, porque é a última etapa</li>
+                        <li><span class="letra">C)</span>Os scripts começam uma semana depois e o marco atrasa, salvo replanejamento</li>
+                        <li><span class="letra">D)</span>Os scripts podem começar no prazo, pois não dependem do modelo final</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Símbolos do Fluxo de Empréstimo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A equipe desenha o fluxograma do empréstimo de livros: depois de informar a matrícula do leitor, o sistema consulta a tabela de multas e pergunta &quot;o leitor tem multa em aberto?&quot;, seguindo caminhos diferentes para sim e para não. Quais símbolos representam, respectivamente, a pergunta e a consulta à tabela de multas?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Retângulo para a pergunta e paralelogramo para a consulta ao banco</li>
+                        <li><span class="letra">B)</span>Losango para a pergunta e cilindro para a consulta ao banco</li>
+                        <li><span class="letra">C)</span>Paralelogramo para a pergunta e retângulo para a consulta ao banco</li>
+                        <li><span class="letra">D)</span>Oval para a pergunta e losango para a consulta ao banco</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Tipo do Preço do Produto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O dicionário de dados de uma loja de informática diz que a coluna preco da tabela produto guarda valores em reais com centavos e é obrigatória. Ao escrever o CREATE TABLE produto no PostgreSQL, qual definição da coluna segue o dicionário e evita erros de arredondamento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>preco integer NOT NULL</li>
+                        <li><span class="letra">B)</span>preco real NOT NULL</li>
+                        <li><span class="letra">C)</span>preco varchar(10) NOT NULL</li>
+                        <li><span class="letra">D)</span>preco numeric(10,2) NOT NULL</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Coluna Nova em Tabela Existente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A tabela cliente de uma loja já está em uso com 500 linhas, e o gerente pediu uma coluna data_cadastro que receba automaticamente a data do dia quando nada for informado. Qual comando DDL acrescenta essa coluna sem recriar a tabela?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ALTER TABLE cliente ADD COLUMN data_cadastro date DEFAULT current_date;</li>
+                        <li><span class="letra">B)</span>UPDATE TABLE cliente ADD data_cadastro date DEFAULT current_date;</li>
+                        <li><span class="letra">C)</span>ALTER TABLE cliente ALTER COLUMN data_cadastro date DEFAULT current_date;</li>
+                        <li><span class="letra">D)</span>CREATE COLUMN data_cadastro ON cliente date DEFAULT current_date;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Falha ao Tornar Obrigatório</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na escola de cursos livres, o técnico executou ALTER TABLE aluno ALTER COLUMN email SET NOT NULL; e o PostgreSQL recusou o comando, embora a coluna email exista e o nome esteja correto. Qual é a causa mais provável da falha?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Já existem alunos com o email vazio (NULL) na tabela</li>
+                        <li><span class="letra">B)</span>SET NOT NULL só funciona em tabelas ainda sem linhas</li>
+                        <li><span class="letra">C)</span>A coluna precisa ser UNIQUE antes de virar NOT NULL</li>
+                        <li><span class="letra">D)</span>O tipo varchar não aceita a restrição NOT NULL</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Script de Teste que Roda de Novo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O script de teste 01-ddl-loja.sql roda bem na primeira vez, mas na segunda o psql mostra o erro &quot;relation produto already exists&quot;. A equipe quer que o script de teste possa ser executado do zero sempre que necessário, sem nunca rodá-lo no banco de produção. Qual ajuste resolve?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Trocar o CREATE TABLE por TRUNCATE TABLE para reaproveitar a tabela existente</li>
+                        <li><span class="letra">B)</span>Retirar os CREATE TABLE do script e criar as tabelas manualmente no pgAdmin</li>
+                        <li><span class="letra">C)</span>Acrescentar DROP TABLE IF EXISTS antes de cada CREATE TABLE no script de teste</li>
+                        <li><span class="letra">D)</span>Renomear as tabelas a cada execução para que os nomes nunca se repitam</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Separando DDL de DML</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao organizar os scripts do sistema de uma clínica, a equipe precisa separar o arquivo de estrutura (DDL) do arquivo de dados (DML). O rascunho tem os comandos CREATE TABLE, INSERT, ALTER TABLE, UPDATE e DROP TABLE. Quais deles pertencem ao arquivo de DDL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>CREATE TABLE, ALTER TABLE e DROP TABLE</li>
+                        <li><span class="letra">B)</span>CREATE TABLE, INSERT e UPDATE</li>
+                        <li><span class="letra">C)</span>ALTER TABLE, UPDATE e INSERT</li>
+                        <li><span class="letra">D)</span>INSERT, UPDATE e DROP TABLE</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Paciente com Consultas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No banco de uma clínica, a tabela consulta tem a coluna id_paciente ligada a paciente. A regra do cliente é que um paciente com consultas registradas nunca pode ser apagado, para não perder o histórico. Qual definição da chave estrangeira em consulta atende a essa regra?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>id_paciente integer REFERENCES paciente (id_paciente) ON DELETE SET NULL</li>
+                        <li><span class="letra">B)</span>id_paciente integer NOT NULL UNIQUE, sem referência à tabela paciente</li>
+                        <li><span class="letra">C)</span>id_paciente integer NOT NULL REFERENCES paciente (id_paciente) ON DELETE CASCADE</li>
+                        <li><span class="letra">D)</span>id_paciente integer NOT NULL REFERENCES paciente (id_paciente) ON DELETE RESTRICT</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Itens do Pedido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na loja virtual, item_pedido é uma entidade fraca: cada item é identificado pelo pedido e pelo número do item, e não faz sentido sem o pedido. Ao apagar um pedido de teste, os itens dele devem sumir junto. Qual definição atende a esse modelo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>id_pedido integer sem REFERENCES e PRIMARY KEY (id_pedido, numero_item)</li>
+                        <li><span class="letra">B)</span>id_pedido REFERENCES pedido (id_pedido) ON DELETE SET NULL e UNIQUE (numero_item)</li>
+                        <li><span class="letra">C)</span>id_pedido REFERENCES pedido (id_pedido) ON DELETE RESTRICT e PRIMARY KEY (numero_item)</li>
+                        <li><span class="letra">D)</span>id_pedido REFERENCES pedido (id_pedido) ON DELETE CASCADE e PRIMARY KEY (id_pedido, numero_item)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Reserva Repetida</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na biblioteca, a tabela reserva liga leitor e livro. A regra é que um mesmo leitor não pode ter duas reservas do mesmo livro, mas pode reservar vários livros diferentes e um livro pode ser reservado por leitores diferentes. Qual restrição implementa exatamente essa regra?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>PRIMARY KEY (id_livro)</li>
+                        <li><span class="letra">B)</span>CHECK (id_leitor &lt;&gt; id_livro)</li>
+                        <li><span class="letra">C)</span>UNIQUE (id_leitor)</li>
+                        <li><span class="letra">D)</span>UNIQUE (id_leitor, id_livro)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Lendo o Erro de CHECK</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Durante a dinâmica de testes, uma dupla executou um INSERT na tabela turma e recebeu a mensagem &quot;new row for relation turma violates check constraint turma_turno_check&quot;. A tabela tem turno varchar(5) NOT NULL CHECK (turno IN (&#x27;manha&#x27;, &#x27;tarde&#x27;, &#x27;noite&#x27;)). O que essa mensagem indica?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O valor informado para turno está fora da lista permitida</li>
+                        <li><span class="letra">B)</span>O curso informado na turma não existe na tabela curso</li>
+                        <li><span class="letra">C)</span>O campo turno foi deixado vazio no INSERT</li>
+                        <li><span class="letra">D)</span>Já existe outra turma cadastrada com o mesmo turno</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Restrição com Nome</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No banco de recursos humanos de uma empresa, a tabela funcionario já existe e o RH pediu que o salário seja sempre maior que zero. A equipe quer que a restrição tenha um nome claro, para facilitar a leitura do erro e a remoção futura. Qual comando faz isso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ALTER TABLE funcionario ADD CHECK CONSTRAINT funcionario_salario_positivo (salario &gt; 0);</li>
+                        <li><span class="letra">B)</span>ALTER TABLE funcionario ADD CONSTRAINT funcionario_salario_positivo CHECK (salario &gt; 0);</li>
+                        <li><span class="letra">C)</span>ALTER TABLE funcionario ALTER COLUMN salario SET CHECK funcionario_salario_positivo &gt; 0;</li>
+                        <li><span class="letra">D)</span>CREATE CONSTRAINT funcionario_salario_positivo ON funcionario CHECK (salario &gt; 0);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Ordem da Carga de Dados</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A equipe da loja virtual vai montar o script de carga de dados de teste. A tabela pedido tem chave estrangeira para cliente, e item_pedido tem chaves estrangeiras para pedido e para produto. Em que ordem os INSERT devem ser executados para não violar as chaves estrangeiras?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Qualquer ordem, pois as chaves estrangeiras só valem no SELECT</li>
+                        <li><span class="letra">B)</span>Primeiro item_pedido, depois pedido e por fim cliente e produto</li>
+                        <li><span class="letra">C)</span>Primeiro pedido, depois cliente e item_pedido e por fim produto</li>
+                        <li><span class="letra">D)</span>Primeiro cliente e produto, depois pedido e por fim item_pedido</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Id Devolvido ao Back-End</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O back-end da loja cadastra um cliente e, logo em seguida, precisa do id_cliente gerado pelo banco para criar o primeiro pedido. A coluna id_cliente é GENERATED ALWAYS AS IDENTITY. Qual comando insere o cliente e já devolve o id gerado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>INSERT INTO cliente (nome, email) VALUES (&#x27;Rita Lima&#x27;, &#x27;rita@exemplo.com&#x27;) RETURN id_cliente;</li>
+                        <li><span class="letra">B)</span>INSERT INTO cliente (nome, email) OUTPUT id_cliente VALUES (&#x27;Rita Lima&#x27;, &#x27;rita@exemplo.com&#x27;);</li>
+                        <li><span class="letra">C)</span>INSERT INTO cliente (nome, email) VALUES (&#x27;Rita Lima&#x27;, &#x27;rita@exemplo.com&#x27;) RETURNING id_cliente;</li>
+                        <li><span class="letra">D)</span>INSERT INTO cliente (id_cliente, nome, email) VALUES (NULL, &#x27;Rita Lima&#x27;, &#x27;rita@exemplo.com&#x27;);</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Reajuste Desconfiado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Dentro de uma transação, o técnico executou BEGIN; e depois UPDATE produto SET preco = preco * 1.05 WHERE ativo = true; esperando reajustar 40 produtos ativos, mas o psql respondeu &quot;UPDATE 48&quot;. A transação ainda não foi confirmada. Qual é a atitude correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Executar TRUNCATE na tabela produto e recarregar os dados de teste</li>
+                        <li><span class="letra">B)</span>Executar ROLLBACK, conferir o WHERE com um SELECT e refazer o UPDATE</li>
+                        <li><span class="letra">C)</span>Executar o mesmo UPDATE de novo para confirmar o número de linhas</li>
+                        <li><span class="letra">D)</span>Executar COMMIT e corrigir os 8 produtos depois com outro UPDATE</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Médico Desligado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O médico de id 8 deixou a clínica, mas as consultas que ele atendeu precisam continuar no histórico e as telas devem deixar de oferecê-lo para novos agendamentos. A tabela medico tem a coluna ativo boolean. Qual comando aplica a exclusão lógica recomendada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>UPDATE medico SET ativo = false WHERE id_medico = 8;</li>
+                        <li><span class="letra">B)</span>UPDATE medico SET ativo = false;</li>
+                        <li><span class="letra">C)</span>TRUNCATE TABLE medico;</li>
+                        <li><span class="letra">D)</span>DELETE FROM medico WHERE id_medico = 8;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Trancar uma Matrícula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A secretaria da escola pediu para trancar somente a matrícula do aluno 12 na turma 4; esse aluno tem outras matrículas e a turma 4 tem outros alunos que devem continuar como estão. Qual comando faz exatamente isso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>UPDATE matricula WHERE id_aluno = 12 AND id_turma = 4 SET situacao = &#x27;trancada&#x27;;</li>
+                        <li><span class="letra">B)</span>UPDATE matricula SET situacao = &#x27;trancada&#x27;, id_aluno = 12, id_turma = 4;</li>
+                        <li><span class="letra">C)</span>UPDATE matricula SET situacao = &#x27;trancada&#x27; WHERE id_aluno = 12 AND id_turma = 4;</li>
+                        <li><span class="letra">D)</span>UPDATE matricula SET situacao = &#x27;trancada&#x27; WHERE id_aluno = 12 OR id_turma = 4;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Pedidos de Março</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O gerente da loja quer todos os pedidos feitos em março de 2026, incluindo os dias 1º e 31. A coluna data_pedido é do tipo date. Qual filtro devolve exatamente esses pedidos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE data_pedido BETWEEN &#x27;2026-03-01&#x27; AND &#x27;2026-03-31&#x27;</li>
+                        <li><span class="letra">B)</span>WHERE data_pedido IN (&#x27;2026-03-01&#x27;, &#x27;2026-03-31&#x27;)</li>
+                        <li><span class="letra">C)</span>WHERE data_pedido BETWEEN &#x27;2026-03-31&#x27; AND &#x27;2026-03-01&#x27;</li>
+                        <li><span class="letra">D)</span>WHERE data_pedido &gt; &#x27;2026-03-01&#x27; AND data_pedido &lt; &#x27;2026-03-31&#x27;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Busca por Sobrenome</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A atendente da clínica digita &quot;souza&quot; na busca e quer encontrar pacientes como &quot;Ana Souza&quot;, &quot;SOUZA Lima&quot; e &quot;Carlos de souza&quot;, ou seja, com o sobrenome em qualquer posição do nome e escrito com maiúsculas ou minúsculas. Qual filtro atende ao pedido no PostgreSQL?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE nome LIKE &#x27;souza&#x27;</li>
+                        <li><span class="letra">B)</span>WHERE nome = &#x27;%souza%&#x27;</li>
+                        <li><span class="letra">C)</span>WHERE nome ILIKE &#x27;%souza%&#x27;</li>
+                        <li><span class="letra">D)</span>WHERE nome ILIKE &#x27;souza%&#x27;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Clientes sem Telefone</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um colega escreveu SELECT nome FROM cliente WHERE telefone = NULL; para listar os clientes sem telefone e a consulta não devolveu nenhuma linha, embora existam clientes com o telefone vazio. Qual filtro corrige a consulta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE telefone = &#x27;NULL&#x27;</li>
+                        <li><span class="letra">B)</span>WHERE telefone IS NULL</li>
+                        <li><span class="letra">C)</span>WHERE telefone &lt;&gt; NULL</li>
+                        <li><span class="letra">D)</span>WHERE NOT telefone = NULL</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">Categoria e Preço</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O gerente quer os produtos das categorias 1 ou 3 que custam até R$ 100,00. A consulta deve trazer só produtos que cumprem as duas exigências ao mesmo tempo: estar numa dessas categorias e ter preço até 100. Qual WHERE está correto?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHERE preco &lt;= 100 AND id_categoria = 1 AND id_categoria = 3</li>
+                        <li><span class="letra">B)</span>WHERE preco &lt;= 100 AND id_categoria = 1 OR id_categoria = 3</li>
+                        <li><span class="letra">C)</span>WHERE preco &lt;= 100 OR id_categoria IN (1, 3)</li>
+                        <li><span class="letra">D)</span>WHERE preco &lt;= 100 AND (id_categoria = 1 OR id_categoria = 3)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Terceira Página da Lista</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A tela de clientes do sistema mostra 20 nomes por página, em ordem alfabética. O back-end precisa montar a consulta da terceira página. Qual final de consulta devolve exatamente essa página?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ORDER BY nome LIMIT 40 OFFSET 20</li>
+                        <li><span class="letra">B)</span>ORDER BY nome LIMIT 20 OFFSET 60</li>
+                        <li><span class="letra">C)</span>ORDER BY nome LIMIT 20 OFFSET 40</li>
+                        <li><span class="letra">D)</span>ORDER BY nome LIMIT 20 OFFSET 3</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Clientes que Nunca Compraram</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O setor de marketing da loja quer a lista dos clientes que nunca fizeram nenhum pedido, para enviar um cupom de boas-vindas. A tabela pedido tem a coluna id_cliente ligada a cliente. Qual consulta devolve esses clientes?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SELECT c.nome FROM cliente c LEFT JOIN pedido p ON p.id_cliente = c.id_cliente WHERE p.id_pedido IS NOT NULL;</li>
+                        <li><span class="letra">B)</span>SELECT c.nome FROM cliente c LEFT JOIN pedido p ON p.id_cliente = c.id_cliente WHERE p.id_pedido IS NULL;</li>
+                        <li><span class="letra">C)</span>SELECT c.nome FROM cliente c INNER JOIN pedido p ON p.id_cliente = c.id_cliente WHERE p.id_pedido IS NULL;</li>
+                        <li><span class="letra">D)</span>SELECT c.nome FROM cliente c LEFT JOIN pedido p ON p.id_cliente = c.id_cliente WHERE p.id_pedido = NULL;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Erro de Agrupamento</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para o relatório da diretoria, a equipe escreveu SELECT c.nome, t.turno, count(*) FROM turma t JOIN curso c ON c.id_curso = t.id_curso GROUP BY c.nome; e o PostgreSQL respondeu &quot;column t.turno must appear in the GROUP BY clause&quot;. O objetivo é contar as turmas de cada curso em cada turno. Qual correção resolve?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Trocar o JOIN por LEFT JOIN e manter o GROUP BY</li>
+                        <li><span class="letra">B)</span>Trocar o agrupamento para GROUP BY c.nome, t.turno</li>
+                        <li><span class="letra">C)</span>Trocar count(*) por count(t.turno) e manter o GROUP BY</li>
+                        <li><span class="letra">D)</span>Mover a contagem para um WHERE count(*) &gt; 0</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Categorias com Muitos Produtos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O gerente quer saber quais categorias têm mais de 10 produtos ativos. A tabela produto tem as colunas id_categoria e ativo. Qual consulta responde corretamente, filtrando as linhas antes de agrupar e os grupos depois de agrupar?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SELECT id_categoria, count(*) FROM produto GROUP BY id_categoria WHERE count(*) &gt; 10 AND ativo = true;</li>
+                        <li><span class="letra">B)</span>SELECT id_categoria, count(*) FROM produto HAVING ativo = true GROUP BY id_categoria;</li>
+                        <li><span class="letra">C)</span>SELECT id_categoria, count(*) FROM produto WHERE ativo = true AND count(*) &gt; 10 GROUP BY id_categoria;</li>
+                        <li><span class="letra">D)</span>SELECT id_categoria, count(*) FROM produto WHERE ativo = true GROUP BY id_categoria HAVING count(*) &gt; 10;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Produtos Acima da Média</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A loja quer destacar no site os produtos com preço acima da média de preço de todos os produtos cadastrados. Qual consulta usa corretamente uma subconsulta que devolve um único valor?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SELECT nome, preco FROM produto WHERE preco &gt; (SELECT avg(preco) FROM produto);</li>
+                        <li><span class="letra">B)</span>SELECT nome, preco FROM produto WHERE preco &gt; (SELECT preco FROM produto);</li>
+                        <li><span class="letra">C)</span>SELECT nome, preco FROM produto WHERE preco &gt; avg(preco);</li>
+                        <li><span class="letra">D)</span>SELECT nome, preco FROM produto HAVING preco &gt; avg(preco) GROUP BY nome;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Turma Vazia Contada como Um</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O relatório SELECT t.codigo, count(*) FROM turma t LEFT JOIN matricula m ON m.id_turma = t.id_turma GROUP BY t.codigo; mostra 1 matrícula para a turma T07, que na verdade não tem nenhum aluno matriculado. Qual ajuste faz a turma T07 aparecer com zero?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Acrescentar HAVING count(*) &gt; 0 ao final</li>
+                        <li><span class="letra">B)</span>Trocar count(*) por sum(t.id_turma)</li>
+                        <li><span class="letra">C)</span>Trocar count(*) por count(m.id_matricula)</li>
+                        <li><span class="letra">D)</span>Trocar o LEFT JOIN por INNER JOIN</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Função do Total Gasto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O back-end da loja precisa mostrar, dentro de uma consulta, quanto um cliente já gastou, chamando algo como SELECT total_gasto(5);. A rotina deve calcular a soma dos pedidos e devolver esse valor. Qual forma de rotina do PostgreSQL atende a esse uso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>CREATE FUNCTION total_gasto(p_cliente integer) RETURNS numeric, chamada com SELECT</li>
+                        <li><span class="letra">B)</span>CREATE PROCEDURE total_gasto(p_cliente integer) sem retorno, chamada com SELECT</li>
+                        <li><span class="letra">C)</span>CREATE PROCEDURE total_gasto(p_cliente integer) RETURNS numeric, chamada com CALL</li>
+                        <li><span class="letra">D)</span>CREATE TRIGGER total_gasto ligado à tabela pedido, chamado com SELECT</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Consulta sem Destino</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Dentro de uma função PL/pgSQL que conta os empréstimos ativos de um leitor, o aluno escreveu SELECT count(*) FROM emprestimo WHERE id_leitor = p_leitor AND data_devolucao IS NULL; e, ao chamar a função, recebeu o erro &quot;query has no destination for result data&quot;. Qual correção resolve?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Trocar o SELECT por CALL count(*) FROM emprestimo WHERE ...</li>
+                        <li><span class="letra">B)</span>Usar SELECT count(*) INTO v_qtd FROM emprestimo WHERE ... e devolver v_qtd</li>
+                        <li><span class="letra">C)</span>Acrescentar RAISE NOTICE antes do SELECT para guardar o resultado</li>
+                        <li><span class="letra">D)</span>Trocar o parâmetro p_leitor pelo nome da coluna id_leitor</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Estoque que Ficou Negativo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O procedimento baixar_estoque da loja confere a quantidade disponível e, quando ela é insuficiente, executa RAISE NOTICE &#x27;Estoque insuficiente&#x27;; mesmo assim, o UPDATE que diminui o estoque continua e o saldo fica negativo. Qual mudança faz o procedimento barrar a operação e desfazer o que já foi feito?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Acrescentar COMMIT logo depois do RAISE NOTICE</li>
+                        <li><span class="letra">B)</span>Trocar RAISE NOTICE por RAISE EXCEPTION na verificação do estoque</li>
+                        <li><span class="letra">C)</span>Trocar o UPDATE por um INSERT na tabela de estoque</li>
+                        <li><span class="letra">D)</span>Trocar RAISE NOTICE por RETURN NULL na verificação do estoque</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">IF NOT FOUND na Devolução</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O procedimento registrar_devolucao da biblioteca executa UPDATE emprestimo SET data_devolucao = current_date WHERE id_emprestimo = p_emprestimo AND data_devolucao IS NULL; e, em seguida, IF NOT FOUND THEN RAISE EXCEPTION ...; END IF;. Em que situação a exceção é disparada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Quando a devolução foi registrada com sucesso na data de hoje</li>
+                        <li><span class="letra">B)</span>Sempre que o procedimento é chamado com CALL fora de uma transação</li>
+                        <li><span class="letra">C)</span>Quando nenhuma linha foi alterada: empréstimo inexistente ou já devolvido</li>
+                        <li><span class="letra">D)</span>Quando o UPDATE alterou mais de uma linha da tabela emprestimo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Última Vaga Disputada</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No dia de abertura de matrículas, duas atendentes chamam ao mesmo tempo CALL matricular(...) para a última vaga da mesma turma. O procedimento começa com PERFORM 1 FROM turma WHERE id_turma = p_turma FOR UPDATE; antes de contar os alunos ativos. Qual é o papel do FOR UPDATE nesse caso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Travar a linha da turma, fazendo a segunda chamada esperar e contar a primeira matrícula</li>
+                        <li><span class="letra">B)</span>Impedir que a turma seja consultada por SELECT até o fim do dia</li>
+                        <li><span class="letra">C)</span>Repetir a matrícula para as duas atendentes e somar as duas no total</li>
+                        <li><span class="letra">D)</span>Atualizar automaticamente a quantidade de vagas da turma na tabela turma</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">E-mail Sempre em Minúsculas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A loja quer que o e-mail do cliente seja gravado sempre em minúsculas, venha o INSERT ou o UPDATE do site, do aplicativo ou do pgAdmin. A equipe vai usar um trigger que ajusta a própria linha antes de ela ser gravada. Qual combinação está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>BEFORE DELETE FOR EACH ROW, com OLD.email := lower(OLD.email); e RETURN OLD;</li>
+                        <li><span class="letra">B)</span>BEFORE INSERT OR UPDATE FOR EACH STATEMENT, com NEW.email := lower(NEW.email);</li>
+                        <li><span class="letra">C)</span>BEFORE INSERT OR UPDATE FOR EACH ROW, com NEW.email := lower(NEW.email); e RETURN NEW;</li>
+                        <li><span class="letra">D)</span>AFTER INSERT OR UPDATE FOR EACH ROW, com NEW.email := lower(NEW.email); e RETURN NULL;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">UPDATE 0 Inesperado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois de criar um trigger BEFORE UPDATE FOR EACH ROW na tabela produto, toda alteração de preço passou a responder &quot;UPDATE 0&quot;, sem nenhuma mensagem de erro, e os preços não mudam. Qual é a causa mais provável na função do trigger?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>A função devolve NULL em vez de NEW, e a linha é pulada em silêncio</li>
+                        <li><span class="letra">B)</span>A função devolve NEW, o que cancela a alteração da linha</li>
+                        <li><span class="letra">C)</span>O trigger deveria ser FOR EACH STATEMENT para aceitar UPDATE</li>
+                        <li><span class="letra">D)</span>A função usa OLD, que não existe em comandos UPDATE</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Histórico de Cada Preço</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A loja quer guardar na tabela historico_preco uma linha para cada produto que tiver o preço alterado, com o valor antigo e o novo. Um único UPDATE de reajuste pode mudar 30 produtos de uma vez. Qual nível de trigger atende a esse pedido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>FOR EACH STATEMENT, que executa uma vez para cada linha alterada</li>
+                        <li><span class="letra">B)</span>FOR EACH ROW, que executa uma vez só por comando UPDATE</li>
+                        <li><span class="letra">C)</span>FOR EACH STATEMENT, que grava 30 linhas usando NEW e OLD</li>
+                        <li><span class="letra">D)</span>FOR EACH ROW, que executa uma vez para cada linha alterada</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Histórico sem Mudança Real</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O trigger AFTER UPDATE OF preco ON produto está gravando linhas no histórico mesmo quando o UPDATE repete o mesmo preço. Alguns produtos ainda estão com preço NULL. Qual cláusula no CREATE TRIGGER faz o histórico ser gravado só quando o valor muda de verdade, tratando o NULL corretamente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>WHEN (OLD.preco = NEW.preco)</li>
+                        <li><span class="letra">B)</span>WHEN (OLD.preco &lt;&gt; NEW.preco OR NEW.preco = NULL)</li>
+                        <li><span class="letra">C)</span>WHEN (NEW.preco IS NOT NULL)</li>
+                        <li><span class="letra">D)</span>WHEN (OLD.preco IS DISTINCT FROM NEW.preco)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Laço do Trigger</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para registrar a data da última alteração, a equipe criou um trigger AFTER UPDATE ON produto cuja função executa UPDATE produto SET atualizado_em = now() WHERE id_produto = NEW.id_produto;. Ao testar, o banco entrou em laço até dar erro de profundidade. Qual é a correção recomendada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Usar FOR EACH STATEMENT e manter o UPDATE dentro da função</li>
+                        <li><span class="letra">B)</span>Manter AFTER UPDATE e trocar o UPDATE da função por um DELETE</li>
+                        <li><span class="letra">C)</span>Manter AFTER UPDATE e acrescentar RETURN NULL depois do UPDATE</li>
+                        <li><span class="letra">D)</span>Usar BEFORE UPDATE e fazer NEW.atualizado_em := now(); com RETURN NEW;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Servidor Fora do Ar</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C12 — Reconhecer os pilares da segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O servidor do banco de uma clínica ficou dois dias fora do ar depois que o disco queimou, e o backup, que nunca tinha sido testado, não pôde ser restaurado. Durante esse tempo nenhum atendimento conseguiu consultar os prontuários. Qual pilar da segurança da informação foi atingido principalmente?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Autenticidade, pois os usuários não conseguiram provar quem eram</li>
+                        <li><span class="letra">B)</span>Disponibilidade, pois o dado não estava acessível quando foi preciso</li>
+                        <li><span class="letra">C)</span>Confidencialidade, pois pessoas sem permissão viram os prontuários</li>
+                        <li><span class="letra">D)</span>Integridade, pois os prontuários foram alterados sem autorização</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Atendente Altera Só o Telefone</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C13 — Reconhecer os níveis hierárquicos de segurança da informação<br>C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na matriz de acesso da clínica, o grupo de atendimento pode consultar os pacientes, mas só pode alterar o telefone deles; CPF e data de nascimento ficam fora do alcance de alteração. Seguindo o menor privilégio, qual comando dá a permissão de alteração correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>GRANT UPDATE (telefone) ON paciente TO grupo_atendimento;</li>
+                        <li><span class="letra">B)</span>GRANT UPDATE ON paciente (telefone) TO grupo_atendimento;</li>
+                        <li><span class="letra">C)</span>GRANT UPDATE ON paciente TO grupo_atendimento;</li>
+                        <li><span class="letra">D)</span>GRANT ALL ON paciente TO grupo_atendimento;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">Funcionário Novo na Secretaria</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C13 — Reconhecer os níveis hierárquicos de segurança da informação<br>C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A escola contratou o atendente João para a secretaria. As permissões da secretaria já estão concedidas ao papel de grupo grupo_secretaria (NOLOGIN). Seguindo as boas práticas da aula, como o acesso de João deve ser criado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Repassar a João a senha do login secretaria já usado pelos outros atendentes</li>
+                        <li><span class="letra">B)</span>CREATE ROLE joao_secretaria LOGIN SUPERUSER PASSWORD &#x27;troque-esta-senha&#x27;;</li>
+                        <li><span class="letra">C)</span>CREATE ROLE joao_secretaria LOGIN PASSWORD &#x27;troque-esta-senha&#x27; IN ROLE grupo_secretaria;</li>
+                        <li><span class="letra">D)</span>Repetir para joao_secretaria todos os GRANT já dados a grupo_secretaria</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Login que Enxerga Demais</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na escola, um login novo, criado para outro setor e sem nenhum GRANT, conseguiu conectar no banco escola_db e listar as tabelas do esquema public. A equipe percebeu que faltou um passo do script de segurança. Qual passo evita isso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ALTER ROLE PUBLIC NOLOGIN; para que nenhum login novo consiga entrar no banco</li>
+                        <li><span class="letra">B)</span>REVOKE ALL ON DATABASE escola_db FROM PUBLIC; e REVOKE ALL ON SCHEMA public FROM PUBLIC;</li>
+                        <li><span class="letra">C)</span>DROP SCHEMA public; para que o login não encontre nenhuma tabela para listar</li>
+                        <li><span class="letra">D)</span>GRANT CONNECT ON DATABASE escola_db TO PUBLIC; e GRANT USAGE ON SCHEMA public TO PUBLIC;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Auditoria que Mostra o Dono</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A função registrar_auditoria da escola é SECURITY DEFINER e grava o usuário com current_user. Ao conferir a tabela auditoria, a coordenação viu que todas as alterações aparecem com o nome do dono da função, e não com o login de quem alterou. Qual ajuste mostra o login que conectou?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Usar o login postgres para todos, para padronizar o usuário</li>
+                        <li><span class="letra">B)</span>Retirar o SECURITY DEFINER e dar INSERT na auditoria a todos</li>
+                        <li><span class="letra">C)</span>Gravar session_user, que continua sendo o login que conectou</li>
+                        <li><span class="letra">D)</span>Gravar TG_TABLE_NAME, que identifica quem executou o comando</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Instalação pela Metade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C7 — Aplicar linguagem de definição de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O script mestre 00-instalar.sql chama os scripts 01 a 07 com \i. Na instalação num banco limpo, o script 03 deu erro, mas o psql continuou até o fim e o banco ficou incompleto sem que ninguém percebesse. Qual linha, no início do script mestre, faz a instalação parar no primeiro erro?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>\i 01-ddl-escola.sql</li>
+                        <li><span class="letra">B)</span>\set ON_ERROR_STOP on</li>
+                        <li><span class="letra">C)</span>\set AUTOCOMMIT off</li>
+                        <li><span class="letra">D)</span>\echo &#x27;Parar no primeiro erro&#x27;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">Trigger antes da Função</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C8 — Aplicar linguagem de manipulação de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na revisão cruzada, o colega rodou o script mestre num banco limpo e a instalação parou no script 06-triggers.sql com o erro &quot;function registrar_historico_nota() does not exist&quot;. A função só existia no banco de desenvolvimento da equipe. Qual é a correção adequada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Criar a função à mão no banco do colega e manter o script como está</li>
+                        <li><span class="letra">B)</span>Escrever o CREATE FUNCTION no 06-triggers.sql antes do CREATE TRIGGER</li>
+                        <li><span class="letra">C)</span>Trocar o CREATE TRIGGER por CALL registrar_historico_nota() no script</li>
+                        <li><span class="letra">D)</span>Mover o CREATE TRIGGER para o 01-ddl-escola.sql, antes das tabelas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Tabela sem Requisito</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao montar a tabela de rastreabilidade do projeto integrador, a equipe percebeu que a tabela cupom_desconto, criada no 01-ddl-escola.sql, não aponta para nenhum requisito do escopo aprovado com o cliente. Segundo a rastreabilidade da aula, como essa situação deve ser tratada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nada a fazer, pois tabelas extras não afetam a documentação</li>
+                        <li><span class="letra">B)</span>A tabela falta: criar um requisito novo sem consultar o cliente</li>
+                        <li><span class="letra">C)</span>Apagar o escopo e refazê-lo a partir das tabelas do script</li>
+                        <li><span class="letra">D)</span>A tabela sobra: remover ou registrar uma mudança de escopo aceita pelo cliente</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Contrato da Matrícula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C14 — Aplicar boas práticas de segurança da informação</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No contrato com o back-end, o login app_escola deve matricular alunos sempre respeitando o limite de vagas da turma e nunca apagar matrículas, que são canceladas. Qual comando está de acordo com esse contrato e com o menor privilégio?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>GRANT ALL ON matricula TO app_escola;</li>
+                        <li><span class="letra">B)</span>GRANT EXECUTE ON PROCEDURE matricular(integer, integer) TO app_escola;</li>
+                        <li><span class="letra">C)</span>Usar o login postgres na aplicação para evitar erros de permissão</li>
+                        <li><span class="letra">D)</span>GRANT INSERT, DELETE ON matricula TO app_escola;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Nome do Curso Repetido na Turma</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento<br>C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No checklist do modelo, a equipe notou que a tabela turma tem as colunas id_curso e nome_curso; o nome do curso também está na tabela curso e já houve turmas com o nome desatualizado depois de uma troca de nome. Qual diagnóstico e correção estão de acordo com a revisão do modelo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Fere a 3FN: retirar nome_curso de turma e obter o nome por JOIN com curso</li>
+                        <li><span class="letra">B)</span>Fere a 2FN: transformar nome_curso na chave primária da tabela turma</li>
+                        <li><span class="letra">C)</span>Fere a 1FN: dividir nome_curso em duas colunas na própria tabela turma</li>
+                        <li><span class="letra">D)</span>Está correto: manter nome_curso em turma e atualizar à mão quando mudar</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Avaliação Objetiva 02: Aulas 11 a 20</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+    <script src="../../../../assets/js/avaliacao-pdf-professor.js"></script>
+</body>
+</html>

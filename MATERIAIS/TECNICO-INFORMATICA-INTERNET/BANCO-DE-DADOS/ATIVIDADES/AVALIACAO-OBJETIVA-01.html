@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+<script src="../../../../js/header-usuario.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Objetiva 01 — Aulas 01 a 10 (50 Questões)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/atividade.css">
+    <link rel="stylesheet" href="../../../../assets/css/capacidades.css">
+    <link rel="stylesheet" href="../../../../assets/css/respostas-atividade.css">
+</head>
+<body data-aula="AV-01" data-tema="Aulas 01 a 10" data-total="50"
+      data-uc="Banco de Dados" data-uc-curta="Banco de Dados"
+      data-docente="Gelvazio Camargo" data-login="sim">
+<div id="header-usuario"></div>
+    <div class="container">
+        <header>
+            <a class="voltar" href="index.html">← Índice</a>
+            <h1>📝 Avaliação Objetiva 01: Aulas 01 a 10</h1>
+            <p>Banco de Dados · Técnico em Informática para Internet — 50 Questões</p>
+        </header>
+
+        <div class="export-bar">
+            <button class="btn-export" id="btnExportarPDF" type="button">📥 Exportar PDF (atividade completa)</button>
+            <button class="btn-export" id="btnExportarGabarito" type="button" hidden title="Professor: gabarito real. Aluno: suas respostas da tentativa de maior nota.">🔑 Exportar Gabarito</button>
+            <small>Gera um único arquivo com as 50 questões.</small>
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo gerado a partir de AVALIACAO-OBJETIVA-01-QUESTOES.md -->
+            <div class="aula-card">
+                <span class="aula-badge">INSTRUÇÕES</span>
+                <div class="aula-title">Como Responder</div>
+                <div class="content-box">
+                    <div class="content-label">📋 INFORMAÇÕES GERAIS</div>
+                    <div class="content-text">
+                        <strong>Duração:</strong> 90–120 minutos<br>
+                        <strong>Formato:</strong> Múltipla escolha (A, B, C, D)<br>
+                        <strong>Total de questões:</strong> 50<br>
+                        <strong>Pontuação:</strong> 1 ponto por questão correta (total: 50 pontos)
+                    </div>
+                </div>
+                <div class="quadro-capacidades">
+                    <div class="quadro-capacidades__titulo">CAPACIDADES</div>
+                    <p class="quadro-capacidades__linha"><strong>C1 —</strong> Reconhecer as demandas do cliente</p>
+                    <p class="quadro-capacidades__linha"><strong>C2 —</strong> Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</p>
+                    <p class="quadro-capacidades__linha"><strong>C3 —</strong> Aplicar os procedimentos de normalização e padronização de dados.</p>
+                    <p class="quadro-capacidades__linha"><strong>C4 —</strong> Reconhecer as características e funcionalidades do banco de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C5 —</strong> Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</p>
+                    <p class="quadro-capacidades__linha"><strong>C6 —</strong> Reconhecer os diferentes níveis de gerenciamento de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C9 —</strong> Reconhecer os diferentes gerenciadores de bancos de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C10 —</strong> Instalar gerenciadores de bancos de dados</p>
+                    <p class="quadro-capacidades__linha"><strong>C11 —</strong> Configurar gerenciadores de bancos de dados</p>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 01</span>
+                <div class="aula-title">Dado e Informação na Academia</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Reconhecer as características e funcionalidades do banco de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na academia &quot;Corpo Ativo&quot;, o sistema guarda no PostgreSQL os valores &quot;Carla&quot;, &quot;3&quot; e &quot;2026-08-15&quot; em colunas separadas. O relatório da recepção mostra a frase &quot;Carla treinou 3 vezes desde 15/08/2026&quot;. Qual afirmação descreve corretamente essa situação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Os valores soltos são informação, e a frase do relatório é dado, porque foi gerada pelo sistema.</li>
+                        <li><span class="letra">B)</span>Os valores soltos só viram dado depois que o SGBD os transforma em uma frase do relatório.</li>
+                        <li><span class="letra">C)</span>Os valores soltos e a frase são banco de dados, porque ambos ficam guardados no servidor da academia.</li>
+                        <li><span class="letra">D)</span>Os valores soltos são dados, e a frase do relatório é informação, porque organiza os dados com sentido.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 02</span>
+                <div class="aula-title">Concorrência na Venda de Passagens</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Reconhecer as características e funcionalidades do banco de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Uma empresa de ônibus vende passagens pelo site e pelo guichê ao mesmo tempo. Dois atendentes tentam vender a última poltrona do mesmo horário no mesmo segundo, e o SGBD garante que só uma venda seja registrada. Qual funcionalidade do SGBD está sendo usada nessa situação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Armazenamento, que mantém os dados guardados mesmo depois que o servidor reinicia.</li>
+                        <li><span class="letra">B)</span>Controle de concorrência, que permite vários usuários ao mesmo tempo sem bagunçar os dados.</li>
+                        <li><span class="letra">C)</span>Recuperação, que volta o banco a um estado seguro depois de uma falha no servidor.</li>
+                        <li><span class="letra">D)</span>Consulta, que encontra rapidamente as poltronas livres usando filtros no horário.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 03</span>
+                <div class="aula-title">Pane no Servidor da Farmácia</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Reconhecer as características e funcionalidades do banco de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O servidor do banco de uma rede de farmácias sofreu uma falha no disco durante a madrugada. Pela manhã, a equipe voltou o banco ao estado da noite anterior usando a cópia de segurança gerada pelo processo de backup. Qual funcionalidade do SGBD permitiu essa retomada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Concorrência, que organiza os acessos simultâneos de vários usuários.</li>
+                        <li><span class="letra">B)</span>Controle de acesso, que define o que cada usuário pode fazer no banco.</li>
+                        <li><span class="letra">C)</span>Integridade, que impede a gravação de dados errados nas tabelas.</li>
+                        <li><span class="letra">D)</span>Recuperação, que permite voltar a um estado seguro depois de uma falha.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 04</span>
+                <div class="aula-title">Quem Conversa com o Banco</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Reconhecer as características e funcionalidades do banco de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No sistema de agendamento de uma clínica, o paciente escolhe o horário numa página no navegador e clica em &quot;Confirmar&quot;. A equipe discute qual parte da arquitetura deve enviar o comando SQL ao PostgreSQL para gravar o agendamento. Segundo a arquitetura de um sistema web, quem deve fazer isso?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O SGBD, que busca sozinho os dados digitados na tela do paciente a cada clique.</li>
+                        <li><span class="letra">B)</span>O back-end, que aplica as regras do negócio e conversa com o SGBD usando SQL.</li>
+                        <li><span class="letra">C)</span>O front-end, que abre a conexão direta do navegador do paciente com o PostgreSQL.</li>
+                        <li><span class="letra">D)</span>O próprio navegador, que grava o agendamento direto no arquivo do banco de dados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 05</span>
+                <div class="aula-title">Classificando os Gerenciadores</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C9 — Reconhecer os diferentes gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Uma startup de entregas usa PostgreSQL para pedidos e pagamentos e MongoDB para um catálogo em que cada loja cadastra produtos com campos diferentes. Um novo estagiário pergunta como classificar esses dois gerenciadores. Qual classificação está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>PostgreSQL é não relacional, baseado em documentos; MongoDB é relacional, com tabelas e SQL.</li>
+                        <li><span class="letra">B)</span>PostgreSQL é relacional, com tabelas e SQL; MongoDB é não relacional, baseado em documentos.</li>
+                        <li><span class="letra">C)</span>Os dois são não relacionais, pois ambos aceitam guardar dados no formato JSON.</li>
+                        <li><span class="letra">D)</span>Os dois são relacionais, pois ambos guardam dados em tabelas ligadas por chaves.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 06</span>
+                <div class="aula-title">Durabilidade após o COMMIT</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Reconhecer as características e funcionalidades do banco de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No sistema de uma loja virtual, a transação de um pedido termina com COMMIT e o cliente recebe a confirmação. Segundos depois, falta energia no prédio do servidor e, ao religar, o pedido continua gravado no PostgreSQL. Qual propriedade ACID explica esse comportamento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Consistência, pois o banco desfaz automaticamente qualquer pedido sem pagamento.</li>
+                        <li><span class="letra">B)</span>Atomicidade, pois a transação é dividida em partes gravadas uma de cada vez.</li>
+                        <li><span class="letra">C)</span>Durabilidade, pois o dado confirmado não se perde mesmo com falta de energia.</li>
+                        <li><span class="letra">D)</span>Isolamento, pois o pedido fica escondido das outras transações até o religamento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 07</span>
+                <div class="aula-title">Erro no Meio da Transação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C4 — Reconhecer as características e funcionalidades do banco de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na cantina digital de uma escola, a compra de um lanche executa, dentro de BEGIN, um UPDATE que reduz o saldo do aluno e um INSERT que registra a venda. O INSERT falha por erro de digitação na coluna. Qual comando deve ser usado para que o saldo não fique reduzido sem a venda registrada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>ROLLBACK, que desfaz todos os comandos da transação e mantém o princípio do tudo ou nada.</li>
+                        <li><span class="letra">B)</span>COMMIT, que confirma o UPDATE já executado e descarta apenas o INSERT que falhou.</li>
+                        <li><span class="letra">C)</span>BEGIN novamente, que reinicia a transação e grava de vez o UPDATE já executado.</li>
+                        <li><span class="letra">D)</span>SELECT version(), que mostra a versão do servidor e cancela a transação em andamento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 08</span>
+                <div class="aula-title">Visão do Setor Financeiro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C6 — Reconhecer os diferentes níveis de gerenciamento de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No sistema de uma faculdade, a tela do setor financeiro mostra apenas o nome do aluno e as mensalidades, enquanto a secretaria vê nome, curso e turma. As tabelas completas existem uma só vez no banco. Em qual nível de gerenciamento de dados está a parte que cada setor enxerga?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No nível de recuperação, formado pelas cópias de backup feitas pelo DBA.</li>
+                        <li><span class="letra">B)</span>No nível físico, formado pelos arquivos, páginas e índices gravados no disco.</li>
+                        <li><span class="letra">C)</span>No nível externo, formado pelas visões dos dados que cada usuário ou tela enxerga.</li>
+                        <li><span class="letra">D)</span>No nível conceitual, formado por todas as tabelas, colunas, chaves e regras.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 09</span>
+                <div class="aula-title">Novo Índice em Outro Disco</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C6 — Reconhecer os diferentes níveis de gerenciamento de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O DBA de uma rede de livrarias criou um novo índice e moveu os arquivos de dados para um disco mais rápido. As tabelas continuaram com as mesmas colunas e a aplicação funcionou sem nenhuma alteração no código. Que conceito dos níveis de gerenciamento essa situação demonstra?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nível externo, pois o DBA alterou a parte dos dados que cada tela da livraria enxerga.</li>
+                        <li><span class="letra">B)</span>Durabilidade, pois os dados confirmados não se perdem ao trocar o disco do servidor.</li>
+                        <li><span class="letra">C)</span>Independência lógica, pois mudou a estrutura das tabelas sem quebrar as telas que não usam as colunas.</li>
+                        <li><span class="letra">D)</span>Independência física, pois mudou a forma de gravar os dados sem mudar as tabelas nem a aplicação.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 10</span>
+                <div class="aula-title">Aplicativo de Coleta sem Internet</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C9 — Reconhecer os diferentes gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Uma cooperativa agrícola precisa de um aplicativo de celular para técnicos anotarem visitas em áreas rurais sem internet, guardando os dados no próprio aparelho até voltar à cidade. Considerando as características dos gerenciadores estudados, qual escolha é mais adequada para esse requisito?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>SQLite, porque é um banco relacional em um arquivo que funciona no próprio aparelho.</li>
+                        <li><span class="letra">B)</span>PostgreSQL em servidor central, porque o celular precisa de conexão constante com a porta 5432.</li>
+                        <li><span class="letra">C)</span>SQL Server, porque usa a porta 1433 e exige servidor sempre conectado à rede.</li>
+                        <li><span class="letra">D)</span>Oracle, porque é comercial e indicado para grandes empresas com servidores dedicados.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 11</span>
+                <div class="aula-title">Porta Ocupada na Instalação</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No laboratório de uma escola técnica, o instalador do PostgreSQL avisa que a porta 5432 já está em uso. O técnico descobre que uma versão antiga do PostgreSQL continua instalada na máquina. Qual é a solução indicada para esse problema?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Trocar a codificação do banco para UTF8 para liberar a porta 5432 automaticamente.</li>
+                        <li><span class="letra">B)</span>Usar outra porta livre na nova instalação ou remover a instalação antiga do PostgreSQL.</li>
+                        <li><span class="letra">C)</span>Ignorar o aviso, porque dois servidores podem ouvir a mesma porta sem conflito.</li>
+                        <li><span class="letra">D)</span>Desligar o firewall da máquina, porque ele é a causa de toda porta aparecer em uso.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 12</span>
+                <div class="aula-title">Componentes do PostgreSQL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C10 — Instalar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao final da instalação do PostgreSQL no computador de uma agência de turismo, a equipe precisa explicar ao gerente a função do psql e do pgAdmin, que apareceram no menu do Windows. Qual descrição está correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O psql instala extensões extras, e o pgAdmin é o serviço que roda em segundo plano no sistema.</li>
+                        <li><span class="letra">B)</span>O psql é um cliente de terminal para executar SQL, e o pgAdmin é um cliente gráfico para administrar e consultar.</li>
+                        <li><span class="letra">C)</span>O psql é o servidor que guarda os dados, e o pgAdmin é a pasta onde ficam os arquivos do banco.</li>
+                        <li><span class="letra">D)</span>O psql é um cliente gráfico para desenhar o DER, e o pgAdmin é o cliente de terminal do servidor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 13</span>
+                <div class="aula-title">Connection Refused na Clínica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na manhã de segunda-feira, o sistema de uma clínica odontológica não conecta ao banco e mostra a mensagem &quot;connection refused&quot; na porta 5432. O técnico confere que a senha está correta e que a porta configurada é a mesma. Qual é a causa provável e a ação recomendada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O serviço do PostgreSQL está parado; é preciso iniciá-lo e conferir a porta.</li>
+                        <li><span class="letra">B)</span>A pasta bin está fora do PATH; é preciso usar o atalho SQL Shell no menu do Windows.</li>
+                        <li><span class="letra">C)</span>A codificação está errada; é preciso recriar o banco com a codificação UTF8.</li>
+                        <li><span class="letra">D)</span>A senha do usuário está errada; é preciso redefini-la com o administrador do banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 14</span>
+                <div class="aula-title">Nomes com Acentos Errados</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Depois de instalar o PostgreSQL, a equipe de um centro de idiomas cadastrou alunos e percebeu que nomes como &quot;João&quot; e &quot;Conceição&quot; aparecem com caracteres estranhos nas consultas. Qual é a causa provável e a solução indicada nas boas práticas da instalação?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porta 5432 ocupada; reinstalar o PostgreSQL em outra porta livre.</li>
+                        <li><span class="letra">B)</span>Senha do superusuário fraca; definir uma senha forte para o postgres.</li>
+                        <li><span class="letra">C)</span>Serviço do PostgreSQL parado; iniciar o serviço pelo aplicativo Serviços.</li>
+                        <li><span class="letra">D)</span>Locale ou codificação diferente; usar a codificação UTF8 no banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 15</span>
+                <div class="aula-title">Conferindo a Conexão no psql</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Um técnico conectou ao PostgreSQL pelo psql numa máquina com duas instalações e quer confirmar com qual usuário, banco, servidor e porta está conectado antes de executar qualquer comando. Qual comando do psql mostra essas informações?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O comando \conninfo, que mostra usuário, banco, servidor e porta da conexão.</li>
+                        <li><span class="letra">B)</span>O comando SHOW hba_file, que mostra o usuário e a porta da sessão aberta.</li>
+                        <li><span class="letra">C)</span>O comando \l, que mostra usuário, porta e pasta de dados de cada banco.</li>
+                        <li><span class="letra">D)</span>O comando \q, que mostra a conexão atual antes de sair do psql.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 16</span>
+                <div class="aula-title">Quem Pode Entrar no Banco</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O administrador do banco de uma rede de academias precisa permitir que apenas o servidor da aplicação, no endereço 10.0.0.20, conecte ao banco academia_db com o usuário app_academia usando senha. Em qual arquivo de configuração do PostgreSQL essa regra deve ser escrita?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>No pg_hba.conf, que define quem pode conectar, de onde, a qual banco e como se autentica.</li>
+                        <li><span class="letra">B)</span>No data_directory, que guarda as linhas de permissão de cada usuário por endereço.</li>
+                        <li><span class="letra">C)</span>No postgresql.conf, que define quem pode conectar, de onde, a qual banco e como se autentica.</li>
+                        <li><span class="letra">D)</span>No arquivo .env do back-end, que define as regras de entrada aplicadas pelo servidor de banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 17</span>
+                <div class="aula-title">Linha com Método trust</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao revisar o servidor de produção de uma loja de calçados, a equipe encontrou no pg_hba.conf uma linha do tipo host para o usuário da aplicação com o método trust. Por que essa linha deve ser corrigida e qual método é o recomendado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Porque trust deixa entrar sem senha; o recomendado é scram-sha-256, que exige senha protegida.</li>
+                        <li><span class="letra">B)</span>Porque trust bloqueia todas as conexões; o recomendado é local, que libera qualquer endereço.</li>
+                        <li><span class="letra">C)</span>Porque trust só funciona no Linux; o recomendado é md5, que é o único aceito no Windows.</li>
+                        <li><span class="letra">D)</span>Porque trust exige senha muito longa; o recomendado é peer, que dispensa senha na rede.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 18</span>
+                <div class="aula-title">Reload ou Restart</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C11 — Configurar gerenciadores de bancos de dados</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O DBA de uma escola de idiomas alterou o parâmetro listen_addresses no postgresql.conf para que o banco aceite conexões no IP do servidor. Ele executou SELECT pg_reload_conf(), mas a mudança não teve efeito. O que precisa ser feito para aplicar essa alteração?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apagar a linha do pg_hba.conf, pois listen_addresses é lido apenas desse arquivo.</li>
+                        <li><span class="letra">B)</span>Criar um novo banco com ENCODING UTF8, pois a codificação controla os endereços aceitos.</li>
+                        <li><span class="letra">C)</span>Executar pg_reload_conf mais uma vez, pois esse parâmetro só vale após dois recarregamentos.</li>
+                        <li><span class="letra">D)</span>Reiniciar o serviço, de preferência fora do horário de uso, pois esse parâmetro exige restart.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 19</span>
+                <div class="aula-title">Muitos Acessos Simultâneos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Uma plataforma de inscrições para vestibular espera 200 candidatos acessando ao mesmo tempo no último dia de inscrição, e o back-end abre uma conexão nova ao banco a cada requisição. Segundo a correlação entre características do banco e infraestrutura, qual decisão é a mais adequada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ajustar max_connections de forma adequada e usar um pool de conexões no back-end.</li>
+                        <li><span class="letra">B)</span>Configurar o timezone para America/Sao_Paulo e reiniciar o servidor de banco.</li>
+                        <li><span class="letra">C)</span>Trocar o método do pg_hba.conf para trust para acelerar a entrada dos candidatos.</li>
+                        <li><span class="letra">D)</span>Deixar o banco aberto ao navegador para que cada candidato conecte direto.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 20</span>
+                <div class="aula-title">Senha da String de Conexão</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C5 — Correlacionar as características e funcionalidades do banco de dados com a infraestrutura do sistema</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O back-end de um sistema de biblioteca conecta ao banco pela string postgresql://app_biblio:SENHA@10.0.0.30:5432/biblio_db. Um desenvolvedor sugere escrever essa string, com a senha, direto no código-fonte publicado no repositório da equipe. Qual é a prática correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Trocar o usuário app_biblio pelo superusuário postgres, que dispensa senha na string.</li>
+                        <li><span class="letra">B)</span>Guardar a string numa variável de ambiente, como DATABASE_URL, e manter o arquivo .env fora do repositório.</li>
+                        <li><span class="letra">C)</span>Escrever a string no código-fonte, desde que o repositório tenha um arquivo README explicando a senha.</li>
+                        <li><span class="letra">D)</span>Guardar a string no pg_hba.conf, que é o arquivo lido pelo back-end para montar a conexão.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 21</span>
+                <div class="aula-title">Planilha Online ou Necessidade Real</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">O dono de uma oficina mecânica pede &quot;uma planilha online para as ordens de serviço&quot;. Na conversa, descobre-se que carros ficam prontos sem que o cliente seja avisado e que ninguém sabe quais peças foram usadas em cada serviço. Segundo a aula, para que o banco de dados deve ser modelado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para a solução que o profissional prefere, sem considerar o processo da oficina.</li>
+                        <li><span class="letra">B)</span>Para a necessidade real descoberta, ou seja, o problema de controle das ordens e das peças.</li>
+                        <li><span class="letra">C)</span>Para a frase inicial do cliente, reproduzindo as colunas de uma planilha online.</li>
+                        <li><span class="letra">D)</span>Para os relatórios de outras oficinas, copiando o modelo de dados delas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 22</span>
+                <div class="aula-title">Fichas e Recibos da Clínica</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Para levantar os dados do sistema de uma clínica veterinária, a equipe recolheu as fichas de atendimento em papel, os recibos e a planilha de vacinas usada hoje, tratando cada campo como um dado candidato. Qual técnica de levantamento está sendo aplicada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Observação, que acompanha o trabalho real da equipe sem atrapalhar a rotina.</li>
+                        <li><span class="letra">B)</span>Questionário, que ouve muitas pessoas rapidamente com perguntas claras e curtas.</li>
+                        <li><span class="letra">C)</span>Análise de documentos, que examina fichas, planilhas, recibos e relatórios atuais.</li>
+                        <li><span class="letra">D)</span>Entrevista, que conversa com quem decide e quem executa usando perguntas abertas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 23</span>
+                <div class="aula-title">Requisito de Acesso no Hotel</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No levantamento do sistema de reservas de um hotel, o gerente afirma: &quot;só a recepção pode alterar uma reserva; a camareira apenas consulta os quartos que vai limpar&quot;. A equipe precisa classificar essa frase entre os tipos de requisitos de dados. Qual é a classificação correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Requisito de qualidade, pois define o formato das datas e dos nomes.</li>
+                        <li><span class="letra">B)</span>Requisito de dados a guardar, pois define os atributos de cada quarto.</li>
+                        <li><span class="letra">C)</span>Requisito de volume e histórico, pois define quanto o banco cresce por mês.</li>
+                        <li><span class="letra">D)</span>Requisito de acesso, pois define quem pode ver e quem pode alterar cada informação.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 24</span>
+                <div class="aula-title">O Que Não Entra no Escopo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No documento de escopo do sistema de uma escola de música, a primeira versão cobre alunos, professores, instrumentos e aulas. A diretora também comentou sobre a folha de pagamento e o estoque da lanchonete, que não serão tratados agora. Por que registrar esses itens na seção &quot;Não entra no escopo&quot;?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Para garantir que esses itens sejam modelados primeiro, antes das entidades principais.</li>
+                        <li><span class="letra">B)</span>Para dispensar o registro das partes interessadas e das premissas do projeto.</li>
+                        <li><span class="letra">C)</span>Para deixar claro o que fica de fora e evitar pedidos de &quot;só mais uma coisinha&quot; sem controle.</li>
+                        <li><span class="letra">D)</span>Para transformar esses itens em regras de negócio que viram restrições CHECK no banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 25</span>
+                <div class="aula-title">Pedido Novo no Meio do Projeto</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C1 — Reconhecer as demandas do cliente</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na terceira semana do projeto de uma loja de bicicletas, o cliente pede que o sistema também controle aluguel de bicicletas por hora, algo que não estava no escopo aprovado. Segundo a aula, como a equipe deve tratar esse pedido?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Apagar o documento de escopo e começar o levantamento de requisitos do zero.</li>
+                        <li><span class="letra">B)</span>Recusar o pedido sem análise, pois o escopo aprovado nunca pode ser alterado.</li>
+                        <li><span class="letra">C)</span>Registrar o pedido, o impacto em tempo, tabelas e custo e obter a aprovação antes de incluí-lo.</li>
+                        <li><span class="letra">D)</span>Incluir o pedido imediatamente nas tabelas, sem registro, para não desagradar o cliente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 26</span>
+                <div class="aula-title">Entidade Forte na Locadora</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No modelo de uma locadora de veículos, VEÍCULO existe por si só e é identificado pela placa ou por um código próprio, sem depender de nenhuma outra entidade do sistema. Como VEÍCULO deve ser classificado no modelo entidade-relacionamento?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Como entidade fraca, pois sua identificação depende de outra entidade dona.</li>
+                        <li><span class="letra">B)</span>Como entidade associativa, pois nasce de um relacionamento muitos-para-muitos.</li>
+                        <li><span class="letra">C)</span>Como entidade forte, pois existe por si só e tem identificador próprio.</li>
+                        <li><span class="letra">D)</span>Como atributo, pois é apenas uma característica da entidade LOCAÇÃO.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 27</span>
+                <div class="aula-title">Identificação da Mensalidade</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No sistema de uma academia, cada CONTRATO gera mensalidades numeradas 1, 2, 3 e assim por diante; a &quot;mensalidade 4&quot; só faz sentido dentro de um contrato e deixa de existir se o contrato for excluído. Como MENSALIDADE é classificada e identificada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Atributo composto de CONTRATO, dividido em número, vencimento e valor.</li>
+                        <li><span class="letra">B)</span>Entidade associativa, identificada pelas chaves de CONTRATO e de ALUNO juntas.</li>
+                        <li><span class="letra">C)</span>Entidade fraca, identificada pela chave do CONTRATO mais o número da mensalidade.</li>
+                        <li><span class="letra">D)</span>Entidade forte, identificada apenas pelo número da mensalidade, que nunca se repete.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 28</span>
+                <div class="aula-title">Inscrição em Oficinas</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num evento de tecnologia, um participante se inscreve em várias oficinas e cada oficina recebe vários participantes. A organização precisa guardar a data da inscrição e a presença confirmada de cada participante em cada oficina. Como essa ligação deve aparecer no modelo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Como entidade associativa INSCRIÇÃO, pois o relacionamento muitos-para-muitos tem dados próprios.</li>
+                        <li><span class="letra">B)</span>Como entidade fraca INSCRIÇÃO, dependente apenas da entidade PARTICIPANTE.</li>
+                        <li><span class="letra">C)</span>Como atributo composto de OFICINA, com data da inscrição e presença.</li>
+                        <li><span class="letra">D)</span>Como entidade forte INSCRIÇÃO, sem qualquer ligação com PARTICIPANTE e OFICINA.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 29</span>
+                <div class="aula-title">Cor do Veículo</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Ao sublinhar os substantivos dos requisitos de um estacionamento, a equipe encontrou &quot;cliente&quot;, &quot;veículo&quot;, &quot;vaga&quot; e &quot;cor do veículo&quot;. Usando a pergunta &quot;isso tem dados próprios e se repete com várias ocorrências?&quot;, como &quot;cor do veículo&quot; deve ser tratada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Como entidade forte, pois cada cor pode ser cadastrada várias vezes no sistema.</li>
+                        <li><span class="letra">B)</span>Como entidade associativa, pois liga VEÍCULO e VAGA no estacionamento.</li>
+                        <li><span class="letra">C)</span>Como entidade fraca, pois a cor depende do veículo para existir.</li>
+                        <li><span class="letra">D)</span>Como atributo de VEÍCULO, pois é só uma característica sem dados próprios.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 30</span>
+                <div class="aula-title">Estudante e Aluno nos Requisitos</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Nos requisitos de um cursinho pré-vestibular aparecem as palavras &quot;aluno&quot; e &quot;estudante&quot;, usadas pela secretaria e pelos professores para a mesma pessoa matriculada. No passo a passo dos requisitos às entidades, o que a equipe deve fazer com esses dois substantivos?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Descartar os dois substantivos, pois pessoas não podem ser entidades.</li>
+                        <li><span class="letra">B)</span>Criar duas entidades fortes, ALUNO e ESTUDANTE, uma para cada setor.</li>
+                        <li><span class="letra">C)</span>Tratá-los como sinônimos e manter uma única entidade, por exemplo ALUNO.</li>
+                        <li><span class="letra">D)</span>Criar ESTUDANTE como entidade fraca dependente da entidade ALUNO.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 31</span>
+                <div class="aula-title">Endereço para Relatório por Bairro</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Uma pizzaria quer listar os clientes por bairro para planejar as rotas de entrega. Hoje o endereço é guardado num único campo com rua, número, bairro e cidade juntos. Como a equipe deve tratar o atributo endereço no modelo?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Como atributo simples, mantido em um único campo, pois o bairro pode ser lido no texto.</li>
+                        <li><span class="letra">B)</span>Como atributo referencial, pois o endereço faz referência à entidade PIZZARIA.</li>
+                        <li><span class="letra">C)</span>Como identificador, pois o endereço distingue um cliente de todos os outros.</li>
+                        <li><span class="letra">D)</span>Como atributo composto, dividido em partes, pois o sistema precisa usar o bairro separadamente.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 32</span>
+                <div class="aula-title">Código do Setor no Funcionário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No cadastro de funcionários de uma fábrica, a entidade FUNCIONÁRIO guarda o atributo id_setor, que aponta para a entidade SETOR onde a pessoa trabalha. Quanto à função, como id_setor deve ser classificado dentro de FUNCIONÁRIO?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Composto, pois pode ser dividido em partes menores com significado próprio.</li>
+                        <li><span class="letra">B)</span>Descritivo, pois apenas descreve uma característica do funcionário sem ligação.</li>
+                        <li><span class="letra">C)</span>Referencial, pois faz referência a outra entidade e é a semente da chave estrangeira.</li>
+                        <li><span class="letra">D)</span>Nominativo, pois nomeia e identifica o próprio funcionário dentro da fábrica.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 33</span>
+                <div class="aula-title">Código do Produto no Mercado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No sistema de um mercado, cada produto tem um código interno que aparece na etiqueta e serve para nomear e distinguir aquele produto dos demais. A equipe está classificando os atributos de PRODUTO quanto à função. Como o código do produto deve ser classificado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Composto, pois se divide em partes como nome, preço e quantidade.</li>
+                        <li><span class="letra">B)</span>Referencial, pois liga a entidade PRODUTO a outra entidade do mercado.</li>
+                        <li><span class="letra">C)</span>Nominativo, pois além de descrever nomeia ou identifica a ocorrência.</li>
+                        <li><span class="letra">D)</span>Descritivo, pois descreve uma característica sem identificar a ocorrência.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 34</span>
+                <div class="aula-title">Idade no Cadastro do Paciente</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na ficha de um posto de saúde existe o campo &quot;idade&quot;, digitado no primeiro atendimento do paciente. Na revisão do dicionário de atributos, a equipe aponta esse campo como um erro comum de modelagem. Qual é a correção recomendada?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Guardar a idade em dois campos, um com os anos e outro com os meses.</li>
+                        <li><span class="letra">B)</span>Guardar a idade como identificador, pois ela distingue os pacientes do posto.</li>
+                        <li><span class="letra">C)</span>Guardar a idade como atributo referencial para a entidade ATENDIMENTO.</li>
+                        <li><span class="letra">D)</span>Guardar a data de nascimento, pois a idade muda todo ano e a data não.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 35</span>
+                <div class="aula-title">Identificador do Associado</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No sistema de um clube, a equipe pensa em usar o e-mail como identificador do ASSOCIADO. Um colega lembra que associados trocam de e-mail e que filhos menores podem não ter CPF. Qual é a escolha recomendada para o identificador?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O e-mail do associado, atualizado a cada troca para manter a identificação.</li>
+                        <li><span class="letra">B)</span>O nome completo do associado, que é sempre preenchido na ficha do clube.</li>
+                        <li><span class="letra">C)</span>Um código próprio, como id_associado, que não se repete e não fica vazio.</li>
+                        <li><span class="letra">D)</span>A data de nascimento do associado, que nunca muda ao longo do tempo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 36</span>
+                <div class="aula-title">Setor e Funcionário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Numa empresa de logística, um setor tem vários funcionários e cada funcionário trabalha em um único setor. Ao transformar esse relacionamento 1:N em tabelas, a equipe precisa decidir onde fica a chave estrangeira. Qual é a decisão correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>As duas tabelas guardam uma chave estrangeira apontando uma para a outra.</li>
+                        <li><span class="letra">B)</span>É obrigatório criar uma tabela associativa entre SETOR e FUNCIONÁRIO.</li>
+                        <li><span class="letra">C)</span>A chave estrangeira fica no lado 1, ou seja, SETOR guarda a lista de funcionários.</li>
+                        <li><span class="letra">D)</span>A chave estrangeira fica no lado N, ou seja, FUNCIONÁRIO guarda id_setor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 37</span>
+                <div class="aula-title">Atores e Filmes</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No banco de uma plataforma de filmes, um ator participa de vários filmes e um filme tem vários atores, e é preciso guardar o nome do personagem de cada ator em cada filme. Como esse relacionamento deve ser implementado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com uma chave estrangeira id_filme em ATOR, guardando o personagem na mesma tabela.</li>
+                        <li><span class="letra">B)</span>Com uma tabela associativa entre ATOR e FILME, com as duas chaves estrangeiras e o personagem.</li>
+                        <li><span class="letra">C)</span>Com uma chave estrangeira com UNIQUE em um dos lados, como num relacionamento 1:1.</li>
+                        <li><span class="letra">D)</span>Com uma chave estrangeira id_ator em FILME, guardando a lista de atores em um campo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 38</span>
+                <div class="aula-title">Cliente sem Compras</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Numa loja de roupas, o cliente pode se cadastrar no site sem ter feito nenhuma compra, mas toda compra precisa estar ligada a um cliente. A equipe está definindo a cardinalidade mínima do lado de COMPRA, lendo &quot;um cliente faz quantas compras, no mínimo?&quot;. Qual é a resposta correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Dois, pois a participação mínima exige uma compra e um pagamento.</li>
+                        <li><span class="letra">B)</span>Muitos, pois a cardinalidade mínima de um 1:N é sempre igual a N.</li>
+                        <li><span class="letra">C)</span>Um, pois a participação é obrigatória e todo cliente precisa de uma compra.</li>
+                        <li><span class="letra">D)</span>Zero, pois a participação é opcional e o cliente pode existir sem compras.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 39</span>
+                <div class="aula-title">Supervisor do Funcionário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Num call center, cada atendente é supervisionado por outro funcionário, e um supervisor acompanha vários atendentes; todos estão na mesma entidade FUNCIONÁRIO. Como esse relacionamento é chamado e como é implementado no caso 1:N?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Relacionamento 1:1, com uma chave estrangeira com UNIQUE na tabela FUNCIONÁRIO.</li>
+                        <li><span class="letra">B)</span>Relacionamento N:N, com uma tabela associativa entre FUNCIONÁRIO e SUPERVISOR.</li>
+                        <li><span class="letra">C)</span>Entidade fraca, com a tabela SUPERVISOR dependente da tabela FUNCIONÁRIO.</li>
+                        <li><span class="letra">D)</span>Autorrelacionamento, com uma chave estrangeira id_supervisor apontando para a mesma tabela.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 40</span>
+                <div class="aula-title">Funcionário e Crachá</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Numa indústria, cada funcionário tem um único crachá e cada crachá pertence a um único funcionário, mas os dois são cadastrados em momentos diferentes e por setores diferentes. Como esse relacionamento 1:1 pode ser implementado, segundo a aula?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Com uma tabela associativa contendo as duas chaves estrangeiras e a data de emissão.</li>
+                        <li><span class="letra">B)</span>Com chave estrangeira com UNIQUE em um dos lados, ou juntando numa só tabela se andarem sempre juntos.</li>
+                        <li><span class="letra">C)</span>Com um autorrelacionamento na tabela FUNCIONÁRIO apontando para o próprio crachá.</li>
+                        <li><span class="letra">D)</span>Com uma chave estrangeira sem UNIQUE no lado do crachá, permitindo vários crachás.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 41</span>
+                <div class="aula-title">Identificador no DER de Chen</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A equipe de uma biblioteca escolar está desenhando o DER na notação de Chen e precisa destacar que id_livro é o identificador da entidade LIVRO, diferenciando-o dos atributos titulo e ano. Como o identificador deve ser representado?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Como elipse com o nome sublinhado, ou bolinha preenchida no brModelo.</li>
+                        <li><span class="letra">B)</span>Como retângulo envolvendo o losango do relacionamento.</li>
+                        <li><span class="letra">C)</span>Como losango com um verbo ligando LIVRO a outra entidade.</li>
+                        <li><span class="letra">D)</span>Como retângulo de linha dupla ligado à entidade LIVRO.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 42</span>
+                <div class="aula-title">Círculo no Pé de Galinha</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">No modelo lógico de uma loja virtual desenhado no draw.io, a linha entre CLIENTE e PEDIDO termina, do lado de PEDIDO, com um círculo e um tridente. O professor pede que a turma interprete esses símbolos. O que eles indicam nessa ponta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Um ou muitos pedidos, pois o círculo vale 1 e o tridente vale muitos.</li>
+                        <li><span class="letra">B)</span>Zero ou muitos pedidos, pois o círculo vale 0 e o tridente vale muitos.</li>
+                        <li><span class="letra">C)</span>Nenhum pedido possível, pois o círculo indica que o relacionamento foi excluído.</li>
+                        <li><span class="letra">D)</span>Exatamente um pedido, pois o círculo vale 1 e o tridente marca a chave primária.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 43</span>
+                <div class="aula-title">DER Conceitual e Lógico</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A equipe de um sistema de clínica apresentou ao dono um DER em notação de Chen para validar o negócio. Agora vai preparar a normalização e o SQL e precisa de um diagrama que mostre as tabelas com as chaves primárias e estrangeiras. Qual diagrama deve ser produzido nessa etapa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O documento de escopo, que lista as tabelas e as chaves de cada entidade.</li>
+                        <li><span class="letra">B)</span>O DER lógico em pé de galinha, que mostra tabelas, chaves primárias e chaves estrangeiras.</li>
+                        <li><span class="letra">C)</span>O DER conceitual em Chen, que mostra somente as entidades sem relacionamentos.</li>
+                        <li><span class="letra">D)</span>O dicionário de atributos, que substitui o diagrama na preparação do SQL.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 44</span>
+                <div class="aula-title">Ferramenta que Gera o SQL</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Uma equipe de desenvolvimento quer desenhar o modelo lógico do banco de uma escola de dança e, a partir do próprio diagrama, gerar o SQL para o PostgreSQL já instalado no laboratório. Qual ferramenta estudada atende diretamente a essa necessidade?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>O pgAdmin ERD Tool, que desenha o modelo lógico e gera o SQL para o PostgreSQL.</li>
+                        <li><span class="letra">B)</span>O Stack Builder, que instala o diagrama e cria as tabelas sem SQL.</li>
+                        <li><span class="letra">C)</span>O psql, que desenha o modelo conceitual e exporta a imagem do DER.</li>
+                        <li><span class="letra">D)</span>O arquivo pg_hba.conf, que recebe o desenho e gera as tabelas do banco.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 45</span>
+                <div class="aula-title">Revisão Cruzada do DER</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C2 — Aplicar os procedimentos do modelo de modelagem entidade-relacionamento</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na revisão em dupla do DER de um sistema de hotel, o revisor pergunta: &quot;o relacionamento entre HÓSPEDE e RESERVA é mesmo 1:1?&quot;. O grupo autor discorda à primeira vista. Qual atitude do grupo autor está de acordo com as boas práticas da revisão?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Escutar, verificar nos requisitos, aceitar ou justificar e registrar a mudança.</li>
+                        <li><span class="letra">B)</span>Apagar o relacionamento do DER, para que a dúvida não apareça na entrega.</li>
+                        <li><span class="letra">C)</span>Aceitar toda sugestão sem verificar, para evitar qualquer discussão com o revisor.</li>
+                        <li><span class="letra">D)</span>Manter o desenho sem conferir, pois o autor conhece melhor o próprio modelo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 46</span>
+                <div class="aula-title">Mudança do Valor da Diária</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Uma pousada guarda numa planilha única as reservas com o tipo do quarto e o valor da diária repetido em cada linha. Quando o valor da diária do quarto &quot;Luxo&quot; muda, a recepção precisa alterar todas as linhas desse tipo; esquecendo uma, os dados ficam contraditórios. Qual anomalia é essa?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Anomalia de atualização.</li>
+                        <li><span class="letra">B)</span>Anomalia de exclusão.</li>
+                        <li><span class="letra">C)</span>Dependência parcial.</li>
+                        <li><span class="letra">D)</span>Anomalia de inserção.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 47</span>
+                <div class="aula-title">E-mails na Mesma Célula</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na tabela de clientes de uma gráfica, a coluna &quot;emails&quot; guarda valores como &quot;ana@exemplo.com, ana.vendas@exemplo.com&quot; na mesma célula. Para colocar a tabela na primeira forma normal, qual é a solução correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Criar uma tabela separada com a chave do cliente e o e-mail, uma linha por e-mail.</li>
+                        <li><span class="letra">B)</span>Criar as colunas email1, email2 e email3 na própria tabela de clientes.</li>
+                        <li><span class="letra">C)</span>Manter a coluna como está, separando os e-mails por ponto e vírgula.</li>
+                        <li><span class="letra">D)</span>Mover a coluna &quot;emails&quot; para a tabela de pedidos da gráfica.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 48</span>
+                <div class="aula-title">Nome do Produto no Item</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A tabela ITEM_VENDA de uma papelaria tem chave composta (id_venda, id_produto) e os atributos quantidade e nome_produto. O nome_produto depende só de id_produto, e não da chave inteira. Que problema é esse e como corrigir?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Ausência de chave primária que fere a 1FN; criar a coluna id_item_venda.</li>
+                        <li><span class="letra">B)</span>Dependência transitiva que fere a 3FN; mover quantidade para a tabela VENDA.</li>
+                        <li><span class="letra">C)</span>Dependência parcial que fere a 2FN; mover nome_produto para a tabela PRODUTO.</li>
+                        <li><span class="letra">D)</span>Valor não atômico que fere a 1FN; dividir nome_produto em duas colunas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 49</span>
+                <div class="aula-title">Nome do Setor no Funcionário</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">A tabela FUNCIONARIO de uma transportadora tem (id_funcionario, nome, id_setor, nome_setor). Sabe-se que id_funcionario determina id_setor, e id_setor determina nome_setor. Qual forma normal é violada e qual é a correção?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Nenhuma forma normal, pois todo atributo de FUNCIONARIO depende de id_funcionario.</li>
+                        <li><span class="letra">B)</span>A 3FN, por dependência transitiva; nome_setor vai para SETOR e FUNCIONARIO fica com id_setor.</li>
+                        <li><span class="letra">C)</span>A 1FN, por valor não atômico; nome_setor é dividido em várias colunas na mesma tabela.</li>
+                        <li><span class="letra">D)</span>A 2FN, por dependência parcial; a chave de FUNCIONARIO passa a ser composta com nome_setor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="aula-card questao">
+                <span class="aula-badge">ITEM 50</span>
+                <div class="aula-title">Preço no Item do Pedido</div>
+                <div class="content-box">
+                    <div class="content-label">🎯 CAPACIDADE</div>
+                    <div class="content-text">C3 — Aplicar os procedimentos de normalização e padronização de dados.</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">🎬 COMANDO</div>
+                    <div class="content-text">Na normalização do banco de uma loja de eletrônicos, um colega quer retirar o preço da tabela ITEM_PEDIDO por achar que ele repete o preço de PRODUTO. A loja precisa saber quanto cada cliente pagou, mesmo depois de reajustes. Qual decisão é a correta?</div>
+                </div>
+                <div class="content-box">
+                    <div class="content-label">📝 ALTERNATIVAS</div>
+                    <ul class="alternativas">
+                        <li><span class="letra">A)</span>Manter o preço no item, mas atualizá-lo sempre que o preço do produto mudar.</li>
+                        <li><span class="letra">B)</span>Manter o preço no item, pois é o preço daquela venda e não deve mudar com o preço atual.</li>
+                        <li><span class="letra">C)</span>Retirar o preço do item, pois toda repetição de dado fere a primeira forma normal.</li>
+                        <li><span class="letra">D)</span>Retirar o preço de PRODUTO, pois o preço deve existir somente no item do pedido.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Banco de Dados — Avaliação Objetiva 01: Aulas 01 a 10</strong></p>
+        <p>Técnico em Informática para Internet — SENAI</p>
+        <p>50 Questões • Múltipla Escolha</p>
+    </footer>
+
+    <script src="../../../../assets/js/atividade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../../../js/supabase.js"></script>
+    <script src="../../../../js/login.js"></script>
+    <script src="../../../../assets/js/respostas-atividade-banco.js"></script>
+    <script src="../../../../assets/js/respostas-atividade.js"></script>
+    <script src="../../../../assets/js/avaliacao-pdf-professor.js"></script>
+</body>
+</html>
