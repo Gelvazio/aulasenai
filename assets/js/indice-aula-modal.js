@@ -126,23 +126,36 @@ function montarFormularioModalAula() {
 }
 
 /**
- * Monta a barra de botões do topo do modal (pedido de 2026-10-16, #214), nesta ordem: Salvar,
- * Excluir aula (só administrador), Gerenciar atividades, Nova atividade nesta aula e, encostado
- * à direita e vermelho, Fechar (#216). O Salvar fica fora do formulário e o envia pelo atributo
- * form.
+ * Monta a barra de botões do topo do modal (pedido de 2026-10-16, #214): Excluir aula (só
+ * administrador), Gerenciar atividades, Nova atividade nesta aula e, encostado à direita e
+ * vermelho, Fechar (#216).
  * @returns {{barra: HTMLElement, botaoExcluir: HTMLElement}} Barra e o botão de excluir.
  */
 function montarBarraModalAula() {
     const barra = criarElementoModalAula('div', 'crud-form__acoes aula-modal-barra');
-    const salvar = criarBotaoModalAula('Salvar', 'crud-btn--principal', 'salvar');
-    salvar.setAttribute('form', ID_FORMULARIO_MODAL_AULA);
     const botaoExcluir = criarBotaoModalAula('🗑️ Excluir aula', 'aula-excluir-botao',
         'excluir-aula');
-    barra.append(salvar, botaoExcluir,
+    barra.append(botaoExcluir,
         criarBotaoModalAula('🔗 Gerenciar atividades', '', 'gerenciar-atividades'),
         criarBotaoModalAula('➕ Nova atividade nesta aula', '', 'nova-atividade'),
         criarBotaoModalAula('✕ Fechar', 'aula-modal-fechar', 'fechar'));
     return { barra, botaoExcluir };
+}
+
+/**
+ * Monta a linha logo abaixo da barra com Salvar e Cancelar, maiores e mais altos (#217).
+ * O Salvar fica fora do formulário e o envia pelo atributo form; o Cancelar (verde) fecha sem
+ * gravar.
+ * @returns {HTMLElement} Linha com os dois botões.
+ */
+function montarLinhaSalvarModalAula() {
+    const linha = criarElementoModalAula('div', 'aula-modal-salvar');
+    const salvar = criarBotaoModalAula('💾 Salvar', 'crud-btn--principal aula-modal-salvar__botao',
+        'salvar');
+    salvar.setAttribute('form', ID_FORMULARIO_MODAL_AULA);
+    linha.append(salvar, criarBotaoModalAula('↩ Cancelar',
+        'aula-modal-salvar__botao aula-modal-cancelar', 'cancelar'));
+    return linha;
 }
 
 /**
@@ -160,7 +173,7 @@ function montarModalAula() {
     // A mensagem fica logo abaixo da barra, perto do Salvar.
     const mensagem = criarElementoModalAula('p', 'crud-mensagem');
     const lista = criarElementoModalAula('div', 'crud-lista');
-    caixa.append(titulo, barra, mensagem, formulario,
+    caixa.append(titulo, barra, montarLinhaSalvarModalAula(), mensagem, formulario,
         criarElementoModalAula('h3', '', 'Atividades desta aula'), lista);
     fundo.append(caixa);
     fundo.hidden = true;
@@ -402,6 +415,7 @@ function aoClicarModalAula(evento) {
     const idAtividade = Number(botao.closest('.crud-linha')?.dataset.id);
     const acoes = {
         fechar: fecharModalAula,
+        cancelar: fecharModalAula,
         'excluir-aula': aoExcluirAulaModal,
         'editar-atividade': () => abrirCadastroAtividadeDaAula(idAtividade),
         'excluir-atividade': () => aoExcluirAtividadeAula(idAtividade),

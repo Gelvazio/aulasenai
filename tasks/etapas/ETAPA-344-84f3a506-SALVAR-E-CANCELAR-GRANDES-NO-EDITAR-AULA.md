@@ -9,12 +9,19 @@ Entendido como a linha logo abaixo da barra do topo (#214).
 
 ### #217.1 — Linha com Salvar e Cancelar grandes
 
-**Próximo passo:** ajustar `assets/js/indice-aula-modal.js` e `assets/css/indice-aula-data.css`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** LEVE — botões e CSS; o Cancelar só fecha (mesma ação do Fechar).
+- **Entrega (2026-10-16 20:01, Opus 5.5, s14):** `indice-aula-modal.js`: o Salvar saiu da barra; nova
+  `montarLinhaSalvarModalAula` (linha logo abaixo da barra com "💾 Salvar", que envia o formulário
+  pelo atributo `form`, e "↩ Cancelar", que fecha sem gravar); `indice-aula-data.css`: os dois
+  com 52 px de altura, fonte de 17 px e largura dividida na linha; Cancelar verde
+  (`--aula-cancelar-fundo`).
+- **Verificação:** `node --check`; linhas novas até 100 caracteres. Sem navegador: o teste na
+  tela é o aceite.
 
 ### #217.2 — Aceite do usuário
 
-**Próximo passo:** depende da #217.1.
+**Próximo passo:** 👀 o usuário abre o "✏️ Editar aula" e confere Salvar e Cancelar.
 
 - **Nível:** LEVE — conferência do usuário.
