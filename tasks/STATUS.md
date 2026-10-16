@@ -32,7 +32,7 @@ parar; frente sem pendência → `⏹️ Encerrada`. O próximo passo de cada fr
 | local · main · s3 | #182 aguarda aceite ([309-784ccaeb](etapas/ETAPA-309-784ccaeb-NIVEIS-DE-TAREFA.md)); #180 aguarda aceite | 👀 Aguardando o usuário | 2026-10-15 19:02 |
 | local · main · s4 | #183 aguarda aceite ([310-66fcd57a](etapas/ETAPA-310-66fcd57a-CALCULAR-BANCO-DE-HORAS.md)) | ⏹️ Encerrada | 2026-10-15 20:33 |
 | local · main · s5 | #190 (317-63a0d7ac) aguarda aceite; #188 ([315-d5d991b9](etapas/ETAPA-315-d5d991b9-DATA-DA-AULA-PELA-TURMA-NO-INDICE-E-NO-EDITAR.md)) aguarda aceite; #187 ([314-d7f180ea](etapas/ETAPA-314-d7f180ea-DATAS-DAS-AULAS-DO-CALENDARIO-ITIC.md)) aguarda aceite; #186 aguarda aceite ([313-937e5036](etapas/ETAPA-313-937e5036-BLOQUEIO-DA-AULA-POR-TURMA.md)); #185 aguarda aceite ([312-5df765a9](etapas/ETAPA-312-5df765a9-DATAS-DAS-AULAS-POR-TURMA-ITIC.md)) | 👀 Aguardando o usuário | 2026-10-16 09:10 |
-| local · main · s6 | #195.2 ([322-5d136360](etapas/ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md)) em execução; #193.4 ([320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md)) aguarda o usuário rodar o SQL; #194 criada sem reserva (aguarda o usuário); #192 e #191 aguardam aceite | 🔄 Ativa | 2026-10-16 10:20 |
+| local · main · s6 | #196.1 ([323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md)) em execução; #197 criada livre para outras IAs; #195 ([322-5d136360](etapas/ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md)) aguarda aceite; #193.4 ([320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md)) aguarda o usuário rodar o SQL; #194 criada sem reserva (aguarda o usuário); #192 e #191 aguardam aceite | 🔄 Ativa | 2026-10-16 10:42 |
 
 ## 📌 Tarefas
 
@@ -270,10 +270,16 @@ Status, prioridade e reserva oficiais (só aqui). **Em uso por** = frente que re
 | #193.5 | Aceite do usuário | 🟠 Alta | #193.4 | ⬜ Pendente | — | [320-c3289a94](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md) |
 | #194-0d27b30c-baf7-4966-b655-f64456f1f973 | Verificar a reversão da `aula_turma` e o ON/OFF de bloqueio de atividade (só leitura) | 🟠 Alta | #193.2 | ⬜ Pendente | — (não reservável) | [321-0d27b30c](etapas/ETAPA-321-0d27b30c-VERIFICAR-REVERSAO-AULA-TURMA.md) |
 | #194.1 | Verificar a reversão e o ON/OFF de bloqueio (PESADO, só Claude Code local) | 🟠 Alta | #193.2 | ⬜ Pendente — aguardar o usuário mandar pegar | — | [321-0d27b30c](etapas/ETAPA-321-0d27b30c-VERIFICAR-REVERSAO-AULA-TURMA.md) |
-| #195-5d136360-e22c-49bd-a227-0451222f23f2 | Tarefa agendada manual "CORRECAO ATIVIDADE ID=152" (correção pela IA da discursiva 152) | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [322-5d136360](etapas/ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md) |
+| #195-5d136360-e22c-49bd-a227-0451222f23f2 | Tarefa agendada manual "CORRECAO ATIVIDADE ID=152" (correção pela IA da discursiva 152) | 🟠 Alta | — | 👀 Aguardando aceite | — (não reservável) | [322-5d136360](etapas/ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md) |
 | #195.1 | Criar a tarefa agendada manual (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [322-5d136360](etapas/ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md) |
-| #195.2 | Rodar a primeira vez e conferir (PESADO, só Claude Code local) | 🟠 Alta | #195.1 | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s6) (desde 2026-10-16 10:27) | [322-5d136360](etapas/ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md) |
-| #195.3 | Aceite do usuário | 🟠 Alta | #195.2 | ⬜ Pendente | — | [322-5d136360](etapas/ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md) |
+| #195.2 | Rodar a primeira vez e conferir (PESADO, só Claude Code local) | 🟠 Alta | #195.1 | ✅ Concluído | — | [322-5d136360](etapas/ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md) |
+| #195.3 | Aceite do usuário | 🟠 Alta | #195.2 | 👀 Aguardando o usuário | — | [322-5d136360](etapas/ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md) |
+| #196-bf204d96-d111-4ab3-9d77-68ff53e6cdf8 | Botão "Exportar Meu Gabarito" na discursiva id 152, depois de o aluno finalizar | 🟠 Alta | — | 🔄 Em execução | — (não reservável) | [323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
+| #196.1 | Botão "Exportar Meu Gabarito" na discursiva 152 (PESADO) | 🟠 Alta | — | 🔄 Em execução | Claude Code (Opus 5.5) (local · main · s6) (desde 2026-10-16 10:42) | [323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
+| #196.2 | Aceite do usuário | 🟠 Alta | #196.1 | ⬜ Pendente | — | [323-bf204d96](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
+| #197-25203735-ba0e-4629-b6d4-27073640d497 | "Exportar Meu Gabarito" nas demais atividades discursivas (livre para outras IAs) | 🟠 Alta | #196 | ⬜ Pendente | — (não reservável) | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
+| #197.1 | Exportar Meu Gabarito nas demais discursivas (PESADO) | 🟠 Alta | #196.1 | ⬜ Pendente | — | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
+| #197.2 | Aceite do usuário | 🟠 Alta | #197.1 | ⬜ Pendente | — | [324-25203735](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
 
 ## Escopo
 - **Entra:** todas as tarefas pedidas pelo usuário neste repositório, a partir de 2026-10-03.
@@ -631,6 +637,8 @@ Desde 2026-10-09 cada etapa fica no seu arquivo (`.claude/rules/tasks/quadro.md`
 | 320-c3289a94 | Voltar como estava antes da tabela `aula_turma`, mantendo o bloqueio de atividade (#193, pedida em 2026-10-16) | [ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md](etapas/ETAPA-320-c3289a94-REMOVER-TABELA-AULA-TURMA.md) |
 | 321-0d27b30c | Verificar a reversão da `aula_turma` e o ON/OFF de bloqueio (#194, pedida em 2026-10-16) | [ETAPA-321-0d27b30c-VERIFICAR-REVERSAO-AULA-TURMA.md](etapas/ETAPA-321-0d27b30c-VERIFICAR-REVERSAO-AULA-TURMA.md) |
 | 322-5d136360 | Tarefa agendada manual "CORRECAO ATIVIDADE ID=152" (#195, pedida em 2026-10-16) | [ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md](etapas/ETAPA-322-5d136360-TAREFA-AGENDADA-CORRECAO-ATIVIDADE-152.md) |
+| 323-bf204d96 | Botão "Exportar Meu Gabarito" na discursiva id 152 (#196, pedida em 2026-10-16) | [ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md](etapas/ETAPA-323-bf204d96-EXPORTAR-MEU-GABARITO-DISCURSIVA-152.md) |
+| 324-25203735 | "Exportar Meu Gabarito" nas demais discursivas (#197, pedida em 2026-10-16) | [ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md](etapas/ETAPA-324-25203735-EXPORTAR-MEU-GABARITO-DEMAIS-DISCURSIVAS.md) |
 | 258-c3af51c5 | Link da apostila no card ITIC (#131, 2026-10-14) | [ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md](etapas/ETAPA-258-c3af51c5-LINK-APOSTILA-CARD-ITIC-LOGISTICA.md) |
 
 ## Riscos

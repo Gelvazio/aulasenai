@@ -36,12 +36,20 @@ correção pela IA da discursiva id 152 (Atividade de Sala 16/10 da ITIC, #191),
 
 ### #195.2 — Rodar a primeira vez e conferir
 
-**Próximo passo:** depois da #195.1, rodar a tarefa uma vez e conferir no banco o que ela gravou.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — banco (conferência das notas gravadas).
+- **Entrega:** 1ª execução manual em 2026-10-16 10:22 (sessão `local_d06374a6`), terminou com
+  sucesso às 10:23: corrigiu as 2 alternativas que existiam respondidas naquela hora (1 aluno),
+  com comentário `[IA]`; 0 suspeitas de cópia.
+- **Verificação:** banco às 10:42 — 2 linhas em `correcao_discursiva` com `nota_ia` e comentário
+  `[IA]`, 0 com `nota_professor`, 0 suspeitas. Depois da rodada os alunos continuaram respondendo
+  (21 alunos, 81 respostas, 1 entrega às 10:42): para corrigir essas, rodar a tarefa de novo.
 
 ### #195.3 — Aceite do usuário
 
-**Próximo passo:** 👀 o usuário confere as notas sugeridas pela IA na correção da atividade 152.
+**Próximo passo:** 👀 o usuário roda de novo a "CORRECAO ATIVIDADE ID=152" (Scheduled →
+Run now) quando quiser corrigir as respostas novas e confere as notas sugeridas pela IA em
+`correcao-discursiva.html`.
 
 - **Nível:** LEVE — conferência do usuário.
