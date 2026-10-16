@@ -61,25 +61,41 @@ Outras páginas que apontam para a v1: `TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNI
 
 ### #212.2 — Banco: SQL do DELETE + aulas 70/71 excluídas
 
-**Próximo passo:** 👀 usuário rodar a PARTE 2 de
-`database/2026-10-16-excluir-trabalho-equipe-manual-itic.sql` no SQL Editor do Supabase; depois,
-conferir pelo conector que as atividades 58 e 59 sumiram e fechar a subtarefa.
+**Próximo passo:** — (concluída)
 
 - **Nível:** PESADO — apagar dados do banco
 - **Entrega:** `database/2026-10-16-excluir-trabalho-equipe-manual-itic.sql`; PARTE 1 aplicada
   pelo conector em 2026-10-16 19:47 (aulas 70 e 71 com `excluido = 1`).
 - **Verificação:** o `update ... returning` devolveu as aulas 70 (nº 13) e 71 (nº 14) com
-  `excluido = 1`. DELETE: pendente do usuário.
+  `excluido = 1`. DELETE (PARTE 2) aplicado pelo conector em 2026-10-16 19:50, a pedido do
+  usuário ("FINALIZE A TAREFA 212"): o `returning` devolveu as atividades 58 e 59. Revisão
+  independente (workflow de 3 agentes, só leitura): 0 linhas de 58/59 em todas as tabelas
+  (inclusive as sem chave estrangeira) e nenhuma coluna de texto do banco cita as 2 páginas.
 
 ### #212.3 — Cards, arquivos e links
 
-**Próximo passo:** tirar os 2 cards, apagar os 2 HTML e ajustar os links e o `STATUS_MATERIA.md`
-(em execução).
+**Próximo passo:** — (concluída)
 
 - **Nível:** MEDIO — HTML de até 3 arquivos + remoção de 2 arquivos
+- **Entrega:** os 2 HTML apagados — foram juntos no commit `e5e66f29` da frente s14 (#213), que
+  levou o `git rm` que estava no índice compartilhado; os 2 cards saíram do
+  `INTRODUCAO-TIC/ATIVIDADES/index.html`; o "voltar" do `…-SIMPLES.html` e do `brainstorming.html`
+  vai para `../index.html` (e saiu a frase "Veja a ficha em…" do brainstorming); 2 linhas a menos
+  no `STATUS_MATERIA.md` (contagem 145 → 143); `docs/regras/usuarios-turmas-paginas-professor.md`
+  não cita mais a v2 como página da restrição por turma. A mudança local do usuário no índice
+  ("AVALIAÇÃO 01-AULA-06-DISCURSIVA") ficou fora do commit.
+- **Verificação:** revisão independente (3 agentes, só leitura): nenhum `.html/.js/.json/.css`
+  aponta para as 2 páginas; índice bem formado (15 `<article>` abertos e fechados, parser sem
+  erro); diferença do arquivo de trabalho para o commit = só a linha do usuário.
+- **Anotação (achados da revisão, fora do escopo):** sem link no site para `brainstorming.html`,
+  `…-SIMPLES.html` e `Brainstorming-Em-Equipe.pdf` (ficaram de propósito); `restricao-turma.js` sem
+  página que o use; atividade 84 (aula 81) aponta para
+  `ATIVIDADE-GRANDE-02/TRABALHO-COMUNICACAO-TECNICA-v1.html`, que não existe (já era assim); a
+  troca local dos nomes `CONTEUDO/6-…` e `7-…` (sem commit) quebra 2 botões "📚 Conteúdo" do índice
+  se for commitada sem ajustar os links.
 
 ### #212.4 — Aceite do usuário
 
-**Próximo passo:** usuário conferir o índice ITIC sem os 2 cards.
+**Próximo passo:** 👀 usuário conferir o índice ITIC sem os 2 cards.
 
 - **Nível:** LEVE — conferência do usuário

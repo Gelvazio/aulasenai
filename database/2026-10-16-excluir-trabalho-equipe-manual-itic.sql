@@ -10,13 +10,14 @@
 --
 -- PARTE 1 — já aplicada pelo conector (não apaga dados): aulas 70 e 71 marcadas como excluídas,
 -- o mesmo que a função excluir_aula faz.
--- PARTE 2 — o professor roda no SQL Editor do Supabase (DELETE, regra security-banco.md).
+-- PARTE 2 — DELETE das 2 linhas: aplicada pelo conector em 2026-10-16, a pedido do usuário
+-- ("FINALIZE A TAREFA 212"); a cascata não levou nada (sem dados de aluno).
 -- ════════════════════════════════════════════════════════════════════════════════════════════
 
 -- PARTE 1
 update public.aulas set excluido = 1, updated_at = now() where id in (70, 71) and excluido = 0;
 
--- PARTE 2 (SQL Editor)
+-- PARTE 2
 delete from public.atividade
  where id in (58, 59)
    and pagina like '/MATERIAIS/ASSISTENTE-DE-OPERACOES-LOGISTICAS/INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA%';

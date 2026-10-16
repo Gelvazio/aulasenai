@@ -262,8 +262,9 @@ Registrada em 2026-10-05 a pedido do usuário.
   vê, com o aviso das turmas liberadas; sem login, pede para entrar.
 - ⚠️ É restrição de **exibição** (a página é estática e publicada): nunca colocar nela gabarito,
   dados pessoais ou outro conteúdo sensível.
-- 📌 Primeira página: `INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-v2.html`
-  (versão simplificada do trabalho em equipe), só para a turma **135081 — AI AOPL 2026/2 V1 · Tarde**.
+- 📌 A primeira página que usou a restrição (`INTRODUCAO-TIC/ATIVIDADES/ATIVIDADE-GRANDE/`
+  `TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-v2.html`, só para a turma 135081) foi excluída em
+  2026-10-16 (#212). Hoje nenhuma página usa a restrição; o script e o CSS continuam prontos.
 
 ## 👤 REGRA — E-MAIL DE LOGIN DO ALUNO: `nome.sobrenome@senai.local`
 

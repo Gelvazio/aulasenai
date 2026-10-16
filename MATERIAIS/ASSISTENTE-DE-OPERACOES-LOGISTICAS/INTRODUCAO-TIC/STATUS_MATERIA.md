@@ -42,7 +42,7 @@
 | 09 | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 10 | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
-## 3. Todos os arquivos da pasta (145)
+## 3. Todos os arquivos da pasta (143)
 
 | Arquivo | Tamanho (bytes) | Status |
 |---|---|---|
@@ -86,8 +86,6 @@
 | `ATIVIDADES/ATIVIDADE-GRANDE/RESOLUCAO/ENTREGA-ATIVIDADES-POR-GRUPO.txt` | 848 | 📎 outro arquivo |
 | `ATIVIDADES/ATIVIDADE-GRANDE/RESOLUCAO/RESOLUCAO-ATIVIDADE-GRUPO-04.doc` | 113664 | 📎 outro arquivo |
 | `ATIVIDADES/ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-SIMPLES.html` | 8908 | 📎 outro arquivo |
-| `ATIVIDADES/ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA-v2.html` | 42599 | 📎 outro arquivo |
-| `ATIVIDADES/ATIVIDADE-GRANDE/TRABALHO-EQUIPE-MANUAL-COMUNICACAO-TECNICA.html` | 52585 | 📎 outro arquivo |
 | `ATIVIDADES/ATIVIDADE-GRANDE/brainstorming-chalkie-ai.md` | 14700 | 📎 outro arquivo |
 | `ATIVIDADES/ATIVIDADE-GRANDE/brainstorming.html` | 20631 | 📎 outro arquivo |
 | `ATIVIDADES/ATIVIDADE-PRATICA-AULA-01.html` | 40432 | ✅ peça do padrão |
