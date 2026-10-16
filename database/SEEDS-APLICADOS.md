@@ -5,7 +5,7 @@ Registro de **todos** os arquivos `database/*-seed-atividades.sql` e do status d
 CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 [`CLAUDE.md`](../CLAUDE.md), seção "🌱 REGRA — SEEDS DO BANCO".** Aqui ficam só os dados.
 
-## Resumo (atualizado em 2026-10-16 18:46)
+## Resumo (atualizado em 2026-10-16 18:56)
 
 | PENDENTE | APLICADO | CONCLUÍDO | SUBSTITUÍDO | Total |
 |---|---|---|---|---|
@@ -93,6 +93,7 @@ CONCLUÍDO / SUBSTITUÍDO, como aplicar e como conferir pelo md5) fica só no
 | `2026-10-16-aula-turma-materia.sql` | Introdução às TIC (ITIC) | 0 | **CONCLUÍDO** | 2026-10-16 15:54 | Aplicado pelo conector: aula_turma com materia_id not null, FK para materia.id, gatilho da matéria da aula e índice; 38 linhas, 0 sem matéria, 0 diferentes da aula; gatilho testado em transação desfeita (matéria errada vira a da aula) — Etapa 333-e75bddc3 (#206.3) |
 | `2026-10-16-slides-storage.sql` | Testes de Front-End | 0 | **SUBSTITUÍDO** | 2026-10-16 18:46 | Desfeito pelo 2026-10-16-remover-slides-storage.sql a pedido do usuário (#209.7) |
 | `2026-10-16-remover-slides-storage.sql` | Testes de Front-End | 0 | **CONCLUÍDO** | 2026-10-16 18:46 | Aplicado pelo conector (#209.7): 0 políticas slides_* e função slide_liberado_para_usuario removida; o bucket slides (vazio) só sai pelo painel (o Supabase recusa delete por SQL) |
+| `2026-10-16-aula-turma-bloqueio-cards-fechados.sql` | Várias matérias | 0 | **CONCLUÍDO** | 2026-10-16 18:56 | Aplicado pelo conector (#210.2): 26 pares aula x turma com bloqueio = true (ITIC 16, Automacao 6, Analise de Dados 2, Comunicacao 2); md5 das 148 atividades igual antes e depois (89f9302b...); 38 datas mantidas |
 
 ## Seeds excluídos (não podiam ser concluídos)
 

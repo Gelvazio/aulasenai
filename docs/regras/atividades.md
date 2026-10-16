@@ -625,12 +625,19 @@ HTML, em ordem crescente de data.** Vale para todas as matérias de todos os cur
     outras turmas do combo e libera só a escolhida. Sem combo (sem turmas), o botão grava
     `aulas.ativo`. Código: `assets/js/aula-turma-repositorio.js`, `indice-aula-bloqueio.js`,
     `indice-aula-modal-turma.js`;
-  - **slides da aula bloqueada fechados para o aluno** (2026-10-14, tarefa #31; matérias de
-    `assets/js/indice-bloqueio-aula-config.js`): no índice, os links dos cards ficam travados
+  - **bloqueio da aula ligado em TODAS as matérias** (2026-10-16, tarefa #210; antes só em Testes
+    de Front-End): `assets/js/indice-bloqueio-aula-config.js` liga em todas, menos as pastas de
+    `PASTAS_SEM_BLOQUEIO_AULA` (hoje nenhuma). Card sem aula no banco não ganha o botão. Os cards
+    que antes fechavam sozinhos porque TODAS as atividades estavam bloqueadas para a turma
+    passaram a ter `aula_turma.bloqueio = true` nessa turma
+    (`database/2026-10-16-aula-turma-bloqueio-cards-fechados.sql`, 26 pares);
+  - **slides da aula bloqueada fechados para o aluno** (2026-10-14, tarefa #31; todas as matérias
+    desde a #210): no índice, os links dos cards ficam travados
     (classe `indice--conferindo-aula`) até o `indice-aula-data.js` conferir o bloqueio; na página
     da atividade (objetiva e prática), `assets/js/atividade-bloqueio-aula.js` esconde o conteúdo
-    e tira os links dos slides (PDF) quando o aluno não consegue ler a atividade (RLS). O PDF
-    aberto pelo endereço direto continua acessível (arquivo estático do site);
+    e tira os links dos slides (PDF) quando o aluno não consegue ler a atividade (RLS); o script
+    só entra nas páginas que estão em `atividade.pagina` (fora do banco, ele esconderia a página).
+    O PDF aberto pelo endereço direto continua acessível (arquivo estático do site);
   - aluno: vê a atividade se **alguma** turma dele (`turmaaluno`) estiver liberada; aluno sem
     turma e visitante, liberado. Garantido no banco pela política `atividade_select` e por
     `item_valido`/`topico_valido` (função `atividade_liberada_para_usuario`);

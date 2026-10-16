@@ -50,12 +50,22 @@ com índice de atividades, hoje só em Testes de Front-End (`assets/js/indice-bl
   as páginas cujo endereço está exatamente em `atividade.pagina`.
 ### #210.2 — Ligar o bloqueio da aula em todas as matérias
 
-**Próximo passo:** executar os passos 1 a 4 do plano (configuração, SQL dos 26 pares, páginas, documentação).
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — mudança em massa.
+- **Entrega (2026-10-16 18:56):** (1) `assets/js/indice-bloqueio-aula-config.js` liga em todas as matérias
+  (exceções em `PASTAS_SEM_BLOQUEIO_AULA`, vazia); (2) `database/2026-10-16-aula-turma-bloqueio-cards-fechados.sql`
+  aplicado: 26 pares com `aula_turma.bloqueio = true`; (3) 124 páginas de atividade (as do banco
+  que faltavam) carregam `indice-bloqueio-aula-config.js` e `atividade-bloqueio-aula.js` depois
+  de `js/login.js`; 8 endereços do banco não têm arquivo e 2 trabalhos em equipe da ITIC (sem
+  banco nem slides) ficaram de fora; os geradores já incluíam; (4) `docs/regras/atividades.md` e
+  `docs/database.md`.
+- **Verificação:** `node --check` na configuração; banco: md5 das 148 atividades igual antes e
+  depois, 26 linhas bloqueadas, 38 datas mantidas; páginas: 2.ª passagem do script = 135 com o
+  script e 0 a incluir; `git diff --numstat`: as 124 páginas com +2/−0. Sem navegador.
 
 ### #210.3 — Aceite do usuário
 
-**Próximo passo:** depende da #210.2.
+**Próximo passo:** 👀 o usuário abre como professor o índice de uma matéria (ex.: ITIC), confere o botão "Aula liberada / Aula bloqueada" em cada card e, como aluno, uma aula bloqueada.
 
 - **Nível:** LEVE — conferência do usuário.

@@ -75,3 +75,4 @@ da entrega (regra global C4; `.claude/rules/tasks/quadro.md`). Reabrir = mover a
 | #206.7 | Aceite do usuário | 🟠 Alta | #206.6 | ✅ Concluído | — | [333-e75bddc3](etapas/ETAPA-333-e75bddc3-VOLTAR-AULA-TURMA-COM-COMBO-DA-TURMA.md) |
 | #209.2 | SQL: bucket `slides`, função e políticas do Storage (PESADO) | 🟠 Alta | #209.1 | ✅ Concluído | — | [336-77564f72](etapas/ETAPA-336-77564f72-SLIDES-BLOQUEADOS-COM-A-AULA.md) |
 | #210.1 | Verificar as matérias (só leitura) (PESADO) | 🟠 Alta | — | ✅ Concluído | — | [337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md) |
+| #210.2 | Ligar o bloqueio da aula em todas as matérias (PESADO) | 🟠 Alta | #210.1 | ✅ Concluído | — | [337-be64cb29](etapas/ETAPA-337-be64cb29-BLOQUEIO-DA-AULA-EM-TODAS-AS-MATERIAS.md) |

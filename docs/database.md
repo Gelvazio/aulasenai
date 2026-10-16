@@ -880,6 +880,7 @@ SUBSTITUÍDA: a tabela continua no banco e a #206 acrescentou a chave da matéri
 - `aulas.ativo = false` continua bloqueando a aula para **todas** as turmas. Liberar no índice uma
   aula assim deixa `aula_turma.bloqueio = true` nas outras turmas do combo e libera só a escolhida.
 - `aulas.data_planejada` não aparece mais no "Editar aula"; a data da aula é a da turma.
+- **#210 (2026-10-16):** bloqueio da aula ligado em todas as matérias;`database/2026-10-16-aula-turma-bloqueio-cards-fechados.sql` gravou `bloqueio = true` nos 26 pares aula × turma cujas atividades estavam TODAS bloqueadas para a turma (o card continuou fechado para o aluno).
 
 ## 🔒 Atualização 2026-10-16 — ON/OFF "Bloquear horário" por turma (#200)
 
