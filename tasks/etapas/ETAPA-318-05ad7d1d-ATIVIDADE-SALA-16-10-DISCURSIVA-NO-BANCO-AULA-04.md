@@ -51,24 +51,30 @@ página avulsa sai.
 
 - 2026-10-16 09:38 — usuário: página avulsa sai; **1 atividade discursiva** com correção por IA;
   as objetivas viram discursivas.
-- 2026-10-16 09:52 — usuário aprovou o plano, **incluindo a exceção à regra da #25** ("Sim, aprovo o
+- 2026-10-16 09:43 — usuário aprovou o plano, **incluindo a exceção à regra da #25** ("Sim, aprovo o
   plano da #191, incluindo a exceção à regra da #25. Pode executar.").
 
 ### #191.1 — Plano na etapa e aprovação do usuário
 
-**Próximo passo:** — (plano aprovado em 2026-10-16 09:52).
+**Próximo passo:** — (plano aprovado em 2026-10-16 09:43).
 
 - **Nível:** PESADO — banco (atividade, tópicos, seed) e gabarito/padrão de resposta.
 
 ### #191.2 — Fonte e gabarito em Markdown (20 questões)
 
-**Próximo passo:** escrever a fonte e o gabarito em `ATIVIDADES/CONTEUDO/`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** PESADO — padrão de resposta (gabarito) da correção por IA.
+- **Entrega:** `CONTEUDO/ATIVIDADE-SALA-AULA-16-10-2026-DISCURSIVA.md` (20 itens × 0,5, 1 tópico
+  cada, "Aula no banco: 4", bloquear colar e campo do tamanho da resposta) e
+  `CONTEUDO/ATIVIDADE-SALA-AULA-16-10-2026-DISCURSIVA-GABARITO.md` (resposta esperada e critérios
+  cheia/metade/zero de cada tópico).
+- **Verificação:** formato conferido com o gerador (`## ITEM NN`, tópicos `- a) ... (0,5)`,
+  `### ITEM NN-a`); o gerador valida total e pontos na #191.3.
 
 ### #191.3 — Gerar a página e o seed
 
-**Próximo passo:** depois da #191.2.
+**Próximo passo:** rodar o gerador na pasta ATIVIDADES da ITIC.
 
 - **Nível:** MEDIO — gerador Python, 2 arquivos gerados.
 
